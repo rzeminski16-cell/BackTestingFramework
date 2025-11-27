@@ -5,6 +5,7 @@ A professional-grade Python framework for backtesting trading strategies across 
 ## Features
 
 ### Core Capabilities
+- ✅ **Graphical User Interface**: Easy-to-use GUI for configuring and running backtests
 - ✅ **Single Security Backtesting**: Test strategies on individual securities
 - ✅ **Portfolio Backtesting**: Test strategies across multiple securities with shared capital
 - ✅ **Parameter Optimization**: Grid search to find optimal strategy parameters
@@ -31,13 +32,43 @@ A professional-grade Python framework for backtesting trading strategies across 
 - Python 3.8+
 - pandas
 - numpy
+- tkinter (for GUI - usually included with Python)
 
 ```bash
 # Install dependencies
 pip install pandas numpy
+
+# If tkinter is not installed (Linux):
+# sudo apt-get install python3-tk
 ```
 
 ## Quick Start
+
+### Option 1: Using the GUI (Recommended for Beginners)
+
+The easiest way to run backtests is using the graphical interface:
+
+```bash
+python run_gui.py
+# or
+python backtest_gui.py
+```
+
+The GUI allows you to:
+- ✅ Select securities from a list (single or multiple)
+- ✅ Choose between single security or portfolio mode
+- ✅ Select and configure strategies with visual parameter editors
+- ✅ Set commission (percentage or fixed)
+- ✅ Configure date ranges
+- ✅ Name your backtests (format: `{strategy_name}_{your_name}`)
+- ✅ View results in real-time
+- ✅ Automatically save trade logs
+
+![GUI Screenshot](docs/gui_screenshot.png)
+
+### Option 2: Using Python Code
+
+For programmatic control or integration into scripts:
 
 ### 1. Prepare Your Data
 
@@ -318,7 +349,9 @@ BackTestingFramework/
 ├── raw_data/            # CSV data files
 ├── logs/                # Trade logs output
 ├── config/              # Configuration files
-├── backtest.py          # Main entry point with examples
+├── backtest_gui.py      # GUI application
+├── run_gui.py           # GUI launcher script
+├── backtest.py          # Command-line examples
 └── ARCHITECTURE.md      # Detailed architecture documentation
 ```
 
@@ -333,6 +366,30 @@ The framework includes three example strategies:
 See `strategies/examples/` for full implementations.
 
 ## Running Examples
+
+### Using the GUI
+
+```bash
+# Launch the GUI
+python run_gui.py
+```
+
+**GUI Features:**
+1. **Security Selection**: Choose one or more securities from your `raw_data/` folder
+2. **Mode Selection**: Toggle between single security and portfolio mode
+3. **Strategy Configuration**:
+   - Select from available strategies
+   - Click "Configure Strategy Parameters" to customize
+4. **Commission Settings**: Choose percentage or fixed commission
+5. **Portfolio Settings**: (Portfolio mode only)
+   - Max concurrent positions
+   - Position size limit per security
+   - Total allocation limit
+6. **Backtest Naming**: Name follows format `{strategy_name}_{your_input}`
+7. **Real-time Results**: View performance metrics as backtest runs
+8. **Auto-save Logs**: Trade logs saved to `logs/{backtest_name}/`
+
+### Using Command Line
 
 ```bash
 # Run all examples
