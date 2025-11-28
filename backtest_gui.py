@@ -38,6 +38,7 @@ from strategies.examples import (
     AdvancedTrailingStopStrategy,
     PartialExitStrategy
 )
+from strategies.base_new_highs_strategy import BaseNewHighsStrategy
 
 
 class BacktestGUI:
@@ -46,7 +47,8 @@ class BacktestGUI:
     # Available strategies
     STRATEGIES = {
         'AdvancedTrailingStopStrategy': AdvancedTrailingStopStrategy,
-        'PartialExitStrategy': PartialExitStrategy
+        'PartialExitStrategy': PartialExitStrategy,
+        'BaseNewHighs': BaseNewHighsStrategy
     }
 
     def __init__(self, root):
@@ -257,10 +259,27 @@ class BacktestGUI:
         )
         self.results_text.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
 
+        # Progress bar
+        progress_frame = ttk.Frame(main_frame)
+        progress_frame.grid(row=1, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=(5, 0))
+        progress_frame.columnconfigure(0, weight=1)
+
+        self.progress_var = tk.IntVar(value=0)
+        self.progress_bar = ttk.Progressbar(
+            progress_frame,
+            variable=self.progress_var,
+            maximum=100,
+            mode='determinate'
+        )
+        self.progress_bar.grid(row=0, column=0, sticky=(tk.W, tk.E), padx=5)
+
+        self.progress_label = ttk.Label(progress_frame, text="")
+        self.progress_label.grid(row=0, column=1, padx=5)
+
         # Status bar
         self.status_var = tk.StringVar(value="Ready")
         status_bar = ttk.Label(main_frame, textvariable=self.status_var, relief=tk.SUNKEN)
-        status_bar.grid(row=1, column=0, columnspan=2, sticky=(tk.W, tk.E))
+        status_bar.grid(row=2, column=0, columnspan=2, sticky=(tk.W, tk.E))
 
     def on_mode_change(self):
         """Handle backtest mode change."""
@@ -301,6 +320,22 @@ class BacktestGUI:
                 'first_target_pct': 0.10,
                 'second_target_pct': 0.20,
                 'stop_loss_pct': 0.06
+            }
+        elif strategy_name == 'BaseNewHighs':
+            self.strategy_params[strategy_name] = {
+                'new_high_n': 14,
+                'sma_length': 200,
+                'ma_fast_length': 7,
+                'ma_slow_length': 21,
+                'ma_lookback_k': 14,
+                'sar_start': 0.02,
+                'sar_increment': 0.02,
+                'sar_maximum': 0.2,
+                'ema_sell_length': 14,
+                'ema_sell_threshold': 3.0,
+                'atr_length': 14,
+                'atr_multiplier': 3.0,
+                'risk_percent': 0.5
             }
 
     def open_strategy_params_window(self):
@@ -426,6 +461,20 @@ class BacktestGUI:
             import traceback
             traceback.print_exc()
 
+    def update_progress(self, current: int, total: int):
+        """Update progress bar and label."""
+        if total > 0:
+            percentage = int((current / total) * 100)
+            self.progress_var.set(percentage)
+            self.progress_label.config(text=f"{current}/{total} ({percentage}%)")
+            self.root.update_idletasks()  # Force GUI update
+
+    def reset_progress(self):
+        """Reset progress bar."""
+        self.progress_var.set(0)
+        self.progress_label.config(text="")
+        self.root.update_idletasks()
+
     def run_single_backtest(self, symbol: str, strategy, capital: float,
                           commission: CommissionConfig, start_date, end_date,
                           backtest_name: str):
@@ -449,8 +498,15 @@ class BacktestGUI:
         self.log_result(f"Security: {symbol}")
         self.log_result(f"Capital: ${capital:,.2f}\n")
 
+        # Reset progress bar
+        self.reset_progress()
+        self.status_var.set(f"Processing {len(data)} bars...")
+
         engine = SingleSecurityEngine(config)
-        result = engine.run(symbol, data, strategy)
+        result = engine.run(symbol, data, strategy, progress_callback=self.update_progress)
+
+        # Reset progress bar
+        self.reset_progress()
 
         # Display results
         self.display_result(symbol, result, backtest_name)
@@ -497,8 +553,15 @@ class BacktestGUI:
         self.log_result(f"Securities: {', '.join(data_dict.keys())}")
         self.log_result(f"Capital: ${capital:,.2f}\n")
 
+        # Reset progress bar
+        self.reset_progress()
+        self.status_var.set(f"Processing portfolio backtest...")
+
         engine = PortfolioEngine(config)
-        results = engine.run(data_dict, strategy)
+        results = engine.run(data_dict, strategy, progress_callback=self.update_progress)
+
+        # Reset progress bar
+        self.reset_progress()
 
         # Display results
         self.display_portfolio_results(results, backtest_name)
