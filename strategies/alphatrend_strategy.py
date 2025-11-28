@@ -27,6 +27,7 @@ class AlphaTrendStrategy(BaseStrategy):
     Parameters:
         atr_multiplier: Base multiplier for ATR bands (default: 1.0)
         common_period: Period for ATR/MFI calculations (default: 14)
+        source: Price source for calculations - 'close', 'open', 'high', 'low' (default: 'close')
         smoothing_length: EMA smoothing period for AlphaTrend (default: 3)
         percentile_period: Lookback for dynamic thresholds (default: 100)
         volume_short_ma: Volume short MA period (default: 4)
@@ -44,6 +45,7 @@ class AlphaTrendStrategy(BaseStrategy):
     def __init__(self,
                  atr_multiplier: float = 1.0,
                  common_period: int = 14,
+                 source: str = 'close',
                  smoothing_length: int = 3,
                  percentile_period: int = 100,
                  volume_short_ma: int = 4,
@@ -60,6 +62,7 @@ class AlphaTrendStrategy(BaseStrategy):
         super().__init__(
             atr_multiplier=atr_multiplier,
             common_period=common_period,
+            source=source,
             smoothing_length=smoothing_length,
             percentile_period=percentile_period,
             volume_short_ma=volume_short_ma,
@@ -77,6 +80,7 @@ class AlphaTrendStrategy(BaseStrategy):
         # Store parameters as instance variables
         self.atr_multiplier = atr_multiplier
         self.common_period = common_period
+        self.source = source
         self.smoothing_length = smoothing_length
         self.percentile_period = percentile_period
         self.volume_short_ma = volume_short_ma
@@ -216,8 +220,8 @@ class AlphaTrendStrategy(BaseStrategy):
         df['vol_long_ma'] = df['volume'].rolling(window=self.volume_long_ma).mean()
         df['volume_condition'] = df['vol_short_ma'] > df['vol_long_ma']
 
-        # Exit EMA
-        df['exit_ema'] = df['close'].ewm(span=self.exit_ema_period, adjust=False).mean()
+        # Exit EMA (using configured source)
+        df['exit_ema'] = df[self.source].ewm(span=self.exit_ema_period, adjust=False).mean()
 
         # Store current bar indicators
         current = df.iloc[-1]

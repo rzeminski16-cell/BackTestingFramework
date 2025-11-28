@@ -238,7 +238,8 @@ class PortfolioEngine:
                 equity_curve=equity_df,  # Portfolio equity (same for all)
                 final_equity=final_equity,  # Portfolio final equity
                 total_return=symbol_pl,  # Symbol-specific P/L
-                total_return_pct=(symbol_pl / self.config.initial_capital * 100) if symbol_trades else 0.0
+                total_return_pct=(symbol_pl / self.config.initial_capital * 100) if symbol_trades else 0.0,
+                strategy_params=strategy.get_parameters()
             )
             results[symbol] = result
 

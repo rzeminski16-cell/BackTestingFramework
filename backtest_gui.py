@@ -15,7 +15,7 @@ Features:
 """
 
 import tkinter as tk
-from tkinter import ttk, messagebox, scrolledtext
+from tkinter import ttk, messagebox, scrolledtext, simpledialog
 from pathlib import Path
 from datetime import datetime
 from typing import Dict, List, Any, Optional
@@ -25,6 +25,7 @@ from Classes.Config.config import (
     BacktestConfig, PortfolioConfig, CommissionConfig,
     CommissionMode, OptimizationConfig
 )
+from Classes.Config.strategy_preset import StrategyParameterPreset
 from Classes.Data.data_loader import DataLoader
 from Classes.Engine.single_security_engine import SingleSecurityEngine
 from Classes.Engine.portfolio_engine import PortfolioEngine
@@ -63,6 +64,9 @@ class BacktestGUI:
 
         # Strategy parameters cache
         self.strategy_params = {}
+
+        # Strategy preset manager
+        self.preset_manager = StrategyParameterPreset()
 
         # Create GUI components
         self.create_widgets()
@@ -321,9 +325,27 @@ class BacktestGUI:
                 'second_target_pct': 0.20,
                 'stop_loss_pct': 0.06
             }
+        elif strategy_name == 'AlphaTrendStrategy':
+            self.strategy_params[strategy_name] = {
+                'atr_multiplier': 1.0,
+                'common_period': 14,
+                'source': 'close',
+                'smoothing_length': 3,
+                'percentile_period': 100,
+                'volume_short_ma': 4,
+                'volume_long_ma': 30,
+                'volume_alignment_window': 14,
+                'signal_lookback': 9,
+                'exit_ema_period': 50,
+                'stop_atr_multiplier': 2.5,
+                'grace_period_bars': 14,
+                'momentum_gain_pct': 2.0,
+                'momentum_lookback': 7,
+                'risk_percent': 2.0
+            }
 
     def open_strategy_params_window(self):
-        """Open window to configure strategy parameters."""
+        """Open window to configure strategy parameters with preset management."""
         strategy_name = self.strategy_var.get()
         if not strategy_name:
             messagebox.showwarning("No Strategy", "Please select a strategy first.")
@@ -335,7 +357,126 @@ class BacktestGUI:
         # Create parameter window
         param_window = tk.Toplevel(self.root)
         param_window.title(f"Configure {strategy_name} Parameters")
-        param_window.geometry("400x500")
+        param_window.geometry("500x700")
+
+        # ===== Preset Management Section =====
+        preset_frame = ttk.LabelFrame(param_window, text="Parameter Presets", padding="10")
+        preset_frame.grid(row=0, column=0, columnspan=2, sticky=(tk.W, tk.E), padx=10, pady=10)
+
+        # Load available presets
+        presets = self.preset_manager.list_presets(strategy_name)
+        preset_names = [p['preset_name'] for p in presets]
+
+        ttk.Label(preset_frame, text="Load Preset:").grid(row=0, column=0, sticky=tk.W, padx=5, pady=5)
+        preset_var = tk.StringVar()
+        preset_combo = ttk.Combobox(preset_frame, textvariable=preset_var, values=preset_names, width=20, state='readonly')
+        preset_combo.grid(row=0, column=1, sticky=(tk.W, tk.E), padx=5, pady=5)
+
+        def load_preset():
+            """Load selected preset into parameter fields."""
+            preset_name = preset_var.get()
+            if not preset_name:
+                messagebox.showwarning("No Preset", "Please select a preset to load.")
+                return
+
+            params = self.preset_manager.get_preset_parameters(strategy_name, preset_name)
+            if params:
+                # Update parameter vars with preset values
+                for param_name, param_value in params.items():
+                    if param_name in param_vars:
+                        param_vars[param_name].set(str(param_value))
+                messagebox.showinfo("Success", f"Preset '{preset_name}' loaded!")
+            else:
+                messagebox.showerror("Error", f"Failed to load preset '{preset_name}'")
+
+        def save_preset():
+            """Save current parameters as a new preset."""
+            # Ask for preset name
+            preset_name = tk.simpledialog.askstring("Save Preset", "Enter preset name:")
+            if not preset_name:
+                return
+
+            # Ask for description (optional)
+            description = tk.simpledialog.askstring("Preset Description", "Enter description (optional):", initialvalue="")
+
+            # Get current parameter values
+            current_params = {}
+            try:
+                for param_name, var in param_vars.items():
+                    value = var.get()
+                    original_value = self.strategy_params[strategy_name][param_name]
+
+                    # Convert to appropriate type
+                    if isinstance(original_value, str):
+                        current_params[param_name] = value
+                    elif isinstance(original_value, float):
+                        current_params[param_name] = float(value)
+                    elif isinstance(original_value, int):
+                        current_params[param_name] = int(value)
+                    else:
+                        if '.' in value:
+                            current_params[param_name] = float(value)
+                        else:
+                            try:
+                                current_params[param_name] = int(value)
+                            except ValueError:
+                                current_params[param_name] = value
+
+                # Save preset
+                self.preset_manager.save_preset(strategy_name, preset_name, current_params, description or "")
+
+                # Refresh preset list
+                presets = self.preset_manager.list_presets(strategy_name)
+                preset_names = [p['preset_name'] for p in presets]
+                preset_combo['values'] = preset_names
+
+                messagebox.showinfo("Success", f"Preset '{preset_name}' saved!")
+            except ValueError as e:
+                messagebox.showerror("Error", f"Invalid parameter value: {e}")
+
+        def delete_preset():
+            """Delete selected preset."""
+            preset_name = preset_var.get()
+            if not preset_name:
+                messagebox.showwarning("No Preset", "Please select a preset to delete.")
+                return
+
+            # Confirm deletion
+            if messagebox.askyesno("Confirm Delete", f"Delete preset '{preset_name}'?"):
+                if self.preset_manager.delete_preset(strategy_name, preset_name):
+                    # Refresh preset list
+                    presets = self.preset_manager.list_presets(strategy_name)
+                    preset_names = [p['preset_name'] for p in presets]
+                    preset_combo['values'] = preset_names
+                    preset_var.set('')
+                    messagebox.showinfo("Success", f"Preset '{preset_name}' deleted!")
+                else:
+                    messagebox.showerror("Error", f"Failed to delete preset '{preset_name}'")
+
+        # Preset buttons
+        ttk.Button(preset_frame, text="Load", command=load_preset).grid(row=0, column=2, padx=5)
+        ttk.Button(preset_frame, text="Save As...", command=save_preset).grid(row=1, column=0, columnspan=2, sticky=(tk.W, tk.E), padx=5, pady=5)
+        ttk.Button(preset_frame, text="Delete", command=delete_preset).grid(row=1, column=2, padx=5)
+
+        # ===== Parameter Configuration Section =====
+        param_label_frame = ttk.LabelFrame(param_window, text="Parameters", padding="10")
+        param_label_frame.grid(row=1, column=0, columnspan=2, sticky=(tk.W, tk.E, tk.N, tk.S), padx=10, pady=10)
+
+        # Create scrollable frame for parameters
+        canvas = tk.Canvas(param_label_frame, height=300)
+        scrollbar = ttk.Scrollbar(param_label_frame, orient="vertical", command=canvas.yview)
+        scrollable_frame = ttk.Frame(canvas)
+
+        scrollable_frame.bind(
+            "<Configure>",
+            lambda e: canvas.configure(scrollregion=canvas.bbox("all"))
+        )
+
+        canvas.create_window((0, 0), window=scrollable_frame, anchor="nw")
+        canvas.configure(yscrollcommand=scrollbar.set)
+
+        canvas.pack(side="left", fill="both", expand=True)
+        scrollbar.pack(side="right", fill="y")
 
         # Parameter entries
         params = self.strategy_params[strategy_name]
@@ -343,34 +484,52 @@ class BacktestGUI:
 
         row = 0
         for param_name, param_value in params.items():
-            ttk.Label(param_window, text=f"{param_name}:").grid(
+            ttk.Label(scrollable_frame, text=f"{param_name}:").grid(
                 row=row, column=0, sticky=tk.W, padx=10, pady=5
             )
             var = tk.StringVar(value=str(param_value))
             param_vars[param_name] = var
-            ttk.Entry(param_window, textvariable=var, width=20).grid(
+            ttk.Entry(scrollable_frame, textvariable=var, width=20).grid(
                 row=row, column=1, sticky=(tk.W, tk.E), padx=10, pady=5
             )
             row += 1
 
-        # Save button
+        # ===== Action Buttons =====
+        action_frame = ttk.Frame(param_window)
+        action_frame.grid(row=2, column=0, columnspan=2, pady=20)
+
+        # Save button (apply parameters without closing)
         def save_params():
             try:
                 for param_name, var in param_vars.items():
                     value = var.get()
+                    # Get original parameter type to preserve it
+                    original_value = params[param_name]
+
                     # Try to convert to appropriate type
-                    if '.' in value:
+                    if isinstance(original_value, str):
+                        # Keep as string
+                        self.strategy_params[strategy_name][param_name] = value
+                    elif isinstance(original_value, float):
                         self.strategy_params[strategy_name][param_name] = float(value)
-                    else:
+                    elif isinstance(original_value, int):
                         self.strategy_params[strategy_name][param_name] = int(value)
+                    else:
+                        # Fallback: auto-detect type
+                        if '.' in value:
+                            self.strategy_params[strategy_name][param_name] = float(value)
+                        else:
+                            try:
+                                self.strategy_params[strategy_name][param_name] = int(value)
+                            except ValueError:
+                                self.strategy_params[strategy_name][param_name] = value
                 messagebox.showinfo("Success", "Parameters saved!")
                 param_window.destroy()
             except ValueError as e:
                 messagebox.showerror("Error", f"Invalid parameter value: {e}")
 
-        ttk.Button(param_window, text="Save Parameters", command=save_params).grid(
-            row=row, column=0, columnspan=2, pady=20
-        )
+        ttk.Button(action_frame, text="Apply & Close", command=save_params).pack(side=tk.LEFT, padx=5)
+        ttk.Button(action_frame, text="Cancel", command=param_window.destroy).pack(side=tk.LEFT, padx=5)
 
     def get_selected_securities(self) -> List[str]:
         """Get list of selected securities."""
@@ -577,8 +736,10 @@ class BacktestGUI:
 
         # Save trade log
         logger = TradeLogger(Path('logs') / backtest_name)
-        logger.log_trades(symbol, backtest_name, result.trades)
+        logger.log_trades(symbol, backtest_name, result.trades, result.strategy_params)
         self.log_result(f"\nTrade log saved to: logs/{backtest_name}/{backtest_name}_{symbol}_trades.csv")
+        if result.strategy_params:
+            self.log_result(f"Strategy parameters saved to: logs/{backtest_name}/{backtest_name}_{symbol}_parameters.json")
 
         # Generate Excel report if enabled
         if self.generate_excel_var.get():
@@ -635,9 +796,12 @@ class BacktestGUI:
         # Save trade logs
         logger = TradeLogger(Path('logs') / backtest_name)
         for symbol, result in results.items():
-            logger.log_trades(symbol, backtest_name, result.trades)
+            logger.log_trades(symbol, backtest_name, result.trades, result.strategy_params)
 
         self.log_result(f"\nTrade logs saved to: logs/{backtest_name}/")
+        # Note: Strategy parameters are the same for all symbols in portfolio mode
+        if results and any(r.strategy_params for r in results.values()):
+            self.log_result(f"Strategy parameters saved for each symbol")
 
         # Generate Excel reports if enabled
         if self.generate_excel_var.get():

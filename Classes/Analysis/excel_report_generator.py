@@ -554,6 +554,20 @@ class ExcelReportGenerator:
         ws[f'B{row}'] = metrics['total_days']
         row += 2
 
+        # Strategy Parameters Section
+        if result.strategy_params:
+            row = self._add_section_header(ws, row, "STRATEGY PARAMETERS")
+
+            params_data = []
+            for param_name, param_value in result.strategy_params.items():
+                # Format parameter name (convert snake_case to Title Case)
+                display_name = param_name.replace('_', ' ').title()
+                # Keep the value as-is (will be formatted by _add_metrics_table)
+                params_data.append((display_name, param_value, "auto"))
+
+            row = self._add_metrics_table(ws, row, params_data)
+            row += 2
+
         # A. Overall Performance Metrics
         row = self._add_section_header(ws, row, "A. OVERALL PERFORMANCE METRICS")
 
@@ -1001,7 +1015,7 @@ class ExcelReportGenerator:
             ws: Worksheet
             row: Starting row
             data: List of tuples (label, value, format_type)
-                  format_type: 'currency', 'percentage', 'number', 'decimal'
+                  format_type: 'currency', 'percentage', 'number', 'decimal', 'auto'
 
         Returns:
             Next available row
@@ -1021,6 +1035,13 @@ class ExcelReportGenerator:
                 value_cell.number_format = '0.00'
             elif format_type == 'number':
                 value_cell.number_format = '#,##0'
+            elif format_type == 'auto':
+                # Auto-detect format based on value type
+                if isinstance(value, float):
+                    value_cell.number_format = '0.00'
+                elif isinstance(value, int):
+                    value_cell.number_format = '#,##0'
+                # else: keep default (General) format for strings
 
             row += 1
 

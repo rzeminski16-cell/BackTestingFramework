@@ -1,8 +1,8 @@
 """
 Backtest result container.
 """
-from dataclasses import dataclass
-from typing import List
+from dataclasses import dataclass, field
+from typing import List, Dict, Any, Optional
 import pandas as pd
 from ..Models.trade import Trade
 
@@ -20,6 +20,7 @@ class BacktestResult:
         final_equity: Final equity value
         total_return: Total return in currency
         total_return_pct: Total return as percentage
+        strategy_params: Dictionary of strategy parameters used in backtest
     """
     symbol: str
     strategy_name: str
@@ -28,6 +29,7 @@ class BacktestResult:
     final_equity: float
     total_return: float
     total_return_pct: float
+    strategy_params: Optional[Dict[str, Any]] = field(default_factory=dict)
 
     @property
     def num_trades(self) -> int:
