@@ -49,7 +49,7 @@ def example_single_security_backtest():
     )
 
     # Load data
-    data_loader = DataLoader(Path('raw_data'))
+    data_loader = DataLoader(Path('raw_data/processed_exports'))
     data = data_loader.load_csv('AAPL', required_columns=['date', 'close', 'rsi_14'])
 
     print(f"Loaded {len(data)} bars for AAPL")

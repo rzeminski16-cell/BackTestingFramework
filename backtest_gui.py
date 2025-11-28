@@ -56,7 +56,7 @@ class BacktestGUI:
         self.root.geometry("1200x800")
 
         # Data loader
-        self.data_loader = DataLoader(Path('raw_data'))
+        self.data_loader = DataLoader(Path('raw_data/processed_exports'))
         self.available_securities = self.data_loader.get_available_symbols()
 
         # Strategy parameters cache
