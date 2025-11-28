@@ -29,11 +29,11 @@ def process_candle_position(df: pd.DataFrame, date_col: str = 'Date') -> pd.Data
     df = df.sort_values(by=date_col).reset_index(drop=True)
 
     # Find all indices where Candle Position is not -1
-    non_negative_indices = df[df['Candle Position'] != -1].index.tolist()
+    non_negative_indices = df[df['candle_position'] != -1].index.tolist()
 
     # Process each non-(-1) value by working backwards
     for idx in non_negative_indices:
-        current_value = df.loc[idx, 'Candle Position']
+        current_value = df.loc[idx, 'candle_position']
 
         # Work backwards from this index
         countdown = current_value - 1
@@ -41,11 +41,11 @@ def process_candle_position(df: pd.DataFrame, date_col: str = 'Date') -> pd.Data
 
         while current_idx >= 0 and countdown >= 1:
             # Stop if we encounter another non-(-1) value
-            if df.loc[current_idx, 'Candle Position'] != -1:
+            if df.loc[current_idx, 'candle_position'] != -1:
                 break
 
             # Assign the countdown value
-            df.loc[current_idx, 'Candle Position'] = countdown
+            df.loc[current_idx, 'candle_position'] = countdown
             countdown -= 1
             current_idx -= 1
 
@@ -108,7 +108,14 @@ def process_csv_files(input_folder: str, output_folder: str, column_rename: Dict
             })
 
             # Drop the temporary parsed date column
-            df = df.drop(columns=['Date_parsed'])
+            columns_to_drop = df.columns.tolist()
+
+            values_to_remove = set(column_rename.values())
+            values_to_remove.add("candle_position")
+            
+            columns_to_drop = [c for c in columns_to_drop if c not in values_to_remove]
+            
+            df = df.drop(columns=['Date_parsed'] + columns_to_drop)
 
             # Save to output folder
             output_file = output_path / csv_file.name
@@ -147,7 +154,12 @@ def main():
         'high': 'High',
         'low': 'Low',
         'close': 'Close',
-        'Candle Position': 'Candle Position'  # Keep same name
+        'candle_position': 'candle_position',
+        'MA': 'sma_200',
+        'EMA': 'ema_14',
+        'RSI': 'rsi_14',
+        'Volume': 'volume',
+        'CMF': 'cmf'
     }
 
     # Get input and output folders from command line arguments or use defaults
@@ -156,8 +168,8 @@ def main():
         output_folder = sys.argv[2]
     else:
         # Default folders
-        input_folder = './chart_exports'
-        output_folder = './processed_exports'
+        input_folder = './raw_data'
+        output_folder = 'raw_data/processed_exports'
 
     print(f"Input folder: {input_folder}")
     print(f"Output folder: {output_folder}")
