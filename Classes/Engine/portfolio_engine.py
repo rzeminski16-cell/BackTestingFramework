@@ -2,7 +2,7 @@
 Portfolio-level backtesting engine.
 """
 import pandas as pd
-from typing import Dict, List
+from typing import Dict, List, Optional, Callable
 from datetime import datetime
 from collections import defaultdict
 
@@ -40,13 +40,15 @@ class PortfolioEngine:
         self.trade_executor = TradeExecutor(config.commission)
 
     def run(self, data_dict: Dict[str, pd.DataFrame],
-            strategy: BaseStrategy) -> Dict[str, BacktestResult]:
+            strategy: BaseStrategy,
+            progress_callback: Optional[Callable[[int, int], None]] = None) -> Dict[str, BacktestResult]:
         """
         Run portfolio backtest across multiple securities.
 
         Args:
             data_dict: Dictionary mapping symbol to DataFrame
             strategy: Trading strategy (same strategy for all securities)
+            progress_callback: Optional callback function(current, total) for progress updates
 
         Returns:
             Dictionary mapping symbol to BacktestResult
@@ -63,7 +65,12 @@ class PortfolioEngine:
         equity_history = []
 
         # Process each date
-        for current_date in all_dates:
+        total_dates = len(all_dates)
+        for date_idx, current_date in enumerate(all_dates):
+            # Update progress callback (every 50 dates or at the end)
+            if progress_callback and (date_idx % 50 == 0 or date_idx == total_dates - 1):
+                progress_callback(date_idx + 1, total_dates)
+
             # Track daily actions
             day_trades = []
 

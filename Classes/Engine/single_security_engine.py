@@ -2,7 +2,7 @@
 Single security backtesting engine.
 """
 import pandas as pd
-from typing import List, Optional
+from typing import List, Optional, Callable
 from datetime import datetime
 
 from ..Strategy.base_strategy import BaseStrategy
@@ -40,7 +40,8 @@ class SingleSecurityEngine:
         self.position_manager = PositionManager()
         self.trade_executor = TradeExecutor(config.commission)
 
-    def run(self, symbol: str, data: pd.DataFrame, strategy: BaseStrategy) -> BacktestResult:
+    def run(self, symbol: str, data: pd.DataFrame, strategy: BaseStrategy,
+            progress_callback: Optional[Callable[[int, int], None]] = None) -> BacktestResult:
         """
         Run backtest for a single security.
 
@@ -48,6 +49,7 @@ class SingleSecurityEngine:
             symbol: Security symbol
             data: Price/indicator data (must be sorted by date)
             strategy: Trading strategy
+            progress_callback: Optional callback function(current, total) for progress updates
 
         Returns:
             BacktestResult with trades and equity curve
@@ -73,7 +75,12 @@ class SingleSecurityEngine:
             raise ValueError(f"No data for {symbol} in specified date range")
 
         # Process each bar
-        for i in range(len(data)):
+        total_bars = len(data)
+        for i in range(total_bars):
+            # Update progress callback (every 50 bars or at the end)
+            if progress_callback and (i % 50 == 0 or i == total_bars - 1):
+                progress_callback(i + 1, total_bars)
+
             current_bar = data.iloc[i]
             current_date = current_bar['date']
             current_price = current_bar['close']
