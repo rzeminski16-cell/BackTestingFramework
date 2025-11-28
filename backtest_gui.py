@@ -35,7 +35,6 @@ from Classes.Optimization.optimizer import StrategyOptimizer
 
 # Import available strategies
 from strategies.examples import (
-    SimpleMAStrategy,
     AdvancedTrailingStopStrategy,
     PartialExitStrategy
 )
@@ -46,7 +45,6 @@ class BacktestGUI:
 
     # Available strategies
     STRATEGIES = {
-        'SimpleMAStrategy': SimpleMAStrategy,
         'AdvancedTrailingStopStrategy': AdvancedTrailingStopStrategy,
         'PartialExitStrategy': PartialExitStrategy
     }
@@ -284,14 +282,7 @@ class BacktestGUI:
         strategy_class = self.STRATEGIES[strategy_name]
 
         # Get default parameters from strategy
-        if strategy_name == 'SimpleMAStrategy':
-            self.strategy_params[strategy_name] = {
-                'ma_period': 50,
-                'position_size': 0.2,
-                'stop_loss_pct': 0.05,
-                'take_profit_pct': 0.15
-            }
-        elif strategy_name == 'AdvancedTrailingStopStrategy':
+        if strategy_name == 'AdvancedTrailingStopStrategy':
             self.strategy_params[strategy_name] = {
                 'sma_period': 200,
                 'ema_period': 14,

@@ -112,9 +112,9 @@ This script will:
 symbol = 'MSFT'  # or any symbol in your raw_data folder
 
 # Adjust strategy parameters
-strategy = SimpleMAStrategy(
-    ma_period=50,
-    position_size=0.2,
+strategy = PartialExitStrategy(
+    rsi_period=14,
+    position_size=0.2, first_target_pct=0.10, second_target_pct=0.20,
     stop_loss_pct=0.05,
     take_profit_pct=0.15
 )
@@ -566,7 +566,7 @@ from Classes.Config.config import BacktestConfig, CommissionConfig, CommissionMo
 from Classes.Data.data_loader import DataLoader
 from Classes.Engine.single_security_engine import SingleSecurityEngine
 from Classes.Analysis.excel_report_generator import ExcelReportGenerator
-from strategies.examples import SimpleMAStrategy
+from strategies.examples import PartialExitStrategy
 
 # Configure
 config = BacktestConfig(
@@ -576,8 +576,8 @@ config = BacktestConfig(
 
 # Load and run
 data_loader = DataLoader(Path('raw_data'))
-data = data_loader.load_csv('AAPL', required_columns=['date', 'close', 'sma_50'])
-strategy = SimpleMAStrategy()
+data = data_loader.load_csv('AAPL', required_columns=['date', 'close', 'rsi_14'])
+strategy = PartialExitStrategy()
 engine = SingleSecurityEngine(config)
 result = engine.run('AAPL', data, strategy)
 
