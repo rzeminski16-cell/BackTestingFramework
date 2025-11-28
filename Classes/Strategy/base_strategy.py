@@ -3,6 +3,7 @@ Base strategy class for defining trading strategies.
 """
 from abc import ABC, abstractmethod
 from typing import List, Dict, Any, Optional
+import pandas as pd
 from ..Models.signal import Signal
 from .strategy_context import StrategyContext
 
@@ -16,6 +17,7 @@ class BaseStrategy(ABC):
     - generate_signal(): Generate trading signal based on current context
 
     Strategies can optionally override:
+    - prepare_data(): Pre-calculate indicators before backtest (RECOMMENDED for performance)
     - position_size(): Calculate position size for entry
     - should_check_stop_loss(): Check if stop loss should be hit
     - should_check_take_profit(): Check if take profit should be hit
@@ -25,6 +27,11 @@ class BaseStrategy(ABC):
     Strategy Parameters:
     - Pass parameters via __init__ and store as instance variables
     - This allows for easy parameter optimization
+
+    Performance Optimization:
+    - Override prepare_data() to pre-calculate all indicators ONCE before backtesting
+    - This eliminates O(n²) complexity from repeated calculations during the bar loop
+    - Use IndicatorEngine for vectorized indicator calculations
     """
 
     def __init__(self, **params):
@@ -52,6 +59,36 @@ class BaseStrategy(ABC):
             return ['date', 'close', 'sma_50', 'rsi_14']
         """
         pass
+
+    def prepare_data(self, data: pd.DataFrame) -> pd.DataFrame:
+        """
+        Pre-calculate all indicators before backtesting begins.
+
+        PERFORMANCE OPTIMIZATION: Override this method to calculate indicators
+        once using vectorized operations instead of recalculating on every bar.
+
+        This is called ONCE before the backtest loop, providing 10-100x speedup
+        for indicator-heavy strategies.
+
+        Default implementation: Returns data unchanged (assumes indicators pre-exist in CSV).
+
+        Args:
+            data: Raw OHLCV data
+
+        Returns:
+            Data with all indicators added as columns
+
+        Example:
+            def prepare_data(self, data: pd.DataFrame) -> pd.DataFrame:
+                from Classes.Indicators.indicator_engine import IndicatorEngine
+                return IndicatorEngine.calculate_alphatrend_indicators(
+                    data,
+                    atr_multiplier=self.atr_multiplier,
+                    common_period=self.common_period,
+                    ...
+                )
+        """
+        return data
 
     @abstractmethod
     def generate_signal(self, context: StrategyContext) -> Signal:
