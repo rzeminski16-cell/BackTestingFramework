@@ -38,6 +38,7 @@ from strategies.examples import (
     AdvancedTrailingStopStrategy,
     PartialExitStrategy
 )
+from strategies.alphatrend_strategy import AlphaTrendStrategy
 
 
 class BacktestGUI:
@@ -46,7 +47,8 @@ class BacktestGUI:
     # Available strategies
     STRATEGIES = {
         'AdvancedTrailingStopStrategy': AdvancedTrailingStopStrategy,
-        'PartialExitStrategy': PartialExitStrategy
+        'PartialExitStrategy': PartialExitStrategy,
+        'AlphaTrendStrategy': AlphaTrendStrategy
     }
 
     def __init__(self, root):
