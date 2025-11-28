@@ -22,7 +22,7 @@ from Classes.Engine.single_security_engine import SingleSecurityEngine
 from Classes.Analysis.excel_report_generator import ExcelReportGenerator
 from Classes.Analysis.performance_metrics import PerformanceMetrics
 
-from strategies.examples import SimpleMAStrategy
+from strategies.examples import PartialExitStrategy
 
 
 def main():
@@ -45,11 +45,12 @@ def main():
     symbol = 'AAPL'
 
     # Strategy configuration
-    strategy = SimpleMAStrategy(
-        ma_period=50,
+    strategy = PartialExitStrategy(
+        rsi_period=14,
         position_size=0.2,
-        stop_loss_pct=0.05,
-        take_profit_pct=0.15
+        first_target_pct=0.10,
+        second_target_pct=0.20,
+        stop_loss_pct=0.06
     )
 
     # Report configuration
@@ -61,7 +62,7 @@ def main():
 
     print(f"Loading data for {symbol}...")
     data_loader = DataLoader(Path('raw_data'))
-    data = data_loader.load_csv(symbol, required_columns=['date', 'close', 'sma_50'])
+    data = data_loader.load_csv(symbol, required_columns=['date', 'close', 'rsi_14'])
     print(f"✓ Loaded {len(data)} bars\n")
 
     print("Running backtest...")

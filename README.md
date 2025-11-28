@@ -151,7 +151,7 @@ PerformanceMetrics.print_metrics(metrics)
 ```python
 from Classes.Config.config import BacktestConfig, CommissionConfig, CommissionMode
 from Classes.Engine.single_security_engine import SingleSecurityEngine
-from strategies.examples import SimpleMAStrategy
+from strategies.examples import PartialExitStrategy
 
 # Fixed commission per trade
 commission = CommissionConfig(mode=CommissionMode.FIXED, value=3.0)
@@ -160,7 +160,7 @@ config = BacktestConfig(initial_capital=100000.0, commission=commission)
 # Load data and run
 data_loader = DataLoader(Path('raw_data'))
 data = data_loader.load_csv('AAPL')
-strategy = SimpleMAStrategy(ma_period=50, position_size=0.2)
+strategy = PartialExitStrategy(rsi_period=14, position_size=0.2, first_target_pct=0.10, second_target_pct=0.20)
 
 engine = SingleSecurityEngine(config)
 result = engine.run('AAPL', data, strategy)
@@ -187,7 +187,7 @@ for symbol in symbols:
     data_dict[symbol] = data_loader.load_csv(symbol)
 
 # Run portfolio backtest
-strategy = SimpleMAStrategy()
+strategy = PartialExitStrategy()
 engine = PortfolioEngine(config)
 results = engine.run(data_dict, strategy)
 
@@ -219,7 +219,7 @@ param_grid = {
 
 # Run optimization
 optimizer = StrategyOptimizer(opt_config, backtest_config)
-results = optimizer.optimize(SimpleMAStrategy, param_grid, 'AAPL', data)
+results = optimizer.optimize(PartialExitStrategy, param_grid, 'AAPL', data)
 
 # Get best parameters
 best = results.get_best()
@@ -357,11 +357,10 @@ BackTestingFramework/
 
 ## Example Strategies
 
-The framework includes three example strategies:
+The framework includes two example strategies:
 
-1. **SimpleMAStrategy**: Basic moving average crossover
-2. **AdvancedTrailingStopStrategy**: Multi-condition entry with trailing stops
-3. **PartialExitStrategy**: Demonstrates scaling out at profit targets
+1. **AdvancedTrailingStopStrategy**: Multi-condition entry with trailing stops
+2. **PartialExitStrategy**: Demonstrates scaling out at profit targets
 
 See `strategies/examples/` for full implementations.
 

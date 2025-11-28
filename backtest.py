@@ -23,7 +23,7 @@ from Classes.Analysis.trade_logger import TradeLogger
 from Classes.Analysis.performance_metrics import PerformanceMetrics
 from Classes.Analysis.excel_report_generator import ExcelReportGenerator
 
-from strategies.examples import SimpleMAStrategy, AdvancedTrailingStopStrategy, PartialExitStrategy
+from strategies.examples import AdvancedTrailingStopStrategy, PartialExitStrategy
 
 
 def example_single_security_backtest():
@@ -50,16 +50,17 @@ def example_single_security_backtest():
 
     # Load data
     data_loader = DataLoader(Path('raw_data'))
-    data = data_loader.load_csv('AAPL', required_columns=['date', 'close', 'sma_50'])
+    data = data_loader.load_csv('AAPL', required_columns=['date', 'close', 'rsi_14'])
 
     print(f"Loaded {len(data)} bars for AAPL")
 
     # Create strategy
-    strategy = SimpleMAStrategy(
-        ma_period=50,
+    strategy = PartialExitStrategy(
+        rsi_period=14,
         position_size=0.2,
-        stop_loss_pct=0.05,
-        take_profit_pct=0.15
+        first_target_pct=0.10,
+        second_target_pct=0.20,
+        stop_loss_pct=0.06
     )
 
     # Run backtest
@@ -107,7 +108,7 @@ def example_portfolio_backtest():
     data_dict = {}
     for symbol in symbols:
         try:
-            data = data_loader.load_csv(symbol, required_columns=['date', 'close', 'sma_50'])
+            data = data_loader.load_csv(symbol, required_columns=['date', 'close', 'rsi_14'])
             data_dict[symbol] = data
             print(f"Loaded {len(data)} bars for {symbol}")
         except Exception as e:
@@ -118,7 +119,12 @@ def example_portfolio_backtest():
         return
 
     # Create strategy
-    strategy = SimpleMAStrategy(ma_period=50, position_size=0.3)
+    strategy = PartialExitStrategy(
+        rsi_period=14,
+        position_size=0.3,
+        first_target_pct=0.10,
+        second_target_pct=0.20
+    )
 
     # Run portfolio backtest
     engine = PortfolioEngine(config)
@@ -169,20 +175,21 @@ def example_parameter_optimization():
 
     # Define parameter grid to search
     param_grid = {
-        'ma_period': [20, 50, 100],
+        'rsi_period': [10, 14, 20],
         'position_size': [0.1, 0.2, 0.3],
-        'stop_loss_pct': [0.03, 0.05, 0.08]
+        'first_target_pct': [0.08, 0.10, 0.15],
+        'stop_loss_pct': [0.04, 0.06, 0.08]
     }
 
-    print(f"Testing {3 * 3 * 3} parameter combinations...")
+    print(f"Testing {3 * 3 * 3 * 3} parameter combinations...")
 
     # Load data
     data_loader = DataLoader(Path('raw_data'))
-    data = data_loader.load_csv('AAPL')
+    data = data_loader.load_csv('AAPL', required_columns=['date', 'close', 'rsi_14'])
 
     # Run optimization
     optimizer = StrategyOptimizer(opt_config, backtest_config)
-    results = optimizer.optimize(SimpleMAStrategy, param_grid, 'AAPL', data)
+    results = optimizer.optimize(PartialExitStrategy, param_grid, 'AAPL', data)
 
     # Display results
     print(f"\n{results.summary()}")
@@ -306,16 +313,17 @@ def example_excel_report_generation():
 
     # Load data
     data_loader = DataLoader(Path('raw_data'))
-    data = data_loader.load_csv('AAPL', required_columns=['date', 'close', 'sma_50'])
+    data = data_loader.load_csv('AAPL', required_columns=['date', 'close', 'rsi_14'])
 
     print(f"Loaded {len(data)} bars for AAPL")
 
     # Create strategy
-    strategy = SimpleMAStrategy(
-        ma_period=50,
+    strategy = PartialExitStrategy(
+        rsi_period=14,
         position_size=0.2,
-        stop_loss_pct=0.05,
-        take_profit_pct=0.15
+        first_target_pct=0.10,
+        second_target_pct=0.20,
+        stop_loss_pct=0.06
     )
 
     # Run backtest
