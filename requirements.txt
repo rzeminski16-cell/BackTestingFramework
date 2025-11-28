@@ -1,0 +1,9 @@
+# Core dependencies for BackTestingFramework
+pandas>=1.3.0
+numpy>=1.21.0
+
+# Excel report generation
+openpyxl>=3.0.9
+
+# Optional: For GUI
+tkinter  # Usually included with Python, but listed for reference

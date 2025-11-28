@@ -30,6 +30,7 @@ from Classes.Engine.single_security_engine import SingleSecurityEngine
 from Classes.Engine.portfolio_engine import PortfolioEngine
 from Classes.Analysis.trade_logger import TradeLogger
 from Classes.Analysis.performance_metrics import PerformanceMetrics
+from Classes.Analysis.excel_report_generator import ExcelReportGenerator
 from Classes.Optimization.optimizer import StrategyOptimizer
 
 # Import available strategies
@@ -199,6 +200,14 @@ class BacktestGUI:
             row=row+1, column=1, sticky=tk.W
         )
         row += 2
+
+        # Excel Report Generation
+        self.generate_excel_var = tk.BooleanVar(value=True)
+        ttk.Checkbutton(config_frame, text="Generate Excel Report",
+                       variable=self.generate_excel_var).grid(
+            row=row, column=0, columnspan=2, sticky=tk.W, pady=5
+        )
+        row += 1
 
         # Portfolio-specific settings (initially hidden)
         self.portfolio_frame = ttk.LabelFrame(config_frame, text="Portfolio Settings", padding="5")
@@ -533,6 +542,24 @@ class BacktestGUI:
         logger.log_trades(symbol, backtest_name, result.trades)
         self.log_result(f"\nTrade log saved to: logs/{backtest_name}/{backtest_name}_{symbol}_trades.csv")
 
+        # Generate Excel report if enabled
+        if self.generate_excel_var.get():
+            try:
+                self.log_result("\nGenerating Excel report...")
+                excel_generator = ExcelReportGenerator(
+                    output_directory=Path('logs') / backtest_name / 'reports',
+                    initial_capital=float(self.capital_var.get()),
+                    risk_free_rate=0.02,
+                    benchmark_name="S&P 500"
+                )
+                report_path = excel_generator.generate_report(
+                    result=result,
+                    filename=f"{backtest_name}_{symbol}_report.xlsx"
+                )
+                self.log_result(f"✓ Excel report saved to: {report_path}")
+            except Exception as e:
+                self.log_result(f"⚠ Excel report generation failed: {str(e)}")
+
     def display_portfolio_results(self, results: Dict, backtest_name: str):
         """Display portfolio backtest results."""
         self.log_result("=" * 70)
@@ -573,6 +600,28 @@ class BacktestGUI:
             logger.log_trades(symbol, backtest_name, result.trades)
 
         self.log_result(f"\nTrade logs saved to: logs/{backtest_name}/")
+
+        # Generate Excel reports if enabled
+        if self.generate_excel_var.get():
+            try:
+                self.log_result("\nGenerating Excel reports for portfolio...")
+                excel_generator = ExcelReportGenerator(
+                    output_directory=Path('logs') / backtest_name / 'reports',
+                    initial_capital=float(self.capital_var.get()),
+                    risk_free_rate=0.02,
+                    benchmark_name="S&P 500"
+                )
+
+                for symbol, result in results.items():
+                    report_path = excel_generator.generate_report(
+                        result=result,
+                        filename=f"{backtest_name}_{symbol}_report.xlsx"
+                    )
+                    self.log_result(f"  ✓ {symbol}: {report_path.name}")
+
+                self.log_result(f"\n✓ All Excel reports saved to: logs/{backtest_name}/reports/")
+            except Exception as e:
+                self.log_result(f"⚠ Excel report generation failed: {str(e)}")
 
     def log_result(self, message: str):
         """Log message to results text area."""

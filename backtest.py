@@ -21,6 +21,7 @@ from Classes.Engine.portfolio_engine import PortfolioEngine
 from Classes.Optimization.optimizer import StrategyOptimizer
 from Classes.Analysis.trade_logger import TradeLogger
 from Classes.Analysis.performance_metrics import PerformanceMetrics
+from Classes.Analysis.excel_report_generator import ExcelReportGenerator
 
 from strategies.examples import SimpleMAStrategy, AdvancedTrailingStopStrategy, PartialExitStrategy
 
@@ -289,6 +290,68 @@ def example_partial_exits():
     return result
 
 
+def example_excel_report_generation():
+    """
+    Example: Generate comprehensive Excel report for backtest results.
+    """
+    print("\n" + "="*80)
+    print("EXAMPLE 6: Excel Report Generation")
+    print("="*80)
+
+    # Configure backtest
+    config = BacktestConfig(
+        initial_capital=100000.0,
+        commission=CommissionConfig(mode=CommissionMode.PERCENTAGE, value=0.001)
+    )
+
+    # Load data
+    data_loader = DataLoader(Path('raw_data'))
+    data = data_loader.load_csv('AAPL', required_columns=['date', 'close', 'sma_50'])
+
+    print(f"Loaded {len(data)} bars for AAPL")
+
+    # Create strategy
+    strategy = SimpleMAStrategy(
+        ma_period=50,
+        position_size=0.2,
+        stop_loss_pct=0.05,
+        take_profit_pct=0.15
+    )
+
+    # Run backtest
+    engine = SingleSecurityEngine(config)
+    result = engine.run('AAPL', data, strategy)
+
+    # Display basic metrics
+    metrics = PerformanceMetrics.calculate_metrics(result)
+    PerformanceMetrics.print_metrics(metrics)
+
+    # Generate comprehensive Excel report
+    print("\nGenerating Excel report...")
+    report_generator = ExcelReportGenerator(
+        output_directory=Path('logs/reports'),
+        initial_capital=config.initial_capital,
+        risk_free_rate=0.02,  # 2% risk-free rate
+        benchmark_name="S&P 500"
+    )
+
+    # Generate report with custom filename
+    report_path = report_generator.generate_report(
+        result=result,
+        filename=f"backtest_report_{result.symbol}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.xlsx"
+    )
+
+    print(f"✓ Excel report generated: {report_path}")
+    print(f"\nThe report includes:")
+    print("  - Sheet 1: Summary Dashboard (all key metrics)")
+    print("  - Sheet 2: Trade Log (detailed transaction history)")
+    print("  - Sheet 3: Performance Analysis (drawdown, monthly returns, distributions)")
+    print("  - Sheet 4: Visualizations (equity curve, drawdown chart, return distribution)")
+    print("  - Sheet 5: Market Conditions (template for regime analysis)")
+
+    return result, report_path
+
+
 def main():
     """
     Main function - run all examples.
@@ -313,13 +376,18 @@ def main():
         # Example 5: Partial exits
         # example_partial_exits()  # Uncomment to run
 
+        # Example 6: Excel report generation
+        # example_excel_report_generation()  # Uncomment to generate Excel reports
+
     except Exception as e:
         print(f"\nError running examples: {e}")
         import traceback
         traceback.print_exc()
 
     print("\n" + "="*80)
-    print("Examples completed! Check the 'logs' directory for trade logs.")
+    print("Examples completed!")
+    print("  - Trade logs: Check 'logs' directory for CSV files")
+    print("  - Excel reports: Check 'logs/reports' directory for .xlsx files")
     print("="*80 + "\n")
 
 
