@@ -38,7 +38,6 @@ from strategies.examples import (
     AdvancedTrailingStopStrategy,
     PartialExitStrategy
 )
-from strategies.base_new_highs_strategy import BaseNewHighsStrategy
 
 
 class BacktestGUI:
@@ -47,8 +46,7 @@ class BacktestGUI:
     # Available strategies
     STRATEGIES = {
         'AdvancedTrailingStopStrategy': AdvancedTrailingStopStrategy,
-        'PartialExitStrategy': PartialExitStrategy,
-        'BaseNewHighs': BaseNewHighsStrategy
+        'PartialExitStrategy': PartialExitStrategy
     }
 
     def __init__(self, root):
@@ -320,22 +318,6 @@ class BacktestGUI:
                 'first_target_pct': 0.10,
                 'second_target_pct': 0.20,
                 'stop_loss_pct': 0.06
-            }
-        elif strategy_name == 'BaseNewHighs':
-            self.strategy_params[strategy_name] = {
-                'new_high_n': 14,
-                'sma_length': 200,
-                'ma_fast_length': 7,
-                'ma_slow_length': 21,
-                'ma_lookback_k': 14,
-                'sar_start': 0.02,
-                'sar_increment': 0.02,
-                'sar_maximum': 0.2,
-                'ema_sell_length': 14,
-                'ema_sell_threshold': 3.0,
-                'atr_length': 14,
-                'atr_multiplier': 3.0,
-                'risk_percent': 0.5
             }
 
     def open_strategy_params_window(self):
