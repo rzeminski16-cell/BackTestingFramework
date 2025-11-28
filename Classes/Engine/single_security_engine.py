@@ -225,7 +225,8 @@ class SingleSecurityEngine:
             equity_curve=equity_df,
             final_equity=final_equity,
             total_return=total_return,
-            total_return_pct=total_return_pct
+            total_return_pct=total_return_pct,
+            strategy_params=strategy.get_parameters()
         )
 
         return result
