@@ -330,19 +330,37 @@ class SingleSecurityEngine:
         Returns:
             Remaining capital after entry
         """
+        # Get FX rate for currency conversion
+        fx_rate = self._get_fx_rate(symbol, date)
+
         # Calculate position size
+        # NOTE: Default position_size() divides capital (GBP) by price (USD) which is wrong
+        # for multi-currency. We need to fix this here.
         quantity = strategy.position_size(context, signal)
 
         if quantity <= 0:
             return capital
 
-        # Check position size limit
-        max_capital = capital * self.config.position_size_limit
-        order_value = quantity * price
+        # FIX: Correct the quantity for FX rate
+        # The default position_size() does: shares = (capital_gbp * size) / price_usd
+        # But it should be: shares = ((capital_gbp * size) / fx_rate) / price_usd
+        # To fix: multiply by fx_rate to reverse the incorrect calculation, then divide again correctly
+        if fx_rate != 1.0:
+            # Reverse incorrect calculation: shares * price = capital_gbp * size
+            capital_used_gbp = quantity * price
+            # Calculate capital in security currency: capital_gbp / fx_rate = capital_usd
+            capital_used_security_currency = capital_used_gbp / fx_rate
+            # Recalculate correct shares: capital_usd / price_usd
+            quantity = capital_used_security_currency / price
 
-        if order_value > max_capital:
+        # Check position size limit (in base currency)
+        max_capital_base = capital * self.config.position_size_limit
+        order_value_base = quantity * price * fx_rate  # Convert to base currency
+
+        if order_value_base > max_capital_base:
             # Adjust quantity to fit within limit
-            quantity = max_capital / price
+            max_capital_security = max_capital_base / fx_rate
+            quantity = max_capital_security / price
 
         # Create entry order
         entry_order = Order(
