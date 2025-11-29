@@ -71,8 +71,10 @@ class IndicatorEngine:
         # EMA-based ATR (more responsive)
         df['atr'] = df['tr'].ewm(span=common_period, adjust=False).mean()
 
-        # RMA-based ATR for stop loss (matches TradingView's ta.atr())
-        df['atr_stop'] = IndicatorEngine._calculate_rma(df['tr'], common_period)
+        # SMA-based ATR for stop loss (matches TradingView strategy comment)
+        # Note: TradingView code uses ta.atr() (RMA) but comment says "SMA-based ATR"
+        # Using SMA here as it appears to match actual TradingView strategy behavior
+        df['atr_stop'] = df['tr'].rolling(window=common_period).mean()
 
         # ==== ADAPTIVE COEFFICIENT ====
         # Vectorized volatility ratio calculation
