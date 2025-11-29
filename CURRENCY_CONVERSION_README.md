@@ -52,6 +52,8 @@ Where:
 
 ## Usage Example
 
+**IMPORTANT:** You must pass both `security_registry` and `currency_converter` to the engine for currency conversion to work!
+
 ```python
 from pathlib import Path
 from Classes.Config.config import BacktestConfig, PortfolioConfig
@@ -62,36 +64,37 @@ from Classes.Data.security_registry import SecurityRegistry
 from Classes.Data.data_loader import DataLoader
 from Classes.Strategy.moving_average_crossover import MovingAverageCrossover
 
-# Initialize security registry
+# STEP 1: Initialize security registry (contains currency metadata)
 security_registry = SecurityRegistry(
     metadata_file=Path('config/security_metadata.json')
 )
 
-# Initialize currency converter
+# STEP 2: Initialize currency converter and load FX rates
 currency_converter = CurrencyConverter(base_currency='GBP')
 currency_converter.load_rates_directory(Path('currency_rates/'))
 
-# Create backtest configuration
+# STEP 3: Create backtest configuration
 config = BacktestConfig(
     initial_capital=100000.0,  # GBP
     base_currency='GBP'
 )
 
-# Initialize engine with currency support
+# STEP 4: Initialize engine with BOTH currency_converter AND security_registry
+# ⚠️ If you don't pass these, currencies will default to GBP!
 engine = SingleSecurityEngine(
     config=config,
-    currency_converter=currency_converter,
-    security_registry=security_registry
+    currency_converter=currency_converter,  # ← Required for FX conversion
+    security_registry=security_registry     # ← Required to read security currencies
 )
 
-# Load data and run backtest
+# STEP 5: Load data and run backtest
 data_loader = DataLoader(data_dir=Path('raw_data/'))
 aapl_data = data_loader.load_symbol('AAPL')  # USD-denominated stock
 
 strategy = MovingAverageCrossover(fast_period=20, slow_period=50)
 result = engine.run(symbol='AAPL', data=aapl_data, strategy=strategy)
 
-# Results are in GBP
+# Results are in GBP with proper FX conversion
 print(f"Total Return (GBP): £{result.total_return:.2f}")
 ```
 
