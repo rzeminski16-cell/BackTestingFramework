@@ -27,6 +27,8 @@ from Classes.Config.config import (
 )
 from Classes.Config.strategy_preset import StrategyParameterPreset
 from Classes.Data.data_loader import DataLoader
+from Classes.Data.security_registry import SecurityRegistry
+from Classes.Data.currency_converter import CurrencyConverter
 from Classes.Engine.single_security_engine import SingleSecurityEngine
 from Classes.Engine.portfolio_engine import PortfolioEngine
 from Classes.Analysis.trade_logger import TradeLogger
@@ -61,6 +63,14 @@ class BacktestGUI:
         # Data loader
         self.data_loader = DataLoader(Path('raw_data/processed_exports'))
         self.available_securities = self.data_loader.get_available_symbols()
+
+        # Currency support
+        self.security_registry = SecurityRegistry(Path('config/security_metadata.json'))
+        self.currency_converter = CurrencyConverter(base_currency='GBP')
+        try:
+            self.currency_converter.load_rates_directory(Path('currency_rates/'))
+        except Exception as e:
+            print(f"Warning: Could not load currency rates: {e}")
 
         # Strategy parameters cache
         self.strategy_params = {}
@@ -645,7 +655,12 @@ class BacktestGUI:
         self.reset_progress()
         self.status_var.set(f"Processing {len(data)} bars...")
 
-        engine = SingleSecurityEngine(config)
+        # Create engine with currency support
+        engine = SingleSecurityEngine(
+            config=config,
+            currency_converter=self.currency_converter,
+            security_registry=self.security_registry
+        )
         result = engine.run(symbol, data, strategy, progress_callback=self.update_progress)
 
         # Reset progress bar
@@ -700,7 +715,12 @@ class BacktestGUI:
         self.reset_progress()
         self.status_var.set(f"Processing portfolio backtest...")
 
-        engine = PortfolioEngine(config)
+        # Create engine with currency support
+        engine = PortfolioEngine(
+            config=config,
+            currency_converter=self.currency_converter,
+            security_registry=self.security_registry
+        )
         results = engine.run(data_dict, strategy, progress_callback=self.update_progress)
 
         # Reset progress bar
