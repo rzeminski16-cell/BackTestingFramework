@@ -9,6 +9,7 @@ from typing import Dict, List, Any, Optional
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils.dataframe import dataframe_to_rows
+from openpyxl.utils import get_column_letter
 from openpyxl.chart import LineChart, BarChart, ScatterChart, Reference
 from openpyxl.formatting.rule import ColorScaleRule
 
@@ -451,7 +452,7 @@ class BatchSummaryReportGenerator:
             cell.number_format = ws.cell(row=data_start_row, column=col_idx).number_format
 
         # Apply color scale to Total Return % column
-        return_col_letter = ws.cell(row=data_start_row, column=2).column_letter
+        return_col_letter = get_column_letter(2)
         ws.conditional_formatting.add(
             f'{return_col_letter}{data_start_row}:{return_col_letter}{data_end_row}',
             ColorScaleRule(
@@ -463,7 +464,7 @@ class BatchSummaryReportGenerator:
 
         # Auto-fit columns
         for col_idx in range(1, len(headers) + 1):
-            ws.column_dimensions[ws.cell(row=1, column=col_idx).column_letter].width = 14
+            ws.column_dimensions[get_column_letter(col_idx)].width = 14
 
     def _create_correlation_analysis(self, wb: Workbook, results: Dict[str, BacktestResult],
                                      metrics: Dict[str, Any]):
@@ -592,7 +593,7 @@ class BatchSummaryReportGenerator:
 
         # Format columns
         for col_idx in range(1, len(return_corr.columns) + 2):
-            ws.column_dimensions[ws.cell(row=1, column=col_idx).column_letter].width = 12
+            ws.column_dimensions[get_column_letter(col_idx)].width = 12
 
     def _create_risk_analysis(self, wb: Workbook, results: Dict[str, BacktestResult],
                              metrics: Dict[str, Any]):
@@ -677,7 +678,7 @@ class BatchSummaryReportGenerator:
 
         # Format columns
         for col_idx in range(1, len(headers) + 1):
-            ws.column_dimensions[ws.cell(row=1, column=col_idx).column_letter].width = 16
+            ws.column_dimensions[get_column_letter(col_idx)].width = 16
 
     def _create_visualizations(self, wb: Workbook, results: Dict[str, BacktestResult],
                               metrics: Dict[str, Any]):
