@@ -16,6 +16,7 @@ from Classes.Config.config import (
 )
 from Classes.Data.data_loader import DataLoader
 from Classes.Data.security_registry import SecurityRegistry
+from Classes.Data.currency_converter import CurrencyConverter
 from Classes.Engine.single_security_engine import SingleSecurityEngine
 from Classes.Engine.portfolio_engine import PortfolioEngine
 from Classes.Optimization.optimizer import StrategyOptimizer
@@ -44,9 +45,15 @@ def example_single_security_backtest():
     config = BacktestConfig(
         initial_capital=100000.0,
         commission=commission,
+        base_currency='GBP'  # Base currency for account
         # start_date=datetime(2020, 1, 1),  # Optional date filtering
         # end_date=datetime(2023, 12, 31)
     )
+
+    # Load security metadata and FX rates for multi-currency support
+    security_registry = SecurityRegistry(Path('config/security_metadata.json'))
+    currency_converter = CurrencyConverter(base_currency='GBP')
+    currency_converter.load_rates_directory(Path('currency_rates/'))
 
     # Load data
     data_loader = DataLoader(Path('raw_data/processed_exports'))
@@ -63,8 +70,12 @@ def example_single_security_backtest():
         stop_loss_pct=0.06
     )
 
-    # Run backtest
-    engine = SingleSecurityEngine(config)
+    # Run backtest with currency support
+    engine = SingleSecurityEngine(
+        config=config,
+        currency_converter=currency_converter,
+        security_registry=security_registry
+    )
     result = engine.run('AAPL', data, strategy)
 
     # Calculate and display metrics
@@ -98,8 +109,14 @@ def example_portfolio_backtest():
         commission=commission,
         max_positions=3,  # Max 3 concurrent positions
         position_size_limit=0.3,  # Max 30% per position
-        total_allocation_limit=0.9  # Max 90% total allocation
+        total_allocation_limit=0.9,  # Max 90% total allocation
+        base_currency='GBP'  # Base currency for account
     )
+
+    # Load security metadata and FX rates for multi-currency support
+    security_registry = SecurityRegistry(Path('config/security_metadata.json'))
+    currency_converter = CurrencyConverter(base_currency='GBP')
+    currency_converter.load_rates_directory(Path('currency_rates/'))
 
     # Load data for multiple securities
     data_loader = DataLoader(Path('raw_data'))
@@ -126,8 +143,12 @@ def example_portfolio_backtest():
         second_target_pct=0.20
     )
 
-    # Run portfolio backtest
-    engine = PortfolioEngine(config)
+    # Run portfolio backtest with currency support
+    engine = PortfolioEngine(
+        config=config,
+        currency_converter=currency_converter,
+        security_registry=security_registry
+    )
     results = engine.run(data_dict, strategy)
 
     # Display results for each security
