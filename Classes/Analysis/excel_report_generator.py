@@ -186,7 +186,11 @@ class ExcelReportGenerator:
         consistency = self._calculate_consistency_metrics(equity_curve, trades)
         metrics.update(consistency)
 
-        # F. Additional metrics
+        # F. FX P&L Metrics (if multi-currency trading)
+        fx_metrics = self._calculate_fx_metrics(trades)
+        metrics.update(fx_metrics)
+
+        # G. Additional metrics
         metrics['strategy_exposure'] = self._calculate_exposure(equity_curve, trades)
 
         # Monthly/Quarterly returns
@@ -462,6 +466,54 @@ class ExcelReportGenerator:
 
         return metrics
 
+    def _calculate_fx_metrics(self, trades: List[Trade]) -> Dict[str, Any]:
+        """Calculate FX P&L metrics for multi-currency trading."""
+        fx_metrics = {
+            'total_fx_pl': 0.0,
+            'total_security_pl': 0.0,
+            'fx_contribution_pct': 0.0,
+            'avg_fx_pl': 0.0,
+            'largest_fx_gain': 0.0,
+            'largest_fx_loss': 0.0,
+            'num_fx_positive': 0,
+            'num_fx_negative': 0,
+            'num_fx_neutral': 0,
+        }
+
+        if len(trades) == 0:
+            return fx_metrics
+
+        # Extract FX P&L data from trades
+        fx_pls = []
+        security_pls = []
+
+        for trade in trades:
+            fx_pl = getattr(trade, 'fx_pl', 0.0)
+            security_pl = getattr(trade, 'security_pl', trade.pl)
+
+            fx_pls.append(fx_pl)
+            security_pls.append(security_pl)
+
+            if fx_pl > 0.01:
+                fx_metrics['num_fx_positive'] += 1
+            elif fx_pl < -0.01:
+                fx_metrics['num_fx_negative'] += 1
+            else:
+                fx_metrics['num_fx_neutral'] += 1
+
+        fx_metrics['total_fx_pl'] = sum(fx_pls)
+        fx_metrics['total_security_pl'] = sum(security_pls)
+
+        total_return = sum(trade.pl for trade in trades)
+        if abs(total_return) > 0.01:
+            fx_metrics['fx_contribution_pct'] = (fx_metrics['total_fx_pl'] / total_return) * 100
+
+        fx_metrics['avg_fx_pl'] = np.mean(fx_pls) if fx_pls else 0.0
+        fx_metrics['largest_fx_gain'] = max(fx_pls) if fx_pls else 0.0
+        fx_metrics['largest_fx_loss'] = min(fx_pls) if fx_pls else 0.0
+
+        return fx_metrics
+
     def _calculate_exposure(self, equity_curve: pd.DataFrame, trades: List[Trade]) -> float:
         """Calculate percentage of time in market."""
         if len(equity_curve) == 0:
@@ -648,6 +700,25 @@ class ExcelReportGenerator:
         ]
 
         row = self._add_metrics_table(ws, row, consistency_data)
+        row += 1
+
+        # F. FX P&L Breakdown (if applicable)
+        if metrics.get('total_fx_pl') is not None and abs(metrics.get('total_fx_pl', 0)) > 0.01:
+            row = self._add_section_header(ws, row, "F. FX P&L BREAKDOWN (Multi-Currency)")
+
+            fx_data = [
+                ("Total Security P/L ($)", metrics.get('total_security_pl', 0), "currency"),
+                ("Total FX P/L ($)", metrics.get('total_fx_pl', 0), "currency"),
+                ("FX Contribution (%)", metrics.get('fx_contribution_pct', 0), "percentage"),
+                ("Avg FX P/L per Trade ($)", metrics.get('avg_fx_pl', 0), "currency"),
+                ("Largest FX Gain ($)", metrics.get('largest_fx_gain', 0), "currency"),
+                ("Largest FX Loss ($)", metrics.get('largest_fx_loss', 0), "currency"),
+                ("Trades with FX Gain", metrics.get('num_fx_positive', 0), "number"),
+                ("Trades with FX Loss", metrics.get('num_fx_negative', 0), "number"),
+                ("Trades with No FX Impact", metrics.get('num_fx_neutral', 0), "number"),
+            ]
+
+            row = self._add_metrics_table(ws, row, fx_data)
 
         # Format columns
         ws.column_dimensions['A'].width = 35
@@ -681,9 +752,14 @@ class ExcelReportGenerator:
                 'Exit Reason': trade.exit_reason,
                 'Trade Type': trade.side,
                 'Position Size': trade.quantity,
+                'Security Currency': getattr(trade, 'security_currency', 'GBP'),
+                'Entry FX Rate': getattr(trade, 'entry_fx_rate', 1.0),
+                'Exit FX Rate': getattr(trade, 'exit_fx_rate', 1.0),
                 'Gross P/L': trade.pl + trade.commission_paid,  # P/L before fees
                 'Fees/Commission': trade.commission_paid,
                 'Net P/L': trade.pl,
+                'Security P/L': getattr(trade, 'security_pl', trade.pl),
+                'FX P/L': getattr(trade, 'fx_pl', 0.0),
                 'Return %': trade.pl_pct,
                 'Trade Duration': trade.duration_days,
                 'Cumulative P/L': cumulative_pl,
