@@ -81,15 +81,25 @@ class TradeExecutor:
         trade.security_currency = security_currency
 
         # Calculate FX P&L breakdown
-        # Security P/L in security currency (excluding partial exits for now)
-        security_pl_in_sec_currency = (exit_price - position.entry_price) * position.initial_quantity
+        # NOTE: trade.pl from Trade.from_position() is in SECURITY CURRENCY (e.g., USD)
+        # We need to convert it to BASE CURRENCY (e.g., GBP) for proper P&L tracking
 
-        # Convert security P/L at entry FX rate (what P/L would be if FX didn't change)
-        trade.security_pl = security_pl_in_sec_currency * entry_fx_rate - total_commission
+        # P/L in security currency (before FX conversion)
+        pl_in_sec_currency = trade.pl + total_commission  # Add back commission temporarily
 
-        # FX P/L is the difference between total P/L and security P/L
-        # This captures the gain/loss from FX rate movements
-        trade.fx_pl = trade.pl - trade.security_pl
+        # Security P/L: What the P/L would be if FX rate stayed constant at entry rate
+        # This isolates the price movement from the FX movement
+        trade.security_pl = pl_in_sec_currency * entry_fx_rate - total_commission
+
+        # Total P/L: Actual P/L in base currency using the exit FX rate
+        total_pl_in_base = pl_in_sec_currency * exit_fx_rate - total_commission
+
+        # FX P/L: The difference caused by FX rate changes
+        # If entry_fx_rate == exit_fx_rate, this will be 0
+        trade.fx_pl = total_pl_in_base - trade.security_pl
+
+        # Update trade.pl to be in base currency (was in security currency)
+        trade.pl = total_pl_in_base
 
         self.trades.append(trade)
         return trade
