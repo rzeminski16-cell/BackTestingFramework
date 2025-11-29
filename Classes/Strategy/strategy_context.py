@@ -25,8 +25,11 @@ class StrategyContext:
         current_price: Current close price
         current_date: Current date
         position: Current position (None if no position)
-        available_capital: Available capital for new positions
-        total_equity: Total equity (capital + position value)
+        available_capital: Available capital for new positions (in base currency)
+        total_equity: Total equity (capital + position value, in base currency)
+        symbol: Security symbol being traded
+        fx_rate: Exchange rate from security currency to base currency (1.0 if same currency)
+                 Example: If trading USD security with GBP base, fx_rate=0.8 means $1 = £0.8
     """
     data: pd.DataFrame
     current_index: int
@@ -35,6 +38,8 @@ class StrategyContext:
     position: Optional[Position]
     available_capital: float
     total_equity: float
+    symbol: str = ""
+    fx_rate: float = 1.0
 
     @property
     def has_position(self) -> bool:
