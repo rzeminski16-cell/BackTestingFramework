@@ -46,6 +46,7 @@ class PortfolioEngine:
         self.trade_executor = TradeExecutor(config.commission)
         self.currency_converter = currency_converter
         self.security_registry = security_registry
+        self._fx_rate_warnings = set()  # Track which currency pairs have been warned about
 
     def run(self, data_dict: Dict[str, pd.DataFrame],
             strategy: BaseStrategy,
@@ -288,8 +289,15 @@ class PortfolioEngine:
             date=date
         )
 
-        # Default to 1.0 if rate not available
+        # Default to 1.0 if rate not available (and warn)
         if rate is None:
+            currency_pair = f"{security_currency}/{base_currency}"
+            if currency_pair not in self._fx_rate_warnings:
+                self._fx_rate_warnings.add(currency_pair)
+                print(f"\n⚠️  WARNING: No FX rate available for {currency_pair} on {date.date()}")
+                print(f"   FX rates will default to 1.0 (no conversion)")
+                print(f"   Please ensure your currency_rates/{security_currency}{base_currency}.csv")
+                print(f"   file covers the full date range of your backtest data.\n")
             return 1.0
 
         return rate

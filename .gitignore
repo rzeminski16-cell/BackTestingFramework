@@ -28,3 +28,7 @@ Thumbs.db
 raw_data/
 *.csv
 !requirements.txt
+
+# Debug and test files
+debug_*.py
+test_*.py
