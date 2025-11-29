@@ -117,6 +117,9 @@ class PortfolioEngine:
                 bar_index = data[date_mask].index[0]
                 historical_data = data.iloc[:bar_index+1].copy()
 
+                # Get FX rate for currency conversion
+                fx_rate = self._get_fx_rate(symbol, current_date)
+
                 # Create context
                 context = StrategyContext(
                     data=historical_data,
@@ -125,7 +128,9 @@ class PortfolioEngine:
                     current_date=current_date,
                     position=pm.get_position(),
                     available_capital=capital,
-                    total_equity=total_equity
+                    total_equity=total_equity,
+                    symbol=symbol,
+                    fx_rate=fx_rate
                 )
 
                 # Check stop loss
@@ -325,18 +330,13 @@ class PortfolioEngine:
         # Get FX rate for currency conversion
         fx_rate = self._get_fx_rate(symbol, date)
 
-        # Calculate base quantity
-        # NOTE: Default position_size() divides capital (GBP) by price (USD) which is wrong
+        # Calculate position size
+        # Strategy's position_size() now handles currency conversion internally
+        # using context.fx_rate, so no additional adjustment needed here
         quantity = strategy.position_size(context, signal)
 
         if quantity <= 0:
             return capital
-
-        # FIX: Correct the quantity for FX rate
-        if fx_rate != 1.0:
-            capital_used_gbp = quantity * price
-            capital_used_security_currency = capital_used_gbp / fx_rate
-            quantity = capital_used_security_currency / price
 
         # Apply portfolio position size limit (in base currency)
         max_capital_per_position = capital * self.config.position_size_limit

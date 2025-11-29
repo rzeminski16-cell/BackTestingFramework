@@ -282,29 +282,53 @@ class AlphaTrendStrategy(BaseStrategy):
 
     def position_size(self, context: StrategyContext, signal: Signal) -> float:
         """
-        Calculate position size using risk-based sizing.
+        Calculate position size using risk-based sizing with currency conversion.
 
-        Position size = (Equity * Risk%) / (Entry Price - Stop Loss)
+        Formula: Position size = (Equity * Risk%) / (Stop Distance in Base Currency)
 
-        This ensures consistent risk per trade regardless of stop distance.
+        Where:
+        - Equity: Total equity in base currency (e.g., GBP)
+        - Risk%: Percentage of equity to risk (default: 2%)
+        - Stop Distance: (Entry Price - Stop Loss) * FX Rate
+          This converts stop distance from security currency to base currency
+
+        Example:
+        - Equity: £10,000 GBP
+        - Risk: 2% = £200 GBP
+        - Entry: $100 USD, Stop: $95 USD
+        - FX Rate: 0.8 (1 USD = 0.8 GBP)
+        - Stop Distance: ($100 - $95) * 0.8 = £4 GBP
+        - Position Size: £200 / £4 = 50 shares
+        - Capital Used: 50 shares * $100 * 0.8 = £4,000 GBP
+        - Risk if stopped: 50 shares * £4 = £200 GBP ✓
+
+        This ensures consistent risk per trade regardless of stop distance or currency.
         """
         if signal.stop_loss is None:
             # Fallback to default sizing if no stop loss
             return super().position_size(context, signal)
 
-        equity = context.total_equity
-        risk_amount = equity * (self.risk_percent / 100)
+        equity = context.total_equity  # In base currency (e.g., GBP)
+        risk_amount = equity * (self.risk_percent / 100)  # In base currency
+
+        # Stop distance in security currency (e.g., USD)
         stop_distance = context.current_price - signal.stop_loss
 
         if stop_distance <= 0:
             # Invalid stop loss, fallback to default
             return super().position_size(context, signal)
 
-        # Calculate shares based on risk
-        shares = risk_amount / stop_distance
+        # Convert stop distance to base currency
+        # Example: $5 USD * 0.8 = £4 GBP
+        stop_distance_base = stop_distance * context.fx_rate
 
-        # Ensure we don't exceed available capital
-        max_shares = context.available_capital / context.current_price
+        # Calculate shares based on risk in base currency
+        # Example: £200 GBP / £4 GBP = 50 shares
+        shares = risk_amount / stop_distance_base
+
+        # Ensure we don't exceed available capital (in base currency)
+        # Note: context.current_price is in security currency, so we need to convert
+        max_shares = context.available_capital / (context.current_price * context.fx_rate)
         shares = min(shares, max_shares)
 
         return shares
