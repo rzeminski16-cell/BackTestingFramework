@@ -4,13 +4,16 @@ Backtesting Framework GUI
 A graphical user interface for running backtests with configurable parameters.
 
 Features:
-- Select securities (single or multiple)
-- Choose backtest mode (single security or portfolio)
+- Select securities (single or multiple with Select All button)
+- Choose backtest mode:
+  * Single Security: Test one security at a time
+  * Batch (Individual Tests): Run separate backtests on multiple securities
 - Select and configure strategies
 - Configure commission settings
 - Set date ranges
 - Name backtests
-- View results
+- View results with detailed metrics
+- Generate Excel reports for each security
 - Save trade logs
 """
 
@@ -113,16 +116,19 @@ class BacktestGUI:
         mode_frame.grid(row=row, column=1, sticky=tk.W, pady=5)
         ttk.Radiobutton(mode_frame, text="Single Security", variable=self.mode_var,
                        value="single", command=self.on_mode_change).pack(side=tk.LEFT, padx=5)
-        ttk.Radiobutton(mode_frame, text="Portfolio", variable=self.mode_var,
+        ttk.Radiobutton(mode_frame, text="Batch (Individual Tests)", variable=self.mode_var,
                        value="portfolio", command=self.on_mode_change).pack(side=tk.LEFT, padx=5)
         row += 1
 
         # Securities Selection
         ttk.Label(config_frame, text="Securities:").grid(row=row, column=0, sticky=tk.W, pady=5)
-        securities_frame = ttk.Frame(config_frame)
-        securities_frame.grid(row=row, column=1, sticky=(tk.W, tk.E, tk.N, tk.S), pady=5)
+        securities_container = ttk.Frame(config_frame)
+        securities_container.grid(row=row, column=1, sticky=(tk.W, tk.E, tk.N, tk.S), pady=5)
 
         # Listbox with scrollbar
+        securities_frame = ttk.Frame(securities_container)
+        securities_frame.pack(fill=tk.BOTH, expand=True)
+
         scrollbar = ttk.Scrollbar(securities_frame)
         scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
 
@@ -138,6 +144,14 @@ class BacktestGUI:
         # Populate securities
         for symbol in self.available_securities:
             self.securities_listbox.insert(tk.END, symbol)
+
+        # Selection buttons
+        selection_buttons_frame = ttk.Frame(securities_container)
+        selection_buttons_frame.pack(fill=tk.X, pady=(5, 0))
+        ttk.Button(selection_buttons_frame, text="Select All",
+                  command=self.select_all_securities).pack(side=tk.LEFT, padx=2)
+        ttk.Button(selection_buttons_frame, text="Deselect All",
+                  command=self.deselect_all_securities).pack(side=tk.LEFT, padx=2)
 
         row += 1
 
@@ -299,9 +313,12 @@ class BacktestGUI:
         """Handle backtest mode change."""
         mode = self.mode_var.get()
         if mode == "portfolio":
-            self.portfolio_frame.grid()
+            # Batch mode: multiple securities, individual tests
+            # No portfolio-specific settings needed
+            self.portfolio_frame.grid_remove()
             self.securities_listbox.config(selectmode=tk.MULTIPLE)
         else:
+            # Single mode
             self.portfolio_frame.grid_remove()
             self.securities_listbox.config(selectmode=tk.SINGLE)
 
@@ -546,6 +563,14 @@ class BacktestGUI:
         selection = self.securities_listbox.curselection()
         return [self.securities_listbox.get(i) for i in selection]
 
+    def select_all_securities(self):
+        """Select all securities in the listbox."""
+        self.securities_listbox.selection_set(0, tk.END)
+
+    def deselect_all_securities(self):
+        """Deselect all securities in the listbox."""
+        self.securities_listbox.selection_clear(0, tk.END)
+
     def parse_date(self, date_str: str) -> Optional[datetime]:
         """Parse date string to datetime."""
         if not date_str.strip():
@@ -672,62 +697,66 @@ class BacktestGUI:
     def run_portfolio_backtest(self, symbols: List[str], strategy, capital: float,
                               commission: CommissionConfig, start_date, end_date,
                               backtest_name: str):
-        """Run portfolio backtest."""
-        # Get portfolio settings
-        max_positions = int(self.max_positions_var.get()) if self.max_positions_var.get() else None
-        position_limit = float(self.position_limit_var.get())
-        total_allocation = float(self.total_allocation_var.get())
-
-        # Configure portfolio
-        config = PortfolioConfig(
+        """Run batch backtest - individual backtests for each selected security."""
+        # Configure backtest (same config for all securities)
+        config = BacktestConfig(
             initial_capital=capital,
             commission=commission,
             start_date=start_date,
-            end_date=end_date,
-            max_positions=max_positions,
-            position_size_limit=position_limit,
-            total_allocation_limit=total_allocation
+            end_date=end_date
         )
 
-        # Load data
-        self.log_result(f"Loading data for {len(symbols)} securities...")
-        data_dict = {}
-        for symbol in symbols:
-            try:
-                data = self.data_loader.load_csv(symbol, required_columns=strategy.required_columns())
-                data_dict[symbol] = data
-                self.log_result(f"  {symbol}: {len(data)} bars")
-            except Exception as e:
-                self.log_result(f"  {symbol}: FAILED - {e}")
-
-        if not data_dict:
-            raise ValueError("No data loaded successfully")
-
-        self.log_result("")
-
-        # Run backtest
-        self.log_result(f"Running portfolio backtest: {backtest_name}")
+        self.log_result(f"Running batch backtest: {backtest_name}")
         self.log_result(f"Strategy: {strategy}")
-        self.log_result(f"Securities: {', '.join(data_dict.keys())}")
-        self.log_result(f"Capital: ${capital:,.2f}\n")
+        self.log_result(f"Securities: {', '.join(symbols)}")
+        self.log_result(f"Capital per security: ${capital:,.2f}\n")
+        self.log_result("=" * 70)
+
+        # Run individual backtest for each security
+        results = {}
+        total_securities = len(symbols)
+
+        for idx, symbol in enumerate(symbols, 1):
+            try:
+                self.log_result(f"\n[{idx}/{total_securities}] Testing {symbol}...")
+                self.status_var.set(f"Testing {symbol} ({idx}/{total_securities})...")
+
+                # Load data
+                data = self.data_loader.load_csv(symbol, required_columns=strategy.required_columns())
+                self.log_result(f"  Loaded {len(data)} bars")
+
+                # Reset progress bar for this security
+                self.reset_progress()
+
+                # Create engine with currency support
+                engine = SingleSecurityEngine(
+                    config=config,
+                    currency_converter=self.currency_converter,
+                    security_registry=self.security_registry
+                )
+
+                # Run backtest
+                result = engine.run(symbol, data, strategy, progress_callback=self.update_progress)
+                results[symbol] = result
+
+                # Quick summary
+                self.log_result(f"  ✓ Completed: {result.num_trades} trades, "
+                              f"Return: ${result.total_return:,.2f} ({result.total_return_pct:.2f}%)")
+
+            except Exception as e:
+                self.log_result(f"  ✗ FAILED: {str(e)}")
+                import traceback
+                traceback.print_exc()
+                continue
 
         # Reset progress bar
         self.reset_progress()
-        self.status_var.set(f"Processing portfolio backtest...")
 
-        # Create engine with currency support
-        engine = PortfolioEngine(
-            config=config,
-            currency_converter=self.currency_converter,
-            security_registry=self.security_registry
-        )
-        results = engine.run(data_dict, strategy, progress_callback=self.update_progress)
+        if not results:
+            raise ValueError("No backtests completed successfully")
 
-        # Reset progress bar
-        self.reset_progress()
-
-        # Display results
-        self.display_portfolio_results(results, backtest_name)
+        # Display aggregate results
+        self.display_batch_results(results, backtest_name, config.initial_capital)
 
     def display_result(self, symbol: str, result, backtest_name: str):
         """Display single backtest result."""
@@ -779,38 +808,75 @@ class BacktestGUI:
             except Exception as e:
                 self.log_result(f"⚠ Excel report generation failed: {str(e)}")
 
-    def display_portfolio_results(self, results: Dict, backtest_name: str):
-        """Display portfolio backtest results."""
+    def display_batch_results(self, results: Dict, backtest_name: str, initial_capital: float):
+        """Display batch backtest results - individual tests for multiple securities."""
+        self.log_result("\n" + "=" * 70)
+        self.log_result("BATCH BACKTEST RESULTS (Individual Tests)")
         self.log_result("=" * 70)
-        self.log_result("PORTFOLIO RESULTS")
-        self.log_result("=" * 70)
+
+        # Collect metrics for all securities
+        all_metrics = []
+        for symbol, result in results.items():
+            metrics = PerformanceMetrics.calculate_metrics(result)
+            metrics['symbol'] = symbol
+            all_metrics.append(metrics)
+
+        # Sort by total return descending
+        all_metrics.sort(key=lambda x: x['total_return'], reverse=True)
+
+        # Display summary table
+        self.log_result(f"\n{'Symbol':<10} {'Trades':<8} {'Win Rate':<10} {'P/L':<15} {'Return %':<12} {'Sharpe':<8}")
+        self.log_result("-" * 70)
 
         total_pl = 0
         total_trades = 0
+        winning_securities = 0
 
-        # Table header
-        self.log_result(f"{'Symbol':<10} {'Trades':<10} {'P/L':<15} {'Return %':<12}")
-        self.log_result("-" * 70)
+        for m in all_metrics:
+            total_pl += m['total_return']
+            total_trades += m['num_trades']
+            if m['total_return'] > 0:
+                winning_securities += 1
 
-        # Results per symbol
-        for symbol, result in results.items():
-            total_pl += result.total_return
-            total_trades += result.num_trades
             self.log_result(
-                f"{symbol:<10} {result.num_trades:<10} "
-                f"${result.total_return:>12,.2f} {result.total_return_pct:>10.2f}%"
+                f"{m['symbol']:<10} {m['num_trades']:<8} "
+                f"{m['win_rate']*100:>8.1f}% "
+                f"${m['total_return']:>12,.2f} {m['total_return_pct']:>10.2f}% "
+                f"{m['sharpe_ratio']:>6.2f}"
             )
 
         self.log_result("-" * 70)
 
-        # Get initial capital from first result
-        initial_capital = list(results.values())[0].equity_curve.iloc[0]['equity']
-        total_return_pct = (total_pl / initial_capital) * 100
+        # Calculate aggregate metrics
+        avg_return = total_pl / len(results)
+        avg_return_pct = (avg_return / initial_capital) * 100
+        num_securities = len(results)
 
         self.log_result(
-            f"{'TOTAL':<10} {total_trades:<10} "
-            f"${total_pl:>12,.2f} {total_return_pct:>10.2f}%"
+            f"{'TOTAL':<10} {total_trades:<8} "
+            f"{'':>9} "
+            f"${total_pl:>12,.2f} {(total_pl/(initial_capital*num_securities))*100:>10.2f}%"
         )
+        self.log_result(
+            f"{'AVERAGE':<10} {total_trades//num_securities:<8} "
+            f"{'':>9} "
+            f"${avg_return:>12,.2f} {avg_return_pct:>10.2f}%"
+        )
+        self.log_result("=" * 70)
+
+        # Additional statistics
+        self.log_result(f"\nBatch Statistics:")
+        self.log_result(f"  Securities Tested: {num_securities}")
+        self.log_result(f"  Profitable: {winning_securities} ({winning_securities/num_securities*100:.1f}%)")
+        self.log_result(f"  Unprofitable: {num_securities - winning_securities}")
+        self.log_result(f"  Total Trades: {total_trades}")
+        self.log_result(f"  Average Trades per Security: {total_trades/num_securities:.1f}")
+
+        # Best and worst performers
+        best = all_metrics[0]
+        worst = all_metrics[-1]
+        self.log_result(f"\n  Best Performer: {best['symbol']} (${best['total_return']:,.2f}, {best['total_return_pct']:.2f}%)")
+        self.log_result(f"  Worst Performer: {worst['symbol']} (${worst['total_return']:,.2f}, {worst['total_return_pct']:.2f}%)")
         self.log_result("=" * 70)
 
         # Save trade logs
@@ -819,17 +885,14 @@ class BacktestGUI:
             logger.log_trades(symbol, backtest_name, result.trades, result.strategy_params)
 
         self.log_result(f"\nTrade logs saved to: logs/{backtest_name}/")
-        # Note: Strategy parameters are the same for all symbols in portfolio mode
-        if results and any(r.strategy_params for r in results.values()):
-            self.log_result(f"Strategy parameters saved for each symbol")
 
         # Generate Excel reports if enabled
         if self.generate_excel_var.get():
             try:
-                self.log_result("\nGenerating Excel reports for portfolio...")
+                self.log_result("\nGenerating Excel reports...")
                 excel_generator = ExcelReportGenerator(
                     output_directory=Path('logs') / backtest_name / 'reports',
-                    initial_capital=float(self.capital_var.get()),
+                    initial_capital=initial_capital,
                     risk_free_rate=0.02,
                     benchmark_name="S&P 500"
                 )
