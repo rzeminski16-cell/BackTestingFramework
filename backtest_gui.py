@@ -13,8 +13,19 @@ Features:
 - Set date ranges
 - Name backtests
 - View results with detailed metrics
-- Generate Excel reports for each security
+- Generate Excel reports:
+  * Single mode: Individual report per security
+  * Batch mode: Individual reports + comprehensive summary report with correlation analysis
 - Save trade logs
+
+Batch Mode Reporting:
+- Creates organized folder structure: batch_reports/individual/ for each security
+- Generates batch summary report with:
+  * Aggregate performance across all securities
+  * Correlation analysis (returns, drawdowns)
+  * Comparative performance metrics
+  * Risk analysis
+  * Visual comparisons
 """
 
 import tkinter as tk
@@ -37,6 +48,7 @@ from Classes.Engine.portfolio_engine import PortfolioEngine
 from Classes.Analysis.trade_logger import TradeLogger
 from Classes.Analysis.performance_metrics import PerformanceMetrics
 from Classes.Analysis.excel_report_generator import ExcelReportGenerator
+from Classes.Analysis.batch_summary_report import BatchSummaryReportGenerator
 from Classes.Optimization.optimizer import StrategyOptimizer
 
 # Import available strategies
@@ -886,12 +898,19 @@ class BacktestGUI:
 
         self.log_result(f"\nTrade logs saved to: logs/{backtest_name}/")
 
-        # Generate Excel reports if enabled
+        # Generate Excel reports if enabled (batch-specific structure)
         if self.generate_excel_var.get():
             try:
-                self.log_result("\nGenerating Excel reports...")
+                self.log_result("\nGenerating batch reports...")
+
+                # Create batch reports folder structure
+                batch_reports_dir = Path('logs') / backtest_name / 'batch_reports'
+                individual_reports_dir = batch_reports_dir / 'individual'
+
+                # Generate individual reports for each security
+                self.log_result("\n  Generating individual security reports...")
                 excel_generator = ExcelReportGenerator(
-                    output_directory=Path('logs') / backtest_name / 'reports',
+                    output_directory=individual_reports_dir,
                     initial_capital=initial_capital,
                     risk_free_rate=0.02,
                     benchmark_name="S&P 500"
@@ -902,11 +921,34 @@ class BacktestGUI:
                         result=result,
                         filename=f"{backtest_name}_{symbol}_report.xlsx"
                     )
-                    self.log_result(f"  ✓ {symbol}: {report_path.name}")
+                    self.log_result(f"    ✓ {symbol}: {report_path.name}")
 
-                self.log_result(f"\n✓ All Excel reports saved to: logs/{backtest_name}/reports/")
+                self.log_result(f"\n  ✓ Individual reports saved to: {individual_reports_dir}/")
+
+                # Generate batch summary report with correlation analysis
+                self.log_result("\n  Generating batch summary report...")
+                batch_summary_generator = BatchSummaryReportGenerator(
+                    output_directory=batch_reports_dir,
+                    initial_capital=initial_capital
+                )
+
+                summary_report_path = batch_summary_generator.generate_batch_summary(
+                    results=results,
+                    backtest_name=backtest_name
+                )
+
+                self.log_result(f"  ✓ Summary report: {summary_report_path.name}")
+                self.log_result(f"\n✓ All batch reports saved to: {batch_reports_dir}/")
+                self.log_result("\nThe summary report includes:")
+                self.log_result("  • Aggregate performance metrics across all securities")
+                self.log_result("  • Detailed performance comparison")
+                self.log_result("  • Correlation analysis (return, drawdown correlations)")
+                self.log_result("  • Risk analysis and comparative visualizations")
+
             except Exception as e:
-                self.log_result(f"⚠ Excel report generation failed: {str(e)}")
+                self.log_result(f"⚠ Batch report generation failed: {str(e)}")
+                import traceback
+                traceback.print_exc()
 
     def log_result(self, message: str):
         """Log message to results text area."""
