@@ -29,7 +29,9 @@ class PositionManager:
     def open_position(self, symbol: str, entry_date: datetime, entry_price: float,
                      quantity: float, stop_loss: Optional[float] = None,
                      take_profit: Optional[float] = None, entry_reason: str = "",
-                     commission_paid: float = 0.0) -> None:
+                     commission_paid: float = 0.0,
+                     entry_fx_rate: float = 1.0,
+                     security_currency: str = "GBP") -> None:
         """
         Open a new position.
 
@@ -42,6 +44,8 @@ class PositionManager:
             take_profit: Take profit price
             entry_reason: Reason for entry
             commission_paid: Entry commission
+            entry_fx_rate: FX rate at entry (security currency to base currency)
+            security_currency: Currency the security is denominated in
         """
         if self.has_position:
             raise ValueError(f"Cannot open new position - already in position for {self.position.symbol}")
@@ -55,7 +59,9 @@ class PositionManager:
             stop_loss=stop_loss,
             take_profit=take_profit,
             total_commission_paid=commission_paid,
-            entry_reason=entry_reason
+            entry_reason=entry_reason,
+            entry_fx_rate=entry_fx_rate,
+            security_currency=security_currency
         )
 
     def close_position(self) -> Position:
