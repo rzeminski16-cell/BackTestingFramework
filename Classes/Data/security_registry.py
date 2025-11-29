@@ -14,6 +14,7 @@ class SecurityMetadata:
     type: str = "unknown"  # stock, crypto, commodity, etc.
     sector: str = "unknown"
     description: str = ""
+    currency: str = "GBP"  # Default to GBP (base currency)
 
 
 class SecurityRegistry:
@@ -48,11 +49,13 @@ class SecurityRegistry:
                 symbol=symbol,
                 type=info.get('type', 'unknown'),
                 sector=info.get('sector', 'unknown'),
-                description=info.get('description', '')
+                description=info.get('description', ''),
+                currency=info.get('currency', 'GBP')
             )
 
     def register(self, symbol: str, type: str = "unknown",
-                sector: str = "unknown", description: str = "") -> None:
+                sector: str = "unknown", description: str = "",
+                currency: str = "GBP") -> None:
         """
         Register a security.
 
@@ -61,12 +64,14 @@ class SecurityRegistry:
             type: Security type
             sector: Sector
             description: Description
+            currency: Currency code (e.g., USD, EUR, GBP)
         """
         self.securities[symbol] = SecurityMetadata(
             symbol=symbol,
             type=type,
             sector=sector,
-            description=description
+            description=description,
+            currency=currency
         )
 
     def get_metadata(self, symbol: str) -> Optional[SecurityMetadata]:

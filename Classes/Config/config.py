@@ -59,12 +59,14 @@ class BacktestConfig:
         start_date: Optional start date for backtest (None = from beginning)
         end_date: Optional end date for backtest (None = to end)
         position_size_limit: Maximum position size as fraction of capital (default 1.0 = 100%)
+        base_currency: Base currency for the account (default: GBP)
     """
     initial_capital: float = 100000.0
     commission: CommissionConfig = field(default_factory=CommissionConfig)
     start_date: Optional[datetime] = None
     end_date: Optional[datetime] = None
     position_size_limit: float = 1.0  # Max 100% of capital per position
+    base_currency: str = "GBP"  # Base currency of account
 
     def __post_init__(self):
         """Validate backtest configuration."""
@@ -90,6 +92,7 @@ class PortfolioConfig:
         position_size_limit: Maximum position size as fraction of capital per security
         total_allocation_limit: Maximum total allocation across all positions (default 1.0)
         rebalance_on_exit: Rebalance remaining positions when one closes
+        base_currency: Base currency for the account (default: GBP)
     """
     initial_capital: float = 100000.0
     commission: CommissionConfig = field(default_factory=CommissionConfig)
@@ -99,6 +102,7 @@ class PortfolioConfig:
     position_size_limit: float = 0.3  # Max 30% per position by default
     total_allocation_limit: float = 1.0  # Max 100% total allocation
     rebalance_on_exit: bool = False
+    base_currency: str = "GBP"  # Base currency of account
 
     def __post_init__(self):
         """Validate portfolio configuration."""
