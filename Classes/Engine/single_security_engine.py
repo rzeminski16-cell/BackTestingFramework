@@ -13,6 +13,8 @@ from ..Config.config import BacktestConfig
 from .position_manager import PositionManager
 from .trade_executor import TradeExecutor
 from .backtest_result import BacktestResult
+from ..Data.currency_converter import CurrencyConverter
+from ..Data.security_registry import SecurityRegistry
 
 
 class SingleSecurityEngine:
@@ -29,16 +31,22 @@ class SingleSecurityEngine:
     - Trailing stops
     """
 
-    def __init__(self, config: BacktestConfig):
+    def __init__(self, config: BacktestConfig,
+                 currency_converter: Optional[CurrencyConverter] = None,
+                 security_registry: Optional[SecurityRegistry] = None):
         """
         Initialize backtest engine.
 
         Args:
             config: Backtest configuration
+            currency_converter: Optional currency converter for multi-currency support
+            security_registry: Optional security registry for metadata
         """
         self.config = config
         self.position_manager = PositionManager()
         self.trade_executor = TradeExecutor(config.commission)
+        self.currency_converter = currency_converter
+        self.security_registry = security_registry
 
     def run(self, symbol: str, data: pd.DataFrame, strategy: BaseStrategy,
             progress_callback: Optional[Callable[[int, int], None]] = None) -> BacktestResult:
@@ -93,6 +101,8 @@ class SingleSecurityEngine:
             # StrategyContext uses current_index to prevent lookahead bias
             # This eliminates ~1.3GB of unnecessary copying for typical datasets
             position_value = self.position_manager.get_position_value(current_price)
+            # Convert position value to base currency (GBP)
+            position_value = self._convert_to_base_currency(position_value, symbol, current_date)
             total_equity = capital + position_value
 
             context = StrategyContext(
@@ -111,7 +121,7 @@ class SingleSecurityEngine:
                     if self.position_manager.check_stop_loss(current_price):
                         # Stop loss hit - close position
                         capital = self._close_position(
-                            current_date, current_price, "Stop loss hit", capital
+                            symbol, current_date, current_price, "Stop loss hit", capital
                         )
                         position_value = 0
                         total_equity = capital
@@ -129,7 +139,7 @@ class SingleSecurityEngine:
                     if self.position_manager.check_take_profit(current_price):
                         # Take profit hit - close position
                         capital = self._close_position(
-                            current_date, current_price, "Take profit hit", capital
+                            symbol, current_date, current_price, "Take profit hit", capital
                         )
                         position_value = 0
                         total_equity = capital
@@ -154,10 +164,11 @@ class SingleSecurityEngine:
                 partial_fraction = strategy.should_partial_exit(context)
                 if partial_fraction is not None and partial_fraction > 0:
                     capital = self._partial_exit(
-                        current_date, current_price, partial_fraction,
+                        symbol, current_date, current_price, partial_fraction,
                         "Partial profit taking", capital
                     )
                     position_value = self.position_manager.get_position_value(current_price)
+                    position_value = self._convert_to_base_currency(position_value, symbol, current_date)
                     total_equity = capital + position_value
 
             # Generate signal from strategy
@@ -170,12 +181,13 @@ class SingleSecurityEngine:
                     symbol, current_date, current_price, signal, strategy, context, capital
                 )
                 position_value = self.position_manager.get_position_value(current_price)
+                position_value = self._convert_to_base_currency(position_value, symbol, current_date)
                 total_equity = capital + position_value
 
             elif signal.type == SignalType.SELL and self.position_manager.has_position:
                 # Close position
                 capital = self._close_position(
-                    current_date, current_price, signal.reason or "Strategy exit signal", capital
+                    symbol, current_date, current_price, signal.reason or "Strategy exit signal", capital
                 )
                 position_value = 0
                 total_equity = capital
@@ -183,9 +195,10 @@ class SingleSecurityEngine:
             elif signal.type == SignalType.PARTIAL_EXIT and self.position_manager.has_position:
                 # Partial exit
                 capital = self._partial_exit(
-                    current_date, current_price, signal.size, signal.reason, capital
+                    symbol, current_date, current_price, signal.size, signal.reason, capital
                 )
                 position_value = self.position_manager.get_position_value(current_price)
+                position_value = self._convert_to_base_currency(position_value, symbol, current_date)
                 total_equity = capital + position_value
 
             elif signal.type == SignalType.ADJUST_STOP and self.position_manager.has_position:
@@ -197,6 +210,7 @@ class SingleSecurityEngine:
 
             # Record equity
             position_value = self.position_manager.get_position_value(current_price)
+            position_value = self._convert_to_base_currency(position_value, symbol, current_date)
             total_equity = capital + position_value
 
             equity_history.append({
@@ -210,7 +224,7 @@ class SingleSecurityEngine:
         if self.position_manager.has_position:
             final_bar = data.iloc[-1]
             capital = self._close_position(
-                final_bar['date'], final_bar['close'],
+                symbol, final_bar['date'], final_bar['close'],
                 "End of backtest period", capital
             )
 
@@ -235,6 +249,60 @@ class SingleSecurityEngine:
         )
 
         return result
+
+    def _get_fx_rate(self, symbol: str, date: datetime) -> float:
+        """
+        Get FX rate to convert from security currency to base currency.
+
+        Args:
+            symbol: Security symbol
+            date: Date for the FX rate
+
+        Returns:
+            FX rate (defaults to 1.0 if no conversion needed/available)
+        """
+        if self.currency_converter is None or self.security_registry is None:
+            return 1.0
+
+        # Get security currency
+        metadata = self.security_registry.get_metadata(symbol)
+        if metadata is None:
+            return 1.0
+
+        security_currency = metadata.currency
+        base_currency = self.config.base_currency
+
+        # No conversion needed if same currency
+        if security_currency == base_currency:
+            return 1.0
+
+        # Get conversion rate
+        rate = self.currency_converter.get_rate(
+            from_currency=security_currency,
+            to_currency=base_currency,
+            date=date
+        )
+
+        # Default to 1.0 if rate not available (and warn)
+        if rate is None:
+            return 1.0
+
+        return rate
+
+    def _convert_to_base_currency(self, amount: float, symbol: str, date: datetime) -> float:
+        """
+        Convert amount from security currency to base currency.
+
+        Args:
+            amount: Amount in security currency
+            symbol: Security symbol
+            date: Date for conversion
+
+        Returns:
+            Amount in base currency
+        """
+        fx_rate = self._get_fx_rate(symbol, date)
+        return amount * fx_rate
 
     def _open_position(self, symbol: str, date: datetime, price: float,
                       signal: Signal, strategy: BaseStrategy,
@@ -285,8 +353,11 @@ class SingleSecurityEngine:
         entry_commission = self.trade_executor.execute_order(entry_order)
         total_cost = entry_order.total_value() + entry_commission
 
+        # Convert cost to base currency (GBP)
+        total_cost_base = self._convert_to_base_currency(total_cost, symbol, date)
+
         # Check if we have enough capital
-        if total_cost > capital:
+        if total_cost_base > capital:
             # Insufficient capital - skip this trade
             return capital
 
@@ -302,17 +373,18 @@ class SingleSecurityEngine:
             commission_paid=entry_commission
         )
 
-        # Deduct from capital
-        capital -= total_cost
+        # Deduct from capital (in base currency)
+        capital -= total_cost_base
 
         return capital
 
-    def _close_position(self, date: datetime, price: float,
+    def _close_position(self, symbol: str, date: datetime, price: float,
                        reason: str, capital: float) -> float:
         """
         Close current position.
 
         Args:
+            symbol: Security symbol
             date: Exit date
             price: Exit price
             reason: Exit reason
@@ -339,8 +411,11 @@ class SingleSecurityEngine:
         exit_commission = self.trade_executor.execute_order(exit_order)
         proceeds = exit_order.total_value() - exit_commission
 
-        # Add proceeds to capital
-        capital += proceeds
+        # Convert proceeds to base currency (GBP)
+        proceeds_base = self._convert_to_base_currency(proceeds, symbol, date)
+
+        # Add proceeds to capital (in base currency)
+        capital += proceeds_base
 
         # Create trade record
         self.trade_executor.create_trade(
@@ -356,12 +431,13 @@ class SingleSecurityEngine:
 
         return capital
 
-    def _partial_exit(self, date: datetime, price: float, fraction: float,
+    def _partial_exit(self, symbol: str, date: datetime, price: float, fraction: float,
                      reason: str, capital: float) -> float:
         """
         Partially exit position.
 
         Args:
+            symbol: Security symbol
             date: Exit date
             price: Exit price
             fraction: Fraction to exit (0.0-1.0)
@@ -389,8 +465,11 @@ class SingleSecurityEngine:
         exit_commission = self.trade_executor.execute_order(exit_order)
         proceeds = exit_order.total_value() - exit_commission
 
-        # Add proceeds to capital
-        capital += proceeds
+        # Convert proceeds to base currency (GBP)
+        proceeds_base = self._convert_to_base_currency(proceeds, symbol, date)
+
+        # Add proceeds to capital (in base currency)
+        capital += proceeds_base
 
         # Record partial exit
         self.position_manager.add_partial_exit(

@@ -15,6 +15,8 @@ from ..Config.config import PortfolioConfig
 from .position_manager import PositionManager
 from .trade_executor import TradeExecutor
 from .backtest_result import BacktestResult
+from ..Data.currency_converter import CurrencyConverter
+from ..Data.security_registry import SecurityRegistry
 
 
 class PortfolioEngine:
@@ -28,16 +30,22 @@ class PortfolioEngine:
     - All features of single-security engine
     """
 
-    def __init__(self, config: PortfolioConfig):
+    def __init__(self, config: PortfolioConfig,
+                 currency_converter: Optional[CurrencyConverter] = None,
+                 security_registry: Optional[SecurityRegistry] = None):
         """
         Initialize portfolio engine.
 
         Args:
             config: Portfolio configuration
+            currency_converter: Optional currency converter for multi-currency support
+            security_registry: Optional security registry for metadata
         """
         self.config = config
         self.position_managers: Dict[str, PositionManager] = {}
         self.trade_executor = TradeExecutor(config.commission)
+        self.currency_converter = currency_converter
+        self.security_registry = security_registry
 
     def run(self, data_dict: Dict[str, pd.DataFrame],
             strategy: BaseStrategy,
@@ -81,11 +89,13 @@ class PortfolioEngine:
                 if len(date_data) > 0:
                     current_prices[symbol] = date_data.iloc[0]['close']
 
-            # Calculate total position value
+            # Calculate total position value (converted to base currency)
             total_position_value = 0
             for symbol, pm in self.position_managers.items():
                 if pm.has_position and symbol in current_prices:
-                    total_position_value += pm.get_position_value(current_prices[symbol])
+                    pos_value = pm.get_position_value(current_prices[symbol])
+                    pos_value_base = self._convert_to_base_currency(pos_value, symbol, current_date)
+                    total_position_value += pos_value_base
 
             total_equity = capital + total_position_value
 
@@ -245,6 +255,60 @@ class PortfolioEngine:
 
         return results
 
+    def _get_fx_rate(self, symbol: str, date: datetime) -> float:
+        """
+        Get FX rate to convert from security currency to base currency.
+
+        Args:
+            symbol: Security symbol
+            date: Date for the FX rate
+
+        Returns:
+            FX rate (defaults to 1.0 if no conversion needed/available)
+        """
+        if self.currency_converter is None or self.security_registry is None:
+            return 1.0
+
+        # Get security currency
+        metadata = self.security_registry.get_metadata(symbol)
+        if metadata is None:
+            return 1.0
+
+        security_currency = metadata.currency
+        base_currency = self.config.base_currency
+
+        # No conversion needed if same currency
+        if security_currency == base_currency:
+            return 1.0
+
+        # Get conversion rate
+        rate = self.currency_converter.get_rate(
+            from_currency=security_currency,
+            to_currency=base_currency,
+            date=date
+        )
+
+        # Default to 1.0 if rate not available
+        if rate is None:
+            return 1.0
+
+        return rate
+
+    def _convert_to_base_currency(self, amount: float, symbol: str, date: datetime) -> float:
+        """
+        Convert amount from security currency to base currency.
+
+        Args:
+            amount: Amount in security currency
+            symbol: Security symbol
+            date: Date for conversion
+
+        Returns:
+            Amount in base currency
+        """
+        fx_rate = self._get_fx_rate(symbol, date)
+        return amount * fx_rate
+
     def _open_position(self, symbol: str, date: datetime, price: float,
                       signal: Signal, strategy: BaseStrategy,
                       context: StrategyContext, capital: float,
@@ -293,7 +357,10 @@ class PortfolioEngine:
         entry_commission = self.trade_executor.execute_order(entry_order)
         total_cost = entry_order.total_value() + entry_commission
 
-        if total_cost > capital:
+        # Convert cost to base currency
+        total_cost_base = self._convert_to_base_currency(total_cost, symbol, date)
+
+        if total_cost_base > capital:
             return capital  # Insufficient capital
 
         # Open position
@@ -308,7 +375,7 @@ class PortfolioEngine:
             commission_paid=entry_commission
         )
 
-        capital -= total_cost
+        capital -= total_cost_base
         return capital
 
     def _close_position(self, symbol: str, date: datetime, price: float,
@@ -330,7 +397,10 @@ class PortfolioEngine:
         exit_commission = self.trade_executor.execute_order(exit_order)
         proceeds = exit_order.total_value() - exit_commission
 
-        capital += proceeds
+        # Convert proceeds to base currency
+        proceeds_base = self._convert_to_base_currency(proceeds, symbol, date)
+
+        capital += proceeds_base
 
         self.trade_executor.create_trade(
             position=position,
@@ -363,7 +433,10 @@ class PortfolioEngine:
         exit_commission = self.trade_executor.execute_order(exit_order)
         proceeds = exit_order.total_value() - exit_commission
 
-        capital += proceeds
+        # Convert proceeds to base currency
+        proceeds_base = self._convert_to_base_currency(proceeds, symbol, date)
+
+        capital += proceeds_base
 
         pm.add_partial_exit(
             exit_date=date,

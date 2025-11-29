@@ -2,36 +2,43 @@
   "AAPL": {
     "type": "stock",
     "sector": "technology",
-    "description": "Apple Inc."
+    "description": "Apple Inc.",
+    "currency": "USD"
   },
   "MSFT": {
     "type": "stock",
     "sector": "technology",
-    "description": "Microsoft Corporation"
+    "description": "Microsoft Corporation",
+    "currency": "USD"
   },
   "JPM": {
     "type": "stock",
     "sector": "financials",
-    "description": "JPMorgan Chase & Co."
+    "description": "JPMorgan Chase & Co.",
+    "currency": "USD"
   },
   "GLD": {
     "type": "commodity",
     "sector": "precious_metals",
-    "description": "Gold ETF"
+    "description": "Gold ETF",
+    "currency": "USD"
   },
   "USO": {
     "type": "commodity",
     "sector": "energy",
-    "description": "Crude Oil ETF"
+    "description": "Crude Oil ETF",
+    "currency": "USD"
   },
   "BTCUSD": {
     "type": "crypto",
     "sector": "cryptocurrency",
-    "description": "Bitcoin USD"
+    "description": "Bitcoin USD",
+    "currency": "USD"
   },
   "ETHUSD": {
     "type": "crypto",
     "sector": "cryptocurrency",
-    "description": "Ethereum USD"
+    "description": "Ethereum USD",
+    "currency": "USD"
   }
 }
