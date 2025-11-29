@@ -284,23 +284,27 @@ class AlphaTrendStrategy(BaseStrategy):
         """
         Calculate position size using risk-based sizing with currency conversion.
 
-        Formula: Position size = (Equity * Risk%) / (Stop Distance in Base Currency)
+        Matches TradingView's calculation exactly:
+        stopDistance = atrForStop * atrMultiplier
+        positionSize = riskAmount / stopDistance
+
+        Formula: Position size = (Equity * Risk%) / (ATR * Multiplier in Base Currency)
 
         Where:
         - Equity: Total equity in base currency (e.g., GBP)
         - Risk%: Percentage of equity to risk (default: 2%)
-        - Stop Distance: (Entry Price - Stop Loss) * FX Rate
-          This converts stop distance from security currency to base currency
+        - Stop Distance: (ATR * Multiplier) * FX Rate
+          This converts ATR-based stop distance to base currency
 
         Example:
         - Equity: £10,000 GBP
         - Risk: 2% = £200 GBP
-        - Entry: $100 USD, Stop: $95 USD
+        - ATR: $5 USD, Multiplier: 2.5
         - FX Rate: 0.8 (1 USD = 0.8 GBP)
-        - Stop Distance: ($100 - $95) * 0.8 = £4 GBP
-        - Position Size: £200 / £4 = 50 shares
-        - Capital Used: 50 shares * $100 * 0.8 = £4,000 GBP
-        - Risk if stopped: 50 shares * £4 = £200 GBP ✓
+        - Stop Distance: ($5 * 2.5) * 0.8 = $12.50 * 0.8 = £10 GBP
+        - Position Size: £200 / £10 = 20 shares
+        - Capital Used: 20 shares * $100 * 0.8 = £1,600 GBP
+        - Risk if stopped: 20 shares * £10 = £200 GBP ✓
 
         This ensures consistent risk per trade regardless of stop distance or currency.
         """
@@ -308,22 +312,30 @@ class AlphaTrendStrategy(BaseStrategy):
             # Fallback to default sizing if no stop loss
             return super().position_size(context, signal)
 
+        # Get ATR from current bar (matches TradingView's atrForStop)
+        atr_stop = context.current_bar.get('atr_stop')
+        if atr_stop is None or pd.isna(atr_stop):
+            # Fallback to default sizing if ATR not available
+            return super().position_size(context, signal)
+
         equity = context.total_equity  # In base currency (e.g., GBP)
         risk_amount = equity * (self.risk_percent / 100)  # In base currency
 
-        # Stop distance in security currency (e.g., USD)
-        stop_distance = context.current_price - signal.stop_loss
+        # Calculate stop distance directly from ATR (matches TradingView exactly)
+        # TradingView: stopDistance = atrForStop * atrMultiplier
+        stop_distance = atr_stop * self.stop_atr_multiplier  # In security currency
 
         if stop_distance <= 0:
-            # Invalid stop loss, fallback to default
+            # Invalid stop distance, fallback to default
             return super().position_size(context, signal)
 
         # Convert stop distance to base currency
-        # Example: $5 USD * 0.8 = £4 GBP
+        # Example: $12.50 USD * 0.8 = £10 GBP
         stop_distance_base = stop_distance * context.fx_rate
 
         # Calculate shares based on risk in base currency
-        # Example: £200 GBP / £4 GBP = 50 shares
+        # TradingView: positionSize = riskAmount / stopDistance
+        # Example: £200 GBP / £10 GBP = 20 shares
         shares = risk_amount / stop_distance_base
 
         # Ensure we don't exceed available capital (in base currency)
