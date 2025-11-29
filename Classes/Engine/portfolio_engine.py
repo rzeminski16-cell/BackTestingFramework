@@ -66,6 +66,13 @@ class PortfolioEngine:
         for symbol in data_dict.keys():
             self.position_managers[symbol] = PositionManager()
 
+        # CRITICAL: Pre-calculate indicators for each security
+        # This ensures strategies have all required indicators before signal generation
+        prepared_data_dict = {}
+        for symbol, data in data_dict.items():
+            prepared_data_dict[symbol] = strategy.prepare_data(data)
+        data_dict = prepared_data_dict
+
         # Get unified date range across all securities
         all_dates = self._get_unified_dates(data_dict)
 
