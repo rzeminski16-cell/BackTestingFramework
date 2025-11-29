@@ -5,10 +5,10 @@
     "description": "Apple Inc.",
     "currency": "USD"
   },
-  "MSFT": {
+  "BLK": {
     "type": "stock",
-    "sector": "technology",
-    "description": "Microsoft Corporation",
+    "sector": "finance",
+    "description": "Blackrock",
     "currency": "USD"
   },
   "JPM": {
@@ -17,28 +17,34 @@
     "description": "JPMorgan Chase & Co.",
     "currency": "USD"
   },
-  "GLD": {
-    "type": "commodity",
-    "sector": "precious_metals",
-    "description": "Gold ETF",
+  "DLY": {
+    "type": "stock",
+    "sector": "financials",
+    "description": "Dutch",
     "currency": "USD"
   },
-  "USO": {
-    "type": "commodity",
-    "sector": "energy",
-    "description": "Crude Oil ETF",
+  "HLI": {
+    "type": "stock",
+    "sector": "financials",
+    "description": "HLI",
     "currency": "USD"
   },
-  "BTCUSD": {
-    "type": "crypto",
-    "sector": "cryptocurrency",
-    "description": "Bitcoin USD",
+  "RJF": {
+    "type": "stock",
+    "sector": "financials",
+    "description": "RJF",
     "currency": "USD"
   },
-  "ETHUSD": {
-    "type": "crypto",
-    "sector": "cryptocurrency",
-    "description": "Ethereum USD",
+  "SF": {
+    "type": "stock",
+    "sector": "financials",
+    "description": "San francisco",
+    "currency": "USD"
+  },
+ "STT": {
+    "type": "stock",
+    "sector": "financials",
+    "description": "STT",
     "currency": "USD"
   }
 }

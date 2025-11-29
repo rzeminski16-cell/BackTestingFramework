@@ -9,9 +9,9 @@
   "volume_alignment_window": 14,
   "signal_lookback": 9,
   "exit_ema_period": 50,
-  "stop_atr_multiplier": 2.5,
+  "stop_atr_multiplier": 1.0,
   "grace_period_bars": 14,
   "momentum_gain_pct": 2.0,
   "momentum_lookback": 7,
-  "risk_percent": 2.0
+  "risk_percent": 1.0
 }

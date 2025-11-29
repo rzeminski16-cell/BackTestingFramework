@@ -32,7 +32,7 @@ def load_strategy_preset(preset_file: str) -> dict:
     return preset['parameters']
 
 
-def load_data(symbol: str, data_dir: str = 'data') -> pd.DataFrame:
+def load_data(symbol: str, data_dir: str = 'raw_data/processed_exports') -> pd.DataFrame:
     """Load OHLCV data for the given symbol."""
     data_path = Path(data_dir) / f"{symbol}.csv"
 
