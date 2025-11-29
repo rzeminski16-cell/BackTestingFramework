@@ -363,6 +363,14 @@ class PortfolioEngine:
         if total_cost_base > capital:
             return capital  # Insufficient capital
 
+        # Get entry FX rate and currency
+        entry_fx_rate = self._get_fx_rate(symbol, date)
+        security_currency = "GBP"
+        if self.security_registry:
+            metadata = self.security_registry.get_metadata(symbol)
+            if metadata:
+                security_currency = metadata.currency
+
         # Open position
         pm.open_position(
             symbol=symbol,
@@ -372,7 +380,9 @@ class PortfolioEngine:
             stop_loss=signal.stop_loss,
             take_profit=signal.take_profit,
             entry_reason=signal.reason,
-            commission_paid=entry_commission
+            commission_paid=entry_commission,
+            entry_fx_rate=entry_fx_rate,
+            security_currency=security_currency
         )
 
         capital -= total_cost_base
@@ -402,12 +412,18 @@ class PortfolioEngine:
 
         capital += proceeds_base
 
+        # Get exit FX rate
+        exit_fx_rate = self._get_fx_rate(symbol, date)
+
         self.trade_executor.create_trade(
             position=position,
             exit_date=date,
             exit_price=price,
             exit_reason=reason,
-            exit_commission=exit_commission
+            exit_commission=exit_commission,
+            entry_fx_rate=position.entry_fx_rate,
+            exit_fx_rate=exit_fx_rate,
+            security_currency=position.security_currency
         )
 
         pm.close_position()

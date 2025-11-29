@@ -31,6 +31,8 @@ class Position:
         partial_exits: List of partial exit records
         total_commission_paid: Total commission paid on this position
         entry_reason: Reason for entering position
+        entry_fx_rate: FX rate at entry (for FX P&L calculation)
+        security_currency: Currency the security is denominated in
     """
     symbol: str
     entry_date: datetime
@@ -42,6 +44,8 @@ class Position:
     partial_exits: List[PartialExit] = field(default_factory=list)
     total_commission_paid: float = 0.0
     entry_reason: str = ""
+    entry_fx_rate: float = 1.0  # FX rate at entry
+    security_currency: str = "GBP"  # Currency security is denominated in
 
     @property
     def is_open(self) -> bool:

@@ -361,6 +361,14 @@ class SingleSecurityEngine:
             # Insufficient capital - skip this trade
             return capital
 
+        # Get entry FX rate and currency
+        entry_fx_rate = self._get_fx_rate(symbol, date)
+        security_currency = "GBP"
+        if self.security_registry:
+            metadata = self.security_registry.get_metadata(symbol)
+            if metadata:
+                security_currency = metadata.currency
+
         # Open position
         self.position_manager.open_position(
             symbol=symbol,
@@ -370,7 +378,9 @@ class SingleSecurityEngine:
             stop_loss=signal.stop_loss,
             take_profit=signal.take_profit,
             entry_reason=signal.reason,
-            commission_paid=entry_commission
+            commission_paid=entry_commission,
+            entry_fx_rate=entry_fx_rate,
+            security_currency=security_currency
         )
 
         # Deduct from capital (in base currency)
@@ -417,13 +427,19 @@ class SingleSecurityEngine:
         # Add proceeds to capital (in base currency)
         capital += proceeds_base
 
-        # Create trade record
+        # Get exit FX rate
+        exit_fx_rate = self._get_fx_rate(symbol, date)
+
+        # Create trade record with FX information
         self.trade_executor.create_trade(
             position=position,
             exit_date=date,
             exit_price=price,
             exit_reason=reason,
-            exit_commission=exit_commission
+            exit_commission=exit_commission,
+            entry_fx_rate=position.entry_fx_rate,
+            exit_fx_rate=exit_fx_rate,
+            security_currency=position.security_currency
         )
 
         # Close position

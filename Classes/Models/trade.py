@@ -22,8 +22,13 @@ class Trade:
         initial_stop_loss: Initial stop loss price
         final_stop_loss: Final stop loss price (may differ due to trailing)
         take_profit: Take profit price
-        pl: Profit/Loss in currency
+        pl: Profit/Loss in base currency (GBP)
         pl_pct: Profit/Loss as percentage
+        security_pl: P/L from security price movement (in base currency)
+        fx_pl: P/L from FX rate changes (in base currency)
+        entry_fx_rate: FX rate at entry (security currency to base currency)
+        exit_fx_rate: FX rate at exit (security currency to base currency)
+        security_currency: Currency the security is denominated in
         duration_days: Trade duration in days
         entry_reason: Reason for entry
         exit_reason: Reason for exit
@@ -43,6 +48,11 @@ class Trade:
     take_profit: Optional[float] = None
     pl: float = 0.0
     pl_pct: float = 0.0
+    security_pl: float = 0.0  # P/L from price movement in base currency
+    fx_pl: float = 0.0  # P/L from FX rate changes
+    entry_fx_rate: float = 1.0  # FX rate at entry
+    exit_fx_rate: float = 1.0  # FX rate at exit
+    security_currency: str = "GBP"  # Currency security is denominated in
     duration_days: int = 0
     entry_reason: str = ""
     exit_reason: str = ""
@@ -90,6 +100,11 @@ class Trade:
             'take_profit': self.take_profit,
             'pl': self.pl,
             'pl_pct': self.pl_pct,
+            'security_pl': self.security_pl,
+            'fx_pl': self.fx_pl,
+            'entry_fx_rate': self.entry_fx_rate,
+            'exit_fx_rate': self.exit_fx_rate,
+            'security_currency': self.security_currency,
             'duration_days': self.duration_days,
             'entry_reason': self.entry_reason,
             'exit_reason': self.exit_reason,
@@ -154,6 +169,7 @@ class Trade:
 
     def __str__(self) -> str:
         """String representation of trade."""
+        fx_str = f", FX P/L: {self.fx_pl:.2f}" if self.fx_pl != 0 else ""
         return (f"{self.symbol} {self.side}: "
                 f"{self.entry_date.strftime('%Y-%m-%d')} -> {self.exit_date.strftime('%Y-%m-%d')}, "
-                f"P/L: {self.pl:.2f} ({self.pl_pct:.2f}%)")
+                f"P/L: {self.pl:.2f} ({self.pl_pct:.2f}%){fx_str}")
