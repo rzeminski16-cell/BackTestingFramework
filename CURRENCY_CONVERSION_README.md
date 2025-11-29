@@ -37,6 +37,22 @@ Where:
 - `date`: The date of the exchange rate
 - `rate`: Exchange rate from the security currency to GBP (e.g., 1 USD = 0.7634 GBP)
 
+**IMPORTANT - Date Range Requirements:**
+
+⚠️  **Your FX rate CSV files MUST cover the entire date range of your backtest data!**
+
+For example, if your backtest data spans from **2011-01-01 to 2025-12-31**, your `USDGBP.csv` file must also contain rates from at least **2011-01-01** (or earlier) to **2025-12-31** (or later).
+
+If the FX rate file doesn't cover the full date range:
+- The framework will display a warning when missing dates are encountered
+- FX rates will default to 1.0 (no conversion) for dates outside the CSV range
+- This will result in **inaccurate P&L calculations** for trades on those dates
+
+**Missing Dates Handling:**
+- The framework uses "last observation carried forward" for missing dates (weekends, holidays)
+- If a specific date is not in the CSV, it will use the most recent prior date's rate
+- This only works if there IS a prior date in the CSV - otherwise it returns 1.0
+
 ### 3. How It Works
 
 1. **Position Values**: When calculating position values, the framework automatically converts from the security's currency to GBP using the exchange rate for that date.
