@@ -322,30 +322,44 @@ class PortfolioEngine:
                       context: StrategyContext, capital: float,
                       pm: PositionManager) -> float:
         """Open position with portfolio constraints."""
+        # Get FX rate for currency conversion
+        fx_rate = self._get_fx_rate(symbol, date)
+
         # Calculate base quantity
+        # NOTE: Default position_size() divides capital (GBP) by price (USD) which is wrong
         quantity = strategy.position_size(context, signal)
 
         if quantity <= 0:
             return capital
 
-        # Apply portfolio position size limit
+        # FIX: Correct the quantity for FX rate
+        if fx_rate != 1.0:
+            capital_used_gbp = quantity * price
+            capital_used_security_currency = capital_used_gbp / fx_rate
+            quantity = capital_used_security_currency / price
+
+        # Apply portfolio position size limit (in base currency)
         max_capital_per_position = capital * self.config.position_size_limit
-        order_value = quantity * price
+        order_value_base = quantity * price * fx_rate  # Convert to base currency
 
-        if order_value > max_capital_per_position:
-            quantity = max_capital_per_position / price
+        if order_value_base > max_capital_per_position:
+            max_capital_security = max_capital_per_position / fx_rate
+            quantity = max_capital_security / price
 
-        # Apply total allocation limit
-        total_positions_value = sum(
-            pm.get_position_value(price) for pm in self.position_managers.values()
+        # Apply total allocation limit (need to convert all positions to base currency)
+        total_positions_value_base = sum(
+            self._convert_to_base_currency(pm.get_position_value(price), sym, date)
+            for sym, pm in self.position_managers.items()
             if pm.has_position
         )
-        max_total_value = (capital + total_positions_value) * self.config.total_allocation_limit
-        available_for_new = max_total_value - total_positions_value
+        max_total_value = (capital + total_positions_value_base) * self.config.total_allocation_limit
+        available_for_new = max_total_value - total_positions_value_base
 
-        if order_value > available_for_new:
+        order_value_base = quantity * price * fx_rate
+        if order_value_base > available_for_new:
             if available_for_new > 0:
-                quantity = available_for_new / price
+                available_security = available_for_new / fx_rate
+                quantity = available_security / price
             else:
                 return capital  # No room for new position
 
