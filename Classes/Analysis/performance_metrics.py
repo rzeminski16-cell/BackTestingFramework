@@ -80,6 +80,20 @@ class PerformanceMetrics:
         durations = [t.duration_days for t in trades]
         avg_duration = np.mean(durations) if durations else 0.0
 
+        # FX P&L statistics
+        total_security_pl = sum(t.security_pl for t in trades)
+        total_fx_pl = sum(t.fx_pl for t in trades)
+        fx_contribution_pct = (total_fx_pl / result.total_return * 100) if result.total_return != 0 else 0.0
+
+        # Count trades with positive/negative FX impact
+        fx_positive_trades = [t for t in trades if t.fx_pl > 0]
+        fx_negative_trades = [t for t in trades if t.fx_pl < 0]
+        fx_neutral_trades = [t for t in trades if t.fx_pl == 0]
+
+        avg_fx_pl = np.mean([t.fx_pl for t in trades]) if trades else 0.0
+        largest_fx_gain = max([t.fx_pl for t in trades]) if trades else 0.0
+        largest_fx_loss = min([t.fx_pl for t in trades]) if trades else 0.0
+
         # Sharpe ratio (annualized)
         sharpe = PerformanceMetrics.calculate_sharpe_ratio(equity_curve)
 
@@ -98,7 +112,17 @@ class PerformanceMetrics:
             'avg_trade_duration': avg_duration,
             'sharpe_ratio': sharpe,
             'max_drawdown': max_dd,
-            'max_drawdown_pct': max_dd_pct
+            'max_drawdown_pct': max_dd_pct,
+            # FX P&L metrics
+            'total_security_pl': total_security_pl,
+            'total_fx_pl': total_fx_pl,
+            'fx_contribution_pct': fx_contribution_pct,
+            'num_fx_positive': len(fx_positive_trades),
+            'num_fx_negative': len(fx_negative_trades),
+            'num_fx_neutral': len(fx_neutral_trades),
+            'avg_fx_pl': avg_fx_pl,
+            'largest_fx_gain': largest_fx_gain,
+            'largest_fx_loss': largest_fx_loss
         })
 
         return metrics
@@ -182,4 +206,20 @@ class PerformanceMetrics:
         print(f"Avg Trade Duration:  {metrics['avg_trade_duration']:.1f} days")
         print(f"Sharpe Ratio:        {metrics['sharpe_ratio']:.2f}")
         print(f"Max Drawdown:        ${metrics['max_drawdown']:,.2f} ({metrics['max_drawdown_pct']:.2f}%)")
+
+        # FX P&L breakdown (if available)
+        if 'total_fx_pl' in metrics and metrics.get('num_trades', 0) > 0:
+            print(f"\n{'-'*60}")
+            print(f"FX P&L Breakdown:")
+            print(f"{'-'*60}")
+            print(f"Security P&L:        ${metrics.get('total_security_pl', 0):,.2f}")
+            print(f"FX P&L:              ${metrics.get('total_fx_pl', 0):,.2f}")
+            print(f"FX Contribution:     {metrics.get('fx_contribution_pct', 0):.2f}% of total return")
+            print(f"Avg FX P&L per trade: ${metrics.get('avg_fx_pl', 0):,.2f}")
+            print(f"Largest FX Gain:     ${metrics.get('largest_fx_gain', 0):,.2f}")
+            print(f"Largest FX Loss:     ${metrics.get('largest_fx_loss', 0):,.2f}")
+            print(f"Trades with FX gain: {metrics.get('num_fx_positive', 0)}")
+            print(f"Trades with FX loss: {metrics.get('num_fx_negative', 0)}")
+            print(f"Trades with no FX:   {metrics.get('num_fx_neutral', 0)}")
+
         print(f"{'='*60}\n")
