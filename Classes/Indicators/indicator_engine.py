@@ -71,8 +71,8 @@ class IndicatorEngine:
         # EMA-based ATR (more responsive)
         df['atr'] = df['tr'].ewm(span=common_period, adjust=False).mean()
 
-        # SMA-based ATR for stop loss
-        df['atr_stop'] = df['tr'].rolling(window=common_period).mean()
+        # RMA-based ATR for stop loss (matches TradingView's ta.atr())
+        df['atr_stop'] = IndicatorEngine._calculate_rma(df['tr'], common_period)
 
         # ==== ADAPTIVE COEFFICIENT ====
         # Vectorized volatility ratio calculation
@@ -294,3 +294,24 @@ class IndicatorEngine:
         rsi = 100 - (100 / (1 + rs))
 
         return rsi
+
+    @staticmethod
+    def _calculate_rma(data: pd.Series, period: int) -> pd.Series:
+        """
+        Calculate RMA (Relative Moving Average), also known as Wilder's smoothing.
+
+        This is the same method used by TradingView's ta.atr() function.
+        RMA formula: RMA = (RMA[previous] * (period - 1) + current_value) / period
+
+        This is equivalent to EMA with alpha = 1/period.
+
+        Args:
+            data: Data series to smooth
+            period: RMA period
+
+        Returns:
+            RMA values as Series
+        """
+        # RMA is equivalent to EWM with alpha = 1/period
+        # In pandas: ewm(alpha=1/period, adjust=False) gives Wilder's smoothing
+        return data.ewm(alpha=1/period, adjust=False).mean()
