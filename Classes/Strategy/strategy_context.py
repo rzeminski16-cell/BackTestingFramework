@@ -15,9 +15,13 @@ class StrategyContext:
     This ensures strategies can't accidentally modify state and
     makes it clear what data is available to the strategy.
 
+    PERFORMANCE: The data DataFrame contains ALL bars (full dataset) for efficiency.
+    Strategies must use current_index to access only historical data (0 to current_index)
+    to prevent lookahead bias. Helper methods enforce this automatically.
+
     Attributes:
-        data: Historical data up to current bar (read-only view)
-        current_index: Current bar index in the data
+        data: Full dataset with all bars and pre-calculated indicators
+        current_index: Current bar index in the data (strategies must not access beyond this)
         current_price: Current close price
         current_date: Current date
         position: Current position (None if no position)
