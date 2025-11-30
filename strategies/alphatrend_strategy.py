@@ -311,22 +311,25 @@ class AlphaTrendStrategy(BaseStrategy):
 
     def _check_volume_since_signal(self, context: StrategyContext) -> bool:
         """
-        Check if volume condition has been met since the signal appeared.
-        Only looks backward from current bar to the signal bar.
+        Check if volume condition was met within the alignment window around the signal.
+        Checks backward from signal (up to volume_alignment_window bars) and forward to current bar.
 
         PERFORMANCE: Uses pre-calculated volume_condition column.
 
         Returns:
-            True if volume condition was met since the signal appeared
+            True if volume condition was met within the window
         """
         if self._signal_bar_idx < 0:
             return False
 
         current_idx = context.current_index
-        bars_since_signal = current_idx - self._signal_bar_idx
 
-        # Check from signal bar to current bar
-        for i in range(self._signal_bar_idx, current_idx + 1):
+        # Check volume from (signal - window) to current bar
+        # Don't go before start of data or past current bar
+        vol_start = max(0, self._signal_bar_idx - self.volume_alignment_window)
+        vol_end = current_idx + 1  # +1 because range is exclusive on the right
+
+        for i in range(vol_start, vol_end):
             if context.data.iloc[i]['volume_condition']:
                 return True
 
