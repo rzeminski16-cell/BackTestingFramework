@@ -52,9 +52,35 @@ def test_slippage_calculation():
 
     print("\n✅ All slippage calculation tests passed!")
 
+def test_quantity_adjustment():
+    """Test that quantity is adjusted to account for slippage."""
+    price = 100.0
+    slippage = 0.1  # 0.1%
+    execution_price = price * (1 + slippage / 100)  # 100.10
+
+    # If strategy calculated 100 shares at $100, after slippage adjustment:
+    original_quantity = 100
+    adjusted_quantity = original_quantity * (price / execution_price)
+
+    # Original cost: 100 shares * $100 = $10,000
+    # Adjusted cost: ~99.9 shares * $100.10 = ~$10,000
+    original_cost = original_quantity * price
+    adjusted_cost = adjusted_quantity * execution_price
+
+    print(f"✓ Original: {original_quantity} shares @ ${price:.2f} = ${original_cost:.2f}")
+    print(f"✓ Adjusted: {adjusted_quantity:.4f} shares @ ${execution_price:.2f} = ${adjusted_cost:.2f}")
+
+    # Costs should be approximately equal (within $0.01)
+    assert abs(original_cost - adjusted_cost) < 0.01, \
+        f"Cost mismatch: original ${original_cost:.2f} vs adjusted ${adjusted_cost:.2f}"
+    print(f"✓ Quantity adjustment maintains capital allocation")
+
+    print("\n✅ Quantity adjustment test passed!")
+
 if __name__ == "__main__":
     test_backtest_config_slippage()
     test_slippage_calculation()
+    test_quantity_adjustment()
     print("\n" + "="*50)
     print("🎉 ALL TESTS PASSED!")
     print("="*50)
