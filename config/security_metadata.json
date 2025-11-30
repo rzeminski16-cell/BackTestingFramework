@@ -75,7 +75,7 @@
  "BK": {
     "type": "stock",
     "sector": "financials",
-    "description": "Bank of NY", --- ADD TO LIST
+    "description": "Bank of NY"
     "currency": "USD"
   },
  "BMO": {
