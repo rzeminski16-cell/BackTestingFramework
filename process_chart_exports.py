@@ -90,10 +90,10 @@ def process_csv_files(input_folder: str, output_folder: str, column_rename: Dict
             # Rename columns
             df = df.rename(columns=column_rename)
             
-            df['open'] = df['open'].round(2)
-            df['high'] = df['high'].round(2)
-            df['low'] = df['low'].round(2)
-            df['close'] = df['close'].round(2)
+            #df['open'] = df['open'].round(2)
+            #df['high'] = df['high'].round(2)
+            #df['low'] = df['low'].round(2)
+            #df['close'] = df['close'].round(2)
 
             # Process Candle Position column
             df = process_candle_position(df, date_col='date')
