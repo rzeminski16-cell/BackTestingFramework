@@ -25,7 +25,7 @@ volume_alignment_window = input.int(14, "Volume Alignment Window", minval=1, gro
 signal_lookback = input.int(9, "Signal Lookback", minval=1, group="Volume Filter")
 
 // Exit Parameters
-stop_atr_multiplier = input.float(2.5, "Stop Loss ATR Multiplier", minval=0.1, step=0.1, group="Exit Rules")
+stop_loss_percent = input.float(2.0, "Stop Loss %", minval=0.1, step=0.1, group="Exit Rules")
 grace_period_bars = input.int(14, "Grace Period (bars)", minval=0, group="Exit Rules")
 momentum_gain_pct = input.float(2.0, "Momentum Gain %", minval=0, step=0.1, group="Exit Rules")
 momentum_lookback = input.int(7, "Momentum Lookback", minval=1, group="Exit Rules")
@@ -197,8 +197,8 @@ exit_condition = ema_exit and not in_grace_period and not has_momentum
 // POSITION SIZING
 // ============================================================================
 
-// Calculate position size based on risk
-stop_distance = atr_14 * stop_atr_multiplier
+// Calculate stop loss based on percentage below current price
+stop_distance = close * (stop_loss_percent / 100)
 stop_loss_price = close - stop_distance
 
 // Risk-based position sizing
