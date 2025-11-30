@@ -1,4 +1,4 @@
-//@version=5
+//@version=6
 strategy("AlphaTrend Enhanced Strategy",
      overlay=true,
      initial_capital=10000,
