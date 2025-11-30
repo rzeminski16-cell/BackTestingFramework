@@ -1,0 +1,263 @@
+//@version=5
+strategy("AlphaTrend Enhanced Strategy",
+     overlay=true,
+     initial_capital=10000,
+     default_qty_type=strategy.percent_of_equity,
+     default_qty_value=100,
+     commission_type=strategy.commission.percent,
+     commission_value=0.1)
+
+// ============================================================================
+// PARAMETERS
+// ============================================================================
+
+// AlphaTrend Parameters
+atr_multiplier = input.float(1.0, "ATR Multiplier", minval=0.1, step=0.1, group="AlphaTrend")
+smoothing_length = input.int(3, "Smoothing Length", minval=1, group="AlphaTrend")
+
+// MFI Parameters
+percentile_period = input.int(100, "Percentile Period", minval=10, group="MFI")
+
+// Volume Filter Parameters
+volume_short_ma = input.int(4, "Volume Short MA", minval=1, group="Volume Filter")
+volume_long_ma = input.int(30, "Volume Long MA", minval=1, group="Volume Filter")
+volume_alignment_window = input.int(14, "Volume Alignment Window", minval=1, group="Volume Filter")
+signal_lookback = input.int(9, "Signal Lookback", minval=1, group="Volume Filter")
+
+// Exit Parameters
+stop_atr_multiplier = input.float(2.5, "Stop Loss ATR Multiplier", minval=0.1, step=0.1, group="Exit Rules")
+grace_period_bars = input.int(14, "Grace Period (bars)", minval=0, group="Exit Rules")
+momentum_gain_pct = input.float(2.0, "Momentum Gain %", minval=0, step=0.1, group="Exit Rules")
+momentum_lookback = input.int(7, "Momentum Lookback", minval=1, group="Exit Rules")
+
+// Risk Management
+risk_percent = input.float(2.0, "Risk Per Trade %", minval=0.1, step=0.1, group="Risk Management")
+
+// ============================================================================
+// STANDARD INDICATORS (using TradingView built-ins)
+// ============================================================================
+
+atr_14 = ta.atr(14)
+ema_50 = ta.ema(close, 50)
+
+// ============================================================================
+// ADAPTIVE COEFFICIENT
+// ============================================================================
+
+// Long-term ATR average for volatility ratio
+atr_ema_long = ta.ema(atr_14, 14 * 3)
+volatility_ratio = atr_14 / atr_ema_long
+adaptive_coeff = atr_multiplier * volatility_ratio
+
+// ============================================================================
+// ALPHATREND BANDS
+// ============================================================================
+
+up_band = low - atr_14 * adaptive_coeff
+down_band = high + atr_14 * adaptive_coeff
+
+// ============================================================================
+// MONEY FLOW INDEX (MFI) - 14 period
+// ============================================================================
+
+// Use built-in MFI
+mfi = ta.mfi(hlc3, 14)
+
+// ============================================================================
+// DYNAMIC MFI THRESHOLDS
+// ============================================================================
+
+// Calculate percentiles using percentrank approach
+mfi_upper = ta.percentile_linear_interpolation(mfi, percentile_period, 70)
+mfi_lower = ta.percentile_linear_interpolation(mfi, percentile_period, 30)
+mfi_threshold = (mfi_upper + mfi_lower) / 2
+
+// Momentum bullish condition
+momentum_bullish = mfi >= mfi_threshold
+
+// ============================================================================
+// ALPHATREND CALCULATION
+// ============================================================================
+
+// Initialize AlphaTrend value
+var float alphatrend = na
+
+// Calculate AlphaTrend based on momentum
+if momentum_bullish
+    // Uptrend logic
+    alphatrend := nz(alphatrend[1]) > up_band ? math.max(nz(alphatrend[1]), up_band) : up_band
+else
+    // Downtrend logic
+    alphatrend := nz(alphatrend[1]) < down_band ? math.min(nz(alphatrend[1]), down_band) : down_band
+
+// ============================================================================
+// SMOOTHED ALPHATREND
+// ============================================================================
+
+smooth_at = ta.ema(alphatrend, smoothing_length)
+
+// ============================================================================
+// ALPHATREND SIGNALS (Crossovers)
+// ============================================================================
+
+at_cross_up = ta.crossover(alphatrend, smooth_at)
+at_cross_down = ta.crossunder(alphatrend, smooth_at)
+
+// ============================================================================
+// FILTER FOR ALTERNATING SIGNALS
+// ============================================================================
+
+var string last_signal = na
+var bool filtered_buy = false
+var bool filtered_sell = false
+
+filtered_buy := false
+filtered_sell := false
+
+if at_cross_up and last_signal != "buy"
+    filtered_buy := true
+    last_signal := "buy"
+else if at_cross_down and last_signal != "sell"
+    filtered_sell := true
+    last_signal := "sell"
+
+// ============================================================================
+// VOLUME FILTER
+// ============================================================================
+
+vol_short_ma = ta.sma(volume, volume_short_ma)
+vol_long_ma = ta.sma(volume, volume_long_ma)
+volume_condition = vol_short_ma > vol_long_ma
+
+// ============================================================================
+// HELPER FUNCTIONS
+// ============================================================================
+
+// Check if AlphaTrend buy signal occurred within lookback window
+check_alphatrend_signal_in_window() =>
+    var bool signal_found = false
+    signal_found := false
+    for i = 0 to signal_lookback - 1
+        if filtered_buy[i]
+            signal_found := true
+            break
+    signal_found
+
+// Check if volume condition was met within alignment window of any signal
+check_volume_alignment() =>
+    var bool aligned = false
+    aligned := false
+
+    // Check each potential signal bar in lookback window
+    for signal_offset = 0 to signal_lookback - 1
+        if filtered_buy[signal_offset]
+            // Check volume condition within alignment window around this signal
+            for vol_offset = -volume_alignment_window to volume_alignment_window
+                actual_offset = signal_offset + vol_offset
+                if actual_offset >= 0 and actual_offset < bar_index
+                    if volume_condition[actual_offset]
+                        aligned := true
+                        break
+            if aligned
+                break
+    aligned
+
+// ============================================================================
+// ENTRY AND EXIT LOGIC
+// ============================================================================
+
+// Track bars since entry and entry price
+var int bars_since_entry = 0
+var float entry_bar_open = na
+
+// Check entry conditions
+at_signal_in_window = check_alphatrend_signal_in_window()
+vol_aligned = check_volume_alignment()
+
+// Entry condition
+entry_condition = at_signal_in_window and vol_aligned
+
+// Exit conditions
+in_grace_period = bars_since_entry <= grace_period_bars
+
+// Momentum protection
+has_momentum = false
+if not na(entry_bar_open) and bar_index >= momentum_lookback
+    lookback_open = open[momentum_lookback]
+    price_gain_pct = ((close - lookback_open) / lookback_open) * 100
+    has_momentum := price_gain_pct >= momentum_gain_pct
+
+// EMA exit condition
+ema_exit = close < ema_50
+
+// Exit only if EMA condition met and NOT protected
+exit_condition = ema_exit and not in_grace_period and not has_momentum
+
+// ============================================================================
+// POSITION SIZING
+// ============================================================================
+
+// Calculate position size based on risk
+stop_distance = atr_14 * stop_atr_multiplier
+stop_loss_price = close - stop_distance
+
+// Risk-based position sizing
+equity = strategy.equity
+risk_amount = equity * (risk_percent / 100)
+position_size_shares = risk_amount / stop_distance
+
+// Calculate percentage of equity for position
+position_size_pct = (position_size_shares * close) / equity * 100
+position_size_pct := math.min(position_size_pct, 100) // Cap at 100%
+
+// ============================================================================
+// STRATEGY EXECUTION
+// ============================================================================
+
+// Long Entry
+if entry_condition and strategy.position_size == 0
+    entry_bar_open := open
+    bars_since_entry := 0
+    strategy.entry("Long", strategy.long, qty=position_size_shares, stop=stop_loss_price)
+
+// Track bars since entry
+if strategy.position_size > 0
+    bars_since_entry += 1
+else
+    bars_since_entry := 0
+    entry_bar_open := na
+
+// Long Exit
+if exit_condition and strategy.position_size > 0
+    strategy.close("Long", comment="Price < EMA(50)")
+
+// ============================================================================
+// VISUALIZATION
+// ============================================================================
+
+// Plot AlphaTrend
+plot(alphatrend, "AlphaTrend", color=momentum_bullish ? color.green : color.red, linewidth=2)
+plot(smooth_at, "Smooth AlphaTrend", color=color.orange, linewidth=1)
+
+// Plot EMA
+plot(ema_50, "EMA 50", color=color.blue, linewidth=2)
+
+// Plot MFI threshold
+hline(50, "MFI 50", color=color.gray, linestyle=hline.style_dotted)
+
+// Plot signals
+plotshape(filtered_buy, "Buy Signal", shape.triangleup, location.belowbar, color.green, size=size.small)
+plotshape(filtered_sell, "Sell Signal", shape.triangledown, location.abovebar, color.red, size=size.small)
+
+// Plot volume condition
+bgcolor(volume_condition ? color.new(color.green, 90) : na, title="Volume Condition")
+
+// ============================================================================
+// ALERTS
+// ============================================================================
+
+// Entry alert
+alertcondition(entry_condition, title="AlphaTrend Buy", message="AlphaTrend: Buy signal with volume alignment")
+
+// Exit alert
+alertcondition(exit_condition, title="AlphaTrend Sell", message="AlphaTrend: Exit signal - Price below EMA(50)")
