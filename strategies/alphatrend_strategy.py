@@ -10,7 +10,7 @@ Based on AlphaTrend indicator by KivancOzbilgic with enhancements:
 
 Entry: AlphaTrend buy signal + volume condition within alignment window
 Exit: Price closes below EMA-50 (with protections) or stop loss hit
-Stop Loss: ATR-based stop loss (using atr_14 from raw data)
+Stop Loss: Percentage-based stop loss (x% below entry price)
 
 PERFORMANCE OPTIMIZED:
 - Indicators pre-calculated using vectorized operations (10-100x speedup)
@@ -44,7 +44,7 @@ class AlphaTrendStrategy(BaseStrategy):
         volume_long_ma: Volume long MA period (default: 30)
         volume_alignment_window: Bars to check for volume condition (default: 14)
         signal_lookback: Bars to look back for AlphaTrend signal (default: 9)
-        stop_atr_multiplier: ATR multiplier for stop loss (default: 2.5)
+        stop_loss_percent: Percentage below current price for stop loss (default: 2.0)
         grace_period_bars: Bars to ignore EMA exit after entry (default: 14)
         momentum_gain_pct: % gain to ignore EMA exit (default: 2.0)
         momentum_lookback: Bars for momentum calculation (default: 7)
@@ -60,7 +60,7 @@ class AlphaTrendStrategy(BaseStrategy):
                  volume_long_ma: int = 30,
                  volume_alignment_window: int = 14,
                  signal_lookback: int = 9,
-                 stop_atr_multiplier: float = 2.5,
+                 stop_loss_percent: float = 2.0,
                  grace_period_bars: int = 14,
                  momentum_gain_pct: float = 2.0,
                  momentum_lookback: int = 7,
@@ -75,7 +75,7 @@ class AlphaTrendStrategy(BaseStrategy):
             volume_long_ma=volume_long_ma,
             volume_alignment_window=volume_alignment_window,
             signal_lookback=signal_lookback,
-            stop_atr_multiplier=stop_atr_multiplier,
+            stop_loss_percent=stop_loss_percent,
             grace_period_bars=grace_period_bars,
             momentum_gain_pct=momentum_gain_pct,
             momentum_lookback=momentum_lookback,
@@ -91,7 +91,7 @@ class AlphaTrendStrategy(BaseStrategy):
         self.volume_long_ma = volume_long_ma
         self.volume_alignment_window = volume_alignment_window
         self.signal_lookback = signal_lookback
-        self.stop_atr_multiplier = stop_atr_multiplier
+        self.stop_loss_percent = stop_loss_percent
         self.grace_period_bars = grace_period_bars
         self.momentum_gain_pct = momentum_gain_pct
         self.momentum_lookback = momentum_lookback
@@ -369,9 +369,8 @@ class AlphaTrendStrategy(BaseStrategy):
 
             # Entry condition: Both AlphaTrend signal and volume condition met
             if at_signal_in_window and vol_aligned:
-                # Calculate stop loss using atr_14 from raw data
-                atr = indicators['atr_14']
-                stop_loss = current_price - (atr * self.stop_atr_multiplier)
+                # Calculate stop loss using percentage below current price
+                stop_loss = current_price * (1 - self.stop_loss_percent / 100)
 
                 # Store entry bar open for momentum calculation
                 self._entry_bar_open = context.current_bar['open']
@@ -412,25 +411,19 @@ class AlphaTrendStrategy(BaseStrategy):
         """
         Calculate position size using risk-based sizing with currency conversion.
 
-        Formula: Position size = (Equity * Risk%) / (ATR * Multiplier in Base Currency)
+        Formula: Position size = (Equity * Risk%) / (Stop Distance in Base Currency)
 
-        Uses atr_14 from raw data for consistent stop distance calculation.
+        Uses percentage-based stop loss for consistent stop distance calculation.
         """
         if signal.stop_loss is None:
             # Fallback to default sizing if no stop loss
             return super().position_size(context, signal)
 
-        # Get ATR from current bar (read from raw data)
-        atr = context.current_bar.get('atr_14')
-        if atr is None or pd.isna(atr):
-            # Fallback to default sizing if ATR not available
-            return super().position_size(context, signal)
-
         equity = context.total_equity  # In base currency (e.g., GBP)
         risk_amount = equity * (self.risk_percent / 100)  # In base currency
 
-        # Calculate stop distance from ATR (matches TradingView)
-        stop_distance = atr * self.stop_atr_multiplier  # In security currency
+        # Calculate stop distance from percentage
+        stop_distance = context.current_price * (self.stop_loss_percent / 100)  # In security currency
 
         if stop_distance <= 0:
             # Invalid stop distance, fallback to default
