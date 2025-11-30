@@ -341,13 +341,17 @@ class SingleSecurityEngine:
         # Get FX rate for currency conversion
         fx_rate = self._get_fx_rate(symbol, date)
 
-        # Calculate position size
+        # Calculate position size based on original price
         # Strategy's position_size() now handles currency conversion internally
         # using context.fx_rate, so no additional adjustment needed here
         quantity = strategy.position_size(context, signal)
 
         if quantity <= 0:
             return capital
+
+        # Adjust quantity to account for slippage (reduce shares to maintain same capital allocation)
+        # Since execution_price is higher than price, we need fewer shares to spend the same amount
+        quantity = quantity * (price / execution_price)
 
         # Check position size limit (in base currency)
         max_capital_base = capital * self.config.position_size_limit
@@ -392,11 +396,11 @@ class SingleSecurityEngine:
             if metadata:
                 security_currency = metadata.currency
 
-        # Open position
+        # Open position with actual execution price (including slippage)
         self.position_manager.open_position(
             symbol=symbol,
             entry_date=date,
-            entry_price=price,
+            entry_price=execution_price,
             quantity=quantity,
             stop_loss=signal.stop_loss,
             take_profit=signal.take_profit,
