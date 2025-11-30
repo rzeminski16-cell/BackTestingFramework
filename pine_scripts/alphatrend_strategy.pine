@@ -5,7 +5,9 @@ strategy("AlphaTrend Enhanced Strategy",
      default_qty_type=strategy.percent_of_equity,
      default_qty_value=100,
      commission_type=strategy.commission.percent,
-     commission_value=0.1)
+     commission_value=0.1,
+     process_orders_on_close=true,
+     calc_on_every_tick=false)
 
 // ============================================================================
 // PARAMETERS
@@ -186,7 +188,8 @@ vol_aligned = at_signal_found ? check_volume_alignment(signal_offset) : false
 
 // Entry condition: Both AlphaTrend signal and volume condition met
 // We only enter when we've reached a bar where both conditions are satisfied
-entry_condition = at_signal_found and vol_aligned
+// AND the bar is confirmed (closed) to prevent timing discrepancies
+entry_condition = at_signal_found and vol_aligned and barstate.isconfirmed
 
 // Exit conditions
 in_grace_period = bars_since_entry <= grace_period_bars
@@ -202,7 +205,8 @@ if not na(entry_bar_open) and bar_index >= momentum_lookback
 ema_exit = close < ema_50
 
 // Exit only if EMA condition met and NOT protected
-exit_condition = ema_exit and not in_grace_period and not has_momentum
+// AND bar is confirmed to maintain timing consistency
+exit_condition = ema_exit and not in_grace_period and not has_momentum and barstate.isconfirmed
 
 // ============================================================================
 // POSITION SIZING
@@ -229,7 +233,11 @@ position_size_pct := math.min(position_size_pct, 100) // Cap at 100%
 if entry_condition and strategy.position_size == 0
     entry_bar_open := open
     bars_since_entry := 0
-    strategy.entry("Long", strategy.long, qty=position_size_shares, stop=stop_loss_price)
+    strategy.entry("Long", strategy.long, qty=position_size_shares)
+
+// Set stop loss and take profit using strategy.exit
+if strategy.position_size > 0
+    strategy.exit("Exit Long", "Long", stop=stop_loss_price)
 
 // Track bars since entry
 if strategy.position_size > 0
@@ -238,7 +246,7 @@ else
     bars_since_entry := 0
     entry_bar_open := na
 
-// Long Exit
+// Long Exit - close position when EMA exit condition is met
 if exit_condition and strategy.position_size > 0
     strategy.close("Long", comment="Price < EMA(50)")
 
