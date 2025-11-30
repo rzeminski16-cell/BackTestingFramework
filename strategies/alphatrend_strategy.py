@@ -348,13 +348,18 @@ class AlphaTrendStrategy(BaseStrategy):
             return Signal.hold()
 
         current_price = context.current_price
+        current_idx = context.current_index
 
         # Update signal tracking when a new AlphaTrend buy signal appears
         if indicators['filtered_buy']:
-            self._signal_bar_idx = context.current_index
+            self._signal_bar_idx = current_idx
+            print(f"🔔 Bar {current_idx}: BUY SIGNAL detected!")
+            print(f"   Date: {context.current_bar.get('date', 'N/A')}")
+            print(f"   Volume condition on this bar: {indicators['volume_condition']}")
 
         # Reset signal when we get a sell signal (prevents re-entry on old buy signals)
         if indicators['filtered_sell']:
+            print(f"🔻 Bar {current_idx}: SELL SIGNAL detected, resetting signal_bar")
             self._signal_bar_idx = -1
 
         # Entry logic
@@ -366,14 +371,27 @@ class AlphaTrendStrategy(BaseStrategy):
             # Check if we have an active AlphaTrend signal
             at_signal_active = self._has_active_signal(context)
 
+            # Debug: Print active signal status
+            if self._signal_bar_idx >= 0:
+                bars_since = current_idx - self._signal_bar_idx
+                print(f"📊 Bar {current_idx}: signal_bar={self._signal_bar_idx}, bars_since={bars_since}, active={at_signal_active}")
+
             # Only proceed if we have an active signal
             if at_signal_active:
                 # Check if volume condition has been met since signal appeared
                 vol_aligned = self._check_volume_since_signal(context)
 
+                # Debug: Show volume check details
+                vol_start = max(0, self._signal_bar_idx - self.volume_alignment_window)
+                vol_end = current_idx + 1
+                vol_conditions = [context.data.iloc[i]['volume_condition'] for i in range(vol_start, min(vol_end, len(context.data)))]
+                print(f"   Volume check: bars {vol_start}-{current_idx}, vol_aligned={vol_aligned}")
+                print(f"   Volume conditions: {sum(vol_conditions)}/{len(vol_conditions)} bars have volume spike")
+
                 # Entry condition: AlphaTrend signal is active AND volume has aligned since signal
                 # We only enter when both conditions are satisfied
                 if vol_aligned:
+                    print(f"✅ Bar {current_idx}: ENTRY CONDITIONS MET! Generating BUY signal")
                     # Calculate stop loss using percentage below current price
                     stop_loss = current_price * (1 - self.stop_loss_percent / 100)
 
@@ -388,6 +406,8 @@ class AlphaTrendStrategy(BaseStrategy):
                         stop_loss=stop_loss,
                         reason=f"AlphaTrend signal + Volume aligned"
                     )
+                else:
+                    print(f"⏳ Bar {current_idx}: Waiting for volume alignment...")
 
         # Exit logic
         else:
