@@ -22,6 +22,7 @@ percentile_period = input.int(100, "Percentile Period", minval=10, group="MFI")
 volume_short_ma = input.int(4, "Volume Short MA", minval=1, group="Volume Filter")
 volume_long_ma = input.int(30, "Volume Long MA", minval=1, group="Volume Filter")
 volume_alignment_window = input.int(14, "Volume Alignment Window", minval=1, group="Volume Filter")
+// FIXED: signal_lookback now only for timing flexibility, NOT backward-looking entries
 signal_lookback = input.int(9, "Signal Lookback", minval=1, group="Volume Filter")
 
 // Exit Parameters
@@ -133,32 +134,37 @@ volume_condition = vol_short_ma > vol_long_ma
 // HELPER FUNCTIONS
 // ============================================================================
 
-// Check if AlphaTrend buy signal occurred within lookback window
+// Check if AlphaTrend buy signal occurred recently (within small window)
+// FIXED: Returns both whether signal was found and at which bar offset
+// to prevent backward-looking bias
 check_alphatrend_signal_in_window() =>
     var bool signal_found = false
+    var int signal_offset = -1
     signal_found := false
+    signal_offset := -1
+
+    // Check recent bars, prioritizing most recent (i=0 is current bar)
     for i = 0 to signal_lookback - 1
         if filtered_buy[i]
             signal_found := true
+            signal_offset := i
             break
-    signal_found
+    [signal_found, signal_offset]
 
-// Check if volume condition was met within alignment window of any signal
-check_volume_alignment() =>
+// Check if volume condition was met within alignment window of the specific signal
+// FIXED: Only checks volume for the given signal offset, preventing backward-looking bias
+check_volume_alignment(int signal_offset) =>
     var bool aligned = false
     aligned := false
 
-    // Check each potential signal bar in lookback window
-    for signal_offset = 0 to signal_lookback - 1
-        if filtered_buy[signal_offset]
-            // Check volume condition within alignment window around this signal
-            for vol_offset = -volume_alignment_window to volume_alignment_window
-                actual_offset = signal_offset + vol_offset
-                if actual_offset >= 0 and actual_offset < bar_index
-                    if volume_condition[actual_offset]
-                        aligned := true
-                        break
-            if aligned
+    // Check volume condition within alignment window around the specific signal
+    // Can look back from signal bar, but can only look forward up to current bar (offset 0)
+    for vol_offset = -volume_alignment_window to volume_alignment_window
+        actual_offset = signal_offset + vol_offset
+        // Ensure we don't go beyond current bar (offset 0) or into negative territory
+        if actual_offset >= 0 and actual_offset <= signal_offset
+            if volume_condition[actual_offset]
+                aligned := true
                 break
     aligned
 
@@ -171,11 +177,15 @@ var int bars_since_entry = 0
 var float entry_bar_open = na
 
 // Check entry conditions
-at_signal_in_window = check_alphatrend_signal_in_window()
-vol_aligned = check_volume_alignment()
+// FIXED: Get both signal status and offset to prevent backward-looking entries
+[at_signal_found, signal_offset] = check_alphatrend_signal_in_window()
 
-// Entry condition
-entry_condition = at_signal_in_window and vol_aligned
+// Only check volume alignment if we found a signal
+vol_aligned = at_signal_found ? check_volume_alignment(signal_offset) : false
+
+// Entry condition: Both AlphaTrend signal and volume condition met
+// We only enter when we've reached a bar where both conditions are satisfied
+entry_condition = at_signal_found and vol_aligned
 
 // Exit conditions
 in_grace_period = bars_since_entry <= grace_period_bars

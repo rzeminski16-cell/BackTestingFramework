@@ -43,7 +43,8 @@ class AlphaTrendStrategy(BaseStrategy):
         volume_short_ma: Volume short MA period (default: 4)
         volume_long_ma: Volume long MA period (default: 30)
         volume_alignment_window: Bars to check for volume condition (default: 14)
-        signal_lookback: Bars to look back for AlphaTrend signal (default: 9)
+        signal_lookback: Maximum bars to look back for recent AlphaTrend signal (default: 9)
+                         FIXED: Used only to allow slight timing flexibility, NOT for backward-looking entries
         stop_loss_percent: Percentage below current price for stop loss (default: 2.0)
         grace_period_bars: Bars to ignore EMA exit after entry (default: 14)
         momentum_gain_pct: % gain to ignore EMA exit (default: 2.0)
@@ -297,50 +298,56 @@ class AlphaTrendStrategy(BaseStrategy):
             'mfi': current_bar['mfi']
         }
 
-    def _check_alphatrend_signal_in_window(self, context: StrategyContext) -> bool:
+    def _check_alphatrend_signal_in_window(self, context: StrategyContext) -> tuple[bool, int]:
         """
-        Check if AlphaTrend buy signal occurred within lookback window.
+        Check if AlphaTrend buy signal occurred recently (within small window).
+
+        FIXED: Only looks back a minimal window (signal_lookback) to allow for slight
+        timing differences, but returns the actual signal bar index to prevent
+        backward-looking bias.
 
         PERFORMANCE: Uses pre-calculated filtered_buy column.
+
+        Returns:
+            Tuple of (signal_found, signal_bar_index)
         """
         current_idx = context.current_index
         start_idx = max(0, current_idx - self.signal_lookback + 1)
 
-        # Check pre-calculated signals in window
-        for i in range(start_idx, current_idx + 1):
+        # Check pre-calculated signals in window, prioritizing most recent
+        for i in range(current_idx, start_idx - 1, -1):
             if context.data.iloc[i]['filtered_buy']:
-                return True
-        return False
+                return True, i
+        return False, -1
 
-    def _check_volume_alignment(self, context: StrategyContext) -> bool:
+    def _check_volume_alignment(self, context: StrategyContext, signal_bar_idx: int) -> bool:
         """
-        Check if volume condition was met within alignment window of any signal.
+        Check if volume condition was met within alignment window of the signal bar.
 
-        For each AlphaTrend buy signal in the lookback window, check if volume
-        condition was met within +/- volume_alignment_window bars.
+        FIXED: Only checks volume alignment for the specific signal bar, preventing
+        backward-looking bias. Volume can be checked before or after the signal,
+        but we only enter the trade when we reach a bar where we know both
+        conditions have been satisfied.
 
         PERFORMANCE: Uses pre-calculated volume_condition column.
 
-        IMPORTANT: Prevents lookahead bias by only checking volume up to current_idx.
+        Args:
+            signal_bar_idx: The index of the bar where AlphaTrend signal occurred
+
+        Returns:
+            True if volume condition was met within the alignment window
         """
         current_idx = context.current_index
-        start_idx = max(0, current_idx - self.signal_lookback + 1)
 
-        # Check each potential signal bar in lookback window
-        for signal_offset in range(current_idx - start_idx + 1):
-            signal_idx = start_idx + signal_offset
+        # Check volume condition within alignment window around the signal
+        # Can look back from signal bar, but can only look forward up to current bar
+        vol_start = max(0, signal_bar_idx - self.volume_alignment_window)
+        vol_end = min(current_idx + 1, signal_bar_idx + self.volume_alignment_window + 1)
 
-            # Check if there was a buy signal at this bar
-            if context.data.iloc[signal_idx]['filtered_buy']:
-                # Check volume condition within alignment window around this signal
-                # IMPORTANT: Limit vol_end to current_idx + 1 to prevent lookahead bias
-                vol_start = max(0, signal_idx - self.volume_alignment_window)
-                vol_end = min(current_idx + 1, signal_idx + self.volume_alignment_window + 1)
-
-                # Check if volume condition met in window
-                for i in range(vol_start, vol_end):
-                    if context.data.iloc[i]['volume_condition']:
-                        return True
+        # Check if volume condition met in window
+        for i in range(vol_start, vol_end):
+            if context.data.iloc[i]['volume_condition']:
+                return True
 
         return False
 
@@ -364,25 +371,29 @@ class AlphaTrendStrategy(BaseStrategy):
             self._bars_since_entry = 0
             self._entry_bar_open = None
 
-            # Check if AlphaTrend signal occurred in lookback window
-            at_signal_in_window = self._check_alphatrend_signal_in_window(context)
+            # Check if AlphaTrend signal occurred recently
+            at_signal_found, signal_bar_idx = self._check_alphatrend_signal_in_window(context)
 
-            # Check if volume condition aligned with signal
-            vol_aligned = self._check_volume_alignment(context)
+            # Only proceed if we found a signal
+            if at_signal_found:
+                # Check if volume condition aligned with the specific signal bar
+                vol_aligned = self._check_volume_alignment(context, signal_bar_idx)
 
-            # Entry condition: Both AlphaTrend signal and volume condition met
-            if at_signal_in_window and vol_aligned:
-                # Calculate stop loss using percentage below current price
-                stop_loss = current_price * (1 - self.stop_loss_percent / 100)
+                # Entry condition: Both AlphaTrend signal and volume condition met
+                # FIXED: We only enter when we've reached a bar where both conditions
+                # are satisfied, preventing backward-looking trade entries
+                if vol_aligned:
+                    # Calculate stop loss using percentage below current price
+                    stop_loss = current_price * (1 - self.stop_loss_percent / 100)
 
-                # Store entry bar open for momentum calculation
-                self._entry_bar_open = context.current_bar['open']
+                    # Store entry bar open for momentum calculation
+                    self._entry_bar_open = context.current_bar['open']
 
-                return Signal.buy(
-                    size=1.0,  # Will be overridden by position_size() method
-                    stop_loss=stop_loss,
-                    reason=f"AlphaTrend signal + Volume aligned"
-                )
+                    return Signal.buy(
+                        size=1.0,  # Will be overridden by position_size() method
+                        stop_loss=stop_loss,
+                        reason=f"AlphaTrend signal + Volume aligned"
+                    )
 
         # Exit logic
         else:
