@@ -46,7 +46,6 @@ def main():
 
     # Strategy configuration
     strategy = PartialExitStrategy(
-        rsi_period=14,
         position_size=0.2,
         first_target_pct=0.10,
         second_target_pct=0.20,
