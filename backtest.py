@@ -137,7 +137,6 @@ def example_portfolio_backtest():
 
     # Create strategy
     strategy = PartialExitStrategy(
-        rsi_period=14,
         position_size=0.3,
         first_target_pct=0.10,
         second_target_pct=0.20
@@ -196,13 +195,12 @@ def example_parameter_optimization():
 
     # Define parameter grid to search
     param_grid = {
-        'rsi_period': [10, 14, 20],
         'position_size': [0.1, 0.2, 0.3],
         'first_target_pct': [0.08, 0.10, 0.15],
         'stop_loss_pct': [0.04, 0.06, 0.08]
     }
 
-    print(f"Testing {3 * 3 * 3 * 3} parameter combinations...")
+    print(f"Testing {3 * 3 * 3} parameter combinations...")
 
     # Load data
     data_loader = DataLoader(Path('raw_data'))
@@ -239,16 +237,13 @@ def example_advanced_strategy():
     # Load data with required indicators
     data_loader = DataLoader(Path('raw_data'))
     data = data_loader.load_csv('AAPL', required_columns=[
-        'date', 'close', 'sma_200', 'ema_14', 'rsi_14'
+        'date', 'close', 'sma_200', 'ema_50', 'rsi_14'
     ])
 
     print(f"Loaded {len(data)} bars for AAPL")
 
     # Create advanced strategy
     strategy = AdvancedTrailingStopStrategy(
-        sma_period=200,
-        ema_period=14,
-        rsi_period=14,
         position_size=0.25,
         breakeven_profit_pct=0.05  # Move to breakeven after 5% profit
     )
@@ -289,7 +284,6 @@ def example_partial_exits():
 
     # Create partial exit strategy
     strategy = PartialExitStrategy(
-        rsi_period=14,
         position_size=0.3,
         first_target_pct=0.10,  # Take 50% profit at 10% gain
         second_target_pct=0.20   # Take another 50% at 20% gain
@@ -340,7 +334,6 @@ def example_excel_report_generation():
 
     # Create strategy
     strategy = PartialExitStrategy(
-        rsi_period=14,
         position_size=0.2,
         first_target_pct=0.10,
         second_target_pct=0.20,

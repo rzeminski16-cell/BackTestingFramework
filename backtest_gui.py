@@ -346,9 +346,6 @@ class BacktestGUI:
         # Get default parameters from strategy
         if strategy_name == 'AdvancedTrailingStopStrategy':
             self.strategy_params[strategy_name] = {
-                'sma_period': 200,
-                'ema_period': 14,
-                'rsi_period': 14,
                 'rsi_threshold': 70,
                 'position_size': 0.25,
                 'initial_stop_pct': 0.08,
@@ -356,7 +353,6 @@ class BacktestGUI:
             }
         elif strategy_name == 'PartialExitStrategy':
             self.strategy_params[strategy_name] = {
-                'rsi_period': 14,
                 'rsi_oversold': 30,
                 'rsi_overbought': 70,
                 'position_size': 0.3,
@@ -367,7 +363,6 @@ class BacktestGUI:
         elif strategy_name == 'AlphaTrendStrategy':
             self.strategy_params[strategy_name] = {
                 'atr_multiplier': 1.0,
-                'common_period': 14,
                 'source': 'close',
                 'smoothing_length': 3,
                 'percentile_period': 100,
@@ -375,7 +370,6 @@ class BacktestGUI:
                 'volume_long_ma': 30,
                 'volume_alignment_window': 14,
                 'signal_lookback': 9,
-                'exit_ema_period': 50,
                 'stop_atr_multiplier': 2.5,
                 'grace_period_bars': 14,
                 'momentum_gain_pct': 2.0,

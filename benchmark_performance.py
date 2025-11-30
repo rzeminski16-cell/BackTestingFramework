@@ -46,7 +46,6 @@ def benchmark_backtest():
     print("Initializing AlphaTrend strategy...")
     strategy = AlphaTrendStrategy(
         atr_multiplier=1.0,
-        common_period=14,
         source='close',
         smoothing_length=3,
         percentile_period=100,
@@ -54,7 +53,6 @@ def benchmark_backtest():
         volume_long_ma=30,
         volume_alignment_window=14,
         signal_lookback=9,
-        exit_ema_period=50,
         stop_atr_multiplier=2.5,
         grace_period_bars=14,
         momentum_gain_pct=2.0,
