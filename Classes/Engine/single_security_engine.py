@@ -326,7 +326,7 @@ class SingleSecurityEngine:
         Args:
             symbol: Security symbol
             date: Entry date
-            price: Entry price
+            price: Entry price (expected price before slippage)
             signal: BUY signal
             strategy: Strategy instance
             context: Current context
@@ -335,6 +335,9 @@ class SingleSecurityEngine:
         Returns:
             Remaining capital after entry
         """
+        # Apply slippage to BUY orders (pay more due to slippage)
+        execution_price = price * (1 + self.config.slippage_percent / 100)
+
         # Get FX rate for currency conversion
         fx_rate = self._get_fx_rate(symbol, date)
 
@@ -348,20 +351,20 @@ class SingleSecurityEngine:
 
         # Check position size limit (in base currency)
         max_capital_base = capital * self.config.position_size_limit
-        order_value_base = quantity * price * fx_rate  # Convert to base currency
+        order_value_base = quantity * execution_price * fx_rate  # Convert to base currency
 
         if order_value_base > max_capital_base:
             # Adjust quantity to fit within limit
             max_capital_security = max_capital_base / fx_rate
-            quantity = max_capital_security / price
+            quantity = max_capital_security / execution_price
 
-        # Create entry order
+        # Create entry order with slippage-adjusted price
         entry_order = Order(
             symbol=symbol,
             side=OrderSide.BUY,
             quantity=quantity,
             order_type=OrderType.MARKET,
-            price=price,
+            price=execution_price,
             timestamp=date,
             stop_loss=signal.stop_loss,
             take_profit=signal.take_profit,
@@ -416,23 +419,26 @@ class SingleSecurityEngine:
         Args:
             symbol: Security symbol
             date: Exit date
-            price: Exit price
+            price: Exit price (expected price before slippage)
             reason: Exit reason
             capital: Current capital
 
         Returns:
             Updated capital after exit
         """
+        # Apply slippage to SELL orders (receive less due to slippage)
+        execution_price = price * (1 - self.config.slippage_percent / 100)
+
         position = self.position_manager.get_position()
         quantity = position.current_quantity
 
-        # Create exit order
+        # Create exit order with slippage-adjusted price
         exit_order = Order(
             symbol=position.symbol,
             side=OrderSide.SELL,
             quantity=quantity,
             order_type=OrderType.MARKET,
-            price=price,
+            price=execution_price,
             timestamp=date,
             reason=reason
         )
@@ -450,11 +456,11 @@ class SingleSecurityEngine:
         # Get exit FX rate
         exit_fx_rate = self._get_fx_rate(symbol, date)
 
-        # Create trade record with FX information
+        # Create trade record with FX information (using execution price with slippage)
         self.trade_executor.create_trade(
             position=position,
             exit_date=date,
-            exit_price=price,
+            exit_price=execution_price,
             exit_reason=reason,
             exit_commission=exit_commission,
             entry_fx_rate=position.entry_fx_rate,
@@ -475,7 +481,7 @@ class SingleSecurityEngine:
         Args:
             symbol: Security symbol
             date: Exit date
-            price: Exit price
+            price: Exit price (expected price before slippage)
             fraction: Fraction to exit (0.0-1.0)
             reason: Exit reason
             capital: Current capital
@@ -483,16 +489,19 @@ class SingleSecurityEngine:
         Returns:
             Updated capital
         """
+        # Apply slippage to SELL orders (receive less due to slippage)
+        execution_price = price * (1 - self.config.slippage_percent / 100)
+
         position = self.position_manager.get_position()
         exit_quantity = position.current_quantity * fraction
 
-        # Create exit order
+        # Create exit order with slippage-adjusted price
         exit_order = Order(
             symbol=position.symbol,
             side=OrderSide.SELL,
             quantity=exit_quantity,
             order_type=OrderType.MARKET,
-            price=price,
+            price=execution_price,
             timestamp=date,
             reason=reason
         )
@@ -507,11 +516,11 @@ class SingleSecurityEngine:
         # Add proceeds to capital (in base currency)
         capital += proceeds_base
 
-        # Record partial exit
+        # Record partial exit (using execution price with slippage)
         self.position_manager.add_partial_exit(
             exit_date=date,
             quantity=exit_quantity,
-            price=price,
+            price=execution_price,
             reason=reason,
             commission_paid=exit_commission
         )

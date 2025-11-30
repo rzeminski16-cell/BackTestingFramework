@@ -60,6 +60,7 @@ class BacktestConfig:
         end_date: Optional end date for backtest (None = to end)
         position_size_limit: Maximum position size as fraction of capital (default 1.0 = 100%)
         base_currency: Base currency for the account (default: GBP)
+        slippage_percent: Slippage percentage applied to all trades (default: 0.1%)
     """
     initial_capital: float = 100000.0
     commission: CommissionConfig = field(default_factory=CommissionConfig)
@@ -67,6 +68,7 @@ class BacktestConfig:
     end_date: Optional[datetime] = None
     position_size_limit: float = 1.0  # Max 100% of capital per position
     base_currency: str = "GBP"  # Base currency of account
+    slippage_percent: float = 0.1  # Default 0.1% slippage
 
     def __post_init__(self):
         """Validate backtest configuration."""
@@ -76,6 +78,8 @@ class BacktestConfig:
             raise ValueError("Position size limit must be between 0 and 1.0")
         if self.start_date and self.end_date and self.start_date >= self.end_date:
             raise ValueError("Start date must be before end date")
+        if self.slippage_percent < 0:
+            raise ValueError("Slippage percentage must be non-negative")
 
 
 @dataclass
@@ -93,6 +97,7 @@ class PortfolioConfig:
         total_allocation_limit: Maximum total allocation across all positions (default 1.0)
         rebalance_on_exit: Rebalance remaining positions when one closes
         base_currency: Base currency for the account (default: GBP)
+        slippage_percent: Slippage percentage applied to all trades (default: 0.1%)
     """
     initial_capital: float = 100000.0
     commission: CommissionConfig = field(default_factory=CommissionConfig)
@@ -103,6 +108,7 @@ class PortfolioConfig:
     total_allocation_limit: float = 1.0  # Max 100% total allocation
     rebalance_on_exit: bool = False
     base_currency: str = "GBP"  # Base currency of account
+    slippage_percent: float = 0.1  # Default 0.1% slippage
 
     def __post_init__(self):
         """Validate portfolio configuration."""
@@ -116,6 +122,8 @@ class PortfolioConfig:
             raise ValueError("Total allocation limit must be between 0 and 1.0")
         if self.start_date and self.end_date and self.start_date >= self.end_date:
             raise ValueError("Start date must be before end date")
+        if self.slippage_percent < 0:
+            raise ValueError("Slippage percentage must be non-negative")
 
 
 @dataclass
