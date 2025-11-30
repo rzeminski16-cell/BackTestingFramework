@@ -10,7 +10,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from strategies.alphatrend_strategy import AlphaTrendStrategy
 from Classes.Engine.single_security_engine import SingleSecurityEngine
-from Classes.Config.config import BacktestConfig
+from Classes.Config.config import BacktestConfig, CommissionConfig, CommissionMode
 
 def main():
     print("=" * 80)
@@ -79,7 +79,10 @@ def main():
     # Create backtest config
     config = BacktestConfig(
         initial_capital=100000.0,
-        commission_pct=0.1
+        commission=CommissionConfig(
+            mode=CommissionMode.PERCENTAGE,
+            value=0.001  # 0.1% commission
+        )
     )
 
     # Run backtest
