@@ -153,14 +153,16 @@ has_active_signal() =>
         active := bars_since_signal <= volume_alignment_window
     active
 
-// Check if volume condition has been met since the signal appeared
-// Only looks backward from current bar to the signal bar
+// Check if volume condition was met within the alignment window around the signal
+// Checks backward from signal (up to volume_alignment_window bars) and forward to current bar
 check_volume_since_signal() =>
     bool aligned = false
     if signal_bar >= 0
         bars_since_signal = bar_index - signal_bar
-        // Check from signal bar (bars_since_signal) back to current bar (0)
-        for i = 0 to bars_since_signal
+        // Check from (volume_alignment_window bars before signal) to current bar
+        // This allows volume to spike before, during, or after the signal
+        check_window = math.min(volume_alignment_window + bars_since_signal, bar_index)
+        for i = 0 to check_window
             if volume_condition[i]
                 aligned := true
                 break
