@@ -375,8 +375,9 @@ class SingleSecurityEngine:
         # Convert cost to base currency (GBP)
         total_cost_base = self._convert_to_base_currency(total_cost, symbol, date)
 
-        # Check if we have enough capital
-        if total_cost_base > capital:
+        # Check if we have enough capital (with small epsilon for floating point precision)
+        epsilon = 0.01  # Allow $0.01 tolerance for floating point errors
+        if total_cost_base > capital + epsilon:
             # Insufficient capital - skip this trade
             return capital
 

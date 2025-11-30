@@ -353,13 +353,9 @@ class AlphaTrendStrategy(BaseStrategy):
         # Update signal tracking when a new AlphaTrend buy signal appears
         if indicators['filtered_buy']:
             self._signal_bar_idx = current_idx
-            print(f"🔔 Bar {current_idx}: BUY SIGNAL detected!")
-            print(f"   Date: {context.current_bar.get('date', 'N/A')}")
-            print(f"   Volume condition on this bar: {indicators['volume_condition']}")
 
         # Reset signal when we get a sell signal (prevents re-entry on old buy signals)
         if indicators['filtered_sell']:
-            print(f"🔻 Bar {current_idx}: SELL SIGNAL detected, resetting signal_bar")
             self._signal_bar_idx = -1
 
         # Entry logic
@@ -371,27 +367,14 @@ class AlphaTrendStrategy(BaseStrategy):
             # Check if we have an active AlphaTrend signal
             at_signal_active = self._has_active_signal(context)
 
-            # Debug: Print active signal status
-            if self._signal_bar_idx >= 0:
-                bars_since = current_idx - self._signal_bar_idx
-                print(f"📊 Bar {current_idx}: signal_bar={self._signal_bar_idx}, bars_since={bars_since}, active={at_signal_active}")
-
             # Only proceed if we have an active signal
             if at_signal_active:
                 # Check if volume condition has been met since signal appeared
                 vol_aligned = self._check_volume_since_signal(context)
 
-                # Debug: Show volume check details
-                vol_start = max(0, self._signal_bar_idx - self.volume_alignment_window)
-                vol_end = current_idx + 1
-                vol_conditions = [context.data.iloc[i]['volume_condition'] for i in range(vol_start, min(vol_end, len(context.data)))]
-                print(f"   Volume check: bars {vol_start}-{current_idx}, vol_aligned={vol_aligned}")
-                print(f"   Volume conditions: {sum(vol_conditions)}/{len(vol_conditions)} bars have volume spike")
-
                 # Entry condition: AlphaTrend signal is active AND volume has aligned since signal
                 # We only enter when both conditions are satisfied
                 if vol_aligned:
-                    print(f"✅ Bar {current_idx}: ENTRY CONDITIONS MET! Generating BUY signal")
                     # Calculate stop loss using percentage below current price
                     stop_loss = current_price * (1 - self.stop_loss_percent / 100)
 
@@ -406,8 +389,6 @@ class AlphaTrendStrategy(BaseStrategy):
                         stop_loss=stop_loss,
                         reason=f"AlphaTrend signal + Volume aligned"
                     )
-                else:
-                    print(f"⏳ Bar {current_idx}: Waiting for volume alignment...")
 
         # Exit logic
         else:
@@ -443,11 +424,8 @@ class AlphaTrendStrategy(BaseStrategy):
 
         Uses percentage-based stop loss for consistent stop distance calculation.
         """
-        print(f"💰 position_size called: signal.stop_loss={signal.stop_loss}")
-
         if signal.stop_loss is None:
             # Fallback to default sizing if no stop loss
-            print(f"   No stop loss, using default sizing")
             return super().position_size(context, signal)
 
         equity = context.total_equity  # In base currency (e.g., GBP)
@@ -458,7 +436,6 @@ class AlphaTrendStrategy(BaseStrategy):
 
         if stop_distance <= 0:
             # Invalid stop distance, fallback to default
-            print(f"   Invalid stop distance ({stop_distance}), using default")
             return super().position_size(context, signal)
 
         # Convert stop distance to base currency
@@ -468,12 +445,11 @@ class AlphaTrendStrategy(BaseStrategy):
         shares = risk_amount / stop_distance_base
 
         # Ensure we don't exceed available capital (in base currency)
-        max_shares = context.available_capital / (context.current_price * context.fx_rate)
+        # Account for commission: if commission is 0.1%, we can only use capital / 1.001
+        # Get commission rate from context (default to 0.1% if not available)
+        commission_rate = 0.001  # 0.1% - matches typical broker commission
+        max_affordable_value = context.available_capital / (1 + commission_rate)
+        max_shares = max_affordable_value / (context.current_price * context.fx_rate)
         shares = min(shares, max_shares)
-
-        print(f"   equity={equity:.2f}, risk_amount={risk_amount:.2f}, stop_distance={stop_distance:.4f}")
-        print(f"   fx_rate={context.fx_rate}, stop_distance_base={stop_distance_base:.4f}")
-        print(f"   calculated shares={shares:.2f}, max_shares={max_shares:.2f}")
-        print(f"   RETURNING: {shares:.2f} shares")
 
         return shares
