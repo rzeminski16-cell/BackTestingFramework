@@ -46,5 +46,54 @@
     "sector": "financials",
     "description": "STT",
     "currency": "USD"
+  },
+
+ "DLY_NA": {
+    "type": "stock",
+    "sector": "financials",
+    "description": "Bank of Canada",
+    "currency": "USD"
+  },
+ "FUTU": {
+    "type": "stock",
+    "sector": "financials",
+    "description": "Futu Holdings",
+    "currency": "USD"
+  },
+ "DLY_GLE": {
+    "type": "stock",
+    "sector": "financials",
+    "description": "Societe Generale",
+    "currency": "USD"
+  },
+ "IBKR": {
+    "type": "stock",
+    "sector": "financials",
+    "description": "Interactive Brokers",
+    "currency": "USD"
+  },
+ "BK": {
+    "type": "stock",
+    "sector": "financials",
+    "description": "Bank of NY", --- ADD TO LIST
+    "currency": "USD"
+  },
+ "BMO": {
+    "type": "stock",
+    "sector": "financials",
+    "description": "Bank of Montreal",
+    "currency": "USD"
+  },
+ "GS": {
+    "type": "stock",
+    "sector": "financials",
+    "description": "Goldman sachs",
+    "currency": "USD"
+  },
+ "MS": {
+    "type": "stock",
+    "sector": "financials",
+    "description": "Morgan Stanley",
+    "currency": "USD"
   }
 }

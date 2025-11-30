@@ -100,7 +100,7 @@ def process_csv_files(input_folder: str, output_folder: str, column_rename: Dict
 
             # Get date range for summary
             # Parse dates to find min/max
-            df['Date_parsed'] = pd.to_datetime(df['date'], format='%d/%m/%Y', errors='coerce')
+            df['Date_parsed'] = pd.to_datetime(df['date'], dayfirst=False, errors='coerce')
             min_date = df['Date_parsed'].min()
             max_date = df['Date_parsed'].max()
             num_records = len(df)
@@ -161,10 +161,15 @@ def main():
         'close': 'close',
         'candle_position': 'candle_position',
         'MA': 'sma_200',
-        'EMA': 'ema_14',
+        'EMA': 'ema_50',
         'RSI': 'rsi_14',
         'Volume': 'volume',
-        'CMF': 'cmf'
+        'CMF': 'cmf',
+        'ATR': 'atr_14',
+        'ParabolicSAR': 'par_sar',
+        'Basis': 'base_bb',
+        'Upper': 'upper_bb',
+        'Lower': 'lower_bb'
     }
 
     # Get input and output folders from command line arguments or use defaults
