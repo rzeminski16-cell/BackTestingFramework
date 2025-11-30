@@ -24,8 +24,32 @@ def main():
 
     try:
         data = pd.read_csv(data_file)
+
+        # Normalize column names to lowercase (like DataLoader does)
+        data.columns = data.columns.str.lower().str.strip()
+
+        # Convert 'time' to 'date' if needed
+        if 'time' in data.columns and 'date' not in data.columns:
+            data.rename(columns={'time': 'date'}, inplace=True)
+
+        # Map common column variations
+        column_mappings = {
+            'atr': 'atr_14',
+            'ema': 'ema_50'
+        }
+        for old_name, new_name in column_mappings.items():
+            if old_name in data.columns and new_name not in data.columns:
+                data.rename(columns={old_name: new_name}, inplace=True)
+                print(f"  Renamed '{old_name}' to '{new_name}'")
+
+        # Parse date column
+        if 'date' in data.columns:
+            data['date'] = pd.to_datetime(data['date'])
+
         print(f"✓ Loaded {len(data)} bars")
-        print(f"  Date range: {data['date'].iloc[0]} to {data['date'].iloc[-1]}")
+        print(f"  Columns: {list(data.columns[:15])}...")  # Show first 15 columns
+        if 'date' in data.columns:
+            print(f"  Date range: {data['date'].iloc[0]} to {data['date'].iloc[-1]}")
         print()
     except Exception as e:
         print(f"✗ Error loading data: {e}")
