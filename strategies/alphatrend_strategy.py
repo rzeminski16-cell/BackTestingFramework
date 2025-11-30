@@ -320,6 +320,8 @@ class AlphaTrendStrategy(BaseStrategy):
         condition was met within +/- volume_alignment_window bars.
 
         PERFORMANCE: Uses pre-calculated volume_condition column.
+
+        IMPORTANT: Prevents lookahead bias by only checking volume up to current_idx.
         """
         current_idx = context.current_index
         start_idx = max(0, current_idx - self.signal_lookback + 1)
@@ -331,8 +333,9 @@ class AlphaTrendStrategy(BaseStrategy):
             # Check if there was a buy signal at this bar
             if context.data.iloc[signal_idx]['filtered_buy']:
                 # Check volume condition within alignment window around this signal
+                # IMPORTANT: Limit vol_end to current_idx + 1 to prevent lookahead bias
                 vol_start = max(0, signal_idx - self.volume_alignment_window)
-                vol_end = min(len(context.data), signal_idx + self.volume_alignment_window + 1)
+                vol_end = min(current_idx + 1, signal_idx + self.volume_alignment_window + 1)
 
                 # Check if volume condition met in window
                 for i in range(vol_start, vol_end):
