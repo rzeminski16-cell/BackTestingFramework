@@ -30,14 +30,14 @@ class ExcelReportGenerator:
     """
 
     def __init__(self, output_directory: Path, initial_capital: float = 100000.0,
-                 risk_free_rate: float = 0.02, benchmark_name: str = "S&P 500"):
+                 risk_free_rate: float = 0.035, benchmark_name: str = "S&P 500"):
         """
         Initialize Excel report generator.
 
         Args:
             output_directory: Directory to save reports
             initial_capital: Starting capital for calculations
-            risk_free_rate: Annual risk-free rate (default 2%)
+            risk_free_rate: Annual risk-free rate (default 3.5%)
             benchmark_name: Name of benchmark for comparison
         """
         self.output_directory = Path(output_directory)
@@ -85,7 +85,10 @@ class ExcelReportGenerator:
 
         # Create all sheets
         self._create_summary_dashboard(wb, result, metrics)
+        self._create_random_trades(wb, result, metrics)
         self._create_trade_log(wb, result, metrics)
+        self._create_period_analysis(wb, result, metrics)
+        self._create_costs_analysis(wb, result, metrics)
         self._create_performance_analysis(wb, result, metrics)
         self._create_visualizations(wb, result, metrics)
         self._create_market_conditions(wb, result, metrics)
@@ -199,6 +202,19 @@ class ExcelReportGenerator:
 
         # Trade distribution
         metrics['return_distribution'] = self._calculate_return_distribution(trades)
+
+        # Period analysis (year-by-year and quarter-by-quarter)
+        metrics['yearly_analysis'] = self._calculate_period_analysis(equity_curve, trades, 'Y')
+        metrics['quarterly_analysis'] = self._calculate_period_analysis(equity_curve, trades, 'Q')
+
+        # Costs analysis
+        metrics['costs_analysis'] = self._calculate_costs_analysis(trades, metrics['total_return'])
+
+        # Drawdown recovery analysis
+        metrics['drawdown_recovery'] = self._calculate_drawdown_recovery(equity_curve)
+
+        # Annual risk-adjusted ratios
+        metrics['annual_ratios'] = self._calculate_annual_ratios(equity_curve, trades)
 
         return metrics
 
@@ -574,6 +590,344 @@ class ExcelReportGenerator:
 
         return distribution
 
+    def _calculate_period_analysis(self, equity_curve: pd.DataFrame, trades: List[Trade], period: str) -> pd.DataFrame:
+        """
+        Calculate period-by-period analysis (year or quarter).
+
+        Args:
+            equity_curve: Equity curve DataFrame
+            trades: List of trades
+            period: 'Y' for yearly or 'Q' for quarterly
+
+        Returns:
+            DataFrame with columns: period, win_rate, num_trades, max_dd, avg_dd, expectancy, pl, sharpe, sortino, calmar
+        """
+        if len(equity_curve) < 2 or len(trades) == 0:
+            return pd.DataFrame()
+
+        equity_df = equity_curve.copy()
+        equity_df.set_index('date', inplace=True)
+
+        # Group trades by period
+        trades_df = pd.DataFrame([{
+            'date': t.exit_date,
+            'pl': t.pl,
+            'is_winner': t.is_winner,
+            'commission': t.commission_paid
+        } for t in trades])
+
+        if len(trades_df) == 0:
+            return pd.DataFrame()
+
+        trades_df.set_index('date', inplace=True)
+
+        # Determine period label format
+        if period == 'Y':
+            freq = 'Y'
+            label_format = '%Y'
+        else:  # Q
+            freq = 'Q'
+            label_format = '%Y-Q'
+
+        # Group by period
+        period_groups = trades_df.groupby(pd.Grouper(freq=freq))
+
+        results = []
+
+        for period_date, period_trades in period_groups:
+            if len(period_trades) == 0:
+                continue
+
+            # Calculate period label
+            if period == 'Q':
+                quarter = (period_date.month - 1) // 3 + 1
+                period_label = f"{period_date.year}-Q{quarter}"
+            else:
+                period_label = str(period_date.year)
+
+            # Get equity curve for this period
+            period_start = period_date.replace(month=1, day=1) if period == 'Y' else pd.Timestamp(period_date.year, ((quarter-1)*3)+1, 1)
+            if period == 'Y':
+                period_end = period_date.replace(month=12, day=31)
+            else:
+                # Last day of quarter
+                if quarter == 4:
+                    period_end = pd.Timestamp(period_date.year, 12, 31)
+                else:
+                    period_end = pd.Timestamp(period_date.year, quarter*3 + 1, 1) - pd.Timedelta(days=1)
+
+            period_equity = equity_df.loc[(equity_df.index >= period_start) & (equity_df.index <= period_end)]
+
+            # Calculate metrics for this period
+            num_trades = len(period_trades)
+            winners = period_trades[period_trades['is_winner'] == True]
+            win_rate = len(winners) / num_trades if num_trades > 0 else 0
+
+            # P/L
+            period_pl = period_trades['pl'].sum()
+
+            # Expectancy
+            avg_win = winners['pl'].mean() if len(winners) > 0 else 0
+            losers = period_trades[period_trades['is_winner'] == False]
+            avg_loss = losers['pl'].mean() if len(losers) > 0 else 0
+            expectancy = (win_rate * avg_win) + ((1 - win_rate) * avg_loss)
+
+            # Drawdown for period (reset at period start)
+            if len(period_equity) > 0:
+                period_equity_values = period_equity['equity'].values
+                # Reset to period start value
+                running_max = np.maximum.accumulate(period_equity_values)
+                drawdown = running_max - period_equity_values
+                drawdown_pct = (drawdown / running_max) * 100
+                max_dd = np.max(drawdown_pct)
+                avg_dd = np.mean(drawdown_pct[drawdown_pct > 0]) if np.any(drawdown_pct > 0) else 0
+
+                # Sharpe ratio for period
+                returns = period_equity['equity'].pct_change().dropna()
+                if len(returns) > 1 and returns.std() > 0:
+                    daily_rf = pow(1 + self.risk_free_rate, 1/252) - 1
+                    excess_returns = returns - daily_rf
+                    sharpe = (excess_returns.mean() / excess_returns.std()) * np.sqrt(252)
+                else:
+                    sharpe = 0
+
+                # Sortino ratio for period
+                downside_returns = returns[returns < 0]
+                if len(downside_returns) > 0 and downside_returns.std() > 0:
+                    sortino = (excess_returns.mean() / downside_returns.std()) * np.sqrt(252)
+                else:
+                    sortino = 0
+
+                # Calmar ratio for period (annualized return / max DD)
+                period_days = (period_end - period_start).days
+                period_return = (period_equity_values[-1] / period_equity_values[0] - 1) * 100 if period_equity_values[0] > 0 else 0
+                annualized_return = period_return * (365.25 / period_days) if period_days > 0 else 0
+                calmar = annualized_return / max_dd if max_dd > 0 else 0
+            else:
+                max_dd = 0
+                avg_dd = 0
+                sharpe = 0
+                sortino = 0
+                calmar = 0
+
+            results.append({
+                'period': period_label,
+                'num_trades': num_trades,
+                'win_rate': win_rate * 100,
+                'pl': period_pl,
+                'max_dd_pct': max_dd,
+                'avg_dd_pct': avg_dd,
+                'expectancy': expectancy,
+                'sharpe': sharpe,
+                'sortino': sortino,
+                'calmar': calmar
+            })
+
+        return pd.DataFrame(results)
+
+    def _calculate_costs_analysis(self, trades: List[Trade], total_return: float) -> Dict[str, Any]:
+        """
+        Calculate comprehensive costs analysis.
+
+        Args:
+            trades: List of trades
+            total_return: Total return from all trades
+
+        Returns:
+            Dictionary with cost metrics
+        """
+        if len(trades) == 0:
+            return {
+                'total_commission': 0,
+                'total_slippage': 0,
+                'total_costs': 0,
+                'avg_commission_per_trade': 0,
+                'avg_slippage_per_trade': 0,
+                'avg_costs_per_trade': 0,
+                'costs_pct_of_pl': 0,
+                'pl_before_costs': 0,
+                'pl_after_costs': 0
+            }
+
+        total_commission = sum(t.commission_paid for t in trades)
+
+        # Calculate slippage if available in metadata
+        total_slippage = 0
+        for t in trades:
+            if hasattr(t, 'metadata') and isinstance(t.metadata, dict):
+                slippage = t.metadata.get('slippage', 0)
+                total_slippage += slippage
+
+        total_costs = total_commission + abs(total_slippage)
+        avg_commission = total_commission / len(trades)
+        avg_slippage = total_slippage / len(trades)
+        avg_costs = total_costs / len(trades)
+
+        pl_before_costs = total_return + total_costs
+        pl_after_costs = total_return
+
+        costs_pct = (total_costs / abs(pl_before_costs)) * 100 if pl_before_costs != 0 else 0
+
+        return {
+            'total_commission': total_commission,
+            'total_slippage': abs(total_slippage),
+            'total_costs': total_costs,
+            'avg_commission_per_trade': avg_commission,
+            'avg_slippage_per_trade': abs(avg_slippage),
+            'avg_costs_per_trade': avg_costs,
+            'costs_pct_of_pl': costs_pct,
+            'pl_before_costs': pl_before_costs,
+            'pl_after_costs': pl_after_costs
+        }
+
+    def _calculate_drawdown_recovery(self, equity_curve: pd.DataFrame) -> List[Dict[str, Any]]:
+        """
+        Calculate drawdown periods and recovery times.
+
+        Returns:
+            List of drawdown periods with start, end, recovery dates, and durations
+        """
+        if len(equity_curve) < 2:
+            return []
+
+        equity = equity_curve['equity'].values
+        dates = equity_curve['date'].values
+
+        running_max = np.maximum.accumulate(equity)
+        drawdown = running_max - equity
+        drawdown_pct = (drawdown / running_max) * 100
+
+        # Find drawdown periods
+        in_drawdown = drawdown_pct > 0
+
+        drawdown_periods = []
+        dd_start = None
+        dd_start_idx = None
+        peak_value = None
+
+        for i in range(len(equity)):
+            if in_drawdown[i] and dd_start is None:
+                # Start of drawdown
+                dd_start = dates[i-1] if i > 0 else dates[i]
+                dd_start_idx = i-1 if i > 0 else i
+                peak_value = running_max[i]
+            elif not in_drawdown[i] and dd_start is not None:
+                # End of drawdown (recovery)
+                dd_end_idx = i - 1
+                dd_end = dates[dd_end_idx]
+                recovery_date = dates[i]
+
+                max_dd_in_period = np.max(drawdown_pct[dd_start_idx:i])
+
+                dd_duration = (dd_end - dd_start).days if hasattr(dd_end, 'days') else 0
+                recovery_duration = (recovery_date - dd_start).days if hasattr(recovery_date, 'days') else 0
+
+                drawdown_periods.append({
+                    'start_date': dd_start,
+                    'trough_date': dd_end,
+                    'recovery_date': recovery_date,
+                    'peak_value': peak_value,
+                    'trough_value': equity[dd_end_idx],
+                    'max_dd_pct': max_dd_in_period,
+                    'drawdown_duration_days': dd_duration,
+                    'recovery_duration_days': recovery_duration
+                })
+
+                dd_start = None
+                dd_start_idx = None
+                peak_value = None
+
+        # Handle if still in drawdown at end
+        if dd_start is not None:
+            dd_end_idx = len(equity) - 1
+            dd_end = dates[dd_end_idx]
+            max_dd_in_period = np.max(drawdown_pct[dd_start_idx:])
+            dd_duration = (dd_end - dd_start).days if hasattr(dd_end, 'days') else 0
+
+            drawdown_periods.append({
+                'start_date': dd_start,
+                'trough_date': dd_end,
+                'recovery_date': None,  # Not recovered yet
+                'peak_value': peak_value,
+                'trough_value': equity[dd_end_idx],
+                'max_dd_pct': max_dd_in_period,
+                'drawdown_duration_days': dd_duration,
+                'recovery_duration_days': None  # Not recovered
+            })
+
+        # Sort by max drawdown
+        drawdown_periods.sort(key=lambda x: x['max_dd_pct'], reverse=True)
+
+        return drawdown_periods
+
+    def _calculate_annual_ratios(self, equity_curve: pd.DataFrame, trades: List[Trade]) -> pd.DataFrame:
+        """
+        Calculate Sharpe, Sortino, and Calmar ratios on a year-by-year basis.
+
+        Returns:
+            DataFrame with columns: year, sharpe, sortino, calmar, max_dd_pct, annual_return_pct
+        """
+        if len(equity_curve) < 2:
+            return pd.DataFrame()
+
+        equity_df = equity_curve.copy()
+        equity_df.set_index('date', inplace=True)
+
+        # Group by year
+        years = equity_df.index.year.unique()
+
+        results = []
+
+        for year in years:
+            year_data = equity_df[equity_df.index.year == year]
+
+            if len(year_data) < 2:
+                continue
+
+            # Calculate returns
+            returns = year_data['equity'].pct_change().dropna()
+
+            if len(returns) == 0:
+                continue
+
+            # Sharpe
+            if returns.std() > 0:
+                daily_rf = pow(1 + self.risk_free_rate, 1/252) - 1
+                excess_returns = returns - daily_rf
+                sharpe = (excess_returns.mean() / excess_returns.std()) * np.sqrt(252)
+            else:
+                sharpe = 0
+
+            # Sortino
+            downside_returns = returns[returns < 0]
+            if len(downside_returns) > 0 and downside_returns.std() > 0:
+                sortino = (excess_returns.mean() / downside_returns.std()) * np.sqrt(252)
+            else:
+                sortino = 0
+
+            # Max drawdown for year
+            year_equity = year_data['equity'].values
+            running_max = np.maximum.accumulate(year_equity)
+            drawdown_pct = ((year_equity - running_max) / running_max) * 100
+            max_dd_pct = abs(np.min(drawdown_pct))
+
+            # Annual return
+            annual_return_pct = ((year_equity[-1] / year_equity[0]) - 1) * 100 if year_equity[0] > 0 else 0
+
+            # Calmar
+            calmar = annual_return_pct / max_dd_pct if max_dd_pct > 0 else 0
+
+            results.append({
+                'year': year,
+                'sharpe': sharpe,
+                'sortino': sortino,
+                'calmar': calmar,
+                'max_dd_pct': max_dd_pct,
+                'annual_return_pct': annual_return_pct
+            })
+
+        return pd.DataFrame(results)
+
     # ==================== SHEET CREATION ====================
 
     def _create_summary_dashboard(self, wb: Workbook, result: BacktestResult, metrics: Dict[str, Any]):
@@ -659,12 +1013,17 @@ class ExcelReportGenerator:
         # C. Risk-Adjusted Performance Ratios
         row = self._add_section_header(ws, row, "C. RISK-ADJUSTED PERFORMANCE RATIOS")
 
+        # Add reference note
+        ws[f'A{row}'] = f"Note: Risk-free rate used = {self.risk_free_rate*100:.1f}%"
+        ws[f'A{row}'].font = Font(italic=True, size=9)
+        row += 1
+
         ratios_data = [
-            ("Sharpe Ratio", metrics['sharpe_ratio'], "decimal", 1.0),
-            ("Sortino Ratio", metrics['sortino_ratio'], "decimal", 2.0),
-            ("Calmar Ratio", metrics['calmar_ratio'], "decimal", 2.0),
-            ("Recovery Factor", metrics['recovery_factor'], "decimal", None),
-            ("Profit Factor", metrics['profit_factor'], "decimal", 1.5),
+            ("Sharpe Ratio", metrics['sharpe_ratio'], "decimal", 1.0, "<1: Poor, 1-2: Good, >2: Excellent"),
+            ("Sortino Ratio", metrics['sortino_ratio'], "decimal", 1.0, "<1: Poor, 1-2: Good, >2: Excellent"),
+            ("Calmar Ratio", metrics['calmar_ratio'], "decimal", 0.5, "<0.5: Poor, 0.5-1: Good, >1: Excellent"),
+            ("Recovery Factor", metrics['recovery_factor'], "decimal", None, "Higher is better"),
+            ("Profit Factor", metrics['profit_factor'], "decimal", 1.5, "<1: Losing, 1-1.5: Marginal, >1.5: Good"),
         ]
 
         row = self._add_metrics_with_targets(ws, row, ratios_data)
@@ -725,6 +1084,113 @@ class ExcelReportGenerator:
         ws.column_dimensions['B'].width = 20
         ws.column_dimensions['C'].width = 15
         ws.column_dimensions['D'].width = 15
+        ws.column_dimensions['E'].width = 30
+
+    def _create_random_trades(self, wb: Workbook, result: BacktestResult, metrics: Dict[str, Any]):
+        """Create Sheet 2: Random Trades Sample."""
+        ws = wb.create_sheet("Random Trades Sample")
+
+        row = 1
+
+        # Title
+        ws.merge_cells(f'A{row}:H{row}')
+        ws[f'A{row}'] = "RANDOM TRADES SAMPLE (Manual Verification)"
+        ws[f'A{row}'].font = Font(bold=True, size=14)
+        ws[f'A{row}'].alignment = Alignment(horizontal='center')
+        row += 2
+
+        if len(result.trades) == 0:
+            ws[f'A{row}'] = "No trades executed"
+            return
+
+        # Select up to 10 random trades
+        import random
+        num_samples = min(10, len(result.trades))
+        sample_trades = random.sample(result.trades, num_samples)
+
+        # Headers
+        headers = ['Trade #', 'Entry Date', 'Entry Price', 'Exit Date', 'Exit Price',
+                   'Quantity', 'Initial SL', 'Final SL', 'P/L', 'P/L %']
+
+        for col_idx, header in enumerate(headers, 1):
+            cell = ws.cell(row=row, column=col_idx, value=header)
+            cell.font = self.header_font
+            cell.fill = self.header_fill
+            cell.alignment = Alignment(horizontal='center')
+
+        row += 1
+
+        # Write trade data
+        for idx, trade in enumerate(sample_trades, 1):
+            trade_num = result.trades.index(trade) + 1  # Get original trade number
+
+            ws.cell(row=row, column=1, value=trade_num)
+
+            # Entry date
+            ws.cell(row=row, column=2, value=trade.entry_date.strftime('%Y-%m-%d %H:%M:%S') if hasattr(trade.entry_date, 'hour') else trade.entry_date.strftime('%Y-%m-%d'))
+
+            # Entry price
+            cell = ws.cell(row=row, column=3, value=trade.entry_price)
+            cell.number_format = '$#,##0.00' if trade.entry_price > 100 else '$#,##0.0000'
+
+            # Exit date
+            ws.cell(row=row, column=4, value=trade.exit_date.strftime('%Y-%m-%d %H:%M:%S') if hasattr(trade.exit_date, 'hour') else trade.exit_date.strftime('%Y-%m-%d'))
+
+            # Exit price
+            cell = ws.cell(row=row, column=5, value=trade.exit_price)
+            cell.number_format = '$#,##0.00' if trade.exit_price > 100 else '$#,##0.0000'
+
+            # Quantity
+            ws.cell(row=row, column=6, value=trade.quantity)
+
+            # Initial SL
+            initial_sl = trade.initial_stop_loss if trade.initial_stop_loss else 'N/A'
+            if initial_sl != 'N/A':
+                cell = ws.cell(row=row, column=7, value=initial_sl)
+                cell.number_format = '$#,##0.00' if initial_sl > 100 else '$#,##0.0000'
+            else:
+                ws.cell(row=row, column=7, value=initial_sl)
+
+            # Final SL
+            final_sl = trade.final_stop_loss if trade.final_stop_loss else 'N/A'
+            if final_sl != 'N/A':
+                cell = ws.cell(row=row, column=8, value=final_sl)
+                cell.number_format = '$#,##0.00' if final_sl > 100 else '$#,##0.0000'
+            else:
+                ws.cell(row=row, column=8, value=final_sl)
+
+            # P/L
+            cell = ws.cell(row=row, column=9, value=trade.pl)
+            cell.number_format = '$#,##0.00'
+            if trade.pl < 0:
+                cell.font = Font(color="FF0000")
+            elif trade.pl > 0:
+                cell.font = Font(color="00B050")
+
+            # P/L %
+            cell = ws.cell(row=row, column=10, value=trade.pl_pct)
+            cell.number_format = '0.00"%"'
+            if trade.pl_pct < 0:
+                cell.font = Font(color="FF0000")
+            elif trade.pl_pct > 0:
+                cell.font = Font(color="00B050")
+
+            row += 1
+
+        # Format columns
+        ws.column_dimensions['A'].width = 10
+        ws.column_dimensions['B'].width = 20
+        ws.column_dimensions['C'].width = 15
+        ws.column_dimensions['D'].width = 20
+        ws.column_dimensions['E'].width = 15
+        ws.column_dimensions['F'].width = 12
+        ws.column_dimensions['G'].width = 15
+        ws.column_dimensions['H'].width = 15
+        ws.column_dimensions['I'].width = 15
+        ws.column_dimensions['J'].width = 12
+
+        # Freeze header rows
+        ws.freeze_panes = 'A4'
 
     def _create_trade_log(self, wb: Workbook, result: BacktestResult, metrics: Dict[str, Any]):
         """Create Sheet 2: Trade Log."""
@@ -821,6 +1287,220 @@ class ExcelReportGenerator:
         # Freeze header row
         ws.freeze_panes = 'A2'
 
+    def _create_period_analysis(self, wb: Workbook, result: BacktestResult, metrics: Dict[str, Any]):
+        """Create Sheet: Period Analysis (Year-by-Year and Quarter-by-Quarter)."""
+        ws = wb.create_sheet("Period Analysis")
+
+        row = 1
+
+        # Title
+        ws.merge_cells(f'A{row}:J{row}')
+        ws[f'A{row}'] = "PERIOD ANALYSIS"
+        ws[f'A{row}'].font = Font(bold=True, size=14)
+        ws[f'A{row}'].alignment = Alignment(horizontal='center')
+        row += 2
+
+        # Year-by-Year Analysis
+        row = self._add_section_header(ws, row, "YEAR-BY-YEAR BREAKDOWN")
+        ws[f'A{row}'] = "Note: P/L resets to 0 at the start of each year for drawdown calculation"
+        ws[f'A{row}'].font = Font(italic=True, size=9)
+        row += 1
+
+        yearly_df = metrics.get('yearly_analysis', pd.DataFrame())
+
+        if not yearly_df.empty:
+            # Headers
+            headers = ['Year', 'Trades', 'Win Rate %', 'P/L', 'Max DD %', 'Avg DD %',
+                       'Expectancy', 'Sharpe', 'Sortino', 'Calmar']
+
+            for col_idx, header in enumerate(headers, 1):
+                cell = ws.cell(row=row, column=col_idx, value=header)
+                cell.font = self.header_font
+                cell.fill = self.header_fill
+                cell.alignment = Alignment(horizontal='center')
+
+            row += 1
+
+            # Data rows
+            for _, year_data in yearly_df.iterrows():
+                ws.cell(row=row, column=1, value=year_data['period'])
+                ws.cell(row=row, column=2, value=year_data['num_trades'])
+
+                cell = ws.cell(row=row, column=3, value=year_data['win_rate'])
+                cell.number_format = '0.0"%"'
+
+                cell = ws.cell(row=row, column=4, value=year_data['pl'])
+                cell.number_format = '$#,##0.00'
+                if year_data['pl'] < 0:
+                    cell.font = Font(color="FF0000")
+                elif year_data['pl'] > 0:
+                    cell.font = Font(color="00B050")
+
+                cell = ws.cell(row=row, column=5, value=year_data['max_dd_pct'])
+                cell.number_format = '0.00"%"'
+
+                cell = ws.cell(row=row, column=6, value=year_data['avg_dd_pct'])
+                cell.number_format = '0.00"%"'
+
+                cell = ws.cell(row=row, column=7, value=year_data['expectancy'])
+                cell.number_format = '$#,##0.00'
+
+                cell = ws.cell(row=row, column=8, value=year_data['sharpe'])
+                cell.number_format = '0.00'
+
+                cell = ws.cell(row=row, column=9, value=year_data['sortino'])
+                cell.number_format = '0.00'
+
+                cell = ws.cell(row=row, column=10, value=year_data['calmar'])
+                cell.number_format = '0.00'
+
+                row += 1
+
+            row += 2
+        else:
+            ws[f'A{row}'] = "Insufficient data for yearly analysis"
+            row += 3
+
+        # Quarter-by-Quarter Analysis
+        row = self._add_section_header(ws, row, "QUARTER-BY-QUARTER BREAKDOWN")
+        ws[f'A{row}'] = "Note: P/L resets to 0 at the start of each quarter for drawdown calculation"
+        ws[f'A{row}'].font = Font(italic=True, size=9)
+        row += 1
+
+        quarterly_df = metrics.get('quarterly_analysis', pd.DataFrame())
+
+        if not quarterly_df.empty:
+            # Headers
+            headers = ['Quarter', 'Trades', 'Win Rate %', 'P/L', 'Max DD %', 'Avg DD %',
+                       'Expectancy', 'Sharpe', 'Sortino', 'Calmar']
+
+            for col_idx, header in enumerate(headers, 1):
+                cell = ws.cell(row=row, column=col_idx, value=header)
+                cell.font = self.header_font
+                cell.fill = self.header_fill
+                cell.alignment = Alignment(horizontal='center')
+
+            row += 1
+
+            # Data rows
+            for _, quarter_data in quarterly_df.iterrows():
+                ws.cell(row=row, column=1, value=quarter_data['period'])
+                ws.cell(row=row, column=2, value=quarter_data['num_trades'])
+
+                cell = ws.cell(row=row, column=3, value=quarter_data['win_rate'])
+                cell.number_format = '0.0"%"'
+
+                cell = ws.cell(row=row, column=4, value=quarter_data['pl'])
+                cell.number_format = '$#,##0.00'
+                if quarter_data['pl'] < 0:
+                    cell.font = Font(color="FF0000")
+                elif quarter_data['pl'] > 0:
+                    cell.font = Font(color="00B050")
+
+                cell = ws.cell(row=row, column=5, value=quarter_data['max_dd_pct'])
+                cell.number_format = '0.00"%"'
+
+                cell = ws.cell(row=row, column=6, value=quarter_data['avg_dd_pct'])
+                cell.number_format = '0.00"%"'
+
+                cell = ws.cell(row=row, column=7, value=quarter_data['expectancy'])
+                cell.number_format = '$#,##0.00'
+
+                cell = ws.cell(row=row, column=8, value=quarter_data['sharpe'])
+                cell.number_format = '0.00'
+
+                cell = ws.cell(row=row, column=9, value=quarter_data['sortino'])
+                cell.number_format = '0.00'
+
+                cell = ws.cell(row=row, column=10, value=quarter_data['calmar'])
+                cell.number_format = '0.00'
+
+                row += 1
+        else:
+            ws[f'A{row}'] = "Insufficient data for quarterly analysis"
+
+        # Format columns
+        for col_idx in range(1, 11):
+            ws.column_dimensions[chr(64 + col_idx)].width = 14
+
+    def _create_costs_analysis(self, wb: Workbook, result: BacktestResult, metrics: Dict[str, Any]):
+        """Create Sheet: Costs Analysis."""
+        ws = wb.create_sheet("Costs Analysis")
+
+        row = 1
+
+        # Title
+        ws.merge_cells(f'A{row}:D{row}')
+        ws[f'A{row}'] = "COSTS ANALYSIS"
+        ws[f'A{row}'].font = Font(bold=True, size=14)
+        ws[f'A{row}'].alignment = Alignment(horizontal='center')
+        row += 2
+
+        costs = metrics.get('costs_analysis', {})
+
+        # Total Costs Breakdown
+        row = self._add_section_header(ws, row, "TOTAL COSTS BREAKDOWN")
+
+        costs_data = [
+            ("Total Commission Paid", costs.get('total_commission', 0), "currency"),
+            ("Total Slippage Cost", costs.get('total_slippage', 0), "currency"),
+            ("Total Costs", costs.get('total_costs', 0), "currency"),
+        ]
+
+        row = self._add_metrics_table(ws, row, costs_data)
+        row += 1
+
+        # Per-Trade Averages
+        row = self._add_section_header(ws, row, "PER-TRADE AVERAGES")
+
+        avg_costs_data = [
+            ("Avg Commission per Trade", costs.get('avg_commission_per_trade', 0), "currency"),
+            ("Avg Slippage per Trade", costs.get('avg_slippage_per_trade', 0), "currency"),
+            ("Avg Total Cost per Trade", costs.get('avg_costs_per_trade', 0), "currency"),
+        ]
+
+        row = self._add_metrics_table(ws, row, avg_costs_data)
+        row += 1
+
+        # Impact on P/L
+        row = self._add_section_header(ws, row, "IMPACT ON P/L")
+
+        impact_data = [
+            ("P/L Before Costs", costs.get('pl_before_costs', 0), "currency"),
+            ("Total Costs", costs.get('total_costs', 0), "currency"),
+            ("P/L After Costs", costs.get('pl_after_costs', 0), "currency"),
+            ("Costs as % of Gross P/L", costs.get('costs_pct_of_pl', 0), "percentage"),
+        ]
+
+        row = self._add_metrics_table(ws, row, impact_data)
+        row += 2
+
+        # Add interpretation
+        ws[f'A{row}'] = "Interpretation:"
+        ws[f'A{row}'].font = Font(bold=True)
+        row += 1
+
+        costs_pct = costs.get('costs_pct_of_pl', 0)
+        if costs_pct < 5:
+            interpretation = "✓ Costs are low (<5% of gross P/L) - Good cost efficiency"
+            color = "00B050"
+        elif costs_pct < 10:
+            interpretation = "⚠ Costs are moderate (5-10% of gross P/L) - Acceptable"
+            color = "FF8C00"
+        else:
+            interpretation = "✗ Costs are high (>10% of gross P/L) - Consider optimization"
+            color = "FF0000"
+
+        ws[f'A{row}'] = interpretation
+        ws[f'A{row}'].font = Font(color=color, bold=True)
+        row += 1
+
+        # Format columns
+        ws.column_dimensions['A'].width = 30
+        ws.column_dimensions['B'].width = 20
+        ws.column_dimensions['C'].width = 15
+        ws.column_dimensions['D'].width = 15
+
     def _create_performance_analysis(self, wb: Workbook, result: BacktestResult, metrics: Dict[str, Any]):
         """Create Sheet 3: Performance Metrics & Analysis."""
         ws = wb.create_sheet("Performance Analysis")
@@ -847,6 +1527,63 @@ class ExcelReportGenerator:
 
         row = self._add_metrics_table(ws, row, drawdown_data)
         row += 2
+
+        # Drawdown Recovery Analysis
+        row = self._add_section_header(ws, row, "MAJOR DRAWDOWN PERIODS & RECOVERY TIMES")
+
+        drawdown_periods = metrics.get('drawdown_recovery', [])
+
+        if drawdown_periods:
+            # Show top 5 largest drawdowns
+            headers = ['Peak Date', 'Trough Date', 'Recovery Date', 'Max DD %',
+                       'DD Duration (days)', 'Recovery Time (days)', 'Status']
+
+            for col_idx, header in enumerate(headers, 1):
+                cell = ws.cell(row=row, column=col_idx, value=header)
+                cell.font = self.header_font
+                cell.fill = self.header_fill
+                cell.alignment = Alignment(horizontal='center')
+
+            row += 1
+
+            for dd in drawdown_periods[:5]:  # Top 5
+                ws.cell(row=row, column=1, value=dd['start_date'].strftime('%Y-%m-%d') if hasattr(dd['start_date'], 'strftime') else str(dd['start_date']))
+                ws.cell(row=row, column=2, value=dd['trough_date'].strftime('%Y-%m-%d') if hasattr(dd['trough_date'], 'strftime') else str(dd['trough_date']))
+
+                if dd['recovery_date']:
+                    ws.cell(row=row, column=3, value=dd['recovery_date'].strftime('%Y-%m-%d') if hasattr(dd['recovery_date'], 'strftime') else str(dd['recovery_date']))
+                else:
+                    ws.cell(row=row, column=3, value='Not Recovered')
+
+                cell = ws.cell(row=row, column=4, value=dd['max_dd_pct'])
+                cell.number_format = '0.00"%"'
+
+                ws.cell(row=row, column=5, value=dd['drawdown_duration_days'])
+
+                if dd['recovery_duration_days']:
+                    ws.cell(row=row, column=6, value=dd['recovery_duration_days'])
+                else:
+                    ws.cell(row=row, column=6, value='N/A')
+
+                # Status
+                if dd['recovery_date']:
+                    status_cell = ws.cell(row=row, column=7, value='✓ Recovered')
+                    status_cell.font = Font(color="00B050")
+                else:
+                    status_cell = ws.cell(row=row, column=7, value='⚠ Ongoing')
+                    status_cell.font = Font(color="FF8C00")
+
+                row += 1
+
+            row += 1
+
+            # Add interpretation
+            ws[f'A{row}'] = "Note: Recovery time is measured from peak to full recovery (return to previous high)"
+            ws[f'A{row}'].font = Font(italic=True, size=9)
+            row += 2
+        else:
+            ws[f'A{row}'] = "No significant drawdown periods"
+            row += 3
 
         # B. Monthly Returns Table
         row = self._add_section_header(ws, row, "B. MONTHLY RETURNS")
@@ -1029,6 +1766,47 @@ class ExcelReportGenerator:
 
             ws.add_chart(chart3, "E46")
 
+        # Annual Sharpe/Sortino/Calmar Ratios Chart
+        annual_ratios = metrics.get('annual_ratios', pd.DataFrame())
+
+        if not annual_ratios.empty:
+            # Write annual ratios data
+            annual_start_row = dist_start_row + len(distribution) + 10 if distribution else data_start_row + len(equity_df) + 15
+
+            ws.cell(row=annual_start_row, column=1, value="Year").font = self.header_font
+            ws.cell(row=annual_start_row, column=2, value="Sharpe").font = self.header_font
+            ws.cell(row=annual_start_row, column=3, value="Sortino").font = self.header_font
+            ws.cell(row=annual_start_row, column=4, value="Calmar").font = self.header_font
+
+            for idx, row_data in annual_ratios.iterrows():
+                row_num = annual_start_row + 1 + idx
+                ws.cell(row=row_num, column=1, value=row_data['year'])
+                ws.cell(row=row_num, column=2, value=row_data['sharpe'])
+                ws.cell(row=row_num, column=3, value=row_data['sortino'])
+                ws.cell(row=row_num, column=4, value=row_data['calmar'])
+
+            # Create Annual Ratios Line Chart
+            chart4 = LineChart()
+            chart4.title = "Annual Risk-Adjusted Ratios"
+            chart4.y_axis.title = 'Ratio Value'
+            chart4.x_axis.title = 'Year'
+            chart4.style = 13
+
+            # Add all three series
+            sharpe_ref = Reference(ws, min_col=2, min_row=annual_start_row, max_row=annual_start_row + len(annual_ratios))
+            sortino_ref = Reference(ws, min_col=3, min_row=annual_start_row, max_row=annual_start_row + len(annual_ratios))
+            calmar_ref = Reference(ws, min_col=4, min_row=annual_start_row, max_row=annual_start_row + len(annual_ratios))
+            cats_ref = Reference(ws, min_col=1, min_row=annual_start_row+1, max_row=annual_start_row + len(annual_ratios))
+
+            chart4.add_data(sharpe_ref, titles_from_data=True)
+            chart4.add_data(sortino_ref, titles_from_data=True)
+            chart4.add_data(calmar_ref, titles_from_data=True)
+            chart4.set_categories(cats_ref)
+            chart4.height = 12
+            chart4.width = 20
+
+            ws.add_chart(chart4, "E67")
+
     def _create_market_conditions(self, wb: Workbook, result: BacktestResult, metrics: Dict[str, Any]):
         """Create Sheet 5: Market Condition Breakdown (Optional)."""
         ws = wb.create_sheet("Market Conditions")
@@ -1128,21 +1906,30 @@ class ExcelReportGenerator:
         Add metrics with target values for comparison.
 
         Args:
-            data: List of tuples (label, value, format_type, target)
+            data: List of tuples (label, value, format_type, target, reference_info)
+                  reference_info is optional
         """
         # Headers
         ws[f'A{row}'] = "Metric"
         ws[f'B{row}'] = "Value"
         ws[f'C{row}'] = "Target"
         ws[f'D{row}'] = "Status"
+        ws[f'E{row}'] = "Reference"
 
-        for col in ['A', 'B', 'C', 'D']:
+        for col in ['A', 'B', 'C', 'D', 'E']:
             ws[f'{col}{row}'].font = Font(bold=True)
             ws[f'{col}{row}'].fill = PatternFill(start_color="E7E6E6", end_color="E7E6E6", fill_type="solid")
 
         row += 1
 
-        for label, value, format_type, target in data:
+        for item in data:
+            # Handle both old and new format
+            if len(item) == 5:
+                label, value, format_type, target, reference_info = item
+            else:
+                label, value, format_type, target = item
+                reference_info = None
+
             ws[f'A{row}'] = label
             ws[f'A{row}'].font = self.metric_font
 
@@ -1168,6 +1955,13 @@ class ExcelReportGenerator:
             else:
                 ws[f'C{row}'] = "N/A"
                 ws[f'D{row}'] = "-"
+
+            # Reference info
+            if reference_info:
+                ws[f'E{row}'] = reference_info
+                ws[f'E{row}'].font = Font(size=9, italic=True)
+            else:
+                ws[f'E{row}'] = ""
 
             row += 1
 
