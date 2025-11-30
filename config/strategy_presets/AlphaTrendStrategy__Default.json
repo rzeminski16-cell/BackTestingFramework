@@ -11,6 +11,7 @@
     "volume_long_ma": 30,
     "volume_alignment_window": 5,
     "stop_loss_percent": 2.0,
+    "atr_stop_loss_multiple": 0.0,
     "grace_period_bars": 7,
     "momentum_gain_pct": 2.0,
     "momentum_lookback": 7,

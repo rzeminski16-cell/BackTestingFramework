@@ -27,6 +27,7 @@ volume_alignment_window = input.int(14, "Volume Alignment Window", minval=1, gro
 
 // Exit Parameters
 stop_loss_percent = input.float(2.0, "Stop Loss %", minval=0.1, step=0.1, group="Exit Rules")
+atr_stop_loss_multiple = input.float(0.0, "ATR Stop Loss Multiple", minval=0.0, step=0.1, group="Exit Rules", tooltip="When > 0, uses ATR * multiple for stop loss instead of percentage. Set to 0 to disable.")
 grace_period_bars = input.int(14, "Grace Period (bars)", minval=0, group="Exit Rules")
 momentum_gain_pct = input.float(2.0, "Momentum Gain %", minval=0, step=0.1, group="Exit Rules")
 momentum_lookback = input.int(7, "Momentum Lookback", minval=1, group="Exit Rules")
@@ -208,8 +209,8 @@ exit_condition = ema_exit and not in_grace_period and not has_momentum and barst
 // POSITION SIZING
 // ============================================================================
 
-// Calculate stop loss based on percentage below current price
-stop_distance = close * (stop_loss_percent / 100)
+// Calculate stop loss: use ATR-based if atr_stop_loss_multiple > 0, else percentage-based
+stop_distance = atr_stop_loss_multiple > 0 ? atr_14 * atr_stop_loss_multiple : close * (stop_loss_percent / 100)
 stop_loss_price = close - stop_distance
 
 // Risk-based position sizing
