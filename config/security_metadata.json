@@ -47,7 +47,6 @@
     "description": "STT",
     "currency": "USD"
   },
-
  "DLY_NA": {
     "type": "stock",
     "sector": "financials",
@@ -75,7 +74,7 @@
  "BK": {
     "type": "stock",
     "sector": "financials",
-    "description": "Bank of NY"
+    "description": "Bank of NY",
     "currency": "USD"
   },
  "BMO": {
