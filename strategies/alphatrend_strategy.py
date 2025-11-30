@@ -42,9 +42,7 @@ class AlphaTrendStrategy(BaseStrategy):
         percentile_period: Lookback for dynamic thresholds (default: 100)
         volume_short_ma: Volume short MA period (default: 4)
         volume_long_ma: Volume long MA period (default: 30)
-        volume_alignment_window: Bars to check for volume condition (default: 14)
-        signal_lookback: Maximum bars to look back for recent AlphaTrend signal (default: 9)
-                         FIXED: Used only to allow slight timing flexibility, NOT for backward-looking entries
+        volume_alignment_window: Bars to wait for volume condition after signal (default: 14)
         stop_loss_percent: Percentage below current price for stop loss (default: 2.0)
         grace_period_bars: Bars to ignore EMA exit after entry (default: 14)
         momentum_gain_pct: % gain to ignore EMA exit (default: 2.0)
@@ -60,7 +58,6 @@ class AlphaTrendStrategy(BaseStrategy):
                  volume_short_ma: int = 4,
                  volume_long_ma: int = 30,
                  volume_alignment_window: int = 14,
-                 signal_lookback: int = 9,
                  stop_loss_percent: float = 2.0,
                  grace_period_bars: int = 14,
                  momentum_gain_pct: float = 2.0,
@@ -75,7 +72,6 @@ class AlphaTrendStrategy(BaseStrategy):
             volume_short_ma=volume_short_ma,
             volume_long_ma=volume_long_ma,
             volume_alignment_window=volume_alignment_window,
-            signal_lookback=signal_lookback,
             stop_loss_percent=stop_loss_percent,
             grace_period_bars=grace_period_bars,
             momentum_gain_pct=momentum_gain_pct,
@@ -91,7 +87,6 @@ class AlphaTrendStrategy(BaseStrategy):
         self.volume_short_ma = volume_short_ma
         self.volume_long_ma = volume_long_ma
         self.volume_alignment_window = volume_alignment_window
-        self.signal_lookback = signal_lookback
         self.stop_loss_percent = stop_loss_percent
         self.grace_period_bars = grace_period_bars
         self.momentum_gain_pct = momentum_gain_pct
@@ -101,6 +96,9 @@ class AlphaTrendStrategy(BaseStrategy):
         # Track bars since entry for grace period and momentum
         self._bars_since_entry = 0
         self._entry_bar_open = None  # Store open price of entry bar for momentum calc
+
+        # Track the most recent signal bar index
+        self._signal_bar_idx = -1
 
     def required_columns(self) -> List[str]:
         """Required columns from CSV data (including pre-calculated indicators)."""
@@ -298,54 +296,37 @@ class AlphaTrendStrategy(BaseStrategy):
             'mfi': current_bar['mfi']
         }
 
-    def _check_alphatrend_signal_in_window(self, context: StrategyContext) -> tuple[bool, int]:
+    def _has_active_signal(self, context: StrategyContext) -> bool:
         """
-        Check if AlphaTrend buy signal occurred recently (within small window).
-
-        FIXED: Only looks back a minimal window (signal_lookback) to allow for slight
-        timing differences, but returns the actual signal bar index to prevent
-        backward-looking bias.
-
-        PERFORMANCE: Uses pre-calculated filtered_buy column.
+        Check if we have an active AlphaTrend signal within the volume alignment window.
 
         Returns:
-            Tuple of (signal_found, signal_bar_index)
+            True if signal is active (within volume_alignment_window bars from signal)
         """
-        current_idx = context.current_index
-        start_idx = max(0, current_idx - self.signal_lookback + 1)
+        if self._signal_bar_idx < 0:
+            return False
 
-        # Check pre-calculated signals in window, prioritizing most recent
-        for i in range(current_idx, start_idx - 1, -1):
-            if context.data.iloc[i]['filtered_buy']:
-                return True, i
-        return False, -1
+        bars_since_signal = context.current_index - self._signal_bar_idx
+        return bars_since_signal <= self.volume_alignment_window
 
-    def _check_volume_alignment(self, context: StrategyContext, signal_bar_idx: int) -> bool:
+    def _check_volume_since_signal(self, context: StrategyContext) -> bool:
         """
-        Check if volume condition was met within alignment window of the signal bar.
-
-        FIXED: Only checks volume alignment for the specific signal bar, preventing
-        backward-looking bias. Volume can be checked before or after the signal,
-        but we only enter the trade when we reach a bar where we know both
-        conditions have been satisfied.
+        Check if volume condition has been met since the signal appeared.
+        Only looks backward from current bar to the signal bar.
 
         PERFORMANCE: Uses pre-calculated volume_condition column.
 
-        Args:
-            signal_bar_idx: The index of the bar where AlphaTrend signal occurred
-
         Returns:
-            True if volume condition was met within the alignment window
+            True if volume condition was met since the signal appeared
         """
+        if self._signal_bar_idx < 0:
+            return False
+
         current_idx = context.current_index
+        bars_since_signal = current_idx - self._signal_bar_idx
 
-        # Check volume condition within alignment window around the signal
-        # Can look back from signal bar, but can only look forward up to current bar
-        vol_start = max(0, signal_bar_idx - self.volume_alignment_window)
-        vol_end = min(current_idx + 1, signal_bar_idx + self.volume_alignment_window + 1)
-
-        # Check if volume condition met in window
-        for i in range(vol_start, vol_end):
+        # Check from signal bar to current bar
+        for i in range(self._signal_bar_idx, current_idx + 1):
             if context.data.iloc[i]['volume_condition']:
                 return True
 
@@ -365,29 +346,39 @@ class AlphaTrendStrategy(BaseStrategy):
 
         current_price = context.current_price
 
+        # Update signal tracking when a new AlphaTrend buy signal appears
+        if indicators['filtered_buy']:
+            self._signal_bar_idx = context.current_index
+
+        # Reset signal when we get a sell signal (prevents re-entry on old buy signals)
+        if indicators['filtered_sell']:
+            self._signal_bar_idx = -1
+
         # Entry logic
         if not context.has_position:
             # Reset bars counter when not in position
             self._bars_since_entry = 0
             self._entry_bar_open = None
 
-            # Check if AlphaTrend signal occurred recently
-            at_signal_found, signal_bar_idx = self._check_alphatrend_signal_in_window(context)
+            # Check if we have an active AlphaTrend signal
+            at_signal_active = self._has_active_signal(context)
 
-            # Only proceed if we found a signal
-            if at_signal_found:
-                # Check if volume condition aligned with the specific signal bar
-                vol_aligned = self._check_volume_alignment(context, signal_bar_idx)
+            # Only proceed if we have an active signal
+            if at_signal_active:
+                # Check if volume condition has been met since signal appeared
+                vol_aligned = self._check_volume_since_signal(context)
 
-                # Entry condition: Both AlphaTrend signal and volume condition met
-                # FIXED: We only enter when we've reached a bar where both conditions
-                # are satisfied, preventing backward-looking trade entries
+                # Entry condition: AlphaTrend signal is active AND volume has aligned since signal
+                # We only enter when both conditions are satisfied
                 if vol_aligned:
                     # Calculate stop loss using percentage below current price
                     stop_loss = current_price * (1 - self.stop_loss_percent / 100)
 
                     # Store entry bar open for momentum calculation
                     self._entry_bar_open = context.current_bar['open']
+
+                    # Reset signal to prevent re-entry on same signal
+                    self._signal_bar_idx = -1
 
                     return Signal.buy(
                         size=1.0,  # Will be overridden by position_size() method

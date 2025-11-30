@@ -10,7 +10,6 @@
     "volume_short_ma": 5,
     "volume_long_ma": 30,
     "volume_alignment_window": 5,
-    "signal_lookback": 3,
     "stop_loss_percent": 2.0,
     "grace_period_bars": 7,
     "momentum_gain_pct": 2.0,

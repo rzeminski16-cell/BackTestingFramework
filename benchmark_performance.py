@@ -52,7 +52,6 @@ def benchmark_backtest():
         volume_short_ma=4,
         volume_long_ma=30,
         volume_alignment_window=14,
-        signal_lookback=9,
         stop_loss_percent=2.0,
         grace_period_bars=14,
         momentum_gain_pct=2.0,
