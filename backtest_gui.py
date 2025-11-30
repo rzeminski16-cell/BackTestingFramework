@@ -220,6 +220,16 @@ class BacktestGUI:
                  font=('Arial', 8)).grid(row=row+1, column=1, sticky=tk.W)
         row += 2
 
+        # Slippage
+        ttk.Label(config_frame, text="Slippage (%):").grid(row=row, column=0, sticky=tk.W, pady=5)
+        self.slippage_var = tk.StringVar(value="0.1")
+        ttk.Entry(config_frame, textvariable=self.slippage_var, width=30).grid(
+            row=row, column=1, sticky=(tk.W, tk.E), pady=5
+        )
+        ttk.Label(config_frame, text="(e.g., 0.1 for 0.1% slippage)",
+                 font=('Arial', 8)).grid(row=row+1, column=1, sticky=tk.W)
+        row += 2
+
         # Date Range
         ttk.Label(config_frame, text="Start Date (optional):").grid(row=row, column=0, sticky=tk.W, pady=5)
         self.start_date_var = tk.StringVar(value="")
@@ -610,6 +620,7 @@ class BacktestGUI:
             capital = float(self.capital_var.get())
             commission_mode = CommissionMode.PERCENTAGE if self.commission_mode_var.get() == "percentage" else CommissionMode.FIXED
             commission_value = float(self.commission_value_var.get())
+            slippage_percent = float(self.slippage_var.get())
 
             commission = CommissionConfig(mode=commission_mode, value=commission_value)
 
@@ -629,12 +640,12 @@ class BacktestGUI:
             if mode == "single":
                 self.run_single_backtest(
                     securities[0], strategy, capital, commission,
-                    start_date, end_date, full_backtest_name
+                    start_date, end_date, full_backtest_name, slippage_percent
                 )
             else:
                 self.run_portfolio_backtest(
                     securities, strategy, capital, commission,
-                    start_date, end_date, full_backtest_name
+                    start_date, end_date, full_backtest_name, slippage_percent
                 )
 
             self.status_var.set("Backtest completed!")
@@ -661,14 +672,15 @@ class BacktestGUI:
 
     def run_single_backtest(self, symbol: str, strategy, capital: float,
                           commission: CommissionConfig, start_date, end_date,
-                          backtest_name: str):
+                          backtest_name: str, slippage_percent: float):
         """Run single security backtest."""
         # Configure backtest
         config = BacktestConfig(
             initial_capital=capital,
             commission=commission,
             start_date=start_date,
-            end_date=end_date
+            end_date=end_date,
+            slippage_percent=slippage_percent
         )
 
         # Load data
@@ -702,14 +714,15 @@ class BacktestGUI:
 
     def run_portfolio_backtest(self, symbols: List[str], strategy, capital: float,
                               commission: CommissionConfig, start_date, end_date,
-                              backtest_name: str):
+                              backtest_name: str, slippage_percent: float):
         """Run batch backtest - individual backtests for each selected security."""
         # Configure backtest (same config for all securities)
         config = BacktestConfig(
             initial_capital=capital,
             commission=commission,
             start_date=start_date,
-            end_date=end_date
+            end_date=end_date,
+            slippage_percent=slippage_percent
         )
 
         self.log_result(f"Running batch backtest: {backtest_name}")
