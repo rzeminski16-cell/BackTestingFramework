@@ -158,11 +158,12 @@ check_volume_alignment(int signal_offset) =>
     aligned := false
 
     // Check volume condition within alignment window around the specific signal
-    // Can look back from signal bar, but can only look forward up to current bar (offset 0)
+    // Can look back from signal bar (higher offsets) and forward up to current bar (offset 0)
+    // In Pine Script: offset 0 = current bar, higher offsets = further back in time
     for vol_offset = -volume_alignment_window to volume_alignment_window
         actual_offset = signal_offset + vol_offset
-        // Ensure we don't go beyond current bar (offset 0) or into negative territory
-        if actual_offset >= 0 and actual_offset <= signal_offset
+        // Only check if we're not going into the future (negative offset = future bars)
+        if actual_offset >= 0
             if volume_condition[actual_offset]
                 aligned := true
                 break
