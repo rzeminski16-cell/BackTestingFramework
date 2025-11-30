@@ -443,8 +443,11 @@ class AlphaTrendStrategy(BaseStrategy):
 
         Uses percentage-based stop loss for consistent stop distance calculation.
         """
+        print(f"💰 position_size called: signal.stop_loss={signal.stop_loss}")
+
         if signal.stop_loss is None:
             # Fallback to default sizing if no stop loss
+            print(f"   No stop loss, using default sizing")
             return super().position_size(context, signal)
 
         equity = context.total_equity  # In base currency (e.g., GBP)
@@ -455,6 +458,7 @@ class AlphaTrendStrategy(BaseStrategy):
 
         if stop_distance <= 0:
             # Invalid stop distance, fallback to default
+            print(f"   Invalid stop distance ({stop_distance}), using default")
             return super().position_size(context, signal)
 
         # Convert stop distance to base currency
@@ -466,5 +470,10 @@ class AlphaTrendStrategy(BaseStrategy):
         # Ensure we don't exceed available capital (in base currency)
         max_shares = context.available_capital / (context.current_price * context.fx_rate)
         shares = min(shares, max_shares)
+
+        print(f"   equity={equity:.2f}, risk_amount={risk_amount:.2f}, stop_distance={stop_distance:.4f}")
+        print(f"   fx_rate={context.fx_rate}, stop_distance_base={stop_distance_base:.4f}")
+        print(f"   calculated shares={shares:.2f}, max_shares={max_shares:.2f}")
+        print(f"   RETURNING: {shares:.2f} shares")
 
         return shares
