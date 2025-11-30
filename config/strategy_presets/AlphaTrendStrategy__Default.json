@@ -1,10 +1,9 @@
 {
   "strategy_name": "AlphaTrendStrategy",
   "preset_name": "Default",
-  "description": "Default parameters for AlphaTrend (matches TradingView Enhanced Strategy defaults)",
+  "description": "Default parameters for AlphaTrend. Note: atr_14 and ema_50 are read from raw data with fixed settings.",
   "parameters": {
     "atr_multiplier": 1.0,
-    "common_period": 14,
     "source": "close",
     "smoothing_length": 3,
     "percentile_period": 100,
@@ -12,7 +11,6 @@
     "volume_long_ma": 30,
     "volume_alignment_window": 5,
     "signal_lookback": 3,
-    "exit_ema_period": 50,
     "stop_atr_multiplier": 2.5,
     "grace_period_bars": 7,
     "momentum_gain_pct": 2.0,
@@ -20,5 +18,5 @@
     "risk_percent": 2.0
   },
   "created_at": "2025-11-28T21:38:56.194005",
-  "modified_at": "2025-11-29T00:00:00.000000"
+  "modified_at": "2025-11-30T00:00:00.000000"
 }

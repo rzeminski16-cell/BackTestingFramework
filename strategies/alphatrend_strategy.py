@@ -9,13 +9,15 @@ Based on AlphaTrend indicator by KivancOzbilgic with enhancements:
 - Risk-based position sizing
 
 Entry: AlphaTrend buy signal + volume condition within alignment window
-Exit: Price closes below exit EMA (with protections) or stop loss hit
-Stop Loss: ATR-based stop loss
+Exit: Price closes below EMA-50 (with protections) or stop loss hit
+Stop Loss: ATR-based stop loss (using atr_14 from raw data)
 
 PERFORMANCE OPTIMIZED:
 - Indicators pre-calculated using vectorized operations (10-100x speedup)
 - No repeated calculations during backtest
 - O(n) complexity instead of O(n²)
+
+NOTE: All standard indicators (atr_14, ema_50) are read from raw data.
 """
 from typing import List, Optional
 import pandas as pd
@@ -23,16 +25,18 @@ import numpy as np
 from Classes.Strategy.base_strategy import BaseStrategy
 from Classes.Strategy.strategy_context import StrategyContext
 from Classes.Models.signal import Signal
-from Classes.Indicators.indicator_engine import IndicatorEngine
 
 
 class AlphaTrendStrategy(BaseStrategy):
     """
     AlphaTrend Enhanced Strategy with volume filter and risk management.
 
-    Parameters:
+    Standard Indicators (read from raw data, static):
+        - atr_14: Average True Range (14-period, static)
+        - ema_50: Exponential Moving Average (50-period, static, used for exits)
+
+    Custom Parameters (strategy-specific calculations):
         atr_multiplier: Base multiplier for ATR bands (default: 1.0)
-        common_period: Period for ATR/MFI calculations (default: 14)
         source: Price source for calculations - 'close', 'open', 'high', 'low' (default: 'close')
         smoothing_length: EMA smoothing period for AlphaTrend (default: 3)
         percentile_period: Lookback for dynamic thresholds (default: 100)
@@ -40,7 +44,6 @@ class AlphaTrendStrategy(BaseStrategy):
         volume_long_ma: Volume long MA period (default: 30)
         volume_alignment_window: Bars to check for volume condition (default: 14)
         signal_lookback: Bars to look back for AlphaTrend signal (default: 9)
-        exit_ema_period: EMA period for exit signal (default: 50)
         stop_atr_multiplier: ATR multiplier for stop loss (default: 2.5)
         grace_period_bars: Bars to ignore EMA exit after entry (default: 14)
         momentum_gain_pct: % gain to ignore EMA exit (default: 2.0)
@@ -50,7 +53,6 @@ class AlphaTrendStrategy(BaseStrategy):
 
     def __init__(self,
                  atr_multiplier: float = 1.0,
-                 common_period: int = 14,
                  source: str = 'close',
                  smoothing_length: int = 3,
                  percentile_period: int = 100,
@@ -58,7 +60,6 @@ class AlphaTrendStrategy(BaseStrategy):
                  volume_long_ma: int = 30,
                  volume_alignment_window: int = 14,
                  signal_lookback: int = 9,
-                 exit_ema_period: int = 50,
                  stop_atr_multiplier: float = 2.5,
                  grace_period_bars: int = 14,
                  momentum_gain_pct: float = 2.0,
@@ -67,7 +68,6 @@ class AlphaTrendStrategy(BaseStrategy):
         """Initialize AlphaTrend strategy with parameters."""
         super().__init__(
             atr_multiplier=atr_multiplier,
-            common_period=common_period,
             source=source,
             smoothing_length=smoothing_length,
             percentile_period=percentile_period,
@@ -75,7 +75,6 @@ class AlphaTrendStrategy(BaseStrategy):
             volume_long_ma=volume_long_ma,
             volume_alignment_window=volume_alignment_window,
             signal_lookback=signal_lookback,
-            exit_ema_period=exit_ema_period,
             stop_atr_multiplier=stop_atr_multiplier,
             grace_period_bars=grace_period_bars,
             momentum_gain_pct=momentum_gain_pct,
@@ -85,7 +84,6 @@ class AlphaTrendStrategy(BaseStrategy):
 
         # Store parameters as instance variables
         self.atr_multiplier = atr_multiplier
-        self.common_period = common_period
         self.source = source
         self.smoothing_length = smoothing_length
         self.percentile_period = percentile_period
@@ -93,7 +91,6 @@ class AlphaTrendStrategy(BaseStrategy):
         self.volume_long_ma = volume_long_ma
         self.volume_alignment_window = volume_alignment_window
         self.signal_lookback = signal_lookback
-        self.exit_ema_period = exit_ema_period
         self.stop_atr_multiplier = stop_atr_multiplier
         self.grace_period_bars = grace_period_bars
         self.momentum_gain_pct = momentum_gain_pct
@@ -105,35 +102,167 @@ class AlphaTrendStrategy(BaseStrategy):
         self._entry_bar_open = None  # Store open price of entry bar for momentum calc
 
     def required_columns(self) -> List[str]:
-        """Required columns from CSV data."""
-        return ['date', 'open', 'high', 'low', 'close', 'volume']
+        """Required columns from CSV data (including pre-calculated indicators)."""
+        return [
+            'date', 'open', 'high', 'low', 'close', 'volume',
+            'atr_14',  # Pre-calculated ATR from raw data
+            'ema_50'   # Pre-calculated EMA from raw data
+        ]
 
     def prepare_data(self, data: pd.DataFrame) -> pd.DataFrame:
         """
-        Pre-calculate all indicators ONCE before backtesting.
+        Pre-calculate custom AlphaTrend indicators ONCE before backtesting.
+
+        Standard indicators (atr_14, ema_50) are read from raw data.
+        Custom indicators specific to AlphaTrend are calculated here.
 
         PERFORMANCE OPTIMIZATION: This replaces the O(n²) on-the-fly calculation
         with O(n) vectorized calculation, providing 10-100x speedup.
 
         Args:
-            data: Raw OHLCV data
+            data: Raw OHLCV data with pre-calculated standard indicators
 
         Returns:
-            Data with all AlphaTrend indicators added as columns
+            Data with all AlphaTrend-specific indicators added as columns
         """
-        return IndicatorEngine.calculate_alphatrend_indicators(
-            data=data,
-            atr_multiplier=self.atr_multiplier,
-            common_period=self.common_period,
-            source=self.source,
-            smoothing_length=self.smoothing_length,
-            percentile_period=self.percentile_period,
-            volume_short_ma=self.volume_short_ma,
-            volume_long_ma=self.volume_long_ma,
-            volume_alignment_window=self.volume_alignment_window,
-            signal_lookback=self.signal_lookback,
-            exit_ema_period=self.exit_ema_period
+        df = data.copy()
+
+        # Verify required standard indicators exist
+        if 'atr_14' not in df.columns:
+            raise ValueError("Missing required indicator: atr_14 must be present in raw data")
+        if 'ema_50' not in df.columns:
+            raise ValueError("Missing required indicator: ema_50 must be present in raw data")
+
+        # ==== ADAPTIVE COEFFICIENT ====
+        # Calculate long-term ATR average for volatility ratio
+        df['atr_ema_long'] = df['atr_14'].ewm(span=14 * 3, adjust=False).mean()
+        df['volatility_ratio'] = df['atr_14'] / df['atr_ema_long']
+        df['adaptive_coeff'] = self.atr_multiplier * df['volatility_ratio']
+
+        # ==== ALPHATREND BANDS ====
+        # Use atr_14 from raw data for band calculations
+        df['up_band'] = df['low'] - df['atr_14'] * df['adaptive_coeff']
+        df['down_band'] = df['high'] + df['atr_14'] * df['adaptive_coeff']
+
+        # ==== MONEY FLOW INDEX (MFI) ====
+        # Vectorized MFI calculation (14-period to match atr_14)
+        df['typical_price'] = (df['high'] + df['low'] + df['close']) / 3
+        df['raw_money_flow'] = df['typical_price'] * df['volume']
+
+        # Determine positive and negative money flow
+        df['price_change'] = df['typical_price'].diff()
+        df['positive_flow'] = np.where(df['price_change'] > 0, df['raw_money_flow'], 0)
+        df['negative_flow'] = np.where(df['price_change'] < 0, df['raw_money_flow'], 0)
+
+        # Sum over 14-period (vectorized)
+        positive_mf = df['positive_flow'].rolling(window=14).sum()
+        negative_mf = df['negative_flow'].rolling(window=14).sum()
+
+        # MFI calculation with division by zero protection
+        mfi_ratio = positive_mf / negative_mf.replace(0, np.nan)
+        df['mfi'] = 100 - (100 / (1 + mfi_ratio))
+
+        # ==== DYNAMIC MFI THRESHOLDS ====
+        # Vectorized percentile calculations
+        df['mfi_upper'] = df['mfi'].rolling(window=self.percentile_period).quantile(0.70)
+        df['mfi_lower'] = df['mfi'].rolling(window=self.percentile_period).quantile(0.30)
+        df['mfi_threshold'] = (df['mfi_upper'] + df['mfi_lower']) / 2
+
+        # Momentum bullish condition
+        df['momentum_bullish'] = df['mfi'] >= df['mfi_threshold']
+
+        # ==== ALPHATREND CALCULATION (VECTORIZED) ====
+        df['alphatrend'] = self._calculate_alphatrend_vectorized(
+            df['up_band'].values,
+            df['down_band'].values,
+            df['momentum_bullish'].values
         )
+
+        # ==== SMOOTHED ALPHATREND ====
+        df['smooth_at'] = df['alphatrend'].ewm(span=self.smoothing_length, adjust=False).mean()
+
+        # ==== ALPHATREND SIGNALS ====
+        # Vectorized crossover detection
+        df['at_cross_up'] = (df['alphatrend'] > df['smooth_at']) & (df['alphatrend'].shift(1) <= df['smooth_at'].shift(1))
+        df['at_cross_down'] = (df['alphatrend'] < df['smooth_at']) & (df['alphatrend'].shift(1) >= df['smooth_at'].shift(1))
+
+        # ==== FILTER FOR ALTERNATING SIGNALS (VECTORIZED) ====
+        df['filtered_buy'], df['filtered_sell'] = self._filter_alternating_signals_vectorized(
+            df['at_cross_up'].values,
+            df['at_cross_down'].values
+        )
+
+        # ==== VOLUME FILTER ====
+        # Vectorized volume MA calculations
+        df['vol_short_ma'] = df['volume'].rolling(window=self.volume_short_ma).mean()
+        df['vol_long_ma'] = df['volume'].rolling(window=self.volume_long_ma).mean()
+        df['volume_condition'] = df['vol_short_ma'] > df['vol_long_ma']
+
+        return df
+
+    @staticmethod
+    def _calculate_alphatrend_vectorized(
+        up_band: np.ndarray,
+        down_band: np.ndarray,
+        momentum_bullish: np.ndarray
+    ) -> pd.Series:
+        """
+        Vectorized AlphaTrend calculation - replaces O(n) loop with optimized logic.
+
+        Args:
+            up_band: Upper band values
+            down_band: Lower band values
+            momentum_bullish: Momentum bullish flags
+
+        Returns:
+            AlphaTrend values as Series
+        """
+        n = len(up_band)
+        alphatrend = np.zeros(n)
+
+        # Initialize first value
+        alphatrend[0] = up_band[0]
+
+        # Optimized loop - unavoidable due to state dependency
+        for i in range(1, n):
+            if momentum_bullish[i]:
+                # Uptrend
+                alphatrend[i] = max(alphatrend[i-1], up_band[i]) if up_band[i] < alphatrend[i-1] else up_band[i]
+            else:
+                # Downtrend
+                alphatrend[i] = min(alphatrend[i-1], down_band[i]) if down_band[i] > alphatrend[i-1] else down_band[i]
+
+        return pd.Series(alphatrend)
+
+    @staticmethod
+    def _filter_alternating_signals_vectorized(
+        cross_up: np.ndarray,
+        cross_down: np.ndarray
+    ) -> tuple[pd.Series, pd.Series]:
+        """
+        Filter signals to ensure alternating buy/sell - vectorized implementation.
+
+        Args:
+            cross_up: Cross up signals
+            cross_down: Cross down signals
+
+        Returns:
+            Tuple of (filtered_buy, filtered_sell) as Series
+        """
+        n = len(cross_up)
+        filtered_buy = np.zeros(n, dtype=bool)
+        filtered_sell = np.zeros(n, dtype=bool)
+
+        last_signal = None
+        for i in range(n):
+            if cross_up[i] and last_signal != 'buy':
+                filtered_buy[i] = True
+                last_signal = 'buy'
+            elif cross_down[i] and last_signal != 'sell':
+                filtered_sell[i] = True
+                last_signal = 'sell'
+
+        return pd.Series(filtered_buy), pd.Series(filtered_sell)
 
     def _get_indicators(self, context: StrategyContext) -> Optional[dict]:
         """
@@ -146,26 +275,25 @@ class AlphaTrendStrategy(BaseStrategy):
             Dictionary with indicator values at current bar, or None if insufficient data
         """
         # Check if we have enough historical data
-        if context.current_index < max(self.common_period, self.percentile_period):
+        if context.current_index < max(14, self.percentile_period):
             return None
 
         # Get current bar (all indicators are pre-calculated columns)
         current_bar = context.current_bar
 
         # Check for NaN values in critical indicators
-        if pd.isna(current_bar.get('atr_stop')) or pd.isna(current_bar.get('exit_ema')):
+        if pd.isna(current_bar.get('atr_14')) or pd.isna(current_bar.get('ema_50')):
             return None
 
         # Return pre-calculated indicator values
         return {
-            'atr': current_bar['atr'],
-            'atr_stop': current_bar['atr_stop'],
+            'atr_14': current_bar['atr_14'],  # Read from raw data
             'alphatrend': current_bar['alphatrend'],
             'smooth_at': current_bar['smooth_at'],
             'filtered_buy': current_bar['filtered_buy'],
             'filtered_sell': current_bar['filtered_sell'],
             'volume_condition': current_bar['volume_condition'],
-            'exit_ema': current_bar['exit_ema'],
+            'ema_50': current_bar['ema_50'],  # Read from raw data
             'mfi': current_bar['mfi']
         }
 
@@ -241,9 +369,9 @@ class AlphaTrendStrategy(BaseStrategy):
 
             # Entry condition: Both AlphaTrend signal and volume condition met
             if at_signal_in_window and vol_aligned:
-                # Calculate stop loss
-                atr_stop = indicators['atr_stop']
-                stop_loss = current_price - (atr_stop * self.stop_atr_multiplier)
+                # Calculate stop loss using atr_14 from raw data
+                atr = indicators['atr_14']
+                stop_loss = current_price - (atr * self.stop_atr_multiplier)
 
                 # Store entry bar open for momentum calculation
                 self._entry_bar_open = context.current_bar['open']
@@ -259,8 +387,8 @@ class AlphaTrendStrategy(BaseStrategy):
             # Increment bars since entry
             self._bars_since_entry += 1
 
-            # Check EMA exit condition
-            ema_exit = current_price < indicators['exit_ema']
+            # Check EMA-50 exit condition (read from raw data)
+            ema_exit = current_price < indicators['ema_50']
 
             # Grace period protection
             in_grace_period = self._bars_since_entry <= self.grace_period_bars
@@ -276,7 +404,7 @@ class AlphaTrendStrategy(BaseStrategy):
 
             # Exit only if EMA condition met and NOT protected
             if ema_exit and not in_grace_period and not has_momentum:
-                return Signal.sell(reason=f"Price < EMA({self.exit_ema_period})")
+                return Signal.sell(reason=f"Price < EMA(50)")
 
         return Signal.hold()
 
@@ -284,62 +412,37 @@ class AlphaTrendStrategy(BaseStrategy):
         """
         Calculate position size using risk-based sizing with currency conversion.
 
-        Matches TradingView's calculation exactly:
-        stopDistance = atrForStop * atrMultiplier
-        positionSize = riskAmount / stopDistance
-
         Formula: Position size = (Equity * Risk%) / (ATR * Multiplier in Base Currency)
 
-        Where:
-        - Equity: Total equity in base currency (e.g., GBP)
-        - Risk%: Percentage of equity to risk (default: 2%)
-        - Stop Distance: (ATR * Multiplier) * FX Rate
-          This converts ATR-based stop distance to base currency
-
-        Example:
-        - Equity: £10,000 GBP
-        - Risk: 2% = £200 GBP
-        - ATR: $5 USD, Multiplier: 2.5
-        - FX Rate: 0.8 (1 USD = 0.8 GBP)
-        - Stop Distance: ($5 * 2.5) * 0.8 = $12.50 * 0.8 = £10 GBP
-        - Position Size: £200 / £10 = 20 shares
-        - Capital Used: 20 shares * $100 * 0.8 = £1,600 GBP
-        - Risk if stopped: 20 shares * £10 = £200 GBP ✓
-
-        This ensures consistent risk per trade regardless of stop distance or currency.
+        Uses atr_14 from raw data for consistent stop distance calculation.
         """
         if signal.stop_loss is None:
             # Fallback to default sizing if no stop loss
             return super().position_size(context, signal)
 
-        # Get ATR from current bar (matches TradingView's atrForStop)
-        atr_stop = context.current_bar.get('atr_stop')
-        if atr_stop is None or pd.isna(atr_stop):
+        # Get ATR from current bar (read from raw data)
+        atr = context.current_bar.get('atr_14')
+        if atr is None or pd.isna(atr):
             # Fallback to default sizing if ATR not available
             return super().position_size(context, signal)
 
         equity = context.total_equity  # In base currency (e.g., GBP)
         risk_amount = equity * (self.risk_percent / 100)  # In base currency
 
-        # Calculate stop distance directly from ATR (matches TradingView exactly)
-        # TradingView: stopDistance = atrForStop * atrMultiplier
-        stop_distance = atr_stop * self.stop_atr_multiplier  # In security currency
+        # Calculate stop distance from ATR (matches TradingView)
+        stop_distance = atr * self.stop_atr_multiplier  # In security currency
 
         if stop_distance <= 0:
             # Invalid stop distance, fallback to default
             return super().position_size(context, signal)
 
         # Convert stop distance to base currency
-        # Example: $12.50 USD * 0.8 = £10 GBP
         stop_distance_base = stop_distance * context.fx_rate
 
         # Calculate shares based on risk in base currency
-        # TradingView: positionSize = riskAmount / stopDistance
-        # Example: £200 GBP / £10 GBP = 20 shares
         shares = risk_amount / stop_distance_base
 
         # Ensure we don't exceed available capital (in base currency)
-        # Note: context.current_price is in security currency, so we need to convert
         max_shares = context.available_capital / (context.current_price * context.fx_rate)
         shares = min(shares, max_shares)
 

@@ -62,31 +62,43 @@ class BaseStrategy(ABC):
 
     def prepare_data(self, data: pd.DataFrame) -> pd.DataFrame:
         """
-        Pre-calculate all indicators before backtesting begins.
+        Pre-calculate custom strategy-specific indicators before backtesting begins.
 
-        PERFORMANCE OPTIMIZATION: Override this method to calculate indicators
-        once using vectorized operations instead of recalculating on every bar.
+        STANDARD INDICATORS: All standard indicators (atr_14, ema_50, sma_200, rsi_14,
+        cmf, par_sar, base_bb, upper_bb, lower_bb) are read from raw data with fixed
+        settings and cannot be altered via parameters.
 
-        This is called ONCE before the backtest loop, providing 10-100x speedup
-        for indicator-heavy strategies.
+        CUSTOM INDICATORS: Override this method to calculate strategy-specific indicators
+        once using vectorized operations. This is called ONCE before the backtest loop,
+        providing 10-100x speedup for indicator-heavy strategies.
 
-        Default implementation: Returns data unchanged (assumes indicators pre-exist in CSV).
+        Default implementation: Returns data unchanged (assumes all indicators pre-exist).
 
         Args:
-            data: Raw OHLCV data
+            data: Raw OHLCV data with pre-calculated standard indicators
 
         Returns:
-            Data with all indicators added as columns
+            Data with any custom strategy-specific indicators added as columns
 
-        Example:
+        Example (reading standard indicators from raw data):
+            def required_columns(self) -> List[str]:
+                return ['date', 'close', 'atr_14', 'ema_50', 'rsi_14']
+
+            def generate_signal(self, context: StrategyContext) -> Signal:
+                atr = context.get_indicator_value('atr_14')  # Read from raw data
+                ema = context.get_indicator_value('ema_50')  # Read from raw data
+                ...
+
+        Example (calculating custom indicators):
             def prepare_data(self, data: pd.DataFrame) -> pd.DataFrame:
-                from Classes.Indicators.indicator_engine import IndicatorEngine
-                return IndicatorEngine.calculate_alphatrend_indicators(
-                    data,
-                    atr_multiplier=self.atr_multiplier,
-                    common_period=self.common_period,
-                    ...
-                )
+                df = data.copy()
+                # Verify required standard indicators exist
+                if 'atr_14' not in df.columns:
+                    raise ValueError("Missing atr_14 in raw data")
+
+                # Calculate custom strategy-specific indicators
+                df['custom_signal'] = ...  # Your custom calculation
+                return df
         """
         return data
 
