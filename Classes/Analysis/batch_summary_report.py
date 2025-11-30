@@ -82,6 +82,7 @@ class BatchSummaryReportGenerator:
         self._create_performance_comparison(wb, results, all_metrics)
         self._create_correlation_analysis(wb, results, all_metrics)
         self._create_risk_analysis(wb, results, all_metrics)
+        self._create_annual_ratios(wb, results, all_metrics)
         self._create_visualizations(wb, results, all_metrics)
 
         # Save workbook
@@ -128,6 +129,7 @@ class BatchSummaryReportGenerator:
         - Return correlation (based on equity curve changes)
         - Trade timing correlation
         - Drawdown correlation
+        - Period-based correlations (yearly and quarterly)
         """
         correlations = {}
 
@@ -145,7 +147,10 @@ class BatchSummaryReportGenerator:
                 'equity_correlation': pd.DataFrame(),
                 'return_correlation': pd.DataFrame(),
                 'drawdown_correlation': pd.DataFrame(),
-                'correlation_summary': "Insufficient data (need at least 2 securities)"
+                'correlation_summary': "Insufficient data (need at least 2 securities)",
+                'yearly_correlations': pd.DataFrame(),
+                'quarterly_correlations': pd.DataFrame(),
+                'period_performance': pd.DataFrame()
             }
 
         # Combine into single DataFrame (aligned by date)
@@ -189,12 +194,22 @@ class BatchSummaryReportGenerator:
             'num_negatively_correlated': np.sum(correlations_list < -0.3) if len(correlations_list) > 0 else 0,
         }
 
+        # Period-based correlation analysis
+        yearly_corr = self._calculate_period_correlations(combined_returns, 'Y')
+        quarterly_corr = self._calculate_period_correlations(combined_returns, 'Q')
+
+        # Period performance analysis
+        period_perf = self._calculate_period_performance(combined_returns, combined_dd)
+
         return {
             'equity_correlation': equity_corr,
             'return_correlation': return_corr,
             'drawdown_correlation': dd_corr,
             'correlation_summary': correlation_summary,
             'combined_returns': combined_returns,
+            'yearly_correlations': yearly_corr,
+            'quarterly_correlations': quarterly_corr,
+            'period_performance': period_perf
         }
 
     def _calculate_aggregate_stats(self, results: Dict[str, BacktestResult]) -> Dict[str, Any]:
@@ -245,6 +260,158 @@ class BatchSummaryReportGenerator:
         stats['diversity_note'] = "See Correlation Analysis sheet for details"
 
         return stats
+
+    def _calculate_period_correlations(self, combined_returns: pd.DataFrame, period: str) -> pd.DataFrame:
+        """
+        Calculate correlations on a period-by-period basis.
+
+        Args:
+            combined_returns: DataFrame with returns for all securities
+            period: 'Y' for yearly or 'Q' for quarterly
+
+        Returns:
+            DataFrame with period, avg_correlation, max_correlation, min_correlation
+        """
+        if len(combined_returns) == 0:
+            return pd.DataFrame()
+
+        # Group by period
+        period_groups = combined_returns.groupby(pd.Grouper(freq=period))
+
+        results = []
+
+        for period_date, period_returns in period_groups:
+            if len(period_returns) < 2:
+                continue
+
+            # Calculate correlation for this period
+            period_corr = period_returns.corr()
+
+            # Extract upper triangle (excluding diagonal)
+            mask = np.triu(np.ones_like(period_corr, dtype=bool), k=1)
+            upper_triangle = period_corr.where(mask)
+            correlations = upper_triangle.values.flatten()
+            correlations = correlations[~np.isnan(correlations)]
+
+            if len(correlations) == 0:
+                continue
+
+            # Format period label
+            if period == 'Q':
+                quarter = (period_date.month - 1) // 3 + 1
+                period_label = f"{period_date.year}-Q{quarter}"
+            else:
+                period_label = str(period_date.year)
+
+            results.append({
+                'period': period_label,
+                'avg_correlation': np.mean(correlations),
+                'max_correlation': np.max(correlations),
+                'min_correlation': np.min(correlations),
+                'num_pairs': len(correlations)
+            })
+
+        return pd.DataFrame(results)
+
+    def _calculate_period_performance(self, combined_returns: pd.DataFrame,
+                                     combined_dd: pd.DataFrame) -> pd.DataFrame:
+        """
+        Analyze performance across periods to identify good/poor periods.
+
+        Returns:
+            DataFrame with period, avg_return, avg_dd, performance_rating
+        """
+        if len(combined_returns) == 0:
+            return pd.DataFrame()
+
+        # Group by year and quarter
+        results = []
+
+        # Yearly analysis
+        yearly_returns = combined_returns.groupby(pd.Grouper(freq='Y'))
+        yearly_dd = combined_dd.groupby(pd.Grouper(freq='Y'))
+
+        for (period_date, period_returns), (_, period_drawdowns) in zip(yearly_returns, yearly_dd):
+            if len(period_returns) == 0:
+                continue
+
+            # Average return across all securities for this period
+            avg_return = period_returns.mean(axis=1).sum() * 100  # Total return % for the year
+            avg_dd = abs(period_drawdowns.mean(axis=1).min())  # Max average drawdown
+
+            # Count positive securities
+            period_totals = period_returns.sum(axis=0) * 100
+            num_positive = (period_totals > 0).sum()
+            total_securities = len(period_totals)
+
+            # Performance rating
+            if avg_return > 0 and num_positive / total_securities > 0.7:
+                rating = "✓ Strong Performance"
+                color_code = "green"
+            elif avg_return > 0:
+                rating = "◐ Mixed Performance"
+                color_code = "yellow"
+            elif avg_return < 0 and num_positive / total_securities < 0.3:
+                rating = "✗ Weak Performance"
+                color_code = "red"
+            else:
+                rating = "◐ Mixed Performance"
+                color_code = "yellow"
+
+            results.append({
+                'period': str(period_date.year),
+                'period_type': 'Year',
+                'avg_return_pct': avg_return,
+                'avg_max_dd_pct': avg_dd,
+                'num_positive': num_positive,
+                'total_securities': total_securities,
+                'pct_positive': (num_positive / total_securities * 100) if total_securities > 0 else 0,
+                'rating': rating,
+                'color_code': color_code
+            })
+
+        # Quarterly analysis
+        quarterly_returns = combined_returns.groupby(pd.Grouper(freq='Q'))
+        quarterly_dd = combined_dd.groupby(pd.Grouper(freq='Q'))
+
+        for (period_date, period_returns), (_, period_drawdowns) in zip(quarterly_returns, quarterly_dd):
+            if len(period_returns) == 0:
+                continue
+
+            avg_return = period_returns.mean(axis=1).sum() * 100
+            avg_dd = abs(period_drawdowns.mean(axis=1).min())
+
+            period_totals = period_returns.sum(axis=0) * 100
+            num_positive = (period_totals > 0).sum()
+            total_securities = len(period_totals)
+
+            if avg_return > 0 and num_positive / total_securities > 0.7:
+                rating = "✓ Strong"
+                color_code = "green"
+            elif avg_return > 0:
+                rating = "◐ Mixed"
+                color_code = "yellow"
+            elif avg_return < 0 and num_positive / total_securities < 0.3:
+                rating = "✗ Weak"
+                color_code = "red"
+            else:
+                rating = "◐ Mixed"
+                color_code = "yellow"
+
+            quarter = (period_date.month - 1) // 3 + 1
+            results.append({
+                'period': f"{period_date.year}-Q{quarter}",
+                'period_type': 'Quarter',
+                'avg_return_pct': avg_return,
+                'avg_max_dd_pct': avg_dd,
+                'num_positive': num_positive,
+                'total_securities': total_securities,
+                'pct_positive': (num_positive / total_securities * 100) if total_securities > 0 else 0,
+                'rating': rating,
+                'color_code': color_code
+            })
+
+        return pd.DataFrame(results)
 
     # ==================== SHEET CREATION ====================
 
@@ -591,9 +758,129 @@ class BatchSummaryReportGenerator:
 
                 row += 1
 
+        row += 2
+
+        # Period-Based Correlation Analysis
+        row = self._add_section_header(ws, row, "YEAR-BY-YEAR CORRELATION TRENDS")
+
+        yearly_corr = corr_data.get('yearly_correlations', pd.DataFrame())
+
+        if not yearly_corr.empty:
+            headers = ['Year', 'Avg Correlation', 'Max Correlation', 'Min Correlation', 'Num Pairs']
+
+            for col_idx, header in enumerate(headers, 1):
+                cell = ws.cell(row=row, column=col_idx, value=header)
+                cell.font = self.header_font
+                cell.fill = self.header_fill
+
+            row += 1
+
+            for _, year_data in yearly_corr.iterrows():
+                ws.cell(row=row, column=1, value=year_data['period'])
+
+                cell = ws.cell(row=row, column=2, value=year_data['avg_correlation'])
+                cell.number_format = '0.00'
+
+                cell = ws.cell(row=row, column=3, value=year_data['max_correlation'])
+                cell.number_format = '0.00'
+
+                cell = ws.cell(row=row, column=4, value=year_data['min_correlation'])
+                cell.number_format = '0.00'
+
+                ws.cell(row=row, column=5, value=year_data['num_pairs'])
+
+                row += 1
+
+            row += 2
+        else:
+            ws[f'A{row}'] = "Insufficient data"
+            row += 3
+
+        # Quarter-by-Quarter Correlation
+        row = self._add_section_header(ws, row, "QUARTER-BY-QUARTER CORRELATION TRENDS")
+
+        quarterly_corr = corr_data.get('quarterly_correlations', pd.DataFrame())
+
+        if not quarterly_corr.empty:
+            headers = ['Quarter', 'Avg Correlation', 'Max Correlation', 'Min Correlation', 'Num Pairs']
+
+            for col_idx, header in enumerate(headers, 1):
+                cell = ws.cell(row=row, column=col_idx, value=header)
+                cell.font = self.header_font
+                cell.fill = self.header_fill
+
+            row += 1
+
+            for _, quarter_data in quarterly_corr.iterrows():
+                ws.cell(row=row, column=1, value=quarter_data['period'])
+
+                cell = ws.cell(row=row, column=2, value=quarter_data['avg_correlation'])
+                cell.number_format = '0.00'
+
+                cell = ws.cell(row=row, column=3, value=quarter_data['max_correlation'])
+                cell.number_format = '0.00'
+
+                cell = ws.cell(row=row, column=4, value=quarter_data['min_correlation'])
+                cell.number_format = '0.00'
+
+                ws.cell(row=row, column=5, value=quarter_data['num_pairs'])
+
+                row += 1
+
+            row += 2
+
+        # Period Performance Highlights
+        row = self._add_section_header(ws, row, "PERIOD PERFORMANCE HIGHLIGHTS")
+        ws[f'A{row}'] = "Identifying periods where the strategy performed well/poorly across the batch"
+        ws[f'A{row}'].font = Font(italic=True, size=9)
+        row += 1
+
+        period_perf = corr_data.get('period_performance', pd.DataFrame())
+
+        if not period_perf.empty:
+            # Filter to show only yearly data for this section
+            yearly_perf = period_perf[period_perf['period_type'] == 'Year']
+
+            headers = ['Period', 'Avg Return %', 'Avg Max DD %', '# Profitable', '% Profitable', 'Rating']
+
+            for col_idx, header in enumerate(headers, 1):
+                cell = ws.cell(row=row, column=col_idx, value=header)
+                cell.font = self.header_font
+                cell.fill = self.header_fill
+
+            row += 1
+
+            for _, perf_data in yearly_perf.iterrows():
+                ws.cell(row=row, column=1, value=perf_data['period'])
+
+                cell = ws.cell(row=row, column=2, value=perf_data['avg_return_pct'])
+                cell.number_format = '0.00"%"'
+                if perf_data['avg_return_pct'] > 0:
+                    cell.font = Font(color="00B050")
+                elif perf_data['avg_return_pct'] < 0:
+                    cell.font = Font(color="FF0000")
+
+                cell = ws.cell(row=row, column=3, value=perf_data['avg_max_dd_pct'])
+                cell.number_format = '0.00"%"'
+
+                ws.cell(row=row, column=4, value=f"{perf_data['num_positive']}/{perf_data['total_securities']}")
+
+                cell = ws.cell(row=row, column=5, value=perf_data['pct_positive'])
+                cell.number_format = '0.0"%"'
+
+                rating_cell = ws.cell(row=row, column=6, value=perf_data['rating'])
+                if perf_data['color_code'] == 'green':
+                    rating_cell.font = Font(color="00B050", bold=True)
+                elif perf_data['color_code'] == 'red':
+                    rating_cell.font = Font(color="FF0000", bold=True)
+                else:
+                    rating_cell.font = Font(color="FF8C00", bold=True)
+
+                row += 1
+
         # Format columns
-        for col_idx in range(1, len(return_corr.columns) + 2):
-            ws.column_dimensions[get_column_letter(col_idx)].width = 12
+        for col_idx in range(1, max(len(return_corr.columns) + 2, 7)):
+            ws.column_dimensions[get_column_letter(col_idx)].width = 14
 
     def _create_risk_analysis(self, wb: Workbook, results: Dict[str, BacktestResult],
                              metrics: Dict[str, Any]):
@@ -678,6 +965,157 @@ class BatchSummaryReportGenerator:
 
         # Format columns
         for col_idx in range(1, len(headers) + 1):
+            ws.column_dimensions[get_column_letter(col_idx)].width = 16
+
+    def _create_annual_ratios(self, wb: Workbook, results: Dict[str, BacktestResult],
+                             metrics: Dict[str, Any]):
+        """Create Sheet: Annual Risk-Adjusted Ratios for each security."""
+        ws = wb.create_sheet("Annual Ratios")
+
+        row = 1
+
+        # Title
+        ws.merge_cells(f'A{row}:G{row}')
+        ws[f'A{row}'] = "ANNUAL RISK-ADJUSTED RATIOS BY SECURITY"
+        ws[f'A{row}'].font = Font(bold=True, size=14)
+        ws[f'A{row}'].alignment = Alignment(horizontal='center')
+        row += 2
+
+        # Calculate annual ratios for each security
+        from .excel_report_generator import ExcelReportGenerator
+
+        # Use ExcelReportGenerator to calculate annual ratios
+        temp_generator = ExcelReportGenerator(
+            output_directory=self.output_directory,
+            initial_capital=self.initial_capital,
+            risk_free_rate=0.035
+        )
+
+        # Collect all annual data
+        all_annual_data = []
+
+        for symbol, result in results.items():
+            # Calculate annual ratios using the same method from single security reports
+            if len(result.equity_curve) > 1:
+                annual_ratios = temp_generator._calculate_annual_ratios(result.equity_curve, result.trades)
+
+                for _, ratio_data in annual_ratios.iterrows():
+                    all_annual_data.append({
+                        'symbol': symbol,
+                        'year': ratio_data['year'],
+                        'sharpe': ratio_data['sharpe'],
+                        'sortino': ratio_data['sortino'],
+                        'calmar': ratio_data['calmar'],
+                        'max_dd_pct': ratio_data['max_dd_pct'],
+                        'annual_return_pct': ratio_data['annual_return_pct']
+                    })
+
+        if not all_annual_data:
+            ws[f'A{row}'] = "No annual data available"
+            return
+
+        annual_df = pd.DataFrame(all_annual_data)
+
+        # Group by year to show all securities side by side
+        years = sorted(annual_df['year'].unique())
+
+        for year in years:
+            row = self._add_section_header(ws, row, f"YEAR {year}")
+
+            year_data = annual_df[annual_df['year'] == year]
+
+            # Headers
+            headers = ['Security', 'Annual Return %', 'Max DD %', 'Sharpe', 'Sortino', 'Calmar']
+
+            for col_idx, header in enumerate(headers, 1):
+                cell = ws.cell(row=row, column=col_idx, value=header)
+                cell.font = self.header_font
+                cell.fill = self.header_fill
+                cell.alignment = Alignment(horizontal='center')
+
+            row += 1
+
+            # Sort by Sharpe ratio
+            year_data_sorted = year_data.sort_values('sharpe', ascending=False)
+
+            for _, sec_data in year_data_sorted.iterrows():
+                ws.cell(row=row, column=1, value=sec_data['symbol'])
+
+                cell = ws.cell(row=row, column=2, value=sec_data['annual_return_pct'])
+                cell.number_format = '0.00"%"'
+                if sec_data['annual_return_pct'] > 0:
+                    cell.font = Font(color="00B050")
+                elif sec_data['annual_return_pct'] < 0:
+                    cell.font = Font(color="FF0000")
+
+                cell = ws.cell(row=row, column=3, value=sec_data['max_dd_pct'])
+                cell.number_format = '0.00"%"'
+
+                cell = ws.cell(row=row, column=4, value=sec_data['sharpe'])
+                cell.number_format = '0.00'
+                # Color code Sharpe
+                if sec_data['sharpe'] > 2:
+                    cell.font = Font(color="00B050")
+                elif sec_data['sharpe'] < 1:
+                    cell.font = Font(color="FF0000")
+
+                cell = ws.cell(row=row, column=5, value=sec_data['sortino'])
+                cell.number_format = '0.00'
+                # Color code Sortino
+                if sec_data['sortino'] > 2:
+                    cell.font = Font(color="00B050")
+                elif sec_data['sortino'] < 1:
+                    cell.font = Font(color="FF0000")
+
+                cell = ws.cell(row=row, column=6, value=sec_data['calmar'])
+                cell.number_format = '0.00'
+                # Color code Calmar
+                if sec_data['calmar'] > 1:
+                    cell.font = Font(color="00B050")
+                elif sec_data['calmar'] < 0.5:
+                    cell.font = Font(color="FF0000")
+
+                row += 1
+
+            row += 2
+
+        # Add summary statistics
+        row = self._add_section_header(ws, row, "SUMMARY - AVERAGE RATIOS BY SECURITY (All Years)")
+
+        headers = ['Security', 'Avg Sharpe', 'Avg Sortino', 'Avg Calmar', 'Best Year', 'Worst Year']
+
+        for col_idx, header in enumerate(headers, 1):
+            cell = ws.cell(row=row, column=col_idx, value=header)
+            cell.font = self.header_font
+            cell.fill = self.header_fill
+
+        row += 1
+
+        # Calculate averages per security
+        for symbol in sorted(annual_df['symbol'].unique()):
+            symbol_data = annual_df[annual_df['symbol'] == symbol]
+
+            ws.cell(row=row, column=1, value=symbol)
+
+            cell = ws.cell(row=row, column=2, value=symbol_data['sharpe'].mean())
+            cell.number_format = '0.00'
+
+            cell = ws.cell(row=row, column=3, value=symbol_data['sortino'].mean())
+            cell.number_format = '0.00'
+
+            cell = ws.cell(row=row, column=4, value=symbol_data['calmar'].mean())
+            cell.number_format = '0.00'
+
+            best_year = symbol_data.loc[symbol_data['annual_return_pct'].idxmax(), 'year']
+            ws.cell(row=row, column=5, value=f"{int(best_year)}")
+
+            worst_year = symbol_data.loc[symbol_data['annual_return_pct'].idxmin(), 'year']
+            ws.cell(row=row, column=6, value=f"{int(worst_year)}")
+
+            row += 1
+
+        # Format columns
+        for col_idx in range(1, 7):
             ws.column_dimensions[get_column_letter(col_idx)].width = 16
 
     def _create_visualizations(self, wb: Workbook, results: Dict[str, BacktestResult],
