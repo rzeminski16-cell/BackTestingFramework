@@ -44,6 +44,7 @@ class AlphaTrendStrategy(BaseStrategy):
         volume_long_ma: Volume long MA period (default: 30)
         volume_alignment_window: Bars to wait for volume condition after signal (default: 14)
         stop_loss_percent: Percentage below current price for stop loss (default: 2.0)
+        atr_stop_loss_multiple: Multiple of ATR for stop loss (default: 0, disabled. When > 0, overrides stop_loss_percent)
         grace_period_bars: Bars to ignore EMA exit after entry (default: 14)
         momentum_gain_pct: % gain to ignore EMA exit (default: 2.0)
         momentum_lookback: Bars for momentum calculation (default: 7)
@@ -59,6 +60,7 @@ class AlphaTrendStrategy(BaseStrategy):
                  volume_long_ma: int = 30,
                  volume_alignment_window: int = 14,
                  stop_loss_percent: float = 2.0,
+                 atr_stop_loss_multiple: float = 0.0,
                  grace_period_bars: int = 14,
                  momentum_gain_pct: float = 2.0,
                  momentum_lookback: int = 7,
@@ -73,6 +75,7 @@ class AlphaTrendStrategy(BaseStrategy):
             volume_long_ma=volume_long_ma,
             volume_alignment_window=volume_alignment_window,
             stop_loss_percent=stop_loss_percent,
+            atr_stop_loss_multiple=atr_stop_loss_multiple,
             grace_period_bars=grace_period_bars,
             momentum_gain_pct=momentum_gain_pct,
             momentum_lookback=momentum_lookback,
@@ -88,6 +91,7 @@ class AlphaTrendStrategy(BaseStrategy):
         self.volume_long_ma = volume_long_ma
         self.volume_alignment_window = volume_alignment_window
         self.stop_loss_percent = stop_loss_percent
+        self.atr_stop_loss_multiple = atr_stop_loss_multiple
         self.grace_period_bars = grace_period_bars
         self.momentum_gain_pct = momentum_gain_pct
         self.momentum_lookback = momentum_lookback
@@ -375,8 +379,11 @@ class AlphaTrendStrategy(BaseStrategy):
                 # Entry condition: AlphaTrend signal is active AND volume has aligned since signal
                 # We only enter when both conditions are satisfied
                 if vol_aligned:
-                    # Calculate stop loss using percentage below current price
-                    stop_loss = current_price * (1 - self.stop_loss_percent / 100)
+                    # Calculate stop loss: use ATR-based if atr_stop_loss_multiple > 0, else percentage-based
+                    if self.atr_stop_loss_multiple > 0:
+                        stop_loss = current_price - (indicators['atr_14'] * self.atr_stop_loss_multiple)
+                    else:
+                        stop_loss = current_price * (1 - self.stop_loss_percent / 100)
 
                     # Store entry bar open for momentum calculation
                     self._entry_bar_open = context.current_bar['open']
@@ -422,7 +429,7 @@ class AlphaTrendStrategy(BaseStrategy):
 
         Formula: Position size = (Equity * Risk%) / (Stop Distance in Base Currency)
 
-        Uses percentage-based stop loss for consistent stop distance calculation.
+        Works with both percentage-based and ATR-based stop losses.
         """
         if signal.stop_loss is None:
             # Fallback to default sizing if no stop loss
@@ -431,8 +438,9 @@ class AlphaTrendStrategy(BaseStrategy):
         equity = context.total_equity  # In base currency (e.g., GBP)
         risk_amount = equity * (self.risk_percent / 100)  # In base currency
 
-        # Calculate stop distance from percentage
-        stop_distance = context.current_price * (self.stop_loss_percent / 100)  # In security currency
+        # Calculate stop distance from the actual stop loss price
+        # This works for both percentage-based and ATR-based stop losses
+        stop_distance = context.current_price - signal.stop_loss  # In security currency
 
         if stop_distance <= 0:
             # Invalid stop distance, fallback to default
