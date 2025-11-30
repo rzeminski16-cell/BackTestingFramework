@@ -9,7 +9,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 
 from strategies.alphatrend_strategy import AlphaTrendStrategy
-from Classes.Engine.single_security_engine import SingleSecurityBacktest
+from Classes.Engine.single_security_engine import SingleSecurityEngine
 from Classes.Config.config import BacktestConfig
 
 def main():
@@ -88,8 +88,8 @@ def main():
     print()
 
     try:
-        engine = SingleSecurityBacktest(strategy, config)
-        result = engine.run(data, symbol="AAPL")
+        engine = SingleSecurityEngine(config)
+        result = engine.run(symbol="AAPL", data=data, strategy=strategy)
 
         print()
         print("=" * 80)
