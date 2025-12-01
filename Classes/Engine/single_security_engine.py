@@ -184,9 +184,11 @@ class SingleSecurityEngine:
 
             # Process signal
             if signal.type == SignalType.BUY and not self.position_manager.has_position:
+                # Calculate entry equity before opening position
+                entry_equity = capital  # Capital represents total equity before position is opened
                 # Open new position
                 capital = self._open_position(
-                    symbol, current_date, current_price, signal, strategy, context, capital
+                    symbol, current_date, current_price, signal, strategy, context, capital, entry_equity
                 )
                 position_value = self.position_manager.get_position_value(current_price)
                 position_value = self._convert_to_base_currency(position_value, symbol, current_date)
@@ -321,7 +323,8 @@ class SingleSecurityEngine:
 
     def _open_position(self, symbol: str, date: datetime, price: float,
                       signal: Signal, strategy: BaseStrategy,
-                      context: StrategyContext, capital: float) -> float:
+                      context: StrategyContext, capital: float,
+                      entry_equity: float = 0.0) -> float:
         """
         Open a new position.
 
@@ -333,6 +336,7 @@ class SingleSecurityEngine:
             strategy: Strategy instance
             context: Current context
             capital: Available capital
+            entry_equity: Total portfolio equity at time of entry
 
         Returns:
             Remaining capital after entry
@@ -409,7 +413,8 @@ class SingleSecurityEngine:
             entry_reason=signal.reason,
             commission_paid=entry_commission,
             entry_fx_rate=entry_fx_rate,
-            security_currency=security_currency
+            security_currency=security_currency,
+            entry_equity=entry_equity
         )
 
         # Deduct from capital (in base currency)
