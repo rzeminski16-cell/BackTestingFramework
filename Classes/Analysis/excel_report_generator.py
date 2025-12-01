@@ -687,7 +687,7 @@ class ExcelReportGenerator:
                 period_equity_values = period_equity['equity'].values
 
                 # Calculate P/L change from equity curve
-                period_pl = period_equity_values[-1] - period_equity_values[0] if len(period_trades) == 0 else period_pl
+                period_pl = period_equity_values[-1] - period_equity_values[0] if len(period_trades_list) == 0 else period_pl
 
                 # Drawdown for period (reset at period start)
                 running_max = np.maximum.accumulate(period_equity_values)
