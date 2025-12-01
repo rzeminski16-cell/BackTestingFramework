@@ -602,80 +602,90 @@ class ExcelReportGenerator:
         Returns:
             DataFrame with columns: period, win_rate, num_trades, max_dd, avg_dd, expectancy, pl, sharpe, sortino, calmar
         """
-        if len(equity_curve) < 2 or len(trades) == 0:
+        if len(equity_curve) < 2:
             return pd.DataFrame()
 
         equity_df = equity_curve.copy()
         equity_df.set_index('date', inplace=True)
 
-        # Group trades by period
-        trades_df = pd.DataFrame([{
-            'date': t.exit_date,
-            'pl': t.pl,
-            'is_winner': t.is_winner,
-            'commission': t.commission_paid
-        } for t in trades])
+        # Get date range
+        start_date = equity_df.index.min()
+        end_date = equity_df.index.max()
 
-        if len(trades_df) == 0:
-            return pd.DataFrame()
-
-        trades_df.set_index('date', inplace=True)
-
-        # Determine period label format
+        # Create all periods in the date range
         if period == 'Y':
-            freq = 'Y'
-            label_format = '%Y'
+            periods = pd.period_range(start=start_date, end=end_date, freq='Y')
         else:  # Q
-            freq = 'Q'
-            label_format = '%Y-Q'
+            periods = pd.period_range(start=start_date, end=end_date, freq='Q')
 
-        # Group by period
-        period_groups = trades_df.groupby(pd.Grouper(freq=freq))
+        # Group trades by period
+        trades_by_period = {}
+        if len(trades) > 0:
+            trades_df = pd.DataFrame([{
+                'date': t.exit_date,
+                'pl': t.pl,
+                'is_winner': t.is_winner,
+                'commission': t.commission_paid
+            } for t in trades])
+            trades_df.set_index('date', inplace=True)
+
+            # Group trades by period
+            period_groups = trades_df.groupby(pd.Grouper(freq='Y' if period == 'Y' else 'Q'))
+            for period_date, period_trades in period_groups:
+                if len(period_trades) > 0:
+                    trades_by_period[period_date] = period_trades
 
         results = []
 
-        for period_date, period_trades in period_groups:
-            if len(period_trades) == 0:
-                continue
-
+        for period_obj in periods:
             # Calculate period label
             if period == 'Q':
-                quarter = (period_date.month - 1) // 3 + 1
-                period_label = f"{period_date.year}-Q{quarter}"
-            else:
-                period_label = str(period_date.year)
-
-            # Get equity curve for this period
-            period_start = period_date.replace(month=1, day=1) if period == 'Y' else pd.Timestamp(period_date.year, ((quarter-1)*3)+1, 1)
-            if period == 'Y':
-                period_end = period_date.replace(month=12, day=31)
-            else:
+                period_label = f"{period_obj.year}-Q{period_obj.quarter}"
+                quarter = period_obj.quarter
+                period_start = pd.Timestamp(period_obj.year, ((quarter-1)*3)+1, 1)
                 # Last day of quarter
                 if quarter == 4:
-                    period_end = pd.Timestamp(period_date.year, 12, 31)
+                    period_end = pd.Timestamp(period_obj.year, 12, 31)
                 else:
-                    period_end = pd.Timestamp(period_date.year, quarter*3 + 1, 1) - pd.Timedelta(days=1)
+                    period_end = pd.Timestamp(period_obj.year, quarter*3 + 1, 1) - pd.Timedelta(days=1)
+            else:
+                period_label = str(period_obj.year)
+                period_start = pd.Timestamp(period_obj.year, 1, 1)
+                period_end = pd.Timestamp(period_obj.year, 12, 31)
 
+            # Get equity curve for this period
             period_equity = equity_df.loc[(equity_df.index >= period_start) & (equity_df.index <= period_end)]
 
-            # Calculate metrics for this period
-            num_trades = len(period_trades)
-            winners = period_trades[period_trades['is_winner'] == True]
-            win_rate = len(winners) / num_trades if num_trades > 0 else 0
+            # Get trades for this period (if any)
+            period_date_key = period_start
+            period_trades = trades_by_period.get(period_date_key, pd.DataFrame())
 
-            # P/L
-            period_pl = period_trades['pl'].sum()
+            # Calculate trade-based metrics
+            if len(period_trades) > 0:
+                num_trades = len(period_trades)
+                winners = period_trades[period_trades['is_winner'] == True]
+                win_rate = len(winners) / num_trades if num_trades > 0 else 0
+                period_pl = period_trades['pl'].sum()
 
-            # Expectancy
-            avg_win = winners['pl'].mean() if len(winners) > 0 else 0
-            losers = period_trades[period_trades['is_winner'] == False]
-            avg_loss = losers['pl'].mean() if len(losers) > 0 else 0
-            expectancy = (win_rate * avg_win) + ((1 - win_rate) * avg_loss)
+                # Expectancy
+                avg_win = winners['pl'].mean() if len(winners) > 0 else 0
+                losers = period_trades[period_trades['is_winner'] == False]
+                avg_loss = losers['pl'].mean() if len(losers) > 0 else 0
+                expectancy = (win_rate * avg_win) + ((1 - win_rate) * avg_loss)
+            else:
+                # No trades in this period - set to N/A
+                num_trades = 0
+                win_rate = None  # Will be displayed as N/A
+                expectancy = None  # Will be displayed as N/A
 
-            # Drawdown for period (reset at period start)
+            # Calculate equity-based metrics (always calculate if equity data exists)
             if len(period_equity) > 0:
                 period_equity_values = period_equity['equity'].values
-                # Reset to period start value
+
+                # Calculate P/L change from equity curve
+                period_pl = period_equity_values[-1] - period_equity_values[0] if len(period_trades) == 0 else period_pl
+
+                # Drawdown for period (reset at period start)
                 running_max = np.maximum.accumulate(period_equity_values)
                 drawdown = running_max - period_equity_values
                 drawdown_pct = (drawdown / running_max) * 100
@@ -704,16 +714,18 @@ class ExcelReportGenerator:
                 annualized_return = period_return * (365.25 / period_days) if period_days > 0 else 0
                 calmar = annualized_return / max_dd if max_dd > 0 else 0
             else:
-                max_dd = 0
-                avg_dd = 0
-                sharpe = 0
-                sortino = 0
-                calmar = 0
+                # No equity data for this period
+                period_pl = None
+                max_dd = None
+                avg_dd = None
+                sharpe = None
+                sortino = None
+                calmar = None
 
             results.append({
                 'period': period_label,
                 'num_trades': num_trades,
-                'win_rate': win_rate * 100,
+                'win_rate': win_rate * 100 if win_rate is not None else None,
                 'pl': period_pl,
                 'max_dd_pct': max_dd,
                 'avg_dd_pct': avg_dd,
@@ -791,7 +803,7 @@ class ExcelReportGenerator:
             return []
 
         equity = equity_curve['equity'].values
-        dates = equity_curve['date'].values
+        dates = pd.to_datetime(equity_curve['date'])  # Convert to pandas datetime for proper arithmetic
 
         running_max = np.maximum.accumulate(equity)
         drawdown = running_max - equity
@@ -808,24 +820,25 @@ class ExcelReportGenerator:
         for i in range(len(equity)):
             if in_drawdown[i] and dd_start is None:
                 # Start of drawdown
-                dd_start = dates[i-1] if i > 0 else dates[i]
+                dd_start = dates.iloc[i-1] if i > 0 else dates.iloc[i]
                 dd_start_idx = i-1 if i > 0 else i
                 peak_value = running_max[i]
             elif not in_drawdown[i] and dd_start is not None:
                 # End of drawdown (recovery)
                 dd_end_idx = i - 1
-                dd_end = dates[dd_end_idx]
-                recovery_date = dates[i]
+                dd_end = dates.iloc[dd_end_idx]
+                recovery_date = dates.iloc[i]
 
                 max_dd_in_period = np.max(drawdown_pct[dd_start_idx:i])
 
-                dd_duration = (dd_end - dd_start).days if hasattr(dd_end, 'days') else 0
-                recovery_duration = (recovery_date - dd_start).days if hasattr(recovery_date, 'days') else 0
+                # Calculate durations using pandas datetime objects
+                dd_duration = (dd_end - dd_start).days
+                recovery_duration = (recovery_date - dd_start).days
 
                 drawdown_periods.append({
-                    'start_date': dd_start,
-                    'trough_date': dd_end,
-                    'recovery_date': recovery_date,
+                    'start_date': dd_start.strftime('%Y-%m-%d'),
+                    'trough_date': dd_end.strftime('%Y-%m-%d'),
+                    'recovery_date': recovery_date.strftime('%Y-%m-%d'),
                     'peak_value': peak_value,
                     'trough_value': equity[dd_end_idx],
                     'max_dd_pct': max_dd_in_period,
@@ -840,13 +853,13 @@ class ExcelReportGenerator:
         # Handle if still in drawdown at end
         if dd_start is not None:
             dd_end_idx = len(equity) - 1
-            dd_end = dates[dd_end_idx]
+            dd_end = dates.iloc[dd_end_idx]
             max_dd_in_period = np.max(drawdown_pct[dd_start_idx:])
-            dd_duration = (dd_end - dd_start).days if hasattr(dd_end, 'days') else 0
+            dd_duration = (dd_end - dd_start).days
 
             drawdown_periods.append({
-                'start_date': dd_start,
-                'trough_date': dd_end,
+                'start_date': dd_start.strftime('%Y-%m-%d'),
+                'trough_date': dd_end.strftime('%Y-%m-%d'),
                 'recovery_date': None,  # Not recovered yet
                 'peak_value': peak_value,
                 'trough_value': equity[dd_end_idx],
@@ -1769,7 +1782,7 @@ class ExcelReportGenerator:
         # Annual Sharpe/Sortino/Calmar Ratios Chart
         annual_ratios = metrics.get('annual_ratios', pd.DataFrame())
 
-        if not annual_ratios.empty:
+        if not annual_ratios.empty and len(annual_ratios) > 0:
             # Write annual ratios data
             annual_start_row = dist_start_row + len(distribution) + 10 if distribution else data_start_row + len(equity_df) + 15
 
@@ -1778,34 +1791,36 @@ class ExcelReportGenerator:
             ws.cell(row=annual_start_row, column=3, value="Sortino").font = self.header_font
             ws.cell(row=annual_start_row, column=4, value="Calmar").font = self.header_font
 
-            for idx, row_data in annual_ratios.iterrows():
+            for idx, row_data in enumerate(annual_ratios.to_dict('records')):
                 row_num = annual_start_row + 1 + idx
                 ws.cell(row=row_num, column=1, value=row_data['year'])
                 ws.cell(row=row_num, column=2, value=row_data['sharpe'])
                 ws.cell(row=row_num, column=3, value=row_data['sortino'])
                 ws.cell(row=row_num, column=4, value=row_data['calmar'])
 
-            # Create Annual Ratios Line Chart
-            chart4 = LineChart()
-            chart4.title = "Annual Risk-Adjusted Ratios"
-            chart4.y_axis.title = 'Ratio Value'
-            chart4.x_axis.title = 'Year'
-            chart4.style = 13
+            # Only create chart if we have data
+            if len(annual_ratios) > 0:
+                # Create Annual Ratios Line Chart
+                chart4 = LineChart()
+                chart4.title = "Annual Risk-Adjusted Ratios"
+                chart4.y_axis.title = 'Ratio Value'
+                chart4.x_axis.title = 'Year'
+                chart4.style = 13
 
-            # Add all three series
-            sharpe_ref = Reference(ws, min_col=2, min_row=annual_start_row, max_row=annual_start_row + len(annual_ratios))
-            sortino_ref = Reference(ws, min_col=3, min_row=annual_start_row, max_row=annual_start_row + len(annual_ratios))
-            calmar_ref = Reference(ws, min_col=4, min_row=annual_start_row, max_row=annual_start_row + len(annual_ratios))
-            cats_ref = Reference(ws, min_col=1, min_row=annual_start_row+1, max_row=annual_start_row + len(annual_ratios))
+                # Add all three series
+                sharpe_ref = Reference(ws, min_col=2, min_row=annual_start_row, max_row=annual_start_row + len(annual_ratios))
+                sortino_ref = Reference(ws, min_col=3, min_row=annual_start_row, max_row=annual_start_row + len(annual_ratios))
+                calmar_ref = Reference(ws, min_col=4, min_row=annual_start_row, max_row=annual_start_row + len(annual_ratios))
+                cats_ref = Reference(ws, min_col=1, min_row=annual_start_row+1, max_row=annual_start_row + len(annual_ratios))
 
-            chart4.add_data(sharpe_ref, titles_from_data=True)
-            chart4.add_data(sortino_ref, titles_from_data=True)
-            chart4.add_data(calmar_ref, titles_from_data=True)
-            chart4.set_categories(cats_ref)
-            chart4.height = 12
-            chart4.width = 20
+                chart4.add_data(sharpe_ref, titles_from_data=True)
+                chart4.add_data(sortino_ref, titles_from_data=True)
+                chart4.add_data(calmar_ref, titles_from_data=True)
+                chart4.set_categories(cats_ref)
+                chart4.height = 12
+                chart4.width = 20
 
-            ws.add_chart(chart4, "E67")
+                ws.add_chart(chart4, "E67")
 
     def _create_market_conditions(self, wb: Workbook, result: BacktestResult, metrics: Dict[str, Any]):
         """Create Sheet 5: Market Condition Breakdown (Optional)."""

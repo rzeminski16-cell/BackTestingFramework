@@ -100,6 +100,21 @@ class PerformanceMetrics:
         # Max drawdown
         max_dd, max_dd_pct = PerformanceMetrics.calculate_max_drawdown(equity_curve)
 
+        # Volatility and downside deviation
+        volatility = PerformanceMetrics.calculate_volatility(equity_curve)
+        downside_deviation = PerformanceMetrics.calculate_downside_deviation(equity_curve)
+
+        # Sortino ratio
+        sortino = PerformanceMetrics.calculate_sortino_ratio(equity_curve)
+
+        # Calmar ratio (CAGR / Max DD)
+        cagr = result.cagr if hasattr(result, 'cagr') else 0.0
+        calmar = cagr / max_dd_pct if max_dd_pct > 0 else 0.0
+
+        # Best and worst day
+        best_day = PerformanceMetrics.calculate_best_day(equity_curve)
+        worst_day = PerformanceMetrics.calculate_worst_day(equity_curve)
+
         metrics.update({
             'win_rate': win_rate,
             'num_wins': num_wins,
@@ -111,8 +126,14 @@ class PerformanceMetrics:
             'profit_factor': profit_factor,
             'avg_trade_duration': avg_duration,
             'sharpe_ratio': sharpe,
+            'sortino_ratio': sortino,
+            'calmar_ratio': calmar,
             'max_drawdown': max_dd,
             'max_drawdown_pct': max_dd_pct,
+            'volatility': volatility,
+            'downside_deviation': downside_deviation,
+            'best_day': best_day,
+            'worst_day': worst_day,
             # FX P&L metrics
             'total_security_pl': total_security_pl,
             'total_fx_pl': total_fx_pl,
@@ -180,6 +201,115 @@ class PerformanceMetrics:
         max_dd_pct = np.max(drawdown_pct)
 
         return max_dd, max_dd_pct
+
+    @staticmethod
+    def calculate_volatility(equity_curve: pd.DataFrame) -> float:
+        """
+        Calculate annualized volatility.
+
+        Args:
+            equity_curve: Equity curve DataFrame with 'equity' column
+
+        Returns:
+            Annualized volatility as percentage
+        """
+        if len(equity_curve) < 2:
+            return 0.0
+
+        returns = equity_curve['equity'].pct_change().dropna()
+        if len(returns) == 0:
+            return 0.0
+
+        return returns.std() * np.sqrt(252) * 100  # Annualized, as percentage
+
+    @staticmethod
+    def calculate_downside_deviation(equity_curve: pd.DataFrame) -> float:
+        """
+        Calculate downside deviation (volatility of negative returns).
+
+        Args:
+            equity_curve: Equity curve DataFrame with 'equity' column
+
+        Returns:
+            Annualized downside deviation as percentage
+        """
+        if len(equity_curve) < 2:
+            return 0.0
+
+        returns = equity_curve['equity'].pct_change().dropna()
+        negative_returns = returns[returns < 0]
+
+        if len(negative_returns) == 0:
+            return 0.0
+
+        return negative_returns.std() * np.sqrt(252) * 100  # Annualized
+
+    @staticmethod
+    def calculate_sortino_ratio(equity_curve: pd.DataFrame,
+                               risk_free_rate: float = 0.035) -> float:
+        """
+        Calculate Sortino ratio (uses downside deviation).
+
+        Args:
+            equity_curve: Equity curve DataFrame with 'equity' column
+            risk_free_rate: Annual risk-free rate (default 3.5%)
+
+        Returns:
+            Sortino ratio
+        """
+        if len(equity_curve) < 2:
+            return 0.0
+
+        returns = equity_curve['equity'].pct_change().dropna()
+
+        if len(returns) == 0:
+            return 0.0
+
+        daily_rf = pow(1 + risk_free_rate, 1/252) - 1
+        excess_returns = returns - daily_rf
+
+        # Downside returns
+        downside_returns = returns[returns < 0]
+
+        if len(downside_returns) == 0 or downside_returns.std() == 0:
+            return 0.0
+
+        sortino = (excess_returns.mean() / downside_returns.std()) * np.sqrt(252)
+        return sortino
+
+    @staticmethod
+    def calculate_best_day(equity_curve: pd.DataFrame) -> float:
+        """
+        Calculate best single day return.
+
+        Args:
+            equity_curve: Equity curve DataFrame with 'equity' column
+
+        Returns:
+            Best day return as percentage
+        """
+        if len(equity_curve) < 2:
+            return 0.0
+
+        returns = equity_curve['equity'].pct_change().dropna()
+        return returns.max() * 100 if len(returns) > 0 else 0.0
+
+    @staticmethod
+    def calculate_worst_day(equity_curve: pd.DataFrame) -> float:
+        """
+        Calculate worst single day return.
+
+        Args:
+            equity_curve: Equity curve DataFrame with 'equity' column
+
+        Returns:
+            Worst day return as percentage
+        """
+        if len(equity_curve) < 2:
+            return 0.0
+
+        returns = equity_curve['equity'].pct_change().dropna()
+        return returns.min() * 100 if len(returns) > 0 else 0.0
 
     @staticmethod
     def print_metrics(metrics: Dict[str, Any]) -> None:
