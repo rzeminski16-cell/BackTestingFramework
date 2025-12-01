@@ -36,41 +36,35 @@ class AlphaTrendStrategy(BaseStrategy):
         - ema_50: Exponential Moving Average (50-period, static, used for exits)
 
     Custom Parameters (strategy-specific calculations):
-        atr_multiplier: Base multiplier for ATR bands (default: 1.0)
-        source: Price source for calculations - 'close', 'open', 'high', 'low' (default: 'close')
-        smoothing_length: EMA smoothing period for AlphaTrend (default: 3)
-        percentile_period: Lookback for dynamic thresholds (default: 100)
         volume_short_ma: Volume short MA period (default: 4)
         volume_long_ma: Volume long MA period (default: 30)
         volume_alignment_window: Bars to wait for volume condition after signal (default: 14)
-        stop_loss_percent: Percentage below current price for stop loss (default: 2.0)
-        atr_stop_loss_multiple: Multiple of ATR for stop loss (default: 0, disabled. When > 0, overrides stop_loss_percent)
+        stop_loss_percent: Percentage below current price for stop loss (default: 0)
+        atr_stop_loss_multiple: Multiple of ATR for stop loss (default: 2.5)
         grace_period_bars: Bars to ignore EMA exit after entry (default: 14)
         momentum_gain_pct: % gain to ignore EMA exit (default: 2.0)
         momentum_lookback: Bars for momentum calculation (default: 7)
         risk_percent: Percent of equity to risk per trade (default: 2.0)
+
+    Static Parameters (not configurable via GUI):
+        atr_multiplier: Base multiplier for ATR bands (fixed: 1.0)
+        source: Price source for calculations (fixed: 'close')
+        smoothing_length: EMA smoothing period for AlphaTrend (fixed: 3)
+        percentile_period: Lookback for dynamic thresholds (fixed: 100)
     """
 
     def __init__(self,
-                 atr_multiplier: float = 1.0,
-                 source: str = 'close',
-                 smoothing_length: int = 3,
-                 percentile_period: int = 100,
                  volume_short_ma: int = 4,
                  volume_long_ma: int = 30,
                  volume_alignment_window: int = 14,
-                 stop_loss_percent: float = 2.0,
-                 atr_stop_loss_multiple: float = 0.0,
+                 stop_loss_percent: float = 0.0,
+                 atr_stop_loss_multiple: float = 2.5,
                  grace_period_bars: int = 14,
                  momentum_gain_pct: float = 2.0,
                  momentum_lookback: int = 7,
                  risk_percent: float = 2.0):
         """Initialize AlphaTrend strategy with parameters."""
         super().__init__(
-            atr_multiplier=atr_multiplier,
-            source=source,
-            smoothing_length=smoothing_length,
-            percentile_period=percentile_period,
             volume_short_ma=volume_short_ma,
             volume_long_ma=volume_long_ma,
             volume_alignment_window=volume_alignment_window,
@@ -82,11 +76,13 @@ class AlphaTrendStrategy(BaseStrategy):
             risk_percent=risk_percent
         )
 
-        # Store parameters as instance variables
-        self.atr_multiplier = atr_multiplier
-        self.source = source
-        self.smoothing_length = smoothing_length
-        self.percentile_period = percentile_period
+        # Static parameters (not configurable via GUI)
+        self.atr_multiplier = 1.0
+        self.source = 'close'
+        self.smoothing_length = 3
+        self.percentile_period = 100
+
+        # Store configurable parameters as instance variables
         self.volume_short_ma = volume_short_ma
         self.volume_long_ma = volume_long_ma
         self.volume_alignment_window = volume_alignment_window

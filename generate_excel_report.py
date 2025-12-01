@@ -22,7 +22,7 @@ from Classes.Engine.single_security_engine import SingleSecurityEngine
 from Classes.Analysis.excel_report_generator import ExcelReportGenerator
 from Classes.Analysis.performance_metrics import PerformanceMetrics
 
-from strategies.examples import PartialExitStrategy
+from strategies.alphatrend_strategy import AlphaTrendStrategy
 
 
 def main():
@@ -45,11 +45,11 @@ def main():
     symbol = 'AAPL'
 
     # Strategy configuration
-    strategy = PartialExitStrategy(
-        position_size=0.2,
-        first_target_pct=0.10,
-        second_target_pct=0.20,
-        stop_loss_pct=0.06
+    strategy = AlphaTrendStrategy(
+        volume_short_ma=4,
+        volume_long_ma=30,
+        stop_loss_percent=0.0,
+        atr_stop_loss_multiple=2.5
     )
 
     # Report configuration
@@ -61,7 +61,7 @@ def main():
 
     print(f"Loading data for {symbol}...")
     data_loader = DataLoader(Path('raw_data'))
-    data = data_loader.load_csv(symbol, required_columns=['date', 'close', 'rsi_14'])
+    data = data_loader.load_csv(symbol, required_columns=['date', 'open', 'high', 'low', 'close', 'volume', 'atr_14', 'ema_50'])
     print(f"✓ Loaded {len(data)} bars\n")
 
     print("Running backtest...")
@@ -140,7 +140,7 @@ def main():
                 print(f"\n  Processing {sym}...")
 
                 # Load data
-                data = data_loader.load_csv(sym, required_columns=['date', 'close', 'sma_50'])
+                data = data_loader.load_csv(sym, required_columns=['date', 'open', 'high', 'low', 'close', 'volume', 'atr_14', 'ema_50'])
 
                 # Run backtest
                 result = engine.run(sym, data, strategy)

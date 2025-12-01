@@ -55,28 +55,13 @@ The following indicators are now read from raw data with **fixed settings** and 
 
 ### 3. Example Strategies
 
-#### AdvancedTrailingStopStrategy (`strategies/examples/advanced_trailing_stop_strategy.py`)
+**Note:** AdvancedTrailingStopStrategy and PartialExitStrategy have been removed from the framework.
 
-**Before:**
-- Had `sma_period`, `ema_period`, `rsi_period` parameters
-
-**After:**
-- Removed period parameters
-- Reads `sma_200`, `ema_50`, `rsi_14` directly from raw data
-
-**Required Columns:**
-```python
-['date', 'close', 'sma_200', 'ema_50', 'rsi_14']
-```
-
-#### PartialExitStrategy (`strategies/examples/partial_exit_strategy.py`)
-
-**Before:**
-- Had `rsi_period` parameter
-
-**After:**
-- Removed period parameter
-- Reads `rsi_14` directly from raw data
+The framework now includes AlphaTrendStrategy as the primary example strategy, which demonstrates:
+- Reading pre-calculated indicators from raw data (atr_14, ema_50)
+- Custom strategy-specific indicator calculations
+- Risk-based position sizing
+- Volume filtering
 
 **Required Columns:**
 ```python
