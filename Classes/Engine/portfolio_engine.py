@@ -121,8 +121,19 @@ class PortfolioEngine:
                 if not date_mask.any():
                     continue
 
-                bar_index = data[date_mask].index[0]
-                historical_data = data.iloc[:bar_index+1].copy()
+                # DATA LEAKAGE FIX: Get positional index, not label-based index
+                # This ensures correct slicing regardless of DataFrame index type
+                label_index = data[date_mask].index[0]
+                if isinstance(data.index, pd.RangeIndex):
+                    # Index is already positional (0, 1, 2, ...)
+                    bar_position = label_index
+                else:
+                    # Index is label-based (dates, non-sequential, etc.)
+                    # Get the positional location
+                    bar_position = data.index.get_loc(label_index)
+
+                # Only pass historical data up to current bar (no future data access)
+                historical_data = data.iloc[:bar_position+1].copy()
 
                 # Get FX rate for currency conversion
                 fx_rate = self._get_fx_rate(symbol, current_date)
@@ -130,7 +141,7 @@ class PortfolioEngine:
                 # Create context
                 context = StrategyContext(
                     data=historical_data,
-                    current_index=bar_index,
+                    current_index=bar_position,
                     current_price=current_price,
                     current_date=current_date,
                     position=pm.get_position(),

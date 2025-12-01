@@ -98,9 +98,11 @@ class SingleSecurityEngine:
             current_date = current_bar['date']
             current_price = current_bar['close']
 
-            # PERFORMANCE OPTIMIZATION: Pass full DataFrame (no copying)
-            # StrategyContext uses current_index to prevent lookahead bias
-            # This eliminates ~1.3GB of unnecessary copying for typical datasets
+            # DATA LEAKAGE FIX: Only pass historical data up to current bar
+            # This prevents strategies from accessing future data and eliminates look-ahead bias
+            # The slice includes all bars from 0 to i (inclusive), so current_index=i is the last valid index
+            historical_data = data.iloc[:i+1].copy()
+
             position_value = self.position_manager.get_position_value(current_price)
             # Convert position value to base currency (GBP)
             position_value = self._convert_to_base_currency(position_value, symbol, current_date)
@@ -110,7 +112,7 @@ class SingleSecurityEngine:
             fx_rate = self._get_fx_rate(symbol, current_date)
 
             context = StrategyContext(
-                data=data,
+                data=historical_data,
                 current_index=i,
                 current_price=current_price,
                 current_date=current_date,
