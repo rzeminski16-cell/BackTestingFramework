@@ -301,34 +301,53 @@ class AlphaTrendStrategy(BaseStrategy):
         Check if we have an active AlphaTrend signal within the volume alignment window.
 
         Returns:
-            True if signal is active (within volume_alignment_window bars from signal)
+            True if signal is active (on or within volume_alignment_window bars after signal)
         """
         if self._signal_bar_idx < 0:
             return False
 
         bars_since_signal = context.current_index - self._signal_bar_idx
-        return bars_since_signal <= self.volume_alignment_window
+        # CRITICAL: Ensure we're on or after the signal bar (bars_since_signal >= 0)
+        # and within the forward window (bars_since_signal <= window)
+        return 0 <= bars_since_signal <= self.volume_alignment_window
 
     def _check_volume_since_signal(self, context: StrategyContext) -> bool:
         """
-        Check if volume condition was met within the alignment window around the signal.
-        Checks backward from signal (up to volume_alignment_window bars) and forward to current bar.
+        Check if volume condition was met within the correct time window.
+
+        Logic:
+        - ON signal bar: Check lookback window (signal - window) to signal bar
+        - AFTER signal bar: Check from signal bar to current bar only
+
+        This ensures trades can only occur on or after the signal bar, never before.
 
         PERFORMANCE: Uses pre-calculated volume_condition column.
 
         Returns:
-            True if volume condition was met within the window
+            True if volume condition was met within the correct window
         """
         if self._signal_bar_idx < 0:
             return False
 
         current_idx = context.current_index
 
-        # Check volume from (signal - window) to current bar
-        # Don't go before start of data or past current bar
-        vol_start = max(0, self._signal_bar_idx - self.volume_alignment_window)
-        vol_end = current_idx + 1  # +1 because range is exclusive on the right
+        # Determine the correct time window based on where we are relative to signal
+        if current_idx == self._signal_bar_idx:
+            # ON signal bar: check lookback window for volume confirmation
+            # This allows entering on signal bar if volume was confirmed before/on signal
+            vol_start = max(0, self._signal_bar_idx - self.volume_alignment_window)
+            vol_end = self._signal_bar_idx + 1
+        elif current_idx > self._signal_bar_idx:
+            # AFTER signal bar: check from signal to current bar only
+            # This ensures we only look forward from signal, never before it
+            vol_start = self._signal_bar_idx
+            vol_end = current_idx + 1
+        else:
+            # BEFORE signal bar: should never happen due to _has_active_signal check
+            # but return False as safety measure
+            return False
 
+        # Check if volume condition was met in the determined window
         for i in range(vol_start, vol_end):
             if context.data.iloc[i]['volume_condition']:
                 return True
