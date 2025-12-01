@@ -1196,8 +1196,9 @@ class BatchSummaryReportGenerator:
         xvalues = Reference(ws, min_col=4, min_row=chart_data_start, max_row=chart_data_end)
         yvalues = Reference(ws, min_col=2, min_row=chart_data_start, max_row=chart_data_end)
 
-        series = chart3.series.append(yvalues)
-        chart3.series[-1].xvalues = xvalues
+        from openpyxl.chart import Series
+        series = Series(values=yvalues, xvalues=xvalues, title="Securities")
+        chart3.series.append(series)
         chart3.height = 12
         chart3.width = 20
 

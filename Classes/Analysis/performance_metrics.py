@@ -107,8 +107,22 @@ class PerformanceMetrics:
         # Sortino ratio
         sortino = PerformanceMetrics.calculate_sortino_ratio(equity_curve)
 
+        # Calculate CAGR
+        if len(equity_curve) >= 2:
+            start_date = pd.Timestamp(equity_curve['date'].iloc[0])
+            end_date = pd.Timestamp(equity_curve['date'].iloc[-1])
+            years = (end_date - start_date).days / 365.25
+            initial_equity = equity_curve['equity'].iloc[0]
+            final_equity = equity_curve['equity'].iloc[-1]
+
+            if years > 0 and initial_equity > 0:
+                cagr = (pow(final_equity / initial_equity, 1 / years) - 1) * 100
+            else:
+                cagr = 0.0
+        else:
+            cagr = 0.0
+
         # Calmar ratio (CAGR / Max DD)
-        cagr = result.cagr if hasattr(result, 'cagr') else 0.0
         calmar = cagr / max_dd_pct if max_dd_pct > 0 else 0.0
 
         # Best and worst day

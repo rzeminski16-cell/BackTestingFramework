@@ -621,26 +621,30 @@ class ExcelReportGenerator:
         # Group trades by period
         trades_by_period = {}
         if len(trades) > 0:
-            trades_df = pd.DataFrame([{
-                'date': t.exit_date,
-                'pl': t.pl,
-                'is_winner': t.is_winner,
-                'commission': t.commission_paid
-            } for t in trades])
-            trades_df.set_index('date', inplace=True)
+            for trade in trades:
+                trade_date = pd.Timestamp(trade.exit_date)
 
-            # Group trades by period
-            period_groups = trades_df.groupby(pd.Grouper(freq='Y' if period == 'Y' else 'Q'))
-            for period_date, period_trades in period_groups:
-                if len(period_trades) > 0:
-                    trades_by_period[period_date] = period_trades
+                if period == 'Y':
+                    period_key = trade_date.year
+                else:  # Q
+                    period_key = f"{trade_date.year}-Q{trade_date.quarter}"
+
+                if period_key not in trades_by_period:
+                    trades_by_period[period_key] = []
+
+                trades_by_period[period_key].append({
+                    'pl': trade.pl,
+                    'is_winner': trade.is_winner,
+                    'commission': trade.commission_paid
+                })
 
         results = []
 
         for period_obj in periods:
-            # Calculate period label
+            # Calculate period label and key
             if period == 'Q':
                 period_label = f"{period_obj.year}-Q{period_obj.quarter}"
+                period_key = period_label
                 quarter = period_obj.quarter
                 period_start = pd.Timestamp(period_obj.year, ((quarter-1)*3)+1, 1)
                 # Last day of quarter
@@ -650,6 +654,7 @@ class ExcelReportGenerator:
                     period_end = pd.Timestamp(period_obj.year, quarter*3 + 1, 1) - pd.Timedelta(days=1)
             else:
                 period_label = str(period_obj.year)
+                period_key = period_obj.year
                 period_start = pd.Timestamp(period_obj.year, 1, 1)
                 period_end = pd.Timestamp(period_obj.year, 12, 31)
 
@@ -657,20 +662,19 @@ class ExcelReportGenerator:
             period_equity = equity_df.loc[(equity_df.index >= period_start) & (equity_df.index <= period_end)]
 
             # Get trades for this period (if any)
-            period_date_key = period_start
-            period_trades = trades_by_period.get(period_date_key, pd.DataFrame())
+            period_trades_list = trades_by_period.get(period_key, [])
 
             # Calculate trade-based metrics
-            if len(period_trades) > 0:
-                num_trades = len(period_trades)
-                winners = period_trades[period_trades['is_winner'] == True]
+            if len(period_trades_list) > 0:
+                num_trades = len(period_trades_list)
+                winners = [t for t in period_trades_list if t['is_winner']]
                 win_rate = len(winners) / num_trades if num_trades > 0 else 0
-                period_pl = period_trades['pl'].sum()
+                period_pl = sum(t['pl'] for t in period_trades_list)
 
                 # Expectancy
-                avg_win = winners['pl'].mean() if len(winners) > 0 else 0
-                losers = period_trades[period_trades['is_winner'] == False]
-                avg_loss = losers['pl'].mean() if len(losers) > 0 else 0
+                avg_win = np.mean([t['pl'] for t in winners]) if len(winners) > 0 else 0
+                losers = [t for t in period_trades_list if not t['is_winner']]
+                avg_loss = np.mean([t['pl'] for t in losers]) if len(losers) > 0 else 0
                 expectancy = (win_rate * avg_win) + ((1 - win_rate) * avg_loss)
             else:
                 # No trades in this period - set to N/A
