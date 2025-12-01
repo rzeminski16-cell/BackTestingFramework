@@ -33,6 +33,7 @@ class Position:
         entry_reason: Reason for entering position
         entry_fx_rate: FX rate at entry (for FX P&L calculation)
         security_currency: Currency the security is denominated in
+        entry_equity: Total portfolio equity at time of entry
     """
     symbol: str
     entry_date: datetime
@@ -46,6 +47,7 @@ class Position:
     entry_reason: str = ""
     entry_fx_rate: float = 1.0  # FX rate at entry
     security_currency: str = "GBP"  # Currency security is denominated in
+    entry_equity: float = 0.0  # Total portfolio equity at time of entry
 
     @property
     def is_open(self) -> bool:

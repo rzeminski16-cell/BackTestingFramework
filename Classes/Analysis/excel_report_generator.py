@@ -1110,7 +1110,7 @@ class ExcelReportGenerator:
         row = 1
 
         # Title
-        ws.merge_cells(f'A{row}:H{row}')
+        ws.merge_cells(f'A{row}:L{row}')
         ws[f'A{row}'] = "RANDOM TRADES SAMPLE (Manual Verification)"
         ws[f'A{row}'].font = Font(bold=True, size=14)
         ws[f'A{row}'].alignment = Alignment(horizontal='center')
@@ -1127,7 +1127,8 @@ class ExcelReportGenerator:
 
         # Headers
         headers = ['Trade #', 'Entry Date', 'Entry Price', 'Exit Date', 'Exit Price',
-                   'Quantity', 'Initial SL', 'Final SL', 'P/L', 'P/L %']
+                   'Quantity', 'Initial SL', 'Final SL', 'P/L', 'P/L %',
+                   'Entry Equity', '% Equity Used']
 
         for col_idx, header in enumerate(headers, 1):
             cell = ws.cell(row=row, column=col_idx, value=header)
@@ -1192,6 +1193,19 @@ class ExcelReportGenerator:
             elif trade.pl_pct > 0:
                 cell.font = Font(color="00B050")
 
+            # Entry Equity
+            cell = ws.cell(row=row, column=11, value=trade.entry_equity)
+            cell.number_format = '$#,##0.00'
+
+            # % Equity Used
+            if trade.entry_equity > 0:
+                position_value = trade.entry_price * trade.quantity
+                equity_pct_used = (position_value / trade.entry_equity) * 100
+            else:
+                equity_pct_used = 0.0
+            cell = ws.cell(row=row, column=12, value=equity_pct_used)
+            cell.number_format = '0.00"%"'
+
             row += 1
 
         # Format columns
@@ -1205,6 +1219,8 @@ class ExcelReportGenerator:
         ws.column_dimensions['H'].width = 15
         ws.column_dimensions['I'].width = 15
         ws.column_dimensions['J'].width = 12
+        ws.column_dimensions['K'].width = 15
+        ws.column_dimensions['L'].width = 15
 
         # Freeze header rows
         ws.freeze_panes = 'A4'
@@ -1825,6 +1841,61 @@ class ExcelReportGenerator:
                 chart4.width = 20
 
                 ws.add_chart(chart4, "E67")
+
+        # Equity Usage Distribution Chart
+        if len(result.trades) > 0:
+            # Calculate equity usage % for each trade
+            equity_usage_pcts = []
+            for trade in result.trades:
+                if trade.entry_equity > 0:
+                    position_value = trade.entry_price * trade.quantity
+                    equity_pct = (position_value / trade.entry_equity) * 100
+                    equity_usage_pcts.append(equity_pct)
+
+            if equity_usage_pcts:
+                # Create bins for distribution
+                bins = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+                bin_labels = ['0-10%', '10-20%', '20-30%', '30-40%', '40-50%',
+                             '50-60%', '60-70%', '70-80%', '80-90%', '90-100%']
+
+                # Count trades in each bin
+                bin_counts = [0] * len(bin_labels)
+                for pct in equity_usage_pcts:
+                    for i in range(len(bins) - 1):
+                        if bins[i] <= pct < bins[i + 1]:
+                            bin_counts[i] += 1
+                            break
+                    else:
+                        # Handle values >= 100%
+                        if pct >= bins[-1]:
+                            bin_counts[-1] += 1
+
+                # Write equity usage distribution data
+                equity_usage_start_row = annual_start_row + len(annual_ratios) + 10 if not annual_ratios.empty else dist_start_row + len(distribution) + 20 if distribution else data_start_row + len(equity_df) + 25
+
+                ws.cell(row=equity_usage_start_row, column=1, value="Equity Usage %").font = self.header_font
+                ws.cell(row=equity_usage_start_row, column=2, value="Number of Trades").font = self.header_font
+
+                for idx, (label, count) in enumerate(zip(bin_labels, bin_counts), 1):
+                    ws.cell(row=equity_usage_start_row + idx, column=1, value=label)
+                    ws.cell(row=equity_usage_start_row + idx, column=2, value=count)
+
+                # Create bar chart for equity usage distribution
+                chart5 = BarChart()
+                chart5.title = "Equity Usage Distribution"
+                chart5.y_axis.title = 'Number of Trades'
+                chart5.x_axis.title = '% of Equity Used'
+                chart5.style = 13
+
+                data_ref = Reference(ws, min_col=2, min_row=equity_usage_start_row, max_row=equity_usage_start_row + len(bin_labels))
+                cats_ref = Reference(ws, min_col=1, min_row=equity_usage_start_row+1, max_row=equity_usage_start_row + len(bin_labels))
+
+                chart5.add_data(data_ref, titles_from_data=True)
+                chart5.set_categories(cats_ref)
+                chart5.height = 12
+                chart5.width = 18
+
+                ws.add_chart(chart5, "E88")
 
     def _create_market_conditions(self, wb: Workbook, result: BacktestResult, metrics: Dict[str, Any]):
         """Create Sheet 5: Market Condition Breakdown (Optional)."""

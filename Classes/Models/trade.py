@@ -30,6 +30,7 @@ class Trade:
         exit_fx_rate: FX rate at exit (security currency to base currency)
         security_currency: Currency the security is denominated in
         duration_days: Trade duration in days
+        entry_equity: Total portfolio equity at time of entry
         entry_reason: Reason for entry
         exit_reason: Reason for exit
         commission_paid: Total commission paid
@@ -54,6 +55,7 @@ class Trade:
     exit_fx_rate: float = 1.0  # FX rate at exit
     security_currency: str = "GBP"  # Currency security is denominated in
     duration_days: int = 0
+    entry_equity: float = 0.0  # Total portfolio equity at time of entry
     entry_reason: str = ""
     exit_reason: str = ""
     commission_paid: float = 0.0
@@ -106,6 +108,7 @@ class Trade:
             'exit_fx_rate': self.exit_fx_rate,
             'security_currency': self.security_currency,
             'duration_days': self.duration_days,
+            'entry_equity': self.entry_equity,
             'entry_reason': self.entry_reason,
             'exit_reason': self.exit_reason,
             'commission_paid': self.commission_paid,
@@ -161,6 +164,7 @@ class Trade:
             pl=pl,
             pl_pct=pl_pct,
             duration_days=duration_days,
+            entry_equity=position.entry_equity,
             entry_reason=position.entry_reason,
             exit_reason=exit_reason,
             commission_paid=commission_paid,
