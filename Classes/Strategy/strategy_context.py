@@ -15,13 +15,13 @@ class StrategyContext:
     This ensures strategies can't accidentally modify state and
     makes it clear what data is available to the strategy.
 
-    PERFORMANCE: The data DataFrame contains ALL bars (full dataset) for efficiency.
-    Strategies must use current_index to access only historical data (0 to current_index)
-    to prevent lookahead bias. Helper methods enforce this automatically.
+    DATA LEAKAGE PROTECTION: The data DataFrame contains ONLY HISTORICAL DATA up to and
+    including the current bar (0 to current_index). Future data is not accessible, preventing
+    look-ahead bias. The current_index always points to the last bar in the data.
 
     Attributes:
-        data: Full dataset with all bars and pre-calculated indicators
-        current_index: Current bar index in the data (strategies must not access beyond this)
+        data: Historical dataset (bars 0 to current_index inclusive) with pre-calculated indicators
+        current_index: Current bar index in the data (this is the last bar available)
         current_price: Current close price
         current_date: Current date
         position: Current position (None if no position)
@@ -63,8 +63,9 @@ class StrategyContext:
         Get bar at offset from current position.
 
         Args:
-            offset: Offset from current (negative = past, positive = future)
-                   Note: Positive offsets should not be used in strategies!
+            offset: Offset from current (negative = past, 0 = current)
+                   Note: The data only contains historical bars, so positive offsets
+                   beyond current_index will return None (no future data available)
 
         Returns:
             Bar data or None if out of bounds

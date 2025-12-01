@@ -72,6 +72,14 @@ class BaseStrategy(ABC):
         once using vectorized operations. This is called ONCE before the backtest loop,
         providing 10-100x speedup for indicator-heavy strategies.
 
+        ⚠️  CRITICAL - PREVENT LOOK-AHEAD BIAS:
+        Only use CAUSAL operations that don't look ahead:
+        - ✅ ALLOWED: .rolling(), .expanding(), .shift(n) where n >= 0, .pct_change()
+        - ❌ FORBIDDEN: .shift(-n) where n > 0, global .mean()/.std() on full series
+
+        The framework will automatically detect potential look-ahead bias by checking
+        for suspicious NaN patterns in new columns.
+
         Default implementation: Returns data unchanged (assumes all indicators pre-exist).
 
         Args:
@@ -89,16 +97,62 @@ class BaseStrategy(ABC):
                 ema = context.get_indicator_value('ema_50')  # Read from raw data
                 ...
 
-        Example (calculating custom indicators):
+        Example (calculating custom indicators - CORRECT):
             def prepare_data(self, data: pd.DataFrame) -> pd.DataFrame:
                 df = data.copy()
-                # Verify required standard indicators exist
-                if 'atr_14' not in df.columns:
-                    raise ValueError("Missing atr_14 in raw data")
-
-                # Calculate custom strategy-specific indicators
-                df['custom_signal'] = ...  # Your custom calculation
+                # ✅ GOOD: Rolling operations (look backward only)
+                df['sma_20'] = df['close'].rolling(window=20).mean()
+                df['returns'] = df['close'].pct_change()  # Uses shift(1) internally
                 return df
+
+        Example (calculating custom indicators - INCORRECT):
+            def prepare_data(self, data: pd.DataFrame) -> pd.DataFrame:
+                df = data.copy()
+                # ❌ BAD: Looking ahead 5 bars!
+                df['future_return'] = df['close'].shift(-5)
+                # ❌ BAD: Using statistics from entire dataset!
+                df['z_score'] = (df['close'] - df['close'].mean()) / df['close'].std()
+                return df
+        """
+        # Store original columns to detect new ones
+        original_columns = set(data.columns)
+
+        # Call the actual implementation (subclasses should implement this logic)
+        result = self._prepare_data_impl(data)
+
+        # DATA LEAKAGE VALIDATION: Check for non-causal operations
+        if len(result) > 0:
+            new_columns = set(result.columns) - original_columns
+
+            for col in new_columns:
+                # Check last rows for NaN (backward shift with .shift(-n) creates trailing NaNs)
+                # Check at least 5% of data or 10 rows, whichever is smaller
+                check_rows = min(10, max(1, int(len(result) * 0.05)))
+
+                if result[col].iloc[-check_rows:].isna().any():
+                    print(f"\n⚠️  DATA LEAKAGE WARNING in prepare_data():")
+                    print(f"   Column '{col}' has NaN values at the END of the dataset.")
+                    print(f"   This often indicates .shift(-n) with negative offset (look-ahead bias)!")
+                    print(f"   Please verify that '{col}' only uses causal operations:")
+                    print(f"   - ✅ ALLOWED: .rolling(), .expanding(), .shift(n) where n >= 0")
+                    print(f"   - ❌ FORBIDDEN: .shift(-n) where n > 0\n")
+
+        return result
+
+    def _prepare_data_impl(self, data: pd.DataFrame) -> pd.DataFrame:
+        """
+        Internal implementation of prepare_data().
+
+        Subclasses should typically NOT override prepare_data() directly.
+        Instead, keep the default prepare_data() implementation and just
+        return the data directly from this method or override prepare_data()
+        and be aware of the validation that occurs.
+
+        Args:
+            data: Raw OHLCV data with pre-calculated standard indicators
+
+        Returns:
+            Data with any custom strategy-specific indicators added as columns
         """
         return data
 
