@@ -460,6 +460,27 @@ class SingleSecurityEngine:
         # Get exit FX rate
         exit_fx_rate = self._get_fx_rate(symbol, date)
 
+        # Calculate slippage cost in security currency
+        # Entry slippage: paid extra when buying
+        # For BUY: execution_price = original_price * (1 + slippage%)
+        # Entry slippage per share = execution_price * slippage% / (1 + slippage%)
+        slippage_pct = self.config.slippage_percent / 100
+        entry_slippage_per_share = position.entry_price * slippage_pct / (1 + slippage_pct)
+        entry_slippage = entry_slippage_per_share * position.initial_quantity
+
+        # Exit slippage: received less when selling
+        # For SELL: execution_price = original_price * (1 - slippage%)
+        # Exit slippage per share = execution_price * slippage% / (1 - slippage%)
+        exit_slippage_per_share = execution_price * slippage_pct / (1 - slippage_pct)
+        exit_slippage = exit_slippage_per_share * quantity
+
+        # Total slippage in security currency
+        total_slippage_sec = entry_slippage + exit_slippage
+
+        # Convert to base currency using average FX rate
+        avg_fx_rate = (position.entry_fx_rate + exit_fx_rate) / 2
+        total_slippage_base = total_slippage_sec * avg_fx_rate
+
         # Create trade record with FX information (using execution price with slippage)
         self.trade_executor.create_trade(
             position=position,
@@ -469,7 +490,8 @@ class SingleSecurityEngine:
             exit_commission=exit_commission,
             entry_fx_rate=position.entry_fx_rate,
             exit_fx_rate=exit_fx_rate,
-            security_currency=position.security_currency
+            security_currency=position.security_currency,
+            slippage_cost=total_slippage_base
         )
 
         # Close position

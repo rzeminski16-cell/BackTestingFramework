@@ -48,7 +48,8 @@ class TradeExecutor:
                     exit_commission: float,
                     entry_fx_rate: float = 1.0,
                     exit_fx_rate: float = 1.0,
-                    security_currency: str = "GBP") -> Trade:
+                    security_currency: str = "GBP",
+                    slippage_cost: float = 0.0) -> Trade:
         """
         Create a completed trade from a closed position.
 
@@ -61,6 +62,7 @@ class TradeExecutor:
             entry_fx_rate: FX rate at entry (security currency to base currency)
             exit_fx_rate: FX rate at exit (security currency to base currency)
             security_currency: Currency the security is denominated in
+            slippage_cost: Total slippage cost in base currency (default: 0.0)
 
         Returns:
             Trade record
@@ -79,6 +81,9 @@ class TradeExecutor:
         trade.entry_fx_rate = entry_fx_rate
         trade.exit_fx_rate = exit_fx_rate
         trade.security_currency = security_currency
+
+        # Store slippage cost in metadata
+        trade.metadata['slippage'] = slippage_cost
 
         # Calculate FX P&L breakdown
         # NOTE: trade.pl from Trade.from_position() is in SECURITY CURRENCY (e.g., USD)
