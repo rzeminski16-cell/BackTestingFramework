@@ -151,7 +151,7 @@ PerformanceMetrics.print_metrics(metrics)
 ```python
 from Classes.Config.config import BacktestConfig, CommissionConfig, CommissionMode
 from Classes.Engine.single_security_engine import SingleSecurityEngine
-from strategies.examples import PartialExitStrategy
+from strategies.alphatrend_strategy import AlphaTrendStrategy
 
 # Fixed commission per trade
 commission = CommissionConfig(mode=CommissionMode.FIXED, value=3.0)
@@ -160,7 +160,12 @@ config = BacktestConfig(initial_capital=100000.0, commission=commission)
 # Load data and run
 data_loader = DataLoader(Path('raw_data'))
 data = data_loader.load_csv('AAPL')
-strategy = PartialExitStrategy(rsi_period=14, position_size=0.2, first_target_pct=0.10, second_target_pct=0.20)
+strategy = AlphaTrendStrategy(
+    volume_short_ma=4,
+    volume_long_ma=30,
+    stop_loss_percent=0.0,
+    atr_stop_loss_multiple=2.5
+)
 
 engine = SingleSecurityEngine(config)
 result = engine.run('AAPL', data, strategy)
@@ -187,7 +192,7 @@ for symbol in symbols:
     data_dict[symbol] = data_loader.load_csv(symbol)
 
 # Run portfolio backtest
-strategy = PartialExitStrategy()
+strategy = AlphaTrendStrategy()
 engine = PortfolioEngine(config)
 results = engine.run(data_dict, strategy)
 
@@ -219,7 +224,7 @@ param_grid = {
 
 # Run optimization
 optimizer = StrategyOptimizer(opt_config, backtest_config)
-results = optimizer.optimize(PartialExitStrategy, param_grid, 'AAPL', data)
+results = optimizer.optimize(AlphaTrendStrategy, param_grid, 'AAPL', data)
 
 # Get best parameters
 best = results.get_best()
@@ -357,12 +362,11 @@ BackTestingFramework/
 
 ## Example Strategies
 
-The framework includes two example strategies:
+The framework includes the AlphaTrendStrategy:
 
-1. **AdvancedTrailingStopStrategy**: Multi-condition entry with trailing stops
-2. **PartialExitStrategy**: Demonstrates scaling out at profit targets
+1. **AlphaTrendStrategy**: Enhanced long-only strategy based on the AlphaTrend indicator with volume filtering, adaptive ATR multipliers, and risk-based position sizing.
 
-See `strategies/examples/` for full implementations.
+See `strategies/alphatrend_strategy.py` for the full implementation.
 
 ## Running Examples
 

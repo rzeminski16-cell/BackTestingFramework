@@ -52,10 +52,6 @@ from Classes.Analysis.batch_summary_report import BatchSummaryReportGenerator
 from Classes.Optimization.optimizer import StrategyOptimizer
 
 # Import available strategies
-from strategies.examples import (
-    AdvancedTrailingStopStrategy,
-    PartialExitStrategy
-)
 from strategies.alphatrend_strategy import AlphaTrendStrategy
 
 
@@ -64,8 +60,6 @@ class BacktestGUI:
 
     # Available strategies
     STRATEGIES = {
-        'AdvancedTrailingStopStrategy': AdvancedTrailingStopStrategy,
-        'PartialExitStrategy': PartialExitStrategy,
         'AlphaTrendStrategy': AlphaTrendStrategy
     }
 
@@ -354,33 +348,13 @@ class BacktestGUI:
         strategy_class = self.STRATEGIES[strategy_name]
 
         # Get default parameters from strategy
-        if strategy_name == 'AdvancedTrailingStopStrategy':
+        if strategy_name == 'AlphaTrendStrategy':
             self.strategy_params[strategy_name] = {
-                'rsi_threshold': 70,
-                'position_size': 0.25,
-                'initial_stop_pct': 0.08,
-                'breakeven_profit_pct': 0.05
-            }
-        elif strategy_name == 'PartialExitStrategy':
-            self.strategy_params[strategy_name] = {
-                'rsi_oversold': 30,
-                'rsi_overbought': 70,
-                'position_size': 0.3,
-                'first_target_pct': 0.10,
-                'second_target_pct': 0.20,
-                'stop_loss_pct': 0.06
-            }
-        elif strategy_name == 'AlphaTrendStrategy':
-            self.strategy_params[strategy_name] = {
-                'atr_multiplier': 1.0,
-                'source': 'close',
-                'smoothing_length': 3,
-                'percentile_period': 100,
                 'volume_short_ma': 4,
                 'volume_long_ma': 30,
                 'volume_alignment_window': 14,
-                'stop_loss_percent': 2.0,
-                'atr_stop_loss_multiple': 0.0,
+                'stop_loss_percent': 0.0,
+                'atr_stop_loss_multiple': 2.5,
                 'grace_period_bars': 14,
                 'momentum_gain_pct': 2.0,
                 'momentum_lookback': 7,

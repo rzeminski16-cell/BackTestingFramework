@@ -112,11 +112,11 @@ This script will:
 symbol = 'MSFT'  # or any symbol in your raw_data folder
 
 # Adjust strategy parameters
-strategy = PartialExitStrategy(
-    rsi_period=14,
-    position_size=0.2, first_target_pct=0.10, second_target_pct=0.20,
-    stop_loss_pct=0.05,
-    take_profit_pct=0.15
+strategy = AlphaTrendStrategy(
+    volume_short_ma=4,
+    volume_long_ma=30,
+    stop_loss_percent=0.0,
+    atr_stop_loss_multiple=2.5
 )
 
 # Configure report settings
@@ -566,7 +566,7 @@ from Classes.Config.config import BacktestConfig, CommissionConfig, CommissionMo
 from Classes.Data.data_loader import DataLoader
 from Classes.Engine.single_security_engine import SingleSecurityEngine
 from Classes.Analysis.excel_report_generator import ExcelReportGenerator
-from strategies.examples import PartialExitStrategy
+from strategies.alphatrend_strategy import AlphaTrendStrategy
 
 # Configure
 config = BacktestConfig(
@@ -576,8 +576,8 @@ config = BacktestConfig(
 
 # Load and run
 data_loader = DataLoader(Path('raw_data'))
-data = data_loader.load_csv('AAPL', required_columns=['date', 'close', 'rsi_14'])
-strategy = PartialExitStrategy()
+data = data_loader.load_csv('AAPL', required_columns=['date', 'open', 'high', 'low', 'close', 'volume', 'atr_14', 'ema_50'])
+strategy = AlphaTrendStrategy()
 engine = SingleSecurityEngine(config)
 result = engine.run('AAPL', data, strategy)
 
