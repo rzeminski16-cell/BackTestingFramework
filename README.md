@@ -8,6 +8,7 @@ A professional-grade Python framework for backtesting trading strategies across 
 - ✅ **Graphical User Interface**: Easy-to-use GUI for configuring and running backtests
 - ✅ **Single Security Backtesting**: Test strategies on individual securities
 - ✅ **Portfolio Backtesting**: Test strategies across multiple securities with shared capital
+- ✅ **Walk-Forward Optimization**: Advanced optimization with Bayesian optimization to prevent overfitting
 - ✅ **Parameter Optimization**: Grid search to find optimal strategy parameters
 - ✅ **Detailed Trade Logging**: Complete trade logs for analysis and reporting
 - ✅ **Performance Metrics**: Comprehensive performance analysis (Sharpe ratio, max drawdown, etc.)
@@ -32,11 +33,14 @@ A professional-grade Python framework for backtesting trading strategies across 
 - Python 3.8+
 - pandas
 - numpy
+- openpyxl (for Excel reports)
+- scikit-optimize (for Bayesian optimization)
+- pyyaml (for configuration files)
 - tkinter (for GUI - usually included with Python)
 
 ```bash
 # Install dependencies
-pip install pandas numpy
+pip install -r requirements.txt
 
 # If tkinter is not installed (Linux):
 # sudo apt-get install python3-tk
@@ -44,7 +48,7 @@ pip install pandas numpy
 
 ## Quick Start
 
-### Option 1: Using the GUI (Recommended for Beginners)
+### Option 1: Using the Backtesting GUI (Recommended for Beginners)
 
 The easiest way to run backtests is using the graphical interface:
 
@@ -53,6 +57,18 @@ python run_gui.py
 # or
 python backtest_gui.py
 ```
+
+### Option 1b: Using the Optimization GUI (Advanced)
+
+For walk-forward optimization with Bayesian optimization to find robust parameters:
+
+```bash
+python optimize_gui.py
+# or
+python optimization_gui.py
+```
+
+**See [OPTIMIZATION_GUIDE.md](OPTIMIZATION_GUIDE.md) for complete documentation on the optimization feature.**
 
 The GUI allows you to:
 - ✅ Select securities from a list (single or multiple)

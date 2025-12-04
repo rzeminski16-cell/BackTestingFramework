@@ -7,3 +7,7 @@ openpyxl>=3.0.9
 
 # Optional: For GUI
 tkinter  # Usually included with Python, but listed for reference
+
+# Optimization
+scikit-optimize>=0.9.0
+pyyaml>=6.0
