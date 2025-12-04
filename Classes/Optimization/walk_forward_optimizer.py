@@ -410,15 +410,32 @@ class WalkForwardOptimizer:
             return -score  # Negative because we want to maximize Sortino
 
         # Run Bayesian optimization with parallel jobs
-        result = gp_minimize(
-            objective,
-            space,
-            n_calls=n_iterations,
-            n_initial_points=n_initial,
-            n_jobs=n_jobs,
-            random_state=bayesian_config.get('random_state'),
-            verbose=False
-        )
+        try:
+            result = gp_minimize(
+                objective,
+                space,
+                n_calls=n_iterations,
+                n_initial_points=n_initial,
+                n_jobs=n_jobs,
+                random_state=bayesian_config.get('random_state'),
+                verbose=False
+            )
+        except (ImportError, OSError, AttributeError) as e:
+            # Multiprocessing not available in this environment
+            if n_jobs != 1:
+                logger.warning(f"Parallel processing not available ({e}). Falling back to serial processing (n_jobs=1)")
+                # Retry with serial processing
+                result = gp_minimize(
+                    objective,
+                    space,
+                    n_calls=n_iterations,
+                    n_initial_points=n_initial,
+                    n_jobs=1,
+                    random_state=bayesian_config.get('random_state'),
+                    verbose=False
+                )
+            else:
+                raise
 
         # Extract best parameters and merge with fixed parameters
         best_params = {name: value for name, value in zip(param_names, result.x)}
@@ -481,7 +498,10 @@ class WalkForwardOptimizer:
 
         # Optimize each window
         window_results = []
-        all_params = {param: [] for param in self._get_parameter_space(strategy_class)[1]}
+        # Get all parameter names (both optimized and fixed) for tracking
+        _, param_names, fixed_params = self._get_parameter_space(strategy_class, selected_params)
+        all_param_names = list(param_names) + list(fixed_params.keys())
+        all_params = {param: [] for param in all_param_names}
 
         for window_id, (train_data, test_data) in enumerate(windows):
             if self.should_cancel:
@@ -494,17 +514,23 @@ class WalkForwardOptimizer:
                 progress_callback(f"Optimizing window {window_id + 1}/{len(windows)}",
                                 window_id, len(windows))
 
-            # Optimize on training data
-            def window_progress(current, total):
-                if progress_callback:
-                    progress_callback(
-                        f"Window {window_id + 1}/{len(windows)} - Iteration {current}/{total}",
-                        current, total
-                    )
+            try:
+                # Optimize on training data
+                def window_progress(current, total):
+                    if progress_callback:
+                        progress_callback(
+                            f"Window {window_id + 1}/{len(windows)} - Iteration {current}/{total}",
+                            current, total
+                        )
 
-            best_params = self._optimize_window(
-                strategy_class, train_data, symbol, constraints, selected_params, window_progress
-            )
+                best_params = self._optimize_window(
+                    strategy_class, train_data, symbol, constraints, selected_params, window_progress
+                )
+            except Exception as e:
+                logger.error(f"Error optimizing window {window_id + 1}: {e}")
+                logger.exception("Window optimization failed")
+                # Skip this window and continue with the next one
+                continue
 
             # Track parameter values
             for param_name, param_value in best_params.items():

@@ -461,6 +461,10 @@ class OptimizationGUI:
             self.log_message(f"Speed Mode: {speed_mode.upper()}")
             self.log_message(f"CPU Cores: {n_jobs if n_jobs > 0 else 'All available'}")
 
+            if n_jobs != 1:
+                self.log_message("Note: If parallel processing fails, will automatically fall back to serial processing")
+                self.log_message("")
+
             for sec_idx, symbol in enumerate(securities):
                 if not self.is_running:
                     self.log_message("Optimization cancelled by user")
