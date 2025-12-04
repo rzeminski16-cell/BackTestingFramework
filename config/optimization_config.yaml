@@ -141,11 +141,6 @@ strategy_parameters:
       type: int
       step: 1
 
-    risk_percent:
-      min: 0.5
-      max: 5.0
-      type: float
-      step: 0.5
 
 # Performance Thresholds for Reporting
 reporting:

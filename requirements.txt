@@ -6,7 +6,7 @@ numpy>=1.21.0
 openpyxl>=3.0.9
 
 # Optional: For GUI
-tkinter  # Usually included with Python, but listed for reference
+# tkinter  # Usually included with Python, but listed for reference
 
 # Optimization
 scikit-optimize>=0.9.0
