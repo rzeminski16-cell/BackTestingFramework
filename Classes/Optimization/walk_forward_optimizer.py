@@ -204,12 +204,20 @@ class WalkForwardOptimizer:
         logger.info(f"Created {len(windows)} walk-forward windows")
         return windows
 
-    def _get_parameter_space(self, strategy_class: Type[BaseStrategy]) -> Tuple[List, List[str]]:
+    def _get_parameter_space(self, strategy_class: Type[BaseStrategy],
+                             selected_params: Optional[Dict[str, bool]] = None) -> Tuple[List, List[str], Dict[str, Any]]:
         """
         Get parameter space for Bayesian optimization.
 
+        Args:
+            strategy_class: Strategy class
+            selected_params: Dict of {param_name: bool} indicating which to optimize
+
         Returns:
-            (space, param_names) where space is a list of skopt dimensions
+            (space, param_names, fixed_params) where:
+            - space is a list of skopt dimensions for parameters to optimize
+            - param_names are names of parameters to optimize
+            - fixed_params are default values for parameters not being optimized
         """
         strategy_name = strategy_class.__name__
         param_config = self.config['strategy_parameters'].get(strategy_name, {})
@@ -217,10 +225,41 @@ class WalkForwardOptimizer:
         if not param_config:
             raise ValueError(f"No parameter configuration found for {strategy_name}")
 
+        # Get default values from strategy
+        try:
+            default_strategy = strategy_class()
+            default_params = {
+                param: getattr(default_strategy, param, None)
+                for param in param_config.keys()
+            }
+        except:
+            # If can't instantiate, use config mins or medians as defaults
+            default_params = {}
+            for param_name, param_spec in param_config.items():
+                if 'values' in param_spec:
+                    default_params[param_name] = param_spec['values'][0]
+                else:
+                    min_val = param_spec['min']
+                    max_val = param_spec['max']
+                    default_params[param_name] = (min_val + max_val) / 2
+
         space = []
         param_names = []
+        fixed_params = {}
 
         for param_name, param_spec in param_config.items():
+            # Check if this parameter should be optimized
+            should_optimize = True
+            if selected_params is not None:
+                should_optimize = selected_params.get(param_name, True)
+
+            if not should_optimize:
+                # Fixed parameter - use default value
+                fixed_params[param_name] = default_params.get(param_name)
+                logger.info(f"Fixed parameter: {param_name} = {fixed_params[param_name]}")
+                continue
+
+            # Parameter to optimize
             param_type = param_spec['type']
 
             if 'values' in param_spec:
@@ -242,7 +281,8 @@ class WalkForwardOptimizer:
 
             param_names.append(param_name)
 
-        return space, param_names
+        logger.info(f"Optimizing {len(param_names)} parameters, fixing {len(fixed_params)} parameters")
+        return space, param_names, fixed_params
 
     def _check_constraints(self, metrics: Dict[str, Any],
                           constraints: OptimizationConstraints,
@@ -285,8 +325,7 @@ class WalkForwardOptimizer:
             result = self.engine.run(
                 symbol=symbol,
                 data=data,
-                strategy=strategy,
-                config=self.backtest_config
+                strategy=strategy
             )
 
             # Calculate metrics
@@ -314,18 +353,39 @@ class WalkForwardOptimizer:
                         train_data: pd.DataFrame,
                         symbol: str,
                         constraints: OptimizationConstraints,
+                        selected_params: Optional[Dict[str, bool]] = None,
                         progress_callback: Optional[Callable[[int, int], None]] = None) -> Dict[str, Any]:
         """
         Optimize parameters on a single training window using Bayesian optimization.
 
+        Args:
+            strategy_class: Strategy class
+            train_data: Training data
+            symbol: Security symbol
+            constraints: Optimization constraints
+            selected_params: Which parameters to optimize (None = all)
+            progress_callback: Progress callback
+
         Returns:
-            Best parameters found
+            Best parameters found (includes both optimized and fixed parameters)
         """
-        space, param_names = self._get_parameter_space(strategy_class)
+        space, param_names, fixed_params = self._get_parameter_space(strategy_class, selected_params)
 
         bayesian_config = self.config['bayesian_optimization']
-        n_iterations = bayesian_config['n_iterations']
-        n_initial = bayesian_config['n_initial_points']
+
+        # Apply speed mode
+        speed_mode = bayesian_config.get('speed_mode', 'full')
+        if speed_mode == 'quick':
+            n_iterations = 25
+            n_initial = 10
+        elif speed_mode == 'fast':
+            n_iterations = 50
+            n_initial = 15
+        else:  # full
+            n_iterations = bayesian_config['n_iterations']
+            n_initial = bayesian_config['n_initial_points']
+
+        n_jobs = bayesian_config.get('n_jobs', 1)
 
         # Track progress
         iteration_counter = [0]
@@ -340,24 +400,29 @@ class WalkForwardOptimizer:
             if progress_callback:
                 progress_callback(iteration_counter[0], n_iterations)
 
+            # Merge optimized params with fixed params
+            full_params = {**fixed_params, **params}
+
             # Evaluate parameters (return negative because gp_minimize minimizes)
             score = self._evaluate_parameters(
-                strategy_class, params, train_data, symbol, constraints
+                strategy_class, full_params, train_data, symbol, constraints
             )
             return -score  # Negative because we want to maximize Sortino
 
-        # Run Bayesian optimization
+        # Run Bayesian optimization with parallel jobs
         result = gp_minimize(
             objective,
             space,
             n_calls=n_iterations,
             n_initial_points=n_initial,
+            n_jobs=n_jobs,
             random_state=bayesian_config.get('random_state'),
             verbose=False
         )
 
-        # Extract best parameters
+        # Extract best parameters and merge with fixed parameters
         best_params = {name: value for name, value in zip(param_names, result.x)}
+        best_params.update(fixed_params)
 
         logger.info(f"Optimization complete. Best parameters: {best_params}")
         return best_params
@@ -368,7 +433,7 @@ class WalkForwardOptimizer:
                              symbol: str) -> Dict[str, Any]:
         """Run backtest with given parameters and return metrics."""
         strategy = strategy_class(**params)
-        result = self.engine.run(symbol, data, strategy, self.backtest_config)
+        result = self.engine.run(symbol, data, strategy)
         metrics = PerformanceMetrics.calculate_metrics(result)
         metrics['trades'] = result.trades
         return metrics
@@ -377,6 +442,7 @@ class WalkForwardOptimizer:
                 strategy_class: Type[BaseStrategy],
                 symbol: str,
                 data: pd.DataFrame,
+                selected_params: Optional[Dict[str, bool]] = None,
                 progress_callback: Optional[Callable[[str, int, int], None]] = None) -> WalkForwardResults:
         """
         Run walk-forward optimization.
@@ -385,6 +451,7 @@ class WalkForwardOptimizer:
             strategy_class: Strategy class to optimize
             symbol: Security symbol
             data: Historical price data
+            selected_params: Dict of {param_name: bool} indicating which parameters to optimize
             progress_callback: Callback(stage_name, current, total)
 
         Returns:
@@ -436,7 +503,7 @@ class WalkForwardOptimizer:
                     )
 
             best_params = self._optimize_window(
-                strategy_class, train_data, symbol, constraints, window_progress
+                strategy_class, train_data, symbol, constraints, selected_params, window_progress
             )
 
             # Track parameter values

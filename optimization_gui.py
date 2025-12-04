@@ -61,6 +61,7 @@ class OptimizationGUI:
         # State
         self.optimization_thread = None
         self.is_running = False
+        self.selected_parameters = {}  # Track which parameters to optimize
 
         # Create GUI components
         self.create_widgets()
@@ -141,6 +142,34 @@ class OptimizationGUI:
         ).grid(row=row, column=0, columnspan=2, sticky=tk.W, pady=5)
         row += 1
 
+        # Speed mode selection
+        ttk.Label(config_frame, text="Speed Mode:").grid(row=row, column=0, sticky=tk.W, pady=5)
+        self.speed_mode_var = tk.StringVar(value="full")
+        speed_frame = ttk.Frame(config_frame)
+        speed_frame.grid(row=row, column=1, sticky=tk.W, pady=5)
+        ttk.Radiobutton(speed_frame, text="Full (100 iter)", variable=self.speed_mode_var,
+                       value="full").pack(side=tk.LEFT, padx=5)
+        ttk.Radiobutton(speed_frame, text="Fast (50 iter)", variable=self.speed_mode_var,
+                       value="fast").pack(side=tk.LEFT, padx=5)
+        ttk.Radiobutton(speed_frame, text="Quick (25 iter)", variable=self.speed_mode_var,
+                       value="quick").pack(side=tk.LEFT, padx=5)
+        row += 1
+
+        # Parallel jobs setting
+        ttk.Label(config_frame, text="CPU Cores:").grid(row=row, column=0, sticky=tk.W, pady=5)
+        self.n_jobs_var = tk.IntVar(value=1)
+        jobs_frame = ttk.Frame(config_frame)
+        jobs_frame.grid(row=row, column=1, sticky=tk.W, pady=5)
+        ttk.Radiobutton(jobs_frame, text="1 (Slower)", variable=self.n_jobs_var,
+                       value=1).pack(side=tk.LEFT, padx=5)
+        ttk.Radiobutton(jobs_frame, text="2", variable=self.n_jobs_var,
+                       value=2).pack(side=tk.LEFT, padx=5)
+        ttk.Radiobutton(jobs_frame, text="4", variable=self.n_jobs_var,
+                       value=4).pack(side=tk.LEFT, padx=5)
+        ttk.Radiobutton(jobs_frame, text="All", variable=self.n_jobs_var,
+                       value=-1).pack(side=tk.LEFT, padx=5)
+        row += 1
+
         # Config file path display
         ttk.Label(config_frame, text="Config File:").grid(row=row, column=0, sticky=tk.W, pady=5)
         ttk.Label(
@@ -153,6 +182,13 @@ class OptimizationGUI:
         # Buttons
         button_frame = ttk.Frame(config_frame)
         button_frame.grid(row=row, column=0, columnspan=2, pady=10)
+
+        self.configure_params_button = ttk.Button(
+            button_frame,
+            text="Select Parameters...",
+            command=self.configure_parameters
+        )
+        self.configure_params_button.pack(side=tk.LEFT, padx=5)
 
         self.optimize_button = ttk.Button(
             button_frame,
@@ -205,6 +241,144 @@ class OptimizationGUI:
         """Handle strategy selection change."""
         strategy_name = self.strategy_var.get()
         self.log_message(f"Selected strategy: {strategy_name}")
+        # Reset parameter selection when strategy changes
+        self.selected_parameters = {}
+
+    def configure_parameters(self):
+        """Open dialog to select which parameters to optimize."""
+        strategy_name = self.strategy_var.get()
+        if not strategy_name:
+            messagebox.showerror("Error", "Please select a strategy first")
+            return
+
+        # Get parameter configuration for this strategy
+        strategy_config = self.optimizer.config['strategy_parameters'].get(strategy_name)
+        if not strategy_config:
+            messagebox.showerror("Error", f"No parameter configuration found for {strategy_name}")
+            return
+
+        # Get strategy class to read default values
+        strategy_class = self.STRATEGIES[strategy_name]
+
+        # Create dialog window
+        dialog = tk.Toplevel(self.root)
+        dialog.title(f"Select Parameters to Optimize - {strategy_name}")
+        dialog.geometry("600x500")
+        dialog.transient(self.root)
+        dialog.grab_set()
+
+        # Title
+        title_label = ttk.Label(
+            dialog,
+            text="Select which parameters to optimize:",
+            font=('TkDefaultFont', 11, 'bold')
+        )
+        title_label.pack(pady=10)
+
+        # Instructions
+        instr_label = ttk.Label(
+            dialog,
+            text="Checked = Optimize | Unchecked = Use default value",
+            font=('TkDefaultFont', 9, 'italic')
+        )
+        instr_label.pack(pady=5)
+
+        # Create scrollable frame for parameters
+        canvas = tk.Canvas(dialog)
+        scrollbar = ttk.Scrollbar(dialog, orient="vertical", command=canvas.yview)
+        scrollable_frame = ttk.Frame(canvas)
+
+        scrollable_frame.bind(
+            "<Configure>",
+            lambda e: canvas.configure(scrollregion=canvas.bbox("all"))
+        )
+
+        canvas.create_window((0, 0), window=scrollable_frame, anchor="nw")
+        canvas.configure(yscrollcommand=scrollbar.set)
+
+        # Get default values from strategy
+        try:
+            default_strategy = strategy_class()
+            default_params = {
+                param: getattr(default_strategy, param, None)
+                for param in strategy_config.keys()
+            }
+        except:
+            # If can't instantiate, use config mins as defaults
+            default_params = {
+                param: spec.get('min', 0)
+                for param, spec in strategy_config.items()
+            }
+
+        # Create checkboxes for each parameter
+        param_vars = {}
+
+        for idx, (param_name, param_spec) in enumerate(strategy_config.items()):
+            frame = ttk.Frame(scrollable_frame)
+            frame.pack(fill=tk.X, padx=20, pady=5)
+
+            # Initialize checkbox state (default to checked if not already configured)
+            if param_name not in self.selected_parameters:
+                self.selected_parameters[param_name] = True
+
+            var = tk.BooleanVar(value=self.selected_parameters[param_name])
+            param_vars[param_name] = var
+
+            # Checkbox
+            cb = ttk.Checkbutton(frame, variable=var, width=3)
+            cb.pack(side=tk.LEFT)
+
+            # Parameter name and info
+            param_type = param_spec.get('type', 'float')
+            min_val = param_spec.get('min', 'N/A')
+            max_val = param_spec.get('max', 'N/A')
+            default_val = default_params.get(param_name, 'N/A')
+
+            if 'values' in param_spec:
+                range_str = f"Values: {param_spec['values']}"
+            else:
+                if param_type == 'int':
+                    range_str = f"Range: {int(min_val)} to {int(max_val)}"
+                else:
+                    range_str = f"Range: {min_val:.2f} to {max_val:.2f}"
+
+            info_text = f"{param_name} ({param_type})\n  {range_str}, Default: {default_val}"
+
+            label = ttk.Label(frame, text=info_text, font=('TkDefaultFont', 9))
+            label.pack(side=tk.LEFT, padx=10)
+
+        canvas.pack(side="left", fill="both", expand=True, padx=10, pady=10)
+        scrollbar.pack(side="right", fill="y", pady=10)
+
+        # Buttons
+        button_frame = ttk.Frame(dialog)
+        button_frame.pack(pady=10)
+
+        def select_all():
+            for var in param_vars.values():
+                var.set(True)
+
+        def deselect_all():
+            for var in param_vars.values():
+                var.set(False)
+
+        def save_and_close():
+            # Save selections
+            for param_name, var in param_vars.items():
+                self.selected_parameters[param_name] = var.get()
+
+            # Count selected
+            num_selected = sum(self.selected_parameters.values())
+            messagebox.showinfo(
+                "Parameters Configured",
+                f"Selected {num_selected} out of {len(self.selected_parameters)} parameters to optimize."
+            )
+            dialog.destroy()
+
+        ttk.Button(button_frame, text="Select All", command=select_all).pack(side=tk.LEFT, padx=5)
+        ttk.Button(button_frame, text="Deselect All", command=deselect_all).pack(side=tk.LEFT, padx=5)
+        ttk.Button(button_frame, text="Save", command=save_and_close).pack(side=tk.LEFT, padx=5)
+        ttk.Button(button_frame, text="Cancel", command=dialog.destroy).pack(side=tk.LEFT, padx=5)
 
     def log_message(self, message: str):
         """Log a message to the results text area."""
@@ -277,6 +451,16 @@ class OptimizationGUI:
         try:
             strategy_class = self.STRATEGIES[strategy_name]
 
+            # Apply GUI settings to optimizer config
+            speed_mode = self.speed_mode_var.get()
+            n_jobs = self.n_jobs_var.get()
+
+            self.optimizer.config['bayesian_optimization']['speed_mode'] = speed_mode
+            self.optimizer.config['bayesian_optimization']['n_jobs'] = n_jobs
+
+            self.log_message(f"Speed Mode: {speed_mode.upper()}")
+            self.log_message(f"CPU Cores: {n_jobs if n_jobs > 0 else 'All available'}")
+
             for sec_idx, symbol in enumerate(securities):
                 if not self.is_running:
                     self.log_message("Optimization cancelled by user")
@@ -297,11 +481,15 @@ class OptimizationGUI:
 
                 # Run walk-forward optimization
                 self.log_message("\nStarting walk-forward optimization...")
+                self.log_message(f"Optimizing {sum(self.selected_parameters.values())} parameters, " +
+                               f"fixing {len(self.selected_parameters) - sum(self.selected_parameters.values())} parameters")
+
                 try:
                     wf_results = self.optimizer.optimize(
                         strategy_class=strategy_class,
                         symbol=symbol,
                         data=data,
+                        selected_params=self.selected_parameters if self.selected_parameters else None,
                         progress_callback=lambda stage, curr, total: self.root.after(
                             0, self.update_progress, stage, curr, total
                         )

@@ -247,7 +247,7 @@ class SensitivityAnalyzer:
         """Evaluate parameters and return metrics."""
         try:
             strategy = strategy_class(**params)
-            result = self.engine.run(symbol, data, strategy, self.backtest_config)
+            result = self.engine.run(symbol, data, strategy)
             metrics = PerformanceMetrics.calculate_metrics(result)
             return metrics
         except Exception as e:
