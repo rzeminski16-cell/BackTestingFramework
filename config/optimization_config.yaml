@@ -24,6 +24,15 @@ bayesian_optimization:
   # Random state for reproducibility (set to null for random)
   random_state: 42
 
+  # Number of parallel jobs for optimization (set to -1 for all CPU cores)
+  # Higher values = faster but more CPU usage
+  # Note: Each job runs a full backtest, so memory usage increases
+  n_jobs: 1
+
+  # Fast mode: Reduces iterations for quick testing
+  # Options: "full" (100 iterations), "fast" (50 iterations), "quick" (25 iterations)
+  speed_mode: full
+
 # Optimization Objective and Constraints
 optimization:
   # Primary optimization metric (what to maximize)
