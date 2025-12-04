@@ -1,0 +1,165 @@
+# Optimization Configuration File
+# This file defines settings for walk-forward optimization
+
+# Walk-Forward Optimization Settings
+walk_forward:
+  # Training period in days (365 = 1 year)
+  training_period_days: 365
+
+  # Testing period in days (365 = 1 year)
+  testing_period_days: 365
+
+  # Step size for rolling forward (random between min and max days)
+  step_size_min_days: 7
+  step_size_max_days: 30
+
+# Bayesian Optimization Settings
+bayesian_optimization:
+  # Number of iterations per optimization window
+  n_iterations: 100
+
+  # Number of random starting points before Bayesian optimization
+  n_initial_points: 20
+
+  # Random state for reproducibility (set to null for random)
+  random_state: 42
+
+# Optimization Objective and Constraints
+optimization:
+  # Primary optimization metric (what to maximize)
+  primary_metric: sortino_ratio
+
+  # Constraints that must be satisfied
+  constraints:
+    # Profit factor must be >= this value
+    min_profit_factor: 1.5
+
+    # Max drawdown must be <= this value (percentage, e.g., 25 = 25%)
+    max_drawdown_percent: 25.0
+
+    # Minimum number of trades per year
+    min_trades_per_year: 1
+
+  # Penalty value for constraint violations
+  # When constraints are violated, this value is returned instead of the actual metric
+  constraint_violation_penalty: -999999.0
+
+# Sensitivity Analysis Settings
+sensitivity_analysis:
+  # For floating point parameters, test +/- this percentage
+  float_variation_percent: 10.0
+
+  # For integer parameters, test +/- this amount
+  int_variation_amount: 1
+
+  # Whether to test all parameter combinations or individual parameters
+  # Options: "individual" (test one param at a time) or "combinations" (test all combos)
+  test_mode: combinations
+
+  # Maximum number of sensitivity tests to run
+  # Set to null for unlimited (will test all combinations)
+  max_sensitivity_tests: 1000
+
+# Report Settings
+report:
+  # Output directory for optimization reports
+  output_dir: logs/optimization_reports
+
+  # Excel file format settings
+  excel:
+    # Include charts in Excel report
+    include_charts: true
+
+    # Chart types to include
+    chart_types:
+      - equity_curve
+      - parameter_sensitivity
+      - walk_forward_performance
+      - in_sample_vs_out_sample
+
+    # Number formatting
+    decimal_places: 4
+
+# Strategy Parameter Ranges
+# Define the parameter ranges to test for each strategy
+# Format:
+#   StrategyClassName:
+#     parameter_name:
+#       min: minimum_value
+#       max: maximum_value
+#       type: "int" or "float"
+#       step: step_size (optional, for grid search fallback)
+#       values: [list of specific values] (optional, instead of min/max/step)
+
+strategy_parameters:
+  AlphaTrendStrategy:
+    volume_short_ma:
+      min: 2
+      max: 10
+      type: int
+      step: 1
+
+    volume_long_ma:
+      min: 20
+      max: 50
+      type: int
+      step: 5
+
+    volume_alignment_window:
+      min: 5
+      max: 20
+      type: int
+      step: 1
+
+    stop_loss_percent:
+      min: 0.0
+      max: 5.0
+      type: float
+      step: 0.5
+
+    atr_stop_loss_multiple:
+      min: 1.5
+      max: 4.0
+      type: float
+      step: 0.25
+
+    grace_period_bars:
+      min: 5
+      max: 30
+      type: int
+      step: 5
+
+    momentum_gain_pct:
+      min: 1.0
+      max: 5.0
+      type: float
+      step: 0.5
+
+    momentum_lookback:
+      min: 3
+      max: 14
+      type: int
+      step: 1
+
+    risk_percent:
+      min: 0.5
+      max: 5.0
+      type: float
+      step: 0.5
+
+# Performance Thresholds for Reporting
+reporting:
+  # Highlight parameters as "robust" if performance variance is less than this %
+  robust_threshold_percent: 15.0
+
+  # Flag parameters as "unstable" if performance variance is greater than this %
+  unstable_threshold_percent: 50.0
+
+  # Top N parameter sets to include in detailed report
+  top_n_parameter_sets: 10
+
+  # Include individual window results in report
+  include_window_details: true
+
+  # Include all tested parameter combinations
+  include_all_results: false
