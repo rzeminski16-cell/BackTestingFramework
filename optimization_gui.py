@@ -180,14 +180,21 @@ class OptimizationGUI:
         self.n_jobs_var = tk.IntVar(value=1)
         jobs_frame = ttk.Frame(config_frame)
         jobs_frame.grid(row=row, column=1, sticky=tk.W, pady=5)
-        ttk.Radiobutton(jobs_frame, text="1 (Slower)", variable=self.n_jobs_var,
+        ttk.Radiobutton(jobs_frame, text="1 (Recommended)", variable=self.n_jobs_var,
                        value=1).pack(side=tk.LEFT, padx=5)
-        ttk.Radiobutton(jobs_frame, text="2", variable=self.n_jobs_var,
-                       value=2).pack(side=tk.LEFT, padx=5)
-        ttk.Radiobutton(jobs_frame, text="4", variable=self.n_jobs_var,
-                       value=4).pack(side=tk.LEFT, padx=5)
-        ttk.Radiobutton(jobs_frame, text="All", variable=self.n_jobs_var,
-                       value=-1).pack(side=tk.LEFT, padx=5)
+
+        # Show different options based on OS
+        import platform
+        if platform.system() != 'Windows':
+            ttk.Radiobutton(jobs_frame, text="2", variable=self.n_jobs_var,
+                           value=2).pack(side=tk.LEFT, padx=5)
+            ttk.Radiobutton(jobs_frame, text="4", variable=self.n_jobs_var,
+                           value=4).pack(side=tk.LEFT, padx=5)
+            ttk.Radiobutton(jobs_frame, text="All", variable=self.n_jobs_var,
+                           value=-1).pack(side=tk.LEFT, padx=5)
+        else:
+            ttk.Label(jobs_frame, text="(Parallel not available on Windows)",
+                     font=('TkDefaultFont', 8, 'italic')).pack(side=tk.LEFT, padx=5)
         row += 1
 
         # Config file path display
@@ -512,12 +519,18 @@ class OptimizationGUI:
             self.optimizer.config['bayesian_optimization']['speed_mode'] = speed_mode
             self.optimizer.config['bayesian_optimization']['n_jobs'] = n_jobs
 
-            self.log_message(f"Speed Mode: {speed_mode.upper()}")
-            self.log_message(f"CPU Cores: {n_jobs if n_jobs > 0 else 'All available'}")
+            import platform
+            is_windows = platform.system() == 'Windows'
 
-            if n_jobs != 1:
-                self.log_message("Note: If parallel processing fails, will automatically fall back to serial processing")
-                self.log_message("")
+            self.log_message(f"Speed Mode: {speed_mode.upper()}")
+            if is_windows:
+                self.log_message(f"CPU Cores: 1 (Windows - parallel processing not available)")
+            else:
+                self.log_message(f"CPU Cores: {n_jobs if n_jobs > 0 else 'All available'}")
+                if n_jobs != 1:
+                    self.log_message("Note: If parallel processing fails, will automatically fall back to serial processing")
+
+            self.log_message("")
 
             for sec_idx, symbol in enumerate(securities):
                 if not self.is_running:

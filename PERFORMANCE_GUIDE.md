@@ -7,7 +7,7 @@ Fixed the `'BacktestConfig' object is not callable` error by removing the incorr
 
 ### ✅ Speed Optimizations Added
 
-#### 1. **Parallel Processing (CPU Multi-core)**
+#### 1. **Parallel Processing (CPU Multi-core)** - Linux/Mac Only
 Configure in GUI or config file:
 ```yaml
 bayesian_optimization:
@@ -18,6 +18,12 @@ bayesian_optimization:
 - Each core runs a separate backtest in parallel
 - Memory usage increases proportionally
 - Recommended: Start with 2 cores, increase if stable
+
+**⚠️ Windows Limitation**:
+- Parallel processing is **not available on Windows** due to platform-specific multiprocessing limitations
+- Windows users will automatically use serial processing (n_jobs=1)
+- This is expected behavior - you'll see: "Parallel processing not available on Windows (expected). Using serial processing."
+- Use speed modes (Quick/Fast) instead for faster optimization on Windows
 
 #### 2. **Speed Mode Selection**
 Three modes available in GUI or config:
@@ -223,7 +229,8 @@ sensitivity_analysis:
 
 ## Example Workflow
 
-### Phase 1: Rapid Development (5 minutes)
+### Phase 1: Rapid Development
+**Linux/Mac (5 minutes):**
 ```bash
 python optimize_gui.py
 ```
@@ -234,24 +241,35 @@ python optimize_gui.py
 - Sensitivity Analysis: Unchecked
 - Click "Start Optimization"
 
+**Windows (10-15 minutes):**
+Same as above but:
+- CPU Cores: 1 (only option available)
+- Will automatically use serial processing
+
 **Result**: Quick feedback on whether strategy works at all
 
 ---
 
-### Phase 2: Validation (15 minutes)
-Same settings but:
+### Phase 2: Validation
+**Linux/Mac (15 minutes):**
 - Speed Mode: Fast (50 iter)
 - CPU Cores: 2
+- Sensitivity Analysis: Checked
+
+**Windows (25-30 minutes):**
+- Speed Mode: Fast (50 iter)
+- CPU Cores: 1
 - Sensitivity Analysis: Checked
 
 **Result**: More confident parameters with robustness check
 
 ---
 
-### Phase 3: Production (45 minutes)
+### Phase 3: Production
+**All Platforms (30-50 minutes):**
 Before going live:
 - Speed Mode: Full (100 iter)
-- CPU Cores: 1 (most stable)
+- CPU Cores: 1 (most stable, required on Windows)
 - Sensitivity Analysis: Checked
 - Multiple securities
 
