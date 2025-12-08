@@ -453,6 +453,17 @@ class WalkForwardOptimizer:
         best_params = {name: value for name, value in zip(param_names, result.x)}
         best_params.update(fixed_params)
 
+        # Ensure proper type casting (Bayesian optimizer returns numpy types)
+        strategy_name = strategy_class.__name__
+        param_config = self.config['strategy_parameters'].get(strategy_name, {})
+        for param_name, param_value in best_params.items():
+            if param_name in param_config:
+                param_type = param_config[param_name].get('type', 'float')
+                if param_type == 'int':
+                    best_params[param_name] = int(round(param_value))
+                else:
+                    best_params[param_name] = float(param_value)
+
         logger.info(f"Optimization complete. Best parameters: {best_params}")
         return best_params
 

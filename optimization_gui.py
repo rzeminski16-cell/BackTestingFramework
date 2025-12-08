@@ -175,27 +175,22 @@ class OptimizationGUI:
                        value="quick").pack(side=tk.LEFT, padx=5)
         row += 1
 
-        # Parallel jobs setting
-        ttk.Label(config_frame, text="CPU Cores:").grid(row=row, column=0, sticky=tk.W, pady=5)
-        self.n_jobs_var = tk.IntVar(value=1)
-        jobs_frame = ttk.Frame(config_frame)
-        jobs_frame.grid(row=row, column=1, sticky=tk.W, pady=5)
-        ttk.Radiobutton(jobs_frame, text="1 (Recommended)", variable=self.n_jobs_var,
-                       value=1).pack(side=tk.LEFT, padx=5)
-
-        # Show different options based on OS
+        # Parallel jobs setting (only show on non-Windows platforms)
         import platform
+        self.n_jobs_var = tk.IntVar(value=1)
         if platform.system() != 'Windows':
+            ttk.Label(config_frame, text="CPU Cores:").grid(row=row, column=0, sticky=tk.W, pady=5)
+            jobs_frame = ttk.Frame(config_frame)
+            jobs_frame.grid(row=row, column=1, sticky=tk.W, pady=5)
+            ttk.Radiobutton(jobs_frame, text="1 (Recommended)", variable=self.n_jobs_var,
+                           value=1).pack(side=tk.LEFT, padx=5)
             ttk.Radiobutton(jobs_frame, text="2", variable=self.n_jobs_var,
                            value=2).pack(side=tk.LEFT, padx=5)
             ttk.Radiobutton(jobs_frame, text="4", variable=self.n_jobs_var,
                            value=4).pack(side=tk.LEFT, padx=5)
             ttk.Radiobutton(jobs_frame, text="All", variable=self.n_jobs_var,
                            value=-1).pack(side=tk.LEFT, padx=5)
-        else:
-            ttk.Label(jobs_frame, text="(Parallel not available on Windows)",
-                     font=('TkDefaultFont', 8, 'italic')).pack(side=tk.LEFT, padx=5)
-        row += 1
+            row += 1
 
         # Config file path display
         ttk.Label(config_frame, text="Config File:").grid(row=row, column=0, sticky=tk.W, pady=5)
