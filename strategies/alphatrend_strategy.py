@@ -50,8 +50,7 @@ except ImportError:
 # ============================================================================
 
 @njit(cache=True)
-def _alphatrend_numba(up_band: np.ndarray, down_band: np.ndarray,
-                      momentum_bullish: np.ndarray) -> np.ndarray:
+def _alphatrend_numba(up_band, down_band, momentum_bullish):
     """
     JIT-compiled AlphaTrend calculation.
 
@@ -91,8 +90,7 @@ def _alphatrend_numba(up_band: np.ndarray, down_band: np.ndarray,
 
 
 @njit(cache=True)
-def _filter_signals_numba(cross_up: np.ndarray,
-                          cross_down: np.ndarray) -> Tuple[np.ndarray, np.ndarray]:
+def _filter_signals_numba(cross_up, cross_down):
     """
     JIT-compiled signal filtering for alternating buy/sell signals.
 
