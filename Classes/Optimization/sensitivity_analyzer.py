@@ -246,7 +246,22 @@ class SensitivityAnalyzer:
                            symbol: str) -> Dict[str, Any]:
         """Evaluate parameters and return metrics."""
         try:
-            strategy = strategy_class(**params)
+            # Ensure proper type casting (parameters may be numpy types)
+            strategy_name = strategy_class.__name__
+            param_config = self.config['strategy_parameters'].get(strategy_name, {})
+            typed_params = {}
+            for param_name, param_value in params.items():
+                if param_name in param_config:
+                    param_type = param_config[param_name].get('type', 'float')
+                    if param_type == 'int':
+                        typed_params[param_name] = int(round(param_value))
+                    else:
+                        typed_params[param_name] = float(param_value)
+                else:
+                    # Parameter not in config, keep as is
+                    typed_params[param_name] = param_value
+
+            strategy = strategy_class(**typed_params)
             result = self.engine.run(symbol, data, strategy)
             metrics = PerformanceMetrics.calculate_metrics(result)
             return metrics

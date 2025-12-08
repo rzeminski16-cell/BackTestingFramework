@@ -18,9 +18,12 @@ import logging
 import os
 import threading
 import tkinter as tk
+from datetime import datetime
 from pathlib import Path
 from tkinter import messagebox, scrolledtext, ttk
 from typing import Any, Dict, List, Optional
+
+import pandas as pd
 
 from Classes.Data.data_loader import DataLoader
 from Classes.Optimization.optimization_report_generator import \
@@ -142,6 +145,23 @@ class OptimizationGUI:
         ).grid(row=row, column=0, columnspan=2, sticky=tk.W, pady=5)
         row += 1
 
+        # Start date filter
+        ttk.Label(config_frame, text="Start Date (optional):").grid(row=row, column=0, sticky=tk.W, pady=5)
+        date_frame = ttk.Frame(config_frame)
+        date_frame.grid(row=row, column=1, sticky=tk.W, pady=5)
+
+        self.use_start_date_var = tk.BooleanVar(value=False)
+        ttk.Checkbutton(date_frame, text="Use", variable=self.use_start_date_var,
+                       command=self.toggle_start_date).pack(side=tk.LEFT, padx=(0, 5))
+
+        self.start_date_entry = ttk.Entry(date_frame, width=12, state=tk.DISABLED)
+        self.start_date_entry.pack(side=tk.LEFT)
+        self.start_date_entry.insert(0, "YYYY-MM-DD")
+
+        ttk.Label(date_frame, text="(filters to this date or oldest available)",
+                 font=('TkDefaultFont', 8, 'italic')).pack(side=tk.LEFT, padx=5)
+        row += 1
+
         # Speed mode selection
         ttk.Label(config_frame, text="Speed Mode:").grid(row=row, column=0, sticky=tk.W, pady=5)
         self.speed_mode_var = tk.StringVar(value="full")
@@ -155,20 +175,22 @@ class OptimizationGUI:
                        value="quick").pack(side=tk.LEFT, padx=5)
         row += 1
 
-        # Parallel jobs setting
-        ttk.Label(config_frame, text="CPU Cores:").grid(row=row, column=0, sticky=tk.W, pady=5)
+        # Parallel jobs setting (only show on non-Windows platforms)
+        import platform
         self.n_jobs_var = tk.IntVar(value=1)
-        jobs_frame = ttk.Frame(config_frame)
-        jobs_frame.grid(row=row, column=1, sticky=tk.W, pady=5)
-        ttk.Radiobutton(jobs_frame, text="1 (Slower)", variable=self.n_jobs_var,
-                       value=1).pack(side=tk.LEFT, padx=5)
-        ttk.Radiobutton(jobs_frame, text="2", variable=self.n_jobs_var,
-                       value=2).pack(side=tk.LEFT, padx=5)
-        ttk.Radiobutton(jobs_frame, text="4", variable=self.n_jobs_var,
-                       value=4).pack(side=tk.LEFT, padx=5)
-        ttk.Radiobutton(jobs_frame, text="All", variable=self.n_jobs_var,
-                       value=-1).pack(side=tk.LEFT, padx=5)
-        row += 1
+        if platform.system() != 'Windows':
+            ttk.Label(config_frame, text="CPU Cores:").grid(row=row, column=0, sticky=tk.W, pady=5)
+            jobs_frame = ttk.Frame(config_frame)
+            jobs_frame.grid(row=row, column=1, sticky=tk.W, pady=5)
+            ttk.Radiobutton(jobs_frame, text="1 (Recommended)", variable=self.n_jobs_var,
+                           value=1).pack(side=tk.LEFT, padx=5)
+            ttk.Radiobutton(jobs_frame, text="2", variable=self.n_jobs_var,
+                           value=2).pack(side=tk.LEFT, padx=5)
+            ttk.Radiobutton(jobs_frame, text="4", variable=self.n_jobs_var,
+                           value=4).pack(side=tk.LEFT, padx=5)
+            ttk.Radiobutton(jobs_frame, text="All", variable=self.n_jobs_var,
+                           value=-1).pack(side=tk.LEFT, padx=5)
+            row += 1
 
         # Config file path display
         ttk.Label(config_frame, text="Config File:").grid(row=row, column=0, sticky=tk.W, pady=5)
@@ -189,6 +211,15 @@ class OptimizationGUI:
             command=self.configure_parameters
         )
         self.configure_params_button.pack(side=tk.LEFT, padx=5)
+
+        # Parameter selection status label
+        self.param_status_label = ttk.Label(
+            config_frame,
+            text="(All parameters will be optimized)",
+            font=('TkDefaultFont', 8, 'italic'),
+            foreground='gray'
+        )
+        self.param_status_label.grid(row=row + 1, column=0, columnspan=2, pady=(0, 5))
 
         self.optimize_button = ttk.Button(
             button_frame,
@@ -237,12 +268,22 @@ class OptimizationGUI:
         """Deselect all securities in the listbox."""
         self.securities_listbox.select_clear(0, tk.END)
 
+    def toggle_start_date(self):
+        """Toggle the start date entry field."""
+        if self.use_start_date_var.get():
+            self.start_date_entry.config(state=tk.NORMAL)
+            if self.start_date_entry.get() == "YYYY-MM-DD":
+                self.start_date_entry.delete(0, tk.END)
+        else:
+            self.start_date_entry.config(state=tk.DISABLED)
+
     def on_strategy_change(self, event=None):
         """Handle strategy selection change."""
         strategy_name = self.strategy_var.get()
         self.log_message(f"Selected strategy: {strategy_name}")
         # Reset parameter selection when strategy changes
         self.selected_parameters = {}
+        self.param_status_label.config(text="(All parameters will be optimized)")
 
     def configure_parameters(self):
         """Open dialog to select which parameters to optimize."""
@@ -259,6 +300,11 @@ class OptimizationGUI:
 
         # Get strategy class to read default values
         strategy_class = self.STRATEGIES[strategy_name]
+
+        # Initialize selected_parameters if empty (first time for this strategy)
+        if not self.selected_parameters:
+            for param_name in strategy_config.keys():
+                self.selected_parameters[param_name] = True
 
         # Create dialog window
         dialog = tk.Toplevel(self.root)
@@ -317,11 +363,8 @@ class OptimizationGUI:
             frame = ttk.Frame(scrollable_frame)
             frame.pack(fill=tk.X, padx=20, pady=5)
 
-            # Initialize checkbox state (default to checked if not already configured)
-            if param_name not in self.selected_parameters:
-                self.selected_parameters[param_name] = True
-
-            var = tk.BooleanVar(value=self.selected_parameters[param_name])
+            # Use existing selection state
+            var = tk.BooleanVar(value=self.selected_parameters.get(param_name, True))
             param_vars[param_name] = var
 
             # Checkbox
@@ -369,10 +412,20 @@ class OptimizationGUI:
 
             # Count selected
             num_selected = sum(self.selected_parameters.values())
-            messagebox.showinfo(
-                "Parameters Configured",
-                f"Selected {num_selected} out of {len(self.selected_parameters)} parameters to optimize."
-            )
+            num_total = len(self.selected_parameters)
+
+            # Update status label
+            if num_selected == num_total:
+                self.param_status_label.config(text="(All parameters will be optimized)")
+            elif num_selected == 0:
+                self.param_status_label.config(text="(No parameters selected - using all defaults)")
+            else:
+                num_fixed = num_total - num_selected
+                self.param_status_label.config(
+                    text=f"(Optimizing {num_selected} params, fixing {num_fixed} at defaults)"
+                )
+
+            self.log_message(f"Parameter selection updated: {num_selected}/{num_total} parameters selected for optimization")
             dialog.destroy()
 
         ttk.Button(button_frame, text="Select All", command=select_all).pack(side=tk.LEFT, padx=5)
@@ -388,7 +441,10 @@ class OptimizationGUI:
 
     def update_progress(self, stage: str, current: int, total: int):
         """Update progress bar and label."""
+        # Cap current at total (Bayesian optimizer sometimes goes slightly over)
+        current = min(current, total)
         percentage = (current / total * 100) if total > 0 else 0
+        percentage = min(percentage, 100.0)  # Cap at 100%
         self.progress_var.set(f"{stage}: {current}/{total} ({percentage:.1f}%)")
         self.progress_bar['value'] = percentage
         self.root.update_idletasks()
@@ -458,12 +514,18 @@ class OptimizationGUI:
             self.optimizer.config['bayesian_optimization']['speed_mode'] = speed_mode
             self.optimizer.config['bayesian_optimization']['n_jobs'] = n_jobs
 
-            self.log_message(f"Speed Mode: {speed_mode.upper()}")
-            self.log_message(f"CPU Cores: {n_jobs if n_jobs > 0 else 'All available'}")
+            import platform
+            is_windows = platform.system() == 'Windows'
 
-            if n_jobs != 1:
-                self.log_message("Note: If parallel processing fails, will automatically fall back to serial processing")
-                self.log_message("")
+            self.log_message(f"Speed Mode: {speed_mode.upper()}")
+            if is_windows:
+                self.log_message(f"CPU Cores: 1 (Windows - parallel processing not available)")
+            else:
+                self.log_message(f"CPU Cores: {n_jobs if n_jobs > 0 else 'All available'}")
+                if n_jobs != 1:
+                    self.log_message("Note: If parallel processing fails, will automatically fall back to serial processing")
+
+            self.log_message("")
 
             for sec_idx, symbol in enumerate(securities):
                 if not self.is_running:
@@ -478,7 +540,31 @@ class OptimizationGUI:
                 self.log_message(f"Loading data for {symbol}...")
                 try:
                     data = self.data_loader.load_csv(symbol)
-                    self.log_message(f"Loaded {len(data)} bars of data")
+                    self.log_message(f"Loaded {len(data)} bars of data (from {data['date'].min().strftime('%Y-%m-%d')} to {data['date'].max().strftime('%Y-%m-%d')})")
+
+                    # Apply start date filter if specified
+                    if self.use_start_date_var.get():
+                        start_date_str = self.start_date_entry.get().strip()
+                        if start_date_str and start_date_str != "YYYY-MM-DD":
+                            try:
+                                start_date = pd.to_datetime(start_date_str)
+                                original_len = len(data)
+                                oldest_available = data['date'].min()
+
+                                # Filter data
+                                data = data[data['date'] >= start_date].copy()
+
+                                if len(data) == 0:
+                                    self.log_message(f"WARNING: No data after {start_date_str}. Using all available data from {oldest_available.strftime('%Y-%m-%d')}")
+                                    data = self.data_loader.load_csv(symbol)  # Reload original data
+                                elif len(data) < original_len:
+                                    self.log_message(f"Applied start date filter: Using data from {data['date'].min().strftime('%Y-%m-%d')} ({len(data)} bars)")
+                                else:
+                                    self.log_message(f"Start date {start_date_str} is before oldest available data ({oldest_available.strftime('%Y-%m-%d')}). Using all available data.")
+
+                            except Exception as e:
+                                self.log_message(f"WARNING: Invalid date format '{start_date_str}'. Using all available data. Error: {e}")
+
                 except Exception as e:
                     self.log_message(f"ERROR: Failed to load data for {symbol}: {e}")
                     continue

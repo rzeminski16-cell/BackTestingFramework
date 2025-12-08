@@ -11,6 +11,8 @@ This approach ensures parameters are validated on truly unseen data.
 """
 
 import logging
+import os
+import platform
 import random
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta
@@ -387,6 +389,11 @@ class WalkForwardOptimizer:
 
         n_jobs = bayesian_config.get('n_jobs', 1)
 
+        # Adjust for Windows compatibility
+        if platform.system() == 'Windows' and n_jobs != 1:
+            logger.info(f"Windows detected: Parallel processing (n_jobs={n_jobs}) may not be available. Will attempt and fall back to serial if needed.")
+            # Note: We'll still try, but expect it to fall back
+
         # Track progress
         iteration_counter = [0]
 
@@ -423,7 +430,12 @@ class WalkForwardOptimizer:
         except (ImportError, OSError, AttributeError) as e:
             # Multiprocessing not available in this environment
             if n_jobs != 1:
-                logger.warning(f"Parallel processing not available ({e}). Falling back to serial processing (n_jobs=1)")
+                # Provide platform-specific message
+                if platform.system() == 'Windows':
+                    logger.info(f"Parallel processing not available on Windows (expected). Using serial processing (n_jobs=1).")
+                else:
+                    logger.warning(f"Parallel processing not available ({e}). Falling back to serial processing (n_jobs=1)")
+
                 # Retry with serial processing
                 result = gp_minimize(
                     objective,
@@ -440,6 +452,17 @@ class WalkForwardOptimizer:
         # Extract best parameters and merge with fixed parameters
         best_params = {name: value for name, value in zip(param_names, result.x)}
         best_params.update(fixed_params)
+
+        # Ensure proper type casting (Bayesian optimizer returns numpy types)
+        strategy_name = strategy_class.__name__
+        param_config = self.config['strategy_parameters'].get(strategy_name, {})
+        for param_name, param_value in best_params.items():
+            if param_name in param_config:
+                param_type = param_config[param_name].get('type', 'float')
+                if param_type == 'int':
+                    best_params[param_name] = int(round(param_value))
+                else:
+                    best_params[param_name] = float(param_value)
 
         logger.info(f"Optimization complete. Best parameters: {best_params}")
         return best_params
