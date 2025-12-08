@@ -32,7 +32,13 @@ python -m optimization_gui
    - Click "Select All" to test all available securities
    - Hold Ctrl/Cmd to select multiple individual securities
 3. **Enable Sensitivity Analysis**: Keep this checked to analyze parameter robustness
-4. **Click "Start Optimization"**: Begin the walk-forward optimization process
+4. **Set Start Date (Optional)**: Filter historical data to start from a specific date
+   - Check "Use" and enter date in YYYY-MM-DD format (e.g., 2020-01-01)
+   - If data doesn't go back that far, will use oldest available data
+   - Leave unchecked to use all available historical data
+5. **Select Parameters to Optimize (Optional)**: Click "Select Parameters..." to choose which parameters to optimize
+6. **Choose Speed Mode**: Quick (25 iter), Fast (50 iter), or Full (100 iter)
+7. **Click "Start Optimization"**: Begin the walk-forward optimization process
 
 ### 3. Monitor Progress
 
@@ -315,6 +321,42 @@ optimization:
   primary_metric: sharpe_ratio     # Instead of sortino_ratio
   # Other options: profit_factor, calmar_ratio, total_return_pct
 ```
+
+## Data Filtering
+
+### Start Date Filter
+
+The GUI includes an optional start date filter to limit optimization to recent historical data.
+
+**When to Use**:
+- Focus on recent market conditions (e.g., post-2020 volatility)
+- Exclude old data that may not be relevant to current markets
+- Reduce computation time by using less data
+- Test strategy performance in specific market regimes
+
+**How to Use**:
+1. Check the "Use" checkbox next to "Start Date (optional)"
+2. Enter date in YYYY-MM-DD format (e.g., `2020-01-01`)
+3. Start optimization
+
+**Smart Handling**:
+The filter automatically handles edge cases:
+
+- **Date too recent**: If you enter `2023-01-01` but data only goes back to `2015-01-01`, it uses data from `2015-01-01`
+- **Date before data**: If you enter `2010-01-01` but oldest data is `2015-01-01`, it uses all available data from `2015-01-01`
+- **No data after date**: If filter would exclude all data, it uses all available data with a warning
+
+**Example Log Output**:
+```
+Loaded 5243 bars of data (from 2010-01-15 to 2024-12-08)
+Applied start date filter: Using data from 2020-01-01 (1250 bars)
+```
+
+**Best Practices**:
+- Use recent data (last 3-5 years) for strategies sensitive to market regimes
+- Use all available data for trend-following strategies that work across regimes
+- Test with and without filtering to compare results
+- Document which date range was used for optimization
 
 ## Troubleshooting
 

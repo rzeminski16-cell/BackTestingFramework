@@ -18,9 +18,12 @@ import logging
 import os
 import threading
 import tkinter as tk
+from datetime import datetime
 from pathlib import Path
 from tkinter import messagebox, scrolledtext, ttk
 from typing import Any, Dict, List, Optional
+
+import pandas as pd
 
 from Classes.Data.data_loader import DataLoader
 from Classes.Optimization.optimization_report_generator import \
@@ -142,6 +145,23 @@ class OptimizationGUI:
         ).grid(row=row, column=0, columnspan=2, sticky=tk.W, pady=5)
         row += 1
 
+        # Start date filter
+        ttk.Label(config_frame, text="Start Date (optional):").grid(row=row, column=0, sticky=tk.W, pady=5)
+        date_frame = ttk.Frame(config_frame)
+        date_frame.grid(row=row, column=1, sticky=tk.W, pady=5)
+
+        self.use_start_date_var = tk.BooleanVar(value=False)
+        ttk.Checkbutton(date_frame, text="Use", variable=self.use_start_date_var,
+                       command=self.toggle_start_date).pack(side=tk.LEFT, padx=(0, 5))
+
+        self.start_date_entry = ttk.Entry(date_frame, width=12, state=tk.DISABLED)
+        self.start_date_entry.pack(side=tk.LEFT)
+        self.start_date_entry.insert(0, "YYYY-MM-DD")
+
+        ttk.Label(date_frame, text="(filters to this date or oldest available)",
+                 font=('TkDefaultFont', 8, 'italic')).pack(side=tk.LEFT, padx=5)
+        row += 1
+
         # Speed mode selection
         ttk.Label(config_frame, text="Speed Mode:").grid(row=row, column=0, sticky=tk.W, pady=5)
         self.speed_mode_var = tk.StringVar(value="full")
@@ -245,6 +265,15 @@ class OptimizationGUI:
     def deselect_all_securities(self):
         """Deselect all securities in the listbox."""
         self.securities_listbox.select_clear(0, tk.END)
+
+    def toggle_start_date(self):
+        """Toggle the start date entry field."""
+        if self.use_start_date_var.get():
+            self.start_date_entry.config(state=tk.NORMAL)
+            if self.start_date_entry.get() == "YYYY-MM-DD":
+                self.start_date_entry.delete(0, tk.END)
+        else:
+            self.start_date_entry.config(state=tk.DISABLED)
 
     def on_strategy_change(self, event=None):
         """Handle strategy selection change."""
@@ -503,7 +532,31 @@ class OptimizationGUI:
                 self.log_message(f"Loading data for {symbol}...")
                 try:
                     data = self.data_loader.load_csv(symbol)
-                    self.log_message(f"Loaded {len(data)} bars of data")
+                    self.log_message(f"Loaded {len(data)} bars of data (from {data['date'].min().strftime('%Y-%m-%d')} to {data['date'].max().strftime('%Y-%m-%d')})")
+
+                    # Apply start date filter if specified
+                    if self.use_start_date_var.get():
+                        start_date_str = self.start_date_entry.get().strip()
+                        if start_date_str and start_date_str != "YYYY-MM-DD":
+                            try:
+                                start_date = pd.to_datetime(start_date_str)
+                                original_len = len(data)
+                                oldest_available = data['date'].min()
+
+                                # Filter data
+                                data = data[data['date'] >= start_date].copy()
+
+                                if len(data) == 0:
+                                    self.log_message(f"WARNING: No data after {start_date_str}. Using all available data from {oldest_available.strftime('%Y-%m-%d')}")
+                                    data = self.data_loader.load_csv(symbol)  # Reload original data
+                                elif len(data) < original_len:
+                                    self.log_message(f"Applied start date filter: Using data from {data['date'].min().strftime('%Y-%m-%d')} ({len(data)} bars)")
+                                else:
+                                    self.log_message(f"Start date {start_date_str} is before oldest available data ({oldest_available.strftime('%Y-%m-%d')}). Using all available data.")
+
+                            except Exception as e:
+                                self.log_message(f"WARNING: Invalid date format '{start_date_str}'. Using all available data. Error: {e}")
+
                 except Exception as e:
                     self.log_message(f"ERROR: Failed to load data for {symbol}: {e}")
                     continue
