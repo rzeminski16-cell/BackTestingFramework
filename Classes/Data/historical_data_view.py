@@ -9,6 +9,7 @@ This module provides a lightweight wrapper around pandas DataFrames that:
 CRITICAL: This class is designed to prevent data leakage. It should be
 impossible for strategies to access data beyond the valid_end_index.
 """
+import numbers
 import pandas as pd
 import numpy as np
 from typing import Any, Optional, Union, List
@@ -166,8 +167,9 @@ class _ILocIndexer:
         Raises:
             IndexError: If attempting to access beyond valid_end_index
         """
-        if isinstance(key, int):
-            # Single row access
+        if isinstance(key, numbers.Integral):
+            # Single row access (handles both Python int and numpy.int64)
+            key = int(key)  # Convert to Python int for safety
             if key < 0:
                 # Convert negative index to positive
                 key = self._valid_end_index + 1 + key
@@ -213,7 +215,9 @@ class _ILocIndexer:
             row_key, col_key = key
 
             # First apply row restrictions
-            if isinstance(row_key, int):
+            if isinstance(row_key, numbers.Integral):
+                # Handle both Python int and numpy.int64
+                row_key = int(row_key)
                 if row_key < 0:
                     row_key = self._valid_end_index + 1 + row_key
                 if row_key > self._valid_end_index:
