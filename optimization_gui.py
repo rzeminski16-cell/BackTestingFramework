@@ -190,6 +190,15 @@ class OptimizationGUI:
         )
         self.configure_params_button.pack(side=tk.LEFT, padx=5)
 
+        # Parameter selection status label
+        self.param_status_label = ttk.Label(
+            config_frame,
+            text="(All parameters will be optimized)",
+            font=('TkDefaultFont', 8, 'italic'),
+            foreground='gray'
+        )
+        self.param_status_label.grid(row=row + 1, column=0, columnspan=2, pady=(0, 5))
+
         self.optimize_button = ttk.Button(
             button_frame,
             text="Start Optimization",
@@ -243,6 +252,7 @@ class OptimizationGUI:
         self.log_message(f"Selected strategy: {strategy_name}")
         # Reset parameter selection when strategy changes
         self.selected_parameters = {}
+        self.param_status_label.config(text="(All parameters will be optimized)")
 
     def configure_parameters(self):
         """Open dialog to select which parameters to optimize."""
@@ -259,6 +269,11 @@ class OptimizationGUI:
 
         # Get strategy class to read default values
         strategy_class = self.STRATEGIES[strategy_name]
+
+        # Initialize selected_parameters if empty (first time for this strategy)
+        if not self.selected_parameters:
+            for param_name in strategy_config.keys():
+                self.selected_parameters[param_name] = True
 
         # Create dialog window
         dialog = tk.Toplevel(self.root)
@@ -317,11 +332,8 @@ class OptimizationGUI:
             frame = ttk.Frame(scrollable_frame)
             frame.pack(fill=tk.X, padx=20, pady=5)
 
-            # Initialize checkbox state (default to checked if not already configured)
-            if param_name not in self.selected_parameters:
-                self.selected_parameters[param_name] = True
-
-            var = tk.BooleanVar(value=self.selected_parameters[param_name])
+            # Use existing selection state
+            var = tk.BooleanVar(value=self.selected_parameters.get(param_name, True))
             param_vars[param_name] = var
 
             # Checkbox
@@ -369,10 +381,20 @@ class OptimizationGUI:
 
             # Count selected
             num_selected = sum(self.selected_parameters.values())
-            messagebox.showinfo(
-                "Parameters Configured",
-                f"Selected {num_selected} out of {len(self.selected_parameters)} parameters to optimize."
-            )
+            num_total = len(self.selected_parameters)
+
+            # Update status label
+            if num_selected == num_total:
+                self.param_status_label.config(text="(All parameters will be optimized)")
+            elif num_selected == 0:
+                self.param_status_label.config(text="(No parameters selected - using all defaults)")
+            else:
+                num_fixed = num_total - num_selected
+                self.param_status_label.config(
+                    text=f"(Optimizing {num_selected} params, fixing {num_fixed} at defaults)"
+                )
+
+            self.log_message(f"Parameter selection updated: {num_selected}/{num_total} parameters selected for optimization")
             dialog.destroy()
 
         ttk.Button(button_frame, text="Select All", command=select_all).pack(side=tk.LEFT, padx=5)
@@ -388,7 +410,10 @@ class OptimizationGUI:
 
     def update_progress(self, stage: str, current: int, total: int):
         """Update progress bar and label."""
+        # Cap current at total (Bayesian optimizer sometimes goes slightly over)
+        current = min(current, total)
         percentage = (current / total * 100) if total > 0 else 0
+        percentage = min(percentage, 100.0)  # Cap at 100%
         self.progress_var.set(f"{stage}: {current}/{total} ({percentage:.1f}%)")
         self.progress_bar['value'] = percentage
         self.root.update_idletasks()
