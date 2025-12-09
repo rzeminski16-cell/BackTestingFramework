@@ -503,6 +503,11 @@ class OptimizationGUI:
         """
         Run optimization for selected strategy and securities.
         This runs in a background thread.
+
+        When multiple securities are selected:
+        1. Each security is optimized individually
+        2. Individual reports are generated for each security
+        3. A COMBINED report is generated showing aggregated results and parameter consistency
         """
         try:
             strategy_class = self.STRATEGIES[strategy_name]
@@ -525,7 +530,14 @@ class OptimizationGUI:
                 if n_jobs != 1:
                     self.log_message("Note: If parallel processing fails, will automatically fall back to serial processing")
 
-            self.log_message("")
+            # For multi-security optimization, collect all results for combined report
+            all_wf_results = {}  # symbol -> WalkForwardResults
+            all_sensitivity_results = {}  # symbol -> SensitivityResults
+
+            if len(securities) > 1:
+                self.log_message(f"\n*** MULTI-SECURITY OPTIMIZATION: {len(securities)} securities ***")
+                self.log_message("Individual reports will be generated for each security.")
+                self.log_message("A COMBINED report will show aggregated results and parameter consistency.\n")
 
             for sec_idx, symbol in enumerate(securities):
                 if not self.is_running:
@@ -650,9 +662,14 @@ class OptimizationGUI:
                         self.log_message(f"ERROR during sensitivity analysis: {e}")
                         logger.exception("Sensitivity analysis failed")
 
-                # Generate Excel report
+                # Store results for combined report
+                all_wf_results[symbol] = wf_results
+                if sensitivity_results:
+                    all_sensitivity_results[symbol] = sensitivity_results
+
+                # Generate individual Excel report
                 if self.is_running:
-                    self.log_message("\n\nGenerating Excel report...")
+                    self.log_message("\n\nGenerating individual Excel report...")
                     try:
                         report_path = self.report_generator.generate_report(
                             wf_results=wf_results,
@@ -665,10 +682,54 @@ class OptimizationGUI:
                         self.log_message(f"ERROR generating report: {e}")
                         logger.exception("Report generation failed")
 
+            # Generate COMBINED report if multiple securities were optimized
+            if self.is_running and len(all_wf_results) > 1:
+                self.log_message(f"\n\n{'=' * 60}")
+                self.log_message("GENERATING COMBINED MULTI-SECURITY REPORT")
+                self.log_message(f"{'=' * 60}")
+                try:
+                    from Classes.Optimization.walk_forward_optimizer import MultiSecurityResults
+
+                    # Create combined results
+                    multi_results = MultiSecurityResults.from_individual_results(
+                        strategy_name=strategy_name,
+                        results_dict=all_wf_results
+                    )
+
+                    # Display combined summary
+                    self.log_message(f"\nCombined Results Summary:")
+                    self.log_message(f"  Securities Analyzed: {len(multi_results.securities)}")
+                    self.log_message(f"  Total Windows: {multi_results.total_windows_all_securities}")
+                    self.log_message(f"  Overall Success Rate: {multi_results.total_passed_all_securities / multi_results.total_windows_all_securities * 100:.1f}%")
+                    self.log_message(f"  Securities with Positive OOS: {multi_results.securities_with_positive_oos}/{len(multi_results.securities)}")
+                    self.log_message(f"\n  Combined Avg OOS Sortino: {multi_results.combined_avg_out_sample_sortino:.4f}")
+                    self.log_message(f"  Combined Avg Sortino Degradation: {multi_results.combined_avg_sortino_degradation_pct:.2f}%")
+                    self.log_message(f"\n  Best Security: {multi_results.best_security}")
+                    self.log_message(f"  Worst Security: {multi_results.worst_security}")
+
+                    self.log_message(f"\n  Consistent Parameters (across all securities):")
+                    for param_name, value in multi_results.consistent_params.items():
+                        consistency = multi_results.param_consistency_scores.get(param_name, 0)
+                        self.log_message(f"    {param_name}: {value:.4f} (consistency: {consistency:.0f}%)")
+
+                    # Generate combined report
+                    combined_report_path = self.report_generator.generate_combined_report(
+                        multi_results=multi_results,
+                        sensitivity_results_dict=all_sensitivity_results if all_sensitivity_results else None
+                    )
+                    self.log_message(f"\nCombined report saved to: {combined_report_path}")
+
+                except Exception as e:
+                    self.log_message(f"ERROR generating combined report: {e}")
+                    logger.exception("Combined report generation failed")
+
             if self.is_running:
                 self.log_message(f"\n\n{'=' * 60}")
                 self.log_message("ALL OPTIMIZATIONS COMPLETE")
                 self.log_message(f"{'=' * 60}")
+                if len(all_wf_results) > 1:
+                    self.log_message(f"Individual reports generated for {len(all_wf_results)} securities")
+                    self.log_message("Combined multi-security report also generated")
                 messagebox.showinfo("Complete", "Optimization completed successfully!")
 
         except Exception as e:

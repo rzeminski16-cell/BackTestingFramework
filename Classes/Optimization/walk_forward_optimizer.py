@@ -109,6 +109,130 @@ class WalkForwardResults:
     total_windows: int
 
 
+@dataclass
+class MultiSecurityResults:
+    """
+    Combined results from walk-forward optimization across multiple securities.
+
+    This class aggregates individual security results to provide:
+    1. Per-security performance metrics
+    2. Combined/average metrics across all securities
+    3. Parameter consistency analysis (which parameters work well across all)
+    4. Robustness assessment across different market instruments
+    """
+    strategy_name: str
+    securities: List[str]
+    individual_results: Dict[str, WalkForwardResults]  # symbol -> results
+
+    # Aggregate metrics (averaged across all securities)
+    combined_avg_in_sample_sortino: float
+    combined_avg_out_sample_sortino: float
+    combined_avg_sortino_degradation_pct: float
+
+    combined_avg_in_sample_sharpe: float
+    combined_avg_out_sample_sharpe: float
+    combined_avg_sharpe_degradation_pct: float
+
+    # Parameter consistency analysis
+    # Parameters that performed well across ALL securities
+    consistent_params: Dict[str, Any]  # Median of medians
+    param_consistency_scores: Dict[str, float]  # 0-100, how consistent across securities
+
+    # Overall success metrics
+    total_windows_all_securities: int
+    total_passed_all_securities: int
+    securities_with_positive_oos: int  # Securities where OOS Sortino > 0
+
+    # Best performing security and worst
+    best_security: str
+    worst_security: str
+
+    @staticmethod
+    def from_individual_results(
+        strategy_name: str,
+        results_dict: Dict[str, WalkForwardResults]
+    ) -> 'MultiSecurityResults':
+        """
+        Create MultiSecurityResults from individual security results.
+
+        Args:
+            strategy_name: Name of the strategy
+            results_dict: Dict mapping symbol to WalkForwardResults
+
+        Returns:
+            MultiSecurityResults with aggregated metrics
+        """
+        if not results_dict:
+            raise ValueError("No results provided")
+
+        securities = list(results_dict.keys())
+
+        # Calculate combined averages
+        all_in_sortinos = [r.avg_in_sample_sortino for r in results_dict.values()]
+        all_out_sortinos = [r.avg_out_sample_sortino for r in results_dict.values()]
+        all_sortino_deg = [r.avg_sortino_degradation_pct for r in results_dict.values()]
+
+        all_in_sharpes = [r.avg_in_sample_sharpe for r in results_dict.values()]
+        all_out_sharpes = [r.avg_out_sample_sharpe for r in results_dict.values()]
+        all_sharpe_deg = [r.avg_sharpe_degradation_pct for r in results_dict.values()]
+
+        # Total windows
+        total_windows = sum(r.total_windows for r in results_dict.values())
+        total_passed = sum(r.windows_passed_constraints for r in results_dict.values())
+
+        # Securities with positive OOS performance
+        positive_oos = sum(1 for r in results_dict.values() if r.avg_out_sample_sortino > 0)
+
+        # Find best and worst securities by OOS Sortino
+        best_sec = max(results_dict.keys(), key=lambda s: results_dict[s].avg_out_sample_sortino)
+        worst_sec = min(results_dict.keys(), key=lambda s: results_dict[s].avg_out_sample_sortino)
+
+        # Calculate parameter consistency
+        # Gather all parameter names from first result
+        first_result = next(iter(results_dict.values()))
+        param_names = list(first_result.most_common_params.keys())
+
+        # For each parameter, collect values across all securities
+        param_values_by_security = {param: [] for param in param_names}
+        for symbol, result in results_dict.items():
+            for param, value in result.most_common_params.items():
+                param_values_by_security[param].append(value)
+
+        # Calculate consistent params (median of medians) and consistency scores
+        consistent_params = {}
+        param_consistency_scores = {}
+        for param, values in param_values_by_security.items():
+            if len(values) > 0:
+                consistent_params[param] = float(np.median(values))
+                # Consistency score: 100 - (coefficient of variation * 100), capped at 0-100
+                mean_val = np.mean(values)
+                if mean_val != 0:
+                    cv = (np.std(values) / abs(mean_val)) * 100
+                    consistency_score = max(0, min(100, 100 - cv))
+                else:
+                    consistency_score = 100 if np.std(values) == 0 else 0
+                param_consistency_scores[param] = consistency_score
+
+        return MultiSecurityResults(
+            strategy_name=strategy_name,
+            securities=securities,
+            individual_results=results_dict,
+            combined_avg_in_sample_sortino=float(np.mean(all_in_sortinos)),
+            combined_avg_out_sample_sortino=float(np.mean(all_out_sortinos)),
+            combined_avg_sortino_degradation_pct=float(np.mean(all_sortino_deg)),
+            combined_avg_in_sample_sharpe=float(np.mean(all_in_sharpes)),
+            combined_avg_out_sample_sharpe=float(np.mean(all_out_sharpes)),
+            combined_avg_sharpe_degradation_pct=float(np.mean(all_sharpe_deg)),
+            consistent_params=consistent_params,
+            param_consistency_scores=param_consistency_scores,
+            total_windows_all_securities=total_windows,
+            total_passed_all_securities=total_passed,
+            securities_with_positive_oos=positive_oos,
+            best_security=best_sec,
+            worst_security=worst_sec
+        )
+
+
 class WalkForwardOptimizer:
     """
     Walk-forward optimizer with Bayesian optimization.
@@ -307,6 +431,40 @@ class WalkForwardOptimizer:
             return False
 
         return True
+
+    def _calculate_degradation(self, in_sample: float, out_sample: float) -> float:
+        """
+        Calculate performance degradation from in-sample to out-of-sample.
+
+        Positive value = OOS performance is worse than IS (degradation)
+        Negative value = OOS performance is better than IS (improvement)
+
+        Uses a robust formula that handles edge cases:
+        - When IS metric is zero, returns 0
+        - When both are negative, correctly shows degradation direction
+        - Caps extreme values to prevent misleading percentages
+
+        Args:
+            in_sample: In-sample metric value
+            out_sample: Out-of-sample metric value
+
+        Returns:
+            Degradation percentage (capped at +/- 200% for readability)
+        """
+        if in_sample == 0:
+            # Cannot calculate percentage change from zero
+            if out_sample == 0:
+                return 0.0
+            elif out_sample > 0:
+                return -100.0  # Improvement from nothing to positive
+            else:
+                return 100.0  # Degradation from nothing to negative
+
+        # Standard degradation formula
+        degradation = ((in_sample - out_sample) / abs(in_sample)) * 100
+
+        # Cap extreme values for readability (e.g., when IS is very small)
+        return max(min(degradation, 200.0), -200.0)
 
     def _evaluate_parameters(self, strategy_class: Type[BaseStrategy],
                             params: Dict[str, Any],
@@ -569,16 +727,15 @@ class WalkForwardOptimizer:
                 strategy_class, best_params, test_data, symbol
             )
 
-            # Calculate degradation
+            # Calculate degradation (positive = OOS worse than IS, negative = OOS better)
+            # Use improved formula that handles edge cases better
             in_sortino = in_sample_metrics.get('sortino_ratio', 0.0)
             out_sortino = out_sample_metrics.get('sortino_ratio', 0.0)
-            sortino_degradation = ((in_sortino - out_sortino) / abs(in_sortino) * 100
-                                  if in_sortino != 0 else 0.0)
+            sortino_degradation = self._calculate_degradation(in_sortino, out_sortino)
 
             in_sharpe = in_sample_metrics.get('sharpe_ratio', 0.0)
             out_sharpe = out_sample_metrics.get('sharpe_ratio', 0.0)
-            sharpe_degradation = ((in_sharpe - out_sharpe) / abs(in_sharpe) * 100
-                                 if in_sharpe != 0 else 0.0)
+            sharpe_degradation = self._calculate_degradation(in_sharpe, out_sharpe)
 
             # Create window result
             window_result = WindowResult(

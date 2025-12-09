@@ -23,7 +23,7 @@ from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils.dataframe import dataframe_to_rows
 
 from Classes.Optimization.sensitivity_analyzer import SensitivityResults
-from Classes.Optimization.walk_forward_optimizer import WalkForwardResults
+from Classes.Optimization.walk_forward_optimizer import WalkForwardResults, MultiSecurityResults
 
 logger = logging.getLogger(__name__)
 
@@ -104,6 +104,527 @@ class OptimizationReportGenerator:
         logger.info(f"Optimization report saved to {filepath}")
 
         return filepath
+
+    def generate_combined_report(
+        self,
+        multi_results: MultiSecurityResults,
+        sensitivity_results_dict: Optional[Dict[str, SensitivityResults]] = None,
+        output_dir: str = None
+    ) -> str:
+        """
+        Generate combined Excel report for multi-security optimization.
+
+        Creates a comprehensive workbook with:
+        1. Combined Summary - Aggregated metrics across all securities
+        2. Per-Security Comparison - Side-by-side performance comparison
+        3. Parameter Consistency - How consistent parameters are across securities
+        4. Individual security sheets - Detailed results for each security
+        5. Recommendations - Cross-security insights
+
+        Args:
+            multi_results: Combined results from all securities
+            sensitivity_results_dict: Optional dict of symbol -> SensitivityResults
+            output_dir: Output directory (defaults to config)
+
+        Returns:
+            Path to generated report file
+        """
+        if output_dir is None:
+            output_dir = self.config.get('report', {}).get('output_dir', 'logs/optimization_reports')
+
+        os.makedirs(output_dir, exist_ok=True)
+
+        # Create filename
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        securities_str = "_".join(multi_results.securities[:3])
+        if len(multi_results.securities) > 3:
+            securities_str += f"_+{len(multi_results.securities) - 3}"
+        filename = f"combined_optimization_{multi_results.strategy_name}_{securities_str}_{timestamp}.xlsx"
+        filepath = os.path.join(output_dir, filename)
+
+        # Create workbook
+        wb = Workbook()
+        wb.remove(wb.active)  # Remove default sheet
+
+        # Generate combined sheets
+        self._create_combined_summary_sheet(wb, multi_results)
+        self._create_security_comparison_sheet(wb, multi_results)
+        self._create_parameter_consistency_sheet(wb, multi_results)
+        self._create_combined_recommendations_sheet(wb, multi_results)
+
+        # Add individual security detail sheets
+        for symbol, wf_results in multi_results.individual_results.items():
+            sens_results = sensitivity_results_dict.get(symbol) if sensitivity_results_dict else None
+            self._create_security_detail_sheet(wb, symbol, wf_results, sens_results)
+
+        # Save workbook
+        wb.save(filepath)
+        logger.info(f"Combined optimization report saved to {filepath}")
+
+        return filepath
+
+    def _create_combined_summary_sheet(self, wb: Workbook, multi_results: MultiSecurityResults):
+        """Create combined summary sheet with aggregated metrics."""
+        ws = wb.create_sheet("Combined Summary", 0)
+
+        row = 1
+
+        # Title
+        ws.merge_cells(f'A{row}:F{row}')
+        title_cell = ws[f'A{row}']
+        title_cell.value = "Multi-Security Walk-Forward Optimization Report"
+        title_cell.font = Font(bold=True, size=16)
+        title_cell.alignment = Alignment(horizontal='center')
+        row += 2
+
+        # Overview
+        ws[f'A{row}'] = "Overview"
+        ws[f'A{row}'].font = Font(bold=True, size=14)
+        row += 1
+
+        overview_data = [
+            ["Strategy", multi_results.strategy_name],
+            ["Securities Analyzed", len(multi_results.securities)],
+            ["Securities List", ", ".join(multi_results.securities)],
+            ["Report Generated", datetime.now().strftime("%Y-%m-%d %H:%M:%S")],
+            ["Total Windows (All Securities)", multi_results.total_windows_all_securities],
+            ["Total Passed Constraints", multi_results.total_passed_all_securities],
+            ["Overall Success Rate", f"{multi_results.total_passed_all_securities / multi_results.total_windows_all_securities * 100:.1f}%" if multi_results.total_windows_all_securities > 0 else "N/A"],
+            ["Securities with Positive OOS", f"{multi_results.securities_with_positive_oos}/{len(multi_results.securities)}"],
+        ]
+
+        for label, value in overview_data:
+            ws[f'A{row}'] = label
+            ws[f'A{row}'].font = Font(bold=True)
+            ws[f'B{row}'] = value
+            row += 1
+
+        row += 2
+
+        # Combined Performance Metrics
+        ws[f'A{row}'] = "Combined Performance Metrics (Averaged Across All Securities)"
+        ws[f'A{row}'].font = Font(bold=True, size=14)
+        row += 1
+
+        # Headers
+        headers = ["Metric", "In-Sample (Avg)", "Out-of-Sample (Avg)", "Degradation (%)"]
+        for col_idx, header in enumerate(headers, 1):
+            cell = ws.cell(row=row, column=col_idx, value=header)
+            cell.fill = self.header_fill
+            cell.font = self.header_font
+            cell.border = self.border
+        row += 1
+
+        metrics = [
+            ["Sortino Ratio",
+             f"{multi_results.combined_avg_in_sample_sortino:.4f}",
+             f"{multi_results.combined_avg_out_sample_sortino:.4f}",
+             f"{multi_results.combined_avg_sortino_degradation_pct:.2f}%"],
+            ["Sharpe Ratio",
+             f"{multi_results.combined_avg_in_sample_sharpe:.4f}",
+             f"{multi_results.combined_avg_out_sample_sharpe:.4f}",
+             f"{multi_results.combined_avg_sharpe_degradation_pct:.2f}%"],
+        ]
+
+        for metric_row in metrics:
+            for col_idx, value in enumerate(metric_row, 1):
+                cell = ws.cell(row=row, column=col_idx, value=value)
+                cell.border = self.border
+            row += 1
+
+        row += 2
+
+        # Best/Worst Security
+        ws[f'A{row}'] = "Performance Extremes"
+        ws[f'A{row}'].font = Font(bold=True, size=14)
+        row += 1
+
+        best_result = multi_results.individual_results[multi_results.best_security]
+        worst_result = multi_results.individual_results[multi_results.worst_security]
+
+        extremes_data = [
+            ["Best Performing Security", multi_results.best_security,
+             f"OOS Sortino: {best_result.avg_out_sample_sortino:.4f}"],
+            ["Worst Performing Security", multi_results.worst_security,
+             f"OOS Sortino: {worst_result.avg_out_sample_sortino:.4f}"],
+        ]
+
+        for data in extremes_data:
+            ws[f'A{row}'] = data[0]
+            ws[f'A{row}'].font = Font(bold=True)
+            ws[f'B{row}'] = data[1]
+            ws[f'C{row}'] = data[2]
+            row += 1
+
+        row += 2
+
+        # Consistent Parameters
+        ws[f'A{row}'] = "Recommended Parameters (Consistent Across Securities)"
+        ws[f'A{row}'].font = Font(bold=True, size=14)
+        row += 1
+
+        param_headers = ["Parameter", "Recommended Value", "Consistency Score"]
+        for col_idx, header in enumerate(param_headers, 1):
+            cell = ws.cell(row=row, column=col_idx, value=header)
+            cell.fill = self.header_fill
+            cell.font = self.header_font
+            cell.border = self.border
+        row += 1
+
+        for param_name, value in multi_results.consistent_params.items():
+            consistency = multi_results.param_consistency_scores.get(param_name, 0)
+            cell_a = ws.cell(row=row, column=1, value=param_name)
+            cell_b = ws.cell(row=row, column=2, value=f"{value:.4f}")
+            cell_c = ws.cell(row=row, column=3, value=f"{consistency:.1f}%")
+
+            # Color code by consistency
+            if consistency >= 80:
+                cell_c.fill = PatternFill(start_color="90EE90", end_color="90EE90", fill_type="solid")
+            elif consistency >= 60:
+                cell_c.fill = PatternFill(start_color="FFFFE0", end_color="FFFFE0", fill_type="solid")
+            else:
+                cell_c.fill = PatternFill(start_color="FFB6C1", end_color="FFB6C1", fill_type="solid")
+
+            cell_a.border = self.border
+            cell_b.border = self.border
+            cell_c.border = self.border
+            row += 1
+
+        # Adjust column widths
+        ws.column_dimensions['A'].width = 35
+        ws.column_dimensions['B'].width = 25
+        ws.column_dimensions['C'].width = 25
+        ws.column_dimensions['D'].width = 20
+
+    def _create_security_comparison_sheet(self, wb: Workbook, multi_results: MultiSecurityResults):
+        """Create sheet comparing performance across all securities."""
+        ws = wb.create_sheet("Security Comparison")
+
+        row = 1
+
+        # Title
+        ws.merge_cells(f'A{row}:H{row}')
+        title_cell = ws[f'A{row}']
+        title_cell.value = "Security-by-Security Performance Comparison"
+        title_cell.font = Font(bold=True, size=14)
+        title_cell.alignment = Alignment(horizontal='center')
+        row += 2
+
+        # Headers
+        headers = [
+            "Security", "Windows", "Passed", "IS Sortino", "OOS Sortino",
+            "Sortino Deg%", "IS Sharpe", "OOS Sharpe"
+        ]
+        for col_idx, header in enumerate(headers, 1):
+            cell = ws.cell(row=row, column=col_idx, value=header)
+            cell.fill = self.header_fill
+            cell.font = self.header_font
+            cell.border = self.border
+        row += 1
+
+        # Data rows
+        for symbol in multi_results.securities:
+            result = multi_results.individual_results[symbol]
+            data = [
+                symbol,
+                result.total_windows,
+                result.windows_passed_constraints,
+                f"{result.avg_in_sample_sortino:.4f}",
+                f"{result.avg_out_sample_sortino:.4f}",
+                f"{result.avg_sortino_degradation_pct:.2f}%",
+                f"{result.avg_in_sample_sharpe:.4f}",
+                f"{result.avg_out_sample_sharpe:.4f}",
+            ]
+            for col_idx, value in enumerate(data, 1):
+                cell = ws.cell(row=row, column=col_idx, value=value)
+                cell.border = self.border
+
+                # Highlight best/worst
+                if col_idx == 1:
+                    if symbol == multi_results.best_security:
+                        cell.fill = PatternFill(start_color="90EE90", end_color="90EE90", fill_type="solid")
+                    elif symbol == multi_results.worst_security:
+                        cell.fill = PatternFill(start_color="FFB6C1", end_color="FFB6C1", fill_type="solid")
+            row += 1
+
+        # Add average row
+        row += 1
+        ws[f'A{row}'] = "AVERAGE"
+        ws[f'A{row}'].font = Font(bold=True)
+        ws[f'D{row}'] = f"{multi_results.combined_avg_in_sample_sortino:.4f}"
+        ws[f'E{row}'] = f"{multi_results.combined_avg_out_sample_sortino:.4f}"
+        ws[f'F{row}'] = f"{multi_results.combined_avg_sortino_degradation_pct:.2f}%"
+        ws[f'G{row}'] = f"{multi_results.combined_avg_in_sample_sharpe:.4f}"
+        ws[f'H{row}'] = f"{multi_results.combined_avg_out_sample_sharpe:.4f}"
+
+        for col in range(1, 9):
+            ws.cell(row=row, column=col).border = self.border
+            ws.cell(row=row, column=col).font = Font(bold=True)
+
+        # Adjust column widths
+        ws.column_dimensions['A'].width = 15
+        for col in 'BCDEFGH':
+            ws.column_dimensions[col].width = 12
+
+    def _create_parameter_consistency_sheet(self, wb: Workbook, multi_results: MultiSecurityResults):
+        """Create sheet showing parameter values across all securities."""
+        ws = wb.create_sheet("Parameter Consistency")
+
+        row = 1
+
+        # Title
+        ws.merge_cells(f'A{row}:G{row}')
+        title_cell = ws[f'A{row}']
+        title_cell.value = "Parameter Values Across Securities"
+        title_cell.font = Font(bold=True, size=14)
+        title_cell.alignment = Alignment(horizontal='center')
+        row += 2
+
+        # Get all parameter names
+        param_names = list(multi_results.consistent_params.keys())
+
+        # Headers: Parameter, then each security, then Consistent Value, Consistency Score
+        headers = ["Parameter"] + multi_results.securities + ["Recommended", "Consistency"]
+        for col_idx, header in enumerate(headers, 1):
+            cell = ws.cell(row=row, column=col_idx, value=header)
+            cell.fill = self.header_fill
+            cell.font = self.header_font
+            cell.border = self.border
+        row += 1
+
+        # Data rows for each parameter
+        for param_name in param_names:
+            col = 1
+            ws.cell(row=row, column=col, value=param_name).border = self.border
+            col += 1
+
+            # Value for each security
+            for symbol in multi_results.securities:
+                result = multi_results.individual_results[symbol]
+                value = result.most_common_params.get(param_name, "N/A")
+                if isinstance(value, float):
+                    value = f"{value:.4f}"
+                cell = ws.cell(row=row, column=col, value=value)
+                cell.border = self.border
+                col += 1
+
+            # Recommended value
+            rec_value = multi_results.consistent_params.get(param_name, "N/A")
+            if isinstance(rec_value, float):
+                rec_value = f"{rec_value:.4f}"
+            ws.cell(row=row, column=col, value=rec_value).border = self.border
+            col += 1
+
+            # Consistency score
+            consistency = multi_results.param_consistency_scores.get(param_name, 0)
+            cell = ws.cell(row=row, column=col, value=f"{consistency:.1f}%")
+            cell.border = self.border
+
+            # Color code
+            if consistency >= 80:
+                cell.fill = PatternFill(start_color="90EE90", end_color="90EE90", fill_type="solid")
+            elif consistency >= 60:
+                cell.fill = PatternFill(start_color="FFFFE0", end_color="FFFFE0", fill_type="solid")
+            else:
+                cell.fill = PatternFill(start_color="FFB6C1", end_color="FFB6C1", fill_type="solid")
+
+            row += 1
+
+        # Adjust column widths
+        ws.column_dimensions['A'].width = 25
+        for i, _ in enumerate(multi_results.securities):
+            ws.column_dimensions[chr(ord('B') + i)].width = 12
+
+    def _create_combined_recommendations_sheet(self, wb: Workbook, multi_results: MultiSecurityResults):
+        """Create recommendations sheet for multi-security analysis."""
+        ws = wb.create_sheet("Recommendations")
+
+        row = 1
+
+        # Title
+        ws.merge_cells(f'A{row}:D{row}')
+        title_cell = ws[f'A{row}']
+        title_cell.value = "Multi-Security Optimization Recommendations"
+        title_cell.font = Font(bold=True, size=16)
+        title_cell.alignment = Alignment(horizontal='center')
+        row += 2
+
+        # Overall Assessment
+        ws[f'A{row}'] = "Overall Assessment"
+        ws[f'A{row}'].font = Font(bold=True, size=14)
+        row += 1
+
+        # Calculate overall robustness
+        positive_ratio = multi_results.securities_with_positive_oos / len(multi_results.securities)
+        avg_degradation = multi_results.combined_avg_sortino_degradation_pct
+
+        if positive_ratio >= 0.8 and avg_degradation < 30:
+            overall_status = "ROBUST - Strategy performs well across securities"
+            status_color = "90EE90"
+        elif positive_ratio >= 0.5 and avg_degradation < 50:
+            overall_status = "MODERATE - Strategy shows mixed results"
+            status_color = "FFFFE0"
+        else:
+            overall_status = "WEAK - Strategy may be overfitted to specific securities"
+            status_color = "FFB6C1"
+
+        cell = ws[f'A{row}']
+        cell.value = overall_status
+        cell.fill = PatternFill(start_color=status_color, end_color=status_color, fill_type="solid")
+        cell.font = Font(bold=True)
+        row += 2
+
+        # Key Insights
+        ws[f'A{row}'] = "Key Insights"
+        ws[f'A{row}'].font = Font(bold=True, size=14)
+        row += 1
+
+        insights = []
+
+        # OOS performance insight
+        if multi_results.combined_avg_out_sample_sortino > 0.5:
+            insights.append("+ Strong average out-of-sample performance suggests strategy has edge")
+        elif multi_results.combined_avg_out_sample_sortino > 0:
+            insights.append("~ Positive OOS performance but room for improvement")
+        else:
+            insights.append("- Negative average OOS performance suggests strategy may need refinement")
+
+        # Degradation insight
+        if abs(avg_degradation) < 20:
+            insights.append("+ Low performance degradation indicates robust parameters")
+        elif abs(avg_degradation) < 40:
+            insights.append("~ Moderate degradation - consider more regularization")
+        else:
+            insights.append("- High degradation indicates possible overfitting")
+
+        # Consistency insight
+        high_consistency_params = [p for p, s in multi_results.param_consistency_scores.items() if s >= 70]
+        low_consistency_params = [p for p, s in multi_results.param_consistency_scores.items() if s < 50]
+
+        if len(high_consistency_params) > len(low_consistency_params):
+            insights.append(f"+ {len(high_consistency_params)} parameters show high consistency across securities")
+        if low_consistency_params:
+            insights.append(f"! Parameters with low consistency: {', '.join(low_consistency_params[:3])}")
+
+        for insight in insights:
+            ws[f'A{row}'] = insight
+            if insight.startswith("+"):
+                ws[f'A{row}'].font = Font(color="006400")
+            elif insight.startswith("-") or insight.startswith("!"):
+                ws[f'A{row}'].font = Font(color="8B0000")
+            row += 1
+
+        row += 2
+
+        # Parameter Recommendations
+        ws[f'A{row}'] = "Parameter Recommendations"
+        ws[f'A{row}'].font = Font(bold=True, size=14)
+        row += 1
+
+        ws[f'A{row}'] = "Use these parameters for trading across all analyzed securities:"
+        row += 1
+
+        for param_name, value in multi_results.consistent_params.items():
+            consistency = multi_results.param_consistency_scores.get(param_name, 0)
+            ws[f'A{row}'] = f"  {param_name}: {value:.4f}"
+            ws[f'B{row}'] = f"(Consistency: {consistency:.0f}%)"
+            if consistency < 50:
+                ws[f'C{row}'] = "⚠ Consider security-specific tuning"
+                ws[f'C{row}'].font = Font(color="FFA500")
+            row += 1
+
+        row += 2
+
+        # Securities to Monitor
+        ws[f'A{row}'] = "Securities Requiring Attention"
+        ws[f'A{row}'].font = Font(bold=True, size=14)
+        row += 1
+
+        # Find securities with poor performance
+        poor_performers = [
+            (s, r) for s, r in multi_results.individual_results.items()
+            if r.avg_out_sample_sortino < 0 or r.avg_sortino_degradation_pct > 50
+        ]
+
+        if poor_performers:
+            for symbol, result in poor_performers:
+                ws[f'A{row}'] = f"  {symbol}:"
+                ws[f'B{row}'] = f"OOS Sortino: {result.avg_out_sample_sortino:.4f}"
+                ws[f'C{row}'] = f"Degradation: {result.avg_sortino_degradation_pct:.1f}%"
+                row += 1
+        else:
+            ws[f'A{row}'] = "  All securities performing within acceptable range"
+            ws[f'A{row}'].font = Font(color="006400")
+
+        # Adjust column widths
+        ws.column_dimensions['A'].width = 50
+        ws.column_dimensions['B'].width = 25
+        ws.column_dimensions['C'].width = 30
+
+    def _create_security_detail_sheet(
+        self,
+        wb: Workbook,
+        symbol: str,
+        wf_results: WalkForwardResults,
+        sensitivity_results: Optional[SensitivityResults]
+    ):
+        """Create a detail sheet for individual security results."""
+        # Truncate symbol for sheet name (max 31 chars in Excel)
+        sheet_name = f"Detail_{symbol[:25]}" if len(symbol) > 25 else f"Detail_{symbol}"
+        ws = wb.create_sheet(sheet_name)
+
+        row = 1
+
+        # Title
+        ws.merge_cells(f'A{row}:D{row}')
+        title_cell = ws[f'A{row}']
+        title_cell.value = f"Detailed Results: {symbol}"
+        title_cell.font = Font(bold=True, size=14)
+        title_cell.alignment = Alignment(horizontal='center')
+        row += 2
+
+        # Summary metrics
+        ws[f'A{row}'] = "Performance Summary"
+        ws[f'A{row}'].font = Font(bold=True, size=12)
+        row += 1
+
+        metrics = [
+            ["Total Windows", wf_results.total_windows],
+            ["Passed Constraints", wf_results.windows_passed_constraints],
+            ["Avg IS Sortino", f"{wf_results.avg_in_sample_sortino:.4f}"],
+            ["Avg OOS Sortino", f"{wf_results.avg_out_sample_sortino:.4f}"],
+            ["Sortino Degradation", f"{wf_results.avg_sortino_degradation_pct:.2f}%"],
+            ["Avg IS Sharpe", f"{wf_results.avg_in_sample_sharpe:.4f}"],
+            ["Avg OOS Sharpe", f"{wf_results.avg_out_sample_sharpe:.4f}"],
+        ]
+
+        for label, value in metrics:
+            ws[f'A{row}'] = label
+            ws[f'A{row}'].font = Font(bold=True)
+            ws[f'B{row}'] = value
+            row += 1
+
+        row += 2
+
+        # Optimal parameters
+        ws[f'A{row}'] = "Optimal Parameters"
+        ws[f'A{row}'].font = Font(bold=True, size=12)
+        row += 1
+
+        for param_name, value in wf_results.most_common_params.items():
+            ws[f'A{row}'] = param_name
+            if isinstance(value, float):
+                ws[f'B{row}'] = f"{value:.4f}"
+            else:
+                ws[f'B{row}'] = value
+            min_val, max_val = wf_results.parameter_ranges.get(param_name, (value, value))
+            ws[f'C{row}'] = f"Range: {min_val:.2f} - {max_val:.2f}"
+            row += 1
+
+        # Adjust column widths
+        ws.column_dimensions['A'].width = 25
+        ws.column_dimensions['B'].width = 15
+        ws.column_dimensions['C'].width = 25
 
     def _create_summary_sheet(self, wb: Workbook, wf_results: WalkForwardResults,
                              sensitivity_results: Optional[SensitivityResults]):
