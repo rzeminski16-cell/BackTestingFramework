@@ -2,9 +2,10 @@
 Strategy context - immutable data passed to strategy methods.
 """
 from dataclasses import dataclass
-from typing import Optional
+from typing import Optional, Union
 import pandas as pd
 from ..Models.position import Position
+from ..Data.historical_data_view import HistoricalDataView
 
 
 @dataclass(frozen=True)
@@ -20,7 +21,8 @@ class StrategyContext:
     look-ahead bias. The current_index always points to the last bar in the data.
 
     Attributes:
-        data: Historical dataset (bars 0 to current_index inclusive) with pre-calculated indicators
+        data: Historical dataset (bars 0 to current_index inclusive) with pre-calculated indicators.
+              Can be either a DataFrame or HistoricalDataView (which provides look-ahead protection).
         current_index: Current bar index in the data (this is the last bar available)
         current_price: Current close price
         current_date: Current date
@@ -31,7 +33,7 @@ class StrategyContext:
         fx_rate: Exchange rate from security currency to base currency (1.0 if same currency)
                  Example: If trading USD security with GBP base, fx_rate=0.8 means $1 = £0.8
     """
-    data: pd.DataFrame
+    data: Union[pd.DataFrame, HistoricalDataView]
     current_index: int
     current_price: float
     current_date: pd.Timestamp

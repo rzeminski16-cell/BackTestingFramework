@@ -1,11 +1,17 @@
 """
 Performance metrics calculation.
+
+IMPORTANT: Risk-free rate is standardized at 3.5% (UK base rate approximation)
+across all risk-adjusted metrics for consistency.
 """
 import pandas as pd
 import numpy as np
 from typing import List, Dict, Any
 from ..Models.trade import Trade
 from ..Engine.backtest_result import BacktestResult
+
+# Standardized risk-free rate for all calculations (UK base rate approximation)
+DEFAULT_RISK_FREE_RATE = 0.035  # 3.5% annual
 
 
 class PerformanceMetrics:
@@ -72,9 +78,15 @@ class PerformanceMetrics:
         largest_loss = min(losses) if losses else 0.0
 
         # Profit factor
+        # When all trades are winners, use a large value (not infinity) to indicate excellent performance
         total_wins = sum(wins) if wins else 0.0
         total_losses = abs(sum(losses)) if losses else 0.0
-        profit_factor = total_wins / total_losses if total_losses > 0 else 0.0
+        if total_losses > 0:
+            profit_factor = total_wins / total_losses
+        elif total_wins > 0:
+            profit_factor = 999.99  # All winning trades - exceptional performance
+        else:
+            profit_factor = 0.0  # No trades or no profit
 
         # Duration
         durations = [t.duration_days for t in trades]
@@ -164,17 +176,20 @@ class PerformanceMetrics:
 
     @staticmethod
     def calculate_sharpe_ratio(equity_curve: pd.DataFrame,
-                              risk_free_rate: float = 0.02) -> float:
+                              risk_free_rate: float = None) -> float:
         """
         Calculate annualized Sharpe ratio.
 
         Args:
             equity_curve: Equity curve DataFrame with 'equity' column
-            risk_free_rate: Annual risk-free rate (default 2%)
+            risk_free_rate: Annual risk-free rate (default: DEFAULT_RISK_FREE_RATE = 3.5%)
 
         Returns:
             Sharpe ratio
         """
+        if risk_free_rate is None:
+            risk_free_rate = DEFAULT_RISK_FREE_RATE
+
         if len(equity_curve) < 2:
             return 0.0
 
@@ -260,17 +275,26 @@ class PerformanceMetrics:
 
     @staticmethod
     def calculate_sortino_ratio(equity_curve: pd.DataFrame,
-                               risk_free_rate: float = 0.035) -> float:
+                               risk_free_rate: float = None) -> float:
         """
-        Calculate Sortino ratio (uses downside deviation).
+        Calculate Sortino ratio using downside deviation of EXCESS returns.
+
+        The Sortino ratio measures risk-adjusted return using only downside volatility.
+        Unlike Sharpe which penalizes all volatility, Sortino only penalizes
+        returns below the risk-free rate.
+
+        Formula: (Mean Excess Return) / (Downside Deviation of Excess Returns) * sqrt(252)
 
         Args:
             equity_curve: Equity curve DataFrame with 'equity' column
-            risk_free_rate: Annual risk-free rate (default 3.5%)
+            risk_free_rate: Annual risk-free rate (default: DEFAULT_RISK_FREE_RATE = 3.5%)
 
         Returns:
             Sortino ratio
         """
+        if risk_free_rate is None:
+            risk_free_rate = DEFAULT_RISK_FREE_RATE
+
         if len(equity_curve) < 2:
             return 0.0
 
@@ -282,13 +306,17 @@ class PerformanceMetrics:
         daily_rf = pow(1 + risk_free_rate, 1/252) - 1
         excess_returns = returns - daily_rf
 
-        # Downside returns
-        downside_returns = returns[returns < 0]
+        # CORRECTED: Downside deviation uses NEGATIVE EXCESS RETURNS, not raw negative returns
+        # This measures volatility of returns that fall below the risk-free rate
+        downside_excess_returns = excess_returns[excess_returns < 0]
 
-        if len(downside_returns) == 0 or downside_returns.std() == 0:
+        if len(downside_excess_returns) == 0 or downside_excess_returns.std() == 0:
+            # No negative excess returns = excellent performance, return large positive value
+            if excess_returns.mean() > 0:
+                return 99.99  # Capped to avoid infinity
             return 0.0
 
-        sortino = (excess_returns.mean() / downside_returns.std()) * np.sqrt(252)
+        sortino = (excess_returns.mean() / downside_excess_returns.std()) * np.sqrt(252)
         return sortino
 
     @staticmethod

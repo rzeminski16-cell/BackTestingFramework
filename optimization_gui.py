@@ -192,6 +192,72 @@ class OptimizationGUI:
                            value=-1).pack(side=tk.LEFT, padx=5)
             row += 1
 
+        # Walk-Forward Window Settings
+        wf_frame = ttk.LabelFrame(config_frame, text="Walk-Forward Window Settings", padding="5")
+        wf_frame.grid(row=row, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=10)
+        row += 1
+
+        # Get default values from config
+        wf_defaults = self.optimizer.config.get('walk_forward', {})
+        default_train = wf_defaults.get('training_period_days', 365)
+        default_test = wf_defaults.get('testing_period_days', 365)
+        default_step_min = wf_defaults.get('step_size_min_days', 7)
+        default_step_max = wf_defaults.get('step_size_max_days', 30)
+
+        # Training period
+        train_row = ttk.Frame(wf_frame)
+        train_row.pack(fill=tk.X, pady=2)
+        ttk.Label(train_row, text="Training Period (days):", width=20).pack(side=tk.LEFT)
+        self.training_period_var = tk.IntVar(value=default_train)
+        training_spin = ttk.Spinbox(train_row, from_=90, to=1825, width=8,
+                                     textvariable=self.training_period_var)
+        training_spin.pack(side=tk.LEFT, padx=5)
+        ttk.Label(train_row, text="(90-1825)", font=('TkDefaultFont', 8, 'italic')).pack(side=tk.LEFT)
+
+        # Testing period
+        test_row = ttk.Frame(wf_frame)
+        test_row.pack(fill=tk.X, pady=2)
+        ttk.Label(test_row, text="Testing Period (days):", width=20).pack(side=tk.LEFT)
+        self.testing_period_var = tk.IntVar(value=default_test)
+        testing_spin = ttk.Spinbox(test_row, from_=30, to=730, width=8,
+                                    textvariable=self.testing_period_var)
+        testing_spin.pack(side=tk.LEFT, padx=5)
+        ttk.Label(test_row, text="(30-730)", font=('TkDefaultFont', 8, 'italic')).pack(side=tk.LEFT)
+
+        # Step size
+        step_row = ttk.Frame(wf_frame)
+        step_row.pack(fill=tk.X, pady=2)
+        ttk.Label(step_row, text="Step Size (days):", width=20).pack(side=tk.LEFT)
+        self.step_min_var = tk.IntVar(value=default_step_min)
+        step_min_spin = ttk.Spinbox(step_row, from_=7, to=365, width=6,
+                                     textvariable=self.step_min_var)
+        step_min_spin.pack(side=tk.LEFT, padx=2)
+        ttk.Label(step_row, text="to").pack(side=tk.LEFT, padx=2)
+        self.step_max_var = tk.IntVar(value=default_step_max)
+        step_max_spin = ttk.Spinbox(step_row, from_=7, to=365, width=6,
+                                     textvariable=self.step_max_var)
+        step_max_spin.pack(side=tk.LEFT, padx=2)
+
+        # Window estimation label
+        self.window_estimate_label = ttk.Label(
+            wf_frame,
+            text="",
+            font=('TkDefaultFont', 8, 'italic'),
+            foreground='blue'
+        )
+        self.window_estimate_label.pack(fill=tk.X, pady=2)
+
+        # Bind changes to update estimate
+        self.training_period_var.trace_add('write', self._update_window_estimate)
+        self.testing_period_var.trace_add('write', self._update_window_estimate)
+        self.step_min_var.trace_add('write', self._update_window_estimate)
+        self.step_max_var.trace_add('write', self._update_window_estimate)
+        # Also update when start date filter changes
+        self.use_start_date_var.trace_add('write', self._update_window_estimate)
+        self.start_date_entry.bind('<KeyRelease>', lambda e: self._update_window_estimate())
+        # Update when security selection changes
+        self.securities_listbox.bind('<<ListboxSelect>>', lambda e: self._update_window_estimate())
+
         # Config file path display
         ttk.Label(config_frame, text="Config File:").grid(row=row, column=0, sticky=tk.W, pady=5)
         ttk.Label(
@@ -276,6 +342,83 @@ class OptimizationGUI:
                 self.start_date_entry.delete(0, tk.END)
         else:
             self.start_date_entry.config(state=tk.DISABLED)
+
+    def _update_window_estimate(self, *args):
+        """Update the estimated number of windows based on current settings."""
+        try:
+            train_days = self.training_period_var.get()
+            test_days = self.testing_period_var.get()
+            step_min = self.step_min_var.get()
+            step_max = self.step_max_var.get()
+
+            # Validate inputs
+            if train_days <= 0 or test_days <= 0 or step_min <= 0 or step_max <= 0:
+                self.window_estimate_label.config(text="Invalid settings")
+                return
+
+            if step_min > step_max:
+                self.window_estimate_label.config(text="Step min > max")
+                return
+
+            # Estimate based on selected securities data range
+            selected_indices = self.securities_listbox.curselection()
+            data_days = None
+            filter_note = ""
+
+            if selected_indices:
+                # Try to get actual data range from first selected security
+                try:
+                    symbol = self.securities_listbox.get(selected_indices[0])
+                    data = self.data_loader.load_csv(symbol)
+                    data_start = data['date'].min()
+                    data_end = data['date'].max()
+
+                    # Check if start date filter is applied
+                    if self.use_start_date_var.get():
+                        start_date_str = self.start_date_entry.get().strip()
+                        if start_date_str and start_date_str != "YYYY-MM-DD":
+                            try:
+                                import pandas as pd
+                                filter_start = pd.to_datetime(start_date_str)
+                                # Use the later of filter start or data start
+                                effective_start = max(filter_start, data_start)
+                                data_days = (data_end - effective_start).days
+                                filter_note = " (filtered)"
+                            except:
+                                pass
+
+                    # If no filter or filter parsing failed, use full range
+                    if data_days is None:
+                        data_days = (data_end - data_start).days
+                except:
+                    pass
+
+            # Default if no security selected or loading failed
+            if data_days is None:
+                data_days = 15 * 365
+
+            # Calculate estimated windows
+            window_size = train_days + test_days
+            avg_step = (step_min + step_max) / 2
+
+            if data_days < window_size:
+                self.window_estimate_label.config(
+                    text=f"Not enough data ({data_days} days < {window_size} required)"
+                )
+                return
+
+            # Approximate number of windows
+            usable_days = data_days - window_size
+            est_windows = int(usable_days / avg_step) + 1
+
+            # Show estimate with explanation
+            self.window_estimate_label.config(
+                text=f"≈ {est_windows} windows (avg step {avg_step:.0f} days, {data_days} days{filter_note})"
+            )
+
+        except (tk.TclError, ValueError):
+            # Invalid input during typing
+            pass
 
     def on_strategy_change(self, event=None):
         """Handle strategy selection change."""
@@ -503,6 +646,11 @@ class OptimizationGUI:
         """
         Run optimization for selected strategy and securities.
         This runs in a background thread.
+
+        When multiple securities are selected:
+        1. Each security is optimized individually
+        2. Individual reports are generated for each security
+        3. A COMBINED report is generated showing aggregated results and parameter consistency
         """
         try:
             strategy_class = self.STRATEGIES[strategy_name]
@@ -513,6 +661,23 @@ class OptimizationGUI:
 
             self.optimizer.config['bayesian_optimization']['speed_mode'] = speed_mode
             self.optimizer.config['bayesian_optimization']['n_jobs'] = n_jobs
+
+            # Apply walk-forward window settings
+            train_days = self.training_period_var.get()
+            test_days = self.testing_period_var.get()
+            step_min = self.step_min_var.get()
+            step_max = self.step_max_var.get()
+
+            # Validate step sizes
+            if step_min > step_max:
+                step_min, step_max = step_max, step_min
+
+            self.optimizer.config['walk_forward']['training_period_days'] = train_days
+            self.optimizer.config['walk_forward']['testing_period_days'] = test_days
+            self.optimizer.config['walk_forward']['step_size_min_days'] = step_min
+            self.optimizer.config['walk_forward']['step_size_max_days'] = step_max
+
+            self.log_message(f"Walk-Forward Settings: Train={train_days} days, Test={test_days} days, Step={step_min}-{step_max} days")
 
             import platform
             is_windows = platform.system() == 'Windows'
@@ -525,7 +690,14 @@ class OptimizationGUI:
                 if n_jobs != 1:
                     self.log_message("Note: If parallel processing fails, will automatically fall back to serial processing")
 
-            self.log_message("")
+            # For multi-security optimization, collect all results for combined report
+            all_wf_results = {}  # symbol -> WalkForwardResults
+            all_sensitivity_results = {}  # symbol -> SensitivityResults
+
+            if len(securities) > 1:
+                self.log_message(f"\n*** MULTI-SECURITY OPTIMIZATION: {len(securities)} securities ***")
+                self.log_message("Individual reports will be generated for each security.")
+                self.log_message("A COMBINED report will show aggregated results and parameter consistency.\n")
 
             for sec_idx, symbol in enumerate(securities):
                 if not self.is_running:
@@ -650,9 +822,14 @@ class OptimizationGUI:
                         self.log_message(f"ERROR during sensitivity analysis: {e}")
                         logger.exception("Sensitivity analysis failed")
 
-                # Generate Excel report
+                # Store results for combined report
+                all_wf_results[symbol] = wf_results
+                if sensitivity_results:
+                    all_sensitivity_results[symbol] = sensitivity_results
+
+                # Generate individual Excel report
                 if self.is_running:
-                    self.log_message("\n\nGenerating Excel report...")
+                    self.log_message("\n\nGenerating individual Excel report...")
                     try:
                         report_path = self.report_generator.generate_report(
                             wf_results=wf_results,
@@ -665,10 +842,54 @@ class OptimizationGUI:
                         self.log_message(f"ERROR generating report: {e}")
                         logger.exception("Report generation failed")
 
+            # Generate COMBINED report if multiple securities were optimized
+            if self.is_running and len(all_wf_results) > 1:
+                self.log_message(f"\n\n{'=' * 60}")
+                self.log_message("GENERATING COMBINED MULTI-SECURITY REPORT")
+                self.log_message(f"{'=' * 60}")
+                try:
+                    from Classes.Optimization.walk_forward_optimizer import MultiSecurityResults
+
+                    # Create combined results
+                    multi_results = MultiSecurityResults.from_individual_results(
+                        strategy_name=strategy_name,
+                        results_dict=all_wf_results
+                    )
+
+                    # Display combined summary
+                    self.log_message(f"\nCombined Results Summary:")
+                    self.log_message(f"  Securities Analyzed: {len(multi_results.securities)}")
+                    self.log_message(f"  Total Windows: {multi_results.total_windows_all_securities}")
+                    self.log_message(f"  Overall Success Rate: {multi_results.total_passed_all_securities / multi_results.total_windows_all_securities * 100:.1f}%")
+                    self.log_message(f"  Securities with Positive OOS: {multi_results.securities_with_positive_oos}/{len(multi_results.securities)}")
+                    self.log_message(f"\n  Combined Avg OOS Sortino: {multi_results.combined_avg_out_sample_sortino:.4f}")
+                    self.log_message(f"  Combined Avg Sortino Degradation: {multi_results.combined_avg_sortino_degradation_pct:.2f}%")
+                    self.log_message(f"\n  Best Security: {multi_results.best_security}")
+                    self.log_message(f"  Worst Security: {multi_results.worst_security}")
+
+                    self.log_message(f"\n  Consistent Parameters (across all securities):")
+                    for param_name, value in multi_results.consistent_params.items():
+                        consistency = multi_results.param_consistency_scores.get(param_name, 0)
+                        self.log_message(f"    {param_name}: {value:.4f} (consistency: {consistency:.0f}%)")
+
+                    # Generate combined report
+                    combined_report_path = self.report_generator.generate_combined_report(
+                        multi_results=multi_results,
+                        sensitivity_results_dict=all_sensitivity_results if all_sensitivity_results else None
+                    )
+                    self.log_message(f"\nCombined report saved to: {combined_report_path}")
+
+                except Exception as e:
+                    self.log_message(f"ERROR generating combined report: {e}")
+                    logger.exception("Combined report generation failed")
+
             if self.is_running:
                 self.log_message(f"\n\n{'=' * 60}")
                 self.log_message("ALL OPTIMIZATIONS COMPLETE")
                 self.log_message(f"{'=' * 60}")
+                if len(all_wf_results) > 1:
+                    self.log_message(f"Individual reports generated for {len(all_wf_results)} securities")
+                    self.log_message("Combined multi-security report also generated")
                 messagebox.showinfo("Complete", "Optimization completed successfully!")
 
         except Exception as e:

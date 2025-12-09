@@ -15,6 +15,7 @@ from .trade_executor import TradeExecutor
 from .backtest_result import BacktestResult
 from ..Data.currency_converter import CurrencyConverter
 from ..Data.security_registry import SecurityRegistry
+from ..Data.historical_data_view import HistoricalDataView
 
 
 class SingleSecurityEngine:
@@ -100,8 +101,10 @@ class SingleSecurityEngine:
 
             # DATA LEAKAGE FIX: Only pass historical data up to current bar
             # This prevents strategies from accessing future data and eliminates look-ahead bias
-            # The slice includes all bars from 0 to i (inclusive), so current_index=i is the last valid index
-            historical_data = data.iloc[:i+1].copy()
+            # HistoricalDataView enforces look-ahead protection without expensive copying
+            # The view allows access to bars 0 to i (inclusive), so current_index=i is the last valid index
+            # PERFORMANCE: This avoids O(n²) memory operations from copying data every bar
+            historical_data = HistoricalDataView(data, valid_end_index=i)
 
             position_value = self.position_manager.get_position_value(current_price)
             # Convert position value to base currency (GBP)
