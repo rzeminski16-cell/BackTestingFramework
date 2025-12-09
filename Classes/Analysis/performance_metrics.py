@@ -175,6 +175,118 @@ class PerformanceMetrics:
         return metrics
 
     @staticmethod
+    def calculate_from_trades(trades: List['Trade'], initial_capital: float) -> Dict[str, Any]:
+        """
+        Calculate performance metrics from a list of trades without requiring a BacktestResult.
+
+        This is useful for calculating metrics for subsets of trades (e.g., per-security
+        in a portfolio backtest).
+
+        Args:
+            trades: List of Trade objects
+            initial_capital: Initial capital for percentage calculations
+
+        Returns:
+            Dictionary of performance metrics
+        """
+        metrics = {
+            'num_trades': len(trades),
+        }
+
+        if len(trades) == 0:
+            metrics.update({
+                'win_rate': 0.0,
+                'num_wins': 0,
+                'num_losses': 0,
+                'avg_win': 0.0,
+                'avg_loss': 0.0,
+                'largest_win': 0.0,
+                'largest_loss': 0.0,
+                'profit_factor': 0.0,
+                'avg_trade_duration': 0.0,
+                'sharpe_ratio': 0.0,
+                'max_drawdown': 0.0,
+                'max_drawdown_pct': 0.0,
+                'total_return': 0.0,
+                'total_return_pct': 0.0
+            })
+            return metrics
+
+        # Trade statistics
+        winning_trades = [t for t in trades if t.is_winner]
+        losing_trades = [t for t in trades if not t.is_winner]
+
+        num_wins = len(winning_trades)
+        num_losses = len(losing_trades)
+        win_rate = (num_wins / len(trades) * 100) if len(trades) > 0 else 0.0
+
+        # Win/loss amounts
+        wins = [t.pl for t in winning_trades]
+        losses = [t.pl for t in losing_trades]
+
+        avg_win = np.mean(wins) if wins else 0.0
+        avg_loss = np.mean(losses) if losses else 0.0
+        largest_win = max(wins) if wins else 0.0
+        largest_loss = min(losses) if losses else 0.0
+
+        # Total return
+        total_return = sum(t.pl for t in trades)
+        total_return_pct = (total_return / initial_capital * 100) if initial_capital > 0 else 0.0
+
+        # Profit factor
+        total_wins = sum(wins) if wins else 0.0
+        total_losses = abs(sum(losses)) if losses else 0.0
+        if total_losses > 0:
+            profit_factor = total_wins / total_losses
+        elif total_wins > 0:
+            profit_factor = 999.99
+        else:
+            profit_factor = 0.0
+
+        # Duration
+        durations = [t.duration_days for t in trades]
+        avg_duration = np.mean(durations) if durations else 0.0
+
+        # Simple drawdown estimation from trades (not as accurate as equity curve)
+        # This is an approximation based on cumulative P/L
+        cumulative_pl = []
+        running_pl = 0
+        for t in sorted(trades, key=lambda x: x.exit_date):
+            running_pl += t.pl
+            cumulative_pl.append(running_pl)
+
+        if cumulative_pl:
+            running_max = 0
+            max_dd = 0
+            for pl in cumulative_pl:
+                running_max = max(running_max, pl)
+                drawdown = running_max - pl
+                max_dd = max(max_dd, drawdown)
+            max_dd_pct = (max_dd / initial_capital * 100) if initial_capital > 0 else 0.0
+        else:
+            max_dd = 0.0
+            max_dd_pct = 0.0
+
+        metrics.update({
+            'win_rate': win_rate,
+            'num_wins': num_wins,
+            'num_losses': num_losses,
+            'avg_win': avg_win,
+            'avg_loss': avg_loss,
+            'largest_win': largest_win,
+            'largest_loss': largest_loss,
+            'profit_factor': profit_factor,
+            'avg_trade_duration': avg_duration,
+            'sharpe_ratio': 0.0,  # Cannot calculate without equity curve
+            'max_drawdown': max_dd,
+            'max_drawdown_pct': max_dd_pct,
+            'total_return': total_return,
+            'total_return_pct': total_return_pct
+        })
+
+        return metrics
+
+    @staticmethod
     def calculate_sharpe_ratio(equity_curve: pd.DataFrame,
                               risk_free_rate: float = None) -> float:
         """

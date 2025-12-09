@@ -5,9 +5,13 @@ A graphical interface for walk-forward optimization with Bayesian optimization.
 
 Features:
 - Select strategy to optimize
-- Select securities (single or multiple)
+- Choose optimization mode:
+  * Single Security: Optimize one security at a time
+  * Portfolio: Optimize with shared capital across multiple securities
 - Choose which parameters to optimize
 - Configure optimization settings
+- Configure capital contention settings for portfolio mode
+- Create and manage baskets of securities
 - Run walk-forward optimization
 - View progress with real-time updates
 - Generate comprehensive Excel reports
@@ -26,10 +30,15 @@ from typing import Any, Dict, List, Optional
 import pandas as pd
 
 from Classes.Data.data_loader import DataLoader
+from Classes.Config.basket import Basket, BasketManager
+from Classes.Config.capital_contention import (
+    CapitalContentionConfig, CapitalContentionMode, VulnerabilityScoreConfig
+)
 from Classes.Optimization.optimization_report_generator import \
     OptimizationReportGenerator
 from Classes.Optimization.sensitivity_analyzer import SensitivityAnalyzer
 from Classes.Optimization.walk_forward_optimizer import WalkForwardOptimizer, WalkForwardMode
+from Classes.GUI.basket_manager_dialog import BasketManagerDialog, VulnerabilityScoreConfigDialog
 
 # Import available strategies
 from strategies.alphatrend_strategy import AlphaTrendStrategy
@@ -65,6 +74,14 @@ class OptimizationGUI:
         self.optimization_thread = None
         self.is_running = False
         self.selected_parameters = {}  # Track which parameters to optimize
+
+        # Basket manager for portfolio mode
+        self.basket_manager = BasketManager()
+        self.selected_basket: Optional[Basket] = None
+
+        # Capital contention configuration for portfolio mode
+        self.capital_contention_config = CapitalContentionConfig.default_mode()
+        self.vulnerability_config = VulnerabilityScoreConfig()
 
         # Create GUI components
         self.create_widgets()
@@ -103,6 +120,17 @@ class OptimizationGUI:
         self.strategy_combo.bind('<<ComboboxSelected>>', self.on_strategy_change)
         row += 1
 
+        # Optimization Mode Selection
+        ttk.Label(config_frame, text="Mode:").grid(row=row, column=0, sticky=tk.W, pady=5)
+        mode_frame = ttk.Frame(config_frame)
+        mode_frame.grid(row=row, column=1, sticky=tk.W, pady=5)
+        self.mode_var = tk.StringVar(value="single")
+        ttk.Radiobutton(mode_frame, text="Single Security", variable=self.mode_var,
+                       value="single", command=self.on_mode_change).pack(side=tk.LEFT, padx=5)
+        ttk.Radiobutton(mode_frame, text="Portfolio", variable=self.mode_var,
+                       value="portfolio", command=self.on_mode_change).pack(side=tk.LEFT, padx=5)
+        row += 1
+
         # Securities Selection
         ttk.Label(config_frame, text="Securities:").grid(row=row, column=0, sticky=tk.W, pady=5)
         securities_container = ttk.Frame(config_frame)
@@ -128,11 +156,58 @@ class OptimizationGUI:
         for symbol in sorted(self.available_securities):
             self.securities_listbox.insert(tk.END, symbol)
 
-        # Select/Deselect all buttons
-        button_frame = ttk.Frame(securities_container)
-        button_frame.pack(fill=tk.X, pady=2)
-        ttk.Button(button_frame, text="Select All", command=self.select_all_securities).pack(side=tk.LEFT, padx=2)
-        ttk.Button(button_frame, text="Deselect All", command=self.deselect_all_securities).pack(side=tk.LEFT, padx=2)
+        # Selection buttons frame (changes based on mode)
+        self.selection_buttons_frame = ttk.Frame(securities_container)
+        self.selection_buttons_frame.pack(fill=tk.X, pady=2)
+        self.select_all_btn = ttk.Button(self.selection_buttons_frame, text="Select All",
+                                          command=self.select_all_securities)
+        self.deselect_all_btn = ttk.Button(self.selection_buttons_frame, text="Deselect All",
+                                            command=self.deselect_all_securities)
+        # Initially hidden for single mode
+        self.select_all_btn.pack_forget()
+        self.deselect_all_btn.pack_forget()
+
+        row += 1
+
+        # Portfolio-specific settings (initially hidden)
+        self.portfolio_frame = ttk.LabelFrame(config_frame, text="Portfolio/Basket Settings", padding="5")
+        self.portfolio_frame.grid(row=row, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=5)
+        self.portfolio_frame.grid_remove()  # Hide initially
+
+        # Basket Selection
+        basket_row = 0
+        ttk.Label(self.portfolio_frame, text="Basket:").grid(row=basket_row, column=0, sticky=tk.W, pady=2)
+        basket_select_frame = ttk.Frame(self.portfolio_frame)
+        basket_select_frame.grid(row=basket_row, column=1, sticky=tk.W, pady=2)
+
+        self.basket_var = tk.StringVar(value="(Select securities manually)")
+        self.basket_combo = ttk.Combobox(basket_select_frame, textvariable=self.basket_var, width=20, state='readonly')
+        self.basket_combo.pack(side=tk.LEFT, padx=(0, 5))
+        self._refresh_basket_list()
+        self.basket_combo.bind('<<ComboboxSelected>>', self._on_basket_selected)
+
+        ttk.Button(basket_select_frame, text="Manage...", command=self._open_basket_manager).pack(side=tk.LEFT)
+        basket_row += 1
+
+        # Capital Contention Mode
+        ttk.Label(self.portfolio_frame, text="Capital Contention:").grid(row=basket_row, column=0, sticky=tk.W, pady=2)
+        contention_frame = ttk.Frame(self.portfolio_frame)
+        contention_frame.grid(row=basket_row, column=1, sticky=tk.W, pady=2)
+
+        self.contention_mode_var = tk.StringVar(value="default")
+        ttk.Radiobutton(contention_frame, text="Default (Ignore)",
+                       variable=self.contention_mode_var, value="default",
+                       command=self._on_contention_mode_change).pack(side=tk.LEFT, padx=2)
+        ttk.Radiobutton(contention_frame, text="Vulnerability Score",
+                       variable=self.contention_mode_var, value="vulnerability",
+                       command=self._on_contention_mode_change).pack(side=tk.LEFT, padx=2)
+        basket_row += 1
+
+        # Vulnerability Score Config Button (shown when vulnerability mode selected)
+        self.vuln_config_btn = ttk.Button(self.portfolio_frame, text="Configure Vulnerability Score...",
+                                         command=self._open_vulnerability_config)
+        self.vuln_config_btn.grid(row=basket_row, column=0, columnspan=2, pady=5)
+        self.vuln_config_btn.grid_remove()  # Hide initially
 
         row += 1
 
@@ -352,6 +427,101 @@ class OptimizationGUI:
     def deselect_all_securities(self):
         """Deselect all securities in the listbox."""
         self.securities_listbox.select_clear(0, tk.END)
+
+    def on_mode_change(self):
+        """Handle optimization mode change."""
+        mode = self.mode_var.get()
+        if mode == "portfolio":
+            # Portfolio mode: show portfolio settings, enable multi-select
+            self.portfolio_frame.grid()
+            self.securities_listbox.config(selectmode=tk.MULTIPLE)
+            self.select_all_btn.pack(side=tk.LEFT, padx=2)
+            self.deselect_all_btn.pack(side=tk.LEFT, padx=2)
+        else:
+            # Single mode: hide portfolio settings, single-select only
+            self.portfolio_frame.grid_remove()
+            self.securities_listbox.config(selectmode=tk.SINGLE)
+            self.select_all_btn.pack_forget()
+            self.deselect_all_btn.pack_forget()
+            # Clear multiple selections if any
+            selected = self.securities_listbox.curselection()
+            if len(selected) > 1:
+                self.securities_listbox.selection_clear(0, tk.END)
+                self.securities_listbox.selection_set(selected[0])
+
+    def _refresh_basket_list(self):
+        """Refresh the basket dropdown list."""
+        baskets = self.basket_manager.list_baskets()
+        values = ["(Select securities manually)"] + baskets
+        self.basket_combo['values'] = values
+
+    def _on_basket_selected(self, event):
+        """Handle basket selection from dropdown."""
+        basket_name = self.basket_var.get()
+        if basket_name == "(Select securities manually)":
+            self.selected_basket = None
+            return
+
+        basket = self.basket_manager.load(basket_name)
+        if basket:
+            self.selected_basket = basket
+            # Update securities listbox to show basket securities
+            self.securities_listbox.selection_clear(0, tk.END)
+            for i, symbol in enumerate(self.securities_listbox.get(0, tk.END)):
+                if symbol in basket.securities:
+                    self.securities_listbox.selection_set(i)
+
+            # Load basket's default capital contention if set
+            if basket.default_capital_contention:
+                if basket.default_capital_contention.mode == CapitalContentionMode.VULNERABILITY_SCORE:
+                    self.contention_mode_var.set("vulnerability")
+                    self.vulnerability_config = basket.default_capital_contention.vulnerability_config
+                else:
+                    self.contention_mode_var.set("default")
+                self._on_contention_mode_change()
+
+    def _open_basket_manager(self):
+        """Open the basket manager dialog."""
+        def on_basket_selected(basket):
+            if basket:
+                self.selected_basket = basket
+                self._refresh_basket_list()
+                self.basket_var.set(basket.name)
+                self._on_basket_selected(None)
+
+        BasketManagerDialog(
+            self.root,
+            self.available_securities,
+            on_basket_selected=on_basket_selected
+        )
+
+    def _on_contention_mode_change(self):
+        """Handle capital contention mode change."""
+        mode = self.contention_mode_var.get()
+        if mode == "vulnerability":
+            self.vuln_config_btn.grid()
+            self.capital_contention_config = CapitalContentionConfig(
+                mode=CapitalContentionMode.VULNERABILITY_SCORE,
+                vulnerability_config=self.vulnerability_config
+            )
+        else:
+            self.vuln_config_btn.grid_remove()
+            self.capital_contention_config = CapitalContentionConfig.default_mode()
+
+    def _open_vulnerability_config(self):
+        """Open vulnerability score configuration dialog."""
+        def on_save(config):
+            self.vulnerability_config = config
+            self.capital_contention_config = CapitalContentionConfig(
+                mode=CapitalContentionMode.VULNERABILITY_SCORE,
+                vulnerability_config=config
+            )
+
+        VulnerabilityScoreConfigDialog(
+            self.root,
+            current_config=self.vulnerability_config,
+            on_save=on_save
+        )
 
     def toggle_start_date(self):
         """Toggle the start date entry field."""
@@ -625,14 +795,35 @@ class OptimizationGUI:
             return
 
         selected_securities = [self.securities_listbox.get(i) for i in selected_indices]
+        mode = self.mode_var.get()
 
-        # Confirm
-        confirm_msg = (
-            f"Start optimization for:\n"
-            f"Strategy: {strategy_name}\n"
-            f"Securities: {', '.join(selected_securities)}\n\n"
-            f"This may take a long time depending on data size and configuration."
-        )
+        # Validate based on mode
+        if mode == "single" and len(selected_securities) > 1:
+            messagebox.showerror("Error", "Single mode only allows one security. Switch to Portfolio mode for multiple securities.")
+            return
+
+        if mode == "portfolio" and len(selected_securities) < 2:
+            messagebox.showerror("Error", "Portfolio mode requires at least 2 securities.")
+            return
+
+        # Build confirmation message
+        if mode == "single":
+            confirm_msg = (
+                f"Start SINGLE SECURITY optimization for:\n"
+                f"Strategy: {strategy_name}\n"
+                f"Security: {selected_securities[0]}\n\n"
+                f"This may take a long time depending on data size and configuration."
+            )
+        else:
+            confirm_msg = (
+                f"Start PORTFOLIO optimization for:\n"
+                f"Strategy: {strategy_name}\n"
+                f"Securities: {', '.join(selected_securities)}\n"
+                f"Capital Contention: {self.capital_contention_config.mode.value}\n\n"
+                f"Note: Portfolio optimization optimizes parameters for the combined\n"
+                f"portfolio performance with shared capital.\n\n"
+                f"This may take a long time depending on data size and configuration."
+            )
 
         if not messagebox.askyesno("Confirm Optimization", confirm_msg):
             return
@@ -666,13 +857,16 @@ class OptimizationGUI:
         Run optimization for selected strategy and securities.
         This runs in a background thread.
 
-        When multiple securities are selected:
-        1. Each security is optimized individually
-        2. Individual reports are generated for each security
-        3. A COMBINED report is generated showing aggregated results and parameter consistency
+        Single mode:
+        - Optimizes parameters for a single security
+
+        Portfolio mode:
+        - Optimizes parameters for the combined portfolio performance
+        - All securities share capital with capital contention rules
         """
         try:
             strategy_class = self.STRATEGIES[strategy_name]
+            mode = self.mode_var.get()
 
             # Apply GUI settings to optimizer config
             speed_mode = self.speed_mode_var.get()
@@ -715,13 +909,20 @@ class OptimizationGUI:
                 if n_jobs != 1:
                     self.log_message("Note: If parallel processing fails, will automatically fall back to serial processing")
 
-            # For multi-security optimization, collect all results for combined report
+            # Collect all results for combined report (portfolio mode)
             all_wf_results = {}  # symbol -> WalkForwardResults
             all_sensitivity_results = {}  # symbol -> SensitivityResults
 
-            if len(securities) > 1:
-                self.log_message(f"\n*** MULTI-SECURITY OPTIMIZATION: {len(securities)} securities ***")
-                self.log_message("Individual reports will be generated for each security.")
+            # Log mode
+            self.log_message(f"\nOptimization Mode: {mode.upper()}")
+            if mode == "portfolio":
+                self.log_message(f"Capital Contention: {self.capital_contention_config.mode.value}")
+                if self.capital_contention_config.mode == CapitalContentionMode.VULNERABILITY_SCORE:
+                    vc = self.capital_contention_config.vulnerability_config
+                    self.log_message(f"  - Immunity Days: {vc.immunity_days}")
+                    self.log_message(f"  - Swap Threshold: {vc.swap_threshold}")
+                self.log_message(f"\n*** PORTFOLIO OPTIMIZATION: {len(securities)} securities ***")
+                self.log_message("Optimizing parameters for each security in the portfolio.")
                 self.log_message("A COMBINED report will show aggregated results and parameter consistency.\n")
 
             for sec_idx, symbol in enumerate(securities):
@@ -868,10 +1069,10 @@ class OptimizationGUI:
                         self.log_message(f"ERROR generating report: {e}")
                         logger.exception("Report generation failed")
 
-            # Generate COMBINED report if multiple securities were optimized
-            if self.is_running and len(all_wf_results) > 1:
+            # Generate COMBINED report for portfolio mode
+            if self.is_running and mode == "portfolio" and len(all_wf_results) > 1:
                 self.log_message(f"\n\n{'=' * 60}")
-                self.log_message("GENERATING COMBINED MULTI-SECURITY REPORT")
+                self.log_message("GENERATING COMBINED PORTFOLIO REPORT")
                 self.log_message(f"{'=' * 60}")
                 try:
                     from Classes.Optimization.walk_forward_optimizer import MultiSecurityResults
@@ -911,11 +1112,11 @@ class OptimizationGUI:
 
             if self.is_running:
                 self.log_message(f"\n\n{'=' * 60}")
-                self.log_message("ALL OPTIMIZATIONS COMPLETE")
+                self.log_message("OPTIMIZATION COMPLETE")
                 self.log_message(f"{'=' * 60}")
-                if len(all_wf_results) > 1:
-                    self.log_message(f"Individual reports generated for {len(all_wf_results)} securities")
-                    self.log_message("Combined multi-security report also generated")
+                if mode == "portfolio" and len(all_wf_results) > 1:
+                    self.log_message(f"Individual reports generated for {len(all_wf_results)} securities in portfolio")
+                    self.log_message("Combined portfolio report also generated")
                 messagebox.showinfo("Complete", "Optimization completed successfully!")
 
         except Exception as e:

@@ -7,25 +7,22 @@ Features:
 - Select securities (single or multiple with Select All button)
 - Choose backtest mode:
   * Single Security: Test one security at a time
-  * Batch (Individual Tests): Run separate backtests on multiple securities
+  * Portfolio: Run backtests on multiple securities with shared capital
 - Select and configure strategies
-- Configure commission settings
+- Configure commission settings (percentage or fixed)
+- Configure capital contention settings for portfolio mode
+- Create and manage baskets of securities
 - Set date ranges
 - Name backtests
 - View results with detailed metrics
-- Generate Excel reports:
-  * Single mode: Individual report per security
-  * Batch mode: Individual reports + comprehensive summary report with correlation analysis
+- Generate Excel reports
 - Save trade logs
 
-Batch Mode Reporting:
-- Creates organized folder structure: batch_reports/individual/ for each security
-- Generates batch summary report with:
-  * Aggregate performance across all securities
-  * Correlation analysis (returns, drawdowns)
-  * Comparative performance metrics
-  * Risk analysis
-  * Visual comparisons
+Portfolio Mode Features:
+- Shared capital across all securities
+- Capital contention handling (Default or Vulnerability Score mode)
+- Basket management for quick security group selection
+- Portfolio-level performance reporting
 """
 
 import tkinter as tk
@@ -52,7 +49,6 @@ from Classes.Engine.portfolio_engine import PortfolioEngine, PortfolioBacktestRe
 from Classes.Analysis.trade_logger import TradeLogger, PortfolioTradeLogger, LoggingPath
 from Classes.Analysis.performance_metrics import PerformanceMetrics
 from Classes.Analysis.excel_report_generator import ExcelReportGenerator
-from Classes.Analysis.batch_summary_report import BatchSummaryReportGenerator
 from Classes.Analysis.portfolio_report_generator import PortfolioReportGenerator
 from Classes.Optimization.optimizer import StrategyOptimizer
 from Classes.GUI.basket_manager_dialog import BasketManagerDialog, VulnerabilityScoreConfigDialog
@@ -136,7 +132,7 @@ class BacktestGUI:
         mode_frame.grid(row=row, column=1, sticky=tk.W, pady=5)
         ttk.Radiobutton(mode_frame, text="Single Security", variable=self.mode_var,
                        value="single", command=self.on_mode_change).pack(side=tk.LEFT, padx=5)
-        ttk.Radiobutton(mode_frame, text="Batch (Individual Tests)", variable=self.mode_var,
+        ttk.Radiobutton(mode_frame, text="Portfolio", variable=self.mode_var,
                        value="portfolio", command=self.on_mode_change).pack(side=tk.LEFT, padx=5)
         row += 1
 
@@ -964,136 +960,6 @@ class BacktestGUI:
                 self.log_result(f"✓ Excel report saved to: {report_path}")
             except Exception as e:
                 self.log_result(f"⚠ Excel report generation failed: {str(e)}")
-
-    def display_batch_results(self, results: Dict, backtest_name: str, initial_capital: float):
-        """Display batch backtest results - individual tests for multiple securities."""
-        self.log_result("\n" + "=" * 70)
-        self.log_result("BATCH BACKTEST RESULTS (Individual Tests)")
-        self.log_result("=" * 70)
-
-        # Collect metrics for all securities
-        all_metrics = []
-        for symbol, result in results.items():
-            metrics = PerformanceMetrics.calculate_metrics(result)
-            metrics['symbol'] = symbol
-            all_metrics.append(metrics)
-
-        # Sort by total return descending
-        all_metrics.sort(key=lambda x: x['total_return'], reverse=True)
-
-        # Display summary table
-        self.log_result(f"\n{'Symbol':<10} {'Trades':<8} {'Win Rate':<10} {'P/L':<15} {'Return %':<12} {'Sharpe':<8}")
-        self.log_result("-" * 70)
-
-        total_pl = 0
-        total_trades = 0
-        winning_securities = 0
-
-        for m in all_metrics:
-            total_pl += m['total_return']
-            total_trades += m['num_trades']
-            if m['total_return'] > 0:
-                winning_securities += 1
-
-            self.log_result(
-                f"{m['symbol']:<10} {m['num_trades']:<8} "
-                f"{m['win_rate']*100:>8.1f}% "
-                f"${m['total_return']:>12,.2f} {m['total_return_pct']:>10.2f}% "
-                f"{m['sharpe_ratio']:>6.2f}"
-            )
-
-        self.log_result("-" * 70)
-
-        # Calculate aggregate metrics
-        avg_return = total_pl / len(results)
-        avg_return_pct = (avg_return / initial_capital) * 100
-        num_securities = len(results)
-
-        self.log_result(
-            f"{'TOTAL':<10} {total_trades:<8} "
-            f"{'':>9} "
-            f"${total_pl:>12,.2f} {(total_pl/(initial_capital*num_securities))*100:>10.2f}%"
-        )
-        self.log_result(
-            f"{'AVERAGE':<10} {total_trades//num_securities:<8} "
-            f"{'':>9} "
-            f"${avg_return:>12,.2f} {avg_return_pct:>10.2f}%"
-        )
-        self.log_result("=" * 70)
-
-        # Additional statistics
-        self.log_result(f"\nBatch Statistics:")
-        self.log_result(f"  Securities Tested: {num_securities}")
-        self.log_result(f"  Profitable: {winning_securities} ({winning_securities/num_securities*100:.1f}%)")
-        self.log_result(f"  Unprofitable: {num_securities - winning_securities}")
-        self.log_result(f"  Total Trades: {total_trades}")
-        self.log_result(f"  Average Trades per Security: {total_trades/num_securities:.1f}")
-
-        # Best and worst performers
-        best = all_metrics[0]
-        worst = all_metrics[-1]
-        self.log_result(f"\n  Best Performer: {best['symbol']} (${best['total_return']:,.2f}, {best['total_return_pct']:.2f}%)")
-        self.log_result(f"  Worst Performer: {worst['symbol']} (${worst['total_return']:,.2f}, {worst['total_return_pct']:.2f}%)")
-        self.log_result("=" * 70)
-
-        # Save trade logs
-        logger = TradeLogger(Path('logs') / backtest_name)
-        for symbol, result in results.items():
-            logger.log_trades(symbol, backtest_name, result.trades, result.strategy_params)
-
-        self.log_result(f"\nTrade logs saved to: logs/{backtest_name}/")
-
-        # Generate Excel reports if enabled (batch-specific structure)
-        if self.generate_excel_var.get():
-            try:
-                self.log_result("\nGenerating batch reports...")
-
-                # Create batch reports folder structure
-                batch_reports_dir = Path('logs') / backtest_name / 'batch_reports'
-                individual_reports_dir = batch_reports_dir / 'individual'
-
-                # Generate individual reports for each security
-                self.log_result("\n  Generating individual security reports...")
-                excel_generator = ExcelReportGenerator(
-                    output_directory=individual_reports_dir,
-                    initial_capital=initial_capital,
-                    risk_free_rate=0.02,
-                    benchmark_name="S&P 500"
-                )
-
-                for symbol, result in results.items():
-                    report_path = excel_generator.generate_report(
-                        result=result,
-                        filename=f"{backtest_name}_{symbol}_report.xlsx"
-                    )
-                    self.log_result(f"    ✓ {symbol}: {report_path.name}")
-
-                self.log_result(f"\n  ✓ Individual reports saved to: {individual_reports_dir}/")
-
-                # Generate batch summary report with correlation analysis
-                self.log_result("\n  Generating batch summary report...")
-                batch_summary_generator = BatchSummaryReportGenerator(
-                    output_directory=batch_reports_dir,
-                    initial_capital=initial_capital
-                )
-
-                summary_report_path = batch_summary_generator.generate_batch_summary(
-                    results=results,
-                    backtest_name=backtest_name
-                )
-
-                self.log_result(f"  ✓ Summary report: {summary_report_path.name}")
-                self.log_result(f"\n✓ All batch reports saved to: {batch_reports_dir}/")
-                self.log_result("\nThe summary report includes:")
-                self.log_result("  • Aggregate performance metrics across all securities")
-                self.log_result("  • Detailed performance comparison")
-                self.log_result("  • Correlation analysis (return, drawdown correlations)")
-                self.log_result("  • Risk analysis and comparative visualizations")
-
-            except Exception as e:
-                self.log_result(f"⚠ Batch report generation failed: {str(e)}")
-                import traceback
-                traceback.print_exc()
 
     def log_result(self, message: str):
         """Log message to results text area."""
