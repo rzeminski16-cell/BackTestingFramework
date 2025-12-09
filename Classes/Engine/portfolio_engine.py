@@ -1,22 +1,72 @@
 """
-Portfolio-level backtesting engine.
+Portfolio-level backtesting engine with capital contention management.
 """
 import pandas as pd
 from typing import Dict, List, Optional, Callable
 from datetime import datetime
 from collections import defaultdict
+from dataclasses import dataclass, field
 
 from ..Strategy.base_strategy import BaseStrategy
 from ..Strategy.strategy_context import StrategyContext
 from ..Models.signal import Signal, SignalType
 from ..Models.order import Order, OrderSide, OrderType
 from ..Models.trade import Trade
+from ..Models.position import Position
 from ..Config.config import PortfolioConfig
+from ..Config.capital_contention import CapitalContentionMode
 from .position_manager import PositionManager
 from .trade_executor import TradeExecutor
 from .backtest_result import BacktestResult
+from .vulnerability_score import VulnerabilityScoreCalculator, VulnerabilityResult, SwapDecision
 from ..Data.currency_converter import CurrencyConverter
 from ..Data.security_registry import SecurityRegistry
+
+
+@dataclass
+class SignalRejection:
+    """Record of a signal that was rejected due to capital constraints."""
+    date: datetime
+    symbol: str
+    signal_type: str
+    reason: str
+    available_capital: float
+    required_capital: float
+    vulnerability_decision: Optional[SwapDecision] = None
+
+
+@dataclass
+class VulnerabilitySwap:
+    """Record of a position swap due to vulnerability score."""
+    date: datetime
+    closed_symbol: str
+    closed_score: float
+    new_symbol: str
+    all_scores: Dict[str, VulnerabilityResult] = field(default_factory=dict)
+
+
+@dataclass
+class PortfolioBacktestResult:
+    """
+    Extended backtest result with portfolio-specific information.
+    """
+    # Per-symbol results
+    symbol_results: Dict[str, BacktestResult]
+
+    # Portfolio-level metrics
+    final_equity: float
+    total_return: float
+    total_return_pct: float
+    portfolio_equity_curve: pd.DataFrame
+
+    # Capital contention tracking
+    signal_rejections: List[SignalRejection]
+    vulnerability_swaps: List[VulnerabilitySwap]
+    vulnerability_history: List[Dict[str, VulnerabilityResult]]  # Per-day scores
+
+    # Configuration used
+    config: PortfolioConfig
+    strategy_name: str
 
 
 class PortfolioEngine:
@@ -25,9 +75,9 @@ class PortfolioEngine:
 
     Manages multiple securities with:
     - Shared capital pool
-    - Maximum position limits
-    - Position sizing across portfolio
-    - All features of single-security engine
+    - Capital contention resolution (default or vulnerability score)
+    - Position value cannot exceed total equity
+    - Comprehensive logging of signal rejections and swaps
     """
 
     def __init__(self, config: PortfolioConfig,
@@ -46,11 +96,23 @@ class PortfolioEngine:
         self.trade_executor = TradeExecutor(config.commission)
         self.currency_converter = currency_converter
         self.security_registry = security_registry
-        self._fx_rate_warnings = set()  # Track which currency pairs have been warned about
+        self._fx_rate_warnings = set()
+
+        # Capital contention components
+        self.vulnerability_calculator: Optional[VulnerabilityScoreCalculator] = None
+        if config.capital_contention.mode == CapitalContentionMode.VULNERABILITY_SCORE:
+            self.vulnerability_calculator = VulnerabilityScoreCalculator(
+                config.capital_contention.vulnerability_config
+            )
+
+        # Tracking
+        self.signal_rejections: List[SignalRejection] = []
+        self.vulnerability_swaps: List[VulnerabilitySwap] = []
+        self.vulnerability_history: List[Dict[str, VulnerabilityResult]] = []
 
     def run(self, data_dict: Dict[str, pd.DataFrame],
             strategy: BaseStrategy,
-            progress_callback: Optional[Callable[[int, int], None]] = None) -> Dict[str, BacktestResult]:
+            progress_callback: Optional[Callable[[int, int], None]] = None) -> PortfolioBacktestResult:
         """
         Run portfolio backtest across multiple securities.
 
@@ -60,14 +122,20 @@ class PortfolioEngine:
             progress_callback: Optional callback function(current, total) for progress updates
 
         Returns:
-            Dictionary mapping symbol to BacktestResult
+            PortfolioBacktestResult with complete results and tracking data
         """
+        # Reset tracking
+        self.signal_rejections = []
+        self.vulnerability_swaps = []
+        self.vulnerability_history = []
+        self.trade_executor = TradeExecutor(self.config.commission)
+
         # Initialize position managers for each symbol
+        self.position_managers = {}
         for symbol in data_dict.keys():
             self.position_managers[symbol] = PositionManager()
 
         # CRITICAL: Pre-calculate indicators for each security
-        # This ensures strategies have all required indicators before signal generation
         prepared_data_dict = {}
         for symbol, data in data_dict.items():
             prepared_data_dict[symbol] = strategy.prepare_data(data)
@@ -83,12 +151,9 @@ class PortfolioEngine:
         # Process each date
         total_dates = len(all_dates)
         for date_idx, current_date in enumerate(all_dates):
-            # Update progress callback (every 50 dates or at the end)
+            # Update progress callback
             if progress_callback and (date_idx % 50 == 0 or date_idx == total_dates - 1):
                 progress_callback(date_idx + 1, total_dates)
-
-            # Track daily actions
-            day_trades = []
 
             # Get current prices for all securities
             current_prices = {}
@@ -107,10 +172,26 @@ class PortfolioEngine:
 
             total_equity = capital + total_position_value
 
+            # Track vulnerability scores for the day (if using vulnerability mode)
+            if self.vulnerability_calculator:
+                open_positions = {
+                    sym: pm.get_position()
+                    for sym, pm in self.position_managers.items()
+                    if pm.has_position
+                }
+                if open_positions:
+                    day_scores = self.vulnerability_calculator.calculate_all_scores(
+                        open_positions, current_prices, current_date
+                    )
+                    self.vulnerability_history.append(day_scores)
+
+            # Collect new signals for this date
+            new_signals: List[tuple] = []  # (symbol, signal, context)
+
             # Process each security
             for symbol in data_dict.keys():
                 if symbol not in current_prices:
-                    continue  # No data for this symbol on this date
+                    continue
 
                 current_price = current_prices[symbol]
                 data = data_dict[symbol]
@@ -121,15 +202,11 @@ class PortfolioEngine:
                 if not date_mask.any():
                     continue
 
-                # DATA LEAKAGE FIX: Get positional index, not label-based index
-                # This ensures correct slicing regardless of DataFrame index type
+                # DATA LEAKAGE FIX: Get positional index
                 label_index = data[date_mask].index[0]
                 if isinstance(data.index, pd.RangeIndex):
-                    # Index is already positional (0, 1, 2, ...)
                     bar_position = label_index
                 else:
-                    # Index is label-based (dates, non-sequential, etc.)
-                    # Get the positional location
                     bar_position = data.index.get_loc(label_index)
 
                 # Only pass historical data up to current bar (no future data access)
@@ -151,7 +228,7 @@ class PortfolioEngine:
                     fx_rate=fx_rate
                 )
 
-                # Check stop loss
+                # PRIORITY 1: Check stop loss (natural exits always take priority)
                 if pm.has_position:
                     if strategy.should_check_stop_loss(context):
                         if pm.check_stop_loss(current_price):
@@ -189,41 +266,39 @@ class PortfolioEngine:
                 # Generate signal
                 signal = strategy.generate_signal(context)
 
-                # Process signal
-                if signal.type == SignalType.BUY and not pm.has_position:
-                    # Check portfolio constraints
-                    num_positions = sum(1 for pm in self.position_managers.values() if pm.has_position)
-
-                    if self.config.max_positions is None or num_positions < self.config.max_positions:
-                        capital = self._open_position(
-                            symbol, current_date, current_price,
-                            signal, strategy, context, capital, pm
-                        )
-
-                elif signal.type == SignalType.SELL and pm.has_position:
+                # Process SELL/PARTIAL_EXIT/ADJUST_STOP immediately
+                if signal.type == SignalType.SELL and pm.has_position:
                     capital = self._close_position(
                         symbol, current_date, current_price,
                         signal.reason or "Strategy exit signal",
                         capital, pm
                     )
-
                 elif signal.type == SignalType.PARTIAL_EXIT and pm.has_position:
                     capital = self._partial_exit(
                         symbol, current_date, current_price,
                         signal.size, signal.reason, capital, pm
                     )
-
                 elif signal.type == SignalType.ADJUST_STOP and pm.has_position:
                     if signal.new_stop_loss is not None:
                         current_stop = pm.position.stop_loss
                         if current_stop is None or signal.new_stop_loss > current_stop:
                             pm.adjust_stop_loss(signal.new_stop_loss)
+                elif signal.type == SignalType.BUY and not pm.has_position:
+                    # Collect BUY signals for capital contention processing
+                    new_signals.append((symbol, signal, context, strategy))
+
+            # Process BUY signals with capital contention
+            capital = self._process_buy_signals(
+                new_signals, capital, total_equity, current_prices, current_date
+            )
 
             # Recalculate equity at end of day
             total_position_value = 0
             for symbol, pm in self.position_managers.items():
                 if pm.has_position and symbol in current_prices:
-                    total_position_value += pm.get_position_value(current_prices[symbol])
+                    pos_value = pm.get_position_value(current_prices[symbol])
+                    pos_value_base = self._convert_to_base_currency(pos_value, symbol, current_date)
+                    total_position_value += pos_value_base
 
             total_equity = capital + total_position_value
 
@@ -231,7 +306,8 @@ class PortfolioEngine:
                 'date': current_date,
                 'equity': total_equity,
                 'capital': capital,
-                'position_value': total_position_value
+                'position_value': total_position_value,
+                'num_positions': sum(1 for pm in self.position_managers.values() if pm.has_position)
             })
 
         # Close remaining positions
@@ -258,42 +334,230 @@ class PortfolioEngine:
             trades_by_symbol[trade.symbol].append(trade)
 
         # Create results per symbol
-        results = {}
+        symbol_results = {}
         for symbol in data_dict.keys():
             symbol_trades = trades_by_symbol[symbol]
-
-            # Calculate symbol-specific returns (from its trades)
             symbol_pl = sum(t.pl for t in symbol_trades)
 
             result = BacktestResult(
                 symbol=symbol,
                 strategy_name=strategy.get_name(),
                 trades=symbol_trades,
-                equity_curve=equity_df,  # Portfolio equity (same for all)
-                final_equity=final_equity,  # Portfolio final equity
-                total_return=symbol_pl,  # Symbol-specific P/L
+                equity_curve=equity_df,
+                final_equity=final_equity,
+                total_return=symbol_pl,
                 total_return_pct=(symbol_pl / self.config.initial_capital * 100) if symbol_trades else 0.0,
                 strategy_params=strategy.get_parameters()
             )
-            results[symbol] = result
+            symbol_results[symbol] = result
 
-        return results
+        return PortfolioBacktestResult(
+            symbol_results=symbol_results,
+            final_equity=final_equity,
+            total_return=total_return,
+            total_return_pct=total_return_pct,
+            portfolio_equity_curve=equity_df,
+            signal_rejections=self.signal_rejections,
+            vulnerability_swaps=self.vulnerability_swaps,
+            vulnerability_history=self.vulnerability_history,
+            config=self.config,
+            strategy_name=strategy.get_name()
+        )
 
-    def _get_fx_rate(self, symbol: str, date: datetime) -> float:
+    def _process_buy_signals(self, signals: List[tuple], capital: float,
+                             total_equity: float, current_prices: Dict[str, float],
+                             current_date: datetime) -> float:
         """
-        Get FX rate to convert from security currency to base currency.
+        Process BUY signals with capital contention logic.
 
         Args:
-            symbol: Security symbol
-            date: Date for the FX rate
+            signals: List of (symbol, signal, context, strategy) tuples
+            capital: Current available capital
+            total_equity: Total portfolio equity
+            current_prices: Current prices for all securities
+            current_date: Current date
 
         Returns:
-            FX rate (defaults to 1.0 if no conversion needed/available)
+            Updated capital after processing signals
         """
+        for symbol, signal, context, strategy in signals:
+            pm = self.position_managers[symbol]
+            current_price = current_prices[symbol]
+
+            # Calculate required capital for this position
+            quantity = strategy.position_size(context, signal)
+            if quantity <= 0:
+                continue
+
+            fx_rate = self._get_fx_rate(symbol, current_date)
+            required_capital = quantity * current_price * fx_rate
+
+            # Check if we have enough capital
+            if required_capital <= capital:
+                # CONSTRAINT: Position value cannot exceed total equity
+                if required_capital > total_equity:
+                    # Reduce position size to fit within equity
+                    quantity = (total_equity * 0.99) / (current_price * fx_rate)  # 99% to leave buffer
+                    required_capital = quantity * current_price * fx_rate
+
+                if required_capital <= capital and quantity > 0:
+                    capital = self._open_position(
+                        symbol, current_date, current_price,
+                        signal, strategy, context, capital, pm
+                    )
+                else:
+                    self._record_signal_rejection(
+                        current_date, symbol, "BUY",
+                        f"Position size exceeds total equity (required: {required_capital:.2f}, equity: {total_equity:.2f})",
+                        capital, required_capital
+                    )
+            else:
+                # Not enough capital - apply capital contention logic
+                capital = self._handle_capital_contention(
+                    symbol, signal, context, strategy, capital, total_equity,
+                    current_prices, current_date, required_capital
+                )
+
+        return capital
+
+    def _handle_capital_contention(self, new_symbol: str, signal: Signal,
+                                   context: StrategyContext, strategy: BaseStrategy,
+                                   capital: float, total_equity: float,
+                                   current_prices: Dict[str, float],
+                                   current_date: datetime,
+                                   required_capital: float) -> float:
+        """
+        Handle capital contention when a BUY signal arrives with insufficient capital.
+
+        Args:
+            new_symbol: Symbol of the new signal
+            signal: The BUY signal
+            context: Strategy context
+            strategy: Strategy instance
+            capital: Current available capital
+            total_equity: Total portfolio equity
+            current_prices: Current prices for all securities
+            current_date: Current date
+            required_capital: Capital required for the new position
+
+        Returns:
+            Updated capital after processing
+        """
+        mode = self.config.capital_contention.mode
+
+        if mode == CapitalContentionMode.DEFAULT:
+            # DEFAULT MODE: Simply reject the signal
+            self._record_signal_rejection(
+                current_date, new_symbol, "BUY",
+                f"Insufficient capital (available: {capital:.2f}, required: {required_capital:.2f})",
+                capital, required_capital
+            )
+            return capital
+
+        elif mode == CapitalContentionMode.VULNERABILITY_SCORE:
+            # VULNERABILITY SCORE MODE: Check if we can swap a weak position
+            open_positions = {
+                sym: pm.get_position()
+                for sym, pm in self.position_managers.items()
+                if pm.has_position
+            }
+
+            if not open_positions:
+                # No positions to swap
+                self._record_signal_rejection(
+                    current_date, new_symbol, "BUY",
+                    "Insufficient capital and no positions to swap",
+                    capital, required_capital
+                )
+                return capital
+
+            # Get swap decision
+            swap_decision = self.vulnerability_calculator.should_swap(
+                open_positions, current_prices, current_date, new_symbol
+            )
+
+            if swap_decision.should_swap:
+                # Close the weak position
+                weak_symbol = swap_decision.position_to_close
+                weak_pm = self.position_managers[weak_symbol]
+                weak_price = current_prices[weak_symbol]
+
+                # Record the swap
+                self.vulnerability_swaps.append(VulnerabilitySwap(
+                    date=current_date,
+                    closed_symbol=weak_symbol,
+                    closed_score=swap_decision.position_score,
+                    new_symbol=new_symbol,
+                    all_scores=swap_decision.all_scores
+                ))
+
+                # Close the weak position with vulnerability score exit reason
+                capital = self._close_position(
+                    weak_symbol, current_date, weak_price,
+                    f"Vulnerability score swap (score: {swap_decision.position_score:.1f}) for {new_symbol}",
+                    capital, weak_pm
+                )
+
+                # Recalculate total equity after closing
+                total_position_value = 0
+                for sym, pm in self.position_managers.items():
+                    if pm.has_position and sym in current_prices:
+                        pos_value = pm.get_position_value(current_prices[sym])
+                        pos_value_base = self._convert_to_base_currency(pos_value, sym, current_date)
+                        total_position_value += pos_value_base
+                total_equity = capital + total_position_value
+
+                # Now try to open the new position
+                new_pm = self.position_managers[new_symbol]
+
+                # Recalculate position size with updated capital
+                new_context = StrategyContext(
+                    data=context.data,
+                    current_index=context.current_index,
+                    current_price=context.current_price,
+                    current_date=current_date,
+                    position=None,
+                    available_capital=capital,
+                    total_equity=total_equity,
+                    symbol=new_symbol,
+                    fx_rate=context.fx_rate
+                )
+
+                capital = self._open_position(
+                    new_symbol, current_date, current_prices[new_symbol],
+                    signal, strategy, new_context, capital, new_pm
+                )
+            else:
+                # Cannot swap - record rejection with vulnerability info
+                self._record_signal_rejection(
+                    current_date, new_symbol, "BUY",
+                    swap_decision.reason,
+                    capital, required_capital,
+                    swap_decision
+                )
+
+        return capital
+
+    def _record_signal_rejection(self, date: datetime, symbol: str, signal_type: str,
+                                 reason: str, available_capital: float,
+                                 required_capital: float,
+                                 vulnerability_decision: Optional[SwapDecision] = None):
+        """Record a signal rejection."""
+        self.signal_rejections.append(SignalRejection(
+            date=date,
+            symbol=symbol,
+            signal_type=signal_type,
+            reason=reason,
+            available_capital=available_capital,
+            required_capital=required_capital,
+            vulnerability_decision=vulnerability_decision
+        ))
+
+    def _get_fx_rate(self, symbol: str, date: datetime) -> float:
+        """Get FX rate to convert from security currency to base currency."""
         if self.currency_converter is None or self.security_registry is None:
             return 1.0
 
-        # Get security currency
         metadata = self.security_registry.get_metadata(symbol)
         if metadata is None:
             return 1.0
@@ -301,85 +565,40 @@ class PortfolioEngine:
         security_currency = metadata.currency
         base_currency = self.config.base_currency
 
-        # No conversion needed if same currency
         if security_currency == base_currency:
             return 1.0
 
-        # Get conversion rate
         rate = self.currency_converter.get_rate(
             from_currency=security_currency,
             to_currency=base_currency,
             date=date
         )
 
-        # Default to 1.0 if rate not available (and warn)
         if rate is None:
             currency_pair = f"{security_currency}/{base_currency}"
             if currency_pair not in self._fx_rate_warnings:
                 self._fx_rate_warnings.add(currency_pair)
-                print(f"\n⚠️  WARNING: No FX rate available for {currency_pair} on {date.date()}")
+                print(f"\nWARNING: No FX rate available for {currency_pair} on {date.date()}")
                 print(f"   FX rates will default to 1.0 (no conversion)")
-                print(f"   Please ensure your currency_rates/{security_currency}{base_currency}.csv")
-                print(f"   file covers the full date range of your backtest data.\n")
             return 1.0
 
         return rate
 
     def _convert_to_base_currency(self, amount: float, symbol: str, date: datetime) -> float:
-        """
-        Convert amount from security currency to base currency.
-
-        Args:
-            amount: Amount in security currency
-            symbol: Security symbol
-            date: Date for conversion
-
-        Returns:
-            Amount in base currency
-        """
+        """Convert amount from security currency to base currency."""
         fx_rate = self._get_fx_rate(symbol, date)
         return amount * fx_rate
 
     def _open_position(self, symbol: str, date: datetime, price: float,
-                      signal: Signal, strategy: BaseStrategy,
-                      context: StrategyContext, capital: float,
-                      pm: PositionManager) -> float:
-        """Open position with portfolio constraints."""
-        # Get FX rate for currency conversion
+                       signal: Signal, strategy: BaseStrategy,
+                       context: StrategyContext, capital: float,
+                       pm: PositionManager) -> float:
+        """Open position with capital constraints."""
         fx_rate = self._get_fx_rate(symbol, date)
-
-        # Calculate position size
-        # Strategy's position_size() now handles currency conversion internally
-        # using context.fx_rate, so no additional adjustment needed here
         quantity = strategy.position_size(context, signal)
 
         if quantity <= 0:
             return capital
-
-        # Apply portfolio position size limit (in base currency)
-        max_capital_per_position = capital * self.config.position_size_limit
-        order_value_base = quantity * price * fx_rate  # Convert to base currency
-
-        if order_value_base > max_capital_per_position:
-            max_capital_security = max_capital_per_position / fx_rate
-            quantity = max_capital_security / price
-
-        # Apply total allocation limit (need to convert all positions to base currency)
-        total_positions_value_base = sum(
-            self._convert_to_base_currency(pm.get_position_value(price), sym, date)
-            for sym, pm in self.position_managers.items()
-            if pm.has_position
-        )
-        max_total_value = (capital + total_positions_value_base) * self.config.total_allocation_limit
-        available_for_new = max_total_value - total_positions_value_base
-
-        order_value_base = quantity * price * fx_rate
-        if order_value_base > available_for_new:
-            if available_for_new > 0:
-                available_security = available_for_new / fx_rate
-                quantity = available_security / price
-            else:
-                return capital  # No room for new position
 
         # Create and execute order
         entry_order = Order(
@@ -396,8 +615,6 @@ class PortfolioEngine:
 
         entry_commission = self.trade_executor.execute_order(entry_order)
         total_cost = entry_order.total_value() + entry_commission
-
-        # Convert cost to base currency
         total_cost_base = self._convert_to_base_currency(total_cost, symbol, date)
 
         if total_cost_base > capital:
@@ -429,7 +646,7 @@ class PortfolioEngine:
         return capital
 
     def _close_position(self, symbol: str, date: datetime, price: float,
-                       reason: str, capital: float, pm: PositionManager) -> float:
+                        reason: str, capital: float, pm: PositionManager) -> float:
         """Close position."""
         position = pm.get_position()
         quantity = position.current_quantity
@@ -446,13 +663,10 @@ class PortfolioEngine:
 
         exit_commission = self.trade_executor.execute_order(exit_order)
         proceeds = exit_order.total_value() - exit_commission
-
-        # Convert proceeds to base currency
         proceeds_base = self._convert_to_base_currency(proceeds, symbol, date)
 
         capital += proceeds_base
 
-        # Get exit FX rate
         exit_fx_rate = self._get_fx_rate(symbol, date)
 
         self.trade_executor.create_trade(
@@ -470,8 +684,8 @@ class PortfolioEngine:
         return capital
 
     def _partial_exit(self, symbol: str, date: datetime, price: float,
-                     fraction: float, reason: str, capital: float,
-                     pm: PositionManager) -> float:
+                      fraction: float, reason: str, capital: float,
+                      pm: PositionManager) -> float:
         """Partial exit."""
         position = pm.get_position()
         exit_quantity = position.current_quantity * fraction
@@ -488,8 +702,6 @@ class PortfolioEngine:
 
         exit_commission = self.trade_executor.execute_order(exit_order)
         proceeds = exit_order.total_value() - exit_commission
-
-        # Convert proceeds to base currency
         proceeds_base = self._convert_to_base_currency(proceeds, symbol, date)
 
         capital += proceeds_base
@@ -509,7 +721,6 @@ class PortfolioEngine:
         all_dates = set()
 
         for data in data_dict.values():
-            # Filter by date range
             filtered = data.copy()
             if self.config.start_date:
                 filtered = filtered[filtered['date'] >= self.config.start_date]

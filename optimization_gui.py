@@ -29,7 +29,7 @@ from Classes.Data.data_loader import DataLoader
 from Classes.Optimization.optimization_report_generator import \
     OptimizationReportGenerator
 from Classes.Optimization.sensitivity_analyzer import SensitivityAnalyzer
-from Classes.Optimization.walk_forward_optimizer import WalkForwardOptimizer
+from Classes.Optimization.walk_forward_optimizer import WalkForwardOptimizer, WalkForwardMode
 
 # Import available strategies
 from strategies.alphatrend_strategy import AlphaTrendStrategy
@@ -203,6 +203,25 @@ class OptimizationGUI:
         default_test = wf_defaults.get('testing_period_days', 365)
         default_step_min = wf_defaults.get('step_size_min_days', 7)
         default_step_max = wf_defaults.get('step_size_max_days', 30)
+        default_mode = wf_defaults.get('mode', 'rolling')
+
+        # Walk-Forward Mode
+        mode_row = ttk.Frame(wf_frame)
+        mode_row.pack(fill=tk.X, pady=2)
+        ttk.Label(mode_row, text="Walk-Forward Mode:", width=20).pack(side=tk.LEFT)
+        self.wf_mode_var = tk.StringVar(value=default_mode)
+        ttk.Radiobutton(mode_row, text="Rolling (sliding window)",
+                       variable=self.wf_mode_var, value="rolling").pack(side=tk.LEFT, padx=5)
+        ttk.Radiobutton(mode_row, text="Anchored (expanding window)",
+                       variable=self.wf_mode_var, value="anchored").pack(side=tk.LEFT, padx=5)
+
+        # Mode description
+        mode_desc_row = ttk.Frame(wf_frame)
+        mode_desc_row.pack(fill=tk.X, pady=(0, 5))
+        ttk.Label(mode_desc_row, text="   Rolling: Fixed window slides forward (good for frequent trading)",
+                 font=('TkDefaultFont', 8, 'italic')).pack(anchor=tk.W)
+        ttk.Label(mode_desc_row, text="   Anchored: Start fixed, window expands (good for low-frequency trading)",
+                 font=('TkDefaultFont', 8, 'italic')).pack(anchor=tk.W)
 
         # Training period
         train_row = ttk.Frame(wf_frame)
@@ -667,6 +686,7 @@ class OptimizationGUI:
             test_days = self.testing_period_var.get()
             step_min = self.step_min_var.get()
             step_max = self.step_max_var.get()
+            wf_mode = self.wf_mode_var.get()
 
             # Validate step sizes
             if step_min > step_max:
@@ -676,7 +696,12 @@ class OptimizationGUI:
             self.optimizer.config['walk_forward']['testing_period_days'] = test_days
             self.optimizer.config['walk_forward']['step_size_min_days'] = step_min
             self.optimizer.config['walk_forward']['step_size_max_days'] = step_max
+            self.optimizer.config['walk_forward']['mode'] = wf_mode
 
+            # Get walk-forward mode enum
+            walk_forward_mode = WalkForwardMode(wf_mode)
+
+            self.log_message(f"Walk-Forward Mode: {wf_mode.upper()}")
             self.log_message(f"Walk-Forward Settings: Train={train_days} days, Test={test_days} days, Step={step_min}-{step_max} days")
 
             import platform
@@ -754,7 +779,8 @@ class OptimizationGUI:
                         selected_params=self.selected_parameters if self.selected_parameters else None,
                         progress_callback=lambda stage, curr, total: self.root.after(
                             0, self.update_progress, stage, curr, total
-                        )
+                        ),
+                        walk_forward_mode=walk_forward_mode
                     )
 
                     if not self.is_running:

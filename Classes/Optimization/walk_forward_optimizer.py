@@ -2,10 +2,14 @@
 Walk-Forward Optimization Engine with Bayesian Optimization
 
 This module implements walk-forward optimization to prevent overfitting:
-1. Divide data into rolling training/testing windows
+1. Divide data into rolling or anchored training/testing windows
 2. Optimize parameters on in-sample (training) data using Bayesian optimization
 3. Test optimized parameters on out-of-sample (testing) data
-4. Roll forward and repeat
+4. Roll/expand forward and repeat
+
+Walk-Forward Modes:
+- ROLLING: Both training start and end dates roll forward (good for frequent trading)
+- ANCHORED: Training always starts from the same date, only end expands (good for low-frequency trading)
 
 This approach ensures parameters are validated on truly unseen data.
 """
@@ -16,6 +20,7 @@ import platform
 import random
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta
+from enum import Enum
 from typing import Any, Callable, Dict, List, Optional, Tuple, Type
 
 import numpy as np
@@ -32,6 +37,12 @@ from Classes.Models.trade import Trade
 from Classes.Strategy.base_strategy import BaseStrategy
 
 logger = logging.getLogger(__name__)
+
+
+class WalkForwardMode(Enum):
+    """Walk-forward optimization mode."""
+    ROLLING = "rolling"  # Both train start and end roll forward (sliding window)
+    ANCHORED = "anchored"  # Train start fixed, end expands forward (expanding window)
 
 
 @dataclass
@@ -271,9 +282,20 @@ class WalkForwardOptimizer:
         self.should_cancel = True
         logger.info("Optimization cancellation requested")
 
-    def _split_into_windows(self, data: pd.DataFrame) -> List[Tuple[pd.DataFrame, pd.DataFrame]]:
+    def _split_into_windows(self, data: pd.DataFrame,
+                            mode: Optional[WalkForwardMode] = None) -> List[Tuple[pd.DataFrame, pd.DataFrame]]:
         """
-        Split data into rolling training/testing windows.
+        Split data into training/testing windows based on the selected mode.
+
+        Modes:
+        - ROLLING: Both training start and end dates roll forward (sliding window)
+                   Good for higher-frequency trading strategies
+        - ANCHORED: Training always starts from same date, only end expands
+                   Good for lower-frequency trading strategies that need more data
+
+        Args:
+            data: Historical price data
+            mode: Walk-forward mode (defaults to config setting or ROLLING)
 
         Returns:
             List of (train_data, test_data) tuples
@@ -284,50 +306,96 @@ class WalkForwardOptimizer:
         step_min = wf_config['step_size_min_days']
         step_max = wf_config['step_size_max_days']
 
+        # Get mode from config if not specified
+        if mode is None:
+            mode_str = wf_config.get('mode', 'rolling').lower()
+            mode = WalkForwardMode(mode_str)
+
         windows = []
         data = data.sort_values('date').reset_index(drop=True)
 
-        # Start from the beginning
+        # Anchored mode starts from the very beginning and expands
+        anchor_start_date = data.iloc[0]['date']
+        current_train_end_offset = train_days  # Days from anchor for training end
+
+        # Rolling mode tracks current start index
         current_start_idx = 0
+
+        window_count = 0
 
         while True:
             if self.should_cancel:
                 break
 
-            # Define training window
-            train_start_date = data.iloc[current_start_idx]['date']
-            train_end_date = train_start_date + timedelta(days=train_days)
+            if mode == WalkForwardMode.ANCHORED:
+                # ANCHORED MODE: Training always starts from anchor_start_date
+                train_start_date = anchor_start_date
+                train_end_date = anchor_start_date + timedelta(days=current_train_end_offset)
 
-            # Define testing window
-            test_start_date = train_end_date
-            test_end_date = test_start_date + timedelta(days=test_days)
+                # Testing window follows training
+                test_start_date = train_end_date
+                test_end_date = test_start_date + timedelta(days=test_days)
 
-            # Extract training data
-            train_mask = (data['date'] >= train_start_date) & (data['date'] < train_end_date)
-            train_data = data[train_mask].copy()
+                # Extract training data (expands over time)
+                train_mask = (data['date'] >= train_start_date) & (data['date'] < train_end_date)
+                train_data = data[train_mask].copy()
 
-            # Extract testing data
-            test_mask = (data['date'] >= test_start_date) & (data['date'] < test_end_date)
-            test_data = data[test_mask].copy()
+                # Extract testing data
+                test_mask = (data['date'] >= test_start_date) & (data['date'] < test_end_date)
+                test_data = data[test_mask].copy()
 
-            # Check if we have enough data
-            if len(train_data) < 100 or len(test_data) < 20:
-                break
+                # Check if we have enough data
+                if len(train_data) < 100 or len(test_data) < 20:
+                    break
 
-            windows.append((train_data, test_data))
+                windows.append((train_data, test_data))
 
-            # Roll forward by random step size
-            step_days = random.randint(step_min, step_max)
-            step_indices = len(data[(data['date'] >= train_start_date) &
-                                    (data['date'] < train_start_date + timedelta(days=step_days))])
+                # Expand training window by step size
+                step_days = random.randint(step_min, step_max)
+                current_train_end_offset += step_days
 
-            current_start_idx += max(1, step_indices)
+                # Check if we've reached the end
+                max_date = data['date'].max()
+                if anchor_start_date + timedelta(days=current_train_end_offset + test_days) > max_date:
+                    break
 
-            # Check if we've reached the end
-            if current_start_idx >= len(data) - (train_days + test_days) / 365 * 252:
-                break
+            else:  # ROLLING MODE
+                # ROLLING MODE: Both start and end roll forward (sliding window)
+                train_start_date = data.iloc[current_start_idx]['date']
+                train_end_date = train_start_date + timedelta(days=train_days)
 
-        logger.info(f"Created {len(windows)} walk-forward windows")
+                # Testing window follows training
+                test_start_date = train_end_date
+                test_end_date = test_start_date + timedelta(days=test_days)
+
+                # Extract training data
+                train_mask = (data['date'] >= train_start_date) & (data['date'] < train_end_date)
+                train_data = data[train_mask].copy()
+
+                # Extract testing data
+                test_mask = (data['date'] >= test_start_date) & (data['date'] < test_end_date)
+                test_data = data[test_mask].copy()
+
+                # Check if we have enough data
+                if len(train_data) < 100 or len(test_data) < 20:
+                    break
+
+                windows.append((train_data, test_data))
+
+                # Roll forward by random step size
+                step_days = random.randint(step_min, step_max)
+                step_indices = len(data[(data['date'] >= train_start_date) &
+                                        (data['date'] < train_start_date + timedelta(days=step_days))])
+
+                current_start_idx += max(1, step_indices)
+
+                # Check if we've reached the end
+                if current_start_idx >= len(data) - (train_days + test_days) / 365 * 252:
+                    break
+
+            window_count += 1
+
+        logger.info(f"Created {len(windows)} walk-forward windows using {mode.value.upper()} mode")
         return windows
 
     def _get_parameter_space(self, strategy_class: Type[BaseStrategy],
@@ -641,7 +709,8 @@ class WalkForwardOptimizer:
                 symbol: str,
                 data: pd.DataFrame,
                 selected_params: Optional[Dict[str, bool]] = None,
-                progress_callback: Optional[Callable[[str, int, int], None]] = None) -> WalkForwardResults:
+                progress_callback: Optional[Callable[[str, int, int], None]] = None,
+                walk_forward_mode: Optional[WalkForwardMode] = None) -> WalkForwardResults:
         """
         Run walk-forward optimization.
 
@@ -651,11 +720,13 @@ class WalkForwardOptimizer:
             data: Historical price data
             selected_params: Dict of {param_name: bool} indicating which parameters to optimize
             progress_callback: Callback(stage_name, current, total)
+            walk_forward_mode: Walk-forward mode (ROLLING or ANCHORED). If None, uses config.
 
         Returns:
             WalkForwardResults with complete optimization results
         """
-        logger.info(f"Starting walk-forward optimization for {strategy_class.__name__} on {symbol}")
+        mode_desc = walk_forward_mode.value if walk_forward_mode else "config default"
+        logger.info(f"Starting walk-forward optimization for {strategy_class.__name__} on {symbol} (mode: {mode_desc})")
 
         # Reset cancellation flag
         self.should_cancel = False
@@ -668,11 +739,11 @@ class WalkForwardOptimizer:
             min_trades_per_year=constraint_config['min_trades_per_year']
         )
 
-        # Split data into windows
+        # Split data into windows based on mode
         if progress_callback:
             progress_callback("Splitting data into windows", 0, 1)
 
-        windows = self._split_into_windows(data)
+        windows = self._split_into_windows(data, mode=walk_forward_mode)
 
         if len(windows) == 0:
             raise ValueError("Not enough data to create walk-forward windows")

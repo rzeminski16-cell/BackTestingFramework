@@ -3,13 +3,22 @@
 
 # Walk-Forward Optimization Settings
 walk_forward:
+  # Walk-forward mode: "rolling" or "anchored"
+  # - rolling: Both training start and end dates roll forward (sliding window)
+  #            Good for higher-frequency trading strategies
+  # - anchored: Training always starts from same date, only end expands
+  #            Good for lower-frequency trading strategies that need more data
+  mode: rolling
+
   # Training period in days (365 = 1 year)
+  # For rolling mode: Fixed window size
+  # For anchored mode: Initial window size (expands over time)
   training_period_days: 365
 
   # Testing period in days (365 = 1 year)
   testing_period_days: 365
 
-  # Step size for rolling forward (random between min and max days)
+  # Step size for rolling/expanding forward (random between min and max days)
   step_size_min_days: 7
   step_size_max_days: 30
 
@@ -150,6 +159,45 @@ strategy_parameters:
       max: 14
       type: int
       step: 1
+
+
+# Vulnerability Score Parameters (for portfolio capital contention optimization)
+# These parameters can be optimized when using the Vulnerability Score capital contention mode
+vulnerability_score_parameters:
+  immunity_days:
+    min: 3
+    max: 14
+    type: int
+    step: 1
+    description: "Days a new trade is protected from being swapped"
+
+  min_profit_threshold:
+    min: 0.005
+    max: 0.05
+    type: float
+    step: 0.005
+    description: "Profit % below which trade is considered stagnant (0.02 = 2%)"
+
+  decay_rate_fast:
+    min: 2.0
+    max: 10.0
+    type: float
+    step: 1.0
+    description: "Points lost per day for stagnant trades"
+
+  decay_rate_slow:
+    min: 0.5
+    max: 3.0
+    type: float
+    step: 0.5
+    description: "Points lost per day for performing trades"
+
+  swap_threshold:
+    min: 30.0
+    max: 70.0
+    type: float
+    step: 5.0
+    description: "Score below which position can be swapped (0-100)"
 
 
 # Performance Thresholds for Reporting
