@@ -192,6 +192,67 @@ class OptimizationGUI:
                            value=-1).pack(side=tk.LEFT, padx=5)
             row += 1
 
+        # Walk-Forward Window Settings
+        wf_frame = ttk.LabelFrame(config_frame, text="Walk-Forward Window Settings", padding="5")
+        wf_frame.grid(row=row, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=10)
+        row += 1
+
+        # Get default values from config
+        wf_defaults = self.optimizer.config.get('walk_forward', {})
+        default_train = wf_defaults.get('training_period_days', 365)
+        default_test = wf_defaults.get('testing_period_days', 365)
+        default_step_min = wf_defaults.get('step_size_min_days', 7)
+        default_step_max = wf_defaults.get('step_size_max_days', 30)
+
+        # Training period
+        train_row = ttk.Frame(wf_frame)
+        train_row.pack(fill=tk.X, pady=2)
+        ttk.Label(train_row, text="Training Period (days):", width=20).pack(side=tk.LEFT)
+        self.training_period_var = tk.IntVar(value=default_train)
+        training_spin = ttk.Spinbox(train_row, from_=90, to=1825, width=8,
+                                     textvariable=self.training_period_var)
+        training_spin.pack(side=tk.LEFT, padx=5)
+        ttk.Label(train_row, text="(90-1825)", font=('TkDefaultFont', 8, 'italic')).pack(side=tk.LEFT)
+
+        # Testing period
+        test_row = ttk.Frame(wf_frame)
+        test_row.pack(fill=tk.X, pady=2)
+        ttk.Label(test_row, text="Testing Period (days):", width=20).pack(side=tk.LEFT)
+        self.testing_period_var = tk.IntVar(value=default_test)
+        testing_spin = ttk.Spinbox(test_row, from_=30, to=730, width=8,
+                                    textvariable=self.testing_period_var)
+        testing_spin.pack(side=tk.LEFT, padx=5)
+        ttk.Label(test_row, text="(30-730)", font=('TkDefaultFont', 8, 'italic')).pack(side=tk.LEFT)
+
+        # Step size
+        step_row = ttk.Frame(wf_frame)
+        step_row.pack(fill=tk.X, pady=2)
+        ttk.Label(step_row, text="Step Size (days):", width=20).pack(side=tk.LEFT)
+        self.step_min_var = tk.IntVar(value=default_step_min)
+        step_min_spin = ttk.Spinbox(step_row, from_=7, to=365, width=6,
+                                     textvariable=self.step_min_var)
+        step_min_spin.pack(side=tk.LEFT, padx=2)
+        ttk.Label(step_row, text="to").pack(side=tk.LEFT, padx=2)
+        self.step_max_var = tk.IntVar(value=default_step_max)
+        step_max_spin = ttk.Spinbox(step_row, from_=7, to=365, width=6,
+                                     textvariable=self.step_max_var)
+        step_max_spin.pack(side=tk.LEFT, padx=2)
+
+        # Window estimation label
+        self.window_estimate_label = ttk.Label(
+            wf_frame,
+            text="",
+            font=('TkDefaultFont', 8, 'italic'),
+            foreground='blue'
+        )
+        self.window_estimate_label.pack(fill=tk.X, pady=2)
+
+        # Bind changes to update estimate
+        self.training_period_var.trace_add('write', self._update_window_estimate)
+        self.testing_period_var.trace_add('write', self._update_window_estimate)
+        self.step_min_var.trace_add('write', self._update_window_estimate)
+        self.step_max_var.trace_add('write', self._update_window_estimate)
+
         # Config file path display
         ttk.Label(config_frame, text="Config File:").grid(row=row, column=0, sticky=tk.W, pady=5)
         ttk.Label(
@@ -276,6 +337,60 @@ class OptimizationGUI:
                 self.start_date_entry.delete(0, tk.END)
         else:
             self.start_date_entry.config(state=tk.DISABLED)
+
+    def _update_window_estimate(self, *args):
+        """Update the estimated number of windows based on current settings."""
+        try:
+            train_days = self.training_period_var.get()
+            test_days = self.testing_period_var.get()
+            step_min = self.step_min_var.get()
+            step_max = self.step_max_var.get()
+
+            # Validate inputs
+            if train_days <= 0 or test_days <= 0 or step_min <= 0 or step_max <= 0:
+                self.window_estimate_label.config(text="Invalid settings")
+                return
+
+            if step_min > step_max:
+                self.window_estimate_label.config(text="Step min > max")
+                return
+
+            # Estimate based on selected securities data range
+            selected_indices = self.securities_listbox.curselection()
+            if not selected_indices:
+                # Use a default 15-year estimate
+                data_days = 15 * 365
+            else:
+                # Try to get actual data range from first selected security
+                try:
+                    symbol = self.securities_listbox.get(selected_indices[0])
+                    data = self.data_loader.load_csv(symbol)
+                    data_days = (data['date'].max() - data['date'].min()).days
+                except:
+                    data_days = 15 * 365
+
+            # Calculate estimated windows
+            window_size = train_days + test_days
+            avg_step = (step_min + step_max) / 2
+
+            if data_days < window_size:
+                self.window_estimate_label.config(
+                    text=f"Not enough data ({data_days} days < {window_size} required)"
+                )
+                return
+
+            # Approximate number of windows
+            usable_days = data_days - window_size
+            est_windows = int(usable_days / avg_step) + 1
+
+            # Show estimate with explanation
+            self.window_estimate_label.config(
+                text=f"≈ {est_windows} windows (avg step {avg_step:.0f} days, {data_days} days of data)"
+            )
+
+        except (tk.TclError, ValueError):
+            # Invalid input during typing
+            pass
 
     def on_strategy_change(self, event=None):
         """Handle strategy selection change."""
@@ -518,6 +633,23 @@ class OptimizationGUI:
 
             self.optimizer.config['bayesian_optimization']['speed_mode'] = speed_mode
             self.optimizer.config['bayesian_optimization']['n_jobs'] = n_jobs
+
+            # Apply walk-forward window settings
+            train_days = self.training_period_var.get()
+            test_days = self.testing_period_var.get()
+            step_min = self.step_min_var.get()
+            step_max = self.step_max_var.get()
+
+            # Validate step sizes
+            if step_min > step_max:
+                step_min, step_max = step_max, step_min
+
+            self.optimizer.config['walk_forward']['training_period_days'] = train_days
+            self.optimizer.config['walk_forward']['testing_period_days'] = test_days
+            self.optimizer.config['walk_forward']['step_size_min_days'] = step_min
+            self.optimizer.config['walk_forward']['step_size_max_days'] = step_max
+
+            self.log_message(f"Walk-Forward Settings: Train={train_days} days, Test={test_days} days, Step={step_min}-{step_max} days")
 
             import platform
             is_windows = platform.system() == 'Windows'
