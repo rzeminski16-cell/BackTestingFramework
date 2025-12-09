@@ -252,6 +252,11 @@ class OptimizationGUI:
         self.testing_period_var.trace_add('write', self._update_window_estimate)
         self.step_min_var.trace_add('write', self._update_window_estimate)
         self.step_max_var.trace_add('write', self._update_window_estimate)
+        # Also update when start date filter changes
+        self.use_start_date_var.trace_add('write', self._update_window_estimate)
+        self.start_date_entry.bind('<KeyRelease>', lambda e: self._update_window_estimate())
+        # Update when security selection changes
+        self.securities_listbox.bind('<<ListboxSelect>>', lambda e: self._update_window_estimate())
 
         # Config file path display
         ttk.Label(config_frame, text="Config File:").grid(row=row, column=0, sticky=tk.W, pady=5)
@@ -357,17 +362,40 @@ class OptimizationGUI:
 
             # Estimate based on selected securities data range
             selected_indices = self.securities_listbox.curselection()
-            if not selected_indices:
-                # Use a default 15-year estimate
-                data_days = 15 * 365
-            else:
+            data_days = None
+            filter_note = ""
+
+            if selected_indices:
                 # Try to get actual data range from first selected security
                 try:
                     symbol = self.securities_listbox.get(selected_indices[0])
                     data = self.data_loader.load_csv(symbol)
-                    data_days = (data['date'].max() - data['date'].min()).days
+                    data_start = data['date'].min()
+                    data_end = data['date'].max()
+
+                    # Check if start date filter is applied
+                    if self.use_start_date_var.get():
+                        start_date_str = self.start_date_entry.get().strip()
+                        if start_date_str and start_date_str != "YYYY-MM-DD":
+                            try:
+                                import pandas as pd
+                                filter_start = pd.to_datetime(start_date_str)
+                                # Use the later of filter start or data start
+                                effective_start = max(filter_start, data_start)
+                                data_days = (data_end - effective_start).days
+                                filter_note = " (filtered)"
+                            except:
+                                pass
+
+                    # If no filter or filter parsing failed, use full range
+                    if data_days is None:
+                        data_days = (data_end - data_start).days
                 except:
-                    data_days = 15 * 365
+                    pass
+
+            # Default if no security selected or loading failed
+            if data_days is None:
+                data_days = 15 * 365
 
             # Calculate estimated windows
             window_size = train_days + test_days
@@ -385,7 +413,7 @@ class OptimizationGUI:
 
             # Show estimate with explanation
             self.window_estimate_label.config(
-                text=f"≈ {est_windows} windows (avg step {avg_step:.0f} days, {data_days} days of data)"
+                text=f"≈ {est_windows} windows (avg step {avg_step:.0f} days, {data_days} days{filter_note})"
             )
 
         except (tk.TclError, ValueError):
