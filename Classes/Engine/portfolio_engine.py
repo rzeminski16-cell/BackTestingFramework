@@ -484,44 +484,98 @@ class PortfolioEngine:
 
         return capital
 
+    def _try_reduced_position(self, capital: float, required_capital: float,
+                               quantity: float, current_price: float,
+                               fx_rate: float, min_reduction: float = 0.5) -> Tuple[float, float, bool]:
+        """
+        Try to fit a position with reduced size if full size doesn't fit.
+
+        Args:
+            capital: Available capital
+            required_capital: Capital required for full position
+            quantity: Full position quantity
+            current_price: Current price
+            fx_rate: FX rate for currency conversion
+            min_reduction: Minimum fraction of original position (default 0.5 = 50%)
+
+        Returns:
+            Tuple of (adjusted_quantity, adjusted_capital, was_reduced)
+        """
+        if required_capital <= capital:
+            return quantity, required_capital, False
+
+        # Calculate what fraction of the position we can afford
+        affordable_fraction = capital / required_capital
+
+        if affordable_fraction >= min_reduction:
+            # Can afford at least min_reduction of the position
+            adjusted_quantity = quantity * affordable_fraction
+            adjusted_capital = adjusted_quantity * current_price * fx_rate
+            return adjusted_quantity, adjusted_capital, True
+
+        # Can't afford even the minimum reduced position
+        return 0.0, 0.0, False
+
     def _process_signals_default_mode(self, signal_requirements: List[Tuple],
                                       capital: float, total_equity: float,
                                       current_prices: Dict[str, float],
                                       current_date: datetime,
                                       open_position_symbols: List[str],
                                       all_signal_symbols: List[str]) -> float:
-        """Process signals in default mode (first-come, first-served)."""
+        """
+        Process signals in default mode (first-come, first-served).
+
+        For each signal:
+        1. Try full position size
+        2. If not enough capital, try reduced position (down to 50%)
+        3. If still not enough, reject the signal
+        """
         num_open_positions = len(open_position_symbols)
 
         for symbol, signal, context, strategy, required_capital, quantity in signal_requirements:
             pm = self.position_managers[symbol]
             current_price = current_prices[symbol]
+            fx_rate = self._get_fx_rate(symbol, current_date)
             other_signals = [s for s in all_signal_symbols if s != symbol]
 
-            if required_capital <= capital:
+            # Try to fit the position (full or reduced)
+            adj_quantity, adj_capital, was_reduced = self._try_reduced_position(
+                capital, required_capital, quantity, current_price, fx_rate
+            )
+
+            if adj_quantity > 0:
+                # Can execute (either full or reduced position)
+                outcome = "Executed (reduced position)" if was_reduced else "Executed (sufficient capital)"
+                if was_reduced:
+                    reduction_pct = (1 - adj_quantity / quantity) * 100
+                    outcome = f"Executed at {100 - reduction_pct:.0f}% position size"
+
                 self._record_capital_event(
                     current_date, symbol, "EXECUTED",
-                    capital, required_capital, total_equity,
+                    capital, adj_capital, total_equity,
                     num_open_positions, open_position_symbols.copy(), other_signals,
-                    "Executed (sufficient capital)"
+                    outcome
                 )
 
+                # Update signal with adjusted quantity for position opening
                 capital = self._open_position_with_tracking(
                     symbol, current_date, current_price, signal, strategy, context,
-                    capital, pm, required_capital, num_open_positions, other_signals
+                    capital, pm, adj_capital, num_open_positions, other_signals,
+                    override_quantity=adj_quantity
                 )
                 num_open_positions += 1
                 open_position_symbols.append(symbol)
             else:
+                # Cannot fit even reduced position
                 self._record_capital_event(
                     current_date, symbol, "REJECTED",
                     capital, required_capital, total_equity,
                     num_open_positions, open_position_symbols.copy(), other_signals,
-                    f"Rejected: insufficient capital ({capital:.2f} < {required_capital:.2f})"
+                    f"Rejected: insufficient capital even for 50% position ({capital:.2f} < {required_capital * 0.5:.2f})"
                 )
                 self._record_signal_rejection(
                     current_date, symbol, "BUY",
-                    f"Insufficient capital (available: {capital:.2f}, required: {required_capital:.2f})",
+                    f"Insufficient capital for even 50% position (available: {capital:.2f}, min required: {required_capital * 0.5:.2f})",
                     capital, required_capital
                 )
 
@@ -536,10 +590,10 @@ class PortfolioEngine:
         """
         Process signals using vulnerability score for capital contention.
 
-        For each signal that doesn't have enough capital:
-        1. Get vulnerability scores for all open positions
-        2. Find the weakest position
-        3. If weakest position score < threshold, swap it for the new signal
+        For each signal:
+        1. Try full position size
+        2. If not enough capital, try reduced position (down to 50%)
+        3. If still not enough, try vulnerability swap
         4. Otherwise reject the signal
         """
         num_open_positions = len(open_position_symbols)
@@ -547,43 +601,55 @@ class PortfolioEngine:
         for symbol, signal, context, strategy, required_capital, quantity in signal_requirements:
             pm = self.position_managers[symbol]
             current_price = current_prices[symbol]
+            fx_rate = self._get_fx_rate(symbol, current_date)
             other_signals = [s for s in all_signal_symbols if s != symbol]
 
-            if required_capital <= capital:
-                # Have enough capital - just execute
-                vuln_scores = None
-                if open_position_symbols:
-                    # Calculate vulnerability scores for context
-                    open_positions = {
-                        sym: self.position_managers[sym].get_position()
-                        for sym in open_position_symbols
-                        if self.position_managers[sym].has_position
-                    }
-                    if open_positions:
-                        scores = self.vulnerability_calculator.calculate_all_scores(
-                            open_positions, current_prices, current_date
-                        )
-                        vuln_scores = {s: r.score for s, r in scores.items()}
+            # Get vulnerability scores for context (used in multiple places below)
+            vuln_scores = None
+            if open_position_symbols:
+                open_positions = {
+                    sym: self.position_managers[sym].get_position()
+                    for sym in open_position_symbols
+                    if self.position_managers[sym].has_position
+                }
+                if open_positions:
+                    scores = self.vulnerability_calculator.calculate_all_scores(
+                        open_positions, current_prices, current_date
+                    )
+                    vuln_scores = {s: r.score for s, r in scores.items()}
+
+            # Step 1 & 2: Try full position, then reduced position
+            adj_quantity, adj_capital, was_reduced = self._try_reduced_position(
+                capital, required_capital, quantity, current_price, fx_rate
+            )
+
+            if adj_quantity > 0:
+                # Can execute (either full or reduced position)
+                outcome = "Executed (sufficient capital)"
+                if was_reduced:
+                    reduction_pct = (1 - adj_quantity / quantity) * 100
+                    outcome = f"Executed at {100 - reduction_pct:.0f}% position size"
 
                 self._record_capital_event(
                     current_date, symbol, "EXECUTED",
-                    capital, required_capital, total_equity,
+                    capital, adj_capital, total_equity,
                     num_open_positions, open_position_symbols.copy(), other_signals,
-                    "Executed (sufficient capital)",
+                    outcome,
                     vulnerability_scores=vuln_scores
                 )
 
                 capital = self._open_position_with_tracking(
                     symbol, current_date, current_price, signal, strategy, context,
-                    capital, pm, required_capital, num_open_positions, other_signals
+                    capital, pm, adj_capital, num_open_positions, other_signals,
+                    override_quantity=adj_quantity
                 )
                 num_open_positions += 1
                 open_position_symbols.append(symbol)
             else:
-                # Not enough capital - try to swap using vulnerability
+                # Step 3: Not enough capital even for 50% position - try vulnerability swap
                 capital = self._try_vulnerability_swap(
                     symbol, signal, context, strategy, capital, total_equity,
-                    current_prices, current_date, required_capital,
+                    current_prices, current_date, required_capital, quantity,
                     open_position_symbols, other_signals
                 )
                 # Update tracking if swap happened
@@ -600,9 +666,15 @@ class PortfolioEngine:
                                 capital: float, total_equity: float,
                                 current_prices: Dict[str, float],
                                 current_date: datetime, required_capital: float,
+                                quantity: float,
                                 open_position_symbols: List[str],
                                 other_signals: List[str]) -> float:
-        """Try to swap a vulnerable position for a new signal."""
+        """
+        Try to swap a vulnerable position for a new signal.
+
+        After a successful swap, the new position uses the full requested quantity
+        since closing the old position frees up capital.
+        """
         # Get open positions
         open_positions = {
             sym: self.position_managers[sym].get_position()
@@ -699,10 +771,12 @@ class PortfolioEngine:
                 fx_rate=context.fx_rate
             )
 
+            # Open with the full requested quantity (capital freed from swap)
             capital = self._open_position_with_tracking(
                 new_symbol, current_date, current_prices[new_symbol],
                 signal, strategy, new_context, capital, new_pm,
-                required_capital, len(updated_open), other_signals
+                required_capital, len(updated_open), other_signals,
+                override_quantity=quantity
             )
         else:
             # Cannot swap - record rejection with vulnerability info
@@ -750,7 +824,8 @@ class PortfolioEngine:
                                      context: StrategyContext, capital: float,
                                      pm: PositionManager, required_capital: float,
                                      concurrent_positions: int,
-                                     competing_signals: List[str]) -> float:
+                                     competing_signals: List[str],
+                                     override_quantity: Optional[float] = None) -> float:
         """Open position with additional tracking info for the trade."""
         # Store tracking info in position manager for later trade creation
         pm.pending_trade_info = {
@@ -759,7 +834,7 @@ class PortfolioEngine:
             'concurrent_positions': concurrent_positions,
             'competing_signals': competing_signals.copy()
         }
-        return self._open_position(symbol, date, price, signal, strategy, context, capital, pm)
+        return self._open_position(symbol, date, price, signal, strategy, context, capital, pm, override_quantity)
 
     def _record_signal_rejection(self, date: datetime, symbol: str, signal_type: str,
                                  reason: str, available_capital: float,
@@ -815,10 +890,16 @@ class PortfolioEngine:
     def _open_position(self, symbol: str, date: datetime, price: float,
                        signal: Signal, strategy: BaseStrategy,
                        context: StrategyContext, capital: float,
-                       pm: PositionManager) -> float:
+                       pm: PositionManager,
+                       override_quantity: Optional[float] = None) -> float:
         """Open position with capital constraints."""
         fx_rate = self._get_fx_rate(symbol, date)
-        quantity = strategy.position_size(context, signal)
+
+        # Use override_quantity if provided (e.g., for reduced positions)
+        if override_quantity is not None:
+            quantity = override_quantity
+        else:
+            quantity = strategy.position_size(context, signal)
 
         if quantity <= 0:
             return capital

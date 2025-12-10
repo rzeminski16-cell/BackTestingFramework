@@ -545,6 +545,10 @@ class AlphaTrendStrategy(BaseStrategy):
         Formula: Position size = (Equity * Risk%) / (Stop Distance in Base Currency)
 
         Works with both percentage-based and ATR-based stop losses.
+
+        Note: This returns the IDEAL position size based on total equity.
+        The portfolio engine handles capital availability checks and may
+        reduce the position size or use vulnerability swaps if needed.
         """
         if signal.stop_loss is None:
             # Fallback to default sizing if no stop loss
@@ -565,14 +569,7 @@ class AlphaTrendStrategy(BaseStrategy):
         stop_distance_base = stop_distance * context.fx_rate
 
         # Calculate shares based on risk in base currency
+        # Capital availability is checked by the portfolio engine, not here
         shares = risk_amount / stop_distance_base
-
-        # Ensure we don't exceed available capital (in base currency)
-        # Account for commission: if commission is 0.1%, we can only use capital / 1.001
-        # Get commission rate from context (default to 0.1% if not available)
-        commission_rate = 0.001  # 0.1% - matches typical broker commission
-        max_affordable_value = context.available_capital / (1 + commission_rate)
-        max_shares = max_affordable_value / (context.current_price * context.fx_rate)
-        shares = min(shares, max_shares)
 
         return shares
