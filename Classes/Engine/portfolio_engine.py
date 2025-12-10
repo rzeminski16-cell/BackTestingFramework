@@ -425,6 +425,12 @@ class PortfolioEngine:
             current_price = current_prices[symbol]
             quantity = strategy.position_size(context, signal)
             if quantity <= 0:
+                # Record rejection instead of silently skipping
+                self._record_signal_rejection(
+                    current_date, symbol, "BUY",
+                    f"Position size calculation returned {quantity:.4f} (stop too tight or insufficient equity)",
+                    capital, 0.0
+                )
                 continue
             fx_rate = self._get_fx_rate(symbol, current_date)
             required_capital = quantity * current_price * fx_rate
