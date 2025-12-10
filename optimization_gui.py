@@ -637,26 +637,32 @@ class OptimizationGUI:
         if not self.selected_parameters:
             for param_name in strategy_config.keys():
                 self.selected_parameters[param_name] = True
+            # Initialize vulnerability score parameters (only for portfolio mode)
+            self.selected_parameters['_vuln_immunity_days'] = False
+            self.selected_parameters['_vuln_min_profit_threshold'] = False
+            self.selected_parameters['_vuln_decay_rate_fast'] = False
+            self.selected_parameters['_vuln_decay_rate_slow'] = False
+            self.selected_parameters['_vuln_swap_threshold'] = False
 
         # Create dialog window
         dialog = tk.Toplevel(self.root)
         dialog.title(f"Select Parameters to Optimize - {strategy_name}")
-        dialog.geometry("600x500")
+        dialog.geometry("700x650")
         dialog.transient(self.root)
         dialog.grab_set()
 
         # Title
         title_label = ttk.Label(
             dialog,
-            text="Select which parameters to optimize:",
-            font=('TkDefaultFont', 11, 'bold')
+            text="Select Parameters to Optimize",
+            font=('TkDefaultFont', 12, 'bold')
         )
         title_label.pack(pady=10)
 
         # Instructions
         instr_label = ttk.Label(
             dialog,
-            text="Checked = Optimize | Unchecked = Use default value",
+            text="✓ = Optimize | ✗ = Use default value",
             font=('TkDefaultFont', 9, 'italic')
         )
         instr_label.pack(pady=5)
@@ -682,88 +688,208 @@ class OptimizationGUI:
                 for param in strategy_config.keys()
             }
         except:
-            # If can't instantiate, use config mins as defaults
             default_params = {
                 param: spec.get('min', 0)
                 for param, spec in strategy_config.items()
             }
 
-        # Create checkboxes for each parameter
         param_vars = {}
 
-        for idx, (param_name, param_spec) in enumerate(strategy_config.items()):
-            frame = ttk.Frame(scrollable_frame)
-            frame.pack(fill=tk.X, padx=20, pady=5)
+        # Helper function to add a section header
+        def add_section_header(parent, text):
+            header_frame = ttk.Frame(parent)
+            header_frame.pack(fill=tk.X, padx=10, pady=(15, 5))
+            ttk.Separator(header_frame, orient='horizontal').pack(fill=tk.X, pady=(0, 5))
+            ttk.Label(header_frame, text=text, font=('TkDefaultFont', 10, 'bold'),
+                     foreground='#2E5994').pack(anchor=tk.W)
 
-            # Use existing selection state
+        # Helper function to add a parameter row
+        def add_param_row(parent, param_name, param_spec, default_val, display_name=None):
+            frame = ttk.Frame(parent)
+            frame.pack(fill=tk.X, padx=30, pady=3)
+
             var = tk.BooleanVar(value=self.selected_parameters.get(param_name, True))
             param_vars[param_name] = var
 
-            # Checkbox
             cb = ttk.Checkbutton(frame, variable=var, width=3)
             cb.pack(side=tk.LEFT)
 
-            # Parameter name and info
             param_type = param_spec.get('type', 'float')
             min_val = param_spec.get('min', 'N/A')
             max_val = param_spec.get('max', 'N/A')
-            default_val = default_params.get(param_name, 'N/A')
 
             if 'values' in param_spec:
-                range_str = f"Values: {param_spec['values']}"
+                range_str = f"Options: {param_spec['values']}"
             else:
                 if param_type == 'int':
-                    range_str = f"Range: {int(min_val)} to {int(max_val)}"
+                    range_str = f"Range: {int(min_val)} - {int(max_val)}"
                 else:
-                    range_str = f"Range: {min_val:.2f} to {max_val:.2f}"
+                    range_str = f"Range: {min_val:.2f} - {max_val:.2f}"
 
-            info_text = f"{param_name} ({param_type})\n  {range_str}, Default: {default_val}"
-
+            name = display_name or param_name
+            info_text = f"{name}  [{range_str}]  Default: {default_val}"
             label = ttk.Label(frame, text=info_text, font=('TkDefaultFont', 9))
             label.pack(side=tk.LEFT, padx=10)
+
+        # Categorize strategy parameters by type
+        entry_params = {}
+        exit_params = {}
+        indicator_params = {}
+        other_params = {}
+
+        for param_name, param_spec in strategy_config.items():
+            name_lower = param_name.lower()
+            if any(kw in name_lower for kw in ['entry', 'buy', 'signal']):
+                entry_params[param_name] = param_spec
+            elif any(kw in name_lower for kw in ['exit', 'sell', 'stop', 'take', 'trailing']):
+                exit_params[param_name] = param_spec
+            elif any(kw in name_lower for kw in ['period', 'length', 'lookback', 'window', 'multiplier', 'atr']):
+                indicator_params[param_name] = param_spec
+            else:
+                other_params[param_name] = param_spec
+
+        # --- STRATEGY PARAMETERS SECTION ---
+        add_section_header(scrollable_frame, "STRATEGY PARAMETERS")
+
+        # Indicator/Core parameters
+        if indicator_params:
+            ttk.Label(scrollable_frame, text="Indicator Settings:",
+                     font=('TkDefaultFont', 9, 'italic')).pack(anchor=tk.W, padx=20, pady=(10, 2))
+            for param_name, param_spec in indicator_params.items():
+                add_param_row(scrollable_frame, param_name, param_spec, default_params.get(param_name, 'N/A'))
+
+        # Entry parameters
+        if entry_params:
+            ttk.Label(scrollable_frame, text="Entry Settings:",
+                     font=('TkDefaultFont', 9, 'italic')).pack(anchor=tk.W, padx=20, pady=(10, 2))
+            for param_name, param_spec in entry_params.items():
+                add_param_row(scrollable_frame, param_name, param_spec, default_params.get(param_name, 'N/A'))
+
+        # Exit parameters
+        if exit_params:
+            ttk.Label(scrollable_frame, text="Exit Settings:",
+                     font=('TkDefaultFont', 9, 'italic')).pack(anchor=tk.W, padx=20, pady=(10, 2))
+            for param_name, param_spec in exit_params.items():
+                add_param_row(scrollable_frame, param_name, param_spec, default_params.get(param_name, 'N/A'))
+
+        # Other parameters
+        if other_params:
+            ttk.Label(scrollable_frame, text="Other Settings:",
+                     font=('TkDefaultFont', 9, 'italic')).pack(anchor=tk.W, padx=20, pady=(10, 2))
+            for param_name, param_spec in other_params.items():
+                add_param_row(scrollable_frame, param_name, param_spec, default_params.get(param_name, 'N/A'))
+
+        # --- VULNERABILITY SCORE PARAMETERS SECTION (Portfolio mode only) ---
+        mode = self.mode_var.get()
+        if mode == "portfolio" and self.contention_mode_var.get() == "vulnerability":
+            add_section_header(scrollable_frame, "VULNERABILITY SCORE PARAMETERS (Portfolio Only)")
+
+            ttk.Label(scrollable_frame, text="These parameters control position swapping when capital is limited:",
+                     font=('TkDefaultFont', 8, 'italic'), foreground='gray').pack(anchor=tk.W, padx=20, pady=(5, 10))
+
+            vuln_params = {
+                '_vuln_immunity_days': {'type': 'int', 'min': 1, 'max': 30},
+                '_vuln_min_profit_threshold': {'type': 'float', 'min': 0.0, 'max': 0.10},
+                '_vuln_decay_rate_fast': {'type': 'float', 'min': 1.0, 'max': 15.0},
+                '_vuln_decay_rate_slow': {'type': 'float', 'min': 0.1, 'max': 5.0},
+                '_vuln_swap_threshold': {'type': 'float', 'min': 20.0, 'max': 80.0},
+            }
+            vuln_defaults = {
+                '_vuln_immunity_days': self.vulnerability_config.immunity_days,
+                '_vuln_min_profit_threshold': self.vulnerability_config.min_profit_threshold,
+                '_vuln_decay_rate_fast': self.vulnerability_config.decay_rate_fast,
+                '_vuln_decay_rate_slow': self.vulnerability_config.decay_rate_slow,
+                '_vuln_swap_threshold': self.vulnerability_config.swap_threshold,
+            }
+            vuln_display_names = {
+                '_vuln_immunity_days': 'Immunity Days',
+                '_vuln_min_profit_threshold': 'Min Profit Threshold',
+                '_vuln_decay_rate_fast': 'Fast Decay Rate',
+                '_vuln_decay_rate_slow': 'Slow Decay Rate',
+                '_vuln_swap_threshold': 'Swap Threshold',
+            }
+
+            for param_name, param_spec in vuln_params.items():
+                add_param_row(scrollable_frame, param_name, param_spec,
+                            vuln_defaults.get(param_name, 'N/A'),
+                            vuln_display_names.get(param_name))
 
         canvas.pack(side="left", fill="both", expand=True, padx=10, pady=10)
         scrollbar.pack(side="right", fill="y", pady=10)
 
-        # Buttons
+        # --- BUTTONS ---
         button_frame = ttk.Frame(dialog)
         button_frame.pack(pady=10)
 
-        def select_all():
-            for var in param_vars.values():
-                var.set(True)
+        def select_all_strategy():
+            for name, var in param_vars.items():
+                if not name.startswith('_vuln_'):
+                    var.set(True)
 
-        def deselect_all():
-            for var in param_vars.values():
-                var.set(False)
+        def deselect_all_strategy():
+            for name, var in param_vars.items():
+                if not name.startswith('_vuln_'):
+                    var.set(False)
+
+        def select_all_vuln():
+            for name, var in param_vars.items():
+                if name.startswith('_vuln_'):
+                    var.set(True)
+
+        def deselect_all_vuln():
+            for name, var in param_vars.items():
+                if name.startswith('_vuln_'):
+                    var.set(False)
+
+        # Strategy param buttons
+        strategy_btn_frame = ttk.Frame(button_frame)
+        strategy_btn_frame.pack(pady=5)
+        ttk.Label(strategy_btn_frame, text="Strategy:").pack(side=tk.LEFT, padx=5)
+        ttk.Button(strategy_btn_frame, text="Select All", command=select_all_strategy).pack(side=tk.LEFT, padx=2)
+        ttk.Button(strategy_btn_frame, text="Deselect All", command=deselect_all_strategy).pack(side=tk.LEFT, padx=2)
+
+        # Vulnerability param buttons (only if shown)
+        if mode == "portfolio" and self.contention_mode_var.get() == "vulnerability":
+            vuln_btn_frame = ttk.Frame(button_frame)
+            vuln_btn_frame.pack(pady=5)
+            ttk.Label(vuln_btn_frame, text="Vulnerability:").pack(side=tk.LEFT, padx=5)
+            ttk.Button(vuln_btn_frame, text="Select All", command=select_all_vuln).pack(side=tk.LEFT, padx=2)
+            ttk.Button(vuln_btn_frame, text="Deselect All", command=deselect_all_vuln).pack(side=tk.LEFT, padx=2)
+
+        # Save/Cancel buttons
+        action_frame = ttk.Frame(button_frame)
+        action_frame.pack(pady=10)
 
         def save_and_close():
-            # Save selections
             for param_name, var in param_vars.items():
                 self.selected_parameters[param_name] = var.get()
 
-            # Count selected
-            num_selected = sum(self.selected_parameters.values())
-            num_total = len(self.selected_parameters)
+            # Count selected (excluding vulnerability params from main count)
+            strategy_selected = sum(1 for k, v in self.selected_parameters.items()
+                                   if v and not k.startswith('_vuln_'))
+            strategy_total = sum(1 for k in self.selected_parameters.keys()
+                                if not k.startswith('_vuln_'))
+            vuln_selected = sum(1 for k, v in self.selected_parameters.items()
+                               if v and k.startswith('_vuln_'))
 
-            # Update status label
-            if num_selected == num_total:
-                self.param_status_label.config(text="(All parameters will be optimized)")
-            elif num_selected == 0:
-                self.param_status_label.config(text="(No parameters selected - using all defaults)")
+            if strategy_selected == strategy_total:
+                status_text = "(All strategy params optimized"
+            elif strategy_selected == 0:
+                status_text = "(No strategy params"
             else:
-                num_fixed = num_total - num_selected
-                self.param_status_label.config(
-                    text=f"(Optimizing {num_selected} params, fixing {num_fixed} at defaults)"
-                )
+                status_text = f"({strategy_selected}/{strategy_total} strategy params"
 
-            self.log_message(f"Parameter selection updated: {num_selected}/{num_total} parameters selected for optimization")
+            if vuln_selected > 0:
+                status_text += f", {vuln_selected} vuln params)"
+            else:
+                status_text += ")"
+
+            self.param_status_label.config(text=status_text)
+            self.log_message(f"Parameter selection updated: {strategy_selected}/{strategy_total} strategy + {vuln_selected} vulnerability")
             dialog.destroy()
 
-        ttk.Button(button_frame, text="Select All", command=select_all).pack(side=tk.LEFT, padx=5)
-        ttk.Button(button_frame, text="Deselect All", command=deselect_all).pack(side=tk.LEFT, padx=5)
-        ttk.Button(button_frame, text="Save", command=save_and_close).pack(side=tk.LEFT, padx=5)
-        ttk.Button(button_frame, text="Cancel", command=dialog.destroy).pack(side=tk.LEFT, padx=5)
+        ttk.Button(action_frame, text="Save", command=save_and_close).pack(side=tk.LEFT, padx=5)
+        ttk.Button(action_frame, text="Cancel", command=dialog.destroy).pack(side=tk.LEFT, padx=5)
 
     def log_message(self, message: str):
         """Log a message to the results text area."""
@@ -915,6 +1041,8 @@ class OptimizationGUI:
 
             # Log mode
             self.log_message(f"\nOptimization Mode: {mode.upper()}")
+
+            # Portfolio mode: Run combined optimization
             if mode == "portfolio":
                 self.log_message(f"Capital Contention: {self.capital_contention_config.mode.value}")
                 if self.capital_contention_config.mode == CapitalContentionMode.VULNERABILITY_SCORE:
@@ -922,8 +1050,79 @@ class OptimizationGUI:
                     self.log_message(f"  - Immunity Days: {vc.immunity_days}")
                     self.log_message(f"  - Swap Threshold: {vc.swap_threshold}")
                 self.log_message(f"\n*** PORTFOLIO OPTIMIZATION: {len(securities)} securities ***")
-                self.log_message("Optimizing parameters for each security in the portfolio.")
-                self.log_message("A COMBINED report will show aggregated results and parameter consistency.\n")
+                self.log_message("Optimizing parameters for COMBINED portfolio performance with shared capital.\n")
+
+                # Load data for all securities
+                data_dict = {}
+                for symbol in securities:
+                    self.log_message(f"Loading data for {symbol}...")
+                    try:
+                        data = self.data_loader.load_csv(symbol)
+                        data_dict[symbol] = data
+                        self.log_message(f"  Loaded {len(data)} bars")
+                    except Exception as e:
+                        self.log_message(f"  ERROR: {e}")
+                        continue
+
+                if len(data_dict) < 2:
+                    self.log_message("ERROR: Need at least 2 securities with valid data for portfolio optimization")
+                    return
+
+                # Run portfolio optimization
+                self.log_message("\nStarting portfolio walk-forward optimization...")
+                try:
+                    wf_results = self.optimizer.optimize_portfolio(
+                        strategy_class=strategy_class,
+                        data_dict=data_dict,
+                        capital_contention=self.capital_contention_config,
+                        initial_capital=100000.0,
+                        selected_params=self.selected_parameters if self.selected_parameters else None,
+                        progress_callback=lambda stage, curr, total: self.root.after(
+                            0, self.update_progress, stage, curr, total
+                        ),
+                        walk_forward_mode=walk_forward_mode
+                    )
+
+                    # Display results
+                    self.log_message("\n" + "=" * 60)
+                    self.log_message("PORTFOLIO WALK-FORWARD OPTIMIZATION RESULTS")
+                    self.log_message("=" * 60)
+                    self.log_message(f"Total Windows: {wf_results.total_windows}")
+                    self.log_message(f"Windows Passed Constraints: {wf_results.windows_passed_constraints}")
+                    self.log_message(f"Success Rate: {wf_results.windows_passed_constraints / wf_results.total_windows * 100:.1f}%")
+                    self.log_message(f"\nAvg In-Sample Sortino: {wf_results.avg_in_sample_sortino:.4f}")
+                    self.log_message(f"Avg Out-Sample Sortino: {wf_results.avg_out_sample_sortino:.4f}")
+                    self.log_message(f"Sortino Degradation: {wf_results.avg_sortino_degradation_pct:.2f}%")
+                    self.log_message(f"\nAvg In-Sample Sharpe: {wf_results.avg_in_sample_sharpe:.4f}")
+                    self.log_message(f"Avg Out-Sample Sharpe: {wf_results.avg_out_sample_sharpe:.4f}")
+                    self.log_message(f"Sharpe Degradation: {wf_results.avg_sharpe_degradation_pct:.2f}%")
+
+                    self.log_message("\nRecommended Parameters:")
+                    for param_name, param_value in wf_results.most_common_params.items():
+                        min_val, max_val = wf_results.parameter_ranges[param_name]
+                        self.log_message(f"  {param_name}: {param_value:.4f} (range: {min_val:.2f} - {max_val:.2f})")
+
+                    # Generate report
+                    self.log_message("\n\nGenerating portfolio optimization report...")
+                    report_path = self.report_generator.generate_report(
+                        wf_results=wf_results,
+                        sensitivity_results=None  # Skip sensitivity for portfolio for now
+                    )
+                    self.log_message(f"Report saved to: {report_path}")
+
+                except Exception as e:
+                    self.log_message(f"ERROR during portfolio optimization: {e}")
+                    logger.exception("Portfolio optimization failed")
+
+                self.log_message(f"\n\n{'=' * 60}")
+                self.log_message("PORTFOLIO OPTIMIZATION COMPLETE")
+                self.log_message(f"{'=' * 60}")
+                messagebox.showinfo("Complete", "Portfolio optimization completed!")
+                return
+
+            # Single mode: existing per-security optimization
+            all_wf_results = {}
+            all_sensitivity_results = {}
 
             for sec_idx, symbol in enumerate(securities):
                 if not self.is_running:

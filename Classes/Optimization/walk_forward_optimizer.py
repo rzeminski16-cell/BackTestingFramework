@@ -31,8 +31,10 @@ from skopt.space import Integer, Real
 from skopt.utils import use_named_args
 
 from Classes.Analysis.performance_metrics import PerformanceMetrics
-from Classes.Config.config import BacktestConfig
+from Classes.Config.config import BacktestConfig, PortfolioConfig, CommissionConfig
+from Classes.Config.capital_contention import CapitalContentionConfig, CapitalContentionMode, VulnerabilityScoreConfig
 from Classes.Engine.single_security_engine import SingleSecurityEngine
+from Classes.Engine.portfolio_engine import PortfolioEngine, PortfolioBacktestResult
 from Classes.Models.trade import Trade
 from Classes.Strategy.base_strategy import BaseStrategy
 
@@ -886,3 +888,353 @@ class WalkForwardOptimizer:
 
         logger.info(f"Walk-forward optimization complete. {len(window_results)} windows processed.")
         return results
+
+    def optimize_portfolio(self,
+                          strategy_class: Type[BaseStrategy],
+                          data_dict: Dict[str, pd.DataFrame],
+                          capital_contention: Optional[CapitalContentionConfig] = None,
+                          initial_capital: float = 100000.0,
+                          selected_params: Optional[Dict[str, bool]] = None,
+                          progress_callback: Optional[Callable[[str, int, int], None]] = None,
+                          walk_forward_mode: Optional[WalkForwardMode] = None) -> WalkForwardResults:
+        """
+        Run walk-forward optimization for a portfolio of securities.
+
+        Unlike single-security optimization, this optimizes parameters for the
+        combined portfolio performance with shared capital.
+
+        Args:
+            strategy_class: Strategy class to optimize
+            data_dict: Dict mapping symbol to historical price data
+            capital_contention: Capital contention configuration for portfolio
+            initial_capital: Initial capital for portfolio
+            selected_params: Dict of {param_name: bool} indicating which parameters to optimize
+            progress_callback: Callback(stage_name, current, total)
+            walk_forward_mode: Walk-forward mode (ROLLING or ANCHORED)
+
+        Returns:
+            WalkForwardResults with combined portfolio optimization results
+        """
+        symbols = list(data_dict.keys())
+        mode_desc = walk_forward_mode.value if walk_forward_mode else "config default"
+        logger.info(f"Starting PORTFOLIO walk-forward optimization for {strategy_class.__name__} "
+                   f"on {len(symbols)} securities (mode: {mode_desc})")
+
+        # Reset cancellation flag
+        self.should_cancel = False
+
+        # Use default capital contention if not specified
+        if capital_contention is None:
+            capital_contention = CapitalContentionConfig.default_mode()
+
+        # Load constraints
+        constraint_config = self.config['optimization']['constraints']
+        constraints = OptimizationConstraints(
+            min_profit_factor=constraint_config['min_profit_factor'],
+            max_drawdown_percent=constraint_config['max_drawdown_percent'],
+            min_trades_per_year=constraint_config['min_trades_per_year']
+        )
+
+        # Find common date range across all securities
+        min_date = max(df['date'].min() for df in data_dict.values())
+        max_date = min(df['date'].max() for df in data_dict.values())
+
+        # Create combined data for window splitting (use any security for dates)
+        reference_data = list(data_dict.values())[0]
+        reference_data = reference_data[(reference_data['date'] >= min_date) &
+                                        (reference_data['date'] <= max_date)].copy()
+
+        if progress_callback:
+            progress_callback("Splitting data into windows", 0, 1)
+
+        windows = self._split_into_windows(reference_data, mode=walk_forward_mode)
+
+        if len(windows) == 0:
+            raise ValueError("Not enough data to create walk-forward windows")
+
+        # Optimize each window
+        window_results = []
+        _, param_names, fixed_params = self._get_parameter_space(strategy_class, selected_params)
+        all_param_names = list(param_names) + list(fixed_params.keys())
+        all_params = {param: [] for param in all_param_names}
+
+        for window_id, (train_ref, test_ref) in enumerate(windows):
+            if self.should_cancel:
+                logger.info("Optimization cancelled by user")
+                break
+
+            logger.info(f"Processing portfolio window {window_id + 1}/{len(windows)}")
+
+            if progress_callback:
+                progress_callback(f"Optimizing window {window_id + 1}/{len(windows)}",
+                                window_id, len(windows))
+
+            # Get train/test date ranges
+            train_start = train_ref['date'].min()
+            train_end = train_ref['date'].max()
+            test_start = test_ref['date'].min()
+            test_end = test_ref['date'].max()
+
+            # Split all securities' data for this window
+            train_data_dict = {}
+            test_data_dict = {}
+            for symbol, df in data_dict.items():
+                train_data_dict[symbol] = df[(df['date'] >= train_start) &
+                                             (df['date'] <= train_end)].copy()
+                test_data_dict[symbol] = df[(df['date'] >= test_start) &
+                                            (df['date'] <= test_end)].copy()
+
+            try:
+                # Optimize on training data using portfolio
+                def window_progress(current, total):
+                    if progress_callback:
+                        progress_callback(
+                            f"Window {window_id + 1}/{len(windows)} - Iteration {current}/{total}",
+                            current, total
+                        )
+
+                best_params = self._optimize_portfolio_window(
+                    strategy_class, train_data_dict, constraints,
+                    capital_contention, initial_capital, selected_params, window_progress
+                )
+            except Exception as e:
+                logger.error(f"Error optimizing portfolio window {window_id + 1}: {e}")
+                logger.exception("Portfolio window optimization failed")
+                continue
+
+            # Track parameter values
+            for param_name, param_value in best_params.items():
+                all_params[param_name].append(param_value)
+
+            # Evaluate on training data (in-sample)
+            in_sample_metrics = self._backtest_portfolio_with_params(
+                strategy_class, best_params, train_data_dict,
+                capital_contention, initial_capital
+            )
+
+            # Evaluate on testing data (out-of-sample)
+            out_sample_metrics = self._backtest_portfolio_with_params(
+                strategy_class, best_params, test_data_dict,
+                capital_contention, initial_capital
+            )
+
+            # Calculate degradation
+            in_sortino = in_sample_metrics.get('sortino_ratio', 0.0)
+            out_sortino = out_sample_metrics.get('sortino_ratio', 0.0)
+            sortino_degradation = self._calculate_degradation(in_sortino, out_sortino)
+
+            in_sharpe = in_sample_metrics.get('sharpe_ratio', 0.0)
+            out_sharpe = out_sample_metrics.get('sharpe_ratio', 0.0)
+            sharpe_degradation = self._calculate_degradation(in_sharpe, out_sharpe)
+
+            # Create window result
+            window_result = WindowResult(
+                window_id=window_id,
+                train_start=train_start,
+                train_end=train_end,
+                test_start=test_start,
+                test_end=test_end,
+                best_params=best_params,
+                in_sample_sortino=in_sortino,
+                in_sample_sharpe=in_sharpe,
+                in_sample_profit_factor=in_sample_metrics.get('profit_factor', 0.0),
+                in_sample_max_drawdown_pct=in_sample_metrics.get('max_drawdown_pct', 0.0),
+                in_sample_num_trades=in_sample_metrics.get('num_trades', 0),
+                in_sample_total_return_pct=in_sample_metrics.get('total_return_pct', 0.0),
+                in_sample_calmar=in_sample_metrics.get('calmar_ratio', 0.0),
+                out_sample_sortino=out_sortino,
+                out_sample_sharpe=out_sharpe,
+                out_sample_profit_factor=out_sample_metrics.get('profit_factor', 0.0),
+                out_sample_max_drawdown_pct=out_sample_metrics.get('max_drawdown_pct', 0.0),
+                out_sample_num_trades=out_sample_metrics.get('num_trades', 0),
+                out_sample_total_return_pct=out_sample_metrics.get('total_return_pct', 0.0),
+                out_sample_calmar=out_sample_metrics.get('calmar_ratio', 0.0),
+                sortino_degradation_pct=sortino_degradation,
+                sharpe_degradation_pct=sharpe_degradation
+            )
+            window_results.append(window_result)
+
+        if not window_results:
+            raise ValueError("No windows completed successfully")
+
+        # Calculate aggregate statistics
+        avg_in_sortino = np.mean([w.in_sample_sortino for w in window_results])
+        avg_out_sortino = np.mean([w.out_sample_sortino for w in window_results])
+        avg_sortino_degradation = np.mean([w.sortino_degradation_pct for w in window_results])
+
+        avg_in_sharpe = np.mean([w.in_sample_sharpe for w in window_results])
+        avg_out_sharpe = np.mean([w.out_sample_sharpe for w in window_results])
+        avg_sharpe_degradation = np.mean([w.sharpe_degradation_pct for w in window_results])
+
+        # Analyze parameter stability
+        parameter_ranges = {}
+        parameter_std = {}
+        most_common_params = {}
+
+        for param_name, values in all_params.items():
+            if len(values) > 0:
+                parameter_ranges[param_name] = (min(values), max(values))
+                parameter_std[param_name] = np.std(values)
+                most_common_params[param_name] = np.median(values)
+
+        # Count windows that passed constraints
+        windows_passed = sum(1 for w in window_results
+                           if w.out_sample_profit_factor >= constraints.min_profit_factor
+                           and w.out_sample_max_drawdown_pct <= constraints.max_drawdown_percent)
+
+        results = WalkForwardResults(
+            strategy_name=strategy_class.__name__,
+            symbol=f"PORTFOLIO({','.join(symbols)})",
+            windows=window_results,
+            avg_in_sample_sortino=avg_in_sortino,
+            avg_out_sample_sortino=avg_out_sortino,
+            avg_sortino_degradation_pct=avg_sortino_degradation,
+            avg_in_sample_sharpe=avg_in_sharpe,
+            avg_out_sample_sharpe=avg_out_sharpe,
+            avg_sharpe_degradation_pct=avg_sharpe_degradation,
+            parameter_ranges=parameter_ranges,
+            parameter_std=parameter_std,
+            most_common_params=most_common_params,
+            windows_passed_constraints=windows_passed,
+            total_windows=len(window_results)
+        )
+
+        logger.info(f"Portfolio walk-forward optimization complete. {len(window_results)} windows processed.")
+        return results
+
+    def _optimize_portfolio_window(self,
+                                   strategy_class: Type[BaseStrategy],
+                                   data_dict: Dict[str, pd.DataFrame],
+                                   constraints: OptimizationConstraints,
+                                   capital_contention: CapitalContentionConfig,
+                                   initial_capital: float,
+                                   selected_params: Optional[Dict[str, bool]] = None,
+                                   progress_callback: Optional[Callable[[int, int], None]] = None) -> Dict[str, Any]:
+        """
+        Optimize parameters for a single window using portfolio backtesting.
+
+        Uses Bayesian optimization with the same approach as single-security,
+        but evaluates the objective using combined portfolio performance.
+        """
+        # Get parameter space
+        space, param_names, fixed_params = self._get_parameter_space(strategy_class, selected_params)
+
+        if len(space) == 0:
+            return fixed_params
+
+        # Get Bayesian settings
+        bayes_config = self.config['bayesian_optimization']
+        speed_mode = bayes_config.get('speed_mode', 'full')
+
+        if speed_mode == 'quick':
+            n_calls = 25
+            n_random = 8
+        elif speed_mode == 'fast':
+            n_calls = 50
+            n_random = 15
+        else:
+            n_calls = 100
+            n_random = 30
+
+        # Track progress
+        iteration = [0]
+
+        @use_named_args(space)
+        def objective(**params):
+            iteration[0] += 1
+
+            if self.should_cancel:
+                return 0.0
+
+            if progress_callback:
+                progress_callback(iteration[0], n_calls)
+
+            # Combine with fixed params
+            all_params = {**fixed_params, **params}
+
+            try:
+                metrics = self._backtest_portfolio_with_params(
+                    strategy_class, all_params, data_dict,
+                    capital_contention, initial_capital
+                )
+            except Exception as e:
+                logger.warning(f"Backtest failed with params {all_params}: {e}")
+                return 0.0
+
+            # Calculate penalty for constraint violations
+            penalty = self._calculate_constraint_penalty(metrics, constraints)
+
+            # Objective: maximize Sortino (minimize negative Sortino)
+            sortino = metrics.get('sortino_ratio', 0.0)
+            objective_value = -sortino + penalty
+
+            return objective_value
+
+        try:
+            result = gp_minimize(
+                objective,
+                space,
+                n_calls=n_calls,
+                n_initial_points=n_random,
+                random_state=42,
+                n_jobs=1
+            )
+
+            # Extract best parameters
+            best_params = {name: value for name, value in zip(param_names, result.x)}
+            best_params.update(fixed_params)
+
+            return best_params
+
+        except Exception as e:
+            logger.error(f"Portfolio window optimization failed: {e}")
+            default_params = {}
+            for dim in space:
+                if hasattr(dim, 'bounds'):
+                    default_params[dim.name] = (dim.bounds[0] + dim.bounds[1]) / 2
+                else:
+                    default_params[dim.name] = dim.categories[0]
+            default_params.update(fixed_params)
+            return default_params
+
+    def _backtest_portfolio_with_params(self,
+                                        strategy_class: Type[BaseStrategy],
+                                        params: Dict[str, Any],
+                                        data_dict: Dict[str, pd.DataFrame],
+                                        capital_contention: CapitalContentionConfig,
+                                        initial_capital: float) -> Dict[str, Any]:
+        """Run portfolio backtest with given parameters and return metrics."""
+        strategy = strategy_class(**params)
+
+        config = PortfolioConfig(
+            initial_capital=initial_capital,
+            commission=CommissionConfig(),
+            capital_contention=capital_contention
+        )
+
+        engine = PortfolioEngine(config=config)
+        result = engine.run(data_dict, strategy)
+
+        # Calculate metrics from portfolio result
+        all_trades = []
+        for sym_result in result.symbol_results.values():
+            all_trades.extend(sym_result.trades)
+
+        metrics = PerformanceMetrics.calculate_from_trades(all_trades, initial_capital)
+
+        # Add portfolio-specific metrics
+        metrics['total_return'] = result.total_return
+        metrics['total_return_pct'] = result.total_return_pct
+        metrics['final_equity'] = result.final_equity
+        metrics['num_swaps'] = len(result.vulnerability_swaps)
+        metrics['num_rejections'] = len(result.signal_rejections)
+
+        # Calculate Sharpe and Sortino from equity curve if available
+        if not result.portfolio_equity_curve.empty:
+            metrics['sharpe_ratio'] = PerformanceMetrics.calculate_sharpe_ratio(result.portfolio_equity_curve)
+            metrics['sortino_ratio'] = PerformanceMetrics.calculate_sortino_ratio(result.portfolio_equity_curve)
+            max_dd, max_dd_pct = PerformanceMetrics.calculate_max_drawdown(result.portfolio_equity_curve)
+            metrics['max_drawdown'] = max_dd
+            metrics['max_drawdown_pct'] = max_dd_pct
+
+        return metrics
