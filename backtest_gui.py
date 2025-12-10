@@ -7,25 +7,22 @@ Features:
 - Select securities (single or multiple with Select All button)
 - Choose backtest mode:
   * Single Security: Test one security at a time
-  * Batch (Individual Tests): Run separate backtests on multiple securities
+  * Portfolio: Run backtests on multiple securities with shared capital
 - Select and configure strategies
-- Configure commission settings
+- Configure commission settings (percentage or fixed)
+- Configure capital contention settings for portfolio mode
+- Create and manage baskets of securities
 - Set date ranges
 - Name backtests
 - View results with detailed metrics
-- Generate Excel reports:
-  * Single mode: Individual report per security
-  * Batch mode: Individual reports + comprehensive summary report with correlation analysis
+- Generate Excel reports
 - Save trade logs
 
-Batch Mode Reporting:
-- Creates organized folder structure: batch_reports/individual/ for each security
-- Generates batch summary report with:
-  * Aggregate performance across all securities
-  * Correlation analysis (returns, drawdowns)
-  * Comparative performance metrics
-  * Risk analysis
-  * Visual comparisons
+Portfolio Mode Features:
+- Shared capital across all securities
+- Capital contention handling (Default or Vulnerability Score mode)
+- Basket management for quick security group selection
+- Portfolio-level performance reporting
 """
 
 import tkinter as tk
@@ -34,22 +31,28 @@ from pathlib import Path
 from datetime import datetime
 from typing import Dict, List, Any, Optional
 import json
+import yaml
 
 from Classes.Config.config import (
     BacktestConfig, PortfolioConfig, CommissionConfig,
     CommissionMode, OptimizationConfig
 )
 from Classes.Config.strategy_preset import StrategyParameterPreset
+from Classes.Config.basket import Basket, BasketManager
+from Classes.Config.capital_contention import (
+    CapitalContentionConfig, CapitalContentionMode, VulnerabilityScoreConfig
+)
 from Classes.Data.data_loader import DataLoader
 from Classes.Data.security_registry import SecurityRegistry
 from Classes.Data.currency_converter import CurrencyConverter
 from Classes.Engine.single_security_engine import SingleSecurityEngine
-from Classes.Engine.portfolio_engine import PortfolioEngine
-from Classes.Analysis.trade_logger import TradeLogger
+from Classes.Engine.portfolio_engine import PortfolioEngine, PortfolioBacktestResult
+from Classes.Analysis.trade_logger import TradeLogger, PortfolioTradeLogger, LoggingPath
 from Classes.Analysis.performance_metrics import PerformanceMetrics
 from Classes.Analysis.excel_report_generator import ExcelReportGenerator
-from Classes.Analysis.batch_summary_report import BatchSummaryReportGenerator
+from Classes.Analysis.portfolio_report_generator import PortfolioReportGenerator
 from Classes.Optimization.optimizer import StrategyOptimizer
+from Classes.GUI.basket_manager_dialog import BasketManagerDialog, VulnerabilityScoreConfigDialog
 
 # Import available strategies
 from strategies.alphatrend_strategy import AlphaTrendStrategy
@@ -87,8 +90,30 @@ class BacktestGUI:
         # Strategy preset manager
         self.preset_manager = StrategyParameterPreset()
 
+        # Basket manager
+        self.basket_manager = BasketManager()
+        self.selected_basket: Optional[Basket] = None
+
+        # Capital contention configuration
+        self.capital_contention_config = CapitalContentionConfig.default_mode()
+        self.vulnerability_config = VulnerabilityScoreConfig()
+
+        # Load parameter configuration from optimization config
+        self.param_config = self._load_param_config()
+
         # Create GUI components
         self.create_widgets()
+
+    def _load_param_config(self) -> Dict[str, Any]:
+        """Load parameter configuration from optimization config file."""
+        config_path = Path("config/optimization_config.yaml")
+        try:
+            with open(config_path, 'r') as f:
+                config = yaml.safe_load(f)
+                return config.get('strategy_parameters', {})
+        except Exception as e:
+            print(f"Warning: Could not load parameter config: {e}")
+            return {}
 
     def create_widgets(self):
         """Create all GUI widgets."""
@@ -122,7 +147,7 @@ class BacktestGUI:
         mode_frame.grid(row=row, column=1, sticky=tk.W, pady=5)
         ttk.Radiobutton(mode_frame, text="Single Security", variable=self.mode_var,
                        value="single", command=self.on_mode_change).pack(side=tk.LEFT, padx=5)
-        ttk.Radiobutton(mode_frame, text="Batch (Individual Tests)", variable=self.mode_var,
+        ttk.Radiobutton(mode_frame, text="Portfolio", variable=self.mode_var,
                        value="portfolio", command=self.on_mode_change).pack(side=tk.LEFT, padx=5)
         row += 1
 
@@ -254,30 +279,44 @@ class BacktestGUI:
         row += 1
 
         # Portfolio-specific settings (initially hidden)
-        self.portfolio_frame = ttk.LabelFrame(config_frame, text="Portfolio Settings", padding="5")
+        self.portfolio_frame = ttk.LabelFrame(config_frame, text="Portfolio/Basket Settings", padding="5")
         self.portfolio_frame.grid(row=row, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=10)
         self.portfolio_frame.grid_remove()  # Hide initially
 
-        # Max Positions
-        ttk.Label(self.portfolio_frame, text="Max Positions:").grid(row=0, column=0, sticky=tk.W, pady=2)
-        self.max_positions_var = tk.StringVar(value="3")
-        ttk.Entry(self.portfolio_frame, textvariable=self.max_positions_var, width=10).grid(
-            row=0, column=1, sticky=tk.W, pady=2
-        )
+        # Basket Selection
+        basket_row = 0
+        ttk.Label(self.portfolio_frame, text="Basket:").grid(row=basket_row, column=0, sticky=tk.W, pady=2)
+        basket_select_frame = ttk.Frame(self.portfolio_frame)
+        basket_select_frame.grid(row=basket_row, column=1, sticky=tk.W, pady=2)
 
-        # Position Size Limit
-        ttk.Label(self.portfolio_frame, text="Position Size Limit:").grid(row=1, column=0, sticky=tk.W, pady=2)
-        self.position_limit_var = tk.StringVar(value="0.3")
-        ttk.Entry(self.portfolio_frame, textvariable=self.position_limit_var, width=10).grid(
-            row=1, column=1, sticky=tk.W, pady=2
-        )
+        self.basket_var = tk.StringVar(value="(Select securities manually)")
+        self.basket_combo = ttk.Combobox(basket_select_frame, textvariable=self.basket_var, width=20, state='readonly')
+        self.basket_combo.pack(side=tk.LEFT, padx=(0, 5))
+        self._refresh_basket_list()
+        self.basket_combo.bind('<<ComboboxSelected>>', self._on_basket_selected)
 
-        # Total Allocation Limit
-        ttk.Label(self.portfolio_frame, text="Total Allocation Limit:").grid(row=2, column=0, sticky=tk.W, pady=2)
-        self.total_allocation_var = tk.StringVar(value="0.9")
-        ttk.Entry(self.portfolio_frame, textvariable=self.total_allocation_var, width=10).grid(
-            row=2, column=1, sticky=tk.W, pady=2
-        )
+        ttk.Button(basket_select_frame, text="Manage...", command=self._open_basket_manager).pack(side=tk.LEFT)
+        basket_row += 1
+
+        # Capital Contention Mode
+        ttk.Label(self.portfolio_frame, text="Capital Contention:").grid(row=basket_row, column=0, sticky=tk.W, pady=2)
+        contention_frame = ttk.Frame(self.portfolio_frame)
+        contention_frame.grid(row=basket_row, column=1, sticky=tk.W, pady=2)
+
+        self.contention_mode_var = tk.StringVar(value="default")
+        ttk.Radiobutton(contention_frame, text="Default (Ignore)",
+                       variable=self.contention_mode_var, value="default",
+                       command=self._on_contention_mode_change).pack(side=tk.LEFT, padx=2)
+        ttk.Radiobutton(contention_frame, text="Vulnerability Score",
+                       variable=self.contention_mode_var, value="vulnerability",
+                       command=self._on_contention_mode_change).pack(side=tk.LEFT, padx=2)
+        basket_row += 1
+
+        # Vulnerability Score Config Button (shown when vulnerability mode selected)
+        self.vuln_config_btn = ttk.Button(self.portfolio_frame, text="Configure Vulnerability Score...",
+                                         command=self._open_vulnerability_config)
+        self.vuln_config_btn.grid(row=basket_row, column=0, columnspan=2, pady=5)
+        self.vuln_config_btn.grid_remove()  # Hide initially
 
         row += 1
 
@@ -329,14 +368,89 @@ class BacktestGUI:
         """Handle backtest mode change."""
         mode = self.mode_var.get()
         if mode == "portfolio":
-            # Batch mode: multiple securities, individual tests
-            # No portfolio-specific settings needed
-            self.portfolio_frame.grid_remove()
+            # Portfolio/Basket mode: show portfolio settings
+            self.portfolio_frame.grid()
             self.securities_listbox.config(selectmode=tk.MULTIPLE)
         else:
             # Single mode
             self.portfolio_frame.grid_remove()
             self.securities_listbox.config(selectmode=tk.SINGLE)
+
+    def _refresh_basket_list(self):
+        """Refresh the basket dropdown list."""
+        baskets = self.basket_manager.list_baskets()
+        values = ["(Select securities manually)"] + baskets
+        self.basket_combo['values'] = values
+
+    def _on_basket_selected(self, event):
+        """Handle basket selection from dropdown."""
+        basket_name = self.basket_var.get()
+        if basket_name == "(Select securities manually)":
+            self.selected_basket = None
+            return
+
+        basket = self.basket_manager.load(basket_name)
+        if basket:
+            self.selected_basket = basket
+            # Update securities listbox to show basket securities
+            self.securities_listbox.selection_clear(0, tk.END)
+            for i, symbol in enumerate(self.securities_listbox.get(0, tk.END)):
+                if symbol in basket.securities:
+                    self.securities_listbox.selection_set(i)
+
+            # Load basket's default capital contention if set
+            if basket.default_capital_contention:
+                if basket.default_capital_contention.mode == CapitalContentionMode.VULNERABILITY_SCORE:
+                    self.contention_mode_var.set("vulnerability")
+                    self.vulnerability_config = basket.default_capital_contention.vulnerability_config
+                else:
+                    self.contention_mode_var.set("default")
+                self._on_contention_mode_change()
+
+    def _open_basket_manager(self):
+        """Open the basket manager dialog."""
+        def on_basket_selected(basket):
+            if basket:
+                self.selected_basket = basket
+                self._refresh_basket_list()
+                # Select the new basket in dropdown
+                self.basket_var.set(basket.name)
+                # Update securities listbox
+                self._on_basket_selected(None)
+
+        BasketManagerDialog(
+            self.root,
+            self.available_securities,
+            on_basket_selected=on_basket_selected
+        )
+
+    def _on_contention_mode_change(self):
+        """Handle capital contention mode change."""
+        mode = self.contention_mode_var.get()
+        if mode == "vulnerability":
+            self.vuln_config_btn.grid()
+            self.capital_contention_config = CapitalContentionConfig(
+                mode=CapitalContentionMode.VULNERABILITY_SCORE,
+                vulnerability_config=self.vulnerability_config
+            )
+        else:
+            self.vuln_config_btn.grid_remove()
+            self.capital_contention_config = CapitalContentionConfig.default_mode()
+
+    def _open_vulnerability_config(self):
+        """Open vulnerability score configuration dialog."""
+        def on_save(config):
+            self.vulnerability_config = config
+            self.capital_contention_config = CapitalContentionConfig(
+                mode=CapitalContentionMode.VULNERABILITY_SCORE,
+                vulnerability_config=config
+            )
+
+        VulnerabilityScoreConfigDialog(
+            self.root,
+            current_config=self.vulnerability_config,
+            on_save=on_save
+        )
 
     def on_strategy_change(self, event):
         """Handle strategy selection change."""
@@ -480,7 +594,7 @@ class BacktestGUI:
         param_label_frame.grid(row=1, column=0, columnspan=2, sticky=(tk.W, tk.E, tk.N, tk.S), padx=10, pady=10)
 
         # Create scrollable frame for parameters
-        canvas = tk.Canvas(param_label_frame, height=300)
+        canvas = tk.Canvas(param_label_frame, height=350)
         scrollbar = ttk.Scrollbar(param_label_frame, orient="vertical", command=canvas.yview)
         scrollable_frame = ttk.Frame(canvas)
 
@@ -495,21 +609,99 @@ class BacktestGUI:
         canvas.pack(side="left", fill="both", expand=True)
         scrollbar.pack(side="right", fill="y")
 
+        # Get parameter spec from config
+        strategy_spec = self.param_config.get(strategy_name, {})
+
         # Parameter entries
         params = self.strategy_params[strategy_name]
         param_vars = {}
 
-        row = 0
-        for param_name, param_value in params.items():
-            ttk.Label(scrollable_frame, text=f"{param_name}:").grid(
-                row=row, column=0, sticky=tk.W, padx=10, pady=5
-            )
+        # Helper function to add section header
+        def add_section_header(text, row_num):
+            separator = ttk.Separator(scrollable_frame, orient='horizontal')
+            separator.grid(row=row_num, column=0, columnspan=3, sticky=(tk.W, tk.E), padx=5, pady=(15, 5))
+            header = ttk.Label(scrollable_frame, text=text, font=('TkDefaultFont', 10, 'bold'),
+                              foreground='#2E5994')
+            header.grid(row=row_num + 1, column=0, columnspan=3, sticky=tk.W, padx=10, pady=(0, 5))
+            return row_num + 2
+
+        # Helper function to add a parameter row with range info
+        def add_param_row(param_name, param_value, row_num):
+            # Get spec info if available
+            spec = strategy_spec.get(param_name, {})
+            min_val = spec.get('min', '')
+            max_val = spec.get('max', '')
+            param_type = spec.get('type', 'float')
+
+            # Create range string
+            if min_val != '' and max_val != '':
+                if param_type == 'int':
+                    range_str = f"[{int(min_val)} - {int(max_val)}]"
+                else:
+                    range_str = f"[{min_val:.2f} - {max_val:.2f}]"
+            else:
+                range_str = ""
+
+            # Parameter name label
+            name_label = ttk.Label(scrollable_frame, text=f"{param_name}:")
+            name_label.grid(row=row_num, column=0, sticky=tk.W, padx=10, pady=3)
+
+            # Entry field
             var = tk.StringVar(value=str(param_value))
             param_vars[param_name] = var
-            ttk.Entry(scrollable_frame, textvariable=var, width=20).grid(
-                row=row, column=1, sticky=(tk.W, tk.E), padx=10, pady=5
-            )
-            row += 1
+            entry = ttk.Entry(scrollable_frame, textvariable=var, width=15)
+            entry.grid(row=row_num, column=1, sticky=(tk.W, tk.E), padx=5, pady=3)
+
+            # Range info label
+            if range_str:
+                range_label = ttk.Label(scrollable_frame, text=range_str, font=('TkDefaultFont', 8),
+                                       foreground='#666666')
+                range_label.grid(row=row_num, column=2, sticky=tk.W, padx=5, pady=3)
+
+            return row_num + 1
+
+        # Categorize parameters
+        indicator_params = {}
+        entry_params = {}
+        exit_params = {}
+        other_params = {}
+
+        for param_name, param_value in params.items():
+            name_lower = param_name.lower()
+            if any(kw in name_lower for kw in ['entry', 'buy', 'signal']):
+                entry_params[param_name] = param_value
+            elif any(kw in name_lower for kw in ['exit', 'sell', 'stop', 'take', 'trailing', 'grace', 'momentum']):
+                exit_params[param_name] = param_value
+            elif any(kw in name_lower for kw in ['period', 'length', 'lookback', 'window', 'multiplier', 'atr', 'volume', 'risk']):
+                indicator_params[param_name] = param_value
+            else:
+                other_params[param_name] = param_value
+
+        row = 0
+
+        # Indicator/Core parameters section
+        if indicator_params:
+            row = add_section_header("Indicator & Position Settings", row)
+            for param_name, param_value in indicator_params.items():
+                row = add_param_row(param_name, param_value, row)
+
+        # Entry parameters section
+        if entry_params:
+            row = add_section_header("Entry Settings", row)
+            for param_name, param_value in entry_params.items():
+                row = add_param_row(param_name, param_value, row)
+
+        # Exit parameters section
+        if exit_params:
+            row = add_section_header("Exit Settings", row)
+            for param_name, param_value in exit_params.items():
+                row = add_param_row(param_name, param_value, row)
+
+        # Other parameters section
+        if other_params:
+            row = add_section_header("Other Parameters", row)
+            for param_name, param_value in other_params.items():
+                row = add_param_row(param_name, param_value, row)
 
         # ===== Action Buttons =====
         action_frame = ttk.Frame(param_window)
@@ -689,67 +881,128 @@ class BacktestGUI:
     def run_portfolio_backtest(self, symbols: List[str], strategy, capital: float,
                               commission: CommissionConfig, start_date, end_date,
                               backtest_name: str, slippage_percent: float):
-        """Run batch backtest - individual backtests for each selected security."""
-        # Configure backtest (same config for all securities)
-        config = BacktestConfig(
+        """Run portfolio backtest with shared capital and capital contention."""
+        # Get basket name if using a basket
+        basket_name = self.selected_basket.name if self.selected_basket else None
+
+        # Configure portfolio backtest
+        config = PortfolioConfig(
             initial_capital=capital,
             commission=commission,
             start_date=start_date,
             end_date=end_date,
-            slippage_percent=slippage_percent
+            capital_contention=self.capital_contention_config,
+            slippage_percent=slippage_percent,
+            basket_name=basket_name
         )
 
-        self.log_result(f"Running batch backtest: {backtest_name}")
+        self.log_result(f"Running PORTFOLIO backtest: {backtest_name}")
         self.log_result(f"Strategy: {strategy}")
         self.log_result(f"Securities: {', '.join(symbols)}")
-        self.log_result(f"Capital per security: ${capital:,.2f}\n")
+        self.log_result(f"Shared Capital: ${capital:,.2f}")
+        self.log_result(f"Capital Contention: {self.capital_contention_config.mode.value}")
+        if self.capital_contention_config.mode == CapitalContentionMode.VULNERABILITY_SCORE:
+            vc = self.capital_contention_config.vulnerability_config
+            self.log_result(f"  - Immunity Days: {vc.immunity_days}")
+            self.log_result(f"  - Swap Threshold: {vc.swap_threshold}")
         self.log_result("=" * 70)
 
-        # Run individual backtest for each security
-        results = {}
-        total_securities = len(symbols)
-
-        for idx, symbol in enumerate(symbols, 1):
+        # Load data for all securities
+        data_dict = {}
+        for symbol in symbols:
             try:
-                self.log_result(f"\n[{idx}/{total_securities}] Testing {symbol}...")
-                self.status_var.set(f"Testing {symbol} ({idx}/{total_securities})...")
-
-                # Load data
                 data = self.data_loader.load_csv(symbol, required_columns=strategy.required_columns())
-                self.log_result(f"  Loaded {len(data)} bars")
-
-                # Reset progress bar for this security
-                self.reset_progress()
-
-                # Create engine with currency support
-                engine = SingleSecurityEngine(
-                    config=config,
-                    currency_converter=self.currency_converter,
-                    security_registry=self.security_registry
-                )
-
-                # Run backtest
-                result = engine.run(symbol, data, strategy, progress_callback=self.update_progress)
-                results[symbol] = result
-
-                # Quick summary
-                self.log_result(f"  ✓ Completed: {result.num_trades} trades, "
-                              f"Return: ${result.total_return:,.2f} ({result.total_return_pct:.2f}%)")
-
+                data_dict[symbol] = data
+                self.log_result(f"Loaded {symbol}: {len(data)} bars")
             except Exception as e:
-                self.log_result(f"  ✗ FAILED: {str(e)}")
-                import traceback
-                traceback.print_exc()
-                continue
+                self.log_result(f"WARNING: Could not load {symbol}: {e}")
+
+        if not data_dict:
+            raise ValueError("No data loaded for any security")
+
+        self.log_result("")
+
+        # Create portfolio engine
+        engine = PortfolioEngine(
+            config=config,
+            currency_converter=self.currency_converter,
+            security_registry=self.security_registry
+        )
+
+        # Run portfolio backtest
+        self.status_var.set("Running portfolio backtest...")
+        self.reset_progress()
+
+        result = engine.run(data_dict, strategy, progress_callback=self.update_progress)
 
         # Reset progress bar
         self.reset_progress()
 
-        if not results:
-            raise ValueError("No backtests completed successfully")
+        # Display portfolio results
+        self.display_portfolio_results(result, backtest_name, strategy.get_parameters())
 
-        # Display aggregate results
-        self.display_batch_results(results, backtest_name, config.initial_capital)
+    def display_portfolio_results(self, result: PortfolioBacktestResult, backtest_name: str,
+                                  strategy_params: Dict):
+        """Display portfolio backtest results."""
+        self.log_result("\n" + "=" * 70)
+        self.log_result("PORTFOLIO RESULTS")
+        self.log_result("=" * 70)
+
+        # Overall metrics
+        self.log_result(f"\nInitial Capital:     ${result.config.initial_capital:,.2f}")
+        self.log_result(f"Final Equity:        ${result.final_equity:,.2f}")
+        self.log_result(f"Total Return:        ${result.total_return:,.2f} ({result.total_return_pct:.2f}%)")
+
+        # Per-symbol breakdown
+        self.log_result("\n--- Per-Security Performance ---")
+        total_trades = 0
+        for symbol, sym_result in result.symbol_results.items():
+            num_trades = len(sym_result.trades)
+            total_trades += num_trades
+            wins = len([t for t in sym_result.trades if t.pl > 0])
+            win_rate = (wins / num_trades * 100) if num_trades > 0 else 0
+            self.log_result(f"  {symbol}: {num_trades} trades, "
+                          f"Win Rate: {win_rate:.1f}%, "
+                          f"P/L: ${sym_result.total_return:,.2f}")
+
+        self.log_result(f"\nTotal Trades: {total_trades}")
+
+        # Signal rejections
+        if result.signal_rejections:
+            self.log_result(f"\n--- Signal Rejections: {len(result.signal_rejections)} ---")
+            rejection_summary = {}
+            for r in result.signal_rejections:
+                rejection_summary[r.symbol] = rejection_summary.get(r.symbol, 0) + 1
+            for symbol, count in sorted(rejection_summary.items(), key=lambda x: -x[1])[:5]:
+                self.log_result(f"  {symbol}: {count} rejections")
+
+        # Vulnerability swaps
+        if result.vulnerability_swaps:
+            self.log_result(f"\n--- Vulnerability Swaps: {len(result.vulnerability_swaps)} ---")
+            for swap in result.vulnerability_swaps[:5]:
+                self.log_result(f"  {swap.date.strftime('%Y-%m-%d')}: "
+                              f"{swap.closed_symbol} (score: {swap.closed_score:.1f}) -> {swap.new_symbol}")
+            if len(result.vulnerability_swaps) > 5:
+                self.log_result(f"  ... and {len(result.vulnerability_swaps) - 5} more")
+
+        self.log_result("=" * 70)
+
+        # Log portfolio results
+        basket_name = result.config.basket_name
+        portfolio_logger = PortfolioTradeLogger(backtest_name, basket_name)
+        logged_files = portfolio_logger.log_portfolio_result(result, strategy_params)
+        self.log_result(f"\nResults logged to: {portfolio_logger.base_dir}")
+
+        # Generate portfolio report if enabled
+        if self.generate_excel_var.get():
+            try:
+                report_gen = PortfolioReportGenerator(portfolio_logger.reports_dir)
+                report_path = report_gen.generate_portfolio_report(result)
+                self.log_result(f"Portfolio report: {report_path}")
+            except Exception as e:
+                self.log_result(f"Warning: Could not generate portfolio report: {e}")
+                import traceback
+                traceback.print_exc()
 
     def display_result(self, symbol: str, result, backtest_name: str):
         """Display single backtest result."""
@@ -800,136 +1053,6 @@ class BacktestGUI:
                 self.log_result(f"✓ Excel report saved to: {report_path}")
             except Exception as e:
                 self.log_result(f"⚠ Excel report generation failed: {str(e)}")
-
-    def display_batch_results(self, results: Dict, backtest_name: str, initial_capital: float):
-        """Display batch backtest results - individual tests for multiple securities."""
-        self.log_result("\n" + "=" * 70)
-        self.log_result("BATCH BACKTEST RESULTS (Individual Tests)")
-        self.log_result("=" * 70)
-
-        # Collect metrics for all securities
-        all_metrics = []
-        for symbol, result in results.items():
-            metrics = PerformanceMetrics.calculate_metrics(result)
-            metrics['symbol'] = symbol
-            all_metrics.append(metrics)
-
-        # Sort by total return descending
-        all_metrics.sort(key=lambda x: x['total_return'], reverse=True)
-
-        # Display summary table
-        self.log_result(f"\n{'Symbol':<10} {'Trades':<8} {'Win Rate':<10} {'P/L':<15} {'Return %':<12} {'Sharpe':<8}")
-        self.log_result("-" * 70)
-
-        total_pl = 0
-        total_trades = 0
-        winning_securities = 0
-
-        for m in all_metrics:
-            total_pl += m['total_return']
-            total_trades += m['num_trades']
-            if m['total_return'] > 0:
-                winning_securities += 1
-
-            self.log_result(
-                f"{m['symbol']:<10} {m['num_trades']:<8} "
-                f"{m['win_rate']*100:>8.1f}% "
-                f"${m['total_return']:>12,.2f} {m['total_return_pct']:>10.2f}% "
-                f"{m['sharpe_ratio']:>6.2f}"
-            )
-
-        self.log_result("-" * 70)
-
-        # Calculate aggregate metrics
-        avg_return = total_pl / len(results)
-        avg_return_pct = (avg_return / initial_capital) * 100
-        num_securities = len(results)
-
-        self.log_result(
-            f"{'TOTAL':<10} {total_trades:<8} "
-            f"{'':>9} "
-            f"${total_pl:>12,.2f} {(total_pl/(initial_capital*num_securities))*100:>10.2f}%"
-        )
-        self.log_result(
-            f"{'AVERAGE':<10} {total_trades//num_securities:<8} "
-            f"{'':>9} "
-            f"${avg_return:>12,.2f} {avg_return_pct:>10.2f}%"
-        )
-        self.log_result("=" * 70)
-
-        # Additional statistics
-        self.log_result(f"\nBatch Statistics:")
-        self.log_result(f"  Securities Tested: {num_securities}")
-        self.log_result(f"  Profitable: {winning_securities} ({winning_securities/num_securities*100:.1f}%)")
-        self.log_result(f"  Unprofitable: {num_securities - winning_securities}")
-        self.log_result(f"  Total Trades: {total_trades}")
-        self.log_result(f"  Average Trades per Security: {total_trades/num_securities:.1f}")
-
-        # Best and worst performers
-        best = all_metrics[0]
-        worst = all_metrics[-1]
-        self.log_result(f"\n  Best Performer: {best['symbol']} (${best['total_return']:,.2f}, {best['total_return_pct']:.2f}%)")
-        self.log_result(f"  Worst Performer: {worst['symbol']} (${worst['total_return']:,.2f}, {worst['total_return_pct']:.2f}%)")
-        self.log_result("=" * 70)
-
-        # Save trade logs
-        logger = TradeLogger(Path('logs') / backtest_name)
-        for symbol, result in results.items():
-            logger.log_trades(symbol, backtest_name, result.trades, result.strategy_params)
-
-        self.log_result(f"\nTrade logs saved to: logs/{backtest_name}/")
-
-        # Generate Excel reports if enabled (batch-specific structure)
-        if self.generate_excel_var.get():
-            try:
-                self.log_result("\nGenerating batch reports...")
-
-                # Create batch reports folder structure
-                batch_reports_dir = Path('logs') / backtest_name / 'batch_reports'
-                individual_reports_dir = batch_reports_dir / 'individual'
-
-                # Generate individual reports for each security
-                self.log_result("\n  Generating individual security reports...")
-                excel_generator = ExcelReportGenerator(
-                    output_directory=individual_reports_dir,
-                    initial_capital=initial_capital,
-                    risk_free_rate=0.02,
-                    benchmark_name="S&P 500"
-                )
-
-                for symbol, result in results.items():
-                    report_path = excel_generator.generate_report(
-                        result=result,
-                        filename=f"{backtest_name}_{symbol}_report.xlsx"
-                    )
-                    self.log_result(f"    ✓ {symbol}: {report_path.name}")
-
-                self.log_result(f"\n  ✓ Individual reports saved to: {individual_reports_dir}/")
-
-                # Generate batch summary report with correlation analysis
-                self.log_result("\n  Generating batch summary report...")
-                batch_summary_generator = BatchSummaryReportGenerator(
-                    output_directory=batch_reports_dir,
-                    initial_capital=initial_capital
-                )
-
-                summary_report_path = batch_summary_generator.generate_batch_summary(
-                    results=results,
-                    backtest_name=backtest_name
-                )
-
-                self.log_result(f"  ✓ Summary report: {summary_report_path.name}")
-                self.log_result(f"\n✓ All batch reports saved to: {batch_reports_dir}/")
-                self.log_result("\nThe summary report includes:")
-                self.log_result("  • Aggregate performance metrics across all securities")
-                self.log_result("  • Detailed performance comparison")
-                self.log_result("  • Correlation analysis (return, drawdown correlations)")
-                self.log_result("  • Risk analysis and comparative visualizations")
-
-            except Exception as e:
-                self.log_result(f"⚠ Batch report generation failed: {str(e)}")
-                import traceback
-                traceback.print_exc()
 
     def log_result(self, message: str):
         """Log message to results text area."""

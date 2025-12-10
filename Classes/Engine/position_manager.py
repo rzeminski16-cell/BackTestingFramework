@@ -1,7 +1,7 @@
 """
 Position manager for tracking and managing open positions.
 """
-from typing import Optional
+from typing import Optional, Dict, Any, List
 from datetime import datetime
 from ..Models.position import Position, PartialExit
 from ..Models.signal import Signal, SignalType
@@ -20,6 +20,8 @@ class PositionManager:
     def __init__(self):
         """Initialize position manager."""
         self.position: Optional[Position] = None
+        # Track capital allocation info for trade creation
+        self.pending_trade_info: Optional[Dict[str, Any]] = None
 
     @property
     def has_position(self) -> bool:

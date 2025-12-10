@@ -20,7 +20,7 @@ PERFORMANCE OPTIMIZED:
 
 NOTE: All standard indicators (atr_14, ema_50) are read from raw data.
 """
-from typing import List, Optional, Tuple
+from typing import Dict, List, Optional, Tuple
 import pandas as pd
 import numpy as np
 from Classes.Strategy.base_strategy import BaseStrategy
@@ -188,12 +188,12 @@ class AlphaTrendStrategy(BaseStrategy):
         self.momentum_lookback = momentum_lookback
         self.risk_percent = risk_percent
 
-        # Track bars since entry for grace period and momentum
-        self._bars_since_entry = 0
-        self._entry_bar_open = None  # Store open price of entry bar for momentum calc
+        # Track bars since entry for grace period and momentum (per-symbol for portfolio mode)
+        self._bars_since_entry: Dict[str, int] = {}
+        self._entry_bar_open: Dict[str, float] = {}
 
-        # Track the most recent signal bar index
-        self._signal_bar_idx = -1
+        # Track the most recent signal bar index (per-symbol for portfolio mode)
+        self._signal_bar_idx: Dict[str, int] = {}
 
     def required_columns(self) -> List[str]:
         """Required columns from CSV data (including pre-calculated indicators)."""
@@ -394,10 +394,12 @@ class AlphaTrendStrategy(BaseStrategy):
         Returns:
             True if signal is active (on or within volume_alignment_window bars after signal)
         """
-        if self._signal_bar_idx < 0:
+        symbol = context.symbol
+        signal_bar_idx = self._signal_bar_idx.get(symbol, -1)
+        if signal_bar_idx < 0:
             return False
 
-        bars_since_signal = context.current_index - self._signal_bar_idx
+        bars_since_signal = context.current_index - signal_bar_idx
         # CRITICAL: Ensure we're on or after the signal bar (bars_since_signal >= 0)
         # and within the forward window (bars_since_signal <= window)
         return 0 <= bars_since_signal <= self.volume_alignment_window
@@ -417,21 +419,23 @@ class AlphaTrendStrategy(BaseStrategy):
         Returns:
             True if volume condition was met within the correct window
         """
-        if self._signal_bar_idx < 0:
+        symbol = context.symbol
+        signal_bar_idx = self._signal_bar_idx.get(symbol, -1)
+        if signal_bar_idx < 0:
             return False
 
         current_idx = context.current_index
 
         # Determine the correct time window based on where we are relative to signal
-        if current_idx == self._signal_bar_idx:
+        if current_idx == signal_bar_idx:
             # ON signal bar: check lookback window for volume confirmation
             # This allows entering on signal bar if volume was confirmed before/on signal
-            vol_start = max(0, self._signal_bar_idx - self.volume_alignment_window)
-            vol_end = self._signal_bar_idx + 1
-        elif current_idx > self._signal_bar_idx:
+            vol_start = max(0, signal_bar_idx - self.volume_alignment_window)
+            vol_end = signal_bar_idx + 1
+        elif current_idx > signal_bar_idx:
             # AFTER signal bar: check from signal to current bar only
             # This ensures we only look forward from signal, never before it
-            vol_start = self._signal_bar_idx
+            vol_start = signal_bar_idx
             vol_end = current_idx + 1
         else:
             # BEFORE signal bar: should never happen due to _has_active_signal check
@@ -460,19 +464,22 @@ class AlphaTrendStrategy(BaseStrategy):
         current_price = context.current_price
         current_idx = context.current_index
 
+        # Get symbol for per-symbol state tracking
+        symbol = context.symbol
+
         # Update signal tracking when a new AlphaTrend buy signal appears
         if indicators['filtered_buy']:
-            self._signal_bar_idx = current_idx
+            self._signal_bar_idx[symbol] = current_idx
 
         # Reset signal when we get a sell signal (prevents re-entry on old buy signals)
         if indicators['filtered_sell']:
-            self._signal_bar_idx = -1
+            self._signal_bar_idx[symbol] = -1
 
         # Entry logic
         if not context.has_position:
             # Reset bars counter when not in position
-            self._bars_since_entry = 0
-            self._entry_bar_open = None
+            self._bars_since_entry[symbol] = 0
+            self._entry_bar_open[symbol] = None
 
             # Check if we have an active AlphaTrend signal
             at_signal_active = self._has_active_signal(context)
@@ -492,10 +499,10 @@ class AlphaTrendStrategy(BaseStrategy):
                         stop_loss = current_price * (1 - self.stop_loss_percent / 100)
 
                     # Store entry bar open for momentum calculation
-                    self._entry_bar_open = context.current_bar['open']
+                    self._entry_bar_open[symbol] = context.current_bar['open']
 
                     # Reset signal to prevent re-entry on same signal
-                    self._signal_bar_idx = -1
+                    self._signal_bar_idx[symbol] = -1
 
                     return Signal.buy(
                         size=1.0,  # Will be overridden by position_size() method
@@ -506,17 +513,19 @@ class AlphaTrendStrategy(BaseStrategy):
         # Exit logic
         else:
             # Increment bars since entry
-            self._bars_since_entry += 1
+            self._bars_since_entry[symbol] = self._bars_since_entry.get(symbol, 0) + 1
 
             # Check EMA-50 exit condition (read from raw data)
             ema_exit = current_price < indicators['ema_50']
 
             # Grace period protection
-            in_grace_period = self._bars_since_entry <= self.grace_period_bars
+            bars_since = self._bars_since_entry.get(symbol, 0)
+            in_grace_period = bars_since <= self.grace_period_bars
 
             # Momentum protection
             has_momentum = False
-            if self._entry_bar_open is not None and self.momentum_lookback <= context.current_index:
+            entry_bar_open = self._entry_bar_open.get(symbol)
+            if entry_bar_open is not None and self.momentum_lookback <= context.current_index:
                 lookback_idx = context.current_index - self.momentum_lookback
                 if lookback_idx >= 0:
                     lookback_open = context.data.iloc[lookback_idx]['open']
@@ -536,6 +545,10 @@ class AlphaTrendStrategy(BaseStrategy):
         Formula: Position size = (Equity * Risk%) / (Stop Distance in Base Currency)
 
         Works with both percentage-based and ATR-based stop losses.
+
+        Note: This returns the IDEAL position size based on total equity.
+        The portfolio engine handles capital availability checks and may
+        reduce the position size or use vulnerability swaps if needed.
         """
         if signal.stop_loss is None:
             # Fallback to default sizing if no stop loss
@@ -556,14 +569,7 @@ class AlphaTrendStrategy(BaseStrategy):
         stop_distance_base = stop_distance * context.fx_rate
 
         # Calculate shares based on risk in base currency
+        # Capital availability is checked by the portfolio engine, not here
         shares = risk_amount / stop_distance_base
-
-        # Ensure we don't exceed available capital (in base currency)
-        # Account for commission: if commission is 0.1%, we can only use capital / 1.001
-        # Get commission rate from context (default to 0.1% if not available)
-        commission_rate = 0.001  # 0.1% - matches typical broker commission
-        max_affordable_value = context.available_capital / (1 + commission_rate)
-        max_shares = max_affordable_value / (context.current_price * context.fx_rate)
-        shares = min(shares, max_shares)
 
         return shares

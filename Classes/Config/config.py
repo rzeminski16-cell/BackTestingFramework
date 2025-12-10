@@ -3,8 +3,14 @@ Configuration classes for the backtesting framework.
 """
 from dataclasses import dataclass, field
 from enum import Enum
-from typing import Optional
+from typing import Optional, Dict, Any
 from datetime import datetime
+
+from .capital_contention import (
+    CapitalContentionConfig,
+    CapitalContentionMode,
+    VulnerabilityScoreConfig
+)
 
 
 class CommissionMode(Enum):
@@ -92,38 +98,44 @@ class PortfolioConfig:
         commission: Commission configuration
         start_date: Optional start date for backtest
         end_date: Optional end date for backtest
-        max_positions: Maximum number of concurrent positions (None = unlimited)
-        position_size_limit: Maximum position size as fraction of capital per security
-        total_allocation_limit: Maximum total allocation across all positions (default 1.0)
-        rebalance_on_exit: Rebalance remaining positions when one closes
+        capital_contention: Capital contention configuration (replaces max_positions, position limits)
         base_currency: Base currency for the account (default: GBP)
         slippage_percent: Slippage percentage applied to all trades (default: 0.1%)
+        basket_name: Optional name of basket being used (for logging purposes)
     """
     initial_capital: float = 100000.0
     commission: CommissionConfig = field(default_factory=CommissionConfig)
     start_date: Optional[datetime] = None
     end_date: Optional[datetime] = None
-    max_positions: Optional[int] = None
-    position_size_limit: float = 0.3  # Max 30% per position by default
-    total_allocation_limit: float = 1.0  # Max 100% total allocation
-    rebalance_on_exit: bool = False
+    capital_contention: CapitalContentionConfig = field(default_factory=CapitalContentionConfig)
     base_currency: str = "GBP"  # Base currency of account
     slippage_percent: float = 0.1  # Default 0.1% slippage
+    basket_name: Optional[str] = None  # Optional basket name for logging
 
     def __post_init__(self):
         """Validate portfolio configuration."""
         if self.initial_capital <= 0:
             raise ValueError("Initial capital must be positive")
-        if self.max_positions is not None and self.max_positions <= 0:
-            raise ValueError("Max positions must be positive")
-        if self.position_size_limit <= 0 or self.position_size_limit > 1.0:
-            raise ValueError("Position size limit must be between 0 and 1.0")
-        if self.total_allocation_limit <= 0 or self.total_allocation_limit > 1.0:
-            raise ValueError("Total allocation limit must be between 0 and 1.0")
         if self.start_date and self.end_date and self.start_date >= self.end_date:
             raise ValueError("Start date must be before end date")
         if self.slippage_percent < 0:
             raise ValueError("Slippage percentage must be non-negative")
+
+    def to_dict(self) -> Dict[str, Any]:
+        """Convert to dictionary for serialization."""
+        return {
+            'initial_capital': self.initial_capital,
+            'commission': {
+                'mode': self.commission.mode.value,
+                'value': self.commission.value
+            },
+            'start_date': self.start_date.isoformat() if self.start_date else None,
+            'end_date': self.end_date.isoformat() if self.end_date else None,
+            'capital_contention': self.capital_contention.to_dict(),
+            'base_currency': self.base_currency,
+            'slippage_percent': self.slippage_percent,
+            'basket_name': self.basket_name
+        }
 
 
 @dataclass

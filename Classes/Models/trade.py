@@ -1,9 +1,27 @@
 """
 Trade model for completed trades.
 """
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass, field
 from datetime import datetime
 from typing import Optional, Dict, Any, List
+import uuid
+
+
+# Global trade counter for generating sequential IDs
+_trade_counter = 0
+
+
+def generate_trade_id() -> str:
+    """Generate a unique trade ID."""
+    global _trade_counter
+    _trade_counter += 1
+    return f"T{_trade_counter:06d}"
+
+
+def reset_trade_counter():
+    """Reset the trade counter (call at start of each backtest)."""
+    global _trade_counter
+    _trade_counter = 0
 
 
 @dataclass
@@ -12,6 +30,7 @@ class Trade:
     Represents a completed trade.
 
     Attributes:
+        trade_id: Unique identifier for the trade
         symbol: Security symbol
         entry_date: Entry date
         entry_price: Entry price
@@ -31,18 +50,23 @@ class Trade:
         security_currency: Currency the security is denominated in
         duration_days: Trade duration in days
         entry_equity: Total portfolio equity at time of entry
+        entry_capital_available: Available capital at time of entry
+        entry_capital_required: Capital required for this position
+        concurrent_positions: Number of other positions open at entry
+        competing_signals: List of other signals that were rejected due to this trade
         entry_reason: Reason for entry
         exit_reason: Reason for exit
         commission_paid: Total commission paid
         partial_exits: Number of partial exits before final exit
         metadata: Additional trade-specific data
     """
-    symbol: str
-    entry_date: datetime
-    entry_price: float
-    exit_date: datetime
-    exit_price: float
-    quantity: float
+    trade_id: str = field(default_factory=generate_trade_id)
+    symbol: str = ""
+    entry_date: datetime = None
+    entry_price: float = 0.0
+    exit_date: datetime = None
+    exit_price: float = 0.0
+    quantity: float = 0.0
     side: str = "LONG"
     initial_stop_loss: Optional[float] = None
     final_stop_loss: Optional[float] = None
@@ -56,6 +80,10 @@ class Trade:
     security_currency: str = "GBP"  # Currency security is denominated in
     duration_days: int = 0
     entry_equity: float = 0.0  # Total portfolio equity at time of entry
+    entry_capital_available: float = 0.0  # Available capital at entry
+    entry_capital_required: float = 0.0  # Capital required for position
+    concurrent_positions: int = 0  # Other positions open at entry
+    competing_signals: List[str] = field(default_factory=list)  # Symbols with rejected signals
     entry_reason: str = ""
     exit_reason: str = ""
     commission_paid: float = 0.0
@@ -90,6 +118,7 @@ class Trade:
             Dictionary representation
         """
         return {
+            'trade_id': self.trade_id,
             'symbol': self.symbol,
             'entry_date': self.entry_date.strftime('%Y-%m-%d') if isinstance(self.entry_date, datetime) else self.entry_date,
             'entry_price': self.entry_price,
@@ -109,6 +138,10 @@ class Trade:
             'security_currency': self.security_currency,
             'duration_days': self.duration_days,
             'entry_equity': self.entry_equity,
+            'entry_capital_available': self.entry_capital_available,
+            'entry_capital_required': self.entry_capital_required,
+            'concurrent_positions': self.concurrent_positions,
+            'competing_signals': ','.join(self.competing_signals) if self.competing_signals else '',
             'entry_reason': self.entry_reason,
             'exit_reason': self.exit_reason,
             'commission_paid': self.commission_paid,
@@ -117,7 +150,11 @@ class Trade:
 
     @classmethod
     def from_position(cls, position, exit_date: datetime, exit_price: float,
-                     exit_reason: str, commission_paid: float) -> 'Trade':
+                     exit_reason: str, commission_paid: float,
+                     entry_capital_available: float = 0.0,
+                     entry_capital_required: float = 0.0,
+                     concurrent_positions: int = 0,
+                     competing_signals: List[str] = None) -> 'Trade':
         """
         Create a Trade from a closed Position.
 
@@ -127,6 +164,10 @@ class Trade:
             exit_price: Exit price
             exit_reason: Reason for exit
             commission_paid: Total commission paid (entry + exit)
+            entry_capital_available: Capital available at entry
+            entry_capital_required: Capital required for position
+            concurrent_positions: Number of other open positions at entry
+            competing_signals: Symbols of signals rejected due to this trade
 
         Returns:
             Trade object
@@ -165,6 +206,10 @@ class Trade:
             pl_pct=pl_pct,
             duration_days=duration_days,
             entry_equity=position.entry_equity,
+            entry_capital_available=entry_capital_available,
+            entry_capital_required=entry_capital_required,
+            concurrent_positions=concurrent_positions,
+            competing_signals=competing_signals or [],
             entry_reason=position.entry_reason,
             exit_reason=exit_reason,
             commission_paid=commission_paid,
@@ -174,6 +219,6 @@ class Trade:
     def __str__(self) -> str:
         """String representation of trade."""
         fx_str = f", FX P/L: {self.fx_pl:.2f}" if self.fx_pl != 0 else ""
-        return (f"{self.symbol} {self.side}: "
+        return (f"[{self.trade_id}] {self.symbol} {self.side}: "
                 f"{self.entry_date.strftime('%Y-%m-%d')} -> {self.exit_date.strftime('%Y-%m-%d')}, "
                 f"P/L: {self.pl:.2f} ({self.pl_pct:.2f}%){fx_str}")
