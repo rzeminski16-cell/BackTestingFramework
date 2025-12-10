@@ -1001,11 +1001,11 @@ class OptimizationGUI:
             self.optimizer.config['bayesian_optimization']['speed_mode'] = speed_mode
             self.optimizer.config['bayesian_optimization']['n_jobs'] = n_jobs
 
-            # Apply walk-forward window settings
-            train_days = self.training_period_var.get()
-            test_days = self.testing_period_var.get()
-            step_min = self.step_min_var.get()
-            step_max = self.step_max_var.get()
+            # Apply walk-forward window settings (ensure all are integers)
+            train_days = int(self.training_period_var.get())
+            test_days = int(self.testing_period_var.get())
+            step_min = int(self.step_min_var.get())
+            step_max = int(self.step_max_var.get())
             wf_mode = self.wf_mode_var.get()
 
             # Validate step sizes

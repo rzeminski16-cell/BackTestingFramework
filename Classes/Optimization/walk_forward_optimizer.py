@@ -305,8 +305,8 @@ class WalkForwardOptimizer:
         wf_config = self.config['walk_forward']
         train_days = wf_config['training_period_days']
         test_days = wf_config['testing_period_days']
-        step_min = wf_config['step_size_min_days']
-        step_max = wf_config['step_size_max_days']
+        step_min = int(wf_config['step_size_min_days'])
+        step_max = int(wf_config['step_size_max_days'])
 
         # Get mode from config if not specified
         if mode is None:
@@ -501,6 +501,45 @@ class WalkForwardOptimizer:
             return False
 
         return True
+
+    def _calculate_constraint_penalty(self, metrics: Dict[str, Any],
+                                       constraints: OptimizationConstraints) -> float:
+        """
+        Calculate a penalty value for constraint violations.
+
+        Used in Bayesian optimization to penalize parameter sets that violate constraints.
+
+        Args:
+            metrics: Backtest metrics dictionary
+            constraints: Optimization constraints
+
+        Returns:
+            Penalty value (0 if no violations, positive if violations)
+        """
+        penalty = 0.0
+
+        # Check profit factor
+        profit_factor = metrics.get('profit_factor', 0.0)
+        if profit_factor < constraints.min_profit_factor:
+            # Penalty proportional to how far below threshold
+            shortfall = constraints.min_profit_factor - profit_factor
+            penalty += shortfall * 10.0  # Scale factor
+
+        # Check max drawdown
+        max_dd_pct = abs(metrics.get('max_drawdown_pct', 100.0))
+        if max_dd_pct > constraints.max_drawdown_percent:
+            # Penalty proportional to how far above threshold
+            excess = max_dd_pct - constraints.max_drawdown_percent
+            penalty += excess * 0.5  # Scale factor
+
+        # Check minimum trades
+        num_trades = metrics.get('num_trades', 0)
+        if num_trades < constraints.min_trades_per_year:
+            # Penalty for too few trades
+            shortfall = constraints.min_trades_per_year - num_trades
+            penalty += shortfall * 5.0  # Scale factor
+
+        return penalty
 
     def _calculate_degradation(self, in_sample: float, out_sample: float) -> float:
         """
