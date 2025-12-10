@@ -2,7 +2,7 @@
 Portfolio-level backtesting engine with capital contention management.
 """
 import pandas as pd
-from typing import Dict, List, Optional, Callable
+from typing import Dict, List, Optional, Callable, Tuple
 from datetime import datetime
 from collections import defaultdict
 from dataclasses import dataclass, field
@@ -11,7 +11,7 @@ from ..Strategy.base_strategy import BaseStrategy
 from ..Strategy.strategy_context import StrategyContext
 from ..Models.signal import Signal, SignalType
 from ..Models.order import Order, OrderSide, OrderType
-from ..Models.trade import Trade
+from ..Models.trade import Trade, reset_trade_counter
 from ..Models.position import Position
 from ..Config.config import PortfolioConfig
 from ..Config.capital_contention import CapitalContentionMode
@@ -21,6 +21,23 @@ from .backtest_result import BacktestResult
 from .vulnerability_score import VulnerabilityScoreCalculator, VulnerabilityResult, SwapDecision
 from ..Data.currency_converter import CurrencyConverter
 from ..Data.security_registry import SecurityRegistry
+
+
+@dataclass
+class CapitalAllocationEvent:
+    """Records capital allocation state when a buy signal is processed."""
+    date: datetime
+    symbol: str
+    signal_type: str  # "EXECUTED", "REJECTED", "SWAPPED_IN", "SWAPPED_OUT"
+    available_capital: float
+    required_capital: float
+    total_equity: float
+    num_open_positions: int
+    open_position_symbols: List[str]
+    competing_signals: List[str]  # Other symbols with signals on this date
+    outcome: str  # Detailed description of what happened
+    vulnerability_scores: Optional[Dict[str, float]] = None  # If vulnerability mode
+    trade_id: Optional[str] = None  # Trade ID if executed
 
 
 @dataclass
@@ -63,6 +80,7 @@ class PortfolioBacktestResult:
     signal_rejections: List[SignalRejection]
     vulnerability_swaps: List[VulnerabilitySwap]
     vulnerability_history: List[Dict[str, VulnerabilityResult]]  # Per-day scores
+    capital_allocation_events: List[CapitalAllocationEvent]  # All capital decisions
 
     # Configuration used
     config: PortfolioConfig
@@ -109,6 +127,7 @@ class PortfolioEngine:
         self.signal_rejections: List[SignalRejection] = []
         self.vulnerability_swaps: List[VulnerabilitySwap] = []
         self.vulnerability_history: List[Dict[str, VulnerabilityResult]] = []
+        self.capital_allocation_events: List[CapitalAllocationEvent] = []
 
     def run(self, data_dict: Dict[str, pd.DataFrame],
             strategy: BaseStrategy,
@@ -128,7 +147,11 @@ class PortfolioEngine:
         self.signal_rejections = []
         self.vulnerability_swaps = []
         self.vulnerability_history = []
+        self.capital_allocation_events = []
         self.trade_executor = TradeExecutor(self.config.commission)
+
+        # Reset trade ID counter for this backtest
+        reset_trade_counter()
 
         # Initialize position managers for each symbol
         self.position_managers = {}
@@ -360,6 +383,7 @@ class PortfolioEngine:
             signal_rejections=self.signal_rejections,
             vulnerability_swaps=self.vulnerability_swaps,
             vulnerability_history=self.vulnerability_history,
+            capital_allocation_events=self.capital_allocation_events,
             config=self.config,
             strategy_name=strategy.get_name()
         )
@@ -369,6 +393,10 @@ class PortfolioEngine:
                              current_date: datetime) -> float:
         """
         Process BUY signals with capital contention logic.
+
+        When multiple signals arrive and there isn't enough capital for all:
+        - In DEFAULT mode: Process in order, reject when capital runs out
+        - In VULNERABILITY mode: Compare all signals, prioritize by vulnerability scoring
 
         Args:
             signals: List of (symbol, signal, context, strategy) tuples
@@ -380,163 +408,352 @@ class PortfolioEngine:
         Returns:
             Updated capital after processing signals
         """
-        for symbol, signal, context, strategy in signals:
-            pm = self.position_managers[symbol]
-            current_price = current_prices[symbol]
+        if not signals:
+            return capital
 
-            # Calculate required capital for this position
+        # Get current open position info for tracking
+        open_position_symbols = [
+            sym for sym, pm in self.position_managers.items() if pm.has_position
+        ]
+        num_open_positions = len(open_position_symbols)
+
+        # Calculate capital requirements for ALL signals first
+        signal_requirements: List[Tuple[str, Signal, StrategyContext, BaseStrategy, float, float]] = []
+        all_signal_symbols = [s[0] for s in signals]
+
+        for symbol, signal, context, strategy in signals:
+            current_price = current_prices[symbol]
             quantity = strategy.position_size(context, signal)
             if quantity <= 0:
                 continue
-
             fx_rate = self._get_fx_rate(symbol, current_date)
             required_capital = quantity * current_price * fx_rate
+            signal_requirements.append((symbol, signal, context, strategy, required_capital, quantity))
 
-            # Check if we have enough capital
+        if not signal_requirements:
+            return capital
+
+        # Calculate total capital needed for all signals
+        total_required = sum(req[4] for req in signal_requirements)
+
+        # If we have enough capital for all signals, process all
+        if total_required <= capital:
+            for symbol, signal, context, strategy, required_capital, quantity in signal_requirements:
+                pm = self.position_managers[symbol]
+                current_price = current_prices[symbol]
+
+                # Record capital allocation event
+                other_signals = [s for s in all_signal_symbols if s != symbol]
+                self._record_capital_event(
+                    current_date, symbol, "EXECUTED",
+                    capital, required_capital, total_equity,
+                    num_open_positions, open_position_symbols, other_signals,
+                    f"Sufficient capital for all {len(signal_requirements)} signals"
+                )
+
+                capital = self._open_position_with_tracking(
+                    symbol, current_date, current_price, signal, strategy, context,
+                    capital, pm, required_capital, num_open_positions, other_signals
+                )
+                num_open_positions += 1
+                open_position_symbols.append(symbol)
+
+            return capital
+
+        # CAPITAL CONTENTION: Not enough capital for all signals
+        # Check if using vulnerability score mode
+        mode = self.config.capital_contention.mode
+
+        if mode == CapitalContentionMode.VULNERABILITY_SCORE and self.vulnerability_calculator:
+            capital = self._process_signals_with_vulnerability(
+                signal_requirements, capital, total_equity, current_prices,
+                current_date, open_position_symbols, all_signal_symbols
+            )
+        else:
+            # DEFAULT MODE: Process signals in order until capital runs out
+            capital = self._process_signals_default_mode(
+                signal_requirements, capital, total_equity, current_prices,
+                current_date, open_position_symbols, all_signal_symbols
+            )
+
+        return capital
+
+    def _process_signals_default_mode(self, signal_requirements: List[Tuple],
+                                      capital: float, total_equity: float,
+                                      current_prices: Dict[str, float],
+                                      current_date: datetime,
+                                      open_position_symbols: List[str],
+                                      all_signal_symbols: List[str]) -> float:
+        """Process signals in default mode (first-come, first-served)."""
+        num_open_positions = len(open_position_symbols)
+
+        for symbol, signal, context, strategy, required_capital, quantity in signal_requirements:
+            pm = self.position_managers[symbol]
+            current_price = current_prices[symbol]
+            other_signals = [s for s in all_signal_symbols if s != symbol]
+
             if required_capital <= capital:
-                # CONSTRAINT: Position value cannot exceed total equity
-                if required_capital > total_equity:
-                    # Reduce position size to fit within equity
-                    quantity = (total_equity * 0.99) / (current_price * fx_rate)  # 99% to leave buffer
-                    required_capital = quantity * current_price * fx_rate
+                self._record_capital_event(
+                    current_date, symbol, "EXECUTED",
+                    capital, required_capital, total_equity,
+                    num_open_positions, open_position_symbols.copy(), other_signals,
+                    "Executed (sufficient capital)"
+                )
 
-                if required_capital <= capital and quantity > 0:
-                    capital = self._open_position(
-                        symbol, current_date, current_price,
-                        signal, strategy, context, capital, pm
-                    )
-                else:
-                    self._record_signal_rejection(
-                        current_date, symbol, "BUY",
-                        f"Position size exceeds total equity (required: {required_capital:.2f}, equity: {total_equity:.2f})",
-                        capital, required_capital
-                    )
+                capital = self._open_position_with_tracking(
+                    symbol, current_date, current_price, signal, strategy, context,
+                    capital, pm, required_capital, num_open_positions, other_signals
+                )
+                num_open_positions += 1
+                open_position_symbols.append(symbol)
             else:
-                # Not enough capital - apply capital contention logic
-                capital = self._handle_capital_contention(
-                    symbol, signal, context, strategy, capital, total_equity,
-                    current_prices, current_date, required_capital
+                self._record_capital_event(
+                    current_date, symbol, "REJECTED",
+                    capital, required_capital, total_equity,
+                    num_open_positions, open_position_symbols.copy(), other_signals,
+                    f"Rejected: insufficient capital ({capital:.2f} < {required_capital:.2f})"
+                )
+                self._record_signal_rejection(
+                    current_date, symbol, "BUY",
+                    f"Insufficient capital (available: {capital:.2f}, required: {required_capital:.2f})",
+                    capital, required_capital
                 )
 
         return capital
 
-    def _handle_capital_contention(self, new_symbol: str, signal: Signal,
-                                   context: StrategyContext, strategy: BaseStrategy,
-                                   capital: float, total_equity: float,
-                                   current_prices: Dict[str, float],
-                                   current_date: datetime,
-                                   required_capital: float) -> float:
+    def _process_signals_with_vulnerability(self, signal_requirements: List[Tuple],
+                                            capital: float, total_equity: float,
+                                            current_prices: Dict[str, float],
+                                            current_date: datetime,
+                                            open_position_symbols: List[str],
+                                            all_signal_symbols: List[str]) -> float:
         """
-        Handle capital contention when a BUY signal arrives with insufficient capital.
+        Process signals using vulnerability score for capital contention.
 
-        Args:
-            new_symbol: Symbol of the new signal
-            signal: The BUY signal
-            context: Strategy context
-            strategy: Strategy instance
-            capital: Current available capital
-            total_equity: Total portfolio equity
-            current_prices: Current prices for all securities
-            current_date: Current date
-            required_capital: Capital required for the new position
-
-        Returns:
-            Updated capital after processing
+        For each signal that doesn't have enough capital:
+        1. Get vulnerability scores for all open positions
+        2. Find the weakest position
+        3. If weakest position score < threshold, swap it for the new signal
+        4. Otherwise reject the signal
         """
-        mode = self.config.capital_contention.mode
+        num_open_positions = len(open_position_symbols)
 
-        if mode == CapitalContentionMode.DEFAULT:
-            # DEFAULT MODE: Simply reject the signal
+        for symbol, signal, context, strategy, required_capital, quantity in signal_requirements:
+            pm = self.position_managers[symbol]
+            current_price = current_prices[symbol]
+            other_signals = [s for s in all_signal_symbols if s != symbol]
+
+            if required_capital <= capital:
+                # Have enough capital - just execute
+                vuln_scores = None
+                if open_position_symbols:
+                    # Calculate vulnerability scores for context
+                    open_positions = {
+                        sym: self.position_managers[sym].get_position()
+                        for sym in open_position_symbols
+                        if self.position_managers[sym].has_position
+                    }
+                    if open_positions:
+                        scores = self.vulnerability_calculator.calculate_all_scores(
+                            open_positions, current_prices, current_date
+                        )
+                        vuln_scores = {s: r.score for s, r in scores.items()}
+
+                self._record_capital_event(
+                    current_date, symbol, "EXECUTED",
+                    capital, required_capital, total_equity,
+                    num_open_positions, open_position_symbols.copy(), other_signals,
+                    "Executed (sufficient capital)",
+                    vulnerability_scores=vuln_scores
+                )
+
+                capital = self._open_position_with_tracking(
+                    symbol, current_date, current_price, signal, strategy, context,
+                    capital, pm, required_capital, num_open_positions, other_signals
+                )
+                num_open_positions += 1
+                open_position_symbols.append(symbol)
+            else:
+                # Not enough capital - try to swap using vulnerability
+                capital = self._try_vulnerability_swap(
+                    symbol, signal, context, strategy, capital, total_equity,
+                    current_prices, current_date, required_capital,
+                    open_position_symbols, other_signals
+                )
+                # Update tracking if swap happened
+                if self.position_managers[symbol].has_position:
+                    num_open_positions = sum(1 for pm in self.position_managers.values() if pm.has_position)
+                    open_position_symbols = [
+                        sym for sym, pm in self.position_managers.items() if pm.has_position
+                    ]
+
+        return capital
+
+    def _try_vulnerability_swap(self, new_symbol: str, signal: Signal,
+                                context: StrategyContext, strategy: BaseStrategy,
+                                capital: float, total_equity: float,
+                                current_prices: Dict[str, float],
+                                current_date: datetime, required_capital: float,
+                                open_position_symbols: List[str],
+                                other_signals: List[str]) -> float:
+        """Try to swap a vulnerable position for a new signal."""
+        # Get open positions
+        open_positions = {
+            sym: self.position_managers[sym].get_position()
+            for sym in open_position_symbols
+            if self.position_managers[sym].has_position
+        }
+
+        if not open_positions:
+            # No positions to swap
+            self._record_capital_event(
+                current_date, new_symbol, "REJECTED",
+                capital, required_capital, total_equity,
+                len(open_position_symbols), open_position_symbols.copy(), other_signals,
+                "Rejected: insufficient capital and no positions to swap"
+            )
             self._record_signal_rejection(
                 current_date, new_symbol, "BUY",
-                f"Insufficient capital (available: {capital:.2f}, required: {required_capital:.2f})",
+                "Insufficient capital and no positions to swap",
                 capital, required_capital
             )
             return capital
 
-        elif mode == CapitalContentionMode.VULNERABILITY_SCORE:
-            # VULNERABILITY SCORE MODE: Check if we can swap a weak position
-            open_positions = {
-                sym: pm.get_position()
-                for sym, pm in self.position_managers.items()
-                if pm.has_position
-            }
+        # Get swap decision from vulnerability calculator
+        swap_decision = self.vulnerability_calculator.should_swap(
+            open_positions, current_prices, current_date, new_symbol
+        )
 
-            if not open_positions:
-                # No positions to swap
-                self._record_signal_rejection(
-                    current_date, new_symbol, "BUY",
-                    "Insufficient capital and no positions to swap",
-                    capital, required_capital
-                )
-                return capital
+        # Get vulnerability scores for reporting
+        vuln_scores = {s: r.score for s, r in swap_decision.all_scores.items()} if swap_decision.all_scores else {}
 
-            # Get swap decision
-            swap_decision = self.vulnerability_calculator.should_swap(
-                open_positions, current_prices, current_date, new_symbol
+        if swap_decision.should_swap:
+            # Close the weak position
+            weak_symbol = swap_decision.position_to_close
+            weak_pm = self.position_managers[weak_symbol]
+            weak_price = current_prices[weak_symbol]
+
+            # Record the swap-out event
+            self._record_capital_event(
+                current_date, weak_symbol, "SWAPPED_OUT",
+                capital, 0, total_equity,
+                len(open_position_symbols), open_position_symbols.copy(), [new_symbol],
+                f"Swapped out: vulnerability score {swap_decision.position_score:.1f} < threshold",
+                vulnerability_scores=vuln_scores
             )
 
-            if swap_decision.should_swap:
-                # Close the weak position
-                weak_symbol = swap_decision.position_to_close
-                weak_pm = self.position_managers[weak_symbol]
-                weak_price = current_prices[weak_symbol]
+            # Record the swap
+            self.vulnerability_swaps.append(VulnerabilitySwap(
+                date=current_date,
+                closed_symbol=weak_symbol,
+                closed_score=swap_decision.position_score,
+                new_symbol=new_symbol,
+                all_scores=swap_decision.all_scores
+            ))
 
-                # Record the swap
-                self.vulnerability_swaps.append(VulnerabilitySwap(
-                    date=current_date,
-                    closed_symbol=weak_symbol,
-                    closed_score=swap_decision.position_score,
-                    new_symbol=new_symbol,
-                    all_scores=swap_decision.all_scores
-                ))
+            # Close the weak position
+            capital = self._close_position(
+                weak_symbol, current_date, weak_price,
+                f"Vulnerability score swap (score: {swap_decision.position_score:.1f}) for {new_symbol}",
+                capital, weak_pm
+            )
 
-                # Close the weak position with vulnerability score exit reason
-                capital = self._close_position(
-                    weak_symbol, current_date, weak_price,
-                    f"Vulnerability score swap (score: {swap_decision.position_score:.1f}) for {new_symbol}",
-                    capital, weak_pm
-                )
+            # Recalculate total equity after closing
+            total_position_value = 0
+            for sym, pm in self.position_managers.items():
+                if pm.has_position and sym in current_prices:
+                    pos_value = pm.get_position_value(current_prices[sym])
+                    pos_value_base = self._convert_to_base_currency(pos_value, sym, current_date)
+                    total_position_value += pos_value_base
+            total_equity = capital + total_position_value
 
-                # Recalculate total equity after closing
-                total_position_value = 0
-                for sym, pm in self.position_managers.items():
-                    if pm.has_position and sym in current_prices:
-                        pos_value = pm.get_position_value(current_prices[sym])
-                        pos_value_base = self._convert_to_base_currency(pos_value, sym, current_date)
-                        total_position_value += pos_value_base
-                total_equity = capital + total_position_value
+            # Update position tracking
+            updated_open = [sym for sym, pm in self.position_managers.items() if pm.has_position]
 
-                # Now try to open the new position
-                new_pm = self.position_managers[new_symbol]
+            # Record the swap-in event
+            self._record_capital_event(
+                current_date, new_symbol, "SWAPPED_IN",
+                capital, required_capital, total_equity,
+                len(updated_open), updated_open.copy(), other_signals,
+                f"Swapped in: replaced {weak_symbol} (score: {swap_decision.position_score:.1f})",
+                vulnerability_scores=vuln_scores
+            )
 
-                # Recalculate position size with updated capital
-                new_context = StrategyContext(
-                    data=context.data,
-                    current_index=context.current_index,
-                    current_price=context.current_price,
-                    current_date=current_date,
-                    position=None,
-                    available_capital=capital,
-                    total_equity=total_equity,
-                    symbol=new_symbol,
-                    fx_rate=context.fx_rate
-                )
+            # Open the new position
+            new_pm = self.position_managers[new_symbol]
+            new_context = StrategyContext(
+                data=context.data,
+                current_index=context.current_index,
+                current_price=context.current_price,
+                current_date=current_date,
+                position=None,
+                available_capital=capital,
+                total_equity=total_equity,
+                symbol=new_symbol,
+                fx_rate=context.fx_rate
+            )
 
-                capital = self._open_position(
-                    new_symbol, current_date, current_prices[new_symbol],
-                    signal, strategy, new_context, capital, new_pm
-                )
-            else:
-                # Cannot swap - record rejection with vulnerability info
-                self._record_signal_rejection(
-                    current_date, new_symbol, "BUY",
-                    swap_decision.reason,
-                    capital, required_capital,
-                    swap_decision
-                )
+            capital = self._open_position_with_tracking(
+                new_symbol, current_date, current_prices[new_symbol],
+                signal, strategy, new_context, capital, new_pm,
+                required_capital, len(updated_open), other_signals
+            )
+        else:
+            # Cannot swap - record rejection with vulnerability info
+            self._record_capital_event(
+                current_date, new_symbol, "REJECTED",
+                capital, required_capital, total_equity,
+                len(open_position_symbols), open_position_symbols.copy(), other_signals,
+                f"Rejected: {swap_decision.reason}",
+                vulnerability_scores=vuln_scores
+            )
+            self._record_signal_rejection(
+                current_date, new_symbol, "BUY",
+                swap_decision.reason,
+                capital, required_capital,
+                swap_decision
+            )
 
         return capital
+
+    def _record_capital_event(self, date: datetime, symbol: str, event_type: str,
+                              available_capital: float, required_capital: float,
+                              total_equity: float, num_open_positions: int,
+                              open_position_symbols: List[str],
+                              competing_signals: List[str], outcome: str,
+                              vulnerability_scores: Optional[Dict[str, float]] = None,
+                              trade_id: Optional[str] = None):
+        """Record a capital allocation event."""
+        self.capital_allocation_events.append(CapitalAllocationEvent(
+            date=date,
+            symbol=symbol,
+            signal_type=event_type,
+            available_capital=available_capital,
+            required_capital=required_capital,
+            total_equity=total_equity,
+            num_open_positions=num_open_positions,
+            open_position_symbols=open_position_symbols.copy(),
+            competing_signals=competing_signals.copy(),
+            outcome=outcome,
+            vulnerability_scores=vulnerability_scores,
+            trade_id=trade_id
+        ))
+
+    def _open_position_with_tracking(self, symbol: str, date: datetime, price: float,
+                                     signal: Signal, strategy: BaseStrategy,
+                                     context: StrategyContext, capital: float,
+                                     pm: PositionManager, required_capital: float,
+                                     concurrent_positions: int,
+                                     competing_signals: List[str]) -> float:
+        """Open position with additional tracking info for the trade."""
+        # Store tracking info in position manager for later trade creation
+        pm.pending_trade_info = {
+            'entry_capital_available': capital,
+            'entry_capital_required': required_capital,
+            'concurrent_positions': concurrent_positions,
+            'competing_signals': competing_signals.copy()
+        }
+        return self._open_position(symbol, date, price, signal, strategy, context, capital, pm)
 
     def _record_signal_rejection(self, date: datetime, symbol: str, signal_type: str,
                                  reason: str, available_capital: float,
@@ -669,6 +886,9 @@ class PortfolioEngine:
 
         exit_fx_rate = self._get_fx_rate(symbol, date)
 
+        # Get capital allocation info from position manager if available
+        trade_info = pm.pending_trade_info or {}
+
         self.trade_executor.create_trade(
             position=position,
             exit_date=date,
@@ -677,9 +897,15 @@ class PortfolioEngine:
             exit_commission=exit_commission,
             entry_fx_rate=position.entry_fx_rate,
             exit_fx_rate=exit_fx_rate,
-            security_currency=position.security_currency
+            security_currency=position.security_currency,
+            entry_capital_available=trade_info.get('entry_capital_available', 0.0),
+            entry_capital_required=trade_info.get('entry_capital_required', 0.0),
+            concurrent_positions=trade_info.get('concurrent_positions', 0),
+            competing_signals=trade_info.get('competing_signals', [])
         )
 
+        # Clear pending trade info
+        pm.pending_trade_info = None
         pm.close_position()
         return capital
 

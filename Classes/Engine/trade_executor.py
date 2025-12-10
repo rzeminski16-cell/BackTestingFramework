@@ -49,7 +49,11 @@ class TradeExecutor:
                     entry_fx_rate: float = 1.0,
                     exit_fx_rate: float = 1.0,
                     security_currency: str = "GBP",
-                    slippage_cost: float = 0.0) -> Trade:
+                    slippage_cost: float = 0.0,
+                    entry_capital_available: float = 0.0,
+                    entry_capital_required: float = 0.0,
+                    concurrent_positions: int = 0,
+                    competing_signals: List[str] = None) -> Trade:
         """
         Create a completed trade from a closed position.
 
@@ -63,6 +67,10 @@ class TradeExecutor:
             exit_fx_rate: FX rate at exit (security currency to base currency)
             security_currency: Currency the security is denominated in
             slippage_cost: Total slippage cost in base currency (default: 0.0)
+            entry_capital_available: Available capital at time of entry
+            entry_capital_required: Capital required for this position
+            concurrent_positions: Number of other positions open at entry
+            competing_signals: List of symbols with competing signals
 
         Returns:
             Trade record
@@ -74,7 +82,11 @@ class TradeExecutor:
             exit_date=exit_date,
             exit_price=exit_price,
             exit_reason=exit_reason,
-            commission_paid=total_commission
+            commission_paid=total_commission,
+            entry_capital_available=entry_capital_available,
+            entry_capital_required=entry_capital_required,
+            concurrent_positions=concurrent_positions,
+            competing_signals=competing_signals or []
         )
 
         # Add FX information

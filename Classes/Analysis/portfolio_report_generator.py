@@ -91,6 +91,9 @@ class PortfolioReportGenerator:
         self._create_correlation_sheet(wb, result)
         self._create_capital_allocation_sheet(wb, result)
 
+        if hasattr(result, 'capital_allocation_events') and result.capital_allocation_events:
+            self._create_capital_events_sheet(wb, result)
+
         wb.save(filepath)
         print(f"Portfolio report saved to {filepath}")
         return filepath
@@ -254,7 +257,7 @@ class PortfolioReportGenerator:
         ws.column_dimensions['E'].width = 15
 
     def _create_trades_sheet(self, wb: Workbook, result):
-        """Create consolidated trades sheet."""
+        """Create consolidated trades sheet with trade IDs and capital allocation info."""
         ws = wb.create_sheet("All Trades")
 
         # Collect all trades
@@ -267,9 +270,11 @@ class PortfolioReportGenerator:
             ws['A1'] = "No trades recorded"
             return
 
-        # Headers
-        headers = ["Symbol", "Entry Date", "Entry Price", "Exit Date", "Exit Price",
-                   "Quantity", "P/L", "P/L %", "Duration", "Entry Reason", "Exit Reason"]
+        # Headers with new fields
+        headers = ["Trade ID", "Symbol", "Entry Date", "Entry Price", "Exit Date", "Exit Price",
+                   "Quantity", "P/L", "P/L %", "Duration", "Concurrent Positions",
+                   "Capital Available", "Capital Required", "Competing Signals",
+                   "Entry Reason", "Exit Reason"]
 
         for col, header in enumerate(headers, 1):
             ws.cell(row=1, column=col, value=header)
@@ -277,25 +282,31 @@ class PortfolioReportGenerator:
 
         # Data
         for row_idx, trade in enumerate(all_trades, 2):
-            ws.cell(row=row_idx, column=1, value=trade.symbol)
-            ws.cell(row=row_idx, column=2, value=trade.entry_date.strftime("%Y-%m-%d"))
-            ws.cell(row=row_idx, column=3, value=f"{trade.entry_price:.4f}")
-            ws.cell(row=row_idx, column=4, value=trade.exit_date.strftime("%Y-%m-%d"))
-            ws.cell(row=row_idx, column=5, value=f"{trade.exit_price:.4f}")
-            ws.cell(row=row_idx, column=6, value=f"{trade.quantity:.4f}")
-            ws.cell(row=row_idx, column=7, value=f"{trade.pl:,.2f}")
-            ws.cell(row=row_idx, column=8, value=f"{trade.pl_pct:.2f}%")
-            ws.cell(row=row_idx, column=9, value=f"{trade.duration_days} days")
-            ws.cell(row=row_idx, column=10, value=trade.entry_reason or "")
-            ws.cell(row=row_idx, column=11, value=trade.exit_reason or "")
+            ws.cell(row=row_idx, column=1, value=trade.trade_id)
+            ws.cell(row=row_idx, column=2, value=trade.symbol)
+            ws.cell(row=row_idx, column=3, value=trade.entry_date.strftime("%Y-%m-%d"))
+            ws.cell(row=row_idx, column=4, value=f"{trade.entry_price:.4f}")
+            ws.cell(row=row_idx, column=5, value=trade.exit_date.strftime("%Y-%m-%d"))
+            ws.cell(row=row_idx, column=6, value=f"{trade.exit_price:.4f}")
+            ws.cell(row=row_idx, column=7, value=f"{trade.quantity:.4f}")
+            ws.cell(row=row_idx, column=8, value=f"{trade.pl:,.2f}")
+            ws.cell(row=row_idx, column=9, value=f"{trade.pl_pct:.2f}%")
+            ws.cell(row=row_idx, column=10, value=f"{trade.duration_days} days")
+            ws.cell(row=row_idx, column=11, value=trade.concurrent_positions)
+            ws.cell(row=row_idx, column=12, value=f"{trade.entry_capital_available:,.2f}")
+            ws.cell(row=row_idx, column=13, value=f"{trade.entry_capital_required:,.2f}")
+            ws.cell(row=row_idx, column=14, value=", ".join(trade.competing_signals) if trade.competing_signals else "")
+            ws.cell(row=row_idx, column=15, value=trade.entry_reason or "")
+            ws.cell(row=row_idx, column=16, value=trade.exit_reason or "")
 
             # Color P/L
             fill = self.POSITIVE_FILL if trade.pl > 0 else self.NEGATIVE_FILL
-            ws.cell(row=row_idx, column=7).fill = fill
+            ws.cell(row=row_idx, column=8).fill = fill
 
         # Adjust column widths
-        for col in range(1, 12):
-            ws.column_dimensions[chr(64 + col)].width = 15
+        widths = [10, 10, 12, 12, 12, 12, 12, 12, 10, 10, 12, 15, 15, 20, 25, 25]
+        for col, width in enumerate(widths, 1):
+            ws.column_dimensions[chr(64 + col)].width = width
 
     def _create_equity_curve_sheet(self, wb: Workbook, result):
         """Create equity curve visualization."""
@@ -581,6 +592,88 @@ class PortfolioReportGenerator:
         ws.column_dimensions['D'].width = 15
         ws.column_dimensions['E'].width = 10
         ws.column_dimensions['F'].width = 12
+
+    def _create_capital_events_sheet(self, wb: Workbook, result):
+        """Create detailed capital allocation events sheet."""
+        ws = wb.create_sheet("Capital Events")
+
+        ws['A1'] = "CAPITAL ALLOCATION EVENTS"
+        ws['A1'].font = Font(bold=True, size=14)
+        ws.merge_cells('A1:H1')
+
+        # Summary statistics
+        events = result.capital_allocation_events
+        executed = len([e for e in events if e.signal_type == "EXECUTED"])
+        rejected = len([e for e in events if e.signal_type == "REJECTED"])
+        swapped_in = len([e for e in events if e.signal_type == "SWAPPED_IN"])
+        swapped_out = len([e for e in events if e.signal_type == "SWAPPED_OUT"])
+
+        row = 3
+        ws[f'A{row}'] = "Event Summary"
+        ws[f'A{row}'].font = Font(bold=True, size=12)
+
+        row += 1
+        summary_data = [
+            ("Total Events", len(events)),
+            ("Executed", executed),
+            ("Rejected", rejected),
+            ("Swapped In", swapped_in),
+            ("Swapped Out", swapped_out),
+        ]
+
+        for label, value in summary_data:
+            ws[f'A{row}'] = label
+            ws[f'B{row}'] = value
+            row += 1
+
+        # Detailed events table
+        row += 2
+        ws[f'A{row}'] = "Detailed Capital Events"
+        ws[f'A{row}'].font = Font(bold=True, size=12)
+
+        row += 1
+        headers = ["Date", "Symbol", "Event Type", "Available Capital", "Required Capital",
+                   "Total Equity", "Open Positions", "Competing Signals", "Outcome",
+                   "Vulnerability Scores"]
+
+        for col, header in enumerate(headers, 1):
+            ws.cell(row=row, column=col, value=header)
+            self._apply_header_style(ws, row, col, col)
+
+        row += 1
+        for event in events:
+            ws.cell(row=row, column=1, value=event.date.strftime("%Y-%m-%d"))
+            ws.cell(row=row, column=2, value=event.symbol)
+            ws.cell(row=row, column=3, value=event.signal_type)
+            ws.cell(row=row, column=4, value=f"{event.available_capital:,.2f}")
+            ws.cell(row=row, column=5, value=f"{event.required_capital:,.2f}")
+            ws.cell(row=row, column=6, value=f"{event.total_equity:,.2f}")
+            ws.cell(row=row, column=7, value=", ".join(event.open_position_symbols))
+            ws.cell(row=row, column=8, value=", ".join(event.competing_signals) if event.competing_signals else "")
+            ws.cell(row=row, column=9, value=event.outcome)
+
+            # Format vulnerability scores
+            if event.vulnerability_scores:
+                scores_str = ", ".join(f"{s}: {v:.1f}" for s, v in event.vulnerability_scores.items())
+                ws.cell(row=row, column=10, value=scores_str)
+
+            # Color by event type
+            if event.signal_type == "EXECUTED":
+                ws.cell(row=row, column=3).fill = self.POSITIVE_FILL
+            elif event.signal_type == "REJECTED":
+                ws.cell(row=row, column=3).fill = self.NEGATIVE_FILL
+            elif event.signal_type == "SWAPPED_IN":
+                ws.cell(row=row, column=3).fill = PatternFill(start_color="90EE90", end_color="90EE90", fill_type="solid")
+            elif event.signal_type == "SWAPPED_OUT":
+                ws.cell(row=row, column=3).fill = PatternFill(start_color="FFB6C1", end_color="FFB6C1", fill_type="solid")
+
+            row += 1
+
+        # Adjust column widths
+        widths = [12, 10, 12, 18, 18, 18, 25, 25, 50, 40]
+        for col, width in enumerate(widths, 1):
+            if col <= 10:
+                ws.column_dimensions[chr(64 + col)].width = width
 
     def _apply_header_style(self, ws, row: int, start_col: int, end_col: int):
         """Apply header styling to cells."""
