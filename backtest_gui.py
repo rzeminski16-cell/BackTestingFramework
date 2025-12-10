@@ -31,6 +31,7 @@ from pathlib import Path
 from datetime import datetime
 from typing import Dict, List, Any, Optional
 import json
+import yaml
 
 from Classes.Config.config import (
     BacktestConfig, PortfolioConfig, CommissionConfig,
@@ -97,8 +98,22 @@ class BacktestGUI:
         self.capital_contention_config = CapitalContentionConfig.default_mode()
         self.vulnerability_config = VulnerabilityScoreConfig()
 
+        # Load parameter configuration from optimization config
+        self.param_config = self._load_param_config()
+
         # Create GUI components
         self.create_widgets()
+
+    def _load_param_config(self) -> Dict[str, Any]:
+        """Load parameter configuration from optimization config file."""
+        config_path = Path("config/optimization_config.yaml")
+        try:
+            with open(config_path, 'r') as f:
+                config = yaml.safe_load(f)
+                return config.get('strategy_parameters', {})
+        except Exception as e:
+            print(f"Warning: Could not load parameter config: {e}")
+            return {}
 
     def create_widgets(self):
         """Create all GUI widgets."""
@@ -579,7 +594,7 @@ class BacktestGUI:
         param_label_frame.grid(row=1, column=0, columnspan=2, sticky=(tk.W, tk.E, tk.N, tk.S), padx=10, pady=10)
 
         # Create scrollable frame for parameters
-        canvas = tk.Canvas(param_label_frame, height=300)
+        canvas = tk.Canvas(param_label_frame, height=350)
         scrollbar = ttk.Scrollbar(param_label_frame, orient="vertical", command=canvas.yview)
         scrollable_frame = ttk.Frame(canvas)
 
@@ -594,21 +609,99 @@ class BacktestGUI:
         canvas.pack(side="left", fill="both", expand=True)
         scrollbar.pack(side="right", fill="y")
 
+        # Get parameter spec from config
+        strategy_spec = self.param_config.get(strategy_name, {})
+
         # Parameter entries
         params = self.strategy_params[strategy_name]
         param_vars = {}
 
-        row = 0
-        for param_name, param_value in params.items():
-            ttk.Label(scrollable_frame, text=f"{param_name}:").grid(
-                row=row, column=0, sticky=tk.W, padx=10, pady=5
-            )
+        # Helper function to add section header
+        def add_section_header(text, row_num):
+            separator = ttk.Separator(scrollable_frame, orient='horizontal')
+            separator.grid(row=row_num, column=0, columnspan=3, sticky=(tk.W, tk.E), padx=5, pady=(15, 5))
+            header = ttk.Label(scrollable_frame, text=text, font=('TkDefaultFont', 10, 'bold'),
+                              foreground='#2E5994')
+            header.grid(row=row_num + 1, column=0, columnspan=3, sticky=tk.W, padx=10, pady=(0, 5))
+            return row_num + 2
+
+        # Helper function to add a parameter row with range info
+        def add_param_row(param_name, param_value, row_num):
+            # Get spec info if available
+            spec = strategy_spec.get(param_name, {})
+            min_val = spec.get('min', '')
+            max_val = spec.get('max', '')
+            param_type = spec.get('type', 'float')
+
+            # Create range string
+            if min_val != '' and max_val != '':
+                if param_type == 'int':
+                    range_str = f"[{int(min_val)} - {int(max_val)}]"
+                else:
+                    range_str = f"[{min_val:.2f} - {max_val:.2f}]"
+            else:
+                range_str = ""
+
+            # Parameter name label
+            name_label = ttk.Label(scrollable_frame, text=f"{param_name}:")
+            name_label.grid(row=row_num, column=0, sticky=tk.W, padx=10, pady=3)
+
+            # Entry field
             var = tk.StringVar(value=str(param_value))
             param_vars[param_name] = var
-            ttk.Entry(scrollable_frame, textvariable=var, width=20).grid(
-                row=row, column=1, sticky=(tk.W, tk.E), padx=10, pady=5
-            )
-            row += 1
+            entry = ttk.Entry(scrollable_frame, textvariable=var, width=15)
+            entry.grid(row=row_num, column=1, sticky=(tk.W, tk.E), padx=5, pady=3)
+
+            # Range info label
+            if range_str:
+                range_label = ttk.Label(scrollable_frame, text=range_str, font=('TkDefaultFont', 8),
+                                       foreground='#666666')
+                range_label.grid(row=row_num, column=2, sticky=tk.W, padx=5, pady=3)
+
+            return row_num + 1
+
+        # Categorize parameters
+        indicator_params = {}
+        entry_params = {}
+        exit_params = {}
+        other_params = {}
+
+        for param_name, param_value in params.items():
+            name_lower = param_name.lower()
+            if any(kw in name_lower for kw in ['entry', 'buy', 'signal']):
+                entry_params[param_name] = param_value
+            elif any(kw in name_lower for kw in ['exit', 'sell', 'stop', 'take', 'trailing', 'grace', 'momentum']):
+                exit_params[param_name] = param_value
+            elif any(kw in name_lower for kw in ['period', 'length', 'lookback', 'window', 'multiplier', 'atr', 'volume', 'risk']):
+                indicator_params[param_name] = param_value
+            else:
+                other_params[param_name] = param_value
+
+        row = 0
+
+        # Indicator/Core parameters section
+        if indicator_params:
+            row = add_section_header("Indicator & Position Settings", row)
+            for param_name, param_value in indicator_params.items():
+                row = add_param_row(param_name, param_value, row)
+
+        # Entry parameters section
+        if entry_params:
+            row = add_section_header("Entry Settings", row)
+            for param_name, param_value in entry_params.items():
+                row = add_param_row(param_name, param_value, row)
+
+        # Exit parameters section
+        if exit_params:
+            row = add_section_header("Exit Settings", row)
+            for param_name, param_value in exit_params.items():
+                row = add_param_row(param_name, param_value, row)
+
+        # Other parameters section
+        if other_params:
+            row = add_section_header("Other Parameters", row)
+            for param_name, param_value in other_params.items():
+                row = add_param_row(param_name, param_value, row)
 
         # ===== Action Buttons =====
         action_frame = ttk.Frame(param_window)
