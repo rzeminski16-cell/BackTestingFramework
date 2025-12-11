@@ -996,9 +996,11 @@ class BacktestGUI:
         # Generate portfolio report if enabled
         if self.generate_excel_var.get():
             try:
-                report_gen = PortfolioReportGenerator(portfolio_logger.reports_dir)
+                report_gen = PortfolioReportGenerator(portfolio_logger.reports_dir, use_enhanced=True)
                 report_path = report_gen.generate_portfolio_report(result)
                 self.log_result(f"Portfolio report: {report_path}")
+                if report_gen.is_enhanced_available():
+                    self.log_result("  (Enhanced report with advanced visualizations)")
             except Exception as e:
                 self.log_result(f"Warning: Could not generate portfolio report: {e}")
                 import traceback

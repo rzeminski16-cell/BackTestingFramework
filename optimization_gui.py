@@ -68,7 +68,7 @@ class OptimizationGUI:
         # Optimization components
         self.optimizer = WalkForwardOptimizer()
         self.sensitivity_analyzer = SensitivityAnalyzer(self.optimizer.config)
-        self.report_generator = OptimizationReportGenerator(self.optimizer.config)
+        self.report_generator = OptimizationReportGenerator(self.optimizer.config, use_enhanced=True)
 
         # State
         self.optimization_thread = None
@@ -1298,12 +1298,14 @@ class OptimizationGUI:
                         consistency = multi_results.param_consistency_scores.get(param_name, 0)
                         self.log_message(f"    {param_name}: {value:.4f} (consistency: {consistency:.0f}%)")
 
-                    # Generate combined report
-                    combined_report_path = self.report_generator.generate_combined_report(
+                    # Generate combined report (uses enhanced portfolio report when available)
+                    combined_report_path = self.report_generator.generate_portfolio_optimization_report(
                         multi_results=multi_results,
                         sensitivity_results_dict=all_sensitivity_results if all_sensitivity_results else None
                     )
                     self.log_message(f"\nCombined report saved to: {combined_report_path}")
+                    if self.report_generator.is_enhanced_available():
+                        self.log_message("  (Enhanced report with advanced visualizations)")
 
                 except Exception as e:
                     self.log_message(f"ERROR generating combined report: {e}")
