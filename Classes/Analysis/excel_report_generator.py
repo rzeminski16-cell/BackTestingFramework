@@ -1,5 +1,7 @@
 """
 Excel report generation for backtest results.
+
+Supports both standard and enhanced reports with advanced visualizations.
 """
 import pandas as pd
 import numpy as np
@@ -16,6 +18,13 @@ from openpyxl.formatting.rule import ColorScaleRule, CellIsRule
 from ..Engine.backtest_result import BacktestResult
 from ..Models.trade import Trade
 
+# Check if enhanced reports are available
+try:
+    from ..Analysis.enhanced_visualizations import EnhancedVisualizations, MATPLOTLIB_AVAILABLE
+    ENHANCED_REPORTS_AVAILABLE = MATPLOTLIB_AVAILABLE
+except ImportError:
+    ENHANCED_REPORTS_AVAILABLE = False
+
 
 class ExcelReportGenerator:
     """
@@ -30,7 +39,8 @@ class ExcelReportGenerator:
     """
 
     def __init__(self, output_directory: Path, initial_capital: float = 100000.0,
-                 risk_free_rate: float = 0.035, benchmark_name: str = "S&P 500"):
+                 risk_free_rate: float = 0.035, benchmark_name: str = "S&P 500",
+                 use_enhanced: bool = False):
         """
         Initialize Excel report generator.
 
@@ -39,12 +49,22 @@ class ExcelReportGenerator:
             initial_capital: Starting capital for calculations
             risk_free_rate: Annual risk-free rate (default 3.5%)
             benchmark_name: Name of benchmark for comparison
+            use_enhanced: If True, include enhanced matplotlib visualizations
         """
         self.output_directory = Path(output_directory)
         self.output_directory.mkdir(parents=True, exist_ok=True)
         self.initial_capital = initial_capital
         self.risk_free_rate = risk_free_rate
         self.benchmark_name = benchmark_name
+        self.use_enhanced = use_enhanced and ENHANCED_REPORTS_AVAILABLE
+
+        # Initialize enhanced visualization generator if available
+        self._viz = None
+        if self.use_enhanced:
+            try:
+                self._viz = EnhancedVisualizations()
+            except Exception:
+                self.use_enhanced = False
 
         # Styling
         self.header_fill = PatternFill(start_color="366092", end_color="366092", fill_type="solid")
@@ -58,6 +78,11 @@ class ExcelReportGenerator:
             top=Side(style='thin'),
             bottom=Side(style='thin')
         )
+
+    @staticmethod
+    def is_enhanced_available() -> bool:
+        """Check if enhanced reports are available."""
+        return ENHANCED_REPORTS_AVAILABLE
 
     def generate_report(self, result: BacktestResult, filename: Optional[str] = None) -> Path:
         """
@@ -93,10 +118,98 @@ class ExcelReportGenerator:
         self._create_visualizations(wb, result, metrics)
         self._create_market_conditions(wb, result, metrics)
 
+        # Add enhanced visualizations if available
+        if self.use_enhanced and self._viz:
+            self._create_enhanced_visualizations(wb, result, metrics)
+
         # Save workbook
         wb.save(filepath)
 
         return filepath
+
+    def _create_enhanced_visualizations(self, wb: Workbook, result: BacktestResult, metrics: Dict[str, Any]):
+        """Create enhanced visualizations sheet with matplotlib charts."""
+        from openpyxl.drawing.image import Image
+
+        ws = wb.create_sheet("Enhanced Charts")
+
+        # Title
+        ws['A1'] = "ENHANCED VISUALIZATIONS"
+        ws['A1'].font = Font(bold=True, size=16)
+        ws.merge_cells('A1:G1')
+
+        row = 3
+
+        trades = result.trades
+        equity_df = result.equity_curve
+
+        # 1. Equity curve with drawdown overlay
+        try:
+            equity_img = self._viz.create_equity_curve_with_drawdown(equity_df)
+            img = Image(equity_img)
+            img.width = 700
+            img.height = 400
+            ws.add_image(img, f'A{row}')
+            row += 24
+        except Exception:
+            pass
+
+        # 2. Monthly returns heatmap
+        try:
+            heatmap_img = self._viz.create_monthly_returns_heatmap(equity_df)
+            img = Image(heatmap_img)
+            img.width = 600
+            img.height = 350
+            ws.add_image(img, f'A{row}')
+            row += 20
+        except Exception:
+            pass
+
+        # 3. Trade distribution histogram
+        if trades:
+            try:
+                dist_img = self._viz.create_trade_distribution_histogram(trades)
+                img = Image(dist_img)
+                img.width = 500
+                img.height = 300
+                ws.add_image(img, f'A{row}')
+                row += 18
+            except Exception:
+                pass
+
+        # 4. Win/Loss streak visualization
+        if trades:
+            try:
+                streak_img = self._viz.create_streak_visualization(trades)
+                img = Image(streak_img)
+                img.width = 700
+                img.height = 450
+                ws.add_image(img, f'A{row}')
+                row += 26
+            except Exception:
+                pass
+
+        # 5. Rolling metrics chart
+        try:
+            rolling_img = self._viz.create_rolling_metrics_chart(equity_df)
+            img = Image(rolling_img)
+            img.width = 700
+            img.height = 400
+            ws.add_image(img, f'A{row}')
+            row += 24
+        except Exception:
+            pass
+
+        # 6. Trade clustering analysis
+        if trades:
+            try:
+                cluster_img = self._viz.create_trade_clustering_analysis(trades)
+                img = Image(cluster_img)
+                img.width = 700
+                img.height = 500
+                ws.add_image(img, f'A{row}')
+            except Exception:
+                pass
 
     def _calculate_all_metrics(self, result: BacktestResult) -> Dict[str, Any]:
         """

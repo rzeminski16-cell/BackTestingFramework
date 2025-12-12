@@ -992,8 +992,55 @@ class EnhancedPortfolioReportGenerator:
             ("Max Loss Streak", f"{metrics.get('max_loss_streak', 0)} trades"),
         ]
         row = self._add_metrics_table(ws, row, consistency_data)
+        row += 3
 
-        ws.column_dimensions['A'].width = 30
+        # Section F: Calculation Methodology (Important for user understanding)
+        row = self._add_section_header(ws, row, "F. CALCULATION METHODOLOGY")
+
+        ws[f'A{row}'] = "Drawdown Calculation:"
+        ws[f'A{row}'].font = Font(bold=True)
+        row += 1
+        ws[f'A{row}'] = "  Max Drawdown measures the largest peak-to-trough decline in equity."
+        row += 1
+        ws[f'A{row}'] = "  Formula: For each day, calculate (Peak Equity - Current Equity) / Peak Equity * 100"
+        row += 1
+        ws[f'A{row}'] = "  Peak Equity is the running maximum equity achieved up to that point."
+        row += 1
+        ws[f'A{row}'] = "  Max Drawdown (%) is the maximum of all these daily drawdown values."
+        row += 2
+
+        ws[f'A{row}'] = "Volatility Calculation:"
+        ws[f'A{row}'].font = Font(bold=True)
+        row += 1
+        ws[f'A{row}'] = "  Annualized Volatility = Daily Returns Std Dev × √252 × 100"
+        row += 1
+        ws[f'A{row}'] = "  Where daily returns = (Today's Equity - Yesterday's Equity) / Yesterday's Equity"
+        row += 2
+
+        ws[f'A{row}'] = "Best/Worst Day:"
+        ws[f'A{row}'].font = Font(bold=True)
+        row += 1
+        ws[f'A{row}'] = "  Best Day = Maximum single-day percentage return in the period"
+        row += 1
+        ws[f'A{row}'] = "  Worst Day = Minimum single-day percentage return in the period"
+        row += 2
+
+        ws[f'A{row}'] = "Sharpe Ratio:"
+        ws[f'A{row}'].font = Font(bold=True)
+        row += 1
+        ws[f'A{row}'] = f"  Sharpe = (Mean Daily Excess Return / Std Dev of Daily Returns) × √252"
+        row += 1
+        ws[f'A{row}'] = f"  Risk-free rate assumed: {DEFAULT_RISK_FREE_RATE*100:.1f}% annually"
+        row += 2
+
+        ws[f'A{row}'] = "Sortino Ratio:"
+        ws[f'A{row}'].font = Font(bold=True)
+        row += 1
+        ws[f'A{row}'] = "  Sortino = (Mean Daily Excess Return / Downside Deviation) × √252"
+        row += 1
+        ws[f'A{row}'] = "  Only considers negative returns for risk calculation (more appropriate for assymetric returns)"
+
+        ws.column_dimensions['A'].width = 80
         ws.column_dimensions['B'].width = 20
 
     def _create_per_security_analysis(self, wb: Workbook, result, metrics: Dict[str, Any]):
@@ -1119,6 +1166,7 @@ class EnhancedPortfolioReportGenerator:
 
         # Add visualizations if available
         if self.include_matplotlib_charts and self.viz:
+            # Trade distribution histogram
             try:
                 dist_img = self.viz.create_trade_distribution_histogram(all_trades)
                 img = Image(dist_img)
@@ -1128,17 +1176,28 @@ class EnhancedPortfolioReportGenerator:
             except Exception:
                 pass
 
+            # Streak analysis visualization (new improved version)
+            try:
+                streak_img = self.viz.create_streak_visualization(all_trades)
+                img = Image(streak_img)
+                img.width = 700
+                img.height = 450
+                ws.add_image(img, f'A{row + 4}')
+            except Exception:
+                pass
+
+            # Trade clustering analysis
             try:
                 cluster_img = self.viz.create_trade_clustering_analysis(all_trades)
                 img = Image(cluster_img)
                 img.width = 700
                 img.height = 500
-                ws.add_image(img, f'A{row + 4}')
+                ws.add_image(img, f'A{row + 30}')
             except Exception:
                 pass
 
     def _create_trade_log(self, wb: Workbook, result):
-        """Create Trade Log sheet with all trades."""
+        """Create Enhanced Trade Log sheet with all trades including vulnerability and swap info."""
         ws = wb.create_sheet("Trade Log")
 
         all_trades = []
@@ -1150,8 +1209,26 @@ class EnhancedPortfolioReportGenerator:
             ws['A1'] = "No trades recorded"
             return
 
-        headers = ["Trade ID", "Symbol", "Entry Date", "Entry Price", "Exit Date", "Exit Price",
-                   "Quantity", "P/L ($)", "P/L (%)", "Duration", "Exit Reason"]
+        # Build lookup dictionary for capital allocation events by trade_id
+        capital_events_by_trade = {}
+        if hasattr(result, 'capital_allocation_events') and result.capital_allocation_events:
+            for event in result.capital_allocation_events:
+                if event.trade_id:
+                    capital_events_by_trade[event.trade_id] = event
+
+        # Build lookup for vulnerability swaps
+        swap_dates_symbols = set()
+        if hasattr(result, 'vulnerability_swaps') and result.vulnerability_swaps:
+            for swap in result.vulnerability_swaps:
+                swap_dates_symbols.add((swap.date.strftime("%Y-%m-%d") if hasattr(swap.date, 'strftime') else str(swap.date), swap.new_symbol))
+
+        # Enhanced headers with vulnerability and swap info
+        headers = [
+            "Trade ID", "Symbol", "Entry Date", "Entry Price", "Exit Date", "Exit Price",
+            "Quantity", "P/L ($)", "P/L (%)", "Duration", "Entry Reason", "Exit Reason",
+            "Entry Capital", "Required Capital", "Concurrent Pos", "Competing Signals",
+            "Was Swap", "Vulnerability Score", "FX P/L"
+        ]
 
         for col_idx, header in enumerate(headers, 1):
             cell = ws.cell(row=1, column=col_idx, value=header)
@@ -1160,24 +1237,70 @@ class EnhancedPortfolioReportGenerator:
             cell.border = self.thin_border
 
         for row_idx, trade in enumerate(all_trades, 2):
+            entry_date_str = trade.entry_date.strftime("%Y-%m-%d") if hasattr(trade.entry_date, 'strftime') else str(trade.entry_date)
+
             ws.cell(row=row_idx, column=1, value=trade.trade_id)
             ws.cell(row=row_idx, column=2, value=trade.symbol)
-            ws.cell(row=row_idx, column=3, value=trade.entry_date.strftime("%Y-%m-%d") if hasattr(trade.entry_date, 'strftime') else str(trade.entry_date))
-            ws.cell(row=row_idx, column=4, value=f"{trade.entry_price:.4f}")
+            ws.cell(row=row_idx, column=3, value=entry_date_str)
+            ws.cell(row=row_idx, column=4, value=trade.entry_price)
             ws.cell(row=row_idx, column=5, value=trade.exit_date.strftime("%Y-%m-%d") if hasattr(trade.exit_date, 'strftime') else str(trade.exit_date))
-            ws.cell(row=row_idx, column=6, value=f"{trade.exit_price:.4f}")
-            ws.cell(row=row_idx, column=7, value=f"{trade.quantity:.2f}")
+            ws.cell(row=row_idx, column=6, value=trade.exit_price)
+            ws.cell(row=row_idx, column=7, value=trade.quantity)
 
-            pl_cell = ws.cell(row=row_idx, column=8, value=f"{trade.pl:,.2f}")
+            pl_cell = ws.cell(row=row_idx, column=8, value=trade.pl)
+            pl_cell.number_format = '#,##0.00'
             pl_cell.fill = self.positive_fill if trade.pl > 0 else self.negative_fill
 
-            ws.cell(row=row_idx, column=9, value=f"{trade.pl_pct:.2f}%")
-            ws.cell(row=row_idx, column=10, value=f"{trade.duration_days}d")
-            ws.cell(row=row_idx, column=11, value=trade.exit_reason or "")
+            pct_cell = ws.cell(row=row_idx, column=9, value=trade.pl_pct)
+            pct_cell.number_format = '0.00"%"'
 
-        widths = [12, 10, 12, 12, 12, 12, 10, 15, 10, 10, 25]
+            ws.cell(row=row_idx, column=10, value=trade.duration_days)
+            ws.cell(row=row_idx, column=11, value=trade.entry_reason or "")
+            ws.cell(row=row_idx, column=12, value=trade.exit_reason or "")
+
+            # Capital info from trade
+            ws.cell(row=row_idx, column=13, value=trade.entry_capital_available).number_format = '#,##0.00'
+            ws.cell(row=row_idx, column=14, value=trade.entry_capital_required).number_format = '#,##0.00'
+            ws.cell(row=row_idx, column=15, value=trade.concurrent_positions)
+
+            # Competing signals
+            competing = ", ".join(trade.competing_signals) if trade.competing_signals else ""
+            ws.cell(row=row_idx, column=16, value=competing)
+
+            # Was this a swap entry?
+            was_swap = (entry_date_str, trade.symbol) in swap_dates_symbols
+            swap_cell = ws.cell(row=row_idx, column=17, value="Yes" if was_swap else "No")
+            if was_swap:
+                swap_cell.fill = PatternFill(start_color='90EE90', end_color='90EE90', fill_type='solid')
+                swap_cell.font = Font(bold=True)
+
+            # Vulnerability score from capital allocation event
+            vuln_score = ""
+            if trade.trade_id in capital_events_by_trade:
+                event = capital_events_by_trade[trade.trade_id]
+                if event.vulnerability_scores and trade.symbol in event.vulnerability_scores:
+                    vuln_score = f"{event.vulnerability_scores[trade.symbol]:.1f}"
+            ws.cell(row=row_idx, column=18, value=vuln_score)
+
+            # FX P/L
+            fx_pl = getattr(trade, 'fx_pl', 0) or 0
+            fx_cell = ws.cell(row=row_idx, column=19, value=fx_pl)
+            fx_cell.number_format = '#,##0.00'
+            if fx_pl != 0:
+                fx_cell.fill = self.positive_fill if fx_pl > 0 else self.negative_fill
+
+        # Column widths
+        widths = [12, 10, 12, 10, 12, 10, 10, 12, 10, 8, 20, 20, 15, 15, 10, 25, 8, 12, 12]
         for col_idx, width in enumerate(widths, 1):
             ws.column_dimensions[get_column_letter(col_idx)].width = width
+
+        # Add note about the data at the bottom
+        last_row = len(all_trades) + 3
+        ws[f'A{last_row}'] = "Notes:"
+        ws[f'A{last_row}'].font = Font(bold=True)
+        ws[f'A{last_row + 1}'] = "- 'Was Swap' indicates if this trade was entered as a vulnerability score swap (replacing another position)"
+        ws[f'A{last_row + 2}'] = "- 'Vulnerability Score' shows the score at the time of entry (if vulnerability mode was used)"
+        ws[f'A{last_row + 3}'] = "- 'FX P/L' shows profit/loss from currency conversion (for non-base currency securities)"
 
     def _create_rolling_metrics(self, wb: Workbook, result, metrics: Dict[str, Any]):
         """Create Rolling Metrics sheet."""
@@ -1440,47 +1563,76 @@ class EnhancedPortfolioReportGenerator:
             ws[f'A{row}'].font = Font(color=self.COLORS['negative_dark'])
 
     def _create_monthly_heatmap(self, wb: Workbook, result, metrics: Dict[str, Any]):
-        """Create Monthly Returns Heatmap sheet with native Excel formatting."""
+        """Create Monthly Returns Heatmap sheet with native Excel formatting and yearly breakdown."""
         ws = wb.create_sheet("Monthly Heatmap")
 
         row = 1
-        ws[f'A{row}'] = "MONTHLY RETURNS HEATMAP"
+        ws[f'A{row}'] = "MONTHLY & YEARLY RETURNS ANALYSIS"
         ws[f'A{row}'].font = self.title_font
         ws.merge_cells(f'A{row}:N{row}')
         row += 3
 
-        monthly_df = metrics.get('monthly_returns', pd.DataFrame())
+        # Calculate monthly returns directly from equity curve for reliability
+        equity_df = result.portfolio_equity_curve
+        if len(equity_df) < 30:  # Need at least ~1 month of data
+            ws[f'A{row}'] = "Insufficient data for monthly analysis (need at least 30 days)"
+            return
 
-        if monthly_df.empty or len(monthly_df) < 2:
+        df = equity_df.copy()
+        df['date'] = pd.to_datetime(df['date'])
+        df = df.set_index('date')
+
+        # Calculate monthly equity values and returns
+        monthly_equity = df['equity'].resample('ME').last()
+        monthly_returns = monthly_equity.pct_change() * 100
+        monthly_returns = monthly_returns.dropna()
+
+        if len(monthly_returns) < 1:
             ws[f'A{row}'] = "Insufficient data for monthly analysis"
             return
 
-        # Create pivot table
-        monthly_df['year'] = pd.to_datetime(monthly_df['period']).dt.year
-        monthly_df['month'] = pd.to_datetime(monthly_df['period']).dt.strftime('%b')
+        # Create monthly returns DataFrame with year and month
+        monthly_df = monthly_returns.reset_index()
+        monthly_df.columns = ['date', 'return_pct']
+        monthly_df['year'] = monthly_df['date'].dt.year
+        monthly_df['month'] = monthly_df['date'].dt.month
+        monthly_df['month_name'] = monthly_df['date'].dt.strftime('%b')
 
-        # Get unique years and months
         years = sorted(monthly_df['year'].unique())
         month_order = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
-        # Header row with years
+        # ============ MONTHLY RETURNS HEATMAP ============
+        ws[f'A{row}'] = "MONTHLY RETURNS HEATMAP (%)"
+        ws[f'A{row}'].font = self.section_font
+        row += 2
+
+        # Header row: Month | Year1 | Year2 | ... | YearN | Avg
         ws.cell(row=row, column=1, value="Month").font = self.header_font
         ws.cell(row=row, column=1).fill = self.header_fill
         for col_idx, year in enumerate(years, 2):
             cell = ws.cell(row=row, column=col_idx, value=year)
             cell.font = self.header_font
             cell.fill = self.header_fill
+        # Add Average column
+        avg_col = len(years) + 2
+        cell = ws.cell(row=row, column=avg_col, value="Avg")
+        cell.font = self.header_font
+        cell.fill = self.header_fill
         row += 1
 
-        # Data rows
-        for month in month_order:
+        # Data rows for each month
+        month_avgs = {}
+        for month_idx, month in enumerate(month_order, 1):
             ws.cell(row=row, column=1, value=month).font = Font(bold=True)
 
+            month_values = []
             for col_idx, year in enumerate(years, 2):
-                month_data = monthly_df[(monthly_df['year'] == year) & (monthly_df['month'] == month)]
+                month_data = monthly_df[(monthly_df['year'] == year) & (monthly_df['month'] == month_idx)]
                 if not month_data.empty:
                     value = month_data['return_pct'].values[0]
-                    cell = ws.cell(row=row, column=col_idx, value=f"{value:.1f}%")
+                    month_values.append(value)
+                    cell = ws.cell(row=row, column=col_idx, value=round(value, 1))
+                    cell.number_format = '0.0"%"'
 
                     if value > 0:
                         cell.fill = self.positive_fill
@@ -1489,12 +1641,121 @@ class EnhancedPortfolioReportGenerator:
                         cell.fill = self.negative_fill
                         cell.font = Font(color='9C0006')
 
+            # Calculate and display average for this month
+            if month_values:
+                avg = np.mean(month_values)
+                month_avgs[month] = avg
+                cell = ws.cell(row=row, column=avg_col, value=round(avg, 1))
+                cell.number_format = '0.0"%"'
+                cell.font = Font(bold=True)
+                if avg > 0:
+                    cell.fill = self.positive_fill
+                elif avg < 0:
+                    cell.fill = self.negative_fill
+
             row += 1
 
+        # Add Year Total row
+        ws.cell(row=row, column=1, value="Year Total").font = Font(bold=True)
+        ws.cell(row=row, column=1).fill = self.subheader_fill
+        year_totals = []
+        for col_idx, year in enumerate(years, 2):
+            year_data = monthly_df[monthly_df['year'] == year]
+            year_return = year_data['return_pct'].sum()
+            year_totals.append(year_return)
+            cell = ws.cell(row=row, column=col_idx, value=round(year_return, 1))
+            cell.number_format = '0.0"%"'
+            cell.font = Font(bold=True)
+            cell.fill = self.subheader_fill
+            if year_return > 0:
+                cell.font = Font(bold=True, color='006100')
+            elif year_return < 0:
+                cell.font = Font(bold=True, color='9C0006')
+        row += 3
+
+        # ============ YEARLY BREAKDOWN ============
+        ws[f'A{row}'] = "YEARLY PERFORMANCE BREAKDOWN"
+        ws[f'A{row}'].font = self.section_font
+        row += 2
+
+        # Yearly summary headers
+        yearly_headers = ["Year", "Total Return %", "Best Month", "Best %", "Worst Month", "Worst %",
+                         "Positive Months", "Negative Months", "Win Rate %"]
+        for col_idx, header in enumerate(yearly_headers, 1):
+            cell = ws.cell(row=row, column=col_idx, value=header)
+            cell.font = self.header_font
+            cell.fill = self.header_fill
+        row += 1
+
+        for year in years:
+            year_data = monthly_df[monthly_df['year'] == year].copy()
+            if year_data.empty:
+                continue
+
+            year_return = year_data['return_pct'].sum()
+            best_month_idx = year_data['return_pct'].idxmax()
+            worst_month_idx = year_data['return_pct'].idxmin()
+            best_month = year_data.loc[best_month_idx, 'month_name']
+            best_pct = year_data.loc[best_month_idx, 'return_pct']
+            worst_month = year_data.loc[worst_month_idx, 'month_name']
+            worst_pct = year_data.loc[worst_month_idx, 'return_pct']
+            positive_months = (year_data['return_pct'] > 0).sum()
+            negative_months = (year_data['return_pct'] <= 0).sum()
+            total_months = len(year_data)
+            win_rate = (positive_months / total_months * 100) if total_months > 0 else 0
+
+            ws.cell(row=row, column=1, value=year).font = Font(bold=True)
+
+            cell = ws.cell(row=row, column=2, value=round(year_return, 2))
+            cell.number_format = '0.00"%"'
+            if year_return > 0:
+                cell.fill = self.positive_fill
+            elif year_return < 0:
+                cell.fill = self.negative_fill
+
+            ws.cell(row=row, column=3, value=best_month)
+            cell = ws.cell(row=row, column=4, value=round(best_pct, 2))
+            cell.number_format = '0.00"%"'
+            cell.fill = self.positive_fill
+
+            ws.cell(row=row, column=5, value=worst_month)
+            cell = ws.cell(row=row, column=6, value=round(worst_pct, 2))
+            cell.number_format = '0.00"%"'
+            cell.fill = self.negative_fill
+
+            ws.cell(row=row, column=7, value=positive_months)
+            ws.cell(row=row, column=8, value=negative_months)
+
+            cell = ws.cell(row=row, column=9, value=round(win_rate, 1))
+            cell.number_format = '0.0"%"'
+
+            row += 1
+
+        # Overall summary row
+        if years:
+            row += 1
+            ws.cell(row=row, column=1, value="OVERALL").font = Font(bold=True, size=12)
+            total_return = monthly_df['return_pct'].sum()
+            cell = ws.cell(row=row, column=2, value=round(total_return, 2))
+            cell.number_format = '0.00"%"'
+            cell.font = Font(bold=True)
+
+            overall_positive = (monthly_df['return_pct'] > 0).sum()
+            overall_negative = (monthly_df['return_pct'] <= 0).sum()
+            overall_win_rate = (overall_positive / len(monthly_df) * 100) if len(monthly_df) > 0 else 0
+
+            ws.cell(row=row, column=7, value=overall_positive).font = Font(bold=True)
+            ws.cell(row=row, column=8, value=overall_negative).font = Font(bold=True)
+            cell = ws.cell(row=row, column=9, value=round(overall_win_rate, 1))
+            cell.number_format = '0.0"%"'
+            cell.font = Font(bold=True)
+
         # Column widths
-        ws.column_dimensions['A'].width = 8
-        for col_idx in range(2, len(years) + 2):
-            ws.column_dimensions[get_column_letter(col_idx)].width = 10
+        ws.column_dimensions['A'].width = 12
+        for col_idx in range(2, len(years) + 3):
+            ws.column_dimensions[get_column_letter(col_idx)].width = 12
+        for col_idx in range(len(years) + 3, len(years) + 10):
+            ws.column_dimensions[get_column_letter(col_idx)].width = 14
 
     # ==================== HELPER METHODS ====================
 

@@ -959,6 +959,187 @@ class EnhancedVisualizations:
         plt.tight_layout()
         return self._get_figure_bytes(fig)
 
+    def create_streak_visualization(
+        self,
+        trades: List[Any],
+        title: str = "Win/Loss Streak Analysis",
+        figsize: Tuple[int, int] = (14, 8)
+    ) -> BytesIO:
+        """
+        Create comprehensive streak visualization with multiple views.
+
+        Shows:
+        - Waterfall chart of consecutive wins/losses
+        - Streak length distribution (grouped bar chart)
+        - Streak length statistics table
+
+        Args:
+            trades: List of Trade objects
+            title: Chart title
+            figsize: Figure size
+
+        Returns:
+            BytesIO containing PNG image
+        """
+        if not trades:
+            fig, ax = plt.subplots(figsize=figsize)
+            ax.text(0.5, 0.5, 'No trades to display', ha='center', va='center', fontsize=12)
+            ax.axis('off')
+            return self._get_figure_bytes(fig)
+
+        # Sort trades by exit date
+        sorted_trades = sorted(trades, key=lambda t: t.exit_date)
+
+        # Calculate streaks
+        streaks = []  # (length, type, start_idx, end_idx, total_pnl)
+        current_streak_length = 0
+        current_type = None
+        streak_pnl = 0
+        start_idx = 0
+
+        for i, trade in enumerate(sorted_trades):
+            is_win = trade.pl > 0
+            if current_type is None:
+                current_type = is_win
+                current_streak_length = 1
+                streak_pnl = trade.pl
+                start_idx = i
+            elif is_win == current_type:
+                current_streak_length += 1
+                streak_pnl += trade.pl
+            else:
+                streaks.append((current_streak_length, 'Win' if current_type else 'Loss',
+                               start_idx, i - 1, streak_pnl))
+                current_type = is_win
+                current_streak_length = 1
+                streak_pnl = trade.pl
+                start_idx = i
+
+        streaks.append((current_streak_length, 'Win' if current_type else 'Loss',
+                       start_idx, len(sorted_trades) - 1, streak_pnl))
+
+        fig, axes = plt.subplots(2, 2, figsize=figsize)
+        fig.suptitle(title, fontsize=14, fontweight='bold', y=0.98)
+
+        # 1. Waterfall chart showing sequence of streaks
+        ax1 = axes[0, 0]
+        positions = range(len(streaks))
+        colors = [self.COLORS['positive'] if s[1] == 'Win' else self.COLORS['negative'] for s in streaks]
+        lengths = [s[0] if s[1] == 'Win' else -s[0] for s in streaks]
+
+        bars = ax1.bar(positions, lengths, color=colors, edgecolor='white', width=0.8)
+        ax1.axhline(0, color='black', linewidth=1)
+
+        # Add labels
+        for i, (bar, streak) in enumerate(zip(bars, streaks)):
+            height = bar.get_height()
+            ax1.text(bar.get_x() + bar.get_width()/2, height + (0.2 if height > 0 else -0.4),
+                    f'{abs(streak[0])}', ha='center', va='bottom' if height > 0 else 'top',
+                    fontsize=8, fontweight='bold')
+
+        ax1.set_xlabel('Streak Sequence', fontsize=10)
+        ax1.set_ylabel('Streak Length (+ Win / - Loss)', fontsize=10)
+        ax1.set_title('Sequential Streak Waterfall', fontsize=12)
+        ax1.grid(True, alpha=0.3, axis='y')
+
+        # 2. Grouped bar chart - streak length distribution
+        ax2 = axes[0, 1]
+        win_streaks = [s[0] for s in streaks if s[1] == 'Win']
+        loss_streaks = [s[0] for s in streaks if s[1] == 'Loss']
+
+        max_streak = max(max(win_streaks, default=1), max(loss_streaks, default=1))
+        streak_lengths = list(range(1, max_streak + 1))
+
+        win_counts = [win_streaks.count(x) for x in streak_lengths]
+        loss_counts = [loss_streaks.count(x) for x in streak_lengths]
+
+        x = np.arange(len(streak_lengths))
+        width = 0.35
+
+        bars1 = ax2.bar(x - width/2, win_counts, width, label='Win Streaks',
+                        color=self.COLORS['positive'], edgecolor='white')
+        bars2 = ax2.bar(x + width/2, loss_counts, width, label='Loss Streaks',
+                        color=self.COLORS['negative'], edgecolor='white')
+
+        ax2.set_xlabel('Streak Length', fontsize=10)
+        ax2.set_ylabel('Frequency', fontsize=10)
+        ax2.set_title('Streak Length Distribution', fontsize=12)
+        ax2.set_xticks(x)
+        ax2.set_xticklabels(streak_lengths)
+        ax2.legend()
+        ax2.grid(True, alpha=0.3, axis='y')
+
+        # Add value labels on bars
+        for bar in bars1:
+            if bar.get_height() > 0:
+                ax2.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.1,
+                        str(int(bar.get_height())), ha='center', va='bottom', fontsize=8)
+        for bar in bars2:
+            if bar.get_height() > 0:
+                ax2.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.1,
+                        str(int(bar.get_height())), ha='center', va='bottom', fontsize=8)
+
+        # 3. Streak P&L distribution
+        ax3 = axes[1, 0]
+        streak_pnls = [s[4] for s in streaks]
+        streak_colors = [self.COLORS['positive'] if s[1] == 'Win' else self.COLORS['negative'] for s in streaks]
+
+        bars = ax3.bar(range(len(streaks)), streak_pnls, color=streak_colors, edgecolor='white')
+        ax3.axhline(0, color='black', linewidth=1)
+        ax3.set_xlabel('Streak Sequence', fontsize=10)
+        ax3.set_ylabel('P/L ($)', fontsize=10)
+        ax3.set_title('P/L by Streak', fontsize=12)
+        ax3.grid(True, alpha=0.3, axis='y')
+
+        # 4. Statistics summary as text
+        ax4 = axes[1, 1]
+        ax4.axis('off')
+
+        # Calculate statistics
+        win_streak_stats = {
+            'count': len(win_streaks),
+            'max': max(win_streaks) if win_streaks else 0,
+            'avg': np.mean(win_streaks) if win_streaks else 0,
+            'total_trades': sum(win_streaks)
+        }
+        loss_streak_stats = {
+            'count': len(loss_streaks),
+            'max': max(loss_streaks) if loss_streaks else 0,
+            'avg': np.mean(loss_streaks) if loss_streaks else 0,
+            'total_trades': sum(loss_streaks)
+        }
+
+        stats_text = f"""
+        STREAK STATISTICS
+        ═══════════════════════════════════════
+
+        WIN STREAKS
+        ───────────────────────────────────────
+        Number of Win Streaks:     {win_streak_stats['count']}
+        Maximum Win Streak:        {win_streak_stats['max']} trades
+        Average Win Streak:        {win_streak_stats['avg']:.1f} trades
+        Total Winning Trades:      {win_streak_stats['total_trades']}
+
+        LOSS STREAKS
+        ───────────────────────────────────────
+        Number of Loss Streaks:    {loss_streak_stats['count']}
+        Maximum Loss Streak:       {loss_streak_stats['max']} trades
+        Average Loss Streak:       {loss_streak_stats['avg']:.1f} trades
+        Total Losing Trades:       {loss_streak_stats['total_trades']}
+
+        OVERALL
+        ───────────────────────────────────────
+        Total Streaks:             {len(streaks)}
+        Win Streak Ratio:          {win_streak_stats['count'] / len(streaks) * 100:.1f}%
+        """
+
+        ax4.text(0.05, 0.95, stats_text, transform=ax4.transAxes, fontsize=9,
+                verticalalignment='top', fontfamily='monospace',
+                bbox=dict(boxstyle='round', facecolor='white', alpha=0.8))
+
+        plt.tight_layout()
+        return self._get_figure_bytes(fig)
+
     def create_capital_utilization_chart(
         self,
         equity_curve: pd.DataFrame,

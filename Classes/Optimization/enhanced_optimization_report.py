@@ -194,13 +194,19 @@ class EnhancedOptimizationReportGenerator:
         metrics['success_rate'] = (metrics['total_passed'] / metrics['total_windows'] * 100
                                     if metrics['total_windows'] > 0 else 0)
 
-        # Performance metrics
-        metrics['avg_is_sortino'] = multi_results.combined_avg_in_sample_sortino
-        metrics['avg_oos_sortino'] = multi_results.combined_avg_out_sample_sortino
-        metrics['sortino_degradation'] = multi_results.combined_avg_sortino_degradation_pct
-        metrics['avg_is_sharpe'] = multi_results.combined_avg_in_sample_sharpe
-        metrics['avg_oos_sharpe'] = multi_results.combined_avg_out_sample_sharpe
-        metrics['sharpe_degradation'] = multi_results.combined_avg_sharpe_degradation_pct
+        # Performance metrics - handle potential NaN/None values
+        metrics['avg_is_sortino'] = self._safe_float(multi_results.combined_avg_in_sample_sortino)
+        metrics['avg_oos_sortino'] = self._safe_float(multi_results.combined_avg_out_sample_sortino)
+        metrics['sortino_degradation'] = self._safe_float(multi_results.combined_avg_sortino_degradation_pct)
+        metrics['avg_is_sharpe'] = self._safe_float(multi_results.combined_avg_in_sample_sharpe)
+        metrics['avg_oos_sharpe'] = self._safe_float(multi_results.combined_avg_out_sample_sharpe)
+        metrics['sharpe_degradation'] = self._safe_float(multi_results.combined_avg_sharpe_degradation_pct)
+
+        # Log diagnostic info if values look suspicious
+        if metrics['total_windows'] == 0:
+            logger.warning("No optimization windows found in results")
+        if metrics['avg_is_sortino'] == 0 and metrics['avg_oos_sortino'] == 0:
+            logger.warning("Both IS and OOS Sortino ratios are 0 - check optimization results")
 
         # Overfitting probability
         metrics['overfitting_score'] = self._calculate_overfitting_score(multi_results, sensitivity_results_dict)
@@ -218,13 +224,33 @@ class EnhancedOptimizationReportGenerator:
             metrics['security_metrics'][symbol] = {
                 'windows': wf_results.total_windows,
                 'passed': wf_results.windows_passed_constraints,
-                'is_sortino': wf_results.avg_in_sample_sortino,
-                'oos_sortino': wf_results.avg_out_sample_sortino,
-                'degradation': wf_results.avg_sortino_degradation_pct,
+                'is_sortino': self._safe_float(wf_results.avg_in_sample_sortino),
+                'oos_sortino': self._safe_float(wf_results.avg_out_sample_sortino),
+                'degradation': self._safe_float(wf_results.avg_sortino_degradation_pct),
                 'is_positive_oos': wf_results.avg_out_sample_sortino > 0,
             }
 
+        # Store diagnostic info for the report
+        metrics['_diagnostic'] = {
+            'has_windows': metrics['total_windows'] > 0,
+            'has_passed': metrics['total_passed'] > 0,
+            'has_valid_sortino': metrics['avg_is_sortino'] != 0 or metrics['avg_oos_sortino'] != 0,
+            'securities_count': len(multi_results.individual_results),
+        }
+
         return metrics
+
+    def _safe_float(self, value) -> float:
+        """Safely convert value to float, handling NaN and None."""
+        if value is None:
+            return 0.0
+        try:
+            result = float(value)
+            if np.isnan(result) or np.isinf(result):
+                return 0.0
+            return result
+        except (ValueError, TypeError):
+            return 0.0
 
     def _calculate_overfitting_score(
         self,
@@ -480,7 +506,30 @@ class EnhancedOptimizationReportGenerator:
             ws.cell(row=row, column=2, value=value).border = self.border
             row += 1
 
-        ws.column_dimensions['A'].width = 30
+        row += 2
+
+        # Add diagnostic warnings if data looks suspicious
+        diag = metrics.get('_diagnostic', {})
+        warnings = []
+
+        if not diag.get('has_windows', True):
+            warnings.append("WARNING: No optimization windows found. Check that optimization completed successfully.")
+        if not diag.get('has_passed', True) and diag.get('has_windows', False):
+            warnings.append("WARNING: No windows passed constraints. Consider loosening constraint thresholds.")
+        if not diag.get('has_valid_sortino', True) and diag.get('has_windows', False):
+            warnings.append("WARNING: Sortino ratios are all zero. This may indicate insufficient trades or calculation issues.")
+        if metrics['total_windows'] > 0 and metrics['success_rate'] == 0:
+            warnings.append("WARNING: 0% success rate. All windows failed constraints.")
+
+        if warnings:
+            row = self._add_section_header(ws, row, "⚠️ DATA QUALITY WARNINGS")
+            for warning in warnings:
+                ws[f'A{row}'] = warning
+                ws[f'A{row}'].font = Font(color=self.COLORS['negative_dark'], italic=True)
+                row += 1
+            row += 1
+
+        ws.column_dimensions['A'].width = 35
         ws.column_dimensions['B'].width = 20
         for col in ['C', 'D', 'E', 'F', 'G', 'H']:
             ws.column_dimensions[col].width = 15

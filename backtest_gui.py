@@ -1046,13 +1046,16 @@ class BacktestGUI:
                     output_directory=Path('logs') / backtest_name / 'reports',
                     initial_capital=float(self.capital_var.get()),
                     risk_free_rate=0.02,
-                    benchmark_name="S&P 500"
+                    benchmark_name="S&P 500",
+                    use_enhanced=True
                 )
                 report_path = excel_generator.generate_report(
                     result=result,
                     filename=f"{backtest_name}_{symbol}_report.xlsx"
                 )
                 self.log_result(f"✓ Excel report saved to: {report_path}")
+                if excel_generator.is_enhanced_available():
+                    self.log_result("  (Enhanced report with advanced visualizations)")
             except Exception as e:
                 self.log_result(f"⚠ Excel report generation failed: {str(e)}")
 
