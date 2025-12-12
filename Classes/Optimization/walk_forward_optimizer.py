@@ -328,6 +328,11 @@ class WalkForwardOptimizer:
         total_days = (data_end_date - data_start_date).days
         window_size_days = train_days + test_days
 
+        # Log the effective parameters for debugging
+        logger.info(f"Window splitting: data from {data_start_date.date() if hasattr(data_start_date, 'date') else data_start_date} "
+                   f"to {data_end_date.date() if hasattr(data_end_date, 'date') else data_end_date} ({total_days} days, {len(data)} bars)")
+        logger.info(f"Window params: train={train_days}d, test={test_days}d, step={avg_step}d (range {step_min}-{step_max})")
+
         if total_days < window_size_days:
             logger.warning(f"Not enough data ({total_days} days) for even one window ({window_size_days} days required)")
             return windows

@@ -1056,12 +1056,40 @@ class OptimizationGUI:
 
                 # Load data for all securities
                 data_dict = {}
+
+                # Get start date filter if specified
+                filter_start_date = None
+                if self.use_start_date_var.get():
+                    start_date_str = self.start_date_entry.get().strip()
+                    if start_date_str and start_date_str != "YYYY-MM-DD":
+                        try:
+                            filter_start_date = pd.to_datetime(start_date_str)
+                            self.log_message(f"Applying start date filter: {start_date_str}")
+                        except Exception as e:
+                            self.log_message(f"WARNING: Invalid date format '{start_date_str}'. Using all available data. Error: {e}")
+
                 for symbol in securities:
                     self.log_message(f"Loading data for {symbol}...")
                     try:
                         data = self.data_loader.load_csv(symbol)
+                        original_len = len(data)
+
+                        # Apply start date filter if specified
+                        if filter_start_date is not None:
+                            oldest_available = data['date'].min()
+                            data = data[data['date'] >= filter_start_date].copy()
+
+                            if len(data) == 0:
+                                self.log_message(f"  WARNING: No data after {start_date_str}. Using all available data from {oldest_available.strftime('%Y-%m-%d')}")
+                                data = self.data_loader.load_csv(symbol)  # Reload original
+                            elif len(data) < original_len:
+                                self.log_message(f"  Loaded {len(data)} bars (filtered from {data['date'].min().strftime('%Y-%m-%d')})")
+                            else:
+                                self.log_message(f"  Loaded {len(data)} bars (start date before available data)")
+                        else:
+                            self.log_message(f"  Loaded {len(data)} bars")
+
                         data_dict[symbol] = data
-                        self.log_message(f"  Loaded {len(data)} bars")
                     except Exception as e:
                         self.log_message(f"  ERROR: {e}")
                         continue
