@@ -586,9 +586,9 @@ class OptimizationGUI:
             if data_days is None:
                 data_days = 15 * 365
 
-            # Calculate estimated windows
+            # Calculate estimated windows (matching _split_into_windows logic)
             window_size = train_days + test_days
-            avg_step = (step_min + step_max) / 2
+            avg_step = (step_min + step_max) // 2  # Integer division to match optimizer
 
             if data_days < window_size:
                 self.window_estimate_label.config(
@@ -596,13 +596,15 @@ class OptimizationGUI:
                 )
                 return
 
-            # Approximate number of windows
-            usable_days = data_days - window_size
-            est_windows = int(usable_days / avg_step) + 1
+            # Calculate windows: start at day 0, step forward until test_end exceeds data
+            # Window N starts at day (N-1) * avg_step, ends at (N-1) * avg_step + window_size
+            # Last window: (N-1) * avg_step + window_size <= data_days
+            # Solving: N <= (data_days - window_size) / avg_step + 1
+            est_windows = int((data_days - window_size) / avg_step) + 1
 
             # Show estimate with explanation
             self.window_estimate_label.config(
-                text=f"≈ {est_windows} windows (avg step {avg_step:.0f} days, {data_days} days{filter_note})"
+                text=f"≈ {est_windows} windows (step {avg_step} days, {data_days} days{filter_note})"
             )
 
         except (tk.TclError, ValueError):
