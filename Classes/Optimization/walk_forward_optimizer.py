@@ -1164,6 +1164,7 @@ class WalkForwardOptimizer:
         # Get Bayesian settings
         bayes_config = self.config['bayesian_optimization']
         speed_mode = bayes_config.get('speed_mode', 'full')
+        n_jobs = bayes_config.get('n_jobs', 1)
 
         if speed_mode == 'quick':
             n_calls = 25
@@ -1174,6 +1175,10 @@ class WalkForwardOptimizer:
         else:
             n_calls = 100
             n_random = 30
+
+        # Adjust for Windows compatibility
+        if platform.system() == 'Windows' and n_jobs != 1:
+            logger.info(f"Windows detected: Parallel processing (n_jobs={n_jobs}) may not be available. Will attempt and fall back to serial if needed.")
 
         # Track progress
         iteration = [0]
@@ -1215,10 +1220,31 @@ class WalkForwardOptimizer:
                 space,
                 n_calls=n_calls,
                 n_initial_points=n_random,
-                random_state=42,
-                n_jobs=1
+                random_state=bayes_config.get('random_state'),
+                n_jobs=n_jobs
             )
+        except (ImportError, OSError, AttributeError) as e:
+            # Multiprocessing not available in this environment
+            if n_jobs != 1:
+                # Provide platform-specific message
+                if platform.system() == 'Windows':
+                    logger.info(f"Parallel processing not available on Windows (expected). Using serial processing (n_jobs=1).")
+                else:
+                    logger.warning(f"Parallel processing not available ({e}). Falling back to serial processing (n_jobs=1)")
 
+                # Retry with serial processing
+                result = gp_minimize(
+                    objective,
+                    space,
+                    n_calls=n_calls,
+                    n_initial_points=n_random,
+                    random_state=bayes_config.get('random_state'),
+                    n_jobs=1
+                )
+            else:
+                raise
+
+        try:
             # Extract best parameters
             best_params = {name: value for name, value in zip(param_names, result.x)}
             best_params.update(fixed_params)
