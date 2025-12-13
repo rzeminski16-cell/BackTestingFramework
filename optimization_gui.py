@@ -33,7 +33,8 @@ import pandas as pd
 from Classes.Data.data_loader import DataLoader
 from Classes.Config.basket import Basket, BasketManager
 from Classes.Config.capital_contention import (
-    CapitalContentionConfig, CapitalContentionMode, VulnerabilityScoreConfig
+    CapitalContentionConfig, CapitalContentionMode, VulnerabilityScoreConfig,
+    VULNERABILITY_SCORE_PARAM_DEFINITIONS
 )
 from Classes.Optimization.optimization_report_generator import OptimizationReportGenerator
 from Classes.Optimization.sensitivity_analyzer import SensitivityAnalyzer
@@ -287,6 +288,25 @@ class OptModeSecuritiesStep(WizardStep):
             on_save=on_save
         )
 
+    def on_enter(self):
+        """Restore security selections when returning to this step."""
+        if hasattr(self.wizard, 'selected_securities') and self.wizard.selected_securities:
+            # Restore mode first
+            mode = self.wizard.mode_var.get()
+            if mode == "portfolio":
+                self.securities_listbox.config(selectmode=tk.MULTIPLE)
+            else:
+                self.securities_listbox.config(selectmode=tk.SINGLE)
+
+            # Restore selections
+            self.securities_listbox.selection_clear(0, tk.END)
+            all_symbols = list(self.securities_listbox.get(0, tk.END))
+            for symbol in self.wizard.selected_securities:
+                if symbol in all_symbols:
+                    idx = all_symbols.index(symbol)
+                    self.securities_listbox.selection_set(idx)
+            self._on_selection_change(None)
+
     def get_summary(self) -> Dict[str, str]:
         mode = self.wizard.mode_var.get()
         selections = self.securities_listbox.curselection()
@@ -336,6 +356,7 @@ class StrategyParamsStep(WizardStep):
     def __init__(self, wizard: 'OptimizationWizard'):
         super().__init__(wizard, "Strategy & Parameters")
         self.wizard: OptimizationWizard = wizard
+        self.vuln_checkboxes: Dict[str, tk.BooleanVar] = {}
 
     def create_widgets(self, parent: ttk.Frame) -> None:
         parent.columnconfigure(0, weight=1)
@@ -408,6 +429,10 @@ class StrategyParamsStep(WizardStep):
         if self.wizard.STRATEGIES:
             self._on_strategy_change(None)
 
+    def on_enter(self):
+        """Rebuild UI when entering step (in case mode or contention changed)."""
+        self._build_param_ui()
+
     def _on_strategy_change(self, event):
         strategy_name = self.wizard.strategy_var.get()
         if not strategy_name:
@@ -422,6 +447,7 @@ class StrategyParamsStep(WizardStep):
         for widget in self.param_frame.winfo_children():
             widget.destroy()
         self.param_checkboxes.clear()
+        self.vuln_checkboxes.clear()
 
         strategy_name = self.wizard.strategy_var.get()
         strategy_config = self.wizard.optimizer.config['strategy_parameters'].get(strategy_name, {})
@@ -519,36 +545,128 @@ class StrategyParamsStep(WizardStep):
 
                 row += 1
 
+        # Add Vulnerability Score parameters if portfolio mode with vulnerability score
+        if (hasattr(self.wizard, 'mode_var') and self.wizard.mode_var and
+            self.wizard.mode_var.get() == "portfolio" and
+            hasattr(self.wizard, 'contention_mode_var') and self.wizard.contention_mode_var and
+            self.wizard.contention_mode_var.get() == "vulnerability"):
+
+            # Separator and header for vulnerability score parameters
+            ttk.Separator(self.param_frame, orient='horizontal').grid(
+                row=row, column=0, columnspan=4, sticky='ew', pady=(15, 5), padx=5
+            )
+            row += 1
+            ttk.Label(
+                self.param_frame, text="Vulnerability Score Parameters",
+                font=('TkDefaultFont', 10, 'bold'), foreground='#8B4513'
+            ).grid(row=row, column=0, columnspan=4, sticky='w', padx=10)
+            row += 1
+            ttk.Label(
+                self.param_frame,
+                text="(These control position swapping behavior in portfolio mode)",
+                font=('TkDefaultFont', 8, 'italic'), foreground='gray'
+            ).grid(row=row, column=0, columnspan=4, sticky='w', padx=10)
+            row += 1
+
+            # Add each vulnerability score parameter
+            for param_name, param_spec in VULNERABILITY_SCORE_PARAM_DEFINITIONS.items():
+                # Initialize as NOT selected by default (these are advanced parameters)
+                var = tk.BooleanVar(value=False)
+                self.vuln_checkboxes[param_name] = var
+
+                # Initialize in wizard's selected_vuln_parameters
+                if not hasattr(self.wizard, 'selected_vuln_parameters'):
+                    self.wizard.selected_vuln_parameters = {}
+                self.wizard.selected_vuln_parameters[param_name] = False
+
+                cb = ttk.Checkbutton(
+                    self.param_frame, variable=var,
+                    command=self._update_param_count
+                )
+                cb.grid(row=row, column=0, sticky='w', padx=(20, 5), pady=2)
+
+                ttk.Label(self.param_frame, text=param_name).grid(
+                    row=row, column=1, sticky='w', pady=2
+                )
+
+                # Range info
+                min_val = param_spec.get('min', 'N/A')
+                max_val = param_spec.get('max', 'N/A')
+                param_type = param_spec.get('type', 'float')
+
+                if min_val != 'N/A' and max_val != 'N/A':
+                    if param_type == 'int':
+                        range_str = f"[{int(min_val)} - {int(max_val)}]"
+                    else:
+                        range_str = f"[{min_val:.2f} - {max_val:.2f}]"
+                else:
+                    range_str = ""
+
+                ttk.Label(
+                    self.param_frame, text=range_str,
+                    font=('TkDefaultFont', 8), foreground='#666666'
+                ).grid(row=row, column=2, sticky='w', padx=5, pady=2)
+
+                # Default value
+                default_val = param_spec.get('default', 'N/A')
+                ttk.Label(
+                    self.param_frame, text=f"Default: {default_val}",
+                    font=('TkDefaultFont', 8), foreground='gray'
+                ).grid(row=row, column=3, sticky='w', padx=5, pady=2)
+
+                row += 1
+
         self._update_param_count()
 
     def _select_all_params(self):
         for var in self.param_checkboxes.values():
+            var.set(True)
+        for var in self.vuln_checkboxes.values():
             var.set(True)
         self._update_param_count()
 
     def _deselect_all_params(self):
         for var in self.param_checkboxes.values():
             var.set(False)
+        for var in self.vuln_checkboxes.values():
+            var.set(False)
         self._update_param_count()
 
     def _update_param_count(self):
-        count = sum(1 for var in self.param_checkboxes.values() if var.get())
-        total = len(self.param_checkboxes)
-        self.param_count_var.set(f"{count}/{total} parameters selected for optimization")
+        strategy_count = sum(1 for var in self.param_checkboxes.values() if var.get())
+        vuln_count = sum(1 for var in self.vuln_checkboxes.values() if var.get())
+        total_count = strategy_count + vuln_count
+        total_params = len(self.param_checkboxes) + len(self.vuln_checkboxes)
+
+        if self.vuln_checkboxes:
+            self.param_count_var.set(f"{total_count}/{total_params} parameters selected ({strategy_count} strategy, {vuln_count} vulnerability)")
+        else:
+            self.param_count_var.set(f"{strategy_count}/{len(self.param_checkboxes)} parameters selected for optimization")
 
         # Update wizard's selected_parameters
         for name, var in self.param_checkboxes.items():
             self.wizard.selected_parameters[name] = var.get()
 
+        # Update wizard's selected_vuln_parameters
+        if not hasattr(self.wizard, 'selected_vuln_parameters'):
+            self.wizard.selected_vuln_parameters = {}
+        for name, var in self.vuln_checkboxes.items():
+            self.wizard.selected_vuln_parameters[name] = var.get()
+
     def get_summary(self) -> Dict[str, str]:
         strategy_name = self.wizard.strategy_var.get()
-        count = sum(1 for var in self.param_checkboxes.values() if var.get())
-        total = len(self.param_checkboxes)
+        strategy_count = sum(1 for var in self.param_checkboxes.values() if var.get())
+        vuln_count = sum(1 for var in self.vuln_checkboxes.values() if var.get())
+        total = len(self.param_checkboxes) + len(self.vuln_checkboxes)
 
-        return {
-            "Strategy": strategy_name,
-            "Parameters": f"{count}/{total} selected for optimization"
-        }
+        summary = {"Strategy": strategy_name}
+
+        if self.vuln_checkboxes:
+            summary["Parameters"] = f"{strategy_count + vuln_count}/{total} selected ({strategy_count} strategy, {vuln_count} vulnerability)"
+        else:
+            summary["Parameters"] = f"{strategy_count}/{len(self.param_checkboxes)} selected for optimization"
+
+        return summary
 
     def validate(self) -> bool:
         self.validation_errors = []
@@ -557,8 +675,11 @@ class StrategyParamsStep(WizardStep):
             self.validation_errors.append("Please select a strategy.")
             return False
 
-        count = sum(1 for var in self.param_checkboxes.values() if var.get())
-        if count == 0:
+        strategy_count = sum(1 for var in self.param_checkboxes.values() if var.get())
+        vuln_count = sum(1 for var in self.vuln_checkboxes.values() if var.get())
+        total_count = strategy_count + vuln_count
+
+        if total_count == 0:
             self.validation_errors.append("Please select at least one parameter to optimize.")
             return False
 

@@ -356,18 +356,15 @@ class StrategyStep(WizardStep):
 
         ttk.Label(selection_frame, text="Strategy:").pack(side=tk.LEFT, padx=(0, 10))
         self.wizard.strategy_var = tk.StringVar()
-        strategy_combo = ttk.Combobox(
+        self.strategy_combo = ttk.Combobox(
             selection_frame,
             textvariable=self.wizard.strategy_var,
             values=list(self.wizard.STRATEGIES.keys()),
             state="readonly",
             width=30
         )
-        strategy_combo.pack(side=tk.LEFT)
-        if self.wizard.STRATEGIES:
-            strategy_combo.current(0)
-            self._on_strategy_change(None)
-        strategy_combo.bind('<<ComboboxSelected>>', self._on_strategy_change)
+        self.strategy_combo.pack(side=tk.LEFT)
+        self.strategy_combo.bind('<<ComboboxSelected>>', self._on_strategy_change)
 
         # Strategy Parameters
         params_frame = ttk.LabelFrame(parent, text="Strategy Parameters", padding="10")
@@ -417,6 +414,11 @@ class StrategyStep(WizardStep):
         canvas.bind_all("<MouseWheel>", _on_mousewheel)
 
         self.param_entries: Dict[str, tk.StringVar] = {}
+
+        # Initialize with first strategy (after all widgets are created)
+        if self.wizard.STRATEGIES:
+            self.strategy_combo.current(0)
+            self._on_strategy_change(None)
 
     def _on_strategy_change(self, event):
         """Handle strategy selection change."""
