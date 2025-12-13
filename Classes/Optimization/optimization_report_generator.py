@@ -25,6 +25,13 @@ from openpyxl.utils.dataframe import dataframe_to_rows
 from Classes.Optimization.sensitivity_analyzer import SensitivityResults
 from Classes.Optimization.walk_forward_optimizer import WalkForwardResults, MultiSecurityResults
 
+# Check if enhanced reports are available
+try:
+    from Classes.Optimization.enhanced_optimization_report import EnhancedOptimizationReportGenerator
+    ENHANCED_REPORTS_AVAILABLE = True
+except ImportError:
+    ENHANCED_REPORTS_AVAILABLE = False
+
 logger = logging.getLogger(__name__)
 
 
@@ -41,11 +48,27 @@ class OptimizationReportGenerator:
     6. Recommendations - Actionable insights
     """
 
-    def __init__(self, config: Dict[str, Any]):
-        """Initialize report generator."""
+    def __init__(self, config: Dict[str, Any], use_enhanced: bool = False):
+        """
+        Initialize report generator.
+
+        Args:
+            config: Configuration dictionary
+            use_enhanced: If True, use enhanced reports with advanced visualizations
+        """
         self.config = config
         self.report_config = config.get('reporting', {})
         self.decimal_places = config.get('report', {}).get('excel', {}).get('decimal_places', 4)
+        self.use_enhanced = use_enhanced and ENHANCED_REPORTS_AVAILABLE
+
+        # Initialize enhanced generator if available and requested
+        self._enhanced_generator = None
+        if self.use_enhanced:
+            try:
+                self._enhanced_generator = EnhancedOptimizationReportGenerator(config)
+            except Exception as e:
+                logger.warning(f"Could not initialize enhanced generator: {e}")
+                self.use_enhanced = False
 
         # Styling
         self.header_fill = PatternFill(start_color="366092", end_color="366092", fill_type="solid")
@@ -162,6 +185,85 @@ class OptimizationReportGenerator:
         logger.info(f"Combined optimization report saved to {filepath}")
 
         return filepath
+
+    def generate_portfolio_optimization_report(
+        self,
+        multi_results: MultiSecurityResults,
+        sensitivity_results_dict: Optional[Dict[str, SensitivityResults]] = None,
+        output_dir: str = None,
+        use_enhanced: Optional[bool] = None
+    ) -> str:
+        """
+        Generate comprehensive portfolio optimization report.
+
+        This method generates an enhanced report specifically designed for portfolio
+        optimization with advanced visualizations and analytics.
+
+        Args:
+            multi_results: Combined results from all securities
+            sensitivity_results_dict: Optional dict of symbol -> SensitivityResults
+            output_dir: Output directory (defaults to config)
+            use_enhanced: Override instance setting for enhanced reports
+
+        Returns:
+            Path to generated report file
+        """
+        # Determine whether to use enhanced reports
+        should_use_enhanced = use_enhanced if use_enhanced is not None else self.use_enhanced
+
+        # Use enhanced generator if available and enabled
+        if should_use_enhanced and self._enhanced_generator is not None:
+            return self._enhanced_generator.generate_portfolio_optimization_report(
+                multi_results=multi_results,
+                sensitivity_results_dict=sensitivity_results_dict,
+                output_dir=output_dir
+            )
+
+        # Fall back to combined report
+        return self.generate_combined_report(
+            multi_results=multi_results,
+            sensitivity_results_dict=sensitivity_results_dict,
+            output_dir=output_dir
+        )
+
+    def generate_enhanced_portfolio_report(
+        self,
+        multi_results: MultiSecurityResults,
+        sensitivity_results_dict: Optional[Dict[str, SensitivityResults]] = None,
+        output_dir: str = None
+    ) -> Optional[str]:
+        """
+        Explicitly generate enhanced portfolio optimization report.
+
+        Args:
+            multi_results: Combined results from all securities
+            sensitivity_results_dict: Optional dict of symbol -> SensitivityResults
+            output_dir: Output directory
+
+        Returns:
+            Path to generated report, or None if enhanced reports not available
+        """
+        if not ENHANCED_REPORTS_AVAILABLE:
+            logger.warning("Enhanced reports not available. Install matplotlib and scipy.")
+            return None
+
+        if self._enhanced_generator is None:
+            try:
+                self._enhanced_generator = EnhancedOptimizationReportGenerator(self.config)
+            except Exception as e:
+                logger.warning(f"Could not initialize enhanced generator: {e}")
+                return None
+
+        return self._enhanced_generator.generate_portfolio_optimization_report(
+            multi_results=multi_results,
+            sensitivity_results_dict=sensitivity_results_dict,
+            output_dir=output_dir
+        )
+
+    @staticmethod
+    def is_enhanced_available() -> bool:
+        """Check if enhanced reports are available."""
+        return ENHANCED_REPORTS_AVAILABLE
 
     def _create_combined_summary_sheet(self, wb: Workbook, multi_results: MultiSecurityResults):
         """Create combined summary sheet with aggregated metrics."""

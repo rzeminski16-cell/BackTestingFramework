@@ -316,27 +316,50 @@ class WalkForwardOptimizer:
         windows = []
         data = data.sort_values('date').reset_index(drop=True)
 
-        # Anchored mode starts from the very beginning and expands
-        anchor_start_date = data.iloc[0]['date']
-        current_train_end_offset = train_days  # Days from anchor for training end
+        # Get data date range
+        data_start_date = data.iloc[0]['date']
+        data_end_date = data.iloc[-1]['date']
 
-        # Rolling mode tracks current start index
-        current_start_idx = 0
+        # Use deterministic step based on average (for reproducibility)
+        # Using a seed based on data hash would vary with data, so use fixed average
+        avg_step = (step_min + step_max) // 2
+
+        # Calculate total available days
+        total_days = (data_end_date - data_start_date).days
+        window_size_days = train_days + test_days
+
+        # Log the effective parameters for debugging
+        logger.info(f"Window splitting: data from {data_start_date.date() if hasattr(data_start_date, 'date') else data_start_date} "
+                   f"to {data_end_date.date() if hasattr(data_end_date, 'date') else data_end_date} ({total_days} days, {len(data)} bars)")
+        logger.info(f"Window params: train={train_days}d, test={test_days}d, step={avg_step}d (range {step_min}-{step_max})")
+
+        if total_days < window_size_days:
+            logger.warning(f"Not enough data ({total_days} days) for even one window ({window_size_days} days required)")
+            return windows
 
         window_count = 0
 
-        while True:
-            if self.should_cancel:
-                break
+        if mode == WalkForwardMode.ANCHORED:
+            # ANCHORED MODE: Training always starts from data_start_date, expands forward
+            anchor_start_date = data_start_date
+            current_train_end_offset = train_days  # Days from anchor for training end
 
-            if mode == WalkForwardMode.ANCHORED:
-                # ANCHORED MODE: Training always starts from anchor_start_date
+            while True:
+                if self.should_cancel:
+                    break
+
+                # Training always starts from anchor, ends at offset
                 train_start_date = anchor_start_date
                 train_end_date = anchor_start_date + timedelta(days=current_train_end_offset)
 
                 # Testing window follows training
                 test_start_date = train_end_date
                 test_end_date = test_start_date + timedelta(days=test_days)
+
+                # Check if test window would exceed available data
+                if test_end_date > data_end_date:
+                    logger.debug(f"Window {window_count + 1}: Test end {test_end_date.date()} exceeds data end {data_end_date.date()}, stopping")
+                    break
 
                 # Extract training data (expands over time)
                 train_mask = (data['date'] >= train_start_date) & (data['date'] < train_end_date)
@@ -346,29 +369,40 @@ class WalkForwardOptimizer:
                 test_mask = (data['date'] >= test_start_date) & (data['date'] < test_end_date)
                 test_data = data[test_mask].copy()
 
-                # Check if we have enough data
-                if len(train_data) < 100 or len(test_data) < 20:
+                # Check if we have enough data bars (not just calendar days)
+                if len(train_data) < 100:
+                    logger.debug(f"Window {window_count + 1}: Training data has only {len(train_data)} bars (< 100 minimum), stopping")
+                    break
+                if len(test_data) < 20:
+                    logger.debug(f"Window {window_count + 1}: Test data has only {len(test_data)} bars (< 20 minimum), stopping")
                     break
 
                 windows.append((train_data, test_data))
+                window_count += 1
+                logger.debug(f"Created window {window_count}: Train {train_start_date.date()} to {train_end_date.date()} ({len(train_data)} bars), "
+                           f"Test {test_start_date.date()} to {test_end_date.date()} ({len(test_data)} bars)")
 
                 # Expand training window by step size
-                step_days = random.randint(step_min, step_max)
-                current_train_end_offset += step_days
+                current_train_end_offset += avg_step
 
-                # Check if we've reached the end
-                max_date = data['date'].max()
-                if anchor_start_date + timedelta(days=current_train_end_offset + test_days) > max_date:
+        else:  # ROLLING MODE
+            # ROLLING MODE: Both start and end roll forward (sliding window)
+            current_train_start = data_start_date
+
+            while True:
+                if self.should_cancel:
                     break
 
-            else:  # ROLLING MODE
-                # ROLLING MODE: Both start and end roll forward (sliding window)
-                train_start_date = data.iloc[current_start_idx]['date']
+                # Calculate window dates
+                train_start_date = current_train_start
                 train_end_date = train_start_date + timedelta(days=train_days)
-
-                # Testing window follows training
                 test_start_date = train_end_date
                 test_end_date = test_start_date + timedelta(days=test_days)
+
+                # Check if test window would exceed available data
+                if test_end_date > data_end_date:
+                    logger.debug(f"Window {window_count + 1}: Test end {test_end_date.date()} exceeds data end {data_end_date.date()}, stopping")
+                    break
 
                 # Extract training data
                 train_mask = (data['date'] >= train_start_date) & (data['date'] < train_end_date)
@@ -378,26 +412,24 @@ class WalkForwardOptimizer:
                 test_mask = (data['date'] >= test_start_date) & (data['date'] < test_end_date)
                 test_data = data[test_mask].copy()
 
-                # Check if we have enough data
-                if len(train_data) < 100 or len(test_data) < 20:
+                # Check if we have enough data bars
+                if len(train_data) < 100:
+                    logger.debug(f"Window {window_count + 1}: Training data has only {len(train_data)} bars (< 100 minimum), stopping")
+                    break
+                if len(test_data) < 20:
+                    logger.debug(f"Window {window_count + 1}: Test data has only {len(test_data)} bars (< 20 minimum), stopping")
                     break
 
                 windows.append((train_data, test_data))
+                window_count += 1
+                logger.debug(f"Created window {window_count}: Train {train_start_date.date()} to {train_end_date.date()} ({len(train_data)} bars), "
+                           f"Test {test_start_date.date()} to {test_end_date.date()} ({len(test_data)} bars)")
 
-                # Roll forward by random step size
-                step_days = random.randint(step_min, step_max)
-                step_indices = len(data[(data['date'] >= train_start_date) &
-                                        (data['date'] < train_start_date + timedelta(days=step_days))])
+                # Roll forward by step size (in calendar days)
+                current_train_start = current_train_start + timedelta(days=avg_step)
 
-                current_start_idx += max(1, step_indices)
-
-                # Check if we've reached the end
-                if current_start_idx >= len(data) - (train_days + test_days) / 365 * 252:
-                    break
-
-            window_count += 1
-
-        logger.info(f"Created {len(windows)} walk-forward windows using {mode.value.upper()} mode")
+        logger.info(f"Created {len(windows)} walk-forward windows using {mode.value.upper()} mode "
+                   f"(train={train_days}d, test={test_days}d, step={avg_step}d)")
         return windows
 
     def _get_parameter_space(self, strategy_class: Type[BaseStrategy],
@@ -1164,6 +1196,7 @@ class WalkForwardOptimizer:
         # Get Bayesian settings
         bayes_config = self.config['bayesian_optimization']
         speed_mode = bayes_config.get('speed_mode', 'full')
+        n_jobs = bayes_config.get('n_jobs', 1)
 
         if speed_mode == 'quick':
             n_calls = 25
@@ -1174,6 +1207,10 @@ class WalkForwardOptimizer:
         else:
             n_calls = 100
             n_random = 30
+
+        # Adjust for Windows compatibility
+        if platform.system() == 'Windows' and n_jobs != 1:
+            logger.info(f"Windows detected: Parallel processing (n_jobs={n_jobs}) may not be available. Will attempt and fall back to serial if needed.")
 
         # Track progress
         iteration = [0]
@@ -1215,10 +1252,31 @@ class WalkForwardOptimizer:
                 space,
                 n_calls=n_calls,
                 n_initial_points=n_random,
-                random_state=42,
-                n_jobs=1
+                random_state=bayes_config.get('random_state'),
+                n_jobs=n_jobs
             )
+        except (ImportError, OSError, AttributeError) as e:
+            # Multiprocessing not available in this environment
+            if n_jobs != 1:
+                # Provide platform-specific message
+                if platform.system() == 'Windows':
+                    logger.info(f"Parallel processing not available on Windows (expected). Using serial processing (n_jobs=1).")
+                else:
+                    logger.warning(f"Parallel processing not available ({e}). Falling back to serial processing (n_jobs=1)")
 
+                # Retry with serial processing
+                result = gp_minimize(
+                    objective,
+                    space,
+                    n_calls=n_calls,
+                    n_initial_points=n_random,
+                    random_state=bayes_config.get('random_state'),
+                    n_jobs=1
+                )
+            else:
+                raise
+
+        try:
             # Extract best parameters
             best_params = {name: value for name, value in zip(param_names, result.x)}
             best_params.update(fixed_params)

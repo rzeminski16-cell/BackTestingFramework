@@ -9,6 +9,9 @@ Generates Excel reports with:
 - Vulnerability score analysis (if enabled)
 - Correlation matrix between securities
 - Position overlap heatmap
+
+For enhanced reports with advanced visualizations, use:
+    from Classes.Analysis.enhanced_portfolio_report import EnhancedPortfolioReportGenerator
 """
 import pandas as pd
 import numpy as np
@@ -28,10 +31,21 @@ except ImportError:
 
 from ..Analysis.performance_metrics import PerformanceMetrics
 
+# Check if enhanced reports are available
+try:
+    from ..Analysis.enhanced_portfolio_report import EnhancedPortfolioReportGenerator
+    ENHANCED_REPORTS_AVAILABLE = True
+except ImportError:
+    ENHANCED_REPORTS_AVAILABLE = False
+
 
 class PortfolioReportGenerator:
     """
     Generates comprehensive Excel reports for portfolio backtests.
+
+    For enhanced reports with advanced visualizations, matplotlib charts,
+    and deeper analytics, use the generate_enhanced_report() method or
+    set use_enhanced=True in generate_portfolio_report().
     """
 
     # Style definitions
@@ -42,30 +56,50 @@ class PortfolioReportGenerator:
     NEGATIVE_FILL = PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid") if OPENPYXL_AVAILABLE else None
     NEUTRAL_FILL = PatternFill(start_color="FFEB9C", end_color="FFEB9C", fill_type="solid") if OPENPYXL_AVAILABLE else None
 
-    def __init__(self, output_dir: Path):
+    def __init__(self, output_dir: Path, use_enhanced: bool = False):
         """
         Initialize report generator.
 
         Args:
             output_dir: Directory to save reports
+            use_enhanced: If True, use enhanced report generator by default
         """
         if not OPENPYXL_AVAILABLE:
             raise ImportError("openpyxl is required for report generation. Install with: pip install openpyxl")
 
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
+        self.use_enhanced = use_enhanced and ENHANCED_REPORTS_AVAILABLE
 
-    def generate_portfolio_report(self, result, report_name: Optional[str] = None) -> Path:
+        # Initialize enhanced generator if available and requested
+        self._enhanced_generator = None
+        if self.use_enhanced:
+            try:
+                self._enhanced_generator = EnhancedPortfolioReportGenerator(self.output_dir)
+            except Exception:
+                self.use_enhanced = False
+
+    def generate_portfolio_report(self, result, report_name: Optional[str] = None,
+                                     use_enhanced: Optional[bool] = None) -> Path:
         """
         Generate comprehensive portfolio report.
 
         Args:
             result: PortfolioBacktestResult object
             report_name: Optional custom report name
+            use_enhanced: Override instance setting for enhanced reports
 
         Returns:
             Path to generated report
         """
+        # Determine whether to use enhanced reports
+        should_use_enhanced = use_enhanced if use_enhanced is not None else self.use_enhanced
+
+        # Delegate to enhanced generator if enabled
+        if should_use_enhanced and self._enhanced_generator is not None:
+            return self._enhanced_generator.generate_portfolio_report(result, report_name)
+
+        # Standard report generation
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         filename = report_name or f"portfolio_report_{timestamp}.xlsx"
         filepath = self.output_dir / filename
@@ -97,6 +131,35 @@ class PortfolioReportGenerator:
         wb.save(filepath)
         print(f"Portfolio report saved to {filepath}")
         return filepath
+
+    def generate_enhanced_report(self, result, report_name: Optional[str] = None) -> Optional[Path]:
+        """
+        Explicitly generate enhanced portfolio report with advanced visualizations.
+
+        Args:
+            result: PortfolioBacktestResult object
+            report_name: Optional custom report name
+
+        Returns:
+            Path to generated report, or None if enhanced reports not available
+        """
+        if not ENHANCED_REPORTS_AVAILABLE:
+            print("Warning: Enhanced reports not available. Install matplotlib and scipy.")
+            return None
+
+        if self._enhanced_generator is None:
+            try:
+                self._enhanced_generator = EnhancedPortfolioReportGenerator(self.output_dir)
+            except Exception as e:
+                print(f"Warning: Could not initialize enhanced generator: {e}")
+                return None
+
+        return self._enhanced_generator.generate_portfolio_report(result, report_name)
+
+    @staticmethod
+    def is_enhanced_available() -> bool:
+        """Check if enhanced reports are available."""
+        return ENHANCED_REPORTS_AVAILABLE
 
     def _create_summary_sheet(self, wb: Workbook, result):
         """Create portfolio summary dashboard."""

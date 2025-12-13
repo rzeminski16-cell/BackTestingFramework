@@ -738,7 +738,7 @@ class WalkForwardStep(WizardStep):
                 data_days = 15 * 365
 
             window_size = train_days + test_days
-            avg_step = (step_min + step_max) / 2
+            avg_step = (step_min + step_max) // 2  # Integer division to match optimizer
 
             if data_days < window_size:
                 self.window_estimate_var.set(f"Not enough data ({data_days} days < {window_size} required)")

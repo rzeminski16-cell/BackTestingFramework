@@ -1255,7 +1255,7 @@ class BacktestWizard(WizardBase):
         # Generate portfolio report if enabled
         if self.generate_excel_var.get():
             try:
-                report_gen = PortfolioReportGenerator(portfolio_logger.reports_dir)
+                report_gen = PortfolioReportGenerator(portfolio_logger.reports_dir, use_enhanced=True)
                 report_path = report_gen.generate_portfolio_report(result)
                 results_window.log(f"Portfolio report: {report_path}")
             except Exception as e:
