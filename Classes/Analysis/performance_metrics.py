@@ -334,12 +334,31 @@ class PerformanceMetrics:
             return 0.0, 0.0
 
         equity = equity_curve['equity'].values
-        running_max = np.maximum.accumulate(equity)
-        drawdown = running_max - equity
-        drawdown_pct = (drawdown / running_max) * 100
 
-        max_dd = np.max(drawdown)
-        max_dd_pct = np.max(drawdown_pct)
+        # Filter out NaN and invalid values
+        if np.any(np.isnan(equity)) or np.any(np.isinf(equity)):
+            equity = np.nan_to_num(equity, nan=0.0, posinf=0.0, neginf=0.0)
+
+        # Ensure we have valid data
+        if len(equity) == 0 or np.all(equity <= 0):
+            return 0.0, 0.0
+
+        running_max = np.maximum.accumulate(equity)
+
+        # Prevent division by zero - use safe division
+        with np.errstate(divide='ignore', invalid='ignore'):
+            drawdown = running_max - equity
+            drawdown_pct = np.where(running_max > 0, (drawdown / running_max) * 100, 0.0)
+
+        # Remove any NaN or inf values that might have slipped through
+        drawdown = np.nan_to_num(drawdown, nan=0.0, posinf=0.0, neginf=0.0)
+        drawdown_pct = np.nan_to_num(drawdown_pct, nan=0.0, posinf=0.0, neginf=0.0)
+
+        # Cap drawdown percentage at 100% (can't lose more than 100% in real terms)
+        drawdown_pct = np.clip(drawdown_pct, 0, 100)
+
+        max_dd = np.max(drawdown) if len(drawdown) > 0 else 0.0
+        max_dd_pct = np.max(drawdown_pct) if len(drawdown_pct) > 0 else 0.0
 
         return max_dd, max_dd_pct
 

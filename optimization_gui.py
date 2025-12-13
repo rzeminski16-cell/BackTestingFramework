@@ -309,8 +309,12 @@ class OptModeSecuritiesStep(WizardStep):
 
     def get_summary(self) -> Dict[str, str]:
         mode = self.wizard.mode_var.get()
-        selections = self.securities_listbox.curselection()
-        securities = [self.securities_listbox.get(i) for i in selections]
+        # Use stored securities if available (set after validation), otherwise read from listbox
+        if hasattr(self.wizard, 'selected_securities') and self.wizard.selected_securities:
+            securities = self.wizard.selected_securities
+        else:
+            selections = self.securities_listbox.curselection()
+            securities = [self.securities_listbox.get(i) for i in selections]
 
         summary = {"Mode": "Portfolio" if mode == "portfolio" else "Single Security"}
 
@@ -1389,6 +1393,16 @@ def main():
     root = tk.Tk()
     style = ttk.Style()
     style.theme_use('clam')
+
+    # Maximize window (fullscreen)
+    try:
+        root.state('zoomed')  # Windows
+    except tk.TclError:
+        try:
+            root.attributes('-zoomed', True)  # Linux
+        except tk.TclError:
+            root.geometry("1400x900")  # Fallback to large size
+
     app = OptimizationWizard(root)
     root.mainloop()
 

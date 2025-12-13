@@ -193,7 +193,7 @@ class EnhancedVisualizations:
         df = df.set_index('date')
 
         # Resample to monthly and calculate returns
-        monthly = df['equity'].resample('M').last()
+        monthly = df['equity'].resample('ME').last()
         monthly_returns = monthly.pct_change() * 100
         monthly_returns = monthly_returns.dropna()
 

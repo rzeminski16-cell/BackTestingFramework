@@ -562,7 +562,7 @@ class ExcelReportGenerator:
         equity_df.set_index('date', inplace=True)
 
         # Resample to month-end
-        monthly = equity_df['equity'].resample('M').last()
+        monthly = equity_df['equity'].resample('ME').last()
         monthly_returns = monthly.pct_change().dropna()
 
         # Profitable months
