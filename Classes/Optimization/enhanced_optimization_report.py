@@ -1233,6 +1233,11 @@ class EnhancedOptimizationReportGenerator:
         ws[f'A{row}'].font = Font(italic=True, color=self.COLORS['dark_gray'])
         row += 3
 
+        # Check for empty data
+        if not multi_results.individual_results:
+            ws[f'A{row}'] = "No data available for parameter stability analysis"
+            return
+
         # Aggregate parameter values across all securities and windows
         param_values_by_window = {}  # {param_name: {window_id: [values across securities]}}
 
@@ -1597,6 +1602,11 @@ class EnhancedOptimizationReportGenerator:
         ws[f'A{row}'].font = Font(italic=True, color=self.COLORS['dark_gray'])
         row += 3
 
+        # Check for empty data
+        if not multi_results.individual_results:
+            ws[f'A{row}'] = "No data available for risk metrics analysis"
+            return
+
         # Section A: Aggregate Risk Metrics
         row = self._add_section_header(ws, row, "A. AGGREGATE RISK METRICS (AVERAGED)")
 
@@ -1678,7 +1688,8 @@ class EnhancedOptimizationReportGenerator:
             avg_is_dd = np.mean(is_dds) if is_dds else 0
             avg_oos_dd = np.mean(oos_dds) if oos_dds else 0
             max_oos_dd = max(oos_dds) if oos_dds else 0
-            dd_stability = 100 - (np.std(oos_dds) / avg_oos_dd * 100) if avg_oos_dd > 0 else 0
+            # Clamp stability to 0-100 range (can go negative if std > mean)
+            dd_stability = max(0, min(100, 100 - (np.std(oos_dds) / avg_oos_dd * 100))) if avg_oos_dd > 0 else 0
 
             avg_is_pf = np.mean(is_pfs) if is_pfs else 0
             avg_oos_pf = np.mean(oos_pfs) if oos_pfs else 0
@@ -1895,6 +1906,9 @@ class EnhancedOptimizationReportGenerator:
                     r1_list = [p[0] for p in paired_returns]
                     r2_list = [p[1] for p in paired_returns]
                     corr = np.corrcoef(r1_list, r2_list)[0, 1]
+                    # Handle NaN (can occur if all values are identical)
+                    if np.isnan(corr):
+                        corr = 1.0 if symbol1 == securities[j-2] else 0.0
                 else:
                     corr = 0
 
@@ -1929,8 +1943,10 @@ class EnhancedOptimizationReportGenerator:
                              if r1 is not None and r2 is not None]
                     if len(paired) >= 3:
                         corr = np.corrcoef([p[0] for p in paired], [p[1] for p in paired])[0, 1]
-                        total_corr += corr
-                        count += 1
+                        # Skip NaN correlations (can occur if all values identical)
+                        if not np.isnan(corr):
+                            total_corr += corr
+                            count += 1
 
         avg_corr = total_corr / count if count > 0 else 0
 
@@ -2064,7 +2080,8 @@ class EnhancedOptimizationReportGenerator:
 
         # Value at Risk
         var_5 = percentiles[5]
-        cvar_5 = np.mean([r for r in simulated_cumulative_returns if r <= var_5])
+        cvar_values = [r for r in simulated_cumulative_returns if r <= var_5]
+        cvar_5 = np.mean(cvar_values) if cvar_values else var_5  # Fallback to VaR if no values
 
         risk_data = [
             ("Value at Risk (95%)", f"{var_5:.2f}%", "Maximum expected loss with 95% confidence"),
@@ -2115,6 +2132,11 @@ class EnhancedOptimizationReportGenerator:
         ws[f'A{row}'].font = Font(italic=True, color=self.COLORS['dark_gray'])
         row += 3
 
+        # Check for empty data
+        if not multi_results.individual_results:
+            ws[f'A{row}'] = "No data available for trade statistics analysis"
+            return
+
         # Section A: Aggregate Trade Statistics
         row = self._add_section_header(ws, row, "A. AGGREGATE TRADE STATISTICS")
 
@@ -2134,13 +2156,16 @@ class EnhancedOptimizationReportGenerator:
         avg_oos_trades = np.mean(all_oos_trades) if all_oos_trades else 0
         std_oos_trades = np.std(all_oos_trades) if all_oos_trades else 0
 
+        # Clamp stability to 0-100 range (can go negative if std > mean)
+        trade_stability = max(0, min(100, 100 - (std_oos_trades/avg_oos_trades*100))) if avg_oos_trades > 0 else 0
+
         stats_data = [
             ("Total IS Trades (all windows)", str(total_is_trades)),
             ("Total OOS Trades (all windows)", str(total_oos_trades)),
             ("Avg IS Trades per Window", f"{avg_is_trades:.1f}"),
             ("Avg OOS Trades per Window", f"{avg_oos_trades:.1f}"),
             ("Std Dev of OOS Trades", f"{std_oos_trades:.1f}"),
-            ("Trade Count Stability", f"{100 - (std_oos_trades/avg_oos_trades*100) if avg_oos_trades > 0 else 0:.0f}%"),
+            ("Trade Count Stability", f"{trade_stability:.0f}%"),
         ]
 
         for label, value in stats_data:
@@ -2169,7 +2194,8 @@ class EnhancedOptimizationReportGenerator:
             avg_is = np.mean(is_trades) if is_trades else 0
             avg_oos = np.mean(oos_trades) if oos_trades else 0
             std_oos = np.std(oos_trades) if oos_trades else 0
-            consistency = 100 - (std_oos / avg_oos * 100) if avg_oos > 0 else 0
+            # Clamp consistency to 0-100 range
+            consistency = max(0, min(100, 100 - (std_oos / avg_oos * 100))) if avg_oos > 0 else 0
 
             ws.cell(row=row, column=1, value=symbol).font = Font(bold=True)
             ws.cell(row=row, column=2, value=len(wf_results.windows))
