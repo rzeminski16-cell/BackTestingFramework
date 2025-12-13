@@ -156,7 +156,7 @@ class EnhancedOptimizationReportGenerator:
         wb = Workbook()
         wb.remove(wb.active)
 
-        # Generate sheets
+        # Generate sheets - Core Analysis
         self._create_toc(wb, multi_results)
         self._create_executive_summary(wb, multi_results, metrics)
         self._create_overfitting_analysis(wb, multi_results, metrics)
@@ -166,6 +166,18 @@ class EnhancedOptimizationReportGenerator:
         if sensitivity_results_dict:
             self._create_sensitivity_dashboard(wb, multi_results, sensitivity_results_dict, metrics)
 
+        # NEW: Enhanced Analysis Sheets
+        self._create_walk_forward_equity_curves(wb, multi_results, metrics)
+        self._create_parameter_stability(wb, multi_results, metrics)
+        self._create_constraint_analysis(wb, multi_results, metrics)
+        self._create_window_comparison_table(wb, multi_results, metrics)
+        self._create_risk_metrics_dashboard(wb, multi_results, metrics)
+        self._create_best_worst_window_analysis(wb, multi_results, metrics)
+        self._create_cross_security_correlation(wb, multi_results, metrics)
+        self._create_monte_carlo_analysis(wb, multi_results, metrics)
+        self._create_trade_statistics_by_window(wb, multi_results, metrics)
+
+        # Original sheets
         self._create_window_analysis(wb, multi_results, metrics)
         self._create_recommendations(wb, multi_results, sensitivity_results_dict, metrics)
 
@@ -402,6 +414,15 @@ class EnhancedOptimizationReportGenerator:
             ("Parameter Robustness", "Parameter stability zones"),
             ("Sensitivity Dashboard", "Parameter sensitivity analysis"),
             ("Window Analysis", "Window-by-window results"),
+            ("WF Equity Curves", "Walk-forward cumulative equity visualization"),
+            ("Parameter Stability", "Parameter drift and stability over time"),
+            ("Constraint Analysis", "Constraint hits and violations analysis"),
+            ("Window Comparison", "Detailed window-by-window comparison table"),
+            ("Risk Dashboard", "Comprehensive risk metrics analysis"),
+            ("Best-Worst Analysis", "Deep dive into best and worst windows"),
+            ("Security Correlation", "Cross-security correlation matrix"),
+            ("Monte Carlo", "Bootstrap confidence intervals"),
+            ("Trade Statistics", "Trade statistics by window"),
             ("Recommendations", "Actionable insights"),
         ]
 
@@ -1084,3 +1105,1106 @@ class EnhancedOptimizationReportGenerator:
         ws[f'A{row}'].fill = self.light_fill
         ws.merge_cells(f'A{row}:D{row}')
         return row + 2
+
+    # ==================== NEW ENHANCED ANALYSIS SHEETS ====================
+
+    def _create_walk_forward_equity_curves(self, wb: Workbook, multi_results: MultiSecurityResults, metrics: Dict[str, Any]):
+        """Create Walk-Forward Equity Curves sheet showing OOS performance over time."""
+        ws = wb.create_sheet("WF Equity Curves")
+
+        row = 1
+        ws[f'A{row}'] = "WALK-FORWARD EQUITY CURVES"
+        ws[f'A{row}'].font = self.title_font
+        ws.merge_cells(f'A{row}:H{row}')
+        row += 2
+
+        ws[f'A{row}'] = "Out-of-sample equity progression across all walk-forward windows"
+        ws[f'A{row}'].font = Font(italic=True, color=self.COLORS['dark_gray'])
+        row += 3
+
+        # Create data table for each security
+        for symbol, wf_results in multi_results.individual_results.items():
+            row = self._add_section_header(ws, row, f"Security: {symbol}")
+
+            # Headers
+            headers = ["Window", "Test Period", "Starting Equity", "Ending Equity",
+                      "Return %", "OOS Sortino", "Cumulative Return %"]
+            for col, header in enumerate(headers, 1):
+                cell = ws.cell(row=row, column=col, value=header)
+                cell.font = self.header_font
+                cell.fill = self.header_fill
+            row += 1
+
+            cumulative_return = 0
+            starting_equity = 100  # Normalized to 100
+
+            for window in wf_results.windows:
+                ending_equity = starting_equity * (1 + window.out_sample_total_return_pct / 100)
+                cumulative_return += window.out_sample_total_return_pct
+
+                ws.cell(row=row, column=1, value=f"Window {window.window_id}")
+                ws.cell(row=row, column=2, value=f"{window.test_start.strftime('%Y-%m-%d')} to {window.test_end.strftime('%Y-%m-%d')}")
+                ws.cell(row=row, column=3, value=f"{starting_equity:.2f}")
+                ws.cell(row=row, column=4, value=f"{ending_equity:.2f}")
+
+                ret_cell = ws.cell(row=row, column=5, value=f"{window.out_sample_total_return_pct:.2f}%")
+                ret_cell.fill = self.positive_fill if window.out_sample_total_return_pct > 0 else self.negative_fill
+
+                ws.cell(row=row, column=6, value=f"{window.out_sample_sortino:.4f}")
+
+                cum_cell = ws.cell(row=row, column=7, value=f"{cumulative_return:.2f}%")
+                cum_cell.font = Font(bold=True)
+                cum_cell.fill = self.positive_fill if cumulative_return > 0 else self.negative_fill
+
+                starting_equity = ending_equity
+                row += 1
+
+            # Summary
+            row += 1
+            ws.cell(row=row, column=1, value="TOTAL").font = Font(bold=True, size=11)
+            ws.cell(row=row, column=7, value=f"{cumulative_return:.2f}%").font = Font(bold=True, size=11)
+            row += 3
+
+        # Visualization if matplotlib available
+        if self.include_matplotlib_charts and self.viz:
+            try:
+                equity_img = self._create_wf_equity_chart(multi_results)
+                if equity_img:
+                    img = Image(equity_img)
+                    img.width = 700
+                    img.height = 400
+                    ws.add_image(img, f'A{row}')
+            except Exception as e:
+                logger.warning(f"Could not create WF equity chart: {e}")
+
+        ws.column_dimensions['A'].width = 12
+        ws.column_dimensions['B'].width = 25
+        for col in ['C', 'D', 'E', 'F', 'G']:
+            ws.column_dimensions[col].width = 18
+
+    def _create_wf_equity_chart(self, multi_results: MultiSecurityResults):
+        """Create walk-forward equity chart using matplotlib."""
+        if not MATPLOTLIB_AVAILABLE:
+            return None
+
+        import matplotlib.pyplot as plt
+        from io import BytesIO
+
+        fig, ax = plt.subplots(figsize=(14, 6))
+
+        for symbol, wf_results in multi_results.individual_results.items():
+            dates = []
+            equity = [100]  # Start at 100
+
+            for window in wf_results.windows:
+                dates.append(window.test_end)
+                new_equity = equity[-1] * (1 + window.out_sample_total_return_pct / 100)
+                equity.append(new_equity)
+
+            if dates:
+                ax.plot(dates, equity[1:], marker='o', label=symbol, linewidth=2, markersize=4)
+
+        ax.axhline(100, color='black', linestyle='--', linewidth=1, alpha=0.5, label='Starting Value')
+        ax.set_xlabel('Date', fontsize=10)
+        ax.set_ylabel('Equity (normalized to 100)', fontsize=10)
+        ax.set_title('Walk-Forward Out-of-Sample Equity Curves', fontsize=12, fontweight='bold')
+        ax.legend(loc='best', fontsize=8)
+        ax.grid(True, alpha=0.3)
+
+        plt.tight_layout()
+
+        buf = BytesIO()
+        fig.savefig(buf, format='png', dpi=150)
+        plt.close(fig)
+        buf.seek(0)
+        return buf
+
+    def _create_parameter_stability(self, wb: Workbook, multi_results: MultiSecurityResults, metrics: Dict[str, Any]):
+        """Create Parameter Stability Over Time sheet."""
+        ws = wb.create_sheet("Parameter Stability")
+
+        row = 1
+        ws[f'A{row}'] = "PARAMETER STABILITY OVER TIME"
+        ws[f'A{row}'].font = self.title_font
+        ws.merge_cells(f'A{row}:H{row}')
+        row += 2
+
+        ws[f'A{row}'] = "Analysis of how optimal parameters change across walk-forward windows"
+        ws[f'A{row}'].font = Font(italic=True, color=self.COLORS['dark_gray'])
+        row += 3
+
+        # Aggregate parameter values across all securities and windows
+        param_values_by_window = {}  # {param_name: {window_id: [values across securities]}}
+
+        for symbol, wf_results in multi_results.individual_results.items():
+            for window in wf_results.windows:
+                for param_name, value in window.best_params.items():
+                    if param_name not in param_values_by_window:
+                        param_values_by_window[param_name] = {}
+                    if window.window_id not in param_values_by_window[param_name]:
+                        param_values_by_window[param_name][window.window_id] = []
+                    try:
+                        param_values_by_window[param_name][window.window_id].append(float(value))
+                    except (ValueError, TypeError):
+                        pass
+
+        # Section A: Parameter Drift Analysis
+        row = self._add_section_header(ws, row, "A. PARAMETER DRIFT ANALYSIS")
+
+        headers = ["Parameter", "Min Value", "Max Value", "Range", "Std Dev", "CV %", "Drift Score", "Status"]
+        for col, header in enumerate(headers, 1):
+            cell = ws.cell(row=row, column=col, value=header)
+            cell.font = self.header_font
+            cell.fill = self.header_fill
+        row += 1
+
+        for param_name, windows_data in param_values_by_window.items():
+            all_values = [v for values in windows_data.values() for v in values]
+            if not all_values:
+                continue
+
+            min_val = min(all_values)
+            max_val = max(all_values)
+            range_val = max_val - min_val
+            std_val = np.std(all_values)
+            mean_val = np.mean(all_values)
+            cv = (std_val / mean_val * 100) if mean_val != 0 else 0
+
+            # Drift score: higher = more unstable (0-100)
+            # Based on coefficient of variation
+            drift_score = min(100, cv * 2)
+
+            if drift_score < 20:
+                status = "Stable"
+                status_fill = self.positive_fill
+            elif drift_score < 50:
+                status = "Moderate"
+                status_fill = self.neutral_fill
+            else:
+                status = "Unstable"
+                status_fill = self.negative_fill
+
+            ws.cell(row=row, column=1, value=param_name).font = Font(bold=True)
+            ws.cell(row=row, column=2, value=f"{min_val:.4f}")
+            ws.cell(row=row, column=3, value=f"{max_val:.4f}")
+            ws.cell(row=row, column=4, value=f"{range_val:.4f}")
+            ws.cell(row=row, column=5, value=f"{std_val:.4f}")
+            ws.cell(row=row, column=6, value=f"{cv:.1f}%")
+            ws.cell(row=row, column=7, value=f"{drift_score:.0f}")
+
+            status_cell = ws.cell(row=row, column=8, value=status)
+            status_cell.fill = status_fill
+            status_cell.font = Font(bold=True)
+            row += 1
+
+        row += 2
+
+        # Section B: Window-by-Window Parameter Values
+        row = self._add_section_header(ws, row, "B. PARAMETER VALUES BY WINDOW")
+
+        # Get all window IDs
+        all_window_ids = set()
+        for wf_results in multi_results.individual_results.values():
+            for window in wf_results.windows:
+                all_window_ids.add(window.window_id)
+        all_window_ids = sorted(all_window_ids)
+
+        # Headers
+        headers = ["Parameter"] + [f"W{wid}" for wid in all_window_ids] + ["Trend"]
+        for col, header in enumerate(headers, 1):
+            cell = ws.cell(row=row, column=col, value=header)
+            cell.font = self.header_font
+            cell.fill = self.header_fill
+        row += 1
+
+        for param_name, windows_data in param_values_by_window.items():
+            ws.cell(row=row, column=1, value=param_name).font = Font(bold=True)
+
+            values_sequence = []
+            for col_idx, wid in enumerate(all_window_ids, 2):
+                if wid in windows_data:
+                    avg_val = np.mean(windows_data[wid])
+                    values_sequence.append(avg_val)
+                    ws.cell(row=row, column=col_idx, value=f"{avg_val:.3f}")
+                else:
+                    values_sequence.append(None)
+                    ws.cell(row=row, column=col_idx, value="-")
+
+            # Calculate trend
+            valid_values = [v for v in values_sequence if v is not None]
+            if len(valid_values) >= 2:
+                first_half = np.mean(valid_values[:len(valid_values)//2])
+                second_half = np.mean(valid_values[len(valid_values)//2:])
+                if second_half > first_half * 1.1:
+                    trend = "↑ Increasing"
+                elif second_half < first_half * 0.9:
+                    trend = "↓ Decreasing"
+                else:
+                    trend = "→ Stable"
+            else:
+                trend = "-"
+
+            ws.cell(row=row, column=len(headers), value=trend)
+            row += 1
+
+        # Column widths
+        ws.column_dimensions['A'].width = 20
+        for col_idx in range(2, len(all_window_ids) + 3):
+            ws.column_dimensions[get_column_letter(col_idx)].width = 10
+
+    def _create_constraint_analysis(self, wb: Workbook, multi_results: MultiSecurityResults, metrics: Dict[str, Any]):
+        """Create Constraint Hit Analysis sheet."""
+        ws = wb.create_sheet("Constraint Analysis")
+
+        row = 1
+        ws[f'A{row}'] = "CONSTRAINT HIT ANALYSIS"
+        ws[f'A{row}'].font = self.title_font
+        ws.merge_cells(f'A{row}:H{row}')
+        row += 2
+
+        ws[f'A{row}'] = "Analysis of which optimization constraints are being triggered most frequently"
+        ws[f'A{row}'].font = Font(italic=True, color=self.COLORS['dark_gray'])
+        row += 3
+
+        # Analyze constraint violations across all windows
+        constraint_failures = {
+            'low_sortino': 0,
+            'negative_sortino': 0,
+            'high_drawdown': 0,
+            'low_profit_factor': 0,
+            'insufficient_trades': 0,
+            'passed': 0
+        }
+
+        total_windows = 0
+
+        for symbol, wf_results in multi_results.individual_results.items():
+            for window in wf_results.windows:
+                total_windows += 1
+
+                # Analyze OOS metrics for constraint issues
+                if window.out_sample_sortino < 0:
+                    constraint_failures['negative_sortino'] += 1
+                elif window.out_sample_sortino < 0.5:
+                    constraint_failures['low_sortino'] += 1
+
+                if window.out_sample_max_drawdown_pct > 25:
+                    constraint_failures['high_drawdown'] += 1
+
+                if window.out_sample_profit_factor < 1.0:
+                    constraint_failures['low_profit_factor'] += 1
+
+                if window.out_sample_num_trades < 5:
+                    constraint_failures['insufficient_trades'] += 1
+
+        constraint_failures['passed'] = metrics.get('total_passed', 0)
+
+        # Section A: Summary
+        row = self._add_section_header(ws, row, "A. CONSTRAINT VIOLATION SUMMARY")
+
+        headers = ["Constraint Type", "Violations", "% of Windows", "Severity", "Recommendation"]
+        for col, header in enumerate(headers, 1):
+            cell = ws.cell(row=row, column=col, value=header)
+            cell.font = self.header_font
+            cell.fill = self.header_fill
+        row += 1
+
+        constraint_info = [
+            ("Negative Sortino (OOS < 0)", constraint_failures['negative_sortino'], "HIGH",
+             "Strategy may need fundamental rework"),
+            ("Low Sortino (OOS < 0.5)", constraint_failures['low_sortino'], "MEDIUM",
+             "Consider longer optimization periods"),
+            ("High Drawdown (> 25%)", constraint_failures['high_drawdown'], "HIGH",
+             "Add drawdown constraints or reduce position sizes"),
+            ("Low Profit Factor (< 1.0)", constraint_failures['low_profit_factor'], "HIGH",
+             "Strategy is losing money on average"),
+            ("Insufficient Trades (< 5)", constraint_failures['insufficient_trades'], "LOW",
+             "May need longer test periods or more active signals"),
+        ]
+
+        for name, count, severity, rec in constraint_info:
+            pct = (count / total_windows * 100) if total_windows > 0 else 0
+
+            ws.cell(row=row, column=1, value=name)
+            ws.cell(row=row, column=2, value=count)
+            ws.cell(row=row, column=3, value=f"{pct:.1f}%")
+
+            severity_cell = ws.cell(row=row, column=4, value=severity)
+            if severity == "HIGH":
+                severity_cell.fill = self.negative_fill
+            elif severity == "MEDIUM":
+                severity_cell.fill = self.neutral_fill
+            else:
+                severity_cell.fill = self.positive_fill
+
+            ws.cell(row=row, column=5, value=rec)
+            row += 1
+
+        row += 2
+
+        # Section B: By Security Breakdown
+        row = self._add_section_header(ws, row, "B. CONSTRAINT FAILURES BY SECURITY")
+
+        headers = ["Security", "Total Windows", "Passed", "Pass Rate", "Primary Issue"]
+        for col, header in enumerate(headers, 1):
+            cell = ws.cell(row=row, column=col, value=header)
+            cell.font = self.header_font
+            cell.fill = self.header_fill
+        row += 1
+
+        for symbol, wf_results in multi_results.individual_results.items():
+            total = wf_results.total_windows
+            passed = wf_results.windows_passed_constraints
+            pass_rate = (passed / total * 100) if total > 0 else 0
+
+            # Determine primary issue
+            neg_sortino_count = sum(1 for w in wf_results.windows if w.out_sample_sortino < 0)
+            high_dd_count = sum(1 for w in wf_results.windows if w.out_sample_max_drawdown_pct > 25)
+
+            if neg_sortino_count > total * 0.3:
+                primary_issue = "Negative OOS Returns"
+            elif high_dd_count > total * 0.3:
+                primary_issue = "High Drawdowns"
+            elif pass_rate < 50:
+                primary_issue = "Multiple Failures"
+            else:
+                primary_issue = "None - Performing Well"
+
+            ws.cell(row=row, column=1, value=symbol).font = Font(bold=True)
+            ws.cell(row=row, column=2, value=total)
+            ws.cell(row=row, column=3, value=passed)
+
+            rate_cell = ws.cell(row=row, column=4, value=f"{pass_rate:.1f}%")
+            rate_cell.fill = self.positive_fill if pass_rate >= 70 else (
+                self.neutral_fill if pass_rate >= 50 else self.negative_fill)
+
+            ws.cell(row=row, column=5, value=primary_issue)
+            row += 1
+
+        ws.column_dimensions['A'].width = 30
+        ws.column_dimensions['B'].width = 15
+        ws.column_dimensions['C'].width = 12
+        ws.column_dimensions['D'].width = 12
+        ws.column_dimensions['E'].width = 35
+
+    def _create_window_comparison_table(self, wb: Workbook, multi_results: MultiSecurityResults, metrics: Dict[str, Any]):
+        """Create detailed Window-by-Window Comparison Table."""
+        ws = wb.create_sheet("Window Comparison")
+
+        row = 1
+        ws[f'A{row}'] = "WINDOW-BY-WINDOW COMPARISON TABLE"
+        ws[f'A{row}'].font = self.title_font
+        ws.merge_cells(f'A{row}:N{row}')
+        row += 2
+
+        ws[f'A{row}'] = "Comprehensive breakdown of all walk-forward windows across all securities"
+        ws[f'A{row}'].font = Font(italic=True, color=self.COLORS['dark_gray'])
+        row += 3
+
+        # Headers
+        headers = ["Security", "Window", "Train Period", "Test Period",
+                  "IS Sortino", "OOS Sortino", "Degradation", "IS Sharpe", "OOS Sharpe",
+                  "IS Return %", "OOS Return %", "IS Trades", "OOS Trades", "Max DD %"]
+
+        for col, header in enumerate(headers, 1):
+            cell = ws.cell(row=row, column=col, value=header)
+            cell.font = self.header_font
+            cell.fill = self.header_fill
+            cell.alignment = Alignment(horizontal='center', wrap_text=True)
+        row += 1
+
+        # Data rows
+        all_rows_data = []
+        for symbol, wf_results in multi_results.individual_results.items():
+            for window in wf_results.windows:
+                row_data = {
+                    'symbol': symbol,
+                    'window': window.window_id,
+                    'train_period': f"{window.train_start.strftime('%Y-%m-%d')} to {window.train_end.strftime('%Y-%m-%d')}",
+                    'test_period': f"{window.test_start.strftime('%Y-%m-%d')} to {window.test_end.strftime('%Y-%m-%d')}",
+                    'is_sortino': window.in_sample_sortino,
+                    'oos_sortino': window.out_sample_sortino,
+                    'degradation': window.sortino_degradation_pct,
+                    'is_sharpe': window.in_sample_sharpe,
+                    'oos_sharpe': window.out_sample_sharpe,
+                    'is_return': window.in_sample_total_return_pct,
+                    'oos_return': window.out_sample_total_return_pct,
+                    'is_trades': window.in_sample_num_trades,
+                    'oos_trades': window.out_sample_num_trades,
+                    'max_dd': window.out_sample_max_drawdown_pct
+                }
+                all_rows_data.append(row_data)
+
+        # Sort by OOS Sortino descending to highlight best performers
+        all_rows_data.sort(key=lambda x: x['oos_sortino'], reverse=True)
+
+        for data in all_rows_data:
+            ws.cell(row=row, column=1, value=data['symbol']).font = Font(bold=True)
+            ws.cell(row=row, column=2, value=f"W{data['window']}")
+            ws.cell(row=row, column=3, value=data['train_period'])
+            ws.cell(row=row, column=4, value=data['test_period'])
+
+            # IS Sortino
+            ws.cell(row=row, column=5, value=f"{data['is_sortino']:.4f}")
+
+            # OOS Sortino with color
+            oos_cell = ws.cell(row=row, column=6, value=f"{data['oos_sortino']:.4f}")
+            if data['oos_sortino'] > 1:
+                oos_cell.fill = self.positive_fill
+            elif data['oos_sortino'] < 0:
+                oos_cell.fill = self.negative_fill
+
+            # Degradation with color
+            deg_cell = ws.cell(row=row, column=7, value=f"{data['degradation']:.1f}%")
+            if abs(data['degradation']) < 30:
+                deg_cell.fill = self.positive_fill
+            elif abs(data['degradation']) > 50:
+                deg_cell.fill = self.negative_fill
+
+            ws.cell(row=row, column=8, value=f"{data['is_sharpe']:.4f}")
+            ws.cell(row=row, column=9, value=f"{data['oos_sharpe']:.4f}")
+
+            ws.cell(row=row, column=10, value=f"{data['is_return']:.2f}%")
+
+            ret_cell = ws.cell(row=row, column=11, value=f"{data['oos_return']:.2f}%")
+            ret_cell.fill = self.positive_fill if data['oos_return'] > 0 else self.negative_fill
+
+            ws.cell(row=row, column=12, value=data['is_trades'])
+            ws.cell(row=row, column=13, value=data['oos_trades'])
+
+            dd_cell = ws.cell(row=row, column=14, value=f"{data['max_dd']:.1f}%")
+            if data['max_dd'] > 25:
+                dd_cell.fill = self.negative_fill
+
+            row += 1
+
+        # Column widths
+        widths = [12, 8, 22, 22, 10, 10, 10, 10, 10, 10, 10, 9, 9, 10]
+        for col_idx, width in enumerate(widths, 1):
+            ws.column_dimensions[get_column_letter(col_idx)].width = width
+
+    def _create_risk_metrics_dashboard(self, wb: Workbook, multi_results: MultiSecurityResults, metrics: Dict[str, Any]):
+        """Create Risk Metrics Dashboard comparing IS vs OOS risk metrics."""
+        ws = wb.create_sheet("Risk Dashboard")
+
+        row = 1
+        ws[f'A{row}'] = "RISK METRICS DASHBOARD"
+        ws[f'A{row}'].font = self.title_font
+        ws.merge_cells(f'A{row}:H{row}')
+        row += 2
+
+        ws[f'A{row}'] = "In-sample vs out-of-sample risk metrics comparison"
+        ws[f'A{row}'].font = Font(italic=True, color=self.COLORS['dark_gray'])
+        row += 3
+
+        # Section A: Aggregate Risk Metrics
+        row = self._add_section_header(ws, row, "A. AGGREGATE RISK METRICS (AVERAGED)")
+
+        # Calculate aggregate risk metrics
+        all_is_dd = []
+        all_oos_dd = []
+        all_is_pf = []
+        all_oos_pf = []
+
+        for wf_results in multi_results.individual_results.values():
+            for window in wf_results.windows:
+                all_is_dd.append(window.in_sample_max_drawdown_pct)
+                all_oos_dd.append(window.out_sample_max_drawdown_pct)
+                all_is_pf.append(window.in_sample_profit_factor)
+                all_oos_pf.append(window.out_sample_profit_factor)
+
+        headers = ["Metric", "In-Sample Avg", "OOS Avg", "Change", "Status"]
+        for col, header in enumerate(headers, 1):
+            cell = ws.cell(row=row, column=col, value=header)
+            cell.font = self.header_font
+            cell.fill = self.header_fill
+        row += 1
+
+        risk_metrics = [
+            ("Max Drawdown %", np.mean(all_is_dd) if all_is_dd else 0, np.mean(all_oos_dd) if all_oos_dd else 0, "lower_better"),
+            ("Sortino Ratio", metrics['avg_is_sortino'], metrics['avg_oos_sortino'], "higher_better"),
+            ("Sharpe Ratio", metrics['avg_is_sharpe'], metrics['avg_oos_sharpe'], "higher_better"),
+            ("Profit Factor", np.mean(all_is_pf) if all_is_pf else 0, np.mean(all_oos_pf) if all_oos_pf else 0, "higher_better"),
+        ]
+
+        for name, is_val, oos_val, direction in risk_metrics:
+            change = ((oos_val - is_val) / is_val * 100) if is_val != 0 else 0
+
+            if direction == "higher_better":
+                status = "GOOD" if change > -20 else ("CAUTION" if change > -50 else "POOR")
+            else:
+                status = "GOOD" if change < 20 else ("CAUTION" if change < 50 else "POOR")
+
+            ws.cell(row=row, column=1, value=name).font = Font(bold=True)
+            ws.cell(row=row, column=2, value=f"{is_val:.4f}")
+            ws.cell(row=row, column=3, value=f"{oos_val:.4f}")
+
+            change_cell = ws.cell(row=row, column=4, value=f"{change:+.1f}%")
+            if abs(change) < 20:
+                change_cell.fill = self.positive_fill
+            elif abs(change) > 50:
+                change_cell.fill = self.negative_fill
+            else:
+                change_cell.fill = self.neutral_fill
+
+            status_cell = ws.cell(row=row, column=5, value=status)
+            if status == "GOOD":
+                status_cell.fill = self.positive_fill
+            elif status == "POOR":
+                status_cell.fill = self.negative_fill
+            else:
+                status_cell.fill = self.neutral_fill
+            row += 1
+
+        row += 2
+
+        # Section B: Risk Metrics by Security
+        row = self._add_section_header(ws, row, "B. RISK METRICS BY SECURITY")
+
+        headers = ["Security", "Avg IS DD%", "Avg OOS DD%", "Max OOS DD%", "DD Stability",
+                  "Avg IS PF", "Avg OOS PF", "Risk Rating"]
+        for col, header in enumerate(headers, 1):
+            cell = ws.cell(row=row, column=col, value=header)
+            cell.font = self.header_font
+            cell.fill = self.header_fill
+        row += 1
+
+        for symbol, wf_results in multi_results.individual_results.items():
+            is_dds = [w.in_sample_max_drawdown_pct for w in wf_results.windows]
+            oos_dds = [w.out_sample_max_drawdown_pct for w in wf_results.windows]
+            is_pfs = [w.in_sample_profit_factor for w in wf_results.windows]
+            oos_pfs = [w.out_sample_profit_factor for w in wf_results.windows]
+
+            avg_is_dd = np.mean(is_dds) if is_dds else 0
+            avg_oos_dd = np.mean(oos_dds) if oos_dds else 0
+            max_oos_dd = max(oos_dds) if oos_dds else 0
+            dd_stability = 100 - (np.std(oos_dds) / avg_oos_dd * 100) if avg_oos_dd > 0 else 0
+
+            avg_is_pf = np.mean(is_pfs) if is_pfs else 0
+            avg_oos_pf = np.mean(oos_pfs) if oos_pfs else 0
+
+            # Calculate risk rating
+            risk_score = 0
+            if avg_oos_dd < 15:
+                risk_score += 30
+            elif avg_oos_dd < 25:
+                risk_score += 15
+            if avg_oos_pf > 1.5:
+                risk_score += 40
+            elif avg_oos_pf > 1.0:
+                risk_score += 20
+            if dd_stability > 70:
+                risk_score += 30
+            elif dd_stability > 50:
+                risk_score += 15
+
+            if risk_score >= 70:
+                risk_rating = "LOW RISK"
+                rating_fill = self.positive_fill
+            elif risk_score >= 40:
+                risk_rating = "MODERATE"
+                rating_fill = self.neutral_fill
+            else:
+                risk_rating = "HIGH RISK"
+                rating_fill = self.negative_fill
+
+            ws.cell(row=row, column=1, value=symbol).font = Font(bold=True)
+            ws.cell(row=row, column=2, value=f"{avg_is_dd:.1f}%")
+            ws.cell(row=row, column=3, value=f"{avg_oos_dd:.1f}%")
+            ws.cell(row=row, column=4, value=f"{max_oos_dd:.1f}%")
+            ws.cell(row=row, column=5, value=f"{dd_stability:.0f}%")
+            ws.cell(row=row, column=6, value=f"{avg_is_pf:.2f}")
+            ws.cell(row=row, column=7, value=f"{avg_oos_pf:.2f}")
+
+            rating_cell = ws.cell(row=row, column=8, value=risk_rating)
+            rating_cell.fill = rating_fill
+            rating_cell.font = Font(bold=True)
+            row += 1
+
+        ws.column_dimensions['A'].width = 15
+        for col in ['B', 'C', 'D', 'E', 'F', 'G', 'H']:
+            ws.column_dimensions[col].width = 12
+
+    def _create_best_worst_window_analysis(self, wb: Workbook, multi_results: MultiSecurityResults, metrics: Dict[str, Any]):
+        """Create Best/Worst Window Deep Dive analysis."""
+        ws = wb.create_sheet("Best-Worst Analysis")
+
+        row = 1
+        ws[f'A{row}'] = "BEST & WORST WINDOW ANALYSIS"
+        ws[f'A{row}'].font = self.title_font
+        ws.merge_cells(f'A{row}:H{row}')
+        row += 2
+
+        ws[f'A{row}'] = "Deep dive into the best and worst performing walk-forward windows"
+        ws[f'A{row}'].font = Font(italic=True, color=self.COLORS['dark_gray'])
+        row += 3
+
+        # Collect all windows across all securities
+        all_windows = []
+        for symbol, wf_results in multi_results.individual_results.items():
+            for window in wf_results.windows:
+                all_windows.append((symbol, window))
+
+        if not all_windows:
+            ws[f'A{row}'] = "No windows available for analysis"
+            return
+
+        # Sort by OOS Sortino
+        all_windows.sort(key=lambda x: x[1].out_sample_sortino, reverse=True)
+
+        # Best windows (top 3)
+        row = self._add_section_header(ws, row, "A. BEST PERFORMING WINDOWS (by OOS Sortino)")
+
+        for i, (symbol, window) in enumerate(all_windows[:min(3, len(all_windows))], 1):
+            row = self._write_window_detail(ws, row, f"#{i} BEST", symbol, window)
+            row += 2
+
+        row += 2
+
+        # Worst windows (bottom 3)
+        row = self._add_section_header(ws, row, "B. WORST PERFORMING WINDOWS (by OOS Sortino)")
+
+        worst_windows = all_windows[-min(3, len(all_windows)):][::-1]  # Reverse to show worst first
+        for i, (symbol, window) in enumerate(worst_windows, 1):
+            row = self._write_window_detail(ws, row, f"#{i} WORST", symbol, window)
+            row += 2
+
+        row += 2
+
+        # Section C: What separates best from worst
+        row = self._add_section_header(ws, row, "C. KEY DIFFERENTIATORS")
+
+        best_3 = all_windows[:min(3, len(all_windows))]
+        worst_3 = all_windows[-min(3, len(all_windows)):]
+
+        best_avg_trades = np.mean([w[1].out_sample_num_trades for w in best_3])
+        worst_avg_trades = np.mean([w[1].out_sample_num_trades for w in worst_3])
+
+        best_avg_dd = np.mean([w[1].out_sample_max_drawdown_pct for w in best_3])
+        worst_avg_dd = np.mean([w[1].out_sample_max_drawdown_pct for w in worst_3])
+
+        best_avg_degradation = np.mean([abs(w[1].sortino_degradation_pct) for w in best_3])
+        worst_avg_degradation = np.mean([abs(w[1].sortino_degradation_pct) for w in worst_3])
+
+        differentiators = [
+            ("Avg OOS Trades", f"{best_avg_trades:.1f}", f"{worst_avg_trades:.1f}"),
+            ("Avg Max Drawdown", f"{best_avg_dd:.1f}%", f"{worst_avg_dd:.1f}%"),
+            ("Avg Degradation", f"{best_avg_degradation:.1f}%", f"{worst_avg_degradation:.1f}%"),
+        ]
+
+        headers = ["Metric", "Best Windows Avg", "Worst Windows Avg"]
+        for col, header in enumerate(headers, 1):
+            cell = ws.cell(row=row, column=col, value=header)
+            cell.font = self.header_font
+            cell.fill = self.header_fill
+        row += 1
+
+        for metric, best_val, worst_val in differentiators:
+            ws.cell(row=row, column=1, value=metric).font = Font(bold=True)
+            ws.cell(row=row, column=2, value=best_val).fill = self.positive_fill
+            ws.cell(row=row, column=3, value=worst_val).fill = self.negative_fill
+            row += 1
+
+        ws.column_dimensions['A'].width = 25
+        ws.column_dimensions['B'].width = 20
+        ws.column_dimensions['C'].width = 20
+        ws.column_dimensions['D'].width = 20
+
+    def _write_window_detail(self, ws, row: int, label: str, symbol: str, window) -> int:
+        """Write detailed window information."""
+        ws.cell(row=row, column=1, value=f"{label}: {symbol} - Window {window.window_id}").font = Font(bold=True, size=11)
+        row += 1
+
+        details = [
+            ("Test Period", f"{window.test_start.strftime('%Y-%m-%d')} to {window.test_end.strftime('%Y-%m-%d')}"),
+            ("OOS Sortino", f"{window.out_sample_sortino:.4f}"),
+            ("OOS Sharpe", f"{window.out_sample_sharpe:.4f}"),
+            ("OOS Return", f"{window.out_sample_total_return_pct:.2f}%"),
+            ("OOS Max Drawdown", f"{window.out_sample_max_drawdown_pct:.1f}%"),
+            ("OOS Trades", str(window.out_sample_num_trades)),
+            ("Sortino Degradation", f"{window.sortino_degradation_pct:.1f}%"),
+            ("IS Sortino", f"{window.in_sample_sortino:.4f}"),
+        ]
+
+        for label_txt, value in details:
+            ws.cell(row=row, column=1, value=label_txt)
+            ws.cell(row=row, column=2, value=value)
+            row += 1
+
+        return row
+
+    def _create_cross_security_correlation(self, wb: Workbook, multi_results: MultiSecurityResults, metrics: Dict[str, Any]):
+        """Create Cross-Security Correlation analysis."""
+        ws = wb.create_sheet("Security Correlation")
+
+        row = 1
+        ws[f'A{row}'] = "CROSS-SECURITY CORRELATION ANALYSIS"
+        ws[f'A{row}'].font = self.title_font
+        ws.merge_cells(f'A{row}:H{row}')
+        row += 2
+
+        ws[f'A{row}'] = "Correlation of OOS performance across securities (diversification analysis)"
+        ws[f'A{row}'].font = Font(italic=True, color=self.COLORS['dark_gray'])
+        row += 3
+
+        securities = list(multi_results.individual_results.keys())
+
+        if len(securities) < 2:
+            ws[f'A{row}'] = "At least 2 securities required for correlation analysis"
+            return
+
+        # Build OOS returns matrix
+        # Align by window ID
+        all_window_ids = set()
+        for wf_results in multi_results.individual_results.values():
+            for window in wf_results.windows:
+                all_window_ids.add(window.window_id)
+        all_window_ids = sorted(all_window_ids)
+
+        returns_by_security = {}
+        for symbol, wf_results in multi_results.individual_results.items():
+            returns_by_security[symbol] = {}
+            for window in wf_results.windows:
+                returns_by_security[symbol][window.window_id] = window.out_sample_total_return_pct
+
+        # Calculate correlation matrix
+        row = self._add_section_header(ws, row, "A. OOS RETURNS CORRELATION MATRIX")
+
+        # Header row
+        ws.cell(row=row, column=1, value="").font = self.header_font
+        for col, symbol in enumerate(securities, 2):
+            cell = ws.cell(row=row, column=col, value=symbol[:10])
+            cell.font = self.header_font
+            cell.fill = self.header_fill
+        row += 1
+
+        for i, symbol1 in enumerate(securities):
+            ws.cell(row=row, column=1, value=symbol1[:10]).font = Font(bold=True)
+            ws.cell(row=row, column=1).fill = self.header_fill
+
+            for j, symbol2 in enumerate(securities, 2):
+                # Calculate correlation
+                returns1 = [returns_by_security[symbol1].get(wid, None) for wid in all_window_ids]
+                returns2 = [returns_by_security[securities[j-2]].get(wid, None) for wid in all_window_ids]
+
+                # Only use windows where both have data
+                paired_returns = [(r1, r2) for r1, r2 in zip(returns1, returns2)
+                                 if r1 is not None and r2 is not None]
+
+                if len(paired_returns) >= 3:
+                    r1_list = [p[0] for p in paired_returns]
+                    r2_list = [p[1] for p in paired_returns]
+                    corr = np.corrcoef(r1_list, r2_list)[0, 1]
+                else:
+                    corr = 0
+
+                cell = ws.cell(row=row, column=j, value=f"{corr:.2f}")
+
+                # Color based on correlation
+                if i == j - 2:
+                    cell.fill = PatternFill(start_color='CCCCCC', end_color='CCCCCC', fill_type='solid')
+                elif corr > 0.7:
+                    cell.fill = self.negative_fill  # High correlation = less diversification
+                elif corr < 0.3:
+                    cell.fill = self.positive_fill  # Low correlation = good diversification
+                else:
+                    cell.fill = self.neutral_fill
+
+            row += 1
+
+        row += 2
+
+        # Section B: Diversification Assessment
+        row = self._add_section_header(ws, row, "B. DIVERSIFICATION ASSESSMENT")
+
+        # Calculate average correlation (excluding diagonal)
+        total_corr = 0
+        count = 0
+        for i, symbol1 in enumerate(securities):
+            for j, symbol2 in enumerate(securities):
+                if i < j:
+                    returns1 = [returns_by_security[symbol1].get(wid, None) for wid in all_window_ids]
+                    returns2 = [returns_by_security[symbol2].get(wid, None) for wid in all_window_ids]
+                    paired = [(r1, r2) for r1, r2 in zip(returns1, returns2)
+                             if r1 is not None and r2 is not None]
+                    if len(paired) >= 3:
+                        corr = np.corrcoef([p[0] for p in paired], [p[1] for p in paired])[0, 1]
+                        total_corr += corr
+                        count += 1
+
+        avg_corr = total_corr / count if count > 0 else 0
+
+        if avg_corr < 0.3:
+            diversification = "EXCELLENT - Securities show low correlation"
+            div_fill = self.positive_fill
+        elif avg_corr < 0.5:
+            diversification = "GOOD - Securities have moderate correlation"
+            div_fill = self.positive_fill
+        elif avg_corr < 0.7:
+            diversification = "FAIR - Securities show high correlation"
+            div_fill = self.neutral_fill
+        else:
+            diversification = "POOR - Securities are highly correlated"
+            div_fill = self.negative_fill
+
+        ws.cell(row=row, column=1, value="Average Correlation:").font = Font(bold=True)
+        ws.cell(row=row, column=2, value=f"{avg_corr:.2f}")
+        row += 1
+
+        ws.cell(row=row, column=1, value="Diversification Assessment:").font = Font(bold=True)
+        cell = ws.cell(row=row, column=2, value=diversification)
+        cell.fill = div_fill
+        cell.font = Font(bold=True)
+
+        ws.column_dimensions['A'].width = 25
+        for col in ['B', 'C', 'D', 'E', 'F', 'G', 'H']:
+            ws.column_dimensions[col].width = 12
+
+    def _create_monte_carlo_analysis(self, wb: Workbook, multi_results: MultiSecurityResults, metrics: Dict[str, Any]):
+        """Create Monte Carlo Confidence Intervals analysis."""
+        ws = wb.create_sheet("Monte Carlo")
+
+        row = 1
+        ws[f'A{row}'] = "MONTE CARLO SIMULATION"
+        ws[f'A{row}'].font = self.title_font
+        ws.merge_cells(f'A{row}:H{row}')
+        row += 2
+
+        ws[f'A{row}'] = "Bootstrap analysis of OOS returns to estimate confidence intervals"
+        ws[f'A{row}'].font = Font(italic=True, color=self.COLORS['dark_gray'])
+        row += 3
+
+        # Collect all OOS returns
+        all_oos_returns = []
+        for wf_results in multi_results.individual_results.values():
+            for window in wf_results.windows:
+                all_oos_returns.append(window.out_sample_total_return_pct)
+
+        if len(all_oos_returns) < 5:
+            ws[f'A{row}'] = "Insufficient data for Monte Carlo analysis (need at least 5 OOS windows)"
+            return
+
+        # Bootstrap simulation
+        n_simulations = 1000
+        n_windows = len(all_oos_returns)
+
+        # Simulate cumulative returns
+        simulated_cumulative_returns = []
+        for _ in range(n_simulations):
+            # Sample with replacement
+            sampled = np.random.choice(all_oos_returns, size=n_windows, replace=True)
+            cumulative = sum(sampled)
+            simulated_cumulative_returns.append(cumulative)
+
+        # Calculate statistics
+        mean_return = np.mean(simulated_cumulative_returns)
+        std_return = np.std(simulated_cumulative_returns)
+        percentiles = {
+            5: np.percentile(simulated_cumulative_returns, 5),
+            25: np.percentile(simulated_cumulative_returns, 25),
+            50: np.percentile(simulated_cumulative_returns, 50),
+            75: np.percentile(simulated_cumulative_returns, 75),
+            95: np.percentile(simulated_cumulative_returns, 95)
+        }
+
+        # Probability of positive return
+        prob_positive = sum(1 for r in simulated_cumulative_returns if r > 0) / n_simulations * 100
+
+        # Section A: Summary Statistics
+        row = self._add_section_header(ws, row, "A. MONTE CARLO SUMMARY (1,000 simulations)")
+
+        stats_data = [
+            ("Number of OOS Periods", str(n_windows)),
+            ("Expected Cumulative Return", f"{mean_return:.2f}%"),
+            ("Standard Deviation", f"{std_return:.2f}%"),
+            ("Probability of Positive Return", f"{prob_positive:.1f}%"),
+        ]
+
+        for label, value in stats_data:
+            ws.cell(row=row, column=1, value=label).font = Font(bold=True)
+            ws.cell(row=row, column=2, value=value)
+            row += 1
+
+        row += 2
+
+        # Section B: Confidence Intervals
+        row = self._add_section_header(ws, row, "B. CONFIDENCE INTERVALS")
+
+        headers = ["Percentile", "Cumulative Return", "Interpretation"]
+        for col, header in enumerate(headers, 1):
+            cell = ws.cell(row=row, column=col, value=header)
+            cell.font = self.header_font
+            cell.fill = self.header_fill
+        row += 1
+
+        ci_interpretations = [
+            (5, "5% worst case"),
+            (25, "25th percentile (pessimistic)"),
+            (50, "Median expectation"),
+            (75, "75th percentile (optimistic)"),
+            (95, "5% best case"),
+        ]
+
+        for pct, interp in ci_interpretations:
+            ws.cell(row=row, column=1, value=f"{pct}%").font = Font(bold=True)
+
+            val_cell = ws.cell(row=row, column=2, value=f"{percentiles[pct]:.2f}%")
+            if percentiles[pct] > 0:
+                val_cell.fill = self.positive_fill
+            else:
+                val_cell.fill = self.negative_fill
+
+            ws.cell(row=row, column=3, value=interp)
+            row += 1
+
+        row += 2
+
+        # Section C: Risk Assessment
+        row = self._add_section_header(ws, row, "C. RISK ASSESSMENT")
+
+        # Value at Risk
+        var_5 = percentiles[5]
+        cvar_5 = np.mean([r for r in simulated_cumulative_returns if r <= var_5])
+
+        risk_data = [
+            ("Value at Risk (95%)", f"{var_5:.2f}%", "Maximum expected loss with 95% confidence"),
+            ("Conditional VaR (95%)", f"{cvar_5:.2f}%", "Expected loss when worst 5% scenarios occur"),
+        ]
+
+        for label, value, desc in risk_data:
+            ws.cell(row=row, column=1, value=label).font = Font(bold=True)
+            ws.cell(row=row, column=2, value=value)
+            ws.cell(row=row, column=3, value=desc).font = Font(italic=True, color=self.COLORS['dark_gray'])
+            row += 1
+
+        row += 2
+
+        # Interpretation
+        ws.cell(row=row, column=1, value="INTERPRETATION:").font = Font(bold=True, size=11)
+        row += 1
+
+        if prob_positive > 80:
+            interpretation = f"Strategy shows strong robustness with {prob_positive:.0f}% probability of positive returns"
+            interp_fill = self.positive_fill
+        elif prob_positive > 60:
+            interpretation = f"Strategy shows moderate robustness with {prob_positive:.0f}% probability of positive returns"
+            interp_fill = self.neutral_fill
+        else:
+            interpretation = f"Strategy shows low robustness with only {prob_positive:.0f}% probability of positive returns"
+            interp_fill = self.negative_fill
+
+        cell = ws.cell(row=row, column=1, value=interpretation)
+        cell.fill = interp_fill
+        cell.font = Font(bold=True)
+
+        ws.column_dimensions['A'].width = 30
+        ws.column_dimensions['B'].width = 20
+        ws.column_dimensions['C'].width = 45
+
+    def _create_trade_statistics_by_window(self, wb: Workbook, multi_results: MultiSecurityResults, metrics: Dict[str, Any]):
+        """Create Trade Statistics by Window analysis."""
+        ws = wb.create_sheet("Trade Statistics")
+
+        row = 1
+        ws[f'A{row}'] = "TRADE STATISTICS BY WINDOW"
+        ws[f'A{row}'].font = self.title_font
+        ws.merge_cells(f'A{row}:H{row}')
+        row += 2
+
+        ws[f'A{row}'] = "Trade frequency and quality metrics across walk-forward windows"
+        ws[f'A{row}'].font = Font(italic=True, color=self.COLORS['dark_gray'])
+        row += 3
+
+        # Section A: Aggregate Trade Statistics
+        row = self._add_section_header(ws, row, "A. AGGREGATE TRADE STATISTICS")
+
+        total_is_trades = 0
+        total_oos_trades = 0
+        all_is_trades = []
+        all_oos_trades = []
+
+        for wf_results in multi_results.individual_results.values():
+            for window in wf_results.windows:
+                total_is_trades += window.in_sample_num_trades
+                total_oos_trades += window.out_sample_num_trades
+                all_is_trades.append(window.in_sample_num_trades)
+                all_oos_trades.append(window.out_sample_num_trades)
+
+        avg_is_trades = np.mean(all_is_trades) if all_is_trades else 0
+        avg_oos_trades = np.mean(all_oos_trades) if all_oos_trades else 0
+        std_oos_trades = np.std(all_oos_trades) if all_oos_trades else 0
+
+        stats_data = [
+            ("Total IS Trades (all windows)", str(total_is_trades)),
+            ("Total OOS Trades (all windows)", str(total_oos_trades)),
+            ("Avg IS Trades per Window", f"{avg_is_trades:.1f}"),
+            ("Avg OOS Trades per Window", f"{avg_oos_trades:.1f}"),
+            ("Std Dev of OOS Trades", f"{std_oos_trades:.1f}"),
+            ("Trade Count Stability", f"{100 - (std_oos_trades/avg_oos_trades*100) if avg_oos_trades > 0 else 0:.0f}%"),
+        ]
+
+        for label, value in stats_data:
+            ws.cell(row=row, column=1, value=label).font = Font(bold=True)
+            ws.cell(row=row, column=2, value=value)
+            row += 1
+
+        row += 2
+
+        # Section B: Trade Statistics by Security
+        row = self._add_section_header(ws, row, "B. TRADE STATISTICS BY SECURITY")
+
+        headers = ["Security", "Windows", "Total IS", "Total OOS", "Avg IS", "Avg OOS", "Consistency"]
+        for col, header in enumerate(headers, 1):
+            cell = ws.cell(row=row, column=col, value=header)
+            cell.font = self.header_font
+            cell.fill = self.header_fill
+        row += 1
+
+        for symbol, wf_results in multi_results.individual_results.items():
+            is_trades = [w.in_sample_num_trades for w in wf_results.windows]
+            oos_trades = [w.out_sample_num_trades for w in wf_results.windows]
+
+            total_is = sum(is_trades)
+            total_oos = sum(oos_trades)
+            avg_is = np.mean(is_trades) if is_trades else 0
+            avg_oos = np.mean(oos_trades) if oos_trades else 0
+            std_oos = np.std(oos_trades) if oos_trades else 0
+            consistency = 100 - (std_oos / avg_oos * 100) if avg_oos > 0 else 0
+
+            ws.cell(row=row, column=1, value=symbol).font = Font(bold=True)
+            ws.cell(row=row, column=2, value=len(wf_results.windows))
+            ws.cell(row=row, column=3, value=total_is)
+            ws.cell(row=row, column=4, value=total_oos)
+            ws.cell(row=row, column=5, value=f"{avg_is:.1f}")
+            ws.cell(row=row, column=6, value=f"{avg_oos:.1f}")
+
+            cons_cell = ws.cell(row=row, column=7, value=f"{consistency:.0f}%")
+            if consistency > 70:
+                cons_cell.fill = self.positive_fill
+            elif consistency < 50:
+                cons_cell.fill = self.negative_fill
+            else:
+                cons_cell.fill = self.neutral_fill
+
+            row += 1
+
+        row += 2
+
+        # Section C: Trade Quality Analysis
+        row = self._add_section_header(ws, row, "C. TRADE QUALITY INDICATORS")
+
+        # Calculate win rates and profit factors from trade lists if available
+        quality_notes = [
+            "Trade quality is indicated by profit factor and consistency across windows.",
+            "Higher OOS profit factor relative to IS profit factor suggests robustness.",
+            "Consistent trade count across windows indicates stable signal generation.",
+        ]
+
+        for note in quality_notes:
+            ws.cell(row=row, column=1, value=f"• {note}")
+            ws.merge_cells(f'A{row}:G{row}')
+            row += 1
+
+        ws.column_dimensions['A'].width = 20
+        for col in ['B', 'C', 'D', 'E', 'F', 'G']:
+            ws.column_dimensions[col].width = 12
