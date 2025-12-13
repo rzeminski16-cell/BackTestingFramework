@@ -21,6 +21,7 @@ from .backtest_result import BacktestResult
 from .vulnerability_score import VulnerabilityScoreCalculator, VulnerabilityResult, SwapDecision
 from ..Data.currency_converter import CurrencyConverter
 from ..Data.security_registry import SecurityRegistry
+from ..Data.historical_data_view import HistoricalDataView
 
 
 @dataclass
@@ -129,6 +130,9 @@ class PortfolioEngine:
         self.vulnerability_history: List[Dict[str, VulnerabilityResult]] = []
         self.capital_allocation_events: List[CapitalAllocationEvent] = []
 
+        # Cache for vulnerability scores (reset per day to avoid duplicate calculations)
+        self._current_day_vuln_scores: Optional[Dict[str, VulnerabilityResult]] = None
+
     def run(self, data_dict: Dict[str, pd.DataFrame],
             strategy: BaseStrategy,
             progress_callback: Optional[Callable[[int, int], None]] = None) -> PortfolioBacktestResult:
@@ -196,6 +200,8 @@ class PortfolioEngine:
             total_equity = capital + total_position_value
 
             # Track vulnerability scores for the day (if using vulnerability mode)
+            # PERFORMANCE: Cache scores to avoid duplicate calculations during signal processing
+            self._current_day_vuln_scores = None  # Reset cache for new day
             if self.vulnerability_calculator:
                 open_positions = {
                     sym: pm.get_position()
@@ -206,6 +212,7 @@ class PortfolioEngine:
                     day_scores = self.vulnerability_calculator.calculate_all_scores(
                         open_positions, current_prices, current_date
                     )
+                    self._current_day_vuln_scores = day_scores  # Cache for reuse in signal processing
                     self.vulnerability_history.append(day_scores)
 
             # Collect new signals for this date
@@ -233,7 +240,9 @@ class PortfolioEngine:
                     bar_position = data.index.get_loc(label_index)
 
                 # Only pass historical data up to current bar (no future data access)
-                historical_data = data.iloc[:bar_position+1].copy()
+                # PERFORMANCE: Use HistoricalDataView instead of .copy() to avoid O(n²) memory operations
+                # HistoricalDataView enforces look-ahead protection without expensive copying
+                historical_data = HistoricalDataView(data, valid_end_index=bar_position)
 
                 # Get FX rate for currency conversion
                 fx_rate = self._get_fx_rate(symbol, current_date)
@@ -605,18 +614,10 @@ class PortfolioEngine:
             other_signals = [s for s in all_signal_symbols if s != symbol]
 
             # Get vulnerability scores for context (used in multiple places below)
+            # PERFORMANCE: Use cached scores from earlier in the day instead of recalculating
             vuln_scores = None
-            if open_position_symbols:
-                open_positions = {
-                    sym: self.position_managers[sym].get_position()
-                    for sym in open_position_symbols
-                    if self.position_managers[sym].has_position
-                }
-                if open_positions:
-                    scores = self.vulnerability_calculator.calculate_all_scores(
-                        open_positions, current_prices, current_date
-                    )
-                    vuln_scores = {s: r.score for s, r in scores.items()}
+            if self._current_day_vuln_scores:
+                vuln_scores = {s: r.score for s, r in self._current_day_vuln_scores.items()}
 
             # Step 1 & 2: Try full position, then reduced position
             adj_quantity, adj_capital, was_reduced = self._try_reduced_position(
