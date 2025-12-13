@@ -367,15 +367,32 @@ class ExcelReportGenerator:
         equity = equity_curve['equity'].values
         dates = equity_curve['date'].values
 
+        # Filter out NaN and invalid values
+        if np.any(np.isnan(equity)) or np.any(np.isinf(equity)):
+            equity = np.nan_to_num(equity, nan=0.0, posinf=0.0, neginf=0.0)
+
+        # Ensure we have valid data
+        if len(equity) == 0 or np.all(equity <= 0):
+            return {
+                'max_drawdown': 0, 'max_drawdown_pct': 0, 'avg_drawdown': 0,
+                'max_drawdown_duration': 0, 'num_drawdowns_over_5pct': 0
+            }
+
         # Running maximum
         running_max = np.maximum.accumulate(equity)
 
-        # Drawdown in dollars and percent
-        drawdown = running_max - equity
-        drawdown_pct = (drawdown / running_max) * 100
+        # Drawdown in dollars and percent - with safe division
+        with np.errstate(divide='ignore', invalid='ignore'):
+            drawdown = running_max - equity
+            drawdown_pct = np.where(running_max > 0, (drawdown / running_max) * 100, 0.0)
 
-        max_dd = np.max(drawdown)
-        max_dd_pct = np.max(drawdown_pct)
+        # Remove any NaN or inf values and cap at 100%
+        drawdown = np.nan_to_num(drawdown, nan=0.0, posinf=0.0, neginf=0.0)
+        drawdown_pct = np.nan_to_num(drawdown_pct, nan=0.0, posinf=0.0, neginf=0.0)
+        drawdown_pct = np.clip(drawdown_pct, 0, 100)
+
+        max_dd = np.max(drawdown) if len(drawdown) > 0 else 0.0
+        max_dd_pct = np.max(drawdown_pct) if len(drawdown_pct) > 0 else 0.0
 
         # Average drawdown (only count periods in drawdown)
         in_drawdown = drawdown > 0

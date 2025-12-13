@@ -133,6 +133,10 @@ class PortfolioEngine:
         # Cache for vulnerability scores (reset per day to avoid duplicate calculations)
         self._current_day_vuln_scores: Optional[Dict[str, VulnerabilityResult]] = None
 
+        # Track last known prices to handle missing data in equity calculations
+        # This prevents false drawdowns when a security doesn't trade on a particular day
+        self._last_known_prices: Dict[str, float] = {}
+
     def run(self, data_dict: Dict[str, pd.DataFrame],
             strategy: BaseStrategy,
             progress_callback: Optional[Callable[[int, int], None]] = None) -> PortfolioBacktestResult:
@@ -175,6 +179,9 @@ class PortfolioEngine:
         capital = self.config.initial_capital
         equity_history = []
 
+        # Reset last known prices for this backtest run
+        self._last_known_prices = {}
+
         # Process each date
         total_dates = len(all_dates)
         for date_idx, current_date in enumerate(all_dates):
@@ -188,14 +195,20 @@ class PortfolioEngine:
                 date_data = data[data['date'] == current_date]
                 if len(date_data) > 0:
                     current_prices[symbol] = date_data.iloc[0]['close']
+                    # Update last known price
+                    self._last_known_prices[symbol] = current_prices[symbol]
 
             # Calculate total position value (converted to base currency)
+            # Use last known price as fallback when current price is not available
             total_position_value = 0
             for symbol, pm in self.position_managers.items():
-                if pm.has_position and symbol in current_prices:
-                    pos_value = pm.get_position_value(current_prices[symbol])
-                    pos_value_base = self._convert_to_base_currency(pos_value, symbol, current_date)
-                    total_position_value += pos_value_base
+                if pm.has_position:
+                    # Use current price if available, otherwise use last known price
+                    price = current_prices.get(symbol) or self._last_known_prices.get(symbol)
+                    if price:
+                        pos_value = pm.get_position_value(price)
+                        pos_value_base = self._convert_to_base_currency(pos_value, symbol, current_date)
+                        total_position_value += pos_value_base
 
             total_equity = capital + total_position_value
 
@@ -325,12 +338,16 @@ class PortfolioEngine:
             )
 
             # Recalculate equity at end of day
+            # Use last known price as fallback when current price is not available
             total_position_value = 0
             for symbol, pm in self.position_managers.items():
-                if pm.has_position and symbol in current_prices:
-                    pos_value = pm.get_position_value(current_prices[symbol])
-                    pos_value_base = self._convert_to_base_currency(pos_value, symbol, current_date)
-                    total_position_value += pos_value_base
+                if pm.has_position:
+                    # Use current price if available, otherwise use last known price
+                    price = current_prices.get(symbol) or self._last_known_prices.get(symbol)
+                    if price:
+                        pos_value = pm.get_position_value(price)
+                        pos_value_base = self._convert_to_base_currency(pos_value, symbol, current_date)
+                        total_position_value += pos_value_base
 
             total_equity = capital + total_position_value
 
@@ -738,12 +755,15 @@ class PortfolioEngine:
             )
 
             # Recalculate total equity after closing
+            # Use last known price as fallback when current price is not available
             total_position_value = 0
             for sym, pm in self.position_managers.items():
-                if pm.has_position and sym in current_prices:
-                    pos_value = pm.get_position_value(current_prices[sym])
-                    pos_value_base = self._convert_to_base_currency(pos_value, sym, current_date)
-                    total_position_value += pos_value_base
+                if pm.has_position:
+                    price = current_prices.get(sym) or self._last_known_prices.get(sym)
+                    if price:
+                        pos_value = pm.get_position_value(price)
+                        pos_value_base = self._convert_to_base_currency(pos_value, sym, current_date)
+                        total_position_value += pos_value_base
             total_equity = capital + total_position_value
 
             # Update position tracking
