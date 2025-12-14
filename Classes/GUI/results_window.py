@@ -38,6 +38,15 @@ class ResultsWindow:
         self.window.title(title)
         self.window.geometry(f"{width}x{height}")
 
+        # Maximize window (fullscreen)
+        try:
+            self.window.state('zoomed')  # Windows
+        except tk.TclError:
+            try:
+                self.window.attributes('-zoomed', True)  # Linux
+            except tk.TclError:
+                pass  # Fallback to default size
+
         # Keep window on top initially
         self.window.transient(parent)
 

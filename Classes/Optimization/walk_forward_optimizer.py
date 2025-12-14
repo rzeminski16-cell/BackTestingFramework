@@ -1326,12 +1326,31 @@ class WalkForwardOptimizer:
         metrics['num_swaps'] = len(result.vulnerability_swaps)
         metrics['num_rejections'] = len(result.signal_rejections)
 
-        # Calculate Sharpe and Sortino from equity curve if available
+        # Calculate Sharpe, Sortino, and other metrics from equity curve if available
         if not result.portfolio_equity_curve.empty:
             metrics['sharpe_ratio'] = PerformanceMetrics.calculate_sharpe_ratio(result.portfolio_equity_curve)
             metrics['sortino_ratio'] = PerformanceMetrics.calculate_sortino_ratio(result.portfolio_equity_curve)
             max_dd, max_dd_pct = PerformanceMetrics.calculate_max_drawdown(result.portfolio_equity_curve)
             metrics['max_drawdown'] = max_dd
             metrics['max_drawdown_pct'] = max_dd_pct
+
+            # Calculate CAGR and Calmar ratio
+            equity_curve = result.portfolio_equity_curve
+            if len(equity_curve) >= 2:
+                start_date = pd.Timestamp(equity_curve['date'].iloc[0])
+                end_date = pd.Timestamp(equity_curve['date'].iloc[-1])
+                years = (end_date - start_date).days / 365.25
+                initial_equity = equity_curve['equity'].iloc[0]
+                final_equity = equity_curve['equity'].iloc[-1]
+
+                if years > 0 and initial_equity > 0:
+                    cagr = (pow(final_equity / initial_equity, 1 / years) - 1) * 100
+                else:
+                    cagr = 0.0
+            else:
+                cagr = 0.0
+
+            metrics['cagr'] = cagr
+            metrics['calmar_ratio'] = cagr / max_dd_pct if max_dd_pct > 0 else 0.0
 
         return metrics

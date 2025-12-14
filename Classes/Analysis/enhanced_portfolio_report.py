@@ -253,7 +253,7 @@ class EnhancedPortfolioReportGenerator:
         metrics['rolling_metrics'] = self._calculate_rolling_metrics(equity_df)
 
         # Monthly/Yearly returns
-        metrics['monthly_returns'] = self._calculate_period_returns(equity_df, 'M')
+        metrics['monthly_returns'] = self._calculate_period_returns(equity_df, 'ME')
         metrics['yearly_returns'] = self._calculate_period_returns(equity_df, 'Y')
 
         return metrics
@@ -291,10 +291,31 @@ class EnhancedPortfolioReportGenerator:
 
         equity = equity_df['equity'].values
 
+        # Filter out NaN and invalid values
+        if np.any(np.isnan(equity)) or np.any(np.isinf(equity)):
+            equity = np.nan_to_num(equity, nan=0.0, posinf=0.0, neginf=0.0)
+
+        # Ensure we have valid data
+        if len(equity) == 0 or np.all(equity <= 0):
+            return {
+                'max_drawdown': 0, 'max_drawdown_pct': 0, 'avg_drawdown': 0,
+                'sharpe_ratio': 0, 'sortino_ratio': 0, 'calmar_ratio': 0,
+                'cagr': 0, 'volatility': 0, 'downside_deviation': 0,
+                'best_day': 0, 'worst_day': 0, 'recovery_factor': 0,
+            }
+
         # Drawdown calculations
         running_max = np.maximum.accumulate(equity)
-        drawdown = running_max - equity
-        drawdown_pct = (drawdown / running_max) * 100
+
+        # Prevent division by zero - use safe division
+        with np.errstate(divide='ignore', invalid='ignore'):
+            drawdown = running_max - equity
+            drawdown_pct = np.where(running_max > 0, (drawdown / running_max) * 100, 0.0)
+
+        # Remove any NaN or inf values and cap at 100%
+        drawdown = np.nan_to_num(drawdown, nan=0.0, posinf=0.0, neginf=0.0)
+        drawdown_pct = np.nan_to_num(drawdown_pct, nan=0.0, posinf=0.0, neginf=0.0)
+        drawdown_pct = np.clip(drawdown_pct, 0, 100)
 
         metrics['max_drawdown'] = np.max(drawdown)
         metrics['max_drawdown_pct'] = np.max(drawdown_pct)
@@ -403,7 +424,7 @@ class EnhancedPortfolioReportGenerator:
         df = df.set_index('date')
 
         # Monthly
-        monthly = df['equity'].resample('M').last()
+        monthly = df['equity'].resample('ME').last()
         monthly_returns = monthly.pct_change().dropna()
 
         if len(monthly_returns) > 0:
@@ -847,8 +868,9 @@ class EnhancedPortfolioReportGenerator:
             img.width = 600
             img.height = 350
             ws.add_image(img, f'A{chart_row}')
-        except Exception:
-            pass
+        except Exception as e:
+            ws[f'A{chart_row}'] = f"Monthly heatmap unavailable: {str(e)[:50]}"
+            ws[f'A{chart_row}'].font = Font(italic=True, color=self.COLORS['dark_gray'])
 
         chart_row += 20
 

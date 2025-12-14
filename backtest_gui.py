@@ -25,6 +25,8 @@ from datetime import datetime
 from typing import Dict, List, Any, Optional
 import json
 import yaml
+import threading
+import queue
 
 from Classes.Config.config import (
     BacktestConfig, PortfolioConfig, CommissionConfig,
@@ -293,10 +295,33 @@ class ModeSecuritiesStep(WizardStep):
             on_save=on_save
         )
 
+    def on_enter(self):
+        """Restore security selections when returning to this step."""
+        if hasattr(self.wizard, 'selected_securities') and self.wizard.selected_securities:
+            # Restore mode first
+            mode = self.wizard.mode_var.get()
+            if mode == "portfolio":
+                self.securities_listbox.config(selectmode=tk.MULTIPLE)
+            else:
+                self.securities_listbox.config(selectmode=tk.SINGLE)
+
+            # Restore selections
+            self.securities_listbox.selection_clear(0, tk.END)
+            all_symbols = list(self.securities_listbox.get(0, tk.END))
+            for symbol in self.wizard.selected_securities:
+                if symbol in all_symbols:
+                    idx = all_symbols.index(symbol)
+                    self.securities_listbox.selection_set(idx)
+            self._on_selection_change(None)
+
     def get_summary(self) -> Dict[str, str]:
         mode = self.wizard.mode_var.get()
-        selections = self.securities_listbox.curselection()
-        securities = [self.securities_listbox.get(i) for i in selections]
+        # Use stored securities if available (set after validation), otherwise read from listbox
+        if hasattr(self.wizard, 'selected_securities') and self.wizard.selected_securities:
+            securities = self.wizard.selected_securities
+        else:
+            selections = self.securities_listbox.curselection()
+            securities = [self.securities_listbox.get(i) for i in selections]
 
         summary = {
             "Mode": "Portfolio" if mode == "portfolio" else "Single Security"
@@ -356,18 +381,15 @@ class StrategyStep(WizardStep):
 
         ttk.Label(selection_frame, text="Strategy:").pack(side=tk.LEFT, padx=(0, 10))
         self.wizard.strategy_var = tk.StringVar()
-        strategy_combo = ttk.Combobox(
+        self.strategy_combo = ttk.Combobox(
             selection_frame,
             textvariable=self.wizard.strategy_var,
             values=list(self.wizard.STRATEGIES.keys()),
             state="readonly",
             width=30
         )
-        strategy_combo.pack(side=tk.LEFT)
-        if self.wizard.STRATEGIES:
-            strategy_combo.current(0)
-            self._on_strategy_change(None)
-        strategy_combo.bind('<<ComboboxSelected>>', self._on_strategy_change)
+        self.strategy_combo.pack(side=tk.LEFT)
+        self.strategy_combo.bind('<<ComboboxSelected>>', self._on_strategy_change)
 
         # Strategy Parameters
         params_frame = ttk.LabelFrame(parent, text="Strategy Parameters", padding="10")
@@ -417,6 +439,11 @@ class StrategyStep(WizardStep):
         canvas.bind_all("<MouseWheel>", _on_mousewheel)
 
         self.param_entries: Dict[str, tk.StringVar] = {}
+
+        # Initialize with first strategy (after all widgets are created)
+        if self.wizard.STRATEGIES:
+            self.strategy_combo.current(0)
+            self._on_strategy_change(None)
 
     def _on_strategy_change(self, event):
         """Handle strategy selection change."""
@@ -1003,7 +1030,95 @@ class BacktestWizard(WizardBase):
             self.root.destroy()
 
     def _run_backtest(self):
-        """Run the backtest with configured settings."""
+        """Run the backtest with configured settings in a background thread."""
+        try:
+            # Gather all settings for results window
+            settings = self.get_all_summaries()
+
+            # Parse configuration
+            mode = self.mode_var.get()
+            securities = self.selected_securities
+            strategy_name = self.strategy_var.get()
+            capital = float(self.capital_var.get())
+            commission_mode = CommissionMode.PERCENTAGE if self.commission_mode_var.get() == "percentage" else CommissionMode.FIXED
+            commission_value = float(self.commission_value_var.get())
+            slippage_percent = float(self.slippage_var.get())
+            commission = CommissionConfig(mode=commission_mode, value=commission_value)
+
+            start_date = self._parse_date(self.start_date_var.get())
+            end_date = self._parse_date(self.end_date_var.get())
+
+            # Create strategy instance
+            strategy_class = self.STRATEGIES[strategy_name]
+            strategy_params = self.strategy_params.get(strategy_name, {})
+            strategy = strategy_class(**strategy_params)
+
+            # Generate backtest name
+            user_name = self.backtest_name_var.get().strip()
+            full_backtest_name = f"{strategy_name}_{user_name}"
+
+            # Create results window
+            results_window = ResultsWindow(
+                self.root,
+                f"Backtest Results: {full_backtest_name}",
+                settings
+            )
+
+            # Create message queue for thread-safe UI updates
+            msg_queue = queue.Queue()
+
+            def update_ui():
+                """Process messages from background thread to update UI."""
+                try:
+                    while True:
+                        msg_type, data = msg_queue.get_nowait()
+                        if msg_type == "log":
+                            results_window.log(data)
+                        elif msg_type == "progress":
+                            current, total, detail = data
+                            results_window.update_progress(current, total, detail)
+                        elif msg_type == "complete":
+                            results_window.on_complete()
+                            return  # Stop polling
+                        elif msg_type == "error":
+                            results_window.on_error(data)
+                            return  # Stop polling
+                except queue.Empty:
+                    pass
+                # Schedule next check
+                self.root.after(100, update_ui)
+
+            def run_in_thread():
+                """Run backtest in background thread."""
+                try:
+                    if mode == "single":
+                        self._run_single_backtest_threaded(
+                            msg_queue, securities[0], strategy, capital, commission,
+                            start_date, end_date, full_backtest_name, slippage_percent, strategy_params
+                        )
+                    else:
+                        self._run_portfolio_backtest_threaded(
+                            msg_queue, securities, strategy, capital, commission,
+                            start_date, end_date, full_backtest_name, slippage_percent, strategy_params
+                        )
+                except Exception as e:
+                    import traceback
+                    msg_queue.put(("error", f"{str(e)}\n{traceback.format_exc()}"))
+
+            # Start background thread
+            thread = threading.Thread(target=run_in_thread, daemon=True)
+            thread.start()
+
+            # Start UI update polling
+            self.root.after(100, update_ui)
+
+        except Exception as e:
+            messagebox.showerror("Error", f"Backtest failed: {str(e)}")
+            import traceback
+            traceback.print_exc()
+
+    def _run_backtest_sync(self):
+        """Run the backtest synchronously (kept for reference)."""
         try:
             # Gather all settings for results window
             settings = self.get_all_summaries()
@@ -1063,11 +1178,47 @@ class BacktestWizard(WizardBase):
         except ValueError:
             raise ValueError(f"Invalid date format: {date_str}. Use YYYY-MM-DD")
 
+    def _run_single_backtest_threaded(self, msg_queue: queue.Queue, symbol: str, strategy,
+                                       capital: float, commission: CommissionConfig, start_date,
+                                       end_date, backtest_name: str, slippage_percent: float,
+                                       strategy_params: Dict):
+        """Run single security backtest in background thread."""
+        config = BacktestConfig(
+            initial_capital=capital,
+            commission=commission,
+            start_date=start_date,
+            end_date=end_date,
+            slippage_percent=slippage_percent
+        )
+
+        msg_queue.put(("log", f"Loading data for {symbol}..."))
+        data = self.data_loader.load_csv(symbol, required_columns=strategy.required_columns())
+        msg_queue.put(("log", f"Loaded {len(data)} bars\n"))
+
+        msg_queue.put(("log", f"Running backtest: {backtest_name}"))
+        msg_queue.put(("log", f"Strategy: {strategy}"))
+        msg_queue.put(("log", f"Security: {symbol}"))
+        msg_queue.put(("log", f"Capital: £{capital:,.2f}\n"))
+
+        def progress_callback(current: int, total: int):
+            msg_queue.put(("progress", (current, total, f"Processing {symbol}")))
+
+        engine = SingleSecurityEngine(
+            config=config,
+            currency_converter=self.currency_converter,
+            security_registry=self.security_registry
+        )
+        result = engine.run(symbol, data, strategy, progress_callback=progress_callback)
+
+        # Display results
+        self._display_single_results_threaded(msg_queue, symbol, result, backtest_name, strategy_params)
+        msg_queue.put(("complete", None))
+
     def _run_single_backtest(self, results_window: ResultsWindow, symbol: str, strategy,
                              capital: float, commission: CommissionConfig, start_date,
                              end_date, backtest_name: str, slippage_percent: float,
                              strategy_params: Dict):
-        """Run single security backtest."""
+        """Run single security backtest (sync version)."""
         config = BacktestConfig(
             initial_capital=capital,
             commission=commission,
@@ -1099,6 +1250,64 @@ class BacktestWizard(WizardBase):
         # Display results
         self._display_single_results(results_window, symbol, result, backtest_name, strategy_params)
         results_window.on_complete()
+
+    def _run_portfolio_backtest_threaded(self, msg_queue: queue.Queue, symbols: List[str],
+                                          strategy, capital: float, commission: CommissionConfig,
+                                          start_date, end_date, backtest_name: str,
+                                          slippage_percent: float, strategy_params: Dict):
+        """Run portfolio backtest in background thread."""
+        basket_name = self.selected_basket.name if self.selected_basket else None
+
+        config = PortfolioConfig(
+            initial_capital=capital,
+            commission=commission,
+            start_date=start_date,
+            end_date=end_date,
+            capital_contention=self.capital_contention_config,
+            slippage_percent=slippage_percent,
+            basket_name=basket_name
+        )
+
+        msg_queue.put(("log", f"Running PORTFOLIO backtest: {backtest_name}"))
+        msg_queue.put(("log", f"Strategy: {strategy}"))
+        msg_queue.put(("log", f"Securities: {', '.join(symbols)}"))
+        msg_queue.put(("log", f"Shared Capital: £{capital:,.2f}"))
+        msg_queue.put(("log", f"Capital Contention: {self.capital_contention_config.mode.value}"))
+        if self.capital_contention_config.mode == CapitalContentionMode.VULNERABILITY_SCORE:
+            vc = self.capital_contention_config.vulnerability_config
+            msg_queue.put(("log", f"  - Immunity Days: {vc.immunity_days}"))
+            msg_queue.put(("log", f"  - Swap Threshold: {vc.swap_threshold}"))
+        msg_queue.put(("log", "=" * 60))
+
+        # Load data for all securities
+        data_dict = {}
+        for symbol in symbols:
+            try:
+                data = self.data_loader.load_csv(symbol, required_columns=strategy.required_columns())
+                data_dict[symbol] = data
+                msg_queue.put(("log", f"Loaded {symbol}: {len(data)} bars"))
+            except Exception as e:
+                msg_queue.put(("log", f"WARNING: Could not load {symbol}: {e}"))
+
+        if not data_dict:
+            msg_queue.put(("error", "No data loaded for any security"))
+            return
+
+        msg_queue.put(("log", ""))
+
+        def progress_callback(current: int, total: int):
+            msg_queue.put(("progress", (current, total, "Processing portfolio")))
+
+        engine = PortfolioEngine(
+            config=config,
+            currency_converter=self.currency_converter,
+            security_registry=self.security_registry
+        )
+        result = engine.run(data_dict, strategy, progress_callback=progress_callback)
+
+        # Display portfolio results
+        self._display_portfolio_results_threaded(msg_queue, result, backtest_name, strategy_params)
+        msg_queue.put(("complete", None))
 
     def _run_portfolio_backtest(self, results_window: ResultsWindow, symbols: List[str],
                                 strategy, capital: float, commission: CommissionConfig,
@@ -1159,6 +1368,53 @@ class BacktestWizard(WizardBase):
         self._display_portfolio_results(results_window, result, backtest_name, strategy_params)
         results_window.on_complete()
 
+    def _display_single_results_threaded(self, msg_queue: queue.Queue, symbol: str,
+                                          result, backtest_name: str, strategy_params: Dict):
+        """Display single backtest results via message queue."""
+        metrics = PerformanceMetrics.calculate_metrics(result)
+
+        msg_queue.put(("log", "\n" + "=" * 60))
+        msg_queue.put(("log", f"RESULTS: {symbol}"))
+        msg_queue.put(("log", "=" * 60))
+        msg_queue.put(("log", f"Total Return:        £{metrics['total_return']:,.2f} ({metrics['total_return_pct']:.2f}%)"))
+        msg_queue.put(("log", f"Final Equity:        £{metrics['final_equity']:,.2f}"))
+        msg_queue.put(("log", f"Number of Trades:    {metrics['num_trades']}"))
+        msg_queue.put(("log", f"Win Rate:            {metrics['win_rate']*100:.2f}%"))
+        msg_queue.put(("log", f"Winning Trades:      {metrics['num_wins']}"))
+        msg_queue.put(("log", f"Losing Trades:       {metrics['num_losses']}"))
+        msg_queue.put(("log", f"Average Win:         £{metrics['avg_win']:,.2f}"))
+        msg_queue.put(("log", f"Average Loss:        £{metrics['avg_loss']:,.2f}"))
+        msg_queue.put(("log", f"Largest Win:         £{metrics['largest_win']:,.2f}"))
+        msg_queue.put(("log", f"Largest Loss:        £{metrics['largest_loss']:,.2f}"))
+        msg_queue.put(("log", f"Profit Factor:       {metrics['profit_factor']:.2f}"))
+        msg_queue.put(("log", f"Avg Trade Duration:  {metrics['avg_trade_duration']:.1f} days"))
+        msg_queue.put(("log", f"Sharpe Ratio:        {metrics['sharpe_ratio']:.2f}"))
+        msg_queue.put(("log", f"Max Drawdown:        £{metrics['max_drawdown']:,.2f} ({metrics['max_drawdown_pct']:.2f}%)"))
+        msg_queue.put(("log", "=" * 60))
+
+        # Save trade log
+        logger = TradeLogger(Path('logs') / backtest_name)
+        logger.log_trades(symbol, backtest_name, result.trades, result.strategy_params)
+        msg_queue.put(("log", f"\nTrade log saved to: logs/{backtest_name}/"))
+
+        # Generate Excel report if enabled
+        if self.generate_excel_var.get():
+            try:
+                msg_queue.put(("log", "\nGenerating Excel report..."))
+                excel_generator = ExcelReportGenerator(
+                    output_directory=Path('logs') / backtest_name / 'reports',
+                    initial_capital=float(self.capital_var.get()),
+                    risk_free_rate=0.02,
+                    benchmark_name="S&P 500"
+                )
+                report_path = excel_generator.generate_report(
+                    result=result,
+                    filename=f"{backtest_name}_{symbol}_report.xlsx"
+                )
+                msg_queue.put(("log", f"Excel report saved to: {report_path}"))
+            except Exception as e:
+                msg_queue.put(("log", f"Excel report generation failed: {str(e)}"))
+
     def _display_single_results(self, results_window: ResultsWindow, symbol: str,
                                 result, backtest_name: str, strategy_params: Dict):
         """Display single backtest results."""
@@ -1205,6 +1461,61 @@ class BacktestWizard(WizardBase):
                 results_window.log(f"Excel report saved to: {report_path}")
             except Exception as e:
                 results_window.log(f"Excel report generation failed: {str(e)}")
+
+    def _display_portfolio_results_threaded(self, msg_queue: queue.Queue,
+                                             result: PortfolioBacktestResult, backtest_name: str,
+                                             strategy_params: Dict):
+        """Display portfolio backtest results via message queue."""
+        msg_queue.put(("log", "\n" + "=" * 60))
+        msg_queue.put(("log", "PORTFOLIO RESULTS"))
+        msg_queue.put(("log", "=" * 60))
+
+        msg_queue.put(("log", f"\nInitial Capital:     £{result.config.initial_capital:,.2f}"))
+        msg_queue.put(("log", f"Final Equity:        £{result.final_equity:,.2f}"))
+        msg_queue.put(("log", f"Total Return:        £{result.total_return:,.2f} ({result.total_return_pct:.2f}%)"))
+
+        msg_queue.put(("log", "\n--- Per-Security Performance ---"))
+        total_trades = 0
+        for symbol, sym_result in result.symbol_results.items():
+            num_trades = len(sym_result.trades)
+            total_trades += num_trades
+            wins = len([t for t in sym_result.trades if t.pl > 0])
+            win_rate = (wins / num_trades * 100) if num_trades > 0 else 0
+            msg_queue.put(("log", f"  {symbol}: {num_trades} trades, Win Rate: {win_rate:.1f}%, P/L: £{sym_result.total_return:,.2f}"))
+
+        msg_queue.put(("log", f"\nTotal Trades: {total_trades}"))
+
+        if result.signal_rejections:
+            msg_queue.put(("log", f"\n--- Signal Rejections: {len(result.signal_rejections)} ---"))
+            rejection_summary = {}
+            for r in result.signal_rejections:
+                rejection_summary[r.symbol] = rejection_summary.get(r.symbol, 0) + 1
+            for symbol, count in sorted(rejection_summary.items(), key=lambda x: -x[1])[:5]:
+                msg_queue.put(("log", f"  {symbol}: {count} rejections"))
+
+        if result.vulnerability_swaps:
+            msg_queue.put(("log", f"\n--- Vulnerability Swaps: {len(result.vulnerability_swaps)} ---"))
+            for swap in result.vulnerability_swaps[:5]:
+                msg_queue.put(("log", f"  {swap.date.strftime('%Y-%m-%d')}: {swap.closed_symbol} -> {swap.new_symbol}"))
+            if len(result.vulnerability_swaps) > 5:
+                msg_queue.put(("log", f"  ... and {len(result.vulnerability_swaps) - 5} more"))
+
+        msg_queue.put(("log", "=" * 60))
+
+        # Log portfolio results
+        basket_name = result.config.basket_name
+        portfolio_logger = PortfolioTradeLogger(backtest_name, basket_name)
+        portfolio_logger.log_portfolio_result(result, strategy_params)
+        msg_queue.put(("log", f"\nResults logged to: {portfolio_logger.base_dir}"))
+
+        # Generate portfolio report if enabled
+        if self.generate_excel_var.get():
+            try:
+                report_gen = PortfolioReportGenerator(portfolio_logger.reports_dir, use_enhanced=True)
+                report_path = report_gen.generate_portfolio_report(result)
+                msg_queue.put(("log", f"Portfolio report: {report_path}"))
+            except Exception as e:
+                msg_queue.put(("log", f"Warning: Could not generate portfolio report: {e}"))
 
     def _display_portfolio_results(self, results_window: ResultsWindow,
                                    result: PortfolioBacktestResult, backtest_name: str,
@@ -1267,6 +1578,16 @@ def main():
     root = tk.Tk()
     style = ttk.Style()
     style.theme_use('clam')
+
+    # Maximize window (fullscreen)
+    try:
+        root.state('zoomed')  # Windows
+    except tk.TclError:
+        try:
+            root.attributes('-zoomed', True)  # Linux
+        except tk.TclError:
+            root.geometry("1400x900")  # Fallback to large size
+
     app = BacktestWizard(root)
     root.mainloop()
 
