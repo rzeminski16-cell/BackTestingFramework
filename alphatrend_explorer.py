@@ -138,6 +138,12 @@ def generate_synthetic_data(
     """
     Generate synthetic OHLCV data for different market conditions.
 
+    Uses a more realistic model that includes:
+    - GARCH-like volatility clustering (high volatility tends to follow high volatility)
+    - Fat tails via Student-t distribution
+    - Realistic OHLC relationships based on daily range dynamics
+    - Volume correlation with price movement and volatility
+
     Args:
         condition: Type of market condition to simulate
         params: Data generation parameters
@@ -145,17 +151,19 @@ def generate_synthetic_data(
     Returns:
         DataFrame with OHLCV data
     """
-    np.random.seed(42)  # For reproducibility
+    # Use a different seed based on condition for variety, but still reproducible
+    seed = hash(condition.value) % 2**31
+    np.random.seed(seed)
     n = params.n_bars
 
     # Base parameters based on market condition
     condition_params = _get_condition_params(condition, params)
 
-    # Generate price series
-    prices = _generate_price_series(n, condition_params, params)
+    # Generate price series with GARCH-like volatility
+    prices, volatilities = _generate_price_series_garch(n, condition_params, params)
 
-    # Generate OHLCV from price series
-    df = _prices_to_ohlcv(prices, params)
+    # Generate OHLCV from price series with realistic intraday dynamics
+    df = _prices_to_ohlcv_realistic(prices, volatilities, params)
 
     # Add date index
     df['date'] = pd.date_range(start='2023-01-01', periods=n, freq='D')
@@ -168,140 +176,282 @@ def _get_condition_params(
     condition: MarketCondition,
     params: SyntheticDataParams
 ) -> Dict:
-    """Get condition-specific parameters."""
+    """Get condition-specific parameters for market simulation."""
     base_params = {
         'trend': params.trend_strength,
         'volatility': params.volatility,
         'noise': params.noise_level,
         'regime_changes': 0,
         'breakout_bar': None,
-        'reversal_bar': None
+        'reversal_bar': None,
+        # GARCH parameters for volatility clustering
+        'garch_alpha': 0.1,  # Impact of recent shocks
+        'garch_beta': 0.85,  # Persistence of volatility
+        # Fat tails - degrees of freedom for Student-t (lower = fatter tails)
+        'df': 5,
+        # Mean reversion strength (0 = none, higher = stronger)
+        'mean_reversion': 0.0,
+        'mean_price': params.initial_price
     }
 
     if condition == MarketCondition.STRONG_UPTREND:
-        base_params['trend'] = 0.001  # ~0.1% daily drift up
-        base_params['volatility'] = 0.015
-        base_params['noise'] = 0.3
+        base_params['trend'] = 0.0015  # ~0.15% daily drift up
+        base_params['volatility'] = 0.018
+        base_params['noise'] = 0.2
+        base_params['garch_alpha'] = 0.08
+        base_params['garch_beta'] = 0.88
+        base_params['df'] = 6
 
     elif condition == MarketCondition.STRONG_DOWNTREND:
-        base_params['trend'] = -0.001
-        base_params['volatility'] = 0.018
-        base_params['noise'] = 0.3
+        base_params['trend'] = -0.0015
+        base_params['volatility'] = 0.022  # Downtrends typically more volatile
+        base_params['noise'] = 0.2
+        base_params['garch_alpha'] = 0.12  # More reactive in downtrends
+        base_params['garch_beta'] = 0.85
+        base_params['df'] = 4  # Fatter tails in downtrends
 
     elif condition == MarketCondition.SIDEWAYS:
         base_params['trend'] = 0.0
         base_params['volatility'] = 0.012
-        base_params['noise'] = 0.6
+        base_params['noise'] = 0.4
+        base_params['mean_reversion'] = 0.03  # Price tends to revert in ranging markets
+        base_params['garch_alpha'] = 0.05
+        base_params['garch_beta'] = 0.90
+        base_params['df'] = 8
 
     elif condition == MarketCondition.HIGH_VOLATILITY:
-        base_params['trend'] = 0.0002
-        base_params['volatility'] = 0.035
-        base_params['noise'] = 0.4
+        base_params['trend'] = 0.0003
+        base_params['volatility'] = 0.04
+        base_params['noise'] = 0.3
+        base_params['garch_alpha'] = 0.15
+        base_params['garch_beta'] = 0.80
+        base_params['df'] = 3  # Very fat tails
 
     elif condition == MarketCondition.LOW_VOLATILITY:
-        base_params['trend'] = 0.0003
-        base_params['volatility'] = 0.008
-        base_params['noise'] = 0.5
+        base_params['trend'] = 0.0005
+        base_params['volatility'] = 0.006
+        base_params['noise'] = 0.3
+        base_params['garch_alpha'] = 0.03
+        base_params['garch_beta'] = 0.95  # Very persistent low vol
+        base_params['df'] = 10  # Near-normal distribution
 
     elif condition == MarketCondition.CHOPPY:
         base_params['trend'] = 0.0
-        base_params['volatility'] = 0.02
-        base_params['noise'] = 0.8
-        base_params['regime_changes'] = 10
+        base_params['volatility'] = 0.025
+        base_params['noise'] = 0.6
+        base_params['regime_changes'] = 8
+        base_params['garch_alpha'] = 0.12
+        base_params['garch_beta'] = 0.75  # Less persistent - changes faster
+        base_params['df'] = 5
+        base_params['mean_reversion'] = 0.02
 
     elif condition == MarketCondition.BREAKOUT_UP:
         base_params['trend'] = 0.0
         base_params['volatility'] = 0.01
-        base_params['noise'] = 0.4
+        base_params['noise'] = 0.25
         base_params['breakout_bar'] = params.n_bars // 2
         base_params['breakout_direction'] = 1
+        base_params['garch_alpha'] = 0.08
+        base_params['garch_beta'] = 0.88
+        base_params['df'] = 6
+        base_params['mean_reversion'] = 0.02  # Before breakout
 
     elif condition == MarketCondition.BREAKOUT_DOWN:
         base_params['trend'] = 0.0
         base_params['volatility'] = 0.01
-        base_params['noise'] = 0.4
+        base_params['noise'] = 0.25
         base_params['breakout_bar'] = params.n_bars // 2
         base_params['breakout_direction'] = -1
+        base_params['garch_alpha'] = 0.08
+        base_params['garch_beta'] = 0.88
+        base_params['df'] = 6
+        base_params['mean_reversion'] = 0.02
 
     elif condition == MarketCondition.TREND_REVERSAL:
-        base_params['trend'] = 0.001
-        base_params['volatility'] = 0.015
-        base_params['noise'] = 0.3
+        base_params['trend'] = 0.0012
+        base_params['volatility'] = 0.016
+        base_params['noise'] = 0.25
         base_params['reversal_bar'] = params.n_bars // 2
+        base_params['garch_alpha'] = 0.10
+        base_params['garch_beta'] = 0.85
+        base_params['df'] = 5
 
     return base_params
 
 
-def _generate_price_series(
+def _generate_price_series_garch(
     n: int,
     condition_params: Dict,
     data_params: SyntheticDataParams
-) -> np.ndarray:
-    """Generate a price series based on parameters."""
+) -> Tuple[np.ndarray, np.ndarray]:
+    """
+    Generate a price series with GARCH-like volatility clustering.
+
+    Returns both prices and volatilities for use in OHLC generation.
+    """
     prices = np.zeros(n)
+    volatilities = np.zeros(n)
     prices[0] = data_params.initial_price
 
-    trend = condition_params['trend']
-    volatility = condition_params['volatility']
+    base_trend = condition_params['trend']
+    base_vol = condition_params['volatility']
     noise = condition_params['noise']
+    alpha = condition_params['garch_alpha']
+    beta = condition_params['garch_beta']
+    df = condition_params['df']
+    mean_reversion = condition_params.get('mean_reversion', 0.0)
+    mean_price = condition_params.get('mean_price', data_params.initial_price)
+
+    # Initialize volatility
+    current_vol = base_vol
+    volatilities[0] = current_vol
+    last_shock = 0
+
+    trend = base_trend
 
     for i in range(1, n):
-        # Handle regime changes
+        # Handle regime changes for choppy markets
         if condition_params.get('regime_changes', 0) > 0:
             regime_length = n // (condition_params['regime_changes'] + 1)
             if i % regime_length == 0:
-                trend = -trend + np.random.normal(0, 0.0005)
+                # Flip trend with some randomness
+                trend = -trend * np.random.uniform(0.8, 1.2)
 
         # Handle breakout
         if condition_params.get('breakout_bar') and i >= condition_params['breakout_bar']:
             if i == condition_params['breakout_bar']:
-                # Sharp move on breakout
+                # Sharp move on breakout - gap
                 direction = condition_params.get('breakout_direction', 1)
-                prices[i] = prices[i-1] * (1 + direction * volatility * 3)
+                gap = direction * base_vol * np.random.uniform(2.5, 4.0)
+                prices[i] = prices[i-1] * (1 + gap)
+                volatilities[i] = base_vol * 2.0  # Vol spike on breakout
+                last_shock = gap
                 continue
+            elif i < condition_params['breakout_bar'] + 20:
+                # Elevated trend and vol after breakout
+                direction = condition_params.get('breakout_direction', 1)
+                trend = direction * 0.003  # Strong trend
+                base_vol_adjusted = base_vol * 1.8
             else:
-                # Increased trend after breakout
-                trend = condition_params.get('breakout_direction', 1) * 0.002
-                volatility = condition_params['volatility'] * 1.5
+                # Settle into new trend
+                direction = condition_params.get('breakout_direction', 1)
+                trend = direction * 0.0015
+                base_vol_adjusted = base_vol * 1.3
+        else:
+            base_vol_adjusted = base_vol
 
         # Handle trend reversal
         if condition_params.get('reversal_bar') and i >= condition_params['reversal_bar']:
-            trend = -abs(trend)
+            bars_since_reversal = i - condition_params['reversal_bar']
+            if bars_since_reversal < 10:
+                # Transition period - higher vol, gradual trend change
+                trend = base_trend * (1 - bars_since_reversal / 5)
+                base_vol_adjusted = base_vol * 1.5
+            else:
+                trend = -abs(base_trend) * 1.2
 
-        # Generate return with trend, volatility, and noise
-        random_component = np.random.normal(0, 1)
+        # GARCH-like volatility update
+        # sigma_t^2 = omega + alpha * epsilon_{t-1}^2 + beta * sigma_{t-1}^2
+        omega = base_vol_adjusted * (1 - alpha - beta)  # Long-run variance
+        current_vol = np.sqrt(omega + alpha * (last_shock ** 2) + beta * (current_vol ** 2))
+        current_vol = np.clip(current_vol, base_vol_adjusted * 0.3, base_vol_adjusted * 3.0)
+        volatilities[i] = current_vol
+
+        # Generate shock from Student-t for fat tails
+        t_shock = np.random.standard_t(df)
+        # Scale to have unit variance
+        t_shock = t_shock / np.sqrt(df / (df - 2)) if df > 2 else t_shock
+
+        # Add noise component
         noise_component = np.random.uniform(-1, 1) * noise
 
-        daily_return = trend + volatility * (random_component * (1 - noise) + noise_component)
+        # Mean reversion component
+        if mean_reversion > 0 and i > 0:
+            log_deviation = np.log(prices[i-1] / mean_price)
+            mean_rev_force = -mean_reversion * log_deviation
+        else:
+            mean_rev_force = 0
+
+        # Combine components
+        shock = current_vol * (t_shock * (1 - noise) + noise_component)
+        daily_return = trend + mean_rev_force + shock
+        last_shock = shock
+
         prices[i] = prices[i-1] * (1 + daily_return)
+        prices[i] = max(prices[i], 0.01)  # Prevent negative prices
 
-    return prices
+    return prices, volatilities
 
 
-def _prices_to_ohlcv(
+def _prices_to_ohlcv_realistic(
     prices: np.ndarray,
+    volatilities: np.ndarray,
     params: SyntheticDataParams
 ) -> pd.DataFrame:
-    """Convert price series to OHLCV data."""
+    """
+    Convert price series to OHLCV data with realistic intraday dynamics.
+
+    Key improvements:
+    - High/Low range proportional to volatility
+    - Open gaps based on overnight news (occasional)
+    - Close position within range reflects trend
+    - Volume correlates with volatility and price moves
+    """
     n = len(prices)
 
-    # Generate intraday variation for OHLC
-    intraday_var = np.random.uniform(0.002, 0.015, n)
+    # Calculate daily returns for close position bias
+    returns = np.diff(prices, prepend=prices[0]) / np.maximum(prices, 0.01)
 
-    opens = prices * (1 + np.random.uniform(-0.003, 0.003, n))
-    highs = np.maximum(opens, prices) * (1 + intraday_var)
-    lows = np.minimum(opens, prices) * (1 - intraday_var)
+    # Generate opens with occasional gaps
+    gap_probability = 0.15  # 15% chance of noticeable gap
+    gaps = np.where(
+        np.random.random(n) < gap_probability,
+        np.random.normal(0, volatilities * 0.5),
+        np.random.normal(0, volatilities * 0.1)
+    )
+    opens = np.roll(prices, 1) * (1 + gaps)
+    opens[0] = prices[0] * (1 + np.random.uniform(-0.002, 0.002))
+
+    # High/Low range based on volatility
+    # Average true range is typically 1-2x daily volatility
+    range_multiplier = np.random.uniform(1.0, 2.0, n)
+    daily_range = volatilities * range_multiplier
+
+    # Determine close position within range (0 = at low, 1 = at high)
+    # Bias towards high in uptrends, towards low in downtrends
+    close_position = 0.5 + returns * 10  # Returns affect position
+    close_position = np.clip(close_position + np.random.normal(0, 0.2, n), 0.1, 0.9)
+
     closes = prices
+
+    # Calculate high and low
+    # The range spans from some point below to some point above
+    highs = np.maximum(opens, closes) + daily_range * close_position
+    lows = np.minimum(opens, closes) - daily_range * (1 - close_position)
 
     # Ensure OHLC consistency
     highs = np.maximum(highs, np.maximum(opens, closes))
     lows = np.minimum(lows, np.minimum(opens, closes))
+    lows = np.maximum(lows, 0.001)  # Prevent negative
 
-    # Generate volume with some correlation to price changes
-    price_changes = np.abs(np.diff(prices, prepend=prices[0])) / prices
-    volume_multiplier = 1 + price_changes * 5  # Higher volume on bigger moves
-    volumes = (params.volume_base * volume_multiplier *
-               (1 + np.random.uniform(-params.volume_variation, params.volume_variation, n)))
+    # Generate volume with correlation to volatility and price moves
+    abs_returns = np.abs(returns)
+    vol_factor = volatilities / np.mean(volatilities)
+
+    # Volume increases with:
+    # 1. Higher volatility
+    # 2. Larger price moves
+    # 3. Some random variation
+    volume_multiplier = (
+        1.0 +
+        (vol_factor - 1) * 0.5 +  # Volatility effect
+        abs_returns * 20 +  # Price move effect
+        np.random.uniform(-0.3, 0.3, n)  # Random variation
+    )
+    volume_multiplier = np.clip(volume_multiplier, 0.3, 3.0)
+
+    volumes = params.volume_base * volume_multiplier
+    volumes = volumes * (1 + np.random.uniform(-params.volume_variation, params.volume_variation, n))
 
     return pd.DataFrame({
         'open': opens,
@@ -365,35 +515,50 @@ def calculate_alphatrend_components(
     result['mfi_threshold'] = (result['mfi_upper'] + result['mfi_lower']) / 2
 
     # === STEP 6: Determine Momentum Direction ===
-    result['momentum_bullish'] = result['mfi'] >= result['mfi_threshold']
+    # Fill NaN with False for momentum_bullish to handle early bars
+    result['momentum_bullish'] = (result['mfi'] >= result['mfi_threshold']).fillna(False)
 
     # === STEP 7: Calculate AlphaTrend Line ===
-    result['alphatrend'] = _calculate_alphatrend_line(
+    alphatrend_values = _calculate_alphatrend_line(
         result['up_band'].values,
         result['down_band'].values,
         result['momentum_bullish'].values
     )
+    result['alphatrend'] = alphatrend_values  # Direct numpy array assignment
 
     # === STEP 8: Smooth AlphaTrend ===
-    result['smooth_at'] = result['alphatrend'].ewm(span=params.smoothing_length, adjust=False).mean()
+    result['smooth_at'] = pd.Series(result['alphatrend']).ewm(
+        span=params.smoothing_length, adjust=False
+    ).mean().values
 
     # === STEP 9: Generate Signals ===
-    result['cross_up'] = (result['alphatrend'] > result['smooth_at']) & \
-                         (result['alphatrend'].shift(1) <= result['smooth_at'].shift(1))
-    result['cross_down'] = (result['alphatrend'] < result['smooth_at']) & \
-                           (result['alphatrend'].shift(1) >= result['smooth_at'].shift(1))
+    # Use numpy arrays for crossover detection to avoid index issues
+    at_values = result['alphatrend'].values if hasattr(result['alphatrend'], 'values') else result['alphatrend']
+    smooth_values = result['smooth_at'].values if hasattr(result['smooth_at'], 'values') else result['smooth_at']
+
+    # Crossover: current AT > smooth AND previous AT <= previous smooth
+    cross_up = np.zeros(len(at_values), dtype=bool)
+    cross_down = np.zeros(len(at_values), dtype=bool)
+
+    for i in range(1, len(at_values)):
+        # Cross up: AT crosses above smooth_at
+        cross_up[i] = (at_values[i] > smooth_values[i]) and (at_values[i-1] <= smooth_values[i-1])
+        # Cross down: AT crosses below smooth_at
+        cross_down[i] = (at_values[i] < smooth_values[i]) and (at_values[i-1] >= smooth_values[i-1])
+
+    result['cross_up'] = cross_up
+    result['cross_down'] = cross_down
 
     # Filter for alternating signals
-    result['buy_signal'], result['sell_signal'] = _filter_alternating_signals(
-        result['cross_up'].values,
-        result['cross_down'].values
-    )
+    buy_signals, sell_signals = _filter_alternating_signals(cross_up, cross_down)
+    result['buy_signal'] = buy_signals
+    result['sell_signal'] = sell_signals
 
     # === STEP 10: Trend State ===
     result['trend_state'] = np.where(
-        result['alphatrend'] > result['smooth_at'],
+        at_values > smooth_values,
         'Bullish',
-        np.where(result['alphatrend'] < result['smooth_at'], 'Bearish', 'Neutral')
+        np.where(at_values < smooth_values, 'Bearish', 'Neutral')
     )
 
     return result
@@ -413,7 +578,7 @@ def _calculate_alphatrend_line(
     up_band: np.ndarray,
     down_band: np.ndarray,
     momentum_bullish: np.ndarray
-) -> pd.Series:
+) -> np.ndarray:
     """
     Calculate the AlphaTrend line using state-dependent logic.
 
@@ -422,31 +587,61 @@ def _calculate_alphatrend_line(
     - In downtrend: Can only fall or stay flat (never rises)
 
     This creates the characteristic "staircase" pattern.
+
+    Returns numpy array (not Series) to avoid index alignment issues.
     """
     n = len(up_band)
     alphatrend = np.zeros(n)
-    alphatrend[0] = up_band[0]
 
-    for i in range(1, n):
+    # Find first valid value for initialization
+    first_valid = 0
+    for i in range(n):
+        if not (np.isnan(up_band[i]) or np.isnan(down_band[i])):
+            first_valid = i
+            break
+
+    # Initialize with first valid up_band or a reasonable default
+    if first_valid < n and not np.isnan(up_band[first_valid]):
+        alphatrend[0:first_valid+1] = up_band[first_valid]
+    else:
+        alphatrend[0] = 100.0  # Fallback
+
+    for i in range(first_valid + 1, n):
+        # Handle NaN in bands
         if np.isnan(up_band[i]) or np.isnan(down_band[i]):
             alphatrend[i] = alphatrend[i-1]
             continue
 
-        if momentum_bullish[i]:
-            # Uptrend: AlphaTrend follows up_band but can only rise
-            alphatrend[i] = max(alphatrend[i-1], up_band[i])
-        else:
-            # Downtrend: AlphaTrend follows down_band but can only fall
-            alphatrend[i] = min(alphatrend[i-1], down_band[i])
+        # Handle NaN in momentum - default to previous state behavior
+        # np.isnan on bool array returns False, but momentum_bullish might have NaN
+        # if it was computed from NaN threshold values
+        is_bullish = momentum_bullish[i]
 
-    return pd.Series(alphatrend)
+        # Check if is_bullish is actually a valid boolean
+        # (NaN comparisons return False, so NaN >= threshold = False)
+        if isinstance(is_bullish, (bool, np.bool_)):
+            if is_bullish:
+                # Uptrend: AlphaTrend follows up_band but can only rise
+                alphatrend[i] = max(alphatrend[i-1], up_band[i])
+            else:
+                # Downtrend: AlphaTrend follows down_band but can only fall
+                alphatrend[i] = min(alphatrend[i-1], down_band[i])
+        else:
+            # If momentum is somehow not boolean (shouldn't happen), keep previous
+            alphatrend[i] = alphatrend[i-1]
+
+    return alphatrend
 
 
 def _filter_alternating_signals(
     cross_up: np.ndarray,
     cross_down: np.ndarray
-) -> Tuple[pd.Series, pd.Series]:
-    """Filter signals to ensure alternating buy/sell pattern."""
+) -> Tuple[np.ndarray, np.ndarray]:
+    """
+    Filter signals to ensure alternating buy/sell pattern.
+
+    Returns numpy arrays (not Series) to avoid index alignment issues.
+    """
     n = len(cross_up)
     filtered_buy = np.zeros(n, dtype=bool)
     filtered_sell = np.zeros(n, dtype=bool)
@@ -454,14 +649,18 @@ def _filter_alternating_signals(
     last_signal = 0  # 0=none, 1=buy, 2=sell
 
     for i in range(n):
-        if cross_up[i] and last_signal != 1:
+        # Handle potential NaN or non-boolean values
+        is_cross_up = bool(cross_up[i]) if not pd.isna(cross_up[i]) else False
+        is_cross_down = bool(cross_down[i]) if not pd.isna(cross_down[i]) else False
+
+        if is_cross_up and last_signal != 1:
             filtered_buy[i] = True
             last_signal = 1
-        elif cross_down[i] and last_signal != 2:
+        elif is_cross_down and last_signal != 2:
             filtered_sell[i] = True
             last_signal = 2
 
-    return pd.Series(filtered_buy), pd.Series(filtered_sell)
+    return filtered_buy, filtered_sell
 
 
 # =============================================================================
