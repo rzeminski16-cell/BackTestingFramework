@@ -18,9 +18,11 @@ import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
-from typing import Dict, Tuple, Optional
-from dataclasses import dataclass
+from typing import Dict, Tuple, Optional, List
+from dataclasses import dataclass, field
 from enum import Enum
+from pathlib import Path
+import os
 
 
 # =============================================================================
@@ -91,6 +93,13 @@ st.markdown("""
 # DATA CLASSES AND ENUMS
 # =============================================================================
 
+class DataSource(Enum):
+    """Data source options."""
+    SYNTHETIC = "Synthetic Data"
+    FILE_UPLOAD = "Upload File"
+    LOCAL_FILE = "Local File Path"
+
+
 class MarketCondition(Enum):
     """Types of synthetic market conditions."""
     STRONG_UPTREND = "Strong Uptrend"
@@ -125,6 +134,195 @@ class SyntheticDataParams:
     noise_level: float = 0.5  # 0 to 1
     volume_base: int = 1000000
     volume_variation: float = 0.3
+    # Advanced realism parameters
+    leverage_effect: float = 0.5  # How much negative returns increase future vol
+    jump_probability: float = 0.02  # Probability of a jump (news event)
+    jump_mean: float = 0.0  # Mean jump size
+    jump_std: float = 0.03  # Jump size standard deviation
+    return_autocorr: float = 0.05  # Short-term return autocorrelation
+    volume_price_corr: float = 0.3  # Volume-price change correlation
+
+
+# =============================================================================
+# REAL DATA LOADING
+# =============================================================================
+
+def load_data_from_file(file_path: str) -> Tuple[Optional[pd.DataFrame], Optional[str]]:
+    """
+    Load OHLCV data from a CSV file.
+
+    Supports various column naming conventions and attempts to auto-detect format.
+
+    Args:
+        file_path: Path to CSV file
+
+    Returns:
+        Tuple of (DataFrame or None, error message or None)
+    """
+    try:
+        # Read the file
+        df = pd.read_csv(file_path)
+
+        # Standardize column names
+        df, error = standardize_columns(df)
+        if error:
+            return None, error
+
+        # Validate data
+        df, error = validate_ohlcv_data(df)
+        if error:
+            return None, error
+
+        return df, None
+
+    except FileNotFoundError:
+        return None, f"File not found: {file_path}"
+    except pd.errors.EmptyDataError:
+        return None, "File is empty"
+    except Exception as e:
+        return None, f"Error reading file: {str(e)}"
+
+
+def load_data_from_upload(uploaded_file) -> Tuple[Optional[pd.DataFrame], Optional[str]]:
+    """Load OHLCV data from an uploaded file."""
+    try:
+        df = pd.read_csv(uploaded_file)
+        df, error = standardize_columns(df)
+        if error:
+            return None, error
+        df, error = validate_ohlcv_data(df)
+        if error:
+            return None, error
+        return df, None
+    except Exception as e:
+        return None, f"Error reading uploaded file: {str(e)}"
+
+
+def standardize_columns(df: pd.DataFrame) -> Tuple[pd.DataFrame, Optional[str]]:
+    """
+    Standardize column names to lowercase open, high, low, close, volume.
+
+    Supports various naming conventions:
+    - Standard: open, high, low, close, volume
+    - Capitalized: Open, High, Low, Close, Volume
+    - Abbreviated: o, h, l, c, v
+    - With prefixes: adj_close, adjusted_close
+    """
+    df = df.copy()
+
+    # Convert all column names to lowercase for matching
+    col_map = {col: col.lower().strip() for col in df.columns}
+    df.columns = [col_map[col] for col in df.columns]
+
+    # Define possible mappings for each required column
+    column_mappings = {
+        'open': ['open', 'o', 'open_price', 'opening', 'first'],
+        'high': ['high', 'h', 'high_price', 'highest', 'max'],
+        'low': ['low', 'l', 'low_price', 'lowest', 'min'],
+        'close': ['close', 'c', 'close_price', 'closing', 'last', 'adj_close',
+                  'adjusted_close', 'adj close', 'adjclose'],
+        'volume': ['volume', 'v', 'vol', 'turnover', 'qty', 'quantity']
+    }
+
+    # Try to find each required column
+    final_mapping = {}
+    for target, possibilities in column_mappings.items():
+        found = False
+        for col in df.columns:
+            if col in possibilities:
+                final_mapping[col] = target
+                found = True
+                break
+        if not found:
+            return df, f"Could not find '{target}' column. Available columns: {list(df.columns)}"
+
+    # Rename columns
+    df = df.rename(columns=final_mapping)
+
+    # Handle date column if present
+    date_possibilities = ['date', 'datetime', 'time', 'timestamp', 'dt', 'index']
+    date_col = None
+    for col in df.columns:
+        if col in date_possibilities:
+            date_col = col
+            break
+
+    if date_col:
+        try:
+            df[date_col] = pd.to_datetime(df[date_col])
+            df = df.set_index(date_col)
+            df.index.name = 'date'
+        except Exception:
+            pass  # If date parsing fails, just continue with numeric index
+
+    # If no date column and index is not datetime, create one
+    if not isinstance(df.index, pd.DatetimeIndex):
+        df['date'] = pd.date_range(start='2023-01-01', periods=len(df), freq='D')
+        df = df.set_index('date')
+
+    return df, None
+
+
+def validate_ohlcv_data(df: pd.DataFrame) -> Tuple[pd.DataFrame, Optional[str]]:
+    """Validate OHLCV data for consistency and quality."""
+    required_cols = ['open', 'high', 'low', 'close', 'volume']
+
+    # Check required columns exist
+    for col in required_cols:
+        if col not in df.columns:
+            return df, f"Missing required column: {col}"
+
+    # Convert to numeric
+    for col in required_cols:
+        df[col] = pd.to_numeric(df[col], errors='coerce')
+
+    # Check for NaN values
+    nan_counts = df[required_cols].isna().sum()
+    if nan_counts.any():
+        # Drop rows with NaN but warn
+        original_len = len(df)
+        df = df.dropna(subset=required_cols)
+        dropped = original_len - len(df)
+        if dropped > 0:
+            st.warning(f"Dropped {dropped} rows with missing values")
+
+    # Check minimum data requirement
+    if len(df) < 100:
+        return df, f"Need at least 100 bars of data, got {len(df)}"
+
+    # Validate OHLC relationships
+    invalid_rows = (
+        (df['high'] < df['low']) |
+        (df['high'] < df['open']) |
+        (df['high'] < df['close']) |
+        (df['low'] > df['open']) |
+        (df['low'] > df['close'])
+    )
+    if invalid_rows.any():
+        invalid_count = invalid_rows.sum()
+        st.warning(f"Found {invalid_count} rows with invalid OHLC relationships (H<L, etc.). These may affect indicator accuracy.")
+
+    # Check for zero or negative prices
+    if (df[['open', 'high', 'low', 'close']] <= 0).any().any():
+        return df, "Data contains zero or negative prices"
+
+    # Check for zero volume (just warn)
+    if (df['volume'] == 0).any():
+        zero_vol = (df['volume'] == 0).sum()
+        st.warning(f"Found {zero_vol} bars with zero volume")
+
+    return df, None
+
+
+def get_local_csv_files(directory: str = "raw_data") -> List[str]:
+    """Get list of CSV files in the specified directory."""
+    try:
+        path = Path(directory)
+        if not path.exists():
+            return []
+        return sorted([f.name for f in path.glob("*.csv")])
+    except Exception:
+        return []
 
 
 # =============================================================================
@@ -285,12 +483,19 @@ def _generate_price_series_garch(
     data_params: SyntheticDataParams
 ) -> Tuple[np.ndarray, np.ndarray]:
     """
-    Generate a price series with GARCH-like volatility clustering.
+    Generate a price series with advanced realistic features:
+
+    1. GARCH-like volatility clustering
+    2. Leverage effect (negative returns increase future volatility more)
+    3. Jump diffusion (occasional large moves from news/events)
+    4. Return autocorrelation (short-term momentum)
+    5. Fat tails via Student-t distribution
 
     Returns both prices and volatilities for use in OHLC generation.
     """
     prices = np.zeros(n)
     volatilities = np.zeros(n)
+    returns = np.zeros(n)
     prices[0] = data_params.initial_price
 
     base_trend = condition_params['trend']
@@ -302,10 +507,18 @@ def _generate_price_series_garch(
     mean_reversion = condition_params.get('mean_reversion', 0.0)
     mean_price = condition_params.get('mean_price', data_params.initial_price)
 
+    # Advanced parameters from data_params
+    leverage_effect = data_params.leverage_effect
+    jump_prob = data_params.jump_probability
+    jump_mean = data_params.jump_mean
+    jump_std = data_params.jump_std
+    return_autocorr = data_params.return_autocorr
+
     # Initialize volatility
     current_vol = base_vol
     volatilities[0] = current_vol
     last_shock = 0
+    last_return = 0
 
     trend = base_trend
 
@@ -320,12 +533,14 @@ def _generate_price_series_garch(
         # Handle breakout
         if condition_params.get('breakout_bar') and i >= condition_params['breakout_bar']:
             if i == condition_params['breakout_bar']:
-                # Sharp move on breakout - gap
+                # Sharp move on breakout - this IS a jump
                 direction = condition_params.get('breakout_direction', 1)
                 gap = direction * base_vol * np.random.uniform(2.5, 4.0)
                 prices[i] = prices[i-1] * (1 + gap)
                 volatilities[i] = base_vol * 2.0  # Vol spike on breakout
+                returns[i] = gap
                 last_shock = gap
+                last_return = gap
                 continue
             elif i < condition_params['breakout_bar'] + 20:
                 # Elevated trend and vol after breakout
@@ -350,14 +565,31 @@ def _generate_price_series_garch(
             else:
                 trend = -abs(base_trend) * 1.2
 
-        # GARCH-like volatility update
+        # === LEVERAGE EFFECT ===
+        # Negative returns increase volatility more than positive returns
+        # This captures the asymmetric volatility response observed in real markets
+        leverage_adjustment = 1.0
+        if last_return < 0:
+            # Negative return: increase vol by leverage_effect * magnitude
+            leverage_adjustment = 1.0 + leverage_effect * abs(last_return) / base_vol_adjusted
+        leverage_adjustment = np.clip(leverage_adjustment, 1.0, 2.0)
+
+        # === GARCH-like volatility update with leverage ===
         # sigma_t^2 = omega + alpha * epsilon_{t-1}^2 + beta * sigma_{t-1}^2
         omega = base_vol_adjusted * (1 - alpha - beta)  # Long-run variance
         current_vol = np.sqrt(omega + alpha * (last_shock ** 2) + beta * (current_vol ** 2))
+        current_vol = current_vol * leverage_adjustment
         current_vol = np.clip(current_vol, base_vol_adjusted * 0.3, base_vol_adjusted * 3.0)
         volatilities[i] = current_vol
 
-        # Generate shock from Student-t for fat tails
+        # === JUMP DIFFUSION ===
+        # Model occasional large moves (earnings, news, etc.)
+        jump = 0.0
+        if np.random.random() < jump_prob:
+            # Jump occurs - draw from normal with jump parameters
+            jump = np.random.normal(jump_mean, jump_std)
+
+        # === BASE SHOCK from Student-t for fat tails ===
         t_shock = np.random.standard_t(df)
         # Scale to have unit variance
         t_shock = t_shock / np.sqrt(df / (df - 2)) if df > 2 else t_shock
@@ -365,17 +597,25 @@ def _generate_price_series_garch(
         # Add noise component
         noise_component = np.random.uniform(-1, 1) * noise
 
-        # Mean reversion component
+        # === RETURN AUTOCORRELATION ===
+        # Add short-term momentum component
+        momentum_component = return_autocorr * last_return
+
+        # === MEAN REVERSION ===
         if mean_reversion > 0 and i > 0:
             log_deviation = np.log(prices[i-1] / mean_price)
             mean_rev_force = -mean_reversion * log_deviation
         else:
             mean_rev_force = 0
 
-        # Combine components
-        shock = current_vol * (t_shock * (1 - noise) + noise_component)
-        daily_return = trend + mean_rev_force + shock
-        last_shock = shock
+        # === COMBINE ALL COMPONENTS ===
+        base_shock = current_vol * (t_shock * (1 - noise) + noise_component)
+        daily_return = trend + mean_rev_force + momentum_component + base_shock + jump
+
+        # Store for next iteration
+        last_shock = base_shock
+        last_return = daily_return
+        returns[i] = daily_return
 
         prices[i] = prices[i-1] * (1 + daily_return)
         prices[i] = max(prices[i], 0.01)  # Prevent negative prices
@@ -396,6 +636,8 @@ def _prices_to_ohlcv_realistic(
     - Open gaps based on overnight news (occasional)
     - Close position within range reflects trend
     - Volume correlates with volatility and price moves
+    - Intraday volatility pattern (U-shape: higher at open/close)
+    - Volume-price correlation (configurable)
     """
     n = len(prices)
 
@@ -434,21 +676,32 @@ def _prices_to_ohlcv_realistic(
     lows = np.minimum(lows, np.minimum(opens, closes))
     lows = np.maximum(lows, 0.001)  # Prevent negative
 
-    # Generate volume with correlation to volatility and price moves
+    # === ADVANCED VOLUME GENERATION ===
     abs_returns = np.abs(returns)
     vol_factor = volatilities / np.mean(volatilities)
 
-    # Volume increases with:
-    # 1. Higher volatility
-    # 2. Larger price moves
-    # 3. Some random variation
+    # Base volume from volatility
+    vol_component = (vol_factor - 1) * 0.5
+
+    # Price move component with configurable correlation
+    # Higher correlation = volume more predictive of price moves
+    price_move_component = abs_returns * 20 * params.volume_price_corr
+
+    # Add volume clustering (volume tends to cluster like volatility)
+    volume_persistence = np.zeros(n)
+    volume_persistence[0] = 0
+    for i in range(1, n):
+        volume_persistence[i] = 0.7 * volume_persistence[i-1] + 0.3 * np.random.normal(0, 0.3)
+
+    # Combine components
     volume_multiplier = (
         1.0 +
-        (vol_factor - 1) * 0.5 +  # Volatility effect
-        abs_returns * 20 +  # Price move effect
-        np.random.uniform(-0.3, 0.3, n)  # Random variation
+        vol_component +
+        price_move_component +
+        volume_persistence +
+        np.random.uniform(-0.2, 0.2, n)  # Random variation
     )
-    volume_multiplier = np.clip(volume_multiplier, 0.3, 3.0)
+    volume_multiplier = np.clip(volume_multiplier, 0.2, 4.0)
 
     volumes = params.volume_base * volume_multiplier
     volumes = volumes * (1 + np.random.uniform(-params.volume_variation, params.volume_variation, n))
@@ -1209,39 +1462,180 @@ def main():
     st.markdown('<p class="sub-header">An interactive tool to understand how the AlphaTrend indicator works</p>', unsafe_allow_html=True)
 
     # Sidebar - Parameters
-    st.sidebar.title("Parameters")
+    st.sidebar.title("Data & Parameters")
 
-    # Market Condition Selection
-    st.sidebar.subheader("Synthetic Data")
-    market_condition = st.sidebar.selectbox(
-        "Market Condition",
-        options=[c.value for c in MarketCondition],
+    # === DATA SOURCE SELECTION ===
+    st.sidebar.subheader("Data Source")
+    data_source = st.sidebar.radio(
+        "Select Data Source",
+        options=[ds.value for ds in DataSource],
         index=0,
-        help="Select the type of market condition to simulate"
+        help="Choose between synthetic data or real market data"
     )
-    condition = MarketCondition(market_condition)
+    data_source_enum = DataSource(data_source)
 
-    # Custom data parameters (if custom selected)
-    st.sidebar.subheader("Data Parameters")
-    n_bars = st.sidebar.slider("Number of Bars", 100, 1000, 500, 50)
-    initial_price = st.sidebar.number_input("Initial Price", 10.0, 1000.0, 100.0, 10.0)
+    # Initialize variables
+    df = None
+    data_loaded = False
+    data_info = ""
 
-    if condition == MarketCondition.CUSTOM:
-        trend_strength = st.sidebar.slider("Trend Strength", -0.003, 0.003, 0.0, 0.0001, format="%.4f")
-        volatility = st.sidebar.slider("Volatility", 0.005, 0.05, 0.02, 0.001, format="%.3f")
-        noise_level = st.sidebar.slider("Noise Level", 0.0, 1.0, 0.5, 0.1)
-    else:
-        trend_strength = 0.0
-        volatility = 0.02
-        noise_level = 0.5
+    if data_source_enum == DataSource.SYNTHETIC:
+        # === SYNTHETIC DATA OPTIONS ===
+        st.sidebar.subheader("Synthetic Data")
+        market_condition = st.sidebar.selectbox(
+            "Market Condition",
+            options=[c.value for c in MarketCondition],
+            index=0,
+            help="Select the type of market condition to simulate"
+        )
+        condition = MarketCondition(market_condition)
 
-    data_params = SyntheticDataParams(
-        n_bars=n_bars,
-        initial_price=initial_price,
-        trend_strength=trend_strength,
-        volatility=volatility,
-        noise_level=noise_level
-    )
+        # Basic parameters
+        st.sidebar.subheader("Data Parameters")
+        n_bars = st.sidebar.slider("Number of Bars", 100, 1000, 500, 50)
+        initial_price = st.sidebar.number_input("Initial Price", 10.0, 1000.0, 100.0, 10.0)
+
+        if condition == MarketCondition.CUSTOM:
+            trend_strength = st.sidebar.slider("Trend Strength", -0.003, 0.003, 0.0, 0.0001, format="%.4f")
+            volatility = st.sidebar.slider("Volatility", 0.005, 0.05, 0.02, 0.001, format="%.3f")
+            noise_level = st.sidebar.slider("Noise Level", 0.0, 1.0, 0.5, 0.1)
+        else:
+            trend_strength = 0.0
+            volatility = 0.02
+            noise_level = 0.5
+
+        # Advanced parameters in expander
+        with st.sidebar.expander("Advanced Realism Settings", expanded=False):
+            st.caption("These parameters make synthetic data more realistic")
+
+            leverage_effect = st.slider(
+                "Leverage Effect",
+                0.0, 1.0, 0.5, 0.1,
+                help="How much negative returns increase future volatility (asymmetric vol)"
+            )
+
+            jump_probability = st.slider(
+                "Jump Probability",
+                0.0, 0.1, 0.02, 0.005,
+                format="%.3f",
+                help="Probability of a large jump (news/earnings event) per bar"
+            )
+
+            jump_std = st.slider(
+                "Jump Size (Std Dev)",
+                0.01, 0.10, 0.03, 0.01,
+                help="Standard deviation of jump sizes when they occur"
+            )
+
+            return_autocorr = st.slider(
+                "Return Autocorrelation",
+                -0.2, 0.2, 0.05, 0.01,
+                help="Short-term momentum in returns (positive = trending, negative = mean-reverting)"
+            )
+
+            volume_price_corr = st.slider(
+                "Volume-Price Correlation",
+                0.0, 1.0, 0.3, 0.1,
+                help="How much volume correlates with price movement magnitude"
+            )
+
+        data_params = SyntheticDataParams(
+            n_bars=n_bars,
+            initial_price=initial_price,
+            trend_strength=trend_strength,
+            volatility=volatility,
+            noise_level=noise_level,
+            leverage_effect=leverage_effect,
+            jump_probability=jump_probability,
+            jump_mean=0.0,
+            jump_std=jump_std,
+            return_autocorr=return_autocorr,
+            volume_price_corr=volume_price_corr
+        )
+
+        data_info = f"**{market_condition}** - {n_bars} bars of synthetic data"
+        data_loaded = True
+
+    elif data_source_enum == DataSource.FILE_UPLOAD:
+        # === FILE UPLOAD ===
+        st.sidebar.subheader("Upload Data File")
+        uploaded_file = st.sidebar.file_uploader(
+            "Choose a CSV file",
+            type=['csv'],
+            help="Upload a CSV file with OHLCV columns (open, high, low, close, volume)"
+        )
+
+        if uploaded_file is not None:
+            df, error = load_data_from_upload(uploaded_file)
+            if error:
+                st.sidebar.error(error)
+            else:
+                data_loaded = True
+                data_info = f"**Uploaded File:** {uploaded_file.name} - {len(df)} bars"
+                st.sidebar.success(f"Loaded {len(df)} bars")
+
+        st.sidebar.markdown("""
+        **Expected format:**
+        - CSV with columns: date, open, high, low, close, volume
+        - Various column name formats are supported
+        """)
+
+    else:  # LOCAL_FILE
+        # === LOCAL FILE PATH ===
+        st.sidebar.subheader("Local File")
+
+        # Show available files in raw_data directory
+        raw_data_dir = "raw_data"
+        available_files = get_local_csv_files(raw_data_dir)
+
+        if available_files:
+            st.sidebar.caption(f"Files in `{raw_data_dir}/`:")
+            selected_file = st.sidebar.selectbox(
+                "Select a file",
+                options=[""] + available_files,
+                index=0
+            )
+
+            if selected_file:
+                file_path = os.path.join(raw_data_dir, selected_file)
+                df, error = load_data_from_file(file_path)
+                if error:
+                    st.sidebar.error(error)
+                else:
+                    data_loaded = True
+                    data_info = f"**Local File:** {selected_file} - {len(df)} bars"
+                    st.sidebar.success(f"Loaded {len(df)} bars")
+
+        # Also allow custom path input
+        custom_path = st.sidebar.text_input(
+            "Or enter custom file path",
+            placeholder="/path/to/your/data.csv"
+        )
+
+        if custom_path:
+            df, error = load_data_from_file(custom_path)
+            if error:
+                st.sidebar.error(error)
+            else:
+                data_loaded = True
+                data_info = f"**Custom Path:** {os.path.basename(custom_path)} - {len(df)} bars"
+                st.sidebar.success(f"Loaded {len(df)} bars")
+
+    # Generate synthetic data if that's the source
+    if data_source_enum == DataSource.SYNTHETIC and data_loaded:
+        with st.spinner("Generating synthetic data..."):
+            df = generate_synthetic_data(condition, data_params)
+
+    # Check if we have data to work with
+    if not data_loaded or df is None:
+        st.warning("Please select a data source and load data to continue.")
+        st.info("""
+        **Options:**
+        1. **Synthetic Data**: Generate realistic market data with various conditions
+        2. **Upload File**: Upload your own CSV file with OHLCV data
+        3. **Local File**: Select a CSV file from the raw_data directory or enter a custom path
+        """)
+        return
 
     # AlphaTrend Parameters
     st.sidebar.subheader("AlphaTrend Parameters")
@@ -1372,8 +1766,8 @@ def main():
         </div>
         """, unsafe_allow_html=True)
 
-        st.subheader("Current Market Condition")
-        st.info(f"**{market_condition}** - {n_bars} bars of synthetic data generated")
+        st.subheader("Current Data")
+        st.info(data_info)
 
         # Show quick stats
         st.subheader("Data Statistics")
