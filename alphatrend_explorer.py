@@ -1684,9 +1684,8 @@ def main():
     show_signals = st.sidebar.checkbox("Show Buy/Sell Signals", True)
     show_smooth = st.sidebar.checkbox("Show Smoothed AlphaTrend", True)
 
-    # Generate data
-    with st.spinner("Generating synthetic data..."):
-        df = generate_synthetic_data(condition, data_params)
+    # Calculate AlphaTrend components on the loaded data
+    with st.spinner("Calculating AlphaTrend indicators..."):
         df = calculate_alphatrend_components(df, at_params)
 
     # Main content - Tabs
