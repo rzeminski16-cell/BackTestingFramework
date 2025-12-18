@@ -13,6 +13,10 @@ seaborn>=0.11.0  # Optional: for enhanced heatmaps
 # Optional: For GUI
 # tkinter  # Usually included with Python, but listed for reference
 
+# Streamlit GUI for AlphaTrend Explorer
+streamlit>=1.28.0
+plotly>=5.18.0
+
 # Optimization
 scikit-optimize>=0.9.0
 pyyaml>=6.0
