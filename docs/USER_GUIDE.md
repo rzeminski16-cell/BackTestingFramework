@@ -454,6 +454,7 @@ sudo apt-get install python3-tk
 
 ## Next Steps
 
+- **[Tools & Executables](TOOLS.md)** - All available applications and scripts
 - **[Strategies Guide](STRATEGIES.md)** - Learn how to create your own strategies
 - **[Configuration Guide](CONFIGURATION.md)** - All configuration options explained
 - **[Optimization Guide](OPTIMIZATION.md)** - Find optimal strategy parameters

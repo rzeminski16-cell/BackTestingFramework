@@ -103,6 +103,7 @@ BackTestingFramework/
 | Guide | Description |
 |-------|-------------|
 | [User Guide](docs/USER_GUIDE.md) | Complete guide to using the framework |
+| [Tools & Executables](docs/TOOLS.md) | All available applications and scripts |
 | [Strategies](docs/STRATEGIES.md) | Creating and configuring trading strategies |
 | [Configuration](docs/CONFIGURATION.md) | All configuration options explained |
 | [Optimization](docs/OPTIMIZATION.md) | Finding optimal strategy parameters |
