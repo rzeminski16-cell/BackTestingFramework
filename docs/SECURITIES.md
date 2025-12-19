@@ -286,11 +286,23 @@ By **Sector** and **Market Capitalisation** within each sector:
 ### Utilities
 
 - **Large Cap:**  
-  - 
+  - NextEra Energy (NEE)
+  - DBA Sempra (SRE)
+  - Entergy Corp (ETR)
+  - WEC Energy (WEC)
+  - FirstEnergy (FE)
 - **Mid Cap:**  
-  - 
+  - The AES Corp (AES)
+  - Clearway Energy (CWEN)
+  - Portland General Electric (POR)
+  - NorthWestern Energy Group (NWE)
+  - MGE Energy (MGEE)
 - **Small Cap:**  
-  - 
+  - Northwest Natural Holding (NWN)
+  - H20 America (HTO)
+  - XPLR Infastructure (XIFR)
+  - Middlesex Water (MSEX)
+  - UNITIL Corp (UTL)
 
 ---
 
