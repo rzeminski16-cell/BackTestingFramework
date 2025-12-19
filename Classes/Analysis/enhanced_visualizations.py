@@ -348,22 +348,35 @@ class EnhancedVisualizations:
     def create_rolling_metrics_chart(
         self,
         equity_curve: pd.DataFrame,
-        window: int = 63,  # ~3 months
+        window: int = 90,  # ~3.5 months (increased for stability)
         title: str = "Rolling Performance Metrics",
-        figsize: Tuple[int, int] = (14, 10)
-    ) -> BytesIO:
+        figsize: Tuple[int, int] = (14, 10),
+        filter_anomalies: bool = True,
+        anomaly_absolute_threshold: float = 10.0,
+        anomaly_zscore_threshold: float = 3.0
+    ) -> Tuple[BytesIO, List[Dict]]:
         """
-        Create rolling Sharpe, Sortino, and volatility chart.
+        Create rolling Sharpe, Sortino, and volatility chart with anomaly filtering.
+
+        Anomalies are detected using a hybrid approach:
+        - Absolute threshold: |value| > anomaly_absolute_threshold (default 10)
+        - Z-score threshold: values > anomaly_zscore_threshold standard deviations from rolling mean
 
         Args:
             equity_curve: DataFrame with 'date' and 'equity' columns
-            window: Rolling window in days
+            window: Rolling window in days (default 90 for stability)
             title: Chart title
             figsize: Figure size
+            filter_anomalies: Whether to filter out anomalous spikes
+            anomaly_absolute_threshold: Values with |value| > threshold are anomalies (default 10)
+            anomaly_zscore_threshold: Z-score threshold for anomaly detection (default 3.0)
 
         Returns:
-            BytesIO containing PNG image
+            Tuple of (BytesIO containing PNG image, List of detected anomalies)
+            Each anomaly is a dict with: date, metric, value, reason
         """
+        detected_anomalies = []
+
         df = equity_curve.copy()
         df['date'] = pd.to_datetime(df['date'])
         df = df.set_index('date')
@@ -376,7 +389,7 @@ class EnhancedVisualizations:
             ax.text(0.5, 0.5, f'Insufficient data for {window}-day rolling metrics',
                     ha='center', va='center', fontsize=12)
             ax.axis('off')
-            return self._get_figure_bytes(fig)
+            return self._get_figure_bytes(fig), detected_anomalies
 
         # Calculate rolling metrics
         risk_free_daily = (1 + 0.035) ** (1/252) - 1  # 3.5% annual
@@ -408,35 +421,82 @@ class EnhancedVisualizations:
         # Rolling Volatility (annualized)
         df['rolling_volatility'] = rolling_std * np.sqrt(252) * 100
 
+        # Detect and filter anomalies if enabled
+        if filter_anomalies:
+            for metric in ['rolling_sharpe', 'rolling_sortino']:
+                series = df[metric].dropna()
+                if len(series) < 10:
+                    continue
+
+                # Calculate rolling statistics for z-score
+                metric_mean = series.mean()
+                metric_std = series.std()
+
+                for date, value in series.items():
+                    is_anomaly = False
+                    reason = []
+
+                    # Check absolute threshold
+                    if abs(value) > anomaly_absolute_threshold:
+                        is_anomaly = True
+                        reason.append(f"|value| > {anomaly_absolute_threshold}")
+
+                    # Check z-score threshold
+                    if metric_std > 0:
+                        z_score = abs(value - metric_mean) / metric_std
+                        if z_score > anomaly_zscore_threshold:
+                            is_anomaly = True
+                            reason.append(f"z-score {z_score:.1f} > {anomaly_zscore_threshold}")
+
+                    if is_anomaly:
+                        detected_anomalies.append({
+                            'date': date,
+                            'metric': 'Sharpe Ratio' if metric == 'rolling_sharpe' else 'Sortino Ratio',
+                            'value': value,
+                            'reason': ' AND '.join(reason)
+                        })
+                        # Replace with NaN in the dataframe for plotting
+                        df.loc[date, metric] = np.nan
+
+        # Create copies for plotting (filtered values)
+        sharpe_plot = df['rolling_sharpe'].copy()
+        sortino_plot = df['rolling_sortino'].copy()
+
         # Create figure with subplots
         fig, axes = plt.subplots(3, 1, figsize=figsize, sharex=True)
-        fig.suptitle(title, fontsize=14, fontweight='bold', y=0.98)
+
+        # Update title to indicate filtering
+        if filter_anomalies and detected_anomalies:
+            title_suffix = f"\n({len(detected_anomalies)} anomalous values filtered - see report for details)"
+            fig.suptitle(title + title_suffix, fontsize=14, fontweight='bold', y=0.99)
+        else:
+            fig.suptitle(title, fontsize=14, fontweight='bold', y=0.98)
 
         dates = df.index
 
-        # Plot Rolling Sharpe
+        # Plot Rolling Sharpe (filtered)
         ax1 = axes[0]
-        ax1.plot(dates, df['rolling_sharpe'], color=self.COLORS['primary'], linewidth=1.2)
+        ax1.plot(dates, sharpe_plot, color=self.COLORS['primary'], linewidth=1.2)
         ax1.axhline(0, color='black', linestyle='-', linewidth=0.5, alpha=0.5)
         ax1.axhline(1, color=self.COLORS['positive'], linestyle='--', linewidth=0.8, alpha=0.5, label='Good (1.0)')
         ax1.axhline(2, color=self.COLORS['positive'], linestyle='--', linewidth=0.8, alpha=0.3, label='Excellent (2.0)')
-        ax1.fill_between(dates, 0, df['rolling_sharpe'],
-                         where=df['rolling_sharpe'] >= 0, color=self.COLORS['positive'], alpha=0.2)
-        ax1.fill_between(dates, 0, df['rolling_sharpe'],
-                         where=df['rolling_sharpe'] < 0, color=self.COLORS['negative'], alpha=0.2)
+        ax1.fill_between(dates, 0, sharpe_plot,
+                         where=sharpe_plot >= 0, color=self.COLORS['positive'], alpha=0.2)
+        ax1.fill_between(dates, 0, sharpe_plot,
+                         where=sharpe_plot < 0, color=self.COLORS['negative'], alpha=0.2)
         ax1.set_ylabel(f'{window}-Day Rolling\nSharpe Ratio', fontsize=10)
         ax1.legend(loc='upper right', fontsize=8)
         ax1.grid(True, alpha=0.3)
 
-        # Plot Rolling Sortino
+        # Plot Rolling Sortino (filtered)
         ax2 = axes[1]
-        ax2.plot(dates, df['rolling_sortino'], color=self.COLORS['secondary'], linewidth=1.2)
+        ax2.plot(dates, sortino_plot, color=self.COLORS['secondary'], linewidth=1.2)
         ax2.axhline(0, color='black', linestyle='-', linewidth=0.5, alpha=0.5)
         ax2.axhline(1.5, color=self.COLORS['positive'], linestyle='--', linewidth=0.8, alpha=0.5, label='Good (1.5)')
-        ax2.fill_between(dates, 0, df['rolling_sortino'],
-                         where=df['rolling_sortino'] >= 0, color=self.COLORS['positive'], alpha=0.2)
-        ax2.fill_between(dates, 0, df['rolling_sortino'],
-                         where=df['rolling_sortino'] < 0, color=self.COLORS['negative'], alpha=0.2)
+        ax2.fill_between(dates, 0, sortino_plot,
+                         where=sortino_plot >= 0, color=self.COLORS['positive'], alpha=0.2)
+        ax2.fill_between(dates, 0, sortino_plot,
+                         where=sortino_plot < 0, color=self.COLORS['negative'], alpha=0.2)
         ax2.set_ylabel(f'{window}-Day Rolling\nSortino Ratio', fontsize=10)
         ax2.legend(loc='upper right', fontsize=8)
         ax2.grid(True, alpha=0.3)
@@ -456,7 +516,7 @@ class EnhancedVisualizations:
         plt.xticks(rotation=45)
 
         plt.tight_layout()
-        return self._get_figure_bytes(fig)
+        return self._get_figure_bytes(fig), detected_anomalies
 
     def create_win_rate_over_time(
         self,

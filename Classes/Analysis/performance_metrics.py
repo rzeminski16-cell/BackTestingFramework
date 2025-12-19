@@ -320,6 +320,123 @@ class PerformanceMetrics:
         return sharpe
 
     @staticmethod
+    def detect_rolling_anomalies(
+        equity_curve: pd.DataFrame,
+        window: int = 90,
+        absolute_threshold: float = 10.0,
+        zscore_threshold: float = 3.0,
+        risk_free_rate: float = None
+    ) -> tuple:
+        """
+        Detect anomalous spikes in rolling Sharpe/Sortino ratios.
+
+        Uses a hybrid approach:
+        - Absolute threshold: |value| > absolute_threshold
+        - Z-score threshold: values > zscore_threshold standard deviations from mean
+
+        Args:
+            equity_curve: Equity curve DataFrame with 'equity' column
+            window: Rolling window in days (default 90)
+            absolute_threshold: Values with |value| > threshold are anomalies (default 10)
+            zscore_threshold: Z-score threshold for anomaly detection (default 3.0)
+            risk_free_rate: Annual risk-free rate (default: DEFAULT_RISK_FREE_RATE)
+
+        Returns:
+            Tuple of (list of anomaly dicts, filtered_sharpe_ratio)
+            Each anomaly dict has: date, metric, value, reason
+        """
+        if risk_free_rate is None:
+            risk_free_rate = DEFAULT_RISK_FREE_RATE
+
+        detected_anomalies = []
+
+        if len(equity_curve) < window + 10:
+            return detected_anomalies, PerformanceMetrics.calculate_sharpe_ratio(equity_curve, risk_free_rate)
+
+        df = equity_curve.copy()
+        if 'date' in df.columns:
+            df['date'] = pd.to_datetime(df['date'])
+            df = df.set_index('date')
+
+        # Calculate returns
+        df['returns'] = df['equity'].pct_change()
+        returns = df['returns'].dropna()
+
+        if len(returns) == 0:
+            return detected_anomalies, 0.0
+
+        daily_rf = (1 + risk_free_rate) ** (1/252) - 1
+
+        # Rolling Sharpe
+        rolling_mean = df['returns'].rolling(window).mean()
+        rolling_std = df['returns'].rolling(window).std()
+        rolling_sharpe = ((rolling_mean - daily_rf) / rolling_std) * np.sqrt(252)
+
+        # Detect anomalies in rolling Sharpe
+        sharpe_series = rolling_sharpe.dropna()
+        if len(sharpe_series) >= 10:
+            sharpe_mean = sharpe_series.mean()
+            sharpe_std = sharpe_series.std()
+
+            anomaly_dates = set()
+
+            for date, value in sharpe_series.items():
+                is_anomaly = False
+                reason = []
+
+                # Check absolute threshold
+                if abs(value) > absolute_threshold:
+                    is_anomaly = True
+                    reason.append(f"|value| > {absolute_threshold}")
+
+                # Check z-score threshold
+                if sharpe_std > 0:
+                    z_score = abs(value - sharpe_mean) / sharpe_std
+                    if z_score > zscore_threshold:
+                        is_anomaly = True
+                        reason.append(f"z-score {z_score:.1f} > {zscore_threshold}")
+
+                if is_anomaly:
+                    detected_anomalies.append({
+                        'date': date,
+                        'metric': 'Sharpe Ratio',
+                        'value': value,
+                        'reason': ' AND '.join(reason)
+                    })
+                    anomaly_dates.add(date)
+
+        # Calculate filtered Sharpe ratio
+        # Exclude returns from anomalous periods (the window leading up to each anomaly)
+        if detected_anomalies:
+            # Get all unique dates with anomalies
+            anomaly_date_set = {a['date'] for a in detected_anomalies if a['metric'] == 'Sharpe Ratio'}
+
+            # Create a mask for non-anomalous periods
+            # We exclude the rolling window period that led to each anomalous reading
+            mask = pd.Series(True, index=returns.index)
+            for anomaly_date in anomaly_date_set:
+                # Find the window start
+                try:
+                    idx = returns.index.get_loc(anomaly_date)
+                    start_idx = max(0, idx - window)
+                    mask.iloc[start_idx:idx+1] = False
+                except (KeyError, TypeError):
+                    continue
+
+            filtered_returns = returns[mask]
+
+            if len(filtered_returns) > 10 and filtered_returns.std() > 0:
+                excess_returns = filtered_returns - daily_rf
+                filtered_sharpe = (excess_returns.mean() / excess_returns.std()) * np.sqrt(252)
+            else:
+                # Fall back to regular calculation if too few filtered returns
+                filtered_sharpe = PerformanceMetrics.calculate_sharpe_ratio(equity_curve, risk_free_rate)
+        else:
+            filtered_sharpe = PerformanceMetrics.calculate_sharpe_ratio(equity_curve, risk_free_rate)
+
+        return detected_anomalies, filtered_sharpe
+
+    @staticmethod
     def calculate_max_drawdown(equity_curve: pd.DataFrame) -> tuple:
         """
         Calculate maximum drawdown.

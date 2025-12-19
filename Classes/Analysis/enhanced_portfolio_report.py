@@ -256,6 +256,16 @@ class EnhancedPortfolioReportGenerator:
         metrics['monthly_returns'] = self._calculate_period_returns(equity_df, 'ME')
         metrics['yearly_returns'] = self._calculate_period_returns(equity_df, 'Y')
 
+        # Detect rolling metric anomalies for reporting and filtered Sharpe calculation
+        anomalies, filtered_sharpe = PerformanceMetrics.detect_rolling_anomalies(
+            equity_df,
+            window=90,
+            absolute_threshold=10.0,
+            zscore_threshold=3.0
+        )
+        metrics['rolling_anomalies'] = anomalies
+        metrics['filtered_sharpe_ratio'] = filtered_sharpe
+
         return metrics
 
     def _get_empty_metrics(self, base_metrics: Dict[str, Any]) -> Dict[str, Any]:
@@ -274,6 +284,7 @@ class EnhancedPortfolioReportGenerator:
             't_statistic': 0, 'p_value': 1, 'is_significant': False,
             'costs_analysis': {}, 'rolling_metrics': pd.DataFrame(),
             'monthly_returns': pd.DataFrame(), 'yearly_returns': pd.DataFrame(),
+            'rolling_anomalies': [], 'filtered_sharpe_ratio': 0,
         })
         return base_metrics
 
@@ -577,7 +588,7 @@ class EnhancedPortfolioReportGenerator:
             'pl_before_costs': pl_before_costs,
         }
 
-    def _calculate_rolling_metrics(self, equity_df: pd.DataFrame, window: int = 63) -> pd.DataFrame:
+    def _calculate_rolling_metrics(self, equity_df: pd.DataFrame, window: int = 90) -> pd.DataFrame:
         """Calculate rolling performance metrics."""
         if len(equity_df) < window + 10:
             return pd.DataFrame()
@@ -821,6 +832,46 @@ class EnhancedPortfolioReportGenerator:
             ws.cell(row=row, column=2, value=value).border = self.thin_border
             row += 1
 
+        # Add Rolling Metric Anomaly Note if anomalies were detected
+        rolling_anomalies = metrics.get('rolling_anomalies', [])
+        if rolling_anomalies:
+            row += 2
+            ws[f'A{row}'] = "DATA QUALITY NOTE"
+            ws[f'A{row}'].font = self.section_font
+            row += 2
+
+            ws[f'A{row}'] = f"⚠ {len(rolling_anomalies)} anomalous values detected in rolling metrics"
+            ws[f'A{row}'].font = Font(bold=True, color=self.COLORS['negative_dark'])
+            row += 1
+
+            # Show regular vs filtered Sharpe
+            regular_sharpe = metrics.get('sharpe_ratio', 0)
+            filtered_sharpe = metrics.get('filtered_sharpe_ratio', regular_sharpe)
+
+            ws[f'A{row}'] = f"Sharpe Ratio (with anomalous periods): {regular_sharpe:.2f}"
+            row += 1
+            ws[f'A{row}'] = f"Sharpe Ratio (anomalous periods excluded): {filtered_sharpe:.2f}"
+            ws[f'A{row}'].font = Font(bold=True)
+            row += 2
+
+            ws[f'A{row}'] = "See 'Rolling Metrics' sheet for full anomaly details."
+            ws[f'A{row}'].font = Font(italic=True, color=self.COLORS['dark_gray'])
+            row += 1
+
+            # Summarize by type
+            sharpe_anomalies = [a for a in rolling_anomalies if a['metric'] == 'Sharpe Ratio']
+            sortino_anomalies = [a for a in rolling_anomalies if a['metric'] == 'Sortino Ratio']
+
+            if sharpe_anomalies:
+                values = [a['value'] for a in sharpe_anomalies]
+                ws[f'A{row}'] = f"  • Sharpe Ratio: {len(sharpe_anomalies)} anomalies (range: {min(values):.1f} to {max(values):.1f})"
+                row += 1
+
+            if sortino_anomalies:
+                values = [a['value'] for a in sortino_anomalies]
+                ws[f'A{row}'] = f"  • Sortino Ratio: {len(sortino_anomalies)} anomalies (range: {min(values):.1f} to {max(values):.1f})"
+                row += 1
+
         ws.column_dimensions['A'].width = 25
         ws.column_dimensions['B'].width = 25
         ws.column_dimensions['C'].width = 18
@@ -885,9 +936,13 @@ class EnhancedPortfolioReportGenerator:
             except Exception:
                 pass
 
-        # 4. Rolling Metrics (right side)
+        # 4. Rolling Metrics (right side) - with anomaly filtering
         try:
-            rolling_img = self.viz.create_rolling_metrics_chart(equity_df)
+            rolling_img, _ = self.viz.create_rolling_metrics_chart(
+                equity_df,
+                window=90,
+                filter_anomalies=True
+            )
             img = Image(rolling_img)
             img.width = 600
             img.height = 400
@@ -1325,16 +1380,22 @@ class EnhancedPortfolioReportGenerator:
         ws[f'A{last_row + 3}'] = "- 'FX P/L' shows profit/loss from currency conversion (for non-base currency securities)"
 
     def _create_rolling_metrics(self, wb: Workbook, result, metrics: Dict[str, Any]):
-        """Create Rolling Metrics sheet."""
+        """Create Rolling Metrics sheet with anomaly detection and reporting."""
         ws = wb.create_sheet("Rolling Metrics")
 
         row = 1
         ws[f'A{row}'] = "ROLLING PERFORMANCE METRICS"
         ws[f'A{row}'].font = self.title_font
         ws.merge_cells(f'A{row}:F{row}')
-        row += 3
+        row += 2
+
+        # Add methodology note
+        ws[f'A{row}'] = "Note: Rolling window of 90 days used for stability. Anomalous values (|value| > 10 or z-score > 3) are filtered from charts."
+        ws[f'A{row}'].font = Font(italic=True, size=9, color=self.COLORS['dark_gray'])
+        row += 2
 
         rolling_df = metrics.get('rolling_metrics', pd.DataFrame())
+        detected_anomalies = []
 
         if rolling_df.empty:
             ws[f'A{row}'] = "Insufficient data for rolling metrics calculation"
@@ -1343,14 +1404,26 @@ class EnhancedPortfolioReportGenerator:
         if self.include_matplotlib_charts and self.viz:
             equity_df = result.portfolio_equity_curve
             try:
-                rolling_img = self.viz.create_rolling_metrics_chart(equity_df, window=63)
+                # Get rolling chart with anomaly detection (90-day window)
+                rolling_img, detected_anomalies = self.viz.create_rolling_metrics_chart(
+                    equity_df,
+                    window=90,
+                    filter_anomalies=True,
+                    anomaly_absolute_threshold=10.0,
+                    anomaly_zscore_threshold=3.0
+                )
                 img = Image(rolling_img)
                 img.width = 700
                 img.height = 500
                 ws.add_image(img, f'A{row}')
                 row += 28
-            except Exception:
-                pass
+
+                # Store anomalies in metrics for use in executive summary
+                metrics['rolling_anomalies'] = detected_anomalies
+
+            except Exception as e:
+                ws[f'A{row}'] = f"Rolling metrics chart unavailable: {str(e)[:50]}"
+                row += 2
 
             all_trades = metrics.get('all_trades', [])
             if len(all_trades) >= 25:
@@ -1360,8 +1433,81 @@ class EnhancedPortfolioReportGenerator:
                     img.width = 700
                     img.height = 400
                     ws.add_image(img, f'A{row}')
+                    row += 24
                 except Exception:
                     pass
+
+        # Add Anomaly Table if anomalies were detected
+        if detected_anomalies:
+            row += 2
+            row = self._add_section_header(ws, row, "METRIC ANOMALIES (Excluded from Charts)")
+
+            ws[f'A{row}'] = f"Total anomalous values detected and filtered: {len(detected_anomalies)}"
+            ws[f'A{row}'].font = Font(bold=True, color=self.COLORS['negative_dark'])
+            row += 2
+
+            # Anomaly table headers
+            anomaly_headers = ["Date", "Metric", "Value", "Reason for Exclusion"]
+            for col_idx, header in enumerate(anomaly_headers, 1):
+                cell = ws.cell(row=row, column=col_idx, value=header)
+                cell.fill = PatternFill(start_color=self.COLORS['negative_dark'],
+                                        end_color=self.COLORS['negative_dark'], fill_type="solid")
+                cell.font = self.header_font
+                cell.border = self.thin_border
+            row += 1
+
+            # Sort anomalies by date
+            sorted_anomalies = sorted(detected_anomalies, key=lambda x: x['date'])
+
+            for anomaly in sorted_anomalies:
+                date_str = anomaly['date'].strftime('%Y-%m-%d') if hasattr(anomaly['date'], 'strftime') else str(anomaly['date'])
+                ws.cell(row=row, column=1, value=date_str).border = self.thin_border
+                ws.cell(row=row, column=2, value=anomaly['metric']).border = self.thin_border
+
+                value_cell = ws.cell(row=row, column=3, value=f"{anomaly['value']:.2f}")
+                value_cell.border = self.thin_border
+                value_cell.fill = self.negative_fill
+
+                ws.cell(row=row, column=4, value=anomaly['reason']).border = self.thin_border
+                row += 1
+
+            row += 2
+
+            # Add explanation note
+            ws[f'A{row}'] = "Why are these values excluded?"
+            ws[f'A{row}'].font = Font(bold=True)
+            row += 1
+            ws[f'A{row}'] = "Extreme spikes in rolling Sharpe/Sortino ratios typically occur during periods of very low volatility"
+            row += 1
+            ws[f'A{row}'] = "or rapid equity changes. These values distort the visual representation and are not representative"
+            row += 1
+            ws[f'A{row}'] = "of typical strategy performance. The underlying trade data remains intact."
+            row += 2
+
+            # Summary statistics of excluded periods
+            if len(sorted_anomalies) > 0:
+                sharpe_anomalies = [a for a in sorted_anomalies if a['metric'] == 'Sharpe Ratio']
+                sortino_anomalies = [a for a in sorted_anomalies if a['metric'] == 'Sortino Ratio']
+
+                ws[f'A{row}'] = "Exclusion Summary:"
+                ws[f'A{row}'].font = Font(bold=True)
+                row += 1
+
+                if sharpe_anomalies:
+                    sharpe_values = [a['value'] for a in sharpe_anomalies]
+                    ws[f'A{row}'] = f"  Sharpe Ratio: {len(sharpe_anomalies)} values excluded (range: {min(sharpe_values):.1f} to {max(sharpe_values):.1f})"
+                    row += 1
+
+                if sortino_anomalies:
+                    sortino_values = [a['value'] for a in sortino_anomalies]
+                    ws[f'A{row}'] = f"  Sortino Ratio: {len(sortino_anomalies)} values excluded (range: {min(sortino_values):.1f} to {max(sortino_values):.1f})"
+                    row += 1
+
+        # Set column widths
+        ws.column_dimensions['A'].width = 15
+        ws.column_dimensions['B'].width = 15
+        ws.column_dimensions['C'].width = 12
+        ws.column_dimensions['D'].width = 40
 
     def _create_statistical_analysis(self, wb: Workbook, result, metrics: Dict[str, Any]):
         """Create Statistical Analysis sheet."""
