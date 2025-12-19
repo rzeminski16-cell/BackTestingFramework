@@ -111,11 +111,28 @@ By **Sector** and **Market Capitalisation** within each sector:
 *(Commercial Services + Industrial Services)*
 
 - **Large Cap:**  
-  - 
+  - S&P Global (SPGI)
+  - Williams Companies (WMB)
+  - SLB Limited (SLB)
+  - ONEOK (OKE)
+  - Experian (EXPN)
+  - Otis Worldwide (OTIS)
+  - Omnicom (OMC)
+  - Corpay (CPAY)
+  - Klarna (KLAR)
+  - Venture Global (VG)
 - **Mid Cap:**  
-  - 
+  - Kanzhun (BZ)
+  - Tetra Tech (TTEK)
+  - Primoris Services Corporation (PRIM)
+  - NOV Inc (NOV)
+  - FTI Consulting (FCN)
 - **Small Cap:**  
-  - 
+  - SharpLink Gaming (SBET)
+  - Flywire (FLYW)
+  - PureCycle Technologies (PCT)
+  - Insperity (NSP)
+  - Stagwell (STGW)
 
 ---
 
