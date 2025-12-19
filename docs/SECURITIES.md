@@ -139,11 +139,28 @@ By **Sector** and **Market Capitalisation** within each sector:
 ### Electronic Technology
 
 - **Large Cap:**  
-  - 
+  - Nvidia (NVDA)
+  - Cisco Systems (CSCO)
+  - Boeing (BA)
+  - Analog Devices (ADI)
+  - Dell Tech (DELL)
+  - Marvell Tech (MRVL)
+  - Vertiv Holdings (VRT)
+  - Garmin (GRMN)
+  - Keysight Technologies (KEYS)
+  - First Solar (FSLR)
 - **Mid Cap:**  
-  - 
+  - Amkor Tech (AMKR)
+  - D-Wave Quantum (QBTS)
+  - Moog Inc (MOG.A)
+  - Beta Tech (BETA)
+  - Cognex (CGNX)
 - **Small Cap:**  
-  - 
+  - Photronics (PLAB)
+  - Veeco Instruments (VECO)
+  - Benchmark Electronics (BHE)
+  - Himax Tech (HIMX)
+  - Redwire (RDW)
 
 ---
 
