@@ -309,86 +309,98 @@ By **Sector** and **Market Capitalisation** within each sector:
 ## ETFs
 
 **Categorisation logic:**  
-By **Underlying Asset Class** and **Strategy/Style**
+Primary classification by **Underlying Asset Class**, with a secondary split by **Active vs Passive**.
 
 ---
 
 ### Equity ETFs
 
-#### Vanilla
-- 
+#### Passive
+- Vanguard S&P 500 ETF (VOO)
+- iShares Core MSCI Emerging Markets ETF (IEMG)
+- iShares Core S&P Total U.S Stock Market ETF (ITOT)
+- Schwab U.S. Large-Cap ETF (SCHX)
+- iShares Russell Midcap ETF (IWR)
+- SDPR Portfolio Developed World ex-US ETF (SPDW)
+- iShares MSCI ACWI ETF (ACWI)
+- iShares Russell Mid-Cap Growth ETF (IWP)
+- Invesco S&P 500 Quality ETF (SPHQ)
+- Vanguard Financials ETF (VFH)
 
-#### Value
-- 
-
-#### Growth
-- 
-
-#### Momentum
-- 
-
-#### Dividends
-- 
-
-#### Low Volatility
-- 
-
-#### Multi-Factor
-- 
+#### Active
+- JPMorgan Equity Premium Income ETF (JEPI)
+- Avantis International Small Cap Value ETF (AVDV)
+- Capital Group Core Equity ETF (CGUS)
+- T. Rowe Price Capital Appreciation Equity ETF (TCAF)
+- Roundhill Magnificent Seven ETF (MAGS)
+- Capital Group Global Equity ETF (CGGE)
+- YieldMax COIN Option Income Strategy ETF (CONY)
+- Defiance Daily Target 2x Long MSTR ETF (MSTX)
+- YieldMax SMCI Option Income Strategy ETF (SMCY)
+- Tradr 2X Long NBIS Daily ETF (NEBX)
 
 ---
 
 ### Fixed Income ETFs
 
-#### Vanilla
-- 
+#### Passive
+- Vanguard Total Bond Market ETF (BND)
+- iShares National Muni Bond ETF (MUB)
+- iShares 1-3 Year Treasuary Bond ETF (SHY)
+- Vanguard Mortage-Backed Securities ETF (VMBS)
+- State Street SPDR Portfolio Long Term Treasury ETF (SPTL)
 
-#### Duration Hedged
-- 
-
-#### Target Duration
-- 
+#### Active
+- JPMorgan Ultra-Short Income ETF (JPST)
+- PGIM Ultra Short Bond ETF (PULS)
+- iShares Ultra Short Duration Bond Active ETF (ICSH)
+- Capital Group Core Plus Income ETF (CGCP)
+- PGIM AAA CLO ETF (PAAA)
 
 ---
 
 ### Commodity ETFs
 
-#### Vanilla
-- 
+#### Passive
+- SPDR Gold Shares (GLD)
+- abrdn Physicak Sliver Shares ETF (SIVR)
+- Harbour Commodity All-Weather Strategy ETF (HGER)
 
-#### Optimised Commodity
-- 
+#### Active
+- Invesco Optimum Yield Diversified Commodity Strategy ETF (PDBC)
+- First Trust Global Tactical Commodity Strategy Fund ETF (FTGC)
+- PIMCO Commodity Strategy Active ETF (CMDT)
 
 ---
 
 ### Asset Allocation ETFs
 
-#### Fixed Allocation
-- 
+#### Passive
+- iShares Core 60/40 Balanced Allocation ETF (AOR)
+- iShares Core 80/20 Aggressive Allocation ETF (AOA)
+- iShares Core 40/60 Moderate Allocation ETF (AOM)
 
-#### Target Date
-- 
-
-#### Target Risk / Outcome
-- 
+#### Active
+- Capital Group core Balanced ETF (CGBL)
+- Aptus Defined Risk ETF (DRSK)
+- Franklin Income Focus ETF (INCM)
 
 ---
 
 ### Alternative ETFs
 
-#### Long–Short
-- 
+#### Passive
+- FT Vest S&P 500 Dividend Aristocrats Target Income ETF (KNG)
+- iPath Series B S&P 500 VIX Short-Term Futures ETF (VXX)
+- ProShares Ultra VIX Short-Term Futures ETF (UVXY)
 
-#### Buy-Write
-- 
-
-#### Options Collar
-- 
-
-#### Managed Futures
-- 
+#### Active
+- Alpha Architect 1-3 Month Box ETF (BOXX)
+- FT Vest Laddered Buffer ETF (BUFR)
+- First Trust Long/Short Equity ETF (FTLS)
 
 ---
+
 
 ## Cryptocurrencies
 
