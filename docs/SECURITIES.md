@@ -167,11 +167,28 @@ By **Sector** and **Market Capitalisation** within each sector:
 ### Technology Services
 
 - **Large Cap:**  
-  - 
+  - Alphabet (GOOG)
+  - Netflix (NFLX)
+  - Spotify (SPOT)
+  - Workday (WDAY)
+  - Paychex (PAYX)
+  - Broadridge Financial Solutions (BR)
+  - HP (HPQ)
+  - Gartner (IT)
+  - Rubrik (RBRK)
+  - Bentley Systems (BSY)
 - **Mid Cap:**  
-  - 
+  - Klaviyo (KVYO)
+  - Paylocity Holdings (PCTY)
+  - Sportradar (SRAD)
+  - Planet Labs (PL)
+  - Life 360 (LIF)
 - **Small Cap:**  
-  - 
+  - C3.ai (AI)
+  - Exzeo Group (XZO)
+  - American Bitcoin (ABTC)
+  - Tuya Inc (TUYA)
+  - PDF Solutions (PDFS)
 
 ---
 
