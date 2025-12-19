@@ -7,7 +7,9 @@ from typing import List, Optional, Callable
 
 from ..Config.basket import Basket, BasketManager
 from ..Config.capital_contention import (
-    CapitalContentionConfig, CapitalContentionMode, VulnerabilityScoreConfig
+    CapitalContentionConfig, CapitalContentionMode, VulnerabilityScoreConfig,
+    EnhancedVulnerabilityConfig, FeatureWeightConfig,
+    ENHANCED_FEATURE_DEFINITIONS, FEATURE_PARAMETER_DEFINITIONS, VULNERABILITY_CORE_PARAM_DEFINITIONS
 )
 
 
@@ -316,38 +318,59 @@ class BasketManagerDialog:
 class VulnerabilityScoreConfigDialog:
     """
     Dialog for configuring vulnerability score parameters.
+    Supports both simple (VulnerabilityScoreConfig) and enhanced (EnhancedVulnerabilityConfig) modes.
     """
 
-    def __init__(self, parent, current_config: Optional[VulnerabilityScoreConfig] = None,
-                 on_save: Optional[Callable[[VulnerabilityScoreConfig], None]] = None):
+    def __init__(self, parent, current_config=None,
+                 on_save: Optional[Callable] = None,
+                 enhanced_mode: bool = False):
         """
         Initialize the vulnerability score config dialog.
 
         Args:
             parent: Parent window
-            current_config: Current configuration (or None for defaults)
+            current_config: Current configuration (VulnerabilityScoreConfig or EnhancedVulnerabilityConfig)
             on_save: Callback when configuration is saved
+            enhanced_mode: If True, use enhanced feature-based configuration
         """
         self.parent = parent
-        self.current_config = current_config or VulnerabilityScoreConfig()
+        self.enhanced_mode = enhanced_mode
         self.on_save = on_save
+
+        # Initialize configuration
+        if enhanced_mode:
+            self.enhanced_config = current_config if isinstance(current_config, EnhancedVulnerabilityConfig) else EnhancedVulnerabilityConfig()
+            self.current_config = None
+        else:
+            self.current_config = current_config if isinstance(current_config, VulnerabilityScoreConfig) else VulnerabilityScoreConfig()
+            self.enhanced_config = None
 
         self.dialog = tk.Toplevel(parent)
         self.dialog.title("Vulnerability Score Configuration")
-        self.dialog.geometry("450x400")
+        self.dialog.geometry("750x650" if enhanced_mode else "500x450")
         self.dialog.transient(parent)
         self.dialog.grab_set()
+
+        # Feature variable storage
+        self.feature_vars = {}
 
         self._create_widgets()
 
     def _create_widgets(self):
         """Create dialog widgets."""
-        main_frame = ttk.Frame(self.dialog, padding="15")
+        main_frame = ttk.Frame(self.dialog, padding="10")
         main_frame.pack(fill=tk.BOTH, expand=True)
 
+        if self.enhanced_mode:
+            self._create_enhanced_widgets(main_frame)
+        else:
+            self._create_simple_widgets(main_frame)
+
+    def _create_simple_widgets(self, main_frame):
+        """Create simple mode widgets (backward compatible)."""
         # Title
         title = ttk.Label(main_frame, text="Vulnerability Score Parameters",
-                         font=('Arial', 12, 'bold'))
+                         font=('TkDefaultFont', 12, 'bold'))
         title.pack(pady=(0, 15))
 
         # Parameters frame
@@ -357,53 +380,41 @@ class VulnerabilityScoreConfigDialog:
         row = 0
 
         # Immunity Days
-        ttk.Label(params_frame, text="Immunity Days:").grid(row=row, column=0, sticky=tk.W, pady=5)
-        self.immunity_var = tk.StringVar(value=str(self.current_config.immunity_days))
-        ttk.Entry(params_frame, textvariable=self.immunity_var, width=10).grid(
-            row=row, column=1, sticky=tk.W, pady=5
-        )
-        ttk.Label(params_frame, text="(New trades protected from swap)",
-                 font=('Arial', 8)).grid(row=row, column=2, sticky=tk.W, padx=5)
+        self._add_param_row(params_frame, row, "Immunity Days:",
+                           str(self.current_config.immunity_days),
+                           VULNERABILITY_CORE_PARAM_DEFINITIONS['immunity_days'])
+        self.immunity_var = self._last_var
         row += 1
 
-        # Min Profit Threshold
+        # Min Profit Threshold (as percentage display)
         ttk.Label(params_frame, text="Min Profit Threshold:").grid(row=row, column=0, sticky=tk.W, pady=5)
         self.profit_var = tk.StringVar(value=str(self.current_config.min_profit_threshold))
         ttk.Entry(params_frame, textvariable=self.profit_var, width=10).grid(
             row=row, column=1, sticky=tk.W, pady=5
         )
-        ttk.Label(params_frame, text="(0.02 = 2%, below is 'stagnant')",
-                 font=('Arial', 8)).grid(row=row, column=2, sticky=tk.W, padx=5)
+        ttk.Label(params_frame, text="[0.0 - 0.20] (0.02 = 2%, below is 'stagnant')",
+                 font=('TkDefaultFont', 8), foreground='gray').grid(row=row, column=2, sticky=tk.W, padx=5)
         row += 1
 
         # Decay Rate Fast
-        ttk.Label(params_frame, text="Decay Rate (Fast):").grid(row=row, column=0, sticky=tk.W, pady=5)
-        self.decay_fast_var = tk.StringVar(value=str(self.current_config.decay_rate_fast))
-        ttk.Entry(params_frame, textvariable=self.decay_fast_var, width=10).grid(
-            row=row, column=1, sticky=tk.W, pady=5
-        )
-        ttk.Label(params_frame, text="(Points/day for stagnant trades)",
-                 font=('Arial', 8)).grid(row=row, column=2, sticky=tk.W, padx=5)
+        self._add_param_row(params_frame, row, "Decay Rate (Fast):",
+                           str(self.current_config.decay_rate_fast),
+                           FEATURE_PARAMETER_DEFINITIONS['fast_decay_rate'])
+        self.decay_fast_var = self._last_var
         row += 1
 
         # Decay Rate Slow
-        ttk.Label(params_frame, text="Decay Rate (Slow):").grid(row=row, column=0, sticky=tk.W, pady=5)
-        self.decay_slow_var = tk.StringVar(value=str(self.current_config.decay_rate_slow))
-        ttk.Entry(params_frame, textvariable=self.decay_slow_var, width=10).grid(
-            row=row, column=1, sticky=tk.W, pady=5
-        )
-        ttk.Label(params_frame, text="(Points/day for performing trades)",
-                 font=('Arial', 8)).grid(row=row, column=2, sticky=tk.W, padx=5)
+        self._add_param_row(params_frame, row, "Decay Rate (Slow):",
+                           str(self.current_config.decay_rate_slow),
+                           FEATURE_PARAMETER_DEFINITIONS['slow_decay_rate'])
+        self.decay_slow_var = self._last_var
         row += 1
 
         # Swap Threshold
-        ttk.Label(params_frame, text="Swap Threshold:").grid(row=row, column=0, sticky=tk.W, pady=5)
-        self.threshold_var = tk.StringVar(value=str(self.current_config.swap_threshold))
-        ttk.Entry(params_frame, textvariable=self.threshold_var, width=10).grid(
-            row=row, column=1, sticky=tk.W, pady=5
-        )
-        ttk.Label(params_frame, text="(Score below which can be swapped)",
-                 font=('Arial', 8)).grid(row=row, column=2, sticky=tk.W, padx=5)
+        self._add_param_row(params_frame, row, "Swap Threshold:",
+                           str(self.current_config.swap_threshold),
+                           VULNERABILITY_CORE_PARAM_DEFINITIONS['swap_threshold'])
+        self.threshold_var = self._last_var
         row += 1
 
         # Description
@@ -418,7 +429,13 @@ class VulnerabilityScoreConfigDialog:
             "4. If weakest position < swap threshold, it's closed for new signal"
         )
         ttk.Label(desc_frame, text=desc_text, justify=tk.LEFT,
-                 font=('Arial', 9)).pack()
+                 font=('TkDefaultFont', 9)).pack()
+
+        # Mode switch
+        mode_frame = ttk.Frame(main_frame)
+        mode_frame.pack(fill=tk.X, pady=5)
+        ttk.Button(mode_frame, text="Switch to Enhanced Mode (Per-Feature Config)",
+                  command=self._switch_to_enhanced).pack(side=tk.LEFT)
 
         # Buttons
         button_frame = ttk.Frame(main_frame)
@@ -430,8 +447,316 @@ class VulnerabilityScoreConfigDialog:
         ttk.Button(button_frame, text="Cancel",
                   command=self.dialog.destroy).pack(side=tk.RIGHT)
 
+    def _create_enhanced_widgets(self, main_frame):
+        """Create enhanced mode widgets with per-feature configuration."""
+        # Title
+        title = ttk.Label(main_frame, text="Enhanced Vulnerability Score Configuration",
+                         font=('TkDefaultFont', 12, 'bold'))
+        title.pack(pady=(0, 10))
+
+        # Create notebook for tabs
+        notebook = ttk.Notebook(main_frame)
+        notebook.pack(fill=tk.BOTH, expand=True, pady=5)
+
+        # Tab 1: Core Parameters
+        core_frame = ttk.Frame(notebook, padding="10")
+        notebook.add(core_frame, text="Core Parameters")
+        self._create_core_params_tab(core_frame)
+
+        # Tab 2: Feature Configuration
+        features_frame = ttk.Frame(notebook, padding="10")
+        notebook.add(features_frame, text="Feature Configuration")
+        self._create_features_tab(features_frame)
+
+        # Tab 3: Presets
+        presets_frame = ttk.Frame(notebook, padding="10")
+        notebook.add(presets_frame, text="Presets")
+        self._create_presets_tab(presets_frame)
+
+        # Buttons at bottom
+        button_frame = ttk.Frame(main_frame)
+        button_frame.pack(fill=tk.X, pady=10)
+
+        ttk.Button(button_frame, text="Reset All",
+                  command=self._reset_enhanced_defaults).pack(side=tk.LEFT)
+        ttk.Button(button_frame, text="Switch to Simple Mode",
+                  command=self._switch_to_simple).pack(side=tk.LEFT, padx=10)
+        ttk.Button(button_frame, text="Save", command=self._save_enhanced).pack(side=tk.RIGHT, padx=5)
+        ttk.Button(button_frame, text="Cancel",
+                  command=self.dialog.destroy).pack(side=tk.RIGHT)
+
+    def _create_core_params_tab(self, parent):
+        """Create core parameters tab."""
+        row = 0
+
+        # Immunity Days
+        self._add_param_row(parent, row, "Immunity Days:",
+                           str(self.enhanced_config.immunity_days),
+                           VULNERABILITY_CORE_PARAM_DEFINITIONS['immunity_days'])
+        self.immunity_var = self._last_var
+        row += 1
+
+        # Base Score
+        self._add_param_row(parent, row, "Base Score:",
+                           str(self.enhanced_config.base_score),
+                           VULNERABILITY_CORE_PARAM_DEFINITIONS['base_score'])
+        self.base_score_var = self._last_var
+        row += 1
+
+        # Swap Threshold
+        self._add_param_row(parent, row, "Swap Threshold:",
+                           str(self.enhanced_config.swap_threshold),
+                           VULNERABILITY_CORE_PARAM_DEFINITIONS['swap_threshold'])
+        self.threshold_var = self._last_var
+        row += 1
+
+        # Info
+        info_frame = ttk.LabelFrame(parent, text="Score Interpretation", padding="10")
+        info_frame.grid(row=row, column=0, columnspan=3, sticky='ew', pady=15, padx=5)
+
+        info_text = (
+            "100: Immune (within immunity period)\n"
+            "50-99: Healthy but aging\n"
+            "1-49: Vulnerable (below default swap threshold)\n"
+            "0: Extremely vulnerable"
+        )
+        ttk.Label(info_frame, text=info_text, justify=tk.LEFT,
+                 font=('TkDefaultFont', 9)).pack(anchor='w')
+
+    def _create_features_tab(self, parent):
+        """Create features configuration tab with scrollable content."""
+        # Instructions
+        ttk.Label(parent, text="Configure which features to include and their parameters:",
+                 font=('TkDefaultFont', 9, 'italic'), foreground='gray').pack(anchor='w', pady=(0, 10))
+
+        # Scrollable frame for features
+        canvas = tk.Canvas(parent, highlightthickness=0)
+        scrollbar = ttk.Scrollbar(parent, orient="vertical", command=canvas.yview)
+        scrollable_frame = ttk.Frame(canvas)
+
+        scrollable_frame.bind(
+            "<Configure>",
+            lambda e: canvas.configure(scrollregion=canvas.bbox("all"))
+        )
+
+        canvas.create_window((0, 0), window=scrollable_frame, anchor="nw")
+        canvas.configure(yscrollcommand=scrollbar.set)
+
+        canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+
+        # Mousewheel scrolling
+        def _on_mousewheel(event):
+            canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
+        canvas.bind_all("<MouseWheel>", _on_mousewheel)
+
+        # Create feature sections
+        for feature_name, feature_def in ENHANCED_FEATURE_DEFINITIONS.items():
+            self._create_feature_section(scrollable_frame, feature_name, feature_def)
+
+    def _create_feature_section(self, parent, feature_name: str, feature_def: dict):
+        """Create a collapsible section for a single feature."""
+        # Get current feature config
+        if feature_name in self.enhanced_config.features:
+            feature_config = self.enhanced_config.features[feature_name]
+        else:
+            feature_config = FeatureWeightConfig()
+
+        # Feature frame
+        frame = ttk.LabelFrame(parent, text=f"{feature_def['name']} [{feature_def['importance']}]", padding="8")
+        frame.pack(fill=tk.X, pady=5, padx=5)
+
+        # Initialize storage for this feature
+        self.feature_vars[feature_name] = {}
+
+        # Row 0: Enable checkbox and description
+        row0 = ttk.Frame(frame)
+        row0.pack(fill=tk.X)
+
+        enabled_var = tk.BooleanVar(value=feature_config.enabled)
+        self.feature_vars[feature_name]['enabled'] = enabled_var
+        ttk.Checkbutton(row0, text="Enabled", variable=enabled_var).pack(side=tk.LEFT)
+
+        ttk.Label(row0, text=f"  {feature_def['description']}",
+                 font=('TkDefaultFont', 8), foreground='gray').pack(side=tk.LEFT, padx=10)
+
+        # Row 1: Weight and hint
+        row1 = ttk.Frame(frame)
+        row1.pack(fill=tk.X, pady=(5, 0))
+
+        ttk.Label(row1, text="Weight:", width=15).pack(side=tk.LEFT)
+        weight_var = tk.DoubleVar(value=feature_config.weight)
+        self.feature_vars[feature_name]['weight'] = weight_var
+        weight_spin = ttk.Spinbox(row1, from_=feature_def['weight_range'][0],
+                                  to=feature_def['weight_range'][1],
+                                  textvariable=weight_var, width=8, increment=0.5)
+        weight_spin.pack(side=tk.LEFT)
+
+        range_str = f"[{feature_def['weight_range'][0]} to {feature_def['weight_range'][1]}]"
+        ttk.Label(row1, text=range_str, font=('TkDefaultFont', 8), foreground='#666').pack(side=tk.LEFT, padx=5)
+
+        # Row 2: Weight hint
+        if 'weight_hint' in feature_def:
+            ttk.Label(frame, text=f"  Hint: {feature_def['weight_hint']}",
+                     font=('TkDefaultFont', 8), foreground='#888').pack(anchor='w')
+
+        # Row 3: Advanced parameters (collapsible)
+        adv_frame = ttk.Frame(frame)
+        adv_frame.pack(fill=tk.X, pady=(5, 0))
+
+        # Decay Point
+        ttk.Label(adv_frame, text="Decay Point:", width=15).pack(side=tk.LEFT)
+        decay_point_var = tk.IntVar(value=feature_config.decay_point)
+        self.feature_vars[feature_name]['decay_point'] = decay_point_var
+        dp_def = FEATURE_PARAMETER_DEFINITIONS['decay_point']
+        ttk.Spinbox(adv_frame, from_=dp_def['min'], to=dp_def['max'],
+                   textvariable=decay_point_var, width=6).pack(side=tk.LEFT)
+        ttk.Label(adv_frame, text=f"days [{dp_def['min']}-{dp_def['max']}]",
+                 font=('TkDefaultFont', 8), foreground='#666').pack(side=tk.LEFT, padx=5)
+
+        # Stagnation Threshold
+        ttk.Label(adv_frame, text="Stagnation:", width=10).pack(side=tk.LEFT, padx=(10, 0))
+        stag_var = tk.DoubleVar(value=feature_config.stagnation_threshold)
+        self.feature_vars[feature_name]['stagnation_threshold'] = stag_var
+        stag_def = FEATURE_PARAMETER_DEFINITIONS['stagnation_threshold']
+        ttk.Spinbox(adv_frame, from_=stag_def['min'], to=stag_def['max'],
+                   textvariable=stag_var, width=6, increment=0.5).pack(side=tk.LEFT)
+        ttk.Label(adv_frame, text=f"% [{stag_def['min']}-{stag_def['max']}]",
+                 font=('TkDefaultFont', 8), foreground='#666').pack(side=tk.LEFT, padx=5)
+
+        # Row 4: Decay rates
+        decay_frame = ttk.Frame(frame)
+        decay_frame.pack(fill=tk.X, pady=(3, 0))
+
+        # Fast Decay
+        ttk.Label(decay_frame, text="Fast Decay:", width=15).pack(side=tk.LEFT)
+        fast_var = tk.DoubleVar(value=feature_config.fast_decay_rate)
+        self.feature_vars[feature_name]['fast_decay_rate'] = fast_var
+        fast_def = FEATURE_PARAMETER_DEFINITIONS['fast_decay_rate']
+        ttk.Spinbox(decay_frame, from_=fast_def['min'], to=fast_def['max'],
+                   textvariable=fast_var, width=6, increment=0.5).pack(side=tk.LEFT)
+        ttk.Label(decay_frame, text=f"pts/day [{fast_def['min']}-{fast_def['max']}]",
+                 font=('TkDefaultFont', 8), foreground='#666').pack(side=tk.LEFT, padx=5)
+
+        # Slow Decay
+        ttk.Label(decay_frame, text="Slow Decay:", width=10).pack(side=tk.LEFT, padx=(10, 0))
+        slow_var = tk.DoubleVar(value=feature_config.slow_decay_rate)
+        self.feature_vars[feature_name]['slow_decay_rate'] = slow_var
+        slow_def = FEATURE_PARAMETER_DEFINITIONS['slow_decay_rate']
+        ttk.Spinbox(decay_frame, from_=slow_def['min'], to=slow_def['max'],
+                   textvariable=slow_var, width=6, increment=0.1).pack(side=tk.LEFT)
+        ttk.Label(decay_frame, text=f"pts/day [{slow_def['min']}-{slow_def['max']}]",
+                 font=('TkDefaultFont', 8), foreground='#666').pack(side=tk.LEFT, padx=5)
+
+    def _create_presets_tab(self, parent):
+        """Create presets tab."""
+        ttk.Label(parent, text="Load a preset configuration:",
+                 font=('TkDefaultFont', 10, 'bold')).pack(anchor='w', pady=(0, 10))
+
+        presets = [
+            ("Conservative", "Protects positions longer, unlikely to swap",
+             EnhancedVulnerabilityConfig.conservative_preset),
+            ("Aggressive", "Swaps quickly if no progress",
+             EnhancedVulnerabilityConfig.aggressive_preset),
+            ("Momentum Focused", "Emphasizes recent momentum over time held",
+             EnhancedVulnerabilityConfig.momentum_focused_preset),
+            ("Default", "Balanced default settings",
+             lambda: EnhancedVulnerabilityConfig()),
+        ]
+
+        for name, desc, preset_func in presets:
+            frame = ttk.Frame(parent)
+            frame.pack(fill=tk.X, pady=5)
+
+            ttk.Button(frame, text=f"Load {name}",
+                      command=lambda f=preset_func: self._load_preset(f())).pack(side=tk.LEFT)
+            ttk.Label(frame, text=f"  {desc}",
+                     font=('TkDefaultFont', 9), foreground='gray').pack(side=tk.LEFT, padx=10)
+
+        # Preset description box
+        desc_frame = ttk.LabelFrame(parent, text="Preset Details", padding="10")
+        desc_frame.pack(fill=tk.BOTH, expand=True, pady=15)
+
+        preset_info = """
+Conservative:
+  - Immunity: 14 days, Swap Threshold: 30
+  - Slow aging (-1/day), high P/L weight (2.0)
+
+Aggressive:
+  - Immunity: 3 days, Swap Threshold: 70
+  - Fast aging (-3/day), strong momentum focus (5.0)
+  - Penalizes volatility and drawdowns
+
+Momentum Focused:
+  - Immunity: 7 days, Swap Threshold: 50
+  - Both 7d and 14d momentum enabled
+  - Good for trend-following strategies
+"""
+        ttk.Label(desc_frame, text=preset_info, justify=tk.LEFT,
+                 font=('TkDefaultFont', 9)).pack(anchor='w')
+
+    def _add_param_row(self, parent, row: int, label: str, value: str, param_def: dict):
+        """Add a parameter row with label, entry, and hint."""
+        ttk.Label(parent, text=label).grid(row=row, column=0, sticky=tk.W, pady=5)
+
+        self._last_var = tk.StringVar(value=value)
+        ttk.Entry(parent, textvariable=self._last_var, width=10).grid(
+            row=row, column=1, sticky=tk.W, pady=5
+        )
+
+        # Build range and hint text
+        range_text = ""
+        if 'min' in param_def and 'max' in param_def:
+            range_text = f"[{param_def['min']} - {param_def['max']}]"
+        hint_text = param_def.get('hint', param_def.get('description', ''))
+
+        display_text = f"{range_text} {hint_text}" if range_text else hint_text
+        ttk.Label(parent, text=display_text,
+                 font=('TkDefaultFont', 8), foreground='gray').grid(row=row, column=2, sticky=tk.W, padx=5)
+
+    def _switch_to_enhanced(self):
+        """Switch to enhanced mode."""
+        self.dialog.destroy()
+        VulnerabilityScoreConfigDialog(
+            self.parent,
+            current_config=EnhancedVulnerabilityConfig(),
+            on_save=self.on_save,
+            enhanced_mode=True
+        )
+
+    def _switch_to_simple(self):
+        """Switch to simple mode."""
+        self.dialog.destroy()
+        VulnerabilityScoreConfigDialog(
+            self.parent,
+            current_config=VulnerabilityScoreConfig(),
+            on_save=self.on_save,
+            enhanced_mode=False
+        )
+
+    def _load_preset(self, preset: EnhancedVulnerabilityConfig):
+        """Load a preset configuration."""
+        self.enhanced_config = preset
+
+        # Update UI
+        self.immunity_var.set(str(preset.immunity_days))
+        self.base_score_var.set(str(preset.base_score))
+        self.threshold_var.set(str(preset.swap_threshold))
+
+        # Update feature vars
+        for feature_name, config in preset.features.items():
+            if feature_name in self.feature_vars:
+                self.feature_vars[feature_name]['enabled'].set(config.enabled)
+                self.feature_vars[feature_name]['weight'].set(config.weight)
+                self.feature_vars[feature_name]['decay_point'].set(config.decay_point)
+                self.feature_vars[feature_name]['stagnation_threshold'].set(config.stagnation_threshold)
+                self.feature_vars[feature_name]['fast_decay_rate'].set(config.fast_decay_rate)
+                self.feature_vars[feature_name]['slow_decay_rate'].set(config.slow_decay_rate)
+
+        messagebox.showinfo("Preset Loaded", f"Loaded preset: {preset.name}")
+
     def _reset_defaults(self):
-        """Reset to default values."""
+        """Reset to default values (simple mode)."""
         defaults = VulnerabilityScoreConfig()
         self.immunity_var.set(str(defaults.immunity_days))
         self.profit_var.set(str(defaults.min_profit_threshold))
@@ -439,8 +764,12 @@ class VulnerabilityScoreConfigDialog:
         self.decay_slow_var.set(str(defaults.decay_rate_slow))
         self.threshold_var.set(str(defaults.swap_threshold))
 
+    def _reset_enhanced_defaults(self):
+        """Reset to default values (enhanced mode)."""
+        self._load_preset(EnhancedVulnerabilityConfig())
+
     def _save(self):
-        """Save configuration."""
+        """Save configuration (simple mode)."""
         try:
             config = VulnerabilityScoreConfig(
                 immunity_days=int(self.immunity_var.get()),
@@ -448,6 +777,40 @@ class VulnerabilityScoreConfigDialog:
                 decay_rate_fast=float(self.decay_fast_var.get()),
                 decay_rate_slow=float(self.decay_slow_var.get()),
                 swap_threshold=float(self.threshold_var.get())
+            )
+
+            if self.on_save:
+                self.on_save(config)
+
+            self.dialog.destroy()
+
+        except ValueError as e:
+            messagebox.showerror("Invalid Value", f"Please enter valid numbers: {e}")
+
+    def _save_enhanced(self):
+        """Save configuration (enhanced mode)."""
+        try:
+            # Build feature configs
+            features = {}
+            for feature_name in ENHANCED_FEATURE_DEFINITIONS.keys():
+                if feature_name in self.feature_vars:
+                    fv = self.feature_vars[feature_name]
+                    features[feature_name] = FeatureWeightConfig(
+                        enabled=fv['enabled'].get(),
+                        weight=fv['weight'].get(),
+                        decay_point=fv['decay_point'].get(),
+                        fast_decay_rate=fv['fast_decay_rate'].get(),
+                        slow_decay_rate=fv['slow_decay_rate'].get(),
+                        stagnation_threshold=fv['stagnation_threshold'].get()
+                    )
+
+            config = EnhancedVulnerabilityConfig(
+                name="Custom",
+                description="User-defined configuration",
+                immunity_days=int(self.immunity_var.get()),
+                base_score=float(self.base_score_var.get()),
+                swap_threshold=float(self.threshold_var.get()),
+                features=features
             )
 
             if self.on_save:
