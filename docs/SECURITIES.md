@@ -195,11 +195,23 @@ By **Sector** and **Market Capitalisation** within each sector:
 ### Communications
 
 - **Large Cap:**  
-  - 
+  - T-Mobile (TMUS)
+  - Verizon Communications (VZ)
+  - Swisscom (SCMN)
+  - BT Group (BT.A)
+  - Telenor (TEL)
 - **Mid Cap:**  
-  - 
+  - Frontier Communications (FYBR)
+  - Lumen Tech (LUMN)
+  - Telecom Austria (TKA)
+  - Freenet AG (FNTN)
+  - Orange Polska (OPL)
 - **Small Cap:**  
-  - 
+  - Iridium Communications (IRDM)
+  - Telia Lietuva (TEL 1L)
+  - EuroTeleSites (ETS)
+  - Gogo (GOGO)
+  - Anterix (ATEX)
 
 ---
 
@@ -354,10 +366,9 @@ By **Underlying Asset Class** and **Strategy/Style**
 ## Notes
 
 - Selection criteria (liquidity, data availability, survivorship bias controls):
-  1) Filter for specific categories world wide
-  2) If more than 100 results, filter only for USA, UK and Europe
-  3) If still above 50 results filter for average 30D value above 100k
-  4) If still above 50 results filter for only USA or UK
-  5) Randomly select 5 - 10 securities if possible
+  1) Filter filter only for USA, UK and Europe
+  2) If still above 50 results filter for average 30D value above 100k
+  3) If still above 50 results filter for only USA or UK
+  4) Randomly select 5 - 10 securities if possible
 - Data source(s):
   - Trading View
