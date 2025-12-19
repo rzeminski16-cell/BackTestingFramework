@@ -406,19 +406,8 @@ Primary classification by **Underlying Asset Class**, with a secondary split by 
 
 > _Spot, perpetuals, or proxies used in backtesting._
 
-- 
-- 
-- 
-
----
-
-## Currencies
-
-> _FX pairs or currency proxies._
-
-- 
-- 
-- 
+- BTC/USD (BTCUSD)
+- ETH/USD (ETHUSD)
 
 ---
 
