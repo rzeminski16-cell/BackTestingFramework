@@ -218,11 +218,17 @@ By **Sector** and **Market Capitalisation** within each sector:
 ### Distribution Services
 
 - **Large Cap:**  
-  - 
+  - Mc Kesson Corporation (MCK)
+  - Cardinal Health (CAH)
+  - TD SYNNEX (SNX)
 - **Mid Cap:**  
-  - 
+  - Applied Industrial Tech (AIT)
+  - Pool Corporation (POOL)
+  - Galenica (GALE)
 - **Small Cap:**  
-  - 
+  - Currys (CURY)
+  - Russel Metals (RUS)
+  - Universal Corporation (UVV)
 
 ---
 
