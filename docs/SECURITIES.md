@@ -235,22 +235,51 @@ By **Sector** and **Market Capitalisation** within each sector:
 ### Energy
 
 - **Large Cap:**  
-  - 
+  - Exxon Mobil (XOM)
+  - BP PLC (BP.)
+  - Rosneft (ROSN)
+  - Novatek (NVTK)
+  - EQT Corp (EQT)
 - **Mid Cap:**  
-  - 
+  - Whitecap Reources (WCP)
+  - Range Resources (RRC)
+  - Comstock Resources (CRK)
+  - Warrior Met Coal (HCC)
+  - Gulfport Energy (GPOR)
 - **Small Cap:**  
-  - 
+  - Par Pacific Holdings (PARR)
+  - Raspadskaya (RASP)
+  - Sable Offshore (SOC)
+  - Ramaco Resources (METC)
+  - Granite Ridge Resources (GRNT)
 
 ---
 
 ### Finance
 
 - **Large Cap:**  
-  - 
+  - JP Morgan Chase (JPM)
+  - Charles Schwab (SCHW)
+  - Robinhood (HOOD)
+  - Nu Holdings (NU)
+  - Rocket Companies (RKT)
+  - Prudential Financial (PRU)
+  - Fifth Third Bancorp (FITB)
+  - Cincinnati Financial (CINF)
+  - KeyCorp (KEY)
+  - Corebridge Financial (CRBG)
 - **Mid Cap:**  
-  - 
+  - SouthState Bank Corporation (SSB)
+  - UMB Financial Corporation (UMBF)
+  - Axis Capital (AXS)
+  - Afiliated Managers Group (AMG)
+  - Air Lease Corp (AL)
 - **Small Cap:**  
-  - 
+  - Stock Yards Bancorp (SYBT)
+  - First (FCF)
+  - Merchants Bancorp (MBIN)
+  - Lakeland Financial (LKFN)
+  - QCR Holdings (QCRH)
 
 ---
 
