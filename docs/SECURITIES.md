@@ -23,25 +23,58 @@ By **Sector** and **Market Capitalisation** within each sector:
 
 ### Consumer Discretionary  
 *(Consumer Services + Consumer Durables + Retail Trade)*
-
+7th
 - **Large Cap:**  
-  - 
+  - Amazon (AMZN)
+  - Shopify (SHOP)
+  - CVS Health (CVS)
+  - PayPal (PYPL)
+  - Block (XYZ)
+  - Tractor Supply Comapny (TSCO)
+  - Dollar Tree (DLTR)
+  - Global Payments (GPN)
+  - Medpace Holdings (MEDP)
+  - Chewy (CHWY)
 - **Mid Cap:**  
-  - 
+  - Kanzhun Ltd (BZ)
+  - VinFast Auto (VFS)
+  - Federal Signal (FSS)
+  - Macys INC (M)
+  - Thor Industries (THO)
 - **Small Cap:**  
-  - 
-
+  - Guardian Pharmacy Services (GRDN)
+  - Weis Markets (WMK)
+  - Leggett & Platt (LEG)
+  - Winnebago Industries (WGO)
+  - LGI Homes (LGIH)
 ---
 
 ### Materials & Manufacturing  
 *(Non-energy Minerals + Process Industries + Producer Manufacturing)*
 
 - **Large Cap:**  
-  - 
+  - Caterpillar (CAT)
+  - 3M Company (MMM)
+  - Air Products & Chemicals (APD)
+  - Symbotic (SYM)
+  - Hubbell (HUBB)
+  - Lennox International (LII)
+  - Watsco (WSO)
+  - Lincoln Electric Holdings (LECO)
+  - CNH Industrial (CNH)
+  - Equinox Gold (EQX)
 - **Mid Cap:**  
-  - 
+  - Chart Industries (GTLS)
+  - Flowserve Corporation (FLS)
+  - Commercial Metals Company (CMC)
+  - ESAB Corporation (ESAB)
+  - Timken Company (TKR)
 - **Small Cap:**  
-  - 
+  - Sylvamo Corporation (SLVM)
+  - SolarEdge Technologies (SEDG)
+  - Power Solutions International (PSIX)
+  - Lithium Americas Corp (LAC)
+  - Ultra Clean Holdings (UCTT)
 
 ---
 
@@ -256,6 +289,7 @@ By **Underlying Asset Class** and **Strategy/Style**
   1) Filter for specific categories world wide
   2) If more than 100 results, filter only for USA, UK and Europe
   3) If still above 50 results filter for average 30D value above 100k
-  4) Randomly select up to 5 securities
+  4) If still above 50 results filter for only USA or UK
+  5) Randomly select 5 - 10 securities if possible
 - Data source(s):
   - Trading View
