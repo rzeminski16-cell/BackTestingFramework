@@ -82,11 +82,28 @@ By **Sector** and **Market Capitalisation** within each sector:
 *(Health Services + Health Technology)*
 
 - **Large Cap:**  
-  - 
+  - Eli Lilly and Company (LLY)
+  - Intuitive Surgical (ISRG)
+  - Medtronic (MDT)
+  - IDEXX Laboratories (IDXX)
+  - IQVIA Holdings (IQV)
+  - Biogen (BIIB)
+  - Insulet (PODD)
+  - Tenet Healthcare (THC)
+  - Universal Health Services (UHS)
+  - Guardant Health (GH)
 - **Mid Cap:**  
-  - 
+  - Qiagen (QGEN)
+  - Hims & Hers Health (HIMS)
+  - Bruker Corporation (BRKR)
+  - Cogent Biosciences (COGT)
+  - CRISPR Therapeutics (CRSP)
 - **Small Cap:**  
-  - 
+  - AtriCure (ATRC)
+  - Stroke Therapeutics (STOK)
+  - Pharvis (PHVS)
+  - Axogen (AXGN)
+  - Immatics (IMTX)
 
 ---
 
