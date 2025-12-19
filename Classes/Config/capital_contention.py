@@ -434,69 +434,201 @@ class EnhancedVulnerabilityConfig:
         )
 
 
-# Feature definitions for GUI
+# Feature definitions for GUI with comprehensive parameter ranges
 ENHANCED_FEATURE_DEFINITIONS = {
     'days_held': {
         'name': 'Days Held',
-        'description': 'Days since entry',
+        'description': 'Days since entry - penalizes older positions',
         'type': 'time',
+        'importance': 'HIGH',
+        'value_range': '0 to N days',
         'recommended_weight': -5.0,
-        'weight_range': (-10.0, 0.0)
+        'weight_range': (-10.0, 0.0),
+        'weight_hint': 'Negative values penalize older trades. Use -1 to -10 for moderate to aggressive aging penalty.',
     },
     'current_pl_pct': {
         'name': 'Current P/L %',
-        'description': 'Current profit/loss as percentage',
+        'description': 'Current profit/loss as percentage of entry price',
         'type': 'profitability',
+        'importance': 'HIGH',
+        'value_range': '-100% to +infinity',
         'recommended_weight': 1.0,
-        'weight_range': (0.0, 5.0)
+        'weight_range': (0.0, 5.0),
+        'weight_hint': 'Positive values reward profitable trades. Higher values (3-5) strongly protect winners.',
     },
     'pl_momentum_7d': {
         'name': 'P/L Momentum (7d)',
-        'description': 'P/L change in last 7 days',
+        'description': 'P/L change in last 7 days - measures recent performance trend',
         'type': 'momentum',
+        'importance': 'HIGH',
+        'value_range': '-infinity to +infinity',
         'recommended_weight': 3.0,
-        'weight_range': (0.0, 10.0)
+        'weight_range': (0.0, 10.0),
+        'weight_hint': 'Higher values (3-5) favor trades with positive recent momentum. Key for trend-following.',
     },
     'pl_momentum_14d': {
         'name': 'P/L Momentum (14d)',
-        'description': 'P/L change in last 14 days',
+        'description': 'P/L change in last 14 days - measures medium-term trend',
         'type': 'momentum',
+        'importance': 'MEDIUM',
+        'value_range': '-infinity to +infinity',
         'recommended_weight': 2.0,
-        'weight_range': (0.0, 10.0)
+        'weight_range': (0.0, 10.0),
+        'weight_hint': 'Similar to 7d but smoother. Use 1-3 for balanced momentum consideration.',
     },
     'volatility_7d': {
         'name': 'Volatility (7d)',
-        'description': '7-day rolling volatility',
+        'description': '7-day rolling volatility - measures price fluctuation risk',
         'type': 'risk',
+        'importance': 'MEDIUM',
+        'value_range': '0% to 100%+ (annualized)',
         'recommended_weight': 0.5,
-        'weight_range': (-5.0, 5.0)
+        'weight_range': (-5.0, 5.0),
+        'weight_hint': 'Negative penalizes volatile trades (risk-averse). Positive keeps volatile trades longer.',
     },
     'distance_from_high': {
         'name': 'Distance from 52W High',
-        'description': 'Percentage below 52-week high',
+        'description': 'Percentage below 52-week high - identifies weakness',
         'type': 'technical',
+        'importance': 'MEDIUM',
+        'value_range': '-100% to 0%',
         'recommended_weight': 0.0,
-        'weight_range': (-5.0, 5.0)
+        'weight_range': (-5.0, 5.0),
+        'weight_hint': 'Negative values (e.g., -2) penalize trades far from highs. Usually left at 0.',
     },
     'distance_from_entry': {
         'name': 'Distance from Entry',
-        'description': 'Percentage from entry price',
+        'description': 'Percentage from entry price (same as current P/L %)',
         'type': 'profitability',
+        'importance': 'MEDIUM',
+        'value_range': '-100% to +infinity',
         'recommended_weight': 0.0,
-        'weight_range': (-5.0, 5.0)
+        'weight_range': (-5.0, 5.0),
+        'weight_hint': 'Overlaps with current_pl_pct. Usually disabled. Use for additional entry reference.',
     },
     'max_favorable_excursion': {
         'name': 'Max Favorable Excursion',
-        'description': 'Best price since entry vs current',
+        'description': 'Drawdown from best price since entry - identifies trades that have given back gains',
         'type': 'risk',
+        'importance': 'LOW',
+        'value_range': '0% to 100%',
         'recommended_weight': -1.0,
-        'weight_range': (-5.0, 0.0)
+        'weight_range': (-5.0, 0.0),
+        'weight_hint': 'Negative values (e.g., -1 to -3) penalize trades that peaked and fell back.',
     },
     'entropy_7d': {
         'name': 'Entropy (7d)',
-        'description': 'Price action noise',
+        'description': 'Price action noise - coefficient of variation over 7 days',
         'type': 'technical',
+        'importance': 'LOW',
+        'value_range': '0% to 100%+',
         'recommended_weight': 0.0,
-        'weight_range': (-5.0, 5.0)
+        'weight_range': (-5.0, 5.0),
+        'weight_hint': 'Negative penalizes noisy/choppy price action. Usually left at 0.',
+    }
+}
+
+
+# Per-feature parameter definitions with ranges and hints for all FeatureWeight attributes
+FEATURE_PARAMETER_DEFINITIONS = {
+    'enabled': {
+        'type': 'bool',
+        'default': True,
+        'description': 'Whether this feature is included in scoring'
+    },
+    'weight': {
+        'type': 'float',
+        'default': 1.0,
+        'min': -10.0,
+        'max': 10.0,
+        'step': 0.5,
+        'description': 'Additive modifier to score (can be negative)',
+        'hint': 'Negative = penalizes (e.g., days_held), Positive = rewards (e.g., pl_momentum)'
+    },
+    'decay_point': {
+        'type': 'int',
+        'default': 14,
+        'min': 1,
+        'max': 60,
+        'step': 1,
+        'description': 'Days after which decay rate may change (for time-based features)',
+        'hint': 'For days_held: after this many days, penalty increases. 7-21 is typical range.'
+    },
+    'fast_decay_rate': {
+        'type': 'float',
+        'default': 5.0,
+        'min': 0.5,
+        'max': 20.0,
+        'step': 0.5,
+        'description': 'Points lost per day for stagnant/underperforming trades',
+        'hint': 'Higher values (5-10) aggressively cull underperformers. 1-3 is conservative.'
+    },
+    'slow_decay_rate': {
+        'type': 'float',
+        'default': 1.0,
+        'min': 0.1,
+        'max': 5.0,
+        'step': 0.1,
+        'description': 'Points lost per day for performing trades',
+        'hint': 'Lower values (0.5-1.5) let winners run longer. 2-3 still ages winners moderately.'
+    },
+    'stagnation_threshold': {
+        'type': 'float',
+        'default': 2.0,
+        'min': 0.0,
+        'max': 10.0,
+        'step': 0.5,
+        'description': 'P/L % below which trade is considered stagnant (uses fast decay)',
+        'hint': 'Trades below this P/L% decay faster. 0-2% is conservative, 3-5% is aggressive.'
+    },
+    'normalize_min': {
+        'type': 'float',
+        'default': None,
+        'min': -100.0,
+        'max': 100.0,
+        'step': 1.0,
+        'description': 'Minimum value for normalization (optional)',
+        'hint': 'Optional: Set min/max to normalize feature values to 0-1 range.'
+    },
+    'normalize_max': {
+        'type': 'float',
+        'default': None,
+        'min': -100.0,
+        'max': 100.0,
+        'step': 1.0,
+        'description': 'Maximum value for normalization (optional)',
+        'hint': 'Optional: Set min/max to normalize feature values to 0-1 range.'
+    }
+}
+
+
+# Combined core parameters for backtesting/optimization with ranges and hints
+VULNERABILITY_CORE_PARAM_DEFINITIONS = {
+    'immunity_days': {
+        'type': 'int',
+        'min': 1,
+        'max': 30,
+        'default': 7,
+        'step': 1,
+        'description': 'Days a new trade is protected from being swapped',
+        'hint': 'Protects new positions from immediate swaps. 3-7 for aggressive, 10-14 for conservative.'
+    },
+    'base_score': {
+        'type': 'float',
+        'min': 50.0,
+        'max': 200.0,
+        'default': 100.0,
+        'step': 10.0,
+        'description': 'Starting score for vulnerability calculation',
+        'hint': 'Usually kept at 100. Higher values delay vulnerability threshold crossings.'
+    },
+    'swap_threshold': {
+        'type': 'float',
+        'min': 10.0,
+        'max': 90.0,
+        'default': 50.0,
+        'step': 5.0,
+        'description': 'Score below which position can be swapped for new signal',
+        'hint': 'Lower (20-40) = harder to swap, Higher (60-80) = easier to swap.'
     }
 }
