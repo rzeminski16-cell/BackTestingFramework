@@ -333,10 +333,7 @@ Primary classification by **Underlying Asset Class**, with a secondary split by 
 - Capital Group Core Equity ETF (CGUS)
 - T. Rowe Price Capital Appreciation Equity ETF (TCAF)
 - Roundhill Magnificent Seven ETF (MAGS)
-- Capital Group Global Equity ETF (CGGE)
 - YieldMax COIN Option Income Strategy ETF (CONY)
-- Defiance Daily Target 2x Long MSTR ETF (MSTX)
-- YieldMax SMCI Option Income Strategy ETF (SMCY)
 - Tradr 2X Long NBIS Daily ETF (NEBX)
 
 ---
