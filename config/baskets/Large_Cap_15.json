@@ -1,0 +1,35 @@
+{
+  "name": "Large_Cap_15",
+  "securities": [
+    "AMZN",
+    "PYPL",
+    "CAT",
+    "LLY",
+    "SPGI",
+    "NVDA",
+    "NFLX",
+    "TMUS",
+    "MCK",
+    "XOM",
+    "JPM",
+    "NEE",
+    "HOOD",
+    "WDAY",
+    "GRMN"
+  ],
+  "description": "Mix of large cap stocks of only 15 to allow for initial opimisation.",
+  "created_date": "2025-12-20T10:07:11.304753",
+  "modified_date": "2025-12-20T10:07:11.304766",
+  "metadata": {},
+  "default_capital_contention": {
+    "mode": "default",
+    "vulnerability_config": {
+      "immunity_days": 7,
+      "min_profit_threshold": 0.02,
+      "decay_rate_fast": 5.0,
+      "decay_rate_slow": 1.0,
+      "swap_threshold": 50.0,
+      "base_score": 100.0
+    }
+  }
+}

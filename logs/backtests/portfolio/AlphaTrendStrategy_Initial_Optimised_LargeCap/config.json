@@ -1,0 +1,39 @@
+{
+  "backtest_name": "AlphaTrendStrategy_Initial_Optimised_LargeCap",
+  "basket_name": "Large_Cap_15",
+  "portfolio_config": {
+    "initial_capital": 10000.0,
+    "commission": {
+      "mode": "fixed",
+      "value": 3.0
+    },
+    "start_date": null,
+    "end_date": null,
+    "capital_contention": {
+      "mode": "default",
+      "vulnerability_config": {
+        "immunity_days": 7,
+        "min_profit_threshold": 0.02,
+        "decay_rate_fast": 5.0,
+        "decay_rate_slow": 1.0,
+        "swap_threshold": 50.0,
+        "base_score": 100.0
+      }
+    },
+    "base_currency": "GBP",
+    "slippage_percent": 0.1,
+    "basket_name": "Large_Cap_15"
+  },
+  "strategy_params": {
+    "volume_short_ma": 5,
+    "volume_long_ma": 21,
+    "volume_alignment_window": 11,
+    "risk_percent": 5.0,
+    "stop_loss_percent": 0.0,
+    "atr_stop_loss_multiple": 1.5,
+    "grace_period_bars": 24,
+    "momentum_gain_pct": 4.5,
+    "momentum_lookback": 7
+  },
+  "timestamp": "2025-12-20T15:33:06.292208"
+}
