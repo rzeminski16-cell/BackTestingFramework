@@ -394,10 +394,13 @@ class EnhancedVisualizations:
         # Calculate rolling metrics
         risk_free_daily = (1 + 0.035) ** (1/252) - 1  # 3.5% annual
 
-        # Rolling Sharpe
+        # Rolling Sharpe - handle division by zero
         rolling_mean = df['returns'].rolling(window).mean()
         rolling_std = df['returns'].rolling(window).std()
-        df['rolling_sharpe'] = ((rolling_mean - risk_free_daily) / rolling_std) * np.sqrt(252)
+        with np.errstate(divide='ignore', invalid='ignore'):
+            df['rolling_sharpe'] = ((rolling_mean - risk_free_daily) / rolling_std) * np.sqrt(252)
+        # Replace inf, -inf with 0 to avoid anomalies from division by zero
+        df['rolling_sharpe'] = df['rolling_sharpe'].replace([np.inf, -np.inf], 0.0)
 
         # Rolling Sortino
         def rolling_sortino(returns, window):
@@ -411,8 +414,12 @@ class EnhancedVisualizations:
                     downside = window_returns[window_returns < 0]
                     if len(downside) > 0 and downside.std() > 0:
                         sortino = (excess.mean() / downside.std()) * np.sqrt(252)
+                        # Handle potential inf/-inf from division issues
+                        if np.isinf(sortino):
+                            sortino = 0.0
                     else:
-                        sortino = np.nan
+                        # No downside volatility or all positive returns
+                        sortino = 0.0 if excess.mean() <= 0 else 99.99
                     result.append(sortino)
             return result
 
