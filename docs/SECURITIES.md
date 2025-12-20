@@ -23,7 +23,7 @@ By **Sector** and **Market Capitalisation** within each sector:
 
 ### Consumer Discretionary  
 *(Consumer Services + Consumer Durables + Retail Trade)*
-7th
+
 - **Large Cap:**  
   - Amazon (AMZN)
   - Shopify (SHOP)
@@ -36,7 +36,7 @@ By **Sector** and **Market Capitalisation** within each sector:
   - Medpace Holdings (MEDP)
   - Chewy (CHWY)
 - **Mid Cap:**  
-  - Kanzhun Ltd (BZ)
+  - Aramark (ARMK)
   - VinFast Auto (VFS)
   - Federal Signal (FSS)
   - Macys INC (M)
