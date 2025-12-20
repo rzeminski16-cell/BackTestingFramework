@@ -142,7 +142,7 @@ def process_csv_files(input_folder: str, output_folder: str, column_rename: Dict
     print("="*80)
 
     summary_df = pd.DataFrame(summary)
-    summary_df = summary_df.sort_values('Ticker')
+    summary_df = summary_df.sort_values('Records')
 
     print(summary_df.to_string(index=False))
     print("\n")
