@@ -42,7 +42,7 @@ By **Sector** and **Market Capitalisation** within each sector:
   - Macys INC (M)
   - Thor Industries (THO)
 - **Small Cap:**  
-  - Guardian Pharmacy Services (GRDN)
+  - United Parks & Resorts (PRKS)
   - Weis Markets (WMK)
   - Leggett & Platt (LEG)
   - Winnebago Industries (WGO)
@@ -119,8 +119,8 @@ By **Sector** and **Market Capitalisation** within each sector:
   - Otis Worldwide (OTIS)
   - Omnicom (OMC)
   - Corpay (CPAY)
-  - Klarna (KLAR)
-  - Venture Global (VG)
+  - Kinder Morgan (KMI)
+  - Energy Transfer (ET)
 - **Mid Cap:**  
   - Kanzhun (BZ)
   - Tetra Tech (TTEK)
@@ -153,7 +153,7 @@ By **Sector** and **Market Capitalisation** within each sector:
   - Amkor Tech (AMKR)
   - D-Wave Quantum (QBTS)
   - Moog Inc (MOG.A)
-  - Beta Tech (BETA)
+  - Nova (NVMI)
   - Cognex (CGNX)
 - **Small Cap:**  
   - Photronics (PLAB)
@@ -182,10 +182,10 @@ By **Sector** and **Market Capitalisation** within each sector:
   - Paylocity Holdings (PCTY)
   - Sportradar (SRAD)
   - Planet Labs (PL)
-  - Life 360 (LIF)
+  - Morningstar (MORN)
 - **Small Cap:**  
   - C3.ai (AI)
-  - Exzeo Group (XZO)
+  - Yelp (YELP)
   - American Bitcoin (ABTC)
   - Tuya Inc (TUYA)
   - PDF Solutions (PDFS)
