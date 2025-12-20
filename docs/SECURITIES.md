@@ -42,7 +42,7 @@ By **Sector** and **Market Capitalisation** within each sector:
   - Macys INC (M)
   - Thor Industries (THO)
 - **Small Cap:**  
-  - United Parks & Resorts (PRKS)
+  - Blue Bird (BLBD)
   - Weis Markets (WMK)
   - Leggett & Platt (LEG)
   - Winnebago Industries (WGO)
