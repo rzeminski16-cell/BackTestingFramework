@@ -603,7 +603,12 @@ class EnhancedPortfolioReportGenerator:
         rolling_mean = df['returns'].rolling(window).mean()
         rolling_std = df['returns'].rolling(window).std()
 
-        df['rolling_sharpe'] = ((rolling_mean - daily_rf) / rolling_std) * np.sqrt(252)
+        # Handle division by zero in rolling Sharpe calculation
+        with np.errstate(divide='ignore', invalid='ignore'):
+            df['rolling_sharpe'] = ((rolling_mean - daily_rf) / rolling_std) * np.sqrt(252)
+        # Replace inf, -inf with 0 to avoid anomalies from division by zero
+        df['rolling_sharpe'] = df['rolling_sharpe'].replace([np.inf, -np.inf], 0.0)
+
         df['rolling_volatility'] = rolling_std * np.sqrt(252) * 100
 
         return df[['returns', 'rolling_sharpe', 'rolling_volatility']].dropna()

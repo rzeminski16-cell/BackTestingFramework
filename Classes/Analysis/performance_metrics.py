@@ -43,7 +43,12 @@ class PerformanceMetrics:
         }
 
         if len(trades) == 0:
-            # No trades - add default values
+            # No trades - add default trade-specific values
+            # BUT still calculate Sharpe/Sortino from equity curve
+            sharpe = PerformanceMetrics.calculate_sharpe_ratio(equity_curve)
+            sortino = PerformanceMetrics.calculate_sortino_ratio(equity_curve)
+            max_dd, max_dd_pct = PerformanceMetrics.calculate_max_drawdown(equity_curve)
+
             metrics.update({
                 'win_rate': 0.0,
                 'num_wins': 0,
@@ -54,9 +59,10 @@ class PerformanceMetrics:
                 'largest_loss': 0.0,
                 'profit_factor': 0.0,
                 'avg_trade_duration': 0.0,
-                'sharpe_ratio': 0.0,
-                'max_drawdown': 0.0,
-                'max_drawdown_pct': 0.0
+                'sharpe_ratio': sharpe,
+                'sortino_ratio': sortino,
+                'max_drawdown': max_dd,
+                'max_drawdown_pct': max_dd_pct
             })
             return metrics
 
@@ -367,10 +373,15 @@ class PerformanceMetrics:
 
         daily_rf = (1 + risk_free_rate) ** (1/252) - 1
 
-        # Rolling Sharpe
+        # Rolling Sharpe - handle division by zero
         rolling_mean = df['returns'].rolling(window).mean()
         rolling_std = df['returns'].rolling(window).std()
-        rolling_sharpe = ((rolling_mean - daily_rf) / rolling_std) * np.sqrt(252)
+
+        # Avoid division by zero: set to 0 where std is 0 or NaN
+        with np.errstate(divide='ignore', invalid='ignore'):
+            rolling_sharpe = ((rolling_mean - daily_rf) / rolling_std) * np.sqrt(252)
+        # Replace inf, -inf, and NaN with 0
+        rolling_sharpe = rolling_sharpe.replace([np.inf, -np.inf], 0.0).fillna(0.0)
 
         # Detect anomalies in rolling Sharpe
         sharpe_series = rolling_sharpe.dropna()
