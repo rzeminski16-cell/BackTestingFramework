@@ -5,7 +5,10 @@
 	- Select only a handful of securities to prevent major computation time but make sure the selection is representative of the market and only focus on large and mega cap securities.
 
 20/12/2025
-- [ ] Run single security back tests for the large-mega cap securities using the optimised parameters.
+- [x] Run single security back tests for the large-mega cap securities using the optimised parameters.
 - [ ] Utilise the above trade logs to find the ideal vulnerability score settings and perform a portfolio back test using these settings.
+21/12/2025
+- [ ] Examine and verify a selection of trades from the portfolio back test.
+
 
 ***The main idea for now is to find a base performance of this strategy find out what it is lacking, where it performs best and where it performs at it's worst.***
