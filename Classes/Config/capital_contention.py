@@ -192,6 +192,7 @@ class FeatureWeightConfig:
     """
     enabled: bool = True
     weight: float = 1.0
+    use_advanced_params: bool = False
     decay_point: int = 14
     fast_decay_rate: float = 5.0
     slow_decay_rate: float = 1.0
@@ -203,6 +204,7 @@ class FeatureWeightConfig:
         return {
             'enabled': self.enabled,
             'weight': self.weight,
+            'use_advanced_params': self.use_advanced_params,
             'decay_point': self.decay_point,
             'fast_decay_rate': self.fast_decay_rate,
             'slow_decay_rate': self.slow_decay_rate,
@@ -349,6 +351,7 @@ class EnhancedVulnerabilityConfig:
             feature_weights[name] = FeatureWeight(
                 enabled=config.enabled,
                 weight=config.weight,
+                use_advanced_params=config.use_advanced_params,
                 decay_point=config.decay_point,
                 fast_decay_rate=config.fast_decay_rate,
                 slow_decay_rate=config.slow_decay_rate,
@@ -544,6 +547,12 @@ FEATURE_PARAMETER_DEFINITIONS = {
         'step': 0.5,
         'description': 'Additive modifier to score (can be negative)',
         'hint': 'Negative = penalizes (e.g., days_held), Positive = rewards (e.g., pl_momentum)'
+    },
+    'use_advanced_params': {
+        'type': 'bool',
+        'default': False,
+        'description': 'Use decay/stagnation logic instead of constant weight',
+        'hint': 'If False: simple constant weight. If True: weight changes based on decay/stagnation rules.'
     },
     'decay_point': {
         'type': 'int',

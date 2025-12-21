@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Trading/AlphaTrend/Research Log.md",
+                "file": "Trading/AlphaTrend/General Notes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Research Log"
+              "title": "General Notes"
             }
           }
         ]
@@ -185,8 +185,9 @@
   },
   "active": "16ddbea9387a36c5",
   "lastOpenFiles": [
-    "Trading/Insider Trading/AlphaVantage.md",
+    "Pasted image 20251221133505.png",
     "Trading/AlphaTrend/Research Log.md",
+    "Trading/Insider Trading/AlphaVantage.md",
     "Trading/AlphaTrend/General Notes.md",
     "Trading/Insider Trading",
     "Trading/AlphaTrend",
