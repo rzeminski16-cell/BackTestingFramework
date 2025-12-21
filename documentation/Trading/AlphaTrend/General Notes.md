@@ -43,7 +43,10 @@ Report: [Trade Log]("C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\repo
 With the default settings without decay/ stagnation logic, the first thing I notice is that the cumulative P/L is consistently lower with vulnerability score and the extra large wins are closed too early resulting in a huge P/L gap.![[Pasted image 20251221133505.png]]
 
 This suggests 27% of trades were hurt and as a result a cumulative loss of £880k, where £450k of those losses where the result of only the top 5 (3%) biggest losses. 
-In conclusion the most important problem to tackle first is to avoid winners being not able to run their full way.
+Taking a deeper look into the rejected signals, even though the majority of the signal rejections (59.1%) were good the cumulative opportunity cost gain was minimal compared to the last few rejected signals. 
+In the next iteration I will remove NVDA as this had an abnormally extreme growth periods which distorts the generalised view of the market. 
+***==It will be important later to understand how these extreme events impact the portfolio overall, however for now it is important to assume a more generalised market.==***
 
 Iteration 2
 Report: 
+With this iteration I opted for a more conservative threshold and less penalisation on the duration.
