@@ -370,6 +370,46 @@ class EnhancedVulnerabilityConfig:
             tiebreaker_order=self.tiebreaker_order
         )
 
+    def to_simple_config(self) -> 'VulnerabilityScoreConfig':
+        """
+        Convert to simple VulnerabilityScoreConfig for backward compatibility.
+
+        This method extracts reasonable defaults from the feature-based config
+        to work with the legacy VulnerabilityScoreCalculator.
+
+        Returns:
+            VulnerabilityScoreConfig object
+        """
+        # Extract decay rates from features if they have advanced params enabled
+        # Otherwise use sensible defaults
+        decay_rate_fast = 5.0
+        decay_rate_slow = 1.0
+        min_profit_threshold = 0.02  # 2%
+
+        # Try to extract from current_pl_pct feature if it has advanced params
+        if 'current_pl_pct' in self.features:
+            pl_feature = self.features['current_pl_pct']
+            if pl_feature.use_advanced_params:
+                decay_rate_fast = pl_feature.fast_decay_rate
+                decay_rate_slow = pl_feature.slow_decay_rate
+                min_profit_threshold = pl_feature.stagnation_threshold / 100.0  # Convert % to decimal
+
+        # Try to extract from days_held feature if available
+        if 'days_held' in self.features and self.features['days_held'].use_advanced_params:
+            days_feature = self.features['days_held']
+            # Use the higher of the two as fast decay
+            decay_rate_fast = max(decay_rate_fast, days_feature.fast_decay_rate)
+            decay_rate_slow = max(decay_rate_slow, days_feature.slow_decay_rate)
+
+        return VulnerabilityScoreConfig(
+            immunity_days=self.immunity_days,
+            min_profit_threshold=min_profit_threshold,
+            decay_rate_fast=decay_rate_fast,
+            decay_rate_slow=decay_rate_slow,
+            swap_threshold=self.swap_threshold,
+            base_score=self.base_score
+        )
+
     @classmethod
     def conservative_preset(cls) -> 'EnhancedVulnerabilityConfig':
         """Create conservative preset - protects positions longer."""
