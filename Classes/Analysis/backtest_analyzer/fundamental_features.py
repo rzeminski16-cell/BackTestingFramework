@@ -2,8 +2,14 @@
 Fundamental features generator for backtest analysis.
 
 This module generates fundamental feature CSVs for each security containing:
-- Year and month for the full trading range
+- Year and quarter for the full trading range
 - period_GB_flag calculated per year based on Calmar ratio and max drawdown
+
+Quarter Definitions (Calendar Quarters):
+- Q1: January 1 - March 31 (months 1, 2, 3)
+- Q2: April 1 - June 30 (months 4, 5, 6)
+- Q3: July 1 - September 30 (months 7, 8, 9)
+- Q4: October 1 - December 31 (months 10, 11, 12)
 
 The user can then manually append fundamental data (EPS, growth, etc.)
 for analysis.
@@ -19,16 +25,72 @@ from dateutil.relativedelta import relativedelta
 from .config import AnalysisConfig
 
 
+# Calendar quarter definitions
+QUARTER_DEFINITIONS = {
+    1: {'name': 'Q1', 'months': [1, 2, 3], 'start_month': 1, 'end_month': 3},
+    2: {'name': 'Q2', 'months': [4, 5, 6], 'start_month': 4, 'end_month': 6},
+    3: {'name': 'Q3', 'months': [7, 8, 9], 'start_month': 7, 'end_month': 9},
+    4: {'name': 'Q4', 'months': [10, 11, 12], 'start_month': 10, 'end_month': 12},
+}
+
+
+def get_quarter_from_month(month: int) -> int:
+    """
+    Get the calendar quarter number for a given month.
+
+    Args:
+        month: Month number (1-12)
+
+    Returns:
+        Quarter number (1-4)
+
+    Example:
+        >>> get_quarter_from_month(1)  # January
+        1
+        >>> get_quarter_from_month(5)  # May
+        2
+        >>> get_quarter_from_month(11) # November
+        4
+    """
+    if month in [1, 2, 3]:
+        return 1
+    elif month in [4, 5, 6]:
+        return 2
+    elif month in [7, 8, 9]:
+        return 3
+    else:  # 10, 11, 12
+        return 4
+
+
+def get_quarter_name(quarter: int) -> str:
+    """
+    Get the quarter name (Q1, Q2, Q3, Q4).
+
+    Args:
+        quarter: Quarter number (1-4)
+
+    Returns:
+        Quarter name string
+    """
+    return QUARTER_DEFINITIONS[quarter]['name']
+
+
 class FundamentalFeaturesGenerator:
     """
     Generates fundamental feature CSVs for backtested securities.
 
     For each security, creates a CSV with:
-    - year, month columns for the full trading range
+    - year, quarter columns for the full trading range
     - period_GB_flag calculated per year:
         - "good": Calmar > 0.5 AND max_dd <= 25%
         - "indeterminate": Calmar > 0.5 AND max_dd > 25%
         - "bad": otherwise
+
+    Quarter Definitions (Calendar Quarters):
+        Q1: January - March
+        Q2: April - June
+        Q3: July - September
+        Q4: October - December
     """
 
     def __init__(self, config: AnalysisConfig):
@@ -156,31 +218,48 @@ class FundamentalFeaturesGenerator:
         else:
             return "bad"
 
-    def generate_monthly_range(self, start_date: datetime,
-                                end_date: datetime) -> List[Tuple[int, int]]:
+    def generate_quarterly_range(self, start_date: datetime,
+                                  end_date: datetime) -> List[Tuple[int, int]]:
         """
-        Generate list of (year, month) tuples for the date range.
+        Generate list of (year, quarter) tuples for the date range.
+
+        Uses calendar quarters:
+        - Q1: Jan-Mar
+        - Q2: Apr-Jun
+        - Q3: Jul-Sep
+        - Q4: Oct-Dec
 
         Args:
             start_date: Start date
-            end_date: End date (extended to cover the full month)
+            end_date: End date (extended to cover the full quarter)
 
         Returns:
-            List of (year, month) tuples
+            List of (year, quarter) tuples where quarter is 1-4
         """
-        months = []
+        quarters = []
 
-        # Start from the first day of the start month
-        current = datetime(start_date.year, start_date.month, 1)
+        # Get starting quarter
+        start_year = start_date.year
+        start_quarter = get_quarter_from_month(start_date.month)
 
-        # End at the first day of the month after end_date
-        end = datetime(end_date.year, end_date.month, 1) + relativedelta(months=1)
+        # Get ending quarter (include the quarter containing end_date)
+        end_year = end_date.year
+        end_quarter = get_quarter_from_month(end_date.month)
 
-        while current < end:
-            months.append((current.year, current.month))
-            current += relativedelta(months=1)
+        current_year = start_year
+        current_quarter = start_quarter
 
-        return months
+        while (current_year < end_year) or \
+              (current_year == end_year and current_quarter <= end_quarter):
+            quarters.append((current_year, current_quarter))
+
+            # Move to next quarter
+            current_quarter += 1
+            if current_quarter > 4:
+                current_quarter = 1
+                current_year += 1
+
+        return quarters
 
     def generate_fundamental_features(self, trades: pd.DataFrame,
                                        symbol: str,
@@ -194,7 +273,7 @@ class FundamentalFeaturesGenerator:
             initial_capital: Initial capital for metric calculations
 
         Returns:
-            DataFrame with year, month, and period_GB_flag
+            DataFrame with year, quarter, quarter_name, and period_GB_flag
         """
         if trades.empty:
             return pd.DataFrame()
@@ -203,8 +282,8 @@ class FundamentalFeaturesGenerator:
         start_date = trades['entry_date'].min()
         end_date = trades['exit_date'].max()
 
-        # Generate monthly range
-        months = self.generate_monthly_range(start_date, end_date)
+        # Generate quarterly range
+        quarters = self.generate_quarterly_range(start_date, end_date)
 
         # Calculate yearly metrics
         yearly_metrics = self.calculate_yearly_metrics(trades, initial_capital)
@@ -224,14 +303,15 @@ class FundamentalFeaturesGenerator:
 
         # Build the features DataFrame
         features = []
-        for year, month in months:
+        for year, quarter in quarters:
             row = {
                 'symbol': symbol,
                 'year': year,
-                'month': month,
+                'quarter': quarter,
+                'quarter_name': get_quarter_name(quarter),
             }
 
-            # Add yearly metrics (same for all months in the year)
+            # Add yearly metrics (same for all quarters in the year)
             if year in yearly_flags:
                 row.update(yearly_flags[year])
             else:
@@ -336,7 +416,7 @@ class FundamentalFeaturesGenerator:
             # Count periods by flag
             flag_counts = features['period_GB_flag'].value_counts().to_dict()
 
-            # Get yearly metrics
+            # Get yearly metrics (deduplicate by year since quarters share year data)
             yearly_data = features.drop_duplicates(subset=['year'])
 
             for _, row in yearly_data.iterrows():

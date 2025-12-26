@@ -9,7 +9,7 @@ Overview
 --------
 The Backtest Analyzer processes trade logs to generate:
 
-1. **Fundamental Features CSVs** - Per-security files with monthly rows and
+1. **Fundamental Features CSVs** - Per-security files with quarterly rows and
    yearly performance classifications (period_GB_flag)
 
 2. **Technical Features Master CSV** - All filtered trades with technical

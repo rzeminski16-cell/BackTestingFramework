@@ -6,7 +6,7 @@ This guide covers the Backtest Analysis Framework - a tool for drilling down int
 
 The Backtest Analysis Framework processes trade logs to generate:
 
-1. **Fundamental Features CSVs** - Per-security files with monthly rows and yearly performance classifications
+1. **Fundamental Features CSVs** - Per-security files with quarterly rows and yearly performance classifications
 2. **Technical Features Master CSV** - All filtered trades with technical indicators and classification flags
 3. **Summary Reports** - Statistics and coverage reports
 
@@ -91,7 +91,16 @@ analysis_output/{strategy_name}/
 
 ## Fundamental Features CSV
 
-Each security gets a CSV with monthly rows covering the full trading range.
+Each security gets a CSV with quarterly rows covering the full trading range.
+
+### Quarter Definitions (Calendar Quarters)
+
+| Quarter | Months | Date Range |
+|---------|--------|------------|
+| Q1 | January, February, March | Jan 1 - Mar 31 |
+| Q2 | April, May, June | Apr 1 - Jun 30 |
+| Q3 | July, August, September | Jul 1 - Sep 30 |
+| Q4 | October, November, December | Oct 1 - Dec 31 |
 
 ### Columns
 
@@ -99,7 +108,8 @@ Each security gets a CSV with monthly rows covering the full trading range.
 |--------|-------------|
 | `symbol` | Security symbol |
 | `year` | Year |
-| `month` | Month (1-12) |
+| `quarter` | Quarter number (1-4) |
+| `quarter_name` | Quarter name (Q1, Q2, Q3, Q4) |
 | `period_GB_flag` | Yearly classification: "good", "indeterminate", "bad", or "no_trades" |
 | `calmar_ratio` | Calmar ratio for the year |
 | `max_drawdown_pct` | Maximum drawdown percentage for the year |
@@ -108,7 +118,7 @@ Each security gets a CSV with monthly rows covering the full trading range.
 
 ### period_GB_flag Classification
 
-The `period_GB_flag` is calculated **per year** (not per month) and assigned to all months in that year:
+The `period_GB_flag` is calculated **per year** (not per quarter) and assigned to all quarters in that year:
 
 | Flag | Criteria |
 |------|----------|
@@ -120,16 +130,18 @@ The `period_GB_flag` is calculated **per year** (not per month) and assigned to 
 ### Example
 
 ```csv
-symbol,year,month,period_GB_flag,calmar_ratio,max_drawdown_pct,num_trades,return_pct
-AAPL,2020,1,good,1.74,2.09,3,3.65
-AAPL,2020,2,good,1.74,2.09,3,3.65
+symbol,year,quarter,quarter_name,period_GB_flag,calmar_ratio,max_drawdown_pct,num_trades,return_pct
+AAPL,2020,1,Q1,good,1.74,2.09,3,3.65
+AAPL,2020,2,Q2,good,1.74,2.09,3,3.65
+AAPL,2020,3,Q3,good,1.74,2.09,3,3.65
+AAPL,2020,4,Q4,good,1.74,2.09,3,3.65
+AAPL,2021,1,Q1,bad,-1.27,5.41,4,-6.88
 ...
-AAPL,2021,1,bad,-1.27,5.41,4,-6.88
 ```
 
 ### Usage
 
-You can manually append fundamental data (EPS, revenue growth, etc.) to these files for further analysis.
+You can manually append fundamental data (EPS, revenue growth, etc.) to these files for further analysis. The quarterly breakdown aligns with standard financial reporting periods.
 
 ## Technical Features Master CSV
 
