@@ -11,6 +11,7 @@ from ..Config.capital_contention import (
     EnhancedVulnerabilityConfig, FeatureWeightConfig,
     ENHANCED_FEATURE_DEFINITIONS, FEATURE_PARAMETER_DEFINITIONS, VULNERABILITY_CORE_PARAM_DEFINITIONS
 )
+from ..VulnerabilityScorer.scoring import PresetManager
 
 
 class BasketManagerDialog:
@@ -345,6 +346,9 @@ class VulnerabilityScoreConfigDialog:
             self.current_config = current_config if isinstance(current_config, VulnerabilityScoreConfig) else VulnerabilityScoreConfig()
             self.enhanced_config = None
 
+        # Initialize preset manager for loading custom presets
+        self.preset_manager = PresetManager()
+
         self.dialog = tk.Toplevel(parent)
         self.dialog.title("Vulnerability Score Configuration")
         self.dialog.geometry("750x650" if enhanced_mode else "500x450")
@@ -650,10 +654,27 @@ class VulnerabilityScoreConfigDialog:
 
     def _create_presets_tab(self, parent):
         """Create presets tab."""
-        ttk.Label(parent, text="Load a preset configuration:",
+        # Create scrollable frame for presets
+        canvas = tk.Canvas(parent)
+        scrollbar = ttk.Scrollbar(parent, orient="vertical", command=canvas.yview)
+        scrollable_frame = ttk.Frame(canvas)
+
+        scrollable_frame.bind(
+            "<Configure>",
+            lambda e: canvas.configure(scrollregion=canvas.bbox("all"))
+        )
+
+        canvas.create_window((0, 0), window=scrollable_frame, anchor="nw")
+        canvas.configure(yscrollcommand=scrollbar.set)
+
+        canvas.pack(side="left", fill="both", expand=True)
+        scrollbar.pack(side="right", fill="y")
+
+        # Built-in presets section
+        ttk.Label(scrollable_frame, text="Built-in Presets:",
                  font=('TkDefaultFont', 10, 'bold')).pack(anchor='w', pady=(0, 10))
 
-        presets = [
+        builtin_presets = [
             ("Conservative", "Protects positions longer, unlikely to swap",
              EnhancedVulnerabilityConfig.conservative_preset),
             ("Aggressive", "Swaps quickly if no progress",
@@ -664,8 +685,8 @@ class VulnerabilityScoreConfigDialog:
              lambda: EnhancedVulnerabilityConfig()),
         ]
 
-        for name, desc, preset_func in presets:
-            frame = ttk.Frame(parent)
+        for name, desc, preset_func in builtin_presets:
+            frame = ttk.Frame(scrollable_frame)
             frame.pack(fill=tk.X, pady=5)
 
             ttk.Button(frame, text=f"Load {name}",
@@ -673,9 +694,31 @@ class VulnerabilityScoreConfigDialog:
             ttk.Label(frame, text=f"  {desc}",
                      font=('TkDefaultFont', 9), foreground='gray').pack(side=tk.LEFT, padx=10)
 
-        # Preset description box
-        desc_frame = ttk.LabelFrame(parent, text="Preset Details", padding="10")
-        desc_frame.pack(fill=tk.BOTH, expand=True, pady=15)
+        # Custom presets section
+        ttk.Separator(scrollable_frame, orient='horizontal').pack(fill=tk.X, pady=15)
+        ttk.Label(scrollable_frame, text="Custom Presets (from vulnerability_presets folder):",
+                 font=('TkDefaultFont', 10, 'bold')).pack(anchor='w', pady=(0, 10))
+
+        # Load custom presets from PresetManager
+        custom_preset_names = self.preset_manager.get_custom_presets().keys()
+
+        if custom_preset_names:
+            for preset_name in custom_preset_names:
+                frame = ttk.Frame(scrollable_frame)
+                frame.pack(fill=tk.X, pady=5)
+
+                ttk.Button(frame, text=f"Load {preset_name}",
+                          command=lambda name=preset_name: self._load_custom_preset(name)).pack(side=tk.LEFT)
+                ttk.Label(frame, text=f"  Saved preset",
+                         font=('TkDefaultFont', 9), foreground='gray').pack(side=tk.LEFT, padx=10)
+        else:
+            ttk.Label(scrollable_frame, text="No custom presets found. Use vulnerability_gui to create and save presets.",
+                     font=('TkDefaultFont', 9), foreground='#999', wraplength=400).pack(anchor='w', padx=20)
+
+        # Preset description section (in scrollable area)
+        ttk.Separator(scrollable_frame, orient='horizontal').pack(fill=tk.X, pady=15)
+        desc_frame = ttk.LabelFrame(scrollable_frame, text="Preset Details", padding="10")
+        desc_frame.pack(fill=tk.X, pady=(0, 10))
 
         preset_info = """
 Conservative:
@@ -754,6 +797,44 @@ Momentum Focused:
                 self.feature_vars[feature_name]['slow_decay_rate'].set(config.slow_decay_rate)
 
         messagebox.showinfo("Preset Loaded", f"Loaded preset: {preset.name}")
+
+    def _load_custom_preset(self, preset_name: str):
+        """Load a custom preset from the vulnerability_presets directory."""
+        # Load the preset using PresetManager
+        vuln_score_params = self.preset_manager.load_preset(preset_name)
+
+        if vuln_score_params is None:
+            messagebox.showerror("Error", f"Could not load preset: {preset_name}")
+            return
+
+        # Convert VulnerabilityScoreParams to EnhancedVulnerabilityConfig
+        # Build feature configs from the params
+        features = {}
+        for feature_name, feature_weight in vuln_score_params.features.items():
+            features[feature_name] = FeatureWeightConfig(
+                enabled=feature_weight.enabled,
+                weight=feature_weight.weight,
+                use_advanced_params=feature_weight.use_advanced_params,
+                decay_point=feature_weight.decay_point,
+                fast_decay_rate=feature_weight.fast_decay_rate,
+                slow_decay_rate=feature_weight.slow_decay_rate,
+                stagnation_threshold=feature_weight.stagnation_threshold,
+                normalize_min=feature_weight.normalize_min,
+                normalize_max=feature_weight.normalize_max
+            )
+
+        enhanced_config = EnhancedVulnerabilityConfig(
+            name=vuln_score_params.name,
+            description=vuln_score_params.description,
+            immunity_days=vuln_score_params.immunity_days,
+            base_score=vuln_score_params.base_score,
+            swap_threshold=vuln_score_params.swap_threshold,
+            features=features,
+            tiebreaker_order=vuln_score_params.tiebreaker_order
+        )
+
+        # Load it using the standard method
+        self._load_preset(enhanced_config)
 
     def _reset_defaults(self):
         """Reset to default values (simple mode)."""

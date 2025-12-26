@@ -1,0 +1,143 @@
+{
+  "backtest_name": "AlphaTrendStrategy_Balanced_Large_Cap",
+  "basket_name": "Balanced Large Cap",
+  "portfolio_config": {
+    "initial_capital": 10000.0,
+    "commission": {
+      "mode": "fixed",
+      "value": 3.0
+    },
+    "start_date": null,
+    "end_date": null,
+    "capital_contention": {
+      "mode": "vulnerability_score",
+      "vulnerability_config": {
+        "name": "Custom",
+        "description": "User-defined configuration",
+        "immunity_days": 12,
+        "base_score": 100.0,
+        "swap_threshold": 51.806334214761854,
+        "features": {
+          "days_held": {
+            "enabled": true,
+            "weight": 3.0,
+            "use_advanced_params": false,
+            "decay_point": 14,
+            "fast_decay_rate": 5.0,
+            "slow_decay_rate": 1.0,
+            "stagnation_threshold": 2.0,
+            "normalize_min": null,
+            "normalize_max": null
+          },
+          "current_pl_pct": {
+            "enabled": false,
+            "weight": 0.0,
+            "use_advanced_params": false,
+            "decay_point": 14,
+            "fast_decay_rate": 5.0,
+            "slow_decay_rate": 1.0,
+            "stagnation_threshold": 2.0,
+            "normalize_min": null,
+            "normalize_max": null
+          },
+          "pl_momentum_7d": {
+            "enabled": false,
+            "weight": 0.0,
+            "use_advanced_params": false,
+            "decay_point": 14,
+            "fast_decay_rate": 5.0,
+            "slow_decay_rate": 1.0,
+            "stagnation_threshold": 2.0,
+            "normalize_min": null,
+            "normalize_max": null
+          },
+          "pl_momentum_14d": {
+            "enabled": true,
+            "weight": -4.5,
+            "use_advanced_params": false,
+            "decay_point": 19,
+            "fast_decay_rate": 6.6478256123565975,
+            "slow_decay_rate": 1.9647806944244237,
+            "stagnation_threshold": 2.535995515742724,
+            "normalize_min": null,
+            "normalize_max": null
+          },
+          "volatility_7d": {
+            "enabled": false,
+            "weight": 0.0,
+            "use_advanced_params": false,
+            "decay_point": 14,
+            "fast_decay_rate": 5.0,
+            "slow_decay_rate": 1.0,
+            "stagnation_threshold": 2.0,
+            "normalize_min": null,
+            "normalize_max": null
+          },
+          "distance_from_high": {
+            "enabled": false,
+            "weight": 0.0,
+            "use_advanced_params": false,
+            "decay_point": 14,
+            "fast_decay_rate": 5.0,
+            "slow_decay_rate": 1.0,
+            "stagnation_threshold": 2.0,
+            "normalize_min": null,
+            "normalize_max": null
+          },
+          "distance_from_entry": {
+            "enabled": true,
+            "weight": 0.5,
+            "use_advanced_params": false,
+            "decay_point": 14,
+            "fast_decay_rate": 5.0,
+            "slow_decay_rate": 1.0,
+            "stagnation_threshold": 2.0,
+            "normalize_min": null,
+            "normalize_max": null
+          },
+          "max_favorable_excursion": {
+            "enabled": false,
+            "weight": 0.0,
+            "use_advanced_params": false,
+            "decay_point": 14,
+            "fast_decay_rate": 5.0,
+            "slow_decay_rate": 1.0,
+            "stagnation_threshold": 2.0,
+            "normalize_min": null,
+            "normalize_max": null
+          },
+          "entropy_7d": {
+            "enabled": true,
+            "weight": -4.0,
+            "use_advanced_params": false,
+            "decay_point": 9,
+            "fast_decay_rate": 2.0605929739263233,
+            "slow_decay_rate": 1.1562750019590062,
+            "stagnation_threshold": 3.189183668428805,
+            "normalize_min": null,
+            "normalize_max": null
+          }
+        },
+        "tiebreaker_order": [
+          "current_pl_pct",
+          "days_held"
+        ]
+      }
+    },
+    "base_currency": "GBP",
+    "slippage_percent": 0.1,
+    "basket_name": "Balanced Large Cap"
+  },
+  "strategy_params": {
+    "volume_short_ma": 5,
+    "volume_long_ma": 21,
+    "volume_alignment_window": 11,
+    "risk_percent": 5.0,
+    "stop_loss_percent": 0.0,
+    "atr_stop_loss_multiple": 1.5,
+    "grace_period_bars": 24,
+    "momentum_gain_pct": 4.5,
+    "momentum_lookback": 7
+  },
+  "timestamp": "2025-12-22T18:00:40.120022"
+}
