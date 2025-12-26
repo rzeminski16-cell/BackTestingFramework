@@ -52,13 +52,13 @@ What I will be gaining from this project is a better understanding of when a sec
 
 ## **A. Earnings & Growth Momentum** 
 
-|Metric|Definition|How to Calculate/Find|Sector Comparison|Interpretation|
-|---|---|---|---|---|
-|**EPS (TTM)**|Earnings Per Share, trailing twelve months|Most recent 4 quarterly earnings / diluted shares|Compare to sector median EPS (Damodaran)|Higher EPS relative to sector = stronger quality; negative = distress|
-|**EPS Growth Rate (YoY %)**|% change in EPS from prior year|(EPS_current - EPS_prior_year) / \|EPS_prior_year\||Sector median EPS growth|Positive acceleration = momentum; negative = deceleration|
-|**EPS Surprise/Revision Trend**|Direction of recent earnings surprises|Track last 2-4 quarters: Beat vs. Miss|Peer comparison|Consistent beats = positive surprise momentum; misses = reversion risk|
-|**Revenue Growth (TTM YoY %)**|% change in revenue|(Revenue_current - Revenue_prior_year) / Revenue_prior_year|Sector median revenue growth|Quality of earnings driver; fast growth + high margins = strength|
-|**Operating Margin (TTM %)**|Operating Income / Revenue|Operating Income (TTM) / Revenue (TTM)|Sector median operating margin|Higher = better execution; trending up = positive signal|
+| Metric                          | Definition                                 | How to Calculate/Find                                       | Sector Comparison                        | Interpretation                                                         |
+| ------------------------------- | ------------------------------------------ | ----------------------------------------------------------- | ---------------------------------------- | ---------------------------------------------------------------------- |
+| **EPS (TTM)**                   | Earnings Per Share, trailing twelve months | Most recent 4 quarterly earnings / diluted shares           | Compare to sector median EPS (Damodaran) | Higher EPS relative to sector = stronger quality; negative = distress  |
+| **EPS Growth Rate (YoY %)**     | % change in EPS from prior year            | (EPS_current - EPS_prior_year) / \|EPS_prior_year\|         | Sector median EPS growth                 | Positive acceleration = momentum; negative = deceleration              |
+| **EPS Surprise/Revision Trend** | Direction of recent earnings surprises     | Track last 2-4 quarters: Beat vs. Miss                      | Peer comparison                          | Consistent beats = positive surprise momentum; misses = reversion risk |
+| **Revenue Growth (TTM YoY %)**  | % change in revenue                        | (Revenue_current - Revenue_prior_year) / Revenue_prior_year | Sector median revenue growth             | Quality of earnings driver; fast growth + high margins = strength      |
+| **Operating Margin (TTM %)**    | Operating Income / Revenue                 | Operating Income (TTM) / Revenue (TTM)                      | Sector median operating margin           | Higher = better execution; trending up = positive signal               |
 
 **Data Sources**:
 - **Free**: Yahoo Finance (Summary tab → Earnings section), Google Finance, MarketWatch
@@ -92,12 +92,12 @@ What I will be gaining from this project is a better understanding of when a sec
 
 ## **C. Cash Flow & Financial Health**
 
-|Metric|Definition|How to Calculate|Sector Comparison|Interpretation|
-|---|---|---|---|---|
-|**Free Cash Flow (TTM, $M)**|Operating CF – Capital Expenditures|From cash flow statement (10-K)|Total FCF / market cap for sector|Positive FCF = sustainable; negative = funding via debt/dilution|
-|**FCF Trend (YoY % change)**|% change in FCF year-over-year|(FCF_current - FCF_prior) / FCF_prior|Sector median FCF growth|Positive trend = strength; flat/declining = concern|
-|**FCF Yield (%)**|Free Cash Flow / Market Cap|(FCF / Market cap) × 100|Sector median FCF yield|Higher = more cash generated; compare to sector|
-|**Debt-to-Equity Ratio**|Total Debt / Shareholders' Equity|(Short-term debt + Long-term debt) / Equity|Sector median D/E|Elevated D/E + weak earnings = default risk|
+| Metric                       | Definition                          | How to Calculate                            | Sector Comparison                 | Interpretation                                                   |
+| ---------------------------- | ----------------------------------- | ------------------------------------------- | --------------------------------- | ---------------------------------------------------------------- |
+| **Free Cash Flow (TTM, $M)** | Operating CF – Capital Expenditures | From cash flow statement (10-K)             | Total FCF / market cap for sector | Positive FCF = sustainable; negative = funding via debt/dilution |
+| **FCF Trend (YoY % change)** | % change in FCF year-over-year      | (FCF_current - FCF_prior) / FCF_prior       | Sector median FCF growth          | Positive trend = strength; flat/declining = concern              |
+| **FCF Yield (%)**            | Free Cash Flow / Market Cap         | (FCF / Market cap) × 100                    | Sector median FCF yield           | Higher = more cash generated; compare to sector                  |
+| **Debt-to-Equity Ratio**     | Total Debt / Shareholders' Equity   | (Short-term debt + Long-term debt) / Equity | Sector median D/E                 | Elevated D/E + weak earnings = default risk                      |
 
 **Data Sources**:
 - Yahoo Finance (Cash Flow tab for FCF)
@@ -108,32 +108,6 @@ What I will be gaining from this project is a better understanding of when a sec
 - **Negative FCF + high growth**: May be acceptable (e.g., Tesla in early years), but is riskier
 - **FCF declining while EPS rising**: Red flag – earnings quality deteriorating
 - **Strong FCF + rising D/E**: Company reinvesting aggressively (potentially positive) vs. over-leveraging (negative)
-
----
-
-## 1.3 How to Gather & Organize Data: Practical Workflow
-
-**For each security, on each trade date**:
-1. **Month 1-2: Build a data template** (e.g., Excel or Python)
-    - Columns: Date, Ticker, Entry_Date, Win_Rate_Period, EPS_TTM, EPS_YoY%, EPS_Surprise_Direction, Revenue_Growth%, OpMargin%, PE_Forward, PEG, PB, PCF, FCF_TTM, FCF_YoY%, FCF_Yield, DE_Ratio, [Technical metrics from Phase 2]
-        
-2. **Gather historical data in batches**:
-    - **For recent 2-3 years**: Use Yahoo Finance + SEC Edgar directly (most up-to-date)
-    - **For 5-10 years back**: Use Damodaran's historical data snapshots (if available), or backfill from Yahoo Finance (older data less reliable)
-    - **For 10-15 years back**: Use SEC filings (10-K archives on Edgar) – most authoritative
-        
-3. **Sector benchmarks**:
-    - **Primary source**: Download Damodaran's industry data sheet (free Excel)
-    - **For your specific sectors**: Create a lookup table with sector medians
-    - **Example for Technology Sector**: Extract median P/E, median D/E, median FCF Yield from Damodaran
-    - **Compare each trade's fundamentals to this table**
-        
-4. **Time-series consistency check**:
-    - If a trade was initiated on March 15, 2020:
-        - Use Q4 2019 earnings (most recent 10-Q/10-K available on that date)
-        - Do NOT use Q1 2020 earnings (not yet released)
-        - Check "Surprise direction" based on last 2 quarters' beat/miss record
-            
 
 ---
 
