@@ -125,7 +125,7 @@ The `period_GB_flag` is calculated **per year** (not per quarter) and assigned t
 | `good` | Calmar ratio > 0.5 AND max drawdown ≤ 25% |
 | `indeterminate` | Calmar ratio > 0.5 AND max drawdown > 25% |
 | `bad` | Calmar ratio ≤ 0.5 |
-| `no_trades` | No trades in that year |
+| `Unknown` | No trades in that year |
 
 ### Example
 

@@ -317,7 +317,7 @@ class FundamentalFeaturesGenerator:
             else:
                 # Year with no trades
                 row.update({
-                    'period_GB_flag': 'no_trades',
+                    'period_GB_flag': 'Unknown',
                     'calmar_ratio': np.nan,
                     'max_drawdown_pct': np.nan,
                     'num_trades': 0,
