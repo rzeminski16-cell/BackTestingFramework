@@ -278,11 +278,12 @@ class WeeklyIndicatorCalculator:
         df['bb_upper'] = upper_bb
         df['bb_lower'] = lower_bb
 
-        # Bollinger Bands Position: (Price - SMA20) / (2 * StdDev20)
-        bb_std = (upper_bb - middle_bb) / cfg.bb_std_dev
+        # Bollinger Bands Position: (Price - Middle) / (Upper - Middle)
+        # Result ranges from -1 (at lower band) to +1 (at upper band), 0 at middle
+        band_half_width = upper_bb - middle_bb  # This equals std_dev * rolling_std
         df['bb_position'] = np.where(
-            bb_std > 0,
-            (df['close'] - middle_bb) / (cfg.bb_std_dev * bb_std),
+            band_half_width > 0,
+            (df['close'] - middle_bb) / band_half_width,
             0
         )
 

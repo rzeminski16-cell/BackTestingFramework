@@ -149,9 +149,9 @@ A single CSV containing all trades that pass the filtering criteria.
 
 ### Trade Filtering
 
-Only trades from security-year combinations with **more than 4 trades** are included. This ensures sufficient sample size for meaningful analysis.
+Only trades from security-year combinations with **at least N trades** (default: 4) are included. This ensures sufficient sample size for meaningful analysis.
 
-Note: Trades are registered by entry date, not exit date.
+**Important**: Trades are assigned to the year of their **entry date**, not exit date. A trade that enters in December 2020 and exits in January 2021 counts toward 2020. The P/L is realized on exit but attributed to the entry year.
 
 ### Columns
 
@@ -175,7 +175,7 @@ All columns from the trade log are preserved, including:
 |--------|-------------|
 | `rsi_14w` | 14-week RSI (SMA smoothed) |
 | `high_low_distance_52w` | Position within 52-week range: (Price - Low) / (High - Low) |
-| `bb_position` | Bollinger Bands position: (Price - SMA20) / (2 × StdDev20) |
+| `bb_position` | Bollinger Bands position: normalized -1 (lower band) to +1 (upper band), 0 at middle |
 | `bb_width` | Bollinger Band width: (Upper - Lower) / Middle × 100 |
 | `volume_trend` | Current volume vs 50-week MA ratio |
 | `atr_14w` | 14-week Average True Range |

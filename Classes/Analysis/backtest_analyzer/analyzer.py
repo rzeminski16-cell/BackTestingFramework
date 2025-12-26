@@ -24,7 +24,7 @@ class BacktestAnalyzer:
     Main orchestrator for backtest analysis.
 
     Generates three groups of output files:
-    1. Fundamental Features: Per-security CSVs with monthly rows and yearly period_GB_flag
+    1. Fundamental Features: Per-security CSVs with quarterly rows and yearly period_GB_flag
     2. Technical Features: Master CSV with filtered trades, indicators, and flags
     3. Summary Reports: Statistics and coverage reports
 

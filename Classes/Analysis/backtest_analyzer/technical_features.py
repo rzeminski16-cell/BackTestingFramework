@@ -93,8 +93,8 @@ class TechnicalFeaturesGenerator:
         # Count trades per symbol-year
         trade_counts = trades.groupby(['symbol', 'entry_year']).size().reset_index(name='trade_count')
 
-        # Filter to valid combinations
-        valid_combos = trade_counts[trade_counts['trade_count'] > min_trades]
+        # Filter to valid combinations (>= min_trades, not > min_trades)
+        valid_combos = trade_counts[trade_counts['trade_count'] >= min_trades]
 
         # Merge to filter original trades
         filtered = trades.merge(
@@ -334,7 +334,7 @@ class TechnicalFeaturesGenerator:
 
         # Filter by minimum trades per year
         filtered = self.filter_by_minimum_trades(combined, cfg.min_trades_per_year)
-        print(f"Trades after filtering (>{cfg.min_trades_per_year} trades/year): {len(filtered)}")
+        print(f"Trades after filtering (>={cfg.min_trades_per_year} trades/year): {len(filtered)}")
 
         if filtered.empty:
             print("No trades remaining after filtering")
@@ -484,6 +484,6 @@ class TechnicalFeaturesGenerator:
 
         # Count trades per symbol-year
         counts = combined.groupby(['symbol', 'entry_year']).size().reset_index(name='trade_count')
-        counts['included'] = counts['trade_count'] > cfg.min_trades_per_year
+        counts['included'] = counts['trade_count'] >= cfg.min_trades_per_year
 
         return counts

@@ -130,6 +130,7 @@ class AnalysisConfig:
     # ==========================================================================
 
     # Minimum trades per security per year to include in technical features
+    # Securities with >= this number of trades per year are included
     min_trades_per_year: int = 4
 
     # ==========================================================================
