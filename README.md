@@ -93,9 +93,11 @@ BackTestingFramework/
 ├── logs/                    # Backtest results and trade logs
 ├── config/                  # Configuration files
 ├── docs/                    # Detailed documentation
-├── run_gui.py              # GUI launcher
-├── optimize_gui.py         # Optimization GUI
-└── backtest.py             # CLI examples
+├── run_gui.py               # GUI launcher
+├── optimize_gui.py          # Optimization GUI
+├── backtest.py              # CLI examples
+├── run_backtest_analysis.py # Post-backtest analysis tool
+└── run_fundamental_data_fetch.py # Alpha Vantage data fetcher
 ```
 
 ## Documentation
@@ -108,6 +110,8 @@ BackTestingFramework/
 | [Configuration](docs/CONFIGURATION.md) | All configuration options explained |
 | [Optimization](docs/OPTIMIZATION.md) | Finding optimal strategy parameters |
 | [Portfolio Mode](docs/PORTFOLIO_MODE.md) | Multi-security backtesting |
+| [Backtest Analysis](docs/BACKTEST_ANALYSIS_GUIDE.md) | Drill down into strategy performance |
+| [Fundamental Data](docs/FUNDAMENTAL_DATA_GUIDE.md) | Fetch financial metrics from Alpha Vantage |
 
 ## Key Features
 
@@ -132,6 +136,20 @@ BackTestingFramework/
 - Excel reports with 50+ performance metrics
 - Equity curves and drawdown charts
 - Trade-by-trade logs
+
+### Backtest Analysis
+- **Drill down into results** to understand when strategies work best
+- **Technical indicators at each trade** (RSI, Bollinger Bands, ATR, etc.)
+- **Trade classification** (Good/Indeterminate/Bad based on profit)
+- **Outcome analysis** (FullRideGood, EarlyExitGood, MissedOpportunity)
+- **Period classification** based on Calmar ratio and drawdown
+
+### Fundamental Data Integration
+- **Alpha Vantage API** integration for premium financial data
+- **Point-in-time metrics** (EPS, P/E, Revenue Growth, FCF, etc.)
+- **20+ fundamental indicators** per quarter
+- **Interactive mode** with answer memory for data ambiguities
+- **Caching** to minimize API calls
 
 ## Requirements
 

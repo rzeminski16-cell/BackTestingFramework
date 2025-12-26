@@ -14,33 +14,6 @@ What I will be gaining from this project is a better understanding of when a sec
 | **Mid**   | ARMK                   | GTLS                      | QGEN       | BZ       | AMKR                  | KVYO                | FYBR           | AIT                   | WCP    | SSB     | AES       |
 | **Small** | BLBD                   | SLVM                      | ATRC       | SBET     | PLAB                  | AI                  | IRDM           | CURY                  | PARR   | SYBT    | NWN       |
 
-### Plan of Analysis
-1) Run single security back test.
-	1) Highlight periods of low and high performance.
-	2) Extract top best and worst performers.
-2) Collect and calculate data on the following metrics (It is important to only consider data that would be available at the time of the trade):
-	- EPS
-	- PE Forward
-	- PEG
-	- PB
-	- PCF
-	- Free Cash Flow
-	- Debt-to-Equity Ratio
-3) Group the foundational metrics of low and high performance periods and examine similarities and differences between the two groups. 
-4) Examine technical characteristics of these periods on a weekly chart
-	- Distance from 52-week low and high
-	- Action of smoother RSI on long term chart
-	- Weekly open and close price distribution in relation to BB bands.
-	- BB band width
-5) Group the technical characteristics of low and high performance periods and examine similarities and differences between the two groups. 
-6) Once the first 5 steps have been complete for each security combine findings into one final report.
-7) Define a set of hard rules (used in back testing) and soft rules (more lenient that rely on 'in the moment' decision making and context). 
-
-
-
-
-
-
 ---
 
 ## Phase 1: Backtest Analysis & Data Collection
@@ -56,7 +29,7 @@ What I will be gaining from this project is a better understanding of when a sec
     - **High-performance threshold**: Calmar Ratio > 0.5 and positive expectancy
     - **Low-performance threshold**: Calmar Ratio < 0.5 and negative expectancy
     - **Indeterminate-performance**: Does not meet high or low performance conditions
-    - **Minimum sample size per period**: If a security ha==s <5 tr==ades in a period, exclude that period (insufficient data for reliable statistics)
+    - **Minimum sample size per period**: If a security has <=3 trades in a period, exclude that period (insufficient data for reliable statistics)
     - **Track both outcomes**:
         - Early exits on bad trades (intended behaviour)
         - Trades allowed to ride (intended behaviour)
@@ -79,13 +52,13 @@ What I will be gaining from this project is a better understanding of when a sec
 
 ## **A. Earnings & Growth Momentum** 
 
-|Metric|Definition|How to Calculate/Find|Sector Comparison|Interpretation|
-|---|---|---|---|---|
-|**EPS (TTM)**|Earnings Per Share, trailing twelve months|Most recent 4 quarterly earnings / diluted shares|Compare to sector median EPS (Damodaran)|Higher EPS relative to sector = stronger quality; negative = distress|
-|**EPS Growth Rate (YoY %)**|% change in EPS from prior year|(EPS_current - EPS_prior_year) / \|EPS_prior_year\||Sector median EPS growth|Positive acceleration = momentum; negative = deceleration|
-|**EPS Surprise/Revision Trend**|Direction of recent earnings surprises|Track last 2-4 quarters: Beat vs. Miss|Peer comparison|Consistent beats = positive surprise momentum; misses = reversion risk|
-|**Revenue Growth (TTM YoY %)**|% change in revenue|(Revenue_current - Revenue_prior_year) / Revenue_prior_year|Sector median revenue growth|Quality of earnings driver; fast growth + high margins = strength|
-|**Operating Margin (TTM %)**|Operating Income / Revenue|Operating Income (TTM) / Revenue (TTM)|Sector median operating margin|Higher = better execution; trending up = positive signal|
+| Metric                          | Definition                                 | How to Calculate/Find                                       | Sector Comparison                        | Interpretation                                                         |
+| ------------------------------- | ------------------------------------------ | ----------------------------------------------------------- | ---------------------------------------- | ---------------------------------------------------------------------- |
+| **EPS (TTM)**                   | Earnings Per Share, trailing twelve months | Most recent 4 quarterly earnings / diluted shares           | Compare to sector median EPS (Damodaran) | Higher EPS relative to sector = stronger quality; negative = distress  |
+| **EPS Growth Rate (YoY %)**     | % change in EPS from prior year            | (EPS_current - EPS_prior_year) / \|EPS_prior_year\|         | Sector median EPS growth                 | Positive acceleration = momentum; negative = deceleration              |
+| **EPS Surprise/Revision Trend** | Direction of recent earnings surprises     | Track last 2-4 quarters: Beat vs. Miss                      | Peer comparison                          | Consistent beats = positive surprise momentum; misses = reversion risk |
+| **Revenue Growth (TTM YoY %)**  | % change in revenue                        | (Revenue_current - Revenue_prior_year) / Revenue_prior_year | Sector median revenue growth             | Quality of earnings driver; fast growth + high margins = strength      |
+| **Operating Margin (TTM %)**    | Operating Income / Revenue                 | Operating Income (TTM) / Revenue (TTM)                      | Sector median operating margin           | Higher = better execution; trending up = positive signal               |
 
 **Data Sources**:
 - **Free**: Yahoo Finance (Summary tab → Earnings section), Google Finance, MarketWatch
@@ -119,12 +92,12 @@ What I will be gaining from this project is a better understanding of when a sec
 
 ## **C. Cash Flow & Financial Health**
 
-|Metric|Definition|How to Calculate|Sector Comparison|Interpretation|
-|---|---|---|---|---|
-|**Free Cash Flow (TTM, $M)**|Operating CF – Capital Expenditures|From cash flow statement (10-K)|Total FCF / market cap for sector|Positive FCF = sustainable; negative = funding via debt/dilution|
-|**FCF Trend (YoY % change)**|% change in FCF year-over-year|(FCF_current - FCF_prior) / FCF_prior|Sector median FCF growth|Positive trend = strength; flat/declining = concern|
-|**FCF Yield (%)**|Free Cash Flow / Market Cap|(FCF / Market cap) × 100|Sector median FCF yield|Higher = more cash generated; compare to sector|
-|**Debt-to-Equity Ratio**|Total Debt / Shareholders' Equity|(Short-term debt + Long-term debt) / Equity|Sector median D/E|Elevated D/E + weak earnings = default risk|
+| Metric                       | Definition                          | How to Calculate                            | Sector Comparison                 | Interpretation                                                   |
+| ---------------------------- | ----------------------------------- | ------------------------------------------- | --------------------------------- | ---------------------------------------------------------------- |
+| **Free Cash Flow (TTM, $M)** | Operating CF – Capital Expenditures | From cash flow statement (10-K)             | Total FCF / market cap for sector | Positive FCF = sustainable; negative = funding via debt/dilution |
+| **FCF Trend (YoY % change)** | % change in FCF year-over-year      | (FCF_current - FCF_prior) / FCF_prior       | Sector median FCF growth          | Positive trend = strength; flat/declining = concern              |
+| **FCF Yield (%)**            | Free Cash Flow / Market Cap         | (FCF / Market cap) × 100                    | Sector median FCF yield           | Higher = more cash generated; compare to sector                  |
+| **Debt-to-Equity Ratio**     | Total Debt / Shareholders' Equity   | (Short-term debt + Long-term debt) / Equity | Sector median D/E                 | Elevated D/E + weak earnings = default risk                      |
 
 **Data Sources**:
 - Yahoo Finance (Cash Flow tab for FCF)
@@ -135,32 +108,6 @@ What I will be gaining from this project is a better understanding of when a sec
 - **Negative FCF + high growth**: May be acceptable (e.g., Tesla in early years), but is riskier
 - **FCF declining while EPS rising**: Red flag – earnings quality deteriorating
 - **Strong FCF + rising D/E**: Company reinvesting aggressively (potentially positive) vs. over-leveraging (negative)
-
----
-
-## 1.3 How to Gather & Organize Data: Practical Workflow
-
-**For each security, on each trade date**:
-1. **Month 1-2: Build a data template** (e.g., Excel or Python)
-    - Columns: Date, Ticker, Entry_Date, Win_Rate_Period, EPS_TTM, EPS_YoY%, EPS_Surprise_Direction, Revenue_Growth%, OpMargin%, PE_Forward, PEG, PB, PCF, FCF_TTM, FCF_YoY%, FCF_Yield, DE_Ratio, [Technical metrics from Phase 2]
-        
-2. **Gather historical data in batches**:
-    - **For recent 2-3 years**: Use Yahoo Finance + SEC Edgar directly (most up-to-date)
-    - **For 5-10 years back**: Use Damodaran's historical data snapshots (if available), or backfill from Yahoo Finance (older data less reliable)
-    - **For 10-15 years back**: Use SEC filings (10-K archives on Edgar) – most authoritative
-        
-3. **Sector benchmarks**:
-    - **Primary source**: Download Damodaran's industry data sheet (free Excel)
-    - **For your specific sectors**: Create a lookup table with sector medians
-    - **Example for Technology Sector**: Extract median P/E, median D/E, median FCF Yield from Damodaran
-    - **Compare each trade's fundamentals to this table**
-        
-4. **Time-series consistency check**:
-    - If a trade was initiated on March 15, 2020:
-        - Use Q4 2019 earnings (most recent 10-Q/10-K available on that date)
-        - Do NOT use Q1 2020 earnings (not yet released)
-        - Check "Surprise direction" based on last 2 quarters' beat/miss record
-            
 
 ---
 
@@ -190,56 +137,34 @@ What I will be gaining from this project is a better understanding of when a sec
 **Data Sources**:
 
 - TradingView (your platform – has RSI, BB, ATR built-in)
-    
 - Yahoo Finance (historical OHLCV for manual calculation)
-    
 - Sector ETFs: Use appropriate ETF for comparison
-    
     - Consumer Discretionary: XLY
-        
     - Technology: XLK
-        
     - Finance: XLF
-        
     - Healthcare: XLV
-        
     - Energy: XLE
-        
     - Industrials: XLI
-        
     - Materials: XLB
-        
     - Utilities: XLU
-        
     - Communications: XLC
-        
     - Consumer Staples: XLP (if applicable to your portfolio)
-        
 
 ## 2.2 Volatility Timing Framework
 
 **Key Insight from Research**: Momentum strategy alpha is driven ~2/3 by market timing, ~1/3 by volatility timing.
 
 **Collect**:
-
 - **VIX Level (at trade entry)**:
-    
     - < 12 = Unusually calm (not ideal for breakouts; tight ranges)
-        
     - 12-18 = Normal (ideal for momentum)
-        
     - 18-25 = Elevated volatility (can be opportunities if directional)
-        
     - > 25 = Panic (momentum strategies struggle; reversals common)
-        
+
 - **Weekly ATR as % of price**:
-    
     - Identify if volatility is contracting or expanding at entry
-        
     - Contraction before breakout = ideal entry (volatility about to expand)
-        
     - Expansion at entry = already in momentum (late entry, more risk)
-        
 
 ---
 
@@ -248,15 +173,10 @@ What I will be gaining from this project is a better understanding of when a sec
 ## 3.1 Fundamental Pattern Analysis
 
 **Step 1: Group High vs. Low Performance Periods**
-
 For each security:
-
 - Create **two groups** of trades/periods
-    
     - Group A: High-performance periods (Win rate > 45%)
-        
     - Group B: Low-performance periods (Win rate < 45%)
-        
 
 **Step 2: Statistical Comparison**
 
@@ -272,34 +192,21 @@ For each fundamental metric, calculate and compare:
 **Step 3: Identify Significant Differences**
 
 - **Simple method**: If Group A median is 2x Group B median, it's likely meaningful
-    
 - **Statistical method** (more rigorous): Run t-tests or Mann-Whitney U tests
-    
     - p-value < 0.05 = statistically significant difference
-        
     - Example: "EPS YoY growth is significantly higher in high-performing periods (p=0.03)"
-        
 
 **Example Output Table**:
-
-text
-
 `Metric: EPS YoY Growth (%) --- High-Performance Periods:   Mean: 18.5%, Median: 16.2%, Std Dev: 8.3% Low-Performance Periods:   Mean: 3.2%, Median: 1.8%, Std Dev: 11.2% Conclusion: High-performance periods have 5x higher EPS growth.  Soft rule: Avoid entry if EPS growth < 5% YoY.`
 
 ## 3.2 Technical Pattern Analysis
 
 **Repeat Phase 3.1 methodology for technical metrics**:
-
 - 52-week distance (where in the cycle?)
-    
 - RSI levels (overbought entries vs. oversold bounces?)
-    
 - BB band position (mean-reversion vs. breakout?)
-    
 - Volume patterns (confirmation or divergence?)
-    
 - Relative strength trend (stock vs. sector trending up/down?)
-    
 
 ---
 
@@ -310,41 +217,24 @@ text
 **Objective**: Narrow 10+ metrics down to 2-3 that most strongly predict high win rates.
 
 **Methodology**:
-
 1. **Create a dataset** with all trades:
-    
     - Rows = Each trade across all securities
-        
     - Column 1: Outcome (Win=1, Loss=0) or Win_Rate_Period (as %)
-        
     - Columns 2-20: Each fundamental/technical metric at trade entry
-        
 2. **Calculate correlation coefficients** (Pearson or Spearman):
-    
-    text
-    
-    `For each metric: Correlation with Win Rate Example: - EPS_YoY_Growth ↔ Win Rate: r = +0.42 (strong positive) - PE_Ratio ↔ Win Rate: r = -0.08 (weak negative) - RSI_14 ↔ Win Rate: r = +0.15 (weak positive)`
+  `For each metric: Correlation with Win Rate Example: - EPS_YoY_Growth ↔ Win Rate: r = +0.42 (strong positive) - PE_Ratio ↔ Win Rate: r = -0.08 (weak negative) - RSI_14 ↔ Win Rate: r = +0.15 (weak positive)`
     
 3. **Run multiple regression** (if comfortable with stats):
-    
     - Dependent variable: Win_Rate (%)
-        
     - Independent variables: Top 6-8 fundamental metrics
-        
     - Output: Coefficient (importance weight) + p-value (significance)
-        
     - **Interpret**: Metrics with p < 0.05 are statistically significant
         
 4. **Check for multicollinearity**:
-    
     - Calculate Variance Inflation Factor (VIF) for each metric
-        
     - If VIF > 5, two metrics are too correlated; keep the one with higher correlation to win rate
-        
+
 5. **Rank metrics by predictive power**:
-    
-    text
-    
     `Rank | Metric | Correlation to Win Rate | Significance (p-value) 1    | EPS_YoY_Growth | +0.42 | p=0.008 ✓ 2    | FCF_Trend | +0.38 | p=0.015 ✓ 3    | RS_Trend_50MA | +0.35 | p=0.022 ✓ 4    | OpMargin_TTM | +0.22 | p=0.089 (weak) 5    | PE_Forward | -0.08 | p=0.41 (not significant)`
     
 
@@ -358,10 +248,7 @@ text
 
 Based on Phase 4 ranking, develop rules using top 3-5 predictive metrics.
 
-**Example Output** (will vary based on YOUR data):
-
-text
-
+**Example Output**:
 `HARD RULES FOR ENTRY CONSIDERATION: 1. EPS YoY Growth > 10% 2. EPS_Surprise_Trend = 2+ consecutive beats (last 2 quarters) 3. Relative_Strength_50MA = Uptrend (RS ratio above 50-week MA) 4. VIX < 25 (avoid panic environments) 5. 52-Week Distance > 0.3 (avoid prices at 52-week lows) If all 5 conditions met: Green light for entry If 3-4 conditions met: Yellow light (entry OK if technicals strong) If <3 conditions met: Red light (pass)`
 
 ## 5.2 Soft Rules (Contextual, Decision-Making)
@@ -369,9 +256,6 @@ text
 Metrics that add confidence but don't trigger mechanical filters.
 
 **Example Output**:
-
-text
-
 `SOFT RULES FOR CONFIDENCE BOOST: - EPS growth accelerating (e.g., 12% → 15% → 18%): Add 5% confidence - D/E below sector median: Add 3% confidence - FCF positive and growing: Add 3% confidence - Stock outperforming sector by >15% (RS ratio > 1.15): Add 5% confidence - BB band in upper half (not touching upper band): Add 2% confidence Use these to calibrate position size or risk management.`
 
 ## 5.3 Avoid Rules (When NOT to trade)
@@ -379,9 +263,6 @@ text
 Identify conditions when your strategy historically failed.
 
 **Example Output** (from your historical data):
-
-text
-
 `AVOID ENTRY WHEN: - EPS growth < 0% (earnings contraction) - Company just reported earnings miss (surprise negative) - Sector underperforming market by >20% for 6+ months - Stock at 52-week low (bottom-fishing often reverses) - Volatility regime shifting (ATR spiking, price gap reversals) - Financial distress signals: FCF negative for 2+ quarters, D/E rising >30%`
 
 ---
@@ -391,38 +272,16 @@ text
 ## 6.1 Sector Variation Analysis
 
 **After completing Phase 1-5, drill down by sector**:
-
 - Does your strategy work better in certain sectors?
-    
 - Example: Tech momentum > Energy momentum?
-    
 - Why? (Sector characteristics: beta, liquidity, analyst coverage, cyclicality)
-    
 
 ## 6.2 Cap-Size Effects
 
 **Does performance vary by market cap?**
-
 - Large-cap: More analyst coverage, more efficient pricing, slower momentum?
-    
 - Mid-cap: Sweet spot for alpha?
-    
 - Small-cap: Higher volatility, wider spreads, slower fill execution?
-    
-
----
-
-## Implementation Timeline & Deliverables
-
-|Phase|Task|Duration|Deliverable|
-|---|---|---|---|
-|**1**|Set up backtest, collect fundamental/technical data|2-3 weeks|Raw data spreadsheet (all metrics for all trades)|
-|**2**|Technical metric calculation|1 week|Technical metrics added to spreadsheet|
-|**3**|Group high/low periods, comparative analysis|2 weeks|Summary tables showing median metrics for each group|
-|**4**|Correlation analysis + regression|1 week|Correlation table + VIF analysis; ranking of predictive metrics|
-|**5**|Rule synthesis|1-2 weeks|**Hard rules checklist**, **soft rule guidelines**, **avoid rules**|
-|**6**|Sector/cap-size deep dives|1 week|Sector-specific rule variations|
-|**Total**||~8-10 weeks|**Final ruleset + sector/size-specific guidance**|
 
 ---
 
@@ -454,15 +313,3 @@ text
     
 
 ---
-
-## Questions for Refinement
-
-Before you begin Phase 1, confirm:
-
-- What is your definition of a "trade"? (Entry to exit, or exit to next entry?)
-    
-- How do you classify "early exit" vs. "full move"? (% profit target? time-based?)
-    
-- Do you want to analyze individual trades or period-aggregated win rates?
-    
-- Which securities will you prioritize first? (Start with 2-3 for deep analysis, then expand)
