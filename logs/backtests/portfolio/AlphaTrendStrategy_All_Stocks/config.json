@@ -1,0 +1,143 @@
+{
+  "backtest_name": "AlphaTrendStrategy_All_Stocks",
+  "basket_name": "All Stocks",
+  "portfolio_config": {
+    "initial_capital": 10000.0,
+    "commission": {
+      "mode": "fixed",
+      "value": 3.0
+    },
+    "start_date": "2000-01-01T00:00:00",
+    "end_date": null,
+    "capital_contention": {
+      "mode": "vulnerability_score",
+      "vulnerability_config": {
+        "name": "Custom",
+        "description": "User-defined configuration",
+        "immunity_days": 14,
+        "base_score": 100.0,
+        "swap_threshold": 90.0,
+        "features": {
+          "days_held": {
+            "enabled": false,
+            "weight": -1.0,
+            "use_advanced_params": false,
+            "decay_point": 14,
+            "fast_decay_rate": 5.0,
+            "slow_decay_rate": 1.0,
+            "stagnation_threshold": 2.0,
+            "normalize_min": null,
+            "normalize_max": null
+          },
+          "current_pl_pct": {
+            "enabled": true,
+            "weight": 2.0,
+            "use_advanced_params": false,
+            "decay_point": 14,
+            "fast_decay_rate": 5.0,
+            "slow_decay_rate": 1.0,
+            "stagnation_threshold": 2.0,
+            "normalize_min": null,
+            "normalize_max": null
+          },
+          "pl_momentum_7d": {
+            "enabled": false,
+            "weight": 5.5,
+            "use_advanced_params": false,
+            "decay_point": 14,
+            "fast_decay_rate": 5.0,
+            "slow_decay_rate": 1.0,
+            "stagnation_threshold": 2.0,
+            "normalize_min": null,
+            "normalize_max": null
+          },
+          "pl_momentum_14d": {
+            "enabled": true,
+            "weight": 2.0,
+            "use_advanced_params": false,
+            "decay_point": 14,
+            "fast_decay_rate": 5.0,
+            "slow_decay_rate": 1.0,
+            "stagnation_threshold": 2.0,
+            "normalize_min": null,
+            "normalize_max": null
+          },
+          "volatility_7d": {
+            "enabled": false,
+            "weight": 0.5,
+            "use_advanced_params": false,
+            "decay_point": 14,
+            "fast_decay_rate": 5.0,
+            "slow_decay_rate": 1.0,
+            "stagnation_threshold": 2.0,
+            "normalize_min": null,
+            "normalize_max": null
+          },
+          "distance_from_high": {
+            "enabled": false,
+            "weight": 0.0,
+            "use_advanced_params": false,
+            "decay_point": 14,
+            "fast_decay_rate": 5.0,
+            "slow_decay_rate": 1.0,
+            "stagnation_threshold": 2.0,
+            "normalize_min": null,
+            "normalize_max": null
+          },
+          "distance_from_entry": {
+            "enabled": false,
+            "weight": 0.0,
+            "use_advanced_params": false,
+            "decay_point": 14,
+            "fast_decay_rate": 5.0,
+            "slow_decay_rate": 1.0,
+            "stagnation_threshold": 2.0,
+            "normalize_min": null,
+            "normalize_max": null
+          },
+          "max_favorable_excursion": {
+            "enabled": true,
+            "weight": -1.0,
+            "use_advanced_params": false,
+            "decay_point": 14,
+            "fast_decay_rate": 5.0,
+            "slow_decay_rate": 1.0,
+            "stagnation_threshold": 2.0,
+            "normalize_min": null,
+            "normalize_max": null
+          },
+          "entropy_7d": {
+            "enabled": false,
+            "weight": 0.0,
+            "use_advanced_params": false,
+            "decay_point": 14,
+            "fast_decay_rate": 5.0,
+            "slow_decay_rate": 1.0,
+            "stagnation_threshold": 2.0,
+            "normalize_min": null,
+            "normalize_max": null
+          }
+        },
+        "tiebreaker_order": [
+          "current_pl_pct",
+          "days_held"
+        ]
+      }
+    },
+    "base_currency": "GBP",
+    "slippage_percent": 0.1,
+    "basket_name": "All Stocks"
+  },
+  "strategy_params": {
+    "volume_short_ma": 5,
+    "volume_long_ma": 21,
+    "volume_alignment_window": 11,
+    "risk_percent": 5.0,
+    "stop_loss_percent": 0.0,
+    "atr_stop_loss_multiple": 1.5,
+    "grace_period_bars": 24,
+    "momentum_gain_pct": 4.5,
+    "momentum_lookback": 7
+  },
+  "timestamp": "2025-12-22T20:53:21.842350"
+}

@@ -38,7 +38,7 @@ The goal of the vulnerability score algorithm is to help exit stagnant or loosin
 
 Considering these targets only 3 features of the algorithm will be enabled 'Days Held', 'P/L Momentum (7D)' and 'P/L Momentum (14D)'.
 
-### Iteration 1
+##### Iteration 1
 Report: [Trade Log]("C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\reports\vulnerability\Base_Set_Up\trade_analysis_Defaults.xlsx")
 With the default settings without decay/ stagnation logic, the first thing I notice is that the cumulative P/L is consistently lower with vulnerability score and the extra large wins are closed too early resulting in a huge P/L gap.![[Pasted image 20251221133505.png]]
 
@@ -47,6 +47,8 @@ Taking a deeper look into the rejected signals, even though the majority of the 
 In the next iteration I will remove NVDA as this had an abnormally extreme growth periods which distorts the generalised view of the market. 
 ***==It will be important later to understand how these extreme events impact the portfolio overall, however for now it is important to assume a more generalised market.==***
 
-Iteration 2
-Report: 
-With this iteration I opted for a more conservative threshold and less penalisation on the duration.
+**23/12/2025 - Fundamental Constraints**
+**Full research notes:** [[Fundamental Constraints]]
+After taking into consideration a large volume of stocks to back test with, it is clear that I am missing extra constraints that determine when a security is appropriate at the given date for application of the alpha trend signals. 
+
+I have also looked into trade frequency and win rate differences between the optimised and base parameters. Due to the very high increase in trade frequency and minimal drop (3%) in win rate the base parameters will be the more useful ones for further analysis. [Report]("C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\logs\Num_Trades_Backtest.xlsx")
