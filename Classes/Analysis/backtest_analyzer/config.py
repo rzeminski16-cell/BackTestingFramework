@@ -3,6 +3,32 @@ Configuration dataclass for backtest analysis parameters.
 
 All thresholds and parameters are configurable to allow experimentation
 with different classification criteria.
+
+Example
+-------
+::
+
+    from Classes.Analysis.backtest_analyzer import AnalysisConfig
+    from pathlib import Path
+
+    # Default configuration
+    config = AnalysisConfig(raw_data_directory=Path("raw_data"))
+
+    # Custom thresholds
+    config = AnalysisConfig(
+        raw_data_directory=Path("raw_data"),
+        output_directory=Path("analysis_output/my_analysis"),
+
+        # More strict "Good" classification
+        gb_profit_good_threshold=10.0,  # Require 10% profit
+
+        # Stricter period classification
+        calmar_good_threshold=1.0,      # Higher Calmar needed
+        max_dd_good_threshold=15.0,     # Lower drawdown allowed
+
+        # Include more trades
+        min_trades_per_year=3,
+    )
 """
 
 from dataclasses import dataclass, field
@@ -16,6 +42,39 @@ class AnalysisConfig:
     Configuration for backtest analysis thresholds and parameters.
 
     All percentages are expressed as whole numbers (e.g., 5.0 means 5%).
+
+    Attributes
+    ----------
+    gb_profit_good_threshold : float
+        Minimum profit % for a trade to be classified as "Good" (G).
+        Default: 5.0 (5%)
+
+    calmar_good_threshold : float
+        Minimum Calmar ratio for a year to be classified as "good".
+        Default: 0.5
+
+    max_dd_good_threshold : float
+        Maximum drawdown % for a year to be classified as "good".
+        Default: 25.0 (25%)
+
+    min_trades_per_year : int
+        Minimum trades required per security/year for inclusion.
+        Default: 4
+
+    raw_data_directory : Path
+        Directory containing raw price CSV files. Required.
+
+    output_directory : Path, optional
+        Directory for output files. If None, uses default location.
+
+    Example
+    -------
+    ::
+
+        config = AnalysisConfig(
+            raw_data_directory=Path("raw_data"),
+            gb_profit_good_threshold=7.5,
+        )
     """
 
     # ==========================================================================
