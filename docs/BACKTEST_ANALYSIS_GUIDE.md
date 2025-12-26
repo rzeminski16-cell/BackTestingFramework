@@ -418,3 +418,74 @@ Some indicators require warmup periods:
 - SMA200 needs 200 days
 
 Early trades may have NaN for some indicators.
+
+## Fundamental Data Integration
+
+The backtest analysis can be enhanced with fundamental data from Alpha Vantage. See the [Fundamental Data Guide](FUNDAMENTAL_DATA_GUIDE.md) for complete details.
+
+### Quick Setup
+
+```bash
+# 1. Create Alpha Vantage config
+python run_fundamental_data_fetch.py --create-config
+
+# 2. Add your API key
+nano alpha_vantage_config.json
+
+# 3. Fetch fundamental data
+python run_fundamental_data_fetch.py logs/AlphaTrendStrategy
+```
+
+### Available Metrics
+
+The fundamental data fetcher provides 20+ metrics per quarter:
+
+| Category | Metrics |
+|----------|---------|
+| **EPS** | TTM, Growth Rate (YoY), Surprise Trend |
+| **Revenue** | TTM, Growth Rate (YoY) |
+| **Margins** | Operating Margin, Gross Margin |
+| **Valuation** | P/E (Trailing & Forward), PEG, P/B, P/CF |
+| **Cash Flow** | FCF, FCF Trend, FCF Yield |
+| **Leverage** | Debt-to-Equity, Current Ratio, Interest Coverage |
+| **Returns** | ROE, ROA |
+| **Other** | Dividend Yield, Beta, Analyst Target Price |
+
+### Merging with Backtest Results
+
+```python
+import pandas as pd
+
+# Load backtest fundamental features
+backtest_df = pd.read_csv("analysis_output/fundamental_features/AAPL_fundamental_features.csv")
+
+# Load Alpha Vantage data
+av_df = pd.read_csv("analysis_output/fundamental_data/AAPL_fundamental_data.csv")
+
+# Merge on year and quarter
+merged = backtest_df.merge(av_df, on=['symbol', 'year', 'quarter'], how='left')
+
+# Now analyze strategy performance vs fundamentals
+good_periods = merged[merged['period_GB_flag'] == 'good']
+print(f"Average P/E in good periods: {good_periods['pe_ratio_trailing'].mean():.2f}")
+```
+
+### Output Structure
+
+After running both analysis tools:
+
+```
+analysis_output/{strategy}/
+├── fundamental_features/      # From run_backtest_analysis.py
+│   ├── AAPL_fundamental_features.csv
+│   └── ...
+├── fundamental_data/          # From run_fundamental_data_fetch.py
+│   ├── AAPL_fundamental_data.csv
+│   └── logs/
+│       ├── decisions.log
+│       └── issues.log
+├── technical_features/
+│   └── technical_features_master.csv
+└── summaries/
+    └── ...
+```
