@@ -1,6 +1,6 @@
 {
-  "session_id": "20251227_130745_0c99",
-  "timestamp": "2025-12-27T13:07:46.818706",
+  "session_id": "20251227_131200_ded5",
+  "timestamp": "2025-12-27T13:12:01.338634",
   "data_types": [
     "options"
   ],
@@ -16,7 +16,7 @@
     "options": {
       "AMZN_20251226_calls.csv": {
         "file_name": "AMZN_20251226_calls.csv",
-        "file_path": "raw_data\\options\\AMZN_20251226_calls.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20251226_calls.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 57,
@@ -53,11 +53,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.377786"
+        "created_at": "2025-12-27T13:12:00.867024"
       },
       "AMZN_20251226_puts.csv": {
         "file_name": "AMZN_20251226_puts.csv",
-        "file_path": "raw_data\\options\\AMZN_20251226_puts.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20251226_puts.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 57,
@@ -94,11 +94,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.386209"
+        "created_at": "2025-12-27T13:12:00.876716"
       },
       "AMZN_20260102_calls.csv": {
         "file_name": "AMZN_20260102_calls.csv",
-        "file_path": "raw_data\\options\\AMZN_20260102_calls.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20260102_calls.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 57,
@@ -135,11 +135,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.399527"
+        "created_at": "2025-12-27T13:12:00.890562"
       },
       "AMZN_20260102_puts.csv": {
         "file_name": "AMZN_20260102_puts.csv",
-        "file_path": "raw_data\\options\\AMZN_20260102_puts.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20260102_puts.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 57,
@@ -176,11 +176,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.407568"
+        "created_at": "2025-12-27T13:12:00.899481"
       },
       "AMZN_20260109_calls.csv": {
         "file_name": "AMZN_20260109_calls.csv",
-        "file_path": "raw_data\\options\\AMZN_20260109_calls.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20260109_calls.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 55,
@@ -217,11 +217,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.419604"
+        "created_at": "2025-12-27T13:12:00.913483"
       },
       "AMZN_20260109_puts.csv": {
         "file_name": "AMZN_20260109_puts.csv",
-        "file_path": "raw_data\\options\\AMZN_20260109_puts.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20260109_puts.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 55,
@@ -258,11 +258,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.427565"
+        "created_at": "2025-12-27T13:12:00.923333"
       },
       "AMZN_20260116_calls.csv": {
         "file_name": "AMZN_20260116_calls.csv",
-        "file_path": "raw_data\\options\\AMZN_20260116_calls.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20260116_calls.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 71,
@@ -299,11 +299,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.440977"
+        "created_at": "2025-12-27T13:12:00.937718"
       },
       "AMZN_20260116_puts.csv": {
         "file_name": "AMZN_20260116_puts.csv",
-        "file_path": "raw_data\\options\\AMZN_20260116_puts.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20260116_puts.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 71,
@@ -340,11 +340,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.449491"
+        "created_at": "2025-12-27T13:12:00.946951"
       },
       "AMZN_20260123_calls.csv": {
         "file_name": "AMZN_20260123_calls.csv",
-        "file_path": "raw_data\\options\\AMZN_20260123_calls.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20260123_calls.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 45,
@@ -381,11 +381,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.460968"
+        "created_at": "2025-12-27T13:12:00.960128"
       },
       "AMZN_20260123_puts.csv": {
         "file_name": "AMZN_20260123_puts.csv",
-        "file_path": "raw_data\\options\\AMZN_20260123_puts.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20260123_puts.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 45,
@@ -422,11 +422,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.468019"
+        "created_at": "2025-12-27T13:12:00.968006"
       },
       "AMZN_20260130_calls.csv": {
         "file_name": "AMZN_20260130_calls.csv",
-        "file_path": "raw_data\\options\\AMZN_20260130_calls.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20260130_calls.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 45,
@@ -463,11 +463,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.479286"
+        "created_at": "2025-12-27T13:12:00.979987"
       },
       "AMZN_20260130_puts.csv": {
         "file_name": "AMZN_20260130_puts.csv",
-        "file_path": "raw_data\\options\\AMZN_20260130_puts.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20260130_puts.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 45,
@@ -504,11 +504,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.486370"
+        "created_at": "2025-12-27T13:12:00.988144"
       },
       "AMZN_20260206_calls.csv": {
         "file_name": "AMZN_20260206_calls.csv",
-        "file_path": "raw_data\\options\\AMZN_20260206_calls.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20260206_calls.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 45,
@@ -545,11 +545,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.497699"
+        "created_at": "2025-12-27T13:12:01.000212"
       },
       "AMZN_20260206_puts.csv": {
         "file_name": "AMZN_20260206_puts.csv",
-        "file_path": "raw_data\\options\\AMZN_20260206_puts.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20260206_puts.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 45,
@@ -586,11 +586,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.504734"
+        "created_at": "2025-12-27T13:12:01.007827"
       },
       "AMZN_20260220_calls.csv": {
         "file_name": "AMZN_20260220_calls.csv",
-        "file_path": "raw_data\\options\\AMZN_20260220_calls.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20260220_calls.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 50,
@@ -627,11 +627,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.516192"
+        "created_at": "2025-12-27T13:12:01.020184"
       },
       "AMZN_20260220_puts.csv": {
         "file_name": "AMZN_20260220_puts.csv",
-        "file_path": "raw_data\\options\\AMZN_20260220_puts.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20260220_puts.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 50,
@@ -668,11 +668,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.523596"
+        "created_at": "2025-12-27T13:12:01.027939"
       },
       "AMZN_20260320_calls.csv": {
         "file_name": "AMZN_20260320_calls.csv",
-        "file_path": "raw_data\\options\\AMZN_20260320_calls.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20260320_calls.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 57,
@@ -709,11 +709,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.536278"
+        "created_at": "2025-12-27T13:12:01.041086"
       },
       "AMZN_20260320_puts.csv": {
         "file_name": "AMZN_20260320_puts.csv",
-        "file_path": "raw_data\\options\\AMZN_20260320_puts.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20260320_puts.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 57,
@@ -750,11 +750,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.544603"
+        "created_at": "2025-12-27T13:12:01.050067"
       },
       "AMZN_20260417_calls.csv": {
         "file_name": "AMZN_20260417_calls.csv",
-        "file_path": "raw_data\\options\\AMZN_20260417_calls.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20260417_calls.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 49,
@@ -791,11 +791,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.556146"
+        "created_at": "2025-12-27T13:12:01.062401"
       },
       "AMZN_20260417_puts.csv": {
         "file_name": "AMZN_20260417_puts.csv",
-        "file_path": "raw_data\\options\\AMZN_20260417_puts.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20260417_puts.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 49,
@@ -832,11 +832,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.563350"
+        "created_at": "2025-12-27T13:12:01.070358"
       },
       "AMZN_20260515_calls.csv": {
         "file_name": "AMZN_20260515_calls.csv",
-        "file_path": "raw_data\\options\\AMZN_20260515_calls.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20260515_calls.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 50,
@@ -873,11 +873,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.574669"
+        "created_at": "2025-12-27T13:12:01.082432"
       },
       "AMZN_20260515_puts.csv": {
         "file_name": "AMZN_20260515_puts.csv",
-        "file_path": "raw_data\\options\\AMZN_20260515_puts.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20260515_puts.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 50,
@@ -914,11 +914,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.581881"
+        "created_at": "2025-12-27T13:12:01.090029"
       },
       "AMZN_20260618_calls.csv": {
         "file_name": "AMZN_20260618_calls.csv",
-        "file_path": "raw_data\\options\\AMZN_20260618_calls.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20260618_calls.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 58,
@@ -955,11 +955,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.594116"
+        "created_at": "2025-12-27T13:12:01.103718"
       },
       "AMZN_20260618_puts.csv": {
         "file_name": "AMZN_20260618_puts.csv",
-        "file_path": "raw_data\\options\\AMZN_20260618_puts.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20260618_puts.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 58,
@@ -996,11 +996,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.602523"
+        "created_at": "2025-12-27T13:12:01.112465"
       },
       "AMZN_20260717_calls.csv": {
         "file_name": "AMZN_20260717_calls.csv",
-        "file_path": "raw_data\\options\\AMZN_20260717_calls.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20260717_calls.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 45,
@@ -1037,11 +1037,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.614158"
+        "created_at": "2025-12-27T13:12:01.124709"
       },
       "AMZN_20260717_puts.csv": {
         "file_name": "AMZN_20260717_puts.csv",
-        "file_path": "raw_data\\options\\AMZN_20260717_puts.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20260717_puts.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 45,
@@ -1078,11 +1078,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.621444"
+        "created_at": "2025-12-27T13:12:01.132521"
       },
       "AMZN_20260821_calls.csv": {
         "file_name": "AMZN_20260821_calls.csv",
-        "file_path": "raw_data\\options\\AMZN_20260821_calls.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20260821_calls.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 50,
@@ -1119,11 +1119,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.632512"
+        "created_at": "2025-12-27T13:12:01.144621"
       },
       "AMZN_20260821_puts.csv": {
         "file_name": "AMZN_20260821_puts.csv",
-        "file_path": "raw_data\\options\\AMZN_20260821_puts.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20260821_puts.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 50,
@@ -1160,11 +1160,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.640292"
+        "created_at": "2025-12-27T13:12:01.152455"
       },
       "AMZN_20260918_calls.csv": {
         "file_name": "AMZN_20260918_calls.csv",
-        "file_path": "raw_data\\options\\AMZN_20260918_calls.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20260918_calls.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 50,
@@ -1201,11 +1201,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.651940"
+        "created_at": "2025-12-27T13:12:01.164588"
       },
       "AMZN_20260918_puts.csv": {
         "file_name": "AMZN_20260918_puts.csv",
-        "file_path": "raw_data\\options\\AMZN_20260918_puts.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20260918_puts.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 50,
@@ -1242,11 +1242,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.659583"
+        "created_at": "2025-12-27T13:12:01.172843"
       },
       "AMZN_20261218_calls.csv": {
         "file_name": "AMZN_20261218_calls.csv",
-        "file_path": "raw_data\\options\\AMZN_20261218_calls.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20261218_calls.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 56,
@@ -1283,11 +1283,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.671876"
+        "created_at": "2025-12-27T13:12:01.186557"
       },
       "AMZN_20261218_puts.csv": {
         "file_name": "AMZN_20261218_puts.csv",
-        "file_path": "raw_data\\options\\AMZN_20261218_puts.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20261218_puts.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 56,
@@ -1324,11 +1324,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.680203"
+        "created_at": "2025-12-27T13:12:01.195294"
       },
       "AMZN_20270115_calls.csv": {
         "file_name": "AMZN_20270115_calls.csv",
-        "file_path": "raw_data\\options\\AMZN_20270115_calls.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20270115_calls.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 57,
@@ -1365,11 +1365,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.692962"
+        "created_at": "2025-12-27T13:12:01.208191"
       },
       "AMZN_20270115_puts.csv": {
         "file_name": "AMZN_20270115_puts.csv",
-        "file_path": "raw_data\\options\\AMZN_20270115_puts.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20270115_puts.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 57,
@@ -1406,11 +1406,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.701361"
+        "created_at": "2025-12-27T13:12:01.216824"
       },
       "AMZN_20270617_calls.csv": {
         "file_name": "AMZN_20270617_calls.csv",
-        "file_path": "raw_data\\options\\AMZN_20270617_calls.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20270617_calls.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 55,
@@ -1447,11 +1447,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.714174"
+        "created_at": "2025-12-27T13:12:01.230768"
       },
       "AMZN_20270617_puts.csv": {
         "file_name": "AMZN_20270617_puts.csv",
-        "file_path": "raw_data\\options\\AMZN_20270617_puts.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20270617_puts.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 55,
@@ -1488,11 +1488,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.722210"
+        "created_at": "2025-12-27T13:12:01.239377"
       },
       "AMZN_20271217_calls.csv": {
         "file_name": "AMZN_20271217_calls.csv",
-        "file_path": "raw_data\\options\\AMZN_20271217_calls.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20271217_calls.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 54,
@@ -1529,11 +1529,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.734340"
+        "created_at": "2025-12-27T13:12:01.252169"
       },
       "AMZN_20271217_puts.csv": {
         "file_name": "AMZN_20271217_puts.csv",
-        "file_path": "raw_data\\options\\AMZN_20271217_puts.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20271217_puts.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 54,
@@ -1570,11 +1570,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.742623"
+        "created_at": "2025-12-27T13:12:01.261013"
       },
       "AMZN_20280121_calls.csv": {
         "file_name": "AMZN_20280121_calls.csv",
-        "file_path": "raw_data\\options\\AMZN_20280121_calls.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20280121_calls.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 36,
@@ -1611,11 +1611,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.754921"
+        "created_at": "2025-12-27T13:12:01.273381"
       },
       "AMZN_20280121_puts.csv": {
         "file_name": "AMZN_20280121_puts.csv",
-        "file_path": "raw_data\\options\\AMZN_20280121_puts.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20280121_puts.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 36,
@@ -1652,11 +1652,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.762041"
+        "created_at": "2025-12-27T13:12:01.280886"
       },
       "AMZN_20280616_calls.csv": {
         "file_name": "AMZN_20280616_calls.csv",
-        "file_path": "raw_data\\options\\AMZN_20280616_calls.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20280616_calls.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 33,
@@ -1693,11 +1693,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.773099"
+        "created_at": "2025-12-27T13:12:01.292693"
       },
       "AMZN_20280616_puts.csv": {
         "file_name": "AMZN_20280616_puts.csv",
-        "file_path": "raw_data\\options\\AMZN_20280616_puts.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20280616_puts.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 33,
@@ -1734,11 +1734,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.780391"
+        "created_at": "2025-12-27T13:12:01.300539"
       },
       "AMZN_20281215_calls.csv": {
         "file_name": "AMZN_20281215_calls.csv",
-        "file_path": "raw_data\\options\\AMZN_20281215_calls.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20281215_calls.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 32,
@@ -1775,11 +1775,11 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.791558"
+        "created_at": "2025-12-27T13:12:01.311896"
       },
       "AMZN_20281215_puts.csv": {
         "file_name": "AMZN_20281215_puts.csv",
-        "file_path": "raw_data\\options\\AMZN_20281215_puts.csv",
+        "file_path": "raw_data\\options\\AMZN\\AMZN_20281215_puts.csv",
         "symbol": "AMZN",
         "data_type": "options",
         "rows": 32,
@@ -1816,7 +1816,7 @@
         "validation_status": "PENDING",
         "data_quality_score": 100.0,
         "missing_data_handled": 0,
-        "created_at": "2025-12-27T13:07:46.798837"
+        "created_at": "2025-12-27T13:12:01.319451"
       }
     }
   },
