@@ -363,7 +363,10 @@ class FileManager:
             FileMetadata
         """
         file_name = f"{symbol}_{expiration}_{option_type}.csv"
-        file_path = self.get_output_path('options', file_name)
+        # Create symbol-specific subfolder for options
+        symbol_dir = self.output_dir / 'options' / symbol.upper()
+        symbol_dir.mkdir(parents=True, exist_ok=True)
+        file_path = symbol_dir / file_name
 
         df = self._prepare_dataframe(df)
         df = self._order_columns_options(df)

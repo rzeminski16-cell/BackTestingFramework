@@ -311,8 +311,12 @@ Retrieves historical options chain data.
 
 **Output File Format:**
 
+Options data is organized by ticker in subfolders:
+
 ```
-raw_data/options/AAPL_options_2024-01.csv
+raw_data/options/AAPL/AAPL_20240119_calls.csv
+raw_data/options/AAPL/AAPL_20240119_puts.csv
+raw_data/options/MSFT/MSFT_20240119_calls.csv
 ```
 
 ---
@@ -406,7 +410,12 @@ raw_data/
 │   ├── EURUSD_daily.csv
 │   └── ...
 └── options/
-    ├── AAPL_options_2024-01.csv
+    ├── AAPL/
+    │   ├── AAPL_20240119_calls.csv
+    │   ├── AAPL_20240119_puts.csv
+    │   └── ...
+    ├── MSFT/
+    │   └── ...
     └── ...
 ```
 
