@@ -1,0 +1,26 @@
+SESSION METRICS
+==================================================
+
+
+Timing:
+  Total duration: 174.6s
+  Data collection: 0.0s
+  Validation: 0.0s
+  File I/O: 0.0s
+
+API Performance:
+  Total calls: 0
+  Cached responses: 0 (0.0%)
+  Fresh fetches: 0
+  Failed calls (retried): 0
+  Average response time: 0.00s
+  Retry rate: 0.0%
+  Calls per minute: 0.0
+
+Data Processing:
+  Total rows processed: 0
+  Total cells processed: 0
+  Validation checks: 0
+  Issues found: 0
+  Issues resolved: 0
+  Data quality score: 100.0%

@@ -1,0 +1,1543 @@
+API ACTIVITY LOG
+==================================================
+
+[API] 2025-12-27 12:56:49.339425 | GET | TIME_SERIES_DAILY_ADJUSTED
+      Symbol: AIT
+      Status: 200
+      Response size: 2214751 bytes
+      Cache: MISS
+      Time: 0.76s
+
+[API] 2025-12-27 12:56:50.076938 | GET | SMA
+      Symbol: AIT
+      Status: 200
+      Response size: 419813 bytes
+      Cache: MISS
+      Time: 0.63s
+
+[API] 2025-12-27 12:56:51.153693 | GET | SMA
+      Symbol: AIT
+      Status: 200
+      Response size: 417868 bytes
+      Cache: MISS
+      Time: 1.03s
+
+[API] 2025-12-27 12:56:51.793666 | GET | SMA
+      Symbol: AIT
+      Status: 200
+      Response size: 408315 bytes
+      Cache: MISS
+      Time: 0.59s
+
+[API] 2025-12-27 12:56:53.412703 | GET | EMA
+      Symbol: AIT
+      Status: 200
+      Response size: 420329 bytes
+      Cache: MISS
+      Time: 1.57s
+
+[API] 2025-12-27 12:56:54.125701 | GET | EMA
+      Symbol: AIT
+      Status: 200
+      Response size: 419431 bytes
+      Cache: MISS
+      Time: 0.66s
+
+[API] 2025-12-27 12:56:54.861205 | GET | WMA
+      Symbol: AIT
+      Status: 200
+      Response size: 420202 bytes
+      Cache: MISS
+      Time: 0.69s
+
+[API] 2025-12-27 12:56:55.491332 | GET | DEMA
+      Symbol: AIT
+      Status: 200
+      Response size: 425958 bytes
+      Cache: MISS
+      Time: 0.58s
+
+[API] 2025-12-27 12:56:56.183417 | GET | TEMA
+      Symbol: AIT
+      Status: 200
+      Response size: 425126 bytes
+      Cache: MISS
+      Time: 0.64s
+
+[API] 2025-12-27 12:56:56.861140 | GET | TRIMA
+      Symbol: AIT
+      Status: 200
+      Response size: 433353 bytes
+      Cache: MISS
+      Time: 0.63s
+
+[API] 2025-12-27 12:56:57.554709 | GET | KAMA
+      Symbol: AIT
+      Status: 200
+      Response size: 426702 bytes
+      Cache: MISS
+      Time: 0.64s
+
+[API] 2025-12-27 12:56:57.975177 | GET | T3
+      Symbol: AIT
+      Status: 200
+      Response size: 409663 bytes
+      Cache: MISS
+      Time: 0.37s
+
+[API] 2025-12-27 12:56:58.664530 | GET | RSI
+      Symbol: AIT
+      Status: 200
+      Response size: 420494 bytes
+      Cache: MISS
+      Time: 0.64s
+
+[API] 2025-12-27 12:56:59.390386 | GET | STOCH
+      Symbol: AIT
+      Status: 200
+      Response size: 643982 bytes
+      Cache: MISS
+      Time: 0.66s
+
+[API] 2025-12-27 12:57:00.138043 | GET | STOCHF
+      Symbol: AIT
+      Status: 200
+      Response size: 643705 bytes
+      Cache: MISS
+      Time: 0.68s
+
+[API] 2025-12-27 12:57:01.027375 | GET | STOCHRSI
+      Symbol: AIT
+      Status: 200
+      Response size: 642967 bytes
+      Cache: MISS
+      Time: 0.82s
+
+[API] 2025-12-27 12:57:01.711732 | GET | WILLR
+      Symbol: AIT
+      Status: 200
+      Response size: 439257 bytes
+      Cache: MISS
+      Time: 0.63s
+
+[API] 2025-12-27 12:57:02.330630 | GET | MOM
+      Symbol: AIT
+      Status: 200
+      Response size: 417326 bytes
+      Cache: MISS
+      Time: 0.57s
+
+[API] 2025-12-27 12:57:02.957156 | GET | ROC
+      Symbol: AIT
+      Status: 200
+      Response size: 417719 bytes
+      Cache: MISS
+      Time: 0.58s
+
+[API] 2025-12-27 12:57:03.688455 | GET | ROCR
+      Symbol: AIT
+      Status: 200
+      Response size: 420505 bytes
+      Cache: MISS
+      Time: 0.68s
+
+[API] 2025-12-27 12:57:04.371607 | GET | CCI
+      Symbol: AIT
+      Status: 200
+      Response size: 425317 bytes
+      Cache: MISS
+      Time: 0.63s
+
+[API] 2025-12-27 12:57:05.486278 | GET | CMO
+      Symbol: AIT
+      Status: 200
+      Response size: 420936 bytes
+      Cache: MISS
+      Time: 1.07s
+
+[API] 2025-12-27 12:57:06.245889 | GET | ADX
+      Symbol: AIT
+      Status: 200
+      Response size: 419516 bytes
+      Cache: MISS
+      Time: 0.71s
+
+[API] 2025-12-27 12:57:06.920168 | GET | ADXR
+      Symbol: AIT
+      Status: 200
+      Response size: 425301 bytes
+      Cache: MISS
+      Time: 0.63s
+
+[API] 2025-12-27 12:57:07.661010 | GET | AROON
+      Symbol: AIT
+      Status: 200
+      Response size: 695114 bytes
+      Cache: MISS
+      Time: 0.67s
+
+[API] 2025-12-27 12:57:08.040813 | GET | AROONOSC
+      Symbol: AIT
+      Status: 200
+      Response size: 456502 bytes
+      Cache: MISS
+      Time: 0.33s
+
+[API] 2025-12-27 12:57:08.726975 | GET | DX
+      Symbol: AIT
+      Status: 200
+      Response size: 412159 bytes
+      Cache: MISS
+      Time: 0.64s
+
+[API] 2025-12-27 12:57:09.406665 | GET | MINUS_DI
+      Symbol: AIT
+      Status: 200
+      Response size: 453140 bytes
+      Cache: MISS
+      Time: 0.63s
+
+[API] 2025-12-27 12:57:10.099208 | GET | PLUS_DI
+      Symbol: AIT
+      Status: 200
+      Response size: 446552 bytes
+      Cache: MISS
+      Time: 0.64s
+
+[API] 2025-12-27 12:57:10.964851 | GET | MACD
+      Symbol: AIT
+      Status: 200
+      Response size: 898989 bytes
+      Cache: MISS
+      Time: 0.79s
+
+[API] 2025-12-27 12:57:11.890172 | GET | MACDEXT
+      Symbol: AIT
+      Status: 200
+      Response size: 899757 bytes
+      Cache: MISS
+      Time: 0.84s
+
+[API] 2025-12-27 12:57:12.577331 | GET | ATR
+      Symbol: AIT
+      Status: 200
+      Response size: 413906 bytes
+      Cache: MISS
+      Time: 0.63s
+
+[API] 2025-12-27 12:57:14.728887 | GET | NATR
+      Symbol: AIT
+      Status: 200
+      Response size: 420480 bytes
+      Cache: MISS
+      Time: 2.10s
+
+[API] 2025-12-27 12:57:15.444761 | GET | TRANGE
+      Symbol: AIT
+      Status: 200
+      Response size: 434457 bytes
+      Cache: MISS
+      Time: 0.67s
+
+[API] 2025-12-27 12:57:16.016206 | GET | BBANDS
+      Symbol: AIT
+      Status: 200
+      Response size: 1055629 bytes
+      Cache: MISS
+      Time: 0.48s
+
+[API] 2025-12-27 12:57:16.742440 | GET | AD
+      Symbol: AIT
+      Status: 200
+      Response size: 511853 bytes
+      Cache: MISS
+      Time: 0.64s
+
+[API] 2025-12-27 12:57:17.137376 | GET | ADOSC
+      Symbol: AIT
+      Status: 200
+      Response size: 458910 bytes
+      Cache: MISS
+      Time: 0.34s
+
+[API] 2025-12-27 12:57:17.822306 | GET | OBV
+      Symbol: AIT
+      Status: 200
+      Response size: 459288 bytes
+      Cache: MISS
+      Time: 0.63s
+
+[API] 2025-12-27 12:57:18.439349 | GET | MFI
+      Symbol: AIT
+      Status: 200
+      Response size: 420440 bytes
+      Cache: MISS
+      Time: 0.57s
+
+[API] 2025-12-27 12:57:18.897808 | GET | APO
+      Symbol: AIT
+      Status: 200
+      Response size: 416184 bytes
+      Cache: MISS
+      Time: 0.41s
+
+[API] 2025-12-27 12:57:19.566655 | GET | PPO
+      Symbol: AIT
+      Status: 200
+      Response size: 416151 bytes
+      Cache: MISS
+      Time: 0.62s
+
+[API] 2025-12-27 12:57:20.260475 | GET | BOP
+      Symbol: AIT
+      Status: 200
+      Response size: 417922 bytes
+      Cache: MISS
+      Time: 0.64s
+
+[API] 2025-12-27 12:57:20.946129 | GET | TRIX
+      Symbol: AIT
+      Status: 200
+      Response size: 421387 bytes
+      Cache: MISS
+      Time: 0.64s
+
+[API] 2025-12-27 12:57:21.643220 | GET | ULTOSC
+      Symbol: AIT
+      Status: 200
+      Response size: 439289 bytes
+      Cache: MISS
+      Time: 0.65s
+
+[API] 2025-12-27 12:57:22.176959 | GET | SAR
+      Symbol: AIT
+      Status: 200
+      Response size: 420975 bytes
+      Cache: MISS
+      Time: 0.48s
+
+[API] 2025-12-27 12:57:22.561293 | GET | MIDPOINT
+      Symbol: AIT
+      Status: 200
+      Response size: 453043 bytes
+      Cache: MISS
+      Time: 0.33s
+
+[API] 2025-12-27 12:57:23.235398 | GET | MIDPRICE
+      Symbol: AIT
+      Status: 200
+      Response size: 453009 bytes
+      Cache: MISS
+      Time: 0.62s
+
+[API] 2025-12-27 12:57:23.932136 | GET | HT_TRENDLINE
+      Symbol: AIT
+      Status: 200
+      Response size: 475680 bytes
+      Cache: MISS
+      Time: 0.65s
+
+[API] 2025-12-27 12:57:26.436994 | GET | HT_SINE
+      Symbol: AIT
+      Status: 200
+      Response size: 652451 bytes
+      Cache: MISS
+      Time: 2.44s
+
+[API] 2025-12-27 12:57:26.797276 | GET | HT_TRENDMODE
+      Symbol: AIT
+      Status: 200
+      Response size: 421394 bytes
+      Cache: MISS
+      Time: 0.31s
+
+[API] 2025-12-27 12:57:27.533840 | GET | HT_DCPERIOD
+      Symbol: AIT
+      Status: 200
+      Response size: 452081 bytes
+      Cache: MISS
+      Time: 0.69s
+
+[API] 2025-12-27 12:57:28.260106 | GET | HT_DCPHASE
+      Symbol: AIT
+      Status: 200
+      Response size: 467383 bytes
+      Cache: MISS
+      Time: 0.67s
+
+[API] 2025-12-27 12:57:28.985279 | GET | HT_PHASOR
+      Symbol: AIT
+      Status: 200
+      Response size: 668138 bytes
+      Cache: MISS
+      Time: 0.66s
+
+[API] 2025-12-27 12:57:29.149417 | GET | VWAP
+      Symbol: AIT
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.15s
+
+[API] 2025-12-27 12:57:29.812753 | GET | MAMA
+      Symbol: AIT
+      Status: 200
+      Response size: 627631 bytes
+      Cache: MISS
+      Time: 0.60s
+
+[API] 2025-12-27 12:57:31.101352 | GET | TIME_SERIES_DAILY_ADJUSTED
+      Symbol: AMG
+      Status: 200
+      Response size: 2227678 bytes
+      Cache: MISS
+      Time: 0.55s
+
+[API] 2025-12-27 12:57:31.822982 | GET | SMA
+      Symbol: AMG
+      Status: 200
+      Response size: 423566 bytes
+      Cache: MISS
+      Time: 0.64s
+
+[API] 2025-12-27 12:57:32.504280 | GET | SMA
+      Symbol: AMG
+      Status: 200
+      Response size: 421658 bytes
+      Cache: MISS
+      Time: 0.63s
+
+[API] 2025-12-27 12:57:33.110365 | GET | SMA
+      Symbol: AMG
+      Status: 200
+      Response size: 411895 bytes
+      Cache: MISS
+      Time: 0.56s
+
+[API] 2025-12-27 12:57:33.787801 | GET | EMA
+      Symbol: AMG
+      Status: 200
+      Response size: 424076 bytes
+      Cache: MISS
+      Time: 0.63s
+
+[API] 2025-12-27 12:57:34.478877 | GET | EMA
+      Symbol: AMG
+      Status: 200
+      Response size: 423189 bytes
+      Cache: MISS
+      Time: 0.64s
+
+[API] 2025-12-27 12:57:34.853932 | GET | WMA
+      Symbol: AMG
+      Status: 200
+      Response size: 423954 bytes
+      Cache: MISS
+      Time: 0.33s
+
+[API] 2025-12-27 12:57:35.556755 | GET | DEMA
+      Symbol: AMG
+      Status: 200
+      Response size: 429720 bytes
+      Cache: MISS
+      Time: 0.65s
+
+[API] 2025-12-27 12:57:36.042743 | GET | TEMA
+      Symbol: AMG
+      Status: 200
+      Response size: 428864 bytes
+      Cache: MISS
+      Time: 0.44s
+
+[API] 2025-12-27 12:57:37.562793 | GET | TRIMA
+      Symbol: AMG
+      Status: 200
+      Response size: 437109 bytes
+      Cache: MISS
+      Time: 1.47s
+
+[API] 2025-12-27 12:57:38.277500 | GET | KAMA
+      Symbol: AMG
+      Status: 200
+      Response size: 430438 bytes
+      Cache: MISS
+      Time: 0.66s
+
+[API] 2025-12-27 12:57:38.960713 | GET | T3
+      Symbol: AMG
+      Status: 200
+      Response size: 413371 bytes
+      Cache: MISS
+      Time: 0.63s
+
+[API] 2025-12-27 12:57:39.624142 | GET | RSI
+      Symbol: AMG
+      Status: 200
+      Response size: 420494 bytes
+      Cache: MISS
+      Time: 0.61s
+
+[API] 2025-12-27 12:57:40.288047 | GET | STOCH
+      Symbol: AMG
+      Status: 200
+      Response size: 643998 bytes
+      Cache: MISS
+      Time: 0.60s
+
+[API] 2025-12-27 12:57:40.746626 | GET | STOCHF
+      Symbol: AMG
+      Status: 200
+      Response size: 643591 bytes
+      Cache: MISS
+      Time: 0.39s
+
+[API] 2025-12-27 12:57:41.365526 | GET | STOCHRSI
+      Symbol: AMG
+      Status: 200
+      Response size: 642869 bytes
+      Cache: MISS
+      Time: 0.55s
+
+[API] 2025-12-27 12:57:42.068742 | GET | WILLR
+      Symbol: AMG
+      Status: 200
+      Response size: 439189 bytes
+      Cache: MISS
+      Time: 0.65s
+
+[API] 2025-12-27 12:57:42.670365 | GET | MOM
+      Symbol: AMG
+      Status: 200
+      Response size: 417984 bytes
+      Cache: MISS
+      Time: 0.55s
+
+[API] 2025-12-27 12:57:43.199702 | GET | ROC
+      Symbol: AMG
+      Status: 200
+      Response size: 417960 bytes
+      Cache: MISS
+      Time: 0.48s
+
+[API] 2025-12-27 12:57:44.019501 | GET | ROCR
+      Symbol: AMG
+      Status: 200
+      Response size: 420505 bytes
+      Cache: MISS
+      Time: 0.77s
+
+[API] 2025-12-27 12:57:49.077005 | GET | CCI
+      Symbol: AMG
+      Status: 200
+      Response size: 425430 bytes
+      Cache: MISS
+      Time: 5.01s
+
+[API] 2025-12-27 12:57:50.175642 | GET | CMO
+      Symbol: AMG
+      Status: 200
+      Response size: 421291 bytes
+      Cache: MISS
+      Time: 1.05s
+
+[API] 2025-12-27 12:57:50.609187 | GET | ADX
+      Symbol: AMG
+      Status: 200
+      Response size: 419553 bytes
+      Cache: MISS
+      Time: 0.38s
+
+[API] 2025-12-27 12:57:51.755200 | GET | ADXR
+      Symbol: AMG
+      Status: 200
+      Response size: 425329 bytes
+      Cache: MISS
+      Time: 1.10s
+
+[API] 2025-12-27 12:57:52.684645 | GET | AROON
+      Symbol: AMG
+      Status: 200
+      Response size: 694990 bytes
+      Cache: MISS
+      Time: 0.86s
+
+[API] 2025-12-27 12:57:54.198289 | GET | AROONOSC
+      Symbol: AMG
+      Status: 200
+      Response size: 456581 bytes
+      Cache: MISS
+      Time: 1.46s
+
+[API] 2025-12-27 12:57:54.593353 | GET | DX
+      Symbol: AMG
+      Status: 200
+      Response size: 412264 bytes
+      Cache: MISS
+      Time: 0.35s
+
+[API] 2025-12-27 12:57:55.350881 | GET | MINUS_DI
+      Symbol: AMG
+      Status: 200
+      Response size: 453101 bytes
+      Cache: MISS
+      Time: 0.71s
+
+[API] 2025-12-27 12:57:56.316230 | GET | PLUS_DI
+      Symbol: AMG
+      Status: 200
+      Response size: 446619 bytes
+      Cache: MISS
+      Time: 0.91s
+
+[API] 2025-12-27 12:57:57.199398 | GET | MACD
+      Symbol: AMG
+      Status: 200
+      Response size: 899152 bytes
+      Cache: MISS
+      Time: 0.80s
+
+[API] 2025-12-27 12:57:58.045763 | GET | MACDEXT
+      Symbol: AMG
+      Status: 200
+      Response size: 899670 bytes
+      Cache: MISS
+      Time: 0.76s
+
+[API] 2025-12-27 12:57:58.776290 | GET | ATR
+      Symbol: AMG
+      Status: 200
+      Response size: 413889 bytes
+      Cache: MISS
+      Time: 0.67s
+
+[API] 2025-12-27 12:57:59.981586 | GET | NATR
+      Symbol: AMG
+      Status: 200
+      Response size: 420539 bytes
+      Cache: MISS
+      Time: 1.15s
+
+[API] 2025-12-27 12:58:00.663482 | GET | TRANGE
+      Symbol: AMG
+      Status: 200
+      Response size: 434485 bytes
+      Cache: MISS
+      Time: 0.63s
+
+[API] 2025-12-27 12:58:01.533043 | GET | BBANDS
+      Symbol: AMG
+      Status: 200
+      Response size: 1066872 bytes
+      Cache: MISS
+      Time: 0.78s
+
+[API] 2025-12-27 12:58:02.322510 | GET | AD
+      Symbol: AMG
+      Status: 200
+      Response size: 511938 bytes
+      Cache: MISS
+      Time: 0.73s
+
+[API] 2025-12-27 12:58:03.020706 | GET | ADOSC
+      Symbol: AMG
+      Status: 200
+      Response size: 461030 bytes
+      Cache: MISS
+      Time: 0.65s
+
+[API] 2025-12-27 12:58:03.742471 | GET | OBV
+      Symbol: AMG
+      Status: 200
+      Response size: 459546 bytes
+      Cache: MISS
+      Time: 0.67s
+
+[API] 2025-12-27 12:58:04.445307 | GET | MFI
+      Symbol: AMG
+      Status: 200
+      Response size: 420436 bytes
+      Cache: MISS
+      Time: 0.65s
+
+[API] 2025-12-27 12:58:06.667813 | GET | APO
+      Symbol: AMG
+      Status: 200
+      Response size: 416115 bytes
+      Cache: MISS
+      Time: 2.17s
+
+[API] 2025-12-27 12:58:07.285141 | GET | PPO
+      Symbol: AMG
+      Status: 200
+      Response size: 416127 bytes
+      Cache: MISS
+      Time: 0.57s
+
+[API] 2025-12-27 12:58:07.934423 | GET | BOP
+      Symbol: AMG
+      Status: 200
+      Response size: 418021 bytes
+      Cache: MISS
+      Time: 0.60s
+
+[API] 2025-12-27 12:58:08.602527 | GET | TRIX
+      Symbol: AMG
+      Status: 200
+      Response size: 421485 bytes
+      Cache: MISS
+      Time: 0.62s
+
+[API] 2025-12-27 12:58:09.314942 | GET | ULTOSC
+      Symbol: AMG
+      Status: 200
+      Response size: 439289 bytes
+      Cache: MISS
+      Time: 0.66s
+
+[API] 2025-12-27 12:58:09.650353 | GET | SAR
+      Symbol: AMG
+      Status: 200
+      Response size: 424716 bytes
+      Cache: MISS
+      Time: 0.28s
+
+[API] 2025-12-27 12:58:10.409344 | GET | MIDPOINT
+      Symbol: AMG
+      Status: 200
+      Response size: 456795 bytes
+      Cache: MISS
+      Time: 0.71s
+
+[API] 2025-12-27 12:58:10.894813 | GET | MIDPRICE
+      Symbol: AMG
+      Status: 200
+      Response size: 456761 bytes
+      Cache: MISS
+      Time: 0.43s
+
+[API] 2025-12-27 12:58:11.578331 | GET | HT_TRENDLINE
+      Symbol: AMG
+      Status: 200
+      Response size: 479413 bytes
+      Cache: MISS
+      Time: 0.63s
+
+[API] 2025-12-27 12:58:12.324473 | GET | HT_SINE
+      Symbol: AMG
+      Status: 200
+      Response size: 652478 bytes
+      Cache: MISS
+      Time: 0.68s
+
+[API] 2025-12-27 12:58:13.037100 | GET | HT_TRENDMODE
+      Symbol: AMG
+      Status: 200
+      Response size: 421394 bytes
+      Cache: MISS
+      Time: 0.66s
+
+[API] 2025-12-27 12:58:13.719200 | GET | HT_DCPERIOD
+      Symbol: AMG
+      Status: 200
+      Response size: 452081 bytes
+      Cache: MISS
+      Time: 0.63s
+
+[API] 2025-12-27 12:58:14.444048 | GET | HT_DCPHASE
+      Symbol: AMG
+      Status: 200
+      Response size: 467272 bytes
+      Cache: MISS
+      Time: 0.67s
+
+[API] 2025-12-27 12:58:15.248267 | GET | HT_PHASOR
+      Symbol: AMG
+      Status: 200
+      Response size: 668552 bytes
+      Cache: MISS
+      Time: 0.74s
+
+[API] 2025-12-27 12:58:15.710658 | GET | VWAP
+      Symbol: AMG
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.44s
+
+[API] 2025-12-27 12:58:16.425656 | GET | MAMA
+      Symbol: AMG
+      Status: 200
+      Response size: 635145 bytes
+      Cache: MISS
+      Time: 0.66s
+
+[API] 2025-12-27 12:58:17.915752 | GET | TIME_SERIES_DAILY_ADJUSTED
+      Symbol: AMZN
+      Status: 200
+      Response size: 2176560 bytes
+      Cache: MISS
+      Time: 0.75s
+
+[API] 2025-12-27 12:58:18.416890 | GET | SMA
+      Symbol: AMZN
+      Status: 200
+      Response size: 418496 bytes
+      Cache: MISS
+      Time: 0.42s
+
+[API] 2025-12-27 12:58:19.021102 | GET | SMA
+      Symbol: AMZN
+      Status: 200
+      Response size: 416587 bytes
+      Cache: MISS
+      Time: 0.55s
+
+[API] 2025-12-27 12:58:19.516617 | GET | SMA
+      Symbol: AMZN
+      Status: 200
+      Response size: 407202 bytes
+      Cache: MISS
+      Time: 0.45s
+
+[API] 2025-12-27 12:58:20.319656 | GET | EMA
+      Symbol: AMZN
+      Status: 200
+      Response size: 419007 bytes
+      Cache: MISS
+      Time: 0.75s
+
+[API] 2025-12-27 12:58:21.255977 | GET | EMA
+      Symbol: AMZN
+      Status: 200
+      Response size: 418118 bytes
+      Cache: MISS
+      Time: 0.89s
+
+[API] 2025-12-27 12:58:21.934010 | GET | WMA
+      Symbol: AMZN
+      Status: 200
+      Response size: 418881 bytes
+      Cache: MISS
+      Time: 0.63s
+
+[API] 2025-12-27 12:58:22.594011 | GET | DEMA
+      Symbol: AMZN
+      Status: 200
+      Response size: 424653 bytes
+      Cache: MISS
+      Time: 0.61s
+
+[API] 2025-12-27 12:58:23.264143 | GET | TEMA
+      Symbol: AMZN
+      Status: 200
+      Response size: 423818 bytes
+      Cache: MISS
+      Time: 0.62s
+
+[API] 2025-12-27 12:58:23.953793 | GET | TRIMA
+      Symbol: AMZN
+      Status: 200
+      Response size: 432029 bytes
+      Cache: MISS
+      Time: 0.64s
+
+[API] 2025-12-27 12:58:24.637176 | GET | KAMA
+      Symbol: AMZN
+      Status: 200
+      Response size: 425399 bytes
+      Cache: MISS
+      Time: 0.63s
+
+[API] 2025-12-27 12:58:25.165442 | GET | T3
+      Symbol: AMZN
+      Status: 200
+      Response size: 408345 bytes
+      Cache: MISS
+      Time: 0.48s
+
+[API] 2025-12-27 12:58:25.784900 | GET | RSI
+      Symbol: AMZN
+      Status: 200
+      Response size: 420495 bytes
+      Cache: MISS
+      Time: 0.57s
+
+[API] 2025-12-27 12:58:26.511640 | GET | STOCH
+      Symbol: AMZN
+      Status: 200
+      Response size: 644143 bytes
+      Cache: MISS
+      Time: 0.66s
+
+[API] 2025-12-27 12:58:27.276265 | GET | STOCHF
+      Symbol: AMZN
+      Status: 200
+      Response size: 643760 bytes
+      Cache: MISS
+      Time: 0.70s
+
+[API] 2025-12-27 12:58:28.042054 | GET | STOCHRSI
+      Symbol: AMZN
+      Status: 200
+      Response size: 642642 bytes
+      Cache: MISS
+      Time: 0.70s
+
+[API] 2025-12-27 12:58:28.738270 | GET | WILLR
+      Symbol: AMZN
+      Status: 200
+      Response size: 439147 bytes
+      Cache: MISS
+      Time: 0.64s
+
+[API] 2025-12-27 12:58:29.413214 | GET | MOM
+      Symbol: AMZN
+      Status: 200
+      Response size: 417525 bytes
+      Cache: MISS
+      Time: 0.62s
+
+[API] 2025-12-27 12:58:30.068670 | GET | ROC
+      Symbol: AMZN
+      Status: 200
+      Response size: 418389 bytes
+      Cache: MISS
+      Time: 0.61s
+
+[API] 2025-12-27 12:58:30.669363 | GET | ROCR
+      Symbol: AMZN
+      Status: 200
+      Response size: 420506 bytes
+      Cache: MISS
+      Time: 0.55s
+
+[API] 2025-12-27 12:58:31.057546 | GET | CCI
+      Symbol: AMZN
+      Status: 200
+      Response size: 425385 bytes
+      Cache: MISS
+      Time: 0.34s
+
+[API] 2025-12-27 12:58:32.142831 | GET | CMO
+      Symbol: AMZN
+      Status: 200
+      Response size: 421281 bytes
+      Cache: MISS
+      Time: 1.03s
+
+[API] 2025-12-27 12:58:32.903962 | GET | ADX
+      Symbol: AMZN
+      Status: 200
+      Response size: 419569 bytes
+      Cache: MISS
+      Time: 0.71s
+
+[API] 2025-12-27 12:58:33.619430 | GET | ADXR
+      Symbol: AMZN
+      Status: 200
+      Response size: 425320 bytes
+      Cache: MISS
+      Time: 0.67s
+
+[API] 2025-12-27 12:58:34.357945 | GET | AROON
+      Symbol: AMZN
+      Status: 200
+      Response size: 695003 bytes
+      Cache: MISS
+      Time: 0.67s
+
+[API] 2025-12-27 12:58:35.073101 | GET | AROONOSC
+      Symbol: AMZN
+      Status: 200
+      Response size: 456485 bytes
+      Cache: MISS
+      Time: 0.66s
+
+[API] 2025-12-27 12:58:35.742963 | GET | DX
+      Symbol: AMZN
+      Status: 200
+      Response size: 412346 bytes
+      Cache: MISS
+      Time: 0.62s
+
+[API] 2025-12-27 12:58:36.411401 | GET | MINUS_DI
+      Symbol: AMZN
+      Status: 200
+      Response size: 453132 bytes
+      Cache: MISS
+      Time: 0.62s
+
+[API] 2025-12-27 12:58:37.112418 | GET | PLUS_DI
+      Symbol: AMZN
+      Status: 200
+      Response size: 446647 bytes
+      Cache: MISS
+      Time: 0.65s
+
+[API] 2025-12-27 12:58:37.985869 | GET | MACD
+      Symbol: AMZN
+      Status: 200
+      Response size: 898901 bytes
+      Cache: MISS
+      Time: 0.79s
+
+[API] 2025-12-27 12:58:38.849408 | GET | MACDEXT
+      Symbol: AMZN
+      Status: 200
+      Response size: 899431 bytes
+      Cache: MISS
+      Time: 0.78s
+
+[API] 2025-12-27 12:58:40.234453 | GET | ATR
+      Symbol: AMZN
+      Status: 200
+      Response size: 413895 bytes
+      Cache: MISS
+      Time: 1.33s
+
+[API] 2025-12-27 12:58:40.910853 | GET | NATR
+      Symbol: AMZN
+      Status: 200
+      Response size: 420710 bytes
+      Cache: MISS
+      Time: 0.63s
+
+[API] 2025-12-27 12:58:41.550093 | GET | TRANGE
+      Symbol: AMZN
+      Status: 200
+      Response size: 434458 bytes
+      Cache: MISS
+      Time: 0.59s
+
+[API] 2025-12-27 12:58:42.228389 | GET | BBANDS
+      Symbol: AMZN
+      Status: 200
+      Response size: 1051686 bytes
+      Cache: MISS
+      Time: 0.59s
+
+[API] 2025-12-27 12:58:42.908982 | GET | AD
+      Symbol: AMZN
+      Status: 200
+      Response size: 532058 bytes
+      Cache: MISS
+      Time: 0.62s
+
+[API] 2025-12-27 12:58:43.651544 | GET | ADOSC
+      Symbol: AMZN
+      Status: 200
+      Response size: 476263 bytes
+      Cache: MISS
+      Time: 0.69s
+
+[API] 2025-12-27 12:58:44.329421 | GET | OBV
+      Symbol: AMZN
+      Status: 200
+      Response size: 478339 bytes
+      Cache: MISS
+      Time: 0.63s
+
+[API] 2025-12-27 12:58:44.998054 | GET | MFI
+      Symbol: AMZN
+      Status: 200
+      Response size: 420455 bytes
+      Cache: MISS
+      Time: 0.62s
+
+[API] 2025-12-27 12:58:45.684292 | GET | APO
+      Symbol: AMZN
+      Status: 200
+      Response size: 416026 bytes
+      Cache: MISS
+      Time: 0.64s
+
+[API] 2025-12-27 12:58:49.271965 | GET | PPO
+      Symbol: AMZN
+      Status: 200
+      Response size: 416241 bytes
+      Cache: MISS
+      Time: 3.54s
+
+[API] 2025-12-27 12:58:50.279130 | GET | BOP
+      Symbol: AMZN
+      Status: 200
+      Response size: 418002 bytes
+      Cache: MISS
+      Time: 0.96s
+
+[API] 2025-12-27 12:58:50.897588 | GET | TRIX
+      Symbol: AMZN
+      Status: 200
+      Response size: 421330 bytes
+      Cache: MISS
+      Time: 0.57s
+
+[API] 2025-12-27 12:58:52.036442 | GET | ULTOSC
+      Symbol: AMZN
+      Status: 200
+      Response size: 439290 bytes
+      Cache: MISS
+      Time: 1.09s
+
+[API] 2025-12-27 12:58:52.673899 | GET | SAR
+      Symbol: AMZN
+      Status: 200
+      Response size: 419663 bytes
+      Cache: MISS
+      Time: 0.59s
+
+[API] 2025-12-27 12:58:54.066249 | GET | MIDPOINT
+      Symbol: AMZN
+      Status: 200
+      Response size: 451728 bytes
+      Cache: MISS
+      Time: 1.34s
+
+[API] 2025-12-27 12:58:55.014596 | GET | MIDPRICE
+      Symbol: AMZN
+      Status: 200
+      Response size: 451693 bytes
+      Cache: MISS
+      Time: 0.90s
+
+[API] 2025-12-27 12:58:56.379551 | GET | HT_TRENDLINE
+      Symbol: AMZN
+      Status: 200
+      Response size: 474358 bytes
+      Cache: MISS
+      Time: 1.31s
+
+[API] 2025-12-27 12:58:57.148639 | GET | HT_SINE
+      Symbol: AMZN
+      Status: 200
+      Response size: 652659 bytes
+      Cache: MISS
+      Time: 0.70s
+
+[API] 2025-12-27 12:58:57.820617 | GET | HT_TRENDMODE
+      Symbol: AMZN
+      Status: 200
+      Response size: 421395 bytes
+      Cache: MISS
+      Time: 0.62s
+
+[API] 2025-12-27 12:58:58.500175 | GET | HT_DCPERIOD
+      Symbol: AMZN
+      Status: 200
+      Response size: 452082 bytes
+      Cache: MISS
+      Time: 0.63s
+
+[API] 2025-12-27 12:58:59.255650 | GET | HT_DCPHASE
+      Symbol: AMZN
+      Status: 200
+      Response size: 467471 bytes
+      Cache: MISS
+      Time: 0.70s
+
+[API] 2025-12-27 12:58:59.830227 | GET | HT_PHASOR
+      Symbol: AMZN
+      Status: 200
+      Response size: 668276 bytes
+      Cache: MISS
+      Time: 0.51s
+
+[API] 2025-12-27 12:59:00.250896 | GET | VWAP
+      Symbol: AMZN
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.40s
+
+[API] 2025-12-27 12:59:01.469250 | GET | MAMA
+      Symbol: AMZN
+      Status: 200
+      Response size: 625185 bytes
+      Cache: MISS
+      Time: 1.16s
+
+[API] 2025-12-27 12:59:02.884779 | GET | TIME_SERIES_DAILY_ADJUSTED
+      Symbol: NWE
+      Status: 200
+      Response size: 1524541 bytes
+      Cache: MISS
+      Time: 0.72s
+
+[API] 2025-12-27 12:59:03.909056 | GET | SMA
+      Symbol: NWE
+      Status: 200
+      Response size: 288857 bytes
+      Cache: MISS
+      Time: 0.97s
+
+[API] 2025-12-27 12:59:04.456327 | GET | SMA
+      Symbol: NWE
+      Status: 200
+      Response size: 286958 bytes
+      Cache: MISS
+      Time: 0.51s
+
+[API] 2025-12-27 12:59:05.004945 | GET | SMA
+      Symbol: NWE
+      Status: 200
+      Response size: 277384 bytes
+      Cache: MISS
+      Time: 0.51s
+
+[API] 2025-12-27 12:59:05.581989 | GET | EMA
+      Symbol: NWE
+      Status: 200
+      Response size: 289374 bytes
+      Cache: MISS
+      Time: 0.54s
+
+[API] 2025-12-27 12:59:07.380120 | GET | EMA
+      Symbol: NWE
+      Status: 200
+      Response size: 288489 bytes
+      Cache: MISS
+      Time: 1.76s
+
+[API] 2025-12-27 12:59:07.947641 | GET | WMA
+      Symbol: NWE
+      Status: 200
+      Response size: 289239 bytes
+      Cache: MISS
+      Time: 0.53s
+
+[API] 2025-12-27 12:59:08.555869 | GET | DEMA
+      Symbol: NWE
+      Status: 200
+      Response size: 292917 bytes
+      Cache: MISS
+      Time: 0.57s
+
+[API] 2025-12-27 12:59:09.469794 | GET | TEMA
+      Symbol: NWE
+      Status: 200
+      Response size: 292072 bytes
+      Cache: MISS
+      Time: 0.88s
+
+[API] 2025-12-27 12:59:10.056476 | GET | TRIMA
+      Symbol: NWE
+      Status: 200
+      Response size: 298290 bytes
+      Cache: MISS
+      Time: 0.55s
+
+[API] 2025-12-27 12:59:10.662052 | GET | KAMA
+      Symbol: NWE
+      Status: 200
+      Response size: 293696 bytes
+      Cache: MISS
+      Time: 0.57s
+
+[API] 2025-12-27 12:59:11.215134 | GET | T3
+      Symbol: NWE
+      Status: 200
+      Response size: 280682 bytes
+      Cache: MISS
+      Time: 0.51s
+
+[API] 2025-12-27 12:59:11.824944 | GET | RSI
+      Symbol: NWE
+      Status: 200
+      Response size: 289230 bytes
+      Cache: MISS
+      Time: 0.57s
+
+[API] 2025-12-27 12:59:12.510578 | GET | STOCH
+      Symbol: NWE
+      Status: 200
+      Response size: 443179 bytes
+      Cache: MISS
+      Time: 0.64s
+
+[API] 2025-12-27 12:59:12.894535 | GET | STOCHF
+      Symbol: NWE
+      Status: 200
+      Response size: 443007 bytes
+      Cache: MISS
+      Time: 0.33s
+
+[API] 2025-12-27 12:59:13.568572 | GET | STOCHRSI
+      Symbol: NWE
+      Status: 200
+      Response size: 442086 bytes
+      Cache: MISS
+      Time: 0.62s
+
+[API] 2025-12-27 12:59:14.412724 | GET | WILLR
+      Symbol: NWE
+      Status: 200
+      Response size: 302150 bytes
+      Cache: MISS
+      Time: 0.80s
+
+[API] 2025-12-27 12:59:14.965554 | GET | MOM
+      Symbol: NWE
+      Status: 200
+      Response size: 286949 bytes
+      Cache: MISS
+      Time: 0.52s
+
+[API] 2025-12-27 12:59:15.961516 | GET | ROC
+      Symbol: NWE
+      Status: 200
+      Response size: 287047 bytes
+      Cache: MISS
+      Time: 0.96s
+
+[API] 2025-12-27 12:59:16.547036 | GET | ROCR
+      Symbol: NWE
+      Status: 200
+      Response size: 289241 bytes
+      Cache: MISS
+      Time: 0.55s
+
+[API] 2025-12-27 12:59:17.657547 | GET | CCI
+      Symbol: NWE
+      Status: 200
+      Response size: 292552 bytes
+      Cache: MISS
+      Time: 1.07s
+
+[API] 2025-12-27 12:59:18.708276 | GET | CMO
+      Symbol: NWE
+      Status: 200
+      Response size: 289607 bytes
+      Cache: MISS
+      Time: 1.01s
+
+[API] 2025-12-27 12:59:19.315645 | GET | ADX
+      Symbol: NWE
+      Status: 200
+      Response size: 288287 bytes
+      Cache: MISS
+      Time: 0.57s
+
+[API] 2025-12-27 12:59:19.889240 | GET | ADXR
+      Symbol: NWE
+      Status: 200
+      Response size: 292001 bytes
+      Cache: MISS
+      Time: 0.54s
+
+[API] 2025-12-27 12:59:20.657052 | GET | AROON
+      Symbol: NWE
+      Status: 200
+      Response size: 478040 bytes
+      Cache: MISS
+      Time: 0.69s
+
+[API] 2025-12-27 12:59:21.223227 | GET | AROONOSC
+      Symbol: NWE
+      Status: 200
+      Response size: 314068 bytes
+      Cache: MISS
+      Time: 0.53s
+
+[API] 2025-12-27 12:59:21.682066 | GET | DX
+      Symbol: NWE
+      Status: 200
+      Response size: 283488 bytes
+      Cache: MISS
+      Time: 0.42s
+
+[API] 2025-12-27 12:59:22.652218 | GET | MINUS_DI
+      Symbol: NWE
+      Status: 200
+      Response size: 311531 bytes
+      Cache: MISS
+      Time: 0.93s
+
+[API] 2025-12-27 12:59:23.223267 | GET | PLUS_DI
+      Symbol: NWE
+      Status: 200
+      Response size: 307198 bytes
+      Cache: MISS
+      Time: 0.53s
+
+[API] 2025-12-27 12:59:24.125074 | GET | MACD
+      Symbol: NWE
+      Status: 200
+      Response size: 617375 bytes
+      Cache: MISS
+      Time: 0.84s
+
+[API] 2025-12-27 12:59:24.831369 | GET | MACDEXT
+      Symbol: NWE
+      Status: 200
+      Response size: 617707 bytes
+      Cache: MISS
+      Time: 0.64s
+
+[API] 2025-12-27 12:59:25.415489 | GET | ATR
+      Symbol: NWE
+      Status: 200
+      Response size: 284676 bytes
+      Cache: MISS
+      Time: 0.54s
+
+[API] 2025-12-27 12:59:25.789433 | GET | NATR
+      Symbol: NWE
+      Status: 200
+      Response size: 289207 bytes
+      Cache: MISS
+      Time: 0.34s
+
+[API] 2025-12-27 12:59:26.379717 | GET | TRANGE
+      Symbol: NWE
+      Status: 200
+      Response size: 299044 bytes
+      Cache: MISS
+      Time: 0.55s
+
+[API] 2025-12-27 12:59:27.340231 | GET | BBANDS
+      Symbol: NWE
+      Status: 200
+      Response size: 726275 bytes
+      Cache: MISS
+      Time: 0.89s
+
+[API] 2025-12-27 12:59:27.926806 | GET | AD
+      Symbol: NWE
+      Status: 200
+      Response size: 353018 bytes
+      Cache: MISS
+      Time: 0.54s
+
+[API] 2025-12-27 12:59:28.733721 | GET | ADOSC
+      Symbol: NWE
+      Status: 200
+      Response size: 316418 bytes
+      Cache: MISS
+      Time: 0.77s
+
+[API] 2025-12-27 12:59:29.414091 | GET | OBV
+      Symbol: NWE
+      Status: 200
+      Response size: 316870 bytes
+      Cache: MISS
+      Time: 0.64s
+
+[API] 2025-12-27 12:59:30.113671 | GET | MFI
+      Symbol: NWE
+      Status: 200
+      Response size: 289181 bytes
+      Cache: MISS
+      Time: 0.66s
+
+[API] 2025-12-27 12:59:30.515468 | GET | APO
+      Symbol: NWE
+      Status: 200
+      Response size: 285893 bytes
+      Cache: MISS
+      Time: 0.36s
+
+[API] 2025-12-27 12:59:33.739132 | GET | PPO
+      Symbol: NWE
+      Status: 200
+      Response size: 285915 bytes
+      Cache: MISS
+      Time: 3.19s
+
+[API] 2025-12-27 12:59:34.317172 | GET | BOP
+      Symbol: NWE
+      Status: 200
+      Response size: 287752 bytes
+      Cache: MISS
+      Time: 0.54s
+
+[API] 2025-12-27 12:59:34.588694 | GET | TRIX
+      Symbol: NWE
+      Status: 200
+      Response size: 289364 bytes
+      Cache: MISS
+      Time: 0.23s
+
+[API] 2025-12-27 12:59:35.159561 | GET | ULTOSC
+      Symbol: NWE
+      Status: 200
+      Response size: 301872 bytes
+      Cache: MISS
+      Time: 0.53s
+
+[API] 2025-12-27 12:59:35.726910 | GET | SAR
+      Symbol: NWE
+      Status: 200
+      Response size: 289997 bytes
+      Cache: MISS
+      Time: 0.53s
+
+[API] 2025-12-27 12:59:36.163564 | GET | MIDPOINT
+      Symbol: NWE
+      Status: 200
+      Response size: 311828 bytes
+      Cache: MISS
+      Time: 0.40s
+
+[API] 2025-12-27 12:59:36.731075 | GET | MIDPRICE
+      Symbol: NWE
+      Status: 200
+      Response size: 311798 bytes
+      Cache: MISS
+      Time: 0.53s
+
+[API] 2025-12-27 12:59:37.311853 | GET | HT_TRENDLINE
+      Symbol: NWE
+      Status: 200
+      Response size: 326252 bytes
+      Cache: MISS
+      Time: 0.54s
+
+[API] 2025-12-27 12:59:37.991505 | GET | HT_SINE
+      Symbol: NWE
+      Status: 200
+      Response size: 447357 bytes
+      Cache: MISS
+      Time: 0.63s
+
+[API] 2025-12-27 12:59:38.616088 | GET | HT_TRENDMODE
+      Symbol: NWE
+      Status: 200
+      Response size: 290130 bytes
+      Cache: MISS
+      Time: 0.58s
+
+[API] 2025-12-27 12:59:39.072013 | GET | HT_DCPERIOD
+      Symbol: NWE
+      Status: 200
+      Response size: 310562 bytes
+      Cache: MISS
+      Time: 0.42s
+
+[API] 2025-12-27 12:59:39.652417 | GET | HT_DCPHASE
+      Symbol: NWE
+      Status: 200
+      Response size: 320403 bytes
+      Cache: MISS
+      Time: 0.54s
+
+[API] 2025-12-27 12:59:41.030900 | GET | HT_PHASOR
+      Symbol: NWE
+      Status: 200
+      Response size: 458634 bytes
+      Cache: MISS
+      Time: 1.33s
+
+[API] 2025-12-27 12:59:41.201476 | GET | VWAP
+      Symbol: NWE
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.16s
+
+[API] 2025-12-27 12:59:42.317931 | GET | MAMA
+      Symbol: NWE
+      Status: 200
+      Response size: 431298 bytes
+      Cache: MISS
+      Time: 1.07s
+
