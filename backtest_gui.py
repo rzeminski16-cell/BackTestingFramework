@@ -954,7 +954,7 @@ class BacktestWizard(WizardBase):
         super().__init__(root, "Backtesting Framework", width=1100, height=750)
 
         # Data loader
-        self.data_loader = DataLoader(Path('raw_data/processed_exports'))
+        self.data_loader = DataLoader(Path('raw_data/daily'))
         self.available_securities = self.data_loader.get_available_symbols()
 
         # Currency support

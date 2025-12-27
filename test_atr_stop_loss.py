@@ -70,7 +70,7 @@ def test_backtest_integration():
         )
 
         # Try to load real data
-        data_loader = DataLoader(Path('raw_data/processed_exports'))
+        data_loader = DataLoader(Path('raw_data/daily'))
         try:
             data = data_loader.load_csv('AAPL')
             print(f"✓ Loaded {len(data)} bars of real data for AAPL")
