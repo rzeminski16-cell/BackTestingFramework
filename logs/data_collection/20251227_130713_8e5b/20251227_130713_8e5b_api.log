@@ -1,0 +1,17 @@
+API ACTIVITY LOG
+==================================================
+
+[API] 2025-12-27 13:07:14.042770 | GET | FX_WEEKLY
+      Symbol: N/A
+      Status: 200
+      Response size: 170108 bytes
+      Cache: MISS
+      Time: 0.45s
+
+[API] 2025-12-27 13:07:14.537067 | GET | FX_WEEKLY
+      Symbol: N/A
+      Status: 200
+      Response size: 97518 bytes
+      Cache: MISS
+      Time: 0.43s
+

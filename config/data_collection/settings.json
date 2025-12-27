@@ -1,0 +1,31 @@
+{
+  "api": {
+    "api_key": "EQ69AZEPFYU4CA26",
+    "rate_limit_per_minute": 75,
+    "timeout_seconds": 30,
+    "max_retries": 3,
+    "retry_backoff_base": 2.0
+  },
+  "cache": {
+    "cache_dir": "cache\\alpha_vantage",
+    "cache_expiry_hours": 24,
+    "enabled": true,
+    "max_cache_size_mb": 1000
+  },
+  "validation": {
+    "max_gap_trading_days": 5,
+    "min_data_points": 50,
+    "check_outliers": true,
+    "outlier_std_threshold": 3.0,
+    "require_ohlcv_consistency": true,
+    "allow_zero_volume": false
+  },
+  "output_dir": "raw_data",
+  "logs_dir": "logs\\data_collection",
+  "daily": null,
+  "weekly": null,
+  "fundamental": null,
+  "insider": null,
+  "forex": null,
+  "options": null
+}

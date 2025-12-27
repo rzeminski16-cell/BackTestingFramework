@@ -1,0 +1,773 @@
+API ACTIVITY LOG
+==================================================
+
+[API] 2025-12-27 13:02:04.495687 | GET | TIME_SERIES_WEEKLY_ADJUSTED
+      Symbol: AMZN
+      Status: 200
+      Response size: 406689 bytes
+      Cache: MISS
+      Time: 0.72s
+
+[API] 2025-12-27 13:02:04.967411 | GET | SMA
+      Symbol: AMZN
+      Status: 200
+      Response size: 86073 bytes
+      Cache: MISS
+      Time: 0.45s
+
+[API] 2025-12-27 13:02:05.976435 | GET | SMA
+      Symbol: AMZN
+      Status: 200
+      Response size: 84174 bytes
+      Cache: MISS
+      Time: 0.99s
+
+[API] 2025-12-27 13:02:06.446028 | GET | SMA
+      Symbol: AMZN
+      Status: 200
+      Response size: 74611 bytes
+      Cache: MISS
+      Time: 0.45s
+
+[API] 2025-12-27 13:02:06.926005 | GET | EMA
+      Symbol: AMZN
+      Status: 200
+      Response size: 86588 bytes
+      Cache: MISS
+      Time: 0.46s
+
+[API] 2025-12-27 13:02:07.438299 | GET | EMA
+      Symbol: AMZN
+      Status: 200
+      Response size: 85711 bytes
+      Cache: MISS
+      Time: 0.50s
+
+[API] 2025-12-27 13:02:07.994325 | GET | WMA
+      Symbol: AMZN
+      Status: 200
+      Response size: 86457 bytes
+      Cache: MISS
+      Time: 0.54s
+
+[API] 2025-12-27 13:02:09.696199 | GET | DEMA
+      Symbol: AMZN
+      Status: 200
+      Response size: 86990 bytes
+      Cache: MISS
+      Time: 1.69s
+
+[API] 2025-12-27 13:02:10.248951 | GET | TEMA
+      Symbol: AMZN
+      Status: 200
+      Response size: 86161 bytes
+      Cache: MISS
+      Time: 0.54s
+
+[API] 2025-12-27 13:02:10.726322 | GET | TRIMA
+      Symbol: AMZN
+      Status: 200
+      Response size: 89175 bytes
+      Cache: MISS
+      Time: 0.46s
+
+[API] 2025-12-27 13:02:11.275901 | GET | KAMA
+      Symbol: AMZN
+      Status: 200
+      Response size: 87770 bytes
+      Cache: MISS
+      Time: 0.53s
+
+[API] 2025-12-27 13:02:11.724156 | GET | T3
+      Symbol: AMZN
+      Status: 200
+      Response size: 81123 bytes
+      Cache: MISS
+      Time: 0.43s
+
+[API] 2025-12-27 13:02:12.196503 | GET | RSI
+      Symbol: AMZN
+      Status: 200
+      Response size: 86736 bytes
+      Cache: MISS
+      Time: 0.46s
+
+[API] 2025-12-27 13:02:12.984612 | GET | STOCH
+      Symbol: AMZN
+      Status: 200
+      Response size: 133265 bytes
+      Cache: MISS
+      Time: 0.77s
+
+[API] 2025-12-27 13:02:13.535728 | GET | STOCHF
+      Symbol: AMZN
+      Status: 200
+      Response size: 133303 bytes
+      Cache: MISS
+      Time: 0.53s
+
+[API] 2025-12-27 13:02:14.258551 | GET | STOCHRSI
+      Symbol: AMZN
+      Status: 200
+      Response size: 132131 bytes
+      Cache: MISS
+      Time: 0.70s
+
+[API] 2025-12-27 13:02:14.890610 | GET | WILLR
+      Symbol: AMZN
+      Status: 200
+      Response size: 90552 bytes
+      Cache: MISS
+      Time: 0.61s
+
+[API] 2025-12-27 13:02:15.348713 | GET | MOM
+      Symbol: AMZN
+      Status: 200
+      Response size: 86337 bytes
+      Cache: MISS
+      Time: 0.44s
+
+[API] 2025-12-27 13:02:15.888191 | GET | ROC
+      Symbol: AMZN
+      Status: 200
+      Response size: 86879 bytes
+      Cache: MISS
+      Time: 0.52s
+
+[API] 2025-12-27 13:02:16.488834 | GET | ROCR
+      Symbol: AMZN
+      Status: 200
+      Response size: 86747 bytes
+      Cache: MISS
+      Time: 0.58s
+
+[API] 2025-12-27 13:02:16.930261 | GET | CCI
+      Symbol: AMZN
+      Status: 200
+      Response size: 87416 bytes
+      Cache: MISS
+      Time: 0.42s
+
+[API] 2025-12-27 13:02:17.518510 | GET | CMO
+      Symbol: AMZN
+      Status: 200
+      Response size: 86805 bytes
+      Cache: MISS
+      Time: 0.57s
+
+[API] 2025-12-27 13:02:17.987361 | GET | ADX
+      Symbol: AMZN
+      Status: 200
+      Response size: 85880 bytes
+      Cache: MISS
+      Time: 0.45s
+
+[API] 2025-12-27 13:02:18.328300 | GET | ADXR
+      Symbol: AMZN
+      Status: 200
+      Response size: 86381 bytes
+      Cache: MISS
+      Time: 0.32s
+
+[API] 2025-12-27 13:02:19.076534 | GET | AROON
+      Symbol: AMZN
+      Status: 200
+      Response size: 143156 bytes
+      Cache: MISS
+      Time: 0.73s
+
+[API] 2025-12-27 13:02:19.838267 | GET | AROONOSC
+      Symbol: AMZN
+      Status: 200
+      Response size: 94091 bytes
+      Cache: MISS
+      Time: 0.74s
+
+[API] 2025-12-27 13:02:20.378644 | GET | DX
+      Symbol: AMZN
+      Status: 200
+      Response size: 85037 bytes
+      Cache: MISS
+      Time: 0.52s
+
+[API] 2025-12-27 13:02:20.916893 | GET | MINUS_DI
+      Symbol: AMZN
+      Status: 200
+      Response size: 93365 bytes
+      Cache: MISS
+      Time: 0.52s
+
+[API] 2025-12-27 13:02:21.450690 | GET | PLUS_DI
+      Symbol: AMZN
+      Status: 200
+      Response size: 92112 bytes
+      Cache: MISS
+      Time: 0.52s
+
+[API] 2025-12-27 13:02:22.555481 | GET | MACD
+      Symbol: AMZN
+      Status: 200
+      Response size: 182935 bytes
+      Cache: MISS
+      Time: 1.08s
+
+[API] 2025-12-27 13:02:23.195430 | GET | MACDEXT
+      Symbol: AMZN
+      Status: 200
+      Response size: 183261 bytes
+      Cache: MISS
+      Time: 0.61s
+
+[API] 2025-12-27 13:02:23.761165 | GET | ATR
+      Symbol: AMZN
+      Status: 200
+      Response size: 85491 bytes
+      Cache: MISS
+      Time: 0.55s
+
+[API] 2025-12-27 13:02:24.348287 | GET | NATR
+      Symbol: AMZN
+      Status: 200
+      Response size: 86955 bytes
+      Cache: MISS
+      Time: 0.57s
+
+[API] 2025-12-27 13:02:24.911070 | GET | TRANGE
+      Symbol: AMZN
+      Status: 200
+      Response size: 90364 bytes
+      Cache: MISS
+      Time: 0.55s
+
+[API] 2025-12-27 13:02:25.576293 | GET | BBANDS
+      Symbol: AMZN
+      Status: 200
+      Response size: 216012 bytes
+      Cache: MISS
+      Time: 0.64s
+
+[API] 2025-12-27 13:02:26.124919 | GET | AD
+      Symbol: AMZN
+      Status: 200
+      Response size: 110459 bytes
+      Cache: MISS
+      Time: 0.53s
+
+[API] 2025-12-27 13:02:26.582755 | GET | ADOSC
+      Symbol: AMZN
+      Status: 200
+      Response size: 99446 bytes
+      Cache: MISS
+      Time: 0.44s
+
+[API] 2025-12-27 13:02:27.131829 | GET | OBV
+      Symbol: AMZN
+      Status: 200
+      Response size: 99568 bytes
+      Cache: MISS
+      Time: 0.53s
+
+[API] 2025-12-27 13:02:27.737583 | GET | MFI
+      Symbol: AMZN
+      Status: 200
+      Response size: 86694 bytes
+      Cache: MISS
+      Time: 0.59s
+
+[API] 2025-12-27 13:02:28.119622 | GET | APO
+      Symbol: AMZN
+      Status: 200
+      Response size: 85299 bytes
+      Cache: MISS
+      Time: 0.37s
+
+[API] 2025-12-27 13:02:28.650502 | GET | PPO
+      Symbol: AMZN
+      Status: 200
+      Response size: 85528 bytes
+      Cache: MISS
+      Time: 0.51s
+
+[API] 2025-12-27 13:02:29.086443 | GET | BOP
+      Symbol: AMZN
+      Status: 200
+      Response size: 86834 bytes
+      Cache: MISS
+      Time: 0.42s
+
+[API] 2025-12-27 13:02:29.644215 | GET | TRIX
+      Symbol: AMZN
+      Status: 200
+      Response size: 85512 bytes
+      Cache: MISS
+      Time: 0.54s
+
+[API] 2025-12-27 13:02:30.106390 | GET | ULTOSC
+      Symbol: AMZN
+      Status: 200
+      Response size: 89886 bytes
+      Cache: MISS
+      Time: 0.44s
+
+[API] 2025-12-27 13:02:30.652908 | GET | SAR
+      Symbol: AMZN
+      Status: 200
+      Response size: 87204 bytes
+      Cache: MISS
+      Time: 0.53s
+
+[API] 2025-12-27 13:02:31.370041 | GET | MIDPOINT
+      Symbol: AMZN
+      Status: 200
+      Response size: 93235 bytes
+      Cache: MISS
+      Time: 0.70s
+
+[API] 2025-12-27 13:02:31.774472 | GET | MIDPRICE
+      Symbol: AMZN
+      Status: 200
+      Response size: 93211 bytes
+      Cache: MISS
+      Time: 0.39s
+
+[API] 2025-12-27 13:02:32.326798 | GET | HT_TRENDLINE
+      Symbol: AMZN
+      Status: 200
+      Response size: 95025 bytes
+      Cache: MISS
+      Time: 0.53s
+
+[API] 2025-12-27 13:02:32.886421 | GET | HT_SINE
+      Symbol: AMZN
+      Status: 200
+      Response size: 130657 bytes
+      Cache: MISS
+      Time: 0.54s
+
+[API] 2025-12-27 13:02:33.352925 | GET | HT_TRENDMODE
+      Symbol: AMZN
+      Status: 200
+      Response size: 87636 bytes
+      Cache: MISS
+      Time: 0.45s
+
+[API] 2025-12-27 13:02:33.840374 | GET | HT_DCPERIOD
+      Symbol: AMZN
+      Status: 200
+      Response size: 92248 bytes
+      Cache: MISS
+      Time: 0.47s
+
+[API] 2025-12-27 13:02:34.390982 | GET | HT_DCPHASE
+      Symbol: AMZN
+      Status: 200
+      Response size: 93703 bytes
+      Cache: MISS
+      Time: 0.53s
+
+[API] 2025-12-27 13:02:34.951365 | GET | HT_PHASOR
+      Symbol: AMZN
+      Status: 200
+      Response size: 136314 bytes
+      Cache: MISS
+      Time: 0.54s
+
+[API] 2025-12-27 13:02:35.267070 | GET | VWAP
+      Symbol: AMZN
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.31s
+
+[API] 2025-12-27 13:02:35.723721 | GET | MAMA
+      Symbol: AMZN
+      Status: 200
+      Response size: 127039 bytes
+      Cache: MISS
+      Time: 0.44s
+
+[API] 2025-12-27 13:02:37.370952 | GET | TIME_SERIES_WEEKLY_ADJUSTED
+      Symbol: BA
+      Status: 200
+      Response size: 405926 bytes
+      Cache: MISS
+      Time: 1.23s
+
+[API] 2025-12-27 13:02:37.916537 | GET | SMA
+      Symbol: BA
+      Status: 200
+      Response size: 87038 bytes
+      Cache: MISS
+      Time: 0.52s
+
+[API] 2025-12-27 13:02:38.477014 | GET | SMA
+      Symbol: BA
+      Status: 200
+      Response size: 85101 bytes
+      Cache: MISS
+      Time: 0.54s
+
+[API] 2025-12-27 13:02:38.946617 | GET | SMA
+      Symbol: BA
+      Status: 200
+      Response size: 75402 bytes
+      Cache: MISS
+      Time: 0.45s
+
+[API] 2025-12-27 13:02:39.491313 | GET | EMA
+      Symbol: BA
+      Status: 200
+      Response size: 87559 bytes
+      Cache: MISS
+      Time: 0.53s
+
+[API] 2025-12-27 13:02:40.054931 | GET | EMA
+      Symbol: BA
+      Status: 200
+      Response size: 86657 bytes
+      Cache: MISS
+      Time: 0.55s
+
+[API] 2025-12-27 13:02:41.071607 | GET | WMA
+      Symbol: BA
+      Status: 200
+      Response size: 87428 bytes
+      Cache: MISS
+      Time: 1.00s
+
+[API] 2025-12-27 13:02:41.605170 | GET | DEMA
+      Symbol: BA
+      Status: 200
+      Response size: 87948 bytes
+      Cache: MISS
+      Time: 0.52s
+
+[API] 2025-12-27 13:02:42.151319 | GET | TEMA
+      Symbol: BA
+      Status: 200
+      Response size: 87103 bytes
+      Cache: MISS
+      Time: 0.53s
+
+[API] 2025-12-27 13:02:42.701691 | GET | TRIMA
+      Symbol: BA
+      Status: 200
+      Response size: 90151 bytes
+      Cache: MISS
+      Time: 0.53s
+
+[API] 2025-12-27 13:02:43.333437 | GET | KAMA
+      Symbol: BA
+      Status: 200
+      Response size: 88729 bytes
+      Cache: MISS
+      Time: 0.61s
+
+[API] 2025-12-27 13:02:43.804120 | GET | T3
+      Symbol: BA
+      Status: 200
+      Response size: 82035 bytes
+      Cache: MISS
+      Time: 0.45s
+
+[API] 2025-12-27 13:02:44.270318 | GET | RSI
+      Symbol: BA
+      Status: 200
+      Response size: 86734 bytes
+      Cache: MISS
+      Time: 0.45s
+
+[API] 2025-12-27 13:02:44.843789 | GET | STOCH
+      Symbol: BA
+      Status: 200
+      Response size: 133263 bytes
+      Cache: MISS
+      Time: 0.55s
+
+[API] 2025-12-27 13:02:45.428655 | GET | STOCHF
+      Symbol: BA
+      Status: 200
+      Response size: 133302 bytes
+      Cache: MISS
+      Time: 0.56s
+
+[API] 2025-12-27 13:02:46.005117 | GET | STOCHRSI
+      Symbol: BA
+      Status: 200
+      Response size: 132155 bytes
+      Cache: MISS
+      Time: 0.55s
+
+[API] 2025-12-27 13:02:46.514561 | GET | WILLR
+      Symbol: BA
+      Status: 200
+      Response size: 90554 bytes
+      Cache: MISS
+      Time: 0.49s
+
+[API] 2025-12-27 13:02:47.064534 | GET | MOM
+      Symbol: BA
+      Status: 200
+      Response size: 86685 bytes
+      Cache: MISS
+      Time: 0.53s
+
+[API] 2025-12-27 13:02:47.610095 | GET | ROC
+      Symbol: BA
+      Status: 200
+      Response size: 86819 bytes
+      Cache: MISS
+      Time: 0.53s
+
+[API] 2025-12-27 13:02:48.178114 | GET | ROCR
+      Symbol: BA
+      Status: 200
+      Response size: 86745 bytes
+      Cache: MISS
+      Time: 0.55s
+
+[API] 2025-12-27 13:03:04.488011 | GET | CCI
+      Symbol: BA
+      Status: 200
+      Response size: 87434 bytes
+      Cache: MISS
+      Time: 16.29s
+
+[API] 2025-12-27 13:03:05.074850 | GET | CMO
+      Symbol: BA
+      Status: 200
+      Response size: 86829 bytes
+      Cache: MISS
+      Time: 0.57s
+
+[API] 2025-12-27 13:03:05.619291 | GET | ADX
+      Symbol: BA
+      Status: 200
+      Response size: 85874 bytes
+      Cache: MISS
+      Time: 0.53s
+
+[API] 2025-12-27 13:03:06.632308 | GET | ADXR
+      Symbol: BA
+      Status: 200
+      Response size: 86376 bytes
+      Cache: MISS
+      Time: 1.00s
+
+[API] 2025-12-27 13:03:07.195632 | GET | AROON
+      Symbol: BA
+      Status: 200
+      Response size: 143136 bytes
+      Cache: MISS
+      Time: 0.54s
+
+[API] 2025-12-27 13:03:07.739810 | GET | AROONOSC
+      Symbol: BA
+      Status: 200
+      Response size: 94150 bytes
+      Cache: MISS
+      Time: 0.53s
+
+[API] 2025-12-27 13:03:08.304326 | GET | DX
+      Symbol: BA
+      Status: 200
+      Response size: 85011 bytes
+      Cache: MISS
+      Time: 0.55s
+
+[API] 2025-12-27 13:03:08.841675 | GET | MINUS_DI
+      Symbol: BA
+      Status: 200
+      Response size: 93320 bytes
+      Cache: MISS
+      Time: 0.52s
+
+[API] 2025-12-27 13:03:10.415984 | GET | PLUS_DI
+      Symbol: BA
+      Status: 200
+      Response size: 92087 bytes
+      Cache: MISS
+      Time: 1.56s
+
+[API] 2025-12-27 13:03:10.975168 | GET | MACD
+      Symbol: BA
+      Status: 200
+      Response size: 183320 bytes
+      Cache: MISS
+      Time: 0.54s
+
+[API] 2025-12-27 13:03:13.503050 | GET | MACDEXT
+      Symbol: BA
+      Status: 200
+      Response size: 183743 bytes
+      Cache: MISS
+      Time: 2.50s
+
+[API] 2025-12-27 13:03:14.086797 | GET | ATR
+      Symbol: BA
+      Status: 200
+      Response size: 85760 bytes
+      Cache: MISS
+      Time: 0.56s
+
+[API] 2025-12-27 13:03:14.642953 | GET | NATR
+      Symbol: BA
+      Status: 200
+      Response size: 86835 bytes
+      Cache: MISS
+      Time: 0.54s
+
+[API] 2025-12-27 13:03:15.109737 | GET | TRANGE
+      Symbol: BA
+      Status: 200
+      Response size: 90583 bytes
+      Cache: MISS
+      Time: 0.45s
+
+[API] 2025-12-27 13:03:15.774212 | GET | BBANDS
+      Symbol: BA
+      Status: 200
+      Response size: 218874 bytes
+      Cache: MISS
+      Time: 0.64s
+
+[API] 2025-12-27 13:03:16.322626 | GET | AD
+      Symbol: BA
+      Status: 200
+      Response size: 108346 bytes
+      Cache: MISS
+      Time: 0.53s
+
+[API] 2025-12-27 13:03:16.876007 | GET | ADOSC
+      Symbol: BA
+      Status: 200
+      Response size: 97714 bytes
+      Cache: MISS
+      Time: 0.54s
+
+[API] 2025-12-27 13:03:20.217014 | GET | OBV
+      Symbol: BA
+      Status: 200
+      Response size: 97384 bytes
+      Cache: MISS
+      Time: 3.32s
+
+[API] 2025-12-27 13:03:20.740937 | GET | MFI
+      Symbol: BA
+      Status: 200
+      Response size: 86692 bytes
+      Cache: MISS
+      Time: 0.50s
+
+[API] 2025-12-27 13:03:21.319219 | GET | APO
+      Symbol: BA
+      Status: 200
+      Response size: 85508 bytes
+      Cache: MISS
+      Time: 0.56s
+
+[API] 2025-12-27 13:03:21.857332 | GET | PPO
+      Symbol: BA
+      Status: 200
+      Response size: 85462 bytes
+      Cache: MISS
+      Time: 0.52s
+
+[API] 2025-12-27 13:03:22.333356 | GET | BOP
+      Symbol: BA
+      Status: 200
+      Response size: 86811 bytes
+      Cache: MISS
+      Time: 0.46s
+
+[API] 2025-12-27 13:03:22.887560 | GET | TRIX
+      Symbol: BA
+      Status: 200
+      Response size: 85540 bytes
+      Cache: MISS
+      Time: 0.54s
+
+[API] 2025-12-27 13:03:23.365277 | GET | ULTOSC
+      Symbol: BA
+      Status: 200
+      Response size: 89884 bytes
+      Cache: MISS
+      Time: 0.46s
+
+[API] 2025-12-27 13:03:23.761021 | GET | SAR
+      Symbol: BA
+      Status: 200
+      Response size: 88162 bytes
+      Cache: MISS
+      Time: 0.38s
+
+[API] 2025-12-27 13:03:24.158854 | GET | MIDPOINT
+      Symbol: BA
+      Status: 200
+      Response size: 94195 bytes
+      Cache: MISS
+      Time: 0.38s
+
+[API] 2025-12-27 13:03:24.523602 | GET | MIDPRICE
+      Symbol: BA
+      Status: 200
+      Response size: 94166 bytes
+      Cache: MISS
+      Time: 0.35s
+
+[API] 2025-12-27 13:03:25.064020 | GET | HT_TRENDLINE
+      Symbol: BA
+      Status: 200
+      Response size: 95938 bytes
+      Cache: MISS
+      Time: 0.52s
+
+[API] 2025-12-27 13:03:25.617093 | GET | HT_SINE
+      Symbol: BA
+      Status: 200
+      Response size: 130563 bytes
+      Cache: MISS
+      Time: 0.53s
+
+[API] 2025-12-27 13:03:26.113681 | GET | HT_TRENDMODE
+      Symbol: BA
+      Status: 200
+      Response size: 87634 bytes
+      Cache: MISS
+      Time: 0.48s
+
+[API] 2025-12-27 13:03:26.577016 | GET | HT_DCPERIOD
+      Symbol: BA
+      Status: 200
+      Response size: 92246 bytes
+      Cache: MISS
+      Time: 0.44s
+
+[API] 2025-12-27 13:03:27.352594 | GET | HT_DCPHASE
+      Symbol: BA
+      Status: 200
+      Response size: 93620 bytes
+      Cache: MISS
+      Time: 0.76s
+
+[API] 2025-12-27 13:03:27.981254 | GET | HT_PHASOR
+      Symbol: BA
+      Status: 200
+      Response size: 136735 bytes
+      Cache: MISS
+      Time: 0.61s
+
+[API] 2025-12-27 13:03:28.158472 | GET | VWAP
+      Symbol: BA
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.17s
+
+[API] 2025-12-27 13:03:28.751186 | GET | MAMA
+      Symbol: BA
+      Status: 200
+      Response size: 129004 bytes
+      Cache: MISS
+      Time: 0.57s
+

@@ -1,0 +1,10 @@
+API ACTIVITY LOG
+==================================================
+
+[API] 2025-12-27 13:06:11.662562 | GET | INSIDER_TRANSACTIONS
+      Symbol: AMZN
+      Status: 200
+      Response size: 3125195 bytes
+      Cache: MISS
+      Time: 0.87s
+

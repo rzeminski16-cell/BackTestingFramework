@@ -1,0 +1,15 @@
+[2025-12-27 13:12:00.761298] SESSION STARTED
+  Session ID: 20251227_131200_ded5
+
+[2025-12-27 13:12:00.781570] Data Type: Options
+[2025-12-27 13:12:00.783656] CONFIGURATION:
+[2025-12-27 13:12:00.785440]   tickers: ['AMZN']
+[2025-12-27 13:12:00.787239]   option_type: both
+[2025-12-27 13:12:00.789195]   date: None
+[2025-12-27 13:12:00.791732]   fields: ['strike', 'bid', 'ask', 'last_price', 'volume', 'open_interest', 'implied_volatility', 'delta', 'gamma', 'theta', 'vega']
+[2025-12-27 13:12:00.803809] FETCHING AMZN OPTIONS
+[2025-12-27 13:12:01.326078] SESSION COMPLETED
+[2025-12-27 13:12:01.328287]   Exit code: 0
+[2025-12-27 13:12:01.330192]   End time: 2025-12-27 13:12:01.326077
+[2025-12-27 13:12:01.332198]   Duration: 0:00:00.564779
+[2025-12-27 13:12:01.345157] METADATA: Saved to raw_data\metadata.json

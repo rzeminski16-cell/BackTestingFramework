@@ -1,0 +1,23 @@
+[2025-12-27 12:56:48.360648] SESSION STARTED
+  Session ID: 20251227_125648_96e3
+
+[2025-12-27 12:56:48.382327] Data Type: Daily
+[2025-12-27 12:56:48.384251] CONFIGURATION:
+[2025-12-27 12:56:48.386376]   tickers: ['AIT', 'AMG', 'AMZN', 'NWE']
+[2025-12-27 12:56:48.388631]   date_range: {'type': <DateRangeType.CUSTOM_RANGE: 'custom_range'>, 'from_date': '2000-01-01', 'to_date': '2025-12-27'}
+[2025-12-27 12:56:48.391078]   indicators: {'SMA': [20, 50, 200], 'EMA': [12, 26], 'WMA': [14], 'DEMA': [14], 'TEMA': [14], 'TRIMA': [14], 'KAMA': [14], 'T3': [14], 'RSI': [14], 'STOCH': [14], 'STOCHF': [14], 'STOCHRSI': [14], 'WILLR': [14], 'MOM': [10], 'ROC': [10], 'ROCR': [14], 'CCI': [20], 'CMO': [14], 'ADX': [14], 'ADXR': [14], 'AROON': [14], 'AROONOSC': [14], 'DX': [14], 'MINUS_DI': [14], 'PLUS_DI': [14], 'MACD': [14], 'MACDEXT': [14], 'ATR': [14], 'NATR': [14], 'TRANGE': [14], 'BBANDS': [20], 'AD': [14], 'ADOSC': [14], 'OBV': [14], 'MFI': [14], 'APO': [14], 'PPO': [14], 'BOP': [14], 'TRIX': [14], 'ULTOSC': [14], 'SAR': [14], 'MIDPOINT': [14], 'MIDPRICE': [14], 'HT_TRENDLINE': [14], 'HT_SINE': [14], 'HT_TRENDMODE': [14], 'HT_DCPERIOD': [14], 'HT_DCPHASE': [14], 'HT_PHASOR': [14], 'VWAP': [14], 'MAMA': [14]}
+[2025-12-27 12:56:48.393549]   adjust_for_splits: True
+[2025-12-27 12:56:48.395807]   missing_handling: MissingDataHandling.FORWARD_FILL
+[2025-12-27 12:56:48.414077] FETCHING AIT
+[2025-12-27 12:57:30.392538] SAVED: AIT_daily.csv (6536 rows, 72 columns)
+[2025-12-27 12:57:30.398106] FETCHING AMG
+[2025-12-27 12:58:16.997108] SAVED: AMG_daily.csv (6536 rows, 72 columns)
+[2025-12-27 12:58:17.002018] FETCHING AMZN
+[2025-12-27 12:59:02.047287] SAVED: AMZN_daily.csv (6536 rows, 72 columns)
+[2025-12-27 12:59:02.052066] FETCHING NWE
+[2025-12-27 12:59:42.927864] SAVED: NWE_daily.csv (4528 rows, 72 columns)
+[2025-12-27 12:59:42.945635] SESSION COMPLETED
+[2025-12-27 12:59:42.948115]   Exit code: 0
+[2025-12-27 12:59:42.950458]   End time: 2025-12-27 12:59:42.945633
+[2025-12-27 12:59:42.952691]   Duration: 0:02:54.584985
+[2025-12-27 12:59:42.965042] METADATA: Saved to raw_data\metadata.json
