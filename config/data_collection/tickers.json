@@ -295,6 +295,140 @@
     ]
   },
   "presets": {
+    "all": {
+      "description": "All securities (stocks, ETFs, and crypto)",
+      "tickers": [
+        "NVDA", "AAPL", "AVGO", "AMD", "MU", "CSCO", "BA", "ADI", "DELL", "MRVL",
+        "VRT", "GRMN", "KEYS", "FSLR", "GE", "QCOM", "RTX", "INTC", "KLAC", "APH",
+        "ANET", "TXN", "RR.", "HON", "ETN", "LMT", "GD", "TDG", "GLW", "LHX",
+        "TEL", "MSI", "WDC", "GEV", "HEI", "UI", "CIEN", "SNDX", "SNDK", "AXON",
+        "MPWR", "MCPH", "ARM", "RKLB", "EMR", "COHR", "ALAB", "AMKR", "QBTS", "NVMI",
+        "CGNX", "PLAB", "VECO", "HIMX", "RDW", "TER", "SNPS", "CDNS", "LRCX", "AMAT",
+        "JCI", "ITW", "BHE", "IRDM", "OLVI", "RELL", "LINK", "WSTL", "AMPG", "LASER",
+        "ELTEK", "ALOT", "GOOG", "MSFT", "META", "NFLX", "SPOT", "WDAY", "PAYX", "BR",
+        "HPQ", "IT", "RBRK", "BSY", "ORCL", "CRM", "APP", "INTU", "IBM", "PLTR",
+        "ACN", "NOW", "ADBE", "PANW", "CRWD", "NET", "SNOW", "RBLIX", "FTNT", "ZS",
+        "DDOG", "MDB", "VEEV", "FIS", "LSEG", "EA", "TTWO", "CTSH", "FICO", "PYPL",
+        "TEAM", "RDDT", "NTES", "MSCI", "ADP", "ROP", "ADSK", "CSGP", "VRSK", "KVYO",
+        "PCTY", "SRAD", "PL", "MORN", "AI", "YELP", "ABTC", "TUYA", "PDFS", "ELFO",
+        "UPLAND", "UBXG", "AIRE", "SOG", "MONEYH", "PODCAST", "KR1", "TMUS", "VZ", "T",
+        "SCMN", "BT.A", "CMCSA", "CCZ", "CHTR", "FYBR", "TKA", "FNTN", "OPL", "ASTS",
+        "SAT", "VOD", "ETS", "GOGO", "ATEX", "TEL1L", "AMZN", "WMT", "COST", "HD",
+        "BABA", "TJX", "LOW", "CVS", "DLTR", "CPNG", "CVNA", "ORLY", "AZO", "TSC",
+        "TSCO", "JD", "MELI", "DG", "SE", "ROST", "PDD", "KR", "TGT", "SHOP",
+        "CPRT", "EBAY", "ROSTR", "BZU", "ARMK", "VFS", "FSS", "M", "THO", "BLBD",
+        "WMK", "LEG", "WGO", "LGIH", "CURY", "CATO", "PG", "KO", "PM", "PEP",
+        "MO", "ULVR", "BATS", "NKE", "MNST", "MDLZ", "DGE", "KMB", "EL", "HSY",
+        "CL", "KHC", "IMB", "KVUE", "CCEP", "DOGZ", "VENCE", "PROC", "TSLA", "GM",
+        "F", "DHI", "LEN", "RCI", "VIK", "CCT", "LEAT", "SCAG", "MCD", "DIS",
+        "BKNG", "MAR", "ABNB", "SBUX", "LVSL", "RCL", "CPG", "CMG", "WBD", "EXPE",
+        "YUM", "TKO", "FLUT", "CCL", "FOX", "LYV", "QSR", "MCO", "INTG", "AGH",
+        "MLM", "HLT", "LLY", "JNJ", "ABBV", "AZN", "TMO", "ABT", "ISRG", "MDT",
+        "IDXX", "IQV", "BIIB", "PODD", "THC", "UHS", "GH", "MRK", "PFE", "BSX",
+        "AMGN", "REGN", "GILD", "VRTX", "QGEN", "BRKR", "COGT", "CRSP", "ATRC", "STOK",
+        "PHVS", "AXGN", "IMTX", "HIMS", "DHR", "GSK", "SYK", "ZTS", "BDX", "A",
+        "NTRAC", "EW", "MTD", "RMD", "ALNY", "INSM", "OM", "HLON", "UNH", "HCA",
+        "CI", "ELV", "HUM", "CAT", "MMM", "APD", "SYM", "HUBB", "LII", "WSO",
+        "LECO", "CNH", "EQX", "DE", "PH", "CARR", "ROK", "TT", "AME", "LITE",
+        "DOV", "LIN", "SHW", "CTVA", "ECL", "ADM", "IR", "XYL", "PCAR", "WAB",
+        "GTLS", "FLS", "CMC", "ESAB", "TKR", "MCK", "CAH", "SNX", "COR", "GWW",
+        "SYY", "GLEN", "AIT", "POOL", "FERG", "RUS", "UVV", "ACU", "ALTG", "WCRS",
+        "QTZM", "CHEV", "XOM", "CVX", "BP", "SHEL", "ROSN", "NVTK", "EQT", "COP",
+        "OXY", "EOG", "PSX", "VLO", "MPC", "FANG", "WCP", "RRC", "CRK", "HCC",
+        "GPOR", "LNG", "PARR", "RASP", "SOC", "METC", "GRNT", "RIO", "NEM", "SCCO",
+        "FCX", "NUE", "VMC", "AU", "AAL", "COPX", "RBW", "GKOR", "FRD", "TMRC",
+        "CRH", "CSTEL", "TIN", "LUD", "XPL", "COBR", "SPGI", "OMC", "CPAY", "EXPN",
+        "REL", "FISV", "ROL", "EFX", "HQI", "TIG", "ANL", "SFORE", "TRD", "TISI",
+        "OPGNX", "HVO", "WFC", "JPM", "BRK.A", "BAC", "V", "MA", "MS", "GS",
+        "AXP", "C", "SCHW", "BLK", "HOOD", "NU", "RKT", "PRU", "FITB", "CINF",
+        "KEY", "CRBG", "BX", "KKR", "BN", "IBKR", "PGR", "WELL", "COF", "CB",
+        "PLD", "EQIX", "AMT", "SPG", "PSA", "ICE", "CME", "COIN", "CBOE", "APO",
+        "AIG", "AMP", "ARES", "AFL", "NDAQ", "ALL", "DLR", "MET", "URI", "O",
+        "VICI", "SOFI", "HIG", "CCI", "VTR", "LLOY", "BARC", "BAM", "HSBA", "STT",
+        "USB", "PNC", "BK", "TRV", "TFC", "STAN", "WTW", "AON", "AHT", "NWG",
+        "SSB", "UMBF", "AXS", "AMG", "AL", "SYBT", "FCF", "MBIN", "LKFN", "QCRH",
+        "NEE", "SRE", "ETR", "WEC", "FE", "SO", "DUK", "AEP", "XEL", "EXC",
+        "PEG", "D", "CEG", "VST", "NRG", "NG.", "ED", "SSE", "TRGP", "AES",
+        "CWEN", "POR", "NWE", "MGEE", "ATO", "NWN", "HTO", "XIFR", "MSEX", "UTL",
+        "AEE", "WMB", "SLB", "OKE", "OTIS", "KMI", "ET", "WM", "EPD", "RSG",
+        "BKR", "PWR", "UPS", "DASH", "FDX", "UNP", "NSC", "CSX", "UBER", "DAL",
+        "UAL", "ODFL", "MPLX", "EME", "FIX", "AZUL", "III",
+        "VOO", "IEMG", "ITOT", "SCHX", "IWR", "SPDW", "ACWI", "IWP", "SPHQ", "VFH",
+        "JEPI", "AVDV", "CGUS", "TCAF", "MAGS", "CONY", "NEBX", "BND", "MUB", "SHY",
+        "VMBS", "SPTL", "JPST", "PULS", "ICSH", "CGCP", "PAAA", "GLD", "SIVR", "HGER",
+        "PDBC", "FTGC", "CMDT", "AOR", "AOA", "AOM", "CGBL", "DRSK", "INCM", "KNG",
+        "VXX", "UVXY", "BOXX", "BUFR", "FTLS", "BTCUSD", "ETHUSD"
+      ]
+    },
+    "all_stocks": {
+      "description": "All stocks from the universe (excludes ETFs and crypto)",
+      "tickers": [
+        "NVDA", "AAPL", "AVGO", "AMD", "MU", "CSCO", "BA", "ADI", "DELL", "MRVL",
+        "VRT", "GRMN", "KEYS", "FSLR", "GE", "QCOM", "RTX", "INTC", "KLAC", "APH",
+        "ANET", "TXN", "RR.", "HON", "ETN", "LMT", "GD", "TDG", "GLW", "LHX",
+        "TEL", "MSI", "WDC", "GEV", "HEI", "UI", "CIEN", "SNDX", "SNDK", "AXON",
+        "MPWR", "MCPH", "ARM", "RKLB", "EMR", "COHR", "ALAB", "AMKR", "QBTS", "NVMI",
+        "CGNX", "PLAB", "VECO", "HIMX", "RDW", "TER", "SNPS", "CDNS", "LRCX", "AMAT",
+        "JCI", "ITW", "BHE", "IRDM", "OLVI", "RELL", "LINK", "WSTL", "AMPG", "LASER",
+        "ELTEK", "ALOT", "GOOG", "MSFT", "META", "NFLX", "SPOT", "WDAY", "PAYX", "BR",
+        "HPQ", "IT", "RBRK", "BSY", "ORCL", "CRM", "APP", "INTU", "IBM", "PLTR",
+        "ACN", "NOW", "ADBE", "PANW", "CRWD", "NET", "SNOW", "RBLIX", "FTNT", "ZS",
+        "DDOG", "MDB", "VEEV", "FIS", "LSEG", "EA", "TTWO", "CTSH", "FICO", "PYPL",
+        "TEAM", "RDDT", "NTES", "MSCI", "ADP", "ROP", "ADSK", "CSGP", "VRSK", "KVYO",
+        "PCTY", "SRAD", "PL", "MORN", "AI", "YELP", "ABTC", "TUYA", "PDFS", "TMUS",
+        "VZ", "T", "SCMN", "BT.A", "CMCSA", "CCZ", "CHTR", "FYBR", "TKA", "FNTN",
+        "OPL", "ASTS", "SAT", "VOD", "ETS", "GOGO", "ATEX", "TEL1L", "AMZN", "WMT",
+        "COST", "HD", "BABA", "TJX", "LOW", "CVS", "DLTR", "CPNG", "CVNA", "ORLY",
+        "AZO", "TSC", "TSCO", "JD", "MELI", "DG", "SE", "ROST", "PDD", "KR",
+        "TGT", "SHOP", "CPRT", "EBAY", "ARMK", "VFS", "FSS", "M", "THO", "BLBD",
+        "WMK", "LEG", "WGO", "LGIH", "CURY", "CATO", "PG", "KO", "PM", "PEP",
+        "MO", "ULVR", "BATS", "NKE", "MNST", "MDLZ", "DGE", "KMB", "EL", "HSY",
+        "CL", "KHC", "IMB", "KVUE", "CCEP", "TSLA", "GM", "F", "DHI", "LEN",
+        "RCI", "VIK", "MCD", "DIS", "BKNG", "MAR", "ABNB", "SBUX", "LVSL", "RCL",
+        "CPG", "CMG", "WBD", "EXPE", "YUM", "TKO", "FLUT", "CCL", "FOX", "LYV",
+        "QSR", "LLY", "JNJ", "ABBV", "AZN", "TMO", "ABT", "ISRG", "MDT", "IDXX",
+        "IQV", "BIIB", "PODD", "THC", "UHS", "GH", "MRK", "PFE", "BSX", "AMGN",
+        "REGN", "GILD", "VRTX", "QGEN", "BRKR", "COGT", "CRSP", "ATRC", "STOK", "PHVS",
+        "AXGN", "IMTX", "HIMS", "DHR", "GSK", "SYK", "ZTS", "BDX", "A", "NTRAC",
+        "EW", "MTD", "RMD", "ALNY", "INSM", "UNH", "HCA", "CI", "ELV", "HUM",
+        "CAT", "MMM", "APD", "SYM", "HUBB", "LII", "WSO", "LECO", "CNH", "EQX",
+        "DE", "PH", "CARR", "ROK", "TT", "AME", "LITE", "DOV", "LIN", "SHW",
+        "CTVA", "ECL", "ADM", "IR", "XYL", "PCAR", "WAB", "GTLS", "FLS", "CMC",
+        "ESAB", "TKR", "MCK", "CAH", "SNX", "COR", "GWW", "SYY", "GLEN", "AIT",
+        "POOL", "FERG", "RUS", "UVV", "XOM", "CVX", "BP", "SHEL", "ROSN", "NVTK",
+        "EQT", "COP", "OXY", "EOG", "PSX", "VLO", "MPC", "FANG", "WCP", "RRC",
+        "CRK", "HCC", "GPOR", "LNG", "PARR", "RASP", "SOC", "METC", "GRNT", "RIO",
+        "NEM", "SCCO", "FCX", "NUE", "VMC", "AU", "SPGI", "OMC", "CPAY", "EXPN",
+        "REL", "FISV", "ROL", "EFX", "JPM", "BRK.A", "BAC", "V", "MA", "WFC",
+        "MS", "GS", "AXP", "C", "SCHW", "BLK", "HOOD", "NU", "RKT", "PRU",
+        "FITB", "CINF", "KEY", "CRBG", "BX", "KKR", "BN", "IBKR", "PGR", "WELL",
+        "COF", "CB", "PLD", "EQIX", "AMT", "SPG", "PSA", "ICE", "CME", "COIN",
+        "CBOE", "APO", "AIG", "AMP", "ARES", "AFL", "NDAQ", "ALL", "DLR", "MET",
+        "URI", "O", "VICI", "SOFI", "HIG", "CCI", "VTR", "LLOY", "BARC", "BAM",
+        "HSBA", "STT", "USB", "PNC", "BK", "TRV", "TFC", "STAN", "WTW", "AON",
+        "SSB", "UMBF", "AXS", "AMG", "AL", "SYBT", "FCF", "MBIN", "LKFN", "QCRH",
+        "NEE", "SRE", "ETR", "WEC", "FE", "SO", "DUK", "AEP", "XEL", "EXC",
+        "PEG", "D", "CEG", "VST", "NRG", "ED", "SSE", "TRGP", "AES", "CWEN",
+        "POR", "NWE", "MGEE", "ATO", "NWN", "HTO", "XIFR", "MSEX", "UTL", "AEE",
+        "WMB", "SLB", "OKE", "OTIS", "KMI", "ET", "WM", "EPD", "RSG", "BKR",
+        "PWR", "UPS", "DASH", "FDX", "UNP", "NSC", "CSX", "UBER", "DAL", "UAL",
+        "ODFL", "MPLX", "EME", "FIX", "AZUL"
+      ]
+    },
+    "all_etfs": {
+      "description": "All ETFs from the universe",
+      "tickers": [
+        "VOO", "IEMG", "ITOT", "SCHX", "IWR", "SPDW", "ACWI", "IWP", "SPHQ", "VFH",
+        "JEPI", "AVDV", "CGUS", "TCAF", "MAGS", "CONY", "NEBX", "BND", "MUB", "SHY",
+        "VMBS", "SPTL", "JPST", "PULS", "ICSH", "CGCP", "PAAA", "GLD", "SIVR", "HGER",
+        "PDBC", "FTGC", "CMDT", "AOR", "AOA", "AOM", "CGBL", "DRSK", "INCM", "KNG",
+        "VXX", "UVXY", "BOXX", "BUFR", "FTLS"
+      ]
+    },
+    "all_crypto": {
+      "description": "All cryptocurrency pairs",
+      "tickers": ["BTCUSD", "ETHUSD"]
+    },
     "mega_cap": {
       "description": "Mega-cap stocks (>$1 trillion market cap)",
       "tickers": [
@@ -302,33 +436,238 @@
         "JPM", "WMT", "V", "ORCL", "MA", "XOM", "JNJ", "PLTR", "NFLX"
       ]
     },
-    "large_cap_focus": {
+    "large_cap_only": {
       "description": "Large cap stocks (>$50 billion market cap)",
-      "note": "Contains all large_cap entries across all sectors"
+      "tickers": [
+        "NVDA", "AAPL", "AVGO", "AMD", "MU", "CSCO", "BA", "ADI", "DELL", "MRVL",
+        "VRT", "GRMN", "KEYS", "FSLR", "GE", "QCOM", "RTX", "INTC", "KLAC", "APH",
+        "ANET", "TXN", "HON", "ETN", "LMT", "GD", "TDG", "GLW", "LHX", "TEL",
+        "MSI", "WDC", "GEV", "HEI", "UI", "CIEN", "AXON", "MPWR", "ARM", "RKLB",
+        "EMR", "COHR", "ALAB", "GOOG", "MSFT", "META", "NFLX", "SPOT", "WDAY", "PAYX",
+        "BR", "HPQ", "IT", "RBRK", "BSY", "ORCL", "CRM", "APP", "INTU", "IBM",
+        "PLTR", "ACN", "NOW", "ADBE", "PANW", "CRWD", "NET", "SNOW", "FTNT", "ZS",
+        "DDOG", "MDB", "VEEV", "FIS", "LSEG", "EA", "TTWO", "CTSH", "FICO", "PYPL",
+        "TEAM", "RDDT", "NTES", "MSCI", "ADP", "ROP", "ADSK", "CSGP", "VRSK", "TMUS",
+        "VZ", "T", "SCMN", "BT.A", "CMCSA", "CHTR", "AMZN", "WMT", "COST", "HD",
+        "BABA", "TJX", "LOW", "CVS", "DLTR", "CPNG", "CVNA", "ORLY", "AZO", "TSC",
+        "TSCO", "JD", "MELI", "DG", "SE", "ROST", "PDD", "KR", "TGT", "SHOP",
+        "CPRT", "EBAY", "PG", "KO", "PM", "PEP", "MO", "ULVR", "BATS", "NKE",
+        "MNST", "MDLZ", "DGE", "KMB", "EL", "HSY", "CL", "KHC", "IMB", "KVUE",
+        "CCEP", "TSLA", "GM", "F", "DHI", "LEN", "MCD", "DIS", "BKNG", "MAR",
+        "ABNB", "SBUX", "RCL", "CMG", "WBD", "EXPE", "YUM", "TKO", "FLUT", "CCL",
+        "FOX", "LYV", "QSR", "LLY", "JNJ", "ABBV", "AZN", "TMO", "ABT", "ISRG",
+        "MDT", "IDXX", "IQV", "BIIB", "PODD", "THC", "UHS", "GH", "MRK", "PFE",
+        "BSX", "AMGN", "REGN", "GILD", "VRTX", "QGEN", "BRKR", "DHR", "GSK", "SYK",
+        "ZTS", "BDX", "EW", "MTD", "RMD", "UNH", "HCA", "CI", "ELV", "HUM",
+        "CAT", "MMM", "APD", "SYM", "HUBB", "LII", "WSO", "LECO", "CNH", "EQX",
+        "LRCX", "AMAT", "JCI", "ITW", "DE", "HON", "ETN", "PH", "GEV", "CARR",
+        "ROK", "TT", "AME", "LITE", "DOV", "LIN", "SHW", "CTVA", "ECL", "ADM",
+        "IR", "XYL", "PCAR", "WAB", "MCK", "CAH", "SNX", "COR", "GWW", "SYY",
+        "GLEN", "XOM", "CVX", "BP", "SHEL", "EQT", "COP", "OXY", "EOG", "PSX",
+        "VLO", "MPC", "FANG", "RIO", "NEM", "SCCO", "FCX", "NUE", "MLM", "VMC",
+        "CRH", "SPGI", "OMC", "CPAY", "EXPN", "REL", "FISV", "ROL", "EFX", "JPM",
+        "BRK.A", "BAC", "V", "MA", "WFC", "MS", "GS", "AXP", "C", "SCHW",
+        "BLK", "HOOD", "NU", "RKT", "PRU", "FITB", "CINF", "KEY", "CRBG", "BX",
+        "KKR", "BN", "IBKR", "PGR", "WELL", "COF", "CB", "PLD", "EQIX", "AMT",
+        "SPG", "PSA", "ICE", "CME", "COIN", "CBOE", "APO", "AIG", "AMP", "ARES",
+        "AFL", "NDAQ", "ALL", "DLR", "MET", "URI", "O", "VICI", "SOFI", "HIG",
+        "CCI", "VTR", "LLOY", "BARC", "BAM", "HSBA", "STT", "USB", "PNC", "BK",
+        "TRV", "TFC", "STAN", "WTW", "AON", "NEE", "SRE", "ETR", "WEC", "FE",
+        "SO", "DUK", "AEP", "XEL", "EXC", "PEG", "D", "CEG", "VST", "NRG",
+        "ED", "SSE", "TRGP", "WMB", "SLB", "OKE", "OTIS", "KMI", "ET", "WM",
+        "EPD", "RSG", "BKR", "PWR", "UPS", "DASH", "FDX", "UNP", "NSC", "CSX",
+        "UBER", "DAL", "UAL", "ODFL", "LNG", "MPLX", "EME", "FIX"
+      ]
+    },
+    "mid_cap_only": {
+      "description": "Mid cap stocks only",
+      "tickers": [
+        "AMKR", "QBTS", "NVMI", "CGNX", "PLAB", "VECO", "HIMX", "RDW", "TER", "SNPS",
+        "CDNS", "KVYO", "PCTY", "SRAD", "PL", "MORN", "FYBR", "TKA", "FNTN", "OPL",
+        "ASTS", "SAT", "VOD", "ARMK", "VFS", "FSS", "M", "THO", "CCT", "LEAT",
+        "SCAG", "MCO", "INTG", "AGH", "MLM", "HLT", "ALNY", "INSM", "GTLS", "FLS",
+        "CMC", "ESAB", "TKR", "AIT", "POOL", "FERG", "WCP", "RRC", "CRK", "HCC",
+        "GPOR", "LNG", "CSTEL", "TIN", "LUD", "HQI", "TIG", "ANL", "SFORE", "TRD",
+        "TISI", "SSB", "UMBF", "AXS", "AMG", "AL", "AES", "CWEN", "POR", "NWE",
+        "MGEE", "ATO"
+      ]
+    },
+    "small_cap_only": {
+      "description": "Small cap stocks only",
+      "tickers": [
+        "BHE", "IRDM", "OLVI", "RELL", "LINK", "WSTL", "AMPG", "LASER", "ELTEK", "ALOT",
+        "AI", "YELP", "ABTC", "TUYA", "PDFS", "ELFO", "UPLAND", "UBXG", "AIRE", "SOG",
+        "ETS", "GOGO", "ATEX", "TEL1L", "BLBD", "WMK", "LEG", "WGO", "LGIH", "CURY",
+        "CATO", "DOGZ", "VENCE", "PROC", "OM", "HLON", "RUS", "UVV", "ACU", "ALTG",
+        "WCRS", "QTZM", "CHEV", "PARR", "RASP", "SOC", "METC", "GRNT", "XPL", "COBR",
+        "OPGNX", "HVO", "SYBT", "FCF", "MBIN", "LKFN", "QCRH", "NWN", "HTO", "XIFR",
+        "MSEX", "UTL", "AEE"
+      ]
     },
     "tech_sector": {
-      "description": "Technology stocks (Electronic Technology + Technology Services + Communications)",
-      "note": "All tech-focused companies across categories"
+      "description": "Technology stocks (Electronic Technology + Technology Services)",
+      "tickers": [
+        "NVDA", "AAPL", "AVGO", "AMD", "MU", "CSCO", "BA", "ADI", "DELL", "MRVL",
+        "VRT", "GRMN", "KEYS", "FSLR", "GE", "QCOM", "RTX", "INTC", "KLAC", "APH",
+        "ANET", "TXN", "HON", "ETN", "LMT", "GD", "TDG", "GLW", "LHX", "TEL",
+        "MSI", "WDC", "GEV", "HEI", "UI", "CIEN", "AXON", "MPWR", "ARM", "RKLB",
+        "EMR", "COHR", "ALAB", "AMKR", "QBTS", "NVMI", "CGNX", "PLAB", "VECO", "HIMX",
+        "RDW", "TER", "SNPS", "CDNS", "LRCX", "AMAT", "JCI", "ITW", "GOOG", "MSFT",
+        "META", "NFLX", "SPOT", "WDAY", "PAYX", "BR", "HPQ", "IT", "RBRK", "BSY",
+        "ORCL", "CRM", "APP", "INTU", "IBM", "PLTR", "ACN", "NOW", "ADBE", "PANW",
+        "CRWD", "NET", "SNOW", "FTNT", "ZS", "DDOG", "MDB", "VEEV", "FIS", "LSEG",
+        "EA", "TTWO", "CTSH", "FICO", "PYPL", "TEAM", "RDDT", "NTES", "MSCI", "ADP",
+        "ROP", "ADSK", "CSGP", "VRSK", "KVYO", "PCTY", "SRAD", "PL", "MORN", "AI",
+        "YELP", "ABTC", "TUYA", "PDFS"
+      ]
     },
     "healthcare_sector": {
       "description": "Healthcare stocks (Health Technology + Health Services)",
-      "note": "All healthcare and biotech companies"
+      "tickers": [
+        "LLY", "JNJ", "ABBV", "AZN", "TMO", "ABT", "ISRG", "MDT", "IDXX", "IQV",
+        "BIIB", "PODD", "THC", "UHS", "GH", "MRK", "PFE", "BSX", "AMGN", "REGN",
+        "GILD", "VRTX", "QGEN", "BRKR", "COGT", "CRSP", "ATRC", "STOK", "PHVS", "AXGN",
+        "IMTX", "HIMS", "DHR", "GSK", "SYK", "ZTS", "BDX", "A", "NTRAC", "EW",
+        "MTD", "RMD", "ALNY", "INSM", "OM", "HLON", "UNH", "HCA", "CI", "ELV", "HUM"
+      ]
     },
     "finance_sector": {
-      "description": "Financial stocks (Finance sector only)",
-      "note": "Banks, insurance, investment firms, REITs"
+      "description": "Financial stocks (banks, insurance, investment firms, REITs)",
+      "tickers": [
+        "JPM", "BRK.A", "BAC", "V", "MA", "WFC", "MS", "GS", "AXP", "C",
+        "SCHW", "BLK", "HOOD", "NU", "RKT", "PRU", "FITB", "CINF", "KEY", "CRBG",
+        "BX", "KKR", "BN", "IBKR", "PGR", "WELL", "COF", "CB", "PLD", "EQIX",
+        "AMT", "SPG", "PSA", "ICE", "CME", "COIN", "CBOE", "APO", "AIG", "AMP",
+        "ARES", "AFL", "NDAQ", "ALL", "DLR", "MET", "URI", "O", "VICI", "SOFI",
+        "HIG", "CCI", "VTR", "LLOY", "BARC", "BAM", "HSBA", "STT", "USB", "PNC",
+        "BK", "TRV", "TFC", "STAN", "WTW", "AON", "AHT", "NWG", "SSB", "UMBF",
+        "AXS", "AMG", "AL", "SYBT", "FCF", "MBIN", "LKFN", "QCRH"
+      ]
     },
     "energy_sector": {
-      "description": "Energy stocks (Energy Minerals only)",
-      "note": "Oil, gas, and energy production"
+      "description": "Energy stocks (oil, gas, energy production)",
+      "tickers": [
+        "XOM", "CVX", "BP", "SHEL", "ROSN", "NVTK", "EQT", "COP", "OXY", "EOG",
+        "PSX", "VLO", "MPC", "FANG", "WCP", "RRC", "CRK", "HCC", "GPOR", "LNG",
+        "PARR", "RASP", "SOC", "METC", "GRNT"
+      ]
+    },
+    "materials_sector": {
+      "description": "Materials, mining, and process industries",
+      "tickers": [
+        "LIN", "APD", "SHW", "CTVA", "ECL", "ADM", "RIO", "NEM", "SCCO", "FCX",
+        "NUE", "MLM", "VMC", "AU", "AAL", "COPX", "RBW", "GKOR", "FRD", "TMRC",
+        "CRH", "CSTEL", "TIN", "LUD", "XPL", "COBR"
+      ]
     },
     "consumer_sector": {
-      "description": "Consumer stocks (Retail, Discretionary, Services, Non-Durables)",
-      "note": "All consumer-focused companies"
+      "description": "Consumer stocks (retail, services, durables, non-durables)",
+      "tickers": [
+        "AMZN", "WMT", "COST", "HD", "BABA", "TJX", "LOW", "CVS", "DLTR", "CPNG",
+        "CVNA", "ORLY", "AZO", "TSC", "TSCO", "JD", "MELI", "DG", "SE", "ROST",
+        "PDD", "KR", "TGT", "SHOP", "CPRT", "EBAY", "ARMK", "VFS", "FSS", "M",
+        "THO", "BLBD", "WMK", "LEG", "WGO", "LGIH", "CURY", "CATO", "PG", "KO",
+        "PM", "PEP", "MO", "ULVR", "BATS", "NKE", "MNST", "MDLZ", "DGE", "KMB",
+        "EL", "HSY", "CL", "KHC", "IMB", "KVUE", "CCEP", "TSLA", "GM", "F",
+        "DHI", "LEN", "RCI", "VIK", "MCD", "DIS", "BKNG", "MAR", "ABNB", "SBUX",
+        "LVSL", "RCL", "CPG", "CMG", "WBD", "EXPE", "YUM", "TKO", "FLUT", "CCL",
+        "FOX", "LYV", "QSR"
+      ]
     },
     "industrial_sector": {
       "description": "Industrial and manufacturing stocks",
-      "note": "Manufacturing, industrial services, distribution"
+      "tickers": [
+        "CAT", "MMM", "APD", "SYM", "HUBB", "LII", "WSO", "LECO", "CNH", "EQX",
+        "LRCX", "AMAT", "JCI", "ITW", "DE", "HON", "ETN", "PH", "GEV", "CARR",
+        "ROK", "TT", "AME", "LITE", "DOV", "LIN", "SHW", "CTVA", "ECL", "ADM",
+        "IR", "XYL", "PCAR", "WAB", "GTLS", "FLS", "CMC", "ESAB", "TKR", "WMB",
+        "SLB", "OKE", "OTIS", "KMI", "ET", "WM", "EPD", "RSG", "BKR", "PWR",
+        "UPS", "DASH", "FDX", "UNP", "NSC", "CSX", "UBER", "DAL", "UAL", "ODFL",
+        "MPLX", "EME", "FIX"
+      ]
+    },
+    "utilities_sector": {
+      "description": "Utilities stocks (electric, gas, water)",
+      "tickers": [
+        "NEE", "SRE", "ETR", "WEC", "FE", "SO", "DUK", "AEP", "XEL", "EXC",
+        "PEG", "D", "CEG", "VST", "NRG", "NG.", "ED", "SSE", "TRGP", "AES",
+        "CWEN", "POR", "NWE", "MGEE", "ATO", "NWN", "HTO", "XIFR", "MSEX", "UTL", "AEE"
+      ]
+    },
+    "communications_sector": {
+      "description": "Communications stocks (telecom, broadcasting, media)",
+      "tickers": [
+        "TMUS", "VZ", "T", "SCMN", "BT.A", "CMCSA", "CCZ", "CHTR", "FYBR", "TKA",
+        "FNTN", "OPL", "ASTS", "SAT", "VOD", "ETS", "GOGO", "ATEX", "TEL1L"
+      ]
+    },
+    "distribution_sector": {
+      "description": "Distribution services stocks",
+      "tickers": [
+        "MCK", "CAH", "SNX", "COR", "GWW", "SYY", "GLEN", "AIT", "POOL", "FERG",
+        "CURY", "RUS", "UVV", "ACU", "ALTG", "WCRS", "QTZM", "CHEV"
+      ]
+    },
+    "equity_etfs": {
+      "description": "Equity ETFs only",
+      "tickers": [
+        "VOO", "IEMG", "ITOT", "SCHX", "IWR", "SPDW", "ACWI", "IWP", "SPHQ", "VFH",
+        "JEPI", "AVDV", "CGUS", "TCAF", "MAGS", "CONY", "NEBX"
+      ]
+    },
+    "fixed_income_etfs": {
+      "description": "Fixed income/bond ETFs only",
+      "tickers": [
+        "BND", "MUB", "SHY", "VMBS", "SPTL", "JPST", "PULS", "ICSH", "CGCP", "PAAA"
+      ]
+    },
+    "commodity_etfs": {
+      "description": "Commodity ETFs only",
+      "tickers": ["GLD", "SIVR", "HGER", "PDBC", "FTGC", "CMDT"]
+    },
+    "passive_etfs": {
+      "description": "Passive/index ETFs only",
+      "tickers": [
+        "VOO", "IEMG", "ITOT", "SCHX", "IWR", "SPDW", "ACWI", "IWP", "SPHQ", "VFH",
+        "BND", "MUB", "SHY", "VMBS", "SPTL", "GLD", "SIVR", "HGER", "AOR", "AOA",
+        "AOM", "KNG", "VXX", "UVXY"
+      ]
+    },
+    "active_etfs": {
+      "description": "Actively managed ETFs only",
+      "tickers": [
+        "JEPI", "AVDV", "CGUS", "TCAF", "MAGS", "CONY", "NEBX", "JPST", "PULS", "ICSH",
+        "CGCP", "PAAA", "PDBC", "FTGC", "CMDT", "CGBL", "DRSK", "INCM", "BOXX", "BUFR", "FTLS"
+      ]
+    },
+    "high_liquidity": {
+      "description": "Most liquid mega/large cap stocks with high trading volume",
+      "tickers": [
+        "NVDA", "AAPL", "MSFT", "AMZN", "GOOG", "META", "TSLA", "JPM", "V", "MA",
+        "XOM", "LLY", "NFLX", "AVGO", "AMD", "COST", "HD", "PG", "JNJ", "BAC"
+      ]
+    },
+    "growth_stocks": {
+      "description": "Growth-oriented stocks across sectors",
+      "tickers": [
+        "NVDA", "AMZN", "GOOG", "META", "NFLX", "SHOP", "LLY", "ISRG", "MRVL", "SPOT",
+        "WDAY", "CRWD", "SNOW", "DDOG", "NET", "PLTR", "NOW", "PANW", "ABNB", "UBER",
+        "HIMS", "CRSP", "AI", "CHWY", "PODD", "VRT", "DELL", "HOOD", "NU", "FSLR"
+      ]
+    },
+    "dividend_stocks": {
+      "description": "Dividend-paying stocks (utilities, finance, energy, staples)",
+      "tickers": [
+        "NEE", "SRE", "ETR", "WEC", "FE", "SO", "DUK", "XOM", "CVX", "BP",
+        "JPM", "PRU", "FITB", "CINF", "KEY", "VZ", "T", "TMUS", "MCK", "CAH",
+        "MMM", "CAT", "PG", "KO", "PEP", "PM", "JNJ", "ABBV", "MRK", "SPGI"
+      ]
+    },
+    "faang_plus": {
+      "description": "FAANG+ stocks (big tech leaders)",
+      "tickers": [
+        "META", "AAPL", "AMZN", "NFLX", "GOOG", "MSFT", "NVDA", "TSLA"
+      ]
     }
   },
   "sector_summary": {
