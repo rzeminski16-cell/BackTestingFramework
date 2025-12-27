@@ -1,9 +1,56 @@
 """
 Data validation for CSV files.
+
+All indicators must be pre-calculated in the raw data files.
+This module provides validation to ensure required columns exist
+and raises clear errors when data is missing.
 """
 import pandas as pd
-from typing import List, Set, Optional
+from typing import List, Set, Optional, Dict
 from pathlib import Path
+
+
+class MissingIndicatorError(ValueError):
+    """
+    Error raised when required indicators are not found in raw data.
+
+    This provides actionable feedback about which indicators need
+    to be collected before backtesting can proceed.
+    """
+
+    def __init__(self, symbol: str, missing: List[str], available: List[str]):
+        self.symbol = symbol
+        self.missing = sorted(missing)
+        self.available = sorted(available)
+
+        lines = [
+            f"\n{'='*60}",
+            f"MISSING INDICATORS FOR {symbol}",
+            f"{'='*60}",
+            "",
+            "The following indicators are required but not in raw data:",
+        ]
+        for col in self.missing:
+            lines.append(f"  - {col}")
+
+        lines.extend([
+            "",
+            "ACTION REQUIRED:",
+            "  Re-run data collection with these indicators enabled:",
+        ])
+
+        # Extract indicator names from column names
+        indicator_names = set()
+        for col in self.missing:
+            parts = col.split('_')
+            if len(parts) >= 2:
+                indicator_names.add(parts[0].upper())
+
+        for name in sorted(indicator_names):
+            lines.append(f"    - {name}")
+
+        lines.append(f"{'='*60}\n")
+        super().__init__("\n".join(lines))
 
 
 class DataValidator:
@@ -17,24 +64,57 @@ class DataValidator:
         """
         Validate that DataFrame contains all required columns.
 
+        All indicators must be pre-calculated in the raw data. This method
+        raises a clear error if any required columns are missing.
+
         Args:
             df: DataFrame to validate
             required_columns: List of required column names
             symbol: Symbol name for error messages
 
         Raises:
-            ValueError: If required columns are missing
+            MissingIndicatorError: If required columns are missing
         """
         df_columns = set(df.columns)
         required_set = set(required_columns)
         missing = required_set - df_columns
 
         if missing:
-            symbol_str = f" for {symbol}" if symbol else ""
-            raise ValueError(
-                f"Missing required columns{symbol_str}: {sorted(missing)}\n"
-                f"Available columns: {sorted(df_columns)}"
+            raise MissingIndicatorError(
+                symbol=symbol or "UNKNOWN",
+                missing=list(missing),
+                available=list(df_columns)
             )
+
+    @staticmethod
+    def validate_indicators_exist(df: pd.DataFrame, indicators: List[str],
+                                  symbol: str = "") -> Dict[str, bool]:
+        """
+        Check which indicators exist in the data.
+
+        Args:
+            df: DataFrame to check
+            indicators: List of indicator column names to check
+            symbol: Symbol name for error messages
+
+        Returns:
+            Dictionary mapping indicator name to existence status
+        """
+        return {col: col in df.columns for col in indicators}
+
+    @staticmethod
+    def get_missing_indicators(df: pd.DataFrame, required: List[str]) -> List[str]:
+        """
+        Get list of indicators that are required but not in the data.
+
+        Args:
+            df: DataFrame to check
+            required: List of required indicator column names
+
+        Returns:
+            List of missing indicator column names
+        """
+        return [col for col in required if col not in df.columns]
 
     @staticmethod
     def validate_date_column(df: pd.DataFrame, date_column: str = 'date') -> None:
