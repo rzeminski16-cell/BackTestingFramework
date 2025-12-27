@@ -67,6 +67,59 @@ python data_collection_gui.py
 
 ---
 
+## Ticker Presets
+
+The system includes a pre-configured ticker universe in `config/data_collection/tickers.json`. This file contains all securities from SECURITIES.md organized by category.
+
+### Using Presets in the GUI
+
+Each tab with a ticker selector includes a "Load Preset" dropdown. Available presets include:
+
+| Preset | Description |
+|--------|-------------|
+| All Stocks | Complete stock universe (165+ tickers) |
+| Large Cap Only | Large cap stocks across all sectors |
+| All ETFs | Complete ETF universe (46 tickers) |
+| Tech Sector | Electronic Technology + Technology Services |
+| Healthcare Sector | Healthcare stocks only |
+| Finance Sector | Financial stocks only |
+| US Tradeable | US-listed stocks only (excludes non-US) |
+| Sector: [Name] | Individual sector breakdowns |
+| Forex Pairs | Common currency pairs |
+
+### Editing the Ticker File
+
+The `tickers.json` file structure:
+
+```json
+{
+    "categories": {
+        "stocks": {
+            "consumer_discretionary": {
+                "large_cap": ["AMZN", "SHOP", ...],
+                "mid_cap": [...],
+                "small_cap": [...]
+            },
+            ...
+        },
+        "etfs": {...},
+        "crypto": [...]
+    },
+    "presets": {
+        "all_stocks": {
+            "description": "All stocks from the universe",
+            "tickers": [...]
+        },
+        ...
+    },
+    "forex_pairs": ["EUR/USD", "GBP/USD", ...]
+}
+```
+
+Add custom presets by adding entries to the `presets` section.
+
+---
+
 ## API Subscription Tiers
 
 The system is optimized for Alpha Vantage's Premium tier (75 requests/minute). If you have a different subscription, update the `requests_per_minute` setting accordingly:

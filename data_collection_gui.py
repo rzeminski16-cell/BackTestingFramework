@@ -53,12 +53,15 @@ ctk.set_default_color_theme("blue")
 class TickerSelector(ctk.CTkFrame):
     """Reusable ticker selection widget with multi-select and search."""
 
+    TICKERS_JSON_PATH = Path("config/data_collection/tickers.json")
+
     def __init__(self, parent, available_tickers: List[str] = None, **kwargs):
         super().__init__(parent, **kwargs)
 
         self.available_tickers = available_tickers or []
         self.selected_tickers: set = set()
         self.ticker_vars: Dict[str, tk.BooleanVar] = {}
+        self.presets = self._load_presets()
 
         self._create_widgets()
 
@@ -85,6 +88,21 @@ class TickerSelector(ctk.CTkFrame):
         # Scrollable ticker list
         self.ticker_frame = ctk.CTkScrollableFrame(self, height=200)
         self.ticker_frame.pack(fill="both", expand=True, padx=5, pady=5)
+
+        # Preset selector
+        if self.presets:
+            preset_frame = ctk.CTkFrame(self, fg_color="transparent")
+            preset_frame.pack(fill="x", padx=5, pady=(0, 5))
+
+            ctk.CTkLabel(preset_frame, text="Load Preset:").pack(side="left", padx=(0, 5))
+            preset_names = ["-- Select Preset --"] + list(self.presets.keys())
+            self.preset_dropdown = ctk.CTkComboBox(
+                preset_frame,
+                values=preset_names,
+                width=200,
+                command=self._on_preset_selected
+            )
+            self.preset_dropdown.pack(side="left", fill="x", expand=True)
 
         # Action buttons
         btn_frame = ctk.CTkFrame(self, fg_color="transparent")
@@ -193,6 +211,78 @@ class TickerSelector(ctk.CTkFrame):
     def set_tickers(self, tickers: List[str]):
         self.available_tickers = list(set(self.available_tickers + tickers))
         self._populate_tickers()
+
+    def _load_presets(self) -> Dict[str, List[str]]:
+        """Load ticker presets from tickers.json file."""
+        presets = {}
+        try:
+            if self.TICKERS_JSON_PATH.exists():
+                with open(self.TICKERS_JSON_PATH, 'r') as f:
+                    data = json.load(f)
+
+                # Load defined presets
+                if "presets" in data:
+                    for name, preset_data in data["presets"].items():
+                        if isinstance(preset_data, dict) and "tickers" in preset_data:
+                            description = preset_data.get("description", "")
+                            display_name = f"{name.replace('_', ' ').title()} ({len(preset_data['tickers'])})"
+                            presets[display_name] = preset_data["tickers"]
+                        elif isinstance(preset_data, list):
+                            presets[name.replace('_', ' ').title()] = preset_data
+
+                # Create category-based presets from stocks
+                if "categories" in data and "stocks" in data["categories"]:
+                    for sector, caps in data["categories"]["stocks"].items():
+                        sector_tickers = []
+                        for cap_type, tickers in caps.items():
+                            sector_tickers.extend(tickers)
+                        if sector_tickers:
+                            display_name = f"Sector: {sector.replace('_', ' ').title()} ({len(sector_tickers)})"
+                            presets[display_name] = sector_tickers
+
+                # Create ETF presets
+                if "categories" in data and "etfs" in data["categories"]:
+                    all_etfs = []
+                    for etf_type, etf_data in data["categories"]["etfs"].items():
+                        for style, tickers in etf_data.items():
+                            all_etfs.extend(tickers)
+                    if all_etfs:
+                        presets[f"All ETFs ({len(all_etfs)})"] = all_etfs
+
+                # Add forex pairs if available
+                if "forex_pairs" in data:
+                    presets[f"Forex Pairs ({len(data['forex_pairs'])})"] = data["forex_pairs"]
+
+        except Exception as e:
+            print(f"Warning: Could not load ticker presets: {e}")
+
+        return presets
+
+    def _on_preset_selected(self, preset_name: str):
+        """Handle preset selection from dropdown."""
+        if preset_name == "-- Select Preset --":
+            return
+
+        tickers = self.presets.get(preset_name, [])
+        if not tickers:
+            return
+
+        # Add all tickers from preset
+        for ticker in tickers:
+            ticker = ticker.upper()
+            if ticker not in self.available_tickers:
+                self.available_tickers.append(ticker)
+            self.selected_tickers.add(ticker)
+            if ticker not in self.ticker_vars:
+                self.ticker_vars[ticker] = tk.BooleanVar(value=True)
+            else:
+                self.ticker_vars[ticker].set(True)
+
+        self._populate_tickers()
+        self._update_count()
+
+        # Reset dropdown
+        self.preset_dropdown.set("-- Select Preset --")
 
 
 class DateRangeSelector(ctk.CTkFrame):
