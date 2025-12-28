@@ -38,6 +38,9 @@ from Classes.DataCollection import (
     FUNDAMENTAL_CATEGORIES,
     MissingDataHandling,
     DateRangeType,
+    MaxDTEForward,
+    OptionsType,
+    OptionsCollector,
 )
 from Classes.DataCollection.file_manager import DataTransformer
 from Classes.DataCollection.logging_manager import (
@@ -1522,7 +1525,7 @@ class ForexTab(BaseTab):
 
 
 class OptionsTab(BaseTab):
-    """Tab for options data collection."""
+    """Tab for options data collection organized by trading date."""
 
     def __init__(self, parent, app: 'DataCollectionApp', **kwargs):
         super().__init__(parent, app, **kwargs)
@@ -1532,11 +1535,62 @@ class OptionsTab(BaseTab):
         container = ctk.CTkScrollableFrame(self)
         container.pack(fill="both", expand=True, padx=10, pady=10)
 
-        self.ticker_selector = TickerSelector(container, self._get_existing_tickers())
+        # Left column
+        left_frame = ctk.CTkFrame(container)
+        left_frame.pack(side="left", fill="both", expand=True, padx=5)
+
+        # Ticker selector
+        self.ticker_selector = TickerSelector(left_frame, self._get_existing_tickers())
         self.ticker_selector.pack(fill="x", pady=5)
 
-        # Options type
-        type_frame = ctk.CTkFrame(container)
+        # Trading Date Range
+        date_frame = ctk.CTkFrame(left_frame)
+        date_frame.pack(fill="x", pady=10)
+
+        ctk.CTkLabel(date_frame, text="Trading Date Range", font=("", 14, "bold")).pack(anchor="w", padx=5, pady=5)
+        ctk.CTkLabel(date_frame, text="Collect options snapshots for each trading day in this range:",
+                     font=("", 11), text_color="gray").pack(anchor="w", padx=10, pady=(0, 5))
+
+        date_input_frame = ctk.CTkFrame(date_frame, fg_color="transparent")
+        date_input_frame.pack(fill="x", padx=20, pady=5)
+
+        ctk.CTkLabel(date_input_frame, text="From:").grid(row=0, column=0, padx=5, pady=2)
+        self.from_date_entry = ctk.CTkEntry(date_input_frame, width=120, placeholder_text="YYYY-MM-DD")
+        self.from_date_entry.grid(row=0, column=1, padx=5, pady=2)
+        self.from_date_entry.insert(0, "2020-01-01")
+
+        ctk.CTkLabel(date_input_frame, text="To:").grid(row=1, column=0, padx=5, pady=2)
+        self.to_date_entry = ctk.CTkEntry(date_input_frame, width=120, placeholder_text="YYYY-MM-DD")
+        self.to_date_entry.grid(row=1, column=1, padx=5, pady=2)
+        self.to_date_entry.insert(0, date.today().strftime("%Y-%m-%d"))
+
+        # Right column
+        right_frame = ctk.CTkFrame(container)
+        right_frame.pack(side="right", fill="both", expand=True, padx=5)
+
+        # Max DTE Forward Filter
+        dte_frame = ctk.CTkFrame(right_frame)
+        dte_frame.pack(fill="x", pady=10)
+
+        ctk.CTkLabel(dte_frame, text="Expiration Filter (Max DTE Forward)", font=("", 14, "bold")).pack(anchor="w", padx=5, pady=5)
+        ctk.CTkLabel(dte_frame, text="Only include options expiring within this many days from each trading date:",
+                     font=("", 11), text_color="gray").pack(anchor="w", padx=10, pady=(0, 5))
+
+        # Create dropdown with MaxDTEForward choices
+        dte_choices = MaxDTEForward.choices()
+        dte_labels = [label for label, _ in dte_choices]
+        self.dte_values = {label: value for label, value in dte_choices}
+
+        self.dte_dropdown = ctk.CTkComboBox(
+            dte_frame,
+            values=dte_labels,
+            width=200
+        )
+        self.dte_dropdown.pack(anchor="w", padx=20, pady=5)
+        self.dte_dropdown.set(dte_labels[2])  # Default to 180 days
+
+        # Option Types
+        type_frame = ctk.CTkFrame(right_frame)
         type_frame.pack(fill="x", pady=10)
 
         ctk.CTkLabel(type_frame, text="Option Types", font=("", 14, "bold")).pack(anchor="w", padx=5, pady=5)
@@ -1546,32 +1600,17 @@ class OptionsTab(BaseTab):
         ctk.CTkRadioButton(type_frame, text="Calls Only", variable=self.opt_type_var, value="calls").pack(anchor="w", padx=20)
         ctk.CTkRadioButton(type_frame, text="Puts Only", variable=self.opt_type_var, value="puts").pack(anchor="w", padx=20)
 
-        # Date selection
-        date_frame = ctk.CTkFrame(container)
-        date_frame.pack(fill="x", pady=10)
+        # Output Info
+        info_frame = ctk.CTkFrame(right_frame)
+        info_frame.pack(fill="x", pady=10)
 
-        ctk.CTkLabel(date_frame, text="Historical Date (Optional)", font=("", 14, "bold")).pack(anchor="w", padx=5, pady=5)
-
-        date_input_frame = ctk.CTkFrame(date_frame, fg_color="transparent")
-        date_input_frame.pack(fill="x", padx=20)
-
-        ctk.CTkLabel(date_input_frame, text="Date (YYYY-MM-DD):").pack(side="left")
-        self.date_entry = ctk.CTkEntry(date_input_frame, width=120, placeholder_text="Leave empty for latest")
-        self.date_entry.pack(side="left", padx=10)
-
-        # Data fields
-        fields_frame = ctk.CTkFrame(container)
-        fields_frame.pack(fill="x", pady=10)
-
-        ctk.CTkLabel(fields_frame, text="Data Fields", font=("", 14, "bold")).pack(anchor="w", padx=5, pady=5)
-
-        self.field_vars = {}
-        fields = ["strike", "bid", "ask", "last_price", "volume", "open_interest",
-                  "implied_volatility", "delta", "gamma", "theta", "vega"]
-
-        for field in fields:
-            self.field_vars[field] = tk.BooleanVar(value=True)
-            ctk.CTkCheckBox(fields_frame, text=field.replace("_", " ").title(), variable=self.field_vars[field]).pack(anchor="w", padx=20)
+        ctk.CTkLabel(info_frame, text="Output Format", font=("", 14, "bold")).pack(anchor="w", padx=5, pady=5)
+        ctk.CTkLabel(info_frame, text="Files will be organized by ticker and trading year:",
+                     font=("", 11), text_color="gray").pack(anchor="w", padx=10)
+        ctk.CTkLabel(info_frame, text="raw_data/options/{TICKER}/{TICKER}_options_{YEAR}.csv",
+                     font=("", 11, "italic"), text_color="lightblue").pack(anchor="w", padx=20, pady=5)
+        ctk.CTkLabel(info_frame, text="Each row includes a 'snapshot_date' column indicating when the data was recorded.",
+                     font=("", 11), text_color="gray").pack(anchor="w", padx=10, pady=(0, 5))
 
     def _get_existing_tickers(self) -> List[str]:
         raw_data_path = Path("raw_data")
@@ -1581,16 +1620,34 @@ class OptionsTab(BaseTab):
                 ticker = f.stem.split("_")[0].upper()
                 if ticker and ticker not in tickers:
                     tickers.append(ticker)
+            # Also check options subdirectory
+            options_path = raw_data_path / "options"
+            if options_path.exists():
+                for d in options_path.iterdir():
+                    if d.is_dir():
+                        ticker = d.name.upper()
+                        if ticker not in tickers:
+                            tickers.append(ticker)
         return sorted(tickers)
 
     def get_config(self) -> Dict[str, Any]:
-        selected_fields = [f for f, var in self.field_vars.items() if var.get()]
+        # Get max DTE from dropdown selection
+        dte_label = self.dte_dropdown.get()
+        max_dte = self.dte_values.get(dte_label, MaxDTEForward.DAYS_180)
+
+        # Map option type string to OptionsType enum
+        opt_type_map = {
+            "both": OptionsType.BOTH,
+            "calls": OptionsType.CALLS,
+            "puts": OptionsType.PUTS
+        }
 
         return {
             "tickers": self.ticker_selector.get_selected(),
-            "option_type": self.opt_type_var.get(),
-            "date": self.date_entry.get().strip() or None,
-            "fields": selected_fields,
+            "from_date": self.from_date_entry.get().strip(),
+            "to_date": self.to_date_entry.get().strip(),
+            "max_dte_forward": max_dte,
+            "option_type": opt_type_map.get(self.opt_type_var.get(), OptionsType.BOTH),
         }
 
     def validate(self) -> tuple:
@@ -1598,25 +1655,58 @@ class OptionsTab(BaseTab):
         if not tickers:
             return False, "Please select at least one ticker"
 
-        date_str = self.date_entry.get().strip()
-        if date_str:
-            try:
-                datetime.strptime(date_str, "%Y-%m-%d")
-            except ValueError:
-                return False, "Invalid date format. Use YYYY-MM-DD"
+        # Validate from date
+        from_date_str = self.from_date_entry.get().strip()
+        if not from_date_str:
+            return False, "Please enter a start date"
+        try:
+            from_dt = datetime.strptime(from_date_str, "%Y-%m-%d")
+        except ValueError:
+            return False, "Invalid start date format. Use YYYY-MM-DD"
+
+        # Validate to date
+        to_date_str = self.to_date_entry.get().strip()
+        if not to_date_str:
+            return False, "Please enter an end date"
+        try:
+            to_dt = datetime.strptime(to_date_str, "%Y-%m-%d")
+        except ValueError:
+            return False, "Invalid end date format. Use YYYY-MM-DD"
+
+        if from_dt > to_dt:
+            return False, "Start date must be before end date"
 
         return True, ""
 
     def collect_data(self, progress_callback: Callable) -> Dict[str, Any]:
-        """Collect options data."""
+        """Collect options data organized by trading date."""
         config = self.get_config()
         tickers = config["tickers"]
         results = {"success": [], "failed": [], "partial": [], "not_available": []}
 
         client = self.app.api_client
         file_manager = self.app.file_manager
-        validator = self.app.validator
         logger = self.app.logger
+
+        # Parse dates
+        from_date = datetime.strptime(config["from_date"], "%Y-%m-%d").date()
+        to_date = datetime.strptime(config["to_date"], "%Y-%m-%d").date()
+
+        # Create options config
+        options_config = OptionsDataConfig(
+            from_date=from_date,
+            to_date=to_date,
+            max_dte_forward=config["max_dte_forward"],
+            option_type=config["option_type"],
+        )
+
+        # Create collector
+        collector = OptionsCollector(
+            client=client,
+            file_manager=file_manager,
+            config=options_config,
+            logger=logger,
+        )
 
         total_tickers = len(tickers)
 
@@ -1625,57 +1715,27 @@ class OptionsTab(BaseTab):
                 break
 
             try:
-                progress_callback(f"Fetching {ticker} options data...", i / total_tickers)
-                logger.log_session_info(f"FETCHING {ticker} OPTIONS")
+                progress_callback(f"Collecting {ticker} options ({i+1}/{total_tickers})...", i / total_tickers)
+                logger.log_session_info(f"COLLECTING {ticker} OPTIONS (trading dates: {from_date} to {to_date})")
 
-                response = client.get_historical_options(ticker, config["date"])
+                # Use the collector to fetch and save options data
+                ticker_results = collector.collect(
+                    symbols=[ticker],
+                    progress_callback=lambda msg, prog: progress_callback(
+                        f"{ticker}: {msg}",
+                        (i + prog) / total_tickers
+                    )
+                )
 
-                if not response.success:
-                    if "not available" in (response.error_message or "").lower():
-                        results["not_available"].append((ticker, response.error_message))
-                        logger.log_data_issue(DataIssueEntry(
-                            timestamp=datetime.now(),
-                            symbol=ticker,
-                            issue_type="Data Not Available",
-                            description=f"Options data not available: {response.error_message}",
-                            severity="warning"
-                        ))
-                    else:
-                        results["failed"].append((ticker, response.error_message))
-                    continue
+                if ticker_results.get("success"):
+                    results["success"].append((ticker, ticker_results["success"]))
+                elif ticker_results.get("not_available"):
+                    results["not_available"].append((ticker, "No options data available"))
+                elif ticker_results.get("failed"):
+                    results["failed"].append((ticker, str(ticker_results["failed"])))
+                else:
+                    results["partial"].append((ticker, ticker_results))
 
-                df = DataTransformer.transform_options(response.data, ticker)
-
-                if df.empty:
-                    results["not_available"].append((ticker, "No options data returned"))
-                    continue
-
-                # Filter by option type
-                if config["option_type"] == "calls":
-                    df = df[df["option_type"] == "CALL"]
-                elif config["option_type"] == "puts":
-                    df = df[df["option_type"] == "PUT"]
-
-                if df.empty:
-                    results["failed"].append((ticker, "No options match type filter"))
-                    continue
-
-                # Group by expiration and write separate files
-                if "expiration_date" in df.columns:
-                    for expiration, exp_df in df.groupby("expiration_date"):
-                        exp_str = pd.to_datetime(expiration).strftime("%Y%m%d")
-
-                        if config["option_type"] in ["both", "calls"]:
-                            calls_df = exp_df[exp_df["option_type"] == "CALL"]
-                            if not calls_df.empty:
-                                file_manager.write_options_data(calls_df, ticker, exp_str, "calls")
-
-                        if config["option_type"] in ["both", "puts"]:
-                            puts_df = exp_df[exp_df["option_type"] == "PUT"]
-                            if not puts_df.empty:
-                                file_manager.write_options_data(puts_df, ticker, exp_str, "puts")
-
-                results["success"].append((ticker, len(df)))
                 progress_callback(f"Completed {ticker}", (i + 1) / total_tickers)
 
             except Exception as e:
