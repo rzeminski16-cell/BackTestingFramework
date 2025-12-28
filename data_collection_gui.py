@@ -1692,20 +1692,15 @@ class OptionsTab(BaseTab):
         from_date = datetime.strptime(config["from_date"], "%Y-%m-%d").date()
         to_date = datetime.strptime(config["to_date"], "%Y-%m-%d").date()
 
-        # Create options config
-        options_config = OptionsDataConfig(
-            from_date=from_date,
-            to_date=to_date,
-            max_dte_forward=config["max_dte_forward"],
-            options_type=config["option_type"],
-        )
+        # Get max DTE value (integer days)
+        max_dte = config["max_dte_forward"]
+        max_dte_days = max_dte.value if hasattr(max_dte, 'value') else int(max_dte)
 
         # Create collector
         collector = OptionsCollector(
             client=client,
             file_manager=file_manager,
-            config=options_config,
-            logger=logger,
+            session_logger=logger,
         )
 
         total_tickers = len(tickers)
@@ -1720,21 +1715,24 @@ class OptionsTab(BaseTab):
 
                 # Use the collector to fetch and save options data
                 ticker_results = collector.collect(
-                    symbols=[ticker],
+                    symbol=ticker,
+                    from_date=from_date,
+                    to_date=to_date,
+                    max_dte_forward=max_dte_days,
+                    options_type=config["option_type"],
                     progress_callback=lambda msg, prog: progress_callback(
                         f"{ticker}: {msg}",
-                        (i + prog) / total_tickers
+                        (i + prog / 100) / total_tickers
                     )
                 )
 
-                if ticker_results.get("success"):
-                    results["success"].append((ticker, ticker_results["success"]))
-                elif ticker_results.get("not_available"):
-                    results["not_available"].append((ticker, "No options data available"))
-                elif ticker_results.get("failed"):
-                    results["failed"].append((ticker, str(ticker_results["failed"])))
+                # ticker_results is Dict[int, DataFrame] mapping year -> data
+                if ticker_results:
+                    total_records = sum(len(df) for df in ticker_results.values())
+                    years = sorted(ticker_results.keys())
+                    results["success"].append((ticker, f"{total_records} records across years {years}"))
                 else:
-                    results["partial"].append((ticker, ticker_results))
+                    results["not_available"].append((ticker, "No options data available"))
 
                 progress_callback(f"Completed {ticker}", (i + 1) / total_tickers)
 
