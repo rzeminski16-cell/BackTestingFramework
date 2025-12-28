@@ -1638,8 +1638,8 @@ class OptionsTab(BaseTab):
         # Map option type string to OptionsType enum
         opt_type_map = {
             "both": OptionsType.BOTH,
-            "calls": OptionsType.CALLS,
-            "puts": OptionsType.PUTS
+            "calls": OptionsType.CALLS_ONLY,
+            "puts": OptionsType.PUTS_ONLY
         }
 
         return {
