@@ -1,0 +1,535 @@
+date,symbol,insider_title,transaction_type,shares,price,value,executive,security_type
+2009-04-29,BAM,10% Owner,BUY,9922495.0,25.0,248062375.0,"BROOKFIELD, ASSET MANAGEMENT INC.","8% Convertible Preferred Stock, Series A"
+2009-04-29,BAM,10% Owner,BUY,9922495.0,25.0,248062375.0,"BROOKFIELD, ASSET MANAGEMENT INC.","8% Convertible Preferred Stock, Series A"
+2010-11-09,BAM,"Director, 10% Owner, Director by deputization ***",BUY,4573591.0,10.0,45735910.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2010-11-09,BAM,"Director, 10% Owner, Director by deputization ***",BUY,789145.0,47.619,37578295.755,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2010-11-09,BAM,"Director, 10% Owner, Director by deputization ***",BUY,541513.0,47.619,25786307.547,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2010-11-09,BAM,"Director, 10% Owner, Director by deputization ***",BUY,621147.0,47.619,29578398.993,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2010-11-09,BAM,"Director, 10% Owner, Director by deputization ***",BUY,71816.0,47.619,3419806.104,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2010-11-09,BAM,"Director, 10% Owner, Director by deputization ***",BUY,143342.0,47.619,6825802.698,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2010-11-09,BAM,"Director, 10% Owner, Director by deputization ***",BUY,48023.0,47.619,2286807.237,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2010-11-09,BAM,"Director, 10% Owner, Director by deputization ***",BUY,161609.0,47.619,7695658.971,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2010-11-09,BAM,"Director, 10% Owner, Director by deputization ***",BUY,15391391.0,10.0,153913910.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2010-11-09,BAM,"Director, 10% Owner, Director by deputization ***",BUY,13651644.0,10.0,136516440.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2010-11-09,BAM,"Director, 10% Owner, Director by deputization ***",BUY,51572627.0,10.0,515726270.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2010-11-09,BAM,"Director, 10% Owner, Director by deputization ***",BUY,75156748.0,10.0,751567480.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2010-11-09,BAM,"Director, 10% Owner, Director by deputization ***",BUY,161609.0,47.619,7695658.971,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2010-11-09,BAM,"Director, 10% Owner, Director by deputization ***",BUY,6839615.0,10.0,68396150.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2010-11-09,BAM,"Director, 10% Owner, Director by deputization ***",BUY,789145.0,47.619,37578295.755,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2010-11-09,BAM,"Director, 10% Owner, Director by deputization ***",BUY,541513.0,47.619,25786307.547,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2010-11-09,BAM,"Director, 10% Owner, Director by deputization ***",BUY,621147.0,47.619,29578398.993,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2010-11-09,BAM,"Director, 10% Owner, Director by deputization ***",BUY,143342.0,47.619,6825802.698,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2010-11-09,BAM,"Director, 10% Owner, Director by deputization ***",BUY,48023.0,47.619,2286807.237,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2010-11-09,BAM,"Director, 10% Owner, Director by deputization ***",BUY,75156748.0,10.0,751567480.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2010-11-09,BAM,"Director, 10% Owner, Director by deputization ***",BUY,51572627.0,10.0,515726270.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2010-11-09,BAM,"Director, 10% Owner, Director by deputization ***",BUY,59156823.0,10.0,591568230.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2010-11-09,BAM,"Director, 10% Owner, Director by deputization ***",BUY,6839615.0,10.0,68396150.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2010-11-09,BAM,"Director, 10% Owner, Director by deputization ***",BUY,13651644.0,10.0,136516440.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2010-11-09,BAM,"Director, 10% Owner, Director by deputization ***",BUY,15391391.0,10.0,153913910.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2011-01-25,BAM,"Director, 10% Owner, Director by deputization***",BUY,39403972.0,15.1,594999977.1999999,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2011-01-25,BAM,"Director, 10% Owner, Director by deputization***",BUY,39403972.0,15.1,594999977.1999999,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2011-01-25,BAM,"Director, 10% Owner, Director by deputization***",BUY,73927484.0,15.1,1116305008.3999999,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2011-01-25,BAM,"Director, 10% Owner, Director by deputization***",BUY,73927484.0,15.1,1116305008.3999999,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2011-01-27,BAM,"Director, 10% Owner, Director by deputization ***",BUY,1329116.664,14.4725,19235640.919740003,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2011-01-27,BAM,"Director, 10% Owner, Director by deputization ***",BUY,351826.712,14.4725,5091812.08942,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2011-01-27,BAM,"Director, 10% Owner, Director by deputization ***",BUY,1936920.65,14.4725,28032084.107125,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2011-01-27,BAM,"Director, 10% Owner, Director by deputization ***",BUY,1329116.664,14.4725,19235640.919740003,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2011-01-27,BAM,"Director, 10% Owner, Director by deputization ***",BUY,117869.425,14.4725,1705865.2533125,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2011-01-27,BAM,"Director, 10% Owner, Director by deputization ***",BUY,1524574.642,14.4725,22064406.506345,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2011-01-27,BAM,"Director, 10% Owner, Director by deputization ***",BUY,117869.428,14.4725,1705865.29673,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2011-01-27,BAM,"Director, 10% Owner, Director by deputization ***",BUY,351826.712,14.4725,5091812.08942,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2011-01-27,BAM,"Director, 10% Owner, Director by deputization ***",BUY,117869.425,14.4725,1705865.2533125,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2011-01-27,BAM,"Director, 10% Owner, Director by deputization ***",BUY,117869.428,14.4725,1705865.29673,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2011-01-27,BAM,"Director, 10% Owner, Director by deputization ***",BUY,396663.026,14.4725,5740705.643785,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2011-01-27,BAM,"Director, 10% Owner, Director by deputization ***",BUY,176268.822,14.4725,2551050.5263949996,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2011-01-27,BAM,"Director, 10% Owner, Director by deputization ***",BUY,1524574.642,14.4725,22064406.506345,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-03-08,BAM,10% Owner,BUY,530635.0,14.73,7816253.55,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-03-08,BAM,10% Owner,BUY,178393.0,14.73,2627728.89,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-03-08,BAM,10% Owner,BUY,177774.0,14.73,2618611.02,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-03-08,BAM,10% Owner,SELL,177774.0,14.73,2618611.02,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-03-08,BAM,10% Owner,SELL,530635.0,14.73,7816253.55,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-03-08,BAM,10% Owner,SELL,600173.0,14.73,8840548.290000001,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-03-08,BAM,10% Owner,BUY,2307948.0,14.73,33996074.04,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-03-08,BAM,10% Owner,SELL,2307948.0,14.73,33996074.04,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-03-08,BAM,10% Owner,SELL,2012058.0,14.73,29637614.34,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-03-08,BAM,10% Owner,BUY,2946661.0,14.73,43404316.53,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-03-08,BAM,10% Owner,SELL,178393.0,14.73,2627728.89,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-03-08,BAM,10% Owner,SELL,265725.0,14.73,3914129.25,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-03-08,BAM,10% Owner,SELL,2946661.0,14.73,43404316.53,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-03-08,BAM,10% Owner,SELL,2946661.0,14.73,43404316.53,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-03-08,BAM,10% Owner,SELL,2012058.0,14.73,29637614.34,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-03-08,BAM,10% Owner,BUY,2946661.0,14.73,43404316.53,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-03-08,BAM,10% Owner,SELL,600173.0,14.73,8840548.290000001,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-03-08,BAM,10% Owner,BUY,600173.0,14.73,8840548.290000001,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-03-08,BAM,10% Owner,BUY,178393.0,14.73,2627728.89,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-03-08,BAM,10% Owner,BUY,177774.0,14.73,2618611.02,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-03-08,BAM,10% Owner,BUY,530635.0,14.73,7816253.55,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-03-08,BAM,10% Owner,SELL,177774.0,14.73,2618611.02,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-03-08,BAM,10% Owner,BUY,265725.0,14.73,3914129.25,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-03-08,BAM,10% Owner,SELL,265725.0,14.73,3914129.25,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-03-08,BAM,10% Owner,BUY,2307948.0,14.73,33996074.04,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-03-08,BAM,10% Owner,SELL,2307948.0,14.73,33996074.04,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-03-08,BAM,10% Owner,BUY,2012058.0,14.73,29637614.34,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-03-08,BAM,10% Owner,SELL,530635.0,14.73,7816253.55,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-03-26,BAM,10% Owner,BUY,1809064.0,15.0,27135960.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-03-26,BAM,10% Owner,BUY,3174980.0,15.0,47624700.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-03-26,BAM,10% Owner,BUY,1143094.0,15.0,17146410.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-03-26,BAM,10% Owner,BUY,6354012.0,15.0,95310180.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-03-26,BAM,10% Owner,BUY,756470.0,15.0,11347050.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-03-26,BAM,10% Owner,BUY,3174980.0,15.0,47624700.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-03-26,BAM,10% Owner,BUY,6354012.0,15.0,95310180.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-03-26,BAM,10% Owner,BUY,756470.0,15.0,11347050.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-11-09,BAM,10% Owner,SELL,591287.0,38.696,22880441.752,"BROOKFIELD, ASSET MANAGEMENT INC.",Warrant to acquire Common Stock
+2012-11-09,BAM,10% Owner,SELL,136452.0,38.696,5280146.592,"BROOKFIELD, ASSET MANAGEMENT INC.",Warrant to acquire Common Stock
+2012-11-09,BAM,10% Owner,SELL,45714.0,38.696,1768948.944,"BROOKFIELD, ASSET MANAGEMENT INC.",Warrant to acquire Common Stock
+2012-11-09,BAM,10% Owner,SELL,153841.0,38.696,5953031.336,"BROOKFIELD, ASSET MANAGEMENT INC.",Warrant to acquire Common Stock
+2012-11-09,BAM,10% Owner,SELL,591287.0,38.696,22880441.752,"BROOKFIELD, ASSET MANAGEMENT INC.",Warrant to acquire Common Stock
+2012-11-09,BAM,10% Owner,SELL,68363.0,38.696,2645374.648,"BROOKFIELD, ASSET MANAGEMENT INC.",Warrant to acquire Common Stock
+2012-11-09,BAM,10% Owner,BUY,340653.0,50.0,17032650.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-11-09,BAM,10% Owner,BUY,45178.0,50.0,2258900.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-11-09,BAM,10% Owner,SELL,136452.0,38.696,5280146.592,"BROOKFIELD, ASSET MANAGEMENT INC.",Warrant to acquire Common Stock
+2012-11-09,BAM,10% Owner,SELL,68363.0,38.696,2645374.648,"BROOKFIELD, ASSET MANAGEMENT INC.",Warrant to acquire Common Stock
+2012-11-09,BAM,10% Owner,SELL,515481.0,38.696,19947052.776,"BROOKFIELD, ASSET MANAGEMENT INC.",Warrant to acquire Common Stock
+2012-11-09,BAM,10% Owner,BUY,390749.0,50.0,19537450.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-11-09,BAM,10% Owner,BUY,101665.0,50.0,5083250.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-11-09,BAM,10% Owner,SELL,515481.0,38.696,19947052.776,"BROOKFIELD, ASSET MANAGEMENT INC.",Warrant to acquire Common Stock
+2012-11-09,BAM,10% Owner,BUY,101665.0,50.0,5083250.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-11-09,BAM,10% Owner,BUY,30210.0,50.0,1510500.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-11-09,BAM,10% Owner,BUY,90173.0,50.0,4508650.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-11-09,BAM,10% Owner,BUY,45178.0,50.0,2258900.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-11-09,BAM,10% Owner,SELL,751209.0,38.696,29068783.463999998,"BROOKFIELD, ASSET MANAGEMENT INC.",Warrant to acquire Common Stock
+2012-11-09,BAM,10% Owner,BUY,340653.0,50.0,17032650.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-11-09,BAM,10% Owner,BUY,496434.0,50.0,24821700.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-11-09,BAM,10% Owner,SELL,153841.0,38.696,5953031.336,"BROOKFIELD, ASSET MANAGEMENT INC.",Warrant to acquire Common Stock
+2012-11-09,BAM,10% Owner,BUY,90173.0,50.0,4508650.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-11-09,BAM,10% Owner,BUY,390749.0,50.0,19537450.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2012-11-09,BAM,10% Owner,SELL,751209.0,38.696,29068783.463999998,"BROOKFIELD, ASSET MANAGEMENT INC.",Warrant to acquire Common Stock
+2012-12-31,BAM,"Director, 10% Owner, Director by deputization ***",BUY,18432855.0,14.75,271884611.25,"BROOKFIELD, ASSET MANAGEMENT INC.",Series A-2 Warrants to Acquire Common Stock
+2012-12-31,BAM,"Director, 10% Owner, Director by deputization ***",BUY,18432855.0,14.75,271884611.25,"BROOKFIELD, ASSET MANAGEMENT INC.",Series A-2 Warrants to Acquire Common Stock
+2013-04-12,BAM,"Director, 10% Owner, Director by deputization ***",BUY,1277803.0,12.02,15359192.059999999,"BROOKFIELD, ASSET MANAGEMENT INC.",Warrants to Acquire Common Stock
+2013-04-12,BAM,"Director, 10% Owner, Director by deputization ***",BUY,1910902.0,12.02,22969042.04,"BROOKFIELD, ASSET MANAGEMENT INC.",Warrants to Acquire Common Stock
+2013-04-12,BAM,"Director, 10% Owner, Director by deputization ***",BUY,4777095.0,20.05,95780754.75,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2013-04-12,BAM,10% Owner,BUY,265725.0,17.54,4660816.5,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2013-04-12,BAM,10% Owner,BUY,177774.0,17.54,3118155.96,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2013-04-12,BAM,10% Owner,BUY,178393.0,17.54,3129013.2199999997,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2013-04-12,BAM,"Director, 10% Owner, Director by deputization ***",BUY,1910902.0,12.02,22969042.04,"BROOKFIELD, ASSET MANAGEMENT INC.",Warrants to Acquire Common Stock
+2013-04-12,BAM,"Director, 10% Owner, Director by deputization ***",BUY,7108442.0,20.05,142524262.1,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2013-04-12,BAM,"Director, 10% Owner, Director by deputization ***",BUY,4777095.0,20.05,95780754.75,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2013-04-12,BAM,"Director, 10% Owner, Director by deputization ***",BUY,4755658.0,20.05,95350942.9,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2013-04-12,BAM,10% Owner,BUY,178393.0,17.54,3129013.2199999997,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2013-04-12,BAM,10% Owner,BUY,177774.0,17.54,3118155.96,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2013-04-12,BAM,"Director, 10% Owner, Director by deputization ***",BUY,7108442.0,20.05,142524262.1,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2013-04-12,BAM,"Director, 10% Owner, Director by deputization ***",BUY,4755658.0,20.05,95350942.9,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2013-04-12,BAM,"Director, 10% Owner, Director by deputization ***",BUY,1277803.0,12.02,15359192.059999999,"BROOKFIELD, ASSET MANAGEMENT INC.",Warrants to Acquire Common Stock
+2013-11-01,BAM,"Director, 10% Owner, Director by deputization ***",SELL,30870195.0,14.76,455644078.2,"BROOKFIELD, ASSET MANAGEMENT INC.",Warrants to acquire Common Stock
+2013-11-01,BAM,"Director, 10% Owner, Director by deputization ***",BUY,1051036.0,14.76,15513291.36,"BROOKFIELD, ASSET MANAGEMENT INC.",Warrants to acquire Common Stock
+2013-11-01,BAM,"Director, 10% Owner, Director by deputization ***",SELL,2158038.0,14.76,31852640.88,"BROOKFIELD, ASSET MANAGEMENT INC.",Warrants to acquire Common Stock
+2013-11-01,BAM,"Director, 10% Owner, Director by deputization ***",SELL,2277546.0,20.39,46439162.94,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2013-11-01,BAM,"Director, 10% Owner, Director by deputization ***",BUY,7529107.0,20.39,153518491.73000002,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2013-11-01,BAM,"Director, 10% Owner, Director by deputization ***",BUY,11550291.0,20.39,235510433.49,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2013-11-01,BAM,"Director, 10% Owner, Director by deputization ***",BUY,1562170.0,20.39,31852646.3,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2013-11-01,BAM,"Director, 10% Owner, Director by deputization ***",SELL,2873115.0,20.39,58582814.85,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2013-11-01,BAM,"Director, 10% Owner, Director by deputization ***",SELL,760807.0,20.39,15512854.73,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2013-11-01,BAM,10% Owner,BUY,21068.0,20.03,421992.04000000004,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2013-11-01,BAM,"Director, 10% Owner, Director by deputization ***",BUY,3968760.0,14.76,58578897.6,"BROOKFIELD, ASSET MANAGEMENT INC.",Warrants to acquire Common Stock
+2013-11-01,BAM,"Director, 10% Owner, Director by deputization ***",SELL,3288610.0,14.76,48539883.6,"BROOKFIELD, ASSET MANAGEMENT INC.",Warrants to acquire Common Stock
+2013-11-01,BAM,"Director, 10% Owner, Director by deputization ***",BUY,22346448.0,20.39,455644074.72,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2013-11-01,BAM,"Director, 10% Owner, Director by deputization ***",BUY,13543059.0,20.39,276142973.01,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2013-11-01,BAM,"Director, 10% Owner, Director by deputization ***",SELL,3288610.0,14.76,48539883.6,"BROOKFIELD, ASSET MANAGEMENT INC.",Warrants to acquire Common Stock
+2013-11-01,BAM,"Director, 10% Owner, Director by deputization ***",BUY,2380573.0,20.39,48539883.47,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2013-11-01,BAM,"Director, 10% Owner, Director by deputization ***",BUY,1562170.0,20.39,31852646.3,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2013-11-01,BAM,"Director, 10% Owner, Director by deputization ***",BUY,3146374.0,14.76,46440480.24,"BROOKFIELD, ASSET MANAGEMENT INC.",Warrants to acquire Common Stock
+2013-11-01,BAM,"Director, 10% Owner, Director by deputization ***",BUY,14056096.0,14.76,207467976.96,"BROOKFIELD, ASSET MANAGEMENT INC.",Warrants to acquire Common Stock
+2013-11-01,BAM,"Director, 10% Owner, Director by deputization ***",SELL,760807.0,20.39,15512854.73,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2013-11-01,BAM,"Director, 10% Owner, Director by deputization ***",BUY,3146374.0,14.76,46440480.24,"BROOKFIELD, ASSET MANAGEMENT INC.",Warrants to acquire Common Stock
+2013-11-01,BAM,10% Owner,BUY,21068.0,20.03,421992.04000000004,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2013-11-01,BAM,"Director, 10% Owner, Director by deputization ***",SELL,2873115.0,20.39,58582814.85,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2013-11-01,BAM,"Director, 10% Owner, Director by deputization ***",BUY,11550291.0,20.39,235510433.49,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2013-11-01,BAM,"Director, 10% Owner, Director by deputization ***",SELL,2277546.0,20.39,46439162.94,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2013-11-01,BAM,"Director, 10% Owner, Director by deputization ***",BUY,14056096.0,14.76,207467976.96,"BROOKFIELD, ASSET MANAGEMENT INC.",Warrants to acquire Common Stock
+2013-11-01,BAM,"Director, 10% Owner, Director by deputization ***",BUY,13543059.0,20.39,276142973.01,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2013-11-01,BAM,"Director, 10% Owner, Director by deputization ***",SELL,2158038.0,14.76,31852640.88,"BROOKFIELD, ASSET MANAGEMENT INC.",Warrants to acquire Common Stock
+2013-11-01,BAM,"Director, 10% Owner, Director by deputization ***",BUY,7529107.0,20.39,153518491.73000002,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Par Value $0.01 per share"
+2013-11-01,BAM,"Director, 10% Owner, Director by deputization ***",SELL,30870195.0,14.76,455644078.2,"BROOKFIELD, ASSET MANAGEMENT INC.",Warrants to acquire Common Stock
+2013-11-01,BAM,"Director, 10% Owner, Director by deputization ***",BUY,3968760.0,14.76,58578897.6,"BROOKFIELD, ASSET MANAGEMENT INC.",Warrants to acquire Common Stock
+2013-11-01,BAM,"Director, 10% Owner, Director by deputization ***",BUY,1051036.0,14.76,15513291.36,"BROOKFIELD, ASSET MANAGEMENT INC.",Warrants to acquire Common Stock
+2016-07-05,BAM,10% Owner,SELL,19387625.0,18.25,353824156.25,"BROOKFIELD, ASSET MANAGEMENT INC.",Common Stock Par Value $0.01
+2016-07-05,BAM,10% Owner,BUY,19387625.0,18.25,353824156.25,"BROOKFIELD, ASSET MANAGEMENT INC.",Series I Preferred Stock Par Value $0.01
+2016-07-05,BAM,10% Owner,BUY,19387625.0,18.25,353824156.25,"BROOKFIELD, ASSET MANAGEMENT INC.",Series I Preferred Stock Par Value $0.01
+2016-07-05,BAM,10% Owner,SELL,19387625.0,18.25,353824156.25,"BROOKFIELD, ASSET MANAGEMENT INC.",Common Stock Par Value $0.01
+2016-07-06,BAM,10% Owner,BUY,38499817.0,18.25,702621660.25,"BROOKFIELD, ASSET MANAGEMENT INC.",Common Stock Par Value $0.01
+2016-07-06,BAM,10% Owner,BUY,38499817.0,18.25,702621660.25,"BROOKFIELD, ASSET MANAGEMENT INC.",Common Stock Par Value $0.01
+2016-09-15,BAM,10% Owner,BUY,43402.0,3.4956,151716.0312,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Shares, no par value"
+2016-09-15,BAM,10% Owner,BUY,43402.0,3.4956,151716.0312,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Shares, no par value"
+2016-09-16,BAM,10% Owner,BUY,29000.0,3.4992,101476.8,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Shares, no par value"
+2016-09-16,BAM,10% Owner,BUY,29000.0,3.4992,101476.8,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Shares, no par value"
+2016-09-19,BAM,10% Owner,BUY,82000.0,3.6072,295790.4,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Shares, no par value"
+2016-09-19,BAM,10% Owner,BUY,82000.0,3.6072,295790.4,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Shares, no par value"
+2016-09-20,BAM,10% Owner,BUY,150000.0,3.65,547500.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Shares, no par value"
+2016-09-26,BAM,10% Owner,BUY,971050.0,4.0,3884200.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Shares, no par value"
+2016-09-26,BAM,10% Owner,BUY,971050.0,4.0,3884200.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Shares, no par value"
+2017-03-29,BAM,10% Owner,SELL,17000.0,0.9406,15990.2,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Shares, no par value"
+2017-03-29,BAM,10% Owner,SELL,17000.0,0.9406,15990.2,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Shares, no par value"
+2017-03-30,BAM,10% Owner,SELL,78193.0,0.9058,70827.2194,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Shares, no par value"
+2017-03-31,BAM,10% Owner,SELL,145700.0,0.8344,121572.08,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Shares, no par value"
+2017-03-31,BAM,10% Owner,SELL,145700.0,0.8344,121572.08,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Shares, no par value"
+2017-04-04,BAM,10% Owner,SELL,3000000.0,0.6625,1987500.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Shares, no par value"
+2017-04-04,BAM,10% Owner,SELL,3000000.0,0.6625,1987500.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Shares, no par value"
+2017-10-06,BAM,"Director, 10% Owner, Director by deputization***",BUY,24063298.0,8.3621,201219704.2058,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, par value $0.01 per share"
+2017-10-06,BAM,"Director, 10% Owner, Director by deputization***",BUY,21123856.0,8.1678,172535431.0368,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, par value $0.01 per share"
+2017-10-06,BAM,"Director, 10% Owner, Director by deputization***",SELL,8134626.87,21.21,172535435.9127,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, par value $0.01 per share"
+2017-10-06,BAM,"Director, 10% Owner, Director by deputization***",BUY,497868.0,8.3621,4163222.0028,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, par value $0.01 per share"
+2017-10-06,BAM,"Director, 10% Owner, Director by deputization***",BUY,94703.0,8.3621,791915.9563,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, par value $0.01 per share"
+2017-10-06,BAM,"Director, 10% Owner, Director by deputization***",BUY,1465005.0,8.3621,12250518.3105,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, par value $0.01 per share"
+2017-10-06,BAM,"Director, 10% Owner, Director by deputization***",BUY,82559.0,8.3621,690366.6139,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, par value $0.01 per share"
+2017-10-06,BAM,"Director, 10% Owner, Director by deputization***",BUY,24063298.0,8.3621,201219704.2058,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, par value $0.01 per share"
+2017-10-06,BAM,"Director, 10% Owner, Director by deputization***",BUY,82559.0,8.3621,690366.6139,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, par value $0.01 per share"
+2017-10-06,BAM,"Director, 10% Owner, Director by deputization***",BUY,94703.0,8.3621,791915.9563,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, par value $0.01 per share"
+2017-10-06,BAM,"Director, 10% Owner, Director by deputization***",BUY,1465005.0,8.3621,12250518.3105,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, par value $0.01 per share"
+2017-10-06,BAM,"Director, 10% Owner, Director by deputization***",BUY,21853.0,8.3621,182736.9713,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, par value $0.01 per share"
+2017-10-06,BAM,"Director, 10% Owner, Director by deputization***",BUY,497868.0,8.3621,4163222.0028,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, par value $0.01 per share"
+2017-10-06,BAM,"Director, 10% Owner, Director by deputization***",BUY,28573419.0,8.3621,238933787.0199,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, par value $0.01 per share"
+2017-10-06,BAM,"Director, 10% Owner, Director by deputization***",BUY,21853.0,8.3621,182736.9713,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, par value $0.01 per share"
+2017-10-06,BAM,"Director, 10% Owner, Director by deputization***",SELL,8134626.87,21.21,172535435.9127,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, par value $0.01 per share"
+2017-10-06,BAM,"Director, 10% Owner, Director by deputization***",BUY,21123856.0,8.1678,172535431.0368,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, par value $0.01 per share"
+2017-10-09,BAM,10% Owner,SELL,625000.0,12.95,8093750.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Class A, $0.01 par value"
+2017-10-16,BAM,10% Owner,BUY,65144459.0,9.52,620175249.68,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Class A, $0.01 par value"
+2017-10-16,BAM,10% Owner,BUY,65144459.0,9.52,620175249.68,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Class A, $0.01 par value"
+2017-12-28,BAM,10% Owner,SELL,1000.0,5.1,5100.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Class A, $0.01 par value"
+2017-12-28,BAM,10% Owner,SELL,1000.0,5.1,5100.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Class A, $0.01 par value"
+2018-02-27,BAM,"Director, 10% Owner",BUY,1694915.25,14.75,24999999.9375,"BROOKFIELD, ASSET MANAGEMENT INC.",Class C Units
+2018-06-11,BAM,10% Owner,BUY,29878048.0,10.66,318499991.68,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Class A, $0.01 par value"
+2018-06-11,BAM,10% Owner,BUY,31097561.0,10.66,331500000.26,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Class A, $0.01 par value"
+2018-06-11,BAM,10% Owner,BUY,29878048.0,10.66,318499991.68,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Class A, $0.01 par value"
+2018-06-11,BAM,10% Owner,BUY,31097561.0,10.66,331500000.26,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Class A, $0.01 par value"
+2018-06-29,BAM,10% Owner,BUY,29878048.0,10.66,318499991.68,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Class A, $0.01 par value"
+2018-06-29,BAM,10% Owner,BUY,29878048.0,10.66,318499991.68,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Class A, $0.01 par value"
+2018-06-29,BAM,10% Owner,SELL,29878048.0,10.66,318499991.68,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Class A, $0.01 par value"
+2019-02-27,BAM,"Director, 10% Owner",BUY,14898060.78,14.75,219746396.505,"BROOKFIELD, ASSET MANAGEMENT INC.",Class C Units
+2019-06-21,BAM,Director by Deputization,SELL,1900000.0,23.75,45125000.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, par value $0.01 per share"
+2019-10-08,BAM,10% Owner,BUY,2981514.0,16.77,49999989.78,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, Class A, $0.01 par value"
+2019-12-03,BAM,10% Owner,SELL,20801471.0,25.65,533557731.15,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, par value $0.01 per share"
+2020-03-19,BAM,10% Owner,BUY,1000000.0,4.94,4940000.0,"OAKTREE, OPTICAL HOLDINGS, L.P.",Common Stock
+2020-04-24,BAM,10% Owner,BUY,12538.52,1000.0,12538520.0,"OAKTREE, ORGANICS, L.P.",Series B-1 Preferred Stock
+2020-04-24,BAM,10% Owner,BUY,2461.48,1000.0,2461480.0,"OAKTREE, HUNTINGTON INVESTMENT FUND II, L.P.",Series B-1 Preferred Stock
+2020-09-08,BAM,"Director, 10% Owner",BUY,21045.138,13.0,273586.794,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2020-10-08,BAM,"Director, 10% Owner",SELL,36492.0,7.3824,269398.54079999996,"BCP, GP LTD",Common Stock
+2020-10-08,BAM,"Director, 10% Owner",SELL,64862.0,7.3824,478837.2288,"BCP, GP LTD",Common Stock
+2020-10-08,BAM,"Director, 10% Owner",SELL,34648.0,7.3824,255785.3952,"BCP, GP LTD",Common Stock
+2020-10-09,BAM,"Director, 10% Owner",SELL,39216.0,7.3634,288763.0944,"BCP, GP LTD",Common Stock
+2020-10-09,BAM,"Director, 10% Owner",SELL,37233.0,7.3634,274161.4722,"BCP, GP LTD",Common Stock
+2020-10-09,BAM,"Director, 10% Owner",SELL,69703.0,7.3634,513251.0702,"BCP, GP LTD",Common Stock
+2020-10-12,BAM,"Director, 10% Owner",SELL,36223.0,7.3487,266191.9601,"BCP, GP LTD",Common Stock
+2020-10-12,BAM,"Director, 10% Owner",SELL,34393.0,7.3487,252743.8391,"BCP, GP LTD",Common Stock
+2020-10-12,BAM,"Director, 10% Owner",SELL,64384.0,7.3487,473138.7008,"BCP, GP LTD",Common Stock
+2020-10-13,BAM,"Director, 10% Owner",SELL,34393.0,7.2589,249655.34769999998,"BCP, GP LTD",Common Stock
+2020-10-13,BAM,"Director, 10% Owner",SELL,64384.0,7.2589,467357.01759999996,"BCP, GP LTD",Common Stock
+2020-10-13,BAM,"Director, 10% Owner",SELL,36223.0,7.2589,262939.1347,"BCP, GP LTD",Common Stock
+2020-10-14,BAM,"Director, 10% Owner",SELL,37324.0,7.3985,276141.614,"BCP, GP LTD",Common Stock
+2020-10-14,BAM,"Director, 10% Owner",SELL,66341.0,7.3985,490823.8885,"BCP, GP LTD",Common Stock
+2020-10-14,BAM,"Director, 10% Owner",SELL,35438.0,7.3985,262188.043,"BCP, GP LTD",Common Stock
+2020-10-15,BAM,"Director, 10% Owner",SELL,36760.0,7.2393,266116.668,"BCP, GP LTD",Common Stock
+2020-10-15,BAM,"Director, 10% Owner",SELL,34902.0,7.2393,252666.0486,"BCP, GP LTD",Common Stock
+2020-10-15,BAM,"Director, 10% Owner",BUY,2129747.74,15.0,31946216.1,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2020-10-15,BAM,"Director, 10% Owner",SELL,65338.0,7.2393,473001.3834,"BCP, GP LTD",Common Stock
+2020-10-16,BAM,"Director, 10% Owner",SELL,34902.0,7.2644,253542.0888,"BCP, GP LTD",Common Stock
+2020-10-16,BAM,"Director, 10% Owner",SELL,65338.0,7.2644,474641.36720000004,"BCP, GP LTD",Common Stock
+2020-10-16,BAM,"Director, 10% Owner",SELL,36760.0,7.2644,267039.344,"BCP, GP LTD",Common Stock
+2020-10-19,BAM,"Director, 10% Owner",SELL,51017.0,7.0489,359613.7313,"BCP, GP LTD",Common Stock
+2020-10-19,BAM,"Director, 10% Owner",SELL,27253.0,7.0489,192103.6717,"BCP, GP LTD",Common Stock
+2020-10-19,BAM,"Director, 10% Owner",SELL,28703.0,7.0489,202324.5767,"BCP, GP LTD",Common Stock
+2020-10-19,BAM,10% Owner,SELL,47625000.0,22.0,1047750000.0,"ATI, INVESTMENT PARENT, LLC","Common Stock, par value $0.001 per share"
+2020-10-20,BAM,"Director, 10% Owner",SELL,44895.0,7.0357,315867.7515,"BCP, GP LTD",Common Stock
+2020-10-20,BAM,"Director, 10% Owner",SELL,25258.0,7.0357,177707.71060000002,"BCP, GP LTD",Common Stock
+2020-10-20,BAM,"Director, 10% Owner",SELL,23982.0,7.0357,168730.1574,"BCP, GP LTD",Common Stock
+2020-10-21,BAM,"Director, 10% Owner",SELL,10658.0,7.059,75234.822,"BCP, GP LTD",Common Stock
+2020-10-21,BAM,"Director, 10% Owner",SELL,19952.0,7.059,140841.168,"BCP, GP LTD",Common Stock
+2020-10-21,BAM,"Director, 10% Owner",SELL,11225.0,7.059,79237.27500000001,"BCP, GP LTD",Common Stock
+2020-10-22,BAM,"Director, 10% Owner",SELL,35921.0,7.0802,254327.86419999998,"BCP, GP LTD",Common Stock
+2020-10-22,BAM,"Director, 10% Owner",SELL,37833.0,7.0802,267865.2066,"BCP, GP LTD",Common Stock
+2020-10-22,BAM,"Director, 10% Owner",SELL,67246.0,7.0802,476115.12919999997,"BCP, GP LTD",Common Stock
+2020-10-23,BAM,"Director, 10% Owner",SELL,37296.0,7.2349,269832.8304,"BCP, GP LTD",Common Stock
+2020-10-23,BAM,"Director, 10% Owner",SELL,35412.0,7.2349,256202.2788,"BCP, GP LTD",Common Stock
+2020-10-23,BAM,"Director, 10% Owner",SELL,66292.0,7.2349,479615.99079999997,"BCP, GP LTD",Common Stock
+2020-10-26,BAM,"Director, 10% Owner",SELL,35666.0,7.1113,253631.6258,"BCP, GP LTD",Common Stock
+2020-10-26,BAM,"Director, 10% Owner",SELL,66769.0,7.1113,474814.3897,"BCP, GP LTD",Common Stock
+2020-10-26,BAM,"Director, 10% Owner",SELL,37565.0,7.1113,267135.9845,"BCP, GP LTD",Common Stock
+2020-10-27,BAM,"Director, 10% Owner",SELL,37111.0,7.0258,260734.4638,"BCP, GP LTD",Common Stock
+2020-10-27,BAM,"Director, 10% Owner",SELL,19824.0,7.0258,139279.4592,"BCP, GP LTD",Common Stock
+2020-10-27,BAM,"Director, 10% Owner",SELL,20879.0,7.0258,146691.6782,"BCP, GP LTD",Common Stock
+2020-11-03,BAM,"Director, 10% Owner",SELL,67.0,7.0388,471.5996,"BCP, GP LTD",Common Stock
+2020-11-03,BAM,"Director, 10% Owner",SELL,126.0,7.0388,886.8888000000001,"BCP, GP LTD",Common Stock
+2020-11-03,BAM,"Director, 10% Owner",SELL,71.0,7.0388,499.7548,"BCP, GP LTD",Common Stock
+2020-11-09,BAM,"Director, 10% Owner",SELL,75290.0,7.3965,556882.485,"BCP, GP LTD",Common Stock
+2020-11-09,BAM,"Director, 10% Owner",SELL,42360.0,7.3965,313315.74,"BCP, GP LTD",Common Stock
+2020-11-09,BAM,"Director, 10% Owner",SELL,40219.0,7.3965,297479.8335,"BCP, GP LTD",Common Stock
+2020-11-10,BAM,"Director, 10% Owner",SELL,2101775.0,7.05,14817513.75,"BCP, GP LTD",Common Stock
+2020-11-10,BAM,"Director, 10% Owner",SELL,3934576.0,7.05,27738760.8,"BCP, GP LTD",Common Stock
+2020-11-10,BAM,"Director, 10% Owner",SELL,2213649.0,7.05,15606225.45,"BCP, GP LTD",Common Stock
+2020-11-19,BAM,"Director, 10% Owner",SELL,69495.0,7.5272,523102.76399999997,"BCP, GP LTD",Common Stock
+2020-11-19,BAM,"Director, 10% Owner",SELL,123522.0,7.5272,929774.7984,"BCP, GP LTD",Common Stock
+2020-11-19,BAM,"Director, 10% Owner",SELL,65983.0,7.5272,496667.2376,"BCP, GP LTD",Common Stock
+2020-11-20,BAM,"Director, 10% Owner",SELL,36851.0,7.3749,271772.4399,"BCP, GP LTD",Common Stock
+2020-11-20,BAM,"Director, 10% Owner",SELL,38812.0,7.3749,286234.6188,"BCP, GP LTD",Common Stock
+2020-11-20,BAM,"Director, 10% Owner",SELL,68986.0,7.3749,508764.85140000004,"BCP, GP LTD",Common Stock
+2020-11-23,BAM,"Director, 10% Owner",SELL,65728.0,7.665,503805.12,"BCP, GP LTD",Common Stock
+2020-11-23,BAM,"Director, 10% Owner",SELL,123045.0,7.665,943139.925,"BCP, GP LTD",Common Stock
+2020-11-23,BAM,"Director, 10% Owner",SELL,69227.0,7.665,530624.955,"BCP, GP LTD",Common Stock
+2020-11-24,BAM,"Director, 10% Owner",SELL,99279.0,8.0986,804020.9093999999,"BCP, GP LTD",Common Stock
+2020-11-24,BAM,"Director, 10% Owner",SELL,176460.0,8.0986,1429078.9559999998,"BCP, GP LTD",Common Stock
+2020-11-24,BAM,"Director, 10% Owner",SELL,94261.0,8.0986,763382.1346,"BCP, GP LTD",Common Stock
+2020-11-25,BAM,"Director, 10% Owner",SELL,177414.0,8.0638,1430631.0132000002,"BCP, GP LTD",Common Stock
+2020-11-25,BAM,"Director, 10% Owner",SELL,94771.0,8.0638,764214.3898,"BCP, GP LTD",Common Stock
+2020-11-25,BAM,"Director, 10% Owner",SELL,99815.0,8.0638,804888.197,"BCP, GP LTD",Common Stock
+2020-11-27,BAM,"Director, 10% Owner",SELL,132985.0,7.9405,1055967.3925,"BCP, GP LTD",Common Stock
+2020-11-27,BAM,"Director, 10% Owner",SELL,71038.0,7.9405,564077.2390000001,"BCP, GP LTD",Common Stock
+2020-11-27,BAM,"Director, 10% Owner",SELL,74819.0,7.9405,594100.2695,"BCP, GP LTD",Common Stock
+2020-11-30,BAM,10% Owner,SELL,4322644.0,27.81,120212729.64,"PARTNERS, LTD",Common Stock
+2020-11-30,BAM,"Director, 10% Owner",SELL,151806.0,7.9335,1204352.901,"BCP, GP LTD",Common Stock
+2020-11-30,BAM,"Director, 10% Owner",SELL,85408.0,7.9335,677584.368,"BCP, GP LTD",Common Stock
+2020-11-30,BAM,"Director, 10% Owner",SELL,81092.0,7.9335,643343.382,"BCP, GP LTD",Common Stock
+2020-12-01,BAM,"Director, 10% Owner",SELL,175983.0,8.1061,1426535.7963,"BCP, GP LTD",Common Stock
+2020-12-01,BAM,"Director, 10% Owner",SELL,99010.0,8.1061,802584.961,"BCP, GP LTD",Common Stock
+2020-12-01,BAM,"Director, 10% Owner",SELL,94007.0,8.1061,762030.1427,"BCP, GP LTD",Common Stock
+2020-12-02,BAM,"Director, 10% Owner",SELL,95790.0,8.3519,800028.501,"BCP, GP LTD",Common Stock
+2020-12-02,BAM,"Director, 10% Owner",SELL,170260.0,8.3519,1421994.4940000002,"BCP, GP LTD",Common Stock
+2020-12-02,BAM,"Director, 10% Owner",SELL,90950.0,8.3519,759605.305,"BCP, GP LTD",Common Stock
+2020-12-03,BAM,"Director, 10% Owner",SELL,490731.0,9.0059,4419474.3129,"BCP, GP LTD",Common Stock
+2020-12-03,BAM,"Director, 10% Owner",SELL,465930.0,9.0059,4196118.987000001,"BCP, GP LTD",Common Stock
+2020-12-03,BAM,"Director, 10% Owner",SELL,872234.0,9.0059,7855252.180600001,"BCP, GP LTD",Common Stock
+2020-12-07,BAM,10% Owner,SELL,36656250.0,33.95,1244479687.5,"ATI, INVESTMENT PARENT, LLC","Common Stock, par value $0.001 per share"
+2020-12-08,BAM,"Director, 10% Owner",SELL,75664.0,10.1048,764569.5872,"BCP, GP LTD",Common Stock
+2020-12-08,BAM,"Director, 10% Owner",SELL,141645.0,10.1048,1431294.396,"BCP, GP LTD",Common Stock
+2020-12-08,BAM,"Director, 10% Owner",SELL,79691.0,10.1048,805261.6168,"BCP, GP LTD",Common Stock
+2020-12-09,BAM,"Director, 10% Owner",SELL,81257.0,9.8432,799828.9023999999,"BCP, GP LTD",Common Stock
+2020-12-09,BAM,"Director, 10% Owner",SELL,144427.0,9.8432,1421623.8464,"BCP, GP LTD",Common Stock
+2020-12-09,BAM,"Director, 10% Owner",SELL,77150.0,9.8432,759402.88,"BCP, GP LTD",Common Stock
+2020-12-10,BAM,"Director, 10% Owner",SELL,81301.0,9.8696,802408.3496,"BCP, GP LTD",Common Stock
+2020-12-10,BAM,"Director, 10% Owner",SELL,144506.0,9.8696,1426216.4176,"BCP, GP LTD",Common Stock
+2020-12-10,BAM,"Director, 10% Owner",SELL,77193.0,9.8696,761864.0328,"BCP, GP LTD",Common Stock
+2020-12-11,BAM,"Director, 10% Owner",SELL,146414.0,9.7455,1426877.6369999999,"BCP, GP LTD",Common Stock
+2020-12-11,BAM,"Director, 10% Owner",SELL,78211.0,9.7455,762205.3005,"BCP, GP LTD",Common Stock
+2020-12-11,BAM,"Director, 10% Owner",SELL,82375.0,9.7455,802785.5625,"BCP, GP LTD",Common Stock
+2020-12-14,BAM,"Director, 10% Owner",SELL,73448.0,9.7146,713517.9408000001,"BCP, GP LTD",Common Stock
+2020-12-14,BAM,"Director, 10% Owner",SELL,69736.0,9.7146,677457.3456,"BCP, GP LTD",Common Stock
+2020-12-14,BAM,"Director, 10% Owner",SELL,1474498.0,8.9,13123032.200000001,"BCP, GP LTD",Common Stock
+2020-12-14,BAM,"Director, 10% Owner",SELL,3350588.0,8.9,29820233.200000003,"BCP, GP LTD",Common Stock
+2020-12-14,BAM,"Director, 10% Owner",SELL,1885093.0,8.9,16777327.7,"BCP, GP LTD",Common Stock
+2020-12-14,BAM,"Director, 10% Owner",SELL,1789821.0,8.9,15929406.9,"BCP, GP LTD",Common Stock
+2020-12-14,BAM,"Director, 10% Owner",SELL,130547.0,9.7146,1268211.8862,"BCP, GP LTD",Common Stock
+2021-01-14,BAM,"Director, 10% Owner",SELL,20000000.0,10.72,214400000.0,"BCP, GP LTD",Common Stock
+2021-02-08,BAM,"Director, 10% Owner",SELL,8853283.0,16.75,148292490.25,"OCM, FIE, LLC","Common Stock, par value $0.0001 per share"
+2021-02-09,BAM,"Director, 10% Owner",SELL,19123.87,1071.13,20484150.8731,"OCM, FIE, LLC",Series B-3 Preferred Stock par value $0.0001 per share
+2021-02-09,BAM,"Director, 10% Owner",SELL,20000.0,1166.94,23338800.0,"OCM, FIE, LLC","Series B-1 Preferred Stock, par value $0.0001 per share"
+2021-02-09,BAM,"Director, 10% Owner",SELL,17482.5,1267.11,22152250.575,"OCM, FIE, LLC","Series A Preferred Stock, par value $0.0001 per share"
+2021-02-22,BAM,10% Owner,BUY,10581759.0,7.0,74072313.0,"OAKTREE, ORGANICS, L.P.",Common Stock
+2021-02-22,BAM,10% Owner,BUY,2051668.0,7.0,14361676.0,"OAKTREE, HUNTINGTON INVESTMENT FUND II, L.P.",Common Stock
+2021-03-01,BAM,"Director, 10% Owner",SELL,30000000.0,11.67,350100000.0,"BCP, GP LTD",Common Stock
+2021-03-09,BAM,10% Owner,SELL,2151373.0,6.4,13768787.200000001,"OAKTREE, FUND GP III, L.P.",Class B Common Stock
+2021-03-09,BAM,10% Owner,SELL,1595224.0,6.4,10209433.600000001,"OAKTREE, FUND GP III, L.P.",Class A Common Units
+2021-03-09,BAM,10% Owner,SELL,8814980.0,6.4,56415872.0,"OAKTREE, FUND GP III, L.P.",Warrants to purchase Class A Common Stock
+2021-03-10,BAM,10% Owner,SELL,5804.0,39.62,229954.47999999998,"OAKTREE, CAPITAL GROUP HOLDINGS GP, LLC","Common Stock, par value $0.01 per share (&quot;Common Stock&quot;)"
+2021-03-11,BAM,10% Owner,SELL,11555.0,39.16,452493.8,"OAKTREE, CAPITAL GROUP HOLDINGS GP, LLC",Common Stock
+2021-03-12,BAM,10% Owner,SELL,40409.0,39.2,1584032.8,"OAKTREE, CAPITAL GROUP HOLDINGS GP, LLC",Common Stock
+2021-03-15,BAM,10% Owner,SELL,78408.0,39.04,3061048.32,"OAKTREE, CAPITAL GROUP HOLDINGS GP, LLC",Common Stock
+2021-03-16,BAM,10% Owner,SELL,36440.0,37.98,1383991.2,"OAKTREE, CAPITAL GROUP HOLDINGS GP, LLC","Common Stock, par value $0.01 per share (&quot;Common Stock&quot;)"
+2021-03-17,BAM,10% Owner,SELL,62566.0,37.53,2348101.98,"OAKTREE, CAPITAL GROUP HOLDINGS GP, LLC",Common Stock
+2021-03-18,BAM,10% Owner,SELL,39687.0,38.18,1515249.66,"OAKTREE, CAPITAL GROUP HOLDINGS GP, LLC",Common Stock
+2021-03-23,BAM,10% Owner,SELL,35475457.0,27.23,965996694.11,"ATI, INVESTMENT PARENT, LLC","Common Stock, par value $0.001 per share"
+2021-03-25,BAM,10% Owner,SELL,10716.0,38.36,411065.76,"OAKTREE, CAPITAL GROUP HOLDINGS GP, LLC","Common Stock, par value $0.01 per share (&quot;Common Stock&quot;)"
+2021-03-26,BAM,10% Owner,SELL,9006.0,38.36,345470.16,"OAKTREE, CAPITAL GROUP HOLDINGS GP, LLC",Common Stock
+2021-03-29,BAM,10% Owner,SELL,3300.0,36.61,120813.0,"OAKTREE, CAPITAL GROUP HOLDINGS GP, LLC",Common Stock
+2021-03-30,BAM,10% Owner,SELL,13487.0,36.34,490117.5800000001,"OAKTREE, CAPITAL GROUP HOLDINGS GP, LLC","Common Stock, par value $0.01 per share (&quot;Common Stock&quot;)"
+2021-03-31,BAM,10% Owner,SELL,21989.0,36.33,798860.37,"OAKTREE, CAPITAL GROUP HOLDINGS GP, LLC",Common Stock
+2021-04-01,BAM,10% Owner,SELL,29783.0,35.41,1054616.0299999998,"OAKTREE, CAPITAL GROUP HOLDINGS GP, LLC",Common Stock
+2021-04-06,BAM,10% Owner,SELL,75880.0,34.87,2645935.5999999996,"OAKTREE, CAPITAL GROUP HOLDINGS GP, LLC","Common Stock, par value $0.01 per share (&quot;Common Stock&quot;)"
+2021-05-13,BAM,"Director, 10% Owner",SELL,12800000.0,13.02,166656000.0,"BCP, GP LTD",Common Stock
+2021-05-24,BAM,"Director, 10% Owner",SELL,20000000.0,13.31,266200000.0,"BCP, GP LTD",Common Stock
+2021-12-06,BAM,"Director, 10% Owner",BUY,8566.0,13.6088,116572.9808,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2021-12-07,BAM,"Director, 10% Owner",BUY,29378.0,13.4865,396206.397,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2021-12-08,BAM,"Director, 10% Owner",BUY,23050.0,12.7992,295021.56,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2021-12-09,BAM,"Director, 10% Owner",BUY,21158.0,13.186,278989.388,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2021-12-10,BAM,"Director, 10% Owner",BUY,19943.0,13.2091,263429.08129999996,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2021-12-13,BAM,"Director, 10% Owner",BUY,19500.0,13.4083,261461.85,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2021-12-14,BAM,"Director, 10% Owner",BUY,17119.0,13.5181,231416.35390000002,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2021-12-15,BAM,"Director, 10% Owner",BUY,22400.0,13.477,301884.8,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2021-12-16,BAM,"Director, 10% Owner",BUY,18639.0,13.4195,250126.0605,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2021-12-17,BAM,"Director, 10% Owner",BUY,19800.0,13.363,264587.39999999997,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2021-12-20,BAM,"Director, 10% Owner",BUY,21010.0,13.3389,280250.289,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2021-12-21,BAM,"Director, 10% Owner",BUY,21325.0,13.4195,286170.83749999997,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2021-12-22,BAM,"Director, 10% Owner",BUY,21570.0,13.363,288239.91,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2021-12-23,BAM,"Director, 10% Owner",BUY,20010.0,13.3389,266911.389,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2021-12-27,BAM,"Director, 10% Owner",BUY,20959.0,13.3496,279794.2664,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2021-12-28,BAM,"Director, 10% Owner",BUY,20610.0,13.1214,270432.054,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2021-12-29,BAM,"Director, 10% Owner",BUY,19500.0,13.28,258960.0,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2021-12-30,BAM,"Director, 10% Owner",BUY,20000.0,13.3521,267042.0,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2021-12-31,BAM,"Director, 10% Owner",BUY,21900.0,13.1317,287584.23,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-01-03,BAM,"Director, 10% Owner",BUY,19976.0,12.9003,257696.3928,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-01-04,BAM,"Director, 10% Owner",BUY,17482.0,12.9415,226243.30299999999,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-01-05,BAM,"Director, 10% Owner",BUY,22200.0,13.3521,296416.62,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-01-06,BAM,"Director, 10% Owner",BUY,21800.0,13.1317,286271.06,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-01-07,BAM,"Director, 10% Owner",BUY,19662.0,12.9415,254455.773,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-01-10,BAM,"Director, 10% Owner",BUY,22000.0,13.202,290444.0,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-01-11,BAM,"Director, 10% Owner",BUY,21100.0,13.3088,280815.68,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-01-12,BAM,"Director, 10% Owner",BUY,20300.0,12.4882,253510.46000000002,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-01-12,BAM,"Director, 10% Owner",BUY,20300.0,13.4882,273810.46,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-01-13,BAM,"Director, 10% Owner",BUY,20341.0,13.1756,268004.8796,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-01-14,BAM,"Director, 10% Owner",BUY,13087.0,13.2287,173123.9969,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-01-18,BAM,"Director, 10% Owner",BUY,16935.0,13.2985,225210.0975,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-01-19,BAM,"Director, 10% Owner",BUY,20421.0,13.211,269781.831,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-01-20,BAM,"Director, 10% Owner",BUY,20500.0,13.2605,271840.25,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-01-21,BAM,"Director, 10% Owner",BUY,19646.0,13.2362,260038.3852,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-01-24,BAM,"Director, 10% Owner",BUY,19840.0,13.1323,260544.83200000002,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-01-25,BAM,"Director, 10% Owner",BUY,19488.0,12.9388,252151.33440000002,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-01-26,BAM,"Director, 10% Owner",BUY,20000.0,12.7206,254411.99999999997,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-01-27,BAM,"Director, 10% Owner",BUY,19400.0,12.8714,249705.16,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-01-28,BAM,"Director, 10% Owner",BUY,20365.0,13.0085,264918.1025,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-01-31,BAM,"Director, 10% Owner",BUY,19521.0,12.6787,247500.90269999998,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-02-01,BAM,10% Owner,SELL,243420.0,3324573.0,809267559660.0,"BROOKFIELD, ASSET MANAGEMENT INC.",7.0% Exchangeable Senior Secured Notes due 2028
+2022-02-01,BAM,10% Owner,BUY,2161983.0,16.67,36040256.61000001,"BROOKFIELD, ASSET MANAGEMENT INC.",Common Stock
+2022-02-01,BAM,10% Owner,BUY,243420.0,16.67,4057811.4000000004,"BROOKFIELD, ASSET MANAGEMENT INC.",Common Stock
+2022-02-01,BAM,10% Owner,SELL,2161983.0,29527685.0,63838352999355.0,"BROOKFIELD, ASSET MANAGEMENT INC.",7.0% Exchangeable Senior Secured Notes due 2028
+2022-02-01,BAM,"Director, 10% Owner",BUY,16973.0,12.887,218731.051,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-02-02,BAM,"Director, 10% Owner",BUY,18231.0,13.0313,237573.6303,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-02-03,BAM,"Director, 10% Owner",BUY,14109.0,133490.0,1883410410.0,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-02-04,BAM,"Director, 10% Owner",BUY,20400.0,13.61,277644.0,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-02-07,BAM,"Director, 10% Owner",BUY,20800.0,13.103,272542.4,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-02-09,BAM,"Director, 10% Owner",BUY,17566.0,129977.0,2283175982.0,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-02-10,BAM,"Director, 10% Owner",BUY,20100.0,13.0702,262711.02,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-02-11,BAM,"Director, 10% Owner",BUY,19600.0,13.2648,259990.08,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-02-14,BAM,"Director, 10% Owner",BUY,19400.0,13.5531,262930.14,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-02-15,BAM,"Director, 10% Owner",BUY,19733.0,13.624,268842.392,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-02-16,BAM,"Director, 10% Owner",BUY,19438.0,13.3673,259833.5774,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-02-17,BAM,"Director, 10% Owner",BUY,18146.0,13.5754,246339.2084,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-02-18,BAM,"Director, 10% Owner",BUY,11461.0,13.6079,155960.14190000002,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-02-22,BAM,"Director, 10% Owner",BUY,18141.0,13.3911,242927.94509999998,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-02-23,BAM,"Director, 10% Owner",BUY,18372.0,13.2193,242864.97960000002,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-02-24,BAM,"Director, 10% Owner",BUY,16268.0,12.9594,210823.5192,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-02-25,BAM,"Director, 10% Owner",BUY,18335.0,12.9413,237278.7355,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-02-28,BAM,"Director, 10% Owner",BUY,11672.0,12.7331,148620.7432,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-03-01,BAM,"Director, 10% Owner",BUY,15359.0,13.3545,205111.7655,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2022-03-07,BAM,10% Owner,BUY,1600000.0,25.0,40000000.0,"OAKTREE, FUND GP I, L.P.",Class I Common Shares of Beneficial Interest
+2022-03-25,BAM,10% Owner,SELL,1000000.0,82.98,82980000.0,"BAM, PARTNERS TRUST",Common Stock
+2022-04-12,BAM,10% Owner,SELL,5925.0,32.1338,190392.765,"BROOKFIELD, ASSET MANAGEMENT INC.",Common Stock
+2022-04-19,BAM,10% Owner,SELL,50000.0,32.4,1620000.0,"OAKTREE, CAPITAL MANAGEMENT GP, LLC",Common Stock
+2022-04-19,BAM,10% Owner,SELL,535735.0,30.87,16538139.450000001,"OAKTREE, CAPITAL MANAGEMENT GP, LLC",Common Stock
+2022-05-04,BAM,See Remarks,SELL,750000.0,25.77,19327500.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, par value $0.01 per share"
+2022-05-05,BAM,See Remarks,SELL,329992.0,25.48,8408196.16,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, par value $0.01 per share"
+2022-05-05,BAM,See Remarks,SELL,316131.0,25.82,8162502.42,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, par value $0.01 per share"
+2022-05-06,BAM,See Remarks,SELL,1500000.0,26.63,39945000.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, par value $0.01 per share"
+2022-05-09,BAM,See Remarks,SELL,147325.0,25.68,3783306.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, par value $0.01 per share"
+2022-05-09,BAM,See Remarks,SELL,230478.0,24.91,5741206.98,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, par value $0.01 per share"
+2022-05-10,BAM,See Remarks,SELL,131045.0,24.72,3239432.4,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, par value $0.01 per share"
+2022-05-11,BAM,See Remarks,SELL,756921.0,24.64,18650533.44,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, par value $0.01 per share"
+2022-05-26,BAM,10% Owner,SELL,163915.0,11.35,1860435.25,"OAKTREE, CAPITAL MANAGEMENT LP",Common Stock
+2022-05-27,BAM,10% Owner,SELL,246005.0,11.34,2789696.7,"OAKTREE, CAPITAL MANAGEMENT LP",Common Stock
+2022-05-31,BAM,10% Owner,SELL,254754.0,11.32,2883815.2800000003,"OAKTREE, CAPITAL MANAGEMENT LP",Common Stock
+2022-06-01,BAM,10% Owner,SELL,435048.0,11.33,4929093.84,"OAKTREE, CAPITAL MANAGEMENT LP",Common Stock
+2022-06-02,BAM,10% Owner,SELL,191591.0,11.3,2164978.3000000003,"OAKTREE, CAPITAL MANAGEMENT LP",Common Stock
+2022-08-31,BAM,10% Owner,BUY,1750000.0,0.01,17500.0,"OPPS, TPIC HOLDINGS, LLC",Common Stock
+2022-08-31,BAM,10% Owner,SELL,44.0,18.59,817.96,"OPPS, TPIC HOLDINGS, LLC",Common Stock
+2022-08-31,BAM,10% Owner,BUY,81667.0,0.01,816.6700000000001,"OPPS, TPIC HOLDINGS, LLC",Common Stock
+2022-08-31,BAM,10% Owner,SELL,1526.0,18.59,28368.34,"OPPS, TPIC HOLDINGS, LLC",Common Stock
+2022-08-31,BAM,10% Owner,BUY,2835000.0,0.01,28350.0,"OPPS, TPIC HOLDINGS, LLC",Common Stock
+2022-08-31,BAM,10% Owner,SELL,942.0,18.59,17511.78,"OPPS, TPIC HOLDINGS, LLC",Common Stock
+2022-09-08,BAM,10% Owner,SELL,69360.0,18.85,1307436.0,"OPPS, TPIC HOLDINGS, LLC",Common Stock
+2022-09-08,BAM,10% Owner,SELL,1486281.0,18.85,28016396.85,"OPPS, TPIC HOLDINGS, LLC",Common Stock
+2022-09-08,BAM,10% Owner,SELL,2407775.0,18.85,45386558.75,"OPPS, TPIC HOLDINGS, LLC",Common Stock
+2022-10-07,BAM,10% Owner,SELL,1000000.0,9.0,9000000.0,"OAKTREE, CAPITAL MANAGEMENT LP",Common Stock
+2022-10-13,BAM,10% Owner,SELL,2825000.0,8.5,24012500.0,"OAKTREE, CAPITAL MANAGEMENT LP",Common Stock
+2022-11-08,BAM,10% Owner,SELL,1000000.0,9.6036,9603600.0,"OAKTREE, CAPITAL MANAGEMENT LP",Common Stock
+2022-11-30,BAM,See Remarks,SELL,2135176.0,24.09,51436389.839999996,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, par value $0.01 per share"
+2022-12-01,BAM,See Remarks,SELL,970000.0,24.53,23794100.0,"BROOKFIELD, ASSET MANAGEMENT INC.","Common Stock, par value $0.01 per share"
+2023-03-28,BAM,"Director, 10% Owner",SELL,24744.0,11.962,295987.728,"BROOKFIELD, MULTI-STRATEGY MASTER FUND LP","Common Stock, par value $0.01 per share"
+2023-03-29,BAM,"Director, 10% Owner",SELL,50256.0,11.935,599805.36,"BROOKFIELD, MULTI-STRATEGY MASTER FUND LP","Common Stock, par value $0.01 per share"
+2023-06-06,BAM,10% Owner,SELL,27127173.0,8.177,221818893.621,"OAKTREE, HOLDINGS, LLC",Series A Cumulative Convertible Preferred Stock
+2023-06-06,BAM,10% Owner,SELL,7418669.0,8.177,60662456.412999995,"OAKTREE, HOLDINGS, LLC",Series A Cumulative Convertible Preferred Stock
+2023-06-06,BAM,10% Owner,SELL,984182.0,8.177,8047656.214,"OAKTREE, HOLDINGS, LLC",Series A Cumulative Convertible Preferred Stock
+2023-06-06,BAM,10% Owner,BUY,2831513.0,8.177,23153281.801,"OAKTREE, HOLDINGS, LLC",Common Stock
+2023-06-06,BAM,10% Owner,BUY,102728.0,8.177,840006.8559999999,"OAKTREE, HOLDINGS, LLC",Common Stock
+2023-06-06,BAM,10% Owner,BUY,774354.0,8.177,6331892.658,"OAKTREE, HOLDINGS, LLC",Common Stock
+2023-06-22,BAM,10% Owner,SELL,3781561.0,58.0,219330538.0,"OCM, OPPS EB HOLDINGS LTD.","Common Stock, par value $0.01 per share (&quot;Common Stock&quot;)"
+2023-08-21,BAM,10% Owner,BUY,91263.0,12.5603,1146290.6589,"BROOKFIELD, CORP /ON/",Class I Common Stock
+2023-09-20,BAM,10% Owner,BUY,90505.0,12.5063,1131882.6815,"BROOKFIELD, CORP /ON/",Class I Common Stock
+2023-09-30,BAM,10% Owner,SELL,281435.013,12.3597,3478452.3301760997,"BROOKFIELD, REIT ADVISER LLC",Class I Common Stock
+2023-10-20,BAM,10% Owner,BUY,90532.0,12.3597,1118948.3604000001,"BROOKFIELD, CORP /ON/",Class I Common Stock
+2023-11-13,BAM,"Director, 10% Owner",SELL,3750000.0,12.0576,45216000.0,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2023-11-21,BAM,10% Owner,BUY,89681.0,12.3651,1108914.5331,"BROOKFIELD, CORP /ON/",Class I Common Stock
+2023-12-12,BAM,"Director, 10% Owner",SELL,562500.0,12.0576,6782400.0,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2023-12-15,BAM,"Director, 10% Owner",SELL,237635.0,12.6922,3016110.947,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2023-12-15,BAM,10% Owner,SELL,35145.0,2.4737,86938.1865,"BCP, GP LTD",Common Stock
+2023-12-15,BAM,10% Owner,SELL,2.0,2.4737,4.9474,"BCP, GP LTD",Common Stock
+2023-12-15,BAM,10% Owner,SELL,62466.0,2.4737,154522.1442,"BCP, GP LTD",Common Stock
+2023-12-15,BAM,10% Owner,SELL,3.0,2.4737,7.4211,"BCP, GP LTD",Common Stock
+2023-12-15,BAM,10% Owner,SELL,35084.0,2.4737,86787.2908,"BCP, GP LTD",Common Stock
+2023-12-18,BAM,10% Owner,SELL,102333.0,2.2379,229011.02069999996,"BCP, GP LTD",Common Stock
+2023-12-18,BAM,10% Owner,SELL,9.0,2.2379,20.141099999999998,"BCP, GP LTD",Common Stock
+2023-12-18,BAM,"Director, 10% Owner",SELL,12365.0,12.7565,157734.1225,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2023-12-18,BAM,10% Owner,SELL,102512.0,2.2379,229411.60479999997,"BCP, GP LTD",Common Stock
+2023-12-18,BAM,10% Owner,SELL,7.0,2.2379,15.665299999999998,"BCP, GP LTD",Common Stock
+2023-12-18,BAM,10% Owner,SELL,182207.0,2.2379,407761.04529999994,"BCP, GP LTD",Common Stock
+2023-12-19,BAM,10% Owner,SELL,7.0,2.2217,15.551899999999998,"BCP, GP LTD",Common Stock
+2023-12-19,BAM,10% Owner,SELL,9.0,2.2217,19.995299999999997,"BCP, GP LTD",Common Stock
+2023-12-19,BAM,10% Owner,SELL,182207.0,2.2217,404809.29189999995,"BCP, GP LTD",Common Stock
+2023-12-19,BAM,10% Owner,SELL,102512.0,2.2217,227750.91039999996,"BCP, GP LTD",Common Stock
+2023-12-19,BAM,10% Owner,SELL,102333.0,2.2217,227353.22609999997,"BCP, GP LTD",Common Stock
+2023-12-20,BAM,10% Owner,SELL,106287.0,2.1773,231418.68509999997,"BCP, GP LTD",Common Stock
+2023-12-20,BAM,10% Owner,SELL,59799.0,2.1773,130200.36269999998,"BCP, GP LTD",Common Stock
+2023-12-20,BAM,10% Owner,SELL,59695.0,2.1773,129973.92349999999,"BCP, GP LTD",Common Stock
+2023-12-20,BAM,10% Owner,SELL,4.0,2.1773,8.7092,"BCP, GP LTD",Common Stock
+2023-12-20,BAM,10% Owner,SELL,5.0,2.1773,10.886499999999998,"BCP, GP LTD",Common Stock
+2023-12-21,BAM,10% Owner,SELL,126949.0,2.0347,258303.1303,"BCP, GP LTD",Common Stock
+2023-12-21,BAM,10% Owner,SELL,10.0,2.0347,20.347,"BCP, GP LTD",Common Stock
+2023-12-21,BAM,10% Owner,SELL,127165.0,2.0347,258742.6255,"BCP, GP LTD",Common Stock
+2023-12-21,BAM,10% Owner,SELL,226027.0,2.0347,459897.1369,"BCP, GP LTD",Common Stock
+2023-12-21,BAM,10% Owner,BUY,88142.0,12.3138,1085362.9596,"BROOKFIELD, CORP /ON/",Class I Common Stock
+2023-12-21,BAM,10% Owner,SELL,8.0,2.0347,16.2776,"BCP, GP LTD",Common Stock
+2023-12-22,BAM,10% Owner,SELL,6.0,2.0804,12.4824,"BCP, GP LTD",Common Stock
+2023-12-22,BAM,10% Owner,SELL,167023.0,2.0804,347474.6492,"BCP, GP LTD",Common Stock
+2023-12-22,BAM,10% Owner,SELL,93969.0,2.0804,195493.1076,"BCP, GP LTD",Common Stock
+2023-12-22,BAM,10% Owner,SELL,93807.0,2.0804,195156.0828,"BCP, GP LTD",Common Stock
+2023-12-22,BAM,10% Owner,SELL,8.0,2.0804,16.6432,"BCP, GP LTD",Common Stock
+2023-12-26,BAM,10% Owner,SELL,6.0,2.1065,12.639,"BCP, GP LTD",Common Stock
+2023-12-26,BAM,10% Owner,SELL,153904.0,2.1065,324198.776,"BCP, GP LTD",Common Stock
+2023-12-26,BAM,10% Owner,SELL,7.0,2.1065,14.7455,"BCP, GP LTD",Common Stock
+2023-12-26,BAM,10% Owner,SELL,86588.0,2.1065,182397.622,"BCP, GP LTD",Common Stock
+2023-12-26,BAM,10% Owner,SELL,86439.0,2.1065,182083.7535,"BCP, GP LTD",Common Stock
+2023-12-27,BAM,10% Owner,SELL,110863.0,2.1155,234530.6765,"BCP, GP LTD",Common Stock
+2023-12-27,BAM,10% Owner,SELL,197390.0,2.1155,417578.545,"BCP, GP LTD",Common Stock
+2023-12-27,BAM,10% Owner,SELL,111055.0,2.1155,234936.85249999998,"BCP, GP LTD",Common Stock
+2023-12-27,BAM,10% Owner,SELL,7.0,2.1155,14.808499999999999,"BCP, GP LTD",Common Stock
+2023-12-27,BAM,10% Owner,SELL,9.0,2.1155,19.0395,"BCP, GP LTD",Common Stock
+2023-12-28,BAM,10% Owner,SELL,7.0,2.2323,15.6261,"BCP, GP LTD",Common Stock
+2023-12-28,BAM,10% Owner,SELL,101174.0,2.2323,225850.72019999998,"BCP, GP LTD",Common Stock
+2023-12-28,BAM,10% Owner,SELL,9.0,2.2323,20.0907,"BCP, GP LTD",Common Stock
+2023-12-28,BAM,10% Owner,SELL,180142.0,2.2323,402130.9866,"BCP, GP LTD",Common Stock
+2023-12-28,BAM,10% Owner,SELL,101350.0,2.2323,226243.60499999998,"BCP, GP LTD",Common Stock
+2023-12-29,BAM,10% Owner,SELL,60735.0,2.2164,134613.054,"BCP, GP LTD",Common Stock
+2023-12-29,BAM,10% Owner,SELL,34111.0,2.2164,75603.6204,"BCP, GP LTD",Common Stock
+2023-12-29,BAM,10% Owner,SELL,2.0,2.2164,4.4328,"BCP, GP LTD",Common Stock
+2023-12-29,BAM,10% Owner,SELL,3.0,2.2164,6.6492,"BCP, GP LTD",Common Stock
+2023-12-29,BAM,10% Owner,SELL,34171.0,2.2164,75736.60440000001,"BCP, GP LTD",Common Stock
+2024-01-02,BAM,Former 10% Owner,SELL,68.0,2.2,149.60000000000002,"BCP, GP LTD",Common Stock
+2024-01-02,BAM,Former 10% Owner,SELL,88.0,2.2,193.60000000000002,"BCP, GP LTD",Common Stock
+2024-01-02,BAM,Former 10% Owner,SELL,1037120.0,2.2,2281664.0,"BCP, GP LTD",Common Stock
+2024-01-02,BAM,Former 10% Owner,SELL,1038919.0,2.2,2285621.8000000003,"BCP, GP LTD",Common Stock
+2024-01-02,BAM,Former 10% Owner,SELL,1846591.0,2.2,4062500.2,"BCP, GP LTD",Common Stock
+2024-01-22,BAM,10% Owner,BUY,86646.0,12.0743,1046189.7978,"BROOKFIELD, CORP /ON/",Class I Common Stock
+2024-02-20,BAM,10% Owner,BUY,87695.0,11.7742,1032538.469,"BROOKFIELD, CORP /ON/",Class I Common Stock
+2024-03-18,BAM,"Director, 10% Owner",SELL,1000000.0,11.33,11330000.0,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2024-03-19,BAM,10% Owner,BUY,84538.0,11.4431,967376.7877999999,"BROOKFIELD, CORP /ON/",Class I Common Stock
+2024-03-31,BAM,10% Owner,SELL,269911.0,11.4431,3088618.5640999996,"BROOKFIELD, CORP /ON/",Class I Common Stock
+2024-04-19,BAM,10% Owner,BUY,84683.0,11.4431,969036.0373,"BROOKFIELD, CORP /ON/",Class I Common Stock
+2024-04-24,BAM,10% Owner,SELL,7131.0,21.75,155099.25,"OAKTREE, CAPITAL GROUP HOLDINGS GP, LLC",Common Stock
+2024-05-14,BAM,"Director, 10% Owner",SELL,4312500.0,11.5,49593750.0,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2024-05-20,BAM,10% Owner,BUY,85013.0,11.3174,962126.1261999999,"BROOKFIELD, CORP /ON/",Class I Common Stock
+2024-06-10,BAM,"Director, 10% Owner",SELL,400000.0,11.9,4760000.0,"OCM, GROWTH HOLDINGS LLC","Common Stock, par value $0.01 per share"
+2024-06-20,BAM,10% Owner,BUY,83406.0,11.3109,943396.9254000001,"BROOKFIELD, CORP /ON/",Class I Common Stock
+2024-06-30,BAM,10% Owner,SELL,262440.0,11.2698,2957646.312,"BROOKFIELD, CORP /ON/",Class I Common Stock
+2024-07-22,BAM,10% Owner,BUY,82324.0,11.2698,927775.0152,"BROOKFIELD, CORP /ON/",Class I Common Stock
+2024-08-20,BAM,10% Owner,BUY,81759.0,11.213,916763.6669999999,"BROOKFIELD, CORP /ON/",Class I Common Stock
+2024-09-20,BAM,10% Owner,BUY,80557.0,11.1665,899539.7405,"BROOKFIELD, CORP /ON/",Class I Common Stock
+2024-09-30,BAM,10% Owner,SELL,254936.0,11.0178,2808833.8608,"BROOKFIELD, CORP /ON/",Class I Common Stock
+2024-10-21,BAM,10% Owner,BUY,81598.0,11.0178,899030.4443999999,"BROOKFIELD, CORP /ON/",Class I Common Stock
+2024-10-30,BAM,10% Owner,BUY,33981.0,10.0,339810.0,"OAKTREE, ACQUISITION HOLDINGS III LS, LLC",Class A ordinary shares
+2024-12-31,BAM,10% Owner,SELL,277691.0,12.0743,3352924.4412999996,"BROOKFIELD, REIT ADVISER LLC",Class I Common Stock

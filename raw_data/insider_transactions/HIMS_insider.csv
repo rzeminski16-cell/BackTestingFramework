@@ -1,0 +1,948 @@
+date,symbol,insider_title,transaction_type,shares,price,value,executive,security_type
+2021-04-16,HIMS,Chief Operating Officer,BUY,41000.0,0.4,16400.0,"BAIRD, MELISSA",Class A Common Stock
+2021-05-24,HIMS,Chief Legal Officer,SELL,2928.0,10.56,30919.68,"BOUGHTON, SOLEIL",Class A Common Stock
+2021-05-24,HIMS,Chief Financial Officer,SELL,44062.0,10.56,465294.72000000003,"LEE, SPENCER",Class A Common Stock
+2021-05-24,HIMS,Chief Medical Officer,SELL,2570.0,10.56,27139.2,"CARROLL, PATRICK HARRISON",Class A Common Stock
+2021-05-24,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,196553.0,10.56,2075599.6800000002,"DUDUM, ANDREW",Class A Common Stock
+2021-05-24,HIMS,Chief Operating Officer,SELL,31505.0,10.56,332692.8,"BAIRD, MELISSA",Class A Common Stock
+2021-06-18,HIMS,Chief Financial Officer,SELL,13690.0,12.07,165238.30000000002,"LEE, SPENCER",Class A Common Stock
+2021-06-18,HIMS,Chief Legal Officer,SELL,3829.0,12.07,46216.03,"BOUGHTON, SOLEIL",Class A Common Stock
+2021-06-18,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,22142.0,12.07,267253.94,"DUDUM, ANDREW",Class A Common Stock
+2021-06-18,HIMS,Chief Medical Officer,SELL,1368.0,12.07,16511.760000000002,"CARROLL, PATRICK HARRISON",Class A Common Stock
+2021-06-18,HIMS,Chief Operating Officer,SELL,9571.0,12.07,115521.97,"BAIRD, MELISSA",Class A Common Stock
+2021-07-22,HIMS,Chief Legal Officer,BUY,2085.0,11.5,23977.5,"BOUGHTON, SOLEIL",Class A Common Stock
+2021-07-28,HIMS,Director,BUY,881.0,11.5,10131.5,"O'KEEFE, LYNNE CHOU",Class A Common Stock
+2021-07-28,HIMS,Director,BUY,1739.0,11.5,19998.5,"BARD, ALEX",Class A Common Stock
+2021-07-28,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,16028.0,11.5,184322.0,"DUDUM, ANDREW",Class A Common Stock
+2021-07-28,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,94582.0,11.5,1087693.0,"DUDUM, ANDREW",Class A Common Stock
+2021-07-28,HIMS,Director,BUY,56307.0,11.5,647530.5,"BARD, ALEX",Class A Common Stock
+2021-07-29,HIMS,Chief Operating Officer,BUY,556.0,11.5,6394.0,"BAIRD, MELISSA",Class A Common Stock
+2021-07-30,HIMS,10% Owner,BUY,56961.0,11.5,655051.5,"INSTITUTIONAL, VENTURE MANAGEMENT XV, LLC",Class A Common Stock
+2021-07-30,HIMS,10% Owner,BUY,56659.0,11.5,651578.5,"INSTITUTIONAL, VENTURE MANAGEMENT XV, LLC",Class A Common Stock
+2021-07-30,HIMS,10% Owner,BUY,297.0,11.5,3415.5,"INSTITUTIONAL, VENTURE MANAGEMENT XV, LLC",Class A Common Stock
+2021-07-30,HIMS,"Director, 10% Owner",BUY,56961.0,11.5,655051.5,"MALTZ, JULES A.",Class A Common Stock
+2021-07-30,HIMS,"Director, 10% Owner",BUY,297.0,11.5,3415.5,"MALTZ, JULES A.",Class A Common Stock
+2021-07-30,HIMS,Director,BUY,49850.0,11.5,573275.0,"GREEN, KRISTEN",Class A Common Stock
+2021-07-30,HIMS,Director,BUY,4628.0,11.5,53222.0,"GREEN, KRISTEN",Class A Common Stock
+2021-07-30,HIMS,"Director, 10% Owner",BUY,56659.0,11.5,651578.5,"MALTZ, JULES A.",Class A Common Stock
+2021-08-06,HIMS,Director,BUY,3412.0,11.5,39238.0,"BHATTACHARYYA, AMBAR",Class A Common Stock
+2021-08-06,HIMS,Director,BUY,6140.0,11.5,70610.0,"BHATTACHARYYA, AMBAR",Class A Common Stock
+2021-08-06,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,46238.0,11.5,531737.0,"DUDUM, ANDREW",Class A Common Stock
+2021-08-13,HIMS,Director,BUY,200000.0,8.905,1780999.9999999998,"WELLS, DAVID B",Class A Common Stock
+2021-08-16,HIMS,Director,BUY,50000.0,7.7788,388940.0,"WELLS, DAVID B",Class A Common Stock
+2021-08-17,HIMS,Director,BUY,60000.0,7.1986,431916.0,"WELLS, DAVID B",Class A Common Stock
+2021-08-18,HIMS,Director,BUY,50000.0,7.2667,363335.0,"WELLS, DAVID B",Class A Common Stock
+2021-09-15,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,22104.0,8.66,191420.64,"DUDUM, ANDREW",Class A Common Stock
+2021-09-15,HIMS,Chief Medical Officer,SELL,1369.0,8.66,11855.54,"CARROLL, PATRICK HARRISON",Class A Common Stock
+2021-09-15,HIMS,Chief Financial Officer,SELL,13629.0,8.66,118027.14,"LEE, SPENCER",Class A Common Stock
+2021-09-15,HIMS,Chief Operating Officer,SELL,9572.0,8.66,82893.52,"BAIRD, MELISSA",Class A Common Stock
+2021-09-15,HIMS,Chief Legal Officer,SELL,5304.0,8.66,45932.64,"BOUGHTON, SOLEIL",Class A Common Stock
+2021-12-13,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,81100.0,5.9274,480712.13999999996,"DUDUM, ANDREW",Class A Common Stock
+2021-12-14,HIMS,10% Owner,SELL,1000000.0,5.5483,5548300.0,"ABRAHAM, JACK",Class A Common Stock
+2021-12-15,HIMS,Interim PFO/PAO,SELL,4509.0,6.35,28632.149999999998,"BECKLUND, IRENE",Class A Common Stock
+2021-12-15,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,22053.0,6.35,140036.55,"DUDUM, ANDREW",Class A Common Stock
+2021-12-15,HIMS,Chief Medical Officer,SELL,1368.0,6.35,8686.8,"CARROLL, PATRICK HARRISON",Class A Common Stock
+2021-12-15,HIMS,Chief Operating Officer,SELL,9572.0,6.35,60782.2,"BAIRD, MELISSA",Class A Common Stock
+2021-12-15,HIMS,Chief Legal Officer,SELL,5255.0,6.35,33369.25,"BOUGHTON, SOLEIL",Class A Common Stock
+2021-12-29,HIMS,Chief Legal Officer,SELL,12345.0,2.43,29998.350000000002,"BOUGHTON, SOLEIL",Stock Option (right to buy)
+2021-12-29,HIMS,Chief Legal Officer,BUY,12345.0,2.43,29998.350000000002,"BOUGHTON, SOLEIL",Class A Common Stock
+2022-01-20,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,1500.0,5.17,7755.0,"DUDUM, ANDREW",Class A Common Stock
+2022-02-03,HIMS,Chief Legal Officer,SELL,24516.0,4.59,112528.44,"BOUGHTON, SOLEIL",Class A Common Stock
+2022-02-04,HIMS,Chief Legal Officer,SELL,24516.0,4.41,108115.56,"BOUGHTON, SOLEIL",Class A Common Stock
+2022-02-07,HIMS,Chief Legal Officer,SELL,24516.0,4.41,108115.56,"BOUGHTON, SOLEIL",Class A Common Stock
+2022-02-28,HIMS,Director,SELL,86820.0,5.17,448859.39999999997,"CARROLL, PATRICK HARRISON",Class A Common Stock
+2022-02-28,HIMS,Director,BUY,17801.0,2.43,43256.43,"CARROLL, PATRICK HARRISON",Class A Common Stock
+2022-02-28,HIMS,Director,BUY,41179.0,2.43,100064.97,"CARROLL, PATRICK HARRISON",Class A Common Stock
+2022-02-28,HIMS,Director,BUY,43882.0,1.75,76793.5,"CARROLL, PATRICK HARRISON",Class A Common Stock
+2022-02-28,HIMS,Director,BUY,86820.0,2.43,210972.6,"CARROLL, PATRICK HARRISON",Class A Common Stock
+2022-03-01,HIMS,PAO,SELL,14585.0,5.255,76644.175,"BECKLUND, IRENE",Class A Common Stock
+2022-03-02,HIMS,Director,SELL,40178.0,5.04,202497.12,"O'KEEFE, LYNNE CHOU",Class A Common Stock
+2022-03-14,HIMS,Chief Operating Officer,BUY,120059.0,0.4,48023.600000000006,"BAIRD, MELISSA",Class A Common Stock
+2022-03-15,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,21958.0,4.34,95297.72,"DUDUM, ANDREW",Class A Common Stock
+2022-03-15,HIMS,Chief Legal Officer,SELL,3487.0,4.34,15133.58,"BOUGHTON, SOLEIL",Class A Common Stock
+2022-03-15,HIMS,PAO,SELL,5248.0,4.34,22776.32,"BECKLUND, IRENE",Class A Common Stock
+2022-03-15,HIMS,Chief Operating Officer,SELL,5920.0,4.34,25692.8,"BAIRD, MELISSA",Class A Common Stock
+2022-03-17,HIMS,Director,SELL,10044.0,4.5,45198.0,"O'KEEFE, LYNNE CHOU",Class A Common Stock
+2022-05-19,HIMS,Chief Financial Officer,BUY,7500.0,3.5199,26399.25,"OKUPE, OLUYEMI",Class A Common Stock
+2022-05-20,HIMS,Chief Operating Officer,BUY,2500.0,2.98,7450.0,"BAIRD, MELISSA",Class A Common Stock
+2022-06-07,HIMS,"Director, 10% Owner",BUY,50000.0,3.99,199500.0,"MALTZ, JULES A.",Class A Common Stock
+2022-06-14,HIMS,"Director, 10% Owner",BUY,73700.0,3.66,269742.0,"MALTZ, JULES A.",Class A Common Stock
+2022-06-14,HIMS,"Director, 10% Owner",BUY,1300.0,3.655,4751.5,"MALTZ, JULES A.",Class A Common Stock
+2022-06-15,HIMS,Chief Legal Officer,SELL,7261.0,4.07,29552.27,"BOUGHTON, SOLEIL",Class A Common Stock
+2022-06-15,HIMS,Chief Operating Officer,SELL,8826.0,4.07,35921.82,"BAIRD, MELISSA",Class A Common Stock
+2022-06-15,HIMS,PAO,SELL,6422.0,4.07,26137.54,"BECKLUND, IRENE",Class A Common Stock
+2022-06-15,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,40962.0,4.07,166715.34000000003,"DUDUM, ANDREW",Class A Common Stock
+2022-06-21,HIMS,Director,SELL,10045.0,4.35,43695.75,"O'KEEFE, LYNNE CHOU",Class A Common Stock
+2022-07-05,HIMS,PAO,SELL,19331.0,5.0,96655.0,"BECKLUND, IRENE",Class A Common Stock
+2022-09-09,HIMS,PAO,SELL,11002.0,6.64,73053.28,"BECKLUND, IRENE",Class A Common Stock
+2022-09-15,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,41062.0,6.03,247603.86000000002,"DUDUM, ANDREW",Class A Common Stock
+2022-09-15,HIMS,PAO,SELL,7162.0,6.03,43186.86,"BECKLUND, IRENE",Class A Common Stock
+2022-09-15,HIMS,Chief Operating Officer,SELL,8828.0,6.03,53232.840000000004,"BAIRD, MELISSA",Class A Common Stock
+2022-09-15,HIMS,Chief Legal Officer,SELL,7260.0,6.03,43777.8,"BOUGHTON, SOLEIL",Class A Common Stock
+2022-09-20,HIMS,PAO,SELL,10668.0,5.68,60594.24,"BECKLUND, IRENE",Class A Common Stock
+2022-09-20,HIMS,Director,SELL,10046.0,5.68,57061.28,"O'KEEFE, LYNNE CHOU",Class A Common Stock
+2022-10-14,HIMS,Chief Legal Officer,SELL,22003.0,5.04,110895.12,"BOUGHTON, SOLEIL",Class A Common Stock
+2022-10-17,HIMS,Chief Legal Officer,SELL,4785.0,4.43,21197.55,"BOUGHTON, SOLEIL",Class A Common Stock
+2022-10-18,HIMS,Chief Legal Officer,SELL,5545.0,4.44,24619.800000000003,"BOUGHTON, SOLEIL",Class A Common Stock
+2022-11-09,HIMS,Chief Legal Officer,SELL,20000.0,6.0,120000.0,"BOUGHTON, SOLEIL",Class A Common Stock
+2022-11-14,HIMS,Chief Legal Officer,SELL,2000.0,5.8,11600.0,"BOUGHTON, SOLEIL",Class A Common Stock
+2022-11-18,HIMS,Chief Operating Officer,BUY,2500.0,3.0,7500.0,"BAIRD, MELISSA",Class A Common Stock
+2022-12-14,HIMS,Chief Legal Officer,SELL,2000.0,7.34,14680.0,"BOUGHTON, SOLEIL",Class A Common Stock
+2022-12-15,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,41086.0,6.9,283493.4,"DUDUM, ANDREW",Class A Common Stock
+2022-12-15,HIMS,PAO,SELL,5135.0,6.9,35431.5,"BECKLUND, IRENE",Class A Common Stock
+2022-12-15,HIMS,Chief Operating Officer,SELL,12504.0,6.9,86277.6,"BAIRD, MELISSA",Class A Common Stock
+2022-12-15,HIMS,Chief Legal Officer,SELL,7261.0,6.9,50100.9,"BOUGHTON, SOLEIL",Class A Common Stock
+2022-12-16,HIMS,Chief Legal Officer,SELL,4837.0,6.74,32601.38,"BOUGHTON, SOLEIL",Class A Common Stock
+2022-12-19,HIMS,PAO,SELL,6445.0,6.72,43310.4,"BECKLUND, IRENE",Class A Common Stock
+2022-12-19,HIMS,Director,SELL,10044.0,6.72,67495.68,"O'KEEFE, LYNNE CHOU",Class A Common Stock
+2022-12-19,HIMS,Chief Legal Officer,SELL,13744.0,6.72,92359.68,"BOUGHTON, SOLEIL",Class A Common Stock
+2023-01-03,HIMS,Chief Legal Officer,SELL,12345.0,6.5,80242.5,"BOUGHTON, SOLEIL",Class A Common Stock
+2023-01-17,HIMS,Chief Legal Officer,SELL,2000.0,7.51,15020.0,"BOUGHTON, SOLEIL",Class A Common Stock
+2023-01-31,HIMS,Chief Legal Officer,SELL,50000.0,8.14,407000.0,"BOUGHTON, SOLEIL",Class A Common Stock
+2023-02-14,HIMS,Chief Legal Officer,SELL,2000.0,9.46,18920.0,"BOUGHTON, SOLEIL",Class A Common Stock
+2023-02-15,HIMS,PAO,SELL,9625.0,10.0,96250.0,"BECKLUND, IRENE",Class A Common Stock
+2023-02-15,HIMS,PAO,SELL,9625.0,10.0,96250.0,"BECKLUND, IRENE",Stock Option (right to buy)
+2023-02-15,HIMS,Chief Legal Officer,SELL,65000.0,10.01,650650.0,"BOUGHTON, SOLEIL",Class A Common Stock
+2023-02-15,HIMS,PAO,BUY,9625.0,1.75,16843.75,"BECKLUND, IRENE",Class A Common Stock
+2023-03-01,HIMS,Director,SELL,15000.0,11.55,173250.0,"BARD, ALEX",Class A Common Stock
+2023-03-01,HIMS,Director,SELL,20857.0,11.7,244026.9,"CARROLL, PATRICK HARRISON",Class A Common Stock
+2023-03-01,HIMS,Director,SELL,485000.0,11.55,5601750.0,"BARD, ALEX",Class A Common Stock
+2023-03-01,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,36633.0,2.43,89018.19,"DUDUM, ANDREW",Class A Common Stock
+2023-03-01,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,36633.0,11.95,437764.35,"DUDUM, ANDREW",Class A Common Stock
+2023-03-02,HIMS,10% Owner,SELL,1789.0,10.1,18068.899999999998,"MALTZ, JULES A.",Class A Common Stock
+2023-03-02,HIMS,10% Owner,SELL,51.0,10.1,515.1,"MALTZ, JULES A.",Class A Common Stock
+2023-03-02,HIMS,Director,SELL,2249536.0,10.78,24249998.08,"BARD, ALEX",Class A Common Stock
+2023-03-02,HIMS,10% Owner,SELL,33180.0,10.1,335118.0,"MALTZ, JULES A.",Class A Common Stock
+2023-03-02,HIMS,Director,SELL,69573.0,10.78,749996.94,"BARD, ALEX",Class A Common Stock
+2023-03-02,HIMS,10% Owner,SELL,1800.0,10.1,18180.0,"MALTZ, JULES A.",Class A Common Stock
+2023-03-03,HIMS,PAO,BUY,566.0,1.75,990.5,"BECKLUND, IRENE",Class A Common Stock
+2023-03-03,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,1249.0,2.43,3035.07,"DUDUM, ANDREW",Class A Common Stock
+2023-03-03,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,1249.0,11.956,14933.044,"DUDUM, ANDREW",Class A Common Stock
+2023-03-03,HIMS,PAO,SELL,566.0,10.46,5920.360000000001,"BECKLUND, IRENE",Class A Common Stock
+2023-03-08,HIMS,Director,SELL,100000.0,9.7654,976540.0,"WELLS, DAVID B",Class A Common Stock
+2023-03-14,HIMS,Chief Legal Officer,SELL,2000.0,9.09,18180.0,"BOUGHTON, SOLEIL",Class A Common Stock
+2023-03-15,HIMS,Chief Legal Officer,SELL,7261.0,9.01,65421.61,"BOUGHTON, SOLEIL",Class A Common Stock
+2023-03-15,HIMS,Chief Operating Officer,SELL,8828.0,9.01,79540.28,"BAIRD, MELISSA",Class A Common Stock
+2023-03-15,HIMS,PAO,SELL,5595.0,9.01,50410.95,"BECKLUND, IRENE",Class A Common Stock
+2023-03-15,HIMS,Chief Marketing Officer,SELL,14726.0,9.01,132681.26,"CHI, MICHAEL",Class A Common Stock
+2023-03-15,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,41122.0,9.01,370509.22,"DUDUM, ANDREW",Class A Common Stock
+2023-03-15,HIMS,Chief Financial Officer,SELL,102347.0,9.01,922146.47,"OKUPE, OLUYEMI",Class A Common Stock
+2023-03-16,HIMS,Chief Operating Officer,SELL,2800.0,10.104,28291.199999999997,"BAIRD, MELISSA",Class A Common Stock
+2023-03-16,HIMS,Chief Operating Officer,SELL,7143.0,9.625,68751.375,"BAIRD, MELISSA",Class A Common Stock
+2023-03-16,HIMS,Chief Operating Officer,SELL,2000.0,10.112,20224.0,"BAIRD, MELISSA",Class A Common Stock
+2023-03-17,HIMS,Chief Financial Officer,SELL,13100.0,9.79,128248.99999999999,"OKUPE, OLUYEMI",Class A Common Stock
+2023-03-17,HIMS,PAO,SELL,6170.0,9.79,60404.299999999996,"BECKLUND, IRENE",Class A Common Stock
+2023-03-17,HIMS,Chief Legal Officer,SELL,13745.0,9.79,134563.55,"BOUGHTON, SOLEIL",Class A Common Stock
+2023-03-17,HIMS,Chief Operating Officer,SELL,10176.0,9.79,99623.04,"BAIRD, MELISSA",Class A Common Stock
+2023-03-17,HIMS,Chief Financial Officer,SELL,2620.0,10.0,26200.0,"OKUPE, OLUYEMI",Class A Common Stock
+2023-03-20,HIMS,Chief Operating Officer,SELL,9333.0,9.542,89055.486,"BAIRD, MELISSA",Class A Common Stock
+2023-04-04,HIMS,Chief Operating Officer,SELL,11299.0,10.088,113984.31199999999,"BAIRD, MELISSA",Class A Common Stock
+2023-04-04,HIMS,Chief Operating Officer,SELL,9133.0,10.06,91877.98000000001,"BAIRD, MELISSA",Class A Common Stock
+2023-04-04,HIMS,PAO,SELL,15323.0,10.3,157826.90000000002,"BECKLUND, IRENE",Class A Common Stock
+2023-04-04,HIMS,PAO,BUY,567.0,1.75,992.25,"BECKLUND, IRENE",Class A Common Stock
+2023-04-04,HIMS,PAO,SELL,567.0,10.3,5840.1,"BECKLUND, IRENE",Class A Common Stock
+2023-04-05,HIMS,Chief Operating Officer,SELL,500.0,10.044,5022.0,"BAIRD, MELISSA",Class A Common Stock
+2023-04-05,HIMS,Chief Operating Officer,SELL,9133.0,9.819,89676.92700000001,"BAIRD, MELISSA",Class A Common Stock
+2023-04-06,HIMS,Chief Operating Officer,SELL,10233.0,9.886,101163.438,"BAIRD, MELISSA",Class A Common Stock
+2023-05-04,HIMS,PAO,SELL,566.0,11.68,6610.88,"BECKLUND, IRENE",Class A Common Stock
+2023-05-04,HIMS,PAO,BUY,566.0,1.75,990.5,"BECKLUND, IRENE",Class A Common Stock
+2023-05-05,HIMS,Chief Operating Officer,SELL,9899.0,12.0399,119182.97009999999,"BAIRD, MELISSA",Class A Common Stock
+2023-05-05,HIMS,Chief Operating Officer,SELL,9133.0,12.0388,109950.3604,"BAIRD, MELISSA",Class A Common Stock
+2023-05-05,HIMS,Chief Operating Officer,SELL,19032.0,0.4,7612.8,"BAIRD, MELISSA",Stock Option (right to buy)
+2023-05-08,HIMS,Chief Operating Officer,SELL,3833.0,11.8277,45335.5741,"BAIRD, MELISSA",Class A Common Stock
+2023-05-08,HIMS,Chief Operating Officer,BUY,19032.0,0.4,7612.8,"BAIRD, MELISSA",Class A Common Stock
+2023-05-08,HIMS,Chief Operating Officer,SELL,9133.0,11.8267,108013.25110000001,"BAIRD, MELISSA",Class A Common Stock
+2023-05-09,HIMS,Chief Operating Officer,SELL,12966.0,0.4,5186.400000000001,"BAIRD, MELISSA",Stock Option (right to buy)
+2023-05-09,HIMS,Chief Operating Officer,SELL,9133.0,10.7847,98496.66510000001,"BAIRD, MELISSA",Class A Common Stock
+2023-05-09,HIMS,Chief Operating Officer,SELL,3833.0,10.7775,41310.1575,"BAIRD, MELISSA",Class A Common Stock
+2023-05-09,HIMS,Chief Operating Officer,BUY,12966.0,0.4,5186.400000000001,"BAIRD, MELISSA",Class A Common Stock
+2023-05-10,HIMS,Chief Operating Officer,BUY,12966.0,0.4,5186.400000000001,"BAIRD, MELISSA",Class A Common Stock
+2023-05-10,HIMS,Chief Operating Officer,SELL,12966.0,0.4,5186.400000000001,"BAIRD, MELISSA",Stock Option (right to buy)
+2023-05-19,HIMS,Chief Operating Officer,BUY,2500.0,3.0,7500.0,"BAIRD, MELISSA",Class A Common Stock
+2023-06-02,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,2009.0,9.0359,18153.1231,"DUDUM, ANDREW",Class A Common Stock
+2023-06-05,HIMS,Chief Operating Officer,SELL,9133.0,8.891,81201.503,"BAIRD, MELISSA",Class A Common Stock
+2023-06-06,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,71933.0,9.1337,657014.4421,"DUDUM, ANDREW",Class A Common Stock
+2023-06-06,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,71933.0,2.43,174797.19,"DUDUM, ANDREW",Class A Common Stock
+2023-06-06,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,2009.0,2.43,4881.87,"DUDUM, ANDREW",Class A Common Stock
+2023-06-06,HIMS,Chief Operating Officer,SELL,9133.0,9.0825,82950.47249999999,"BAIRD, MELISSA",Class A Common Stock
+2023-06-06,HIMS,Chief Operating Officer,BUY,2481.0,0.4,992.4000000000001,"BAIRD, MELISSA",Class A Common Stock
+2023-06-07,HIMS,Chief Operating Officer,SELL,9133.0,9.1165,83260.9945,"BAIRD, MELISSA",Class A Common Stock
+2023-06-07,HIMS,Chief Operating Officer,BUY,9133.0,0.4,3653.2000000000003,"BAIRD, MELISSA",Class A Common Stock
+2023-06-15,HIMS,Chief Legal Officer,SELL,11487.0,8.8,101085.6,"BOUGHTON, SOLEIL",Class A Common Stock
+2023-06-15,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,60253.0,8.8,530226.4,"DUDUM, ANDREW",Class A Common Stock
+2023-06-15,HIMS,Chief Operating Officer,SELL,20682.0,8.8,182001.6,"BAIRD, MELISSA",Class A Common Stock
+2023-06-15,HIMS,Chief Financial Officer,SELL,38028.0,8.8,334646.4,"OKUPE, OLUYEMI",Class A Common Stock
+2023-06-15,HIMS,PAO,SELL,6454.0,8.8,56795.200000000004,"BECKLUND, IRENE",Class A Common Stock
+2023-06-15,HIMS,Chief Marketing Officer,SELL,29257.0,8.8,257461.60000000003,"CHI, MICHAEL",Class A Common Stock
+2023-06-16,HIMS,PAO,BUY,566.0,1.75,990.5,"BECKLUND, IRENE",Class A Common Stock
+2023-06-16,HIMS,Chief Legal Officer,SELL,14271.0,2.43,34678.53,"BOUGHTON, SOLEIL",Stock Option (right to buy)
+2023-06-16,HIMS,Chief Legal Officer,BUY,14271.0,2.43,34678.53,"BOUGHTON, SOLEIL",Class A Common Stock
+2023-06-16,HIMS,Chief Legal Officer,SELL,14271.0,9.0148,128650.21079999999,"BOUGHTON, SOLEIL",Class A Common Stock
+2023-06-16,HIMS,PAO,SELL,566.0,8.95,5065.7,"BECKLUND, IRENE",Class A Common Stock
+2023-06-20,HIMS,Chief Legal Officer,SELL,21741.0,8.55,185885.55000000002,"BOUGHTON, SOLEIL",Class A Common Stock
+2023-06-20,HIMS,PAO,SELL,10707.0,8.55,91544.85,"BECKLUND, IRENE",Class A Common Stock
+2023-06-29,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,23282.0,2.43,56575.26,"DUDUM, ANDREW",Class A Common Stock
+2023-06-29,HIMS,Chief Legal Officer,BUY,85729.0,2.43,208321.47,"BOUGHTON, SOLEIL",Class A Common Stock
+2023-06-29,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,23282.0,9.0249,210117.7218,"DUDUM, ANDREW",Class A Common Stock
+2023-06-29,HIMS,Chief Legal Officer,SELL,85729.0,9.0054,772023.9366,"BOUGHTON, SOLEIL",Class A Common Stock
+2023-07-03,HIMS,Chief Operating Officer,SELL,9133.0,9.1859,83894.8247,"BAIRD, MELISSA",Class A Common Stock
+2023-07-03,HIMS,Chief Operating Officer,BUY,9133.0,0.4,3653.2000000000003,"BAIRD, MELISSA",Class A Common Stock
+2023-07-05,HIMS,Chief Operating Officer,BUY,9133.0,0.4,3653.2000000000003,"BAIRD, MELISSA",Class A Common Stock
+2023-07-05,HIMS,Chief Operating Officer,SELL,9133.0,8.8814,81113.8262,"BAIRD, MELISSA",Class A Common Stock
+2023-07-06,HIMS,Chief Operating Officer,SELL,9133.0,8.6809,79282.65969999999,"BAIRD, MELISSA",Class A Common Stock
+2023-07-06,HIMS,Chief Operating Officer,BUY,9133.0,0.4,3653.2000000000003,"BAIRD, MELISSA",Class A Common Stock
+2023-07-18,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,64469.0,2.43,156659.67,"DUDUM, ANDREW",Class A Common Stock
+2023-07-18,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,64469.0,9.1289,588531.0541,"DUDUM, ANDREW",Class A Common Stock
+2023-07-19,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,23800.0,9.0591,215606.58000000002,"DUDUM, ANDREW",Class A Common Stock
+2023-07-19,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,23800.0,2.43,57834.00000000001,"DUDUM, ANDREW",Class A Common Stock
+2023-08-03,HIMS,Chief Operating Officer,SELL,9133.0,8.2633,75468.71889999999,"BAIRD, MELISSA",Class A Common Stock
+2023-08-04,HIMS,Chief Operating Officer,SELL,9133.0,8.1826,74731.6858,"BAIRD, MELISSA",Class A Common Stock
+2023-08-07,HIMS,Chief Operating Officer,SELL,9133.0,7.9987,73052.1271,"BAIRD, MELISSA",Class A Common Stock
+2023-08-08,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,6900.0,9.0408,62381.520000000004,"DUDUM, ANDREW",Class A Common Stock
+2023-08-08,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,6900.0,2.43,16767.0,"DUDUM, ANDREW",Class A Common Stock
+2023-08-14,HIMS,Director,SELL,45748.0,7.15,327098.2,"O'KEEFE, LYNNE CHOU",Class A Common Stock
+2023-08-21,HIMS,Chief Financial Officer,SELL,6698.0,6.9154,46319.3492,"OKUPE, OLUYEMI",Class A Common Stock
+2023-09-01,HIMS,Chief Operating Officer,SELL,9133.0,6.8696,62740.0568,"BAIRD, MELISSA",Class A Common Stock
+2023-09-05,HIMS,Chief Operating Officer,SELL,9133.0,6.8034,62135.4522,"BAIRD, MELISSA",Class A Common Stock
+2023-09-06,HIMS,Chief Operating Officer,SELL,9133.0,6.8684,62729.097200000004,"BAIRD, MELISSA",Class A Common Stock
+2023-09-15,HIMS,Chief Legal Officer,SELL,17725.0,6.31,111844.75,"BOUGHTON, SOLEIL",Class A Common Stock
+2023-09-15,HIMS,Chief Marketing Officer,SELL,31249.0,6.31,197181.19,"CHI, MICHAEL",Class A Common Stock
+2023-09-15,HIMS,Chief Financial Officer,SELL,37970.0,6.31,239590.69999999998,"OKUPE, OLUYEMI",Class A Common Stock
+2023-09-15,HIMS,Chief Operating Officer,SELL,20683.0,6.31,130509.73,"BAIRD, MELISSA",Class A Common Stock
+2023-09-15,HIMS,PAO,SELL,6403.0,6.31,40402.93,"BECKLUND, IRENE",Class A Common Stock
+2023-09-15,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,60194.0,6.31,379824.13999999996,"DUDUM, ANDREW",Class A Common Stock
+2023-09-19,HIMS,Director,SELL,10045.0,6.31,63383.95,"O'KEEFE, LYNNE CHOU",Class A Common Stock
+2023-09-19,HIMS,PAO,SELL,10596.0,6.31,66860.76,"BECKLUND, IRENE",Class A Common Stock
+2023-09-20,HIMS,Chief Legal Officer,SELL,15504.0,6.27,97210.07999999999,"BOUGHTON, SOLEIL",Class A Common Stock
+2023-09-20,HIMS,Chief Financial Officer,SELL,3397.0,6.2794,21331.1218,"OKUPE, OLUYEMI",Class A Common Stock
+2023-09-20,HIMS,Chief Financial Officer,SELL,3397.0,6.2782,21327.0454,"OKUPE, OLUYEMI",Class A Common Stock
+2023-10-03,HIMS,Chief Operating Officer,SELL,9133.0,6.3202,57722.3866,"BAIRD, MELISSA",Class A Common Stock
+2023-10-04,HIMS,Chief Operating Officer,SELL,9133.0,6.1848,56485.7784,"BAIRD, MELISSA",Class A Common Stock
+2023-10-05,HIMS,Chief Operating Officer,SELL,9133.0,6.2309,56906.8097,"BAIRD, MELISSA",Class A Common Stock
+2023-11-06,HIMS,Chief Operating Officer,BUY,9133.0,0.4,3653.2000000000003,"BAIRD, MELISSA",Class A Common Stock
+2023-11-06,HIMS,Chief Operating Officer,SELL,9133.0,6.3449,57947.9717,"BAIRD, MELISSA",Class A Common Stock
+2023-11-07,HIMS,Chief Operating Officer,BUY,9133.0,0.4,3653.2000000000003,"BAIRD, MELISSA",Class A Common Stock
+2023-11-07,HIMS,Chief Operating Officer,SELL,9133.0,7.0666,64539.2578,"BAIRD, MELISSA",Class A Common Stock
+2023-11-08,HIMS,Chief Operating Officer,BUY,9133.0,0.4,3653.2000000000003,"BAIRD, MELISSA",Class A Common Stock
+2023-11-08,HIMS,Chief Operating Officer,SELL,9133.0,7.088,64734.704,"BAIRD, MELISSA",Class A Common Stock
+2023-11-21,HIMS,Chief Financial Officer,SELL,3349.0,7.6163,25506.988699999998,"OKUPE, OLUYEMI",Class A Common Stock
+2023-11-21,HIMS,Chief Financial Officer,SELL,3349.0,7.6152,25503.304799999998,"OKUPE, OLUYEMI",Class A Common Stock
+2023-11-30,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,3800.0,9.0054,34220.52,"DUDUM, ANDREW",Class A Common Stock
+2023-11-30,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,3800.0,2.43,9234.0,"DUDUM, ANDREW",Class A Common Stock
+2023-12-01,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,24300.0,9.0278,219375.53999999998,"DUDUM, ANDREW",Class A Common Stock
+2023-12-01,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,24300.0,2.43,59049.00000000001,"DUDUM, ANDREW",Class A Common Stock
+2023-12-04,HIMS,Chief Operating Officer,SELL,9133.0,8.8126,80485.4758,"BAIRD, MELISSA",Class A Common Stock
+2023-12-04,HIMS,Chief Operating Officer,BUY,3624.0,0.4,1449.6000000000001,"BAIRD, MELISSA",Class A Common Stock
+2023-12-05,HIMS,Chief Operating Officer,SELL,9133.0,8.7836,80220.6188,"BAIRD, MELISSA",Class A Common Stock
+2023-12-06,HIMS,Chief Operating Officer,SELL,9133.0,9.0225,82402.49250000001,"BAIRD, MELISSA",Class A Common Stock
+2023-12-15,HIMS,Chief Operating Officer,SELL,20682.0,8.45,174762.9,"BAIRD, MELISSA",Class A Common Stock
+2023-12-15,HIMS,Chief Legal Officer,SELL,17777.0,8.45,150215.65,"BOUGHTON, SOLEIL",Class A Common Stock
+2023-12-15,HIMS,PAO,SELL,6402.0,8.45,54096.899999999994,"BECKLUND, IRENE",Class A Common Stock
+2023-12-15,HIMS,Chief Financial Officer,SELL,38022.0,8.45,321285.89999999997,"OKUPE, OLUYEMI",Class A Common Stock
+2023-12-15,HIMS,Chief Marketing Officer,SELL,31251.0,8.45,264070.94999999995,"CHI, MICHAEL",Class A Common Stock
+2023-12-15,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,60245.0,8.45,509070.24999999994,"DUDUM, ANDREW",Class A Common Stock
+2023-12-15,HIMS,Director,SELL,9566.0,8.45,80832.7,"CARROLL, PATRICK HARRISON",Class A Common Stock
+2023-12-19,HIMS,PAO,SELL,10597.0,8.73,92511.81,"BECKLUND, IRENE",Class A Common Stock
+2023-12-19,HIMS,Director,SELL,10045.0,8.73,87692.85,"O'KEEFE, LYNNE CHOU",Class A Common Stock
+2023-12-20,HIMS,Chief Financial Officer,SELL,3392.0,8.5777,29095.5584,"OKUPE, OLUYEMI",Class A Common Stock
+2023-12-20,HIMS,Chief Financial Officer,SELL,3392.0,8.5816,29108.7872,"OKUPE, OLUYEMI",Class A Common Stock
+2023-12-20,HIMS,Chief Legal Officer,SELL,15450.0,8.71,134569.5,"BOUGHTON, SOLEIL",Class A Common Stock
+2023-12-27,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,7700.0,9.0211,69462.47,"DUDUM, ANDREW",Class A Common Stock
+2023-12-27,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,7700.0,2.43,18711.0,"DUDUM, ANDREW",Class A Common Stock
+2023-12-28,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,25750.0,9.0098,232002.35,"DUDUM, ANDREW",Class A Common Stock
+2023-12-28,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,25750.0,2.43,62572.50000000001,"DUDUM, ANDREW",Class A Common Stock
+2023-12-29,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,21432.0,2.43,52079.76,"DUDUM, ANDREW",Class A Common Stock
+2023-12-29,HIMS,Chief Operating Officer,BUY,57339.0,1.75,100343.25,"BAIRD, MELISSA",Class A Common Stock
+2023-12-29,HIMS,Chief Operating Officer,BUY,35661.0,2.43,86656.23000000001,"BAIRD, MELISSA",Class A Common Stock
+2023-12-29,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,21432.0,9.0623,194223.21360000002,"DUDUM, ANDREW",Class A Common Stock
+2024-01-02,HIMS,Chief Legal Officer,SELL,13744.0,8.8,120947.20000000001,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-01-25,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,127688.0,9.0795,1159343.196,"DUDUM, ANDREW",Class A Common Stock
+2024-01-25,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,127688.0,2.43,310281.84,"DUDUM, ANDREW",Class A Common Stock
+2024-01-26,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,52940.0,9.1068,482113.99199999997,"DUDUM, ANDREW",Class A Common Stock
+2024-01-26,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,52940.0,2.43,128644.20000000001,"DUDUM, ANDREW",Class A Common Stock
+2024-01-29,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,15100.0,2.43,36693.0,"DUDUM, ANDREW",Class A Common Stock
+2024-01-29,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,15100.0,9.0082,136023.82,"DUDUM, ANDREW",Class A Common Stock
+2024-02-09,HIMS,Chief Legal Officer,BUY,4080.0,2.43,9914.400000000001,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-02-09,HIMS,Chief Financial Officer,SELL,8509.0,10.0299,85344.4191,"OKUPE, OLUYEMI",Class A Common Stock
+2024-02-09,HIMS,Chief Legal Officer,SELL,4080.0,10.0296,40920.768000000004,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-02-12,HIMS,Chief Legal Officer,BUY,22839.0,2.43,55498.770000000004,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-02-12,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,81541.0,2.43,198144.63,"DUDUM, ANDREW",Class A Common Stock
+2024-02-12,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,81541.0,9.9832,814040.1112,"DUDUM, ANDREW",Class A Common Stock
+2024-02-12,HIMS,Chief Financial Officer,BUY,26385.0,5.01,132188.85,"OKUPE, OLUYEMI",Class A Common Stock
+2024-02-12,HIMS,Chief Legal Officer,SELL,22839.0,10.0322,229125.4158,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-02-12,HIMS,Chief Financial Officer,SELL,31363.0,10.0322,314639.8886,"OKUPE, OLUYEMI",Class A Common Stock
+2024-02-13,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,97208.0,2.43,236215.44,"DUDUM, ANDREW",Class A Common Stock
+2024-02-13,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,97208.0,9.5775,931009.6200000001,"DUDUM, ANDREW",Class A Common Stock
+2024-02-14,HIMS,Chief Legal Officer,SELL,17109.0,10.0,171090.0,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-02-14,HIMS,Chief Legal Officer,BUY,17109.0,2.43,41574.87,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-02-14,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,77382.0,9.9024,766267.5168,"DUDUM, ANDREW",Class A Common Stock
+2024-02-14,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,77382.0,2.43,188038.26,"DUDUM, ANDREW",Class A Common Stock
+2024-02-15,HIMS,Chief Legal Officer,SELL,5972.0,10.0375,59943.95,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-02-15,HIMS,Chief Legal Officer,BUY,5972.0,2.43,14511.960000000001,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-02-27,HIMS,PAO,SELL,2747.0,12.08,33183.76,"BECKLUND, IRENE",Class A Common Stock
+2024-02-28,HIMS,"Director, Chief Medical Officer",SELL,20000.0,13.19,263800.0,"CARROLL, PATRICK HARRISON",Class A Common Stock
+2024-02-28,HIMS,Director,SELL,260000.0,13.1585,3421210.0,"WELLS, DAVID B",Class A Common Stock
+2024-02-28,HIMS,Chief Marketing Officer,SELL,47687.0,13.19,628991.53,"CHI, MICHAEL",Class A Common Stock
+2024-02-29,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,577007.0,12.9639,7480261.047300001,"DUDUM, ANDREW",Class A Common Stock
+2024-02-29,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,577007.0,2.43,1402127.01,"DUDUM, ANDREW",Class A Common Stock
+2024-03-01,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,144448.0,13.0706,1888022.0288000002,"DUDUM, ANDREW",Class A Common Stock
+2024-03-01,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,240549.0,13.0706,3144119.7594000003,"DUDUM, ANDREW",Class A Common Stock
+2024-03-01,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,188896.0,2.43,459017.28,"DUDUM, ANDREW",Class A Common Stock
+2024-03-01,HIMS,PAO,SELL,2747.0,13.16,36150.52,"BECKLUND, IRENE",Class A Common Stock
+2024-03-04,HIMS,Chief Financial Officer,SELL,43876.0,13.5723,595498.2348,"OKUPE, OLUYEMI",Class A Common Stock
+2024-03-04,HIMS,Chief Financial Officer,SELL,3349.0,13.4038,44889.3262,"OKUPE, OLUYEMI",Class A Common Stock
+2024-03-04,HIMS,PAO,SELL,17930.0,14.5,259985.0,"BECKLUND, IRENE",Class A Common Stock
+2024-03-04,HIMS,Chief Financial Officer,SELL,3349.0,13.407,44900.043,"OKUPE, OLUYEMI",Class A Common Stock
+2024-03-04,HIMS,PAO,BUY,17930.0,9.41,168721.3,"BECKLUND, IRENE",Class A Common Stock
+2024-03-04,HIMS,Chief Financial Officer,BUY,40527.0,5.01,203040.27,"OKUPE, OLUYEMI",Class A Common Stock
+2024-03-05,HIMS,Chief Operating Officer,BUY,5036.0,0.4,2014.4,"BAIRD, MELISSA",Class A Common Stock
+2024-03-05,HIMS,Chief Operating Officer,BUY,6715.0,0.4,2686.0,"BAIRD, MELISSA",Class A Common Stock
+2024-03-05,HIMS,Chief Operating Officer,SELL,5036.0,14.2183,71603.3588,"BAIRD, MELISSA",Class A Common Stock
+2024-03-05,HIMS,Chief Operating Officer,SELL,6715.0,14.2158,95459.097,"BAIRD, MELISSA",Class A Common Stock
+2024-03-06,HIMS,Chief Operating Officer,BUY,6715.0,0.4,2686.0,"BAIRD, MELISSA",Class A Common Stock
+2024-03-06,HIMS,Chief Operating Officer,SELL,5036.0,13.9881,70444.0716,"BAIRD, MELISSA",Class A Common Stock
+2024-03-06,HIMS,Chief Operating Officer,BUY,5036.0,0.4,2014.4,"BAIRD, MELISSA",Class A Common Stock
+2024-03-06,HIMS,Chief Operating Officer,SELL,6715.0,13.986,93915.99,"BAIRD, MELISSA",Class A Common Stock
+2024-03-07,HIMS,Chief Operating Officer,BUY,5036.0,0.4,2014.4,"BAIRD, MELISSA",Class A Common Stock
+2024-03-07,HIMS,PAO,SELL,2747.0,14.19,38979.93,"BECKLUND, IRENE",Class A Common Stock
+2024-03-07,HIMS,Chief Operating Officer,SELL,5036.0,14.3507,72270.1252,"BAIRD, MELISSA",Class A Common Stock
+2024-03-07,HIMS,Chief Operating Officer,SELL,6715.0,14.358,96413.97,"BAIRD, MELISSA",Class A Common Stock
+2024-03-07,HIMS,Chief Operating Officer,BUY,6715.0,0.4,2686.0,"BAIRD, MELISSA",Class A Common Stock
+2024-03-13,HIMS,Chief Legal Officer,BUY,63621.0,2.43,154599.03,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-03-13,HIMS,Chief Legal Officer,SELL,63621.0,15.1682,965016.0522,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-03-15,HIMS,Chief Legal Officer,SELL,18208.0,14.63,266383.04000000004,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-03-15,HIMS,PAO,SELL,6397.0,14.63,93588.11,"BECKLUND, IRENE",Class A Common Stock
+2024-03-15,HIMS,Chief Financial Officer,SELL,38864.0,14.63,568580.3200000001,"OKUPE, OLUYEMI",Class A Common Stock
+2024-03-15,HIMS,Chief Marketing Officer,SELL,27535.0,14.63,402837.05000000005,"CHI, MICHAEL",Class A Common Stock
+2024-03-15,HIMS,Chief Operating Officer,SELL,20407.0,14.63,298554.41000000003,"BAIRD, MELISSA",Class A Common Stock
+2024-03-15,HIMS,"Director, Chief Medical Officer",SELL,2391.0,14.63,34980.33,"CARROLL, PATRICK HARRISON",Class A Common Stock
+2024-03-15,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,61539.0,14.63,900315.5700000001,"DUDUM, ANDREW",Class A Common Stock
+2024-03-18,HIMS,PAO,SELL,472.0,14.7,6938.4,"BECKLUND, IRENE",Class A Common Stock
+2024-03-18,HIMS,PAO,BUY,472.0,9.41,4441.52,"BECKLUND, IRENE",Class A Common Stock
+2024-03-19,HIMS,PAO,SELL,13353.0,15.52,207238.56,"BECKLUND, IRENE",Class A Common Stock
+2024-03-19,HIMS,Director,SELL,10044.0,15.52,155882.88,"O'KEEFE, LYNNE CHOU",Class A Common Stock
+2024-03-20,HIMS,Chief Financial Officer,SELL,3304.0,15.8177,52261.6808,"OKUPE, OLUYEMI",Class A Common Stock
+2024-03-20,HIMS,Chief Financial Officer,SELL,3304.0,15.8275,52294.060000000005,"OKUPE, OLUYEMI",Class A Common Stock
+2024-03-20,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,50361.0,16.3431,823054.8591,"DUDUM, ANDREW",Class A Common Stock
+2024-03-20,HIMS,Chief Financial Officer,SELL,3304.0,15.8174,52260.6896,"OKUPE, OLUYEMI",Class A Common Stock
+2024-04-01,HIMS,Chief Legal Officer,SELL,2503.0,15.65,39171.950000000004,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-04-04,HIMS,Chief Operating Officer,BUY,11751.0,0.4,4700.400000000001,"BAIRD, MELISSA",Class A Common Stock
+2024-04-04,HIMS,"Director, Chief Executive Officer",BUY,188888.0,2.43,458997.84,"DUDUM, ANDREW",Class A Common Stock
+2024-04-04,HIMS,Chief Operating Officer,SELL,5036.0,14.8841,74956.3276,"BAIRD, MELISSA",Class A Common Stock
+2024-04-04,HIMS,"Director, Chief Executive Officer",SELL,93521.0,14.9575,1398840.3575,"DUDUM, ANDREW",Class A Common Stock
+2024-04-04,HIMS,"Director, Chief Executive Officer",SELL,15898.0,15.3852,244593.90959999998,"DUDUM, ANDREW",Class A Common Stock
+2024-04-04,HIMS,"Director, Chief Executive Officer",SELL,93434.0,14.9733,1399015.3122,"DUDUM, ANDREW",Class A Common Stock
+2024-04-04,HIMS,"Director, Chief Executive Officer",SELL,1010.0,15.6341,15790.441,"DUDUM, ANDREW",Class A Common Stock
+2024-04-04,HIMS,"Director, Chief Executive Officer",SELL,128546.0,14.7031,1890024.6926,"DUDUM, ANDREW",Class A Common Stock
+2024-04-04,HIMS,Chief Operating Officer,SELL,6715.0,14.8885,99976.2775,"BAIRD, MELISSA",Class A Common Stock
+2024-04-04,HIMS,"Director, Chief Executive Officer",SELL,923.0,15.6323,14428.6129,"DUDUM, ANDREW",Class A Common Stock
+2024-04-05,HIMS,Chief Operating Officer,BUY,11751.0,0.4,4700.400000000001,"BAIRD, MELISSA",Class A Common Stock
+2024-04-05,HIMS,Chief Operating Officer,SELL,5036.0,14.5851,73450.56360000001,"BAIRD, MELISSA",Class A Common Stock
+2024-04-05,HIMS,Chief Operating Officer,SELL,6715.0,14.5825,97921.4875,"BAIRD, MELISSA",Class A Common Stock
+2024-04-08,HIMS,Chief Operating Officer,SELL,5036.0,14.7436,74248.7696,"BAIRD, MELISSA",Class A Common Stock
+2024-04-08,HIMS,Chief Operating Officer,BUY,11751.0,0.4,4700.400000000001,"BAIRD, MELISSA",Class A Common Stock
+2024-04-08,HIMS,Chief Operating Officer,SELL,6715.0,14.7439,99005.2885,"BAIRD, MELISSA",Class A Common Stock
+2024-04-15,HIMS,Chief Legal Officer,SELL,2503.0,13.95,34916.85,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-04-29,HIMS,Chief Legal Officer,SELL,2503.0,12.56,31437.68,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-05-01,HIMS,Chief Operating Officer,SELL,6714.0,12.6063,84638.6982,"BAIRD, MELISSA",Class A Common Stock
+2024-05-01,HIMS,Chief Operating Officer,SELL,5036.0,12.6059,63483.3124,"BAIRD, MELISSA",Class A Common Stock
+2024-05-01,HIMS,Chief Operating Officer,BUY,11750.0,0.4,4700.0,"BAIRD, MELISSA",Class A Common Stock
+2024-05-01,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,144444.0,12.686,1832416.584,"DUDUM, ANDREW",Class A Common Stock
+2024-05-01,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,94444.0,12.5387,1184204.9828,"DUDUM, ANDREW",Class A Common Stock
+2024-05-01,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,188888.0,2.43,458997.84,"DUDUM, ANDREW",Class A Common Stock
+2024-05-01,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,94444.0,12.5332,1183685.5408,"DUDUM, ANDREW",Class A Common Stock
+2024-05-02,HIMS,Chief Operating Officer,BUY,11750.0,0.4,4700.0,"BAIRD, MELISSA",Class A Common Stock
+2024-05-02,HIMS,Chief Operating Officer,SELL,6714.0,12.079,81098.406,"BAIRD, MELISSA",Class A Common Stock
+2024-05-02,HIMS,Chief Operating Officer,SELL,5036.0,12.078,60824.808,"BAIRD, MELISSA",Class A Common Stock
+2024-05-03,HIMS,Chief Operating Officer,BUY,11750.0,0.4,4700.0,"BAIRD, MELISSA",Class A Common Stock
+2024-05-03,HIMS,Chief Operating Officer,SELL,4536.0,11.5774,52515.0864,"BAIRD, MELISSA",Class A Common Stock
+2024-05-03,HIMS,Chief Operating Officer,SELL,500.0,12.27,6135.0,"BAIRD, MELISSA",Class A Common Stock
+2024-05-03,HIMS,Chief Operating Officer,SELL,700.0,12.285,8599.5,"BAIRD, MELISSA",Class A Common Stock
+2024-05-03,HIMS,Chief Operating Officer,SELL,6014.0,11.5691,69576.5674,"BAIRD, MELISSA",Class A Common Stock
+2024-05-09,HIMS,"Director, Chief Medical Officer",SELL,10000.0,13.0,130000.0,"CARROLL, PATRICK HARRISON",Class A Common Stock
+2024-05-13,HIMS,Director,SELL,4000.0,12.33,49320.0,"PENDARVIS, CHRISTIANE",Class A Common Stock
+2024-05-13,HIMS,Chief Legal Officer,SELL,2503.0,12.33,30861.99,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-05-17,HIMS,PAO,SELL,943.0,14.5,13673.5,"BECKLUND, IRENE",Class A Common Stock
+2024-05-17,HIMS,PAO,BUY,943.0,9.41,8873.630000000001,"BECKLUND, IRENE",Class A Common Stock
+2024-05-20,HIMS,Chief Financial Officer,SELL,6900.0,20.0063,138043.47,"OKUPE, OLUYEMI",Class A Common Stock
+2024-05-20,HIMS,Chief Legal Officer,BUY,4915.0,5.01,24624.149999999998,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-05-20,HIMS,Chief Legal Officer,SELL,4915.0,20.0148,98372.742,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-05-21,HIMS,Chief Financial Officer,SELL,3349.0,17.9728,60190.9072,"OKUPE, OLUYEMI",Class A Common Stock
+2024-05-21,HIMS,Chief Financial Officer,BUY,28084.0,5.01,140700.84,"OKUPE, OLUYEMI",Class A Common Stock
+2024-05-21,HIMS,Chief Financial Officer,SELL,31433.0,17.8595,561377.6635,"OKUPE, OLUYEMI",Class A Common Stock
+2024-05-21,HIMS,Chief Financial Officer,SELL,3349.0,17.9517,60120.243299999995,"OKUPE, OLUYEMI",Class A Common Stock
+2024-05-21,HIMS,Director,BUY,110000.0,17.7433,1951763.0000000002,"PAYNE, CHRISTOPHER D",Class A Common Stock
+2024-05-28,HIMS,Chief Legal Officer,SELL,2502.0,17.33,43359.659999999996,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-05-30,HIMS,Chief Legal Officer,BUY,129667.0,5.01,649631.6699999999,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-05-30,HIMS,Chief Legal Officer,SELL,114460.0,20.4724,2343270.904,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-05-30,HIMS,Chief Legal Officer,SELL,15207.0,21.1727,321973.2489,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-05-31,HIMS,Chief Commercial Officer,BUY,393881.0,5.01,1973343.8099999998,"CHI, MICHAEL",Class A Common Stock
+2024-05-31,HIMS,Chief Commercial Officer,SELL,48458.0,20.1681,977305.7897999999,"CHI, MICHAEL",Class A Common Stock
+2024-05-31,HIMS,Chief Commercial Officer,SELL,345423.0,19.3432,6681586.173599999,"CHI, MICHAEL",Class A Common Stock
+2024-05-31,HIMS,Chief Commercial Officer,BUY,2300.0,6.82,15686.0,"CHI, MICHAEL",Class A Common Stock
+2024-05-31,HIMS,Chief Commercial Officer,SELL,2300.0,20.1966,46452.18,"CHI, MICHAEL",Class A Common Stock
+2024-06-03,HIMS,Chief Commercial Officer,SELL,19141.0,20.3529,389574.85890000005,"CHI, MICHAEL",Class A Common Stock
+2024-06-03,HIMS,Chief Commercial Officer,BUY,4096.0,5.01,20520.96,"CHI, MICHAEL",Class A Common Stock
+2024-06-03,HIMS,Chief Operating Officer,BUY,70506.0,0.4,28202.4,"BAIRD, MELISSA",Class A Common Stock
+2024-06-03,HIMS,Chief Commercial Officer,SELL,4096.0,20.3414,83318.3744,"CHI, MICHAEL",Class A Common Stock
+2024-06-03,HIMS,Chief Operating Officer,SELL,6100.0,20.8557,127219.76999999999,"BAIRD, MELISSA",Class A Common Stock
+2024-06-03,HIMS,Chief Commercial Officer,SELL,101962.0,21.0,2141202.0,"CHI, MICHAEL",Class A Common Stock
+2024-06-03,HIMS,Chief Operating Officer,SELL,64406.0,20.32,1308729.92,"BAIRD, MELISSA",Class A Common Stock
+2024-06-03,HIMS,Chief Commercial Officer,BUY,101962.0,6.82,695380.8400000001,"CHI, MICHAEL",Class A Common Stock
+2024-06-03,HIMS,Chief Commercial Officer,BUY,19141.0,6.82,130541.62000000001,"CHI, MICHAEL",Class A Common Stock
+2024-06-04,HIMS,Chief Operating Officer,SELL,9293.0,20.6897,192269.3821,"BAIRD, MELISSA",Class A Common Stock
+2024-06-04,HIMS,Chief Operating Officer,BUY,17625.0,0.4,7050.0,"BAIRD, MELISSA",Class A Common Stock
+2024-06-04,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,119049.0,19.7298,2348812.9602,"DUDUM, ANDREW",Class A Common Stock
+2024-06-04,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,90992.0,19.7296,1795235.7632000002,"DUDUM, ANDREW",Class A Common Stock
+2024-06-04,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,188888.0,2.43,458997.84,"DUDUM, ANDREW",Class A Common Stock
+2024-06-04,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,53452.0,20.1325,1076122.3900000001,"DUDUM, ANDREW",Class A Common Stock
+2024-06-04,HIMS,Chief Operating Officer,SELL,8332.0,20.1141,167590.6812,"BAIRD, MELISSA",Class A Common Stock
+2024-06-04,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,69839.0,20.1324,1406026.6836,"DUDUM, ANDREW",Class A Common Stock
+2024-06-05,HIMS,Chief Operating Officer,SELL,3562.0,21.6575,77144.015,"BAIRD, MELISSA",Class A Common Stock
+2024-06-05,HIMS,Chief Operating Officer,SELL,14063.0,21.2496,298833.1248,"BAIRD, MELISSA",Class A Common Stock
+2024-06-05,HIMS,Chief Operating Officer,BUY,17625.0,0.4,7050.0,"BAIRD, MELISSA",Class A Common Stock
+2024-06-06,HIMS,Chief Financial Officer,SELL,98635.0,21.4247,2113225.2845,"OKUPE, OLUYEMI",Class A Common Stock
+2024-06-06,HIMS,Chief Financial Officer,BUY,7396.0,11.53,85275.87999999999,"OKUPE, OLUYEMI",Class A Common Stock
+2024-06-06,HIMS,Chief Financial Officer,BUY,86398.0,5.01,432853.98,"OKUPE, OLUYEMI",Class A Common Stock
+2024-06-10,HIMS,Chief Commercial Officer,BUY,4528.0,13.9,62939.200000000004,"CHI, MICHAEL",Class A Common Stock
+2024-06-10,HIMS,Chief Commercial Officer,SELL,17571.0,22.0075,386693.78250000003,"CHI, MICHAEL",Class A Common Stock
+2024-06-10,HIMS,Chief Commercial Officer,BUY,1910.0,5.01,9569.1,"CHI, MICHAEL",Class A Common Stock
+2024-06-10,HIMS,Chief Commercial Officer,BUY,8169.0,6.82,55712.58,"CHI, MICHAEL",Class A Common Stock
+2024-06-10,HIMS,Chief Commercial Officer,BUY,2964.0,11.53,34174.92,"CHI, MICHAEL",Class A Common Stock
+2024-06-11,HIMS,Chief Legal Officer,SELL,2510.0,21.47,53889.7,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-06-11,HIMS,Chief Commercial Officer,BUY,251390.0,13.9,3494321.0,"CHI, MICHAEL",Class A Common Stock
+2024-06-11,HIMS,Chief Commercial Officer,BUY,67304.0,5.01,337193.04,"CHI, MICHAEL",Class A Common Stock
+2024-06-11,HIMS,Chief Commercial Officer,BUY,27849.0,11.53,321098.97,"CHI, MICHAEL",Class A Common Stock
+2024-06-11,HIMS,Chief Commercial Officer,SELL,374669.0,22.0528,8262500.523200001,"CHI, MICHAEL",Class A Common Stock
+2024-06-11,HIMS,Chief Commercial Officer,BUY,28126.0,6.82,191819.32,"CHI, MICHAEL",Class A Common Stock
+2024-06-14,HIMS,"Director, Chief Medical Officer",SELL,3811.0,23.75,90511.25,"CARROLL, PATRICK HARRISON",Class A Common Stock
+2024-06-14,HIMS,Chief Legal Officer,SELL,23739.0,23.75,563801.25,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-06-14,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,97052.0,23.75,2304985.0,"DUDUM, ANDREW",Class A Common Stock
+2024-06-14,HIMS,PAO,SELL,7934.0,23.75,188432.5,"BECKLUND, IRENE",Class A Common Stock
+2024-06-14,HIMS,Chief Operating Officer,SELL,28778.0,23.75,683477.5,"BAIRD, MELISSA",Class A Common Stock
+2024-06-14,HIMS,Chief Commercial Officer,SELL,42303.0,23.75,1004696.25,"CHI, MICHAEL",Class A Common Stock
+2024-06-14,HIMS,Chief Financial Officer,SELL,51561.0,23.75,1224573.75,"OKUPE, OLUYEMI",Class A Common Stock
+2024-06-17,HIMS,PAO,BUY,472.0,9.41,4441.52,"BECKLUND, IRENE",Class A Common Stock
+2024-06-17,HIMS,PAO,SELL,472.0,24.1,11375.2,"BECKLUND, IRENE",Class A Common Stock
+2024-06-18,HIMS,Chief Commercial Officer,SELL,25549.0,23.59,602700.91,"CHI, MICHAEL",Class A Common Stock
+2024-06-18,HIMS,PAO,SELL,13241.0,23.59,312355.19,"BECKLUND, IRENE",Class A Common Stock
+2024-06-20,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,26741.0,23.3661,624832.8801,"DUDUM, ANDREW",Class A Common Stock
+2024-06-20,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,700.0,24.3075,17015.25,"DUDUM, ANDREW",Class A Common Stock
+2024-06-20,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,18314.0,22.3457,409239.1498,"DUDUM, ANDREW",Class A Common Stock
+2024-06-20,HIMS,Chief Commercial Officer,BUY,7500.0,13.9,104250.0,"CHI, MICHAEL",Class A Common Stock
+2024-06-20,HIMS,Chief Commercial Officer,SELL,7500.0,24.5,183750.0,"CHI, MICHAEL",Class A Common Stock
+2024-06-24,HIMS,Chief Commercial Officer,BUY,17303.0,5.01,86688.03,"CHI, MICHAEL",Class A Common Stock
+2024-06-24,HIMS,Chief Commercial Officer,SELL,17303.0,22.07,381877.21,"CHI, MICHAEL",Class A Common Stock
+2024-06-25,HIMS,Chief Financial Officer,SELL,11546.0,22.2146,256489.7716,"OKUPE, OLUYEMI",Class A Common Stock
+2024-06-25,HIMS,Chief Legal Officer,SELL,2335.0,22.18,51790.3,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-07-03,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,188888.0,2.43,458997.84,"DUDUM, ANDREW",Class A Common Stock
+2024-07-03,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,94444.0,20.7449,1959231.3356,"DUDUM, ANDREW",Class A Common Stock
+2024-07-03,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,144444.0,20.6915,2988763.026,"DUDUM, ANDREW",Class A Common Stock
+2024-07-03,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,94444.0,20.7478,1959505.2232000001,"DUDUM, ANDREW",Class A Common Stock
+2024-07-05,HIMS,Chief Operating Officer,SELL,17625.0,20.5141,361561.0125,"BAIRD, MELISSA",Class A Common Stock
+2024-07-05,HIMS,Chief Operating Officer,BUY,17625.0,0.4,7050.0,"BAIRD, MELISSA",Class A Common Stock
+2024-07-08,HIMS,Chief Operating Officer,BUY,17625.0,0.4,7050.0,"BAIRD, MELISSA",Class A Common Stock
+2024-07-08,HIMS,Chief Operating Officer,SELL,17625.0,20.901,368380.125,"BAIRD, MELISSA",Class A Common Stock
+2024-07-09,HIMS,Chief Operating Officer,SELL,17625.0,20.4191,359886.6375,"BAIRD, MELISSA",Class A Common Stock
+2024-07-09,HIMS,Chief Legal Officer,SELL,2335.0,20.28,47353.8,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-07-09,HIMS,Chief Operating Officer,BUY,17625.0,0.4,7050.0,"BAIRD, MELISSA",Class A Common Stock
+2024-07-12,HIMS,Chief Commercial Officer,BUY,2054.0,11.53,23682.62,"CHI, MICHAEL",Class A Common Stock
+2024-07-12,HIMS,Chief Commercial Officer,SELL,9313.0,22.0,204886.0,"CHI, MICHAEL",Class A Common Stock
+2024-07-12,HIMS,Chief Commercial Officer,BUY,7259.0,6.82,49506.380000000005,"CHI, MICHAEL",Class A Common Stock
+2024-07-16,HIMS,PAO,BUY,472.0,9.41,4441.52,"BECKLUND, IRENE",Class A Common Stock
+2024-07-16,HIMS,PAO,SELL,472.0,23.23,10964.56,"BECKLUND, IRENE",Class A Common Stock
+2024-07-23,HIMS,Chief Commercial Officer,SELL,7500.0,22.0,165000.0,"CHI, MICHAEL",Class A Common Stock
+2024-07-23,HIMS,Chief Legal Officer,SELL,2335.0,20.29,47377.15,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-07-23,HIMS,Chief Commercial Officer,BUY,7500.0,13.9,104250.0,"CHI, MICHAEL",Class A Common Stock
+2024-07-24,HIMS,Chief Commercial Officer,BUY,17303.0,5.01,86688.03,"CHI, MICHAEL",Class A Common Stock
+2024-07-24,HIMS,Chief Commercial Officer,SELL,17303.0,22.25,384991.75,"CHI, MICHAEL",Class A Common Stock
+2024-08-01,HIMS,Chief Commercial Officer,SELL,2054.0,22.0,45188.0,"CHI, MICHAEL",Class A Common Stock
+2024-08-01,HIMS,Chief Commercial Officer,BUY,2054.0,11.53,23682.62,"CHI, MICHAEL",Class A Common Stock
+2024-08-05,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,100.0,16.87,1687.0,"DUDUM, ANDREW",Class A Common Stock
+2024-08-05,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,188888.0,2.43,458997.84,"DUDUM, ANDREW",Class A Common Stock
+2024-08-05,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,94344.0,16.4679,1553647.5576,"DUDUM, ANDREW",Class A Common Stock
+2024-08-05,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,131541.0,16.5323,2174675.2742999997,"DUDUM, ANDREW",Class A Common Stock
+2024-08-05,HIMS,Chief Operating Officer,BUY,16784.0,0.4,6713.6,"BAIRD, MELISSA",Class A Common Stock
+2024-08-05,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,94444.0,16.4709,1555577.6796,"DUDUM, ANDREW",Class A Common Stock
+2024-08-05,HIMS,Chief Operating Officer,SELL,6433.0,16.8156,108174.7548,"BAIRD, MELISSA",Class A Common Stock
+2024-08-05,HIMS,Chief Operating Officer,SELL,10351.0,17.7111,183327.5961,"BAIRD, MELISSA",Class A Common Stock
+2024-08-05,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,12903.0,16.9746,219023.2638,"DUDUM, ANDREW",Class A Common Stock
+2024-08-06,HIMS,Chief Operating Officer,SELL,9524.0,16.7147,159190.8028,"BAIRD, MELISSA",Class A Common Stock
+2024-08-06,HIMS,Chief Legal Officer,SELL,2334.0,17.3,40378.200000000004,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-08-06,HIMS,Chief Operating Officer,SELL,7260.0,17.3715,126117.09000000001,"BAIRD, MELISSA",Class A Common Stock
+2024-08-06,HIMS,Chief Operating Officer,BUY,16784.0,0.4,6713.6,"BAIRD, MELISSA",Class A Common Stock
+2024-08-07,HIMS,Chief Operating Officer,BUY,16649.0,0.4,6659.6,"BAIRD, MELISSA",Class A Common Stock
+2024-08-07,HIMS,Chief Operating Officer,SELL,16649.0,16.2171,269998.49789999996,"BAIRD, MELISSA",Class A Common Stock
+2024-08-13,HIMS,Chief Financial Officer,BUY,6430.0,5.01,32214.3,"OKUPE, OLUYEMI",Class A Common Stock
+2024-08-16,HIMS,PAO,SELL,472.0,15.66,7391.52,"BECKLUND, IRENE",Class A Common Stock
+2024-08-16,HIMS,PAO,BUY,472.0,9.41,4441.52,"BECKLUND, IRENE",Class A Common Stock
+2024-08-20,HIMS,Chief Legal Officer,SELL,2334.0,16.71,39001.14,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-08-27,HIMS,Director,SELL,7000.0,15.152,106064.0,"PENDARVIS, CHRISTIANE",Class A Common Stock
+2024-09-03,HIMS,Chief Financial Officer,SELL,1399.0,14.584,20403.016,"OKUPE, OLUYEMI",Class A Common Stock
+2024-09-03,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,188888.0,2.43,458997.84,"DUDUM, ANDREW",Class A Common Stock
+2024-09-03,HIMS,Chief Operating Officer,SELL,6849.0,14.4938,99268.0362,"BAIRD, MELISSA",Class A Common Stock
+2024-09-03,HIMS,Chief Financial Officer,SELL,1008.0,14.5866,14703.292800000001,"OKUPE, OLUYEMI",Class A Common Stock
+2024-09-03,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,144444.0,14.5027,2094827.9988000002,"DUDUM, ANDREW",Class A Common Stock
+2024-09-03,HIMS,Chief Financial Officer,SELL,3.0,14.6,43.8,"OKUPE, OLUYEMI",Class A Common Stock
+2024-09-03,HIMS,Chief Operating Officer,BUY,11884.0,0.4,4753.6,"BAIRD, MELISSA",Class A Common Stock
+2024-09-03,HIMS,Chief Financial Officer,BUY,9199.0,5.01,46086.99,"OKUPE, OLUYEMI",Class A Common Stock
+2024-09-03,HIMS,Chief Financial Officer,SELL,9199.0,14.6025,134328.3975,"OKUPE, OLUYEMI",Class A Common Stock
+2024-09-03,HIMS,Chief Legal Officer,SELL,2345.0,14.65,34354.25,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-09-03,HIMS,Chief Operating Officer,SELL,5035.0,14.49,72957.15,"BAIRD, MELISSA",Class A Common Stock
+2024-09-03,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,188888.0,14.5594,2750095.9472,"DUDUM, ANDREW",Class A Common Stock
+2024-09-04,HIMS,Chief Operating Officer,SELL,6714.0,14.6484,98349.3576,"BAIRD, MELISSA",Class A Common Stock
+2024-09-04,HIMS,Chief Operating Officer,SELL,5035.0,14.6481,73753.1835,"BAIRD, MELISSA",Class A Common Stock
+2024-09-04,HIMS,Chief Operating Officer,BUY,11749.0,0.4,4699.6,"BAIRD, MELISSA",Class A Common Stock
+2024-09-05,HIMS,Chief Operating Officer,SELL,6714.0,14.3988,96673.5432,"BAIRD, MELISSA",Class A Common Stock
+2024-09-05,HIMS,Chief Operating Officer,BUY,11749.0,0.4,4699.6,"BAIRD, MELISSA",Class A Common Stock
+2024-09-05,HIMS,Chief Operating Officer,SELL,5035.0,14.3964,72485.874,"BAIRD, MELISSA",Class A Common Stock
+2024-09-13,HIMS,Chief Operating Officer,SELL,28778.0,16.57,476851.46,"BAIRD, MELISSA",Class A Common Stock
+2024-09-13,HIMS,Chief Legal Officer,SELL,23715.0,16.57,392957.55,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-09-13,HIMS,Chief Commercial Officer,SELL,42303.0,16.57,700960.71,"CHI, MICHAEL",Class A Common Stock
+2024-09-13,HIMS,"Director, Chief Medical Officer",SELL,3811.0,16.57,63148.270000000004,"CARROLL, PATRICK HARRISON",Class A Common Stock
+2024-09-13,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,97028.0,16.57,1607753.96,"DUDUM, ANDREW",Class A Common Stock
+2024-09-13,HIMS,PAO,SELL,11872.0,16.57,196719.04,"BECKLUND, IRENE",Class A Common Stock
+2024-09-13,HIMS,Chief Financial Officer,SELL,51536.0,16.57,853951.52,"OKUPE, OLUYEMI",Class A Common Stock
+2024-09-16,HIMS,PAO,SELL,472.0,16.45,7764.4,"BECKLUND, IRENE",Class A Common Stock
+2024-09-16,HIMS,PAO,BUY,472.0,9.41,4441.52,"BECKLUND, IRENE",Class A Common Stock
+2024-09-17,HIMS,Chief Commercial Officer,SELL,25550.0,16.5,421575.0,"CHI, MICHAEL",Class A Common Stock
+2024-09-17,HIMS,PAO,SELL,10017.0,16.5,165280.5,"BECKLUND, IRENE",Class A Common Stock
+2024-09-17,HIMS,Chief Legal Officer,SELL,2339.0,16.5,38593.5,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-09-20,HIMS,Chief Financial Officer,SELL,12651.0,16.7857,212355.8907,"OKUPE, OLUYEMI",Class A Common Stock
+2024-09-20,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,3668.0,16.7798,61548.30640000001,"DUDUM, ANDREW",Class A Common Stock
+2024-09-20,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,42099.0,16.2922,685885.3278000001,"DUDUM, ANDREW",Class A Common Stock
+2024-10-01,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,144444.0,18.2174,2631394.1256000004,"DUDUM, ANDREW",Class A Common Stock
+2024-10-01,HIMS,Chief Legal Officer,SELL,2339.0,18.5,43271.5,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-10-01,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,188888.0,2.43,458997.84,"DUDUM, ANDREW",Class A Common Stock
+2024-10-01,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,94444.0,18.175,1716519.7,"DUDUM, ANDREW",Class A Common Stock
+2024-10-01,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,94444.0,18.1763,1716642.4772,"DUDUM, ANDREW",Class A Common Stock
+2024-10-02,HIMS,Chief Financial Officer,SELL,997.0,19.0815,19024.2555,"OKUPE, OLUYEMI",Class A Common Stock
+2024-10-02,HIMS,Chief Financial Officer,SELL,9193.0,18.8815,173577.62949999998,"OKUPE, OLUYEMI",Class A Common Stock
+2024-10-02,HIMS,Chief Financial Officer,SELL,1391.0,19.0385,26482.553499999998,"OKUPE, OLUYEMI",Class A Common Stock
+2024-10-02,HIMS,Chief Financial Officer,BUY,6437.0,5.01,32249.37,"OKUPE, OLUYEMI",Class A Common Stock
+2024-10-07,HIMS,Chief Operating Officer,SELL,41125.0,19.5752,805030.1,"BAIRD, MELISSA",Class A Common Stock
+2024-10-07,HIMS,Chief Financial Officer,SELL,9868.0,19.9627,196991.9236,"OKUPE, OLUYEMI",Class A Common Stock
+2024-10-07,HIMS,Chief Operating Officer,SELL,17625.0,19.5515,344595.1875,"BAIRD, MELISSA",Class A Common Stock
+2024-10-07,HIMS,Chief Operating Officer,BUY,58750.0,0.4,23500.0,"BAIRD, MELISSA",Class A Common Stock
+2024-10-14,HIMS,Chief Financial Officer,SELL,9193.0,19.9494,183394.8342,"OKUPE, OLUYEMI",Class A Common Stock
+2024-10-14,HIMS,Chief Financial Officer,SELL,183600.0,20.3652,3739050.72,"OKUPE, OLUYEMI",Class A Common Stock
+2024-10-14,HIMS,Chief Financial Officer,SELL,2388.0,20.0035,47768.358,"OKUPE, OLUYEMI",Class A Common Stock
+2024-10-14,HIMS,Chief Financial Officer,BUY,207814.0,5.01,1041148.1399999999,"OKUPE, OLUYEMI",Class A Common Stock
+2024-10-14,HIMS,Chief Financial Officer,BUY,11700.0,11.53,134901.0,"OKUPE, OLUYEMI",Class A Common Stock
+2024-10-14,HIMS,Chief Financial Officer,SELL,6326.0,19.95,126203.7,"OKUPE, OLUYEMI",Class A Common Stock
+2024-10-14,HIMS,Chief Financial Officer,SELL,40132.0,19.9803,801849.3996,"OKUPE, OLUYEMI",Class A Common Stock
+2024-10-14,HIMS,Chief Financial Officer,SELL,11700.0,20.0355,234415.34999999998,"OKUPE, OLUYEMI",Class A Common Stock
+2024-10-14,HIMS,Chief Financial Officer,SELL,16400.0,21.0699,345546.36,"OKUPE, OLUYEMI",Class A Common Stock
+2024-10-15,HIMS,Chief Commercial Officer,SELL,75493.0,22.0,1660846.0,"CHI, MICHAEL",Class A Common Stock
+2024-10-15,HIMS,Chief Legal Officer,SELL,2339.0,20.41,47738.99,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-10-15,HIMS,Chief Commercial Officer,BUY,21777.0,6.82,148519.14,"CHI, MICHAEL",Class A Common Stock
+2024-10-15,HIMS,Chief Commercial Officer,BUY,34607.0,5.01,173381.07,"CHI, MICHAEL",Class A Common Stock
+2024-10-15,HIMS,Chief Commercial Officer,BUY,15000.0,13.9,208500.0,"CHI, MICHAEL",Class A Common Stock
+2024-10-15,HIMS,Chief Commercial Officer,BUY,4109.0,11.53,47376.77,"CHI, MICHAEL",Class A Common Stock
+2024-10-16,HIMS,PAO,BUY,471.0,9.41,4432.11,"BECKLUND, IRENE",Class A Common Stock
+2024-10-16,HIMS,PAO,SELL,471.0,22.64,10663.44,"BECKLUND, IRENE",Class A Common Stock
+2024-10-21,HIMS,Chief Commercial Officer,SELL,7500.0,22.2,166500.0,"CHI, MICHAEL",Class A Common Stock
+2024-10-21,HIMS,Chief Commercial Officer,BUY,7500.0,13.9,104250.0,"CHI, MICHAEL",Class A Common Stock
+2024-10-25,HIMS,Chief Commercial Officer,BUY,17304.0,5.01,86693.04,"CHI, MICHAEL",Class A Common Stock
+2024-10-25,HIMS,Chief Commercial Officer,SELL,17304.0,22.0,380688.0,"CHI, MICHAEL",Class A Common Stock
+2024-10-29,HIMS,Chief Legal Officer,SELL,2339.0,23.16,54171.24,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-11-05,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,25103.0,21.7596,546231.2387999999,"DUDUM, ANDREW",Class A Common Stock
+2024-11-05,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,50928.0,21.1869,1079006.4432,"DUDUM, ANDREW",Class A Common Stock
+2024-11-05,HIMS,Chief Commercial Officer,BUY,2054.0,11.53,23682.62,"CHI, MICHAEL",Class A Common Stock
+2024-11-05,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,81114.0,20.0665,1627674.081,"DUDUM, ANDREW",Class A Common Stock
+2024-11-05,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,63798.0,20.0502,1279162.6596000001,"DUDUM, ANDREW",Class A Common Stock
+2024-11-05,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,99987.0,21.1946,2119184.4702000003,"DUDUM, ANDREW",Class A Common Stock
+2024-11-05,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,12402.0,21.763,269904.726,"DUDUM, ANDREW",Class A Common Stock
+2024-11-05,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,188888.0,2.43,458997.84,"DUDUM, ANDREW",Class A Common Stock
+2024-11-05,HIMS,Chief Commercial Officer,SELL,2054.0,22.0,45188.0,"CHI, MICHAEL",Class A Common Stock
+2024-11-06,HIMS,"Director, Chief Medical Officer",SELL,15000.0,22.0729,331093.5,"CARROLL, PATRICK HARRISON",Class A Common Stock
+2024-11-11,HIMS,Chief Commercial Officer,SELL,7259.0,24.77,179805.43,"CHI, MICHAEL",Class A Common Stock
+2024-11-11,HIMS,"Director, Chief Medical Officer",SELL,4707.0,28.24,132925.68,"CARROLL, PATRICK HARRISON",Class A Common Stock
+2024-11-11,HIMS,Chief Commercial Officer,BUY,7259.0,6.82,49506.380000000005,"CHI, MICHAEL",Class A Common Stock
+2024-11-12,HIMS,Director,BUY,4000.0,26.9399,107759.6,"MANUEL, ANJA",Class A Common Stock
+2024-11-12,HIMS,Chief Legal Officer,SELL,2338.0,26.46,61863.48,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-11-13,HIMS,Chief Financial Officer,SELL,9193.0,28.382,260915.72600000002,"OKUPE, OLUYEMI",Class A Common Stock
+2024-11-13,HIMS,Chief Financial Officer,SELL,131305.0,30.0603,3947067.6915,"OKUPE, OLUYEMI",Class A Common Stock
+2024-11-13,HIMS,Chief Financial Officer,SELL,1391.0,28.7233,39954.1103,"OKUPE, OLUYEMI",Class A Common Stock
+2024-11-13,HIMS,Director,SELL,40000.0,29.9896,1199584.0,"WELLS, DAVID B",Class A Common Stock
+2024-11-13,HIMS,Chief Financial Officer,BUY,83209.0,5.01,416877.08999999997,"OKUPE, OLUYEMI",Class A Common Stock
+2024-11-13,HIMS,Chief Financial Officer,BUY,26100.0,11.53,300933.0,"OKUPE, OLUYEMI",Class A Common Stock
+2024-11-13,HIMS,Chief Financial Officer,SELL,997.0,28.7575,28671.2275,"OKUPE, OLUYEMI",Class A Common Stock
+2024-11-14,HIMS,Director,BUY,1000.0,24.5,24500.0,"MANUEL, ANJA",Class A Common Stock
+2024-11-18,HIMS,Chief Operating Officer,BUY,58750.0,0.4,23500.0,"BAIRD, MELISSA",Class A Common Stock
+2024-11-18,HIMS,Chief Operating Officer,SELL,11426.0,21.3026,243403.5076,"BAIRD, MELISSA",Class A Common Stock
+2024-11-18,HIMS,Chief Operating Officer,SELL,6199.0,20.6048,127729.15520000001,"BAIRD, MELISSA",Class A Common Stock
+2024-11-18,HIMS,Chief Operating Officer,SELL,12601.0,20.4821,258094.9421,"BAIRD, MELISSA",Class A Common Stock
+2024-11-18,HIMS,Chief Operating Officer,SELL,28524.0,21.2851,607136.1923999999,"BAIRD, MELISSA",Class A Common Stock
+2024-11-18,HIMS,PAO,SELL,472.0,19.42,9166.240000000002,"BECKLUND, IRENE",Class A Common Stock
+2024-11-18,HIMS,PAO,BUY,472.0,9.41,4441.52,"BECKLUND, IRENE",Class A Common Stock
+2024-11-19,HIMS,Chief Commercial Officer,SELL,7500.0,22.0,165000.0,"CHI, MICHAEL",Class A Common Stock
+2024-11-19,HIMS,Chief Commercial Officer,BUY,7500.0,13.9,104250.0,"CHI, MICHAEL",Class A Common Stock
+2024-11-25,HIMS,Chief Commercial Officer,SELL,17303.0,26.49,458356.47,"CHI, MICHAEL",Class A Common Stock
+2024-11-25,HIMS,Chief Financial Officer,BUY,97776.0,5.01,489857.75999999995,"OKUPE, OLUYEMI",Class A Common Stock
+2024-11-25,HIMS,Chief Financial Officer,SELL,1391.0,26.5781,36970.1371,"OKUPE, OLUYEMI",Class A Common Stock
+2024-11-25,HIMS,Chief Financial Officer,SELL,997.0,26.5783,26498.5651,"OKUPE, OLUYEMI",Class A Common Stock
+2024-11-25,HIMS,Chief Financial Officer,SELL,9193.0,26.6525,245016.4325,"OKUPE, OLUYEMI",Class A Common Stock
+2024-11-25,HIMS,Chief Financial Officer,SELL,90412.0,30.0072,2713010.9664000003,"OKUPE, OLUYEMI",Class A Common Stock
+2024-11-25,HIMS,Chief Commercial Officer,BUY,17303.0,5.01,86688.03,"CHI, MICHAEL",Class A Common Stock
+2024-11-26,HIMS,Chief Legal Officer,SELL,2343.0,29.9,70055.7,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-12-02,HIMS,Chief Commercial Officer,BUY,2054.0,11.53,23682.62,"CHI, MICHAEL",Class A Common Stock
+2024-12-02,HIMS,Chief Commercial Officer,SELL,2054.0,33.56,68932.24,"CHI, MICHAEL",Class A Common Stock
+2024-12-02,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,33513.0,33.3797,1118653.8861,"DUDUM, ANDREW",Class A Common Stock
+2024-12-10,HIMS,Chief Commercial Officer,SELL,7259.0,32.25,234102.75,"CHI, MICHAEL",Class A Common Stock
+2024-12-10,HIMS,Chief Operating Officer,SELL,26266.0,30.5526,802494.5916,"BAIRD, MELISSA",Class A Common Stock
+2024-12-10,HIMS,Chief Operating Officer,SELL,51082.0,31.0873,1588001.4586,"BAIRD, MELISSA",Class A Common Stock
+2024-12-10,HIMS,Chief Commercial Officer,BUY,7259.0,6.82,49506.380000000005,"CHI, MICHAEL",Class A Common Stock
+2024-12-10,HIMS,Chief Operating Officer,BUY,85561.0,0.4,34224.4,"BAIRD, MELISSA",Class A Common Stock
+2024-12-10,HIMS,Chief Operating Officer,SELL,8213.0,31.9777,262632.8501,"BAIRD, MELISSA",Class A Common Stock
+2024-12-13,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,97062.0,30.02,2913801.2399999998,"DUDUM, ANDREW",Class A Common Stock
+2024-12-13,HIMS,Chief Commercial Officer,SELL,42304.0,30.02,1269966.08,"CHI, MICHAEL",Class A Common Stock
+2024-12-13,HIMS,PAO,SELL,11875.0,30.02,356487.5,"BECKLUND, IRENE",Class A Common Stock
+2024-12-13,HIMS,"Director, Chief Medical Officer",SELL,5387.0,30.02,161717.74,"CARROLL, PATRICK HARRISON",Class A Common Stock
+2024-12-13,HIMS,Chief Legal Officer,SELL,23751.0,30.02,713005.02,"BOUGHTON, SOLEIL",Class A Common Stock
+2024-12-13,HIMS,Chief Financial Officer,SELL,51573.0,30.02,1548221.46,"OKUPE, OLUYEMI",Class A Common Stock
+2024-12-13,HIMS,Chief Operating Officer,SELL,28778.0,30.02,863915.5599999999,"BAIRD, MELISSA",Class A Common Stock
+2024-12-16,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,16667.0,2.43,40500.810000000005,"DUDUM, ANDREW",Class A Common Stock
+2024-12-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,17001.0,28.7849,489372.0849,"DUDUM, ANDREW",Class A Common Stock
+2024-12-16,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,17001.0,2.43,41312.43,"DUDUM, ANDREW",Class A Common Stock
+2024-12-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,31934.0,28.8862,922451.9108,"DUDUM, ANDREW",Class A Common Stock
+2024-12-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,15600.0,29.7767,464516.52,"DUDUM, ANDREW",Class A Common Stock
+2024-12-16,HIMS,PAO,SELL,472.0,29.58,13961.759999999998,"BECKLUND, IRENE",Class A Common Stock
+2024-12-16,HIMS,PAO,BUY,472.0,9.41,4441.52,"BECKLUND, IRENE",Class A Common Stock
+2024-12-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,41667.0,30.3459,1264422.6153,"DUDUM, ANDREW",Class A Common Stock
+2024-12-16,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,41667.0,2.43,101250.81000000001,"DUDUM, ANDREW",Class A Common Stock
+2024-12-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,16667.0,28.7873,479797.92909999995,"DUDUM, ANDREW",Class A Common Stock
+2024-12-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,2792.0,28.8695,80603.644,"DUDUM, ANDREW",Class A Common Stock
+2024-12-17,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,10539.0,32.6342,343931.8338,"DUDUM, ANDREW",Class A Common Stock
+2024-12-17,HIMS,Chief Commercial Officer,SELL,25550.0,32.2,822710.0000000001,"CHI, MICHAEL",Class A Common Stock
+2024-12-17,HIMS,PAO,SELL,10012.0,32.2,322386.4,"BECKLUND, IRENE",Class A Common Stock
+2024-12-17,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,68707.0,32.0082,2199187.3974,"DUDUM, ANDREW",Class A Common Stock
+2024-12-19,HIMS,Chief Commercial Officer,BUY,7500.0,13.9,104250.0,"CHI, MICHAEL",Class A Common Stock
+2024-12-19,HIMS,Chief Commercial Officer,SELL,7500.0,26.0,195000.0,"CHI, MICHAEL",Class A Common Stock
+2024-12-20,HIMS,Chief Financial Officer,SELL,4213.0,25.7511,108489.3843,"OKUPE, OLUYEMI",Class A Common Stock
+2024-12-20,HIMS,Chief Financial Officer,SELL,6320.0,25.7986,163047.152,"OKUPE, OLUYEMI",Class A Common Stock
+2024-12-20,HIMS,Chief Financial Officer,SELL,4213.0,25.7529,108496.96770000001,"OKUPE, OLUYEMI",Class A Common Stock
+2024-12-20,HIMS,Chief Financial Officer,SELL,4213.0,25.753,108497.389,"OKUPE, OLUYEMI",Class A Common Stock
+2024-12-24,HIMS,Chief Commercial Officer,SELL,17303.0,27.97,483964.91,"CHI, MICHAEL",Class A Common Stock
+2024-12-24,HIMS,Chief Commercial Officer,BUY,17303.0,5.01,86688.03,"CHI, MICHAEL",Class A Common Stock
+2024-12-26,HIMS,Chief Financial Officer,SELL,4213.0,29.9829,126317.9577,"OKUPE, OLUYEMI",Class A Common Stock
+2024-12-27,HIMS,Chief Operating Officer,BUY,26000.0,5.01,130260.0,"BAIRD, MELISSA",Class A Common Stock
+2024-12-27,HIMS,Chief Operating Officer,BUY,5518.0,2.43,13408.740000000002,"BAIRD, MELISSA",Class A Common Stock
+2025-01-02,HIMS,Chief Commercial Officer,BUY,2055.0,11.53,23694.149999999998,"CHI, MICHAEL",Class A Common Stock
+2025-01-02,HIMS,Chief Financial Officer,SELL,997.0,24.6632,24589.2104,"OKUPE, OLUYEMI",Class A Common Stock
+2025-01-02,HIMS,Chief Commercial Officer,SELL,2055.0,24.62,50594.1,"CHI, MICHAEL",Class A Common Stock
+2025-01-02,HIMS,Chief Financial Officer,SELL,9193.0,24.6732,226820.7276,"OKUPE, OLUYEMI",Class A Common Stock
+2025-01-02,HIMS,Chief Financial Officer,BUY,6437.0,5.01,32249.37,"OKUPE, OLUYEMI",Class A Common Stock
+2025-01-02,HIMS,Chief Financial Officer,SELL,1391.0,24.7115,34373.6965,"OKUPE, OLUYEMI",Class A Common Stock
+2025-01-06,HIMS,Chief Legal Officer,BUY,113768.0,2.43,276456.24,"BOUGHTON, SOLEIL",Class A Common Stock
+2025-01-06,HIMS,Chief Legal Officer,BUY,140255.0,5.01,702677.5499999999,"BOUGHTON, SOLEIL",Class A Common Stock
+2025-01-06,HIMS,Chief Legal Officer,SELL,238932.0,27.72,6623195.04,"BOUGHTON, SOLEIL",Class A Common Stock
+2025-01-06,HIMS,Chief Legal Officer,SELL,30000.0,28.0,840000.0,"BOUGHTON, SOLEIL",Class A Common Stock
+2025-01-10,HIMS,Chief Commercial Officer,BUY,7259.0,6.82,49506.380000000005,"CHI, MICHAEL",Class A Common Stock
+2025-01-10,HIMS,Chief Commercial Officer,SELL,7259.0,24.07,174724.13,"CHI, MICHAEL",Class A Common Stock
+2025-01-13,HIMS,Chief Financial Officer,SELL,997.0,24.5688,24495.0936,"OKUPE, OLUYEMI",Class A Common Stock
+2025-01-13,HIMS,Chief Financial Officer,SELL,9193.0,24.4151,224448.01429999998,"OKUPE, OLUYEMI",Class A Common Stock
+2025-01-13,HIMS,Chief Financial Officer,BUY,6437.0,5.01,32249.37,"OKUPE, OLUYEMI",Class A Common Stock
+2025-01-13,HIMS,Chief Financial Officer,SELL,1391.0,24.5436,34140.147600000004,"OKUPE, OLUYEMI",Class A Common Stock
+2025-01-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,7753.0,27.2206,211041.3118,"DUDUM, ANDREW",Class A Common Stock
+2025-01-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,40553.0,26.9639,1093467.0367,"DUDUM, ANDREW",Class A Common Stock
+2025-01-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,1100.0,27.3986,30138.46,"DUDUM, ANDREW",Class A Common Stock
+2025-01-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,25915.0,27.0344,700596.476,"DUDUM, ANDREW",Class A Common Stock
+2025-01-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,6981.0,27.2765,190417.24649999998,"DUDUM, ANDREW",Class A Common Stock
+2025-01-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,1692.0,27.0409,45753.2028,"DUDUM, ANDREW",Class A Common Stock
+2025-01-16,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,33668.0,2.43,81813.24,"DUDUM, ANDREW",Class A Common Stock
+2025-01-21,HIMS,Chief Operating Officer,BUY,67687.0,0.4,27074.800000000003,"BAIRD, MELISSA",Class A Common Stock
+2025-01-21,HIMS,Chief Operating Officer,SELL,4461.0,29.0507,129595.1727,"BAIRD, MELISSA",Class A Common Stock
+2025-01-21,HIMS,Chief Operating Officer,SELL,31845.0,29.548,940956.0599999999,"BAIRD, MELISSA",Class A Common Stock
+2025-01-21,HIMS,Chief Operating Officer,SELL,9280.0,28.6663,266023.264,"BAIRD, MELISSA",Class A Common Stock
+2025-01-21,HIMS,Chief Operating Officer,SELL,13430.0,29.5814,397278.202,"BAIRD, MELISSA",Class A Common Stock
+2025-01-21,HIMS,Chief Legal Officer,SELL,4153.0,28.68,119108.04,"BOUGHTON, SOLEIL",Class A Common Stock
+2025-01-21,HIMS,Chief Legal Officer,BUY,50000.0,5.01,250500.0,"BOUGHTON, SOLEIL",Class A Common Stock
+2025-01-21,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,300.0,30.0,9000.0,"DUDUM, ANDREW",Class A Common Stock
+2025-01-21,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,300.0,2.43,729.0,"DUDUM, ANDREW",Class A Common Stock
+2025-01-21,HIMS,Chief Operating Officer,SELL,4476.0,29.7175,133015.53,"BAIRD, MELISSA",Class A Common Stock
+2025-01-21,HIMS,Chief Legal Officer,SELL,50000.0,30.0,1500000.0,"BOUGHTON, SOLEIL",Class A Common Stock
+2025-01-21,HIMS,Chief Commercial Officer,SELL,306.0,28.68,8776.08,"CHI, MICHAEL",Class A Common Stock
+2025-01-21,HIMS,Chief Operating Officer,SELL,4195.0,28.5727,119862.4765,"BAIRD, MELISSA",Class A Common Stock
+2025-01-21,HIMS,Chief Commercial Officer,BUY,306.0,13.9,4253.400000000001,"CHI, MICHAEL",Class A Common Stock
+2025-01-22,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,14269.0,2.43,34673.670000000006,"DUDUM, ANDREW",Class A Common Stock
+2025-01-22,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,14269.0,30.0781,429184.4089,"DUDUM, ANDREW",Class A Common Stock
+2025-01-23,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,27098.0,30.0771,815029.2558,"DUDUM, ANDREW",Class A Common Stock
+2025-01-23,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,27098.0,2.43,65848.14,"DUDUM, ANDREW",Class A Common Stock
+2025-01-24,HIMS,Chief Commercial Officer,BUY,17304.0,5.01,86693.04,"CHI, MICHAEL",Class A Common Stock
+2025-01-24,HIMS,Chief Commercial Officer,SELL,17304.0,31.0,536424.0,"CHI, MICHAEL",Class A Common Stock
+2025-01-31,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,100000.0,2.43,243000.00000000003,"DUDUM, ANDREW",Class A Common Stock
+2025-01-31,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,100000.0,35.223,3522300.0,"DUDUM, ANDREW",Class A Common Stock
+2025-02-03,HIMS,Chief Legal Officer,SELL,4153.0,35.3,146600.9,"BOUGHTON, SOLEIL",Class A Common Stock
+2025-02-03,HIMS,Chief Commercial Officer,BUY,2054.0,11.53,23682.62,"CHI, MICHAEL",Class A Common Stock
+2025-02-03,HIMS,Chief Commercial Officer,SELL,2054.0,35.3,72506.2,"CHI, MICHAEL",Class A Common Stock
+2025-02-03,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,89367.0,38.93,3479057.31,"DUDUM, ANDREW",Class A Common Stock
+2025-02-04,HIMS,Chief Financial Officer,BUY,6437.0,5.01,32249.37,"OKUPE, OLUYEMI",Class A Common Stock
+2025-02-04,HIMS,Chief Financial Officer,SELL,1913.0,39.2014,74992.2782,"OKUPE, OLUYEMI",Class A Common Stock
+2025-02-04,HIMS,Chief Financial Officer,SELL,1391.0,39.2336,54573.937600000005,"OKUPE, OLUYEMI",Class A Common Stock
+2025-02-04,HIMS,Chief Financial Officer,SELL,997.0,39.3048,39186.8856,"OKUPE, OLUYEMI",Class A Common Stock
+2025-02-04,HIMS,Chief Financial Officer,SELL,7280.0,38.7331,281976.968,"OKUPE, OLUYEMI",Class A Common Stock
+2025-02-10,HIMS,Chief Financial Officer,SELL,997.0,43.2334,43103.6998,"OKUPE, OLUYEMI",Class A Common Stock
+2025-02-10,HIMS,Chief Commercial Officer,BUY,7259.0,6.82,49506.380000000005,"CHI, MICHAEL",Class A Common Stock
+2025-02-10,HIMS,Chief Financial Officer,SELL,9193.0,42.9564,394898.1852,"OKUPE, OLUYEMI",Class A Common Stock
+2025-02-10,HIMS,Chief Financial Officer,BUY,6437.0,5.01,32249.37,"OKUPE, OLUYEMI",Class A Common Stock
+2025-02-10,HIMS,Chief Commercial Officer,SELL,7259.0,43.28,314169.52,"CHI, MICHAEL",Class A Common Stock
+2025-02-10,HIMS,Chief Financial Officer,SELL,1391.0,43.2053,60098.5723,"OKUPE, OLUYEMI",Class A Common Stock
+2025-02-12,HIMS,Chief Operating Officer,BUY,67687.0,0.4,27074.800000000003,"BAIRD, MELISSA",Class A Common Stock
+2025-02-12,HIMS,Chief Operating Officer,SELL,15641.0,43.3713,678370.5033,"BAIRD, MELISSA",Class A Common Stock
+2025-02-12,HIMS,Chief Operating Officer,SELL,23172.0,44.3465,1027597.098,"BAIRD, MELISSA",Class A Common Stock
+2025-02-12,HIMS,Chief Operating Officer,SELL,18759.0,45.4531,852654.7029,"BAIRD, MELISSA",Class A Common Stock
+2025-02-12,HIMS,Chief Operating Officer,SELL,10115.0,46.2681,468001.8315,"BAIRD, MELISSA",Class A Common Stock
+2025-02-18,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,81660.0,58.259,4757429.94,"DUDUM, ANDREW",Class A Common Stock
+2025-02-18,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,33347.0,57.8597,1929447.4159,"DUDUM, ANDREW",Class A Common Stock
+2025-02-18,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,108334.0,2.43,263251.62,"DUDUM, ANDREW",Class A Common Stock
+2025-02-18,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,17001.0,2.43,41312.43,"DUDUM, ANDREW",Class A Common Stock
+2025-02-18,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,800.0,59.6889,47751.119999999995,"DUDUM, ANDREW",Class A Common Stock
+2025-02-18,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,1992.0,58.3457,116224.6344,"DUDUM, ANDREW",Class A Common Stock
+2025-02-18,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,1493.0,59.5411,88894.8623,"DUDUM, ANDREW",Class A Common Stock
+2025-02-18,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,31257.0,58.2191,1819754.4087,"DUDUM, ANDREW",Class A Common Stock
+2025-02-18,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,14784.0,57.8526,855292.8384,"DUDUM, ANDREW",Class A Common Stock
+2025-02-18,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,10328.0,59.5728,615267.8784,"DUDUM, ANDREW",Class A Common Stock
+2025-02-18,HIMS,Chief Legal Officer,SELL,4152.0,60.69,251984.88,"BOUGHTON, SOLEIL",Class A Common Stock
+2025-02-19,HIMS,Chief Commercial Officer,BUY,7500.0,13.9,104250.0,"CHI, MICHAEL",Class A Common Stock
+2025-02-19,HIMS,Chief Commercial Officer,SELL,7500.0,59.26,444450.0,"CHI, MICHAEL",Class A Common Stock
+2025-02-24,HIMS,Chief Commercial Officer,BUY,17303.0,5.01,86688.03,"CHI, MICHAEL",Class A Common Stock
+2025-02-24,HIMS,Chief Commercial Officer,SELL,17303.0,48.14,832966.42,"CHI, MICHAEL",Class A Common Stock
+2025-03-03,HIMS,Chief Legal Officer,SELL,4151.0,45.14,187376.14,"BOUGHTON, SOLEIL",Class A Common Stock
+2025-03-03,HIMS,PAO,SELL,2913.0,45.14,131492.82,"BECKLUND, IRENE",Class A Common Stock
+2025-03-05,HIMS,Chief Financial Officer,BUY,2530.0,5.01,12675.3,"OKUPE, OLUYEMI",Class A Common Stock
+2025-03-05,HIMS,Director,SELL,12500.0,40.0,500000.0,"PENDARVIS, CHRISTIANE",Class A Common Stock
+2025-03-11,HIMS,PAO,SELL,2203.0,34.77,76598.31000000001,"BECKLUND, IRENE",Class A Common Stock
+2025-03-14,HIMS,Chief Financial Officer,SELL,51671.0,33.14,1712376.94,"OKUPE, OLUYEMI",Class A Common Stock
+2025-03-14,HIMS,Chief Operating Officer,SELL,28779.0,33.14,953736.06,"BAIRD, MELISSA",Class A Common Stock
+2025-03-14,HIMS,Chief Commercial Officer,SELL,42305.0,33.14,1401987.7,"CHI, MICHAEL",Class A Common Stock
+2025-03-14,HIMS,"Director, Chief Medical Officer",SELL,3162.0,33.14,104788.68000000001,"CARROLL, PATRICK HARRISON",Class A Common Stock
+2025-03-14,HIMS,Chief Legal Officer,SELL,23798.0,33.14,788665.72,"BOUGHTON, SOLEIL",Class A Common Stock
+2025-03-14,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,97551.0,33.14,3232840.14,"DUDUM, ANDREW",Class A Common Stock
+2025-03-14,HIMS,PAO,SELL,7813.0,33.14,258922.82,"BECKLUND, IRENE",Class A Common Stock
+2025-03-17,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,16667.0,32.9562,549280.9854,"DUDUM, ANDREW",Class A Common Stock
+2025-03-17,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,2792.0,33.0085,92159.73199999999,"DUDUM, ANDREW",Class A Common Stock
+2025-03-17,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,40447.0,33.5539,1357154.5932999998,"DUDUM, ANDREW",Class A Common Stock
+2025-03-17,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,7087.0,34.1492,242015.3804,"DUDUM, ANDREW",Class A Common Stock
+2025-03-17,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,17001.0,2.43,41312.43,"DUDUM, ANDREW",Class A Common Stock
+2025-03-17,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,27347.0,33.4898,915845.5606000001,"DUDUM, ANDREW",Class A Common Stock
+2025-03-17,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,50000.0,2.43,121500.00000000001,"DUDUM, ANDREW",Class A Common Stock
+2025-03-17,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,50000.0,35.28,1764000.0,"DUDUM, ANDREW",Class A Common Stock
+2025-03-17,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,41667.0,2.43,101250.81000000001,"DUDUM, ANDREW",Class A Common Stock
+2025-03-17,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,14320.0,32.9147,471338.5040000001,"DUDUM, ANDREW",Class A Common Stock
+2025-03-17,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,16667.0,2.43,40500.810000000005,"DUDUM, ANDREW",Class A Common Stock
+2025-03-17,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,17001.0,32.9686,560499.1686000001,"DUDUM, ANDREW",Class A Common Stock
+2025-03-18,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,21047.0,34.1308,718350.9476000001,"DUDUM, ANDREW",Class A Common Stock
+2025-03-18,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,57713.0,33.7506,1947848.3778,"DUDUM, ANDREW",Class A Common Stock
+2025-03-18,HIMS,"Director, Chief Medical Officer",SELL,23287.0,34.31,798976.9700000001,"CARROLL, PATRICK HARRISON",Class A Common Stock
+2025-03-18,HIMS,Chief Legal Officer,SELL,3236.0,34.31,111027.16,"BOUGHTON, SOLEIL",Class A Common Stock
+2025-03-18,HIMS,PAO,SELL,8277.0,34.31,283983.87,"BECKLUND, IRENE",Class A Common Stock
+2025-03-21,HIMS,Chief Financial Officer,SELL,23118.0,32.4066,749175.7788,"OKUPE, OLUYEMI",Class A Common Stock
+2025-03-26,HIMS,Chief Operating Officer,SELL,22558.0,35.3738,797962.1804000001,"BAIRD, MELISSA",Class A Common Stock
+2025-03-26,HIMS,Chief Operating Officer,SELL,3241.0,36.599,118617.35899999998,"BAIRD, MELISSA",Class A Common Stock
+2025-03-26,HIMS,Chief Operating Officer,SELL,18941.0,34.5013,653489.1233,"BAIRD, MELISSA",Class A Common Stock
+2025-03-26,HIMS,Chief Operating Officer,BUY,67687.0,0.4,27074.800000000003,"BAIRD, MELISSA",Class A Common Stock
+2025-03-26,HIMS,Chief Operating Officer,SELL,4685.0,37.3542,175004.427,"BAIRD, MELISSA",Class A Common Stock
+2025-03-26,HIMS,Chief Operating Officer,SELL,18262.0,33.5709,613071.7758000001,"BAIRD, MELISSA",Class A Common Stock
+2025-03-31,HIMS,Chief Operating Officer,BUY,13460.0,5.01,67434.59999999999,"BAIRD, MELISSA",Class A Common Stock
+2025-03-31,HIMS,Chief Legal Officer,SELL,3236.0,27.77,89863.72,"BOUGHTON, SOLEIL",Class A Common Stock
+2025-04-02,HIMS,Chief Financial Officer,SELL,11581.0,29.2577,338833.4237,"OKUPE, OLUYEMI",Class A Common Stock
+2025-04-02,HIMS,Chief Financial Officer,BUY,6437.0,5.01,32249.37,"OKUPE, OLUYEMI",Class A Common Stock
+2025-04-03,HIMS,PAO,SELL,2203.0,28.78,63402.340000000004,"BECKLUND, IRENE",Class A Common Stock
+2025-04-04,HIMS,Chief Operating Officer,BUY,40380.0,5.01,202303.8,"BAIRD, MELISSA",Class A Common Stock
+2025-04-09,HIMS,Chief Operating Officer,BUY,33337.0,1.75,58339.75,"BAIRD, MELISSA",Class A Common Stock
+2025-04-09,HIMS,Chief Operating Officer,SELL,10199.0,25.8234,263372.8566,"BAIRD, MELISSA",Class A Common Stock
+2025-04-09,HIMS,Chief Operating Officer,SELL,3011.0,28.5479,85957.7269,"BAIRD, MELISSA",Class A Common Stock
+2025-04-09,HIMS,Chief Operating Officer,SELL,8392.0,29.2258,245262.9136,"BAIRD, MELISSA",Class A Common Stock
+2025-04-09,HIMS,Chief Operating Officer,SELL,11735.0,26.936,316093.96,"BAIRD, MELISSA",Class A Common Stock
+2025-04-14,HIMS,Chief Legal Officer,SELL,3236.0,28.72,92937.92,"BOUGHTON, SOLEIL",Class A Common Stock
+2025-04-15,HIMS,Chief Financial Officer,BUY,5037.0,5.01,25235.37,"OKUPE, OLUYEMI",Class A Common Stock
+2025-04-15,HIMS,Chief Financial Officer,BUY,1400.0,11.53,16142.0,"OKUPE, OLUYEMI",Class A Common Stock
+2025-04-15,HIMS,Chief Financial Officer,SELL,11581.0,28.502,330081.662,"OKUPE, OLUYEMI",Class A Common Stock
+2025-04-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,47534.0,28.2344,1342093.9696,"DUDUM, ANDREW",Class A Common Stock
+2025-04-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,2792.0,28.3066,79032.0272,"DUDUM, ANDREW",Class A Common Stock
+2025-04-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,33668.0,28.0213,943421.1284,"DUDUM, ANDREW",Class A Common Stock
+2025-04-16,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,17001.0,2.43,41312.43,"DUDUM, ANDREW",Class A Common Stock
+2025-04-16,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,16667.0,2.43,40500.810000000005,"DUDUM, ANDREW",Class A Common Stock
+2025-04-21,HIMS,Chief Operating Officer,SELL,27035.0,25.6587,693682.9545,"BAIRD, MELISSA",Class A Common Stock
+2025-04-21,HIMS,Chief Operating Officer,SELL,6298.0,26.2898,165573.1604,"BAIRD, MELISSA",Class A Common Stock
+2025-04-21,HIMS,Chief Operating Officer,BUY,22568.0,1.75,39494.0,"BAIRD, MELISSA",Class A Common Stock
+2025-04-21,HIMS,Chief Operating Officer,BUY,10765.0,2.43,26158.95,"BAIRD, MELISSA",Class A Common Stock
+2025-04-22,HIMS,PAO,SELL,2936.0,26.49,77774.64,"BECKLUND, IRENE",Class A Common Stock
+2025-04-28,HIMS,Chief Legal Officer,SELL,3236.0,30.19,97694.84000000001,"BOUGHTON, SOLEIL",Class A Common Stock
+2025-04-28,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,41667.0,30.186,1257760.062,"DUDUM, ANDREW",Class A Common Stock
+2025-04-28,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,41667.0,2.43,101250.81000000001,"DUDUM, ANDREW",Class A Common Stock
+2025-04-29,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,50000.0,2.43,121500.00000000001,"DUDUM, ANDREW",Class A Common Stock
+2025-04-29,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,50000.0,36.3862,1819310.0,"DUDUM, ANDREW",Class A Common Stock
+2025-05-12,HIMS,Chief Legal Officer,SELL,3235.0,56.0,181160.0,"BOUGHTON, SOLEIL",Class A Common Stock
+2025-05-12,HIMS,Chief Operating Officer,SELL,7556.0,56.8038,429209.5128,"BAIRD, MELISSA",Class A Common Stock
+2025-05-12,HIMS,Chief Operating Officer,SELL,6801.0,55.8553,379871.8953,"BAIRD, MELISSA",Class A Common Stock
+2025-05-12,HIMS,Chief Operating Officer,SELL,13786.0,54.9786,757934.9796,"BAIRD, MELISSA",Class A Common Stock
+2025-05-12,HIMS,Chief Operating Officer,BUY,33333.0,2.43,80999.19,"BAIRD, MELISSA",Class A Common Stock
+2025-05-12,HIMS,Chief Operating Officer,SELL,5190.0,57.8728,300359.832,"BAIRD, MELISSA",Class A Common Stock
+2025-05-15,HIMS,Chief Financial Officer,SELL,11581.0,60.2247,697462.2507,"OKUPE, OLUYEMI",Class A Common Stock
+2025-05-15,HIMS,Chief Financial Officer,BUY,5889.0,11.53,67900.17,"OKUPE, OLUYEMI",Class A Common Stock
+2025-05-15,HIMS,Chief Financial Officer,BUY,548.0,5.01,2745.48,"OKUPE, OLUYEMI",Class A Common Stock
+2025-05-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,52642.0,58.6699,3088500.8758,"DUDUM, ANDREW",Class A Common Stock
+2025-05-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,6427.0,59.2088,380534.95759999997,"DUDUM, ANDREW",Class A Common Stock
+2025-05-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,2792.0,59.2701,165482.1192,"DUDUM, ANDREW",Class A Common Stock
+2025-05-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,25307.0,57.8576,1464202.2832,"DUDUM, ANDREW",Class A Common Stock
+2025-05-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,17001.0,58.7192,998285.1192,"DUDUM, ANDREW",Class A Common Stock
+2025-05-16,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,17001.0,2.43,41312.43,"DUDUM, ANDREW",Class A Common Stock
+2025-05-16,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,108334.0,2.43,263251.62,"DUDUM, ANDREW",Class A Common Stock
+2025-05-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,49265.0,57.8425,2849610.7625,"DUDUM, ANDREW",Class A Common Stock
+2025-05-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,22227.0,58.7021,1304771.5767,"DUDUM, ANDREW",Class A Common Stock
+2025-05-22,HIMS,PAO,SELL,5071.0,53.51,271349.20999999996,"BECKLUND, IRENE",Class A Common Stock
+2025-05-27,HIMS,Chief Legal Officer,SELL,3233.0,55.87,180627.71,"BOUGHTON, SOLEIL",Class A Common Stock
+2025-05-28,HIMS,Chief Financial Officer,SELL,11581.0,52.9779,613537.0599,"OKUPE, OLUYEMI",Class A Common Stock
+2025-05-28,HIMS,Chief Financial Officer,BUY,6437.0,5.01,32249.37,"OKUPE, OLUYEMI",Class A Common Stock
+2025-06-05,HIMS,Chief Commercial Officer,BUY,28776.0,13.9,399986.4,"CHI, MICHAEL",Class A Common Stock
+2025-06-06,HIMS,Chief Commercial Officer,SELL,1500.0,56.0,84000.0,"CHI, MICHAEL",Class A Common Stock
+2025-06-06,HIMS,Chief Commercial Officer,BUY,3600.0,13.9,50040.0,"CHI, MICHAEL",Class A Common Stock
+2025-06-06,HIMS,Chief Commercial Officer,SELL,3600.0,56.0,201600.0,"CHI, MICHAEL",Class A Common Stock
+2025-06-06,HIMS,Chief Commercial Officer,BUY,1500.0,11.53,17295.0,"CHI, MICHAEL",Class A Common Stock
+2025-06-10,HIMS,Chief Commercial Officer,SELL,5400.0,57.0,307800.0,"CHI, MICHAEL",Class A Common Stock
+2025-06-10,HIMS,Chief Commercial Officer,BUY,5400.0,6.82,36828.0,"CHI, MICHAEL",Class A Common Stock
+2025-06-10,HIMS,Chief Commercial Officer,SELL,5600.0,57.0,319200.0,"CHI, MICHAEL",Class A Common Stock
+2025-06-13,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,90672.0,55.48,5030482.56,"DUDUM, ANDREW",Class A Common Stock
+2025-06-13,HIMS,Chief Commercial Officer,SELL,48166.0,55.48,2672249.6799999997,"CHI, MICHAEL",Class A Common Stock
+2025-06-13,HIMS,Chief Financial Officer,SELL,58023.0,55.48,3219116.04,"OKUPE, OLUYEMI",Class A Common Stock
+2025-06-13,HIMS,Chief Legal Officer,SELL,23282.0,55.48,1291685.3599999999,"BOUGHTON, SOLEIL",Class A Common Stock
+2025-06-13,HIMS,PAO,SELL,8787.0,55.48,487502.75999999995,"BECKLUND, IRENE",Class A Common Stock
+2025-06-13,HIMS,"Director, Chief Medical Officer",SELL,6177.0,55.48,342699.95999999996,"CARROLL, PATRICK HARRISON",Class A Common Stock
+2025-06-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,2792.0,56.3526,157336.4592,"DUDUM, ANDREW",Class A Common Stock
+2025-06-16,HIMS,Chief Legal Officer,SELL,5451.0,56.8,309616.8,"BOUGHTON, SOLEIL",Class A Common Stock
+2025-06-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,90624.0,56.389,5110196.7360000005,"DUDUM, ANDREW",Class A Common Stock
+2025-06-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,17001.0,58.6086,996404.8086,"DUDUM, ANDREW",Class A Common Stock
+2025-06-16,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,17001.0,2.43,41312.43,"DUDUM, ANDREW",Class A Common Stock
+2025-06-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,7414.0,56.9019,421870.68659999996,"DUDUM, ANDREW",Class A Common Stock
+2025-06-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,40120.0,56.4414,2264428.968,"DUDUM, ANDREW",Class A Common Stock
+2025-06-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,17710.0,56.9177,1008012.4670000001,"DUDUM, ANDREW",Class A Common Stock
+2025-06-16,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,108334.0,2.43,263251.62,"DUDUM, ANDREW",Class A Common Stock
+2025-06-17,HIMS,Chief Commercial Officer,SELL,17102.0,59.75,1021844.5,"CHI, MICHAEL",Class A Common Stock
+2025-06-17,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,15945.0,58.5033,932835.1185000001,"DUDUM, ANDREW",Class A Common Stock
+2025-06-17,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,49165.0,59.4469,2922706.8385,"DUDUM, ANDREW",Class A Common Stock
+2025-06-17,HIMS,PAO,SELL,8485.0,59.75,506978.75,"BECKLUND, IRENE",Class A Common Stock
+2025-06-17,HIMS,Chief Legal Officer,SELL,2572.0,59.75,153677.0,"BOUGHTON, SOLEIL",Class A Common Stock
+2025-06-23,HIMS,Chief Financial Officer,SELL,23107.0,47.2483,1091766.4681,"OKUPE, OLUYEMI",Class A Common Stock
+2025-06-30,HIMS,Chief Legal Officer,SELL,2572.0,50.5,129886.0,"BOUGHTON, SOLEIL",Class A Common Stock
+2025-07-07,HIMS,Chief Financial Officer,BUY,6437.0,5.01,32249.37,"OKUPE, OLUYEMI",Class A Common Stock
+2025-07-07,HIMS,Chief Financial Officer,SELL,11581.0,46.6711,540498.0091,"OKUPE, OLUYEMI",Class A Common Stock
+2025-07-14,HIMS,Chief Legal Officer,SELL,2572.0,47.82,122993.04,"BOUGHTON, SOLEIL",Class A Common Stock
+2025-07-14,HIMS,Chief Financial Officer,SELL,11581.0,47.7004,552418.3324000001,"OKUPE, OLUYEMI",Class A Common Stock
+2025-07-14,HIMS,Chief Financial Officer,BUY,7587.0,5.01,38010.869999999995,"OKUPE, OLUYEMI",Class A Common Stock
+2025-07-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,46076.0,50.237,2314720.012,"DUDUM, ANDREW",Class A Common Stock
+2025-07-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,2792.0,50.579,141216.568,"DUDUM, ANDREW",Class A Common Stock
+2025-07-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,1458.0,50.8213,74097.4554,"DUDUM, ANDREW",Class A Common Stock
+2025-07-21,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,16667.0,2.43,40500.810000000005,"DUDUM, ANDREW",Class A Common Stock
+2025-07-21,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,16667.0,49.4137,823578.1379,"DUDUM, ANDREW",Class A Common Stock
+2025-07-21,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,41667.0,2.43,101250.81000000001,"DUDUM, ANDREW",Class A Common Stock
+2025-07-21,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,41667.0,49.5559,2064845.6853,"DUDUM, ANDREW",Class A Common Stock
+2025-07-21,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,50000.0,2.43,121500.00000000001,"DUDUM, ANDREW",Class A Common Stock
+2025-07-21,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,50000.0,49.5987,2479935.0,"DUDUM, ANDREW",Class A Common Stock
+2025-07-21,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,17001.0,2.43,41312.43,"DUDUM, ANDREW",Class A Common Stock
+2025-07-21,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,17001.0,49.4252,840277.8252,"DUDUM, ANDREW",Class A Common Stock
+2025-07-23,HIMS,Chief Commercial Officer,BUY,900.0,6.82,6138.0,"CHI, MICHAEL",Class A Common Stock
+2025-07-23,HIMS,Chief Commercial Officer,BUY,12600.0,5.01,63126.0,"CHI, MICHAEL",Class A Common Stock
+2025-07-23,HIMS,Chief Commercial Officer,BUY,250.0,11.53,2882.5,"CHI, MICHAEL",Class A Common Stock
+2025-07-23,HIMS,Chief Commercial Officer,SELL,13750.0,56.0,770000.0,"CHI, MICHAEL",Class A Common Stock
+2025-07-24,HIMS,Chief Commercial Officer,SELL,2100.0,57.52,120792.0,"CHI, MICHAEL",Class A Common Stock
+2025-07-24,HIMS,Chief Commercial Officer,BUY,2100.0,5.01,10521.0,"CHI, MICHAEL",Class A Common Stock
+2025-07-28,HIMS,Chief Legal Officer,SELL,2572.0,58.7,150976.4,"BOUGHTON, SOLEIL",Class A Common Stock
+2025-07-31,HIMS,Chief Commercial Officer,BUY,3600.0,13.9,50040.0,"CHI, MICHAEL",Class A Common Stock
+2025-07-31,HIMS,Chief Commercial Officer,BUY,6300.0,6.82,42966.0,"CHI, MICHAEL",Class A Common Stock
+2025-07-31,HIMS,Chief Commercial Officer,BUY,1750.0,11.53,20177.5,"CHI, MICHAEL",Class A Common Stock
+2025-07-31,HIMS,Chief Commercial Officer,SELL,26350.0,67.0,1765450.0,"CHI, MICHAEL",Class A Common Stock
+2025-07-31,HIMS,Chief Commercial Officer,BUY,14700.0,5.01,73647.0,"CHI, MICHAEL",Class A Common Stock
+2025-08-01,HIMS,Chief Commercial Officer,BUY,250.0,11.53,2882.5,"CHI, MICHAEL",Class A Common Stock
+2025-08-01,HIMS,Chief Commercial Officer,SELL,250.0,64.44,16110.0,"CHI, MICHAEL",Class A Common Stock
+2025-08-06,HIMS,"Director, Chief Medical Officer",SELL,60000.0,53.5813,3214878.0,"CARROLL, PATRICK HARRISON",Class A Common Stock
+2025-08-07,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,660000.0,50.582,33384120.0,"DUDUM, ANDREW",Class A Common Stock
+2025-08-11,HIMS,Chief Legal Officer,SELL,2572.0,51.64,132818.08,"BOUGHTON, SOLEIL",Class A Common Stock
+2025-08-13,HIMS,Chief Financial Officer,SELL,11581.0,48.0459,556419.5679,"OKUPE, OLUYEMI",Class A Common Stock
+2025-08-13,HIMS,Chief Financial Officer,BUY,11581.0,5.01,58020.81,"OKUPE, OLUYEMI",Class A Common Stock
+2025-08-18,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,16667.0,44.9209,748696.6403000001,"DUDUM, ANDREW",Class A Common Stock
+2025-08-18,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,50000.0,45.0396,2251980.0,"DUDUM, ANDREW",Class A Common Stock
+2025-08-18,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,47534.0,45.0518,2141492.2612,"DUDUM, ANDREW",Class A Common Stock
+2025-08-18,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,17001.0,45.1373,767379.2373,"DUDUM, ANDREW",Class A Common Stock
+2025-08-18,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,108334.0,2.43,263251.62,"DUDUM, ANDREW",Class A Common Stock
+2025-08-18,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,41667.0,45.1111,1879644.2037,"DUDUM, ANDREW",Class A Common Stock
+2025-08-18,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,2792.0,44.965,125542.28000000001,"DUDUM, ANDREW",Class A Common Stock
+2025-08-18,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,17001.0,2.43,41312.43,"DUDUM, ANDREW",Class A Common Stock
+2025-08-25,HIMS,Chief Legal Officer,SELL,2571.0,44.53,114486.63,"BOUGHTON, SOLEIL",Class A Common Stock
+2025-08-26,HIMS,Chief Financial Officer,BUY,11581.0,5.01,58020.81,"OKUPE, OLUYEMI",Class A Common Stock
+2025-08-26,HIMS,Chief Financial Officer,SELL,11581.0,43.6895,505968.0995,"OKUPE, OLUYEMI",Class A Common Stock
+2025-09-15,HIMS,Chief Financial Officer,SELL,58021.0,53.96,3130813.16,"OKUPE, OLUYEMI",Class A Common Stock
+2025-09-15,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,90672.0,53.96,4892661.12,"DUDUM, ANDREW",Class A Common Stock
+2025-09-15,HIMS,Chief Financial Officer,BUY,110000.0,5.01,551100.0,"OKUPE, OLUYEMI",Class A Common Stock
+2025-09-15,HIMS,Chief Financial Officer,SELL,27208.0,55.7936,1518032.2688,"OKUPE, OLUYEMI",Class A Common Stock
+2025-09-15,HIMS,Chief Financial Officer,SELL,117792.0,55.2503,6508043.3376,"OKUPE, OLUYEMI",Class A Common Stock
+2025-09-15,HIMS,Chief Commercial Officer,SELL,39872.0,53.96,2151493.12,"CHI, MICHAEL",Class A Common Stock
+2025-09-15,HIMS,Chief Commercial Officer,BUY,250.0,11.53,2882.5,"CHI, MICHAEL",Class A Common Stock
+2025-09-15,HIMS,Chief Commercial Officer,BUY,2100.0,5.01,10521.0,"CHI, MICHAEL",Class A Common Stock
+2025-09-15,HIMS,Chief Commercial Officer,BUY,1800.0,6.82,12276.0,"CHI, MICHAEL",Class A Common Stock
+2025-09-15,HIMS,PAO,SELL,8867.0,53.96,478463.32,"BECKLUND, IRENE",Class A Common Stock
+2025-09-15,HIMS,Chief Legal Officer,SELL,22829.0,53.96,1231852.84,"BOUGHTON, SOLEIL",Class A Common Stock
+2025-09-15,HIMS,"Director, Chief Medical Officer",SELL,6500.0,53.96,350740.0,"CARROLL, PATRICK HARRISON",Class A Common Stock
+2025-09-15,HIMS,Chief Commercial Officer,SELL,4150.0,56.0,232400.0,"CHI, MICHAEL",Class A Common Stock
+2025-09-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,28652.0,52.8953,1515556.1356,"DUDUM, ANDREW",Class A Common Stock
+2025-09-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,16667.0,53.791,896534.597,"DUDUM, ANDREW",Class A Common Stock
+2025-09-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,23938.0,53.0754,1270518.9252,"DUDUM, ANDREW",Class A Common Stock
+2025-09-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,17810.0,53.8114,958381.034,"DUDUM, ANDREW",Class A Common Stock
+2025-09-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,32190.0,53.0283,1706980.977,"DUDUM, ANDREW",Class A Common Stock
+2025-09-16,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,17001.0,2.43,41312.43,"DUDUM, ANDREW",Class A Common Stock
+2025-09-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,17729.0,53.8106,954008.1274,"DUDUM, ANDREW",Class A Common Stock
+2025-09-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,2792.0,54.2115,151358.508,"DUDUM, ANDREW",Class A Common Stock
+2025-09-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,17001.0,53.792,914517.792,"DUDUM, ANDREW",Class A Common Stock
+2025-09-16,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,108334.0,2.43,263251.62,"DUDUM, ANDREW",Class A Common Stock
+2025-09-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,18882.0,53.8486,1016769.2651999999,"DUDUM, ANDREW",Class A Common Stock
+2025-09-17,HIMS,PAO,SELL,8410.0,50.5,424705.0,"BECKLUND, IRENE",Class A Common Stock
+2025-09-17,HIMS,Chief Commercial Officer,SELL,13749.0,50.5,694324.5,"CHI, MICHAEL",Class A Common Stock
+2025-09-17,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,65110.0,50.5745,3292905.695,"DUDUM, ANDREW",Class A Common Stock
+2025-09-17,HIMS,"Director, Chief Medical Officer",SELL,10021.0,50.5,506060.5,"CARROLL, PATRICK HARRISON",Class A Common Stock
+2025-09-17,HIMS,Chief Legal Officer,SELL,2637.0,50.5,133168.5,"BOUGHTON, SOLEIL",Class A Common Stock
+2025-09-22,HIMS,Chief Financial Officer,SELL,23584.0,57.7411,1361766.1024,"OKUPE, OLUYEMI",Class A Common Stock
+2025-09-24,HIMS,Chief Commercial Officer,BUY,2100.0,5.01,10521.0,"CHI, MICHAEL",Class A Common Stock
+2025-09-24,HIMS,Chief Commercial Officer,SELL,2100.0,56.52,118692.0,"CHI, MICHAEL",Class A Common Stock
+2025-09-29,HIMS,Chief Financial Officer,BUY,49832.0,5.01,249658.31999999998,"OKUPE, OLUYEMI",Class A Common Stock
+2025-09-29,HIMS,Chief Financial Officer,SELL,85000.0,60.1991,5116923.5,"OKUPE, OLUYEMI",Class A Common Stock
+2025-09-29,HIMS,Chief Legal Officer,SELL,2637.0,58.79,155029.23,"BOUGHTON, SOLEIL",Class A Common Stock
+2025-10-01,HIMS,Chief Commercial Officer,SELL,250.0,56.0,14000.0,"CHI, MICHAEL",Class A Common Stock
+2025-10-01,HIMS,Chief Commercial Officer,BUY,250.0,11.53,2882.5,"CHI, MICHAEL",Class A Common Stock
+2025-10-03,HIMS,Chief Financial Officer,BUY,3808.0,11.53,43906.24,"OKUPE, OLUYEMI",Class A Common Stock
+2025-10-03,HIMS,Chief Financial Officer,SELL,11595.0,57.7173,669232.0935000001,"OKUPE, OLUYEMI",Class A Common Stock
+2025-10-03,HIMS,Chief Financial Officer,BUY,7787.0,5.01,39012.869999999995,"OKUPE, OLUYEMI",Class A Common Stock
+2025-10-10,HIMS,Chief Commercial Officer,SELL,900.0,58.25,52425.0,"CHI, MICHAEL",Class A Common Stock
+2025-10-10,HIMS,Chief Commercial Officer,BUY,900.0,6.82,6138.0,"CHI, MICHAEL",Class A Common Stock
+2025-10-13,HIMS,Chief Legal Officer,SELL,2637.0,54.38,143400.06,"BOUGHTON, SOLEIL",Class A Common Stock
+2025-10-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,2335.0,63.3873,148009.3455,"DUDUM, ANDREW",Class A Common Stock
+2025-10-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,10469.0,63.4852,664626.5588,"DUDUM, ANDREW",Class A Common Stock
+2025-10-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,39531.0,62.7053,2478803.2143,"DUDUM, ANDREW",Class A Common Stock
+2025-10-16,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,108334.0,2.43,263251.62,"DUDUM, ANDREW",Class A Common Stock
+2025-10-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,17001.0,62.69,1065792.69,"DUDUM, ANDREW",Class A Common Stock
+2025-10-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,39111.0,62.6997,2452247.9667,"DUDUM, ANDREW",Class A Common Stock
+2025-10-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,2792.0,62.6518,174923.8256,"DUDUM, ANDREW",Class A Common Stock
+2025-10-16,HIMS,"Director, Chief Executive Officer, 10% Owner",BUY,17001.0,2.43,41312.43,"DUDUM, ANDREW",Class A Common Stock
+2025-10-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,16667.0,62.6969,1044969.2323,"DUDUM, ANDREW",Class A Common Stock
+2025-10-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,39332.0,62.6999,2466112.4668,"DUDUM, ANDREW",Class A Common Stock
+2025-10-16,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,8423.0,63.4588,534513.4724,"DUDUM, ANDREW",Class A Common Stock
+2025-10-17,HIMS,Chief Financial Officer,BUY,3807.0,11.53,43894.71,"OKUPE, OLUYEMI",Class A Common Stock
+2025-10-17,HIMS,Chief Financial Officer,BUY,7785.0,5.01,39002.85,"OKUPE, OLUYEMI",Class A Common Stock
+2025-10-17,HIMS,Chief Financial Officer,SELL,11592.0,57.1275,662221.98,"OKUPE, OLUYEMI",Class A Common Stock
+2025-10-27,HIMS,Chief Legal Officer,SELL,2637.0,50.1,132113.7,"BOUGHTON, SOLEIL",Class A Common Stock
+2025-11-10,HIMS,Chief Legal Officer,SELL,2637.0,42.53,112151.61,"BOUGHTON, SOLEIL",Class A Common Stock
+2025-11-17,HIMS,Chief Financial Officer,SELL,23187.0,36.809,853490.2829999999,"OKUPE, OLUYEMI",Class A Common Stock
+2025-11-17,HIMS,Chief Financial Officer,BUY,15572.0,5.01,78015.72,"OKUPE, OLUYEMI",Class A Common Stock
+2025-11-17,HIMS,Chief Financial Officer,BUY,7615.0,11.53,87800.95,"OKUPE, OLUYEMI",Class A Common Stock
+2025-11-24,HIMS,Chief Legal Officer,SELL,2631.0,35.22,92663.81999999999,"BOUGHTON, SOLEIL",Class A Common Stock
+2025-12-09,HIMS,Director,SELL,2500.0,39.17,97925.0,"PEREZ, GARCIA ANDREA G",Class A Common Stock
+2025-12-15,HIMS,Chief Legal Officer,SELL,22817.0,36.25,827116.25,"BOUGHTON, SOLEIL",Class A Common Stock
+2025-12-15,HIMS,"Director, Chief Executive Officer, 10% Owner",SELL,90660.0,36.25,3286425.0,"DUDUM, ANDREW",Class A Common Stock
+2025-12-15,HIMS,PAO,SELL,8867.0,36.25,321428.75,"BECKLUND, IRENE",Class A Common Stock
+2025-12-15,HIMS,Chief Financial Officer,SELL,58010.0,36.25,2102862.5,"OKUPE, OLUYEMI",Class A Common Stock
+2025-12-15,HIMS,Chief Operating Officer,SELL,39870.0,36.25,1445287.5,"CHI, MICHAEL",Class A Common Stock
+2025-12-15,HIMS,"Director, Chief Medical Officer",SELL,6500.0,36.25,235625.0,"CARROLL, PATRICK HARRISON",Class A Common Stock
+2025-12-17,HIMS,Chief Operating Officer,SELL,13750.0,36.71,504762.5,"CHI, MICHAEL",Class A Common Stock
+2025-12-17,HIMS,"Director, Chief Medical Officer",SELL,10021.0,36.71,367870.91000000003,"CARROLL, PATRICK HARRISON",Class A Common Stock
+2025-12-17,HIMS,PAO,SELL,8411.0,36.71,308767.81,"BECKLUND, IRENE",Class A Common Stock
+2025-12-17,HIMS,"Director, Chief Policy Officer",SELL,7054.0,36.71,258952.34,"AUTOR, DEBORAH M.",Class A Common Stock

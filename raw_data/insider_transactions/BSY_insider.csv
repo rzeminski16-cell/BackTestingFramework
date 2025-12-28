@@ -1,0 +1,457 @@
+date,symbol,insider_title,transaction_type,shares,price,value,executive,security_type
+2021-04-07,BSY,10% Owner,SELL,109278.0,48.8877,5342350.0806,"BENTLEY, RICHARD P.",Class B Common Stock
+2021-04-07,BSY,10% Owner,SELL,13274.0,48.244,640390.856,"BENTLEY, RICHARD P.",Class B Common Stock
+2021-04-09,BSY,10% Owner,SELL,44238.0,49.0762,2171032.9356,"BENTLEY, RICHARD P.",Class B Common Stock
+2021-04-12,BSY,10% Owner,SELL,55762.0,49.5071,2760614.9102000003,"BENTLEY, RICHARD P.",Class B Common Stock
+2021-04-15,BSY,10% Owner,SELL,15170.0,50.2008,761546.136,"BENTLEY, RICHARD P.",Class B Common Stock
+2021-04-16,BSY,10% Owner,SELL,116491.0,50.585,5892697.235,"BENTLEY, RICHARD P.",Class B Common Stock
+2021-04-19,BSY,"Director, Chief Technology Officer, 10% Owner",SELL,20657.0,49.93,1031404.01,"BENTLEY, KEITH A.",Class B Common Stock
+2021-04-19,BSY,"Director, Chief Technology Officer, 10% Owner",BUY,11016.0,49.93,550028.88,"BENTLEY, KEITH A.",Class B Common Stock
+2021-04-19,BSY,10% Owner,SELL,29418.0,50.6849,1491048.3882,"BENTLEY, RICHARD P.",Class B Common Stock
+2021-04-19,BSY,"Director, Chief Technology Officer, 10% Owner",BUY,47236.0,49.93,2358493.48,"BENTLEY, KEITH A.",Class B Common Stock
+2021-04-19,BSY,"Director, Chairman, CEO & President, 10% Owner",BUY,75915.0,49.93,3790435.95,"BENTLEY, GREGORY S",Class B Common Stock
+2021-04-19,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,33008.0,49.93,1648089.44,"BENTLEY, GREGORY S",Class B Common Stock
+2021-04-20,BSY,10% Owner,SELL,1975.0,50.3579,99456.85250000001,"BENTLEY, RICHARD P.",Class B Common Stock
+2021-04-21,BSY,10% Owner,SELL,236946.0,50.8848,12056949.820799999,"BENTLEY, RICHARD P.",Class B Common Stock
+2021-04-22,BSY,10% Owner,SELL,52134.0,51.1877,2668619.5518,"BENTLEY, RICHARD P.",Class B Common Stock
+2021-04-23,BSY,10% Owner,SELL,36977.0,50.8571,1880542.9867,"BENTLEY, RICHARD P.",Class B Common Stock
+2021-04-26,BSY,10% Owner,SELL,87971.0,51.2009,4504194.3739,"BENTLEY, RICHARD P.",Class B Common Stock
+2021-04-29,BSY,Chief Legal Officer,SELL,51418.0,3.73,191789.13999999998,"SHAMAN, DAVID R.",Stock Options (Right to Buy)
+2021-04-29,BSY,Chief Legal Officer,SELL,3712.0,51.67,191799.04,"SHAMAN, DAVID R.",Class B Common Stock
+2021-04-29,BSY,Chief Legal Officer,BUY,51418.0,3.73,191789.13999999998,"SHAMAN, DAVID R.",Class B Common Stock
+2021-05-13,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,62312.0,47.5,2959820.0,"BENTLEY, GREGORY S",Class B Common Stock
+2021-05-13,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,10526.0,47.5,499985.0,"BENTLEY, GREGORY S",Class B Common Stock
+2021-05-13,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,61312.0,47.5,2912320.0,"BENTLEY, GREGORY S",Class B Common Stock
+2021-05-13,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,183122.0,47.5,8698295.0,"BENTLEY, GREGORY S",Class B Common Stock
+2021-05-14,BSY,See Remarks,SELL,24532.0,50.0845,1228672.954,"HOLLISTER, DAVID J.",Class B Common Stock
+2021-05-17,BSY,See Remarks,SELL,112612.0,50.4225,5678178.57,"HOLLISTER, DAVID J.",Class B Common Stock
+2021-05-17,BSY,See Remarks,SELL,51784.0,51.1404,2648254.4736,"HOLLISTER, DAVID J.",Class B Common Stock
+2021-05-18,BSY,See Remarks,SELL,14380.0,51.0894,734665.5719999999,"HOLLISTER, DAVID J.",Class B Common Stock
+2021-05-18,BSY,See Remarks,SELL,12506.0,51.6674,646152.5044,"HOLLISTER, DAVID J.",Class B Common Stock
+2021-05-20,BSY,See Remarks,SELL,100303.0,52.76,5291986.28,"HOLLISTER, DAVID J.",Class B Common Stock
+2021-05-20,BSY,See Remarks,SELL,110436.0,52.23,5768072.279999999,"HOLLISTER, DAVID J.",Class B Common Stock
+2021-06-14,BSY,10% Owner,SELL,5000.0,63.425,317125.0,"BENTLEY, RICHARD P.",Class B Common Stock
+2021-06-15,BSY,10% Owner,SELL,45000.0,63.8664,2873988.0,"BENTLEY, RICHARD P.",Class B Common Stock
+2021-07-01,BSY,Chief Legal Officer,SELL,32185.0,63.4259,2041362.5914999999,"SHAMAN, DAVID R.",Class B Common Stock
+2021-07-01,BSY,Chief Legal Officer,SELL,70038.0,62.7636,4395837.016799999,"SHAMAN, DAVID R.",Class B Common Stock
+2021-07-06,BSY,Chief Legal Officer,SELL,61491.0,65.6573,4037333.0343000004,"SHAMAN, DAVID R.",Class B Common Stock
+2021-07-07,BSY,Chief Legal Officer,SELL,18887.0,65.8316,1243361.4292,"SHAMAN, DAVID R.",Class B Common Stock
+2021-07-10,BSY,Chief Legal Officer,SELL,1626.0,64.2,104389.20000000001,"SHAMAN, DAVID R.",Class B Common Stock
+2021-07-12,BSY,"Director, 10% Owner",SELL,195830.0,63.75,12484162.5,"BENTLEY, BARRY J.",Class B Common Stock
+2021-07-12,BSY,"Director, 10% Owner",SELL,6071.0,64.629,392362.65900000004,"BENTLEY, BARRY J.",Class B Common Stock
+2021-07-13,BSY,"Director, 10% Owner",SELL,51077.0,64.4555,3292193.5735,"BENTLEY, BARRY J.",Class B Common Stock
+2021-07-13,BSY,"Director, 10% Owner",SELL,98347.0,63.8038,6274912.3186,"BENTLEY, BARRY J.",Class B Common Stock
+2021-07-14,BSY,"Director, 10% Owner",SELL,96342.0,61.8226,5956112.9292,"BENTLEY, BARRY J.",Class B Common Stock
+2021-07-14,BSY,"Director, 10% Owner",SELL,17806.0,62.9152,1120268.0511999999,"BENTLEY, BARRY J.",Class B Common Stock
+2021-07-14,BSY,"Director, 10% Owner",SELL,1649.0,63.6473,104954.3977,"BENTLEY, BARRY J.",Class B Common Stock
+2021-07-15,BSY,"Director, 10% Owner",SELL,17433.0,60.793,1059804.369,"BENTLEY, BARRY J.",Class B Common Stock
+2021-07-15,BSY,"Director, 10% Owner",SELL,93043.0,60.0405,5586348.2415000005,"BENTLEY, BARRY J.",Class B Common Stock
+2021-07-16,BSY,"Director, 10% Owner",SELL,5207.0,59.7956,311355.6892,"BENTLEY, BARRY J.",Class B Common Stock
+2021-07-16,BSY,"Director, 10% Owner",SELL,160844.0,59.1604,9515595.377600001,"BENTLEY, BARRY J.",Class B Common Stock
+2021-07-19,BSY,"Director, 10% Owner",SELL,13500.0,58.0079,783106.65,"BENTLEY, BARRY J.",Class B Common Stock
+2021-07-19,BSY,"Director, Chief Technology Officer, 10% Owner",SELL,12240.0,58.83,720079.2,"BENTLEY, KEITH A.",Class B Common Stock
+2021-07-19,BSY,"Director, Chief Technology Officer, 10% Owner",BUY,27989.0,58.83,1646592.8699999999,"BENTLEY, KEITH A.",Class B Common Stock
+2021-07-19,BSY,"Director, Chief Technology Officer, 10% Owner",BUY,7523.0,58.83,442578.08999999997,"BENTLEY, KEITH A.",Class B Common Stock
+2021-07-19,BSY,"Director, Chairman, CEO & President, 10% Owner",BUY,44982.0,58.83,2646291.06,"BENTLEY, GREGORY S",Class B Common Stock
+2021-07-19,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,19559.0,58.83,1150655.97,"BENTLEY, GREGORY S",Class B Common Stock
+2021-07-19,BSY,"Director, 10% Owner",SELL,8020.0,59.2765,475397.52999999997,"BENTLEY, BARRY J.",Class B Common Stock
+2021-07-19,BSY,"Director, 10% Owner",SELL,76824.0,58.8383,4520193.5592,"BENTLEY, BARRY J.",Class B Common Stock
+2021-07-20,BSY,"Director, 10% Owner",SELL,68595.0,60.1891,4128671.3145000003,"BENTLEY, BARRY J.",Class B Common Stock
+2021-07-20,BSY,"Director, 10% Owner",SELL,50847.0,60.7872,3090846.7583999997,"BENTLEY, BARRY J.",Class B Common Stock
+2021-07-20,BSY,"Director, 10% Owner",SELL,16380.0,59.2893,971158.7339999999,"BENTLEY, BARRY J.",Class B Common Stock
+2021-07-21,BSY,"Director, 10% Owner",SELL,22185.0,60.9047,1351170.7695,"BENTLEY, BARRY J.",Class B Common Stock
+2021-07-21,BSY,Chief Accounting Officer,SELL,855.0,60.59,51804.450000000004,"ANDRE, WERNER",Class B Common Stock
+2021-07-27,BSY,"Director, Chief Technology Officer, 10% Owner",SELL,47577.0,59.5713,2834223.7401,"BENTLEY, KEITH A.",Class B Common Stock
+2021-07-27,BSY,"Director, Chief Technology Officer, 10% Owner",SELL,35192.0,60.1753,2117689.1576,"BENTLEY, KEITH A.",Class B Common Stock
+2021-07-27,BSY,"Director, Chief Technology Officer, 10% Owner",SELL,2471.0,61.0829,150935.84590000001,"BENTLEY, KEITH A.",Class B Common Stock
+2021-07-28,BSY,"Director, Chief Technology Officer, 10% Owner",SELL,290478.0,60.116,17462375.448,"BENTLEY, KEITH A.",Class B Common Stock
+2021-07-28,BSY,"Director, Executive Vice President, 10% Owner",SELL,118608.0,60.1176,7130428.3008,"BENTLEY, RAYMOND B.",Class B Common Stock
+2021-07-29,BSY,"Director, Chief Technology Officer, 10% Owner",SELL,31602.0,61.3461,1938659.4522,"BENTLEY, KEITH A.",Class B Common Stock
+2021-07-29,BSY,"Director, Executive Vice President, 10% Owner",SELL,28129.0,61.3866,1726743.6714,"BENTLEY, RAYMOND B.",Class B Common Stock
+2021-07-29,BSY,"Director, Executive Vice President, 10% Owner",SELL,17757.0,60.91,1081578.8699999999,"BENTLEY, RAYMOND B.",Class B Common Stock
+2021-07-29,BSY,"Director, Chief Technology Officer, 10% Owner",SELL,18167.0,60.9151,1106644.6217,"BENTLEY, KEITH A.",Class B Common Stock
+2021-07-30,BSY,"Director, Chief Technology Officer, 10% Owner",SELL,61084.0,60.8645,3717847.118,"BENTLEY, KEITH A.",Class B Common Stock
+2021-07-30,BSY,"Director, Executive Vice President, 10% Owner",SELL,51239.0,60.8339,3117068.2021,"BENTLEY, RAYMOND B.",Class B Common Stock
+2021-08-02,BSY,"Director, Executive Vice President, 10% Owner",SELL,2172.0,61.3597,133273.2684,"BENTLEY, RAYMOND B.",Class B Common Stock
+2021-08-02,BSY,"Director, Executive Vice President, 10% Owner",SELL,77158.0,61.0454,4710140.9732,"BENTLEY, RAYMOND B.",Class B Common Stock
+2021-08-02,BSY,"Director, Chief Technology Officer, 10% Owner",SELL,2123.0,61.3639,130275.5597,"BENTLEY, KEITH A.",Class B Common Stock
+2021-08-02,BSY,"Director, Chief Technology Officer, 10% Owner",SELL,80164.0,61.0539,4894324.8396,"BENTLEY, KEITH A.",Class B Common Stock
+2021-08-03,BSY,"Director, Executive Vice President, 10% Owner",SELL,4937.0,61.1759,302025.4183,"BENTLEY, RAYMOND B.",Class B Common Stock
+2021-08-03,BSY,"Director, Chief Technology Officer, 10% Owner",SELL,92851.0,61.1898,5681534.1197999995,"BENTLEY, KEITH A.",Class B Common Stock
+2021-08-03,BSY,"Director, Chief Technology Officer, 10% Owner",SELL,7761.0,60.6245,470506.7445,"BENTLEY, KEITH A.",Class B Common Stock
+2021-08-04,BSY,"Director, Chief Technology Officer, 10% Owner",SELL,80530.0,61.4784,4950855.552,"BENTLEY, KEITH A.",Class B Common Stock
+2021-08-16,BSY,See Remarks,SELL,20447.0,62.94,1286934.18,"HOLLISTER, DAVID J.",Class B Common Stock
+2021-08-27,BSY,See Remarks,SELL,875678.0,63.64,55728147.92,"HOLLISTER, DAVID J.",Class B Common Stock
+2021-08-27,BSY,Chief Legal Officer,SELL,167878.0,63.64,10683755.92,"SHAMAN, DAVID R.",Class B Common Stock
+2021-09-13,BSY,Director,SELL,2193.0,69.2,151755.6,"HUGHES, BRIAN F.",Class B Common Stock
+2021-10-19,BSY,"Director, Chairman, CEO & President, 10% Owner",BUY,52589.0,57.89,3044377.21,"BENTLEY, GREGORY S",Class B Common Stock
+2021-10-19,BSY,"Director, Chief Technology Officer, 10% Owner",BUY,8886.0,57.89,514410.54,"BENTLEY, KEITH A.",Class B Common Stock
+2021-10-19,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,22866.0,57.89,1323712.74,"BENTLEY, GREGORY S",Class B Common Stock
+2021-10-19,BSY,"Director, Chief Technology Officer, 10% Owner",BUY,32722.0,57.89,1894276.58,"BENTLEY, KEITH A.",Class B Common Stock
+2021-10-19,BSY,"Director, Chief Technology Officer, 10% Owner",SELL,14309.0,57.89,828348.01,"BENTLEY, KEITH A.",Class B Common Stock
+2021-11-04,BSY,Director,SELL,3319.0,60.0009,199142.9871,"GRISWOLD, KIRK B.",Class B Common Stock
+2021-11-05,BSY,Director,SELL,800.0,60.0175,48014.0,"GRISWOLD, KIRK B.",Class B Common Stock
+2021-11-08,BSY,Director,SELL,45881.0,60.103,2757585.7430000002,"GRISWOLD, KIRK B.",Class B Common Stock
+2021-12-02,BSY,"Director, Chairman, CEO & President, 10% Owner",BUY,17875.0,47.4749,848613.8375,"BENTLEY, GREGORY S",Class B Common Stock
+2021-12-02,BSY,See Remarks,BUY,5319.0,47.21,251109.99,"HOLLISTER, DAVID J.",Class B Common Stock
+2021-12-02,BSY,"Director, Chairman, CEO & President, 10% Owner",BUY,3158.0,47.935,151378.73,"BENTLEY, GREGORY S",Class B Common Stock
+2022-01-03,BSY,"Director, 10% Owner",SELL,176987.0,48.48,8580329.76,"BENTLEY, BARRY J.",Class B Common Stock
+2022-01-03,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,229568.0,48.48,11129456.639999999,"BENTLEY, GREGORY S",Class B Common Stock
+2022-01-03,BSY,"Director, Chief Technology Officer, 10% Owner",SELL,24725.0,48.48,1198668.0,"BENTLEY, KEITH A.",Class B Common Stock
+2022-01-19,BSY,Chief Revenue Officer,SELL,3268.0,38.88,127059.84000000001,"BERGSMA, GUS",Class B Common Stock
+2022-01-19,BSY,Chief Revenue Officer,BUY,10393.0,38.88,404079.84,"BERGSMA, GUS",Class B Common Stock
+2022-01-19,BSY,"Director, Chief Technology Officer, 10% Owner",SELL,21774.0,38.88,846573.1200000001,"BENTLEY, KEITH A.",Class B Common Stock
+2022-01-19,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,34617.0,38.88,1345908.9600000002,"BENTLEY, GREGORY S",Class B Common Stock
+2022-01-19,BSY,"Director, Chief Technology Officer, 10% Owner",BUY,49286.0,38.88,1916239.6800000002,"BENTLEY, KEITH A.",Class B Common Stock
+2022-01-19,BSY,Chief Financial Officer,SELL,1273.0,38.88,49494.240000000005,"ANDRE, WERNER",Class B Common Stock
+2022-01-19,BSY,"Director, Chairman, CEO & President, 10% Owner",BUY,79210.0,38.88,3079684.8000000003,"BENTLEY, GREGORY S",Class B Common Stock
+2022-01-19,BSY,Chief Operating Officer,SELL,5823.0,38.88,226398.24000000002,"CUMINS, NICHOLAS",Class B Common Stock
+2022-01-19,BSY,Chief Operating Officer,BUY,12263.0,38.88,476785.44,"CUMINS, NICHOLAS",Class B Common Stock
+2022-01-19,BSY,Chief Legal Officer,SELL,2459.0,38.88,95605.92000000001,"SHAMAN, DAVID R.",Class B Common Stock
+2022-01-19,BSY,Chief Legal Officer,BUY,8171.0,38.88,317688.48000000004,"SHAMAN, DAVID R.",Class B Common Stock
+2022-01-19,BSY,"Director, Chief Technology Officer, 10% Owner",BUY,14460.0,38.88,562204.8,"BENTLEY, KEITH A.",Class B Common Stock
+2022-01-19,BSY,Chief Financial Officer,BUY,3819.0,38.88,148482.72,"ANDRE, WERNER",Class B Common Stock
+2022-02-17,BSY,Chief Financial Officer,SELL,3166.0,37.82,119738.12,"ANDRE, WERNER",Class B Common Stock
+2022-02-17,BSY,Chief Financial Officer,SELL,30859.0,3.88,119732.92,"ANDRE, WERNER",Stock Options (Right to Buy)
+2022-02-17,BSY,Chief Financial Officer,BUY,30859.0,3.88,119732.92,"ANDRE, WERNER",Class B Common Stock
+2022-02-18,BSY,Chief Revenue Officer,SELL,29583.0,37.92,1121787.36,"BERGSMA, GUS",Class B Common Stock
+2022-02-18,BSY,Chief Revenue Officer,BUY,65836.0,3.88,255443.68,"BERGSMA, GUS",Class B Common Stock
+2022-02-18,BSY,Chief Revenue Officer,SELL,65836.0,3.88,255443.68,"BERGSMA, GUS",Stock Options (Right to Buy)
+2022-02-22,BSY,Chief Revenue Officer,SELL,3708.0,36.79,136417.32,"BERGSMA, GUS",Class B Common Stock
+2022-02-22,BSY,Chief Revenue Officer,SELL,35154.0,3.88,136397.52,"BERGSMA, GUS",Stock Options (Right to Buy)
+2022-02-22,BSY,Chief Revenue Officer,BUY,35154.0,3.88,136397.52,"BERGSMA, GUS",Class B Common Stock
+2022-02-24,BSY,Chief Legal Officer,SELL,4224.0,38.12,161018.87999999998,"SHAMAN, DAVID R.",Class B Common Stock
+2022-02-24,BSY,Chief Legal Officer,BUY,41491.0,3.88,160985.08,"SHAMAN, DAVID R.",Class B Common Stock
+2022-02-24,BSY,Chief Legal Officer,SELL,41491.0,3.88,160985.08,"SHAMAN, DAVID R.",Stock Options (Right to Buy)
+2022-02-25,BSY,Chief Legal Officer,SELL,72119.0,3.88,279821.72,"SHAMAN, DAVID R.",Stock Options (Right to Buy)
+2022-02-25,BSY,Chief Legal Officer,SELL,31571.0,38.26,1207906.46,"SHAMAN, DAVID R.",Class B Common Stock
+2022-02-25,BSY,Chief Legal Officer,BUY,72119.0,3.88,279821.72,"SHAMAN, DAVID R.",Class B Common Stock
+2022-02-28,BSY,Chief Financial Officer,SELL,338.0,38.39,12975.82,"ANDRE, WERNER",Class B Common Stock
+2022-02-28,BSY,Chief Financial Officer,SELL,946.0,3.88,3670.48,"ANDRE, WERNER",Stock Options (Right to Buy)
+2022-02-28,BSY,Chief Financial Officer,BUY,946.0,3.88,3670.48,"ANDRE, WERNER",Class B Common Stock
+2022-02-28,BSY,Chief Revenue Officer,BUY,1541.0,38.39,59158.99,"BERGSMA, GUS",Class B Common Stock
+2022-03-25,BSY,Director,SELL,1858.0,41.78,77627.24,"GRISWOLD, KIRK B.",Class B Common Stock
+2022-03-25,BSY,Director,BUY,20000.0,3.88,77600.0,"GRISWOLD, KIRK B.",Class B Common Stock
+2022-03-25,BSY,Director,SELL,20000.0,3.88,77600.0,"GRISWOLD, KIRK B.",Stock Options (Right to Buy)
+2022-04-19,BSY,Chief Investment Officer,BUY,38913.0,44.38,1726958.9400000002,"HOLLISTER, DAVID J.",Class B Common Stock
+2022-04-19,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,41656.0,44.83,1867438.48,"BENTLEY, GREGORY S",Class B Common Stock
+2022-04-19,BSY,Chief Legal Officer,SELL,890.0,44.38,39498.200000000004,"SHAMAN, DAVID R.",Class B Common Stock
+2022-04-19,BSY,Chief Revenue Officer,SELL,791.0,44.38,35104.58,"BERGSMA, GUS",Class B Common Stock
+2022-04-19,BSY,"Director, Chairman, CEO & President, 10% Owner",BUY,95805.0,44.83,4294938.149999999,"BENTLEY, GREGORY S",Class B Common Stock
+2022-04-19,BSY,"Director, Chief Technology Officer, 10% Owner",BUY,59612.0,44.38,2645580.56,"BENTLEY, KEITH A.",Class B Common Stock
+2022-04-19,BSY,"Director, Chief Technology Officer, 10% Owner",BUY,14336.0,44.38,636231.68,"BENTLEY, KEITH A.",Class B Common Stock
+2022-04-19,BSY,"Director, Chief Technology Officer, 10% Owner",SELL,26069.0,44.38,1156942.22,"BENTLEY, KEITH A.",Class B Common Stock
+2022-04-19,BSY,Chief Operating Officer,SELL,1459.0,44.38,64750.420000000006,"CUMINS, NICHOLAS",Class B Common Stock
+2022-04-19,BSY,Chief Financial Officer,SELL,273.0,44.38,12115.740000000002,"ANDRE, WERNER",Class B Common Stock
+2022-04-20,BSY,"Director, 10% Owner",SELL,6349.0,44.3557,281614.3393,"BENTLEY, RAYMOND B.",Class B Common Stock
+2022-04-20,BSY,"Director, 10% Owner",SELL,138305.0,43.5898,6028687.289,"BENTLEY, RAYMOND B.",Class B Common Stock
+2022-04-21,BSY,"Director, 10% Owner",SELL,179949.0,44.8415,8069183.083500001,"BENTLEY, RAYMOND B.",Class B Common Stock
+2022-04-21,BSY,"Director, 10% Owner",SELL,140002.0,43.4632,6084934.9264,"BENTLEY, RAYMOND B.",Class B Common Stock
+2022-04-22,BSY,"Director, 10% Owner",SELL,79027.0,42.4636,3355770.9172,"BENTLEY, RAYMOND B.",Class B Common Stock
+2022-04-22,BSY,"Director, 10% Owner",SELL,25313.0,43.5508,1102401.4004000002,"BENTLEY, RAYMOND B.",Class B Common Stock
+2022-04-25,BSY,"Director, 10% Owner",SELL,134850.0,42.9969,5798131.965,"BENTLEY, RAYMOND B.",Class B Common Stock
+2022-04-25,BSY,"Director, 10% Owner",SELL,74556.0,42.0029,3131568.2123999996,"BENTLEY, RAYMOND B.",Class B Common Stock
+2022-04-25,BSY,"Director, 10% Owner",SELL,4141.0,43.385,179657.285,"BENTLEY, RAYMOND B.",Class B Common Stock
+2022-04-26,BSY,"Director, 10% Owner",SELL,6853.0,42.6035,291961.7855,"BENTLEY, RAYMOND B.",Class B Common Stock
+2022-04-26,BSY,"Director, 10% Owner",SELL,123526.0,41.7461,5156728.7486,"BENTLEY, RAYMOND B.",Class B Common Stock
+2022-04-27,BSY,"Director, 10% Owner",SELL,94835.0,41.3761,3923902.4435,"BENTLEY, RAYMOND B.",Class B Common Stock
+2022-04-27,BSY,"Director, 10% Owner",SELL,35201.0,42.126,1482877.326,"BENTLEY, RAYMOND B.",Class B Common Stock
+2022-04-28,BSY,"Director, 10% Owner",SELL,6224.0,42.6115,265213.976,"BENTLEY, RAYMOND B.",Class B Common Stock
+2022-04-28,BSY,"Director, 10% Owner",SELL,46861.0,42.1269,1974108.6609,"BENTLEY, RAYMOND B.",Class B Common Stock
+2022-05-31,BSY,Chief Revenue Officer,BUY,1226.0,34.38,42149.880000000005,"BERGSMA, GUS",Class B Common Stock
+2022-07-10,BSY,Chief Legal Officer,SELL,1626.0,35.62,57918.119999999995,"SHAMAN, DAVID R.",Class B Common Stock
+2022-07-10,BSY,Chief Revenue Officer,SELL,1850.0,35.62,65897.0,"BERGSMA, GUS",Class B Common Stock
+2022-07-19,BSY,Chief Investment Officer,BUY,31093.0,35.28,1096961.04,"HOLLISTER, DAVID J.",Class B Common Stock
+2022-07-19,BSY,"Director, Chairman, CEO & President, 10% Owner",BUY,77175.0,35.28,2722734.0,"BENTLEY, GREGORY S",Class B Common Stock
+2022-07-19,BSY,"Director, Chief Technology Officer, 10% Owner",BUY,11455.0,35.28,404132.4,"BENTLEY, KEITH A.",Class B Common Stock
+2022-07-19,BSY,"Director, Chief Technology Officer, 10% Owner",BUY,48020.0,35.28,1694145.6,"BENTLEY, KEITH A.",Class B Common Stock
+2022-07-21,BSY,Chief Financial Officer,SELL,855.0,37.44,32011.199999999997,"ANDRE, WERNER",Class B Common Stock
+2022-08-10,BSY,Chief Investment Officer,SELL,200000.0,41.12,8223999.999999999,"HOLLISTER, DAVID J.",Class B Common Stock
+2022-08-31,BSY,Chief Revenue Officer,BUY,1368.0,36.77,50301.36000000001,"BERGSMA, GUS",Class B Common Stock
+2022-09-09,BSY,"Director, 10% Owner",SELL,160714.0,38.5316,6192567.562399999,"BENTLEY, BARRY J.",Class B Common Stock
+2022-09-12,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,2902.0,38.5018,111732.22360000001,"BENTLEY, GREGORY S",Class B Common Stock
+2022-09-12,BSY,"Director, 10% Owner",SELL,38235.0,37.9298,1450245.903,"BENTLEY, BARRY J.",Class B Common Stock
+2022-09-12,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,73689.0,37.6463,2774118.2007,"BENTLEY, GREGORY S",Class B Common Stock
+2022-09-12,BSY,"Director, 10% Owner",SELL,1051.0,38.6052,40574.065200000005,"BENTLEY, BARRY J.",Class B Common Stock
+2022-09-13,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,91714.0,36.1714,3317423.7796,"BENTLEY, GREGORY S",Class B Common Stock
+2022-10-02,BSY,Chief Operating Officer,SELL,6802.0,30.59,208073.18,"CUMINS, NICHOLAS",Class B Common Stock
+2022-10-26,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,1668.0,36.0,60048.0,"BENTLEY, GREGORY S",Class B Common Stock
+2022-10-27,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,52948.0,36.0297,1907700.5555999998,"BENTLEY, GREGORY S",Class B Common Stock
+2022-10-27,BSY,"Director, Chief Technology Officer, 10% Owner",BUY,61392.0,35.08,2153631.36,"BENTLEY, KEITH A.",Class B Common Stock
+2022-10-27,BSY,Chief Investment Officer,BUY,38555.0,35.08,1352509.4,"HOLLISTER, DAVID J.",Class B Common Stock
+2022-10-27,BSY,"Director, Chief Technology Officer, 10% Owner",BUY,14204.0,35.08,498276.31999999995,"BENTLEY, KEITH A.",Class B Common Stock
+2022-10-27,BSY,"Director, Chairman, CEO & President, 10% Owner",BUY,98666.0,35.08,3461203.28,"BENTLEY, GREGORY S",Class B Common Stock
+2022-11-08,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,87531.0,36.0737,3157567.0347,"BENTLEY, GREGORY S",Class B Common Stock
+2022-11-10,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,26157.0,37.0039,967911.0123000001,"BENTLEY, GREGORY S",Class B Common Stock
+2022-11-15,BSY,"Director, 10% Owner",SELL,63218.0,40.0,2528720.0,"BENTLEY, BARRY J.",Class B Common Stock
+2022-12-01,BSY,"Director, 10% Owner",SELL,236782.0,40.025,9477199.549999999,"BENTLEY, BARRY J.",Class B Common Stock
+2022-12-13,BSY,Director,SELL,3000.0,40.209,120627.00000000001,"HUGHES, BRIAN F.",Class B Common Stock
+2023-01-03,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,267578.0,36.84,9857573.520000001,"BENTLEY, GREGORY S",Class B Common Stock
+2023-01-03,BSY,"Director, Chief Technology Officer, 10% Owner",SELL,23752.0,36.84,875023.68,"BENTLEY, KEITH A.",Class B Common Stock
+2023-01-03,BSY,Director,SELL,1208.0,37.6793,45516.594399999994,"GRISWOLD, KIRK B.",Class B Common Stock
+2023-01-03,BSY,Chief Legal Officer,SELL,694.0,37.1,25747.4,"SHAMAN, DAVID R.",Class B Common Stock
+2023-01-03,BSY,Director,SELL,33792.0,36.7843,1243015.0656,"GRISWOLD, KIRK B.",Class B Common Stock
+2023-01-03,BSY,Chief Revenue Officer,SELL,912.0,37.1,33835.200000000004,"BERGSMA, GUS",Class B Common Stock
+2023-01-24,BSY,Chief Financial Officer,BUY,14754.0,38.32,565373.28,"ANDRE, WERNER",Class B Common Stock
+2023-01-24,BSY,Chief Financial Officer,SELL,4392.0,38.32,168301.44,"ANDRE, WERNER",Class B Common Stock
+2023-01-24,BSY,Chief Investment Officer,BUY,24315.0,38.32,931750.8,"HOLLISTER, DAVID J.",Class B Common Stock
+2023-01-24,BSY,Chief Legal Officer,SELL,3649.0,38.32,139829.68,"SHAMAN, DAVID R.",Class B Common Stock
+2023-01-24,BSY,Chief Legal Officer,BUY,12156.0,38.32,465817.92,"SHAMAN, DAVID R.",Class B Common Stock
+2023-01-24,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,50110.0,38.3304,1920736.3439999998,"BENTLEY, GREGORY S",Class B Common Stock
+2023-01-24,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,39054.0,38.32,1496549.28,"BENTLEY, GREGORY S",Class B Common Stock
+2023-01-24,BSY,"Director, Chairman, CEO & President, 10% Owner",BUY,88221.0,38.32,3380628.72,"BENTLEY, GREGORY S",Class B Common Stock
+2023-01-24,BSY,"Director, Chief Technology Officer, 10% Owner",SELL,24256.0,38.32,929489.92,"BENTLEY, KEITH A.",Class B Common Stock
+2023-01-24,BSY,"Director, Chief Technology Officer, 10% Owner",BUY,54893.0,38.32,2103499.7600000002,"BENTLEY, KEITH A.",Class B Common Stock
+2023-01-24,BSY,"Director, Chief Technology Officer, 10% Owner",BUY,13151.0,38.32,503946.32,"BENTLEY, KEITH A.",Class B Common Stock
+2023-01-24,BSY,Chief Product Officer,SELL,2111.0,38.32,80893.52,"CAMPBELL, MICHAEL M",Class B Common Stock
+2023-01-24,BSY,Chief Product Officer,BUY,6519.0,38.32,249808.08000000002,"CAMPBELL, MICHAEL M",Class B Common Stock
+2023-01-24,BSY,Chief Operating Officer,SELL,11965.0,38.32,458498.8,"CUMINS, NICHOLAS",Class B Common Stock
+2023-01-24,BSY,Chief Operating Officer,BUY,25199.0,38.32,965625.68,"CUMINS, NICHOLAS",Class B Common Stock
+2023-01-24,BSY,See remarks,SELL,5049.0,38.32,193477.68,"BERGSMA, GUS",Class B Common Stock
+2023-01-24,BSY,See remarks,BUY,15921.0,38.32,610092.72,"BERGSMA, GUS",Class B Common Stock
+2023-01-25,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,13524.0,36.9974,500352.83759999997,"BENTLEY, GREGORY S",Class B Common Stock
+2023-02-02,BSY,Chief Legal Officer,SELL,5712.0,41.0,234192.0,"SHAMAN, DAVID R.",Class B Common Stock
+2023-02-02,BSY,Chief Investment Officer,SELL,100283.0,41.0089,4112495.5187,"HOLLISTER, DAVID J.",Class B Common Stock
+2023-02-28,BSY,Chief Legal Officer,SELL,1918.0,40.46,77602.28,"SHAMAN, DAVID R.",Class B Common Stock
+2023-03-03,BSY,"Director, 10% Owner",SELL,142053.0,42.5051,6037976.9703,"BENTLEY, BARRY J.",Class B Common Stock
+2023-03-06,BSY,"Director, 10% Owner",SELL,8356.0,42.52,355297.12000000005,"BENTLEY, BARRY J.",Class B Common Stock
+2023-03-17,BSY,Chief Operating Officer,SELL,2888.0,40.98,118350.23999999999,"CUMINS, NICHOLAS",Class B Common Stock
+2023-03-17,BSY,Chief Financial Officer,SELL,971.0,40.98,39791.579999999994,"ANDRE, WERNER",Class B Common Stock
+2023-03-17,BSY,Chief Legal Officer,SELL,1156.0,40.98,47372.88,"SHAMAN, DAVID R.",Class B Common Stock
+2023-03-17,BSY,Chief Revenue Officer,SELL,232.0,40.98,9507.359999999999,"BALLARD, BROCK",Class B Common Stock
+2023-03-20,BSY,Director,SELL,1289.0,41.18,53081.02,"GRISWOLD, KIRK B.",Class B Common Stock
+2023-03-20,BSY,Director,SELL,10000.0,5.305,53050.0,"GRISWOLD, KIRK B.",Stock Options (Right to Buy)
+2023-03-20,BSY,Director,BUY,10000.0,5.305,53050.0,"GRISWOLD, KIRK B.",Class B Common Stock
+2023-03-30,BSY,"Director, 10% Owner",SELL,50830.0,42.5102,2160793.466,"BENTLEY, BARRY J.",Class B Common Stock
+2023-03-31,BSY,"Director, 10% Owner",SELL,298761.0,42.7194,12762890.6634,"BENTLEY, BARRY J.",Class B Common Stock
+2023-04-03,BSY,Chief Legal Officer,SELL,3850.0,43.09,165896.5,"SHAMAN, DAVID R.",Class B Common Stock
+2023-04-03,BSY,Director,SELL,35000.0,42.9789,1504261.5,"GRISWOLD, KIRK B.",Class B Common Stock
+2023-04-19,BSY,Chief Financial Officer,SELL,273.0,43.23,11801.789999999999,"ANDRE, WERNER",Class B Common Stock
+2023-04-19,BSY,Chief Revenue Officer,SELL,178.0,43.23,7694.94,"BALLARD, BROCK",Class B Common Stock
+2023-04-19,BSY,Chief Operating Officer,SELL,1575.0,43.23,68087.25,"CUMINS, NICHOLAS",Class B Common Stock
+2023-04-19,BSY,Chief Legal Officer,SELL,846.0,43.23,36572.579999999994,"SHAMAN, DAVID R.",Class B Common Stock
+2023-04-24,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,45623.0,42.1512,1923064.1976,"BENTLEY, GREGORY S",Class B Common Stock
+2023-04-24,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,100.0,42.86,4286.0,"BENTLEY, GREGORY S",Class B Common Stock
+2023-04-25,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,17671.0,41.2711,729301.6081,"BENTLEY, GREGORY S",Class B Common Stock
+2023-04-25,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,240.0,42.12,10108.8,"BENTLEY, GREGORY S",Class B Common Stock
+2023-04-27,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,43672.0,42.18,1842084.96,"BENTLEY, GREGORY S",Class B Common Stock
+2023-04-27,BSY,"Director, Chairman, CEO & President, 10% Owner",BUY,99276.0,42.18,4187461.68,"BENTLEY, GREGORY S",Class B Common Stock
+2023-04-27,BSY,"Director, 10% Owner",BUY,3181.0,42.18,134174.58,"BENTLEY, KEITH A.",Class B Common Stock
+2023-04-27,BSY,"Director, 10% Owner",BUY,790.0,42.18,33322.2,"BENTLEY, KEITH A.",Class B Common Stock
+2023-04-27,BSY,"Director, 10% Owner",SELL,1392.0,42.18,58714.56,"BENTLEY, KEITH A.",Class B Common Stock
+2023-05-03,BSY,Chief Legal Officer,SELL,10474.0,42.57,445878.18,"SHAMAN, DAVID R.",Class B Common Stock
+2023-05-09,BSY,Chief Legal Officer,SELL,6454.0,45.0523,290767.5442,"SHAMAN, DAVID R.",Class B Common Stock
+2023-05-10,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,129691.0,45.59,5912612.69,"BENTLEY, GREGORY S",Class B Common Stock
+2023-05-16,BSY,Chief Financial Officer,BUY,11875.0,5.305,62996.875,"ANDRE, WERNER",Class B Common Stock
+2023-05-16,BSY,Chief Financial Officer,SELL,11875.0,5.305,62996.875,"ANDRE, WERNER",Stock Options (Right to Buy)
+2023-05-16,BSY,Chief Financial Officer,SELL,5505.0,45.91,252734.55,"ANDRE, WERNER",Class B Common Stock
+2023-05-18,BSY,Chief Legal Officer,BUY,85150.0,5.305,451720.75,"SHAMAN, DAVID R.",Class B Common Stock
+2023-05-18,BSY,Chief Legal Officer,SELL,42531.0,46.42,1974289.02,"SHAMAN, DAVID R.",Class B Common Stock
+2023-05-18,BSY,Chief Legal Officer,BUY,18850.0,5.305,99999.25,"SHAMAN, DAVID R.",Class B Common Stock
+2023-05-18,BSY,Chief Legal Officer,SELL,2147.0,46.58,100007.26,"SHAMAN, DAVID R.",Class B Common Stock
+2023-05-18,BSY,Chief Legal Officer,SELL,85150.0,5.305,451720.75,"SHAMAN, DAVID R.",Stock Options (Right to Buy)
+2023-05-18,BSY,Chief Legal Officer,SELL,18850.0,5.305,99999.25,"SHAMAN, DAVID R.",Stock Options (Right to Buy)
+2023-05-19,BSY,Chief Operating Officer,SELL,28000.0,46.0084,1288235.2,"CUMINS, NICHOLAS",Class B Common Stock
+2023-05-22,BSY,Chief Financial Officer,BUY,21875.0,5.305,116046.875,"ANDRE, WERNER",Class B Common Stock
+2023-05-22,BSY,Chief Financial Officer,SELL,2475.0,46.9,116077.5,"ANDRE, WERNER",Class B Common Stock
+2023-05-22,BSY,Chief Financial Officer,BUY,15774.0,5.74,90542.76000000001,"ANDRE, WERNER",Class B Common Stock
+2023-05-22,BSY,Chief Financial Officer,SELL,1931.0,46.9,90563.9,"ANDRE, WERNER",Class B Common Stock
+2023-06-05,BSY,Director,SELL,36747.0,50.082,1840363.254,"GRISWOLD, KIRK B.",Class B Common Stock
+2023-07-10,BSY,Chief Legal Officer,SELL,2610.0,51.94,135563.4,"SHAMAN, DAVID R.",Class B Common Stock
+2023-07-10,BSY,Chief Legal Officer,SELL,1626.0,52.53,85413.78,"SHAMAN, DAVID R.",Class B Common Stock
+2023-07-21,BSY,Chief Revenue Officer,SELL,511.0,53.87,27527.57,"BALLARD, BROCK",Class B Common Stock
+2023-07-21,BSY,Chief Financial Officer,SELL,1305.0,53.87,70300.34999999999,"ANDRE, WERNER",Class B Common Stock
+2023-07-24,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,57696.0,53.0838,3062722.9247999997,"BENTLEY, GREGORY S",Class B Common Stock
+2023-07-25,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,5139.0,53.909,277038.35099999997,"BENTLEY, GREGORY S",Class B Common Stock
+2023-07-25,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,91718.0,53.6576,4921367.756800001,"BENTLEY, GREGORY S",Class B Common Stock
+2023-07-26,BSY,"Director, 10% Owner",BUY,1901.0,53.09,100924.09000000001,"BENTLEY, KEITH A.",Class B Common Stock
+2023-07-26,BSY,"Director, Chairman, CEO & President, 10% Owner",BUY,59352.0,53.09,3150997.68,"BENTLEY, GREGORY S",Class B Common Stock
+2023-07-26,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,26109.0,53.09,1386126.81,"BENTLEY, GREGORY S",Class B Common Stock
+2023-07-26,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,41601.0,52.9512,2202822.8712,"BENTLEY, GREGORY S",Class B Common Stock
+2023-07-26,BSY,"Director, 10% Owner",BUY,473.0,53.09,25111.570000000003,"BENTLEY, KEITH A.",Class B Common Stock
+2023-07-26,BSY,"Director, 10% Owner",SELL,831.0,53.09,44117.79,"BENTLEY, KEITH A.",Class B Common Stock
+2023-07-27,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,16918.0,53.5483,905930.1394,"BENTLEY, GREGORY S",Class B Common Stock
+2023-07-27,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,25695.0,52.9017,1359309.1815,"BENTLEY, GREGORY S",Class B Common Stock
+2023-07-28,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,45871.0,53.4807,2453213.1897,"BENTLEY, GREGORY S",Class B Common Stock
+2023-07-31,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,41386.0,53.5155,2214792.483,"BENTLEY, GREGORY S",Class B Common Stock
+2023-08-01,BSY,Chief Legal Officer,SELL,1189.0,53.81,63980.090000000004,"SHAMAN, DAVID R.",Class B Common Stock
+2023-08-01,BSY,Chief Product Officer,SELL,4408.0,53.6911,236670.3688,"CAMPBELL, MICHAEL M",Class B Common Stock
+2023-08-31,BSY,Chief Legal Officer,SELL,6626.0,49.91,330703.66,"SHAMAN, DAVID R.",Class B Common Stock
+2023-09-06,BSY,Chief Product Officer,SELL,9556.0,50.16,479328.95999999996,"CAMPBELL, MICHAEL M",Class B Common Stock
+2023-09-07,BSY,Chief Product Officer,SELL,14934.0,49.8076,743826.6984,"CAMPBELL, MICHAEL M",Class B Common Stock
+2023-10-02,BSY,Chief Operating Officer,SELL,6447.0,49.95,322027.65,"CUMINS, NICHOLAS",Class B Common Stock
+2023-10-24,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,79337.0,50.161,3979623.257,"BENTLEY, GREGORY S",Class B Common Stock
+2023-10-25,BSY,"Director, 10% Owner",BUY,347.0,48.9,16968.3,"BENTLEY, KEITH A.",Class B Common Stock
+2023-10-25,BSY,"Director, 10% Owner",BUY,1334.0,48.9,65232.6,"BENTLEY, KEITH A.",Class B Common Stock
+2023-10-25,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,16796.0,50.0938,841375.4648000001,"BENTLEY, GREGORY S",Class B Common Stock
+2023-10-25,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,40205.0,49.1737,1977028.6084999999,"BENTLEY, GREGORY S",Class B Common Stock
+2023-10-25,BSY,"Director, Chairman, CEO & President, 10% Owner",BUY,75023.0,48.9,3668624.6999999997,"BENTLEY, GREGORY S",Class B Common Stock
+2023-10-26,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,51303.0,48.7094,2498938.3482,"BENTLEY, GREGORY S",Class B Common Stock
+2023-10-26,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,2199.0,49.3817,108590.3583,"BENTLEY, GREGORY S",Class B Common Stock
+2023-10-27,BSY,Chief Revenue Officer,SELL,403.0,48.33,19476.989999999998,"BALLARD, BROCK",Class B Common Stock
+2023-10-27,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,50905.0,48.3426,2460880.053,"BENTLEY, GREGORY S",Class B Common Stock
+2023-10-30,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,67313.0,48.45,3261314.85,"BENTLEY, GREGORY S",Class B Common Stock
+2023-10-31,BSY,"Director, Chairman, CEO & President, 10% Owner",SELL,17965.0,48.4245,869946.1425000001,"BENTLEY, GREGORY S",Class B Common Stock
+2023-12-18,BSY,Chief Legal Officer,SELL,566.0,50.64,28662.24,"SHAMAN, DAVID R.",Class B Common Stock
+2024-01-01,BSY,Chief Revenue Officer,SELL,2149.0,52.18,112134.81999999999,"BALLARD, BROCK",Class B Common Stock
+2024-01-23,BSY,Chief Financial Officer,BUY,15026.0,50.81,763471.06,"ANDRE, WERNER",Class B Common Stock
+2024-01-23,BSY,Chief Product Officer,BUY,16292.0,50.81,827796.52,"CAMPBELL, MICHAEL M",Class B Common Stock
+2024-01-23,BSY,Chief Operating Officer,SELL,9176.0,50.81,466232.56,"CUMINS, NICHOLAS",Class B Common Stock
+2024-01-23,BSY,Chief Operating Officer,BUY,19610.0,50.81,996384.1000000001,"CUMINS, NICHOLAS",Class B Common Stock
+2024-01-23,BSY,Chief Financial Officer,SELL,4429.0,50.81,225037.49000000002,"ANDRE, WERNER",Class B Common Stock
+2024-01-23,BSY,"Director, 10% Owner",BUY,278.0,50.81,14125.18,"BENTLEY, KEITH A.",Class B Common Stock
+2024-01-23,BSY,Chief Revenue Officer,BUY,11072.0,50.81,562568.3200000001,"BALLARD, BROCK",Class B Common Stock
+2024-01-23,BSY,Chief Legal Officer,BUY,14236.0,50.81,723331.16,"SHAMAN, DAVID R.",Class B Common Stock
+2024-01-23,BSY,"Director, Chairman, CEO & President, 10% Owner",BUY,64787.0,50.81,3291827.47,"BENTLEY, GREGORY S",Class B Common Stock
+2024-01-23,BSY,"Director, 10% Owner",BUY,1152.0,50.81,58533.12,"BENTLEY, KEITH A.",Class B Common Stock
+2024-01-23,BSY,Chief Product Officer,SELL,4935.0,50.81,250747.35,"CAMPBELL, MICHAEL M",Class B Common Stock
+2024-01-23,BSY,Chief Revenue Officer,SELL,3388.0,50.81,172144.28,"BALLARD, BROCK",Class B Common Stock
+2024-01-23,BSY,Chief Legal Officer,SELL,4207.0,50.81,213757.67,"SHAMAN, DAVID R.",Class B Common Stock
+2024-02-09,BSY,Chief Financial Officer,BUY,19226.0,5.74,110357.24,"ANDRE, WERNER",Class B Common Stock
+2024-02-09,BSY,Chief Financial Officer,SELL,8880.0,52.66,467620.8,"ANDRE, WERNER",Class B Common Stock
+2024-03-01,BSY,"Director, 10% Owner",SELL,200.0,51.6725,10334.5,"BENTLEY, KEITH A.",Class B Common Stock
+2024-03-01,BSY,"Director, 10% Owner",SELL,177085.0,51.2165,9069673.9025,"BENTLEY, KEITH A.",Class B Common Stock
+2024-03-04,BSY,"Director, 10% Owner",SELL,128333.0,51.286,6581686.238,"BENTLEY, KEITH A.",Class B Common Stock
+2024-03-05,BSY,"Director, 10% Owner",SELL,43390.0,49.3256,2140237.784,"BENTLEY, KEITH A.",Class B Common Stock
+2024-03-05,BSY,"Director, 10% Owner",SELL,4605.0,50.2662,231475.851,"BENTLEY, KEITH A.",Class B Common Stock
+2024-03-05,BSY,"Director, 10% Owner",SELL,57025.0,48.2339,2750538.1475,"BENTLEY, KEITH A.",Class B Common Stock
+2024-03-06,BSY,"Director, 10% Owner",SELL,80572.0,49.6237,3998280.7564,"BENTLEY, KEITH A.",Class B Common Stock
+2024-03-06,BSY,"Director, 10% Owner",SELL,119865.0,49.9858,5991547.916999999,"BENTLEY, KEITH A.",Class B Common Stock
+2024-03-07,BSY,"Director, 10% Owner",SELL,1356.0,50.3005,68207.478,"BENTLEY, KEITH A.",Class B Common Stock
+2024-03-07,BSY,"Director, 10% Owner",SELL,87569.0,49.4722,4332231.0818,"BENTLEY, KEITH A.",Class B Common Stock
+2024-03-13,BSY,Chief Financial Officer,SELL,1627.0,48.68,79202.36,"ANDRE, WERNER",Class B Common Stock
+2024-03-13,BSY,Chief Operating Officer,SELL,2234.0,48.68,108751.12,"CUMINS, NICHOLAS",Class B Common Stock
+2024-03-13,BSY,Chief Product Officer,SELL,1581.0,48.68,76963.08,"CAMPBELL, MICHAEL M",Class B Common Stock
+2024-03-13,BSY,Chief Legal Officer,SELL,1458.0,48.68,70975.44,"SHAMAN, DAVID R.",Class B Common Stock
+2024-03-13,BSY,Chief Revenue Officer,SELL,1219.0,48.68,59340.92,"BALLARD, BROCK",Class B Common Stock
+2024-03-17,BSY,Chief Revenue Officer,SELL,294.0,48.79,14344.26,"BALLARD, BROCK",Class B Common Stock
+2024-03-17,BSY,Chief Financial Officer,SELL,1486.0,48.79,72501.94,"ANDRE, WERNER",Class B Common Stock
+2024-03-17,BSY,Chief Legal Officer,SELL,1158.0,48.79,56498.82,"SHAMAN, DAVID R.",Class B Common Stock
+2024-03-17,BSY,Chief Operating Officer,SELL,2588.0,48.79,126268.52,"CUMINS, NICHOLAS",Class B Common Stock
+2024-03-21,BSY,Director,BUY,10000.0,5.74,57400.0,"GRISWOLD, KIRK B.",Class B Common Stock
+2024-03-21,BSY,Director,SELL,1106.0,51.94,57445.64,"GRISWOLD, KIRK B.",Class B Common Stock
+2024-03-29,BSY,Chief Accounting Officer,SELL,184.0,52.22,9608.48,"TRIMBACK, THOMAS F",Class B Common Stock
+2024-04-19,BSY,Chief Legal Officer,SELL,850.0,52.46,44591.0,"SHAMAN, DAVID R.",Class B Common Stock
+2024-04-19,BSY,Chief Operating Officer,SELL,1388.0,52.46,72814.48,"CUMINS, NICHOLAS",Class B Common Stock
+2024-04-19,BSY,Chief Financial Officer,SELL,419.0,52.46,21980.74,"ANDRE, WERNER",Class B Common Stock
+2024-04-19,BSY,Chief Revenue Officer,SELL,279.0,52.46,14636.34,"BALLARD, BROCK",Class B Common Stock
+2024-04-23,BSY,"Director, 10% Owner",SELL,17021.0,55.0,936155.0,"BENTLEY, KEITH A.",Class B Common Stock
+2024-04-25,BSY,"Director, Chairman, CEO & President, 10% Owner",BUY,102352.0,54.37,5564878.239999999,"BENTLEY, GREGORY S",Class B Common Stock
+2024-05-07,BSY,"Director, 10% Owner",SELL,118949.0,55.0073,6543063.3277,"BENTLEY, KEITH A.",Class B Common Stock
+2024-05-09,BSY,"Director, 10% Owner",SELL,59420.0,55.0123,3268830.8660000004,"BENTLEY, KEITH A.",Class B Common Stock
+2024-05-10,BSY,"Director, 10% Owner",SELL,104610.0,55.3555,5790738.8549999995,"BENTLEY, KEITH A.",Class B Common Stock
+2024-06-03,BSY,Chief Product Officer,SELL,3461.0,49.65,171838.65,"CAMPBELL, MICHAEL M",Class B Common Stock
+2024-06-03,BSY,Chief Product Officer,SELL,690.0,50.31,34713.9,"CAMPBELL, MICHAEL M",Class B Common Stock
+2024-06-04,BSY,Chief Product Officer,SELL,3282.0,50.0,164100.0,"CAMPBELL, MICHAEL M",Class B Common Stock
+2024-07-10,BSY,Chief Legal Officer,SELL,1626.0,48.41,78714.65999999999,"SHAMAN, DAVID R.",Class B Common Stock
+2024-07-21,BSY,Chief Revenue Officer,SELL,770.0,48.47,37321.9,"BALLARD, BROCK",Class B Common Stock
+2024-07-21,BSY,Chief Financial Officer,SELL,1305.0,48.47,63253.35,"ANDRE, WERNER",Class B Common Stock
+2024-07-24,BSY,"Director, Executive Chair & President, 10% Owner",BUY,88296.0,48.51,4283238.96,"BENTLEY, GREGORY S",Class B Common Stock
+2024-08-29,BSY,"Director, 10% Owner",SELL,120979.0,51.4759,6227502.9061,"BENTLEY, RAYMOND B.",Class B Common Stock
+2024-08-30,BSY,"Director, 10% Owner",SELL,130824.0,51.5452,6743349.2448,"BENTLEY, RAYMOND B.",Class B Common Stock
+2024-09-03,BSY,"Director, 10% Owner",SELL,27878.0,50.0896,1396397.8687999998,"BENTLEY, RAYMOND B.",Class B Common Stock
+2024-09-03,BSY,"Director, 10% Owner",SELL,60497.0,49.0567,2967783.1799,"BENTLEY, RAYMOND B.",Class B Common Stock
+2024-09-03,BSY,"Director, 10% Owner",SELL,2670.0,51.0403,136277.601,"BENTLEY, RAYMOND B.",Class B Common Stock
+2024-09-04,BSY,"Director, 10% Owner",SELL,104259.0,48.5089,5057489.4051,"BENTLEY, RAYMOND B.",Class B Common Stock
+2024-09-05,BSY,"Director, 10% Owner",SELL,83836.0,48.4009,4057737.8524,"BENTLEY, RAYMOND B.",Class B Common Stock
+2024-09-05,BSY,"Director, 10% Owner",SELL,3561.0,48.7535,173611.2135,"BENTLEY, RAYMOND B.",Class B Common Stock
+2024-09-06,BSY,Chief Product Officer,SELL,10899.0,48.29,526312.71,"CAMPBELL, MICHAEL M",Class B Common Stock
+2024-09-06,BSY,"Director, 10% Owner",SELL,65486.0,48.2424,3159201.8064,"BENTLEY, RAYMOND B.",Class B Common Stock
+2024-09-06,BSY,"Director, 10% Owner",SELL,10.0,48.95,489.5,"BENTLEY, RAYMOND B.",Class B Common Stock
+2024-09-10,BSY,Chief Product Officer,SELL,1331.0,47.54,63275.74,"CAMPBELL, MICHAEL M",Class B Common Stock
+2024-09-10,BSY,Chief Product Officer,SELL,2777.0,47.1,130796.7,"CAMPBELL, MICHAEL M",Class B Common Stock
+2024-09-10,BSY,Chief Product Officer,SELL,6450.0,47.22,304569.0,"CAMPBELL, MICHAEL M",Class B Common Stock
+2024-09-10,BSY,Chief Product Officer,SELL,1801.0,47.54,85619.54,"CAMPBELL, MICHAEL M",Class B Common Stock
+2024-09-11,BSY,"Director, 10% Owner",SELL,50000.0,48.1123,2405615.0,"BENTLEY, BARRY J.",Class B Common Stock
+2024-09-16,BSY,"Director, 10% Owner",SELL,50000.0,49.2811,2464055.0,"BENTLEY, BARRY J.",Class B Common Stock
+2024-09-17,BSY,Chief Product Officer,SELL,897.0,50.0,44850.0,"CAMPBELL, MICHAEL M",Class B Common Stock
+2024-09-23,BSY,"Director, 10% Owner",SELL,50000.0,50.2016,2510080.0,"BENTLEY, BARRY J.",Class B Common Stock
+2024-09-30,BSY,"Director, 10% Owner",SELL,50000.0,50.5815,2529075.0,"BENTLEY, BARRY J.",Class B Common Stock
+2024-10-02,BSY,"Director, Chief Executive Officer",SELL,5960.0,49.89,297344.4,"CUMINS, NICHOLAS",Class B Common Stock
+2024-10-07,BSY,"Director, 10% Owner",SELL,34987.0,48.3687,1692275.7068999999,"BENTLEY, BARRY J.",Class B Common Stock
+2024-10-08,BSY,"Director, 10% Owner",SELL,15013.0,48.0575,721487.2474999999,"BENTLEY, BARRY J.",Class B Common Stock
+2024-10-14,BSY,"Director, 10% Owner",SELL,50000.0,50.9154,2545770.0,"BENTLEY, BARRY J.",Class B Common Stock
+2024-10-21,BSY,"Director, 10% Owner",SELL,50000.0,49.4363,2471815.0,"BENTLEY, BARRY J.",Class B Common Stock
+2024-10-25,BSY,Chief Accounting Officer,SELL,74.0,49.15,3637.1,"TRIMBACK, THOMAS F",Class B Common Stock
+2024-10-27,BSY,Chief Revenue Officer,SELL,609.0,49.15,29932.35,"BALLARD, BROCK",Class B Common Stock
+2024-10-28,BSY,"Director, 10% Owner",SELL,50000.0,48.9507,2447535.0,"BENTLEY, BARRY J.",Class B Common Stock
+2024-10-30,BSY,"Director, Executive Chair & President, 10% Owner",BUY,25753.0,49.61,1277606.33,"BENTLEY, GREGORY S",Class B Common Stock
+2024-11-04,BSY,"Director, 10% Owner",SELL,50000.0,48.7963,2439815.0,"BENTLEY, BARRY J.",Class B Common Stock
+2024-11-11,BSY,"Director, 10% Owner",SELL,50000.0,48.2186,2410930.0,"BENTLEY, BARRY J.",Class B Common Stock
+2024-12-16,BSY,Chief Legal Officer,SELL,2484.0,48.03,119306.52,"SHAMAN, DAVID R.",Class B Common Stock
+2025-01-02,BSY,Chief Revenue Officer,SELL,2171.0,46.7,101385.70000000001,"BALLARD, BROCK",Class B Common Stock
+2025-01-02,BSY,"Director, 10% Owner",SELL,69573.0,46.6677,3246811.8921000003,"BENTLEY, KEITH A.",Class B Common Stock
+2025-01-22,BSY,Chief Legal Officer,SELL,3802.0,46.56,177021.12,"SHAMAN, DAVID R.",Class B Common Stock
+2025-01-22,BSY,Chief Revenue Officer,BUY,10244.0,46.56,476960.64,"BALLARD, BROCK",Class B Common Stock
+2025-01-22,BSY,Chief Revenue Officer,SELL,2966.0,46.56,138096.96000000002,"BALLARD, BROCK",Class B Common Stock
+2025-01-22,BSY,Chief Financial Officer,BUY,14258.0,46.56,663852.48,"ANDRE, WERNER",Class B Common Stock
+2025-01-22,BSY,Chief Financial Officer,SELL,4228.0,46.56,196855.68000000002,"ANDRE, WERNER",Class B Common Stock
+2025-01-22,BSY,Chief Accounting Officer,SELL,976.0,46.56,45442.560000000005,"TRIMBACK, THOMAS F",Class B Common Stock
+2025-01-22,BSY,"Director, Executive Chair & President, 10% Owner",BUY,22818.0,46.56,1062406.08,"BENTLEY, GREGORY S",Class B Common Stock
+2025-01-22,BSY,"Director, Chief Executive Officer",SELL,8168.0,46.56,380302.08,"CUMINS, NICHOLAS",Class B Common Stock
+2025-01-22,BSY,Chief Legal Officer,BUY,12738.0,46.56,593081.28,"SHAMAN, DAVID R.",Class B Common Stock
+2025-01-22,BSY,Chief Accounting Officer,BUY,2888.0,46.56,134465.28,"TRIMBACK, THOMAS F",Class B Common Stock
+2025-01-22,BSY,"Director, Chief Executive Officer",BUY,19633.0,46.56,914112.4800000001,"CUMINS, NICHOLAS",Class B Common Stock
+2025-01-24,BSY,"Director, 10% Owner",SELL,1152.0,46.328,53369.856,"BENTLEY, KEITH A.",Class B Common Stock
+2025-01-30,BSY,Chief Accounting Officer,SELL,294.0,45.92,13500.480000000001,"TRIMBACK, THOMAS F",Class B Common Stock
+2025-01-31,BSY,Chief Legal Officer,SELL,20135.0,46.55,937284.25,"SHAMAN, DAVID R.",Class B Common Stock
+2025-01-31,BSY,Chief Financial Officer,SELL,10068.0,46.55,468665.39999999997,"ANDRE, WERNER",Class B Common Stock
+2025-01-31,BSY,Chief Financial Officer,BUY,23148.0,46.55,1077539.4,"ANDRE, WERNER",Class B Common Stock
+2025-01-31,BSY,Chief Financial Officer,SELL,9119.0,46.55,424489.44999999995,"ANDRE, WERNER",Class B Common Stock
+2025-01-31,BSY,Chief Legal Officer,BUY,46297.0,46.55,2155125.35,"SHAMAN, DAVID R.",Class B Common Stock
+2025-01-31,BSY,"Director, Chief Executive Officer",SELL,36145.0,46.55,1682549.75,"CUMINS, NICHOLAS",Class B Common Stock
+2025-01-31,BSY,Chief Legal Officer,SELL,19060.0,46.55,887243.0,"SHAMAN, DAVID R.",Class B Common Stock
+2025-01-31,BSY,"Director, Chief Executive Officer",SELL,35733.0,46.55,1663371.15,"CUMINS, NICHOLAS",Class B Common Stock
+2025-01-31,BSY,"Director, Chief Executive Officer",BUY,77161.0,46.55,3591844.55,"CUMINS, NICHOLAS",Class B Common Stock
+2025-03-03,BSY,Chief Revenue Officer,SELL,6136.0,43.1301,264646.2936,"BALLARD, BROCK",Class B Common Stock
+2025-03-03,BSY,Chief Revenue Officer,SELL,1548.0,43.7824,67775.15520000001,"BALLARD, BROCK",Class B Common Stock
+2025-03-12,BSY,"Director, Executive Chair & President, 10% Owner",SELL,53968.0,41.0392,2214803.5456,"BENTLEY, GREGORY S",Class B Common Stock
+2025-03-13,BSY,"Director, Chief Executive Officer",SELL,3572.0,40.11,143272.91999999998,"CUMINS, NICHOLAS",Class B Common Stock
+2025-03-13,BSY,Chief Accounting Officer,SELL,193.0,40.11,7741.23,"TRIMBACK, THOMAS F",Class B Common Stock
+2025-03-13,BSY,Chief Financial Officer,SELL,3085.0,40.11,123739.34999999999,"ANDRE, WERNER",Class B Common Stock
+2025-03-13,BSY,Chief Revenue Officer,SELL,1881.0,40.11,75446.91,"BALLARD, BROCK",Class B Common Stock
+2025-03-13,BSY,Chief Legal Officer,SELL,2691.0,40.11,107936.01,"SHAMAN, DAVID R.",Class B Common Stock
+2025-03-17,BSY,Chief Legal Officer,SELL,1165.0,42.43,49430.95,"SHAMAN, DAVID R.",Class B Common Stock
+2025-03-17,BSY,Chief Revenue Officer,SELL,193.0,42.43,8188.99,"BALLARD, BROCK",Class B Common Stock
+2025-03-17,BSY,Chief Financial Officer,SELL,1494.0,42.43,63390.42,"ANDRE, WERNER",Class B Common Stock
+2025-03-17,BSY,"Director, Chief Executive Officer",SELL,2142.0,42.43,90885.06,"CUMINS, NICHOLAS",Class B Common Stock
+2025-03-28,BSY,Chief Accounting Officer,SELL,170.0,39.7,6749.000000000001,"TRIMBACK, THOMAS F",Class B Common Stock
+2025-04-01,BSY,Chief Technology Officer,SELL,2741.0,40.49,110983.09000000001,"MOUTTE, JULIEN",Class B Common Stock
+2025-04-19,BSY,Chief Financial Officer,SELL,422.0,43.19,18226.18,"ANDRE, WERNER",Class B Common Stock
+2025-04-19,BSY,Chief Revenue Officer,SELL,277.0,43.19,11963.63,"BALLARD, BROCK",Class B Common Stock
+2025-04-19,BSY,Chief Technology Officer,SELL,306.0,43.19,13216.14,"MOUTTE, JULIEN",Class B Common Stock
+2025-04-19,BSY,Chief Legal Officer,SELL,752.0,43.19,32478.879999999997,"SHAMAN, DAVID R.",Class B Common Stock
+2025-04-19,BSY,"Director, Chief Executive Officer",SELL,1171.0,43.19,50575.49,"CUMINS, NICHOLAS",Class B Common Stock
+2025-04-23,BSY,"Director, Executive Chair & President, 10% Owner",SELL,20779.0,43.42,902224.18,"BENTLEY, GREGORY S",Class B Common Stock
+2025-04-23,BSY,"Director, Executive Chair & President, 10% Owner",BUY,47506.0,43.42,2062710.52,"BENTLEY, GREGORY S",Class B Common Stock
+2025-05-05,BSY,Chief Legal Officer,SELL,10337.0,43.77,452450.49000000005,"SHAMAN, DAVID R.",Class B Common Stock
+2025-05-07,BSY,Chief Revenue Officer,SELL,12363.0,45.0756,557269.6428,"BALLARD, BROCK",Class B Common Stock
+2025-05-13,BSY,Chief Operating Officer,SELL,6080.0,48.14,292691.2,"LEE, JAMES K",Class B Common Stock
+2025-06-16,BSY,"Director, 10% Owner",SELL,355103.0,49.9633,17742117.719899997,"BENTLEY, RAYMOND B.",Class B Common Stock
+2025-06-17,BSY,"Director, 10% Owner",SELL,273094.0,50.3038,13737665.9572,"BENTLEY, RAYMOND B.",Class B Common Stock
+2025-06-18,BSY,"Director, 10% Owner",SELL,2400.0,50.9806,122353.44,"BENTLEY, RAYMOND B.",Class B Common Stock
+2025-06-18,BSY,"Director, 10% Owner",SELL,247289.0,50.6432,12523506.2848,"BENTLEY, RAYMOND B.",Class B Common Stock
+2025-06-20,BSY,"Director, 10% Owner",SELL,122114.0,50.6995,6191118.743,"BENTLEY, RAYMOND B.",Class B Common Stock
+2025-07-03,BSY,Chief Legal Officer,SELL,19156.0,54.9806,1053208.3736,"SHAMAN, DAVID R.",Class B Common Stock
+2025-07-07,BSY,"Director, 10% Owner",SELL,149900.0,55.5364,8324906.36,"BENTLEY, KEITH A.",Class B Common Stock
+2025-07-07,BSY,"Director, 10% Owner",SELL,100.0,56.045,5604.5,"BENTLEY, KEITH A.",Class B Common Stock
+2025-07-08,BSY,Chief Legal Officer,SELL,2636.0,55.9,147352.4,"SHAMAN, DAVID R.",Class B Common Stock
+2025-07-11,BSY,Chief Legal Officer,SELL,965.0,56.922,54929.729999999996,"SHAMAN, DAVID R.",Class B Common Stock
+2025-07-14,BSY,Chief Legal Officer,SELL,19348.0,56.9622,1102104.6456000002,"SHAMAN, DAVID R.",Class B Common Stock
+2025-07-24,BSY,"Director, Executive Chair & President, 10% Owner",BUY,30737.0,58.35,1793503.95,"BENTLEY, GREGORY S",Class B Common Stock
+2025-07-24,BSY,"Director, Executive Chair & President, 10% Owner",SELL,13445.0,58.35,784515.75,"BENTLEY, GREGORY S",Class B Common Stock
+2025-07-29,BSY,Chief Legal Officer,SELL,400.0,59.25,23700.0,"SHAMAN, DAVID R.",Class B Common Stock
+2025-08-01,BSY,Chief Legal Officer,SELL,1201.0,57.12,68601.12,"SHAMAN, DAVID R.",Class B Common Stock
+2025-08-31,BSY,Chief Legal Officer,SELL,6685.0,55.03,367875.55,"SHAMAN, DAVID R.",Class B Common Stock
+2025-09-02,BSY,"Director, Executive Chair & President, 10% Owner",SELL,37160.0,54.8325,2037575.7000000002,"BENTLEY, GREGORY S",Class B Common Stock
+2025-10-22,BSY,"Director, Executive Chair & President, 10% Owner",BUY,30135.0,52.01,1567321.3499999999,"BENTLEY, GREGORY S",Class B Common Stock
+2025-10-22,BSY,"Director, Executive Chair & President, 10% Owner",SELL,13181.0,52.01,685543.8099999999,"BENTLEY, GREGORY S",Class B Common Stock
+2025-10-25,BSY,Chief Accounting Officer,SELL,74.0,51.73,3828.02,"TRIMBACK, THOMAS F",Class B Common Stock
+2025-10-27,BSY,Chief Revenue Officer,SELL,609.0,52.2,31789.800000000003,"BALLARD, BROCK",Class B Common Stock
+2025-11-17,BSY,Chief Accounting Officer,SELL,560.0,43.02,24091.2,"TRIMBACK, THOMAS F",Class B Common Stock
+2025-12-01,BSY,"Director, Executive Chair & President, 10% Owner",SELL,8932.0,41.85,373804.2,"BENTLEY, GREGORY S",Class B Common Stock
+2025-12-15,BSY,Chief Operating Officer,SELL,9166.0,40.25,368931.5,"LEE, JAMES K",Class B Common Stock
+2025-12-15,BSY,Chief Legal Officer,SELL,4165.0,40.25,167641.25,"SHAMAN, DAVID R.",Class B Common Stock
+2025-12-15,BSY,Chief Legal Officer,SELL,730.0,40.25,29382.5,"SHAMAN, DAVID R.",Class B Common Stock
+2025-12-15,BSY,Chief Financial Officer,SELL,4401.0,40.25,177140.25,"ANDRE, WERNER",Class B Common Stock
+2025-12-15,BSY,"Director, Chief Executive Officer",SELL,17162.0,40.25,690770.5,"CUMINS, NICHOLAS",Class B Common Stock

@@ -1,0 +1,1319 @@
+API ACTIVITY LOG
+==================================================
+
+[API] 2025-12-28 09:47:11.155730 | GET | HISTORICAL_OPTIONS
+      Symbol: A
+      Status: 200
+      Response size: 361875 bytes
+      Cache: MISS
+      Time: 0.49s
+
+[API] 2025-12-28 09:47:12.027461 | GET | HISTORICAL_OPTIONS
+      Symbol: AAPL
+      Status: 200
+      Response size: 1961224 bytes
+      Cache: MISS
+      Time: 0.50s
+
+[API] 2025-12-28 09:47:13.115137 | GET | HISTORICAL_OPTIONS
+      Symbol: ABBV
+      Status: 200
+      Response size: 988402 bytes
+      Cache: MISS
+      Time: 0.44s
+
+[API] 2025-12-28 09:47:14.007992 | GET | HISTORICAL_OPTIONS
+      Symbol: ABNB
+      Status: 200
+      Response size: 948631 bytes
+      Cache: MISS
+      Time: 0.36s
+
+[API] 2025-12-28 09:47:15.061158 | GET | HISTORICAL_OPTIONS
+      Symbol: ABT
+      Status: 200
+      Response size: 775067 bytes
+      Cache: MISS
+      Time: 0.60s
+
+[API] 2025-12-28 09:47:16.188004 | GET | HISTORICAL_OPTIONS
+      Symbol: ABTC
+      Status: 200
+      Response size: 177574 bytes
+      Cache: MISS
+      Time: 0.75s
+
+[API] 2025-12-28 09:47:17.259436 | GET | HISTORICAL_OPTIONS
+      Symbol: ACN
+      Status: 200
+      Response size: 1037025 bytes
+      Cache: MISS
+      Time: 0.71s
+
+[API] 2025-12-28 09:47:18.561059 | GET | HISTORICAL_OPTIONS
+      Symbol: ADBE
+      Status: 200
+      Response size: 1756977 bytes
+      Cache: MISS
+      Time: 0.79s
+
+[API] 2025-12-28 09:47:19.842935 | GET | HISTORICAL_OPTIONS
+      Symbol: ADI
+      Status: 200
+      Response size: 942210 bytes
+      Cache: MISS
+      Time: 0.68s
+
+[API] 2025-12-28 09:47:21.061355 | GET | HISTORICAL_OPTIONS
+      Symbol: ADM
+      Status: 200
+      Response size: 259421 bytes
+      Cache: MISS
+      Time: 0.85s
+
+[API] 2025-12-28 09:47:21.997462 | GET | HISTORICAL_OPTIONS
+      Symbol: ADP
+      Status: 200
+      Response size: 914571 bytes
+      Cache: MISS
+      Time: 0.67s
+
+[API] 2025-12-28 09:47:22.823324 | GET | HISTORICAL_OPTIONS
+      Symbol: ADSK
+      Status: 200
+      Response size: 1053233 bytes
+      Cache: MISS
+      Time: 0.38s
+
+[API] 2025-12-28 09:47:23.616631 | GET | HISTORICAL_OPTIONS
+      Symbol: AEE
+      Status: 200
+      Response size: 108013 bytes
+      Cache: MISS
+      Time: 0.38s
+
+[API] 2025-12-28 09:47:24.066695 | GET | HISTORICAL_OPTIONS
+      Symbol: AEP
+      Status: 200
+      Response size: 352116 bytes
+      Cache: MISS
+      Time: 0.32s
+
+[API] 2025-12-28 09:47:24.752689 | GET | HISTORICAL_OPTIONS
+      Symbol: AES
+      Status: 200
+      Response size: 432372 bytes
+      Cache: MISS
+      Time: 0.42s
+
+[API] 2025-12-28 09:47:26.072679 | GET | HISTORICAL_OPTIONS
+      Symbol: AFL
+      Status: 200
+      Response size: 710906 bytes
+      Cache: MISS
+      Time: 0.99s
+
+[API] 2025-12-28 09:47:27.035139 | GET | HISTORICAL_OPTIONS
+      Symbol: AI
+      Status: 200
+      Response size: 436484 bytes
+      Cache: MISS
+      Time: 0.57s
+
+[API] 2025-12-28 09:47:27.952637 | GET | HISTORICAL_OPTIONS
+      Symbol: AIG
+      Status: 200
+      Response size: 702692 bytes
+      Cache: MISS
+      Time: 0.58s
+
+[API] 2025-12-28 09:47:28.719470 | GET | HISTORICAL_OPTIONS
+      Symbol: AIT
+      Status: 200
+      Response size: 158614 bytes
+      Cache: MISS
+      Time: 0.39s
+
+[API] 2025-12-28 09:47:29.332853 | GET | HISTORICAL_OPTIONS
+      Symbol: AL
+      Status: 200
+      Response size: 67679 bytes
+      Cache: MISS
+      Time: 0.50s
+
+[API] 2025-12-28 09:47:30.221510 | GET | HISTORICAL_OPTIONS
+      Symbol: ALAB
+      Status: 200
+      Response size: 1211558 bytes
+      Cache: MISS
+      Time: 0.70s
+
+[API] 2025-12-28 09:47:31.174588 | GET | HISTORICAL_OPTIONS
+      Symbol: ALL
+      Status: 200
+      Response size: 382889 bytes
+      Cache: MISS
+      Time: 0.49s
+
+[API] 2025-12-28 09:47:31.964866 | GET | HISTORICAL_OPTIONS
+      Symbol: ALNY
+      Status: 200
+      Response size: 399208 bytes
+      Cache: MISS
+      Time: 0.55s
+
+[API] 2025-12-28 09:47:32.293067 | GET | HISTORICAL_OPTIONS
+      Symbol: ALOT
+      Status: 200
+      Response size: 95 bytes
+      Cache: MISS
+      Time: 0.17s
+
+[API] 2025-12-28 09:47:33.033389 | GET | HISTORICAL_OPTIONS
+      Symbol: AMAT
+      Status: 200
+      Response size: 1286079 bytes
+      Cache: MISS
+      Time: 0.63s
+
+[API] 2025-12-28 09:47:34.332013 | GET | HISTORICAL_OPTIONS
+      Symbol: AMD
+      Status: 200
+      Response size: 2033630 bytes
+      Cache: MISS
+      Time: 0.67s
+
+[API] 2025-12-28 09:47:35.386319 | GET | HISTORICAL_OPTIONS
+      Symbol: AME
+      Status: 200
+      Response size: 218828 bytes
+      Cache: MISS
+      Time: 0.47s
+
+[API] 2025-12-28 09:47:36.384414 | GET | HISTORICAL_OPTIONS
+      Symbol: AMG
+      Status: 200
+      Response size: 206609 bytes
+      Cache: MISS
+      Time: 0.84s
+
+[API] 2025-12-28 09:47:37.282531 | GET | HISTORICAL_OPTIONS
+      Symbol: AMGN
+      Status: 200
+      Response size: 1124865 bytes
+      Cache: MISS
+      Time: 0.68s
+
+[API] 2025-12-28 09:47:38.145993 | GET | HISTORICAL_OPTIONS
+      Symbol: AMKR
+      Status: 200
+      Response size: 251937 bytes
+      Cache: MISS
+      Time: 0.47s
+
+[API] 2025-12-28 09:47:38.497465 | GET | HISTORICAL_OPTIONS
+      Symbol: AMP
+      Status: 200
+      Response size: 225343 bytes
+      Cache: MISS
+      Time: 0.19s
+
+[API] 2025-12-28 09:47:39.197137 | GET | HISTORICAL_OPTIONS
+      Symbol: AMPG
+      Status: 200
+      Response size: 16090 bytes
+      Cache: MISS
+      Time: 0.59s
+
+[API] 2025-12-28 09:47:40.257908 | GET | HISTORICAL_OPTIONS
+      Symbol: AMT
+      Status: 200
+      Response size: 441865 bytes
+      Cache: MISS
+      Time: 0.93s
+
+[API] 2025-12-28 09:47:40.492514 | GET | HISTORICAL_OPTIONS
+      Symbol: AMZN
+      Status: 200
+      Response size: 918635 bytes
+      Cache: HIT
+      Time: 0.01s
+
+[API] 2025-12-28 09:47:41.773081 | GET | HISTORICAL_OPTIONS
+      Symbol: ANET
+      Status: 200
+      Response size: 1006985 bytes
+      Cache: MISS
+      Time: 0.68s
+
+[API] 2025-12-28 09:47:43.031961 | GET | HISTORICAL_OPTIONS
+      Symbol: AON
+      Status: 200
+      Response size: 221428 bytes
+      Cache: MISS
+      Time: 0.86s
+
+[API] 2025-12-28 09:47:43.673926 | GET | HISTORICAL_OPTIONS
+      Symbol: APD
+      Status: 200
+      Response size: 372237 bytes
+      Cache: MISS
+      Time: 0.48s
+
+[API] 2025-12-28 09:47:44.446374 | GET | HISTORICAL_OPTIONS
+      Symbol: APH
+      Status: 200
+      Response size: 395687 bytes
+      Cache: MISS
+      Time: 0.57s
+
+[API] 2025-12-28 09:47:45.267480 | GET | HISTORICAL_OPTIONS
+      Symbol: APO
+      Status: 200
+      Response size: 852167 bytes
+      Cache: MISS
+      Time: 0.52s
+
+[API] 2025-12-28 09:47:46.765660 | GET | HISTORICAL_OPTIONS
+      Symbol: APP
+      Status: 200
+      Response size: 2882601 bytes
+      Cache: MISS
+      Time: 0.90s
+
+[API] 2025-12-28 09:47:47.850181 | GET | HISTORICAL_OPTIONS
+      Symbol: ARES
+      Status: 200
+      Response size: 279871 bytes
+      Cache: MISS
+      Time: 0.51s
+
+[API] 2025-12-28 09:47:48.843684 | GET | HISTORICAL_OPTIONS
+      Symbol: ARM
+      Status: 200
+      Response size: 1349990 bytes
+      Cache: MISS
+      Time: 0.72s
+
+[API] 2025-12-28 09:47:49.516991 | GET | HISTORICAL_OPTIONS
+      Symbol: ARMK
+      Status: 200
+      Response size: 108205 bytes
+      Cache: MISS
+      Time: 0.17s
+
+[API] 2025-12-28 09:47:49.986372 | GET | HISTORICAL_OPTIONS
+      Symbol: ASTS
+      Status: 200
+      Response size: 992591 bytes
+      Cache: MISS
+      Time: 0.29s
+
+[API] 2025-12-28 09:47:50.672592 | GET | HISTORICAL_OPTIONS
+      Symbol: ATEX
+      Status: 200
+      Response size: 42774 bytes
+      Cache: MISS
+      Time: 0.30s
+
+[API] 2025-12-28 09:47:51.206532 | GET | HISTORICAL_OPTIONS
+      Symbol: ATO
+      Status: 200
+      Response size: 126592 bytes
+      Cache: MISS
+      Time: 0.42s
+
+[API] 2025-12-28 09:47:51.956808 | GET | HISTORICAL_OPTIONS
+      Symbol: ATRC
+      Status: 200
+      Response size: 56120 bytes
+      Cache: MISS
+      Time: 0.64s
+
+[API] 2025-12-28 09:47:52.568489 | GET | HISTORICAL_OPTIONS
+      Symbol: AU
+      Status: 200
+      Response size: 299564 bytes
+      Cache: MISS
+      Time: 0.49s
+
+[API] 2025-12-28 09:47:53.739314 | GET | HISTORICAL_OPTIONS
+      Symbol: AVGO
+      Status: 200
+      Response size: 2109414 bytes
+      Cache: MISS
+      Time: 0.82s
+
+[API] 2025-12-28 09:47:54.579615 | GET | HISTORICAL_OPTIONS
+      Symbol: AXGN
+      Status: 200
+      Response size: 66791 bytes
+      Cache: MISS
+      Time: 0.32s
+
+[API] 2025-12-28 09:47:55.366894 | GET | HISTORICAL_OPTIONS
+      Symbol: AXON
+      Status: 200
+      Response size: 845605 bytes
+      Cache: MISS
+      Time: 0.63s
+
+[API] 2025-12-28 09:47:56.355965 | GET | HISTORICAL_OPTIONS
+      Symbol: AXP
+      Status: 200
+      Response size: 1225211 bytes
+      Cache: MISS
+      Time: 0.68s
+
+[API] 2025-12-28 09:47:57.226688 | GET | HISTORICAL_OPTIONS
+      Symbol: AXS
+      Status: 200
+      Response size: 107939 bytes
+      Cache: MISS
+      Time: 0.42s
+
+[API] 2025-12-28 09:47:57.840629 | GET | HISTORICAL_OPTIONS
+      Symbol: AZN
+      Status: 200
+      Response size: 318282 bytes
+      Cache: MISS
+      Time: 0.49s
+
+[API] 2025-12-28 09:47:58.665346 | GET | HISTORICAL_OPTIONS
+      Symbol: AZO
+      Status: 200
+      Response size: 696493 bytes
+      Cache: MISS
+      Time: 0.56s
+
+[API] 2025-12-28 09:47:58.997524 | GET | HISTORICAL_OPTIONS
+      Symbol: AZUL
+      Status: 200
+      Response size: 95 bytes
+      Cache: MISS
+      Time: 0.16s
+
+[API] 2025-12-28 09:47:59.780912 | GET | HISTORICAL_OPTIONS
+      Symbol: BA
+      Status: 200
+      Response size: 1065280 bytes
+      Cache: MISS
+      Time: 0.69s
+
+[API] 2025-12-28 09:48:00.974244 | GET | HISTORICAL_OPTIONS
+      Symbol: BABA
+      Status: 200
+      Response size: 1240126 bytes
+      Cache: MISS
+      Time: 0.69s
+
+[API] 2025-12-28 09:48:02.079640 | GET | HISTORICAL_OPTIONS
+      Symbol: BAC
+      Status: 200
+      Response size: 710471 bytes
+      Cache: MISS
+      Time: 0.59s
+
+[API] 2025-12-28 09:48:03.324206 | GET | HISTORICAL_OPTIONS
+      Symbol: BAM
+      Status: 200
+      Response size: 167922 bytes
+      Cache: MISS
+      Time: 0.75s
+
+[API] 2025-12-28 09:48:03.603441 | GET | HISTORICAL_OPTIONS
+      Symbol: BARC
+      Status: 200
+      Response size: 95 bytes
+      Cache: MISS
+      Time: 0.14s
+
+[API] 2025-12-28 09:48:03.758039 | GET | HISTORICAL_OPTIONS
+      Symbol: BATS
+      Status: 200
+      Response size: 95 bytes
+      Cache: MISS
+      Time: 0.14s
+
+[API] 2025-12-28 09:48:04.388354 | GET | HISTORICAL_OPTIONS
+      Symbol: BDX
+      Status: 200
+      Response size: 460060 bytes
+      Cache: MISS
+      Time: 0.59s
+
+[API] 2025-12-28 09:48:05.240758 | GET | HISTORICAL_OPTIONS
+      Symbol: BHE
+      Status: 200
+      Response size: 53298 bytes
+      Cache: MISS
+      Time: 0.65s
+
+[API] 2025-12-28 09:48:06.105760 | GET | HISTORICAL_OPTIONS
+      Symbol: BIIB
+      Status: 200
+      Response size: 901401 bytes
+      Cache: MISS
+      Time: 0.69s
+
+[API] 2025-12-28 09:48:07.000431 | GET | HISTORICAL_OPTIONS
+      Symbol: BK
+      Status: 200
+      Response size: 334293 bytes
+      Cache: MISS
+      Time: 0.49s
+
+[API] 2025-12-28 09:48:08.628725 | GET | HISTORICAL_OPTIONS
+      Symbol: BKNG
+      Status: 200
+      Response size: 4753320 bytes
+      Cache: MISS
+      Time: 1.05s
+
+[API] 2025-12-28 09:48:10.081347 | GET | HISTORICAL_OPTIONS
+      Symbol: BKR
+      Status: 200
+      Response size: 280284 bytes
+      Cache: MISS
+      Time: 0.83s
+
+[API] 2025-12-28 09:48:11.010251 | GET | HISTORICAL_OPTIONS
+      Symbol: BLBD
+      Status: 200
+      Response size: 86949 bytes
+      Cache: MISS
+      Time: 0.69s
+
+[API] 2025-12-28 09:48:12.114642 | GET | HISTORICAL_OPTIONS
+      Symbol: BLK
+      Status: 200
+      Response size: 1885176 bytes
+      Cache: MISS
+      Time: 0.83s
+
+[API] 2025-12-28 09:48:13.211471 | GET | HISTORICAL_OPTIONS
+      Symbol: BN
+      Status: 200
+      Response size: 50602 bytes
+      Cache: MISS
+      Time: 0.64s
+
+[API] 2025-12-28 09:48:13.935879 | GET | HISTORICAL_OPTIONS
+      Symbol: BP
+      Status: 200
+      Response size: 520159 bytes
+      Cache: MISS
+      Time: 0.58s
+
+[API] 2025-12-28 09:48:14.697673 | GET | HISTORICAL_OPTIONS
+      Symbol: BR
+      Status: 200
+      Response size: 140808 bytes
+      Cache: MISS
+      Time: 0.40s
+
+[API] 2025-12-28 09:48:14.951818 | GET | HISTORICAL_OPTIONS
+      Symbol: BRK.A
+      Status: 200
+      Response size: 95 bytes
+      Cache: MISS
+      Time: 0.14s
+
+[API] 2025-12-28 09:48:15.724923 | GET | HISTORICAL_OPTIONS
+      Symbol: BRKR
+      Status: 200
+      Response size: 112317 bytes
+      Cache: MISS
+      Time: 0.75s
+
+[API] 2025-12-28 09:48:16.507678 | GET | HISTORICAL_OPTIONS
+      Symbol: BSX
+      Status: 200
+      Response size: 770830 bytes
+      Cache: MISS
+      Time: 0.60s
+
+[API] 2025-12-28 09:48:17.286407 | GET | HISTORICAL_OPTIONS
+      Symbol: BSY
+      Status: 200
+      Response size: 97247 bytes
+      Cache: MISS
+      Time: 0.39s
+
+[API] 2025-12-28 09:48:17.603395 | GET | HISTORICAL_OPTIONS
+      Symbol: BT.A
+      Status: 200
+      Response size: 95 bytes
+      Cache: MISS
+      Time: 0.17s
+
+[API] 2025-12-28 09:48:18.656667 | GET | HISTORICAL_OPTIONS
+      Symbol: BX
+      Status: 200
+      Response size: 764847 bytes
+      Cache: MISS
+      Time: 0.98s
+
+[API] 2025-12-28 09:48:19.758378 | GET | HISTORICAL_OPTIONS
+      Symbol: C
+      Status: 200
+      Response size: 1058934 bytes
+      Cache: MISS
+      Time: 0.68s
+
+[API] 2025-12-28 09:48:20.921084 | GET | HISTORICAL_OPTIONS
+      Symbol: CAH
+      Status: 200
+      Response size: 766826 bytes
+      Cache: MISS
+      Time: 0.64s
+
+[API] 2025-12-28 09:48:22.125553 | GET | HISTORICAL_OPTIONS
+      Symbol: CARR
+      Status: 200
+      Response size: 294704 bytes
+      Cache: MISS
+      Time: 0.86s
+
+[API] 2025-12-28 09:48:23.241040 | GET | HISTORICAL_OPTIONS
+      Symbol: CAT
+      Status: 200
+      Response size: 1888670 bytes
+      Cache: MISS
+      Time: 0.77s
+
+[API] 2025-12-28 09:48:24.308639 | GET | HISTORICAL_OPTIONS
+      Symbol: CATO
+      Status: 200
+      Response size: 16086 bytes
+      Cache: MISS
+      Time: 0.59s
+
+[API] 2025-12-28 09:48:25.037128 | GET | HISTORICAL_OPTIONS
+      Symbol: CB
+      Status: 200
+      Response size: 610817 bytes
+      Cache: MISS
+      Time: 0.58s
+
+[API] 2025-12-28 09:48:25.603505 | GET | HISTORICAL_OPTIONS
+      Symbol: CBOE
+      Status: 200
+      Response size: 682044 bytes
+      Cache: MISS
+      Time: 0.27s
+
+[API] 2025-12-28 09:48:26.314118 | GET | HISTORICAL_OPTIONS
+      Symbol: CCEP
+      Status: 200
+      Response size: 97473 bytes
+      Cache: MISS
+      Time: 0.42s
+
+[API] 2025-12-28 09:48:26.950315 | GET | HISTORICAL_OPTIONS
+      Symbol: CCI
+      Status: 200
+      Response size: 362694 bytes
+      Cache: MISS
+      Time: 0.50s
+
+[API] 2025-12-28 09:48:27.795061 | GET | HISTORICAL_OPTIONS
+      Symbol: CCL
+      Status: 200
+      Response size: 581723 bytes
+      Cache: MISS
+      Time: 0.57s
+
+[API] 2025-12-28 09:48:28.330152 | GET | HISTORICAL_OPTIONS
+      Symbol: CCZ
+      Status: 200
+      Response size: 95 bytes
+      Cache: MISS
+      Time: 0.16s
+
+[API] 2025-12-28 09:48:29.487840 | GET | HISTORICAL_OPTIONS
+      Symbol: CDNS
+      Status: 200
+      Response size: 1171084 bytes
+      Cache: MISS
+      Time: 1.06s
+
+[API] 2025-12-28 09:48:30.689447 | GET | HISTORICAL_OPTIONS
+      Symbol: CEG
+      Status: 200
+      Response size: 1474378 bytes
+      Cache: MISS
+      Time: 0.70s
+
+[API] 2025-12-28 09:48:31.759670 | GET | HISTORICAL_OPTIONS
+      Symbol: CGNX
+      Status: 200
+      Response size: 53597 bytes
+      Cache: MISS
+      Time: 0.62s
+
+[API] 2025-12-28 09:48:32.430989 | GET | HISTORICAL_OPTIONS
+      Symbol: CHTR
+      Status: 200
+      Response size: 1281943 bytes
+      Cache: MISS
+      Time: 0.47s
+
+[API] 2025-12-28 09:48:33.242390 | GET | HISTORICAL_OPTIONS
+      Symbol: CI
+      Status: 200
+      Response size: 960645 bytes
+      Cache: MISS
+      Time: 0.30s
+
+[API] 2025-12-28 09:48:33.993599 | GET | HISTORICAL_OPTIONS
+      Symbol: CIEN
+      Status: 200
+      Response size: 1083316 bytes
+      Cache: MISS
+      Time: 0.29s
+
+[API] 2025-12-28 09:48:34.908139 | GET | HISTORICAL_OPTIONS
+      Symbol: CINF
+      Status: 200
+      Response size: 135037 bytes
+      Cache: MISS
+      Time: 0.53s
+
+[API] 2025-12-28 09:48:35.856417 | GET | HISTORICAL_OPTIONS
+      Symbol: CL
+      Status: 200
+      Response size: 577625 bytes
+      Cache: MISS
+      Time: 0.80s
+
+[API] 2025-12-28 09:48:36.623581 | GET | HISTORICAL_OPTIONS
+      Symbol: CMC
+      Status: 200
+      Response size: 118614 bytes
+      Cache: MISS
+      Time: 0.40s
+
+[API] 2025-12-28 09:48:37.336577 | GET | HISTORICAL_OPTIONS
+      Symbol: CMCSA
+      Status: 200
+      Response size: 515010 bytes
+      Cache: MISS
+      Time: 0.57s
+
+[API] 2025-12-28 09:48:38.373856 | GET | HISTORICAL_OPTIONS
+      Symbol: CME
+      Status: 200
+      Response size: 741207 bytes
+      Cache: MISS
+      Time: 0.59s
+
+[API] 2025-12-28 09:48:39.471657 | GET | HISTORICAL_OPTIONS
+      Symbol: CMG
+      Status: 200
+      Response size: 1131985 bytes
+      Cache: MISS
+      Time: 0.68s
+
+[API] 2025-12-28 09:48:40.465681 | GET | HISTORICAL_OPTIONS
+      Symbol: CNH
+      Status: 200
+      Response size: 55972 bytes
+      Cache: MISS
+      Time: 0.64s
+
+[API] 2025-12-28 09:48:41.097780 | GET | HISTORICAL_OPTIONS
+      Symbol: COF
+      Status: 200
+      Response size: 846744 bytes
+      Cache: MISS
+      Time: 0.45s
+
+[API] 2025-12-28 09:48:41.949639 | GET | HISTORICAL_OPTIONS
+      Symbol: COGT
+      Status: 200
+      Response size: 293722 bytes
+      Cache: MISS
+      Time: 0.50s
+
+[API] 2025-12-28 09:48:42.650362 | GET | HISTORICAL_OPTIONS
+      Symbol: COHR
+      Status: 200
+      Response size: 1074312 bytes
+      Cache: MISS
+      Time: 0.46s
+
+[API] 2025-12-28 09:48:44.020474 | GET | HISTORICAL_OPTIONS
+      Symbol: COIN
+      Status: 200
+      Response size: 2244947 bytes
+      Cache: MISS
+      Time: 0.81s
+
+[API] 2025-12-28 09:48:45.192179 | GET | HISTORICAL_OPTIONS
+      Symbol: COP
+      Status: 200
+      Response size: 834787 bytes
+      Cache: MISS
+      Time: 0.60s
+
+[API] 2025-12-28 09:48:46.212645 | GET | HISTORICAL_OPTIONS
+      Symbol: COR
+      Status: 200
+      Response size: 547310 bytes
+      Cache: MISS
+      Time: 0.57s
+
+[API] 2025-12-28 09:48:47.453455 | GET | HISTORICAL_OPTIONS
+      Symbol: COST
+      Status: 200
+      Response size: 2300116 bytes
+      Cache: MISS
+      Time: 0.82s
+
+[API] 2025-12-28 09:48:48.152756 | GET | HISTORICAL_OPTIONS
+      Symbol: CPAY
+      Status: 200
+      Response size: 240747 bytes
+      Cache: MISS
+      Time: 0.18s
+
+[API] 2025-12-28 09:48:48.435104 | GET | HISTORICAL_OPTIONS
+      Symbol: CPG
+      Status: 200
+      Response size: 95 bytes
+      Cache: MISS
+      Time: 0.15s
+
+[API] 2025-12-28 09:48:49.415168 | GET | HISTORICAL_OPTIONS
+      Symbol: CPNG
+      Status: 200
+      Response size: 547822 bytes
+      Cache: MISS
+      Time: 0.93s
+
+[API] 2025-12-28 09:48:50.283176 | GET | HISTORICAL_OPTIONS
+      Symbol: CPRT
+      Status: 200
+      Response size: 282397 bytes
+      Cache: MISS
+      Time: 0.48s
+
+[API] 2025-12-28 09:48:51.275436 | GET | HISTORICAL_OPTIONS
+      Symbol: CRBG
+      Status: 200
+      Response size: 129716 bytes
+      Cache: MISS
+      Time: 0.76s
+
+[API] 2025-12-28 09:48:52.238162 | GET | HISTORICAL_OPTIONS
+      Symbol: CRK
+      Status: 200
+      Response size: 258974 bytes
+      Cache: MISS
+      Time: 0.81s
+
+[API] 2025-12-28 09:48:53.231591 | GET | HISTORICAL_OPTIONS
+      Symbol: CRM
+      Status: 200
+      Response size: 1209854 bytes
+      Cache: MISS
+      Time: 0.69s
+
+[API] 2025-12-28 09:48:54.345823 | GET | HISTORICAL_OPTIONS
+      Symbol: CRSP
+      Status: 200
+      Response size: 614416 bytes
+      Cache: MISS
+      Time: 0.58s
+
+[API] 2025-12-28 09:48:55.661266 | GET | HISTORICAL_OPTIONS
+      Symbol: CRWD
+      Status: 200
+      Response size: 2108309 bytes
+      Cache: MISS
+      Time: 0.81s
+
+[API] 2025-12-28 09:48:56.833993 | GET | HISTORICAL_OPTIONS
+      Symbol: CSCO
+      Status: 200
+      Response size: 729339 bytes
+      Cache: MISS
+      Time: 0.57s
+
+[API] 2025-12-28 09:48:57.730802 | GET | HISTORICAL_OPTIONS
+      Symbol: CSGP
+      Status: 200
+      Response size: 266246 bytes
+      Cache: MISS
+      Time: 0.47s
+
+[API] 2025-12-28 09:48:58.705687 | GET | HISTORICAL_OPTIONS
+      Symbol: CSX
+      Status: 200
+      Response size: 474659 bytes
+      Cache: MISS
+      Time: 0.69s
+
+[API] 2025-12-28 09:48:59.687971 | GET | HISTORICAL_OPTIONS
+      Symbol: CTSH
+      Status: 200
+      Response size: 382369 bytes
+      Cache: MISS
+      Time: 0.56s
+
+[API] 2025-12-28 09:49:00.610495 | GET | HISTORICAL_OPTIONS
+      Symbol: CTVA
+      Status: 200
+      Response size: 73534 bytes
+      Cache: MISS
+      Time: 0.69s
+
+[API] 2025-12-28 09:49:00.881957 | GET | HISTORICAL_OPTIONS
+      Symbol: CURY
+      Status: 200
+      Response size: 95 bytes
+      Cache: MISS
+      Time: 0.16s
+
+[API] 2025-12-28 09:49:01.862290 | GET | HISTORICAL_OPTIONS
+      Symbol: CVNA
+      Status: 200
+      Response size: 1947576 bytes
+      Cache: MISS
+      Time: 0.81s
+
+[API] 2025-12-28 09:49:03.071633 | GET | HISTORICAL_OPTIONS
+      Symbol: CVS
+      Status: 200
+      Response size: 738504 bytes
+      Cache: MISS
+      Time: 0.60s
+
+[API] 2025-12-28 09:49:04.088145 | GET | HISTORICAL_OPTIONS
+      Symbol: CVX
+      Status: 200
+      Response size: 703212 bytes
+      Cache: MISS
+      Time: 0.59s
+
+[API] 2025-12-28 09:49:05.077279 | GET | HISTORICAL_OPTIONS
+      Symbol: CWEN
+      Status: 200
+      Response size: 56156 bytes
+      Cache: MISS
+      Time: 0.64s
+
+[API] 2025-12-28 09:49:05.547554 | GET | HISTORICAL_OPTIONS
+      Symbol: D
+      Status: 200
+      Response size: 278456 bytes
+      Cache: MISS
+      Time: 0.32s
+
+[API] 2025-12-28 09:49:06.400904 | GET | HISTORICAL_OPTIONS
+      Symbol: DAL
+      Status: 200
+      Response size: 652738 bytes
+      Cache: MISS
+      Time: 0.58s
+
+[API] 2025-12-28 09:49:07.499096 | GET | HISTORICAL_OPTIONS
+      Symbol: DASH
+      Status: 200
+      Response size: 1068738 bytes
+      Cache: MISS
+      Time: 0.67s
+
+[API] 2025-12-28 09:49:08.668499 | GET | HISTORICAL_OPTIONS
+      Symbol: DDOG
+      Status: 200
+      Response size: 1026811 bytes
+      Cache: MISS
+      Time: 0.69s
+
+[API] 2025-12-28 09:49:09.852521 | GET | HISTORICAL_OPTIONS
+      Symbol: DE
+      Status: 200
+      Response size: 1251545 bytes
+      Cache: MISS
+      Time: 0.68s
+
+[API] 2025-12-28 09:49:11.011047 | GET | HISTORICAL_OPTIONS
+      Symbol: DELL
+      Status: 200
+      Response size: 1172633 bytes
+      Cache: MISS
+      Time: 0.68s
+
+[API] 2025-12-28 09:49:12.236232 | GET | HISTORICAL_OPTIONS
+      Symbol: DG
+      Status: 200
+      Response size: 994327 bytes
+      Cache: MISS
+      Time: 0.68s
+
+[API] 2025-12-28 09:49:12.790727 | GET | HISTORICAL_OPTIONS
+      Symbol: DGE
+      Status: 200
+      Response size: 95 bytes
+      Cache: MISS
+      Time: 0.15s
+
+[API] 2025-12-28 09:49:13.653367 | GET | HISTORICAL_OPTIONS
+      Symbol: DHI
+      Status: 200
+      Response size: 827855 bytes
+      Cache: MISS
+      Time: 0.79s
+
+[API] 2025-12-28 09:49:14.671704 | GET | HISTORICAL_OPTIONS
+      Symbol: DHR
+      Status: 200
+      Response size: 826743 bytes
+      Cache: MISS
+      Time: 0.57s
+
+[API] 2025-12-28 09:49:15.600518 | GET | HISTORICAL_OPTIONS
+      Symbol: DIS
+      Status: 200
+      Response size: 849059 bytes
+      Cache: MISS
+      Time: 0.51s
+
+[API] 2025-12-28 09:49:16.700214 | GET | HISTORICAL_OPTIONS
+      Symbol: DLR
+      Status: 200
+      Response size: 771957 bytes
+      Cache: MISS
+      Time: 0.60s
+
+[API] 2025-12-28 09:49:17.754218 | GET | HISTORICAL_OPTIONS
+      Symbol: DLTR
+      Status: 200
+      Response size: 910509 bytes
+      Cache: MISS
+      Time: 0.60s
+
+[API] 2025-12-28 09:49:18.444805 | GET | HISTORICAL_OPTIONS
+      Symbol: DOV
+      Status: 200
+      Response size: 233431 bytes
+      Cache: MISS
+      Time: 0.25s
+
+[API] 2025-12-28 09:49:19.120877 | GET | HISTORICAL_OPTIONS
+      Symbol: DUK
+      Status: 200
+      Response size: 336446 bytes
+      Cache: MISS
+      Time: 0.49s
+
+[API] 2025-12-28 09:49:20.080051 | GET | HISTORICAL_OPTIONS
+      Symbol: EA
+      Status: 200
+      Response size: 863499 bytes
+      Cache: MISS
+      Time: 0.65s
+
+[API] 2025-12-28 09:49:21.126645 | GET | HISTORICAL_OPTIONS
+      Symbol: EBAY
+      Status: 200
+      Response size: 769019 bytes
+      Cache: MISS
+      Time: 0.59s
+
+[API] 2025-12-28 09:49:21.980362 | GET | HISTORICAL_OPTIONS
+      Symbol: ECL
+      Status: 200
+      Response size: 204090 bytes
+      Cache: MISS
+      Time: 0.47s
+
+[API] 2025-12-28 09:49:22.538730 | GET | HISTORICAL_OPTIONS
+      Symbol: ED
+      Status: 200
+      Response size: 194027 bytes
+      Cache: MISS
+      Time: 0.41s
+
+[API] 2025-12-28 09:49:23.047210 | GET | HISTORICAL_OPTIONS
+      Symbol: EFX
+      Status: 200
+      Response size: 247944 bytes
+      Cache: MISS
+      Time: 0.34s
+
+[API] 2025-12-28 09:49:23.859074 | GET | HISTORICAL_OPTIONS
+      Symbol: EL
+      Status: 200
+      Response size: 731778 bytes
+      Cache: MISS
+      Time: 0.61s
+
+[API] 2025-12-28 09:49:24.395991 | GET | HISTORICAL_OPTIONS
+      Symbol: ELTEK
+      Status: 200
+      Response size: 95 bytes
+      Cache: MISS
+      Time: 0.16s
+
+[API] 2025-12-28 09:49:25.041152 | GET | HISTORICAL_OPTIONS
+      Symbol: ELV
+      Status: 200
+      Response size: 556018 bytes
+      Cache: MISS
+      Time: 0.59s
+
+[API] 2025-12-28 09:49:25.876605 | GET | HISTORICAL_OPTIONS
+      Symbol: EME
+      Status: 200
+      Response size: 550350 bytes
+      Cache: MISS
+      Time: 0.59s
+
+[API] 2025-12-28 09:49:26.711032 | GET | HISTORICAL_OPTIONS
+      Symbol: EMR
+      Status: 200
+      Response size: 731715 bytes
+      Cache: MISS
+      Time: 0.59s
+
+[API] 2025-12-28 09:49:27.766158 | GET | HISTORICAL_OPTIONS
+      Symbol: EOG
+      Status: 200
+      Response size: 802705 bytes
+      Cache: MISS
+      Time: 0.67s
+
+[API] 2025-12-28 09:49:28.732309 | GET | HISTORICAL_OPTIONS
+      Symbol: EPD
+      Status: 200
+      Response size: 415622 bytes
+      Cache: MISS
+      Time: 0.57s
+
+[API] 2025-12-28 09:49:29.656655 | GET | HISTORICAL_OPTIONS
+      Symbol: EQIX
+      Status: 200
+      Response size: 557270 bytes
+      Cache: MISS
+      Time: 0.56s
+
+[API] 2025-12-28 09:49:30.441476 | GET | HISTORICAL_OPTIONS
+      Symbol: EQT
+      Status: 200
+      Response size: 541019 bytes
+      Cache: MISS
+      Time: 0.58s
+
+[API] 2025-12-28 09:49:31.152709 | GET | HISTORICAL_OPTIONS
+      Symbol: EQX
+      Status: 200
+      Response size: 91037 bytes
+      Cache: MISS
+      Time: 0.39s
+
+[API] 2025-12-28 09:49:31.693191 | GET | HISTORICAL_OPTIONS
+      Symbol: ESAB
+      Status: 200
+      Response size: 160431 bytes
+      Cache: MISS
+      Time: 0.39s
+
+[API] 2025-12-28 09:49:32.451820 | GET | HISTORICAL_OPTIONS
+      Symbol: ET
+      Status: 200
+      Response size: 443768 bytes
+      Cache: MISS
+      Time: 0.58s
+
+[API] 2025-12-28 09:49:33.150462 | GET | HISTORICAL_OPTIONS
+      Symbol: ETN
+      Status: 200
+      Response size: 1120379 bytes
+      Cache: MISS
+      Time: 0.30s
+
+[API] 2025-12-28 09:49:33.713333 | GET | HISTORICAL_OPTIONS
+      Symbol: ETR
+      Status: 200
+      Response size: 154709 bytes
+      Cache: MISS
+      Time: 0.17s
+
+[API] 2025-12-28 09:49:33.995060 | GET | HISTORICAL_OPTIONS
+      Symbol: ETS
+      Status: 200
+      Response size: 95 bytes
+      Cache: MISS
+      Time: 0.14s
+
+[API] 2025-12-28 09:49:34.527488 | GET | HISTORICAL_OPTIONS
+      Symbol: EW
+      Status: 200
+      Response size: 364251 bytes
+      Cache: MISS
+      Time: 0.49s
+
+[API] 2025-12-28 09:49:35.100723 | GET | HISTORICAL_OPTIONS
+      Symbol: EXC
+      Status: 200
+      Response size: 250597 bytes
+      Cache: MISS
+      Time: 0.32s
+
+[API] 2025-12-28 09:49:36.075602 | GET | HISTORICAL_OPTIONS
+      Symbol: EXPE
+      Status: 200
+      Response size: 1064395 bytes
+      Cache: MISS
+      Time: 0.67s
+
+[API] 2025-12-28 09:49:36.630132 | GET | HISTORICAL_OPTIONS
+      Symbol: EXPN
+      Status: 200
+      Response size: 95 bytes
+      Cache: MISS
+      Time: 0.17s
+
+[API] 2025-12-28 09:49:36.926569 | GET | HISTORICAL_OPTIONS
+      Symbol: F
+      Status: 200
+      Response size: 437879 bytes
+      Cache: MISS
+      Time: 0.25s
+
+[API] 2025-12-28 09:49:37.822456 | GET | HISTORICAL_OPTIONS
+      Symbol: FANG
+      Status: 200
+      Response size: 468115 bytes
+      Cache: MISS
+      Time: 0.52s
+
+[API] 2025-12-28 09:49:38.564249 | GET | HISTORICAL_OPTIONS
+      Symbol: FCF
+      Status: 200
+      Response size: 58552 bytes
+      Cache: MISS
+      Time: 0.52s
+
+[API] 2025-12-28 09:49:39.719804 | GET | HISTORICAL_OPTIONS
+      Symbol: FCX
+      Status: 200
+      Response size: 632880 bytes
+      Cache: MISS
+      Time: 1.00s
+
+[API] 2025-12-28 09:49:40.541356 | GET | HISTORICAL_OPTIONS
+      Symbol: FDX
+      Status: 200
+      Response size: 1024005 bytes
+      Cache: MISS
+      Time: 0.38s
+
+[API] 2025-12-28 09:49:41.145360 | GET | HISTORICAL_OPTIONS
+      Symbol: FE
+      Status: 200
+      Response size: 276362 bytes
+      Cache: MISS
+      Time: 0.18s
+
+[API] 2025-12-28 09:49:42.226661 | GET | HISTORICAL_OPTIONS
+      Symbol: FERG
+      Status: 200
+      Response size: 204510 bytes
+      Cache: MISS
+      Time: 0.82s
+
+[API] 2025-12-28 09:49:43.287297 | GET | HISTORICAL_OPTIONS
+      Symbol: FICO
+      Status: 200
+      Response size: 1817984 bytes
+      Cache: MISS
+      Time: 0.79s
+
+[API] 2025-12-28 09:49:44.218650 | GET | HISTORICAL_OPTIONS
+      Symbol: FIS
+      Status: 200
+      Response size: 646022 bytes
+      Cache: MISS
+      Time: 0.56s
+
+[API] 2025-12-28 09:49:45.222062 | GET | HISTORICAL_OPTIONS
+      Symbol: FISV
+      Status: 200
+      Response size: 468914 bytes
+      Cache: MISS
+      Time: 0.57s
+
+[API] 2025-12-28 09:49:45.957616 | GET | HISTORICAL_OPTIONS
+      Symbol: FITB
+      Status: 200
+      Response size: 266752 bytes
+      Cache: MISS
+      Time: 0.49s
+
+[API] 2025-12-28 09:49:46.820860 | GET | HISTORICAL_OPTIONS
+      Symbol: FIX
+      Status: 200
+      Response size: 620758 bytes
+      Cache: MISS
+      Time: 0.59s
+
+[API] 2025-12-28 09:49:47.157444 | GET | HISTORICAL_OPTIONS
+      Symbol: FLS
+      Status: 200
+      Response size: 102691 bytes
+      Cache: MISS
+      Time: 0.16s
+
+[API] 2025-12-28 09:49:48.126617 | GET | HISTORICAL_OPTIONS
+      Symbol: FLUT
+      Status: 200
+      Response size: 320291 bytes
+      Cache: MISS
+      Time: 0.83s
+
+[API] 2025-12-28 09:49:48.422564 | GET | HISTORICAL_OPTIONS
+      Symbol: FNTN
+      Status: 200
+      Response size: 95 bytes
+      Cache: MISS
+      Time: 0.15s
+
+[API] 2025-12-28 09:49:48.824070 | GET | HISTORICAL_OPTIONS
+      Symbol: FOX
+      Status: 200
+      Response size: 97205 bytes
+      Cache: MISS
+      Time: 0.38s
+
+[API] 2025-12-28 09:49:49.730235 | GET | HISTORICAL_OPTIONS
+      Symbol: FSLR
+      Status: 200
+      Response size: 1005202 bytes
+      Cache: MISS
+      Time: 0.69s
+
+[API] 2025-12-28 09:49:50.487680 | GET | HISTORICAL_OPTIONS
+      Symbol: FSS
+      Status: 200
+      Response size: 126661 bytes
+      Cache: MISS
+      Time: 0.39s
+
+[API] 2025-12-28 09:49:51.252976 | GET | HISTORICAL_OPTIONS
+      Symbol: FTNT
+      Status: 200
+      Response size: 715671 bytes
+      Cache: MISS
+      Time: 0.60s
+
+[API] 2025-12-28 09:49:52.046116 | GET | HISTORICAL_OPTIONS
+      Symbol: FYBR
+      Status: 200
+      Response size: 149329 bytes
+      Cache: MISS
+      Time: 0.40s
+

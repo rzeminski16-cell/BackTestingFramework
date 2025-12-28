@@ -61,6 +61,38 @@ class OptionsSnapshotMode(Enum):
     WEEKLY = "weekly"
 
 
+class MaxDTEForward(Enum):
+    """Maximum days to expiration forward from trading date.
+
+    Used to filter options chains - only include options where:
+    expiration_date <= trading_date + max_dte_forward
+    """
+    DAYS_30 = 30      # ~1 month
+    DAYS_90 = 90      # ~3 months
+    DAYS_180 = 180    # ~6 months
+    DAYS_365 = 365    # ~1 year
+    DAYS_730 = 730    # ~2 years
+
+    @classmethod
+    def from_days(cls, days: int) -> 'MaxDTEForward':
+        """Get the enum value from days."""
+        for member in cls:
+            if member.value == days:
+                return member
+        raise ValueError(f"No MaxDTEForward preset for {days} days")
+
+    @classmethod
+    def choices(cls) -> List[tuple]:
+        """Return list of (label, value) tuples for UI."""
+        return [
+            ("30 days (~1 month)", cls.DAYS_30),
+            ("90 days (~3 months)", cls.DAYS_90),
+            ("180 days (~6 months)", cls.DAYS_180),
+            ("365 days (~1 year)", cls.DAYS_365),
+            ("730 days (~2 years)", cls.DAYS_730),
+        ]
+
+
 # All available technical indicators from Alpha Vantage
 AVAILABLE_INDICATORS = [
     "SMA", "EMA", "WMA", "DEMA", "TEMA", "TRIMA", "KAMA", "MAMA", "VWAP", "T3",
@@ -359,24 +391,43 @@ class ForexDataConfig:
 
 @dataclass
 class OptionsDataConfig(TabConfig):
-    """Configuration for options data collection."""
+    """Configuration for options data collection.
+
+    Trading Date Approach:
+    - from_date/to_date define the TRADING DATE range (when option data was recorded)
+    - max_dte_forward filters options to only include those expiring within N days
+      from the trading date
+
+    Example:
+        trading_date = 2017-05-01, max_dte_forward = 365 days
+        -> Only include options expiring before 2018-05-01
+
+    Output:
+        Files are organized by ticker and trading year:
+        raw_data/options/{ticker}/{ticker}_options_{year}.csv
+    """
     options_type: OptionsType = OptionsType.BOTH
-    expiration_days: Optional[int] = None  # None = all available
+    max_dte_forward: MaxDTEForward = MaxDTEForward.DAYS_365  # Max days to expiration
     strike_range: Optional[tuple] = None  # (from, to) or None for all
     atm_strikes: Optional[int] = None  # +/- N strikes from ATM
     data_fields: List[str] = field(default_factory=lambda: [
         "strike", "bid", "ask", "last_price", "volume",
         "open_interest", "implied_volatility", "delta", "gamma", "theta", "vega"
     ])
-    snapshot_mode: OptionsSnapshotMode = OptionsSnapshotMode.SINGLE
     adjust_for_splits: bool = True
 
     def __post_init__(self):
         super().__post_init__()
         if isinstance(self.options_type, str):
             self.options_type = OptionsType(self.options_type)
-        if isinstance(self.snapshot_mode, str):
-            self.snapshot_mode = OptionsSnapshotMode(self.snapshot_mode)
+        if isinstance(self.max_dte_forward, int):
+            self.max_dte_forward = MaxDTEForward.from_days(self.max_dte_forward)
+        elif isinstance(self.max_dte_forward, str):
+            # Handle string like "DAYS_365" or just "365"
+            try:
+                self.max_dte_forward = MaxDTEForward[self.max_dte_forward]
+            except KeyError:
+                self.max_dte_forward = MaxDTEForward.from_days(int(self.max_dte_forward))
 
     def to_dict(self) -> Dict[str, Any]:
         return {
@@ -387,11 +438,10 @@ class OptionsDataConfig(TabConfig):
             "last_n_days": self.last_n_days,
             "missing_data_handling": self.missing_data_handling.value,
             "options_type": self.options_type.value,
-            "expiration_days": self.expiration_days,
+            "max_dte_forward": self.max_dte_forward.value,
             "strike_range": self.strike_range,
             "atm_strikes": self.atm_strikes,
             "data_fields": self.data_fields,
-            "snapshot_mode": self.snapshot_mode.value,
             "adjust_for_splits": self.adjust_for_splits,
         }
 
