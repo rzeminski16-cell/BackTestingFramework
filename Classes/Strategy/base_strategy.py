@@ -18,62 +18,6 @@ OPTIONAL COMPONENTS (may be left blank):
 4. should_pyramid(): Pyramiding rules (max 1 pyramid per trade)
 5. max_position_duration: Max bars to hold position (checked in exit rules)
 
-================================================================================
-PARAMETER OPTIMIZATION RULES
-================================================================================
-
-When designing strategies for optimization, it is critical to understand which
-parameters can be optimized and which cannot:
-
-RAW DATA INDICATORS (NOT OPTIMIZABLE):
---------------------------------------
-Any indicator that comes from the raw data CSV files CANNOT be optimized.
-The period/lookback of these indicators is baked into the column name and
-changing it would require regenerating the raw data files.
-
-Examples of NON-OPTIMIZABLE parameters:
-  - atr_14: The "14" period is fixed - cannot optimize to atr_10 or atr_20
-  - ema_50: The "50" period is fixed - cannot optimize to ema_20 or ema_100
-  - rsi_14: The "14" period is fixed
-  - mfi_14: The "14" period is fixed
-  - bb_upper_20: The "20" period is fixed
-
-To use a different period, the raw data must be regenerated with that
-indicator included. This is a data pipeline concern, not an optimization
-concern.
-
-CALCULATED PARAMETERS (OPTIMIZABLE):
-------------------------------------
-Parameters that are calculated within the strategy logic at runtime CAN be
-optimized because they don't depend on pre-computed raw data columns.
-
-Examples of OPTIMIZABLE parameters:
-  - ATR multipliers (e.g., atr_stop_loss_multiple = 2.5)
-  - Percentage thresholds (e.g., stop_loss_percent = 5.0)
-  - Lookback windows for internal calculations (e.g., volume_ma_window = 20)
-  - Risk percentages (e.g., risk_percent = 1.0)
-  - Momentum thresholds (e.g., momentum_gain_pct = 5.0)
-  - Grace periods (e.g., grace_period_bars = 5)
-  - Score thresholds (e.g., min_score = 0.7)
-
-STRATEGY DOCUMENTATION REQUIREMENT:
------------------------------------
-Every strategy implementation MUST clearly document in its class docstring:
-1. Which parameters are RAW DATA INDICATORS (NOT OPTIMIZABLE)
-2. Which parameters are OPTIMIZABLE
-
-Example documentation format:
-
-    RAW DATA INDICATORS (NOT OPTIMIZABLE - period fixed in data):
-        - atr_14: Average True Range (14-period)
-        - ema_50: Exponential Moving Average (50-period)
-        - rsi_14: Relative Strength Index (14-period)
-
-    OPTIMIZABLE PARAMETERS (can be tuned during optimization):
-        - atr_multiplier (default: 2.5): ATR multiple for stop loss
-        - risk_percent (default: 1.0): Portfolio risk per trade
-        - min_score (default: 0.7): Minimum entry score threshold
-================================================================================
 """
 from abc import ABC, abstractmethod
 from typing import List, Dict, Any, Optional, Set

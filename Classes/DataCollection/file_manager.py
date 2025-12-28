@@ -390,6 +390,90 @@ class FileManager:
         self._files_created[file_name] = metadata
         return metadata
 
+    def write_options_yearly(
+        self,
+        df: pd.DataFrame,
+        symbol: str,
+        year: int,
+        append: bool = True
+    ) -> FileMetadata:
+        """
+        Write options data to a yearly CSV file organized by trading date.
+
+        File structure: raw_data/options/{ticker}/{ticker}_options_{year}.csv
+
+        Each row represents an option contract snapshot on a particular trading date.
+        The file contains all trading dates within that year.
+
+        Args:
+            df: DataFrame with options data (must include 'snapshot_date' column)
+            symbol: Stock ticker symbol
+            year: Trading year (e.g., 2017, 2018)
+            append: If True, append to existing file; if False, overwrite
+
+        Returns:
+            FileMetadata for the written file
+        """
+        file_name = f"{symbol.upper()}_options_{year}.csv"
+        # Create symbol-specific subfolder for options
+        symbol_dir = self.output_dir / 'options' / symbol.upper()
+        symbol_dir.mkdir(parents=True, exist_ok=True)
+        file_path = symbol_dir / file_name
+
+        df = self._prepare_dataframe(df)
+        df = self._order_columns_options(df)
+
+        # Handle append mode
+        if append and file_path.exists():
+            existing_df = pd.read_csv(file_path)
+            # Convert snapshot_date to datetime for comparison
+            if 'snapshot_date' in existing_df.columns:
+                existing_df['snapshot_date'] = pd.to_datetime(existing_df['snapshot_date'])
+            if 'snapshot_date' in df.columns:
+                df['snapshot_date'] = pd.to_datetime(df['snapshot_date'])
+
+            # Combine and remove duplicates
+            combined_df = pd.concat([existing_df, df], ignore_index=True)
+
+            # Define key columns for deduplication
+            key_cols = ['snapshot_date', 'symbol', 'option_type', 'expiration_date', 'strike']
+            key_cols = [c for c in key_cols if c in combined_df.columns]
+
+            if key_cols:
+                combined_df = combined_df.drop_duplicates(subset=key_cols, keep='last')
+
+            # Sort by snapshot_date then expiration_date
+            sort_cols = []
+            if 'snapshot_date' in combined_df.columns:
+                sort_cols.append('snapshot_date')
+            if 'expiration_date' in combined_df.columns:
+                sort_cols.append('expiration_date')
+            if 'strike' in combined_df.columns:
+                sort_cols.append('strike')
+            if sort_cols:
+                combined_df = combined_df.sort_values(sort_cols).reset_index(drop=True)
+
+            df = combined_df
+
+        df.to_csv(
+            file_path,
+            index=False,
+            encoding=self.CSV_ENCODING,
+            lineterminator=self.CSV_LINE_TERMINATOR,
+            date_format=self.DATE_FORMAT
+        )
+
+        metadata = self._create_file_metadata(
+            df=df,
+            file_name=file_name,
+            file_path=file_path,
+            symbol=symbol,
+            data_type='options'
+        )
+
+        self._files_created[file_name] = metadata
+        return metadata
+
     # === Data Preparation Methods ===
 
     def _prepare_dataframe(self, df: pd.DataFrame) -> pd.DataFrame:

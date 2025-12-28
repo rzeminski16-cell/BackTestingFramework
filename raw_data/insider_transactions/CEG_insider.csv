@@ -1,0 +1,195 @@
+date,symbol,insider_title,transaction_type,shares,price,value,executive,security_type
+2022-09-30,CEG,Director,BUY,443.0,87.51,38766.93,"HALVERSON, BRADLEY M",Common Stock (Deferred Stock Units)
+2022-09-30,CEG,Director,BUY,480.0,83.19,39931.2,"HARRINGTON, CHARLES L.",Deferred Compensation - Phantom Share Equivalents
+2022-09-30,CEG,Director,BUY,993.0,83.19,82607.67,"LAWLESS, ROBERT J",Deferred Compensation - Phantom Share Equivalents
+2022-09-30,CEG,Director,BUY,443.0,87.51,38766.93,"HOLZRICHTER, JULIE",Common Stock (Deferred Stock Units)
+2022-09-30,CEG,Director,BUY,443.0,87.51,38766.93,"HARRINGTON, CHARLES L.",Common Stock (Deferred Stock Units)
+2022-09-30,CEG,Director,BUY,443.0,87.51,38766.93,"LAWLESS, ROBERT J",Common Stock (Deferred Stock Units)
+2022-09-30,CEG,Director,BUY,443.0,87.51,38766.93,"DE, BALMANN YVES C",Common Stock (Deferred Stock Units)
+2022-09-30,CEG,Director,BUY,443.0,87.51,38766.93,"BRLAS, LAURIE",Common Stock (Deferred Stock Units)
+2022-09-30,CEG,Director,BUY,443.0,87.51,38766.93,"RICHARDSON, JOHN M",Common Stock (Deferred Stock Units)
+2022-09-30,CEG,Director,BUY,443.0,87.51,38766.93,"ASHISH, KHANDPUR K",Common Stock (Deferred Stock Units)
+2022-11-09,CEG,Director,BUY,79.0,87.627,6922.532999999999,"DE, BALMANN YVES C",Common Stock
+2022-12-31,CEG,Director,BUY,432.0,89.72,38759.04,"HARRINGTON, CHARLES L.",Common Stock (Deferred Stock Units)
+2022-12-31,CEG,Director,BUY,478.0,86.21,41208.38,"HARRINGTON, CHARLES L.",Deferred Compensation - Phantom Share Equivalents
+2022-12-31,CEG,Director,BUY,432.0,89.72,38759.04,"LAWLESS, ROBERT J",Common Stock (Deferred Stock Units)
+2022-12-31,CEG,Director,BUY,432.0,89.72,38759.04,"DE, BALMANN YVES C",Common Stock (Deferred Stock Units)
+2022-12-31,CEG,Director,BUY,942.0,86.21,81209.81999999999,"LAWLESS, ROBERT J",Deferred Compensation - Phantom Share Equivalents
+2022-12-31,CEG,Director,BUY,432.0,89.72,38759.04,"BRLAS, LAURIE",Common Stock (Deferred Stock Units)
+2022-12-31,CEG,Director,BUY,432.0,89.72,38759.04,"HALVERSON, BRADLEY M",Common Stock (Deferred Stock Units)
+2022-12-31,CEG,Director,BUY,432.0,89.72,38759.04,"ASHISH, KHANDPUR K",Common Stock (Deferred Stock Units)
+2022-12-31,CEG,Director,BUY,286.0,89.72,25659.92,"RIMMER, NNEKA LOUISE",Common Stock (Deferred Stock Units)
+2022-12-31,CEG,Director,BUY,432.0,89.72,38759.04,"HOLZRICHTER, JULIE",Common Stock (Deferred Stock Units)
+2022-12-31,CEG,Director,BUY,432.0,89.72,38759.04,"RICHARDSON, JOHN M",Common Stock (Deferred Stock Units)
+2023-01-20,CEG,Director,SELL,79.0,82.235,6496.565,"DE, BALMANN YVES C",Common Stock
+2023-01-30,CEG,EVP & Chief Generation Officer,SELL,13353.0,82.4,1100287.2000000002,"HANSON, BRYAN CRAIG",Common Stock
+2023-01-30,CEG,EVP & General Counsel,SELL,3450.0,82.4,284280.0,"DARDIS, DAVID O.",Common Stock
+2023-01-30,CEG,EVP & Chief Admin Officer,SELL,5123.0,82.4,422135.2,"KOEHLER, MICHAEL",Common Stock
+2023-01-30,CEG,SVP & Controller,SELL,930.0,82.4,76632.0,"BAUER, MATTHEW N",Common Stock
+2023-01-30,CEG,SVP & Controller,SELL,1898.0,82.4,156395.2,"BAUER, MATTHEW N",Common Stock
+2023-01-30,CEG,EVP & Chief Generation Officer,SELL,15727.0,82.4,1295904.8,"HANSON, BRYAN CRAIG",Common Stock
+2023-01-30,CEG,EVP & Chief Commercial Officer,SELL,16013.0,82.4,1319471.2000000002,"MCHUGH, JAMES",Common Stock
+2023-01-30,CEG,"Director, President & CEO",SELL,5221.0,82.4,430210.4,"DOMINGUEZ, JOSEPH",Common Stock
+2023-01-30,CEG,EVP & CFO,SELL,5808.0,82.4,478579.2,"EGGERS, DANIEL L.",Common Stock
+2023-01-30,CEG,EVP & CFO,SELL,2620.0,82.4,215888.00000000003,"EGGERS, DANIEL L.",Common Stock
+2023-01-30,CEG,EVP & Chief Strategy Officer,SELL,6677.0,82.4,550184.8,"BARRON, KATHLEEN",Common Stock
+2023-01-30,CEG,EVP & Chief Strategy Officer,SELL,3206.0,82.4,264174.4,"BARRON, KATHLEEN",Common Stock
+2023-01-30,CEG,"Director, President & CEO",SELL,16423.0,82.4,1353255.2000000002,"DOMINGUEZ, JOSEPH",Common Stock
+2023-01-30,CEG,EVP & Chief Admin Officer,SELL,7936.0,82.4,653926.4,"KOEHLER, MICHAEL",Common Stock
+2023-01-30,CEG,EVP & General Counsel,SELL,1879.0,82.4,154829.6,"DARDIS, DAVID O.",Common Stock
+2023-01-30,CEG,EVP & Chief Commercial Officer,SELL,7824.0,82.4,644697.6000000001,"MCHUGH, JAMES",Common Stock
+2023-03-31,CEG,Director,BUY,500.0,77.55,38775.0,"HOLZRICHTER, JULIE",Common Stock (Deferred Stock Units)
+2023-03-31,CEG,Director,BUY,500.0,77.55,38775.0,"BRLAS, LAURIE",Common Stock (Deferred Stock Units)
+2023-03-31,CEG,Director,BUY,500.0,77.55,38775.0,"DE, BALMANN YVES C",Common Stock (Deferred Stock Units)
+2023-03-31,CEG,Director,BUY,500.0,77.55,38775.0,"HARRINGTON, CHARLES L.",Common Stock (Deferred Stock Units)
+2023-03-31,CEG,Director,BUY,500.0,77.55,38775.0,"RIMMER, NNEKA LOUISE",Common Stock (Deferred Stock Units)
+2023-03-31,CEG,Director,BUY,500.0,77.55,38775.0,"RICHARDSON, JOHN M",Common Stock (Deferred Stock Units)
+2023-03-31,CEG,Director,BUY,500.0,77.55,38775.0,"ASHISH, KHANDPUR K",Common Stock (Deferred Stock Units)
+2023-03-31,CEG,Director,BUY,500.0,77.55,38775.0,"HALVERSON, BRADLEY M",Common Stock (Deferred Stock Units)
+2023-03-31,CEG,Director,BUY,1035.0,78.5,81247.5,"LAWLESS, ROBERT J",Deferred Compensation - Phantom Share Equivalents
+2023-03-31,CEG,Director,BUY,525.0,78.5,41212.5,"HARRINGTON, CHARLES L.",Deferred Compensation - Phantom Share Equivalents
+2023-03-31,CEG,Director,BUY,500.0,77.55,38775.0,"LAWLESS, ROBERT J",Common Stock (Deferred Stock Units)
+2023-06-30,CEG,Director,BUY,456.0,93.29,42540.240000000005,"LAWLESS, ROBERT J",Common Stock (Deferred Stock Units)
+2023-06-30,CEG,Director,BUY,456.0,93.29,42540.240000000005,"RICHARDSON, JOHN M",Common Stock (Deferred Stock Units)
+2023-06-30,CEG,Director,BUY,456.0,93.29,42540.240000000005,"ASHISH, KHANDPUR K",Common Stock (Deferred Stock Units)
+2023-06-30,CEG,Director,BUY,456.0,93.29,42540.240000000005,"BRLAS, LAURIE",Common Stock (Deferred Stock Units)
+2023-06-30,CEG,Director,BUY,456.0,93.29,42540.240000000005,"HARRINGTON, CHARLES L.",Common Stock (Deferred Stock Units)
+2023-06-30,CEG,Director,BUY,95.0,93.29,8862.550000000001,"JAMIL, DHIAA M.",Common Stock (Deferred Stock Units)
+2023-06-30,CEG,Director,BUY,456.0,93.29,42540.240000000005,"DE, BALMANN YVES C",Common Stock (Deferred Stock Units)
+2023-06-30,CEG,Director,BUY,456.0,93.29,42540.240000000005,"HALVERSON, BRADLEY M",Common Stock (Deferred Stock Units)
+2023-06-30,CEG,Director,BUY,456.0,93.29,42540.240000000005,"RIMMER, NNEKA LOUISE",Common Stock (Deferred Stock Units)
+2023-06-30,CEG,Director,BUY,456.0,93.29,42540.240000000005,"HOLZRICHTER, JULIE",Common Stock (Deferred Stock Units)
+2023-06-30,CEG,Director,BUY,887.0,91.55,81204.84999999999,"LAWLESS, ROBERT J",Deferred Compensation - Phantom Share Equivalents
+2023-06-30,CEG,Director,BUY,451.0,91.55,41289.049999999996,"HARRINGTON, CHARLES L.",Deferred Compensation - Phantom Share Equivalents
+2023-09-30,CEG,Director,BUY,391.0,108.64,42478.24,"LAWLESS, ROBERT J",Common Stock (Deferred Stock Units)
+2023-09-30,CEG,Director,BUY,391.0,108.64,42478.24,"HOLZRICHTER, JULIE",Common Stock (Deferred Stock Units)
+2023-09-30,CEG,Director,BUY,391.0,108.64,42478.24,"RIMMER, NNEKA LOUISE",Common Stock (Deferred Stock Units)
+2023-09-30,CEG,Director,BUY,391.0,108.64,42478.24,"RICHARDSON, JOHN M",Common Stock (Deferred Stock Units)
+2023-09-30,CEG,Director,BUY,745.0,109.08,81264.6,"LAWLESS, ROBERT J",Deferred Compensation - Phantom Share Equivalents
+2023-09-30,CEG,Director,BUY,391.0,108.64,42478.24,"ASHISH, KHANDPUR K",Common Stock (Deferred Stock Units)
+2023-09-30,CEG,Director,BUY,391.0,108.64,42478.24,"HARRINGTON, CHARLES L.",Common Stock (Deferred Stock Units)
+2023-09-30,CEG,Director,BUY,378.0,109.08,41232.24,"HARRINGTON, CHARLES L.",Deferred Compensation - Phantom Share Equivalents
+2023-09-30,CEG,Director,BUY,391.0,108.64,42478.24,"HALVERSON, BRADLEY M",Common Stock (Deferred Stock Units)
+2023-09-30,CEG,Director,BUY,391.0,108.64,42478.24,"DE, BALMANN YVES C",Common Stock (Deferred Stock Units)
+2023-09-30,CEG,Director,BUY,391.0,108.64,42478.24,"JAMIL, DHIAA M.",Common Stock (Deferred Stock Units)
+2023-09-30,CEG,Director,BUY,391.0,108.64,42478.24,"BRLAS, LAURIE",Common Stock (Deferred Stock Units)
+2023-12-31,CEG,Director,BUY,349.0,121.69,42469.81,"BRLAS, LAURIE",Common Stock (Deferred Stock Units)
+2023-12-31,CEG,Director,BUY,349.0,121.69,42469.81,"DE, BALMANN YVES C",Common Stock (Deferred Stock Units)
+2023-12-31,CEG,Director,BUY,349.0,121.69,42469.81,"HOLZRICHTER, JULIE",Common Stock (Deferred Stock Units)
+2023-12-31,CEG,Director,BUY,349.0,121.69,42469.81,"JAMIL, DHIAA M.",Common Stock (Deferred Stock Units)
+2023-12-31,CEG,Director,BUY,349.0,121.69,42469.81,"RICHARDSON, JOHN M",Common Stock (Deferred Stock Units)
+2023-12-31,CEG,Director,BUY,349.0,121.69,42469.81,"HALVERSON, BRADLEY M",Common Stock (Deferred Stock Units)
+2023-12-31,CEG,Director,BUY,353.0,116.89,41262.17,"HARRINGTON, CHARLES L.",Deferred Compensation - Phantom Share Equivalents
+2023-12-31,CEG,Director,BUY,349.0,121.69,42469.81,"RIMMER, NNEKA LOUISE",Common Stock (Deferred Stock Units)
+2023-12-31,CEG,Director,BUY,349.0,121.69,42469.81,"ASHISH, KHANDPUR K",Common Stock (Deferred Stock Units)
+2023-12-31,CEG,Director,BUY,349.0,121.69,42469.81,"HARRINGTON, CHARLES L.",Common Stock (Deferred Stock Units)
+2023-12-31,CEG,Director,BUY,695.0,116.89,81238.55,"LAWLESS, ROBERT J",Deferred Compensation - Phantom Share Equivalents
+2023-12-31,CEG,Director,BUY,349.0,121.69,42469.81,"LAWLESS, ROBERT J",Common Stock (Deferred Stock Units)
+2024-02-05,CEG,"Director, President & CEO",SELL,34173.0,127.03,4340996.19,"DOMINGUEZ, JOSEPH",Common Stock
+2024-02-05,CEG,SVP & Controller,SELL,3425.0,127.03,435077.75,"BAUER, MATTHEW N",Common Stock
+2024-02-05,CEG,EVP & Chief Commercial Office,SELL,40062.0,127.03,5089075.86,"MCHUGH, JAMES",Common Stock
+2024-02-05,CEG,EVP & Chief Commercial Office,SELL,34410.0,127.03,4371102.3,"MCHUGH, JAMES",Common Stock
+2024-02-05,CEG,EVP & Chief Strategy Officer,SELL,16508.0,127.03,2097011.24,"BARRON, KATHLEEN",Common Stock
+2024-02-05,CEG,SVP & Controller,SELL,2262.0,127.03,287341.86,"BAUER, MATTHEW N",Common Stock
+2024-02-05,CEG,EVP & Chief Admin Officer,SELL,24858.0,127.03,3157711.74,"KOEHLER, MICHAEL",Common Stock
+2024-02-05,CEG,EVP & General Counsel,SELL,3887.0,127.03,493765.61,"DARDIS, DAVID O.",Common Stock
+2024-02-05,CEG,EVP & General Counsel,SELL,8603.0,127.03,1092839.09,"DARDIS, DAVID O.",Common Stock
+2024-02-05,CEG,"Director, President & CEO",SELL,13476.0,127.03,1711856.28,"DOMINGUEZ, JOSEPH",Common Stock
+2024-02-05,CEG,EVP & Chief Strategy Officer,SELL,7735.0,127.03,982577.05,"BARRON, KATHLEEN",Common Stock
+2024-02-05,CEG,EVP & CFO,SELL,5996.0,127.03,761671.88,"EGGERS, DANIEL L.",Common Stock
+2024-02-05,CEG,EVP & Chief Generation Officer,SELL,52003.0,127.03,6605941.09,"HANSON, BRYAN CRAIG",Common Stock
+2024-02-05,CEG,EVP & Chief Admin Officer,SELL,18132.0,127.03,2303307.96,"KOEHLER, MICHAEL",Common Stock
+2024-02-05,CEG,EVP & CFO,SELL,14271.0,127.03,1812845.1300000001,"EGGERS, DANIEL L.",Common Stock
+2024-02-05,CEG,EVP & Chief Generation Officer,SELL,46625.0,127.03,5922773.75,"HANSON, BRYAN CRAIG",Common Stock
+2024-03-31,CEG,Director,BUY,247.0,172.41,42585.27,"BRLAS, LAURIE",Common Stock (Deferred Stock Units)
+2024-03-31,CEG,Director,BUY,247.0,172.41,42585.27,"ASHISH, KHANDPUR K",Common Stock (Deferred Stock Units)
+2024-03-31,CEG,Director,BUY,247.0,172.41,42585.27,"HARRINGTON, CHARLES L.",Common Stock (Deferred Stock Units)
+2024-03-31,CEG,Director,BUY,247.0,172.41,42585.27,"HOLZRICHTER, JULIE",Common Stock (Deferred Stock Units)
+2024-03-31,CEG,Director,BUY,440.0,184.85,81334.0,"LAWLESS, ROBERT J",Deferred Compensation - Phantom Share Equivalents
+2024-03-31,CEG,Director,BUY,247.0,172.41,42585.27,"JAMIL, DHIAA M.",Common Stock (Deferred Stock Units)
+2024-03-31,CEG,Director,BUY,247.0,172.41,42585.27,"RICHARDSON, JOHN M",Common Stock (Deferred Stock Units)
+2024-03-31,CEG,Director,BUY,247.0,172.41,42585.27,"RIMMER, NNEKA LOUISE",Common Stock (Deferred Stock Units)
+2024-03-31,CEG,Director,BUY,223.0,184.85,41221.549999999996,"HARRINGTON, CHARLES L.",Deferred Compensation - Phantom Share Equivalents
+2024-03-31,CEG,Director,BUY,247.0,172.41,42585.27,"HALVERSON, BRADLEY M",Common Stock (Deferred Stock Units)
+2024-03-31,CEG,Director,BUY,247.0,172.41,42585.27,"DE, BALMANN YVES C",Common Stock (Deferred Stock Units)
+2024-03-31,CEG,Director,BUY,247.0,172.41,42585.27,"LAWLESS, ROBERT J",Common Stock (Deferred Stock Units)
+2024-06-30,CEG,Director,BUY,198.0,214.63,42496.74,"JAMIL, DHIAA M.",Common Stock (Deferred Stock Units)
+2024-06-30,CEG,Director,BUY,198.0,214.63,42496.74,"BRLAS, LAURIE",Common Stock (Deferred Stock Units)
+2024-06-30,CEG,Director,BUY,198.0,214.63,42496.74,"RIMMER, NNEKA LOUISE",Common Stock (Deferred Stock Units)
+2024-06-30,CEG,Director,BUY,198.0,214.63,42496.74,"HALVERSON, BRADLEY M",Common Stock (Deferred Stock Units)
+2024-06-30,CEG,Director,BUY,198.0,214.63,42496.74,"RICHARDSON, JOHN M",Common Stock (Deferred Stock Units)
+2024-06-30,CEG,Director,BUY,406.0,200.27,81309.62000000001,"LAWLESS, ROBERT J",Deferred Compensation - Phantom Share Equivalents
+2024-06-30,CEG,Director,BUY,198.0,214.63,42496.74,"LAWLESS, ROBERT J",Common Stock (Deferred Stock Units)
+2024-06-30,CEG,Director,BUY,198.0,214.63,42496.74,"ASHISH, KHANDPUR K",Common Stock (Deferred Stock Units)
+2024-06-30,CEG,Director,BUY,198.0,214.63,42496.74,"DE, BALMANN YVES C",Common Stock (Deferred Stock Units)
+2024-06-30,CEG,Director,BUY,198.0,214.63,42496.74,"HOLZRICHTER, JULIE",Common Stock (Deferred Stock Units)
+2024-06-30,CEG,Director,BUY,198.0,214.63,42496.74,"HARRINGTON, CHARLES L.",Common Stock (Deferred Stock Units)
+2024-06-30,CEG,Director,BUY,206.0,200.27,41255.62,"HARRINGTON, CHARLES L.",Deferred Compensation - Phantom Share Equivalents
+2024-09-30,CEG,Director,BUY,246.0,173.11,42585.060000000005,"ASHISH, KHANDPUR K",Common Stock (Deferred Stock Units)
+2024-09-30,CEG,Director,BUY,246.0,173.11,42585.060000000005,"RIMMER, NNEKA LOUISE",Common Stock (Deferred Stock Units)
+2024-09-30,CEG,Director,BUY,159.0,260.02,41343.18,"HARRINGTON, CHARLES L.",Deferred Compensation - Phantom Share Equivalents
+2024-09-30,CEG,Director,BUY,312.0,260.02,81126.23999999999,"LAWLESS, ROBERT J",Deferred Compensation - Phantom Share Equivalents
+2024-09-30,CEG,Director,BUY,246.0,173.11,42585.060000000005,"HARRINGTON, CHARLES L.",Common Stock (Deferred Stock Units)
+2024-09-30,CEG,Director,BUY,246.0,173.11,42585.060000000005,"JAMIL, DHIAA M.",Common Stock (Deferred Stock Units)
+2024-09-30,CEG,Director,BUY,246.0,173.11,42585.060000000005,"HALVERSON, BRADLEY M",Common Stock (Deferred Stock Units)
+2024-09-30,CEG,Director,BUY,246.0,173.11,42585.060000000005,"DE, BALMANN YVES C",Common Stock (Deferred Stock Units)
+2024-09-30,CEG,Director,BUY,246.0,173.11,42585.060000000005,"BRLAS, LAURIE",Common Stock (Deferred Stock Units)
+2024-09-30,CEG,Director,BUY,246.0,173.11,42585.060000000005,"LAWLESS, ROBERT J",Common Stock (Deferred Stock Units)
+2024-09-30,CEG,Director,BUY,246.0,173.11,42585.060000000005,"HOLZRICHTER, JULIE",Common Stock (Deferred Stock Units)
+2024-09-30,CEG,Director,BUY,246.0,173.11,42585.060000000005,"RICHARDSON, JOHN M",Common Stock (Deferred Stock Units)
+2024-12-31,CEG,Director,BUY,168.0,253.63,42609.84,"LAWLESS, ROBERT J",Common Stock (Deferred Stock Units)
+2024-12-31,CEG,Director,BUY,168.0,253.63,42609.84,"ASHISH, KHANDPUR K",Common Stock (Deferred Stock Units)
+2024-12-31,CEG,Director,BUY,168.0,253.63,42609.84,"BRLAS, LAURIE",Common Stock (Deferred Stock Units)
+2024-12-31,CEG,Director,BUY,168.0,253.63,42609.84,"JAMIL, DHIAA M.",Common Stock (Deferred Stock Units)
+2024-12-31,CEG,Director,BUY,29.0,253.63,7355.2699999999995,"PATERSON, EILEEN P.",Common Stock (Deferred Stock Units)
+2024-12-31,CEG,Director,BUY,12.0,223.71,2684.52,"OPPENHEIMER, PETER",Deferred Compensation - Phantom Share Equivalents
+2024-12-31,CEG,Director,BUY,363.0,223.71,81206.73,"LAWLESS, ROBERT J",Deferred Compensation - Phantom Share Equivalents
+2024-12-31,CEG,Director,BUY,168.0,253.63,42609.84,"HARRINGTON, CHARLES L.",Common Stock (Deferred Stock Units)
+2024-12-31,CEG,Director,BUY,168.0,253.63,42609.84,"DE, BALMANN YVES C",Common Stock (Deferred Stock Units)
+2024-12-31,CEG,Director,BUY,168.0,253.63,42609.84,"HALVERSON, BRADLEY M",Common Stock (Deferred Stock Units)
+2024-12-31,CEG,Director,BUY,168.0,253.63,42609.84,"RIMMER, NNEKA LOUISE",Common Stock (Deferred Stock Units)
+2024-12-31,CEG,Director,BUY,168.0,253.63,42609.84,"HOLZRICHTER, JULIE",Common Stock (Deferred Stock Units)
+2024-12-31,CEG,Director,BUY,168.0,253.63,42609.84,"RICHARDSON, JOHN M",Common Stock (Deferred Stock Units)
+2024-12-31,CEG,Director,BUY,29.0,253.63,7355.2699999999995,"OPPENHEIMER, PETER",Common Stock (Deferred Stock Units)
+2024-12-31,CEG,Director,BUY,184.0,223.71,41162.64,"HARRINGTON, CHARLES L.",Deferred Compensation - Phantom Share Equivalents
+2025-02-07,CEG,EVP & Chief Generation Officer,SELL,13222.0,309.79,4096043.3800000004,"HANSON, BRYAN CRAIG",Common Stock
+2025-02-10,CEG,EVP & CFO,SELL,23894.0,321.83,7689806.02,"EGGERS, DANIEL L.",Common Stock
+2025-02-10,CEG,EVP & Chief Generation Officer,SELL,31428.0,321.83,10114473.24,"HANSON, BRYAN CRAIG",Common Stock
+2025-02-10,CEG,EVP & CFO,SELL,26438.0,321.83,8508541.54,"EGGERS, DANIEL L.",Common Stock
+2025-02-10,CEG,EVP & Chief Admin Officer,SELL,18921.0,321.83,6089345.43,"KOEHLER, MICHAEL",Common Stock
+2025-02-10,CEG,EVP & Chief Admin Officer,SELL,14093.0,321.83,4535550.1899999995,"KOEHLER, MICHAEL",Common Stock
+2025-02-10,CEG,EVP & Chief Strategy Officer,SELL,19670.0,321.83,6330396.1,"BARRON, KATHLEEN",Common Stock
+2025-02-10,CEG,EVP & Chief Commercial Officer,SELL,24817.0,321.83,7986855.109999999,"MCHUGH, JAMES",Common Stock
+2025-02-10,CEG,EVP & Chief Generation Officer,SELL,33808.0,321.83,10880428.639999999,"HANSON, BRYAN CRAIG",Common Stock
+2025-02-10,CEG,EVP & Chief Strategy Officer,SELL,17978.0,321.83,5785859.739999999,"BARRON, KATHLEEN",Common Stock
+2025-02-10,CEG,"Director, President & CEO",SELL,102880.0,321.83,33109870.4,"DOMINGUEZ, JOSEPH",Common Stock
+2025-02-10,CEG,SVP & Controller,SELL,4480.0,321.83,1441798.4,"BAUER, MATTHEW N",Common Stock
+2025-02-10,CEG,EVP & General Counsel,SELL,15996.0,321.83,5147992.68,"DARDIS, DAVID O.",Common Stock
+2025-02-10,CEG,EVP & General Counsel,SELL,17594.0,321.83,5662277.02,"DARDIS, DAVID O.",Common Stock
+2025-02-10,CEG,"Director, President & CEO",SELL,111092.0,321.83,35752738.36,"DOMINGUEZ, JOSEPH",Common Stock
+2025-02-10,CEG,EVP & Chief Commercial Officer,SELL,22012.0,321.83,7084121.96,"MCHUGH, JAMES",Common Stock
+2025-02-10,CEG,SVP & Controller,SELL,4615.0,321.83,1485245.45,"BAUER, MATTHEW N",Common Stock
+2025-02-20,CEG,SVP & Controller,SELL,3904.0,310.3752,1211704.7808,"BAUER, MATTHEW N",Common Stock
+2025-02-20,CEG,SVP & Controller,SELL,96.0,311.209,29876.064,"BAUER, MATTHEW N",Common Stock
+2025-03-31,CEG,Director,BUY,205.0,201.63,41334.15,"HARRINGTON, CHARLES L.",Deferred Compensation - Phantom Share Equivalents
+2025-03-31,CEG,Director,BUY,77.0,201.63,15525.51,"OPPENHEIMER, PETER",Deferred Compensation - Phantom Share Equivalents
+2025-03-31,CEG,Director,BUY,403.0,201.63,81256.89,"LAWLESS, ROBERT J",Deferred Compensation - Phantom Share Equivalents
+2025-04-05,CEG,EVP & Chief Commercial Officer,SELL,10160.0,170.96,1736953.6,"MCHUGH, JAMES",Common Stock
+2025-04-29,CEG,Director,BUY,993.0,226.45,224864.84999999998,"ASHISH, KHANDPUR K",Common Stock (Deferred Stock Units)
+2025-04-29,CEG,Director,BUY,993.0,226.45,224864.84999999998,"RIMMER, NNEKA LOUISE",Common Stock (Deferred Stock Units)
+2025-04-29,CEG,Director,BUY,993.0,226.45,224864.84999999998,"RICHARDSON, JOHN M",Common Stock (Deferred Stock Units)
+2025-04-29,CEG,Director,BUY,993.0,226.45,224864.84999999998,"HOLZRICHTER, JULIE",Common Stock (Deferred Stock Units)
+2025-04-29,CEG,Director,BUY,993.0,226.45,224864.84999999998,"DE, BALMANN YVES C",Common Stock (Deferred Stock Units)
+2025-04-29,CEG,Director,BUY,993.0,226.45,224864.84999999998,"OPPENHEIMER, PETER",Common Stock (Deferred Stock Units)
+2025-04-29,CEG,Director,BUY,993.0,226.45,224864.84999999998,"HARRINGTON, CHARLES L.",Common Stock
+2025-04-29,CEG,Director,BUY,993.0,226.45,224864.84999999998,"PATERSON, EILEEN P.",Common Stock
+2025-04-29,CEG,Director,BUY,993.0,226.45,224864.84999999998,"JAMIL, DHIAA M.",Common Stock
+2025-04-29,CEG,Director,BUY,993.0,226.45,224864.84999999998,"LAWLESS, ROBERT J",Common Stock (Deferred Stock Units)
+2025-04-29,CEG,Director,BUY,993.0,226.45,224864.84999999998,"HALVERSON, BRADLEY M",Common Stock (Deferred Stock Units)
+2025-06-30,CEG,Director,BUY,252.0,322.76,81335.52,"LAWLESS, ROBERT J",Deferred Compensation - Phantom Share Equivalents
+2025-06-30,CEG,Director,BUY,48.0,322.76,15492.48,"OPPENHEIMER, PETER",Deferred Compensation - Phantom Share Equivalents
+2025-06-30,CEG,Director,BUY,112.0,322.76,36149.119999999995,"HARRINGTON, CHARLES L.",Deferred Compensation - Phantom Share Equivalents
+2025-09-30,CEG,Director,BUY,110.0,329.07,36197.7,"HARRINGTON, CHARLES L.",Deferred Compensation - Phantom Share Equivalents
+2025-09-30,CEG,Director,BUY,247.0,329.07,81280.29,"LAWLESS, ROBERT J",Deferred Compensation - Phantom Share Equivalents
+2025-09-30,CEG,Director,BUY,47.0,329.07,15466.289999999999,"OPPENHEIMER, PETER",Deferred Compensation - Phantom Share Equivalents
+2025-10-29,CEG,EVP & Chief Strategy Officer,SELL,11321.0,401.43,4544589.03,"BARRON, KATHLEEN",Common Stock

@@ -3,9 +3,9 @@ AlphaTrend Enhanced Long-Only Strategy
 
 Based on AlphaTrend indicator by KivancOzbilgic with enhancements:
 - Adaptive ATR multiplier based on volatility
-- Dynamic MFI thresholds using percentile analysis
+- Dynamic MFI thresholds using percentile analysis (MFI read from raw data)
 - Volume filter with alignment windows
-- EMA-based exits with grace period and momentum protection
+- SMA-based exits with grace period and momentum protection
 - Risk-based position sizing
 
 Entry: AlphaTrend buy signal + volume condition within alignment window
@@ -13,8 +13,8 @@ Exit: Price closes below EMA-50 (with protections) or stop loss hit
 Stop Loss: ATR-based or percentage-based stop loss
 
 PERFORMANCE OPTIMIZED:
-- Indicators pre-calculated using vectorized operations (10-100x speedup)
-- No repeated calculations during backtest
+- Standard indicators (ATR, MFI, SMA) read directly from raw data
+- Custom AlphaTrend signals calculated using vectorized operations
 - O(n) complexity instead of O(n²)
 - Numba JIT compilation for state-dependent loops (5-20x speedup)
 
@@ -240,8 +240,14 @@ class AlphaTrendStrategy(BaseStrategy):
         return TradeDirection.LONG
 
     def required_columns(self) -> List[str]:
-        """Required columns from CSV data (including pre-calculated indicators)."""
+        """
+        Required columns from CSV data (all indicators read from raw data).
+
+        Returns list of columns that MUST exist in the raw data.
+        If any column is missing, a MissingColumnError will be raised.
+        """
         return [
+            # OHLCV data
             'date', 'open', 'high', 'low', 'close', 'volume',
             'atr_14',  # Pre-calculated ATR from raw data
             'ema_50',  # Pre-calculated EMA from raw data
@@ -259,17 +265,20 @@ class AlphaTrendStrategy(BaseStrategy):
         because they are strategy-specific and not standard indicators.
 
         Args:
-            data: Raw OHLCV data with pre-calculated standard indicators
+            data: Raw OHLCV data with pre-calculated indicators from Alpha Vantage
 
         Returns:
-            Data with all AlphaTrend-specific indicators added as columns
+            Data with AlphaTrend-specific indicators added as columns
+
+        Raises:
+            ValueError: If required indicators are missing from raw data
         """
         df = data.copy()
 
         # ==== ADAPTIVE COEFFICIENT ====
-        # Calculate long-term ATR average for volatility ratio
-        df['atr_ema_long'] = df['atr_14'].ewm(span=14 * 3, adjust=False).mean()
-        df['volatility_ratio'] = df['atr_14'] / df['atr_ema_long']
+        # Calculate long-term ATR average for volatility ratio using raw ATR
+        df['atr_ema_long'] = df['atr_14_atr'].ewm(span=14 * 3, adjust=False).mean()
+        df['volatility_ratio'] = df['atr_14_atr'] / df['atr_ema_long']
         df['adaptive_coeff'] = self.atr_multiplier * df['volatility_ratio']
 
         # ==== ALPHATREND BANDS ====

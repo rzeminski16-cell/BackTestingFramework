@@ -286,21 +286,45 @@ raw_data/forex/EURUSD_daily.csv
 
 ### Options Tab
 
-Retrieves historical options chain data.
+Retrieves historical options chain data organized by trading date.
+
+**Trading Date Approach:**
+
+Options data is collected based on **trading dates** (the date when option prices were recorded), not expiration dates. This allows you to:
+- Reconstruct the exact option chain available on any historical trading day
+- Filter options by maximum days-to-expiration from the trading date
+- Avoid including options that weren't realistically tradeable (e.g., LEAPs when backtesting short-term strategies)
 
 **Configuration Options:**
 
 | Option | Description |
 |--------|-------------|
 | Symbols | Underlying stock symbols |
-| Date Range | Historical date range for options data |
+| Trading Date Range | Start and end dates for trading data collection |
+| Max DTE Forward | Maximum days to expiration filter from trading date |
 | Contract Types | Calls, Puts, or Both |
-| Expiration Filter | Filter by expiration date range |
+
+**Max DTE Forward Filter Presets:**
+
+| Preset | Days | Use Case |
+|--------|------|----------|
+| 30 days | 30 | Weekly/monthly options strategies |
+| 90 days | 90 | Short-term trading |
+| 180 days | 180 | Medium-term strategies |
+| 365 days | 365 | Most common - includes quarterly/annual cycles |
+| 730 days | 730 | Long-term strategies, includes LEAPs |
+
+**Example:**
+- Trading date: 2017-05-01
+- Max DTE Forward: 365 days
+- Result: Only options expiring before 2018-05-01 are included
 
 **Data Collected:**
 
+- Snapshot date (trading date)
 - Strike price
 - Expiration date
+- Days to expiration
 - Contract type (call/put)
 - Bid/Ask prices
 - Volume and open interest
@@ -311,13 +335,22 @@ Retrieves historical options chain data.
 
 **Output File Format:**
 
-Options data is organized by ticker in subfolders:
+Options data is organized by ticker and trading year:
 
 ```
-raw_data/options/AAPL/AAPL_20240119_calls.csv
-raw_data/options/AAPL/AAPL_20240119_puts.csv
-raw_data/options/MSFT/MSFT_20240119_calls.csv
+raw_data/options/AAPL/AAPL_options_2017.csv
+raw_data/options/AAPL/AAPL_options_2018.csv
+raw_data/options/MSFT/MSFT_options_2017.csv
 ```
+
+Each CSV contains all option snapshots for that trading year, with columns:
+- `snapshot_date` - The trading date when data was recorded
+- `symbol` - Underlying symbol
+- `option_type` - call or put
+- `expiration_date` - Option expiration date
+- `days_to_expiration` - Days until expiration from snapshot date
+- `strike`, `bid`, `ask`, `last_price`, `volume`, `open_interest`
+- `implied_volatility`, `delta`, `gamma`, `theta`, `vega`
 
 ---
 
@@ -411,10 +444,11 @@ raw_data/
 │   └── ...
 └── options/
     ├── AAPL/
-    │   ├── AAPL_20240119_calls.csv
-    │   ├── AAPL_20240119_puts.csv
+    │   ├── AAPL_options_2017.csv
+    │   ├── AAPL_options_2018.csv
     │   └── ...
     ├── MSFT/
+    │   ├── MSFT_options_2017.csv
     │   └── ...
     └── ...
 ```
