@@ -7,6 +7,12 @@ Provides a professional-grade GUI that orchestrates data fetching, validation,
 preparation, and logging for all data types required by the backtesting framework.
 """
 
+import sys
+from pathlib import Path
+
+# Add project root to path
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
 import customtkinter as ctk
 from tkinter import messagebox, filedialog
 import tkinter as tk
