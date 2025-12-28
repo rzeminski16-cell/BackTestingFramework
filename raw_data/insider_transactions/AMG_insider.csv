@@ -1,0 +1,1210 @@
+date,symbol,insider_title,transaction_type,shares,price,value,executive,security_type
+2004-11-30,AMG,"Director, President and COO",BUY,132500.0,63.38,8397850.0,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2004-11-30,AMG,"Sr. V.P., Gen. Counsel & Sec.",BUY,70000.0,63.38,4436600.0,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2004-11-30,AMG,Executive Vice President,BUY,115000.0,63.38,7288700.0,"BRENNAN, SETH W",Employee Stock Option (Right to Buy)
+2004-11-30,AMG,Director,BUY,5625.0,63.38,356512.5,"PUFF, ROBERT C JR",Director Stock Option (Right to Buy)
+2004-11-30,AMG,"Director, Chairman and CEO",BUY,137500.0,63.38,8714750.0,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2004-11-30,AMG,Executive V.P. and CFO,BUY,115000.0,63.38,7288700.0,"CRATE, DARRELL W",Employee Stock Option (Right to Buy)
+2004-11-30,AMG,Executive Vice President,BUY,115000.0,63.38,7288700.0,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2004-12-15,AMG,Executive Vice President,SELL,1705.0,66.5,113382.5,"BRENNAN, SETH W",Common Stock
+2004-12-15,AMG,Executive Vice President,BUY,10000.0,35.4167,354167.0,"BRENNAN, SETH W",Common Stock
+2004-12-15,AMG,Executive Vice President,BUY,10000.0,31.9583,319583.0,"BRENNAN, SETH W",Common Stock
+2004-12-15,AMG,Executive Vice President,BUY,15000.0,38.7333,580999.5,"BRENNAN, SETH W",Common Stock
+2004-12-15,AMG,Executive Vice President,BUY,7500.0,27.0067,202550.25,"BRENNAN, SETH W",Common Stock
+2004-12-15,AMG,Executive Vice President,BUY,5000.0,46.6867,233433.5,"BRENNAN, SETH W",Common Stock
+2004-12-15,AMG,Executive Vice President,SELL,20868.0,19.3333,403447.3044,"BRENNAN, SETH W",Employee Stock Option (Right to Buy)
+2004-12-15,AMG,Executive Vice President,SELL,10000.0,35.4167,354167.0,"BRENNAN, SETH W",Employee Stock Option (Right to Buy)
+2004-12-15,AMG,Executive Vice President,SELL,15000.0,38.7333,580999.5,"BRENNAN, SETH W",Employee Stock Option (Right to Buy)
+2004-12-15,AMG,Executive Vice President,SELL,5000.0,46.6867,233433.5,"BRENNAN, SETH W",Employee Stock Option (Right to Buy)
+2004-12-15,AMG,Executive Vice President,SELL,7500.0,27.0067,202550.25,"BRENNAN, SETH W",Employee Stock Option (Right to Buy)
+2004-12-15,AMG,"Director, President and COO",BUY,8664.0,23.0867,200023.1688,"HEALEY, SEAN M",Common Stock
+2004-12-15,AMG,"Director, President and COO",SELL,8664.0,23.0867,200023.1688,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2004-12-15,AMG,Executive Vice President,BUY,20868.0,19.3333,403447.3044,"BRENNAN, SETH W",Common Stock
+2004-12-15,AMG,Executive Vice President,SELL,62500.0,66.54,4158750.0000000005,"BRENNAN, SETH W",Common Stock
+2004-12-15,AMG,Executive Vice President,SELL,10000.0,31.9583,319583.0,"BRENNAN, SETH W",Employee Stock Option (Right to Buy)
+2004-12-16,AMG,Director,SELL,10000.0,66.506,665060.0,"FLOOR, RICHARD E",Common Stock
+2004-12-17,AMG,"Sr. V.P., Gen. Counsel & Sec.",BUY,23750.0,35.4167,841146.625,"KINGSTON, JOHN III",Common Stock
+2004-12-17,AMG,"Sr. V.P., Gen. Counsel & Sec.",SELL,35000.0,65.75,2301250.0,"KINGSTON, JOHN III",Common Stock
+2004-12-17,AMG,"Sr. V.P., Gen. Counsel & Sec.",BUY,11250.0,33.9667,382125.37500000006,"KINGSTON, JOHN III",Common Stock
+2004-12-17,AMG,"Sr. V.P., Gen. Counsel & Sec.",SELL,11250.0,33.9667,382125.37500000006,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2004-12-17,AMG,"Sr. V.P., Gen. Counsel & Sec.",SELL,23750.0,35.4167,841146.625,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2004-12-31,AMG,"Director, Chairman",SELL,5000.0,18.46,92300.0,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2004-12-31,AMG,"Director, Chairman",BUY,5000.0,18.46,92300.0,"NUTT, WILLIAM J",Common Stock
+2004-12-31,AMG,"Director, Chairman",SELL,1363.0,67.74,92329.62,"NUTT, WILLIAM J",Common Stock
+2005-05-02,AMG,"Director, President and CEO",BUY,3129.0,31.9583,99997.52070000001,"HEALEY, SEAN M",Common Stock
+2005-05-02,AMG,"Director, President and CEO",BUY,62586.0,23.0867,1444904.2062000001,"HEALEY, SEAN M",Common Stock
+2005-05-02,AMG,"Director, President and CEO",SELL,6753.0,19.3333,130557.7749,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2005-05-02,AMG,"Director, President and CEO",SELL,3129.0,31.9583,99997.52070000001,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2005-05-02,AMG,"Director, President and CEO",SELL,62586.0,23.0867,1444904.2062000001,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2005-05-02,AMG,"Director, President and CEO",SELL,100000.0,62.3856,6238560.0,"HEALEY, SEAN M",Common Stock
+2005-05-02,AMG,"Director, President and CEO",BUY,6753.0,19.3333,130557.7749,"HEALEY, SEAN M",Common Stock
+2005-05-02,AMG,"Director, President and CEO",BUY,41249.0,18.46,761456.54,"HEALEY, SEAN M",Common Stock
+2005-05-02,AMG,"Director, President and CEO",SELL,41249.0,18.46,761456.54,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2005-05-03,AMG,Executive Vice President,SELL,62328.0,62.5478,3898479.2784,"DALTON, NATHANIEL",Common Stock
+2005-05-03,AMG,Executive Vice President,SELL,67500.0,19.3333,1304997.75,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2005-05-03,AMG,Executive V.P. and CFO,BUY,18437.0,27.0067,497922.5279,"CRATE, DARRELL W",Common Stock
+2005-05-03,AMG,Executive Vice President,SELL,3129.0,31.9583,99997.52070000001,"BRENNAN, SETH W",Employee Stock Option (Right to Buy)
+2005-05-03,AMG,Executive Vice President,SELL,1612.0,62.0,99944.0,"BRENNAN, SETH W",Common Stock
+2005-05-03,AMG,Executive Vice President,BUY,3129.0,31.9583,99997.52070000001,"BRENNAN, SETH W",Common Stock
+2005-05-03,AMG,Executive Vice President,BUY,3129.0,31.9583,99997.52070000001,"DALTON, NATHANIEL",Common Stock
+2005-05-03,AMG,Executive Vice President,SELL,8062.0,62.0,499844.0,"DALTON, NATHANIEL",Common Stock
+2005-05-03,AMG,Executive Vice President,BUY,67500.0,19.3333,1304997.75,"DALTON, NATHANIEL",Common Stock
+2005-05-03,AMG,Executive Vice President,SELL,5416.0,18.46,99979.36,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2005-05-03,AMG,Executive V.P. and CFO,SELL,85937.0,62.1753,5343158.7561,"CRATE, DARRELL W",Common Stock
+2005-05-03,AMG,Executive V.P. and CFO,SELL,67500.0,23.0867,1558352.25,"CRATE, DARRELL W",Employee Stock Option (Right to Buy)
+2005-05-03,AMG,Executive V.P. and CFO,SELL,18437.0,27.0067,497922.5279,"CRATE, DARRELL W",Employee Stock Option (Right to Buy)
+2005-05-03,AMG,Executive Vice President,BUY,8664.0,23.0867,200023.1688,"DALTON, NATHANIEL",Common Stock
+2005-05-03,AMG,Executive Vice President,BUY,5416.0,18.46,99979.36,"DALTON, NATHANIEL",Common Stock
+2005-05-03,AMG,Executive V.P. and CFO,BUY,67500.0,23.0867,1558352.25,"CRATE, DARRELL W",Common Stock
+2005-05-03,AMG,Executive Vice President,SELL,3129.0,31.9583,99997.52070000001,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2005-05-03,AMG,Executive Vice President,SELL,8664.0,23.0867,200023.1688,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2005-05-18,AMG,Director,BUY,9140.0,45.6667,417393.638,"LOCKWOOD, STEPHEN J",Common Stock
+2005-05-18,AMG,Director,BUY,2812.0,33.9667,95514.3604,"LOCKWOOD, STEPHEN J",Common Stock
+2005-05-18,AMG,Director,SELL,51326.0,64.4016,3305476.5216,"LOCKWOOD, STEPHEN J",Common Stock
+2005-05-18,AMG,Director,BUY,1406.0,44.3467,62351.4602,"LOCKWOOD, STEPHEN J",Common Stock
+2005-05-18,AMG,Director,BUY,1406.0,45.27,63649.62,"LOCKWOOD, STEPHEN J",Common Stock
+2005-05-18,AMG,Director,BUY,11250.0,41.3333,464999.625,"LOCKWOOD, STEPHEN J",Common Stock
+2005-05-18,AMG,Director,BUY,2812.0,43.5,122322.0,"LOCKWOOD, STEPHEN J",Common Stock
+2005-05-18,AMG,Director,BUY,7500.0,23.7917,178437.75,"LOCKWOOD, STEPHEN J",Common Stock
+2005-05-18,AMG,Director,SELL,2812.0,33.9667,95514.3604,"LOCKWOOD, STEPHEN J",Director Stock Option (Right to Buy)
+2005-05-18,AMG,Director,SELL,1406.0,45.27,63649.62,"LOCKWOOD, STEPHEN J",Director Stock Option (Right to Buy)
+2005-05-18,AMG,Director,SELL,1406.0,44.3467,62351.4602,"LOCKWOOD, STEPHEN J",Director Stock Option (Right to Buy)
+2005-05-18,AMG,Director,SELL,2812.0,43.5,122322.0,"LOCKWOOD, STEPHEN J",Director Stock Option (Right to Buy)
+2005-05-18,AMG,Director,SELL,9140.0,45.6667,417393.638,"LOCKWOOD, STEPHEN J",Director Stock Option (Right to Buy)
+2005-05-18,AMG,Director,SELL,11250.0,41.3333,464999.625,"LOCKWOOD, STEPHEN J",Director Stock Option (Right to Buy)
+2005-05-18,AMG,Director,SELL,7500.0,23.7917,178437.75,"LOCKWOOD, STEPHEN J",Director Stock Option (Right to Buy)
+2005-05-18,AMG,Director,SELL,15000.0,16.9583,254374.50000000003,"LOCKWOOD, STEPHEN J",Director Stock Option (Right to Buy)
+2005-05-18,AMG,Director,BUY,15000.0,16.9583,254374.50000000003,"LOCKWOOD, STEPHEN J",Common Stock
+2005-07-26,AMG,Director,BUY,5625.0,71.75,403593.75,"RODRIGUEZ, RITA M",Director Stock Option (Right to Buy)
+2005-07-26,AMG,Director,BUY,5625.0,71.75,403593.75,"FLOOR, RICHARD E",Director Stock Option (Right to Buy)
+2005-07-26,AMG,Director,BUY,5625.0,71.75,403593.75,"PUFF, ROBERT C JR",Director Stock Option (Right to Buy)
+2005-07-26,AMG,Director,BUY,5625.0,71.75,403593.75,"MEYERMAN, HAROLD J",Director Stock Option (Right to Buy)
+2005-07-26,AMG,Director,BUY,22500.0,71.75,1614375.0,"RYAN, PATRICK T",Director Stock Option (Right to Buy)
+2005-08-02,AMG,Executive Vice President,BUY,47500.0,38.7333,1839831.75,"BRENNAN, SETH W",Common Stock
+2005-08-02,AMG,Executive Vice President,BUY,35000.0,46.6867,1634034.5,"BRENNAN, SETH W",Common Stock
+2005-08-02,AMG,Executive Vice President,BUY,26000.0,27.0067,702174.2,"BRENNAN, SETH W",Common Stock
+2005-08-02,AMG,Executive Vice President,SELL,108500.0,72.3937,7854716.449999999,"BRENNAN, SETH W",Common Stock
+2005-08-02,AMG,Executive Vice President,SELL,47500.0,38.7333,1839831.75,"BRENNAN, SETH W",Employee Stock Option (Right to Buy)
+2005-08-02,AMG,Executive Vice President,SELL,35000.0,46.6867,1634034.5,"BRENNAN, SETH W",Employee Stock Option (Right to Buy)
+2005-08-02,AMG,Executive Vice President,SELL,26000.0,27.0067,702174.2,"BRENNAN, SETH W",Employee Stock Option (Right to Buy)
+2005-08-03,AMG,"Sr. V.P., Gen. Counsel & Sec.",SELL,11250.0,27.0067,303825.375,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2005-08-03,AMG,"Sr. V.P., Gen. Counsel & Sec.",BUY,6250.0,35.4167,221354.375,"KINGSTON, JOHN III",Common Stock
+2005-08-03,AMG,"Sr. V.P., Gen. Counsel & Sec.",BUY,11250.0,27.0067,303825.375,"KINGSTON, JOHN III",Common Stock
+2005-08-03,AMG,"Sr. V.P., Gen. Counsel & Sec.",BUY,11250.0,33.9667,382125.37500000006,"KINGSTON, JOHN III",Common Stock
+2005-08-03,AMG,"Sr. V.P., Gen. Counsel & Sec.",BUY,7500.0,31.9583,239687.25,"KINGSTON, JOHN III",Common Stock
+2005-08-03,AMG,"Sr. V.P., Gen. Counsel & Sec.",SELL,6250.0,35.4167,221354.375,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2005-08-03,AMG,"Sr. V.P., Gen. Counsel & Sec.",SELL,38250.0,72.4418,2770898.85,"KINGSTON, JOHN III",Common Stock
+2005-08-03,AMG,"Sr. V.P., Gen. Counsel & Sec.",SELL,11250.0,33.9667,382125.37500000006,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2005-08-03,AMG,"Sr. V.P., Gen. Counsel & Sec.",BUY,7000.0,38.7333,271133.1,"KINGSTON, JOHN III",Common Stock
+2005-08-03,AMG,"Sr. V.P., Gen. Counsel & Sec.",SELL,7500.0,31.9583,239687.25,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2005-08-03,AMG,"Sr. V.P., Gen. Counsel & Sec.",SELL,7000.0,38.7333,271133.1,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2005-08-16,AMG,"Director, President and CEO",BUY,173247.0,19.3333,3349436.2251000004,"HEALEY, SEAN M",Common Stock
+2005-08-16,AMG,"Director, President and CEO",SELL,173247.0,71.8539,12448472.6133,"HEALEY, SEAN M",Common Stock
+2005-08-16,AMG,"Director, President and CEO",SELL,173247.0,19.3333,3349436.2251000004,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2005-09-08,AMG,Executive V.P. and CFO,SELL,10000.0,27.0067,270067.0,"CRATE, DARRELL W",Employee Stock Option (Right to Buy)
+2005-09-08,AMG,Executive V.P. and CFO,BUY,5172.0,19.3333,99991.8276,"CRATE, DARRELL W",Common Stock
+2005-09-08,AMG,Executive V.P. and CFO,BUY,10000.0,27.0067,270067.0,"CRATE, DARRELL W",Common Stock
+2005-09-08,AMG,Executive V.P. and CFO,SELL,5172.0,19.3333,99991.8276,"CRATE, DARRELL W",Employee Stock Option (Right to Buy)
+2005-09-08,AMG,Executive V.P. and CFO,SELL,2728.0,73.31,199989.68,"CRATE, DARRELL W",Common Stock
+2005-09-08,AMG,Executive V.P. and CFO,SELL,10000.0,73.1796,731795.9999999999,"CRATE, DARRELL W",Common Stock
+2005-09-08,AMG,Executive V.P. and CFO,SELL,3129.0,31.9583,99997.52070000001,"CRATE, DARRELL W",Employee Stock Option (Right to Buy)
+2005-09-08,AMG,Executive V.P. and CFO,BUY,3129.0,31.9583,99997.52070000001,"CRATE, DARRELL W",Common Stock
+2005-11-03,AMG,Executive Vice President,BUY,58836.0,23.0867,1358329.0812000001,"DALTON, NATHANIEL",Common Stock
+2005-11-03,AMG,Executive Vice President,SELL,58836.0,76.7737,4517057.4132,"DALTON, NATHANIEL",Common Stock
+2005-11-03,AMG,Executive Vice President,SELL,58836.0,23.0867,1358329.0812000001,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2005-12-14,AMG,Director,BUY,5625.0,81.83,460293.75,"FLOOR, RICHARD E",Director Stock Option (Right to Buy)
+2005-12-14,AMG,Director,BUY,5625.0,81.83,460293.75,"MEYERMAN, HAROLD J",Director Stock Option (Right to Buy)
+2005-12-14,AMG,"Director, Chairman",BUY,22500.0,81.83,1841175.0,"NUTT, WILLIAM J",Director Stock Option (Right to Buy)
+2005-12-14,AMG,Director,BUY,5625.0,81.83,460293.75,"RYAN, PATRICK T",Director Stock Option (Right to Buy)
+2005-12-14,AMG,Director,BUY,5625.0,81.83,460293.75,"RODRIGUEZ, RITA M",Director Stock Option (Right to Buy)
+2005-12-30,AMG,Executive Vice President,BUY,24922.0,80.25,1999990.5,"DALTON, NATHANIEL",Common Stock
+2005-12-30,AMG,Executive Vice President,BUY,24922.0,80.25,1999990.5,"BRENNAN, SETH W",Common Stock
+2005-12-30,AMG,"Director, President and CEO",BUY,37383.0,80.25,2999985.75,"HEALEY, SEAN M",Common Stock
+2005-12-30,AMG,Executive V.P. and CFO,BUY,24922.0,80.25,1999990.5,"CRATE, DARRELL W",Common Stock
+2005-12-30,AMG,"Sr. V.P., Gen. Counsel & Sec.",BUY,12461.0,80.25,999995.25,"KINGSTON, JOHN III",Common Stock
+2006-01-24,AMG,Director,BUY,22500.0,86.7,1950750.0,"ZEITLIN, JIDE JAMES",Director Stock Option (Right to Buy)
+2006-01-25,AMG,"Director, Chairman",SELL,24398.0,93.02,2269501.96,"NUTT, WILLIAM J",Common Stock
+2006-01-27,AMG,"Director, President and CEO",SELL,49149.0,93.3,4585601.7,"HEALEY, SEAN M",Common Stock
+2006-01-27,AMG,"Director, President and CEO",BUY,78749.0,27.0067,2126750.6182999997,"HEALEY, SEAN M",Common Stock
+2006-01-27,AMG,"Sr. V.P., Gen. Counsel & Sec.",BUY,2140.0,46.6867,99909.538,"KINGSTON, JOHN III",Common Stock
+2006-01-27,AMG,"Sr. V.P., Gen. Counsel & Sec.",BUY,11250.0,27.0067,303825.375,"KINGSTON, JOHN III",Common Stock
+2006-01-27,AMG,Executive V.P. and CFO,SELL,2140.0,46.6867,99909.538,"CRATE, DARRELL W",Employee Stock Option (Right to Buy)
+2006-01-27,AMG,Executive V.P. and CFO,BUY,2140.0,46.6867,99909.538,"CRATE, DARRELL W",Common Stock
+2006-01-27,AMG,Executive V.P. and CFO,BUY,42812.0,27.0067,1156210.8403999999,"CRATE, DARRELL W",Common Stock
+2006-01-27,AMG,Executive V.P. and CFO,SELL,26871.0,31.9583,858751.4793,"CRATE, DARRELL W",Employee Stock Option (Right to Buy)
+2006-01-27,AMG,Executive V.P. and CFO,BUY,26871.0,31.9583,858751.4793,"CRATE, DARRELL W",Common Stock
+2006-01-27,AMG,"Sr. V.P., Gen. Counsel & Sec.",SELL,11250.0,33.9667,382125.37500000006,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2006-01-27,AMG,Executive V.P. and CFO,SELL,69683.0,93.3953,6508064.689900001,"CRATE, DARRELL W",Common Stock
+2006-01-27,AMG,"Sr. V.P., Gen. Counsel & Sec.",SELL,11250.0,27.0067,303825.375,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2006-01-27,AMG,"Sr. V.P., Gen. Counsel & Sec.",SELL,11250.0,38.7333,435749.625,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2006-01-27,AMG,"Sr. V.P., Gen. Counsel & Sec.",SELL,2140.0,46.6867,99909.538,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2006-01-27,AMG,"Sr. V.P., Gen. Counsel & Sec.",SELL,33750.0,92.0504,3106701.0,"KINGSTON, JOHN III",Common Stock
+2006-01-27,AMG,"Sr. V.P., Gen. Counsel & Sec.",BUY,11250.0,33.9667,382125.37500000006,"KINGSTON, JOHN III",Common Stock
+2006-01-27,AMG,"Director, President and CEO",SELL,78749.0,27.0067,2126750.6182999997,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2006-01-27,AMG,Executive V.P. and CFO,SELL,42812.0,27.0067,1156210.8403999999,"CRATE, DARRELL W",Employee Stock Option (Right to Buy)
+2006-01-27,AMG,Executive V.P. and CFO,SELL,1073.0,93.07,99864.10999999999,"CRATE, DARRELL W",Common Stock
+2006-01-27,AMG,"Sr. V.P., Gen. Counsel & Sec.",BUY,11250.0,38.7333,435749.625,"KINGSTON, JOHN III",Common Stock
+2006-01-30,AMG,Executive Vice President,BUY,31250.0,38.7333,1210415.625,"BRENNAN, SETH W",Common Stock
+2006-01-30,AMG,Executive Vice President,SELL,1081.0,92.34,99819.54000000001,"BRENNAN, SETH W",Common Stock
+2006-01-30,AMG,Executive Vice President,SELL,90249.0,92.1542,8316824.3958,"BRENNAN, SETH W",Common Stock
+2006-01-30,AMG,"Director, President and CEO",SELL,29600.0,92.028,2724028.8000000003,"HEALEY, SEAN M",Common Stock
+2006-01-30,AMG,Executive Vice President,BUY,33194.0,19.3333,641749.5602000001,"BRENNAN, SETH W",Common Stock
+2006-01-30,AMG,Executive Vice President,SELL,27945.0,46.6867,1304659.8315,"BRENNAN, SETH W",Employee Stock Option (Right to Buy)
+2006-01-30,AMG,Executive Vice President,SELL,33194.0,19.3333,641749.5602000001,"BRENNAN, SETH W",Employee Stock Option (Right to Buy)
+2006-01-30,AMG,Executive Vice President,SELL,31250.0,38.7333,1210415.625,"BRENNAN, SETH W",Employee Stock Option (Right to Buy)
+2006-01-30,AMG,Executive Vice President,BUY,27945.0,46.6867,1304659.8315,"BRENNAN, SETH W",Common Stock
+2006-01-30,AMG,Director,SELL,3750.0,92.01,345037.5,"MEYERMAN, HAROLD J",Common Stock
+2006-02-13,AMG,"Director, Chairman",SELL,16700.0,89.99,1502833.0,"NUTT, WILLIAM J",Common Stock
+2006-02-14,AMG,"Director, Chairman",SELL,16700.0,90.76,1515692.0,"NUTT, WILLIAM J",Common Stock
+2006-02-15,AMG,"Director, Chairman",SELL,16600.0,91.71,1522386.0,"NUTT, WILLIAM J",Common Stock
+2006-02-16,AMG,Executive Vice President,BUY,3752.0,31.9583,119907.54160000001,"DALTON, NATHANIEL",Common Stock
+2006-02-16,AMG,Executive Vice President,SELL,71249.0,27.0067,1924200.3683,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2006-02-16,AMG,Executive Vice President,BUY,71249.0,27.0067,1924200.3683,"DALTON, NATHANIEL",Common Stock
+2006-02-16,AMG,Executive Vice President,SELL,1067.0,93.57,99839.18999999999,"DALTON, NATHANIEL",Common Stock
+2006-02-16,AMG,Executive Vice President,SELL,75000.0,93.8828,7041210.0,"DALTON, NATHANIEL",Common Stock
+2006-02-16,AMG,Executive Vice President,SELL,2140.0,46.6867,99909.538,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2006-02-16,AMG,Executive Vice President,SELL,3752.0,31.9583,119907.54160000001,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2006-02-16,AMG,Executive Vice President,BUY,2140.0,46.6867,99909.538,"DALTON, NATHANIEL",Common Stock
+2006-03-13,AMG,"Director, Chairman",SELL,16700.0,97.19,1623073.0,"NUTT, WILLIAM J",Common Stock
+2006-03-14,AMG,"Director, Chairman",SELL,16700.0,100.4,1676680.0,"NUTT, WILLIAM J",Common Stock
+2006-03-15,AMG,"Director, Chairman",SELL,16600.0,101.81,1690046.0,"NUTT, WILLIAM J",Common Stock
+2006-04-03,AMG,"Director, Chairman",SELL,16700.0,104.43,1743981.0,"NUTT, WILLIAM J",Common Stock
+2006-04-04,AMG,"Director, Chairman",SELL,16700.0,104.4,1743480.0,"NUTT, WILLIAM J",Common Stock
+2006-04-05,AMG,"Director, Chairman",SELL,16600.0,106.37,1765742.0,"NUTT, WILLIAM J",Common Stock
+2006-05-03,AMG,"Director, Chairman",SELL,16700.0,96.64,1613888.0,"NUTT, WILLIAM J",Common Stock
+2006-05-04,AMG,"Director, Chairman",SELL,16700.0,97.99,1636433.0,"NUTT, WILLIAM J",Common Stock
+2006-05-05,AMG,"Director, Chairman",SELL,16600.0,99.81,1656846.0,"NUTT, WILLIAM J",Common Stock
+2006-06-07,AMG,Executive V.P. and CFO,BUY,30000.0,31.96,958800.0,"CRATE, DARRELL W",Common Stock
+2006-06-07,AMG,Executive V.P. and CFO,SELL,48437.0,89.74,4346736.38,"CRATE, DARRELL W",Common Stock
+2006-06-07,AMG,Executive V.P. and CFO,SELL,30000.0,31.96,958800.0,"CRATE, DARRELL W",Employee Stock Option (Right to Buy)
+2006-06-07,AMG,Executive V.P. and CFO,SELL,18437.0,33.97,626304.89,"CRATE, DARRELL W",Employee Stock Option (Right to Buy)
+2006-06-07,AMG,Executive V.P. and CFO,BUY,18437.0,33.97,626304.89,"CRATE, DARRELL W",Common Stock
+2006-06-20,AMG,"Director, Chairman",SELL,16700.0,85.06,1420502.0,"NUTT, WILLIAM J",Common Stock
+2006-06-20,AMG,"Director, Chairman",SELL,3085.0,15.67,48341.95,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2006-06-20,AMG,"Director, Chairman",BUY,3085.0,15.67,48341.95,"NUTT, WILLIAM J",Common Stock
+2006-06-21,AMG,"Director, Chairman",SELL,16700.0,85.09,1421003.0,"NUTT, WILLIAM J",Common Stock
+2006-06-21,AMG,"Director, Chairman",BUY,16700.0,15.67,261689.0,"NUTT, WILLIAM J",Common Stock
+2006-06-21,AMG,"Director, Chairman",SELL,16700.0,15.67,261689.0,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2006-06-22,AMG,"Director, Chairman",SELL,16600.0,15.67,260122.0,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2006-06-22,AMG,"Director, Chairman",SELL,16600.0,85.06,1411996.0,"NUTT, WILLIAM J",Common Stock
+2006-06-22,AMG,"Director, Chairman",BUY,16600.0,15.67,260122.0,"NUTT, WILLIAM J",Common Stock
+2006-07-25,AMG,Director,BUY,5625.0,86.77,488081.25,"ZEITLIN, JIDE JAMES",Director Stock Option (Right to Buy)
+2006-07-25,AMG,Director,BUY,5625.0,86.77,488081.25,"FLOOR, RICHARD E",Director Stock Option (Right to Buy)
+2006-07-25,AMG,Director,BUY,5625.0,86.77,488081.25,"MEYERMAN, HAROLD J",Director Stock Option (Right to Buy)
+2006-07-25,AMG,Director,BUY,5625.0,86.77,488081.25,"RYAN, PATRICK T",Director Stock Option (Right to Buy)
+2006-07-25,AMG,Director,BUY,5625.0,86.77,488081.25,"RODRIGUEZ, RITA M",Director Stock Option (Right to Buy)
+2006-07-25,AMG,"Director, Chairman",BUY,5625.0,86.77,488081.25,"NUTT, WILLIAM J",Director Stock Option (Right to Buy)
+2006-07-28,AMG,Executive Vice President,SELL,25805.0,46.69,1204835.45,"BRENNAN, SETH W",Employee Stock Option (Right to Buy)
+2006-07-28,AMG,Executive Vice President,BUY,37749.0,27.01,1019600.4900000001,"BRENNAN, SETH W",Common Stock
+2006-07-28,AMG,Executive Vice President,SELL,37749.0,27.01,1019600.4900000001,"BRENNAN, SETH W",Employee Stock Option (Right to Buy)
+2006-07-28,AMG,Executive Vice President,BUY,25805.0,46.69,1204835.45,"BRENNAN, SETH W",Common Stock
+2006-07-28,AMG,Executive Vice President,SELL,63554.0,90.81,5771338.74,"BRENNAN, SETH W",Common Stock
+2006-07-31,AMG,Executive Vice President,SELL,75000.0,35.42,2656500.0,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2006-07-31,AMG,Executive Vice President,SELL,75000.0,91.15,6836250.0,"DALTON, NATHANIEL",Common Stock
+2006-07-31,AMG,Executive Vice President,BUY,75000.0,35.42,2656500.0,"DALTON, NATHANIEL",Common Stock
+2006-08-02,AMG,"Ex.V.P., Gen. Counsel & Sec.",SELL,19250.0,38.73,745552.4999999999,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2006-08-02,AMG,"Ex.V.P., Gen. Counsel & Sec.",BUY,19250.0,38.73,745552.4999999999,"KINGSTON, JOHN III",Common Stock
+2006-08-02,AMG,"Ex.V.P., Gen. Counsel & Sec.",BUY,15000.0,46.69,700350.0,"KINGSTON, JOHN III",Common Stock
+2006-08-02,AMG,"Ex.V.P., Gen. Counsel & Sec.",SELL,34250.0,90.08,3085240.0,"KINGSTON, JOHN III",Common Stock
+2006-08-02,AMG,"Ex.V.P., Gen. Counsel & Sec.",SELL,15000.0,46.69,700350.0,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2006-08-14,AMG,"Director, President and CEO",SELL,83350.0,38.73,3228145.4999999995,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2006-08-14,AMG,"Director, President and CEO",BUY,83350.0,38.73,3228145.4999999995,"HEALEY, SEAN M",Common Stock
+2006-08-14,AMG,"Director, President and CEO",SELL,83350.0,91.64,7638194.0,"HEALEY, SEAN M",Common Stock
+2006-08-15,AMG,"Director, President and CEO",SELL,25400.0,92.25,2343150.0,"HEALEY, SEAN M",Common Stock
+2006-08-15,AMG,"Director, President and CEO",BUY,25400.0,38.73,983741.9999999999,"HEALEY, SEAN M",Common Stock
+2006-08-15,AMG,"Director, President and CEO",SELL,25400.0,38.73,983741.9999999999,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2006-11-06,AMG,Executive Vice President,SELL,53437.0,33.97,1815254.89,"BRENNAN, SETH W",Employee Stock Option (Right to Buy)
+2006-11-06,AMG,Executive Vice President,SELL,53437.0,101.05,5399808.85,"BRENNAN, SETH W",Common Stock
+2006-11-06,AMG,Executive Vice President,BUY,53437.0,33.97,1815254.89,"BRENNAN, SETH W",Common Stock
+2006-12-08,AMG,"Director, Chairman",SELL,100000.0,15.67,1567000.0,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2006-12-08,AMG,"Director, Chairman",SELL,100000.0,102.96,10296000.0,"NUTT, WILLIAM J",Common Stock
+2006-12-08,AMG,"Director, Chairman",BUY,100000.0,15.67,1567000.0,"NUTT, WILLIAM J",Common Stock
+2006-12-12,AMG,Director,BUY,5625.0,102.83,578418.75,"RYAN, PATRICK T",Director Stock Option (Right to Buy)
+2006-12-12,AMG,"Director, Chairman",BUY,5625.0,102.83,578418.75,"NUTT, WILLIAM J",Director Stock Option (Right to Buy)
+2006-12-12,AMG,"Exec. V.P., Gen. Counsel",BUY,40266.0,102.83,4140552.78,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2006-12-12,AMG,Executive V.P. and COO,BUY,175070.0,102.83,18002448.1,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2006-12-12,AMG,Executive Vice President,BUY,52521.0,102.83,5400734.43,"BRENNAN, SETH W",Employee Stock Option (Right to Buy)
+2006-12-12,AMG,"Director, President and CEO",BUY,350140.0,102.83,36004896.2,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2006-12-12,AMG,Director,BUY,5625.0,102.83,578418.75,"ZEITLIN, JIDE JAMES",Director Stock Option (Right to Buy)
+2006-12-12,AMG,Director,BUY,5625.0,102.83,578418.75,"RODRIGUEZ, RITA M",Director Stock Option (Right to Buy)
+2006-12-12,AMG,Director,BUY,5625.0,102.83,578418.75,"MEYERMAN, HAROLD J",Director Stock Option (Right to Buy)
+2006-12-12,AMG,Director,BUY,5625.0,102.83,578418.75,"FLOOR, RICHARD E",Director Stock Option (Right to Buy)
+2006-12-12,AMG,Executive V.P. and CFO,BUY,175070.0,102.83,18002448.1,"CRATE, DARRELL W",Employee Stock Option (Right to Buy)
+2006-12-29,AMG,"Director, Chairman",SELL,3129.0,31.96,100002.84,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2006-12-29,AMG,"Director, Chairman",BUY,416.0,18.46,7679.360000000001,"NUTT, WILLIAM J",Common Stock
+2006-12-29,AMG,"Director, Chairman",SELL,1.0,27.01,27.01,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2006-12-29,AMG,"Director, Chairman",BUY,5172.0,19.33,99974.76,"NUTT, WILLIAM J",Common Stock
+2006-12-29,AMG,"Director, Chairman",SELL,2140.0,46.69,99916.59999999999,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2006-12-29,AMG,"Director, Chairman",BUY,2140.0,46.69,99916.59999999999,"NUTT, WILLIAM J",Common Stock
+2006-12-29,AMG,"Director, Chairman",BUY,1.0,27.01,27.01,"NUTT, WILLIAM J",Common Stock
+2006-12-29,AMG,"Director, Chairman",SELL,2925.0,105.14,307534.5,"NUTT, WILLIAM J",Common Stock
+2006-12-29,AMG,"Director, Chairman",SELL,416.0,18.46,7679.360000000001,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2006-12-29,AMG,"Director, Chairman",SELL,5172.0,19.33,99974.76,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2006-12-29,AMG,"Director, Chairman",BUY,3129.0,31.96,100002.84,"NUTT, WILLIAM J",Common Stock
+2007-02-07,AMG,Executive V.P. and COO,SELL,2298.0,43.5,99963.0,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2007-02-07,AMG,Executive V.P. and COO,BUY,2298.0,43.5,99963.0,"DALTON, NATHANIEL",Common Stock
+2007-02-07,AMG,Executive V.P. and CFO,SELL,52813.0,33.97,1794057.6099999999,"CRATE, DARRELL W",Employee Stock Option (Right to Buy)
+2007-02-07,AMG,Executive V.P. and CFO,SELL,12187.0,35.42,431663.54000000004,"CRATE, DARRELL W",Employee Stock Option (Right to Buy)
+2007-02-07,AMG,Executive V.P. and COO,SELL,874.0,114.33,99924.42,"DALTON, NATHANIEL",Common Stock
+2007-02-07,AMG,Executive V.P. and COO,BUY,75000.0,38.73,2904749.9999999995,"DALTON, NATHANIEL",Common Stock
+2007-02-07,AMG,Executive V.P. and COO,SELL,75000.0,113.73,8529750.0,"DALTON, NATHANIEL",Common Stock
+2007-02-07,AMG,Executive V.P. and COO,SELL,75000.0,38.73,2904749.9999999995,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2007-02-07,AMG,Executive V.P. and CFO,SELL,874.0,114.33,99924.42,"CRATE, DARRELL W",Common Stock
+2007-02-07,AMG,Executive V.P. and CFO,SELL,65000.0,114.57,7447050.0,"CRATE, DARRELL W",Common Stock
+2007-02-07,AMG,Executive V.P. and CFO,BUY,12187.0,35.42,431663.54000000004,"CRATE, DARRELL W",Common Stock
+2007-02-07,AMG,Executive V.P. and CFO,BUY,52813.0,33.97,1794057.6099999999,"CRATE, DARRELL W",Common Stock
+2007-02-07,AMG,Executive V.P. and CFO,BUY,2298.0,43.5,99963.0,"CRATE, DARRELL W",Common Stock
+2007-02-07,AMG,"Director, President and CEO",SELL,78750.0,33.97,2675137.5,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2007-02-07,AMG,"Director, President and CEO",SELL,78750.0,114.53,9019237.5,"HEALEY, SEAN M",Common Stock
+2007-02-07,AMG,"Director, President and CEO",BUY,78750.0,33.97,2675137.5,"HEALEY, SEAN M",Common Stock
+2007-02-07,AMG,Executive V.P. and CFO,SELL,2298.0,43.5,99963.0,"CRATE, DARRELL W",Employee Stock Option (Right to Buy)
+2007-02-08,AMG,"Exec. V.P., Gen. Counsel",BUY,20360.0,46.69,950608.3999999999,"KINGSTON, JOHN III",Common Stock
+2007-02-08,AMG,"Director, President and CEO",BUY,1.0,27.01,27.01,"HEALEY, SEAN M",Common Stock
+2007-02-08,AMG,"Director, President and CEO",BUY,2298.0,43.5,99963.0,"HEALEY, SEAN M",Common Stock
+2007-02-08,AMG,"Exec. V.P., Gen. Counsel",SELL,11250.0,33.97,382162.5,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2007-02-08,AMG,"Exec. V.P., Gen. Counsel",SELL,1451.0,110.08,159726.08,"KINGSTON, JOHN III",Common Stock
+2007-02-08,AMG,"Exec. V.P., Gen. Counsel",SELL,31610.0,113.86,3599114.6,"KINGSTON, JOHN III",Common Stock
+2007-02-08,AMG,"Exec. V.P., Gen. Counsel",BUY,11250.0,33.97,382162.5,"KINGSTON, JOHN III",Common Stock
+2007-02-08,AMG,"Director, President and CEO",SELL,2140.0,46.69,99916.59999999999,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2007-02-08,AMG,"Exec. V.P., Gen. Counsel",SELL,20360.0,46.69,950608.3999999999,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2007-02-08,AMG,Executive V.P. and COO,SELL,2902.0,110.08,319452.16,"DALTON, NATHANIEL",Common Stock
+2007-02-08,AMG,Executive V.P. and CFO,SELL,2902.0,110.08,319452.16,"CRATE, DARRELL W",Common Stock
+2007-02-08,AMG,"Director, President and CEO",SELL,4353.0,110.08,479178.24,"HEALEY, SEAN M",Common Stock
+2007-02-08,AMG,"Director, President and CEO",SELL,2298.0,43.5,99963.0,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2007-02-08,AMG,"Director, President and CEO",BUY,2140.0,46.69,99916.59999999999,"HEALEY, SEAN M",Common Stock
+2007-02-08,AMG,"Director, President and CEO",SELL,1.0,27.01,27.01,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2007-02-13,AMG,"Director, Chairman",SELL,16666.0,15.67,261156.22,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2007-02-13,AMG,"Director, Chairman",BUY,16666.0,15.67,261156.22,"NUTT, WILLIAM J",Common Stock
+2007-02-13,AMG,"Director, Chairman",SELL,16666.0,113.29,1888091.1400000001,"NUTT, WILLIAM J",Common Stock
+2007-02-14,AMG,"Director, Chairman",SELL,16666.0,117.67,1961088.22,"NUTT, WILLIAM J",Common Stock
+2007-02-14,AMG,"Director, Chairman",SELL,16666.0,15.67,261156.22,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2007-02-14,AMG,"Director, Chairman",BUY,16666.0,15.67,261156.22,"NUTT, WILLIAM J",Common Stock
+2007-02-15,AMG,"Director, Chairman",SELL,16668.0,15.67,261187.56,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2007-02-15,AMG,"Director, Chairman",SELL,16668.0,118.36,1972824.48,"NUTT, WILLIAM J",Common Stock
+2007-02-15,AMG,"Director, Chairman",BUY,16668.0,15.67,261187.56,"NUTT, WILLIAM J",Common Stock
+2007-03-12,AMG,"Director, Chairman",SELL,16666.0,108.0,1799928.0,"NUTT, WILLIAM J",Common Stock
+2007-03-12,AMG,"Director, Chairman",SELL,16666.0,15.67,261156.22,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2007-03-12,AMG,"Director, Chairman",BUY,16666.0,15.67,261156.22,"NUTT, WILLIAM J",Common Stock
+2007-04-11,AMG,"Director, Chairman",BUY,16666.0,15.67,261156.22,"NUTT, WILLIAM J",Common Stock
+2007-04-11,AMG,"Director, Chairman",SELL,16666.0,15.67,261156.22,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2007-04-11,AMG,"Director, Chairman",SELL,16666.0,110.59,1843092.94,"NUTT, WILLIAM J",Common Stock
+2007-04-12,AMG,"Director, Chairman",SELL,16666.0,15.67,261156.22,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2007-04-12,AMG,"Director, Chairman",SELL,16666.0,110.14,1835593.24,"NUTT, WILLIAM J",Common Stock
+2007-04-12,AMG,"Director, Chairman",BUY,16666.0,15.67,261156.22,"NUTT, WILLIAM J",Common Stock
+2007-04-13,AMG,"Director, Chairman",SELL,16668.0,111.67,1861315.56,"NUTT, WILLIAM J",Common Stock
+2007-04-13,AMG,"Director, Chairman",BUY,16668.0,15.67,261187.56,"NUTT, WILLIAM J",Common Stock
+2007-04-13,AMG,"Director, Chairman",SELL,16668.0,15.67,261187.56,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2007-05-08,AMG,"Director, Chairman",SELL,13865.0,15.67,217264.55,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2007-05-08,AMG,"Director, Chairman",BUY,13865.0,15.67,217264.55,"NUTT, WILLIAM J",Common Stock
+2007-05-08,AMG,"Director, Chairman",BUY,2801.0,23.09,64675.09,"NUTT, WILLIAM J",Common Stock
+2007-05-08,AMG,"Director, Chairman",SELL,16666.0,122.07,2034418.6199999999,"NUTT, WILLIAM J",Common Stock
+2007-05-08,AMG,"Director, Chairman",SELL,2801.0,23.09,64675.09,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2007-05-09,AMG,"Director, Chairman",SELL,16666.0,123.66,2060917.56,"NUTT, WILLIAM J",Common Stock
+2007-05-09,AMG,"Director, Chairman",SELL,16666.0,23.09,384817.94,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2007-05-09,AMG,"Director, Chairman",BUY,16666.0,23.09,384817.94,"NUTT, WILLIAM J",Common Stock
+2007-05-10,AMG,"Director, Chairman",BUY,16668.0,23.09,384864.12,"NUTT, WILLIAM J",Common Stock
+2007-05-10,AMG,"Director, Chairman",SELL,16668.0,122.72,2045496.96,"NUTT, WILLIAM J",Common Stock
+2007-05-10,AMG,"Director, Chairman",SELL,16668.0,23.09,384864.12,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2007-06-06,AMG,"Director, Chairman",SELL,16666.0,23.09,384817.94,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2007-06-06,AMG,"Director, Chairman",SELL,16666.0,128.64,2143914.2399999998,"NUTT, WILLIAM J",Common Stock
+2007-06-06,AMG,"Director, Chairman",BUY,16666.0,23.09,384817.94,"NUTT, WILLIAM J",Common Stock
+2007-06-07,AMG,"Director, Chairman",SELL,16666.0,127.16,2119248.56,"NUTT, WILLIAM J",Common Stock
+2007-06-07,AMG,"Director, Chairman",BUY,16666.0,23.09,384817.94,"NUTT, WILLIAM J",Common Stock
+2007-06-07,AMG,"Director, Chairman",SELL,16666.0,23.09,384817.94,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2007-06-08,AMG,"Director, Chairman",SELL,619.0,23.09,14292.71,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2007-06-08,AMG,"Director, Chairman",BUY,619.0,23.09,14292.71,"NUTT, WILLIAM J",Common Stock
+2007-06-08,AMG,"Director, Chairman",BUY,16049.0,18.46,296264.54000000004,"NUTT, WILLIAM J",Common Stock
+2007-06-08,AMG,"Director, Chairman",SELL,16668.0,125.82,2097167.76,"NUTT, WILLIAM J",Common Stock
+2007-06-08,AMG,"Director, Chairman",SELL,16049.0,18.46,296264.54000000004,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2007-07-11,AMG,"Director, Chairman",SELL,16666.0,18.46,307654.36,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2007-07-11,AMG,"Director, Chairman",BUY,16666.0,18.46,307654.36,"NUTT, WILLIAM J",Common Stock
+2007-07-11,AMG,"Director, Chairman",SELL,16666.0,130.16,2169246.56,"NUTT, WILLIAM J",Common Stock
+2007-07-12,AMG,"Director, Chairman",SELL,9797.0,19.33,189376.00999999998,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2007-07-12,AMG,"Director, Chairman",SELL,16666.0,130.95,2182412.6999999997,"NUTT, WILLIAM J",Common Stock
+2007-07-12,AMG,"Director, Chairman",BUY,9797.0,19.33,189376.00999999998,"NUTT, WILLIAM J",Common Stock
+2007-07-12,AMG,"Director, Chairman",BUY,6869.0,18.46,126801.74,"NUTT, WILLIAM J",Common Stock
+2007-07-12,AMG,"Director, Chairman",SELL,6869.0,18.46,126801.74,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2007-07-13,AMG,"Director, Chairman",SELL,16668.0,19.33,322192.43999999994,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2007-07-13,AMG,"Director, Chairman",BUY,16668.0,19.33,322192.43999999994,"NUTT, WILLIAM J",Common Stock
+2007-07-13,AMG,"Director, Chairman",SELL,16668.0,131.67,2194675.5599999996,"NUTT, WILLIAM J",Common Stock
+2007-07-24,AMG,Director,BUY,5625.0,119.0,669375.0,"RODRIGUEZ, RITA M",Director Stock Option (Right to Buy)
+2007-07-24,AMG,Director,BUY,5625.0,119.0,669375.0,"MEYERMAN, HAROLD J",Director Stock Option (Right to Buy)
+2007-07-24,AMG,Director,BUY,5625.0,119.0,669375.0,"FLOOR, RICHARD E",Director Stock Option (Right to Buy)
+2007-07-24,AMG,Director,BUY,5625.0,119.0,669375.0,"RYAN, PATRICK T",Director Stock Option (Right to Buy)
+2007-07-24,AMG,"Director, Chairman",BUY,5625.0,119.0,669375.0,"NUTT, WILLIAM J",Director Stock Option (Right to Buy)
+2007-07-24,AMG,Director,BUY,5625.0,119.0,669375.0,"ZEITLIN, JIDE JAMES",Director Stock Option (Right to Buy)
+2007-08-06,AMG,Executive V.P. and CFO,BUY,4424.0,115.45,510750.8,"CRATE, DARRELL W",Common Stock
+2007-08-06,AMG,Executive V.P. and CFO,SELL,60000.0,35.42,2125200.0,"CRATE, DARRELL W",Employee Stock Option (Right to Buy)
+2007-08-06,AMG,Executive V.P. and CFO,SELL,60000.0,114.36,6861600.0,"CRATE, DARRELL W",Common Stock
+2007-08-06,AMG,"Exec. V.P., Gen. Counsel",BUY,2213.0,115.45,255490.85,"KINGSTON, JOHN III",Common Stock
+2007-08-06,AMG,Executive V.P. and CFO,BUY,60000.0,35.42,2125200.0,"CRATE, DARRELL W",Common Stock
+2007-08-06,AMG,Executive V.P. and COO,BUY,4424.0,115.45,510750.8,"DALTON, NATHANIEL",Common Stock
+2007-08-06,AMG,"Director, President and CEO",BUY,6635.0,115.45,766010.75,"HEALEY, SEAN M",Common Stock
+2007-08-07,AMG,"Exec. V.P., Gen. Counsel",SELL,25000.0,116.46,2911500.0,"KINGSTON, JOHN III",Common Stock
+2007-08-07,AMG,Executive V.P. and COO,SELL,18750.0,38.73,726187.4999999999,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2007-08-07,AMG,Executive V.P. and COO,SELL,35119.0,31.96,1122403.24,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2007-08-07,AMG,Executive V.P. and COO,SELL,53869.0,115.76,6235875.44,"DALTON, NATHANIEL",Common Stock
+2007-08-07,AMG,"Director, President and CEO",BUY,71871.0,31.96,2296997.16,"HEALEY, SEAN M",Common Stock
+2007-08-07,AMG,Executive V.P. and COO,BUY,18750.0,38.73,726187.4999999999,"DALTON, NATHANIEL",Common Stock
+2007-08-07,AMG,"Director, President and CEO",SELL,95000.0,115.44,10966800.0,"HEALEY, SEAN M",Common Stock
+2007-08-07,AMG,"Director, President and CEO",SELL,71871.0,31.96,2296997.16,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2007-08-07,AMG,"Director, President and CEO",SELL,23129.0,46.69,1079893.01,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2007-08-07,AMG,Executive V.P. and COO,BUY,35119.0,31.96,1122403.24,"DALTON, NATHANIEL",Common Stock
+2007-08-07,AMG,"Exec. V.P., Gen. Counsel",SELL,30000.0,43.5,1305000.0,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2007-08-07,AMG,"Exec. V.P., Gen. Counsel",BUY,30000.0,43.5,1305000.0,"KINGSTON, JOHN III",Common Stock
+2007-08-07,AMG,"Director, President and CEO",BUY,23129.0,46.69,1079893.01,"HEALEY, SEAN M",Common Stock
+2007-12-20,AMG,Executive V.P. and CFO,BUY,242628.0,116.35,28229767.799999997,"CRATE, DARRELL W",Employee Stock Option (Right to Buy)
+2007-12-20,AMG,Director,BUY,5625.0,116.35,654468.75,"FLOOR, RICHARD E",Director Stock Option (Right to Buy)
+2007-12-20,AMG,"Exec. V.P., Gen. Counsel",BUY,55991.0,116.35,6514552.85,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2007-12-20,AMG,Executive V.P. and COO,BUY,242628.0,116.35,28229767.799999997,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2007-12-20,AMG,"Director, President and CEO",BUY,485256.0,116.35,56459535.599999994,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2007-12-20,AMG,"Director, Chairman",BUY,2298.0,43.5,99963.0,"NUTT, WILLIAM J",Common Stock
+2007-12-20,AMG,Director,BUY,5625.0,116.35,654468.75,"MEYERMAN, HAROLD J",Director Stock Option (Right to Buy)
+2007-12-20,AMG,"Director, Chairman",SELL,2298.0,43.5,99963.0,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2007-12-20,AMG,"Director, Chairman",BUY,5625.0,116.35,654468.75,"NUTT, WILLIAM J",Director Stock Option (Right to Buy)
+2007-12-20,AMG,Director,BUY,5625.0,116.35,654468.75,"RODRIGUEZ, RITA M",Director Stock Option (Right to Buy)
+2007-12-20,AMG,Director,BUY,5625.0,116.35,654468.75,"ZEITLIN, JIDE JAMES",Director Stock Option (Right to Buy)
+2007-12-20,AMG,Director,BUY,5625.0,116.35,654468.75,"RYAN, PATRICK T",Director Stock Option (Right to Buy)
+2008-01-23,AMG,"Director, Chairman",BUY,123750.0,38.73,4792837.5,"NUTT, WILLIAM J",Common Stock
+2008-01-23,AMG,"Director, Chairman",SELL,123750.0,38.73,4792837.5,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2008-03-20,AMG,"Director, Chairman",SELL,2254.0,44.35,99964.90000000001,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2008-03-20,AMG,"Director, Chairman",BUY,2254.0,44.35,99964.90000000001,"NUTT, WILLIAM J",Common Stock
+2008-04-28,AMG,Executive V.P. and COO,SELL,91609.0,46.69,4277224.21,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2008-04-28,AMG,Executive V.P. and CFO,SELL,145000.0,96.94,14056300.0,"CRATE, DARRELL W",Common Stock
+2008-04-28,AMG,Executive V.P. and CFO,SELL,51250.0,46.69,2392862.5,"CRATE, DARRELL W",Employee Stock Option (Right to Buy)
+2008-04-28,AMG,Executive V.P. and CFO,BUY,51250.0,46.69,2392862.5,"CRATE, DARRELL W",Common Stock
+2008-04-28,AMG,Executive V.P. and COO,SELL,91609.0,97.0,8886073.0,"DALTON, NATHANIEL",Common Stock
+2008-04-28,AMG,Executive V.P. and COO,BUY,91609.0,46.69,4277224.21,"DALTON, NATHANIEL",Common Stock
+2008-04-28,AMG,Executive V.P. and CFO,SELL,93750.0,38.73,3630937.4999999995,"CRATE, DARRELL W",Employee Stock Option (Right to Buy)
+2008-04-28,AMG,Executive V.P. and CFO,BUY,93750.0,38.73,3630937.4999999995,"CRATE, DARRELL W",Common Stock
+2008-04-28,AMG,"Director, President and CEO",SELL,83482.0,46.69,3897774.5799999996,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2008-04-28,AMG,"Director, President and CEO",SELL,83482.0,97.62,8149512.840000001,"HEALEY, SEAN M",Common Stock
+2008-04-28,AMG,"Director, President and CEO",BUY,83482.0,46.69,3897774.5799999996,"HEALEY, SEAN M",Common Stock
+2008-04-30,AMG,Director,SELL,11250.0,45.67,513787.5,"MEYERMAN, HAROLD J",Director Stock Option (Right to Buy)
+2008-04-30,AMG,Director,BUY,11250.0,45.67,513787.5,"MEYERMAN, HAROLD J",Common Stock
+2008-04-30,AMG,Director,SELL,11250.0,99.82,1122975.0,"MEYERMAN, HAROLD J",Common Stock
+2008-07-08,AMG,"Director, Chairman",BUY,121610.0,46.69,5677970.899999999,"NUTT, WILLIAM J",Common Stock
+2008-07-08,AMG,"Director, Chairman",SELL,121610.0,46.69,5677970.899999999,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2008-07-22,AMG,Director,BUY,5625.0,86.13,484481.25,"RODRIGUEZ, RITA M",Director Stock Option (Right to Buy)
+2008-07-22,AMG,Director,BUY,5625.0,86.13,484481.25,"FLOOR, RICHARD E",Director Stock Option (Right to Buy)
+2008-07-22,AMG,Director,BUY,5625.0,86.13,484481.25,"RYAN, PATRICK T",Director Stock Option (Right to Buy)
+2008-07-22,AMG,"Director, Chairman",BUY,5625.0,86.13,484481.25,"NUTT, WILLIAM J",Director Stock Option (Right to Buy)
+2008-07-22,AMG,Director,BUY,5625.0,86.13,484481.25,"ZEITLIN, JIDE JAMES",Director Stock Option (Right to Buy)
+2008-07-22,AMG,Director,BUY,5625.0,86.13,484481.25,"MEYERMAN, HAROLD J",Director Stock Option (Right to Buy)
+2008-09-17,AMG,Executive V.P. and CFO,BUY,5359.0,46.69,250211.71,"CRATE, DARRELL W",Common Stock
+2008-09-17,AMG,Executive V.P. and CFO,SELL,5359.0,46.69,250211.71,"CRATE, DARRELL W",Employee Stock Option (Right to Buy)
+2008-11-03,AMG,Director,BUY,5625.0,48.38,272137.5,"ZEITLIN, JIDE JAMES",Director Stock Option (Right to Buy)
+2008-11-03,AMG,Director,BUY,5625.0,48.38,272137.5,"RYAN, PATRICK T",Director Stock Option (Right to Buy)
+2008-11-03,AMG,"Exec. V.P., Gen. Counsel",BUY,55307.0,48.38,2675752.66,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2008-11-03,AMG,Director,BUY,5625.0,48.38,272137.5,"MEYERMAN, HAROLD J",Director Stock Option (Right to Buy)
+2008-11-03,AMG,"Director, Chairman",BUY,5625.0,48.38,272137.5,"NUTT, WILLIAM J",Director Stock Option (Right to Buy)
+2008-11-03,AMG,Executive V.P. and CFO,BUY,153158.0,48.38,7409784.04,"CRATE, DARRELL W",Employee Stock Option (Right to Buy)
+2008-11-03,AMG,Executive Vice President,BUY,127632.0,48.38,6174836.16,"HORGEN, JAY C.",Employee Stock Option (Right to Buy)
+2008-11-03,AMG,Director,BUY,5625.0,48.38,272137.5,"RODRIGUEZ, RITA M",Director Stock Option (Right to Buy)
+2008-11-03,AMG,Executive V.P. and COO,BUY,153158.0,48.38,7409784.04,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2008-11-03,AMG,"Director, President and CEO",BUY,306316.0,48.38,14819568.08,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2008-11-03,AMG,Director,BUY,5625.0,48.38,272137.5,"FLOOR, RICHARD E",Director Stock Option (Right to Buy)
+2009-01-09,AMG,"Director, President and CEO",SELL,4199.0,44.0,184756.0,"HEALEY, SEAN M",Common Stock
+2009-01-09,AMG,Executive V.P. and CFO,SELL,2850.0,44.0,125400.0,"CRATE, DARRELL W",Common Stock
+2009-01-09,AMG,"Exec. V.P., Gen. Counsel",SELL,1489.0,44.0,65516.0,"KINGSTON, JOHN III",Common Stock
+2009-01-09,AMG,Executive V.P. and COO,SELL,2850.0,44.0,125400.0,"DALTON, NATHANIEL",Common Stock
+2009-05-04,AMG,Director,SELL,7500.0,58.47,438525.0,"MEYERMAN, HAROLD J",Common Stock
+2009-05-04,AMG,Director,BUY,7500.0,19.13,143475.0,"MEYERMAN, HAROLD J",Common Stock
+2009-05-04,AMG,Director,SELL,7500.0,19.13,143475.0,"MEYERMAN, HAROLD J",Director Stock Option (Right to Buy)
+2009-05-05,AMG,Director,SELL,15000.0,59.15,887250.0,"FLOOR, RICHARD E",Common Stock
+2009-05-05,AMG,Director,SELL,15000.0,16.96,254400.0,"FLOOR, RICHARD E",Director Stock Option (Right to Buy)
+2009-05-05,AMG,Director,BUY,15000.0,16.96,254400.0,"FLOOR, RICHARD E",Common Stock
+2009-05-08,AMG,Executive V.P. and COO,SELL,1.0,27.01,27.01,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2009-05-08,AMG,Executive V.P. and COO,BUY,71250.0,33.97,2420362.5,"DALTON, NATHANIEL",Common Stock
+2009-05-08,AMG,Executive V.P. and COO,BUY,1.0,27.01,27.01,"DALTON, NATHANIEL",Common Stock
+2009-05-08,AMG,Executive V.P. and COO,SELL,71250.0,33.97,2420362.5,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2009-05-08,AMG,Executive V.P. and COO,SELL,71251.0,58.13,4141820.6300000004,"DALTON, NATHANIEL",Common Stock
+2009-05-18,AMG,"Director, President and CEO",BUY,105000.0,35.42,3719100.0,"HEALEY, SEAN M",Common Stock
+2009-05-18,AMG,"Director, President and CEO",SELL,105000.0,35.42,3719100.0,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2009-05-18,AMG,"Director, President and CEO",SELL,105000.0,56.56,5938800.0,"HEALEY, SEAN M",Common Stock
+2009-07-20,AMG,"Director, Chairman",BUY,86249.0,27.01,2329585.49,"NUTT, WILLIAM J",Common Stock
+2009-07-20,AMG,"Director, Chairman",SELL,86249.0,27.01,2329585.49,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2009-07-21,AMG,"Exec. V.P., Gen. Counsel",BUY,25000.0,62.04,1551000.0,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2009-07-21,AMG,Director,BUY,3593.0,62.04,222909.72,"RODRIGUEZ, RITA M",Director Stock Option (Right to Buy)
+2009-07-21,AMG,Director,BUY,3593.0,62.04,222909.72,"FLOOR, RICHARD E",Director Stock Option (Right to Buy)
+2009-07-21,AMG,"Director, Chairman",BUY,3593.0,62.04,222909.72,"NUTT, WILLIAM J",Director Stock Option (Right to Buy)
+2009-07-21,AMG,Executive Vice President,BUY,60000.0,62.04,3722400.0,"HORGEN, JAY C.",Employee Stock Option (Right to Buy)
+2009-07-21,AMG,Executive V.P. and COO,BUY,75000.0,62.04,4653000.0,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2009-07-21,AMG,Executive V.P. and CFO,BUY,75000.0,62.04,4653000.0,"CRATE, DARRELL W",Employee Stock Option (Right to Buy)
+2009-07-21,AMG,"Director, President and CEO",BUY,150000.0,62.04,9306000.0,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2009-07-21,AMG,Director,BUY,3593.0,62.04,222909.72,"ZEITLIN, JIDE JAMES",Director Stock Option (Right to Buy)
+2009-07-21,AMG,Director,BUY,3593.0,62.04,222909.72,"MEYERMAN, HAROLD J",Director Stock Option (Right to Buy)
+2009-07-21,AMG,Director,BUY,3593.0,62.04,222909.72,"RYAN, PATRICK T",Director Stock Option (Right to Buy)
+2009-08-03,AMG,Director,BUY,7500.0,23.79,178425.0,"MEYERMAN, HAROLD J",Common Stock
+2009-08-03,AMG,Director,SELL,13125.0,68.26,895912.5000000001,"MEYERMAN, HAROLD J",Common Stock
+2009-08-03,AMG,Director,SELL,5625.0,33.97,191081.25,"MEYERMAN, HAROLD J",Director Stock Option (Right to Buy)
+2009-08-03,AMG,Director,BUY,5625.0,33.97,191081.25,"MEYERMAN, HAROLD J",Common Stock
+2009-08-03,AMG,Director,SELL,7500.0,23.79,178425.0,"MEYERMAN, HAROLD J",Director Stock Option (Right to Buy)
+2009-08-04,AMG,Director,SELL,8438.0,23.79,200740.02,"RODRIGUEZ, RITA M",Director Stock Option (Right to Buy)
+2009-08-04,AMG,Director,BUY,8438.0,23.79,200740.02,"RODRIGUEZ, RITA M",Common Stock
+2009-08-04,AMG,Director,BUY,5625.0,33.97,191081.25,"RODRIGUEZ, RITA M",Common Stock
+2009-08-04,AMG,Director,SELL,5625.0,33.97,191081.25,"RODRIGUEZ, RITA M",Director Stock Option (Right to Buy)
+2009-08-04,AMG,Director,SELL,14063.0,67.86,954315.1799999999,"RODRIGUEZ, RITA M",Common Stock
+2009-08-12,AMG,Executive V.P. and CFO,SELL,47565.0,68.7,3267715.5,"CRATE, DARRELL W",Common Stock
+2009-08-12,AMG,Executive V.P. and CFO,SELL,87702.0,43.5,3815037.0,"CRATE, DARRELL W",Employee Stock Option (Right to Buy)
+2009-08-12,AMG,Executive V.P. and CFO,BUY,17813.0,35.42,630936.4600000001,"CRATE, DARRELL W",Common Stock
+2009-08-12,AMG,Executive Vice President,SELL,809.0,68.19,55165.71,"HORGEN, JAY C.",Common Stock
+2009-08-12,AMG,Executive V.P. and CFO,SELL,70000.0,67.97,4757900.0,"CRATE, DARRELL W",Common Stock
+2009-08-12,AMG,Executive V.P. and CFO,SELL,17813.0,35.42,630936.4600000001,"CRATE, DARRELL W",Employee Stock Option (Right to Buy)
+2009-08-12,AMG,Executive V.P. and CFO,BUY,87702.0,43.5,3815037.0,"CRATE, DARRELL W",Common Stock
+2009-08-13,AMG,"Director, President and CEO",SELL,83852.0,67.65,5672587.800000001,"HEALEY, SEAN M",Common Stock
+2009-08-13,AMG,"Director, President and CEO",SELL,83852.0,43.5,3647562.0,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2009-08-13,AMG,"Director, President and CEO",BUY,83852.0,43.5,3647562.0,"HEALEY, SEAN M",Common Stock
+2009-08-20,AMG,Executive V.P. and COO,SELL,27455.0,64.13,1760689.15,"DALTON, NATHANIEL",Common Stock
+2009-08-20,AMG,Executive V.P. and COO,BUY,87702.0,43.5,3815037.0,"DALTON, NATHANIEL",Common Stock
+2009-08-20,AMG,Executive V.P. and COO,BUY,15000.0,35.42,531300.0,"DALTON, NATHANIEL",Common Stock
+2009-08-20,AMG,Executive V.P. and COO,SELL,87702.0,43.5,3815037.0,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2009-08-20,AMG,Executive V.P. and COO,SELL,15000.0,35.42,531300.0,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2009-08-21,AMG,Executive V.P. and COO,SELL,75247.0,63.76,4797748.72,"DALTON, NATHANIEL",Common Stock
+2009-10-20,AMG,Director,BUY,3209.0,71.46,229315.13999999998,"BYRNE, SAMUEL T",Director Stock Option (Right to Buy)
+2009-11-11,AMG,Director,SELL,5625.0,70.04,393975.00000000006,"MEYERMAN, HAROLD J",Common Stock
+2009-11-11,AMG,Director,SELL,14062.0,70.67,993761.54,"RODRIGUEZ, RITA M",Common Stock
+2009-11-11,AMG,Director,BUY,14062.0,23.79,334534.98,"RODRIGUEZ, RITA M",Common Stock
+2009-11-11,AMG,Director,SELL,14062.0,23.79,334534.98,"RODRIGUEZ, RITA M",Director Stock Option (Right to Buy)
+2009-11-11,AMG,Director,BUY,5625.0,43.5,244687.5,"MEYERMAN, HAROLD J",Common Stock
+2009-11-11,AMG,Director,SELL,5625.0,43.5,244687.5,"MEYERMAN, HAROLD J",Director Stock Option (Right to Buy)
+2009-11-13,AMG,"Director, Chairman",SELL,34000.0,19.33,657220.0,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2009-11-13,AMG,"Director, Chairman",BUY,34000.0,19.33,657220.0,"NUTT, WILLIAM J",Common Stock
+2009-11-13,AMG,"Director, Chairman",SELL,34000.0,69.67,2368780.0,"NUTT, WILLIAM J",Common Stock
+2009-11-16,AMG,"Director, Chairman",BUY,75000.0,19.33,1449749.9999999998,"NUTT, WILLIAM J",Common Stock
+2009-11-16,AMG,"Director, Chairman",SELL,75000.0,19.33,1449749.9999999998,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2009-11-16,AMG,"Director, Chairman",SELL,75000.0,70.76,5307000.0,"NUTT, WILLIAM J",Common Stock
+2009-11-17,AMG,"Director, Chairman",SELL,69363.0,19.33,1340786.7899999998,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2009-11-17,AMG,"Director, Chairman",BUY,69363.0,19.33,1340786.7899999998,"NUTT, WILLIAM J",Common Stock
+2009-11-17,AMG,"Director, Chairman",SELL,74613.0,69.82,5209479.659999999,"NUTT, WILLIAM J",Common Stock
+2009-11-17,AMG,"Director, Chairman",BUY,5250.0,33.97,178342.5,"NUTT, WILLIAM J",Common Stock
+2009-11-17,AMG,"Director, Chairman",SELL,5250.0,33.97,178342.5,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2009-12-02,AMG,Director,BUY,3411.0,65.51,223454.61000000002,"RODRIGUEZ, RITA M",Director Stock Option (Right to Buy)
+2009-12-02,AMG,"Director, Chairman",BUY,81000.0,33.97,2751570.0,"NUTT, WILLIAM J",Common Stock
+2009-12-02,AMG,Director,BUY,3411.0,65.51,223454.61000000002,"RYAN, PATRICK T",Director Stock Option (Right to Buy)
+2009-12-02,AMG,"Exec. V.P., Gen. Counsel",BUY,25000.0,65.51,1637750.0000000002,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2009-12-02,AMG,Executive V.P. and CFO,BUY,75000.0,65.51,4913250.0,"CRATE, DARRELL W",Employee Stock Option (Right to Buy)
+2009-12-02,AMG,Director,BUY,3411.0,65.51,223454.61000000002,"MEYERMAN, HAROLD J",Director Stock Option (Right to Buy)
+2009-12-02,AMG,Executive Vice President,BUY,60000.0,65.51,3930600.0000000005,"HORGEN, JAY C.",Employee Stock Option (Right to Buy)
+2009-12-02,AMG,"Director, Chairman",BUY,3411.0,65.51,223454.61000000002,"NUTT, WILLIAM J",Director Stock Option (Right to Buy)
+2009-12-02,AMG,"Director, Chairman",SELL,81000.0,33.97,2751570.0,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2009-12-02,AMG,"Director, President and CEO",BUY,150000.0,65.51,9826500.0,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2009-12-02,AMG,Director,BUY,3411.0,65.51,223454.61000000002,"BYRNE, SAMUEL T",Director Stock Option (Right to Buy)
+2009-12-02,AMG,Director,BUY,3411.0,65.51,223454.61000000002,"FLOOR, RICHARD E",Director Stock Option (Right to Buy)
+2009-12-02,AMG,Executive V.P. and COO,BUY,75000.0,65.51,4913250.0,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2009-12-02,AMG,Director,BUY,3411.0,65.51,223454.61000000002,"ZEITLIN, JIDE JAMES",Director Stock Option (Right to Buy)
+2009-12-04,AMG,Director,SELL,5625.0,33.97,191081.25,"FLOOR, RICHARD E",Employee Stock Option (Right to Buy)
+2009-12-04,AMG,Director,BUY,5625.0,33.97,191081.25,"FLOOR, RICHARD E",Common Stock
+2010-01-11,AMG,Executive V.P. and CFO,SELL,2766.0,67.35,186290.09999999998,"CRATE, DARRELL W",Common Stock
+2010-01-11,AMG,Executive Vice President,SELL,475.0,67.35,31991.249999999996,"HORGEN, JAY C.",Common Stock
+2010-01-11,AMG,Executive V.P. and COO,SELL,2766.0,67.35,186290.09999999998,"DALTON, NATHANIEL",Common Stock
+2010-01-11,AMG,"Director, President and CEO",SELL,4100.0,67.35,276135.0,"HEALEY, SEAN M",Common Stock
+2010-01-11,AMG,"Exec. V.P., Gen. Counsel",SELL,1425.0,67.35,95973.74999999999,"KINGSTON, JOHN III",Common Stock
+2010-01-20,AMG,Director,BUY,7500.0,23.79,178425.0,"FLOOR, RICHARD E",Common Stock
+2010-01-20,AMG,Director,SELL,7500.0,23.79,178425.0,"FLOOR, RICHARD E",Director Stock Option (Right to Buy)
+2010-02-24,AMG,"Director, President and CEO",BUY,2254.0,44.35,99964.90000000001,"HEALEY, SEAN M",Common Stock
+2010-02-24,AMG,"Director, President and CEO",SELL,2254.0,44.35,99964.90000000001,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2010-02-26,AMG,Director,BUY,3125.0,71.13,222281.25,"CHURCHILL, DWIGHT D.",Director Stock Option (Right to Buy)
+2010-03-04,AMG,Executive V.P. and CFO,SELL,2254.0,44.35,99964.90000000001,"CRATE, DARRELL W",Employee Stock Option (Right to Buy)
+2010-03-04,AMG,Executive V.P. and CFO,SELL,1316.0,75.92,99910.72,"CRATE, DARRELL W",Common Stock
+2010-03-04,AMG,Executive V.P. and CFO,BUY,2254.0,44.35,99964.90000000001,"CRATE, DARRELL W",Common Stock
+2010-03-11,AMG,Director,SELL,5625.0,76.43,429918.75000000006,"RODRIGUEZ, RITA M",Common Stock
+2010-03-11,AMG,Director,BUY,5625.0,43.5,244687.5,"RODRIGUEZ, RITA M",Common Stock
+2010-03-11,AMG,Director,SELL,5625.0,43.5,244687.5,"RODRIGUEZ, RITA M",Director Stock Option (Right to Buy)
+2010-03-15,AMG,Executive Vice President,SELL,20000.0,48.38,967600.0,"HORGEN, JAY C.",Employee Stock Option(Right to Buy)
+2010-03-15,AMG,Executive Vice President,BUY,20000.0,48.38,967600.0,"HORGEN, JAY C.",Common Stock
+2010-03-15,AMG,Executive Vice President,SELL,20000.0,76.76,1535200.0,"HORGEN, JAY C.",Common Stock
+2010-04-30,AMG,"Director, President and CEO",BUY,113996.0,44.35,5055722.600000001,"HEALEY, SEAN M",Common Stock
+2010-04-30,AMG,"Director, President and CEO",BUY,15100.0,43.5,656850.0,"HEALEY, SEAN M",Common Stock
+2010-04-30,AMG,"Director, President and CEO",SELL,129096.0,85.55,11044162.799999999,"HEALEY, SEAN M",Common Stock
+2010-04-30,AMG,"Director, President and CEO",SELL,113996.0,44.35,5055722.600000001,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2010-04-30,AMG,"Director, President and CEO",SELL,15100.0,43.5,656850.0,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2010-05-03,AMG,"Exec. V.P., Gen. Counsel",SELL,67500.0,85.05,5740875.0,"KINGSTON, JOHN III",Common Stock
+2010-05-03,AMG,Executive V.P. and COO,BUY,18000.0,31.96,575280.0,"DALTON, NATHANIEL",Common Stock
+2010-05-03,AMG,Executive V.P. and COO,SELL,18000.0,31.96,575280.0,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2010-05-03,AMG,Executive V.P. and COO,SELL,78500.0,85.04,6675640.000000001,"DALTON, NATHANIEL",Common Stock
+2010-05-03,AMG,Executive V.P. and COO,SELL,62754.0,44.35,2783139.9,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2010-05-03,AMG,Executive V.P. and COO,BUY,62754.0,44.35,2783139.9,"DALTON, NATHANIEL",Common Stock
+2010-05-03,AMG,Executive V.P. and CFO,SELL,75000.0,85.05,6378750.0,"CRATE, DARRELL W",Common Stock
+2010-05-03,AMG,Executive V.P. and CFO,SELL,75000.0,44.35,3326250.0,"CRATE, DARRELL W",Employee Stock Option (Right to Buy)
+2010-05-03,AMG,"Exec. V.P., Gen. Counsel",BUY,30000.0,43.5,1305000.0,"KINGSTON, JOHN III",Common Stock
+2010-05-03,AMG,"Exec. V.P., Gen. Counsel",BUY,45081.0,44.35,1999342.35,"KINGSTON, JOHN III",Common Stock
+2010-05-03,AMG,"Exec. V.P., Gen. Counsel",SELL,30000.0,43.5,1305000.0,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2010-05-03,AMG,"Exec. V.P., Gen. Counsel",SELL,45081.0,44.35,1999342.35,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2010-05-03,AMG,Executive V.P. and CFO,BUY,75000.0,44.35,3326250.0,"CRATE, DARRELL W",Common Stock
+2010-06-14,AMG,"Director, Chairman",SELL,110202.0,43.5,4793787.0,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2010-06-14,AMG,"Director, Chairman",SELL,48028.0,69.59,3342268.52,"NUTT, WILLIAM J",Common Stock
+2010-06-14,AMG,"Director, Chairman",SELL,37174.0,68.06,2530062.44,"NUTT, WILLIAM J",Common Stock
+2010-06-14,AMG,"Director, Chairman",BUY,110202.0,43.5,4793787.0,"NUTT, WILLIAM J",Common Stock
+2010-07-20,AMG,"Director, Chairman",BUY,3277.0,62.91,206156.06999999998,"NUTT, WILLIAM J",Director Stock Option (Right to Buy)
+2010-07-20,AMG,"Director, President and CEO",BUY,150000.0,62.91,9436500.0,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2010-07-20,AMG,Executive V.P. and CFO,BUY,75000.0,62.91,4718250.0,"CRATE, DARRELL W",Employee Stock Option (Right to Buy)
+2010-07-20,AMG,"Exec. V.P., Gen. Counsel",BUY,25000.0,62.91,1572750.0,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2010-07-20,AMG,Executive Vice President,BUY,60000.0,62.91,3774600.0,"HORGEN, JAY C.",Employee Stock Option (Right to Buy)
+2010-07-20,AMG,Director,BUY,3277.0,62.91,206156.06999999998,"RYAN, PATRICK T",Director Stock Option (Right to Buy)
+2010-07-20,AMG,Executive V.P. and COO,BUY,75000.0,62.91,4718250.0,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2010-07-20,AMG,Director,BUY,3277.0,62.91,206156.06999999998,"RODRIGUEZ, RITA M",Director Stock Option (Right to Buy)
+2010-07-20,AMG,Director,BUY,3277.0,62.91,206156.06999999998,"MEYERMAN, HAROLD J",Director Stock Option (Right to Buy)
+2010-07-20,AMG,Director,BUY,3277.0,62.91,206156.06999999998,"CHURCHILL, DWIGHT D.",Director Stock Option (Right to Buy)
+2010-07-20,AMG,Director,BUY,3277.0,62.91,206156.06999999998,"ZEITLIN, JIDE JAMES",Director Stock Option (Right to Buy)
+2010-07-20,AMG,Director,BUY,3277.0,62.91,206156.06999999998,"BYRNE, SAMUEL T",Director Stock Option (Right to Buy)
+2010-07-29,AMG,"Director, Chairman",SELL,28000.0,71.63,2005639.9999999998,"NUTT, WILLIAM J",Common Stock
+2010-07-29,AMG,"Director, Chairman",BUY,40000.0,35.42,1416800.0,"NUTT, WILLIAM J",Common Stock
+2010-07-29,AMG,"Director, Chairman",SELL,40000.0,35.42,1416800.0,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2010-07-30,AMG,"Director, Chairman",SELL,40000.0,35.42,1416800.0,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2010-07-30,AMG,"Director, Chairman",SELL,28000.0,70.81,1982680.0,"NUTT, WILLIAM J",Common Stock
+2010-07-30,AMG,"Director, Chairman",BUY,40000.0,35.42,1416800.0,"NUTT, WILLIAM J",Common Stock
+2010-08-02,AMG,"Director, Chairman",BUY,40000.0,35.42,1416800.0,"NUTT, WILLIAM J",Common Stock
+2010-08-02,AMG,"Director, Chairman",SELL,40000.0,35.42,1416800.0,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2010-08-02,AMG,"Director, Chairman",SELL,28000.0,72.66,2034480.0,"NUTT, WILLIAM J",Common Stock
+2010-08-18,AMG,Executive V.P. and CFO,SELL,37746.0,69.08,2607493.68,"CRATE, DARRELL W",Common Stock
+2010-08-18,AMG,Executive V.P. and CFO,BUY,27746.0,44.35,1230535.1,"CRATE, DARRELL W",Common Stock
+2010-08-18,AMG,Director,BUY,5625.0,44.35,249468.75,"MEYERMAN, HAROLD J",Common Stock
+2010-08-18,AMG,Director,SELL,11250.0,41.33,464962.5,"MEYERMAN, HAROLD J",Director Stock Option (Right to Buy)
+2010-08-18,AMG,Director,SELL,5625.0,44.35,249468.75,"MEYERMAN, HAROLD J",Director Stock Option (Right to Buy)
+2010-08-18,AMG,Director,BUY,11250.0,41.33,464962.5,"MEYERMAN, HAROLD J",Common Stock
+2010-08-18,AMG,Director,SELL,16875.0,69.08,1165725.0,"MEYERMAN, HAROLD J",Common Stock
+2010-08-18,AMG,Executive V.P. and CFO,SELL,27746.0,44.35,1230535.1,"CRATE, DARRELL W",Employee Stock Option (Right to Buy)
+2010-08-19,AMG,Executive V.P. and COO,SELL,14726.0,68.23,1004754.9800000001,"DALTON, NATHANIEL",Common Stock
+2010-08-19,AMG,Executive V.P. and COO,BUY,14726.0,44.35,653098.1,"DALTON, NATHANIEL",Common Stock
+2010-08-19,AMG,Executive V.P. and COO,SELL,14726.0,44.35,653098.1,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2010-08-20,AMG,Executive V.P. and COO,SELL,27520.0,44.35,1220512.0,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2010-08-20,AMG,Executive V.P. and COO,BUY,27520.0,44.35,1220512.0,"DALTON, NATHANIEL",Common Stock
+2010-08-20,AMG,Executive V.P. and COO,SELL,27520.0,67.63,1861177.5999999999,"DALTON, NATHANIEL",Common Stock
+2010-09-13,AMG,Director,SELL,11250.0,41.33,464962.5,"RODRIGUEZ, RITA M",Director Stock Option (Right to Buy)
+2010-09-13,AMG,Director,SELL,5625.0,44.35,249468.75,"RODRIGUEZ, RITA M",Director Stock Option (Right to Buy)
+2010-09-13,AMG,Director,SELL,16875.0,75.22,1269337.5,"RODRIGUEZ, RITA M",Common Stock
+2010-09-13,AMG,Director,BUY,11250.0,41.33,464962.5,"RODRIGUEZ, RITA M",Common Stock
+2010-09-13,AMG,Director,BUY,5625.0,44.35,249468.75,"RODRIGUEZ, RITA M",Common Stock
+2010-10-28,AMG,"Director, Chairman",BUY,50000.0,31.96,1598000.0,"NUTT, WILLIAM J",Common Stock
+2010-10-28,AMG,"Director, Chairman",SELL,50000.0,31.96,1598000.0,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2010-10-28,AMG,"Director, Chairman",SELL,50000.0,86.94,4347000.0,"NUTT, WILLIAM J",Common Stock
+2010-10-29,AMG,"Director, Chairman",SELL,36871.0,31.96,1178397.16,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2010-10-29,AMG,"Director, Chairman",BUY,36871.0,31.96,1178397.16,"NUTT, WILLIAM J",Common Stock
+2010-10-29,AMG,"Director, Chairman",SELL,50000.0,86.33,4316500.0,"NUTT, WILLIAM J",Common Stock
+2010-10-29,AMG,"Director, Chairman",BUY,13129.0,44.35,582271.15,"NUTT, WILLIAM J",Common Stock
+2010-10-29,AMG,"Director, Chairman",SELL,13129.0,44.35,582271.15,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2010-11-01,AMG,"Director, Chairman",SELL,50000.0,86.78,4339000.0,"NUTT, WILLIAM J",Common Stock
+2010-11-01,AMG,"Director, Chairman",BUY,50000.0,44.35,2217500.0,"NUTT, WILLIAM J",Common Stock
+2010-11-01,AMG,"Director, Chairman",SELL,50000.0,44.35,2217500.0,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2010-11-02,AMG,"Director, Chairman",SELL,62117.0,44.35,2754888.95,"NUTT, WILLIAM J",Employee Stock Option (Right to Buy)
+2010-11-02,AMG,"Director, Chairman",SELL,62117.0,87.67,5445797.39,"NUTT, WILLIAM J",Common Stock
+2010-11-02,AMG,"Director, Chairman",BUY,62117.0,44.35,2754888.95,"NUTT, WILLIAM J",Common Stock
+2010-12-14,AMG,Executive V.P. and COO,BUY,75000.0,95.82,7186499.999999999,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2010-12-14,AMG,Director,BUY,2080.0,95.82,199305.59999999998,"BYRNE, SAMUEL T",Director Stock Option (Right to Buy)
+2010-12-14,AMG,"Exec. V.P., Gen. Counsel",BUY,25000.0,95.82,2395500.0,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2010-12-14,AMG,Director,BUY,2080.0,95.82,199305.59999999998,"MEYERMAN, HAROLD J",Director Stock Option (Right to Buy)
+2010-12-14,AMG,Executive Vice President,BUY,60000.0,95.82,5749200.0,"HORGEN, JAY C.",Employee Stock Option (Right to Buy)
+2010-12-14,AMG,Director,BUY,2080.0,95.82,199305.59999999998,"RODRIGUEZ, RITA M",Director Stock Option (Right to Buy)
+2010-12-14,AMG,"Director, President and CEO",BUY,150000.0,95.82,14372999.999999998,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2010-12-14,AMG,Director,BUY,2080.0,95.82,199305.59999999998,"ZEITLIN, JIDE JAMES",Director Stock Option (Right to Buy)
+2010-12-14,AMG,Director,BUY,2080.0,95.82,199305.59999999998,"RYAN, PATRICK T",Director Stock Option (Right to Buy)
+2010-12-14,AMG,"Director, Chairman",BUY,2080.0,95.82,199305.59999999998,"NUTT, WILLIAM J",Director Stock Option (Right to Buy)
+2010-12-14,AMG,Director,BUY,2080.0,95.82,199305.59999999998,"CHURCHILL, DWIGHT D.",Director Stock Option (Right to Buy)
+2010-12-14,AMG,Executive V.P. and CFO,BUY,75000.0,95.82,7186499.999999999,"CRATE, DARRELL W",Employee Stock Option (Right to Buy)
+2011-02-16,AMG,Executive V.P. and CFO,SELL,79667.0,45.27,3606525.0900000003,"CRATE, DARRELL W",Employee Stock Option (Right to Buy)
+2011-02-16,AMG,Executive V.P. and CFO,BUY,79667.0,45.27,3606525.0900000003,"CRATE, DARRELL W",Common Stock
+2011-02-16,AMG,Executive V.P. and CFO,SELL,700.0,111.21,77847.0,"CRATE, DARRELL W",Common Stock
+2011-02-16,AMG,Executive V.P. and CFO,SELL,1611.0,62.04,99946.44,"CRATE, DARRELL W",Employee Stock Option (Right to Buy)
+2011-02-16,AMG,Executive V.P. and CFO,SELL,100000.0,112.1,11210000.0,"CRATE, DARRELL W",Common Stock
+2011-02-16,AMG,Executive V.P. and CFO,BUY,1611.0,62.04,99946.44,"CRATE, DARRELL W",Common Stock
+2011-02-17,AMG,Executive Vice President,SELL,40000.0,48.38,1935200.0,"HORGEN, JAY C.",Employee Stock Option (Right to Buy)
+2011-02-17,AMG,Executive Vice President,BUY,40000.0,48.38,1935200.0,"HORGEN, JAY C.",Common Stock
+2011-02-17,AMG,Executive V.P. and CFO,SELL,20333.0,45.27,920474.91,"CRATE, DARRELL W",Employee Stock Option (Right to Buy)
+2011-02-17,AMG,Executive V.P. and CFO,BUY,20333.0,45.27,920474.91,"CRATE, DARRELL W",Common Stock
+2011-02-17,AMG,Executive V.P. and CFO,SELL,20333.0,111.43,2265706.19,"CRATE, DARRELL W",Common Stock
+2011-02-17,AMG,Executive V.P. and COO,SELL,60000.0,111.46,6687600.0,"DALTON, NATHANIEL",Common Stock
+2011-02-17,AMG,Executive V.P. and COO,BUY,60000.0,45.27,2716200.0,"DALTON, NATHANIEL",Common Stock
+2011-02-17,AMG,Executive Vice President,SELL,40000.0,111.26,4450400.0,"HORGEN, JAY C.",Common Stock
+2011-02-17,AMG,Executive V.P. and COO,SELL,60000.0,45.27,2716200.0,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2011-03-04,AMG,Director,BUY,5625.0,45.27,254643.75000000003,"MEYERMAN, HAROLD J",Common Stock
+2011-03-04,AMG,Director,SELL,11250.0,107.46,1208925.0,"MEYERMAN, HAROLD J",Common Stock
+2011-03-04,AMG,Director,SELL,5625.0,45.27,254643.75000000003,"MEYERMAN, HAROLD J",Director Stock Option (Right to Buy)
+2011-03-04,AMG,Director,SELL,5625.0,63.38,356512.5,"MEYERMAN, HAROLD J",Director Stock Option (Right to Buy)
+2011-03-04,AMG,Director,BUY,5625.0,63.38,356512.5,"MEYERMAN, HAROLD J",Common Stock
+2011-04-28,AMG,Vice Chairman & Gen. Counsel,BUY,14919.0,44.35,661657.65,"KINGSTON, JOHN III",Common Stock
+2011-04-28,AMG,Vice Chairman & Gen. Counsel,BUY,15000.0,45.27,679050.0,"KINGSTON, JOHN III",Common Stock
+2011-04-28,AMG,Vice Chairman & Gen. Counsel,SELL,29919.0,109.01,3261470.19,"KINGSTON, JOHN III",Common Stock
+2011-04-28,AMG,"Director, CEO and Chairman",SELL,45000.0,45.27,2037150.0000000002,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2011-04-28,AMG,"Director, CEO and Chairman",BUY,45000.0,45.27,2037150.0000000002,"HEALEY, SEAN M",Common Stock
+2011-04-28,AMG,Vice Chairman & Gen. Counsel,SELL,15000.0,45.27,679050.0,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2011-04-28,AMG,Vice Chairman & Gen. Counsel,SELL,14919.0,44.35,661657.65,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2011-04-28,AMG,"Director, CEO and Chairman",SELL,58607.0,109.33,6407503.31,"HEALEY, SEAN M",Common Stock
+2011-04-29,AMG,"Director, CEO and Chairman",SELL,50000.0,45.27,2263500.0,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2011-04-29,AMG,"Director, CEO and Chairman",SELL,50000.0,109.27,5463500.0,"HEALEY, SEAN M",Common Stock
+2011-04-29,AMG,"Director, CEO and Chairman",BUY,50000.0,45.27,2263500.0,"HEALEY, SEAN M",Common Stock
+2011-07-19,AMG,Director,BUY,1981.0,99.66,197426.46,"CHURCHILL, DWIGHT D.",Director Stock Option (Right to Buy)
+2011-07-19,AMG,Vice Chairman & Gen. Counsel,BUY,25000.0,99.66,2491500.0,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2011-07-19,AMG,Director,BUY,1981.0,99.66,197426.46,"MEYERMAN, HAROLD J",Director Stock Option (Right to Buy)
+2011-07-19,AMG,Director,BUY,1981.0,99.66,197426.46,"BYRNE, SAMUEL T",Director Stock Option (Right to Buy)
+2011-07-19,AMG,Director,BUY,1981.0,99.66,197426.46,"RODRIGUEZ, RITA M",Director Stock Option (Right to Buy)
+2011-07-19,AMG,Director,BUY,1981.0,99.66,197426.46,"ZEITLIN, JIDE JAMES",Director Stock Option (Right to Buy)
+2011-07-19,AMG,Director,BUY,1981.0,99.66,197426.46,"RYAN, PATRICK T",Director Stock Option (Right to Buy)
+2011-07-19,AMG,"Director, CEO and Chairman",BUY,150000.0,99.66,14949000.0,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2011-07-19,AMG,President and COO,BUY,90000.0,99.66,8969400.0,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2011-07-19,AMG,CFO and Treasurer,BUY,75000.0,99.66,7474500.0,"HORGEN, JAY C.",Employee Stock Option (Right to Buy)
+2011-07-19,AMG,Director,BUY,1981.0,99.66,197426.46,"NUTT, WILLIAM J",Director Stock Option (Right to Buy)
+2011-12-09,AMG,"Director, CEO and Chairman",SELL,1611.0,62.04,99946.44,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2011-12-09,AMG,"Director, CEO and Chairman",SELL,2.0,48.38,96.76,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2011-12-09,AMG,"Director, CEO and Chairman",BUY,1611.0,62.04,99946.44,"HEALEY, SEAN M",Common Stock
+2011-12-09,AMG,"Director, CEO and Chairman",BUY,2.0,48.38,96.76,"HEALEY, SEAN M",Common Stock
+2011-12-14,AMG,Director,BUY,2034.0,90.22,183507.48,"RODRIGUEZ, RITA M",Director Stock Option (Right to Buy)
+2011-12-14,AMG,Director,BUY,2034.0,90.22,183507.48,"NUTT, WILLIAM J",Director Stock Option (Right to Buy)
+2011-12-14,AMG,Director,BUY,2034.0,90.22,183507.48,"CHURCHILL, DWIGHT D.",Director Stock Option (Right to Buy)
+2011-12-14,AMG,Director,BUY,2034.0,90.22,183507.48,"BYRNE, SAMUEL T",Director Stock Option (Right to Buy)
+2011-12-14,AMG,Director,BUY,2034.0,90.22,183507.48,"MEYERMAN, HAROLD J",Director Stock Option (Right to Buy)
+2011-12-14,AMG,Director,BUY,2034.0,90.22,183507.48,"ZEITLIN, JIDE JAMES",Director Stock Option (Right to Buy)
+2011-12-14,AMG,Director,BUY,2034.0,90.22,183507.48,"RYAN, PATRICK T",Director Stock Option (Right to Buy)
+2012-02-07,AMG,Director,SELL,44482.0,106.28,4727546.96,"NUTT, WILLIAM J",Common Stock
+2012-02-13,AMG,President and COO,SELL,55000.0,45.27,2489850.0,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2012-02-13,AMG,President and COO,SELL,3222.0,62.04,199892.88,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2012-02-13,AMG,President and COO,BUY,55000.0,45.27,2489850.0,"DALTON, NATHANIEL",Common Stock
+2012-02-13,AMG,President and COO,SELL,55000.0,106.4,5852000.0,"DALTON, NATHANIEL",Common Stock
+2012-02-13,AMG,President and COO,BUY,3222.0,62.04,199892.88,"DALTON, NATHANIEL",Common Stock
+2012-02-14,AMG,CFO and Treasurer,BUY,35723.0,48.38,1728278.74,"HORGEN, JAY C.",Common Stock
+2012-02-14,AMG,CFO and Treasurer,BUY,30000.0,62.04,1861200.0,"HORGEN, JAY C.",Common Stock
+2012-02-14,AMG,CFO and Treasurer,SELL,30000.0,62.04,1861200.0,"HORGEN, JAY C.",Employee Stock Option (Right to Buy)
+2012-02-14,AMG,CFO and Treasurer,SELL,62501.0,105.03,6564480.03,"HORGEN, JAY C.",Common Stock
+2012-02-14,AMG,CFO and Treasurer,SELL,35723.0,48.38,1728278.74,"HORGEN, JAY C.",Employee Stock Option (Right to Buy)
+2012-03-03,AMG,Director,BUY,1694.0,107.63,182325.22,"PALANDJIAN, TRACY P.",Director Stock Option (Right to Buy)
+2012-05-03,AMG,Director,SELL,83249.0,109.68,9130750.32,"NUTT, WILLIAM J",Common Stock
+2012-05-04,AMG,Director,SELL,50000.0,106.63,5331500.0,"NUTT, WILLIAM J",Common Stock
+2012-05-07,AMG,Director,SELL,50518.0,106.95,5402900.100000001,"NUTT, WILLIAM J",Common Stock
+2012-05-11,AMG,Director,SELL,5625.0,81.83,460293.75,"MEYERMAN, HAROLD J",Director Stock Option (Right to Buy)
+2012-05-11,AMG,Director,BUY,5625.0,71.75,403593.75,"MEYERMAN, HAROLD J",Common Stock
+2012-05-11,AMG,Vice Chairman & Gen. Counsel,BUY,45000.0,45.27,2037150.0000000002,"KINGSTON, JOHN III",Common Stock
+2012-05-11,AMG,Vice Chairman & Gen. Counsel,BUY,3222.0,62.04,199892.88,"KINGSTON, JOHN III",Common Stock
+2012-05-11,AMG,Vice Chairman & Gen. Counsel,SELL,45000.0,106.91,4810950.0,"KINGSTON, JOHN III",Common Stock
+2012-05-11,AMG,Director,BUY,5625.0,81.83,460293.75,"MEYERMAN, HAROLD J",Common Stock
+2012-05-11,AMG,Vice Chairman & Gen. Counsel,SELL,45000.0,45.27,2037150.0000000002,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2012-05-11,AMG,Director,SELL,11250.0,106.94,1203075.0,"MEYERMAN, HAROLD J",Common Stock
+2012-05-11,AMG,Director,SELL,5625.0,71.75,403593.75,"MEYERMAN, HAROLD J",Director Stock Option (Right to Buy)
+2012-05-11,AMG,Vice Chairman & Gen. Counsel,SELL,3222.0,62.04,199892.88,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2012-05-14,AMG,Vice Chairman & Gen. Counsel,SELL,1278.0,45.27,57855.060000000005,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2012-05-14,AMG,Vice Chairman & Gen. Counsel,BUY,1278.0,45.27,57855.060000000005,"KINGSTON, JOHN III",Common Stock
+2012-07-24,AMG,Director,BUY,1762.0,103.84,182966.08000000002,"CHURCHILL, DWIGHT D.",Director Stock Option (Right to Buy)
+2012-07-24,AMG,Director,BUY,1762.0,103.84,182966.08000000002,"MEYERMAN, HAROLD J",Director Stock Option (Right to Buy)
+2012-07-24,AMG,Director,BUY,1762.0,103.84,182966.08000000002,"NUTT, WILLIAM J",Director Stock Option (Right to Buy)
+2012-07-24,AMG,Director,BUY,1762.0,103.84,182966.08000000002,"RYAN, PATRICK T",Director Stock Option (Right to Buy)
+2012-07-24,AMG,Director,BUY,1762.0,103.84,182966.08000000002,"ZEITLIN, JIDE JAMES",Director Stock Option (Right to Buy)
+2012-07-24,AMG,Director,BUY,1762.0,103.84,182966.08000000002,"BYRNE, SAMUEL T",Director Stock Option (Right to Buy)
+2012-07-24,AMG,Director,BUY,1762.0,103.84,182966.08000000002,"RODRIGUEZ, RITA M",Director Stock Option (Right to Buy)
+2012-07-24,AMG,Director,BUY,1762.0,103.84,182966.08000000002,"PALANDJIAN, TRACY P.",Director Stock Option (Right to Buy)
+2012-08-03,AMG,"Director, CEO and Chairman",SELL,92500.0,48.38,4475150.0,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2012-08-03,AMG,"Director, CEO and Chairman",SELL,37500.0,45.27,1697625.0000000002,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2012-08-03,AMG,"Director, CEO and Chairman",SELL,130000.0,112.63,14641900.0,"HEALEY, SEAN M",Common Stock
+2012-08-03,AMG,"Director, CEO and Chairman",BUY,92500.0,48.38,4475150.0,"HEALEY, SEAN M",Common Stock
+2012-08-03,AMG,"Director, CEO and Chairman",BUY,37500.0,45.27,1697625.0000000002,"HEALEY, SEAN M",Common Stock
+2012-08-17,AMG,President and COO,SELL,60000.0,63.38,3802800.0,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2012-08-17,AMG,President and COO,SELL,60000.0,119.16,7149600.0,"DALTON, NATHANIEL",Common Stock
+2012-08-17,AMG,President and COO,BUY,60000.0,63.38,3802800.0,"DALTON, NATHANIEL",Common Stock
+2012-08-21,AMG,Vice Chairman & Gen. Counsel,BUY,8238.0,48.38,398554.44,"KINGSTON, JOHN III",Common Stock
+2012-08-21,AMG,Vice Chairman & Gen. Counsel,SELL,10900.0,118.54,1292086.0,"KINGSTON, JOHN III",Common Stock
+2012-08-21,AMG,Vice Chairman & Gen. Counsel,SELL,8722.0,45.27,394844.94,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2012-08-21,AMG,Vice Chairman & Gen. Counsel,BUY,8722.0,45.27,394844.94,"KINGSTON, JOHN III",Common Stock
+2012-08-21,AMG,Vice Chairman & Gen. Counsel,SELL,8238.0,48.38,398554.44,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2012-08-28,AMG,CFO and Treasurer,BUY,13675.0,62.91,860294.25,"HORGEN, JAY C.",Common Stock
+2012-08-28,AMG,CFO and Treasurer,SELL,13675.0,62.91,860294.25,"HORGEN, JAY C.",Employee Stock Option (Right to Buy)
+2012-08-28,AMG,CFO and Treasurer,SELL,8675.0,118.86,1031110.5,"HORGEN, JAY C.",Common Stock
+2012-08-29,AMG,CFO and Treasurer,BUY,1325.0,62.91,83355.75,"HORGEN, JAY C.",Common Stock
+2012-08-29,AMG,CFO and Treasurer,SELL,1325.0,62.91,83355.75,"HORGEN, JAY C.",Employee Stock Option (Right to Buy)
+2012-08-29,AMG,CFO and Treasurer,SELL,31325.0,118.81,3721723.25,"HORGEN, JAY C.",Common Stock
+2012-08-29,AMG,CFO and Treasurer,SELL,30000.0,65.51,1965300.0000000002,"HORGEN, JAY C.",Employee Stock Option (Right to Buy)
+2012-08-29,AMG,CFO and Treasurer,BUY,30000.0,65.51,1965300.0000000002,"HORGEN, JAY C.",Common Stock
+2012-09-07,AMG,Director,SELL,4218.0,48.38,204066.84,"RODRIGUEZ, RITA M",Director Stock Option (Right to Buy)
+2012-09-07,AMG,Director,SELL,5625.0,63.38,356512.5,"RODRIGUEZ, RITA M",Director Stock Option (Right to Buy)
+2012-09-07,AMG,Director,SELL,11250.0,121.02,1361475.0,"RODRIGUEZ, RITA M",Common Stock
+2012-09-07,AMG,Director,BUY,4218.0,48.38,204066.84,"RODRIGUEZ, RITA M",Common Stock
+2012-09-07,AMG,Director,SELL,5625.0,45.27,254643.75000000003,"RODRIGUEZ, RITA M",Director Stock Option (Right to Buy)
+2012-09-07,AMG,Director,BUY,2200.0,71.75,157850.0,"RODRIGUEZ, RITA M",Common Stock
+2012-09-07,AMG,Director,BUY,2694.0,62.04,167135.76,"RODRIGUEZ, RITA M",Common Stock
+2012-09-07,AMG,Director,BUY,1638.0,62.91,103046.57999999999,"RODRIGUEZ, RITA M",Common Stock
+2012-09-07,AMG,Director,BUY,5625.0,45.27,254643.75000000003,"RODRIGUEZ, RITA M",Common Stock
+2012-09-07,AMG,Director,BUY,5625.0,63.38,356512.5,"RODRIGUEZ, RITA M",Common Stock
+2012-09-07,AMG,Director,SELL,2694.0,62.04,167135.76,"RODRIGUEZ, RITA M",Director Stock Option (Right to Buy)
+2012-09-07,AMG,Director,BUY,1705.0,65.51,111694.55,"RODRIGUEZ, RITA M",Common Stock
+2012-09-07,AMG,Director,SELL,1638.0,62.91,103046.57999999999,"RODRIGUEZ, RITA M",Director Stock Option (Right to Buy)
+2012-09-07,AMG,Director,SELL,2200.0,71.75,157850.0,"RODRIGUEZ, RITA M",Director Stock Option (Right to Buy)
+2012-09-07,AMG,Director,SELL,1705.0,65.51,111694.55,"RODRIGUEZ, RITA M",Director Stock Option (Right to Buy)
+2012-11-05,AMG,Director,SELL,72500.0,63.38,4595050.0,"NUTT, WILLIAM J",Stock Option
+2012-11-05,AMG,Director,SELL,137500.0,45.27,6224625.0,"NUTT, WILLIAM J",Stock Option
+2012-11-05,AMG,Director,BUY,72500.0,63.38,4595050.0,"NUTT, WILLIAM J",Common Stock
+2012-11-05,AMG,Director,BUY,137500.0,45.27,6224625.0,"NUTT, WILLIAM J",Common Stock
+2012-11-05,AMG,Director,SELL,210000.0,127.71,26819100.0,"NUTT, WILLIAM J",Common Stock
+2012-11-06,AMG,Director,BUY,65000.0,63.38,4119700.0,"NUTT, WILLIAM J",Common Stock
+2012-11-06,AMG,Director,SELL,65000.0,63.38,4119700.0,"NUTT, WILLIAM J",Stock Option
+2012-11-06,AMG,Director,SELL,65000.0,128.43,8347950.0,"NUTT, WILLIAM J",Common Stock
+2012-11-28,AMG,Director,BUY,5625.0,81.83,460293.75,"RYAN, PATRICK T",Common Stock
+2012-11-28,AMG,Director,SELL,28125.0,127.93,3598031.25,"RYAN, PATRICK T",Common Stock
+2012-11-28,AMG,Director,BUY,22500.0,71.75,1614375.0,"RYAN, PATRICK T",Common Stock
+2012-11-28,AMG,Director,SELL,22500.0,71.75,1614375.0,"RYAN, PATRICK T",Director Stock Option (Right to Buy)
+2012-11-28,AMG,Director,SELL,5625.0,81.83,460293.75,"RYAN, PATRICK T",Director Stock Option (Right to Buy)
+2012-12-12,AMG,Vice Chairman & Gen. Counsel,SELL,10235.0,48.38,495169.30000000005,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2012-12-12,AMG,Vice Chairman & Gen. Counsel,SELL,6500.0,129.33,840645.0000000001,"KINGSTON, JOHN III",Common Stock
+2012-12-12,AMG,Vice Chairman & Gen. Counsel,BUY,10235.0,48.38,495169.30000000005,"KINGSTON, JOHN III",Common Stock
+2012-12-14,AMG,Director,BUY,1411.0,127.91,180481.01,"BYRNE, SAMUEL T",Director Stock Option (Right to Buy)
+2012-12-14,AMG,Director,BUY,1411.0,127.91,180481.01,"CHURCHILL, DWIGHT D.",Director Stock Option (Right to Buy)
+2012-12-14,AMG,Director,BUY,1411.0,127.91,180481.01,"MEYERMAN, HAROLD J",Director Stock Option (Right to Buy)
+2012-12-14,AMG,Director,BUY,1411.0,127.91,180481.01,"NUTT, WILLIAM J",Director Stock Option (Right to Buy)
+2012-12-14,AMG,Director,BUY,1411.0,127.91,180481.01,"PALANDJIAN, TRACY P.",Director Stock Option (Right to Buy)
+2012-12-14,AMG,Director,BUY,1411.0,127.91,180481.01,"ZEITLIN, JIDE JAMES",Director Stock Option (Right to Buy)
+2012-12-14,AMG,Director,BUY,1411.0,127.91,180481.01,"RYAN, PATRICK T",Director Stock Option (Right to Buy)
+2012-12-14,AMG,Director,BUY,1411.0,127.91,180481.01,"RODRIGUEZ, RITA M",Director Stock Option (Right to Buy)
+2013-02-06,AMG,Director,BUY,5625.0,48.38,272137.5,"MEYERMAN, HAROLD J",Common Stock
+2013-02-06,AMG,President and COO,BUY,2069.0,48.38,100098.22,"DALTON, NATHANIEL",Common Stock
+2013-02-06,AMG,Director,SELL,5625.0,144.57,813206.25,"MEYERMAN, HAROLD J",Common Stock
+2013-02-06,AMG,Director,SELL,5625.0,48.38,272137.5,"MEYERMAN, HAROLD J",Director Stock Option (Right to Buy)
+2013-02-06,AMG,President and COO,BUY,55000.0,63.38,3485900.0,"DALTON, NATHANIEL",Common Stock
+2013-02-06,AMG,President and COO,SELL,2069.0,48.38,100098.22,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2013-02-06,AMG,President and COO,SELL,55000.0,63.38,3485900.0,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2013-02-06,AMG,President and COO,SELL,55000.0,144.48,7946399.999999999,"DALTON, NATHANIEL",Common Stock
+2013-02-11,AMG,"Director, CEO and Chairman",BUY,37522.0,63.38,2378144.36,"HEALEY, SEAN M",Common Stock
+2013-02-11,AMG,"Director, CEO and Chairman",SELL,37522.0,63.38,2378144.36,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2013-02-11,AMG,"Director, CEO and Chairman",SELL,37522.0,145.59,5462827.98,"HEALEY, SEAN M",Common Stock
+2013-02-12,AMG,"Director, CEO and Chairman",SELL,57478.0,63.38,3642955.64,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2013-02-12,AMG,"Director, CEO and Chairman",SELL,57478.0,146.15,8400409.700000001,"HEALEY, SEAN M",Common Stock
+2013-02-12,AMG,"Director, CEO and Chairman",BUY,57478.0,63.38,3642955.64,"HEALEY, SEAN M",Common Stock
+2013-05-03,AMG,Vice Chairman & Gen. Counsel,SELL,46000.0,153.91,7079860.0,"KINGSTON, JOHN III",Common Stock
+2013-05-03,AMG,Vice Chairman & Gen. Counsel,BUY,30000.0,63.38,1901400.0,"KINGSTON, JOHN III",Common Stock
+2013-05-03,AMG,Vice Chairman & Gen. Counsel,SELL,30000.0,63.38,1901400.0,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2013-05-06,AMG,Vice Chairman & Gen. Counsel,SELL,2069.0,48.38,100098.22,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2013-05-06,AMG,CFO and Treasurer,BUY,30109.0,48.38,1456673.4200000002,"HORGEN, JAY C.",Common Stock
+2013-05-06,AMG,CFO and Treasurer,SELL,30109.0,48.38,1456673.4200000002,"HORGEN, JAY C.",Employee Stock Option (Right to Buy)
+2013-05-06,AMG,Vice Chairman & Gen. Counsel,BUY,2069.0,48.38,100098.22,"KINGSTON, JOHN III",Common Stock
+2013-05-06,AMG,CFO and Treasurer,SELL,28042.0,155.77,4368102.34,"HORGEN, JAY C.",Common Stock
+2013-05-07,AMG,CFO and Treasurer,BUY,1800.0,48.38,87084.0,"HORGEN, JAY C.",Common Stock
+2013-05-07,AMG,CFO and Treasurer,SELL,31800.0,155.99,4960482.0,"HORGEN, JAY C.",Common Stock
+2013-05-07,AMG,CFO and Treasurer,BUY,15000.0,65.51,982650.0000000001,"HORGEN, JAY C.",Common Stock
+2013-05-07,AMG,CFO and Treasurer,SELL,15000.0,65.51,982650.0000000001,"HORGEN, JAY C.",Employee Stock Option (Right to Buy)
+2013-05-07,AMG,CFO and Treasurer,SELL,15000.0,62.04,930600.0,"HORGEN, JAY C.",Employee Stock Option (Right to Buy)
+2013-05-07,AMG,CFO and Treasurer,BUY,15000.0,62.04,930600.0,"HORGEN, JAY C.",Common Stock
+2013-05-07,AMG,CFO and Treasurer,SELL,1800.0,48.38,87084.0,"HORGEN, JAY C.",Employee Stock Option (Right to Buy)
+2013-05-14,AMG,Director,BUY,3425.0,71.75,245743.75,"RODRIGUEZ, RITA M",Common Stock
+2013-05-14,AMG,Director,SELL,3425.0,163.76,560878.0,"RODRIGUEZ, RITA M",Common Stock
+2013-05-14,AMG,Director,SELL,3425.0,71.75,245743.75,"RODRIGUEZ, RITA M",Director Stock Option (Right to Buy)
+2013-07-23,AMG,Director,BUY,1005.0,175.28,176156.4,"BYRNE, SAMUEL T",Director Stock Option (Right to Buy)
+2013-07-23,AMG,Director,BUY,1005.0,175.28,176156.4,"NUTT, WILLIAM J",Director Stock Option (Right to Buy)
+2013-07-23,AMG,Director,BUY,1005.0,175.28,176156.4,"RYAN, PATRICK T",Director Stock Option (Right to Buy)
+2013-07-23,AMG,Director,BUY,1005.0,175.28,176156.4,"ZEITLIN, JIDE JAMES",Director Stock Option (Right to Buy)
+2013-07-23,AMG,Director,BUY,1005.0,175.28,176156.4,"CHURCHILL, DWIGHT D.",Director Stock Option (Right to Buy)
+2013-07-23,AMG,Director,BUY,1005.0,175.28,176156.4,"RODRIGUEZ, RITA M",Director Stock Option (Right to Buy)
+2013-07-23,AMG,Director,BUY,1005.0,175.28,176156.4,"PALANDJIAN, TRACY P.",Director Stock Option (Right to Buy)
+2013-07-23,AMG,Director,BUY,1005.0,175.28,176156.4,"MEYERMAN, HAROLD J",Director Stock Option (Right to Buy)
+2013-08-01,AMG,Director,BUY,2457.0,62.91,154569.87,"BYRNE, SAMUEL T",Common Stock
+2013-08-01,AMG,Director,SELL,5666.0,183.95,1042260.7,"BYRNE, SAMUEL T",Common Stock
+2013-08-01,AMG,"Director, CEO and Chairman",SELL,105000.0,183.78,19296900.0,"HEALEY, SEAN M",Common Stock
+2013-08-01,AMG,Director,BUY,3209.0,71.46,229315.13999999998,"BYRNE, SAMUEL T",Common Stock
+2013-08-01,AMG,Director,SELL,3209.0,71.46,229315.13999999998,"BYRNE, SAMUEL T",Director Stock Option (Right to Buy)
+2013-08-01,AMG,Director,SELL,2457.0,62.91,154569.87,"BYRNE, SAMUEL T",Director Stock Option (Right to Buy)
+2013-08-01,AMG,"Director, CEO and Chairman",BUY,37500.0,63.38,2376750.0,"HEALEY, SEAN M",Common Stock
+2013-08-01,AMG,"Director, CEO and Chairman",BUY,69567.0,48.38,3365651.46,"HEALEY, SEAN M",Common Stock
+2013-08-01,AMG,"Director, CEO and Chairman",BUY,1611.0,62.04,99946.44,"HEALEY, SEAN M",Common Stock
+2013-08-01,AMG,"Director, CEO and Chairman",SELL,1611.0,62.04,99946.44,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2013-08-01,AMG,"Director, CEO and Chairman",SELL,69567.0,48.38,3365651.46,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2013-08-01,AMG,"Director, CEO and Chairman",SELL,37500.0,63.38,2376750.0,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2013-08-02,AMG,President and COO,SELL,50000.0,48.38,2419000.0,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2013-08-02,AMG,President and COO,BUY,50000.0,48.38,2419000.0,"DALTON, NATHANIEL",Common Stock
+2013-08-02,AMG,President and COO,SELL,50000.0,185.24,9262000.0,"DALTON, NATHANIEL",Common Stock
+2013-08-06,AMG,Vice Chairman & Gen. Counsel,SELL,11400.0,185.14,2110596.0,"KINGSTON, JOHN III",Common Stock
+2013-08-06,AMG,Vice Chairman & Gen. Counsel,BUY,17465.0,63.38,1106931.7,"KINGSTON, JOHN III",Common Stock
+2013-08-06,AMG,Vice Chairman & Gen. Counsel,SELL,17465.0,63.38,1106931.7,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2013-08-07,AMG,Director,SELL,28500.0,180.62,5147670.0,"NUTT, WILLIAM J",Common Stock
+2013-09-10,AMG,"EVP(AMG Ltd.), Global Distrib.",SELL,10000.0,180.37,1803700.0,"DYSON, ANDREW",Common Stock
+2013-09-10,AMG,"EVP(AMG Ltd.), Global Distrib.",BUY,10000.0,99.66,996600.0,"DYSON, ANDREW",Common Stock
+2013-09-10,AMG,"EVP(AMG Ltd.), Global Distrib.",SELL,10000.0,99.66,996600.0,"DYSON, ANDREW",Employee Stock Option (Right to Buy)
+2013-12-18,AMG,Director,BUY,937.0,209.41,196217.16999999998,"ZEITLIN, JIDE JAMES",Director Stock Option (Right to Buy)
+2013-12-18,AMG,Director,BUY,937.0,209.41,196217.16999999998,"PALANDJIAN, TRACY P.",Director Stock Option (Right to Buy)
+2013-12-18,AMG,Director,BUY,937.0,209.41,196217.16999999998,"MEYERMAN, HAROLD J",Director Stock Option (Right to Buy)
+2013-12-18,AMG,Director,BUY,937.0,209.41,196217.16999999998,"RODRIGUEZ, RITA M",Director Stock Option (Right to Buy)
+2013-12-18,AMG,Director,BUY,937.0,209.41,196217.16999999998,"NUTT, WILLIAM J",Director Stock Option (Right to Buy)
+2013-12-18,AMG,Director,BUY,937.0,209.41,196217.16999999998,"BYRNE, SAMUEL T",Director Stock Option (Right to Buy)
+2013-12-18,AMG,Director,BUY,937.0,209.41,196217.16999999998,"CHURCHILL, DWIGHT D.",Director Stock Option (Right to Buy)
+2013-12-18,AMG,Director,BUY,937.0,209.41,196217.16999999998,"RYAN, PATRICK T",Director Stock Option (Right to Buy)
+2014-01-02,AMG,CFO and Treasurer,SELL,21353.0,216.88,4631038.64,"HORGEN, JAY C.",Common Stock
+2014-01-02,AMG,Vice Chairman & Gen. Counsel,SELL,9912.0,216.88,2149714.56,"KINGSTON, JOHN III",Common Stock
+2014-01-02,AMG,"EVP(AMG Ltd.), Global Distrib.",SELL,597.0,216.88,129477.36,"DYSON, ANDREW",Common Stock
+2014-01-02,AMG,"Director, CEO and Chairman",SELL,68788.0,216.88,14918741.44,"HEALEY, SEAN M",Common Stock
+2014-01-02,AMG,President and COO,SELL,36115.0,216.88,7832621.2,"DALTON, NATHANIEL",Common Stock
+2014-04-22,AMG,Director,BUY,1063.0,186.34,198079.42,"FERGUSON, NIALL",Director Stock Option (Right to Buy)
+2014-05-08,AMG,Director,SELL,6881.0,196.62,1352942.22,"MEYERMAN, HAROLD J",Common Stock
+2014-05-08,AMG,CFO and Treasurer,BUY,15000.0,95.82,1437300.0,"HORGEN, JAY C.",Common Stock
+2014-05-08,AMG,CFO and Treasurer,SELL,15000.0,95.82,1437300.0,"HORGEN, JAY C.",Employee Stock Option (Right to Buy)
+2014-05-08,AMG,CFO and Treasurer,SELL,30000.0,62.91,1887300.0,"HORGEN, JAY C.",Employee Stock Option (Right to Buy)
+2014-05-08,AMG,CFO and Treasurer,BUY,15000.0,65.51,982650.0000000001,"HORGEN, JAY C.",Common Stock
+2014-05-08,AMG,Vice Chairman & Gen. Counsel,SELL,22535.0,63.38,1428268.3,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2014-05-08,AMG,CFO and Treasurer,SELL,15000.0,65.51,982650.0000000001,"HORGEN, JAY C.",Employee Stock Option (Right to Buy)
+2014-05-08,AMG,Director,BUY,5625.0,86.77,488081.25,"MEYERMAN, HAROLD J",Common Stock
+2014-05-08,AMG,Vice Chairman & Gen. Counsel,SELL,69800.0,195.35,13635430.0,"KINGSTON, JOHN III",Common Stock
+2014-05-08,AMG,Vice Chairman & Gen. Counsel,BUY,34765.0,48.38,1681930.7000000002,"KINGSTON, JOHN III",Common Stock
+2014-05-08,AMG,Vice Chairman & Gen. Counsel,BUY,22535.0,63.38,1428268.3,"KINGSTON, JOHN III",Common Stock
+2014-05-08,AMG,Vice Chairman & Gen. Counsel,SELL,34765.0,48.38,1681930.7000000002,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2014-05-08,AMG,Director,SELL,5625.0,86.77,488081.25,"MEYERMAN, HAROLD J",Director Stock Option (Right to Buy)
+2014-05-08,AMG,CFO and Treasurer,SELL,60000.0,194.35,11661000.0,"HORGEN, JAY C.",Common Stock
+2014-05-08,AMG,CFO and Treasurer,BUY,30000.0,62.91,1887300.0,"HORGEN, JAY C.",Common Stock
+2014-05-08,AMG,Vice Chairman & Gen. Counsel,BUY,1611.0,62.04,99946.44,"KINGSTON, JOHN III",Common Stock
+2014-05-08,AMG,Vice Chairman & Gen. Counsel,SELL,513.0,194.77,99917.01000000001,"KINGSTON, JOHN III",Common Stock
+2014-05-08,AMG,Vice Chairman & Gen. Counsel,SELL,1611.0,62.04,99946.44,"KINGSTON, JOHN III",Employee Stock Option (Right to Buy)
+2014-05-09,AMG,CFO and Treasurer,BUY,13389.0,62.04,830653.5599999999,"HORGEN, JAY C.",Common Stock
+2014-05-09,AMG,CFO and Treasurer,SELL,13389.0,190.93,2556361.77,"HORGEN, JAY C.",Common Stock
+2014-05-09,AMG,CFO and Treasurer,SELL,13389.0,62.04,830653.5599999999,"HORGEN, JAY C.",Employee Stock Option (Right to Buy)
+2014-06-30,AMG,"EVP, General Counsel & Sec.",SELL,228.0,205.4,46831.200000000004,"BILLINGS, DAVID M.",Common Stock
+2014-07-22,AMG,Director,BUY,990.0,207.21,205137.9,"BYRNE, SAMUEL T",Director Stock Option (Right to Buy)
+2014-07-22,AMG,Director,BUY,990.0,207.21,205137.9,"ZEITLIN, JIDE JAMES",Director Stock Option (Right to Buy)
+2014-07-22,AMG,Director,BUY,990.0,207.21,205137.9,"RYAN, PATRICK T",Director Stock Option (Right to Buy)
+2014-07-22,AMG,Director,BUY,990.0,207.21,205137.9,"RODRIGUEZ, RITA M",Director Stock Option (Right to Buy)
+2014-07-22,AMG,Director,BUY,990.0,207.21,205137.9,"NUTT, WILLIAM J",Director Stock Option (Right to Buy)
+2014-07-22,AMG,Director,BUY,990.0,207.21,205137.9,"MEYERMAN, HAROLD J",Director Stock Option (Right to Buy)
+2014-07-22,AMG,Director,BUY,990.0,207.21,205137.9,"CHURCHILL, DWIGHT D.",Director Stock Option (Right to Buy)
+2014-07-22,AMG,Director,BUY,990.0,207.21,205137.9,"FERGUSON, NIALL",Director Stock Option (Right to Buy)
+2014-07-22,AMG,Director,BUY,990.0,207.21,205137.9,"PALANDJIAN, TRACY P.",Director Stock Option (Right to Buy)
+2014-08-04,AMG,President and COO,BUY,101089.0,48.38,4890685.82,"DALTON, NATHANIEL",Common Stock
+2014-08-04,AMG,President and COO,SELL,101089.0,196.4,19853879.6,"DALTON, NATHANIEL",Common Stock
+2014-08-04,AMG,President and COO,SELL,101089.0,48.38,4890685.82,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2014-08-21,AMG,"Director, CEO and Chairman",SELL,91605.0,200.64,18379627.2,"HEALEY, SEAN M",Common Stock
+2014-08-21,AMG,"Director, CEO and Chairman",BUY,91605.0,48.38,4431849.9,"HEALEY, SEAN M",Common Stock
+2014-08-21,AMG,"Director, CEO and Chairman",SELL,91605.0,48.38,4431849.9,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2014-08-22,AMG,"Director, CEO and Chairman",BUY,52642.0,48.38,2546819.96,"HEALEY, SEAN M",Common Stock
+2014-08-22,AMG,"Director, CEO and Chairman",SELL,52642.0,48.38,2546819.96,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2014-08-22,AMG,"Director, CEO and Chairman",SELL,52642.0,201.21,10592096.82,"HEALEY, SEAN M",Common Stock
+2014-09-10,AMG,Director,BUY,3593.0,62.04,222909.72,"RYAN, PATRICK T",Common Stock
+2014-09-10,AMG,Director,SELL,20468.0,207.28,4242607.04,"RYAN, PATRICK T",Common Stock
+2014-09-10,AMG,Director,SELL,5625.0,86.77,488081.25,"RYAN, PATRICK T",Director Stock Option (Right to Buy)
+2014-09-10,AMG,Director,BUY,5625.0,48.38,272137.5,"RYAN, PATRICK T",Common Stock
+2014-09-10,AMG,Director,BUY,5625.0,102.83,578418.75,"RYAN, PATRICK T",Common Stock
+2014-09-10,AMG,Director,SELL,5625.0,102.83,578418.75,"RYAN, PATRICK T",Director Stock Option (Right to Buy)
+2014-09-10,AMG,Director,BUY,5625.0,86.77,488081.25,"RYAN, PATRICK T",Common Stock
+2014-09-10,AMG,Director,SELL,5625.0,48.38,272137.5,"RYAN, PATRICK T",Director Stock Option (Right to Buy)
+2014-09-10,AMG,Director,SELL,3593.0,62.04,222909.72,"RYAN, PATRICK T",Director Stock Option (Right to Buy)
+2015-01-01,AMG,"Director, CEO and Chairman",SELL,3126.0,212.24,663462.24,"HEALEY, SEAN M",Common Stock
+2015-01-01,AMG,President and COO,SELL,1712.0,212.24,363354.88,"DALTON, NATHANIEL",Common Stock
+2015-01-01,AMG,CFO and Treasurer,SELL,1446.0,212.24,306899.04000000004,"HORGEN, JAY C.",Common Stock
+2015-01-01,AMG,"EVP(AMG Ltd.), Global Distrib.",SELL,598.0,212.24,126919.52,"DYSON, ANDREW",Common Stock
+2015-01-20,AMG,Director,BUY,1120.0,197.79,221524.8,"ZEITLIN, JIDE JAMES",Director Stock Option (Right to Buy)
+2015-01-20,AMG,Director,BUY,1120.0,197.79,221524.8,"NUTT, WILLIAM J",Director Stock Option (Right to Buy)
+2015-01-20,AMG,Director,BUY,1120.0,197.79,221524.8,"MEYERMAN, HAROLD J",Director Stock Option (Right to Buy)
+2015-01-20,AMG,Director,BUY,1120.0,197.79,221524.8,"RYAN, PATRICK T",Director Stock Option (Right to Buy)
+2015-01-20,AMG,Director,BUY,1120.0,197.79,221524.8,"PALANDJIAN, TRACY P.",Director Stock Option (Right to Buy)
+2015-01-20,AMG,Director,BUY,1120.0,197.79,221524.8,"BYRNE, SAMUEL T",Director Stock Option (Right to Buy)
+2015-01-20,AMG,Director,BUY,1120.0,197.79,221524.8,"CHURCHILL, DWIGHT D.",Director Stock Option (Right to Buy)
+2015-01-20,AMG,Director,BUY,1120.0,197.79,221524.8,"FERGUSON, NIALL",Director Stock Option (Right to Buy)
+2015-02-18,AMG,"Director, CEO and Chairman",SELL,50678.0,217.29,11011822.62,"HEALEY, SEAN M",Common Stock
+2015-02-18,AMG,"Director, CEO and Chairman",BUY,50678.0,62.91,3188152.98,"HEALEY, SEAN M",Common Stock
+2015-02-18,AMG,"Director, CEO and Chairman",SELL,50678.0,62.91,3188152.98,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2015-02-23,AMG,President and COO,SELL,45875.0,215.72,9896155.0,"DALTON, NATHANIEL",Common Stock
+2015-02-23,AMG,President and COO,BUY,45875.0,62.04,2846085.0,"DALTON, NATHANIEL",Common Stock
+2015-02-23,AMG,President and COO,SELL,45875.0,62.04,2846085.0,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2015-02-24,AMG,President and COO,BUY,24292.0,62.04,1507075.68,"DALTON, NATHANIEL",Common Stock
+2015-02-24,AMG,President and COO,SELL,24292.0,218.66,5311688.72,"DALTON, NATHANIEL",Common Stock
+2015-02-24,AMG,President and COO,SELL,24292.0,62.04,1507075.68,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2015-04-19,AMG,Director,BUY,1020.0,218.02,222380.40000000002,"EARLE, GLENN",Director Stock Option (Right to Buy)
+2015-05-01,AMG,CFO and Treasurer,SELL,22411.0,226.97,5086624.67,"HORGEN, JAY C.",Common Stock
+2015-05-01,AMG,CFO and Treasurer,SELL,15000.0,62.91,943650.0,"HORGEN, JAY C.",Employee Stock Option (Right to Buy)
+2015-05-01,AMG,CFO and Treasurer,BUY,15000.0,62.91,943650.0,"HORGEN, JAY C.",Common Stock
+2015-05-01,AMG,CFO and Treasurer,BUY,1611.0,62.04,99946.44,"HORGEN, JAY C.",Common Stock
+2015-05-01,AMG,CFO and Treasurer,SELL,1611.0,62.04,99946.44,"HORGEN, JAY C.",Employee Stock Option (Right to Buy)
+2015-05-04,AMG,Director,SELL,5625.0,227.25,1278281.25,"NUTT, WILLIAM J",Common Stock
+2015-05-04,AMG,Director,SELL,5625.0,48.38,272137.5,"NUTT, WILLIAM J",Director Stock Option (Right to Buy)
+2015-05-04,AMG,Director,BUY,5625.0,48.38,272137.5,"NUTT, WILLIAM J",Common Stock
+2015-06-05,AMG,President and COO,SELL,56639.0,65.51,3710420.89,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2015-06-05,AMG,President and COO,BUY,56639.0,65.51,3710420.89,"DALTON, NATHANIEL",Common Stock
+2015-06-05,AMG,President and COO,SELL,56639.0,222.7,12613505.299999999,"DALTON, NATHANIEL",Common Stock
+2015-06-08,AMG,President and COO,SELL,18361.0,221.01,4057964.61,"DALTON, NATHANIEL",Common Stock
+2015-06-08,AMG,President and COO,BUY,18361.0,65.51,1202829.11,"DALTON, NATHANIEL",Common Stock
+2015-06-08,AMG,President and COO,SELL,18361.0,65.51,1202829.11,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2015-06-30,AMG,"EVP, General Counsel & Sec.",SELL,287.0,218.6,62738.2,"BILLINGS, DAVID M.",Common Stock
+2015-07-21,AMG,Director,BUY,1073.0,217.9,233806.7,"RYAN, PATRICK T",Director Stock Option (Right to Buy)
+2015-07-21,AMG,Director,BUY,1073.0,217.9,233806.7,"ZEITLIN, JIDE JAMES",Director Stock Option (Right to Buy)
+2015-07-21,AMG,Director,BUY,1073.0,217.9,233806.7,"FERGUSON, NIALL",Director Stock Option (Right to Buy)
+2015-07-21,AMG,Director,BUY,1073.0,217.9,233806.7,"PALANDJIAN, TRACY P.",Director Stock Option (Right to Buy)
+2015-07-21,AMG,Director,BUY,1073.0,217.9,233806.7,"CHURCHILL, DWIGHT D.",Director Stock Option (Right to Buy)
+2015-07-21,AMG,Director,BUY,1073.0,217.9,233806.7,"BYRNE, SAMUEL T",Director Stock Option (Right to Buy)
+2015-07-21,AMG,Director,BUY,1073.0,217.9,233806.7,"EARLE, GLENN",Director Stock Option (Right to Buy)
+2015-10-28,AMG,Director,BUY,5625.0,48.38,272137.5,"ZEITLIN, JIDE JAMES",Common Stock
+2016-01-01,AMG,CFO and Treasurer,SELL,3686.0,159.76,588875.36,"HORGEN, JAY C.",Common Stock
+2016-01-01,AMG,"Director, CEO and Chairman",SELL,7447.0,159.76,1189732.72,"HEALEY, SEAN M",Common Stock
+2016-01-01,AMG,Director,SELL,44.0,159.76,7029.44,"EARLE, GLENN",Common Stock
+2016-01-01,AMG,"EVP, General Counsel & Sec.",SELL,233.0,159.76,37224.079999999994,"BILLINGS, DAVID M.",Common Stock
+2016-01-01,AMG,"EVP(AMG Ltd.), Global Distrib.",SELL,1845.0,159.76,294757.2,"DYSON, ANDREW",Common Stock
+2016-01-01,AMG,President and COO,SELL,4234.0,159.76,676423.84,"DALTON, NATHANIEL",Common Stock
+2016-01-21,AMG,Director,BUY,22500.0,86.7,1950750.0,"ZEITLIN, JIDE JAMES",Common Stock
+2016-02-22,AMG,President and COO,BUY,1611.0,62.04,99946.44,"DALTON, NATHANIEL",Common Stock
+2016-03-01,AMG,"EVP(AMG Ltd.), Global Distrib.",SELL,386.0,144.18,55653.48,"DYSON, ANDREW",Common Stock
+2016-03-01,AMG,CFO and Treasurer,SELL,808.0,144.18,116497.44,"HORGEN, JAY C.",Common Stock
+2016-03-01,AMG,"Director, CEO and Chairman",SELL,2282.0,144.18,329018.76,"HEALEY, SEAN M",Common Stock
+2016-03-01,AMG,President and COO,SELL,1345.0,144.18,193922.1,"DALTON, NATHANIEL",Common Stock
+2016-03-10,AMG,"Director, CEO and Chairman",BUY,1589.0,62.91,99963.98999999999,"HEALEY, SEAN M",Common Stock
+2016-03-10,AMG,"Director, CEO and Chairman",BUY,1611.0,62.04,99946.44,"HEALEY, SEAN M",Common Stock
+2016-03-10,AMG,"Director, CEO and Chairman",BUY,1003.0,99.66,99958.98,"HEALEY, SEAN M",Common Stock
+2016-04-19,AMG,Director,SELL,4.0,172.68,690.72,"EARLE, GLENN",Common Stock
+2016-06-30,AMG,"EVP, General Counsel & Sec.",SELL,287.0,140.77,40400.990000000005,"BILLINGS, DAVID M.",Common Stock
+2016-07-20,AMG,Director,BUY,5625.0,102.83,578418.75,"ZEITLIN, JIDE JAMES",Common Stock
+2016-07-20,AMG,Director,BUY,3593.0,62.04,222909.72,"ZEITLIN, JIDE JAMES",Common Stock
+2016-07-20,AMG,Director,BUY,5625.0,86.77,488081.25,"ZEITLIN, JIDE JAMES",Common Stock
+2016-11-18,AMG,President and COO,BUY,75000.0,62.91,4718250.0,"DALTON, NATHANIEL",Common Stock
+2016-11-18,AMG,President and COO,SELL,51020.0,141.57,7222901.399999999,"DALTON, NATHANIEL",Common Stock
+2016-12-06,AMG,"Director, CEO and Chairman",BUY,31072.0,95.82,2977319.0399999996,"HEALEY, SEAN M",Common Stock
+2016-12-06,AMG,"Director, CEO and Chairman",SELL,24428.0,153.6,3752140.8,"HEALEY, SEAN M",Common Stock
+2016-12-12,AMG,Director,BUY,3125.0,71.13,222281.25,"CHURCHILL, DWIGHT D.",Common Stock
+2016-12-12,AMG,Director,SELL,3125.0,160.23,500718.74999999994,"CHURCHILL, DWIGHT D.",Common Stock
+2016-12-14,AMG,"Director, CEO and Chairman",BUY,26432.0,95.82,2532714.2399999998,"HEALEY, SEAN M",Common Stock
+2016-12-14,AMG,"Director, CEO and Chairman",SELL,26432.0,156.95,4148502.4,"HEALEY, SEAN M",Common Stock
+2016-12-15,AMG,"Director, CEO and Chairman",SELL,35568.0,153.27,5451507.36,"HEALEY, SEAN M",Common Stock
+2016-12-15,AMG,"Director, CEO and Chairman",BUY,35568.0,95.82,3408125.76,"HEALEY, SEAN M",Common Stock
+2017-01-01,AMG,"EVP, General Counsel & Sec.",SELL,618.0,145.3,89795.40000000001,"BILLINGS, DAVID M.",Common Stock
+2017-01-01,AMG,Director,SELL,17.0,145.3,2470.1000000000004,"EARLE, GLENN",Common Stock
+2017-01-02,AMG,President and COO,SELL,13214.0,145.3,1919994.2000000002,"DALTON, NATHANIEL",Common Stock
+2017-01-02,AMG,"Director, CEO and Chairman",SELL,22604.0,145.3,3284361.2,"HEALEY, SEAN M",Common Stock
+2017-01-02,AMG,CFO and Treasurer,SELL,9621.0,145.3,1397931.3,"HORGEN, JAY C.",Common Stock
+2017-02-09,AMG,CFO and Treasurer,SELL,45000.0,95.82,4311900.0,"HORGEN, JAY C.",Employee Stock Option (Right to Buy)
+2017-02-09,AMG,CFO and Treasurer,SELL,75000.0,99.66,7474500.0,"HORGEN, JAY C.",Employee Stock Option (Right to Buy)
+2017-02-09,AMG,CFO and Treasurer,SELL,70000.0,163.58,11450600.0,"HORGEN, JAY C.",Common Stock
+2017-02-09,AMG,CFO and Treasurer,SELL,39089.0,163.86,6405123.540000001,"HORGEN, JAY C.",Common Stock
+2017-02-09,AMG,CFO and Treasurer,BUY,45000.0,95.82,4311900.0,"HORGEN, JAY C.",Common Stock
+2017-02-09,AMG,CFO and Treasurer,BUY,75000.0,99.66,7474500.0,"HORGEN, JAY C.",Common Stock
+2017-02-09,AMG,President and COO,SELL,75000.0,95.82,7186499.999999999,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2017-02-09,AMG,President and COO,SELL,57341.0,163.86,9395896.260000002,"DALTON, NATHANIEL",Common Stock
+2017-02-09,AMG,President and COO,BUY,75000.0,95.82,7186499.999999999,"DALTON, NATHANIEL",Common Stock
+2017-04-19,AMG,Director,SELL,4.0,162.77,651.08,"EARLE, GLENN",Common Stock
+2017-05-03,AMG,Director,BUY,820.0,62.91,51586.2,"BYRNE, SAMUEL T",Common Stock
+2017-05-03,AMG,Director,BUY,2080.0,95.82,199305.59999999998,"BYRNE, SAMUEL T",Common Stock
+2017-05-17,AMG,President and COO,SELL,90000.0,99.66,8969400.0,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2017-05-17,AMG,President and COO,SELL,72410.0,151.08,10939702.8,"DALTON, NATHANIEL",Common Stock
+2017-05-17,AMG,President and COO,BUY,90000.0,99.66,8969400.0,"DALTON, NATHANIEL",Common Stock
+2017-05-19,AMG,Director,SELL,5625.0,119.0,669375.0,"RYAN, PATRICK T",Director Stock Option (Right to Buy)
+2017-05-19,AMG,Director,SELL,8902.0,152.89,1361026.7799999998,"RYAN, PATRICK T",Common Stock
+2017-05-19,AMG,Director,BUY,3277.0,62.91,206156.06999999998,"RYAN, PATRICK T",Common Stock
+2017-05-19,AMG,Director,BUY,5625.0,119.0,669375.0,"RYAN, PATRICK T",Common Stock
+2017-05-19,AMG,Director,SELL,3277.0,62.91,206156.06999999998,"RYAN, PATRICK T",Director Stock Option (Right to Buy)
+2017-06-05,AMG,Director,BUY,3277.0,62.91,206156.06999999998,"CHURCHILL, DWIGHT D.",Common Stock
+2017-06-05,AMG,Director,SELL,3277.0,163.3,535134.1000000001,"CHURCHILL, DWIGHT D.",Common Stock
+2017-06-12,AMG,"Director, CEO and Chairman",SELL,33784.0,162.15,5478075.600000001,"HEALEY, SEAN M",Common Stock
+2017-06-12,AMG,"Director, CEO and Chairman",BUY,56928.0,95.82,5454840.96,"HEALEY, SEAN M",Common Stock
+2017-06-13,AMG,"Director, CEO and Chairman",SELL,56928.0,161.07,9169392.959999999,"HEALEY, SEAN M",Common Stock
+2017-06-15,AMG,Director,BUY,5625.0,119.0,669375.0,"ZEITLIN, JIDE JAMES",Common Stock
+2017-06-15,AMG,Director,BUY,3277.0,62.91,206156.06999999998,"ZEITLIN, JIDE JAMES",Common Stock
+2017-06-30,AMG,"EVP, General Counsel & Sec.",SELL,275.0,165.86,45611.50000000001,"BILLINGS, DAVID M.",Common Stock
+2017-11-03,AMG,Director,SELL,2080.0,184.28,383302.4,"CHURCHILL, DWIGHT D.",Common Stock
+2017-11-03,AMG,Director,BUY,2080.0,95.82,199305.59999999998,"CHURCHILL, DWIGHT D.",Common Stock
+2017-11-09,AMG,Director,BUY,2080.0,95.82,199305.59999999998,"RYAN, PATRICK T",Common Stock
+2017-11-09,AMG,Director,SELL,7705.0,185.27,1427505.35,"RYAN, PATRICK T",Common Stock
+2017-11-09,AMG,Director,BUY,5625.0,116.35,654468.75,"RYAN, PATRICK T",Common Stock
+2017-11-16,AMG,"Director, CEO and Chairman",SELL,34337.0,185.49,6369170.13,"HEALEY, SEAN M",Common Stock
+2017-11-16,AMG,"Director, CEO and Chairman",BUY,78966.0,99.66,7869751.56,"HEALEY, SEAN M",Common Stock
+2017-11-17,AMG,"Director, CEO and Chairman",SELL,69800.0,185.48,12946504.0,"HEALEY, SEAN M",Common Stock
+2017-12-05,AMG,Chief Administrative Officer,BUY,10000.0,99.66,996600.0,"MACEWEN, PETER W",Common Stock
+2017-12-05,AMG,Chief Administrative Officer,SELL,10000.0,197.67,1976699.9999999998,"MACEWEN, PETER W",Common Stock
+2017-12-14,AMG,Director,BUY,2080.0,95.82,199305.59999999998,"ZEITLIN, JIDE JAMES",Common Stock
+2017-12-14,AMG,Director,BUY,5625.0,116.35,654468.75,"ZEITLIN, JIDE JAMES",Common Stock
+2018-01-02,AMG,President and COO,SELL,9835.0,205.25,2018633.75,"DALTON, NATHANIEL",Common Stock
+2018-01-02,AMG,Director,SELL,26.0,205.25,5336.5,"EARLE, GLENN",Common Stock
+2018-01-02,AMG,General Counsel and Secretary,SELL,812.0,205.25,166663.0,"BILLINGS, DAVID M.",Common Stock
+2018-01-02,AMG,Chief Administrative Officer,SELL,1547.0,205.25,317521.75,"MACEWEN, PETER W",Common Stock
+2018-01-02,AMG,CFO and Treasurer,SELL,8716.0,205.25,1788959.0,"HORGEN, JAY C.",Common Stock
+2018-01-02,AMG,"Director, CEO and Chairman",SELL,16710.0,205.25,3429727.5,"HEALEY, SEAN M",Common Stock
+2018-03-07,AMG,CFO and Treasurer,SELL,15000.0,189.12,2836800.0,"HORGEN, JAY C.",Common Stock
+2018-03-08,AMG,CFO and Treasurer,SELL,15000.0,190.05,2850750.0,"HORGEN, JAY C.",Common Stock
+2018-04-03,AMG,Director,BUY,1981.0,99.66,197426.46,"BYRNE, SAMUEL T",Common Stock
+2018-04-19,AMG,Director,SELL,4.0,172.58,690.32,"EARLE, GLENN",Common Stock
+2018-05-04,AMG,Director,BUY,5625.0,86.13,484481.25,"RYAN, PATRICK T",Common Stock
+2018-05-04,AMG,Director,BUY,1981.0,99.66,197426.46,"RYAN, PATRICK T",Common Stock
+2018-06-06,AMG,Director,BUY,1981.0,99.66,197426.46,"CHURCHILL, DWIGHT D.",Common Stock
+2018-06-06,AMG,Director,SELL,1981.0,166.28,329400.68,"CHURCHILL, DWIGHT D.",Common Stock
+2018-07-09,AMG,"Director, Executive Chairman",SELL,36635.0,150.9,5528221.5,"HEALEY, SEAN M",Common Stock
+2018-07-09,AMG,"Director, Executive Chairman",BUY,70031.0,99.66,6979289.46,"HEALEY, SEAN M",Common Stock
+2018-07-19,AMG,Director,BUY,1981.0,99.66,197426.46,"ZEITLIN, JIDE JAMES",Common Stock
+2018-07-19,AMG,Director,BUY,5625.0,86.13,484481.25,"ZEITLIN, JIDE JAMES",Common Stock
+2018-08-21,AMG,Director,BUY,2034.0,90.22,183507.48,"BYRNE, SAMUEL T",Common Stock
+2018-10-31,AMG,"EVP, Global Distribution",SELL,1564.0,115.48,180610.72,"CUTLER, HUGH",Common Stock
+2018-10-31,AMG,"EVP, Global Distribution",BUY,700.0,115.48,80836.0,"CUTLER, HUGH",Common Stock
+2018-10-31,AMG,"EVP, Global Distribution",BUY,864.0,115.48,99774.72,"CUTLER, HUGH",Common Stock
+2018-11-16,AMG,Director,SELL,2034.0,112.78,229394.52,"RYAN, PATRICK T",Common Stock
+2018-11-16,AMG,Director,BUY,2034.0,90.22,183507.48,"RYAN, PATRICK T",Common Stock
+2018-11-21,AMG,Director,SELL,2034.0,110.53,224818.02,"CHURCHILL, DWIGHT D.",Common Stock
+2018-11-21,AMG,Director,BUY,2034.0,90.22,183507.48,"CHURCHILL, DWIGHT D.",Common Stock
+2018-12-12,AMG,Director,BUY,2034.0,90.22,183507.48,"ZEITLIN, JIDE JAMES",Common Stock
+2019-01-01,AMG,"EVP, Global Distribution",SELL,1008.0,97.44,98219.52,"CUTLER, HUGH",Common Stock
+2019-01-01,AMG,Director,SELL,9.0,97.44,876.96,"YERBURGH, KAREN",Common Stock
+2019-01-01,AMG,Director,SELL,37.0,97.44,3605.2799999999997,"EARLE, GLENN",Common Stock
+2019-01-01,AMG,General Counsel and Secretary,SELL,784.0,97.44,76392.95999999999,"BILLINGS, DAVID M.",Common Stock
+2019-01-01,AMG,"Director, President and CEO",SELL,8956.0,97.44,872672.64,"DALTON, NATHANIEL",Common Stock
+2019-01-01,AMG,CFO and Treasurer,SELL,6908.0,97.44,673115.52,"HORGEN, JAY C.",Common Stock
+2019-01-01,AMG,"Director, Executive Chairman",SELL,15807.0,97.44,1540234.08,"HEALEY, SEAN M",Common Stock
+2019-01-02,AMG,CFO and Treasurer,SELL,1303.0,98.23,127993.69,"HORGEN, JAY C.",Common Stock
+2019-01-02,AMG,"Director, Executive Chairman",SELL,1032.0,98.23,101373.36,"HEALEY, SEAN M",Common Stock
+2019-01-02,AMG,"Director, President and CEO",SELL,624.0,98.23,61295.520000000004,"DALTON, NATHANIEL",Common Stock
+2019-02-22,AMG,President and CFO,BUY,41131.0,122.4,5034434.4,"HORGEN, JAY C.",Employee Stock Option (Right to Buy)
+2019-02-22,AMG,General Counsel and Secretary,BUY,8098.0,122.4,991195.2000000001,"BILLINGS, DAVID M.",Employee Stock Option (Right to Buy)
+2019-02-22,AMG,"Director, CEO",BUY,53985.0,122.4,6607764.0,"DALTON, NATHANIEL",Employee Stock Option (Right to Buy)
+2019-02-22,AMG,"Director, Executive Chairman",BUY,91902.0,122.4,11248804.8,"HEALEY, SEAN M",Employee Stock Option (Right to Buy)
+2019-03-01,AMG,Director,BUY,1694.0,107.63,182325.22,"PALANDJIAN, TRACY P.",Common Stock
+2019-03-01,AMG,Director,SELL,1694.0,110.64,187424.16,"PALANDJIAN, TRACY P.",Common Stock
+2019-05-10,AMG,President and CFO,BUY,11000.0,93.19,1025090.0,"HORGEN, JAY C.",Common Stock
+2019-05-13,AMG,"EVP, Global Distribution",BUY,1133.0,91.66,103850.78,"CUTLER, HUGH",Common Stock
+2019-05-13,AMG,"EVP, Global Distribution",SELL,1133.0,91.66,103850.78,"CUTLER, HUGH",Common Stock
+2019-06-28,AMG,Director,SELL,54350.0,92.22,5012157.0,"ZEITLIN, JIDE JAMES",Common Stock
+2019-08-30,AMG,Director,SELL,23000.0,76.86,1767780.0,"DALTON, NATHANIEL",Common Stock
+2019-09-12,AMG,Director,BUY,6589.0,88.77,584905.53,"BYRNE, SAMUEL T",Common Stock
+2019-09-13,AMG,Director,BUY,3411.0,65.51,223454.61000000002,"BYRNE, SAMUEL T",Common Stock
+2019-11-21,AMG,Director,SELL,3411.0,84.38,287820.18,"RYAN, PATRICK T",Common Stock
+2019-11-21,AMG,Director,BUY,3411.0,65.51,223454.61000000002,"RYAN, PATRICK T",Common Stock
+2019-12-02,AMG,Director,BUY,3411.0,65.51,223454.61000000002,"ZEITLIN, JIDE JAMES",Common Stock
+2019-12-02,AMG,Director,SELL,2665.0,83.94,223700.1,"ZEITLIN, JIDE JAMES",Common Stock
+2020-01-01,AMG,Chief Financial Officer,SELL,5914.0,84.74,501152.36,"WOJCIK, THOMAS M",Common Stock
+2020-01-01,AMG,Director,SELL,49.0,84.74,4152.259999999999,"EARLE, GLENN",Common Stock
+2020-01-01,AMG,Director,SELL,25.0,84.74,2118.5,"YERBURGH, KAREN",Common Stock
+2020-01-01,AMG,General Counsel and Secretary,SELL,1175.0,84.74,99569.5,"BILLINGS, DAVID M.",Common Stock
+2020-01-01,AMG,"EVP, Global Distribution",SELL,1520.0,84.74,128804.79999999999,"CUTLER, HUGH",Common Stock
+2020-01-01,AMG,"Director, President and CEO",SELL,5860.0,84.74,496576.39999999997,"HORGEN, JAY C.",Common Stock
+2020-01-01,AMG,"Director, Executive Chairman",SELL,11839.0,84.74,1003236.86,"HEALEY, SEAN M",Common Stock
+2020-01-01,AMG,Director,SELL,7853.0,84.74,665463.22,"DALTON, NATHANIEL",Common Stock
+2020-01-02,AMG,"Director, Executive Chairman",SELL,1648.0,83.99,138415.52,"HEALEY, SEAN M",Common Stock
+2020-01-02,AMG,Director,SELL,993.0,83.99,83402.06999999999,"DALTON, NATHANIEL",Common Stock
+2020-01-02,AMG,"Director, President and CEO",SELL,2005.0,83.99,168399.94999999998,"HORGEN, JAY C.",Common Stock
+2020-02-18,AMG,"Director, President and CEO",BUY,10000.0,83.13,831300.0,"HORGEN, JAY C.",Common Stock
+2020-02-20,AMG,Director,BUY,2500.0,87.67,219175.0,"CHURCHILL, DWIGHT D.",Common Stock
+2020-02-24,AMG,Director,BUY,4054.0,85.1,344995.39999999997,"BYRNE, SAMUEL T",Common Stock
+2020-02-25,AMG,Director,BUY,946.0,85.26,80655.96,"BYRNE, SAMUEL T",Common Stock
+2020-03-02,AMG,Chief Financial Officer,BUY,1350.0,75.0,101250.0,"WOJCIK, THOMAS M",Common Stock
+2020-03-03,AMG,"Director, Executive Chairman",SELL,6973.0,73.81,514677.13,"HEALEY, SEAN M",Common Stock
+2020-03-03,AMG,"Director, President and CEO",SELL,3237.0,73.81,238922.97,"HORGEN, JAY C.",Common Stock
+2020-03-03,AMG,"EVP, Global Distribution",BUY,350.0,71.67,25084.5,"CUTLER, HUGH",Common Stock
+2020-03-03,AMG,"EVP, Global Distribution",SELL,1710.0,71.67,122555.7,"CUTLER, HUGH",Common Stock
+2020-03-03,AMG,General Counsel and Secretary,SELL,631.0,73.81,46574.11,"BILLINGS, DAVID M.",Common Stock
+2020-03-03,AMG,"EVP, Global Distribution",BUY,1360.0,71.67,97471.2,"CUTLER, HUGH",Common Stock
+2020-03-03,AMG,Director,SELL,4277.0,73.81,315685.37,"DALTON, NATHANIEL",Common Stock
+2020-03-12,AMG,"Director, President and CEO",BUY,10000.0,53.12,531200.0,"HORGEN, JAY C.",Common Stock
+2020-03-13,AMG,Director,BUY,1000.0,54.51,54510.0,"CHURCHILL, DWIGHT D.",Common Stock
+2020-05-01,AMG,Director,BUY,10000.0,65.21,652099.9999999999,"JEFFERY, REUBEN III",Common Stock
+2020-05-13,AMG,"Director, President and CEO",BUY,10000.0,59.26,592600.0,"HORGEN, JAY C.",Common Stock
+2020-06-10,AMG,Director,BUY,1000.0,77.94,77940.0,"CHURCHILL, DWIGHT D.",Common Stock
+2020-09-01,AMG,"Director, President and CEO",BUY,5000.0,67.9,339500.0,"HORGEN, JAY C.",Common Stock
+2020-09-03,AMG,Director,BUY,1000.0,71.99,71990.0,"CHURCHILL, DWIGHT D.",Common Stock
+2020-09-04,AMG,Director,BUY,5000.0,70.16,350800.0,"JEFFERY, REUBEN III",Common Stock
+2020-09-09,AMG,Director,BUY,1469.0,68.46,100567.73999999999,"ATKINSON, TRACY A",Common Stock
+2020-09-15,AMG,Director,BUY,1000.0,65.25,65250.0,"CHURCHILL, DWIGHT D.",Common Stock
+2021-01-01,AMG,Director,SELL,43.0,101.7,4373.1,"EARLE, GLENN",Common Stock
+2021-01-01,AMG,"Director, President and CEO",SELL,8286.0,101.7,842686.2000000001,"HORGEN, JAY C.",Common Stock
+2021-01-01,AMG,General Counsel and Secretary,SELL,973.0,101.7,98954.1,"BILLINGS, DAVID M.",Common Stock
+2021-01-01,AMG,Chief Financial Officer,SELL,6785.0,101.7,690034.5,"WOJCIK, THOMAS M",Common Stock
+2021-01-01,AMG,Director,SELL,34.0,101.7,3457.8,"YERBURGH, KAREN",Common Stock
+2021-02-09,AMG,"Director, President and CEO",BUY,4000.0,136.23,544920.0,"HORGEN, JAY C.",Common Stock
+2021-02-10,AMG,Director,BUY,2500.0,145.53,363825.0,"JEFFERY, REUBEN III",Common Stock
+2021-03-05,AMG,General Counsel and Secretary,SELL,1278.0,139.31,178038.18,"BILLINGS, DAVID M.",Common Stock
+2021-03-05,AMG,"Director, President and CEO",SELL,7778.0,139.31,1083553.18,"HORGEN, JAY C.",Common Stock
+2021-04-15,AMG,"Director, President and CEO",BUY,41131.0,122.4,5034434.4,"HORGEN, JAY C.",Common Stock
+2021-04-15,AMG,"Director, President and CEO",SELL,35564.0,157.81,5612354.84,"HORGEN, JAY C.",Common Stock
+2021-05-04,AMG,Director,BUY,2500.0,160.49,401225.0,"JEFFERY, REUBEN III",Common Stock
+2021-08-02,AMG,Director,BUY,1000.0,160.89,160890.0,"CHURCHILL, DWIGHT D.",Common Stock
+2021-08-13,AMG,Director,SELL,3408.0,169.2,576633.6,"CHURCHILL, DWIGHT D.",Common Stock
+2021-08-15,AMG,Director,SELL,29.0,169.2,4906.799999999999,"ALVINGHAM, KAREN L.",Common Stock
+2021-08-15,AMG,"Director, President and CEO",SELL,19318.0,169.2,3268605.5999999996,"HORGEN, JAY C.",Common Stock
+2021-08-15,AMG,Chief Financial Officer,SELL,2616.0,169.2,442627.19999999995,"WOJCIK, THOMAS M",Common Stock
+2021-09-14,AMG,"Director, President and CEO",BUY,2000.0,158.01,316020.0,"HORGEN, JAY C.",Common Stock
+2021-11-02,AMG,Director,BUY,1543.0,122.4,188863.2,"PALANDJIAN, TRACY P.",Common Stock
+2021-11-02,AMG,Director,BUY,2700.0,188.39,508652.99999999994,"JEFFERY, REUBEN III",Common Stock
+2021-11-02,AMG,Director,SELL,1004.0,188.15,188902.6,"PALANDJIAN, TRACY P.",Common Stock
+2021-11-04,AMG,Head of Affiliate Investments,SELL,15708.0,185.87,2919645.96,"JAMAL, RIZWAN M",Common Stock
+2021-11-04,AMG,Head of Affiliate Investments,BUY,19537.0,122.4,2391328.8000000003,"JAMAL, RIZWAN M",Common Stock
+2021-12-03,AMG,Head of Affiliate Investments,BUY,3000.0,171.47,514410.0,"JAMAL, RIZWAN M",Common Stock
+2021-12-03,AMG,Head of Affiliate Engagement,BUY,3000.0,169.95,509849.99999999994,"ERICKSON, JOHN R",Common Stock
+2022-01-01,AMG,Head of Affiliate Engagement,SELL,2008.0,164.51,330336.07999999996,"ERICKSON, JOHN R",Common Stock
+2022-01-01,AMG,General Counsel and Secretary,SELL,610.0,164.51,100351.09999999999,"BILLINGS, DAVID M.",Common Stock
+2022-01-01,AMG,Head of Affiliate Investments,SELL,2417.0,164.51,397620.67,"JAMAL, RIZWAN M",Common Stock
+2022-01-01,AMG,Director,SELL,34.0,164.51,5593.34,"ALVINGHAM, KAREN L.",Common Stock
+2022-01-01,AMG,Chief Financial Officer,SELL,7055.0,164.51,1160618.05,"WOJCIK, THOMAS M",Common Stock
+2022-01-01,AMG,"Director, President and CEO",SELL,4358.0,164.51,716934.58,"HORGEN, JAY C.",Common Stock
+2022-02-15,AMG,Director,BUY,3500.0,143.96,503860.0,"JEFFERY, REUBEN III",Common Stock
+2022-02-22,AMG,Director,BUY,3700.0,137.67,509378.99999999994,"PALANDJIAN, TRACY P.",Common Stock
+2022-03-05,AMG,Director,SELL,17.0,129.17,2195.89,"ALVINGHAM, KAREN L.",Common Stock
+2022-03-05,AMG,Chief Financial Officer,SELL,761.0,129.17,98298.37,"WOJCIK, THOMAS M",Common Stock
+2022-03-05,AMG,Head of Affiliate Engagement,SELL,4689.0,129.17,605678.1299999999,"ERICKSON, JOHN R",Common Stock
+2022-03-05,AMG,"Director, President and CEO",SELL,14419.0,129.17,1862502.2299999997,"HORGEN, JAY C.",Common Stock
+2022-03-05,AMG,General Counsel and Secretary,SELL,2683.0,129.17,346563.11,"BILLINGS, DAVID M.",Common Stock
+2022-03-05,AMG,Head of Affiliate Investments,SELL,5605.0,129.17,723997.85,"JAMAL, RIZWAN M",Common Stock
+2022-08-15,AMG,"Director, President and CEO",SELL,19215.0,139.84,2687025.6,"HORGEN, JAY C.",Common Stock
+2022-08-15,AMG,Head of Affiliate Engagement,SELL,4888.0,139.84,683537.92,"ERICKSON, JOHN R",Common Stock
+2022-08-15,AMG,Head of Affiliate Investments,SELL,5571.0,139.84,779048.64,"JAMAL, RIZWAN M",Common Stock
+2022-08-15,AMG,Chief Financial Officer,SELL,2513.0,139.84,351417.92,"WOJCIK, THOMAS M",Common Stock
+2022-08-15,AMG,Director,SELL,43.0,139.84,6013.12,"ALVINGHAM, KAREN L.",Common Stock
+2022-11-15,AMG,General Counsel and Secretary,BUY,8098.0,122.4,991195.2000000001,"BILLINGS, DAVID M.",Common Stock
+2022-11-15,AMG,General Counsel and Secretary,SELL,6987.0,156.13,1090880.31,"BILLINGS, DAVID M.",Common Stock
+2023-01-01,AMG,Director,SELL,25.0,158.43,3960.75,"ALVINGHAM, KAREN L.",Common Stock
+2023-01-01,AMG,Head of Affiliate Investments,SELL,2109.0,158.43,334128.87,"JAMAL, RIZWAN M",Common Stock
+2023-01-01,AMG,Head of Affiliate Engagement,SELL,1871.0,158.43,296422.53,"ERICKSON, JOHN R",Common Stock
+2023-01-01,AMG,Chief Financial Officer,SELL,1389.0,158.43,220059.27000000002,"WOJCIK, THOMAS M",Common Stock
+2023-01-01,AMG,"Director, President and CEO",SELL,3642.0,158.43,577002.06,"HORGEN, JAY C.",Common Stock
+2023-03-05,AMG,"Director, President and CEO",SELL,27887.0,160.76,4483114.12,"HORGEN, JAY C.",Common Stock
+2023-03-05,AMG,Head of Affiliate Investments,SELL,13835.0,160.76,2224114.6,"JAMAL, RIZWAN M",Common Stock
+2023-03-05,AMG,Chief Financial Officer,SELL,15919.0,160.76,2559138.44,"WOJCIK, THOMAS M",Common Stock
+2023-03-05,AMG,Director,SELL,30.0,160.76,4822.799999999999,"ALVINGHAM, KAREN L.",Common Stock
+2023-03-05,AMG,Head of Affiliate Engagement,SELL,10743.0,160.76,1727044.68,"ERICKSON, JOHN R",Common Stock
+2023-03-16,AMG,Director,BUY,3650.0,137.21,500816.5,"JEFFERY, REUBEN III",Common Stock
+2023-06-29,AMG,Director,SELL,1268.0,150.38,190681.84,"PALANDJIAN, TRACY P.",Common Stock
+2023-06-29,AMG,Director,BUY,1352.0,141.03,190672.56,"PALANDJIAN, TRACY P.",Common Stock
+2023-08-15,AMG,Head of Affiliate Investments,SELL,6064.0,133.04,806754.5599999999,"JAMAL, RIZWAN M",Common Stock
+2023-08-15,AMG,Head of Affiliate Engagement,SELL,5145.0,133.04,684490.7999999999,"ERICKSON, JOHN R",Common Stock
+2023-08-15,AMG,Director,SELL,58.0,133.04,7716.32,"ALVINGHAM, KAREN L.",Common Stock
+2023-08-15,AMG,"Director, President and CEO",SELL,19535.0,133.04,2598936.4,"HORGEN, JAY C.",Common Stock
+2023-08-15,AMG,Chief Financial Officer,SELL,2537.0,133.04,337522.48,"WOJCIK, THOMAS M",Common Stock
+2024-01-01,AMG,Chief Financial Officer,SELL,1399.0,151.42,211836.58,"WOJCIK, THOMAS M",Common Stock
+2024-01-01,AMG,Head of Affiliate Investments,SELL,1055.0,151.42,159748.09999999998,"JAMAL, RIZWAN M",Common Stock
+2024-01-01,AMG,"Director, President and CEO",SELL,2365.0,151.42,358108.3,"HORGEN, JAY C.",Common Stock
+2024-01-01,AMG,Director,SELL,9.0,151.42,1362.78,"ALVINGHAM, KAREN L.",Common Stock
+2024-03-05,AMG,Head of Affiliate Investments,SELL,9650.0,158.58,1530297.0000000002,"JAMAL, RIZWAN M",Common Stock
+2024-03-05,AMG,"Director, President and CEO",SELL,14281.0,158.58,2264680.98,"HORGEN, JAY C.",Common Stock
+2024-03-05,AMG,Director,SELL,41.0,158.58,6501.780000000001,"ALVINGHAM, KAREN L.",Common Stock
+2024-03-05,AMG,Chief Financial Officer,SELL,9778.0,158.58,1550595.2400000002,"WOJCIK, THOMAS M",Common Stock
+2024-03-28,AMG,Director,SELL,4702.0,167.47,787443.94,"CHURCHILL, DWIGHT D.",Common Stock
+2024-03-28,AMG,Director,BUY,1679.0,69.63,116908.76999999999,"CHURCHILL, DWIGHT D.",Common Stock
+2024-03-28,AMG,Director,BUY,2958.0,82.07,242763.05999999997,"CHURCHILL, DWIGHT D.",Common Stock
+2024-03-28,AMG,Director,BUY,2661.0,86.78,230921.58000000002,"CHURCHILL, DWIGHT D.",Common Stock
+2024-03-28,AMG,Director,BUY,1787.0,110.02,196605.74,"CHURCHILL, DWIGHT D.",Common Stock
+2024-07-31,AMG,Director,SELL,608.0,185.62,112856.96,"PALANDJIAN, TRACY P.",Common Stock
+2024-07-31,AMG,Director,BUY,1300.0,86.78,112814.0,"PALANDJIAN, TRACY P.",Common Stock
+2024-07-31,AMG,Director,SELL,5787.0,185.62,1074182.94,"ALVINGHAM, KAREN L.",Common Stock
+2024-07-31,AMG,Director,BUY,2661.0,86.78,230921.58000000002,"ALVINGHAM, KAREN L.",Common Stock
+2024-07-31,AMG,Director,BUY,2958.0,82.07,242763.05999999997,"ALVINGHAM, KAREN L.",Common Stock
+2024-07-31,AMG,Director,BUY,1787.0,110.02,196605.74,"ALVINGHAM, KAREN L.",Common Stock
+2024-07-31,AMG,Director,BUY,1353.0,160.01,216493.53,"ALVINGHAM, KAREN L.",Common Stock
+2024-07-31,AMG,Director,BUY,1679.0,69.63,116908.76999999999,"ALVINGHAM, KAREN L.",Common Stock
+2024-08-15,AMG,Director,SELL,72.0,171.98,12382.56,"ALVINGHAM, KAREN L.",Common Stock
+2024-08-16,AMG,Chief Operating Officer,SELL,92364.0,172.25,15909699.0,"WOJCIK, THOMAS M",Common Stock
+2024-08-16,AMG,Head of Affiliate Investments,SELL,8622.0,172.89,1490657.5799999998,"JAMAL, RIZWAN M",Common Stock
+2024-08-16,AMG,Chief Operating Officer,SELL,4786.0,172.71,826590.06,"WOJCIK, THOMAS M",Common Stock
+2024-08-16,AMG,Head of Affiliate Investments,BUY,428807.0,74.49,31941833.429999996,"JAMAL, RIZWAN M",Common Stock
+2024-08-16,AMG,Head of Affiliate Investments,SELL,303224.0,172.25,52230334.0,"JAMAL, RIZWAN M",Common Stock
+2024-08-16,AMG,Chief Operating Officer,BUY,127500.0,74.49,9497475.0,"WOJCIK, THOMAS M",Common Stock
+2024-08-19,AMG,"Director, President and CEO",SELL,132728.0,172.0,22829216.0,"HORGEN, JAY C.",Common Stock
+2024-08-19,AMG,"Director, President and CEO",SELL,9000.0,171.98,1547820.0,"HORGEN, JAY C.",Common Stock
+2024-08-19,AMG,"Director, President and CEO",BUY,200000.0,74.49,14897999.999999998,"HORGEN, JAY C.",Common Stock
+2024-08-20,AMG,"Director, President and CEO",SELL,9300.0,169.93,1580349.0,"HORGEN, JAY C.",Common Stock
+2024-10-02,AMG,"Director, President and CEO",SELL,65230.0,180.25,11757707.5,"HORGEN, JAY C.",Common Stock
+2024-10-02,AMG,"Director, President and CEO",BUY,100000.0,74.49,7448999.999999999,"HORGEN, JAY C.",Common Stock
+2024-10-04,AMG,Chief Operating Officer,BUY,75000.0,74.49,5586750.0,"WOJCIK, THOMAS M",Common Stock
+2024-10-04,AMG,Chief Operating Officer,SELL,53599.0,181.18,9711066.82,"WOJCIK, THOMAS M",Common Stock
+2025-03-05,AMG,Chief Operating Officer,SELL,14220.0,165.72,2356538.4,"WOJCIK, THOMAS M",Common Stock
+2025-03-05,AMG,General Counsel & Corp. Sec.,SELL,2630.0,165.72,435843.6,"PADIYAR, KAVITA",Common Stock
+2025-03-05,AMG,"Director, President and CEO",SELL,26570.0,165.72,4403180.4,"HORGEN, JAY C.",Common Stock
+2025-03-05,AMG,Director,SELL,90.0,165.72,14914.8,"ALVINGHAM, KAREN L.",Common Stock
+2025-05-09,AMG,General Counsel & Corp. Sec.,BUY,25000.0,73.81,1845250.0,"PADIYAR, KAVITA",Common Stock
+2025-05-09,AMG,General Counsel & Corp. Sec.,SELL,17407.0,179.17,3118812.19,"PADIYAR, KAVITA",Common Stock
+2025-05-12,AMG,Director,SELL,2891.0,183.83,531452.53,"PALANDJIAN, TRACY P.",Common Stock
+2025-05-12,AMG,Director,SELL,1178.0,183.83,216551.74000000002,"CHURCHILL, DWIGHT D.",Common Stock
+2025-05-12,AMG,Director,BUY,1361.0,86.78,118107.58,"PALANDJIAN, TRACY P.",Common Stock
+2025-05-12,AMG,Director,BUY,1787.0,110.02,196605.74,"PALANDJIAN, TRACY P.",Common Stock
+2025-05-12,AMG,Director,BUY,1353.0,160.01,216493.53,"PALANDJIAN, TRACY P.",Common Stock
+2025-05-12,AMG,Director,BUY,1353.0,160.01,216493.53,"CHURCHILL, DWIGHT D.",Common Stock
+2025-07-01,AMG,"Director, Chief Executive Officer",SELL,47191.0,198.72,9377795.52,"HORGEN, JAY C.",Common Stock
+2025-07-01,AMG,"Director, Chief Executive Officer",BUY,75000.0,74.49,5586750.0,"HORGEN, JAY C.",Common Stock
+2025-08-12,AMG,"Director, Chief Executive Officer",SELL,45607.0,219.7,10019857.9,"HORGEN, JAY C.",Common Stock
+2025-08-12,AMG,"Director, Chief Executive Officer",BUY,75000.0,74.49,5586750.0,"HORGEN, JAY C.",Common Stock
+2025-08-15,AMG,Director,SELL,84.0,218.7,18370.8,"ALVINGHAM, KAREN L.",Common Stock
+2025-09-02,AMG,General Counsel & Corp. Sec.,SELL,30991.0,229.97,7127000.27,"PADIYAR, KAVITA",Common Stock
+2025-09-02,AMG,"Director, Chief Executive Officer",SELL,44935.0,229.97,10333701.95,"HORGEN, JAY C.",Common Stock
+2025-09-02,AMG,"Director, Chief Executive Officer",BUY,75000.0,74.49,5586750.0,"HORGEN, JAY C.",Common Stock
+2025-09-02,AMG,General Counsel & Corp. Sec.,BUY,47731.0,73.81,3523025.1100000003,"PADIYAR, KAVITA",Common Stock
+2025-09-08,AMG,President and COO,SELL,114008.0,231.19,26357509.52,"WOJCIK, THOMAS M",Common Stock
+2025-09-08,AMG,President and COO,BUY,169303.0,74.49,12611380.469999999,"WOJCIK, THOMAS M",Common Stock
+2025-09-09,AMG,President and COO,SELL,16000.0,231.03,3696480.0,"WOJCIK, THOMAS M",Common Stock
+2025-11-07,AMG,Director,SELL,182.0,259.26,47185.32,"ALVINGHAM, KAREN L.",Common Stock
+2025-11-07,AMG,Director,BUY,560.0,69.63,38992.799999999996,"ALVINGHAM, KAREN L.",Common Stock

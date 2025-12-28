@@ -1,0 +1,1080 @@
+ERRORS LOG
+==================================================
+
+[ERROR] 2025-12-28 09:39:41.961181 | Collection Error | Symbol: ADSK
+  Message: Unknown datetime string format, unable to parse: <value
+>2003-12-01, at position 0
+  Stack trace:
+Traceback (most recent call last):
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\data_collection_gui.py", line 1375, in collect_data
+    validation_report = validator.validate_insider_data(df, ticker)
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 234, in validate_insider_data
+    results.extend(self._check_future_dates(df))
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 982, in _check_future_dates
+    dates = pd.to_datetime(df[date_col])
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 1063, in to_datetime
+    cache_array = _maybe_cache(arg, format, cache, convert_listlike)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 247, in _maybe_cache
+    cache_dates = convert_listlike(unique_dates, format)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 435, in _convert_listlike_datetimes
+    result, tz_parsed = objects_to_datetime64(
+                        ~~~~~~~~~~~~~~~~~~~~~^
+        arg,
+        ^^^^
+    ...<4 lines>...
+        allow_object=True,
+        ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\arrays\datetimes.py", line 2398, in objects_to_datetime64
+    result, tz_parsed = tslib.array_to_datetime(
+                        ~~~~~~~~~~~~~~~~~~~~~~~^
+        data,
+        ^^^^^
+    ...<4 lines>...
+        creso=abbrev_to_npy_unit(out_unit),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "tslib.pyx", line 414, in pandas._libs.tslib.array_to_datetime
+  File "tslib.pyx", line 596, in pandas._libs.tslib.array_to_datetime
+  File "tslib.pyx", line 553, in pandas._libs.tslib.array_to_datetime
+  File "conversion.pyx", line 641, in pandas._libs.tslibs.conversion.convert_str_to_tsobject
+  File "parsing.pyx", line 336, in pandas._libs.tslibs.parsing.parse_datetime_string
+  File "parsing.pyx", line 666, in pandas._libs.tslibs.parsing.dateutil_parse
+pandas._libs.tslibs.parsing.DateParseError: Unknown datetime string format, unable to parse: <value
+>2003-12-01, at position 0
+
+
+[ERROR] 2025-12-28 09:39:43.953199 | Collection Error | Symbol: AES
+  Message: unconverted data remains when parsing with format "%Y-%m-%d": "
+1", at position 312. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+  Stack trace:
+Traceback (most recent call last):
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\data_collection_gui.py", line 1375, in collect_data
+    validation_report = validator.validate_insider_data(df, ticker)
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 234, in validate_insider_data
+    results.extend(self._check_future_dates(df))
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 982, in _check_future_dates
+    dates = pd.to_datetime(df[date_col])
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 1063, in to_datetime
+    cache_array = _maybe_cache(arg, format, cache, convert_listlike)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 247, in _maybe_cache
+    cache_dates = convert_listlike(unique_dates, format)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 433, in _convert_listlike_datetimes
+    return _array_strptime_with_fallback(arg, name, utc, format, exact, errors)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 467, in _array_strptime_with_fallback
+    result, tz_out = array_strptime(arg, fmt, exact=exact, errors=errors, utc=utc)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "strptime.pyx", line 501, in pandas._libs.tslibs.strptime.array_strptime
+  File "strptime.pyx", line 451, in pandas._libs.tslibs.strptime.array_strptime
+  File "strptime.pyx", line 587, in pandas._libs.tslibs.strptime._parse_with_format
+ValueError: unconverted data remains when parsing with format "%Y-%m-%d": "
+1", at position 312. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+
+
+[ERROR] 2025-12-28 09:39:50.771307 | Collection Error | Symbol: AMD
+  Message: unconverted data remains when parsing with format "%Y-%m-%d": "</va
+lue></transactionDate><transactionCoding><transactionFormType>4</transactionFormType><transactionCode>M</transactionCode><equitySwapInvolved>0</equitySwapInvolved></transactionCoding><transactionAmounts><transactionShares>2950", at position 678. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+  Stack trace:
+Traceback (most recent call last):
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\data_collection_gui.py", line 1375, in collect_data
+    validation_report = validator.validate_insider_data(df, ticker)
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 234, in validate_insider_data
+    results.extend(self._check_future_dates(df))
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 982, in _check_future_dates
+    dates = pd.to_datetime(df[date_col])
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 1063, in to_datetime
+    cache_array = _maybe_cache(arg, format, cache, convert_listlike)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 247, in _maybe_cache
+    cache_dates = convert_listlike(unique_dates, format)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 433, in _convert_listlike_datetimes
+    return _array_strptime_with_fallback(arg, name, utc, format, exact, errors)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 467, in _array_strptime_with_fallback
+    result, tz_out = array_strptime(arg, fmt, exact=exact, errors=errors, utc=utc)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "strptime.pyx", line 501, in pandas._libs.tslibs.strptime.array_strptime
+  File "strptime.pyx", line 451, in pandas._libs.tslibs.strptime.array_strptime
+  File "strptime.pyx", line 587, in pandas._libs.tslibs.strptime._parse_with_format
+ValueError: unconverted data remains when parsing with format "%Y-%m-%d": "</va
+lue></transactionDate><transactionCoding><transactionFormType>4</transactionFormType><transactionCode>M</transactionCode><equitySwapInvolved>0</equitySwapInvolved></transactionCoding><transactionAmounts><transactionShares>2950", at position 678. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+
+
+[ERROR] 2025-12-28 09:39:51.273859 | Collection Error | Symbol: AME
+  Message: Unknown datetime string format, unable to parse: <v
+alue>2003-11-06, at position 0
+  Stack trace:
+Traceback (most recent call last):
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\data_collection_gui.py", line 1375, in collect_data
+    validation_report = validator.validate_insider_data(df, ticker)
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 234, in validate_insider_data
+    results.extend(self._check_future_dates(df))
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 982, in _check_future_dates
+    dates = pd.to_datetime(df[date_col])
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 1063, in to_datetime
+    cache_array = _maybe_cache(arg, format, cache, convert_listlike)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 247, in _maybe_cache
+    cache_dates = convert_listlike(unique_dates, format)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 435, in _convert_listlike_datetimes
+    result, tz_parsed = objects_to_datetime64(
+                        ~~~~~~~~~~~~~~~~~~~~~^
+        arg,
+        ^^^^
+    ...<4 lines>...
+        allow_object=True,
+        ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\arrays\datetimes.py", line 2398, in objects_to_datetime64
+    result, tz_parsed = tslib.array_to_datetime(
+                        ~~~~~~~~~~~~~~~~~~~~~~~^
+        data,
+        ^^^^^
+    ...<4 lines>...
+        creso=abbrev_to_npy_unit(out_unit),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "tslib.pyx", line 414, in pandas._libs.tslib.array_to_datetime
+  File "tslib.pyx", line 596, in pandas._libs.tslib.array_to_datetime
+  File "tslib.pyx", line 553, in pandas._libs.tslib.array_to_datetime
+  File "conversion.pyx", line 641, in pandas._libs.tslibs.conversion.convert_str_to_tsobject
+  File "parsing.pyx", line 336, in pandas._libs.tslibs.parsing.parse_datetime_string
+  File "parsing.pyx", line 666, in pandas._libs.tslibs.parsing.dateutil_parse
+pandas._libs.tslibs.parsing.DateParseError: Unknown datetime string format, unable to parse: <v
+alue>2003-11-06, at position 0
+
+
+[ERROR] 2025-12-28 09:39:54.433243 | Collection Error | Symbol: AMPG
+  Message: unconverted data remains when parsing with format "%Y-%m-%d": "-05:00", at position 19. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+  Stack trace:
+Traceback (most recent call last):
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\data_collection_gui.py", line 1375, in collect_data
+    validation_report = validator.validate_insider_data(df, ticker)
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 234, in validate_insider_data
+    results.extend(self._check_future_dates(df))
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 982, in _check_future_dates
+    dates = pd.to_datetime(df[date_col])
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 1067, in to_datetime
+    values = convert_listlike(arg._values, format)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 433, in _convert_listlike_datetimes
+    return _array_strptime_with_fallback(arg, name, utc, format, exact, errors)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 467, in _array_strptime_with_fallback
+    result, tz_out = array_strptime(arg, fmt, exact=exact, errors=errors, utc=utc)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "strptime.pyx", line 501, in pandas._libs.tslibs.strptime.array_strptime
+  File "strptime.pyx", line 451, in pandas._libs.tslibs.strptime.array_strptime
+  File "strptime.pyx", line 587, in pandas._libs.tslibs.strptime._parse_with_format
+ValueError: unconverted data remains when parsing with format "%Y-%m-%d": "-05:00", at position 19. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+
+
+[ERROR] 2025-12-28 09:39:55.216546 | Collection Error | Symbol: AMT
+  Message: time data "2003-
+12-04" doesn't match format "%Y-%m-%d", at position 480. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+  Stack trace:
+Traceback (most recent call last):
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\data_collection_gui.py", line 1375, in collect_data
+    validation_report = validator.validate_insider_data(df, ticker)
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 234, in validate_insider_data
+    results.extend(self._check_future_dates(df))
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 982, in _check_future_dates
+    dates = pd.to_datetime(df[date_col])
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 1063, in to_datetime
+    cache_array = _maybe_cache(arg, format, cache, convert_listlike)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 247, in _maybe_cache
+    cache_dates = convert_listlike(unique_dates, format)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 433, in _convert_listlike_datetimes
+    return _array_strptime_with_fallback(arg, name, utc, format, exact, errors)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 467, in _array_strptime_with_fallback
+    result, tz_out = array_strptime(arg, fmt, exact=exact, errors=errors, utc=utc)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "strptime.pyx", line 501, in pandas._libs.tslibs.strptime.array_strptime
+  File "strptime.pyx", line 451, in pandas._libs.tslibs.strptime.array_strptime
+  File "strptime.pyx", line 583, in pandas._libs.tslibs.strptime._parse_with_format
+ValueError: time data "2003-
+12-04" doesn't match format "%Y-%m-%d", at position 480. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+
+
+[ERROR] 2025-12-28 09:40:02.045496 | Collection Error | Symbol: ARMK
+  Message: unconverted data remains when parsing with format "%Y-%m-%d": "-05:00", at position 172. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+  Stack trace:
+Traceback (most recent call last):
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\data_collection_gui.py", line 1375, in collect_data
+    validation_report = validator.validate_insider_data(df, ticker)
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 234, in validate_insider_data
+    results.extend(self._check_future_dates(df))
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 982, in _check_future_dates
+    dates = pd.to_datetime(df[date_col])
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 1063, in to_datetime
+    cache_array = _maybe_cache(arg, format, cache, convert_listlike)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 247, in _maybe_cache
+    cache_dates = convert_listlike(unique_dates, format)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 433, in _convert_listlike_datetimes
+    return _array_strptime_with_fallback(arg, name, utc, format, exact, errors)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 467, in _array_strptime_with_fallback
+    result, tz_out = array_strptime(arg, fmt, exact=exact, errors=errors, utc=utc)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "strptime.pyx", line 501, in pandas._libs.tslibs.strptime.array_strptime
+  File "strptime.pyx", line 451, in pandas._libs.tslibs.strptime.array_strptime
+  File "strptime.pyx", line 587, in pandas._libs.tslibs.strptime._parse_with_format
+ValueError: unconverted data remains when parsing with format "%Y-%m-%d": "-05:00", at position 172. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+
+
+[ERROR] 2025-12-28 09:40:05.959820 | Collection Error | Symbol: AXON
+  Message: time data "2003-12-0
+8" doesn't match format "%Y-%m-%d", at position 481. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+  Stack trace:
+Traceback (most recent call last):
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\data_collection_gui.py", line 1375, in collect_data
+    validation_report = validator.validate_insider_data(df, ticker)
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 234, in validate_insider_data
+    results.extend(self._check_future_dates(df))
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 982, in _check_future_dates
+    dates = pd.to_datetime(df[date_col])
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 1063, in to_datetime
+    cache_array = _maybe_cache(arg, format, cache, convert_listlike)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 247, in _maybe_cache
+    cache_dates = convert_listlike(unique_dates, format)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 433, in _convert_listlike_datetimes
+    return _array_strptime_with_fallback(arg, name, utc, format, exact, errors)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 467, in _array_strptime_with_fallback
+    result, tz_out = array_strptime(arg, fmt, exact=exact, errors=errors, utc=utc)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "strptime.pyx", line 501, in pandas._libs.tslibs.strptime.array_strptime
+  File "strptime.pyx", line 451, in pandas._libs.tslibs.strptime.array_strptime
+  File "strptime.pyx", line 583, in pandas._libs.tslibs.strptime._parse_with_format
+ValueError: time data "2003-12-0
+8" doesn't match format "%Y-%m-%d", at position 481. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+
+
+[ERROR] 2025-12-28 09:40:45.816944 | Collection Error | Symbol: CGNX
+  Message: time data "2003-12
+- -03" doesn't match format "%Y-%m-%d", at position 243. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+  Stack trace:
+Traceback (most recent call last):
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\data_collection_gui.py", line 1375, in collect_data
+    validation_report = validator.validate_insider_data(df, ticker)
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 234, in validate_insider_data
+    results.extend(self._check_future_dates(df))
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 982, in _check_future_dates
+    dates = pd.to_datetime(df[date_col])
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 1063, in to_datetime
+    cache_array = _maybe_cache(arg, format, cache, convert_listlike)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 247, in _maybe_cache
+    cache_dates = convert_listlike(unique_dates, format)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 433, in _convert_listlike_datetimes
+    return _array_strptime_with_fallback(arg, name, utc, format, exact, errors)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 467, in _array_strptime_with_fallback
+    result, tz_out = array_strptime(arg, fmt, exact=exact, errors=errors, utc=utc)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "strptime.pyx", line 501, in pandas._libs.tslibs.strptime.array_strptime
+  File "strptime.pyx", line 451, in pandas._libs.tslibs.strptime.array_strptime
+  File "strptime.pyx", line 583, in pandas._libs.tslibs.strptime._parse_with_format
+ValueError: time data "2003-12
+- -03" doesn't match format "%Y-%m-%d", at position 243. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+
+
+[ERROR] 2025-12-28 09:41:16.661750 | Collection Error | Symbol: DG
+  Message: unconverted data remains when parsing with format "%Y-%m-%d": "-05:00", at position 159. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+  Stack trace:
+Traceback (most recent call last):
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\data_collection_gui.py", line 1375, in collect_data
+    validation_report = validator.validate_insider_data(df, ticker)
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 234, in validate_insider_data
+    results.extend(self._check_future_dates(df))
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 982, in _check_future_dates
+    dates = pd.to_datetime(df[date_col])
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 1063, in to_datetime
+    cache_array = _maybe_cache(arg, format, cache, convert_listlike)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 247, in _maybe_cache
+    cache_dates = convert_listlike(unique_dates, format)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 433, in _convert_listlike_datetimes
+    return _array_strptime_with_fallback(arg, name, utc, format, exact, errors)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 467, in _array_strptime_with_fallback
+    result, tz_out = array_strptime(arg, fmt, exact=exact, errors=errors, utc=utc)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "strptime.pyx", line 501, in pandas._libs.tslibs.strptime.array_strptime
+  File "strptime.pyx", line 451, in pandas._libs.tslibs.strptime.array_strptime
+  File "strptime.pyx", line 587, in pandas._libs.tslibs.strptime._parse_with_format
+ValueError: unconverted data remains when parsing with format "%Y-%m-%d": "-05:00", at position 159. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+
+
+[ERROR] 2025-12-28 09:41:52.889456 | Collection Error | Symbol: FIS
+  Message: Unknown datetime string format, unable to parse: <valu
+e>2003-11-03, at position 0
+  Stack trace:
+Traceback (most recent call last):
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\data_collection_gui.py", line 1375, in collect_data
+    validation_report = validator.validate_insider_data(df, ticker)
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 234, in validate_insider_data
+    results.extend(self._check_future_dates(df))
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 982, in _check_future_dates
+    dates = pd.to_datetime(df[date_col])
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 1063, in to_datetime
+    cache_array = _maybe_cache(arg, format, cache, convert_listlike)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 247, in _maybe_cache
+    cache_dates = convert_listlike(unique_dates, format)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 435, in _convert_listlike_datetimes
+    result, tz_parsed = objects_to_datetime64(
+                        ~~~~~~~~~~~~~~~~~~~~~^
+        arg,
+        ^^^^
+    ...<4 lines>...
+        allow_object=True,
+        ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\arrays\datetimes.py", line 2398, in objects_to_datetime64
+    result, tz_parsed = tslib.array_to_datetime(
+                        ~~~~~~~~~~~~~~~~~~~~~~~^
+        data,
+        ^^^^^
+    ...<4 lines>...
+        creso=abbrev_to_npy_unit(out_unit),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "tslib.pyx", line 414, in pandas._libs.tslib.array_to_datetime
+  File "tslib.pyx", line 596, in pandas._libs.tslib.array_to_datetime
+  File "tslib.pyx", line 553, in pandas._libs.tslib.array_to_datetime
+  File "conversion.pyx", line 641, in pandas._libs.tslibs.conversion.convert_str_to_tsobject
+  File "parsing.pyx", line 336, in pandas._libs.tslibs.parsing.parse_datetime_string
+  File "parsing.pyx", line 666, in pandas._libs.tslibs.parsing.dateutil_parse
+pandas._libs.tslibs.parsing.DateParseError: Unknown datetime string format, unable to parse: <valu
+e>2003-11-03, at position 0
+
+
+[ERROR] 2025-12-28 09:41:53.653944 | Collection Error | Symbol: FISV
+  Message: Unknown datetime string format, unable to parse: <val
+ue>2004-01-08, at position 0
+  Stack trace:
+Traceback (most recent call last):
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\data_collection_gui.py", line 1375, in collect_data
+    validation_report = validator.validate_insider_data(df, ticker)
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 234, in validate_insider_data
+    results.extend(self._check_future_dates(df))
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 982, in _check_future_dates
+    dates = pd.to_datetime(df[date_col])
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 1063, in to_datetime
+    cache_array = _maybe_cache(arg, format, cache, convert_listlike)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 247, in _maybe_cache
+    cache_dates = convert_listlike(unique_dates, format)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 435, in _convert_listlike_datetimes
+    result, tz_parsed = objects_to_datetime64(
+                        ~~~~~~~~~~~~~~~~~~~~~^
+        arg,
+        ^^^^
+    ...<4 lines>...
+        allow_object=True,
+        ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\arrays\datetimes.py", line 2398, in objects_to_datetime64
+    result, tz_parsed = tslib.array_to_datetime(
+                        ~~~~~~~~~~~~~~~~~~~~~~~^
+        data,
+        ^^^^^
+    ...<4 lines>...
+        creso=abbrev_to_npy_unit(out_unit),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "tslib.pyx", line 414, in pandas._libs.tslib.array_to_datetime
+  File "tslib.pyx", line 596, in pandas._libs.tslib.array_to_datetime
+  File "tslib.pyx", line 553, in pandas._libs.tslib.array_to_datetime
+  File "conversion.pyx", line 641, in pandas._libs.tslibs.conversion.convert_str_to_tsobject
+  File "parsing.pyx", line 336, in pandas._libs.tslibs.parsing.parse_datetime_string
+  File "parsing.pyx", line 666, in pandas._libs.tslibs.parsing.dateutil_parse
+pandas._libs.tslibs.parsing.DateParseError: Unknown datetime string format, unable to parse: <val
+ue>2004-01-08, at position 0
+
+
+[ERROR] 2025-12-28 09:42:11.320029 | Collection Error | Symbol: GS
+  Message: unconverted data remains when parsing with format "%Y-%m-%d": "-04:00", at position 205. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+  Stack trace:
+Traceback (most recent call last):
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\data_collection_gui.py", line 1375, in collect_data
+    validation_report = validator.validate_insider_data(df, ticker)
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 234, in validate_insider_data
+    results.extend(self._check_future_dates(df))
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 982, in _check_future_dates
+    dates = pd.to_datetime(df[date_col])
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 1063, in to_datetime
+    cache_array = _maybe_cache(arg, format, cache, convert_listlike)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 247, in _maybe_cache
+    cache_dates = convert_listlike(unique_dates, format)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 433, in _convert_listlike_datetimes
+    return _array_strptime_with_fallback(arg, name, utc, format, exact, errors)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 467, in _array_strptime_with_fallback
+    result, tz_out = array_strptime(arg, fmt, exact=exact, errors=errors, utc=utc)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "strptime.pyx", line 501, in pandas._libs.tslibs.strptime.array_strptime
+  File "strptime.pyx", line 451, in pandas._libs.tslibs.strptime.array_strptime
+  File "strptime.pyx", line 587, in pandas._libs.tslibs.strptime._parse_with_format
+ValueError: unconverted data remains when parsing with format "%Y-%m-%d": "-04:00", at position 205. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+
+
+[ERROR] 2025-12-28 09:42:13.370021 | Collection Error | Symbol: GWW
+  Message: Unknown datetime string format, unable to parse: <
+value>2004-01-05, at position 0
+  Stack trace:
+Traceback (most recent call last):
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\data_collection_gui.py", line 1375, in collect_data
+    validation_report = validator.validate_insider_data(df, ticker)
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 234, in validate_insider_data
+    results.extend(self._check_future_dates(df))
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 982, in _check_future_dates
+    dates = pd.to_datetime(df[date_col])
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 1063, in to_datetime
+    cache_array = _maybe_cache(arg, format, cache, convert_listlike)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 247, in _maybe_cache
+    cache_dates = convert_listlike(unique_dates, format)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 435, in _convert_listlike_datetimes
+    result, tz_parsed = objects_to_datetime64(
+                        ~~~~~~~~~~~~~~~~~~~~~^
+        arg,
+        ^^^^
+    ...<4 lines>...
+        allow_object=True,
+        ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\arrays\datetimes.py", line 2398, in objects_to_datetime64
+    result, tz_parsed = tslib.array_to_datetime(
+                        ~~~~~~~~~~~~~~~~~~~~~~~^
+        data,
+        ^^^^^
+    ...<4 lines>...
+        creso=abbrev_to_npy_unit(out_unit),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "tslib.pyx", line 414, in pandas._libs.tslib.array_to_datetime
+  File "tslib.pyx", line 596, in pandas._libs.tslib.array_to_datetime
+  File "tslib.pyx", line 553, in pandas._libs.tslib.array_to_datetime
+  File "conversion.pyx", line 641, in pandas._libs.tslibs.conversion.convert_str_to_tsobject
+  File "parsing.pyx", line 336, in pandas._libs.tslibs.parsing.parse_datetime_string
+  File "parsing.pyx", line 666, in pandas._libs.tslibs.parsing.dateutil_parse
+pandas._libs.tslibs.parsing.DateParseError: Unknown datetime string format, unable to parse: <
+value>2004-01-05, at position 0
+
+
+[ERROR] 2025-12-28 09:42:14.957023 | Collection Error | Symbol: HD
+  Message: unconverted data remains when parsing with format "%Y-%m-%d": "</
+value></transactionDate><deemedExecutionDate></deemedExecutionDate><transactionCoding><transactionFormType>4</transactionFormType><transactionCode>S</transactionCode><equitySwapInvolved>0</equitySwapInvolved></transactionCoding><transactionTimeliness>", at position 563. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+  Stack trace:
+Traceback (most recent call last):
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\data_collection_gui.py", line 1375, in collect_data
+    validation_report = validator.validate_insider_data(df, ticker)
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 234, in validate_insider_data
+    results.extend(self._check_future_dates(df))
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 982, in _check_future_dates
+    dates = pd.to_datetime(df[date_col])
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 1063, in to_datetime
+    cache_array = _maybe_cache(arg, format, cache, convert_listlike)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 247, in _maybe_cache
+    cache_dates = convert_listlike(unique_dates, format)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 433, in _convert_listlike_datetimes
+    return _array_strptime_with_fallback(arg, name, utc, format, exact, errors)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 467, in _array_strptime_with_fallback
+    result, tz_out = array_strptime(arg, fmt, exact=exact, errors=errors, utc=utc)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "strptime.pyx", line 501, in pandas._libs.tslibs.strptime.array_strptime
+  File "strptime.pyx", line 451, in pandas._libs.tslibs.strptime.array_strptime
+  File "strptime.pyx", line 587, in pandas._libs.tslibs.strptime._parse_with_format
+ValueError: unconverted data remains when parsing with format "%Y-%m-%d": "</
+value></transactionDate><deemedExecutionDate></deemedExecutionDate><transactionCoding><transactionFormType>4</transactionFormType><transactionCode>S</transactionCode><equitySwapInvolved>0</equitySwapInvolved></transactionCoding><transactionTimeliness>", at position 563. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+
+
+[ERROR] 2025-12-28 09:42:41.960145 | Collection Error | Symbol: ITW
+  Message: Unknown datetime string format, unable to parse: <val
+ue>2003-11-18, at position 0
+  Stack trace:
+Traceback (most recent call last):
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\data_collection_gui.py", line 1375, in collect_data
+    validation_report = validator.validate_insider_data(df, ticker)
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 234, in validate_insider_data
+    results.extend(self._check_future_dates(df))
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 982, in _check_future_dates
+    dates = pd.to_datetime(df[date_col])
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 1063, in to_datetime
+    cache_array = _maybe_cache(arg, format, cache, convert_listlike)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 247, in _maybe_cache
+    cache_dates = convert_listlike(unique_dates, format)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 435, in _convert_listlike_datetimes
+    result, tz_parsed = objects_to_datetime64(
+                        ~~~~~~~~~~~~~~~~~~~~~^
+        arg,
+        ^^^^
+    ...<4 lines>...
+        allow_object=True,
+        ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\arrays\datetimes.py", line 2398, in objects_to_datetime64
+    result, tz_parsed = tslib.array_to_datetime(
+                        ~~~~~~~~~~~~~~~~~~~~~~~^
+        data,
+        ^^^^^
+    ...<4 lines>...
+        creso=abbrev_to_npy_unit(out_unit),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "tslib.pyx", line 414, in pandas._libs.tslib.array_to_datetime
+  File "tslib.pyx", line 596, in pandas._libs.tslib.array_to_datetime
+  File "tslib.pyx", line 553, in pandas._libs.tslib.array_to_datetime
+  File "conversion.pyx", line 641, in pandas._libs.tslibs.conversion.convert_str_to_tsobject
+  File "parsing.pyx", line 336, in pandas._libs.tslibs.parsing.parse_datetime_string
+  File "parsing.pyx", line 666, in pandas._libs.tslibs.parsing.dateutil_parse
+pandas._libs.tslibs.parsing.DateParseError: Unknown datetime string format, unable to parse: <val
+ue>2003-11-18, at position 0
+
+
+[ERROR] 2025-12-28 09:42:52.799000 | Collection Error | Symbol: LECO
+  Message: unconverted data remains when parsing with format "%Y-%m-%d": "</
+value></transactionDate><deemedExecutionDate></deemedExecutionDate><transactionCoding><transactionFormType>4</transactionFormType><transactionCode>M</transactionCode><equitySwapInvolved>0</equitySwapInvolved></transactionCoding><transactionTimeliness>", at position 349. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+  Stack trace:
+Traceback (most recent call last):
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\data_collection_gui.py", line 1375, in collect_data
+    validation_report = validator.validate_insider_data(df, ticker)
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 234, in validate_insider_data
+    results.extend(self._check_future_dates(df))
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 982, in _check_future_dates
+    dates = pd.to_datetime(df[date_col])
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 1063, in to_datetime
+    cache_array = _maybe_cache(arg, format, cache, convert_listlike)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 247, in _maybe_cache
+    cache_dates = convert_listlike(unique_dates, format)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 433, in _convert_listlike_datetimes
+    return _array_strptime_with_fallback(arg, name, utc, format, exact, errors)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 467, in _array_strptime_with_fallback
+    result, tz_out = array_strptime(arg, fmt, exact=exact, errors=errors, utc=utc)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "strptime.pyx", line 501, in pandas._libs.tslibs.strptime.array_strptime
+  File "strptime.pyx", line 451, in pandas._libs.tslibs.strptime.array_strptime
+  File "strptime.pyx", line 587, in pandas._libs.tslibs.strptime._parse_with_format
+ValueError: unconverted data remains when parsing with format "%Y-%m-%d": "</
+value></transactionDate><deemedExecutionDate></deemedExecutionDate><transactionCoding><transactionFormType>4</transactionFormType><transactionCode>M</transactionCode><equitySwapInvolved>0</equitySwapInvolved></transactionCoding><transactionTimeliness>", at position 349. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+
+
+[ERROR] 2025-12-28 09:42:56.062846 | Collection Error | Symbol: LHX
+  Message: Unknown datetime string format, unable to parse: <v
+alue>2003-07-30, at position 0
+  Stack trace:
+Traceback (most recent call last):
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\data_collection_gui.py", line 1375, in collect_data
+    validation_report = validator.validate_insider_data(df, ticker)
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 234, in validate_insider_data
+    results.extend(self._check_future_dates(df))
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 982, in _check_future_dates
+    dates = pd.to_datetime(df[date_col])
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 1063, in to_datetime
+    cache_array = _maybe_cache(arg, format, cache, convert_listlike)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 247, in _maybe_cache
+    cache_dates = convert_listlike(unique_dates, format)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 435, in _convert_listlike_datetimes
+    result, tz_parsed = objects_to_datetime64(
+                        ~~~~~~~~~~~~~~~~~~~~~^
+        arg,
+        ^^^^
+    ...<4 lines>...
+        allow_object=True,
+        ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\arrays\datetimes.py", line 2398, in objects_to_datetime64
+    result, tz_parsed = tslib.array_to_datetime(
+                        ~~~~~~~~~~~~~~~~~~~~~~~^
+        data,
+        ^^^^^
+    ...<4 lines>...
+        creso=abbrev_to_npy_unit(out_unit),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "tslib.pyx", line 414, in pandas._libs.tslib.array_to_datetime
+  File "tslib.pyx", line 596, in pandas._libs.tslib.array_to_datetime
+  File "tslib.pyx", line 553, in pandas._libs.tslib.array_to_datetime
+  File "conversion.pyx", line 641, in pandas._libs.tslibs.conversion.convert_str_to_tsobject
+  File "parsing.pyx", line 336, in pandas._libs.tslibs.parsing.parse_datetime_string
+  File "parsing.pyx", line 666, in pandas._libs.tslibs.parsing.dateutil_parse
+pandas._libs.tslibs.parsing.DateParseError: Unknown datetime string format, unable to parse: <v
+alue>2003-07-30, at position 0
+
+
+[ERROR] 2025-12-28 09:43:28.018258 | Collection Error | Symbol: MTD
+  Message: time data "2003-12-0
+5" doesn't match format "%Y-%m-%d", at position 526. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+  Stack trace:
+Traceback (most recent call last):
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\data_collection_gui.py", line 1375, in collect_data
+    validation_report = validator.validate_insider_data(df, ticker)
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 234, in validate_insider_data
+    results.extend(self._check_future_dates(df))
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 982, in _check_future_dates
+    dates = pd.to_datetime(df[date_col])
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 1063, in to_datetime
+    cache_array = _maybe_cache(arg, format, cache, convert_listlike)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 247, in _maybe_cache
+    cache_dates = convert_listlike(unique_dates, format)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 433, in _convert_listlike_datetimes
+    return _array_strptime_with_fallback(arg, name, utc, format, exact, errors)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 467, in _array_strptime_with_fallback
+    result, tz_out = array_strptime(arg, fmt, exact=exact, errors=errors, utc=utc)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "strptime.pyx", line 501, in pandas._libs.tslibs.strptime.array_strptime
+  File "strptime.pyx", line 451, in pandas._libs.tslibs.strptime.array_strptime
+  File "strptime.pyx", line 583, in pandas._libs.tslibs.strptime._parse_with_format
+ValueError: time data "2003-12-0
+5" doesn't match format "%Y-%m-%d", at position 526. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+
+
+[ERROR] 2025-12-28 09:43:56.903272 | Collection Error | Symbol: PAYX
+  Message: Unknown datetime string format, unable to parse: <value
+>2003-10-31, at position 0
+  Stack trace:
+Traceback (most recent call last):
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\data_collection_gui.py", line 1375, in collect_data
+    validation_report = validator.validate_insider_data(df, ticker)
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 234, in validate_insider_data
+    results.extend(self._check_future_dates(df))
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 982, in _check_future_dates
+    dates = pd.to_datetime(df[date_col])
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 1063, in to_datetime
+    cache_array = _maybe_cache(arg, format, cache, convert_listlike)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 247, in _maybe_cache
+    cache_dates = convert_listlike(unique_dates, format)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 435, in _convert_listlike_datetimes
+    result, tz_parsed = objects_to_datetime64(
+                        ~~~~~~~~~~~~~~~~~~~~~^
+        arg,
+        ^^^^
+    ...<4 lines>...
+        allow_object=True,
+        ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\arrays\datetimes.py", line 2398, in objects_to_datetime64
+    result, tz_parsed = tslib.array_to_datetime(
+                        ~~~~~~~~~~~~~~~~~~~~~~~^
+        data,
+        ^^^^^
+    ...<4 lines>...
+        creso=abbrev_to_npy_unit(out_unit),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "tslib.pyx", line 414, in pandas._libs.tslib.array_to_datetime
+  File "tslib.pyx", line 596, in pandas._libs.tslib.array_to_datetime
+  File "tslib.pyx", line 553, in pandas._libs.tslib.array_to_datetime
+  File "conversion.pyx", line 641, in pandas._libs.tslibs.conversion.convert_str_to_tsobject
+  File "parsing.pyx", line 336, in pandas._libs.tslibs.parsing.parse_datetime_string
+  File "parsing.pyx", line 666, in pandas._libs.tslibs.parsing.dateutil_parse
+pandas._libs.tslibs.parsing.DateParseError: Unknown datetime string format, unable to parse: <value
+>2003-10-31, at position 0
+
+
+[ERROR] 2025-12-28 09:44:00.124971 | Collection Error | Symbol: PDFS
+  Message: Unknown datetime string format, unable to parse: <value
+>2003-10-14, at position 0
+  Stack trace:
+Traceback (most recent call last):
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\data_collection_gui.py", line 1375, in collect_data
+    validation_report = validator.validate_insider_data(df, ticker)
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 234, in validate_insider_data
+    results.extend(self._check_future_dates(df))
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 982, in _check_future_dates
+    dates = pd.to_datetime(df[date_col])
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 1063, in to_datetime
+    cache_array = _maybe_cache(arg, format, cache, convert_listlike)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 247, in _maybe_cache
+    cache_dates = convert_listlike(unique_dates, format)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 435, in _convert_listlike_datetimes
+    result, tz_parsed = objects_to_datetime64(
+                        ~~~~~~~~~~~~~~~~~~~~~^
+        arg,
+        ^^^^
+    ...<4 lines>...
+        allow_object=True,
+        ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\arrays\datetimes.py", line 2398, in objects_to_datetime64
+    result, tz_parsed = tslib.array_to_datetime(
+                        ~~~~~~~~~~~~~~~~~~~~~~~^
+        data,
+        ^^^^^
+    ...<4 lines>...
+        creso=abbrev_to_npy_unit(out_unit),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "tslib.pyx", line 414, in pandas._libs.tslib.array_to_datetime
+  File "tslib.pyx", line 596, in pandas._libs.tslib.array_to_datetime
+  File "tslib.pyx", line 553, in pandas._libs.tslib.array_to_datetime
+  File "conversion.pyx", line 641, in pandas._libs.tslibs.conversion.convert_str_to_tsobject
+  File "parsing.pyx", line 336, in pandas._libs.tslibs.parsing.parse_datetime_string
+  File "parsing.pyx", line 666, in pandas._libs.tslibs.parsing.dateutil_parse
+pandas._libs.tslibs.parsing.DateParseError: Unknown datetime string format, unable to parse: <value
+>2003-10-14, at position 0
+
+
+[ERROR] 2025-12-28 09:44:05.376795 | Collection Error | Symbol: PH
+  Message: time data "2003-1
+0-17" doesn't match format "%Y-%m-%d", at position 657. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+  Stack trace:
+Traceback (most recent call last):
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\data_collection_gui.py", line 1375, in collect_data
+    validation_report = validator.validate_insider_data(df, ticker)
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 234, in validate_insider_data
+    results.extend(self._check_future_dates(df))
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 982, in _check_future_dates
+    dates = pd.to_datetime(df[date_col])
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 1063, in to_datetime
+    cache_array = _maybe_cache(arg, format, cache, convert_listlike)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 247, in _maybe_cache
+    cache_dates = convert_listlike(unique_dates, format)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 433, in _convert_listlike_datetimes
+    return _array_strptime_with_fallback(arg, name, utc, format, exact, errors)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 467, in _array_strptime_with_fallback
+    result, tz_out = array_strptime(arg, fmt, exact=exact, errors=errors, utc=utc)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "strptime.pyx", line 501, in pandas._libs.tslibs.strptime.array_strptime
+  File "strptime.pyx", line 451, in pandas._libs.tslibs.strptime.array_strptime
+  File "strptime.pyx", line 583, in pandas._libs.tslibs.strptime._parse_with_format
+ValueError: time data "2003-1
+0-17" doesn't match format "%Y-%m-%d", at position 657. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+
+
+[ERROR] 2025-12-28 09:44:07.209613 | Collection Error | Symbol: PLD
+  Message: unconverted data remains when parsing with format "%Y-%m-%d": "</v
+alue></transactionDate><deemedExecutionDate></deemedExecutionDate><transactionCoding><transactionFormType>4</transactionFormType><transactionCode>S</transactionCode><equitySwapInvolved>0</equitySwapInvolved></transactionCoding><transactionTimeliness>", at position 359. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+  Stack trace:
+Traceback (most recent call last):
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\data_collection_gui.py", line 1375, in collect_data
+    validation_report = validator.validate_insider_data(df, ticker)
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 234, in validate_insider_data
+    results.extend(self._check_future_dates(df))
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 982, in _check_future_dates
+    dates = pd.to_datetime(df[date_col])
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 1063, in to_datetime
+    cache_array = _maybe_cache(arg, format, cache, convert_listlike)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 247, in _maybe_cache
+    cache_dates = convert_listlike(unique_dates, format)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 433, in _convert_listlike_datetimes
+    return _array_strptime_with_fallback(arg, name, utc, format, exact, errors)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 467, in _array_strptime_with_fallback
+    result, tz_out = array_strptime(arg, fmt, exact=exact, errors=errors, utc=utc)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "strptime.pyx", line 501, in pandas._libs.tslibs.strptime.array_strptime
+  File "strptime.pyx", line 451, in pandas._libs.tslibs.strptime.array_strptime
+  File "strptime.pyx", line 587, in pandas._libs.tslibs.strptime._parse_with_format
+ValueError: unconverted data remains when parsing with format "%Y-%m-%d": "</v
+alue></transactionDate><deemedExecutionDate></deemedExecutionDate><transactionCoding><transactionFormType>4</transactionFormType><transactionCode>S</transactionCode><equitySwapInvolved>0</equitySwapInvolved></transactionCoding><transactionTimeliness>", at position 359. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+
+
+[ERROR] 2025-12-28 09:44:26.219495 | Collection Error | Symbol: RELL
+  Message: time data "2004-01-0
+6" doesn't match format "%Y-%m-%d", at position 195. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+  Stack trace:
+Traceback (most recent call last):
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\data_collection_gui.py", line 1375, in collect_data
+    validation_report = validator.validate_insider_data(df, ticker)
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 234, in validate_insider_data
+    results.extend(self._check_future_dates(df))
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 982, in _check_future_dates
+    dates = pd.to_datetime(df[date_col])
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 1063, in to_datetime
+    cache_array = _maybe_cache(arg, format, cache, convert_listlike)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 247, in _maybe_cache
+    cache_dates = convert_listlike(unique_dates, format)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 433, in _convert_listlike_datetimes
+    return _array_strptime_with_fallback(arg, name, utc, format, exact, errors)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 467, in _array_strptime_with_fallback
+    result, tz_out = array_strptime(arg, fmt, exact=exact, errors=errors, utc=utc)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "strptime.pyx", line 501, in pandas._libs.tslibs.strptime.array_strptime
+  File "strptime.pyx", line 451, in pandas._libs.tslibs.strptime.array_strptime
+  File "strptime.pyx", line 583, in pandas._libs.tslibs.strptime._parse_with_format
+ValueError: time data "2004-01-0
+6" doesn't match format "%Y-%m-%d", at position 195. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+
+
+[ERROR] 2025-12-28 09:44:43.996804 | Collection Error | Symbol: SBUX
+  Message: Unknown datetime string format, unable to parse: <
+value>2003-12-01, at position 0
+  Stack trace:
+Traceback (most recent call last):
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\data_collection_gui.py", line 1375, in collect_data
+    validation_report = validator.validate_insider_data(df, ticker)
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 234, in validate_insider_data
+    results.extend(self._check_future_dates(df))
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 982, in _check_future_dates
+    dates = pd.to_datetime(df[date_col])
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 1063, in to_datetime
+    cache_array = _maybe_cache(arg, format, cache, convert_listlike)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 247, in _maybe_cache
+    cache_dates = convert_listlike(unique_dates, format)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 435, in _convert_listlike_datetimes
+    result, tz_parsed = objects_to_datetime64(
+                        ~~~~~~~~~~~~~~~~~~~~~^
+        arg,
+        ^^^^
+    ...<4 lines>...
+        allow_object=True,
+        ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\arrays\datetimes.py", line 2398, in objects_to_datetime64
+    result, tz_parsed = tslib.array_to_datetime(
+                        ~~~~~~~~~~~~~~~~~~~~~~~^
+        data,
+        ^^^^^
+    ...<4 lines>...
+        creso=abbrev_to_npy_unit(out_unit),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "tslib.pyx", line 414, in pandas._libs.tslib.array_to_datetime
+  File "tslib.pyx", line 596, in pandas._libs.tslib.array_to_datetime
+  File "tslib.pyx", line 553, in pandas._libs.tslib.array_to_datetime
+  File "conversion.pyx", line 641, in pandas._libs.tslibs.conversion.convert_str_to_tsobject
+  File "parsing.pyx", line 336, in pandas._libs.tslibs.parsing.parse_datetime_string
+  File "parsing.pyx", line 666, in pandas._libs.tslibs.parsing.dateutil_parse
+pandas._libs.tslibs.parsing.DateParseError: Unknown datetime string format, unable to parse: <
+value>2003-12-01, at position 0
+
+
+[ERROR] 2025-12-28 09:44:56.398239 | Collection Error | Symbol: SPGI
+  Message: Out of bounds nanosecond timestamp: 0024-02-01, at position 311. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+  Stack trace:
+Traceback (most recent call last):
+  File "strptime.pyx", line 415, in pandas._libs.tslibs.strptime.array_strptime
+OverflowError: Overflow occurred in npy_datetimestruct_to_datetime
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\data_collection_gui.py", line 1375, in collect_data
+    validation_report = validator.validate_insider_data(df, ticker)
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 234, in validate_insider_data
+    results.extend(self._check_future_dates(df))
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 982, in _check_future_dates
+    dates = pd.to_datetime(df[date_col])
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 1063, in to_datetime
+    cache_array = _maybe_cache(arg, format, cache, convert_listlike)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 247, in _maybe_cache
+    cache_dates = convert_listlike(unique_dates, format)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 433, in _convert_listlike_datetimes
+    return _array_strptime_with_fallback(arg, name, utc, format, exact, errors)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 467, in _array_strptime_with_fallback
+    result, tz_out = array_strptime(arg, fmt, exact=exact, errors=errors, utc=utc)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "strptime.pyx", line 501, in pandas._libs.tslibs.strptime.array_strptime
+  File "strptime.pyx", line 418, in pandas._libs.tslibs.strptime.array_strptime
+pandas._libs.tslibs.np_datetime.OutOfBoundsDatetime: Out of bounds nanosecond timestamp: 0024-02-01, at position 311. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+
+
+[ERROR] 2025-12-28 09:45:14.836416 | Collection Error | Symbol: TJX
+  Message: Unknown datetime string format, unable to parse: <valu
+e>2003-11-17, at position 0
+  Stack trace:
+Traceback (most recent call last):
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\data_collection_gui.py", line 1375, in collect_data
+    validation_report = validator.validate_insider_data(df, ticker)
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 234, in validate_insider_data
+    results.extend(self._check_future_dates(df))
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 982, in _check_future_dates
+    dates = pd.to_datetime(df[date_col])
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 1063, in to_datetime
+    cache_array = _maybe_cache(arg, format, cache, convert_listlike)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 247, in _maybe_cache
+    cache_dates = convert_listlike(unique_dates, format)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 435, in _convert_listlike_datetimes
+    result, tz_parsed = objects_to_datetime64(
+                        ~~~~~~~~~~~~~~~~~~~~~^
+        arg,
+        ^^^^
+    ...<4 lines>...
+        allow_object=True,
+        ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\arrays\datetimes.py", line 2398, in objects_to_datetime64
+    result, tz_parsed = tslib.array_to_datetime(
+                        ~~~~~~~~~~~~~~~~~~~~~~~^
+        data,
+        ^^^^^
+    ...<4 lines>...
+        creso=abbrev_to_npy_unit(out_unit),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "tslib.pyx", line 414, in pandas._libs.tslib.array_to_datetime
+  File "tslib.pyx", line 596, in pandas._libs.tslib.array_to_datetime
+  File "tslib.pyx", line 553, in pandas._libs.tslib.array_to_datetime
+  File "conversion.pyx", line 641, in pandas._libs.tslibs.conversion.convert_str_to_tsobject
+  File "parsing.pyx", line 336, in pandas._libs.tslibs.parsing.parse_datetime_string
+  File "parsing.pyx", line 666, in pandas._libs.tslibs.parsing.dateutil_parse
+pandas._libs.tslibs.parsing.DateParseError: Unknown datetime string format, unable to parse: <valu
+e>2003-11-17, at position 0
+
+
+[ERROR] 2025-12-28 09:45:55.114168 | Collection Error | Symbol: WELL
+  Message: time data "20
+03-08-01" doesn't match format "%Y-%m-%d", at position 456. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+  Stack trace:
+Traceback (most recent call last):
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\data_collection_gui.py", line 1375, in collect_data
+    validation_report = validator.validate_insider_data(df, ticker)
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 234, in validate_insider_data
+    results.extend(self._check_future_dates(df))
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^^^
+  File "C:\Users\rzemi\OneDrive\Desktop\Back Testing Framework\Classes\DataCollection\validation_engine.py", line 982, in _check_future_dates
+    dates = pd.to_datetime(df[date_col])
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 1063, in to_datetime
+    cache_array = _maybe_cache(arg, format, cache, convert_listlike)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 247, in _maybe_cache
+    cache_dates = convert_listlike(unique_dates, format)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 433, in _convert_listlike_datetimes
+    return _array_strptime_with_fallback(arg, name, utc, format, exact, errors)
+  File "C:\Users\rzemi\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pandas\core\tools\datetimes.py", line 467, in _array_strptime_with_fallback
+    result, tz_out = array_strptime(arg, fmt, exact=exact, errors=errors, utc=utc)
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "strptime.pyx", line 501, in pandas._libs.tslibs.strptime.array_strptime
+  File "strptime.pyx", line 451, in pandas._libs.tslibs.strptime.array_strptime
+  File "strptime.pyx", line 583, in pandas._libs.tslibs.strptime._parse_with_format
+ValueError: time data "20
+03-08-01" doesn't match format "%Y-%m-%d", at position 456. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+
+

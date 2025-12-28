@@ -3,22 +3,28 @@ AlphaTrend Enhanced Long-Only Strategy
 
 Based on AlphaTrend indicator by KivancOzbilgic with enhancements:
 - Adaptive ATR multiplier based on volatility
-- Dynamic MFI thresholds using percentile analysis
+- Dynamic MFI thresholds using percentile analysis (MFI read from raw data)
 - Volume filter with alignment windows
-- EMA-based exits with grace period and momentum protection
+- SMA-based exits with grace period and momentum protection
 - Risk-based position sizing
 
 Entry: AlphaTrend buy signal + volume condition within alignment window
-Exit: Price closes below EMA-50 (with protections) or stop loss hit
+Exit: Price closes below SMA-50 (with protections) or stop loss hit
 Stop Loss: Percentage-based stop loss (x% below entry price)
 
 PERFORMANCE OPTIMIZED:
-- Indicators pre-calculated using vectorized operations (10-100x speedup)
-- No repeated calculations during backtest
+- Standard indicators (ATR, MFI, SMA) read directly from raw data
+- Custom AlphaTrend signals calculated using vectorized operations
 - O(n) complexity instead of O(n²)
 - Numba JIT compilation for state-dependent loops (5-20x speedup)
 
-NOTE: All standard indicators (atr_14, ema_50) are read from raw data.
+RAW DATA REQUIREMENTS (from Alpha Vantage):
+- atr_14_atr: Average True Range (14-period)
+- sma_50_sma: Simple Moving Average (50-period) for exits
+- mfi_14_mfi: Money Flow Index (14-period) for momentum
+
+All standard indicators are read from raw data - no calculations performed.
+If an indicator is missing, a clear error will be raised.
 """
 from typing import Dict, List, Optional, Tuple
 import pandas as pd
@@ -126,18 +132,24 @@ class AlphaTrendStrategy(BaseStrategy):
     """
     AlphaTrend Enhanced Strategy with volume filter and risk management.
 
-    Standard Indicators (read from raw data, static):
-        - atr_14: Average True Range (14-period, static)
-        - ema_50: Exponential Moving Average (50-period, static, used for exits)
+    RAW DATA INDICATORS (read from CSV, no calculations):
+        - atr_14_atr: Average True Range (14-period) - for bands and stop loss
+        - sma_50_sma: Simple Moving Average (50-period) - for exits
+        - mfi_14_mfi: Money Flow Index (14-period) - for momentum detection
 
-    Custom Parameters (strategy-specific calculations):
+    CUSTOM CALCULATIONS (strategy-specific, computed in prepare_data):
+        - AlphaTrend bands using ATR from raw data
+        - AlphaTrend signal generation
+        - Volume MA comparison
+
+    Parameters:
         volume_short_ma: Volume short MA period (default: 4)
         volume_long_ma: Volume long MA period (default: 30)
         volume_alignment_window: Bars to wait for volume condition after signal (default: 14)
         stop_loss_percent: Percentage below current price for stop loss (default: 0)
         atr_stop_loss_multiple: Multiple of ATR for stop loss (default: 2.5)
-        grace_period_bars: Bars to ignore EMA exit after entry (default: 14)
-        momentum_gain_pct: % gain to ignore EMA exit (default: 2.0)
+        grace_period_bars: Bars to ignore SMA exit after entry (default: 14)
+        momentum_gain_pct: % gain to ignore SMA exit (default: 2.0)
         momentum_lookback: Bars for momentum calculation (default: 7)
         risk_percent: Percent of equity to risk per trade (default: 2.0)
 
@@ -145,7 +157,7 @@ class AlphaTrendStrategy(BaseStrategy):
         atr_multiplier: Base multiplier for ATR bands (fixed: 1.0)
         source: Price source for calculations (fixed: 'close')
         smoothing_length: EMA smoothing period for AlphaTrend (fixed: 3)
-        percentile_period: Lookback for dynamic thresholds (fixed: 100)
+        percentile_period: Lookback for dynamic MFI thresholds (fixed: 100)
     """
 
     def __init__(self,
@@ -196,68 +208,75 @@ class AlphaTrendStrategy(BaseStrategy):
         self._signal_bar_idx: Dict[str, int] = {}
 
     def required_columns(self) -> List[str]:
-        """Required columns from CSV data (including pre-calculated indicators)."""
+        """
+        Required columns from CSV data (all indicators read from raw data).
+
+        Returns list of columns that MUST exist in the raw data.
+        If any column is missing, a MissingColumnError will be raised.
+        """
         return [
+            # OHLCV data
             'date', 'open', 'high', 'low', 'close', 'volume',
-            'atr_14',  # Pre-calculated ATR from raw data
-            'ema_50'   # Pre-calculated EMA from raw data
+            # Indicators from Alpha Vantage raw data
+            'atr_14_atr',   # Average True Range - for bands and stop loss
+            'sma_50_sma',   # Simple Moving Average - for exit signals
+            'mfi_14_mfi',   # Money Flow Index - for momentum detection
         ]
 
     def prepare_data(self, data: pd.DataFrame) -> pd.DataFrame:
         """
         Pre-calculate custom AlphaTrend indicators ONCE before backtesting.
 
-        Standard indicators (atr_14, ema_50) are read from raw data.
-        Custom indicators specific to AlphaTrend are calculated here.
+        RAW DATA INDICATORS (read directly, no calculations):
+        - atr_14_atr: Average True Range from Alpha Vantage
+        - sma_50_sma: Simple Moving Average from Alpha Vantage
+        - mfi_14_mfi: Money Flow Index from Alpha Vantage
 
-        PERFORMANCE OPTIMIZATION: This replaces the O(n²) on-the-fly calculation
-        with O(n) vectorized calculation, providing 10-100x speedup.
+        CUSTOM CALCULATIONS (strategy-specific):
+        - Adaptive coefficient based on volatility ratio
+        - AlphaTrend bands using raw ATR
+        - AlphaTrend signal generation
+        - Volume filter
 
         Args:
-            data: Raw OHLCV data with pre-calculated standard indicators
+            data: Raw OHLCV data with pre-calculated indicators from Alpha Vantage
 
         Returns:
-            Data with all AlphaTrend-specific indicators added as columns
+            Data with AlphaTrend-specific indicators added as columns
+
+        Raises:
+            ValueError: If required indicators are missing from raw data
         """
         df = data.copy()
 
-        # Verify required standard indicators exist
-        if 'atr_14' not in df.columns:
-            raise ValueError("Missing required indicator: atr_14 must be present in raw data")
-        if 'ema_50' not in df.columns:
-            raise ValueError("Missing required indicator: ema_50 must be present in raw data")
+        # Verify required indicators exist in raw data
+        required_indicators = ['atr_14_atr', 'sma_50_sma', 'mfi_14_mfi']
+        missing = [col for col in required_indicators if col not in df.columns]
+        if missing:
+            raise ValueError(
+                f"Missing required indicators in raw data: {missing}\n"
+                f"Please re-run data collection with these indicators enabled.\n"
+                f"Available columns: {sorted(df.columns.tolist())}"
+            )
 
         # ==== ADAPTIVE COEFFICIENT ====
-        # Calculate long-term ATR average for volatility ratio
-        df['atr_ema_long'] = df['atr_14'].ewm(span=14 * 3, adjust=False).mean()
-        df['volatility_ratio'] = df['atr_14'] / df['atr_ema_long']
+        # Calculate long-term ATR average for volatility ratio using raw ATR
+        df['atr_ema_long'] = df['atr_14_atr'].ewm(span=14 * 3, adjust=False).mean()
+        df['volatility_ratio'] = df['atr_14_atr'] / df['atr_ema_long']
         df['adaptive_coeff'] = self.atr_multiplier * df['volatility_ratio']
 
         # ==== ALPHATREND BANDS ====
-        # Use atr_14 from raw data for band calculations
-        df['up_band'] = df['low'] - df['atr_14'] * df['adaptive_coeff']
-        df['down_band'] = df['high'] + df['atr_14'] * df['adaptive_coeff']
+        # Use atr_14_atr from raw data for band calculations
+        df['up_band'] = df['low'] - df['atr_14_atr'] * df['adaptive_coeff']
+        df['down_band'] = df['high'] + df['atr_14_atr'] * df['adaptive_coeff']
 
-        # ==== MONEY FLOW INDEX (MFI) ====
-        # Vectorized MFI calculation (14-period to match atr_14)
-        df['typical_price'] = (df['high'] + df['low'] + df['close']) / 3
-        df['raw_money_flow'] = df['typical_price'] * df['volume']
-
-        # Determine positive and negative money flow
-        df['price_change'] = df['typical_price'].diff()
-        df['positive_flow'] = np.where(df['price_change'] > 0, df['raw_money_flow'], 0)
-        df['negative_flow'] = np.where(df['price_change'] < 0, df['raw_money_flow'], 0)
-
-        # Sum over 14-period (vectorized)
-        positive_mf = df['positive_flow'].rolling(window=14).sum()
-        negative_mf = df['negative_flow'].rolling(window=14).sum()
-
-        # MFI calculation with division by zero protection
-        mfi_ratio = positive_mf / negative_mf.replace(0, np.nan)
-        df['mfi'] = 100 - (100 / (1 + mfi_ratio))
+        # ==== MONEY FLOW INDEX ====
+        # MFI is now read directly from raw data (mfi_14_mfi)
+        # No calculation needed - just use the raw data column
+        df['mfi'] = df['mfi_14_mfi']
 
         # ==== DYNAMIC MFI THRESHOLDS ====
-        # Vectorized percentile calculations
+        # Vectorized percentile calculations on raw MFI data
         df['mfi_upper'] = df['mfi'].rolling(window=self.percentile_period).quantile(0.70)
         df['mfi_lower'] = df['mfi'].rolling(window=self.percentile_period).quantile(0.30)
         df['mfi_threshold'] = (df['mfi_upper'] + df['mfi_lower']) / 2
@@ -359,7 +378,13 @@ class AlphaTrendStrategy(BaseStrategy):
         Get pre-calculated indicators for current bar.
 
         PERFORMANCE: Simply reads values from pre-calculated columns.
-        No computation happens here - all indicators were calculated in prepare_data().
+        No computation happens here - all indicators were calculated in prepare_data()
+        or read from raw data.
+
+        Raw data indicators used:
+        - atr_14_atr: Average True Range
+        - sma_50_sma: Simple Moving Average (for exits)
+        - mfi_14_mfi: Money Flow Index
 
         Returns:
             Dictionary with indicator values at current bar, or None if insufficient data
@@ -371,20 +396,20 @@ class AlphaTrendStrategy(BaseStrategy):
         # Get current bar (all indicators are pre-calculated columns)
         current_bar = context.current_bar
 
-        # Check for NaN values in critical indicators
-        if pd.isna(current_bar.get('atr_14')) or pd.isna(current_bar.get('ema_50')):
+        # Check for NaN values in critical raw data indicators
+        if pd.isna(current_bar.get('atr_14_atr')) or pd.isna(current_bar.get('sma_50_sma')):
             return None
 
-        # Return pre-calculated indicator values
+        # Return indicator values (mix of raw data and custom calculations)
         return {
-            'atr_14': current_bar['atr_14'],  # Read from raw data
-            'alphatrend': current_bar['alphatrend'],
-            'smooth_at': current_bar['smooth_at'],
+            'atr_14_atr': current_bar['atr_14_atr'],  # Read from raw data
+            'alphatrend': current_bar['alphatrend'],   # Custom calculation
+            'smooth_at': current_bar['smooth_at'],     # Custom calculation
             'filtered_buy': current_bar['filtered_buy'],
             'filtered_sell': current_bar['filtered_sell'],
             'volume_condition': current_bar['volume_condition'],
-            'ema_50': current_bar['ema_50'],  # Read from raw data
-            'mfi': current_bar['mfi']
+            'sma_50': current_bar['sma_50_sma'],       # Read from raw data
+            'mfi': current_bar['mfi']                  # Read from raw data (mfi_14_mfi)
         }
 
     def _has_active_signal(self, context: StrategyContext) -> bool:
@@ -494,7 +519,7 @@ class AlphaTrendStrategy(BaseStrategy):
                 if vol_aligned:
                     # Calculate stop loss: use ATR-based if atr_stop_loss_multiple > 0, else percentage-based
                     if self.atr_stop_loss_multiple > 0:
-                        stop_loss = current_price - (indicators['atr_14'] * self.atr_stop_loss_multiple)
+                        stop_loss = current_price - (indicators['atr_14_atr'] * self.atr_stop_loss_multiple)
                     else:
                         stop_loss = current_price * (1 - self.stop_loss_percent / 100)
 
@@ -515,8 +540,8 @@ class AlphaTrendStrategy(BaseStrategy):
             # Increment bars since entry
             self._bars_since_entry[symbol] = self._bars_since_entry.get(symbol, 0) + 1
 
-            # Check EMA-50 exit condition (read from raw data)
-            ema_exit = current_price < indicators['ema_50']
+            # Check SMA-50 exit condition (read from raw data as sma_50_sma)
+            sma_exit = current_price < indicators['sma_50']
 
             # Grace period protection
             bars_since = self._bars_since_entry.get(symbol, 0)
@@ -532,9 +557,9 @@ class AlphaTrendStrategy(BaseStrategy):
                     price_gain_pct = ((current_price - lookback_open) / lookback_open) * 100
                     has_momentum = price_gain_pct >= self.momentum_gain_pct
 
-            # Exit only if EMA condition met and NOT protected
-            if ema_exit and not in_grace_period and not has_momentum:
-                return Signal.sell(reason=f"Price < EMA(50)")
+            # Exit only if SMA condition met and NOT protected
+            if sma_exit and not in_grace_period and not has_momentum:
+                return Signal.sell(reason=f"Price < SMA(50)")
 
         return Signal.hold()
 

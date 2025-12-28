@@ -1,0 +1,896 @@
+date,symbol,insider_title,transaction_type,shares,price,value,executive,security_type
+2005-02-28,ODFL,Director,BUY,859.0,34.984,30051.256,"BREITBACH, J PAUL",Common Stock
+2005-02-28,ODFL,Director,BUY,641.0,34.99,22428.59,"BREITBACH, J PAUL",Common Stock
+2005-09-13,ODFL,Executive Vice President,BUY,2250.0,4.4445,10000.125,"YOWELL, JOHN B",Common Stock
+2005-09-13,ODFL,"Sr. VP, Gen. Counsel & Sec.",BUY,3375.0,4.4445,15000.187499999998,"MCCARTY, JOEL B JR",Common Stock
+2005-09-13,ODFL,Senior VP - Finance and CFO,BUY,3375.0,4.4445,15000.187499999998,"FRYE, J WES",Common Stock
+2005-09-13,ODFL,"Director, President and COO",BUY,2250.0,4.4445,10000.125,"CONGDON, DAVID S",Common Stock
+2006-12-18,ODFL,Director,BUY,1000.0,25.27,25270.0,"CULP, ROBERT G III",Common Stock
+2007-10-31,ODFL,Director,BUY,900.0,23.02,20718.0,"EBELING, JOHN A",Common Stock
+2007-10-31,ODFL,Director,BUY,100.0,22.95,2295.0,"EBELING, JOHN A",Common Stock
+2007-10-31,ODFL,Director,BUY,400.0,22.96,9184.0,"EBELING, JOHN A",Common Stock
+2007-10-31,ODFL,Director,BUY,1000.0,22.97,22970.0,"EBELING, JOHN A",Common Stock
+2007-10-31,ODFL,Director,BUY,300.0,23.0,6900.0,"EBELING, JOHN A",Common Stock
+2007-10-31,ODFL,Director,BUY,200.0,23.01,4602.0,"EBELING, JOHN A",Common Stock
+2007-10-31,ODFL,Director,BUY,100.0,22.99,2299.0,"EBELING, JOHN A",Common Stock
+2007-10-31,ODFL,Director,BUY,850.0,23.04,19584.0,"EBELING, JOHN A",Common Stock
+2007-10-31,ODFL,Senior VP - Finance and CFO,BUY,4945.0,22.75,112498.75,"FRYE, J WES",Common Stock
+2007-10-31,ODFL,"Sr. VP, Gen. Counsel &  Sec.",BUY,400.0,22.365,8946.0,"MCCARTY, JOEL B JR",Common Stock
+2007-10-31,ODFL,Executive Vice President,BUY,17582.0,22.75,399990.5,"YOWELL, JOHN B",Common Stock
+2007-10-31,ODFL,"Director, President and COO",BUY,17582.0,22.75,399990.5,"CONGDON, DAVID S",Common Stock
+2007-10-31,ODFL,"Director, Chairman of the Board and CEO",BUY,21978.0,22.75,499999.5,"CONGDON, EARL E",Common Stock
+2007-10-31,ODFL,Director,BUY,500.0,23.03,11515.0,"EBELING, JOHN A",Common Stock
+2007-11-01,ODFL,"Director, Vice Chairman of the Board",BUY,4500.0,22.3314,100491.29999999999,"CONGDON, JOHN R",Common Stock
+2007-11-05,ODFL,Director,BUY,2000.0,22.4974,44994.799999999996,"BREITBACH, J PAUL",Common Stock
+2007-11-30,ODFL,VP - Controller,BUY,13820.0,22.42,309844.4,"BOOKER, JOHN P III",Common Stock
+2008-05-01,ODFL,Director,SELL,300.0,31.82,9546.0,"EBELING, JOHN A",Common Stock
+2008-05-01,ODFL,Director,SELL,100.0,31.78,3178.0,"EBELING, JOHN A",Common Stock
+2008-05-01,ODFL,Director,SELL,100.0,31.8,3180.0,"EBELING, JOHN A",Common Stock
+2008-05-01,ODFL,Director,SELL,400.0,31.71,12684.0,"EBELING, JOHN A",Common Stock
+2008-05-01,ODFL,Director,SELL,300.0,31.81,9543.0,"EBELING, JOHN A",Common Stock
+2008-05-01,ODFL,Director,SELL,200.0,31.68,6336.0,"EBELING, JOHN A",Common Stock
+2008-05-01,ODFL,Director,SELL,100.0,31.74,3174.0,"EBELING, JOHN A",Common Stock
+2008-05-01,ODFL,Director,SELL,100.0,31.83,3183.0,"EBELING, JOHN A",Common Stock
+2008-05-01,ODFL,Director,SELL,100.0,31.73,3173.0,"EBELING, JOHN A",Common Stock
+2008-05-01,ODFL,Director,SELL,1700.0,31.72,53924.0,"EBELING, JOHN A",Common Stock
+2008-05-01,ODFL,Director,SELL,100.0,31.75,3175.0,"EBELING, JOHN A",Common Stock
+2008-05-01,ODFL,Director,SELL,100.0,31.76,3176.0,"EBELING, JOHN A",Common Stock
+2008-05-01,ODFL,Director,SELL,1400.0,31.67,44338.0,"EBELING, JOHN A",Common Stock
+2008-07-30,ODFL,VP - Controller,SELL,13642.0,36.86,502844.12,"BOOKER, JOHN P III",Common Stock
+2008-08-14,ODFL,Director,SELL,4500.0,36.79,165555.0,"EBELING, JOHN A",Common Stock
+2008-08-14,ODFL,Director,SELL,200.0,36.81,7362.0,"EBELING, JOHN A",Common Stock
+2008-08-14,ODFL,Director,SELL,800.0,36.8,29439.999999999996,"EBELING, JOHN A",Common Stock
+2008-08-14,ODFL,Director,SELL,500.0,36.77,18385.0,"EBELING, JOHN A",Common Stock
+2008-08-14,ODFL,Director,SELL,1367.0,36.75,50237.25,"EBELING, JOHN A",Common Stock
+2008-08-14,ODFL,Director,SELL,1300.0,36.92,47996.0,"EBELING, JOHN A",Common Stock
+2008-08-14,ODFL,Director,SELL,200.0,36.93,7386.0,"EBELING, JOHN A",Common Stock
+2008-08-14,ODFL,Director,SELL,200.0,36.88,7376.000000000001,"EBELING, JOHN A",Common Stock
+2008-08-14,ODFL,Director,SELL,300.0,36.87,11061.0,"EBELING, JOHN A",Common Stock
+2008-08-14,ODFL,Director,SELL,500.0,36.83,18415.0,"EBELING, JOHN A",Common Stock
+2008-08-14,ODFL,Director,SELL,100.0,36.82,3682.0,"EBELING, JOHN A",Common Stock
+2008-08-14,ODFL,Director,SELL,33.0,36.95,1219.3500000000001,"EBELING, JOHN A",Common Stock
+2008-11-24,ODFL,Senior VP - Finance and CFO,BUY,300.0,22.47,6741.0,"FRYE, J WES",Common Stock
+2008-11-24,ODFL,"Director, President and CEO",BUY,4490.0,22.27,99992.3,"CONGDON, DAVID S",Common Stock
+2008-11-24,ODFL,Senior VP - Finance and CFO,BUY,500.0,22.5199,11259.95,"FRYE, J WES",Common Stock
+2008-11-24,ODFL,Senior VP - Finance and CFO,BUY,245.0,22.55,5524.75,"FRYE, J WES",Common Stock
+2008-11-24,ODFL,Senior VP - Finance and CFO,BUY,300.0,22.49,6746.999999999999,"FRYE, J WES",Common Stock
+2008-11-24,ODFL,Senior VP - Finance and CFO,BUY,200.0,22.4899,4497.98,"FRYE, J WES",Common Stock
+2009-02-27,ODFL,VP - Controller,BUY,9376.0,21.33,199990.08,"BOOKER, JOHN P III",Common Stock
+2009-08-10,ODFL,Director,SELL,2000.0,35.817,71634.0,"BREITBACH, J PAUL",Common Stock
+2009-08-18,ODFL,"Director, Executive Chairman",SELL,3.4,35.63,121.14200000000001,"CONGDON, EARL E",Common Stock
+2009-08-21,ODFL,Director,BUY,200.0,37.0,7400.0,"SUGGS, LEO H",Common Stock
+2009-10-29,ODFL,Director,BUY,300.0,27.2,8160.0,"WRAY, D. MICHAEL",Common Stock
+2009-10-29,ODFL,Director,BUY,300.0,27.22,8166.0,"WRAY, D. MICHAEL",Common Stock
+2009-10-29,ODFL,Director,BUY,400.0,27.21,10884.0,"WRAY, D. MICHAEL",Common Stock
+2010-05-13,ODFL,VP - Controller,SELL,9376.0,37.34,350099.84,"BOOKER, JOHN P III",Common Stock
+2010-05-17,ODFL,"Director, Vice Chairman of the Board",SELL,6187.0,36.8039,227705.7293,"CONGDON, JOHN R",Common Stock
+2010-05-17,ODFL,"Director, Vice Chairman of the Board",SELL,4500.0,36.8157,165670.65,"CONGDON, JOHN R",Common Stock
+2010-09-13,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,216.0,25.4195,5490.612,"YOWELL, JOHN B",Common Stock
+2010-09-13,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,4143.0,25.4195,105312.98849999999,"YOWELL, JOHN B",Common Stock
+2010-09-13,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,4143.0,25.4195,105312.98849999999,"CONGDON, DAVID S",Common Stock
+2010-09-13,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,216.0,25.4195,5490.612,"CONGDON, DAVID S",Common Stock
+2010-09-13,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,647.0,25.4195,16446.4165,"CONGDON, DAVID S",Common Stock
+2010-09-13,ODFL,"10% Owner, Member of Section 13(d) group",SELL,3280.0,25.4195,83375.95999999999,"CONGDON, JEFFREY W",Common Stock
+2010-09-13,ODFL,"Director, Executive Chairman, 10% Owner, Member of Section 13(d) group",SELL,29054.0,25.4195,738538.1529999999,"CONGDON, EARL E",Common Stock
+2010-09-13,ODFL,"10% Owner, Member of Section 13(d) group",SELL,4143.0,25.4195,105312.98849999999,"CONGDON, HELEN S",Common Stock
+2010-09-13,ODFL,"10% Owner, Member of Section 13(d) group",SELL,7763.0,25.4195,197331.5785,"CONGDON, HELEN S",Common Stock
+2010-09-13,ODFL,"10% Owner, Member of Section 13(d) group",SELL,647.0,25.4195,16446.4165,"CONGDON, HELEN S",Common Stock
+2010-09-13,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,8415.0,25.4195,213905.0925,"YOWELL, JOHN B",Common Stock
+2010-09-13,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,7763.0,25.4195,197331.5785,"CONGDON, DAVID S",Common Stock
+2010-09-13,ODFL,"10% Owner, Member of Section 13(d) group",SELL,4488.0,25.4195,114082.716,"CONGDON, JEFFREY W",Common Stock
+2010-09-13,ODFL,"10% Owner, Member of Section 13(d) group",SELL,5972.0,25.4195,151805.254,"CONGDON, JEFFREY W",Common Stock
+2010-09-13,ODFL,"10% Owner, Member of Section 13(d) group",SELL,6214.0,25.4195,157956.773,"CONGDON, JEFFREY W",Common Stock
+2010-09-13,ODFL,"10% Owner, Member of Section 13(d) group",SELL,8415.0,25.4195,213905.0925,"YOWELL, AUDREY C",Common Stock
+2010-09-13,ODFL,"10% Owner, Member of Section 13(d) group",SELL,216.0,25.4195,5490.612,"YOWELL, AUDREY C",Common Stock
+2010-09-13,ODFL,"10% Owner, Member of Section 13(d) group",SELL,4143.0,25.4195,105312.98849999999,"YOWELL, AUDREY C",Common Stock
+2010-09-13,ODFL,"10% Owner, Member of Section 13(d) group",SELL,17261.0,25.4195,438765.98949999997,"PIGMAN, KAREN C",Common Stock
+2010-09-13,ODFL,"10% Owner, Member of Section 13(d) group",SELL,1553.0,25.4195,39476.4835,"CONGDON, JEFFREY W",Common Stock
+2010-09-13,ODFL,"Director, 10% Owner, Member of Section 13(d) group",SELL,6162.0,25.4195,156634.959,"CONGDON, JOHN R JR",Common Stock
+2010-09-13,ODFL,"10% Owner, Member of Section 13(d) group",SELL,4143.0,25.4195,105312.98849999999,"PIGMAN, KAREN C",Common Stock
+2010-09-13,ODFL,"Director, Vice Chairman of the Board, 10% Owner, Member of Section 13(d) group",SELL,3026.0,25.4195,76919.40699999999,"CONGDON, JOHN R",Common Stock
+2010-09-13,ODFL,"10% Owner, Member of Section 13(d) group",SELL,8371.0,25.4195,212786.6345,"CONGDON, JEFFREY W",Common Stock
+2010-09-13,ODFL,"10% Owner, Member of Section 13(d) group",SELL,11340.0,25.4195,288257.13,"CONGDON, JEFFREY W",Common Stock
+2010-09-13,ODFL,"10% Owner, Member of Section 13(d) group",SELL,6128.0,25.4195,155770.696,"CONGDON, JEFFREY W",Common Stock
+2010-09-13,ODFL,"Director, Vice Chairman of the Board, 10% Owner, Member of Section 13(d) group",SELL,27780.0,25.4195,706153.71,"CONGDON, JOHN R",Common Stock
+2010-09-14,ODFL,"Director, Vice Chairman of the Board, 10% Owner, Member of Section 13(d) group",SELL,19878.0,25.4546,505986.5388,"CONGDON, JOHN R",Common Stock
+2010-09-14,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,2964.0,25.4546,75447.4344,"YOWELL, JOHN B",Common Stock
+2010-09-14,ODFL,"10% Owner, Member of Section 13(d) group",SELL,1112.0,25.4546,28305.515199999998,"CONGDON, JEFFREY W",Common Stock
+2010-09-14,ODFL,"Director, Vice Chairman of the Board, 10% Owner, Member of Section 13(d) group",SELL,2166.0,25.4546,55134.6636,"CONGDON, JOHN R",Common Stock
+2010-09-14,ODFL,"Director, 10% Owner, Member of Section 13(d) group",SELL,4409.0,25.4546,112229.3314,"CONGDON, JOHN R JR",Common Stock
+2010-09-14,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",BUY,6021.0,25.4546,153262.1466,"YOWELL, JOHN B",Common Stock
+2010-09-14,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,154.0,25.4546,3920.0083999999997,"CONGDON, DAVID S",Common Stock
+2010-09-14,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,463.0,25.4546,11785.4798,"CONGDON, DAVID S",Common Stock
+2010-09-14,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,5560.0,25.4546,141527.576,"CONGDON, DAVID S",Common Stock
+2010-09-14,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2964.0,25.4546,75447.4344,"YOWELL, AUDREY C",Common Stock
+2010-09-14,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,2964.0,25.4546,75447.4344,"CONGDON, DAVID S",Common Stock
+2010-09-14,ODFL,"10% Owner, Member of Section 13(d) group",SELL,6021.0,25.4546,153262.1466,"YOWELL, AUDREY C",Common Stock
+2010-09-14,ODFL,"10% Owner, Member of Section 13(d) group",SELL,463.0,25.4546,11785.4798,"CONGDON, HELEN S",Common Stock
+2010-09-14,ODFL,"10% Owner, Member of Section 13(d) group",SELL,5560.0,25.4546,141527.576,"CONGDON, HELEN S",Common Stock
+2010-09-14,ODFL,"10% Owner, Member of Section 13(d) group",SELL,3211.0,25.4546,81734.7206,"CONGDON, JEFFREY W",Common Stock
+2010-09-14,ODFL,"10% Owner, Member of Section 13(d) group",SELL,4385.0,25.4546,111618.421,"CONGDON, JEFFREY W",Common Stock
+2010-09-14,ODFL,"10% Owner, Member of Section 13(d) group",SELL,4273.0,25.4546,108767.5058,"CONGDON, JEFFREY W",Common Stock
+2010-09-14,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2964.0,25.4546,75447.4344,"PIGMAN, KAREN C",Common Stock
+2010-09-14,ODFL,"10% Owner, Member of Section 13(d) group",SELL,12351.0,25.4546,314389.7646,"PIGMAN, KAREN C",Common Stock
+2010-09-14,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2347.0,25.4546,59741.9462,"CONGDON, JEFFREY W",Common Stock
+2010-09-14,ODFL,"10% Owner, Member of Section 13(d) group",SELL,4446.0,25.4546,113171.1516,"CONGDON, JEFFREY W",Common Stock
+2010-09-14,ODFL,"10% Owner, Member of Section 13(d) group",SELL,8114.0,25.4546,206538.6244,"CONGDON, JEFFREY W",Common Stock
+2010-09-14,ODFL,"10% Owner, Member of Section 13(d) group",SELL,5990.0,25.4546,152473.054,"CONGDON, JEFFREY W",Common Stock
+2010-09-14,ODFL,"Director, Executive Chairman, 10% Owner, Member of Section 13(d) group",SELL,20789.0,25.4546,529175.6794,"CONGDON, EARL E",Common Stock
+2010-09-14,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,154.0,25.4546,3920.0083999999997,"YOWELL, JOHN B",Common Stock
+2010-09-14,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2964.0,25.4546,75447.4344,"CONGDON, HELEN S",Common Stock
+2010-09-14,ODFL,"10% Owner, Member of Section 13(d) group",SELL,154.0,25.4546,3920.0083999999997,"YOWELL, AUDREY C",Common Stock
+2010-09-15,ODFL,"10% Owner, Member of Section 13(d) group",SELL,1952.0,25.3404,49464.4608,"CONGDON, JEFFREY W",Common Stock
+2010-09-15,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,966.0,25.3404,24478.826399999998,"CONGDON, DAVID S",Common Stock
+2010-09-15,ODFL,"10% Owner, Member of Section 13(d) group",SELL,4025.0,25.3404,101995.11,"PIGMAN, KAREN C",Common Stock
+2010-09-15,ODFL,"10% Owner, Member of Section 13(d) group",SELL,966.0,25.3404,24478.826399999998,"YOWELL, AUDREY C",Common Stock
+2010-09-15,ODFL,"10% Owner, Member of Section 13(d) group",SELL,1962.0,25.3404,49717.864799999996,"YOWELL, AUDREY C",Common Stock
+2010-09-15,ODFL,"Director, Vice Chairman of the Board, 10% Owner, Member of Section 13(d) group",SELL,706.0,25.3404,17890.3224,"CONGDON, JOHN R",Common Stock
+2010-09-15,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,151.0,25.3404,3826.4004,"CONGDON, DAVID S",Common Stock
+2010-09-15,ODFL,"10% Owner, Member of Section 13(d) group",SELL,50.0,25.3404,1267.02,"YOWELL, AUDREY C",Common Stock
+2010-09-15,ODFL,"Director, Vice Chairman of the Board, 10% Owner, Member of Section 13(d) group",SELL,6477.0,25.3404,164129.7708,"CONGDON, JOHN R",Common Stock
+2010-09-15,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2644.0,25.3404,67000.01759999999,"CONGDON, JEFFREY W",Common Stock
+2010-09-15,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,1962.0,25.3404,49717.864799999996,"YOWELL, JOHN B",Common Stock
+2010-09-15,ODFL,"10% Owner, Member of Section 13(d) group",SELL,1392.0,25.3404,35273.8368,"CONGDON, JEFFREY W",Common Stock
+2010-09-15,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,1810.0,25.3404,45866.123999999996,"CONGDON, DAVID S",Common Stock
+2010-09-15,ODFL,"10% Owner, Member of Section 13(d) group",SELL,1449.0,25.3404,36718.2396,"CONGDON, JEFFREY W",Common Stock
+2010-09-15,ODFL,"Director, 10% Owner, Member of Section 13(d) group",SELL,1437.0,25.3404,36414.1548,"CONGDON, JOHN R JR",Common Stock
+2010-09-15,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,50.0,25.3404,1267.02,"CONGDON, DAVID S",Common Stock
+2010-09-15,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,50.0,25.3404,1267.02,"YOWELL, JOHN B",Common Stock
+2010-09-15,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,966.0,25.3404,24478.826399999998,"YOWELL, JOHN B",Common Stock
+2010-09-15,ODFL,"Director, Executive Chairman, 10% Owner, Member of Section 13(d) group",SELL,6774.0,25.3404,171655.8696,"CONGDON, EARL E",Common Stock
+2010-09-15,ODFL,"10% Owner, Member of Section 13(d) group",SELL,966.0,25.3404,24478.826399999998,"CONGDON, HELEN S",Common Stock
+2010-09-15,ODFL,"10% Owner, Member of Section 13(d) group",SELL,966.0,25.3404,24478.826399999998,"PIGMAN, KAREN C",Common Stock
+2010-09-15,ODFL,"10% Owner, Member of Section 13(d) group",SELL,1810.0,25.3404,45866.123999999996,"CONGDON, HELEN S",Common Stock
+2010-09-15,ODFL,"10% Owner, Member of Section 13(d) group",SELL,1046.0,25.3404,26506.058399999998,"CONGDON, JEFFREY W",Common Stock
+2010-09-15,ODFL,"10% Owner, Member of Section 13(d) group",SELL,765.0,25.3404,19385.406,"CONGDON, JEFFREY W",Common Stock
+2010-09-15,ODFL,"10% Owner, Member of Section 13(d) group",SELL,1429.0,25.3404,36211.431599999996,"CONGDON, JEFFREY W",Common Stock
+2010-09-15,ODFL,"10% Owner, Member of Section 13(d) group",SELL,151.0,25.3404,3826.4004,"CONGDON, HELEN S",Common Stock
+2010-09-15,ODFL,"10% Owner, Member of Section 13(d) group",SELL,362.0,25.3404,9173.2248,"CONGDON, JEFFREY W",Common Stock
+2010-09-16,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,2403.0,26.1053,62731.0359,"YOWELL, JOHN B",Common Stock
+2010-09-16,ODFL,"10% Owner, Member of Section 13(d) group",SELL,5809.0,25.962,150813.258,"CONGDON, JEFFREY W",Common Stock
+2010-09-16,ODFL,"10% Owner, Member of Section 13(d) group",SELL,5662.0,25.962,146996.844,"CONGDON, JEFFREY W",Common Stock
+2010-09-16,ODFL,"10% Owner, Member of Section 13(d) group",SELL,5891.0,25.962,152942.142,"CONGDON, JEFFREY W",Common Stock
+2010-09-16,ODFL,"10% Owner, Member of Section 13(d) group",SELL,7937.0,25.962,206060.394,"CONGDON, JEFFREY W",Common Stock
+2010-09-16,ODFL,"Director, Vice Chairman of the Board, 10% Owner, Member of Section 13(d) group",SELL,2869.0,25.962,74484.978,"CONGDON, JOHN R",Common Stock
+2010-09-16,ODFL,"Director, 10% Owner, Member of Section 13(d) group",SELL,5842.0,25.962,151670.004,"CONGDON, JOHN R JR",Common Stock
+2010-09-16,ODFL,"10% Owner, Member of Section 13(d) group",SELL,1183.0,26.1053,30882.5699,"PIGMAN, KAREN C",Common Stock
+2010-09-16,ODFL,"10% Owner, Member of Section 13(d) group",SELL,1183.0,26.1053,30882.5699,"YOWELL, AUDREY C",Common Stock
+2010-09-16,ODFL,"10% Owner, Member of Section 13(d) group",SELL,62.0,26.1053,1618.5286,"YOWELL, AUDREY C",Common Stock
+2010-09-16,ODFL,"10% Owner, Member of Section 13(d) group",SELL,7978.0,25.962,207124.836,"YOWELL, AUDREY C",Common Stock
+2010-09-16,ODFL,"10% Owner, Member of Section 13(d) group",SELL,10751.0,25.962,279117.462,"CONGDON, JEFFREY W",Common Stock
+2010-09-16,ODFL,"Director, Executive Chairman, 10% Owner, Member of Section 13(d) group",SELL,8299.0,26.1053,216647.8847,"CONGDON, EARL E",Common Stock
+2010-09-16,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,62.0,26.1053,1618.5286,"YOWELL, JOHN B",Common Stock
+2010-09-16,ODFL,"Director, Vice Chairman of the Board, 10% Owner, Member of Section 13(d) group",SELL,8799.0,26.1053,229700.5347,"CONGDON, JOHN R",Common Stock
+2010-09-16,ODFL,"Director, Vice Chairman of the Board, 10% Owner, Member of Section 13(d) group",SELL,26337.0,25.962,683761.194,"CONGDON, JOHN R",Common Stock
+2010-09-16,ODFL,"Director, 10% Owner, Member of Section 13(d) group",SELL,1760.0,26.1053,45945.328,"CONGDON, JOHN R JR",Common Stock
+2010-09-16,ODFL,"10% Owner, Member of Section 13(d) group",SELL,3927.0,25.962,101952.774,"PIGMAN, KAREN C",Common Stock
+2010-09-16,ODFL,"10% Owner, Member of Section 13(d) group",SELL,4930.0,26.1053,128699.129,"PIGMAN, KAREN C",Common Stock
+2010-09-16,ODFL,"10% Owner, Member of Section 13(d) group",SELL,16364.0,25.962,424842.168,"PIGMAN, KAREN C",Common Stock
+2010-09-16,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,205.0,25.962,5322.21,"YOWELL, JOHN B",Common Stock
+2010-09-16,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,1183.0,26.1053,30882.5699,"YOWELL, JOHN B",Common Stock
+2010-09-16,ODFL,"10% Owner, Member of Section 13(d) group",SELL,937.0,26.1053,24460.6661,"CONGDON, JEFFREY W",Common Stock
+2010-09-16,ODFL,"10% Owner, Member of Section 13(d) group",SELL,4255.0,25.962,110468.31,"CONGDON, JEFFREY W",Common Stock
+2010-09-16,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,7978.0,25.962,207124.836,"YOWELL, JOHN B",Common Stock
+2010-09-16,ODFL,"10% Owner, Member of Section 13(d) group",SELL,3109.0,25.962,80715.858,"CONGDON, JEFFREY W",Common Stock
+2010-09-16,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,185.0,26.1053,4829.4805,"CONGDON, DAVID S",Common Stock
+2010-09-16,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2391.0,26.1053,62417.7723,"CONGDON, JEFFREY W",Common Stock
+2010-09-16,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,3927.0,25.962,101952.774,"YOWELL, JOHN B",Common Stock
+2010-09-16,ODFL,"10% Owner, Member of Section 13(d) group",SELL,205.0,25.962,5322.21,"YOWELL, AUDREY C",Common Stock
+2010-09-16,ODFL,"10% Owner, Member of Section 13(d) group",SELL,3927.0,25.962,101952.774,"YOWELL, AUDREY C",Common Stock
+2010-09-16,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2403.0,26.1053,62731.0359,"YOWELL, AUDREY C",Common Stock
+2010-09-16,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,1183.0,26.1053,30882.5699,"CONGDON, DAVID S",Common Stock
+2010-09-16,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,3927.0,25.962,101952.774,"CONGDON, DAVID S",Common Stock
+2010-09-16,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,62.0,26.1053,1618.5286,"CONGDON, DAVID S",Common Stock
+2010-09-16,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,205.0,25.962,5322.21,"CONGDON, DAVID S",Common Stock
+2010-09-16,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,614.0,25.962,15940.668,"CONGDON, DAVID S",Common Stock
+2010-09-16,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,2219.0,26.1053,57927.6607,"CONGDON, DAVID S",Common Stock
+2010-09-16,ODFL,"10% Owner, Member of Section 13(d) group",SELL,1473.0,25.962,38242.026,"CONGDON, JEFFREY W",Common Stock
+2010-09-16,ODFL,"Director, Executive Chairman, 10% Owner, Member of Section 13(d) group",SELL,27545.0,25.962,715123.29,"CONGDON, EARL E",Common Stock
+2010-09-16,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,7364.0,25.962,191184.168,"CONGDON, DAVID S",Common Stock
+2010-09-16,ODFL,"10% Owner, Member of Section 13(d) group",SELL,3927.0,25.962,101952.774,"CONGDON, HELEN S",Common Stock
+2010-09-16,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2219.0,26.1053,57927.6607,"CONGDON, HELEN S",Common Stock
+2010-09-16,ODFL,"10% Owner, Member of Section 13(d) group",SELL,7364.0,25.962,191184.168,"CONGDON, HELEN S",Common Stock
+2010-09-16,ODFL,"10% Owner, Member of Section 13(d) group",SELL,185.0,26.1053,4829.4805,"CONGDON, HELEN S",Common Stock
+2010-09-16,ODFL,"10% Owner, Member of Section 13(d) group",SELL,614.0,25.962,15940.668,"CONGDON, HELEN S",Common Stock
+2010-09-16,ODFL,"10% Owner, Member of Section 13(d) group",SELL,444.0,26.1053,11590.7532,"CONGDON, JEFFREY W",Common Stock
+2010-09-16,ODFL,"10% Owner, Member of Section 13(d) group",SELL,1282.0,26.1053,33466.9946,"CONGDON, JEFFREY W",Common Stock
+2010-09-16,ODFL,"10% Owner, Member of Section 13(d) group",SELL,1775.0,26.1053,46336.9075,"CONGDON, JEFFREY W",Common Stock
+2010-09-16,ODFL,"10% Owner, Member of Section 13(d) group",SELL,1750.0,26.1053,45684.275,"CONGDON, JEFFREY W",Common Stock
+2010-09-16,ODFL,"10% Owner, Member of Section 13(d) group",SELL,1706.0,26.1053,44535.6418,"CONGDON, JEFFREY W",Common Stock
+2010-09-16,ODFL,"10% Owner, Member of Section 13(d) group",SELL,3239.0,26.1053,84555.0667,"CONGDON, JEFFREY W",Common Stock
+2010-09-16,ODFL,"10% Owner, Member of Section 13(d) group",SELL,1183.0,26.1053,30882.5699,"CONGDON, HELEN S",Common Stock
+2010-09-17,ODFL,"10% Owner, Member of Section 13(d) group",SELL,3572.0,26.1302,93337.0744,"YOWELL, AUDREY C",Common Stock
+2010-09-17,ODFL,"10% Owner, Member of Section 13(d) group",SELL,186.0,26.1302,4860.2172,"YOWELL, AUDREY C",Common Stock
+2010-09-17,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,7255.0,26.1302,189574.601,"YOWELL, JOHN B",Common Stock
+2010-09-17,ODFL,"10% Owner, Member of Section 13(d) group",SELL,7218.0,26.1302,188607.7836,"CONGDON, JEFFREY W",Common Stock
+2010-09-17,ODFL,"10% Owner, Member of Section 13(d) group",SELL,7255.0,26.1302,189574.601,"YOWELL, AUDREY C",Common Stock
+2010-09-17,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,558.0,26.1302,14580.6516,"CONGDON, DAVID S",Common Stock
+2010-09-17,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,6697.0,26.1302,174993.94939999998,"CONGDON, DAVID S",Common Stock
+2010-09-17,ODFL,"Director, Executive Chairman, 10% Owner, Member of Section 13(d) group",SELL,25050.0,26.1302,654561.51,"CONGDON, EARL E",Common Stock
+2010-09-17,ODFL,"10% Owner, Member of Section 13(d) group",SELL,6697.0,26.1302,174993.94939999998,"CONGDON, HELEN S",Common Stock
+2010-09-17,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,186.0,26.1302,4860.2172,"CONGDON, DAVID S",Common Stock
+2010-09-17,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,3572.0,26.1302,93337.0744,"CONGDON, DAVID S",Common Stock
+2010-09-17,ODFL,"Director, Vice Chairman of the Board, 10% Owner, Member of Section 13(d) group",SELL,26560.0,26.1302,694018.112,"CONGDON, JOHN R",Common Stock
+2010-09-17,ODFL,"10% Owner, Member of Section 13(d) group",SELL,5149.0,26.1302,134544.39979999998,"CONGDON, JEFFREY W",Common Stock
+2010-09-17,ODFL,"10% Owner, Member of Section 13(d) group",SELL,9777.0,26.1302,255474.9654,"CONGDON, JEFFREY W",Common Stock
+2010-09-17,ODFL,"10% Owner, Member of Section 13(d) group",SELL,1339.0,26.1302,34988.3378,"CONGDON, JEFFREY W",Common Stock
+2010-09-17,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,186.0,26.1302,4860.2172,"YOWELL, JOHN B",Common Stock
+2010-09-17,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,3572.0,26.1302,93337.0744,"YOWELL, JOHN B",Common Stock
+2010-09-17,ODFL,"10% Owner, Member of Section 13(d) group",SELL,3572.0,26.1302,93337.0744,"CONGDON, HELEN S",Common Stock
+2010-09-17,ODFL,"10% Owner, Member of Section 13(d) group",SELL,5357.0,26.1302,139979.4814,"CONGDON, JEFFREY W",Common Stock
+2010-09-17,ODFL,"10% Owner, Member of Section 13(d) group",SELL,558.0,26.1302,14580.6516,"CONGDON, HELEN S",Common Stock
+2010-09-17,ODFL,"Director, 10% Owner, Member of Section 13(d) group",SELL,5313.0,26.1302,138829.75259999998,"CONGDON, JOHN R JR",Common Stock
+2010-09-17,ODFL,"10% Owner, Member of Section 13(d) group",SELL,3572.0,26.1302,93337.0744,"PIGMAN, KAREN C",Common Stock
+2010-09-17,ODFL,"10% Owner, Member of Section 13(d) group",SELL,14882.0,26.1302,388869.63639999996,"PIGMAN, KAREN C",Common Stock
+2010-09-17,ODFL,"10% Owner, Member of Section 13(d) group",SELL,3869.0,26.1302,101097.7438,"CONGDON, JEFFREY W",Common Stock
+2010-09-17,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2828.0,26.1302,73896.2056,"CONGDON, JEFFREY W",Common Stock
+2010-09-17,ODFL,"10% Owner, Member of Section 13(d) group",SELL,5283.0,26.1302,138045.8466,"CONGDON, JEFFREY W",Common Stock
+2010-09-21,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2018.0,26.0861,52641.7498,"CONGDON, HELEN S",Common Stock
+2010-09-21,ODFL,"10% Owner, Member of Section 13(d) group",SELL,4098.0,26.0861,106900.8378,"YOWELL, AUDREY C",Common Stock
+2010-09-21,ODFL,"10% Owner, Member of Section 13(d) group",SELL,105.0,26.0861,2739.0404999999996,"YOWELL, AUDREY C",Common Stock
+2010-09-21,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2018.0,26.0861,52641.7498,"YOWELL, AUDREY C",Common Stock
+2010-09-21,ODFL,"10% Owner, Member of Section 13(d) group",SELL,8407.0,26.0861,219305.84269999998,"PIGMAN, KAREN C",Common Stock
+2010-09-21,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,2018.0,26.0861,52641.7498,"CONGDON, DAVID S",Common Stock
+2010-09-21,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,2018.0,26.0861,52641.7498,"YOWELL, JOHN B",Common Stock
+2010-09-21,ODFL,"10% Owner, Member of Section 13(d) group",SELL,3783.0,26.0861,98683.7163,"CONGDON, HELEN S",Common Stock
+2010-09-21,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,105.0,26.0861,2739.0404999999996,"YOWELL, JOHN B",Common Stock
+2010-09-21,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,3783.0,26.0861,98683.7163,"CONGDON, DAVID S",Common Stock
+2010-09-21,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2018.0,26.0861,52641.7498,"PIGMAN, KAREN C",Common Stock
+2010-09-21,ODFL,"10% Owner, Member of Section 13(d) group",SELL,315.0,26.0861,8217.1215,"CONGDON, HELEN S",Common Stock
+2010-09-21,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,105.0,26.0861,2739.0404999999996,"CONGDON, DAVID S",Common Stock
+2010-09-21,ODFL,"Director, Vice Chairman of the Board, 10% Owner, Member of Section 13(d) group",SELL,15004.0,26.0861,391395.8444,"CONGDON, JOHN R",Common Stock
+2010-09-21,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,4098.0,26.0861,106900.8378,"YOWELL, JOHN B",Common Stock
+2010-09-21,ODFL,"Director, Executive Chairman, 10% Owner, Member of Section 13(d) group",SELL,14151.0,26.0861,369144.40109999996,"CONGDON, EARL E",Common Stock
+2010-09-21,ODFL,"10% Owner, Member of Section 13(d) group",SELL,757.0,26.0861,19747.1777,"CONGDON, JEFFREY W",Common Stock
+2010-09-21,ODFL,"10% Owner, Member of Section 13(d) group",SELL,1597.0,26.0861,41659.5017,"CONGDON, JEFFREY W",Common Stock
+2010-09-21,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2186.0,26.0861,57024.2146,"CONGDON, JEFFREY W",Common Stock
+2010-09-21,ODFL,"10% Owner, Member of Section 13(d) group",SELL,3026.0,26.0861,78936.5386,"CONGDON, JEFFREY W",Common Stock
+2010-09-21,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,315.0,26.0861,8217.1215,"CONGDON, DAVID S",Common Stock
+2010-09-21,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2984.0,26.0861,77840.9224,"CONGDON, JEFFREY W",Common Stock
+2010-09-21,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2909.0,26.0861,75884.46489999999,"CONGDON, JEFFREY W",Common Stock
+2010-09-21,ODFL,"10% Owner, Member of Section 13(d) group",SELL,5523.0,26.0861,144073.53029999998,"CONGDON, JEFFREY W",Common Stock
+2010-09-21,ODFL,"10% Owner, Member of Section 13(d) group",SELL,4077.0,26.0861,106353.0297,"CONGDON, JEFFREY W",Common Stock
+2010-09-21,ODFL,"Director, 10% Owner, Member of Section 13(d) group",SELL,3001.0,26.0861,78284.38609999999,"CONGDON, JOHN R JR",Common Stock
+2010-10-13,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,139.0,26.1118,3629.5402,"CONGDON, DAVID S",Common Stock
+2010-10-13,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,2650.0,26.1118,69196.26999999999,"CONGDON, DAVID S",Common Stock
+2010-10-13,ODFL,"10% Owner, Member of Section 13(d) group",SELL,3975.0,26.1118,103794.405,"CONGDON, JEFFREY W",Common Stock
+2010-10-13,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2098.0,26.1118,54782.556399999994,"CONGDON, JEFFREY W",Common Stock
+2010-10-13,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2871.0,26.1118,74966.9778,"CONGDON, JEFFREY W",Common Stock
+2010-10-13,ODFL,"10% Owner, Member of Section 13(d) group",SELL,5356.0,26.1118,139854.8008,"CONGDON, JEFFREY W",Common Stock
+2010-10-13,ODFL,"Director, Vice Chairman of the Board, 10% Owner, Member of Section 13(d) group",SELL,19710.0,26.1118,514663.578,"CONGDON, JOHN R",Common Stock
+2010-10-13,ODFL,"Director, 10% Owner, Member of Section 13(d) group",SELL,3942.0,26.1118,102932.7156,"CONGDON, JOHN R JR",Common Stock
+2010-10-13,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2650.0,26.1118,69196.26999999999,"PIGMAN, KAREN C",Common Stock
+2010-10-13,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,414.0,26.1118,10810.2852,"CONGDON, DAVID S",Common Stock
+2010-10-13,ODFL,"Director, Executive Chairman, 10% Owner, Member of Section 13(d) group",SELL,18589.0,26.1118,485392.25019999995,"CONGDON, EARL E",Common Stock
+2010-10-13,ODFL,"10% Owner, Member of Section 13(d) group",SELL,3821.0,26.1118,99773.1878,"CONGDON, JEFFREY W",Common Stock
+2010-10-13,ODFL,"10% Owner, Member of Section 13(d) group",SELL,139.0,26.1118,3629.5402,"YOWELL, AUDREY C",Common Stock
+2010-10-13,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,4969.0,26.1118,129749.5342,"CONGDON, DAVID S",Common Stock
+2010-10-13,ODFL,"10% Owner, Member of Section 13(d) group",SELL,7255.0,26.1118,189441.109,"CONGDON, JEFFREY W",Common Stock
+2010-10-13,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2650.0,26.1118,69196.26999999999,"YOWELL, AUDREY C",Common Stock
+2010-10-13,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2650.0,26.1118,69196.26999999999,"CONGDON, HELEN S",Common Stock
+2010-10-13,ODFL,"10% Owner, Member of Section 13(d) group",SELL,414.0,26.1118,10810.2852,"CONGDON, HELEN S",Common Stock
+2010-10-13,ODFL,"10% Owner, Member of Section 13(d) group",SELL,4969.0,26.1118,129749.5342,"CONGDON, HELEN S",Common Stock
+2010-10-13,ODFL,"10% Owner, Member of Section 13(d) group",SELL,11043.0,26.1118,288352.6074,"PIGMAN, KAREN C",Common Stock
+2010-10-13,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,5384.0,26.1118,140585.9312,"YOWELL, JOHN B",Common Stock
+2010-10-13,ODFL,"10% Owner, Member of Section 13(d) group",SELL,994.0,26.1118,25955.1292,"CONGDON, JEFFREY W",Common Stock
+2010-10-13,ODFL,"10% Owner, Member of Section 13(d) group",SELL,3920.0,26.1118,102358.256,"CONGDON, JEFFREY W",Common Stock
+2010-10-13,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,139.0,26.1118,3629.5402,"YOWELL, JOHN B",Common Stock
+2010-10-13,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,2650.0,26.1118,69196.26999999999,"YOWELL, JOHN B",Common Stock
+2010-10-13,ODFL,"10% Owner, Member of Section 13(d) group",SELL,5384.0,26.1118,140585.9312,"YOWELL, AUDREY C",Common Stock
+2010-10-15,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,2576.0,26.0081,66996.86559999999,"YOWELL, JOHN B",Common Stock
+2010-10-15,ODFL,"10% Owner, Member of Section 13(d) group",SELL,5232.0,26.0081,136074.3792,"YOWELL, AUDREY C",Common Stock
+2010-10-15,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,2576.0,26.0081,66996.86559999999,"CONGDON, DAVID S",Common Stock
+2010-10-15,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,133.0,26.0081,3459.0773,"CONGDON, DAVID S",Common Stock
+2010-10-15,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,401.0,26.0081,10429.248099999999,"CONGDON, DAVID S",Common Stock
+2010-10-15,ODFL,"10% Owner, Member of Section 13(d) group",SELL,4829.0,26.0081,125593.1149,"CONGDON, HELEN S",Common Stock
+2010-10-15,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2576.0,26.0081,66996.86559999999,"CONGDON, HELEN S",Common Stock
+2010-10-15,ODFL,"10% Owner, Member of Section 13(d) group",SELL,401.0,26.0081,10429.248099999999,"CONGDON, HELEN S",Common Stock
+2010-10-15,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,4829.0,26.0081,125593.1149,"CONGDON, DAVID S",Common Stock
+2010-10-15,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,133.0,26.0081,3459.0773,"YOWELL, JOHN B",Common Stock
+2010-10-15,ODFL,"Director, Executive Chairman, 10% Owner, Member of Section 13(d) group",SELL,18065.0,26.0081,469836.32649999997,"CONGDON, EARL E",Common Stock
+2010-10-15,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,5232.0,26.0081,136074.3792,"YOWELL, JOHN B",Common Stock
+2010-10-15,ODFL,"10% Owner, Member of Section 13(d) group",SELL,966.0,26.0081,25123.8246,"CONGDON, JEFFREY W",Common Stock
+2010-10-15,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2576.0,26.0081,66996.86559999999,"YOWELL, AUDREY C",Common Stock
+2010-10-15,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2039.0,26.0081,53030.5159,"CONGDON, JEFFREY W",Common Stock
+2010-10-15,ODFL,"10% Owner, Member of Section 13(d) group",SELL,3864.0,26.0081,100495.2984,"CONGDON, JEFFREY W",Common Stock
+2010-10-15,ODFL,"10% Owner, Member of Section 13(d) group",SELL,3810.0,26.0081,99090.86099999999,"CONGDON, JEFFREY W",Common Stock
+2010-10-15,ODFL,"10% Owner, Member of Section 13(d) group",SELL,3713.0,26.0081,96568.0753,"CONGDON, JEFFREY W",Common Stock
+2010-10-15,ODFL,"10% Owner, Member of Section 13(d) group",SELL,7051.0,26.0081,183383.1131,"CONGDON, JEFFREY W",Common Stock
+2010-10-15,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2790.0,26.0081,72562.599,"CONGDON, JEFFREY W",Common Stock
+2010-10-15,ODFL,"Director, Vice Chairman of the Board, 10% Owner, Member of Section 13(d) group",SELL,19154.0,26.0081,498159.14739999996,"CONGDON, JOHN R",Common Stock
+2010-10-15,ODFL,"Director, 10% Owner, Member of Section 13(d) group",SELL,3831.0,26.0081,99637.0311,"CONGDON, JOHN R JR",Common Stock
+2010-10-15,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2576.0,26.0081,66996.86559999999,"PIGMAN, KAREN C",Common Stock
+2010-10-15,ODFL,"10% Owner, Member of Section 13(d) group",SELL,10732.0,26.0081,279118.9292,"PIGMAN, KAREN C",Common Stock
+2010-10-15,ODFL,"10% Owner, Member of Section 13(d) group",SELL,5205.0,26.0081,135372.1605,"CONGDON, JEFFREY W",Common Stock
+2010-10-15,ODFL,"10% Owner, Member of Section 13(d) group",SELL,133.0,26.0081,3459.0773,"YOWELL, AUDREY C",Common Stock
+2010-10-18,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2.0,26.0,52.0,"CONGDON, HELEN S",Common Stock
+2010-10-18,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,1.0,26.0,26.0,"CONGDON, DAVID S",Common Stock
+2010-10-18,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,2.0,26.0,52.0,"CONGDON, DAVID S",Common Stock
+2010-10-18,ODFL,"10% Owner, Member of Section 13(d) group",SELL,3.0,26.0,78.0,"YOWELL, AUDREY C",Common Stock
+2010-10-18,ODFL,"10% Owner, Member of Section 13(d) group",SELL,1.0,26.0,26.0,"PIGMAN, KAREN C",Common Stock
+2010-10-18,ODFL,"10% Owner, Member of Section 13(d) group",SELL,1.0,26.0,26.0,"YOWELL, AUDREY C",Common Stock
+2010-10-18,ODFL,"10% Owner, Member of Section 13(d) group",SELL,6.0,26.0,156.0,"PIGMAN, KAREN C",Common Stock
+2010-10-18,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,3.0,26.0,78.0,"CONGDON, DAVID S",Common Stock
+2010-10-18,ODFL,"Director, 10% Owner, Member of Section 13(d) group",SELL,3.0,26.0,78.0,"CONGDON, JOHN R JR",Common Stock
+2010-10-18,ODFL,"10% Owner, Member of Section 13(d) group",SELL,1.0,26.0,26.0,"CONGDON, JEFFREY W",Common Stock
+2010-10-18,ODFL,"10% Owner, Member of Section 13(d) group",SELL,3.0,26.0,78.0,"CONGDON, JEFFREY W",Common Stock
+2010-10-18,ODFL,"Director, Vice Chairman of the Board, 10% Owner, Member of Section 13(d) group",SELL,11.0,26.0,286.0,"CONGDON, JOHN R",Common Stock
+2010-10-18,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,3.0,26.0,78.0,"YOWELL, JOHN B",Common Stock
+2010-10-18,ODFL,"10% Owner, Member of Section 13(d) group",SELL,3.0,26.0,78.0,"CONGDON, HELEN S",Common Stock
+2010-10-18,ODFL,"Director, Executive Chairman, 10% Owner, Member of Section 13(d) group",SELL,9.0,26.0,234.0,"CONGDON, EARL E",Common Stock
+2010-10-18,ODFL,"10% Owner, Member of Section 13(d) group",SELL,5.0,26.0,130.0,"CONGDON, JEFFREY W",Common Stock
+2010-10-18,ODFL,"10% Owner, Member of Section 13(d) group",SELL,1.0,26.0,26.0,"CONGDON, HELEN S",Common Stock
+2010-10-18,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,1.0,26.0,26.0,"YOWELL, JOHN B",Common Stock
+2010-10-18,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2.0,26.0,52.0,"CONGDON, JEFFREY W",Common Stock
+2010-10-27,ODFL,"10% Owner, Member of Section 13(d) group",SELL,438.0,28.0,12264.0,"CONGDON, HELEN S",Common Stock
+2010-10-27,ODFL,"10% Owner, Member of Section 13(d) group",SELL,5260.0,28.0,147280.0,"CONGDON, HELEN S",Common Stock
+2010-10-27,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2805.0,28.0,78540.0,"CONGDON, HELEN S",Common Stock
+2010-10-27,ODFL,"10% Owner, Member of Section 13(d) group",SELL,146.0,28.0,4088.0,"YOWELL, AUDREY C",Common Stock
+2010-10-27,ODFL,"Director, Executive Chairman, 10% Owner, Member of Section 13(d) group",SELL,19675.0,28.0,550900.0,"CONGDON, EARL E",Common Stock
+2010-10-27,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,2805.0,28.0,78540.0,"YOWELL, JOHN B",Common Stock
+2010-10-27,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,438.0,28.0,12264.0,"CONGDON, DAVID S",Common Stock
+2010-10-27,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2922.0,28.0,81816.0,"CONGDON, JEFFREY W",Common Stock
+2010-10-27,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,146.0,28.0,4088.0,"YOWELL, JOHN B",Common Stock
+2010-10-27,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,5698.0,28.0,159544.0,"YOWELL, JOHN B",Common Stock
+2010-10-27,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,5260.0,28.0,147280.0,"CONGDON, DAVID S",Common Stock
+2010-10-27,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2951.0,28.0,82628.0,"CONGDON, JEFFREY W",Common Stock
+2010-10-27,ODFL,"10% Owner, Member of Section 13(d) group",SELL,3839.0,28.0,107492.0,"CONGDON, JEFFREY W",Common Stock
+2010-10-27,ODFL,"10% Owner, Member of Section 13(d) group",SELL,3974.0,28.0,111272.0,"CONGDON, JEFFREY W",Common Stock
+2010-10-27,ODFL,"10% Owner, Member of Section 13(d) group",SELL,4003.0,28.0,112084.0,"CONGDON, JEFFREY W",Common Stock
+2010-10-27,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,146.0,28.0,4088.0,"CONGDON, DAVID S",Common Stock
+2010-10-27,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,2805.0,28.0,78540.0,"CONGDON, DAVID S",Common Stock
+2010-10-27,ODFL,"10% Owner, Member of Section 13(d) group",SELL,5698.0,28.0,159544.0,"YOWELL, AUDREY C",Common Stock
+2010-10-27,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2805.0,28.0,78540.0,"YOWELL, AUDREY C",Common Stock
+2010-10-27,ODFL,"Director, Vice Chairman of the Board, 10% Owner, Member of Section 13(d) group",SELL,20335.0,28.0,569380.0,"CONGDON, JOHN R",Common Stock
+2010-10-27,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2542.0,28.0,71176.0,"CONGDON, JEFFREY W",Common Stock
+2010-10-27,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2805.0,28.0,78540.0,"PIGMAN, KAREN C",Common Stock
+2010-10-27,ODFL,"Director, 10% Owner, Member of Section 13(d) group",SELL,3939.0,28.0,110292.0,"CONGDON, JOHN R JR",Common Stock
+2010-10-27,ODFL,"10% Owner, Member of Section 13(d) group",SELL,5435.0,28.0,152180.0,"CONGDON, JEFFREY W",Common Stock
+2010-10-27,ODFL,"10% Owner, Member of Section 13(d) group",SELL,11699.0,28.0,327572.0,"PIGMAN, KAREN C",Common Stock
+2010-10-27,ODFL,"10% Owner, Member of Section 13(d) group",SELL,7562.0,28.0,211736.0,"CONGDON, JEFFREY W",Common Stock
+2010-10-28,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2685.0,28.009,75204.16500000001,"YOWELL, AUDREY C",Common Stock
+2010-10-28,ODFL,"10% Owner, Member of Section 13(d) group",SELL,140.0,28.009,3921.26,"YOWELL, AUDREY C",Common Stock
+2010-10-28,ODFL,"10% Owner, Member of Section 13(d) group",SELL,5450.0,28.009,152649.05,"YOWELL, AUDREY C",Common Stock
+2010-10-28,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,2680.0,28.009,75064.12,"YOWELL, JOHN B",Common Stock
+2010-10-28,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,140.0,28.009,3921.26,"YOWELL, JOHN B",Common Stock
+2010-10-28,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,2685.0,28.009,75204.16500000001,"CONGDON, DAVID S",Common Stock
+2010-10-28,ODFL,"10% Owner, Member of Section 13(d) group",SELL,11180.0,28.009,313140.62,"PIGMAN, KAREN C",Common Stock
+2010-10-28,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,2685.0,28.009,75204.16500000001,"YOWELL, JOHN B",Common Stock
+2010-10-28,ODFL,"10% Owner, Member of Section 13(d) group",SELL,5200.0,28.009,145646.8,"CONGDON, JEFFREY W",Common Stock
+2010-10-28,ODFL,"10% Owner, Member of Section 13(d) group",SELL,7233.0,28.009,202589.097,"CONGDON, JEFFREY W",Common Stock
+2010-10-28,ODFL,"10% Owner, Member of Section 13(d) group",SELL,3672.0,28.009,102849.048,"CONGDON, JEFFREY W",Common Stock
+2010-10-28,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,5450.0,28.009,152649.05,"YOWELL, JOHN B",Common Stock
+2010-10-28,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2685.0,28.009,75204.16500000001,"PIGMAN, KAREN C",Common Stock
+2010-10-28,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2680.0,28.009,75064.12,"YOWELL, AUDREY C",Common Stock
+2010-10-28,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,140.0,28.009,3921.26,"CONGDON, DAVID S",Common Stock
+2010-10-28,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,420.0,28.009,11763.78,"CONGDON, DAVID S",Common Stock
+2010-10-28,ODFL,"Director, Vice Chairman of the Board, 10% Owner, Member of Section 13(d) group",SELL,19450.0,28.009,544775.05,"CONGDON, JOHN R",Common Stock
+2010-10-28,ODFL,"Director, Executive Chairman, 10% Owner, Member of Section 13(d) group",SELL,18817.0,28.009,527045.353,"CONGDON, EARL E",Common Stock
+2010-10-28,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2680.0,28.009,75064.12,"CONGDON, HELEN S",Common Stock
+2010-10-28,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2685.0,28.009,75204.16500000001,"CONGDON, HELEN S",Common Stock
+2010-10-28,ODFL,"10% Owner, Member of Section 13(d) group",SELL,5030.0,28.009,140885.27,"CONGDON, HELEN S",Common Stock
+2010-10-28,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,5030.0,28.009,140885.27,"CONGDON, DAVID S",Common Stock
+2010-10-28,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2795.0,28.009,78285.155,"CONGDON, JEFFREY W",Common Stock
+2010-10-28,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2431.0,28.009,68089.879,"CONGDON, JEFFREY W",Common Stock
+2010-10-28,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2822.0,28.009,79041.398,"CONGDON, JEFFREY W",Common Stock
+2010-10-28,ODFL,"10% Owner, Member of Section 13(d) group",SELL,3800.0,28.009,106434.2,"CONGDON, JEFFREY W",Common Stock
+2010-10-28,ODFL,"10% Owner, Member of Section 13(d) group",SELL,3828.0,28.009,107218.452,"CONGDON, JEFFREY W",Common Stock
+2010-10-28,ODFL,"Director, 10% Owner, Member of Section 13(d) group",SELL,3767.0,28.009,105509.903,"CONGDON, JOHN R JR",Common Stock
+2010-10-28,ODFL,"10% Owner, Member of Section 13(d) group",SELL,420.0,28.009,11763.78,"CONGDON, HELEN S",Common Stock
+2010-10-29,ODFL,"Director, Vice Chairman of the Board, 10% Owner, Member of Section 13(d) group",SELL,24040.0,28.0069,673285.876,"CONGDON, JOHN R",Common Stock
+2010-10-29,ODFL,"Director, 10% Owner, Member of Section 13(d) group",SELL,4656.0,28.0069,130400.12640000001,"CONGDON, JOHN R JR",Common Stock
+2010-10-29,ODFL,"10% Owner, Member of Section 13(d) group",SELL,3454.0,28.0069,96735.83260000001,"CONGDON, JEFFREY W",Common Stock
+2010-10-29,ODFL,"10% Owner, Member of Section 13(d) group",SELL,13818.0,28.0069,386999.34420000005,"PIGMAN, KAREN C",Common Stock
+2010-10-29,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,6736.0,28.0069,188654.47840000002,"YOWELL, JOHN B",Common Stock
+2010-10-29,ODFL,"10% Owner, Member of Section 13(d) group",SELL,172.0,28.0069,4817.1868,"YOWELL, AUDREY C",Common Stock
+2010-10-29,ODFL,"10% Owner, Member of Section 13(d) group",SELL,6736.0,28.0069,188654.47840000002,"YOWELL, AUDREY C",Common Stock
+2010-10-29,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,172.0,28.0069,4817.1868,"YOWELL, JOHN B",Common Stock
+2010-10-29,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,3316.0,28.0069,92870.88040000001,"YOWELL, JOHN B",Common Stock
+2010-10-29,ODFL,"10% Owner, Member of Section 13(d) group",SELL,3316.0,28.0069,92870.88040000001,"YOWELL, AUDREY C",Common Stock
+2010-10-29,ODFL,"10% Owner, Member of Section 13(d) group",SELL,8940.0,28.0069,250381.68600000002,"CONGDON, JEFFREY W",Common Stock
+2010-10-29,ODFL,"10% Owner, Member of Section 13(d) group",SELL,3316.0,28.0069,92870.88040000001,"PIGMAN, KAREN C",Common Stock
+2010-10-29,ODFL,"10% Owner, Member of Section 13(d) group",SELL,4698.0,28.0069,131576.4162,"CONGDON, JEFFREY W",Common Stock
+2010-10-29,ODFL,"10% Owner, Member of Section 13(d) group",SELL,4539.0,28.0069,127123.31910000001,"CONGDON, JEFFREY W",Common Stock
+2010-10-29,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,3316.0,28.0069,92870.88040000001,"CONGDON, DAVID S",Common Stock
+2010-10-29,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,172.0,28.0069,4817.1868,"CONGDON, DAVID S",Common Stock
+2010-10-29,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,520.0,28.0069,14563.588000000002,"CONGDON, DAVID S",Common Stock
+2010-10-29,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,6218.0,28.0069,174146.90420000002,"CONGDON, DAVID S",Common Stock
+2010-10-29,ODFL,"Director, Executive Chairman, 10% Owner, Member of Section 13(d) group",SELL,23259.0,28.0069,651412.4871,"CONGDON, EARL E",Common Stock
+2010-10-29,ODFL,"10% Owner, Member of Section 13(d) group",SELL,6429.0,28.0069,180056.36010000002,"CONGDON, JEFFREY W",Common Stock
+2010-10-29,ODFL,"10% Owner, Member of Section 13(d) group",SELL,6218.0,28.0069,174146.90420000002,"CONGDON, HELEN S",Common Stock
+2010-10-29,ODFL,"10% Owner, Member of Section 13(d) group",SELL,520.0,28.0069,14563.588000000002,"CONGDON, HELEN S",Common Stock
+2010-10-29,ODFL,"10% Owner, Member of Section 13(d) group",SELL,3005.0,28.0069,84160.7345,"CONGDON, JEFFREY W",Common Stock
+2010-10-29,ODFL,"10% Owner, Member of Section 13(d) group",SELL,3489.0,28.0069,97716.07410000001,"CONGDON, JEFFREY W",Common Stock
+2010-10-29,ODFL,"10% Owner, Member of Section 13(d) group",SELL,4732.0,28.0069,132528.6508,"CONGDON, JEFFREY W",Common Stock
+2010-10-29,ODFL,"10% Owner, Member of Section 13(d) group",SELL,3316.0,28.0069,92870.88040000001,"CONGDON, HELEN S",Common Stock
+2010-11-01,ODFL,"10% Owner, Member of Section 13(d) group",SELL,136.0,28.114,3823.504,"CONGDON, JEFFREY W",Common Stock
+2010-11-01,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,150.0,28.114,4217.1,"YOWELL, JOHN B",Common Stock
+2010-11-01,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,8.0,28.114,224.912,"YOWELL, JOHN B",Common Stock
+2010-11-01,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,25.0,28.114,702.85,"CONGDON, DAVID S",Common Stock
+2010-11-01,ODFL,"10% Owner, Member of Section 13(d) group",SELL,25.0,28.114,702.85,"CONGDON, HELEN S",Common Stock
+2010-11-01,ODFL,"10% Owner, Member of Section 13(d) group",SELL,214.0,28.114,6016.396,"CONGDON, JEFFREY W",Common Stock
+2010-11-01,ODFL,"10% Owner, Member of Section 13(d) group",SELL,212.0,28.114,5960.168000000001,"CONGDON, JEFFREY W",Common Stock
+2010-11-01,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,150.0,28.114,4217.1,"CONGDON, DAVID S",Common Stock
+2010-11-01,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,8.0,28.114,224.912,"CONGDON, DAVID S",Common Stock
+2010-11-01,ODFL,"10% Owner, Member of Section 13(d) group",SELL,158.0,28.114,4442.012,"CONGDON, JEFFREY W",Common Stock
+2010-11-01,ODFL,"10% Owner, Member of Section 13(d) group",SELL,282.0,28.114,7928.148,"CONGDON, HELEN S",Common Stock
+2010-11-01,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,305.0,28.114,8574.77,"YOWELL, JOHN B",Common Stock
+2010-11-01,ODFL,"Director, Executive Chairman, 10% Owner, Member of Section 13(d) group",SELL,1054.0,28.114,29632.156,"CONGDON, EARL E",Common Stock
+2010-11-01,ODFL,"10% Owner, Member of Section 13(d) group",SELL,150.0,28.114,4217.1,"CONGDON, HELEN S",Common Stock
+2010-11-01,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,282.0,28.114,7928.148,"CONGDON, DAVID S",Common Stock
+2010-11-01,ODFL,"10% Owner, Member of Section 13(d) group",SELL,206.0,28.114,5791.484,"CONGDON, JEFFREY W",Common Stock
+2010-11-01,ODFL,"10% Owner, Member of Section 13(d) group",SELL,305.0,28.114,8574.77,"YOWELL, AUDREY C",Common Stock
+2010-11-01,ODFL,"10% Owner, Member of Section 13(d) group",SELL,8.0,28.114,224.912,"YOWELL, AUDREY C",Common Stock
+2010-11-01,ODFL,"10% Owner, Member of Section 13(d) group",SELL,150.0,28.114,4217.1,"YOWELL, AUDREY C",Common Stock
+2010-11-01,ODFL,"10% Owner, Member of Section 13(d) group",SELL,157.0,28.114,4413.898,"CONGDON, JEFFREY W",Common Stock
+2010-11-01,ODFL,"10% Owner, Member of Section 13(d) group",SELL,627.0,28.114,17627.478,"PIGMAN, KAREN C",Common Stock
+2010-11-01,ODFL,"10% Owner, Member of Section 13(d) group",SELL,150.0,28.114,4217.1,"PIGMAN, KAREN C",Common Stock
+2010-11-01,ODFL,"Director, 10% Owner, Member of Section 13(d) group",SELL,210.0,28.114,5903.9400000000005,"CONGDON, JOHN R JR",Common Stock
+2010-11-01,ODFL,"Director, Vice Chairman of the Board, 10% Owner, Member of Section 13(d) group",SELL,1090.0,28.114,30644.260000000002,"CONGDON, JOHN R",Common Stock
+2010-11-01,ODFL,"10% Owner, Member of Section 13(d) group",SELL,291.0,28.114,8181.174,"CONGDON, JEFFREY W",Common Stock
+2010-11-01,ODFL,"10% Owner, Member of Section 13(d) group",SELL,405.0,28.114,11386.17,"CONGDON, JEFFREY W",Common Stock
+2010-11-03,ODFL,"10% Owner, Member of Section 13(d) group",SELL,30560.0,28.0823,858195.088,"YOWELL, AUDREY C",Common Stock
+2010-11-03,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,30560.0,28.0823,858195.088,"YOWELL, JOHN B",Common Stock
+2010-11-03,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,784.0,28.0823,22016.5232,"YOWELL, JOHN B",Common Stock
+2010-11-03,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,15049.0,28.0823,422610.5327,"YOWELL, JOHN B",Common Stock
+2010-11-03,ODFL,"Executive VP and COO, 10% Owner, Member of Section 13(d) group",SELL,15044.0,28.0823,422470.1212,"YOWELL, JOHN B",Common Stock
+2010-11-03,ODFL,"10% Owner, Member of Section 13(d) group",SELL,13635.0,28.0823,382902.1605,"CONGDON, JEFFREY W",Common Stock
+2010-11-03,ODFL,"10% Owner, Member of Section 13(d) group",SELL,21315.0,28.0823,598574.2245,"CONGDON, JEFFREY W",Common Stock
+2010-11-03,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,15044.0,28.0823,422470.1212,"CONGDON, DAVID S",Common Stock
+2010-11-03,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2347.0,28.0823,65909.1581,"CONGDON, HELEN S",Common Stock
+2010-11-03,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,2347.0,28.0823,65909.1581,"CONGDON, DAVID S",Common Stock
+2010-11-03,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,28211.0,28.0823,792229.7653,"CONGDON, DAVID S",Common Stock
+2010-11-03,ODFL,"Director, Executive Chairman, 10% Owner, Member of Section 13(d) group",SELL,105520.0,28.0823,2963244.296,"CONGDON, EARL E",Common Stock
+2010-11-03,ODFL,"10% Owner, Member of Section 13(d) group",SELL,15044.0,28.0823,422470.1212,"CONGDON, HELEN S",Common Stock
+2010-11-03,ODFL,"10% Owner, Member of Section 13(d) group",SELL,15049.0,28.0823,422610.5327,"CONGDON, HELEN S",Common Stock
+2010-11-03,ODFL,"10% Owner, Member of Section 13(d) group",SELL,784.0,28.0823,22016.5232,"YOWELL, AUDREY C",Common Stock
+2010-11-03,ODFL,"10% Owner, Member of Section 13(d) group",SELL,20595.0,28.0823,578354.9685,"CONGDON, JEFFREY W",Common Stock
+2010-11-03,ODFL,"10% Owner, Member of Section 13(d) group",SELL,15672.0,28.0823,440105.8056,"CONGDON, JEFFREY W",Common Stock
+2010-11-03,ODFL,"10% Owner, Member of Section 13(d) group",SELL,15044.0,28.0823,422470.1212,"YOWELL, AUDREY C",Common Stock
+2010-11-03,ODFL,"10% Owner, Member of Section 13(d) group",SELL,40561.0,28.0823,1139046.1703,"CONGDON, JEFFREY W",Common Stock
+2010-11-03,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,784.0,28.0823,22016.5232,"CONGDON, DAVID S",Common Stock
+2010-11-03,ODFL,"Director, Vice Chairman of the Board, 10% Owner, Member of Section 13(d) group",SELL,109058.0,28.0823,3062599.4734,"CONGDON, JOHN R",Common Stock
+2010-11-03,ODFL,"Director, 10% Owner, Member of Section 13(d) group",SELL,21128.0,28.0823,593322.8344,"CONGDON, JOHN R JR",Common Stock
+2010-11-03,ODFL,"10% Owner, Member of Section 13(d) group",SELL,15044.0,28.0823,422470.1212,"PIGMAN, KAREN C",Common Stock
+2010-11-03,ODFL,"10% Owner, Member of Section 13(d) group",SELL,29145.0,28.0823,818458.6335,"CONGDON, JEFFREY W",Common Stock
+2010-11-03,ODFL,"10% Owner, Member of Section 13(d) group",SELL,15049.0,28.0823,422610.5327,"YOWELL, AUDREY C",Common Stock
+2010-11-03,ODFL,"10% Owner, Member of Section 13(d) group",SELL,28211.0,28.0823,792229.7653,"CONGDON, HELEN S",Common Stock
+2010-11-03,ODFL,"10% Owner, Member of Section 13(d) group",SELL,15830.0,28.0823,444542.809,"CONGDON, JEFFREY W",Common Stock
+2010-11-03,ODFL,"10% Owner, Member of Section 13(d) group",SELL,21473.0,28.0823,603011.2279,"CONGDON, JEFFREY W",Common Stock
+2010-11-03,ODFL,"10% Owner, Member of Section 13(d) group",SELL,62675.0,28.0823,1760058.1525,"PIGMAN, KAREN C",Common Stock
+2010-11-05,ODFL,"Director, President and CEO, 10% Owner, Member of Section 13(d) group",SELL,2.0,28.49,56.98,"CONGDON, DAVID S",Common Stock
+2010-11-05,ODFL,"10% Owner, Member of Section 13(d) group",SELL,2.0,28.49,56.98,"CONGDON, HELEN S",Common Stock
+2011-02-08,ODFL,Director,BUY,700.0,30.1,21070.0,"SUGGS, LEO H",Common Stock
+2011-08-08,ODFL,Senior VP - Finance and CFO,BUY,1275.0,29.8199,38020.3725,"FRYE, J WES",Common Stock
+2011-08-09,ODFL,VP - Controller,BUY,13666.0,30.67,419136.22000000003,"BOOKER, JOHN P III",Common Stock
+2011-08-09,ODFL,Senior VP - Finance and CFO,BUY,123.0,29.93,3681.39,"FRYE, J WES",Common Stock
+2011-08-11,ODFL,"Sr. VP, Gen. Counsel & Sec.",BUY,500.0,30.1,15050.0,"MCCARTY, JOEL B JR",Common Stock
+2012-08-21,ODFL,Director,BUY,600.0,45.99,27594.0,"SUGGS, LEO H",Common Stock
+2012-11-14,ODFL,VP - Controller,SELL,20500.0,33.45,685725.0000000001,"BOOKER, JOHN P III",Common Stock
+2012-11-28,ODFL,Executive VP and COO,BUY,2549.0,33.24,84728.76000000001,"GANTT, GREG C",Common Stock
+2013-02-27,ODFL,"Director, President and CEO",SELL,3600.0,35.6253,128251.08000000002,"CONGDON, DAVID S",Common Stock
+2013-08-01,ODFL,"Director, President and CEO",SELL,4600.0,45.066,207303.6,"CONGDON, DAVID S",Common Stock
+2013-08-06,ODFL,"Director, President and CEO",SELL,55000.0,44.8874,2468807.0,"CONGDON, DAVID S",Common Stock
+2013-08-07,ODFL,Director,BUY,2250.0,44.446,100003.5,"KASARDA, JOHN D.",Common Stock
+2013-11-27,ODFL,"Director, Executive Chairman",SELL,880.0,51.28,45126.4,"CONGDON, EARL E",Common Stock
+2014-02-18,ODFL,"Director, Executive Chairman",SELL,23670.0,53.5044,1266449.1479999998,"CONGDON, EARL E",Common Stock
+2014-02-19,ODFL,"Director, President and CEO",SELL,9700.0,52.979,513896.3,"CONGDON, DAVID S",Common Stock
+2014-02-19,ODFL,"Director, Executive Chairman",SELL,46457.0,52.5112,2439512.8184,"CONGDON, EARL E",Common Stock
+2014-02-19,ODFL,"Director, President and CEO",SELL,5200.0,52.979,275490.8,"CONGDON, DAVID S",Common Stock
+2014-02-20,ODFL,"Director, Executive Chairman",SELL,14343.0,52.673,755488.839,"CONGDON, EARL E",Common Stock
+2014-05-28,ODFL,Director,BUY,1582.0,63.2087,99996.1634,"KASARDA, JOHN D.",Common Stock
+2014-08-07,ODFL,"Director, President and CEO",SELL,100.0,63.34,6334.0,"CONGDON, DAVID S",Common Stock
+2014-08-27,ODFL,"Director, Executive Chairman",SELL,1859.0,66.32,123288.87999999999,"CONGDON, EARL E",Common Stock
+2014-11-18,ODFL,"Director, President and CEO",SELL,3500.0,77.1607,270062.45,"CONGDON, DAVID S",Common Stock
+2015-02-23,ODFL,"Director, President and CEO",SELL,2260.0,77.35,174811.0,"CONGDON, DAVID S",Common Stock
+2015-02-25,ODFL,"10% Owner, Member of Section 13(d) group",SELL,25100.0,78.52,1970852.0,"CONGDON, JEFFREY W",Common Stock
+2015-02-26,ODFL,"10% Owner, Member of Section 13(d) group",SELL,47400.0,78.3,3711420.0,"CONGDON, JEFFREY W",Common Stock
+2015-05-29,ODFL,Director,BUY,400.0,71.19,28476.0,"SUGGS, LEO H",Common Stock
+2015-08-10,ODFL,"Director, Vice Chairman and CEO",SELL,2200.0,72.73,160006.0,"CONGDON, DAVID S",Common Stock
+2015-08-10,ODFL,"Director, Vice Chairman and CEO",SELL,1580.0,72.73,114913.40000000001,"CONGDON, DAVID S",Common Stock
+2015-08-21,ODFL,Director,BUY,3000.0,69.92,209760.0,"SUGGS, LEO H",Common Stock
+2015-08-26,ODFL,VP - Controller,BUY,9220.0,65.08,600037.6,"BOOKER, JOHN P III",Common Stock
+2015-08-26,ODFL,President and COO,BUY,1537.0,65.08,100027.95999999999,"GANTT, GREG C",Common Stock
+2015-11-25,ODFL,"Director, Executive Chairman",SELL,3494.0,64.02,223685.87999999998,"CONGDON, EARL E",Common Stock
+2016-02-12,ODFL,"Director, Vice Chairman and CEO",BUY,6195.0,61.42,380496.9,"CONGDON, DAVID S",Common Stock
+2016-02-19,ODFL,"10% Owner, Member of Section 13(d) group",SELL,10000.0,62.07,620700.0,"CONGDON, JEFFREY W",Common Stock
+2016-05-05,ODFL,Director,BUY,1000.0,63.0,63000.0,"SUGGS, LEO H",Common Stock
+2016-05-10,ODFL,"Director, Vice Chairman and CEO",SELL,2200.0,65.41,143902.0,"CONGDON, DAVID S",Common Stock
+2016-08-08,ODFL,"10% Owner, Member of Section 13(d) group",SELL,5389.0,70.87,381918.43000000005,"CONGDON, JEFFREY W",Common Stock
+2016-08-08,ODFL,"10% Owner, Member of Section 13(d) group",SELL,6243.0,70.87,442441.41000000003,"CONGDON, JEFFREY W",Common Stock
+2016-08-08,ODFL,"Director, 10% Owner, Member of Section 13(d) group",SELL,3800.0,70.87,269306.0,"CONGDON, JOHN R JR",Common Stock
+2016-08-09,ODFL,"10% Owner, Member of Section 13(d) group",SELL,26100.0,69.99,1826738.9999999998,"CONGDON, JEFFREY W",Common Stock
+2016-08-09,ODFL,"Director, 10% Owner, Member of Section 13(d) group",SELL,16100.0,69.99,1126839.0,"CONGDON, JOHN R JR",Common Stock
+2016-08-09,ODFL,"10% Owner, Member of Section 13(d) group",SELL,22400.0,69.99,1567776.0,"CONGDON, JEFFREY W",Common Stock
+2016-08-10,ODFL,"10% Owner, Member of Section 13(d) group",SELL,9700.0,69.75,676575.0,"CONGDON, JEFFREY W",Common Stock
+2016-08-10,ODFL,"10% Owner, Member of Section 13(d) group",SELL,11300.0,69.75,788175.0,"CONGDON, JEFFREY W",Common Stock
+2016-08-10,ODFL,"Director, 10% Owner, Member of Section 13(d) group",SELL,7000.0,69.75,488250.0,"CONGDON, JOHN R JR",Common Stock
+2016-08-11,ODFL,"10% Owner, Member of Section 13(d) group",SELL,9800.0,70.04,686392.0000000001,"CONGDON, JEFFREY W",Common Stock
+2016-08-11,ODFL,"10% Owner, Member of Section 13(d) group",SELL,11500.0,70.04,805460.0000000001,"CONGDON, JEFFREY W",Common Stock
+2016-08-11,ODFL,"Director, 10% Owner, Member of Section 13(d) group",SELL,7100.0,70.04,497284.00000000006,"CONGDON, JOHN R JR",Common Stock
+2016-08-12,ODFL,"10% Owner, Member of Section 13(d) group",SELL,9400.0,69.64,654616.0,"CONGDON, JEFFREY W",Common Stock
+2016-08-12,ODFL,"Director, 10% Owner, Member of Section 13(d) group",SELL,6000.0,69.64,417840.0,"CONGDON, JOHN R JR",Common Stock
+2016-08-12,ODFL,"10% Owner, Member of Section 13(d) group",SELL,9100.0,69.64,633724.0,"CONGDON, JEFFREY W",Common Stock
+2016-08-16,ODFL,"Director, Vice Chairman and CEO",SELL,1660.0,69.77,115818.2,"CONGDON, DAVID S",Common Stock
+2016-08-23,ODFL,"10% Owner, Member of Section 13(d) group",SELL,24555.0,69.84,1714921.2000000002,"CONGDON, JEFFREY W",Common Stock
+2016-11-01,ODFL,"Director, Executive Chairman",SELL,2245.0,73.65,165344.25,"CONGDON, EARL E",Common Stock
+2016-11-01,ODFL,"Director, Vice Chairman and CEO",SELL,815.0,74.67,60856.05,"CONGDON, DAVID S",Common Stock
+2016-11-02,ODFL,Senior Vice President of Sales,SELL,13577.0,73.65,999946.05,"FREEMAN, KEVIN M.",Common Stock
+2016-11-11,ODFL,Director,SELL,3800.0,81.35,309130.0,"SUGGS, LEO H",Common Stock
+2016-11-14,ODFL,VP - Controller,SELL,7817.0,84.18,658035.06,"BOOKER, JOHN P III",Common Stock
+2016-11-16,ODFL,"Director, Vice Chairman and CEO",SELL,40000.0,85.27,3410800.0,"CONGDON, DAVID S",Common Stock
+2016-11-21,ODFL,"Director, Vice Chairman and CEO",SELL,2400.0,86.56,207744.0,"CONGDON, DAVID S",Common Stock
+2016-11-29,ODFL,Senior Vice President of Sales,SELL,3460.0,86.69,299947.39999999997,"FREEMAN, KEVIN M.",Common Stock
+2017-05-26,ODFL,VP - Controller,SELL,205.0,89.06,18257.3,"BOOKER, JOHN P III",Common Stock
+2017-05-26,ODFL,VP - Accounting & Fin. (PAO),SELL,196.0,89.06,17455.760000000002,"MAREADY, KIMBERLY S",Common Stock
+2017-05-26,ODFL,SVP - Operations,SELL,266.0,89.06,23689.96,"BATES, DAVID J.",Common Stock
+2017-05-26,ODFL,SVP - Strategic Development,SELL,271.0,89.06,24135.260000000002,"OVERBEY, CECIL E. JR.",Common Stock
+2017-05-26,ODFL,"CFO, SVP-Finance & Asst. Sec.",SELL,228.0,89.06,20305.68,"SATTERFIELD, ADAM N",Common Stock
+2017-05-26,ODFL,Senior Vice President of Sales,SELL,269.0,89.06,23957.14,"FREEMAN, KEVIN M.",Common Stock
+2017-05-26,ODFL,President and COO,SELL,714.0,89.06,63588.840000000004,"GANTT, GREG C",Common Stock
+2017-05-26,ODFL,"SVP - Legal Affairs, GC & Sec.",SELL,249.0,89.06,22175.940000000002,"PARR, ROSS H.",Common Stock
+2017-08-15,ODFL,"Director, Vice Chairman and CEO",SELL,575.0,97.83,56252.25,"CONGDON, DAVID S",Common Stock
+2017-11-01,ODFL,VP - Controller,SELL,1408.0,119.74,168593.91999999998,"BOOKER, JOHN P III",Common Stock
+2017-11-03,ODFL,"Director, Executive Chairman",SELL,1985.0,120.7,239589.5,"CONGDON, EARL E",Common Stock
+2018-02-09,ODFL,SVP - Strategic Development,SELL,190.0,130.14,24726.6,"OVERBEY, CECIL E. JR.",Common Stock
+2018-02-09,ODFL,VP - Controller,SELL,164.0,130.14,21342.96,"BOOKER, JOHN P III",Common Stock
+2018-02-09,ODFL,Senior Vice President of Sales,SELL,189.0,130.14,24596.46,"FREEMAN, KEVIN M.",Common Stock
+2018-02-09,ODFL,VP - Accounting & Fin. (PAO),SELL,159.0,130.14,20692.26,"MAREADY, KIMBERLY S",Common Stock
+2018-02-09,ODFL,"SVP - Legal Affairs, GC & Sec.",SELL,176.0,130.14,22904.64,"PARR, ROSS H.",Common Stock
+2018-02-09,ODFL,"CFO, SVP-Finance & Asst. Sec.",SELL,186.0,130.14,24206.039999999997,"SATTERFIELD, ADAM N",Common Stock
+2018-02-09,ODFL,President and COO,SELL,381.0,130.14,49583.34,"GANTT, GREG C",Common Stock
+2018-02-09,ODFL,SVP - Human Resources & Safety,SELL,188.0,130.14,24466.319999999996,"BROOKS, CHRISTOPHER T",Common Stock
+2018-02-09,ODFL,SVP - Operations,SELL,187.0,130.14,24336.179999999997,"BATES, DAVID J.",Common Stock
+2018-05-23,ODFL,Director,SELL,800.0,148.44,118752.0,"SUGGS, LEO H",Common Stock
+2018-05-29,ODFL,SVP - Human Resources & Safety,SELL,99.0,154.7,15315.3,"BROOKS, CHRISTOPHER T",Common Stock
+2018-05-29,ODFL,SVP - Strategic Development,SELL,270.0,154.7,41769.0,"OVERBEY, CECIL E. JR.",Common Stock
+2018-05-29,ODFL,President and CEO,SELL,729.0,154.7,112776.29999999999,"GANTT, GREG C",Common Stock
+2018-05-29,ODFL,VP - Accounting & Fin. (PAO),SELL,196.0,154.7,30321.199999999997,"MAREADY, KIMBERLY S",Common Stock
+2018-05-29,ODFL,SVP - Operations,SELL,265.0,154.7,40995.5,"BATES, DAVID J.",Common Stock
+2018-05-29,ODFL,"SVP - Legal Affairs, GC & Sec.",SELL,226.0,154.7,34962.2,"PARR, ROSS H.",Common Stock
+2018-05-29,ODFL,"CFO, SVP-Finance & Asst. Sec.",SELL,227.0,154.7,35116.899999999994,"SATTERFIELD, ADAM N",Common Stock
+2018-05-29,ODFL,EVP & Chief Operating Officer,SELL,244.0,154.7,37746.799999999996,"FREEMAN, KEVIN M.",Common Stock
+2018-11-15,ODFL,"Director, Senior Executive Chairman",SELL,2699.0,136.29,367846.70999999996,"CONGDON, EARL E",Common Stock
+2019-02-09,ODFL,VP - Accounting & Fin. (PAO),SELL,150.0,141.75,21262.5,"MAREADY, KIMBERLY S",Common Stock
+2019-02-09,ODFL,"CFO, SVP-Finance & Asst. Sec.",SELL,184.0,141.75,26082.0,"SATTERFIELD, ADAM N",Common Stock
+2019-02-09,ODFL,SVP - Sales,SELL,159.0,141.75,22538.25,"PLEMMONS, GREGORY B",Common Stock
+2019-02-09,ODFL,"SVP - Legal Affairs, GC & Sec.",SELL,173.0,141.75,24522.75,"PARR, ROSS H.",Common Stock
+2019-02-09,ODFL,"Director, President and CEO",SELL,378.0,141.75,53581.5,"GANTT, GREG C",Common Stock
+2019-02-09,ODFL,EVP & Chief Operating Officer,SELL,190.0,141.75,26932.5,"FREEMAN, KEVIN M.",Common Stock
+2019-02-09,ODFL,SVP - Human Resources & Safety,SELL,168.0,141.75,23814.0,"BROOKS, CHRISTOPHER T",Common Stock
+2019-02-09,ODFL,SVP - Operations,SELL,184.0,141.75,26082.0,"BATES, DAVID J.",Common Stock
+2019-02-09,ODFL,SVP - Strategic Development,SELL,188.0,141.75,26649.0,"OVERBEY, CECIL E. JR.",Common Stock
+2019-02-15,ODFL,VP - Accounting & Fin. (PAO),SELL,107.0,146.37,15661.59,"MAREADY, KIMBERLY S",Common Stock
+2019-02-15,ODFL,"SVP - Legal Affairs, GC & Sec.",SELL,136.0,146.37,19906.32,"PARR, ROSS H.",Common Stock
+2019-02-15,ODFL,SVP - Strategic Development,SELL,147.0,146.37,21516.39,"OVERBEY, CECIL E. JR.",Common Stock
+2019-02-15,ODFL,SVP - Operations,SELL,144.0,146.37,21077.28,"BATES, DAVID J.",Common Stock
+2019-02-15,ODFL,"Director, President and CEO",SELL,291.0,146.37,42593.67,"GANTT, GREG C",Common Stock
+2019-02-15,ODFL,SVP - Sales,SELL,119.0,146.37,17418.03,"PLEMMONS, GREGORY B",Common Stock
+2019-02-15,ODFL,EVP & Chief Operating Officer,SELL,147.0,146.37,21516.39,"FREEMAN, KEVIN M.",Common Stock
+2019-02-15,ODFL,"CFO, SVP-Finance & Asst. Sec.",SELL,144.0,146.37,21077.28,"SATTERFIELD, ADAM N",Common Stock
+2019-02-15,ODFL,SVP - Human Resources & Safety,SELL,138.0,146.37,20199.06,"BROOKS, CHRISTOPHER T",Common Stock
+2019-02-21,ODFL,SVP - Operations,SELL,1951.0,151.84,296239.84,"BATES, DAVID J.",Common Stock
+2019-05-28,ODFL,SVP - Operations,SELL,266.0,138.48,36835.68,"BATES, DAVID J.",Common Stock
+2019-05-28,ODFL,"CFO, SVP-Finance & Asst. Sec.",SELL,227.0,138.48,31434.96,"SATTERFIELD, ADAM N",Common Stock
+2019-05-28,ODFL,SVP - Strategic Development,SELL,271.0,138.48,37528.079999999994,"OVERBEY, CECIL E. JR.",Common Stock
+2019-05-28,ODFL,"Director, President and CEO",SELL,725.0,138.48,100397.99999999999,"GANTT, GREG C",Common Stock
+2019-05-28,ODFL,EVP & Chief Operating Officer,SELL,364.0,138.48,50406.719999999994,"FREEMAN, KEVIN M.",Common Stock
+2019-05-28,ODFL,"SVP - Legal Affairs, GC & Sec.",SELL,224.0,138.48,31019.519999999997,"PARR, ROSS H.",Common Stock
+2019-05-28,ODFL,SVP - Sales,SELL,197.0,138.48,27280.559999999998,"PLEMMONS, GREGORY B",Common Stock
+2019-05-28,ODFL,VP - Accounting & Fin. (PAO),SELL,196.0,138.48,27142.079999999998,"MAREADY, KIMBERLY S",Common Stock
+2019-05-28,ODFL,SVP - Human Resources & Safety,SELL,98.0,138.48,13571.039999999999,"BROOKS, CHRISTOPHER T",Common Stock
+2019-08-01,ODFL,"Director, Senior Executive Chairman",SELL,56400.0,166.53,9392292.0,"CONGDON, EARL E",Common Stock
+2019-08-06,ODFL,SVP - Sales,SELL,1249.0,163.39,204074.11,"PLEMMONS, GREGORY B",Common Stock
+2019-08-20,ODFL,"Director, Executive Chairman",SELL,18633.0,165.22,3078544.26,"CONGDON, DAVID S",Common Stock
+2019-08-20,ODFL,"Director, Executive Chairman",SELL,11517.0,165.99,1911706.83,"CONGDON, DAVID S",Common Stock
+2019-10-31,ODFL,"Director, Executive Chairman",SELL,23500.0,181.94,4275590.0,"CONGDON, DAVID S",Common Stock
+2019-10-31,ODFL,"Director, Senior Executive Chairman",SELL,23500.0,181.94,4275590.0,"CONGDON, EARL E",Common Stock
+2019-11-14,ODFL,"Director, Senior Executive Chairman",SELL,1766.0,193.16,341120.56,"CONGDON, EARL E",Common Stock
+2020-02-09,ODFL,"CFO, SVP-Finance & Asst. Sec.",SELL,185.0,220.59,40809.15,"SATTERFIELD, ADAM N",Common Stock
+2020-02-09,ODFL,"Director, President and CEO",SELL,378.0,220.59,83383.02,"GANTT, GREG C",Common Stock
+2020-02-09,ODFL,SVP - Strategic Development,SELL,187.0,220.59,41250.33,"OVERBEY, CECIL E. JR.",Common Stock
+2020-02-09,ODFL,EVP & Chief Operating Officer,SELL,190.0,220.59,41912.1,"FREEMAN, KEVIN M.",Common Stock
+2020-02-09,ODFL,"SVP - Legal Affairs, GC & Sec.",SELL,173.0,220.59,38162.07,"PARR, ROSS H.",Common Stock
+2020-02-09,ODFL,VP - Accounting & Fin. (PAO),SELL,147.0,220.59,32426.73,"MAREADY, KIMBERLY S",Common Stock
+2020-02-09,ODFL,SVP - Sales,SELL,152.0,220.59,33529.68,"PLEMMONS, GREGORY B",Common Stock
+2020-02-09,ODFL,SVP - Human Resources & Safety,SELL,168.0,220.59,37059.12,"BROOKS, CHRISTOPHER T",Common Stock
+2020-02-09,ODFL,SVP - Operations,SELL,184.0,220.59,40588.56,"BATES, DAVID J.",Common Stock
+2020-02-11,ODFL,SVP - Operations,SELL,339.0,220.62,74790.18000000001,"BATES, DAVID J.",Common Stock
+2020-02-14,ODFL,"SVP - Legal Affairs, GC & Sec.",SELL,327.0,221.91,72564.56999999999,"PARR, ROSS H.",Common Stock
+2020-02-14,ODFL,SVP - Sales,SELL,327.0,221.91,72564.56999999999,"PLEMMONS, GREGORY B",Common Stock
+2020-02-14,ODFL,SVP - Operations,SELL,327.0,221.91,72564.56999999999,"BATES, DAVID J.",Common Stock
+2020-02-14,ODFL,EVP & Chief Operating Officer,SELL,418.0,221.91,92758.38,"FREEMAN, KEVIN M.",Common Stock
+2020-02-14,ODFL,"CFO, SVP-Finance & Asst. Sec.",SELL,354.0,221.91,78556.14,"SATTERFIELD, ADAM N",Common Stock
+2020-02-14,ODFL,"Director, President and CEO",SELL,700.0,221.91,155337.0,"GANTT, GREG C",Common Stock
+2020-02-14,ODFL,SVP - Human Resources & Safety,SELL,327.0,221.91,72564.56999999999,"BROOKS, CHRISTOPHER T",Common Stock
+2020-02-14,ODFL,VP - Accounting & Fin. (PAO),SELL,177.0,221.91,39278.07,"MAREADY, KIMBERLY S",Common Stock
+2020-02-14,ODFL,SVP - Strategic Development,SELL,327.0,221.91,72564.56999999999,"OVERBEY, CECIL E. JR.",Common Stock
+2020-02-15,ODFL,EVP & Chief Operating Officer,SELL,147.0,221.91,32620.77,"FREEMAN, KEVIN M.",Common Stock
+2020-02-15,ODFL,SVP - Strategic Development,SELL,147.0,221.91,32620.77,"OVERBEY, CECIL E. JR.",Common Stock
+2020-02-15,ODFL,SVP - Human Resources & Safety,SELL,138.0,221.91,30623.579999999998,"BROOKS, CHRISTOPHER T",Common Stock
+2020-02-15,ODFL,SVP - Sales,SELL,119.0,221.91,26407.29,"PLEMMONS, GREGORY B",Common Stock
+2020-02-15,ODFL,"SVP - Legal Affairs, GC & Sec.",SELL,135.0,221.91,29957.85,"PARR, ROSS H.",Common Stock
+2020-02-15,ODFL,"CFO, SVP-Finance & Asst. Sec.",SELL,144.0,221.91,31955.04,"SATTERFIELD, ADAM N",Common Stock
+2020-02-15,ODFL,SVP - Operations,SELL,144.0,221.91,31955.04,"BATES, DAVID J.",Common Stock
+2020-02-15,ODFL,"Director, President and CEO",SELL,438.0,221.91,97196.58,"GANTT, GREG C",Common Stock
+2020-02-15,ODFL,VP - Accounting & Fin. (PAO),SELL,106.0,221.91,23522.46,"MAREADY, KIMBERLY S",Common Stock
+2020-11-09,ODFL,SVP - Human Resources & Safety,SELL,420.0,202.52,85058.40000000001,"BROOKS, CHRISTOPHER T",Common Stock
+2020-11-13,ODFL,Director,SELL,4500.0,200.0,900000.0,"SUGGS, LEO H",Common Stock
+2020-11-17,ODFL,SVP - Sales,SELL,1102.0,205.59,226560.18,"PLEMMONS, GREGORY B",Common Stock
+2021-02-13,ODFL,VP - Accounting & Fin. (PAO),SELL,163.0,212.21,34590.23,"MAREADY, KIMBERLY S",Common Stock
+2021-02-13,ODFL,SVP - Operations,SELL,181.0,212.21,38410.01,"BATES, DAVID J.",Common Stock
+2021-02-13,ODFL,SVP - Operations,SELL,326.0,212.21,69180.46,"BATES, DAVID J.",Common Stock
+2021-02-13,ODFL,SVP - Human Resources & Safety,SELL,325.0,212.21,68968.25,"BROOKS, CHRISTOPHER T",Common Stock
+2021-02-13,ODFL,SVP - Human Resources & Safety,SELL,180.0,212.21,38197.8,"BROOKS, CHRISTOPHER T",Common Stock
+2021-02-13,ODFL,EVP & Chief Operating Officer,SELL,497.0,212.21,105468.37000000001,"FREEMAN, KEVIN M.",Common Stock
+2021-02-13,ODFL,EVP & Chief Operating Officer,SELL,553.0,212.21,117352.13,"FREEMAN, KEVIN M.",Common Stock
+2021-02-13,ODFL,SVP - Strategic Development,SELL,181.0,212.21,38410.01,"OVERBEY, CECIL E. JR.",Common Stock
+2021-02-13,ODFL,SVP - Sales,SELL,410.0,212.21,87006.1,"PLEMMONS, GREGORY B",Common Stock
+2021-02-13,ODFL,"SVP - Legal Affairs, GC & Sec.",SELL,180.0,212.21,38197.8,"PARR, ROSS H.",Common Stock
+2021-02-13,ODFL,SVP - Strategic Development,SELL,327.0,212.21,69392.67,"OVERBEY, CECIL E. JR.",Common Stock
+2021-02-13,ODFL,"Director, President and CEO",SELL,820.0,212.21,174012.2,"GANTT, GREG C",Common Stock
+2021-02-13,ODFL,SVP - Sales,SELL,227.0,212.21,48171.67,"PLEMMONS, GREGORY B",Common Stock
+2021-02-13,ODFL,"Director, President and CEO",SELL,738.0,212.21,156610.98,"GANTT, GREG C",Common Stock
+2021-02-13,ODFL,"CFO, SVP-Finance & Asst. Sec.",SELL,435.0,212.21,92311.35,"SATTERFIELD, ADAM N",Common Stock
+2021-02-13,ODFL,"CFO, SVP-Finance & Asst. Sec.",SELL,392.0,212.21,83186.32,"SATTERFIELD, ADAM N",Common Stock
+2021-02-13,ODFL,"SVP - Legal Affairs, GC & Sec.",SELL,325.0,212.21,68968.25,"PARR, ROSS H.",Common Stock
+2021-02-14,ODFL,SVP - Operations,SELL,530.0,212.21,112471.3,"BATES, DAVID J.",Common Stock
+2021-02-14,ODFL,EVP & Chief Operating Officer,SELL,808.0,212.21,171465.68,"FREEMAN, KEVIN M.",Common Stock
+2021-02-14,ODFL,SVP - Strategic Development,SELL,531.0,212.21,112683.51000000001,"OVERBEY, CECIL E. JR.",Common Stock
+2021-02-14,ODFL,"SVP - Legal Affairs, GC & Sec.",SELL,528.0,212.21,112046.88,"PARR, ROSS H.",Common Stock
+2021-02-14,ODFL,"CFO, SVP-Finance & Asst. Sec.",SELL,637.0,212.21,135177.77000000002,"SATTERFIELD, ADAM N",Common Stock
+2021-02-14,ODFL,"Director, President and CEO",SELL,1199.0,212.21,254439.79,"GANTT, GREG C",Common Stock
+2021-02-14,ODFL,VP - Accounting & Fin. (PAO),SELL,264.0,212.21,56023.44,"MAREADY, KIMBERLY S",Common Stock
+2021-02-14,ODFL,SVP - Sales,SELL,666.0,212.21,141331.86000000002,"PLEMMONS, GREGORY B",Common Stock
+2021-02-14,ODFL,SVP - Human Resources & Safety,SELL,528.0,212.21,112046.88,"BROOKS, CHRISTOPHER T",Common Stock
+2021-02-15,ODFL,SVP - Operations,SELL,232.0,212.21,49232.72,"BATES, DAVID J.",Common Stock
+2021-02-15,ODFL,"SVP - Legal Affairs, GC & Sec.",SELL,218.0,212.21,46261.78,"PARR, ROSS H.",Common Stock
+2021-02-15,ODFL,SVP - Sales,SELL,242.0,212.21,51354.82,"PLEMMONS, GREGORY B",Common Stock
+2021-02-15,ODFL,"CFO, SVP-Finance & Asst. Sec.",SELL,258.0,212.21,54750.18,"SATTERFIELD, ADAM N",Common Stock
+2021-02-15,ODFL,SVP - Human Resources & Safety,SELL,223.0,212.21,47322.83,"BROOKS, CHRISTOPHER T",Common Stock
+2021-02-15,ODFL,SVP - Strategic Development,SELL,236.0,212.21,50081.560000000005,"OVERBEY, CECIL E. JR.",Common Stock
+2021-02-15,ODFL,VP - Accounting & Fin. (PAO),SELL,159.0,212.21,33741.39,"MAREADY, KIMBERLY S",Common Stock
+2021-02-15,ODFL,"Director, President and CEO",SELL,630.0,212.21,133692.30000000002,"GANTT, GREG C",Common Stock
+2021-02-15,ODFL,EVP & Chief Operating Officer,SELL,282.0,212.21,59843.22,"FREEMAN, KEVIN M.",Common Stock
+2021-08-17,ODFL,Director,SELL,2363.0,277.17,654952.7100000001,"WRAY, D. MICHAEL",Common Stock
+2021-11-01,ODFL,Director,SELL,3000.0,345.03,1035089.9999999999,"SUGGS, LEO H",Common Stock
+2021-11-12,ODFL,Chair Emeritus & Sr. Advisor,SELL,2427.0,357.38,867361.26,"CONGDON, EARL E",Common Stock
+2021-11-18,ODFL,"Director, Executive Chairman",SELL,6132.0,354.2,2171954.4,"CONGDON, DAVID S",Common Stock
+2021-11-18,ODFL,"Director, Executive Chairman",SELL,1731.0,354.99,614487.6900000001,"CONGDON, DAVID S",Common Stock
+2021-11-18,ODFL,"Director, Executive Chairman",SELL,6043.0,353.41,2135656.6300000004,"CONGDON, DAVID S",Common Stock
+2021-11-18,ODFL,"Director, Executive Chairman",SELL,3094.0,352.32,1090078.08,"CONGDON, DAVID S",Common Stock
+2021-11-19,ODFL,"Director, Executive Chairman",SELL,2346.0,353.65,829662.8999999999,"CONGDON, DAVID S",Common Stock
+2021-11-19,ODFL,"Director, Executive Chairman",SELL,10319.0,351.6,3628160.4000000004,"CONGDON, DAVID S",Common Stock
+2021-11-19,ODFL,"Director, Executive Chairman",SELL,5959.0,352.72,2101858.48,"CONGDON, DAVID S",Common Stock
+2021-11-19,ODFL,"Director, Executive Chairman",SELL,6901.0,350.75,2420525.75,"CONGDON, DAVID S",Common Stock
+2022-02-11,ODFL,SVP - Operations,SELL,179.0,295.65,52921.35,"BATES, DAVID J.",Common Stock
+2022-02-11,ODFL,SVP - Operations,SELL,323.0,295.65,95494.95,"BATES, DAVID J.",Common Stock
+2022-02-11,ODFL,SVP - Operations,SELL,240.0,295.65,70956.0,"BATES, DAVID J.",Common Stock
+2022-02-11,ODFL,SVP - Sales,SELL,167.0,295.65,49373.549999999996,"PLEMMONS, GREGORY B",Common Stock
+2022-02-11,ODFL,SVP - Sales,SELL,302.0,295.65,89286.29999999999,"PLEMMONS, GREGORY B",Common Stock
+2022-02-11,ODFL,SVP - Sales,SELL,224.0,295.65,66225.59999999999,"PLEMMONS, GREGORY B",Common Stock
+2022-02-11,ODFL,SVP - Strategic Development,SELL,240.0,295.65,70956.0,"OVERBEY, CECIL E. JR.",Common Stock
+2022-02-11,ODFL,"Director, President and CEO",SELL,740.0,295.65,218780.99999999997,"GANTT, GREG C",Common Stock
+2022-02-11,ODFL,"Director, President and CEO",SELL,666.0,295.65,196902.9,"GANTT, GREG C",Common Stock
+2022-02-11,ODFL,"Director, President and CEO",SELL,989.0,295.65,292397.85,"GANTT, GREG C",Common Stock
+2022-02-11,ODFL,"Director, President and CEO",SELL,494.0,295.65,146051.09999999998,"GANTT, GREG C",Common Stock
+2022-02-11,ODFL,"CFO, SVP-Finance & Asst. Sec.",SELL,454.0,295.65,134225.09999999998,"SATTERFIELD, ADAM N",Common Stock
+2022-02-11,ODFL,"CFO, SVP-Finance & Asst. Sec.",SELL,409.0,295.65,120920.84999999999,"SATTERFIELD, ADAM N",Common Stock
+2022-02-11,ODFL,"CFO, SVP-Finance & Asst. Sec.",SELL,608.0,295.65,179755.19999999998,"SATTERFIELD, ADAM N",Common Stock
+2022-02-11,ODFL,"SVP - Legal Affairs, GC & Sec.",SELL,179.0,295.65,52921.35,"PARR, ROSS H.",Common Stock
+2022-02-11,ODFL,SVP - Strategic Development,SELL,323.0,295.65,95494.95,"OVERBEY, CECIL E. JR.",Common Stock
+2022-02-11,ODFL,"Director, Executive Chairman",SELL,563.0,295.65,166450.94999999998,"CONGDON, DAVID S",Common Stock
+2022-02-11,ODFL,SVP - Human Resources & Safety,SELL,240.0,295.65,70956.0,"BROOKS, CHRISTOPHER T",Common Stock
+2022-02-11,ODFL,VP - Accounting & Fin. (PAO),SELL,162.0,295.65,47895.299999999996,"MAREADY, KIMBERLY S",Common Stock
+2022-02-11,ODFL,"CFO, SVP-Finance & Asst. Sec.",SELL,303.0,295.65,89581.95,"SATTERFIELD, ADAM N",Common Stock
+2022-02-11,ODFL,EVP & Chief Operating Officer,SELL,562.0,295.65,166155.3,"FREEMAN, KEVIN M.",Common Stock
+2022-02-11,ODFL,EVP & Chief Operating Officer,SELL,506.0,295.65,149598.9,"FREEMAN, KEVIN M.",Common Stock
+2022-02-11,ODFL,EVP & Chief Operating Officer,SELL,750.0,295.65,221737.49999999997,"FREEMAN, KEVIN M.",Common Stock
+2022-02-11,ODFL,EVP & Chief Operating Officer,SELL,375.0,295.65,110868.74999999999,"FREEMAN, KEVIN M.",Common Stock
+2022-02-11,ODFL,VP - Accounting & Fin. (PAO),SELL,121.0,295.65,35773.649999999994,"MAREADY, KIMBERLY S",Common Stock
+2022-02-11,ODFL,Chair Emeritus & Sr. Advisor,SELL,323.0,295.65,95494.95,"CONGDON, EARL E",Common Stock
+2022-02-11,ODFL,"Director, Executive Chairman",SELL,601.0,295.65,177685.65,"CONGDON, DAVID S",Common Stock
+2022-02-11,ODFL,SVP - Human Resources & Safety,SELL,323.0,295.65,95494.95,"BROOKS, CHRISTOPHER T",Common Stock
+2022-02-11,ODFL,SVP - Human Resources & Safety,SELL,179.0,295.65,52921.35,"BROOKS, CHRISTOPHER T",Common Stock
+2022-02-11,ODFL,SVP - Strategic Development,SELL,179.0,295.65,52921.35,"OVERBEY, CECIL E. JR.",Common Stock
+2022-02-11,ODFL,"SVP - Legal Affairs, GC & Sec.",SELL,323.0,295.65,95494.95,"PARR, ROSS H.",Common Stock
+2022-02-11,ODFL,Chair Emeritus & Sr. Advisor,SELL,236.0,295.65,69773.4,"CONGDON, EARL E",Common Stock
+2022-02-11,ODFL,"SVP - Legal Affairs, GC & Sec.",SELL,240.0,295.65,70956.0,"PARR, ROSS H.",Common Stock
+2022-02-14,ODFL,SVP - Strategic Development,SELL,737.0,293.95,216641.15,"OVERBEY, CECIL E. JR.",Common Stock
+2022-02-14,ODFL,SVP - Operations,SELL,737.0,293.95,216641.15,"BATES, DAVID J.",Common Stock
+2022-02-14,ODFL,"SVP - Legal Affairs, GC & Sec.",SELL,737.0,293.95,216641.15,"PARR, ROSS H.",Common Stock
+2022-02-14,ODFL,"CFO, SVP-Finance & Asst. Sec.",SELL,798.0,293.95,234572.09999999998,"SATTERFIELD, ADAM N",Common Stock
+2022-02-14,ODFL,SVP - Sales,SELL,737.0,293.95,216641.15,"PLEMMONS, GREGORY B",Common Stock
+2022-02-14,ODFL,SVP - Human Resources & Safety,SELL,737.0,293.95,216641.15,"BROOKS, CHRISTOPHER T",Common Stock
+2022-02-14,ODFL,EVP & Chief Operating Officer,SELL,943.0,293.95,277194.85,"FREEMAN, KEVIN M.",Common Stock
+2022-02-14,ODFL,"Director, President and CEO",SELL,1252.0,293.95,368025.39999999997,"GANTT, GREG C",Common Stock
+2022-02-14,ODFL,VP - Accounting & Fin. (PAO),SELL,265.0,293.95,77896.75,"MAREADY, KIMBERLY S",Common Stock
+2022-08-02,ODFL,"Director, Executive Chairman",SELL,6246.0,300.14,1874674.44,"CONGDON, DAVID S",Common Stock
+2022-08-03,ODFL,"Director, Executive Chairman",SELL,1597.0,296.67,473781.99000000005,"CONGDON, DAVID S",Common Stock
+2022-08-03,ODFL,"Director, Executive Chairman",SELL,27157.0,296.21,8044174.97,"CONGDON, DAVID S",Common Stock
+2022-08-08,ODFL,Director,SELL,15000.0,308.35,4625250.0,"CONGDON, JOHN R JR",Common Stock
+2022-11-10,ODFL,Chair Emeritus & Sr. Advisor,SELL,4927.0,303.41,1494901.07,"CONGDON, EARL E",Common Stock
+2022-11-10,ODFL,SVP - Operations,SELL,1076.0,299.04,321767.04000000004,"BATES, DAVID J.",Common Stock
+2022-11-11,ODFL,"Director, Executive Chairman",SELL,7832.0,312.92,2450789.44,"CONGDON, DAVID S",Common Stock
+2022-11-11,ODFL,"Director, Executive Chairman",SELL,14652.0,313.68,4596039.36,"CONGDON, DAVID S",Common Stock
+2022-11-11,ODFL,"Director, Executive Chairman",SELL,5254.0,314.92,1654589.6800000002,"CONGDON, DAVID S",Common Stock
+2022-11-11,ODFL,"Director, Executive Chairman",SELL,4262.0,315.55,1344874.1,"CONGDON, DAVID S",Common Stock
+2023-02-09,ODFL,"CFO, SVP-Finance & Asst. Sec.",SELL,150.0,355.0,53250.0,"SATTERFIELD, ADAM N",Common Stock
+2023-02-09,ODFL,SVP - Sales,SELL,145.0,355.0,51475.0,"PLEMMONS, GREGORY B",Common Stock
+2023-02-09,ODFL,SVP - Sales,SELL,146.0,355.0,51830.0,"PLEMMONS, GREGORY B",Common Stock
+2023-02-09,ODFL,SVP - Human Resources & Safety,SELL,139.0,355.0,49345.0,"BROOKS, CHRISTOPHER T",Common Stock
+2023-02-09,ODFL,EVP & Chief Operating Officer,SELL,367.0,355.0,130285.0,"FREEMAN, KEVIN M.",Common Stock
+2023-02-09,ODFL,EVP & Chief Operating Officer,SELL,184.0,355.0,65320.0,"FREEMAN, KEVIN M.",Common Stock
+2023-02-09,ODFL,"Director, President and CEO",SELL,545.0,355.0,193475.0,"GANTT, GREG C",Common Stock
+2023-02-09,ODFL,VP - Accounting & Fin. (PAO),SELL,75.0,355.0,26625.0,"MAREADY, KIMBERLY S",Common Stock
+2023-02-09,ODFL,"Director, President and CEO",SELL,272.0,355.0,96560.0,"GANTT, GREG C",Common Stock
+2023-02-09,ODFL,"SVP - Legal Affairs, GC & Sec.",SELL,139.0,355.0,49345.0,"PARR, ROSS H.",Common Stock
+2023-02-09,ODFL,SVP - Strategic Development,SELL,139.0,355.0,49345.0,"OVERBEY, CECIL E. JR.",Common Stock
+2023-02-09,ODFL,SVP - Operations,SELL,139.0,355.0,49345.0,"BATES, DAVID J.",Common Stock
+2023-02-09,ODFL,"CFO, SVP-Finance & Asst. Sec.",SELL,300.0,355.0,106500.0,"SATTERFIELD, ADAM N",Common Stock
+2023-02-11,ODFL,SVP - Human Resources & Safety,SELL,244.0,349.0,85156.0,"BROOKS, CHRISTOPHER T",Common Stock
+2023-02-11,ODFL,VP - Accounting & Fin. (PAO),SELL,120.0,349.0,41880.0,"MAREADY, KIMBERLY S",Common Stock
+2023-02-11,ODFL,SVP - Strategic Development,SELL,244.0,349.0,85156.0,"OVERBEY, CECIL E. JR.",Common Stock
+2023-02-11,ODFL,EVP & Chief Operating Officer,SELL,856.0,349.0,298744.0,"FREEMAN, KEVIN M.",Common Stock
+2023-02-11,ODFL,Chair Emeritus & Sr. Advisor,SELL,246.0,349.0,85854.0,"CONGDON, EARL E",Common Stock
+2023-02-11,ODFL,"SVP - Legal Affairs, GC & Sec.",SELL,244.0,349.0,85156.0,"PARR, ROSS H.",Common Stock
+2023-02-11,ODFL,SVP - Sales,SELL,222.0,349.0,77478.0,"PLEMMONS, GREGORY B",Common Stock
+2023-02-11,ODFL,"CFO, SVP-Finance & Asst. Sec.",SELL,689.0,349.0,240461.0,"SATTERFIELD, ADAM N",Common Stock
+2023-02-11,ODFL,SVP - Operations,SELL,244.0,349.0,85156.0,"BATES, DAVID J.",Common Stock
+2023-02-11,ODFL,EVP & Chief Operating Officer,SELL,428.0,349.0,149372.0,"FREEMAN, KEVIN M.",Common Stock
+2023-02-11,ODFL,"CFO, SVP-Finance & Asst. Sec.",SELL,344.0,349.0,120056.0,"SATTERFIELD, ADAM N",Common Stock
+2023-02-11,ODFL,"Director, Executive Chairman",SELL,528.0,349.0,184272.0,"CONGDON, DAVID S",Common Stock
+2023-02-11,ODFL,"Director, President and CEO",SELL,565.0,349.0,197185.0,"GANTT, GREG C",Common Stock
+2023-02-11,ODFL,"Director, President and CEO",SELL,1130.0,349.0,394370.0,"GANTT, GREG C",Common Stock
+2023-02-11,ODFL,SVP - Sales,SELL,224.0,349.0,78176.0,"PLEMMONS, GREGORY B",Common Stock
+2023-02-13,ODFL,SVP - Sales,SELL,251.0,355.96,89345.95999999999,"PLEMMONS, GREGORY B",Common Stock
+2023-02-13,ODFL,VP - Accounting & Fin. (PAO),SELL,162.0,355.96,57665.52,"MAREADY, KIMBERLY S",Common Stock
+2023-02-13,ODFL,SVP - Human Resources & Safety,SELL,251.0,355.96,89345.95999999999,"BROOKS, CHRISTOPHER T",Common Stock
+2023-02-13,ODFL,"SVP - Legal Affairs, GC & Sec.",SELL,251.0,355.96,89345.95999999999,"PARR, ROSS H.",Common Stock
+2023-02-13,ODFL,"CFO, SVP-Finance & Asst. Sec.",SELL,488.0,355.96,173708.47999999998,"SATTERFIELD, ADAM N",Common Stock
+2023-02-13,ODFL,Chair Emeritus & Sr. Advisor,SELL,329.0,355.96,117110.84,"CONGDON, EARL E",Common Stock
+2023-02-13,ODFL,"SVP - Legal Affairs, GC & Sec.",SELL,451.0,355.96,160537.96,"PARR, ROSS H.",Common Stock
+2023-02-13,ODFL,EVP & Chief Operating Officer,SELL,577.0,355.96,205388.91999999998,"FREEMAN, KEVIN M.",Common Stock
+2023-02-13,ODFL,SVP - Human Resources & Safety,SELL,451.0,355.96,160537.96,"BROOKS, CHRISTOPHER T",Common Stock
+2023-02-13,ODFL,SVP - Strategic Development,SELL,451.0,355.96,160537.96,"OVERBEY, CECIL E. JR.",Common Stock
+2023-02-13,ODFL,EVP & Chief Operating Officer,SELL,642.0,355.96,228526.31999999998,"FREEMAN, KEVIN M.",Common Stock
+2023-02-13,ODFL,"Director, Executive Chairman",SELL,852.0,355.96,303277.92,"CONGDON, DAVID S",Common Stock
+2023-02-13,ODFL,"Director, President and CEO",SELL,851.0,355.96,302921.95999999996,"GANTT, GREG C",Common Stock
+2023-02-13,ODFL,"Director, President and CEO",SELL,766.0,355.96,272665.36,"GANTT, GREG C",Common Stock
+2023-02-13,ODFL,SVP - Operations,SELL,451.0,355.96,160537.96,"BATES, DAVID J.",Common Stock
+2023-02-13,ODFL,"CFO, SVP-Finance & Asst. Sec.",SELL,542.0,355.96,192930.31999999998,"SATTERFIELD, ADAM N",Common Stock
+2023-02-13,ODFL,SVP - Strategic Development,SELL,251.0,355.96,89345.95999999999,"OVERBEY, CECIL E. JR.",Common Stock
+2023-02-13,ODFL,SVP - Sales,SELL,451.0,355.96,160537.96,"PLEMMONS, GREGORY B",Common Stock
+2023-02-13,ODFL,SVP - Operations,SELL,251.0,355.96,89345.95999999999,"BATES, DAVID J.",Common Stock
+2023-02-14,ODFL,Director,SELL,2700.0,358.21,967167.0,"GABOSCH, BRADLEY R",Common Stock
+2023-02-16,ODFL,"Director, Executive Chairman",SELL,20000.0,351.82,7036400.0,"CONGDON, DAVID S",Common Stock
+2023-02-27,ODFL,SVP - Operations,SELL,1208.0,344.71,416409.68,"BATES, DAVID J.",Common Stock
+2023-06-26,ODFL,"Director, President and CEO",SELL,406.0,334.54,135823.24000000002,"GANTT, GREG C",Common Stock
+2023-06-26,ODFL,"Director, President and CEO",SELL,564.0,334.54,188680.56,"GANTT, GREG C",Common Stock
+2023-06-26,ODFL,"Director, President and CEO",SELL,812.0,334.54,271646.48000000004,"GANTT, GREG C",Common Stock
+2023-06-26,ODFL,"Director, President and CEO",SELL,458.0,334.54,153219.32,"GANTT, GREG C",Common Stock
+2023-06-26,ODFL,"Director, President and CEO",SELL,1129.0,334.54,377695.66000000003,"GANTT, GREG C",Common Stock
+2023-08-10,ODFL,SVP - Sales,SELL,403.0,405.33,163347.99,"HARTSELL, STEVEN W.",Common Stock
+2023-08-11,ODFL,Director,SELL,225.0,411.66,92623.5,"STITH, THOMAS A. III",Common Stock
+2023-11-08,ODFL,"Director, Executive Chairman",SELL,12000.0,390.15,4681800.0,"CONGDON, DAVID S",Common Stock
+2023-11-09,ODFL,"Director, Executive Chairman",SELL,2400.0,390.14,936336.0,"CONGDON, DAVID S",Common Stock
+2023-11-10,ODFL,"Director, Executive Chairman",SELL,19800.0,390.47,7731306.000000001,"CONGDON, DAVID S",Common Stock
+2023-11-10,ODFL,"Director, Executive Chairman",SELL,4300.0,391.14,1681902.0,"CONGDON, DAVID S",Common Stock
+2023-11-27,ODFL,Chair Emeritus & Sr. Advisor,SELL,2858.0,398.65,1139341.7,"CONGDON, EARL E",Common Stock
+2024-01-02,ODFL,Director,SELL,5148.0,397.74,2047565.52,"GANTT, GREG C",Common Stock
+2024-02-01,ODFL,Director,SELL,1063.0,392.19,416897.97,"GANTT, GREG C",Common Stock
+2024-02-08,ODFL,EVP and CFO,SELL,167.0,435.16,72671.72,"SATTERFIELD, ADAM N",Common Stock
+2024-02-08,ODFL,EVP and COO,SELL,162.0,435.16,70495.92,"PLEMMONS, GREGORY B",Common Stock
+2024-02-08,ODFL,SVP - Sales,SELL,72.0,435.16,31331.52,"HARTSELL, STEVEN W.",Common Stock
+2024-02-08,ODFL,President and CEO,SELL,197.0,435.16,85726.52,"FREEMAN, KEVIN M.",Common Stock
+2024-02-08,ODFL,VP - Accounting & Fin. (PAO),SELL,84.0,435.16,36553.44,"MAREADY, KIMBERLY S",Common Stock
+2024-02-08,ODFL,"SVP - Legal Affairs, GC & Sec.",SELL,155.0,435.16,67449.8,"PARR, ROSS H.",Common Stock
+2024-02-08,ODFL,SVP - Strategic Development,SELL,155.0,435.16,67449.8,"OVERBEY, CECIL E. JR.",Common Stock
+2024-02-08,ODFL,SVP - Operations,SELL,74.0,435.16,32201.84,"KELLEY, CHRISTOPHER JAMES",Common Stock
+2024-02-08,ODFL,SVP - Human Resources & Safety,SELL,155.0,435.16,67449.8,"BROOKS, CHRISTOPHER T",Common Stock
+2024-02-09,ODFL,President and CEO,SELL,529.0,435.33,230289.56999999998,"FREEMAN, KEVIN M.",Common Stock
+2024-02-09,ODFL,President and CEO,SELL,264.0,435.33,114927.12,"FREEMAN, KEVIN M.",Common Stock
+2024-02-09,ODFL,SVP - Human Resources & Safety,SELL,170.0,435.33,74006.09999999999,"BROOKS, CHRISTOPHER T",Common Stock
+2024-02-09,ODFL,SVP - Operations,SELL,65.0,435.33,28296.45,"KELLEY, CHRISTOPHER JAMES",Common Stock
+2024-02-09,ODFL,VP - Accounting & Fin. (PAO),SELL,74.0,435.33,32214.42,"MAREADY, KIMBERLY S",Common Stock
+2024-02-09,ODFL,EVP and CFO,SELL,412.0,435.33,179355.96,"SATTERFIELD, ADAM N",Common Stock
+2024-02-09,ODFL,EVP and CFO,SELL,206.0,435.33,89677.98,"SATTERFIELD, ADAM N",Common Stock
+2024-02-09,ODFL,"SVP - Legal Affairs, GC & Sec.",SELL,170.0,435.33,74006.09999999999,"PARR, ROSS H.",Common Stock
+2024-02-09,ODFL,SVP - Strategic Development,SELL,170.0,435.33,74006.09999999999,"OVERBEY, CECIL E. JR.",Common Stock
+2024-02-09,ODFL,SVP - Sales,SELL,64.0,435.33,27861.12,"HARTSELL, STEVEN W.",Common Stock
+2024-02-09,ODFL,EVP and COO,SELL,177.0,435.33,77053.41,"PLEMMONS, GREGORY B",Common Stock
+2024-02-11,ODFL,"SVP - Legal Affairs, GC & Sec.",SELL,271.0,435.33,117974.43,"PARR, ROSS H.",Common Stock
+2024-02-11,ODFL,EVP and COO,SELL,223.0,435.33,97078.59,"PLEMMONS, GREGORY B",Common Stock
+2024-02-11,ODFL,Chair Emeritus & Sr. Advisor,SELL,240.0,435.33,104479.2,"CONGDON, EARL E",Common Stock
+2024-02-11,ODFL,SVP - Human Resources & Safety,SELL,271.0,435.33,117974.43,"BROOKS, CHRISTOPHER T",Common Stock
+2024-02-11,ODFL,SVP - Strategic Development,SELL,271.0,435.33,117974.43,"OVERBEY, CECIL E. JR.",Common Stock
+2024-02-11,ODFL,EVP and COO,SELL,270.0,435.33,117539.09999999999,"PLEMMONS, GREGORY B",Common Stock
+2024-02-11,ODFL,VP - Accounting & Fin. (PAO),SELL,118.0,435.33,51368.939999999995,"MAREADY, KIMBERLY S",Common Stock
+2024-02-11,ODFL,EVP and CFO,SELL,329.0,435.33,143223.57,"SATTERFIELD, ADAM N",Common Stock
+2024-02-11,ODFL,President and CEO,SELL,845.0,435.33,367853.85,"FREEMAN, KEVIN M.",Common Stock
+2024-02-11,ODFL,President and CEO,SELL,422.0,435.33,183709.25999999998,"FREEMAN, KEVIN M.",Common Stock
+2024-02-11,ODFL,"Director, Executive Chairman",SELL,519.0,435.33,225936.27,"CONGDON, DAVID S",Common Stock
+2024-02-11,ODFL,EVP and CFO,SELL,658.0,435.33,286447.14,"SATTERFIELD, ADAM N",Common Stock
+2024-02-11,ODFL,SVP - Sales,SELL,101.0,435.33,43968.33,"HARTSELL, STEVEN W.",Common Stock
+2024-02-11,ODFL,SVP - Operations,SELL,105.0,435.33,45709.65,"KELLEY, CHRISTOPHER JAMES",Common Stock
+2024-02-23,ODFL,"Director, Executive Chairman",SELL,4600.0,439.42,2021332.0,"CONGDON, DAVID S",Common Stock
+2024-02-23,ODFL,"Director, Executive Chairman",SELL,100.0,442.11,44211.0,"CONGDON, DAVID S",Common Stock
+2024-02-23,ODFL,"Director, Executive Chairman",SELL,3543.0,441.3,1563525.9000000001,"CONGDON, DAVID S",Common Stock
+2024-02-23,ODFL,"Director, Executive Chairman",SELL,9361.0,438.47,4104517.6700000004,"CONGDON, DAVID S",Common Stock
+2024-02-23,ODFL,"Director, Executive Chairman",SELL,6407.0,440.57,2822731.9899999998,"CONGDON, DAVID S",Common Stock
+2024-02-23,ODFL,"Director, Executive Chairman",SELL,9989.0,444.17,4436814.13,"CONGDON, DAVID S",Common Stock
+2024-02-27,ODFL,Director,SELL,900.0,440.26,396234.0,"KASARDA, JOHN D.",Common Stock
+2024-02-27,ODFL,Director,SELL,900.0,446.2,401580.0,"KASARDA, JOHN D.",Common Stock
+2024-02-27,ODFL,Director,SELL,848.0,445.28,377597.44,"KASARDA, JOHN D.",Common Stock
+2024-02-27,ODFL,Director,SELL,2191.0,442.38,969254.58,"KASARDA, JOHN D.",Common Stock
+2024-02-27,ODFL,Director,SELL,1533.0,441.2,676359.6,"KASARDA, JOHN D.",Common Stock
+2024-02-27,ODFL,Director,SELL,1300.0,439.15,570895.0,"KASARDA, JOHN D.",Common Stock
+2024-02-27,ODFL,Director,SELL,300.0,443.12,132936.0,"KASARDA, JOHN D.",Common Stock
+2024-03-01,ODFL,Director,SELL,1063.0,442.48,470356.24,"GANTT, GREG C",Common Stock
+2024-04-01,ODFL,Director,SELL,2125.0,219.31,466033.75,"GANTT, GREG C",Common Stock
+2024-05-01,ODFL,Director,SELL,2125.0,181.71,386133.75,"GANTT, GREG C",Common Stock
+2024-06-03,ODFL,Director,SELL,2125.0,175.25,372406.25,"GANTT, GREG C",Common Stock
+2024-07-01,ODFL,Director,SELL,2125.0,176.6,375275.0,"GANTT, GREG C",Common Stock
+2024-07-29,ODFL,Director,SELL,11193.0,200.92,2248897.56,"GANTT, GREG C",Common Stock
+2024-07-29,ODFL,Director,SELL,4751.0,201.94,959416.94,"GANTT, GREG C",Common Stock
+2024-07-29,ODFL,Director,SELL,8800.0,203.4,1789920.0,"GANTT, GREG C",Common Stock
+2024-07-29,ODFL,Director,SELL,256.0,204.1,52249.6,"GANTT, GREG C",Common Stock
+2024-07-30,ODFL,Director,SELL,550.0,205.55,113052.5,"STITH, THOMAS A. III",Common Stock
+2024-08-01,ODFL,Director,SELL,2125.0,210.18,446632.5,"GANTT, GREG C",Common Stock
+2024-08-26,ODFL,"Director, Executive Chairman",SELL,3750.0,202.21,758287.5,"CONGDON, DAVID S",Common Stock
+2024-08-26,ODFL,"Director, Executive Chairman",SELL,350.0,203.27,71144.5,"CONGDON, DAVID S",Common Stock
+2024-08-26,ODFL,"Director, Executive Chairman",SELL,1400.0,204.16,285824.0,"CONGDON, DAVID S",Common Stock
+2024-08-26,ODFL,"Director, Executive Chairman",SELL,11275.0,200.29,2258269.75,"CONGDON, DAVID S",Common Stock
+2024-08-26,ODFL,"Director, Executive Chairman",SELL,13200.0,201.55,2660460.0,"CONGDON, DAVID S",Common Stock
+2024-08-29,ODFL,"Director, Executive Chairman",SELL,10000.0,195.17,1951699.9999999998,"CONGDON, DAVID S",Common Stock
+2024-08-30,ODFL,"Director, Executive Chairman",SELL,10025.0,190.19,1906654.75,"CONGDON, DAVID S",Common Stock
+2024-09-01,ODFL,Director,SELL,2125.0,192.8,409700.0,"GANTT, GREG C",Common Stock
+2024-10-01,ODFL,Director,SELL,2125.0,198.64,422110.0,"GANTT, GREG C",Common Stock
+2024-10-28,ODFL,Director,SELL,7000.0,200.07,1400490.0,"GANTT, GREG C",Common Stock
+2024-11-01,ODFL,Director,SELL,2125.0,201.32,427805.0,"GANTT, GREG C",Common Stock
+2024-11-06,ODFL,"Director, Executive Chairman",SELL,60000.0,226.3,13578000.0,"CONGDON, DAVID S",Common Stock
+2024-11-08,ODFL,Director,SELL,3000.0,225.44,676320.0,"SUGGS, LEO H",Common Stock
+2024-11-19,ODFL,Chair Emeritus & Sr. Advisor,SELL,7577.0,211.8,1604808.6,"CONGDON, EARL E",Common Stock
+2024-12-01,ODFL,Director,SELL,2125.0,225.14,478422.5,"GANTT, GREG C",Common Stock
+2025-01-02,ODFL,Director,SELL,1359.0,176.4,239727.6,"GANTT, GREG C",Common Stock
+2025-02-01,ODFL,Director,SELL,2033.0,185.61,377345.13,"GANTT, GREG C",Common Stock
+2025-02-07,ODFL,SVP - Legal Affairs GC and Sec,SELL,277.0,197.2,54624.399999999994,"PARR, ROSS H.",Common Stock
+2025-02-07,ODFL,EVP and CFO,SELL,404.0,197.2,79668.79999999999,"SATTERFIELD, ADAM N",Common Stock
+2025-02-07,ODFL,SVP - Sales,SELL,270.0,197.2,53244.0,"HARTSELL, STEVEN W.",Common Stock
+2025-02-07,ODFL,EVP and COO,SELL,372.0,197.2,73358.4,"PLEMMONS, GREGORY B",Common Stock
+2025-02-07,ODFL,"SVP - Human Resources, Safety",SELL,271.0,197.2,53441.2,"BROOKS, CHRISTOPHER T",Common Stock
+2025-02-07,ODFL,SVP - Strategic Development,SELL,277.0,197.2,54624.399999999994,"OVERBEY, CECIL E. JR.",Common Stock
+2025-02-07,ODFL,SVP - Operations,SELL,270.0,197.2,53244.0,"KELLEY, CHRISTOPHER JAMES",Common Stock
+2025-02-07,ODFL,"Director, President and CEO",SELL,709.0,197.2,139814.8,"FREEMAN, KEVIN M.",Common Stock
+2025-02-08,ODFL,SVP - Strategic Development,SELL,305.0,197.2,60146.0,"OVERBEY, CECIL E. JR.",Common Stock
+2025-02-08,ODFL,"SVP - Human Resources, Safety",SELL,305.0,197.2,60146.0,"BROOKS, CHRISTOPHER T",Common Stock
+2025-02-08,ODFL,EVP and CFO,SELL,385.0,197.2,75922.0,"SATTERFIELD, ADAM N",Common Stock
+2025-02-08,ODFL,SVP - Sales,SELL,142.0,197.2,28002.399999999998,"HARTSELL, STEVEN W.",Common Stock
+2025-02-08,ODFL,EVP and COO,SELL,345.0,197.2,68034.0,"PLEMMONS, GREGORY B",Common Stock
+2025-02-08,ODFL,"Director, President and CEO",SELL,526.0,197.2,103727.2,"FREEMAN, KEVIN M.",Common Stock
+2025-02-08,ODFL,SVP - Operations,SELL,146.0,197.2,28791.199999999997,"KELLEY, CHRISTOPHER JAMES",Common Stock
+2025-02-08,ODFL,SVP - Legal Affairs GC and Sec,SELL,305.0,197.2,60146.0,"PARR, ROSS H.",Common Stock
+2025-02-09,ODFL,EVP and CFO,SELL,342.0,197.2,67442.4,"SATTERFIELD, ADAM N",Common Stock
+2025-02-09,ODFL,EVP and COO,SELL,306.0,197.2,60343.2,"PLEMMONS, GREGORY B",Common Stock
+2025-02-09,ODFL,SVP - Operations,SELL,130.0,197.2,25636.0,"KELLEY, CHRISTOPHER JAMES",Common Stock
+2025-02-09,ODFL,SVP - Sales,SELL,126.0,197.2,24847.199999999997,"HARTSELL, STEVEN W.",Common Stock
+2025-02-09,ODFL,EVP and CFO,SELL,683.0,197.2,134687.6,"SATTERFIELD, ADAM N",Common Stock
+2025-02-09,ODFL,SVP - Strategic Development,SELL,270.0,197.2,53244.0,"OVERBEY, CECIL E. JR.",Common Stock
+2025-02-09,ODFL,EVP and COO,SELL,305.0,197.2,60146.0,"PLEMMONS, GREGORY B",Common Stock
+2025-02-09,ODFL,SVP - Legal Affairs GC and Sec,SELL,270.0,197.2,53244.0,"PARR, ROSS H.",Common Stock
+2025-02-09,ODFL,"Director, President and CEO",SELL,467.0,197.2,92092.4,"FREEMAN, KEVIN M.",Common Stock
+2025-02-09,ODFL,"Director, President and CEO",SELL,933.0,197.2,183987.59999999998,"FREEMAN, KEVIN M.",Common Stock
+2025-02-09,ODFL,"SVP - Human Resources, Safety",SELL,270.0,197.2,53244.0,"BROOKS, CHRISTOPHER T",Common Stock
+2025-02-13,ODFL,Director,SELL,6414.0,205.87,1320450.18,"GANTT, GREG C",Common Stock
+2025-02-28,ODFL,EVP and CFO,BUY,2457.0,175.93,432260.01,"SATTERFIELD, ADAM N",Common Stock
+2025-03-01,ODFL,Director,SELL,2113.0,176.5,372944.5,"GANTT, GREG C",Common Stock
+2025-04-01,ODFL,Director,SELL,2113.0,165.45,349595.85,"GANTT, GREG C",Common Stock
+2025-05-01,ODFL,Director,SELL,2113.0,153.28,323880.64,"GANTT, GREG C",Common Stock
+2025-06-01,ODFL,Director,SELL,2111.0,160.17,338118.87,"GANTT, GREG C",Common Stock
+2025-07-01,ODFL,Director,SELL,636.0,162.3,103222.8,"GANTT, GREG C",Common Stock
+2025-08-01,ODFL,Director,SELL,636.0,149.25,94923.0,"GANTT, GREG C",Common Stock
+2025-09-01,ODFL,Director,SELL,636.0,150.97,96016.92,"GANTT, GREG C",Common Stock
+2025-10-01,ODFL,Director,SELL,636.0,140.78,89536.08,"GANTT, GREG C",Common Stock
+2025-11-01,ODFL,Director,SELL,636.0,140.42,89307.12,"GANTT, GREG C",Common Stock
+2025-11-18,ODFL,Chair Emeritus & Sr. Advisor,SELL,10167.0,130.66,1328420.22,"CONGDON, EARL E",Common Stock
+2025-12-01,ODFL,Director,SELL,635.0,135.29,85909.15,"GANTT, GREG C",Common Stock

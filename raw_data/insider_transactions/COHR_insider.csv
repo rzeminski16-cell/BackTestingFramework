@@ -1,0 +1,1587 @@
+date,symbol,insider_title,transaction_type,shares,price,value,executive,security_type
+2004-08-31,COHR,"Director, Chairman & CEO, 10% Owner",BUY,2044.0,38.06,77794.64,"JOHNSON, CARL J",Common Stock
+2004-08-31,COHR,Chief Acctg. Officer/Treasurer,BUY,1083.0,38.06,41218.98,"CREATURO, CRAIG A",Common Stock
+2004-11-22,COHR,Executive Vice President,SELL,1000.0,40.845,40845.0,"REEDY, HERMAN E",Common Stock
+2004-11-22,COHR,Executive Vice President,SELL,256.0,40.76,10434.56,"REEDY, HERMAN E",Common Stock
+2004-11-22,COHR,Executive Vice President,SELL,700.0,40.6,28420.0,"REEDY, HERMAN E",Common Stock
+2004-11-22,COHR,Executive Vice President,SELL,700.0,40.73,28510.999999999996,"REEDY, HERMAN E",Common Stock
+2004-11-23,COHR,Executive Vice President,SELL,1000.0,41.0,41000.0,"REEDY, HERMAN E",Common Stock
+2004-11-23,COHR,Executive Vice President,SELL,644.0,40.8,26275.199999999997,"REEDY, HERMAN E",Common Stock
+2004-11-23,COHR,Executive Vice President,SELL,700.0,40.93,28651.0,"REEDY, HERMAN E",Common Stock
+2005-05-25,COHR,Director,BUY,240.0,16.0,3840.0,"MORRISON, DUNCAN A J",Common Stock
+2005-05-31,COHR,Director,BUY,760.0,16.63,12638.8,"MORRISON, DUNCAN A J",Common Stock
+2005-05-31,COHR,Director,BUY,1000.0,16.621,16621.0,"MORRISON, DUNCAN A J",Common Stock
+2005-08-31,COHR,"Director, Chairman & CEO, 10% Owner",BUY,2754.0,17.689,48715.506,"JOHNSON, CARL J",Common Stock
+2005-08-31,COHR,CFO & Treasurer,BUY,2304.0,17.689,40755.456,"CREATURO, CRAIG A",Common Stock
+2005-09-19,COHR,Executive Vice President,SELL,15000.0,17.5227,262840.5,"REEDY, HERMAN E",Common Stock
+2006-02-07,COHR,Vice President,SELL,9000.0,18.014,162126.0,"MARTINELLI, JAMES",Common Stock
+2006-02-07,COHR,Vice President,BUY,12000.0,4.375,52500.0,"MARTINELLI, JAMES",Common Stock
+2006-02-07,COHR,Vice President,SELL,12000.0,18.014,216168.0,"MARTINELLI, JAMES",Common Stock
+2006-02-07,COHR,Vice President,BUY,9000.0,2.75,24750.0,"MARTINELLI, JAMES",Common Stock
+2006-05-01,COHR,Director,SELL,10000.0,21.3849,213848.99999999997,"MORRISON, DUNCAN A J",Common Stock
+2006-05-03,COHR,Executive Vice President,SELL,200.0,21.26,4252.0,"REEDY, HERMAN E",Common Stock
+2006-05-03,COHR,Executive Vice President,SELL,2748.0,21.2,58257.6,"REEDY, HERMAN E",Common Stock
+2006-05-03,COHR,Executive Vice President,SELL,1204.0,21.24,25572.96,"REEDY, HERMAN E",Common Stock
+2006-05-03,COHR,Executive Vice President,SELL,1500.0,21.22,31830.0,"REEDY, HERMAN E",Common Stock
+2006-05-03,COHR,Executive Vice President,SELL,300.0,21.28,6384.0,"REEDY, HERMAN E",Common Stock
+2006-05-03,COHR,Executive Vice President,SELL,21.0,21.31,447.51,"REEDY, HERMAN E",Common Stock
+2006-05-03,COHR,Executive Vice President,SELL,4231.0,21.25,89908.75,"REEDY, HERMAN E",Common Stock
+2006-05-05,COHR,Director,SELL,3228.0,21.8,70370.40000000001,"SOGNEFEST, PETER W",Common Stock
+2006-05-05,COHR,Director,SELL,600.0,21.81,13086.0,"SOGNEFEST, PETER W",Common Stock
+2006-05-05,COHR,Director,SELL,300.0,21.88,6564.0,"SOGNEFEST, PETER W",Common Stock
+2006-05-11,COHR,"Director, President & COO",BUY,8400.0,4.375,36750.0,"KRAMER, FRANCIS J",Common Stock
+2006-05-11,COHR,"Director, President & COO",SELL,8400.0,21.477,180406.8,"KRAMER, FRANCIS J",Common Stock
+2006-05-16,COHR,"Director, President & COO",BUY,7600.0,4.375,33250.0,"KRAMER, FRANCIS J",Common Stock
+2006-06-20,COHR,"Director, Chairman & CEO, 10% Owner",BUY,16000.0,4.375,70000.0,"JOHNSON, CARL J",Common Stock
+2006-08-31,COHR,"Director, Chairman & CEO, 10% Owner",BUY,2326.0,21.066,48999.515999999996,"JOHNSON, CARL J",Common Stock
+2006-09-18,COHR,Director,SELL,10000.0,25.2,252000.0,"MISTLER, THOMAS E",Common Stock
+2006-09-18,COHR,Director,SELL,10000.0,25.19,251900.0,"MISTLER, THOMAS E",Common Stock
+2006-09-19,COHR,Director,SELL,10000.0,25.35,253500.0,"MISTLER, THOMAS E",Common Stock
+2006-09-20,COHR,Director,SELL,5000.0,26.3,131500.0,"MISTLER, THOMAS E",Common Stock
+2006-09-20,COHR,Director,SELL,5000.0,26.4,132000.0,"MISTLER, THOMAS E",Common Stock
+2006-09-20,COHR,Director,SELL,5000.0,26.5,132500.0,"MISTLER, THOMAS E",Common Stock
+2006-09-20,COHR,Director,SELL,5000.0,26.351,131755.0,"MISTLER, THOMAS E",Common Stock
+2006-09-25,COHR,Director,SELL,5000.0,25.0,125000.0,"MORRISON, DUNCAN A J",Common Stock
+2006-09-28,COHR,Vice President,SELL,8250.0,25.6938,211973.85,"MATTERA, VINCENT D JR",Common Stock
+2006-09-28,COHR,Vice President,BUY,8250.0,13.2,108900.0,"MATTERA, VINCENT D JR",Common Stock
+2006-09-28,COHR,Vice President,BUY,1750.0,13.2,23100.0,"MATTERA, VINCENT D JR",Common Stock
+2006-09-29,COHR,Director,SELL,5000.0,25.5,127500.0,"MORRISON, DUNCAN A J",Common Stock
+2007-01-29,COHR,Vice President,SELL,500.0,30.05,15025.0,"MARTINELLI, JAMES",Common Stock
+2007-01-29,COHR,Vice President,SELL,640.0,30.05,19232.0,"MARTINELLI, JAMES",Common Stock
+2007-01-29,COHR,Vice President,SELL,200.0,29.91,5982.0,"MARTINELLI, JAMES",Common Stock
+2007-01-29,COHR,Vice President,SELL,100.0,30.11,3011.0,"MARTINELLI, JAMES",Common Stock
+2007-01-29,COHR,Vice President,SELL,746.0,30.06,22424.76,"MARTINELLI, JAMES",Common Stock
+2007-01-29,COHR,Vice President,SELL,100.0,29.92,2992.0,"MARTINELLI, JAMES",Common Stock
+2007-01-29,COHR,Vice President,SELL,200.0,29.9,5980.0,"MARTINELLI, JAMES",Common Stock
+2007-01-29,COHR,Vice President,BUY,500.0,29.75,14875.0,"MARTINELLI, JAMES",Common Stock
+2007-01-29,COHR,Vice President,SELL,100.0,30.01,3001.0,"MARTINELLI, JAMES",Common Stock
+2007-01-29,COHR,Vice President,SELL,400.0,30.0,12000.0,"MARTINELLI, JAMES",Common Stock
+2007-01-29,COHR,Vice President,SELL,314.0,30.1,9451.4,"MARTINELLI, JAMES",Common Stock
+2007-01-29,COHR,Vice President,SELL,1600.0,30.146,48233.6,"MARTINELLI, JAMES",Common Stock
+2007-01-29,COHR,Vice President,SELL,100.0,30.09,3009.0,"MARTINELLI, JAMES",Common Stock
+2007-01-29,COHR,Vice President,SELL,100.0,30.07,3007.0,"MARTINELLI, JAMES",Common Stock
+2007-01-29,COHR,Vice President,SELL,500.0,29.75,14875.0,"MARTINELLI, JAMES",Common Stock
+2007-01-31,COHR,Chief Financial Officer,SELL,4000.0,29.9516,119806.4,"CREATURO, CRAIG A",Common Stock
+2007-01-31,COHR,Chief Financial Officer,BUY,6000.0,8.0,48000.0,"CREATURO, CRAIG A",Common Stock
+2007-02-01,COHR,Exec. V.P.,SELL,1000.0,30.4,30400.0,"REEDY, HERMAN E",Common Stock
+2007-02-01,COHR,Exec. V.P.,SELL,2500.0,30.36,75900.0,"REEDY, HERMAN E",Common Stock
+2007-02-01,COHR,Exec. V.P.,SELL,500.0,30.33,15165.0,"REEDY, HERMAN E",Common Stock
+2007-02-01,COHR,Exec. V.P.,SELL,500.0,30.3,15150.0,"REEDY, HERMAN E",Common Stock
+2007-02-01,COHR,Exec. V.P.,SELL,500.0,30.29,15145.0,"REEDY, HERMAN E",Common Stock
+2007-02-01,COHR,Exec. V.P.,SELL,500.0,30.27,15135.0,"REEDY, HERMAN E",Common Stock
+2007-02-01,COHR,Exec. V.P.,SELL,500.0,30.26,15130.0,"REEDY, HERMAN E",Common Stock
+2007-02-01,COHR,Exec. V.P.,SELL,1000.0,30.25,30250.0,"REEDY, HERMAN E",Common Stock
+2007-02-01,COHR,Exec. V.P.,SELL,500.0,30.17,15085.0,"REEDY, HERMAN E",Common Stock
+2007-02-01,COHR,Exec. V.P.,SELL,500.0,30.22,15110.0,"REEDY, HERMAN E",Common Stock
+2007-02-01,COHR,Exec. V.P.,SELL,500.0,30.15,15075.0,"REEDY, HERMAN E",Common Stock
+2007-02-01,COHR,Exec. V.P.,SELL,1000.0,30.48,30480.0,"REEDY, HERMAN E",Common Stock
+2007-02-01,COHR,Exec. V.P.,SELL,2000.0,30.35,60700.0,"REEDY, HERMAN E",Common Stock
+2007-02-01,COHR,Exec. V.P.,SELL,1000.0,30.31,30310.0,"REEDY, HERMAN E",Common Stock
+2007-02-01,COHR,Exec. V.P.,SELL,1000.0,30.37,30370.0,"REEDY, HERMAN E",Common Stock
+2007-02-01,COHR,Exec. V.P.,SELL,1000.0,30.41,30410.0,"REEDY, HERMAN E",Common Stock
+2007-02-01,COHR,Exec. V.P.,SELL,500.0,30.23,15115.0,"REEDY, HERMAN E",Common Stock
+2007-02-07,COHR,Director,SELL,400.0,32.22,12888.0,"MORRISON, DUNCAN A J",Common Stock
+2007-02-07,COHR,Director,SELL,2200.0,32.23,70906.0,"MORRISON, DUNCAN A J",Common Stock
+2007-02-07,COHR,Director,SELL,1300.0,32.21,41873.0,"MORRISON, DUNCAN A J",Common Stock
+2007-02-07,COHR,Director,SELL,1106.0,32.0,35392.0,"MORRISON, DUNCAN A J",Common Stock
+2007-02-07,COHR,Director,SELL,500.0,32.02,16010.000000000002,"MORRISON, DUNCAN A J",Common Stock
+2007-02-07,COHR,Director,SELL,900.0,32.2,28980.000000000004,"MORRISON, DUNCAN A J",Common Stock
+2007-02-07,COHR,Director,SELL,100.0,32.03,3203.0,"MORRISON, DUNCAN A J",Common Stock
+2007-02-07,COHR,Director,SELL,3684.0,31.96,117740.64,"MORRISON, DUNCAN A J",Common Stock
+2007-02-07,COHR,Director,SELL,200.0,31.95,6390.0,"MORRISON, DUNCAN A J",Common Stock
+2007-02-07,COHR,Director,SELL,210.0,31.97,6713.7,"MORRISON, DUNCAN A J",Common Stock
+2007-03-13,COHR,"Director, Chairman & CEO, 10% Owner",SELL,200.0,32.04,6408.0,"JOHNSON, CARL J",Common Stock
+2007-03-13,COHR,"Director, Chairman & CEO, 10% Owner",SELL,100.0,32.02,3202.0000000000005,"JOHNSON, CARL J",Common Stock
+2007-03-13,COHR,"Director, Chairman & CEO, 10% Owner",SELL,200.0,32.01,6402.0,"JOHNSON, CARL J",Common Stock
+2007-03-13,COHR,"Director, Chairman & CEO, 10% Owner",SELL,5378.0,32.0,172096.0,"JOHNSON, CARL J",Common Stock
+2007-03-13,COHR,"Director, Chairman & CEO, 10% Owner",SELL,100.0,32.08,3208.0,"JOHNSON, CARL J",Common Stock
+2007-03-13,COHR,"Director, Chairman & CEO, 10% Owner",SELL,200.0,32.07,6414.0,"JOHNSON, CARL J",Common Stock
+2007-03-13,COHR,"Director, Chairman, 10% Owner",SELL,5378.0,32.0,172096.0,"JOHNSON, CARL J",Common Stock
+2007-03-15,COHR,"Director, Chairman and CEO, 10% Owner",SELL,300.0,32.28,9684.0,"JOHNSON, CARL J",Common Stock
+2007-03-15,COHR,"Director, Chairman and CEO, 10% Owner",SELL,200.0,32.16,6431.999999999999,"JOHNSON, CARL J",Common Stock
+2007-03-15,COHR,"Director, Chairman and CEO, 10% Owner",SELL,100.0,32.15,3215.0,"JOHNSON, CARL J",Common Stock
+2007-03-15,COHR,"Director, Chairman and CEO, 10% Owner",SELL,200.0,32.29,6458.0,"JOHNSON, CARL J",Common Stock
+2007-03-15,COHR,"Director, Chairman and CEO, 10% Owner",SELL,200.0,32.27,6454.000000000001,"JOHNSON, CARL J",Common Stock
+2007-03-15,COHR,"Director, Chairman and CEO, 10% Owner",SELL,100.0,32.3,3229.9999999999995,"JOHNSON, CARL J",Common Stock
+2007-03-15,COHR,"Director, Chairman and CEO, 10% Owner",SELL,200.0,32.13,6426.000000000001,"JOHNSON, CARL J",Common Stock
+2007-03-15,COHR,"Director, Chairman and CEO, 10% Owner",SELL,1127.0,32.11,36187.97,"JOHNSON, CARL J",Common Stock
+2007-03-15,COHR,"Director, Chairman and CEO, 10% Owner",SELL,800.0,32.1,25680.0,"JOHNSON, CARL J",Common Stock
+2007-03-15,COHR,"Director, Chairman and CEO, 10% Owner",SELL,100.0,32.07,3207.0,"JOHNSON, CARL J",Common Stock
+2007-03-15,COHR,"Director, Chairman and CEO, 10% Owner",SELL,300.0,32.18,9654.0,"JOHNSON, CARL J",Common Stock
+2007-03-15,COHR,"Director, Chairman and CEO, 10% Owner",SELL,200.0,32.14,6428.0,"JOHNSON, CARL J",Common Stock
+2007-03-15,COHR,"Director, Chairman and CEO, 10% Owner",SELL,100.0,32.2,3220.0000000000005,"JOHNSON, CARL J",Common Stock
+2007-03-15,COHR,"Director, Chairman and CEO, 10% Owner",SELL,700.0,32.19,22533.0,"JOHNSON, CARL J",Common Stock
+2007-03-15,COHR,"Director, Chairman and CEO, 10% Owner",SELL,177.0,32.22,5702.94,"JOHNSON, CARL J",Common Stock
+2007-03-15,COHR,"Director, Chairman and CEO, 10% Owner",SELL,123.0,32.23,3964.2899999999995,"JOHNSON, CARL J",Common Stock
+2007-03-15,COHR,"Director, Chairman and CEO, 10% Owner",SELL,100.0,32.05,3204.9999999999995,"JOHNSON, CARL J",Common Stock
+2007-03-15,COHR,"Director, Chairman and CEO, 10% Owner",SELL,600.0,32.03,19218.0,"JOHNSON, CARL J",Common Stock
+2007-03-15,COHR,"Director, Chairman and CEO, 10% Owner",SELL,900.0,32.02,28818.000000000004,"JOHNSON, CARL J",Common Stock
+2007-03-15,COHR,"Director, Chairman and CEO, 10% Owner",SELL,800.0,32.01,25608.0,"JOHNSON, CARL J",Common Stock
+2007-03-15,COHR,"Director, Chairman and CEO, 10% Owner",SELL,625.0,32.0,20000.0,"JOHNSON, CARL J",Common Stock
+2007-03-15,COHR,"Director, Chairman and CEO, 10% Owner",SELL,500.0,32.04,16020.0,"JOHNSON, CARL J",Common Stock
+2007-03-15,COHR,"Director, Chairman and CEO, 10% Owner",SELL,200.0,32.26,6452.0,"JOHNSON, CARL J",Common Stock
+2007-03-15,COHR,"Director, Chairman and CEO, 10% Owner",SELL,100.0,32.32,3232.0,"JOHNSON, CARL J",Common Stock
+2007-03-15,COHR,"Director, Chairman and CEO, 10% Owner",SELL,39.0,32.31,1260.0900000000001,"JOHNSON, CARL J",Common Stock
+2007-03-15,COHR,"Director, Chairman and CEO, 10% Owner",SELL,100.0,32.21,3221.0,"JOHNSON, CARL J",Common Stock
+2007-03-15,COHR,"Director, Chairman and CEO, 10% Owner",SELL,200.0,32.25,6450.0,"JOHNSON, CARL J",Common Stock
+2007-03-15,COHR,"Director, Chairman and CEO, 10% Owner",SELL,200.0,32.24,6448.0,"JOHNSON, CARL J",Common Stock
+2007-03-15,COHR,"Director, Chairman and CEO, 10% Owner",SELL,300.0,32.06,9618.0,"JOHNSON, CARL J",Common Stock
+2007-03-16,COHR,"Director, Chairman and CEO, 10% Owner",SELL,4146.0,32.0,132672.0,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,1630.0,32.72,53333.6,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,800.0,32.73,26183.999999999996,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,600.0,32.74,19644.0,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,300.0,32.785,9835.499999999998,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,1400.0,32.78,45892.0,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,393.0,32.79,12886.47,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,100.0,32.49,3249.0,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,100.0,32.76,3276.0,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,100.0,32.46,3246.0,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,200.0,32.32,6464.0,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,200.0,32.37,6473.999999999999,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,600.0,32.66,19595.999999999996,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,100.0,32.41,3240.9999999999995,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,300.0,32.35,9705.0,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,300.0,32.34,9702.000000000002,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,200.0,32.22,6444.0,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,200.0,32.26,6452.0,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,388.0,32.75,12707.0,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,500.0,32.45,16225.000000000002,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,100.0,32.23,3222.9999999999995,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,200.0,32.33,6466.0,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,200.0,32.27,6454.000000000001,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,100.0,32.24,3224.0,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,900.0,32.67,29403.0,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,200.0,32.69,6538.0,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,1100.0,32.7,35970.0,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,1000.0,32.71,32710.0,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,200.0,32.715,6543.000000000001,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",BUY,2345.0,32.64,76540.8,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,690.0,32.63,22514.7,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,700.0,32.62,22834.0,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,600.0,32.61,19566.0,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,1700.0,32.65,55505.0,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,410.0,32.57,13353.7,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,500.0,32.56,16280.000000000002,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,500.0,32.55,16274.999999999998,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,100.0,32.28,3228.0,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,1500.0,32.54,48810.0,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,1475.0,32.53,47981.75,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,300.0,32.52,9756.000000000002,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,500.0,32.51,16254.999999999998,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,219.0,32.5,7117.5,"JOHNSON, CARL J",Common Stock
+2007-03-19,COHR,"Director, Chairman and CEO, 10% Owner",SELL,1135.0,32.58,36978.299999999996,"JOHNSON, CARL J",Common Stock
+2007-04-27,COHR,Director,BUY,100.0,30.06,3006.0,"DICICCO, WENDY F",Common Stock
+2007-05-15,COHR,Director,SELL,300.0,29.0,8700.0,"SOGNEFEST, PETER W",Common Stock
+2007-05-15,COHR,Director,SELL,1200.0,28.75,34500.0,"SOGNEFEST, PETER W",Common Stock
+2007-05-21,COHR,Director,BUY,1897.0,8.17,15498.49,"SOGNEFEST, PETER W",Common Stock
+2007-05-21,COHR,Director,SELL,300.0,28.11,8433.0,"SOGNEFEST, PETER W",Common Stock
+2007-05-21,COHR,Director,BUY,454.0,8.17,3709.18,"SOGNEFEST, PETER W",Common Stock
+2007-05-21,COHR,Director,SELL,454.0,28.21,12807.34,"SOGNEFEST, PETER W",Common Stock
+2007-05-21,COHR,Director,SELL,1897.0,28.15,53400.549999999996,"SOGNEFEST, PETER W",Common Stock
+2007-05-21,COHR,Director,SELL,300.0,28.12,8436.0,"SOGNEFEST, PETER W",Common Stock
+2007-05-21,COHR,Director,SELL,1500.0,28.15,42225.0,"SOGNEFEST, PETER W",Common Stock
+2007-05-21,COHR,Director,SELL,200.0,28.13,5626.0,"SOGNEFEST, PETER W",Common Stock
+2007-05-21,COHR,Director,BUY,1649.0,8.17,13472.33,"SOGNEFEST, PETER W",Common Stock
+2007-05-21,COHR,Director,SELL,1649.0,28.2,46501.799999999996,"SOGNEFEST, PETER W",Common Stock
+2007-05-21,COHR,Director,BUY,5200.0,8.17,42484.0,"SOGNEFEST, PETER W",Common Stock
+2007-05-21,COHR,Director,SELL,5200.0,28.1,146120.0,"SOGNEFEST, PETER W",Common Stock
+2007-05-21,COHR,Director,BUY,300.0,8.17,2451.0,"SOGNEFEST, PETER W",Common Stock
+2007-05-21,COHR,Director,BUY,200.0,8.17,1634.0,"SOGNEFEST, PETER W",Common Stock
+2007-08-31,COHR,"Director, Chairman, 10% Owner",BUY,1423.0,31.2,44397.6,"JOHNSON, CARL J",Common Stock
+2007-08-31,COHR,CFO & Treasurer,BUY,661.0,31.2,20623.2,"CREATURO, CRAIG A",Common Stock
+2007-09-14,COHR,Vice President,BUY,3200.0,13.2,42240.0,"MATTERA, VINCENT D JR",Common Stock
+2007-09-14,COHR,Vice President,SELL,1950.0,31.405,61239.75,"MATTERA, VINCENT D JR",Common Stock
+2007-10-30,COHR,Director,BUY,100.0,34.4,3440.0,"DICICCO, WENDY F",Common Stock
+2007-11-16,COHR,Executive Vice President,SELL,100.0,33.29,3329.0,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,SELL,100.0,33.32,3332.0,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,SELL,393.0,33.34,13102.62,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,BUY,393.0,6.45,2534.85,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,SELL,100.0,33.37,3336.9999999999995,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,SELL,1200.0,33.04,39648.0,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,SELL,200.0,33.38,6676.000000000001,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,SELL,100.0,33.39,3339.0,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,BUY,1200.0,6.45,7740.0,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,BUY,100.0,8.0,800.0,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,SELL,500.0,33.06,16530.0,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,BUY,200.0,6.45,1290.0,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,SELL,3207.0,33.0,105831.0,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,SELL,601.0,33.07,19875.07,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,SELL,200.0,33.4,6680.0,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,SELL,298.0,33.09,9860.820000000002,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,BUY,298.0,6.45,1922.1000000000001,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,SELL,100.0,33.085,3308.5,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,BUY,601.0,6.45,3876.4500000000003,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,SELL,100.0,33.055,3305.5,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,SELL,1884.0,33.03,62228.520000000004,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,BUY,1884.0,6.45,12151.800000000001,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,SELL,1345.0,33.03,44425.35,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,BUY,1345.0,8.0,10760.0,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,SELL,100.0,33.025,3302.5,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,SELL,1648.0,33.02,54416.96000000001,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,SELL,100.0,33.015,3301.5,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,BUY,3207.0,8.0,25656.0,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,SELL,1009.0,33.05,33347.45,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,SELL,244.0,33.6,8198.4,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,SELL,300.0,33.25,9975.0,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,BUY,1009.0,6.45,6508.05,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,BUY,407.0,6.45,2625.15,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,BUY,519.0,6.45,3347.55,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,SELL,100.0,33.12,3311.9999999999995,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,SELL,446.0,33.11,14767.06,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,BUY,446.0,6.45,2876.7000000000003,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,SELL,1122.0,33.1,37138.200000000004,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,BUY,244.0,6.45,1573.8,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,SELL,600.0,33.58,20148.0,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,BUY,600.0,6.45,3870.0,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,SELL,100.0,33.575,3357.5000000000005,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,SELL,500.0,33.57,16785.0,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,BUY,500.0,6.45,3225.0,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,BUY,1648.0,8.0,13184.0,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,BUY,1122.0,6.45,7236.900000000001,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,BUY,1500.0,8.0,12000.0,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,SELL,400.0,33.15,13260.0,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,BUY,400.0,6.45,2580.0,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,SELL,407.0,33.14,13487.98,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,BUY,100.0,6.45,645.0,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,SELL,100.0,33.45,3345.0000000000005,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,SELL,100.0,33.49,3349.0,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,BUY,300.0,6.45,1935.0,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,BUY,77.0,6.45,496.65000000000003,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,SELL,77.0,33.55,2583.35,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,SELL,100.0,33.135,3313.5,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,SELL,519.0,33.13,17194.47,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,SELL,100.0,33.005,3300.5000000000005,"REEDY, HERMAN E",Common Stock
+2007-11-16,COHR,Executive Vice President,SELL,1500.0,33.01,49515.0,"REEDY, HERMAN E",Common Stock
+2007-11-20,COHR,"Director, Chairman, 10% Owner",SELL,100.0,32.01,3201.0,"JOHNSON, CARL J",Common Stock
+2007-11-20,COHR,"Director, Chairman, 10% Owner",SELL,300.0,32.08,9624.0,"JOHNSON, CARL J",Common Stock
+2007-11-20,COHR,"Director, Chairman, 10% Owner",SELL,300.0,32.19,9657.0,"JOHNSON, CARL J",Common Stock
+2007-11-20,COHR,"Director, Chairman, 10% Owner",SELL,200.0,32.23,6445.999999999999,"JOHNSON, CARL J",Common Stock
+2007-11-20,COHR,"Director, Chairman, 10% Owner",SELL,300.0,32.12,9636.0,"JOHNSON, CARL J",Common Stock
+2007-11-20,COHR,"Director, Chairman, 10% Owner",SELL,208.0,32.11,6678.88,"JOHNSON, CARL J",Common Stock
+2007-11-20,COHR,"Director, Chairman, 10% Owner",SELL,200.0,32.05,6409.999999999999,"JOHNSON, CARL J",Common Stock
+2007-11-20,COHR,"Director, Chairman, 10% Owner",SELL,303.0,32.03,9705.09,"JOHNSON, CARL J",Common Stock
+2007-11-20,COHR,"Director, Chairman, 10% Owner",SELL,100.0,32.1,3210.0,"JOHNSON, CARL J",Common Stock
+2007-11-20,COHR,Vice President,BUY,1000.0,2.75,2750.0,"MARTINELLI, JAMES",Common Stock
+2007-11-20,COHR,Vice President,SELL,1000.0,33.0,33000.0,"MARTINELLI, JAMES",Common Stock
+2007-11-20,COHR,"Director, Chairman, 10% Owner",SELL,109.0,31.9,3477.1,"JOHNSON, CARL J",Common Stock
+2007-11-20,COHR,"Director, Chairman, 10% Owner",SELL,100.0,31.91,3191.0,"JOHNSON, CARL J",Common Stock
+2007-11-20,COHR,"Director, Chairman, 10% Owner",SELL,200.0,31.92,6384.0,"JOHNSON, CARL J",Common Stock
+2007-11-20,COHR,"Director, Chairman, 10% Owner",SELL,200.0,31.93,6386.0,"JOHNSON, CARL J",Common Stock
+2007-11-20,COHR,"Director, Chairman, 10% Owner",SELL,369.0,31.98,11800.62,"JOHNSON, CARL J",Common Stock
+2007-11-20,COHR,"Director, Chairman, 10% Owner",SELL,404.0,32.0,12928.0,"JOHNSON, CARL J",Common Stock
+2007-11-20,COHR,"Director, Chairman, 10% Owner",SELL,100.0,32.17,3217.0,"JOHNSON, CARL J",Common Stock
+2007-11-21,COHR,"Director, Chairman, 10% Owner",SELL,200.0,31.52,6304.0,"JOHNSON, CARL J",Common Stock
+2007-11-21,COHR,"Director, Chairman, 10% Owner",SELL,100.0,31.78,3178.0,"JOHNSON, CARL J",Common Stock
+2007-11-21,COHR,"Director, Chairman, 10% Owner",SELL,100.0,31.53,3153.0,"JOHNSON, CARL J",Common Stock
+2007-11-21,COHR,"Director, Chairman, 10% Owner",SELL,200.0,31.65,6330.0,"JOHNSON, CARL J",Common Stock
+2007-11-21,COHR,"Director, Chairman, 10% Owner",SELL,100.0,31.69,3169.0,"JOHNSON, CARL J",Common Stock
+2007-11-21,COHR,"Director, Chairman, 10% Owner",SELL,292.0,31.54,9209.68,"JOHNSON, CARL J",Common Stock
+2007-11-21,COHR,"Director, Chairman, 10% Owner",SELL,100.0,31.86,3186.0,"JOHNSON, CARL J",Common Stock
+2007-11-21,COHR,"Director, Chairman, 10% Owner",SELL,100.0,31.51,3151.0,"JOHNSON, CARL J",Common Stock
+2007-11-21,COHR,"Director, Chairman, 10% Owner",SELL,2.0,31.59,63.18,"JOHNSON, CARL J",Common Stock
+2007-11-21,COHR,"Director, Chairman, 10% Owner",SELL,100.0,31.46,3146.0,"JOHNSON, CARL J",Common Stock
+2007-11-21,COHR,"Director, Chairman, 10% Owner",SELL,100.0,31.61,3161.0,"JOHNSON, CARL J",Common Stock
+2007-11-21,COHR,"Director, Chairman, 10% Owner",SELL,100.0,31.7,3170.0,"JOHNSON, CARL J",Common Stock
+2007-11-21,COHR,"Director, Chairman, 10% Owner",SELL,98.0,31.43,3080.14,"JOHNSON, CARL J",Common Stock
+2007-11-21,COHR,"Director, Chairman, 10% Owner",SELL,100.0,31.55,3155.0,"JOHNSON, CARL J",Common Stock
+2007-11-21,COHR,"Director, Chairman, 10% Owner",SELL,100.0,31.88,3188.0,"JOHNSON, CARL J",Common Stock
+2007-11-21,COHR,"Director, Chairman, 10% Owner",SELL,100.0,31.97,3197.0,"JOHNSON, CARL J",Common Stock
+2007-11-21,COHR,"Director, Chairman, 10% Owner",SELL,100.0,31.93,3193.0,"JOHNSON, CARL J",Common Stock
+2007-11-21,COHR,"Director, Chairman, 10% Owner",SELL,100.0,31.98,3198.0,"JOHNSON, CARL J",Common Stock
+2007-11-21,COHR,"Director, Chairman, 10% Owner",SELL,200.0,31.56,6312.0,"JOHNSON, CARL J",Common Stock
+2007-11-21,COHR,"Director, Chairman, 10% Owner",SELL,200.0,31.57,6314.0,"JOHNSON, CARL J",Common Stock
+2007-11-21,COHR,"Director, Chairman, 10% Owner",SELL,100.0,31.66,3166.0,"JOHNSON, CARL J",Common Stock
+2007-11-28,COHR,Vice President,SELL,14000.0,33.0408,462571.19999999995,"MARTINELLI, JAMES",Common Stock
+2007-11-28,COHR,Vice President,BUY,14000.0,2.75,38500.0,"MARTINELLI, JAMES",Common Stock
+2007-11-30,COHR,Vice President,SELL,2500.0,33.506,83765.0,"MATTERA, VINCENT D JR",Common Stock
+2007-11-30,COHR,Vice President,BUY,2500.0,13.2,33000.0,"MATTERA, VINCENT D JR",Common Stock
+2007-12-03,COHR,Vice President,BUY,1434.0,13.2,18928.8,"MATTERA, VINCENT D JR",Common Stock
+2007-12-03,COHR,Vice President,SELL,1434.0,34.0,48756.0,"MATTERA, VINCENT D JR",Common Stock
+2007-12-05,COHR,Vice President,BUY,2841.0,13.2,37501.2,"MATTERA, VINCENT D JR",Common Stock
+2007-12-05,COHR,Vice President,SELL,1341.0,34.0,45594.0,"MATTERA, VINCENT D JR",Common Stock
+2007-12-26,COHR,"Director, Carl J. Johnson, 10% Owner",SELL,100.0,34.69,3469.0,"JOHNSON, CARL J",Common Stock
+2007-12-26,COHR,"Director, Carl J. Johnson, 10% Owner",SELL,300.0,34.68,10404.0,"JOHNSON, CARL J",Common Stock
+2007-12-26,COHR,"Director, Carl J. Johnson, 10% Owner",SELL,300.0,35.0,10500.0,"JOHNSON, CARL J",Common Stock
+2007-12-26,COHR,"Director, Carl J. Johnson, 10% Owner",SELL,62.0,34.62,2146.44,"JOHNSON, CARL J",Common Stock
+2007-12-26,COHR,"Director, Carl J. Johnson, 10% Owner",SELL,300.0,34.9,10470.0,"JOHNSON, CARL J",Common Stock
+2007-12-26,COHR,"Director, Carl J. Johnson, 10% Owner",SELL,200.0,35.1,7020.0,"JOHNSON, CARL J",Common Stock
+2007-12-26,COHR,"Director, Carl J. Johnson, 10% Owner",SELL,100.0,34.87,3486.9999999999995,"JOHNSON, CARL J",Common Stock
+2007-12-26,COHR,"Director, Carl J. Johnson, 10% Owner",SELL,100.0,34.86,3486.0,"JOHNSON, CARL J",Common Stock
+2007-12-26,COHR,"Director, Carl J. Johnson, 10% Owner",SELL,100.0,34.85,3485.0,"JOHNSON, CARL J",Common Stock
+2008-01-25,COHR,"Director, Chairman, 10% Owner",SELL,1562.0,31.12,48609.44,"JOHNSON, CARL J",Common Stock
+2008-02-25,COHR,"Director, Chairman, 10% Owner",SELL,62.0,31.27,1938.74,"JOHNSON, CARL J",Common Stock
+2008-02-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,31.29,3129.0,"JOHNSON, CARL J",Common Stock
+2008-02-25,COHR,"Director, Chairman, 10% Owner",SELL,200.0,31.28,6256.0,"JOHNSON, CARL J",Common Stock
+2008-02-25,COHR,"Director, Chairman, 10% Owner",SELL,200.0,31.22,6244.0,"JOHNSON, CARL J",Common Stock
+2008-02-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,31.1,3110.0,"JOHNSON, CARL J",Common Stock
+2008-02-25,COHR,"Director, Chairman, 10% Owner",SELL,200.0,30.84,6168.0,"JOHNSON, CARL J",Common Stock
+2008-02-25,COHR,"Director, Chairman, 10% Owner",SELL,200.0,31.18,6236.0,"JOHNSON, CARL J",Common Stock
+2008-02-25,COHR,"Director, Chairman, 10% Owner",SELL,200.0,31.3,6260.0,"JOHNSON, CARL J",Common Stock
+2008-02-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,31.31,3131.0,"JOHNSON, CARL J",Common Stock
+2008-02-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,31.55,3155.0,"JOHNSON, CARL J",Common Stock
+2008-02-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,31.25,3125.0,"JOHNSON, CARL J",Common Stock
+2008-02-27,COHR,Vice President,SELL,4000.0,33.9032,135612.8,"MARTINELLI, JAMES",Common Stock
+2008-02-27,COHR,Vice President,BUY,4000.0,2.75,11000.0,"MARTINELLI, JAMES",Common Stock
+2008-02-29,COHR,Vice President,BUY,468.0,32.74,15322.320000000002,"MATTERA, VINCENT D JR",Common Stock
+2008-03-03,COHR,Vice President,BUY,5618.0,13.2,74157.59999999999,"MATTERA, VINCENT D JR",Common Stock
+2008-03-03,COHR,Vice President,SELL,3118.0,33.0,102894.0,"MATTERA, VINCENT D JR",Common Stock
+2008-03-04,COHR,Vice President,SELL,1032.0,33.0,34056.0,"MATTERA, VINCENT D JR",Common Stock
+2008-03-04,COHR,Vice President,BUY,1032.0,13.2,13622.4,"MATTERA, VINCENT D JR",Common Stock
+2008-03-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,36.37,3636.9999999999995,"JOHNSON, CARL J",Common Stock
+2008-03-25,COHR,"Director, Chairman, 10% Owner",SELL,200.0,36.09,7218.000000000001,"JOHNSON, CARL J",Common Stock
+2008-03-25,COHR,"Director, Chairman, 10% Owner",SELL,300.0,36.1,10830.0,"JOHNSON, CARL J",Common Stock
+2008-03-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,36.11,3611.0,"JOHNSON, CARL J",Common Stock
+2008-03-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,36.15,3615.0,"JOHNSON, CARL J",Common Stock
+2008-03-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,36.12,3611.9999999999995,"JOHNSON, CARL J",Common Stock
+2008-03-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,36.22,3622.0,"JOHNSON, CARL J",Common Stock
+2008-03-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,35.93,3593.0,"JOHNSON, CARL J",Common Stock
+2008-03-25,COHR,"Director, Chairman, 10% Owner",SELL,63.0,35.97,2266.11,"JOHNSON, CARL J",Common Stock
+2008-03-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,35.971,3597.0999999999995,"JOHNSON, CARL J",Common Stock
+2008-03-25,COHR,"Director, Chairman, 10% Owner",SELL,99.0,35.99,3563.01,"JOHNSON, CARL J",Common Stock
+2008-03-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,36.08,3608.0,"JOHNSON, CARL J",Common Stock
+2008-03-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,36.17,3617.0,"JOHNSON, CARL J",Common Stock
+2008-04-25,COHR,"Director, Chairman, 10% Owner",SELL,600.0,38.04,22824.0,"JOHNSON, CARL J",Common Stock
+2008-04-25,COHR,"Director, Chairman, 10% Owner",SELL,400.0,38.03,15212.0,"JOHNSON, CARL J",Common Stock
+2008-04-25,COHR,"Director, Chairman, 10% Owner",SELL,200.0,38.02,7604.000000000001,"JOHNSON, CARL J",Common Stock
+2008-04-25,COHR,"Director, Chairman, 10% Owner",SELL,500.0,38.01,19005.0,"JOHNSON, CARL J",Common Stock
+2008-04-25,COHR,"Director, Chairman, 10% Owner",SELL,1300.0,38.0,49400.0,"JOHNSON, CARL J",Common Stock
+2008-04-25,COHR,"Director, Chairman, 10% Owner",SELL,300.0,37.98,11393.999999999998,"JOHNSON, CARL J",Common Stock
+2008-04-25,COHR,"Director, Chairman, 10% Owner",SELL,200.0,37.93,7586.0,"JOHNSON, CARL J",Common Stock
+2008-04-25,COHR,"Director, Chairman, 10% Owner",SELL,300.0,37.96,11388.0,"JOHNSON, CARL J",Common Stock
+2008-04-25,COHR,Director,SELL,100.0,37.71,3771.0,"SOGNEFEST, PETER W",Common Stock
+2008-04-25,COHR,"Director, Chairman, 10% Owner",SELL,489.0,37.95,18557.550000000003,"JOHNSON, CARL J",Common Stock
+2008-04-25,COHR,"Director, Chairman, 10% Owner",SELL,210.0,37.94,7967.4,"JOHNSON, CARL J",Common Stock
+2008-04-25,COHR,Director,BUY,5000.0,8.17,40850.0,"SOGNEFEST, PETER W",Common Stock
+2008-04-25,COHR,"Director, Chairman, 10% Owner",SELL,200.0,36.768,7353.6,"JOHNSON, CARL J",Common Stock
+2008-04-25,COHR,"Director, Chairman, 10% Owner",SELL,300.0,37.97,11391.0,"JOHNSON, CARL J",Common Stock
+2008-04-25,COHR,"Director, Chairman, 10% Owner",SELL,200.0,36.831,7366.200000000001,"JOHNSON, CARL J",Common Stock
+2008-04-25,COHR,"Director, Chairman, 10% Owner",SELL,62.0,36.94,2290.2799999999997,"JOHNSON, CARL J",Common Stock
+2008-04-25,COHR,"Director, Chairman, 10% Owner",SELL,200.0,36.84,7368.000000000001,"JOHNSON, CARL J",Common Stock
+2008-04-25,COHR,Director,SELL,100.0,37.72,3772.0,"SOGNEFEST, PETER W",Common Stock
+2008-04-25,COHR,Director,SELL,2300.0,37.7,86710.0,"SOGNEFEST, PETER W",Common Stock
+2008-04-25,COHR,Director,SELL,1000.0,37.66,37660.0,"SOGNEFEST, PETER W",Common Stock
+2008-04-25,COHR,"Director, Chairman, 10% Owner",SELL,201.0,37.92,7621.92,"JOHNSON, CARL J",Common Stock
+2008-04-25,COHR,Director,SELL,1.0,37.66,37.66,"SOGNEFEST, PETER W",Common Stock
+2008-04-25,COHR,Director,SELL,800.0,37.65,30120.0,"SOGNEFEST, PETER W",Common Stock
+2008-04-25,COHR,Director,SELL,1500.0,37.69,56535.0,"SOGNEFEST, PETER W",Common Stock
+2008-04-25,COHR,"Director, Chairman, 10% Owner",SELL,200.0,37.32,7464.0,"JOHNSON, CARL J",Common Stock
+2008-04-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,37.13,3713.0000000000005,"JOHNSON, CARL J",Common Stock
+2008-04-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,36.99,3699.0,"JOHNSON, CARL J",Common Stock
+2008-04-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,36.95,3695.0000000000005,"JOHNSON, CARL J",Common Stock
+2008-04-25,COHR,"Director, Chairman, 10% Owner",SELL,200.0,36.86,7372.0,"JOHNSON, CARL J",Common Stock
+2008-04-25,COHR,Director,SELL,199.0,37.62,7486.379999999999,"SOGNEFEST, PETER W",Common Stock
+2008-04-25,COHR,"Director, Chairman, 10% Owner",SELL,200.0,36.769,7353.799999999999,"JOHNSON, CARL J",Common Stock
+2008-04-28,COHR,"Director, Chairman, 10% Owner",SELL,200.0,38.06,7612.0,"JOHNSON, CARL J",Common Stock
+2008-04-28,COHR,"Director, Chairman, 10% Owner",SELL,300.0,38.07,11421.0,"JOHNSON, CARL J",Common Stock
+2008-04-28,COHR,"Director, Chairman, 10% Owner",SELL,76.0,38.05,2891.7999999999997,"JOHNSON, CARL J",Common Stock
+2008-04-28,COHR,"Director, Chairman, 10% Owner",SELL,24.0,38.11,914.64,"JOHNSON, CARL J",Common Stock
+2008-05-01,COHR,"Director, Chairman, 10% Owner",SELL,6900.0,38.0,262200.0,"JOHNSON, CARL J",Common Stock
+2008-05-21,COHR,"Director, Chairman, 10% Owner",SELL,1000.0,35.23,35230.0,"JOHNSON, CARL J",Common Stock
+2008-05-21,COHR,"Director, Chairman, 10% Owner",SELL,200.0,35.21,7042.0,"JOHNSON, CARL J",Common Stock
+2008-05-21,COHR,"Director, Chairman, 10% Owner",BUY,450.0,35.19,15835.499999999998,"JOHNSON, CARL J",Common Stock
+2008-05-21,COHR,"Director, Chairman, 10% Owner",SELL,1000.0,35.16,35160.0,"JOHNSON, CARL J",Common Stock
+2008-05-21,COHR,"Director, Chairman, 10% Owner",BUY,36000.0,2.75,99000.0,"JOHNSON, CARL J",Common Stock
+2008-05-21,COHR,"Director, Chairman, 10% Owner",SELL,900.0,34.7,31230.000000000004,"JOHNSON, CARL J",Common Stock
+2008-05-21,COHR,"Director, Chairman, 10% Owner",SELL,500.0,34.6,17300.0,"JOHNSON, CARL J",Common Stock
+2008-05-21,COHR,"Director, Chairman, 10% Owner",SELL,100.0,34.76,3476.0,"JOHNSON, CARL J",Common Stock
+2008-05-21,COHR,"Director, Chairman, 10% Owner",SELL,100.0,35.082,3508.2000000000003,"JOHNSON, CARL J",Common Stock
+2008-05-21,COHR,"Director, Chairman, 10% Owner",SELL,200.0,34.84,6968.000000000001,"JOHNSON, CARL J",Common Stock
+2008-05-21,COHR,"Director, Chairman, 10% Owner",SELL,700.0,34.89,24423.0,"JOHNSON, CARL J",Common Stock
+2008-05-21,COHR,"Director, Chairman, 10% Owner",SELL,1000.0,35.0,35000.0,"JOHNSON, CARL J",Common Stock
+2008-05-21,COHR,"Director, Chairman, 10% Owner",SELL,1530.0,35.05,53626.49999999999,"JOHNSON, CARL J",Common Stock
+2008-05-21,COHR,"Director, Chairman, 10% Owner",SELL,1000.0,35.29,35290.0,"JOHNSON, CARL J",Common Stock
+2008-05-21,COHR,"Director, Chairman, 10% Owner",SELL,1000.0,35.27,35270.0,"JOHNSON, CARL J",Common Stock
+2008-05-21,COHR,"Director, Chairman, 10% Owner",SELL,370.0,35.06,12972.2,"JOHNSON, CARL J",Common Stock
+2008-05-21,COHR,"Director, Chairman, 10% Owner",SELL,100.0,35.214,3521.3999999999996,"JOHNSON, CARL J",Common Stock
+2008-05-22,COHR,"Director, President & CEO",BUY,36000.0,2.75,99000.0,"KRAMER, FRANCIS J",Common Stock
+2008-05-22,COHR,"Director, President & CEO",SELL,5336.0,35.05,187026.8,"KRAMER, FRANCIS J",Common Stock
+2008-05-22,COHR,"Director, President & CEO",SELL,13000.0,35.1019,456324.7,"KRAMER, FRANCIS J",Common Stock
+2008-05-22,COHR,"Director, President & CEO",SELL,314.0,35.16,11040.24,"KRAMER, FRANCIS J",Common Stock
+2008-05-22,COHR,"Director, President & CEO",SELL,100.0,35.2,3520.0000000000005,"KRAMER, FRANCIS J",Common Stock
+2008-05-22,COHR,"Director, President & CEO",SELL,500.0,35.1,17550.0,"KRAMER, FRANCIS J",Common Stock
+2008-05-23,COHR,"Director, Chairman, 10% Owner",SELL,200.0,38.2,7640.000000000001,"JOHNSON, CARL J",Common Stock
+2008-05-23,COHR,"Director, Chairman, 10% Owner",SELL,5200.0,38.0,197600.0,"JOHNSON, CARL J",Common Stock
+2008-05-23,COHR,"Director, Chairman, 10% Owner",SELL,1300.0,38.01,49413.0,"JOHNSON, CARL J",Common Stock
+2008-05-23,COHR,"Director, Chairman, 10% Owner",SELL,300.0,38.22,11466.0,"JOHNSON, CARL J",Common Stock
+2008-05-23,COHR,"Director, Chairman, 10% Owner",SELL,500.0,38.1,19050.0,"JOHNSON, CARL J",Common Stock
+2008-05-27,COHR,"Director, Chairman, 10% Owner",SELL,200.0,37.6,7520.0,"JOHNSON, CARL J",Common Stock
+2008-05-27,COHR,"Director, Chairman, 10% Owner",SELL,400.0,37.57,15028.0,"JOHNSON, CARL J",Common Stock
+2008-05-27,COHR,"Director, Chairman, 10% Owner",SELL,100.0,37.71,3771.0,"JOHNSON, CARL J",Common Stock
+2008-05-27,COHR,"Director, Chairman, 10% Owner",SELL,200.0,37.85,7570.0,"JOHNSON, CARL J",Common Stock
+2008-05-27,COHR,"Director, Chairman, 10% Owner",SELL,200.0,37.39,7478.0,"JOHNSON, CARL J",Common Stock
+2008-05-27,COHR,"Director, Chairman, 10% Owner",SELL,300.0,37.49,11247.0,"JOHNSON, CARL J",Common Stock
+2008-05-27,COHR,"Director, Chairman, 10% Owner",SELL,162.0,37.73,6112.259999999999,"JOHNSON, CARL J",Common Stock
+2008-05-29,COHR,Director,SELL,1200.0,39.5,47400.0,"CORASANTI, JOSEPH J",Common Stock
+2008-05-29,COHR,Director,SELL,5000.0,39.53,197650.0,"MISTLER, THOMAS E",Common Stock
+2008-05-29,COHR,Director,SELL,5000.0,39.1,195500.0,"MISTLER, THOMAS E",Common Stock
+2008-05-29,COHR,Director,SELL,200.0,39.49,7898.0,"CORASANTI, JOSEPH J",Common Stock
+2008-05-29,COHR,Director,BUY,10000.0,7.085,70850.0,"CORASANTI, JOSEPH J",Common Stock
+2008-05-29,COHR,Director,SELL,300.0,39.45,11835.0,"CORASANTI, JOSEPH J",Common Stock
+2008-05-29,COHR,Director,SELL,400.0,39.38,15752.000000000002,"CORASANTI, JOSEPH J",Common Stock
+2008-05-29,COHR,Director,SELL,5000.0,38.701,193505.0,"MISTLER, THOMAS E",Common Stock
+2008-05-29,COHR,Director,SELL,400.0,39.46,15784.0,"CORASANTI, JOSEPH J",Common Stock
+2008-05-29,COHR,Director,SELL,300.0,39.42,11826.0,"CORASANTI, JOSEPH J",Common Stock
+2008-05-29,COHR,Director,SELL,7200.0,39.37,283464.0,"CORASANTI, JOSEPH J",Common Stock
+2008-05-29,COHR,Director,SELL,5000.0,38.86,194300.0,"MISTLER, THOMAS E",Common Stock
+2008-06-04,COHR,Director,SELL,500.0,39.6042,19802.1,"MORRISON, DUNCAN A J",Common Stock
+2008-06-04,COHR,Director,SELL,500.0,39.534,19767.0,"MORRISON, DUNCAN A J",Common Stock
+2008-06-04,COHR,Director,SELL,500.0,39.7135,19856.75,"MORRISON, DUNCAN A J",Common Stock
+2008-06-04,COHR,Director,SELL,400.0,39.7181,15887.24,"MORRISON, DUNCAN A J",Common Stock
+2008-06-04,COHR,Director,SELL,500.0,39.68,19840.0,"MORRISON, DUNCAN A J",Common Stock
+2008-06-04,COHR,Director,BUY,6000.0,8.17,49020.0,"MORRISON, DUNCAN A J",Common Stock
+2008-06-04,COHR,Director,SELL,600.0,39.92,23952.0,"MORRISON, DUNCAN A J",Common Stock
+2008-06-04,COHR,Director,SELL,1000.0,39.7941,39794.1,"MORRISON, DUNCAN A J",Common Stock
+2008-06-04,COHR,Director,SELL,500.0,39.628,19814.0,"MORRISON, DUNCAN A J",Common Stock
+2008-06-04,COHR,Director,SELL,500.0,39.604,19802.0,"MORRISON, DUNCAN A J",Common Stock
+2008-06-04,COHR,Director,SELL,500.0,39.6892,19844.6,"MORRISON, DUNCAN A J",Common Stock
+2008-06-04,COHR,Director,SELL,500.0,39.65,19825.0,"MORRISON, DUNCAN A J",Common Stock
+2008-06-05,COHR,Executive Vice President,SELL,1000.0,40.75,40750.0,"REEDY, HERMAN E",Common Stock
+2008-06-05,COHR,Executive Vice President,SELL,1000.0,40.8,40800.0,"REEDY, HERMAN E",Common Stock
+2008-06-05,COHR,Executive Vice President,SELL,2000.0,40.25,80500.0,"REEDY, HERMAN E",Common Stock
+2008-06-05,COHR,Executive Vice President,SELL,2000.0,39.9,79800.0,"REEDY, HERMAN E",Common Stock
+2008-06-05,COHR,Executive Vice President,SELL,3000.0,40.45,121350.00000000001,"REEDY, HERMAN E",Common Stock
+2008-06-05,COHR,Executive Vice President,SELL,1000.0,39.75,39750.0,"REEDY, HERMAN E",Common Stock
+2008-06-11,COHR,Vice President,SELL,300.0,37.9,11370.0,"MATTERA, VINCENT D JR",Common Stock
+2008-06-11,COHR,Vice President,SELL,300.0,37.75,11325.0,"MATTERA, VINCENT D JR",Common Stock
+2008-06-11,COHR,Vice President,BUY,6840.0,13.2,90288.0,"MATTERA, VINCENT D JR",Common Stock
+2008-06-11,COHR,Vice President,SELL,500.0,37.92,18960.0,"MATTERA, VINCENT D JR",Common Stock
+2008-06-11,COHR,Vice President,SELL,1100.0,38.25,42075.0,"MATTERA, VINCENT D JR",Common Stock
+2008-06-11,COHR,Vice President,SELL,2200.0,38.0,83600.0,"MATTERA, VINCENT D JR",Common Stock
+2008-06-12,COHR,Director,BUY,3400.0,8.17,27778.0,"SOGNEFEST, PETER W",Common Stock
+2008-06-12,COHR,Director,SELL,500.0,37.29,18645.0,"SOGNEFEST, PETER W",Common Stock
+2008-06-12,COHR,Director,SELL,1400.0,37.71,52794.0,"SOGNEFEST, PETER W",Common Stock
+2008-06-12,COHR,Director,SELL,500.0,37.2,18600.0,"SOGNEFEST, PETER W",Common Stock
+2008-06-12,COHR,Director,SELL,1000.0,37.26,37260.0,"SOGNEFEST, PETER W",Common Stock
+2008-06-25,COHR,"Director, Chairman, 10% Owner",SELL,60.0,37.1,2226.0,"JOHNSON, CARL J",Common Stock
+2008-06-25,COHR,"Director, Chairman, 10% Owner",SELL,262.0,37.07,9712.34,"JOHNSON, CARL J",Common Stock
+2008-06-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,36.99,3699.0,"JOHNSON, CARL J",Common Stock
+2008-06-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,37.019,3701.8999999999996,"JOHNSON, CARL J",Common Stock
+2008-06-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,36.96,3696.0,"JOHNSON, CARL J",Common Stock
+2008-06-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,37.18,3718.0,"JOHNSON, CARL J",Common Stock
+2008-06-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,37.04,3704.0,"JOHNSON, CARL J",Common Stock
+2008-06-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,37.24,3724.0,"JOHNSON, CARL J",Common Stock
+2008-06-25,COHR,"Director, Chairman, 10% Owner",SELL,200.0,37.29,7458.0,"JOHNSON, CARL J",Common Stock
+2008-06-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,37.3,3729.9999999999995,"JOHNSON, CARL J",Common Stock
+2008-06-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,37.4,3740.0,"JOHNSON, CARL J",Common Stock
+2008-06-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,37.42,3742.0,"JOHNSON, CARL J",Common Stock
+2008-06-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,37.06,3706.0,"JOHNSON, CARL J",Common Stock
+2008-06-25,COHR,"Director, Chairman, 10% Owner",SELL,40.0,37.2,1488.0,"JOHNSON, CARL J",Common Stock
+2008-07-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,38.0,3800.0,"JOHNSON, CARL J",Common Stock
+2008-07-25,COHR,"Director, Chairman, 10% Owner",SELL,300.0,37.8,11340.0,"JOHNSON, CARL J",Common Stock
+2008-07-25,COHR,"Director, Chairman, 10% Owner",SELL,36.0,37.8851,1363.8636000000001,"JOHNSON, CARL J",Common Stock
+2008-07-25,COHR,"Director, Chairman, 10% Owner",SELL,200.0,37.79,7558.0,"JOHNSON, CARL J",Common Stock
+2008-07-25,COHR,"Director, Chairman, 10% Owner",SELL,200.0,37.76,7552.0,"JOHNSON, CARL J",Common Stock
+2008-07-25,COHR,"Director, Chairman, 10% Owner",SELL,29.0,38.16,1106.6399999999999,"JOHNSON, CARL J",Common Stock
+2008-07-25,COHR,"Director, Chairman, 10% Owner",SELL,71.0,38.15,2708.65,"JOHNSON, CARL J",Common Stock
+2008-07-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,38.11,3811.0,"JOHNSON, CARL J",Common Stock
+2008-07-25,COHR,"Director, Chairman, 10% Owner",SELL,126.0,38.02,4790.52,"JOHNSON, CARL J",Common Stock
+2008-07-25,COHR,"Director, Chairman, 10% Owner",SELL,400.0,37.75,15100.0,"JOHNSON, CARL J",Common Stock
+2008-08-19,COHR,Director,BUY,4960.0,17.84,88486.4,"SOGNEFEST, PETER W",Common Stock
+2008-08-19,COHR,Director,SELL,3400.0,46.25,157250.0,"MORRISON, DUNCAN A J",Common Stock
+2008-08-19,COHR,Director,SELL,3000.0,46.0,138000.0,"MORRISON, DUNCAN A J",Common Stock
+2008-08-19,COHR,Director,SELL,1000.0,46.5,46500.0,"MORRISON, DUNCAN A J",Common Stock
+2008-08-19,COHR,Director,BUY,6480.0,19.095,123735.59999999999,"SOGNEFEST, PETER W",Common Stock
+2008-08-19,COHR,Director,SELL,3980.0,45.75,182085.0,"SOGNEFEST, PETER W",Common Stock
+2008-08-19,COHR,Director,SELL,2500.0,45.7822,114455.50000000001,"SOGNEFEST, PETER W",Common Stock
+2008-08-19,COHR,Director,SELL,2900.0,45.7822,132768.38,"SOGNEFEST, PETER W",Common Stock
+2008-08-19,COHR,Director,SELL,303.0,46.41,14062.23,"SOGNEFEST, PETER W",Common Stock
+2008-08-19,COHR,Director,SELL,1000.0,46.32,46320.0,"SOGNEFEST, PETER W",Common Stock
+2008-08-19,COHR,Director,SELL,960.0,46.33,44476.799999999996,"SOGNEFEST, PETER W",Common Stock
+2008-08-19,COHR,Director,BUY,1340.0,31.96,42826.4,"SOGNEFEST, PETER W",Common Stock
+2008-08-19,COHR,Director,SELL,623.0,46.33,28863.59,"SOGNEFEST, PETER W",Common Stock
+2008-08-19,COHR,Director,SELL,117.0,46.37,5425.29,"SOGNEFEST, PETER W",Common Stock
+2008-08-19,COHR,Director,SELL,100.0,46.45,4645.0,"SOGNEFEST, PETER W",Common Stock
+2008-08-19,COHR,Director,SELL,197.0,46.42,9144.74,"SOGNEFEST, PETER W",Common Stock
+2008-08-19,COHR,Director,BUY,12400.0,8.17,101308.0,"MORRISON, DUNCAN A J",Common Stock
+2008-08-19,COHR,Director,SELL,100.0,46.05,4605.0,"SOGNEFEST, PETER W",Common Stock
+2008-08-25,COHR,"Director, Chairman, 10% Owner",SELL,215.0,44.7,9610.5,"JOHNSON, CARL J",Common Stock
+2008-08-25,COHR,"Director, Chairman, 10% Owner",SELL,158.0,44.55,7038.9,"JOHNSON, CARL J",Common Stock
+2008-08-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,44.65,4465.0,"JOHNSON, CARL J",Common Stock
+2008-08-25,COHR,"Director, Chairman, 10% Owner",SELL,121.0,44.74,5413.54,"JOHNSON, CARL J",Common Stock
+2008-08-25,COHR,"Director, Chairman, 10% Owner",SELL,200.0,44.75,8950.0,"JOHNSON, CARL J",Common Stock
+2008-08-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,44.78,4478.0,"JOHNSON, CARL J",Common Stock
+2008-08-25,COHR,"Director, Chairman, 10% Owner",SELL,62.0,45.01,2790.62,"JOHNSON, CARL J",Common Stock
+2008-08-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,44.58,4458.0,"JOHNSON, CARL J",Common Stock
+2008-08-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,45.02,4502.0,"JOHNSON, CARL J",Common Stock
+2008-08-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,44.66,4466.0,"JOHNSON, CARL J",Common Stock
+2008-08-25,COHR,"Director, Chairman, 10% Owner",SELL,6.0,44.71,268.26,"JOHNSON, CARL J",Common Stock
+2008-08-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,44.59,4459.0,"JOHNSON, CARL J",Common Stock
+2008-08-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,44.63,4463.0,"JOHNSON, CARL J",Common Stock
+2008-08-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,44.631,4463.1,"JOHNSON, CARL J",Common Stock
+2008-08-26,COHR,Vice President,SELL,349.0,44.0,15356.0,"MARTINELLI, JAMES",Common Stock
+2008-08-27,COHR,Vice President,SELL,9651.0,44.0656,425277.1056,"MARTINELLI, JAMES",Common Stock
+2008-08-29,COHR,CFO & Treasurer,BUY,560.0,43.9122,24590.832,"CREATURO, CRAIG A",Common Stock
+2008-08-29,COHR,CFO & Treasurer,BUY,12000.0,6.45,77400.0,"CREATURO, CRAIG A",Common Stock
+2008-08-29,COHR,CFO & Treasurer,SELL,12000.0,43.55,522599.99999999994,"CREATURO, CRAIG A",Common Stock
+2008-09-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,41.77,4177.0,"JOHNSON, CARL J",Common Stock
+2008-09-25,COHR,"Director, Chairman, 10% Owner",SELL,600.0,41.68,25008.0,"JOHNSON, CARL J",Common Stock
+2008-09-25,COHR,"Director, Chairman, 10% Owner",SELL,262.0,41.67,10917.54,"JOHNSON, CARL J",Common Stock
+2008-09-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,41.61,4161.0,"JOHNSON, CARL J",Common Stock
+2008-09-25,COHR,"Director, Chairman, 10% Owner",SELL,300.0,41.6,12480.0,"JOHNSON, CARL J",Common Stock
+2008-09-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,41.59,4159.0,"JOHNSON, CARL J",Common Stock
+2008-09-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,41.66,4166.0,"JOHNSON, CARL J",Common Stock
+2008-10-27,COHR,"Director, Chairman, 10% Owner",SELL,400.0,23.4,9360.0,"JOHNSON, CARL J",Common Stock
+2008-10-27,COHR,"Director, Chairman, 10% Owner",SELL,562.0,23.58,13251.96,"JOHNSON, CARL J",Common Stock
+2008-10-27,COHR,"Director, Chairman, 10% Owner",SELL,200.0,23.45,4690.0,"JOHNSON, CARL J",Common Stock
+2008-10-27,COHR,"Director, Chairman, 10% Owner",SELL,200.0,23.54,4708.0,"JOHNSON, CARL J",Common Stock
+2008-10-27,COHR,"Director, Chairman, 10% Owner",SELL,200.0,23.57,4714.0,"JOHNSON, CARL J",Common Stock
+2008-11-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,19.131,1913.1,"JOHNSON, CARL J",Common Stock
+2008-11-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,19.211,1921.1,"JOHNSON, CARL J",Common Stock
+2008-11-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,19.001,1900.1000000000001,"JOHNSON, CARL J",Common Stock
+2008-11-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,19.06,1905.9999999999998,"JOHNSON, CARL J",Common Stock
+2008-11-25,COHR,"Director, Chairman, 10% Owner",SELL,200.0,19.34,3868.0,"JOHNSON, CARL J",Common Stock
+2008-11-25,COHR,"Director, Chairman, 10% Owner",SELL,200.0,19.291,3858.2000000000003,"JOHNSON, CARL J",Common Stock
+2008-11-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,19.12,1912.0,"JOHNSON, CARL J",Common Stock
+2008-11-25,COHR,"Director, Chairman, 10% Owner",SELL,62.0,19.05,1181.1000000000001,"JOHNSON, CARL J",Common Stock
+2008-11-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,19.371,1937.1,"JOHNSON, CARL J",Common Stock
+2008-11-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,19.36,1936.0,"JOHNSON, CARL J",Common Stock
+2008-11-25,COHR,"Director, Chairman, 10% Owner",SELL,200.0,19.32,3864.0,"JOHNSON, CARL J",Common Stock
+2008-11-25,COHR,"Director, Chairman, 10% Owner",SELL,200.0,19.171,3834.2,"JOHNSON, CARL J",Common Stock
+2008-12-09,COHR,Director,BUY,475.0,17.642,8379.949999999999,"DICICCO, WENDY F",Common Stock
+2008-12-26,COHR,"Director, Chairman, 10% Owner",SELL,100.0,17.87,1787.0,"JOHNSON, CARL J",Common Stock
+2008-12-26,COHR,"Director, Chairman, 10% Owner",SELL,100.0,17.925,1792.5,"JOHNSON, CARL J",Common Stock
+2008-12-26,COHR,"Director, Chairman, 10% Owner",SELL,100.0,17.82,1782.0,"JOHNSON, CARL J",Common Stock
+2008-12-26,COHR,"Director, Chairman, 10% Owner",SELL,200.0,18.0,3600.0,"JOHNSON, CARL J",Common Stock
+2008-12-26,COHR,"Director, Chairman, 10% Owner",SELL,100.0,18.08,1807.9999999999998,"JOHNSON, CARL J",Common Stock
+2008-12-26,COHR,"Director, Chairman, 10% Owner",SELL,114.0,17.6,2006.4,"JOHNSON, CARL J",Common Stock
+2008-12-26,COHR,"Director, Chairman, 10% Owner",SELL,200.0,17.93,3586.0,"JOHNSON, CARL J",Common Stock
+2008-12-26,COHR,"Director, Chairman, 10% Owner",SELL,100.0,18.05,1805.0,"JOHNSON, CARL J",Common Stock
+2008-12-26,COHR,"Director, Chairman, 10% Owner",SELL,100.0,18.02,1802.0,"JOHNSON, CARL J",Common Stock
+2008-12-26,COHR,"Director, Chairman, 10% Owner",SELL,100.0,17.96,1796.0,"JOHNSON, CARL J",Common Stock
+2008-12-26,COHR,"Director, Chairman, 10% Owner",SELL,200.0,17.95,3590.0,"JOHNSON, CARL J",Common Stock
+2008-12-26,COHR,"Director, Chairman, 10% Owner",SELL,100.0,17.94,1794.0000000000002,"JOHNSON, CARL J",Common Stock
+2008-12-26,COHR,"Director, Chairman, 10% Owner",SELL,48.0,17.57,843.36,"JOHNSON, CARL J",Common Stock
+2009-01-26,COHR,Director,BUY,500.0,19.57,9785.0,"PELAEZ, MARC Y E",Common Stock
+2009-01-26,COHR,Director,BUY,300.0,19.578,5873.4,"PELAEZ, MARC Y E",Common Stock
+2009-02-19,COHR,"Director, Chairman, 10% Owner",BUY,800.0,17.85,14280.000000000002,"JOHNSON, CARL J",Common Stock
+2009-02-23,COHR,"Director, Chairman, 10% Owner",BUY,800.0,17.5,14000.0,"JOHNSON, CARL J",Common Stock
+2009-02-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,17.78,1778.0,"JOHNSON, CARL J",Common Stock
+2009-02-25,COHR,"Director, Chairman, 10% Owner",SELL,92.0,17.92,1648.64,"JOHNSON, CARL J",Common Stock
+2009-02-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,17.892,1789.2,"JOHNSON, CARL J",Common Stock
+2009-02-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,17.97,1797.0,"JOHNSON, CARL J",Common Stock
+2009-02-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,18.01,1801.0000000000002,"JOHNSON, CARL J",Common Stock
+2009-02-25,COHR,"Director, Chairman, 10% Owner",SELL,200.0,18.02,3604.0,"JOHNSON, CARL J",Common Stock
+2009-02-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,17.8,1780.0,"JOHNSON, CARL J",Common Stock
+2009-02-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,17.89,1789.0,"JOHNSON, CARL J",Common Stock
+2009-02-25,COHR,"Director, Chairman, 10% Owner",SELL,262.0,18.15,4755.299999999999,"JOHNSON, CARL J",Common Stock
+2009-02-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,18.23,1823.0,"JOHNSON, CARL J",Common Stock
+2009-02-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,18.2,1820.0,"JOHNSON, CARL J",Common Stock
+2009-02-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,17.66,1766.0,"JOHNSON, CARL J",Common Stock
+2009-02-25,COHR,"Director, Chairman, 10% Owner",SELL,8.0,17.93,143.44,"JOHNSON, CARL J",Common Stock
+2009-02-25,COHR,"Director, Chairman, 10% Owner",SELL,100.0,18.13,1813.0,"JOHNSON, CARL J",Common Stock
+2009-03-25,COHR,"Director, Chairman, 10% Owner",SELL,400.0,16.89,6756.0,"JOHNSON, CARL J",Common Stock
+2009-03-25,COHR,"Director, Chairman, 10% Owner",SELL,146.0,16.92,2470.32,"JOHNSON, CARL J",Common Stock
+2009-03-25,COHR,"Director, Chairman, 10% Owner",SELL,550.0,17.0,9350.0,"JOHNSON, CARL J",Common Stock
+2009-03-25,COHR,"Director, Chairman, 10% Owner",SELL,240.0,16.88,4051.2,"JOHNSON, CARL J",Common Stock
+2009-03-25,COHR,"Director, Chairman, 10% Owner",SELL,226.0,16.9,3819.3999999999996,"JOHNSON, CARL J",Common Stock
+2009-04-24,COHR,Director,BUY,200.0,21.72,4344.0,"PELAEZ, MARC Y E",Common Stock
+2009-04-24,COHR,Director,BUY,200.0,21.66,4332.0,"PELAEZ, MARC Y E",Common Stock
+2009-04-24,COHR,Director,BUY,600.0,21.68,13008.0,"PELAEZ, MARC Y E",Common Stock
+2009-04-27,COHR,"Director, Chairman, 10% Owner",SELL,200.0,22.56,4512.0,"JOHNSON, CARL J",Common Stock
+2009-04-27,COHR,"Director, Chairman, 10% Owner",SELL,100.0,22.57,2257.0,"JOHNSON, CARL J",Common Stock
+2009-04-27,COHR,"Director, Chairman, 10% Owner",SELL,719.0,22.53,16199.070000000002,"JOHNSON, CARL J",Common Stock
+2009-04-27,COHR,"Director, Chairman, 10% Owner",SELL,100.0,22.54,2254.0,"JOHNSON, CARL J",Common Stock
+2009-04-27,COHR,"Director, Chairman, 10% Owner",SELL,200.0,22.55,4510.0,"JOHNSON, CARL J",Common Stock
+2009-04-27,COHR,"Director, Chairman, 10% Owner",SELL,143.0,22.5,3217.5,"JOHNSON, CARL J",Common Stock
+2009-04-27,COHR,"Director, Chairman, 10% Owner",SELL,100.0,22.51,2251.0,"JOHNSON, CARL J",Common Stock
+2009-05-26,COHR,"Director, Chairman, 10% Owner",SELL,100.0,22.76,2276.0,"JOHNSON, CARL J",Common Stock
+2009-05-26,COHR,"Director, Chairman, 10% Owner",SELL,100.0,22.29,2229.0,"JOHNSON, CARL J",Common Stock
+2009-05-26,COHR,"Director, Chairman, 10% Owner",SELL,145.0,22.96,3329.2000000000003,"JOHNSON, CARL J",Common Stock
+2009-05-26,COHR,"Director, Chairman, 10% Owner",SELL,100.0,22.1,2210.0,"JOHNSON, CARL J",Common Stock
+2009-05-26,COHR,"Director, Chairman, 10% Owner",SELL,100.0,22.64,2264.0,"JOHNSON, CARL J",Common Stock
+2009-05-26,COHR,"Director, Chairman, 10% Owner",SELL,100.0,22.35,2235.0,"JOHNSON, CARL J",Common Stock
+2009-05-26,COHR,"Director, Chairman, 10% Owner",SELL,164.0,22.37,3668.6800000000003,"JOHNSON, CARL J",Common Stock
+2009-05-26,COHR,"Director, Chairman, 10% Owner",SELL,100.0,21.93,2193.0,"JOHNSON, CARL J",Common Stock
+2009-05-26,COHR,"Director, Chairman, 10% Owner",SELL,53.0,22.32,1182.96,"JOHNSON, CARL J",Common Stock
+2009-05-26,COHR,"Director, Chairman, 10% Owner",SELL,200.0,22.39,4478.0,"JOHNSON, CARL J",Common Stock
+2009-05-26,COHR,"Director, Chairman, 10% Owner",SELL,100.0,22.34,2234.0,"JOHNSON, CARL J",Common Stock
+2009-05-26,COHR,"Director, Chairman, 10% Owner",SELL,100.0,22.77,2277.0,"JOHNSON, CARL J",Common Stock
+2009-05-26,COHR,"Director, Chairman, 10% Owner",SELL,100.0,22.6,2260.0,"JOHNSON, CARL J",Common Stock
+2009-05-26,COHR,"Director, Chairman, 10% Owner",SELL,100.0,22.87,2287.0,"JOHNSON, CARL J",Common Stock
+2009-06-09,COHR,"Director, Chairman, 10% Owner",SELL,8000.0,25.8453,206762.40000000002,"JOHNSON, CARL J",Common Stock
+2009-06-10,COHR,"Director, Chairman, 10% Owner",SELL,2000.0,25.2045,50409.0,"JOHNSON, CARL J",Common Stock
+2009-06-11,COHR,"Director, Chairman, 10% Owner",SELL,2000.0,23.8554,47710.799999999996,"JOHNSON, CARL J",Common Stock
+2009-06-12,COHR,"Director, Chairman, 10% Owner",SELL,2500.0,23.75,59375.0,"JOHNSON, CARL J",Common Stock
+2009-06-25,COHR,"Director, Chairman, 10% Owner",SELL,1562.0,22.1204,34552.0648,"JOHNSON, CARL J",Common Stock
+2009-07-27,COHR,"Director, Chairman, 10% Owner",SELL,1562.0,22.3853,34965.8386,"JOHNSON, CARL J",Common Stock
+2009-08-17,COHR,Director,BUY,1000.0,23.6,23600.0,"DICICCO, WENDY F",Common Stock
+2009-08-25,COHR,"Director, Chairman, 10% Owner",SELL,1562.0,23.8544,37260.572799999994,"JOHNSON, CARL J",Common Stock
+2009-08-28,COHR,CFO &Treasurer,BUY,454.0,26.8099,12171.694599999999,"CREATURO, CRAIG A",Common Stock
+2009-09-01,COHR,Director,SELL,500.0,26.03,13015.0,"PELAEZ, MARC Y E",Common Stock
+2009-09-01,COHR,Director,SELL,2250.0,26.0,58500.0,"PELAEZ, MARC Y E",Common Stock
+2009-09-01,COHR,Director,SELL,2000.0,26.24,52480.0,"PELAEZ, MARC Y E",Common Stock
+2009-09-01,COHR,Director,SELL,150.0,26.02,3903.0,"PELAEZ, MARC Y E",Common Stock
+2009-09-01,COHR,Director,SELL,100.0,26.01,2601.0,"PELAEZ, MARC Y E",Common Stock
+2009-09-01,COHR,Director,BUY,5000.0,7.085,35425.0,"PELAEZ, MARC Y E",Common Stock
+2009-09-15,COHR,Director,BUY,4000.0,8.17,32680.0,"CORASANTI, JOSEPH J",Common Stock
+2009-09-15,COHR,Director,BUY,2000.0,19.095,38190.0,"CORASANTI, JOSEPH J",Common Stock
+2009-09-15,COHR,Director,SELL,10000.0,27.1622,271622.0,"CORASANTI, JOSEPH J",Common Stock
+2009-09-15,COHR,Director,BUY,6000.0,7.085,42510.0,"CORASANTI, JOSEPH J",Common Stock
+2009-09-25,COHR,"Director, Chairman, 10% Owner",SELL,1562.0,25.4082,39687.608400000005,"JOHNSON, CARL J",Common Stock
+2009-10-26,COHR,"Director, Chairman, 10% Owner",SELL,1562.0,29.1436,45522.3032,"JOHNSON, CARL J",Common Stock
+2009-11-25,COHR,"Director, Chairman, 10% Owner",SELL,1562.0,29.2586,45701.9332,"JOHNSON, CARL J",Common Stock
+2009-12-28,COHR,"Director, Chairman, 10% Owner",SELL,1562.0,32.6284,50965.5608,"JOHNSON, CARL J",Common Stock
+2010-01-25,COHR,Director,BUY,325.0,28.2,9165.0,"DICICCO, WENDY F",Common Stock
+2010-01-25,COHR,"Director, Chairman, 10% Owner",SELL,1562.0,28.2935,44194.447,"JOHNSON, CARL J",Common Stock
+2010-02-12,COHR,"Director, Chairman, 10% Owner",SELL,3000.0,27.0609,81182.7,"JOHNSON, CARL J",Common Stock
+2010-02-16,COHR,"Director, Chairman, 10% Owner",SELL,2000.0,27.2016,54403.2,"JOHNSON, CARL J",Common Stock
+2010-02-18,COHR,"Director, Chairman, 10% Owner",SELL,3000.0,28.0101,84030.3,"JOHNSON, CARL J",Common Stock
+2010-02-19,COHR,"Director, Chairman, 10% Owner",SELL,3000.0,28.1163,84348.9,"JOHNSON, CARL J",Common Stock
+2010-02-22,COHR,"Director, Chairman, 10% Owner",SELL,3000.0,28.1179,84353.7,"JOHNSON, CARL J",Common Stock
+2010-02-25,COHR,"Director, Chairman, 10% Owner",SELL,1562.0,27.9319,43629.627799999995,"JOHNSON, CARL J",Common Stock
+2010-03-25,COHR,"Director, Chairman, 10% Owner",SELL,1562.0,32.9006,51390.737199999996,"JOHNSON, CARL J",Common Stock
+2010-04-26,COHR,"Director, Chairman, 10% Owner",SELL,1562.0,34.6354,54100.49479999999,"JOHNSON, CARL J",Common Stock
+2010-04-30,COHR,"Director, President & CEO",SELL,9000.0,33.6717,303045.3,"KRAMER, FRANCIS J",Common Stock
+2010-04-30,COHR,"Director, President & CEO",BUY,10000.0,8.0,80000.0,"KRAMER, FRANCIS J",Common Stock
+2010-04-30,COHR,Vice President,BUY,12000.0,8.0,96000.0,"MARTINELLI, JAMES",Common Stock
+2010-04-30,COHR,Vice President,SELL,12000.0,37.3273,447927.60000000003,"MARTINELLI, JAMES",Common Stock
+2010-05-03,COHR,CFO & Treasurer,BUY,10200.0,19.095,194769.0,"CREATURO, CRAIG A",Common Stock
+2010-05-03,COHR,CFO & Treasurer,SELL,4700.0,36.504,171568.8,"CREATURO, CRAIG A",Common Stock
+2010-05-06,COHR,Executive Vice President,SELL,3000.0,34.1408,102422.4,"REEDY, HERMAN E",Common Stock
+2010-05-10,COHR,Executive Vice President,SELL,12000.0,34.6809,416170.8,"REEDY, HERMAN E",Common Stock
+2010-05-11,COHR,Treasurer & CFO,SELL,10000.0,35.0,350000.0,"CREATURO, CRAIG A",Common Stock
+2010-05-11,COHR,Director,SELL,2005.0,35.5,71177.5,"CORASANTI, JOSEPH J",Common Stock
+2010-05-11,COHR,Director,BUY,2005.0,19.095,38285.475,"CORASANTI, JOSEPH J",Common Stock
+2010-05-11,COHR,Treasurer & CFO,BUY,10000.0,16.88,168800.0,"CREATURO, CRAIG A",Common Stock
+2010-05-12,COHR,Director,SELL,16715.0,35.7571,597679.9265000001,"CORASANTI, JOSEPH J",Common Stock
+2010-05-12,COHR,Director,BUY,6795.0,19.095,129750.525,"CORASANTI, JOSEPH J",Common Stock
+2010-05-12,COHR,Director,BUY,9920.0,17.84,176972.8,"CORASANTI, JOSEPH J",Common Stock
+2010-05-25,COHR,"Director, Chairman, 10% Owner",SELL,1562.0,32.0764,50103.3368,"JOHNSON, CARL J",Common Stock
+2010-06-25,COHR,"Director, 10% Owner",SELL,1562.0,31.9901,49968.5362,"JOHNSON, CARL J",Common Stock
+2010-07-26,COHR,"Director, 10% Owner",SELL,1562.0,34.2611,53515.8382,"JOHNSON, CARL J",Common Stock
+2010-08-09,COHR,Director,BUY,10000.0,8.0,80000.0,"JOHNSON, CARL J",Common Stock
+2010-08-09,COHR,Director,SELL,10000.0,36.052,360520.0,"JOHNSON, CARL J",Common Stock
+2010-08-10,COHR,Director,SELL,8500.0,35.463,301435.5,"JOHNSON, CARL J",Common Stock
+2010-08-10,COHR,Director,SELL,1500.0,36.056,54083.99999999999,"JOHNSON, CARL J",Common Stock
+2010-08-11,COHR,Director,SELL,834.0,34.75,28981.5,"JOHNSON, CARL J",Common Stock
+2010-08-25,COHR,"Director, 10% Owner",SELL,1562.0,33.8564,52883.6968,"JOHNSON, CARL J",Common Stock
+2010-08-27,COHR,"Director, 10% Owner",SELL,4166.0,35.0,145810.0,"JOHNSON, CARL J",Common Stock
+2010-08-31,COHR,Treasurer & CFO,BUY,854.0,34.39,29369.06,"CREATURO, CRAIG A",Common Stock
+2010-09-01,COHR,"Director, 10% Owner",SELL,5000.0,35.0,175000.0,"JOHNSON, CARL J",Common Stock
+2010-09-01,COHR,"Director, 10% Owner",SELL,4588.0,35.5,162874.0,"JOHNSON, CARL J",Common Stock
+2010-09-02,COHR,"Director, 10% Owner",SELL,412.0,35.5,14626.0,"JOHNSON, CARL J",Common Stock
+2010-09-03,COHR,"Director, 10% Owner",SELL,1000.0,36.0,36000.0,"JOHNSON, CARL J",Common Stock
+2010-09-03,COHR,"Director, 10% Owner",SELL,249.0,36.1,8988.9,"JOHNSON, CARL J",Common Stock
+2010-09-10,COHR,Executive Vice President,BUY,2000.0,13.2,26400.0,"MATTERA, VINCENT D JR",Common Stock
+2010-09-20,COHR,"Director, 10% Owner",SELL,1000.0,36.0,36000.0,"JOHNSON, CARL J",Common Stock
+2010-09-21,COHR,"Director, 10% Owner",SELL,5324.0,36.1447,192434.3828,"JOHNSON, CARL J",Common Stock
+2010-09-24,COHR,"Director, 10% Owner",SELL,12000.0,36.1897,434276.4,"JOHNSON, CARL J",Common Stock
+2010-09-27,COHR,"Director, 10% Owner",SELL,1562.0,36.2222,56579.0764,"JOHNSON, CARL J",Common Stock
+2010-09-27,COHR,"Director, 10% Owner",SELL,5427.0,36.4627,197883.0729,"JOHNSON, CARL J",Common Stock
+2010-10-25,COHR,"Director, 10% Owner",SELL,1562.0,36.6549,57254.953799999996,"JOHNSON, CARL J",Common Stock
+2010-10-29,COHR,"Director, President & CEO",SELL,30000.0,39.518,1185540.0,"KRAMER, FRANCIS J",Common Stock
+2010-11-10,COHR,Director,SELL,10000.0,40.5878,405878.0,"MISTLER, THOMAS E",Common Stock
+2010-11-10,COHR,Vice President,SELL,10000.0,40.066,400660.0,"MARTINELLI, JAMES",Common Stock
+2010-11-11,COHR,Executive Vice President,BUY,6000.0,17.59,105540.0,"REEDY, HERMAN E",Common Stock
+2010-11-11,COHR,Executive Vice President,SELL,16000.0,40.0116,640185.6,"REEDY, HERMAN E",Common Stock
+2010-11-11,COHR,Executive Vice President,BUY,10000.0,16.88,168800.0,"REEDY, HERMAN E",Common Stock
+2010-11-24,COHR,Director,SELL,13050.0,41.3032,539006.76,"MISTLER, THOMAS E",Common Stock
+2010-11-26,COHR,Director,SELL,1562.0,40.9941,64032.7842,"JOHNSON, CARL J",Common Stock
+2010-11-26,COHR,Director,SELL,418.0,41.25,17242.5,"MISTLER, THOMAS E",Common Stock
+2010-12-01,COHR,Executive Vice President,BUY,4500.0,13.2,59400.0,"MATTERA, VINCENT D JR",Common Stock
+2010-12-01,COHR,Director,SELL,33706.0,41.5019,1398863.0414,"JOHNSON, CARL J",Common Stock
+2010-12-01,COHR,Executive Vice President,BUY,1000.0,13.2,13200.0,"MATTERA, VINCENT D JR",Common Stock
+2010-12-01,COHR,Executive Vice President,SELL,4500.0,41.5,186750.0,"MATTERA, VINCENT D JR",Common Stock
+2010-12-01,COHR,Director,SELL,6532.0,41.289,269699.748,"MISTLER, THOMAS E",Common Stock
+2010-12-03,COHR,Director,SELL,10000.0,43.0294,430294.0,"MISTLER, THOMAS E",Common Stock
+2010-12-06,COHR,Director,SELL,6000.0,43.099,258593.99999999997,"JOHNSON, CARL J",Common Stock
+2010-12-06,COHR,Director,BUY,4320.0,19.095,82490.4,"SOGNEFEST, PETER W",Common Stock
+2010-12-06,COHR,Director,SELL,9280.0,42.933,398418.24,"SOGNEFEST, PETER W",Common Stock
+2010-12-06,COHR,Director,BUY,4960.0,17.84,88486.4,"SOGNEFEST, PETER W",Common Stock
+2010-12-07,COHR,Director,SELL,6150.0,44.0178,270709.47000000003,"MISTLER, THOMAS E",Common Stock
+2010-12-08,COHR,Director,SELL,3850.0,44.0085,169432.725,"MISTLER, THOMAS E",Common Stock
+2010-12-10,COHR,Director,SELL,1500.0,44.3941,66591.15000000001,"JOHNSON, CARL J",Common Stock
+2010-12-27,COHR,Director,SELL,1562.0,47.2198,73757.3276,"JOHNSON, CARL J",Common Stock
+2011-01-25,COHR,Director,SELL,1562.0,48.43,75647.66,"JOHNSON, CARL J",Common Stock
+2011-02-07,COHR,Director,BUY,4600.0,20.08,92367.99999999999,"SOGNEFEST, PETER W",Common Stock
+2011-02-07,COHR,Director,SELL,4600.0,50.3795,231745.7,"SOGNEFEST, PETER W",Common Stock
+2011-02-09,COHR,Director,SELL,6000.0,49.5218,297130.8,"SOGNEFEST, PETER W",Common Stock
+2011-02-09,COHR,Director,BUY,6000.0,30.83,184980.0,"SOGNEFEST, PETER W",Common Stock
+2011-02-10,COHR,Director,BUY,2480.0,17.84,44243.2,"SOGNEFEST, PETER W",Common Stock
+2011-02-10,COHR,Director,SELL,2480.0,49.6872,123224.256,"SOGNEFEST, PETER W",Common Stock
+2011-02-25,COHR,Director,SELL,1562.0,49.7458,77702.9396,"JOHNSON, CARL J",Common Stock
+2011-03-25,COHR,Director,SELL,1562.0,48.5618,75853.5316,"JOHNSON, CARL J",Common Stock
+2011-04-25,COHR,Director,SELL,1562.0,47.7057,74516.3034,"JOHNSON, CARL J",Common Stock
+2011-04-28,COHR,Director,SELL,4500.0,58.8918,265013.10000000003,"PELAEZ, MARC Y E",Common Stock
+2011-04-28,COHR,Director,BUY,6500.0,7.085,46052.5,"PELAEZ, MARC Y E",Common Stock
+2011-04-28,COHR,Director,SELL,6500.0,58.248,378612.0,"PELAEZ, MARC Y E",Common Stock
+2011-04-28,COHR,Director,BUY,4500.0,7.085,31882.5,"PELAEZ, MARC Y E",Common Stock
+2011-05-25,COHR,Director,SELL,1562.0,54.8011,85599.3182,"JOHNSON, CARL J",Common Stock
+2011-06-27,COHR,"Director, 10% Owner",SELL,3124.0,24.9329,77890.3796,"JOHNSON, CARL J",Common Stock
+2011-07-25,COHR,"Director, 10% Owner",SELL,3124.0,27.4736,85827.5264,"JOHNSON, CARL J",Common Stock
+2011-08-09,COHR,Director,BUY,2000.0,17.9355,35871.0,"CORASANTI, JOSEPH J",Common Stock
+2011-08-19,COHR,Director,BUY,4000.0,17.52,70080.0,"XIA, HOWARD H.",Common Stock
+2011-08-25,COHR,"Director, 10% Owner",SELL,3124.0,18.6948,58402.5552,"JOHNSON, CARL J",Common Stock
+2011-08-29,COHR,Treasurer and CFO,BUY,3536.0,19.89,70331.04000000001,"CREATURO, CRAIG A",Common Stock
+2011-09-26,COHR,Director,SELL,3124.0,17.862,55800.88799999999,"JOHNSON, CARL J",Common Stock
+2011-10-25,COHR,Director,SELL,2424.0,16.3877,39723.784799999994,"JOHNSON, CARL J",Common Stock
+2011-10-25,COHR,Director,SELL,700.0,17.1971,12037.97,"JOHNSON, CARL J",Common Stock
+2011-11-25,COHR,"Director, 10% Owner",SELL,3124.0,17.0685,53321.994,"JOHNSON, CARL J",Common Stock
+2011-12-27,COHR,"Director, 10% Owner",SELL,3124.0,18.4048,57496.5952,"JOHNSON, CARL J",Common Stock
+2012-01-25,COHR,"Director, 10% Owner",SELL,3124.0,22.8285,71316.234,"JOHNSON, CARL J",Common Stock
+2012-02-01,COHR,Vice President,BUY,16000.0,3.225,51600.0,"MARTINELLI, JAMES",Common Stock
+2012-02-01,COHR,Director,SELL,18000.0,23.2661,418789.80000000005,"MISTLER, THOMAS E",Common Stock
+2012-02-01,COHR,Director,BUY,18000.0,4.085,73530.0,"MISTLER, THOMAS E",Common Stock
+2012-02-01,COHR,Vice President,SELL,16000.0,23.5642,377027.2,"MARTINELLI, JAMES",Common Stock
+2012-02-02,COHR,Vice President,SELL,8000.0,23.5553,188442.4,"MARTINELLI, JAMES",Common Stock
+2012-02-02,COHR,Vice President,BUY,8000.0,3.225,25800.0,"MARTINELLI, JAMES",Common Stock
+2012-02-02,COHR,Director,SELL,4000.0,23.6,94400.0,"SOGNEFEST, PETER W",Common Stock
+2012-02-03,COHR,Vice President,SELL,40272.0,23.4613,944833.4736,"MARTINELLI, JAMES",Common Stock
+2012-02-03,COHR,Director,SELL,1000.0,24.09,24090.0,"SOGNEFEST, PETER W",Common Stock
+2012-02-09,COHR,"Director, President & CEO",SELL,50000.0,23.62,1181000.0,"KRAMER, FRANCIS J",Common Stock
+2012-02-13,COHR,Director,SELL,2720.0,23.39,63620.8,"SOGNEFEST, PETER W",Common Stock
+2012-02-13,COHR,Director,BUY,2720.0,15.98,43465.6,"SOGNEFEST, PETER W",Common Stock
+2012-02-15,COHR,Director,SELL,1000.0,23.2319,23231.899999999998,"SOGNEFEST, PETER W",Common Stock
+2012-02-15,COHR,Director,BUY,1000.0,15.98,15980.0,"SOGNEFEST, PETER W",Common Stock
+2012-02-16,COHR,Director,SELL,7000.0,23.44,164080.0,"SOGNEFEST, PETER W",Common Stock
+2012-02-16,COHR,Director,BUY,7000.0,15.98,111860.0,"SOGNEFEST, PETER W",Common Stock
+2012-02-27,COHR,Director,SELL,3124.0,23.364,72989.136,"JOHNSON, CARL J",Common Stock
+2012-03-15,COHR,Executive Vice President,BUY,10000.0,6.6,66000.0,"MATTERA, VINCENT D JR",Common Stock
+2012-03-15,COHR,Executive Vice President,SELL,10000.0,23.6373,236373.0,"MATTERA, VINCENT D JR",Common Stock
+2012-03-26,COHR,"Director, 10% Owner",SELL,3124.0,24.3098,75943.8152,"JOHNSON, CARL J",Common Stock
+2012-04-25,COHR,"Director, 10% Owner",SELL,3124.0,21.0598,65790.8152,"JOHNSON, CARL J",Common Stock
+2012-05-25,COHR,"Director, 10% Owner",SELL,3124.0,19.2252,60059.52480000001,"JOHNSON, CARL J",Common Stock
+2012-06-01,COHR,"Director, 10% Owner",BUY,40000.0,3.225,129000.0,"JOHNSON, CARL J",Common Stock
+2012-06-07,COHR,Director,BUY,8000.0,4.085,32680.0,"PELAEZ, MARC Y E",Common Stock
+2012-06-07,COHR,Director,SELL,8000.0,19.4414,155531.2,"PELAEZ, MARC Y E",Common Stock
+2012-06-25,COHR,"Director, 10% Owner",SELL,3124.0,16.2663,50815.921200000004,"JOHNSON, CARL J",Common Stock
+2012-07-09,COHR,"Director, President & CEO",SELL,10000.0,16.2082,162082.00000000003,"KRAMER, FRANCIS J",Common Stock
+2012-07-09,COHR,"Director, President & CEO",BUY,10000.0,3.225,32250.0,"KRAMER, FRANCIS J",Common Stock
+2012-07-16,COHR,"Director, President & CEO",BUY,10000.0,3.225,32250.0,"KRAMER, FRANCIS J",Common Stock
+2012-07-16,COHR,"Director, President & CEO",SELL,10000.0,16.1536,161536.0,"KRAMER, FRANCIS J",Common Stock
+2012-07-23,COHR,"Director, President & CEO",SELL,10000.0,15.6785,156785.0,"KRAMER, FRANCIS J",Common Stock
+2012-07-23,COHR,"Director, President & CEO",BUY,10000.0,3.225,32250.0,"KRAMER, FRANCIS J",Common Stock
+2012-07-25,COHR,"Director, 10% Owner",SELL,3124.0,16.1154,50344.509600000005,"JOHNSON, CARL J",Common Stock
+2012-07-30,COHR,"Director, President & CEO",SELL,10000.0,17.0465,170465.00000000003,"KRAMER, FRANCIS J",Common Stock
+2012-07-30,COHR,"Director, President & CEO",BUY,10000.0,3.225,32250.0,"KRAMER, FRANCIS J",Common Stock
+2012-08-15,COHR,Executive Vice President,SELL,1270.0,18.0,22860.0,"MATTERA, VINCENT D JR",Common Stock
+2012-08-15,COHR,Chief Financial Officer,SELL,1270.0,18.0,22860.0,"CREATURO, CRAIG A",Common Stock
+2012-08-18,COHR,CFO & Treasurer,SELL,1390.0,18.93,26312.7,"CREATURO, CRAIG A",Common Stock
+2012-08-18,COHR,Executive Vice President,SELL,1227.0,18.93,23227.11,"MATTERA, VINCENT D JR",Common Stock
+2012-08-27,COHR,"Director, 10% Owner",SELL,3124.0,18.5319,57893.6556,"JOHNSON, CARL J",Common Stock
+2012-08-27,COHR,Director,SELL,200.0,18.56,3711.9999999999995,"SOGNEFEST, PETER W",COMMON STOCK
+2012-08-27,COHR,Director,SELL,2000.0,18.56,37120.0,"SOGNEFEST, PETER W",Common Stock
+2012-09-25,COHR,"Director, 10% Owner",SELL,3124.0,19.3289,60383.4836,"JOHNSON, CARL J",Common Stock
+2012-10-25,COHR,"Director, 10% Owner",SELL,3124.0,16.6741,52089.888399999996,"JOHNSON, CARL J",Common Stock
+2012-11-26,COHR,"Director, 10% Owner",SELL,3124.0,16.0601,50171.7524,"JOHNSON, CARL J",Common Stock
+2012-12-18,COHR,"Director, 10% Owner",SELL,1000.0,18.0234,18023.399999999998,"JOHNSON, CARL J",Common Stock
+2012-12-26,COHR,Director,SELL,3124.0,18.0988,56540.6512,"JOHNSON, CARL J",Common Stock
+2013-01-25,COHR,Director,BUY,4000.0,4.085,16340.0,"MISTLER, THOMAS E",Common Stock
+2013-01-25,COHR,Director,SELL,4000.0,17.5493,70197.2,"MISTLER, THOMAS E",Common Stock
+2013-01-25,COHR,"Director, 10% Owner",SELL,3124.0,17.4923,54645.9452,"JOHNSON, CARL J",Common Stock
+2013-02-14,COHR,Director,BUY,14343.0,4.085,58591.155,"MISTLER, THOMAS E",Common Stock
+2013-02-14,COHR,Director,SELL,14343.0,17.7093,254004.4899,"MISTLER, THOMAS E",Common Stock
+2013-02-15,COHR,Director,BUY,457.0,4.085,1866.845,"MISTLER, THOMAS E",Common Stock
+2013-02-15,COHR,Director,SELL,457.0,17.6133,8049.2780999999995,"MISTLER, THOMAS E",Common Stock
+2013-02-25,COHR,Director,SELL,3124.0,17.6856,55249.8144,"JOHNSON, CARL J",Common Stock
+2013-02-26,COHR,Director,SELL,1000.0,17.25,17250.0,"SOGNEFEST, PETER W",Common Stock
+2013-02-26,COHR,Director,SELL,1000.0,17.26,17260.0,"SOGNEFEST, PETER W",Common Stock
+2013-02-26,COHR,Director,SELL,2000.0,17.2553,34510.6,"SOGNEFEST, PETER W",Common Stock
+2013-03-19,COHR,Director,SELL,18100.0,17.377,314523.69999999995,"JOHNSON, CARL J",Common Stock
+2013-03-19,COHR,Director,BUY,18100.0,8.44,152764.0,"JOHNSON, CARL J",Common Stock
+2013-03-20,COHR,Director,SELL,8200.0,17.2621,141549.22,"JOHNSON, CARL J",Common Stock
+2013-03-20,COHR,Director,SELL,9900.0,17.2621,170894.79,"JOHNSON, CARL J",Common Stock
+2013-03-20,COHR,Director,BUY,8200.0,9.545,78269.0,"JOHNSON, CARL J",Common Stock
+2013-03-20,COHR,Director,BUY,9900.0,8.44,83556.0,"JOHNSON, CARL J",Common Stock
+2013-03-21,COHR,Director,BUY,18100.0,9.545,172764.5,"JOHNSON, CARL J",Common Stock
+2013-03-21,COHR,Director,SELL,18100.0,16.9904,307526.24,"JOHNSON, CARL J",Common Stock
+2013-03-22,COHR,Director,SELL,19.0,17.0,323.0,"JOHNSON, CARL J",Common Stock
+2013-03-22,COHR,Director,BUY,18100.0,9.545,172764.5,"JOHNSON, CARL J",Common Stock
+2013-03-22,COHR,Director,SELL,18100.0,16.7341,302887.21,"JOHNSON, CARL J",Common Stock
+2013-03-25,COHR,Director,BUY,16000.0,9.545,152720.0,"JOHNSON, CARL J",Common Stock
+2013-03-25,COHR,Director,SELL,16000.0,16.4652,263443.2,"JOHNSON, CARL J",Common Stock
+2013-03-25,COHR,Director,SELL,3124.0,16.5236,51619.72639999999,"JOHNSON, CARL J",Common Stock
+2013-03-25,COHR,Director,BUY,4300.0,10.365,44569.5,"JOHNSON, CARL J",Common Stock
+2013-03-25,COHR,Director,SELL,4300.0,16.4652,70800.36,"JOHNSON, CARL J",Common Stock
+2013-03-26,COHR,Director,SELL,5300.0,16.9163,89656.39,"JOHNSON, CARL J",Common Stock
+2013-03-26,COHR,Director,BUY,9000.0,10.535,94815.0,"JOHNSON, CARL J",Common Stock
+2013-03-26,COHR,Director,SELL,15700.0,16.9163,265585.91,"JOHNSON, CARL J",Common Stock
+2013-03-26,COHR,Director,SELL,400.0,17.05,6820.0,"JOHNSON, CARL J",Common Stock
+2013-03-26,COHR,Director,SELL,9000.0,16.9163,152246.69999999998,"JOHNSON, CARL J",Common Stock
+2013-03-26,COHR,Director,BUY,15700.0,10.365,162730.5,"JOHNSON, CARL J",Common Stock
+2013-03-26,COHR,Director,BUY,5300.0,13.885,73590.5,"JOHNSON, CARL J",Common Stock
+2013-03-27,COHR,Director,SELL,7300.0,16.9977,124083.20999999999,"JOHNSON, CARL J",Common Stock
+2013-03-27,COHR,Director,BUY,7300.0,12.075,88147.5,"JOHNSON, CARL J",Common Stock
+2013-03-27,COHR,Director,SELL,24581.0,16.9361,416306.2741,"JOHNSON, CARL J",Common Stock
+2013-03-27,COHR,Director,BUY,17700.0,13.885,245764.5,"JOHNSON, CARL J",Common Stock
+2013-03-27,COHR,Director,SELL,17700.0,16.9977,300859.29,"JOHNSON, CARL J",Common Stock
+2013-03-28,COHR,Director,BUY,15200.0,12.075,183540.0,"JOHNSON, CARL J",Common Stock
+2013-03-28,COHR,Director,SELL,15200.0,17.0741,259526.32,"JOHNSON, CARL J",Common Stock
+2013-03-28,COHR,Director,SELL,5235.0,17.1013,89525.30549999999,"JOHNSON, CARL J",Common Stock
+2013-04-25,COHR,Director,SELL,3124.0,15.2045,47498.858,"JOHNSON, CARL J",Common Stock
+2013-05-03,COHR,Director,SELL,4765.0,15.3867,73317.6255,"JOHNSON, CARL J",Common Stock
+2013-05-06,COHR,Director,SELL,2500.0,15.2835,38208.75,"JOHNSON, CARL J",Common Stock
+2013-05-07,COHR,Director,SELL,2500.0,15.4539,38634.75,"JOHNSON, CARL J",Common Stock
+2013-05-20,COHR,Director,SELL,57394.0,16.5491,949819.0454,"JOHNSON, CARL J",Common Stock
+2013-05-21,COHR,Director,SELL,38655.0,16.5797,640888.3034999999,"JOHNSON, CARL J",Common Stock
+2013-05-22,COHR,Director,SELL,28951.0,16.6142,480997.70420000004,"JOHNSON, CARL J",Common Stock
+2013-05-28,COHR,Director,SELL,3124.0,16.8341,52589.7284,"JOHNSON, CARL J",Common Stock
+2013-05-31,COHR,Director,BUY,2700.0,10.04,27107.999999999996,"SOGNEFEST, PETER W",Common Stock
+2013-05-31,COHR,Director,SELL,2700.0,16.7056,45105.12,"SOGNEFEST, PETER W",Common Stock
+2013-06-03,COHR,Director,BUY,2300.0,10.04,23091.999999999996,"SOGNEFEST, PETER W",Common Stock
+2013-06-03,COHR,Director,SELL,62500.0,16.7823,1048893.75,"JOHNSON, CARL J",Common Stock
+2013-06-03,COHR,Director,SELL,2300.0,16.76,38548.0,"SOGNEFEST, PETER W",Common Stock
+2013-06-04,COHR,Director,SELL,62500.0,16.7307,1045668.7499999999,"JOHNSON, CARL J",Common Stock
+2013-06-05,COHR,Director,SELL,5000.0,16.7465,83732.5,"JOHNSON, CARL J",Common Stock
+2013-06-25,COHR,Director,SELL,5000.0,16.1027,80513.5,"JOHNSON, CARL J",Common Stock
+2013-07-05,COHR,Director,SELL,5000.0,16.6847,83423.5,"JOHNSON, CARL J",Common Stock
+2013-07-25,COHR,Director,SELL,5000.0,17.7889,88944.50000000001,"JOHNSON, CARL J",Common Stock
+2013-08-05,COHR,Director,SELL,5000.0,18.4119,92059.5,"JOHNSON, CARL J",Common Stock
+2013-08-05,COHR,Director,BUY,5000.0,12.075,60375.0,"SOGNEFEST, PETER W",Common Stock
+2013-08-05,COHR,Director,SELL,34491.0,18.3444,632716.7004,"JOHNSON, CARL J",Common Stock
+2013-08-05,COHR,Director,SELL,5000.0,18.425,92125.0,"SOGNEFEST, PETER W",Common Stock
+2013-08-06,COHR,CFO & Treasurer,SELL,3000.0,18.1602,54480.6,"CREATURO, CRAIG A",Common Stock
+2013-08-06,COHR,Director,SELL,22800.0,18.1785,414469.8,"JOHNSON, CARL J",Common Stock
+2013-08-06,COHR,CFO & Treasurer,BUY,3000.0,8.795,26385.0,"CREATURO, CRAIG A",Common Stock
+2013-08-07,COHR,CFO & Treasurer,SELL,9000.0,18.3381,165042.9,"CREATURO, CRAIG A",Common Stock
+2013-08-07,COHR,Director,SELL,5272.0,18.45,97268.4,"SOGNEFEST, PETER W",Common Stock
+2013-08-07,COHR,Director,SELL,73486.0,18.4163,1353340.2218,"JOHNSON, CARL J",Common Stock
+2013-08-07,COHR,CFO & Treasurer,BUY,9000.0,8.795,79155.0,"CREATURO, CRAIG A",Common Stock
+2013-08-07,COHR,Director,BUY,5272.0,12.075,63659.399999999994,"SOGNEFEST, PETER W",Common Stock
+2013-08-08,COHR,Director,SELL,64223.0,18.6799,1199679.2177,"JOHNSON, CARL J",Common Stock
+2013-08-08,COHR,CFO & Treasurer,BUY,12000.0,10.365,124380.0,"CREATURO, CRAIG A",Common Stock
+2013-08-08,COHR,CFO & Treasurer,SELL,12000.0,18.6111,223333.2,"CREATURO, CRAIG A",Common Stock
+2013-08-09,COHR,Director,SELL,5000.0,18.7359,93679.5,"JOHNSON, CARL J",Common Stock
+2013-08-12,COHR,Director,SELL,30000.0,19.5037,585111.0,"MISTLER, THOMAS E",Common Stock
+2013-08-12,COHR,"Director, 10% Owner",SELL,40000.0,19.5045,780180.0,"JOHNSON, CARL J",Common Stock
+2013-08-13,COHR,Director,SELL,4200.0,20.1255,84527.09999999999,"SOGNEFEST, PETER W",Common Stock
+2013-08-13,COHR,Director,BUY,4200.0,10.04,42168.0,"SOGNEFEST, PETER W",Common Stock
+2013-08-15,COHR,Director,SELL,3424.0,19.457,66620.768,"SOGNEFEST, PETER W",Common Stock
+2013-08-15,COHR,Director,BUY,3424.0,12.075,41344.799999999996,"SOGNEFEST, PETER W",Common Stock
+2013-08-21,COHR,Vice President,SELL,16000.0,19.8315,317304.0,"MARTINELLI, JAMES",Common Stock
+2013-08-21,COHR,Vice President,BUY,16000.0,8.44,135040.0,"MARTINELLI, JAMES",Common Stock
+2013-08-26,COHR,Director,SELL,5000.0,20.0282,100140.99999999999,"JOHNSON, CARL J",Common Stock
+2013-08-29,COHR,CFO & Treasurer,SELL,1210.0,19.78,23933.800000000003,"CREATURO, CRAIG A",Common Stock
+2013-08-29,COHR,CFO & Treasurer,SELL,890.0,19.37,17239.3,"CREATURO, CRAIG A",Common Stock
+2013-08-29,COHR,"Director, Executive VP",SELL,6385.0,19.37,123677.45000000001,"MATTERA, VINCENT D JR",Common Stock
+2013-08-29,COHR,"Director, Executive VP",SELL,670.0,19.78,13252.6,"MATTERA, VINCENT D JR",Common Stock
+2013-09-03,COHR,Director,SELL,3950.0,19.4974,77014.73,"PELAEZ, MARC Y E",Common Stock
+2013-09-05,COHR,Director,SELL,3950.0,19.8137,78264.115,"SOGNEFEST, PETER W",Common Stock
+2013-09-05,COHR,"Director, 10% Owner",SELL,5000.0,19.8041,99020.49999999999,"JOHNSON, CARL J",Common Stock
+2013-09-25,COHR,Director,SELL,5000.0,18.66,93300.0,"JOHNSON, CARL J",Common Stock
+2013-10-07,COHR,Director,SELL,5000.0,18.3013,91506.5,"JOHNSON, CARL J",Common Stock
+2013-10-25,COHR,Director,SELL,5000.0,18.73,93650.0,"JOHNSON, CARL J",Common Stock
+2013-11-05,COHR,Director,SELL,5000.0,16.3601,81800.5,"JOHNSON, CARL J",Common Stock
+2013-11-25,COHR,Director,SELL,5000.0,16.0507,80253.5,"JOHNSON, CARL J",Common Stock
+2013-12-05,COHR,Director,SELL,5000.0,15.9028,79514.0,"JOHNSON, CARL J",Common Stock
+2013-12-26,COHR,Director,SELL,5000.0,17.3889,86944.5,"JOHNSON, CARL J",Common Stock
+2014-01-06,COHR,Director,SELL,5000.0,17.1914,85957.00000000001,"JOHNSON, CARL J",Common Stock
+2014-01-27,COHR,Director,SELL,5000.0,16.1498,80749.0,"JOHNSON, CARL J",Common Stock
+2014-02-05,COHR,Director,SELL,5000.0,14.8942,74471.0,"JOHNSON, CARL J",Common Stock
+2014-02-10,COHR,COO,SELL,4070.0,15.5328,63218.496,"MATTERA, VINCENT D JR",Common Stock
+2014-02-10,COHR,COO,BUY,4070.0,6.6,26862.0,"MATTERA, VINCENT D JR",Common Stock
+2014-02-11,COHR,COO,SELL,4000.0,15.5966,62386.4,"MATTERA, VINCENT D JR",Common Stock
+2014-02-11,COHR,COO,BUY,4000.0,6.6,26400.0,"MATTERA, VINCENT D JR",Common Stock
+2014-02-12,COHR,Director,SELL,7000.0,15.647,109529.0,"JOHNSON, CARL J",Common Stock
+2014-02-18,COHR,Director,SELL,7000.0,15.7075,109952.5,"JOHNSON, CARL J",Common Stock
+2014-02-25,COHR,Director,SELL,5000.0,16.5302,82651.0,"JOHNSON, CARL J",Common Stock
+2014-03-05,COHR,Director,SELL,5000.0,16.822,84110.0,"JOHNSON, CARL J",Common Stock
+2014-03-12,COHR,Director,SELL,7000.0,16.2749,113924.29999999999,"JOHNSON, CARL J",Common Stock
+2014-03-18,COHR,Director,SELL,7000.0,15.2941,107058.7,"JOHNSON, CARL J",Common Stock
+2014-03-25,COHR,Director,SELL,5000.0,15.3785,76892.5,"JOHNSON, CARL J",Common Stock
+2014-04-07,COHR,Director,SELL,5000.0,14.6839,73419.5,"JOHNSON, CARL J",Common Stock
+2014-04-14,COHR,Director,SELL,7000.0,14.2714,99899.8,"JOHNSON, CARL J",Common Stock
+2014-04-21,COHR,Director,SELL,7000.0,14.6647,102652.9,"JOHNSON, CARL J",Common Stock
+2014-04-25,COHR,Director,SELL,5000.0,14.2636,71318.0,"JOHNSON, CARL J",Common Stock
+2014-05-05,COHR,Director,SELL,5000.0,14.4126,72063.0,"JOHNSON, CARL J",Common Stock
+2014-05-12,COHR,Director,SELL,7000.0,14.6099,102269.3,"JOHNSON, CARL J",Common Stock
+2014-05-19,COHR,Director,SELL,7000.0,13.4681,94276.7,"JOHNSON, CARL J",Common Stock
+2014-05-27,COHR,Director,SELL,5000.0,13.7315,68657.5,"JOHNSON, CARL J",Common Stock
+2014-06-05,COHR,Director,SELL,5000.0,13.4174,67087.0,"JOHNSON, CARL J",Common Stock
+2014-06-06,COHR,Director,SELL,10000.0,14.0123,140123.0,"JOHNSON, CARL J",Common Stock
+2014-06-12,COHR,Director,SELL,7000.0,14.0751,98525.70000000001,"JOHNSON, CARL J",Common Stock
+2014-06-13,COHR,Director,SELL,10000.0,14.4002,144002.0,"JOHNSON, CARL J",Common Stock
+2014-06-16,COHR,President & CEO,BUY,3000.0,8.44,25320.0,"KRAMER, FRANCIS J",Common Stock
+2014-06-16,COHR,President & CEO,SELL,3000.0,14.2066,42619.8,"KRAMER, FRANCIS J",Common Stock
+2014-06-17,COHR,President & CEO,SELL,7500.0,14.3299,107474.25,"KRAMER, FRANCIS J",Common Stock
+2014-06-17,COHR,President & CEO,BUY,7500.0,8.44,63299.99999999999,"KRAMER, FRANCIS J",Common Stock
+2014-06-17,COHR,President & CEO,BUY,2500.0,8.44,21100.0,"KRAMER, FRANCIS J",Common Stock
+2014-06-18,COHR,President & CEO,BUY,6500.0,8.44,54860.0,"KRAMER, FRANCIS J",Common Stock
+2014-06-18,COHR,President & CEO,SELL,5000.0,14.2151,71075.5,"KRAMER, FRANCIS J",Common Stock
+2014-06-18,COHR,Director,SELL,7000.0,14.1037,98725.9,"JOHNSON, CARL J",Common Stock
+2014-06-19,COHR,President & CEO,SELL,2500.0,14.25,35625.0,"KRAMER, FRANCIS J",Common Stock
+2014-06-19,COHR,President & CEO,BUY,3500.0,8.44,29540.0,"KRAMER, FRANCIS J",Common Stock
+2014-06-20,COHR,President & CEO,SELL,2000.0,14.2696,28539.2,"KRAMER, FRANCIS J",Common Stock
+2014-06-20,COHR,President & CEO,BUY,2000.0,8.44,16880.0,"KRAMER, FRANCIS J",Common Stock
+2014-06-24,COHR,President & CEO,SELL,2000.0,14.2598,28519.600000000002,"KRAMER, FRANCIS J",Common Stock
+2014-06-24,COHR,President & CEO,BUY,3000.0,8.44,25320.0,"KRAMER, FRANCIS J",Common Stock
+2014-06-25,COHR,COO,BUY,6000.0,8.44,50640.0,"MATTERA, VINCENT D JR",Common Stock
+2014-06-25,COHR,COO,SELL,6000.0,14.0174,84104.40000000001,"MATTERA, VINCENT D JR",Common Stock
+2014-06-25,COHR,"Director, 10% Owner",SELL,5000.0,13.923,69615.0,"JOHNSON, CARL J",Common Stock
+2014-06-26,COHR,COO,SELL,7000.0,14.2014,99409.8,"MATTERA, VINCENT D JR",Common Stock
+2014-06-26,COHR,COO,BUY,7000.0,8.44,59080.0,"MATTERA, VINCENT D JR",Common Stock
+2014-06-27,COHR,COO,BUY,7000.0,8.44,59080.0,"MATTERA, VINCENT D JR",Common Stock
+2014-06-27,COHR,COO,SELL,2900.0,14.4389,41872.81,"MATTERA, VINCENT D JR",Common Stock
+2014-06-27,COHR,Director,SELL,8700.0,14.551,126593.7,"JOHNSON, CARL J",Common Stock
+2014-07-07,COHR,Director,SELL,5000.0,14.3944,71972.0,"JOHNSON, CARL J",Common Stock
+2014-07-14,COHR,Director,SELL,7000.0,14.268,99876.0,"JOHNSON, CARL J",Common Stock
+2014-07-18,COHR,Director,SELL,7000.0,13.7934,96553.8,"JOHNSON, CARL J",Common Stock
+2014-07-25,COHR,Director,SELL,5000.0,13.7549,68774.5,"JOHNSON, CARL J",Common Stock
+2014-08-05,COHR,Director,SELL,5000.0,14.2438,71219.0,"JOHNSON, CARL J",Common Stock
+2014-08-12,COHR,Director,SELL,7000.0,13.7787,96450.90000000001,"JOHNSON, CARL J",Common Stock
+2014-08-18,COHR,Director,SELL,7000.0,14.103,98721.0,"JOHNSON, CARL J",Common Stock
+2014-08-25,COHR,Director,SELL,5000.0,14.1794,70897.0,"JOHNSON, CARL J",Common Stock
+2014-09-03,COHR,Director,BUY,3424.0,12.075,41344.799999999996,"SOGNEFEST, PETER W",Common Stock
+2014-09-03,COHR,Director,SELL,3424.0,14.0,47936.0,"SOGNEFEST, PETER W",Common Stock
+2014-09-03,COHR,Director,BUY,4600.0,10.04,46183.99999999999,"SOGNEFEST, PETER W",Common Stock
+2014-09-03,COHR,Director,SELL,4600.0,14.0,64400.0,"SOGNEFEST, PETER W",Common Stock
+2014-09-05,COHR,"Director, President & CEO",SELL,11237.0,13.99,157205.63,"KRAMER, FRANCIS J",Common Stock
+2014-09-05,COHR,Director,SELL,5000.0,13.5459,67729.5,"JOHNSON, CARL J",Common Stock
+2014-09-05,COHR,"Director, COO",SELL,6614.0,13.99,92529.86,"MATTERA, VINCENT D JR",Common Stock
+2014-09-05,COHR,"Director, COO",SELL,12029.0,14.35,172616.15,"MATTERA, VINCENT D JR",Common Stock
+2014-09-05,COHR,"Director, President & CEO",SELL,2982.0,13.99,41718.18,"KRAMER, FRANCIS J",Common Stock
+2014-09-09,COHR,Director,SELL,4000.0,13.21,52840.0,"SOGNEFEST, PETER W",Common Stock
+2014-09-10,COHR,Director,SELL,650.0,12.95,8417.5,"SOGNEFEST, PETER W",Common Stock
+2014-09-12,COHR,Director,SELL,7000.0,12.892,90244.0,"JOHNSON, CARL J",Common Stock
+2014-09-18,COHR,Director,SELL,4000.0,12.0115,48046.0,"JOHNSON, CARL J",Common Stock
+2014-09-18,COHR,Director,SELL,7000.0,12.95,90650.0,"JOHNSON, CARL J",Common Stock
+2014-09-25,COHR,Director,SELL,5000.0,11.959,59795.0,"JOHNSON, CARL J",Common Stock
+2014-10-06,COHR,Director,SELL,5000.0,11.2362,56181.0,"JOHNSON, CARL J",Common Stock
+2014-10-13,COHR,Director,SELL,7000.0,11.7457,82219.9,"JOHNSON, CARL J",Common Stock
+2014-10-20,COHR,Director,SELL,7000.0,12.1417,84991.9,"JOHNSON, CARL J",Common Stock
+2014-10-27,COHR,Director,SELL,5000.0,12.1987,60993.5,"JOHNSON, CARL J",Common Stock
+2014-11-05,COHR,Director,SELL,5000.0,13.2993,66496.5,"JOHNSON, CARL J",Common Stock
+2014-11-26,COHR,Director,SELL,2000.0,13.6055,27211.0,"MISTLER, THOMAS E",Common Stock
+2014-12-01,COHR,Director,SELL,4000.0,13.45,53800.0,"MISTLER, THOMAS E",Common Stock
+2014-12-02,COHR,Director,SELL,2600.0,13.525,35165.0,"MISTLER, THOMAS E",Common Stock
+2014-12-11,COHR,Director,BUY,4000.0,9.545,38180.0,"MISTLER, THOMAS E",Common Stock
+2014-12-11,COHR,Director,SELL,4000.0,14.0,56000.0,"MISTLER, THOMAS E",Common Stock
+2014-12-16,COHR,Director,SELL,992.0,13.63,13520.960000000001,"MISTLER, THOMAS E",Common Stock
+2014-12-16,COHR,Director,BUY,992.0,9.545,9468.64,"MISTLER, THOMAS E",Common Stock
+2014-12-18,COHR,Director,BUY,4000.0,9.545,38180.0,"MISTLER, THOMAS E",Common Stock
+2014-12-18,COHR,Director,SELL,4000.0,14.0,56000.0,"MISTLER, THOMAS E",Common Stock
+2014-12-24,COHR,Director,BUY,4000.0,9.545,38180.0,"MISTLER, THOMAS E",Common Stock
+2014-12-24,COHR,Director,SELL,4000.0,14.0,56000.0,"MISTLER, THOMAS E",Common Stock
+2014-12-26,COHR,Director,BUY,8600.0,9.545,82087.0,"MISTLER, THOMAS E",Common Stock
+2014-12-26,COHR,Director,SELL,8600.0,13.9566,120026.76,"MISTLER, THOMAS E",Common Stock
+2014-12-30,COHR,Director,BUY,8.0,9.545,76.36,"MISTLER, THOMAS E",Common Stock
+2014-12-30,COHR,Director,SELL,8.0,14.0,112.0,"MISTLER, THOMAS E",Common Stock
+2015-01-29,COHR,Director,BUY,21600.0,9.545,206172.0,"PELAEZ, MARC Y E",Common Stock
+2015-01-29,COHR,"Director, Chairman & CEO",SELL,30000.0,16.8697,506091.00000000006,"KRAMER, FRANCIS J",Common Stock
+2015-01-29,COHR,Director,SELL,16311.0,16.8158,274282.5138,"PELAEZ, MARC Y E",Common Stock
+2015-01-29,COHR,"Director, Chairman & CEO",BUY,50000.0,9.545,477250.0,"KRAMER, FRANCIS J",Common Stock
+2015-02-06,COHR,"Director, President & COO",BUY,7701.0,9.36,72081.36,"MATTERA, VINCENT D JR",Common Stock
+2015-02-06,COHR,"Director, President & COO",SELL,7701.0,17.0228,131092.5828,"MATTERA, VINCENT D JR",Common Stock
+2015-02-09,COHR,"Director, President & COO",SELL,5560.0,17.0799,94964.24399999999,"MATTERA, VINCENT D JR",Common Stock
+2015-02-09,COHR,"Director, President & COO",BUY,16299.0,9.36,152558.63999999998,"MATTERA, VINCENT D JR",Common Stock
+2015-02-17,COHR,Director,SELL,3000.0,17.2702,51810.6,"SOGNEFEST, PETER W",Common Stock
+2015-02-27,COHR,Vice President,BUY,12000.0,8.795,105540.0,"MARTINELLI, JAMES",Common Stock
+2015-02-27,COHR,Vice President,SELL,12000.0,17.5387,210464.4,"MARTINELLI, JAMES",Common Stock
+2015-06-17,COHR,Director,SELL,1000.0,18.9351,18935.1,"SOGNEFEST, PETER W",Common Stock
+2015-06-22,COHR,Director,BUY,4000.0,15.415,61660.0,"SOGNEFEST, PETER W",Common Stock
+2015-06-22,COHR,Director,SELL,4000.0,18.99,75960.0,"SOGNEFEST, PETER W",Common Stock
+2015-08-15,COHR,Director,BUY,4485.0,17.84,80012.4,"PELAEZ, MARC Y E",Common Stock
+2015-08-15,COHR,Director,BUY,4485.0,17.84,80012.4,"MISTLER, THOMAS E",Common Stock
+2015-08-15,COHR,Director,BUY,4485.0,17.84,80012.4,"DICICCO, WENDY F",Common Stock
+2015-08-15,COHR,Director,BUY,4485.0,17.84,80012.4,"CORASANTI, JOSEPH J",Common Stock
+2015-08-15,COHR,Director,BUY,4485.0,17.84,80012.4,"XIA, HOWARD H.",Common Stock
+2015-08-15,COHR,Director,BUY,4485.0,17.84,80012.4,"SCHROMM, WILLIAM A.",Common Stock
+2015-08-15,COHR,Director,BUY,2140.0,17.84,38177.6,"SOGNEFEST, PETER W",Common Stock
+2015-08-26,COHR,"Director, Chairman and CEO",SELL,28367.0,17.9,507769.3,"KRAMER, FRANCIS J",Common Stock
+2015-08-26,COHR,CTO,SELL,1990.0,17.9,35621.0,"BARBAROSSA, GIOVANNI",Common Stock
+2015-08-26,COHR,"VP, Human Resources",SELL,1994.0,17.9,35692.6,"WAGNER, DAVID G",Common Stock
+2015-08-26,COHR,"Director, President & COO",SELL,14537.0,17.9,260212.3,"MATTERA, VINCENT D JR",Common Stock
+2015-09-02,COHR,Director,BUY,4000.0,15.415,61660.0,"SOGNEFEST, PETER W",Common Stock
+2015-09-02,COHR,Director,SELL,4000.0,16.2538,65015.19999999999,"SOGNEFEST, PETER W",Common Stock
+2015-09-02,COHR,Director,BUY,2288.0,13.99,32009.12,"SOGNEFEST, PETER W",Common Stock
+2015-09-02,COHR,Director,SELL,4300.0,16.26,69918.0,"SOGNEFEST, PETER W",Common Stock
+2015-09-02,COHR,Director,SELL,2288.0,16.3,37294.4,"SOGNEFEST, PETER W",Common Stock
+2015-09-08,COHR,"Director, President & COO",SELL,10000.0,16.9028,169028.0,"MATTERA, VINCENT D JR",Common Stock
+2015-09-08,COHR,"Director, President & COO",BUY,12000.0,8.795,105540.0,"MATTERA, VINCENT D JR",Common Stock
+2015-10-30,COHR,Director,BUY,24800.0,8.92,221216.0,"PELAEZ, MARC Y E",COMMON STOCK
+2015-10-30,COHR,Director,SELL,17840.0,18.0758,322472.272,"PELAEZ, MARC Y E",COMMON STOCK
+2015-11-03,COHR,Director,BUY,8800.0,8.92,78496.0,"MISTLER, THOMAS E",COMMON STOCK
+2015-11-03,COHR,Director,SELL,8800.0,18.2254,160383.52000000002,"MISTLER, THOMAS E",COMMON STOCK
+2015-11-04,COHR,Director,SELL,2000.0,18.15,36300.0,"MISTLER, THOMAS E",COMMON STOCK
+2015-11-04,COHR,Director,BUY,2000.0,8.92,17840.0,"MISTLER, THOMAS E",COMMON STOCK
+2015-11-05,COHR,Director,BUY,14000.0,8.92,124880.0,"MISTLER, THOMAS E",COMMON STOCK
+2015-11-05,COHR,Director,SELL,14000.0,18.2163,255028.2,"MISTLER, THOMAS E",COMMON STOCK
+2015-11-11,COHR,Director,BUY,4960.0,8.92,44243.2,"CORASANTI, JOSEPH J",COMMON STOCK
+2015-11-11,COHR,Director,SELL,4960.0,18.4374,91449.504,"CORASANTI, JOSEPH J",COMMON STOCK
+2015-11-19,COHR,CTO,SELL,1533.0,18.12,27777.960000000003,"BARBAROSSA, GIOVANNI",COMMON STOCK
+2015-12-01,COHR,Director,SELL,7900.0,18.62,147098.0,"SOGNEFEST, PETER W",Common Stock
+2015-12-01,COHR,Director,BUY,7900.0,16.855,133154.5,"SOGNEFEST, PETER W",Common Stock
+2016-02-01,COHR,Chief Operating Officer,BUY,40000.0,20.5,820000.0,"KAPUSTA, GARY ALAN",Common Stock
+2016-03-22,COHR,Director,BUY,13400.0,15.98,214132.0,"PELAEZ, MARC Y E",Common Stock
+2016-03-22,COHR,Director,SELL,13400.0,21.1388,283259.92,"PELAEZ, MARC Y E",Common Stock
+2016-03-30,COHR,Director,SELL,2000.0,21.157,42314.0,"DICICCO, WENDY F",Common Stock
+2016-03-30,COHR,Director,BUY,2000.0,15.98,31960.0,"DICICCO, WENDY F",Common Stock
+2016-04-29,COHR,"Director, Chief Executive Officer",BUY,8300.0,10.535,87440.5,"KRAMER, FRANCIS J",Common Stock
+2016-04-29,COHR,"Director, Chief Executive Officer",BUY,18000.0,10.365,186570.0,"KRAMER, FRANCIS J",Common Stock
+2016-04-29,COHR,"Director, Chief Executive Officer",SELL,26300.0,20.788,546724.4,"KRAMER, FRANCIS J",Common Stock
+2016-05-19,COHR,Director,SELL,5000.0,19.623,98115.0,"MISTLER, THOMAS E",Common Stock
+2016-05-24,COHR,Director,BUY,36.0,20.0,720.0,"MISTLER, THOMAS E",Common Stock
+2016-05-25,COHR,Director,BUY,1401.0,20.0,28020.0,"MISTLER, THOMAS E",Common Stock
+2016-05-26,COHR,Director,BUY,100.0,20.0,2000.0,"MISTLER, THOMAS E",Common Stock
+2016-05-27,COHR,Director,SELL,3499.0,20.0,69980.0,"MISTLER, THOMAS E",Common Stock
+2016-06-06,COHR,Director,SELL,5000.0,20.5,102500.0,"MISTLER, THOMAS E",Common Stock
+2016-06-07,COHR,Director,SELL,13400.0,20.6019,276065.46,"CORASANTI, JOSEPH J",Common Stock
+2016-06-07,COHR,Director,BUY,13400.0,15.98,214132.0,"CORASANTI, JOSEPH J",Common Stock
+2016-06-08,COHR,Director,BUY,20000.0,15.415,308300.0,"CORASANTI, JOSEPH J",Common Stock
+2016-06-08,COHR,Director,SELL,20000.0,20.6644,413288.0,"CORASANTI, JOSEPH J",Common Stock
+2016-06-14,COHR,"Director, President & COO",SELL,11000.0,20.0114,220125.4,"MATTERA, VINCENT D JR",Common Stock
+2016-06-14,COHR,"Director, President & COO",BUY,12000.0,10.365,124380.0,"MATTERA, VINCENT D JR",Common Stock
+2016-08-16,COHR,CFO,SELL,2058.0,21.34,43917.72,"RAYMOND, MARY JANE",Common Stock
+2016-08-16,COHR,"VP, Human Resources",SELL,1256.0,21.34,26803.04,"WAGNER, DAVID G",Common Stock
+2016-08-16,COHR,CTO,SELL,4010.0,21.34,85573.4,"BARBAROSSA, GIOVANNI",Common Stock
+2016-08-16,COHR,"Director, President & COO",SELL,5635.0,21.34,120250.9,"MATTERA, VINCENT D JR",Common Stock
+2016-08-20,COHR,Director,BUY,3696.0,21.67,80092.32,"SCHROMM, WILLIAM A.",Common Stock
+2016-08-20,COHR,Director,BUY,3696.0,21.67,80092.32,"XIA, HOWARD H.",Common Stock
+2016-08-20,COHR,Director,BUY,3696.0,21.67,80092.32,"DICICCO, WENDY F",Common Stock
+2016-08-20,COHR,Director,BUY,3696.0,21.67,80092.32,"PELAEZ, MARC Y E",Common Stock
+2016-08-20,COHR,Director,BUY,3696.0,21.67,80092.32,"MISTLER, THOMAS E",Common Stock
+2016-08-20,COHR,Director,BUY,3696.0,21.67,80092.32,"CORASANTI, JOSEPH J",Common Stock
+2016-08-20,COHR,CFO,BUY,9912.0,21.67,214793.04,"RAYMOND, MARY JANE",Common Stock
+2016-08-20,COHR,Director,BUY,984.0,21.67,21323.280000000002,"MISTLER, THOMAS E",Common Stock
+2016-08-20,COHR,Director,BUY,3696.0,21.67,80092.32,"SADASIVAM, SHAKER",Common Stock
+2016-08-20,COHR,Chief Operating Officer,BUY,9915.0,21.67,214858.05000000002,"KAPUSTA, GARY ALAN",Common Stock
+2016-08-20,COHR,CTO,BUY,9888.0,21.67,214272.96000000002,"BARBAROSSA, GIOVANNI",Common Stock
+2016-08-20,COHR,"VP, Human Resources",BUY,5367.0,21.67,116302.89000000001,"WAGNER, DAVID G",Common Stock
+2016-08-20,COHR,"Director, President & COO",BUY,28416.0,21.67,615774.7200000001,"MATTERA, VINCENT D JR",Common Stock
+2016-08-20,COHR,"Director, Chief Executive Officer",BUY,3696.0,21.67,80092.32,"KRAMER, FRANCIS J",Common Stock
+2016-08-20,COHR,Director,BUY,2460.0,21.67,53308.200000000004,"MISTLER, THOMAS E",Option (Right to Buy)
+2016-08-23,COHR,Director,SELL,4310.0,21.55,92880.5,"MISTLER, THOMAS E",Common Stock
+2016-08-30,COHR,"Director, President & COO",SELL,3480.0,21.65,75342.0,"MATTERA, VINCENT D JR",Common Stock
+2016-08-30,COHR,"Director, Chief Executive Officer",SELL,21484.0,21.65,465128.6,"KRAMER, FRANCIS J",Common Stock
+2016-09-08,COHR,Director,BUY,4000.0,15.98,63920.0,"DICICCO, WENDY F",Common Stock
+2016-09-08,COHR,Director,SELL,4000.0,22.2999,89199.6,"DICICCO, WENDY F",Common Stock
+2016-11-05,COHR,Interim General Counsel,BUY,5952.0,27.0,160704.0,"BASHAW, WALTER ROBERT II",Common Stock
+2016-11-21,COHR,Director,SELL,2000.0,30.4466,60893.2,"XIA, HOWARD H.",Common Stock
+2016-11-22,COHR,Director,SELL,2000.0,30.9,61800.0,"XIA, HOWARD H.",Common Stock
+2016-12-23,COHR,Director,SELL,4400.0,29.3568,129169.92,"DICICCO, WENDY F",Common Stock
+2017-01-31,COHR,Director,SELL,3000.0,36.325,108975.00000000001,"DICICCO, WENDY F",Common Stock
+2017-01-31,COHR,Director,BUY,3000.0,15.98,47940.0,"DICICCO, WENDY F",Common Stock
+2017-02-02,COHR,Director,SELL,131088.0,36.2599,4753237.7712,"KRAMER, FRANCIS J",Common Stock
+2017-02-02,COHR,Director,BUY,35200.0,13.885,488752.0,"KRAMER, FRANCIS J",Common Stock
+2017-02-03,COHR,Director,SELL,12564.0,36.3,456073.19999999995,"KRAMER, FRANCIS J",Common Stock
+2017-02-06,COHR,"VP, Human Resources",SELL,6666.0,36.5428,243594.3048,"WAGNER, DAVID G",Common Stock
+2017-02-06,COHR,"VP, Human Resources",BUY,6666.0,12.795,85291.47,"WAGNER, DAVID G",Common Stock
+2017-02-16,COHR,"Director, President & CEO",SELL,7000.0,39.0507,273354.89999999997,"MATTERA, VINCENT D JR",Common Stock
+2017-02-16,COHR,"Director, President & CEO",BUY,7000.0,13.885,97195.0,"MATTERA, VINCENT D JR",Common Stock
+2017-02-21,COHR,Director,BUY,23000.0,10.04,230919.99999999997,"PELAEZ, MARC Y E",Common Stock
+2017-02-21,COHR,Director,SELL,25833.0,39.0285,1008223.2405000001,"PELAEZ, MARC Y E",Common Stock
+2017-02-21,COHR,Director,BUY,20000.0,15.415,308300.0,"PELAEZ, MARC Y E",Common Stock
+2017-02-28,COHR,Director,SELL,833.0,36.35,30279.550000000003,"KRAMER, FRANCIS J",Common Stock
+2017-02-28,COHR,Director,SELL,49117.0,35.7426,1755569.2842,"KRAMER, FRANCIS J",Common Stock
+2017-03-01,COHR,Director,BUY,3605.0,36.6165,132002.4825,"PELAEZ, MARC Y E",Common Stock
+2017-03-02,COHR,Director,SELL,25000.0,35.35,883750.0,"KRAMER, FRANCIS J",Common Stock
+2017-03-15,COHR,Director,BUY,10000.0,33.4947,334947.0,"CORASANTI, JOSEPH J",Common Stock
+2017-03-20,COHR,CFO,SELL,6873.0,36.75,252582.75,"RAYMOND, MARY JANE",Common Stock
+2017-03-23,COHR,Director,SELL,4310.0,36.925,159146.75,"XIA, HOWARD H.",Common Stock
+2017-03-24,COHR,Director,SELL,30000.0,38.0,1140000.0,"KRAMER, FRANCIS J",Common Stock
+2017-03-27,COHR,Director,SELL,10573.0,38.8394,410648.9762,"PELAEZ, MARC Y E",Common Stock
+2017-03-27,COHR,Director,BUY,17120.0,12.075,206724.0,"PELAEZ, MARC Y E",Common Stock
+2017-04-28,COHR,Director,BUY,2500.0,15.415,38537.5,"DICICCO, WENDY F",Common Stock
+2017-04-28,COHR,Director,SELL,2500.0,33.188,82970.0,"DICICCO, WENDY F",Common Stock
+2017-06-20,COHR,CTO,SELL,921.0,34.05,31360.049999999996,"BARBAROSSA, GIOVANNI",Common Stock
+2017-06-20,COHR,Director,SELL,9448.0,34.05,321704.39999999997,"KRAMER, FRANCIS J",Common Stock
+2017-06-20,COHR,"Director, President & CEO",SELL,3871.0,34.05,131807.55,"MATTERA, VINCENT D JR",Common Stock
+2017-06-20,COHR,"VP, Human Resources",SELL,829.0,34.05,28227.449999999997,"WAGNER, DAVID G",Common Stock
+2017-07-10,COHR,"VP, Human Resources",BUY,4444.0,12.795,56860.98,"WAGNER, DAVID G",Common Stock
+2017-07-10,COHR,"VP, Human Resources",SELL,4444.0,36.0,159984.0,"WAGNER, DAVID G",Common Stock
+2017-07-24,COHR,Director,SELL,20000.0,40.0,800000.0,"KRAMER, FRANCIS J",Common Stock
+2017-08-15,COHR,"VP, Human Resources",SELL,2582.0,36.6,94501.2,"WAGNER, DAVID G",Common Stock
+2017-08-15,COHR,"Director, President & CEO",SELL,12425.0,36.6,454755.0,"MATTERA, VINCENT D JR",Common Stock
+2017-08-15,COHR,Director,SELL,12412.0,36.6,454279.2,"KRAMER, FRANCIS J",Common Stock
+2017-08-15,COHR,CTO,SELL,8417.0,36.6,308062.2,"BARBAROSSA, GIOVANNI",Common Stock
+2017-08-15,COHR,CFO,SELL,5350.0,36.6,195810.0,"RAYMOND, MARY JANE",Common Stock
+2017-08-20,COHR,"Director, President & CEO",SELL,4365.0,36.6,159759.0,"MATTERA, VINCENT D JR",Common Stock
+2017-08-20,COHR,"VP, Human Resources",SELL,563.0,36.6,20605.8,"WAGNER, DAVID G",Common Stock
+2017-08-20,COHR,Chief Operating Officer,SELL,1040.0,36.6,38064.0,"KAPUSTA, GARY ALAN",Common Stock
+2017-08-20,COHR,CTO,SELL,1519.0,36.6,55595.4,"II-VI, INC",Common Stock
+2017-08-20,COHR,CFO,SELL,1522.0,36.6,55705.200000000004,"RAYMOND, MARY JANE",Common Stock
+2017-10-02,COHR,Director,BUY,25000.0,23.495,587375.0,"KRAMER, FRANCIS J",Common Stock
+2017-10-02,COHR,Director,SELL,25000.0,42.0,1050000.0,"KRAMER, FRANCIS J",Common Stock
+2017-10-31,COHR,CFO,SELL,1000.0,45.0,45000.0,"RAYMOND, MARY JANE",Common Stock
+2017-10-31,COHR,Director,BUY,16850.0,23.495,395890.75,"KRAMER, FRANCIS J",Common Stock
+2017-10-31,COHR,Director,BUY,8150.0,12.075,98411.25,"KRAMER, FRANCIS J",Common Stock
+2017-10-31,COHR,Director,SELL,25000.0,45.0991,1127477.5,"KRAMER, FRANCIS J",Common Stock
+2017-11-22,COHR,Director,SELL,4135.0,51.5793,213280.40550000002,"XIA, HOWARD H.",Common Stock
+2017-11-30,COHR,"VP, Human Resources",SELL,300.0,48.1333,14439.99,"WAGNER, DAVID G",Common Stock
+2017-11-30,COHR,"VP, Human Resources",SELL,6277.0,47.6099,298847.3423,"WAGNER, DAVID G",Common Stock
+2017-11-30,COHR,"VP, Human Resources",BUY,2133.0,12.075,25755.975,"WAGNER, DAVID G",Common Stock
+2017-11-30,COHR,"VP, Human Resources",BUY,4444.0,12.795,56860.98,"WAGNER, DAVID G",Common Stock
+2018-03-02,COHR,Director,SELL,2208.0,38.1,84124.8,"KRAMER, FRANCIS J",Common Stock
+2018-03-06,COHR,General Counsel and Secretary,SELL,790.0,37.55,29664.499999999996,"SCHWENDINGER, JO ANNE",Common Stock
+2018-03-20,COHR,"Director, President & CEO",BUY,8000.0,18.345,146760.0,"MATTERA, VINCENT D JR",Common Stock
+2018-03-20,COHR,"Director, President & CEO",SELL,8000.0,47.3423,378738.4,"MATTERA, VINCENT D JR",Common Stock
+2018-05-31,COHR,"VP, Human Resources",SELL,6379.0,44.0753,281156.33869999996,"WAGNER, DAVID G",Common Stock
+2018-05-31,COHR,"VP, Human Resources",BUY,2133.0,12.075,25755.975,"WAGNER, DAVID G",Common Stock
+2018-05-31,COHR,"VP, Human Resources",BUY,4446.0,12.795,56886.57,"WAGNER, DAVID G",Common Stock
+2018-05-31,COHR,"VP, Human Resources",SELL,200.0,44.625,8925.0,"WAGNER, DAVID G",Common Stock
+2018-06-18,COHR,CFO,SELL,3047.0,46.55,141837.85,"RAYMOND, MARY JANE",Common Stock
+2018-06-18,COHR,"Director, President & CEO",SELL,11478.0,46.55,534300.9,"MATTERA, VINCENT D JR",Common Stock
+2018-06-18,COHR,"VP, Human Resources",SELL,3739.0,46.55,174050.44999999998,"WAGNER, DAVID G",Common Stock
+2018-06-18,COHR,Director,SELL,25174.0,46.55,1171849.7,"KRAMER, FRANCIS J",Common Stock
+2018-06-18,COHR,CTO,SELL,9509.0,46.55,442643.94999999995,"BARBAROSSA, GIOVANNI",Common Stock
+2018-08-01,COHR,"Director, President & CEO",BUY,9450.0,23.495,222027.75,"MATTERA, VINCENT D JR",Common Stock
+2018-08-01,COHR,"Director, President & CEO",SELL,6223.0,39.4744,245649.19120000003,"MATTERA, VINCENT D JR",Common Stock
+2018-08-01,COHR,"Director, President & CEO",SELL,2327.0,40.1685,93472.0995,"MATTERA, VINCENT D JR",Common Stock
+2018-08-01,COHR,"Director, President & CEO",SELL,900.0,40.9778,36880.020000000004,"MATTERA, VINCENT D JR",Common Stock
+2018-08-09,COHR,Director,SELL,30000.0,44.7704,1343112.0,"CORASANTI, JOSEPH J",Common Stock
+2018-08-09,COHR,CFO,SELL,2000.0,44.7576,89515.2,"RAYMOND, MARY JANE",Common Stock
+2018-08-09,COHR,Director,BUY,7000.0,12.075,84525.0,"CORASANTI, JOSEPH J",Common Stock
+2018-08-09,COHR,Director,BUY,23000.0,10.04,230919.99999999997,"CORASANTI, JOSEPH J",Common Stock
+2018-08-10,COHR,Director,SELL,3000.0,45.5435,136630.5,"CORASANTI, JOSEPH J",Common Stock
+2018-08-10,COHR,CFO,SELL,2000.0,45.0,90000.0,"RAYMOND, MARY JANE",Common Stock
+2018-08-10,COHR,Director,SELL,7120.0,45.0712,320906.94399999996,"CORASANTI, JOSEPH J",Common Stock
+2018-08-10,COHR,Director,BUY,10120.0,12.075,122199.0,"CORASANTI, JOSEPH J",Common Stock
+2018-08-15,COHR,"Director, President & CEO",SELL,9392.0,45.65,428744.8,"MATTERA, VINCENT D JR",Common Stock
+2018-08-15,COHR,CFO,SELL,4953.0,45.65,226104.44999999998,"RAYMOND, MARY JANE",Common Stock
+2018-08-15,COHR,CTO,SELL,5831.0,45.65,266185.14999999997,"BARBAROSSA, GIOVANNI",Common Stock
+2018-08-15,COHR,Director,SELL,6086.0,45.65,277825.89999999997,"KRAMER, FRANCIS J",Common Stock
+2018-08-15,COHR,"VP, Human Resources",SELL,1345.0,45.65,61399.25,"WAGNER, DAVID G",Common Stock
+2018-08-16,COHR,Director,SELL,4485.0,45.4031,203632.90350000001,"PELAEZ, MARC Y E",Common Stock
+2018-08-18,COHR,CLCO and Secretary,SELL,488.0,45.65,22277.2,"SCHWENDINGER, JO ANNE",Common Stock
+2018-08-18,COHR,Chief Operating Officer,SELL,924.0,45.65,42180.6,"KAPUSTA, GARY ALAN",Common Stock
+2018-08-18,COHR,CFO,SELL,1037.0,45.65,47339.049999999996,"RAYMOND, MARY JANE",Common Stock
+2018-08-18,COHR,"Director, President & CEO",SELL,3486.0,45.65,159135.9,"MATTERA, VINCENT D JR",Common Stock
+2018-08-18,COHR,CTO,SELL,968.0,45.65,44189.2,"BARBAROSSA, GIOVANNI",Common Stock
+2018-08-18,COHR,"VP, Human Resources",SELL,276.0,45.65,12599.4,"WAGNER, DAVID G",Common Stock
+2018-08-20,COHR,CFO,SELL,1437.0,45.65,65599.05,"RAYMOND, MARY JANE",Common Stock
+2018-08-20,COHR,"Director, President & CEO",SELL,4119.0,45.65,188032.35,"MATTERA, VINCENT D JR",Common Stock
+2018-08-20,COHR,"VP, Human Resources",SELL,510.0,45.65,23281.5,"WAGNER, DAVID G",Common Stock
+2018-08-20,COHR,Chief Operating Officer,SELL,1436.0,45.65,65553.4,"KAPUSTA, GARY ALAN",Common Stock
+2018-08-20,COHR,CTO,SELL,1635.0,45.65,74637.75,"BARBAROSSA, GIOVANNI",Common Stock
+2018-08-28,COHR,Director,BUY,900.0,12.075,10867.5,"KRAMER, FRANCIS J",Common Stock
+2018-08-28,COHR,Director,SELL,900.0,50.0,45000.0,"KRAMER, FRANCIS J",Common Stock
+2018-08-29,COHR,Director,SELL,10.0,50.0,500.0,"KRAMER, FRANCIS J",Common Stock
+2018-08-29,COHR,Director,BUY,10.0,12.075,120.75,"KRAMER, FRANCIS J",Common Stock
+2018-08-30,COHR,Director,SELL,9090.0,50.0,454500.0,"KRAMER, FRANCIS J",Common Stock
+2018-08-30,COHR,Director,BUY,9090.0,12.075,109761.75,"KRAMER, FRANCIS J",Common Stock
+2018-09-04,COHR,"VP, Human Resources",BUY,11200.0,13.99,156688.0,"WAGNER, DAVID G",Common Stock
+2018-09-04,COHR,"VP, Human Resources",BUY,2134.0,12.075,25768.05,"WAGNER, DAVID G",Common Stock
+2018-09-04,COHR,"VP, Human Resources",BUY,3900.0,16.855,65734.5,"WAGNER, DAVID G",Common Stock
+2018-09-04,COHR,"VP, Human Resources",BUY,7542.0,17.84,134549.28,"WAGNER, DAVID G",Common Stock
+2018-09-04,COHR,"VP, Human Resources",SELL,23228.0,47.8749,1112038.1772,"WAGNER, DAVID G",Common Stock
+2018-09-04,COHR,"VP, Human Resources",BUY,8300.0,17.53,145499.0,"WAGNER, DAVID G",Common Stock
+2018-09-04,COHR,"VP, Human Resources",SELL,9848.0,48.3253,475907.55439999996,"WAGNER, DAVID G",Common Stock
+2018-09-18,COHR,"VP, Human Resources",SELL,200.0,49.0,9800.0,"WAGNER, DAVID G",Common Stock
+2018-09-18,COHR,"VP, Human Resources",BUY,200.0,18.93,3786.0,"WAGNER, DAVID G",Common Stock
+2018-09-25,COHR,"VP, Human Resources",SELL,4833.0,49.001,236821.83299999998,"WAGNER, DAVID G",Common Stock
+2018-09-25,COHR,"VP, Human Resources",BUY,4833.0,18.93,91488.69,"WAGNER, DAVID G",Common Stock
+2018-11-20,COHR,Chief Technology Officer,SELL,5573.0,34.49,192212.77000000002,"BARBAROSSA, GIOVANNI",Common Stock
+2018-11-20,COHR,Director,SELL,14949.0,34.49,515591.01,"KRAMER, FRANCIS J",Common Stock
+2018-11-20,COHR,Chief Financial Officer,SELL,4731.0,34.49,163172.19,"RAYMOND, MARY JANE",Common Stock
+2018-11-20,COHR,"VP, Human Resources",SELL,1961.0,34.49,67634.89,"WAGNER, DAVID G",Common Stock
+2018-11-20,COHR,"Director, President and CEO",SELL,8970.0,34.49,309375.30000000005,"MATTERA, VINCENT D JR",Common Stock
+2019-01-17,COHR,"VP, Human Resources",BUY,2317.0,18.93,43860.81,"WAGNER, DAVID G",Common Stock
+2019-01-17,COHR,"VP, Human Resources",SELL,2317.0,33.2332,77001.3244,"WAGNER, DAVID G",Common Stock
+2019-02-01,COHR,Chief Operating Officer,SELL,10972.0,37.96,416497.12,"KAPUSTA, GARY ALAN",Common Stock
+2019-02-01,COHR,Chief Operating Officer,SELL,6522.0,37.96,247575.12,"KAPUSTA, GARY ALAN",Common Stock
+2019-02-28,COHR,"VP, Human Resources",BUY,9900.0,19.37,191763.0,"WAGNER, DAVID G",Common Stock
+2019-02-28,COHR,"VP, Human Resources",SELL,9900.0,41.85,414315.0,"WAGNER, DAVID G",Common Stock
+2019-03-01,COHR,"VP, Human Resources",BUY,1880.0,21.67,40739.600000000006,"WAGNER, DAVID G",Common Stock
+2019-03-01,COHR,"VP, Human Resources",BUY,1420.0,19.37,27505.4,"WAGNER, DAVID G",Common Stock
+2019-03-01,COHR,"VP, Human Resources",SELL,3300.0,43.0,141900.0,"WAGNER, DAVID G",Common Stock
+2019-03-01,COHR,Director,SELL,1402.0,42.48,59556.96,"KRAMER, FRANCIS J",Common Stock
+2019-03-06,COHR,General Counsel and Secretary,SELL,785.0,40.25,31596.25,"SCHWENDINGER, JO ANNE",Common Stock
+2019-03-11,COHR,Director,BUY,30000.0,12.075,362250.0,"KRAMER, FRANCIS J",Common Stock
+2019-03-11,COHR,Director,SELL,30000.0,39.62,1188600.0,"KRAMER, FRANCIS J",Common Stock
+2019-03-11,COHR,Chief Financial Officer,SELL,2000.0,39.0,78000.0,"RAYMOND, MARY JANE",Common Stock
+2019-03-13,COHR,Director,SELL,10000.0,40.0153,400153.00000000006,"KRAMER, FRANCIS J",Common Stock
+2019-03-13,COHR,Director,BUY,10000.0,12.075,120750.0,"KRAMER, FRANCIS J",Common Stock
+2019-04-03,COHR,"Director, President and CEO",SELL,13827.0,40.0956,554401.8611999999,"MATTERA, VINCENT D JR",Common Stock
+2019-04-03,COHR,"Director, President and CEO",BUY,13827.0,12.075,166961.025,"MATTERA, VINCENT D JR",Common Stock
+2019-04-08,COHR,"Director, President and CEO",BUY,1973.0,12.075,23823.975,"MATTERA, VINCENT D JR",Common Stock
+2019-04-08,COHR,"Director, President and CEO",SELL,1973.0,40.0,78920.0,"MATTERA, VINCENT D JR",Common Stock
+2019-04-12,COHR,Director,SELL,10050.0,40.518,407205.9,"KRAMER, FRANCIS J",Common Stock
+2019-04-12,COHR,Director,BUY,10050.0,12.075,121353.75,"KRAMER, FRANCIS J",Common Stock
+2019-05-21,COHR,Director,BUY,14250.0,34.6313,493496.025,"SADASIVAM, SHAKER",Common Stock
+2019-05-30,COHR,Director,BUY,3200.0,32.3372,103479.04000000001,"CORASANTI, JOSEPH J",Common Stock
+2019-08-13,COHR,Chief Technology Officer,SELL,500.0,37.16,18580.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2019-08-13,COHR,Chief Technology Officer,BUY,500.0,25.91,12955.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2019-08-18,COHR,General Counsel and Secretary,SELL,488.0,38.26,18670.879999999997,"SCHWENDINGER, JO ANNE",Common Stock
+2019-08-18,COHR,Chief Financial Officer,SELL,1037.0,38.26,39675.619999999995,"RAYMOND, MARY JANE",Common Stock
+2019-08-18,COHR,Chief Technology Officer,SELL,64.0,38.26,2448.64,"KOEPPEN, CHRISTOPHER",Common Stock
+2019-08-18,COHR,Chief Technology Officer,SELL,968.0,38.26,37035.68,"BARBAROSSA, GIOVANNI",Common Stock
+2019-08-18,COHR,"Director, Chief Executive Officer",SELL,3155.0,38.26,120710.29999999999,"MATTERA, VINCENT D JR",Common Stock
+2019-08-19,COHR,Chief Financial Officer,SELL,16000.0,39.2529,628046.3999999999,"RAYMOND, MARY JANE",Common Stock
+2019-08-19,COHR,Chief Financial Officer,BUY,16000.0,14.99,239840.0,"RAYMOND, MARY JANE",Common Stock
+2019-08-20,COHR,Chief Financial Officer,SELL,14831.0,39.24,581968.4400000001,"RAYMOND, MARY JANE",Common Stock
+2019-08-20,COHR,Chief Technology Officer,SELL,16879.0,39.24,662331.9600000001,"BARBAROSSA, GIOVANNI",Common Stock
+2019-08-20,COHR,Chief Technology Officer,SELL,725.0,39.24,28449.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2019-08-20,COHR,"Director, Chief Executive Officer",SELL,93948.0,39.24,3686519.52,"MATTERA, VINCENT D JR",Common Stock
+2019-08-28,COHR,Chief Strategy Officer,SELL,1175.0,36.28,42629.0,"BARBAROSSA, GIOVANNI",Common Stock
+2019-08-28,COHR,Chief Legal & Compl. Officer,SELL,469.0,36.28,17015.32,"SCHWENDINGER, JO ANNE",Common Stock
+2019-08-28,COHR,Chief Technology Officer,SELL,53.0,36.28,1922.8400000000001,"KOEPPEN, CHRISTOPHER",Common Stock
+2019-08-28,COHR,"Director, Chief Executive Officer",SELL,2843.0,36.28,103144.04000000001,"MATTERA, VINCENT D JR",Common Stock
+2019-08-28,COHR,Director,BUY,2325.0,36.56,85002.0,"SADASIVAM, SHAKER",Common Stock
+2019-08-28,COHR,Chief Financial Officer,SELL,995.0,36.28,36098.6,"RAYMOND, MARY JANE",Common Stock
+2019-09-17,COHR,Director,SELL,1000.0,40.72,40720.0,"PELAEZ, MARC Y E",Common Stock
+2019-10-05,COHR,President,SELL,3863.0,32.68,126242.84,"BASHAW, WALTER ROBERT II",Common Stock
+2019-11-05,COHR,President,SELL,571.0,35.27,20139.170000000002,"BASHAW, WALTER ROBERT II",Common Stock
+2020-01-02,COHR,Chief Technology Officer,BUY,500.0,25.91,12955.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2020-01-02,COHR,Chief Technology Officer,SELL,500.0,35.0,17500.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2020-01-31,COHR,"Director, Chief Executive Officer",SELL,29000.0,33.6531,975939.9,"MATTERA, VINCENT D JR",Common Stock
+2020-01-31,COHR,"Director, Chief Executive Officer",BUY,29000.0,13.165,381785.0,"MATTERA, VINCENT D JR",Common Stock
+2020-02-12,COHR,Director,SELL,9300.0,38.0,353400.0,"XIA, HOWARD H.",Common Stock
+2020-02-12,COHR,Director,BUY,9300.0,17.53,163029.0,"XIA, HOWARD H.",Common Stock
+2020-02-13,COHR,Director,BUY,7900.0,16.855,133154.5,"PELAEZ, MARC Y E",Common Stock
+2020-02-13,COHR,Director,SELL,7900.0,37.8309,298864.11,"PELAEZ, MARC Y E",Common Stock
+2020-02-13,COHR,Chief Financial Officer,SELL,14000.0,37.7835,528969.0,"RAYMOND, MARY JANE",Common Stock
+2020-02-13,COHR,Chief Financial Officer,BUY,14000.0,14.99,209860.0,"RAYMOND, MARY JANE",Common Stock
+2020-02-19,COHR,Chief Technology Officer,SELL,500.0,36.1,18050.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2020-02-19,COHR,Chief Technology Officer,BUY,500.0,25.91,12955.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2020-03-06,COHR,Chief Legal & Compl. Officer,SELL,782.0,31.42,24570.440000000002,"SCHWENDINGER, JO ANNE",Common Stock
+2020-04-28,COHR,Director,BUY,20000.0,16.855,337100.0,"KRAMER, FRANCIS J",Common Stock
+2020-04-28,COHR,Director,SELL,20000.0,33.0456,660912.0,"KRAMER, FRANCIS J",Common Stock
+2020-04-29,COHR,Director,BUY,20000.0,16.855,337100.0,"KRAMER, FRANCIS J",Common Stock
+2020-04-29,COHR,Director,SELL,20000.0,35.0,700000.0,"KRAMER, FRANCIS J",Common Stock
+2020-04-29,COHR,"Director, Chief Executive Officer",SELL,18100.0,35.0,633500.0,"MATTERA, VINCENT D JR",Common Stock
+2020-04-29,COHR,"Director, Chief Executive Officer",BUY,18100.0,16.855,305075.5,"MATTERA, VINCENT D JR",Common Stock
+2020-05-12,COHR,Director,SELL,12181.0,46.4578,565902.4617999999,"KRAMER, FRANCIS J",Common Stock
+2020-05-12,COHR,Director,SELL,7199.0,45.4329,327071.4471,"KRAMER, FRANCIS J",Common Stock
+2020-05-12,COHR,Director,BUY,21380.0,16.855,360359.9,"KRAMER, FRANCIS J",Common Stock
+2020-05-12,COHR,Director,SELL,200.0,48.045,9609.0,"KRAMER, FRANCIS J",Common Stock
+2020-05-12,COHR,Director,SELL,1800.0,47.0778,84740.04000000001,"KRAMER, FRANCIS J",Common Stock
+2020-05-13,COHR,Director,SELL,47265.0,44.8205,2118440.9325,"KRAMER, FRANCIS J",Common Stock
+2020-05-13,COHR,Director,SELL,2735.0,45.174,123550.89,"KRAMER, FRANCIS J",Common Stock
+2020-05-13,COHR,Director,BUY,9300.0,17.53,163029.0,"CORASANTI, JOSEPH J",Common Stock
+2020-05-13,COHR,Director,BUY,7900.0,16.855,133154.5,"CORASANTI, JOSEPH J",Common Stock
+2020-05-13,COHR,Director,SELL,17200.0,44.7788,770195.36,"CORASANTI, JOSEPH J",Common Stock
+2020-05-13,COHR,Director,BUY,50000.0,17.53,876500.0,"KRAMER, FRANCIS J",Common Stock
+2020-05-19,COHR,Chief Technology Officer,SELL,600.0,45.9209,27552.54,"KOEPPEN, CHRISTOPHER",Common Stock
+2020-05-19,COHR,Chief Technology Officer,BUY,1200.0,25.91,31092.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2020-05-19,COHR,President,SELL,10969.0,45.8169,502565.57609999995,"BASHAW, WALTER ROBERT II",Common Stock
+2020-05-19,COHR,Chief Technology Officer,SELL,448.0,45.7,20473.600000000002,"KOEPPEN, CHRISTOPHER",Common Stock
+2020-05-19,COHR,Chief Technology Officer,SELL,1200.0,45.7667,54920.04,"KOEPPEN, CHRISTOPHER",Common Stock
+2020-05-20,COHR,Chief Technology Officer,SELL,500.0,46.03,23015.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2020-05-20,COHR,Chief Technology Officer,BUY,500.0,18.93,9465.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2020-06-05,COHR,Chief Technology Officer,BUY,700.0,18.93,13251.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2020-06-05,COHR,Chief Technology Officer,SELL,700.0,49.0,34300.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2020-06-05,COHR,Chief Financial Officer,SELL,4000.0,48.8,195200.0,"RAYMOND, MARY JANE",Common Stock
+2020-06-05,COHR,Chief Financial Officer,SELL,2000.0,50.0,100000.0,"RAYMOND, MARY JANE",Common Stock
+2020-06-15,COHR,Director,BUY,14500.0,17.53,254185.00000000003,"KRAMER, FRANCIS J",Common Stock
+2020-06-15,COHR,Director,SELL,14500.0,47.6291,690621.9500000001,"KRAMER, FRANCIS J",Common Stock
+2020-06-18,COHR,Director,BUY,14500.0,17.53,254185.00000000003,"KRAMER, FRANCIS J",Common Stock
+2020-06-18,COHR,Director,SELL,14500.0,50.0449,725651.0499999999,"KRAMER, FRANCIS J",Common Stock
+2020-08-03,COHR,Chief Financial Officer,SELL,2000.0,52.0,104000.0,"RAYMOND, MARY JANE",Common Stock
+2020-08-05,COHR,Director,BUY,14500.0,17.53,254185.00000000003,"KRAMER, FRANCIS J",Common Stock
+2020-08-05,COHR,Director,SELL,14500.0,52.5278,761653.1,"KRAMER, FRANCIS J",Common Stock
+2020-08-18,COHR,Chief Financial Officer,SELL,9323.0,46.21,430815.83,"RAYMOND, MARY JANE",Common Stock
+2020-08-18,COHR,Chief Technology Officer,SELL,601.0,46.21,27772.21,"KOEPPEN, CHRISTOPHER",Common Stock
+2020-08-18,COHR,"Director, Chief Executive Officer",SELL,28391.0,46.21,1311948.11,"MATTERA, VINCENT D JR",Common Stock
+2020-08-18,COHR,Chief Legal & Compl. Officer,SELL,4396.0,46.21,203139.16,"SCHWENDINGER, JO ANNE",Common Stock
+2020-08-18,COHR,Chief Strategy Officer,SELL,8704.0,46.21,402211.84,"BARBAROSSA, GIOVANNI",Common Stock
+2020-08-28,COHR,Chief Technology Officer,SELL,521.0,42.28,22027.88,"KOEPPEN, CHRISTOPHER",Common Stock
+2020-08-28,COHR,President,SELL,991.0,42.28,41899.48,"BASHAW, WALTER ROBERT II",Common Stock
+2020-08-28,COHR,Chief Financial Officer,SELL,2646.0,42.28,111872.88,"RAYMOND, MARY JANE",Common Stock
+2020-08-28,COHR,"Director, Chief Executive Officer",SELL,2843.0,42.28,120202.04000000001,"MATTERA, VINCENT D JR",Common Stock
+2020-08-28,COHR,Chief Legal & Compl. Officer,SELL,1943.0,42.28,82150.04000000001,"SCHWENDINGER, JO ANNE",Common Stock
+2020-08-28,COHR,Chief Strategy Officer,SELL,2966.0,42.28,125402.48000000001,"BARBAROSSA, GIOVANNI",Common Stock
+2020-10-05,COHR,President,SELL,733.0,41.74,30595.420000000002,"BASHAW, WALTER ROBERT II",Common Stock
+2020-11-05,COHR,Director,BUY,14570.0,17.53,255412.1,"KRAMER, FRANCIS J",Common Stock
+2020-11-05,COHR,Chief Technology Officer,SELL,2240.0,54.0,120960.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2020-11-05,COHR,Director,SELL,14570.0,55.0969,802761.833,"KRAMER, FRANCIS J",Common Stock
+2020-11-05,COHR,Chief Technology Officer,BUY,2240.0,19.37,43388.8,"KOEPPEN, CHRISTOPHER",Common Stock
+2020-11-09,COHR,Chief Technology Officer,BUY,1920.0,18.93,36345.6,"KOEPPEN, CHRISTOPHER",Common Stock
+2020-11-09,COHR,Director,BUY,8620.0,18.93,163176.6,"PELAEZ, MARC Y E",Common Stock
+2020-11-09,COHR,Director,BUY,8270.0,19.37,160189.9,"PELAEZ, MARC Y E",Common Stock
+2020-11-09,COHR,Director,BUY,11440.0,13.99,160045.6,"PELAEZ, MARC Y E",Common Stock
+2020-11-09,COHR,Director,BUY,9300.0,17.53,163029.0,"PELAEZ, MARC Y E",Common Stock
+2020-11-09,COHR,Chief Technology Officer,SELL,1920.0,59.01,113299.2,"KOEPPEN, CHRISTOPHER",Common Stock
+2020-11-09,COHR,Director,SELL,37630.0,56.9594,2143382.222,"PELAEZ, MARC Y E",Common Stock
+2020-11-11,COHR,Director,BUY,5000.0,18.93,94650.0,"XIA, HOWARD H.",Common Stock
+2020-11-11,COHR,Director,SELL,5000.0,58.3772,291886.0,"XIA, HOWARD H.",Common Stock
+2020-11-12,COHR,Director,SELL,3620.0,58.7734,212759.708,"XIA, HOWARD H.",Common Stock
+2020-11-12,COHR,Director,BUY,3620.0,18.93,68526.6,"XIA, HOWARD H.",Common Stock
+2020-11-16,COHR,"Director, Chief Executive Officer",BUY,50000.0,17.53,876500.0,"MATTERA, VINCENT D JR",Common Stock
+2020-11-16,COHR,"Director, Chief Executive Officer",SELL,109597.0,59.6328,6535575.9816000005,"MATTERA, VINCENT D JR",Common Stock
+2020-11-16,COHR,Chief Strategy Officer,SELL,24710.0,60.0514,1483870.094,"BARBAROSSA, GIOVANNI",Common Stock
+2020-11-16,COHR,Chief Strategy Officer,SELL,80031.0,59.4862,4760740.072199999,"BARBAROSSA, GIOVANNI",Common Stock
+2020-11-16,COHR,Chief Strategy Officer,BUY,31360.0,17.84,559462.4,"BARBAROSSA, GIOVANNI",Common Stock
+2020-11-16,COHR,Chief Strategy Officer,BUY,7000.0,16.45,115150.0,"BARBAROSSA, GIOVANNI",Common Stock
+2020-11-16,COHR,Chief Strategy Officer,BUY,22841.0,21.67,494964.47000000003,"BARBAROSSA, GIOVANNI",Common Stock
+2020-11-16,COHR,Chief Strategy Officer,BUY,30530.0,13.99,427114.7,"BARBAROSSA, GIOVANNI",Common Stock
+2020-11-16,COHR,Chief Strategy Officer,BUY,13010.0,19.37,252003.7,"BARBAROSSA, GIOVANNI",Common Stock
+2020-11-17,COHR,"Director, Chief Executive Officer",BUY,32850.0,19.37,636304.5,"MATTERA, VINCENT D JR",Common Stock
+2020-11-17,COHR,"Director, Chief Executive Officer",SELL,57506.0,59.7809,3437760.4354000003,"MATTERA, VINCENT D JR",Common Stock
+2020-11-17,COHR,"Director, Chief Executive Officer",SELL,80497.0,60.5711,4875791.8367,"MATTERA, VINCENT D JR",Common Stock
+2020-11-17,COHR,"Director, Chief Executive Officer",SELL,900.0,61.1044,54993.96,"MATTERA, VINCENT D JR",Common Stock
+2020-11-17,COHR,Chief Strategy Officer,SELL,1879.0,59.6517,112085.5443,"BARBAROSSA, GIOVANNI",Common Stock
+2020-11-17,COHR,Chief Strategy Officer,BUY,1879.0,21.67,40717.93,"BARBAROSSA, GIOVANNI",Common Stock
+2020-11-17,COHR,"Director, Chief Executive Officer",BUY,19600.0,17.53,343588.0,"MATTERA, VINCENT D JR",Common Stock
+2020-11-17,COHR,"Director, Chief Executive Officer",BUY,47550.0,18.93,900121.5,"MATTERA, VINCENT D JR",Common Stock
+2020-11-19,COHR,"Director, Chief Executive Officer",BUY,8460.0,19.37,163870.2,"MATTERA, VINCENT D JR",Common Stock
+2020-11-19,COHR,"Director, Chief Executive Officer",SELL,25000.0,62.1815,1554537.5,"MATTERA, VINCENT D JR",Common Stock
+2020-11-19,COHR,"Director, Chief Executive Officer",BUY,16540.0,13.99,231394.6,"MATTERA, VINCENT D JR",Common Stock
+2020-11-20,COHR,"Director, Chief Executive Officer",SELL,26350.0,64.1278,1689767.5299999998,"MATTERA, VINCENT D JR",Common Stock
+2020-11-20,COHR,"Director, Chief Executive Officer",BUY,26350.0,13.99,368636.5,"MATTERA, VINCENT D JR",Common Stock
+2020-11-24,COHR,Chief Financial Officer,SELL,18274.0,66.5407,1215964.7518,"RAYMOND, MARY JANE",Common Stock
+2020-11-24,COHR,Chief Financial Officer,SELL,12086.0,67.2107,812308.5202,"RAYMOND, MARY JANE",Common Stock
+2020-11-24,COHR,Chief Financial Officer,BUY,30360.0,17.84,541622.4,"RAYMOND, MARY JANE",Common Stock
+2020-11-27,COHR,Chief Legal & Compl. Officer,SELL,12760.0,66.5548,849239.248,"SCHWENDINGER, JO ANNE",Common Stock
+2020-11-27,COHR,Chief Legal & Compl. Officer,BUY,12960.0,35.5,460080.0,"SCHWENDINGER, JO ANNE",Common Stock
+2020-11-27,COHR,Chief Legal & Compl. Officer,SELL,200.0,67.16,13432.0,"SCHWENDINGER, JO ANNE",Common Stock
+2020-11-30,COHR,Chief Technology Officer,SELL,1828.0,66.78,122073.84,"KOEPPEN, CHRISTOPHER",Common Stock
+2020-12-10,COHR,Director,SELL,23521.0,68.9751,1622363.3270999999,"KRAMER, FRANCIS J",Common Stock
+2020-12-10,COHR,Director,SELL,26083.0,70.1805,1830517.9814999998,"KRAMER, FRANCIS J",Common Stock
+2020-12-10,COHR,Director,BUY,60000.0,18.93,1135800.0,"KRAMER, FRANCIS J",Common Stock
+2020-12-10,COHR,Director,SELL,10396.0,71.0703,738846.8388,"KRAMER, FRANCIS J",Common Stock
+2020-12-14,COHR,Director,SELL,15449.0,72.586,1121381.114,"KRAMER, FRANCIS J",Common Stock
+2020-12-14,COHR,Director,BUY,15449.0,18.93,292449.57,"KRAMER, FRANCIS J",Common Stock
+2020-12-15,COHR,Director,SELL,8231.0,72.5951,597530.2681,"KRAMER, FRANCIS J",Common Stock
+2020-12-15,COHR,Director,BUY,8231.0,18.93,155812.83,"KRAMER, FRANCIS J",Common Stock
+2020-12-16,COHR,"Director, Chief Executive Officer",SELL,6700.0,71.9561,482105.87000000005,"MATTERA, VINCENT D JR",Common Stock
+2020-12-16,COHR,"Director, Chief Executive Officer",SELL,100.0,73.85,7384.999999999999,"MATTERA, VINCENT D JR",Common Stock
+2020-12-16,COHR,"Director, Chief Executive Officer",SELL,1700.0,72.4882,123229.94000000002,"MATTERA, VINCENT D JR",Common Stock
+2021-01-19,COHR,"Director, Chief Executive Officer",SELL,4137.0,92.8257,384019.92089999997,"MATTERA, VINCENT D JR",Common Stock
+2021-01-19,COHR,"Director, Chief Executive Officer",SELL,3005.0,91.7366,275668.483,"MATTERA, VINCENT D JR",Common Stock
+2021-01-19,COHR,"Director, Chief Executive Officer",SELL,301.0,93.3735,28105.4235,"MATTERA, VINCENT D JR",Common Stock
+2021-01-19,COHR,"Director, Chief Executive Officer",SELL,1057.0,90.9681,96153.2817,"MATTERA, VINCENT D JR",Common Stock
+2021-01-28,COHR,"Director, Chief Executive Officer",SELL,5163.0,36.08,186281.03999999998,"MATTERA, VINCENT D JR",Common Stock
+2021-02-16,COHR,"Director, Chief Executive Officer",SELL,5704.0,91.8916,524149.6864,"MATTERA, VINCENT D JR",Common Stock
+2021-02-16,COHR,"Director, Chief Executive Officer",SELL,2796.0,90.9902,254408.5992,"MATTERA, VINCENT D JR",Common Stock
+2021-02-24,COHR,Chief Technology Officer,SELL,200.0,89.145,17829.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2021-02-24,COHR,Chief Technology Officer,SELL,600.0,88.075,52845.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2021-02-24,COHR,Chief Technology Officer,SELL,200.0,86.915,17383.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2021-02-24,COHR,Chief Technology Officer,SELL,100.0,83.18,8318.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2021-02-24,COHR,Chief Technology Officer,SELL,400.0,84.5975,33839.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2021-03-01,COHR,Director,SELL,4209.0,86.81,365383.29000000004,"KRAMER, FRANCIS J",Common Stock
+2021-03-16,COHR,"Director, Chief Executive Officer",SELL,5861.0,71.6906,420178.6066,"MATTERA, VINCENT D JR",Common Stock
+2021-03-16,COHR,"Director, Chief Executive Officer",SELL,2639.0,72.221,190591.219,"MATTERA, VINCENT D JR",Common Stock
+2021-04-16,COHR,"Director, Chief Executive Officer",SELL,6703.0,81.4616,546037.1048,"MATTERA, VINCENT D JR",Common Stock
+2021-04-16,COHR,"Director, Chief Executive Officer",SELL,1797.0,82.0334,147414.0198,"MATTERA, VINCENT D JR",Common Stock
+2021-05-17,COHR,"Director, Chief Executive Officer",SELL,1230.0,63.7493,78411.639,"MATTERA, VINCENT D JR",Common Stock
+2021-05-17,COHR,"Director, Chief Executive Officer",SELL,7270.0,62.9887,457927.849,"MATTERA, VINCENT D JR",Common Stock
+2021-05-26,COHR,Chief Technology Officer,SELL,100.0,68.03,6803.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2021-05-26,COHR,Chief Technology Officer,SELL,1400.0,67.4593,94443.02,"KOEPPEN, CHRISTOPHER",Common Stock
+2021-05-27,COHR,President,BUY,15500.0,18.73,290315.0,"BASHAW, WALTER ROBERT II",Common Stock
+2021-05-27,COHR,President,SELL,11155.0,68.7544,766955.332,"BASHAW, WALTER ROBERT II",Common Stock
+2021-05-27,COHR,President,SELL,2428.0,69.4322,168581.3816,"BASHAW, WALTER ROBERT II",Common Stock
+2021-05-27,COHR,President,SELL,1917.0,67.7764,129927.35879999999,"BASHAW, WALTER ROBERT II",Common Stock
+2021-06-16,COHR,"Director, Chief Executive Officer",SELL,4299.0,68.7069,295370.9631,"MATTERA, VINCENT D JR",Common Stock
+2021-06-16,COHR,"Director, Chief Executive Officer",SELL,3301.0,69.539,229548.239,"MATTERA, VINCENT D JR",Common Stock
+2021-06-16,COHR,"Director, Chief Executive Officer",SELL,900.0,70.2844,63255.96000000001,"MATTERA, VINCENT D JR",Common Stock
+2021-06-28,COHR,President,SELL,100.0,73.2854,7328.54,"BASHAW, WALTER ROBERT II",Common Stock
+2021-06-28,COHR,President,SELL,1711.0,72.5075,124060.33249999999,"BASHAW, WALTER ROBERT II",Common Stock
+2021-06-28,COHR,President,SELL,3189.0,71.8309,229068.7401,"BASHAW, WALTER ROBERT II",Common Stock
+2021-06-28,COHR,President,BUY,5000.0,18.73,93650.0,"BASHAW, WALTER ROBERT II",Common Stock
+2021-07-16,COHR,"Director, Chief Executive Officer",SELL,6675.0,70.0589,467643.1575,"MATTERA, VINCENT D JR",Common Stock
+2021-07-16,COHR,"Director, Chief Executive Officer",SELL,1825.0,70.6558,128946.83499999999,"MATTERA, VINCENT D JR",Common Stock
+2021-08-16,COHR,"Director, Chief Executive Officer",SELL,7915.0,62.5601,495163.1915,"MATTERA, VINCENT D JR",Common Stock
+2021-08-16,COHR,"Director, Chief Executive Officer",SELL,585.0,63.2727,37014.5295,"MATTERA, VINCENT D JR",Common Stock
+2021-08-18,COHR,Chief Financial Officer,SELL,200.0,61.0728,12214.56,"RAYMOND, MARY JANE",Common Stock
+2021-08-25,COHR,Chief Technology Officer,SELL,1500.0,62.51,93765.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2021-08-28,COHR,Chief Financial Officer,SELL,15862.0,63.6,1008823.2000000001,"RAYMOND, MARY JANE",Common Stock
+2021-08-28,COHR,President,SELL,4685.0,63.6,297966.0,"BASHAW, WALTER ROBERT II",Common Stock
+2021-08-28,COHR,Chief Technology Officer,SELL,2056.0,63.6,130761.6,"KOEPPEN, CHRISTOPHER",Common Stock
+2021-08-28,COHR,Chief Legal & Compl. Officer,SELL,9875.0,63.6,628050.0,"SCHWENDINGER, JO ANNE",Common Stock
+2021-08-28,COHR,"Director, Chief Executive Officer",SELL,40111.0,63.6,2551059.6,"MATTERA, VINCENT D JR",Common Stock
+2021-08-28,COHR,Chief Strategy Officer,SELL,18221.0,63.6,1158855.6,"BARBAROSSA, GIOVANNI",Common Stock
+2021-09-03,COHR,Director,SELL,5921.0,61.3127,363032.4967,"DIGIROLOMO, ENRICO",Common Stock
+2021-09-03,COHR,Director,BUY,2906.0,36.56,106243.36,"DIGIROLOMO, ENRICO",Common Stock
+2021-09-03,COHR,Director,BUY,3015.0,49.9,150448.5,"DIGIROLOMO, ENRICO",Common Stock
+2021-10-05,COHR,President,SELL,1114.0,55.55,61882.7,"BASHAW, WALTER ROBERT II",Common Stock
+2021-11-12,COHR,Director,BUY,8620.0,18.93,163176.6,"CORASANTI, JOSEPH J",Common Stock
+2021-11-12,COHR,Director,SELL,8620.0,64.7602,558232.924,"CORASANTI, JOSEPH J",Common Stock
+2021-12-15,COHR,"Director, Chief Executive Officer",SELL,8000.0,70.0,560000.0,"MATTERA, VINCENT D JR",Common Stock
+2021-12-15,COHR,President,SELL,1400.0,70.0,98000.0,"BASHAW, WALTER ROBERT II",Common Stock
+2021-12-21,COHR,CFO & Treasurer,SELL,1000.0,68.0,68000.0,"RAYMOND, MARY JANE",Common Stock
+2022-01-05,COHR,President,SELL,350.0,73.9,25865.000000000004,"BASHAW, WALTER ROBERT II",Common Stock
+2022-01-18,COHR,"Director, Chief Executive Officer",SELL,2000.0,70.0,140000.0,"MATTERA, VINCENT D JR",Common Stock
+2022-01-18,COHR,Chief Technology Officer,SELL,500.0,69.81,34905.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2022-01-28,COHR,"Director, Chief Executive Officer",SELL,5180.0,59.37,307536.6,"MATTERA, VINCENT D JR",Common Stock
+2022-02-10,COHR,President,SELL,350.0,70.0,24500.0,"BASHAW, WALTER ROBERT II",Common Stock
+2022-02-15,COHR,"Director, Chief Executive Officer",SELL,2000.0,70.0,140000.0,"MATTERA, VINCENT D JR",Common Stock
+2022-02-16,COHR,CFO & Treasurer,SELL,1000.0,72.0,72000.0,"RAYMOND, MARY JANE",Common Stock
+2022-03-18,COHR,President,SELL,350.0,70.0,24500.0,"BASHAW, WALTER ROBERT II",Common Stock
+2022-03-18,COHR,"Director, Chief Executive Officer",SELL,2000.0,70.0,140000.0,"MATTERA, VINCENT D JR",Common Stock
+2022-03-24,COHR,Director,SELL,1279.0,71.355,91263.045,"DIGIROLOMO, ENRICO",Common Stock
+2022-03-29,COHR,Director,SELL,22610.0,75.0022,1695799.742,"KRAMER, FRANCIS J",Common Stock
+2022-03-29,COHR,Director,SELL,3000.0,74.9,224700.00000000003,"XIA, HOWARD H.",Common Stock
+2022-03-29,COHR,Director,BUY,6000.0,19.37,116220.0,"XIA, HOWARD H.",Common Stock
+2022-03-29,COHR,Director,BUY,22610.0,19.37,437955.7,"KRAMER, FRANCIS J",Common Stock
+2022-03-29,COHR,Director,SELL,3000.0,73.9,221700.00000000003,"XIA, HOWARD H.",Common Stock
+2022-04-05,COHR,President,SELL,350.0,70.95,24832.5,"BASHAW, WALTER ROBERT II",Common Stock
+2022-04-18,COHR,Chief Technology Officer,SELL,500.0,61.71,30855.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2022-07-01,COHR,"Director, 10% Owner",BUY,140000.0,10000.0,1400000000.0,"PAGLIUCA, STEPHEN G",Series B-2 Convertible Preferred Stock
+2022-07-01,COHR,"Director, 10% Owner",BUY,75000.0,10000.0,750000000.0,"PAGLIUCA, STEPHEN G",Series B-1 Convertible Preferred Stock
+2022-07-11,COHR,President - Lasers Segment,SELL,96319.0,47.82,4605974.58,"SOBEY, MARK STEWART",Common Stock
+2022-08-29,COHR,CFO & Treasurer,SELL,2000.0,51.97,103940.0,"RAYMOND, MARY JANE",Common Stock
+2022-09-12,COHR,CFO & Treasurer,SELL,1500.0,45.1908,67786.20000000001,"RAYMOND, MARY JANE",Common Stock
+2022-09-13,COHR,Director,BUY,10000.0,43.844,438440.0,"CORASANTI, JOSEPH J",Common Stock
+2022-11-15,COHR,Director,SELL,2936.0,40.0,117440.0,"KRAMER, FRANCIS J",Common Stock
+2022-11-15,COHR,Director,BUY,2936.0,19.37,56870.32,"KRAMER, FRANCIS J",Common Stock
+2023-01-28,COHR,"Director, Chief Executive Officer",SELL,5200.0,45.14,234728.0,"MATTERA, VINCENT D JR",Common Stock
+2023-03-01,COHR,Director,SELL,2270.0,43.1748,98006.79599999999,"XIA, HOWARD H.",Common Stock
+2023-03-01,COHR,Director,BUY,2270.0,19.37,43969.9,"XIA, HOWARD H.",Common Stock
+2023-03-02,COHR,CFO & Treasurer,SELL,1000.0,42.0,42000.0,"RAYMOND, MARY JANE",Common Stock
+2023-03-02,COHR,CFO & Treasurer,SELL,3000.0,40.7288,122186.4,"RAYMOND, MARY JANE",Common Stock
+2023-05-30,COHR,Chief Technology Officer,BUY,2966.0,29.5,87497.0,"ENG, JULIE SHERIDAN",Common Stock
+2023-05-30,COHR,Chief Technology Officer,SELL,2966.0,40.5,120123.0,"ENG, JULIE SHERIDAN",Common Stock
+2023-06-02,COHR,Director,BUY,8270.0,19.37,160189.9,"CORASANTI, JOSEPH J",Common Stock
+2023-06-02,COHR,Director,SELL,8270.0,38.378,317386.06,"CORASANTI, JOSEPH J",Common Stock
+2023-06-09,COHR,President,SELL,2500.0,40.0,100000.0,"BASHAW, WALTER ROBERT II",Common Stock
+2023-06-14,COHR,"Director, Chief Executive Officer",SELL,30000.0,50.0,1500000.0,"MATTERA, VINCENT D JR",Common Stock
+2023-06-14,COHR,Director,BUY,6041.0,49.6177,299740.5257,"MOTLEY, DAVID L",Common Stock
+2023-06-14,COHR,CFO & Treasurer,SELL,1000.0,48.0,48000.0,"RAYMOND, MARY JANE",Common Stock
+2023-06-14,COHR,CFO & Treasurer,SELL,1000.0,46.28,46280.0,"RAYMOND, MARY JANE",Common Stock
+2023-06-14,COHR,CFO & Treasurer,SELL,1000.0,50.0,50000.0,"RAYMOND, MARY JANE",Common Stock
+2023-06-16,COHR,CFO & Treasurer,SELL,1000.0,55.67,55670.0,"RAYMOND, MARY JANE",Common Stock
+2023-06-16,COHR,President,SELL,2500.0,55.67,139175.0,"BASHAW, WALTER ROBERT II",Common Stock
+2023-06-20,COHR,"Director, Chief Executive Officer",SELL,21100.0,59.9995,1265989.45,"MATTERA, VINCENT D JR",Common Stock
+2023-06-20,COHR,"Director, Chief Executive Officer",SELL,200.0,57.475,11495.0,"MATTERA, VINCENT D JR",Common Stock
+2023-06-20,COHR,"Director, Chief Executive Officer",SELL,500.0,58.942,29471.0,"MATTERA, VINCENT D JR",Common Stock
+2023-06-20,COHR,"Director, Chief Executive Officer",SELL,3700.0,55.0056,203520.72,"MATTERA, VINCENT D JR",Common Stock
+2023-06-20,COHR,"Director, Chief Executive Officer",SELL,500.0,55.926,27963.0,"MATTERA, VINCENT D JR",Common Stock
+2023-06-20,COHR,CFO & Treasurer,SELL,1000.0,60.0,60000.0,"RAYMOND, MARY JANE",Common Stock
+2023-07-03,COHR,President,SELL,2500.0,50.31,125775.0,"BASHAW, WALTER ROBERT II",Common Stock
+2023-08-01,COHR,President,SELL,300.0,47.64,14292.0,"BASHAW, WALTER ROBERT II",Common Stock
+2023-08-01,COHR,President,SELL,2200.0,46.8984,103176.48000000001,"BASHAW, WALTER ROBERT II",Common Stock
+2023-08-04,COHR,"Director, Chief Executive Officer",SELL,5000.0,50.0,250000.0,"MATTERA, VINCENT D JR",Common Stock
+2023-08-18,COHR,CFO & Treasurer,SELL,2000.0,34.0,68000.0,"RAYMOND, MARY JANE",Common Stock
+2023-08-24,COHR,"Director, Chief Executive Officer",BUY,30000.0,35.25,1057500.0,"MATTERA, VINCENT D JR",Common Stock
+2023-09-01,COHR,CFO & Treasurer,SELL,1000.0,38.12,38120.0,"RAYMOND, MARY JANE",Common Stock
+2023-09-14,COHR,Chief Innovation Officer,SELL,1988.0,33.6766,66949.0808,"KOEPPEN, CHRISTOPHER",Common Stock
+2023-09-14,COHR,Chief Innovation Officer,SELL,2875.0,33.1418,95282.675,"KOEPPEN, CHRISTOPHER",Common Stock
+2023-10-02,COHR,Chief Innovation Officer,SELL,2000.0,32.71,65420.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2023-12-05,COHR,Interim CFO & Treasurer,SELL,1471.0,38.1733,56152.9243,"MARTUCCI, RICHARD J.",Common Stock
+2023-12-06,COHR,Chief Technology Officer,SELL,9901.0,40.011,396148.911,"ENG, JULIE SHERIDAN",Common Stock
+2023-12-06,COHR,Chief Technology Officer,BUY,2966.0,29.5,87497.0,"ENG, JULIE SHERIDAN",Common Stock
+2023-12-06,COHR,President,SELL,7500.0,40.0077,300057.75,"BASHAW, WALTER ROBERT II",Common Stock
+2023-12-06,COHR,Chief Innovation Officer,BUY,2330.0,13.99,32596.7,"KOEPPEN, CHRISTOPHER",Common Stock
+2023-12-06,COHR,Director,BUY,4000.0,13.99,55960.0,"XIA, HOWARD H.",Common Stock
+2023-12-06,COHR,Chief Innovation Officer,SELL,4330.0,40.0,173200.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2023-12-06,COHR,Director,SELL,4000.0,40.29,161160.0,"XIA, HOWARD H.",Common Stock
+2023-12-14,COHR,Director,SELL,3440.0,42.8,147232.0,"XIA, HOWARD H.",Common Stock
+2023-12-14,COHR,Director,BUY,3440.0,13.99,48125.6,"XIA, HOWARD H.",Common Stock
+2023-12-26,COHR,Chief Innovation Officer,BUY,1920.0,17.84,34252.8,"KOEPPEN, CHRISTOPHER",Common Stock
+2023-12-26,COHR,Chief Innovation Officer,SELL,1920.0,45.0,86400.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2024-01-30,COHR,Chief Innovation Officer,SELL,1860.0,50.0,93000.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2024-01-30,COHR,Chief Innovation Officer,BUY,1860.0,21.67,40306.200000000004,"KOEPPEN, CHRISTOPHER",Common Stock
+2024-02-15,COHR,Chief Innovation Officer,SELL,2000.0,62.02,124040.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2024-03-14,COHR,President,SELL,200.0,61.159,12231.8,"BASHAW, WALTER ROBERT II",Common Stock
+2024-03-14,COHR,President,SELL,6100.0,60.3933,368399.13,"BASHAW, WALTER ROBERT II",Common Stock
+2024-03-14,COHR,President,SELL,1875.0,59.4961,111555.1875,"BASHAW, WALTER ROBERT II",Common Stock
+2024-03-15,COHR,"Director, Chief Executive Officer",SELL,5000.0,58.9139,294569.5,"MATTERA, VINCENT D JR",Common Stock
+2024-04-01,COHR,President,SELL,600.0,61.0917,36655.020000000004,"BASHAW, WALTER ROBERT II",Common Stock
+2024-04-01,COHR,President,SELL,3775.0,60.3334,227758.585,"BASHAW, WALTER ROBERT II",Common Stock
+2024-04-15,COHR,"Director, Chief Executive Officer",SELL,2704.0,53.6748,145136.6592,"MATTERA, VINCENT D JR",Common Stock
+2024-04-15,COHR,"Director, Chief Executive Officer",SELL,2296.0,52.4157,120346.44720000001,"MATTERA, VINCENT D JR",Common Stock
+2024-05-01,COHR,President,SELL,2275.0,53.9946,122837.715,"BASHAW, WALTER ROBERT II",Common Stock
+2024-05-01,COHR,President,SELL,500.0,56.016,28008.0,"BASHAW, WALTER ROBERT II",Common Stock
+2024-05-01,COHR,President,SELL,1600.0,54.7856,87656.96,"BASHAW, WALTER ROBERT II",Common Stock
+2024-05-10,COHR,Interim CFO & Treasurer,BUY,2580.0,21.67,55908.600000000006,"MARTUCCI, RICHARD J.",Common Stock
+2024-05-10,COHR,Interim CFO & Treasurer,BUY,5780.0,53.6091,309860.598,"MARTUCCI, RICHARD J.",Common Stock
+2024-05-10,COHR,Interim CFO & Treasurer,BUY,1400.0,17.84,24976.0,"MARTUCCI, RICHARD J.",Common Stock
+2024-05-10,COHR,Interim CFO & Treasurer,BUY,1800.0,35.25,63450.0,"MARTUCCI, RICHARD J.",Common Stock
+2024-05-10,COHR,Interim CFO & Treasurer,SELL,5780.0,53.6091,309860.598,"MARTUCCI, RICHARD J.",Common Stock
+2024-05-15,COHR,Director,BUY,1000.0,13.99,13990.0,"XIA, HOWARD H.",Common Stock
+2024-05-15,COHR,"Director, Chief Executive Officer",SELL,505.0,57.8678,29223.239,"MATTERA, VINCENT D JR",Common Stock
+2024-05-15,COHR,Chief Innovation Officer,SELL,2000.0,57.3,114600.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2024-05-15,COHR,Director,SELL,1000.0,58.0,58000.0,"XIA, HOWARD H.",Common Stock
+2024-05-15,COHR,"Director, Chief Executive Officer",SELL,4495.0,57.272,257437.63999999998,"MATTERA, VINCENT D JR",Common Stock
+2024-05-16,COHR,Chief Legal & Compliance Off.,SELL,7750.0,59.6577,462347.175,"BASSO, RONALD",Common Stock
+2024-05-16,COHR,Director,BUY,1000.0,13.99,13990.0,"XIA, HOWARD H.",Common Stock
+2024-05-16,COHR,Chief Legal & Compliance Off.,BUY,7750.0,29.5,228625.0,"BASSO, RONALD",Common Stock
+2024-05-16,COHR,Chief Legal & Compliance Off.,SELL,3000.0,59.0,177000.0,"BASSO, RONALD",Common Stock
+2024-05-16,COHR,Director,SELL,1000.0,59.0,59000.0,"XIA, HOWARD H.",Common Stock
+2024-05-23,COHR,Director,SELL,1000.0,61.0,61000.0,"XIA, HOWARD H.",Common Stock
+2024-05-23,COHR,Director,SELL,1000.0,60.83,60830.0,"XIA, HOWARD H.",Common Stock
+2024-05-23,COHR,Director,BUY,1000.0,13.99,13990.0,"XIA, HOWARD H.",Common Stock
+2024-06-03,COHR,President,SELL,14820.0,70.0,1037400.0,"BASHAW, WALTER ROBERT II",Common Stock
+2024-06-03,COHR,President,SELL,4375.0,67.3752,294766.5,"BASHAW, WALTER ROBERT II",Common Stock
+2024-06-03,COHR,Chief Legal & Compliance Off.,SELL,3367.0,68.443,230447.581,"BASSO, RONALD",Common Stock
+2024-06-03,COHR,President,BUY,14820.0,27.0,400140.0,"BASHAW, WALTER ROBERT II",Common Stock
+2024-06-04,COHR,Director,SELL,11440.0,65.804,752797.76,"CORASANTI, JOSEPH J",Common Stock
+2024-06-04,COHR,Director,BUY,11440.0,13.99,160045.6,"CORASANTI, JOSEPH J",Common Stock
+2024-06-05,COHR,Director,SELL,14239.0,66.6132,948505.3548000001,"DREYER, MICHAEL L",Common Stock
+2024-07-01,COHR,President,SELL,2203.0,71.9224,158445.0472,"BASHAW, WALTER ROBERT II",Common Stock
+2024-07-01,COHR,President,SELL,797.0,72.5906,57854.708199999994,"BASHAW, WALTER ROBERT II",Common Stock
+2024-08-01,COHR,President,SELL,400.0,68.9425,27577.0,"BASHAW, WALTER ROBERT II",Common Stock
+2024-08-01,COHR,President,SELL,200.0,69.765,13953.0,"BASHAW, WALTER ROBERT II",Common Stock
+2024-08-01,COHR,President,SELL,700.0,67.2129,47049.030000000006,"BASHAW, WALTER ROBERT II",Common Stock
+2024-08-01,COHR,President,SELL,1700.0,65.556,111445.2,"BASHAW, WALTER ROBERT II",Common Stock
+2024-08-15,COHR,Chief Innovation Officer,SELL,1500.0,70.852,106278.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2024-08-15,COHR,Chief Innovation Officer,SELL,500.0,71.476,35738.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2024-09-03,COHR,"Director, CEO & President",BUY,500.0,73.37,36685.0,"ANDERSON, JAMES ROBERT",Common Stock
+2024-09-10,COHR,"Director, CEO & President",BUY,500.0,70.55,35275.0,"ANDERSON, JAMES ROBERT",Common Stock
+2024-09-13,COHR,Chief Legal & Compliance Off.,SELL,4741.0,77.9151,369395.4891,"BASSO, RONALD",Common Stock
+2024-09-13,COHR,Director,BUY,8970.0,17.84,160024.8,"CORASANTI, JOSEPH J",Common Stock
+2024-09-13,COHR,Director,SELL,8970.0,77.3885,694174.845,"CORASANTI, JOSEPH J",Common Stock
+2024-10-01,COHR,Chief Innovation Officer,SELL,1899.0,91.35,173473.65,"KOEPPEN, CHRISTOPHER",Common Stock
+2024-10-11,COHR,Chief Financial Officer,BUY,79056.0,70.55,5577400.8,"LUTHER, SHERRI R",Common Stock
+2024-11-13,COHR,Director,SELL,2000.0,104.0,208000.0,"PATRICK, ELIZABETH",Common Stock
+2024-11-13,COHR,Director,SELL,3542.0,105.0,371910.0,"PATRICK, ELIZABETH",Common Stock
+2024-11-14,COHR,Chief Innovation Officer,SELL,4176.0,103.18,430879.68000000005,"KOEPPEN, CHRISTOPHER",Common Stock
+2024-11-14,COHR,Chief Innovation Officer,BUY,1380.0,49.9,68862.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2024-11-14,COHR,Chief Innovation Officer,BUY,1740.0,35.25,61335.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2024-11-15,COHR,Chief Innovation Officer,SELL,400.0,92.865,37146.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2024-11-15,COHR,Chief Innovation Officer,SELL,500.0,94.192,47096.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2024-11-15,COHR,Chief Innovation Officer,SELL,692.0,95.2809,65934.3828,"KOEPPEN, CHRISTOPHER",Common Stock
+2024-11-15,COHR,Chief Innovation Officer,SELL,308.0,96.7286,29792.4088,"KOEPPEN, CHRISTOPHER",Common Stock
+2024-11-15,COHR,Chief Innovation Officer,SELL,100.0,98.03,9803.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2024-11-22,COHR,Chief Innovation Officer,SELL,2248.0,105.0047,236050.5656,"KOEPPEN, CHRISTOPHER",Common Stock
+2024-11-22,COHR,"Director, CEO & President",BUY,500.0,103.9771,51988.549999999996,"ANDERSON, JAMES ROBERT",Common Stock
+2024-11-26,COHR,Director,SELL,9240.0,101.2902,935921.448,"CORASANTI, JOSEPH J",Common Stock
+2024-11-26,COHR,Director,BUY,9240.0,21.67,200230.80000000002,"CORASANTI, JOSEPH J",Common Stock
+2024-12-02,COHR,"Director, CEO & President",BUY,500.0,102.72,51360.0,"ANDERSON, JAMES ROBERT",Common Stock
+2024-12-03,COHR,Director,SELL,970.0,106.0,102820.0,"XIA, HOWARD H.",Common Stock
+2024-12-03,COHR,Director,BUY,970.0,17.84,17304.8,"XIA, HOWARD H.",Common Stock
+2024-12-03,COHR,Chief Innovation Officer,SELL,2590.0,107.0,277130.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2024-12-04,COHR,Director,BUY,2000.0,17.84,35680.0,"XIA, HOWARD H.",Common Stock
+2024-12-04,COHR,Director,SELL,1000.0,112.0,112000.0,"XIA, HOWARD H.",Common Stock
+2024-12-04,COHR,Director,SELL,1000.0,109.45,109450.0,"XIA, HOWARD H.",Common Stock
+2024-12-16,COHR,Chief Innovation Officer,SELL,2916.0,108.84,317377.44,"KOEPPEN, CHRISTOPHER",Common Stock
+2025-05-09,COHR,Director,SELL,1000.0,72.685,72685.0,"XIA, HOWARD H.",Common Stock
+2025-05-09,COHR,Director,BUY,1000.0,17.84,17840.0,"XIA, HOWARD H.",Common Stock
+2025-05-12,COHR,Director,SELL,1000.0,78.0,78000.0,"XIA, HOWARD H.",Common Stock
+2025-05-12,COHR,Director,BUY,2000.0,17.84,35680.0,"XIA, HOWARD H.",Common Stock
+2025-05-12,COHR,Director,SELL,1000.0,76.84,76840.0,"XIA, HOWARD H.",Common Stock
+2025-05-13,COHR,EVP of Aerospace & Defense,SELL,2581.0,80.0,206480.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2025-05-13,COHR,EVP of Aerospace & Defense,BUY,6154.0,36.56,224990.24000000002,"KOEPPEN, CHRISTOPHER",Common Stock
+2025-05-13,COHR,EVP of Aerospace & Defense,SELL,6154.0,80.0,492320.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2025-05-13,COHR,EVP of Aerospace & Defense,SELL,2545.0,80.0,203600.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2025-05-21,COHR,Director,BUY,1000.0,17.84,17840.0,"XIA, HOWARD H.",Common Stock
+2025-05-21,COHR,Director,SELL,1000.0,81.0,81000.0,"XIA, HOWARD H.",Common Stock
+2025-05-28,COHR,Director,SELL,1200.0,79.6477,95577.24,"NEAL-GRAVES, LISA",Common Stock
+2025-06-03,COHR,Director,BUY,9240.0,21.67,200230.80000000002,"SADASIVAM, SHAKER",Common Stock
+2025-06-03,COHR,"Director, CEO & President",SELL,25836.0,76.78,1983688.08,"ANDERSON, JAMES ROBERT",Common Stock
+2025-06-03,COHR,Director,BUY,5700.0,35.25,200925.0,"SADASIVAM, SHAKER",Common Stock
+2025-06-03,COHR,Director,BUY,5812.0,36.56,212486.72,"SADASIVAM, SHAKER",Common Stock
+2025-06-03,COHR,Director,BUY,4020.0,49.9,200598.0,"SADASIVAM, SHAKER",Common Stock
+2025-06-03,COHR,Director,SELL,29292.0,80.0,2343360.0,"SADASIVAM, SHAKER",Common Stock
+2025-06-11,COHR,Director,BUY,1000.0,17.84,17840.0,"XIA, HOWARD H.",Common Stock
+2025-06-11,COHR,Director,SELL,1000.0,83.0,83000.0,"XIA, HOWARD H.",Common Stock
+2025-06-16,COHR,Director,SELL,1000.0,80.88,80880.0,"XIA, HOWARD H.",Common Stock
+2025-06-16,COHR,Director,BUY,1000.0,17.84,17840.0,"XIA, HOWARD H.",Common Stock
+2025-07-16,COHR,EVP of Aerospace & Defense,SELL,1162.0,96.9079,112606.9798,"KOEPPEN, CHRISTOPHER",Common Stock
+2025-07-16,COHR,EVP of Aerospace & Defense,SELL,1196.0,97.8001,116968.9196,"KOEPPEN, CHRISTOPHER",Common Stock
+2025-07-16,COHR,EVP of Aerospace & Defense,SELL,500.0,94.594,47297.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2025-07-16,COHR,EVP of Aerospace & Defense,SELL,2600.0,95.9857,249562.81999999998,"KOEPPEN, CHRISTOPHER",Common Stock
+2025-07-17,COHR,EVP of Aerospace & Defense,SELL,3100.0,100.0,310000.0,"KOEPPEN, CHRISTOPHER",Common Stock
+2025-08-13,COHR,Director,SELL,2000.0,122.23,244460.0,"SKAGGS, STEPHEN A",Common Stock
+2025-08-28,COHR,"EVP, General Management",SELL,20812.0,90.71,1887856.5199999998,"BARBAROSSA, GIOVANNI",Common Stock
+2025-08-28,COHR,"SVP, Finance",SELL,1012.0,90.71,91798.51999999999,"MOCCIARO, ILARIA",Common Stock
+2025-08-28,COHR,"EVP, Engineering",SELL,6685.0,90.71,606396.35,"ENG, JULIE SHERIDAN",Common Stock
+2025-08-29,COHR,"EVP, Engineering",SELL,5328.0,90.36,481438.08,"ENG, JULIE SHERIDAN",Common Stock
+2025-08-29,COHR,"EVP, Engineering",SELL,1308.0,91.06,119106.48,"ENG, JULIE SHERIDAN",Common Stock
+2025-08-29,COHR,"EVP, Engineering",SELL,300.0,92.66,27798.0,"ENG, JULIE SHERIDAN",Common Stock
+2025-08-29,COHR,"EVP, Engineering",SELL,200.0,93.54,18708.0,"ENG, JULIE SHERIDAN",Common Stock
+2025-10-11,COHR,Chief Financial Officer,SELL,18558.0,111.1,2061793.7999999998,"LUTHER, SHERRI R",Common Stock
+2025-10-21,COHR,"EVP, Legal",SELL,5618.0,120.2,675283.6,"BEARD, ROBERT P",Common Stock
+2025-10-24,COHR,Director,SELL,2000.0,130.0,260000.0,"SKAGGS, STEPHEN A",Common Stock
+2025-10-29,COHR,"EVP, General Management",BUY,14640.0,35.25,516060.0,"BARBAROSSA, GIOVANNI",Common Stock
+2025-10-29,COHR,Director,SELL,2000.0,140.0,280000.0,"SKAGGS, STEPHEN A",Common Stock
+2025-10-29,COHR,"EVP, General Management",BUY,17760.0,49.9,886224.0,"BARBAROSSA, GIOVANNI",Common Stock
+2025-10-29,COHR,"EVP, General Management",SELL,47751.0,140.4618,6707191.411800001,"BARBAROSSA, GIOVANNI",Common Stock
+2025-10-29,COHR,"EVP, General Management",BUY,27080.0,36.56,990044.8,"BARBAROSSA, GIOVANNI",Common Stock
+2025-10-29,COHR,"EVP, General Management",SELL,11729.0,141.1017,1654981.8392999999,"BARBAROSSA, GIOVANNI",Common Stock
+2025-11-06,COHR,"EVP, General Management",SELL,60706.0,160.0,9712960.0,"BARBAROSSA, GIOVANNI",Common Stock
+2025-11-07,COHR,Director,BUY,5700.0,35.25,200925.0,"CORASANTI, JOSEPH J",Common Stock
+2025-11-07,COHR,Director,BUY,4020.0,49.9,200598.0,"CORASANTI, JOSEPH J",Common Stock
+2025-11-07,COHR,Director,SELL,9720.0,151.2489,1470139.308,"CORASANTI, JOSEPH J",Common Stock
+2025-11-07,COHR,10% Owner,SELL,7500000.0,143.37,1075275000.0,"BAIN, CAPITAL INVESTORS LLC",Common Stock
+2025-11-14,COHR,Director,SELL,11570.0,144.875,1676203.75,"DREYER, MICHAEL L",Common Stock
+2025-11-20,COHR,Director,SELL,2000.0,150.0,300000.0,"SKAGGS, STEPHEN A",Common Stock
+2025-11-21,COHR,Director,SELL,2831.0,134.85,381760.35,"DIGIROLOMO, ENRICO",Common Stock
+2025-11-28,COHR,Director,SELL,1000.0,158.36,158360.0,"XIA, HOWARD H.",Common Stock
+2025-11-28,COHR,Director,BUY,1000.0,21.67,21670.0,"XIA, HOWARD H.",Common Stock
+2025-12-01,COHR,"SVP, Finance",SELL,1377.0,162.71,224051.67,"MOCCIARO, ILARIA",Common Stock
+2025-12-02,COHR,Director,BUY,2000.0,21.67,43340.0,"XIA, HOWARD H.",Common Stock
+2025-12-02,COHR,Director,SELL,1000.0,168.0,168000.0,"XIA, HOWARD H.",Common Stock
+2025-12-02,COHR,Director,SELL,1000.0,172.0,172000.0,"XIA, HOWARD H.",Common Stock
+2025-12-03,COHR,Director,SELL,2000.0,164.5111,329022.2,"STERLING, MICHELLE M",Common Stock
+2025-12-10,COHR,Director,SELL,15000.0,196.74,2951100.0,"CORASANTI, JOSEPH J",Common Stock

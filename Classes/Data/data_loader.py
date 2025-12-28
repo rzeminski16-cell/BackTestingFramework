@@ -1,10 +1,65 @@
 """
 Data loading functionality for CSV files.
+
+All indicators and data columns are expected to be pre-calculated in the raw data.
+This module enforces strict validation - if a required column is missing, a clear
+error is raised to inform the user which columns need to be added to their data.
 """
 import pandas as pd
 from pathlib import Path
-from typing import List, Optional, Dict
+from typing import List, Optional, Dict, Set
 from datetime import datetime
+
+
+class MissingColumnError(ValueError):
+    """
+    Error raised when required columns are missing from raw data.
+
+    This error provides clear feedback about which columns are missing
+    and which columns are available, helping users understand what
+    data they need to collect.
+    """
+
+    def __init__(self, symbol: str, missing_columns: List[str], available_columns: List[str]):
+        self.symbol = symbol
+        self.missing_columns = sorted(missing_columns)
+        self.available_columns = sorted(available_columns)
+
+        message = self._format_error_message()
+        super().__init__(message)
+
+    def _format_error_message(self) -> str:
+        """Format a clear, actionable error message."""
+        lines = [
+            f"\n{'='*60}",
+            f"MISSING REQUIRED COLUMNS FOR {self.symbol}",
+            f"{'='*60}",
+            "",
+            "The following columns are required but not found in the raw data:",
+        ]
+
+        for col in self.missing_columns:
+            lines.append(f"  ❌ {col}")
+
+        lines.extend([
+            "",
+            "ACTION REQUIRED:",
+            "  1. Re-run data collection with the missing indicators enabled",
+            "  2. Or update your strategy to only use available columns",
+            "",
+            f"Available columns in {self.symbol}:",
+        ])
+
+        # Group available columns for readability
+        for col in self.available_columns[:20]:  # Show first 20
+            lines.append(f"  ✓ {col}")
+
+        if len(self.available_columns) > 20:
+            lines.append(f"  ... and {len(self.available_columns) - 20} more columns")
+
+        lines.append(f"{'='*60}\n")
+
+        return "\n".join(lines)
 
 
 class DataLoader:
@@ -59,13 +114,14 @@ class DataLoader:
             df.sort_values('date', inplace=True)
             df.reset_index(drop=True, inplace=True)
 
-        # Check for required columns
+        # Check for required columns - raise clear error if any are missing
         if required_columns:
             missing = set(required_columns) - set(df.columns)
             if missing:
-                raise ValueError(
-                    f"Missing required columns for {symbol}: {sorted(missing)}\n"
-                    f"Available: {sorted(df.columns.tolist())}"
+                raise MissingColumnError(
+                    symbol=symbol,
+                    missing_columns=list(missing),
+                    available_columns=df.columns.tolist()
                 )
 
         # Drop rows with NaN in required columns
@@ -75,31 +131,54 @@ class DataLoader:
         return df
 
     def load_multiple(self, symbols: List[str],
-                     required_columns: Optional[List[str]] = None) -> Dict[str, pd.DataFrame]:
+                     required_columns: Optional[List[str]] = None,
+                     strict: bool = True) -> Dict[str, pd.DataFrame]:
         """
         Load CSV files for multiple symbols.
 
         Args:
             symbols: List of security symbols
             required_columns: Optional list of required columns
+            strict: If True, raise error on first missing column. If False, skip and warn.
 
         Returns:
             Dictionary mapping symbol to DataFrame
+
+        Raises:
+            MissingColumnError: If strict=True and required columns are missing
+            FileNotFoundError: If a symbol's CSV file is not found
         """
         data = {}
         errors = []
+        missing_column_errors = []
 
         for symbol in symbols:
             try:
                 df = self.load_csv(symbol, required_columns)
                 data[symbol] = df
-            except (FileNotFoundError, ValueError) as e:
+            except MissingColumnError as e:
+                if strict:
+                    # In strict mode, immediately raise the error
+                    raise
+                missing_column_errors.append(e)
+                errors.append(f"{symbol}: Missing columns - {e.missing_columns}")
+            except FileNotFoundError as e:
+                errors.append(f"{symbol}: File not found")
+            except Exception as e:
                 errors.append(f"{symbol}: {str(e)}")
 
         if errors:
-            print(f"Warning: Failed to load {len(errors)} symbols:")
+            print(f"\n⚠️  WARNING: Failed to load {len(errors)} symbols:")
             for error in errors:
                 print(f"  - {error}")
+
+            if missing_column_errors:
+                print("\n📋 MISSING COLUMN SUMMARY:")
+                all_missing = set()
+                for e in missing_column_errors:
+                    all_missing.update(e.missing_columns)
+                print(f"  Columns needed: {sorted(all_missing)}")
+                print("  Re-run data collection with these indicators enabled.\n")
 
         return data
 

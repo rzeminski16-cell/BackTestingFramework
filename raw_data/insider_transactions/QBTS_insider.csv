@@ -1,0 +1,177 @@
+date,symbol,insider_title,transaction_type,shares,price,value,executive,security_type
+2022-08-10,QBTS,10% Owner,SELL,19100.0,12.0128,229444.48,"GOLDMAN, SACHS GROUP INC","Common Stock, par value $0.0001 per share"
+2022-08-10,QBTS,10% Owner,SELL,500.0,12.0,6000.0,"GOLDMAN, SACHS GROUP INC","Common Stock, par value $0.0001 per share"
+2022-08-10,QBTS,10% Owner,BUY,19100.0,12.0128,229444.48,"GOLDMAN, SACHS GROUP INC","Common Stock, par value $0.0001 per share"
+2022-08-10,QBTS,10% Owner,BUY,500.0,12.0,6000.0,"GOLDMAN, SACHS GROUP INC","Common Stock, par value $0.0001 per share"
+2022-08-11,QBTS,10% Owner,SELL,1.0,12.1,12.1,"GOLDMAN, SACHS GROUP INC","Common Stock, par value $0.0001 per share"
+2022-08-11,QBTS,10% Owner,SELL,54.0,11.79,636.66,"GOLDMAN, SACHS GROUP INC","Common Stock, par value $0.0001 per share"
+2022-08-11,QBTS,10% Owner,BUY,54.0,11.79,636.66,"GOLDMAN, SACHS GROUP INC","Common Stock, par value $0.0001 per share"
+2022-08-11,QBTS,10% Owner,BUY,1.0,12.1,12.1,"GOLDMAN, SACHS GROUP INC","Common Stock, par value $0.0001 per share"
+2022-08-12,QBTS,10% Owner,BUY,13.0,11.36,147.68,"GOLDMAN, SACHS GROUP INC","Common Stock, par value $0.0001 per share"
+2022-08-12,QBTS,10% Owner,SELL,13.0,11.36,147.68,"GOLDMAN, SACHS GROUP INC","Common Stock, par value $0.0001 per share"
+2022-08-12,QBTS,10% Owner,BUY,24.0,11.14,267.36,"GOLDMAN, SACHS GROUP INC","Common Stock, par value $0.0001 per share"
+2022-08-12,QBTS,10% Owner,SELL,24.0,11.14,267.36,"GOLDMAN, SACHS GROUP INC","Common Stock, par value $0.0001 per share"
+2022-08-16,QBTS,10% Owner,SELL,100.0,10.45,1045.0,"GOLDMAN, SACHS GROUP INC","Common Stock, par value $0.0001 per share"
+2022-08-16,QBTS,10% Owner,BUY,100.0,10.45,1045.0,"GOLDMAN, SACHS GROUP INC","Common Stock, par value $0.0001 per share"
+2022-08-19,QBTS,10% Owner,SELL,29.0,8.95,259.54999999999995,"GOLDMAN, SACHS GROUP INC","Common Stock, par value $0.0001 per share"
+2022-08-19,QBTS,10% Owner,BUY,29.0,8.95,259.54999999999995,"GOLDMAN, SACHS GROUP INC","Common Stock, par value $0.0001 per share"
+2022-08-23,QBTS,10% Owner,BUY,100.0,8.05,805.0000000000001,"GOLDMAN, SACHS GROUP INC","Common Stock, par value $0.0001 per share"
+2022-08-23,QBTS,10% Owner,SELL,100.0,8.05,805.0000000000001,"GOLDMAN, SACHS GROUP INC","Common Stock, par value $0.0001 per share"
+2022-08-24,QBTS,10% Owner,SELL,14.0,8.88,124.32000000000001,"GOLDMAN, SACHS GROUP INC","Common Stock, par value $0.0001 per share"
+2022-08-24,QBTS,10% Owner,BUY,14.0,8.88,124.32000000000001,"GOLDMAN, SACHS GROUP INC","Common Stock, par value $0.0001 per share"
+2022-08-31,QBTS,10% Owner,SELL,64.0,6.39,408.96,"GOLDMAN, SACHS GROUP INC","Common Stock, par value $0.0001 per share"
+2022-08-31,QBTS,10% Owner,BUY,64.0,7.01,448.64,"GOLDMAN, SACHS GROUP INC","Common Stock, par value $0.0001 per share"
+2022-08-31,QBTS,10% Owner,SELL,64.0,6.68,427.52,"GOLDMAN, SACHS GROUP INC","Common Stock, par value $0.0001 per share"
+2022-08-31,QBTS,10% Owner,BUY,64.0,6.68,427.52,"GOLDMAN, SACHS GROUP INC","Common Stock, par value $0.0001 per share"
+2022-09-02,QBTS,10% Owner,BUY,51.0,6.165,314.415,"GOLDMAN, SACHS GROUP INC","Common Stock, par value $0.0001 per share"
+2022-09-02,QBTS,10% Owner,BUY,102.0,6.2194,634.3788000000001,"GOLDMAN, SACHS GROUP INC","Common Stock, par value $0.0001 per share"
+2022-09-02,QBTS,10% Owner,BUY,255.0,6.2967,1605.6585,"GOLDMAN, SACHS GROUP INC","Common Stock, par value $0.0001 per share"
+2022-09-02,QBTS,10% Owner,BUY,222.0,6.1348,1361.9256,"GOLDMAN, SACHS GROUP INC","Common Stock, par value $0.0001 per share"
+2022-11-17,QBTS,Director,BUY,25000.0,2.55,63749.99999999999,"WEST, STEVEN M","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2022-12-13,QBTS,10% Owner,SELL,6366.0,0.1393,886.7838,"GOLDMAN, SACHS GROUP INC",Warrants
+2022-12-13,QBTS,10% Owner,BUY,6366.0,0.1393,886.7838,"GOLDMAN, SACHS GROUP INC",Warrants
+2023-06-09,QBTS,See Remarks,SELL,15000.0,2.39,35850.0,"BRYDON, VICTORIA","Common Stock, par value $0.0001 per share"
+2023-06-09,QBTS,See Remarks,BUY,15000.0,0.91,13650.0,"BRYDON, VICTORIA","Common Stock, par value $0.0001 per share"
+2023-06-15,QBTS,Director,SELL,29021.0,1.857,53891.997,"MICHAEL, EMIL","Common Stock, par value $0.0001 per share"
+2023-10-16,QBTS,General Counsel,SELL,22855.0,1.0,22855.0,"NGUYEN, DIANE","Common Stock, par value $0.0001 per share"
+2023-10-30,QBTS,Chief Financial Officer,SELL,115500.0,0.66,76230.0,"MARKOVICH, JOHN M.","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2023-10-30,QBTS,Chief People Officer,SELL,54461.0,0.66,35944.26,"BRYDON, VICTORIA","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2023-10-30,QBTS,"Director, President & CEO",SELL,462500.0,0.66,305250.0,"BARATZ, ALAN E","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2024-03-27,QBTS,General Counsel,SELL,5986.0,1.95,11672.699999999999,"NGUYEN, DIANE","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2024-03-27,QBTS,Chief Financial Officer,SELL,13925.0,1.95,27153.75,"MARKOVICH, JOHN M.","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2024-03-27,QBTS,"Director, President & CEO",SELL,29513.0,1.95,57550.35,"BARATZ, ALAN E","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2024-05-31,QBTS,General Counsel,SELL,9838.0,1.37,13478.060000000001,"NGUYEN, DIANE","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2024-05-31,QBTS,Director,SELL,8411.0,0.1716,1443.3276,"MICHAEL, EMIL",Warrants
+2024-05-31,QBTS,Director,SELL,36353.0,1.3033,47378.86489999999,"MICHAEL, EMIL","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2024-06-03,QBTS,Director,SELL,55983.0,0.1532,8576.5956,"MICHAEL, EMIL",Warrants
+2024-06-03,QBTS,Director,SELL,25675.0,1.3539,34761.3825,"MICHAEL, EMIL",Common Stock
+2024-06-04,QBTS,Director,SELL,36056.0,0.1433,5166.8248,"MICHAEL, EMIL",Warrants
+2024-06-04,QBTS,Director,SELL,49910.0,1.26,62886.6,"MICHAEL, EMIL",Common Stock
+2024-06-05,QBTS,Director,SELL,41216.0,0.1435,5914.495999999999,"MICHAEL, EMIL",Warrants
+2024-06-06,QBTS,Director,SELL,78552.0,0.1386,10887.3072,"MICHAEL, EMIL",Warrants
+2024-06-06,QBTS,Director,SELL,2310.0,0.1421,328.25100000000003,"MICHAEL, EMIL",Warrants
+2024-06-07,QBTS,Director,SELL,15665.0,0.139,2177.4350000000004,"MICHAEL, EMIL",Warrants
+2024-06-10,QBTS,Director,SELL,46053.0,0.1213,5586.2289,"MICHAEL, EMIL",Warrants
+2024-06-13,QBTS,Director,SELL,2424648.0,0.04,96985.92,"MICHAEL, EMIL",Warrants
+2024-07-22,QBTS,Chief Financial Officer,SELL,3482.0,1.02,3551.64,"MARKOVICH, JOHN M.","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2024-07-22,QBTS,"Director, President & CEO",SELL,7379.0,1.02,7526.58,"BARATZ, ALAN E","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2024-07-22,QBTS,General Counsel,SELL,2100.0,1.02,2142.0,"NGUYEN, DIANE","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2024-08-21,QBTS,General Counsel,SELL,2460.0,0.9266,2279.436,"NGUYEN, DIANE","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2024-10-21,QBTS,Chief Financial Officer,SELL,3044.0,1.17,3561.4799999999996,"MARKOVICH, JOHN M.","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2024-10-21,QBTS,General Counsel,SELL,18360.0,1.17,21481.199999999997,"NGUYEN, DIANE","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2024-10-21,QBTS,"Director, President & CEO",SELL,7379.0,1.17,8633.43,"BARATZ, ALAN E","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2024-10-21,QBTS,General Counsel,SELL,2100.0,1.17,2457.0,"NGUYEN, DIANE","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2024-12-04,QBTS,"Director, President & CEO",SELL,147563.0,2.76,407273.87999999995,"BARATZ, ALAN E","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2024-12-04,QBTS,"Director, President & CEO",SELL,196750.0,2.76,543030.0,"BARATZ, ALAN E","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2024-12-04,QBTS,General Counsel,SELL,2460.0,2.76,6789.599999999999,"NGUYEN, DIANE","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2024-12-04,QBTS,Chief Financial Officer,SELL,86079.0,2.76,237578.03999999998,"MARKOVICH, JOHN M.","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2024-12-10,QBTS,10% Owner,SELL,643866.0,4.868,3134339.688,"PUBLIC, SECTOR PENSION INVESTMENT BOARD",Common Stock
+2024-12-11,QBTS,10% Owner,SELL,8420425.0,4.2476,35766597.230000004,"PUBLIC, SECTOR PENSION INVESTMENT BOARD",Common Stock
+2024-12-11,QBTS,10% Owner,SELL,872175.0,5.012,4371341.1,"PUBLIC, SECTOR PENSION INVESTMENT BOARD",Common Stock
+2024-12-12,QBTS,10% Owner,SELL,8437593.0,4.207,35496953.751,"PUBLIC, SECTOR PENSION INVESTMENT BOARD",Common Stock
+2024-12-20,QBTS,10% Owner,SELL,1000000.0,6.6782,6678200.0,"PUBLIC, SECTOR PENSION INVESTMENT BOARD",Common Stock
+2025-01-10,QBTS,10% Owner,SELL,2778564.0,6.1449,17073997.9236,"PUBLIC, SECTOR PENSION INVESTMENT BOARD",Common Stock
+2025-01-13,QBTS,10% Owner,SELL,898580.0,4.7722,4288203.476,"PUBLIC, SECTOR PENSION INVESTMENT BOARD",Common Stock
+2025-01-13,QBTS,10% Owner,SELL,6380108.0,3.9681,25316906.5548,"PUBLIC, SECTOR PENSION INVESTMENT BOARD",Common Stock
+2025-01-14,QBTS,10% Owner,SELL,9500000.0,4.5131,42874450.0,"PUBLIC, SECTOR PENSION INVESTMENT BOARD",Common Stock
+2025-01-14,QBTS,10% Owner,SELL,115306.0,5.0762,585316.3172,"PUBLIC, SECTOR PENSION INVESTMENT BOARD",Common Stock
+2025-01-23,QBTS,"Director, President & CEO",SELL,8372.0,5.27,44120.439999999995,"BARATZ, ALAN E","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-01-23,QBTS,General Counsel,SELL,2383.0,5.27,12558.41,"NGUYEN, DIANE","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-01-23,QBTS,Chief Financial Officer,SELL,5582.0,5.27,29417.14,"MARKOVICH, JOHN M.","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-02-10,QBTS,General Counsel,SELL,2791.0,5.99,16718.09,"NGUYEN, DIANE","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-04-22,QBTS,General Counsel,SELL,9969.0,6.42,64000.979999999996,"NGUYEN, DIANE","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-04-22,QBTS,"Director, President & CEO",SELL,36890.0,6.42,236833.8,"BARATZ, ALAN E","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-04-22,QBTS,Chief Financial Officer,SELL,19674.0,6.42,126307.08,"MARKOVICH, JOHN M.","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-05-20,QBTS,"Director, President & CEO",SELL,19023.0,13.15,250152.45,"BARATZ, ALAN E","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-05-20,QBTS,General Counsel,SELL,2459.0,13.15,32335.850000000002,"NGUYEN, DIANE","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-05-21,QBTS,Director,SELL,223008.0,0.91,202937.28,"WEST, STEVEN M",Stock Option (right to buy)
+2025-05-21,QBTS,Director,SELL,15675.0,16.583,259938.52499999997,"BISCAY, ROGER","Common Stock, par value $0.0001 per share"
+2025-05-21,QBTS,Chief Financial Officer,BUY,502702.0,0.92,462485.84,"MARKOVICH, JOHN M.","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-05-21,QBTS,Chief Financial Officer,SELL,200000.0,16.85,3370000.0000000005,"MARKOVICH, JOHN M.","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-05-21,QBTS,Chief Financial Officer,SELL,502702.0,0.92,462485.84,"MARKOVICH, JOHN M.",Stock Option (right to buy)
+2025-05-21,QBTS,Director,BUY,88965.0,0.92,81847.8,"WEST, STEVEN M","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-05-21,QBTS,Director,BUY,223008.0,0.91,202937.28,"WEST, STEVEN M","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-05-21,QBTS,Director,SELL,311973.0,16.504,5148802.392,"WEST, STEVEN M","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-05-21,QBTS,Director,SELL,88965.0,0.92,81847.8,"WEST, STEVEN M",Stock Option (right to buy)
+2025-05-21,QBTS,"Director, President & CEO",SELL,845813.0,0.91,769689.8300000001,"BARATZ, ALAN E",Stock Option (right to buy)
+2025-05-21,QBTS,"Director, President & CEO",BUY,845813.0,0.91,769689.8300000001,"BARATZ, ALAN E","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-05-21,QBTS,"Director, President & CEO",SELL,845813.0,17.0,14378821.0,"BARATZ, ALAN E","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-05-21,QBTS,Chief Financial Officer,SELL,200000.0,17.75,3550000.0,"MARKOVICH, JOHN M.","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-05-22,QBTS,Director,SELL,96521.0,17.859,1723768.539,"BISCAY, ROGER","Common Stock, par value $0.0001 per share"
+2025-05-23,QBTS,General Counsel,BUY,51155.0,0.92,47062.6,"NGUYEN, DIANE","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-05-23,QBTS,General Counsel,SELL,16592.0,0.91,15098.720000000001,"NGUYEN, DIANE",Stock Option (right to buy)
+2025-05-23,QBTS,General Counsel,SELL,51155.0,0.92,47062.6,"NGUYEN, DIANE",Stock Option (right to buy)
+2025-05-23,QBTS,General Counsel,SELL,15419.0,2.1,32379.9,"NGUYEN, DIANE",Stock Option (right to buy)
+2025-05-23,QBTS,General Counsel,BUY,16592.0,0.91,15098.720000000001,"NGUYEN, DIANE","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-05-23,QBTS,General Counsel,SELL,83166.0,18.767,1560776.322,"NGUYEN, DIANE","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-05-23,QBTS,General Counsel,SELL,2596.0,18.982,49277.272,"NGUYEN, DIANE","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-05-23,QBTS,General Counsel,BUY,15419.0,2.1,32379.9,"NGUYEN, DIANE","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-05-23,QBTS,General Counsel,BUY,58255.0,0.846,49283.729999999996,"NGUYEN, DIANE","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-05-23,QBTS,General Counsel,SELL,58255.0,0.846,49283.729999999996,"NGUYEN, DIANE",Stock Option (right to buy)
+2025-06-12,QBTS,Director,SELL,43517.0,16.805,731303.1849999999,"GHAI, ROHIT","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-06-12,QBTS,Director,SELL,20000.0,16.204,324080.0,"DILULLO, JOHN D","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-06-12,QBTS,Director,SELL,106626.0,16.847,1796328.222,"BISCAY, ROGER","Common Stock, par value $0.0001 per share"
+2025-06-12,QBTS,Director,SELL,58644.0,16.214,950853.8159999999,"NIELSEN, KIRSTJEN","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-06-13,QBTS,Director,SELL,22000.0,15.121,332662.0,"DILULLO, JOHN D","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-06-16,QBTS,Director,SELL,15000.0,16.404,246060.0,"DILULLO, JOHN D","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-06-16,QBTS,Director,SELL,13000.0,16.04,208520.0,"NIELSEN, KIRSTJEN","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-06-20,QBTS,General Counsel,SELL,2501.0,15.71,39290.71,"NGUYEN, DIANE","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-06-20,QBTS,Chief Financial Officer,SELL,10584.0,15.71,166274.64,"MARKOVICH, JOHN M.","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-07-21,QBTS,General Counsel,SELL,4066.0,18.89,76806.74,"NGUYEN, DIANE","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-07-21,QBTS,"Director, President & CEO",SELL,33778.0,18.89,638066.42,"BARATZ, ALAN E","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-07-21,QBTS,Chief Financial Officer,SELL,8607.0,18.89,162586.23,"MARKOVICH, JOHN M.","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-08-12,QBTS,Chief Financial Officer,BUY,100000.0,0.92,92000.0,"MARKOVICH, JOHN M.","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-08-12,QBTS,Chief Financial Officer,SELL,100000.0,0.92,92000.0,"MARKOVICH, JOHN M.",Stock Option (right to buy)
+2025-08-12,QBTS,Chief Financial Officer,SELL,100000.0,18.0,1800000.0,"MARKOVICH, JOHN M.","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-08-13,QBTS,"EVP, Chief Legal Officer & GC",SELL,4626.0,18.54,85766.04,"NGUYEN, DIANE","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-08-13,QBTS,"EVP, Chief Legal Officer & GC",SELL,40831.0,2.1,85745.1,"NGUYEN, DIANE",Stock Option (right to buy)
+2025-08-13,QBTS,"EVP, Chief Legal Officer & GC",SELL,2224.0,0.92,2046.0800000000002,"NGUYEN, DIANE",Stock Option (right to buy)
+2025-08-13,QBTS,"EVP, Chief Legal Officer & GC",SELL,9118.0,0.91,8297.380000000001,"NGUYEN, DIANE",Stock Option (right to buy)
+2025-08-13,QBTS,"EVP, Chief Legal Officer & GC",SELL,27668.0,0.91,25177.88,"NGUYEN, DIANE",Stock Option (right to buy)
+2025-08-13,QBTS,"EVP, Chief Legal Officer & GC",SELL,39010.0,18.181,709240.81,"NGUYEN, DIANE","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-08-13,QBTS,"EVP, Chief Legal Officer & GC",BUY,40831.0,2.1,85745.1,"NGUYEN, DIANE","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-08-13,QBTS,"EVP, Chief Legal Officer & GC",BUY,9118.0,0.91,8297.380000000001,"NGUYEN, DIANE","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-08-13,QBTS,"EVP, Chief Legal Officer & GC",BUY,27668.0,0.91,25177.88,"NGUYEN, DIANE","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-08-13,QBTS,"EVP, Chief Legal Officer & GC",SELL,25634.0,18.113,464308.642,"NGUYEN, DIANE","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-08-13,QBTS,"EVP, Chief Legal Officer & GC",SELL,2459.0,18.51,45516.090000000004,"NGUYEN, DIANE","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-08-13,QBTS,Director,SELL,25000.0,18.176,454399.99999999994,"WEST, STEVEN M","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-08-13,QBTS,Director,SELL,119000.0,18.06,2149140.0,"WEST, STEVEN M","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-08-13,QBTS,"EVP, Chief Legal Officer & GC",BUY,2224.0,0.92,2046.0800000000002,"NGUYEN, DIANE","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-09-05,QBTS,Chief Financial Officer,BUY,40758.0,0.92,37497.36,"MARKOVICH, JOHN M.","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-09-05,QBTS,Chief Financial Officer,SELL,40758.0,0.92,37497.36,"MARKOVICH, JOHN M.",Stock Option (right to buy)
+2025-09-10,QBTS,Chief Financial Officer,SELL,50000.0,16.3,815000.0,"MARKOVICH, JOHN M.","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-09-11,QBTS,Chief Financial Officer,BUY,100000.0,0.92,92000.0,"MARKOVICH, JOHN M.","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-09-11,QBTS,Chief Financial Officer,SELL,50000.0,16.3,815000.0,"MARKOVICH, JOHN M.","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-09-11,QBTS,Chief Financial Officer,SELL,100000.0,0.92,92000.0,"MARKOVICH, JOHN M.",Stock Option (right to buy)
+2025-09-12,QBTS,Chief Financial Officer,SELL,50000.0,17.5,875000.0,"MARKOVICH, JOHN M.","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-09-12,QBTS,Chief Financial Officer,SELL,50000.0,0.92,46000.0,"MARKOVICH, JOHN M.",Stock Option (right to buy)
+2025-09-12,QBTS,Chief Financial Officer,BUY,50000.0,0.92,46000.0,"MARKOVICH, JOHN M.","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-09-15,QBTS,Director,SELL,10000.0,17.932,179320.0,"GHAI, ROHIT","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-09-15,QBTS,Chief Financial Officer,SELL,10583.0,17.76,187954.08000000002,"MARKOVICH, JOHN M.","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-09-15,QBTS,"EVP, Chief Legal Officer & GC",SELL,2501.0,17.76,44417.76,"NGUYEN, DIANE","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-09-15,QBTS,Director,SELL,8000.0,17.929,143432.0,"DILULLO, JOHN D","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-10-14,QBTS,"EVP, Chief Legal Officer & GC",SELL,20827.0,43.7434,911043.7918,"NGUYEN, DIANE","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-10-14,QBTS,"Director, President & CEO",SELL,31369.0,43.7434,1372186.7146,"BARATZ, ALAN E","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-10-14,QBTS,Chief Financial Officer,SELL,7994.0,43.7434,349684.73960000003,"MARKOVICH, JOHN M.","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-11-11,QBTS,"Director, President & CEO",BUY,806288.0,0.91,733722.0800000001,"BARATZ, ALAN E","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-11-11,QBTS,"Director, President & CEO",SELL,806288.0,28.8686,23276405.7568,"BARATZ, ALAN E","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-11-11,QBTS,"Director, President & CEO",SELL,806288.0,0.91,733722.0800000001,"BARATZ, ALAN E",Stock Option (right to buy)
+2025-11-13,QBTS,"EVP, Chief Legal Officer & GC",SELL,20000.0,23.6641,473282.0,"NGUYEN, DIANE","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-11-13,QBTS,"EVP, Chief Legal Officer & GC",SELL,2803.0,23.1744,64957.843199999996,"NGUYEN, DIANE","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-11-13,QBTS,"Director, President & CEO",SELL,168102.0,23.1744,3895662.9888,"BARATZ, ALAN E","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-11-13,QBTS,Chief Financial Officer,SELL,98060.0,23.1744,2272481.664,"MARKOVICH, JOHN M.","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-11-18,QBTS,Director,BUY,82.0,21.89,1794.98,"WEST, STEVEN M","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-11-20,QBTS,Chief Financial Officer,BUY,200000.0,0.92,184000.0,"MARKOVICH, JOHN M.","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-11-20,QBTS,Chief Financial Officer,SELL,200000.0,22.94,4588000.0,"MARKOVICH, JOHN M.","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-11-20,QBTS,Chief Financial Officer,SELL,200000.0,0.92,184000.0,"MARKOVICH, JOHN M.",Stock Option (right to buy)
+2025-12-03,QBTS,Chief Financial Officer,BUY,100000.0,0.92,92000.0,"MARKOVICH, JOHN M.","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-12-03,QBTS,Chief Financial Officer,SELL,100000.0,25.05,2505000.0,"MARKOVICH, JOHN M.","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-12-03,QBTS,Director,SELL,7000.0,22.62,158340.0,"NIELSEN, KIRSTJEN","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-12-03,QBTS,Chief Financial Officer,SELL,100000.0,0.92,92000.0,"MARKOVICH, JOHN M.",Stock Option (right to buy)
+2025-12-04,QBTS,Chief Financial Officer,SELL,100000.0,0.92,92000.0,"MARKOVICH, JOHN M.",Stock Option (right to buy)
+2025-12-04,QBTS,Chief Financial Officer,BUY,100000.0,0.92,92000.0,"MARKOVICH, JOHN M.","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-12-04,QBTS,Chief Financial Officer,SELL,100000.0,27.56,2756000.0,"MARKOVICH, JOHN M.","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-12-05,QBTS,Director,SELL,8000.0,27.3612,218889.6,"DILULLO, JOHN D","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-12-15,QBTS,Chief Financial Officer,SELL,11562.0,23.8944,276267.0528,"MARKOVICH, JOHN M.","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-12-15,QBTS,"EVP, Chief Legal Officer & GC",SELL,2733.0,23.8944,65303.3952,"NGUYEN, DIANE","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"
+2025-12-15,QBTS,Director,SELL,10000.0,24.2841,242841.0,"GHAI, ROHIT","Common Stock, par value $0.0001 per share (&quot;Common Stock&quot;)"

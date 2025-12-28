@@ -1,5 +1,23 @@
 """
 Base strategy class for defining trading strategies.
+
+IMPORTANT - RAW DATA REQUIREMENTS:
+All technical indicators must be read from pre-calculated raw data files.
+Do NOT implement indicator calculations in strategies - they must come from
+the Alpha Vantage data collection process.
+
+Column Naming Convention (from Alpha Vantage):
+    {indicator}_{period}_{output}
+
+Examples:
+    - atr_14_atr: Average True Range (14-period)
+    - sma_50_sma: Simple Moving Average (50-period)
+    - rsi_14_rsi: Relative Strength Index (14-period)
+    - mfi_14_mfi: Money Flow Index (14-period)
+    - bbands_20_real middle band: Bollinger Bands middle (20-period)
+
+If a required indicator is missing, a MissingColumnError will be raised
+with clear instructions on how to collect the missing data.
 """
 from abc import ABC, abstractmethod
 from typing import List, Dict, Any, Optional
@@ -49,14 +67,27 @@ class BaseStrategy(ABC):
         """
         Return list of required column names from CSV data.
 
+        IMPORTANT: All indicators must be pre-calculated in the raw data.
+        Use the Alpha Vantage column naming convention:
+            {indicator}_{period}_{output}
+
         Must include 'date' and 'close' at minimum.
         Include any indicators needed for the strategy.
 
         Returns:
             List of required column names (lowercase)
 
-        Example:
-            return ['date', 'close', 'sma_50', 'rsi_14']
+        Example (using new Alpha Vantage column names):
+            return [
+                'date', 'open', 'high', 'low', 'close', 'volume',
+                'atr_14_atr',      # Average True Range
+                'sma_50_sma',      # Simple Moving Average
+                'rsi_14_rsi',      # Relative Strength Index
+                'mfi_14_mfi',      # Money Flow Index
+            ]
+
+        If any column is missing from the raw data, a MissingColumnError
+        will be raised with instructions on how to collect the data.
         """
         pass
 
@@ -64,13 +95,21 @@ class BaseStrategy(ABC):
         """
         Pre-calculate custom strategy-specific indicators before backtesting begins.
 
-        STANDARD INDICATORS: All standard indicators (atr_14, ema_50, sma_200, rsi_14,
-        cmf, par_sar, base_bb, upper_bb, lower_bb) are read from raw data with fixed
-        settings and cannot be altered via parameters.
+        STANDARD INDICATORS (read from raw data - DO NOT CALCULATE):
+        All standard indicators must be read from the raw data CSV files.
+        They use the Alpha Vantage naming convention: {indicator}_{period}_{output}
 
-        CUSTOM INDICATORS: Override this method to calculate strategy-specific indicators
-        once using vectorized operations. This is called ONCE before the backtest loop,
-        providing 10-100x speedup for indicator-heavy strategies.
+        Examples of indicators available in raw data:
+        - atr_14_atr: Average True Range
+        - sma_50_sma, sma_200_sma: Simple Moving Averages
+        - ema_12_ema, ema_26_ema: Exponential Moving Averages
+        - rsi_14_rsi: Relative Strength Index
+        - mfi_14_mfi: Money Flow Index
+        - bbands_20_real middle band: Bollinger Bands
+
+        CUSTOM CALCULATIONS: Only override this method if you need to calculate
+        strategy-specific derived values that combine raw data indicators.
+        For example: signal conditions, crossovers, custom thresholds.
 
         ⚠️  CRITICAL - PREVENT LOOK-AHEAD BIAS:
         Only use CAUSAL operations that don't look ahead:
@@ -90,11 +129,12 @@ class BaseStrategy(ABC):
 
         Example (reading standard indicators from raw data):
             def required_columns(self) -> List[str]:
-                return ['date', 'close', 'atr_14', 'ema_50', 'rsi_14']
+                # Use Alpha Vantage column naming: {indicator}_{period}_{output}
+                return ['date', 'close', 'atr_14_atr', 'sma_50_sma', 'rsi_14_rsi']
 
             def generate_signal(self, context: StrategyContext) -> Signal:
-                atr = context.get_indicator_value('atr_14')  # Read from raw data
-                ema = context.get_indicator_value('ema_50')  # Read from raw data
+                atr = context.get_indicator_value('atr_14_atr')  # Read from raw data
+                sma = context.get_indicator_value('sma_50_sma')  # Read from raw data
                 ...
 
         Example (calculating custom indicators - CORRECT):

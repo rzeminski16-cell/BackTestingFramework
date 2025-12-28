@@ -1,0 +1,3468 @@
+API ACTIVITY LOG
+==================================================
+
+[API] 2025-12-28 09:39:34.154907 | GET | INSIDER_TRANSACTIONS
+      Symbol: A
+      Status: 200
+      Response size: 1015361 bytes
+      Cache: MISS
+      Time: 0.68s
+
+[API] 2025-12-28 09:39:35.203983 | GET | INSIDER_TRANSACTIONS
+      Symbol: AAPL
+      Status: 200
+      Response size: 2513676 bytes
+      Cache: MISS
+      Time: 0.80s
+
+[API] 2025-12-28 09:39:35.902573 | GET | INSIDER_TRANSACTIONS
+      Symbol: ABBV
+      Status: 200
+      Response size: 703179 bytes
+      Cache: MISS
+      Time: 0.57s
+
+[API] 2025-12-28 09:39:36.577802 | GET | INSIDER_TRANSACTIONS
+      Symbol: ABNB
+      Status: 200
+      Response size: 788511 bytes
+      Cache: MISS
+      Time: 0.56s
+
+[API] 2025-12-28 09:39:37.640466 | GET | INSIDER_TRANSACTIONS
+      Symbol: ABT
+      Status: 200
+      Response size: 2862853 bytes
+      Cache: MISS
+      Time: 0.80s
+
+[API] 2025-12-28 09:39:37.909947 | GET | INSIDER_TRANSACTIONS
+      Symbol: ABTC
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.17s
+
+[API] 2025-12-28 09:39:38.680298 | GET | INSIDER_TRANSACTIONS
+      Symbol: ACN
+      Status: 200
+      Response size: 1347861 bytes
+      Cache: MISS
+      Time: 0.67s
+
+[API] 2025-12-28 09:39:39.262155 | GET | INSIDER_TRANSACTIONS
+      Symbol: ADBE
+      Status: 200
+      Response size: 2533591 bytes
+      Cache: MISS
+      Time: 0.34s
+
+[API] 2025-12-28 09:39:39.695489 | GET | INSIDER_TRANSACTIONS
+      Symbol: ADI
+      Status: 200
+      Response size: 1724824 bytes
+      Cache: MISS
+      Time: 0.24s
+
+[API] 2025-12-28 09:39:40.082808 | GET | INSIDER_TRANSACTIONS
+      Symbol: ADM
+      Status: 200
+      Response size: 1160342 bytes
+      Cache: MISS
+      Time: 0.24s
+
+[API] 2025-12-28 09:39:40.967696 | GET | INSIDER_TRANSACTIONS
+      Symbol: ADP
+      Status: 200
+      Response size: 1715180 bytes
+      Cache: MISS
+      Time: 0.72s
+
+[API] 2025-12-28 09:39:41.941076 | GET | INSIDER_TRANSACTIONS
+      Symbol: ADSK
+      Status: 200
+      Response size: 1798573 bytes
+      Cache: MISS
+      Time: 0.78s
+
+[API] 2025-12-28 09:39:42.363679 | GET | INSIDER_TRANSACTIONS
+      Symbol: AEE
+      Status: 200
+      Response size: 608191 bytes
+      Cache: MISS
+      Time: 0.34s
+
+[API] 2025-12-28 09:39:43.160751 | GET | INSIDER_TRANSACTIONS
+      Symbol: AEP
+      Status: 200
+      Response size: 996289 bytes
+      Cache: MISS
+      Time: 0.68s
+
+[API] 2025-12-28 09:39:43.940876 | GET | INSIDER_TRANSACTIONS
+      Symbol: AES
+      Status: 200
+      Response size: 919106 bytes
+      Cache: MISS
+      Time: 0.65s
+
+[API] 2025-12-28 09:39:44.732160 | GET | INSIDER_TRANSACTIONS
+      Symbol: AFL
+      Status: 200
+      Response size: 1095191 bytes
+      Cache: MISS
+      Time: 0.70s
+
+[API] 2025-12-28 09:39:45.273092 | GET | INSIDER_TRANSACTIONS
+      Symbol: AI
+      Status: 200
+      Response size: 291706 bytes
+      Cache: MISS
+      Time: 0.45s
+
+[API] 2025-12-28 09:39:46.089375 | GET | INSIDER_TRANSACTIONS
+      Symbol: AIG
+      Status: 200
+      Response size: 1459625 bytes
+      Cache: MISS
+      Time: 0.67s
+
+[API] 2025-12-28 09:39:46.541516 | GET | INSIDER_TRANSACTIONS
+      Symbol: AIT
+      Status: 200
+      Response size: 1434562 bytes
+      Cache: MISS
+      Time: 0.29s
+
+[API] 2025-12-28 09:39:47.208201 | GET | INSIDER_TRANSACTIONS
+      Symbol: AL
+      Status: 200
+      Response size: 446078 bytes
+      Cache: MISS
+      Time: 0.56s
+
+[API] 2025-12-28 09:39:47.426121 | GET | INSIDER_TRANSACTIONS
+      Symbol: ALAB
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.16s
+
+[API] 2025-12-28 09:39:47.905199 | GET | INSIDER_TRANSACTIONS
+      Symbol: ALL
+      Status: 200
+      Response size: 1285099 bytes
+      Cache: MISS
+      Time: 0.38s
+
+[API] 2025-12-28 09:39:48.727667 | GET | INSIDER_TRANSACTIONS
+      Symbol: ALNY
+      Status: 200
+      Response size: 1151452 bytes
+      Cache: MISS
+      Time: 0.66s
+
+[API] 2025-12-28 09:39:49.421969 | GET | INSIDER_TRANSACTIONS
+      Symbol: ALOT
+      Status: 200
+      Response size: 697151 bytes
+      Cache: MISS
+      Time: 0.56s
+
+[API] 2025-12-28 09:39:49.769903 | GET | INSIDER_TRANSACTIONS
+      Symbol: AMAT
+      Status: 200
+      Response size: 464492 bytes
+      Cache: MISS
+      Time: 0.25s
+
+[API] 2025-12-28 09:39:50.753587 | GET | INSIDER_TRANSACTIONS
+      Symbol: AMD
+      Status: 200
+      Response size: 2196624 bytes
+      Cache: MISS
+      Time: 0.78s
+
+[API] 2025-12-28 09:39:51.259137 | GET | INSIDER_TRANSACTIONS
+      Symbol: AME
+      Status: 200
+      Response size: 1480452 bytes
+      Cache: MISS
+      Time: 0.38s
+
+[API] 2025-12-28 09:39:51.905290 | GET | INSIDER_TRANSACTIONS
+      Symbol: AMG
+      Status: 200
+      Response size: 754631 bytes
+      Cache: MISS
+      Time: 0.57s
+
+[API] 2025-12-28 09:39:52.747928 | GET | INSIDER_TRANSACTIONS
+      Symbol: AMGN
+      Status: 200
+      Response size: 1501373 bytes
+      Cache: MISS
+      Time: 0.68s
+
+[API] 2025-12-28 09:39:53.438398 | GET | INSIDER_TRANSACTIONS
+      Symbol: AMKR
+      Status: 200
+      Response size: 789671 bytes
+      Cache: MISS
+      Time: 0.56s
+
+[API] 2025-12-28 09:39:54.086759 | GET | INSIDER_TRANSACTIONS
+      Symbol: AMP
+      Status: 200
+      Response size: 1242892 bytes
+      Cache: MISS
+      Time: 0.51s
+
+[API] 2025-12-28 09:39:54.427024 | GET | INSIDER_TRANSACTIONS
+      Symbol: AMPG
+      Status: 200
+      Response size: 23438 bytes
+      Cache: MISS
+      Time: 0.27s
+
+[API] 2025-12-28 09:39:55.203479 | GET | INSIDER_TRANSACTIONS
+      Symbol: AMT
+      Status: 200
+      Response size: 1503830 bytes
+      Cache: MISS
+      Time: 0.66s
+
+[API] 2025-12-28 09:39:55.244393 | GET | INSIDER_TRANSACTIONS
+      Symbol: AMZN
+      Status: 200
+      Response size: 2197109 bytes
+      Cache: HIT
+      Time: 0.02s
+
+[API] 2025-12-28 09:39:56.402843 | GET | INSIDER_TRANSACTIONS
+      Symbol: ANET
+      Status: 200
+      Response size: 3202718 bytes
+      Cache: MISS
+      Time: 0.82s
+
+[API] 2025-12-28 09:39:57.671156 | GET | INSIDER_TRANSACTIONS
+      Symbol: AON
+      Status: 200
+      Response size: 3959539 bytes
+      Cache: MISS
+      Time: 0.89s
+
+[API] 2025-12-28 09:39:58.523542 | GET | INSIDER_TRANSACTIONS
+      Symbol: APD
+      Status: 200
+      Response size: 975852 bytes
+      Cache: MISS
+      Time: 0.67s
+
+[API] 2025-12-28 09:39:59.330988 | GET | INSIDER_TRANSACTIONS
+      Symbol: APH
+      Status: 200
+      Response size: 1044900 bytes
+      Cache: MISS
+      Time: 0.67s
+
+[API] 2025-12-28 09:39:59.814581 | GET | INSIDER_TRANSACTIONS
+      Symbol: APO
+      Status: 200
+      Response size: 178728 bytes
+      Cache: MISS
+      Time: 0.39s
+
+[API] 2025-12-28 09:40:00.503467 | GET | INSIDER_TRANSACTIONS
+      Symbol: APP
+      Status: 200
+      Response size: 704284 bytes
+      Cache: MISS
+      Time: 0.59s
+
+[API] 2025-12-28 09:40:01.180583 | GET | INSIDER_TRANSACTIONS
+      Symbol: ARES
+      Status: 200
+      Response size: 667876 bytes
+      Cache: MISS
+      Time: 0.57s
+
+[API] 2025-12-28 09:40:01.424380 | GET | INSIDER_TRANSACTIONS
+      Symbol: ARM
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.17s
+
+[API] 2025-12-28 09:40:02.035156 | GET | INSIDER_TRANSACTIONS
+      Symbol: ARMK
+      Status: 200
+      Response size: 725090 bytes
+      Cache: MISS
+      Time: 0.55s
+
+[API] 2025-12-28 09:40:02.381766 | GET | INSIDER_TRANSACTIONS
+      Symbol: ASTS
+      Status: 200
+      Response size: 52191 bytes
+      Cache: MISS
+      Time: 0.32s
+
+[API] 2025-12-28 09:40:02.921885 | GET | INSIDER_TRANSACTIONS
+      Symbol: ATEX
+      Status: 200
+      Response size: 264336 bytes
+      Cache: MISS
+      Time: 0.47s
+
+[API] 2025-12-28 09:40:03.478837 | GET | INSIDER_TRANSACTIONS
+      Symbol: ATO
+      Status: 200
+      Response size: 822414 bytes
+      Cache: MISS
+      Time: 0.43s
+
+[API] 2025-12-28 09:40:03.921386 | GET | INSIDER_TRANSACTIONS
+      Symbol: ATRC
+      Status: 200
+      Response size: 537237 bytes
+      Cache: MISS
+      Time: 0.34s
+
+[API] 2025-12-28 09:40:04.139177 | GET | INSIDER_TRANSACTIONS
+      Symbol: AU
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.16s
+
+[API] 2025-12-28 09:40:04.437380 | GET | INSIDER_TRANSACTIONS
+      Symbol: AVGO
+      Status: 200
+      Response size: 496826 bytes
+      Cache: MISS
+      Time: 0.25s
+
+[API] 2025-12-28 09:40:05.121956 | GET | INSIDER_TRANSACTIONS
+      Symbol: AXGN
+      Status: 200
+      Response size: 689967 bytes
+      Cache: MISS
+      Time: 0.57s
+
+[API] 2025-12-28 09:40:05.946821 | GET | INSIDER_TRANSACTIONS
+      Symbol: AXON
+      Status: 200
+      Response size: 1283331 bytes
+      Cache: MISS
+      Time: 0.67s
+
+[API] 2025-12-28 09:40:06.750165 | GET | INSIDER_TRANSACTIONS
+      Symbol: AXP
+      Status: 200
+      Response size: 1418614 bytes
+      Cache: MISS
+      Time: 0.69s
+
+[API] 2025-12-28 09:40:07.210336 | GET | INSIDER_TRANSACTIONS
+      Symbol: AXS
+      Status: 200
+      Response size: 635440 bytes
+      Cache: MISS
+      Time: 0.34s
+
+[API] 2025-12-28 09:40:07.436559 | GET | INSIDER_TRANSACTIONS
+      Symbol: AZN
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.15s
+
+[API] 2025-12-28 09:40:08.394966 | GET | INSIDER_TRANSACTIONS
+      Symbol: AZO
+      Status: 200
+      Response size: 2429503 bytes
+      Cache: MISS
+      Time: 0.79s
+
+[API] 2025-12-28 09:40:08.646895 | GET | INSIDER_TRANSACTIONS
+      Symbol: AZUL
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.16s
+
+[API] 2025-12-28 09:40:09.422954 | GET | INSIDER_TRANSACTIONS
+      Symbol: BA
+      Status: 200
+      Response size: 1316520 bytes
+      Cache: MISS
+      Time: 0.68s
+
+[API] 2025-12-28 09:40:09.640885 | GET | INSIDER_TRANSACTIONS
+      Symbol: BABA
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.15s
+
+[API] 2025-12-28 09:40:10.697778 | GET | INSIDER_TRANSACTIONS
+      Symbol: BAC
+      Status: 200
+      Response size: 3273338 bytes
+      Cache: MISS
+      Time: 0.82s
+
+[API] 2025-12-28 09:40:11.034147 | GET | INSIDER_TRANSACTIONS
+      Symbol: BAM
+      Status: 200
+      Response size: 314337 bytes
+      Cache: MISS
+      Time: 0.20s
+
+[API] 2025-12-28 09:40:11.266313 | GET | INSIDER_TRANSACTIONS
+      Symbol: BARC
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.15s
+
+[API] 2025-12-28 09:40:11.431440 | GET | INSIDER_TRANSACTIONS
+      Symbol: BATS
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.15s
+
+[API] 2025-12-28 09:40:12.209035 | GET | INSIDER_TRANSACTIONS
+      Symbol: BDX
+      Status: 200
+      Response size: 1254872 bytes
+      Cache: MISS
+      Time: 0.69s
+
+[API] 2025-12-28 09:40:12.772623 | GET | INSIDER_TRANSACTIONS
+      Symbol: BHE
+      Status: 200
+      Response size: 356744 bytes
+      Cache: MISS
+      Time: 0.46s
+
+[API] 2025-12-28 09:40:13.749423 | GET | INSIDER_TRANSACTIONS
+      Symbol: BIIB
+      Status: 200
+      Response size: 1952198 bytes
+      Cache: MISS
+      Time: 0.79s
+
+[API] 2025-12-28 09:40:14.649049 | GET | INSIDER_TRANSACTIONS
+      Symbol: BK
+      Status: 200
+      Response size: 1437840 bytes
+      Cache: MISS
+      Time: 0.71s
+
+[API] 2025-12-28 09:40:15.140150 | GET | INSIDER_TRANSACTIONS
+      Symbol: BKNG
+      Status: 200
+      Response size: 1553071 bytes
+      Cache: MISS
+      Time: 0.31s
+
+[API] 2025-12-28 09:40:15.803145 | GET | INSIDER_TRANSACTIONS
+      Symbol: BKR
+      Status: 200
+      Response size: 444269 bytes
+      Cache: MISS
+      Time: 0.54s
+
+[API] 2025-12-28 09:40:16.384111 | GET | INSIDER_TRANSACTIONS
+      Symbol: BLBD
+      Status: 200
+      Response size: 222661 bytes
+      Cache: MISS
+      Time: 0.50s
+
+[API] 2025-12-28 09:40:17.540226 | GET | INSIDER_TRANSACTIONS
+      Symbol: BLK
+      Status: 200
+      Response size: 4136825 bytes
+      Cache: MISS
+      Time: 0.82s
+
+[API] 2025-12-28 09:40:17.842956 | GET | INSIDER_TRANSACTIONS
+      Symbol: BN
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.16s
+
+[API] 2025-12-28 09:40:18.029892 | GET | INSIDER_TRANSACTIONS
+      Symbol: BP
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.17s
+
+[API] 2025-12-28 09:40:18.787258 | GET | INSIDER_TRANSACTIONS
+      Symbol: BR
+      Status: 200
+      Response size: 1265150 bytes
+      Cache: MISS
+      Time: 0.66s
+
+[API] 2025-12-28 09:40:19.003570 | GET | INSIDER_TRANSACTIONS
+      Symbol: BRK.A
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.15s
+
+[API] 2025-12-28 09:40:19.445683 | GET | INSIDER_TRANSACTIONS
+      Symbol: BRKR
+      Status: 200
+      Response size: 660250 bytes
+      Cache: MISS
+      Time: 0.39s
+
+[API] 2025-12-28 09:40:20.074438 | GET | INSIDER_TRANSACTIONS
+      Symbol: BSX
+      Status: 200
+      Response size: 2308218 bytes
+      Cache: MISS
+      Time: 0.41s
+
+[API] 2025-12-28 09:40:34.015648 | GET | INSIDER_TRANSACTIONS
+      Symbol: BSY
+      Status: 200
+      Response size: 278878 bytes
+      Cache: MISS
+      Time: 13.84s
+
+[API] 2025-12-28 09:40:34.479427 | GET | INSIDER_TRANSACTIONS
+      Symbol: BT.A
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.40s
+
+[API] 2025-12-28 09:40:36.125832 | GET | INSIDER_TRANSACTIONS
+      Symbol: BX
+      Status: 200
+      Response size: 1111333 bytes
+      Cache: MISS
+      Time: 1.56s
+
+[API] 2025-12-28 09:40:36.958680 | GET | INSIDER_TRANSACTIONS
+      Symbol: C
+      Status: 200
+      Response size: 1241669 bytes
+      Cache: MISS
+      Time: 0.67s
+
+[API] 2025-12-28 09:40:37.762288 | GET | INSIDER_TRANSACTIONS
+      Symbol: CAH
+      Status: 200
+      Response size: 871758 bytes
+      Cache: MISS
+      Time: 0.65s
+
+[API] 2025-12-28 09:40:38.232778 | GET | INSIDER_TRANSACTIONS
+      Symbol: CARR
+      Status: 200
+      Response size: 174139 bytes
+      Cache: MISS
+      Time: 0.39s
+
+[API] 2025-12-28 09:40:39.024952 | GET | INSIDER_TRANSACTIONS
+      Symbol: CAT
+      Status: 200
+      Response size: 1146169 bytes
+      Cache: MISS
+      Time: 0.66s
+
+[API] 2025-12-28 09:40:39.581741 | GET | INSIDER_TRANSACTIONS
+      Symbol: CATO
+      Status: 200
+      Response size: 321031 bytes
+      Cache: MISS
+      Time: 0.47s
+
+[API] 2025-12-28 09:40:40.078563 | GET | INSIDER_TRANSACTIONS
+      Symbol: CB
+      Status: 200
+      Response size: 1142641 bytes
+      Cache: MISS
+      Time: 0.36s
+
+[API] 2025-12-28 09:40:40.754132 | GET | INSIDER_TRANSACTIONS
+      Symbol: CBOE
+      Status: 200
+      Response size: 570747 bytes
+      Cache: MISS
+      Time: 0.56s
+
+[API] 2025-12-28 09:40:40.970548 | GET | INSIDER_TRANSACTIONS
+      Symbol: CCEP
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.15s
+
+[API] 2025-12-28 09:40:41.884652 | GET | INSIDER_TRANSACTIONS
+      Symbol: CCI
+      Status: 200
+      Response size: 1115931 bytes
+      Cache: MISS
+      Time: 0.83s
+
+[API] 2025-12-28 09:40:42.998123 | GET | INSIDER_TRANSACTIONS
+      Symbol: CCL
+      Status: 200
+      Response size: 4472693 bytes
+      Cache: MISS
+      Time: 0.75s
+
+[API] 2025-12-28 09:40:44.054285 | GET | INSIDER_TRANSACTIONS
+      Symbol: CCZ
+      Status: 200
+      Response size: 1943360 bytes
+      Cache: MISS
+      Time: 0.76s
+
+[API] 2025-12-28 09:40:44.684151 | GET | INSIDER_TRANSACTIONS
+      Symbol: CDNS
+      Status: 200
+      Response size: 1423690 bytes
+      Cache: MISS
+      Time: 0.46s
+
+[API] 2025-12-28 09:40:45.161733 | GET | INSIDER_TRANSACTIONS
+      Symbol: CEG
+      Status: 200
+      Response size: 114918 bytes
+      Cache: MISS
+      Time: 0.39s
+
+[API] 2025-12-28 09:40:45.807523 | GET | INSIDER_TRANSACTIONS
+      Symbol: CGNX
+      Status: 200
+      Response size: 510944 bytes
+      Cache: MISS
+      Time: 0.56s
+
+[API] 2025-12-28 09:40:46.265057 | GET | INSIDER_TRANSACTIONS
+      Symbol: CHTR
+      Status: 200
+      Response size: 1070904 bytes
+      Cache: MISS
+      Time: 0.36s
+
+[API] 2025-12-28 09:40:46.564920 | GET | INSIDER_TRANSACTIONS
+      Symbol: CI
+      Status: 200
+      Response size: 555429 bytes
+      Cache: MISS
+      Time: 0.19s
+
+[API] 2025-12-28 09:40:47.419802 | GET | INSIDER_TRANSACTIONS
+      Symbol: CIEN
+      Status: 200
+      Response size: 1701585 bytes
+      Cache: MISS
+      Time: 0.69s
+
+[API] 2025-12-28 09:40:48.301258 | GET | INSIDER_TRANSACTIONS
+      Symbol: CINF
+      Status: 200
+      Response size: 1603643 bytes
+      Cache: MISS
+      Time: 0.69s
+
+[API] 2025-12-28 09:40:49.157617 | GET | INSIDER_TRANSACTIONS
+      Symbol: CL
+      Status: 200
+      Response size: 1615828 bytes
+      Cache: MISS
+      Time: 0.68s
+
+[API] 2025-12-28 09:40:50.039565 | GET | INSIDER_TRANSACTIONS
+      Symbol: CMC
+      Status: 200
+      Response size: 1495032 bytes
+      Cache: MISS
+      Time: 0.70s
+
+[API] 2025-12-28 09:40:51.033106 | GET | INSIDER_TRANSACTIONS
+      Symbol: CMCSA
+      Status: 200
+      Response size: 1958390 bytes
+      Cache: MISS
+      Time: 0.78s
+
+[API] 2025-12-28 09:40:51.899602 | GET | INSIDER_TRANSACTIONS
+      Symbol: CME
+      Status: 200
+      Response size: 1647258 bytes
+      Cache: MISS
+      Time: 0.68s
+
+[API] 2025-12-28 09:40:52.433701 | GET | INSIDER_TRANSACTIONS
+      Symbol: CMG
+      Status: 200
+      Response size: 1397968 bytes
+      Cache: MISS
+      Time: 0.36s
+
+[API] 2025-12-28 09:40:52.674646 | GET | INSIDER_TRANSACTIONS
+      Symbol: CNH
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.16s
+
+[API] 2025-12-28 09:40:54.194522 | GET | INSIDER_TRANSACTIONS
+      Symbol: COF
+      Status: 200
+      Response size: 6567982 bytes
+      Cache: MISS
+      Time: 1.07s
+
+[API] 2025-12-28 09:40:54.546011 | GET | INSIDER_TRANSACTIONS
+      Symbol: COGT
+      Status: 200
+      Response size: 74159 bytes
+      Cache: MISS
+      Time: 0.16s
+
+[API] 2025-12-28 09:40:55.312275 | GET | INSIDER_TRANSACTIONS
+      Symbol: COHR
+      Status: 200
+      Response size: 879978 bytes
+      Cache: MISS
+      Time: 0.66s
+
+[API] 2025-12-28 09:40:56.196510 | GET | INSIDER_TRANSACTIONS
+      Symbol: COIN
+      Status: 200
+      Response size: 1606201 bytes
+      Cache: MISS
+      Time: 0.70s
+
+[API] 2025-12-28 09:40:57.035959 | GET | INSIDER_TRANSACTIONS
+      Symbol: COP
+      Status: 200
+      Response size: 1239213 bytes
+      Cache: MISS
+      Time: 0.67s
+
+[API] 2025-12-28 09:40:57.267149 | GET | INSIDER_TRANSACTIONS
+      Symbol: COR
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.15s
+
+[API] 2025-12-28 09:40:58.015901 | GET | INSIDER_TRANSACTIONS
+      Symbol: COST
+      Status: 200
+      Response size: 1152334 bytes
+      Cache: MISS
+      Time: 0.66s
+
+[API] 2025-12-28 09:40:58.247009 | GET | INSIDER_TRANSACTIONS
+      Symbol: CPAY
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.16s
+
+[API] 2025-12-28 09:40:58.421436 | GET | INSIDER_TRANSACTIONS
+      Symbol: CPG
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.16s
+
+[API] 2025-12-28 09:40:59.029391 | GET | INSIDER_TRANSACTIONS
+      Symbol: CPNG
+      Status: 200
+      Response size: 77429 bytes
+      Cache: MISS
+      Time: 0.59s
+
+[API] 2025-12-28 09:41:00.060229 | GET | INSIDER_TRANSACTIONS
+      Symbol: CPRT
+      Status: 200
+      Response size: 748683 bytes
+      Cache: MISS
+      Time: 0.93s
+
+[API] 2025-12-28 09:41:00.287756 | GET | INSIDER_TRANSACTIONS
+      Symbol: CRBG
+      Status: 200
+      Response size: 110842 bytes
+      Cache: MISS
+      Time: 0.16s
+
+[API] 2025-12-28 09:41:01.166532 | GET | INSIDER_TRANSACTIONS
+      Symbol: CRK
+      Status: 200
+      Response size: 408337 bytes
+      Cache: MISS
+      Time: 0.80s
+
+[API] 2025-12-28 09:41:02.597966 | GET | INSIDER_TRANSACTIONS
+      Symbol: CRM
+      Status: 200
+      Response size: 4504984 bytes
+      Cache: MISS
+      Time: 1.07s
+
+[API] 2025-12-28 09:41:02.968900 | GET | INSIDER_TRANSACTIONS
+      Symbol: CRSP
+      Status: 200
+      Response size: 471200 bytes
+      Cache: MISS
+      Time: 0.20s
+
+[API] 2025-12-28 09:41:03.800051 | GET | INSIDER_TRANSACTIONS
+      Symbol: CRWD
+      Status: 200
+      Response size: 1254253 bytes
+      Cache: MISS
+      Time: 0.67s
+
+[API] 2025-12-28 09:41:04.650904 | GET | INSIDER_TRANSACTIONS
+      Symbol: CSCO
+      Status: 200
+      Response size: 1489994 bytes
+      Cache: MISS
+      Time: 0.68s
+
+[API] 2025-12-28 09:41:05.329439 | GET | INSIDER_TRANSACTIONS
+      Symbol: CSGP
+      Status: 200
+      Response size: 476457 bytes
+      Cache: MISS
+      Time: 0.56s
+
+[API] 2025-12-28 09:41:05.668501 | GET | INSIDER_TRANSACTIONS
+      Symbol: CSX
+      Status: 200
+      Response size: 718549 bytes
+      Cache: MISS
+      Time: 0.23s
+
+[API] 2025-12-28 09:41:06.711676 | GET | INSIDER_TRANSACTIONS
+      Symbol: CTSH
+      Status: 200
+      Response size: 2750870 bytes
+      Cache: MISS
+      Time: 0.80s
+
+[API] 2025-12-28 09:41:07.217935 | GET | INSIDER_TRANSACTIONS
+      Symbol: CTVA
+      Status: 200
+      Response size: 194642 bytes
+      Cache: MISS
+      Time: 0.41s
+
+[API] 2025-12-28 09:41:07.434244 | GET | INSIDER_TRANSACTIONS
+      Symbol: CURY
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.15s
+
+[API] 2025-12-28 09:41:08.656373 | GET | INSIDER_TRANSACTIONS
+      Symbol: CVNA
+      Status: 200
+      Response size: 4027154 bytes
+      Cache: MISS
+      Time: 0.94s
+
+[API] 2025-12-28 09:41:09.522922 | GET | INSIDER_TRANSACTIONS
+      Symbol: CVS
+      Status: 200
+      Response size: 1062186 bytes
+      Cache: MISS
+      Time: 0.66s
+
+[API] 2025-12-28 09:41:10.362431 | GET | INSIDER_TRANSACTIONS
+      Symbol: CVX
+      Status: 200
+      Response size: 1342871 bytes
+      Cache: MISS
+      Time: 0.68s
+
+[API] 2025-12-28 09:41:10.782571 | GET | INSIDER_TRANSACTIONS
+      Symbol: CWEN
+      Status: 200
+      Response size: 369593 bytes
+      Cache: MISS
+      Time: 0.31s
+
+[API] 2025-12-28 09:41:11.537144 | GET | INSIDER_TRANSACTIONS
+      Symbol: D
+      Status: 200
+      Response size: 830836 bytes
+      Cache: MISS
+      Time: 0.64s
+
+[API] 2025-12-28 09:41:12.352522 | GET | INSIDER_TRANSACTIONS
+      Symbol: DAL
+      Status: 200
+      Response size: 1260378 bytes
+      Cache: MISS
+      Time: 0.66s
+
+[API] 2025-12-28 09:41:13.187985 | GET | INSIDER_TRANSACTIONS
+      Symbol: DASH
+      Status: 200
+      Response size: 1296974 bytes
+      Cache: MISS
+      Time: 0.68s
+
+[API] 2025-12-28 09:41:14.208200 | GET | INSIDER_TRANSACTIONS
+      Symbol: DDOG
+      Status: 200
+      Response size: 2145104 bytes
+      Cache: MISS
+      Time: 0.79s
+
+[API] 2025-12-28 09:41:15.027772 | GET | INSIDER_TRANSACTIONS
+      Symbol: DE
+      Status: 200
+      Response size: 906389 bytes
+      Cache: MISS
+      Time: 0.66s
+
+[API] 2025-12-28 09:41:15.840139 | GET | INSIDER_TRANSACTIONS
+      Symbol: DELL
+      Status: 200
+      Response size: 1250185 bytes
+      Cache: MISS
+      Time: 0.66s
+
+[API] 2025-12-28 09:41:16.649608 | GET | INSIDER_TRANSACTIONS
+      Symbol: DG
+      Status: 200
+      Response size: 928424 bytes
+      Cache: MISS
+      Time: 0.66s
+
+[API] 2025-12-28 09:41:16.825282 | GET | INSIDER_TRANSACTIONS
+      Symbol: DGE
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.15s
+
+[API] 2025-12-28 09:41:17.462977 | GET | INSIDER_TRANSACTIONS
+      Symbol: DHI
+      Status: 200
+      Response size: 746009 bytes
+      Cache: MISS
+      Time: 0.58s
+
+[API] 2025-12-28 09:41:18.021823 | GET | INSIDER_TRANSACTIONS
+      Symbol: DHR
+      Status: 200
+      Response size: 1712886 bytes
+      Cache: MISS
+      Time: 0.38s
+
+[API] 2025-12-28 09:41:18.714046 | GET | INSIDER_TRANSACTIONS
+      Symbol: DIS
+      Status: 200
+      Response size: 471618 bytes
+      Cache: MISS
+      Time: 0.58s
+
+[API] 2025-12-28 09:41:19.085205 | GET | INSIDER_TRANSACTIONS
+      Symbol: DLR
+      Status: 200
+      Response size: 750261 bytes
+      Cache: MISS
+      Time: 0.27s
+
+[API] 2025-12-28 09:41:19.919817 | GET | INSIDER_TRANSACTIONS
+      Symbol: DLTR
+      Status: 200
+      Response size: 1286122 bytes
+      Cache: MISS
+      Time: 0.69s
+
+[API] 2025-12-28 09:41:20.718613 | GET | INSIDER_TRANSACTIONS
+      Symbol: DOV
+      Status: 200
+      Response size: 1064552 bytes
+      Cache: MISS
+      Time: 0.65s
+
+[API] 2025-12-28 09:41:21.531473 | GET | INSIDER_TRANSACTIONS
+      Symbol: DUK
+      Status: 200
+      Response size: 1154129 bytes
+      Cache: MISS
+      Time: 0.66s
+
+[API] 2025-12-28 09:41:22.572514 | GET | INSIDER_TRANSACTIONS
+      Symbol: EA
+      Status: 200
+      Response size: 2721745 bytes
+      Cache: MISS
+      Time: 0.79s
+
+[API] 2025-12-28 09:41:23.650316 | GET | INSIDER_TRANSACTIONS
+      Symbol: EBAY
+      Status: 200
+      Response size: 2709694 bytes
+      Cache: MISS
+      Time: 0.80s
+
+[API] 2025-12-28 09:41:24.525702 | GET | INSIDER_TRANSACTIONS
+      Symbol: ECL
+      Status: 200
+      Response size: 1520044 bytes
+      Cache: MISS
+      Time: 0.68s
+
+[API] 2025-12-28 09:41:25.155989 | GET | INSIDER_TRANSACTIONS
+      Symbol: ED
+      Status: 200
+      Response size: 916904 bytes
+      Cache: MISS
+      Time: 0.49s
+
+[API] 2025-12-28 09:41:25.966091 | GET | INSIDER_TRANSACTIONS
+      Symbol: EFX
+      Status: 200
+      Response size: 1169324 bytes
+      Cache: MISS
+      Time: 0.66s
+
+[API] 2025-12-28 09:41:26.950359 | GET | INSIDER_TRANSACTIONS
+      Symbol: EL
+      Status: 200
+      Response size: 2293730 bytes
+      Cache: MISS
+      Time: 0.76s
+
+[API] 2025-12-28 09:41:27.199720 | GET | INSIDER_TRANSACTIONS
+      Symbol: ELTEK
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.15s
+
+[API] 2025-12-28 09:41:34.495753 | GET | INSIDER_TRANSACTIONS
+      Symbol: ELV
+      Status: 200
+      Response size: 1867481 bytes
+      Cache: MISS
+      Time: 7.16s
+
+[API] 2025-12-28 09:41:35.592689 | GET | INSIDER_TRANSACTIONS
+      Symbol: EME
+      Status: 200
+      Response size: 2201014 bytes
+      Cache: MISS
+      Time: 0.87s
+
+[API] 2025-12-28 09:41:36.367643 | GET | INSIDER_TRANSACTIONS
+      Symbol: EMR
+      Status: 200
+      Response size: 903043 bytes
+      Cache: MISS
+      Time: 0.62s
+
+[API] 2025-12-28 09:41:37.151622 | GET | INSIDER_TRANSACTIONS
+      Symbol: EOG
+      Status: 200
+      Response size: 1346922 bytes
+      Cache: MISS
+      Time: 0.63s
+
+[API] 2025-12-28 09:41:37.593266 | GET | INSIDER_TRANSACTIONS
+      Symbol: EPD
+      Status: 200
+      Response size: 1090706 bytes
+      Cache: MISS
+      Time: 0.29s
+
+[API] 2025-12-28 09:41:38.903074 | GET | INSIDER_TRANSACTIONS
+      Symbol: EQIX
+      Status: 200
+      Response size: 2594640 bytes
+      Cache: MISS
+      Time: 1.05s
+
+[API] 2025-12-28 09:41:39.613886 | GET | INSIDER_TRANSACTIONS
+      Symbol: EQT
+      Status: 200
+      Response size: 619116 bytes
+      Cache: MISS
+      Time: 0.56s
+
+[API] 2025-12-28 09:41:39.826942 | GET | INSIDER_TRANSACTIONS
+      Symbol: EQX
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.15s
+
+[API] 2025-12-28 09:41:40.338795 | GET | INSIDER_TRANSACTIONS
+      Symbol: ESAB
+      Status: 200
+      Response size: 290473 bytes
+      Cache: MISS
+      Time: 0.48s
+
+[API] 2025-12-28 09:41:40.742488 | GET | INSIDER_TRANSACTIONS
+      Symbol: ET
+      Status: 200
+      Response size: 272540 bytes
+      Cache: MISS
+      Time: 0.33s
+
+[API] 2025-12-28 09:41:41.659297 | GET | INSIDER_TRANSACTIONS
+      Symbol: ETN
+      Status: 200
+      Response size: 1035924 bytes
+      Cache: MISS
+      Time: 0.78s
+
+[API] 2025-12-28 09:41:42.569717 | GET | INSIDER_TRANSACTIONS
+      Symbol: ETR
+      Status: 200
+      Response size: 1490013 bytes
+      Cache: MISS
+      Time: 0.75s
+
+[API] 2025-12-28 09:41:42.799936 | GET | INSIDER_TRANSACTIONS
+      Symbol: ETS
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.15s
+
+[API] 2025-12-28 09:41:43.886169 | GET | INSIDER_TRANSACTIONS
+      Symbol: EW
+      Status: 200
+      Response size: 2301936 bytes
+      Cache: MISS
+      Time: 0.92s
+
+[API] 2025-12-28 09:41:45.128650 | GET | INSIDER_TRANSACTIONS
+      Symbol: EXC
+      Status: 200
+      Response size: 1902652 bytes
+      Cache: MISS
+      Time: 1.02s
+
+[API] 2025-12-28 09:41:45.962812 | GET | INSIDER_TRANSACTIONS
+      Symbol: EXPE
+      Status: 200
+      Response size: 1266673 bytes
+      Cache: MISS
+      Time: 0.67s
+
+[API] 2025-12-28 09:41:46.175198 | GET | INSIDER_TRANSACTIONS
+      Symbol: EXPN
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.15s
+
+[API] 2025-12-28 09:41:47.072485 | GET | INSIDER_TRANSACTIONS
+      Symbol: F
+      Status: 200
+      Response size: 1818027 bytes
+      Cache: MISS
+      Time: 0.77s
+
+[API] 2025-12-28 09:41:47.741700 | GET | INSIDER_TRANSACTIONS
+      Symbol: FANG
+      Status: 200
+      Response size: 429212 bytes
+      Cache: MISS
+      Time: 0.57s
+
+[API] 2025-12-28 09:41:48.398117 | GET | INSIDER_TRANSACTIONS
+      Symbol: FCF
+      Status: 200
+      Response size: 492220 bytes
+      Cache: MISS
+      Time: 0.56s
+
+[API] 2025-12-28 09:41:49.225598 | GET | INSIDER_TRANSACTIONS
+      Symbol: FCX
+      Status: 200
+      Response size: 1334738 bytes
+      Cache: MISS
+      Time: 0.68s
+
+[API] 2025-12-28 09:41:49.875705 | GET | INSIDER_TRANSACTIONS
+      Symbol: FDX
+      Status: 200
+      Response size: 1155747 bytes
+      Cache: MISS
+      Time: 0.51s
+
+[API] 2025-12-28 09:41:50.322375 | GET | INSIDER_TRANSACTIONS
+      Symbol: FE
+      Status: 200
+      Response size: 496655 bytes
+      Cache: MISS
+      Time: 0.34s
+
+[API] 2025-12-28 09:41:50.537795 | GET | INSIDER_TRANSACTIONS
+      Symbol: FERG
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.16s
+
+[API] 2025-12-28 09:41:51.755329 | GET | INSIDER_TRANSACTIONS
+      Symbol: FICO
+      Status: 200
+      Response size: 2143422 bytes
+      Cache: MISS
+      Time: 1.06s
+
+[API] 2025-12-28 09:41:52.873832 | GET | INSIDER_TRANSACTIONS
+      Symbol: FIS
+      Status: 200
+      Response size: 1595093 bytes
+      Cache: MISS
+      Time: 0.93s
+
+[API] 2025-12-28 09:41:53.641235 | GET | INSIDER_TRANSACTIONS
+      Symbol: FISV
+      Status: 200
+      Response size: 1068905 bytes
+      Cache: MISS
+      Time: 0.67s
+
+[API] 2025-12-28 09:41:54.419879 | GET | INSIDER_TRANSACTIONS
+      Symbol: FITB
+      Status: 200
+      Response size: 1187226 bytes
+      Cache: MISS
+      Time: 0.68s
+
+[API] 2025-12-28 09:41:54.719203 | GET | INSIDER_TRANSACTIONS
+      Symbol: FIX
+      Status: 200
+      Response size: 565794 bytes
+      Cache: MISS
+      Time: 0.19s
+
+[API] 2025-12-28 09:41:55.536441 | GET | INSIDER_TRANSACTIONS
+      Symbol: FLS
+      Status: 200
+      Response size: 1336964 bytes
+      Cache: MISS
+      Time: 0.67s
+
+[API] 2025-12-28 09:41:55.773764 | GET | INSIDER_TRANSACTIONS
+      Symbol: FLUT
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.16s
+
+[API] 2025-12-28 09:41:56.526417 | GET | INSIDER_TRANSACTIONS
+      Symbol: FNTN
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.74s
+
+[API] 2025-12-28 09:41:57.699663 | GET | INSIDER_TRANSACTIONS
+      Symbol: FOX
+      Status: 200
+      Response size: 281753 bytes
+      Cache: MISS
+      Time: 1.14s
+
+[API] 2025-12-28 09:41:58.778118 | GET | INSIDER_TRANSACTIONS
+      Symbol: FSLR
+      Status: 200
+      Response size: 2954713 bytes
+      Cache: MISS
+      Time: 0.83s
+
+[API] 2025-12-28 09:41:59.479044 | GET | INSIDER_TRANSACTIONS
+      Symbol: FSS
+      Status: 200
+      Response size: 501638 bytes
+      Cache: MISS
+      Time: 0.54s
+
+[API] 2025-12-28 09:42:00.342527 | GET | INSIDER_TRANSACTIONS
+      Symbol: FTNT
+      Status: 200
+      Response size: 1555688 bytes
+      Cache: MISS
+      Time: 0.70s
+
+[API] 2025-12-28 09:42:01.026820 | GET | INSIDER_TRANSACTIONS
+      Symbol: FYBR
+      Status: 200
+      Response size: 2031229 bytes
+      Cache: MISS
+      Time: 0.46s
+
+[API] 2025-12-28 09:42:01.497319 | GET | INSIDER_TRANSACTIONS
+      Symbol: GD
+      Status: 200
+      Response size: 1409759 bytes
+      Cache: MISS
+      Time: 0.28s
+
+[API] 2025-12-28 09:42:02.335274 | GET | INSIDER_TRANSACTIONS
+      Symbol: GE
+      Status: 200
+      Response size: 1459617 bytes
+      Cache: MISS
+      Time: 0.67s
+
+[API] 2025-12-28 09:42:02.579437 | GET | INSIDER_TRANSACTIONS
+      Symbol: GEV
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.17s
+
+[API] 2025-12-28 09:42:03.285745 | GET | INSIDER_TRANSACTIONS
+      Symbol: GH
+      Status: 200
+      Response size: 864188 bytes
+      Cache: MISS
+      Time: 0.64s
+
+[API] 2025-12-28 09:42:04.632945 | GET | INSIDER_TRANSACTIONS
+      Symbol: GILD
+      Status: 200
+      Response size: 4621170 bytes
+      Cache: MISS
+      Time: 0.95s
+
+[API] 2025-12-28 09:42:04.915380 | GET | INSIDER_TRANSACTIONS
+      Symbol: GLEN
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.14s
+
+[API] 2025-12-28 09:42:05.921751 | GET | INSIDER_TRANSACTIONS
+      Symbol: GLW
+      Status: 200
+      Response size: 2963712 bytes
+      Cache: MISS
+      Time: 0.79s
+
+[API] 2025-12-28 09:42:06.786564 | GET | INSIDER_TRANSACTIONS
+      Symbol: GM
+      Status: 200
+      Response size: 1599438 bytes
+      Cache: MISS
+      Time: 0.67s
+
+[API] 2025-12-28 09:42:07.108940 | GET | INSIDER_TRANSACTIONS
+      Symbol: GOGO
+      Status: 200
+      Response size: 644801 bytes
+      Cache: MISS
+      Time: 0.21s
+
+[API] 2025-12-28 09:42:08.472243 | GET | INSIDER_TRANSACTIONS
+      Symbol: GOOG
+      Status: 200
+      Response size: 4982893 bytes
+      Cache: MISS
+      Time: 0.95s
+
+[API] 2025-12-28 09:42:09.110872 | GET | INSIDER_TRANSACTIONS
+      Symbol: GPOR
+      Status: 200
+      Response size: 212219 bytes
+      Cache: MISS
+      Time: 0.45s
+
+[API] 2025-12-28 09:42:09.997227 | GET | INSIDER_TRANSACTIONS
+      Symbol: GRMN
+      Status: 200
+      Response size: 1448241 bytes
+      Cache: MISS
+      Time: 0.72s
+
+[API] 2025-12-28 09:42:10.398244 | GET | INSIDER_TRANSACTIONS
+      Symbol: GRNT
+      Status: 200
+      Response size: 72733 bytes
+      Cache: MISS
+      Time: 0.31s
+
+[API] 2025-12-28 09:42:11.301004 | GET | INSIDER_TRANSACTIONS
+      Symbol: GS
+      Status: 200
+      Response size: 2277969 bytes
+      Cache: MISS
+      Time: 0.70s
+
+[API] 2025-12-28 09:42:11.648126 | GET | INSIDER_TRANSACTIONS
+      Symbol: GSK
+      Status: 200
+      Response size: 55771 bytes
+      Cache: MISS
+      Time: 0.31s
+
+[API] 2025-12-28 09:42:12.334197 | GET | INSIDER_TRANSACTIONS
+      Symbol: GTLS
+      Status: 200
+      Response size: 671471 bytes
+      Cache: MISS
+      Time: 0.57s
+
+[API] 2025-12-28 09:42:13.349832 | GET | INSIDER_TRANSACTIONS
+      Symbol: GWW
+      Status: 200
+      Response size: 2242032 bytes
+      Cache: MISS
+      Time: 0.80s
+
+[API] 2025-12-28 09:42:14.108120 | GET | INSIDER_TRANSACTIONS
+      Symbol: HCA
+      Status: 200
+      Response size: 2357241 bytes
+      Cache: MISS
+      Time: 0.57s
+
+[API] 2025-12-28 09:42:14.476834 | GET | INSIDER_TRANSACTIONS
+      Symbol: HCC
+      Status: 200
+      Response size: 316427 bytes
+      Cache: MISS
+      Time: 0.25s
+
+[API] 2025-12-28 09:42:14.942862 | GET | INSIDER_TRANSACTIONS
+      Symbol: HD
+      Status: 200
+      Response size: 1483975 bytes
+      Cache: MISS
+      Time: 0.30s
+
+[API] 2025-12-28 09:42:15.548144 | GET | INSIDER_TRANSACTIONS
+      Symbol: HEI
+      Status: 200
+      Response size: 428810 bytes
+      Cache: MISS
+      Time: 0.55s
+
+[API] 2025-12-28 09:42:16.117381 | GET | INSIDER_TRANSACTIONS
+      Symbol: HIG
+      Status: 200
+      Response size: 1201295 bytes
+      Cache: MISS
+      Time: 0.42s
+
+[API] 2025-12-28 09:42:16.908628 | GET | INSIDER_TRANSACTIONS
+      Symbol: HIMS
+      Status: 200
+      Response size: 963309 bytes
+      Cache: MISS
+      Time: 0.66s
+
+[API] 2025-12-28 09:42:17.122991 | GET | INSIDER_TRANSACTIONS
+      Symbol: HIMX
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.15s
+
+[API] 2025-12-28 09:42:17.898728 | GET | INSIDER_TRANSACTIONS
+      Symbol: HON
+      Status: 200
+      Response size: 1321106 bytes
+      Cache: MISS
+      Time: 0.68s
+
+[API] 2025-12-28 09:42:18.717442 | GET | INSIDER_TRANSACTIONS
+      Symbol: HOOD
+      Status: 200
+      Response size: 871520 bytes
+      Cache: MISS
+      Time: 0.65s
+
+[API] 2025-12-28 09:42:19.485798 | GET | INSIDER_TRANSACTIONS
+      Symbol: HPQ
+      Status: 200
+      Response size: 2016940 bytes
+      Cache: MISS
+      Time: 0.56s
+
+[API] 2025-12-28 09:42:19.712016 | GET | INSIDER_TRANSACTIONS
+      Symbol: HSBA
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.14s
+
+[API] 2025-12-28 09:42:20.121549 | GET | INSIDER_TRANSACTIONS
+      Symbol: HSY
+      Status: 200
+      Response size: 1405827 bytes
+      Cache: MISS
+      Time: 0.30s
+
+[API] 2025-12-28 09:42:20.358666 | GET | INSIDER_TRANSACTIONS
+      Symbol: HTO
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.16s
+
+[API] 2025-12-28 09:42:21.797715 | GET | INSIDER_TRANSACTIONS
+      Symbol: HUBB
+      Status: 200
+      Response size: 1914631 bytes
+      Cache: MISS
+      Time: 1.30s
+
+[API] 2025-12-28 09:42:22.667428 | GET | INSIDER_TRANSACTIONS
+      Symbol: HUM
+      Status: 200
+      Response size: 1511384 bytes
+      Cache: MISS
+      Time: 0.67s
+
+[API] 2025-12-28 09:42:23.513535 | GET | INSIDER_TRANSACTIONS
+      Symbol: IBKR
+      Status: 200
+      Response size: 1464729 bytes
+      Cache: MISS
+      Time: 0.67s
+
+[API] 2025-12-28 09:42:24.625025 | GET | INSIDER_TRANSACTIONS
+      Symbol: IBM
+      Status: 200
+      Response size: 1507033 bytes
+      Cache: MISS
+      Time: 0.93s
+
+[API] 2025-12-28 09:42:25.317880 | GET | INSIDER_TRANSACTIONS
+      Symbol: ICE
+      Status: 200
+      Response size: 837201 bytes
+      Cache: MISS
+      Time: 0.56s
+
+[API] 2025-12-28 09:42:26.250368 | GET | INSIDER_TRANSACTIONS
+      Symbol: IDXX
+      Status: 200
+      Response size: 1888102 bytes
+      Cache: MISS
+      Time: 0.74s
+
+[API] 2025-12-28 09:42:26.494160 | GET | INSIDER_TRANSACTIONS
+      Symbol: IMB
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.16s
+
+[API] 2025-12-28 09:42:27.314511 | GET | INSIDER_TRANSACTIONS
+      Symbol: IMTX
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.81s
+
+[API] 2025-12-28 09:42:34.041804 | GET | INSIDER_TRANSACTIONS
+      Symbol: INSM
+      Status: 200
+      Response size: 560465 bytes
+      Cache: MISS
+      Time: 6.68s
+
+[API] 2025-12-28 09:42:35.620865 | GET | INSIDER_TRANSACTIONS
+      Symbol: INTC
+      Status: 200
+      Response size: 2597450 bytes
+      Cache: MISS
+      Time: 1.34s
+
+[API] 2025-12-28 09:42:36.714989 | GET | INSIDER_TRANSACTIONS
+      Symbol: INTU
+      Status: 200
+      Response size: 3068365 bytes
+      Cache: MISS
+      Time: 0.81s
+
+[API] 2025-12-28 09:42:37.421187 | GET | INSIDER_TRANSACTIONS
+      Symbol: IQV
+      Status: 200
+      Response size: 467342 bytes
+      Cache: MISS
+      Time: 0.57s
+
+[API] 2025-12-28 09:42:38.082926 | GET | INSIDER_TRANSACTIONS
+      Symbol: IR
+      Status: 200
+      Response size: 425381 bytes
+      Cache: MISS
+      Time: 0.55s
+
+[API] 2025-12-28 09:42:38.851983 | GET | INSIDER_TRANSACTIONS
+      Symbol: IRDM
+      Status: 200
+      Response size: 1002147 bytes
+      Cache: MISS
+      Time: 0.65s
+
+[API] 2025-12-28 09:42:40.059996 | GET | INSIDER_TRANSACTIONS
+      Symbol: ISRG
+      Status: 200
+      Response size: 2580034 bytes
+      Cache: MISS
+      Time: 0.95s
+
+[API] 2025-12-28 09:42:41.075034 | GET | INSIDER_TRANSACTIONS
+      Symbol: IT
+      Status: 200
+      Response size: 2138527 bytes
+      Cache: MISS
+      Time: 0.77s
+
+[API] 2025-12-28 09:42:41.942401 | GET | INSIDER_TRANSACTIONS
+      Symbol: ITW
+      Status: 200
+      Response size: 1575948 bytes
+      Cache: MISS
+      Time: 0.68s
+
+[API] 2025-12-28 09:42:42.700552 | GET | INSIDER_TRANSACTIONS
+      Symbol: JCI
+      Status: 200
+      Response size: 1128562 bytes
+      Cache: MISS
+      Time: 0.66s
+
+[API] 2025-12-28 09:42:42.943959 | GET | INSIDER_TRANSACTIONS
+      Symbol: JD
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.16s
+
+[API] 2025-12-28 09:42:43.481295 | GET | INSIDER_TRANSACTIONS
+      Symbol: JNJ
+      Status: 200
+      Response size: 1451507 bytes
+      Cache: MISS
+      Time: 0.43s
+
+[API] 2025-12-28 09:42:43.949878 | GET | INSIDER_TRANSACTIONS
+      Symbol: JPM
+      Status: 200
+      Response size: 1611440 bytes
+      Cache: MISS
+      Time: 0.30s
+
+[API] 2025-12-28 09:42:44.856715 | GET | INSIDER_TRANSACTIONS
+      Symbol: KEY
+      Status: 200
+      Response size: 1643182 bytes
+      Cache: MISS
+      Time: 0.71s
+
+[API] 2025-12-28 09:42:45.524649 | GET | INSIDER_TRANSACTIONS
+      Symbol: KEYS
+      Status: 200
+      Response size: 448551 bytes
+      Cache: MISS
+      Time: 0.56s
+
+[API] 2025-12-28 09:42:46.064126 | GET | INSIDER_TRANSACTIONS
+      Symbol: KHC
+      Status: 200
+      Response size: 230914 bytes
+      Cache: MISS
+      Time: 0.46s
+
+[API] 2025-12-28 09:42:46.675807 | GET | INSIDER_TRANSACTIONS
+      Symbol: KKR
+      Status: 200
+      Response size: 754259 bytes
+      Cache: MISS
+      Time: 0.51s
+
+[API] 2025-12-28 09:42:47.050537 | GET | INSIDER_TRANSACTIONS
+      Symbol: KLAC
+      Status: 200
+      Response size: 1239394 bytes
+      Cache: MISS
+      Time: 0.22s
+
+[API] 2025-12-28 09:42:48.008708 | GET | INSIDER_TRANSACTIONS
+      Symbol: KMB
+      Status: 200
+      Response size: 1328319 bytes
+      Cache: MISS
+      Time: 0.80s
+
+[API] 2025-12-28 09:42:48.617168 | GET | INSIDER_TRANSACTIONS
+      Symbol: KMI
+      Status: 200
+      Response size: 409057 bytes
+      Cache: MISS
+      Time: 0.52s
+
+[API] 2025-12-28 09:42:49.418837 | GET | INSIDER_TRANSACTIONS
+      Symbol: KO
+      Status: 200
+      Response size: 1170506 bytes
+      Cache: MISS
+      Time: 0.65s
+
+[API] 2025-12-28 09:42:50.274934 | GET | INSIDER_TRANSACTIONS
+      Symbol: KR
+      Status: 200
+      Response size: 1604050 bytes
+      Cache: MISS
+      Time: 0.67s
+
+[API] 2025-12-28 09:42:50.515626 | GET | INSIDER_TRANSACTIONS
+      Symbol: KVUE
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.16s
+
+[API] 2025-12-28 09:42:50.683072 | GET | INSIDER_TRANSACTIONS
+      Symbol: KVYO
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.15s
+
+[API] 2025-12-28 09:42:51.452848 | GET | INSIDER_TRANSACTIONS
+      Symbol: LASER
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.76s
+
+[API] 2025-12-28 09:42:52.787259 | GET | INSIDER_TRANSACTIONS
+      Symbol: LECO
+      Status: 200
+      Response size: 885915 bytes
+      Cache: MISS
+      Time: 1.26s
+
+[API] 2025-12-28 09:42:53.787345 | GET | INSIDER_TRANSACTIONS
+      Symbol: LEG
+      Status: 200
+      Response size: 1496286 bytes
+      Cache: MISS
+      Time: 0.88s
+
+[API] 2025-12-28 09:42:54.486617 | GET | INSIDER_TRANSACTIONS
+      Symbol: LEN
+      Status: 200
+      Response size: 777883 bytes
+      Cache: MISS
+      Time: 0.56s
+
+[API] 2025-12-28 09:42:55.039246 | GET | INSIDER_TRANSACTIONS
+      Symbol: LGIH
+      Status: 200
+      Response size: 243642 bytes
+      Cache: MISS
+      Time: 0.47s
+
+[API] 2025-12-28 09:42:56.040536 | GET | INSIDER_TRANSACTIONS
+      Symbol: LHX
+      Status: 200
+      Response size: 2316555 bytes
+      Cache: MISS
+      Time: 0.79s
+
+[API] 2025-12-28 09:42:57.076116 | GET | INSIDER_TRANSACTIONS
+      Symbol: LII
+      Status: 200
+      Response size: 3058680 bytes
+      Cache: MISS
+      Time: 0.81s
+
+[API] 2025-12-28 09:42:57.722518 | GET | INSIDER_TRANSACTIONS
+      Symbol: LIN
+      Status: 200
+      Response size: 470915 bytes
+      Cache: MISS
+      Time: 0.50s
+
+[API] 2025-12-28 09:42:58.105963 | GET | INSIDER_TRANSACTIONS
+      Symbol: LINK
+      Status: 200
+      Response size: 50893 bytes
+      Cache: MISS
+      Time: 0.32s
+
+[API] 2025-12-28 09:42:58.805173 | GET | INSIDER_TRANSACTIONS
+      Symbol: LITE
+      Status: 200
+      Response size: 791010 bytes
+      Cache: MISS
+      Time: 0.58s
+
+[API] 2025-12-28 09:42:59.773061 | GET | INSIDER_TRANSACTIONS
+      Symbol: LKFN
+      Status: 200
+      Response size: 1136259 bytes
+      Cache: MISS
+      Time: 0.83s
+
+[API] 2025-12-28 09:42:59.982810 | GET | INSIDER_TRANSACTIONS
+      Symbol: LLOY
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.14s
+
+[API] 2025-12-28 09:43:01.656778 | GET | INSIDER_TRANSACTIONS
+      Symbol: LLY
+      Status: 200
+      Response size: 3313879 bytes
+      Cache: MISS
+      Time: 1.43s
+
+[API] 2025-12-28 09:43:02.696234 | GET | INSIDER_TRANSACTIONS
+      Symbol: LMT
+      Status: 200
+      Response size: 1853475 bytes
+      Cache: MISS
+      Time: 0.77s
+
+[API] 2025-12-28 09:43:03.470282 | GET | INSIDER_TRANSACTIONS
+      Symbol: LNG
+      Status: 200
+      Response size: 865403 bytes
+      Cache: MISS
+      Time: 0.64s
+
+[API] 2025-12-28 09:43:04.299914 | GET | INSIDER_TRANSACTIONS
+      Symbol: LOW
+      Status: 200
+      Response size: 1297102 bytes
+      Cache: MISS
+      Time: 0.67s
+
+[API] 2025-12-28 09:43:04.710349 | GET | INSIDER_TRANSACTIONS
+      Symbol: LRCX
+      Status: 200
+      Response size: 1069442 bytes
+      Cache: MISS
+      Time: 0.27s
+
+[API] 2025-12-28 09:43:04.940998 | GET | INSIDER_TRANSACTIONS
+      Symbol: LSEG
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.16s
+
+[API] 2025-12-28 09:43:05.107657 | GET | INSIDER_TRANSACTIONS
+      Symbol: LVSL
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.15s
+
+[API] 2025-12-28 09:43:05.711315 | GET | INSIDER_TRANSACTIONS
+      Symbol: LYV
+      Status: 200
+      Response size: 536719 bytes
+      Cache: MISS
+      Time: 0.56s
+
+[API] 2025-12-28 09:43:06.859681 | GET | INSIDER_TRANSACTIONS
+      Symbol: M
+      Status: 200
+      Response size: 1258790 bytes
+      Cache: MISS
+      Time: 1.00s
+
+[API] 2025-12-28 09:43:07.800022 | GET | INSIDER_TRANSACTIONS
+      Symbol: MA
+      Status: 200
+      Response size: 1770287 bytes
+      Cache: MISS
+      Time: 0.76s
+
+[API] 2025-12-28 09:43:08.667649 | GET | INSIDER_TRANSACTIONS
+      Symbol: MAR
+      Status: 200
+      Response size: 1538793 bytes
+      Cache: MISS
+      Time: 0.68s
+
+[API] 2025-12-28 09:43:09.165019 | GET | INSIDER_TRANSACTIONS
+      Symbol: MBIN
+      Status: 200
+      Response size: 177056 bytes
+      Cache: MISS
+      Time: 0.41s
+
+[API] 2025-12-28 09:43:09.986315 | GET | INSIDER_TRANSACTIONS
+      Symbol: MCD
+      Status: 200
+      Response size: 1391760 bytes
+      Cache: MISS
+      Time: 0.67s
+
+[API] 2025-12-28 09:43:10.928024 | GET | INSIDER_TRANSACTIONS
+      Symbol: MCK
+      Status: 200
+      Response size: 1266198 bytes
+      Cache: MISS
+      Time: 0.77s
+
+[API] 2025-12-28 09:43:11.154981 | GET | INSIDER_TRANSACTIONS
+      Symbol: MCPH
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.15s
+
+[API] 2025-12-28 09:43:12.204721 | GET | INSIDER_TRANSACTIONS
+      Symbol: MDB
+      Status: 200
+      Response size: 1269189 bytes
+      Cache: MISS
+      Time: 0.95s
+
+[API] 2025-12-28 09:43:12.920413 | GET | INSIDER_TRANSACTIONS
+      Symbol: MDLZ
+      Status: 200
+      Response size: 801663 bytes
+      Cache: MISS
+      Time: 0.58s
+
+[API] 2025-12-28 09:43:13.597627 | GET | INSIDER_TRANSACTIONS
+      Symbol: MDT
+      Status: 200
+      Response size: 485280 bytes
+      Cache: MISS
+      Time: 0.56s
+
+[API] 2025-12-28 09:43:14.059154 | GET | INSIDER_TRANSACTIONS
+      Symbol: MELI
+      Status: 200
+      Response size: 187386 bytes
+      Cache: MISS
+      Time: 0.38s
+
+[API] 2025-12-28 09:43:15.047238 | GET | INSIDER_TRANSACTIONS
+      Symbol: MET
+      Status: 200
+      Response size: 1214830 bytes
+      Cache: MISS
+      Time: 0.84s
+
+[API] 2025-12-28 09:43:16.842787 | GET | INSIDER_TRANSACTIONS
+      Symbol: META
+      Status: 200
+      Response size: 8294458 bytes
+      Cache: MISS
+      Time: 1.17s
+
+[API] 2025-12-28 09:43:17.591831 | GET | INSIDER_TRANSACTIONS
+      Symbol: METC
+      Status: 200
+      Response size: 473537 bytes
+      Cache: MISS
+      Time: 0.48s
+
+[API] 2025-12-28 09:43:18.138626 | GET | INSIDER_TRANSACTIONS
+      Symbol: MGEE
+      Status: 200
+      Response size: 81994 bytes
+      Cache: MISS
+      Time: 0.48s
+
+[API] 2025-12-28 09:43:19.188402 | GET | INSIDER_TRANSACTIONS
+      Symbol: MMM
+      Status: 200
+      Response size: 2828758 bytes
+      Cache: MISS
+      Time: 0.80s
+
+[API] 2025-12-28 09:43:19.838584 | GET | INSIDER_TRANSACTIONS
+      Symbol: MNST
+      Status: 200
+      Response size: 1388988 bytes
+      Cache: MISS
+      Time: 0.46s
+
+[API] 2025-12-28 09:43:20.552779 | GET | INSIDER_TRANSACTIONS
+      Symbol: MO
+      Status: 200
+      Response size: 823201 bytes
+      Cache: MISS
+      Time: 0.58s
+
+[API] 2025-12-28 09:43:21.280681 | GET | INSIDER_TRANSACTIONS
+      Symbol: MORN
+      Status: 200
+      Response size: 2461078 bytes
+      Cache: MISS
+      Time: 0.49s
+
+[API] 2025-12-28 09:43:21.993480 | GET | INSIDER_TRANSACTIONS
+      Symbol: MPC
+      Status: 200
+      Response size: 714900 bytes
+      Cache: MISS
+      Time: 0.55s
+
+[API] 2025-12-28 09:43:22.502540 | GET | INSIDER_TRANSACTIONS
+      Symbol: MPLX
+      Status: 200
+      Response size: 641757 bytes
+      Cache: MISS
+      Time: 0.40s
+
+[API] 2025-12-28 09:43:23.401609 | GET | INSIDER_TRANSACTIONS
+      Symbol: MPWR
+      Status: 200
+      Response size: 2572970 bytes
+      Cache: MISS
+      Time: 0.67s
+
+[API] 2025-12-28 09:43:23.852663 | GET | INSIDER_TRANSACTIONS
+      Symbol: MRK
+      Status: 200
+      Response size: 1273873 bytes
+      Cache: MISS
+      Time: 0.24s
+
+[API] 2025-12-28 09:43:24.540461 | GET | INSIDER_TRANSACTIONS
+      Symbol: MRVL
+      Status: 200
+      Response size: 703270 bytes
+      Cache: MISS
+      Time: 0.57s
+
+[API] 2025-12-28 09:43:25.031520 | GET | INSIDER_TRANSACTIONS
+      Symbol: MS
+      Status: 200
+      Response size: 1253531 bytes
+      Cache: MISS
+      Time: 0.35s
+
+[API] 2025-12-28 09:43:25.349527 | GET | INSIDER_TRANSACTIONS
+      Symbol: MSCI
+      Status: 200
+      Response size: 466227 bytes
+      Cache: MISS
+      Time: 0.21s
+
+[API] 2025-12-28 09:43:25.856934 | GET | INSIDER_TRANSACTIONS
+      Symbol: MSEX
+      Status: 200
+      Response size: 438588 bytes
+      Cache: MISS
+      Time: 0.41s
+
+[API] 2025-12-28 09:43:26.499769 | GET | INSIDER_TRANSACTIONS
+      Symbol: MSFT
+      Status: 200
+      Response size: 380157 bytes
+      Cache: MISS
+      Time: 0.55s
+
+[API] 2025-12-28 09:43:27.082927 | GET | INSIDER_TRANSACTIONS
+      Symbol: MSI
+      Status: 200
+      Response size: 1425024 bytes
+      Cache: MISS
+      Time: 0.43s
+
+[API] 2025-12-28 09:43:28.001920 | GET | INSIDER_TRANSACTIONS
+      Symbol: MTD
+      Status: 200
+      Response size: 1632911 bytes
+      Cache: MISS
+      Time: 0.74s
+
+[API] 2025-12-28 09:43:28.854041 | GET | INSIDER_TRANSACTIONS
+      Symbol: MU
+      Status: 200
+      Response size: 1675458 bytes
+      Cache: MISS
+      Time: 0.71s
+
+[API] 2025-12-28 09:43:34.535875 | GET | INSIDER_TRANSACTIONS
+      Symbol: NDAQ
+      Status: 200
+      Response size: 1018945 bytes
+      Cache: MISS
+      Time: 5.53s
+
+[API] 2025-12-28 09:43:35.522742 | GET | INSIDER_TRANSACTIONS
+      Symbol: NEE
+      Status: 200
+      Response size: 1301216 bytes
+      Cache: MISS
+      Time: 0.83s
+
+[API] 2025-12-28 09:43:36.563466 | GET | INSIDER_TRANSACTIONS
+      Symbol: NEM
+      Status: 200
+      Response size: 1276134 bytes
+      Cache: MISS
+      Time: 0.88s
+
+[API] 2025-12-28 09:43:37.818602 | GET | INSIDER_TRANSACTIONS
+      Symbol: NET
+      Status: 200
+      Response size: 1859578 bytes
+      Cache: MISS
+      Time: 1.06s
+
+[API] 2025-12-28 09:43:38.873260 | GET | INSIDER_TRANSACTIONS
+      Symbol: NFLX
+      Status: 200
+      Response size: 2481242 bytes
+      Cache: MISS
+      Time: 0.80s
+
+[API] 2025-12-28 09:43:39.902469 | GET | INSIDER_TRANSACTIONS
+      Symbol: NKE
+      Status: 200
+      Response size: 2454314 bytes
+      Cache: MISS
+      Time: 0.78s
+
+[API] 2025-12-28 09:43:40.778312 | GET | INSIDER_TRANSACTIONS
+      Symbol: NOW
+      Status: 200
+      Response size: 2719939 bytes
+      Cache: MISS
+      Time: 0.57s
+
+[API] 2025-12-28 09:43:41.595000 | GET | INSIDER_TRANSACTIONS
+      Symbol: NRG
+      Status: 200
+      Response size: 964267 bytes
+      Cache: MISS
+      Time: 0.65s
+
+[API] 2025-12-28 09:43:42.443816 | GET | INSIDER_TRANSACTIONS
+      Symbol: NSC
+      Status: 200
+      Response size: 1665718 bytes
+      Cache: MISS
+      Time: 0.68s
+
+[API] 2025-12-28 09:43:42.676945 | GET | INSIDER_TRANSACTIONS
+      Symbol: NTES
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.15s
+
+[API] 2025-12-28 09:43:43.046447 | GET | INSIDER_TRANSACTIONS
+      Symbol: NTRAC
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.36s
+
+[API] 2025-12-28 09:43:43.212014 | GET | INSIDER_TRANSACTIONS
+      Symbol: NU
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.15s
+
+[API] 2025-12-28 09:43:44.265351 | GET | INSIDER_TRANSACTIONS
+      Symbol: NUE
+      Status: 200
+      Response size: 857635 bytes
+      Cache: MISS
+      Time: 0.98s
+
+[API] 2025-12-28 09:43:45.276188 | GET | INSIDER_TRANSACTIONS
+      Symbol: NVDA
+      Status: 200
+      Response size: 2401574 bytes
+      Cache: MISS
+      Time: 0.78s
+
+[API] 2025-12-28 09:43:45.541720 | GET | INSIDER_TRANSACTIONS
+      Symbol: NVMI
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.16s
+
+[API] 2025-12-28 09:43:45.880787 | GET | INSIDER_TRANSACTIONS
+      Symbol: NVTK
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.33s
+
+[API] 2025-12-28 09:43:46.723260 | GET | INSIDER_TRANSACTIONS
+      Symbol: NWE
+      Status: 200
+      Response size: 359898 bytes
+      Cache: MISS
+      Time: 0.80s
+
+[API] 2025-12-28 09:43:47.199566 | GET | INSIDER_TRANSACTIONS
+      Symbol: NWN
+      Status: 200
+      Response size: 185403 bytes
+      Cache: MISS
+      Time: 0.40s
+
+[API] 2025-12-28 09:43:47.766756 | GET | INSIDER_TRANSACTIONS
+      Symbol: O
+      Status: 200
+      Response size: 354579 bytes
+      Cache: MISS
+      Time: 0.49s
+
+[API] 2025-12-28 09:43:48.790468 | GET | INSIDER_TRANSACTIONS
+      Symbol: ODFL
+      Status: 200
+      Response size: 669142 bytes
+      Cache: MISS
+      Time: 0.92s
+
+[API] 2025-12-28 09:43:49.645344 | GET | INSIDER_TRANSACTIONS
+      Symbol: OKE
+      Status: 200
+      Response size: 1643567 bytes
+      Cache: MISS
+      Time: 0.68s
+
+[API] 2025-12-28 09:43:49.877613 | GET | INSIDER_TRANSACTIONS
+      Symbol: OLVI
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.15s
+
+[API] 2025-12-28 09:43:51.065979 | GET | INSIDER_TRANSACTIONS
+      Symbol: OMC
+      Status: 200
+      Response size: 765150 bytes
+      Cache: MISS
+      Time: 1.13s
+
+[API] 2025-12-28 09:43:51.286253 | GET | INSIDER_TRANSACTIONS
+      Symbol: OPL
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.16s
+
+[API] 2025-12-28 09:43:51.927170 | GET | INSIDER_TRANSACTIONS
+      Symbol: ORCL
+      Status: 200
+      Response size: 1959778 bytes
+      Cache: MISS
+      Time: 0.50s
+
+[API] 2025-12-28 09:43:53.020296 | GET | INSIDER_TRANSACTIONS
+      Symbol: ORLY
+      Status: 200
+      Response size: 997416 bytes
+      Cache: MISS
+      Time: 0.93s
+
+[API] 2025-12-28 09:43:53.599700 | GET | INSIDER_TRANSACTIONS
+      Symbol: OTIS
+      Status: 200
+      Response size: 300465 bytes
+      Cache: MISS
+      Time: 0.48s
+
+[API] 2025-12-28 09:43:54.681758 | GET | INSIDER_TRANSACTIONS
+      Symbol: OXY
+      Status: 200
+      Response size: 975813 bytes
+      Cache: MISS
+      Time: 0.96s
+
+[API] 2025-12-28 09:43:55.488115 | GET | INSIDER_TRANSACTIONS
+      Symbol: PANW
+      Status: 200
+      Response size: 1274538 bytes
+      Cache: MISS
+      Time: 0.65s
+
+[API] 2025-12-28 09:43:56.185535 | GET | INSIDER_TRANSACTIONS
+      Symbol: PARR
+      Status: 200
+      Response size: 626457 bytes
+      Cache: MISS
+      Time: 0.57s
+
+[API] 2025-12-28 09:43:56.892007 | GET | INSIDER_TRANSACTIONS
+      Symbol: PAYX
+      Status: 200
+      Response size: 761893 bytes
+      Cache: MISS
+      Time: 0.59s
+
+[API] 2025-12-28 09:43:57.893435 | GET | INSIDER_TRANSACTIONS
+      Symbol: PCAR
+      Status: 200
+      Response size: 1349630 bytes
+      Cache: MISS
+      Time: 0.89s
+
+[API] 2025-12-28 09:43:58.899287 | GET | INSIDER_TRANSACTIONS
+      Symbol: PCTY
+      Status: 200
+      Response size: 2057929 bytes
+      Cache: MISS
+      Time: 0.79s
+
+[API] 2025-12-28 09:43:59.201762 | GET | INSIDER_TRANSACTIONS
+      Symbol: PDD
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.17s
+
+[API] 2025-12-28 09:44:00.106877 | GET | INSIDER_TRANSACTIONS
+      Symbol: PDFS
+      Status: 200
+      Response size: 1867688 bytes
+      Cache: MISS
+      Time: 0.77s
+
+[API] 2025-12-28 09:44:00.881357 | GET | INSIDER_TRANSACTIONS
+      Symbol: PEG
+      Status: 200
+      Response size: 1173007 bytes
+      Cache: MISS
+      Time: 0.67s
+
+[API] 2025-12-28 09:44:01.982808 | GET | INSIDER_TRANSACTIONS
+      Symbol: PEP
+      Status: 200
+      Response size: 3110835 bytes
+      Cache: MISS
+      Time: 0.81s
+
+[API] 2025-12-28 09:44:02.876021 | GET | INSIDER_TRANSACTIONS
+      Symbol: PFE
+      Status: 200
+      Response size: 1489579 bytes
+      Cache: MISS
+      Time: 0.68s
+
+[API] 2025-12-28 09:44:03.542837 | GET | INSIDER_TRANSACTIONS
+      Symbol: PG
+      Status: 200
+      Response size: 1947418 bytes
+      Cache: MISS
+      Time: 0.46s
+
+[API] 2025-12-28 09:44:04.391437 | GET | INSIDER_TRANSACTIONS
+      Symbol: PGR
+      Status: 200
+      Response size: 1318959 bytes
+      Cache: MISS
+      Time: 0.68s
+
+[API] 2025-12-28 09:44:05.357196 | GET | INSIDER_TRANSACTIONS
+      Symbol: PH
+      Status: 200
+      Response size: 2053866 bytes
+      Cache: MISS
+      Time: 0.76s
+
+[API] 2025-12-28 09:44:05.540811 | GET | INSIDER_TRANSACTIONS
+      Symbol: PHVS
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.15s
+
+[API] 2025-12-28 09:44:05.876254 | GET | INSIDER_TRANSACTIONS
+      Symbol: PL
+      Status: 200
+      Response size: 60512 bytes
+      Cache: MISS
+      Time: 0.32s
+
+[API] 2025-12-28 09:44:06.228456 | GET | INSIDER_TRANSACTIONS
+      Symbol: PLAB
+      Status: 200
+      Response size: 635067 bytes
+      Cache: MISS
+      Time: 0.26s
+
+[API] 2025-12-28 09:44:07.192150 | GET | INSIDER_TRANSACTIONS
+      Symbol: PLD
+      Status: 200
+      Response size: 2009486 bytes
+      Cache: MISS
+      Time: 0.77s
+
+[API] 2025-12-28 09:44:07.836952 | GET | INSIDER_TRANSACTIONS
+      Symbol: PLTR
+      Status: 200
+      Response size: 800362 bytes
+      Cache: MISS
+      Time: 0.56s
+
+[API] 2025-12-28 09:44:08.517057 | GET | INSIDER_TRANSACTIONS
+      Symbol: PM
+      Status: 200
+      Response size: 578959 bytes
+      Cache: MISS
+      Time: 0.57s
+
+[API] 2025-12-28 09:44:09.802940 | GET | INSIDER_TRANSACTIONS
+      Symbol: PNC
+      Status: 200
+      Response size: 2053782 bytes
+      Cache: MISS
+      Time: 1.09s
+
+[API] 2025-12-28 09:44:10.510063 | GET | INSIDER_TRANSACTIONS
+      Symbol: PODD
+      Status: 200
+      Response size: 681951 bytes
+      Cache: MISS
+      Time: 0.56s
+
+[API] 2025-12-28 09:44:11.237829 | GET | INSIDER_TRANSACTIONS
+      Symbol: POOL
+      Status: 200
+      Response size: 1196459 bytes
+      Cache: MISS
+      Time: 0.58s
+
+[API] 2025-12-28 09:44:11.910006 | GET | INSIDER_TRANSACTIONS
+      Symbol: POR
+      Status: 200
+      Response size: 442794 bytes
+      Cache: MISS
+      Time: 0.56s
+
+[API] 2025-12-28 09:44:12.857408 | GET | INSIDER_TRANSACTIONS
+      Symbol: PRU
+      Status: 200
+      Response size: 2005378 bytes
+      Cache: MISS
+      Time: 0.76s
+
+[API] 2025-12-28 09:44:13.573919 | GET | INSIDER_TRANSACTIONS
+      Symbol: PSA
+      Status: 200
+      Response size: 669976 bytes
+      Cache: MISS
+      Time: 0.58s
+
+[API] 2025-12-28 09:44:14.192829 | GET | INSIDER_TRANSACTIONS
+      Symbol: PSX
+      Status: 200
+      Response size: 367073 bytes
+      Cache: MISS
+      Time: 0.53s
+
+[API] 2025-12-28 09:44:14.976011 | GET | INSIDER_TRANSACTIONS
+      Symbol: PWR
+      Status: 200
+      Response size: 968310 bytes
+      Cache: MISS
+      Time: 0.66s
+
+[API] 2025-12-28 09:44:15.374039 | GET | INSIDER_TRANSACTIONS
+      Symbol: PYPL
+      Status: 200
+      Response size: 877697 bytes
+      Cache: MISS
+      Time: 0.27s
+
+[API] 2025-12-28 09:44:15.841463 | GET | INSIDER_TRANSACTIONS
+      Symbol: QBTS
+      Status: 200
+      Response size: 94000 bytes
+      Cache: MISS
+      Time: 0.40s
+
+[API] 2025-12-28 09:44:18.148968 | GET | INSIDER_TRANSACTIONS
+      Symbol: QCOM
+      Status: 200
+      Response size: 2712023 bytes
+      Cache: MISS
+      Time: 2.06s
+
+[API] 2025-12-28 09:44:18.868705 | GET | INSIDER_TRANSACTIONS
+      Symbol: QCRH
+      Status: 200
+      Response size: 624034 bytes
+      Cache: MISS
+      Time: 0.58s
+
+[API] 2025-12-28 09:44:19.094746 | GET | INSIDER_TRANSACTIONS
+      Symbol: QGEN
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.16s
+
+[API] 2025-12-28 09:44:20.171106 | GET | INSIDER_TRANSACTIONS
+      Symbol: QSR
+      Status: 200
+      Response size: 1424044 bytes
+      Cache: MISS
+      Time: 0.97s
+
+[API] 2025-12-28 09:44:20.393733 | GET | INSIDER_TRANSACTIONS
+      Symbol: RASP
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.16s
+
+[API] 2025-12-28 09:44:20.898512 | GET | INSIDER_TRANSACTIONS
+      Symbol: RBLIX
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.49s
+
+[API] 2025-12-28 09:44:21.646709 | GET | INSIDER_TRANSACTIONS
+      Symbol: RBRK
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.74s
+
+[API] 2025-12-28 09:44:22.316978 | GET | INSIDER_TRANSACTIONS
+      Symbol: RCI
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.66s
+
+[API] 2025-12-28 09:44:23.377953 | GET | INSIDER_TRANSACTIONS
+      Symbol: RCL
+      Status: 200
+      Response size: 921638 bytes
+      Cache: MISS
+      Time: 0.99s
+
+[API] 2025-12-28 09:44:23.776451 | GET | INSIDER_TRANSACTIONS
+      Symbol: RDDT
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.33s
+
+[API] 2025-12-28 09:44:24.335653 | GET | INSIDER_TRANSACTIONS
+      Symbol: RDW
+      Status: 200
+      Response size: 93028 bytes
+      Cache: MISS
+      Time: 0.54s
+
+[API] 2025-12-28 09:44:25.737750 | GET | INSIDER_TRANSACTIONS
+      Symbol: REGN
+      Status: 200
+      Response size: 3214125 bytes
+      Cache: MISS
+      Time: 1.13s
+
+[API] 2025-12-28 09:44:25.999866 | GET | INSIDER_TRANSACTIONS
+      Symbol: REL
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.14s
+
+[API] 2025-12-28 09:44:26.211452 | GET | INSIDER_TRANSACTIONS
+      Symbol: RELL
+      Status: 200
+      Response size: 361495 bytes
+      Cache: MISS
+      Time: 0.17s
+
+[API] 2025-12-28 09:44:26.437269 | GET | INSIDER_TRANSACTIONS
+      Symbol: RIO
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.21s
+
+[API] 2025-12-28 09:44:26.989753 | GET | INSIDER_TRANSACTIONS
+      Symbol: RKLB
+      Status: 200
+      Response size: 81768 bytes
+      Cache: MISS
+      Time: 0.53s
+
+[API] 2025-12-28 09:44:27.770360 | GET | INSIDER_TRANSACTIONS
+      Symbol: RKT
+      Status: 200
+      Response size: 220511 bytes
+      Cache: MISS
+      Time: 0.71s
+
+[API] 2025-12-28 09:44:28.499609 | GET | INSIDER_TRANSACTIONS
+      Symbol: RMD
+      Status: 200
+      Response size: 1288423 bytes
+      Cache: MISS
+      Time: 0.58s
+
+[API] 2025-12-28 09:44:34.816309 | GET | INSIDER_TRANSACTIONS
+      Symbol: ROK
+      Status: 200
+      Response size: 2095006 bytes
+      Cache: MISS
+      Time: 6.09s
+
+[API] 2025-12-28 09:44:35.392609 | GET | INSIDER_TRANSACTIONS
+      Symbol: ROL
+      Status: 200
+      Response size: 378881 bytes
+      Cache: MISS
+      Time: 0.47s
+
+[API] 2025-12-28 09:44:36.610848 | GET | INSIDER_TRANSACTIONS
+      Symbol: ROP
+      Status: 200
+      Response size: 887474 bytes
+      Cache: MISS
+      Time: 1.10s
+
+[API] 2025-12-28 09:44:37.167619 | GET | INSIDER_TRANSACTIONS
+      Symbol: ROSN
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.49s
+
+[API] 2025-12-28 09:44:38.551012 | GET | INSIDER_TRANSACTIONS
+      Symbol: ROST
+      Status: 200
+      Response size: 767004 bytes
+      Cache: MISS
+      Time: 1.32s
+
+[API] 2025-12-28 09:44:39.217733 | GET | INSIDER_TRANSACTIONS
+      Symbol: RR.
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.60s
+
+[API] 2025-12-28 09:44:40.756812 | GET | INSIDER_TRANSACTIONS
+      Symbol: RRC
+      Status: 200
+      Response size: 831342 bytes
+      Cache: MISS
+      Time: 1.47s
+
+[API] 2025-12-28 09:44:41.768049 | GET | INSIDER_TRANSACTIONS
+      Symbol: RSG
+      Status: 200
+      Response size: 1561796 bytes
+      Cache: MISS
+      Time: 0.84s
+
+[API] 2025-12-28 09:44:42.614717 | GET | INSIDER_TRANSACTIONS
+      Symbol: RTX
+      Status: 200
+      Response size: 1585402 bytes
+      Cache: MISS
+      Time: 0.66s
+
+[API] 2025-12-28 09:44:42.859489 | GET | INSIDER_TRANSACTIONS
+      Symbol: RUS
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.16s
+
+[API] 2025-12-28 09:44:43.225382 | GET | INSIDER_TRANSACTIONS
+      Symbol: SAT
+      Status: 200
+      Response size: 56074 bytes
+      Cache: MISS
+      Time: 0.35s
+
+[API] 2025-12-28 09:44:43.984345 | GET | INSIDER_TRANSACTIONS
+      Symbol: SBUX
+      Status: 200
+      Response size: 1041068 bytes
+      Cache: MISS
+      Time: 0.63s
+
+[API] 2025-12-28 09:44:44.498607 | GET | INSIDER_TRANSACTIONS
+      Symbol: SCCO
+      Status: 200
+      Response size: 209930 bytes
+      Cache: MISS
+      Time: 0.47s
+
+[API] 2025-12-28 09:44:45.516665 | GET | INSIDER_TRANSACTIONS
+      Symbol: SCHW
+      Status: 200
+      Response size: 2341300 bytes
+      Cache: MISS
+      Time: 0.81s
+
+[API] 2025-12-28 09:44:45.769058 | GET | INSIDER_TRANSACTIONS
+      Symbol: SCMN
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.15s
+
+[API] 2025-12-28 09:44:45.955544 | GET | INSIDER_TRANSACTIONS
+      Symbol: SE
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.17s
+
+[API] 2025-12-28 09:44:46.460074 | GET | INSIDER_TRANSACTIONS
+      Symbol: SHEL
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.49s
+
+[API] 2025-12-28 09:44:47.058751 | GET | INSIDER_TRANSACTIONS
+      Symbol: SHOP
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.59s
+
+[API] 2025-12-28 09:44:48.174545 | GET | INSIDER_TRANSACTIONS
+      Symbol: SHW
+      Status: 200
+      Response size: 1712923 bytes
+      Cache: MISS
+      Time: 0.99s
+
+[API] 2025-12-28 09:44:49.015074 | GET | INSIDER_TRANSACTIONS
+      Symbol: SLB
+      Status: 200
+      Response size: 1334506 bytes
+      Cache: MISS
+      Time: 0.67s
+
+[API] 2025-12-28 09:44:49.259643 | GET | INSIDER_TRANSACTIONS
+      Symbol: SNDK
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.17s
+
+[API] 2025-12-28 09:44:50.081101 | GET | INSIDER_TRANSACTIONS
+      Symbol: SNDX
+      Status: 200
+      Response size: 172279 bytes
+      Cache: MISS
+      Time: 0.80s
+
+[API] 2025-12-28 09:44:51.206536 | GET | INSIDER_TRANSACTIONS
+      Symbol: SNOW
+      Status: 200
+      Response size: 795475 bytes
+      Cache: MISS
+      Time: 1.01s
+
+[API] 2025-12-28 09:44:52.151955 | GET | INSIDER_TRANSACTIONS
+      Symbol: SNPS
+      Status: 200
+      Response size: 1727715 bytes
+      Cache: MISS
+      Time: 0.76s
+
+[API] 2025-12-28 09:44:53.316455 | GET | INSIDER_TRANSACTIONS
+      Symbol: SNX
+      Status: 200
+      Response size: 6177367 bytes
+      Cache: MISS
+      Time: 0.65s
+
+[API] 2025-12-28 09:44:54.254910 | GET | INSIDER_TRANSACTIONS
+      Symbol: SO
+      Status: 200
+      Response size: 1275342 bytes
+      Cache: MISS
+      Time: 0.66s
+
+[API] 2025-12-28 09:44:54.482246 | GET | INSIDER_TRANSACTIONS
+      Symbol: SOC
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.14s
+
+[API] 2025-12-28 09:44:54.989166 | GET | INSIDER_TRANSACTIONS
+      Symbol: SOFI
+      Status: 200
+      Response size: 326000 bytes
+      Cache: MISS
+      Time: 0.47s
+
+[API] 2025-12-28 09:44:55.437837 | GET | INSIDER_TRANSACTIONS
+      Symbol: SPG
+      Status: 200
+      Response size: 759355 bytes
+      Cache: MISS
+      Time: 0.34s
+
+[API] 2025-12-28 09:44:56.384906 | GET | INSIDER_TRANSACTIONS
+      Symbol: SPGI
+      Status: 200
+      Response size: 1009294 bytes
+      Cache: MISS
+      Time: 0.81s
+
+[API] 2025-12-28 09:44:56.571045 | GET | INSIDER_TRANSACTIONS
+      Symbol: SPOT
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.16s
+
+[API] 2025-12-28 09:44:57.567763 | GET | INSIDER_TRANSACTIONS
+      Symbol: SRAD
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.98s
+
+[API] 2025-12-28 09:44:58.649928 | GET | INSIDER_TRANSACTIONS
+      Symbol: SRE
+      Status: 200
+      Response size: 1030537 bytes
+      Cache: MISS
+      Time: 1.00s
+
+[API] 2025-12-28 09:44:59.770226 | GET | INSIDER_TRANSACTIONS
+      Symbol: SSB
+      Status: 200
+      Response size: 748926 bytes
+      Cache: MISS
+      Time: 0.99s
+
+[API] 2025-12-28 09:45:00.006472 | GET | INSIDER_TRANSACTIONS
+      Symbol: SSE
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.17s
+
+[API] 2025-12-28 09:45:00.412894 | GET | INSIDER_TRANSACTIONS
+      Symbol: STAN
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.39s
+
+[API] 2025-12-28 09:45:01.468768 | GET | INSIDER_TRANSACTIONS
+      Symbol: STOK
+      Status: 200
+      Response size: 188374 bytes
+      Cache: MISS
+      Time: 1.03s
+
+[API] 2025-12-28 09:45:02.960497 | GET | INSIDER_TRANSACTIONS
+      Symbol: STT
+      Status: 200
+      Response size: 985403 bytes
+      Cache: MISS
+      Time: 1.34s
+
+[API] 2025-12-28 09:45:03.754981 | GET | INSIDER_TRANSACTIONS
+      Symbol: SYBT
+      Status: 200
+      Response size: 1018040 bytes
+      Cache: MISS
+      Time: 0.65s
+
+[API] 2025-12-28 09:45:04.627050 | GET | INSIDER_TRANSACTIONS
+      Symbol: SYK
+      Status: 200
+      Response size: 1453315 bytes
+      Cache: MISS
+      Time: 0.70s
+
+[API] 2025-12-28 09:45:04.916478 | GET | INSIDER_TRANSACTIONS
+      Symbol: SYM
+      Status: 200
+      Response size: 261901 bytes
+      Cache: MISS
+      Time: 0.18s
+
+[API] 2025-12-28 09:45:06.060414 | GET | INSIDER_TRANSACTIONS
+      Symbol: SYY
+      Status: 200
+      Response size: 1549407 bytes
+      Cache: MISS
+      Time: 0.98s
+
+[API] 2025-12-28 09:45:06.903114 | GET | INSIDER_TRANSACTIONS
+      Symbol: T
+      Status: 200
+      Response size: 1407705 bytes
+      Cache: MISS
+      Time: 0.67s
+
+[API] 2025-12-28 09:45:08.080131 | GET | INSIDER_TRANSACTIONS
+      Symbol: TDG
+      Status: 200
+      Response size: 3443476 bytes
+      Cache: MISS
+      Time: 0.86s
+
+[API] 2025-12-28 09:45:09.432800 | GET | INSIDER_TRANSACTIONS
+      Symbol: TEAM
+      Status: 200
+      Response size: 4209320 bytes
+      Cache: MISS
+      Time: 0.95s
+
+[API] 2025-12-28 09:45:10.388576 | GET | INSIDER_TRANSACTIONS
+      Symbol: TEL
+      Status: 200
+      Response size: 1633359 bytes
+      Cache: MISS
+      Time: 0.68s
+
+[API] 2025-12-28 09:45:10.613657 | GET | INSIDER_TRANSACTIONS
+      Symbol: TEL1L
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.15s
+
+[API] 2025-12-28 09:45:11.378499 | GET | INSIDER_TRANSACTIONS
+      Symbol: TER
+      Status: 200
+      Response size: 1123296 bytes
+      Cache: MISS
+      Time: 0.68s
+
+[API] 2025-12-28 09:45:12.140533 | GET | INSIDER_TRANSACTIONS
+      Symbol: TFC
+      Status: 200
+      Response size: 1346888 bytes
+      Cache: MISS
+      Time: 0.60s
+
+[API] 2025-12-28 09:45:12.922049 | GET | INSIDER_TRANSACTIONS
+      Symbol: TGT
+      Status: 200
+      Response size: 961573 bytes
+      Cache: MISS
+      Time: 0.65s
+
+[API] 2025-12-28 09:45:13.702171 | GET | INSIDER_TRANSACTIONS
+      Symbol: THC
+      Status: 200
+      Response size: 881593 bytes
+      Cache: MISS
+      Time: 0.65s
+
+[API] 2025-12-28 09:45:14.285479 | GET | INSIDER_TRANSACTIONS
+      Symbol: THO
+      Status: 200
+      Response size: 395357 bytes
+      Cache: MISS
+      Time: 0.48s
+
+[API] 2025-12-28 09:45:14.824678 | GET | INSIDER_TRANSACTIONS
+      Symbol: TJX
+      Status: 200
+      Response size: 915905 bytes
+      Cache: MISS
+      Time: 0.41s
+
+[API] 2025-12-28 09:45:15.005806 | GET | INSIDER_TRANSACTIONS
+      Symbol: TKA
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.16s
+
+[API] 2025-12-28 09:45:15.177352 | GET | INSIDER_TRANSACTIONS
+      Symbol: TKO
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.16s
+
+[API] 2025-12-28 09:45:15.933320 | GET | INSIDER_TRANSACTIONS
+      Symbol: TKR
+      Status: 200
+      Response size: 1057785 bytes
+      Cache: MISS
+      Time: 0.68s
+
+[API] 2025-12-28 09:45:16.909005 | GET | INSIDER_TRANSACTIONS
+      Symbol: TMO
+      Status: 200
+      Response size: 2059577 bytes
+      Cache: MISS
+      Time: 0.78s
+
+[API] 2025-12-28 09:45:18.140960 | GET | INSIDER_TRANSACTIONS
+      Symbol: TMUS
+      Status: 200
+      Response size: 1836649 bytes
+      Cache: MISS
+      Time: 1.00s
+
+[API] 2025-12-28 09:45:18.562939 | GET | INSIDER_TRANSACTIONS
+      Symbol: TRGP
+      Status: 200
+      Response size: 413386 bytes
+      Cache: MISS
+      Time: 0.29s
+
+[API] 2025-12-28 09:45:20.056841 | GET | INSIDER_TRANSACTIONS
+      Symbol: TRV
+      Status: 200
+      Response size: 2260407 bytes
+      Cache: MISS
+      Time: 1.27s
+
+[API] 2025-12-28 09:45:20.323580 | GET | INSIDER_TRANSACTIONS
+      Symbol: TSC
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.17s
+
+[API] 2025-12-28 09:45:20.944087 | GET | INSIDER_TRANSACTIONS
+      Symbol: TSCO
+      Status: 200
+      Response size: 701452 bytes
+      Cache: MISS
+      Time: 0.56s
+
+[API] 2025-12-28 09:45:21.430533 | GET | INSIDER_TRANSACTIONS
+      Symbol: TSLA
+      Status: 200
+      Response size: 1819836 bytes
+      Cache: MISS
+      Time: 0.30s
+
+[API] 2025-12-28 09:45:22.269563 | GET | INSIDER_TRANSACTIONS
+      Symbol: TT
+      Status: 200
+      Response size: 981753 bytes
+      Cache: MISS
+      Time: 0.69s
+
+[API] 2025-12-28 09:45:22.779888 | GET | INSIDER_TRANSACTIONS
+      Symbol: TTWO
+      Status: 200
+      Response size: 498278 bytes
+      Cache: MISS
+      Time: 0.41s
+
+[API] 2025-12-28 09:45:23.010750 | GET | INSIDER_TRANSACTIONS
+      Symbol: TUYA
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.17s
+
+[API] 2025-12-28 09:45:24.615324 | GET | INSIDER_TRANSACTIONS
+      Symbol: TXN
+      Status: 200
+      Response size: 1671416 bytes
+      Cache: MISS
+      Time: 1.48s
+
+[API] 2025-12-28 09:45:25.433521 | GET | INSIDER_TRANSACTIONS
+      Symbol: UAL
+      Status: 200
+      Response size: 1042520 bytes
+      Cache: MISS
+      Time: 0.66s
+
+[API] 2025-12-28 09:45:26.286801 | GET | INSIDER_TRANSACTIONS
+      Symbol: UBER
+      Status: 200
+      Response size: 1420040 bytes
+      Cache: MISS
+      Time: 0.68s
+
+[API] 2025-12-28 09:45:26.705960 | GET | INSIDER_TRANSACTIONS
+      Symbol: UHS
+      Status: 200
+      Response size: 910189 bytes
+      Cache: MISS
+      Time: 0.28s
+
+[API] 2025-12-28 09:45:27.200322 | GET | INSIDER_TRANSACTIONS
+      Symbol: UI
+      Status: 200
+      Response size: 81173 bytes
+      Cache: MISS
+      Time: 0.42s
+
+[API] 2025-12-28 09:45:27.429143 | GET | INSIDER_TRANSACTIONS
+      Symbol: ULVR
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.16s
+
+[API] 2025-12-28 09:45:28.449919 | GET | INSIDER_TRANSACTIONS
+      Symbol: UMBF
+      Status: 200
+      Response size: 2876487 bytes
+      Cache: MISS
+      Time: 0.81s
+
+[API] 2025-12-28 09:45:29.351966 | GET | INSIDER_TRANSACTIONS
+      Symbol: UNH
+      Status: 200
+      Response size: 1268148 bytes
+      Cache: MISS
+      Time: 0.69s
+
+[API] 2025-12-28 09:45:29.970960 | GET | INSIDER_TRANSACTIONS
+      Symbol: UNP
+      Status: 200
+      Response size: 1478490 bytes
+      Cache: MISS
+      Time: 0.45s
+
+[API] 2025-12-28 09:45:34.981791 | GET | INSIDER_TRANSACTIONS
+      Symbol: UPS
+      Status: 200
+      Response size: 2600550 bytes
+      Cache: MISS
+      Time: 4.76s
+
+[API] 2025-12-28 09:45:35.881323 | GET | INSIDER_TRANSACTIONS
+      Symbol: URI
+      Status: 200
+      Response size: 1358679 bytes
+      Cache: MISS
+      Time: 0.71s
+
+[API] 2025-12-28 09:45:36.891418 | GET | INSIDER_TRANSACTIONS
+      Symbol: USB
+      Status: 200
+      Response size: 1971497 bytes
+      Cache: MISS
+      Time: 0.78s
+
+[API] 2025-12-28 09:45:37.697236 | GET | INSIDER_TRANSACTIONS
+      Symbol: UTL
+      Status: 200
+      Response size: 505889 bytes
+      Cache: MISS
+      Time: 0.69s
+
+[API] 2025-12-28 09:45:38.766756 | GET | INSIDER_TRANSACTIONS
+      Symbol: UVV
+      Status: 200
+      Response size: 714313 bytes
+      Cache: MISS
+      Time: 0.95s
+
+[API] 2025-12-28 09:45:39.855078 | GET | INSIDER_TRANSACTIONS
+      Symbol: V
+      Status: 200
+      Response size: 939049 bytes
+      Cache: MISS
+      Time: 0.96s
+
+[API] 2025-12-28 09:45:40.849563 | GET | INSIDER_TRANSACTIONS
+      Symbol: VECO
+      Status: 200
+      Response size: 660900 bytes
+      Cache: MISS
+      Time: 0.88s
+
+[API] 2025-12-28 09:45:41.989926 | GET | INSIDER_TRANSACTIONS
+      Symbol: VEEV
+      Status: 200
+      Response size: 2030348 bytes
+      Cache: MISS
+      Time: 0.94s
+
+[API] 2025-12-28 09:45:42.236069 | GET | INSIDER_TRANSACTIONS
+      Symbol: VFS
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.15s
+
+[API] 2025-12-28 09:45:43.207334 | GET | INSIDER_TRANSACTIONS
+      Symbol: VICI
+      Status: 200
+      Response size: 129120 bytes
+      Cache: MISS
+      Time: 0.95s
+
+[API] 2025-12-28 09:45:43.416455 | GET | INSIDER_TRANSACTIONS
+      Symbol: VIK
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.15s
+
+[API] 2025-12-28 09:45:44.161940 | GET | INSIDER_TRANSACTIONS
+      Symbol: VLO
+      Status: 200
+      Response size: 967309 bytes
+      Cache: MISS
+      Time: 0.67s
+
+[API] 2025-12-28 09:45:44.929720 | GET | INSIDER_TRANSACTIONS
+      Symbol: VMC
+      Status: 200
+      Response size: 882565 bytes
+      Cache: MISS
+      Time: 0.65s
+
+[API] 2025-12-28 09:45:45.151885 | GET | INSIDER_TRANSACTIONS
+      Symbol: VOD
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.15s
+
+[API] 2025-12-28 09:45:46.439595 | GET | INSIDER_TRANSACTIONS
+      Symbol: VRSK
+      Status: 200
+      Response size: 967936 bytes
+      Cache: MISS
+      Time: 1.21s
+
+[API] 2025-12-28 09:45:46.690832 | GET | INSIDER_TRANSACTIONS
+      Symbol: VRT
+      Status: 200
+      Response size: 177874 bytes
+      Cache: MISS
+      Time: 0.17s
+
+[API] 2025-12-28 09:45:47.745482 | GET | INSIDER_TRANSACTIONS
+      Symbol: VRTX
+      Status: 200
+      Response size: 2634617 bytes
+      Cache: MISS
+      Time: 0.82s
+
+[API] 2025-12-28 09:45:48.340755 | GET | INSIDER_TRANSACTIONS
+      Symbol: VST
+      Status: 200
+      Response size: 288173 bytes
+      Cache: MISS
+      Time: 0.47s
+
+[API] 2025-12-28 09:45:49.347378 | GET | INSIDER_TRANSACTIONS
+      Symbol: VTR
+      Status: 200
+      Response size: 2150519 bytes
+      Cache: MISS
+      Time: 0.79s
+
+[API] 2025-12-28 09:45:50.165907 | GET | INSIDER_TRANSACTIONS
+      Symbol: VZ
+      Status: 200
+      Response size: 1080999 bytes
+      Cache: MISS
+      Time: 0.65s
+
+[API] 2025-12-28 09:45:50.953884 | GET | INSIDER_TRANSACTIONS
+      Symbol: WAB
+      Status: 200
+      Response size: 892894 bytes
+      Cache: MISS
+      Time: 0.65s
+
+[API] 2025-12-28 09:45:51.744839 | GET | INSIDER_TRANSACTIONS
+      Symbol: WBD
+      Status: 200
+      Response size: 1002796 bytes
+      Cache: MISS
+      Time: 0.65s
+
+[API] 2025-12-28 09:45:51.972990 | GET | INSIDER_TRANSACTIONS
+      Symbol: WCP
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.16s
+
+[API] 2025-12-28 09:45:52.691577 | GET | INSIDER_TRANSACTIONS
+      Symbol: WDAY
+      Status: 200
+      Response size: 1777047 bytes
+      Cache: MISS
+      Time: 0.59s
+
+[API] 2025-12-28 09:45:53.675917 | GET | INSIDER_TRANSACTIONS
+      Symbol: WDC
+      Status: 200
+      Response size: 1641416 bytes
+      Cache: MISS
+      Time: 0.79s
+
+[API] 2025-12-28 09:45:54.289121 | GET | INSIDER_TRANSACTIONS
+      Symbol: WEC
+      Status: 200
+      Response size: 1414600 bytes
+      Cache: MISS
+      Time: 0.44s
+
+[API] 2025-12-28 09:45:55.100140 | GET | INSIDER_TRANSACTIONS
+      Symbol: WELL
+      Status: 200
+      Response size: 1168451 bytes
+      Cache: MISS
+      Time: 0.65s
+
+[API] 2025-12-28 09:45:55.609720 | GET | INSIDER_TRANSACTIONS
+      Symbol: WFC
+      Status: 200
+      Response size: 1854854 bytes
+      Cache: MISS
+      Time: 0.36s
+
+[API] 2025-12-28 09:45:56.463167 | GET | INSIDER_TRANSACTIONS
+      Symbol: WGO
+      Status: 200
+      Response size: 1357104 bytes
+      Cache: MISS
+      Time: 0.69s
+
+[API] 2025-12-28 09:45:57.324705 | GET | INSIDER_TRANSACTIONS
+      Symbol: WM
+      Status: 200
+      Response size: 1380279 bytes
+      Cache: MISS
+      Time: 0.68s
+
+[API] 2025-12-28 09:45:57.908775 | GET | INSIDER_TRANSACTIONS
+      Symbol: WMB
+      Status: 200
+      Response size: 1106430 bytes
+      Cache: MISS
+      Time: 0.43s
+
+[API] 2025-12-28 09:45:58.233876 | GET | INSIDER_TRANSACTIONS
+      Symbol: WMK
+      Status: 200
+      Response size: 21501 bytes
+      Cache: MISS
+      Time: 0.24s
+
+[API] 2025-12-28 09:45:59.074894 | GET | INSIDER_TRANSACTIONS
+      Symbol: WMT
+      Status: 200
+      Response size: 1515326 bytes
+      Cache: MISS
+      Time: 0.67s
+
+[API] 2025-12-28 09:45:59.651464 | GET | INSIDER_TRANSACTIONS
+      Symbol: WSO
+      Status: 200
+      Response size: 251654 bytes
+      Cache: MISS
+      Time: 0.48s
+
+[API] 2025-12-28 09:46:00.089960 | GET | INSIDER_TRANSACTIONS
+      Symbol: WSTL
+      Status: 200
+      Response size: 2 bytes
+      Cache: MISS
+      Time: 0.38s
+
+[API] 2025-12-28 09:46:01.287041 | GET | INSIDER_TRANSACTIONS
+      Symbol: WTW
+      Status: 200
+      Response size: 1812576 bytes
+      Cache: MISS
+      Time: 1.07s
+
+[API] 2025-12-28 09:46:02.081428 | GET | INSIDER_TRANSACTIONS
+      Symbol: XEL
+      Status: 200
+      Response size: 1064679 bytes
+      Cache: MISS
+      Time: 0.65s
+
+[API] 2025-12-28 09:46:02.469017 | GET | INSIDER_TRANSACTIONS
+      Symbol: XIFR
+      Status: 200
+      Response size: 18 bytes
+      Cache: MISS
+      Time: 0.31s
+
+[API] 2025-12-28 09:46:03.887938 | GET | INSIDER_TRANSACTIONS
+      Symbol: XOM
+      Status: 200
+      Response size: 1340706 bytes
+      Cache: MISS
+      Time: 1.32s
+
+[API] 2025-12-28 09:46:04.564289 | GET | INSIDER_TRANSACTIONS
+      Symbol: XYL
+      Status: 200
+      Response size: 531014 bytes
+      Cache: MISS
+      Time: 0.56s
+
+[API] 2025-12-28 09:46:05.568971 | GET | INSIDER_TRANSACTIONS
+      Symbol: YELP
+      Status: 200
+      Response size: 1379403 bytes
+      Cache: MISS
+      Time: 0.86s
+
+[API] 2025-12-28 09:46:06.736720 | GET | INSIDER_TRANSACTIONS
+      Symbol: YUM
+      Status: 200
+      Response size: 3228340 bytes
+      Cache: MISS
+      Time: 0.87s
+
+[API] 2025-12-28 09:46:07.331015 | GET | INSIDER_TRANSACTIONS
+      Symbol: ZS
+      Status: 200
+      Response size: 569881 bytes
+      Cache: MISS
+      Time: 0.43s
+
+[API] 2025-12-28 09:46:07.813981 | GET | INSIDER_TRANSACTIONS
+      Symbol: ZTS
+      Status: 200
+      Response size: 925191 bytes
+      Cache: MISS
+      Time: 0.35s
+

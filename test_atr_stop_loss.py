@@ -31,7 +31,7 @@ def test_stop_loss_calculation():
     print("Test 2: Stop Loss Calculation")
     print("-" * 50)
 
-    # Create a simple test dataset
+    # Create a simple test dataset with new Alpha Vantage column names
     test_data = pd.DataFrame({
         'date': pd.date_range('2023-01-01', periods=150),
         'open': [100.0] * 150,
@@ -39,8 +39,9 @@ def test_stop_loss_calculation():
         'low': [95.0] * 150,
         'close': [102.0] * 150,
         'volume': [1000000] * 150,
-        'atr_14': [2.0] * 150,  # Fixed ATR for testing
-        'ema_50': [100.0] * 150
+        'atr_14_atr': [2.0] * 150,  # Fixed ATR for testing (new column name)
+        'sma_50_sma': [100.0] * 150,  # SMA for exits (new column name)
+        'mfi_14_mfi': [50.0] * 150,   # MFI for momentum (new column name)
     })
 
     # Test percentage-based stop loss (default)
@@ -69,7 +70,7 @@ def test_backtest_integration():
         )
 
         # Try to load real data
-        data_loader = DataLoader(Path('raw_data/processed_exports'))
+        data_loader = DataLoader(Path('raw_data/daily'))
         try:
             data = data_loader.load_csv('AAPL')
             print(f"✓ Loaded {len(data)} bars of real data for AAPL")
