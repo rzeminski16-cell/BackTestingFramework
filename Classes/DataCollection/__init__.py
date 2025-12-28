@@ -24,11 +24,14 @@ from .config import (
     # Enums
     MissingDataHandling,
     DateRangeType,
+    MaxDTEForward,
+    OptionsType,
 )
 from .alpha_vantage_client import AlphaVantageClient
 from .validation_engine import ValidationEngine, ValidationResult
 from .file_manager import FileManager
 from .logging_manager import LoggingManager, SessionLogger
+from .options_collector import OptionsCollector
 
 __all__ = [
     # Configuration
@@ -49,6 +52,8 @@ __all__ = [
     # Enums
     'MissingDataHandling',
     'DateRangeType',
+    'MaxDTEForward',
+    'OptionsType',
     # Core components
     'AlphaVantageClient',
     'ValidationEngine',
@@ -56,4 +61,5 @@ __all__ = [
     'FileManager',
     'LoggingManager',
     'SessionLogger',
+    'OptionsCollector',
 ]
