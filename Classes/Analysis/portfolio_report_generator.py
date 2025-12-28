@@ -10,8 +10,13 @@ Generates Excel reports with:
 - Correlation matrix between securities
 - Position overlap heatmap
 
-For enhanced reports with advanced visualizations, use:
-    from Classes.Analysis.enhanced_portfolio_report import EnhancedPortfolioReportGenerator
+Enhanced features (enabled by default):
+- Executive Summary Dashboard with KPIs
+- Table of Contents with hyperlinks
+- Deep trade analysis (MAE/MFE, clustering)
+- Rolling performance metrics
+- Statistical significance testing
+- Comprehensive matplotlib visualizations
 """
 import pandas as pd
 import numpy as np
@@ -56,13 +61,13 @@ class PortfolioReportGenerator:
     NEGATIVE_FILL = PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid") if OPENPYXL_AVAILABLE else None
     NEUTRAL_FILL = PatternFill(start_color="FFEB9C", end_color="FFEB9C", fill_type="solid") if OPENPYXL_AVAILABLE else None
 
-    def __init__(self, output_dir: Path, use_enhanced: bool = False):
+    def __init__(self, output_dir: Path, use_enhanced: bool = True):
         """
         Initialize report generator.
 
         Args:
             output_dir: Directory to save reports
-            use_enhanced: If True, use enhanced report generator by default
+            use_enhanced: If True (default), use enhanced report generator with advanced visualizations
         """
         if not OPENPYXL_AVAILABLE:
             raise ImportError("openpyxl is required for report generation. Install with: pip install openpyxl")

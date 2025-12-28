@@ -48,13 +48,13 @@ class OptimizationReportGenerator:
     6. Recommendations - Actionable insights
     """
 
-    def __init__(self, config: Dict[str, Any], use_enhanced: bool = False):
+    def __init__(self, config: Dict[str, Any], use_enhanced: bool = True):
         """
         Initialize report generator.
 
         Args:
             config: Configuration dictionary
-            use_enhanced: If True, use enhanced reports with advanced visualizations
+            use_enhanced: If True (default), use enhanced reports with advanced visualizations
         """
         self.config = config
         self.report_config = config.get('reporting', {})

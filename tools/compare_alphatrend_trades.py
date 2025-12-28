@@ -4,6 +4,13 @@ Compare AlphaTrend trade logs: Framework vs TradingView.
 Handles TradingView's format where Entry and Exit are separate rows.
 """
 
+import sys
+from pathlib import Path
+
+# Add project root to path for imports
+project_root = Path(__file__).parent.parent
+sys.path.insert(0, str(project_root))
+
 import pandas as pd
 import numpy as np
 from datetime import datetime

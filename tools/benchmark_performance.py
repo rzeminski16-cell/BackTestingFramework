@@ -8,6 +8,14 @@ Tests the performance improvements from:
 
 Compares backtest execution time and provides detailed metrics.
 """
+
+import sys
+from pathlib import Path
+
+# Add project root to path for imports
+project_root = Path(__file__).parent.parent
+sys.path.insert(0, str(project_root))
+
 import time
 import pandas as pd
 from Classes.Config.config import BacktestConfig, CommissionConfig, CommissionMode

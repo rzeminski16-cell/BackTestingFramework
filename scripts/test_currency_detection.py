@@ -1,7 +1,12 @@
 """
 Test script to verify currency detection is working correctly.
 """
+import sys
 from pathlib import Path
+
+# Add project root to path for imports
+project_root = Path(__file__).parent.parent
+sys.path.insert(0, str(project_root))
 from Classes.Data.security_registry import SecurityRegistry
 from Classes.Data.currency_converter import CurrencyConverter
 from Classes.Config.config import BacktestConfig

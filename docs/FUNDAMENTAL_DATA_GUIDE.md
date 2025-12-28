@@ -18,7 +18,7 @@ Create a configuration file with your API key:
 
 ```bash
 # Generate sample config
-python run_fundamental_data_fetch.py --create-config
+python tools/run_fundamental_data_fetch.py --create-config
 ```
 
 This creates `alpha_vantage_config.json`:
@@ -49,16 +49,16 @@ Edit this file and replace `YOUR_API_KEY_HERE` with your actual API key.
 
 ```bash
 # Fetch fundamental data for all securities in your trade logs
-python run_fundamental_data_fetch.py logs/AlphaTrendStrategy
+python tools/run_fundamental_data_fetch.py logs/AlphaTrendStrategy
 
 # With custom date range
-python run_fundamental_data_fetch.py logs/AlphaTrendStrategy --start-year 2015 --end-year 2024
+python tools/run_fundamental_data_fetch.py logs/AlphaTrendStrategy --start-year 2015 --end-year 2024
 
 # With custom output directory
-python run_fundamental_data_fetch.py logs/AlphaTrendStrategy -o analysis_output/fundamentals
+python tools/run_fundamental_data_fetch.py logs/AlphaTrendStrategy -o analysis_output/fundamentals
 
 # For specific symbols only
-python run_fundamental_data_fetch.py logs/AlphaTrendStrategy --symbols AAPL MSFT GOOG
+python tools/run_fundamental_data_fetch.py logs/AlphaTrendStrategy --symbols AAPL MSFT GOOG
 ```
 
 ## Output Files
@@ -224,7 +224,7 @@ Cache settings in config:
 
 ```bash
 # Clear cache before fetching
-python run_fundamental_data_fetch.py logs/MyStrategy --clear-cache
+python tools/run_fundamental_data_fetch.py logs/MyStrategy --clear-cache
 ```
 
 ## Programmatic Usage
@@ -295,7 +295,7 @@ print(merged[['year', 'quarter', 'period_GB_flag', 'eps_ttm', 'pe_ratio_trailing
 
 ```bash
 # Create config file
-python run_fundamental_data_fetch.py --create-config
+python tools/run_fundamental_data_fetch.py --create-config
 
 # Edit with your API key
 nano alpha_vantage_config.json

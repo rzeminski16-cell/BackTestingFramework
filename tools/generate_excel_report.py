@@ -10,10 +10,15 @@ for your backtesting results. The report includes:
 - Market Condition Breakdown
 
 Usage:
-    python generate_excel_report.py
+    python tools/generate_excel_report.py
 """
 
+import sys
 from pathlib import Path
+
+# Add project root to path for imports
+project_root = Path(__file__).parent.parent
+sys.path.insert(0, str(project_root))
 from datetime import datetime
 
 from Classes.Config.config import BacktestConfig, CommissionConfig, CommissionMode

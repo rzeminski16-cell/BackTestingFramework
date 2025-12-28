@@ -62,7 +62,7 @@ Then edit the file and replace `YOUR_ALPHA_VANTAGE_API_KEY` with your actual key
 ### 3. Launch the Application
 
 ```bash
-python data_collection_gui.py
+python apps/data_collection_gui.py
 ```
 
 ---
@@ -676,7 +676,7 @@ Once data is collected, it's ready for use with the backtesting framework:
 
 ```bash
 # 1. Collect data
-python data_collection_gui.py
+python apps/data_collection_gui.py
 
 # 2. Run backtest
 python run_gui.py

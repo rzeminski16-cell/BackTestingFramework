@@ -2,19 +2,26 @@
 
 This guide documents all executable scripts and applications available in the framework.
 
-## Main Applications
+## Directory Structure
+
+The framework organizes executables into three directories:
+- `apps/` - GUI applications
+- `tools/` - Command-line utilities
+- `scripts/` - Test and utility scripts
+
+## Main Applications (apps/)
 
 These are the primary tools you'll use for backtesting and analysis.
 
 ### Backtest GUI
 
-**File:** `run_gui.py` (or `backtest_gui.py`)
+**File:** `apps/backtest_gui.py`
 
 **Purpose:** Main graphical interface for running backtests.
 
 **How to Run:**
 ```bash
-python run_gui.py
+python apps/backtest_gui.py
 ```
 
 **Features:**
@@ -30,13 +37,13 @@ python run_gui.py
 
 ### Optimization GUI
 
-**File:** `optimize_gui.py` (or `optimization_gui.py`)
+**File:** `apps/optimization_gui.py`
 
 **Purpose:** Walk-forward optimization with Bayesian parameter search.
 
 **How to Run:**
 ```bash
-python optimize_gui.py
+python apps/optimization_gui.py
 ```
 
 **Features:**
@@ -52,13 +59,13 @@ python optimize_gui.py
 
 ### AlphaTrend Explorer
 
-**File:** `alphatrend_explorer.py`
+**File:** `apps/alphatrend_explorer.py`
 
 **Purpose:** Interactive visualization tool for understanding the AlphaTrend indicator.
 
 **How to Run:**
 ```bash
-streamlit run alphatrend_explorer.py
+streamlit run apps/alphatrend_explorer.py
 ```
 
 **Requirements:** Requires Streamlit (`pip install streamlit plotly`)
@@ -77,13 +84,13 @@ streamlit run alphatrend_explorer.py
 
 ### Vulnerability Score Modeler
 
-**File:** `vulnerability_gui.py`
+**File:** `apps/vulnerability_gui.py`
 
 **Purpose:** Analyze and optimize vulnerability scoring for portfolio capital contention.
 
 **How to Run:**
 ```bash
-python vulnerability_gui.py
+python apps/vulnerability_gui.py
 ```
 
 **Features:**
@@ -99,19 +106,19 @@ python vulnerability_gui.py
 
 ---
 
-## Utility Scripts
+## Command-Line Tools (tools/)
 
 These scripts perform specific tasks and are run from the command line.
 
 ### Generate Excel Report
 
-**File:** `generate_excel_report.py`
+**File:** `tools/generate_excel_report.py`
 
 **Purpose:** Generate a standalone Excel report from a backtest.
 
 **How to Run:**
 ```bash
-python generate_excel_report.py
+python tools/generate_excel_report.py
 ```
 
 **What It Does:**
@@ -128,13 +135,13 @@ python generate_excel_report.py
 
 ### Compare Trade Logs
 
-**File:** `compare_trade_logs.py`
+**File:** `tools/compare_trade_logs.py`
 
 **Purpose:** Compare trade logs from the framework against TradingView exports.
 
 **How to Run:**
 ```bash
-python compare_trade_logs.py \
+python tools/compare_trade_logs.py \
   --framework logs/backtest/trades.csv \
   --tradingview logs/tradingview_export.csv
 ```
@@ -151,13 +158,13 @@ python compare_trade_logs.py \
 
 ### Export AlphaTrend Indicators
 
-**File:** `export_alphatrend_indicators.py`
+**File:** `tools/export_alphatrend_indicators.py`
 
 **Purpose:** Export indicator values from your data to CSV for analysis.
 
 **How to Run:**
 ```bash
-python export_alphatrend_indicators.py --symbol AAPL
+python tools/export_alphatrend_indicators.py --symbol AAPL
 ```
 
 **What It Does:**
@@ -190,13 +197,13 @@ python process_chart_exports.py
 
 ### Benchmark Performance
 
-**File:** `benchmark_performance.py`
+**File:** `tools/benchmark_performance.py`
 
 **Purpose:** Measure backtest execution performance.
 
 **How to Run:**
 ```bash
-python benchmark_performance.py
+python tools/benchmark_performance.py
 ```
 
 **What It Does:**
@@ -210,13 +217,13 @@ python benchmark_performance.py
 
 ### Compare AlphaTrend Trades
 
-**File:** `compare_alphatrend_trades.py`
+**File:** `tools/compare_alphatrend_trades.py`
 
 **Purpose:** Compare AlphaTrend strategy trades between different sources.
 
 **How to Run:**
 ```bash
-python compare_alphatrend_trades.py
+python tools/compare_alphatrend_trades.py
 ```
 
 **What It Does:**
@@ -228,36 +235,21 @@ python compare_alphatrend_trades.py
 
 ---
 
-### Backtest CLI
-
-**File:** `backtest.py`
-
-**Purpose:** Command-line examples for programmatic backtesting.
-
-**How to Run:**
-```bash
-python backtest.py
-```
-
-**Note:** Most examples in this file have been deprecated. Use `run_gui.py` or write your own Python scripts using the framework's API.
-
-**When to Use:** As a reference for programmatic usage patterns.
-
 ---
 
 ## Quick Reference
 
 | Tool | Command | Purpose |
 |------|---------|---------|
-| **Backtest GUI** | `python run_gui.py` | Run backtests interactively |
-| **Optimization GUI** | `python optimize_gui.py` | Find optimal parameters |
-| **AlphaTrend Explorer** | `streamlit run alphatrend_explorer.py` | Visualize AlphaTrend indicator |
-| **Vulnerability Modeler** | `python vulnerability_gui.py` | Tune vulnerability scoring |
-| **Excel Report** | `python generate_excel_report.py` | Generate sample report |
-| **Compare Trades** | `python compare_trade_logs.py` | Validate against TradingView |
-| **Export Indicators** | `python export_alphatrend_indicators.py` | Export indicator values |
-| **Process Exports** | `python process_chart_exports.py` | Prepare TradingView data |
-| **Benchmark** | `python benchmark_performance.py` | Measure performance |
+| **Backtest GUI** | `python apps/backtest_gui.py` | Run backtests interactively |
+| **Optimization GUI** | `python apps/optimization_gui.py` | Find optimal parameters |
+| **AlphaTrend Explorer** | `streamlit run apps/alphatrend_explorer.py` | Visualize AlphaTrend indicator |
+| **Vulnerability Modeler** | `python apps/vulnerability_gui.py` | Tune vulnerability scoring |
+| **Data Collection** | `python apps/data_collection_gui.py` | Fetch market data |
+| **Excel Report** | `python tools/generate_excel_report.py` | Generate sample report |
+| **Compare Trades** | `python tools/compare_trade_logs.py` | Validate against TradingView |
+| **Export Indicators** | `python tools/export_alphatrend_indicators.py` | Export indicator values |
+| **Benchmark** | `python tools/benchmark_performance.py` | Measure performance |
 
 ---
 
@@ -286,58 +278,54 @@ pip install matplotlib
 
 ### Workflow 1: Quick Backtest
 ```bash
-python run_gui.py
+python apps/backtest_gui.py
 # → Select security → Choose strategy → Run
 ```
 
 ### Workflow 2: Optimize Then Backtest
 ```bash
 # 1. Find optimal parameters
-python optimize_gui.py
+python apps/optimization_gui.py
 # → Review Excel report → Note recommended parameters
 
 # 2. Run backtest with those parameters
-python run_gui.py
+python apps/backtest_gui.py
 # → Configure strategy with recommended parameters → Run
 ```
 
 ### Workflow 3: Understand AlphaTrend Before Using
 ```bash
 # 1. Explore the indicator
-streamlit run alphatrend_explorer.py
+streamlit run apps/alphatrend_explorer.py
 # → Adjust parameters → See how signals change
 
 # 2. Run backtest with chosen parameters
-python run_gui.py
+python apps/backtest_gui.py
 ```
 
 ### Workflow 4: Portfolio with Vulnerability Tuning
 ```bash
 # 1. Run initial portfolio backtest
-python run_gui.py
+python apps/backtest_gui.py
 # → Portfolio mode → Multiple securities → Run
 
 # 2. Tune vulnerability scoring
-python vulnerability_gui.py
+python apps/vulnerability_gui.py
 # → Load results → Adjust parameters → Simulate impact
 
 # 3. Re-run with tuned parameters
-python run_gui.py
+python apps/backtest_gui.py
 # → Use tuned vulnerability preset
 ```
 
 ### Workflow 5: Validate Against TradingView
 ```bash
-# 1. Export data from TradingView
-# 2. Process the export
-python process_chart_exports.py
+# 1. Run backtest
+python apps/backtest_gui.py
 
-# 3. Run backtest
-python run_gui.py
-
-# 4. Export TradingView trade list
-# 5. Compare
-python compare_trade_logs.py --framework logs/trades.csv --tradingview tv_trades.csv
+# 2. Export TradingView trade list
+# 3. Compare
+python tools/compare_trade_logs.py --framework logs/trades.csv --tradingview tv_trades.csv
 ```
 
 ---
