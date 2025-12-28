@@ -1,0 +1,1027 @@
+date,symbol,insider_title,transaction_type,shares,price,value,executive,security_type
+2004-05-05,AMKR,See Exhibit No. EX-99.1,BUY,14000.0,9.16,128240.0,"JAMES, &AMP; AGNES KIM FOUNDATION, INC.","Amkor Technology, Inc. Common Stock"
+2004-05-05,AMKR,See Exhibit No. EX-99.1,BUY,13600.0,8.98,122128.0,"JAMES, &AMP; AGNES KIM FOUNDATION, INC.","Amkor Technology, Inc. Common Stock"
+2004-05-05,AMKR,See Exhibit No. EX-99.1,BUY,13600.0,9.03,122807.99999999999,"JAMES, &AMP; AGNES KIM FOUNDATION, INC.","Amkor Technology, Inc. Common Stock"
+2004-05-05,AMKR,See Exhibit No. EX-99.1,BUY,13600.0,9.13,124168.00000000001,"JAMES, &AMP; AGNES KIM FOUNDATION, INC.","Amkor Technology, Inc. Common Stock"
+2004-05-05,AMKR,See Exhibit No. EX-99.1,BUY,40800.0,9.11,371688.0,"JAMES, &AMP; AGNES KIM FOUNDATION, INC.","Amkor Technology, Inc. Common Stock"
+2004-05-05,AMKR,See Exhibit No. EX-99.1,BUY,27200.0,9.08,246976.0,"JAMES, &AMP; AGNES KIM FOUNDATION, INC.","Amkor Technology, Inc. Common Stock"
+2004-05-05,AMKR,See Exhibit No. EX-99.1,BUY,27200.0,9.12,248063.99999999997,"JAMES, &AMP; AGNES KIM FOUNDATION, INC.","Amkor Technology, Inc. Common Stock"
+2004-05-06,AMKR,Director,BUY,300.0,8.71,2613.0000000000005,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,Director,BUY,300.0,8.7,2610.0,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,Director,BUY,300.0,8.67,2601.0,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,"Director, 10% Owner, See Exhibit No. EX-99.1",BUY,1100.0,8.77,9647.0,"KIM, SUSAN Y","Amkor Technology, Inc. Common stock"
+2004-05-06,AMKR,"Director, 10% Owner, See Exhibit No. EX-99.1",BUY,2500.0,8.76,21900.0,"KIM, SUSAN Y","Amkor Technology, Inc. Common stock"
+2004-05-06,AMKR,Director,BUY,1900.0,8.88,16872.0,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,Director,BUY,400.0,8.84,3536.0,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,Director,BUY,4600.0,8.74,40204.0,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,Director,BUY,1400.0,8.88,12432.000000000002,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,Director,BUY,3500.0,8.71,30485.000000000004,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,"Director, 10% Owner, See Exhibit No. EX-99.1",BUY,8000.0,8.77,70160.0,"KIM, SUSAN Y","Amkor Technology, Inc. Common stock"
+2004-05-06,AMKR,"Director, 10% Owner, See Exhibit No. EX-99.1",BUY,900.0,8.75,7875.0,"KIM, SUSAN Y","Amkor Technology, Inc. Common stock"
+2004-05-06,AMKR,"Director, 10% Owner, See Exhibit No. EX-99.1",BUY,700.0,8.76,6132.0,"KIM, SUSAN Y","Amkor Technology, Inc. Common stock"
+2004-05-06,AMKR,Director,BUY,300.0,8.9,2670.0,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,"Director, 10% Owner, See Exhibit No. EX-99.1",BUY,5200.0,8.7,45239.99999999999,"KIM, SUSAN Y","Amkor Technology, Inc. Common stock"
+2004-05-06,AMKR,"Director, 10% Owner, See Exhibit No. EX-99.1",BUY,2000.0,8.76,17520.0,"KIM, SUSAN Y","Amkor Technology, Inc. Common stock"
+2004-05-06,AMKR,Director,BUY,1900.0,8.7,16530.0,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,"Director, 10% Owner, See Exhibit No. EX-99.1",BUY,300.0,8.76,2628.0,"KIM, SUSAN Y","Amkor Technology, Inc. Common stock"
+2004-05-06,AMKR,"Director, 10% Owner, See Exhibit No. EX-99.1",BUY,8000.0,8.71,69680.0,"KIM, SUSAN Y","Amkor Technology, Inc. Common stock"
+2004-05-06,AMKR,"Director, 10% Owner, See Exhibit No. EX-99.1",BUY,300.0,8.7,2610.0,"KIM, SUSAN Y","Amkor Technology, Inc. Common stock"
+2004-05-06,AMKR,"Director, 10% Owner, See Exhibit No. EX-99.1",BUY,1000.0,8.69,8690.0,"KIM, SUSAN Y","Amkor Technology, Inc. Common stock"
+2004-05-06,AMKR,"Director, 10% Owner, See Exhibit No. EX-99.1",BUY,200.0,8.65,1730.0,"KIM, SUSAN Y","Amkor Technology, Inc. Common stock"
+2004-05-06,AMKR,"Director, 10% Owner, See Exhibit No. EX-99.1",BUY,100.0,8.64,864.0,"KIM, SUSAN Y","Amkor Technology, Inc. Common stock"
+2004-05-06,AMKR,"Director, 10% Owner, See Exhibit No. EX-99.1",BUY,100.0,8.75,875.0,"KIM, SUSAN Y","Amkor Technology, Inc. Common stock"
+2004-05-06,AMKR,"Director, 10% Owner, See Exhibit No. EX-99.1",BUY,6100.0,8.73,53253.0,"KIM, SUSAN Y","Amkor Technology, Inc. Common stock"
+2004-05-06,AMKR,"Director, 10% Owner, See Exhibit No. EX-99.1",BUY,2500.0,8.72,21800.0,"KIM, SUSAN Y","Amkor Technology, Inc. Common stock"
+2004-05-06,AMKR,"Director, 10% Owner, See Exhibit No. EX-99.1",BUY,1300.0,8.71,11323.000000000002,"KIM, SUSAN Y","Amkor Technology, Inc. Common stock"
+2004-05-06,AMKR,"Director, 10% Owner, See Exhibit No. EX-99.1",BUY,8400.0,8.77,73668.0,"KIM, SUSAN Y","Amkor Technology, Inc. Common stock"
+2004-05-06,AMKR,"Director, 10% Owner, See Exhibit No. EX-99.1",BUY,1200.0,8.69,10428.0,"KIM, SUSAN Y","Amkor Technology, Inc. Common stock"
+2004-05-06,AMKR,Director,BUY,400.0,8.89,3556.0,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,Director,BUY,400.0,8.64,3456.0,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,Director,BUY,400.0,8.81,3524.0,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,Director,BUY,400.0,8.67,3468.0,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,Director,BUY,400.0,8.62,3447.9999999999995,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,Director,BUY,200.0,8.72,1744.0000000000002,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,Director,BUY,400.0,8.73,3492.0,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,Director,BUY,900.0,8.76,7884.0,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,Director,BUY,1000.0,8.85,8850.0,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,Director,BUY,1000.0,8.7,8700.0,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,Director,BUY,1100.0,8.71,9581.000000000002,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,Director,BUY,1100.0,8.72,9592.0,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,Director,BUY,1400.0,8.83,12362.0,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,Director,BUY,1600.0,8.67,13872.0,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,Director,BUY,2000.0,8.77,17540.0,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,Director,BUY,3300.0,8.7,28709.999999999996,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,Director,BUY,400.0,8.76,3504.0,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,Director,BUY,1000.0,8.88,8880.0,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,Director,BUY,200.0,8.73,1746.0,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,Director,BUY,100.0,8.72,872.0000000000001,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,Director,BUY,100.0,8.73,873.0,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,Director,BUY,100.0,8.71,871.0000000000001,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,Director,BUY,400.0,8.72,3488.0000000000005,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,Director,BUY,400.0,8.71,3484.0000000000005,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,Director,BUY,400.0,8.7,3479.9999999999995,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,Director,BUY,400.0,8.69,3476.0,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,Director,BUY,400.0,8.88,3552.0000000000005,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,Director,BUY,400.0,8.74,3496.0,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,Director,BUY,400.0,8.75,3500.0,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,Director,BUY,400.0,8.9,3560.0,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,Director,BUY,400.0,8.82,3528.0,"CHURCHILL, WINSTON J",Common Stock
+2004-05-06,AMKR,Director,BUY,1000.0,8.9,8900.0,"CHURCHILL, WINSTON J",Common Stock
+2004-05-19,AMKR,Director,BUY,10000.0,9.58,95800.0,"ZUG, JAMES W","Amkor Technology, Inc. Common Stock"
+2004-05-19,AMKR,Director,BUY,5000.0,9.69,48450.0,"ZUG, JAMES W","Amkor Technology, Inc. Common Stock"
+2004-05-19,AMKR,Director,BUY,5000.0,9.64,48200.0,"ZUG, JAMES W","Amkor Technology, Inc. Common Stock"
+2004-07-29,AMKR,Director,BUY,2000.0,4.18,8360.0,"HINCKLEY, GREGORY K","Amkor Technology, Inc. Common Stock"
+2004-07-29,AMKR,Director,BUY,2000.0,4.17,8340.0,"HINCKLEY, GREGORY K","Amkor Technology, Inc. Common Stock"
+2004-07-29,AMKR,Director,BUY,10000.0,4.11,41100.0,"GEORGE, THOMAS DALE",Director Stock Option (Right to Buy)
+2004-07-29,AMKR,Director,BUY,10000.0,4.11,41100.0,"NEFF, JOHN B",Director Stock Option (Right to Buy)
+2004-07-29,AMKR,Director,BUY,10000.0,4.11,41100.0,"ZUG, JAMES W",Director Stock Option (Right to Buy)
+2004-07-29,AMKR,Director,BUY,10000.0,4.11,41100.0,"CHURCHILL, WINSTON J",Director Stock Option (Right to Buy)
+2004-07-29,AMKR,Director,BUY,10000.0,4.11,41100.0,"KNORR, DR JUERGEN",Director Stock Option (Right to Buy)
+2004-07-29,AMKR,Director,BUY,10000.0,4.11,41100.0,"HINCKLEY, GREGORY K",Director Stock Option (Right to Buy)
+2004-08-02,AMKR,President & COO,BUY,15959.0,4.203,67075.67700000001,"FREYMAN, BRUCE J","Amkor Technology, Inc. Common Stock"
+2004-11-12,AMKR,"VP, Worldwide Manufacturing",BUY,20000.0,5.31,106199.99999999999,"KIM, JOO HO",Options to Purchase Common Stock (Right to Buy)
+2005-04-29,AMKR,"Director, President & COO",BUY,2971.0,2.7455,8156.880499999999,"BORUCH, JOHN N",Common Stock
+2005-04-29,AMKR,"VP, Worldwide Manufacturing",BUY,2226.0,2.7455,6111.482999999999,"KIM, JOO HO",Common Stock
+2005-04-29,AMKR,"Director, President & COO",BUY,1129.0,2.7455,3099.6695,"BORUCH, JOHN N",Common Stock
+2005-11-14,AMKR,"10% Owner, See Exhibits 1, 2 and 10",BUY,35000000.0,35000000.0,1225000000000000.0,"KIM, SUSAN Y",6 1/4% Convertible Subordinated Notes
+2005-11-14,AMKR,"10% Owner, See Exhibits 1, 2 and 10",BUY,10000000.0,10000000.0,100000000000000.0,"KIM, SUSAN Y",6 1/4% Convertible Subordinated Notes
+2005-11-14,AMKR,"10% Owner, See Exhibits 1, 2 and 10",BUY,5000000.0,5000000.0,25000000000000.0,"KIM, SUSAN Y",6 1/4% Convertible Subordinated Notes
+2006-02-14,AMKR,Director,BUY,10000.0,7.05,70500.0,"CAROLIN, ROGER ANTHONY","Amkor Technology, Inc. (Common Stock)"
+2006-08-08,AMKR,Director,BUY,10000.0,5.82,58200.0,"ZUG, JAMES W",Director Stock Option (right to buy)
+2006-08-08,AMKR,Director,BUY,10000.0,5.82,58200.0,"CAROLIN, ROGER ANTHONY",Director Stock Option (right to buy)
+2006-08-08,AMKR,Director,SELL,10000.0,5.82,58200.0,"CHURCHILL, WINSTON J",Director Stock Option (right to buy)
+2006-08-08,AMKR,Director,BUY,10000.0,5.82,58200.0,"HINCKLEY, GREGORY K",Director  Stock Option (right to buy)
+2006-08-08,AMKR,"Director, 10% Owner",BUY,10000.0,5.82,58200.0,"KIM, JOHN T",Director Stock Option (right to buy)
+2006-08-08,AMKR,Director,BUY,10000.0,5.82,58200.0,"PAPADAKIS, CONSTANTINE",Director Stock Option (right to buy)
+2007-03-28,AMKR,"Director, Chief Executive Officer, 10% Owner",BUY,250000.0,10.79,2697500.0,"KIM, JAMES J",Amkor Technology Inc. Common Stock
+2007-08-09,AMKR,"Director, Chief Executive Officer, 10% Owner",BUY,150000.0,10.26,1539000.0,"KIM, JAMES J",Common Stock
+2007-08-09,AMKR,See Exhibit No. EX-99.1,SELL,150000.0,10.26,1539000.0,"JAMES, &AMP; AGNES KIM FOUNDATION, INC.","Amkor Technology, Inc. Common Stock"
+2007-11-20,AMKR,Director,BUY,3000.0,7.86,23580.0,"OSBORNE, JOHN",Amkor Technology Inc. (Common Stock)
+2008-02-11,AMKR,See Exhibit No. EX-99.1,BUY,1363400.0,8.25,11248050.0,"KIM, SUSAN Y","Amkor Technology, Inc. Common Stock"
+2008-02-11,AMKR,"Director, See Exhibit No. EX-99.1",BUY,2726800.0,8.25,22496100.0,"KIM, JOHN T",Common Stock
+2008-02-11,AMKR,"Director, Chief Executive Officer, 10% Owner",SELL,8180400.0,8.25,67488300.0,"KIM, JAMES J",Amkor Technology Inc. Common Stock
+2008-02-11,AMKR,See Exhibit No. EX-99.1,BUY,1363400.0,8.25,11248050.0,"KIM, DAVID D","Amkor Technology, Inc. Common Stock"
+2008-02-19,AMKR,Corporate Vice President,BUY,1000.0,11.0,11000.0,"FUSARO, JAMES MACMILLAN",Common Stock
+2008-02-19,AMKR,Corporate Vice President,SELL,1000.0,11.45,11450.0,"FUSARO, JAMES MACMILLAN",Common Stock
+2008-02-19,AMKR,Corporate Vice President,SELL,8000.0,11.45,91600.0,"FUSARO, JAMES MACMILLAN",Common Stock
+2008-02-19,AMKR,Corporate Vice President,BUY,8000.0,5.71,45680.0,"FUSARO, JAMES MACMILLAN",Common Stock
+2008-07-03,AMKR,Director,BUY,15000.0,9.14,137100.0,"CHURCHILL, WINSTON J",Common Stock
+2008-08-15,AMKR,Director,BUY,3000.0,8.728,26184.0,"OSBORNE, JOHN",Amkor Technology Inc. (Common Stock)
+2008-09-10,AMKR,Director,BUY,3000.0,6.77,20310.0,"OSBORNE, JOHN","Amkor Technology, Inc. (Common Stock)"
+2008-11-04,AMKR,Director,BUY,5000.0,4.1,20500.0,"PAPADAKIS, CONSTANTINE","Amkor Technology, Inc. (Common Stock)"
+2008-11-13,AMKR,Director,BUY,10000.0,3.23,32300.0,"ZUG, JAMES W","Amkor Technology, Inc. (Common Stock)"
+2008-11-19,AMKR,Director,BUY,5000.0,2.32,11600.0,"OSBORNE, JOHN","Amkor Technology, Inc. (Common Stock)"
+2008-11-20,AMKR,Director,BUY,5000.0,2.0,10000.0,"OSBORNE, JOHN",Amkor Technology Inc. (Common Stock)
+2008-11-24,AMKR,Director,BUY,416.137,1.94,807.30578,"CHURCHILL, WINSTON J",Common Stock
+2008-11-25,AMKR,Director,BUY,550.779,1.899,1045.929321,"CHURCHILL, WINSTON J",Common Stock
+2008-12-15,AMKR,Director,BUY,5000.0,2.49,12450.000000000002,"PAPADAKIS, CONSTANTINE","Amkor Technology, Inc.(Common Stock)"
+2008-12-15,AMKR,Director,BUY,1356.6,2.4836,3369.2517599999996,"CHURCHILL, WINSTON J",Common Stock
+2008-12-15,AMKR,Director,BUY,2034.9,2.504,5095.3896,"CHURCHILL, WINSTON J",Common Stock
+2008-12-16,AMKR,Director,BUY,2204.475,2.3898,5268.254355,"CHURCHILL, WINSTON J",Common Stock
+2008-12-16,AMKR,Director,BUY,1187.025,2.3824,2827.9683600000003,"CHURCHILL, WINSTON J",Common Stock
+2008-12-31,AMKR,"Director, Chief Executive Officer, 10% Owner",SELL,150000.0,1.99,298500.0,"KIM, JAMES J","Amkor Technology, Inc. Common Stock"
+2009-02-27,AMKR,Director,BUY,2713.2,1.6887,4581.78084,"CHURCHILL, WINSTON J",Common Stock
+2009-03-02,AMKR,Director,BUY,3221.925,1.6381,5277.8353425,"CHURCHILL, WINSTON J",Common Stock
+2009-03-03,AMKR,Director,BUY,5000.0,1.64,8200.0,"OSBORNE, JOHN","Amkor Technololgy, Inc. (Common Stock)"
+2009-03-03,AMKR,Director,BUY,2374.05,1.6448,3904.8374400000002,"CHURCHILL, WINSTON J",Common Stock
+2009-06-04,AMKR,See Exhibit No. EX-99.1,BUY,100000.0,4.53,453000.0,"JAMES, &AMP; AGNES KIM FOUNDATION, INC.","Amkor Technology, Inc., Common Stock"
+2009-06-05,AMKR,See Exhibit No. EX-99.1,BUY,149600.0,4.56,682175.9999999999,"JAMES, &AMP; AGNES KIM FOUNDATION, INC.","Amkor Technology, Inc., Common Stock"
+2009-06-08,AMKR,See Exhibit No. EX-99.1,BUY,150400.0,4.45,669280.0,"JAMES, &AMP; AGNES KIM FOUNDATION, INC.","Amkor Technology, Inc. Common Stock"
+2009-06-09,AMKR,See Exhibit No. EX-99.1,BUY,297965.0,4.83,1439170.95,"JAMES, &AMP; AGNES KIM FOUNDATION, INC.","Amkor Technology, Inc., Common Stock"
+2009-06-10,AMKR,See Exhibit No. EX-99.1,BUY,302035.0,4.87,1470910.45,"JAMES, &AMP; AGNES KIM FOUNDATION, INC.","Amkor Technology, Inc. Common Stock"
+2010-02-03,AMKR,Executive Vice President,SELL,6490.0,5.96,38680.4,"KIM, JOO HO",Common Stock
+2010-02-03,AMKR,"Director, President & CEO",SELL,12980.0,5.96,77360.8,"JOYCE, KENNETH T",Common Stock
+2010-02-16,AMKR,Director,BUY,6657.0,6.24,41539.68,"CAROLIN, ROGER ANTHONY",Amkor Technology Inc. Common Stock
+2010-02-16,AMKR,Director,BUY,6243.0,6.27,39143.61,"CAROLIN, ROGER ANTHONY",Amkor Technology Inc. Common Stock
+2010-06-14,AMKR,Director,BUY,6667.0,4.5,30001.5,"OSBORNE, JOHN",Common Stock
+2010-09-14,AMKR,Director,BUY,3500.0,5.82,20370.0,"CAROLIN, ROGER ANTHONY","Amkor Technology, Inc. Common Stock"
+2010-09-14,AMKR,Director,BUY,3500.0,5.89,20615.0,"CAROLIN, ROGER ANTHONY","Amkor Technology, Inc. Common Stock"
+2010-09-14,AMKR,Director,BUY,7000.0,5.98,41860.0,"CAROLIN, ROGER ANTHONY","Amkor Technology, Inc. Common Stock"
+2010-09-14,AMKR,Director,BUY,3300.0,5.96,19668.0,"CAROLIN, ROGER ANTHONY","Amkor Techology, Inc. Common Stock"
+2010-09-14,AMKR,Director,BUY,200.0,5.93,1186.0,"CAROLIN, ROGER ANTHONY","Amkor Technology, Inc. Common Stock"
+2010-12-31,AMKR,Ex. 99.1,BUY,6189831.0,7.41,45866647.71,"JAMES, J. KIM GRAT REMAINDER TRUST UA DATED NOVEMBER 14, 2008",Common Stock
+2010-12-31,AMKR,Ex. 99.1,SELL,6189831.0,7.41,45866647.71,"JAMES, J. KIM GRAT REMAINDER TRUST UA DATED NOVEMBER 14, 2008",Common Stock
+2010-12-31,AMKR,Ex. 99.1,BUY,6189831.0,7.41,45866647.71,"SUJODA, INVESTMENTS, LP",Common Stock
+2011-01-19,AMKR,"Director, 10% Owner, See Exhibit Nos. 99.1 and 99.2",BUY,1335113.0,7.49,9999996.370000001,"KIM, JAMES J","Amkor Technology, Inc. Common Stock"
+2011-01-19,AMKR,"Director, 10% Owner, See Exhibit Nos. 99.1 and 99.2",BUY,5340453.0,7.49,39999992.97,"KIM, JAMES J","Amkor Technology, Inc. Common Stock"
+2011-02-03,AMKR,Executive VP & CFO,SELL,1833.0,8.06,14773.980000000001,"SOLOMON, JOANNE",Common Stock
+2011-02-03,AMKR,Executive Vice President,SELL,2104.0,8.06,16958.24,"LAMBLE, MIKE",Common Stock
+2011-02-03,AMKR,CAO & General Counsel,SELL,2291.0,8.06,18465.460000000003,"TILY, GIL COLEMAN",Common Stock
+2011-02-03,AMKR,Executive Vice President,SELL,1833.0,8.06,14773.980000000001,"FUSARO, JAMES MACMILLAN",Common Stock
+2011-02-14,AMKR,"Director, President & CEO",SELL,26109.0,7.71,201300.38999999998,"JOYCE, KENNETH T",Common Stock
+2011-02-14,AMKR,Executive Vice President,SELL,13053.0,7.71,100638.63,"KIM, JOO HO",Common Stock
+2011-03-03,AMKR,CAO & General Counsel,SELL,191.0,7.58,1447.78,"TILY, GIL COLEMAN",Common Stock
+2011-03-03,AMKR,Executive VP & CFO,SELL,148.0,7.58,1121.84,"SOLOMON, JOANNE",Common Stock
+2011-03-03,AMKR,Executive Vice President,SELL,171.0,7.58,1296.18,"LAMBLE, MIKE",Common Stock
+2011-03-03,AMKR,Executive Vice President,SELL,153.0,7.58,1159.74,"FUSARO, JAMES MACMILLAN",Common Stock
+2011-04-03,AMKR,CAO & General Counsel,SELL,170.0,6.76,1149.2,"TILY, GIL COLEMAN",Common Stock
+2011-04-03,AMKR,Executive VP & CFO,SELL,136.0,6.76,919.36,"SOLOMON, JOANNE",Common Stock
+2011-04-03,AMKR,Executive Vice President,SELL,153.0,6.76,1034.28,"LAMBLE, MIKE",Common Stock
+2011-04-03,AMKR,Executive Vice President,SELL,136.0,6.76,919.36,"FUSARO, JAMES MACMILLAN",Common Stock
+2011-05-03,AMKR,Executive Vice President,SELL,136.0,6.46,878.56,"FUSARO, JAMES MACMILLAN",Common Stock
+2011-05-03,AMKR,Executive Vice President,SELL,153.0,6.46,988.38,"LAMBLE, MIKE",Common Stock
+2011-05-03,AMKR,Executive VP & CFO,SELL,136.0,6.46,878.56,"SOLOMON, JOANNE",Common Stock
+2011-05-03,AMKR,CAO & General Counsel,SELL,170.0,6.46,1098.2,"TILY, GIL COLEMAN",Common Stock
+2011-05-25,AMKR,Director,BUY,6667.0,4.5,30001.5,"OSBORNE, JOHN",Common Stock
+2011-06-03,AMKR,Executive VP & CFO,SELL,135.0,6.05,816.75,"SOLOMON, JOANNE",Common Stock
+2011-06-03,AMKR,Executive Vice President,SELL,153.0,6.05,925.65,"LAMBLE, MIKE",Common Stock
+2011-06-03,AMKR,CAO & General Counsel,SELL,170.0,6.05,1028.5,"TILY, GIL COLEMAN",Common Stock
+2011-07-03,AMKR,Executive VP & CFO,SELL,136.0,6.22,845.92,"SOLOMON, JOANNE",Common Stock
+2011-07-03,AMKR,Executive Vice President,SELL,153.0,6.22,951.66,"LAMBLE, MIKE",Common Stock
+2011-07-03,AMKR,CAO & General Counsel,SELL,170.0,6.22,1057.3999999999999,"TILY, GIL COLEMAN",Common Stock
+2011-08-01,AMKR,Director,SELL,2034.9,5.282,10748.3418,"CHURCHILL, WINSTON J",Common Stock
+2011-08-02,AMKR,Director,SELL,2034.9,5.2389,10660.637610000002,"CHURCHILL, WINSTON J",Common Stock
+2011-08-03,AMKR,Executive Vice President,SELL,153.0,5.14,786.42,"LAMBLE, MIKE",Common Stock
+2011-08-03,AMKR,Executive VP & CFO,SELL,136.0,5.14,699.04,"SOLOMON, JOANNE",Common Stock
+2011-08-03,AMKR,Director,SELL,2034.9,5.1623,10504.764270000001,"CHURCHILL, WINSTON J",Common Stock
+2011-08-03,AMKR,CAO & General Counsel,SELL,170.0,5.14,873.8,"TILY, GIL COLEMAN",Common Stock
+2011-09-03,AMKR,Executive VP & CFO,SELL,135.0,4.16,561.6,"SOLOMON, JOANNE",Common Stock
+2011-09-03,AMKR,Executive Vice President,SELL,153.0,4.16,636.48,"LAMBLE, MIKE",Common Stock
+2011-09-03,AMKR,CAO & General Counsel,SELL,169.0,4.16,703.0400000000001,"TILY, GIL C.",Common Stock
+2011-09-27,AMKR,Director,SELL,1.3566,5.15,6.986490000000001,"CHURCHILL, WINSTON J",Common Stock
+2011-10-03,AMKR,CAO & General Counsel,SELL,170.0,4.27,725.9,"TILY, GIL C.",Common Stock
+2011-10-03,AMKR,Executive VP & CFO,SELL,136.0,4.27,580.7199999999999,"SOLOMON, JOANNE",Common Stock
+2011-10-03,AMKR,Executive Vice President,SELL,153.0,4.27,653.31,"LAMBLE, MIKE",Common Stock
+2011-10-27,AMKR,Director,SELL,67.1517,5.15,345.83125500000006,"CHURCHILL, WINSTON J",Common Stock
+2011-11-03,AMKR,Executive Vice President,SELL,153.0,4.97,760.41,"LAMBLE, MIKE",Common Stock
+2011-11-03,AMKR,Executive VP & CFO,SELL,136.0,4.97,675.92,"SOLOMON, JOANNE",Common Stock
+2011-11-03,AMKR,CAO & General Counsel,SELL,170.0,4.97,844.9,"TILY, GIL C.",Common Stock
+2011-11-16,AMKR,Director,SELL,1513.7078,4.8675,7367.9727164999995,"CHURCHILL, WINSTON J",Common Stock
+2011-11-18,AMKR,Director,SELL,1356.6,4.6529,6312.124139999999,"CHURCHILL, WINSTON J",Common Stock
+2011-11-21,AMKR,Director,SELL,25000.0,4.55,113750.0,"CHURCHILL, WINSTON J",Common Stock
+2011-11-22,AMKR,Director,SELL,230.3168,4.5613,1050.5440198400001,"CHURCHILL, WINSTON J",Common Stock
+2011-11-28,AMKR,Director,SELL,1526.175,4.3162,6587.276535,"CHURCHILL, WINSTON J",Common Stock
+2011-11-28,AMKR,Executive Vice President,SELL,15131.0,4.15,62793.65000000001,"LAMBLE, MIKE",Common Stock
+2011-11-29,AMKR,Director,SELL,1865.325,4.145,7731.7721249999995,"CHURCHILL, WINSTON J",Common Stock
+2011-11-30,AMKR,Director,SELL,2374.05,4.2946,10195.595130000002,"CHURCHILL, WINSTON J",Common Stock
+2011-12-01,AMKR,Director,SELL,664.639,4.4947,2987.3529133,"CHURCHILL, WINSTON J",Common Stock
+2011-12-02,AMKR,Director,SELL,474.81,4.6069,2187.4021890000004,"CHURCHILL, WINSTON J",Common Stock
+2011-12-03,AMKR,CAO & General Counsel,SELL,170.0,4.59,780.3,"TILY, GIL C.",Common Stock
+2011-12-03,AMKR,Executive VP & CFO,SELL,135.0,4.59,619.65,"SOLOMON, JOANNE",Common Stock
+2011-12-05,AMKR,Director,SELL,47.481,4.73,224.58513000000002,"CHURCHILL, WINSTON J",Common Stock
+2011-12-06,AMKR,Director,SELL,237.405,4.6644,1107.351882,"CHURCHILL, WINSTON J",Common Stock
+2011-12-07,AMKR,Director,SELL,36.4654,4.7497,173.19971038,"CHURCHILL, WINSTON J",Common Stock
+2011-12-09,AMKR,Director,SELL,135.66,4.5899,622.665834,"CHURCHILL, WINSTON J",Common Stock
+2011-12-13,AMKR,Director,SELL,474.81,4.3155,2049.042555,"CHURCHILL, WINSTON J",Common Stock
+2011-12-15,AMKR,Director,SELL,271.32,4.1638,1129.7222160000001,"CHURCHILL, WINSTON J",Common Stock
+2011-12-16,AMKR,Director,SELL,610.47,4.1319,2522.400993,"CHURCHILL, WINSTON J",Common Stock
+2012-01-03,AMKR,CAO & General Counsel,SELL,191.0,4.62,882.4200000000001,"TILY, GIL C.",Common Stock
+2012-01-03,AMKR,Executive VP & CFO,SELL,153.0,4.62,706.86,"SOLOMON, JOANNE",Common Stock
+2012-02-03,AMKR,CAO & General Counsel,SELL,191.0,6.07,1159.3700000000001,"TILY, GIL C.",Common Stock
+2012-02-03,AMKR,Executive VP & CFO,SELL,153.0,6.07,928.71,"SOLOMON, JOANNE",Common Stock
+2012-02-14,AMKR,Director,SELL,678.3,6.4174,4352.92242,"CHURCHILL, WINSTON J",Common Stock
+2012-02-14,AMKR,CAO & General Counsel,SELL,3084.0,6.5,20046.0,"TILY, GIL C.",Common Stock
+2012-02-14,AMKR,Executive VP & CFO,SELL,2749.0,6.5,17868.5,"SOLOMON, JOANNE",Common Stock
+2012-02-15,AMKR,Director,SELL,542.64,6.604,3583.59456,"CHURCHILL, WINSTON J",Common Stock
+2012-02-16,AMKR,Director,SELL,1631.4607,6.698,10927.523768600002,"CHURCHILL, WINSTON J",Common Stock
+2012-02-17,AMKR,Director,SELL,588.276,6.6254,3897.5638103999995,"CHURCHILL, WINSTON J",Common Stock
+2012-03-03,AMKR,CAO & General Counsel,SELL,169.0,6.25,1056.25,"TILY, GIL C.",Common Stock
+2012-03-03,AMKR,Executive VP & CFO,SELL,135.0,6.25,843.75,"SOLOMON, JOANNE",Common Stock
+2012-04-03,AMKR,CAO & General Counsel,SELL,170.0,6.0,1020.0,"TILY, GIL C.",Common Stock
+2012-04-03,AMKR,Executive VP & CFO,SELL,136.0,6.0,816.0,"SOLOMON, JOANNE",Common Stock
+2012-05-03,AMKR,CAO & General Counsel,SELL,170.0,4.9,833.0000000000001,"TILY, GIL C.",Common Stock
+2012-05-03,AMKR,Executive VP & CFO,SELL,136.0,4.9,666.4000000000001,"SOLOMON, JOANNE",Common Stock
+2012-05-14,AMKR,CAO & General Counsel,SELL,710.0,4.62,3280.2000000000003,"TILY, GIL C.",Common Stock
+2012-05-14,AMKR,Executive VP & CFO,SELL,609.0,4.62,2813.58,"SOLOMON, JOANNE",Common Stock
+2012-06-03,AMKR,Executive VP & CFO,SELL,135.0,4.64,626.4,"SOLOMON, JOANNE",Common Stock
+2012-06-03,AMKR,CAO & General Counsel,SELL,170.0,4.64,788.8,"TILY, GIL C.",Common Stock
+2012-07-03,AMKR,Executive VP & CFO,SELL,136.0,4.78,650.08,"SOLOMON, JOANNE",Common Stock
+2012-07-03,AMKR,CAO & General Counsel,SELL,170.0,4.78,812.6,"TILY, GIL C.",Common Stock
+2012-08-03,AMKR,Executive VP & CFO,SELL,136.0,5.38,731.68,"SOLOMON, JOANNE",Common Stock
+2012-08-03,AMKR,CAO & General Counsel,SELL,170.0,5.28,897.6,"TILY, GIL C.",Common Stock
+2012-08-14,AMKR,Executive VP & CFO,SELL,609.0,5.35,3258.1499999999996,"SOLOMON, JOANNE",Common Stock
+2012-08-14,AMKR,CAO & General Counsel,SELL,711.0,5.35,3803.85,"TILY, GIL C.",Common Stock
+2012-09-03,AMKR,Executive VP & CFO,SELL,135.0,4.69,633.1500000000001,"SOLOMON, JOANNE",Common Stock
+2012-09-03,AMKR,CAO & General Counsel,SELL,169.0,4.69,792.61,"TILY, GIL C.",Common Stock
+2012-10-03,AMKR,Executive VP & CFO,SELL,136.0,4.5,612.0,"SOLOMON, JOANNE",Common Stock
+2012-10-03,AMKR,CAO & General Counsel,SELL,170.0,4.5,765.0,"TILY, GIL C.",Common Stock
+2012-11-03,AMKR,Executive VP & CFO,SELL,609.0,4.34,2643.06,"SOLOMON, JOANNE",Common Stock
+2012-11-03,AMKR,CAO & General Counsel,SELL,170.0,4.34,737.8,"TILY, GIL C.",Common Stock
+2012-11-03,AMKR,Executive VP & CFO,SELL,136.0,4.34,590.24,"SOLOMON, JOANNE",Common Stock
+2012-11-14,AMKR,CAO & General Counsel,SELL,710.0,3.97,2818.7000000000003,"TILY, GIL C.",Common Stock
+2012-11-14,AMKR,Executive VP & CFO,SELL,609.0,3.97,2417.73,"SOLOMON, JOANNE",Common Stock
+2012-12-03,AMKR,CAO & General Counsel,SELL,170.0,4.32,734.4000000000001,"TILY, GIL C.",Common Stock
+2012-12-03,AMKR,Executive VP & CFO,SELL,135.0,4.32,583.2,"SOLOMON, JOANNE",Common Stock
+2013-01-03,AMKR,Executive VP & CFO,SELL,174.0,4.44,772.5600000000001,"SOLOMON, JOANNE",Common Stock
+2013-01-03,AMKR,CAO & General Counsel,SELL,217.0,4.44,963.4800000000001,"TILY, GIL C.",Common Stock
+2013-02-03,AMKR,Executive VP & CFO,SELL,149.0,4.84,721.16,"SOLOMON, JOANNE",Common Stock
+2013-02-03,AMKR,CAO & General Counsel,SELL,186.0,4.84,900.24,"TILY, GIL C.",Common Stock
+2013-02-14,AMKR,CAO & General Counsel,SELL,846.0,4.95,4187.7,"TILY, GIL C.",Common Stock
+2013-02-14,AMKR,Executive VP & CFO,SELL,725.0,4.95,3588.75,"SOLOMON, JOANNE",Common Stock
+2013-03-03,AMKR,CAO & General Counsel,SELL,201.0,4.06,816.06,"TILY, GIL C.",Common Stock
+2013-03-03,AMKR,Executive VP & CFO,SELL,161.0,4.06,653.66,"SOLOMON, JOANNE",Common Stock
+2013-04-03,AMKR,Executive VP & CFO,SELL,136.0,3.8,516.8,"SOLOMON, JOANNE",Common Stock
+2013-04-03,AMKR,CAO & General Counsel,SELL,170.0,3.8,646.0,"TILY, GIL C.",Common Stock
+2013-05-03,AMKR,CAO & General Counsel,SELL,174.0,4.41,767.34,"TILY, GIL C.",Common Stock
+2013-05-03,AMKR,Executive VP & CFO,SELL,136.0,4.41,599.76,"SOLOMON, JOANNE",Common Stock
+2013-05-14,AMKR,Executive VP & CFO,SELL,609.0,4.58,2789.2200000000003,"SOLOMON, JOANNE",Common Stock
+2013-05-14,AMKR,CAO & General Counsel,SELL,730.0,4.58,3343.4,"TILY, GIL C.",Common Stock
+2013-05-29,AMKR,Director,SELL,10000.0,4.57,45700.0,"ZUG, JAMES W",Amkor Technology Inc. Common Stock
+2013-06-03,AMKR,Executive VP & CFO,SELL,139.0,4.58,636.62,"SOLOMON, JOANNE","Amkor Technology, Inc. Common Stock"
+2013-06-03,AMKR,CAO & General Counsel,SELL,174.0,4.58,796.92,"TILY, GIL C.","Amkor Technology Inc., Common Stock"
+2013-07-03,AMKR,CAO & General Counsel,SELL,174.0,4.29,746.46,"TILY, GIL C.","Amkor Technology Inc., Common Stock"
+2013-07-03,AMKR,Executive VP & CFO,SELL,140.0,4.29,600.6,"SOLOMON, JOANNE","Amkor Technology, Inc. Common Stock"
+2013-08-03,AMKR,Executive VP & CFO,SELL,140.0,4.22,590.8,"SOLOMON, JOANNE","Amkor Technology, Inc. Common Stock"
+2013-08-03,AMKR,CAO & General Counsel,SELL,174.0,4.22,734.28,"TILY, GIL C.","Amkor Technology Inc., Common Stock"
+2013-08-03,AMKR,Executive Vice President,SELL,36.0,4.22,151.92,"STONE, JOHN CHARLES","Amkor Technology, Inc. Common Stock"
+2013-08-14,AMKR,Executive VP & CFO,SELL,626.0,4.25,2660.5,"SOLOMON, JOANNE","Amkor Technology, Inc. Common Stock"
+2013-08-14,AMKR,Executive Vice President,SELL,313.0,4.25,1330.25,"STONE, JOHN CHARLES","Amkor Technology, Inc. Common Stock"
+2013-08-14,AMKR,CAO & General Counsel,SELL,730.0,4.25,3102.5,"TILY, GIL C.","Amkor Technology Inc., Common Stock"
+2013-09-03,AMKR,Executive VP & CFO,SELL,139.0,4.1,569.9,"SOLOMON, JOANNE","Amkor Technology, Inc. Common Stock"
+2013-09-03,AMKR,Executive Vice President,SELL,35.0,4.1,143.5,"STONE, JOHN CHARLES","Amkor Technology, Inc. Common Stock"
+2013-09-03,AMKR,CAO & General Counsel,SELL,174.0,4.1,713.4,"TILY, GIL C.","Amkor Technology Inc., Common Stock"
+2013-09-09,AMKR,Executive VP & CFO,BUY,100000.0,0.001,100.0,"SOLOMON, JOANNE",Employee Stock Option (Right to Buy)
+2013-10-03,AMKR,Executive VP & CFO,SELL,140.0,4.42,618.8,"SOLOMON, JOANNE","Amkor Technology, Inc. Common Stock"
+2013-10-03,AMKR,Executive Vice President,SELL,35.0,4.42,154.7,"STONE, JOHN CHARLES","Amkor Technology, Inc. Common Stock"
+2013-10-03,AMKR,CAO & General Counsel,SELL,174.0,4.42,769.08,"TILY, GIL C.","Amkor Technology Inc., Common Stock"
+2013-10-21,AMKR,"Director, 10% Owner, Exhibit 99.1",BUY,800.0,4.8,3840.0,"KIM, SUSAN Y",Common Stock
+2013-11-01,AMKR,Executive Vice President,SELL,1251.0,5.32,6655.320000000001,"STONE, JOHN CHARLES","Amkor Technology, Inc. Common Stock"
+2013-11-01,AMKR,Executive Vice President,SELL,2502.0,5.32,13310.640000000001,"KIM, JOO HO","Amkor Technology, Inc. Common Stock"
+2013-11-01,AMKR,CAO & General Counsel,SELL,2919.0,5.32,15529.08,"TILY, GIL C.","Amkor Technology, Inc. Common Stock"
+2013-11-01,AMKR,Executive VP & CFO,SELL,2502.0,5.32,13310.640000000001,"SOLOMON, JOANNE","Amkor Technology, Inc. Common Stock"
+2013-11-03,AMKR,Executive VP & CFO,SELL,140.0,5.32,744.8000000000001,"SOLOMON, JOANNE","Amkor Technology, Inc. Common Stock"
+2013-11-03,AMKR,Executive Vice President,SELL,35.0,5.32,186.20000000000002,"STONE, JOHN CHARLES","Amkor Technology, Inc. Common Stock"
+2013-11-03,AMKR,CAO & General Counsel,SELL,174.0,5.32,925.6800000000001,"TILY, GIL C.","Amkor Technology, Inc. Common Stock"
+2013-11-14,AMKR,CAO & General Counsel,SELL,730.0,5.45,3978.5,"TILY, GIL C.","Amkor Technology, Inc. Common Stock"
+2013-11-14,AMKR,Executive VP & CFO,SELL,626.0,5.45,3411.7000000000003,"SOLOMON, JOANNE","Amkor Technology, Inc. Common Stock"
+2013-11-14,AMKR,Executive Vice President,SELL,313.0,5.45,1705.8500000000001,"STONE, JOHN CHARLES","Amkor Technology, Inc. Common Stock"
+2013-11-26,AMKR,"Director, President and CEO",BUY,3000.0,5.928,17784.0,"KELLEY, STEPHEN DOUGLAS",Amkor Technology Inc. Common Stock
+2013-12-03,AMKR,Executive Vice President,SELL,35.0,5.86,205.10000000000002,"STONE, JOHN CHARLES","Amkor Technology, Inc. Common Stock"
+2013-12-03,AMKR,Executive VP & CFO,SELL,139.0,5.86,814.5400000000001,"SOLOMON, JOANNE","Amkor Technology, Inc. Common Stock"
+2013-12-03,AMKR,CAO & General Counsel,SELL,174.0,5.86,1019.6400000000001,"TILY, GIL C.","Amkor Technology, Inc. Common Stock"
+2014-01-03,AMKR,CAO & General Counsel,SELL,202.0,6.12,1236.24,"TILY, GIL C.","Amkor Technology, Inc. Common Stock"
+2014-01-03,AMKR,Executive Vice President,SELL,41.0,6.12,250.92000000000002,"STONE, JOHN CHARLES","Amkor Technology, Inc. Common Stock"
+2014-01-03,AMKR,Executive VP & CFO,SELL,162.0,6.12,991.44,"SOLOMON, JOANNE","Amkor Technology, Inc. Common Stock"
+2014-02-01,AMKR,Executive Vice President,SELL,725.0,5.3,3842.5,"KIM, JOO HO","Amkor Technology, Inc. Common Stock"
+2014-02-01,AMKR,CAO & General Counsel,SELL,846.0,5.3,4483.8,"TILY, GIL C.","Amkor Technology, Inc. Common Stock"
+2014-02-01,AMKR,Executive Vice President,SELL,363.0,5.3,1923.8999999999999,"STONE, JOHN CHARLES","Amkor Technology, Inc. Common Stock"
+2014-02-01,AMKR,Executive VP & CFO,SELL,725.0,5.3,3842.5,"SOLOMON, JOANNE","Amkor Technology, Inc. Common Stock"
+2014-02-03,AMKR,Executive VP & CFO,SELL,162.0,5.24,848.88,"SOLOMON, JOANNE","Amkor Technology, Inc. Common Stock"
+2014-02-03,AMKR,CAO & General Counsel,SELL,202.0,5.24,1058.48,"TILY, GIL C.","Amkor Technology, Inc. Common Stock"
+2014-02-03,AMKR,Executive Vice President,SELL,41.0,5.24,214.84,"STONE, JOHN CHARLES","Amkor Technology, Inc. Common Stock"
+2014-02-14,AMKR,CAO & General Counsel,SELL,846.0,5.27,4458.42,"TILY, GIL C.","Amkor Technology, Inc. Common Stock"
+2014-02-14,AMKR,Executive Vice President,SELL,363.0,5.27,1913.0099999999998,"STONE, JOHN CHARLES","Amkor Technology, Inc. Common Stock"
+2014-02-14,AMKR,Executive VP & CFO,SELL,725.0,5.27,3820.7499999999995,"SOLOMON, JOANNE","Amkor Technology, Inc. Common Stock"
+2014-05-01,AMKR,Executive Vice President,SELL,313.0,8.11,2538.43,"STONE, JOHN CHARLES","Amkor Technology, Inc. Common Stock"
+2014-05-01,AMKR,Executive Vice President,SELL,626.0,8.11,5076.86,"KIM, JOO HO","Amkor Technology, Inc. Common Stock"
+2014-05-01,AMKR,CAO & General Counsel,SELL,730.0,8.11,5920.299999999999,"TILY, GIL C.","Amkor Technology, Inc. Common Stock"
+2014-05-01,AMKR,Executive VP & CFO,SELL,626.0,8.11,5076.86,"SOLOMON, JOANNE","Amkor Technology, Inc. Common Stock"
+2014-05-08,AMKR,"Director, President and CEO",SELL,84266.0,8.84,744911.44,"KELLEY, STEPHEN DOUGLAS",Amkor Technology Inc. Common Stock
+2014-05-14,AMKR,CAO & General Counsel,SELL,730.0,9.13,6664.900000000001,"TILY, GIL C.","Amkor Technology, Inc. Common Stock"
+2014-05-14,AMKR,Executive VP & CFO,SELL,626.0,9.13,5715.38,"SOLOMON, JOANNE","Amkor Technology, Inc. Common Stock"
+2014-05-14,AMKR,Executive Vice President,SELL,313.0,9.13,2857.69,"STONE, JOHN CHARLES","Amkor Technology, Inc. Common Stock"
+2014-05-15,AMKR,Director,SELL,339.15,9.0005,3052.519575,"CHURCHILL, WINSTON J",Common Stock
+2014-05-16,AMKR,Director,SELL,1187.025,9.2542,10984.966755000001,"CHURCHILL, WINSTON J",Common Stock
+2014-05-19,AMKR,Director,SELL,169.575,9.39,1592.30925,"CHURCHILL, WINSTON J",Common Stock
+2014-05-20,AMKR,Executive Vice President,BUY,20000.0,5.31,106199.99999999999,"KIM, JOO HO",Common Stock
+2014-05-20,AMKR,Executive Vice President,SELL,20000.0,9.4,188000.0,"KIM, JOO HO",Common Stock
+2014-05-20,AMKR,Executive Vice President,SELL,34675.0,9.37,324904.75,"KIM, JOO HO",Common Stock
+2014-05-20,AMKR,Director,SELL,678.3,9.4846,6433.4041799999995,"CHURCHILL, WINSTON J",Common Stock
+2014-05-20,AMKR,Executive Vice President,SELL,9022.0,9.39,84716.58,"KIM, JOO HO",Common Stock
+2014-05-21,AMKR,Director,SELL,678.3,9.4181,6388.29723,"CHURCHILL, WINSTON J",Common Stock
+2014-05-22,AMKR,Director,SELL,847.875,9.4188,7985.965049999999,"CHURCHILL, WINSTON J",Common Stock
+2014-05-22,AMKR,Director,SELL,5600.0,9.413,52712.8,"CHURCHILL, WINSTON J",Common Stock
+2014-05-23,AMKR,Director,SELL,708.9654,9.4827,6722.90619858,"CHURCHILL, WINSTON J",Common Stock
+2014-06-03,AMKR,Director,SELL,6666.0,10.3,68659.8,"OSBORNE, JOHN",Common Stocl
+2014-06-03,AMKR,Director,BUY,6666.0,4.5,29997.0,"OSBORNE, JOHN",Common Stock
+2014-06-03,AMKR,Director,SELL,10000.0,10.3,103000.0,"OSBORNE, JOHN",Common Stock
+2014-06-03,AMKR,Director,BUY,3334.0,7.71,25705.14,"OSBORNE, JOHN",Common Stock
+2014-06-03,AMKR,Director,SELL,3334.0,10.3,34340.200000000004,"OSBORNE, JOHN",Common Stock
+2014-06-06,AMKR,Director,BUY,10000.0,4.11,41100.0,"CHURCHILL, WINSTON J",Common Stock
+2014-06-06,AMKR,Director,BUY,10000.0,5.82,58200.0,"CHURCHILL, WINSTON J",Common Stock
+2014-06-06,AMKR,Director,BUY,20000.0,4.5,90000.0,"CHURCHILL, WINSTON J",Common Stock
+2014-06-06,AMKR,Executive Vice President,SELL,20000.0,10.91,218200.0,"STONE, JOHN CHARLES",Common Stock
+2014-06-06,AMKR,Executive Vice President,BUY,20000.0,5.71,114200.0,"STONE, JOHN CHARLES",Common Stock
+2014-06-06,AMKR,Director,SELL,5600.0,10.8931,61001.36,"CHURCHILL, WINSTON J",Common Stock
+2014-06-06,AMKR,Director,SELL,50000.0,10.8462,542310.0,"CHURCHILL, WINSTON J",Common Stock
+2014-06-06,AMKR,Director,BUY,10000.0,5.03,50300.0,"CHURCHILL, WINSTON J",Common Stock
+2014-06-11,AMKR,Director,BUY,20000.0,5.87,117400.0,"CAROLIN, ROGER ANTHONY",Common Stock
+2014-06-11,AMKR,Director,BUY,10000.0,5.82,58200.0,"CAROLIN, ROGER ANTHONY",Common Stock
+2014-06-11,AMKR,Director,SELL,10000.0,11.63,116300.00000000001,"CAROLIN, ROGER ANTHONY",Common Stock
+2014-06-11,AMKR,Director,SELL,20000.0,11.63,232600.00000000003,"CAROLIN, ROGER ANTHONY",Common Stock
+2014-06-12,AMKR,Executive Vice President,BUY,12500.0,7.0,87500.0,"KIM, JOO HO",Common Stock
+2014-06-12,AMKR,Executive Vice President,SELL,12500.0,11.57,144625.0,"KIM, JOO HO",Common Stock
+2014-06-12,AMKR,Executive Vice President,BUY,40000.0,8.67,346800.0,"KIM, JOO HO",Common Stock
+2014-06-12,AMKR,Executive Vice President,SELL,40000.0,11.57,462800.0,"KIM, JOO HO",Common Stock
+2014-06-12,AMKR,Director,SELL,10000.0,11.69,116900.0,"ZUG, JAMES W",Common Stock
+2014-06-12,AMKR,Director,BUY,10000.0,4.11,41100.0,"ZUG, JAMES W",Common Stock
+2014-08-01,AMKR,CAO & General Counsel,SELL,730.0,9.07,6621.1,"TILY, GIL C.","Amkor Technology, Inc. Common Stock"
+2014-08-01,AMKR,Executive Vice President,SELL,313.0,9.07,2838.9100000000003,"STONE, JOHN CHARLES","Amkor Technology, Inc. Common Stock"
+2014-08-01,AMKR,Executive VP & CFO,SELL,626.0,9.07,5677.820000000001,"SOLOMON, JOANNE","Amkor Technology, Inc. Common stock"
+2014-08-01,AMKR,Executive Vice President,SELL,417.0,9.07,3782.19,"KIM, JOO HO","Amkor Technology, Inc. Common Stock"
+2014-08-05,AMKR,Executive Vice President,SELL,3314.0,9.09,30124.26,"LEE, CHOON HEUNG",Common Stock
+2014-08-05,AMKR,Executive VP & CFO,SELL,4617.0,8.96,41368.32000000001,"SOLOMON, JOANNE",Common Stock
+2014-08-05,AMKR,Executive VP & CFO,BUY,6000.0,5.71,34260.0,"SOLOMON, JOANNE",Common Stock
+2014-08-05,AMKR,Executive Vice President,SELL,11250.0,9.09,102262.5,"LEE, CHOON HEUNG",Common Stock
+2014-08-05,AMKR,Executive Vice President,SELL,1313.0,9.09,11935.17,"LEE, CHOON HEUNG",Common Stock
+2014-08-05,AMKR,Executive Vice President,SELL,1875.0,8.99,16856.25,"LEE, CHOON HEUNG",Common Stock
+2014-08-05,AMKR,Executive Vice President,BUY,1313.0,4.93,6473.089999999999,"LEE, CHOON HEUNG",Common Stock
+2014-08-08,AMKR,"Director, President and CEO",SELL,22477.0,8.94,200944.37999999998,"KELLEY, STEPHEN DOUGLAS",Amkor Technology Inc. Common Stock
+2014-08-14,AMKR,Executive VP & CFO,SELL,626.0,9.33,5840.58,"SOLOMON, JOANNE","Amkor Technology, Inc. Common stock"
+2014-08-14,AMKR,Executive Vice President,SELL,313.0,9.33,2920.29,"STONE, JOHN CHARLES","Amkor Technology, Inc. Common Stock"
+2014-08-14,AMKR,CAO & General Counsel,SELL,730.0,9.33,6810.9,"TILY, GIL C.","Amkor Technology, Inc. Common Stock"
+2014-09-09,AMKR,"Director, 10% Owner",BUY,60000.0,5.31,318600.0,"KIM, JAMES J",Common Stock
+2014-11-01,AMKR,Executive Vice President,SELL,313.0,6.78,2122.14,"STONE, JOHN CHARLES","Amkor Technology, Inc. Common Stock"
+2014-11-01,AMKR,Executive VP & CFO,SELL,626.0,6.78,4244.28,"SOLOMON, JOANNE","Amkor Technology, Inc. Common Stock"
+2014-11-01,AMKR,CAO & General Counsel,SELL,730.0,6.78,4949.400000000001,"TILY, GIL C.","Amkor Technology, Inc. Common Stock"
+2014-11-08,AMKR,"Director, President and CEO",SELL,22477.0,6.39,143628.03,"KELLEY, STEPHEN DOUGLAS",Amkor Technology Inc. Common Stock
+2014-11-14,AMKR,Executive Vice President,SELL,313.0,6.39,2000.07,"STONE, JOHN CHARLES","Amkor Technology, Inc. Common Stock"
+2014-11-14,AMKR,CAO & General Counsel,SELL,730.0,6.39,4664.7,"TILY, GIL C.","Amkor Technology, Inc. Common Stock"
+2014-11-14,AMKR,Executive VP & CFO,SELL,626.0,6.39,4000.14,"SOLOMON, JOANNE","Amkor Technology, Inc. Common Stock"
+2014-11-25,AMKR,Executive Vice President,BUY,20000.0,4.41,88200.0,"STONE, JOHN CHARLES",Common Stock
+2014-11-25,AMKR,Executive Vice President,SELL,15294.0,6.94,106140.36,"STONE, JOHN CHARLES",Common Stock
+2015-02-01,AMKR,CAO & General Counsel,SELL,846.0,6.35,5372.099999999999,"TILY, GIL C.","Amkor Technology, Inc. Common Stock"
+2015-02-01,AMKR,Executive VP & CFO,SELL,725.0,6.35,4603.75,"SOLOMON, JOANNE","Amkor Technology, Inc. Common Stock"
+2015-02-01,AMKR,Executive Vice President,SELL,363.0,6.35,2305.0499999999997,"STONE, JOHN CHARLES",Common Stock
+2015-02-08,AMKR,"Director, President and CEO",SELL,15816.0,7.1,112293.59999999999,"KELLEY, STEPHEN DOUGLAS",Amkor Technology Inc. Common Stock
+2015-02-14,AMKR,Executive Vice President,SELL,363.0,8.92,3237.96,"STONE, JOHN CHARLES",Common Stock
+2015-02-14,AMKR,Executive VP & CFO,SELL,725.0,8.92,6467.0,"SOLOMON, JOANNE","Amkor Technology, Inc. Common Stock"
+2015-02-14,AMKR,CAO & General Counsel,SELL,846.0,8.92,7546.32,"TILY, GIL C.","Amkor Technology, Inc. Common Stock"
+2015-03-05,AMKR,Executive Vice President,SELL,15000.0,9.8344,147516.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2015-03-05,AMKR,Executive Vice President,BUY,15000.0,5.18,77700.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2015-05-01,AMKR,Executive VP & CFO,SELL,626.0,7.16,4482.16,"SOLOMON, JOANNE","Amkor Technology, Inc. Common Stock"
+2015-05-01,AMKR,Executive Vice President,SELL,313.0,7.16,2241.08,"STONE, JOHN CHARLES",Common Stock
+2015-05-01,AMKR,CAO & General Counsel,SELL,730.0,7.16,5226.8,"TILY, GIL C.","Amkor Technology, Inc. Common Stock"
+2015-05-08,AMKR,"Director, President and CEO",SELL,22477.0,7.02,157788.53999999998,"KELLEY, STEPHEN DOUGLAS",Amkor Technology Inc. Common Stock
+2015-07-30,AMKR,Director,BUY,12000.0,4.49,53880.0,"CAROLIN, ROGER ANTHONY",Common Stock
+2015-08-01,AMKR,Executive VP & CFO,SELL,626.0,4.41,2760.6600000000003,"SOLOMON, JOANNE","Amkor Technology, Inc. Common Stock"
+2015-08-01,AMKR,Executive Vice President,SELL,90.0,4.41,396.90000000000003,"LEE, CHOON HEUNG","Amkor Technology, Inc., Common Stock"
+2015-08-01,AMKR,Executive Vice President,SELL,313.0,4.41,1380.3300000000002,"STONE, JOHN CHARLES","Amkor Technology, Inc. Common Stock"
+2015-08-01,AMKR,CAO & General Counsel,SELL,730.0,4.41,3219.3,"TILY, GIL C.","Amkor Technology, Inc. Common Stock"
+2015-08-06,AMKR,Executive Vice President,SELL,143.0,6.35,908.05,"LEE, CHOON HEUNG","Amkor Technology, Inc., Common Stock"
+2015-08-06,AMKR,Executive Vice President,SELL,119.0,7.16,852.04,"LEE, CHOON HEUNG","Amkor Technology, Inc., Common Stock"
+2015-08-08,AMKR,"Director, President and CEO",SELL,22477.0,4.21,94628.17,"KELLEY, STEPHEN DOUGLAS",Amkor Technology Inc. Common Stock
+2015-08-11,AMKR,Director,BUY,11300.0,4.35,49154.99999999999,"CHURCHILL, WINSTON J",Common Stock
+2015-08-12,AMKR,Director,BUY,10000.0,4.18,41800.0,"MORSE, ROBERT RANDOLPH",Common Stock
+2015-11-01,AMKR,CAO & General Counsel,SELL,730.0,6.22,4540.599999999999,"TILY, GIL C.","Amkor Technology, Inc. Common Stock"
+2015-11-01,AMKR,Executive Vice President,SELL,313.0,6.22,1946.86,"STONE, JOHN CHARLES","Amkor Technology, Inc. Common Stock"
+2015-11-01,AMKR,Executive VP & CFO,SELL,626.0,6.22,3893.72,"SOLOMON, JOANNE","Amkor Technology, Inc. Common Stock"
+2015-11-08,AMKR,"Director, President and CEO",SELL,22477.0,6.67,149921.59,"KELLEY, STEPHEN DOUGLAS","Amkor Technology Inc., Common Stock"
+2016-02-01,AMKR,Executive Vice President,SELL,363.0,5.93,2152.5899999999997,"STONE, JOHN CHARLES","Amkor Technology, Inc. Common Stock"
+2016-02-01,AMKR,CAO & General Counsel,SELL,846.0,5.93,5016.78,"TILY, GIL C.","Amkor Technology, Inc. Common Stock"
+2016-02-01,AMKR,Executive VP & CFO,SELL,725.0,5.93,4299.25,"SOLOMON, JOANNE","Amkor Technology, Inc. Common Stock"
+2016-02-08,AMKR,"Director, President and CEO",SELL,15880.0,5.31,84322.79999999999,"KELLEY, STEPHEN DOUGLAS","Amkor Technology Inc., Common Stock"
+2016-05-01,AMKR,CAO & General Counsel,SELL,730.0,5.71,4168.3,"TILY, GIL C.","Amkor Technology, Inc. Common Stock"
+2016-05-01,AMKR,Executive VP & CFO,SELL,626.0,5.71,3574.46,"SOLOMON, JOANNE","Amkor Technology, Inc. Common Stock"
+2016-05-01,AMKR,Executive Vice President,SELL,313.0,5.71,1787.23,"STONE, JOHN CHARLES","Amkor Technology, Inc. Common Stock"
+2016-05-08,AMKR,"Director, President and CEO",SELL,15633.0,5.64,88170.12,"KELLEY, STEPHEN DOUGLAS","Amkor Technology Inc., Common Stock"
+2016-05-20,AMKR,"Director, 10% Owner, Exhibit 99.1",SELL,800.0,5.78,4624.0,"KIM, SUSAN Y",Common Stock
+2016-08-01,AMKR,CAO & General Counsel,SELL,730.0,6.45,4708.5,"TILY, GIL C.","Amkor Technology, Inc. Common Stock"
+2016-08-01,AMKR,Executive VP & CFO,SELL,626.0,6.45,4037.7000000000003,"SOLOMON, JOANNE","Amkor Technology, Inc. Common Stock"
+2016-08-01,AMKR,Executive Vice President,SELL,313.0,6.45,2018.8500000000001,"STONE, JOHN CHARLES","Amkor Technology, Inc. Common Stock"
+2016-08-04,AMKR,Director,BUY,10000.0,5.82,58200.0,"ZUG, JAMES W",Common Stock
+2016-08-04,AMKR,Director,SELL,10000.0,7.56,75600.0,"ZUG, JAMES W",Common Stock
+2016-08-08,AMKR,"Director, President and CEO",SELL,21563.0,8.24,177679.12,"KELLEY, STEPHEN DOUGLAS","Amkor Technology, Inc., Common Stock"
+2016-09-02,AMKR,Exec - Vice President,SELL,3400.0,9.2516,31455.44,"STONE, JOHN CHARLES",Common Stock
+2016-09-02,AMKR,Exec - Vice President,BUY,3400.0,8.67,29478.0,"STONE, JOHN CHARLES",Common Stock
+2016-09-07,AMKR,Exec - Vice President,BUY,6600.0,8.67,57222.0,"STONE, JOHN CHARLES",Common Stock
+2016-09-07,AMKR,Exec - Vice President,SELL,6600.0,9.25,61050.0,"STONE, JOHN CHARLES",Common Stock
+2016-11-01,AMKR,CFO,SELL,79.0,10.23,808.1700000000001,"FAUST, MEGAN","Amkor Technology Inc., Common Shares"
+2016-11-01,AMKR,Executive Vice President,SELL,313.0,10.23,3201.9900000000002,"STONE, JOHN CHARLES","Amkor Technology, Inc. Common Stock"
+2016-11-01,AMKR,CAO & General Counsel,SELL,730.0,10.23,7467.900000000001,"TILY, GIL C.","Amkor Technology, Inc. Common Stock"
+2016-11-04,AMKR,"Director, President and CEO",SELL,100000.0,10.45,1044999.9999999999,"KELLEY, STEPHEN DOUGLAS",Common Stock
+2016-11-04,AMKR,"Director, President and CEO",BUY,100000.0,4.5,450000.0,"KELLEY, STEPHEN DOUGLAS",Common Stock
+2016-11-07,AMKR,"Director, President and CEO",SELL,100000.0,10.89,1089000.0,"KELLEY, STEPHEN DOUGLAS",Common Stock
+2016-11-07,AMKR,"Director, President and CEO",BUY,100000.0,4.5,450000.0,"KELLEY, STEPHEN DOUGLAS",Common Stock
+2016-11-08,AMKR,Executive Vice President,SELL,30000.0,11.01,330300.0,"STONE, JOHN CHARLES","Amkor Technology, Inc. Common Stock"
+2016-11-08,AMKR,Executive Vice President,BUY,30000.0,8.67,260100.0,"STONE, JOHN CHARLES","Amkor Technology, Inc. Common Stock"
+2016-11-08,AMKR,"Director, President and CEO",SELL,21563.0,11.24,242368.12,"KELLEY, STEPHEN DOUGLAS",Common Stock
+2016-11-08,AMKR,Executive Vice President,BUY,15000.0,5.18,77700.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2016-11-08,AMKR,Executive Vice President,SELL,15000.0,11.02,165300.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2016-11-08,AMKR,Executive Vice President,SELL,15000.0,11.29,169350.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2016-11-09,AMKR,"Director, President and CEO",BUY,100000.0,4.5,450000.0,"KELLEY, STEPHEN DOUGLAS",Common Stock
+2016-11-09,AMKR,"Director, President and CEO",SELL,100000.0,11.02,1102000.0,"KELLEY, STEPHEN DOUGLAS",Common Stock
+2016-11-11,AMKR,"Director, President and CEO",SELL,103828.0,11.41,1184677.48,"KELLEY, STEPHEN DOUGLAS",Common Stock
+2016-11-11,AMKR,"Director, President and CEO",BUY,103828.0,4.5,467226.0,"KELLEY, STEPHEN DOUGLAS",Common Stock
+2016-11-14,AMKR,"Director, President and CEO",SELL,43000.0,11.53,495790.0,"KELLEY, STEPHEN DOUGLAS",Common Stock
+2016-11-15,AMKR,"Director, President and CEO",SELL,100000.0,11.3,1130000.0,"KELLEY, STEPHEN DOUGLAS",Common Stock
+2016-11-17,AMKR,"Director, President and CEO",SELL,9843.0,11.82,116344.26000000001,"KELLEY, STEPHEN DOUGLAS",Common Stock
+2016-11-17,AMKR,"Director, President and CEO",SELL,9843.0,4.5,44293.5,"KELLEY, STEPHEN DOUGLAS",Common Stock
+2016-11-18,AMKR,Director,BUY,10000.0,10.97,109700.0,"ZUG, JAMES W",Common Stock
+2016-11-18,AMKR,Director,SELL,10000.0,12.07,120700.0,"ZUG, JAMES W",Common Stock
+2016-11-18,AMKR,Executive Vice President,BUY,50000.0,4.28,214000.0,"STONE, JOHN CHARLES","Amkor Technology, Inc. Common Stock"
+2016-11-18,AMKR,Executive Vice President,SELL,50000.0,12.13,606500.0,"STONE, JOHN CHARLES","Amkor Technology, Inc. Common Stock"
+2016-11-21,AMKR,Director,BUY,20000.0,10.97,219400.0,"OSBORNE, JOHN",Common Stock
+2016-11-21,AMKR,Director,SELL,16666.0,12.27,204491.82,"OSBORNE, JOHN",Common Stock
+2016-11-21,AMKR,Director,BUY,16666.0,7.71,128494.86,"OSBORNE, JOHN",Common Stock
+2016-11-21,AMKR,Executive Vice President,SELL,23750.0,12.36,293550.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2016-11-21,AMKR,Executive Vice President,SELL,25000.0,12.35,308750.0,"STONE, JOHN CHARLES","Amkor Technology, Inc. Common Stock"
+2016-11-21,AMKR,Executive Vice President,BUY,23750.0,5.18,123025.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2016-11-21,AMKR,Director,SELL,6994.0,12.27,85816.37999999999,"OSBORNE, JOHN",Common Stock
+2016-11-21,AMKR,Director,BUY,20000.0,9.17,183400.0,"OSBORNE, JOHN",Common Stock
+2016-11-21,AMKR,Director,SELL,10000.0,12.27,122700.0,"OSBORNE, JOHN",Common Stock
+2016-11-21,AMKR,Director,BUY,10000.0,6.46,64600.0,"OSBORNE, JOHN",Common Stock
+2016-11-21,AMKR,Director,BUY,20000.0,11.88,237600.00000000003,"OSBORNE, JOHN",Common Stock
+2016-11-21,AMKR,Director,SELL,20000.0,12.27,245400.0,"OSBORNE, JOHN",Common Stock
+2016-11-21,AMKR,Executive Vice President,BUY,25000.0,4.28,107000.0,"STONE, JOHN CHARLES","Amkor Technology, Inc. Common Stock"
+2016-11-22,AMKR,"Director, President and CEO",SELL,85214.0,12.22,1041315.0800000001,"KELLEY, STEPHEN DOUGLAS",Common Stock
+2017-02-08,AMKR,"Director, President and CEO",SELL,21754.0,9.66,210143.64,"KELLEY, STEPHEN DOUGLAS",Common Stock
+2017-02-27,AMKR,"Director, President and CEO",SELL,200000.0,9.86,1972000.0,"KELLEY, STEPHEN DOUGLAS",Common Stock
+2017-03-13,AMKR,Executive Vice President,SELL,6250.0,11.0,68750.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2017-03-13,AMKR,Executive Vice President,BUY,6250.0,5.18,32375.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2017-05-04,AMKR,CAO & General Counsel,BUY,75000.0,10.97,822750.0,"TILY, GIL C.","Amkor Technology, Inc"
+2017-05-04,AMKR,CAO & General Counsel,SELL,70862.0,11.96,847509.52,"TILY, GIL C.","Amkor Technology, Inc."
+2017-05-08,AMKR,"Director, President and CEO",SELL,21563.0,11.73,252933.99000000002,"KELLEY, STEPHEN DOUGLAS",Common Stock
+2017-05-11,AMKR,Director,SELL,10000.0,10.97,109700.0,"CHURCHILL, WINSTON J",(Director Stock Option (Right to Buy)
+2017-05-11,AMKR,Director,SELL,20000.0,11.99,239800.0,"CHURCHILL, WINSTON J","Amkor Technology, Inc. Common Stock"
+2017-05-11,AMKR,Director,SELL,10000.0,11.99,119900.0,"CHURCHILL, WINSTON J","Amkor Technology, Inc. Common Stock"
+2017-05-11,AMKR,Director,BUY,16598.0,6.46,107223.08,"CHURCHILL, WINSTON J","Amkor Technology, Inc. Common Stock"
+2017-05-11,AMKR,Director,SELL,20000.0,7.71,154200.0,"CHURCHILL, WINSTON J",Director Stock Option (Right to Buy)
+2017-05-11,AMKR,Director,BUY,10000.0,10.97,109700.0,"CHURCHILL, WINSTON J","Amkor Technology, Inc. Common Stock"
+2017-05-11,AMKR,Director,SELL,16598.0,11.99,199010.02,"CHURCHILL, WINSTON J","Amkor Technology, Inc. Common Stock"
+2017-05-11,AMKR,CAO & General Counsel,BUY,45678.0,4.28,195501.84000000003,"TILY, GIL C.","Amkor Technology, Inc., Common Stock"
+2017-05-11,AMKR,CAO & General Counsel,SELL,45678.0,12.02,549049.5599999999,"TILY, GIL C.","Amkor Technology. Inc., Common Stock"
+2017-05-11,AMKR,Director,SELL,16598.0,6.46,107223.08,"CHURCHILL, WINSTON J",Director Stock Option (Right to Buy)
+2017-05-11,AMKR,Director,BUY,20000.0,7.71,154200.0,"CHURCHILL, WINSTON J","Amkor Technology, Inc. Common Stock"
+2017-05-12,AMKR,Director,SELL,3402.0,11.81,40177.62,"CHURCHILL, WINSTON J","Amkor Technology, Inc. Common Stock"
+2017-05-12,AMKR,Director,SELL,6598.0,11.81,77922.38,"CHURCHILL, WINSTON J","Amkor Technology, Inc. Common Stock"
+2017-05-12,AMKR,CAO & General Counsel,BUY,41822.0,4.28,178998.16,"TILY, GIL C.","Amkor Technology, Inc., Common Stock"
+2017-05-12,AMKR,Director,SELL,3402.0,6.46,21976.92,"CHURCHILL, WINSTON J",Director Stock Option to Buy
+2017-05-12,AMKR,CAO & General Counsel,SELL,41822.0,11.68,488480.95999999996,"TILY, GIL C.","Amkor Technology, Inc. Common Stock"
+2017-05-12,AMKR,Director,BUY,3402.0,6.46,21976.92,"CHURCHILL, WINSTON J","Amkor Technology, Inc. Common Stock"
+2017-05-12,AMKR,Director,BUY,6598.0,4.58,30218.84,"CHURCHILL, WINSTON J","Amkor Technology, Inc. Common Stock"
+2017-05-12,AMKR,Director,SELL,6598.0,4.58,30218.84,"CHURCHILL, WINSTON J",Director Stock Option to Buy
+2017-05-18,AMKR,Director,SELL,13402.0,4.58,61381.16,"CHURCHILL, WINSTON J",Director Stock Option (Right to Buy)
+2017-05-18,AMKR,Director,SELL,13402.0,11.0,147422.0,"CHURCHILL, WINSTON J","Amkor Technology, Inc. Common Stock"
+2017-05-18,AMKR,Director,BUY,13402.0,4.58,61381.16,"CHURCHILL, WINSTON J","Amkor Technology, Inc. Common Stock"
+2017-05-27,AMKR,"Director, President and CEO",SELL,5750.0,11.74,67505.0,"KELLEY, STEPHEN DOUGLAS",Common Stock
+2017-06-08,AMKR,Director,SELL,10000.0,12.05,120500.0,"CAROLIN, ROGER ANTHONY",Common Stock
+2017-06-08,AMKR,"Director, President and CEO",BUY,75586.0,4.5,340137.0,"KELLEY, STEPHEN DOUGLAS",Common Stock
+2017-06-08,AMKR,"Director, President and CEO",SELL,75586.0,12.13,916858.18,"KELLEY, STEPHEN DOUGLAS",Common Stock
+2017-06-08,AMKR,Director,BUY,10000.0,10.97,109700.0,"CAROLIN, ROGER ANTHONY",Common Stock
+2017-06-09,AMKR,"Director, President and CEO",SELL,32924.0,12.06,397063.44,"KELLEY, STEPHEN DOUGLAS",Common Stock
+2017-08-27,AMKR,"Director, President and CEO",SELL,5750.0,8.54,49104.99999999999,"KELLEY, STEPHEN DOUGLAS",Common Stock
+2017-11-27,AMKR,"Director, President and CEO",SELL,5750.0,11.39,65492.5,"KELLEY, STEPHEN DOUGLAS",Common Stock
+2018-02-27,AMKR,"Director, President and CEO",SELL,5425.0,10.2,55334.99999999999,"KELLEY, STEPHEN DOUGLAS",Common Stock
+2018-03-09,AMKR,Director,SELL,20000.0,11.37,227399.99999999997,"CHURCHILL, WINSTON J","Amkor Technology, Inc. Common Stock"
+2018-03-09,AMKR,Director,BUY,20000.0,6.81,136200.0,"CHURCHILL, WINSTON J","Amkor Technology, Inc. Common Stock"
+2018-03-09,AMKR,Director,BUY,20000.0,5.66,113200.0,"CHURCHILL, WINSTON J","Amkor Technology, Inc. Common Stock"
+2018-03-09,AMKR,Director,BUY,20000.0,4.5,90000.0,"CHURCHILL, WINSTON J","Amkor Technology, Inc. Common Stock"
+2018-03-09,AMKR,Director,SELL,20000.0,11.35,227000.0,"CHURCHILL, WINSTON J","Amkor Technology, Inc. Common Stock"
+2018-05-27,AMKR,"Director, President and CEO",SELL,5425.0,9.18,49801.5,"KELLEY, STEPHEN DOUGLAS",Common Stock
+2018-08-27,AMKR,"Director, President and CEO",SELL,5425.0,8.78,47631.5,"KELLEY, STEPHEN DOUGLAS",Common Stock
+2018-10-31,AMKR,"Director, 10% Owner, See Exhibit 99.1",BUY,4085000.0,7.19,29371150.0,"KIM, JAMES J",Common Stock
+2018-11-27,AMKR,"Director, President and CEO",SELL,5425.0,6.61,35859.25,"KELLEY, STEPHEN DOUGLAS",Common Stock
+2018-12-10,AMKR,"Director, President and CEO",BUY,100000.0,6.33,633000.0,"KELLEY, STEPHEN DOUGLAS",Common Stock
+2018-12-11,AMKR,"Director, President and CEO",BUY,50000.0,6.32,316000.0,"KELLEY, STEPHEN DOUGLAS",Common Stock
+2019-02-14,AMKR,Director,BUY,20000.0,4.5,90000.0,"CAROLIN, ROGER ANTHONY",Common Stock
+2019-02-14,AMKR,Director,SELL,20000.0,9.36,187200.0,"CAROLIN, ROGER ANTHONY",Common Stock
+2019-02-19,AMKR,Director,SELL,17476.0,9.42,164623.92,"CHURCHILL, WINSTON J",Common Stock
+2019-02-27,AMKR,"Director, President and CEO",SELL,5425.0,8.84,47957.0,"KELLEY, STEPHEN DOUGLAS",Common Stock
+2019-03-14,AMKR,Executive Vice President,BUY,21000.0,4.28,89880.0,"STONE, JOHN CHARLES","Amkor Technology, Inc., Common Stock"
+2019-03-14,AMKR,Executive Vice President,SELL,21000.0,8.61,180810.0,"STONE, JOHN CHARLES","Amkor Technology, Inc., Common Stock"
+2019-03-15,AMKR,Executive Vice President,SELL,4000.0,8.81,35240.0,"STONE, JOHN CHARLES","Amkor Technology Inc., Common Stock"
+2019-03-15,AMKR,Executive Vice President,BUY,4000.0,4.28,17120.0,"STONE, JOHN CHARLES","Amkor Technology, Inc., Common Stock"
+2019-05-16,AMKR,Director,BUY,2500.0,7.259,18147.5,"MCCOURT, MARYFRANCES",Common Stock
+2019-05-27,AMKR,"Director, President and CEO",SELL,5425.0,6.55,35533.75,"KELLEY, STEPHEN DOUGLAS",Common Stock
+2019-08-02,AMKR,Director,BUY,12500.0,4.28,53500.0,"TILY, GIL C.","Amkor Technology, Inc., Common Stock"
+2019-08-02,AMKR,Director,SELL,12500.0,9.09,113625.0,"TILY, GIL C.","Amkor Technology, Inc., Common Stock"
+2019-08-27,AMKR,"Director, President and CEO",SELL,5425.0,8.51,46166.75,"KELLEY, STEPHEN DOUGLAS",Common Stock
+2019-10-31,AMKR,Executive Vice President,SELL,32646.0,13.4,437456.4,"STONE, JOHN CHARLES","Amkor Technology, Inc., Common Stock"
+2019-10-31,AMKR,Executive Vice President,BUY,25000.0,5.18,129500.0,"RUTTEN, GUILLAUME MARIE JEAN","Amkor Technology, Inc., Common Stock"
+2019-10-31,AMKR,Executive Vice President,SELL,4706.0,13.72,64566.32,"STONE, JOHN CHARLES","Amkor Technology, Inc., Common Stock"
+2019-10-31,AMKR,Executive Vice President,BUY,32646.0,9.86,321889.56,"STONE, JOHN CHARLES","Amkor Technology, Inc., Common Stock"
+2019-10-31,AMKR,Executive Vice President,SELL,25000.0,13.1,327500.0,"RUTTEN, GUILLAUME MARIE JEAN","Amkor Technology, Inc., Common Stock"
+2019-11-01,AMKR,Director,BUY,18000.0,8.51,153180.0,"MCCOURT, MARYFRANCES","Amkor Technology, Inc., Common Stock"
+2019-11-01,AMKR,Executive Vice President,BUY,43750.0,9.86,431375.0,"RUTTEN, GUILLAUME MARIE JEAN","Amkor Technology, Inc., Common Stock"
+2019-11-01,AMKR,Director,SELL,20000.0,12.9,258000.0,"CAROLIN, ROGER ANTHONY","Amkor Technology, Inc., Common Stock"
+2019-11-01,AMKR,Director,BUY,20000.0,7.71,154200.0,"CAROLIN, ROGER ANTHONY","Amkor Technology, Inc., Common Stock"
+2019-11-01,AMKR,Director,BUY,20000.0,6.46,129200.0,"CAROLIN, ROGER ANTHONY","Amkor Technology, Inc., Common Stock"
+2019-11-01,AMKR,Executive Vice President,SELL,61104.0,12.78,780909.12,"STONE, JOHN CHARLES","Amkor Technology, Inc., Common Stock"
+2019-11-01,AMKR,Executive Vice President,BUY,61104.0,9.86,602485.44,"STONE, JOHN CHARLES","Amkor Technology, Inc., Common Stock"
+2019-11-01,AMKR,Executive Vice President,SELL,43750.0,12.91,564812.5,"RUTTEN, GUILLAUME MARIE JEAN","Amkor Technology, Inc., Common Stock"
+2019-11-04,AMKR,Director,BUY,100000.0,9.86,986000.0,"TILY, GIL C.","Amkor Technology, Inc., Common Stock"
+2019-11-04,AMKR,Director,SELL,83362.0,13.33,1111215.46,"TILY, GIL C.","Amkor Technology, Inc., Common Stock"
+2019-11-08,AMKR,Director,SELL,12000.0,12.77,153240.0,"CAROLIN, ROGER ANTHONY","Amkor Technology, Inc., Common Stock"
+2019-11-18,AMKR,Director,SELL,40400.0,12.89,520756.0,"CAROLIN, ROGER ANTHONY","Amkor Technology, Inc., Common Stock"
+2019-11-27,AMKR,"Director, President and CEO",SELL,5425.0,12.33,66890.25,"KELLEY, STEPHEN DOUGLAS",Common Stock
+2020-02-21,AMKR,Director,SELL,4700.0,12.64,59408.0,"CHURCHILL, WINSTON J",Common Stock
+2020-02-27,AMKR,"Director, President and CEO",SELL,5425.0,9.99,54195.75,"KELLEY, STEPHEN DOUGLAS",Common Stock
+2020-03-09,AMKR,EVP & General Counsel,BUY,2500.0,9.14,22850.0,"ROGERS, MARK N",Common Stock
+2020-04-28,AMKR,"Director, 10% Owner, Exhibit 99.1",BUY,20000.0,7.71,154200.0,"KIM, JOHN T",Common Stock
+2020-05-27,AMKR,"Director, President and CEO",SELL,5425.0,10.965,59485.125,"KELLEY, STEPHEN DOUGLAS",Common Stock
+2020-06-03,AMKR,CFO,BUY,4500.0,8.88,39960.0,"FAUST, MEGAN",Common Stock
+2020-06-03,AMKR,CFO,SELL,4500.0,11.07,49815.0,"FAUST, MEGAN",Common Stock
+2020-06-05,AMKR,Executive Vice President,SELL,7838.0,12.85,100718.3,"RUTTEN, GUILLAUME MARIE JEAN","Amkor Technology, Inc., Common Stock"
+2020-06-05,AMKR,Executive Vice President,BUY,7838.0,9.86,77282.68,"RUTTEN, GUILLAUME MARIE JEAN","Amkor Technology, Inc., Common Stock"
+2020-06-18,AMKR,CFO,SELL,4500.0,12.15,54675.0,"FAUST, MEGAN",Common Stock
+2020-06-18,AMKR,CFO,BUY,4500.0,8.88,39960.0,"FAUST, MEGAN",Common Stock
+2020-07-23,AMKR,CFO,SELL,4500.0,12.41,55845.0,"FAUST, MEGAN",Common Stock
+2020-07-23,AMKR,CFO,BUY,4500.0,8.88,39960.0,"FAUST, MEGAN",Common Stock
+2020-07-28,AMKR,CFO,SELL,50000.0,15.4,770000.0,"FAUST, MEGAN",Common Stock
+2020-07-28,AMKR,CFO,BUY,50000.0,9.86,493000.0,"FAUST, MEGAN",Common Stock
+2020-08-18,AMKR,"10% Owner, See Exhibit 99.1",BUY,131250.0,13.67,1794187.5,"KIM, JOHN T",Common Stock
+2020-08-18,AMKR,"10% Owner, See Exhibit 99.1",BUY,54687.0,13.67,747571.29,"KIM, JOHN T",Common Stock
+2020-08-20,AMKR,CFO,BUY,4500.0,8.88,39960.0,"FAUST, MEGAN",Common Stock
+2020-08-20,AMKR,CFO,SELL,4500.0,13.17,59265.0,"FAUST, MEGAN",Common Stock
+2020-09-17,AMKR,CFO,BUY,4500.0,8.88,39960.0,"FAUST, MEGAN",Common Stock
+2020-09-17,AMKR,CFO,SELL,4500.0,11.15,50175.0,"FAUST, MEGAN",Common Stock
+2020-10-09,AMKR,"President, CEO and Director",SELL,15000.0,12.5,187500.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2020-10-09,AMKR,"President, CEO and Director",BUY,15000.0,9.89,148350.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2020-10-15,AMKR,CFO,BUY,4500.0,8.88,39960.0,"FAUST, MEGAN",Common Stock
+2020-10-15,AMKR,CFO,SELL,4500.0,12.57,56565.0,"FAUST, MEGAN",Common Stock
+2020-10-15,AMKR,"Director, President and CEO",BUY,15000.0,9.86,147900.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2020-10-15,AMKR,"Director, President and CEO",SELL,15000.0,12.58,188700.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2020-11-16,AMKR,"Director, President and CEO",BUY,15000.0,9.86,147900.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2020-11-16,AMKR,"Director, President and CEO",SELL,2787.0,13.43,37429.409999999996,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2020-11-16,AMKR,"Director, President and CEO",SELL,12213.0,13.53,165241.88999999998,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2020-11-19,AMKR,CFO,BUY,4500.0,8.88,39960.0,"FAUST, MEGAN",Common Stock
+2020-11-19,AMKR,CFO,SELL,4500.0,13.42,60390.0,"FAUST, MEGAN",Common Stock
+2020-12-01,AMKR,Director,BUY,20000.0,4.58,91600.0,"CAROLIN, ROGER ANTHONY",Common Stock
+2020-12-01,AMKR,"Director, President and CEO",SELL,46875.0,15.0,703125.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2020-12-01,AMKR,"Director, President and CEO",BUY,46875.0,9.48,444375.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2020-12-01,AMKR,Director,SELL,20000.0,15.16,303200.0,"CAROLIN, ROGER ANTHONY",Common Stock
+2020-12-03,AMKR,Executive Vice President,BUY,28125.0,9.86,277312.5,"STONE, JOHN CHARLES",Common Stock
+2020-12-03,AMKR,Executive Vice President,SELL,28125.0,15.25,428906.25,"STONE, JOHN CHARLES",Common Stock
+2020-12-15,AMKR,"Director, President and CEO",BUY,15000.0,9.86,147900.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2020-12-15,AMKR,"Director, President and CEO",SELL,15000.0,15.29,229350.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2020-12-17,AMKR,See Exhibit 99.1,SELL,816613.0,15.41,12584006.33,"JAMES, J. KIM 2008 TRUST FBO JACQUELINE MARY PANICHELLO &AMP; DESCENDANTS",Common Stock
+2020-12-17,AMKR,See Exhibit 99.1,SELL,816613.0,15.41,12584006.33,"JAMES, J. KIM 2008 TRUST FBO ALEXANDRA KIM PANICHELLO &AMP; DESCENDANTS",Common Stock
+2020-12-17,AMKR,"Director, 10% Owner, See Exhibit 99.1",SELL,1633226.0,15.41,25168012.66,"KIM, JOHN T",Common Stock
+2020-12-17,AMKR,See Exhibit 99.1,SELL,816613.0,15.41,12584006.33,"JAMES, J. KIM 2008 TRUST FBO DYLAN JAMES PANICHELLO &AMP; DESCENDANTS",Common Stock
+2020-12-17,AMKR,See Exhibit 99.1,SELL,1633226.0,15.41,25168012.66,"JAMES, J. KIM 2008 TRUST FBO DESCENDANTS OF JOHN T. KIM",Common Stock
+2020-12-17,AMKR,"Director, 10% Owner, See Exhibit 99.1",SELL,1633226.0,15.41,25168012.66,"KIM, SUSAN Y",Common Stock
+2020-12-17,AMKR,CFO,SELL,4500.0,15.38,69210.0,"FAUST, MEGAN",Common Stock
+2020-12-17,AMKR,"Director, 10% Owner, See Exhibit 99.1",SELL,816613.0,15.41,12584006.33,"KIM, JOHN T",Common Stock
+2020-12-17,AMKR,"Director, 10% Owner, See Exhibit 99.1",SELL,816613.0,15.41,12584006.33,"KIM, SUSAN Y",Common Stock
+2020-12-17,AMKR,CFO,BUY,4500.0,8.88,39960.0,"FAUST, MEGAN",Common Stock
+2020-12-21,AMKR,"Director, 10% Owner, See Exhibit 99.1",BUY,4083065.0,15.01,61286805.65,"KIM, SUSAN Y",Common Stock
+2021-01-15,AMKR,Exhibit 99.1,SELL,6895.0,18.0441,124414.0695,"KIM, DAVID D",Common Stock
+2021-01-15,AMKR,"Director, President and CEO",BUY,15000.0,9.86,147900.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2021-01-15,AMKR,"Director, President and CEO",SELL,15000.0,18.12,271800.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2021-01-21,AMKR,CFO,BUY,4500.0,8.88,39960.0,"FAUST, MEGAN",Common Stock
+2021-01-21,AMKR,CFO,SELL,4500.0,18.53,83385.0,"FAUST, MEGAN",Common Stock
+2021-02-11,AMKR,Executive Vice President,BUY,18750.0,9.86,184875.0,"STONE, JOHN CHARLES",Common Stock
+2021-02-11,AMKR,Executive Vice President,BUY,65625.0,9.48,622125.0,"STONE, JOHN CHARLES",Common Stock
+2021-02-11,AMKR,Director,SELL,38919.0,22.95,893191.0499999999,"TILY, GIL C.",Common Stock
+2021-02-11,AMKR,Director,BUY,64062.0,9.86,631651.32,"TILY, GIL C.",Common Stock
+2021-02-11,AMKR,Director,BUY,2000.0,8.51,17020.0,"MCCOURT, MARYFRANCES",Common Stock
+2021-02-11,AMKR,Director,SELL,4657.0,21.66,100870.62,"MCCOURT, MARYFRANCES",Common Stock
+2021-02-11,AMKR,Executive Vice President,SELL,65625.0,21.35,1401093.75,"STONE, JOHN CHARLES",Common Stock
+2021-02-11,AMKR,Director,BUY,4657.0,9.45,44008.649999999994,"MCCOURT, MARYFRANCES",Common Stock
+2021-02-11,AMKR,Director,SELL,20000.0,21.66,433200.0,"MCCOURT, MARYFRANCES",Common Stock
+2021-02-11,AMKR,Director,BUY,20000.0,7.31,146200.0,"MCCOURT, MARYFRANCES",Common Stock
+2021-02-11,AMKR,Director,SELL,2000.0,21.66,43320.0,"MCCOURT, MARYFRANCES",Common Stock
+2021-02-11,AMKR,Director,SELL,6161.0,22.95,141394.94999999998,"TILY, GIL C.",Common Stock
+2021-02-11,AMKR,Director,BUY,20000.0,7.07,141400.0,"TILY, GIL C.",Common Stock
+2021-02-11,AMKR,Executive Vice President,SELL,18750.0,21.35,400312.5,"STONE, JOHN CHARLES",Common Stock
+2021-02-12,AMKR,EVP & General Counsel,SELL,50000.0,25.34,1267000.0,"ROGERS, MARK N",Common Stock
+2021-02-12,AMKR,EVP & General Counsel,BUY,50000.0,7.4,370000.0,"ROGERS, MARK N",Common Stock
+2021-02-12,AMKR,Director,SELL,8207.0,24.21,198691.47,"CHURCHILL, WINSTON J",Common Stock
+2021-02-16,AMKR,Executive Vice President,BUY,9375.0,9.48,88875.0,"STONE, JOHN CHARLES",Common Stock
+2021-02-16,AMKR,Executive Vice President,SELL,9375.0,25.23,236531.25,"STONE, JOHN CHARLES",Common Stock
+2021-02-16,AMKR,"Director, President and CEO",BUY,14037.0,9.86,138404.81999999998,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2021-02-16,AMKR,"Director, President and CEO",BUY,963.0,9.48,9129.24,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2021-02-16,AMKR,"Director, President and CEO",SELL,62500.0,24.45,1528125.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2021-02-16,AMKR,"Director, President and CEO",BUY,62500.0,14.17,885625.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2021-02-16,AMKR,"Director, President and CEO",SELL,14037.0,24.42,342783.54000000004,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2021-02-16,AMKR,"Director, President and CEO",SELL,963.0,24.42,23516.460000000003,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2021-03-01,AMKR,Director,SELL,6365.0,24.71,157279.15,"TILY, GIL C.",Common Stock
+2021-03-01,AMKR,Director,BUY,10938.0,9.86,107848.68,"TILY, GIL C.",Common Stock
+2021-03-15,AMKR,"Director, President and CEO",BUY,9375.0,9.86,92437.5,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2021-03-15,AMKR,"Director, President and CEO",SELL,5625.0,22.47,126393.75,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2021-03-15,AMKR,"Director, President and CEO",SELL,9375.0,22.47,210656.25,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2021-03-15,AMKR,"Director, President and CEO",BUY,5625.0,9.48,53325.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2021-03-18,AMKR,Executive Vice President,BUY,9375.0,9.86,92437.5,"STONE, JOHN CHARLES",Common Stock
+2021-03-18,AMKR,Executive Vice President,SELL,9375.0,24.0,225000.0,"STONE, JOHN CHARLES",Common Stock
+2021-03-18,AMKR,CFO,BUY,5000.0,8.88,44400.00000000001,"FAUST, MEGAN",Common Stock
+2021-03-18,AMKR,CFO,BUY,60000.0,9.86,591600.0,"FAUST, MEGAN",Common Stock
+2021-03-18,AMKR,CFO,SELL,5000.0,23.29,116450.0,"FAUST, MEGAN",Common Stock
+2021-03-18,AMKR,CFO,SELL,60000.0,23.29,1397400.0,"FAUST, MEGAN",Common Stock
+2021-04-15,AMKR,CFO,SELL,5000.0,24.52,122600.0,"FAUST, MEGAN",Common Stock
+2021-04-15,AMKR,"Director, President and CEO",SELL,15000.0,24.52,367800.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2021-04-15,AMKR,"Director, President and CEO",BUY,15000.0,9.48,142200.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2021-04-15,AMKR,CFO,BUY,5000.0,8.88,44400.00000000001,"FAUST, MEGAN",Common Stock
+2021-05-03,AMKR,"10% Owner, Exhibit 99.1",BUY,20000.0,6.46,129200.0,"KIM, JOHN T",Common Stock
+2021-05-17,AMKR,"Director, President and CEO",BUY,15000.0,9.48,142200.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2021-05-17,AMKR,"Director, President and CEO",SELL,15000.0,18.82,282300.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2021-05-20,AMKR,CFO,SELL,5000.0,19.817,99085.0,"FAUST, MEGAN",Common Stock
+2021-05-20,AMKR,CFO,BUY,5000.0,8.88,44400.00000000001,"FAUST, MEGAN",Common Stock
+2021-05-25,AMKR,Director,SELL,20000.0,20.66,413200.0,"CHURCHILL, WINSTON J",Common Stock
+2021-05-25,AMKR,Director,BUY,20000.0,9.825,196500.0,"CHURCHILL, WINSTON J",Common Stock
+2021-05-25,AMKR,Director,SELL,6106.0,20.67,126211.02,"CHURCHILL, WINSTON J",Common Stock
+2021-06-15,AMKR,"Director, President and CEO",BUY,10000.0,14.17,141700.0,"RUTTEN, GUILLAUME MARIE JEAN",Common stock
+2021-06-15,AMKR,"Director, President and CEO",BUY,912.0,9.48,8645.76,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2021-06-15,AMKR,"Director, President and CEO",SELL,10000.0,23.79,237900.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2021-06-15,AMKR,"Director, President and CEO",SELL,912.0,23.72,21632.64,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2021-06-15,AMKR,"Director, President and CEO",SELL,15000.0,23.78,356700.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2021-06-17,AMKR,CFO,SELL,5000.0,23.56,117800.0,"FAUST, MEGAN",Common Stock
+2021-06-17,AMKR,CFO,BUY,5000.0,8.88,44400.00000000001,"FAUST, MEGAN",Common Stock
+2021-06-25,AMKR,Executive Vice President,SELL,9375.0,24.0,225000.0,"STONE, JOHN CHARLES",Common Stock
+2021-06-25,AMKR,Executive Vice President,BUY,9375.0,9.48,88875.0,"STONE, JOHN CHARLES",Common Stock
+2021-07-01,AMKR,Member of 10% owner group (2),SELL,174810.0,23.37,4085309.7,"JOHN, T. KIM 2018 IRREVOCABLE TRUST AGREEMENT DATED 2/6/18",Common Stock
+2021-07-01,AMKR,"Director, 10% Owner, Member of 10% owner group	(15)",SELL,174810.0,23.37,4085309.7,"KIM, SUSAN Y",Common Stock
+2021-07-14,AMKR,"Director, 10% Owner, Member of 10% owner group (7)",SELL,271895.0,23.15,6294369.25,"KIM, JAMES J",Common Stock
+2021-07-14,AMKR,Member of 10% owner group (2),SELL,271895.0,23.15,6294369.25,"QUALIFIED, ANNUITY TRUST UNDER THE SUSAN Y. KIM 2020-1 IRREVOCABLE TRUST AGREEMENT DATED 04/01/2020",Common Stock
+2021-07-14,AMKR,Member of 10% owner group (6),SELL,271895.0,23.15,6294369.25,"KIM, AGNES C",Common Stock
+2021-07-15,AMKR,"Director, President and CEO",SELL,595.0,23.45,13952.75,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2021-07-15,AMKR,"Director, President and CEO",SELL,24405.0,22.42,547160.1000000001,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2021-07-15,AMKR,"Director, President and CEO",BUY,10000.0,14.17,141700.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2021-07-15,AMKR,CFO,BUY,5000.0,8.88,44400.00000000001,"FAUST, MEGAN",Common Stock
+2021-07-15,AMKR,CFO,SELL,5000.0,22.43,112150.0,"FAUST, MEGAN",Common Stock
+2021-07-29,AMKR,Director,SELL,15000.0,24.59,368850.0,"TILY, GIL C.",Common Stock
+2021-08-02,AMKR,Director,BUY,20000.0,9.83,196600.0,"MCCOURT, MARYFRANCES",Common Stock
+2021-08-02,AMKR,Director,SELL,20000.0,25.24,504799.99999999994,"MCCOURT, MARYFRANCES",Common Stock
+2021-08-04,AMKR,Director,SELL,2500.0,26.95,67375.0,"MCCOURT, MARYFRANCES",Common Stock
+2021-08-05,AMKR,Director,BUY,20000.0,4.5,90000.0,"CAROLIN, ROGER ANTHONY",Common Stock
+2021-08-05,AMKR,Director,SELL,20000.0,26.92,538400.0,"CAROLIN, ROGER ANTHONY",Common Stock
+2021-08-16,AMKR,"Director, President and CEO",SELL,25000.0,25.93,648250.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2021-08-16,AMKR,"Director, President and CEO",BUY,10000.0,14.17,141700.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2021-08-19,AMKR,CFO,SELL,5000.0,23.98,119900.0,"FAUST, MEGAN",Common Stock
+2021-08-19,AMKR,CFO,BUY,5000.0,8.88,44400.00000000001,"FAUST, MEGAN",Common Stock
+2021-08-26,AMKR,Executive Vice President,BUY,9375.0,9.48,88875.0,"STONE, JOHN CHARLES",Common Stock
+2021-08-26,AMKR,Executive Vice President,SELL,9375.0,26.3,246562.5,"STONE, JOHN CHARLES",Common Stock
+2021-09-01,AMKR,"Director, 10% Owner, Member of 10% owner group	(15)",SELL,163200.0,27.71,4522272.0,"KIM, SUSAN Y",Common Stock
+2021-09-15,AMKR,"Director, President and CEO",SELL,25000.0,28.46,711500.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2021-09-15,AMKR,"Director, President and CEO",BUY,10000.0,14.17,141700.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2021-09-16,AMKR,CFO,BUY,500.0,9.48,4740.0,"FAUST, MEGAN",Common Stock
+2021-09-16,AMKR,CFO,SELL,5000.0,28.63,143150.0,"FAUST, MEGAN",Common Stock
+2021-09-16,AMKR,CFO,BUY,4500.0,8.88,39960.0,"FAUST, MEGAN",Common Stock
+2021-10-01,AMKR,"Director, 10% Owner, Member of 10% owner group	(15)",SELL,328350.0,25.11,8244868.5,"KIM, SUSAN Y",Common Stock
+2021-10-01,AMKR,Member of 10% owner group (4),SELL,328350.0,25.11,8244868.5,"QUALIFIED, ANNUITY TRUST UNDER THE JAMES J. KIM 2018-1 QUALIFIED ANNUITY TRUST AGREEMENT DTD 8/30/18",Common Stock
+2021-10-04,AMKR,Member of 10% owner group (4),SELL,626192.0,24.7,15466942.4,"QUALIFIED, ANNUITY TRUST UNDER THE JAMES J. KIM 2018-1 QUALIFIED ANNUITY TRUST AGREEMENT DTD 8/30/18",Common Stock
+2021-10-04,AMKR,"10% Owner, Member of 10% owner group (4)",BUY,626192.0,24.7,15466942.4,"KIM, JOHN T",Common Stock
+2021-10-04,AMKR,"Director, 10% Owner, Member of 10% owner group (7)",SELL,626192.0,24.7,15466942.4,"KIM, JAMES J",Common Stock
+2021-10-04,AMKR,Member of 10% owner group (6),SELL,626192.0,24.7,15466942.4,"KIM, AGNES C",Common Stock
+2021-10-04,AMKR,"Director, 10% Owner, Member of 10% owner group	(15)",SELL,626192.0,24.7,15466942.4,"KIM, SUSAN Y",Common Stock
+2021-10-04,AMKR,"Director, 10% Owner, Member of 10% owner group	(15)",BUY,626192.0,24.7,15466942.4,"KIM, SUSAN Y",Common Stock
+2021-10-15,AMKR,"Director, President and CEO",BUY,10000.0,14.17,141700.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2021-10-15,AMKR,"Director, President and CEO",SELL,25000.0,22.43,560750.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2021-10-21,AMKR,CFO,SELL,5000.0,22.94,114700.0,"FAUST, MEGAN",Common Stock
+2021-10-21,AMKR,CFO,BUY,5000.0,9.48,47400.0,"FAUST, MEGAN",Common Stock
+2021-11-15,AMKR,"Director, President and CEO",BUY,10000.0,14.17,141700.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2021-11-15,AMKR,"Director, President and CEO",SELL,25000.0,23.35,583750.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2021-11-18,AMKR,CFO,SELL,5000.0,24.63,123150.0,"FAUST, MEGAN",Common Stock
+2021-11-18,AMKR,CFO,BUY,5000.0,9.48,47400.0,"FAUST, MEGAN",Common Stock
+2021-11-19,AMKR,Executive Vice President,SELL,9375.0,25.0,234375.0,"STONE, JOHN CHARLES",Common Stock
+2021-11-19,AMKR,Executive Vice President,BUY,9375.0,9.48,88875.0,"STONE, JOHN CHARLES",Common Stock
+2021-11-29,AMKR,Director,BUY,20000.0,7.31,146200.0,"CHURCHILL, WINSTON J",Common Stock
+2021-11-29,AMKR,Director,SELL,20000.0,22.42,448400.00000000006,"CHURCHILL, WINSTON J",Common Stock
+2021-12-15,AMKR,"Director, 10% Owner, Member of 10% owner group	(15)",BUY,596920.0,24.68,14731985.6,"KIM, SUSAN Y",Common Stock
+2021-12-15,AMKR,"Director, 10% Owner, Member of 10% owner group	(15)",SELL,596920.0,24.68,14731985.6,"KIM, SUSAN Y",Common Stock
+2021-12-15,AMKR,"Director, President and CEO",SELL,25000.0,22.05,551250.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2021-12-15,AMKR,"Director, President and CEO",BUY,10000.0,14.17,141700.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2021-12-15,AMKR,Member of 10% Owner Group (3),BUY,596920.0,22.505,13433684.6,"JAMES, J. KIM 2021 QUALIFIED ANNUITY TRUST U/A DATED 12/15/2021",Common Stock
+2021-12-15,AMKR,"Director, 10% Owner, Member of 10% owner group	(15)",BUY,1756427.0,24.68,43348618.36,"KIM, SUSAN Y",Common Stock
+2021-12-15,AMKR,Member of 10% owner group (2),SELL,596920.0,22.505,13433684.6,"QUALIFIED, ANNUITY TRUST UNDER THE JAMES J. KIM 2019-1 QUALIFIED ANNUITY TRUST AGREEMENT DTD SEPTEMBER10,2019",Common Stock
+2021-12-15,AMKR,Member of 10% Owner Group (3),BUY,1756427.0,22.505,39528389.635,"JAMES, J. KIM 2021 QUALIFIED ANNUITY TRUST U/A DATED 12/15/2021",Common Stock
+2021-12-16,AMKR,CFO,SELL,5000.0,22.97,114850.0,"FAUST, MEGAN",Common Stock
+2021-12-16,AMKR,CFO,BUY,5000.0,9.48,47400.0,"FAUST, MEGAN",Common Stock
+2021-12-21,AMKR,Executive Vice President,SELL,59.0,22.6,1333.4,"STONE, JOHN CHARLES",Common Stock
+2021-12-21,AMKR,"Director, 10% Owner, See Exhibit 99.1",SELL,94.0,22.6,2124.4,"KIM, JAMES J",Common Stock
+2021-12-21,AMKR,Executive Vice President,SELL,20.0,22.6,452.0,"HAGHIGHI, FARSHAD",Common Stock
+2021-12-27,AMKR,Member of 10% owner group (6),BUY,164678.0,23.45,3861699.1,"KIM, AGNES C",Common Stock
+2021-12-27,AMKR,"Director, 10% Owner, Member of 10% owner group	(15)",SELL,164678.0,23.45,3861699.1,"KIM, SUSAN Y",Common Stock
+2021-12-27,AMKR,Member of 10% owner group (2),BUY,164678.0,23.45,3861699.1,"SUSAN, Y. KIM 2012 GENERATION-SKIPPING TRUST U/A DATED DECEMBER 11, 2012",Common Stock
+2021-12-27,AMKR,Member of 10% owner group (2),BUY,164678.0,23.45,3861699.1,"SUSINS,, LLC",Common Stock
+2021-12-27,AMKR,"Director, 10% Owner, Member of 10% owner group (7)",BUY,164678.0,23.45,3861699.1,"KIM, JAMES J",Common Stock
+2021-12-30,AMKR,Member of 10% owner group (4),BUY,1187807.0,24.68,29315076.759999998,"KIM, AGNES C",Common Stock
+2021-12-30,AMKR,"Director, 10% Owner, Member of 10% owner group (6)",BUY,668666.0,24.68,16502676.879999999,"KIM, JAMES J",Common Stock
+2021-12-30,AMKR,Member of 10% owner group	(5),SELL,1187087.0,24.68,29297307.16,"SUJODA, INVESTMENTS, LP",Common Stock
+2021-12-30,AMKR,Member of 10% owner group (7),SELL,1187087.0,24.68,29297307.16,"KIM, DAVID D",Common Stock
+2021-12-30,AMKR,Member of 10% owner group (7),SELL,1337332.0,24.68,33005353.759999998,"KIM, DAVID D",Common Stock
+2021-12-30,AMKR,"Director, 10% Owner, Member of 10% owner group	(7)",SELL,1337332.0,24.68,33005353.759999998,"KIM, SUSAN Y",Common Stock
+2021-12-30,AMKR,"10% Owner, Member of 10% owner group (7)",SELL,1337332.0,24.68,33005353.759999998,"KIM, JOHN T",Common Stock
+2021-12-30,AMKR,Member of 10% owner group (4),BUY,668666.0,24.68,16502676.879999999,"KIM, AGNES C",Common Stock
+2021-12-30,AMKR,"Director, 10% Owner, Member of 10% owner group	(7)",SELL,1187087.0,24.68,29297307.16,"KIM, SUSAN Y",Common Stock
+2021-12-30,AMKR,Member of 10% owner group	(6),SELL,1337332.0,24.68,33005353.759999998,"SUJODA, MANAGEMENT, LLC",Common Stock
+2021-12-30,AMKR,Member of 10% owner group	(5),SELL,1337332.0,24.68,33005353.759999998,"SUJODA, INVESTMENTS, LP",Common Stock
+2021-12-30,AMKR,"10% Owner, Member of 10% owner group (7)",SELL,1187087.0,24.68,29297307.16,"KIM, JOHN T",Common Stock
+2021-12-30,AMKR,"Director, 10% Owner, Member of 10% owner group (6)",BUY,1187087.0,24.68,29297307.16,"KIM, JAMES J",Common Stock
+2021-12-30,AMKR,Member of 10% owner group	(6),SELL,1187087.0,24.68,29297307.16,"SUJODA, MANAGEMENT, LLC",Common Stock
+2022-01-18,AMKR,Member of 10% owner group (4),SELL,125600.0,23.86,2996816.0,"KIM, AGNES C",Common Stock
+2022-01-18,AMKR,"Director, President and CEO",BUY,10000.0,14.17,141700.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2022-01-18,AMKR,Member of 10% owner group	(2),SELL,125600.0,23.86,2996816.0,"QUALIFIED, ANNUITY TRUST UNDER THE SUSAN Y. KIM 2018-1 IRREVOCABLE TRUST AGREEMENT DTD AUGUST 29, 2018",Common Stock
+2022-01-18,AMKR,"Director, 10% Owner, Member of 10% owner group (4)",SELL,125600.0,23.86,2996816.0,"KIM, JAMES J",Common Stock
+2022-01-18,AMKR,"Director, President and CEO",SELL,25000.0,23.78,594500.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2022-01-20,AMKR,CFO,BUY,5000.0,9.48,47400.0,"FAUST, MEGAN",Common Stock
+2022-01-20,AMKR,CFO,SELL,5000.0,22.77,113850.0,"FAUST, MEGAN",Common Stock
+2022-02-11,AMKR,Member of 10% owner group (3),SELL,684.0,20.9,14295.599999999999,"KIM, AGNES C",Common Stock
+2022-02-11,AMKR,CFO,SELL,614.0,20.9,12832.599999999999,"FAUST, MEGAN",Common Stock
+2022-02-11,AMKR,Executive Vice President,SELL,227.0,20.9,4744.299999999999,"HAGHIGHI, FARSHAD",Common Stock
+2022-02-11,AMKR,Executive Vice President,SELL,455.0,20.9,9509.5,"STONE, JOHN CHARLES",Common Stock
+2022-02-11,AMKR,EVP & General Counsel,SELL,583.0,20.9,12184.699999999999,"ROGERS, MARK N",Common Stock
+2022-02-11,AMKR,"Director, 10% Owner, Member of 10% owner group (5)",SELL,684.0,20.9,14295.599999999999,"KIM, JAMES J",Common Stock
+2022-02-15,AMKR,"Director, President and CEO",SELL,25000.0,22.0,550000.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2022-02-15,AMKR,"Director, President and CEO",BUY,10000.0,14.17,141700.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2022-02-17,AMKR,CFO,BUY,5000.0,9.48,47400.0,"FAUST, MEGAN",Common Stock
+2022-02-17,AMKR,CFO,SELL,5000.0,24.41,122050.0,"FAUST, MEGAN",Common Stock
+2022-03-16,AMKR,"Director, President and CEO",BUY,10000.0,14.17,141700.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2022-03-16,AMKR,"Director, President and CEO",SELL,25000.0,22.0,550000.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2022-05-24,AMKR,Director,BUY,20000.0,4.68,93600.0,"MORSE, ROBERT RANDOLPH",Common Stock
+2022-06-09,AMKR,CFO,BUY,6000.0,9.48,56880.0,"FAUST, MEGAN",Common Stock
+2022-06-09,AMKR,CFO,SELL,6000.0,19.9,119399.99999999999,"FAUST, MEGAN",Common Stock
+2022-07-21,AMKR,CFO,SELL,12000.0,19.07,228840.0,"FAUST, MEGAN",Common Stock
+2022-07-21,AMKR,CFO,BUY,12000.0,9.48,113760.0,"FAUST, MEGAN",Common Stock
+2022-08-02,AMKR,"Director, President and CEO",BUY,10000.0,9.48,94800.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2022-08-02,AMKR,"Director, President and CEO",BUY,20000.0,14.17,283400.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2022-08-02,AMKR,"Director, President and CEO",SELL,60000.0,22.01,1320600.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2022-08-15,AMKR,"Director, President and CEO",SELL,30000.0,22.41,672300.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2022-08-15,AMKR,"Director, President and CEO",BUY,10000.0,14.17,141700.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2022-08-15,AMKR,"Director, President and CEO",BUY,5000.0,9.48,47400.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2022-08-18,AMKR,CFO,SELL,6000.0,22.05,132300.0,"FAUST, MEGAN",Common Stock
+2022-08-18,AMKR,CFO,BUY,6000.0,9.48,56880.0,"FAUST, MEGAN",Common Stock
+2022-10-06,AMKR,CFO,SELL,6000.0,19.07,114420.0,"FAUST, MEGAN",Common Stock
+2022-10-06,AMKR,CFO,BUY,6000.0,9.48,56880.0,"FAUST, MEGAN",Common Stock
+2022-10-21,AMKR,CFO,SELL,6000.0,19.07,114420.0,"FAUST, MEGAN",Common Stock
+2022-10-21,AMKR,CFO,BUY,6000.0,9.48,56880.0,"FAUST, MEGAN",Common Stock
+2022-11-08,AMKR,"Director, President and CEO",BUY,10000.0,9.48,94800.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2022-11-08,AMKR,"Director, President and CEO",BUY,20000.0,14.17,283400.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2022-11-08,AMKR,"Director, President and CEO",SELL,60000.0,22.0,1320000.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2022-11-11,AMKR,Executive Vice President,SELL,25000.0,25.0,625000.0,"HAGHIGHI, FARSHAD",Common Stock
+2022-11-11,AMKR,Executive Vice President,BUY,25000.0,9.48,237000.0,"HAGHIGHI, FARSHAD",Common Stock
+2022-11-15,AMKR,"Director, President and CEO",SELL,17693.0,27.22,481603.45999999996,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2022-11-15,AMKR,"Director, President and CEO",SELL,12307.0,27.8,342134.60000000003,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2022-11-15,AMKR,"Director, President and CEO",BUY,10000.0,14.17,141700.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2022-11-15,AMKR,Executive Vice President,SELL,1445.0,27.69,40012.05,"HAGHIGHI, FARSHAD",Common Stock
+2022-11-15,AMKR,Executive Vice President,BUY,6250.0,9.48,59250.0,"HAGHIGHI, FARSHAD",Common Stock
+2022-11-15,AMKR,Executive Vice President,SELL,14631.0,27.07,396061.17,"HAGHIGHI, FARSHAD",Common Stock
+2022-11-15,AMKR,"Director, President and CEO",BUY,5000.0,9.48,47400.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2022-11-17,AMKR,CFO,SELL,6000.0,27.31,163860.0,"FAUST, MEGAN",Common Stock
+2022-11-17,AMKR,CFO,BUY,6000.0,9.48,56880.0,"FAUST, MEGAN",Common Stock
+2022-11-18,AMKR,CFO,BUY,20000.0,9.48,189600.0,"FAUST, MEGAN",Common Stock
+2022-11-18,AMKR,CFO,BUY,10000.0,9.86,98600.0,"FAUST, MEGAN",Common Stock
+2022-11-18,AMKR,CFO,SELL,30000.0,28.95,868500.0,"FAUST, MEGAN",Common Stock
+2022-12-07,AMKR,Director,BUY,20000.0,9.17,183400.0,"CHURCHILL, WINSTON J",Common Stock
+2022-12-07,AMKR,Director,SELL,20000.0,26.0,520000.0,"CHURCHILL, WINSTON J",Common Stock
+2022-12-15,AMKR,CFO,SELL,6000.0,25.77,154620.0,"FAUST, MEGAN",Common Stock
+2022-12-15,AMKR,"Director, President and CEO",SELL,30000.0,25.68,770400.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2022-12-15,AMKR,"Director, President and CEO",BUY,5000.0,9.48,47400.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2022-12-15,AMKR,CFO,BUY,6000.0,9.48,56880.0,"FAUST, MEGAN",Common Stock
+2022-12-15,AMKR,"Director, President and CEO",BUY,10000.0,14.17,141700.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2022-12-19,AMKR,Member of 10% owner group (4),SELL,93.0,24.47,2275.71,"KIM, AGNES C",Common Stock
+2022-12-19,AMKR,Member of 10% owner group (4),SELL,88.0,24.47,2153.3599999999997,"KIM, AGNES C",Common Stock
+2022-12-19,AMKR,"Director, 10% Owner, Member of 10% owner group (5)",SELL,88.0,24.47,2153.3599999999997,"KIM, JAMES J",Common Stock
+2022-12-19,AMKR,Executive Vice President,SELL,24.0,24.47,587.28,"HAGHIGHI, FARSHAD",Common Stock
+2022-12-19,AMKR,Executive Vice President,SELL,65.0,24.47,1590.55,"HAGHIGHI, FARSHAD",Common Stock
+2022-12-19,AMKR,"Director, 10% Owner, Member of 10% owner group (5)",SELL,93.0,24.47,2275.71,"KIM, JAMES J",Common Stock
+2023-01-17,AMKR,"Director, President and CEO",BUY,5000.0,9.48,47400.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2023-01-17,AMKR,"Director, President and CEO",SELL,30000.0,30.73,921900.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2023-01-17,AMKR,"Director, President and CEO",BUY,10000.0,14.17,141700.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2023-01-19,AMKR,CFO,SELL,6000.0,29.28,175680.0,"FAUST, MEGAN",Common Stock
+2023-01-19,AMKR,CFO,BUY,6000.0,9.48,56880.0,"FAUST, MEGAN",Common Stock
+2023-02-10,AMKR,"Director, 10% Owner, Member of 10% owner group (5)",SELL,1081.0,27.6,29835.600000000002,"KIM, JAMES J",Common Stock
+2023-02-10,AMKR,Executive Vice President,SELL,297.0,27.6,8197.2,"HAGHIGHI, FARSHAD",Common Stock
+2023-02-10,AMKR,CFO,SELL,813.0,27.6,22438.800000000003,"FAUST, MEGAN",Common Stock
+2023-02-10,AMKR,Executive Vice President,SELL,360.0,27.6,9936.0,"ENGEL, KEVIN",Common Stock
+2023-02-10,AMKR,EVP & General Counsel,SELL,787.0,27.6,21721.2,"ROGERS, MARK N",Common Stock
+2023-02-10,AMKR,Member of 10% owner group (4),SELL,1081.0,27.6,29835.600000000002,"KIM, AGNES C",Common Stock
+2023-02-15,AMKR,Executive Vice President,BUY,6250.0,9.48,59250.0,"HAGHIGHI, FARSHAD",Common Stock
+2023-02-15,AMKR,"Director, President and CEO",SELL,30000.0,26.97,809100.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2023-02-15,AMKR,"Director, President and CEO",BUY,5000.0,9.48,47400.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2023-02-15,AMKR,"Director, President and CEO",BUY,10000.0,14.17,141700.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2023-02-15,AMKR,Executive Vice President,SELL,6250.0,26.89,168062.5,"HAGHIGHI, FARSHAD",Common Stock
+2023-02-16,AMKR,CFO,BUY,6000.0,9.48,56880.0,"FAUST, MEGAN",Common Stock
+2023-02-16,AMKR,Director,SELL,20000.0,27.29,545800.0,"CHURCHILL, WINSTON J",Common Stock
+2023-02-16,AMKR,Director,BUY,20000.0,8.51,170200.0,"CHURCHILL, WINSTON J",Common Stock
+2023-02-16,AMKR,CFO,SELL,6000.0,27.03,162180.0,"FAUST, MEGAN",Common Stock
+2023-02-22,AMKR,Member of 10% owner group (11),SELL,25267.0,25.28,638749.76,"KIM, AGNES C",Common Stock
+2023-02-22,AMKR,"Director, 10% Owner, Member of 10% owner group (12)",SELL,25267.0,25.28,638749.76,"KIM, JAMES J",Common Stock
+2023-02-22,AMKR,Member of 10% owner group (11),BUY,384000.0,25.28,9707520.0,"KIM, AGNES C",Common Stock
+2023-02-22,AMKR,"10% Owner, Member of 10% owner group (9)",SELL,384000.0,25.28,9707520.0,"KIM, JOHN T",Common Stock
+2023-02-22,AMKR,"Director, 10% Owner, Member of 10% owner group (12)",BUY,384000.0,25.28,9707520.0,"KIM, JAMES J",Common Stock
+2023-02-22,AMKR,CFO,SELL,17841.0,25.46,454231.86000000004,"FAUST, MEGAN",Common Stock
+2023-02-22,AMKR,Executive Vice President,SELL,6776.0,25.46,172516.96,"HAGHIGHI, FARSHAD",Common Stock
+2023-02-22,AMKR,EVP & General Counsel,SELL,15343.0,25.46,390632.78,"ROGERS, MARK N",Common Stock
+2023-02-22,AMKR,Executive Vice President,SELL,7804.0,25.46,198689.84,"ENGEL, KEVIN",Common Stock
+2023-02-22,AMKR,"Director, 10% Owner, Member of 10% owner group (10)",SELL,384000.0,25.28,9707520.0,"KIM, SUSAN Y",Common Stock
+2023-02-23,AMKR,Executive Vice President,BUY,6250.0,9.48,59250.0,"ENGEL, KEVIN",Common Stock
+2023-02-23,AMKR,Executive Vice President,SELL,14250.0,25.26,359955.0,"ENGEL, KEVIN",Common Stock
+2023-02-24,AMKR,Member of 10% owner group (11),SELL,1053.0,25.27,26609.31,"KIM, AGNES C",Common Stock
+2023-02-24,AMKR,"Director, President and CEO",SELL,940.0,25.27,23753.8,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2023-02-24,AMKR,"Director, 10% Owner, Member of 10% owner group (12)",SELL,1053.0,25.27,26609.31,"KIM, JAMES J",Common Stock
+2023-02-24,AMKR,EVP & General Counsel,SELL,807.0,25.27,20392.89,"ROGERS, MARK N",Common Stock
+2023-02-24,AMKR,CFO,SELL,1497.0,25.27,37829.19,"FAUST, MEGAN",Common Stock
+2023-02-24,AMKR,Executive Vice President,SELL,792.0,25.27,20013.84,"HAGHIGHI, FARSHAD",Common Stock
+2023-02-24,AMKR,Executive Vice President,SELL,392.0,25.27,9905.84,"ENGEL, KEVIN",Common Stock
+2023-02-27,AMKR,Director,BUY,20000.0,9.825,196500.0,"TILY, GIL C.",Common Stock
+2023-02-27,AMKR,Director,SELL,20000.0,25.81,516200.0,"TILY, GIL C.",Common Stock
+2023-03-15,AMKR,"Director, President and CEO",SELL,30000.0,24.19,725700.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2023-03-15,AMKR,"Director, President and CEO",BUY,10000.0,14.17,141700.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2023-03-15,AMKR,"Director, President and CEO",BUY,5000.0,9.48,47400.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2023-03-16,AMKR,CFO,SELL,6000.0,24.08,144480.0,"FAUST, MEGAN",Common Stock
+2023-03-16,AMKR,CFO,BUY,6000.0,9.48,56880.0,"FAUST, MEGAN",Common Stock
+2023-04-17,AMKR,"Director, President and CEO",BUY,5000.0,9.48,47400.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2023-04-17,AMKR,"Director, President and CEO",BUY,10000.0,14.17,141700.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2023-04-17,AMKR,"Director, President and CEO",SELL,30000.0,23.92,717600.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2023-04-20,AMKR,CFO,SELL,6000.0,23.29,139740.0,"FAUST, MEGAN",Common Stock
+2023-04-20,AMKR,CFO,BUY,6000.0,9.48,56880.0,"FAUST, MEGAN",Common Stock
+2023-05-24,AMKR,CFO,BUY,2700.0,9.48,25596.0,"FAUST, MEGAN",Common Stock
+2023-05-24,AMKR,CFO,SELL,2700.0,22.66,61182.0,"FAUST, MEGAN",Common Stock
+2023-06-01,AMKR,Executive Vice President,SELL,5000.0,24.93,124650.0,"SHIN, SUNG",Common Stock
+2023-06-02,AMKR,Executive Vice President,SELL,3570.0,25.42,90749.40000000001,"ENGEL, KEVIN",Common Stock
+2023-06-09,AMKR,CFO,SELL,2700.0,26.55,71685.0,"FAUST, MEGAN",Common Stock
+2023-06-09,AMKR,CFO,BUY,2700.0,9.48,25596.0,"FAUST, MEGAN",Common Stock
+2023-06-16,AMKR,CFO,BUY,2700.0,9.48,25596.0,"FAUST, MEGAN",Common Stock
+2023-06-16,AMKR,CFO,SELL,2700.0,26.38,71226.0,"FAUST, MEGAN",Common Stock
+2023-07-21,AMKR,CFO,BUY,2700.0,9.48,25596.0,"FAUST, MEGAN",Common Stock
+2023-07-21,AMKR,CFO,SELL,2700.0,28.41,76707.0,"FAUST, MEGAN",Common Stock
+2023-08-18,AMKR,CFO,BUY,2700.0,9.48,25596.0,"FAUST, MEGAN",Common Stock
+2023-08-18,AMKR,CFO,SELL,2700.0,24.79,66933.0,"FAUST, MEGAN",Common Stock
+2023-09-06,AMKR,"Director, 10% Owner, Member of 10% owner group (4)",SELL,10000000.0,23.22,232200000.0,"KIM, JAMES J",Common Stock
+2023-09-06,AMKR,Member of 10% owner group (3),SELL,10000000.0,23.22,232200000.0,"KIM, AGNES C",Common Stock
+2023-09-06,AMKR,Member of 10% owner group (2),SELL,10000000.0,23.22,232200000.0,"915, INVESTMENTS, LP",Common Stock
+2023-09-15,AMKR,CFO,BUY,2700.0,9.48,25596.0,"FAUST, MEGAN",Common Stock
+2023-09-15,AMKR,CFO,SELL,2700.0,22.68,61236.0,"FAUST, MEGAN",Common Stock
+2023-10-20,AMKR,CFO,SELL,2700.0,22.52,60804.0,"FAUST, MEGAN",Common Stock
+2023-10-20,AMKR,CFO,BUY,2700.0,9.48,25596.0,"FAUST, MEGAN",Common Stock
+2023-11-03,AMKR,EVP & General Counsel,SELL,5000.0,23.84,119200.0,"ROGERS, MARK N",Common Stock
+2023-11-16,AMKR,Director,BUY,20000.0,9.17,183400.0,"MORSE, ROBERT RANDOLPH",Common Stock
+2023-11-16,AMKR,Director,SELL,7054.0,26.0,183404.0,"MORSE, ROBERT RANDOLPH",Common Stock
+2023-11-17,AMKR,CFO,SELL,2700.0,26.19,70713.0,"FAUST, MEGAN",Common Stock
+2023-11-17,AMKR,CFO,BUY,2700.0,9.48,25596.0,"FAUST, MEGAN",Common Stock
+2023-12-04,AMKR,Director,SELL,8809.0,28.1,247532.90000000002,"TILY, GIL C.",Common Stock
+2023-12-04,AMKR,Director,BUY,20000.0,9.17,183400.0,"CAROLIN, ROGER ANTHONY",Common Stock
+2023-12-04,AMKR,Director,SELL,20000.0,28.31,566200.0,"CAROLIN, ROGER ANTHONY",Common Stock
+2023-12-15,AMKR,CFO,BUY,2700.0,9.48,25596.0,"FAUST, MEGAN",Common Stock
+2023-12-15,AMKR,CFO,SELL,2700.0,33.45,90315.00000000001,"FAUST, MEGAN",Common Stock
+2023-12-19,AMKR,Executive Vice President,SELL,65.0,33.79,2196.35,"HAGHIGHI, FARSHAD",Common Stock
+2023-12-19,AMKR,Executive Vice President,SELL,24.0,33.79,810.96,"HAGHIGHI, FARSHAD",Common Stock
+2023-12-19,AMKR,Executive Vice President,SELL,66.0,33.79,2230.14,"HAGHIGHI, FARSHAD",Common Stock
+2023-12-19,AMKR,Executive Vice President,SELL,47.0,33.79,1588.1299999999999,"ENGEL, KEVIN",Common Stock
+2023-12-19,AMKR,Executive Vice President,SELL,27.0,33.79,912.3299999999999,"ENGEL, KEVIN",Common Stock
+2023-12-19,AMKR,"Director, 10% Owner, Member of 10% owner group (8)",SELL,88.0,33.79,2973.52,"KIM, JAMES J",Common Stock
+2023-12-19,AMKR,"Director, 10% Owner, Member of 10% owner group (8)",SELL,93.0,33.79,3142.47,"KIM, JAMES J",Common Stock
+2023-12-19,AMKR,Executive Vice President,SELL,30.0,33.79,1013.6999999999999,"ENGEL, KEVIN",Common Stock
+2023-12-19,AMKR,"Director, 10% Owner, Member of 10% owner group (8)",SELL,78.0,33.79,2635.62,"KIM, JAMES J",Common Stock
+2024-01-19,AMKR,CFO,SELL,2700.0,32.0,86400.0,"FAUST, MEGAN",Common Stock
+2024-01-19,AMKR,CFO,BUY,2700.0,9.48,25596.0,"FAUST, MEGAN",Common Stock
+2024-02-09,AMKR,"Director, 10% Owner, Member of 10% owner group (5)",SELL,1081.0,31.2,33727.2,"KIM, JAMES J",Common Stock
+2024-02-09,AMKR,CFO,SELL,878.0,31.2,27393.6,"FAUST, MEGAN",Common Stock
+2024-02-09,AMKR,Executive Vice President,SELL,298.0,31.2,9297.6,"HAGHIGHI, FARSHAD",Common Stock
+2024-02-09,AMKR,Executive Vice President,SELL,328.0,31.2,10233.6,"ENGEL, KEVIN",Common Stock
+2024-02-09,AMKR,EVP & General Counsel,SELL,787.0,31.2,24554.399999999998,"ROGERS, MARK N",Common Stock
+2024-02-16,AMKR,"Director, 10% Owner, Member of 10% owner group (5)",SELL,922.0,30.01,27669.22,"KIM, JAMES J",Common Stock
+2024-02-16,AMKR,CFO,SELL,2700.0,30.34,81918.0,"FAUST, MEGAN",Common Stock
+2024-02-16,AMKR,Executive Vice President,SELL,812.0,30.01,24368.120000000003,"HAGHIGHI, FARSHAD",Common Stock
+2024-02-16,AMKR,EVP & General Counsel,SELL,892.0,30.01,26768.920000000002,"ROGERS, MARK N",Common Stock
+2024-02-16,AMKR,CFO,SELL,1787.0,30.01,53627.87,"FAUST, MEGAN",Common Stock
+2024-02-16,AMKR,CFO,BUY,2700.0,9.48,25596.0,"FAUST, MEGAN",Common Stock
+2024-02-16,AMKR,Executive Vice President,SELL,559.0,30.01,16775.59,"ENGEL, KEVIN",Common Stock
+2024-02-20,AMKR,Executive Vice President,SELL,2592.0,29.75,77112.0,"ENGEL, KEVIN",Common Stock
+2024-02-20,AMKR,EVP & General Counsel,SELL,4930.0,29.75,146667.5,"ROGERS, MARK N",Common Stock
+2024-02-20,AMKR,"Director, 10% Owner, Member of 10% owner group (6)",SELL,6976.0,29.75,207536.0,"KIM, JAMES J",Common Stock
+2024-02-20,AMKR,Executive Vice President,SELL,5466.0,29.75,162613.5,"HAGHIGHI, FARSHAD",Common Stock
+2024-02-20,AMKR,CFO,SELL,9161.0,29.75,272539.75,"FAUST, MEGAN",Common Stock
+2024-02-22,AMKR,"Director, President and CEO",SELL,25000.0,30.63,765750.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2024-02-22,AMKR,"Director, President and CEO",BUY,10625.0,9.48,100725.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2024-02-22,AMKR,"Director, President and CEO",BUY,4375.0,14.17,61993.75,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2024-02-23,AMKR,"Director, 10% Owner, Member of 10% owner group (5)",SELL,1051.0,30.59,32150.09,"KIM, JAMES J",Common Stock
+2024-02-23,AMKR,Executive Vice President,SELL,372.0,30.59,11379.48,"ENGEL, KEVIN",Common Stock
+2024-02-23,AMKR,Executive Vice President,SELL,812.0,30.59,24839.079999999998,"HAGHIGHI, FARSHAD",Common Stock
+2024-02-23,AMKR,EVP & General Counsel,SELL,807.0,30.59,24686.13,"ROGERS, MARK N",Common Stock
+2024-02-23,AMKR,CFO,SELL,1497.0,30.59,45793.23,"FAUST, MEGAN",Common Stock
+2024-03-06,AMKR,Executive Vice President,SELL,9911.0,33.7,334000.7,"HAGHIGHI, FARSHAD",Common Stock
+2024-03-07,AMKR,Director,SELL,11903.0,36.2,430888.60000000003,"CHURCHILL, WINSTON J",Common Stock
+2024-03-15,AMKR,CFO,SELL,2800.0,31.09,87052.0,"FAUST, MEGAN",Common Stock
+2024-03-15,AMKR,"Director, President and CEO",BUY,15000.0,14.17,212550.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2024-03-15,AMKR,"Director, President and CEO",SELL,25000.0,31.23,780750.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2024-03-15,AMKR,CFO,BUY,2800.0,9.48,26544.0,"FAUST, MEGAN",Common Stock
+2024-04-16,AMKR,"Director, President and CEO",SELL,25000.0,31.17,779250.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2024-04-16,AMKR,"Director, President and CEO",BUY,15000.0,14.17,212550.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2024-05-02,AMKR,Director,BUY,20000.0,9.87,197399.99999999997,"WATSON, DAVID N",Common Stock
+2024-05-02,AMKR,EVP & General Counsel,SELL,5000.0,31.3,156500.0,"ROGERS, MARK N",Common Stock
+2024-05-03,AMKR,Director,SELL,20000.0,32.2,644000.0,"TILY, GIL C.",Common Stock
+2024-05-03,AMKR,Director,BUY,20000.0,19.39,387800.0,"TILY, GIL C.",Common Stock
+2024-05-15,AMKR,"Director, President and CEO",SELL,25000.0,33.37,834249.9999999999,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2024-05-15,AMKR,"Director, President and CEO",BUY,15000.0,14.17,212550.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2024-06-10,AMKR,Executive Vice President,SELL,4921.0,33.22,163475.62,"ENGEL, KEVIN",Common Stock
+2024-06-17,AMKR,"Director, President and CEO",BUY,15000.0,14.17,212550.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2024-06-17,AMKR,"Director, President and CEO",SELL,25000.0,34.82,870500.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2024-07-15,AMKR,"Director, President and CEO",SELL,23100.0,42.99,993069.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2024-07-15,AMKR,"Director, President and CEO",SELL,1900.0,42.34,80446.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2024-07-15,AMKR,"Director, President and CEO",BUY,15000.0,14.17,212550.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2024-08-13,AMKR,Executive Vice President,SELL,3540.0,32.16,113846.4,"ENGEL, KEVIN",Common Stock
+2024-08-13,AMKR,Executive Vice President,SELL,4187.0,32.16,134653.91999999998,"HAGHIGHI, FARSHAD",Common Stock
+2024-08-13,AMKR,CFO,SELL,7723.0,32.16,248371.67999999996,"FAUST, MEGAN",Common Stock
+2024-08-13,AMKR,EVP & General Counsel,SELL,3540.0,32.16,113846.4,"ROGERS, MARK N",Common Stock
+2024-08-14,AMKR,Executive Vice President,SELL,4720.0,32.64,154060.8,"ENGEL, KEVIN",Common Stock
+2024-08-15,AMKR,"Director, President and CEO",SELL,25000.0,32.56,814000.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2024-08-15,AMKR,"Director, President and CEO",BUY,15000.0,14.17,212550.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2024-08-27,AMKR,Director,SELL,20000.0,32.97,659400.0,"CHURCHILL, WINSTON J",Common Stock
+2024-08-27,AMKR,Director,BUY,20000.0,11.71,234200.00000000003,"CHURCHILL, WINSTON J",Common Stock
+2024-09-16,AMKR,"Director, President and CEO",SELL,18125.0,30.0,543750.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2024-09-16,AMKR,"Director, President and CEO",BUY,8125.0,14.17,115131.25,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2024-10-15,AMKR,"Director, President and CEO",SELL,10000.0,31.51,315100.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2024-10-31,AMKR,"10% Owner, Member of 10% owner group (11)",SELL,834.0,25.45,21225.3,"KIM, JAMES J",Common Stock
+2024-10-31,AMKR,"10% Owner, Member of 10% owner group (11)",SELL,2744.0,25.45,69834.8,"KIM, JAMES J",Common Stock
+2024-10-31,AMKR,"10% Owner, Member of 10% owner group (11)",SELL,697.0,25.45,17738.649999999998,"KIM, JAMES J",Common Stock
+2024-10-31,AMKR,"10% Owner, Member of 10% owner group (11)",SELL,782.0,25.45,19901.899999999998,"KIM, JAMES J",Common Stock
+2024-11-21,AMKR,"Director, 10% Owner, Member of 10% owner group (7)",BUY,5000.0,8.92,44600.0,"KIM, SUSAN Y",Common Stock
+2024-11-21,AMKR,"Director, 10% Owner, Member of 10% owner group (7)",BUY,20000.0,6.81,136200.0,"KIM, SUSAN Y",Common Stock
+2024-12-06,AMKR,Executive Vice President,SELL,27.0,26.28,709.5600000000001,"ENGEL, KEVIN",Common Stock
+2024-12-06,AMKR,Executive Vice President,SELL,30.0,26.28,788.4000000000001,"ENGEL, KEVIN",Common Stock
+2024-12-06,AMKR,Executive Vice President,SELL,47.0,26.28,1235.16,"ENGEL, KEVIN",Common Stock
+2024-12-06,AMKR,Executive Vice President,SELL,224.0,26.28,5886.72,"ENGEL, KEVIN",Common Stock
+2024-12-06,AMKR,Executive Vice President,SELL,24.0,26.28,630.72,"HAGHIGHI, FARSHAD",Common Stock
+2024-12-06,AMKR,Executive Vice President,SELL,66.0,26.28,1734.48,"HAGHIGHI, FARSHAD",Common Stock
+2024-12-06,AMKR,Executive Vice President,SELL,67.0,26.28,1760.76,"HAGHIGHI, FARSHAD",Common Stock
+2024-12-06,AMKR,Executive Vice President,SELL,270.0,26.28,7095.6,"HAGHIGHI, FARSHAD",Common Stock
+2025-02-11,AMKR,CFO,SELL,918.0,21.6,19828.800000000003,"FAUST, MEGAN",Common Stock
+2025-02-11,AMKR,Director,BUY,20000.0,5.66,113200.0,"CAROLIN, ROGER ANTHONY",Common Stock
+2025-02-11,AMKR,EVP & General Counsel,SELL,787.0,21.6,16999.2,"ROGERS, MARK N",Common Stock
+2025-02-11,AMKR,Executive Vice President,SELL,298.0,21.6,6436.8,"HAGHIGHI, FARSHAD",Common Stock
+2025-02-11,AMKR,Director,BUY,20000.0,6.81,136200.0,"CAROLIN, ROGER ANTHONY",Common Stock
+2025-02-11,AMKR,Executive Vice President,SELL,327.0,21.6,7063.200000000001,"ENGEL, KEVIN",Common Stock
+2025-02-14,AMKR,Executive Vice President,SELL,559.0,22.51,12583.09,"ENGEL, KEVIN",Common Stock
+2025-02-14,AMKR,CFO,SELL,1934.0,22.51,43534.340000000004,"FAUST, MEGAN",Common Stock
+2025-02-14,AMKR,Executive Vice President,SELL,813.0,22.51,18300.63,"HAGHIGHI, FARSHAD",Common Stock
+2025-02-14,AMKR,EVP & General Counsel,SELL,894.0,22.51,20123.940000000002,"ROGERS, MARK N",Common Stock
+2025-02-19,AMKR,Executive Vice President,SELL,1343.0,22.72,30512.96,"ENGEL, KEVIN",Common Stock
+2025-02-19,AMKR,"10% Owner, Member of 10% owner group (5)",SELL,1528.0,22.72,34716.159999999996,"KIM, JAMES J",Common Stock
+2025-02-19,AMKR,EVP & General Counsel,SELL,1342.0,22.72,30490.239999999998,"ROGERS, MARK N",Common Stock
+2025-02-19,AMKR,Executive Vice President,SELL,1611.0,22.72,36601.92,"HAGHIGHI, FARSHAD",Common Stock
+2025-02-19,AMKR,CFO,SELL,2988.0,22.72,67887.36,"FAUST, MEGAN",Common Stock
+2025-02-20,AMKR,Executive Vice President,SELL,3240.0,23.01,74552.40000000001,"HAGHIGHI, FARSHAD",Common Stock
+2025-02-20,AMKR,Executive Vice President,SELL,2648.0,1.0,2648.0,"ENGEL, KEVIN",Common Stock
+2025-02-20,AMKR,CFO,SELL,7201.0,23.01,165695.01,"FAUST, MEGAN",Common Stock
+2025-02-20,AMKR,EVP & General Counsel,SELL,3181.0,23.01,73194.81000000001,"ROGERS, MARK N",Common Stock
+2025-02-24,AMKR,"10% Owner, Member of 10% owner group (4)",SELL,869565.0,21.85,18999995.25,"KIM, JAMES J",Common Stock
+2025-02-24,AMKR,Executive Vice President,SELL,811.0,21.95,17801.45,"HAGHIGHI, FARSHAD",Common Stock
+2025-02-24,AMKR,Executive Vice President,SELL,380.0,21.95,8341.0,"ENGEL, KEVIN",Common Stock
+2025-02-24,AMKR,CFO,SELL,1497.0,21.95,32859.15,"FAUST, MEGAN",Common Stock
+2025-02-24,AMKR,"Director, 10% Owner, Member of 10% owner group (6)",BUY,869565.0,21.85,18999995.25,"KIM, SUSAN Y",Common Stock
+2025-02-24,AMKR,Member of 10% owner group (5),BUY,869565.0,21.85,18999995.25,"KIM, DAVID D",Common Stock
+2025-02-24,AMKR,Member of 10% owner group	(4),BUY,869565.0,21.85,18999995.25,"SUJODA, MANAGEMENT, LLC",Common Stock
+2025-02-24,AMKR,Member of 10% owner group	(2),BUY,869565.0,21.85,18999995.25,"SUJODA, INVESTMENTS, LP",Common Stock
+2025-02-24,AMKR,Member of 10% owner group (3),SELL,869565.0,21.85,18999995.25,"KIM, AGNES C",Common Stock
+2025-02-24,AMKR,EVP & General Counsel,SELL,807.0,21.95,17713.649999999998,"ROGERS, MARK N",Common Stock
+2025-02-24,AMKR,"10% Owner, Member of 10% owner group (5)",BUY,869565.0,21.85,18999995.25,"KIM, JOHN T",Common Stock
+2025-02-25,AMKR,Executive Vice President,SELL,5489.0,21.69,119056.41,"ENGEL, KEVIN",Common Stock
+2025-02-25,AMKR,Director,BUY,20000.0,6.81,136200.0,"MORSE, ROBERT RANDOLPH",Common Stock
+2025-03-14,AMKR,Director,BUY,20000.0,6.81,136200.0,"WATSON, DAVID N",Common Stock
+2025-06-30,AMKR,Executive Vice President,SELL,3725.0,20.99,78187.75,"ENGEL, KEVIN",Common Stock
+2025-06-30,AMKR,CFO,SELL,3725.0,20.99,78187.75,"FAUST, MEGAN",Common Stock
+2025-07-31,AMKR,EVP & General Counsel,SELL,15000.0,23.5818,353727.0,"ROGERS, MARK N",Common Stock
+2025-08-01,AMKR,Member of 10% owner group (3),SELL,441589.0,21.85,9648719.65,"KIM, AGNES C",Common Stock
+2025-08-01,AMKR,"Director, 10% Owner, Member of 10% owner group (10)",BUY,441589.0,21.85,9648719.65,"KIM, SUSAN Y",Common Stock
+2025-08-01,AMKR,"10% Owner, Member of 10% owner group (4)",SELL,441589.0,21.85,9648719.65,"KIM, JAMES J",Common Stock
+2025-08-01,AMKR,Member of 10% owner group (5),BUY,441589.0,21.85,9648719.65,"KIM, DAVID D",Common Stock
+2025-08-01,AMKR,Member of 10% owner group	(4),BUY,441589.0,21.85,9648719.65,"SUJODA, MANAGEMENT, LLC",Common Stock
+2025-08-01,AMKR,Member of 10% owner group	(2),BUY,441589.0,21.85,9648719.65,"SUJODA, INVESTMENTS, LP",Common Stock
+2025-08-01,AMKR,"10% Owner, Member of 10% owner group (8)",BUY,441589.0,21.85,9648719.65,"KIM, JOHN T",Common Stock
+2025-09-09,AMKR,Executive Vice President,SELL,11792.0,25.0,294800.0,"HAGHIGHI, FARSHAD",Common Stock
+2025-09-23,AMKR,"Director, President and CEO",SELL,10000.0,30.0,300000.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2025-09-30,AMKR,CFO,SELL,3725.0,28.4,105790.0,"FAUST, MEGAN",Common Stock
+2025-09-30,AMKR,Executive Vice President,SELL,3725.0,28.4,105790.0,"ENGEL, KEVIN",Common Stock
+2025-10-15,AMKR,"Director, President and CEO",SELL,10000.0,30.74,307400.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2025-11-14,AMKR,Executive Vice President,SELL,369.0,31.68,11689.92,"ENGEL, KEVIN",Common Stock
+2025-11-14,AMKR,Executive Vice President,SELL,47.0,31.68,1488.96,"ENGEL, KEVIN",Common Stock
+2025-11-14,AMKR,Executive Vice President,SELL,30.0,31.68,950.4,"ENGEL, KEVIN",Common Stock
+2025-11-14,AMKR,Executive Vice President,SELL,223.0,31.68,7064.64,"ENGEL, KEVIN",Common Stock
+2025-11-14,AMKR,Executive Vice President,SELL,269.0,31.68,8521.92,"HAGHIGHI, FARSHAD",Common Stock
+2025-11-14,AMKR,Executive Vice President,SELL,67.0,31.68,2122.56,"HAGHIGHI, FARSHAD",Common Stock
+2025-11-14,AMKR,Executive Vice President,SELL,66.0,31.68,2090.88,"HAGHIGHI, FARSHAD",Common Stock
+2025-11-14,AMKR,Executive Vice President,SELL,395.0,31.68,12513.6,"HAGHIGHI, FARSHAD",Common Stock
+2025-11-17,AMKR,EVP & General Counsel,SELL,20000.0,31.69,633800.0,"ROGERS, MARK N",Common Stock
+2025-11-17,AMKR,"Director, President and CEO",SELL,10000.0,31.68,316800.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2025-11-17,AMKR,EVP & General Counsel,BUY,20000.0,7.4,148000.0,"ROGERS, MARK N",Common Stock
+2025-12-12,AMKR,Executive Vice President,SELL,11000.0,46.21,508310.0,"ENGEL, KEVIN",Common Stock
+2025-12-12,AMKR,Director,SELL,20000.0,46.44,928800.0,"TILY, GIL C.",Common Stock
+2025-12-12,AMKR,Director,BUY,20000.0,19.39,387800.0,"MCCOURT, MARYFRANCES",Common Stock
+2025-12-12,AMKR,Director,SELL,20000.0,46.02,920400.0000000001,"MCCOURT, MARYFRANCES",Common Stock
+2025-12-15,AMKR,"Director, President and CEO",SELL,10000.0,44.8,448000.0,"RUTTEN, GUILLAUME MARIE JEAN",Common Stock
+2025-12-15,AMKR,Director,SELL,5000.0,44.29,221450.0,"CHURCHILL, WINSTON J",Common Stock
+2025-12-15,AMKR,Director,BUY,5000.0,19.39,96950.0,"CHURCHILL, WINSTON J",Common Stock
+2025-12-16,AMKR,EVP & General Counsel,BUY,20000.0,7.4,148000.0,"ROGERS, MARK N",Common Stock
+2025-12-16,AMKR,EVP & General Counsel,SELL,20000.0,42.95,859000.0,"ROGERS, MARK N",Common Stock

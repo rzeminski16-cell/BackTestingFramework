@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Trading/AlphaTrend/Extras/Fundamental Constraints.md",
+                "file": "Trading/Important Info.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Fundamental Constraints"
+              "title": "Important Info"
             }
           },
           {
@@ -199,8 +199,9 @@
   },
   "active": "16ddbea9387a36c5",
   "lastOpenFiles": [
-    "Trading/Study Notes/refined_data_collection_prompt.md",
     "Trading/AlphaTrend/Extras/Fundamental Constraints.md",
+    "Trading/Important Info.md",
+    "Trading/Study Notes/refined_data_collection_prompt.md",
     "Trading/Resources/Pasted image 20251226120325.png",
     "Trading/Study Notes/Trade Log Metrics.md",
     "Trading/AlphaTrend/Research Log.md",

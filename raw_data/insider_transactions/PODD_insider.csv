@@ -1,0 +1,1023 @@
+date,symbol,insider_title,transaction_type,shares,price,value,executive,security_type
+2008-03-18,PODD,Vice President Manufacturing,SELL,100.0,12.76,1276.0,"SCHMID, KEVIN",Common Stock
+2008-03-18,PODD,Vice President Manufacturing,SELL,701.0,12.68,8888.68,"SCHMID, KEVIN",Common Stock
+2008-03-18,PODD,Vice President Manufacturing,SELL,200.0,12.78,2556.0,"SCHMID, KEVIN",Common Stock
+2008-03-18,PODD,Vice President Manufacturing,SELL,399.0,12.77,5095.23,"SCHMID, KEVIN",Common Stock
+2008-03-18,PODD,Vice President Manufacturing,SELL,100.0,12.35,1235.0,"SCHMID, KEVIN",Common Stock
+2008-03-18,PODD,Vice President Manufacturing,SELL,100.0,12.36,1236.0,"SCHMID, KEVIN",Common Stock
+2008-03-18,PODD,Vice President Manufacturing,SELL,300.0,12.38,3714.0000000000005,"SCHMID, KEVIN",Common Stock
+2008-03-18,PODD,Vice President Manufacturing,SELL,100.0,12.39,1239.0,"SCHMID, KEVIN",Common Stock
+2008-03-18,PODD,Vice President Manufacturing,SELL,200.0,12.42,2484.0,"SCHMID, KEVIN",Common Stock
+2008-03-18,PODD,Vice President Manufacturing,SELL,200.0,12.79,2558.0,"SCHMID, KEVIN",Common Stock
+2008-03-18,PODD,Vice President Manufacturing,SELL,100.0,12.58,1258.0,"SCHMID, KEVIN",Common Stock
+2008-03-18,PODD,Vice President Manufacturing,SELL,200.0,12.7,2540.0,"SCHMID, KEVIN",Common Stock
+2008-03-18,PODD,Vice President Manufacturing,SELL,2000.0,12.69,25380.0,"SCHMID, KEVIN",Common Stock
+2008-03-18,PODD,Vice President Manufacturing,SELL,400.0,12.45,4980.0,"SCHMID, KEVIN",Common Stock
+2008-03-18,PODD,Vice President Manufacturing,SELL,200.0,12.43,2486.0,"SCHMID, KEVIN",Common Stock
+2008-03-18,PODD,Vice President Manufacturing,SELL,200.0,12.66,2532.0,"SCHMID, KEVIN",Common Stock
+2008-03-18,PODD,Vice President Manufacturing,SELL,100.0,12.59,1259.0,"SCHMID, KEVIN",Common Stock
+2008-03-18,PODD,Vice President Manufacturing,SELL,800.0,12.67,10136.0,"SCHMID, KEVIN",Common Stock
+2008-03-18,PODD,Vice President Manufacturing,SELL,100.0,12.65,1265.0,"SCHMID, KEVIN",Common Stock
+2008-04-01,PODD,Secretary and General Counsel,BUY,1500.0,3.6,5400.0,"DIEHL, R ANTHONY",Common Stock
+2008-04-01,PODD,Secretary and General Counsel,SELL,1500.0,14.21,21315.0,"DIEHL, R ANTHONY",Common Stock
+2008-05-01,PODD,Secretary and General Counsel,SELL,1500.0,18.25,27375.0,"DIEHL, R ANTHONY",Common Stock
+2008-05-01,PODD,Secretary and General Counsel,BUY,1500.0,3.6,5400.0,"DIEHL, R ANTHONY",Common Stock
+2008-06-02,PODD,Secretary and General Counsel,SELL,1500.0,16.35,24525.000000000004,"DIEHL, R ANTHONY",Common Stock
+2008-06-02,PODD,Secretary and General Counsel,BUY,1500.0,3.6,5400.0,"DIEHL, R ANTHONY",Common Stock
+2008-07-01,PODD,Secretary and General Counsel,SELL,1500.0,15.52,23280.0,"DIEHL, R ANTHONY",Common Stock
+2008-07-01,PODD,Secretary and General Counsel,BUY,1500.0,3.6,5400.0,"DIEHL, R ANTHONY",Common Stock
+2008-08-01,PODD,Secretary and General Counsel,SELL,1500.0,14.0,21000.0,"DIEHL, R ANTHONY",Common Stock
+2008-08-01,PODD,Secretary and General Counsel,BUY,1500.0,3.6,5400.0,"DIEHL, R ANTHONY",Common Stock
+2008-09-02,PODD,Secretary and General Counsel,SELL,1500.0,14.49,21735.0,"DIEHL, R ANTHONY",Common Stock
+2008-09-02,PODD,Secretary and General Counsel,BUY,1500.0,3.6,5400.0,"DIEHL, R ANTHONY",Common Stock
+2008-10-01,PODD,Secretary and General Counsel,BUY,1500.0,3.6,5400.0,"DIEHL, R ANTHONY",Common Stock
+2008-10-01,PODD,Secretary and General Counsel,SELL,1500.0,14.0,21000.0,"DIEHL, R ANTHONY",Common Stock
+2008-10-08,PODD,Vice President for Clinical,BUY,7918.0,2.84,22487.12,"CAMPBELL, ROBERT",Common Stock
+2008-10-08,PODD,Vice President for Clinical,BUY,7918.0,1.19,9422.42,"CAMPBELL, ROBERT",Common Stock
+2008-10-08,PODD,Vice President for Clinical,BUY,174.0,2.5,435.0,"CAMPBELL, ROBERT",Common Stock
+2008-10-10,PODD,Vice President for Clinical,BUY,3453.0,3.6,12430.800000000001,"CAMPBELL, ROBERT",Common Stock
+2008-10-10,PODD,Vice President for Clinical,BUY,1188.0,5.94,7056.72,"CAMPBELL, ROBERT",Common Stock
+2008-11-11,PODD,Director,BUY,20000.0,4.5188,90376.0,"EICHHORN, GARY",Common Stock
+2008-11-11,PODD,Director,BUY,5000.0,4.71,23550.0,"ZAKRZEWSKI, JOSEPH S",Common Stock
+2008-11-11,PODD,Chief Financial Officer,BUY,23240.0,5.07,117826.8,"BOESS, CARSTEN",Common Stock
+2008-11-14,PODD,Director,BUY,400.0,4.23,1692.0000000000002,"LIAMOS, CHARLES T",Common Stock
+2008-11-14,PODD,Director,BUY,600.0,4.25,2550.0,"LIAMOS, CHARLES T",Common Stock
+2008-11-14,PODD,Director,BUY,200.0,4.24,848.0,"LIAMOS, CHARLES T",Common Stock
+2008-11-17,PODD,Director,BUY,900.0,4.5,4050.0,"LIAMOS, CHARLES T",Common Stock
+2008-11-17,PODD,Director,BUY,900.0,4.49,4041.0,"LIAMOS, CHARLES T",Common Stock
+2008-11-18,PODD,Director,BUY,2000.0,4.56,9120.0,"SOMMER, REGINA O",Common Stock
+2008-11-18,PODD,Director,BUY,3300.0,4.55,15015.0,"SOMMER, REGINA O",Common Stock
+2008-11-18,PODD,Director,BUY,100.0,4.45,445.0,"SOMMER, REGINA O",Common Stock
+2008-11-18,PODD,Director,BUY,100.0,4.52,451.99999999999994,"SOMMER, REGINA O",Common Stock
+2008-11-20,PODD,Vice President for Clinical,BUY,1000.0,3.6,3600.0,"CAMPBELL, ROBERT",Common Stock
+2008-11-20,PODD,Vice President for Clinical,BUY,1000.0,3.49,3490.0,"CAMPBELL, ROBERT",Common Stock
+2008-11-20,PODD,Vice President for Clinical,BUY,1000.0,3.59,3590.0,"CAMPBELL, ROBERT",Common Stock
+2008-11-20,PODD,Vice President for Clinical,BUY,3000.0,3.6,10800.0,"CAMPBELL, ROBERT",Common Stock
+2008-12-01,PODD,Vice President for Clinical,BUY,2000.0,4.4,8800.0,"CAMPBELL, ROBERT",Common Stock
+2008-12-01,PODD,Vice President for Clinical,BUY,1000.0,4.4,4400.0,"CAMPBELL, ROBERT",Common Stock
+2009-03-11,PODD,Director,BUY,3573.0,2.5,8932.5,"EICHHORN, GARY",Common Stock
+2009-03-17,PODD,Director,BUY,900.0,3.01,2709.0,"LIAMOS, CHARLES T",Common Stock
+2009-03-17,PODD,Director,BUY,400.0,3.02,1208.0,"LIAMOS, CHARLES T",Common Stock
+2009-03-17,PODD,Director,BUY,20000.0,3.0236,60472.0,"SOBIESKI, STEVEN",Common Stock
+2009-03-17,PODD,Director,BUY,3700.0,3.03,11211.0,"LIAMOS, CHARLES T",Common Stock
+2009-04-20,PODD,Director,BUY,7138.0,4.86,34690.68,"EICHHORN, GARY",Common Stock
+2009-06-19,PODD,Vice President for Clinical,BUY,179.0,2.84,508.35999999999996,"CAMPBELL, ROBERT",Common Stock
+2009-06-19,PODD,Vice President for Clinical,BUY,595.0,3.6,2142.0,"CAMPBELL, ROBERT",Common Stock
+2009-06-19,PODD,Vice President for Clinical,BUY,356.0,5.94,2114.6400000000003,"CAMPBELL, ROBERT",Common Stock
+2009-09-09,PODD,Secretary and General Counsel,SELL,6246.0,10.0,62460.0,"DIEHL, R ANTHONY",Common Stock
+2009-09-10,PODD,Secretary and General Counsel,SELL,3000.0,10.0,30000.0,"DIEHL, R ANTHONY",Common Stock
+2009-09-10,PODD,Secretary and General Counsel,SELL,5175.0,10.0,51750.0,"DIEHL, R ANTHONY",Common Stock
+2009-09-10,PODD,Secretary and General Counsel,BUY,3000.0,2.5,7500.0,"DIEHL, R ANTHONY",Common Stock
+2009-10-01,PODD,Secretary and General Counsel,SELL,3000.0,11.1,33300.0,"DIEHL, R ANTHONY",Common Stock
+2009-10-01,PODD,Secretary and General Counsel,BUY,3000.0,2.5,7500.0,"DIEHL, R ANTHONY",Common Stock
+2009-11-02,PODD,Secretary and General Counsel,BUY,3000.0,2.5,7500.0,"DIEHL, R ANTHONY",Common Stock
+2009-11-02,PODD,Chief Operating Officer,SELL,6000.0,12.0,72000.0,"MALAVE, LUIS",Common Stock
+2009-11-02,PODD,Secretary and General Counsel,SELL,3000.0,11.25,33750.0,"DIEHL, R ANTHONY",Common Stock
+2009-11-03,PODD,Vice President of Quality,SELL,920.0,12.0,11040.0,"DEPIETRO, RUTHANN",Common Stock
+2009-11-03,PODD,Vice President of Quality,BUY,920.0,5.94,5464.8,"DEPIETRO, RUTHANN",Common Stock
+2009-11-04,PODD,Vice President of Quality,SELL,580.0,12.0,6960.0,"DEPIETRO, RUTHANN",Common Stock
+2009-11-04,PODD,Vice President of Quality,BUY,580.0,5.94,3445.2000000000003,"DEPIETRO, RUTHANN",Common Stock
+2009-11-23,PODD,Chief Operating Officer,SELL,5116.0,13.0,66508.0,"MALAVE, LUIS",Common Stock
+2009-12-01,PODD,Secretary and General Counsel,BUY,3000.0,2.5,7500.0,"DIEHL, R ANTHONY",Common Stock
+2009-12-01,PODD,Secretary and General Counsel,SELL,3000.0,12.37,37110.0,"DIEHL, R ANTHONY",Common Stock
+2009-12-15,PODD,Chief Operating Officer,SELL,884.0,13.0,11492.0,"MALAVE, LUIS",Common Stock
+2009-12-22,PODD,Chief Operating Officer,SELL,6000.0,14.14,84840.0,"MALAVE, LUIS",Common Stock
+2010-01-04,PODD,Secretary and General Counsel,SELL,3000.0,14.47,43410.0,"DIEHL, R ANTHONY",Common Stock
+2010-01-04,PODD,Secretary and General Counsel,BUY,3000.0,2.5,7500.0,"DIEHL, R ANTHONY",Common Stock
+2010-01-04,PODD,Vice President of Quality,BUY,1500.0,5.94,8910.0,"DEPIETRO, RUTHANN",Common Stock
+2010-01-04,PODD,Vice President of Quality,SELL,1500.0,15.0,22500.0,"DEPIETRO, RUTHANN",Common Stock
+2010-01-25,PODD,Vice President for Clinical,BUY,277.0,5.94,1645.38,"CAMPBELL, ROBERT",Common Stock
+2010-01-25,PODD,Vice President for Clinical,BUY,1140.0,11.64,13269.6,"CAMPBELL, ROBERT",Common Stock
+2010-02-01,PODD,Secretary and General Counsel,SELL,3000.0,13.65,40950.0,"DIEHL, R ANTHONY",Common Stock
+2010-02-01,PODD,Secretary and General Counsel,BUY,3000.0,2.5,7500.0,"DIEHL, R ANTHONY",Common Stock
+2010-02-11,PODD,Vice President of Quality,BUY,1500.0,5.94,8910.0,"DEPIETRO, RUTHANN",Common Stock
+2010-02-11,PODD,Vice President of Quality,SELL,1500.0,15.0,22500.0,"DEPIETRO, RUTHANN",Common Stock
+2010-03-01,PODD,Vice President of Quality,BUY,1500.0,5.94,8910.0,"DEPIETRO, RUTHANN",Common Stock
+2010-03-01,PODD,Secretary and General Counsel,BUY,3000.0,2.5,7500.0,"DIEHL, R ANTHONY",Common Stock
+2010-03-01,PODD,Secretary and General Counsel,SELL,3000.0,14.76,44280.0,"DIEHL, R ANTHONY",Common Stock
+2010-03-01,PODD,Vice President of Quality,SELL,1500.0,15.0,22500.0,"DEPIETRO, RUTHANN",Common Stock
+2010-03-09,PODD,Director,SELL,2000.0,15.89,31780.0,"JAFFE, ROSS A MD",Common Stock
+2010-03-09,PODD,Director,SELL,4200.0,15.89,66738.0,"JAFFE, ROSS A MD",Common Stock
+2010-03-09,PODD,Director,SELL,92000.0,15.89,1461880.0,"JAFFE, ROSS A MD",Common Stock
+2010-03-09,PODD,Director,SELL,1800.0,15.89,28602.0,"JAFFE, ROSS A MD",Common Stock
+2010-03-10,PODD,Director,SELL,52440.0,16.15,846905.9999999999,"JAFFE, ROSS A MD",Common Stock
+2010-03-10,PODD,Director,SELL,1026.0,16.15,16569.899999999998,"JAFFE, ROSS A MD",Common Stock
+2010-03-10,PODD,Director,SELL,2394.0,16.15,38663.1,"JAFFE, ROSS A MD",Common Stock
+2010-03-10,PODD,Director,SELL,1140.0,16.15,18411.0,"JAFFE, ROSS A MD",Common Stock
+2010-04-01,PODD,Vice President of Quality,SELL,1500.0,15.12,22680.0,"DEPIETRO, RUTHANN",Common Stock
+2010-04-01,PODD,Secretary and General Counsel,BUY,3000.0,2.5,7500.0,"DIEHL, R ANTHONY",Common Stock
+2010-04-01,PODD,Secretary and General Counsel,SELL,3000.0,15.12,45360.0,"DIEHL, R ANTHONY",Common Stock
+2010-04-01,PODD,Vice President of Quality,BUY,1500.0,5.94,8910.0,"DEPIETRO, RUTHANN",Common Stock
+2010-05-03,PODD,Secretary and General Counsel,BUY,2649.0,2.5,6622.5,"DIEHL, R ANTHONY",Common Stock
+2010-05-03,PODD,Secretary and General Counsel,BUY,351.0,2.84,996.8399999999999,"DIEHL, R ANTHONY",Common Stock
+2010-05-03,PODD,Secretary and General Counsel,SELL,3000.0,13.82,41460.0,"DIEHL, R ANTHONY",Common Stock
+2010-05-11,PODD,Vice President of Quality,BUY,1500.0,5.94,8910.0,"DEPIETRO, RUTHANN",Common Stock
+2010-05-11,PODD,Vice President of Quality,SELL,1500.0,15.0,22500.0,"DEPIETRO, RUTHANN",Common Stock
+2010-06-01,PODD,Secretary and General Counsel,BUY,1067.0,3.6,3841.2000000000003,"DIEHL, R ANTHONY",Common Stock
+2010-06-01,PODD,Secretary and General Counsel,BUY,1933.0,2.84,5489.719999999999,"DIEHL, R ANTHONY",Common Stock
+2010-06-01,PODD,Secretary and General Counsel,SELL,3000.0,14.39,43170.0,"DIEHL, R ANTHONY",Common Stock
+2010-06-02,PODD,Vice President of Quality,SELL,1500.0,15.0,22500.0,"DEPIETRO, RUTHANN",Common Stock
+2010-06-02,PODD,Vice President of Quality,BUY,1500.0,5.94,8910.0,"DEPIETRO, RUTHANN",Common Stock
+2010-07-01,PODD,Vice President of Quality,BUY,1500.0,5.94,8910.0,"DEPIETRO, RUTHANN",Common Stock
+2010-07-01,PODD,Vice President of Quality,SELL,1500.0,15.0,22500.0,"DEPIETRO, RUTHANN",Common Stock
+2010-07-01,PODD,Secretary and General Counsel,BUY,3000.0,3.6,10800.0,"DIEHL, R ANTHONY",Common Stock
+2010-07-01,PODD,Secretary and General Counsel,SELL,3000.0,14.99,44970.0,"DIEHL, R ANTHONY",Common Stock
+2010-08-02,PODD,Secretary and General Counsel,SELL,3000.0,14.96,44880.0,"DIEHL, R ANTHONY",Common Stock
+2010-08-02,PODD,Secretary and General Counsel,BUY,3000.0,3.6,10800.0,"DIEHL, R ANTHONY",Common Stock
+2010-08-02,PODD,Vice President of Quality,SELL,1500.0,15.0,22500.0,"DEPIETRO, RUTHANN",Common Stock
+2010-08-02,PODD,Vice President of Quality,BUY,1500.0,5.94,8910.0,"DEPIETRO, RUTHANN",Common Stock
+2010-09-01,PODD,Secretary and General Counsel,BUY,3000.0,3.6,10800.0,"DIEHL, R ANTHONY",Common Stock
+2010-09-01,PODD,Secretary and General Counsel,SELL,3000.0,13.44,40320.0,"DIEHL, R ANTHONY",Common Stock
+2010-10-05,PODD,"Vice President, International",SELL,23240.0,15.026,349204.24,"BOESS, CARSTEN",Common Stock
+2010-12-16,PODD,Vice President of Quality,SELL,1500.0,15.0,22500.0,"DEPIETRO, RUTHANN",Common Stock
+2010-12-16,PODD,Vice President of Quality,BUY,1500.0,5.94,8910.0,"DEPIETRO, RUTHANN",Common Stock
+2011-01-03,PODD,Vice President of Quality,BUY,1500.0,5.94,8910.0,"DEPIETRO, RUTHANN",Common Stock
+2011-01-03,PODD,Vice President of Quality,SELL,1500.0,15.58,23370.0,"DEPIETRO, RUTHANN",Common Stock
+2011-01-18,PODD,"Vice President, International",BUY,10428.0,6.83,71223.24,"BOESS, CARSTEN",Common Stock
+2011-01-18,PODD,"Vice President, International",SELL,10428.0,17.5,182490.0,"BOESS, CARSTEN",Common Stock
+2011-02-01,PODD,Vice President of Quality,BUY,1500.0,5.94,8910.0,"DEPIETRO, RUTHANN",Common Stock
+2011-02-01,PODD,Vice President of Quality,SELL,1500.0,17.09,25635.0,"DEPIETRO, RUTHANN",Common Stock
+2011-02-02,PODD,"Vice President, International",BUY,7072.0,6.83,48301.76,"BOESS, CARSTEN",Common Stock
+2011-02-02,PODD,"Vice President, International",SELL,31813.0,17.5064,556931.1032,"BOESS, CARSTEN",Common Stock
+2011-02-02,PODD,"Vice President, International",BUY,24741.0,8.04,198917.63999999998,"BOESS, CARSTEN",Common Stock
+2011-02-07,PODD,"Vice President, International",SELL,5056.0,17.5,88480.0,"BOESS, CARSTEN",Common Stock
+2011-02-07,PODD,"Vice President, International",BUY,5056.0,8.04,40650.24,"BOESS, CARSTEN",Common Stock
+2011-02-11,PODD,"Director, President and CEO",SELL,9600.0,18.0007,172806.71999999997,"DESISTO, DUANE",Common Stock
+2011-02-11,PODD,"Director, President and CEO",BUY,9600.0,1.19,11424.0,"DESISTO, DUANE",Common Stock
+2011-02-14,PODD,"Director, President and CEO",BUY,17400.0,1.19,20706.0,"DESISTO, DUANE",Common Stock
+2011-02-14,PODD,"Director, President and CEO",SELL,17400.0,18.009,313356.60000000003,"DESISTO, DUANE",Common Stock
+2011-02-16,PODD,"Director, President and CEO",BUY,24400.0,1.19,29036.0,"DESISTO, DUANE",Common Stock
+2011-02-16,PODD,"Director, President and CEO",SELL,24400.0,18.0375,440115.00000000006,"DESISTO, DUANE",Common Stock
+2011-03-01,PODD,Vice President of Quality,BUY,1500.0,5.94,8910.0,"DEPIETRO, RUTHANN",Common Stock
+2011-03-01,PODD,Vice President of Quality,SELL,847.0,17.49,14814.029999999999,"DEPIETRO, RUTHANN",Common Stock
+2011-03-01,PODD,Vice President of Quality,SELL,1500.0,17.74,26609.999999999996,"DEPIETRO, RUTHANN",Common Stock
+2011-03-01,PODD,Secretary and General Counsel,SELL,1694.0,17.49,29628.059999999998,"DIEHL, R ANTHONY",Common Stock
+2011-03-01,PODD,"Vice President, International",SELL,1059.0,17.49,18521.91,"BOESS, CARSTEN",Common Stock
+2011-03-01,PODD,"Director, President and CEO",SELL,5567.0,17.49,97366.82999999999,"DESISTO, DUANE",Common Stock
+2011-03-01,PODD,Chief Financial Officer,SELL,2541.0,17.49,44442.09,"ROBERTS, BRIAN K",Common Stock
+2011-03-01,PODD,Chief Commercial Officer,SELL,2117.0,17.49,37026.329999999994,"DEVLIN, PETER",Common Stock
+2011-03-24,PODD,"Vice President, International",SELL,31396.0,19.5064,612422.9344,"BOESS, CARSTEN",Common Stock
+2011-03-24,PODD,"Vice President, International",BUY,31396.0,8.04,252423.83999999997,"BOESS, CARSTEN",Common Stock
+2011-03-25,PODD,"Vice President, International",SELL,15900.0,19.7645,314255.55000000005,"BOESS, CARSTEN",Common Stock
+2011-03-25,PODD,"Vice President, International",BUY,15900.0,8.04,127835.99999999999,"BOESS, CARSTEN",Common Stock
+2011-03-29,PODD,"Vice President, International",SELL,35396.0,20.5228,726425.0288,"BOESS, CARSTEN",Common Stock
+2011-03-29,PODD,"Vice President, International",BUY,35396.0,8.04,284583.83999999997,"BOESS, CARSTEN",Common Stock
+2011-03-30,PODD,"Vice President, International",BUY,11900.0,8.04,95675.99999999999,"BOESS, CARSTEN",Common Stock
+2011-03-30,PODD,"Vice President, International",SELL,11900.0,20.6677,245945.63,"BOESS, CARSTEN",Common Stock
+2011-04-01,PODD,"Director, President and CEO",SELL,51400.0,20.772,1067680.7999999998,"DESISTO, DUANE",Common Stock
+2011-04-01,PODD,"Director, President and CEO",BUY,531.0,3.6,1911.6000000000001,"DESISTO, DUANE",Common Stock
+2011-04-01,PODD,"Director, President and CEO",BUY,40317.0,2.5,100792.5,"DESISTO, DUANE",Common Stock
+2011-04-01,PODD,Vice President of Quality,SELL,1500.0,20.88,31320.0,"DEPIETRO, RUTHANN",Common Stock
+2011-04-01,PODD,Vice President of Quality,BUY,1500.0,5.94,8910.0,"DEPIETRO, RUTHANN",Common Stock
+2011-04-01,PODD,"Director, President and CEO",BUY,10552.0,1.19,12556.88,"DESISTO, DUANE",Common Stock
+2011-04-18,PODD,"Vice President, International",BUY,6000.0,8.04,48239.99999999999,"BOESS, CARSTEN",Common Stock
+2011-04-18,PODD,"Vice President, International",SELL,6000.0,21.5,129000.0,"BOESS, CARSTEN",Common Stock
+2011-04-19,PODD,Chief Commercial Officer,BUY,30000.0,8.3,249000.00000000003,"DEVLIN, PETER",Common Stock
+2011-04-19,PODD,Chief Commercial Officer,SELL,30000.0,21.0715,632145.0,"DEVLIN, PETER",Common Stock
+2011-04-19,PODD,Vice President of Quality,BUY,1000.0,5.94,5940.0,"DEPIETRO, RUTHANN",Common Stock
+2011-04-19,PODD,Vice President of Quality,SELL,1000.0,21.17,21170.0,"DEPIETRO, RUTHANN",Common Stock
+2011-04-25,PODD,"Vice President, International",BUY,41296.0,8.04,332019.83999999997,"BOESS, CARSTEN",Common Stock
+2011-04-25,PODD,"Vice President, International",SELL,41296.0,21.5445,889701.672,"BOESS, CARSTEN",Common Stock
+2011-05-02,PODD,Vice President of Quality,BUY,1000.0,5.94,5940.0,"DEPIETRO, RUTHANN",Common Stock
+2011-05-02,PODD,Vice President of Quality,SELL,1000.0,21.5,21500.0,"DEPIETRO, RUTHANN",Common Stock
+2011-05-02,PODD,Vice President of Quality,BUY,1500.0,5.94,8910.0,"DEPIETRO, RUTHANN",Common Stock
+2011-05-02,PODD,Vice President of Quality,SELL,1500.0,21.5,32250.0,"DEPIETRO, RUTHANN",Common Stock
+2011-06-01,PODD,Vice President of Quality,SELL,1500.0,20.92,31380.000000000004,"DEPIETRO, RUTHANN",Common Stock
+2011-06-01,PODD,Vice President of Quality,SELL,1000.0,20.92,20920.0,"DEPIETRO, RUTHANN",Common Stock
+2011-06-01,PODD,Vice President of Quality,BUY,1000.0,5.94,5940.0,"DEPIETRO, RUTHANN",Common Stock
+2011-06-01,PODD,Vice President of Quality,BUY,1500.0,5.94,8910.0,"DEPIETRO, RUTHANN",Common Stock
+2011-07-01,PODD,Vice President of Quality,SELL,1000.0,22.12,22120.0,"DEPIETRO, RUTHANN",Common Stock
+2011-07-01,PODD,"Director, President and CEO",BUY,25700.0,3.6,92520.0,"DESISTO, DUANE",Common Stock
+2011-07-01,PODD,"Director, President and CEO",SELL,25700.0,22.3399,574135.43,"DESISTO, DUANE",Common Stock
+2011-07-01,PODD,Vice President of Quality,BUY,1500.0,5.94,8910.0,"DEPIETRO, RUTHANN",Common Stock
+2011-07-01,PODD,Vice President of Quality,SELL,1500.0,22.12,33180.0,"DEPIETRO, RUTHANN",Common Stock
+2011-07-01,PODD,Vice President of Quality,BUY,1000.0,5.94,5940.0,"DEPIETRO, RUTHANN",Common Stock
+2011-08-01,PODD,Vice President of Quality,SELL,1000.0,19.88,19880.0,"DEPIETRO, RUTHANN",Common Stock
+2011-08-01,PODD,Vice President of Quality,BUY,1000.0,5.94,5940.0,"DEPIETRO, RUTHANN",Common Stock
+2011-08-01,PODD,Vice President of Quality,SELL,1500.0,19.88,29820.0,"DEPIETRO, RUTHANN",Common Stock
+2011-08-01,PODD,Vice President of Quality,BUY,1500.0,5.94,8910.0,"DEPIETRO, RUTHANN",Common Stock
+2011-09-01,PODD,Vice President of Quality,BUY,1500.0,5.94,8910.0,"DEPIETRO, RUTHANN",Common Stock
+2011-09-01,PODD,Vice President of Quality,BUY,1000.0,5.94,5940.0,"DEPIETRO, RUTHANN",Common Stock
+2011-09-01,PODD,Vice President of Quality,SELL,1500.0,17.79,26685.0,"DEPIETRO, RUTHANN",Common Stock
+2011-09-01,PODD,Vice President of Quality,SELL,1000.0,17.79,17790.0,"DEPIETRO, RUTHANN",Common Stock
+2011-09-19,PODD,Chief Commercial Officer,BUY,30000.0,8.3,249000.00000000003,"DEVLIN, PETER",Common Stock
+2011-09-19,PODD,Chief Commercial Officer,SELL,30000.0,16.9417,508251.0,"DEVLIN, PETER",Common Stock
+2011-10-03,PODD,Vice President of Quality,SELL,1000.0,15.07,15070.0,"DEPIETRO, RUTHANN",Common Stock
+2011-10-03,PODD,Vice President of Quality,BUY,1500.0,5.94,8910.0,"DEPIETRO, RUTHANN",Common Stock
+2011-10-03,PODD,Vice President of Quality,SELL,1500.0,15.07,22605.0,"DEPIETRO, RUTHANN",Common Stock
+2011-10-03,PODD,Vice President of Quality,BUY,1000.0,5.94,5940.0,"DEPIETRO, RUTHANN",Common Stock
+2011-11-01,PODD,Vice President of Quality,SELL,1000.0,15.6,15600.0,"DEPIETRO, RUTHANN",Common Stock
+2011-11-01,PODD,Director,BUY,25000.0,15.14,378500.0,"LEVANGIE, DANIEL J",Stock Option (Right to Buy)
+2011-11-01,PODD,Vice President of Quality,BUY,1000.0,5.94,5940.0,"DEPIETRO, RUTHANN",Common Stock
+2011-11-02,PODD,"Director, President and CEO",BUY,20000.0,1.19,23800.0,"DESISTO, DUANE",Common Stock
+2011-11-02,PODD,"Director, President and CEO",SELL,20000.0,15.1592,303184.0,"DESISTO, DUANE",Common Stock
+2011-12-01,PODD,"Director, President and CEO",BUY,1930.0,2.5,4825.0,"DESISTO, DUANE",Common Stock
+2011-12-01,PODD,"Director, President and CEO",SELL,20000.0,18.0655,361310.0,"DESISTO, DUANE",Common Stock
+2011-12-01,PODD,Vice President of Quality,BUY,1000.0,5.94,5940.0,"DEPIETRO, RUTHANN",Common Stock
+2011-12-01,PODD,Vice President of Quality,SELL,1000.0,18.47,18470.0,"DEPIETRO, RUTHANN",Common Stock
+2011-12-01,PODD,"Director, President and CEO",BUY,18070.0,1.19,21503.3,"DESISTO, DUANE",Common Stock
+2011-12-31,PODD,"Director, Chief Operating Officer",SELL,11917.0,18.83,224397.11,"LIAMOS, CHARLES T",Common Stock
+2011-12-31,PODD,Chief Financial Officer,SELL,2382.0,18.83,44853.06,"ROBERTS, BRIAN K",Common Stock
+2012-01-03,PODD,Vice President of Quality,SELL,1000.0,19.2601,19260.100000000002,"DEPIETRO, RUTHANN",Common Stock
+2012-01-03,PODD,"Director, President and CEO",BUY,20000.0,2.5,50000.0,"DESISTO, DUANE",Common Stock
+2012-01-03,PODD,"Director, President and CEO",SELL,20000.0,19.2606,385212.0,"DESISTO, DUANE",Common Stock
+2012-01-03,PODD,Vice President of Quality,BUY,1000.0,5.94,5940.0,"DEPIETRO, RUTHANN",Common Stock
+2012-01-20,PODD,Vice President of Quality,BUY,10819.0,5.94,64264.86000000001,"DEPIETRO, RUTHANN",Common Stock
+2012-01-20,PODD,Vice President of Quality,SELL,10819.0,20.0328,216734.86320000002,"DEPIETRO, RUTHANN",Common Stock
+2012-01-20,PODD,Vice President of Quality,BUY,9000.0,5.94,53460.0,"DEPIETRO, RUTHANN",Common Stock
+2012-02-01,PODD,Vice President of Quality,BUY,1000.0,5.94,5940.0,"DEPIETRO, RUTHANN",Common Stock
+2012-02-01,PODD,Vice President of Quality,SELL,1000.0,19.55,19550.0,"DEPIETRO, RUTHANN",Common Stock
+2012-02-01,PODD,"Director, President and CEO",SELL,20000.0,19.5293,390586.0,"DESISTO, DUANE",Common Stock
+2012-02-01,PODD,"Director, President and CEO",BUY,20000.0,2.5,50000.0,"DESISTO, DUANE",Common Stock
+2012-02-03,PODD,Vice President of Quality,BUY,3000.0,5.94,17820.0,"DEPIETRO, RUTHANN",Common Stock
+2012-02-03,PODD,Vice President of Quality,SELL,3000.0,20.0,60000.0,"DEPIETRO, RUTHANN",Common Stock
+2012-02-16,PODD,Director,SELL,2000.0,20.6711,41342.2,"ZAKRZEWSKI, JOSEPH S",Common Stock
+2012-02-17,PODD,Director,SELL,4827.0,20.3788,98368.46759999999,"JAFFE, ROSS A MD",Common Stock
+2012-02-17,PODD,Director,SELL,3000.0,20.1977,60593.100000000006,"ZAKRZEWSKI, JOSEPH S",Common Stock
+2012-02-17,PODD,Director,SELL,2298.0,20.3788,46830.48239999999,"JAFFE, ROSS A MD",Common Stock
+2012-02-21,PODD,Director,SELL,4903.0,19.9616,97871.7248,"JAFFE, ROSS A MD",Common Stock
+2012-02-21,PODD,Director,SELL,10297.0,19.9616,205544.5952,"JAFFE, ROSS A MD",Common Stock
+2012-02-22,PODD,Director,SELL,12193.0,19.7804,241182.4172,"JAFFE, ROSS A MD",Common Stock
+2012-02-22,PODD,Director,SELL,5807.0,19.7817,114872.3319,"JAFFE, ROSS A MD",Common Stock
+2012-03-01,PODD,Vice President of Quality,SELL,6.0,20.0,120.0,"DEPIETRO, RUTHANN",Common Stock
+2012-03-01,PODD,Vice President of Quality,SELL,1000.0,19.71,19710.0,"DEPIETRO, RUTHANN",Common Stock
+2012-03-01,PODD,Vice President of Quality,BUY,1006.0,5.94,5975.64,"DEPIETRO, RUTHANN",Common Stock
+2012-03-01,PODD,"Director, President and CEO",SELL,20000.0,19.397,387939.99999999994,"DESISTO, DUANE",Common Stock
+2012-03-01,PODD,Chief Financial Officer,SELL,5082.0,19.53,99251.46,"ROBERTS, BRIAN K",Common Stock
+2012-03-01,PODD,Chief Commercial Officer,SELL,5568.0,19.53,108743.04000000001,"DEVLIN, PETER",Common Stock
+2012-03-01,PODD,"Director, President and CEO",BUY,20000.0,2.5,50000.0,"DESISTO, DUANE",Common Stock
+2012-03-01,PODD,"Director, President and CEO",SELL,11134.0,19.53,217447.02000000002,"DESISTO, DUANE",Common Stock
+2012-03-01,PODD,Vice President of Quality,SELL,1694.0,19.53,33083.82,"DEPIETRO, RUTHANN",Common Stock
+2012-03-01,PODD,Secretary and General Counsel,SELL,3600.0,19.53,70308.0,"DIEHL, R ANTHONY",Common Stock
+2012-03-15,PODD,Vice President of Quality,SELL,2994.0,20.0,59880.0,"DEPIETRO, RUTHANN",Common Stock
+2012-03-15,PODD,Vice President of Quality,BUY,2994.0,5.94,17784.36,"DEPIETRO, RUTHANN",Common Stock
+2012-04-02,PODD,"Director, President and CEO",BUY,17765.0,2.5,44412.5,"DESISTO, DUANE",Common Stock
+2012-04-02,PODD,"Director, President and CEO",BUY,2235.0,3.6,8046.0,"DESISTO, DUANE",Common Stock
+2012-04-02,PODD,Chief Financial Officer,BUY,30000.0,5.11,153300.0,"ROBERTS, BRIAN K",Common Stock
+2012-04-02,PODD,"Director, President and CEO",SELL,20000.0,19.3538,387076.0,"DESISTO, DUANE",Common Stock
+2012-04-02,PODD,Chief Financial Officer,SELL,30000.0,19.3091,579273.0,"ROBERTS, BRIAN K",Common Stock
+2012-05-01,PODD,Chief Financial Officer,SELL,10000.0,18.0197,180197.0,"ROBERTS, BRIAN K",Common Stock
+2012-05-01,PODD,"Director, President and CEO",BUY,20000.0,3.6,72000.0,"DESISTO, DUANE",Common Stock
+2012-05-01,PODD,"Director, President and CEO",SELL,20000.0,17.8358,356716.0,"DESISTO, DUANE",Common Stock
+2012-05-01,PODD,Chief Financial Officer,BUY,10000.0,5.11,51100.0,"ROBERTS, BRIAN K",Common Stock
+2012-05-22,PODD,Secretary and General Counsel,SELL,9831.0,18.6193,183046.3383,"DIEHL, R ANTHONY",Common Stock
+2012-05-22,PODD,Secretary and General Counsel,BUY,9831.0,3.6,35391.6,"DIEHL, R ANTHONY",Common Stock
+2012-06-01,PODD,Chief Financial Officer,SELL,3880.0,18.0381,69987.828,"ROBERTS, BRIAN K",Common Stock
+2012-06-01,PODD,Chief Financial Officer,BUY,3880.0,5.11,19826.800000000003,"ROBERTS, BRIAN K",Common Stock
+2012-06-01,PODD,"Director, President and CEO",BUY,20000.0,3.6,72000.0,"DESISTO, DUANE",Common Stock
+2012-06-01,PODD,"Director, President and CEO",SELL,20000.0,17.9361,358722.0,"DESISTO, DUANE",Common Stock
+2012-06-05,PODD,Chief Financial Officer,SELL,6120.0,18.0187,110274.44399999999,"ROBERTS, BRIAN K",Common Stock
+2012-06-05,PODD,Chief Financial Officer,BUY,6120.0,5.11,31273.2,"ROBERTS, BRIAN K",Common Stock
+2012-06-08,PODD,Director,SELL,20000.0,19.0,380000.0,"SOBIESKI, STEVEN",Common Stock
+2012-06-11,PODD,Vice President of Quality,BUY,2467.0,5.94,14653.980000000001,"DEPIETRO, RUTHANN",Common Stock
+2012-06-11,PODD,Vice President of Quality,SELL,9287.0,19.9562,185333.22939999998,"DEPIETRO, RUTHANN",Common Stock
+2012-06-11,PODD,Vice President of Quality,BUY,5000.0,6.83,34150.0,"DEPIETRO, RUTHANN",Common Stock
+2012-07-02,PODD,"Director, President and CEO",BUY,20000.0,3.6,72000.0,"DESISTO, DUANE",Common Stock
+2012-07-02,PODD,Vice President of Quality,BUY,5000.0,6.83,34150.0,"DEPIETRO, RUTHANN",Common Stock
+2012-07-02,PODD,Vice President of Quality,BUY,1000.0,5.94,5940.0,"DEPIETRO, RUTHANN",Common Stock
+2012-07-02,PODD,Chief Financial Officer,BUY,10000.0,5.11,51100.0,"ROBERTS, BRIAN K",Common Stock
+2012-07-02,PODD,Chief Financial Officer,SELL,10000.0,21.2728,212728.0,"ROBERTS, BRIAN K",Common Stock
+2012-07-02,PODD,"Director, President and CEO",SELL,20000.0,21.3585,427170.0,"DESISTO, DUANE",Common Stock
+2012-07-02,PODD,Vice President of Quality,SELL,6000.0,21.0822,126493.2,"DEPIETRO, RUTHANN",Common Stock
+2012-08-01,PODD,Chief Financial Officer,SELL,10000.0,19.2982,192982.0,"ROBERTS, BRIAN K",Common Stock
+2012-08-01,PODD,Vice President of Quality,SELL,1000.0,19.7,19700.0,"DEPIETRO, RUTHANN",Common Stock
+2012-08-01,PODD,"Director, President and CEO",BUY,20000.0,3.6,72000.0,"DESISTO, DUANE",Common Stock
+2012-08-01,PODD,"Director, President and CEO",SELL,20000.0,19.3053,386106.0,"DESISTO, DUANE",Common Stock
+2012-08-01,PODD,Director,BUY,25000.0,19.26,481500.00000000006,"LORTZ, W MARK",Stock Option (Right to Buy)
+2012-08-01,PODD,Chief Financial Officer,BUY,10000.0,5.11,51100.0,"ROBERTS, BRIAN K",Common Stock
+2012-08-01,PODD,Vice President of Quality,BUY,1000.0,5.94,5940.0,"DEPIETRO, RUTHANN",Common Stock
+2012-08-09,PODD,Vice President of Quality,BUY,5000.0,6.83,34150.0,"DEPIETRO, RUTHANN",Common Stock
+2012-08-09,PODD,Vice President of Quality,SELL,5000.0,20.0,100000.0,"DEPIETRO, RUTHANN",Common Stock
+2012-09-04,PODD,"Director, President and CEO",BUY,20000.0,3.6,72000.0,"DESISTO, DUANE",Common Stock
+2012-09-04,PODD,"Director, President and CEO",SELL,20000.0,20.9671,419341.99999999994,"DESISTO, DUANE",Common Stock
+2012-09-04,PODD,Vice President of Quality,BUY,1000.0,5.94,5940.0,"DEPIETRO, RUTHANN",Common Stock
+2012-09-04,PODD,Chief Financial Officer,BUY,10000.0,5.11,51100.0,"ROBERTS, BRIAN K",Common Stock
+2012-09-04,PODD,Vice President of Quality,SELL,1000.0,20.9,20900.0,"DEPIETRO, RUTHANN",Common Stock
+2012-09-04,PODD,Chief Financial Officer,SELL,10000.0,20.7751,207750.99999999997,"ROBERTS, BRIAN K",Common Stock
+2012-10-01,PODD,"Director, President and CEO",SELL,20000.0,21.4347,428694.0,"DESISTO, DUANE",Common Stock
+2012-10-01,PODD,Chief Financial Officer,SELL,10000.0,21.554,215539.99999999997,"ROBERTS, BRIAN K",Common Stock
+2012-10-01,PODD,Chief Financial Officer,BUY,10000.0,5.11,51100.0,"ROBERTS, BRIAN K",Common Stock
+2012-10-01,PODD,"Director, President and CEO",BUY,20000.0,3.6,72000.0,"DESISTO, DUANE",Common Stock
+2012-11-01,PODD,Chief Financial Officer,BUY,10000.0,5.11,51100.0,"ROBERTS, BRIAN K",Common Stock
+2012-11-01,PODD,Chief Financial Officer,SELL,10000.0,21.4918,214918.0,"ROBERTS, BRIAN K",Common Stock
+2012-12-03,PODD,Chief Financial Officer,BUY,10000.0,5.11,51100.0,"ROBERTS, BRIAN K",Common Stock
+2012-12-03,PODD,Chief Financial Officer,SELL,10000.0,21.9249,219249.0,"ROBERTS, BRIAN K",Common Stock
+2012-12-17,PODD,Secretary and General Counsel,BUY,25836.0,6.83,176459.88,"DIEHL, R ANTHONY",Common Stock
+2012-12-17,PODD,Secretary and General Counsel,SELL,25836.0,21.5752,557416.8672,"DIEHL, R ANTHONY",Common Stock
+2012-12-31,PODD,Chief Financial Officer,SELL,1566.0,21.22,33230.52,"ROBERTS, BRIAN K",Common Stock
+2012-12-31,PODD,"Director, Chief Operating Officer",SELL,11917.0,21.22,252878.74,"LIAMOS, CHARLES T",Common Stock
+2013-03-01,PODD,Secretary and General Counsel,SELL,3643.0,23.4,85246.2,"DIEHL, R ANTHONY",Common Stock
+2013-03-01,PODD,"Director, President and CEO",BUY,20000.0,3.6,72000.0,"DESISTO, DUANE",Common Stock
+2013-03-01,PODD,Chief Commercial Officer,SELL,5688.0,23.4,133099.19999999998,"DEVLIN, PETER",Common Stock
+2013-03-01,PODD,"Director, President and CEO",SELL,20000.0,22.0552,441104.0,"DESISTO, DUANE",Common Stock
+2013-03-01,PODD,Chief Commercial Officer,SELL,30000.0,22.1138,663414.0,"DEVLIN, PETER",Common Stock
+2013-03-01,PODD,Chief Commercial Officer,BUY,30000.0,8.3,249000.00000000003,"DEVLIN, PETER",Common Stock
+2013-03-01,PODD,"Director, President and CEO",SELL,11374.0,23.4,266151.6,"DESISTO, DUANE",Common Stock
+2013-03-01,PODD,Chief Financial Officer,SELL,5172.0,23.4,121024.79999999999,"ROBERTS, BRIAN K",Common Stock
+2013-04-01,PODD,Chief Commercial Officer,SELL,2346.0,26.0,60996.0,"DEVLIN, PETER",Common Stock
+2013-04-01,PODD,"Director, President and CEO",SELL,8269.0,26.0,214994.0,"DESISTO, DUANE",Common Stock
+2013-04-01,PODD,Chief Financial Officer,SELL,2041.0,26.0,53066.0,"ROBERTS, BRIAN K",Common Stock
+2013-04-01,PODD,"Director, Chief Operating Officer",SELL,2932.0,26.0,76232.0,"LIAMOS, CHARLES T",Common Stock
+2013-04-01,PODD,Secretary and General Counsel,SELL,1633.0,26.0,42458.0,"DIEHL, R ANTHONY",Common Stock
+2013-04-01,PODD,"Director, President and CEO",BUY,20000.0,3.6,72000.0,"DESISTO, DUANE",Common Stock
+2013-04-01,PODD,"Director, President and CEO",SELL,20000.0,25.6787,513574.0,"DESISTO, DUANE",Common Stock
+2013-05-01,PODD,"Director, President and CEO",BUY,20000.0,3.6,72000.0,"DESISTO, DUANE",Common Stock
+2013-05-01,PODD,"Director, President and CEO",SELL,20000.0,24.862,497239.99999999994,"DESISTO, DUANE",Common Stock
+2013-06-03,PODD,"Director, President and CEO",SELL,20000.0,29.755,595100.0,"DESISTO, DUANE",Common Stock
+2013-06-03,PODD,"Director, President and CEO",BUY,20000.0,3.6,72000.0,"DESISTO, DUANE",Common Stock
+2013-06-07,PODD,Secretary and General Counsel,BUY,10465.0,15.16,158649.4,"DIEHL, R ANTHONY",Common Stock
+2013-06-07,PODD,Secretary and General Counsel,BUY,4311.0,15.09,65052.99,"DIEHL, R ANTHONY",Common Stock
+2013-06-07,PODD,Secretary and General Counsel,SELL,14776.0,30.566,451643.21599999996,"DIEHL, R ANTHONY",Common Stock
+2013-06-10,PODD,Secretary and General Counsel,SELL,23679.0,30.457,721191.3030000001,"DIEHL, R ANTHONY",Common Stock
+2013-06-10,PODD,Secretary and General Counsel,BUY,3707.0,15.09,55938.63,"DIEHL, R ANTHONY",Common Stock
+2013-06-10,PODD,Secretary and General Counsel,BUY,14164.0,6.83,96740.12,"DIEHL, R ANTHONY",Common Stock
+2013-06-14,PODD,Director,SELL,31000.0,30.4671,944480.1,"CRAWFORD, SALLY",Common Stock
+2013-06-14,PODD,Director,BUY,9520.0,5.5,52360.0,"CRAWFORD, SALLY",Common Stock
+2013-06-14,PODD,Director,BUY,18480.0,7.06,130468.79999999999,"CRAWFORD, SALLY",Common Stock
+2013-06-14,PODD,Director,BUY,3000.0,14.48,43440.0,"CRAWFORD, SALLY",Common Stock
+2013-07-01,PODD,"Director, President and CEO",SELL,20000.0,31.5148,630296.0,"DESISTO, DUANE",Common Stock
+2013-07-01,PODD,Chief Commercial Officer,SELL,30000.0,31.4769,944307.0,"DEVLIN, PETER",Common Stock
+2013-07-01,PODD,"Director, President and CEO",BUY,20000.0,3.6,72000.0,"DESISTO, DUANE",Common Stock
+2013-07-01,PODD,Chief Commercial Officer,BUY,30000.0,8.3,249000.00000000003,"DEVLIN, PETER",Common Stock
+2013-08-01,PODD,"Director, President and CEO",SELL,20000.0,31.8458,636916.0,"DESISTO, DUANE",Common Stock
+2013-08-01,PODD,"Director, President and CEO",BUY,20000.0,3.6,72000.0,"DESISTO, DUANE",Common Stock
+2013-08-15,PODD,Director,SELL,5000.0,33.322,166610.0,"SOMMER, REGINA O",Common Stock
+2013-08-29,PODD,Director,SELL,9000.0,33.4229,300806.1,"CRAWFORD, SALLY",Common Stock
+2013-09-03,PODD,"Director, President and CEO",BUY,20000.0,3.6,72000.0,"DESISTO, DUANE",Common Stock
+2013-09-03,PODD,"Director, President and CEO",SELL,20000.0,33.3808,667616.0,"DESISTO, DUANE",Common Stock
+2013-10-01,PODD,"Director, President and CEO",SELL,5527.0,36.3318,200805.8586,"DESISTO, DUANE",Common Stock
+2013-10-01,PODD,"Director, President and CEO",BUY,5527.0,3.6,19897.2,"DESISTO, DUANE",Common Stock
+2013-11-15,PODD,Chief Financial Officer,SELL,4000.0,36.873,147492.0,"ROBERTS, BRIAN K",Common Stock
+2013-11-15,PODD,Chief Financial Officer,SELL,8500.0,36.409,309476.5,"ROBERTS, BRIAN K",Common Stock
+2013-11-15,PODD,Chief Financial Officer,SELL,7500.0,35.245,264337.5,"ROBERTS, BRIAN K",Common Stock
+2013-11-15,PODD,Secretary and General Counsel,BUY,7500.0,19.14,143550.0,"DIEHL, R ANTHONY",Common Stock
+2013-11-15,PODD,Secretary and General Counsel,BUY,9976.0,17.49,174480.24,"DIEHL, R ANTHONY",Common Stock
+2013-11-15,PODD,Chief Financial Officer,BUY,20000.0,5.11,102200.0,"ROBERTS, BRIAN K",Common Stock
+2013-11-15,PODD,Secretary and General Counsel,SELL,7800.0,36.385,283803.0,"DIEHL, R ANTHONY",Common Stock
+2013-11-15,PODD,Secretary and General Counsel,SELL,5000.0,35.22,176100.0,"DIEHL, R ANTHONY",Common Stock
+2013-11-15,PODD,"Director, Chief Operating Officer",SELL,4600.0,36.8587,169550.02,"LIAMOS, CHARLES T",Common Stock
+2013-11-15,PODD,"Director, Chief Operating Officer",SELL,7800.0,36.3893,283836.54,"LIAMOS, CHARLES T",Common Stock
+2013-11-15,PODD,"Director, Chief Operating Officer",SELL,28400.0,35.5257,1008929.88,"LIAMOS, CHARLES T",Common Stock
+2013-11-15,PODD,"Director, Chief Operating Officer",BUY,40800.0,15.82,645456.0,"LIAMOS, CHARLES T",Common Stock
+2013-11-15,PODD,Secretary and General Counsel,SELL,4676.0,36.855,172333.97999999998,"DIEHL, R ANTHONY",Common Stock
+2013-11-18,PODD,"Director, Chief Operating Officer",SELL,7124.0,35.7238,254496.35119999998,"LIAMOS, CHARLES T",Common Stock
+2013-11-18,PODD,"Director, Chief Operating Officer",SELL,32076.0,35.2748,1131474.4848,"LIAMOS, CHARLES T",Common Stock
+2013-11-18,PODD,"Director, Chief Operating Officer",BUY,9200.0,15.82,145544.0,"LIAMOS, CHARLES T",Common Stock
+2013-12-02,PODD,"Director, Chief Operating Officer",BUY,3810.0,18.75,71437.5,"LIAMOS, CHARLES T",Common Stock
+2013-12-02,PODD,"Director, Chief Operating Officer",BUY,27363.0,15.82,432882.66000000003,"LIAMOS, CHARLES T",Common Stock
+2013-12-02,PODD,"Director, Chief Operating Officer",BUY,8000.0,7.06,56480.0,"LIAMOS, CHARLES T",Common Stock
+2013-12-02,PODD,"Director, President and CEO",BUY,20000.0,6.83,136600.0,"DESISTO, DUANE",Common Stock
+2013-12-02,PODD,"Director, Chief Operating Officer",SELL,62208.0,36.2619,2255780.2752,"LIAMOS, CHARLES T",Common Stock
+2013-12-02,PODD,"Director, President and CEO",SELL,18500.0,36.5848,676818.8,"DESISTO, DUANE",Common Stock
+2013-12-02,PODD,Chief Financial Officer,SELL,20000.0,36.5684,731367.9999999999,"ROBERTS, BRIAN K",Common Stock
+2013-12-02,PODD,Chief Financial Officer,BUY,20000.0,5.11,102200.0,"ROBERTS, BRIAN K",Common Stock
+2013-12-02,PODD,"Director, Chief Operating Officer",BUY,19035.0,4.86,92510.1,"LIAMOS, CHARLES T",Common Stock
+2013-12-02,PODD,"Director, Chief Operating Officer",BUY,4000.0,14.48,57920.0,"LIAMOS, CHARLES T",Common Stock
+2013-12-03,PODD,"Director, Chief Operating Officer",SELL,1600.0,35.9975,57596.0,"LIAMOS, CHARLES T",Common Stock
+2013-12-03,PODD,"Director, Chief Operating Officer",BUY,1600.0,15.82,25312.0,"LIAMOS, CHARLES T",Common Stock
+2013-12-31,PODD,Chief Financial Officer,SELL,1772.0,37.1,65741.2,"ROBERTS, BRIAN K",Common Stock
+2013-12-31,PODD,"Director, Chief Operating Officer",SELL,17084.0,37.1,633816.4,"LIAMOS, CHARLES T",Common Stock
+2014-01-02,PODD,"Director, President and CEO",BUY,20000.0,6.83,136600.0,"DESISTO, DUANE",Common Stock
+2014-01-02,PODD,"Director, President and CEO",SELL,20000.0,36.0687,721374.0,"DESISTO, DUANE",Common Stock
+2014-01-02,PODD,"Director, Chief Operating Officer",BUY,46300.0,15.82,732466.0,"LIAMOS, CHARLES T",Common Stock
+2014-01-02,PODD,"Director, Chief Operating Officer",SELL,46300.0,35.9359,1663832.17,"LIAMOS, CHARLES T",Common Stock
+2014-01-03,PODD,"Director, Chief Operating Officer",BUY,12000.0,19.14,229680.0,"LIAMOS, CHARLES T",Common Stock
+2014-01-03,PODD,"Director, Chief Operating Officer",BUY,3700.0,15.82,58534.0,"LIAMOS, CHARLES T",Common Stock
+2014-01-03,PODD,"Director, Chief Operating Officer",SELL,39700.0,36.1159,1433801.2300000002,"LIAMOS, CHARLES T",Common Stock
+2014-01-17,PODD,Director,BUY,1000.0,14.48,14480.0,"CRAWFORD, SALLY",Common Stock
+2014-01-17,PODD,Director,BUY,2000.0,20.9,41800.0,"CRAWFORD, SALLY",Common Stock
+2014-02-03,PODD,Chief Operating Officer,BUY,30000.0,42.16,1264800.0,"RYAN, PATRICK",Employee Stock Option (Right to Buy)
+2014-02-03,PODD,Director,BUY,11037.0,15.82,174605.34,"LIAMOS, CHARLES T",Common Stock
+2014-02-03,PODD,Director,SELL,11037.0,42.9328,473849.3136,"LIAMOS, CHARLES T",Common Stock
+2014-02-03,PODD,Chief Commercial Officer,SELL,30000.0,42.8213,1284639.0,"DEVLIN, PETER",Common Stock
+2014-02-03,PODD,"Director, President and CEO",SELL,20000.0,42.9545,859090.0000000001,"DESISTO, DUANE",Common Stock
+2014-02-03,PODD,"Director, President and CEO",BUY,20000.0,6.83,136600.0,"DESISTO, DUANE",Common Stock
+2014-02-03,PODD,Chief Commercial Officer,BUY,30000.0,8.3,249000.00000000003,"DEVLIN, PETER",Common Stock
+2014-03-01,PODD,Secretary and General Counsel,SELL,4347.0,47.41,206091.27,"DIEHL, R ANTHONY",Common Stock
+2014-03-01,PODD,Director,SELL,9482.0,47.41,449541.62,"LIAMOS, CHARLES T",Common Stock
+2014-03-01,PODD,Chief Commercial Officer,SELL,7814.0,47.41,370461.74,"DEVLIN, PETER",Common Stock
+2014-03-01,PODD,Chief Financial Officer,SELL,7440.0,47.41,352730.39999999997,"ROBERTS, BRIAN K",Common Stock
+2014-03-01,PODD,"Director, President and CEO",SELL,22840.0,47.41,1082844.4,"DESISTO, DUANE",Common Stock
+2014-03-03,PODD,Director,BUY,10000.0,15.82,158200.0,"LIAMOS, CHARLES T",Common Stock
+2014-03-03,PODD,"Director, President and CEO",BUY,20000.0,6.83,136600.0,"DESISTO, DUANE",Common Stock
+2014-03-03,PODD,"Director, President and CEO",SELL,20000.0,45.8049,916098.0000000001,"DESISTO, DUANE",Common Stock
+2014-03-03,PODD,Director,SELL,10000.0,45.8465,458465.0,"LIAMOS, CHARLES T",Common Stock
+2014-03-06,PODD,"VP, Global Regulatory, CA, QA",BUY,5000.0,23.27,116350.0,"WIELINSKI, TRACEY HAAS",Common Stock
+2014-03-06,PODD,"VP, Global Regulatory, CA, QA",SELL,1000.0,49.98,49980.0,"WIELINSKI, TRACEY HAAS",Common Stock
+2014-03-06,PODD,"VP, Global Regulatory, CA, QA",SELL,7275.0,49.1021,357217.7775,"WIELINSKI, TRACEY HAAS",Common Stock
+2014-03-06,PODD,Secretary and General Counsel,SELL,4258.0,49.6312,211329.6496,"DIEHL, R ANTHONY",Common Stock
+2014-03-06,PODD,Secretary and General Counsel,BUY,930.0,19.14,17800.2,"DIEHL, R ANTHONY",Common Stock
+2014-03-06,PODD,Secretary and General Counsel,BUY,1625.0,23.4,38025.0,"DIEHL, R ANTHONY",Common Stock
+2014-03-06,PODD,Secretary and General Counsel,BUY,1125.0,17.49,19676.25,"DIEHL, R ANTHONY",Common Stock
+2014-03-06,PODD,Secretary and General Counsel,SELL,8200.0,49.0902,402539.64,"DIEHL, R ANTHONY",Common Stock
+2014-04-01,PODD,Chief Financial Officer,SELL,2954.0,48.31,142707.74000000002,"ROBERTS, BRIAN K",Common Stock
+2014-04-01,PODD,Chief Commercial Officer,SELL,2599.0,48.31,125557.69,"DEVLIN, PETER",Common Stock
+2014-04-01,PODD,"Director, President and CEO",SELL,8269.0,48.31,399475.39,"DESISTO, DUANE",Common Stock
+2014-04-01,PODD,"Director, President and CEO",BUY,20000.0,6.83,136600.0,"DESISTO, DUANE",Common Stock
+2014-04-01,PODD,"Director, President and CEO",SELL,20000.0,47.683,953660.0,"DESISTO, DUANE",Common Stock
+2014-04-01,PODD,Director,SELL,4101.0,48.31,198119.31,"LIAMOS, CHARLES T",Common Stock
+2014-04-01,PODD,Secretary and General Counsel,SELL,1633.0,48.31,78890.23000000001,"DIEHL, R ANTHONY",Common Stock
+2014-04-02,PODD,Secretary and General Counsel,SELL,1250.0,48.63,60787.5,"DIEHL, R ANTHONY",Common Stock
+2014-04-02,PODD,Secretary and General Counsel,BUY,1250.0,19.14,23925.0,"DIEHL, R ANTHONY",Common Stock
+2014-04-03,PODD,Secretary and General Counsel,SELL,3367.0,48.6906,163941.2502,"DIEHL, R ANTHONY",Common Stock
+2014-04-08,PODD,Chief Commercial Officer,SELL,30000.0,41.2462,1237386.0,"DEVLIN, PETER",Common Stock
+2014-04-08,PODD,Chief Commercial Officer,BUY,30000.0,8.3,249000.00000000003,"DEVLIN, PETER",Common Stock
+2014-05-08,PODD,Secretary and General Counsel,BUY,12500.0,15.09,188625.0,"DIEHL, R ANTHONY",Common Stock
+2014-06-02,PODD,"Director, President and CEO",BUY,20000.0,15.09,301800.0,"DESISTO, DUANE",Common Stock
+2014-06-02,PODD,"Director, President and CEO",SELL,20000.0,34.7543,695086.0,"DESISTO, DUANE",Common Stock
+2014-06-09,PODD,Chief Commercial Officer,SELL,12314.0,37.096,456800.144,"DEVLIN, PETER",Common Stock
+2014-06-11,PODD,Secretary and General Counsel,SELL,17871.0,37.0869,662779.9899,"DIEHL, R ANTHONY",Common Stock
+2014-06-30,PODD,Director,SELL,8000.0,40.0,320000.0,"SOBIESKI, STEVEN",Common Stock
+2014-07-01,PODD,Secretary and General Counsel,BUY,1250.0,19.14,23925.0,"DIEHL, R ANTHONY",Common Stock
+2014-07-01,PODD,"Director, President and CEO",SELL,20000.0,40.5168,810336.0000000001,"DESISTO, DUANE",Common Stock
+2014-07-01,PODD,Secretary and General Counsel,SELL,1250.0,39.65,49562.5,"DIEHL, R ANTHONY",Common Stock
+2014-07-01,PODD,"Director, President and CEO",BUY,20000.0,15.09,301800.0,"DESISTO, DUANE",Common Stock
+2014-08-01,PODD,"Director, President and CEO",SELL,20000.0,34.2336,684672.0,"DESISTO, DUANE",Common Stock
+2014-08-01,PODD,"Director, President and CEO",BUY,10000.0,15.16,151600.0,"DESISTO, DUANE",Common Stock
+2014-08-01,PODD,"Director, President and CEO",BUY,10000.0,15.09,150900.0,"DESISTO, DUANE",Common Stock
+2014-09-02,PODD,"Director, President and CEO",BUY,20000.0,15.16,303200.0,"DESISTO, DUANE",Common Stock
+2014-09-02,PODD,"Director, President and CEO",SELL,20000.0,36.2999,725998.0,"DESISTO, DUANE",Common Stock
+2014-09-10,PODD,Director,BUY,4000.0,15.82,63280.0,"LIAMOS, CHARLES T",Common Stock
+2014-09-10,PODD,Director,SELL,4000.0,35.166,140664.0,"LIAMOS, CHARLES T",Common Stock
+2014-10-01,PODD,Director,SELL,4000.0,36.58,146320.0,"LIAMOS, CHARLES T",Common Stock
+2014-10-01,PODD,Director,BUY,4000.0,15.82,63280.0,"LIAMOS, CHARLES T",Common Stock
+2014-10-01,PODD,Secretary and General Counsel,SELL,1250.0,36.59,45737.50000000001,"DIEHL, R ANTHONY",Common Stock
+2014-10-01,PODD,Secretary and General Counsel,BUY,1250.0,19.14,23925.0,"DIEHL, R ANTHONY",Common Stock
+2014-11-03,PODD,Director,BUY,4000.0,15.82,63280.0,"LIAMOS, CHARLES T",Common Stock
+2014-11-03,PODD,Director,SELL,4000.0,42.95,171800.0,"LIAMOS, CHARLES T",Common Stock
+2014-12-01,PODD,Director,SELL,4000.0,45.67,182680.0,"LIAMOS, CHARLES T",Common Stock
+2014-12-01,PODD,Director,BUY,4000.0,15.82,63280.0,"LIAMOS, CHARLES T",Common Stock
+2015-01-02,PODD,Director,BUY,4000.0,15.82,63280.0,"LIAMOS, CHARLES T",Common Stock
+2015-01-02,PODD,Director,SELL,4000.0,46.08,184320.0,"LIAMOS, CHARLES T",Common Stock
+2015-02-03,PODD,Chief Operating Officer,SELL,2983.0,29.84,89012.72,"RYAN, PATRICK",Common Stock
+2015-02-12,PODD,Director,SELL,4000.0,32.0,128000.0,"LIAMOS, CHARLES T",Common Stock
+2015-02-12,PODD,Director,BUY,4000.0,15.82,63280.0,"LIAMOS, CHARLES T",Common Stock
+2015-03-01,PODD,Secretary and General Counsel,SELL,2423.0,31.73,76881.79000000001,"DIEHL, R ANTHONY",Common Stock
+2015-03-01,PODD,Director,SELL,6951.0,31.73,220555.23,"LIAMOS, CHARLES T",Common Stock
+2015-03-01,PODD,Chief Financial Officer,SELL,1091.0,31.73,34617.43,"DORVAL, ALLISON",Common Stock
+2015-03-02,PODD,Director,BUY,4000.0,15.82,63280.0,"LIAMOS, CHARLES T",Common Stock
+2015-03-02,PODD,Director,SELL,4000.0,32.003,128012.0,"LIAMOS, CHARLES T",Common Stock
+2015-03-03,PODD,Chief Financial Officer,SELL,851.0,31.37,26695.870000000003,"DORVAL, ALLISON",Common Stock
+2015-03-03,PODD,Secretary and General Counsel,SELL,868.0,31.37,27229.16,"DIEHL, R ANTHONY",Common Stock
+2015-03-05,PODD,Secretary and General Counsel,BUY,1625.0,23.4,38025.0,"DIEHL, R ANTHONY",Common Stock
+2015-03-05,PODD,Secretary and General Counsel,SELL,8125.0,31.5,255937.5,"DIEHL, R ANTHONY",Common Stock
+2015-03-09,PODD,"Director, President & CEO",BUY,10000.0,31.93,319300.0,"SULLIVAN, PATRICK J",Common Stock
+2015-04-01,PODD,Director,SELL,4000.0,33.16,132640.0,"LIAMOS, CHARLES T",Common Stock
+2015-04-01,PODD,Chief Financial Officer,SELL,814.0,31.85,25925.9,"DORVAL, ALLISON",Common Stock
+2015-04-01,PODD,Director,BUY,4000.0,15.82,63280.0,"LIAMOS, CHARLES T",Common Stock
+2015-04-01,PODD,Secretary and General Counsel,SELL,1628.0,31.85,51851.8,"DIEHL, R ANTHONY",Common Stock
+2015-04-01,PODD,Director,SELL,3007.0,31.85,95772.95,"LIAMOS, CHARLES T",Common Stock
+2015-04-02,PODD,Secretary and General Counsel,SELL,3372.0,30.96,104397.12000000001,"DIEHL, R ANTHONY",Common Stock
+2015-04-30,PODD,"President, Drug Delivery",SELL,1337.0,29.85,39909.450000000004,"LEVANGIE, DANIEL J",Common Stock
+2015-05-05,PODD,Chief Operating Officer,BUY,3669.0,26.99,99026.31,"RYAN, PATRICK",Common Stock
+2015-05-05,PODD,EVP Human Resources,BUY,1000.0,27.26,27260.0,"THOMAS, BRADLEY A",Common Stock
+2015-05-11,PODD,Secretary and General Counsel,BUY,4482.0,15.09,67633.38,"DIEHL, R ANTHONY",Common Stock
+2015-05-11,PODD,Secretary and General Counsel,SELL,12500.0,26.63,332875.0,"DIEHL, R ANTHONY",Common Stock
+2015-05-11,PODD,Secretary and General Counsel,BUY,5535.0,15.16,83910.6,"DIEHL, R ANTHONY",Common Stock
+2015-05-15,PODD,Director,BUY,3500.0,27.05,94675.0,"SCANNELL, TIMOTHY J",Common Stock
+2015-05-28,PODD,"Director, President & CEO",BUY,10000.0,27.737,277370.0,"SULLIVAN, PATRICK J",Common Stock
+2015-05-28,PODD,"Director, President & CEO",BUY,10000.0,28.08,280800.0,"SULLIVAN, PATRICK J",Common Stock
+2015-06-05,PODD,"Director, President & CEO",BUY,10000.0,29.388,293880.0,"SULLIVAN, PATRICK J",Common Stock
+2015-08-20,PODD,EVP Human Resources,BUY,845.0,29.41,24851.45,"THOMAS, BRADLEY A",Common Stock
+2015-12-01,PODD,EVP Human Resources,SELL,1973.0,37.27,73533.71,"THOMAS, BRADLEY A",Common Stock
+2016-02-09,PODD,CCO,SELL,6328.0,26.0,164528.0,"PETROVIC, SHACEY",Common Stock
+2016-03-02,PODD,Director,BUY,3230.0,30.91,99839.3,"HOPFIELD, JESSICA",Common Stock
+2016-03-07,PODD,"President, Drug Delivery",SELL,7663.0,31.15,238702.44999999998,"LEVANGIE, DANIEL J",Common Stock
+2016-03-09,PODD,"President, Drug Delivery",SELL,7600.0,31.04,235904.0,"LEVANGIE, DANIEL J",Common Stock
+2016-03-09,PODD,"President, Drug Delivery",BUY,15545.0,15.14,235351.30000000002,"LEVANGIE, DANIEL J",Common Stock
+2016-03-10,PODD,"President, Drug Delivery",SELL,4699.0,30.65,144024.35,"LEVANGIE, DANIEL J",Common Stock
+2016-03-10,PODD,"President, Drug Delivery",BUY,9455.0,15.14,143148.7,"LEVANGIE, DANIEL J",Common Stock
+2016-04-01,PODD,"President, Drug Delivery",SELL,740.0,33.52,24804.800000000003,"LEVANGIE, DANIEL J",Common Stock
+2016-04-01,PODD,EVP Human Resources,SELL,740.0,33.52,24804.800000000003,"THOMAS, BRADLEY A",Common Stock
+2016-04-01,PODD,"President, Diabetes Products",SELL,740.0,33.52,24804.800000000003,"PETROVIC, SHACEY",Common Stock
+2016-04-30,PODD,"EVP & President, Drug Delivery",SELL,652.0,33.3,21711.6,"LEVANGIE, DANIEL J",Common Stock
+2016-05-04,PODD,SVP and CFO,SELL,4669.0,30.25,141237.25,"LEVITZ, MICHAEL L",Common Stock
+2016-05-05,PODD,EVP Human Resources,BUY,1656.0,30.1269,49890.1464,"THOMAS, BRADLEY A",Common Stock
+2016-05-13,PODD,EVP Human Resources,BUY,2975.0,26.6291,79221.57250000001,"THOMAS, BRADLEY A",Common Stock
+2016-05-17,PODD,"Director, President & CEO",BUY,30000.0,27.054,811620.0,"SULLIVAN, PATRICK J",Common Stock
+2016-05-18,PODD,"Director, President & CEO",BUY,15000.0,26.9042,403563.0,"SULLIVAN, PATRICK J",Common Stock
+2016-05-25,PODD,Director,SELL,8019.0,30.4183,243924.34769999998,"SOMMER, REGINA O",Common Stock
+2016-06-29,PODD,"SVP, Secretary and GC",SELL,2347.0,29.71,69729.37,"COLLERAN, DAVID",Common Stock
+2016-07-27,PODD,"SVP, QA, RA and CA",SELL,2434.0,34.93,85019.62,"SPEARS, MICHAEL P",Common Stock
+2016-10-12,PODD,"Director, President & CEO",BUY,3075.0,32.51,99968.25,"SULLIVAN, PATRICK J",Common Stock
+2016-12-01,PODD,EVP Human Resources,BUY,3100.0,32.45,100595.00000000001,"THOMAS, BRADLEY A",Common Stock
+2016-12-02,PODD,"Director, CEO and Chairman of the Board",BUY,40000.0,33.893,1355720.0,"SULLIVAN, PATRICK J",Common Stock
+2016-12-09,PODD,"SVP, Global Manufacturing",BUY,6600.0,37.6973,248802.18,"ALPUCHE, CHARLES",Common Stock
+2017-02-03,PODD,"SVP, Global Manufacturing",SELL,1843.0,42.76,78806.68,"ALPUCHE, CHARLES",Common Stock
+2017-02-09,PODD,President and COO,SELL,6253.0,42.3,264501.89999999997,"PETROVIC, SHACEY",Common Stock
+2017-02-24,PODD,President and COO,SELL,2732.0,45.96,125562.72,"PETROVIC, SHACEY",Common Stock
+2017-02-24,PODD,"SVP, QA and RA",SELL,1186.0,45.96,54508.56,"SPEARS, MICHAEL P",Common Stock
+2017-03-02,PODD,Director,BUY,18480.0,7.06,130468.79999999999,"ZAKRZEWSKI, JOSEPH S",Common Stock
+2017-03-02,PODD,Director,BUY,4000.0,14.48,57920.0,"ZAKRZEWSKI, JOSEPH S",Common Stock
+2017-03-02,PODD,Director,BUY,4000.0,20.9,83600.0,"ZAKRZEWSKI, JOSEPH S",Common Stock
+2017-03-02,PODD,Director,BUY,4000.0,17.75,71000.0,"ZAKRZEWSKI, JOSEPH S",Common Stock
+2017-03-02,PODD,Director,SELL,13721.0,46.3133,635464.7893,"ZAKRZEWSKI, JOSEPH S",Common Stock
+2017-03-02,PODD,Director,BUY,9520.0,18.75,178500.0,"ZAKRZEWSKI, JOSEPH S",Common Stock
+2017-03-02,PODD,Director,SELL,4000.0,48.031,192124.0,"ZAKRZEWSKI, JOSEPH S",Common Stock
+2017-03-02,PODD,Director,SELL,22279.0,46.9907,1046905.8052999999,"ZAKRZEWSKI, JOSEPH S",Common Stock
+2017-03-06,PODD,Director,SELL,1282.0,45.15,57882.299999999996,"LEMOINE, DAVID A",Common Stock
+2017-03-13,PODD,Director,BUY,4000.0,14.48,57920.0,"SOMMER, REGINA O",Common Stock
+2017-03-13,PODD,Director,BUY,4000.0,20.9,83600.0,"SOMMER, REGINA O",Common Stock
+2017-03-13,PODD,Director,BUY,4000.0,17.75,71000.0,"SOMMER, REGINA O",Common Stock
+2017-03-13,PODD,Director,BUY,18480.0,7.06,130468.79999999999,"SOMMER, REGINA O",Common Stock
+2017-03-13,PODD,Director,BUY,9520.0,18.75,178500.0,"SOMMER, REGINA O",Common Stock
+2017-03-13,PODD,Director,SELL,40000.0,45.0033,1800132.0000000002,"SOMMER, REGINA O",Common Stock
+2017-03-28,PODD,"SVP, Advanced Technology",SELL,1522.0,42.43,64578.46,"ABDEL-MALEK, AIMAN",Common Stock
+2017-04-01,PODD,President and COO,SELL,1071.0,43.09,46149.39000000001,"PETROVIC, SHACEY",Common Stock
+2017-05-01,PODD,Director,SELL,1524.0,43.4,66141.59999999999,"LEMOINE, DAVID A",Common Stock
+2017-05-11,PODD,EVP Human Resources,BUY,3000.0,38.6923,116076.90000000001,"THOMAS, BRADLEY A",Common Stock
+2017-05-11,PODD,Director,BUY,2580.0,38.6754,99782.532,"HOPFIELD, JESSICA",Common Stock
+2017-05-16,PODD,"SVP, QA and RA",BUY,2500.0,40.588,101470.0,"SPEARS, MICHAEL P",Common Stock
+2017-07-27,PODD,"SVP, QA and RA",SELL,2434.0,52.26,127200.84,"SPEARS, MICHAEL P",Common Stock
+2017-09-06,PODD,"EVP, Global Manufacturing",BUY,2500.0,58.0848,145212.0,"ALPUCHE, CHARLES",Common Stock
+2017-11-13,PODD,Director,BUY,2500.0,67.4531,168632.75000000003,"MULLEN, JAMES C",Common Stock
+2017-12-01,PODD,EVP Human Resources,SELL,1967.0,70.68,139027.56000000003,"THOMAS, BRADLEY A",Common Stock
+2018-02-02,PODD,"EVP, Global Manufacturing",SELL,1629.0,75.84,123543.36,"ALPUCHE, CHARLES",Common Stock
+2018-02-09,PODD,President and COO,SELL,6418.0,72.75,466909.5,"PETROVIC, SHACEY",Common Stock
+2018-02-22,PODD,EVP & Chief Operations Officer,SELL,1062.0,80.46,85448.51999999999,"ALPUCHE, CHARLES",Common Stock
+2018-02-22,PODD,"SVP, Secretary and GC",SELL,470.0,80.46,37816.2,"COLLERAN, DAVID",Common Stock
+2018-02-22,PODD,SVP and CFO,SELL,677.0,80.46,54471.42,"LEVITZ, MICHAEL L",Common Stock
+2018-02-22,PODD,President and COO,SELL,2004.0,80.46,161241.84,"PETROVIC, SHACEY",Common Stock
+2018-02-22,PODD,"SVP, R&D, New Prod Dev. & Comm",SELL,220.0,80.46,17701.199999999997,"BENJAMIN, ERIC",Common Stock
+2018-02-22,PODD,"Director, CEO and Chairman of the Board",SELL,1775.0,80.46,142816.5,"SULLIVAN, PATRICK J",Common Stock
+2018-02-22,PODD,EVP Human Resources,SELL,675.0,80.46,54310.49999999999,"THOMAS, BRADLEY A",Common Stock
+2018-02-22,PODD,EVP & Chief Technology Officer,SELL,467.0,80.46,37574.82,"ABDEL-MALEK, AIMAN",Common Stock
+2018-02-22,PODD,"SVP, QA and RA",SELL,680.0,80.46,54712.799999999996,"SPEARS, MICHAEL P",Common Stock
+2018-02-24,PODD,SVP and CFO,SELL,1762.0,75.55,133119.1,"LEVITZ, MICHAEL L",Common Stock
+2018-02-24,PODD,SVP and CFO,SELL,1007.0,75.55,76078.84999999999,"LEVITZ, MICHAEL L",Common Stock
+2018-02-24,PODD,"SVP, QA and RA",SELL,1007.0,75.55,76078.84999999999,"SPEARS, MICHAEL P",Common Stock
+2018-02-24,PODD,President and COO,SELL,3798.0,75.55,286938.89999999997,"PETROVIC, SHACEY",Common Stock
+2018-02-24,PODD,President and COO,SELL,3165.0,75.55,239115.75,"PETROVIC, SHACEY",Common Stock
+2018-02-24,PODD,"SVP, QA and RA",SELL,1762.0,75.55,133119.1,"SPEARS, MICHAEL P",Common Stock
+2018-02-24,PODD,"Director, CEO and Chairman of the Board",SELL,21763.0,75.55,1644194.65,"SULLIVAN, PATRICK J",Common Stock
+2018-02-24,PODD,EVP & Chief Operations Officer,SELL,2452.0,75.55,185248.6,"ALPUCHE, CHARLES",Common Stock
+2018-02-24,PODD,EVP Human Resources,SELL,2014.0,75.55,152157.69999999998,"THOMAS, BRADLEY A",Common Stock
+2018-02-24,PODD,"Director, CEO and Chairman of the Board",SELL,6330.0,75.55,478231.5,"SULLIVAN, PATRICK J",Common Stock
+2018-02-24,PODD,"SVP, Secretary and GC",SELL,1759.0,75.55,132892.44999999998,"COLLERAN, DAVID",Common Stock
+2018-02-24,PODD,"SVP, Secretary and GC",SELL,671.0,75.55,50694.049999999996,"COLLERAN, DAVID",Common Stock
+2018-02-24,PODD,"SVP, R&D, New Prod Dev. & Comm",SELL,775.0,75.55,58551.25,"BENJAMIN, ERIC",Common Stock
+2018-02-24,PODD,"SVP, R&D, New Prod Dev. & Comm",SELL,252.0,75.55,19038.6,"BENJAMIN, ERIC",Common Stock
+2018-02-24,PODD,EVP Human Resources,SELL,1007.0,75.55,76078.84999999999,"THOMAS, BRADLEY A",Common Stock
+2018-03-02,PODD,EVP Human Resources,SELL,1734.0,73.07,126703.37999999999,"THOMAS, BRADLEY A",Common Stock
+2018-03-02,PODD,"Director, CEO and Chairman of the Board",SELL,6468.0,73.07,472616.75999999995,"SULLIVAN, PATRICK J",Common Stock
+2018-03-05,PODD,EVP Human Resources,BUY,6150.0,32.51,199936.5,"THOMAS, BRADLEY A",Common Stock
+2018-03-05,PODD,EVP Human Resources,SELL,2650.0,75.43,199889.50000000003,"THOMAS, BRADLEY A",Common Stock
+2018-03-06,PODD,Director,SELL,641.0,76.81,49235.21,"LEMOINE, DAVID A",Common Stock
+2018-03-06,PODD,President and COO,SELL,1319.0,76.81,101312.39,"PETROVIC, SHACEY",Common Stock
+2018-03-13,PODD,EVP & Chief Technology Officer,SELL,1183.0,84.5,99963.5,"ABDEL-MALEK, AIMAN",Common Stock
+2018-03-13,PODD,EVP & Chief Technology Officer,BUY,3205.0,31.2,99996.0,"ABDEL-MALEK, AIMAN",Common Stock
+2018-03-14,PODD,Director,SELL,8800.0,84.1,740080.0,"FALLON, JOHN A.",Common Stock
+2018-03-14,PODD,EVP Human Resources,SELL,7250.0,83.81,607622.5,"THOMAS, BRADLEY A",Common Stock
+2018-03-14,PODD,"Director, CEO and Chairman of the Board",BUY,59084.0,84.625,4999983.5,"SULLIVAN, PATRICK J",Common Stock
+2018-03-14,PODD,Director,SELL,200.0,84.165,16833.0,"FALLON, JOHN A.",Common Stock
+2018-03-15,PODD,EVP & Chief Operations Officer,SELL,7090.0,84.65,600168.5,"ALPUCHE, CHARLES",Common Stock
+2018-03-16,PODD,EVP Human Resources,SELL,400.0,85.001,34000.4,"THOMAS, BRADLEY A",Common Stock
+2018-03-16,PODD,EVP Human Resources,SELL,3100.0,85.0,263500.0,"THOMAS, BRADLEY A",Common Stock
+2018-03-23,PODD,"SVP, QA and RA",BUY,5166.0,29.26,151157.16,"SPEARS, MICHAEL P",Common Stock
+2018-03-23,PODD,"SVP, QA and RA",SELL,1768.0,85.46,151093.28,"SPEARS, MICHAEL P",Common Stock
+2018-03-28,PODD,EVP & Chief Technology Officer,SELL,2972.0,84.97,252530.84,"ABDEL-MALEK, AIMAN",Common Stock
+2018-03-29,PODD,EVP Human Resources,SELL,1010.0,86.68,87546.8,"THOMAS, BRADLEY A",Common Stock
+2018-03-29,PODD,President and COO,SELL,1010.0,86.68,87546.8,"PETROVIC, SHACEY",Common Stock
+2018-03-29,PODD,"Director, CEO and Chairman of the Board",SELL,6764.0,86.68,586303.52,"SULLIVAN, PATRICK J",Common Stock
+2018-05-01,PODD,Director,SELL,1084.0,84.93,92064.12000000001,"LEMOINE, DAVID A",Common Stock
+2018-05-04,PODD,SVP and CFO,SELL,6376.0,83.88,534818.88,"LEVITZ, MICHAEL L",Common Stock
+2018-05-15,PODD,"SVP, QA and RA",SELL,1893.0,87.2,165069.6,"SPEARS, MICHAEL P",Common Stock
+2018-05-15,PODD,"SVP, QA and RA",SELL,6221.0,86.47,537929.87,"SPEARS, MICHAEL P",Common Stock
+2018-05-15,PODD,"SVP, Secretary and GC",SELL,4956.0,86.24,427405.44,"COLLERAN, DAVID",Common Stock
+2018-05-16,PODD,EVP & Chief Technology Officer,BUY,2394.0,31.2,74692.8,"ABDEL-MALEK, AIMAN",Common Stock
+2018-05-16,PODD,EVP & Chief Technology Officer,SELL,866.0,86.16,74614.56,"ABDEL-MALEK, AIMAN",Common Stock
+2018-05-18,PODD,"SVP, QA and RA",SELL,100.0,88.38,8838.0,"SPEARS, MICHAEL P",Common Stock
+2018-05-18,PODD,"SVP, QA and RA",SELL,7674.0,87.759,673462.566,"SPEARS, MICHAEL P",Common Stock
+2018-05-24,PODD,"SVP, QA and RA",SELL,8671.0,90.0,780390.0,"SPEARS, MICHAEL P",Common Stock
+2018-05-24,PODD,"SVP, QA and RA",BUY,7077.0,29.26,207073.02000000002,"SPEARS, MICHAEL P",Common Stock
+2018-05-24,PODD,"SVP, QA and RA",BUY,1594.0,29.87,47612.78,"SPEARS, MICHAEL P",Common Stock
+2018-05-25,PODD,SVP and CCO,SELL,688.0,92.83,63867.04,"CHRISTENSEN, BRET",Common Stock
+2018-05-30,PODD,"SVP, QA and RA",SELL,8071.0,95.0,766745.0,"SPEARS, MICHAEL P",Common Stock
+2018-05-30,PODD,"SVP, QA and RA",BUY,8071.0,29.87,241080.77000000002,"SPEARS, MICHAEL P",Common Stock
+2018-06-01,PODD,President and COO,SELL,1067.0,94.72,101066.24,"PETROVIC, SHACEY",Common Stock
+2018-06-12,PODD,"SVP, QA and RA",SELL,1075.0,100.0,107500.0,"SPEARS, MICHAEL P",Common Stock
+2018-06-12,PODD,"SVP, QA and RA",BUY,1075.0,29.87,32110.25,"SPEARS, MICHAEL P",Common Stock
+2018-06-13,PODD,"SVP, QA and RA",BUY,6421.0,29.87,191795.27000000002,"SPEARS, MICHAEL P",Common Stock
+2018-06-13,PODD,"SVP, QA and RA",SELL,6421.0,100.0,642100.0,"SPEARS, MICHAEL P",Common Stock
+2018-06-28,PODD,EVP & Chief Technology Officer,SELL,292.0,86.51,25260.920000000002,"ABDEL-MALEK, AIMAN",Common Stock
+2018-06-28,PODD,EVP & Chief Technology Officer,BUY,811.0,31.2,25303.2,"ABDEL-MALEK, AIMAN",Common Stock
+2018-06-29,PODD,"SVP, Secretary and GC",SELL,3205.0,85.7,274668.5,"COLLERAN, DAVID",Common Stock
+2018-07-02,PODD,"SVP, R&D, New Prod Dev. & Comm",SELL,102.0,85.7,8741.4,"BENJAMIN, ERIC",Common Stock
+2018-07-27,PODD,"SVP, QA and RA",SELL,3324.0,83.3,276889.2,"SPEARS, MICHAEL P",Common Stock
+2018-08-14,PODD,"SVP, QA and RA",SELL,643.0,86.837,55836.191,"SPEARS, MICHAEL P",Common Stock
+2018-08-14,PODD,"SVP, QA and RA",SELL,4400.0,85.972,378276.8,"SPEARS, MICHAEL P",Common Stock
+2018-08-14,PODD,EVP & Chief Technology Officer,SELL,602.0,86.6,52133.2,"ABDEL-MALEK, AIMAN",Common Stock
+2018-09-04,PODD,President and COO,SELL,960.0,104.26,100089.6,"PETROVIC, SHACEY",Common Stock
+2018-09-14,PODD,EVP & Chief Technology Officer,SELL,602.0,107.99,65009.979999999996,"ABDEL-MALEK, AIMAN",Common Stock
+2018-10-15,PODD,EVP & Chief Technology Officer,SELL,602.0,88.58,53325.159999999996,"ABDEL-MALEK, AIMAN",Common Stock
+2018-11-01,PODD,President and COO,SELL,1134.0,86.91,98555.94,"PETROVIC, SHACEY",Common Stock
+2018-11-14,PODD,EVP & Chief Technology Officer,SELL,602.0,80.41,48406.82,"ABDEL-MALEK, AIMAN",Common Stock
+2018-11-14,PODD,"SVP, Secretary and GC",BUY,4264.0,46.22,197082.08,"COLLERAN, DAVID",Common Stock
+2018-11-14,PODD,"SVP, Secretary and GC",BUY,1849.0,30.98,57282.020000000004,"COLLERAN, DAVID",Common Stock
+2018-11-14,PODD,"SVP, Secretary and GC",SELL,6113.0,80.41,491546.32999999996,"COLLERAN, DAVID",Common Stock
+2018-12-06,PODD,President and COO,BUY,6834.0,29.26,199962.84,"PETROVIC, SHACEY",Common Stock
+2018-12-06,PODD,President and COO,SELL,2427.0,82.38,199936.25999999998,"PETROVIC, SHACEY",Common Stock
+2019-01-31,PODD,"SVP, Secretary and GC",SELL,4826.0,80.0,386080.0,"COLLERAN, DAVID",Common Stock
+2019-01-31,PODD,"SVP, Secretary and GC",BUY,4826.0,29.26,141208.76,"COLLERAN, DAVID",Common Stock
+2019-02-01,PODD,EVP & Chief Operations Officer,SELL,1612.0,82.53,133038.36000000002,"ALPUCHE, CHARLES",Common Stock
+2019-02-05,PODD,"SVP, Secretary and GC",BUY,6834.0,29.26,199962.84,"COLLERAN, DAVID",Common Stock
+2019-02-05,PODD,"SVP, Secretary and GC",SELL,6834.0,80.72,551640.48,"COLLERAN, DAVID",Common Stock
+2019-02-14,PODD,EVP & Chief Operations Officer,SELL,658.0,84.83,55818.14,"ALPUCHE, CHARLES",Common Stock
+2019-02-14,PODD,"SVP, QA and RA",SELL,451.0,84.83,38258.33,"SPEARS, MICHAEL P",Common Stock
+2019-02-14,PODD,"Director, President and CEO",SELL,687.0,84.83,58278.21,"PETROVIC, SHACEY",Common Stock
+2019-02-14,PODD,SVP and CCO,SELL,510.0,84.83,43263.299999999996,"CHRISTENSEN, BRET",Common Stock
+2019-02-14,PODD,"SVP, Secretary and GC",SELL,264.0,84.83,22395.12,"COLLERAN, DAVID",Common Stock
+2019-02-14,PODD,"SVP, R&D, New Prod Dev. & Comm",SELL,233.0,84.83,19765.39,"BENJAMIN, ERIC",Common Stock
+2019-02-14,PODD,EVP & Chief Technology Officer,SELL,311.0,84.83,26382.13,"ABDEL-MALEK, AIMAN",Common Stock
+2019-02-14,PODD,SVP and CFO,SELL,446.0,84.83,37834.18,"LEVITZ, MICHAEL L",Common Stock
+2019-02-22,PODD,SVP and CFO,SELL,637.0,87.6,55801.2,"LEVITZ, MICHAEL L",Common Stock
+2019-02-22,PODD,"SVP, R&D, New Prod Dev. & Comm",SELL,186.0,87.6,16293.599999999999,"BENJAMIN, ERIC",Common Stock
+2019-02-22,PODD,"Director, President and CEO",SELL,1896.0,87.6,166089.59999999998,"PETROVIC, SHACEY",Common Stock
+2019-02-22,PODD,EVP & Chief Operations Officer,SELL,1602.0,87.6,140335.19999999998,"ALPUCHE, CHARLES",Common Stock
+2019-02-22,PODD,"SVP, QA and RA",SELL,637.0,87.6,55801.2,"SPEARS, MICHAEL P",Common Stock
+2019-02-22,PODD,"SVP, Secretary and GC",SELL,641.0,87.6,56151.6,"COLLERAN, DAVID",Common Stock
+2019-02-22,PODD,EVP & Chief Technology Officer,SELL,418.0,87.6,36616.799999999996,"ABDEL-MALEK, AIMAN",Common Stock
+2019-02-24,PODD,EVP & Chief Operations Officer,SELL,2417.0,87.6,211729.19999999998,"ALPUCHE, CHARLES",Common Stock
+2019-02-24,PODD,"SVP, QA and RA",SELL,2977.0,87.6,260785.19999999998,"SPEARS, MICHAEL P",Common Stock
+2019-02-24,PODD,"SVP, R&D, New Prod Dev. & Comm",SELL,1017.0,87.6,89089.2,"BENJAMIN, ERIC",Common Stock
+2019-02-24,PODD,SVP and CFO,SELL,2978.0,87.6,260872.8,"LEVITZ, MICHAEL L",Common Stock
+2019-02-24,PODD,"SVP, Secretary and GC",SELL,3107.0,87.6,272173.19999999995,"COLLERAN, DAVID",Common Stock
+2019-02-24,PODD,"Director, President and CEO",SELL,5674.0,87.6,497042.39999999997,"PETROVIC, SHACEY",Common Stock
+2019-02-27,PODD,SVP and CFO,SELL,1350.0,92.01,124213.5,"LEVITZ, MICHAEL L",Common Stock
+2019-03-01,PODD,"SVP, Secretary and GC",BUY,1166.0,29.26,34117.16,"COLLERAN, DAVID",Common Stock
+2019-03-01,PODD,"SVP, Secretary and GC",BUY,16639.0,30.98,515476.22000000003,"COLLERAN, DAVID",Common Stock
+2019-03-01,PODD,EVP & Chief Technology Officer,SELL,1608.0,95.223,153118.584,"ABDEL-MALEK, AIMAN",Common Stock
+2019-03-01,PODD,"SVP, Secretary and GC",BUY,1748.0,74.5,130226.0,"COLLERAN, DAVID",Common Stock
+2019-03-01,PODD,"SVP, Secretary and GC",SELL,20975.0,94.6536,1985359.26,"COLLERAN, DAVID",Common Stock
+2019-03-01,PODD,"SVP, Secretary and GC",BUY,1422.0,46.22,65724.84,"COLLERAN, DAVID",Common Stock
+2019-03-01,PODD,Director,SELL,561.0,94.288,52895.568,"LEMOINE, DAVID A",Common Stock
+2019-03-06,PODD,Director,SELL,10000.0,92.64,926400.0,"FALLON, JOHN A.",Common Stock
+2019-03-06,PODD,Director,BUY,10000.0,21.35,213500.0,"FALLON, JOHN A.",Common Stock
+2019-03-06,PODD,"Director, President and CEO",SELL,1066.0,92.64,98754.24,"PETROVIC, SHACEY",Common Stock
+2019-03-12,PODD,Director,SELL,5000.0,95.0,475000.0,"FALLON, JOHN A.",Common Stock
+2019-03-12,PODD,EVP & Chief Technology Officer,SELL,27349.0,94.0295,2571612.7955,"ABDEL-MALEK, AIMAN",Common Stock
+2019-03-12,PODD,EVP & Chief Technology Officer,BUY,1748.0,74.5,130226.0,"ABDEL-MALEK, AIMAN",Common Stock
+2019-03-12,PODD,EVP & Chief Technology Officer,BUY,19915.0,31.2,621348.0,"ABDEL-MALEK, AIMAN",Common Stock
+2019-03-12,PODD,Director,BUY,5000.0,21.35,106750.0,"FALLON, JOHN A.",Common Stock
+2019-03-12,PODD,EVP & Chief Technology Officer,BUY,5686.0,46.22,262806.92,"ABDEL-MALEK, AIMAN",Common Stock
+2019-03-20,PODD,Director,SELL,5000.0,100.0,500000.0,"FALLON, JOHN A.",Common Stock
+2019-03-20,PODD,Director,BUY,5000.0,21.35,106750.0,"FALLON, JOHN A.",Common Stock
+2019-03-28,PODD,EVP & Chief Technology Officer,SELL,4305.0,94.04,404842.2,"ABDEL-MALEK, AIMAN",Common Stock
+2019-04-02,PODD,"SVP, Secretary and GC",BUY,7395.0,30.98,229097.1,"COLLERAN, DAVID",Common Stock
+2019-04-02,PODD,"SVP, Secretary and GC",SELL,7395.0,94.89,701711.55,"COLLERAN, DAVID",Common Stock
+2019-05-15,PODD,EVP & Chief Operating Officer,SELL,3900.0,104.7825,408651.75,"ALPUCHE, CHARLES",Common Stock
+2019-05-15,PODD,Director,SELL,874.0,102.49,89576.26,"LEMOINE, DAVID A",Common Stock
+2019-05-16,PODD,Director,SELL,8752.0,106.9192,935756.8384,"LEMOINE, DAVID A",Common Stock
+2019-05-16,PODD,Director,BUY,8752.0,26.0,227552.0,"LEMOINE, DAVID A",Common Stock
+2019-05-24,PODD,EVP and CCO,SELL,687.0,108.57,74587.59,"CHRISTENSEN, BRET",Common Stock
+2019-05-31,PODD,Director,BUY,5235.0,28.87,151134.45,"CRAWFORD, SALLY",Common Stock
+2019-05-31,PODD,Director,BUY,3587.0,40.6,145632.2,"CRAWFORD, SALLY",Common Stock
+2019-05-31,PODD,Director,BUY,5525.0,27.37,151219.25,"CRAWFORD, SALLY",Common Stock
+2019-05-31,PODD,Director,BUY,4000.0,30.04,120160.0,"CRAWFORD, SALLY",Common Stock
+2019-05-31,PODD,Director,BUY,4000.0,17.75,71000.0,"CRAWFORD, SALLY",Common Stock
+2019-05-31,PODD,Director,BUY,4000.0,35.11,140440.0,"CRAWFORD, SALLY",Common Stock
+2019-05-31,PODD,Director,SELL,28347.0,108.6,3078484.1999999997,"CRAWFORD, SALLY",Common Stock
+2019-05-31,PODD,Director,BUY,2000.0,20.9,41800.0,"CRAWFORD, SALLY",Common Stock
+2019-06-05,PODD,"Director, President and CEO",SELL,895.0,113.0,101135.0,"PETROVIC, SHACEY",Common Stock
+2019-06-13,PODD,"SVP, RA and Compliance",SELL,496.0,117.98,58518.08,"SPEARS, MICHAEL P",Common Stock
+2019-06-13,PODD,"SVP, RA and Compliance",BUY,2000.0,29.26,58520.0,"SPEARS, MICHAEL P",Common Stock
+2019-08-15,PODD,"SVP, RA and Compliance",SELL,4153.0,146.12,606836.36,"SPEARS, MICHAEL P",Common Stock
+2019-09-03,PODD,"Director, President and CEO",SELL,649.0,152.4,98907.6,"PETROVIC, SHACEY",Common Stock
+2019-11-01,PODD,"Director, President and CEO",SELL,689.0,145.69,100380.41,"PETROVIC, SHACEY",Common Stock
+2019-11-14,PODD,"SVP, RA and Compliance",SELL,181.0,177.5,32127.5,"SPEARS, MICHAEL P",Common Stock
+2019-11-14,PODD,"SVP, RA and Compliance",BUY,1100.0,29.26,32186.0,"SPEARS, MICHAEL P",Common Stock
+2019-11-15,PODD,Director,SELL,5000.0,180.065,900325.0,"FALLON, JOHN A.",Common Stock
+2019-11-15,PODD,Director,BUY,5000.0,21.35,106750.0,"FALLON, JOHN A.",Common Stock
+2019-11-15,PODD,"Director, President and CEO",SELL,554.0,180.22,99841.88,"PETROVIC, SHACEY",Common Stock
+2019-11-15,PODD,"Director, President and CEO",BUY,3417.0,29.26,99981.42,"PETROVIC, SHACEY",Common Stock
+2019-11-18,PODD,Director,SELL,9525.0,181.4087,1727917.8675000002,"FALLON, JOHN A.",Common Stock
+2019-11-18,PODD,Director,BUY,4000.0,30.04,120160.0,"FALLON, JOHN A.",Common Stock
+2019-11-18,PODD,Director,BUY,5525.0,27.37,151219.25,"FALLON, JOHN A.",Common Stock
+2020-01-02,PODD,"Director, President and CEO",SELL,1008.0,169.77,171128.16,"PETROVIC, SHACEY",Common Stock
+2020-01-02,PODD,"Director, President and CEO",BUY,12500.0,30.58,382250.0,"PETROVIC, SHACEY",Common Stock
+2020-01-02,PODD,"Director, President and CEO",SELL,12500.0,169.6298,2120372.5,"PETROVIC, SHACEY",Common Stock
+2020-01-02,PODD,Director,SELL,2884.0,171.24,493856.16000000003,"LEMOINE, DAVID A",Common Stock
+2020-02-14,PODD,"Director, President and CEO",SELL,993.0,212.32,210833.75999999998,"PETROVIC, SHACEY",Common Stock
+2020-02-14,PODD,EVP and CCO,SELL,480.0,212.32,101913.59999999999,"CHRISTENSEN, BRET",Common Stock
+2020-02-14,PODD,"SVP, R&D, New Prod Dev & Comm",SELL,221.0,212.32,46922.72,"BENJAMIN, ERIC",Common Stock
+2020-02-14,PODD,EVP & Chief Operating Officer,SELL,674.0,212.32,143103.68,"ALPUCHE, CHARLES",Common Stock
+2020-02-14,PODD,"SVP, RA and Compliance",SELL,416.0,212.32,88325.12,"SPEARS, MICHAEL P",Common Stock
+2020-02-21,PODD,"Director, President and CEO",SELL,21192.0,212.31,4499273.5200000005,"PETROVIC, SHACEY",Common Stock
+2020-02-21,PODD,"SVP, R&D, New Prod Dev & Comm",SELL,1139.0,212.31,241821.09,"BENJAMIN, ERIC",Common Stock
+2020-02-21,PODD,EVP & Chief Operating Officer,SELL,6398.0,212.31,1358359.3800000001,"ALPUCHE, CHARLES",Common Stock
+2020-02-21,PODD,"SVP, RA and Compliance",SELL,4138.0,212.31,878538.78,"SPEARS, MICHAEL P",Common Stock
+2020-02-26,PODD,"SVP, RA and Compliance",SELL,301.0,180.01,54183.009999999995,"SPEARS, MICHAEL P",Common Stock
+2020-02-26,PODD,"Director, President and CEO",SELL,1124.0,180.01,202331.24,"PETROVIC, SHACEY",Common Stock
+2020-02-26,PODD,"EVP, CFO",SELL,363.0,180.01,65343.63,"MCMILLAN, WAYDE D.",Common Stock
+2020-02-26,PODD,EVP and CCO,SELL,359.0,180.01,64623.59,"CHRISTENSEN, BRET",Common Stock
+2020-02-26,PODD,"SVP, R&D, New Prod Dev & Comm",SELL,142.0,180.01,25561.42,"BENJAMIN, ERIC",Common Stock
+2020-02-26,PODD,EVP & Chief Operating Officer,SELL,903.0,180.01,162549.03,"ALPUCHE, CHARLES",Common Stock
+2020-02-27,PODD,"SVP, RA and Compliance",SELL,13627.0,182.0059,2480194.3993,"SPEARS, MICHAEL P",Common Stock
+2020-02-28,PODD,"EVP, CFO",SELL,2512.0,189.97,477204.64,"MCMILLAN, WAYDE D.",Common Stock
+2020-02-28,PODD,"SVP, RA and Compliance",SELL,664.0,190.0,126160.0,"SPEARS, MICHAEL P",Common Stock
+2020-03-06,PODD,Director,SELL,1042.0,177.49,184944.58000000002,"LEMOINE, DAVID A",Common Stock
+2020-04-01,PODD,"SVP, Secretary and GC",SELL,962.0,159.17,153121.53999999998,"KAPPLES, JOHN W.",Common Stock
+2020-04-16,PODD,"SVP, RA and Compliance",SELL,1449.0,193.76,280758.24,"SPEARS, MICHAEL P",Common Stock
+2020-04-30,PODD,Director,SELL,796.0,195.54,155649.84,"NEVINNY, CORINNE H",Common Stock
+2020-05-01,PODD,Director,SELL,863.0,196.82,169855.66,"NEVINNY, CORINNE H",Common Stock
+2020-05-26,PODD,EVP and CCO,SELL,4663.0,182.63,851603.69,"CHRISTENSEN, BRET",Common Stock
+2020-06-03,PODD,"VP, CAO and Controller",SELL,365.0,181.0,66065.0,"BUDDEN, LAUREN",Common Stock
+2020-07-23,PODD,"SVP, Innovation and Strategy",SELL,8392.0,210.0,1762320.0,"BENJAMIN, ERIC",Common Stock
+2020-07-23,PODD,"SVP, Innovation and Strategy",SELL,6520.0,210.0,1369200.0,"BENJAMIN, ERIC",Common Stock
+2020-07-23,PODD,"SVP, Innovation and Strategy",BUY,6996.0,29.26,204702.96000000002,"BENJAMIN, ERIC",Common Stock
+2020-07-23,PODD,"SVP, Innovation and Strategy",BUY,1396.0,30.02,41907.92,"BENJAMIN, ERIC",Common Stock
+2020-08-12,PODD,EVP and CCO,SELL,5000.0,201.54,1007700.0,"CHRISTENSEN, BRET",Common Stock
+2020-09-01,PODD,EVP & Chief Operating Officer,SELL,3415.0,220.11,751675.65,"ALPUCHE, CHARLES",Common Stock
+2020-10-05,PODD,"Director, President and CEO",SELL,15000.0,233.91,3508650.0,"PETROVIC, SHACEY",Common Stock
+2020-10-05,PODD,"Director, President and CEO",BUY,15000.0,30.58,458700.0,"PETROVIC, SHACEY",Common Stock
+2020-10-09,PODD,"SVP, RA and Compliance",BUY,13350.0,29.87,398764.5,"SPEARS, MICHAEL P",Common Stock
+2020-10-09,PODD,"SVP, RA and Compliance",BUY,8907.0,29.26,260618.82,"SPEARS, MICHAEL P",Common Stock
+2020-10-09,PODD,"SVP, RA and Compliance",SELL,22257.0,246.1,5477447.7,"SPEARS, MICHAEL P",Common Stock
+2020-11-02,PODD,Director,SELL,4000.0,225.0,900000.0,"FALLON, JOHN A.",Common Stock
+2020-11-02,PODD,Director,BUY,4000.0,35.11,140440.0,"FALLON, JOHN A.",Common Stock
+2020-11-04,PODD,Director,SELL,3000.0,230.0,690000.0,"FALLON, JOHN A.",Common Stock
+2020-11-04,PODD,Director,BUY,3000.0,28.87,86610.0,"FALLON, JOHN A.",Common Stock
+2020-11-17,PODD,Director,SELL,1000.0,250.71,250710.0,"LEMOINE, DAVID A",Common Stock
+2020-12-15,PODD,"VP, CAO and Controller",SELL,6.0,241.76,1450.56,"BUDDEN, LAUREN",Common Stock
+2020-12-18,PODD,"Director, President and CEO",BUY,3417.0,29.26,99981.42,"PETROVIC, SHACEY",Common Stock
+2021-01-04,PODD,"Director, President and CEO",SELL,695.0,251.62,174875.9,"PETROVIC, SHACEY",Common Stock
+2021-01-04,PODD,"Director, President and CEO",BUY,15000.0,30.58,458700.0,"PETROVIC, SHACEY",Common Stock
+2021-01-04,PODD,"Director, President and CEO",SELL,15000.0,250.61,3759150.0,"PETROVIC, SHACEY",Common Stock
+2021-02-10,PODD,"SVP, Secretary and GC",SELL,127.0,280.15,35579.049999999996,"KAPPLES, JOHN W.",Common Stock
+2021-02-10,PODD,"SVP, RA and Compliance",SELL,107.0,280.15,29976.05,"SPEARS, MICHAEL P",Common Stock
+2021-02-10,PODD,"Director, President and CEO",SELL,803.0,280.15,224960.44999999998,"PETROVIC, SHACEY",Common Stock
+2021-02-10,PODD,"EVP, CFO",SELL,202.0,280.15,56590.299999999996,"MCMILLAN, WAYDE D.",Common Stock
+2021-02-10,PODD,"SVP, Innovation and Strategy",SELL,107.0,280.15,29976.05,"BENJAMIN, ERIC",Common Stock
+2021-02-10,PODD,"VP, CAO and Controller",SELL,24.0,280.15,6723.599999999999,"BUDDEN, LAUREN",Common Stock
+2021-02-10,PODD,EVP and CCO,SELL,197.0,280.15,55189.549999999996,"CHRISTENSEN, BRET",Common Stock
+2021-02-10,PODD,EVP & Chief Operating Officer,SELL,225.0,280.15,63033.74999999999,"ALPUCHE, CHARLES",Common Stock
+2021-02-12,PODD,"Director, President and CEO",SELL,993.0,289.77,287741.61,"PETROVIC, SHACEY",Common Stock
+2021-02-12,PODD,"SVP, RA and Compliance",SELL,395.0,289.77,114459.15,"SPEARS, MICHAEL P",Common Stock
+2021-02-12,PODD,"SVP, Innovation and Strategy",SELL,197.0,289.77,57084.689999999995,"BENJAMIN, ERIC",Common Stock
+2021-02-12,PODD,EVP and CCO,SELL,538.0,289.77,155896.25999999998,"CHRISTENSEN, BRET",Common Stock
+2021-02-12,PODD,EVP & Chief Operating Officer,SELL,993.0,289.77,287741.61,"ALPUCHE, CHARLES",Common Stock
+2021-02-17,PODD,"Director, President and CEO",SELL,13752.0,279.69,3846296.88,"PETROVIC, SHACEY",Common Stock
+2021-02-17,PODD,"SVP, RA and Compliance",SELL,1323.0,279.69,370029.87,"SPEARS, MICHAEL P",Common Stock
+2021-02-17,PODD,EVP and CCO,SELL,1838.0,279.69,514070.22,"CHRISTENSEN, BRET",Common Stock
+2021-02-17,PODD,EVP & Chief Operating Officer,SELL,6800.0,279.69,1901892.0,"ALPUCHE, CHARLES",Common Stock
+2021-02-17,PODD,"SVP, Innovation and Strategy",SELL,761.0,279.69,212844.09,"BENJAMIN, ERIC",Common Stock
+2021-02-26,PODD,EVP and CCO,SELL,603.0,259.1,156237.30000000002,"CHRISTENSEN, BRET",Common Stock
+2021-02-26,PODD,"EVP, CFO",SELL,346.0,259.1,89648.6,"MCMILLAN, WAYDE D.",Common Stock
+2021-02-26,PODD,"SVP, RA and Compliance",SELL,302.0,259.1,78248.20000000001,"SPEARS, MICHAEL P",Common Stock
+2021-02-26,PODD,EVP & Chief Operating Officer,SELL,903.0,259.1,233967.30000000002,"ALPUCHE, CHARLES",Common Stock
+2021-02-26,PODD,"SVP, Innovation and Strategy",SELL,171.0,259.1,44306.100000000006,"BENJAMIN, ERIC",Common Stock
+2021-02-26,PODD,"Director, President and CEO",SELL,1124.0,259.1,291228.4,"PETROVIC, SHACEY",Common Stock
+2021-03-01,PODD,"EVP, CFO",SELL,2847.0,270.26,769430.22,"MCMILLAN, WAYDE D.",Common Stock
+2021-04-01,PODD,"Director, President and CEO",SELL,15000.0,266.17,3992550.0000000005,"PETROVIC, SHACEY",Common Stock
+2021-04-01,PODD,"Director, President and CEO",BUY,15000.0,30.58,458700.0,"PETROVIC, SHACEY",Common Stock
+2021-04-01,PODD,"SVP, Secretary and GC",SELL,1146.0,264.82,303483.72,"KAPPLES, JOHN W.",Common Stock
+2021-05-13,PODD,Director,SELL,933.0,231.42,215914.86,"NEVINNY, CORINNE H",Common Stock
+2021-05-21,PODD,Director,SELL,2235.0,253.6055,566808.2925,"FALLON, JOHN A.",Common Stock
+2021-05-21,PODD,Director,BUY,2235.0,28.87,64524.450000000004,"FALLON, JOHN A.",Common Stock
+2021-05-21,PODD,Director,SELL,3587.0,253.205,908246.3350000001,"FALLON, JOHN A.",Common Stock
+2021-05-21,PODD,Director,BUY,3587.0,40.6,145632.2,"FALLON, JOHN A.",Common Stock
+2021-06-01,PODD,"SVP, Chief HR Officer",SELL,234.0,264.47,61885.98,"MANEA, DAN",Common Stock
+2021-06-02,PODD,EVP & Chief Operating Officer,SELL,1900.0,262.67,499073.00000000006,"ALPUCHE, CHARLES",Common Stock
+2021-06-03,PODD,"VP, CAO and Controller",SELL,365.0,263.84,96301.59999999999,"BUDDEN, LAUREN",Common Stock
+2021-06-04,PODD,Director,SELL,10000.0,269.075,2690750.0,"CRAWFORD, SALLY",Common Stock
+2021-07-01,PODD,"Director, President and CEO",SELL,15000.0,278.56,4178400.0,"PETROVIC, SHACEY",Common Stock
+2021-07-01,PODD,EVP & Chief Operating Officer,SELL,2250.0,278.67,627007.5,"ALPUCHE, CHARLES",Common Stock
+2021-07-01,PODD,"Director, President and CEO",BUY,15000.0,30.58,458700.0,"PETROVIC, SHACEY",Common Stock
+2021-08-09,PODD,Director,SELL,1286.0,277.48,356839.28,"LEMOINE, DAVID A",Common Stock
+2021-08-17,PODD,EVP & Chief Operating Officer,SELL,4000.0,300.44,1201760.0,"ALPUCHE, CHARLES",Common Stock
+2021-08-18,PODD,EVP and CCO,BUY,3000.0,42.82,128460.0,"CHRISTENSEN, BRET",Common Stock
+2021-08-26,PODD,EVP and CCO,SELL,3000.0,294.13,882390.0,"CHRISTENSEN, BRET",Common Stock
+2021-10-01,PODD,"Director, President and CEO",BUY,7564.0,29.26,221322.64,"PETROVIC, SHACEY",Common Stock
+2021-10-01,PODD,"Director, President and CEO",SELL,15000.0,282.87,4243050.0,"PETROVIC, SHACEY",Common Stock
+2021-10-01,PODD,"Director, President and CEO",BUY,7436.0,30.58,227392.87999999998,"PETROVIC, SHACEY",Common Stock
+2021-11-11,PODD,Director,BUY,5235.0,28.87,151134.45,"LEMOINE, DAVID A",Common Stock
+2021-11-11,PODD,Director,BUY,3587.0,40.6,145632.2,"LEMOINE, DAVID A",Common Stock
+2021-11-11,PODD,Director,SELL,4565.0,314.96,1437792.4,"LEMOINE, DAVID A",Common Stock
+2021-12-06,PODD,"SVP, RA and Compliance",BUY,2350.0,29.26,68761.0,"SPEARS, MICHAEL P",Common Stock
+2021-12-06,PODD,"SVP, RA and Compliance",SELL,266.0,257.6,68521.6,"SPEARS, MICHAEL P",Common Stock
+2021-12-16,PODD,"Director, President and CEO",BUY,2163.0,46.22,99973.86,"PETROVIC, SHACEY",Common Stock
+2021-12-31,PODD,"EVP, CFO",SELL,500.0,268.88,134440.0,"MCMILLAN, WAYDE D.",Common Stock
+2021-12-31,PODD,"EVP, CFO",SELL,90.0,271.23,24410.7,"MCMILLAN, WAYDE D.",Common Stock
+2021-12-31,PODD,"EVP, CFO",SELL,400.0,267.82,107128.0,"MCMILLAN, WAYDE D.",Common Stock
+2021-12-31,PODD,"EVP, CFO",SELL,193.0,266.37,51409.41,"MCMILLAN, WAYDE D.",Common Stock
+2021-12-31,PODD,"EVP, CFO",SELL,672.0,270.19,181567.68,"MCMILLAN, WAYDE D.",Common Stock
+2022-01-03,PODD,"Director, President and CEO",SELL,693.0,275.7,191060.1,"PETROVIC, SHACEY",Common Stock
+2022-01-05,PODD,"Director, President and CEO",BUY,15000.0,29.26,438900.0,"PETROVIC, SHACEY",Common Stock
+2022-01-05,PODD,"Director, President and CEO",SELL,15000.0,264.97,3974550.0000000005,"PETROVIC, SHACEY",Common Stock
+2022-02-10,PODD,EVP and CCO,SELL,199.0,252.81,50309.19,"CHRISTENSEN, BRET",Common Stock
+2022-02-10,PODD,"EVP, CFO",SELL,205.0,252.81,51826.05,"MCMILLAN, WAYDE D.",Common Stock
+2022-02-10,PODD,"Director, President and CEO",SELL,803.0,252.81,203006.43,"PETROVIC, SHACEY",Common Stock
+2022-02-10,PODD,"SVP, RA and Compliance",SELL,107.0,252.81,27050.670000000002,"SPEARS, MICHAEL P",Common Stock
+2022-02-10,PODD,EVP & Chief Operating Officer,SELL,228.0,252.81,57640.68,"ALPUCHE, CHARLES",Common Stock
+2022-02-10,PODD,"VP, CAO and Controller",SELL,24.0,252.81,6067.4400000000005,"BUDDEN, LAUREN",Common Stock
+2022-02-10,PODD,SVP and General Counsel,SELL,129.0,252.81,32612.49,"KAPPLES, JOHN W.",Common Stock
+2022-02-17,PODD,"EVP, CFO",SELL,153.0,240.81,36843.93,"MCMILLAN, WAYDE D.",Common Stock
+2022-02-17,PODD,"SVP, RA and Compliance",SELL,63.0,240.81,15171.03,"SPEARS, MICHAEL P",Common Stock
+2022-02-17,PODD,EVP & Chief Operating Officer,SELL,171.0,240.81,41178.51,"ALPUCHE, CHARLES",Common Stock
+2022-02-17,PODD,EVP and CCO,SELL,153.0,240.81,36843.93,"CHRISTENSEN, BRET",Common Stock
+2022-02-17,PODD,SVP and General Counsel,SELL,108.0,240.81,26007.48,"KAPPLES, JOHN W.",Common Stock
+2022-02-17,PODD,"VP, CAO and Controller",SELL,29.0,240.81,6983.49,"BUDDEN, LAUREN",Common Stock
+2022-02-17,PODD,"Director, President and CEO",SELL,846.0,240.81,203725.26,"PETROVIC, SHACEY",Common Stock
+2022-02-17,PODD,"SVP, Chief HR Officer",SELL,73.0,240.81,17579.13,"MANEA, DAN",Common Stock
+2022-02-18,PODD,"EVP, CFO",SELL,2673.0,234.18,625963.14,"MCMILLAN, WAYDE D.",Common Stock
+2022-02-18,PODD,SVP and General Counsel,SELL,1220.0,234.18,285699.60000000003,"KAPPLES, JOHN W.",Common Stock
+2022-02-18,PODD,EVP & Chief Operating Officer,SELL,4989.0,234.18,1168324.02,"ALPUCHE, CHARLES",Common Stock
+2022-02-18,PODD,"SVP, RA and Compliance",SELL,1247.0,234.18,292022.46,"SPEARS, MICHAEL P",Common Stock
+2022-02-18,PODD,"Director, President and CEO",SELL,10112.0,234.18,2368028.16,"PETROVIC, SHACEY",Common Stock
+2022-02-18,PODD,EVP and CCO,SELL,2787.0,234.18,652659.66,"CHRISTENSEN, BRET",Common Stock
+2022-02-18,PODD,"VP, CAO and Controller",SELL,317.0,234.18,74235.06,"BUDDEN, LAUREN",Common Stock
+2022-02-26,PODD,EVP and CCO,SELL,542.0,262.37,142204.54,"CHRISTENSEN, BRET",Common Stock
+2022-02-26,PODD,"EVP, CFO",SELL,522.0,262.37,136957.14,"MCMILLAN, WAYDE D.",Common Stock
+2022-02-26,PODD,EVP & Chief Operating Officer,SELL,903.0,262.37,236920.11000000002,"ALPUCHE, CHARLES",Common Stock
+2022-02-26,PODD,"SVP, RA and Compliance",SELL,302.0,262.37,79235.74,"SPEARS, MICHAEL P",Common Stock
+2022-02-26,PODD,"Director, President and CEO",SELL,1124.0,262.37,294903.88,"PETROVIC, SHACEY",Common Stock
+2022-03-01,PODD,"EVP, CFO",SELL,3134.0,260.84,817472.5599999999,"MCMILLAN, WAYDE D.",Common Stock
+2022-04-01,PODD,"EVP, CFO",SELL,1455.0,275.6,400998.00000000006,"MCMILLAN, WAYDE D.",Common Stock
+2022-04-01,PODD,SVP and General Counsel,SELL,1453.0,279.02,405416.06,"KAPPLES, JOHN W.",Common Stock
+2022-04-04,PODD,"Director, President and CEO",BUY,15000.0,29.26,438900.0,"PETROVIC, SHACEY",Common Stock
+2022-04-04,PODD,"Director, President and CEO",SELL,15000.0,273.25,4098750.0,"PETROVIC, SHACEY",Common Stock
+2022-06-01,PODD,"SVP, Chief HR Officer",SELL,234.0,207.38,48526.92,"MANEA, DAN",Common Stock
+2022-06-03,PODD,"Group VP, CAO and Controller",SELL,366.0,212.57,77800.62,"BUDDEN, LAUREN",Common Stock
+2022-06-06,PODD,EVP & Chief Operating Officer,SELL,6000.0,215.32,1291920.0,"ALPUCHE, CHARLES",Common Stock
+2022-07-01,PODD,Director,BUY,7930.0,46.22,366524.6,"PETROVIC, SHACEY",Common Stock
+2022-07-01,PODD,Director,BUY,7070.0,29.26,206868.2,"PETROVIC, SHACEY",Common Stock
+2022-07-01,PODD,Director,SELL,15000.0,222.9,3343500.0,"PETROVIC, SHACEY",Common Stock
+2022-08-24,PODD,EVP and CCO,SELL,2900.0,264.24,766296.0,"CHRISTENSEN, BRET",Common Stock
+2022-10-03,PODD,Director,BUY,15000.0,46.22,693300.0,"PETROVIC, SHACEY",Common Stock
+2022-10-03,PODD,Director,SELL,15000.0,231.8,3477000.0,"PETROVIC, SHACEY",Common Stock
+2022-11-04,PODD,"SVP, RA and Compliance",SELL,13658.0,308.99,4220185.42,"SPEARS, MICHAEL P",Common Stock
+2022-11-04,PODD,"SVP, RA and Compliance",BUY,6290.0,46.22,290723.8,"SPEARS, MICHAEL P",Common Stock
+2022-11-18,PODD,EVP and CCO,SELL,3000.0,295.15,885449.9999999999,"CHRISTENSEN, BRET",Common Stock
+2022-11-18,PODD,"SVP, Chief HR Officer",SELL,200.0,294.62,58924.0,"MANEA, DAN",Common Stock
+2022-12-12,PODD,"SVP, RA and Compliance",BUY,1385.0,29.26,40525.1,"SPEARS, MICHAEL P",Common Stock
+2022-12-12,PODD,"SVP, RA and Compliance",SELL,462.0,299.54,138387.48,"SPEARS, MICHAEL P",Common Stock
+2022-12-12,PODD,"SVP, RA and Compliance",BUY,2122.0,46.22,98078.84,"SPEARS, MICHAEL P",Common Stock
+2022-12-16,PODD,Director,BUY,1094.0,74.5,81503.0,"PETROVIC, SHACEY",Common Stock
+2023-01-03,PODD,"EVP, CFO",SELL,1359.0,286.43,389258.37,"MCMILLAN, WAYDE D.",Common Stock
+2023-01-04,PODD,Director,SELL,15000.0,281.88,4228200.0,"PETROVIC, SHACEY",Common Stock
+2023-01-04,PODD,Director,BUY,10445.0,46.22,482767.89999999997,"PETROVIC, SHACEY",Common Stock
+2023-01-04,PODD,Director,BUY,4555.0,74.5,339347.5,"PETROVIC, SHACEY",Common Stock
+2023-02-10,PODD,"EVP, Innovation and Strategy",SELL,108.0,294.83,31841.64,"BENJAMIN, ERIC",Common Stock
+2023-02-10,PODD,SVP and General Counsel,SELL,129.0,294.83,38033.07,"KAPPLES, JOHN W.",Common Stock
+2023-02-10,PODD,"Director, Advisor",SELL,713.0,294.83,210213.78999999998,"PETROVIC, SHACEY",Common Stock
+2023-02-10,PODD,EVP and CCO,SELL,199.0,294.83,58671.17,"CHRISTENSEN, BRET",Common Stock
+2023-02-10,PODD,"EVP, CFO",SELL,205.0,294.83,60440.149999999994,"MCMILLAN, WAYDE D.",Common Stock
+2023-02-10,PODD,"Group VP, CAO and Controller",SELL,24.0,294.83,7075.92,"BUDDEN, LAUREN",Common Stock
+2023-02-10,PODD,Advisor,SELL,214.0,294.83,63093.619999999995,"ALPUCHE, CHARLES",Common Stock
+2023-02-10,PODD,Advisor,SELL,114.0,294.83,33610.619999999995,"SPEARS, MICHAEL P",Common Stock
+2023-02-17,PODD,"EVP, CFO",SELL,1092.0,296.0,323232.0,"MCMILLAN, WAYDE D.",Common Stock
+2023-02-17,PODD,"SVP, Chief HR Officer",SELL,73.0,296.0,21608.0,"MANEA, DAN",Common Stock
+2023-02-17,PODD,"SVP, Chief HR Officer",SELL,396.0,296.0,117216.0,"MANEA, DAN",Common Stock
+2023-02-17,PODD,Advisor,SELL,1233.0,296.0,364968.0,"ALPUCHE, CHARLES",Common Stock
+2023-02-17,PODD,Advisor,SELL,160.0,296.0,47360.0,"ALPUCHE, CHARLES",Common Stock
+2023-02-17,PODD,"EVP, Innovation and Strategy",SELL,457.0,296.0,135272.0,"BENJAMIN, ERIC",Common Stock
+2023-02-17,PODD,"EVP, Innovation and Strategy",SELL,87.0,296.0,25752.0,"BENJAMIN, ERIC",Common Stock
+2023-02-17,PODD,"Group VP, CAO and Controller",SELL,29.0,296.0,8584.0,"BUDDEN, LAUREN",Common Stock
+2023-02-17,PODD,"Group VP, CAO and Controller",SELL,110.0,296.0,32560.0,"BUDDEN, LAUREN",Common Stock
+2023-02-17,PODD,SVP and General Counsel,SELL,548.0,296.0,162208.0,"KAPPLES, JOHN W.",Common Stock
+2023-02-17,PODD,EVP and CCO,SELL,1041.0,296.0,308136.0,"CHRISTENSEN, BRET",Common Stock
+2023-02-17,PODD,SVP and General Counsel,SELL,109.0,296.0,32264.0,"KAPPLES, JOHN W.",Common Stock
+2023-02-17,PODD,Advisor,SELL,66.0,296.0,19536.0,"SPEARS, MICHAEL P",Common Stock
+2023-02-17,PODD,Advisor,SELL,488.0,296.0,144448.0,"SPEARS, MICHAEL P",Common Stock
+2023-02-17,PODD,"Director, Advisor",SELL,751.0,296.0,222296.0,"PETROVIC, SHACEY",Common Stock
+2023-02-17,PODD,"Director, Advisor",SELL,5383.0,296.0,1593368.0,"PETROVIC, SHACEY",Common Stock
+2023-02-17,PODD,"EVP, CFO",SELL,153.0,296.0,45288.0,"MCMILLAN, WAYDE D.",Common Stock
+2023-02-17,PODD,EVP and CCO,SELL,153.0,296.0,45288.0,"CHRISTENSEN, BRET",Common Stock
+2023-02-28,PODD,"Group VP, CAO and Controller",SELL,135.0,276.36,37308.6,"BUDDEN, LAUREN",Common Stock
+2023-02-28,PODD,"EVP, Innovation and Strategy",SELL,148.0,276.36,40901.28,"BENJAMIN, ERIC",Common Stock
+2023-02-28,PODD,SVP and General Counsel,SELL,134.0,276.36,37032.240000000005,"KAPPLES, JOHN W.",Common Stock
+2023-02-28,PODD,Advisor,BUY,4000.0,31.21,124840.0,"ALPUCHE, CHARLES",Common Stock
+2023-02-28,PODD,Advisor,SELL,3800.0,278.81,1059478.0,"ALPUCHE, CHARLES",Common Stock
+2023-02-28,PODD,"SVP, Chief HR Officer",SELL,70.0,276.36,19345.2,"MANEA, DAN",Common Stock
+2023-02-28,PODD,"EVP, CFO",SELL,350.0,276.36,96726.0,"MCMILLAN, WAYDE D.",Common Stock
+2023-02-28,PODD,EVP and CCO,SELL,349.0,276.36,96449.64,"CHRISTENSEN, BRET",Common Stock
+2023-02-28,PODD,Advisor,SELL,335.0,276.36,92580.6,"ALPUCHE, CHARLES",Common Stock
+2023-02-28,PODD,Advisor,SELL,69.0,276.36,19068.84,"SPEARS, MICHAEL P",Common Stock
+2023-02-28,PODD,Advisor,SELL,200.0,279.01,55802.0,"ALPUCHE, CHARLES",Common Stock
+2023-02-28,PODD,"Director, Advisor",SELL,833.0,276.36,230207.88,"PETROVIC, SHACEY",Common Stock
+2023-03-01,PODD,"Director, Advisor",SELL,15000.0,276.63,4149450.0,"PETROVIC, SHACEY",Common Stock
+2023-03-09,PODD,Advisor,SELL,345.0,287.52,99194.4,"SPEARS, MICHAEL P",Common Stock
+2023-03-09,PODD,Advisor,BUY,4000.0,31.21,124840.0,"ALPUCHE, CHARLES",Common Stock
+2023-03-09,PODD,Advisor,BUY,1336.0,74.5,99532.0,"SPEARS, MICHAEL P",Common Stock
+2023-03-09,PODD,Advisor,SELL,4000.0,290.9,1163600.0,"ALPUCHE, CHARLES",Common Stock
+2023-03-13,PODD,Advisor,SELL,23401.0,305.15,7140815.149999999,"ALPUCHE, CHARLES",Common Stock
+2023-03-13,PODD,Advisor,BUY,23401.0,31.21,730345.21,"ALPUCHE, CHARLES",Common Stock
+2023-03-14,PODD,Advisor,SELL,47.0,309.1,14527.7,"ALPUCHE, CHARLES",Common Stock
+2023-03-14,PODD,Advisor,SELL,1246.0,309.05,385076.3,"ALPUCHE, CHARLES",Common Stock
+2023-03-14,PODD,Advisor,BUY,316.0,46.22,14605.52,"ALPUCHE, CHARLES",Common Stock
+2023-03-14,PODD,Advisor,BUY,12347.0,31.21,385349.87,"ALPUCHE, CHARLES",Common Stock
+2023-04-03,PODD,"EVP, CFO",SELL,1255.0,318.31,399479.05,"MCMILLAN, WAYDE D.",Common Stock
+2023-05-23,PODD,Director,BUY,3300.0,304.75,1005675.0,"MINOGUE, MICHAEL R",Common Stock
+2023-06-01,PODD,"SVP, Chief HR Officer",SELL,332.0,272.48,90463.36,"MANEA, DAN",Common Stock
+2023-06-01,PODD,Director,SELL,15000.0,271.56,4073400.0,"PETROVIC, SHACEY",Common Stock
+2023-06-01,PODD,"Director, President and CEO",SELL,3898.0,272.48,1062127.04,"HOLLINGSHEAD, JAMES",Common Stock
+2023-06-05,PODD,Director,SELL,500.0,283.38,141690.0,"BORIO, LUCIANA",Common Stock
+2023-06-20,PODD,"SVP, Chief HR Officer",SELL,175.0,290.0,50750.0,"MANEA, DAN",Common Stock
+2023-07-03,PODD,"EVP, CFO",SELL,1388.0,282.94,392720.72,"MCMILLAN, WAYDE D.",Common Stock
+2023-08-28,PODD,"Director, President and CEO",BUY,5550.0,181.41,1006825.5,"HOLLINGSHEAD, JAMES",Common Stock
+2023-09-19,PODD,"SVP, Global Operations",BUY,1.0,168.92,168.92,"SINGH, PREM",Common Stock
+2023-11-13,PODD,Director,SELL,12925.0,165.02,2132883.5,"PETROVIC, SHACEY",Common Stock
+2023-11-13,PODD,Director,SELL,20000.0,164.33,3286600.0000000005,"PETROVIC, SHACEY",Common Stock
+2023-11-13,PODD,Director,BUY,11838.0,74.5,881931.0,"PETROVIC, SHACEY",Common Stock
+2023-11-13,PODD,Director,BUY,8162.0,92.11,751801.82,"PETROVIC, SHACEY",Common Stock
+2023-11-13,PODD,Director,SELL,2075.0,165.02,342416.5,"PETROVIC, SHACEY",Common Stock
+2023-12-15,PODD,Director,SELL,72.0,207.08,14909.76,"BORIO, LUCIANA",Common Stock
+2024-01-03,PODD,"SVP, Reg, Quality & Compliance",SELL,144.0,194.66,28031.04,"COUSIN, LAETITIA",Common Stock
+2024-01-10,PODD,"SVP, Global Operations",SELL,344.0,205.07,70544.08,"SINGH, PREM",Common Stock
+2024-02-20,PODD,SVP & Chief Technology Officer,SELL,245.0,192.21,47091.450000000004,"FIELD, MARK N",Common Stock
+2024-02-20,PODD,"SVP, Chief HR Officer",SELL,73.0,191.01,13943.73,"MANEA, DAN",Common Stock
+2024-02-20,PODD,"EVP, Innovation and Strategy",SELL,104.0,191.01,19865.04,"BENJAMIN, ERIC",Common Stock
+2024-02-20,PODD,"Group VP, CAO and Controller",SELL,183.0,192.21,35174.43,"BUDDEN, LAUREN",Common Stock
+2024-02-20,PODD,"Group VP, CAO and Controller",SELL,29.0,191.01,5539.29,"BUDDEN, LAUREN",Common Stock
+2024-02-20,PODD,SVP and General Counsel,SELL,734.0,192.21,141082.14,"KAPPLES, JOHN W.",Common Stock
+2024-02-20,PODD,SVP and General Counsel,SELL,130.0,191.01,24831.3,"KAPPLES, JOHN W.",Common Stock
+2024-02-20,PODD,"SVP, Chief HR Officer",SELL,423.0,192.21,81304.83,"MANEA, DAN",Common Stock
+2024-02-20,PODD,"EVP, Innovation and Strategy",SELL,591.0,192.21,113596.11,"BENJAMIN, ERIC",Common Stock
+2024-02-28,PODD,Director,BUY,11609.0,92.11,1069304.99,"PETROVIC, SHACEY",Common Stock
+2024-02-28,PODD,SVP & Chief Technology Officer,SELL,134.0,163.6,21922.399999999998,"FIELD, MARK N",Common Stock
+2024-02-28,PODD,"SVP, Global Operations",SELL,90.0,163.6,14724.0,"SINGH, PREM",Common Stock
+2024-02-28,PODD,SVP and General Counsel,SELL,263.0,163.6,43026.799999999996,"KAPPLES, JOHN W.",Common Stock
+2024-02-28,PODD,"Director, President and CEO",SELL,908.0,163.6,148548.8,"HOLLINGSHEAD, JAMES",Common Stock
+2024-02-28,PODD,"SVP, Reg, Quality & Compliance",SELL,62.0,163.6,10143.199999999999,"COUSIN, LAETITIA",Common Stock
+2024-02-28,PODD,"EVP, CPXPO",SELL,325.0,163.6,53170.0,"BENJAMIN, ERIC",Common Stock
+2024-02-28,PODD,Interim CFO and Treasurer,SELL,233.0,163.6,38118.799999999996,"BUDDEN, LAUREN",Common Stock
+2024-02-28,PODD,Director,SELL,11609.0,162.92,1891338.2799999998,"PETROVIC, SHACEY",Common Stock
+2024-02-28,PODD,"SVP, Chief HR Officer",SELL,168.0,163.6,27484.8,"MANEA, DAN",Common Stock
+2024-05-28,PODD,Director,BUY,5525.0,27.37,151219.25,"SCANNELL, TIMOTHY J",Common Stock
+2024-05-28,PODD,Director,BUY,5235.0,28.87,151134.45,"SCANNELL, TIMOTHY J",Common Stock
+2024-05-28,PODD,Director,SELL,3300.0,180.9,596970.0,"SCANNELL, TIMOTHY J",Common Stock
+2024-05-28,PODD,Director,BUY,3587.0,40.6,145632.2,"SCANNELL, TIMOTHY J",Common Stock
+2024-05-28,PODD,Director,BUY,3920.0,36.38,142609.6,"SCANNELL, TIMOTHY J",Common Stock
+2024-05-31,PODD,"Director, President and CEO",SELL,3973.0,177.19,703975.87,"HOLLINGSHEAD, JAMES",Common Stock
+2024-06-04,PODD,Director,SELL,360.0,182.58,65728.8,"BORIO, LUCIANA",Common Stock
+2024-06-10,PODD,SVP & Chief Technology Officer,SELL,2131.0,190.43,405806.33,"FIELD, MARK N",Common Stock
+2024-06-10,PODD,Director,SELL,7000.0,190.51,1333570.0,"SCANNELL, TIMOTHY J",Common Stock
+2024-06-14,PODD,SVP & Chief Technology Officer,SELL,1500.0,199.96,299940.0,"FIELD, MARK N",Common Stock
+2024-06-28,PODD,SVP & Chief Technology Officer,SELL,141.0,201.8,28453.800000000003,"FIELD, MARK N",Common Stock
+2024-08-28,PODD,SVP & Chief Technology Officer,SELL,1387.0,203.0,281561.0,"FIELD, MARK N",Common Stock
+2024-08-29,PODD,"EVP, CFO & Treasurer",BUY,100.0,206.0,20600.0,"CHADWICK, ANA MARIA",Common Stock
+2024-08-30,PODD,"SVP, Global Operations",SELL,1824.0,202.27,368940.48000000004,"SINGH, PREM",Common Stock
+2024-08-30,PODD,SVP & Chief Technology Officer,SELL,203.0,202.77,41162.310000000005,"FIELD, MARK N",Common Stock
+2024-09-09,PODD,"Group VP, CAO and Controller",SELL,1506.0,221.41,333443.46,"BUDDEN, LAUREN",Common Stock
+2024-09-09,PODD,SVP & Chief Technology Officer,SELL,1383.0,220.87,305463.21,"FIELD, MARK N",Common Stock
+2024-09-10,PODD,Director,SELL,5000.0,225.84,1129200.0,"SCANNELL, TIMOTHY J",Common Stock
+2024-09-11,PODD,Director,BUY,7628.0,29.87,227848.36000000002,"HOPFIELD, JESSICA",Common Stock
+2024-09-11,PODD,Director,SELL,7628.0,225.26,1718283.28,"HOPFIELD, JESSICA",Common Stock
+2024-11-12,PODD,Director,SELL,508.0,274.8,139598.4,"BORIO, LUCIANA",Common Stock
+2024-12-10,PODD,"Group VP, CAO and Controller",SELL,915.0,275.62,252192.30000000002,"BUDDEN, LAUREN",Common Stock
+2024-12-16,PODD,"EVP, CPXPO",SELL,4362.0,267.6,1167271.2000000002,"BENJAMIN, ERIC",Common Stock
+2025-01-03,PODD,"SVP, Reg, Quality & Compliance",SELL,143.0,266.3,38080.9,"COUSIN, LAETITIA",Common Stock
+2025-01-10,PODD,"SVP, Global Operations",SELL,336.0,271.83,91334.87999999999,"SINGH, PREM",Common Stock
+2025-01-21,PODD,"EVP, CPXPO",BUY,3371.0,74.5,251139.5,"BENJAMIN, ERIC",Common Stock
+2025-01-21,PODD,"EVP, CPXPO",SELL,12394.0,280.0,3470320.0,"BENJAMIN, ERIC",Common Stock
+2025-01-21,PODD,"EVP, CPXPO",BUY,1704.0,46.22,78758.88,"BENJAMIN, ERIC",Common Stock
+2025-02-17,PODD,SVP & Chief Technology Officer,SELL,699.0,280.56,196111.44,"FIELD, MARK N",Common Stock
+2025-02-17,PODD,"EVP, CPXPO",SELL,2265.0,280.56,635468.4,"BENJAMIN, ERIC",Common Stock
+2025-02-17,PODD,"Director, President and CEO",SELL,18019.0,280.56,5055410.64,"HOLLINGSHEAD, JAMES",Common Stock
+2025-02-17,PODD,SVP and General Counsel,SELL,1536.0,280.56,430940.16000000003,"KAPPLES, JOHN W.",Common Stock
+2025-02-17,PODD,"SVP, Global Operations",SELL,281.0,280.56,78837.36,"SINGH, PREM",Common Stock
+2025-02-17,PODD,"SVP, Chief HR Officer",SELL,722.0,280.56,202564.32,"MANEA, DAN",Common Stock
+2025-02-17,PODD,"Group VP, CAO and Controller",SELL,443.0,280.56,124288.08,"BUDDEN, LAUREN",Common Stock
+2025-02-27,PODD,"EVP, CPXO",SELL,644.0,267.09,172005.96,"BENJAMIN, ERIC",Common Stock
+2025-02-27,PODD,"SVP, Reg, Quality & Compliance",SELL,205.0,267.09,54753.45,"COUSIN, LAETITIA",Common Stock
+2025-02-27,PODD,SVP and General Counsel,SELL,426.0,267.09,113780.34,"KAPPLES, JOHN W.",Common Stock
+2025-02-27,PODD,"SVP, Chief HR Officer",SELL,238.0,267.09,63567.41999999999,"MANEA, DAN",Common Stock
+2025-02-27,PODD,"SVP, Global Operations",SELL,207.0,267.09,55287.63,"SINGH, PREM",Common Stock
+2025-02-27,PODD,"Group VP, CAO and Controller",SELL,138.0,267.09,36858.42,"BUDDEN, LAUREN",Common Stock
+2025-02-27,PODD,"Director, President and CEO",SELL,2074.0,267.09,553944.6599999999,"HOLLINGSHEAD, JAMES",Common Stock
+2025-02-27,PODD,SVP & Chief Technology Officer,SELL,368.0,267.09,98289.12,"FIELD, MARK N",Common Stock
+2025-02-28,PODD,SVP and General Counsel,SELL,397.0,272.27,108091.18999999999,"KAPPLES, JOHN W.",Common Stock
+2025-02-28,PODD,"EVP, CPXO",SELL,492.0,272.27,133956.84,"BENJAMIN, ERIC",Common Stock
+2025-02-28,PODD,"Group VP, CAO and Controller",SELL,234.0,272.27,63711.17999999999,"BUDDEN, LAUREN",Common Stock
+2025-02-28,PODD,"SVP, Global Operations",SELL,90.0,272.27,24504.3,"SINGH, PREM",Common Stock
+2025-02-28,PODD,"Director, President and CEO",SELL,1160.0,272.27,315833.19999999995,"HOLLINGSHEAD, JAMES",Common Stock
+2025-02-28,PODD,SVP & Chief Technology Officer,SELL,136.0,272.27,37028.72,"FIELD, MARK N",Common Stock
+2025-02-28,PODD,"SVP, Reg, Quality & Compliance",SELL,54.0,272.27,14702.579999999998,"COUSIN, LAETITIA",Common Stock
+2025-02-28,PODD,"SVP, Chief HR Officer",SELL,168.0,272.27,45741.36,"MANEA, DAN",Common Stock
+2025-03-03,PODD,"EVP, CPXO",BUY,1875.0,74.5,139687.5,"BENJAMIN, ERIC",Common Stock
+2025-03-03,PODD,"EVP, CPXO",BUY,3271.0,46.22,151185.62,"BENJAMIN, ERIC",Common Stock
+2025-03-25,PODD,Director,SELL,1825.0,275.0,501875.0,"FREDERICK, WAYNE A.I.",Common Stock
+2025-04-28,PODD,Former President and CEO,SELL,3587.0,259.52,930898.24,"HOLLINGSHEAD, JAMES",Common Stock
+2025-05-01,PODD,"EVP, CFO & Treasurer",SELL,1765.0,250.25,441691.25,"CHADWICK, ANA MARIA",Common Stock
+2025-05-13,PODD,"Director, President and CEO",BUY,24150.0,314.46,7594208.999999999,"MCEVOY, ASHLEY",Employee Stock Option (Right to Buy)
+2025-05-13,PODD,Director,BUY,5235.0,28.87,151134.45,"HOPFIELD, JESSICA",Common Stock
+2025-05-13,PODD,Director,SELL,5235.0,317.54,1662321.9000000001,"HOPFIELD, JESSICA",Common Stock
+2025-05-13,PODD,"EVP, CPXO",BUY,3001.0,92.11,276422.11,"BENJAMIN, ERIC",Common Stock
+2025-05-13,PODD,"EVP, CPXO",SELL,3001.0,320.0,960320.0,"BENJAMIN, ERIC",Common Stock
+2025-05-14,PODD,SVP and General Counsel,SELL,5278.0,318.47,1680884.6600000001,"KAPPLES, JOHN W.",Common Stock
+2025-05-14,PODD,SVP and General Counsel,BUY,5278.0,95.43,503679.54000000004,"KAPPLES, JOHN W.",Common Stock
+2025-06-09,PODD,Director,SELL,481.0,305.73,147056.13,"BORIO, LUCIANA",Common Stock
+2025-06-13,PODD,"SVP, Chief HR Officer",SELL,1300.0,300.05,390065.0,"MANEA, DAN",Common Stock
+2025-06-13,PODD,"SVP, Global Operations",BUY,1257.0,166.62,209441.34,"SINGH, PREM",Common Stock
+2025-06-13,PODD,"SVP, Global Operations",SELL,2327.0,300.05,698216.35,"SINGH, PREM",Common Stock
+2025-08-07,PODD,"SVP, Global Operations",BUY,585.0,264.69,154843.65,"SINGH, PREM",Common Stock
+2025-08-07,PODD,"SVP, Global Operations",SELL,1343.0,320.0,429760.0,"SINGH, PREM",Common Stock
+2025-08-07,PODD,"SVP, Global Operations",BUY,758.0,276.36,209480.88,"SINGH, PREM",Common Stock
+2025-08-21,PODD,"EVP, CPXO",SELL,4263.0,332.23,1416296.49,"BENJAMIN, ERIC",Common Stock
+2025-09-08,PODD,"SVP, Reg, Quality & Compliance",SELL,797.0,348.81,278001.57,"COUSIN, LAETITIA",Common Stock
+2025-09-08,PODD,"SVP, Reg, Quality & Compliance",BUY,256.0,166.6,42649.6,"COUSIN, LAETITIA",Common Stock
+2025-09-08,PODD,"SVP, Reg, Quality & Compliance",BUY,541.0,276.36,149510.76,"COUSIN, LAETITIA",Common Stock
+2025-09-08,PODD,"SVP, Global Operations",SELL,687.0,347.49,238725.63,"SINGH, PREM",Common Stock
+2025-10-01,PODD,EVP & CFO,BUY,1641.0,305.98,502113.18000000005,"PEASE, FLAVIA",Employee Stock Option (Right to Buy)
+2025-12-05,PODD,Director,BUY,962.0,311.73,299884.26,"STONESIFER, TIMOTHY C.",Common Stock
+2025-12-15,PODD,Director,SELL,1851.0,293.09,542509.59,"FREDERICK, WAYNE A.I.",Common Stock

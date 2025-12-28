@@ -1,0 +1,1023 @@
+date,symbol,insider_title,transaction_type,shares,price,value,executive,security_type
+2003-01-15,FCF,Director,BUY,1770.0,11.24,19894.8,"CHARLEY, RAY T",Common Stock
+2003-01-15,FCF,"Director, President & CEO",BUY,17.0,11.24,191.08,"ODELL, JOSEPH E",Common Stock
+2003-01-15,FCF,Sr.Exec.VP & COO,BUY,98.0,11.24,1101.52,"THOMCHICK, GERARD M",Common Stock
+2003-01-15,FCF,"Director, President & CEO",BUY,4.0,11.24,44.96,"ODELL, JOSEPH E",Common Stock
+2003-04-15,FCF,Director,BUY,104.0,11.19,1163.76,"SINGER, LAURIE STERN",Common Stock
+2003-04-15,FCF,Sr.Exec.VP & COO,BUY,101.0,11.19,1130.19,"THOMCHICK, GERARD M",Common Stock
+2003-04-15,FCF,"Director, President & CEO",BUY,18.0,11.19,201.42,"ODELL, JOSEPH E",Common Stock
+2003-04-15,FCF,Director,BUY,1803.0,11.19,20175.57,"CHARLEY, RAY T",Common Stock
+2003-04-15,FCF,"Director, President & CEO",BUY,4.0,11.19,44.76,"ODELL, JOSEPH E",Common Stock
+2003-07-15,FCF,Director,BUY,1678.0,12.19,20454.82,"CHARLEY, RAY T",Common Stock
+2003-07-15,FCF,Director,BUY,109.0,12.19,1328.71,"SINGER, LAURIE STERN",Common Stock
+2003-07-15,FCF,Sr.Exec.VP & COO,BUY,94.0,12.19,1145.86,"THOMCHICK, GERARD M",Common Stock
+2003-07-15,FCF,"Director, President & CEO",BUY,16.0,12.19,195.04,"ODELL, JOSEPH E",Common Stock
+2003-07-15,FCF,"Director, President & CEO",BUY,3.0,12.19,36.57,"ODELL, JOSEPH E",Common Stock
+2003-10-03,FCF,"Director, Exec.Officer;Chairman of Board",SELL,5000.0,13.46,67300.0,"TRIMARCHI, E JAMES",Common Stock
+2003-10-03,FCF,"Director, Exec.Officer;Chairman of Board",BUY,5000.0,9.25,46250.0,"TRIMARCHI, E JAMES",Common Stock
+2003-10-03,FCF,"Director, Exec.Officer;Chairman of Board",SELL,5000.0,9.25,46250.0,"TRIMARCHI, E JAMES",Stock Option
+2003-10-06,FCF,"Director, Exec.Officer;Chairman of Board",SELL,5000.0,13.58,67900.0,"TRIMARCHI, E JAMES",Common Stock
+2003-10-06,FCF,"Director, Exec.Officer;Chairman of Board",BUY,5000.0,9.25,46250.0,"TRIMARCHI, E JAMES",Common Stock
+2003-10-06,FCF,"Director, Exec.Officer;Chairman of Board",SELL,4810.0,9.25,44492.5,"TRIMARCHI, E JAMES",Stock Option
+2003-10-06,FCF,"Director, Exec.Officer;Chairman of Board",BUY,4810.0,9.25,44492.5,"TRIMARCHI, E JAMES",Common Stock
+2003-10-06,FCF,"Director, Exec.Officer;Chairman of Board",SELL,5000.0,9.25,46250.0,"TRIMARCHI, E JAMES",Stock Option
+2003-10-07,FCF,"Director, Exec.Officer; Chairman of Boar",SELL,5000.0,9.25,46250.0,"TRIMARCHI, E JAMES",Stock Option
+2003-10-07,FCF,"Director, Exec.Officer; Chairman of Boar",SELL,5000.0,13.64,68200.0,"TRIMARCHI, E JAMES",Common Stock
+2003-10-07,FCF,"Director, Exec.Officer; Chairman of Boar",BUY,5000.0,9.25,46250.0,"TRIMARCHI, E JAMES",Common Stock
+2003-10-08,FCF,"Director, Exec.Officer; Chairman of Boar",SELL,52.0,9.25,481.0,"TRIMARCHI, E JAMES",Stock Option
+2003-10-08,FCF,"Director, Exec.Officer; Chairman of Boar",BUY,52.0,9.25,481.0,"TRIMARCHI, E JAMES",Common Stock
+2003-10-08,FCF,"Director, Exec.Officer; Chairman of Boar",BUY,4948.0,10.75,53191.0,"TRIMARCHI, E JAMES",Common Stock
+2003-10-08,FCF,"Director, Exec.Officer; Chairman of Boar",SELL,4948.0,10.75,53191.0,"TRIMARCHI, E JAMES",Stock Option
+2003-10-08,FCF,"Director, Exec.Officer; Chairman of Boar",SELL,52.0,13.66,710.32,"TRIMARCHI, E JAMES",Common Stock
+2003-10-08,FCF,"Director, Exec.Officer; Chairman of Boar",SELL,4948.0,13.66,67589.68000000001,"TRIMARCHI, E JAMES",Common Stock
+2003-10-09,FCF,"Director, Exec.Officer;Chairman of Board",SELL,3600.0,10.75,38700.0,"TRIMARCHI, E JAMES",Stock Option
+2003-10-09,FCF,"Director, Exec.Officer;Chairman of Board",BUY,3600.0,10.75,38700.0,"TRIMARCHI, E JAMES",Common Stock
+2003-10-09,FCF,"Director, Exec.Officer;Chairman of Board",SELL,3600.0,13.8,49680.0,"TRIMARCHI, E JAMES",Common Stock
+2003-10-14,FCF,"Director, Chairman of Board;Exec.Officer",BUY,6000.0,9.25,55500.0,"TRIMARCHI, E JAMES",Common Stock
+2003-10-14,FCF,"Director, Chairman of Board;Exec.Officer",SELL,6000.0,9.25,55500.0,"TRIMARCHI, E JAMES",Stock Option
+2003-10-15,FCF,Executive Officer-Sr. VP,BUY,96.0,12.78,1226.8799999999999,"CLEMENTS, THADDEUS J",Common Stock
+2003-10-15,FCF,Sr.Exec.VP & COO,BUY,92.0,12.78,1175.76,"THOMCHICK, GERARD M",Common Stock
+2003-10-15,FCF,Director,BUY,1621.0,12.78,20716.379999999997,"CHARLEY, RAY T",Common Stock
+2003-10-15,FCF,"Director, President & CEO",BUY,3.0,12.78,38.339999999999996,"ODELL, JOSEPH E",Common Stock
+2003-10-15,FCF,Director,BUY,106.0,12.78,1354.6799999999998,"SINGER, LAURIE STERN",Common Stock
+2003-10-15,FCF,"Director, Chairman of Board;Exec Officer",BUY,100.0,12.78,1278.0,"TRIMARCHI, E JAMES",Common Stock
+2003-10-15,FCF,Director,BUY,13067.0,12.78,166996.25999999998,"LATIMER, DALE P",Common Stock
+2003-10-15,FCF,"Director, President & CEO",BUY,16.0,12.78,204.48,"ODELL, JOSEPH E",Common Stock
+2003-10-15,FCF,Director,BUY,121.0,12.78,1546.3799999999999,"DAHLMANN, DAVID S",Common Stock
+2003-10-28,FCF,Executive Officer-Sr. VP,BUY,1000.0,11.063,11063.0,"CLEMENTS, THADDEUS J",Common Stock
+2003-10-28,FCF,Executive Officer-Sr. VP,SELL,1000.0,11.063,11063.0,"CLEMENTS, THADDEUS J",Stock Option
+2003-10-28,FCF,Executive Officer-Sr. VP,SELL,1000.0,13.9,13900.0,"CLEMENTS, THADDEUS J",Common Stock
+2003-10-29,FCF,Executive Officer-Sr. VP,SELL,4000.0,14.08,56320.0,"CLEMENTS, THADDEUS J",Common Stock
+2003-10-29,FCF,Executive Officer-Sr. VP,SELL,4000.0,11.063,44252.0,"CLEMENTS, THADDEUS J",Stock Option
+2003-10-29,FCF,Executive Officer-Sr. VP,BUY,4000.0,11.063,44252.0,"CLEMENTS, THADDEUS J",Common Stock
+2003-10-30,FCF,Exec.Officer-Sr. VP,BUY,1500.0,11.063,16594.5,"CLEMENTS, THADDEUS J",Common Stock
+2003-10-30,FCF,Exec.Officer-Sr. VP,SELL,1500.0,14.2,21300.0,"CLEMENTS, THADDEUS J",Common Stock
+2003-10-30,FCF,Exec.Officer-Sr. VP,SELL,1500.0,11.063,16594.5,"CLEMENTS, THADDEUS J",Stock Option
+2003-11-03,FCF,"Director, Chairman of Board;Exec Officer",BUY,5000.0,10.75,53750.0,"TRIMARCHI, E JAMES",Common Stock
+2003-11-03,FCF,"Director, Chairman of Board;Exec Officer",SELL,5000.0,10.75,53750.0,"TRIMARCHI, E JAMES",Stock Option
+2003-11-03,FCF,"Director, Chairman of Board;Exec Officer",SELL,5000.0,14.09,70450.0,"TRIMARCHI, E JAMES",Common Stock
+2003-11-04,FCF,Exec Officer- Sr.VP,BUY,1455.0,11.063,16096.665,"CLEMENTS, THADDEUS J",Common Stock
+2003-11-04,FCF,Exec Officer- Sr.VP,SELL,1455.0,14.25,20733.75,"CLEMENTS, THADDEUS J",Common Stock
+2003-11-04,FCF,Exec Officer- Sr.VP,SELL,1455.0,11.063,16096.665,"CLEMENTS, THADDEUS J",Stock Option
+2003-11-04,FCF,"Director, Chairman of Board;Exec Officer",BUY,5000.0,10.75,53750.0,"TRIMARCHI, E JAMES",Common Stock
+2003-11-04,FCF,"Director, Chairman of Board;Exec Officer",SELL,5000.0,14.19,70950.0,"TRIMARCHI, E JAMES",Common Stock
+2003-11-04,FCF,"Director, Chairman of Board;Exec Officer",SELL,5000.0,10.75,53750.0,"TRIMARCHI, E JAMES",Stock Option
+2003-11-05,FCF,"Director, Chairman of Board;Exec Officer",BUY,5000.0,10.75,53750.0,"TRIMARCHI, E JAMES",Common Stock
+2003-11-05,FCF,"Director, Chairman of Board;Exec Officer",SELL,5000.0,10.75,53750.0,"TRIMARCHI, E JAMES",Stock Option
+2003-11-05,FCF,"Director, Chairman of Board;Exec Officer",SELL,5000.0,14.26,71300.0,"TRIMARCHI, E JAMES",Common Stock
+2003-11-06,FCF,"Director, Chairman of Board;Exec Officer",BUY,5000.0,14.34,71700.0,"TRIMARCHI, E JAMES",Common Stock
+2003-11-06,FCF,"Director, Chairman of Board;Exec Officer",BUY,5000.0,10.75,53750.0,"TRIMARCHI, E JAMES",Common Stock
+2003-11-06,FCF,"Director, Chairman of Board;Exec Officer",SELL,5000.0,10.75,53750.0,"TRIMARCHI, E JAMES",Stock Option
+2003-11-07,FCF,"Director, Chairman of Board;Exec Officer",BUY,880.0,10.75,9460.0,"TRIMARCHI, E JAMES",Common Stock
+2003-11-07,FCF,"Director, Chairman of Board;Exec Officer",SELL,880.0,10.75,9460.0,"TRIMARCHI, E JAMES",Stock Option
+2003-11-07,FCF,"Director, Chairman of Board;Exec Officer",SELL,880.0,14.52,12777.6,"TRIMARCHI, E JAMES",Common Stock
+2003-11-07,FCF,"Director, Chairman of Board;Exec Officer",BUY,4120.0,11.063,45579.560000000005,"TRIMARCHI, E JAMES",Common Stock
+2003-11-07,FCF,"Director, Chairman of Board;Exec Officer",SELL,4120.0,14.52,59822.4,"TRIMARCHI, E JAMES",Common Stock
+2003-11-07,FCF,"Director, Chairman of Board;Exec Officer",SELL,4120.0,11.063,45579.560000000005,"TRIMARCHI, E JAMES",Stock Option
+2003-11-10,FCF,"Director, Chairman of Board;Exec Officer",SELL,5000.0,11.063,55315.0,"TRIMARCHI, E JAMES",Stock Option
+2003-11-10,FCF,"Director, Chairman of Board;Exec Officer",SELL,5000.0,14.32,71600.0,"TRIMARCHI, E JAMES",Common Stock
+2003-11-10,FCF,"Director, Chairman of Board;Exec Officer",BUY,5000.0,11.063,55315.0,"TRIMARCHI, E JAMES",Common Stock
+2003-11-28,FCF,Director,SELL,1000.0,11.0625,11062.5,"SINGER, LAURIE STERN",Stock Option
+2003-11-28,FCF,Director,BUY,1000.0,11.0625,11062.5,"SINGER, LAURIE STERN",Common Stock
+2003-12-01,FCF,"Director, Chairman of Board;Exec.Officer",SELL,5000.0,14.73,73650.0,"TRIMARCHI, E JAMES",Common Stock
+2003-12-01,FCF,"Director, Chairman of Board;Exec.Officer",BUY,5000.0,11.063,55315.0,"TRIMARCHI, E JAMES",Common Stock
+2003-12-01,FCF,"Director, Chairman of Board;Exec.Officer",SELL,5000.0,11.063,55315.0,"TRIMARCHI, E JAMES",Stock Option
+2003-12-02,FCF,"Director, Chairman of Board;Exec.Officer",SELL,1307.0,14.73,19252.11,"TRIMARCHI, E JAMES",Common Stock
+2003-12-02,FCF,"Director, Chairman of Board;Exec.Officer",BUY,1307.0,11.5625,15112.1875,"TRIMARCHI, E JAMES",Common Stock
+2003-12-02,FCF,"Director, Chairman of Board;Exec.Officer",SELL,1307.0,11.5625,15112.1875,"TRIMARCHI, E JAMES",Stock Option
+2003-12-02,FCF,"Director, Chairman of Board;Exec.Officer",BUY,3693.0,11.063,40855.659,"TRIMARCHI, E JAMES",Common Stock
+2003-12-02,FCF,"Director, Chairman of Board;Exec.Officer",SELL,3693.0,11.063,40855.659,"TRIMARCHI, E JAMES",Stock Option
+2003-12-02,FCF,"Director, Chairman of Board;Exec.Officer",SELL,3693.0,14.73,54397.89,"TRIMARCHI, E JAMES",Common Stock
+2003-12-03,FCF,"Director, Chairman of Board;Exec.Officer",SELL,2000.0,14.54,29080.0,"TRIMARCHI, E JAMES",Common Stock
+2003-12-03,FCF,"Director, Chairman of Board;Exec.Officer",SELL,2000.0,11.5625,23125.0,"TRIMARCHI, E JAMES",Stock Option
+2003-12-03,FCF,"Director, Chairman of Board;Exec.Officer",BUY,2000.0,11.5625,23125.0,"TRIMARCHI, E JAMES",Common Stock
+2003-12-04,FCF,"Director, Chairman of Board;Exec.Officer",SELL,2000.0,11.5625,23125.0,"TRIMARCHI, E JAMES",Stock Option
+2003-12-04,FCF,"Director, Chairman of Board;Exec.Officer",BUY,2000.0,11.5625,23125.0,"TRIMARCHI, E JAMES",Common Stock
+2003-12-04,FCF,"Director, Chairman of Board;Exec.Officer",SELL,2000.0,14.24,28480.0,"TRIMARCHI, E JAMES",Common Stock
+2003-12-05,FCF,"Director, Chairman of Board;Exec Officer",SELL,1000.0,11.5625,11562.5,"TRIMARCHI, E JAMES",Stock Option
+2003-12-05,FCF,"Director, Chairman of Board;Exec Officer",BUY,1000.0,11.5625,11562.5,"TRIMARCHI, E JAMES",Common Stock
+2003-12-05,FCF,"Director, Chairman of Board;Exec Officer",SELL,1000.0,14.1,14100.0,"TRIMARCHI, E JAMES",Common Stock
+2003-12-08,FCF,"Director, Chairman of Board;Exec Officer",SELL,2000.0,11.5625,23125.0,"TRIMARCHI, E JAMES",Stock Option
+2003-12-08,FCF,"Director, Chairman of Board;Exec Officer",BUY,2000.0,11.5625,23125.0,"TRIMARCHI, E JAMES",Common Stock
+2003-12-08,FCF,"Director, Chairman of Board;Exec Officer",SELL,2000.0,14.165,28330.0,"TRIMARCHI, E JAMES",Common Stock
+2003-12-09,FCF,"Director, Chairman of Board;Exec Officer",SELL,2000.0,11.5625,23125.0,"TRIMARCHI, E JAMES",Stock Option
+2003-12-09,FCF,"Director, Chairman of Board;Exec Officer",BUY,2000.0,11.5625,23125.0,"TRIMARCHI, E JAMES",Common Stock
+2003-12-09,FCF,"Director, Chairman of Board;Exec Officer",SELL,2000.0,14.21,28420.0,"TRIMARCHI, E JAMES",Common Stock
+2003-12-10,FCF,"Director, Chairman of Board;Exec Officer",BUY,2000.0,11.5625,23125.0,"TRIMARCHI, E JAMES",Common Stock
+2003-12-10,FCF,"Director, Chairman of Board;Exec Officer",SELL,2000.0,14.026,28052.0,"TRIMARCHI, E JAMES",Common Stock
+2003-12-10,FCF,"Director, Chairman of Board;Exec Officer",SELL,2000.0,11.5625,23125.0,"TRIMARCHI, E JAMES",Stock Option
+2003-12-11,FCF,"Director, Chairman of Board;Exec Officer",BUY,1013.0,11.7,11852.099999999999,"TRIMARCHI, E JAMES",Common Stock
+2003-12-11,FCF,"Director, Chairman of Board;Exec Officer",SELL,3987.0,14.278,56926.386,"TRIMARCHI, E JAMES",Common Stock
+2003-12-11,FCF,"Director, Chairman of Board;Exec Officer",BUY,3987.0,11.5625,46099.6875,"TRIMARCHI, E JAMES",Common Stock
+2003-12-11,FCF,"Director, Chairman of Board;Exec Officer",SELL,3987.0,11.5625,46099.6875,"TRIMARCHI, E JAMES",Stock Option
+2003-12-11,FCF,"Director, Chairman of Board;Exec Officer",SELL,1013.0,11.7,11852.099999999999,"TRIMARCHI, E JAMES",Stock Option
+2003-12-11,FCF,"Director, Chairman of Board;Exec Officer",SELL,1013.0,14.278,14463.614,"TRIMARCHI, E JAMES",Common Stock
+2003-12-12,FCF,"Director, Chairman of Board;Exec Officer",BUY,4000.0,11.7,46800.0,"TRIMARCHI, E JAMES",Common Stock
+2003-12-12,FCF,"Director, Chairman of Board;Exec Officer",SELL,4000.0,14.4,57600.0,"TRIMARCHI, E JAMES",Common Stock
+2003-12-12,FCF,"Director, Chairman of Board;Exec Officer",SELL,4000.0,11.7,46800.0,"TRIMARCHI, E JAMES",Stock Option
+2003-12-31,FCF,Executive Officer-Sr. VP,BUY,736.0,10.74,7904.64,"CLEMENTS, THADDEUS J",Common Stock
+2004-01-02,FCF,"Director, Chairman of Board;Exec Officer",SELL,5000.0,11.7,58500.0,"TRIMARCHI, E JAMES",Stock Option
+2004-01-02,FCF,"Director, Chairman of Board;Exec Officer",BUY,5000.0,11.7,58500.0,"TRIMARCHI, E JAMES",Common Stock
+2004-01-02,FCF,"Director, Chairman of Board;Exec Officer",SELL,5000.0,14.42,72100.0,"TRIMARCHI, E JAMES",Common Stock
+2004-01-05,FCF,"Director, Chairman of Board;Exec Officer",SELL,5000.0,11.7,58500.0,"TRIMARCHI, E JAMES",Stock Option
+2004-01-05,FCF,"Director, Chairman of Board;Exec Officer",SELL,5000.0,14.36,71800.0,"TRIMARCHI, E JAMES",Common Stock
+2004-01-05,FCF,"Director, Chairman of Board;Exec Officer",BUY,5000.0,11.7,58500.0,"TRIMARCHI, E JAMES",Common Stock
+2004-01-06,FCF,"Director, Chairman of Board;Exec Officer",SELL,5000.0,11.7,58500.0,"TRIMARCHI, E JAMES",Stock Option
+2004-01-06,FCF,"Director, Chairman of Board;Exec Officer",SELL,5000.0,14.4,72000.0,"TRIMARCHI, E JAMES",Common Stock
+2004-01-06,FCF,"Director, Chairman of Board;Exec Officer",BUY,5000.0,11.7,58500.0,"TRIMARCHI, E JAMES",Common Stock
+2004-01-07,FCF,"Director, Chairman of Board;Exec Officer",SELL,5000.0,14.29,71450.0,"TRIMARCHI, E JAMES",Common Stock
+2004-01-07,FCF,"Director, Chairman of Board;Exec Officer",BUY,5000.0,11.7,58500.0,"TRIMARCHI, E JAMES",Common Stock
+2004-01-07,FCF,"Director, Chairman of Board;Exec Officer",SELL,5000.0,11.7,58500.0,"TRIMARCHI, E JAMES",Stock Option
+2004-01-08,FCF,"Director, Chairman of Board;Exec Officer",BUY,1893.0,12.06,22829.58,"TRIMARCHI, E JAMES",Common Stock
+2004-01-08,FCF,"Director, Chairman of Board;Exec Officer",SELL,1893.0,14.31,27088.83,"TRIMARCHI, E JAMES",Common Stock
+2004-01-08,FCF,"Director, Chairman of Board;Exec Officer",SELL,3107.0,11.7,36351.899999999994,"TRIMARCHI, E JAMES",Stock Option
+2004-01-08,FCF,"Director, Chairman of Board;Exec Officer",BUY,3107.0,11.7,36351.899999999994,"TRIMARCHI, E JAMES",Common Stock
+2004-01-08,FCF,"Director, Chairman of Board;Exec Officer",SELL,1893.0,12.06,22829.58,"TRIMARCHI, E JAMES",Stock Option
+2004-01-08,FCF,"Director, Chairman of Board;Exec Officer",SELL,3107.0,14.31,44461.17,"TRIMARCHI, E JAMES",Common Stock
+2004-01-09,FCF,"Director, Chairman of Board;Exec Officer",BUY,2000.0,12.06,24120.0,"TRIMARCHI, E JAMES",Common Stock
+2004-01-09,FCF,"Director, Chairman of Board;Exec Officer",SELL,2000.0,12.06,24120.0,"TRIMARCHI, E JAMES",Stock Option
+2004-01-09,FCF,"Director, Chairman of Board;Exec Officer",SELL,2000.0,14.32,28640.0,"TRIMARCHI, E JAMES",Common Stock
+2004-01-12,FCF,Director,BUY,3000.0,14.41,43230.0,"DAHLMANN, DAVID S",Stock Option
+2004-01-12,FCF,"Director, Chairman of Board;Exec Officer",SELL,2000.0,14.31,28620.0,"TRIMARCHI, E JAMES",Common Stock
+2004-01-12,FCF,"Director, Chairman of Board;Exec Officer",SELL,2000.0,12.06,24120.0,"TRIMARCHI, E JAMES",Stock Option
+2004-01-12,FCF,Director,BUY,3000.0,14.41,43230.0,"NEWILL, JAMES W",Stock Option
+2004-01-12,FCF,"Director, Chairman of Board;Exec Officer",BUY,2000.0,12.06,24120.0,"TRIMARCHI, E JAMES",Common Stock
+2004-01-12,FCF,Director,BUY,3000.0,14.41,43230.0,"FAIRMAN, ALAN R",Stock Option
+2004-01-12,FCF,Director,BUY,3000.0,14.41,43230.0,"COTE, EDWARD T",Stock Option
+2004-01-12,FCF,Director,BUY,3000.0,14.41,43230.0,"CHARLEY, RAY T",Stock Option
+2004-01-12,FCF,Director,BUY,3000.0,14.41,43230.0,"ROBERTSHAW, JOHN A JR",Stock Option
+2004-01-12,FCF,Director,BUY,3000.0,14.41,43230.0,"SINGER, LAURIE STERN",Stock Option
+2004-01-12,FCF,Director,BUY,3000.0,14.41,43230.0,"LATIMER, DALE P",Stock Option
+2004-01-13,FCF,"Director, Chairman of Board;Exec Officer",BUY,1000.0,12.06,12060.0,"TRIMARCHI, E JAMES",Common Stock
+2004-01-13,FCF,"Director, Chairman of Board;Exec Officer",SELL,1000.0,12.06,12060.0,"TRIMARCHI, E JAMES",Stock Option
+2004-01-13,FCF,"Director, Chairman of Board;Exec Officer",SELL,1000.0,14.41,14410.0,"TRIMARCHI, E JAMES",Common Stock
+2004-01-15,FCF,Executive Officer;Sr. VP,BUY,130.0,13.07,1699.1000000000001,"JARRETT, WILLIAM R",Common Stock
+2004-01-15,FCF,"Director, Chairman;Exec.Officer",BUY,283.0,13.07,3698.81,"TRIMARCHI, E JAMES",Common Stock
+2004-01-15,FCF,Exec.VP/CFO,BUY,7.0,13.07,91.49000000000001,"DOLAN, JOHN J",Common Stock
+2004-01-15,FCF,Director,BUY,108.0,13.07,1411.56,"SINGER, LAURIE STERN",Common Stock
+2004-01-15,FCF,Exec.VP/CFO,BUY,16.0,13.07,209.12,"DOLAN, JOHN J",Common Stock
+2004-01-15,FCF,Executive Officer-Sr. VP,BUY,98.0,13.07,1280.8600000000001,"CLEMENTS, THADDEUS J",Common Stock
+2004-01-16,FCF,"Director, President & CEO",BUY,16.0,13.07,209.12,"ODELL, JOSEPH E",Common Stock
+2004-01-16,FCF,"Director, President & CEO",BUY,3.0,13.07,39.21,"ODELL, JOSEPH E",Common Stock
+2004-01-16,FCF,Sr.Exec.VP & COO,BUY,93.0,13.07,1215.51,"THOMCHICK, GERARD M",Common Stock
+2004-01-16,FCF,Director,BUY,124.0,13.07,1620.68,"DAHLMANN, DAVID S",Common Stock
+2004-01-16,FCF,Director,BUY,1656.0,13.07,21643.920000000002,"CHARLEY, RAY T",Common Stock
+2004-01-16,FCF,Director,BUY,13105.0,13.07,171282.35,"LATIMER, DALE P",Common Stock
+2004-01-26,FCF,Executive Officer-Sr. VP,BUY,2000.0,11.5625,23125.0,"CLEMENTS, THADDEUS J",Common Stock
+2004-01-26,FCF,Executive Officer-Sr. VP,SELL,2000.0,14.65,29300.0,"CLEMENTS, THADDEUS J",Common Stock
+2004-01-26,FCF,Executive Officer-Sr. VP,SELL,2000.0,11.5625,23125.0,"CLEMENTS, THADDEUS J",Stock Option
+2004-01-27,FCF,"Director, President & CEO",SELL,5000.0,14.61,73050.0,"ODELL, JOSEPH E",Common Stock
+2004-01-27,FCF,"Director, President & CEO",BUY,5000.0,9.1875,45937.5,"ODELL, JOSEPH E",Common Stock
+2004-01-27,FCF,Sr.Exec.VP & COO,SELL,5100.0,9.1875,46856.25,"THOMCHICK, GERARD M",Stock Option
+2004-01-27,FCF,Sr.Exec.VP & COO,SELL,5100.0,14.61,74511.0,"THOMCHICK, GERARD M",Common Stock
+2004-01-27,FCF,Sr.Exec.VP & COO,BUY,5100.0,9.1875,46856.25,"THOMCHICK, GERARD M",Common Stock
+2004-01-27,FCF,"Director, President & CEO",SELL,5000.0,9.1875,45937.5,"ODELL, JOSEPH E",Stock Option
+2004-01-28,FCF,"Director, President & CEO",SELL,5000.0,14.61,73050.0,"ODELL, JOSEPH E",Common Stock
+2004-01-28,FCF,Sr.Exec.VP & COO,SELL,18144.0,14.63,265446.72000000003,"THOMCHICK, GERARD M",Common Stock
+2004-01-28,FCF,Sr.Exec.VP & COO,SELL,656.0,14.63,9597.28,"THOMCHICK, GERARD M",Common Stock
+2004-01-28,FCF,Sr.Exec.VP & COO,SELL,18144.0,11.5625,209790.0,"THOMCHICK, GERARD M",Stock Option
+2004-01-28,FCF,Sr.Exec.VP & COO,BUY,18144.0,11.5625,209790.0,"THOMCHICK, GERARD M",Common Stock
+2004-01-28,FCF,Sr.Exec.VP & COO,SELL,656.0,9.1875,6027.0,"THOMCHICK, GERARD M",Stock Option
+2004-01-28,FCF,"Director, President & CEO",SELL,5000.0,9.1875,45937.5,"ODELL, JOSEPH E",Stock Option
+2004-01-28,FCF,"Director, President & CEO",BUY,5000.0,9.1875,45937.5,"ODELL, JOSEPH E",Common Stock
+2004-01-28,FCF,Sr.Exec.VP & COO,BUY,656.0,9.1875,6027.0,"THOMCHICK, GERARD M",Common Stock
+2004-01-29,FCF,Sr.Exec.VP & COO,BUY,6116.0,11.5625,70716.25,"THOMCHICK, GERARD M",Common Stock
+2004-01-29,FCF,"Director, President & CEO",BUY,5000.0,9.1875,45937.5,"ODELL, JOSEPH E",Common Stock
+2004-01-29,FCF,Sr.Exec.VP & COO,SELL,6116.0,11.5625,70716.25,"THOMCHICK, GERARD M",Stock Option
+2004-01-29,FCF,"Director, President & CEO",SELL,5000.0,9.1875,45937.5,"ODELL, JOSEPH E",Stock Option
+2004-01-29,FCF,Sr.Exec.VP & COO,SELL,6116.0,14.47,88498.52,"THOMCHICK, GERARD M",Common Stock
+2004-01-29,FCF,"Director, President & CEO",SELL,5000.0,14.47,72350.0,"ODELL, JOSEPH E",Common Stock
+2004-01-30,FCF,"Director, President & CEO",SELL,5000.0,9.1875,45937.5,"ODELL, JOSEPH E",Stock Option
+2004-01-30,FCF,"Director, President & CEO",BUY,5000.0,9.1875,45937.5,"ODELL, JOSEPH E",Common Stock
+2004-01-30,FCF,"Director, President & CEO",SELL,5000.0,14.41,72050.0,"ODELL, JOSEPH E",Common Stock
+2004-02-02,FCF,"Director, President & CEO",SELL,5000.0,9.1875,45937.5,"ODELL, JOSEPH E",Stock Option
+2004-02-02,FCF,Sr.Exec.VP & COO,SELL,5624.0,14.33,80591.92,"THOMCHICK, GERARD M",Common Stock
+2004-02-02,FCF,"Director, Chairman;Exec Officer",SELL,2000.0,14.33,28660.0,"TRIMARCHI, E JAMES",Common Stock
+2004-02-02,FCF,"Director, President & CEO",BUY,5000.0,9.1875,45937.5,"ODELL, JOSEPH E",Common Stock
+2004-02-02,FCF,"Director, Chairman;Exec Officer",BUY,694.0,14.4,9993.6,"TRIMARCHI, E JAMES",Common Stock
+2004-02-02,FCF,"Director, Chairman;Exec Officer",BUY,2000.0,12.06,24120.0,"TRIMARCHI, E JAMES",Common Stock
+2004-02-02,FCF,"Director, Chairman;Exec Officer",SELL,2000.0,12.06,24120.0,"TRIMARCHI, E JAMES",Stock Option
+2004-02-02,FCF,"Director, President & CEO",SELL,5000.0,14.33,71650.0,"ODELL, JOSEPH E",Common Stock
+2004-02-03,FCF,"Director, President & CEO",BUY,272.0,9.25,2516.0,"ODELL, JOSEPH E",Common Stock
+2004-02-03,FCF,"Director, President & CEO",SELL,4728.0,14.27,67468.56,"ODELL, JOSEPH E",Common Stock
+2004-02-03,FCF,"Director, President & CEO",BUY,4728.0,9.1875,43438.5,"ODELL, JOSEPH E",Common Stock
+2004-02-03,FCF,"Director, Chairman;Exec Officer",SELL,2000.0,12.06,24120.0,"TRIMARCHI, E JAMES",Stock Option
+2004-02-03,FCF,"Director, Chairman;Exec Officer",SELL,2000.0,14.27,28540.0,"TRIMARCHI, E JAMES",Common Stock
+2004-02-03,FCF,"Director, Chairman;Exec Officer",BUY,2000.0,12.06,24120.0,"TRIMARCHI, E JAMES",Common Stock
+2004-02-03,FCF,"Director, President & CEO",SELL,272.0,9.25,2516.0,"ODELL, JOSEPH E",Stock Option
+2004-02-03,FCF,"Director, President & CEO",SELL,4728.0,9.1875,43438.5,"ODELL, JOSEPH E",Stock Option
+2004-02-03,FCF,"Director, President & CEO",SELL,272.0,14.27,3881.44,"ODELL, JOSEPH E",Common Stock
+2004-02-04,FCF,"Director, Chairman;Exec.Officer",SELL,2000.0,14.04,28080.0,"TRIMARCHI, E JAMES",Common Stock
+2004-02-04,FCF,"Director, President & CEO",SELL,5000.0,9.25,46250.0,"ODELL, JOSEPH E",Stock Option
+2004-02-04,FCF,"Director, President & CEO",SELL,5000.0,14.04,70200.0,"ODELL, JOSEPH E",Common Stock
+2004-02-04,FCF,"Director, Chairman;Exec.Officer",SELL,2000.0,12.06,24120.0,"TRIMARCHI, E JAMES",Stock Option
+2004-02-04,FCF,"Director, Chairman;Exec.Officer",BUY,2000.0,12.06,24120.0,"TRIMARCHI, E JAMES",Common Stock
+2004-02-04,FCF,"Director, President & CEO",BUY,5000.0,9.25,46250.0,"ODELL, JOSEPH E",Common Stock
+2004-02-05,FCF,"Director, President & CEO",BUY,5000.0,9.25,46250.0,"ODELL, JOSEPH E",Common Stock
+2004-02-05,FCF,"Director, Chairman;Exec.Officer",BUY,2000.0,12.06,24120.0,"TRIMARCHI, E JAMES",Common Stock
+2004-02-05,FCF,"Director, Chairman;Exec.Officer",SELL,2000.0,14.22,28440.0,"TRIMARCHI, E JAMES",Common Stock
+2004-02-05,FCF,"Director, President & CEO",SELL,5000.0,9.25,46250.0,"ODELL, JOSEPH E",Stock Option
+2004-02-05,FCF,"Director, President & CEO",SELL,5000.0,14.22,71100.0,"ODELL, JOSEPH E",Common Stock
+2004-02-05,FCF,"Director, Chairman;Exec.Officer",SELL,2000.0,12.06,24120.0,"TRIMARCHI, E JAMES",Stock Option
+2004-02-06,FCF,"Director, Chairman;Exec.Officer",SELL,2000.0,12.06,24120.0,"TRIMARCHI, E JAMES",Stock Option
+2004-02-06,FCF,Executive Officer-Sr. VP,SELL,2780.0,11.5625,32143.75,"CLEMENTS, THADDEUS J",Stock Option
+2004-02-06,FCF,"Director, Chairman;Exec.Officer",BUY,2000.0,12.06,24120.0,"TRIMARCHI, E JAMES",Common Stock
+2004-02-06,FCF,"Director, President & CEO",SELL,5000.0,14.29,71450.0,"ODELL, JOSEPH E",Common Stock
+2004-02-06,FCF,"Director, President & CEO",SELL,5000.0,9.25,46250.0,"ODELL, JOSEPH E",Stock Option
+2004-02-06,FCF,"Director, President & CEO",BUY,5000.0,9.25,46250.0,"ODELL, JOSEPH E",Common Stock
+2004-02-06,FCF,Executive Officer-Sr. VP,BUY,2780.0,11.5625,32143.75,"CLEMENTS, THADDEUS J",Common Stock
+2004-02-06,FCF,Executive Officer-Sr. VP,SELL,2780.0,14.6,40588.0,"CLEMENTS, THADDEUS J",Common Stock
+2004-02-06,FCF,"Director, Chairman;Exec.Officer",SELL,2000.0,14.29,28580.0,"TRIMARCHI, E JAMES",Common Stock
+2004-02-09,FCF,"Director, Chairman;Exec.Officer",SELL,5000.0,14.57,72850.0,"TRIMARCHI, E JAMES",Common Stock
+2004-02-09,FCF,"Director, President & CEO",SELL,5000.0,9.25,46250.0,"ODELL, JOSEPH E",Stock Option
+2004-02-09,FCF,"Director, Chairman;Exec.Officer",BUY,5000.0,12.06,60300.0,"TRIMARCHI, E JAMES",Common Stock
+2004-02-09,FCF,"Director, Chairman;Exec.Officer",SELL,5000.0,12.06,60300.0,"TRIMARCHI, E JAMES",Stock Option
+2004-02-09,FCF,"Director, President & CEO",BUY,5000.0,9.25,46250.0,"ODELL, JOSEPH E",Common Stock
+2004-02-09,FCF,"Director, President & CEO",SELL,5000.0,14.57,72850.0,"ODELL, JOSEPH E",Common Stock
+2004-02-10,FCF,"Director, Chairman;Executive Officer",SELL,1692.0,12.06,20405.52,"TRIMARCHI, E JAMES",Stock Option
+2004-02-10,FCF,"Director, Chairman;Executive Officer",SELL,1692.0,14.53,24584.76,"TRIMARCHI, E JAMES",Common Stock
+2004-02-10,FCF,Executive Officer-Sr. VP,SELL,2000.0,14.75,29500.0,"CLEMENTS, THADDEUS J",Common Stock
+2004-02-10,FCF,Executive Officer-Sr. VP,SELL,2000.0,11.5625,23125.0,"CLEMENTS, THADDEUS J",Stock Option
+2004-02-10,FCF,"Director, President & CEO",SELL,5000.0,9.25,46250.0,"ODELL, JOSEPH E",Stock Option
+2004-02-10,FCF,"Director, Chairman;Executive Officer",BUY,1692.0,12.06,20405.52,"TRIMARCHI, E JAMES",Common Stock
+2004-02-10,FCF,"Director, President & CEO",SELL,5000.0,14.53,72650.0,"ODELL, JOSEPH E",Common Stock
+2004-02-10,FCF,"Director, President & CEO",BUY,5000.0,9.25,46250.0,"ODELL, JOSEPH E",Common Stock
+2004-02-10,FCF,Executive Officer-Sr. VP,BUY,2000.0,11.5625,23125.0,"CLEMENTS, THADDEUS J",Common Stock
+2004-02-11,FCF,"Director, President & CEO",SELL,5000.0,14.76,73800.0,"ODELL, JOSEPH E",Common Stock
+2004-02-11,FCF,"Director, President & CEO",BUY,5000.0,9.25,46250.0,"ODELL, JOSEPH E",Common Stock
+2004-02-11,FCF,"Director, President & CEO",SELL,5000.0,9.25,46250.0,"ODELL, JOSEPH E",Stock Option
+2004-02-12,FCF,Executive Officer--Sr.VP,SELL,10614.0,9.1875,97516.125,"PREVITE, R JOHN",Stock Option
+2004-02-12,FCF,Executive Officer--Sr.VP,SELL,11156.0,9.25,103193.0,"PREVITE, R JOHN",Stock Option
+2004-02-12,FCF,"Director, President & CEO",BUY,3512.0,9.25,32486.0,"ODELL, JOSEPH E",Common Stock
+2004-02-12,FCF,Executive Officer--Sr.VP,SELL,11156.0,14.8,165108.80000000002,"PREVITE, R JOHN",Common Stock
+2004-02-12,FCF,"Director, President & CEO",SELL,3512.0,14.85,52153.2,"ODELL, JOSEPH E",Common Stock
+2004-02-12,FCF,Executive Officer--Sr.VP,SELL,10614.0,14.8,157087.2,"PREVITE, R JOHN",Common Stock
+2004-02-12,FCF,Executive Officer--Sr.VP,BUY,10614.0,9.1875,97516.125,"PREVITE, R JOHN",Common Stock
+2004-02-12,FCF,"Director, President & CEO",SELL,3512.0,9.25,32486.0,"ODELL, JOSEPH E",Stock Option
+2004-02-12,FCF,Executive Officer--Sr.VP,BUY,11156.0,9.25,103193.0,"PREVITE, R JOHN",Common Stock
+2004-03-02,FCF,Sr.Exec.VP & COO,SELL,22042.0,11.063,243850.646,"THOMCHICK, GERARD M",Stock Option
+2004-03-02,FCF,Sr.Exec.VP & COO,SELL,22042.0,14.76,325339.92,"THOMCHICK, GERARD M",Common Stock
+2004-03-02,FCF,Sr.Exec.VP & COO,BUY,22042.0,11.063,243850.646,"THOMCHICK, GERARD M",Common Stock
+2004-03-03,FCF,Sr.Exec.VP & COO,BUY,5800.0,11.063,64165.4,"THOMCHICK, GERARD M",Common Stock
+2004-03-03,FCF,Sr.Exec.VP & COO,SELL,5800.0,14.7,85260.0,"THOMCHICK, GERARD M",Common Stock
+2004-03-03,FCF,Sr.Exec.VP & COO,SELL,5800.0,11.063,64165.4,"THOMCHICK, GERARD M",Stock Option
+2004-03-05,FCF,Sr.Exec.VP & COO,BUY,20986.0,10.75,225599.5,"THOMCHICK, GERARD M",Common Stock
+2004-03-05,FCF,Sr.Exec.VP & COO,SELL,20986.0,14.82,311012.52,"THOMCHICK, GERARD M",Common Stock
+2004-03-05,FCF,Sr.Exec.VP & COO,SELL,20986.0,10.75,225599.5,"THOMCHICK, GERARD M",Stock Option
+2004-03-16,FCF,Executive Officer-Sr. VP,SELL,3000.0,14.5,43500.0,"CLEMENTS, THADDEUS J",Common Stock
+2004-03-16,FCF,Executive Officer-Sr. VP,SELL,3000.0,11.7,35100.0,"CLEMENTS, THADDEUS J",Stock Option
+2004-03-16,FCF,Executive Officer-Sr. VP,BUY,3000.0,11.7,35100.0,"CLEMENTS, THADDEUS J",Common Stock
+2004-03-17,FCF,Executive Officer-Sr. VP,SELL,3000.0,14.6,43800.0,"CLEMENTS, THADDEUS J",Common Stock
+2004-03-17,FCF,Executive Officer-Sr. VP,BUY,3000.0,11.7,35100.0,"CLEMENTS, THADDEUS J",Common Stock
+2004-03-17,FCF,Executive Officer-Sr. VP,SELL,3000.0,11.7,35100.0,"CLEMENTS, THADDEUS J",Stock Option
+2004-03-18,FCF,Executive Officer-Sr. VP,SELL,3778.0,11.7,44202.6,"CLEMENTS, THADDEUS J",Stock Option
+2004-03-18,FCF,Executive Officer-Sr. VP,SELL,3778.0,14.65,55347.700000000004,"CLEMENTS, THADDEUS J",Common Stock
+2004-03-18,FCF,Executive Officer-Sr. VP,BUY,3778.0,11.7,44202.6,"CLEMENTS, THADDEUS J",Common Stock
+2004-04-15,FCF,Executive Officer-Sr VP,BUY,98.0,13.28,1301.4399999999998,"CLEMENTS, THADDEUS J",Common Stock
+2004-04-15,FCF,Director,BUY,107.0,13.28,1420.96,"SINGER, LAURIE STERN",Common Stock
+2004-04-15,FCF,Exec.VP/CFO,BUY,7.0,13.28,92.96,"DOLAN, JOHN J",Common Stock
+2004-04-15,FCF,Director,BUY,1650.0,13.28,21912.0,"CHARLEY, RAY T",Common Stock
+2004-04-15,FCF,Director,BUY,13053.0,13.28,173343.84,"LATIMER, DALE P",Common Stock
+2004-04-15,FCF,Sr. Exec.VP/COO,BUY,25.0,13.28,332.0,"THOMCHICK, GERARD M",Common Stock
+2004-04-15,FCF,"Director, Chairman;Exec.Officer",BUY,291.0,13.28,3864.48,"TRIMARCHI, E JAMES",Common Stock
+2004-04-15,FCF,Exec.VP/CFO,BUY,16.0,13.28,212.48,"DOLAN, JOHN J",Common Stock
+2004-04-15,FCF,Director,BUY,123.0,13.28,1633.4399999999998,"DAHLMANN, DAVID S",Common Stock
+2004-04-15,FCF,Executive Officer;Sr. VP,BUY,129.0,13.28,1713.12,"JARRETT, WILLIAM R",Common Stock
+2004-04-20,FCF,"Director, Secy/Treasurer;Senior VP",SELL,12860.0,9.1875,118151.25,"TOMB, DAVID R JR",Stock Option
+2004-04-20,FCF,"Director, Secy/Treasurer;Senior VP",SELL,10440.0,9.25,96570.0,"TOMB, DAVID R JR",Stock Option
+2004-04-20,FCF,"Director, Secy/Treasurer;Senior VP",BUY,10440.0,9.25,96570.0,"TOMB, DAVID R JR",Common Stock
+2004-04-20,FCF,"Director, Secy/Treasurer;Senior VP",SELL,12860.0,14.5,186470.0,"TOMB, DAVID R JR",Common Stock
+2004-04-20,FCF,"Director, Secy/Treasurer;Senior VP",BUY,12860.0,9.1875,118151.25,"TOMB, DAVID R JR",Common Stock
+2004-04-20,FCF,"Director, Secy/Treasurer;Senior VP",SELL,10440.0,14.5,151380.0,"TOMB, DAVID R JR",Common Stock
+2004-06-04,FCF,"Director, Chairman;Exec.Officer",BUY,1529.0,13.08,19999.32,"TRIMARCHI, E JAMES",Common Stock
+2004-07-15,FCF,Director,BUY,1885.0,11.77,22186.45,"CHARLEY, RAY T",Common Stock
+2004-07-15,FCF,Director,BUY,123.0,11.77,1447.71,"SINGER, LAURIE STERN",Common Stock
+2004-07-15,FCF,Sr. Exec.VP/COO,BUY,28.0,11.77,329.56,"THOMCHICK, GERARD M",Common Stock
+2004-07-15,FCF,"Director, Chairman;Exec.Officer",BUY,1398.0,11.77,16454.46,"TRIMARCHI, E JAMES",Common Stock
+2004-07-15,FCF,Executive Officer;Sr. VP,BUY,148.0,11.77,1741.96,"JARRETT, WILLIAM R",Common Stock
+2004-07-15,FCF,Exec.VP/CFO,BUY,7.0,11.77,82.39,"DOLAN, JOHN J",Common Stock
+2004-07-15,FCF,Exec.VP/CFO,BUY,17.0,11.77,200.09,"DOLAN, JOHN J",Common Stock
+2004-07-15,FCF,Director,BUY,14911.0,11.77,175502.47,"LATIMER, DALE P",Common Stock
+2004-07-15,FCF,Director,BUY,141.0,11.77,1659.57,"DAHLMANN, DAVID S",Common Stock
+2004-07-15,FCF,Executive Officer-Sr VP,BUY,111.0,11.77,1306.47,"CLEMENTS, THADDEUS J",Common Stock
+2004-08-13,FCF,"Director, Chairman;Exec.Officer",BUY,16103.0,13.04,209983.12,"TRIMARCHI, E JAMES",Common Stock
+2004-08-20,FCF,Exec.VP/CFO,SELL,4000.0,13.46,53840.0,"DOLAN, JOHN J",Common Stock
+2004-08-20,FCF,Exec.VP/CFO,BUY,4000.0,9.25,37000.0,"DOLAN, JOHN J",Common Stock
+2004-08-20,FCF,Exec.VP/CFO,SELL,4000.0,9.25,37000.0,"DOLAN, JOHN J",Common Stock
+2004-08-23,FCF,Exec.VP/CFO,SELL,4000.0,13.55,54200.0,"DOLAN, JOHN J",Common Stock
+2004-08-23,FCF,Exec.VP/CFO,SELL,4000.0,9.25,37000.0,"DOLAN, JOHN J",Common Stock
+2004-08-23,FCF,Exec.VP/CFO,BUY,4000.0,9.25,37000.0,"DOLAN, JOHN J",Common Stock
+2004-08-24,FCF,Exec.VP/CFO,BUY,3384.0,9.25,31302.0,"DOLAN, JOHN J",Common Stock
+2004-08-24,FCF,Exec.VP/CFO,BUY,616.0,9.1875,5659.5,"DOLAN, JOHN J",Common Stock
+2004-08-24,FCF,Exec.VP/CFO,SELL,616.0,9.1875,5659.5,"DOLAN, JOHN J",Stock Option
+2004-08-24,FCF,Exec.VP/CFO,SELL,616.0,13.54,8340.64,"DOLAN, JOHN J",Common Stock
+2004-08-24,FCF,Exec.VP/CFO,SELL,3384.0,9.25,31302.0,"DOLAN, JOHN J",Stock Option
+2004-08-24,FCF,Exec.VP/CFO,SELL,3384.0,13.54,45819.36,"DOLAN, JOHN J",Common Stock
+2004-08-25,FCF,Exec.VP/CFO,SELL,724.0,9.25,6697.0,"DOLAN, JOHN J",Stock Option
+2004-08-25,FCF,Exec.VP/CFO,SELL,724.0,13.61,9853.64,"DOLAN, JOHN J",Common Stock
+2004-08-25,FCF,Exec.VP/CFO,BUY,724.0,9.25,6697.0,"DOLAN, JOHN J",Common Stock
+2004-09-17,FCF,"Director, Secy/Treasurer;Senior VP",SELL,3177.0,14.0,44478.0,"TOMB, DAVID R JR",Common Stock
+2004-09-17,FCF,"Director, Secy/Treasurer;Senior VP",SELL,2974.0,14.0,41636.0,"TOMB, DAVID R JR",Common Stock
+2004-09-17,FCF,"Director, Secy/Treasurer;Senior VP",SELL,2259.0,12.06,27243.54,"TOMB, DAVID R JR",Stock Option
+2004-09-17,FCF,"Director, Secy/Treasurer;Senior VP",SELL,3590.0,11.7,42003.0,"TOMB, DAVID R JR",Stock Option
+2004-09-17,FCF,"Director, Secy/Treasurer;Senior VP",SELL,3535.0,10.75,38001.25,"TOMB, DAVID R JR",Stock Option
+2004-09-17,FCF,"Director, Secy/Treasurer;Senior VP",SELL,3177.0,11.063,35147.151000000005,"TOMB, DAVID R JR",Stock Option
+2004-09-17,FCF,"Director, Secy/Treasurer;Senior VP",SELL,2700.0,11.5625,31218.75,"TOMB, DAVID R JR",Stock Option
+2004-09-17,FCF,"Director, Secy/Treasurer;Senior VP",SELL,2974.0,9.25,27509.5,"TOMB, DAVID R JR",Stock Option
+2004-09-17,FCF,"Director, Secy/Treasurer;Senior VP",BUY,2974.0,9.25,27509.5,"TOMB, DAVID R JR",Common Stock
+2004-09-17,FCF,"Director, Secy/Treasurer;Senior VP",BUY,2700.0,11.5625,31218.75,"TOMB, DAVID R JR",Common Stock
+2004-09-17,FCF,"Director, Secy/Treasurer;Senior VP",BUY,3590.0,11.7,42003.0,"TOMB, DAVID R JR",Common Stock
+2004-09-17,FCF,"Director, Secy/Treasurer;Senior VP",SELL,3590.0,14.0,50260.0,"TOMB, DAVID R JR",Common Stock
+2004-09-17,FCF,"Director, Secy/Treasurer;Senior VP",BUY,2259.0,12.06,27243.54,"TOMB, DAVID R JR",Common Stock
+2004-09-17,FCF,"Director, Secy/Treasurer;Senior VP",SELL,2700.0,14.0,37800.0,"TOMB, DAVID R JR",Common Stock
+2004-09-17,FCF,"Director, Secy/Treasurer;Senior VP",BUY,3177.0,11.063,35147.151000000005,"TOMB, DAVID R JR",Common Stock
+2004-09-17,FCF,"Director, Secy/Treasurer;Senior VP",BUY,3535.0,10.75,38001.25,"TOMB, DAVID R JR",Common Stock
+2004-09-17,FCF,"Director, Secy/Treasurer;Senior VP",SELL,3535.0,14.0,49490.0,"TOMB, DAVID R JR",Common Stock
+2004-09-17,FCF,"Director, Secy/Treasurer;Senior VP",SELL,2259.0,14.0,31626.0,"TOMB, DAVID R JR",Common Stock
+2004-09-27,FCF,"Director, Chairman;Exec.Officer",SELL,9039.0,11.063,99998.45700000001,"TRIMARCHI, E JAMES",Stock Option
+2004-09-27,FCF,"Director, Chairman;Exec.Officer",BUY,9302.0,10.75,99996.5,"TRIMARCHI, E JAMES",Common Stock
+2004-09-27,FCF,"Director, Chairman;Exec.Officer",BUY,9039.0,11.063,99998.45700000001,"TRIMARCHI, E JAMES",Common Stock
+2004-09-27,FCF,"Director, Chairman;Exec.Officer",SELL,8547.0,11.7,99999.9,"TRIMARCHI, E JAMES",Stock Option
+2004-09-27,FCF,"Director, Chairman;Exec.Officer",SELL,8648.0,11.5625,99992.5,"TRIMARCHI, E JAMES",Stock Option
+2004-09-27,FCF,"Director, Chairman;Exec.Officer",BUY,8648.0,11.5625,99992.5,"TRIMARCHI, E JAMES",Common Stock
+2004-09-27,FCF,"Director, Chairman;Exec.Officer",SELL,9302.0,10.75,99996.5,"TRIMARCHI, E JAMES",Stock Option
+2004-09-27,FCF,"Director, Chairman;Exec.Officer",BUY,8547.0,11.7,99999.9,"TRIMARCHI, E JAMES",Common Stock
+2004-09-27,FCF,"Director, Chairman;Exec.Officer",BUY,8291.0,12.06,99989.46,"TRIMARCHI, E JAMES",Common Stock
+2004-09-27,FCF,"Director, Chairman;Exec.Officer",SELL,8291.0,12.06,99989.46,"TRIMARCHI, E JAMES",Stock Option
+2004-10-15,FCF,Exec.VP/CFO,BUY,17.0,12.69,215.73,"DOLAN, JOHN J",Common Stock
+2004-10-15,FCF,Exec.VP/CFO,BUY,7.0,12.69,88.83,"DOLAN, JOHN J",Common Stock
+2004-10-15,FCF,Sr. Exec.VP/COO,BUY,27.0,12.69,342.63,"THOMCHICK, GERARD M",Common Stock
+2004-10-15,FCF,Director,BUY,14018.0,12.69,177888.41999999998,"LATIMER, DALE P",Common Stock
+2004-10-15,FCF,Director,BUY,1772.0,12.69,22486.68,"CHARLEY, RAY T",Common Stock
+2004-10-15,FCF,Executive Officer;Sr. VP,BUY,139.0,12.69,1763.9099999999999,"JARRETT, WILLIAM R",Common Stock
+2004-10-15,FCF,Executive Officer-Sr VP,BUY,105.0,12.69,1332.45,"CLEMENTS, THADDEUS J",Common Stock
+2004-10-15,FCF,Director,BUY,132.0,12.69,1675.08,"DAHLMANN, DAVID S",Common Stock
+2004-10-15,FCF,Director,BUY,115.0,12.69,1459.35,"SINGER, LAURIE STERN",Common Stock
+2004-10-15,FCF,"Director, Chairman;Exec.Officer",BUY,2070.0,12.69,26268.3,"TRIMARCHI, E JAMES",Common Stock
+2004-10-28,FCF,Exec.VP/CFO,BUY,14140.0,10.75,152005.0,"DOLAN, JOHN J",Common Stock
+2004-10-28,FCF,Exec.VP/CFO,SELL,5607.0,11.063,62030.241,"DOLAN, JOHN J",Stock Option
+2004-10-28,FCF,Exec.VP/CFO,BUY,5607.0,11.063,62030.241,"DOLAN, JOHN J",Common Stock
+2004-10-28,FCF,Exec.VP/CFO,SELL,5607.0,14.55,81581.85,"DOLAN, JOHN J",Common Stock
+2004-10-28,FCF,Exec.VP/CFO,SELL,14140.0,10.75,152005.0,"DOLAN, JOHN J",Stock Option
+2004-10-28,FCF,Exec.VP/CFO,SELL,14140.0,14.55,205737.0,"DOLAN, JOHN J",Common Stock
+2004-11-01,FCF,Executive Officer-Sr VP,BUY,1000.0,12.06,12060.0,"CLEMENTS, THADDEUS J",Common Stock
+2004-11-01,FCF,Executive Officer-Sr VP,SELL,1000.0,12.06,12060.0,"CLEMENTS, THADDEUS J",Stock option
+2004-11-01,FCF,Executive Officer-Sr VP,SELL,1000.0,14.5,14500.0,"CLEMENTS, THADDEUS J",Common Stock
+2004-11-02,FCF,Executive Officer-Sr VP,SELL,1000.0,12.06,12060.0,"CLEMENTS, THADDEUS J",Stock option
+2004-11-02,FCF,Executive Officer-Sr VP,SELL,1000.0,14.6,14600.0,"CLEMENTS, THADDEUS J",Common Stock
+2004-11-02,FCF,Executive Officer-Sr VP,BUY,1000.0,12.06,12060.0,"CLEMENTS, THADDEUS J",Common Stock
+2004-11-03,FCF,Executive Officer-Sr.VP,BUY,1000.0,12.06,12060.0,"CLEMENTS, THADDEUS J",Common Stock
+2004-11-03,FCF,Executive Officer-Sr.VP,SELL,1000.0,12.06,12060.0,"CLEMENTS, THADDEUS J",Stock Option
+2004-11-03,FCF,Executive Officer-Sr.VP,SELL,1000.0,14.6,14600.0,"CLEMENTS, THADDEUS J",Common Stock
+2004-11-04,FCF,Executive Officer;Sr. VP,SELL,2000.0,9.1875,18375.0,"JARRETT, WILLIAM R",Common Stock
+2004-11-04,FCF,Executive Officer;Sr. VP,SELL,2000.0,14.75,29500.0,"JARRETT, WILLIAM R",Common Stock
+2004-11-04,FCF,Executive Officer;Sr. VP,SELL,2000.0,9.1875,18375.0,"JARRETT, WILLIAM R",Stock Option
+2004-11-05,FCF,Executive Officer;Sr VP,SELL,2000.0,14.81,29620.0,"CLEMENTS, THADDEUS J",Common Stock
+2004-11-05,FCF,Executive Officer;Sr VP,SELL,2000.0,12.06,24120.0,"CLEMENTS, THADDEUS J",Stock Option
+2004-11-05,FCF,Executive Officer;Sr VP,BUY,2000.0,12.06,24120.0,"CLEMENTS, THADDEUS J",Common Stock
+2004-11-08,FCF,Exec.VP/CFO,SELL,7800.0,11.063,86291.40000000001,"DOLAN, JOHN J",Stock Option
+2004-11-08,FCF,Exec.VP/CFO,SELL,11208.0,11.5625,129592.5,"DOLAN, JOHN J",Stock Option
+2004-11-08,FCF,Exec.VP/CFO,SELL,11208.0,14.71,164869.68000000002,"DOLAN, JOHN J",Common Stock
+2004-11-08,FCF,Exec.VP/CFO,SELL,7800.0,14.71,114738.0,"DOLAN, JOHN J",Common Stock
+2004-11-08,FCF,Exec.VP/CFO,BUY,7800.0,11.063,86291.40000000001,"DOLAN, JOHN J",Common Stock
+2004-11-08,FCF,Exec.VP/CFO,BUY,11208.0,11.5625,129592.5,"DOLAN, JOHN J",Common Stock
+2004-11-09,FCF,Executive Officer;Sr VP,SELL,1000.0,12.06,12060.0,"CLEMENTS, THADDEUS J",Stock Option
+2004-11-09,FCF,Executive Officer;Sr VP,BUY,1000.0,12.06,12060.0,"CLEMENTS, THADDEUS J",Common Stock
+2004-11-09,FCF,Executive Officer;Sr VP,SELL,1000.0,14.8,14800.0,"CLEMENTS, THADDEUS J",Common Stock
+2004-11-11,FCF,Executive Officer;Sr VP,SELL,1000.0,12.06,12060.0,"CLEMENTS, THADDEUS J",Stock Option
+2004-11-11,FCF,Executive Officer;Sr VP,BUY,1000.0,12.06,12060.0,"CLEMENTS, THADDEUS J",Common Stock
+2004-11-11,FCF,Executive Officer;Sr.VP,SELL,1062.0,14.9,15823.800000000001,"JARRETT, WILLIAM R",Common Stock
+2004-11-11,FCF,Executive Officer;Sr VP,SELL,1000.0,14.9,14900.0,"CLEMENTS, THADDEUS J",Common Stock
+2004-11-11,FCF,Executive Officer;Sr.VP,BUY,1062.0,9.1875,9757.125,"JARRETT, WILLIAM R",Common Stock
+2004-11-11,FCF,Executive Officer;Sr.VP,SELL,1062.0,9.1875,9757.125,"JARRETT, WILLIAM R",Stock Option
+2004-11-12,FCF,Executive Officer;Sr VP,SELL,1501.0,15.0,22515.0,"CLEMENTS, THADDEUS J",Common Stock
+2004-11-12,FCF,Executive Officer;Sr VP,SELL,1501.0,12.06,18102.06,"CLEMENTS, THADDEUS J",Stock Option
+2004-11-12,FCF,Executive Officer;Sr VP,BUY,1501.0,12.06,18102.06,"CLEMENTS, THADDEUS J",Common Stock
+2004-11-15,FCF,"Director, Vice Chairman;Exec.Officer",BUY,18396.0,9.25,170163.0,"GLASS, JOHNSTON A",Common Stock
+2004-11-15,FCF,"Director, Vice Chairman;Exec.Officer",SELL,16604.0,9.1875,152549.25,"GLASS, JOHNSTON A",Stock Option
+2004-11-15,FCF,"Director, Vice Chairman;Exec.Officer",SELL,18396.0,15.02,276307.92,"GLASS, JOHNSTON A",Common Stock
+2004-11-15,FCF,"Director, Vice Chairman;Exec.Officer",BUY,16604.0,9.1875,152549.25,"GLASS, JOHNSTON A",Common Stock
+2004-11-15,FCF,"Director, Vice Chairman;Exec.Officer",SELL,16604.0,15.02,249392.08,"GLASS, JOHNSTON A",Common Stock
+2004-11-15,FCF,"Director, Vice Chairman;Exec.Officer",SELL,18396.0,9.25,170163.0,"GLASS, JOHNSTON A",Stock Option
+2004-11-16,FCF,"Director, Vice Chairman;Exec.Officer",SELL,2990.0,9.25,27657.5,"GLASS, JOHNSTON A",Stock Option
+2004-11-16,FCF,"Director, Vice Chairman;Exec.Officer",SELL,2990.0,15.01,44879.9,"GLASS, JOHNSTON A",Common Stock
+2004-11-16,FCF,"Director, Vice Chairman;Exec.Officer",BUY,2990.0,9.25,27657.5,"GLASS, JOHNSTON A",Common Stock
+2004-11-17,FCF,"Director, Vice Chairman;Exec.Officer",SELL,8344.0,9.25,77182.0,"GLASS, JOHNSTON A",Stock Option
+2004-11-17,FCF,"Director, Vice Chairman;Exec.Officer",SELL,8344.0,15.01,125243.44,"GLASS, JOHNSTON A",Common Stock
+2004-11-17,FCF,"Director, Vice Chairman;Exec.Officer",BUY,8344.0,9.25,77182.0,"GLASS, JOHNSTON A",Common Stock
+2004-11-18,FCF,Exec.VP/CFO,BUY,18803.0,11.7,219995.09999999998,"DOLAN, JOHN J",Common Stock
+2004-11-18,FCF,Exec.VP/CFO,SELL,18803.0,11.7,219995.09999999998,"DOLAN, JOHN J",Stock Option
+2004-11-18,FCF,Exec.VP/CFO,SELL,18803.0,15.1,283925.3,"DOLAN, JOHN J",Common Stock
+2004-11-22,FCF,Executive Officer;Sr VP,BUY,7000.0,9.1875,64312.5,"JARRETT, WILLIAM R",Common Stock
+2004-11-22,FCF,Executive Officer;Sr VP,SELL,7000.0,15.11,105770.0,"JARRETT, WILLIAM R",Common Stock
+2004-11-22,FCF,Executive Officer;Sr VP,SELL,7000.0,9.1875,64312.5,"JARRETT, WILLIAM R",Stock Option
+2004-11-23,FCF,Executive Officer-Sr. VP,SELL,10516.0,15.09,158686.44,"PREVITE, R JOHN",Common Stock
+2004-11-23,FCF,Executive Officer-Sr. VP,BUY,10516.0,11.5625,121591.25,"PREVITE, R JOHN",Common Stock
+2004-11-23,FCF,Executive Officer-Sr. VP,SELL,10516.0,11.5625,121591.25,"PREVITE, R JOHN",Stock Option
+2004-11-24,FCF,Executive Officer;Sr.VP,SELL,3884.0,9.1875,35684.25,"JARRETT, WILLIAM R",Stock Option
+2004-11-24,FCF,Executive Officer;Sr.VP,BUY,3884.0,9.1875,35684.25,"JARRETT, WILLIAM R",Common Stock
+2004-11-24,FCF,Executive Officer;Sr.VP,SELL,3884.0,15.25,59231.0,"JARRETT, WILLIAM R",Common Stock
+2004-12-14,FCF,Sr. Exec.VP/COO,SELL,9302.0,10.75,99996.5,"THOMCHICK, GERARD M",Stock option
+2004-12-14,FCF,Sr. Exec.VP/COO,BUY,9302.0,10.75,99996.5,"THOMCHICK, GERARD M",Common stock
+2004-12-14,FCF,Sr. Exec.VP/COO,SELL,9302.0,15.5,144181.0,"THOMCHICK, GERARD M",Common Stock
+2005-01-05,FCF,Director,SELL,1500.0,11.7,17550.0,"SINGER, LAURIE STERN",Stock Option
+2005-01-05,FCF,Director,BUY,1500.0,11.7,17550.0,"SINGER, LAURIE STERN",Common Stock
+2005-01-14,FCF,Director,BUY,14370.0,12.92,185660.4,"LATIMER, DALE P",Common Stock
+2005-01-14,FCF,"Director, Chairman;Exec.Officer",BUY,2098.0,12.92,27106.16,"TRIMARCHI, E JAMES",Common Stock
+2005-01-15,FCF,Executive VP & CRO,BUY,142.0,12.92,1834.64,"JARRETT, WILLIAM R",Common Stock
+2005-01-18,FCF,Director,BUY,3000.0,14.55,43650.0,"SINGER, LAURIE STERN",Stock Option
+2005-01-18,FCF,Director,BUY,3000.0,14.55,43650.0,"COTE, EDWARD T",Stock Option
+2005-01-18,FCF,Director,BUY,3000.0,14.55,43650.0,"ROBERTSHAW, JOHN A JR",Stock Option
+2005-01-18,FCF,Director,BUY,3000.0,14.55,43650.0,"FAIRMAN, ALAN R",Stock Option
+2005-01-18,FCF,Director,BUY,3000.0,14.55,43650.0,"CHARLEY, RAY T",Stock Option
+2005-01-18,FCF,Director,BUY,3000.0,14.55,43650.0,"LATIMER, DALE P",Stock Option
+2005-01-18,FCF,Director,BUY,3000.0,14.55,43650.0,"VENTURA, ROBERT J",Stock Option
+2005-01-18,FCF,Director,BUY,3000.0,14.55,43650.0,"NEWILL, JAMES W",Stock Option
+2005-01-18,FCF,Director,BUY,3000.0,14.55,43650.0,"DAHLMANN, DAVID S",Stock Option
+2005-01-26,FCF,Director,BUY,2000.0,10.75,21500.0,"COTE, EDWARD T",Common Stock
+2005-01-26,FCF,Director,SELL,2000.0,14.15,28300.0,"COTE, EDWARD T",Common Stock
+2005-01-26,FCF,Director,SELL,2000.0,10.75,21500.0,"COTE, EDWARD T",Stock Option
+2005-01-28,FCF,"Director, Chairman;Exec.Officer",BUY,3581.0,13.96,49990.76,"TRIMARCHI, E JAMES",Common Stock
+2005-02-04,FCF,Director,BUY,2000.0,11.063,22126.0,"COTE, EDWARD T",Common Stock
+2005-02-04,FCF,Director,SELL,2000.0,14.45,28900.0,"COTE, EDWARD T",Common Stock
+2005-02-04,FCF,Director,SELL,2000.0,11.5625,23125.0,"COTE, EDWARD T",Stock Option
+2005-02-04,FCF,Director,SELL,2000.0,11.063,22126.0,"COTE, EDWARD T",Stock Option
+2005-02-04,FCF,Director,BUY,2000.0,11.5625,23125.0,"COTE, EDWARD T",Common Stock
+2005-02-15,FCF,Director,BUY,1000.0,11.7,11700.0,"COTE, EDWARD T",Common Stock
+2005-02-15,FCF,Director,SELL,1000.0,11.7,11700.0,"COTE, EDWARD T",Stock Option
+2005-02-15,FCF,Director,SELL,1000.0,14.36,14360.0,"COTE, EDWARD T",Common Stock
+2005-02-18,FCF,"Director, Chairman;Exec. Officer",BUY,1783.0,14.02,24997.66,"TRIMARCHI, E JAMES",Common Stock
+2005-02-23,FCF,"Director, Chairman;Exec. Officer",BUY,1792.0,13.95,24998.399999999998,"TRIMARCHI, E JAMES",Common Stock
+2005-03-15,FCF,"Director, Chairman;Executive Officer",BUY,1798.0,13.9,24992.2,"TRIMARCHI, E JAMES",Common Stock
+2005-04-15,FCF,Director,BUY,15531.0,12.11,188080.41,"LATIMER, DALE P",Common Stock
+2005-04-15,FCF,Executive VP & CRO,BUY,154.0,12.11,1864.9399999999998,"JARRETT, WILLIAM R",Common Stock
+2005-06-06,FCF,Director,BUY,1040.0,13.4,13936.0,"NEWILL, JAMES W",Common Stock
+2005-07-11,FCF,Executive VP & CRO,BUY,3738.0,9.25,34576.5,"JARRETT, WILLIAM R",Common Stock
+2005-07-11,FCF,Executive VP & CRO,BUY,5000.0,9.25,46250.0,"JARRETT, WILLIAM R",Common Stock
+2005-07-11,FCF,Executive VP & CRO,SELL,8738.0,9.25,80826.5,"JARRETT, WILLIAM R",Stock Option
+2005-07-11,FCF,Executive VP & CRO,SELL,5000.0,14.45,72250.0,"JARRETT, WILLIAM R",Common Stock
+2005-07-11,FCF,Executive VP & CRO,SELL,3738.0,14.3,53453.4,"JARRETT, WILLIAM R",Common Stock
+2005-07-15,FCF,Director,BUY,14638.0,13.02,190586.75999999998,"LATIMER, DALE P",Common Stock
+2005-07-21,FCF,Executive VP & CRO,BUY,2410.0,9.25,22292.5,"JARRETT, WILLIAM R",Common Stock
+2005-07-21,FCF,Executive VP & CRO,SELL,2410.0,14.7,35427.0,"JARRETT, WILLIAM R",Common Stock
+2005-07-21,FCF,Executive VP & CRO,SELL,2410.0,9.25,22292.5,"JARRETT, WILLIAM R",Stock Option
+2005-07-25,FCF,"Director, Vice Chairman;Exec. Officer",BUY,31312.0,10.75,336604.0,"GLASS, JOHNSTON A",Common Stock
+2005-07-25,FCF,"Director, Vice Chairman;Exec. Officer",BUY,18388.0,11.063,203426.44400000002,"GLASS, JOHNSTON A",Common Stock
+2005-07-25,FCF,"Director, Vice Chairman;Exec. Officer",SELL,31312.0,10.75,336604.0,"GLASS, JOHNSTON A",Stock Option
+2005-07-25,FCF,"Director, Vice Chairman;Exec. Officer",SELL,18388.0,11.063,203426.44400000002,"GLASS, JOHNSTON A",Stock Option
+2005-07-25,FCF,"Director, Vice Chairman;Exec. Officer",SELL,31312.0,13.95,436802.39999999997,"GLASS, JOHNSTON A",Common Stock
+2005-07-25,FCF,"Director, Vice Chairman;Exec. Officer",SELL,18388.0,13.95,256512.59999999998,"GLASS, JOHNSTON A",Common Stock
+2005-07-26,FCF,"Director, Vice Chairman;Exec. Officer",SELL,2395.0,13.74,32907.3,"GLASS, JOHNSTON A",Common Stock
+2005-07-26,FCF,"Director, Vice Chairman;Exec. Officer",SELL,26162.0,11.5625,302498.125,"GLASS, JOHNSTON A",Stock Option
+2005-07-26,FCF,"Director, Vice Chairman;Exec. Officer",SELL,11443.0,11.063,126593.90900000001,"GLASS, JOHNSTON A",Stock Option
+2005-07-26,FCF,"Director, Vice Chairman;Exec. Officer",SELL,2395.0,11.7,28021.5,"GLASS, JOHNSTON A",Stock Option
+2005-07-26,FCF,"Director, Vice Chairman;Exec. Officer",BUY,11443.0,11.063,126593.90900000001,"GLASS, JOHNSTON A",Common Stock
+2005-07-26,FCF,"Director, Vice Chairman;Exec. Officer",BUY,26162.0,11.5625,302498.125,"GLASS, JOHNSTON A",Common Stock
+2005-07-26,FCF,"Director, Vice Chairman;Exec. Officer",SELL,26162.0,13.74,359465.88,"GLASS, JOHNSTON A",Common Stock
+2005-07-26,FCF,"Director, Vice Chairman;Exec. Officer",SELL,11443.0,13.74,157226.82,"GLASS, JOHNSTON A",Common Stock
+2005-07-26,FCF,"Director, Vice Chairman;Exec. Officer",BUY,2395.0,11.7,28021.5,"GLASS, JOHNSTON A",Common Stock
+2005-07-28,FCF,"Director, Vice Chairman;Exec. Officer",BUY,2000.0,11.7,23400.0,"GLASS, JOHNSTON A",Common Stock
+2005-07-28,FCF,"Director, Vice Chairman;Exec. Officer",SELL,2000.0,11.7,23400.0,"GLASS, JOHNSTON A",Stock Option
+2005-07-28,FCF,"Director, Vice Chairman;Exec. Officer",SELL,2000.0,13.74,27480.0,"GLASS, JOHNSTON A",Common Stock
+2005-07-29,FCF,"Director, Vice Chairman;Exec. Officer",SELL,2000.0,11.7,23400.0,"GLASS, JOHNSTON A",Stock Option
+2005-07-29,FCF,"Director, Vice Chairman;Exec. Officer",SELL,2000.0,13.85,27700.0,"GLASS, JOHNSTON A",Common Stock
+2005-07-29,FCF,"Director, Vice Chairman;Exec. Officer",BUY,2000.0,11.7,23400.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-01,FCF,"Director, Vice Chairman;Exec. Officer",SELL,2000.0,11.7,23400.0,"GLASS, JOHNSTON A",Stock Option
+2005-08-01,FCF,"Director, Vice Chairman;Exec. Officer",SELL,2000.0,13.8,27600.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-01,FCF,"Director, Vice Chairman;Exec. Officer",BUY,2000.0,11.7,23400.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-02,FCF,"Director, Vice Chairman;Exec. Officer",SELL,2000.0,13.86,27720.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-02,FCF,"Director, Vice Chairman;Exec. Officer",SELL,2000.0,11.7,23400.0,"GLASS, JOHNSTON A",Stock Option
+2005-08-02,FCF,"Director, Vice Chairman;Exec. Officer",BUY,2000.0,11.7,23400.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-03,FCF,"Director, Vice Chairman;Exec. Officer",BUY,2000.0,11.7,23400.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-03,FCF,"Director, Vice Chairman;Exec. Officer",SELL,2000.0,11.7,23400.0,"GLASS, JOHNSTON A",Stock Option
+2005-08-03,FCF,"Director, Vice Chairman;Exec. Officer",SELL,2000.0,13.85,27700.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-04,FCF,"Director, Vice Chairman;Exec. Officer",SELL,2000.0,11.7,23400.0,"GLASS, JOHNSTON A",Stock Option
+2005-08-04,FCF,"Director, Vice Chairman;Exec. Officer",BUY,2000.0,11.7,23400.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-04,FCF,"Director, Vice Chairman;Exec. Officer",SELL,2000.0,13.74,27480.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-05,FCF,"Director, Vice Chairman;Exec.Officer",BUY,2000.0,11.7,23400.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-05,FCF,"Director, Vice Chairman;Exec.Officer",SELL,2000.0,11.7,23400.0,"GLASS, JOHNSTON A",Stock Option
+2005-08-05,FCF,"Director, Vice Chairman;Exec.Officer",SELL,2000.0,13.5,27000.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-08,FCF,"Director, Vice Chairman;Exec.Officer",SELL,2000.0,13.53,27060.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-08,FCF,"Director, Vice Chairman;Exec.Officer",SELL,2000.0,11.7,23400.0,"GLASS, JOHNSTON A",Stock Option
+2005-08-08,FCF,"Director, Vice Chairman;Exec.Officer",BUY,2000.0,11.7,23400.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-09,FCF,"Director, Vice Chairman:Exec.Officer",BUY,2000.0,11.7,23400.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-09,FCF,"Director, Vice Chairman:Exec.Officer",SELL,2000.0,11.7,23400.0,"GLASS, JOHNSTON A",Stock Option
+2005-08-09,FCF,"Director, Vice Chairman:Exec.Officer",SELL,2000.0,13.66,27320.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-10,FCF,"Director, Vice Chairman:Exec.Officer",SELL,2000.0,11.7,23400.0,"GLASS, JOHNSTON A",Stock Option
+2005-08-10,FCF,"Director, Vice Chairman:Exec.Officer",SELL,2000.0,13.66,27320.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-10,FCF,"Director, Vice Chairman:Exec.Officer",BUY,2000.0,11.7,23400.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-11,FCF,"Director, Vice Chairman;Exec.Officer",SELL,2000.0,13.71,27420.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-11,FCF,"Director, Vice Chairman;Exec.Officer",SELL,2000.0,11.7,23400.0,"GLASS, JOHNSTON A",Stock Option
+2005-08-11,FCF,"Director, Vice Chairman;Exec.Officer",BUY,2000.0,11.7,23400.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-12,FCF,"Director, Vice Chairman;Exec.Officer",SELL,2000.0,11.7,23400.0,"GLASS, JOHNSTON A",Stock Option
+2005-08-12,FCF,"Director, Vice Chairman;Exec.Officer",BUY,2000.0,11.7,23400.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-12,FCF,"Director, Vice Chairman;Exec.Officer",SELL,2000.0,13.43,26860.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-15,FCF,"Director, Vice Chairman; Exec Officer",SELL,2000.0,11.7,23400.0,"GLASS, JOHNSTON A",Stock Option
+2005-08-15,FCF,"Director, Vice Chairman; Exec Officer",SELL,2000.0,13.65,27300.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-15,FCF,"Director, Vice Chairman; Exec Officer",BUY,2000.0,11.7,23400.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-16,FCF,"Director, Vice Chairman; Exec Officer",SELL,1000.0,11.7,11700.0,"GLASS, JOHNSTON A",Stock Option
+2005-08-16,FCF,"Director, Vice Chairman; Exec Officer",BUY,1000.0,11.7,11700.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-16,FCF,"Director, Vice Chairman; Exec Officer",SELL,1000.0,13.45,13450.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-17,FCF,"Director, Vice Chairman;Exec.Officer",SELL,839.0,13.58,11393.62,"GLASS, JOHNSTON A",Common Stock
+2005-08-17,FCF,"Director, Vice Chairman;Exec.Officer",SELL,1161.0,13.58,15766.38,"GLASS, JOHNSTON A",Common Stock
+2005-08-17,FCF,"Director, Vice Chairman;Exec.Officer",BUY,839.0,12.06,10118.34,"GLASS, JOHNSTON A",Common Stock
+2005-08-17,FCF,"Director, Vice Chairman;Exec.Officer",SELL,1161.0,11.7,13583.699999999999,"GLASS, JOHNSTON A",Stock Option
+2005-08-17,FCF,"Director, Vice Chairman;Exec.Officer",SELL,839.0,12.06,10118.34,"GLASS, JOHNSTON A",Stock Option
+2005-08-17,FCF,"Director, Vice Chairman;Exec.Officer",BUY,1161.0,11.7,13583.699999999999,"GLASS, JOHNSTON A",Common Stock
+2005-08-18,FCF,"Director, Vice Chairman;Exec.Officer",BUY,1000.0,12.06,12060.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-18,FCF,"Director, Vice Chairman;Exec.Officer",SELL,1000.0,12.06,12060.0,"GLASS, JOHNSTON A",Stock Option
+2005-08-18,FCF,"Director, Vice Chairman;Exec.Officer",SELL,1000.0,13.45,13450.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-19,FCF,"Director, Vice Chairman;Exec. Officer",SELL,300.0,12.06,3618.0,"GLASS, JOHNSTON A",Stock Option
+2005-08-19,FCF,"Director, Vice Chairman;Exec. Officer",BUY,300.0,12.06,3618.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-19,FCF,"Director, Vice Chairman;Exec. Officer",SELL,300.0,13.42,4026.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-22,FCF,"Director, Vice Chairman;Exec. Officer",SELL,2000.0,12.06,24120.0,"GLASS, JOHNSTON A",Stock Option
+2005-08-22,FCF,"Director, Vice Chairman;Exec. Officer",SELL,2000.0,13.48,26960.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-22,FCF,"Director, Vice Chairman;Exec. Officer",BUY,2000.0,12.06,24120.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-23,FCF,"Director, Vice Chairman;Exec. Officer",SELL,2000.0,13.53,27060.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-23,FCF,"Director, Vice Chairman;Exec. Officer",BUY,2000.0,12.06,24120.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-23,FCF,"Director, Vice Chairman;Exec. Officer",SELL,2000.0,12.06,24120.0,"GLASS, JOHNSTON A",Stock Option
+2005-08-24,FCF,"Director, Vice Chairman;Exec. Officer",SELL,1600.0,12.06,19296.0,"GLASS, JOHNSTON A",Stock Option
+2005-08-24,FCF,"Director, Vice Chairman;Exec. Officer",SELL,1600.0,13.43,21488.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-24,FCF,"Director, Vice Chairman;Exec. Officer",BUY,1600.0,12.06,19296.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-25,FCF,"Director, Vice Chairman;Exec. Officer",SELL,2000.0,12.06,24120.0,"GLASS, JOHNSTON A",Stock Option
+2005-08-25,FCF,"Director, Vice Chairman;Exec. Officer",SELL,2000.0,13.43,26860.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-25,FCF,"Director, Vice Chairman;Exec. Officer",BUY,2000.0,12.06,24120.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-29,FCF,"Director, Vice Chairman;Exec Officer",SELL,2000.0,13.42,26840.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-29,FCF,"Director, Vice Chairman;Exec Officer",SELL,2000.0,12.06,24120.0,"GLASS, JOHNSTON A",Stock Option
+2005-08-29,FCF,"Director, Vice Chairman;Exec Officer",BUY,2000.0,12.06,24120.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-30,FCF,"Director, Vice Chairman;Exec Officer",SELL,2000.0,12.06,24120.0,"GLASS, JOHNSTON A",Stock Option
+2005-08-30,FCF,"Director, Vice Chairman;Exec Officer",SELL,2000.0,13.5,27000.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-30,FCF,"Director, Vice Chairman;Exec Officer",BUY,2000.0,12.06,24120.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-31,FCF,Director,SELL,3000.0,12.06,36180.0,"FAIRMAN, ALAN R",Stock Option
+2005-08-31,FCF,"Director, Vice Chairman;Exec Officer",SELL,2000.0,13.5,27000.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-31,FCF,"Director, Vice Chairman;Exec Officer",BUY,2000.0,12.06,24120.0,"GLASS, JOHNSTON A",Common Stock
+2005-08-31,FCF,"Director, Vice Chairman;Exec Officer",SELL,2000.0,12.06,24120.0,"GLASS, JOHNSTON A",Stock Option
+2005-08-31,FCF,Director,BUY,3000.0,12.06,36180.0,"FAIRMAN, ALAN R",Common Stock
+2005-09-01,FCF,"Director, Vice Chairman;Exec Officer",SELL,2000.0,13.66,27320.0,"GLASS, JOHNSTON A",Common Stock
+2005-09-01,FCF,"Director, Vice Chairman;Exec Officer",BUY,2000.0,12.06,24120.0,"GLASS, JOHNSTON A",Common Stock
+2005-09-01,FCF,"Director, Vice Chairman;Exec Officer",SELL,2000.0,12.06,24120.0,"GLASS, JOHNSTON A",Stock Option
+2005-09-02,FCF,"Director, Vice Chairman;Exec. Officer",SELL,1000.0,12.06,12060.0,"GLASS, JOHNSTON A",Stock Option
+2005-09-02,FCF,"Director, Vice Chairman;Exec. Officer",SELL,1000.0,13.7,13700.0,"GLASS, JOHNSTON A",Common Stock
+2005-09-02,FCF,"Director, Vice Chairman;Exec. Officer",BUY,1000.0,12.06,12060.0,"GLASS, JOHNSTON A",Common Stock
+2005-09-06,FCF,"Director, Vice Chairman;Exec. Officer",SELL,2000.0,12.06,24120.0,"GLASS, JOHNSTON A",Stock Option
+2005-09-06,FCF,"Director, Vice Chairman;Exec. Officer",BUY,2000.0,12.06,24120.0,"GLASS, JOHNSTON A",Common Stock
+2005-09-06,FCF,"Director, Vice Chairman;Exec. Officer",SELL,2000.0,13.75,27500.0,"GLASS, JOHNSTON A",Common Stock
+2005-09-07,FCF,"Director, Vice Chairman;Exec.Officer",SELL,2000.0,12.06,24120.0,"GLASS, JOHNSTON A",Stock Option
+2005-09-07,FCF,Director,SELL,2000.0,13.81,27620.0,"COTE, EDWARD T",Common Stock
+2005-09-07,FCF,Director,SELL,2000.0,11.7,23400.0,"COTE, EDWARD T",Stock Option
+2005-09-07,FCF,"Director, Vice Chairman;Exec.Officer",BUY,2000.0,12.06,24120.0,"GLASS, JOHNSTON A",Common Stock
+2005-09-07,FCF,Director,BUY,2000.0,11.7,23400.0,"COTE, EDWARD T",Common Stock
+2005-09-07,FCF,"Director, Vice Chairman;Exec.Officer",SELL,2000.0,13.83,27660.0,"GLASS, JOHNSTON A",Common Stock
+2005-09-08,FCF,"Director, Vice Chairman;Exec. Officer",SELL,2000.0,13.59,27180.0,"GLASS, JOHNSTON A",Common Stock
+2005-09-08,FCF,"Director, Vice Chairman;Exec. Officer",BUY,2000.0,12.06,24120.0,"GLASS, JOHNSTON A",Common Stock
+2005-09-08,FCF,"Director, Vice Chairman;Exec. Officer",SELL,2000.0,12.06,24120.0,"GLASS, JOHNSTON A",Stock Option
+2005-09-09,FCF,"Director, Vice Chairman;Exec.Officer",SELL,1824.0,12.06,21997.440000000002,"GLASS, JOHNSTON A",Stock Option
+2005-09-09,FCF,"Director, Vice Chairman;Exec.Officer",BUY,1824.0,12.06,21997.440000000002,"GLASS, JOHNSTON A",Common Stock
+2005-09-09,FCF,"Director, Vice Chairman;Exec.Officer",SELL,1824.0,13.69,24970.559999999998,"GLASS, JOHNSTON A",Common Stock
+2005-09-28,FCF,Director,SELL,18724.0,14.6875,275008.75,"GLASS, JOHNSTON A",Stock Option
+2005-10-15,FCF,Director,BUY,2337.0,12.0,28044.0,"LATIMER, DALE P",Common Stock
+2006-01-13,FCF,"Director, President and CEO",BUY,4.0,12.07,48.28,"ODELL, JOSEPH E",Common Stock
+2006-01-13,FCF,Executive VP & CRO,BUY,166.0,12.07,2003.6200000000001,"JARRETT, WILLIAM R",Common Stock
+2006-01-13,FCF,Director,BUY,138.0,12.07,1665.66,"SINGER, LAURIE STERN",Common Stock
+2006-01-13,FCF,Exec.VP/CFO,BUY,8.0,12.07,96.56,"DOLAN, JOHN J",Common Stock
+2006-01-13,FCF,Director,BUY,2428.0,12.07,29305.96,"LATIMER, DALE P",Common Stock
+2006-01-13,FCF,Exec.VP/CFO,BUY,21.0,12.07,253.47,"DOLAN, JOHN J",Common Stock
+2006-02-16,FCF,Director,BUY,3000.0,12.06,36180.0,"COTE, EDWARD T",Common Stock
+2006-02-16,FCF,Director,SELL,3000.0,13.57,40710.0,"COTE, EDWARD T",Common Stock
+2006-02-16,FCF,Director,SELL,3000.0,12.06,36180.0,"COTE, EDWARD T",Stock Option
+2006-04-14,FCF,Executive VP & CRO,BUY,160.0,12.69,2030.3999999999999,"JARRETT, WILLIAM R",Common Stock
+2006-04-14,FCF,"Director, President and CEO",BUY,4.0,12.69,50.76,"ODELL, JOSEPH E",Common Stock
+2006-04-14,FCF,Director,BUY,133.0,12.69,1687.77,"SINGER, LAURIE STERN",Common Stock
+2006-04-14,FCF,Exec.VP/CFO,BUY,27.0,12.69,342.63,"DOLAN, JOHN J",Common Stock
+2006-04-14,FCF,Director,BUY,2342.0,12.69,29719.98,"LATIMER, DALE P",Common Stock
+2006-05-30,FCF,"Director, President and CEO",SELL,10884.0,9.1875,99996.75,"ODELL, JOSEPH E",Stock Option
+2006-05-30,FCF,"Director, President and CEO",SELL,10884.0,13.0,141492.0,"ODELL, JOSEPH E",Common Stock
+2006-05-30,FCF,"Director, President and CEO",BUY,10884.0,9.1875,99996.75,"ODELL, JOSEPH E",Common Stock
+2006-07-14,FCF,Exec.VP/CFO,BUY,31.0,11.34,351.54,"DOLAN, JOHN J",Common Stock
+2006-07-14,FCF,Executive VP & CRO,BUY,181.0,11.34,2052.54,"JARRETT, WILLIAM R",Common Stock
+2006-07-14,FCF,"Director, President and CEO",BUY,5.0,11.34,56.7,"ODELL, JOSEPH E",Common Stock
+2006-07-14,FCF,Director,BUY,150.0,11.34,1701.0,"SINGER, LAURIE STERN",Common Stock
+2006-07-14,FCF,Director,BUY,2655.0,11.34,30107.7,"LATIMER, DALE P",Common Stock
+2006-09-05,FCF,Director,BUY,1000.0,12.95,12950.0,"LATIMER, DALE P",Common Stock
+2006-09-05,FCF,Director,BUY,1000.0,12.95,12950.0,"TOMB, DAVID R JR",Common Stock
+2006-09-05,FCF,Director,BUY,1000.0,12.95,12950.0,"COTE, EDWARD T",Common Stock
+2006-09-15,FCF,Executive VP & CRO,BUY,3400.0,9.25,31450.0,"JARRETT, WILLIAM R",Common Stock
+2006-09-15,FCF,Executive VP & CRO,SELL,3400.0,9.25,31450.0,"JARRETT, WILLIAM R",Stock Option
+2006-09-15,FCF,Executive VP & CRO,SELL,3400.0,12.85,43690.0,"JARRETT, WILLIAM R",Common Stock
+2006-09-20,FCF,Executive Officer-Sr VP,SELL,11990.0,13.22,158507.80000000002,"PREVITE, R JOHN",Common Stock
+2006-09-20,FCF,Executive Officer-Sr VP,BUY,11990.0,11.063,132645.37,"PREVITE, R JOHN",Common Stock
+2006-09-20,FCF,Executive Officer-Sr VP,SELL,11990.0,11.063,132645.37,"PREVITE, R JOHN",Stock Option
+2006-10-13,FCF,Exec.VP/CFO,BUY,30.0,12.0,360.0,"DOLAN, JOHN J",Common Stock
+2006-10-13,FCF,Director,BUY,2546.0,12.0,30552.0,"LATIMER, DALE P",Common Stock
+2006-10-13,FCF,Director,BUY,144.0,12.0,1728.0,"SINGER, LAURIE STERN",Common Stock
+2006-10-13,FCF,"Director, President and CEO",BUY,4.0,12.0,48.0,"ODELL, JOSEPH E",Common Stock
+2006-11-07,FCF,Exec.Officer-Sr VP,SELL,12577.0,13.47,169412.19,"PREVITE, R JOHN",Common Stock
+2006-11-07,FCF,Exec.Officer-Sr VP,BUY,12577.0,10.75,135202.75,"PREVITE, R JOHN",Common Stock
+2006-11-07,FCF,Exec.Officer-Sr VP,SELL,12577.0,10.75,135202.75,"PREVITE, R JOHN",Stock Option
+2007-01-12,FCF,Director,BUY,2214.0,12.18,26966.52,"CHARLEY, RAY T",Common Stock
+2007-01-12,FCF,Director,BUY,948.0,12.17,11537.16,"LATIMER, DALE P",Common Stock
+2007-01-12,FCF,"Director, President & CEO",BUY,30.0,12.18,365.4,"DOLAN, JOHN J",Common Stock
+2007-01-12,FCF,"Director, President & CEO",BUY,30.0,12.17,365.1,"DOLAN, JOHN J",Common Stock
+2007-01-12,FCF,Director,BUY,144.0,12.17,1752.48,"SINGER, LAURIE STERN",Common Stock
+2007-01-29,FCF,Exec.VP/CFO,BUY,1000.0,13.15,13150.0,"DOLAN, JOHN J",Common Stock
+2007-01-29,FCF,"Director, President and CEO",SELL,6510.0,13.15,85606.5,"ODELL, JOSEPH E",Common Stock
+2007-01-29,FCF,"Director, President and CEO",BUY,6510.0,9.25,60217.5,"ODELL, JOSEPH E",Stock Option
+2007-01-29,FCF,"Director, President and CEO",BUY,6510.0,9.25,60217.5,"ODELL, JOSEPH E",Common Stock
+2007-01-30,FCF,"Director, President & CEO",BUY,4300.0,9.25,39775.0,"ODELL, JOSEPH E",Common Stock
+2007-01-30,FCF,"Director, President & CEO",SELL,4300.0,9.25,39775.0,"ODELL, JOSEPH E",Common Stock
+2007-01-30,FCF,"Director, President & CEO",SELL,4300.0,13.11,56373.0,"ODELL, JOSEPH E",Common Stock
+2007-02-02,FCF,Director,BUY,2290.0,13.1,29999.0,"SINGER, LAURIE STERN",Common Stock
+2007-02-28,FCF,"Director, President & CEO",BUY,1000.0,12.38,12380.0,"DOLAN, JOHN J",Common Stock
+2007-04-13,FCF,"Director, President & CEO",BUY,34.0,10.56,359.04,"DOLAN, JOHN J",Common Stock
+2007-04-13,FCF,Director,BUY,2589.0,10.56,27339.84,"CHARLEY, RAY T",Common Stock
+2007-06-01,FCF,Director,BUY,6562.0,11.43,75003.66,"CAPONI, JULIE A",Common Stock
+2007-06-01,FCF,Director,BUY,6620.0,11.33,75004.6,"CAPONI, JULIE A",Common Stock
+2007-07-13,FCF,Director,BUY,2858.0,9.72,27779.760000000002,"CHARLEY, RAY T",Common Stock
+2007-07-24,FCF,EVP/CFO/Controller,BUY,1000.0,9.91,9910.0,"LIPKUS, EDWARD J III",Common Stock
+2007-07-24,FCF,"Director, President & CEO",BUY,1000.0,9.91,9910.0,"DOLAN, JOHN J",Common Stock
+2007-07-27,FCF,Director,BUY,18000.0,9.48,170640.0,"CHARLEY, RAY T",Common Stock
+2007-12-31,FCF,"Director, President & CEO",BUY,2323.0,12.06,28015.38,"DOLAN, JOHN J",Common Stock
+2008-02-05,FCF,"Director, President & CEO",BUY,1000.0,10.84,10840.0,"DOLAN, JOHN J",Common Stock
+2008-02-22,FCF,Director,BUY,4667.0,10.71,49983.57000000001,"CAPONI, JULIE A",Common Stock
+2008-04-28,FCF,Executive Officer,SELL,12239.0,12.55,153599.45,"PREVITE, R JOHN",Common Stock
+2008-04-28,FCF,Executive Officer,BUY,12239.0,11.7,143196.3,"PREVITE, R JOHN",Common Stock
+2008-04-28,FCF,Executive Officer,SELL,12239.0,11.7,143196.3,"PREVITE, R JOHN",Stock Option
+2008-05-01,FCF,Executive Officer,SELL,10642.0,12.06,128342.52,"PREVITE, R JOHN",Stock Option
+2008-05-01,FCF,Executive Officer,SELL,100.0,12.72,1272.0,"PREVITE, R JOHN",Common Stock
+2008-05-01,FCF,Exective Officer/CAE,BUY,13110.0,11.063,145035.93000000002,"JARRETT, WILLIAM R",Common Stock
+2008-05-01,FCF,Exective Officer/CAE,BUY,13767.0,10.75,147995.25,"JARRETT, WILLIAM R",Common Stock
+2008-05-01,FCF,Exective Officer/CAE,BUY,13026.0,11.7,152404.19999999998,"JARRETT, WILLIAM R",Common Stock
+2008-05-01,FCF,Exective Officer/CAE,SELL,504.0,12.72,6410.88,"JARRETT, WILLIAM R",Common Stock
+2008-05-01,FCF,Exective Officer/CAE,BUY,12178.0,11.5625,140808.125,"JARRETT, WILLIAM R",Common Stock
+2008-05-01,FCF,Exective Officer/CAE,SELL,27300.0,12.62,344526.0,"JARRETT, WILLIAM R",Common Stock
+2008-05-01,FCF,Exective Officer/CAE,SELL,1600.0,12.63,20208.0,"JARRETT, WILLIAM R",Common Stock
+2008-05-01,FCF,Exective Officer/CAE,BUY,11323.0,12.06,136555.38,"JARRETT, WILLIAM R",Common Stock
+2008-05-01,FCF,Exective Officer/CAE,SELL,1000.0,12.64,12640.0,"JARRETT, WILLIAM R",Common Stock
+2008-05-01,FCF,Exective Officer/CAE,SELL,11323.0,12.06,136555.38,"JARRETT, WILLIAM R",Stock Option
+2008-05-01,FCF,Exective Officer/CAE,SELL,12195.0,12.66,154388.7,"JARRETT, WILLIAM R",Common Stock
+2008-05-01,FCF,Exective Officer/CAE,SELL,7905.0,12.65,99998.25,"JARRETT, WILLIAM R",Common Stock
+2008-05-01,FCF,Executive Officer,SELL,1900.0,12.71,24149.0,"PREVITE, R JOHN",Common Stock
+2008-05-01,FCF,Executive Officer,SELL,6342.0,12.7,80543.4,"PREVITE, R JOHN",Common Stock
+2008-05-01,FCF,Executive Officer,SELL,2300.0,12.73,29279.0,"PREVITE, R JOHN",Common stock
+2008-05-01,FCF,Exective Officer/CAE,SELL,13026.0,11.7,152404.19999999998,"JARRETT, WILLIAM R",Stock Option
+2008-05-01,FCF,Executive Officer,BUY,10642.0,12.06,128342.52,"PREVITE, R JOHN",Common stock
+2008-05-01,FCF,Exective Officer/CAE,SELL,13110.0,11.063,145035.93000000002,"JARRETT, WILLIAM R",Stock Option
+2008-05-01,FCF,Exective Officer/CAE,SELL,12178.0,11.5625,140808.125,"JARRETT, WILLIAM R",Stock Option
+2008-05-01,FCF,Exective Officer/CAE,SELL,2400.0,12.71,30504.000000000004,"JARRETT, WILLIAM R",Common Stock
+2008-05-01,FCF,Exective Officer/CAE,SELL,10500.0,12.7,133350.0,"JARRETT, WILLIAM R",Common Stock
+2008-05-01,FCF,Exective Officer/CAE,SELL,13767.0,10.75,147995.25,"JARRETT, WILLIAM R",Stock Option
+2008-05-09,FCF,"Director, President&CEO",BUY,1000.0,11.42,11420.0,"DOLAN, JOHN J",Common Stock
+2008-05-13,FCF,Director,SELL,1100.0,11.87,13057.0,"CUCCARO, JULIA TRIMARCHI",Common Stock
+2008-05-13,FCF,Director,SELL,4000.0,11.88,47520.0,"CUCCARO, JULIA TRIMARCHI",Common Stock
+2008-05-13,FCF,Director,SELL,10654.0,11.89,126676.06000000001,"CUCCARO, JULIA TRIMARCHI",Common Stock
+2008-05-13,FCF,"Director, SrVP; Secy/Treasurer",SELL,600.0,11.94,7164.0,"TOMB, DAVID R JR",Common Stock
+2008-05-13,FCF,"Director, SrVP; Secy/Treasurer",SELL,14759.0,11.9,175632.1,"TOMB, DAVID R JR",Common Stock
+2008-05-13,FCF,"Director, SrVP; Secy/Treasurer",SELL,6785.0,11.91,80809.35,"TOMB, DAVID R JR",Common Stock
+2008-05-13,FCF,"Director, SrVP; Secy/Treasurer",SELL,1200.0,11.96,14352.000000000002,"TOMB, DAVID R JR",Common Stock
+2008-05-13,FCF,"Director, SrVP; Secy/Treasurer",SELL,4649.0,11.93,55462.57,"TOMB, DAVID R JR",Common Stock
+2008-05-13,FCF,"Director, SrVP; Secy/Treasurer",SELL,1200.0,11.92,14304.0,"TOMB, DAVID R JR",Common Stock
+2008-05-13,FCF,"Director, SrVP; Secy/Treasurer",SELL,4000.0,11.88,47520.0,"TOMB, DAVID R JR",Common Stock
+2008-05-13,FCF,"Director, SrVP; Secy/Treasurer",SELL,4.0,11.97,47.88,"TOMB, DAVID R JR",Common Stock
+2008-05-13,FCF,"Director, SrVP; Secy/Treasurer",SELL,1996.0,11.95,23852.199999999997,"TOMB, DAVID R JR",Common Stock
+2008-05-13,FCF,Director,SELL,1200.0,11.96,14352.000000000002,"CUCCARO, JULIA TRIMARCHI",Common Stock
+2008-05-13,FCF,Director,SELL,1200.0,11.92,14304.0,"CUCCARO, JULIA TRIMARCHI",Common Stock
+2008-05-13,FCF,"Director, SrVP; Secy/Treasurer",SELL,1100.0,11.87,13057.0,"TOMB, DAVID R JR",Common Stock
+2008-05-13,FCF,"Director, SrVP; Secy/Treasurer",SELL,1700.0,11.86,20162.0,"TOMB, DAVID R JR",Common Stock
+2008-05-13,FCF,"Director, SrVP; Secy/Treasurer",SELL,10654.0,11.89,126676.06000000001,"TOMB, DAVID R JR",Common Stock
+2008-05-13,FCF,Director,SELL,4.0,11.97,47.88,"CUCCARO, JULIA TRIMARCHI",Common Stock
+2008-05-13,FCF,Director,SELL,1996.0,11.95,23852.199999999997,"CUCCARO, JULIA TRIMARCHI",Common Stock
+2008-05-13,FCF,"Director, SrVP; Secy/Treasurer",SELL,3525.0,11.85,41771.25,"TOMB, DAVID R JR",Common Stock
+2008-05-13,FCF,Director,SELL,4649.0,11.93,55462.57,"CUCCARO, JULIA TRIMARCHI",Common Stock
+2008-05-13,FCF,Director,SELL,6785.0,11.91,80809.35,"CUCCARO, JULIA TRIMARCHI",Common Stock
+2008-05-13,FCF,Director,SELL,14759.0,11.9,175632.1,"CUCCARO, JULIA TRIMARCHI",Common Stock
+2008-05-13,FCF,Director,SELL,1700.0,11.86,20162.0,"CUCCARO, JULIA TRIMARCHI",Common Stock
+2008-05-13,FCF,Director,SELL,3525.0,11.85,41771.25,"CUCCARO, JULIA TRIMARCHI",Common Stock
+2008-05-13,FCF,Director,SELL,600.0,11.94,7164.0,"CUCCARO, JULIA TRIMARCHI",Common Stock
+2008-05-29,FCF,"Director, Pres.& CEO",BUY,800.0,11.17,8936.0,"DOLAN, JOHN J",Common Stock
+2008-05-29,FCF,"Director, Pres.& CEO",BUY,200.0,11.19,2238.0,"DOLAN, JOHN J",Common Stock
+2008-06-05,FCF,EVP & CFO,BUY,2000.0,10.56,21120.0,"LIPKUS, EDWARD J III",Common Stock
+2008-07-29,FCF,Executive officer,SELL,10136.0,11.36,115144.95999999999,"PREVITE, R JOHN",Common Stock
+2008-08-07,FCF,Director,BUY,4100.0,12.0,49200.0,"SINGER, LAURIE STERN",Common Stock
+2008-09-08,FCF,"ExecOfficer-VIP,CIO",SELL,6572.0,11.5625,75988.75,"MCMURDY, SUE A",Stock Option
+2008-09-08,FCF,Director,SELL,40000.0,12.3,492000.0,"NEWILL, JAMES W",Common Stock
+2008-09-08,FCF,Director,SELL,20000.0,12.5,250000.0,"NEWILL, JAMES W",Common Stock
+2008-09-08,FCF,"ExecOfficer-VIP,CIO",SELL,3286.0,12.5,41075.0,"MCMURDY, SUE A",Common Stock
+2008-09-08,FCF,"ExecOfficer-VIP,CIO",BUY,6572.0,11.5625,75988.75,"MCMURDY, SUE A",Common Stock
+2008-09-08,FCF,"ExecOfficer-VIP,CIO",SELL,3286.0,12.59,41370.74,"MCMURDY, SUE A",Common Stock
+2008-09-10,FCF,Director,SELL,20000.0,12.33,246600.0,"NEWILL, JAMES W",Common Stock
+2008-09-10,FCF,Director,SELL,2239.0,12.5,27987.5,"NEWILL, JAMES W",Common Staock
+2008-09-12,FCF,"Director, Sr VP;Secy/Treasurer",SELL,8648.0,12.54,108445.92,"TOMB, DAVID R JR",Common Stock
+2008-09-12,FCF,"Director, Sr VP;Secy/Treasurer",BUY,8648.0,11.5625,99992.5,"TOMB, DAVID R JR",Common Stock
+2008-09-12,FCF,Director,SELL,17761.0,12.5,222012.5,"NEWILL, JAMES W",Common Stock
+2008-09-12,FCF,"Director, Sr VP;Secy/Treasurer",SELL,8648.0,11.5625,99992.5,"TOMB, DAVID R JR",Stock Option
+2008-09-18,FCF,Director,SELL,20000.0,12.75,255000.0,"NEWILL, JAMES W",Common Stock
+2008-09-18,FCF,Director,SELL,10000.0,12.75,127500.0,"NEWILL, JAMES W",Common Stock
+2008-09-18,FCF,Director,SELL,15000.0,12.8325,192487.5,"NEWILL, JAMES W",Common Stock
+2008-10-31,FCF,"Director, Pres. & CEO",BUY,5000.0,10.0,50000.0,"DOLAN, JOHN J",Common Stock
+2008-10-31,FCF,Director,BUY,20000.0,10.0,200000.0,"CHARLEY, RAY T",Common Stock
+2008-10-31,FCF,Director,BUY,2000.0,10.0,20000.0,"ROBERTSHAW, JOHN A JR",Common Stock
+2008-10-31,FCF,Director,BUY,3500.0,10.0,35000.0,"CAPONI, JULIE A",Common Stock
+2008-10-31,FCF,Director,BUY,10000.0,10.0,100000.0,"SINGER, LAURIE STERN",Common Stock
+2008-10-31,FCF,"Director, Chairman",BUY,3000.0,10.0,30000.0,"DAHLMANN, DAVID S",Common Stock
+2008-10-31,FCF,Exec.Officer-EVP&CFO,BUY,2000.0,10.0,20000.0,"LIPKUS, EDWARD J III",Common Stock
+2008-10-31,FCF,Exec.Officer;FCB Bank Pres.,BUY,10000.0,10.0,100000.0,"PRICE, T MICHAEL",Common Stock
+2009-05-18,FCF,"Director, President & CEO",BUY,1000.0,8.18,8180.0,"DOLAN, JOHN J",Common Stock
+2009-05-20,FCF,Executive Officer - Legal,BUY,2000.0,7.1,14200.0,"TOMB, MATTHEW C",Common Stock
+2009-07-21,FCF,Director,BUY,648.0,6.94,4497.12,"VENTURA, ROBERT J",Common Stock
+2009-07-21,FCF,"Director, Chairman of the Board",BUY,648.0,6.94,4497.12,"DAHLMANN, DAVID S",Common Stock
+2009-07-29,FCF,"Director, President & CEO",BUY,1000.0,6.39,6390.0,"DOLAN, JOHN J",Common Stock
+2009-09-03,FCF,"Director, President&CEO",BUY,1000.0,5.97,5970.0,"DOLAN, JOHN J",Common Stock
+2009-10-20,FCF,Director,BUY,788.0,5.71,4499.48,"VENTURA, ROBERT J",Common Stock
+2009-10-20,FCF,"Director, Chairman of the Board",BUY,788.0,5.71,4499.48,"DAHLMANN, DAVID S",Common Stock
+2009-10-26,FCF,"Director, President & CEO",BUY,5000.0,4.99,24950.0,"DOLAN, JOHN J",Common Stock
+2009-11-10,FCF,"Director, President & CEO",BUY,3000.0,4.49,13470.0,"DOLAN, JOHN J",Common Stock
+2009-11-10,FCF,"Director, President & CEO",BUY,2000.0,4.56,9120.0,"DOLAN, JOHN J",Common Stock
+2009-11-30,FCF,Director,BUY,25000.0,4.1271,103177.50000000001,"CHARLEY, RAY T",Common Stock
+2009-12-03,FCF,"Director, Chairman of the Board",BUY,10000.0,4.37,43700.0,"DAHLMANN, DAVID S",Common Stock
+2009-12-11,FCF,Executive Officer-EVP,SELL,3394.0,4.23,14356.62,"CLEMENTS, THADDEUS J",Common Stock
+2010-01-19,FCF,Director,BUY,947.0,4.75,4498.25,"VENTURA, ROBERT J",Common Stock
+2010-01-19,FCF,"Director, Chairman",BUY,947.0,4.75,4498.25,"DAHLMANN, DAVID S",Common Stock
+2010-02-03,FCF,Executive officer-EVP,SELL,3396.0,5.675,19272.3,"CLEMENTS, THADDEUS J",Common Stock
+2010-03-02,FCF,Chief Financial Officer,BUY,3000.0,5.538,16614.0,"ROUT, ROBERT E",Common Stock
+2010-03-03,FCF,Chief Financial Officer,BUY,7000.0,5.58,39060.0,"ROUT, ROBERT E",Common Stock
+2010-04-21,FCF,Director,BUY,596.0,7.54,4493.84,"VENTURA, ROBERT J",Common Stock
+2010-04-28,FCF,EVP/Chief Credit Officer,BUY,1000.0,6.65,6650.0,"EMMERICH, I. ROBERT",Common Stock
+2010-05-10,FCF,"Director, President & CEO",BUY,2100.0,5.84,12264.0,"DOLAN, JOHN J",Common Stock
+2010-05-10,FCF,"Director, President & CEO",BUY,1900.0,5.85,11115.0,"DOLAN, JOHN J",Common Stock
+2010-06-01,FCF,"Sr.VP-Legal,Exec.Officer",BUY,1000.0,5.07,5070.0,"TOMB, MATTHEW C",Common Stock
+2010-06-10,FCF,EVP/Chief Credit Officer,BUY,1000.0,5.07,5070.0,"EMMERICH, I. ROBERT",Common Stock
+2010-06-17,FCF,Director,BUY,1000.0,5.19,5190.0,"GREENFIELD, DAVID W",Common Stock
+2010-07-20,FCF,Director,BUY,870.0,5.17,4497.9,"VENTURA, ROBERT J",Common Stock
+2010-08-05,FCF,"Director, Chairman",BUY,3000.0,4.65,13950.000000000002,"DAHLMANN, DAVID S",Common Stock
+2010-08-05,FCF,"Director, President & CEO",BUY,5000.0,4.65,23250.0,"DOLAN, JOHN J",Common Stock
+2010-08-05,FCF,EVP/Chief Credit Officer,BUY,8000.0,4.65,37200.0,"EMMERICH, I. ROBERT",Common Stock
+2010-08-05,FCF,Director,BUY,5000.0,4.65,23250.0,"GREENFIELD, DAVID W",Common Stock
+2010-08-05,FCF,Chief Financial Officer,BUY,10000.0,4.65,46500.0,"ROUT, ROBERT E",Common Stock
+2010-08-05,FCF,FCBank President;Exec Officer,BUY,2000.0,4.65,9300.0,"PRICE, T MICHAEL",Common Stock
+2010-08-11,FCF,"Sr VP-Legal,Exec Officer",BUY,1000.0,4.9,4900.0,"TOMB, MATTHEW C",Common Stock
+2010-08-16,FCF,Director,BUY,4960.0,5.07,25147.2,"SINGER, LAURIE STERN",Common Stock
+2010-10-19,FCF,Director,BUY,785.0,5.73,4498.05,"GREENFIELD, DAVID W",Common Stock
+2010-10-19,FCF,Director,BUY,785.0,5.73,4498.05,"VENTURA, ROBERT J",Common Stock
+2010-12-10,FCF,Director,SELL,4300.0,7.0,30100.0,"NEWILL, JAMES W",Common Stock
+2010-12-14,FCF,Director,SELL,25700.0,7.0047,180020.78999999998,"NEWILL, JAMES W",Common Stock
+2010-12-15,FCF,Director,SELL,100.0,7.1038,710.38,"NEWILL, JAMES W",Common Stock
+2010-12-15,FCF,Director,SELL,1500.0,7.1125,10668.75,"NEWILL, JAMES W",Common Stock
+2010-12-15,FCF,Director,SELL,6086.0,7.1,43210.6,"NEWILL, JAMES W",Common Stock
+2010-12-15,FCF,Director,SELL,100.0,7.115,711.5,"NEWILL, JAMES W",Common Stock
+2010-12-15,FCF,Director,SELL,746.0,7.105,5300.33,"NEWILL, JAMES W",Common Stock
+2010-12-15,FCF,Director,SELL,700.0,7.12,4984.0,"NEWILL, JAMES W",Common Stock
+2010-12-15,FCF,Director,SELL,800.0,7.0125,5610.0,"NEWILL, JAMES W",Common Stock
+2010-12-15,FCF,Director,SELL,2400.0,7.11,17064.0,"NEWILL, JAMES W",Common Stock
+2010-12-16,FCF,Director,SELL,2812.0,7.1,19965.2,"NEWILL, JAMES W",Common Stock
+2010-12-16,FCF,Director,SELL,100.0,7.1013,710.13,"NEWILL, JAMES W",Common Stock
+2010-12-16,FCF,Director,SELL,100.0,7.12,712.0,"NEWILL, JAMES W",Common Stock
+2010-12-16,FCF,Director,SELL,3956.0,7.11,28127.16,"NEWILL, JAMES W",Common Stock
+2010-12-16,FCF,Director,SELL,300.0,7.1101,2133.03,"NEWILL, JAMES W",Common Stock
+2010-12-16,FCF,Director,SELL,300.0,7.105,2131.5,"NEWILL, JAMES W",Common Stock
+2010-12-22,FCF,Director,SELL,20000.0,7.25,145000.0,"NEWILL, JAMES W",Common Stock
+2011-02-15,FCF,Executive Vice President,SELL,4.0,6.39,25.56,"CLEMENTS, THADDEUS J",Common Stock
+2011-02-28,FCF,Director,SELL,13760.0,6.6154,91027.90400000001,"VENTURA, ROBERT J",Common Stock
+2011-02-28,FCF,Director,BUY,13760.0,5.29,72790.4,"VENTURA, ROBERT J",Common Stock
+2011-02-28,FCF,Director,SELL,13760.0,5.29,72790.4,"VENTURA, ROBERT J",Stock Option
+2011-03-14,FCF,Chief Risk Officer,BUY,2500.0,6.1,15250.0,"TOMB, MATTHEW C",Common Stock
+2011-04-20,FCF,Director,BUY,2922.0,6.16,17999.52,"SINGER, LAURIE STERN",Common Stock
+2011-04-20,FCF,Director,BUY,2922.0,6.16,17999.52,"LATIMER, LUKE A",Common Stock
+2011-04-20,FCF,Director,BUY,2922.0,6.16,17999.52,"CAPONI, JULIE A",Common Stock
+2011-04-20,FCF,Director,BUY,2922.0,6.16,17999.52,"DAHLMANN, DAVID S",Common Stock
+2011-04-20,FCF,Director,BUY,2922.0,6.16,17999.52,"VENTURA, ROBERT J",Common Stock
+2011-04-20,FCF,Director,BUY,2922.0,6.16,17999.52,"GREENFIELD, DAVID W",Common Stock
+2011-04-20,FCF,Director,BUY,2922.0,6.16,17999.52,"GLASS, JOHNSTON A",Common Stock
+2011-04-20,FCF,Director,BUY,2922.0,6.16,17999.52,"CLAUS, GARY R",Common Stock
+2011-07-29,FCF,"Director, President&CEO",BUY,2000.0,5.2561,10512.2,"DOLAN, JOHN J",Common Stock
+2011-08-04,FCF,EVP/Chief Risk Officer,BUY,2000.0,4.9,9800.0,"TOMB, MATTHEW C",Common Stock
+2011-08-09,FCF,EVP/Chief Risk Officer,BUY,2000.0,4.19,8380.0,"TOMB, MATTHEW C",Common Stock
+2011-08-11,FCF,Chief Financial Officer,BUY,10000.0,3.98,39800.0,"ROUT, ROBERT E",Common Stock
+2011-08-11,FCF,"Director, Chairman of the Board",BUY,3000.0,4.04,12120.0,"DAHLMANN, DAVID S",Common Stock
+2011-08-11,FCF,"Director, President & CEO",BUY,3000.0,3.98,11940.0,"DOLAN, JOHN J",Common Stock
+2012-02-21,FCF,Director,BUY,2100.0,5.99,12579.0,"CLAUS, GARY R",Common Stock
+2012-02-21,FCF,Director,BUY,400.0,5.98,2392.0,"CLAUS, GARY R",Common Stock
+2012-03-01,FCF,"Director, Chairman of the Board",BUY,5081.0,6.058,30780.698,"DAHLMANN, DAVID S",Common Stock
+2012-03-19,FCF,Director,SELL,23024.0,6.36,146432.64,"VENTURA, ROBERT J",Stock Option
+2012-03-19,FCF,Director,BUY,23024.0,6.36,146432.64,"VENTURA, ROBERT J",Common Stock
+2012-03-19,FCF,Director,SELL,23024.0,6.69,154030.56,"VENTURA, ROBERT J",Common Stock
+2012-03-21,FCF,Director,SELL,10000.0,6.36,63600.0,"VENTURA, ROBERT J",Stock Option
+2012-03-21,FCF,Director,BUY,10000.0,6.36,63600.0,"VENTURA, ROBERT J",Common Stock
+2012-03-21,FCF,Director,SELL,10000.0,6.5539,65539.0,"VENTURA, ROBERT J",Common Stock
+2012-04-24,FCF,Director,BUY,3066.0,5.87,17997.420000000002,"SINGER, LAURIE STERN",Common Stock
+2012-04-24,FCF,Director,BUY,3066.0,5.87,17997.420000000002,"LATIMER, LUKE A",Common Stock
+2012-04-24,FCF,Director,BUY,3066.0,5.87,17997.420000000002,"CAPONI, JULIE A",Common Stock
+2012-04-24,FCF,Director,BUY,3066.0,5.87,17997.420000000002,"VENTURA, ROBERT J",Common Stock
+2012-04-24,FCF,Director,BUY,3066.0,5.87,17997.420000000002,"GLASS, JOHNSTON A",Common Stock
+2012-04-24,FCF,Director,BUY,3066.0,5.87,17997.420000000002,"CLAUS, GARY R",Common Stock
+2012-04-24,FCF,"Director, Chairman of the Board",BUY,3066.0,5.87,17997.420000000002,"DAHLMANN, DAVID S",Common Stock
+2012-04-24,FCF,Director,BUY,3066.0,5.87,17997.420000000002,"GREENFIELD, DAVID W",Common Stock
+2012-12-03,FCF,Director,BUY,2500.0,6.38,15950.0,"CLAUS, GARY R",Common Stock
+2013-02-07,FCF,"Director, President & CEO",BUY,2600.0,7.0808,18410.08,"PRICE, T MICHAEL",Common Stock
+2013-02-28,FCF,Director,BUY,1363.0,7.32,9977.16,"LATIMER, LUKE A",Common Stock
+2013-04-23,FCF,Director,BUY,2601.0,6.92,17998.92,"GLASS, JOHNSTON A",Common Stock
+2013-04-23,FCF,Director,BUY,2601.0,6.92,17998.92,"LATIMER, LUKE A",Common Stock
+2013-04-23,FCF,Director,BUY,2601.0,6.92,17998.92,"SINGER, LAURIE STERN",Common Stock
+2013-04-23,FCF,Director,BUY,2601.0,6.92,17998.92,"GREENFIELD, DAVID W",Common Stock
+2013-04-23,FCF,Director,BUY,2601.0,6.92,17998.92,"GORNEY, JON L",Common Stock
+2013-04-23,FCF,Director,BUY,2601.0,6.92,17998.92,"CAPONI, JULIE A",Common Stock
+2013-04-23,FCF,Director,BUY,2601.0,6.92,17998.92,"CLAUS, GARY R",Common Stock
+2013-04-23,FCF,Director,BUY,2601.0,6.92,17998.92,"DAHLMANN, DAVID S",Common Stock
+2013-04-23,FCF,Director,BUY,2601.0,6.92,17998.92,"VENTURA, ROBERT J",Common Stock
+2013-04-23,FCF,Director,BUY,1950.0,6.92,13494.0,"BARONE, JAMES G",Common Stock
+2013-04-30,FCF,Director,BUY,1406.0,7.11,9996.66,"LATIMER, LUKE A",Common Stock
+2013-05-13,FCF,EVP/Chief Credit Officer,BUY,2000.0,9.03,18060.0,"EMMERICH, I. ROBERT",Common Stock
+2013-07-29,FCF,Director,BUY,703.0,7.4,5202.2,"CLAUS, GARY R",Common Stock
+2013-07-29,FCF,Director,BUY,1797.0,7.42,13333.74,"CLAUS, GARY R",Common Stock
+2014-04-22,FCF,Director,BUY,2745.0,8.74,23991.3,"LATIMER, LUKE A",Common Stock
+2014-04-22,FCF,Director,BUY,2745.0,8.74,23991.3,"VENTURA, ROBERT J",Common Stock
+2014-04-22,FCF,Director,BUY,2745.0,8.74,23991.3,"SINGER, LAURIE STERN",Common Stock
+2014-04-22,FCF,Director,BUY,2745.0,8.74,23991.3,"GORNEY, JON L",Common Stock
+2014-04-22,FCF,Director,BUY,2745.0,8.74,23991.3,"BARONE, JAMES G",Common Stock
+2014-04-22,FCF,Director,BUY,2745.0,8.74,23991.3,"CAPONI, JULIE A",Common Stock
+2014-04-22,FCF,Director,BUY,2745.0,8.74,23991.3,"GREENFIELD, DAVID W",Common Stock
+2014-04-22,FCF,Director,BUY,2745.0,8.74,23991.3,"CLAUS, GARY R",Common Stock
+2014-06-02,FCF,Director,BUY,5000.0,8.62,43099.99999999999,"GORNEY, JON L",Common Stock
+2014-08-04,FCF,Director,BUY,2500.0,8.56,21400.0,"CLAUS, GARY R",Common Stock
+2014-11-14,FCF,EVP/Chief Risk Officer,BUY,2000.0,9.28,18560.0,"TOMB, MATTHEW C",Common Stock
+2014-11-24,FCF,"Director, President & CEO",BUY,25000.0,9.14,228500.0,"PRICE, T MICHAEL",Common Stock
+2014-11-25,FCF,"Director, President & CEO",BUY,4000.0,9.19,36760.0,"PRICE, T MICHAEL",Common Stock
+2014-12-02,FCF,ExecVP/Chief Risk Officer,BUY,2000.0,8.82,17640.0,"TOMB, MATTHEW C",Common Stock
+2015-01-30,FCF,ExecVP/Chief Risk Officer,BUY,2000.0,7.91,15820.0,"TOMB, MATTHEW C",Common Stock
+2015-04-28,FCF,Director,BUY,2617.0,9.17,23997.89,"GREENFIELD, DAVID W",Common Stock
+2015-04-28,FCF,Director,BUY,2617.0,9.17,23997.89,"GORNEY, JON L",Common Stock
+2015-04-28,FCF,Director,BUY,2617.0,9.17,23997.89,"CLAUS, GARY R",Common Stock
+2015-04-28,FCF,Director,BUY,2617.0,9.17,23997.89,"BARONE, JAMES G",Common stock
+2015-04-28,FCF,Director,BUY,2617.0,9.17,23997.89,"CAPONI, JULIE A",Common Stock
+2015-04-28,FCF,Director,BUY,2617.0,9.17,23997.89,"VENTURA, ROBERT J",Common Stock
+2015-04-28,FCF,Director,BUY,2617.0,9.17,23997.89,"SINGER, LAURIE STERN",Common Stock
+2015-04-28,FCF,Director,BUY,2617.0,9.17,23997.89,"LATIMER, LUKE A",Common Stock
+2015-05-13,FCF,EVP/Chief Credit Officer,SELL,1592.0,9.01,14343.92,"EMMERICH, I. ROBERT",Common Stock
+2015-08-26,FCF,EVP/Chief Risk Officer,BUY,1000.0,8.6,8600.0,"TOMB, MATTHEW C",Common Stock
+2015-09-04,FCF,Director,BUY,2500.0,8.6781,21695.25,"CLAUS, GARY R",Common Stock
+2016-04-05,FCF,Director,BUY,1112.0,8.89,9885.68,"LATIMER, LUKE A",Common Stock
+2016-04-26,FCF,Director,BUY,2572.0,9.33,23996.76,"CAPONI, JULIE A",Common Stock
+2016-04-26,FCF,Director,BUY,2572.0,9.33,23996.76,"BARONE, JAMES G",Common Stock
+2016-04-26,FCF,Director,BUY,2572.0,9.33,23996.76,"VENTURA, ROBERT J",Common Stock
+2016-04-26,FCF,Director,BUY,2572.0,9.33,23996.76,"CHARLEY, RAY T",Common Stock
+2016-04-26,FCF,Director,BUY,2572.0,9.33,23996.76,"GORNEY, JON L",Common Stock
+2016-04-26,FCF,Director,BUY,2572.0,9.33,23996.76,"CLAUS, GARY R",Common Stock
+2016-04-26,FCF,Director,BUY,2572.0,9.33,23996.76,"SINGER, LAURIE STERN",Common Stock
+2016-04-26,FCF,Director,BUY,2572.0,9.33,23996.76,"GREENFIELD, DAVID W",Common Stock
+2016-04-26,FCF,Director,BUY,2572.0,9.33,23996.76,"LATIMER, LUKE A",Common Stock
+2016-05-05,FCF,"Director, President & CEO",BUY,4580.0,8.7657,40146.906,"PRICE, T MICHAEL",Common Stock
+2017-04-25,FCF,Director,BUY,1804.0,13.3,23993.2,"SINGER, LAURIE STERN",Common Stock
+2017-04-25,FCF,Director,BUY,1804.0,13.3,23993.2,"GORNEY, JON L",Common Stock
+2017-04-25,FCF,Director,BUY,1804.0,13.3,23993.2,"LATIMER, LUKE A",Common Stock
+2017-04-25,FCF,Director,BUY,1804.0,13.3,23993.2,"CAPONI, JULIE A",Common Stock
+2017-04-25,FCF,Director,BUY,1804.0,13.3,23993.2,"CLAUS, GARY R",Common Stock
+2017-04-25,FCF,Director,BUY,1804.0,13.3,23993.2,"VENTURA, ROBERT J",Common Stock
+2017-04-25,FCF,Director,BUY,1804.0,13.3,23993.2,"GREENFIELD, DAVID W",Common stock
+2017-04-25,FCF,Director,BUY,1804.0,13.3,23993.2,"CHARLEY, RAY T",Common Stock
+2017-05-08,FCF,Director,BUY,3267.0,12.879,42075.693,"JOHNSON, BART E",Common Stock
+2018-04-24,FCF,Director,BUY,1707.0,15.23,25997.61,"GREENFIELD, DAVID W",Common Stock
+2018-04-24,FCF,Director,BUY,1707.0,15.23,25997.61,"JOHNSON, BART E",Common Stock
+2018-04-24,FCF,Director,BUY,1707.0,15.23,25997.61,"GORNEY, JON L",Common Stock
+2018-04-24,FCF,Director,BUY,1707.0,15.23,25997.61,"LATIMER, LUKE A",Common Stock
+2018-04-24,FCF,Director,BUY,1707.0,15.23,25997.61,"WOLFE, STEPHEN A",Common Stock
+2018-04-24,FCF,Director,BUY,1707.0,15.23,25997.61,"CHARLEY, RAY T",Common Stock
+2018-04-24,FCF,Director,BUY,1707.0,15.23,25997.61,"CLAUS, GARY R",Common Stock
+2018-04-24,FCF,Director,BUY,1707.0,15.23,25997.61,"CAPONI, JULIE A",Common Stock
+2018-05-30,FCF,"Director, President & CEO",SELL,50127.0,15.748,789399.9959999999,"PRICE, T MICHAEL",Common Stock
+2018-10-29,FCF,Director,BUY,4000.0,12.9,51600.0,"CHARLEY, RAY T",Common Stock
+2018-12-06,FCF,Director,BUY,1170.0,12.7599,14929.083,"LATIMER, LUKE A",Common Stock
+2018-12-18,FCF,Director,BUY,8000.0,12.2396,97916.79999999999,"LATIMER, LUKE A",Common Stock
+2019-04-23,FCF,Director,BUY,2471.0,12.95,31999.449999999997,"CLAUS, GARY R",Common Stock
+2019-04-23,FCF,Director,BUY,2471.0,12.95,31999.449999999997,"GREENFIELD, DAVID W",Common Stock
+2019-04-23,FCF,Director,BUY,2471.0,12.95,31999.449999999997,"WOLFE, STEPHEN A",Common Stock
+2019-04-23,FCF,Director,BUY,2395.0,12.95,31015.25,"JOHNSON, BART E",Common Stock
+2019-04-23,FCF,Director,BUY,2395.0,12.95,31015.25,"GORNEY, JON L",Common Stock
+2019-04-23,FCF,Director,BUY,2471.0,12.95,31999.449999999997,"CHARLEY, RAY T",Common Stock
+2019-05-24,FCF,EVP-Chief Risk Officer,BUY,1000.0,12.9,12900.0,"TOMB, MATTHEW C",Common Stock
+2020-03-10,FCF,EVP/Chief Risk Officer,BUY,3000.0,9.82,29460.0,"TOMB, MATTHEW C",Common Stock
+2020-03-12,FCF,Director,BUY,2000.0,9.0093,18018.6,"DAHLMANN, DAVID S",Common Stock
+2020-03-18,FCF,"Director, President & CEO",BUY,3260.0,8.53,27807.8,"PRICE, T MICHAEL",Common Stock
+2020-03-19,FCF,"Director, President & CEO",BUY,6740.0,8.57,57761.8,"PRICE, T MICHAEL",Common Stock
+2020-04-28,FCF,Director,BUY,3459.0,9.25,31995.75,"CHARLEY, RAY T",Common Stock
+2020-04-28,FCF,Director,BUY,3459.0,9.25,31995.75,"CLAUS, GARY R",Common Stock
+2020-04-28,FCF,Director,BUY,3353.0,9.25,31015.25,"GORNEY, JON L",Common Stock
+2020-04-28,FCF,Director,BUY,3459.0,9.25,31995.75,"GREENFIELD, DAVID W",Common Stock
+2020-04-28,FCF,Director,BUY,3353.0,9.25,31015.25,"JOHNSON, BART E",Common Stock
+2020-04-28,FCF,Director,BUY,3459.0,9.25,31995.75,"OLIPHANT, ARADHNA M",Common Stock
+2020-04-28,FCF,Director,BUY,3459.0,9.25,31995.75,"WOLFE, STEPHEN A",Common Stock
+2020-05-13,FCF,EVP/Chief Risk Officer,BUY,4000.0,6.93,27720.0,"TOMB, MATTHEW C",Common Stock
+2020-05-19,FCF,Director,BUY,1330.0,7.5112,9989.895999999999,"WOLFE, STEPHEN A",Common Stock
+2020-11-19,FCF,"Director, President & CEO",BUY,10000.0,9.96,99600.00000000001,"PRICE, T MICHAEL",Common Stock
+2021-02-08,FCF,EVP/Chief Risk Officer,SELL,12500.0,12.61,157625.0,"TOMB, MATTHEW C",Common Stock
+2021-02-26,FCF,EVP/Chief Credit Officer,SELL,8000.0,13.69,109520.0,"KARRIP, BRIAN G",Common Stock
+2021-03-05,FCF,EVP/Chief Risk Officer,SELL,2500.0,14.5,36250.0,"TOMB, MATTHEW C",Common Stock
+2021-04-27,FCF,Director,BUY,2216.0,14.44,31999.039999999997,"GREENFIELD, DAVID W",Common Stock
+2021-04-27,FCF,Director,BUY,2148.0,14.44,31017.12,"GORNEY, JON L",Common Stock
+2021-04-27,FCF,Director,BUY,2216.0,14.44,31999.039999999997,"OLIPHANT, ARADHNA M",Common Stock
+2021-04-27,FCF,Director,BUY,2216.0,14.44,31999.039999999997,"CLAUS, GARY R",Common Stock
+2021-04-27,FCF,Director,BUY,2216.0,14.44,31999.039999999997,"CHARLEY, RAY T",Common Stock
+2021-04-27,FCF,Director,BUY,2148.0,14.44,31017.12,"JOHNSON, BART E",Common Stock
+2021-04-27,FCF,Director,BUY,2216.0,14.44,31999.039999999997,"WOLFE, STEPHEN A",Common Stock
+2021-06-08,FCF,EVP-Business Integration Group,SELL,20000.0,15.22,304400.0,"MONTGOMERY, NORMAN J",Common Stock
+2022-04-26,FCF,Director,BUY,2987.0,13.85,41369.95,"GREENFIELD, DAVID W",Common Stock
+2022-04-26,FCF,Director,BUY,2895.0,13.85,40095.75,"JOHNSON, BART E",Common Stock
+2022-04-26,FCF,Director,BUY,2895.0,13.85,40095.75,"GORNEY, JON L",Common Stock
+2022-04-26,FCF,Director,BUY,2987.0,13.85,41369.95,"CHARLEY, RAY T",Common Stock
+2022-04-26,FCF,Director,BUY,2987.0,13.85,41369.95,"WOLFE, STEPHEN A",Common Stock
+2022-04-26,FCF,Director,BUY,2987.0,13.85,41369.95,"OLIPHANT, ARADHNA M",Common Stock
+2023-01-27,FCF,"Director, President & CEO",BUY,13212.0,13.87,183250.44,"PRICE, T MICHAEL",Common Stock
+2023-03-13,FCF,Director,BUY,4000.0,13.26,53040.0,"CHARLEY, RAY T",Common Stock
+2023-03-14,FCF,Director,BUY,8000.0,13.03,104240.0,"CHARLEY, RAY T",Common Stock
+2023-03-17,FCF,Director,BUY,3900.0,12.85,50115.0,"CHARLEY, RAY T",Common Stock
+2023-04-25,FCF,Director,BUY,3476.0,11.9,41364.4,"GREENFIELD, DAVID W",Common Stock
+2023-04-25,FCF,Director,BUY,3370.0,11.9,40103.0,"GORNEY, JON L",Common Stock
+2023-04-25,FCF,Director,BUY,3370.0,11.9,40103.0,"JOHNSON, BART E",Common Stock
+2023-04-25,FCF,Director,BUY,3476.0,11.9,41364.4,"CHARLEY, RAY T",Common Stock
+2023-04-25,FCF,Director,BUY,3476.0,11.9,41364.4,"WOLFE, STEPHEN A",Common Stock
+2023-04-25,FCF,Director,BUY,3370.0,11.9,40103.0,"OLIPHANT, ARADHNA M",Common Stock
+2023-10-27,FCF,Director,SELL,875.0,12.02,10517.5,"CHARLEY, RAY T",Common Stock
+2023-11-03,FCF,EVP/Human Resources,SELL,7563.0,13.21,99907.23000000001,"RIGGLE, CARRIE L",Common Stock
+2024-02-26,FCF,EVP/Chief Credit Officer,SELL,8926.0,13.09,116841.34,"KARRIP, BRIAN G",Common Stock
+2024-04-23,FCF,Director,BUY,3046.0,13.58,41364.68,"CHARLEY, RAY T",Common Stock
+2024-04-23,FCF,Director,BUY,2953.0,13.58,40101.74,"GORNEY, JON L",Common Stock
+2024-04-23,FCF,Director,BUY,2953.0,13.58,40101.74,"OLIPHANT, ARADHNA M",Common Stock
+2024-04-23,FCF,Director,BUY,2953.0,13.58,40101.74,"JOHNSON, BART E",Common Stock
+2024-04-23,FCF,Director,BUY,3046.0,13.58,41364.68,"WOLFE, STEPHEN A",Common Stock
+2024-09-23,FCF,EVP/Chief Lending Officer,BUY,2919.0,16.99,49593.81,"MCCUEN, MICHAEL P",Common Stock
+2025-02-10,FCF,EVP/Chief Lending Officer,BUY,3020.0,16.57,50041.4,"MCCUEN, MICHAEL P",Common Stock
+2025-05-01,FCF,Director,BUY,3200.0,15.56,49792.0,"GORNEY, JON L",Common Stock
+2025-05-01,FCF,Director,BUY,3301.0,15.56,51363.560000000005,"WOLFE, STEPHEN A",Common Stock
+2025-05-01,FCF,Director,BUY,3200.0,15.56,49792.0,"OLIPHANT, ARADHNA M",Common Stock
+2025-05-01,FCF,Director,BUY,3301.0,15.56,51363.560000000005,"CHARLEY, RAY T",Common Stock
+2025-05-13,FCF,Director,BUY,7000.0,16.09,112630.0,"BRICE, TODD D",Common Stock
+2025-08-04,FCF,Director,BUY,1000.0,16.52,16520.0,"BRICE, TODD D",Common Stock
+2025-08-06,FCF,EVP/Chief Financial Officer,SELL,180.0,16.655,2997.9,"RESKE, JAMES R",Common Stock
+2025-08-06,FCF,EVP/Chief Financial Officer,SELL,895.0,16.65,14901.749999999998,"RESKE, JAMES R",Common Stock
+2025-08-06,FCF,EVP/Chief Financial Officer,SELL,150.0,16.67,2500.5000000000005,"RESKE, JAMES R",Common Stock
+2025-08-06,FCF,EVP/Chief Financial Officer,SELL,260.0,16.665,4332.9,"RESKE, JAMES R",Common Stock
+2025-08-06,FCF,EVP/Chief Financial Officer,SELL,45.0,16.69,751.0500000000001,"RESKE, JAMES R",Common Stock
+2025-08-06,FCF,EVP/Chief Financial Officer,SELL,420.0,16.66,6997.2,"RESKE, JAMES R",Common Stock
+2025-08-06,FCF,EVP/Chief Financial Officer,SELL,240.0,16.68,4003.2,"RESKE, JAMES R",Common Stock
+2025-09-03,FCF,EVP/Chief Banking Officer,BUY,2826.0,17.67,49935.420000000006,"MCCUEN, MICHAEL P",Common Stock
+2025-09-08,FCF,EVP/Chief Financial Officer,SELL,80.0,17.71,1416.8000000000002,"RESKE, JAMES R",Common Stock
+2025-09-08,FCF,EVP/Chief Financial Officer,SELL,59.0,17.67,1042.5300000000002,"RESKE, JAMES R",Common Stock
+2025-09-08,FCF,EVP/Chief Financial Officer,SELL,120.0,17.725,2127.0,"RESKE, JAMES R",Common Stock
+2025-09-08,FCF,EVP/Chief Financial Officer,SELL,200.0,17.69,3538.0000000000005,"RESKE, JAMES R",Common Stock
+2025-09-08,FCF,EVP/Chief Financial Officer,SELL,172.0,17.7,3044.4,"RESKE, JAMES R",Common Stock
+2025-09-08,FCF,EVP/Chief Financial Officer,SELL,229.0,17.675,4047.5750000000003,"RESKE, JAMES R",Common Stock
+2025-09-08,FCF,EVP/Chief Financial Officer,SELL,80.0,17.74,1419.1999999999998,"RESKE, JAMES R",Common Stock
+2025-09-08,FCF,EVP/Chief Financial Officer,SELL,200.0,17.705,3540.9999999999995,"RESKE, JAMES R",Common Stock
+2025-09-08,FCF,EVP/Chief Financial Officer,SELL,100.0,17.75,1775.0,"RESKE, JAMES R",Common Stock
+2025-09-08,FCF,EVP/Chief Financial Officer,SELL,160.0,17.715,2834.4,"RESKE, JAMES R",Common Stock
+2025-09-08,FCF,EVP/Chief Financial Officer,SELL,270.0,17.82,4811.4,"RESKE, JAMES R",Common Stock
+2025-09-08,FCF,EVP/Chief Financial Officer,SELL,100.0,17.81,1780.9999999999998,"RESKE, JAMES R",Common Stock
+2025-09-08,FCF,EVP/Chief Financial Officer,SELL,80.0,17.745,1419.6000000000001,"RESKE, JAMES R",Common Stock
+2025-09-08,FCF,EVP/Chief Financial Officer,SELL,120.0,17.775,2133.0,"RESKE, JAMES R",Common Stock
+2025-09-08,FCF,EVP/Chief Financial Officer,SELL,120.0,17.76,2131.2000000000003,"RESKE, JAMES R",Common Stock
+2025-09-08,FCF,EVP/Chief Financial Officer,SELL,100.0,17.8,1780.0,"RESKE, JAMES R",Common Stock
+2025-10-06,FCF,EVP/Chief Financial Officer,SELL,36.0,17.005,612.18,"RESKE, JAMES R",Common Stock
+2025-10-06,FCF,EVP/Chief Financial Officer,SELL,108.0,16.97,1832.7599999999998,"RESKE, JAMES R",Common Stock
+2025-10-06,FCF,EVP/Chief Financial Officer,SELL,64.0,16.88,1080.32,"RESKE, JAMES R",Common Stock
+2025-10-06,FCF,EVP/Chief Financial Officer,SELL,108.0,16.89,1824.1200000000001,"RESKE, JAMES R",Common Stock
+2025-10-06,FCF,EVP/Chief Financial Officer,SELL,36.0,16.92,609.1200000000001,"RESKE, JAMES R",Common Stock
+2025-10-06,FCF,EVP/Chief Financial Officer,SELL,144.0,16.93,2437.92,"RESKE, JAMES R",Common Stock
+2025-10-06,FCF,EVP/Chief Financial Officer,SELL,72.0,16.94,1219.68,"RESKE, JAMES R",Common Stock
+2025-10-06,FCF,EVP/Chief Financial Officer,SELL,36.0,16.95,610.1999999999999,"RESKE, JAMES R",Common Stock
+2025-10-06,FCF,EVP/Chief Financial Officer,SELL,180.0,16.96,3052.8,"RESKE, JAMES R",Common Stock
+2025-10-06,FCF,EVP/Chief Financial Officer,SELL,82.0,16.98,1392.3600000000001,"RESKE, JAMES R",Common Stock
+2025-10-06,FCF,EVP/Chief Financial Officer,SELL,36.0,16.86,606.96,"RESKE, JAMES R",Common Stock
+2025-10-06,FCF,EVP/Chief Financial Officer,SELL,116.0,17.0,1972.0,"RESKE, JAMES R",Common Stock
+2025-10-06,FCF,EVP/Chief Financial Officer,SELL,108.0,17.01,1837.0800000000002,"RESKE, JAMES R",Common Stock
+2025-10-06,FCF,EVP/Chief Financial Officer,SELL,238.0,17.02,4050.7599999999998,"RESKE, JAMES R",Common Stock
+2025-10-06,FCF,EVP/Chief Financial Officer,SELL,425.0,17.03,7237.750000000001,"RESKE, JAMES R",Common Stock
+2025-10-06,FCF,EVP/Chief Financial Officer,SELL,36.0,17.035,613.26,"RESKE, JAMES R",Common Stock
+2025-10-06,FCF,EVP/Chief Financial Officer,SELL,38.0,17.04,647.52,"RESKE, JAMES R",Common Stock
+2025-10-06,FCF,EVP/Chief Financial Officer,SELL,132.0,17.05,2250.6,"RESKE, JAMES R",Common Stock
+2025-10-06,FCF,EVP/Chief Financial Officer,SELL,118.0,17.06,2013.08,"RESKE, JAMES R",Common Stock
+2025-10-06,FCF,EVP/Chief Financial Officer,SELL,6.0,17.07,102.42,"RESKE, JAMES R",Common Stock
+2025-10-06,FCF,EVP/Chief Financial Officer,SELL,30.0,17.08,512.4,"RESKE, JAMES R",Common Stock
+2025-10-06,FCF,EVP/Chief Financial Officer,SELL,41.0,16.99,696.5899999999999,"RESKE, JAMES R",Common Stock
+2025-11-03,FCF,Director,BUY,1000.0,15.2686,15268.599999999999,"BRICE, TODD D",Common Stock
+2025-11-07,FCF,EVP/Chief Financial Officer,SELL,100.0,15.49,1549.0,"RESKE, JAMES R",Common Stock
+2025-11-07,FCF,EVP/Chief Financial Officer,SELL,120.0,15.465,1855.8,"RESKE, JAMES R",Common Stock
+2025-11-07,FCF,EVP/Chief Financial Officer,SELL,190.0,15.44,2933.6,"RESKE, JAMES R",Common Stock
+2025-11-07,FCF,EVP/Chief Financial Officer,SELL,90.0,15.435,1389.15,"RESKE, JAMES R",Common Stock
+2025-11-07,FCF,EVP/Chief Financial Officer,SELL,390.0,15.62,6091.799999999999,"RESKE, JAMES R",Common Stock
+2025-11-07,FCF,EVP/Chief Financial Officer,SELL,90.0,15.63,1406.7,"RESKE, JAMES R",Common Stock
+2025-11-07,FCF,EVP/Chief Financial Officer,SELL,90.0,15.495,1394.55,"RESKE, JAMES R",Common Stock
+2025-11-07,FCF,EVP/Chief Financial Officer,SELL,100.0,15.53,1553.0,"RESKE, JAMES R",Common Stock
+2025-11-07,FCF,EVP/Chief Financial Officer,SELL,100.0,15.54,1554.0,"RESKE, JAMES R",Common Stock
+2025-11-07,FCF,EVP/Chief Financial Officer,SELL,50.0,15.615,780.75,"RESKE, JAMES R",Common Stock
+2025-11-07,FCF,EVP/Chief Financial Officer,SELL,198.0,15.635,3095.73,"RESKE, JAMES R",Common Stock
+2025-11-21,FCF,EVP/Chief Banking Officer,BUY,3090.0,16.19,50027.100000000006,"MCCUEN, MICHAEL P",Common Stock
+2025-11-21,FCF,Director,BUY,549.0,15.58,8553.42,"DIVITO, JOSEPH V. JR",Common Stock
+2025-12-05,FCF,EVP/Chief Financial Officer,SELL,111.0,16.49,1830.3899999999999,"RESKE, JAMES R",Common Stock
+2025-12-05,FCF,EVP/Chief Financial Officer,SELL,200.0,16.5,3300.0,"RESKE, JAMES R",Common Stock
+2025-12-05,FCF,EVP/Chief Financial Officer,SELL,210.0,16.51,3467.1000000000004,"RESKE, JAMES R",Common Stock
+2025-12-05,FCF,EVP/Chief Financial Officer,SELL,470.0,16.515,7762.05,"RESKE, JAMES R",Common Stock
+2025-12-05,FCF,EVP/Chief Financial Officer,SELL,390.0,16.54,6450.599999999999,"RESKE, JAMES R",Common Stock
+2025-12-05,FCF,EVP/Chief Financial Officer,SELL,180.0,16.525,2974.4999999999995,"RESKE, JAMES R",Common Stock
+2025-12-05,FCF,EVP/Chief Financial Officer,SELL,120.0,16.535,1984.2,"RESKE, JAMES R",Common Stock
+2025-12-05,FCF,EVP/Chief Financial Officer,SELL,64.0,16.545,1058.88,"RESKE, JAMES R",Common Stock
+2025-12-05,FCF,EVP/Chief Financial Officer,SELL,1.0,16.565,16.565,"RESKE, JAMES R",Common Stock
+2025-12-05,FCF,EVP/Chief Financial Officer,SELL,139.0,16.52,2296.2799999999997,"RESKE, JAMES R",Common Stock
+2025-12-05,FCF,EVP/Chief Financial Officer,SELL,80.0,16.55,1324.0,"RESKE, JAMES R",Common Stock
