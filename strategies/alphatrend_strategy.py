@@ -139,68 +139,92 @@ class AlphaTrendStrategy(BaseStrategy):
     - Full Exit Rules: Price below EMA-50 (with grace period and momentum protection)
     - Pyramiding: None
 
-    Standard Indicators (read from raw data, static):
-        - atr_14: Average True Range (14-period, static)
-        - ema_50: Exponential Moving Average (50-period, static, used for exits)
-        - mfi_14: Money Flow Index (14-period, static, used for momentum)
+    RAW DATA INDICATORS (NOT OPTIMIZABLE - changing period requires different CSV column):
+        - atr_14: Average True Range (14-period) - FIXED, cannot optimize period
+        - ema_50: Exponential Moving Average (50-period) - FIXED, cannot optimize period
+        - mfi_14: Money Flow Index (14-period) - FIXED, cannot optimize period
 
-    Custom Parameters (strategy-specific calculations):
-        volume_short_ma: Volume short MA period (default: 4)
-        volume_long_ma: Volume long MA period (default: 30)
-        volume_alignment_window: Bars to wait for volume condition after signal (default: 14)
-        stop_loss_percent: Percentage below current price for stop loss (default: 0)
-        atr_stop_loss_multiple: Multiple of ATR for stop loss (default: 2.5)
-        grace_period_bars: Bars to ignore EMA exit after entry (default: 14)
-        momentum_gain_pct: % gain to ignore EMA exit (default: 2.0)
-        momentum_lookback: Bars for momentum calculation (default: 7)
-        risk_percent: Percent of equity to risk per trade (default: 2.0)
-
-    Static Parameters (not configurable via GUI):
-        atr_multiplier: Base multiplier for ATR bands (fixed: 1.0)
-        source: Price source for calculations (fixed: 'close')
-        smoothing_length: EMA smoothing period for AlphaTrend (fixed: 3)
-        percentile_period: Lookback for dynamic thresholds (fixed: 100)
+    OPTIMIZABLE PARAMETERS (calculated within strategy, can be changed without new data):
+        volume_short_ma: Volume short MA period (default: 4) - OPTIMIZABLE
+        volume_long_ma: Volume long MA period (default: 30) - OPTIMIZABLE
+        volume_alignment_window: Bars to wait for volume condition (default: 14) - OPTIMIZABLE
+        atr_stop_loss_multiple: Multiple of ATR for stop loss (default: 2.5) - OPTIMIZABLE
+        stop_loss_percent: Percentage stop loss fallback (default: 0) - OPTIMIZABLE
+        grace_period_bars: Bars to ignore EMA exit after entry (default: 14) - OPTIMIZABLE
+        momentum_gain_pct: % gain to ignore EMA exit (default: 2.0) - OPTIMIZABLE
+        momentum_lookback: Bars for momentum calculation (default: 7) - OPTIMIZABLE
+        risk_percent: Percent of equity to risk per trade (default: 2.0) - OPTIMIZABLE
+        atr_multiplier: Base multiplier for ATR bands (default: 1.0) - OPTIMIZABLE
+        smoothing_length: EMA smoothing for AlphaTrend (default: 3) - OPTIMIZABLE
+        percentile_period: Lookback for MFI thresholds (default: 100) - OPTIMIZABLE
     """
 
     def __init__(self,
+                 # Volume filter parameters
                  volume_short_ma: int = 4,
                  volume_long_ma: int = 30,
                  volume_alignment_window: int = 14,
-                 stop_loss_percent: float = 0.0,
+                 # Stop loss parameters
                  atr_stop_loss_multiple: float = 2.5,
+                 stop_loss_percent: float = 0.0,
+                 # Exit protection parameters
                  grace_period_bars: int = 14,
                  momentum_gain_pct: float = 2.0,
                  momentum_lookback: int = 7,
-                 risk_percent: float = 2.0):
-        """Initialize AlphaTrend strategy with parameters."""
+                 # Position sizing
+                 risk_percent: float = 2.0,
+                 # AlphaTrend calculation parameters
+                 atr_multiplier: float = 1.0,
+                 smoothing_length: int = 3,
+                 percentile_period: int = 100):
+        """
+        Initialize AlphaTrend strategy with optimizable parameters.
+
+        All parameters here are OPTIMIZABLE - they are used in calculations
+        within the strategy and do not require changes to raw data.
+
+        Args:
+            volume_short_ma: Short MA period for volume filter
+            volume_long_ma: Long MA period for volume filter
+            volume_alignment_window: Bars to wait for volume after signal
+            atr_stop_loss_multiple: ATR multiplier for stop loss
+            stop_loss_percent: Percentage stop loss (fallback if ATR multiple is 0)
+            grace_period_bars: Bars to ignore EMA exit after entry
+            momentum_gain_pct: % gain threshold for momentum protection
+            momentum_lookback: Bars for momentum calculation
+            risk_percent: % of equity to risk per trade
+            atr_multiplier: Base multiplier for ATR bands
+            smoothing_length: EMA period for AlphaTrend smoothing
+            percentile_period: Lookback for dynamic MFI thresholds
+        """
         super().__init__(
             volume_short_ma=volume_short_ma,
             volume_long_ma=volume_long_ma,
             volume_alignment_window=volume_alignment_window,
-            stop_loss_percent=stop_loss_percent,
             atr_stop_loss_multiple=atr_stop_loss_multiple,
+            stop_loss_percent=stop_loss_percent,
             grace_period_bars=grace_period_bars,
             momentum_gain_pct=momentum_gain_pct,
             momentum_lookback=momentum_lookback,
-            risk_percent=risk_percent
+            risk_percent=risk_percent,
+            atr_multiplier=atr_multiplier,
+            smoothing_length=smoothing_length,
+            percentile_period=percentile_period
         )
 
-        # Static parameters (not configurable via GUI)
-        self.atr_multiplier = 1.0
-        self.source = 'close'
-        self.smoothing_length = 3
-        self.percentile_period = 100
-
-        # Store configurable parameters as instance variables
+        # Store all optimizable parameters as instance variables
         self.volume_short_ma = volume_short_ma
         self.volume_long_ma = volume_long_ma
         self.volume_alignment_window = volume_alignment_window
-        self.stop_loss_percent = stop_loss_percent
         self.atr_stop_loss_multiple = atr_stop_loss_multiple
+        self.stop_loss_percent = stop_loss_percent
         self.grace_period_bars = grace_period_bars
         self.momentum_gain_pct = momentum_gain_pct
         self.momentum_lookback = momentum_lookback
         self.risk_percent = risk_percent
+        self.atr_multiplier = atr_multiplier
+        self.smoothing_length = smoothing_length
+        self.percentile_period = percentile_period
 
         # Track bars since entry for grace period and momentum (per-symbol for portfolio mode)
         self._bars_since_entry: Dict[str, int] = {}
