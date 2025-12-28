@@ -16,13 +16,13 @@ The Backtest Analysis Framework processes trade logs to generate:
 
 ```bash
 # Basic usage - analyze a strategy's trade logs
-python run_backtest_analysis.py logs/AlphaTrendStrategy_Fundamental_Constraints_Base
+python tools/run_backtest_analysis.py logs/AlphaTrendStrategy_Fundamental_Constraints_Base
 
 # With custom output directory
-python run_backtest_analysis.py logs/MyStrategy -o analysis_output/my_analysis
+python tools/run_backtest_analysis.py logs/MyStrategy -o analysis_output/my_analysis
 
 # With custom thresholds
-python run_backtest_analysis.py logs/MyStrategy \
+python tools/run_backtest_analysis.py logs/MyStrategy \
     --gb-threshold 7.5 \
     --min-trades 5 \
     --calmar-threshold 0.75
@@ -310,17 +310,17 @@ optional arguments:
 
 ```bash
 # Conservative: 10% profit threshold for "Good"
-python run_backtest_analysis.py logs/MyStrategy --gb-threshold 10.0
+python tools/run_backtest_analysis.py logs/MyStrategy --gb-threshold 10.0
 
 # Aggressive: 3% profit threshold for "Good"
-python run_backtest_analysis.py logs/MyStrategy --gb-threshold 3.0
+python tools/run_backtest_analysis.py logs/MyStrategy --gb-threshold 3.0
 ```
 
 ### Stricter Period Classification
 
 ```bash
 # Require higher Calmar and lower drawdown for "good" periods
-python run_backtest_analysis.py logs/MyStrategy \
+python tools/run_backtest_analysis.py logs/MyStrategy \
     --calmar-threshold 1.0 \
     --max-dd-threshold 15.0
 ```
@@ -329,7 +329,7 @@ python run_backtest_analysis.py logs/MyStrategy \
 
 ```bash
 # Include periods with just 3+ trades
-python run_backtest_analysis.py logs/MyStrategy --min-trades 2
+python tools/run_backtest_analysis.py logs/MyStrategy --min-trades 2
 ```
 
 ### Single Security Analysis
