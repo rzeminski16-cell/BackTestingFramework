@@ -1027,7 +1027,7 @@ class CTkOptimizationWizard(CTkWizardBase):
         )
 
         # Data loader
-        self.data_loader = DataLoader(Path('raw_data/processed_exports'))
+        self.data_loader = DataLoader(Path('raw_data/daily'))
         self.available_securities = self.data_loader.get_available_symbols()
 
         # Optimization components

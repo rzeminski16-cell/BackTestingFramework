@@ -20,15 +20,20 @@ def test_atr_stop_loss_parameter():
     print("Test 1: Parameter Initialization")
     print("-" * 50)
 
-    # Test with default value (0.0 - disabled)
+    # Test with default value (2.5 - enabled by default)
     strategy1 = AlphaTrendStrategy()
-    assert strategy1.atr_stop_loss_multiple == 0.0, "Default atr_stop_loss_multiple should be 0.0"
-    print("✓ Default parameter value is 0.0 (disabled)")
+    assert strategy1.atr_stop_loss_multiple == 2.5, "Default atr_stop_loss_multiple should be 2.5"
+    print("✓ Default parameter value is 2.5 (ATR-based stop loss enabled)")
+
+    # Test with disabled ATR stop loss (0.0 = use percentage-based)
+    strategy2 = AlphaTrendStrategy(atr_stop_loss_multiple=0.0)
+    assert strategy2.atr_stop_loss_multiple == 0.0, "Disabled atr_stop_loss_multiple not set correctly"
+    print("✓ Disabled parameter value (0.0) set correctly - falls back to percentage-based")
 
     # Test with custom value
-    strategy2 = AlphaTrendStrategy(atr_stop_loss_multiple=2.5)
-    assert strategy2.atr_stop_loss_multiple == 2.5, "Custom atr_stop_loss_multiple not set correctly"
-    print("✓ Custom parameter value (2.5) set correctly")
+    strategy3 = AlphaTrendStrategy(atr_stop_loss_multiple=1.5)
+    assert strategy3.atr_stop_loss_multiple == 1.5, "Custom atr_stop_loss_multiple not set correctly"
+    print("✓ Custom parameter value (1.5) set correctly")
     print()
 
 def test_stop_loss_calculation():
@@ -36,7 +41,7 @@ def test_stop_loss_calculation():
     print("Test 2: Stop Loss Calculation")
     print("-" * 50)
 
-    # Create a simple test dataset with new Alpha Vantage column names
+    # Create a simple test dataset with Alpha Vantage column names
     test_data = pd.DataFrame({
         'date': pd.date_range('2023-01-01', periods=150),
         'open': [100.0] * 150,
@@ -44,9 +49,9 @@ def test_stop_loss_calculation():
         'low': [95.0] * 150,
         'close': [102.0] * 150,
         'volume': [1000000] * 150,
-        'atr_14_atr': [2.0] * 150,  # Fixed ATR for testing (new column name)
-        'sma_50_sma': [100.0] * 150,  # SMA for exits (new column name)
-        'mfi_14_mfi': [50.0] * 150,   # MFI for momentum (new column name)
+        'atr_14_atr': [2.0] * 150,   # Fixed ATR for testing (Alpha Vantage naming)
+        'sma_50_sma': [100.0] * 150, # SMA for exits (fallback for EMA-50)
+        'mfi_14_mfi': [50.0] * 150,  # MFI for momentum (Alpha Vantage naming)
     })
 
     # Test percentage-based stop loss (default)
