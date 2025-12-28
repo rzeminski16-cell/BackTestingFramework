@@ -2005,7 +2005,8 @@ class DataCollectionApp(ctk.CTk):
             self.after(0, lambda: self._collection_complete(results, tab_key))
 
         except Exception as e:
-            self.after(0, lambda: self._collection_error(str(e)))
+            error_msg = str(e)
+            self.after(0, lambda err=error_msg: self._collection_error(err))
 
     def _update_progress(self, message: str, progress: float):
         """Update progress UI (called from main thread)."""
