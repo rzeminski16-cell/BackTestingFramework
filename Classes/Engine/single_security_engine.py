@@ -9,6 +9,7 @@ from ..Strategy.base_strategy import BaseStrategy
 from ..Strategy.strategy_context import StrategyContext
 from ..Models.signal import Signal, SignalType
 from ..Models.order import Order, OrderSide, OrderType
+from ..Models.trade_direction import TradeDirection
 from ..Config.config import BacktestConfig
 from .position_manager import PositionManager
 from .trade_executor import TradeExecutor
@@ -45,6 +46,8 @@ class SingleSecurityEngine:
         """
         self.config = config
         self.position_manager = PositionManager()
+        # Set commission rate for break-even calculation
+        self.position_manager.commission_rate = config.commission.percent / 100 if config.commission else 0.0
         self.trade_executor = TradeExecutor(config.commission)
         self.currency_converter = currency_converter
         self.security_registry = security_registry
@@ -166,10 +169,18 @@ class SingleSecurityEngine:
                 # Check for trailing stop adjustment
                 new_stop = strategy.should_adjust_stop(context)
                 if new_stop is not None:
-                    # Only allow stop to move in favorable direction (up for LONG)
+                    # Direction-aware stop adjustment
                     current_stop = self.position_manager.position.stop_loss
-                    if current_stop is None or new_stop > current_stop:
-                        self.position_manager.adjust_stop_loss(new_stop)
+                    direction = self.position_manager.position.direction
+
+                    if direction == TradeDirection.LONG:
+                        # For LONG: stop can only move up
+                        if current_stop is None or new_stop > current_stop:
+                            self.position_manager.adjust_stop_loss(new_stop)
+                    else:
+                        # For SHORT: stop can only move down
+                        if current_stop is None or new_stop < current_stop:
+                            self.position_manager.adjust_stop_loss(new_stop)
 
                 # Check for partial exit
                 partial_fraction = strategy.should_partial_exit(context)
@@ -215,11 +226,26 @@ class SingleSecurityEngine:
                 total_equity = capital + position_value
 
             elif signal.type == SignalType.ADJUST_STOP and self.position_manager.has_position:
-                # Adjust stop loss
+                # Adjust stop loss (direction-aware)
                 if signal.new_stop_loss is not None:
                     current_stop = self.position_manager.position.stop_loss
-                    if current_stop is None or signal.new_stop_loss > current_stop:
-                        self.position_manager.adjust_stop_loss(signal.new_stop_loss)
+                    direction = self.position_manager.position.direction
+
+                    if direction == TradeDirection.LONG:
+                        if current_stop is None or signal.new_stop_loss > current_stop:
+                            self.position_manager.adjust_stop_loss(signal.new_stop_loss)
+                    else:
+                        if current_stop is None or signal.new_stop_loss < current_stop:
+                            self.position_manager.adjust_stop_loss(signal.new_stop_loss)
+
+            elif signal.type == SignalType.PYRAMID and self.position_manager.has_position:
+                # Pyramid - add to position with break-even stop
+                capital = self._pyramid_position(
+                    symbol, current_date, current_price, signal, strategy, context, capital
+                )
+                position_value = self.position_manager.get_position_value(current_price)
+                position_value = self._convert_to_base_currency(position_value, symbol, current_date)
+                total_equity = capital + position_value
 
             # Record equity
             position_value = self.position_manager.get_position_value(current_price)
@@ -417,7 +443,8 @@ class SingleSecurityEngine:
             commission_paid=entry_commission,
             entry_fx_rate=entry_fx_rate,
             security_currency=security_currency,
-            entry_equity=entry_equity
+            entry_equity=entry_equity,
+            direction=signal.direction
         )
 
         # Deduct from capital (in base currency)
@@ -560,6 +587,82 @@ class SingleSecurityEngine:
             reason=reason,
             commission_paid=exit_commission
         )
+
+        return capital
+
+    def _pyramid_position(self, symbol: str, date: datetime, price: float,
+                          signal: Signal, strategy: BaseStrategy,
+                          context: StrategyContext, capital: float) -> float:
+        """
+        Add to existing position (pyramid).
+
+        After pyramiding:
+        - Position quantity is increased
+        - Average entry price is updated (weighted average)
+        - Stop loss is moved to break-even (accounting for commissions)
+
+        Args:
+            symbol: Security symbol
+            date: Pyramid date
+            price: Current price (expected price before slippage)
+            signal: PYRAMID signal
+            strategy: Strategy instance
+            context: Current context
+            capital: Available capital
+
+        Returns:
+            Remaining capital after pyramid
+        """
+        # Apply slippage to pyramid (same as BUY)
+        execution_price = price * (1 + self.config.slippage_percent / 100)
+
+        # Get FX rate
+        fx_rate = self._get_fx_rate(symbol, date)
+
+        # Calculate pyramid size - use signal.size as fraction of available capital
+        capital_to_use = capital * signal.size
+        quantity = capital_to_use / (execution_price * fx_rate)
+
+        if quantity <= 0:
+            return capital
+
+        # Adjust quantity for slippage
+        quantity = quantity * (price / execution_price)
+
+        # Create pyramid order
+        pyramid_order = Order(
+            symbol=symbol,
+            side=OrderSide.BUY,
+            quantity=quantity,
+            order_type=OrderType.MARKET,
+            price=execution_price,
+            timestamp=date,
+            reason=signal.reason
+        )
+
+        # Execute order
+        pyramid_commission = self.trade_executor.execute_order(pyramid_order)
+        total_cost = pyramid_order.total_value() + pyramid_commission
+
+        # Convert cost to base currency
+        total_cost_base = self._convert_to_base_currency(total_cost, symbol, date)
+
+        # Check if we have enough capital
+        epsilon = 0.01
+        if total_cost_base > capital + epsilon:
+            return capital
+
+        # Add pyramid to position (updates average price and sets break-even stop)
+        self.position_manager.add_pyramid(
+            pyramid_date=date,
+            quantity=quantity,
+            price=execution_price,
+            commission=pyramid_commission,
+            reason=signal.reason
+        )
+
+        # Deduct from capital
+        capital -= total_cost_base
 
         return capital
 
