@@ -47,7 +47,7 @@ class SingleSecurityEngine:
         self.config = config
         self.position_manager = PositionManager()
         # Set commission rate for break-even calculation
-        self.position_manager.commission_rate = config.commission.percent / 100 if config.commission else 0.0
+        self.position_manager.commission_rate = config.commission.value if config.commission else 0.0
         self.trade_executor = TradeExecutor(config.commission)
         self.currency_converter = currency_converter
         self.security_registry = security_registry

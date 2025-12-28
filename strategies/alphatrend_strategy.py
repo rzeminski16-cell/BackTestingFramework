@@ -245,20 +245,24 @@ class AlphaTrendStrategy(BaseStrategy):
 
         Returns list of columns that MUST exist in the raw data.
         If any column is missing, a MissingColumnError will be raised.
+
+        Note: Raw data uses Alpha Vantage naming convention (e.g., 'atr_14_atr', 'mfi_14_mfi').
+        EMA-50 is calculated in prepare_data if not present (using SMA-50 or calculating from close).
         """
         return [
             # OHLCV data
             'date', 'open', 'high', 'low', 'close', 'volume',
-            'atr_14',  # Pre-calculated ATR from raw data
-            'ema_50',  # Pre-calculated EMA from raw data
-            'mfi_14'   # Pre-calculated Money Flow Index from raw data
+            'atr_14_atr',  # Pre-calculated ATR from raw data (Alpha Vantage naming)
+            'mfi_14_mfi'   # Pre-calculated Money Flow Index from raw data (Alpha Vantage naming)
+            # Note: ema_50 is calculated in prepare_data since it's not in default Alpha Vantage collection
         ]
 
     def _prepare_data_impl(self, data: pd.DataFrame) -> pd.DataFrame:
         """
         Pre-calculate custom AlphaTrend indicators ONCE before backtesting.
 
-        Standard indicators (atr_14, ema_50, mfi_14) are read from raw data.
+        Standard indicators are read from raw data with Alpha Vantage naming convention.
+        EMA-50 is calculated if not present in raw data.
         Custom indicators specific to AlphaTrend are calculated here.
 
         APPROVED EXCEPTION: AlphaTrend signal calculations are allowed
@@ -275,10 +279,25 @@ class AlphaTrendStrategy(BaseStrategy):
         """
         df = data.copy()
 
+        # ==== NORMALIZE COLUMN NAMES ====
+        # Create standardized column names from Alpha Vantage naming convention
+        df['atr_14'] = df['atr_14_atr']
+        df['mfi_14'] = df['mfi_14_mfi']
+
+        # Calculate or use EMA-50 for exit conditions
+        if 'ema_50_ema' in df.columns:
+            df['ema_50'] = df['ema_50_ema']
+        elif 'sma_50_sma' in df.columns:
+            # Use SMA-50 as fallback if EMA-50 not available
+            df['ema_50'] = df['sma_50_sma']
+        else:
+            # Calculate EMA-50 from close prices
+            df['ema_50'] = df['close'].ewm(span=50, adjust=False).mean()
+
         # ==== ADAPTIVE COEFFICIENT ====
         # Calculate long-term ATR average for volatility ratio using raw ATR
-        df['atr_ema_long'] = df['atr_14_atr'].ewm(span=14 * 3, adjust=False).mean()
-        df['volatility_ratio'] = df['atr_14_atr'] / df['atr_ema_long']
+        df['atr_ema_long'] = df['atr_14'].ewm(span=14 * 3, adjust=False).mean()
+        df['volatility_ratio'] = df['atr_14'] / df['atr_ema_long']
         df['adaptive_coeff'] = self.atr_multiplier * df['volatility_ratio']
 
         # ==== ALPHATREND BANDS ====
