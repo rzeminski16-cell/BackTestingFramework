@@ -18,7 +18,7 @@ PERFORMANCE OPTIMIZED:
 - O(n) complexity instead of O(n²)
 - Numba JIT compilation for state-dependent loops (5-20x speedup)
 
-NOTE: All standard indicators (atr_14, ema_50) are read from raw data.
+NOTE: All standard indicators (atr_14, ema_50, mfi_14) are read from raw data.
 AlphaTrend signals are calculated (approved exception).
 """
 from typing import Dict, List, Optional, Tuple
@@ -142,6 +142,7 @@ class AlphaTrendStrategy(BaseStrategy):
     Standard Indicators (read from raw data, static):
         - atr_14: Average True Range (14-period, static)
         - ema_50: Exponential Moving Average (50-period, static, used for exits)
+        - mfi_14: Money Flow Index (14-period, static, used for momentum)
 
     Custom Parameters (strategy-specific calculations):
         volume_short_ma: Volume short MA period (default: 4)
@@ -219,14 +220,15 @@ class AlphaTrendStrategy(BaseStrategy):
         return [
             'date', 'open', 'high', 'low', 'close', 'volume',
             'atr_14',  # Pre-calculated ATR from raw data
-            'ema_50'   # Pre-calculated EMA from raw data
+            'ema_50',  # Pre-calculated EMA from raw data
+            'mfi_14'   # Pre-calculated Money Flow Index from raw data
         ]
 
     def _prepare_data_impl(self, data: pd.DataFrame) -> pd.DataFrame:
         """
         Pre-calculate custom AlphaTrend indicators ONCE before backtesting.
 
-        Standard indicators (atr_14, ema_50) are read from raw data.
+        Standard indicators (atr_14, ema_50, mfi_14) are read from raw data.
         Custom indicators specific to AlphaTrend are calculated here.
 
         APPROVED EXCEPTION: AlphaTrend signal calculations are allowed
@@ -251,32 +253,15 @@ class AlphaTrendStrategy(BaseStrategy):
         df['up_band'] = df['low'] - df['atr_14'] * df['adaptive_coeff']
         df['down_band'] = df['high'] + df['atr_14'] * df['adaptive_coeff']
 
-        # ==== MONEY FLOW INDEX (MFI) ====
-        # Vectorized MFI calculation (14-period to match atr_14)
-        df['typical_price'] = (df['high'] + df['low'] + df['close']) / 3
-        df['raw_money_flow'] = df['typical_price'] * df['volume']
-
-        # Determine positive and negative money flow
-        df['price_change'] = df['typical_price'].diff()
-        df['positive_flow'] = np.where(df['price_change'] > 0, df['raw_money_flow'], 0)
-        df['negative_flow'] = np.where(df['price_change'] < 0, df['raw_money_flow'], 0)
-
-        # Sum over 14-period (vectorized)
-        positive_mf = df['positive_flow'].rolling(window=14).sum()
-        negative_mf = df['negative_flow'].rolling(window=14).sum()
-
-        # MFI calculation with division by zero protection
-        mfi_ratio = positive_mf / negative_mf.replace(0, np.nan)
-        df['mfi'] = 100 - (100 / (1 + mfi_ratio))
-
         # ==== DYNAMIC MFI THRESHOLDS ====
-        # Vectorized percentile calculations
-        df['mfi_upper'] = df['mfi'].rolling(window=self.percentile_period).quantile(0.70)
-        df['mfi_lower'] = df['mfi'].rolling(window=self.percentile_period).quantile(0.30)
+        # MFI is read from raw data (mfi_14)
+        # Vectorized percentile calculations for dynamic thresholds
+        df['mfi_upper'] = df['mfi_14'].rolling(window=self.percentile_period).quantile(0.70)
+        df['mfi_lower'] = df['mfi_14'].rolling(window=self.percentile_period).quantile(0.30)
         df['mfi_threshold'] = (df['mfi_upper'] + df['mfi_lower']) / 2
 
-        # Momentum bullish condition
-        df['momentum_bullish'] = df['mfi'] >= df['mfi_threshold']
+        # Momentum bullish condition (using mfi_14 from raw data)
+        df['momentum_bullish'] = df['mfi_14'] >= df['mfi_threshold']
 
         # ==== ALPHATREND CALCULATION (VECTORIZED) ====
         df['alphatrend'] = self._calculate_alphatrend_vectorized(
@@ -364,7 +349,7 @@ class AlphaTrendStrategy(BaseStrategy):
 
         current_bar = context.current_bar
 
-        if pd.isna(current_bar.get('atr_14')) or pd.isna(current_bar.get('ema_50')):
+        if pd.isna(current_bar.get('atr_14')) or pd.isna(current_bar.get('ema_50')) or pd.isna(current_bar.get('mfi_14')):
             return None
 
         return {
@@ -375,7 +360,7 @@ class AlphaTrendStrategy(BaseStrategy):
             'filtered_sell': current_bar['filtered_sell'],
             'volume_condition': current_bar['volume_condition'],
             'ema_50': current_bar['ema_50'],
-            'mfi': current_bar['mfi']
+            'mfi_14': current_bar['mfi_14']
         }
 
     def _has_active_signal(self, context: StrategyContext) -> bool:
