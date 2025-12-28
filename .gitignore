@@ -22,3 +22,6 @@ Thumbs.db
 
 # Analysis output (generated files)
 analysis_output/
+
+# Log files (generated during testing/backtesting)
+logs/
