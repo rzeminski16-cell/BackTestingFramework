@@ -1697,7 +1697,7 @@ class OptionsTab(BaseTab):
             from_date=from_date,
             to_date=to_date,
             max_dte_forward=config["max_dte_forward"],
-            option_type=config["option_type"],
+            options_type=config["option_type"],
         )
 
         # Create collector
