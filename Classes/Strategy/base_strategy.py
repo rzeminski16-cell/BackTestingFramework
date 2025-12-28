@@ -1,56 +1,88 @@
 """
 Base strategy class for defining trading strategies.
 
-IMPORTANT - RAW DATA REQUIREMENTS:
-All technical indicators must be read from pre-calculated raw data files.
-Do NOT implement indicator calculations in strategies - they must come from
-the Alpha Vantage data collection process.
+Every strategy must follow this standardized structure:
 
-Column Naming Convention (from Alpha Vantage):
-    {indicator}_{period}_{output}
+REQUIRED COMPONENTS (must be implemented):
+1. trade_direction: LONG or SHORT
+2. required_columns(): List of raw data columns needed
+3. generate_entry_signal(): Core entry rules
+4. calculate_initial_stop_loss(): How initial stop loss is calculated
+5. position_size(): How position size is calculated
+6. generate_exit_signal(): Core exit rules (full exit)
 
-Examples:
-    - atr_14_atr: Average True Range (14-period)
-    - sma_50_sma: Simple Moving Average (50-period)
-    - rsi_14_rsi: Relative Strength Index (14-period)
-    - mfi_14_mfi: Money Flow Index (14-period)
-    - bbands_20_real middle band: Bollinger Bands middle (20-period)
+OPTIONAL COMPONENTS (may be left blank):
+1. fundamental_rules: Fundamental filter (default: AlwaysPassFundamentalRules)
+2. should_adjust_stop(): Trailing stop loss rules
+3. should_partial_exit(): Partial exit rules
+4. should_pyramid(): Pyramiding rules (max 1 pyramid per trade)
+5. max_position_duration: Max bars to hold position (checked in exit rules)
 
-If a required indicator is missing, a MissingColumnError will be raised
-with clear instructions on how to collect the missing data.
 """
 from abc import ABC, abstractmethod
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, Set
 import pandas as pd
-from ..Models.signal import Signal
+
+from ..Models.signal import Signal, SignalType
+from ..Models.trade_direction import TradeDirection
 from .strategy_context import StrategyContext
+from .fundamental_rules import (
+    BaseFundamentalRules,
+    AlwaysPassFundamentalRules,
+    FundamentalData,
+    FundamentalCheckResult
+)
+
+
+class StrategyValidationError(Exception):
+    """Raised when strategy validation fails."""
+    pass
 
 
 class BaseStrategy(ABC):
     """
     Abstract base class for trading strategies.
 
-    Strategies must implement:
-    - required_columns(): List of column names needed from CSV
-    - generate_signal(): Generate trading signal based on current context
+    All strategies must implement:
+    - trade_direction: Property returning LONG or SHORT
+    - required_columns(): List of column names needed from CSV (must come from raw data)
+    - generate_entry_signal(): Generate entry signal (BUY)
+    - calculate_initial_stop_loss(): Calculate initial stop loss price
+    - position_size(): Calculate position size for entry
+    - generate_exit_signal(): Generate exit signal (SELL)
 
     Strategies can optionally override:
-    - prepare_data(): Pre-calculate indicators before backtest (RECOMMENDED for performance)
-    - position_size(): Calculate position size for entry
-    - should_check_stop_loss(): Check if stop loss should be hit
-    - should_check_take_profit(): Check if take profit should be hit
-    - should_adjust_stop(): Check if stop loss should be adjusted
-    - should_partial_exit(): Check if partial exit should be taken
+    - fundamental_rules: Fundamental filter rules (default: always pass)
+    - prepare_data(): Pre-calculate custom indicators (approved exceptions only)
+    - should_adjust_stop(): Trailing stop logic
+    - should_partial_exit(): Partial exit logic
+    - should_pyramid(): Pyramiding logic (max 1 per trade)
+    - max_position_duration: Max bars before forced exit
 
-    Strategy Parameters:
-    - Pass parameters via __init__ and store as instance variables
-    - This allows for easy parameter optimization
+    IMPORTANT - RAW DATA REQUIREMENT:
+    All indicators specified in required_columns() MUST exist in the raw data CSV.
+    Custom calculations in prepare_data() are only allowed for strategy-specific
+    indicators that are not standard (approved on a case-by-case basis).
 
-    Performance Optimization:
-    - Override prepare_data() to pre-calculate all indicators ONCE before backtesting
-    - This eliminates O(n²) complexity from repeated calculations during the bar loop
-    - Use IndicatorEngine for vectorized indicator calculations
+    IMPORTANT - OPTIMIZATION RULES:
+    When implementing a strategy, you must understand:
+
+    1. RAW DATA INDICATORS (NOT OPTIMIZABLE):
+       Indicators from CSV files like atr_14, ema_50, rsi_14 have their period
+       baked into the column name. You CANNOT optimize these periods because
+       changing them requires regenerating the raw data files.
+
+    2. CALCULATED PARAMETERS (OPTIMIZABLE):
+       Parameters used in strategy logic (multipliers, thresholds, percentages)
+       CAN be optimized because they are computed at runtime.
+
+    Every strategy subclass MUST document which parameters fall into each
+    category in its class docstring. See the module docstring for the full
+    documentation format requirement.
     """
+
+    # Class-level validation flag - set to True to validate on init
+    _validate_on_init: bool = True
 
     def __init__(self, **params):
         """
@@ -58,204 +90,281 @@ class BaseStrategy(ABC):
 
         Args:
             **params: Strategy-specific parameters
+
+        Raises:
+            StrategyValidationError: If required components are missing
         """
         self.params = params
+        self._has_pyramided: Dict[str, bool] = {}  # Track pyramiding per symbol
         self._validate_parameters()
+
+        # Validate strategy structure if enabled
+        if self._validate_on_init:
+            self._validate_strategy_structure()
+
+    @property
+    @abstractmethod
+    def trade_direction(self) -> TradeDirection:
+        """
+        Trade direction for this strategy.
+
+        REQUIRED: Must return TradeDirection.LONG or TradeDirection.SHORT
+
+        Returns:
+            TradeDirection enum value
+        """
+        pass
+
+    @property
+    def fundamental_rules(self) -> BaseFundamentalRules:
+        """
+        Fundamental rules for entry filtering.
+
+        OPTIONAL: Override to provide fundamental filtering.
+        Default: AlwaysPassFundamentalRules (no filtering)
+
+        These rules are checked every time there is an entry signal.
+        If they fail, the trade does not take place.
+
+        Returns:
+            BaseFundamentalRules instance
+        """
+        return AlwaysPassFundamentalRules()
+
+    @property
+    def max_position_duration(self) -> Optional[int]:
+        """
+        Maximum position duration in bars.
+
+        OPTIONAL: Override to force exit after N bars.
+        Default: None (no duration limit)
+
+        Returns:
+            Max bars to hold position, or None
+        """
+        return None
 
     @abstractmethod
     def required_columns(self) -> List[str]:
         """
         Return list of required column names from CSV data.
 
-        IMPORTANT: All indicators must be pre-calculated in the raw data.
-        Use the Alpha Vantage column naming convention:
-            {indicator}_{period}_{output}
+        REQUIRED: Must include 'date' and 'close' at minimum.
+        All columns listed here MUST exist in the raw data CSV files.
 
-        Must include 'date' and 'close' at minimum.
-        Include any indicators needed for the strategy.
+        IMPORTANT: Indicators cannot be calculated if not in raw data.
+        If a required indicator is missing, the backtest will fail with
+        a clear error message.
 
         Returns:
             List of required column names (lowercase)
 
-        Example (using new Alpha Vantage column names):
-            return [
-                'date', 'open', 'high', 'low', 'close', 'volume',
-                'atr_14_atr',      # Average True Range
-                'sma_50_sma',      # Simple Moving Average
-                'rsi_14_rsi',      # Relative Strength Index
-                'mfi_14_mfi',      # Money Flow Index
-            ]
-
-        If any column is missing from the raw data, a MissingColumnError
-        will be raised with instructions on how to collect the data.
+        Example:
+            return ['date', 'close', 'atr_14', 'ema_50', 'rsi_14']
         """
         pass
 
     def prepare_data(self, data: pd.DataFrame) -> pd.DataFrame:
         """
-        Pre-calculate custom strategy-specific indicators before backtesting begins.
+        Pre-calculate custom strategy-specific indicators before backtesting.
 
-        STANDARD INDICATORS (read from raw data - DO NOT CALCULATE):
-        All standard indicators must be read from the raw data CSV files.
-        They use the Alpha Vantage naming convention: {indicator}_{period}_{output}
+        OPTIONAL: Only override for strategy-specific calculations that are
+        approved exceptions (e.g., AlphaTrend signals). Standard indicators
+        MUST come from raw data.
 
-        Examples of indicators available in raw data:
-        - atr_14_atr: Average True Range
-        - sma_50_sma, sma_200_sma: Simple Moving Averages
-        - ema_12_ema, ema_26_ema: Exponential Moving Averages
-        - rsi_14_rsi: Relative Strength Index
-        - mfi_14_mfi: Money Flow Index
-        - bbands_20_real middle band: Bollinger Bands
-
-        CUSTOM CALCULATIONS: Only override this method if you need to calculate
-        strategy-specific derived values that combine raw data indicators.
-        For example: signal conditions, crossovers, custom thresholds.
-
-        ⚠️  CRITICAL - PREVENT LOOK-AHEAD BIAS:
+        CRITICAL - PREVENT LOOK-AHEAD BIAS:
         Only use CAUSAL operations that don't look ahead:
-        - ✅ ALLOWED: .rolling(), .expanding(), .shift(n) where n >= 0, .pct_change()
-        - ❌ FORBIDDEN: .shift(-n) where n > 0, global .mean()/.std() on full series
-
-        The framework will automatically detect potential look-ahead bias by checking
-        for suspicious NaN patterns in new columns.
-
-        Default implementation: Returns data unchanged (assumes all indicators pre-exist).
+        - ALLOWED: .rolling(), .expanding(), .shift(n) where n >= 0
+        - FORBIDDEN: .shift(-n) where n > 0, global .mean()/.std()
 
         Args:
             data: Raw OHLCV data with pre-calculated standard indicators
 
         Returns:
-            Data with any custom strategy-specific indicators added as columns
+            Data with any custom strategy-specific indicators added
 
-        Example (reading standard indicators from raw data):
-            def required_columns(self) -> List[str]:
-                # Use Alpha Vantage column naming: {indicator}_{period}_{output}
-                return ['date', 'close', 'atr_14_atr', 'sma_50_sma', 'rsi_14_rsi']
-
-            def generate_signal(self, context: StrategyContext) -> Signal:
-                atr = context.get_indicator_value('atr_14_atr')  # Read from raw data
-                sma = context.get_indicator_value('sma_50_sma')  # Read from raw data
-                ...
-
-        Example (calculating custom indicators - CORRECT):
-            def prepare_data(self, data: pd.DataFrame) -> pd.DataFrame:
-                df = data.copy()
-                # ✅ GOOD: Rolling operations (look backward only)
-                df['sma_20'] = df['close'].rolling(window=20).mean()
-                df['returns'] = df['close'].pct_change()  # Uses shift(1) internally
-                return df
-
-        Example (calculating custom indicators - INCORRECT):
-            def prepare_data(self, data: pd.DataFrame) -> pd.DataFrame:
-                df = data.copy()
-                # ❌ BAD: Looking ahead 5 bars!
-                df['future_return'] = df['close'].shift(-5)
-                # ❌ BAD: Using statistics from entire dataset!
-                df['z_score'] = (df['close'] - df['close'].mean()) / df['close'].std()
-                return df
+        Raises:
+            ValueError: If required indicators are missing from raw data
         """
-        # Store original columns to detect new ones
+        # Validate required columns exist in raw data
+        self._validate_raw_data_columns(data)
+
+        # Store original columns for leak detection
         original_columns = set(data.columns)
 
-        # Call the actual implementation (subclasses should implement this logic)
+        # Call implementation
         result = self._prepare_data_impl(data)
 
-        # DATA LEAKAGE VALIDATION: Check for non-causal operations
-        if len(result) > 0:
-            new_columns = set(result.columns) - original_columns
-
-            for col in new_columns:
-                # Check last rows for NaN (backward shift with .shift(-n) creates trailing NaNs)
-                # Check at least 5% of data or 10 rows, whichever is smaller
-                check_rows = min(10, max(1, int(len(result) * 0.05)))
-
-                if result[col].iloc[-check_rows:].isna().any():
-                    print(f"\n⚠️  DATA LEAKAGE WARNING in prepare_data():")
-                    print(f"   Column '{col}' has NaN values at the END of the dataset.")
-                    print(f"   This often indicates .shift(-n) with negative offset (look-ahead bias)!")
-                    print(f"   Please verify that '{col}' only uses causal operations:")
-                    print(f"   - ✅ ALLOWED: .rolling(), .expanding(), .shift(n) where n >= 0")
-                    print(f"   - ❌ FORBIDDEN: .shift(-n) where n > 0\n")
+        # Check for look-ahead bias in new columns
+        self._check_look_ahead_bias(result, original_columns)
 
         return result
+
+    def _validate_raw_data_columns(self, data: pd.DataFrame) -> None:
+        """
+        Validate that all required columns exist in raw data.
+
+        Raises:
+            ValueError: If required columns are missing
+        """
+        required = set(self.required_columns())
+        available = set(data.columns)
+        missing = required - available
+
+        if missing:
+            raise ValueError(
+                f"Missing required columns in raw data: {sorted(missing)}\n"
+                f"These indicators must be present in the raw data CSV files.\n"
+                f"Available columns: {sorted(available)}"
+            )
+
+    def _check_look_ahead_bias(self, result: pd.DataFrame, original_columns: Set[str]) -> None:
+        """Check new columns for potential look-ahead bias."""
+        if len(result) == 0:
+            return
+
+        new_columns = set(result.columns) - original_columns
+        for col in new_columns:
+            check_rows = min(10, max(1, int(len(result) * 0.05)))
+            if result[col].iloc[-check_rows:].isna().any():
+                print(f"\n⚠️  DATA LEAKAGE WARNING in prepare_data():")
+                print(f"   Column '{col}' has NaN values at the END of the dataset.")
+                print(f"   This often indicates .shift(-n) with negative offset (look-ahead bias)!")
+                print(f"   Only use causal operations: .rolling(), .expanding(), .shift(n>=0)\n")
 
     def _prepare_data_impl(self, data: pd.DataFrame) -> pd.DataFrame:
         """
         Internal implementation of prepare_data().
 
-        Subclasses should typically NOT override prepare_data() directly.
-        Instead, keep the default prepare_data() implementation and just
-        return the data directly from this method or override prepare_data()
-        and be aware of the validation that occurs.
+        Override this method for custom indicator calculations.
+        Default: Returns data unchanged.
 
         Args:
-            data: Raw OHLCV data with pre-calculated standard indicators
+            data: Raw data with standard indicators
 
         Returns:
-            Data with any custom strategy-specific indicators added as columns
+            Data with custom indicators added
         """
         return data
 
     @abstractmethod
-    def generate_signal(self, context: StrategyContext) -> Signal:
+    def generate_entry_signal(self, context: StrategyContext) -> Optional[Signal]:
         """
-        Generate trading signal based on current context.
+        Generate entry signal based on entry rules.
 
-        This is the main strategy logic. Called on every bar.
+        REQUIRED: Core entry logic for the strategy.
+        Called on every bar when not in a position.
 
-        Args:
-            context: Current market context (data, position, prices, etc.)
+        Should return Signal.buy() when entry conditions are met.
+        The stop_loss from calculate_initial_stop_loss() will be used.
 
-        Returns:
-            Signal (BUY, SELL, PARTIAL_EXIT, ADJUST_STOP, or HOLD)
-
-        Example:
-            if not context.has_position:
-                if context.current_price > context.get_indicator_value('sma_50'):
-                    return Signal.buy(size=0.1, reason="Price above SMA")
-            else:
-                if context.current_price < context.get_indicator_value('sma_50'):
-                    return Signal.sell(reason="Price below SMA")
-            return Signal.hold()
-        """
-        pass
-
-    def position_size(self, context: StrategyContext, signal: Signal) -> float:
-        """
-        Calculate position size (number of shares/units) for a BUY signal.
-
-        Default: Uses signal.size as fraction of available capital.
-
-        Override this method for custom position sizing logic (e.g., ATR-based,
-        volatility-adjusted, Kelly criterion, etc.)
+        Note: Fundamental rules are checked AFTER this method returns
+        a BUY signal. If fundamentals fail, the trade is skipped.
 
         Args:
             context: Current market context
-            signal: BUY signal with size parameter
+
+        Returns:
+            Signal.buy() if entry conditions met, None otherwise
+
+        Example:
+            if context.current_price > context.get_indicator_value('ema_50'):
+                return Signal.buy(
+                    size=1.0,
+                    stop_loss=self.calculate_initial_stop_loss(context),
+                    reason="Price above EMA-50",
+                    direction=self.trade_direction
+                )
+            return None
+        """
+        pass
+
+    @abstractmethod
+    def calculate_initial_stop_loss(self, context: StrategyContext) -> float:
+        """
+        Calculate initial stop loss price for entry.
+
+        REQUIRED: Define how the initial stop loss is calculated.
+        Called when generating entry signals.
+
+        Args:
+            context: Current market context
+
+        Returns:
+            Stop loss price (absolute value)
+
+        Example (ATR-based):
+            atr = context.get_indicator_value('atr_14')
+            return context.current_price - (atr * 2.5)
+
+        Example (percentage-based):
+            return context.current_price * 0.95  # 5% stop
+        """
+        pass
+
+    @abstractmethod
+    def position_size(self, context: StrategyContext, signal: Signal) -> float:
+        """
+        Calculate position size (number of shares/units).
+
+        REQUIRED: Define how position size is calculated.
+        Called when a BUY signal is generated.
+
+        Args:
+            context: Current market context
+            signal: BUY signal with stop_loss set
 
         Returns:
             Number of shares/units to buy (must be > 0)
 
-        Example:
-            # Default implementation
+        Example (risk-based):
+            equity = context.total_equity
+            risk_amount = equity * (self.risk_percent / 100)
+            stop_distance = context.current_price - signal.stop_loss
+            return risk_amount / (stop_distance * context.fx_rate)
+
+        Example (capital fraction):
             capital_to_use = context.available_capital * signal.size
-            shares = capital_to_use / context.current_price
-            return shares
+            return capital_to_use / context.current_price
         """
-        if signal.size <= 0 or signal.size > 1.0:
-            raise ValueError(f"Signal size must be between 0 and 1, got {signal.size}")
+        pass
 
-        capital_to_use = context.available_capital * signal.size
-        shares = capital_to_use / context.current_price
+    @abstractmethod
+    def generate_exit_signal(self, context: StrategyContext) -> Optional[Signal]:
+        """
+        Generate exit signal based on exit rules.
 
-        return shares
+        REQUIRED: Core exit logic for the strategy.
+        Called on every bar when in a position (after stop loss checks).
+
+        Should return Signal.sell() when exit conditions are met.
+
+        Args:
+            context: Current market context
+
+        Returns:
+            Signal.sell() if exit conditions met, None otherwise
+
+        Example:
+            # Max duration check
+            if self.max_position_duration:
+                bars_held = context.current_index - self._entry_bar[context.symbol]
+                if bars_held >= self.max_position_duration:
+                    return Signal.sell(reason="Max duration reached")
+
+            # Technical exit
+            if context.current_price < context.get_indicator_value('ema_50'):
+                return Signal.sell(reason="Price below EMA-50")
+
+            return None
+        """
+        pass
 
     def should_check_stop_loss(self, context: StrategyContext) -> bool:
         """
         Determine if stop loss should be checked on this bar.
 
         Default: Always check if position has a stop loss.
-
         Override for custom logic (e.g., only check after N bars).
 
         Args:
@@ -272,8 +381,6 @@ class BaseStrategy(ABC):
 
         Default: Always check if position has a take profit.
 
-        Override for custom logic.
-
         Args:
             context: Current market context
 
@@ -286,12 +393,12 @@ class BaseStrategy(ABC):
         """
         Check if stop loss should be adjusted (trailing stop logic).
 
+        OPTIONAL: Override to implement trailing stops.
         Default: No adjustment (returns None).
 
-        Override this method to implement:
-        - Trailing stops based on price movement
-        - Trailing stops based on indicator values
-        - Conditional stop adjustments (e.g., move to breakeven after X% profit)
+        Note: For LONG positions, stop can only move UP.
+              For SHORT positions, stop can only move DOWN.
+        This is enforced by the engine.
 
         Args:
             context: Current market context
@@ -300,15 +407,11 @@ class BaseStrategy(ABC):
             New stop loss price, or None if no adjustment needed
 
         Example:
-            # Move stop to breakeven after 5% profit
-            if context.get_position_pl_pct() > 5.0:
-                return context.position.entry_price
-
-            # Trail stop using EMA
-            ema_value = context.get_indicator_value('ema_14')
-            if ema_value and ema_value > context.position.stop_loss:
-                return ema_value
-
+            # Trail stop using ATR
+            atr = context.get_indicator_value('atr_14')
+            new_stop = context.current_price - (atr * 2.0)
+            if new_stop > context.position.stop_loss:
+                return new_stop
             return None
         """
         return None
@@ -317,12 +420,8 @@ class BaseStrategy(ABC):
         """
         Check if partial exit should be taken.
 
+        OPTIONAL: Override to implement partial profit-taking.
         Default: No partial exits (returns None).
-
-        Override this method to implement partial profit-taking:
-        - Scale out at specific profit levels
-        - Scale out based on indicator signals
-        - Time-based partial exits
 
         Args:
             context: Current market context
@@ -334,10 +433,118 @@ class BaseStrategy(ABC):
             # Take 50% profit at 10% gain
             if context.get_position_pl_pct() > 10.0:
                 return 0.5
-
             return None
         """
         return None
+
+    def should_pyramid(self, context: StrategyContext) -> Optional[Signal]:
+        """
+        Check if position should be pyramided (added to).
+
+        OPTIONAL: Override to implement pyramiding.
+        Default: No pyramiding (returns None).
+
+        IMPORTANT:
+        - Only ONE pyramid is allowed per trade
+        - When pyramiding occurs, stop loss automatically moves to break-even
+          (considering increased position size and commission costs)
+        - The engine tracks pyramiding state
+
+        Args:
+            context: Current market context
+
+        Returns:
+            Signal.pyramid() if should add to position, None otherwise
+
+        Example:
+            # Pyramid when price moves 5% in our favor
+            if context.get_position_pl_pct() > 5.0:
+                return Signal.pyramid(
+                    size=0.5,  # Add 50% of original position
+                    reason="Price momentum continuation"
+                )
+            return None
+        """
+        return None
+
+    def check_fundamentals(self, context: StrategyContext) -> FundamentalCheckResult:
+        """
+        Check fundamental rules for entry.
+
+        Called automatically when an entry signal is generated.
+        Uses the fundamental_rules property to perform the check.
+
+        Args:
+            context: Current market context
+
+        Returns:
+            FundamentalCheckResult with passed=True/False
+        """
+        fundamentals = FundamentalData.from_bar(context.current_bar)
+        return self.fundamental_rules.check_fundamentals(context, fundamentals)
+
+    def generate_signal(self, context: StrategyContext) -> Signal:
+        """
+        Generate trading signal based on current context.
+
+        This is the main method called by the engine on every bar.
+        It orchestrates the strategy logic flow:
+
+        1. If no position: Check entry signal + fundamentals
+        2. If in position: Check exit signal, pyramiding
+
+        Args:
+            context: Current market context
+
+        Returns:
+            Signal (BUY, SELL, PYRAMID, or HOLD)
+        """
+        symbol = context.symbol
+
+        if not context.has_position:
+            # Reset pyramiding tracker when not in position
+            self._has_pyramided[symbol] = False
+
+            # Check for entry signal
+            entry_signal = self.generate_entry_signal(context)
+
+            if entry_signal is not None and entry_signal.type == SignalType.BUY:
+                # Check fundamental rules before allowing entry
+                fundamental_result = self.check_fundamentals(context)
+
+                if not fundamental_result.passed:
+                    # Fundamentals failed - no trade
+                    return Signal.hold(
+                        reason=f"Fundamentals failed: {fundamental_result.reason}"
+                    )
+
+                # Ensure stop loss is set
+                if entry_signal.stop_loss is None:
+                    entry_signal = Signal.buy(
+                        size=entry_signal.size,
+                        stop_loss=self.calculate_initial_stop_loss(context),
+                        take_profit=entry_signal.take_profit,
+                        direction=self.trade_direction,
+                        reason=entry_signal.reason
+                    )
+
+                return entry_signal
+
+        else:
+            # In position - check for exit first
+            exit_signal = self.generate_exit_signal(context)
+
+            if exit_signal is not None and exit_signal.type == SignalType.SELL:
+                return exit_signal
+
+            # Check for pyramiding (only if not already pyramided)
+            if not self._has_pyramided.get(symbol, False):
+                pyramid_signal = self.should_pyramid(context)
+                if pyramid_signal is not None and pyramid_signal.type == SignalType.PYRAMID:
+                    self._has_pyramided[symbol] = True
+                    return pyramid_signal
+
+        return Signal.hold()
 
     def _validate_parameters(self) -> None:
         """
@@ -349,6 +556,45 @@ class BaseStrategy(ABC):
             ValueError: If parameters are invalid
         """
         pass
+
+    def _validate_strategy_structure(self) -> None:
+        """
+        Validate that strategy implements all required components.
+
+        Raises:
+            StrategyValidationError: If required components are missing
+        """
+        errors = []
+
+        # Check trade_direction
+        try:
+            direction = self.trade_direction
+            if not isinstance(direction, TradeDirection):
+                errors.append(
+                    f"trade_direction must return TradeDirection enum, "
+                    f"got {type(direction).__name__}"
+                )
+        except NotImplementedError:
+            errors.append("trade_direction property not implemented")
+
+        # Check required_columns returns non-empty list with date and close
+        try:
+            columns = self.required_columns()
+            if not columns:
+                errors.append("required_columns() returned empty list")
+            else:
+                if 'date' not in columns:
+                    errors.append("required_columns() must include 'date'")
+                if 'close' not in columns:
+                    errors.append("required_columns() must include 'close'")
+        except NotImplementedError:
+            errors.append("required_columns() not implemented")
+
+        if errors:
+            raise StrategyValidationError(
+                f"Strategy validation failed for {self.__class__.__name__}:\n"
+                + "\n".join(f"  - {e}" for e in errors)
+            )
 
     def get_parameter(self, name: str, default: Any = None) -> Any:
         """
@@ -387,4 +633,5 @@ class BaseStrategy(ABC):
     def __str__(self) -> str:
         """String representation of strategy."""
         param_str = ", ".join(f"{k}={v}" for k, v in self.params.items())
-        return f"{self.get_name()}({param_str})"
+        direction = self.trade_direction.value
+        return f"{self.get_name()}[{direction}]({param_str})"
