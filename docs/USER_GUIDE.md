@@ -1,461 +1,672 @@
-# User Guide
+# BackTesting Framework - User Guide
 
-This guide explains what the Backtesting Framework does, when to use it, and how to use it effectively.
-
-## What Is This Framework?
-
-The Backtesting Framework is a tool for testing trading strategies on historical data. You give it:
-- Historical price data (CSV files)
-- A trading strategy (entry/exit rules)
-- Configuration (capital, commission, etc.)
-
-It simulates running that strategy on past data and tells you:
-- How many trades would have been made
-- What the profit/loss would have been
-- Performance metrics like Sharpe ratio, max drawdown, win rate
-
-This helps you evaluate whether a strategy is worth using before risking real money.
-
-## When Should You Use It?
-
-Use this framework when you want to:
-
-1. **Test a trading idea** - "Would buying when price crosses above the 50-day moving average have been profitable on AAPL?"
-
-2. **Compare strategies** - "Which performs better: my momentum strategy or my mean-reversion strategy?"
-
-3. **Find optimal parameters** - "What's the best moving average period for this strategy? 20? 50? 100?"
-
-4. **Test across multiple securities** - "Does this strategy work on tech stocks in general, or just AAPL?"
-
-5. **Generate performance reports** - Create professional Excel reports with metrics for analysis or sharing.
-
-## Key Concepts
-
-### Backtest
-A simulation that applies a strategy to historical data and records what trades would have occurred.
-
-### Strategy
-The trading rules that decide when to buy and sell. Strategies look at price data and indicators to generate signals.
-
-### Signal
-A decision from the strategy:
-- **BUY** - Open a new position
-- **SELL** - Close the current position
-- **HOLD** - Do nothing
-
-### Position
-An open trade. When you buy, you have a position. When you sell, the position closes and becomes a completed trade.
-
-### Trade
-A completed transaction with entry date/price and exit date/price. The framework calculates profit/loss for each trade.
-
-### Equity Curve
-A chart showing how your portfolio value changes over time during the backtest.
-
-## How It Works
-
-1. **Load Data** - The framework reads your CSV file containing historical prices
-2. **Process Bar by Bar** - For each day/bar in the data:
-   - The strategy sees only data up to that point (no future data)
-   - The strategy generates a signal (BUY, SELL, or HOLD)
-   - Trades execute at the closing price
-   - Stop losses and take profits are checked
-3. **Record Results** - All trades are logged with entry/exit details
-4. **Calculate Metrics** - Performance metrics are computed from the trade history
-
-### Execution Model
-
-The framework matches TradingView's default behavior:
-- **Trades execute at closing prices** - When a signal occurs, the trade happens at that bar's close
-- **No lookahead bias** - Strategies only see past data, never future prices
-- **One position at a time** - In single-security mode, you're either in a trade or out
-- **Long only** - The framework supports buying and selling, not short selling
+A flow-based guide for developing, testing, and refining trading strategies.
 
 ---
 
-## Using the GUI
+## Overview
 
-The GUI is the easiest way to run backtests, especially when starting out.
+This guide follows the complete workflow from raw data collection through strategy refinement. The process is iterative - after initial backtesting, you'll cycle through optimization, analysis, and adjustment until achieving desired results.
 
-### Starting the GUI
+```
+                              BACKTESTING FRAMEWORK WORKFLOW
+
+    +------------------+
+    |  1. RAW DATA     |
+    |   COLLECTION     |
+    +--------+---------+
+             |
+             v
+    +------------------+     +----------------------+
+    |  2. STRATEGY     |<--->|  Strategy Explorer   |
+    |   CREATION       |     |  (Understanding)     |
+    +--------+---------+     +----------------------+
+             |
+             v
+    +------------------+
+    |  3. INITIAL      |
+    |   BACKTESTING    |
+    +--------+---------+
+             |
+             v
+    +------------------+
+    |  4. PARAMETER    |
+    |   OPTIMIZATION   |
+    +--------+---------+
+             |
+             v
+    +------------------+
+    |  5. VULNERABILITY|
+    |   SCORING        |
+    +--------+---------+
+             |
+             v
+    +------------------+
+    |  6. STATISTICAL  |  <-- Not yet implemented
+    |   EVALUATION     |
+    +--------+---------+
+             |
+             v
+    +------------------+
+    |  7. "WHAT IF"    |  <-- Not yet implemented
+    |   ANALYSIS       |
+    +--------+---------+
+             |
+             v
+    +------------------+
+    |  8. PER-TRADE    |  <-- Not yet implemented
+    |   ANALYSIS       |
+    +--------+---------+
+             |
+             |  +------------------------------------------+
+             +->|  ITERATE: Repeat steps 2-8 until         |
+                |  desired strategy performance achieved   |
+                +------------------------------------------+
+```
+
+---
+
+## Step 1: Raw Data Collection
+
+Before running any backtests, you need historical market data. The framework collects data from Alpha Vantage API.
+
+### Running the Data Collection GUI
 
 ```bash
-python run_gui.py
+python apps/data_collection_gui.py
 ```
 
-### Step 1: Select Mode and Securities
+### Data Types to Collect
 
-- **Single Security Mode**: Test on one security at a time. Each gets isolated capital.
-- **Portfolio Mode**: Test across multiple securities with shared capital.
+| Data Type | Description | Storage Location |
+|-----------|-------------|------------------|
+| **Daily Prices** | Daily OHLCV + 50+ technical indicators | `raw_data/daily/{ticker}.csv` |
+| **Weekly Prices** | Weekly OHLCV data | `raw_data/weekly/{ticker}.csv` |
+| **Fundamental Data** | Financial statements, ratios, earnings | `raw_data/fundamentals/{ticker}/` |
+| **Insider Data** | Insider transactions (buys/sells) | `raw_data/insider_transactions/{ticker}.csv` |
+| **Forex Pairs** | Currency exchange rates for cost calculations | `raw_data/forex/{pair}.csv` |
+| **Options** | Historical options chains (if available) | `raw_data/options/{ticker}/{year}/` |
 
-Select one or more securities from the list. These come from CSV files in your `raw_data/` folder.
+### Collection Workflow
 
-### Step 2: Choose a Strategy
+```
+Data Collection GUI
+        |
+        v
++-------------------+
+| 1. Select Preset  |  (All Stocks, Sectors, Custom, etc.)
++-------------------+
+        |
+        v
++-------------------+
+| 2. Choose Data    |  (Daily, Weekly, Fundamentals, Insider, Options)
++-------------------+
+        |
+        v
++-------------------+
+| 3. Set Options    |  (Full history vs. Update only)
++-------------------+
+        |
+        v
++-------------------+
+| 4. Start Fetch    |  (Rate-limited: 75 req/min Premium)
++-------------------+
+        |
+        v
++-------------------+
+| 5. Monitor Logs   |  (logs/data_collection/)
++-------------------+
+```
 
-Select a strategy from the dropdown. The available strategies are discovered from the `strategies/` folder.
+### Ticker Presets
 
-**Configure Parameters**: Click "Configure Strategy Parameters" to adjust:
-- Volume filter settings
-- Stop loss multipliers
-- Grace periods
-- Risk percentage
+Pre-configured ticker lists are available in `config/data_collection/tickers.json`:
+- **All Stocks** - 165+ US equities
+- **All ETFs** - 46 exchange-traded funds
+- **Sector-specific** - Tech, Healthcare, Financials, etc.
+- **Forex Pairs** - Major currency pairs (for FX cost calculations)
 
-Each parameter has a description explaining what it does.
+### Tips
 
-### Step 3: Set Commission and Capital
-
-- **Commission Mode**:
-  - *Percentage*: A percentage of trade value (e.g., 0.1% = 0.001)
-  - *Fixed*: A fixed amount per trade (e.g., £3)
-- **Initial Capital**: Starting money for the backtest (e.g., £100,000)
-
-### Step 4: Set Date Range (Optional)
-
-Leave blank to use all available data, or set specific start/end dates.
-
-### Step 5: Review and Run
-
-- Give your backtest a name (it will be prefixed with the strategy name)
-- Review your settings
-- Click "Run Backtest"
-
-### Viewing Results
-
-After the backtest completes:
-- Results appear in a window showing key metrics
-- Trade logs are saved to `logs/backtests/{backtest_name}/`
-- Excel reports (if enabled) are saved alongside the logs
+- **First Run**: Collect full history for your target securities
+- **Updates**: Use "Update" mode to fetch only new data
+- **Forex**: Collect relevant forex pairs (e.g., USDGBP) if backtesting with currency conversion costs
+- **API Rate Limits**: Premium tier allows 75 requests/minute; the collector handles rate limiting automatically
 
 ---
 
-## Using Python Code
+## Step 2: Strategy Creation / Improvement
 
-For more control or automation, use the framework programmatically.
+### Using the Included Strategy: AlphaTrend
 
-### Basic Backtest
+The framework includes a production-ready strategy called **AlphaTrend** located at `strategies/alphatrend_strategy.py`.
 
-```python
-from pathlib import Path
-from Classes.Config.config import BacktestConfig, CommissionConfig, CommissionMode
-from Classes.Data.data_loader import DataLoader
-from Classes.Engine.single_security_engine import SingleSecurityEngine
-from strategies.alphatrend_strategy import AlphaTrendStrategy
+**AlphaTrend Features:**
+- Adaptive ATR-based trend following
+- Dynamic MFI thresholds via percentile analysis
+- Volume confirmation filter
+- SMA-based exits with grace period & momentum protection
+- Risk-based position sizing (default 2%)
 
-# 1. Configure the backtest
-config = BacktestConfig(
-    initial_capital=100000.0,
-    commission=CommissionConfig(
-        mode=CommissionMode.PERCENTAGE,
-        value=0.001  # 0.1%
-    )
-)
-
-# 2. Load your data
-loader = DataLoader(Path('raw_data'))
-data = loader.load_csv('AAPL')
-
-# 3. Create a strategy
-strategy = AlphaTrendStrategy()
-
-# 4. Run the backtest
-engine = SingleSecurityEngine(config)
-result = engine.run('AAPL', data, strategy)
-
-# 5. View results
-print(f"Total Return: {result.total_return_pct:.2f}%")
-print(f"Number of Trades: {result.num_trades}")
-print(f"Win Rate: {result.win_rate * 100:.1f}%")
+**Required Data Columns:**
+```
+date, open, high, low, close, volume, atr_14, ema_50, mfi_14
 ```
 
-### Viewing Detailed Metrics
+### Strategy Understanding: AlphaTrend Explorer
 
-```python
-from Classes.Analysis.performance_metrics import PerformanceMetrics
+To visualize and understand how AlphaTrend behaves on your data:
 
-metrics = PerformanceMetrics.calculate_metrics(result)
-
-print(f"Sharpe Ratio: {metrics['sharpe_ratio']:.2f}")
-print(f"Max Drawdown: {metrics['max_drawdown_pct']:.2f}%")
-print(f"Profit Factor: {metrics['profit_factor']:.2f}")
+```bash
+streamlit run apps/alphatrend_explorer.py
 ```
 
-### Saving Trade Logs
+This opens an interactive dashboard showing:
+- Price charts with indicator overlays
+- Entry/exit signal visualization
+- Parameter sensitivity analysis
+- Trade outcome breakdowns
 
-```python
-from Classes.Analysis.trade_logger import TradeLogger
+### Creating a New Strategy
 
-logger = TradeLogger(Path('logs'))
-logger.log_trades(
-    symbol='AAPL',
-    strategy_name=strategy.get_name(),
-    trades=result.trades
-)
+To create a custom strategy, follow the standard strategy structure:
+
+```
+strategies/
+    your_strategy.py
 ```
 
-### Generating Excel Reports
+**Strategy Template:**
 
 ```python
-from Classes.Analysis.excel_report_generator import ExcelReportGenerator
+from Classes.Strategy.base_strategy import BaseStrategy
+from Classes.Models.signal import Signal, SignalType
 
-generator = ExcelReportGenerator(
-    output_directory=Path('logs/reports'),
-    initial_capital=100000.0
-)
-report_path = generator.generate_report(result)
-print(f"Report saved to: {report_path}")
+class YourStrategy(BaseStrategy):
+    """Your strategy description."""
+
+    def __init__(self, param1: float = 10.0, param2: int = 14):
+        super().__init__()
+        self.param1 = param1
+        self.param2 = param2
+
+    @staticmethod
+    def get_name() -> str:
+        return "YourStrategy"
+
+    @staticmethod
+    def required_columns() -> list[str]:
+        return ['date', 'open', 'high', 'low', 'close', 'volume']
+
+    @staticmethod
+    def get_parameter_info() -> dict:
+        return {
+            'param1': {
+                'type': float,
+                'default': 10.0,
+                'min': 1.0,
+                'max': 50.0,
+                'description': 'Description of param1'
+            },
+            'param2': {
+                'type': int,
+                'default': 14,
+                'min': 5,
+                'max': 30,
+                'description': 'Description of param2'
+            }
+        }
+
+    def generate_signals(self, data, current_position=None):
+        signals = []
+        for i in range(len(data)):
+            # Your entry/exit logic here
+            if self._should_buy(data, i):
+                signals.append(Signal(
+                    signal_type=SignalType.BUY,
+                    timestamp=data.iloc[i]['date'],
+                    price=data.iloc[i]['close']
+                ))
+            elif self._should_sell(data, i, current_position):
+                signals.append(Signal(
+                    signal_type=SignalType.SELL,
+                    timestamp=data.iloc[i]['date'],
+                    price=data.iloc[i]['close']
+                ))
+            else:
+                signals.append(Signal(
+                    signal_type=SignalType.HOLD,
+                    timestamp=data.iloc[i]['date']
+                ))
+        return signals
 ```
+
+### Strategy Explorer for Custom Strategies
+
+For new strategies, you'll need to create custom exploration scripts similar to `apps/alphatrend_explorer.py` to visualize and understand your strategy's behavior.
 
 ---
 
-## Understanding Results
+## Step 3: Initial Backtesting
 
-### Key Metrics
+Run backtests to evaluate strategy performance on historical data.
 
-| Metric | What It Means | Good Value |
-|--------|---------------|------------|
-| **Total Return %** | Overall profit/loss as percentage | Positive |
-| **Win Rate** | Percentage of trades that were profitable | 40-60% for trend strategies |
+### Running the Backtest Wizard
+
+```bash
+python ctk_backtest_gui.py
+```
+
+### Backtest Workflow
+
+```
+Backtest Wizard
+      |
+      v
++------------------+
+| 1. Select Mode   |  Single Security OR Portfolio
++------------------+
+      |
+      v
++------------------+
+| 2. Choose        |  Select ticker(s) from available data
+|    Securities    |
++------------------+
+      |
+      v
++------------------+
+| 3. Select        |  AlphaTrendStrategy or custom
+|    Strategy      |
++------------------+
+      |
+      v
++------------------+
+| 4. Configure     |  Adjust strategy-specific parameters
+|    Parameters    |
++------------------+
+      |
+      v
++------------------+
+| 5. Set Capital   |  Initial capital, commission mode/value
+|    & Commission  |
++------------------+
+      |
+      v
++------------------+
+| 6. Date Range    |  Full history or specific period
+|    (Optional)    |
++------------------+
+      |
+      v
++------------------+
+| 7. Run Backtest  |
++------------------+
+      |
+      v
++------------------+
+| 8. Review        |  Metrics, trade log, equity curve
+|    Results       |
++------------------+
+```
+
+### Single Security vs Portfolio Mode
+
+| Mode | Use Case | Capital Handling |
+|------|----------|------------------|
+| **Single Security** | Test strategy on one ticker | Isolated capital per security |
+| **Portfolio** | Test across multiple tickers | Shared capital pool with position limits |
+
+### Key Configuration Options
+
+| Setting | Description | Example |
+|---------|-------------|---------|
+| **Initial Capital** | Starting portfolio value | 100,000 |
+| **Commission Mode** | Percentage or Fixed | Percentage |
+| **Commission Value** | Cost per trade | 0.001 (0.1%) |
+| **Position Limits** | Max simultaneous positions (Portfolio) | 3 |
+
+### Output Location
+
+Results are saved to:
+```
+logs/backtests/
+    single_security/
+        {backtest_name}/
+            {strategy}_{symbol}_trades.csv
+            {strategy}_{symbol}_parameters.json
+            reports/
+                {strategy}_{symbol}_report.xlsx
+    portfolio/
+        {backtest_name}/
+            trades/
+            reports/
+```
+
+### Key Metrics to Evaluate
+
+| Metric | Description | Target |
+|--------|-------------|--------|
+| **Total Return %** | Overall profit/loss | Positive |
+| **Win Rate** | % of profitable trades | 40-60% (trend strategies) |
 | **Profit Factor** | Gross profit / gross loss | > 1.5 |
 | **Sharpe Ratio** | Risk-adjusted return | > 1.0 |
 | **Max Drawdown** | Largest peak-to-trough decline | < 20-25% |
-| **Average Trade** | Mean profit/loss per trade | Positive |
-
-### Reading the Equity Curve
-
-The equity curve shows portfolio value over time:
-- **Upward slope** = Making money
-- **Flat periods** = No open positions or breaking even
-- **Dips** = Drawdowns (losing periods)
-
-A good equity curve rises steadily without large drops.
-
-### Trade Log Columns
-
-| Column | Description |
-|--------|-------------|
-| Entry Date | When the trade was opened |
-| Entry Price | Price at which you bought |
-| Exit Date | When the trade was closed |
-| Exit Price | Price at which you sold |
-| Exit Reason | Why the trade closed (signal, stop loss, etc.) |
-| P/L | Profit or loss in currency |
-| P/L % | Profit or loss as percentage |
-| Duration | How many days the trade was held |
+| **Avg Trade Duration** | Mean holding period | Strategy-dependent |
 
 ---
 
-## Common Workflows
+## Step 4: Parameter Optimization
 
-### Workflow 1: Testing a Strategy on One Security
+Find optimal strategy parameters using walk-forward optimization.
 
-1. Start the GUI: `python run_gui.py`
-2. Select single security mode
-3. Choose your security (e.g., AAPL)
-4. Select AlphaTrendStrategy (or your strategy)
-5. Set commission to 0.1% (0.001)
-6. Run the backtest
-7. Review results in the results window
-8. Check trade logs in `logs/backtests/`
+### Running the Optimization Wizard
 
-### Workflow 2: Testing a Strategy on Multiple Securities
-
-1. Start the GUI: `python run_gui.py`
-2. Select portfolio mode
-3. Choose multiple securities (Ctrl+click to select)
-4. Set position limits (e.g., max 3 positions)
-5. Run the backtest
-6. Compare performance across securities
-
-### Workflow 3: Finding Optimal Parameters
-
-1. Start the optimization GUI: `python optimize_gui.py`
-2. Select your strategy
-3. Choose securities to optimize on
-4. Pick speed mode (Quick for testing, Full for final results)
-5. Enable sensitivity analysis
-6. Run optimization
-7. Review Excel report in `logs/optimization_reports/`
-8. Use the recommended parameters
-
-### Workflow 4: Comparing Two Strategies
-
-1. Run a backtest with Strategy A, note the results
-2. Run a backtest with Strategy B on the same data
-3. Compare metrics side-by-side
-4. Look at Sharpe ratio, max drawdown, and consistency
-
----
-
-## Data Preparation
-
-### CSV File Format
-
-Your CSV files should have these columns:
-
-```csv
-date,open,high,low,close,volume,atr_14,ema_50
-2020-01-02,300.00,301.50,299.00,301.00,50000000,5.23,295.50
-2020-01-03,301.00,303.00,300.50,302.50,48000000,5.18,296.10
-...
+```bash
+python ctk_optimization_gui.py
 ```
 
-**Required columns:**
-- `date` (or `time`) - Timestamp
-- `close` - Closing price
-
-**Recommended columns:**
-- `open`, `high`, `low` - OHLC data
-- `volume` - Trading volume
-
-**Strategy-dependent columns:**
-- `atr_14` - 14-period Average True Range
-- `ema_50` - 50-period Exponential Moving Average
-- Other indicators your strategy needs
-
-### Pre-calculating Indicators
-
-The framework expects indicators to be pre-calculated in your CSV files. This provides:
-- Faster backtesting (no recalculation each time)
-- Exact indicator values (match your data source)
-- Flexibility to use any indicators
-
-You can calculate indicators in Python with pandas/TA-Lib, or export them from TradingView.
-
-### Column Name Handling
-
-Column names are automatically normalized:
-- Converted to lowercase
-- `time` is renamed to `date`
-- Leading/trailing spaces are trimmed
-
----
-
-## Included Strategy: AlphaTrend
-
-The framework includes a production-ready strategy called **AlphaTrend**.
-
-### What It Does
-
-AlphaTrend is a trend-following strategy that:
-1. **Enters** when the AlphaTrend indicator signals an uptrend AND volume confirms
-2. **Exits** when price falls below the 50-day EMA (with grace period and momentum protection)
-3. Uses ATR-based stop losses for risk management
-
-### Key Parameters
-
-| Parameter | Default | Description |
-|-----------|---------|-------------|
-| `volume_short_ma` | 4 | Short-term volume MA |
-| `volume_long_ma` | 30 | Long-term volume MA |
-| `atr_stop_loss_multiple` | 2.5 | Stop loss distance in ATR |
-| `grace_period_bars` | 14 | Bars to ignore EMA exit after entry |
-| `risk_percent` | 2.0 | Percentage of equity to risk per trade |
-
-### Required Data Columns
-
-AlphaTrend needs these columns in your CSV:
-- `date`, `open`, `high`, `low`, `close`, `volume`
-- `atr_14` - 14-period ATR
-- `ema_50` - 50-period EMA
-
----
-
-## Output Locations
-
-The framework saves outputs to organized folders:
+### Optimization Workflow
 
 ```
-logs/
-├── backtests/
-│   ├── single_security/
-│   │   └── {backtest_name}/
-│   │       ├── {strategy}_{symbol}_trades.csv
-│   │       ├── {strategy}_{symbol}_parameters.json
-│   │       └── reports/
-│   │           └── {strategy}_{symbol}_report.xlsx
-│   └── portfolio/
-│       └── {backtest_name}/
-│           ├── trades/
-│           │   └── {symbol}_trades.csv
-│           └── reports/
-└── optimization_reports/
-    └── {optimization_name}/
-        └── {strategy}_{symbol}_optimization.xlsx
+Optimization Wizard
+        |
+        v
++--------------------+
+| 1. Select Strategy |
++--------------------+
+        |
+        v
++--------------------+
+| 2. Choose          |  Can optimize on single or multiple securities
+|    Securities      |
++--------------------+
+        |
+        v
++--------------------+
+| 3. Define Search   |  Parameter ranges to explore
+|    Space           |
++--------------------+
+        |
+        v
++--------------------+
+| 4. Select Speed    |  Quick / Fast / Full
+|    Mode            |
++--------------------+
+        |
+        v
++--------------------+
+| 5. Enable          |  Test parameter robustness
+|    Sensitivity     |
++--------------------+
+        |
+        v
++--------------------+
+| 6. Run             |  Bayesian optimization + walk-forward
+|    Optimization    |
++--------------------+
+        |
+        v
++--------------------+
+| 7. Review Results  |  Best parameters, in-sample vs out-of-sample
++--------------------+
 ```
+
+### Speed Modes
+
+| Mode | Description | Use Case |
+|------|-------------|----------|
+| **Quick** | Fewer iterations, faster | Initial exploration |
+| **Fast** | Balanced speed/thoroughness | Regular optimization |
+| **Full** | Maximum iterations | Final parameter selection |
+
+### Walk-Forward Validation
+
+The optimizer uses walk-forward analysis to prevent overfitting:
+1. **In-Sample**: Optimize parameters on training data
+2. **Out-of-Sample**: Test optimized parameters on unseen data
+3. **Roll Forward**: Repeat across multiple time windows
+
+### Output Location
+
+```
+logs/optimization_reports/
+    {optimization_name}/
+        {strategy}_{symbol}_optimization.xlsx
+```
+
+### Interpreting Results
+
+- **In-Sample Performance**: How well parameters fit the training data
+- **Out-of-Sample Performance**: How well parameters generalize (more important)
+- **Sensitivity Analysis**: Parameter stability - avoid cliff edges
+- **Recommended Parameters**: Use parameters that perform well both in-sample AND out-of-sample
 
 ---
 
-## Tips for Better Backtests
+## Step 5: Vulnerability Score Visualization & Adjustment
 
-### 1. Use Enough Data
-- At least 2-3 years for reliable results
-- More data = more confidence in results
-- But very old data may not reflect current markets
+After backtesting with optimized parameters, analyze capital allocation efficiency in portfolio mode.
 
-### 2. Account for Costs
-- Set realistic commission (check your broker)
-- Consider that real-world execution has slippage
-- The framework uses no slippage by default
+### Running the Vulnerability Modeler
 
-### 3. Watch for Overfitting
-- If results look too good, they probably are
-- Use walk-forward optimization to validate
-- Test on out-of-sample data
+```bash
+python ctk_vulnerability_gui.py
+```
 
-### 4. Check Drawdowns
-- Maximum drawdown shows worst-case scenario
-- Ask: "Could I psychologically handle this drawdown?"
-- Consider position sizing to reduce drawdown
+### Vulnerability Scoring Workflow
 
-### 5. Look at Individual Trades
-- Don't just look at totals - review individual trades
-- Check if exit reasons make sense
-- Look for patterns in winners and losers
+```
+Vulnerability Modeler
+        |
+        v
++------------------------+
+| 1. Load Portfolio      |  Load results from portfolio backtest
+|    Backtest Results    |
++------------------------+
+        |
+        v
++------------------------+
+| 2. View Current        |  See capital contention periods
+|    Vulnerability Scores|
++------------------------+
+        |
+        v
++------------------------+
+| 3. Adjust Scoring      |  Tune vulnerability parameters
+|    Parameters          |
++------------------------+
+        |
+        v
++------------------------+
+| 4. Visualize Impact    |  See how changes affect allocation
++------------------------+
+        |
+        v
++------------------------+
+| 5. Apply New Settings  |  Use adjusted scores in backtesting
++------------------------+
+```
+
+### What Vulnerability Scoring Does
+
+Vulnerability scoring helps manage capital allocation when multiple securities signal simultaneously:
+- **High Score**: Security gets priority for capital
+- **Low Score**: Security deferred when capital is limited
+- **Factors**: Based on recent performance, drawdown, signal strength
+
+### Tunable Parameters
+
+- Score calculation weights
+- Lookback periods
+- Threshold adjustments
+- Priority rules during capital contention
+
+---
+
+## Step 6: Statistical Evaluation
+
+> **Status: Not Yet Implemented**
+
+This step will involve analyzing correlations between trade outcomes and market factors:
+
+- **Fundamental Data Analysis**: Examine whether successful trades correlate with specific fundamental indicators (P/E ratios, earnings surprises, etc.)
+- **Insider Activity Correlation**: Determine if insider buying/selling precedes trade success/failure
+- **Options Data Analysis**: Analyze put/call ratios, unusual options activity, and implied volatility around trade entries/exits
+- **Statistical Significance Testing**: Validate whether observed correlations are statistically meaningful
+
+The goal is to identify potential strategy improvements based on these market factors.
+
+---
+
+## Step 7: "What If Scenario" Analysis
+
+> **Status: Not Yet Implemented**
+
+This analysis examines alternative trade outcomes by exploring counterfactual scenarios:
+
+- **Extended Holding Periods**: What if trades were held 30, 60, or 90 days longer?
+- **Alternative Exit Timing**: How would different exit rules have affected outcomes?
+- **Scenario Comparison**: Side-by-side view of actual vs. hypothetical results
+
+This helps identify whether exit rules are too aggressive or too conservative.
+
+---
+
+## Step 8: Per-Trade Analysis
+
+> **Status: Not Yet Implemented**
+
+Deep-dive analysis of individual trades to understand success/failure patterns:
+
+- **Trade Selection**: Select representative trades (winners, losers, breakeven)
+- **Multi-Factor Examination**: Review all available data around each trade:
+  - Price action and technicals before/during/after
+  - Fundamental data at entry/exit
+  - Insider activity timeline
+  - Options market sentiment
+  - Correlated security behavior
+- **Pattern Identification**: Find common characteristics in successful vs. unsuccessful trades
+
+---
+
+## Iteration Cycle
+
+After completing steps 1-8 (or 1-5 with current implementation), repeat the cycle:
+
+```
+     +-----> Strategy Adjustment <-----+
+     |              |                  |
+     |              v                  |
+     |       Backtesting              |
+     |              |                  |
+     |              v                  |
+     |       Optimization             |
+     |              |                  |
+     |              v                  |
+     |       Analysis                 |
+     |              |                  |
+     +----- Results Review -----------+
+
+     Repeat until desired performance achieved
+```
+
+### When to Iterate
+
+- **Poor Win Rate**: Adjust entry conditions
+- **Low Profit Factor**: Improve exit timing
+- **High Drawdown**: Tighten stop losses or position sizing
+- **Inconsistent Results**: Re-evaluate parameter stability
+- **Overfitting Signs**: Simplify strategy or use more out-of-sample testing
+
+---
+
+## Quick Reference: Commands
+
+| Task | Command |
+|------|---------|
+| **Data Collection** | `python apps/data_collection_gui.py` |
+| **Run Backtest** | `python ctk_backtest_gui.py` |
+| **Run Optimization** | `python ctk_optimization_gui.py` |
+| **Vulnerability Modeler** | `python ctk_vulnerability_gui.py` |
+| **AlphaTrend Explorer** | `streamlit run apps/alphatrend_explorer.py` |
+
+---
+
+## Directory Structure Reference
+
+```
+BackTestingFramework/
+    |
+    +-- apps/                          # GUI applications
+    |   +-- data_collection_gui.py     # Data fetching interface
+    |   +-- alphatrend_explorer.py     # Strategy visualization
+    |   +-- backtest_gui.py            # Alternative backtest GUI
+    |   +-- optimization_gui.py        # Alternative optimization GUI
+    |   +-- vulnerability_gui.py       # Alternative vulnerability GUI
+    |
+    +-- strategies/                    # Trading strategies
+    |   +-- alphatrend_strategy.py     # Included AlphaTrend strategy
+    |
+    +-- raw_data/                      # Historical data storage
+    |   +-- daily/                     # Daily price data
+    |   +-- weekly/                    # Weekly price data
+    |   +-- fundamentals/              # Financial statements
+    |   +-- insider_transactions/      # Insider activity
+    |   +-- options/                   # Options chains
+    |   +-- forex/                     # Currency rates
+    |
+    +-- logs/                          # Output & results
+    |   +-- backtests/                 # Backtest results
+    |   +-- optimization_reports/      # Optimization results
+    |   +-- data_collection/           # Collection logs
+    |
+    +-- config/                        # Configuration files
+    |   +-- data_collection/           # Ticker presets, API settings
+    |   +-- baskets/                   # Portfolio definitions
+    |   +-- strategy_presets/          # Saved strategy configs
+    |   +-- vulnerability_presets/     # Scoring presets
+    |
+    +-- Classes/                       # Framework core modules
+    +-- tools/                         # CLI utilities
+    +-- docs/                          # Documentation
+```
 
 ---
 
 ## Troubleshooting
 
-### "Required columns missing"
+### Data Collection Issues
 
-Your CSV file doesn't have columns the strategy needs. Check:
-1. What columns your strategy requires (`required_columns()` method)
-2. What columns your CSV file has
-3. That column names match (case-insensitive)
+| Problem | Solution |
+|---------|----------|
+| API rate limit errors | Wait for rate limit reset; collector handles automatically |
+| Missing data columns | Verify API subscription includes required data types |
+| Empty files | Check ticker symbol validity; some may be delisted |
 
-### "No trades generated"
+### Backtest Issues
 
-The strategy never triggered a buy signal. Possible causes:
-- Strategy conditions too strict
-- Data doesn't contain the patterns the strategy looks for
-- Date range too short
+| Problem | Solution |
+|---------|----------|
+| "Required columns missing" | Ensure your CSV has all columns the strategy needs |
+| "No trades generated" | Loosen strategy conditions or check date range |
+| Results don't match TradingView | Export indicators from TradingView; check commission settings |
 
-### "Results don't match TradingView"
+### GUI Issues
 
-Small differences are normal due to:
-- Indicator calculation differences
-- Rounding differences
-- Commission handling
-
-For closer matching:
-- Export indicator values from TradingView directly
-- Verify commission settings match
-- Compare bar-by-bar if needed
-
-### GUI doesn't start
-
-On Linux, you may need to install tkinter:
-```bash
-sudo apt-get install python3-tk
-```
+| Problem | Solution |
+|---------|----------|
+| GUI doesn't start | Install tkinter: `sudo apt-get install python3-tk` |
+| CustomTkinter errors | `pip install customtkinter --upgrade` |
+| Streamlit issues | `pip install streamlit --upgrade` |
 
 ---
 
 ## Next Steps
 
-- **[Tools & Executables](TOOLS.md)** - All available applications and scripts
-- **[Strategies Guide](STRATEGIES.md)** - Learn how to create your own strategies
-- **[Configuration Guide](CONFIGURATION.md)** - All configuration options explained
-- **[Optimization Guide](OPTIMIZATION.md)** - Find optimal strategy parameters
-- **[Portfolio Mode Guide](PORTFOLIO_MODE.md)** - Multi-security backtesting
+After familiarizing yourself with this workflow:
+
+- **[TOOLS.md](TOOLS.md)** - Complete reference for all CLI tools and utilities
+- **[STRATEGIES.md](STRATEGIES.md)** - Detailed guide for creating custom strategies
+- **[CONFIGURATION.md](CONFIGURATION.md)** - All configuration options explained
+- **[PORTFOLIO_MODE.md](PORTFOLIO_MODE.md)** - Advanced multi-security backtesting
+- **[technical/ARCHITECTURE.md](technical/ARCHITECTURE.md)** - Framework internals
