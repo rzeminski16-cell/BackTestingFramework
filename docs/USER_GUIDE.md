@@ -42,8 +42,8 @@ This guide follows the complete workflow from raw data collection through strate
              |
              v
     +------------------+
-    |  6. STATISTICAL  |  <-- Not yet implemented
-    |   EVALUATION     |
+    |  6. FACTOR       |  (Factor Analysis Module)
+    |   ANALYSIS       |
     +--------+---------+
              |
              v
@@ -503,18 +503,241 @@ Vulnerability scoring helps manage capital allocation when multiple securities s
 
 ---
 
-## Step 6: Statistical Evaluation
+## Step 6: Statistical Evaluation (Factor Analysis)
 
-> **Status: Not Yet Implemented**
+Analyze correlations between trade outcomes and market factors to identify what conditions lead to successful trades.
 
-This step will involve analyzing correlations between trade outcomes and market factors:
+### Running the Factor Analysis
 
-- **Fundamental Data Analysis**: Examine whether successful trades correlate with specific fundamental indicators (P/E ratios, earnings surprises, etc.)
-- **Insider Activity Correlation**: Determine if insider buying/selling precedes trade success/failure
-- **Options Data Analysis**: Analyze put/call ratios, unusual options activity, and implied volatility around trade entries/exits
-- **Statistical Significance Testing**: Validate whether observed correlations are statistically meaningful
+```python
+from Classes.FactorAnalysis import FactorAnalyzer, FactorAnalysisConfig
 
-The goal is to identify potential strategy improvements based on these market factors.
+# Initialize analyzer
+analyzer = FactorAnalyzer(verbose=True)
+
+# Run analysis on trade logs
+result = analyzer.analyze(
+    trade_data="logs/backtests/single_security/my_backtest/trades.csv",
+    price_data="raw_data/daily/AAPL.csv",
+    fundamental_data="raw_data/fundamentals/AAPL/",
+    insider_data="raw_data/insider_transactions/AAPL.csv",
+    options_data="raw_data/options/AAPL/"
+)
+
+# Generate reports
+analyzer.generate_excel_report(result, "output/factor_analysis.xlsx")
+analyzer.print_summary(result)
+```
+
+### Factor Analysis Workflow
+
+```
+Factor Analysis Pipeline
+        |
+        v
++------------------------+
+| 1. Load Trade Logs     |  One or more backtest trade logs
++------------------------+
+        |
+        v
++------------------------+
+| 2. Classify Trades     |  Good (>2% P&L) / Bad (<-1% P&L) / Indeterminate
++------------------------+
+        |
+        v
++------------------------+
+| 3. Temporal Alignment  |  Prevent look-ahead bias with as-of dates
++------------------------+
+        |
+        v
++------------------------+
+| 4. Engineer Factors    |  Technical, fundamental, insider, options, regime
++------------------------+
+        |
+        v
++------------------------+
+| 5. Statistical         |  Tier 1: Correlations
+|    Analysis            |  Tier 2: Regression, ANOVA
+|                        |  Tier 3: ML (Random Forest, SHAP)
++------------------------+
+        |
+        v
++------------------------+
+| 6. Scenario Detection  |  Find best/worst trading conditions
++------------------------+
+        |
+        v
++------------------------+
+| 7. Generate Reports    |  Excel workbook + JSON payload
++------------------------+
+```
+
+### Key Concepts
+
+#### Trade Classification
+
+Trades are classified based on percentage return (P&L%):
+
+| Classification | Default Threshold | Description |
+|---------------|-------------------|-------------|
+| **Good** | ≥ +2.0% | Profitable trades worth emulating |
+| **Bad** | ≤ -1.0% | Losing trades to avoid |
+| **Indeterminate** | Between thresholds | Neutral or unclear outcome |
+
+#### Temporal Alignment (Bias Prevention)
+
+A critical feature that prevents "look-ahead" bias by ensuring all factor data is available as-of the trade entry date:
+
+- **Fundamentals**: Uses report_date + configurable delay (default 0 days)
+- **Insider Data**: Uses filing_date + configurable delay (default 3 days)
+- **Options**: Snapshot as-of trade date
+
+#### Factor Categories
+
+| Category | Examples | Source Data |
+|----------|----------|-------------|
+| **Technical** | RSI, MACD, Bollinger %B, momentum, volume ratio | Daily price CSV |
+| **Value** | P/E ratio, P/B, P/S, PEG, dividend yield | Fundamentals |
+| **Quality** | ROE, ROA, current ratio, debt/equity | Fundamentals |
+| **Growth** | Revenue growth, earnings growth, EPS surprise | Fundamentals |
+| **Insider** | Buy/sell counts, net shares, sentiment score | Insider transactions |
+| **Options** | IV, put/call ratio, IV percentile, sentiment | Options chains |
+| **Regime** | Volatility regime, trend regime, momentum regime | Price data |
+
+### Three-Tier Statistical Analysis
+
+#### Tier 1: Exploratory Analysis
+- Descriptive statistics per factor
+- Point-biserial correlations with trade outcome
+- Distribution comparisons (good vs bad trades)
+- Factor correlation matrix
+
+#### Tier 2: Hypothesis Testing
+- **Logistic Regression**: Which factors predict good trades?
+- **ANOVA**: Do factor levels differ between trade classes?
+- **Chi-Square**: For categorical factor analysis
+- **Mann-Whitney U**: Non-parametric comparisons
+
+#### Tier 3: Machine Learning
+- **Random Forest**: Feature importance ranking
+- **SHAP Values**: Interpretable feature contributions
+- **Mutual Information**: Non-linear relationships
+- **Multiple Testing Correction**: FDR/Bonferroni adjustment
+
+### Scenario Detection
+
+Identifies specific conditions that lead to best/worst trading outcomes:
+
+**Binary Mode** (Default):
+- Tests threshold-based conditions (e.g., "RSI > 70")
+- Finds single and two-factor combinations
+- Calculates lift over baseline (e.g., "2.1x better than average")
+
+**Clustering Mode**:
+- Uses k-means to discover natural groupings
+- Interprets cluster centers as conditions
+- Validates with statistical tests
+
+### Configuration Options
+
+```python
+from Classes.FactorAnalysis import FactorAnalysisConfig, TradeClassificationConfig
+
+config = FactorAnalysisConfig(
+    trade_classification=TradeClassificationConfig(
+        good_threshold_pct=2.0,    # +2% = good trade
+        bad_threshold_pct=-1.0,    # -1% = bad trade
+    ),
+    # ... other configuration options
+)
+
+analyzer = FactorAnalyzer(config=config)
+```
+
+See [FACTOR_ANALYSIS.md](FACTOR_ANALYSIS.md) for complete configuration reference.
+
+### Output: Excel Report
+
+The Excel report contains multiple sheets:
+
+| Sheet | Contents |
+|-------|----------|
+| **Summary** | Key findings, trade counts, top factors |
+| **Factor_Statistics** | Descriptive stats for all factors |
+| **Correlations** | Point-biserial correlations with significance |
+| **Hypothesis_Tests** | Logistic regression coefficients, ANOVA results |
+| **ML_Analysis** | Feature importance, SHAP values |
+| **Scenarios** | Best/worst trading conditions with lift |
+| **Trade_Data** | Enriched trade-level data (optional) |
+
+### Output: JSON Payload
+
+For GUI integration, generate a structured JSON:
+
+```python
+payload = analyzer.generate_json_payload(result, "output/analysis.json")
+
+# Payload structure:
+{
+    "summary": {
+        "trade_counts": {"total": 150, "good": 65, "bad": 45, ...},
+        "top_factors": [...],
+        "best_scenarios": [...],
+        "worst_scenarios": [...]
+    },
+    "factor_analysis": {
+        "tier1": {...},
+        "tier2": {...},
+        "tier3": {...}
+    },
+    "scenarios": {...},
+    "charts": {
+        "correlation_bar": {...},
+        "feature_importance": {...},
+        "scenario_lift": {...}
+    }
+}
+```
+
+### Interpreting Results
+
+**Key Questions Answered:**
+
+1. **Which factors correlate with good trades?**
+   - Check Tier 1 correlations and Tier 2 regression coefficients
+   - Look for statistically significant factors (p < 0.05)
+
+2. **What conditions produce the best/worst trades?**
+   - Review the Scenarios sheet
+   - Look for high-lift scenarios with sufficient sample size
+
+3. **Are the findings robust?**
+   - Check multiple testing correction results
+   - Review Tier 3 consensus features
+   - Look for cross-validation accuracy
+
+**Example Findings:**
+
+```
+KEY FINDINGS
+- RSI is negatively correlated with good trades (r=-0.23, p=0.001)
+  → Consider avoiding entries when RSI is high
+
+- Insider buying in past 30 days increases P(good) by 1.8x
+  → Consider adding insider activity filter
+
+- Best scenario: "Low volatility + High momentum" (3.2x lift)
+  → Target low-volatility trending conditions
+```
+
+### Integration with Strategy Improvement
+
+Use factor analysis findings to improve your strategy:
+
+1. **Add Entry Filters**: Block entries when bad-scenario conditions exist
+2. **Prioritize Signals**: Weight entries by good-scenario factors
+3. **Adjust Position Sizing**: Reduce size in uncertain conditions
+4. **Refine Exit Rules**: Use factor changes as exit triggers
 
 ---
 
@@ -627,6 +850,15 @@ BackTestingFramework/
     |   +-- vulnerability_presets/     # Scoring presets
     |
     +-- Classes/                       # Framework core modules
+    |   +-- FactorAnalysis/            # Factor analysis module
+    |       +-- config/                # Configuration classes
+    |       +-- data/                  # Data loaders
+    |       +-- preprocessing/         # Trade classification, alignment
+    |       +-- factors/               # Factor engineering
+    |       +-- analysis/              # Statistical analysis (Tier 1-3)
+    |       +-- scenarios/             # Scenario detection
+    |       +-- output/                # Report generation
+    |
     +-- tools/                         # CLI utilities
     +-- docs/                          # Documentation
 ```
