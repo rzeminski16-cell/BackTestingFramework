@@ -647,10 +647,95 @@ analyzer.save_audit_log("analysis_audit.log")
 
 ---
 
+## Graphical User Interface
+
+The Factor Analysis module includes a comprehensive GUI built with CustomTkinter.
+
+### Launching the GUI
+
+```bash
+# Main Dashboard
+python ctk_factor_analysis_gui.py
+
+# Configuration Manager only
+python ctk_factor_analysis_gui.py --config
+
+# Data Upload interface only
+python ctk_factor_analysis_gui.py --upload
+```
+
+### Dashboard Features
+
+The main Factor Analysis Dashboard provides:
+
+1. **Data Summary View** - Overview of loaded trades and data quality
+2. **Tier 1 Analysis View** - Correlation analysis and factor screening
+3. **Tier 2 Analysis View** - Hypothesis testing results
+4. **Tier 3 Analysis View** - ML feature importance and SHAP values
+5. **Scenario Analysis View** - Detected market scenarios
+6. **Export & Reports View** - Export to Excel, JSON, CSV, HTML
+7. **Audit Trail View** - Analysis history and logging
+
+### Configuration Manager
+
+The Configuration Manager allows you to:
+
+- Create and manage configuration profiles
+- Set trade classification thresholds
+- Configure data alignment settings
+- Enable/disable factor categories
+- Adjust statistical analysis parameters
+- Configure scenario detection
+
+### Data Upload Interface
+
+The Data Upload interface provides:
+
+- File upload for trade logs and supplementary data
+- Automatic column detection
+- Column mapping interface
+- Data quality validation
+- Data preview functionality
+
+### GUI Requirements
+
+```bash
+# Install CustomTkinter
+pip install customtkinter
+
+# Required for full functionality
+pip install pandas numpy scipy scikit-learn
+```
+
+### Programmatic GUI Access
+
+```python
+# From Python
+from Classes.GUI.factor_analysis import FactorAnalysisDashboard
+
+app = FactorAnalysisDashboard()
+app.run()
+
+# Configuration Manager
+from Classes.GUI.factor_analysis import FactorConfigManagerGUI
+
+config_app = FactorConfigManagerGUI()
+config_app.run()
+
+# Data Upload
+from Classes.GUI.factor_analysis import FactorDataUploadGUI
+
+upload_app = FactorDataUploadGUI()
+upload_app.run()
+```
+
+---
+
 ## Version History
 
 | Version | Date | Changes |
 |---------|------|---------|
+| 1.1.0 | 2024-01 | Added GUI interfaces |
 | 1.0.0 | 2024-01 | Initial release |
 
 ---
