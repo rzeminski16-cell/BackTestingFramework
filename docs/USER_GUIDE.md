@@ -507,7 +507,55 @@ Vulnerability scoring helps manage capital allocation when multiple securities s
 
 Analyze correlations between trade outcomes and market factors to identify what conditions lead to successful trades.
 
-### Running the Factor Analysis
+### Running the Factor Analysis Dashboard (GUI)
+
+The easiest way to run factor analysis is through the graphical interface:
+
+```bash
+# Launch main Factor Analysis Dashboard
+python ctk_factor_analysis_gui.py
+
+# Launch Configuration Manager only
+python ctk_factor_analysis_gui.py --config
+
+# Launch Data Upload interface only
+python ctk_factor_analysis_gui.py --upload
+```
+
+### Dashboard Features
+
+The Factor Analysis Dashboard provides:
+
+1. **Data Summary View** - Overview of loaded trades and data quality metrics
+2. **Tier 1 Analysis** - Correlation analysis and initial factor screening
+3. **Tier 2 Analysis** - Hypothesis testing with statistical significance
+4. **Tier 3 Analysis** - ML-based feature importance and SHAP values
+5. **Scenario Analysis** - Detected market scenarios with performance impact
+6. **Export & Reports** - Export to Excel, JSON, CSV, or HTML
+7. **Audit Trail** - Complete analysis history and logging
+
+### Configuration Manager
+
+Before running analysis, configure your settings via the Configuration Manager:
+
+- **Trade Classification**: Set thresholds for good/bad trade classification
+- **Data Alignment**: Configure temporal alignment to prevent look-ahead bias
+- **Factor Engineering**: Enable/disable factor categories and outlier handling
+- **Statistical Analysis**: Configure each tier's parameters
+- **Scenario Detection**: Set clustering and validation options
+
+### Data Upload Interface
+
+Upload your data through the dedicated interface:
+
+- Drag-and-drop file upload for trade logs and supplementary data
+- Automatic column detection and mapping
+- Data quality validation with warnings
+- Preview functionality for verification
+
+### Running via Python API
+
+For programmatic access or batch processing:
 
 ```python
 from Classes.FactorAnalysis import FactorAnalyzer, FactorAnalysisConfig
@@ -811,6 +859,9 @@ After completing steps 1-8 (or 1-5 with current implementation), repeat the cycl
 | **Run Backtest** | `python ctk_backtest_gui.py` |
 | **Run Optimization** | `python ctk_optimization_gui.py` |
 | **Vulnerability Modeler** | `python ctk_vulnerability_gui.py` |
+| **Factor Analysis Dashboard** | `python ctk_factor_analysis_gui.py` |
+| **Factor Analysis Config** | `python ctk_factor_analysis_gui.py --config` |
+| **Factor Analysis Data Upload** | `python ctk_factor_analysis_gui.py --upload` |
 | **AlphaTrend Explorer** | `streamlit run apps/alphatrend_explorer.py` |
 
 ---
@@ -851,13 +902,20 @@ BackTestingFramework/
     |
     +-- Classes/                       # Framework core modules
     |   +-- FactorAnalysis/            # Factor analysis module
-    |       +-- config/                # Configuration classes
-    |       +-- data/                  # Data loaders
-    |       +-- preprocessing/         # Trade classification, alignment
-    |       +-- factors/               # Factor engineering
-    |       +-- analysis/              # Statistical analysis (Tier 1-3)
-    |       +-- scenarios/             # Scenario detection
-    |       +-- output/                # Report generation
+    |   |   +-- config/                # Configuration classes
+    |   |   +-- data/                  # Data loaders
+    |   |   +-- preprocessing/         # Trade classification, alignment
+    |   |   +-- factors/               # Factor engineering
+    |   |   +-- analysis/              # Statistical analysis (Tier 1-3)
+    |   |   +-- scenarios/             # Scenario detection
+    |   |   +-- output/                # Report generation
+    |   |
+    |   +-- GUI/                       # GUI modules
+    |       +-- factor_analysis/       # Factor Analysis GUI
+    |           +-- dashboard.py       # Main dashboard application
+    |           +-- config_manager.py  # Configuration manager
+    |           +-- data_upload.py     # Data upload interface
+    |           +-- components.py      # Shared GUI components
     |
     +-- tools/                         # CLI utilities
     +-- docs/                          # Documentation
@@ -890,6 +948,8 @@ BackTestingFramework/
 | GUI doesn't start | Install tkinter: `sudo apt-get install python3-tk` |
 | CustomTkinter errors | `pip install customtkinter --upgrade` |
 | Streamlit issues | `pip install streamlit --upgrade` |
+| Factor Analysis GUI won't load | Ensure all dependencies: `pip install pandas numpy scipy scikit-learn` |
+| "No module named tkinter" | Install: `sudo apt-get install python3-tk` (Linux) or reinstall Python with Tk (macOS/Windows) |
 
 ---
 
@@ -897,6 +957,7 @@ BackTestingFramework/
 
 After familiarizing yourself with this workflow:
 
+- **[FACTOR_ANALYSIS.md](FACTOR_ANALYSIS.md)** - Complete Factor Analysis module documentation
 - **[TOOLS.md](TOOLS.md)** - Complete reference for all CLI tools and utilities
 - **[STRATEGIES.md](STRATEGIES.md)** - Detailed guide for creating custom strategies
 - **[CONFIGURATION.md](CONFIGURATION.md)** - All configuration options explained
