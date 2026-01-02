@@ -1,0 +1,52 @@
+{
+  "trade_classification": {
+    "method": "threshold",
+    "good_threshold_pct": 2.0,
+    "bad_threshold_pct": 0.0,
+    "min_holding_period": 7,
+    "exclude_partial_exits": false,
+    "exclude_stopped_out": false
+  },
+  "data_alignment": {
+    "mode": "relaxed",
+    "lookback_days": 1,
+    "min_required_days": 252,
+    "prevent_forward_looking": true
+  },
+  "factor_engineering": {
+    "categories": {
+      "technical": true,
+      "value": true,
+      "quality": true,
+      "growth": true,
+      "insider": true,
+      "options": true
+    },
+    "normalize": true,
+    "outlier_method": "winsorize",
+    "outlier_threshold": 3.0
+  },
+  "statistical_analysis": {
+    "tier1": {
+      "enabled": true,
+      "correlation_threshold": 0.1
+    },
+    "tier2": {
+      "enabled": true,
+      "alpha": 0.05,
+      "fdr_correction": true
+    },
+    "tier3": {
+      "enabled": true,
+      "n_trees": 100,
+      "compute_shap": true
+    }
+  },
+  "scenario_analysis": {
+    "enabled": true,
+    "mode": "binary",
+    "min_samples": 30,
+    "n_clusters": 5,
+    "validate": true
+  }
+}
