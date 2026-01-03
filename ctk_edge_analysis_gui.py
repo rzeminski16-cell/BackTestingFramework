@@ -53,6 +53,508 @@ from Classes.GUI.ctk_theme import Theme, Colors, Fonts, Sizes, show_error, show_
 
 
 # =============================================================================
+# VALIDATION FRAMEWORK
+# =============================================================================
+
+class ValidationResult:
+    """Represents a single validation check result."""
+
+    def __init__(self, check_name: str, passed: bool, message: str = "",
+                 severity: str = "info", value: Any = None, expected: Any = None):
+        self.check_name = check_name
+        self.passed = passed
+        self.message = message
+        self.severity = severity  # 'info', 'warning', 'error'
+        self.value = value
+        self.expected = expected
+
+    def __repr__(self):
+        status = "✓" if self.passed else "✗"
+        return f"[{status}] {self.check_name}: {self.message}"
+
+
+class ValidationReport:
+    """Aggregates validation results across all checks."""
+
+    def __init__(self):
+        self.results: List[ValidationResult] = []
+        self.data_checks: List[ValidationResult] = []
+        self.trade_checks: List[ValidationResult] = []
+        self.aggregation_checks: List[ValidationResult] = []
+        self.bias_checks: List[ValidationResult] = []
+        self.outliers: List[Dict[str, Any]] = []
+
+    def add_result(self, result: ValidationResult, category: str = "data"):
+        self.results.append(result)
+        if category == "data":
+            self.data_checks.append(result)
+        elif category == "trade":
+            self.trade_checks.append(result)
+        elif category == "aggregation":
+            self.aggregation_checks.append(result)
+        elif category == "bias":
+            self.bias_checks.append(result)
+
+    def add_outlier(self, trade_id: str, symbol: str, field: str, value: float, threshold: float):
+        self.outliers.append({
+            'trade_id': trade_id,
+            'symbol': symbol,
+            'field': field,
+            'value': value,
+            'threshold': threshold
+        })
+
+    @property
+    def passed_count(self) -> int:
+        return sum(1 for r in self.results if r.passed)
+
+    @property
+    def failed_count(self) -> int:
+        return sum(1 for r in self.results if not r.passed)
+
+    @property
+    def warning_count(self) -> int:
+        return sum(1 for r in self.results if not r.passed and r.severity == "warning")
+
+    @property
+    def error_count(self) -> int:
+        return sum(1 for r in self.results if not r.passed and r.severity == "error")
+
+    def get_summary(self) -> str:
+        lines = [
+            f"Validation Summary: {self.passed_count} passed, {self.failed_count} failed",
+            f"  - Errors: {self.error_count}, Warnings: {self.warning_count}",
+            ""
+        ]
+
+        for category_name, checks in [
+            ("Data Input & Preprocessing", self.data_checks),
+            ("Per-Trade MFE/MAE", self.trade_checks),
+            ("Aggregation & E-ratio", self.aggregation_checks),
+            ("Bias & Statistical", self.bias_checks)
+        ]:
+            if checks:
+                failed = [r for r in checks if not r.passed]
+                lines.append(f"{category_name}: {len(checks) - len(failed)}/{len(checks)} passed")
+                for r in failed[:5]:  # Show first 5 failures
+                    lines.append(f"  [{r.severity.upper()}] {r.check_name}: {r.message}")
+
+        if self.outliers:
+            lines.append(f"\nOutliers logged: {len(self.outliers)}")
+
+        return "\n".join(lines)
+
+
+class ERatioValidator:
+    """Validates E-ratio calculation data and results."""
+
+    def __init__(self):
+        self.report = ValidationReport()
+
+    def reset(self):
+        self.report = ValidationReport()
+
+    # -------------------------------------------------------------------------
+    # 1. Data Input & Preprocessing Checks
+    # -------------------------------------------------------------------------
+
+    def validate_price_data_integrity(self, df: pd.DataFrame, symbol: str) -> bool:
+        """Check for NaNs/gaps and sorted dates."""
+        checks_passed = True
+
+        # Check for NaN in close prices
+        nan_count = df['close'].isna().sum()
+        if nan_count > 0:
+            self.report.add_result(ValidationResult(
+                f"price_data_nan_{symbol}",
+                False,
+                f"{symbol}: {nan_count} NaN values in close prices",
+                severity="error",
+                value=nan_count,
+                expected=0
+            ), "data")
+            checks_passed = False
+        else:
+            self.report.add_result(ValidationResult(
+                f"price_data_nan_{symbol}",
+                True,
+                f"{symbol}: No NaN values in close prices"
+            ), "data")
+
+        # Check date sorting (monotonic increasing)
+        dates = pd.to_datetime(df['date'])
+        is_sorted = dates.is_monotonic_increasing
+        if not is_sorted:
+            self.report.add_result(ValidationResult(
+                f"price_data_sorted_{symbol}",
+                False,
+                f"{symbol}: Dates are not sorted in ascending order",
+                severity="error"
+            ), "data")
+            checks_passed = False
+        else:
+            self.report.add_result(ValidationResult(
+                f"price_data_sorted_{symbol}",
+                True,
+                f"{symbol}: Dates properly sorted"
+            ), "data")
+
+        return checks_passed
+
+    def validate_atr(self, df: pd.DataFrame, symbol: str, atr_col: str) -> bool:
+        """Validate ATR is positive everywhere."""
+        if atr_col not in df.columns:
+            self.report.add_result(ValidationResult(
+                f"atr_exists_{symbol}",
+                False,
+                f"{symbol}: ATR column '{atr_col}' not found",
+                severity="error"
+            ), "data")
+            return False
+
+        atr_values = df[atr_col].dropna()
+        non_positive = (atr_values <= 0).sum()
+
+        if non_positive > 0:
+            self.report.add_result(ValidationResult(
+                f"atr_positive_{symbol}",
+                False,
+                f"{symbol}: {non_positive} non-positive ATR values",
+                severity="warning",
+                value=non_positive
+            ), "data")
+            return False
+
+        self.report.add_result(ValidationResult(
+            f"atr_positive_{symbol}",
+            True,
+            f"{symbol}: All {len(atr_values)} ATR values positive"
+        ), "data")
+        return True
+
+    def validate_date_alignment(self, trade_entry_date: datetime, price_date: datetime,
+                                 trade_id: str) -> Tuple[bool, int]:
+        """Check if entry date aligns with price data (within 1 day)."""
+        diff_days = abs((price_date - trade_entry_date).days)
+
+        passed = diff_days <= 1
+        if not passed:
+            self.report.add_result(ValidationResult(
+                f"date_alignment_{trade_id}",
+                False,
+                f"Trade {trade_id}: Entry date differs by {diff_days} days",
+                severity="warning",
+                value=diff_days,
+                expected="≤1"
+            ), "data")
+        else:
+            self.report.add_result(ValidationResult(
+                f"date_alignment_{trade_id}",
+                True,
+                f"Trade {trade_id}: Date aligned within {diff_days} days"
+            ), "data")
+
+        return passed, diff_days
+
+    def validate_entry_price_consistency(self, trade_entry_price: float, data_close: float,
+                                          trade_id: str, symbol: str) -> Tuple[bool, float]:
+        """Check if trade entry price matches price data close (<5% mismatch)."""
+        if data_close == 0:
+            self.report.add_result(ValidationResult(
+                f"entry_price_{trade_id}",
+                False,
+                f"Trade {trade_id}: Zero close price in data",
+                severity="error"
+            ), "data")
+            return False, 0.0
+
+        price_diff_pct = abs(trade_entry_price - data_close) / data_close * 100
+
+        passed = price_diff_pct < 5.0
+        if not passed:
+            self.report.add_result(ValidationResult(
+                f"entry_price_{trade_id}",
+                False,
+                f"Trade {trade_id} ({symbol}): Entry price differs by {price_diff_pct:.2f}%",
+                severity="warning",
+                value=price_diff_pct,
+                expected="<5%"
+            ), "data")
+            self.report.add_outlier(trade_id, symbol, "entry_price_diff_pct", price_diff_pct, 5.0)
+        else:
+            self.report.add_result(ValidationResult(
+                f"entry_price_{trade_id}",
+                True,
+                f"Trade {trade_id}: Entry price within {price_diff_pct:.2f}%"
+            ), "data")
+
+        return passed, price_diff_pct
+
+    # -------------------------------------------------------------------------
+    # 2. Per-Trade MFE/MAE Loop Checks
+    # -------------------------------------------------------------------------
+
+    def validate_forward_slice(self, entry_pos: int, n: int, df_len: int,
+                                actual_len: int, trade_id: str) -> bool:
+        """Validate forward slice bounds."""
+        expected_len = min(n, df_len - entry_pos - 1)
+
+        passed = actual_len == expected_len or actual_len < n
+        if not passed:
+            self.report.add_result(ValidationResult(
+                f"slice_bounds_{trade_id}_n{n}",
+                False,
+                f"Trade {trade_id}, n={n}: Expected {expected_len} bars, got {actual_len}",
+                severity="error",
+                value=actual_len,
+                expected=expected_len
+            ), "trade")
+
+        return passed
+
+    def validate_excursions(self, mfe: float, mae: float, trade_id: str, n: int,
+                             max_possible_mfe: float = None) -> bool:
+        """Validate MFE/MAE are non-negative and within bounds."""
+        checks_passed = True
+
+        if mfe < 0:
+            self.report.add_result(ValidationResult(
+                f"mfe_positive_{trade_id}_n{n}",
+                False,
+                f"Trade {trade_id}, n={n}: MFE is negative ({mfe:.4f})",
+                severity="error",
+                value=mfe,
+                expected="≥0"
+            ), "trade")
+            checks_passed = False
+
+        if mae < 0:
+            self.report.add_result(ValidationResult(
+                f"mae_positive_{trade_id}_n{n}",
+                False,
+                f"Trade {trade_id}, n={n}: MAE is negative ({mae:.4f})",
+                severity="error",
+                value=mae,
+                expected="≥0"
+            ), "trade")
+            checks_passed = False
+
+        if max_possible_mfe is not None and mfe > max_possible_mfe * 1.001:  # Allow 0.1% tolerance
+            self.report.add_result(ValidationResult(
+                f"mfe_bounds_{trade_id}_n{n}",
+                False,
+                f"Trade {trade_id}, n={n}: MFE ({mfe:.4f}) exceeds max possible ({max_possible_mfe:.4f})",
+                severity="error",
+                value=mfe,
+                expected=f"≤{max_possible_mfe:.4f}"
+            ), "trade")
+            checks_passed = False
+
+        return checks_passed
+
+    def validate_normalization(self, norm_mfe: float, norm_mae: float,
+                                trade_id: str, n: int) -> bool:
+        """Validate normalized values are not inf/nan."""
+        checks_passed = True
+
+        if np.isinf(norm_mfe) or np.isnan(norm_mfe):
+            self.report.add_result(ValidationResult(
+                f"norm_mfe_valid_{trade_id}_n{n}",
+                False,
+                f"Trade {trade_id}, n={n}: Invalid normalized MFE ({norm_mfe})",
+                severity="error"
+            ), "trade")
+            checks_passed = False
+
+        if np.isinf(norm_mae) or np.isnan(norm_mae):
+            self.report.add_result(ValidationResult(
+                f"norm_mae_valid_{trade_id}_n{n}",
+                False,
+                f"Trade {trade_id}, n={n}: Invalid normalized MAE ({norm_mae})",
+                severity="error"
+            ), "trade")
+            checks_passed = False
+
+        return checks_passed
+
+    # -------------------------------------------------------------------------
+    # 3. Aggregation & E-ratio Checks
+    # -------------------------------------------------------------------------
+
+    def validate_trades_per_horizon(self, trades_per_horizon: Dict[int, int],
+                                     min_required: int = 20, check_up_to_day: int = 60) -> bool:
+        """Validate minimum trades per horizon."""
+        checks_passed = True
+
+        for n in range(1, min(check_up_to_day + 1, max(trades_per_horizon.keys()) + 1)):
+            count = trades_per_horizon.get(n, 0)
+            if count < min_required:
+                self.report.add_result(ValidationResult(
+                    f"trades_per_horizon_n{n}",
+                    False,
+                    f"Day {n}: Only {count} trades (min {min_required})",
+                    severity="warning",
+                    value=count,
+                    expected=f"≥{min_required}"
+                ), "aggregation")
+                checks_passed = False
+
+        # Add summary check
+        min_count = min(trades_per_horizon.get(n, 0) for n in range(1, min(31, max(trades_per_horizon.keys()) + 1)))
+        self.report.add_result(ValidationResult(
+            "trades_per_horizon_summary",
+            min_count >= min_required,
+            f"Min trades in first 30 days: {min_count}",
+            severity="warning" if min_count < min_required else "info",
+            value=min_count,
+            expected=f"≥{min_required}"
+        ), "aggregation")
+
+        return checks_passed
+
+    def validate_eratio_bounds(self, e_ratios: Dict[int, float],
+                                min_bound: float = 0.1, max_bound: float = 5.0) -> bool:
+        """Validate E-ratio is within reasonable bounds."""
+        checks_passed = True
+        violations = []
+
+        for n, e_ratio in e_ratios.items():
+            if np.isinf(e_ratio) or np.isnan(e_ratio):
+                violations.append((n, e_ratio, "inf/nan"))
+                checks_passed = False
+            elif e_ratio < min_bound:
+                violations.append((n, e_ratio, f"<{min_bound}"))
+            elif e_ratio > max_bound:
+                violations.append((n, e_ratio, f">{max_bound}"))
+
+        if violations:
+            self.report.add_result(ValidationResult(
+                "eratio_bounds",
+                False,
+                f"{len(violations)} E-ratio values outside bounds [{min_bound}, {max_bound}]",
+                severity="warning",
+                value=len(violations)
+            ), "aggregation")
+
+            # Log first few violations
+            for n, e_ratio, reason in violations[:5]:
+                self.report.add_result(ValidationResult(
+                    f"eratio_bounds_n{n}",
+                    False,
+                    f"Day {n}: E-ratio={e_ratio:.4f} ({reason})",
+                    severity="info"
+                ), "aggregation")
+        else:
+            self.report.add_result(ValidationResult(
+                "eratio_bounds",
+                True,
+                f"All E-ratios within bounds [{min_bound}, {max_bound}]"
+            ), "aggregation")
+
+        return checks_passed
+
+    # -------------------------------------------------------------------------
+    # 4. Bias & Statistical Checks
+    # -------------------------------------------------------------------------
+
+    def validate_sample_size_decay(self, trades_per_horizon: Dict[int, int]) -> bool:
+        """Validate trade count decreases monotonically."""
+        horizons = sorted(trades_per_horizon.keys())
+        counts = [trades_per_horizon[h] for h in horizons]
+
+        # Check if generally decreasing (allow some tolerance)
+        is_decreasing = True
+        violations = 0
+        for i in range(1, len(counts)):
+            if counts[i] > counts[i-1]:
+                violations += 1
+
+        # Allow up to 5% violations (some fluctuation is normal due to date gaps)
+        violation_pct = violations / len(counts) * 100 if counts else 0
+        is_decreasing = violation_pct < 5
+
+        self.report.add_result(ValidationResult(
+            "sample_decay",
+            is_decreasing,
+            f"Trade count decay: {violations} non-decreasing steps ({violation_pct:.1f}%)",
+            severity="info" if is_decreasing else "warning",
+            value=violation_pct
+        ), "bias")
+
+        return is_decreasing
+
+    def validate_survivorship(self, trades_per_horizon: Dict[int, int],
+                               total_trades: int, day: int = 200) -> bool:
+        """Check survivorship rate at given day."""
+        count_at_day = trades_per_horizon.get(day, 0)
+        surv_rate = count_at_day / total_trades if total_trades > 0 else 0
+
+        passed = surv_rate < 0.1  # Less than 10% should remain at day 200
+
+        self.report.add_result(ValidationResult(
+            f"survivorship_{day}",
+            passed,
+            f"Survivorship at day {day}: {surv_rate*100:.1f}% ({count_at_day}/{total_trades})",
+            severity="warning" if not passed else "info",
+            value=surv_rate,
+            expected="<10%"
+        ), "bias")
+
+        return passed
+
+    def calculate_winsorized_eratio(self, all_mfe_norm: Dict[int, List[float]],
+                                     all_mae_norm: Dict[int, List[float]],
+                                     percentile: float = 99) -> Dict[int, float]:
+        """Calculate E-ratio with winsorized (capped) outliers."""
+        winsorized_eratios = {}
+
+        for n in all_mfe_norm:
+            if not all_mfe_norm[n] or not all_mae_norm[n]:
+                continue
+
+            mfe_vals = np.array(all_mfe_norm[n])
+            mae_vals = np.array(all_mae_norm[n])
+
+            # Cap at 99th percentile
+            mfe_cap = np.percentile(mfe_vals, percentile)
+            mae_cap = np.percentile(mae_vals, percentile)
+
+            mfe_capped = np.clip(mfe_vals, None, mfe_cap)
+            mae_capped = np.clip(mae_vals, None, mae_cap)
+
+            avg_mfe = np.mean(mfe_capped)
+            avg_mae = np.mean(mae_capped)
+
+            if avg_mae > 0:
+                winsorized_eratios[n] = avg_mfe / avg_mae
+            else:
+                winsorized_eratios[n] = float('inf') if avg_mfe > 0 else 1.0
+
+        return winsorized_eratios
+
+    def compare_with_random_baseline(self, e_ratios: Dict[int, float],
+                                      check_days: int = 20) -> Tuple[bool, float]:
+        """Compare E-ratios against random baseline (should be near 1.0)."""
+        early_eratios = [e_ratios.get(n, 1.0) for n in range(1, check_days + 1)]
+        avg_early = np.mean(early_eratios) if early_eratios else 1.0
+
+        # For random entries, E-ratio should be ~1.0
+        # A good strategy should have E-ratio > 1.0 in early days
+        has_edge = avg_early > 1.0
+
+        self.report.add_result(ValidationResult(
+            "random_baseline",
+            has_edge,
+            f"Avg E-ratio (days 1-{check_days}): {avg_early:.3f} vs random baseline ~1.0",
+            severity="info",
+            value=avg_early,
+            expected=">1.0 for edge"
+        ), "bias")
+
+        return has_edge, avg_early
+
+
+# =============================================================================
 # TRADE LOG LOADER
 # =============================================================================
 
@@ -182,13 +684,16 @@ class ERatioCalculator:
     def __init__(self, data_path: Path):
         self.data_path = data_path
         self._price_cache: Dict[str, pd.DataFrame] = {}
+        self.validator = ERatioValidator()
+        self._validated_symbols: set = set()
 
     def set_data_path(self, data_path: Path):
         """Update data path and clear cache."""
         self.data_path = data_path
         self._price_cache.clear()
+        self._validated_symbols.clear()
 
-    def _get_price_data(self, symbol: str) -> Optional[pd.DataFrame]:
+    def _get_price_data(self, symbol: str, validate: bool = True) -> Optional[pd.DataFrame]:
         """Get price data for a symbol, using cache if available."""
         if symbol in self._price_cache:
             return self._price_cache[symbol]
@@ -207,12 +712,28 @@ class ERatioCalculator:
         try:
             data = pd.read_csv(file_path)
             self._price_cache[symbol] = data
+
+            # Validate price data integrity on first load
+            if validate and symbol not in self._validated_symbols:
+                self._validated_symbols.add(symbol)
+                self.validator.validate_price_data_integrity(data, symbol)
+
+                # Validate ATR
+                atr_col = None
+                for col in ['atr_14_atr', 'atr_14', 'atr']:
+                    if col in data.columns:
+                        atr_col = col
+                        break
+                if atr_col:
+                    self.validator.validate_atr(data, symbol, atr_col)
+
             return data
         except Exception as e:
             print(f"Error loading price data for {symbol}: {e}")
             return None
 
-    def calculate_trade_excursions(self, trade: TradeLogEntry, max_days: int = 30) -> Dict[str, Any]:
+    def calculate_trade_excursions(self, trade: TradeLogEntry, max_days: int = 30,
+                                     validate: bool = True) -> Dict[str, Any]:
         """
         Calculate MFE and MAE for each horizon for a single trade.
 
@@ -220,18 +741,26 @@ class ERatioCalculator:
             Dict containing:
             - mfe_norm: Dict[int, float] mapping day -> normalized MFE (MFE/ATR)
             - mae_norm: Dict[int, float] mapping day -> normalized MAE (MAE/ATR)
+            - mfe_raw: Dict[int, float] mapping day -> raw MFE values
+            - mae_raw: Dict[int, float] mapping day -> raw MAE values
             - atr_at_entry: ATR value at entry
+            - entry_price: Entry price used (from price data)
             - error: Optional error message
         """
         result = {
             'mfe_norm': {},
             'mae_norm': {},
+            'mfe_raw': {},
+            'mae_raw': {},
             'atr_at_entry': None,
+            'entry_price': None,
             'error': None
         }
 
+        trade_id = str(trade.trade_id)
+
         # Get price data
-        price_data = self._get_price_data(trade.symbol)
+        price_data = self._get_price_data(trade.symbol, validate=validate)
         if price_data is None:
             result['error'] = f"Could not load price data for {trade.symbol}"
             return result
@@ -266,9 +795,21 @@ class ERatioCalculator:
             entry_idx = price_data[mask].index[0]
 
         entry_bar = price_data.loc[entry_idx]
+        price_date = pd.to_datetime(entry_bar['date'])
+
+        # VALIDATION: Date alignment check
+        if validate:
+            self.validator.validate_date_alignment(entry_date, price_date, trade_id)
 
         # Use close from price data as entry price (ensures consistency with future closes)
         entry_price = entry_bar['close']
+        result['entry_price'] = float(entry_price)
+
+        # VALIDATION: Entry price consistency check
+        if validate:
+            self.validator.validate_entry_price_consistency(
+                trade.entry_price, entry_price, trade_id, trade.symbol
+            )
 
         # Get ATR at entry (ATR is already calculated from adjusted close prices)
         atr_col = None
@@ -290,11 +831,12 @@ class ERatioCalculator:
 
         # Get position in the dataframe for slicing
         entry_pos = price_data.index.get_loc(entry_idx)
+        df_len = len(price_data)
 
         # Calculate MFE and MAE for each horizon n (1 to max_days)
         for n in range(1, max_days + 1):
             end_pos = entry_pos + n
-            if end_pos >= len(price_data):
+            if end_pos >= df_len:
                 break
 
             # Get forward data (bars 1 to n after entry)
@@ -302,6 +844,12 @@ class ERatioCalculator:
 
             if len(forward_data) == 0:
                 continue
+
+            # VALIDATION: Forward slice bounds check (sample check, not every n)
+            if validate and n == 1:
+                self.validator.validate_forward_slice(
+                    entry_pos, n, df_len, len(forward_data), trade_id
+                )
 
             # Use 'close' prices for MFE/MAE (adjusted prices, consistent with entry_price)
             closes = forward_data['close'].values
@@ -313,19 +861,38 @@ class ERatioCalculator:
                 # Long trade: profit when price rises, loss when price falls
                 mfe_n = max(0, max_close - entry_price)
                 mae_n = max(0, entry_price - min_close)
+                max_possible_mfe = max_close - entry_price if max_close > entry_price else 0
             else:
                 # Short trade: profit when price falls, loss when price rises
                 mfe_n = max(0, entry_price - min_close)
                 mae_n = max(0, max_close - entry_price)
+                max_possible_mfe = entry_price - min_close if min_close < entry_price else 0
+
+            # Store raw values
+            result['mfe_raw'][n] = mfe_n
+            result['mae_raw'][n] = mae_n
+
+            # VALIDATION: Excursions check (sample check at key horizons)
+            if validate and n in [1, 5, 10, 20, 30]:
+                self.validator.validate_excursions(
+                    mfe_n, mae_n, trade_id, n, max_possible_mfe
+                )
 
             # Normalize by ATR at entry
-            result['mfe_norm'][n] = mfe_n / atr_at_entry
-            result['mae_norm'][n] = mae_n / atr_at_entry
+            norm_mfe = mfe_n / atr_at_entry
+            norm_mae = mae_n / atr_at_entry
+
+            result['mfe_norm'][n] = norm_mfe
+            result['mae_norm'][n] = norm_mae
+
+            # VALIDATION: Normalization check (sample check at key horizons)
+            if validate and n in [1, 5, 10, 20, 30]:
+                self.validator.validate_normalization(norm_mfe, norm_mae, trade_id, n)
 
         return result
 
     def calculate_aggregate_eratio(self, trades: List[TradeLogEntry], max_days: int = 30,
-                                    progress_callback=None) -> Dict[str, Any]:
+                                    progress_callback=None, validate: bool = True) -> Dict[str, Any]:
         """
         Calculate aggregate E-ratio across all trades for each horizon.
 
@@ -337,21 +904,30 @@ class ERatioCalculator:
         Returns:
             Dict containing:
             - e_ratios: Dict[int, float] mapping horizon -> E-ratio
+            - e_ratios_winsorized: Dict[int, float] mapping horizon -> winsorized E-ratio
             - avg_mfe_norm: Dict[int, float] mapping horizon -> avg normalized MFE
             - avg_mae_norm: Dict[int, float] mapping horizon -> avg normalized MAE
             - trades_per_horizon: Dict[int, int] mapping horizon -> number of trades with data
             - trades_analyzed: int - total trades successfully analyzed
             - trades_with_errors: int - trades that had errors
             - errors: List[str] - error messages
+            - validation_report: ValidationReport - detailed validation results
         """
+        # Reset validator for fresh calculation
+        if validate:
+            self.validator.reset()
+            self._validated_symbols.clear()
+
         result = {
             'e_ratios': {},
+            'e_ratios_winsorized': {},
             'avg_mfe_norm': {},
             'avg_mae_norm': {},
             'trades_per_horizon': {},
             'trades_analyzed': 0,
             'trades_with_errors': 0,
-            'errors': []
+            'errors': [],
+            'validation_report': None
         }
 
         # Collect all normalized MFE/MAE values per horizon
@@ -362,7 +938,7 @@ class ERatioCalculator:
             if progress_callback:
                 progress_callback(i + 1, len(trades))
 
-            excursions = self.calculate_trade_excursions(trade, max_days)
+            excursions = self.calculate_trade_excursions(trade, max_days, validate=validate)
 
             if excursions['error']:
                 result['trades_with_errors'] += 1
@@ -391,6 +967,73 @@ class ERatioCalculator:
                     result['e_ratios'][n] = avg_mfe / avg_mae
                 else:
                     result['e_ratios'][n] = float('inf') if avg_mfe > 0 else 1.0
+
+        # =========================================================================
+        # VALIDATION CHECKS
+        # =========================================================================
+        if validate and result['trades_per_horizon']:
+            # 1. Aggregation checks
+            # Validate trades per horizon (min 20 trades recommended)
+            min_trades = min(20, len(trades) // 2)  # Adjust based on dataset size
+            self.validator.validate_trades_per_horizon(
+                result['trades_per_horizon'],
+                min_required=min_trades,
+                check_up_to_day=min(60, max_days)
+            )
+
+            # Validate E-ratio bounds
+            self.validator.validate_eratio_bounds(result['e_ratios'])
+
+            # 2. Bias & Statistical checks
+            # Sample size decay (should decrease monotonically)
+            self.validator.validate_sample_size_decay(result['trades_per_horizon'])
+
+            # Survivorship check (at 200 days if we have that much data)
+            if max_days >= 200:
+                self.validator.validate_survivorship(
+                    result['trades_per_horizon'],
+                    result['trades_analyzed'],
+                    day=200
+                )
+            elif max_days >= 60:
+                # Check at max available day
+                self.validator.validate_survivorship(
+                    result['trades_per_horizon'],
+                    result['trades_analyzed'],
+                    day=max_days
+                )
+
+            # Random baseline comparison
+            self.validator.compare_with_random_baseline(result['e_ratios'])
+
+            # 3. Calculate winsorized E-ratio (outlier impact check)
+            result['e_ratios_winsorized'] = self.validator.calculate_winsorized_eratio(
+                all_mfe_norm, all_mae_norm, percentile=99
+            )
+
+            # Compare original vs winsorized
+            if result['e_ratios'] and result['e_ratios_winsorized']:
+                # Calculate average difference
+                diffs = []
+                for n in result['e_ratios']:
+                    if n in result['e_ratios_winsorized']:
+                        orig = result['e_ratios'][n]
+                        wins = result['e_ratios_winsorized'][n]
+                        if not np.isinf(orig) and not np.isinf(wins):
+                            diffs.append(abs(orig - wins) / max(orig, 0.001))
+
+                if diffs:
+                    avg_diff_pct = np.mean(diffs) * 100
+                    self.validator.report.add_result(ValidationResult(
+                        "outlier_impact",
+                        avg_diff_pct < 20,  # Less than 20% difference is acceptable
+                        f"Avg difference original vs winsorized: {avg_diff_pct:.1f}%",
+                        severity="warning" if avg_diff_pct >= 20 else "info",
+                        value=avg_diff_pct
+                    ), "bias")
+
+            # Store validation report in result
+            result['validation_report'] = self.validator.report
 
         return result
 
@@ -580,11 +1223,13 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
         # Create tabs
         self.tabview.add("E-Ratio")
         self.tabview.add("R-Multiple")
+        self.tabview.add("Validation")
         self.tabview.add("Trade Details")
 
         # Initialize tab contents
         self._create_eratio_tab(self.tabview.tab("E-Ratio"))
         self._create_rmultiple_tab(self.tabview.tab("R-Multiple"))
+        self._create_validation_tab(self.tabview.tab("Validation"))
         self._create_details_tab(self.tabview.tab("Trade Details"))
 
     def _create_eratio_tab(self, parent):
@@ -627,6 +1272,37 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
             justify="left"
         )
         self.rmultiple_placeholder.pack(expand=True)
+
+    def _create_validation_tab(self, parent):
+        """Create validation report tab content."""
+        self.validation_frame = Theme.create_frame(parent)
+        self.validation_frame.pack(fill="both", expand=True)
+
+        # Scrollable frame for validation results
+        self.validation_scroll = ctk.CTkScrollableFrame(
+            self.validation_frame,
+            fg_color="transparent"
+        )
+        self.validation_scroll.pack(fill="both", expand=True)
+
+        # Placeholder
+        self.validation_placeholder = Theme.create_label(
+            self.validation_scroll,
+            "Load trade logs to view validation report.\n\n"
+            "This tab shows data quality checks including:\n"
+            "• Price data integrity (NaNs, date sorting)\n"
+            "• ATR computation validation\n"
+            "• Date alignment checks\n"
+            "• Entry price consistency\n"
+            "• E-ratio bounds validation\n"
+            "• Sample size decay analysis\n"
+            "• Outlier impact assessment\n"
+            "• Random baseline comparison",
+            text_color=Colors.TEXT_MUTED,
+            wraplength=500,
+            justify="left"
+        )
+        self.validation_placeholder.pack(expand=True, pady=Sizes.PAD_XL)
 
     def _create_details_tab(self, parent):
         """Create trade details tab content."""
@@ -890,7 +1566,14 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
         # Cap infinite values for display
         display_ratios = [min(r, 10) for r in ratios]
 
-        ax1.plot(days, display_ratios, color=Colors.PRIMARY_LIGHT, linewidth=2, marker='o', markersize=4)
+        ax1.plot(days, display_ratios, color=Colors.PRIMARY_LIGHT, linewidth=2, marker='o', markersize=4, label='E-ratio')
+
+        # Plot winsorized E-ratio for comparison (if available)
+        if result.get('e_ratios_winsorized'):
+            winsorized_ratios = [min(result['e_ratios_winsorized'].get(d, r), 10) for d, r in zip(days, ratios)]
+            ax1.plot(days, winsorized_ratios, color='#FFD700', linewidth=1.5, linestyle='--',
+                     marker='s', markersize=3, alpha=0.7, label='Winsorized (99th pct)')
+
         ax1.axhline(y=1.0, color=Colors.TEXT_MUTED, linestyle='--', alpha=0.7, label='E-ratio = 1.0 (no edge)')
         ax1.fill_between(days, 1.0, display_ratios, where=[r > 1 for r in display_ratios],
                          color=Colors.SUCCESS, alpha=0.3, label='Positive edge')
@@ -949,6 +1632,183 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
             f"First Day with Edge: {first_edge_day}",
             text_color=Colors.TEXT_SECONDARY
         ).pack()
+
+        # Update validation tab with results
+        self._update_validation_tab(result)
+
+    def _update_validation_tab(self, eratio_result: Dict[str, Any]):
+        """Update validation report tab with results."""
+        # Clear existing content
+        for widget in self.validation_scroll.winfo_children():
+            widget.destroy()
+
+        validation_report = eratio_result.get('validation_report')
+        if validation_report is None:
+            Theme.create_label(
+                self.validation_scroll,
+                "No validation data available.",
+                text_color=Colors.TEXT_MUTED
+            ).pack(expand=True, pady=Sizes.PAD_XL)
+            return
+
+        # Summary header
+        Theme.create_header(
+            self.validation_scroll,
+            "Validation Report",
+            size="m"
+        ).pack(anchor="w", pady=(0, Sizes.PAD_M))
+
+        # Overall summary
+        summary_frame = Theme.create_frame(self.validation_scroll)
+        summary_frame.pack(fill="x", pady=(0, Sizes.PAD_M))
+
+        passed_color = Colors.SUCCESS if validation_report.error_count == 0 else Colors.WARNING
+        Theme.create_label(
+            summary_frame,
+            f"Passed: {validation_report.passed_count} | "
+            f"Failed: {validation_report.failed_count} | "
+            f"Errors: {validation_report.error_count} | "
+            f"Warnings: {validation_report.warning_count}",
+            text_color=passed_color,
+            font=Fonts.LABEL_BOLD
+        ).pack(anchor="w")
+
+        # Create sections for each category
+        categories = [
+            ("Data Input & Preprocessing", validation_report.data_checks),
+            ("Aggregation & E-ratio", validation_report.aggregation_checks),
+            ("Bias & Statistical", validation_report.bias_checks),
+        ]
+
+        for category_name, checks in categories:
+            if not checks:
+                continue
+
+            # Section separator
+            ctk.CTkFrame(self.validation_scroll, fg_color=Colors.BORDER, height=1).pack(
+                fill="x", pady=Sizes.PAD_M
+            )
+
+            # Section header
+            passed_in_category = sum(1 for c in checks if c.passed)
+            header_color = Colors.SUCCESS if passed_in_category == len(checks) else Colors.WARNING
+
+            Theme.create_header(
+                self.validation_scroll,
+                f"{category_name} ({passed_in_category}/{len(checks)})",
+                size="s"
+            ).pack(anchor="w", pady=(0, Sizes.PAD_S))
+
+            # Show check results (limit to important ones)
+            shown_checks = []
+            # First show failures
+            failures = [c for c in checks if not c.passed]
+            shown_checks.extend(failures[:10])
+            # Then show passes (limited)
+            passes = [c for c in checks if c.passed]
+            shown_checks.extend(passes[:5])
+
+            for check in shown_checks:
+                check_frame = Theme.create_frame(self.validation_scroll)
+                check_frame.pack(fill="x", pady=2)
+
+                # Status icon
+                if check.passed:
+                    status_icon = "✓"
+                    status_color = Colors.SUCCESS
+                elif check.severity == "error":
+                    status_icon = "✗"
+                    status_color = Colors.ERROR
+                else:
+                    status_icon = "!"
+                    status_color = Colors.WARNING
+
+                Theme.create_label(
+                    check_frame,
+                    status_icon,
+                    text_color=status_color,
+                    font=Fonts.LABEL_BOLD,
+                    width=20
+                ).pack(side="left")
+
+                Theme.create_label(
+                    check_frame,
+                    check.message,
+                    text_color=Colors.TEXT_SECONDARY if check.passed else status_color,
+                    font=Fonts.BODY_S
+                ).pack(side="left", padx=Sizes.PAD_S)
+
+            if len(failures) > 10:
+                Theme.create_label(
+                    self.validation_scroll,
+                    f"... and {len(failures) - 10} more issues",
+                    text_color=Colors.TEXT_MUTED,
+                    font=Fonts.BODY_XS
+                ).pack(anchor="w", pady=(Sizes.PAD_XS, 0))
+
+        # Outliers section
+        if validation_report.outliers:
+            ctk.CTkFrame(self.validation_scroll, fg_color=Colors.BORDER, height=1).pack(
+                fill="x", pady=Sizes.PAD_M
+            )
+
+            Theme.create_header(
+                self.validation_scroll,
+                f"Outliers Logged ({len(validation_report.outliers)})",
+                size="s"
+            ).pack(anchor="w", pady=(0, Sizes.PAD_S))
+
+            for outlier in validation_report.outliers[:10]:
+                Theme.create_label(
+                    self.validation_scroll,
+                    f"Trade {outlier['trade_id']} ({outlier['symbol']}): "
+                    f"{outlier['field']} = {outlier['value']:.2f} (threshold: {outlier['threshold']})",
+                    text_color=Colors.WARNING,
+                    font=Fonts.BODY_S
+                ).pack(anchor="w", pady=1)
+
+            if len(validation_report.outliers) > 10:
+                Theme.create_label(
+                    self.validation_scroll,
+                    f"... and {len(validation_report.outliers) - 10} more outliers",
+                    text_color=Colors.TEXT_MUTED,
+                    font=Fonts.BODY_XS
+                ).pack(anchor="w", pady=(Sizes.PAD_XS, 0))
+
+        # Trade details summary
+        ctk.CTkFrame(self.validation_scroll, fg_color=Colors.BORDER, height=1).pack(
+            fill="x", pady=Sizes.PAD_M
+        )
+
+        Theme.create_header(
+            self.validation_scroll,
+            "Analysis Summary",
+            size="s"
+        ).pack(anchor="w", pady=(0, Sizes.PAD_S))
+
+        # Trades per horizon info
+        if eratio_result.get('trades_per_horizon'):
+            horizons = eratio_result['trades_per_horizon']
+            min_trades = min(horizons.values()) if horizons else 0
+            max_trades = max(horizons.values()) if horizons else 0
+
+            Theme.create_label(
+                self.validation_scroll,
+                f"Trades per horizon: {min_trades} (min) to {max_trades} (max)",
+                text_color=Colors.TEXT_SECONDARY,
+                font=Fonts.BODY_S
+            ).pack(anchor="w")
+
+        # E-ratio range info
+        if eratio_result.get('e_ratios'):
+            eratios = [e for e in eratio_result['e_ratios'].values() if not np.isinf(e)]
+            if eratios:
+                Theme.create_label(
+                    self.validation_scroll,
+                    f"E-ratio range: {min(eratios):.3f} to {max(eratios):.3f}",
+                    text_color=Colors.TEXT_SECONDARY,
+                    font=Fonts.BODY_S
+                ).pack(anchor="w")
 
     def _update_rmultiple_chart(self):
         """Update R-multiple distribution chart."""
