@@ -45,7 +45,6 @@ except ImportError:
     MATPLOTLIB_AVAILABLE = False
 
 from Classes.GUI.ctk_theme import Theme, Colors, Fonts, Sizes, show_error, show_info
-from Classes.Data.data_loader import DataLoader
 
 
 # =============================================================================
@@ -169,17 +168,33 @@ class TradeLogLoader:
 class ERatioCalculator:
     """Calculates E-ratio for individual trades using historical price data."""
 
-    def __init__(self, data_loader: DataLoader):
-        self.data_loader = data_loader
+    def __init__(self, data_path: Path):
+        self.data_path = data_path
         self._price_cache: Dict[str, pd.DataFrame] = {}
+
+    def set_data_path(self, data_path: Path):
+        """Update data path and clear cache."""
+        self.data_path = data_path
+        self._price_cache.clear()
 
     def _get_price_data(self, symbol: str) -> Optional[pd.DataFrame]:
         """Get price data for a symbol, using cache if available."""
         if symbol in self._price_cache:
             return self._price_cache[symbol]
 
+        # Try loading with _daily suffix (TICKER_daily.csv format)
+        file_path = self.data_path / f"{symbol}_daily.csv"
+
+        if not file_path.exists():
+            # Fallback to plain symbol.csv
+            file_path = self.data_path / f"{symbol}.csv"
+
+        if not file_path.exists():
+            print(f"Price data file not found: {symbol}_daily.csv or {symbol}.csv")
+            return None
+
         try:
-            data = self.data_loader.load_csv(symbol)
+            data = pd.read_csv(file_path)
             self._price_cache[symbol] = data
             return data
         except Exception as e:
@@ -326,8 +341,7 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
 
         # Data
         self.trade_loader = TradeLogLoader()
-        self.data_loader = DataLoader(self.data_path)
-        self.eratio_calculator = ERatioCalculator(self.data_loader)
+        self.eratio_calculator = ERatioCalculator(self.data_path)
 
         # State
         self.current_trades: List[TradeLogEntry] = []
@@ -597,8 +611,7 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
             return
 
         self.data_path = new_path
-        self.data_loader = DataLoader(self.data_path)
-        self.eratio_calculator = ERatioCalculator(self.data_loader)
+        self.eratio_calculator.set_data_path(self.data_path)
         self.eratio_cache.clear()  # Clear cache when path changes
 
         show_info(self, "Path Updated", f"Price data path set to:\n{self.data_path}")
