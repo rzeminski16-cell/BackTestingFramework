@@ -4,11 +4,14 @@ Edge Analysis GUI (CustomTkinter)
 A specialized GUI for analyzing entry edge and R-multiples from existing trade logs.
 
 Key Features:
-- Load existing trade log CSV files (no backtesting required)
+- Load multiple trade log CSV files at once
 - Select individual trades to examine their E-ratio over time
-- Two visualization tabs:
+- Configurable price data path for loading historical data
+- Four visualization tabs:
   1. E-ratio: Entry edge for selected trade over different time horizons
   2. R-multiple: Distribution of all trade outcomes
+  3. Summary: Aggregate E-ratio analysis (% of trades with E-ratio > 1 per day)
+  4. Trade Details: Detailed view of selected trade
 
 E-ratio Formula (for a single trade):
     E-ratio(n) = (MFE_n / ATR) / (MAE_n / ATR)
@@ -120,24 +123,39 @@ class TradeLogLoader:
 
     def __init__(self):
         self.trades: List[TradeLogEntry] = []
-        self.source_file: Optional[Path] = None
+        self.source_files: List[Path] = []
 
     def load(self, filepath: Path) -> List[TradeLogEntry]:
-        """Load trades from a CSV file."""
+        """Load trades from a single CSV file (appends to existing trades)."""
         df = pd.read_csv(filepath)
 
-        self.trades = []
+        new_trades = []
         for _, row in df.iterrows():
             try:
                 trade = TradeLogEntry(row)
                 if trade.symbol and trade.entry_date:
-                    self.trades.append(trade)
+                    new_trades.append(trade)
             except Exception as e:
                 print(f"Error parsing trade row: {e}")
                 continue
 
-        self.source_file = filepath
-        return self.trades
+        self.trades.extend(new_trades)
+        self.source_files.append(filepath)
+        return new_trades
+
+    def load_multiple(self, filepaths: List[Path]) -> List[TradeLogEntry]:
+        """Load trades from multiple CSV files."""
+        self.clear()
+        all_trades = []
+        for filepath in filepaths:
+            trades = self.load(filepath)
+            all_trades.extend(trades)
+        return all_trades
+
+    def clear(self):
+        """Clear all loaded trades."""
+        self.trades = []
+        self.source_files = []
 
     def get_symbols(self) -> List[str]:
         """Get unique symbols in loaded trades."""
@@ -290,6 +308,9 @@ class ERatioCalculator:
 class CTkEdgeAnalysisGUI(ctk.CTk):
     """Main Edge Analysis GUI application."""
 
+    # Default price data path - can be configured by user
+    DEFAULT_DATA_PATH = Path('raw_data/daily')
+
     def __init__(self):
         super().__init__()
 
@@ -300,15 +321,19 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
         self.geometry("1400x900")
         self.configure(fg_color=Colors.BG_DARK)
 
+        # Data path (configurable)
+        self.data_path = self.DEFAULT_DATA_PATH
+
         # Data
         self.trade_loader = TradeLogLoader()
-        self.data_loader = DataLoader(Path('raw_data/daily'))
+        self.data_loader = DataLoader(self.data_path)
         self.eratio_calculator = ERatioCalculator(self.data_loader)
 
         # State
         self.current_trades: List[TradeLogEntry] = []
         self.selected_trade: Optional[TradeLogEntry] = None
         self.max_eratio_days = 30
+        self.eratio_cache: Dict[str, Dict[str, Any]] = {}  # Cache for aggregate E-ratio
 
         self._create_layout()
 
@@ -329,6 +354,7 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
         top_frame = Theme.create_card(self)
         top_frame.grid(row=0, column=0, sticky="ew", padx=Sizes.PAD_M, pady=Sizes.PAD_M)
 
+        # Top row - main controls
         content = Theme.create_frame(top_frame)
         content.pack(fill="x", padx=Sizes.PAD_L, pady=Sizes.PAD_M)
 
@@ -337,7 +363,7 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
 
         # Load button
         Theme.create_button(
-            content, "Load Trade Log...",
+            content, "Load Trade Logs...",
             command=self._load_trade_log,
             style="primary",
             width=150
@@ -345,7 +371,7 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
 
         # File path display
         self.file_label = Theme.create_label(
-            content, "No file loaded",
+            content, "No files loaded",
             text_color=Colors.TEXT_MUTED
         )
         self.file_label.pack(side="left", padx=Sizes.PAD_M)
@@ -354,12 +380,37 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
         settings_frame = Theme.create_frame(content)
         settings_frame.pack(side="right")
 
-        Theme.create_label(settings_frame, "Max E-Ratio Days:").pack(side="left", padx=(0, Sizes.PAD_S))
+        Theme.create_label(settings_frame, "Max Days:").pack(side="left", padx=(0, Sizes.PAD_S))
 
         self.max_days_var = ctk.StringVar(value="30")
-        days_entry = Theme.create_entry(settings_frame, width=60)
+        days_entry = Theme.create_entry(settings_frame, width=50)
         days_entry.configure(textvariable=self.max_days_var)
         days_entry.pack(side="left")
+
+        # Bottom row - data path configuration
+        path_row = Theme.create_frame(top_frame)
+        path_row.pack(fill="x", padx=Sizes.PAD_L, pady=(0, Sizes.PAD_M))
+
+        Theme.create_label(path_row, "Price Data Path:", font=Fonts.BODY_S).pack(side="left")
+
+        self.data_path_var = ctk.StringVar(value=str(self.data_path))
+        data_path_entry = Theme.create_entry(path_row, width=400)
+        data_path_entry.configure(textvariable=self.data_path_var)
+        data_path_entry.pack(side="left", padx=(Sizes.PAD_S, Sizes.PAD_M))
+
+        Theme.create_button(
+            path_row, "Browse...",
+            command=self._browse_data_path,
+            style="secondary",
+            width=80
+        ).pack(side="left", padx=(0, Sizes.PAD_S))
+
+        Theme.create_button(
+            path_row, "Apply",
+            command=self._apply_data_path,
+            style="secondary",
+            width=60
+        ).pack(side="left")
 
     def _create_main_content(self):
         """Create main content area with trade list and visualization tabs."""
@@ -437,11 +488,13 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
         # Create tabs
         self.tabview.add("E-Ratio")
         self.tabview.add("R-Multiple")
+        self.tabview.add("Summary")
         self.tabview.add("Trade Details")
 
         # Initialize tab contents
         self._create_eratio_tab(self.tabview.tab("E-Ratio"))
         self._create_rmultiple_tab(self.tabview.tab("R-Multiple"))
+        self._create_summary_tab(self.tabview.tab("Summary"))
         self._create_details_tab(self.tabview.tab("Trade Details"))
 
     def _create_eratio_tab(self, parent):
@@ -484,6 +537,25 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
         )
         self.rmultiple_placeholder.pack(expand=True)
 
+    def _create_summary_tab(self, parent):
+        """Create aggregate E-ratio summary tab content."""
+        self.summary_frame = Theme.create_frame(parent)
+        self.summary_frame.pack(fill="both", expand=True)
+
+        # Placeholder message
+        self.summary_placeholder = Theme.create_label(
+            self.summary_frame,
+            "Load trade logs to view aggregate E-ratio summary.\n\n"
+            "This tab shows the proportion of trades with E-ratio > 1\n"
+            "for each day after entry.\n\n"
+            "E-ratio > 1 means the trade moved more favorably than adversely\n"
+            "(positive edge on entry).",
+            text_color=Colors.TEXT_MUTED,
+            wraplength=500,
+            justify="left"
+        )
+        self.summary_placeholder.pack(expand=True)
+
     def _create_details_tab(self, parent):
         """Create trade details tab content."""
         self.details_frame = Theme.create_frame(parent)
@@ -504,36 +576,83 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
         )
         self.details_placeholder.pack(expand=True, pady=Sizes.PAD_XL)
 
-    def _load_trade_log(self):
-        """Open file dialog to load a trade log."""
+    def _browse_data_path(self):
+        """Open folder dialog to select price data directory."""
         from tkinter import filedialog
 
-        filepath = filedialog.askopenfilename(
-            title="Select Trade Log CSV",
+        folder = filedialog.askdirectory(
+            title="Select Price Data Directory",
+            initialdir=self.data_path if self.data_path.exists() else Path.home()
+        )
+
+        if folder:
+            self.data_path_var.set(folder)
+
+    def _apply_data_path(self):
+        """Apply the configured data path."""
+        new_path = Path(self.data_path_var.get())
+
+        if not new_path.exists():
+            show_error(self, "Invalid Path", f"Directory does not exist:\n{new_path}")
+            return
+
+        self.data_path = new_path
+        self.data_loader = DataLoader(self.data_path)
+        self.eratio_calculator = ERatioCalculator(self.data_loader)
+        self.eratio_cache.clear()  # Clear cache when path changes
+
+        show_info(self, "Path Updated", f"Price data path set to:\n{self.data_path}")
+
+    def _load_trade_log(self):
+        """Open file dialog to load multiple trade logs."""
+        from tkinter import filedialog
+
+        filepaths = filedialog.askopenfilenames(
+            title="Select Trade Log CSV Files",
             filetypes=[("CSV files", "*.csv"), ("All files", "*.*")],
             initialdir=Path("logs")
         )
 
-        if not filepath:
+        if not filepaths:
             return
 
         try:
-            trades = self.trade_loader.load(Path(filepath))
+            # Load all selected files
+            trades = self.trade_loader.load_multiple([Path(f) for f in filepaths])
             self.current_trades = trades
+            self.eratio_cache.clear()  # Clear E-ratio cache for new trades
 
             # Update UI
-            self.file_label.configure(text=Path(filepath).name)
+            if len(filepaths) == 1:
+                self.file_label.configure(text=Path(filepaths[0]).name)
+            else:
+                self.file_label.configure(text=f"{len(filepaths)} files loaded")
+
             self.trade_count_label.configure(text=f"({len(trades)} trades)")
             self.instructions_label.pack_forget()
 
             # Populate trade list
             self._populate_trade_list()
 
-            # Update R-multiple chart
+            # Update charts
             self._update_rmultiple_chart()
+            self._update_summary_chart()
 
         except Exception as e:
-            show_error(self, "Error Loading File", str(e))
+            show_error(self, "Error Loading Files", str(e))
+
+    def _bind_click_recursive(self, widget, trade, row):
+        """Recursively bind click events to widget and all children."""
+        # Bind click to select trade
+        widget.bind("<Button-1>", lambda e, t=trade: self._on_trade_selected(t))
+
+        # Bind hover effects to the row
+        widget.bind("<Enter>", lambda e, r=row: r.configure(fg_color=Colors.SURFACE_HOVER))
+        widget.bind("<Leave>", lambda e, r=row: r.configure(fg_color="transparent"))
+
+        # Recursively bind to all children
+        for child in widget.winfo_children():
+            self._bind_click_recursive(child, trade, row)
 
     def _populate_trade_list(self, filter_text: str = ""):
         """Populate the trade list with loaded trades."""
@@ -549,23 +668,19 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
                 if filter_text not in trade.display_name.lower():
                     continue
 
-            # Create trade row
+            # Create trade row - use CTkButton-like styling for better clickability
             row = ctk.CTkFrame(
                 self.trade_listbox,
                 fg_color="transparent",
-                corner_radius=Sizes.RADIUS_S
+                corner_radius=Sizes.RADIUS_S,
+                height=60
             )
-            row.pack(fill="x", pady=1)
+            row.pack(fill="x", pady=2, padx=2)
+            row.pack_propagate(False)  # Maintain consistent height
 
-            # Make clickable
-            row.bind("<Button-1>", lambda e, t=trade: self._on_trade_selected(t))
-            row.bind("<Enter>", lambda e, r=row: r.configure(fg_color=Colors.SURFACE_HOVER))
-            row.bind("<Leave>", lambda e, r=row: r.configure(fg_color="transparent"))
-
-            # Trade info
+            # Trade info container
             info_frame = Theme.create_frame(row)
-            info_frame.pack(fill="x", padx=Sizes.PAD_S, pady=Sizes.PAD_XS)
-            info_frame.bind("<Button-1>", lambda e, t=trade: self._on_trade_selected(t))
+            info_frame.pack(fill="both", expand=True, padx=Sizes.PAD_S, pady=Sizes.PAD_XS)
 
             # Symbol and date
             date_str = trade.entry_date.strftime('%Y-%m-%d') if trade.entry_date else 'N/A'
@@ -576,7 +691,6 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
                 font=Fonts.LABEL_BOLD
             )
             header_label.pack(anchor="w")
-            header_label.bind("<Button-1>", lambda e, t=trade: self._on_trade_selected(t))
 
             # R-multiple and P/L
             r_str = f"{trade.r_multiple:.2f}R" if trade.r_multiple is not None else "N/A"
@@ -584,25 +698,30 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
 
             detail_frame = Theme.create_frame(info_frame)
             detail_frame.pack(anchor="w")
-            detail_frame.bind("<Button-1>", lambda e, t=trade: self._on_trade_selected(t))
 
-            Theme.create_label(
+            id_label = Theme.create_label(
                 detail_frame, f"ID: {trade.trade_id}",
                 font=Fonts.BODY_XS,
                 text_color=Colors.TEXT_MUTED
-            ).pack(side="left", padx=(0, Sizes.PAD_M))
+            )
+            id_label.pack(side="left", padx=(0, Sizes.PAD_M))
 
-            Theme.create_label(
+            r_label = Theme.create_label(
                 detail_frame, r_str,
                 font=Fonts.BODY_S,
                 text_color=pl_color
-            ).pack(side="left", padx=(0, Sizes.PAD_M))
+            )
+            r_label.pack(side="left", padx=(0, Sizes.PAD_M))
 
-            Theme.create_label(
+            pl_label = Theme.create_label(
                 detail_frame, f"${trade.pl:,.2f}",
                 font=Fonts.BODY_S,
                 text_color=pl_color
-            ).pack(side="left")
+            )
+            pl_label.pack(side="left")
+
+            # Bind click events recursively to all widgets in the row
+            self._bind_click_recursive(row, trade, row)
 
     def _on_search_change(self, *args):
         """Handle search text change."""
@@ -831,6 +950,168 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
             f"Avg Win: {avg_win_r:.2f}R | "
             f"Avg Loss: {avg_loss_r:.2f}R | "
             f"Total Trades: {len(r_multiples)}",
+            text_color=Colors.TEXT_SECONDARY
+        ).pack()
+
+    def _update_summary_chart(self):
+        """Update aggregate E-ratio summary chart showing % of trades with E-ratio > 1 per day."""
+        # Clear existing content
+        for widget in self.summary_frame.winfo_children():
+            widget.destroy()
+
+        if not MATPLOTLIB_AVAILABLE:
+            Theme.create_label(
+                self.summary_frame,
+                "Matplotlib not available. Install it with: pip install matplotlib",
+                text_color=Colors.ERROR
+            ).pack(expand=True)
+            return
+
+        if not self.current_trades:
+            Theme.create_label(
+                self.summary_frame,
+                "No trades loaded.",
+                text_color=Colors.TEXT_MUTED
+            ).pack(expand=True)
+            return
+
+        # Show loading message
+        loading_label = Theme.create_label(
+            self.summary_frame,
+            "Calculating E-ratios for all trades...\nThis may take a moment.",
+            text_color=Colors.TEXT_MUTED
+        )
+        loading_label.pack(expand=True)
+        self.update_idletasks()
+
+        # Get max days setting
+        try:
+            max_days = int(self.max_days_var.get())
+        except ValueError:
+            max_days = 30
+
+        # Calculate E-ratio for each trade (use cache where possible)
+        all_eratios: Dict[int, List[float]] = {d: [] for d in range(1, max_days + 1)}
+        trades_with_data = 0
+        trades_with_errors = 0
+
+        for trade in self.current_trades:
+            # Check cache first
+            cache_key = f"{trade.trade_id}_{trade.symbol}_{trade.entry_date}"
+            if cache_key in self.eratio_cache:
+                result = self.eratio_cache[cache_key]
+            else:
+                result = self.eratio_calculator.calculate_for_trade(trade, max_days)
+                self.eratio_cache[cache_key] = result
+
+            if result['error']:
+                trades_with_errors += 1
+                continue
+
+            if result['e_ratios']:
+                trades_with_data += 1
+                for day, eratio in result['e_ratios'].items():
+                    if day <= max_days:
+                        all_eratios[day].append(eratio)
+
+        # Remove loading message
+        loading_label.destroy()
+
+        if trades_with_data == 0:
+            Theme.create_label(
+                self.summary_frame,
+                f"Could not calculate E-ratio for any trades.\n"
+                f"{trades_with_errors} trades had errors (likely missing price data).\n\n"
+                f"Make sure the Price Data Path is configured correctly.",
+                text_color=Colors.ERROR,
+                wraplength=500
+            ).pack(expand=True)
+            return
+
+        # Calculate percentage with E-ratio > 1 for each day
+        days = []
+        percentages = []
+        avg_eratios = []
+
+        for day in range(1, max_days + 1):
+            if all_eratios[day]:
+                days.append(day)
+                above_one = sum(1 for e in all_eratios[day] if e > 1)
+                pct = (above_one / len(all_eratios[day])) * 100
+                percentages.append(pct)
+                # Cap extreme values for average calculation
+                capped = [min(e, 10) for e in all_eratios[day]]
+                avg_eratios.append(sum(capped) / len(capped))
+
+        if not days:
+            Theme.create_label(
+                self.summary_frame,
+                "No E-ratio data available.",
+                text_color=Colors.TEXT_MUTED
+            ).pack(expand=True)
+            return
+
+        # Create figure with two subplots
+        fig = Figure(figsize=(10, 6), facecolor=Colors.BG_DARK)
+
+        ax1 = fig.add_subplot(211)  # Percentage above 1
+        ax2 = fig.add_subplot(212)  # Average E-ratio
+
+        for ax in [ax1, ax2]:
+            ax.set_facecolor(Colors.SURFACE)
+            ax.tick_params(colors=Colors.TEXT_PRIMARY)
+            for spine in ax.spines.values():
+                spine.set_color(Colors.BORDER)
+
+        # Color bars based on percentage (green if > 50%, red if < 50%)
+        colors1 = [Colors.SUCCESS if p >= 50 else Colors.ERROR for p in percentages]
+
+        # Plot percentage with E-ratio > 1
+        bars1 = ax1.bar(days, percentages, color=colors1, edgecolor=Colors.BG_DARK, alpha=0.8)
+        ax1.axhline(y=50, color=Colors.TEXT_MUTED, linestyle='--', alpha=0.7, label='50% threshold')
+        ax1.set_ylabel('% of Trades with E-ratio > 1', color=Colors.TEXT_PRIMARY, fontsize=10)
+        ax1.set_title('Proportion of Trades with Positive Edge (E-ratio > 1) by Day',
+                      color=Colors.TEXT_PRIMARY, fontsize=12, pad=10)
+        ax1.set_ylim(0, 100)
+        ax1.grid(True, alpha=0.3, color=Colors.BORDER, axis='y')
+        ax1.legend(facecolor=Colors.SURFACE, edgecolor=Colors.BORDER,
+                   labelcolor=Colors.TEXT_PRIMARY, fontsize=8)
+
+        # Color bars based on average E-ratio (green if > 1, red if < 1)
+        colors2 = [Colors.SUCCESS if a >= 1 else Colors.ERROR for a in avg_eratios]
+
+        # Plot average E-ratio
+        bars2 = ax2.bar(days, avg_eratios, color=colors2, edgecolor=Colors.BG_DARK, alpha=0.8)
+        ax2.axhline(y=1.0, color=Colors.TEXT_MUTED, linestyle='--', alpha=0.7, label='E-ratio = 1 (no edge)')
+        ax2.set_xlabel('Days After Entry', color=Colors.TEXT_PRIMARY, fontsize=10)
+        ax2.set_ylabel('Average E-ratio', color=Colors.TEXT_PRIMARY, fontsize=10)
+        ax2.set_title('Average E-ratio Across All Trades by Day',
+                      color=Colors.TEXT_PRIMARY, fontsize=11, pad=10)
+        ax2.grid(True, alpha=0.3, color=Colors.BORDER, axis='y')
+        ax2.legend(facecolor=Colors.SURFACE, edgecolor=Colors.BORDER,
+                   labelcolor=Colors.TEXT_PRIMARY, fontsize=8)
+
+        fig.tight_layout()
+
+        # Embed in tkinter
+        canvas = FigureCanvasTkAgg(fig, self.summary_frame)
+        canvas.draw()
+        canvas.get_tk_widget().pack(fill="both", expand=True)
+
+        # Stats panel
+        stats_frame = Theme.create_frame(self.summary_frame)
+        stats_frame.pack(fill="x", pady=(Sizes.PAD_S, 0))
+
+        # Find best day
+        best_day = days[percentages.index(max(percentages))]
+        best_pct = max(percentages)
+
+        Theme.create_label(
+            stats_frame,
+            f"Trades Analyzed: {trades_with_data} | "
+            f"Errors: {trades_with_errors} | "
+            f"Best Day: Day {best_day} ({best_pct:.1f}% with E-ratio > 1) | "
+            f"Overall Avg E-ratio: {sum(avg_eratios)/len(avg_eratios):.2f}",
             text_color=Colors.TEXT_SECONDARY
         ).pack()
 
