@@ -9,3 +9,6 @@ Psychology Management
 - anchoring
 - bandwagon effect
 - Belief in the law of small number
+
+Calculate the edge ratio for entry signals and integrate a portfolio filter.
+Create a R-multiple distribution.

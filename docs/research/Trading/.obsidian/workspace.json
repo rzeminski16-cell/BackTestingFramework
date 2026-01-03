@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AlphaTrend/General Notes.md",
+                "file": "Business Plan.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "General Notes"
+              "title": "Business Plan"
             }
           }
         ],
@@ -200,9 +200,9 @@
   },
   "active": "b4a617468a2f0435",
   "lastOpenFiles": [
+    "AlphaTrend/General Notes.md",
     "Insider Trading/AlphaVantage.md",
     "Important Info.md",
-    "Business Plan.md",
-    "AlphaTrend/General Notes.md"
+    "Business Plan.md"
   ]
 }
