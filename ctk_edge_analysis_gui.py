@@ -271,6 +271,16 @@ class ERatioCalculator:
             result['error'] = f"Invalid ATR at entry: {atr_at_entry}"
             return result
 
+        # Check if prices need adjustment (high/low may be unadjusted while close is adjusted)
+        # If open/high/low are significantly different from close, calculate adjustment ratio
+        entry_open = entry_bar.get('open', entry_bar['close'])
+        entry_close = entry_bar['close']
+
+        if entry_open > 0 and abs(entry_open - entry_close) / entry_open > 0.3:
+            # Large discrepancy suggests split adjustment - scale ATR to match adjusted prices
+            adjustment_ratio = entry_close / entry_open
+            atr_at_entry = atr_at_entry * adjustment_ratio
+
         result['atr_at_entry'] = float(atr_at_entry)
 
         # Get position in the dataframe for slicing
@@ -288,15 +298,17 @@ class ERatioCalculator:
             if len(forward_data) == 0:
                 continue
 
-            # MFE_n: Maximum favorable excursion = max(price - entry) over bars 1 to n
-            # For long trades: max(high - entry_price)
-            max_high = forward_data['high'].max()
-            mfe_n = max(0, max_high - entry_price)
+            # Use 'close' prices for MFE/MAE since high/low may be unadjusted
+            # while close is typically split-adjusted (matching trade entry prices)
+            closes = forward_data['close']
 
-            # MAE_n: Maximum adverse excursion = |min(price - entry)| over bars 1 to n
-            # For long trades: entry_price - min(low), as positive number
-            min_low = forward_data['low'].min()
-            mae_n = max(0, entry_price - min_low)
+            # MFE_n: Maximum favorable excursion = max(close - entry) over bars 1 to n
+            max_close = closes.max()
+            mfe_n = max(0, max_close - entry_price)
+
+            # MAE_n: Maximum adverse excursion = |min(close - entry)| over bars 1 to n
+            min_close = closes.min()
+            mae_n = max(0, entry_price - min_close)
 
             # Normalize by ATR at entry
             result['mfe_norm'][n] = mfe_n / atr_at_entry
