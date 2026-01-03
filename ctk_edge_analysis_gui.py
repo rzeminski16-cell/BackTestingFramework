@@ -5,20 +5,25 @@ A specialized GUI for analyzing entry edge and R-multiples from existing trade l
 
 Key Features:
 - Load multiple trade log CSV files at once
-- Select individual trades to examine their E-ratio over time
-- Configurable price data path for loading historical data
-- Four visualization tabs:
-  1. E-ratio: Entry edge for selected trade over different time horizons
+- Configurable price data path for loading historical data (TICKER_daily.csv format)
+- Three visualization tabs:
+  1. E-ratio: Aggregate entry edge across all trades per horizon
   2. R-multiple: Distribution of all trade outcomes
-  3. Summary: Aggregate E-ratio analysis (% of trades with E-ratio > 1 per day)
-  4. Trade Details: Detailed view of selected trade
+  3. Trade Details: Detailed view of selected trade
 
-E-ratio Formula (for a single trade):
-    E-ratio(n) = (MFE_n / ATR) / (MAE_n / ATR)
+E-ratio Formula (aggregate across all trades):
+    For each horizon n (days after entry):
+    1. Calculate MFE_n and MAE_n for each trade
+    2. Normalize by ATR at entry: NormMFE = MFE/ATR, NormMAE = MAE/ATR
+    3. Average across all trades: AvgNormMFE_n, AvgNormMAE_n
+    4. E-ratio(n) = AvgNormMFE_n / AvgNormMAE_n
+
     Where:
     - MFE_n = Maximum Favorable Excursion over n days from entry
     - MAE_n = Maximum Adverse Excursion over n days from entry
     - ATR = Average True Range at entry (volatility normalization)
+
+    E-ratio > 1 indicates positive edge at that horizon
 
 R-multiple Formula:
     R-multiple = (Exit Price - Entry Price) / (Entry Price - Stop Loss)
@@ -166,7 +171,7 @@ class TradeLogLoader:
 # =============================================================================
 
 class ERatioCalculator:
-    """Calculates E-ratio for individual trades using historical price data."""
+    """Calculates aggregate E-ratio across all trades using historical price data."""
 
     def __init__(self, data_path: Path):
         self.data_path = data_path
@@ -201,26 +206,20 @@ class ERatioCalculator:
             print(f"Error loading price data for {symbol}: {e}")
             return None
 
-    def calculate_for_trade(self, trade: TradeLogEntry, max_days: int = 30) -> Dict[str, Any]:
+    def calculate_trade_excursions(self, trade: TradeLogEntry, max_days: int = 30) -> Dict[str, Any]:
         """
-        Calculate E-ratio curve for a single trade.
-
-        Args:
-            trade: Trade log entry
-            max_days: Maximum days to calculate forward
+        Calculate MFE and MAE for each horizon for a single trade.
 
         Returns:
             Dict containing:
-            - e_ratios: Dict[int, float] mapping day -> e_ratio
-            - mfe_atr: Dict[int, float] mapping day -> MFE/ATR
-            - mae_atr: Dict[int, float] mapping day -> MAE/ATR
+            - mfe_norm: Dict[int, float] mapping day -> normalized MFE (MFE/ATR)
+            - mae_norm: Dict[int, float] mapping day -> normalized MAE (MAE/ATR)
             - atr_at_entry: ATR value at entry
             - error: Optional error message
         """
         result = {
-            'e_ratios': {},
-            'mfe_atr': {},
-            'mae_atr': {},
+            'mfe_norm': {},
+            'mae_norm': {},
             'atr_at_entry': None,
             'error': None
         }
@@ -277,41 +276,101 @@ class ERatioCalculator:
         # Get position in the dataframe for slicing
         entry_pos = price_data.index.get_loc(entry_idx)
 
-        # Calculate MFE and MAE for each day from 1 to max_days
-        for n_days in range(1, max_days + 1):
-            end_pos = entry_pos + n_days
+        # Calculate MFE and MAE for each horizon n (1 to max_days)
+        for n in range(1, max_days + 1):
+            end_pos = entry_pos + n
             if end_pos >= len(price_data):
                 break
 
-            # Get forward data (bars after entry, up to n_days)
+            # Get forward data (bars 1 to n after entry)
             forward_data = price_data.iloc[entry_pos + 1:end_pos + 1]
 
             if len(forward_data) == 0:
                 continue
 
-            # MFE: Maximum gain from entry (highest high - entry price)
+            # MFE_n: Maximum favorable excursion = max(price - entry) over bars 1 to n
+            # For long trades: max(high - entry_price)
             max_high = forward_data['high'].max()
-            mfe = max(0, max_high - entry_price)
+            mfe_n = max(0, max_high - entry_price)
 
-            # MAE: Maximum loss from entry (entry price - lowest low)
+            # MAE_n: Maximum adverse excursion = |min(price - entry)| over bars 1 to n
+            # For long trades: entry_price - min(low), as positive number
             min_low = forward_data['low'].min()
-            mae = max(0, entry_price - min_low)
+            mae_n = max(0, entry_price - min_low)
 
-            # Normalize by ATR
-            mfe_atr = mfe / atr_at_entry
-            mae_atr = mae / atr_at_entry
+            # Normalize by ATR at entry
+            result['mfe_norm'][n] = mfe_n / atr_at_entry
+            result['mae_norm'][n] = mae_n / atr_at_entry
 
-            result['mfe_atr'][n_days] = mfe_atr
-            result['mae_atr'][n_days] = mae_atr
+        return result
 
-            # E-ratio = MFE/ATR divided by MAE/ATR
-            # If MAE is 0, the E-ratio would be infinite (perfect entry)
-            if mae_atr > 0:
-                e_ratio = mfe_atr / mae_atr
-            else:
-                e_ratio = float('inf') if mfe_atr > 0 else 1.0
+    def calculate_aggregate_eratio(self, trades: List[TradeLogEntry], max_days: int = 30,
+                                    progress_callback=None) -> Dict[str, Any]:
+        """
+        Calculate aggregate E-ratio across all trades for each horizon.
 
-            result['e_ratios'][n_days] = e_ratio
+        For each horizon n:
+        1. Collect normalized MFE and MAE from all trades
+        2. Compute average normalized MFE and MAE
+        3. E-ratio_n = AvgNormMFE_n / AvgNormMAE_n
+
+        Returns:
+            Dict containing:
+            - e_ratios: Dict[int, float] mapping horizon -> E-ratio
+            - avg_mfe_norm: Dict[int, float] mapping horizon -> avg normalized MFE
+            - avg_mae_norm: Dict[int, float] mapping horizon -> avg normalized MAE
+            - trades_per_horizon: Dict[int, int] mapping horizon -> number of trades with data
+            - trades_analyzed: int - total trades successfully analyzed
+            - trades_with_errors: int - trades that had errors
+            - errors: List[str] - error messages
+        """
+        result = {
+            'e_ratios': {},
+            'avg_mfe_norm': {},
+            'avg_mae_norm': {},
+            'trades_per_horizon': {},
+            'trades_analyzed': 0,
+            'trades_with_errors': 0,
+            'errors': []
+        }
+
+        # Collect all normalized MFE/MAE values per horizon
+        all_mfe_norm: Dict[int, List[float]] = {n: [] for n in range(1, max_days + 1)}
+        all_mae_norm: Dict[int, List[float]] = {n: [] for n in range(1, max_days + 1)}
+
+        for i, trade in enumerate(trades):
+            if progress_callback:
+                progress_callback(i + 1, len(trades))
+
+            excursions = self.calculate_trade_excursions(trade, max_days)
+
+            if excursions['error']:
+                result['trades_with_errors'] += 1
+                if len(result['errors']) < 10:  # Limit error messages
+                    result['errors'].append(f"{trade.symbol}: {excursions['error']}")
+                continue
+
+            if excursions['mfe_norm']:
+                result['trades_analyzed'] += 1
+                for n in excursions['mfe_norm']:
+                    all_mfe_norm[n].append(excursions['mfe_norm'][n])
+                    all_mae_norm[n].append(excursions['mae_norm'][n])
+
+        # Calculate averages and E-ratio for each horizon
+        for n in range(1, max_days + 1):
+            if all_mfe_norm[n] and all_mae_norm[n]:
+                avg_mfe = sum(all_mfe_norm[n]) / len(all_mfe_norm[n])
+                avg_mae = sum(all_mae_norm[n]) / len(all_mae_norm[n])
+
+                result['avg_mfe_norm'][n] = avg_mfe
+                result['avg_mae_norm'][n] = avg_mae
+                result['trades_per_horizon'][n] = len(all_mfe_norm[n])
+
+                # E-ratio = AvgNormMFE / AvgNormMAE
+                if avg_mae > 0:
+                    result['e_ratios'][n] = avg_mfe / avg_mae
+                else:
+                    result['e_ratios'][n] = float('inf') if avg_mfe > 0 else 1.0
 
         return result
 
@@ -347,7 +406,6 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
         self.current_trades: List[TradeLogEntry] = []
         self.selected_trade: Optional[TradeLogEntry] = None
         self.max_eratio_days = 30
-        self.eratio_cache: Dict[str, Dict[str, Any]] = {}  # Cache for aggregate E-ratio
 
         self._create_layout()
 
@@ -484,7 +542,7 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
         # Instructions
         self.instructions_label = Theme.create_label(
             list_content,
-            "Load a trade log CSV file to begin.\nSelect a trade to view its E-ratio.",
+            "Load trade log CSV files to begin.\nSelect a trade to view its details.",
             text_color=Colors.TEXT_MUTED,
             justify="left"
         )
@@ -502,13 +560,11 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
         # Create tabs
         self.tabview.add("E-Ratio")
         self.tabview.add("R-Multiple")
-        self.tabview.add("Summary")
         self.tabview.add("Trade Details")
 
         # Initialize tab contents
         self._create_eratio_tab(self.tabview.tab("E-Ratio"))
         self._create_rmultiple_tab(self.tabview.tab("R-Multiple"))
-        self._create_summary_tab(self.tabview.tab("Summary"))
         self._create_details_tab(self.tabview.tab("Trade Details"))
 
     def _create_eratio_tab(self, parent):
@@ -519,12 +575,13 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
         # Placeholder message
         self.eratio_placeholder = Theme.create_label(
             self.eratio_frame,
-            "Select a trade from the list to view its E-ratio curve.\n\n"
-            "E-ratio measures entry edge by comparing:\n"
-            "• MFE (Maximum Favorable Excursion) - how far price moved in your favor\n"
-            "• MAE (Maximum Adverse Excursion) - how far price moved against you\n\n"
-            "Both are normalized by ATR for volatility adjustment.\n"
-            "E-ratio > 1.0 indicates price moved more favorably than adversely.",
+            "Load trade logs to view aggregate E-ratio curve.\n\n"
+            "E-ratio measures entry edge across ALL trades by comparing:\n"
+            "• AvgNormMFE (Average normalized Maximum Favorable Excursion)\n"
+            "• AvgNormMAE (Average normalized Maximum Adverse Excursion)\n\n"
+            "For each horizon n days after entry:\n"
+            "  E-ratio(n) = AvgNormMFE(n) / AvgNormMAE(n)\n\n"
+            "E-ratio > 1.0 indicates the strategy has positive edge at that horizon.",
             text_color=Colors.TEXT_MUTED,
             wraplength=500,
             justify="left"
@@ -550,25 +607,6 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
             justify="left"
         )
         self.rmultiple_placeholder.pack(expand=True)
-
-    def _create_summary_tab(self, parent):
-        """Create aggregate E-ratio summary tab content."""
-        self.summary_frame = Theme.create_frame(parent)
-        self.summary_frame.pack(fill="both", expand=True)
-
-        # Placeholder message
-        self.summary_placeholder = Theme.create_label(
-            self.summary_frame,
-            "Load trade logs to view aggregate E-ratio summary.\n\n"
-            "This tab shows the proportion of trades with E-ratio > 1\n"
-            "for each day after entry.\n\n"
-            "E-ratio > 1 means the trade moved more favorably than adversely\n"
-            "(positive edge on entry).",
-            text_color=Colors.TEXT_MUTED,
-            wraplength=500,
-            justify="left"
-        )
-        self.summary_placeholder.pack(expand=True)
 
     def _create_details_tab(self, parent):
         """Create trade details tab content."""
@@ -612,7 +650,6 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
 
         self.data_path = new_path
         self.eratio_calculator.set_data_path(self.data_path)
-        self.eratio_cache.clear()  # Clear cache when path changes
 
         show_info(self, "Path Updated", f"Price data path set to:\n{self.data_path}")
 
@@ -633,7 +670,6 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
             # Load all selected files
             trades = self.trade_loader.load_multiple([Path(f) for f in filepaths])
             self.current_trades = trades
-            self.eratio_cache.clear()  # Clear E-ratio cache for new trades
 
             # Update UI
             if len(filepaths) == 1:
@@ -648,8 +684,8 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
             self._populate_trade_list()
 
             # Update charts
+            self._update_eratio_chart()
             self._update_rmultiple_chart()
-            self._update_summary_chart()
 
         except Exception as e:
             show_error(self, "Error Loading Files", str(e))
@@ -741,20 +777,17 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
         self._populate_trade_list(self.search_var.get())
 
     def _on_trade_selected(self, trade: TradeLogEntry):
-        """Handle trade selection."""
+        """Handle trade selection - shows trade details."""
         self.selected_trade = trade
-
-        # Update E-ratio chart
-        self._update_eratio_chart(trade)
 
         # Update details tab
         self._update_details_tab(trade)
 
-        # Switch to E-ratio tab
-        self.tabview.set("E-Ratio")
+        # Switch to Trade Details tab
+        self.tabview.set("Trade Details")
 
-    def _update_eratio_chart(self, trade: TradeLogEntry):
-        """Update E-ratio chart for selected trade."""
+    def _update_eratio_chart(self):
+        """Update aggregate E-ratio chart across all trades."""
         # Clear existing content
         for widget in self.eratio_frame.winfo_children():
             widget.destroy()
@@ -767,28 +800,52 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
             ).pack(expand=True)
             return
 
+        if not self.current_trades:
+            Theme.create_label(
+                self.eratio_frame,
+                "No trades loaded.",
+                text_color=Colors.TEXT_MUTED
+            ).pack(expand=True)
+            return
+
+        # Show loading message
+        loading_label = Theme.create_label(
+            self.eratio_frame,
+            "Calculating aggregate E-ratio across all trades...\nThis may take a moment.",
+            text_color=Colors.TEXT_MUTED
+        )
+        loading_label.pack(expand=True)
+        self.update_idletasks()
+
         # Get max days setting
         try:
             max_days = int(self.max_days_var.get())
         except ValueError:
             max_days = 30
 
-        # Calculate E-ratio
-        result = self.eratio_calculator.calculate_for_trade(trade, max_days)
+        # Calculate aggregate E-ratio
+        result = self.eratio_calculator.calculate_aggregate_eratio(self.current_trades, max_days)
 
-        if result['error']:
+        # Remove loading message
+        loading_label.destroy()
+
+        if result['trades_analyzed'] == 0:
+            error_msg = "Could not calculate E-ratio for any trades."
+            if result['errors']:
+                error_msg += f"\n\nSample errors:\n" + "\n".join(result['errors'][:5])
+            error_msg += "\n\nMake sure the Price Data Path is configured correctly."
             Theme.create_label(
                 self.eratio_frame,
-                f"Error calculating E-ratio:\n{result['error']}",
+                error_msg,
                 text_color=Colors.ERROR,
-                wraplength=400
+                wraplength=500
             ).pack(expand=True)
             return
 
         if not result['e_ratios']:
             Theme.create_label(
                 self.eratio_frame,
-                "No E-ratio data available for this trade.",
+                "No E-ratio data available.",
                 text_color=Colors.TEXT_MUTED
             ).pack(expand=True)
             return
@@ -796,7 +853,7 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
         # Create figure
         fig = Figure(figsize=(10, 6), facecolor=Colors.BG_DARK)
 
-        # Create two subplots - E-ratio on top, MFE/MAE on bottom
+        # Create two subplots - E-ratio on top, AvgMFE/AvgMAE on bottom
         ax1 = fig.add_subplot(211)
         ax2 = fig.add_subplot(212)
 
@@ -816,28 +873,28 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
         ax1.plot(days, display_ratios, color=Colors.PRIMARY_LIGHT, linewidth=2, marker='o', markersize=4)
         ax1.axhline(y=1.0, color=Colors.TEXT_MUTED, linestyle='--', alpha=0.7, label='E-ratio = 1.0 (no edge)')
         ax1.fill_between(days, 1.0, display_ratios, where=[r > 1 for r in display_ratios],
-                         color=Colors.SUCCESS, alpha=0.3, label='Favorable')
+                         color=Colors.SUCCESS, alpha=0.3, label='Positive edge')
         ax1.fill_between(days, 1.0, display_ratios, where=[r < 1 for r in display_ratios],
-                         color=Colors.ERROR, alpha=0.3, label='Unfavorable')
+                         color=Colors.ERROR, alpha=0.3, label='Negative edge')
 
         ax1.set_ylabel('E-Ratio', color=Colors.TEXT_PRIMARY, fontsize=10)
-        ax1.set_title(f'E-Ratio for {trade.symbol} (Entry: {trade.entry_date.strftime("%Y-%m-%d")})',
+        ax1.set_title(f'Aggregate E-Ratio Across {result["trades_analyzed"]} Trades',
                       color=Colors.TEXT_PRIMARY, fontsize=12, pad=10)
         ax1.legend(facecolor=Colors.SURFACE, edgecolor=Colors.BORDER,
                    labelcolor=Colors.TEXT_PRIMARY, fontsize=8)
         ax1.grid(True, alpha=0.3, color=Colors.BORDER)
         ax1.set_xlim(0, max(days) + 1)
 
-        # Plot MFE and MAE
-        mfe_values = [result['mfe_atr'].get(d, 0) for d in days]
-        mae_values = [result['mae_atr'].get(d, 0) for d in days]
+        # Plot Average Normalized MFE and MAE
+        mfe_values = [result['avg_mfe_norm'].get(d, 0) for d in days]
+        mae_values = [result['avg_mae_norm'].get(d, 0) for d in days]
 
-        ax2.plot(days, mfe_values, color=Colors.SUCCESS, linewidth=2, marker='o', markersize=4, label='MFE/ATR')
-        ax2.plot(days, mae_values, color=Colors.ERROR, linewidth=2, marker='o', markersize=4, label='MAE/ATR')
+        ax2.plot(days, mfe_values, color=Colors.SUCCESS, linewidth=2, marker='o', markersize=4, label='Avg Norm MFE')
+        ax2.plot(days, mae_values, color=Colors.ERROR, linewidth=2, marker='o', markersize=4, label='Avg Norm MAE')
 
-        ax2.set_xlabel('Days After Entry', color=Colors.TEXT_PRIMARY, fontsize=10)
+        ax2.set_xlabel('Days After Entry (Horizon)', color=Colors.TEXT_PRIMARY, fontsize=10)
         ax2.set_ylabel('ATR Multiples', color=Colors.TEXT_PRIMARY, fontsize=10)
-        ax2.set_title('Maximum Favorable vs Adverse Excursion (ATR-normalized)',
+        ax2.set_title('Average Normalized MFE vs MAE Across All Trades',
                       color=Colors.TEXT_PRIMARY, fontsize=11, pad=10)
         ax2.legend(facecolor=Colors.SURFACE, edgecolor=Colors.BORDER,
                    labelcolor=Colors.TEXT_PRIMARY, fontsize=8)
@@ -860,12 +917,16 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
         max_day = days[ratios.index(max_eratio)]
         max_eratio_display = f"{max_eratio:.2f}" if max_eratio < 100 else "inf"
 
+        # Find first day where E-ratio > 1
+        edge_days = [d for d in days if result['e_ratios'][d] > 1]
+        first_edge_day = min(edge_days) if edge_days else "N/A"
+
         Theme.create_label(
             stats_frame,
-            f"ATR at Entry: {result['atr_at_entry']:.4f} | "
+            f"Trades Analyzed: {result['trades_analyzed']} | "
+            f"Errors: {result['trades_with_errors']} | "
             f"Peak E-Ratio: {max_eratio_display} (day {max_day}) | "
-            f"Entry Price: ${trade.entry_price:.2f} | "
-            f"Stop Loss: ${trade.initial_stop_loss:.2f}" if trade.initial_stop_loss else "",
+            f"First Day with Edge: {first_edge_day}",
             text_color=Colors.TEXT_SECONDARY
         ).pack()
 
@@ -963,168 +1024,6 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
             f"Avg Win: {avg_win_r:.2f}R | "
             f"Avg Loss: {avg_loss_r:.2f}R | "
             f"Total Trades: {len(r_multiples)}",
-            text_color=Colors.TEXT_SECONDARY
-        ).pack()
-
-    def _update_summary_chart(self):
-        """Update aggregate E-ratio summary chart showing % of trades with E-ratio > 1 per day."""
-        # Clear existing content
-        for widget in self.summary_frame.winfo_children():
-            widget.destroy()
-
-        if not MATPLOTLIB_AVAILABLE:
-            Theme.create_label(
-                self.summary_frame,
-                "Matplotlib not available. Install it with: pip install matplotlib",
-                text_color=Colors.ERROR
-            ).pack(expand=True)
-            return
-
-        if not self.current_trades:
-            Theme.create_label(
-                self.summary_frame,
-                "No trades loaded.",
-                text_color=Colors.TEXT_MUTED
-            ).pack(expand=True)
-            return
-
-        # Show loading message
-        loading_label = Theme.create_label(
-            self.summary_frame,
-            "Calculating E-ratios for all trades...\nThis may take a moment.",
-            text_color=Colors.TEXT_MUTED
-        )
-        loading_label.pack(expand=True)
-        self.update_idletasks()
-
-        # Get max days setting
-        try:
-            max_days = int(self.max_days_var.get())
-        except ValueError:
-            max_days = 30
-
-        # Calculate E-ratio for each trade (use cache where possible)
-        all_eratios: Dict[int, List[float]] = {d: [] for d in range(1, max_days + 1)}
-        trades_with_data = 0
-        trades_with_errors = 0
-
-        for trade in self.current_trades:
-            # Check cache first
-            cache_key = f"{trade.trade_id}_{trade.symbol}_{trade.entry_date}"
-            if cache_key in self.eratio_cache:
-                result = self.eratio_cache[cache_key]
-            else:
-                result = self.eratio_calculator.calculate_for_trade(trade, max_days)
-                self.eratio_cache[cache_key] = result
-
-            if result['error']:
-                trades_with_errors += 1
-                continue
-
-            if result['e_ratios']:
-                trades_with_data += 1
-                for day, eratio in result['e_ratios'].items():
-                    if day <= max_days:
-                        all_eratios[day].append(eratio)
-
-        # Remove loading message
-        loading_label.destroy()
-
-        if trades_with_data == 0:
-            Theme.create_label(
-                self.summary_frame,
-                f"Could not calculate E-ratio for any trades.\n"
-                f"{trades_with_errors} trades had errors (likely missing price data).\n\n"
-                f"Make sure the Price Data Path is configured correctly.",
-                text_color=Colors.ERROR,
-                wraplength=500
-            ).pack(expand=True)
-            return
-
-        # Calculate percentage with E-ratio > 1 for each day
-        days = []
-        percentages = []
-        avg_eratios = []
-
-        for day in range(1, max_days + 1):
-            if all_eratios[day]:
-                days.append(day)
-                above_one = sum(1 for e in all_eratios[day] if e > 1)
-                pct = (above_one / len(all_eratios[day])) * 100
-                percentages.append(pct)
-                # Cap extreme values for average calculation
-                capped = [min(e, 10) for e in all_eratios[day]]
-                avg_eratios.append(sum(capped) / len(capped))
-
-        if not days:
-            Theme.create_label(
-                self.summary_frame,
-                "No E-ratio data available.",
-                text_color=Colors.TEXT_MUTED
-            ).pack(expand=True)
-            return
-
-        # Create figure with two subplots
-        fig = Figure(figsize=(10, 6), facecolor=Colors.BG_DARK)
-
-        ax1 = fig.add_subplot(211)  # Percentage above 1
-        ax2 = fig.add_subplot(212)  # Average E-ratio
-
-        for ax in [ax1, ax2]:
-            ax.set_facecolor(Colors.SURFACE)
-            ax.tick_params(colors=Colors.TEXT_PRIMARY)
-            for spine in ax.spines.values():
-                spine.set_color(Colors.BORDER)
-
-        # Color bars based on percentage (green if > 50%, red if < 50%)
-        colors1 = [Colors.SUCCESS if p >= 50 else Colors.ERROR for p in percentages]
-
-        # Plot percentage with E-ratio > 1
-        bars1 = ax1.bar(days, percentages, color=colors1, edgecolor=Colors.BG_DARK, alpha=0.8)
-        ax1.axhline(y=50, color=Colors.TEXT_MUTED, linestyle='--', alpha=0.7, label='50% threshold')
-        ax1.set_ylabel('% of Trades with E-ratio > 1', color=Colors.TEXT_PRIMARY, fontsize=10)
-        ax1.set_title('Proportion of Trades with Positive Edge (E-ratio > 1) by Day',
-                      color=Colors.TEXT_PRIMARY, fontsize=12, pad=10)
-        ax1.set_ylim(0, 100)
-        ax1.grid(True, alpha=0.3, color=Colors.BORDER, axis='y')
-        ax1.legend(facecolor=Colors.SURFACE, edgecolor=Colors.BORDER,
-                   labelcolor=Colors.TEXT_PRIMARY, fontsize=8)
-
-        # Color bars based on average E-ratio (green if > 1, red if < 1)
-        colors2 = [Colors.SUCCESS if a >= 1 else Colors.ERROR for a in avg_eratios]
-
-        # Plot average E-ratio
-        bars2 = ax2.bar(days, avg_eratios, color=colors2, edgecolor=Colors.BG_DARK, alpha=0.8)
-        ax2.axhline(y=1.0, color=Colors.TEXT_MUTED, linestyle='--', alpha=0.7, label='E-ratio = 1 (no edge)')
-        ax2.set_xlabel('Days After Entry', color=Colors.TEXT_PRIMARY, fontsize=10)
-        ax2.set_ylabel('Average E-ratio', color=Colors.TEXT_PRIMARY, fontsize=10)
-        ax2.set_title('Average E-ratio Across All Trades by Day',
-                      color=Colors.TEXT_PRIMARY, fontsize=11, pad=10)
-        ax2.grid(True, alpha=0.3, color=Colors.BORDER, axis='y')
-        ax2.legend(facecolor=Colors.SURFACE, edgecolor=Colors.BORDER,
-                   labelcolor=Colors.TEXT_PRIMARY, fontsize=8)
-
-        fig.tight_layout()
-
-        # Embed in tkinter
-        canvas = FigureCanvasTkAgg(fig, self.summary_frame)
-        canvas.draw()
-        canvas.get_tk_widget().pack(fill="both", expand=True)
-
-        # Stats panel
-        stats_frame = Theme.create_frame(self.summary_frame)
-        stats_frame.pack(fill="x", pady=(Sizes.PAD_S, 0))
-
-        # Find best day
-        best_day = days[percentages.index(max(percentages))]
-        best_pct = max(percentages)
-
-        Theme.create_label(
-            stats_frame,
-            f"Trades Analyzed: {trades_with_data} | "
-            f"Errors: {trades_with_errors} | "
-            f"Best Day: Day {best_day} ({best_pct:.1f}% with E-ratio > 1) | "
-            f"Overall Avg E-ratio: {sum(avg_eratios)/len(avg_eratios):.2f}",
             text_color=Colors.TEXT_SECONDARY
         ).pack()
 
