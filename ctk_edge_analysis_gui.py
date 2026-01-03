@@ -67,6 +67,7 @@ class TradeLogEntry:
         self.exit_date = self._parse_date(row.get('exit_date'))
         self.exit_price = float(row.get('exit_price', 0))
         self.quantity = float(row.get('quantity', 0))
+        self.side = str(row.get('side', 'LONG')).upper()  # 'LONG' or 'SHORT'
         self.initial_stop_loss = self._parse_float(row.get('initial_stop_loss'))
         self.final_stop_loss = self._parse_float(row.get('final_stop_loss'))
         self.pl = float(row.get('pl', 0))
@@ -76,6 +77,11 @@ class TradeLogEntry:
 
         # Calculate R-multiple if we have stop loss
         self.r_multiple = self._calculate_r_multiple()
+
+    @property
+    def is_long(self) -> bool:
+        """Returns True if this is a long trade."""
+        return self.side == 'LONG'
 
     def _parse_date(self, val) -> Optional[datetime]:
         if pd.isna(val) or val is None:
@@ -245,17 +251,26 @@ class ERatioCalculator:
         price_data = price_data.copy()
         price_data['date'] = pd.to_datetime(price_data['date'])
 
-        # Find closest date on or after entry
-        mask = price_data['date'] >= entry_date
-        if not mask.any():
-            result['error'] = f"No price data after entry date {entry_date}"
-            return result
+        # Find exact date match first, then closest date on or after entry
+        entry_date_only = pd.to_datetime(entry_date).normalize()  # Remove time component
+        exact_match = price_data['date'] == entry_date_only
 
-        entry_idx = price_data[mask].index[0]
+        if exact_match.any():
+            entry_idx = price_data[exact_match].index[0]
+        else:
+            # Fallback to first date >= entry_date
+            mask = price_data['date'] >= entry_date
+            if not mask.any():
+                result['error'] = f"No price data on or after entry date {entry_date}"
+                return result
+            entry_idx = price_data[mask].index[0]
+
         entry_bar = price_data.loc[entry_idx]
-        entry_price = trade.entry_price
 
-        # Get ATR at entry
+        # Use close from price data as entry price (ensures consistency with future closes)
+        entry_price = entry_bar['close']
+
+        # Get ATR at entry (ATR is already calculated from adjusted close prices)
         atr_col = None
         for col in ['atr_14_atr', 'atr_14', 'atr']:
             if col in price_data.columns:
@@ -270,16 +285,6 @@ class ERatioCalculator:
         if pd.isna(atr_at_entry) or atr_at_entry <= 0:
             result['error'] = f"Invalid ATR at entry: {atr_at_entry}"
             return result
-
-        # Check if prices need adjustment (high/low may be unadjusted while close is adjusted)
-        # If open/high/low are significantly different from close, calculate adjustment ratio
-        entry_open = entry_bar.get('open', entry_bar['close'])
-        entry_close = entry_bar['close']
-
-        if entry_open > 0 and abs(entry_open - entry_close) / entry_open > 0.3:
-            # Large discrepancy suggests split adjustment - scale ATR to match adjusted prices
-            adjustment_ratio = entry_close / entry_open
-            atr_at_entry = atr_at_entry * adjustment_ratio
 
         result['atr_at_entry'] = float(atr_at_entry)
 
@@ -298,17 +303,20 @@ class ERatioCalculator:
             if len(forward_data) == 0:
                 continue
 
-            # Use 'close' prices for MFE/MAE since high/low may be unadjusted
-            # while close is typically split-adjusted (matching trade entry prices)
-            closes = forward_data['close']
-
-            # MFE_n: Maximum favorable excursion = max(close - entry) over bars 1 to n
+            # Use 'close' prices for MFE/MAE (adjusted prices, consistent with entry_price)
+            closes = forward_data['close'].values
             max_close = closes.max()
-            mfe_n = max(0, max_close - entry_price)
-
-            # MAE_n: Maximum adverse excursion = |min(close - entry)| over bars 1 to n
             min_close = closes.min()
-            mae_n = max(0, entry_price - min_close)
+
+            # Calculate MFE and MAE based on trade direction
+            if trade.is_long:
+                # Long trade: profit when price rises, loss when price falls
+                mfe_n = max(0, max_close - entry_price)
+                mae_n = max(0, entry_price - min_close)
+            else:
+                # Short trade: profit when price falls, loss when price rises
+                mfe_n = max(0, entry_price - min_close)
+                mae_n = max(0, max_close - entry_price)
 
             # Normalize by ATR at entry
             result['mfe_norm'][n] = mfe_n / atr_at_entry
