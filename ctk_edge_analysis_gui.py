@@ -457,31 +457,44 @@ class ERatioValidator:
     # 4. Bias & Statistical Checks
     # -------------------------------------------------------------------------
 
-    def validate_sample_size_decay(self, trades_per_horizon: Dict[int, int]) -> bool:
-        """Validate trade count decreases monotonically."""
+    def validate_sample_size_consistency(self, trades_per_horizon: Dict[int, int]) -> bool:
+        """
+        Validate trade count is CONSISTENT across all horizons.
+
+        With the survivorship bias fix, we pre-filter trades to ensure
+        all included trades have data for all horizons. This check verifies
+        that the sample size remains constant.
+        """
+        if not trades_per_horizon:
+            return True
+
         horizons = sorted(trades_per_horizon.keys())
         counts = [trades_per_horizon[h] for h in horizons]
 
-        # Check if generally decreasing (allow some tolerance)
-        is_decreasing = True
-        violations = 0
-        for i in range(1, len(counts)):
-            if counts[i] > counts[i-1]:
-                violations += 1
+        min_count = min(counts)
+        max_count = max(counts)
+        is_consistent = min_count == max_count
 
-        # Allow up to 5% violations (some fluctuation is normal due to date gaps)
-        violation_pct = violations / len(counts) * 100 if counts else 0
-        is_decreasing = violation_pct < 5
+        if is_consistent:
+            self.report.add_result(ValidationResult(
+                "sample_consistency",
+                True,
+                f"Sample size consistent: {min_count} trades across all {len(horizons)} horizons",
+                severity="info",
+                value=min_count
+            ), "bias")
+        else:
+            # If not consistent, check how much variation
+            variation_pct = (max_count - min_count) / max_count * 100 if max_count > 0 else 0
+            self.report.add_result(ValidationResult(
+                "sample_consistency",
+                False,
+                f"Sample size varies: {min_count}-{max_count} trades ({variation_pct:.1f}% variation)",
+                severity="warning",
+                value=variation_pct
+            ), "bias")
 
-        self.report.add_result(ValidationResult(
-            "sample_decay",
-            is_decreasing,
-            f"Trade count decay: {violations} non-decreasing steps ({violation_pct:.1f}%)",
-            severity="info" if is_decreasing else "warning",
-            value=violation_pct
-        ), "bias")
-
-        return is_decreasing
+        return is_consistent
 
     def validate_survivorship(self, trades_per_horizon: Dict[int, int],
                                total_trades: int, day: int = 200) -> bool:
@@ -693,6 +706,171 @@ class ERatioCalculator:
         self._price_cache.clear()
         self._validated_symbols.clear()
 
+    def debug_single_trade(self, trade: TradeLogEntry, max_days: int = 30) -> None:
+        """Print debug info for a single trade's MFE/MAE calculation."""
+        print(f"\n{'='*60}")
+        print(f"DEBUG: Trade {trade.trade_id} ({trade.symbol})")
+        print(f"  Entry: {trade.entry_date}, Price: {trade.entry_price}")
+        print(f"  Side: {trade.side} (is_long={trade.is_long})")
+        print(f"{'='*60}")
+
+        price_data = self._get_price_data(trade.symbol, validate=False)
+        if price_data is None:
+            print("  ERROR: Could not load price data")
+            return
+
+        price_data = price_data.copy()
+        price_data['date'] = pd.to_datetime(price_data['date'])
+
+        # Find entry
+        entry_date_only = pd.to_datetime(trade.entry_date).normalize()
+        exact_match = price_data['date'] == entry_date_only
+        if exact_match.any():
+            entry_idx = price_data[exact_match].index[0]
+        else:
+            mask = price_data['date'] >= trade.entry_date
+            if not mask.any():
+                print("  ERROR: No price data after entry")
+                return
+            entry_idx = price_data[mask].index[0]
+
+        entry_bar = price_data.loc[entry_idx]
+        entry_price = entry_bar['close']
+        entry_pos = price_data.index.get_loc(entry_idx)
+        df_len = len(price_data)
+
+        # Get ATR
+        atr_col = None
+        for col in ['atr_14_atr', 'atr_14', 'atr']:
+            if col in price_data.columns:
+                atr_col = col
+                break
+        atr_at_entry = entry_bar[atr_col] if atr_col else 1.0
+
+        print(f"  Entry Position: {entry_pos}, Data Length: {df_len}")
+        print(f"  Entry Price (from data): {entry_price:.4f}")
+        print(f"  ATR at Entry: {atr_at_entry:.4f}")
+        print(f"  Max Horizon Available: {df_len - entry_pos - 1}")
+        print()
+        print(f"  {'n':>3} | {'MFE':>10} | {'MAE':>10} | {'NormMFE':>10} | {'NormMAE':>10} | {'E-ratio':>10} | {'#bars':>5}")
+        print(f"  {'-'*3}-+-{'-'*10}-+-{'-'*10}-+-{'-'*10}-+-{'-'*10}-+-{'-'*10}-+-{'-'*5}")
+
+        prev_mfe, prev_mae = 0, 0
+        for n in range(1, min(max_days + 1, df_len - entry_pos)):
+            forward_data = price_data.iloc[entry_pos + 1:entry_pos + n + 1]
+            closes = forward_data['close'].values
+            max_close = closes.max()
+            min_close = closes.min()
+
+            if trade.is_long:
+                mfe_n = max(0, max_close - entry_price)
+                mae_n = max(0, entry_price - min_close)
+            else:
+                mfe_n = max(0, entry_price - min_close)
+                mae_n = max(0, max_close - entry_price)
+
+            norm_mfe = mfe_n / atr_at_entry
+            norm_mae = mae_n / atr_at_entry
+            e_ratio = norm_mfe / norm_mae if norm_mae > 0 else float('inf')
+
+            # Check monotonicity
+            mfe_flag = "!" if mfe_n < prev_mfe else " "
+            mae_flag = "!" if mae_n < prev_mae else " "
+
+            print(f"  {n:3d} | {mfe_n:10.4f}{mfe_flag}| {mae_n:10.4f}{mae_flag}| {norm_mfe:10.4f} | {norm_mae:10.4f} | {e_ratio:10.4f} | {len(closes):5d}")
+
+            prev_mfe, prev_mae = mfe_n, mae_n
+
+    def debug_aggregate_diagnostics(self, trades: List[TradeLogEntry], max_days: int = 30,
+                                      use_consistent_sample: bool = True) -> Dict[str, Any]:
+        """
+        Compute aggregate E-ratio with detailed diagnostics.
+
+        Args:
+            trades: List of trades to analyze
+            max_days: Maximum horizon to analyze
+            use_consistent_sample: If True (default), only include trades with >= max_days
+                                   forward data to avoid survivorship bias
+        """
+        print(f"\n{'='*80}")
+        print("AGGREGATE E-RATIO DIAGNOSTICS")
+        print(f"{'='*80}")
+        print(f"Total trades: {len(trades)}")
+        print(f"Consistent sample mode: {use_consistent_sample}")
+
+        # Determine max horizon for each trade
+        trade_max_horizons = {}
+        for trade in trades:
+            max_horizon = self._get_trade_max_horizon(trade)
+            trade_max_horizons[trade] = max_horizon
+
+        # Filter trades if using consistent sample
+        if use_consistent_sample:
+            eligible_trades = [t for t in trades if trade_max_horizons[t] >= max_days]
+            filtered_count = len(trades) - len(eligible_trades)
+            print(f"Filtered {filtered_count} trades with <{max_days} days forward data")
+            print(f"Eligible trades: {len(eligible_trades)}")
+        else:
+            eligible_trades = trades
+            print("WARNING: Not using consistent sample - survivorship bias may occur!")
+
+        # Print horizon distribution
+        print(f"\nTrade Horizon Distribution (all trades):")
+        horizon_counts = {}
+        for h in trade_max_horizons.values():
+            horizon_counts[h] = horizon_counts.get(h, 0) + 1
+        for h in sorted(horizon_counts.keys())[-10:]:  # Show last 10
+            print(f"  Max horizon {h}: {horizon_counts[h]} trades")
+
+        # Collect data from eligible trades
+        all_mfe_norm: Dict[int, List[float]] = {n: [] for n in range(1, max_days + 1)}
+        all_mae_norm: Dict[int, List[float]] = {n: [] for n in range(1, max_days + 1)}
+
+        for trade in eligible_trades:
+            excursions = self.calculate_trade_excursions(trade, max_days, validate=False)
+            if excursions['error']:
+                continue
+            if excursions['mfe_norm']:
+                for n in excursions['mfe_norm']:
+                    all_mfe_norm[n].append(excursions['mfe_norm'][n])
+                    all_mae_norm[n].append(excursions['mae_norm'][n])
+
+        # Print aggregate stats per horizon
+        print(f"\n{'n':>3} | {'#trades':>7} | {'AvgMFE':>10} | {'AvgMAE':>10} | {'E-ratio':>10} | {'MFE_med':>10} | {'MAE_med':>10}")
+        print(f"{'-'*3}-+-{'-'*7}-+-{'-'*10}-+-{'-'*10}-+-{'-'*10}-+-{'-'*10}-+-{'-'*10}")
+
+        results = {'e_ratios': {}, 'trades_per_horizon': {}}
+
+        for n in range(1, max_days + 1):
+            if not all_mfe_norm[n]:
+                break
+            mfe_arr = np.array(all_mfe_norm[n])
+            mae_arr = np.array(all_mae_norm[n])
+
+            avg_mfe = mfe_arr.mean()
+            avg_mae = mae_arr.mean()
+            med_mfe = np.median(mfe_arr)
+            med_mae = np.median(mae_arr)
+            e_ratio = avg_mfe / avg_mae if avg_mae > 0 else float('inf')
+
+            print(f"{n:3d} | {len(mfe_arr):7d} | {avg_mfe:10.4f} | {avg_mae:10.4f} | {e_ratio:10.4f} | {med_mfe:10.4f} | {med_mae:10.4f}")
+
+            results['e_ratios'][n] = e_ratio
+            results['trades_per_horizon'][n] = len(mfe_arr)
+
+        # Sample consistency check
+        if results['trades_per_horizon']:
+            counts = list(results['trades_per_horizon'].values())
+            print(f"\nSAMPLE CONSISTENCY CHECK:")
+            print(f"  Min trades across horizons: {min(counts)}")
+            print(f"  Max trades across horizons: {max(counts)}")
+            if min(counts) == max(counts):
+                print(f"  Status: CONSISTENT - sample size is constant across all horizons")
+            else:
+                print(f"  Status: INCONSISTENT - sample varies (potential survivorship bias)")
+
+        return results
+
     def _get_price_data(self, symbol: str, validate: bool = True) -> Optional[pd.DataFrame]:
         """Get price data for a symbol, using cache if available."""
         if symbol in self._price_cache:
@@ -891,10 +1069,49 @@ class ERatioCalculator:
 
         return result
 
+    def _get_trade_max_horizon(self, trade: TradeLogEntry) -> int:
+        """
+        Determine the maximum available horizon for a trade based on price data availability.
+
+        Returns:
+            Maximum number of forward days available, or 0 if trade cannot be analyzed.
+        """
+        price_data = self._get_price_data(trade.symbol, validate=False)
+        if price_data is None:
+            return 0
+
+        entry_date = trade.entry_date
+        if entry_date is None:
+            return 0
+
+        price_data = price_data.copy()
+        price_data['date'] = pd.to_datetime(price_data['date'])
+
+        # Find entry position
+        entry_date_only = pd.to_datetime(entry_date).normalize()
+        exact_match = price_data['date'] == entry_date_only
+
+        if exact_match.any():
+            entry_idx = price_data[exact_match].index[0]
+        else:
+            mask = price_data['date'] >= entry_date
+            if not mask.any():
+                return 0
+            entry_idx = price_data[mask].index[0]
+
+        entry_pos = price_data.index.get_loc(entry_idx)
+        df_len = len(price_data)
+
+        # Maximum horizon = days of data after entry
+        return df_len - entry_pos - 1
+
     def calculate_aggregate_eratio(self, trades: List[TradeLogEntry], max_days: int = 30,
                                     progress_callback=None, validate: bool = True) -> Dict[str, Any]:
         """
         Calculate aggregate E-ratio across all trades for each horizon.
+
+        IMPORTANT: Uses a CONSISTENT SAMPLE across all horizons to avoid survivorship bias.
+        Only trades with sufficient forward data (>= max_days) are included in the calculation.
 
         For each horizon n:
         1. Collect normalized MFE and MAE from all trades
@@ -910,6 +1127,7 @@ class ERatioCalculator:
             - trades_per_horizon: Dict[int, int] mapping horizon -> number of trades with data
             - trades_analyzed: int - total trades successfully analyzed
             - trades_with_errors: int - trades that had errors
+            - trades_filtered_insufficient_data: int - trades filtered due to insufficient forward data
             - errors: List[str] - error messages
             - validation_report: ValidationReport - detailed validation results
         """
@@ -926,17 +1144,39 @@ class ERatioCalculator:
             'trades_per_horizon': {},
             'trades_analyzed': 0,
             'trades_with_errors': 0,
+            'trades_filtered_insufficient_data': 0,
             'errors': [],
             'validation_report': None
         }
+
+        # SURVIVORSHIP BIAS FIX: Pre-filter trades to ensure consistent sample
+        # Only include trades that have AT LEAST max_days of forward data
+        # This prevents the sample from shrinking at larger horizons
+        eligible_trades = []
+        for trade in trades:
+            max_horizon = self._get_trade_max_horizon(trade)
+            if max_horizon >= max_days:
+                eligible_trades.append(trade)
+            else:
+                result['trades_filtered_insufficient_data'] += 1
+
+        if validate and len(eligible_trades) < len(trades):
+            filtered_count = len(trades) - len(eligible_trades)
+            self.validator.report.add_result(ValidationResult(
+                "consistent_sample_filter",
+                True,
+                f"Filtered {filtered_count} trades with <{max_days} days forward data for consistent sampling",
+                severity="info",
+                value=filtered_count
+            ), "bias")
 
         # Collect all normalized MFE/MAE values per horizon
         all_mfe_norm: Dict[int, List[float]] = {n: [] for n in range(1, max_days + 1)}
         all_mae_norm: Dict[int, List[float]] = {n: [] for n in range(1, max_days + 1)}
 
-        for i, trade in enumerate(trades):
+        for i, trade in enumerate(eligible_trades):
             if progress_callback:
-                progress_callback(i + 1, len(trades))
+                progress_callback(i + 1, len(eligible_trades))
 
             excursions = self.calculate_trade_excursions(trade, max_days, validate=validate)
 
@@ -985,8 +1225,8 @@ class ERatioCalculator:
             self.validator.validate_eratio_bounds(result['e_ratios'])
 
             # 2. Bias & Statistical checks
-            # Sample size decay (should decrease monotonically)
-            self.validator.validate_sample_size_decay(result['trades_per_horizon'])
+            # Sample size consistency (should be constant due to survivorship bias fix)
+            self.validator.validate_sample_size_consistency(result['trades_per_horizon'])
 
             # Survivorship check (at 200 days if we have that much data)
             if max_days >= 200:
@@ -1624,12 +1864,22 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
         edge_days = [d for d in days if result['e_ratios'][d] > 1]
         first_edge_day = min(edge_days) if edge_days else "N/A"
 
+        # Build stats text with filtered trades info if applicable
+        filtered_count = result.get('trades_filtered_insufficient_data', 0)
+        stats_parts = [
+            f"Trades Analyzed: {result['trades_analyzed']}",
+        ]
+        if filtered_count > 0:
+            stats_parts.append(f"Filtered (insufficient data): {filtered_count}")
+        stats_parts.extend([
+            f"Errors: {result['trades_with_errors']}",
+            f"Peak E-Ratio: {max_eratio_display} (day {max_day})",
+            f"First Day with Edge: {first_edge_day}",
+        ])
+
         Theme.create_label(
             stats_frame,
-            f"Trades Analyzed: {result['trades_analyzed']} | "
-            f"Errors: {result['trades_with_errors']} | "
-            f"Peak E-Ratio: {max_eratio_display} (day {max_day}) | "
-            f"First Day with Edge: {first_edge_day}",
+            " | ".join(stats_parts),
             text_color=Colors.TEXT_SECONDARY
         ).pack()
 
