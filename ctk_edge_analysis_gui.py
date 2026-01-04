@@ -1771,7 +1771,7 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
             return
 
         # Create figure
-        fig = Figure(figsize=(10, 7), facecolor=Colors.BG_DARK)
+        fig = Figure(figsize=(10, 6), facecolor=Colors.BG_DARK)
 
         # Create two subplots - E-ratio on top, AvgMFE/AvgMAE on bottom
         ax1 = fig.add_subplot(211)
@@ -1786,7 +1786,6 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
         # Plot E-ratio
         days = sorted(result['e_ratios'].keys())
         ratios = [result['e_ratios'][d] for d in days]
-        trade_counts = [result['trades_per_horizon'].get(d, 0) for d in days]
 
         # Cap infinite values for display
         display_ratios = [min(r, 10) for r in ratios]
@@ -1809,24 +1808,9 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
         ax1.set_title(f'Aggregate E-Ratio Across {result["trades_analyzed"]} Trades',
                       color=Colors.TEXT_PRIMARY, fontsize=12, pad=10)
         ax1.legend(facecolor=Colors.SURFACE, edgecolor=Colors.BORDER,
-                   labelcolor=Colors.TEXT_PRIMARY, fontsize=8, loc='upper left')
+                   labelcolor=Colors.TEXT_PRIMARY, fontsize=8)
         ax1.grid(True, alpha=0.3, color=Colors.BORDER)
         ax1.set_xlim(0, max(days) + 1)
-
-        # Add secondary y-axis for trade count
-        ax1_twin = ax1.twinx()
-        ax1_twin.bar(days, trade_counts, alpha=0.3, color='#888888', width=0.8, label='Trade Count')
-        ax1_twin.set_ylabel('Trade Count', color='#888888', fontsize=10)
-        ax1_twin.tick_params(axis='y', colors='#888888')
-        ax1_twin.spines['right'].set_color('#888888')
-
-        # Set trade count y-axis to start at 0 and have some headroom
-        if trade_counts:
-            ax1_twin.set_ylim(0, max(trade_counts) * 1.5)
-
-        # Add trade count to legend
-        ax1_twin.legend(facecolor=Colors.SURFACE, edgecolor=Colors.BORDER,
-                        labelcolor='#888888', fontsize=8, loc='upper right')
 
         # Plot Average Favorable/Adverse Excursion at each horizon (point-in-time)
         favorable_values = [result['avg_mfe_norm'].get(d, 0) for d in days]
