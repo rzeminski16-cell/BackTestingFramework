@@ -4,6 +4,23 @@ A flow-based guide for developing, testing, and refining trading strategies.
 
 ---
 
+## Getting Started
+
+Launch the main menu to access all framework features:
+
+```bash
+python ctk_main_gui.py
+```
+
+The launcher provides clickable cards for:
+- **Backtesting** - Run backtests with configurable strategies
+- **Optimization** - Walk-forward parameter optimization
+- **Edge Analysis** - E-ratio and R-multiple analysis
+- **Factor Analysis** - Performance factor analysis
+- **Vulnerability Modeler** - Vulnerability score optimization
+
+---
+
 ## Overview
 
 This guide follows the complete workflow from raw data collection through strategy refinement. The process is iterative - after initial backtesting, you'll cycle through optimization, analysis, and adjustment until achieving desired results.
@@ -521,16 +538,19 @@ python ctk_edge_analysis_gui.py
 
 ### What is E-Ratio?
 
-E-ratio measures the quality of your trade entries by comparing Maximum Favorable Excursion (MFE) to Maximum Adverse Excursion (MAE):
+E-ratio measures the quality of your trade entries by comparing favorable vs adverse price movement at each time horizon:
 
 ```
 E-ratio(n) = AvgNormMFE(n) / AvgNormMAE(n)
 
 Where:
-- MFE_n = Maximum price movement in your favor over n days
-- MAE_n = Maximum price movement against you over n days
+- MFE_n = Point-in-time favorable excursion at day n (close price - entry price if favorable)
+- MAE_n = Point-in-time adverse excursion at day n (entry price - close price if adverse)
 - Normalized by ATR at entry for cross-market comparability
+- Only non-zero values are averaged to avoid market drift bias
 ```
+
+**Important**: The E-ratio calculation uses **point-in-time returns** (the price at exactly day n), not cumulative max/min. This provides a more accurate measure of entry edge at each specific horizon.
 
 | E-ratio Value | Interpretation |
 |---------------|----------------|
@@ -612,10 +632,12 @@ The E-ratio calculator includes comprehensive validation checks organized into f
 
 | Check | Description | Expected |
 |-------|-------------|----------|
-| **Sample size decay** | Trade count decreases monotonically with horizon | Natural decay |
-| **Survivorship rate** | Percentage of trades with data at late horizons | < 10% at 200 days |
+| **Sample consistency** | Trade count remains constant across horizons | ~100% (consistent sample) |
+| **Survivorship rate** | Trades are pre-filtered for data availability | ~100% at all horizons |
 | **Random baseline** | Average early E-ratio compared to 1.0 | > 1.0 for edge |
 | **Outlier impact** | Difference between raw and winsorized E-ratio | < 20% |
+
+**Note**: The E-ratio calculation uses a **consistent sample** approach - only trades with sufficient forward data for the maximum horizon are included. This ensures the same trades are analyzed at all horizons, preventing survivorship bias.
 
 ### GUI Features
 
@@ -629,6 +651,8 @@ The E-ratio calculator includes comprehensive validation checks organized into f
 #### R-Multiple Tab
 
 - **Distribution histograms**: Side-by-side view of winning and losing trades
+  - X-axis uses whole number bins (1R, 2R, 3R, etc.) for clear interpretation
+  - Y-axis uses the same scale for both charts for direct visual comparison
 - **Statistics**: Win rate, average R, average win/loss
 
 #### Validation Tab
@@ -1070,6 +1094,7 @@ After completing steps 1-8 (or 1-5 with current implementation), repeat the cycl
 
 | Task | Command |
 |------|---------|
+| **Main Launcher (Start Here)** | `python ctk_main_gui.py` |
 | **Data Collection** | `python apps/data_collection_gui.py` |
 | **Run Backtest** | `python ctk_backtest_gui.py` |
 | **Run Optimization** | `python ctk_optimization_gui.py` |
@@ -1087,15 +1112,20 @@ After completing steps 1-8 (or 1-5 with current implementation), repeat the cycl
 ```
 BackTestingFramework/
     |
-    +-- apps/                          # GUI applications
+    +-- ctk_main_gui.py                # Main launcher (start here)
+    +-- ctk_backtest_gui.py            # Backtesting GUI
+    +-- ctk_optimization_gui.py        # Optimization GUI
+    +-- ctk_edge_analysis_gui.py       # Edge Analysis GUI (E-ratio, R-multiple)
+    +-- ctk_factor_analysis_gui.py     # Factor Analysis GUI
+    +-- ctk_vulnerability_gui.py       # Vulnerability Modeler GUI
+    |
+    +-- apps/                          # Additional applications
     |   +-- data_collection_gui.py     # Data fetching interface
     |   +-- alphatrend_explorer.py     # Strategy visualization
-    |   +-- backtest_gui.py            # Alternative backtest GUI
-    |   +-- optimization_gui.py        # Alternative optimization GUI
-    |   +-- vulnerability_gui.py       # Alternative vulnerability GUI
     |
     +-- strategies/                    # Trading strategies
-    |   +-- alphatrend_strategy.py     # Included AlphaTrend strategy
+    |   +-- alphatrend_strategy.py     # Production-ready AlphaTrend strategy
+    |   +-- random_base_strategy.py    # Baseline random strategy for comparison
     |
     +-- raw_data/                      # Historical data storage
     |   +-- daily/                     # Daily price data
