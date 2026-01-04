@@ -498,19 +498,25 @@ class ERatioValidator:
 
     def validate_survivorship(self, trades_per_horizon: Dict[int, int],
                                total_trades: int, day: int = 200) -> bool:
-        """Check survivorship rate at given day."""
+        """Check survivorship rate at given day.
+
+        With consistent sample filtering (trades pre-filtered to have data at all horizons),
+        we expect 100% survivorship. A drop below 100% indicates a data issue.
+        """
         count_at_day = trades_per_horizon.get(day, 0)
         surv_rate = count_at_day / total_trades if total_trades > 0 else 0
 
-        passed = surv_rate < 0.1  # Less than 10% should remain at day 200
+        # With consistent sample filtering, we expect 100% survivorship
+        # (all trades have data at all horizons by design)
+        passed = surv_rate >= 0.99  # Allow 1% tolerance for rounding
 
         self.report.add_result(ValidationResult(
             f"survivorship_{day}",
             passed,
-            f"Survivorship at day {day}: {surv_rate*100:.1f}% ({count_at_day}/{total_trades})",
+            f"Sample consistency at day {day}: {surv_rate*100:.1f}% ({count_at_day}/{total_trades})",
             severity="warning" if not passed else "info",
             value=surv_rate,
-            expected="<10%"
+            expected="~100% (consistent sample)"
         ), "bias")
 
         return passed
