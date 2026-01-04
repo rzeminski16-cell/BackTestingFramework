@@ -752,34 +752,25 @@ class ERatioCalculator:
         print(f"  ATR at Entry: {atr_at_entry:.4f}")
         print(f"  Max Horizon Available: {df_len - entry_pos - 1}")
         print()
-        print(f"  {'n':>3} | {'MFE':>10} | {'MAE':>10} | {'NormMFE':>10} | {'NormMAE':>10} | {'E-ratio':>10} | {'#bars':>5}")
-        print(f"  {'-'*3}-+-{'-'*10}-+-{'-'*10}-+-{'-'*10}-+-{'-'*10}-+-{'-'*10}-+-{'-'*5}")
+        print(f"  {'n':>3} | {'Close@n':>10} | {'Favorable':>10} | {'Adverse':>10} | {'NormFav':>10} | {'NormAdv':>10} | {'E-ratio':>10}")
+        print(f"  {'-'*3}-+-{'-'*10}-+-{'-'*10}-+-{'-'*10}-+-{'-'*10}-+-{'-'*10}-+-{'-'*10}")
 
-        prev_mfe, prev_mae = 0, 0
         for n in range(1, min(max_days + 1, df_len - entry_pos)):
-            forward_data = price_data.iloc[entry_pos + 1:entry_pos + n + 1]
-            closes = forward_data['close'].values
-            max_close = closes.max()
-            min_close = closes.min()
+            # Get close price at exactly day n (point-in-time, not cumulative)
+            close_at_n = price_data.iloc[entry_pos + n]['close']
 
             if trade.is_long:
-                mfe_n = max(0, max_close - entry_price)
-                mae_n = max(0, entry_price - min_close)
+                favorable_n = max(0, close_at_n - entry_price)
+                adverse_n = max(0, entry_price - close_at_n)
             else:
-                mfe_n = max(0, entry_price - min_close)
-                mae_n = max(0, max_close - entry_price)
+                favorable_n = max(0, entry_price - close_at_n)
+                adverse_n = max(0, close_at_n - entry_price)
 
-            norm_mfe = mfe_n / atr_at_entry
-            norm_mae = mae_n / atr_at_entry
-            e_ratio = norm_mfe / norm_mae if norm_mae > 0 else float('inf')
+            norm_fav = favorable_n / atr_at_entry
+            norm_adv = adverse_n / atr_at_entry
+            e_ratio = norm_fav / norm_adv if norm_adv > 0 else float('inf')
 
-            # Check monotonicity
-            mfe_flag = "!" if mfe_n < prev_mfe else " "
-            mae_flag = "!" if mae_n < prev_mae else " "
-
-            print(f"  {n:3d} | {mfe_n:10.4f}{mfe_flag}| {mae_n:10.4f}{mae_flag}| {norm_mfe:10.4f} | {norm_mae:10.4f} | {e_ratio:10.4f} | {len(closes):5d}")
-
-            prev_mfe, prev_mae = mfe_n, mae_n
+            print(f"  {n:3d} | {close_at_n:10.4f} | {favorable_n:10.4f} | {adverse_n:10.4f} | {norm_fav:10.4f} | {norm_adv:10.4f} | {e_ratio:10.4f}")
 
     def debug_aggregate_diagnostics(self, trades: List[TradeLogEntry], max_days: int = 30,
                                       use_consistent_sample: bool = True) -> Dict[str, Any]:
@@ -1012,60 +1003,53 @@ class ERatioCalculator:
         df_len = len(price_data)
 
         # Calculate MFE and MAE for each horizon n (1 to max_days)
+        # NOTE: We use POINT-IN-TIME returns at day n, not cumulative max/min
+        # This gives meaningful E-ratio that doesn't artificially grow with horizon
         for n in range(1, max_days + 1):
             end_pos = entry_pos + n
             if end_pos >= df_len:
                 break
 
-            # Get forward data (bars 1 to n after entry)
-            forward_data = price_data.iloc[entry_pos + 1:end_pos + 1]
-
-            if len(forward_data) == 0:
-                continue
+            # Get the close price at exactly day n after entry
+            close_at_n = price_data.iloc[end_pos]['close']
 
             # VALIDATION: Forward slice bounds check (sample check, not every n)
             if validate and n == 1:
                 self.validator.validate_forward_slice(
-                    entry_pos, n, df_len, len(forward_data), trade_id
+                    entry_pos, n, df_len, 1, trade_id
                 )
 
-            # Use 'close' prices for MFE/MAE (adjusted prices, consistent with entry_price)
-            closes = forward_data['close'].values
-            max_close = closes.max()
-            min_close = closes.min()
-
-            # Calculate MFE and MAE based on trade direction
+            # Calculate favorable and adverse excursion at day n (point-in-time)
+            # This measures: "At exactly day n, how far up/down is the price from entry?"
             if trade.is_long:
                 # Long trade: profit when price rises, loss when price falls
-                mfe_n = max(0, max_close - entry_price)
-                mae_n = max(0, entry_price - min_close)
-                max_possible_mfe = max_close - entry_price if max_close > entry_price else 0
+                favorable_n = max(0, close_at_n - entry_price)
+                adverse_n = max(0, entry_price - close_at_n)
             else:
                 # Short trade: profit when price falls, loss when price rises
-                mfe_n = max(0, entry_price - min_close)
-                mae_n = max(0, max_close - entry_price)
-                max_possible_mfe = entry_price - min_close if min_close < entry_price else 0
+                favorable_n = max(0, entry_price - close_at_n)
+                adverse_n = max(0, close_at_n - entry_price)
 
-            # Store raw values
-            result['mfe_raw'][n] = mfe_n
-            result['mae_raw'][n] = mae_n
+            # Store raw values (renamed from mfe/mae to favorable/adverse for clarity)
+            result['mfe_raw'][n] = favorable_n
+            result['mae_raw'][n] = adverse_n
 
             # VALIDATION: Excursions check (sample check at key horizons)
             if validate and n in [1, 5, 10, 20, 30]:
                 self.validator.validate_excursions(
-                    mfe_n, mae_n, trade_id, n, max_possible_mfe
+                    favorable_n, adverse_n, trade_id, n, None
                 )
 
             # Normalize by ATR at entry
-            norm_mfe = mfe_n / atr_at_entry
-            norm_mae = mae_n / atr_at_entry
+            norm_favorable = favorable_n / atr_at_entry
+            norm_adverse = adverse_n / atr_at_entry
 
-            result['mfe_norm'][n] = norm_mfe
-            result['mae_norm'][n] = norm_mae
+            result['mfe_norm'][n] = norm_favorable
+            result['mae_norm'][n] = norm_adverse
 
             # VALIDATION: Normalization check (sample check at key horizons)
             if validate and n in [1, 5, 10, 20, 30]:
-                self.validator.validate_normalization(norm_mfe, norm_mae, trade_id, n)
+                self.validator.validate_normalization(norm_favorable, norm_adverse, trade_id, n)
 
         return result
 
@@ -1844,16 +1828,16 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
         ax1_twin.legend(facecolor=Colors.SURFACE, edgecolor=Colors.BORDER,
                         labelcolor='#888888', fontsize=8, loc='upper right')
 
-        # Plot Average Normalized MFE and MAE
-        mfe_values = [result['avg_mfe_norm'].get(d, 0) for d in days]
-        mae_values = [result['avg_mae_norm'].get(d, 0) for d in days]
+        # Plot Average Favorable/Adverse Excursion at each horizon (point-in-time)
+        favorable_values = [result['avg_mfe_norm'].get(d, 0) for d in days]
+        adverse_values = [result['avg_mae_norm'].get(d, 0) for d in days]
 
-        ax2.plot(days, mfe_values, color=Colors.SUCCESS, linewidth=2, marker='o', markersize=4, label='Avg Norm MFE')
-        ax2.plot(days, mae_values, color=Colors.ERROR, linewidth=2, marker='o', markersize=4, label='Avg Norm MAE')
+        ax2.plot(days, favorable_values, color=Colors.SUCCESS, linewidth=2, marker='o', markersize=4, label='Avg Favorable (up)')
+        ax2.plot(days, adverse_values, color=Colors.ERROR, linewidth=2, marker='o', markersize=4, label='Avg Adverse (down)')
 
         ax2.set_xlabel('Days After Entry (Horizon)', color=Colors.TEXT_PRIMARY, fontsize=10)
         ax2.set_ylabel('ATR Multiples', color=Colors.TEXT_PRIMARY, fontsize=10)
-        ax2.set_title('Average Normalized MFE vs MAE Across All Trades',
+        ax2.set_title('Avg Favorable vs Adverse Excursion at Day n (Point-in-Time)',
                       color=Colors.TEXT_PRIMARY, fontsize=11, pad=10)
         ax2.legend(facecolor=Colors.SURFACE, edgecolor=Colors.BORDER,
                    labelcolor=Colors.TEXT_PRIMARY, fontsize=8)
