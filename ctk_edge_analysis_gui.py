@@ -525,8 +525,16 @@ class ERatioValidator:
             if not all_mfe_norm[n] or not all_mae_norm[n]:
                 continue
 
-            mfe_vals = np.array(all_mfe_norm[n])
-            mae_vals = np.array(all_mae_norm[n])
+            # Filter to non-zero values only (same fix as main E-ratio calculation)
+            mfe_nonzero = [v for v in all_mfe_norm[n] if v > 0]
+            mae_nonzero = [v for v in all_mae_norm[n] if v > 0]
+
+            if not mfe_nonzero or not mae_nonzero:
+                winsorized_eratios[n] = 1.0
+                continue
+
+            mfe_vals = np.array(mfe_nonzero)
+            mae_vals = np.array(mae_nonzero)
 
             # Cap at 99th percentile
             mfe_cap = np.percentile(mfe_vals, percentile)
@@ -1177,16 +1185,23 @@ class ERatioCalculator:
                     all_mae_norm[n].append(excursions['mae_norm'][n])
 
         # Calculate averages and E-ratio for each horizon
+        # IMPORTANT: Only include NON-ZERO values in averages to avoid bias from
+        # market drift. This calculates "avg gain when winning" vs "avg loss when losing"
         for n in range(1, max_days + 1):
             if all_mfe_norm[n] and all_mae_norm[n]:
-                avg_mfe = sum(all_mfe_norm[n]) / len(all_mfe_norm[n])
-                avg_mae = sum(all_mae_norm[n]) / len(all_mae_norm[n])
+                # Filter to non-zero values only
+                mfe_nonzero = [v for v in all_mfe_norm[n] if v > 0]
+                mae_nonzero = [v for v in all_mae_norm[n] if v > 0]
+
+                # Calculate conditional averages (average WHEN positive)
+                avg_mfe = sum(mfe_nonzero) / len(mfe_nonzero) if mfe_nonzero else 0.0
+                avg_mae = sum(mae_nonzero) / len(mae_nonzero) if mae_nonzero else 0.0
 
                 result['avg_mfe_norm'][n] = avg_mfe
                 result['avg_mae_norm'][n] = avg_mae
                 result['trades_per_horizon'][n] = len(all_mfe_norm[n])
 
-                # E-ratio = AvgNormMFE / AvgNormMAE
+                # E-ratio = Avg gain when winning / Avg loss when losing
                 if avg_mae > 0:
                     result['e_ratios'][n] = avg_mfe / avg_mae
                 else:
