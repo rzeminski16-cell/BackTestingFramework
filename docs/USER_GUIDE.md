@@ -4,6 +4,23 @@ A flow-based guide for developing, testing, and refining trading strategies.
 
 ---
 
+## Getting Started
+
+Launch the main menu to access all framework features:
+
+```bash
+python ctk_main_gui.py
+```
+
+The launcher provides clickable cards for:
+- **Backtesting** - Run backtests with configurable strategies
+- **Optimization** - Walk-forward parameter optimization
+- **Edge Analysis** - E-ratio and R-multiple analysis
+- **Factor Analysis** - Performance factor analysis
+- **Vulnerability Modeler** - Vulnerability score optimization
+
+---
+
 ## Overview
 
 This guide follows the complete workflow from raw data collection through strategy refinement. The process is iterative - after initial backtesting, you'll cycle through optimization, analysis, and adjustment until achieving desired results.
@@ -38,6 +55,12 @@ This guide follows the complete workflow from raw data collection through strate
     +------------------+
     |  5. VULNERABILITY|
     |   SCORING        |
+    +--------+---------+
+             |
+             v
+    +------------------+
+    | 5.5 E-RATIO      |  (Edge Analysis GUI)
+    |   VALIDATION     |
     +--------+---------+
              |
              v
@@ -503,6 +526,222 @@ Vulnerability scoring helps manage capital allocation when multiple securities s
 
 ---
 
+## Step 5.5: E-Ratio Validation & Edge Analysis
+
+Analyze entry quality across all trades using E-ratio (Edge Ratio) calculations with comprehensive data validation.
+
+### Running the Edge Analysis GUI
+
+```bash
+python ctk_edge_analysis_gui.py
+```
+
+### What is E-Ratio?
+
+E-ratio measures the quality of your trade entries by comparing favorable vs adverse price movement at each time horizon:
+
+```
+E-ratio(n) = AvgNormMFE(n) / AvgNormMAE(n)
+
+Where:
+- MFE_n = Point-in-time favorable excursion at day n (close price - entry price if favorable)
+- MAE_n = Point-in-time adverse excursion at day n (entry price - close price if adverse)
+- Normalized by ATR at entry for cross-market comparability
+- Only non-zero values are averaged to avoid market drift bias
+```
+
+**Important**: The E-ratio calculation uses **point-in-time returns** (the price at exactly day n), not cumulative max/min. This provides a more accurate measure of entry edge at each specific horizon.
+
+| E-ratio Value | Interpretation |
+|---------------|----------------|
+| **> 1.0** | Positive edge - entries tend to move in your favor |
+| **= 1.0** | No edge - equivalent to random entries |
+| **< 1.0** | Negative edge - entries tend to move against you |
+
+### Edge Analysis Workflow
+
+```
+Edge Analysis GUI
+       |
+       v
++------------------------+
+| 1. Configure Price     |  Set path to raw_data/daily/
+|    Data Path           |
++------------------------+
+       |
+       v
++------------------------+
+| 2. Load Trade Logs     |  One or more portfolio_trades.csv files
++------------------------+
+       |
+       v
++------------------------+
+| 3. View E-Ratio Chart  |  Aggregate E-ratio across all trades
++------------------------+
+       |
+       v
++------------------------+
+| 4. Review Validation   |  Data quality and statistical checks
+|    Report              |
++------------------------+
+       |
+       v
++------------------------+
+| 5. Analyze R-Multiple  |  Distribution of trade outcomes
+|    Distribution        |
++------------------------+
+       |
+       v
++------------------------+
+| 6. Inspect Individual  |  Detailed view of selected trades
+|    Trades              |
++------------------------+
+```
+
+### Validation Framework
+
+The E-ratio calculator includes comprehensive validation checks organized into four categories:
+
+#### 1. Data Input & Preprocessing
+
+| Check | Description | Expected |
+|-------|-------------|----------|
+| **Price data integrity** | No NaN values in close prices; dates sorted ascending | All pass |
+| **ATR computation** | ATR > 0 for all values | All positive |
+| **Date alignment** | Trade entry date within 1 day of price data | ≤ 1 day diff |
+| **Entry price consistency** | Trade entry price matches data close | < 5% mismatch |
+
+#### 2. Per-Trade MFE/MAE Loop
+
+| Check | Description | Expected |
+|-------|-------------|----------|
+| **Forward slice bounds** | Correct number of bars in forward window | No OOB errors |
+| **Direction handling** | Symmetric logic for long/short trades | MFE/MAE ≥ 0 |
+| **Excursion logic** | MFE/MAE non-negative and within bounds | No look-ahead |
+| **Normalization** | No inf/nan in normalized values | Valid floats |
+
+#### 3. Aggregation & E-ratio
+
+| Check | Description | Expected |
+|-------|-------------|----------|
+| **Trade count per horizon** | Minimum trades per horizon for reliability | ≥ 20 trades |
+| **E-ratio bounds** | Values within reasonable range | 0.1 < E < 5.0 |
+| **Winsorized E-ratio** | Outlier-capped version for comparison | Similar to raw |
+
+#### 4. Bias & Statistical Checks
+
+| Check | Description | Expected |
+|-------|-------------|----------|
+| **Sample consistency** | Trade count remains constant across horizons | ~100% (consistent sample) |
+| **Survivorship rate** | Trades are pre-filtered for data availability | ~100% at all horizons |
+| **Random baseline** | Average early E-ratio compared to 1.0 | > 1.0 for edge |
+| **Outlier impact** | Difference between raw and winsorized E-ratio | < 20% |
+
+**Note**: The E-ratio calculation uses a **consistent sample** approach - only trades with sufficient forward data for the maximum horizon are included. This ensures the same trades are analyzed at all horizons, preventing survivorship bias.
+
+### GUI Features
+
+#### E-Ratio Tab
+
+- **Aggregate E-ratio curve**: Shows E-ratio across all horizons (1 to max days)
+- **Winsorized comparison**: Gold dashed line shows 99th percentile capped version
+- **MFE/MAE curves**: Separate chart showing average normalized MFE and MAE
+- **Edge visualization**: Green shading for E-ratio > 1, red for < 1
+
+#### R-Multiple Tab
+
+- **Distribution histograms**: Side-by-side view of winning and losing trades
+  - X-axis uses whole number bins (1R, 2R, 3R, etc.) for clear interpretation
+  - Y-axis uses the same scale for both charts for direct visual comparison
+- **Statistics**: Win rate, average R, average win/loss
+
+#### Validation Tab
+
+- **Summary counts**: Passed, failed, errors, warnings
+- **Category breakdown**: Data, Aggregation, Bias sections with color-coded results
+- **Outlier log**: Trades with entry price mismatches or other anomalies
+- **Analysis summary**: Trades per horizon range, E-ratio range
+
+#### Trade Details Tab
+
+- **Individual trade view**: Click any trade to see full details
+- **Entry/exit info**: Prices, dates, quantities
+- **Performance metrics**: P/L, R-multiple, reasons
+
+### Interpreting Results
+
+**Key Questions Answered:**
+
+1. **Does my entry method have edge?**
+   - E-ratio > 1.0 in early horizons indicates edge
+   - Compare to random baseline (should be ~1.0)
+
+2. **When does edge peak?**
+   - Find the horizon with maximum E-ratio
+   - Consider exits around this timeframe
+
+3. **Is the data reliable?**
+   - Check validation report for errors
+   - Flag trades with > 5% entry price mismatch
+
+4. **Are outliers distorting results?**
+   - Compare raw vs winsorized E-ratio
+   - Large differences suggest outlier sensitivity
+
+**Example Findings:**
+
+```
+KEY FINDINGS
+- E-ratio peaks at 1.42 on day 8
+  → Consider 8-day holding period target
+
+- Random baseline comparison: 1.18 vs 1.0
+  → Confirms positive entry edge
+
+- Winsorized differs by 12%
+  → Moderate outlier sensitivity
+
+- 3 trades with > 5% price mismatch
+  → Review data quality for those symbols
+```
+
+### Configuration Options
+
+| Setting | Description | Default |
+|---------|-------------|---------|
+| **Max Days** | Maximum horizon for E-ratio calculation | 30 |
+| **Price Data Path** | Location of TICKER_daily.csv files | raw_data/daily |
+
+### Output Files
+
+The Edge Analysis GUI works directly with existing trade log CSVs:
+
+**Input:**
+- Trade logs from `logs/backtests/portfolio/{name}/portfolio_trades.csv`
+- Price data from `raw_data/daily/{TICKER}_daily.csv`
+
+**Required Trade Log Columns:**
+```
+trade_id, symbol, entry_date, entry_price, exit_date, exit_price,
+quantity, side, initial_stop_loss, pl, pl_pct
+```
+
+**Required Price Data Columns:**
+```
+date, open, high, low, close, volume, atr_14_atr (or atr_14, atr)
+```
+
+### Integration with Strategy Improvement
+
+Use E-ratio analysis findings to improve your strategy:
+
+1. **Validate Entry Quality**: Confirm entries have genuine edge before optimization
+2. **Optimize Holding Period**: Target exits around peak E-ratio horizon
+3. **Identify Data Issues**: Fix price data mismatches flagged by validation
+4. **Compare Strategies**: Run E-ratio on different entry methods to compare edge
+
+---
+
 ## Step 6: Statistical Evaluation (Factor Analysis)
 
 Analyze correlations between trade outcomes and market factors to identify what conditions lead to successful trades.
@@ -855,10 +1094,12 @@ After completing steps 1-8 (or 1-5 with current implementation), repeat the cycl
 
 | Task | Command |
 |------|---------|
+| **Main Launcher (Start Here)** | `python ctk_main_gui.py` |
 | **Data Collection** | `python apps/data_collection_gui.py` |
 | **Run Backtest** | `python ctk_backtest_gui.py` |
 | **Run Optimization** | `python ctk_optimization_gui.py` |
 | **Vulnerability Modeler** | `python ctk_vulnerability_gui.py` |
+| **Edge Analysis (E-Ratio)** | `python ctk_edge_analysis_gui.py` |
 | **Factor Analysis Dashboard** | `python ctk_factor_analysis_gui.py` |
 | **Factor Analysis Config** | `python ctk_factor_analysis_gui.py --config` |
 | **Factor Analysis Data Upload** | `python ctk_factor_analysis_gui.py --upload` |
@@ -871,15 +1112,20 @@ After completing steps 1-8 (or 1-5 with current implementation), repeat the cycl
 ```
 BackTestingFramework/
     |
-    +-- apps/                          # GUI applications
+    +-- ctk_main_gui.py                # Main launcher (start here)
+    +-- ctk_backtest_gui.py            # Backtesting GUI
+    +-- ctk_optimization_gui.py        # Optimization GUI
+    +-- ctk_edge_analysis_gui.py       # Edge Analysis GUI (E-ratio, R-multiple)
+    +-- ctk_factor_analysis_gui.py     # Factor Analysis GUI
+    +-- ctk_vulnerability_gui.py       # Vulnerability Modeler GUI
+    |
+    +-- apps/                          # Additional applications
     |   +-- data_collection_gui.py     # Data fetching interface
     |   +-- alphatrend_explorer.py     # Strategy visualization
-    |   +-- backtest_gui.py            # Alternative backtest GUI
-    |   +-- optimization_gui.py        # Alternative optimization GUI
-    |   +-- vulnerability_gui.py       # Alternative vulnerability GUI
     |
     +-- strategies/                    # Trading strategies
-    |   +-- alphatrend_strategy.py     # Included AlphaTrend strategy
+    |   +-- alphatrend_strategy.py     # Production-ready AlphaTrend strategy
+    |   +-- random_base_strategy.py    # Baseline random strategy for comparison
     |
     +-- raw_data/                      # Historical data storage
     |   +-- daily/                     # Daily price data

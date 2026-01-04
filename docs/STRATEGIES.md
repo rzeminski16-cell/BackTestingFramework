@@ -14,7 +14,57 @@ For each bar in data:
     4. Framework executes the signal
 ```
 
-## Using the Included Strategy
+## Included Strategies
+
+The framework includes two strategies:
+
+1. **AlphaTrend** - A production-ready trend-following strategy
+2. **RandomBaseStrategy** - A baseline random strategy for comparison
+
+---
+
+## RandomBaseStrategy (Baseline)
+
+A random entry/exit strategy for establishing baseline performance. Use this to validate that your E-ratio calculations are working correctly (E-ratio should hover around 1.0 for random entries).
+
+### What RandomBaseStrategy Does
+
+1. **Entry**: Randomly enters with configurable probability (default 10%)
+2. **Exit**: Randomly exits with configurable probability (default 10%)
+3. **Risk Management**: Uses ATR-based stop losses
+
+### Running RandomBaseStrategy
+
+```python
+from strategies.random_base_strategy import RandomBaseStrategy
+
+# Default parameters
+strategy = RandomBaseStrategy()
+
+# Custom parameters
+strategy = RandomBaseStrategy(
+    entry_probability=0.10,       # 10% chance to enter each bar
+    exit_probability=0.10,        # 10% chance to exit each bar
+    position_size_pct=5.0,        # 5% of capital per trade
+    stop_loss_atr_multiple=2.0    # Stop loss = entry - (ATR × 2)
+)
+```
+
+### Required Data for RandomBaseStrategy
+
+Your CSV must have:
+- `date`, `open`, `high`, `low`, `close`, `volume`
+- `atr_14` - 14-period ATR
+
+### Use Cases
+
+- **E-ratio Validation**: A random strategy should produce E-ratio ≈ 1.0 at all horizons
+- **Baseline Comparison**: Compare your strategy's performance against random
+- **System Testing**: Verify the backtesting framework is working correctly
+
+---
+
+## AlphaTrend (Production Strategy)
 
 The framework includes **AlphaTrend**, a production-ready trend-following strategy.
 

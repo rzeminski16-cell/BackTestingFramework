@@ -45,6 +45,7 @@ from Classes.Optimization.walk_forward_optimizer import WalkForwardOptimizer, Wa
 
 # Import available strategies
 from strategies.alphatrend_strategy import AlphaTrendStrategy
+from strategies.random_base_strategy import RandomBaseStrategy
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -1016,7 +1017,8 @@ class CTkOptimizationWizard(CTkWizardBase):
     """Main Optimization Wizard application using CustomTkinter."""
 
     STRATEGIES = {
-        'AlphaTrendStrategy': AlphaTrendStrategy
+        'AlphaTrendStrategy': AlphaTrendStrategy,
+        'RandomBaseStrategy': RandomBaseStrategy
     }
 
     def __init__(self):

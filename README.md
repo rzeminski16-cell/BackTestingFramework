@@ -26,15 +26,28 @@ pip install -r requirements.txt
 # sudo apt-get install python3-tk
 ```
 
+### Launch the Main Menu (Recommended)
+
+```bash
+python ctk_main_gui.py
+```
+
+The main launcher provides access to all framework features:
+- **Backtesting** - Run backtests with configurable strategies
+- **Optimization** - Walk-forward parameter optimization
+- **Edge Analysis** - E-ratio and R-multiple analysis
+- **Factor Analysis** - Performance factor analysis
+- **Vulnerability Modeler** - Vulnerability score optimization
+
 ### Run a Backtest (GUI)
 
 ```bash
-python run_gui.py
+python ctk_backtest_gui.py
 ```
 
 The GUI walks you through:
 1. Selecting securities from your `raw_data/` folder
-2. Choosing a strategy (e.g., AlphaTrendStrategy)
+2. Choosing a strategy (e.g., AlphaTrendStrategy, RandomBaseStrategy)
 3. Setting commission and capital
 4. Running the backtest and viewing results
 
@@ -93,10 +106,12 @@ BackTestingFramework/
 ├── logs/                    # Backtest results and trade logs
 ├── config/                  # Configuration files
 ├── docs/                    # Detailed documentation
-├── run_gui.py               # GUI launcher
-├── optimize_gui.py          # Optimization GUI
-├── backtest.py              # CLI examples
-├── run_backtest_analysis.py # Post-backtest analysis tool
+├── ctk_main_gui.py          # Main launcher (start here)
+├── ctk_backtest_gui.py      # Backtesting GUI
+├── ctk_optimization_gui.py  # Optimization GUI
+├── ctk_edge_analysis_gui.py # Edge Analysis GUI (E-ratio, R-multiple)
+├── ctk_factor_analysis_gui.py # Factor Analysis GUI
+├── ctk_vulnerability_gui.py # Vulnerability Modeler GUI
 └── run_fundamental_data_fetch.py # Alpha Vantage data fetcher
 ```
 

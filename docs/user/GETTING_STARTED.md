@@ -36,10 +36,15 @@ sudo apt-get install python3-tk
 ### Step 3: Verify Installation
 
 ```bash
-python run_gui.py
+python ctk_main_gui.py
 ```
 
-If the GUI opens, you're ready to go.
+If the main launcher GUI opens, you're ready to go. The launcher provides access to all framework features:
+- **Backtesting** - Run backtests with configurable strategies
+- **Optimization** - Walk-forward parameter optimization
+- **Edge Analysis** - E-ratio and R-multiple analysis from trade logs
+- **Factor Analysis** - Multi-factor performance analysis
+- **Vulnerability Modeler** - Vulnerability score optimization
 
 ---
 
@@ -79,7 +84,13 @@ The GUI is the easiest way to get started.
 ### Step 1: Launch the GUI
 
 ```bash
-python run_gui.py
+python ctk_main_gui.py
+```
+
+Click on the **Backtesting** card to open the backtest wizard. Alternatively, run directly:
+
+```bash
+python ctk_backtest_gui.py
 ```
 
 ### Step 2: Select Mode and Securities
@@ -91,7 +102,9 @@ Select one or more securities from the list. These come from CSV files in your `
 
 ### Step 3: Choose a Strategy
 
-Select a strategy from the dropdown. The included **AlphaTrendStrategy** is a production-ready trend-following strategy.
+Select a strategy from the dropdown:
+- **AlphaTrendStrategy** - Production-ready trend-following strategy
+- **RandomBaseStrategy** - Baseline random strategy for comparison (E-ratio should hover around 1.0)
 
 Click "Configure Strategy Parameters" to adjust settings like stop loss multipliers and risk percentage.
 
