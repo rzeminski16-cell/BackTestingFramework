@@ -53,6 +53,7 @@ from Classes.Analysis.portfolio_report_generator import PortfolioReportGenerator
 
 # Import available strategies
 from strategies.alphatrend_strategy import AlphaTrendStrategy
+from strategies.random_base_strategy import RandomBaseStrategy
 
 
 # =============================================================================
@@ -1070,7 +1071,8 @@ class CTkBacktestWizard(CTkWizardBase):
     """Main Backtest Wizard application using CustomTkinter."""
 
     STRATEGIES = {
-        'AlphaTrendStrategy': AlphaTrendStrategy
+        'AlphaTrendStrategy': AlphaTrendStrategy,
+        'RandomBaseStrategy': RandomBaseStrategy
     }
 
     def __init__(self):

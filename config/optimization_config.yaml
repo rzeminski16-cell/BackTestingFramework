@@ -160,6 +160,35 @@ strategy_parameters:
       type: int
       step: 1
 
+  RandomBaseStrategy:
+    entry_probability:
+      min: 0.01
+      max: 0.20
+      type: float
+      step: 0.01
+      description: "Probability of entry each bar (0.10 = 10%)"
+
+    exit_probability:
+      min: 0.01
+      max: 0.20
+      type: float
+      step: 0.01
+      description: "Probability of exit each bar (0.10 = 10%)"
+
+    position_size_pct:
+      min: 1.0
+      max: 20.0
+      type: float
+      step: 1.0
+      description: "Position size as percentage of capital"
+
+    stop_loss_atr_multiple:
+      min: 1.0
+      max: 4.0
+      type: float
+      step: 0.5
+      description: "ATR multiplier for stop loss calculation"
+
 
 # Vulnerability Score Parameters (for portfolio capital contention optimization)
 # These parameters can be optimized when using the Vulnerability Score capital contention mode
