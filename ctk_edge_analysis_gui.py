@@ -2105,13 +2105,21 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
             for spine in ax.spines.values():
                 spine.set_color(Colors.BORDER)
 
+        # Use whole number bins (1R increments)
+        min_r_all = min(losing) if losing else 0
+        max_r_all = max(winning) if winning else 0
+
+        # Create bins with whole number boundaries
+        min_bin = int(np.floor(min_r_all))
+        max_bin = int(np.ceil(max_r_all)) + 1
+        losing_bins = np.arange(min_bin, 1, 1)  # From min to 0
+        winning_bins = np.arange(0, max_bin + 1, 1)  # From 0 to max
+
         # Plot losing trades histogram (left)
         if losing:
-            min_r = min(losing)
-            bins = np.arange(min_r - 0.25, 0.25, 0.25)
-            if len(bins) < 2:
-                bins = np.linspace(min_r, 0, 10)
-            ax1.hist(losing, bins=bins, color=Colors.CHART_NEGATIVE, edgecolor=Colors.BG_DARK, alpha=0.8)
+            if len(losing_bins) < 2:
+                losing_bins = np.arange(min_bin - 1, 1, 1)
+            ax1.hist(losing, bins=losing_bins, color=Colors.CHART_NEGATIVE, edgecolor=Colors.BG_DARK, alpha=0.8)
 
         ax1.set_xlabel('R-Multiple', color=Colors.TEXT_PRIMARY, fontsize=10)
         ax1.set_ylabel('Number of Trades', color=Colors.TEXT_PRIMARY, fontsize=10)
@@ -2122,11 +2130,9 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
 
         # Plot winning trades histogram (right)
         if winning:
-            max_r = max(winning)
-            bins = np.arange(-0.25, max_r + 0.5, 0.25)
-            if len(bins) < 2:
-                bins = np.linspace(0, max_r, 10)
-            ax2.hist(winning, bins=bins, color=Colors.CHART_POSITIVE, edgecolor=Colors.BG_DARK, alpha=0.8)
+            if len(winning_bins) < 2:
+                winning_bins = np.arange(0, max_bin + 2, 1)
+            ax2.hist(winning, bins=winning_bins, color=Colors.CHART_POSITIVE, edgecolor=Colors.BG_DARK, alpha=0.8)
 
         ax2.set_xlabel('R-Multiple', color=Colors.TEXT_PRIMARY, fontsize=10)
         ax2.set_ylabel('Number of Trades', color=Colors.TEXT_PRIMARY, fontsize=10)
@@ -2134,6 +2140,11 @@ class CTkEdgeAnalysisGUI(ctk.CTk):
                       color=Colors.SUCCESS, fontsize=11, pad=10)
         ax2.axvline(x=0, color=Colors.TEXT_MUTED, linestyle='-', alpha=0.5)
         ax2.grid(True, alpha=0.3, color=Colors.BORDER)
+
+        # Set same y-axis scale for both charts
+        y_max = max(ax1.get_ylim()[1], ax2.get_ylim()[1])
+        ax1.set_ylim(0, y_max)
+        ax2.set_ylim(0, y_max)
 
         fig.suptitle('R-Multiple Distribution', color=Colors.TEXT_PRIMARY, fontsize=13, y=0.98)
         fig.tight_layout()
