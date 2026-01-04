@@ -433,6 +433,13 @@ class CTkStrategyStep(CTkWizardStep):
                 'momentum_lookback': 7,
                 'risk_percent': 2.0
             }
+        elif strategy_name == 'RandomBaseStrategy':
+            self.wizard.strategy_params[strategy_name] = {
+                'entry_probability': 0.10,
+                'exit_probability': 0.10,
+                'position_size_pct': 5.0,
+                'stop_loss_atr_multiple': 2.0
+            }
 
         self._refresh_presets()
         self._build_param_ui()
