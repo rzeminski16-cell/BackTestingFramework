@@ -33,7 +33,6 @@ from apps.per_trade_analysis.components.trade_selector import (
     render_sidebar_filters,
     apply_filters,
     render_trade_selector,
-    render_backtest_selector,
     render_file_upload_section,
     render_sample_rationale
 )
@@ -95,18 +94,6 @@ def init_session_state():
 # =============================================================================
 # DATA LOADING
 # =============================================================================
-
-@st.cache_data
-def load_backtest_trades(backtest_name: str, logs_path: Path) -> pd.DataFrame:
-    """Load trades from a backtest with caching."""
-    loader = TradeLogLoader(logs_path)
-    trade_files = loader.discover_backtest_trades(backtest_name)
-
-    if not trade_files:
-        return pd.DataFrame()
-
-    return loader.load_multiple_trade_logs(trade_files)
-
 
 def get_paths() -> tuple:
     """Get project paths."""
@@ -220,36 +207,20 @@ def main():
     # Get paths
     project_root, logs_path, data_path = get_paths()
 
-    # Sidebar - Data Source Selection
-    st.sidebar.header("Data Source")
+    # Sidebar - Upload Trade Logs
+    st.sidebar.header("Upload Trade Logs")
 
-    data_source = st.sidebar.radio(
-        "Select data source",
-        options=["Load from Backtest", "Upload CSV Files"],
-        help="Choose how to load trade data"
-    )
-
-    # Load trades based on source
-    if data_source == "Load from Backtest":
-        selected_backtest = render_backtest_selector(logs_path)
-
-        if selected_backtest:
-            with st.spinner("Loading trades..."):
-                trades_df = load_backtest_trades(selected_backtest, logs_path)
-                st.session_state['trades_df'] = trades_df
-
-    else:
-        uploaded_paths = render_file_upload_section()
-        if uploaded_paths:
-            loader = TradeLogLoader()
-            trades_df = loader.load_multiple_trade_logs(uploaded_paths)
-            st.session_state['trades_df'] = trades_df
+    uploaded_paths = render_file_upload_section()
+    if uploaded_paths:
+        loader = TradeLogLoader()
+        trades_df = loader.load_multiple_trade_logs(uploaded_paths)
+        st.session_state['trades_df'] = trades_df
 
     # Main content
     trades_df = st.session_state.get('trades_df')
 
     if trades_df is None or len(trades_df) == 0:
-        st.info("Select a backtest or upload trade log CSV files to begin analysis.")
+        st.info("Upload trade log CSV files to begin analysis.")
         return
 
     st.success(f"Loaded {len(trades_df)} trades from {trades_df['symbol'].nunique()} symbols")
