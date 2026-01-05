@@ -172,6 +172,7 @@ class CTkMainLauncher(ctk.CTk):
         cards_frame.grid_columnconfigure(2, weight=1)
         cards_frame.grid_rowconfigure(0, weight=1)
         cards_frame.grid_rowconfigure(1, weight=1)
+        cards_frame.grid_rowconfigure(2, weight=1)
 
         # Define features
         features = [
@@ -210,6 +211,12 @@ class CTkMainLauncher(ctk.CTk):
                 "description": "Deep-dive forensics for individual trades with pattern identification",
                 "icon": "\U0001F50D",  # Magnifying glass
                 "command": self._launch_per_trade_analysis
+            },
+            {
+                "title": "AlphaTrend Explorer",
+                "description": "Interactive exploration of AlphaTrend indicator parameters and signals",
+                "icon": "\U0001F4C8",  # Chart with upward trend
+                "command": self._launch_alphatrend_explorer
             }
         ]
 
@@ -276,6 +283,14 @@ class CTkMainLauncher(ctk.CTk):
             subprocess.Popen(["streamlit", "run", str(script_path)])
         else:
             self._show_error(f"Per-Trade Analysis app not found: {script_path}")
+
+    def _launch_alphatrend_explorer(self):
+        """Launch the AlphaTrend Explorer Streamlit app."""
+        script_path = Path(__file__).parent / "apps" / "alphatrend_explorer.py"
+        if script_path.exists():
+            subprocess.Popen(["streamlit", "run", str(script_path)])
+        else:
+            self._show_error(f"AlphaTrend Explorer app not found: {script_path}")
 
     def _show_error(self, message: str):
         """Show an error dialog."""
