@@ -4,6 +4,7 @@ Trade selection UI components for Per-Trade Analysis.
 
 import streamlit as st
 import pandas as pd
+import tempfile
 from pathlib import Path
 from typing import List, Dict, Tuple, Optional
 from datetime import datetime
@@ -299,9 +300,9 @@ def render_file_upload_section() -> List[Path]:
     # Save uploaded files temporarily
     temp_paths = []
     for uploaded_file in uploaded_files:
-        # Create temp directory if needed
-        temp_dir = Path("/tmp/per_trade_analysis")
-        temp_dir.mkdir(exist_ok=True)
+        # Create temp directory if needed (cross-platform)
+        temp_dir = Path(tempfile.gettempdir()) / "per_trade_analysis"
+        temp_dir.mkdir(parents=True, exist_ok=True)
 
         temp_path = temp_dir / uploaded_file.name
 
