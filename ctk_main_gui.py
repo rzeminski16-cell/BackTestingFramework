@@ -204,6 +204,12 @@ class CTkMainLauncher(ctk.CTk):
                 "description": "Model and optimize vulnerability score parameters",
                 "icon": "\u26A0",  # Warning sign
                 "command": self._launch_vulnerability
+            },
+            {
+                "title": "Per-Trade Analysis",
+                "description": "Deep-dive forensics for individual trades with pattern identification",
+                "icon": "\U0001F50D",  # Magnifying glass
+                "command": self._launch_per_trade_analysis
             }
         ]
 
@@ -262,6 +268,14 @@ class CTkMainLauncher(ctk.CTk):
     def _launch_vulnerability(self):
         """Launch the vulnerability modeler GUI."""
         self._launch_module("vulnerability")
+
+    def _launch_per_trade_analysis(self):
+        """Launch the per-trade analysis Streamlit app."""
+        script_path = Path(__file__).parent / "apps" / "per_trade_analysis" / "app.py"
+        if script_path.exists():
+            subprocess.Popen(["streamlit", "run", str(script_path)])
+        else:
+            self._show_error(f"Per-Trade Analysis app not found: {script_path}")
 
     def _show_error(self, message: str):
         """Show an error dialog."""
