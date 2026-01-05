@@ -237,6 +237,92 @@ def render_price_action_tab(trade: TradeAnalysisData):
 # TAB 3: FUNDAMENTALS
 # =============================================================================
 
+def _generate_fundamental_narrative(fund_data: Dict, period: str) -> str:
+    """Generate a narrative description of fundamentals."""
+    if not fund_data:
+        return f"Fundamental data not available for {period}."
+
+    parts = []
+
+    # P/E assessment
+    pe = fund_data.get('pe_ratio')
+    if pd.notna(pe):
+        if pe < 0:
+            parts.append(f"negative P/E ({pe:.1f}x) indicating losses")
+        elif pe < 15:
+            parts.append(f"low P/E ({pe:.1f}x) suggesting value characteristics")
+        elif pe < 25:
+            parts.append(f"moderate P/E ({pe:.1f}x)")
+        else:
+            parts.append(f"high P/E ({pe:.1f}x) indicating growth expectations")
+
+    # EPS assessment
+    eps = fund_data.get('eps')
+    if pd.notna(eps):
+        if eps > 0:
+            parts.append(f"EPS of ${eps:.2f}")
+        else:
+            parts.append(f"negative EPS (${eps:.2f})")
+
+    # Earnings growth
+    eg = fund_data.get('earnings_growth_yoy')
+    if pd.notna(eg):
+        if eg > 20:
+            parts.append(f"strong earnings growth ({eg:.1f}% YoY)")
+        elif eg > 0:
+            parts.append(f"positive earnings growth ({eg:.1f}% YoY)")
+        elif eg > -20:
+            parts.append(f"earnings decline ({eg:.1f}% YoY)")
+        else:
+            parts.append(f"significant earnings decline ({eg:.1f}% YoY)")
+
+    # Profitability
+    roe = fund_data.get('return_on_equity')
+    if pd.notna(roe):
+        if roe > 15:
+            parts.append(f"strong ROE ({roe:.1f}%)")
+        elif roe > 0:
+            parts.append(f"positive ROE ({roe:.1f}%)")
+        else:
+            parts.append(f"negative ROE ({roe:.1f}%)")
+
+    if parts:
+        return "Company showing " + ", ".join(parts) + "."
+    return "Limited fundamental data available."
+
+
+def _determine_overall_assessment(delta_data: Dict) -> tuple:
+    """Determine overall fundamental assessment."""
+    if not delta_data:
+        return "unknown", "Insufficient data to determine fundamental trajectory."
+
+    improvements = 0
+    declines = 0
+
+    key_metrics = ['eps', 'earnings_growth_yoy', 'revenue_growth_yoy',
+                   'profit_margin', 'return_on_equity']
+
+    for key in key_metrics:
+        val = delta_data.get(key)
+        if pd.notna(val):
+            if val > 0:
+                improvements += 1
+            elif val < 0:
+                declines += 1
+
+    if improvements > declines:
+        assessment = "improved"
+        desc = f"Fundamentals improved during the trade period ({improvements} metrics up, {declines} down)."
+    elif declines > improvements:
+        assessment = "deteriorated"
+        desc = f"Fundamentals deteriorated during the trade period ({improvements} metrics up, {declines} down)."
+    else:
+        assessment = "stable"
+        desc = "Fundamentals remained relatively stable during the trade period."
+
+    return assessment, desc
+
+
 def render_fundamentals_tab(trade: TradeAnalysisData):
     """Render the fundamentals analysis tab."""
 
@@ -245,6 +331,52 @@ def render_fundamentals_tab(trade: TradeAnalysisData):
         st.info("Check if fundamental data exists in raw_data/fundamentals/")
         return
 
+    # EPS History Section
+    st.subheader("EPS History (Leading to Entry)")
+
+    if trade.fundamentals_history is not None and len(trade.fundamentals_history) > 0:
+        eps_history = trade.fundamentals_history.copy()
+
+        if 'eps' in eps_history.columns and 'date' in eps_history.columns:
+            # Filter rows with valid EPS values
+            eps_data = eps_history[eps_history['eps'].notna()].copy()
+
+            if len(eps_data) > 0:
+                eps_data['date'] = pd.to_datetime(eps_data['date'])
+                eps_data = eps_data.sort_values('date')
+
+                # Display as table
+                display_data = []
+                for _, row in eps_data.iterrows():
+                    display_data.append({
+                        'Date': row['date'].strftime('%Y-%m-%d'),
+                        'EPS': f"${row['eps']:.2f}" if pd.notna(row['eps']) else "N/A",
+                    })
+
+                if display_data:
+                    # Show last 8 quarters
+                    df_display = pd.DataFrame(display_data).tail(8)
+                    st.table(df_display)
+
+                    # EPS trend calculation
+                    if len(eps_data) >= 2:
+                        first_eps = eps_data['eps'].iloc[0]
+                        last_eps = eps_data['eps'].iloc[-1]
+                        if first_eps != 0 and pd.notna(first_eps) and pd.notna(last_eps):
+                            eps_change_pct = ((last_eps - first_eps) / abs(first_eps)) * 100
+                            st.write(f"**EPS Trend:** {eps_change_pct:+.1f}% over {len(eps_data)} periods")
+                else:
+                    st.info("No EPS data points available in history.")
+            else:
+                st.info("No valid EPS values in fundamental history.")
+        else:
+            st.info("EPS column not found in fundamental data.")
+    else:
+        st.info("Fundamental history not available.")
+
+    st.divider()
+
+    # Fundamental Comparison Table
     st.subheader("Fundamental Comparison: Entry vs Exit")
 
     # Build comparison table
@@ -278,36 +410,55 @@ def render_fundamentals_tab(trade: TradeAnalysisData):
         # Determine status
         if pd.notna(delta):
             if delta > 0:
-                row['Status'] = ' Improved'
+                row['Status'] = 'Improved'
             elif delta < 0:
-                row['Status'] = ' Declined'
+                row['Status'] = 'Declined'
             else:
-                row['Status'] = ' Stable'
+                row['Status'] = 'Stable'
         else:
-            row['Status'] = ' Unknown'
+            row['Status'] = 'Unknown'
 
         comparison_data.append(row)
 
     st.table(pd.DataFrame(comparison_data))
 
-    # Narrative summary
-    st.subheader("Assessment")
+    st.divider()
+
+    # Narrative Summary Section
+    st.subheader("Narrative Summary")
 
     col1, col2 = st.columns(2)
 
     with col1:
-        st.markdown("**At Entry:**")
+        st.markdown("**Company Fundamentals at Entry:**")
         entry_date = entry_data.get('date', 'N/A')
         if isinstance(entry_date, datetime):
             entry_date = entry_date.strftime('%Y-%m-%d')
-        st.write(f"Data as of: {entry_date}")
+        st.caption(f"Data as of: {entry_date}")
+        entry_narrative = _generate_fundamental_narrative(entry_data, "entry")
+        st.write(entry_narrative)
 
     with col2:
-        st.markdown("**At Exit:**")
+        st.markdown("**Company Fundamentals at Exit:**")
         exit_date = exit_data.get('date', 'N/A')
         if isinstance(exit_date, datetime):
             exit_date = exit_date.strftime('%Y-%m-%d')
-        st.write(f"Data as of: {exit_date}")
+        st.caption(f"Data as of: {exit_date}")
+        exit_narrative = _generate_fundamental_narrative(exit_data, "exit")
+        st.write(exit_narrative)
+
+    # Overall Assessment
+    st.divider()
+    st.subheader("Overall Assessment")
+
+    assessment, description = _determine_overall_assessment(delta_data)
+
+    if assessment == "improved":
+        st.success(description)
+    elif assessment == "deteriorated":
+        st.warning(description)
+    else:
+        st.info(description)
 
 
 # =============================================================================

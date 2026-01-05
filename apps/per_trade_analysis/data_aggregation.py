@@ -147,6 +147,7 @@ class TradeAnalysisData:
     fundamentals_entry: Optional[Dict] = None
     fundamentals_exit: Optional[Dict] = None
     fundamentals_delta: Optional[Dict] = None
+    fundamentals_history: Optional[pd.DataFrame] = None  # Full history up to entry
     insider_activity: Optional[pd.DataFrame] = None
     insider_flags: List[str] = field(default_factory=list)
     options_data: Optional[Dict] = None
@@ -704,6 +705,8 @@ class TradeDataAggregator:
                 result.fundamentals_entry,
                 result.fundamentals_exit
             )
+            # Store fundamentals history up to entry date
+            result.fundamentals_history = self._get_fundamentals_history(fundamentals, entry_date)
 
         # Load and process insider activity
         insider_data = self.raw_data.load_insider_transactions(symbol)
@@ -877,6 +880,25 @@ class TradeDataAggregator:
             'revenue_ttm': latest.get('revenue_ttm'),
             'gross_profit_ttm': latest.get('gross_profit_ttm'),
         }
+
+    def _get_fundamentals_history(self,
+                                   fundamentals: pd.DataFrame,
+                                   entry_date: datetime,
+                                   lookback_quarters: int = 12) -> Optional[pd.DataFrame]:
+        """Get historical fundamental data up to entry date."""
+        if 'date' not in fundamentals.columns:
+            return None
+
+        before_date = fundamentals[fundamentals['date'] <= entry_date].copy()
+
+        if len(before_date) == 0:
+            return None
+
+        # Return most recent quarters (usually quarterly data)
+        history = before_date.tail(lookback_quarters).copy()
+        history = history.sort_values('date', ascending=True)
+
+        return history
 
     def _calculate_fundamental_deltas(self,
                                        entry_fundamentals: Optional[Dict],
