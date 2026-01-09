@@ -14,7 +14,7 @@ python ctk_main_gui.py
 
 The launcher provides clickable cards for:
 - **Backtesting** - Run backtests with configurable strategies
-- **Optimization** - Walk-forward parameter optimization
+- **Univariate Optimization** - Test one parameter at a time with visual analysis
 - **Edge Analysis** - E-ratio and R-multiple analysis
 - **Factor Analysis** - Performance factor analysis
 - **Vulnerability Modeler** - Vulnerability score optimization
@@ -376,89 +376,108 @@ logs/backtests/
 
 ## Step 4: Parameter Optimization
 
-Find optimal strategy parameters using walk-forward optimization.
+Find optimal strategy parameters using univariate optimization.
 
-### Running the Optimization Wizard
+### Running the Univariate Optimization GUI
 
 ```bash
-python ctk_optimization_gui.py
+python ctk_univariate_optimization_gui.py
 ```
+
+Or launch from the main menu by clicking **"Univariate Optimization"**.
+
+### What is Univariate Optimization?
+
+Univariate optimization tests **one parameter at a time** while keeping all other parameters at fixed "control" values. This approach:
+
+- Shows exactly how each parameter affects performance
+- Generates visual line charts for easy analysis
+- Avoids the complexity of multi-parameter optimization
+- Helps identify parameter sensitivity and optimal ranges
 
 ### Optimization Workflow
 
 ```
-Optimization Wizard
+Univariate Optimization GUI
         |
         v
-+--------------------+
-| 1. Select Strategy |
-+--------------------+
++------------------------+
+| 1. Select Securities   |  Single or Portfolio mode
++------------------------+
         |
         v
-+--------------------+
-| 2. Choose          |  Can optimize on single or multiple securities
-|    Securities      |
-+--------------------+
++------------------------+
+| 2. Select Strategy     |  AlphaTrendStrategy, etc.
++------------------------+
         |
         v
-+--------------------+
-| 3. Define Search   |  Parameter ranges to explore
-|    Space           |
-+--------------------+
++------------------------+
+| 3. Configure Parameters|  Control values, ranges, intervals
++------------------------+
         |
         v
-+--------------------+
-| 4. Select Speed    |  Quick / Fast / Full
-|    Mode            |
-+--------------------+
++------------------------+
+| 4. Select Metrics      |  Sharpe, Return, Drawdown, etc.
++------------------------+
         |
         v
-+--------------------+
-| 5. Enable          |  Test parameter robustness
-|    Sensitivity     |
-+--------------------+
++------------------------+
+| 5. Set Date Range      |  Optional: filter to specific timeframe
+|    (Optional)          |
++------------------------+
         |
         v
-+--------------------+
-| 6. Run             |  Bayesian optimization + walk-forward
-|    Optimization    |
-+--------------------+
++------------------------+
+| 6. Run Optimization    |  Tests each parameter independently
++------------------------+
         |
         v
-+--------------------+
-| 7. Review Results  |  Best parameters, in-sample vs out-of-sample
-+--------------------+
++------------------------+
+| 7. Export to Excel     |  Summary + per-parameter sheets with charts
++------------------------+
 ```
 
-### Speed Modes
+### Parameter Configuration
 
-| Mode | Description | Use Case |
-|------|-------------|----------|
-| **Quick** | Fewer iterations, faster | Initial exploration |
-| **Fast** | Balanced speed/thoroughness | Regular optimization |
-| **Full** | Maximum iterations | Final parameter selection |
+For each parameter, configure:
 
-### Walk-Forward Validation
+| Setting | Description |
+|---------|-------------|
+| **Control Value** | Baseline value (used when testing other parameters) |
+| **Min/Max Range** | Range of values to test |
+| **Interval** | Step size between test values |
 
-The optimizer uses walk-forward analysis to prevent overfitting:
-1. **In-Sample**: Optimize parameters on training data
-2. **Out-of-Sample**: Test optimized parameters on unseen data
-3. **Roll Forward**: Repeat across multiple time windows
+### Output: Excel Report
+
+The report contains:
+
+1. **Summary Sheet**: Control values, best values per metric, optimization settings
+2. **Parameter Sheets**: One per parameter with data table and line charts
+
+### Line Charts
+
+Each parameter sheet includes line charts showing:
+- X-axis: Parameter values tested
+- Y-axis: Metric values (Sharpe, Return, etc.)
+- Simple black line with markers for clear visualization
+
+### Interpreting Results
+
+| Pattern | Meaning | Action |
+|---------|---------|--------|
+| **Flat line** | Parameter has little impact | Use default value |
+| **Clear peak** | Optimal value exists | Use peak, verify stability |
+| **Monotonic** | Higher/lower always better | Check for natural limits |
+| **Noisy/jagged** | Unstable results | More data or simplify strategy |
 
 ### Output Location
 
 ```
-logs/optimization_reports/
-    {optimization_name}/
-        {strategy}_{symbol}_optimization.xlsx
+optimization_reports/
+    univariate_optimization_{strategy}_{timestamp}.xlsx
 ```
 
-### Interpreting Results
-
-- **In-Sample Performance**: How well parameters fit the training data
-- **Out-of-Sample Performance**: How well parameters generalize (more important)
-- **Sensitivity Analysis**: Parameter stability - avoid cliff edges
-- **Recommended Parameters**: Use parameters that perform well both in-sample AND out-of-sample
+For detailed documentation, see [docs/user/OPTIMIZATION.md](OPTIMIZATION.md).
 
 ---
 
@@ -1202,7 +1221,7 @@ After completing steps 1-7, repeat the cycle:
 | **Main Launcher (Start Here)** | `python ctk_main_gui.py` |
 | **Data Collection** | `python apps/data_collection_gui.py` |
 | **Run Backtest** | `python ctk_backtest_gui.py` |
-| **Run Optimization** | `python ctk_optimization_gui.py` |
+| **Univariate Optimization** | `python ctk_univariate_optimization_gui.py` |
 | **Vulnerability Modeler** | `python ctk_vulnerability_gui.py` |
 | **Edge Analysis (E-Ratio)** | `python ctk_edge_analysis_gui.py` |
 | **Factor Analysis Dashboard** | `python ctk_factor_analysis_gui.py` |
@@ -1218,12 +1237,12 @@ After completing steps 1-7, repeat the cycle:
 ```
 BackTestingFramework/
     |
-    +-- ctk_main_gui.py                # Main launcher (start here)
-    +-- ctk_backtest_gui.py            # Backtesting GUI
-    +-- ctk_optimization_gui.py        # Optimization GUI
-    +-- ctk_edge_analysis_gui.py       # Edge Analysis GUI (E-ratio, R-multiple)
-    +-- ctk_factor_analysis_gui.py     # Factor Analysis GUI
-    +-- ctk_vulnerability_gui.py       # Vulnerability Modeler GUI
+    +-- ctk_main_gui.py                      # Main launcher (start here)
+    +-- ctk_backtest_gui.py                  # Backtesting GUI
+    +-- ctk_univariate_optimization_gui.py   # Univariate Optimization GUI
+    +-- ctk_edge_analysis_gui.py             # Edge Analysis GUI (E-ratio, R-multiple)
+    +-- ctk_factor_analysis_gui.py           # Factor Analysis GUI
+    +-- ctk_vulnerability_gui.py             # Vulnerability Modeler GUI
     |
     +-- apps/                          # Additional applications
     |   +-- data_collection_gui.py     # Data fetching interface
