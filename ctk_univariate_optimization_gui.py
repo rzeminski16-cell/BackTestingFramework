@@ -584,6 +584,43 @@ class CTkUnivariateOptimizationGUI(ctk.CTk):
         slip_entry.configure(textvariable=self.slippage_var)
         slip_entry.pack(side="left", padx=(Sizes.PAD_S, 0))
 
+        # Date range section
+        Theme.create_label(
+            content, "Date Range (optional):",
+            text_color=Colors.TEXT_SECONDARY
+        ).pack(anchor="w", pady=(Sizes.PAD_M, Sizes.PAD_XS))
+
+        date_frame = Theme.create_frame(content)
+        date_frame.pack(fill="x")
+
+        # Start date
+        start_date_frame = Theme.create_frame(date_frame)
+        start_date_frame.pack(fill="x", pady=Sizes.PAD_XS)
+
+        Theme.create_label(start_date_frame, "Start Date:").pack(side="left")
+        self.start_date_var = ctk.StringVar(value="")
+        start_date_entry = Theme.create_entry(start_date_frame, width=120)
+        start_date_entry.configure(textvariable=self.start_date_var)
+        start_date_entry.pack(side="left", padx=(Sizes.PAD_S, 0))
+        Theme.create_label(
+            start_date_frame, "(YYYY-MM-DD)",
+            text_color=Colors.TEXT_MUTED
+        ).pack(side="left", padx=(Sizes.PAD_XS, 0))
+
+        # End date
+        end_date_frame = Theme.create_frame(date_frame)
+        end_date_frame.pack(fill="x", pady=Sizes.PAD_XS)
+
+        Theme.create_label(end_date_frame, "End Date:").pack(side="left")
+        self.end_date_var = ctk.StringVar(value="")
+        end_date_entry = Theme.create_entry(end_date_frame, width=120)
+        end_date_entry.configure(textvariable=self.end_date_var)
+        end_date_entry.pack(side="left", padx=(Sizes.PAD_S, 0))
+        Theme.create_label(
+            end_date_frame, "(YYYY-MM-DD)",
+            text_color=Colors.TEXT_MUTED
+        ).pack(side="left", padx=(Sizes.PAD_XS, 0))
+
     def _create_right_panel(self, parent):
         """Create results panel."""
         Theme.create_header(parent, "Results", size="l").pack(anchor="w", pady=(0, Sizes.PAD_M))
@@ -775,12 +812,42 @@ class CTkUnivariateOptimizationGUI(ctk.CTk):
             self._reset_ui()
             return
 
+        # Get date range
+        start_date = None
+        end_date = None
+        start_date_str = self.start_date_var.get().strip()
+        end_date_str = self.end_date_var.get().strip()
+
+        if start_date_str:
+            try:
+                start_date = datetime.strptime(start_date_str, "%Y-%m-%d")
+            except ValueError:
+                show_error(self, "Error", "Invalid start date format. Use YYYY-MM-DD.")
+                self._reset_ui()
+                return
+
+        if end_date_str:
+            try:
+                end_date = datetime.strptime(end_date_str, "%Y-%m-%d")
+            except ValueError:
+                show_error(self, "Error", "Invalid end date format. Use YYYY-MM-DD.")
+                self._reset_ui()
+                return
+
+        if start_date and end_date and start_date >= end_date:
+            show_error(self, "Error", "Start date must be before end date.")
+            self._reset_ui()
+            return
+
         # Log configuration
         self.progress_panel.log(f"Strategy: {strategy_name}")
         self.progress_panel.log(f"Securities: {', '.join(securities)}")
         self.progress_panel.log(f"Run Mode: {run_mode}")
         self.progress_panel.log(f"Parameters to optimize: {len(params_to_optimize)}")
         self.progress_panel.log(f"Metrics: {', '.join(metrics)}")
+        if start_date or end_date:
+            date_range_str = f"{start_date.strftime('%Y-%m-%d') if start_date else 'Start'} to {end_date.strftime('%Y-%m-%d') if end_date else 'End'}"
+            self.progress_panel.log(f"Date Range: {date_range_str}")
         self.progress_panel.log("")
 
         # Create optimizer
@@ -798,7 +865,7 @@ class CTkUnivariateOptimizationGUI(ctk.CTk):
         self.optimization_thread = threading.Thread(
             target=self._run_optimization,
             args=(strategy_class, securities, params_to_optimize,
-                  control_values, metrics, run_mode),
+                  control_values, metrics, run_mode, start_date, end_date),
             daemon=True
         )
         self.optimization_thread.start()
@@ -810,7 +877,9 @@ class CTkUnivariateOptimizationGUI(ctk.CTk):
         params_to_optimize,
         control_values,
         metrics,
-        run_mode
+        run_mode,
+        start_date,
+        end_date
     ):
         """Run optimization in background thread."""
         try:
@@ -824,6 +893,8 @@ class CTkUnivariateOptimizationGUI(ctk.CTk):
                 control_values=control_values,
                 metrics=metrics,
                 run_mode=run_mode,
+                start_date=start_date,
+                end_date=end_date,
                 progress_callback=progress_callback
             )
 
