@@ -3,6 +3,14 @@ Backtesting Framework with Parameter Optimization
 
 A comprehensive framework for backtesting trading strategies with
 univariate parameter optimization and Excel report generation.
+
+Usage:
+    # Command line GUI
+    python -m backtesting.gui
+
+    # Or in Python
+    from backtesting.gui import launch
+    launch()
 """
 
 from backtesting.core.engine import BacktestEngine
@@ -18,3 +26,9 @@ __all__ = [
     "Optimizer",
     "PerformanceMetrics",
 ]
+
+
+def launch_gui():
+    """Launch the GUI application."""
+    from backtesting.gui import launch
+    launch()
