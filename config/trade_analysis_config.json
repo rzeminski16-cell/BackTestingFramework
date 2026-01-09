@@ -1,0 +1,75 @@
+{
+  "thresholds": {
+    "insider_activity_min_value_usd": 50000,
+    "insider_buying_lookback_days": 30,
+    "insider_selling_lookback_days": 30,
+    "correlation_threshold_significant": 0.70,
+    "market_regime_sma_period_short": 20,
+    "market_regime_sma_period_long": 200,
+    "iv_percentile_high_threshold": 75,
+    "iv_percentile_low_threshold": 25,
+    "rsi_overbought_threshold": 70,
+    "rsi_oversold_threshold": 30,
+    "atr_spike_threshold": 1.5,
+    "volume_spike_threshold": 2.0
+  },
+  "sampling": {
+    "target_sample_size": 12,
+    "min_sample_size": 8,
+    "max_sample_size": 15
+  },
+  "data_windows": {
+    "pre_entry_days_default": 365,
+    "pre_entry_days_short": 90,
+    "post_exit_days": 30
+  },
+  "sector_etf_mappings": {
+    "technology": "XLK",
+    "financials": "XLF",
+    "finance": "XLF",
+    "healthcare": "XLV",
+    "energy": "XLE",
+    "consumer_discretionary": "XLY",
+    "consumer_staples": "XLP",
+    "industrials": "XLI",
+    "materials": "XLB",
+    "utilities": "XLU",
+    "real_estate": "XLRE",
+    "communication_services": "XLC"
+  },
+  "index_ticker": "SPX",
+  "signal_strength_weights": {
+    "trend_aligned": 25,
+    "bollinger_position": 12,
+    "volume_confirmation": 15,
+    "macd_aligned": 15,
+    "ma_distance": 10,
+    "rsi_neutral": 10,
+    "atr_normal": 8,
+    "price_momentum": 5
+  },
+  "fundamental_metrics": [
+    "pe_ratio",
+    "eps",
+    "earnings_growth_yoy",
+    "revenue_growth_yoy",
+    "profit_margin",
+    "return_on_assets_ttm",
+    "return_on_equity_ttm"
+  ],
+  "indicator_column_mappings": {
+    "atr_14_atr": "atr",
+    "rsi_14_rsi": "rsi",
+    "sma_20_sma": "sma_20",
+    "sma_50_sma": "sma_50",
+    "sma_200_sma": "sma_200",
+    "bbands_20_real lower band": "bb_lower",
+    "bbands_20_real middle band": "bb_middle",
+    "bbands_20_real upper band": "bb_upper",
+    "macd_14_macd": "macd",
+    "macd_14_macd_signal": "macd_signal",
+    "macd_14_macd_hist": "macd_histogram",
+    "mfi_14_mfi": "mfi",
+    "obv_14_obv": "obv"
+  }
+}

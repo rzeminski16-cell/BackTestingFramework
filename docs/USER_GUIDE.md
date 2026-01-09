@@ -18,6 +18,8 @@ The launcher provides clickable cards for:
 - **Edge Analysis** - E-ratio and R-multiple analysis
 - **Factor Analysis** - Performance factor analysis
 - **Vulnerability Modeler** - Vulnerability score optimization
+- **Per-Trade Analysis** - Deep-dive forensics for individual trades
+- **AlphaTrend Explorer** - Interactive indicator visualization
 
 ---
 
@@ -71,18 +73,12 @@ This guide follows the complete workflow from raw data collection through strate
              |
              v
     +------------------+
-    |  7. "WHAT IF"    |  <-- Not yet implemented
-    |   ANALYSIS       |
-    +--------+---------+
-             |
-             v
-    +------------------+
-    |  8. PER-TRADE    |  <-- Not yet implemented
+    |  7. PER-TRADE    |  (Per-Trade Analysis App)
     |   ANALYSIS       |
     +--------+---------+
              |
              |  +------------------------------------------+
-             +->|  ITERATE: Repeat steps 2-8 until         |
+             +->|  ITERATE: Repeat steps 2-7 until         |
                 |  desired strategy performance achieved   |
                 +------------------------------------------+
 ```
@@ -1028,40 +1024,149 @@ Use factor analysis findings to improve your strategy:
 
 ---
 
-## Step 7: "What If Scenario" Analysis
+## Step 7: Per-Trade Analysis
 
-> **Status: Not Yet Implemented**
+Deep-dive forensic analysis of individual trades to understand success/failure patterns.
 
-This analysis examines alternative trade outcomes by exploring counterfactual scenarios:
+### Running the Per-Trade Analysis App
 
-- **Extended Holding Periods**: What if trades were held 30, 60, or 90 days longer?
-- **Alternative Exit Timing**: How would different exit rules have affected outcomes?
-- **Scenario Comparison**: Side-by-side view of actual vs. hypothetical results
+```bash
+streamlit run apps/per_trade_analysis/app.py
+```
 
-This helps identify whether exit rules are too aggressive or too conservative.
+Or launch from the main GUI by clicking the **Per-Trade Analysis** card.
 
----
+### Per-Trade Analysis Workflow
 
-## Step 8: Per-Trade Analysis
+```
+Per-Trade Analysis App
+        |
+        v
++------------------------+
+| 1. Upload Trade Log    |  CSV with trade_id, symbol, entry_date, etc.
++------------------------+
+        |
+        v
++------------------------+
+| 2. Select Trade        |  Click any trade to analyze
++------------------------+
+        |
+        v
++------------------------+
+| 3. Review Tabs         |  Price, Technicals, Fundamentals,
+|                        |  Insider, Options, Correlated
++------------------------+
+        |
+        v
++------------------------+
+| 4. Export Report       |  Save findings as JSON or CSV
++------------------------+
+```
 
-> **Status: Not Yet Implemented**
+### Features
 
-Deep-dive analysis of individual trades to understand success/failure patterns:
+#### Trade Selection Panel
+- **Summary table**: View all trades with key metrics (P/L, R-multiple, duration)
+- **Sorting/filtering**: Sort by any column, filter by symbol or outcome
+- **Color coding**: Green for winners, red for losers, yellow for breakeven
 
-- **Trade Selection**: Select representative trades (winners, losers, breakeven)
-- **Multi-Factor Examination**: Review all available data around each trade:
-  - Price action and technicals before/during/after
-  - Fundamental data at entry/exit
-  - Insider activity timeline
-  - Options market sentiment
-  - Correlated security behavior
-- **Pattern Identification**: Find common characteristics in successful vs. unsuccessful trades
+#### Price Action Tab
+- **Interactive chart**: Candlestick chart with entry/exit markers
+- **Context window**: Configurable days before/after trade
+- **Volume overlay**: Volume bars with average line
+- **Stop loss visualization**: Initial stop level shown on chart
+
+#### Technical Indicators Tab
+- **Multi-indicator view**: RSI, MACD, Bollinger Bands, moving averages
+- **Entry/exit overlay**: Vertical lines marking trade boundaries
+- **Momentum analysis**: Rate of change and trend strength at key points
+
+#### Fundamentals Tab
+- **As-of data**: Fundamental data available at trade entry (no look-ahead)
+- **Key metrics**: P/E, P/B, ROE, ROA, debt ratios
+- **EPS history**: Quarterly EPS with surprises highlighted
+- **Narrative summary**: AI-generated summary of fundamental position
+
+#### Insider Activity Tab
+- **Transaction timeline**: Insider buys/sells around trade period
+- **Sentiment score**: Net insider sentiment calculation
+- **Notable transactions**: Large or unusual trades highlighted
+
+#### Options Flow Tab
+- **IV analysis**: Implied volatility levels and percentile
+- **Put/call ratio**: Options market sentiment indicator
+- **Unusual activity**: Large options trades flagged
+
+#### Correlated Securities Tab
+- **Sector performance**: How sector ETF moved during trade
+- **Market context**: SPY/QQQ correlation during trade period
+- **Relative strength**: Stock vs. benchmark comparison
+
+### Required Data
+
+**Trade Log CSV** (required columns):
+```
+trade_id, symbol, entry_date, entry_price, exit_date, exit_price,
+quantity, side, initial_stop_loss, pl, pl_pct
+```
+
+**Price Data** (from raw_data/daily/):
+```
+date, open, high, low, close, volume, atr_14
+```
+
+**Optional Data Sources** (for enhanced analysis):
+- `raw_data/fundamentals/{symbol}/` - Financial statements
+- `raw_data/insider_transactions/{symbol}.csv` - Insider trades
+- `raw_data/options/{symbol}/` - Options chains
+
+### Configuration Options
+
+| Setting | Description | Default |
+|---------|-------------|---------|
+| **Context Days** | Days before/after trade to show | 30 |
+| **Price Data Path** | Location of daily price files | raw_data/daily |
+| **Fundamentals Path** | Location of fundamental data | raw_data/fundamentals |
+| **Insider Data Path** | Location of insider transactions | raw_data/insider_transactions |
+
+### Interpreting Results
+
+**Key Questions Answered:**
+
+1. **What was happening at entry?**
+   - Was price extended or at support?
+   - Were technicals aligned?
+   - Any fundamental catalysts?
+
+2. **What happened during the trade?**
+   - Did price respect stop loss?
+   - Any unexpected news or events?
+   - How did correlated assets behave?
+
+3. **Was the exit optimal?**
+   - Did we exit too early or too late?
+   - Were there warning signs before exit?
+   - What happened after exit?
+
+4. **Any patterns across trades?**
+   - Do winners share common characteristics?
+   - Are losers correlated with specific conditions?
+   - Should strategy rules be adjusted?
+
+### Integration with Strategy Improvement
+
+Use per-trade insights to improve your strategy:
+
+1. **Refine Entry Criteria**: Add filters based on conditions present in losing trades
+2. **Adjust Stop Losses**: Tighten or widen based on price action patterns
+3. **Improve Exit Rules**: Identify signals that preceded optimal exits
+4. **Add Confirmation Signals**: Require multiple factors aligned before entry
 
 ---
 
 ## Iteration Cycle
 
-After completing steps 1-8 (or 1-5 with current implementation), repeat the cycle:
+After completing steps 1-7, repeat the cycle:
 
 ```
      +-----> Strategy Adjustment <-----+
@@ -1103,6 +1208,7 @@ After completing steps 1-8 (or 1-5 with current implementation), repeat the cycl
 | **Factor Analysis Dashboard** | `python ctk_factor_analysis_gui.py` |
 | **Factor Analysis Config** | `python ctk_factor_analysis_gui.py --config` |
 | **Factor Analysis Data Upload** | `python ctk_factor_analysis_gui.py --upload` |
+| **Per-Trade Analysis** | `streamlit run apps/per_trade_analysis/app.py` |
 | **AlphaTrend Explorer** | `streamlit run apps/alphatrend_explorer.py` |
 
 ---
@@ -1122,6 +1228,11 @@ BackTestingFramework/
     +-- apps/                          # Additional applications
     |   +-- data_collection_gui.py     # Data fetching interface
     |   +-- alphatrend_explorer.py     # Strategy visualization
+    |   +-- per_trade_analysis/        # Per-Trade Analysis app
+    |       +-- app.py                 # Main Streamlit application
+    |       +-- data_loader.py         # Multi-source data loading
+    |       +-- charts.py              # Chart generation (plotly)
+    |       +-- analysis.py            # Trade forensics utilities
     |
     +-- strategies/                    # Trading strategies
     |   +-- alphatrend_strategy.py     # Production-ready AlphaTrend strategy
