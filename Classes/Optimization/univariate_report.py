@@ -18,9 +18,13 @@ try:
     from openpyxl import Workbook
     from openpyxl.chart import LineChart, Reference
     from openpyxl.chart.series import SeriesLabel
+    from openpyxl.chart.shapes import GraphicalProperties
+    from openpyxl.chart.label import DataLabelList
     from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
     from openpyxl.utils import get_column_letter
     from openpyxl.utils.dataframe import dataframe_to_rows
+    from openpyxl.drawing.line import LineProperties
+    from openpyxl.chart.layout import Layout, ManualLayout
     OPENPYXL_AVAILABLE = True
 except ImportError:
     OPENPYXL_AVAILABLE = False
@@ -291,22 +295,35 @@ class UnivariateReportGenerator:
             metric_def = METRIC_DEFINITIONS.get(metric, {})
             metric_name = metric_def.get("name", metric)
 
-            # Create chart
+            # Create chart with professional, simple styling
             chart = LineChart()
-            chart.title = f"{metric_name} vs {param_name}"
-            chart.style = 10  # Use a clean style
-            chart.x_axis.title = param_name
-            chart.y_axis.title = metric_name
+            chart.title = None  # No title - axis labels are sufficient
+            chart.style = 2  # Minimal style
 
             # Set chart size
             chart.width = self.CHART_WIDTH
             chart.height = self.CHART_HEIGHT
 
+            # Configure X-axis (parameter values)
+            chart.x_axis.title = param_name
+            chart.x_axis.tickLblPos = "low"
+            chart.x_axis.delete = False
+            chart.x_axis.majorGridlines = None  # No vertical gridlines
+
+            # Configure Y-axis (metric values)
+            chart.y_axis.title = metric_name
+            chart.y_axis.tickLblPos = "nextTo"
+            chart.y_axis.delete = False
+            chart.y_axis.majorGridlines = None  # Clean look without gridlines
+
+            # Remove legend (single series doesn't need it)
+            chart.legend = None
+
             # Data reference (metric column)
             data = Reference(
                 ws,
                 min_col=metric_idx + 2,  # +2 because col 1 is parameter values
-                min_row=data_rows_start,  # Include header for series name
+                min_row=data_rows_start + 1,  # Skip header, no series name needed
                 max_row=data_rows_end
             )
 
@@ -318,15 +335,27 @@ class UnivariateReportGenerator:
                 max_row=data_rows_end
             )
 
-            chart.add_data(data, titles_from_data=True)
+            chart.add_data(data, titles_from_data=False)
             chart.set_categories(cats)
 
-            # Style the line
+            # Style the line - simple black line with small markers
             if chart.series:
                 series = chart.series[0]
-                series.graphicalProperties.line.width = 25000  # 2.5pt
+                # Black line
+                series.graphicalProperties.line.solidFill = "000000"
+                series.graphicalProperties.line.width = 20000  # ~2pt
+                # Small circular markers
                 series.marker.symbol = "circle"
-                series.marker.size = 7
+                series.marker.size = 5
+                series.marker.graphicalProperties.solidFill = "000000"
+                series.marker.graphicalProperties.line.solidFill = "000000"
+                # No data labels
+                series.labels = None
+
+            # Remove plot area border for cleaner look
+            chart.plotArea.graphicalProperties = GraphicalProperties()
+            chart.plotArea.graphicalProperties.noFill = True
+            chart.plotArea.graphicalProperties.line.noFill = True
 
             # Position chart
             chart_col = (charts_created % self.CHARTS_PER_ROW) * 10 + 1
