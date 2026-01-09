@@ -17,14 +17,9 @@ import pandas as pd
 try:
     from openpyxl import Workbook
     from openpyxl.chart import LineChart, Reference
-    from openpyxl.chart.series import SeriesLabel
-    from openpyxl.chart.shapes import GraphicalProperties
-    from openpyxl.chart.label import DataLabelList
     from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
     from openpyxl.utils import get_column_letter
     from openpyxl.utils.dataframe import dataframe_to_rows
-    from openpyxl.drawing.line import LineProperties
-    from openpyxl.chart.layout import Layout, ManualLayout
     OPENPYXL_AVAILABLE = True
 except ImportError:
     OPENPYXL_AVAILABLE = False
@@ -349,13 +344,6 @@ class UnivariateReportGenerator:
                 series.marker.size = 5
                 series.marker.graphicalProperties.solidFill = "000000"
                 series.marker.graphicalProperties.line.solidFill = "000000"
-                # No data labels
-                series.labels = None
-
-            # Remove plot area border for cleaner look
-            chart.plotArea.graphicalProperties = GraphicalProperties()
-            chart.plotArea.graphicalProperties.noFill = True
-            chart.plotArea.graphicalProperties.line.noFill = True
 
             # Position chart
             chart_col = (charts_created % self.CHARTS_PER_ROW) * 10 + 1
