@@ -183,10 +183,10 @@ class CTkMainLauncher(ctk.CTk):
                 "command": self._launch_backtest
             },
             {
-                "title": "Optimization",
-                "description": "Walk-forward optimization to find optimal strategy parameters",
+                "title": "Univariate Optimization",
+                "description": "Test one parameter at a time to analyze strategy sensitivity",
                 "icon": "\u2699",  # Gear
-                "command": self._launch_optimization
+                "command": self._launch_univariate_optimization
             },
             {
                 "title": "Edge Analysis",
@@ -263,6 +263,10 @@ class CTkMainLauncher(ctk.CTk):
     def _launch_optimization(self):
         """Launch the optimization GUI."""
         self._launch_module("optimization")
+
+    def _launch_univariate_optimization(self):
+        """Launch the univariate optimization GUI."""
+        self._launch_module("univariate_optimization")
 
     def _launch_edge_analysis(self):
         """Launch the edge analysis GUI."""

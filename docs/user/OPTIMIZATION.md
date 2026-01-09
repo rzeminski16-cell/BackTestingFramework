@@ -1,18 +1,284 @@
 # Optimization Guide
 
-This guide explains how to find optimal strategy parameters using walk-forward optimization.
-
-## Why Optimize?
-
-Every strategy has parameters (e.g., moving average periods, stop loss distances). Different parameter values give different results. Optimization finds parameter values that perform well.
-
-**The Problem:** You can always find parameters that work great on past data. But those parameters often fail on new data. This is called **overfitting**.
-
-**The Solution:** Walk-forward optimization tests parameters on data they've never seen, so you know they'll work on future data too.
+This guide explains how to find optimal strategy parameters using the framework's optimization tools.
 
 ---
 
-## How Walk-Forward Optimization Works
+## Optimization Methods Overview
+
+The framework provides two optimization approaches:
+
+| Method | Best For | Approach |
+|--------|----------|----------|
+| **Univariate Optimization** | Understanding individual parameter impact | Test one parameter at a time, others at control values |
+| **Walk-Forward Optimization** | Finding robust parameters for live trading | Multi-parameter search with out-of-sample validation |
+
+---
+
+## Univariate Optimization
+
+Univariate optimization tests **one parameter at a time** while keeping all other parameters at fixed "control" values. This helps you understand how each parameter individually affects strategy performance.
+
+### Why Use Univariate Optimization?
+
+- **Understand parameter sensitivity**: See exactly how each parameter affects performance
+- **Identify optimal ranges**: Find the sweet spot for each parameter
+- **Avoid overfitting**: Simpler than multi-parameter optimization
+- **Visual analysis**: Line charts show clear relationships between parameter values and metrics
+
+### Launch
+
+From the main menu or directly:
+
+```bash
+python ctk_main_gui.py
+# Click "Univariate Optimization"
+```
+
+Or launch directly:
+
+```bash
+python ctk_univariate_optimization_gui.py
+```
+
+### Step-by-Step Workflow
+
+#### 1. Select Securities
+
+Choose between two modes:
+
+| Mode | Description |
+|------|-------------|
+| **Single Security** | Test on one ticker |
+| **Portfolio** | Test on multiple tickers |
+
+For portfolio mode, you can run securities:
+- **Together**: Combined results across all securities
+- **Separately**: Individual results per security
+
+#### 2. Select Strategy
+
+Choose the strategy to optimize (e.g., AlphaTrendStrategy).
+
+#### 3. Configure Parameters
+
+For each strategy parameter, you'll see a control panel:
+
+```
+┌─────────────────────────────────────────────────────────┐
+│ ☑ volume_short_ma                                       │
+│                                                          │
+│ Control Value: [4]                                       │
+│                                                          │
+│ Range: [2] ════════════════════════════════════ [20]    │
+│        Min           Slider                    Max       │
+│                                                          │
+│ Interval: [1]                                            │
+└─────────────────────────────────────────────────────────┘
+```
+
+- **Checkbox**: Enable/disable parameter for optimization
+- **Control Value**: The baseline value (used when testing other parameters)
+- **Range Slider**: Set min and max values to test
+- **Interval**: Step size between test values
+
+**Example**: If min=2, max=10, interval=2, the optimizer tests: 2, 4, 6, 8, 10
+
+#### 4. Select Metrics
+
+Choose which performance metrics to calculate:
+
+| Metric | Description |
+|--------|-------------|
+| **Total Return** | Overall percentage gain/loss |
+| **Annual Return** | Annualized return percentage |
+| **Sharpe Ratio** | Risk-adjusted return (volatility) |
+| **Sortino Ratio** | Risk-adjusted return (downside only) |
+| **Max Drawdown** | Largest peak-to-trough decline |
+| **Calmar Ratio** | Return / Max Drawdown |
+| **Win Rate** | Percentage of profitable trades |
+| **Profit Factor** | Gross profit / Gross loss |
+| **Total Trades** | Number of trades executed |
+| **Avg Trade Return** | Mean return per trade |
+| **Expectancy** | Expected value per trade |
+| **Volatility** | Standard deviation of returns |
+| **Final Equity** | Ending portfolio value |
+
+**Tip**: Select 3-5 key metrics to keep charts readable.
+
+#### 5. Configure Settings
+
+| Setting | Description | Default |
+|---------|-------------|---------|
+| **Initial Capital** | Starting portfolio value | 100,000 |
+| **Commission (%)** | Trading cost percentage | 0.1% |
+| **Slippage (%)** | Execution slippage | 0.1% |
+| **Start Date** | Filter data from this date (optional) | - |
+| **End Date** | Filter data to this date (optional) | - |
+
+**Date Range**: Leave blank to use all available data, or specify dates in `YYYY-MM-DD` format to test on a specific timeframe.
+
+#### 6. Run Optimization
+
+Click **"Run Optimization"** to start. Progress is shown in the log panel:
+
+```
+Strategy: AlphaTrendStrategy
+Securities: AAPL, MSFT, GOOGL
+Run Mode: together
+Parameters to optimize: 3
+Metrics: total_return, sharpe_ratio, max_drawdown
+Date Range: 2020-01-01 to 2023-12-31
+
+Testing parameter: volume_short_ma
+  Testing value 2/10...
+  Testing value 3/10...
+  ...
+```
+
+#### 7. Export Results
+
+When complete, click **"Export to Excel"** to generate the report.
+
+### Excel Report Contents
+
+The report contains multiple sheets:
+
+#### Summary Sheet
+
+Contains:
+- **Optimization Settings**: Strategy, securities, date range, capital settings
+- **Control Values**: Baseline value for each parameter
+- **Best Values by Metric**: Optimal parameter value for each metric
+
+Example:
+```
+BEST VALUES BY METRIC
+Parameter          | Control | Total Return | Sharpe Ratio | Max Drawdown
+-------------------|---------|--------------|--------------|-------------
+volume_short_ma    |    4    |      6       |      4       |      3
+volume_long_ma     |   30    |     25       |     30       |     35
+atr_stop_multiple  |  2.5    |    2.0       |    2.5       |    3.0
+```
+
+#### Parameter Sheets
+
+One sheet per optimized parameter, containing:
+
+1. **Data Table**: All tested values with metric results
+
+```
+Parameter Value | Total Return | Sharpe Ratio | Max Drawdown | Win Rate
+----------------|--------------|--------------|--------------|----------
+        2       |    12.5%     |     1.2      |    -15.3%    |   45%
+        3       |    18.2%     |     1.5      |    -12.1%    |   48%
+        4       |    15.8%     |     1.4      |    -13.5%    |   47%
+        ...
+```
+
+2. **Line Charts**: Visual representation of how each metric changes across parameter values
+
+```
+    Sharpe Ratio
+    │
+1.5 │         ●
+    │       ●   ●
+1.3 │     ●       ●
+    │   ●           ●
+1.1 │ ●               ●
+    └─────────────────────
+      2   3   4   5   6   7   8
+           volume_short_ma
+```
+
+The charts feature:
+- Clear x-axis (parameter values) and y-axis (metric values)
+- Simple black line with small circular markers
+- Professional, minimal styling
+
+### Interpreting Results
+
+#### Finding Optimal Values
+
+Look for parameter values where:
+- Multiple metrics perform well simultaneously
+- Performance is stable (not a sharp peak)
+- Values make intuitive sense for the strategy
+
+#### Identifying Sensitivity
+
+Parameters are **sensitive** if small changes cause large performance swings:
+
+```
+High Sensitivity (Risky)          Low Sensitivity (Robust)
+         │                                  │
+    ●    │                         ●────●────●────●────●
+   / \   │                                  │
+  ●   ●  │                                  │
+ /     \ │                                  │
+●       ●│                                  │
+─────────┴──────                   ─────────┴──────
+```
+
+Prefer parameters with **low sensitivity** - they're more robust to market changes.
+
+#### Common Patterns
+
+| Pattern | Interpretation | Action |
+|---------|----------------|--------|
+| **Flat line** | Parameter has little impact | Use default or remove from strategy |
+| **Clear peak** | Optimal value exists | Use peak value, but verify stability |
+| **Monotonic increase** | Higher is always better | Consider if there's a natural limit |
+| **U-shape** | Extremes are bad | Use middle values |
+| **Noisy/jagged** | Unstable or overfit | Increase data, simplify strategy |
+
+### Best Practices
+
+1. **Start with control values from backtesting**: Use values that already work reasonably well
+
+2. **Use sensible ranges**: Don't test values that don't make sense (e.g., negative periods)
+
+3. **Appropriate intervals**: Too fine = slow and noisy; too coarse = miss optimal values
+
+4. **Multiple securities**: Test on several securities to ensure robustness
+
+5. **Out-of-sample validation**: After finding optimal values, test on data not used in optimization
+
+6. **Don't over-optimize**: If you need very specific values to get good results, the strategy may be overfit
+
+### Example Workflow
+
+```
+1. Initial Setup
+   - Select: AAPL, MSFT, GOOGL (portfolio, together)
+   - Strategy: AlphaTrendStrategy
+   - Date Range: 2020-01-01 to 2023-12-31
+
+2. Parameter Configuration
+   - volume_short_ma: control=4, range=2-10, interval=1
+   - volume_long_ma: control=30, range=15-50, interval=5
+   - atr_stop_multiple: control=2.5, range=1.5-4.0, interval=0.5
+
+3. Metrics Selection
+   - Total Return, Sharpe Ratio, Max Drawdown, Win Rate, Profit Factor
+
+4. Run and Export
+
+5. Analysis
+   - volume_short_ma: Best at 4-5, stable curve → keep default
+   - volume_long_ma: Best at 25-30, slight improvement → use 28
+   - atr_stop_multiple: Best at 2.0-2.5, sensitive above 3.0 → use 2.5
+
+6. Validation
+   - Run backtest with new values on 2024 data (out-of-sample)
+   - Compare results to original parameters
+```
+
+---
+
+## Walk-Forward Optimization
+
+Walk-forward optimization is a more sophisticated approach that helps prevent overfitting by testing parameters on data they've never seen.
 
 1. **Split data into training and testing periods**
 2. **Optimize on training data** - Find the best parameters
