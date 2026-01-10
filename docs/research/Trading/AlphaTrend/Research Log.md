@@ -10,7 +10,26 @@
 23/12/2025
 - [x] Create a portfolio of a mix of securities that will be used to analyse based on fundamental information.
 - [x] Comparing trade frequency between optimised and base parameters to decide which is more useful.
-- [ ] Perform single security back tests and try to understand in what market conditions are these securities performing and not performing.
+- [x] Perform single security back tests and try to understand in what market conditions are these securities performing and not performing.
 
 
 ***The main idea for now is to find a base performance of this strategy find out what it is lacking, where it performs best and where it performs at it's worst.***
+
+---
+
+***Before continuing with researching the strategy I have decided to fully complete and test the python framework to ensure it's reliability.***
+
+### Complete Framework Creation
+
+- [ ] Complete all elements of the system and finalise documentation.
+	- [ ] Backtesting
+	- [ ] Univariate Optimisation
+	- [ ] Edge Analysis
+	- [ ] Factor Analysis
+	- [ ] Vulnerability Modeler
+	- [ ] Alpha-Trend Strategy + Alpha-Trend Explorer
+	- [ ] Per-Trade Analysis
+- [ ] Ensure all testing is complete as stated in the testing documentation.
+- [ ] Complete User Guide to show flow and usage of system elements.
+
+### Research Alpha-Trend Strategy

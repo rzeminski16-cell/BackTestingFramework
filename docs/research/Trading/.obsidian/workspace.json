@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Business Plan.md",
+                "file": "AlphaTrend/Research Log.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Business Plan"
+              "title": "Research Log"
             }
           }
         ],
@@ -201,8 +201,8 @@
   "active": "b4a617468a2f0435",
   "lastOpenFiles": [
     "AlphaTrend/General Notes.md",
+    "Business Plan.md",
     "Insider Trading/AlphaVantage.md",
-    "Important Info.md",
-    "Business Plan.md"
+    "Important Info.md"
   ]
 }
