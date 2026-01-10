@@ -3,22 +3,21 @@ Trade logging to CSV files with organized folder structure.
 
 Folder structure:
 logs/
-├── backtests/
-│   ├── single_security/
-│   │   └── {backtest_name}/
-│   │       ├── {strategy}_{symbol}_trades.csv
-│   │       ├── {strategy}_{symbol}_parameters.json
-│   │       └── reports/
-│   │           └── {timestamp}.xlsx
-│   └── portfolio/
-│       └── {backtest_name}/
-│           ├── {symbol}_trades.csv (per security)
-│           ├── portfolio_trades.csv (consolidated)
-│           ├── signal_rejections.csv
-│           ├── vulnerability_log.csv (if using vulnerability score)
-│           ├── config.json
-│           └── reports/
-│               └── portfolio_report_{timestamp}.xlsx
+├── single_security/
+│   └── {backtest_name}/
+│       ├── {strategy}_{symbol}_trades.csv
+│       ├── {strategy}_{symbol}_parameters.json
+│       └── reports/
+│           └── {timestamp}.xlsx
+├── portfolio/
+│   └── {backtest_name}/
+│       ├── {symbol}_trades.csv (per security)
+│       ├── portfolio_trades.csv (consolidated)
+│       ├── signal_rejections.csv
+│       ├── vulnerability_log.csv (if using vulnerability score)
+│       ├── config.json
+│       └── reports/
+│           └── portfolio_report_{timestamp}.xlsx
 ├── optimizations/
 │   ├── single_security/
 │   │   └── {optimization_name}/
@@ -45,14 +44,14 @@ class LoggingPath:
     @classmethod
     def get_single_security_backtest_dir(cls, backtest_name: str) -> Path:
         """Get directory for single security backtest."""
-        path = cls.BASE_DIR / "backtests" / "single_security" / backtest_name
+        path = cls.BASE_DIR / "single_security" / backtest_name
         path.mkdir(parents=True, exist_ok=True)
         return path
 
     @classmethod
     def get_portfolio_backtest_dir(cls, backtest_name: str) -> Path:
         """Get directory for portfolio backtest."""
-        path = cls.BASE_DIR / "backtests" / "portfolio" / backtest_name
+        path = cls.BASE_DIR / "portfolio" / backtest_name
         path.mkdir(parents=True, exist_ok=True)
         return path
 

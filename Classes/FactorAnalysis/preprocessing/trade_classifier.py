@@ -73,6 +73,11 @@ class TradeClassifier:
         """
         Classify a single trade.
 
+        Classification Logic:
+        - GOOD: pl_pct > good_threshold (clear winners)
+        - BAD: pl_pct < bad_threshold AND duration >= bad_min_days (clear losers held long enough)
+        - INDETERMINATE: Everything else (middle range returns, or short-duration losses)
+
         Args:
             pl_pct: Trade return percentage
             duration_days: Trade holding period in days
@@ -83,28 +88,24 @@ class TradeClassifier:
         """
         good_thresh = thresholds.get('good') if thresholds else self.config.good_threshold_pct
         bad_thresh = thresholds.get('bad') if thresholds else self.config.bad_threshold_pct
-        indet_max_days = self.config.indeterminate_max_days
         bad_min_days = self.config.bad_min_days
 
-        # Check for good trade
+        # Check for good trade (clear winner)
         if pl_pct > good_thresh:
             return TradeClass.GOOD
 
-        # Check for bad trade
+        # Check for bad trade (clear loser held long enough)
         if pl_pct < bad_thresh:
-            # Must also meet duration requirement
+            # Must also meet duration requirement to be classified as "bad"
             if duration_days >= bad_min_days:
                 return TradeClass.BAD
             else:
-                # Short-duration losing trade is indeterminate
+                # Short-duration losing trade is indeterminate (might have cut early)
                 return TradeClass.INDETERMINATE
 
-        # Middle range: pl_pct between thresholds
-        if duration_days <= indet_max_days:
-            return TradeClass.INDETERMINATE
-        else:
-            # Long duration but mediocre return = bad
-            return TradeClass.BAD
+        # Middle range: pl_pct between bad_thresh and good_thresh
+        # These are indeterminate trades regardless of duration
+        return TradeClass.INDETERMINATE
 
     def _compute_percentile_thresholds(
         self,

@@ -408,6 +408,62 @@ class ExcelReportGenerator:
         scenarios = results['scenarios']
         row = 1
 
+        # Add scenario detection methodology explanation
+        ws.cell(row=row, column=1, value="Scenario Analysis").font = Font(bold=True, size=14)
+        ws.merge_cells('A1:F1')
+        row += 2
+
+        # Detection methodology section
+        ws.cell(row=row, column=1, value="Detection Methodology").font = Font(bold=True, size=12)
+        row += 1
+
+        mode = scenarios.get('mode', 'binary')
+        ws.cell(row=row, column=1, value="Detection Mode:")
+        ws.cell(row=row, column=2, value=mode.upper())
+        row += 1
+
+        if mode == 'binary':
+            ws.cell(row=row, column=1, value="Method:")
+            ws.cell(row=row, column=2, value="Threshold-based conditions using percentile splits")
+            row += 1
+            ws.cell(row=row, column=1, value="Thresholds tested:")
+            ws.cell(row=row, column=2, value="10th, 25th, 50th, 75th, 90th percentiles of each factor")
+            row += 1
+            ws.cell(row=row, column=1, value="Logic:")
+            ws.cell(row=row, column=2, value="For each factor, tests if trades with factor >= or <= threshold have significantly different outcomes")
+            row += 1
+        elif mode == 'clustering':
+            ws.cell(row=row, column=1, value="Method:")
+            ws.cell(row=row, column=2, value="K-means clustering on standardized factors")
+            row += 1
+            ws.cell(row=row, column=1, value="N Clusters:")
+            ws.cell(row=row, column=2, value=scenarios.get('n_clusters', 3))
+            row += 1
+            ws.cell(row=row, column=1, value="Logic:")
+            ws.cell(row=row, column=2, value="Groups trades into natural clusters based on factor similarity, then evaluates each cluster's performance")
+            row += 1
+
+        # Baseline metrics
+        baseline = scenarios.get('baseline_metrics', {})
+        if baseline:
+            ws.cell(row=row, column=1, value="Baseline Good Trade Rate:")
+            ws.cell(row=row, column=2, value=f"{baseline.get('good_trade_rate', 0):.1%}")
+            row += 1
+
+        # Interpretation guide
+        row += 1
+        ws.cell(row=row, column=1, value="Interpretation Guide").font = Font(bold=True, size=12)
+        row += 1
+        ws.cell(row=row, column=1, value="Lift:")
+        ws.cell(row=row, column=2, value="Ratio of scenario's good trade rate to baseline. Lift > 1 = better than average.")
+        row += 1
+        ws.cell(row=row, column=1, value="Confidence:")
+        ws.cell(row=row, column=2, value="Statistical confidence that the scenario differs from baseline (binomial test).")
+        row += 1
+        ws.cell(row=row, column=1, value="N Trades:")
+        ws.cell(row=row, column=2, value="Number of trades matching the scenario conditions (larger = more reliable).")
+        row += 2
+
         # Best scenarios
         ws.cell(row=row, column=1, value="Best Trading Scenarios").font = Font(bold=True, size=13)
         row += 1
