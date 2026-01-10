@@ -116,7 +116,7 @@ class ExcelReportGenerator:
         self._create_costs_analysis(wb, result, metrics)
         self._create_performance_analysis(wb, result, metrics)
         self._create_visualizations(wb, result, metrics)
-        self._create_market_conditions(wb, result, metrics)
+        # Market conditions tab removed for single security backtests
 
         # Add enhanced visualizations if available
         if self.use_enhanced and self._viz:
@@ -1835,13 +1835,14 @@ class ExcelReportGenerator:
         ws.column_dimensions['D'].width = 20
 
     def _create_visualizations(self, wb: Workbook, result: BacktestResult, metrics: Dict[str, Any]):
-        """Create Sheet 4: Visualizations & Charts."""
+        """Create Sheet 4: Visualizations & Charts - Clean layout with charts only."""
         ws = wb.create_sheet("Visualizations")
 
         # Title
         ws['A1'] = "CHARTS & VISUALIZATIONS"
-        ws['A1'].font = Font(bold=True, size=14)
+        ws['A1'].font = Font(bold=True, size=16)
         ws['A1'].alignment = Alignment(horizontal='center')
+        ws.merge_cells('A1:L1')
 
         # Prepare equity curve data
         equity_df = result.equity_curve.copy()
@@ -1850,11 +1851,12 @@ class ExcelReportGenerator:
             ws['A3'] = "No data available for charts"
             return
 
-        # Write equity curve data starting at row 4
-        data_start_row = 4
-        ws.cell(row=data_start_row, column=1, value="Date").font = self.header_font
-        ws.cell(row=data_start_row, column=2, value="Equity").font = self.header_font
-        ws.cell(row=data_start_row, column=3, value="Drawdown %").font = self.header_font
+        # Write equity curve data in hidden columns (far right) for chart references
+        data_col_start = 20  # Column T onwards (hidden from view)
+        data_start_row = 2
+        ws.cell(row=data_start_row, column=data_col_start, value="Date")
+        ws.cell(row=data_start_row, column=data_col_start + 1, value="Equity")
+        ws.cell(row=data_start_row, column=data_col_start + 2, value="Drawdown %")
 
         # Calculate drawdown for chart
         equity_values = equity_df['equity'].values
@@ -1863,26 +1865,31 @@ class ExcelReportGenerator:
 
         for idx, (date, equity, dd) in enumerate(zip(equity_df['date'], equity_values, drawdown_pct)):
             row_num = data_start_row + 1 + idx
-            ws.cell(row=row_num, column=1, value=date.strftime('%Y-%m-%d') if hasattr(date, 'strftime') else str(date))
-            ws.cell(row=row_num, column=2, value=equity)
-            ws.cell(row=row_num, column=3, value=dd)
+            ws.cell(row=row_num, column=data_col_start, value=date.strftime('%Y-%m-%d') if hasattr(date, 'strftime') else str(date))
+            ws.cell(row=row_num, column=data_col_start + 1, value=equity)
+            ws.cell(row=row_num, column=data_col_start + 2, value=dd)
 
-        # Create Equity Curve Chart
+        # Hide data columns (T, U, V)
+        ws.column_dimensions['T'].hidden = True
+        ws.column_dimensions['U'].hidden = True
+        ws.column_dimensions['V'].hidden = True
+
+        # Create Equity Curve Chart - Large, prominent
         chart1 = LineChart()
         chart1.title = "Equity Curve"
         chart1.style = 13
         chart1.y_axis.title = 'Portfolio Value ($)'
         chart1.x_axis.title = 'Date'
 
-        data_ref = Reference(ws, min_col=2, min_row=data_start_row, max_row=data_start_row + len(equity_df))
-        cats_ref = Reference(ws, min_col=1, min_row=data_start_row+1, max_row=data_start_row + len(equity_df))
+        data_ref = Reference(ws, min_col=data_col_start + 1, min_row=data_start_row, max_row=data_start_row + len(equity_df))
+        cats_ref = Reference(ws, min_col=data_col_start, min_row=data_start_row + 1, max_row=data_start_row + len(equity_df))
 
         chart1.add_data(data_ref, titles_from_data=True)
         chart1.set_categories(cats_ref)
-        chart1.height = 10
-        chart1.width = 20
+        chart1.height = 12
+        chart1.width = 22
 
-        ws.add_chart(chart1, "E4")
+        ws.add_chart(chart1, "A3")
 
         # Create Drawdown Chart
         chart2 = AreaChart()
@@ -1891,88 +1898,101 @@ class ExcelReportGenerator:
         chart2.y_axis.title = 'Drawdown %'
         chart2.x_axis.title = 'Date'
 
-        dd_ref = Reference(ws, min_col=3, min_row=data_start_row, max_row=data_start_row + len(equity_df))
+        dd_ref = Reference(ws, min_col=data_col_start + 2, min_row=data_start_row, max_row=data_start_row + len(equity_df))
 
         chart2.add_data(dd_ref, titles_from_data=True)
         chart2.set_categories(cats_ref)
-        chart2.height = 10
-        chart2.width = 20
+        chart2.height = 12
+        chart2.width = 22
 
-        ws.add_chart(chart2, "E25")
+        ws.add_chart(chart2, "A27")
 
         # Create return distribution chart
         distribution = metrics['return_distribution']
+        dist_data_col = data_col_start + 3  # Column W onwards
 
         if distribution:
-            # Write distribution data
-            dist_start_row = data_start_row + len(equity_df) + 5
-            ws.cell(row=dist_start_row, column=1, value="Return Range").font = self.header_font
-            ws.cell(row=dist_start_row, column=2, value="Count").font = self.header_font
+            # Write distribution data in hidden columns
+            dist_start_row = data_start_row
+            ws.cell(row=dist_start_row, column=dist_data_col, value="Return Range")
+            ws.cell(row=dist_start_row, column=dist_data_col + 1, value="Count")
 
             for idx, (bin_label, count) in enumerate(distribution.items(), 1):
-                ws.cell(row=dist_start_row + idx, column=1, value=bin_label)
-                ws.cell(row=dist_start_row + idx, column=2, value=count)
+                ws.cell(row=dist_start_row + idx, column=dist_data_col, value=bin_label)
+                ws.cell(row=dist_start_row + idx, column=dist_data_col + 1, value=count)
 
-            # Create bar chart
+            # Hide columns W, X
+            ws.column_dimensions['W'].hidden = True
+            ws.column_dimensions['X'].hidden = True
+
+            # Create bar chart - side by side with main charts
             chart3 = BarChart()
             chart3.title = "Trade Return Distribution"
             chart3.y_axis.title = 'Number of Trades'
             chart3.x_axis.title = 'Return Range'
+            chart3.style = 13
 
-            data_ref = Reference(ws, min_col=2, min_row=dist_start_row, max_row=dist_start_row + len(distribution))
-            cats_ref = Reference(ws, min_col=1, min_row=dist_start_row+1, max_row=dist_start_row + len(distribution))
+            data_ref = Reference(ws, min_col=dist_data_col + 1, min_row=dist_start_row, max_row=dist_start_row + len(distribution))
+            cats_ref = Reference(ws, min_col=dist_data_col, min_row=dist_start_row + 1, max_row=dist_start_row + len(distribution))
 
             chart3.add_data(data_ref, titles_from_data=True)
             chart3.set_categories(cats_ref)
-            chart3.height = 10
-            chart3.width = 15
+            chart3.height = 12
+            chart3.width = 12
 
-            ws.add_chart(chart3, "E46")
+            ws.add_chart(chart3, "M3")
 
         # Annual Sharpe/Sortino/Calmar Ratios Chart
         annual_ratios = metrics.get('annual_ratios', pd.DataFrame())
+        annual_data_col = data_col_start + 5  # Column Y onwards
 
         if not annual_ratios.empty and len(annual_ratios) > 0:
-            # Write annual ratios data
-            annual_start_row = dist_start_row + len(distribution) + 10 if distribution else data_start_row + len(equity_df) + 15
+            # Write annual ratios data in hidden columns
+            annual_start_row = data_start_row
 
-            ws.cell(row=annual_start_row, column=1, value="Year").font = self.header_font
-            ws.cell(row=annual_start_row, column=2, value="Sharpe").font = self.header_font
-            ws.cell(row=annual_start_row, column=3, value="Sortino").font = self.header_font
-            ws.cell(row=annual_start_row, column=4, value="Calmar").font = self.header_font
+            ws.cell(row=annual_start_row, column=annual_data_col, value="Year")
+            ws.cell(row=annual_start_row, column=annual_data_col + 1, value="Sharpe")
+            ws.cell(row=annual_start_row, column=annual_data_col + 2, value="Sortino")
+            ws.cell(row=annual_start_row, column=annual_data_col + 3, value="Calmar")
 
             for idx, row_data in enumerate(annual_ratios.to_dict('records')):
                 row_num = annual_start_row + 1 + idx
-                ws.cell(row=row_num, column=1, value=row_data['year'])
-                ws.cell(row=row_num, column=2, value=row_data['sharpe'])
-                ws.cell(row=row_num, column=3, value=row_data['sortino'])
-                ws.cell(row=row_num, column=4, value=row_data['calmar'])
+                ws.cell(row=row_num, column=annual_data_col, value=row_data['year'])
+                ws.cell(row=row_num, column=annual_data_col + 1, value=row_data['sharpe'])
+                ws.cell(row=row_num, column=annual_data_col + 2, value=row_data['sortino'])
+                ws.cell(row=row_num, column=annual_data_col + 3, value=row_data['calmar'])
 
-            # Only create chart if we have data
-            if len(annual_ratios) > 0:
-                # Create Annual Ratios Line Chart
-                chart4 = LineChart()
-                chart4.title = "Annual Risk-Adjusted Ratios"
-                chart4.y_axis.title = 'Ratio Value'
-                chart4.x_axis.title = 'Year'
-                chart4.style = 13
+            # Hide columns Y, Z, AA, AB
+            ws.column_dimensions['Y'].hidden = True
+            ws.column_dimensions['Z'].hidden = True
+            ws.column_dimensions['AA'].hidden = True
+            ws.column_dimensions['AB'].hidden = True
 
-                # Add all three series
-                sharpe_ref = Reference(ws, min_col=2, min_row=annual_start_row, max_row=annual_start_row + len(annual_ratios))
-                sortino_ref = Reference(ws, min_col=3, min_row=annual_start_row, max_row=annual_start_row + len(annual_ratios))
-                calmar_ref = Reference(ws, min_col=4, min_row=annual_start_row, max_row=annual_start_row + len(annual_ratios))
-                cats_ref = Reference(ws, min_col=1, min_row=annual_start_row+1, max_row=annual_start_row + len(annual_ratios))
+            # Create Annual Ratios Line Chart
+            chart4 = LineChart()
+            chart4.title = "Annual Risk-Adjusted Ratios"
+            chart4.y_axis.title = 'Ratio Value'
+            chart4.x_axis.title = 'Year'
+            chart4.style = 13
 
-                chart4.add_data(sharpe_ref, titles_from_data=True)
-                chart4.add_data(sortino_ref, titles_from_data=True)
-                chart4.add_data(calmar_ref, titles_from_data=True)
-                chart4.set_categories(cats_ref)
-                chart4.height = 12
-                chart4.width = 20
+            # Add all three series
+            sharpe_ref = Reference(ws, min_col=annual_data_col + 1, min_row=annual_start_row, max_row=annual_start_row + len(annual_ratios))
+            sortino_ref = Reference(ws, min_col=annual_data_col + 2, min_row=annual_start_row, max_row=annual_start_row + len(annual_ratios))
+            calmar_ref = Reference(ws, min_col=annual_data_col + 3, min_row=annual_start_row, max_row=annual_start_row + len(annual_ratios))
+            cats_ref = Reference(ws, min_col=annual_data_col, min_row=annual_start_row + 1, max_row=annual_start_row + len(annual_ratios))
 
-                ws.add_chart(chart4, "E67")
+            chart4.add_data(sharpe_ref, titles_from_data=True)
+            chart4.add_data(sortino_ref, titles_from_data=True)
+            chart4.add_data(calmar_ref, titles_from_data=True)
+            chart4.set_categories(cats_ref)
+            chart4.height = 12
+            chart4.width = 12
+
+            ws.add_chart(chart4, "M27")
 
         # Equity Usage Distribution Chart
+        equity_usage_data_col = data_col_start + 9  # Column AC onwards
+
         if len(result.trades) > 0:
             # Calculate equity usage % for each trade
             equity_usage_pcts = []
@@ -1996,19 +2016,22 @@ class ExcelReportGenerator:
                             bin_counts[i] += 1
                             break
                     else:
-                        # Handle values >= 100%
                         if pct >= bins[-1]:
                             bin_counts[-1] += 1
 
-                # Write equity usage distribution data
-                equity_usage_start_row = annual_start_row + len(annual_ratios) + 10 if not annual_ratios.empty else dist_start_row + len(distribution) + 20 if distribution else data_start_row + len(equity_df) + 25
+                # Write equity usage distribution data in hidden columns
+                equity_usage_start_row = data_start_row
 
-                ws.cell(row=equity_usage_start_row, column=1, value="Equity Usage %").font = self.header_font
-                ws.cell(row=equity_usage_start_row, column=2, value="Number of Trades").font = self.header_font
+                ws.cell(row=equity_usage_start_row, column=equity_usage_data_col, value="Equity Usage %")
+                ws.cell(row=equity_usage_start_row, column=equity_usage_data_col + 1, value="Number of Trades")
 
                 for idx, (label, count) in enumerate(zip(bin_labels, bin_counts), 1):
-                    ws.cell(row=equity_usage_start_row + idx, column=1, value=label)
-                    ws.cell(row=equity_usage_start_row + idx, column=2, value=count)
+                    ws.cell(row=equity_usage_start_row + idx, column=equity_usage_data_col, value=label)
+                    ws.cell(row=equity_usage_start_row + idx, column=equity_usage_data_col + 1, value=count)
+
+                # Hide columns AC, AD
+                ws.column_dimensions['AC'].hidden = True
+                ws.column_dimensions['AD'].hidden = True
 
                 # Create bar chart for equity usage distribution
                 chart5 = BarChart()
@@ -2017,15 +2040,15 @@ class ExcelReportGenerator:
                 chart5.x_axis.title = '% of Equity Used'
                 chart5.style = 13
 
-                data_ref = Reference(ws, min_col=2, min_row=equity_usage_start_row, max_row=equity_usage_start_row + len(bin_labels))
-                cats_ref = Reference(ws, min_col=1, min_row=equity_usage_start_row+1, max_row=equity_usage_start_row + len(bin_labels))
+                data_ref = Reference(ws, min_col=equity_usage_data_col + 1, min_row=equity_usage_start_row, max_row=equity_usage_start_row + len(bin_labels))
+                cats_ref = Reference(ws, min_col=equity_usage_data_col, min_row=equity_usage_start_row + 1, max_row=equity_usage_start_row + len(bin_labels))
 
                 chart5.add_data(data_ref, titles_from_data=True)
                 chart5.set_categories(cats_ref)
                 chart5.height = 12
-                chart5.width = 18
+                chart5.width = 12
 
-                ws.add_chart(chart5, "E88")
+                ws.add_chart(chart5, "M51")
 
     def _create_market_conditions(self, wb: Workbook, result: BacktestResult, metrics: Dict[str, Any]):
         """Create Sheet 5: Market Condition Breakdown (Optional)."""
