@@ -1,152 +1,166 @@
-"""Performance metrics calculation for backtest results."""
+"""
+Performance metrics calculation for backtest results.
+
+This module provides a wrapper around the centralized performance metrics
+to maintain backward compatibility with existing code while using the
+standardized calculations from Classes.Core.performance_metrics.
+
+All metric calculations are now delegated to CentralizedPerformanceMetrics
+to ensure consistency across the entire framework.
+"""
 
 from dataclasses import dataclass
 from typing import Dict, List, Optional, Callable, Any, TYPE_CHECKING
 import pandas as pd
 import numpy as np
 
+# Import from centralized metrics module
+from Classes.Core.performance_metrics import (
+    CentralizedPerformanceMetrics,
+    MetricDefinition,
+    METRIC_DEFINITIONS as CENTRALIZED_METRICS,
+    DEFAULT_RISK_FREE_RATE,
+    TRADING_DAYS_PER_YEAR,
+    MAX_PROFIT_FACTOR,
+)
+
 if TYPE_CHECKING:
     from backtesting.core.engine import BacktestResult
 
 
-@dataclass
-class MetricDefinition:
-    """Definition of a performance metric."""
-
-    name: str
-    description: str
-    higher_is_better: bool = True
-    format_str: str = "{:.2f}"
-
-    def format(self, value: float) -> str:
-        """Format the metric value for display."""
-        if pd.isna(value):
-            return "N/A"
-        return self.format_str.format(value)
+# Re-export MetricDefinition for backward compatibility
+# (already imported from centralized module)
 
 
-# Define all available metrics
+# Map the centralized metrics to the old format for backward compatibility
 AVAILABLE_METRICS: Dict[str, MetricDefinition] = {
-    "total_return": MetricDefinition(
+    "total_return": CENTRALIZED_METRICS.get("total_return", MetricDefinition(
         name="Total Return",
         description="Total percentage return",
         higher_is_better=True,
         format_str="{:.2f}%",
-    ),
-    "annual_return": MetricDefinition(
+    )),
+    "annual_return": CENTRALIZED_METRICS.get("annual_return", MetricDefinition(
         name="Annual Return",
         description="Annualized percentage return",
         higher_is_better=True,
         format_str="{:.2f}%",
-    ),
-    "sharpe_ratio": MetricDefinition(
+    )),
+    "sharpe_ratio": CENTRALIZED_METRICS.get("sharpe_ratio", MetricDefinition(
         name="Sharpe Ratio",
-        description="Risk-adjusted return (annualized)",
+        description=f"Risk-adjusted return (annualized, rf={DEFAULT_RISK_FREE_RATE*100:.1f}%)",
         higher_is_better=True,
         format_str="{:.3f}",
-    ),
-    "sortino_ratio": MetricDefinition(
+    )),
+    "sortino_ratio": CENTRALIZED_METRICS.get("sortino_ratio", MetricDefinition(
         name="Sortino Ratio",
         description="Downside risk-adjusted return",
         higher_is_better=True,
         format_str="{:.3f}",
-    ),
-    "max_drawdown": MetricDefinition(
+    )),
+    "max_drawdown": CENTRALIZED_METRICS.get("max_drawdown_pct", MetricDefinition(
         name="Max Drawdown",
         description="Maximum peak-to-trough decline",
         higher_is_better=False,
         format_str="{:.2f}%",
-    ),
-    "calmar_ratio": MetricDefinition(
+    )),
+    "calmar_ratio": CENTRALIZED_METRICS.get("calmar_ratio", MetricDefinition(
         name="Calmar Ratio",
         description="Annual return / Max drawdown",
         higher_is_better=True,
         format_str="{:.3f}",
-    ),
-    "win_rate": MetricDefinition(
+    )),
+    "win_rate": CENTRALIZED_METRICS.get("win_rate", MetricDefinition(
         name="Win Rate",
         description="Percentage of winning trades",
         higher_is_better=True,
         format_str="{:.2f}%",
-    ),
-    "profit_factor": MetricDefinition(
+    )),
+    "profit_factor": CENTRALIZED_METRICS.get("profit_factor", MetricDefinition(
         name="Profit Factor",
         description="Gross profit / Gross loss",
         higher_is_better=True,
         format_str="{:.2f}",
-    ),
-    "total_trades": MetricDefinition(
+    )),
+    "total_trades": CENTRALIZED_METRICS.get("total_trades", MetricDefinition(
         name="Total Trades",
         description="Number of completed trades",
         higher_is_better=True,
         format_str="{:.0f}",
-    ),
-    "avg_trade_return": MetricDefinition(
+    )),
+    "avg_trade_return": CENTRALIZED_METRICS.get("avg_trade_return", MetricDefinition(
         name="Avg Trade Return",
         description="Average return per trade",
         higher_is_better=True,
         format_str="{:.2f}%",
-    ),
-    "avg_win": MetricDefinition(
+    )),
+    "avg_win": CENTRALIZED_METRICS.get("avg_win", MetricDefinition(
         name="Avg Win",
         description="Average winning trade return",
         higher_is_better=True,
         format_str="{:.2f}%",
-    ),
-    "avg_loss": MetricDefinition(
+    )),
+    "avg_loss": CENTRALIZED_METRICS.get("avg_loss", MetricDefinition(
         name="Avg Loss",
         description="Average losing trade return",
         higher_is_better=False,
         format_str="{:.2f}%",
-    ),
-    "max_consecutive_wins": MetricDefinition(
+    )),
+    "max_consecutive_wins": CENTRALIZED_METRICS.get("max_consecutive_wins", MetricDefinition(
         name="Max Consecutive Wins",
         description="Longest winning streak",
         higher_is_better=True,
         format_str="{:.0f}",
-    ),
-    "max_consecutive_losses": MetricDefinition(
+    )),
+    "max_consecutive_losses": CENTRALIZED_METRICS.get("max_consecutive_losses", MetricDefinition(
         name="Max Consecutive Losses",
         description="Longest losing streak",
         higher_is_better=False,
         format_str="{:.0f}",
-    ),
-    "volatility": MetricDefinition(
+    )),
+    "volatility": CENTRALIZED_METRICS.get("volatility", MetricDefinition(
         name="Volatility",
         description="Annualized standard deviation of returns",
         higher_is_better=False,
         format_str="{:.2f}%",
-    ),
-    "expectancy": MetricDefinition(
+    )),
+    "expectancy": CENTRALIZED_METRICS.get("expectancy", MetricDefinition(
         name="Expectancy",
         description="Expected return per trade",
         higher_is_better=True,
         format_str="{:.2f}%",
-    ),
-    "recovery_factor": MetricDefinition(
+    )),
+    "recovery_factor": CENTRALIZED_METRICS.get("recovery_factor", MetricDefinition(
         name="Recovery Factor",
         description="Net profit / Max drawdown",
         higher_is_better=True,
         format_str="{:.2f}",
-    ),
-    "avg_trade_duration": MetricDefinition(
+    )),
+    "avg_trade_duration": CENTRALIZED_METRICS.get("avg_trade_duration", MetricDefinition(
         name="Avg Trade Duration",
         description="Average holding period in days",
-        higher_is_better=False,  # Usually shorter is better
+        higher_is_better=False,
         format_str="{:.1f} days",
-    ),
-    "final_equity": MetricDefinition(
+    )),
+    "final_equity": CENTRALIZED_METRICS.get("final_equity", MetricDefinition(
         name="Final Equity",
         description="Final portfolio value",
         higher_is_better=True,
         format_str="${:,.2f}",
-    ),
+    )),
 }
 
 
 class PerformanceMetrics:
     """
     Calculate performance metrics from backtest results.
+
+    This class now delegates all calculations to CentralizedPerformanceMetrics
+    for consistency across the framework while maintaining backward compatibility.
+
+    IMPORTANT: Risk-free rate is standardized at 3.5% (UK base rate approximation)
+    across all systems for consistency. The risk_free_rate parameter is kept for
+    backward compatibility but defaults to the standardized value.
 
     Example:
         metrics = PerformanceMetrics(result)
@@ -168,16 +182,16 @@ class PerformanceMetrics:
     def __init__(
         self,
         result: "BacktestResult",
-        risk_free_rate: float = 0.02,
-        trading_days: int = 252,
+        risk_free_rate: float = DEFAULT_RISK_FREE_RATE,  # Standardized at 3.5%
+        trading_days: int = TRADING_DAYS_PER_YEAR,
     ):
         """
         Initialize metrics calculator.
 
         Args:
             result: BacktestResult from backtest
-            risk_free_rate: Annual risk-free rate for Sharpe calculation
-            trading_days: Trading days per year (252 for stocks, 365 for crypto)
+            risk_free_rate: Annual risk-free rate (default: 3.5% - standardized)
+            trading_days: Trading days per year (default: 252)
         """
         self.result = result
         self.risk_free_rate = risk_free_rate
@@ -267,67 +281,46 @@ class PerformanceMetrics:
         return "\n".join(lines)
 
     # === Metric Calculation Methods ===
+    # These methods now delegate to CentralizedPerformanceMetrics for consistency
 
     def _calc_total_return(self) -> float:
-        """Calculate total return percentage."""
-        equity = self.result.equity_curve["equity"]
-        if len(equity) < 2:
-            return 0.0
-        return ((equity.iloc[-1] / equity.iloc[0]) - 1) * 100
+        """Calculate total return percentage using centralized method."""
+        _, total_return_pct = CentralizedPerformanceMetrics.calculate_total_return(
+            self.result.equity_curve
+        )
+        return total_return_pct
 
     def _calc_annual_return(self) -> float:
-        """Calculate annualized return."""
-        equity = self.result.equity_curve["equity"]
-        if len(equity) < 2:
-            return 0.0
-
-        total_return = equity.iloc[-1] / equity.iloc[0]
-        days = (self.result.end_date - self.result.start_date).days
-        if days <= 0:
-            return 0.0
-
-        years = days / 365.0
-        annual_return = (total_return ** (1 / years)) - 1
-        return annual_return * 100
+        """Calculate annualized return using centralized method."""
+        return CentralizedPerformanceMetrics.calculate_annual_return(
+            self.result.equity_curve
+        )
 
     def _calc_sharpe_ratio(self) -> float:
-        """Calculate annualized Sharpe ratio."""
-        if len(self.daily_returns) < 2:
-            return 0.0
-
-        excess_returns = self.daily_returns - (self.risk_free_rate / self.trading_days)
-        if excess_returns.std() == 0:
-            return 0.0
-
-        sharpe = excess_returns.mean() / excess_returns.std()
-        return sharpe * np.sqrt(self.trading_days)
+        """Calculate annualized Sharpe ratio using centralized method."""
+        return CentralizedPerformanceMetrics.calculate_sharpe_ratio(
+            self.result.equity_curve,
+            risk_free_rate=self.risk_free_rate,
+            trading_days=self.trading_days
+        )
 
     def _calc_sortino_ratio(self) -> float:
-        """Calculate Sortino ratio (downside deviation)."""
-        if len(self.daily_returns) < 2:
-            return 0.0
-
-        excess_returns = self.daily_returns - (self.risk_free_rate / self.trading_days)
-        downside_returns = excess_returns[excess_returns < 0]
-
-        if len(downside_returns) == 0 or downside_returns.std() == 0:
-            return 0.0
-
-        sortino = excess_returns.mean() / downside_returns.std()
-        return sortino * np.sqrt(self.trading_days)
+        """Calculate Sortino ratio using centralized method."""
+        return CentralizedPerformanceMetrics.calculate_sortino_ratio(
+            self.result.equity_curve,
+            risk_free_rate=self.risk_free_rate,
+            trading_days=self.trading_days
+        )
 
     def _calc_max_drawdown(self) -> float:
-        """Calculate maximum drawdown percentage."""
-        equity = self.result.equity_curve["equity"]
-        if len(equity) < 2:
-            return 0.0
-
-        rolling_max = equity.expanding().max()
-        drawdowns = (equity - rolling_max) / rolling_max * 100
-        return abs(drawdowns.min())
+        """Calculate maximum drawdown percentage using centralized method."""
+        _, max_dd_pct = CentralizedPerformanceMetrics.calculate_max_drawdown(
+            self.result.equity_curve
+        )
+        return max_dd_pct
 
     def _calc_calmar_ratio(self) -> float:
-        """Calculate Calmar ratio."""
+        """Calculate Calmar ratio using centralized method."""
         annual_return = self._calc_annual_return()
         max_dd = self._calc_max_drawdown()
 
@@ -337,114 +330,54 @@ class PerformanceMetrics:
         return annual_return / max_dd
 
     def _calc_win_rate(self) -> float:
-        """Calculate win rate percentage."""
-        trades = self.result.trades
-        if not trades:
-            return 0.0
-
-        winning = sum(1 for t in trades if t.pnl > 0)
-        return (winning / len(trades)) * 100
+        """Calculate win rate percentage using centralized method."""
+        return CentralizedPerformanceMetrics.calculate_win_rate(self.result.trades)
 
     def _calc_profit_factor(self) -> float:
-        """Calculate profit factor (gross profit / gross loss)."""
-        trades = self.result.trades
-        if not trades:
-            return 0.0
-
-        gross_profit = sum(t.pnl for t in trades if t.pnl > 0)
-        gross_loss = abs(sum(t.pnl for t in trades if t.pnl < 0))
-
-        if gross_loss == 0:
-            return float("inf") if gross_profit > 0 else 0.0
-
-        return gross_profit / gross_loss
+        """Calculate profit factor using centralized method."""
+        return CentralizedPerformanceMetrics.calculate_profit_factor(self.result.trades)
 
     def _calc_total_trades(self) -> float:
         """Count total number of trades."""
         return float(len(self.result.trades))
 
     def _calc_avg_trade_return(self) -> float:
-        """Calculate average return per trade."""
-        trades = self.result.trades
-        if not trades:
-            return 0.0
-
-        returns = [t.pnl_percent for t in trades]
-        return np.mean(returns)
+        """Calculate average return per trade using centralized method."""
+        return CentralizedPerformanceMetrics.calculate_avg_trade_return(self.result.trades)
 
     def _calc_avg_win(self) -> float:
-        """Calculate average winning trade return."""
-        trades = self.result.trades
-        winning = [t.pnl_percent for t in trades if t.pnl > 0]
-
-        if not winning:
-            return 0.0
-
-        return np.mean(winning)
+        """Calculate average winning trade return using centralized method."""
+        return CentralizedPerformanceMetrics.calculate_avg_win(self.result.trades)
 
     def _calc_avg_loss(self) -> float:
-        """Calculate average losing trade return."""
-        trades = self.result.trades
-        losing = [t.pnl_percent for t in trades if t.pnl < 0]
-
-        if not losing:
-            return 0.0
-
-        return np.mean(losing)
+        """Calculate average losing trade return using centralized method."""
+        return CentralizedPerformanceMetrics.calculate_avg_loss(self.result.trades)
 
     def _calc_max_consecutive_wins(self) -> float:
-        """Calculate longest winning streak."""
-        trades = self.result.trades
-        if not trades:
-            return 0.0
-
-        max_streak = 0
-        current_streak = 0
-
-        for trade in trades:
-            if trade.pnl > 0:
-                current_streak += 1
-                max_streak = max(max_streak, current_streak)
-            else:
-                current_streak = 0
-
-        return float(max_streak)
+        """Calculate longest winning streak using centralized method."""
+        return float(CentralizedPerformanceMetrics.calculate_max_consecutive_wins(
+            self.result.trades
+        ))
 
     def _calc_max_consecutive_losses(self) -> float:
-        """Calculate longest losing streak."""
-        trades = self.result.trades
-        if not trades:
-            return 0.0
-
-        max_streak = 0
-        current_streak = 0
-
-        for trade in trades:
-            if trade.pnl < 0:
-                current_streak += 1
-                max_streak = max(max_streak, current_streak)
-            else:
-                current_streak = 0
-
-        return float(max_streak)
+        """Calculate longest losing streak using centralized method."""
+        return float(CentralizedPerformanceMetrics.calculate_max_consecutive_losses(
+            self.result.trades
+        ))
 
     def _calc_volatility(self) -> float:
-        """Calculate annualized volatility."""
-        if len(self.daily_returns) < 2:
-            return 0.0
-
-        return self.daily_returns.std() * np.sqrt(self.trading_days) * 100
+        """Calculate annualized volatility using centralized method."""
+        return CentralizedPerformanceMetrics.calculate_volatility(
+            self.result.equity_curve,
+            trading_days=self.trading_days
+        )
 
     def _calc_expectancy(self) -> float:
-        """Calculate trade expectancy."""
-        win_rate = self._calc_win_rate() / 100
-        avg_win = self._calc_avg_win()
-        avg_loss = abs(self._calc_avg_loss())
-
-        return (win_rate * avg_win) - ((1 - win_rate) * avg_loss)
+        """Calculate trade expectancy using centralized method."""
+        return CentralizedPerformanceMetrics.calculate_expectancy(self.result.trades)
 
     def _calc_recovery_factor(self) -> float:
-        """Calculate recovery factor."""
+        """Calculate recovery factor using centralized method."""
         total_return = self._calc_total_return()
         max_dd = self._calc_max_drawdown()
 
@@ -454,13 +387,10 @@ class PerformanceMetrics:
         return total_return / max_dd
 
     def _calc_avg_trade_duration(self) -> float:
-        """Calculate average trade duration in days."""
-        trades = self.result.trades
-        if not trades:
-            return 0.0
-
-        durations = [(t.exit_date - t.entry_date).days for t in trades]
-        return np.mean(durations)
+        """Calculate average trade duration using centralized method."""
+        return CentralizedPerformanceMetrics.calculate_avg_trade_duration(
+            self.result.trades
+        )
 
     def _calc_final_equity(self) -> float:
         """Get final portfolio equity."""

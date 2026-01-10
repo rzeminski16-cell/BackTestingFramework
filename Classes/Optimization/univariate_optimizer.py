@@ -10,6 +10,9 @@ Key Features:
 - Option to run portfolio together or separately per security
 - Calculates selected performance metrics for each parameter value
 - Generates results for Excel export with charts
+
+NOTE: All metric calculations are delegated to CentralizedPerformanceMetrics
+to ensure consistency across the framework.
 """
 
 import logging
@@ -25,6 +28,14 @@ from Classes.Engine.single_security_engine import SingleSecurityEngine
 from Classes.Engine.backtest_result import BacktestResult
 from Classes.Config.config import BacktestConfig, CommissionConfig, CommissionMode
 from Classes.Data.data_loader import DataLoader
+
+# Import centralized metrics for consistent calculations
+from Classes.Core.performance_metrics import (
+    CentralizedPerformanceMetrics,
+    DEFAULT_RISK_FREE_RATE,
+    TRADING_DAYS_PER_YEAR,
+    MAX_PROFIT_FACTOR,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -370,7 +381,15 @@ class UnivariateOptimizer:
         results: List[BacktestResult],
         metrics: List[str]
     ) -> Dict[str, float]:
-        """Calculate requested metrics from backtest results."""
+        """
+        Calculate requested metrics from backtest results.
+
+        Uses CentralizedPerformanceMetrics to ensure consistency across the framework.
+        All calculations now use standardized:
+        - Risk-free rate: 3.5%
+        - Trading days: 252
+        - Profit factor cap: 999.99
+        """
         if not results:
             return {m: 0.0 for m in metrics}
 
@@ -388,7 +407,7 @@ class UnivariateOptimizer:
         if not all_equity_values:
             return {m: 0.0 for m in metrics}
 
-        # Combine equity curves (sum or average)
+        # Combine equity curves (sum for portfolio)
         max_len = max(len(e) for e in all_equity_values)
         combined_equity = np.zeros(max_len)
         for equity in all_equity_values:
@@ -396,91 +415,43 @@ class UnivariateOptimizer:
             padded = np.pad(equity, (0, max_len - len(equity)), mode='edge')
             combined_equity += padded
 
-        initial_equity = combined_equity[0] if len(combined_equity) > 0 else self.initial_capital
+        # Create DataFrame for centralized metrics
+        equity_df = pd.DataFrame({'equity': combined_equity})
 
-        # Calculate daily returns
-        equity_series = pd.Series(combined_equity)
-        daily_returns = equity_series.pct_change().dropna()
+        # Calculate all metrics using centralized class
+        all_metrics = CentralizedPerformanceMetrics.calculate_all_metrics(
+            equity_curve=equity_df,
+            trades=all_trades,
+            initial_capital=self.initial_capital
+        )
+
+        # Map requested metrics to calculated values
+        metric_mapping = {
+            'total_return': 'total_return',
+            'annual_return': 'annual_return',
+            'sharpe_ratio': 'sharpe_ratio',
+            'sortino_ratio': 'sortino_ratio',
+            'max_drawdown': 'max_drawdown_pct',
+            'calmar_ratio': 'calmar_ratio',
+            'win_rate': 'win_rate',
+            'profit_factor': 'profit_factor',
+            'total_trades': 'total_trades',
+            'avg_trade_return': 'avg_trade_return',
+            'expectancy': 'expectancy',
+            'volatility': 'volatility',
+            'final_equity': 'final_equity',
+        }
 
         calculated = {}
-
         for metric in metrics:
             try:
-                if metric == "total_return":
-                    val = ((combined_equity[-1] / combined_equity[0]) - 1) * 100 if len(combined_equity) > 1 else 0
-                elif metric == "annual_return":
-                    if len(combined_equity) > 1:
-                        total_return = combined_equity[-1] / combined_equity[0]
-                        days = len(combined_equity)
-                        years = days / 252
-                        val = ((total_return ** (1 / years)) - 1) * 100 if years > 0 else 0
-                    else:
-                        val = 0
-                elif metric == "sharpe_ratio":
-                    if len(daily_returns) > 1 and daily_returns.std() > 0:
-                        val = (daily_returns.mean() / daily_returns.std()) * np.sqrt(252)
-                    else:
-                        val = 0.0
-                elif metric == "sortino_ratio":
-                    downside = daily_returns[daily_returns < 0]
-                    if len(downside) > 0 and downside.std() > 0:
-                        val = (daily_returns.mean() / downside.std()) * np.sqrt(252)
-                    else:
-                        val = 0.0
-                elif metric == "max_drawdown":
-                    rolling_max = equity_series.expanding().max()
-                    drawdowns = (equity_series - rolling_max) / rolling_max * 100
-                    val = abs(drawdowns.min())
-                elif metric == "calmar_ratio":
-                    if len(combined_equity) > 1:
-                        total_return = combined_equity[-1] / combined_equity[0]
-                        days = len(combined_equity)
-                        years = days / 252
-                        annual_return = ((total_return ** (1 / years)) - 1) * 100 if years > 0 else 0
-                        rolling_max = equity_series.expanding().max()
-                        max_dd = abs((equity_series - rolling_max) / rolling_max * 100).max()
-                        val = annual_return / max_dd if max_dd > 0 else 0
-                    else:
-                        val = 0
-                elif metric == "win_rate":
-                    if all_trades:
-                        wins = sum(1 for t in all_trades if t.pnl > 0)
-                        val = (wins / len(all_trades)) * 100
-                    else:
-                        val = 0.0
-                elif metric == "profit_factor":
-                    if all_trades:
-                        gross_profit = sum(t.pnl for t in all_trades if t.pnl > 0)
-                        gross_loss = abs(sum(t.pnl for t in all_trades if t.pnl < 0))
-                        val = gross_profit / gross_loss if gross_loss > 0 else 0
-                    else:
-                        val = 0.0
-                elif metric == "total_trades":
-                    val = float(len(all_trades)) if all_trades else 0.0
-                elif metric == "avg_trade_return":
-                    if all_trades:
-                        returns = [t.pnl_percent for t in all_trades]
-                        val = np.mean(returns)
-                    else:
-                        val = 0.0
-                elif metric == "expectancy":
-                    if all_trades:
-                        wins = [t for t in all_trades if t.pnl > 0]
-                        losses = [t for t in all_trades if t.pnl < 0]
-                        win_rate = len(wins) / len(all_trades)
-                        avg_win = np.mean([t.pnl_percent for t in wins]) if wins else 0
-                        avg_loss = abs(np.mean([t.pnl_percent for t in losses])) if losses else 0
-                        val = (win_rate * avg_win) - ((1 - win_rate) * avg_loss)
-                    else:
-                        val = 0.0
-                elif metric == "volatility":
-                    val = daily_returns.std() * np.sqrt(252) * 100 if len(daily_returns) > 1 else 0
-                elif metric == "final_equity":
-                    val = combined_equity[-1] if len(combined_equity) > 0 else initial_equity
+                mapped_key = metric_mapping.get(metric, metric)
+                if mapped_key in all_metrics:
+                    calculated[metric] = all_metrics[mapped_key]
                 else:
-                    val = 0.0
-
-                calculated[metric] = val
+                    # Unknown metric
+                    logger.warning(f"Unknown metric: {metric}")
+                    calculated[metric] = 0.0
             except Exception as e:
                 logger.warning(f"Failed to calculate {metric}: {e}")
                 calculated[metric] = 0.0

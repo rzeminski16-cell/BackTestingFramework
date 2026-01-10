@@ -1,5 +1,8 @@
 """
 Strategy parameter optimization.
+
+NOTE: All metric calculations are delegated to CentralizedPerformanceMetrics
+to ensure consistency across the framework.
 """
 import itertools
 import pandas as pd
@@ -9,6 +12,14 @@ from ..Engine.single_security_engine import SingleSecurityEngine
 from ..Engine.backtest_result import BacktestResult
 from ..Config.config import BacktestConfig, OptimizationConfig
 from .optimization_result import OptimizationResult, OptimizationResults
+
+# Import centralized metrics for consistent calculations
+from ..Core.performance_metrics import (
+    CentralizedPerformanceMetrics,
+    DEFAULT_RISK_FREE_RATE,
+    TRADING_DAYS_PER_YEAR,
+    MAX_PROFIT_FACTOR,
+)
 
 
 class StrategyOptimizer:
@@ -230,7 +241,10 @@ class StrategyOptimizer:
 
     def _extract_metric(self, result: BacktestResult) -> float:
         """
-        Extract metric value from backtest result.
+        Extract metric value from backtest result using centralized metrics.
+
+        Uses CentralizedPerformanceMetrics for consistent calculation of
+        Sharpe ratio, profit factor, and other metrics across the framework.
 
         Args:
             result: Backtest result
@@ -247,21 +261,39 @@ class StrategyOptimizer:
         elif metric == 'num_trades':
             return result.num_trades
         elif metric == 'win_rate':
-            return result.win_rate
+            # Use centralized calculation
+            return CentralizedPerformanceMetrics.calculate_win_rate(result.trades)
         elif metric == 'sharpe_ratio':
-            # Calculate Sharpe ratio from equity curve
-            if len(result.equity_curve) > 1:
-                returns = result.equity_curve['equity'].pct_change().dropna()
-                if len(returns) > 0 and returns.std() > 0:
-                    return (returns.mean() / returns.std()) * (252 ** 0.5)  # Annualized
-            return 0.0
+            # Use centralized calculation with standardized risk-free rate
+            return CentralizedPerformanceMetrics.calculate_sharpe_ratio(
+                result.equity_curve,
+                risk_free_rate=DEFAULT_RISK_FREE_RATE,
+                trading_days=TRADING_DAYS_PER_YEAR
+            )
+        elif metric == 'sortino_ratio':
+            # Use centralized calculation
+            return CentralizedPerformanceMetrics.calculate_sortino_ratio(
+                result.equity_curve,
+                risk_free_rate=DEFAULT_RISK_FREE_RATE,
+                trading_days=TRADING_DAYS_PER_YEAR
+            )
         elif metric == 'profit_factor':
-            wins = [t.pl for t in result.winning_trades]
-            losses = [abs(t.pl) for t in result.losing_trades]
-            total_wins = sum(wins) if wins else 0
-            total_losses = sum(losses) if losses else 0
-            if total_losses > 0:
-                return total_wins / total_losses
-            return 0.0
+            # Use centralized calculation with standardized cap
+            return CentralizedPerformanceMetrics.calculate_profit_factor(result.trades)
+        elif metric == 'max_drawdown':
+            # Use centralized calculation
+            _, max_dd_pct = CentralizedPerformanceMetrics.calculate_max_drawdown(
+                result.equity_curve
+            )
+            return max_dd_pct
+        elif metric == 'calmar_ratio':
+            # Calculate using centralized methods
+            annual_return = CentralizedPerformanceMetrics.calculate_annual_return(
+                result.equity_curve
+            )
+            _, max_dd_pct = CentralizedPerformanceMetrics.calculate_max_drawdown(
+                result.equity_curve
+            )
+            return annual_return / max_dd_pct if max_dd_pct > 0 else 0.0
         else:
             raise ValueError(f"Unknown metric: {metric}")
