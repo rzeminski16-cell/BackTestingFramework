@@ -424,7 +424,7 @@ class CTkModeSecuritiesStep(CTkWizardStep):
             )
 
         CTkVulnerabilityConfigDialog(
-            self.wizard,
+            self.wizard.root,
             current_config=self.wizard.vulnerability_config,
             on_save=on_save
         )
