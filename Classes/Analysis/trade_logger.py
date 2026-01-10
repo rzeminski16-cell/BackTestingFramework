@@ -12,8 +12,7 @@ logs/
 │   │           └── {timestamp}.xlsx
 │   └── portfolio/
 │       └── {backtest_name}/
-│           ├── trades/
-│           │   └── {symbol}_trades.csv (per security)
+│           ├── {symbol}_trades.csv (per security)
 │           ├── portfolio_trades.csv (consolidated)
 │           ├── signal_rejections.csv
 │           ├── vulnerability_log.csv (if using vulnerability score)
@@ -212,7 +211,6 @@ class PortfolioTradeLogger:
         self.backtest_name = backtest_name
         self.basket_name = basket_name
         self.base_dir = LoggingPath.get_portfolio_backtest_dir(backtest_name)
-        self.trades_dir = LoggingPath.ensure_trades_dir(self.base_dir)
         self.reports_dir = LoggingPath.ensure_reports_dir(self.base_dir)
 
     def log_portfolio_result(self, result, strategy_params: Optional[Dict[str, Any]] = None) -> Dict[str, Path]:
@@ -269,7 +267,7 @@ class PortfolioTradeLogger:
         """Log trades for a single symbol."""
         trade_dicts = [trade.to_dict() for trade in trades]
         df = pd.DataFrame(trade_dicts)
-        filepath = self.trades_dir / f"{symbol}_trades.csv"
+        filepath = self.base_dir / f"{symbol}_trades.csv"
         df.to_csv(filepath, index=False)
         return filepath
 

@@ -219,18 +219,38 @@ class BaseStrategy(ABC):
             )
 
     def _check_look_ahead_bias(self, result: pd.DataFrame, original_columns: Set[str]) -> None:
-        """Check new columns for potential look-ahead bias."""
+        """
+        Check new columns for potential look-ahead bias.
+
+        Look-ahead bias from .shift(-n) creates NaN at the END of data.
+        Rolling/expanding operations create NaN at the START (warmup period).
+
+        We only warn if END has more NaN than START, suggesting look-ahead usage.
+        """
         if len(result) == 0:
             return
 
         new_columns = set(result.columns) - original_columns
+        check_rows = min(10, max(1, int(len(result) * 0.05)))
+
         for col in new_columns:
-            check_rows = min(10, max(1, int(len(result) * 0.05)))
-            if result[col].iloc[-check_rows:].isna().any():
-                print(f"\n⚠️  DATA LEAKAGE WARNING in prepare_data():")
-                print(f"   Column '{col}' has NaN values at the END of the dataset.")
-                print(f"   This often indicates .shift(-n) with negative offset (look-ahead bias)!")
-                print(f"   Only use causal operations: .rolling(), .expanding(), .shift(n>=0)\n")
+            # Skip boolean columns - they may have NaN from boolean operations on NaN inputs
+            if result[col].dtype == bool:
+                continue
+
+            end_nan_count = result[col].iloc[-check_rows:].isna().sum()
+            start_nan_count = result[col].iloc[:check_rows].isna().sum()
+
+            # Only warn if END has significantly more NaN than START
+            # This distinguishes look-ahead bias from normal warmup NaN
+            if end_nan_count > start_nan_count and end_nan_count > 0:
+                # Additional check: if the column has NaN throughout, it's likely data quality issue
+                total_nan_pct = result[col].isna().sum() / len(result)
+                if total_nan_pct < 0.5:  # Only warn if less than 50% NaN overall
+                    print(f"\n⚠️  DATA LEAKAGE WARNING in prepare_data():")
+                    print(f"   Column '{col}' has {end_nan_count} NaN values at END vs {start_nan_count} at START.")
+                    print(f"   This pattern may indicate .shift(-n) with negative offset (look-ahead bias).")
+                    print(f"   Only use causal operations: .rolling(), .expanding(), .shift(n>=0)\n")
 
     def _prepare_data_impl(self, data: pd.DataFrame) -> pd.DataFrame:
         """
