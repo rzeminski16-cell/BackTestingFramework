@@ -1,8 +1,20 @@
 """
 Performance metrics calculation.
 
+This module provides a backward-compatible interface to performance metrics
+while delegating all calculations to the centralized metrics module.
+
 IMPORTANT: Risk-free rate is standardized at 3.5% (UK base rate approximation)
-across all risk-adjusted metrics for consistency.
+across all risk-adjusted metrics for consistency across the framework.
+
+All metric calculations are now delegated to Classes.Core.performance_metrics
+to ensure consistency across all systems including:
+- Backtesting
+- Univariate/Multivariate Optimization
+- Walk-Forward Optimization
+- Sensitivity Analysis
+- Vulnerability Scoring
+- Factor Analysis
 """
 import pandas as pd
 import numpy as np
@@ -10,8 +22,13 @@ from typing import List, Dict, Any
 from ..Models.trade import Trade
 from ..Engine.backtest_result import BacktestResult
 
-# Standardized risk-free rate for all calculations (UK base rate approximation)
-DEFAULT_RISK_FREE_RATE = 0.035  # 3.5% annual
+# Import from centralized metrics module
+from ..Core.performance_metrics import (
+    CentralizedPerformanceMetrics,
+    DEFAULT_RISK_FREE_RATE,
+    TRADING_DAYS_PER_YEAR,
+    MAX_PROFIT_FACTOR,
+)
 
 
 class PerformanceMetrics:
@@ -296,34 +313,20 @@ class PerformanceMetrics:
     def calculate_sharpe_ratio(equity_curve: pd.DataFrame,
                               risk_free_rate: float = None) -> float:
         """
-        Calculate annualized Sharpe ratio.
+        Calculate annualized Sharpe ratio using centralized calculation.
 
         Args:
             equity_curve: Equity curve DataFrame with 'equity' column
-            risk_free_rate: Annual risk-free rate (default: DEFAULT_RISK_FREE_RATE = 3.5%)
+            risk_free_rate: Annual risk-free rate (default: 3.5%)
 
         Returns:
             Sharpe ratio
         """
-        if risk_free_rate is None:
-            risk_free_rate = DEFAULT_RISK_FREE_RATE
-
-        if len(equity_curve) < 2:
-            return 0.0
-
-        # Calculate daily returns
-        returns = equity_curve['equity'].pct_change().dropna()
-
-        if len(returns) == 0 or returns.std() == 0:
-            return 0.0
-
-        # Annualize (assuming daily data, 252 trading days)
-        daily_rf = (1 + risk_free_rate) ** (1/252) - 1
-        excess_returns = returns - daily_rf
-
-        sharpe = (excess_returns.mean() / excess_returns.std()) * np.sqrt(252)
-
-        return sharpe
+        return CentralizedPerformanceMetrics.calculate_sharpe_ratio(
+            equity_curve,
+            risk_free_rate=risk_free_rate,
+            trading_days=TRADING_DAYS_PER_YEAR
+        )
 
     @staticmethod
     def detect_rolling_anomalies(
@@ -450,7 +453,7 @@ class PerformanceMetrics:
     @staticmethod
     def calculate_max_drawdown(equity_curve: pd.DataFrame) -> tuple:
         """
-        Calculate maximum drawdown.
+        Calculate maximum drawdown using centralized calculation.
 
         Args:
             equity_curve: Equity curve DataFrame with 'equity' column
@@ -458,42 +461,12 @@ class PerformanceMetrics:
         Returns:
             Tuple of (max_drawdown_dollars, max_drawdown_percent)
         """
-        if len(equity_curve) == 0:
-            return 0.0, 0.0
-
-        equity = equity_curve['equity'].values
-
-        # Filter out NaN and invalid values
-        if np.any(np.isnan(equity)) or np.any(np.isinf(equity)):
-            equity = np.nan_to_num(equity, nan=0.0, posinf=0.0, neginf=0.0)
-
-        # Ensure we have valid data
-        if len(equity) == 0 or np.all(equity <= 0):
-            return 0.0, 0.0
-
-        running_max = np.maximum.accumulate(equity)
-
-        # Prevent division by zero - use safe division
-        with np.errstate(divide='ignore', invalid='ignore'):
-            drawdown = running_max - equity
-            drawdown_pct = np.where(running_max > 0, (drawdown / running_max) * 100, 0.0)
-
-        # Remove any NaN or inf values that might have slipped through
-        drawdown = np.nan_to_num(drawdown, nan=0.0, posinf=0.0, neginf=0.0)
-        drawdown_pct = np.nan_to_num(drawdown_pct, nan=0.0, posinf=0.0, neginf=0.0)
-
-        # Cap drawdown percentage at 100% (can't lose more than 100% in real terms)
-        drawdown_pct = np.clip(drawdown_pct, 0, 100)
-
-        max_dd = np.max(drawdown) if len(drawdown) > 0 else 0.0
-        max_dd_pct = np.max(drawdown_pct) if len(drawdown_pct) > 0 else 0.0
-
-        return max_dd, max_dd_pct
+        return CentralizedPerformanceMetrics.calculate_max_drawdown(equity_curve)
 
     @staticmethod
     def calculate_volatility(equity_curve: pd.DataFrame) -> float:
         """
-        Calculate annualized volatility.
+        Calculate annualized volatility using centralized calculation.
 
         Args:
             equity_curve: Equity curve DataFrame with 'equity' column
@@ -501,19 +474,15 @@ class PerformanceMetrics:
         Returns:
             Annualized volatility as percentage
         """
-        if len(equity_curve) < 2:
-            return 0.0
-
-        returns = equity_curve['equity'].pct_change().dropna()
-        if len(returns) == 0:
-            return 0.0
-
-        return returns.std() * np.sqrt(252) * 100  # Annualized, as percentage
+        return CentralizedPerformanceMetrics.calculate_volatility(
+            equity_curve,
+            trading_days=TRADING_DAYS_PER_YEAR
+        )
 
     @staticmethod
     def calculate_downside_deviation(equity_curve: pd.DataFrame) -> float:
         """
-        Calculate downside deviation (volatility of negative returns).
+        Calculate downside deviation using centralized calculation.
 
         Args:
             equity_curve: Equity curve DataFrame with 'equity' column
@@ -521,67 +490,38 @@ class PerformanceMetrics:
         Returns:
             Annualized downside deviation as percentage
         """
-        if len(equity_curve) < 2:
-            return 0.0
-
-        returns = equity_curve['equity'].pct_change().dropna()
-        negative_returns = returns[returns < 0]
-
-        if len(negative_returns) == 0:
-            return 0.0
-
-        return negative_returns.std() * np.sqrt(252) * 100  # Annualized
+        return CentralizedPerformanceMetrics.calculate_downside_deviation(
+            equity_curve,
+            trading_days=TRADING_DAYS_PER_YEAR
+        )
 
     @staticmethod
     def calculate_sortino_ratio(equity_curve: pd.DataFrame,
                                risk_free_rate: float = None) -> float:
         """
-        Calculate Sortino ratio using downside deviation of EXCESS returns.
+        Calculate Sortino ratio using centralized calculation.
 
         The Sortino ratio measures risk-adjusted return using only downside volatility.
         Unlike Sharpe which penalizes all volatility, Sortino only penalizes
         returns below the risk-free rate.
 
-        Formula: (Mean Excess Return) / (Downside Deviation of Excess Returns) * sqrt(252)
-
         Args:
             equity_curve: Equity curve DataFrame with 'equity' column
-            risk_free_rate: Annual risk-free rate (default: DEFAULT_RISK_FREE_RATE = 3.5%)
+            risk_free_rate: Annual risk-free rate (default: 3.5%)
 
         Returns:
             Sortino ratio
         """
-        if risk_free_rate is None:
-            risk_free_rate = DEFAULT_RISK_FREE_RATE
-
-        if len(equity_curve) < 2:
-            return 0.0
-
-        returns = equity_curve['equity'].pct_change().dropna()
-
-        if len(returns) == 0:
-            return 0.0
-
-        daily_rf = pow(1 + risk_free_rate, 1/252) - 1
-        excess_returns = returns - daily_rf
-
-        # CORRECTED: Downside deviation uses NEGATIVE EXCESS RETURNS, not raw negative returns
-        # This measures volatility of returns that fall below the risk-free rate
-        downside_excess_returns = excess_returns[excess_returns < 0]
-
-        if len(downside_excess_returns) == 0 or downside_excess_returns.std() == 0:
-            # No negative excess returns = excellent performance, return large positive value
-            if excess_returns.mean() > 0:
-                return 99.99  # Capped to avoid infinity
-            return 0.0
-
-        sortino = (excess_returns.mean() / downside_excess_returns.std()) * np.sqrt(252)
-        return sortino
+        return CentralizedPerformanceMetrics.calculate_sortino_ratio(
+            equity_curve,
+            risk_free_rate=risk_free_rate,
+            trading_days=TRADING_DAYS_PER_YEAR
+        )
 
     @staticmethod
     def calculate_best_day(equity_curve: pd.DataFrame) -> float:
         """
-        Calculate best single day return.
+        Calculate best single day return using centralized calculation.
 
         Args:
             equity_curve: Equity curve DataFrame with 'equity' column
@@ -589,16 +529,12 @@ class PerformanceMetrics:
         Returns:
             Best day return as percentage
         """
-        if len(equity_curve) < 2:
-            return 0.0
-
-        returns = equity_curve['equity'].pct_change().dropna()
-        return returns.max() * 100 if len(returns) > 0 else 0.0
+        return CentralizedPerformanceMetrics.calculate_best_day(equity_curve)
 
     @staticmethod
     def calculate_worst_day(equity_curve: pd.DataFrame) -> float:
         """
-        Calculate worst single day return.
+        Calculate worst single day return using centralized calculation.
 
         Args:
             equity_curve: Equity curve DataFrame with 'equity' column
@@ -606,11 +542,7 @@ class PerformanceMetrics:
         Returns:
             Worst day return as percentage
         """
-        if len(equity_curve) < 2:
-            return 0.0
-
-        returns = equity_curve['equity'].pct_change().dropna()
-        return returns.min() * 100 if len(returns) > 0 else 0.0
+        return CentralizedPerformanceMetrics.calculate_worst_day(equity_curve)
 
     @staticmethod
     def print_metrics(metrics: Dict[str, Any]) -> None:

@@ -28,6 +28,11 @@ E-ratio Formula (aggregate across all trades):
 R-multiple Formula:
     R-multiple = (Exit Price - Entry Price) / (Entry Price - Stop Loss)
     Expresses profit/loss as a multiple of initial risk (R)
+
+NOTE: This module contains specialized edge analysis metrics (E-ratio, R-multiples)
+that are unique to entry/exit edge analysis. For standard performance metrics like
+Sharpe ratio, Sortino ratio, max drawdown, etc., use the centralized metrics module:
+    from Classes.Core.performance_metrics import CentralizedPerformanceMetrics
 """
 
 import customtkinter as ctk

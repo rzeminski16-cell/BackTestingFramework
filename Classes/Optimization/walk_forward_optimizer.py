@@ -12,6 +12,10 @@ Walk-Forward Modes:
 - ANCHORED: Training always starts from the same date, only end expands (good for low-frequency trading)
 
 This approach ensures parameters are validated on truly unseen data.
+
+NOTE: All metric calculations are delegated to CentralizedPerformanceMetrics
+(through the Classes.Analysis.performance_metrics wrapper) to ensure consistency
+across the framework with standardized risk-free rate (3.5%) and trading days (252).
 """
 
 import logging
@@ -30,6 +34,7 @@ from skopt import gp_minimize
 from skopt.space import Integer, Real
 from skopt.utils import use_named_args
 
+# PerformanceMetrics now delegates to CentralizedPerformanceMetrics
 from Classes.Analysis.performance_metrics import PerformanceMetrics
 from Classes.Config.config import BacktestConfig, PortfolioConfig, CommissionConfig
 from Classes.Config.capital_contention import CapitalContentionConfig, CapitalContentionMode, VulnerabilityScoreConfig

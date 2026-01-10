@@ -6,6 +6,10 @@ and measuring performance changes. Identifies:
 - Robust parameter ranges (performance plateau)
 - Sensitive parameters (large performance swings)
 - Interaction effects between parameters
+
+NOTE: All metric calculations are delegated to CentralizedPerformanceMetrics
+(through the Classes.Analysis.performance_metrics wrapper) to ensure consistency
+across the framework with standardized risk-free rate (3.5%) and trading days (252).
 """
 
 import logging
@@ -16,6 +20,7 @@ from typing import Any, Callable, Dict, List, Optional, Tuple, Type
 import numpy as np
 import pandas as pd
 
+# PerformanceMetrics now delegates to CentralizedPerformanceMetrics
 from Classes.Analysis.performance_metrics import PerformanceMetrics
 from Classes.Config.config import BacktestConfig
 from Classes.Engine.single_security_engine import SingleSecurityEngine
