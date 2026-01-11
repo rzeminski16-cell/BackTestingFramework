@@ -101,11 +101,27 @@ Your CSV must have:
 
 ### Parameter Tuning
 
+All strategy parameters are defined in `config/strategy_parameters.json`. Use the `StrategyConfig` utility to access them:
+
+```python
+from config.strategy_config import StrategyConfig
+
+# Get all parameters with defaults and optimization ranges
+params = StrategyConfig.get_optimization_params('AlphaTrendStrategy')
+
+# Get just the default values
+defaults = StrategyConfig.get_defaults('AlphaTrendStrategy')
+```
+
+**Tuning Guidelines:**
+
 | For More Trades | For Fewer Trades |
 |-----------------|------------------|
 | Lower `volume_long_ma` | Higher `volume_long_ma` |
 | Increase `grace_period_bars` | Decrease `grace_period_bars` |
 | Lower `atr_stop_loss_multiple` | Higher `atr_stop_loss_multiple` |
+
+See [Configuration Guide](CONFIGURATION.md#strategy-parameters) for full parameter documentation.
 
 ---
 
@@ -154,6 +170,41 @@ class MyStrategy(BaseStrategy):
 1. Create a file in the `strategies/` folder (e.g., `strategies/my_strategy.py`)
 2. The GUI will automatically discover it
 3. Or import it directly in your Python code
+
+### Register Parameters in Centralized Config
+
+To enable your strategy in all GUIs and optimization systems, add it to `config/strategy_parameters.json`:
+
+```json
+{
+  "strategies": {
+    "MyStrategy": {
+      "display_name": "My Custom Strategy",
+      "description": "Description of what the strategy does",
+      "trade_direction": "LONG",
+      "parameters": {
+        "my_param": {
+          "type": "int",
+          "default": 50,
+          "configurable": true,
+          "optimization": {
+            "min": 10,
+            "max": 100,
+            "step": 5
+          },
+          "description": "SMA period for trend detection",
+          "category": "Trend"
+        }
+      }
+    }
+  }
+}
+```
+
+Once registered:
+- All GUIs will show the parameter controls
+- Optimization systems will use the ranges for parameter tuning
+- The `StrategyConfig` utility can validate and access your parameters
 
 ---
 

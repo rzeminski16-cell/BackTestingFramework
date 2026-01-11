@@ -207,30 +207,55 @@ Or explicit values:
 
 ## Strategy Parameters
 
+### Centralized Configuration
+
+All strategy parameters are defined in a single source of truth:
+
+**Location:** `config/strategy_parameters.json`
+
+**Utility Module:** `config/strategy_config.py`
+
+```python
+from config.strategy_config import StrategyConfig
+
+# Get defaults
+defaults = StrategyConfig.get_defaults('AlphaTrendStrategy')
+
+# Get optimization ranges
+opt_params = StrategyConfig.get_optimization_params('AlphaTrendStrategy')
+
+# Validate parameters
+errors = StrategyConfig.validate_params('AlphaTrendStrategy', params)
+```
+
 ### AlphaTrendStrategy
 
-| Parameter | Type | Default | Description |
-|-----------|------|---------|-------------|
-| `volume_short_ma` | int | 4 | Short-term volume MA period |
-| `volume_long_ma` | int | 30 | Long-term volume MA period |
-| `volume_alignment_window` | int | 14 | Bars for volume condition |
-| `stop_loss_percent` | float | 0.0 | % stop loss (0 = use ATR) |
-| `atr_stop_loss_multiple` | float | 2.5 | Stop loss = entry - (ATR × this) |
-| `grace_period_bars` | int | 14 | Bars to ignore EMA exit |
-| `momentum_gain_pct` | float | 2.0 | % gain for momentum protection |
-| `momentum_lookback` | int | 7 | Bars for momentum check |
-| `risk_percent` | float | 2.0 | % of equity to risk |
+| Parameter | Type | Default | Range | Description |
+|-----------|------|---------|-------|-------------|
+| `volume_short_ma` | int | 4 | 2-20 | Short-term volume MA period |
+| `volume_long_ma` | int | 30 | 10-100 | Long-term volume MA period |
+| `volume_alignment_window` | int | 14 | 1-30 | Bars for volume condition |
+| `stop_loss_percent` | float | 0.0 | 0-10 | % stop loss (0 = use ATR) |
+| `atr_stop_loss_multiple` | float | 2.5 | 0.5-5.0 | Stop loss = entry - (ATR × this) |
+| `grace_period_bars` | int | 14 | 0-30 | Bars to ignore EMA exit |
+| `momentum_gain_pct` | float | 2.0 | 0-10 | % gain for momentum protection |
+| `momentum_lookback` | int | 7 | 1-30 | Bars for momentum check |
+| `risk_percent` | float | 2.0 | 0.5-10 | % of equity to risk |
+| `atr_multiplier` | float | 1.0 | 0.5-3.0 | Base multiplier for ATR bands |
+| `smoothing_length` | int | 3 | 1-10 | EMA period for AlphaTrend smoothing |
+| `percentile_period` | int | 100 | 20-200 | Lookback for dynamic MFI thresholds |
 
 ### Usage
 
 **In Python:**
 ```python
-strategy = AlphaTrendStrategy(
-    volume_short_ma=4,
-    volume_long_ma=30,
-    atr_stop_loss_multiple=2.5,
-    risk_percent=2.0
-)
+from config.strategy_config import StrategyConfig
+
+# Get defaults and customize
+params = StrategyConfig.get_defaults('AlphaTrendStrategy')
+params['atr_stop_loss_multiple'] = 3.0
+
+strategy = AlphaTrendStrategy(**params)
 ```
 
 **Via GUI:**

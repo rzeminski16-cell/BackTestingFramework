@@ -204,9 +204,12 @@ bayesian_optimization:
 
 ### Parameter Ranges
 
-Define what values to test:
+Parameter ranges are loaded from the **centralized configuration** at `config/strategy_parameters.json`. This ensures all systems use consistent parameter definitions.
+
+The walk-forward optimizer automatically loads parameters from the centralized config. You can override specific ranges in `config/optimization_config.yaml` if needed:
 
 ```yaml
+# These values override the centralized config
 strategy_parameters:
   AlphaTrendStrategy:
     volume_short_ma:
@@ -218,6 +221,15 @@ strategy_parameters:
       min: 1.5
       max: 4.0
       type: float
+```
+
+**Programmatic access:**
+```python
+from config.strategy_config import StrategyConfig
+
+# Get optimization ranges for all parameters
+opt_params = StrategyConfig.get_optimization_params('AlphaTrendStrategy')
+# Returns: {'volume_short_ma': {'type': 'int', 'min': 2, 'max': 20, ...}, ...}
 ```
 
 ### Constraints

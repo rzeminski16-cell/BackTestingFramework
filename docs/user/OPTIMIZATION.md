@@ -469,9 +469,12 @@ bayesian_optimization:
 
 ### Parameter Ranges
 
-Define what values to test:
+Parameter ranges are automatically loaded from `config/strategy_parameters.json` - the single source of truth for all strategy parameters. This ensures consistency across backtesting, univariate optimization, and walk-forward optimization.
+
+To override specific ranges for optimization, edit `config/optimization_config.yaml`:
 
 ```yaml
+# Overrides for specific parameters (optional)
 strategy_parameters:
   AlphaTrendStrategy:
     volume_short_ma:
@@ -484,6 +487,8 @@ strategy_parameters:
       max: 4.0
       type: float
 ```
+
+> **Note**: If you don't specify overrides, the default ranges from `config/strategy_parameters.json` are used automatically.
 
 ### Constraints
 
