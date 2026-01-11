@@ -41,6 +41,7 @@ from Classes.Config.basket import Basket, BasketManager
 from Classes.Config.capital_contention import (
     CapitalContentionConfig, CapitalContentionMode, VulnerabilityScoreConfig
 )
+from config.strategy_config import StrategyConfig
 from Classes.Data.data_loader import DataLoader
 from Classes.Data.security_registry import SecurityRegistry
 from Classes.Data.currency_converter import CurrencyConverter
@@ -563,29 +564,13 @@ class CTkStrategyStep(CTkWizardStep):
         if not strategy_name:
             return
 
-        # Initialize default parameters
-        if strategy_name == 'AlphaTrendStrategy':
-            self.wizard.strategy_params[strategy_name] = {
-                'volume_short_ma': 4,
-                'volume_long_ma': 30,
-                'volume_alignment_window': 14,
-                'stop_loss_percent': 0.0,
-                'atr_stop_loss_multiple': 2.5,
-                'grace_period_bars': 14,
-                'momentum_gain_pct': 2.0,
-                'momentum_lookback': 7,
-                'risk_percent': 2.0,
-                'atr_multiplier': 1.0,
-                'smoothing_length': 3,
-                'percentile_period': 100
-            }
-        elif strategy_name == 'RandomBaseStrategy':
-            self.wizard.strategy_params[strategy_name] = {
-                'entry_probability': 0.10,
-                'exit_probability': 0.10,
-                'position_size_pct': 5.0,
-                'stop_loss_atr_multiple': 2.0
-            }
+        # Initialize default parameters from centralized config
+        defaults = StrategyConfig.get_defaults(strategy_name)
+        if defaults:
+            self.wizard.strategy_params[strategy_name] = defaults.copy()
+        else:
+            # Fallback for unknown strategies
+            self.wizard.strategy_params[strategy_name] = {}
 
         self._refresh_presets()
         self._build_param_ui()

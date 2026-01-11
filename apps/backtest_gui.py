@@ -61,6 +61,9 @@ from Classes.GUI.results_window import ResultsWindow
 # Import available strategies
 from strategies.alphatrend_strategy import AlphaTrendStrategy
 
+# Import centralized strategy configuration
+from config.strategy_config import StrategyConfig
+
 
 # =============================================================================
 # WIZARD STEPS
@@ -458,22 +461,13 @@ class StrategyStep(WizardStep):
         if not strategy_name:
             return
 
-        # Initialize default parameters
-        if strategy_name == 'AlphaTrendStrategy':
-            self.wizard.strategy_params[strategy_name] = {
-                'volume_short_ma': 4,
-                'volume_long_ma': 30,
-                'volume_alignment_window': 14,
-                'stop_loss_percent': 0.0,
-                'atr_stop_loss_multiple': 2.5,
-                'grace_period_bars': 14,
-                'momentum_gain_pct': 2.0,
-                'momentum_lookback': 7,
-                'risk_percent': 2.0,
-                'atr_multiplier': 1.0,
-                'smoothing_length': 3,
-                'percentile_period': 100
-            }
+        # Initialize default parameters from centralized config
+        defaults = StrategyConfig.get_defaults(strategy_name)
+        if defaults:
+            self.wizard.strategy_params[strategy_name] = defaults.copy()
+        else:
+            # Fallback for unknown strategies
+            self.wizard.strategy_params[strategy_name] = {}
 
         self._refresh_presets()
         self._build_param_ui()

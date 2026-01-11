@@ -43,6 +43,9 @@ from Classes.Engine.portfolio_engine import PortfolioEngine, PortfolioBacktestRe
 from Classes.Models.trade import Trade
 from Classes.Strategy.base_strategy import BaseStrategy
 
+# Import centralized strategy configuration
+from config.strategy_config import StrategyConfig
+
 logger = logging.getLogger(__name__)
 
 
@@ -274,11 +277,45 @@ class WalkForwardOptimizer:
         logger.info("Walk-forward optimizer initialized")
 
     def _load_config(self, config_path: str) -> Dict[str, Any]:
-        """Load optimization configuration from YAML file."""
+        """Load optimization configuration from YAML file.
+
+        Strategy parameters are loaded from the centralized config/strategy_parameters.json,
+        then any overrides from the YAML are applied on top.
+        """
         try:
             with open(config_path, 'r') as f:
                 config = yaml.safe_load(f)
             logger.info(f"Loaded optimization config from {config_path}")
+
+            # Merge strategy parameters from centralized config
+            # YAML values override centralized config for customization
+            yaml_strategy_params = config.get('strategy_parameters', {})
+            merged_strategy_params = {}
+
+            for strategy_name in StrategyConfig.get_strategies():
+                # Get centralized optimization params
+                central_params = StrategyConfig.get_optimization_params(strategy_name)
+                yaml_params = yaml_strategy_params.get(strategy_name, {})
+
+                # Start with centralized params
+                merged_strategy_params[strategy_name] = {}
+                for param_name, param_info in central_params.items():
+                    merged_strategy_params[strategy_name][param_name] = {
+                        'min': param_info.get('min'),
+                        'max': param_info.get('max'),
+                        'type': param_info.get('type'),
+                        'step': param_info.get('step')
+                    }
+
+                # Override with YAML params if present
+                for param_name, yaml_param_info in yaml_params.items():
+                    if param_name not in merged_strategy_params[strategy_name]:
+                        merged_strategy_params[strategy_name][param_name] = {}
+                    merged_strategy_params[strategy_name][param_name].update(yaml_param_info)
+
+            config['strategy_parameters'] = merged_strategy_params
+            logger.info(f"Merged strategy parameters from centralized config")
+
             return config
         except Exception as e:
             logger.error(f"Failed to load config from {config_path}: {e}")

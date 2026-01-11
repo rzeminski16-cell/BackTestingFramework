@@ -1,5 +1,11 @@
 # Optimization Configuration File
 # This file defines settings for walk-forward optimization
+#
+# NOTE: Strategy parameters are now loaded from the centralized configuration
+# file at config/strategy_parameters.json. The parameters defined below are
+# only used as overrides - if you need to customize ranges for optimization,
+# you can specify them here and they will override the centralized values.
+# For most use cases, the centralized config provides the correct defaults.
 
 # Walk-Forward Optimization Settings
 walk_forward:
@@ -99,8 +105,11 @@ report:
     # Number formatting
     decimal_places: 4
 
-# Strategy Parameter Ranges
-# Define the parameter ranges to test for each strategy
+# Strategy Parameter Ranges (OVERRIDES ONLY)
+# Parameters are loaded from config/strategy_parameters.json by default.
+# Use this section ONLY to override specific parameter ranges for optimization.
+# Any values specified here will override the centralized config.
+#
 # Format:
 #   StrategyClassName:
 #     parameter_name:

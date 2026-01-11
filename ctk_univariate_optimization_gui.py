@@ -37,33 +37,29 @@ from Classes.Optimization.univariate_report import UnivariateReportGenerator
 from strategies.alphatrend_strategy import AlphaTrendStrategy
 from strategies.random_base_strategy import RandomBaseStrategy
 
+# Import centralized strategy configuration
+from config.strategy_config import StrategyConfig
+
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
 
-# Strategy parameter definitions for optimization
-# Format: {param_name: {type, default, min, max, step}}
-STRATEGY_PARAMETERS = {
-    'AlphaTrendStrategy': {
-        'volume_short_ma': {'type': 'int', 'default': 4, 'min': 2, 'max': 20, 'step': 1},
-        'volume_long_ma': {'type': 'int', 'default': 30, 'min': 10, 'max': 100, 'step': 5},
-        'volume_alignment_window': {'type': 'int', 'default': 14, 'min': 1, 'max': 30, 'step': 1},
-        'atr_stop_loss_multiple': {'type': 'float', 'default': 2.5, 'min': 0.5, 'max': 5.0, 'step': 0.25},
-        'stop_loss_percent': {'type': 'float', 'default': 0.0, 'min': 0.0, 'max': 10.0, 'step': 0.5},
-        'grace_period_bars': {'type': 'int', 'default': 14, 'min': 0, 'max': 30, 'step': 1},
-        'momentum_gain_pct': {'type': 'float', 'default': 2.0, 'min': 0.0, 'max': 10.0, 'step': 0.5},
-        'momentum_lookback': {'type': 'int', 'default': 7, 'min': 1, 'max': 30, 'step': 1},
-        'risk_percent': {'type': 'float', 'default': 2.0, 'min': 0.5, 'max': 10.0, 'step': 0.5},
-        'atr_multiplier': {'type': 'float', 'default': 1.0, 'min': 0.5, 'max': 3.0, 'step': 0.1},
-        'smoothing_length': {'type': 'int', 'default': 3, 'min': 1, 'max': 10, 'step': 1},
-        'percentile_period': {'type': 'int', 'default': 100, 'min': 20, 'max': 200, 'step': 10},
-    },
-    'RandomBaseStrategy': {
-        'entry_probability': {'type': 'float', 'default': 0.1, 'min': 0.01, 'max': 0.5, 'step': 0.01},
-        'exit_probability': {'type': 'float', 'default': 0.1, 'min': 0.01, 'max': 0.5, 'step': 0.01},
-        'risk_percent': {'type': 'float', 'default': 2.0, 'min': 0.5, 'max': 10.0, 'step': 0.5},
-    }
-}
+def get_strategy_parameters() -> Dict[str, Dict[str, Any]]:
+    """
+    Load strategy parameters from centralized configuration.
+
+    Returns dict in format: {strategy_name: {param_name: {type, default, min, max, step}}}
+    """
+    result = {}
+    for strategy_name in StrategyConfig.get_strategies():
+        opt_params = StrategyConfig.get_optimization_params(strategy_name)
+        if opt_params:
+            result[strategy_name] = opt_params
+    return result
+
+
+# Load strategy parameters from centralized config
+STRATEGY_PARAMETERS = get_strategy_parameters()
 
 STRATEGIES = {
     'AlphaTrendStrategy': AlphaTrendStrategy,

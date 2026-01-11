@@ -1,0 +1,222 @@
+{
+  "_description": "Centralized strategy parameter configuration. All systems should reference this file.",
+  "_version": "1.0",
+
+  "strategies": {
+    "AlphaTrendStrategy": {
+      "display_name": "Alpha Trend Strategy",
+      "description": "Trend-following strategy using AlphaTrend indicator with volume confirmation",
+      "trade_direction": "LONG",
+      "parameters": {
+        "volume_short_ma": {
+          "type": "int",
+          "default": 4,
+          "configurable": true,
+          "optimization": {
+            "min": 2,
+            "max": 20,
+            "step": 1
+          },
+          "description": "Short MA period for volume filter",
+          "category": "Volume Filter"
+        },
+        "volume_long_ma": {
+          "type": "int",
+          "default": 30,
+          "configurable": true,
+          "optimization": {
+            "min": 10,
+            "max": 100,
+            "step": 5
+          },
+          "description": "Long MA period for volume filter",
+          "category": "Volume Filter"
+        },
+        "volume_alignment_window": {
+          "type": "int",
+          "default": 14,
+          "configurable": true,
+          "optimization": {
+            "min": 1,
+            "max": 30,
+            "step": 1
+          },
+          "description": "Bars to wait for volume confirmation after signal",
+          "category": "Volume Filter"
+        },
+        "atr_stop_loss_multiple": {
+          "type": "float",
+          "default": 2.5,
+          "configurable": true,
+          "optimization": {
+            "min": 0.5,
+            "max": 5.0,
+            "step": 0.25
+          },
+          "description": "ATR multiplier for stop loss calculation",
+          "category": "Stop Loss"
+        },
+        "stop_loss_percent": {
+          "type": "float",
+          "default": 0.0,
+          "configurable": true,
+          "optimization": {
+            "min": 0.0,
+            "max": 10.0,
+            "step": 0.5
+          },
+          "description": "Percentage stop loss (fallback if ATR multiple is 0)",
+          "category": "Stop Loss"
+        },
+        "grace_period_bars": {
+          "type": "int",
+          "default": 14,
+          "configurable": true,
+          "optimization": {
+            "min": 0,
+            "max": 30,
+            "step": 1
+          },
+          "description": "Bars to ignore EMA exit signal after entry",
+          "category": "Exit Protection"
+        },
+        "momentum_gain_pct": {
+          "type": "float",
+          "default": 2.0,
+          "configurable": true,
+          "optimization": {
+            "min": 0.0,
+            "max": 10.0,
+            "step": 0.5
+          },
+          "description": "Percentage gain threshold for momentum protection",
+          "category": "Exit Protection"
+        },
+        "momentum_lookback": {
+          "type": "int",
+          "default": 7,
+          "configurable": true,
+          "optimization": {
+            "min": 1,
+            "max": 30,
+            "step": 1
+          },
+          "description": "Bars lookback for momentum calculation",
+          "category": "Exit Protection"
+        },
+        "risk_percent": {
+          "type": "float",
+          "default": 2.0,
+          "configurable": true,
+          "optimization": {
+            "min": 0.5,
+            "max": 10.0,
+            "step": 0.5
+          },
+          "description": "Percentage of equity to risk per trade",
+          "category": "Position Sizing"
+        },
+        "atr_multiplier": {
+          "type": "float",
+          "default": 1.0,
+          "configurable": true,
+          "optimization": {
+            "min": 0.5,
+            "max": 3.0,
+            "step": 0.1
+          },
+          "description": "Base multiplier for ATR bands in AlphaTrend calculation",
+          "category": "AlphaTrend Calculation"
+        },
+        "smoothing_length": {
+          "type": "int",
+          "default": 3,
+          "configurable": true,
+          "optimization": {
+            "min": 1,
+            "max": 10,
+            "step": 1
+          },
+          "description": "EMA period for AlphaTrend smoothing",
+          "category": "AlphaTrend Calculation"
+        },
+        "percentile_period": {
+          "type": "int",
+          "default": 100,
+          "configurable": true,
+          "optimization": {
+            "min": 20,
+            "max": 200,
+            "step": 10
+          },
+          "description": "Lookback period for dynamic MFI thresholds",
+          "category": "AlphaTrend Calculation"
+        }
+      }
+    },
+
+    "RandomBaseStrategy": {
+      "display_name": "Random Base Strategy",
+      "description": "Baseline strategy using random entry/exit for benchmarking",
+      "trade_direction": "LONG",
+      "parameters": {
+        "entry_probability": {
+          "type": "float",
+          "default": 0.10,
+          "configurable": true,
+          "optimization": {
+            "min": 0.01,
+            "max": 0.20,
+            "step": 0.01
+          },
+          "description": "Probability of entry each bar (0.10 = 10%)",
+          "category": "Entry/Exit"
+        },
+        "exit_probability": {
+          "type": "float",
+          "default": 0.10,
+          "configurable": true,
+          "optimization": {
+            "min": 0.01,
+            "max": 0.20,
+            "step": 0.01
+          },
+          "description": "Probability of exit each bar (0.10 = 10%)",
+          "category": "Entry/Exit"
+        },
+        "position_size_pct": {
+          "type": "float",
+          "default": 5.0,
+          "configurable": true,
+          "optimization": {
+            "min": 1.0,
+            "max": 20.0,
+            "step": 1.0
+          },
+          "description": "Position size as percentage of equity",
+          "category": "Position Sizing"
+        },
+        "stop_loss_atr_multiple": {
+          "type": "float",
+          "default": 2.0,
+          "configurable": true,
+          "optimization": {
+            "min": 0.5,
+            "max": 5.0,
+            "step": 0.25
+          },
+          "description": "ATR multiplier for stop loss",
+          "category": "Stop Loss"
+        },
+        "random_seed": {
+          "type": "int",
+          "default": null,
+          "configurable": true,
+          "optimization": null,
+          "description": "Random seed for reproducibility (null for random)",
+          "category": "Misc"
+        }
+      }
+    }
+  }
+}
