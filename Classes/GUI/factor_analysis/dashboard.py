@@ -302,7 +302,14 @@ class DataSummaryView(ctk.CTkFrame):
         super().__init__(parent, fg_color="transparent", **kwargs)
 
         self.data: Dict[str, Any] = {}
+        self.config: Dict[str, Any] = {}
         self._create_widgets()
+
+    def set_config(self, config: Dict[str, Any]):
+        """Set the configuration for this view."""
+        self.config = config
+        # Refresh to apply new classification thresholds
+        self._refresh_data()
 
     def _create_widgets(self):
         """Create view widgets."""
@@ -414,22 +421,65 @@ class DataSummaryView(ctk.CTkFrame):
         # Calculate trade statistics
         total_trades = len(trade_data) if isinstance(trade_data, pd.DataFrame) else 0
 
-        # Classify trades if pnl column exists
+        # Classify trades using configured thresholds
         good_trades = 0
         bad_trades = 0
         indeterminate = 0
 
         if isinstance(trade_data, pd.DataFrame):
+            # Get P&L percentage column
             pnl_col = None
-            for col in ['pnl', 'pl', 'profit', 'return', 'profit_loss']:
+            for col in ['pl_pct', 'pnl_pct', 'return_pct', 'pnl', 'pl', 'profit', 'return', 'profit_loss']:
                 if col in trade_data.columns:
                     pnl_col = col
                     break
 
             if pnl_col:
-                good_trades = len(trade_data[trade_data[pnl_col] > 0])
-                bad_trades = len(trade_data[trade_data[pnl_col] < 0])
-                indeterminate = len(trade_data[trade_data[pnl_col] == 0])
+                # Get thresholds from config
+                tc_config = self.config.get('trade_classification', {})
+                good_thresh = float(tc_config.get('good_threshold_pct', 0.0))
+                bad_thresh = float(tc_config.get('bad_threshold_pct', 0.0))
+                bad_min_days = int(tc_config.get('min_holding_period', 0))
+
+                # Get duration column if available
+                duration_col = None
+                for col in ['duration_days', 'holding_days', 'days_held']:
+                    if col in trade_data.columns:
+                        duration_col = col
+                        break
+
+                # Calculate duration if not present but entry/exit dates exist
+                if duration_col is None and 'entry_date' in trade_data.columns and 'exit_date' in trade_data.columns:
+                    try:
+                        trade_data = trade_data.copy()
+                        trade_data['duration_days'] = (
+                            pd.to_datetime(trade_data['exit_date']) - pd.to_datetime(trade_data['entry_date'])
+                        ).dt.days
+                        duration_col = 'duration_days'
+                    except Exception:
+                        pass
+
+                # Classify using thresholds
+                for _, row in trade_data.iterrows():
+                    pl = row[pnl_col]
+                    duration = row[duration_col] if duration_col else 0
+
+                    if pd.isna(pl):
+                        indeterminate += 1
+                    elif pl > good_thresh:
+                        good_trades += 1
+                    elif pl < bad_thresh:
+                        # For bad trades, also check duration requirement
+                        if bad_min_days > 0 and duration < bad_min_days:
+                            indeterminate += 1  # Short-duration loss is indeterminate
+                        else:
+                            bad_trades += 1
+                    else:
+                        indeterminate += 1
+
+                print(f"[DEBUG] Trade Classification in Overview:")
+                print(f"  - good_thresh: {good_thresh}, bad_thresh: {bad_thresh}, bad_min_days: {bad_min_days}")
+                print(f"  - good: {good_trades}, bad: {bad_trades}, indeterminate: {indeterminate}")
 
             # Calculate win rate
             if total_trades > 0:
@@ -1908,6 +1958,9 @@ class FactorAnalysisDashboard:
         def on_config_save(config):
             self.config = config
             self._log_audit("Configuration updated")
+            # Pass config to summary view for classification updates
+            if "summary" in self.views:
+                self.views["summary"].set_config(config)
 
         config_gui = FactorConfigManagerGUI(parent=self.root, on_save=on_config_save)
 
@@ -1927,6 +1980,9 @@ class FactorAnalysisDashboard:
             return
 
         if 'summary' in self.views:
+            # Pass config first so thresholds are available for classification
+            if self.config:
+                self.views['summary'].set_config(self.config)
             self.views['summary'].set_data(self.data)
 
     def _run_analysis(self):
@@ -2016,6 +2072,15 @@ class FactorAnalysisDashboard:
             # Build config from GUI settings
             analyzer_config = self._build_analyzer_config()
 
+            # Debug: Print the actual thresholds being used
+            tc = analyzer_config.trade_classification
+            print(f"[DEBUG] Trade Classification Config:")
+            print(f"  - good_threshold_pct: {tc.good_threshold_pct}")
+            print(f"  - bad_threshold_pct: {tc.bad_threshold_pct}")
+            print(f"  - threshold_type: {tc.threshold_type}")
+            print(f"  - bad_min_days: {tc.bad_min_days}")
+            print(f"[DEBUG] GUI config trade_classification: {self.config.get('trade_classification', {})}")
+
             # Create analyzer
             self.analyzer = FactorAnalyzer(config=analyzer_config)
 
@@ -2024,7 +2089,10 @@ class FactorAnalysisDashboard:
             if trade_data is None:
                 raise ValueError("No trade data loaded")
 
-            price_data = self.data.get('daily_price_data') or self.data.get('weekly_price_data')
+            # Get price data - need to check properly since DataFrames can't use 'or'
+            price_data = self.data.get('daily_price_data')
+            if price_data is None or (hasattr(price_data, 'empty') and price_data.empty):
+                price_data = self.data.get('weekly_price_data')
             fundamental_data = self.data.get('fundamental_data')
             insider_data = self.data.get('insider_data')
             options_data = self.data.get('options_data')
@@ -2323,6 +2391,19 @@ class FactorAnalysisDashboard:
 
     def _update_results_views(self):
         """Update all views with analysis results."""
+        # Update summary view with classification results from analyzer
+        if 'data_summary' in self.results and 'summary' in self.views:
+            ds = self.results['data_summary']
+            summary_view = self.views['summary']
+            if hasattr(summary_view, 'good_card'):
+                summary_view.good_card['value_label'].configure(text=f"{ds.get('good_trades', 0):,}")
+            if hasattr(summary_view, 'bad_card'):
+                summary_view.bad_card['value_label'].configure(text=f"{ds.get('bad_trades', 0):,}")
+            if hasattr(summary_view, 'neutral_card'):
+                summary_view.neutral_card['value_label'].configure(text=f"{ds.get('indeterminate_trades', 0):,}")
+            print(f"[DEBUG] Updated summary view from analyzer results:")
+            print(f"  - good: {ds.get('good_trades', 0)}, bad: {ds.get('bad_trades', 0)}, indeterminate: {ds.get('indeterminate_trades', 0)}")
+
         if 'tier1' in self.results:
             self.views['tier1'].update_results(self.results['tier1'])
 
