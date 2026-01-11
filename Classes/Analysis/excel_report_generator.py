@@ -115,6 +115,7 @@ class ExcelReportGenerator:
         self._create_period_analysis(wb, result, metrics)
         self._create_costs_analysis(wb, result, metrics)
         self._create_performance_analysis(wb, result, metrics)
+        self._create_stable_metrics(wb, result, metrics)
         self._create_visualizations(wb, result, metrics)
         # Market conditions tab removed for single security backtests
 
@@ -1834,6 +1835,282 @@ class ExcelReportGenerator:
         ws.column_dimensions['C'].width = 20
         ws.column_dimensions['D'].width = 20
 
+    def _create_stable_metrics(self, wb: Workbook, result: BacktestResult, metrics: Dict[str, Any]):
+        """
+        Create Stable Metrics sheet with regression-based performance metrics.
+
+        Includes:
+        - Regressed Annual Return (RAR%)
+        - R² of log-equity regression
+        - RAR% Adjusted (RAR% × R²)
+        - R-Cubed metric
+        - Robust Sharpe Ratio
+        - Equity curve with regression line visualization
+        - Largest drawdowns table
+        """
+        from Classes.Core.stable_metrics import StableMetricsCalculator
+
+        ws = wb.create_sheet("Stable Metrics")
+
+        # Title
+        ws['A1'] = "STABLE PERFORMANCE METRICS"
+        ws['A1'].font = Font(bold=True, size=16)
+        ws['A1'].alignment = Alignment(horizontal='center')
+        ws.merge_cells('A1:E1')
+
+        row = 3
+
+        # Calculate stable metrics
+        equity_df = result.equity_curve
+        if equity_df is None or len(equity_df) < 2:
+            ws[f'A{row}'] = "Insufficient data for stable metrics calculation"
+            return
+
+        stable_result = StableMetricsCalculator.calculate_all(equity_df)
+
+        # Section A: Regression Analysis
+        row = self._add_section_header(ws, row, "A. REGRESSION ANALYSIS")
+
+        regression_data = [
+            ("Regressed Annual Return (RAR%)", stable_result.rar_pct, "percentage"),
+            ("R² (Log-Equity Regression)", stable_result.r_squared, "decimal4"),
+            ("RAR% Adjusted (RAR% × R²)", stable_result.rar_adjusted, "percentage"),
+            ("CAGR (Classical)", stable_result.cagr, "percentage"),
+            ("RAR% vs CAGR Difference", stable_result.rar_pct - stable_result.cagr, "percentage"),
+            ("Bars Per Year Used", stable_result.bars_per_year, "number"),
+        ]
+
+        row = self._add_metrics_table(ws, row, regression_data)
+
+        # R² Warning if applicable
+        if stable_result.r_squared_warning:
+            row += 1
+            ws[f'A{row}'] = "Warning:"
+            ws[f'A{row}'].font = Font(bold=True, color="9C0006")
+            ws[f'B{row}'] = stable_result.r_squared_warning
+            ws[f'B{row}'].font = Font(italic=True, color="9C0006")
+            ws.merge_cells(f'B{row}:E{row}')
+            row += 1
+
+        row += 1
+
+        # Section B: R-Cubed Analysis
+        row = self._add_section_header(ws, row, "B. R-CUBED ANALYSIS")
+
+        # R-Cubed explanation
+        ws[f'A{row}'] = "R-Cubed = RAR% / (Avg Max Drawdown × Length Adjustment)"
+        ws[f'A{row}'].font = Font(italic=True, size=9)
+        ws.merge_cells(f'A{row}:E{row}')
+        row += 1
+
+        r_cubed_data = [
+            ("R-Cubed", stable_result.r_cubed, "decimal"),
+            ("Average Max Drawdown (%)", stable_result.avg_max_drawdown_pct, "percentage"),
+            ("Average Max Drawdown Length (days)", stable_result.avg_max_drawdown_length_days, "decimal"),
+            ("Length Adjustment Factor", stable_result.length_adjustment_factor, "decimal4"),
+            ("Drawdowns Used in Calculation", stable_result.num_drawdowns_used, "number"),
+        ]
+
+        row = self._add_metrics_table(ws, row, r_cubed_data)
+
+        # R-Cubed interpretation
+        row += 1
+        ws[f'A{row}'] = "Interpretation:"
+        ws[f'A{row}'].font = Font(bold=True)
+        row += 1
+
+        r_cubed_val = stable_result.r_cubed
+        if r_cubed_val >= 2.0:
+            interpretation = "Excellent - Strong risk-adjusted returns with manageable drawdowns"
+            color = "006400"  # Dark green
+        elif r_cubed_val >= 1.5:
+            interpretation = "Good - Solid risk/reward profile"
+            color = "228B22"  # Forest green
+        elif r_cubed_val >= 1.0:
+            interpretation = "Fair - Acceptable but room for improvement"
+            color = "DAA520"  # Goldenrod
+        else:
+            interpretation = "Poor - High risk relative to returns"
+            color = "9C0006"  # Dark red
+
+        ws[f'A{row}'] = f"R-Cubed = {r_cubed_val:.2f}: {interpretation}"
+        ws[f'A{row}'].font = Font(color=color)
+        ws.merge_cells(f'A{row}:E{row}')
+        row += 1
+
+        # Drawdown warning if applicable
+        if stable_result.drawdown_warning:
+            ws[f'A{row}'] = "Note:"
+            ws[f'A{row}'].font = Font(bold=True, color="DAA520")
+            ws[f'B{row}'] = stable_result.drawdown_warning
+            ws[f'B{row}'].font = Font(italic=True, color="DAA520")
+            ws.merge_cells(f'B{row}:E{row}')
+            row += 1
+
+        row += 1
+
+        # Section C: Robust Sharpe Ratio
+        row = self._add_section_header(ws, row, "C. ROBUST SHARPE RATIO")
+
+        ws[f'A{row}'] = "Robust Sharpe = RAR% / Annualized Std Dev of Monthly Returns"
+        ws[f'A{row}'].font = Font(italic=True, size=9)
+        ws.merge_cells(f'A{row}:E{row}')
+        row += 1
+
+        robust_sharpe_data = [
+            ("Robust Sharpe Ratio", stable_result.robust_sharpe_ratio, "decimal3"),
+            ("Monthly Return Std (Annualized)", stable_result.monthly_return_std_annualized, "percentage"),
+            ("Traditional Sharpe Ratio", metrics.get('sharpe_ratio', 0), "decimal3"),
+        ]
+
+        row = self._add_metrics_table(ws, row, robust_sharpe_data)
+
+        # Robust Sharpe interpretation
+        row += 1
+        ws[f'A{row}'] = "Interpretation:"
+        ws[f'A{row}'].font = Font(bold=True)
+        row += 1
+
+        robust_sharpe_val = stable_result.robust_sharpe_ratio
+        if robust_sharpe_val >= 1.0:
+            interpretation = "Excellent - Strong risk-adjusted performance"
+            color = "006400"
+        elif robust_sharpe_val >= 0.5:
+            interpretation = "Good - Acceptable risk/return trade-off"
+            color = "228B22"
+        else:
+            interpretation = "Poor - Returns do not adequately compensate for risk"
+            color = "9C0006"
+
+        ws[f'A{row}'] = f"Robust Sharpe = {robust_sharpe_val:.3f}: {interpretation}"
+        ws[f'A{row}'].font = Font(color=color)
+        ws.merge_cells(f'A{row}:E{row}')
+        row += 1
+
+        # Monthly returns warning if applicable
+        if stable_result.monthly_returns_warning:
+            ws[f'A{row}'] = "Note:"
+            ws[f'A{row}'].font = Font(bold=True, color="DAA520")
+            ws[f'B{row}'] = stable_result.monthly_returns_warning
+            ws[f'B{row}'].font = Font(italic=True, color="DAA520")
+            ws.merge_cells(f'B{row}:E{row}')
+            row += 1
+
+        row += 1
+
+        # Section D: Largest Drawdowns Table
+        row = self._add_section_header(ws, row, "D. LARGEST DRAWDOWNS (Used for R-Cubed)")
+
+        if stable_result.largest_drawdowns:
+            # Headers
+            headers = ["#", "Start Date", "Trough Date", "Recovery Date", "Drawdown %", "Duration (days)"]
+            for col, header in enumerate(headers, 1):
+                cell = ws.cell(row=row, column=col, value=header)
+                cell.fill = self.header_fill
+                cell.font = self.header_font
+                cell.alignment = Alignment(horizontal='center')
+            row += 1
+
+            # Data rows
+            for i, dd in enumerate(stable_result.largest_drawdowns, 1):
+                dd_dict = dd.to_dict()
+                ws.cell(row=row, column=1, value=i)
+                ws.cell(row=row, column=2, value=dd_dict['start_date'])
+                ws.cell(row=row, column=3, value=dd_dict['trough_date'])
+                ws.cell(row=row, column=4, value=dd_dict['recovery_date'])
+                ws.cell(row=row, column=5, value=dd_dict['drawdown_pct'])
+                ws.cell(row=row, column=6, value=dd.duration_days)
+
+                # Color code based on severity
+                dd_pct = dd.drawdown_pct
+                if dd_pct >= 20:
+                    fill_color = "FFC7CE"  # Light red
+                elif dd_pct >= 10:
+                    fill_color = "FFEB9C"  # Light yellow
+                else:
+                    fill_color = "C6EFCE"  # Light green
+
+                ws.cell(row=row, column=5).fill = PatternFill(
+                    start_color=fill_color, end_color=fill_color, fill_type="solid"
+                )
+                row += 1
+        else:
+            ws[f'A{row}'] = "No significant drawdowns detected"
+            row += 1
+
+        row += 2
+
+        # Section E: Equity Curve with Regression Line (data for charting)
+        row = self._add_section_header(ws, row, "E. EQUITY CURVE WITH REGRESSION LINE")
+
+        # Get regression line data
+        if 'equity' in equity_df.columns:
+            equity_values = equity_df['equity'].values
+        else:
+            equity_values = equity_df.iloc[:, 0].values
+
+        regression_line = StableMetricsCalculator.get_regression_line_data(
+            equity_values,
+            stable_result.regression_slope,
+            stable_result.regression_intercept
+        )
+
+        # Sample data if too large
+        max_points = 200
+        if len(equity_df) > max_points:
+            step = len(equity_df) // max_points
+            sample_indices = range(0, len(equity_df), step)
+        else:
+            sample_indices = range(len(equity_df))
+
+        # Headers for chart data
+        ws.cell(row=row, column=1, value="Bar").font = self.header_font
+        ws.cell(row=row, column=2, value="Equity").font = self.header_font
+        ws.cell(row=row, column=3, value="Regression Line").font = self.header_font
+        row += 1
+
+        data_start_row = row
+        for idx in sample_indices:
+            ws.cell(row=row, column=1, value=idx + 1)
+            ws.cell(row=row, column=2, value=float(equity_values[idx]))
+            ws.cell(row=row, column=3, value=float(regression_line[idx]))
+            row += 1
+
+        data_end_row = row - 1
+
+        # Create chart
+        if data_end_row > data_start_row:
+            chart = LineChart()
+            chart.title = f"Equity Curve with Regression Line (RAR% = {stable_result.rar_pct:.2f}%, R² = {stable_result.r_squared:.4f})"
+            chart.style = 10
+            chart.x_axis.title = "Bar"
+            chart.y_axis.title = "Equity"
+            chart.width = 18
+            chart.height = 10
+
+            # Equity curve data
+            equity_data = Reference(ws, min_col=2, min_row=data_start_row - 1, max_row=data_end_row)
+            chart.add_data(equity_data, titles_from_data=True)
+
+            # Regression line data
+            reg_data = Reference(ws, min_col=3, min_row=data_start_row - 1, max_row=data_end_row)
+            chart.add_data(reg_data, titles_from_data=True)
+
+            # Style the series
+            chart.series[0].graphicalProperties.line.solidFill = "2E75B6"  # Blue for equity
+            chart.series[1].graphicalProperties.line.solidFill = "FF6B6B"  # Red for regression
+            chart.series[1].graphicalProperties.line.dashStyle = "dash"
+
+            ws.add_chart(chart, f"E{data_start_row - 1}")
+
+        # Format column widths
+        ws.column_dimensions['A'].width = 35
+        ws.column_dimensions['B'].width = 20
+        ws.column_dimensions['C'].width = 18
+        ws.column_dimensions['D'].width = 18
+        ws.column_dimensions['E'].width = 15
+        ws.column_dimensions['F'].width = 15
+
     def _create_visualizations(self, wb: Workbook, result: BacktestResult, metrics: Dict[str, Any]):
         """Create Sheet 4: Visualizations & Charts with data tables and charts."""
         ws = wb.create_sheet("Visualizations")
@@ -2119,6 +2396,10 @@ class ExcelReportGenerator:
                 value_cell.number_format = '0.00"%"'
             elif format_type == 'decimal':
                 value_cell.number_format = '0.00'
+            elif format_type == 'decimal3':
+                value_cell.number_format = '0.000'
+            elif format_type == 'decimal4':
+                value_cell.number_format = '0.0000'
             elif format_type == 'number':
                 value_cell.number_format = '#,##0'
             elif format_type == 'auto':

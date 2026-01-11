@@ -160,6 +160,12 @@ METRIC_DEFINITIONS = {
     "expectancy": {"name": "Expectancy", "higher_is_better": True, "format": "{:.2f}%"},
     "volatility": {"name": "Volatility", "higher_is_better": False, "format": "{:.2f}%"},
     "final_equity": {"name": "Final Equity", "higher_is_better": True, "format": "${:,.2f}"},
+    # Stable Metrics
+    "rar_pct": {"name": "RAR%", "higher_is_better": True, "format": "{:.2f}%"},
+    "r_squared": {"name": "R² (Regression)", "higher_is_better": True, "format": "{:.4f}"},
+    "rar_adjusted": {"name": "RAR% Adjusted", "higher_is_better": True, "format": "{:.2f}%"},
+    "r_cubed": {"name": "R-Cubed", "higher_is_better": True, "format": "{:.2f}"},
+    "robust_sharpe_ratio": {"name": "Robust Sharpe", "higher_is_better": True, "format": "{:.3f}"},
 }
 
 AVAILABLE_METRICS = list(METRIC_DEFINITIONS.keys())
@@ -425,6 +431,27 @@ class UnivariateOptimizer:
             initial_capital=self.initial_capital
         )
 
+        # Check if any stable metrics are requested
+        stable_metric_keys = {'rar_pct', 'r_squared', 'rar_adjusted', 'r_cubed', 'robust_sharpe_ratio'}
+        needs_stable_metrics = bool(set(metrics) & stable_metric_keys)
+
+        # Calculate stable metrics if needed
+        stable_metrics = {}
+        if needs_stable_metrics:
+            try:
+                from Classes.Core.stable_metrics import StableMetricsCalculator
+                stable_result = StableMetricsCalculator.calculate_all(equity_df)
+                stable_metrics = {
+                    'rar_pct': stable_result.rar_pct,
+                    'r_squared': stable_result.r_squared,
+                    'rar_adjusted': stable_result.rar_adjusted,
+                    'r_cubed': stable_result.r_cubed,
+                    'robust_sharpe_ratio': stable_result.robust_sharpe_ratio,
+                }
+            except Exception as e:
+                logger.warning(f"Failed to calculate stable metrics: {e}")
+                stable_metrics = {key: 0.0 for key in stable_metric_keys}
+
         # Map requested metrics to calculated values
         metric_mapping = {
             'total_return': 'total_return',
@@ -445,13 +472,17 @@ class UnivariateOptimizer:
         calculated = {}
         for metric in metrics:
             try:
-                mapped_key = metric_mapping.get(metric, metric)
-                if mapped_key in all_metrics:
-                    calculated[metric] = all_metrics[mapped_key]
+                # Check stable metrics first
+                if metric in stable_metrics:
+                    calculated[metric] = stable_metrics[metric]
                 else:
-                    # Unknown metric
-                    logger.warning(f"Unknown metric: {metric}")
-                    calculated[metric] = 0.0
+                    mapped_key = metric_mapping.get(metric, metric)
+                    if mapped_key in all_metrics:
+                        calculated[metric] = all_metrics[mapped_key]
+                    else:
+                        # Unknown metric
+                        logger.warning(f"Unknown metric: {metric}")
+                        calculated[metric] = 0.0
             except Exception as e:
                 logger.warning(f"Failed to calculate {metric}: {e}")
                 calculated[metric] = 0.0
