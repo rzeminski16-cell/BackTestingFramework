@@ -207,10 +207,10 @@ class CTkMainLauncher(ctk.CTk):
                 "command": self._launch_vulnerability
             },
             {
-                "title": "Per-Trade Analysis",
-                "description": "Deep-dive forensics for individual trades with pattern identification",
-                "icon": "\U0001F50D",  # Magnifying glass
-                "command": self._launch_per_trade_analysis
+                "title": "Data Collection",
+                "description": "Collect and prepare raw data from Alpha Vantage API",
+                "icon": "\U0001F4E5",  # Inbox tray
+                "command": self._launch_data_collection
             },
             {
                 "title": "AlphaTrend Explorer",
@@ -280,13 +280,13 @@ class CTkMainLauncher(ctk.CTk):
         """Launch the vulnerability modeler GUI."""
         self._launch_module("vulnerability")
 
-    def _launch_per_trade_analysis(self):
-        """Launch the per-trade analysis Streamlit app."""
-        script_path = Path(__file__).parent / "apps" / "per_trade_analysis" / "app.py"
+    def _launch_data_collection(self):
+        """Launch the data collection GUI."""
+        script_path = Path(__file__).parent / "apps" / "data_collection_gui.py"
         if script_path.exists():
-            subprocess.Popen(["streamlit", "run", str(script_path)])
+            subprocess.Popen([sys.executable, str(script_path)])
         else:
-            self._show_error(f"Per-Trade Analysis app not found: {script_path}")
+            self._show_error(f"Data Collection GUI not found: {script_path}")
 
     def _launch_alphatrend_explorer(self):
         """Launch the AlphaTrend Explorer Streamlit app."""

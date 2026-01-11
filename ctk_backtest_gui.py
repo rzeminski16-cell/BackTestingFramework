@@ -41,6 +41,7 @@ from Classes.Config.basket import Basket, BasketManager
 from Classes.Config.capital_contention import (
     CapitalContentionConfig, CapitalContentionMode, VulnerabilityScoreConfig
 )
+from config.strategy_config import StrategyConfig
 from Classes.Data.data_loader import DataLoader
 from Classes.Data.security_registry import SecurityRegistry
 from Classes.Data.currency_converter import CurrencyConverter
@@ -54,6 +55,155 @@ from Classes.Analysis.portfolio_report_generator import PortfolioReportGenerator
 # Import available strategies
 from strategies.alphatrend_strategy import AlphaTrendStrategy
 from strategies.random_base_strategy import RandomBaseStrategy
+
+
+# =============================================================================
+# CTK VULNERABILITY SCORE CONFIG DIALOG
+# =============================================================================
+
+class CTkVulnerabilityConfigDialog(ctk.CTkToplevel):
+    """CustomTkinter dialog for configuring vulnerability score parameters."""
+
+    def __init__(self, parent, current_config: VulnerabilityScoreConfig = None, on_save=None):
+        super().__init__(parent)
+
+        self.current_config = current_config or VulnerabilityScoreConfig()
+        self.on_save = on_save
+
+        # Window setup
+        self.title("Vulnerability Score Configuration")
+        self.geometry("500x500")
+        self.transient(parent)
+        self.grab_set()
+
+        # Center on parent
+        self.update_idletasks()
+        parent_x = parent.winfo_rootx()
+        parent_y = parent.winfo_rooty()
+        parent_w = parent.winfo_width()
+        parent_h = parent.winfo_height()
+        x = parent_x + (parent_w - 500) // 2
+        y = parent_y + (parent_h - 500) // 2
+        self.geometry(f"+{x}+{y}")
+
+        self.configure(fg_color=Colors.BG_DARK)
+        self._create_widgets()
+
+    def _create_widgets(self):
+        """Create dialog widgets."""
+        # Main container
+        main_frame = ctk.CTkFrame(self, fg_color="transparent")
+        main_frame.pack(fill="both", expand=True, padx=20, pady=20)
+
+        # Title
+        Theme.create_header(main_frame, "Vulnerability Score Parameters", size="m").pack(pady=(0, 15))
+
+        # Parameters frame
+        params_card = Theme.create_card(main_frame)
+        params_card.pack(fill="x", pady=(0, 15))
+
+        params_frame = Theme.create_frame(params_card)
+        params_frame.pack(fill="x", padx=15, pady=15)
+
+        # Store entry variables
+        self.vars = {}
+
+        # Immunity Days
+        self._add_param_row(params_frame, "Immunity Days:", "immunity_days",
+                          str(self.current_config.immunity_days), "1-30 days (new trades protected)")
+
+        # Min Profit Threshold
+        self._add_param_row(params_frame, "Min Profit Threshold:", "min_profit_threshold",
+                          str(self.current_config.min_profit_threshold), "0.0-0.20 (0.02 = 2%)")
+
+        # Decay Rate Fast
+        self._add_param_row(params_frame, "Decay Rate (Fast):", "decay_rate_fast",
+                          str(self.current_config.decay_rate_fast), "Points/day for stagnant trades")
+
+        # Decay Rate Slow
+        self._add_param_row(params_frame, "Decay Rate (Slow):", "decay_rate_slow",
+                          str(self.current_config.decay_rate_slow), "Points/day for performing trades")
+
+        # Swap Threshold
+        self._add_param_row(params_frame, "Swap Threshold:", "swap_threshold",
+                          str(self.current_config.swap_threshold), "0-100 (score below = vulnerable)")
+
+        # Description card
+        desc_card = Theme.create_card(main_frame)
+        desc_card.pack(fill="x", pady=(0, 15))
+
+        desc_frame = Theme.create_frame(desc_card)
+        desc_frame.pack(fill="x", padx=15, pady=15)
+
+        Theme.create_label(desc_frame, "How It Works:", font=Fonts.LABEL_BOLD).pack(anchor="w")
+
+        desc_text = (
+            "When a new BUY signal arrives with no capital:\n"
+            "1. Each open position gets a vulnerability score (0-100)\n"
+            "2. New trades start at 100, protected during immunity period\n"
+            "3. After immunity, stagnant trades (low P/L) decay faster\n"
+            "4. If weakest position < swap threshold, it's closed for new signal"
+        )
+        Theme.create_label(desc_frame, desc_text, font=Fonts.BODY_S,
+                          text_color=Colors.TEXT_SECONDARY).pack(anchor="w", pady=(5, 0))
+
+        # Buttons
+        btn_frame = Theme.create_frame(main_frame)
+        btn_frame.pack(fill="x")
+
+        Theme.create_button(btn_frame, "Reset to Defaults",
+                           command=self._reset_defaults, style="ghost").pack(side="left")
+
+        Theme.create_button(btn_frame, "Cancel",
+                           command=self.destroy, style="secondary").pack(side="right", padx=(10, 0))
+
+        Theme.create_button(btn_frame, "Save",
+                           command=self._save).pack(side="right")
+
+    def _add_param_row(self, parent, label: str, key: str, value: str, hint: str):
+        """Add a parameter input row."""
+        row = Theme.create_frame(parent)
+        row.pack(fill="x", pady=5)
+
+        Theme.create_label(row, label, font=Fonts.BODY_S, width=150).pack(side="left")
+
+        var = ctk.StringVar(value=value)
+        self.vars[key] = var
+
+        entry = Theme.create_entry(row, width=100)
+        entry.configure(textvariable=var)
+        entry.pack(side="left", padx=(10, 10))
+
+        Theme.create_label(row, hint, font=Fonts.BODY_XS,
+                          text_color=Colors.TEXT_MUTED).pack(side="left")
+
+    def _reset_defaults(self):
+        """Reset to default values."""
+        defaults = VulnerabilityScoreConfig()
+        self.vars['immunity_days'].set(str(defaults.immunity_days))
+        self.vars['min_profit_threshold'].set(str(defaults.min_profit_threshold))
+        self.vars['decay_rate_fast'].set(str(defaults.decay_rate_fast))
+        self.vars['decay_rate_slow'].set(str(defaults.decay_rate_slow))
+        self.vars['swap_threshold'].set(str(defaults.swap_threshold))
+
+    def _save(self):
+        """Save configuration and close dialog."""
+        try:
+            config = VulnerabilityScoreConfig(
+                immunity_days=int(self.vars['immunity_days'].get()),
+                min_profit_threshold=float(self.vars['min_profit_threshold'].get()),
+                decay_rate_fast=float(self.vars['decay_rate_fast'].get()),
+                decay_rate_slow=float(self.vars['decay_rate_slow'].get()),
+                swap_threshold=float(self.vars['swap_threshold'].get())
+            )
+
+            if self.on_save:
+                self.on_save(config)
+
+            self.destroy()
+
+        except ValueError as e:
+            show_error(self, "Invalid Input", str(e))
 
 
 # =============================================================================
@@ -266,11 +416,7 @@ class CTkModeSecuritiesStep(CTkWizardStep):
             self.wizard.capital_contention_config = CapitalContentionConfig.default_mode()
 
     def _open_vulnerability_config(self):
-        """Open vulnerability config dialog (placeholder - needs CTK conversion)."""
-        # TODO: Convert VulnerabilityScoreConfigDialog to CTK
-        from Classes.GUI.basket_manager_dialog import VulnerabilityScoreConfigDialog
-        import tkinter as tk
-
+        """Open vulnerability config dialog using CustomTkinter."""
         def on_save(config):
             self.wizard.vulnerability_config = config
             self.wizard.capital_contention_config = CapitalContentionConfig(
@@ -278,10 +424,8 @@ class CTkModeSecuritiesStep(CTkWizardStep):
                 vulnerability_config=config
             )
 
-        temp_root = tk.Toplevel()
-        temp_root.withdraw()
-        VulnerabilityScoreConfigDialog(
-            temp_root,
+        CTkVulnerabilityConfigDialog(
+            self.wizard.root,
             current_config=self.wizard.vulnerability_config,
             on_save=on_save
         )
@@ -420,26 +564,13 @@ class CTkStrategyStep(CTkWizardStep):
         if not strategy_name:
             return
 
-        # Initialize default parameters
-        if strategy_name == 'AlphaTrendStrategy':
-            self.wizard.strategy_params[strategy_name] = {
-                'volume_short_ma': 4,
-                'volume_long_ma': 30,
-                'volume_alignment_window': 14,
-                'stop_loss_percent': 0.0,
-                'atr_stop_loss_multiple': 2.5,
-                'grace_period_bars': 14,
-                'momentum_gain_pct': 2.0,
-                'momentum_lookback': 7,
-                'risk_percent': 2.0
-            }
-        elif strategy_name == 'RandomBaseStrategy':
-            self.wizard.strategy_params[strategy_name] = {
-                'entry_probability': 0.10,
-                'exit_probability': 0.10,
-                'position_size_pct': 5.0,
-                'stop_loss_atr_multiple': 2.0
-            }
+        # Initialize default parameters from centralized config
+        defaults = StrategyConfig.get_defaults(strategy_name)
+        if defaults:
+            self.wizard.strategy_params[strategy_name] = defaults.copy()
+        else:
+            # Fallback for unknown strategies
+            self.wizard.strategy_params[strategy_name] = {}
 
         self._refresh_presets()
         self._build_param_ui()

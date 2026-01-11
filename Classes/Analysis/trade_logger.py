@@ -3,23 +3,21 @@ Trade logging to CSV files with organized folder structure.
 
 Folder structure:
 logs/
-├── backtests/
-│   ├── single_security/
-│   │   └── {backtest_name}/
-│   │       ├── {strategy}_{symbol}_trades.csv
-│   │       ├── {strategy}_{symbol}_parameters.json
-│   │       └── reports/
-│   │           └── {timestamp}.xlsx
-│   └── portfolio/
-│       └── {backtest_name}/
-│           ├── trades/
-│           │   └── {symbol}_trades.csv (per security)
-│           ├── portfolio_trades.csv (consolidated)
-│           ├── signal_rejections.csv
-│           ├── vulnerability_log.csv (if using vulnerability score)
-│           ├── config.json
-│           └── reports/
-│               └── portfolio_report_{timestamp}.xlsx
+├── single_security/
+│   └── {backtest_name}/
+│       ├── {strategy}_{symbol}_trades.csv
+│       ├── {strategy}_{symbol}_parameters.json
+│       └── reports/
+│           └── {timestamp}.xlsx
+├── portfolio/
+│   └── {backtest_name}/
+│       ├── {symbol}_trades.csv (per security)
+│       ├── portfolio_trades.csv (consolidated)
+│       ├── signal_rejections.csv
+│       ├── vulnerability_log.csv (if using vulnerability score)
+│       ├── config.json
+│       └── reports/
+│           └── portfolio_report_{timestamp}.xlsx
 ├── optimizations/
 │   ├── single_security/
 │   │   └── {optimization_name}/
@@ -46,14 +44,14 @@ class LoggingPath:
     @classmethod
     def get_single_security_backtest_dir(cls, backtest_name: str) -> Path:
         """Get directory for single security backtest."""
-        path = cls.BASE_DIR / "backtests" / "single_security" / backtest_name
+        path = cls.BASE_DIR / "single_security" / backtest_name
         path.mkdir(parents=True, exist_ok=True)
         return path
 
     @classmethod
     def get_portfolio_backtest_dir(cls, backtest_name: str) -> Path:
         """Get directory for portfolio backtest."""
-        path = cls.BASE_DIR / "backtests" / "portfolio" / backtest_name
+        path = cls.BASE_DIR / "portfolio" / backtest_name
         path.mkdir(parents=True, exist_ok=True)
         return path
 
@@ -212,7 +210,6 @@ class PortfolioTradeLogger:
         self.backtest_name = backtest_name
         self.basket_name = basket_name
         self.base_dir = LoggingPath.get_portfolio_backtest_dir(backtest_name)
-        self.trades_dir = LoggingPath.ensure_trades_dir(self.base_dir)
         self.reports_dir = LoggingPath.ensure_reports_dir(self.base_dir)
 
     def log_portfolio_result(self, result, strategy_params: Optional[Dict[str, Any]] = None) -> Dict[str, Path]:
@@ -269,7 +266,7 @@ class PortfolioTradeLogger:
         """Log trades for a single symbol."""
         trade_dicts = [trade.to_dict() for trade in trades]
         df = pd.DataFrame(trade_dicts)
-        filepath = self.trades_dir / f"{symbol}_trades.csv"
+        filepath = self.base_dir / f"{symbol}_trades.csv"
         df.to_csv(filepath, index=False)
         return filepath
 

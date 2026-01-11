@@ -117,12 +117,28 @@ class MultiFileUploadPanel(ctk.CTkFrame):
             data = pd.read_csv(file_path, nrows=1000)
             full_data = pd.read_csv(file_path)
 
-            # Extract symbols from the data
+            # Extract symbol from filename first
+            # Expected format: {strategy}_{test}_{TICKER}_daily_trades.csv
             symbols = set()
-            for col in ['symbol', 'ticker', 'Symbol', 'Ticker', 'SYMBOL', 'TICKER']:
-                if col in full_data.columns:
-                    symbols = set(full_data[col].dropna().unique())
-                    break
+            filename = Path(file_path).stem  # Remove .csv extension
+            parts = filename.split('_')
+
+            # Try to find ticker from filename pattern
+            if len(parts) >= 3 and parts[-1] == 'trades' and parts[-2] == 'daily':
+                # Format: {strategy}_{test}_{TICKER}_daily_trades
+                ticker = parts[-3].upper()
+                symbols = {ticker}
+            elif len(parts) >= 2 and parts[-1] == 'trades':
+                # Format: {TICKER}_trades
+                ticker = parts[-2].upper()
+                symbols = {ticker}
+
+            # Fallback: try to extract from data columns if filename parsing failed
+            if not symbols:
+                for col in ['symbol', 'ticker', 'Symbol', 'Ticker', 'SYMBOL', 'TICKER']:
+                    if col in full_data.columns:
+                        symbols = set(full_data[col].dropna().unique())
+                        break
 
             file_info = {
                 'path': file_path,

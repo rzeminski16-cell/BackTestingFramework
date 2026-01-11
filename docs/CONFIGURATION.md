@@ -216,36 +216,100 @@ Or use explicit values:
 
 ## Strategy Parameters
 
-Each strategy has its own configurable parameters. Here are the AlphaTrend parameters:
+Strategy parameters are defined in a **centralized configuration file** at `config/strategy_parameters.json`. This single source of truth is used by all systems (backtesting, univariate optimization, walk-forward optimization) to ensure consistency.
 
-### AlphaTrendStrategy
+### Centralized Configuration
 
-| Parameter | Type | Default | Description |
-|-----------|------|---------|-------------|
-| `volume_short_ma` | int | 4 | Short-term volume moving average period |
-| `volume_long_ma` | int | 30 | Long-term volume moving average period |
-| `volume_alignment_window` | int | 14 | Bars to wait for volume condition after signal |
-| `stop_loss_percent` | float | 0.0 | Percentage stop loss (0 = use ATR instead) |
-| `atr_stop_loss_multiple` | float | 2.5 | Stop loss = entry - (ATR × this) |
-| `grace_period_bars` | int | 14 | Bars to ignore EMA exit after entry |
-| `momentum_gain_pct` | float | 2.0 | % gain threshold for momentum protection |
-| `momentum_lookback` | int | 7 | Bars to check for momentum |
-| `risk_percent` | float | 2.0 | % of equity to risk per trade |
+**Location:** `config/strategy_parameters.json`
+
+The configuration defines for each strategy:
+- All parameters with their types and default values
+- Optimization ranges (min, max, step)
+- Descriptions and categories
+- Whether each parameter is configurable
+
+**Example structure:**
+```json
+{
+  "strategies": {
+    "AlphaTrendStrategy": {
+      "display_name": "Alpha Trend Strategy",
+      "description": "Trend-following strategy using AlphaTrend indicator",
+      "parameters": {
+        "volume_short_ma": {
+          "type": "int",
+          "default": 4,
+          "configurable": true,
+          "optimization": {"min": 2, "max": 20, "step": 1},
+          "description": "Short MA period for volume filter",
+          "category": "Volume Filter"
+        }
+      }
+    }
+  }
+}
+```
+
+### Python Utility Module
+
+Use `config/strategy_config.py` to access the centralized configuration:
+
+```python
+from config.strategy_config import StrategyConfig
+
+# Get default parameters for a strategy
+defaults = StrategyConfig.get_defaults('AlphaTrendStrategy')
+# Returns: {'volume_short_ma': 4, 'volume_long_ma': 30, ...}
+
+# Get optimization ranges
+opt_params = StrategyConfig.get_optimization_params('AlphaTrendStrategy')
+# Returns: {'volume_short_ma': {'type': 'int', 'min': 2, 'max': 20, 'step': 1}, ...}
+
+# Get parameters grouped by category
+categories = StrategyConfig.get_params_by_category('AlphaTrendStrategy')
+# Returns: {'Volume Filter': ['volume_short_ma', 'volume_long_ma', ...], ...}
+
+# Validate parameter values
+errors = StrategyConfig.validate_params('AlphaTrendStrategy', {'volume_short_ma': 50})
+# Returns: ['Parameter volume_short_ma must be <= 20']
+
+# List available strategies
+strategies = StrategyConfig.get_strategies()
+# Returns: ['AlphaTrendStrategy', 'RandomBaseStrategy']
+```
+
+### AlphaTrendStrategy Parameters
+
+| Parameter | Type | Default | Range | Description |
+|-----------|------|---------|-------|-------------|
+| `volume_short_ma` | int | 4 | 2-20 | Short-term volume moving average period |
+| `volume_long_ma` | int | 30 | 10-100 | Long-term volume moving average period |
+| `volume_alignment_window` | int | 14 | 1-30 | Bars to wait for volume condition after signal |
+| `stop_loss_percent` | float | 0.0 | 0-10 | Percentage stop loss (0 = use ATR instead) |
+| `atr_stop_loss_multiple` | float | 2.5 | 0.5-5.0 | Stop loss = entry - (ATR × this) |
+| `grace_period_bars` | int | 14 | 0-30 | Bars to ignore EMA exit after entry |
+| `momentum_gain_pct` | float | 2.0 | 0-10 | % gain threshold for momentum protection |
+| `momentum_lookback` | int | 7 | 1-30 | Bars to check for momentum |
+| `risk_percent` | float | 2.0 | 0.5-10 | % of equity to risk per trade |
+| `atr_multiplier` | float | 1.0 | 0.5-3.0 | Base multiplier for ATR bands |
+| `smoothing_length` | int | 3 | 1-10 | EMA period for AlphaTrend smoothing |
+| `percentile_period` | int | 100 | 20-200 | Lookback for dynamic MFI thresholds |
 
 ### Using Strategy Parameters
 
 **In Python:**
 ```python
-strategy = AlphaTrendStrategy(
-    volume_short_ma=4,
-    volume_long_ma=30,
-    atr_stop_loss_multiple=2.5,
-    risk_percent=2.0
-)
+from config.strategy_config import StrategyConfig
+
+# Get defaults and customize
+params = StrategyConfig.get_defaults('AlphaTrendStrategy')
+params['atr_stop_loss_multiple'] = 3.0
+
+strategy = AlphaTrendStrategy(**params)
 ```
 
 **Via GUI:**
-Click "Configure Strategy Parameters" in the GUI to adjust values.
+Click "Configure Strategy Parameters" in the GUI to adjust values. The GUI automatically loads parameter definitions from the centralized config.
 
 **Via Presets:**
 Save/load parameter sets from `config/strategy_presets/`:
@@ -260,6 +324,24 @@ Save/load parameter sets from `config/strategy_presets/`:
   }
 }
 ```
+
+### Adding New Parameters
+
+To add a new parameter to a strategy:
+
+1. **Update the strategy class** in `strategies/` with the new parameter
+2. **Update `config/strategy_parameters.json`** with the parameter definition:
+   ```json
+   "new_parameter": {
+     "type": "float",
+     "default": 1.0,
+     "configurable": true,
+     "optimization": {"min": 0.5, "max": 5.0, "step": 0.1},
+     "description": "Description of what this parameter does",
+     "category": "Category Name"
+   }
+   ```
+3. All GUIs and optimization systems will automatically pick up the new parameter
 
 ---
 

@@ -27,6 +27,23 @@ from .components import (
 from .config_manager import FactorConfigManagerGUI
 from .data_upload import FactorDataUploadGUI
 
+# Import Factor Analysis components
+try:
+    from ...FactorAnalysis.analyzer import FactorAnalyzer, AnalysisInput, AnalysisOutput
+    from ...FactorAnalysis.config.factor_config import (
+        FactorAnalysisConfig,
+        TradeClassificationConfig,
+        DataAlignmentConfig,
+        FactorEngineeringConfig,
+        StatisticalAnalysisConfig,
+        ScenarioAnalysisConfig,
+        ThresholdType
+    )
+    ANALYZER_AVAILABLE = True
+except ImportError as e:
+    ANALYZER_AVAILABLE = False
+    print(f"Factor Analyzer not available: {e}")
+
 # Check for matplotlib availability
 try:
     import matplotlib
@@ -285,7 +302,14 @@ class DataSummaryView(ctk.CTkFrame):
         super().__init__(parent, fg_color="transparent", **kwargs)
 
         self.data: Dict[str, Any] = {}
+        self.config: Dict[str, Any] = {}
         self._create_widgets()
+
+    def set_config(self, config: Dict[str, Any]):
+        """Set the configuration for this view."""
+        self.config = config
+        # Refresh to apply new classification thresholds
+        self._refresh_data()
 
     def _create_widgets(self):
         """Create view widgets."""
@@ -397,22 +421,65 @@ class DataSummaryView(ctk.CTkFrame):
         # Calculate trade statistics
         total_trades = len(trade_data) if isinstance(trade_data, pd.DataFrame) else 0
 
-        # Classify trades if pnl column exists
+        # Classify trades using configured thresholds
         good_trades = 0
         bad_trades = 0
         indeterminate = 0
 
         if isinstance(trade_data, pd.DataFrame):
+            # Get P&L percentage column
             pnl_col = None
-            for col in ['pnl', 'pl', 'profit', 'return', 'profit_loss']:
+            for col in ['pl_pct', 'pnl_pct', 'return_pct', 'pnl', 'pl', 'profit', 'return', 'profit_loss']:
                 if col in trade_data.columns:
                     pnl_col = col
                     break
 
             if pnl_col:
-                good_trades = len(trade_data[trade_data[pnl_col] > 0])
-                bad_trades = len(trade_data[trade_data[pnl_col] < 0])
-                indeterminate = len(trade_data[trade_data[pnl_col] == 0])
+                # Get thresholds from config
+                tc_config = self.config.get('trade_classification', {})
+                good_thresh = float(tc_config.get('good_threshold_pct', 0.0))
+                bad_thresh = float(tc_config.get('bad_threshold_pct', 0.0))
+                bad_min_days = int(tc_config.get('min_holding_period', 0))
+
+                # Get duration column if available
+                duration_col = None
+                for col in ['duration_days', 'holding_days', 'days_held']:
+                    if col in trade_data.columns:
+                        duration_col = col
+                        break
+
+                # Calculate duration if not present but entry/exit dates exist
+                if duration_col is None and 'entry_date' in trade_data.columns and 'exit_date' in trade_data.columns:
+                    try:
+                        trade_data = trade_data.copy()
+                        trade_data['duration_days'] = (
+                            pd.to_datetime(trade_data['exit_date']) - pd.to_datetime(trade_data['entry_date'])
+                        ).dt.days
+                        duration_col = 'duration_days'
+                    except Exception:
+                        pass
+
+                # Classify using thresholds
+                for _, row in trade_data.iterrows():
+                    pl = row[pnl_col]
+                    duration = row[duration_col] if duration_col else 0
+
+                    if pd.isna(pl):
+                        indeterminate += 1
+                    elif pl > good_thresh:
+                        good_trades += 1
+                    elif pl < bad_thresh:
+                        # For bad trades, also check duration requirement
+                        if bad_min_days > 0 and duration < bad_min_days:
+                            indeterminate += 1  # Short-duration loss is indeterminate
+                        else:
+                            bad_trades += 1
+                    else:
+                        indeterminate += 1
+
+                print(f"[DEBUG] Trade Classification in Overview:")
+                print(f"  - good_thresh: {good_thresh}, bad_thresh: {bad_thresh}, bad_min_days: {bad_min_days}")
+                print(f"  - good: {good_trades}, bad: {bad_trades}, indeterminate: {indeterminate}")
 
             # Calculate win rate
             if total_trades > 0:
@@ -1891,6 +1958,9 @@ class FactorAnalysisDashboard:
         def on_config_save(config):
             self.config = config
             self._log_audit("Configuration updated")
+            # Pass config to summary view for classification updates
+            if "summary" in self.views:
+                self.views["summary"].set_config(config)
 
         config_gui = FactorConfigManagerGUI(parent=self.root, on_save=on_config_save)
 
@@ -1910,6 +1980,9 @@ class FactorAnalysisDashboard:
             return
 
         if 'summary' in self.views:
+            # Pass config first so thresholds are available for classification
+            if self.config:
+                self.views['summary'].set_config(self.config)
             self.views['summary'].set_data(self.data)
 
     def _run_analysis(self):
@@ -1955,8 +2028,223 @@ class FactorAnalysisDashboard:
         thread = threading.Thread(target=run_thread, daemon=True)
         thread.start()
 
+    def _build_analyzer_config(self) -> 'FactorAnalysisConfig':
+        """Build FactorAnalysisConfig from GUI config."""
+        gui_config = self.config
+
+        # Build TradeClassificationConfig from GUI settings
+        tc_config = gui_config.get('trade_classification', {})
+        threshold_type = ThresholdType.PERCENTILE if tc_config.get('method') == 'percentile' else ThresholdType.ABSOLUTE
+
+        trade_classification = TradeClassificationConfig(
+            good_threshold_pct=float(tc_config.get('good_threshold_pct', 2.0)),
+            bad_threshold_pct=float(tc_config.get('bad_threshold_pct', -1.0)),
+            indeterminate_max_days=int(tc_config.get('indeterminate_max_days', 15)),
+            bad_min_days=int(tc_config.get('min_holding_period', 20)),
+            threshold_type=threshold_type
+        )
+
+        # Build DataAlignmentConfig
+        da_config = gui_config.get('data_alignment', {})
+        data_alignment = DataAlignmentConfig(
+            fundamentals_reporting_delay_days=int(da_config.get('fundamentals_reporting_delay_days', 0)),
+            insiders_reporting_delay_days=int(da_config.get('insiders_reporting_delay_days', 3)),
+            options_lookback_days=int(da_config.get('options_lookback_days', 60)),
+            price_forward_fill_allowed=da_config.get('price_forward_fill_allowed', True),
+            flag_price_gaps=da_config.get('flag_price_gaps', True)
+        )
+
+        # Build full config
+        return FactorAnalysisConfig(
+            profile_name=gui_config.get('profile_name', 'gui_analysis'),
+            strategy_name=gui_config.get('strategy_name', 'unnamed'),
+            trade_classification=trade_classification,
+            data_alignment=data_alignment
+        )
+
     def _generate_analysis_results(self) -> Dict[str, Any]:
-        """Generate analysis results including all factor types."""
+        """Generate analysis results using the actual FactorAnalyzer."""
+        if not ANALYZER_AVAILABLE:
+            print("Analyzer not available, using fallback mock data")
+            return self._generate_fallback_results()
+
+        try:
+            # Build config from GUI settings
+            analyzer_config = self._build_analyzer_config()
+
+            # Debug: Print the actual thresholds being used
+            tc = analyzer_config.trade_classification
+            print(f"[DEBUG] Trade Classification Config:")
+            print(f"  - good_threshold_pct: {tc.good_threshold_pct}")
+            print(f"  - bad_threshold_pct: {tc.bad_threshold_pct}")
+            print(f"  - threshold_type: {tc.threshold_type}")
+            print(f"  - bad_min_days: {tc.bad_min_days}")
+            print(f"[DEBUG] GUI config trade_classification: {self.config.get('trade_classification', {})}")
+
+            # Create analyzer
+            self.analyzer = FactorAnalyzer(config=analyzer_config)
+
+            # Get data from loaded sources
+            trade_data = self.data.get('trade_data')
+            if trade_data is None:
+                raise ValueError("No trade data loaded")
+
+            # Get price data - need to check properly since DataFrames can't use 'or'
+            price_data = self.data.get('daily_price_data')
+            if price_data is None or (hasattr(price_data, 'empty') and price_data.empty):
+                price_data = self.data.get('weekly_price_data')
+            fundamental_data = self.data.get('fundamental_data')
+            insider_data = self.data.get('insider_data')
+            options_data = self.data.get('options_data')
+
+            # Run analysis
+            output: AnalysisOutput = self.analyzer.analyze(
+                trade_data=trade_data,
+                price_data=price_data,
+                fundamental_data=fundamental_data,
+                insider_data=insider_data,
+                options_data=options_data
+            )
+
+            if not output.success:
+                print(f"Analysis failed: {output.error}")
+                return self._generate_fallback_results()
+
+            # Convert AnalysisOutput to GUI format
+            return self._format_analysis_output(output)
+
+        except Exception as e:
+            print(f"Error running analyzer: {e}")
+            import traceback
+            traceback.print_exc()
+            return self._generate_fallback_results()
+
+    def _format_analysis_output(self, output: 'AnalysisOutput') -> Dict[str, Any]:
+        """Format AnalysisOutput for GUI display."""
+        results = {}
+
+        # Format Tier 1 results
+        if output.tier1:
+            tier1 = output.tier1
+            correlations = {}
+            p_values = {}
+            factor_types = {}
+            factor_details = {}
+
+            # Extract point-biserial correlations
+            if 'point_biserial' in tier1:
+                for corr in tier1['point_biserial']:
+                    factor_name = corr.factor if hasattr(corr, 'factor') else corr.get('factor', 'Unknown')
+                    correlation = corr.correlation if hasattr(corr, 'correlation') else corr.get('correlation', 0)
+                    p_val = corr.p_value if hasattr(corr, 'p_value') else corr.get('p_value', 1)
+
+                    correlations[factor_name] = correlation
+                    p_values[factor_name] = p_val
+                    factor_types[factor_name] = 'Technical'  # Default type
+
+            # Extract descriptive stats
+            if 'descriptive_stats' in tier1:
+                for factor_name, stats in tier1['descriptive_stats'].items():
+                    factor_details[factor_name] = {
+                        'mean': stats.get('mean', 0),
+                        'std': stats.get('std', 0),
+                        'min': stats.get('min', 0),
+                        'max': stats.get('max', 0),
+                        'skewness': stats.get('skewness', 0),
+                        'kurtosis': stats.get('kurtosis', 0),
+                        'good_mean': stats.get('good_mean', 0),
+                        'bad_mean': stats.get('bad_mean', 0),
+                        'mean_diff': stats.get('mean_diff', 0),
+                    }
+
+            results['tier1'] = {
+                'correlations': correlations,
+                'p_values': p_values,
+                'factor_types': factor_types,
+                'factor_details': factor_details
+            }
+
+        # Format Tier 2 results
+        if output.tier2:
+            tier2 = output.tier2
+            tests = {}
+
+            if tier2.get('anova'):
+                for anova in tier2['anova']:
+                    factor = anova.factor if hasattr(anova, 'factor') else anova.get('factor', 'Unknown')
+                    tests[f'ANOVA ({factor})'] = {
+                        'p_value': anova.p_value if hasattr(anova, 'p_value') else anova.get('p_value', 1),
+                        'statistic': anova.statistic if hasattr(anova, 'statistic') else anova.get('statistic', 0),
+                        'effect_size': anova.effect_size if hasattr(anova, 'effect_size') else anova.get('effect_size', 0)
+                    }
+
+            if tier2.get('logistic_regression'):
+                reg = tier2['logistic_regression']
+                tests['Logistic Regression'] = {
+                    'p_value': reg.p_value if hasattr(reg, 'p_value') else reg.get('p_value', 1),
+                    'statistic': reg.pseudo_r2 if hasattr(reg, 'pseudo_r2') else reg.get('pseudo_r2', 0),
+                    'effect_size': reg.aic if hasattr(reg, 'aic') else reg.get('aic', 0)
+                }
+
+            results['tier2'] = {'tests': tests}
+
+        # Format Tier 3 results
+        if output.tier3:
+            tier3 = output.tier3
+            feature_importance = {}
+            shap_values = {}
+
+            if hasattr(tier3, 'rf_feature_importances') and tier3.rf_feature_importances:
+                for feat in tier3.rf_feature_importances:
+                    name = feat.feature_name if hasattr(feat, 'feature_name') else feat.get('feature_name', 'Unknown')
+                    importance = feat.importance if hasattr(feat, 'importance') else feat.get('importance', 0)
+                    feature_importance[name] = importance
+
+            if hasattr(tier3, 'shap_results') and tier3.shap_results:
+                for shap in tier3.shap_results:
+                    name = shap.feature_name if hasattr(shap, 'feature_name') else shap.get('feature_name', 'Unknown')
+                    shap_val = shap.mean_abs_shap if hasattr(shap, 'mean_abs_shap') else shap.get('mean_abs_shap', 0)
+                    shap_values[name] = shap_val
+
+            results['tier3'] = {
+                'feature_importance': feature_importance,
+                'shap_values': shap_values,
+                'factor_types': results.get('tier1', {}).get('factor_types', {}),
+                'model_metrics': tier3.get('model_metrics', {}) if isinstance(tier3, dict) else {}
+            }
+
+        # Format Scenarios
+        if output.scenarios:
+            scenarios_list = []
+            scenarios = output.scenarios
+
+            best = scenarios.best_scenarios if hasattr(scenarios, 'best_scenarios') else scenarios.get('best_scenarios', [])
+            worst = scenarios.worst_scenarios if hasattr(scenarios, 'worst_scenarios') else scenarios.get('worst_scenarios', [])
+
+            for scenario in best + worst:
+                scenarios_list.append({
+                    'name': scenario.name if hasattr(scenario, 'name') else scenario.get('name', 'Unknown'),
+                    'description': scenario.get_condition_string() if hasattr(scenario, 'get_condition_string') else scenario.get('conditions', ''),
+                    'performance': (scenario.avg_return if hasattr(scenario, 'avg_return') else scenario.get('avg_return', 0)) * 100,
+                    'sample_size': scenario.n_trades if hasattr(scenario, 'n_trades') else scenario.get('n_trades', 0),
+                    'confidence': (scenario.confidence if hasattr(scenario, 'confidence') else scenario.get('confidence', 0)) * 100,
+                    'win_rate': (scenario.win_rate if hasattr(scenario, 'win_rate') else scenario.get('win_rate', 0)) * 100,
+                    'key_factors': [c.factor if hasattr(c, 'factor') else c.get('factor', '') for c in (scenario.conditions if hasattr(scenario, 'conditions') else scenario.get('conditions', []))]
+                })
+
+            results['scenarios'] = scenarios_list
+
+        # Add data summary
+        results['data_summary'] = output.data_summary
+
+        # Store warnings and findings
+        self._analysis_warnings = output.warnings
+        self._key_findings = output.key_findings
+
+        return results
+
+    def _generate_fallback_results(self) -> Dict[str, Any]:
+        """Generate fallback mock results when analyzer is not available."""
         # Determine available factor types based on loaded data
         factor_types = {}
 
@@ -2103,6 +2391,19 @@ class FactorAnalysisDashboard:
 
     def _update_results_views(self):
         """Update all views with analysis results."""
+        # Update summary view with classification results from analyzer
+        if 'data_summary' in self.results and 'summary' in self.views:
+            ds = self.results['data_summary']
+            summary_view = self.views['summary']
+            if hasattr(summary_view, 'good_card'):
+                summary_view.good_card['value_label'].configure(text=f"{ds.get('good_trades', 0):,}")
+            if hasattr(summary_view, 'bad_card'):
+                summary_view.bad_card['value_label'].configure(text=f"{ds.get('bad_trades', 0):,}")
+            if hasattr(summary_view, 'neutral_card'):
+                summary_view.neutral_card['value_label'].configure(text=f"{ds.get('indeterminate_trades', 0):,}")
+            print(f"[DEBUG] Updated summary view from analyzer results:")
+            print(f"  - good: {ds.get('good_trades', 0)}, bad: {ds.get('bad_trades', 0)}, indeterminate: {ds.get('indeterminate_trades', 0)}")
+
         if 'tier1' in self.results:
             self.views['tier1'].update_results(self.results['tier1'])
 

@@ -116,7 +116,7 @@ class ExcelReportGenerator:
         self._create_costs_analysis(wb, result, metrics)
         self._create_performance_analysis(wb, result, metrics)
         self._create_visualizations(wb, result, metrics)
-        self._create_market_conditions(wb, result, metrics)
+        # Market conditions tab removed for single security backtests
 
         # Add enhanced visualizations if available
         if self.use_enhanced and self._viz:
@@ -1835,13 +1835,14 @@ class ExcelReportGenerator:
         ws.column_dimensions['D'].width = 20
 
     def _create_visualizations(self, wb: Workbook, result: BacktestResult, metrics: Dict[str, Any]):
-        """Create Sheet 4: Visualizations & Charts."""
+        """Create Sheet 4: Visualizations & Charts with data tables and charts."""
         ws = wb.create_sheet("Visualizations")
 
         # Title
         ws['A1'] = "CHARTS & VISUALIZATIONS"
-        ws['A1'].font = Font(bold=True, size=14)
+        ws['A1'].font = Font(bold=True, size=16)
         ws['A1'].alignment = Alignment(horizontal='center')
+        ws.merge_cells('A1:H1')
 
         # Prepare equity curve data
         equity_df = result.equity_curve.copy()
@@ -1850,145 +1851,171 @@ class ExcelReportGenerator:
             ws['A3'] = "No data available for charts"
             return
 
-        # Write equity curve data starting at row 4
-        data_start_row = 4
-        ws.cell(row=data_start_row, column=1, value="Date").font = self.header_font
-        ws.cell(row=data_start_row, column=2, value="Equity").font = self.header_font
-        ws.cell(row=data_start_row, column=3, value="Drawdown %").font = self.header_font
+        # Sample data if too large (keep every nth point for chart readability)
+        max_chart_points = 500
+        if len(equity_df) > max_chart_points:
+            step = len(equity_df) // max_chart_points
+            equity_df_sampled = equity_df.iloc[::step].copy()
+        else:
+            equity_df_sampled = equity_df
 
         # Calculate drawdown for chart
-        equity_values = equity_df['equity'].values
+        equity_values = equity_df_sampled['equity'].values
         running_max = np.maximum.accumulate(equity_values)
         drawdown_pct = ((equity_values - running_max) / running_max * 100)
 
-        for idx, (date, equity, dd) in enumerate(zip(equity_df['date'], equity_values, drawdown_pct)):
-            row_num = data_start_row + 1 + idx
-            ws.cell(row=row_num, column=1, value=date.strftime('%Y-%m-%d') if hasattr(date, 'strftime') else str(date))
-            ws.cell(row=row_num, column=2, value=equity)
-            ws.cell(row=row_num, column=3, value=dd)
+        # ========== SECTION 1: Equity Curve Data (Columns A-C) ==========
+        ws['A3'] = "EQUITY CURVE DATA"
+        ws['A3'].font = Font(bold=True, size=11)
+        ws.merge_cells('A3:C3')
+
+        # Headers
+        ws['A4'] = "Date"
+        ws['B4'] = "Equity"
+        ws['C4'] = "Drawdown %"
+        for cell in [ws['A4'], ws['B4'], ws['C4']]:
+            cell.font = self.header_font
+            cell.fill = self.header_fill
+
+        # Write equity data
+        for idx, (date, equity, dd) in enumerate(zip(equity_df_sampled['date'], equity_values, drawdown_pct)):
+            row_num = 5 + idx
+            date_str = date.strftime('%Y-%m-%d') if hasattr(date, 'strftime') else str(date)
+            ws.cell(row=row_num, column=1, value=date_str)
+            ws.cell(row=row_num, column=2, value=round(equity, 2))
+            ws.cell(row=row_num, column=3, value=round(dd, 2))
+
+        equity_data_end_row = 4 + len(equity_df_sampled)
 
         # Create Equity Curve Chart
         chart1 = LineChart()
         chart1.title = "Equity Curve"
         chart1.style = 13
         chart1.y_axis.title = 'Portfolio Value ($)'
-        chart1.x_axis.title = 'Date'
+        chart1.x_axis.title = 'Time'
 
-        data_ref = Reference(ws, min_col=2, min_row=data_start_row, max_row=data_start_row + len(equity_df))
-        cats_ref = Reference(ws, min_col=1, min_row=data_start_row+1, max_row=data_start_row + len(equity_df))
+        data_ref = Reference(ws, min_col=2, min_row=4, max_row=equity_data_end_row)
+        cats_ref = Reference(ws, min_col=1, min_row=5, max_row=equity_data_end_row)
 
         chart1.add_data(data_ref, titles_from_data=True)
         chart1.set_categories(cats_ref)
-        chart1.height = 10
-        chart1.width = 20
+        chart1.height = 12
+        chart1.width = 18
+        chart1.legend = None
 
-        ws.add_chart(chart1, "E4")
+        ws.add_chart(chart1, "E3")
 
         # Create Drawdown Chart
         chart2 = AreaChart()
         chart2.title = "Drawdown %"
         chart2.style = 13
         chart2.y_axis.title = 'Drawdown %'
-        chart2.x_axis.title = 'Date'
+        chart2.x_axis.title = 'Time'
 
-        dd_ref = Reference(ws, min_col=3, min_row=data_start_row, max_row=data_start_row + len(equity_df))
+        dd_ref = Reference(ws, min_col=3, min_row=4, max_row=equity_data_end_row)
 
         chart2.add_data(dd_ref, titles_from_data=True)
         chart2.set_categories(cats_ref)
-        chart2.height = 10
-        chart2.width = 20
+        chart2.height = 12
+        chart2.width = 18
+        chart2.legend = None
 
-        ws.add_chart(chart2, "E25")
+        ws.add_chart(chart2, "E22")
 
-        # Create return distribution chart
-        distribution = metrics['return_distribution']
+        # ========== SECTION 2: Return Distribution (Column E-F, starting row after charts) ==========
+        distribution = metrics.get('return_distribution', {})
+        dist_start_row = max(equity_data_end_row + 2, 45)
+
+        ws.cell(row=dist_start_row, column=5, value="TRADE RETURN DISTRIBUTION")
+        ws.cell(row=dist_start_row, column=5).font = Font(bold=True, size=11)
+        ws.merge_cells(start_row=dist_start_row, start_column=5, end_row=dist_start_row, end_column=6)
+
+        ws.cell(row=dist_start_row + 1, column=5, value="Return Range")
+        ws.cell(row=dist_start_row + 1, column=6, value="Count")
+        ws.cell(row=dist_start_row + 1, column=5).font = self.header_font
+        ws.cell(row=dist_start_row + 1, column=6).font = self.header_font
+        ws.cell(row=dist_start_row + 1, column=5).fill = self.header_fill
+        ws.cell(row=dist_start_row + 1, column=6).fill = self.header_fill
 
         if distribution:
-            # Write distribution data
-            dist_start_row = data_start_row + len(equity_df) + 5
-            ws.cell(row=dist_start_row, column=1, value="Return Range").font = self.header_font
-            ws.cell(row=dist_start_row, column=2, value="Count").font = self.header_font
+            for idx, (bin_label, count) in enumerate(distribution.items()):
+                row_num = dist_start_row + 2 + idx
+                ws.cell(row=row_num, column=5, value=bin_label)
+                ws.cell(row=row_num, column=6, value=count)
 
-            for idx, (bin_label, count) in enumerate(distribution.items(), 1):
-                ws.cell(row=dist_start_row + idx, column=1, value=bin_label)
-                ws.cell(row=dist_start_row + idx, column=2, value=count)
+            dist_data_end_row = dist_start_row + 1 + len(distribution)
 
-            # Create bar chart
+            # Create distribution bar chart
             chart3 = BarChart()
             chart3.title = "Trade Return Distribution"
             chart3.y_axis.title = 'Number of Trades'
             chart3.x_axis.title = 'Return Range'
+            chart3.style = 13
 
-            data_ref = Reference(ws, min_col=2, min_row=dist_start_row, max_row=dist_start_row + len(distribution))
-            cats_ref = Reference(ws, min_col=1, min_row=dist_start_row+1, max_row=dist_start_row + len(distribution))
+            data_ref = Reference(ws, min_col=6, min_row=dist_start_row + 1, max_row=dist_data_end_row)
+            cats_ref = Reference(ws, min_col=5, min_row=dist_start_row + 2, max_row=dist_data_end_row)
 
             chart3.add_data(data_ref, titles_from_data=True)
             chart3.set_categories(cats_ref)
             chart3.height = 10
-            chart3.width = 15
+            chart3.width = 12
+            chart3.legend = None
 
-            ws.add_chart(chart3, "E46")
+            ws.add_chart(chart3, "H" + str(dist_start_row))
 
-        # Annual Sharpe/Sortino/Calmar Ratios Chart
+        # ========== SECTION 3: Annual Ratios (Columns A-D, below equity data) ==========
         annual_ratios = metrics.get('annual_ratios', pd.DataFrame())
+        ratios_start_row = max(equity_data_end_row + 2, 45)
+
+        ws.cell(row=ratios_start_row, column=1, value="ANNUAL RISK-ADJUSTED RATIOS")
+        ws.cell(row=ratios_start_row, column=1).font = Font(bold=True, size=11)
+        ws.merge_cells(start_row=ratios_start_row, start_column=1, end_row=ratios_start_row, end_column=4)
+
+        ws.cell(row=ratios_start_row + 1, column=1, value="Year")
+        ws.cell(row=ratios_start_row + 1, column=2, value="Sharpe")
+        ws.cell(row=ratios_start_row + 1, column=3, value="Sortino")
+        ws.cell(row=ratios_start_row + 1, column=4, value="Calmar")
+        for col in range(1, 5):
+            ws.cell(row=ratios_start_row + 1, column=col).font = self.header_font
+            ws.cell(row=ratios_start_row + 1, column=col).fill = self.header_fill
 
         if not annual_ratios.empty and len(annual_ratios) > 0:
-            # Write annual ratios data
-            annual_start_row = dist_start_row + len(distribution) + 10 if distribution else data_start_row + len(equity_df) + 15
-
-            ws.cell(row=annual_start_row, column=1, value="Year").font = self.header_font
-            ws.cell(row=annual_start_row, column=2, value="Sharpe").font = self.header_font
-            ws.cell(row=annual_start_row, column=3, value="Sortino").font = self.header_font
-            ws.cell(row=annual_start_row, column=4, value="Calmar").font = self.header_font
-
             for idx, row_data in enumerate(annual_ratios.to_dict('records')):
-                row_num = annual_start_row + 1 + idx
+                row_num = ratios_start_row + 2 + idx
                 ws.cell(row=row_num, column=1, value=row_data['year'])
-                ws.cell(row=row_num, column=2, value=row_data['sharpe'])
-                ws.cell(row=row_num, column=3, value=row_data['sortino'])
-                ws.cell(row=row_num, column=4, value=row_data['calmar'])
+                ws.cell(row=row_num, column=2, value=round(row_data['sharpe'], 2) if pd.notna(row_data['sharpe']) else 'N/A')
+                ws.cell(row=row_num, column=3, value=round(row_data['sortino'], 2) if pd.notna(row_data['sortino']) else 'N/A')
+                ws.cell(row=row_num, column=4, value=round(row_data['calmar'], 2) if pd.notna(row_data['calmar']) else 'N/A')
 
-            # Only create chart if we have data
-            if len(annual_ratios) > 0:
-                # Create Annual Ratios Line Chart
-                chart4 = LineChart()
-                chart4.title = "Annual Risk-Adjusted Ratios"
-                chart4.y_axis.title = 'Ratio Value'
-                chart4.x_axis.title = 'Year'
-                chart4.style = 13
+        # ========== SECTION 4: Equity Usage Distribution ==========
+        usage_start_row = ratios_start_row + len(annual_ratios) + 5 if not annual_ratios.empty else ratios_start_row + 5
 
-                # Add all three series
-                sharpe_ref = Reference(ws, min_col=2, min_row=annual_start_row, max_row=annual_start_row + len(annual_ratios))
-                sortino_ref = Reference(ws, min_col=3, min_row=annual_start_row, max_row=annual_start_row + len(annual_ratios))
-                calmar_ref = Reference(ws, min_col=4, min_row=annual_start_row, max_row=annual_start_row + len(annual_ratios))
-                cats_ref = Reference(ws, min_col=1, min_row=annual_start_row+1, max_row=annual_start_row + len(annual_ratios))
-
-                chart4.add_data(sharpe_ref, titles_from_data=True)
-                chart4.add_data(sortino_ref, titles_from_data=True)
-                chart4.add_data(calmar_ref, titles_from_data=True)
-                chart4.set_categories(cats_ref)
-                chart4.height = 12
-                chart4.width = 20
-
-                ws.add_chart(chart4, "E67")
-
-        # Equity Usage Distribution Chart
         if len(result.trades) > 0:
             # Calculate equity usage % for each trade
             equity_usage_pcts = []
             for trade in result.trades:
-                if trade.entry_equity > 0:
+                if trade.entry_equity and trade.entry_equity > 0:
                     position_value = trade.entry_price * trade.quantity
                     equity_pct = (position_value / trade.entry_equity) * 100
-                    equity_usage_pcts.append(equity_pct)
+                    equity_usage_pcts.append(min(equity_pct, 100))  # Cap at 100%
 
             if equity_usage_pcts:
-                # Create bins for distribution
+                ws.cell(row=usage_start_row, column=1, value="EQUITY USAGE DISTRIBUTION")
+                ws.cell(row=usage_start_row, column=1).font = Font(bold=True, size=11)
+                ws.merge_cells(start_row=usage_start_row, start_column=1, end_row=usage_start_row, end_column=2)
+
+                ws.cell(row=usage_start_row + 1, column=1, value="Usage Range")
+                ws.cell(row=usage_start_row + 1, column=2, value="Count")
+                ws.cell(row=usage_start_row + 1, column=1).font = self.header_font
+                ws.cell(row=usage_start_row + 1, column=2).font = self.header_font
+                ws.cell(row=usage_start_row + 1, column=1).fill = self.header_fill
+                ws.cell(row=usage_start_row + 1, column=2).fill = self.header_fill
+
+                # Create bins
                 bins = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
                 bin_labels = ['0-10%', '10-20%', '20-30%', '30-40%', '40-50%',
                              '50-60%', '60-70%', '70-80%', '80-90%', '90-100%']
 
-                # Count trades in each bin
                 bin_counts = [0] * len(bin_labels)
                 for pct in equity_usage_pcts:
                     for i in range(len(bins) - 1):
@@ -1996,36 +2023,21 @@ class ExcelReportGenerator:
                             bin_counts[i] += 1
                             break
                     else:
-                        # Handle values >= 100%
                         if pct >= bins[-1]:
                             bin_counts[-1] += 1
 
-                # Write equity usage distribution data
-                equity_usage_start_row = annual_start_row + len(annual_ratios) + 10 if not annual_ratios.empty else dist_start_row + len(distribution) + 20 if distribution else data_start_row + len(equity_df) + 25
+                for idx, (label, count) in enumerate(zip(bin_labels, bin_counts)):
+                    row_num = usage_start_row + 2 + idx
+                    ws.cell(row=row_num, column=1, value=label)
+                    ws.cell(row=row_num, column=2, value=count)
 
-                ws.cell(row=equity_usage_start_row, column=1, value="Equity Usage %").font = self.header_font
-                ws.cell(row=equity_usage_start_row, column=2, value="Number of Trades").font = self.header_font
-
-                for idx, (label, count) in enumerate(zip(bin_labels, bin_counts), 1):
-                    ws.cell(row=equity_usage_start_row + idx, column=1, value=label)
-                    ws.cell(row=equity_usage_start_row + idx, column=2, value=count)
-
-                # Create bar chart for equity usage distribution
-                chart5 = BarChart()
-                chart5.title = "Equity Usage Distribution"
-                chart5.y_axis.title = 'Number of Trades'
-                chart5.x_axis.title = '% of Equity Used'
-                chart5.style = 13
-
-                data_ref = Reference(ws, min_col=2, min_row=equity_usage_start_row, max_row=equity_usage_start_row + len(bin_labels))
-                cats_ref = Reference(ws, min_col=1, min_row=equity_usage_start_row+1, max_row=equity_usage_start_row + len(bin_labels))
-
-                chart5.add_data(data_ref, titles_from_data=True)
-                chart5.set_categories(cats_ref)
-                chart5.height = 12
-                chart5.width = 18
-
-                ws.add_chart(chart5, "E88")
+        # Set column widths
+        ws.column_dimensions['A'].width = 14
+        ws.column_dimensions['B'].width = 14
+        ws.column_dimensions['C'].width = 14
+        ws.column_dimensions['D'].width = 12
+        ws.column_dimensions['E'].width = 14
+        ws.column_dimensions['F'].width = 10
 
     def _create_market_conditions(self, wb: Workbook, result: BacktestResult, metrics: Dict[str, Any]):
         """Create Sheet 5: Market Condition Breakdown (Optional)."""
