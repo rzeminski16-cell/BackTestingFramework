@@ -253,3 +253,60 @@ class TechnicalFactors:
                 categorized['other'].append(name)
 
         return categorized
+
+    def compute_all(
+        self,
+        trades_df: pd.DataFrame,
+        price_df: pd.DataFrame
+    ) -> pd.DataFrame:
+        """
+        Compute all technical factors for trades.
+
+        This is the main entry point for the analyzer. It:
+        1. Extracts technical factors from price data
+        2. Computes derived factors
+        3. Merges results with trades DataFrame
+
+        Args:
+            trades_df: Trade log DataFrame with 'symbol' and 'entry_date'
+            price_df: Price data with indicator columns
+
+        Returns:
+            trades_df with technical factor columns added
+        """
+        # Extract raw technical factors
+        factors_df, result = self.extract_factors(trades_df, price_df)
+
+        # Store factor names for later retrieval
+        self._factor_names = result.factor_names.copy()
+
+        # Merge factors with trades
+        if '_trade_idx' in factors_df.columns:
+            trades_df = trades_df.copy()
+            for col in factors_df.columns:
+                if col != '_trade_idx':
+                    trades_df[col] = factors_df.set_index('_trade_idx')[col]
+
+        # Compute derived factors
+        trades_df = self.compute_derived_factors(trades_df)
+
+        # Add any new derived factor names
+        derived_names = [
+            col for col in trades_df.columns
+            if col.startswith('tech_') and col not in self._factor_names
+        ]
+        self._factor_names.extend(derived_names)
+
+        return trades_df
+
+    def get_factor_names(self) -> List[str]:
+        """
+        Get list of factor column names produced by compute_all.
+
+        Returns:
+            List of factor column names
+        """
+        if hasattr(self, '_factor_names'):
+            return self._factor_names
+        return []
+

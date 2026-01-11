@@ -271,3 +271,55 @@ class FundamentalFactors:
             df['composite_fundamental'] = df[available_composites].mean(axis=1)
 
         return df
+
+    def compute_all(
+        self,
+        trades_df: pd.DataFrame,
+        fundamental_df: pd.DataFrame
+    ) -> pd.DataFrame:
+        """
+        Compute all fundamental factors for trades.
+
+        This is the main entry point for the analyzer.
+
+        Args:
+            trades_df: Trade log DataFrame with 'symbol' and 'entry_date'
+            fundamental_df: Fundamental data (already aligned to trade dates)
+
+        Returns:
+            trades_df with fundamental factor columns added
+        """
+        # Compute factors
+        result_df, result = self.compute_factors(trades_df, fundamental_df)
+
+        # Store factor names
+        self._factor_names = result.factor_names.copy()
+
+        # Merge with trades
+        trades_df = trades_df.copy()
+        for col in result_df.columns:
+            if col != '_trade_idx' and col not in trades_df.columns:
+                if '_trade_idx' in result_df.columns:
+                    trades_df[col] = result_df.set_index('_trade_idx')[col]
+                else:
+                    trades_df[col] = result_df[col].values
+
+        # Create composite scores
+        trades_df = self.create_composite_scores(trades_df)
+
+        # Add composite names to factor list
+        composite_cols = [c for c in trades_df.columns if c.startswith('composite_')]
+        self._factor_names.extend(composite_cols)
+
+        return trades_df
+
+    def get_factor_names(self) -> List[str]:
+        """
+        Get list of factor column names produced by compute_all.
+
+        Returns:
+            List of factor column names
+        """
+        if hasattr(self, '_factor_names'):
+            return self._factor_names
+        return []
