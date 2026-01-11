@@ -250,3 +250,55 @@ class InsiderFactors:
             'avg_score': factors_df['insider_score'].mean() if 'insider_score' in factors_df.columns else 0,
             'avg_buy_ratio': factors_df['insider_buy_ratio'].mean() if 'insider_buy_ratio' in factors_df.columns else 0.5
         }
+
+    def compute_all(
+        self,
+        trades_df: pd.DataFrame,
+        insider_df: pd.DataFrame
+    ) -> pd.DataFrame:
+        """
+        Compute all insider factors for trades.
+
+        This is the main entry point for the analyzer.
+
+        Args:
+            trades_df: Trade log DataFrame with 'symbol' and 'entry_date'
+            insider_df: Insider trading data (already aligned to trade dates)
+
+        Returns:
+            trades_df with insider factor columns added
+        """
+        # Compute factors
+        result_df, result = self.compute_factors(trades_df, insider_df)
+
+        # Store factor names
+        self._factor_names = result.factor_names.copy()
+
+        # Merge with trades
+        trades_df = trades_df.copy()
+        for col in result_df.columns:
+            if col != '_trade_idx' and col not in trades_df.columns:
+                if '_trade_idx' in result_df.columns:
+                    trades_df[col] = result_df.set_index('_trade_idx')[col]
+                else:
+                    trades_df[col] = result_df[col].values
+
+        # Add relative factors
+        trades_df = self.compute_relative_factors(trades_df)
+
+        # Add any new factor names
+        new_cols = [c for c in trades_df.columns if c.startswith('insider_') and c not in self._factor_names]
+        self._factor_names.extend(new_cols)
+
+        return trades_df
+
+    def get_factor_names(self) -> List[str]:
+        """
+        Get list of factor column names produced by compute_all.
+
+        Returns:
+            List of factor column names
+        """
+        if hasattr(self, '_factor_names'):
+            return self._factor_names
+        return []
