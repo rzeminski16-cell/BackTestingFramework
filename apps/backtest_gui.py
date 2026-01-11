@@ -469,7 +469,10 @@ class StrategyStep(WizardStep):
                 'grace_period_bars': 14,
                 'momentum_gain_pct': 2.0,
                 'momentum_lookback': 7,
-                'risk_percent': 2.0
+                'risk_percent': 2.0,
+                'atr_multiplier': 1.0,
+                'smoothing_length': 3,
+                'percentile_period': 100
             }
 
         self._refresh_presets()

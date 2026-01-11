@@ -160,6 +160,30 @@ strategy_parameters:
       type: int
       step: 1
 
+    risk_percent:
+      min: 0.5
+      max: 10.0
+      type: float
+      step: 0.5
+
+    atr_multiplier:
+      min: 0.5
+      max: 3.0
+      type: float
+      step: 0.1
+
+    smoothing_length:
+      min: 1
+      max: 10
+      type: int
+      step: 1
+
+    percentile_period:
+      min: 20
+      max: 200
+      type: int
+      step: 10
+
   RandomBaseStrategy:
     entry_probability:
       min: 0.01
