@@ -31,7 +31,11 @@ class CurrencyConverter:
 
         Args:
             currency_pair: Currency pair code (e.g., 'USD/GBP', 'EUR/GBP')
-            file_path: Path to CSV file with columns: date, rate
+            file_path: Path to CSV file with columns: date, rate (or OHLC format)
+
+        Supported formats:
+        - Simple: date, rate
+        - OHLC: date, open, high, low, close (uses 'close' as rate)
         """
         if not file_path.exists():
             raise FileNotFoundError(f"Currency rate file not found: {file_path}")
@@ -41,15 +45,22 @@ class CurrencyConverter:
         # Normalize column names
         df.columns = df.columns.str.lower().str.strip()
 
-        # Validate required columns
-        required_cols = ['date', 'rate']
-        missing = [col for col in required_cols if col not in df.columns]
-        if missing:
-            raise ValueError(f"Missing required columns: {missing}")
+        # Handle different column formats
+        if 'rate' not in df.columns:
+            # Check for OHLC format - use 'close' as the rate
+            if 'close' in df.columns:
+                df['rate'] = df['close']
+            else:
+                raise ValueError(f"Missing 'rate' or 'close' column in {file_path}")
+
+        # Validate date column
+        if 'date' not in df.columns:
+            raise ValueError(f"Missing 'date' column in {file_path}")
 
         # Parse dates
         df['date'] = pd.to_datetime(df['date'])
         df = df.sort_values('date')
+        df = df[['date', 'rate']].copy()  # Keep only needed columns
         df = df.set_index('date')
 
         # Store rates
@@ -59,7 +70,9 @@ class CurrencyConverter:
         """
         Load all currency rate files from a directory.
 
-        Expected filename format: XXXGBP.csv (e.g., USDGBP.csv, EURGBP.csv)
+        Supported filename formats:
+        - XXXYYY.csv (e.g., USDGBP.csv, EURGBP.csv)
+        - XXXYYY_suffix.csv (e.g., GBPUSD_weekly.csv, GBPEUR_daily.csv)
 
         Args:
             directory: Directory containing currency rate CSV files
@@ -68,11 +81,21 @@ class CurrencyConverter:
             raise FileNotFoundError(f"Currency rates directory not found: {directory}")
 
         for file_path in directory.glob("*.csv"):
-            # Extract currency pair from filename (e.g., USDGBP.csv -> USD/GBP)
-            filename = file_path.stem
-            if len(filename) == 6:  # XXXGBP format
-                from_currency = filename[:3]
-                to_currency = filename[3:]
+            # Extract currency pair from filename
+            filename = file_path.stem.upper()
+
+            # Remove common suffixes like _weekly, _daily, _monthly
+            for suffix in ['_WEEKLY', '_DAILY', '_MONTHLY', '_W', '_D', '_M']:
+                if filename.endswith(suffix):
+                    filename = filename[:-len(suffix)]
+                    break
+
+            # Now parse the 6-character currency pair
+            if len(filename) >= 6:
+                # Take first 6 characters as currency pair
+                pair_str = filename[:6]
+                from_currency = pair_str[:3]
+                to_currency = pair_str[3:6]
                 currency_pair = f"{from_currency}/{to_currency}"
 
                 try:

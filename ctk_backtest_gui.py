@@ -1228,7 +1228,7 @@ class CTkBacktestWizard(CTkWizardBase):
         self.security_registry = SecurityRegistry(Path('config/security_metadata.json'))
         self.currency_converter = CurrencyConverter(base_currency='GBP')
         try:
-            self.currency_converter.load_rates_directory(Path('currency_rates/'))
+            self.currency_converter.load_rates_directory(Path('raw_data/forex/'))
         except Exception as e:
             print(f"Warning: Could not load currency rates: {e}")
 
