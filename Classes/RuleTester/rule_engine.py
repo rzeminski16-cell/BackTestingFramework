@@ -342,24 +342,32 @@ class RuleEngine:
             compare_val = rule.value
 
         # Evaluate the condition
-        if rule.operator == '>':
-            return feature_val > compare_val
-        elif rule.operator == '<':
-            return feature_val < compare_val
-        elif rule.operator == '>=':
-            return feature_val >= compare_val
-        elif rule.operator == '<=':
-            return feature_val <= compare_val
-        elif rule.operator == 'between':
-            low, high = rule.value
-            return low <= feature_val <= high
-        elif rule.operator == '==':
-            return feature_val == compare_val
-        elif rule.operator == '!=':
-            return feature_val != compare_val
-        elif rule.operator == 'in':
-            return feature_val in rule.value
-        else:
+        try:
+            if rule.operator == '>':
+                return float(feature_val) > float(compare_val)
+            elif rule.operator == '<':
+                return float(feature_val) < float(compare_val)
+            elif rule.operator == '>=':
+                return float(feature_val) >= float(compare_val)
+            elif rule.operator == '<=':
+                return float(feature_val) <= float(compare_val)
+            elif rule.operator == 'between':
+                if rule.value is None or not isinstance(rule.value, (tuple, list)) or len(rule.value) != 2:
+                    return False
+                low, high = rule.value
+                return float(low) <= float(feature_val) <= float(high)
+            elif rule.operator == '==':
+                return feature_val == compare_val
+            elif rule.operator == '!=':
+                return feature_val != compare_val
+            elif rule.operator == 'in':
+                if rule.value is None:
+                    return False
+                return feature_val in rule.value
+            else:
+                return False
+        except (TypeError, ValueError):
+            # Type conversion failed - values are not comparable
             return False
 
     def _check_rule_with_lookback(
@@ -369,7 +377,7 @@ class RuleEngine:
         rule: Rule
     ) -> bool:
         """
-        Check if a rule is satisfied, considering lookback.
+        Check if a rule is satisfied, considering lookback (for ENTRY mode).
 
         Args:
             pdf: Price DataFrame
@@ -388,6 +396,31 @@ class RuleEngine:
                 if check_idx >= 0 and self._check_condition_at_bar(pdf, check_idx, rule):
                     return True
             return False
+
+    def _check_exit_rule_at_bar(
+        self,
+        pdf: pd.DataFrame,
+        bar_idx: int,
+        rule: Rule
+    ) -> bool:
+        """
+        Check if an exit rule is satisfied at a specific bar.
+
+        For exit rules, we always check AT the current bar.
+        Lookback for exit rules means: condition must be true at current bar,
+        AND we can optionally require it was also true at some point in lookback window.
+
+        For simplicity, exit rules check AT the current bar (lookback is ignored for exit scanning).
+
+        Args:
+            pdf: Price DataFrame
+            bar_idx: Bar index to check
+            rule: Rule to evaluate
+
+        Returns:
+            True if exit condition is satisfied at this bar
+        """
+        return self._check_condition_at_bar(pdf, bar_idx, rule)
 
     def evaluate_rule(self, rule: Rule) -> pd.Series:
         """
@@ -500,10 +533,15 @@ class RuleEngine:
             new_exit_date = None
             new_exit_price = None
 
-            for bar_idx in range(entry_bar_idx + 1, original_exit_bar_idx + 1):
+            # Make sure we have bars to check (entry+1 to original_exit inclusive)
+            start_bar = entry_bar_idx + 1
+            end_bar = original_exit_bar_idx + 1
+
+            for bar_idx in range(start_bar, end_bar):
                 all_rules_met = True
                 for rule in rules:
-                    if not self._check_rule_with_lookback(pdf, bar_idx, rule):
+                    # For exit rules, check AT the current bar (not with lookback)
+                    if not self._check_exit_rule_at_bar(pdf, bar_idx, rule):
                         all_rules_met = False
                         break
 
