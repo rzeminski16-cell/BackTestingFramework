@@ -24,7 +24,8 @@ from Classes.GUI.ctk_theme import Theme, Colors, Fonts, Sizes, show_error, show_
 from Classes.RuleTester import (
     Rule, RuleEngine, RuleMode, CompareType, RuleMetricsCalculator,
     extract_ticker_from_filename, load_price_data_for_tickers,
-    export_filtered_trades, export_comparison_report
+    export_filtered_trades, export_comparison_report,
+    StrategyExitRulesRegistry
 )
 from Classes.FactorAnalysis.data.trade_log_loader import TradeLogLoader
 
@@ -144,6 +145,44 @@ class CTkRuleTesterGUI:
         )
         self.mode_desc_label.pack(side="left", padx=(Sizes.PAD_S, 0))
 
+        # Strategy selector frame (shown only in Exit mode)
+        self.strategy_frame = Theme.create_frame(main_frame)
+        # Don't pack initially - will be shown when Exit mode is selected
+
+        ctk.CTkLabel(
+            self.strategy_frame,
+            text="Original Strategy:",
+            font=Fonts.BODY_M,
+            text_color=Colors.TEXT_PRIMARY
+        ).pack(side="left", padx=(0, Sizes.PAD_S))
+
+        # Get available strategies
+        strategy_names = StrategyExitRulesRegistry.get_strategy_names()
+        strategy_display = StrategyExitRulesRegistry.get_display_names()
+        self._strategy_name_map = {v: k for k, v in strategy_display.items()}  # display_name -> strategy_name
+        display_names = list(strategy_display.values())
+
+        self.strategy_var = ctk.StringVar(value=display_names[0] if display_names else "")
+        self.strategy_menu = ctk.CTkOptionMenu(
+            self.strategy_frame,
+            values=display_names,
+            variable=self.strategy_var,
+            command=self._on_strategy_changed,
+            width=250,
+            font=Fonts.BODY_M
+        )
+        self.strategy_menu.pack(side="left", padx=(0, Sizes.PAD_M))
+
+        # Strategy description
+        self.strategy_desc_label = ctk.CTkLabel(
+            self.strategy_frame,
+            text="",
+            font=Fonts.BODY_S,
+            text_color=Colors.TEXT_MUTED,
+            wraplength=600
+        )
+        self.strategy_desc_label.pack(side="left")
+
         # Tabview
         self.tabview = ctk.CTkTabview(
             main_frame,
@@ -172,14 +211,48 @@ class CTkRuleTesterGUI:
 
         if value == "Entry":
             self.mode_desc_label.configure(text="(Rules evaluated at trade entry date)")
+            # Hide strategy selector for entry mode
+            self.strategy_frame.pack_forget()
         else:
             self.mode_desc_label.configure(text="(Rules evaluated at trade exit date)")
+            # Show strategy selector for exit mode
+            self.strategy_frame.pack(fill="x", pady=(0, Sizes.PAD_S), before=self.tabview)
+            # Update strategy description
+            self._on_strategy_changed(self.strategy_var.get())
 
         # Update rule engine mode if it exists
         if self.rule_engine:
             self.rule_engine.set_mode(self.rule_mode)
+            # Set strategy if in exit mode
+            if self.rule_mode == RuleMode.EXIT:
+                self._on_strategy_changed(self.strategy_var.get())
             # Refresh feature list since statistics might differ
             self._populate_features_list()
+
+    def _on_strategy_changed(self, display_name: str):
+        """Handle strategy selection change."""
+        # Get the actual strategy name from display name
+        strategy_name = self._strategy_name_map.get(display_name, display_name)
+
+        # Update the rule engine with the selected strategy
+        if self.rule_engine:
+            self.rule_engine.set_strategy(strategy_name)
+
+        # Get strategy config and show description
+        config = StrategyExitRulesRegistry.get(strategy_name)
+        if config and config.exit_rules:
+            rules_desc = ", ".join([r.description for r in config.exit_rules[:3]])
+            if len(config.exit_rules) > 3:
+                rules_desc += f", ... (+{len(config.exit_rules) - 3} more)"
+            self.strategy_desc_label.configure(
+                text=f"Exit rules: {rules_desc}"
+            )
+        elif config and not config.exit_rules:
+            self.strategy_desc_label.configure(
+                text="No predefined exit rules - only user-defined rules will apply"
+            )
+        else:
+            self.strategy_desc_label.configure(text="")
 
     # =========================================================================
     # TAB 1: DATA LOADING
@@ -320,6 +393,11 @@ class CTkRuleTesterGUI:
 
             # Initialize rule engine with current mode
             self.rule_engine = RuleEngine(self.trades_df, self.price_data_dict, self.rule_mode)
+
+            # Set strategy if in exit mode
+            if self.rule_mode == RuleMode.EXIT:
+                strategy_name = self._strategy_name_map.get(self.strategy_var.get(), self.strategy_var.get())
+                self.rule_engine.set_strategy(strategy_name)
 
             # Update summary
             self._update_data_summary(files, tickers)

@@ -4,14 +4,18 @@ Rule Engine for testing rule effects on strategy performance.
 This module provides rule definition and filtering logic for trade logs.
 Supports both entry and exit rules with configurable lookback periods.
 Supports comparing features to static values OR to other features.
+Supports loading original strategy exit rules for proper AND logic.
 """
 
 from dataclasses import dataclass, field
-from typing import Any, Dict, List, Optional, Union, Tuple
+from typing import Any, Dict, List, Optional, Union, Tuple, TYPE_CHECKING
 import pandas as pd
 import numpy as np
 from pathlib import Path
 from enum import Enum
+
+if TYPE_CHECKING:
+    from .strategy_exit_rules import StrategyExitConfig, StrategyExitRuleEvaluator
 
 
 class RuleMode(Enum):
@@ -125,6 +129,42 @@ class RuleEngine:
 
         # Cache for feature values (keyed by feature + mode)
         self._feature_cache: Dict[str, pd.Series] = {}
+
+        # Strategy configuration for exit rules (lazy import to avoid circular dependency)
+        self._strategy_config: Optional['StrategyExitConfig'] = None
+        self._strategy_evaluator: Optional['StrategyExitRuleEvaluator'] = None
+
+    def set_strategy(self, strategy_name: str) -> bool:
+        """
+        Set the strategy for exit rule evaluation.
+
+        Args:
+            strategy_name: Name of the strategy (e.g., "AlphaTrendStrategy")
+
+        Returns:
+            True if strategy was found and set, False otherwise
+        """
+        from .strategy_exit_rules import StrategyExitRulesRegistry, StrategyExitRuleEvaluator
+
+        config = StrategyExitRulesRegistry.get(strategy_name)
+        if config is None:
+            self._strategy_config = None
+            self._strategy_evaluator = None
+            return False
+
+        self._strategy_config = config
+        self._strategy_evaluator = StrategyExitRuleEvaluator(config)
+        return True
+
+    def get_strategy_config(self) -> Optional['StrategyExitConfig']:
+        """Get the current strategy configuration."""
+        return self._strategy_config
+
+    def get_trade_direction(self) -> str:
+        """Get trade direction from strategy config, default to LONG."""
+        if self._strategy_config:
+            return self._strategy_config.trade_direction
+        return "LONG"
 
     def set_mode(self, mode: RuleMode) -> None:
         """
@@ -492,10 +532,18 @@ class RuleEngine:
         """
         Apply exit rules to recalculate exit points.
 
-        For each trade, find the first bar after entry where ALL exit rules are satisfied.
-        Recalculate exit price and P/L accordingly.
+        Exit logic (AND):
+        - Exit when (Original Strategy Exit Rules) AND (User-Defined Rules) are ALL satisfied
+        - If no strategy is set, only user-defined rules are checked
+        - If no user-defined rules, only strategy rules are checked
+        - Scans from entry+1 to end of data to find first bar where all conditions met
+
+        Recalculates exit price and P/L accordingly.
         """
         result_rows = []
+
+        # Determine trade direction
+        is_long = self.get_trade_direction().upper() == "LONG"
 
         for idx, trade in self.trades_df.iterrows():
             entry_date = trade.get('entry_date')
@@ -503,6 +551,13 @@ class RuleEngine:
             symbol = str(trade.get('symbol', '')).upper()
             entry_price = trade.get('entry_price', 0)
             quantity = trade.get('quantity', 1)
+
+            # Check for trade direction in the trade data itself
+            trade_direction = trade.get('direction', trade.get('side', None))
+            if trade_direction:
+                trade_is_long = str(trade_direction).upper() in ('LONG', 'BUY', 'L')
+            else:
+                trade_is_long = is_long  # Use strategy default
 
             pdf = self.price_data_dict.get(symbol)
 
@@ -521,31 +576,54 @@ class RuleEngine:
 
             entry_bar_idx = entry_mask.sum() - 1
 
-            # Find original exit bar index
-            if original_exit_date is not None:
-                exit_mask = pdf['date'] <= original_exit_date
-                original_exit_bar_idx = exit_mask.sum() - 1 if exit_mask.any() else len(pdf) - 1
-            else:
-                original_exit_bar_idx = len(pdf) - 1
+            # For exit rules, scan to end of available data (not just original exit)
+            # This allows finding exits that might occur after original exit if rules weren't met
+            end_bar_idx = len(pdf) - 1
 
-            # Search for first bar after entry where all exit rules are satisfied
+            # Search for first bar after entry where ALL exit rules are satisfied
             new_exit_bar_idx = None
             new_exit_date = None
             new_exit_price = None
 
-            # Make sure we have bars to check (entry+1 to original_exit inclusive)
+            # Make sure we have bars to check (entry+1 to end of data)
             start_bar = entry_bar_idx + 1
-            end_bar = original_exit_bar_idx + 1
 
-            for bar_idx in range(start_bar, end_bar):
-                all_rules_met = True
-                for rule in rules:
-                    # For exit rules, check AT the current bar (not with lookback)
-                    if not self._check_exit_rule_at_bar(pdf, bar_idx, rule):
-                        all_rules_met = False
-                        break
+            for bar_idx in range(start_bar, end_bar_idx + 1):
+                # Check 1: Original strategy exit rules (if strategy is set)
+                strategy_rules_met = True
+                if self._strategy_evaluator and self._strategy_config and self._strategy_config.exit_rules:
+                    strategy_rules_met = self._strategy_evaluator.check_exit_rules_at_bar(
+                        pdf, bar_idx, entry_bar_idx, entry_price
+                    )
 
-                if all_rules_met:
+                # Check 2: User-defined exit rules
+                user_rules_met = True
+                if rules:  # Only check if user has defined rules
+                    for rule in rules:
+                        if not self._check_exit_rule_at_bar(pdf, bar_idx, rule):
+                            user_rules_met = False
+                            break
+
+                # AND logic: Exit when BOTH strategy rules AND user rules are satisfied
+                # If no strategy rules defined, only user rules matter
+                # If no user rules defined, only strategy rules matter
+                has_strategy_rules = self._strategy_evaluator and self._strategy_config and self._strategy_config.exit_rules
+                has_user_rules = bool(rules)
+
+                if has_strategy_rules and has_user_rules:
+                    # Both must be satisfied
+                    all_conditions_met = strategy_rules_met and user_rules_met
+                elif has_strategy_rules:
+                    # Only strategy rules
+                    all_conditions_met = strategy_rules_met
+                elif has_user_rules:
+                    # Only user rules
+                    all_conditions_met = user_rules_met
+                else:
+                    # No rules defined - use original exit
+                    all_conditions_met = False
+
+                if all_conditions_met:
                     new_exit_bar_idx = bar_idx
                     new_exit_date = pdf.iloc[bar_idx]['date']
                     new_exit_price = pdf.iloc[bar_idx]['close']
@@ -561,11 +639,16 @@ class RuleEngine:
             new_trade['exit_date'] = new_exit_date
             new_trade['exit_price'] = new_exit_price
 
-            # Recalculate P/L
-            if entry_price > 0:
-                # Assuming long trade
-                new_pl = (new_exit_price - entry_price) * quantity
-                new_pl_pct = ((new_exit_price / entry_price) - 1) * 100
+            # Recalculate P/L based on trade direction
+            if entry_price > 0 and new_exit_price is not None:
+                if trade_is_long:
+                    # Long trade: profit when price goes up
+                    new_pl = (new_exit_price - entry_price) * abs(quantity)
+                    new_pl_pct = ((new_exit_price / entry_price) - 1) * 100
+                else:
+                    # Short trade: profit when price goes down
+                    new_pl = (entry_price - new_exit_price) * abs(quantity)
+                    new_pl_pct = ((entry_price / new_exit_price) - 1) * 100 if new_exit_price > 0 else 0
                 new_trade['pl'] = new_pl
                 new_trade['pl_pct'] = new_pl_pct
 
