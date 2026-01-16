@@ -510,13 +510,13 @@ class RuleEngine:
         Returns:
             Filtered/modified DataFrame
         """
-        if not rules:
+        if self.mode == RuleMode.ENTRY and not rules:
             return self.trades_df.copy()
 
         if self.mode == RuleMode.ENTRY:
             return self._apply_entry_rules(rules)
         else:
-            return self._apply_exit_rules(rules)
+            return self._apply_exit_rules_to_df(self.trades_df, rules)
 
     def _apply_entry_rules(self, rules: List[Rule]) -> pd.DataFrame:
         """Apply entry rules to filter trades."""
@@ -528,9 +528,9 @@ class RuleEngine:
 
         return self.trades_df[combined_mask].copy()
 
-    def _apply_exit_rules(self, rules: List[Rule]) -> pd.DataFrame:
+    def _apply_exit_rules_to_df(self, trades_df: pd.DataFrame, rules: List[Rule]) -> pd.DataFrame:
         """
-        Apply exit rules to recalculate exit points.
+        Apply exit rules to recalculate exit points for a given trades DataFrame.
 
         Exit logic (AND):
         - Exit when (Original Strategy Exit Rules) AND (User-Defined Rules) are ALL satisfied
@@ -538,14 +538,19 @@ class RuleEngine:
         - If no user-defined rules, only strategy rules are checked
         - Scans from entry+1 to end of data to find first bar where all conditions met
 
-        Recalculates exit price and P/L accordingly.
+        Args:
+            trades_df: DataFrame of trades to process
+            rules: List of user-defined rules
+
+        Returns:
+            DataFrame with recalculated exit points and P/L
         """
         result_rows = []
 
         # Determine trade direction
         is_long = self.get_trade_direction().upper() == "LONG"
 
-        for idx, trade in self.trades_df.iterrows():
+        for idx, trade in trades_df.iterrows():
             entry_date = trade.get('entry_date')
             original_exit_date = trade.get('exit_date')
             symbol = str(trade.get('symbol', '')).upper()
@@ -673,12 +678,13 @@ class RuleEngine:
         filtered = self.apply_rules(rules)
         return len(filtered)
 
-    def get_rule_preview(self, rules: List[Rule]) -> Dict[str, Any]:
+    def get_rule_preview(self, rules: List[Rule], sample_limit: int = 20) -> Dict[str, Any]:
         """
         Get a preview of rule application.
 
         Args:
             rules: List of rules to preview
+            sample_limit: For exit mode, limit preview calculation to this many trades for speed
 
         Returns:
             Dict with total_trades, passing_trades, pass_rate, and per-rule counts
@@ -707,21 +713,57 @@ class RuleEngine:
                 })
             result['per_rule'] = rule_counts
         else:
-            # Exit mode - count how many trades have modified exits
-            modified_df = self.apply_rules(rules)
-            original_exits = self.trades_df['exit_date'].values
-            new_exits = modified_df['exit_date'].values
-            modified_count = sum(1 for i in range(len(original_exits))
+            # Exit mode - use a lightweight preview to avoid UI freezing
+            # Only do full calculation on a sample of trades for preview
+            has_strategy_rules = self._strategy_evaluator and self._strategy_config and self._strategy_config.exit_rules
+            has_user_rules = bool(rules)
+
+            if not has_strategy_rules and not has_user_rules:
+                # No rules defined - quick return
+                result = {
+                    'total_trades': total,
+                    'passing_trades': total,
+                    'modified_exits': 0,
+                    'unmodified_exits': total,
+                    'pass_rate': 100.0,
+                    'mode': self.mode.value,
+                    'is_estimate': False,
+                }
+                result['per_rule'] = []
+                return result
+
+            # Sample trades for preview (to avoid freezing UI)
+            if total > sample_limit:
+                sample_df = self.trades_df.sample(n=sample_limit, random_state=42)
+                is_estimate = True
+            else:
+                sample_df = self.trades_df
+                is_estimate = False
+
+            # Apply rules only to sample
+            sample_modified = self._apply_exit_rules_to_df(sample_df, rules)
+
+            # Count modified exits in sample
+            original_exits = sample_df['exit_date'].values
+            new_exits = sample_modified['exit_date'].values
+            sample_modified_count = sum(1 for i in range(len(original_exits))
                                if not pd.isna(original_exits[i]) and not pd.isna(new_exits[i])
                                and original_exits[i] != new_exits[i])
+
+            # Estimate for full dataset
+            if is_estimate and len(sample_df) > 0:
+                estimated_modified = int((sample_modified_count / len(sample_df)) * total)
+            else:
+                estimated_modified = sample_modified_count
 
             result = {
                 'total_trades': total,
                 'passing_trades': total,  # All trades kept in exit mode
-                'modified_exits': modified_count,
-                'unmodified_exits': total - modified_count,
+                'modified_exits': estimated_modified,
+                'unmodified_exits': total - estimated_modified,
                 'pass_rate': 100.0,  # All trades pass in exit mode
                 'mode': self.mode.value,
+                'is_estimate': is_estimate,
             }
             result['per_rule'] = []
 
