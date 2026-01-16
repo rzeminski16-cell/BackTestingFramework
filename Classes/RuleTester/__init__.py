@@ -7,13 +7,14 @@ This module provides tools to:
 - Compare cumulative P/L and RAR% over time
 """
 
-from .rule_engine import Rule, RuleEngine, RuleMode, extract_ticker_from_filename, load_price_data_for_tickers
+from .rule_engine import Rule, RuleEngine, RuleMode, CompareType, extract_ticker_from_filename, load_price_data_for_tickers
 from .metrics_calculator import RuleMetricsCalculator, export_filtered_trades, export_comparison_report
 
 __all__ = [
     'Rule',
     'RuleEngine',
     'RuleMode',
+    'CompareType',
     'RuleMetricsCalculator',
     'extract_ticker_from_filename',
     'load_price_data_for_tickers',

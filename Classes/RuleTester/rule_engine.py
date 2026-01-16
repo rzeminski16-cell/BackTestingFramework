@@ -3,10 +3,11 @@ Rule Engine for testing rule effects on strategy performance.
 
 This module provides rule definition and filtering logic for trade logs.
 Supports both entry and exit rules with configurable lookback periods.
+Supports comparing features to static values OR to other features.
 """
 
 from dataclasses import dataclass, field
-from typing import Any, Dict, List, Optional, Union
+from typing import Any, Dict, List, Optional, Union, Tuple
 import pandas as pd
 import numpy as np
 from pathlib import Path
@@ -19,6 +20,12 @@ class RuleMode(Enum):
     EXIT = "exit"
 
 
+class CompareType(Enum):
+    """Type of comparison value."""
+    VALUE = "value"  # Compare to a static numeric value
+    FEATURE = "feature"  # Compare to another feature
+
+
 @dataclass
 class Rule:
     """
@@ -28,12 +35,16 @@ class Rule:
         feature: Name of the feature/column to check
         operator: Comparison operator ('>', '<', '>=', '<=', 'between', '==', '!=', 'in')
         value: Value(s) to compare against (single value, tuple for between, list for in)
+        compare_type: Whether comparing to a VALUE or another FEATURE
+        compare_feature: If compare_type is FEATURE, the name of the feature to compare to
         lookback_bars: Number of bars before the reference date to check (0 = reference date only)
         is_discrete: Whether the feature is discrete (categorical)
     """
     feature: str
     operator: str  # '>', '<', '>=', '<=', 'between', '==', '!=', 'in'
     value: Any  # single value, tuple for between, list for in
+    compare_type: CompareType = CompareType.VALUE
+    compare_feature: Optional[str] = None  # Feature to compare against if compare_type is FEATURE
     lookback_bars: int = 0  # N=0 means check reference date only, N>0 means check N bars before
     is_discrete: bool = False
 
@@ -43,7 +54,15 @@ class Rule:
         if self.lookback_bars > 0:
             lookback_str = f" (within {self.lookback_bars} bars before)"
 
+        # Determine what we're comparing to
+        if self.compare_type == CompareType.FEATURE and self.compare_feature:
+            compare_str = self.compare_feature
+        else:
+            compare_str = str(self.value)
+
         if self.operator == 'between':
+            if self.compare_type == CompareType.FEATURE:
+                return f"{self.feature} between {self.value[0]} and {self.value[1]}{lookback_str}"
             return f"{self.feature} between {self.value[0]} and {self.value[1]}{lookback_str}"
         elif self.operator == 'in':
             values_str = ', '.join(str(v) for v in self.value[:5])
@@ -51,7 +70,7 @@ class Rule:
                 values_str += f", ... ({len(self.value)} total)"
             return f"{self.feature} in [{values_str}]{lookback_str}"
         else:
-            return f"{self.feature} {self.operator} {self.value}{lookback_str}"
+            return f"{self.feature} {self.operator} {compare_str}{lookback_str}"
 
 
 class RuleEngine:
@@ -59,14 +78,14 @@ class RuleEngine:
     Engine for applying filtering rules to trade logs.
 
     Supports:
-    - Entry rules: evaluated at trade entry date
-    - Exit rules: evaluated at trade exit date
+    - Entry rules: Filter trades based on conditions at entry date
+    - Exit rules: Recalculate exit points based on when exit conditions are met
+    - Feature-to-feature comparison (e.g., sma20 > sma200)
     - Lookback periods: check if condition was true within N bars before reference date
-    - Multiple rules combined with AND logic
 
     Data leakage prevention:
     - Only uses data on or before the reference date
-    - Never looks at future data relative to entry/exit
+    - Never looks at future data relative to entry
     """
 
     # Threshold for discrete vs continuous detection
@@ -87,7 +106,7 @@ class RuleEngine:
         Args:
             trades_df: DataFrame with trade logs (must have entry_date, exit_date, symbol columns)
             price_data_dict: Dict of ticker -> price DataFrame (must have date column)
-            mode: RuleMode.ENTRY or RuleMode.EXIT - determines which date to use as reference
+            mode: RuleMode.ENTRY or RuleMode.EXIT - determines behavior
         """
         self.trades_df = trades_df.copy()
         self.price_data_dict = price_data_dict
@@ -144,6 +163,16 @@ class RuleEngine:
         features = sorted(all_columns - self.EXCLUDED_COLUMNS)
 
         return features
+
+    def get_price_features(self) -> List[str]:
+        """Get list of price-related features (open, high, low, close)."""
+        return ['open', 'high', 'low', 'close']
+
+    def get_all_comparable_features(self) -> List[str]:
+        """Get all features that can be used for comparison (indicators + price)."""
+        features = self.get_available_features()
+        price_features = self.get_price_features()
+        return sorted(set(features + price_features))
 
     def detect_feature_type(self, feature: str) -> str:
         """
@@ -271,47 +300,98 @@ class RuleEngine:
 
         return stats
 
-    def _check_condition(self, value: Any, rule: Rule) -> bool:
+    def _get_feature_value_at_bar(self, pdf: pd.DataFrame, bar_idx: int, feature: str) -> Any:
+        """Get feature value at a specific bar index."""
+        if bar_idx < 0 or bar_idx >= len(pdf):
+            return np.nan
+        if feature not in pdf.columns:
+            return np.nan
+        return pdf.iloc[bar_idx][feature]
+
+    def _check_condition_at_bar(
+        self,
+        pdf: pd.DataFrame,
+        bar_idx: int,
+        rule: Rule
+    ) -> bool:
         """
-        Check if a single value satisfies the rule condition.
+        Check if a rule condition is satisfied at a specific bar.
 
         Args:
-            value: Value to check
-            rule: Rule with operator and comparison value
+            pdf: Price DataFrame for the symbol
+            bar_idx: Index of the bar to check
+            rule: Rule to evaluate
 
         Returns:
             True if condition is satisfied
         """
-        if pd.isna(value):
+        if bar_idx < 0 or bar_idx >= len(pdf):
             return False
 
+        # Get feature value
+        feature_val = self._get_feature_value_at_bar(pdf, bar_idx, rule.feature)
+        if pd.isna(feature_val):
+            return False
+
+        # Get comparison value (either static or from another feature)
+        if rule.compare_type == CompareType.FEATURE and rule.compare_feature:
+            compare_val = self._get_feature_value_at_bar(pdf, bar_idx, rule.compare_feature)
+            if pd.isna(compare_val):
+                return False
+        else:
+            compare_val = rule.value
+
+        # Evaluate the condition
         if rule.operator == '>':
-            return value > rule.value
+            return feature_val > compare_val
         elif rule.operator == '<':
-            return value < rule.value
+            return feature_val < compare_val
         elif rule.operator == '>=':
-            return value >= rule.value
+            return feature_val >= compare_val
         elif rule.operator == '<=':
-            return value <= rule.value
+            return feature_val <= compare_val
         elif rule.operator == 'between':
             low, high = rule.value
-            return low <= value <= high
+            return low <= feature_val <= high
         elif rule.operator == '==':
-            return value == rule.value
+            return feature_val == compare_val
         elif rule.operator == '!=':
-            return value != rule.value
+            return feature_val != compare_val
         elif rule.operator == 'in':
-            return value in rule.value
+            return feature_val in rule.value
         else:
-            raise ValueError(f"Unknown operator: {rule.operator}")
+            return False
+
+    def _check_rule_with_lookback(
+        self,
+        pdf: pd.DataFrame,
+        ref_bar_idx: int,
+        rule: Rule
+    ) -> bool:
+        """
+        Check if a rule is satisfied, considering lookback.
+
+        Args:
+            pdf: Price DataFrame
+            ref_bar_idx: Reference bar index
+            rule: Rule to evaluate
+
+        Returns:
+            True if rule is satisfied (at ref bar for N=0, or any bar in lookback window for N>0)
+        """
+        if rule.lookback_bars == 0:
+            return self._check_condition_at_bar(pdf, ref_bar_idx, rule)
+        else:
+            # Check N bars before reference (not including reference)
+            for offset in range(1, rule.lookback_bars + 1):
+                check_idx = ref_bar_idx - offset
+                if check_idx >= 0 and self._check_condition_at_bar(pdf, check_idx, rule):
+                    return True
+            return False
 
     def evaluate_rule(self, rule: Rule) -> pd.Series:
         """
-        Evaluate a single rule against all trades.
-
-        Supports lookback: if rule.lookback_bars > 0, checks if the condition
-        was true at any point in the N bars BEFORE the reference date.
-        If lookback_bars = 0, only checks the reference date.
+        Evaluate a single rule against all trades (for ENTRY mode).
 
         Args:
             rule: Rule to evaluate
@@ -326,7 +406,6 @@ class RuleEngine:
             ref_date = trade.get(date_col)
             symbol = str(trade.get('symbol', '')).upper()
 
-            # Get price data for this symbol
             pdf = self.price_data_dict.get(symbol)
 
             if pdf is None or ref_date is None or pd.isna(ref_date):
@@ -335,80 +414,140 @@ class RuleEngine:
 
             ref_date = pd.to_datetime(ref_date)
 
-            # Get data up to (and including for N=0, or excluding for N>0) reference date
-            if rule.lookback_bars == 0:
-                # N=0: Check only the reference date
-                # Get data on or before reference date
-                available = pdf[pdf['date'] <= ref_date]
-                if len(available) == 0:
-                    results.append(False)
-                    continue
+            # Find the bar index for the reference date
+            date_mask = pdf['date'] <= ref_date
+            if not date_mask.any():
+                results.append(False)
+                continue
 
-                # Get the reference date value (most recent on or before ref_date)
-                row = available.iloc[-1]
-                value = row.get(rule.feature, np.nan)
-                results.append(self._check_condition(value, rule))
+            ref_bar_idx = date_mask.sum() - 1  # Index of last bar on or before ref_date
 
-            else:
-                # N>0: Check if condition was true in any of the N bars BEFORE reference date
-                # This means we look at bars strictly before ref_date
-                available = pdf[pdf['date'] < ref_date]
-
-                if len(available) == 0:
-                    results.append(False)
-                    continue
-
-                # Get the last N bars before reference date
-                lookback_data = available.tail(rule.lookback_bars)
-
-                if rule.feature not in lookback_data.columns:
-                    results.append(False)
-                    continue
-
-                # Check if condition is true for ANY bar in the lookback period
-                values = lookback_data[rule.feature]
-                condition_met = False
-                for val in values:
-                    if self._check_condition(val, rule):
-                        condition_met = True
-                        break
-
-                results.append(condition_met)
+            # Check rule with lookback
+            results.append(self._check_rule_with_lookback(pdf, ref_bar_idx, rule))
 
         return pd.Series(results, index=self.trades_df.index)
 
     def apply_rules(self, rules: List[Rule]) -> pd.DataFrame:
         """
-        Filter trades based on rules (AND logic).
+        Apply rules to filter trades (ENTRY mode) or recalculate exits (EXIT mode).
 
         Args:
             rules: List of rules to apply
 
         Returns:
-            Filtered DataFrame containing only trades that pass ALL rules
+            Filtered/modified DataFrame
         """
         if not rules:
             return self.trades_df.copy()
 
-        # Start with all True
+        if self.mode == RuleMode.ENTRY:
+            return self._apply_entry_rules(rules)
+        else:
+            return self._apply_exit_rules(rules)
+
+    def _apply_entry_rules(self, rules: List[Rule]) -> pd.DataFrame:
+        """Apply entry rules to filter trades."""
         combined_mask = pd.Series([True] * len(self.trades_df), index=self.trades_df.index)
 
-        # Apply each rule with AND logic
         for rule in rules:
             rule_mask = self.evaluate_rule(rule)
             combined_mask &= rule_mask
 
         return self.trades_df[combined_mask].copy()
 
+    def _apply_exit_rules(self, rules: List[Rule]) -> pd.DataFrame:
+        """
+        Apply exit rules to recalculate exit points.
+
+        For each trade, find the first bar after entry where ALL exit rules are satisfied.
+        Recalculate exit price and P/L accordingly.
+        """
+        result_rows = []
+
+        for idx, trade in self.trades_df.iterrows():
+            entry_date = trade.get('entry_date')
+            original_exit_date = trade.get('exit_date')
+            symbol = str(trade.get('symbol', '')).upper()
+            entry_price = trade.get('entry_price', 0)
+            quantity = trade.get('quantity', 1)
+
+            pdf = self.price_data_dict.get(symbol)
+
+            if pdf is None or entry_date is None or pd.isna(entry_date):
+                result_rows.append(trade.to_dict())
+                continue
+
+            entry_date = pd.to_datetime(entry_date)
+            original_exit_date = pd.to_datetime(original_exit_date) if original_exit_date is not None else None
+
+            # Find entry bar index
+            entry_mask = pdf['date'] <= entry_date
+            if not entry_mask.any():
+                result_rows.append(trade.to_dict())
+                continue
+
+            entry_bar_idx = entry_mask.sum() - 1
+
+            # Find original exit bar index
+            if original_exit_date is not None:
+                exit_mask = pdf['date'] <= original_exit_date
+                original_exit_bar_idx = exit_mask.sum() - 1 if exit_mask.any() else len(pdf) - 1
+            else:
+                original_exit_bar_idx = len(pdf) - 1
+
+            # Search for first bar after entry where all exit rules are satisfied
+            new_exit_bar_idx = None
+            new_exit_date = None
+            new_exit_price = None
+
+            for bar_idx in range(entry_bar_idx + 1, original_exit_bar_idx + 1):
+                all_rules_met = True
+                for rule in rules:
+                    if not self._check_rule_with_lookback(pdf, bar_idx, rule):
+                        all_rules_met = False
+                        break
+
+                if all_rules_met:
+                    new_exit_bar_idx = bar_idx
+                    new_exit_date = pdf.iloc[bar_idx]['date']
+                    new_exit_price = pdf.iloc[bar_idx]['close']
+                    break
+
+            # If no exit rules met, use original exit
+            if new_exit_bar_idx is None:
+                result_rows.append(trade.to_dict())
+                continue
+
+            # Recalculate trade with new exit
+            new_trade = trade.to_dict()
+            new_trade['exit_date'] = new_exit_date
+            new_trade['exit_price'] = new_exit_price
+
+            # Recalculate P/L
+            if entry_price > 0:
+                # Assuming long trade
+                new_pl = (new_exit_price - entry_price) * quantity
+                new_pl_pct = ((new_exit_price / entry_price) - 1) * 100
+                new_trade['pl'] = new_pl
+                new_trade['pl_pct'] = new_pl_pct
+
+            # Recalculate duration
+            if isinstance(new_exit_date, pd.Timestamp) and isinstance(entry_date, pd.Timestamp):
+                new_trade['duration_days'] = (new_exit_date - entry_date).days
+
+            result_rows.append(new_trade)
+
+        return pd.DataFrame(result_rows)
+
     def count_passing_trades(self, rules: List[Rule]) -> int:
         """
-        Count trades that pass all rules.
+        Count trades that pass all rules (entry mode) or total trades (exit mode).
 
         Args:
             rules: List of rules to apply
 
         Returns:
-            Number of trades passing all rules
+            Number of trades
         """
         filtered = self.apply_rules(rules)
         return len(filtered)
@@ -424,28 +563,46 @@ class RuleEngine:
             Dict with total_trades, passing_trades, pass_rate, and per-rule counts
         """
         total = len(self.trades_df)
-        passing = self.count_passing_trades(rules)
 
-        result = {
-            'total_trades': total,
-            'passing_trades': passing,
-            'filtered_trades': total - passing,
-            'pass_rate': passing / total * 100 if total > 0 else 0,
-            'mode': self.mode.value,
-        }
+        if self.mode == RuleMode.ENTRY:
+            passing = self.count_passing_trades(rules)
+            result = {
+                'total_trades': total,
+                'passing_trades': passing,
+                'filtered_trades': total - passing,
+                'pass_rate': passing / total * 100 if total > 0 else 0,
+                'mode': self.mode.value,
+            }
 
-        # Per-rule breakdown
-        rule_counts = []
-        for rule in rules:
-            mask = self.evaluate_rule(rule)
-            count = mask.sum()
-            rule_counts.append({
-                'rule': str(rule),
-                'passing': int(count),
-                'pass_rate': count / total * 100 if total > 0 else 0
-            })
+            # Per-rule breakdown
+            rule_counts = []
+            for rule in rules:
+                mask = self.evaluate_rule(rule)
+                count = mask.sum()
+                rule_counts.append({
+                    'rule': str(rule),
+                    'passing': int(count),
+                    'pass_rate': count / total * 100 if total > 0 else 0
+                })
+            result['per_rule'] = rule_counts
+        else:
+            # Exit mode - count how many trades have modified exits
+            modified_df = self.apply_rules(rules)
+            original_exits = self.trades_df['exit_date'].values
+            new_exits = modified_df['exit_date'].values
+            modified_count = sum(1 for i in range(len(original_exits))
+                               if not pd.isna(original_exits[i]) and not pd.isna(new_exits[i])
+                               and original_exits[i] != new_exits[i])
 
-        result['per_rule'] = rule_counts
+            result = {
+                'total_trades': total,
+                'passing_trades': total,  # All trades kept in exit mode
+                'modified_exits': modified_count,
+                'unmodified_exits': total - modified_count,
+                'pass_rate': 100.0,  # All trades pass in exit mode
+                'mode': self.mode.value,
+            }
+            result['per_rule'] = []
 
         return result
 
@@ -519,7 +676,7 @@ def load_price_data_for_tickers(
                     df.columns = [c.lower().strip() for c in df.columns]
                     if 'date' in df.columns:
                         df['date'] = pd.to_datetime(df['date'], errors='coerce')
-                        df = df.sort_values('date')
+                        df = df.sort_values('date').reset_index(drop=True)
                     result[ticker.upper()] = df
                     break
                 except Exception:

@@ -22,7 +22,7 @@ import traceback
 
 from Classes.GUI.ctk_theme import Theme, Colors, Fonts, Sizes, show_error, show_info
 from Classes.RuleTester import (
-    Rule, RuleEngine, RuleMode, RuleMetricsCalculator,
+    Rule, RuleEngine, RuleMode, CompareType, RuleMetricsCalculator,
     extract_ticker_from_filename, load_price_data_for_tickers,
     export_filtered_trades, export_comparison_report
 )
@@ -781,22 +781,40 @@ class CTkRuleTesterGUI:
             text_color=Colors.TEXT_MUTED
         ).pack(side="left")
 
-        # Row 2: Value inputs
+        # Row 2: Compare To selector and Value/Feature inputs
         value_frame = Theme.create_frame(parent)
         value_frame.pack(fill="x", pady=Sizes.PAD_XS)
 
+        # Compare To selector (Value or Feature)
         ctk.CTkLabel(
             value_frame,
-            text="Value:",
+            text="Compare to:",
             font=Fonts.BODY_M,
             text_color=Colors.TEXT_PRIMARY
         ).pack(side="left", padx=(0, Sizes.PAD_S))
+
+        compare_type_var = ctk.StringVar(value="Value")
+        compare_type_menu = ctk.CTkSegmentedButton(
+            value_frame,
+            values=["Value", "Feature"],
+            variable=compare_type_var,
+            command=lambda _: self._on_compare_type_changed(feature),
+            font=Fonts.BODY_S,
+            width=140
+        )
+        compare_type_menu.pack(side="left", padx=(0, Sizes.PAD_M))
+        widgets['compare_type'] = compare_type_var
+
+        # Value input frame (shown when "Value" is selected)
+        value_input_frame = Theme.create_frame(value_frame)
+        value_input_frame.pack(side="left", padx=(0, Sizes.PAD_S))
+        widgets['value_input_frame'] = value_input_frame
 
         # Primary value
         default_val = stats.get('median', 0) if stats else 0
         value1_var = ctk.StringVar(value=str(round(default_val, 4)))
         value1_entry = ctk.CTkEntry(
-            value_frame,
+            value_input_frame,
             textvariable=value1_var,
             width=100,
             font=Fonts.BODY_M
@@ -804,10 +822,11 @@ class CTkRuleTesterGUI:
         value1_entry.pack(side="left", padx=(0, Sizes.PAD_S))
         value1_entry.bind('<KeyRelease>', lambda e: self._update_preview())
         widgets['value1'] = value1_var
+        widgets['value1_entry'] = value1_entry
 
         # Second value (for between) - created but hidden initially
         between_label = ctk.CTkLabel(
-            value_frame,
+            value_input_frame,
             text="and",
             font=Fonts.BODY_M,
             text_color=Colors.TEXT_PRIMARY
@@ -816,7 +835,7 @@ class CTkRuleTesterGUI:
 
         value2_var = ctk.StringVar(value=str(round(stats.get('q75', 0), 4)) if stats else "0")
         value2_entry = ctk.CTkEntry(
-            value_frame,
+            value_input_frame,
             textvariable=value2_var,
             width=100,
             font=Fonts.BODY_M
@@ -824,6 +843,35 @@ class CTkRuleTesterGUI:
         value2_entry.bind('<KeyRelease>', lambda e: self._update_preview())
         widgets['value2'] = value2_var
         widgets['value2_entry'] = value2_entry
+
+        # Feature selector frame (hidden initially, shown when "Feature" is selected)
+        feature_input_frame = Theme.create_frame(value_frame)
+        widgets['feature_input_frame'] = feature_input_frame
+        # Don't pack initially - will be shown/hidden by _on_compare_type_changed
+
+        # Get all comparable features (other features + price columns)
+        comparable_features = self.rule_engine.get_all_comparable_features() if self.rule_engine else []
+        # Remove the current feature from the list
+        comparable_features = [f for f in comparable_features if f != feature]
+
+        compare_feature_var = ctk.StringVar(value=comparable_features[0] if comparable_features else "")
+        if comparable_features:
+            compare_feature_menu = ctk.CTkOptionMenu(
+                feature_input_frame,
+                values=comparable_features,
+                variable=compare_feature_var,
+                command=lambda _: self._update_preview(),
+                width=150
+            )
+            compare_feature_menu.pack(side="left")
+        else:
+            ctk.CTkLabel(
+                feature_input_frame,
+                text="No other features available",
+                font=Fonts.BODY_S,
+                text_color=Colors.TEXT_MUTED
+            ).pack(side="left")
+        widgets['compare_feature'] = compare_feature_var
 
         # Stats display
         if stats:
@@ -940,12 +988,42 @@ class CTkRuleTesterGUI:
 
         # Show/hide second value for 'between'
         if widgets.get('feature_type') == 'continuous':
+            # For 'between', force Value mode and show second value
             if op == 'between':
+                # Force to Value mode for between operator
+                widgets.get('compare_type', ctk.StringVar(value="Value")).set("Value")
+                self._on_compare_type_changed(feature)
                 widgets.get('between_label').pack(side="left", padx=Sizes.PAD_XS)
                 widgets.get('value2_entry').pack(side="left")
             else:
                 widgets.get('between_label').pack_forget()
                 widgets.get('value2_entry').pack_forget()
+
+        self._update_preview()
+
+    def _on_compare_type_changed(self, feature: str):
+        """Handle compare type change (Value vs Feature) for a feature."""
+        widgets = self.feature_widgets.get(feature)
+        if not widgets:
+            return
+
+        compare_type = widgets.get('compare_type', ctk.StringVar(value="Value")).get()
+        operator = widgets.get('operator', ctk.StringVar(value="")).get()
+
+        # For 'between' operator, always show value inputs
+        if operator == 'between':
+            widgets.get('value_input_frame').pack(side="left", padx=(0, Sizes.PAD_S))
+            widgets.get('feature_input_frame').pack_forget()
+            return
+
+        if compare_type == "Value":
+            # Show value input, hide feature selector
+            widgets.get('value_input_frame').pack(side="left", padx=(0, Sizes.PAD_S))
+            widgets.get('feature_input_frame').pack_forget()
+        else:
+            # Show feature selector, hide value input
+            widgets.get('value_input_frame').pack_forget()
+            widgets.get('feature_input_frame').pack(side="left", padx=(0, Sizes.PAD_S))
 
         self._update_preview()
 
@@ -958,13 +1036,20 @@ class CTkRuleTesterGUI:
 
         preview = self.rule_engine.get_rule_preview(self.rules)
         total = preview['total_trades']
-        passing = preview['passing_trades']
-        pct = preview['pass_rate']
         mode = preview.get('mode', 'entry').upper()
 
-        self.preview_label.configure(
-            text=f"Preview ({mode}): {passing} of {total} trades pass ({pct:.1f}%)"
-        )
+        if mode == 'ENTRY':
+            passing = preview['passing_trades']
+            pct = preview['pass_rate']
+            self.preview_label.configure(
+                text=f"Preview ({mode}): {passing} of {total} trades pass ({pct:.1f}%)"
+            )
+        else:
+            # Exit mode - show modified exits count
+            modified = preview.get('modified_exits', 0)
+            self.preview_label.configure(
+                text=f"Preview ({mode}): {modified} of {total} trades would have earlier exits"
+            )
 
     def _build_rules_from_widgets(self):
         """Build Rule objects from widget values."""
@@ -983,15 +1068,32 @@ class CTkRuleTesterGUI:
                 lookback = int(lookback_str) if lookback_str.isdigit() else 0
                 lookback = max(0, lookback)  # Ensure non-negative
 
+                # Determine compare type and value
+                compare_type = CompareType.VALUE
+                compare_feature = None
+                value = None
+
                 if feature_type == 'continuous':
+                    # Check if comparing to another feature (only for non-between operators)
+                    compare_type_str = widgets.get('compare_type', ctk.StringVar(value="Value")).get()
+
                     if op == 'between':
+                        # Between always uses static values
                         val1 = float(widgets['value1'].get())
                         val2 = float(widgets['value2'].get())
                         value = (min(val1, val2), max(val1, val2))
+                        compare_type = CompareType.VALUE
+                    elif compare_type_str == "Feature":
+                        # Compare to another feature
+                        compare_type = CompareType.FEATURE
+                        compare_feature = widgets.get('compare_feature', ctk.StringVar(value="")).get()
+                        value = None  # Not used when comparing to feature
                     else:
+                        # Compare to static value
                         value = float(widgets['value1'].get())
+                        compare_type = CompareType.VALUE
                 else:
-                    # Discrete
+                    # Discrete features always use static values
                     if op == 'in':
                         # Parse comma-separated values
                         raw = widgets['value1'].get()
@@ -1003,6 +1105,8 @@ class CTkRuleTesterGUI:
                     feature=feature,
                     operator=op,
                     value=value,
+                    compare_type=compare_type,
+                    compare_feature=compare_feature,
                     lookback_bars=lookback,
                     is_discrete=(feature_type == 'discrete')
                 )
