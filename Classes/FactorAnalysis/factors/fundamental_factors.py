@@ -61,12 +61,13 @@ class FundamentalFactors:
 
     # EPS-related factors only - use when fundamental data is mostly missing
     # These factors focus on earnings per share and earnings surprise data
+    # Column names: reported_eps, estimated_eps, earnings_surprise
     EPS_FACTORS = {
-        'eps': {'source': 'eps', 'lower_better': False},
+        'eps': {'source': 'reported_eps', 'lower_better': False},
         'estimated_eps': {'source': 'estimated_eps', 'lower_better': False},
-        'earnings_growth': {'source': 'earnings_growth_yoy', 'lower_better': False},
+        'earnings_growth': {'source': 'reported_eps', 'lower_better': False, 'derived': 'yoy_growth'},
         'earnings_surprise': {'source': 'earnings_surprise', 'lower_better': False},
-        'earnings_surprise_pct': {'source': 'surprise_pct', 'lower_better': False},
+        'earnings_surprise_pct': {'source': 'earnings_surprise', 'lower_better': False, 'derived': 'pct'},
     }
 
     def __init__(self, logger: Optional[AuditLogger] = None):

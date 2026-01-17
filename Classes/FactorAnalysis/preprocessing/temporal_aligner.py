@@ -286,6 +286,25 @@ class TemporalAligner:
 
         return aligned_df, alignment_result
 
+    # Alias for backward compatibility
+    def align_fundamentals(
+        self,
+        trades_df: pd.DataFrame,
+        fundamental_df: pd.DataFrame
+    ) -> pd.DataFrame:
+        """
+        Alias for align_fundamental_data that returns just the DataFrame.
+
+        Args:
+            trades_df: Trade log DataFrame
+            fundamental_df: Fundamental data with '_as_of_date' column
+
+        Returns:
+            Aligned DataFrame
+        """
+        aligned_df, _ = self.align_fundamental_data(trades_df, fundamental_df)
+        return aligned_df
+
     def align_insider_data(
         self,
         trades_df: pd.DataFrame,

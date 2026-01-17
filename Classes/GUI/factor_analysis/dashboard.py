@@ -1549,7 +1549,7 @@ class FactorDocumentationView(ctk.CTkFrame):
             'name': 'EPS',
             'calculation': 'Direct value from earnings report: Net Income / Shares Outstanding',
             'raw_data': 'fundamental_data.csv',
-            'column': 'eps',
+            'column': 'reported_eps',
             'category': 'EPS Fundamentals'
         },
         'eps_estimated_eps': {
@@ -1563,7 +1563,7 @@ class FactorDocumentationView(ctk.CTkFrame):
             'name': 'Earnings Growth',
             'calculation': '(Current EPS - Prior Year EPS) / |Prior Year EPS| × 100',
             'raw_data': 'fundamental_data.csv',
-            'column': 'earnings_growth_yoy',
+            'column': 'reported_eps (calculated YoY)',
             'category': 'EPS Fundamentals'
         },
         'eps_earnings_surprise': {
@@ -1577,7 +1577,7 @@ class FactorDocumentationView(ctk.CTkFrame):
             'name': 'Earnings Surprise %',
             'calculation': '(Actual EPS - Estimated EPS) / |Estimated EPS| × 100',
             'raw_data': 'fundamental_data.csv',
-            'column': 'surprise_pct',
+            'column': 'earnings_surprise (calculated %)',
             'category': 'EPS Fundamentals'
         },
         # Value Factors
@@ -1795,39 +1795,40 @@ class FactorDocumentationView(ctk.CTkFrame):
             'category': 'Technical - Volume'
         },
         # Insider Factors
+        # Raw columns: date, symbol, insider_title, transaction_type, shares, price, value, executive, security_type
         'insider_buy_count': {
             'name': 'Insider Buy Count',
             'calculation': 'Count of insider purchase transactions in lookback window',
             'raw_data': 'insider_data.csv',
-            'column': 'transaction_type, shares',
+            'column': 'date, symbol, transaction_type',
             'category': 'Insider'
         },
         'insider_sell_count': {
             'name': 'Insider Sell Count',
             'calculation': 'Count of insider sale transactions in lookback window',
             'raw_data': 'insider_data.csv',
-            'column': 'transaction_type, shares',
+            'column': 'date, symbol, transaction_type',
             'category': 'Insider'
         },
         'insider_net_shares': {
             'name': 'Insider Net Shares',
             'calculation': 'Total shares bought - Total shares sold in lookback window',
             'raw_data': 'insider_data.csv',
-            'column': 'transaction_type, shares',
+            'column': 'date, symbol, transaction_type, shares',
             'category': 'Insider'
         },
         'insider_score': {
             'name': 'Insider Score',
             'calculation': 'Composite score based on transaction size, frequency, and insider role',
             'raw_data': 'insider_data.csv',
-            'column': 'transaction_type, shares, insider_title',
+            'column': 'date, symbol, transaction_type, shares, value, insider_title, executive',
             'category': 'Insider'
         },
         'insider_buy_sell_ratio': {
             'name': 'Buy/Sell Ratio',
             'calculation': 'Buy Count / (Sell Count + 1)',
             'raw_data': 'insider_data.csv',
-            'column': 'transaction_type',
+            'column': 'date, symbol, transaction_type',
             'category': 'Insider'
         },
         # Options Factors
@@ -1872,7 +1873,7 @@ class FactorDocumentationView(ctk.CTkFrame):
             'name': 'Composite EPS Score',
             'calculation': 'Z-score normalized average of all EPS factors',
             'raw_data': 'Derived from fundamental_data.csv',
-            'column': 'eps, estimated_eps, earnings_growth_yoy, earnings_surprise, surprise_pct',
+            'column': 'reported_eps, estimated_eps, earnings_surprise',
             'category': 'Composite'
         },
         'composite_value': {
@@ -1893,7 +1894,7 @@ class FactorDocumentationView(ctk.CTkFrame):
             'name': 'Composite Growth Score',
             'calculation': 'Z-score normalized average of growth factors',
             'raw_data': 'Derived from fundamental_data.csv',
-            'column': 'revenue_growth_yoy, earnings_growth_yoy, earnings_surprise, surprise_pct',
+            'column': 'revenue_growth_yoy, reported_eps (YoY calc), earnings_surprise',
             'category': 'Composite'
         },
         'composite_fundamental': {
@@ -2211,9 +2212,35 @@ class FactorDocumentationView(ctk.CTkFrame):
             # Check price data (technical factors usually have high availability)
             price_data = self.data.get('price_data')
             if isinstance(price_data, pd.DataFrame) and len(price_data) > 0:
-                # Technical factors derived from price data
-                for factor in ['rsi', 'macd', 'sma', 'ema', 'adx', 'atr', 'bollinger', 'obv', 'vwap']:
-                    self.factor_availability[factor] = 95.0  # Usually high availability
+                # Calculate actual availability based on required columns
+                total = len(price_data)
+
+                # Check availability of key price columns
+                close_avail = (price_data['close'].notna().sum() / total * 100) if 'close' in price_data.columns else 0
+                high_avail = (price_data['high'].notna().sum() / total * 100) if 'high' in price_data.columns else 0
+                low_avail = (price_data['low'].notna().sum() / total * 100) if 'low' in price_data.columns else 0
+                volume_avail = (price_data['volume'].notna().sum() / total * 100) if 'volume' in price_data.columns else 0
+
+                # Technical factors that only need close price
+                close_only_factors = ['rsi', 'macd', 'macd_signal', 'macd_hist', 'sma', 'ema', 'bollinger']
+                for factor in close_only_factors:
+                    self.factor_availability[factor] = close_avail
+
+                # Technical factors that need high, low, close
+                hlc_factors = ['adx', 'atr', 'stochastic', 'cci']
+                hlc_avail = min(high_avail, low_avail, close_avail)
+                for factor in hlc_factors:
+                    self.factor_availability[factor] = hlc_avail
+
+                # Technical factors that need high, low, close, volume
+                hlcv_factors = ['obv', 'vwap', 'mfi']
+                hlcv_avail = min(high_avail, low_avail, close_avail, volume_avail)
+                for factor in hlcv_factors:
+                    self.factor_availability[factor] = hlcv_avail
+
+                # Regime factors (derived from price data)
+                self.factor_availability['regime_volatility'] = close_avail
+                self.factor_availability['regime_trend'] = hlc_avail
 
     def _refresh_data(self):
         """Refresh the display."""
