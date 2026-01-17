@@ -1539,6 +1539,624 @@ class ScenarioView(ctk.CTkFrame):
                              wraplength=400).pack(side="left")
 
 
+class FactorDocumentationView(ctk.CTkFrame):
+    """View displaying factor documentation: calculations, raw data sources, and availability."""
+
+    # Factor documentation: name -> (calculation method, raw data source, category)
+    FACTOR_DOCS = {
+        # EPS Factors (default for fundamental analysis)
+        'eps_eps': {
+            'name': 'EPS',
+            'calculation': 'Direct value from earnings report: Net Income / Shares Outstanding',
+            'raw_data': 'Quarterly/Annual earnings reports (eps field)',
+            'category': 'EPS Fundamentals'
+        },
+        'eps_estimated_eps': {
+            'name': 'Estimated EPS',
+            'calculation': 'Analyst consensus estimate for upcoming earnings',
+            'raw_data': 'Analyst estimates data (estimated_eps field)',
+            'category': 'EPS Fundamentals'
+        },
+        'eps_earnings_growth': {
+            'name': 'Earnings Growth',
+            'calculation': '(Current EPS - Prior Year EPS) / |Prior Year EPS| × 100',
+            'raw_data': 'Year-over-year earnings data (earnings_growth_yoy field)',
+            'category': 'EPS Fundamentals'
+        },
+        'eps_earnings_surprise': {
+            'name': 'Earnings Surprise',
+            'calculation': 'Actual EPS - Estimated EPS',
+            'raw_data': 'Earnings reports + analyst estimates (earnings_surprise field)',
+            'category': 'EPS Fundamentals'
+        },
+        'eps_earnings_surprise_pct': {
+            'name': 'Earnings Surprise %',
+            'calculation': '(Actual EPS - Estimated EPS) / |Estimated EPS| × 100',
+            'raw_data': 'Earnings reports + analyst estimates (surprise_pct field)',
+            'category': 'EPS Fundamentals'
+        },
+        # Value Factors
+        'value_pe_ratio': {
+            'name': 'P/E Ratio',
+            'calculation': 'Stock Price / Earnings Per Share (TTM)',
+            'raw_data': 'Price data + earnings reports (pe_ratio field)',
+            'category': 'Value'
+        },
+        'value_price_to_book': {
+            'name': 'Price to Book',
+            'calculation': 'Market Cap / Total Book Value',
+            'raw_data': 'Price data + balance sheet (price_to_book field)',
+            'category': 'Value'
+        },
+        'value_price_to_sales': {
+            'name': 'Price to Sales',
+            'calculation': 'Market Cap / Revenue (TTM)',
+            'raw_data': 'Price data + income statement (price_to_sales_ttm field)',
+            'category': 'Value'
+        },
+        'value_peg_ratio': {
+            'name': 'PEG Ratio',
+            'calculation': 'P/E Ratio / Earnings Growth Rate',
+            'raw_data': 'P/E data + growth estimates (peg_ratio field)',
+            'category': 'Value'
+        },
+        'value_dividend_yield': {
+            'name': 'Dividend Yield',
+            'calculation': 'Annual Dividends Per Share / Stock Price × 100',
+            'raw_data': 'Dividend data + price data (dividend_yield field)',
+            'category': 'Value'
+        },
+        'value_ev_to_ebitda': {
+            'name': 'EV/EBITDA',
+            'calculation': 'Enterprise Value / EBITDA',
+            'raw_data': 'Market data + financials (ev_to_ebitda field)',
+            'category': 'Value'
+        },
+        # Quality Factors
+        'quality_return_on_equity': {
+            'name': 'Return on Equity',
+            'calculation': 'Net Income / Shareholders Equity × 100',
+            'raw_data': 'Income statement + balance sheet (return_on_equity_ttm field)',
+            'category': 'Quality'
+        },
+        'quality_return_on_assets': {
+            'name': 'Return on Assets',
+            'calculation': 'Net Income / Total Assets × 100',
+            'raw_data': 'Income statement + balance sheet (return_on_assets_ttm field)',
+            'category': 'Quality'
+        },
+        'quality_profit_margin': {
+            'name': 'Profit Margin',
+            'calculation': 'Net Income / Revenue × 100',
+            'raw_data': 'Income statement (profit_margin field)',
+            'category': 'Quality'
+        },
+        'quality_operating_margin': {
+            'name': 'Operating Margin',
+            'calculation': 'Operating Income / Revenue × 100',
+            'raw_data': 'Income statement (operating_margin_ttm field)',
+            'category': 'Quality'
+        },
+        'quality_current_ratio': {
+            'name': 'Current Ratio',
+            'calculation': 'Current Assets / Current Liabilities',
+            'raw_data': 'Balance sheet (currentratio field)',
+            'category': 'Quality'
+        },
+        'quality_debt_to_equity': {
+            'name': 'Debt to Equity',
+            'calculation': 'Total Liabilities / Shareholders Equity',
+            'raw_data': 'Balance sheet (debt_to_equity field)',
+            'category': 'Quality'
+        },
+        # Growth Factors
+        'growth_revenue_growth': {
+            'name': 'Revenue Growth',
+            'calculation': '(Current Revenue - Prior Year Revenue) / |Prior Year Revenue| × 100',
+            'raw_data': 'Year-over-year revenue data (revenue_growth_yoy field)',
+            'category': 'Growth'
+        },
+        'growth_earnings_growth': {
+            'name': 'Earnings Growth',
+            'calculation': '(Current EPS - Prior Year EPS) / |Prior Year EPS| × 100',
+            'raw_data': 'Year-over-year earnings data (earnings_growth_yoy field)',
+            'category': 'Growth'
+        },
+        'growth_earnings_surprise': {
+            'name': 'Earnings Surprise',
+            'calculation': 'Actual EPS - Estimated EPS',
+            'raw_data': 'Earnings reports + analyst estimates (earnings_surprise field)',
+            'category': 'Growth'
+        },
+        'growth_earnings_surprise_pct': {
+            'name': 'Earnings Surprise %',
+            'calculation': '(Actual EPS - Estimated EPS) / |Estimated EPS| × 100',
+            'raw_data': 'Earnings reports + analyst estimates (surprise_pct field)',
+            'category': 'Growth'
+        },
+        # Technical Factors
+        'rsi': {
+            'name': 'RSI (Relative Strength Index)',
+            'calculation': '100 - (100 / (1 + RS)), where RS = Avg Gain / Avg Loss over N periods',
+            'raw_data': 'Price data (close prices)',
+            'category': 'Technical - Momentum'
+        },
+        'macd': {
+            'name': 'MACD',
+            'calculation': '12-period EMA - 26-period EMA',
+            'raw_data': 'Price data (close prices)',
+            'category': 'Technical - Trend'
+        },
+        'macd_signal': {
+            'name': 'MACD Signal',
+            'calculation': '9-period EMA of MACD line',
+            'raw_data': 'Price data (close prices)',
+            'category': 'Technical - Trend'
+        },
+        'macd_hist': {
+            'name': 'MACD Histogram',
+            'calculation': 'MACD - Signal Line',
+            'raw_data': 'Price data (close prices)',
+            'category': 'Technical - Trend'
+        },
+        'sma': {
+            'name': 'SMA (Simple Moving Average)',
+            'calculation': 'Sum of closing prices over N periods / N',
+            'raw_data': 'Price data (close prices)',
+            'category': 'Technical - Trend'
+        },
+        'ema': {
+            'name': 'EMA (Exponential Moving Average)',
+            'calculation': 'Weighted average with exponential decay, more weight on recent prices',
+            'raw_data': 'Price data (close prices)',
+            'category': 'Technical - Trend'
+        },
+        'adx': {
+            'name': 'ADX (Average Directional Index)',
+            'calculation': 'Smoothed average of DX = |+DI - -DI| / (+DI + -DI) × 100',
+            'raw_data': 'Price data (high, low, close)',
+            'category': 'Technical - Trend'
+        },
+        'atr': {
+            'name': 'ATR (Average True Range)',
+            'calculation': 'Average of True Range over N periods. TR = max(H-L, |H-Prev Close|, |L-Prev Close|)',
+            'raw_data': 'Price data (high, low, close)',
+            'category': 'Technical - Volatility'
+        },
+        'bollinger': {
+            'name': 'Bollinger Bands',
+            'calculation': 'Middle: SMA(N), Upper: SMA + K×StdDev, Lower: SMA - K×StdDev',
+            'raw_data': 'Price data (close prices)',
+            'category': 'Technical - Volatility'
+        },
+        'obv': {
+            'name': 'OBV (On-Balance Volume)',
+            'calculation': 'Cumulative sum: +Volume if close > prev close, -Volume if close < prev close',
+            'raw_data': 'Price data (close) + Volume data',
+            'category': 'Technical - Volume'
+        },
+        'vwap': {
+            'name': 'VWAP (Volume Weighted Avg Price)',
+            'calculation': 'Sum(Price × Volume) / Sum(Volume)',
+            'raw_data': 'Price data (typical price) + Volume data',
+            'category': 'Technical - Volume'
+        },
+        'stochastic': {
+            'name': 'Stochastic Oscillator',
+            'calculation': '%K = (Close - Lowest Low) / (Highest High - Lowest Low) × 100',
+            'raw_data': 'Price data (high, low, close)',
+            'category': 'Technical - Momentum'
+        },
+        'cci': {
+            'name': 'CCI (Commodity Channel Index)',
+            'calculation': '(Typical Price - SMA) / (0.015 × Mean Deviation)',
+            'raw_data': 'Price data (high, low, close)',
+            'category': 'Technical - Momentum'
+        },
+        'mfi': {
+            'name': 'MFI (Money Flow Index)',
+            'calculation': '100 - (100 / (1 + Money Ratio)), Money Ratio = Positive MF / Negative MF',
+            'raw_data': 'Price data (typical price) + Volume data',
+            'category': 'Technical - Volume'
+        },
+        # Insider Factors
+        'insider_buy_count': {
+            'name': 'Insider Buy Count',
+            'calculation': 'Count of insider purchase transactions in lookback window',
+            'raw_data': 'Insider transaction filings (SEC Form 4)',
+            'category': 'Insider'
+        },
+        'insider_sell_count': {
+            'name': 'Insider Sell Count',
+            'calculation': 'Count of insider sale transactions in lookback window',
+            'raw_data': 'Insider transaction filings (SEC Form 4)',
+            'category': 'Insider'
+        },
+        'insider_net_shares': {
+            'name': 'Insider Net Shares',
+            'calculation': 'Total shares bought - Total shares sold in lookback window',
+            'raw_data': 'Insider transaction filings (SEC Form 4)',
+            'category': 'Insider'
+        },
+        'insider_score': {
+            'name': 'Insider Score',
+            'calculation': 'Composite score based on transaction size, frequency, and insider role',
+            'raw_data': 'Insider transaction filings (SEC Form 4)',
+            'category': 'Insider'
+        },
+        'insider_buy_sell_ratio': {
+            'name': 'Buy/Sell Ratio',
+            'calculation': 'Buy Count / (Sell Count + 1)',
+            'raw_data': 'Insider transaction filings (SEC Form 4)',
+            'category': 'Insider'
+        },
+        # Options Factors
+        'options_implied_volatility': {
+            'name': 'Implied Volatility',
+            'calculation': 'Volatility implied by option prices using Black-Scholes model',
+            'raw_data': 'Options chain data (option prices, strikes, expiries)',
+            'category': 'Options'
+        },
+        'options_put_call_ratio': {
+            'name': 'Put/Call Ratio',
+            'calculation': 'Put Volume / Call Volume',
+            'raw_data': 'Options volume data',
+            'category': 'Options'
+        },
+        'options_iv_percentile': {
+            'name': 'IV Percentile',
+            'calculation': '% of days in past year with lower IV than current IV',
+            'raw_data': 'Historical implied volatility data',
+            'category': 'Options'
+        },
+        # Regime Factors
+        'regime_volatility': {
+            'name': 'Volatility Regime',
+            'calculation': 'Classification based on realized volatility vs historical distribution',
+            'raw_data': 'Price data (returns for volatility calculation)',
+            'category': 'Regime'
+        },
+        'regime_trend': {
+            'name': 'Trend Regime',
+            'calculation': 'Classification based on price vs moving averages and ADX',
+            'raw_data': 'Price data (close prices)',
+            'category': 'Regime'
+        },
+        # Composite Scores
+        'composite_eps': {
+            'name': 'Composite EPS Score',
+            'calculation': 'Z-score normalized average of all EPS factors',
+            'raw_data': 'Computed from: eps, estimated_eps, earnings_growth, earnings_surprise',
+            'category': 'Composite'
+        },
+        'composite_value': {
+            'name': 'Composite Value Score',
+            'calculation': 'Z-score normalized average of value factors (lower=better inverted)',
+            'raw_data': 'Computed from: pe_ratio, price_to_book, price_to_sales, peg_ratio, etc.',
+            'category': 'Composite'
+        },
+        'composite_quality': {
+            'name': 'Composite Quality Score',
+            'calculation': 'Z-score normalized average of quality factors',
+            'raw_data': 'Computed from: roe, roa, profit_margin, current_ratio, etc.',
+            'category': 'Composite'
+        },
+        'composite_growth': {
+            'name': 'Composite Growth Score',
+            'calculation': 'Z-score normalized average of growth factors',
+            'raw_data': 'Computed from: revenue_growth, earnings_growth, earnings_surprise',
+            'category': 'Composite'
+        },
+        'composite_fundamental': {
+            'name': 'Overall Fundamental Score',
+            'calculation': 'Average of available composite scores (value, quality, growth, eps)',
+            'raw_data': 'Computed from composite scores',
+            'category': 'Composite'
+        },
+    }
+
+    def __init__(self, parent, **kwargs):
+        super().__init__(parent, fg_color="transparent", **kwargs)
+
+        self.data: Dict[str, Any] = {}
+        self.results: Dict[str, Any] = {}
+        self.factor_availability: Dict[str, float] = {}
+        self._create_widgets()
+
+    def _create_widgets(self):
+        """Create view widgets."""
+        # Main scrollable container
+        main_scroll = ctk.CTkScrollableFrame(self, fg_color="transparent")
+        main_scroll.pack(fill="both", expand=True)
+
+        # Header
+        header = Theme.create_frame(main_scroll)
+        header.pack(fill="x", pady=(0, Sizes.PAD_M))
+
+        Theme.create_header(header, "Factor Documentation", size="l").pack(side="left")
+
+        Theme.create_button(
+            header, "Refresh",
+            command=self._refresh_data,
+            style="secondary",
+            width=80,
+            height=28
+        ).pack(side="right")
+
+        # Info banner
+        info_card = Theme.create_card(main_scroll)
+        info_card.pack(fill="x", pady=Sizes.PAD_S)
+
+        info_content = Theme.create_frame(info_card)
+        info_content.pack(fill="x", padx=Sizes.PAD_M, pady=Sizes.PAD_M)
+
+        Theme.create_label(
+            info_content,
+            "This tab shows how each factor is calculated, what raw data is required, "
+            "and the availability of that data in your dataset.",
+            font=Fonts.BODY_S,
+            text_color=Colors.TEXT_SECONDARY,
+            wraplength=800
+        ).pack(anchor="w")
+
+        # Filter options
+        filter_frame = Theme.create_frame(main_scroll)
+        filter_frame.pack(fill="x", pady=Sizes.PAD_S)
+
+        Theme.create_label(filter_frame, "Filter by category:", font=Fonts.LABEL).pack(side="left")
+
+        self.category_var = ctk.StringVar(value="All")
+        categories = ["All", "EPS Fundamentals", "Value", "Quality", "Growth",
+                     "Technical - Momentum", "Technical - Trend", "Technical - Volatility",
+                     "Technical - Volume", "Insider", "Options", "Regime", "Composite"]
+
+        self.category_menu = ctk.CTkOptionMenu(
+            filter_frame,
+            variable=self.category_var,
+            values=categories,
+            command=self._on_category_change,
+            width=200,
+            fg_color=Colors.SURFACE,
+            button_color=Colors.PRIMARY,
+            button_hover_color=Colors.PRIMARY_HOVER
+        )
+        self.category_menu.pack(side="left", padx=Sizes.PAD_S)
+
+        # Factor table container
+        self.table_container = Theme.create_frame(main_scroll)
+        self.table_container.pack(fill="both", expand=True, pady=Sizes.PAD_S)
+
+        # Create the factor table
+        self._create_factor_table()
+
+    def _create_factor_table(self, category_filter: str = "All"):
+        """Create or recreate the factor documentation table."""
+        # Clear existing content
+        for widget in self.table_container.winfo_children():
+            widget.destroy()
+
+        # Table header
+        header_frame = Theme.create_card(self.table_container)
+        header_frame.pack(fill="x", pady=(0, Sizes.PAD_XS))
+
+        header_content = Theme.create_frame(header_frame)
+        header_content.pack(fill="x", padx=Sizes.PAD_S, pady=Sizes.PAD_S)
+        header_content.grid_columnconfigure(0, weight=1, minsize=150)
+        header_content.grid_columnconfigure(1, weight=2, minsize=250)
+        header_content.grid_columnconfigure(2, weight=2, minsize=200)
+        header_content.grid_columnconfigure(3, weight=0, minsize=100)
+
+        Theme.create_label(header_content, "Factor", font=Fonts.LABEL_BOLD).grid(
+            row=0, column=0, sticky="w", padx=Sizes.PAD_XS)
+        Theme.create_label(header_content, "Calculation Method", font=Fonts.LABEL_BOLD).grid(
+            row=0, column=1, sticky="w", padx=Sizes.PAD_XS)
+        Theme.create_label(header_content, "Raw Data Source", font=Fonts.LABEL_BOLD).grid(
+            row=0, column=2, sticky="w", padx=Sizes.PAD_XS)
+        Theme.create_label(header_content, "Availability", font=Fonts.LABEL_BOLD).grid(
+            row=0, column=3, sticky="w", padx=Sizes.PAD_XS)
+
+        # Group factors by category
+        factors_by_category: Dict[str, List[tuple]] = {}
+        for factor_key, doc in self.FACTOR_DOCS.items():
+            category = doc['category']
+            if category_filter != "All" and category != category_filter:
+                continue
+            if category not in factors_by_category:
+                factors_by_category[category] = []
+            factors_by_category[category].append((factor_key, doc))
+
+        # Display factors grouped by category
+        for category in sorted(factors_by_category.keys()):
+            factors = factors_by_category[category]
+
+            # Category header
+            cat_header = Theme.create_frame(self.table_container)
+            cat_header.pack(fill="x", pady=(Sizes.PAD_M, Sizes.PAD_XS))
+
+            Theme.create_label(
+                cat_header, category,
+                font=Fonts.HEADER_S,
+                text_color=Colors.PRIMARY
+            ).pack(side="left")
+
+            # Category count
+            Theme.create_label(
+                cat_header, f"({len(factors)} factors)",
+                font=Fonts.BODY_XS,
+                text_color=Colors.TEXT_MUTED
+            ).pack(side="left", padx=Sizes.PAD_S)
+
+            # Factor rows
+            for factor_key, doc in sorted(factors, key=lambda x: x[1]['name']):
+                self._create_factor_row(factor_key, doc)
+
+    def _create_factor_row(self, factor_key: str, doc: Dict[str, str]):
+        """Create a single factor documentation row."""
+        row_card = Theme.create_card(self.table_container)
+        row_card.pack(fill="x", pady=1)
+
+        row_content = Theme.create_frame(row_card)
+        row_content.pack(fill="x", padx=Sizes.PAD_S, pady=Sizes.PAD_S)
+        row_content.grid_columnconfigure(0, weight=1, minsize=150)
+        row_content.grid_columnconfigure(1, weight=2, minsize=250)
+        row_content.grid_columnconfigure(2, weight=2, minsize=200)
+        row_content.grid_columnconfigure(3, weight=0, minsize=100)
+
+        # Factor name
+        Theme.create_label(
+            row_content, doc['name'],
+            font=Fonts.LABEL_BOLD,
+            text_color=Colors.TEXT_PRIMARY
+        ).grid(row=0, column=0, sticky="w", padx=Sizes.PAD_XS)
+
+        # Calculation method
+        Theme.create_label(
+            row_content, doc['calculation'],
+            font=Fonts.BODY_XS,
+            text_color=Colors.TEXT_SECONDARY,
+            wraplength=250
+        ).grid(row=0, column=1, sticky="w", padx=Sizes.PAD_XS)
+
+        # Raw data source
+        Theme.create_label(
+            row_content, doc['raw_data'],
+            font=Fonts.BODY_XS,
+            text_color=Colors.TEXT_SECONDARY,
+            wraplength=200
+        ).grid(row=0, column=2, sticky="w", padx=Sizes.PAD_XS)
+
+        # Availability - check if we have data for this factor
+        availability = self._get_factor_availability(factor_key)
+        avail_color = self._get_availability_color(availability)
+
+        avail_frame = Theme.create_frame(row_content)
+        avail_frame.grid(row=0, column=3, sticky="w", padx=Sizes.PAD_XS)
+
+        if availability is not None:
+            # Show percentage
+            Theme.create_label(
+                avail_frame, f"{availability:.1f}%",
+                font=Fonts.LABEL_BOLD,
+                text_color=avail_color
+            ).pack(side="left")
+
+            # Mini progress bar
+            bar_frame = ctk.CTkFrame(avail_frame, fg_color=Colors.BG_DARK, height=6, width=50, corner_radius=3)
+            bar_frame.pack(side="left", padx=Sizes.PAD_XS)
+            bar_frame.pack_propagate(False)
+
+            fill_width = max(1, int(50 * availability / 100))
+            fill_bar = ctk.CTkFrame(bar_frame, fg_color=avail_color, height=6, width=fill_width, corner_radius=3)
+            fill_bar.place(x=0, y=0)
+        else:
+            Theme.create_label(
+                avail_frame, "N/A",
+                font=Fonts.BODY_XS,
+                text_color=Colors.TEXT_MUTED
+            ).pack(side="left")
+
+    def _get_factor_availability(self, factor_key: str) -> Optional[float]:
+        """Get the availability percentage for a factor."""
+        # Check if we have pre-computed availability
+        if factor_key in self.factor_availability:
+            return self.factor_availability[factor_key]
+
+        # Try to match factor key to column in results data
+        if self.results and 'factor_data' in self.results:
+            factor_df = self.results['factor_data']
+            if isinstance(factor_df, pd.DataFrame):
+                # Try various column name patterns
+                patterns = [
+                    factor_key,
+                    factor_key.replace('_', ''),
+                    factor_key.lower(),
+                ]
+                for pattern in patterns:
+                    for col in factor_df.columns:
+                        if pattern in col.lower() or col.lower() in pattern:
+                            non_null = factor_df[col].notna().sum()
+                            total = len(factor_df)
+                            if total > 0:
+                                availability = (non_null / total) * 100
+                                self.factor_availability[factor_key] = availability
+                                return availability
+
+        return None
+
+    def _get_availability_color(self, availability: Optional[float]) -> str:
+        """Get color based on availability percentage."""
+        if availability is None:
+            return Colors.TEXT_MUTED
+        if availability >= 80:
+            return Colors.SUCCESS
+        if availability >= 50:
+            return Colors.WARNING
+        if availability >= 20:
+            return Colors.ERROR
+        return Colors.TEXT_MUTED
+
+    def _on_category_change(self, category: str):
+        """Handle category filter change."""
+        self._create_factor_table(category)
+
+    def set_data(self, data: Dict[str, Any]):
+        """Set the data for this view."""
+        self.data = data
+        self._compute_availability()
+        self._refresh_data()
+
+    def set_results(self, results: Dict[str, Any]):
+        """Set the analysis results for this view."""
+        self.results = results
+        self._compute_availability()
+        self._refresh_data()
+
+    def _compute_availability(self):
+        """Compute factor availability from data."""
+        self.factor_availability = {}
+
+        # Get factor data from results
+        if self.results:
+            if 'factor_data' in self.results:
+                factor_df = self.results['factor_data']
+            elif 'trades_with_factors' in self.results:
+                factor_df = self.results['trades_with_factors']
+            else:
+                factor_df = None
+
+            if isinstance(factor_df, pd.DataFrame) and len(factor_df) > 0:
+                total = len(factor_df)
+                for col in factor_df.columns:
+                    non_null = factor_df[col].notna().sum()
+                    availability = (non_null / total) * 100
+                    # Map column to factor key
+                    col_lower = col.lower()
+                    self.factor_availability[col_lower] = availability
+                    self.factor_availability[col] = availability
+
+        # Also check raw data sources
+        if self.data:
+            # Check fundamental data
+            fund_data = self.data.get('fundamental_data')
+            if isinstance(fund_data, pd.DataFrame) and len(fund_data) > 0:
+                total = len(fund_data)
+                for col in fund_data.columns:
+                    non_null = fund_data[col].notna().sum()
+                    availability = (non_null / total) * 100
+                    self.factor_availability[f'fund_{col.lower()}'] = availability
+
+            # Check price data (technical factors usually have high availability)
+            price_data = self.data.get('price_data')
+            if isinstance(price_data, pd.DataFrame) and len(price_data) > 0:
+                # Technical factors derived from price data
+                for factor in ['rsi', 'macd', 'sma', 'ema', 'adx', 'atr', 'bollinger', 'obv', 'vwap']:
+                    self.factor_availability[factor] = 95.0  # Usually high availability
+
+    def _refresh_data(self):
+        """Refresh the display."""
+        self._create_factor_table(self.category_var.get())
+
+
 class ExportView(ctk.CTkFrame):
     """View for exporting analysis results."""
 
@@ -1828,6 +2446,7 @@ class FactorAnalysisDashboard:
 
     VIEWS = [
         {"id": "summary", "label": "Data Summary"},
+        {"id": "factor_docs", "label": "Factor Documentation"},
         {"id": "tier1", "label": "Tier 1 Analysis"},
         {"id": "tier2", "label": "Tier 2 Analysis"},
         {"id": "tier3", "label": "Tier 3 Analysis"},
@@ -1931,6 +2550,7 @@ class FactorAnalysisDashboard:
 
         # Create views
         self.views["summary"] = DataSummaryView(self.view_container)
+        self.views["factor_docs"] = FactorDocumentationView(self.view_container)
         self.views["tier1"] = Tier1View(self.view_container)
         self.views["tier2"] = Tier2View(self.view_container)
         self.views["tier3"] = Tier3View(self.view_container)
@@ -1984,6 +2604,10 @@ class FactorAnalysisDashboard:
             if self.config:
                 self.views['summary'].set_config(self.config)
             self.views['summary'].set_data(self.data)
+
+        # Also update factor documentation view with raw data
+        if 'factor_docs' in self.views:
+            self.views['factor_docs'].set_data(self.data)
 
     def _run_analysis(self):
         """Run the factor analysis."""
@@ -2415,6 +3039,11 @@ class FactorAnalysisDashboard:
 
         if 'scenarios' in self.results:
             self.views['scenarios'].update_results({'scenarios': self.results['scenarios']})
+
+        # Update factor documentation view with data and results
+        if 'factor_docs' in self.views:
+            self.views['factor_docs'].set_data(self.data)
+            self.views['factor_docs'].set_results(self.results)
 
         self.status_label.configure(text="Analysis complete", text_color=Colors.SUCCESS)
         self._log_audit("Analysis completed successfully")
