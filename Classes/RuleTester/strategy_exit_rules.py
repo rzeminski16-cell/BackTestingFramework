@@ -354,38 +354,10 @@ class StrategyExitRuleEvaluator:
 def register_default_strategies():
     """Register the default strategy exit configurations."""
 
-    # AlphaTrend Strategy
+    # Base AlphaTrend Strategy
     alphatrend_config = StrategyExitConfig(
-        strategy_name="AlphaTrendStrategy",
-        display_name="Alpha Trend Strategy",
-        trade_direction="LONG",
-        required_indicators=['ema_50', 'atr_14'],
-        exit_rules=[
-            # Stop Loss - ATR based
-            StrategyExitRule(
-                rule_type=ExitRuleType.STOP_LOSS_ATR,
-                params={'atr_column': 'atr_14', 'multiple': 2.5},
-                description="Stop Loss: Entry - (ATR14 × 2.5)",
-                grace_period_bars=0,
-                momentum_protection=False
-            ),
-            # EMA Exit - with grace period and momentum protection
-            StrategyExitRule(
-                rule_type=ExitRuleType.INDICATOR_CROSS,
-                params={'indicator': 'ema_50', 'direction': 'below'},
-                description="Exit when Close < EMA(50)",
-                grace_period_bars=14,  # Default grace period
-                momentum_protection=True,
-                momentum_gain_pct=2.0  # Default momentum threshold
-            ),
-        ]
-    )
-    StrategyExitRulesRegistry.register(alphatrend_config)
-
-    # Random Base Strategy
-    random_config = StrategyExitConfig(
-        strategy_name="RandomBaseStrategy",
-        display_name="Random Base Strategy",
+        strategy_name="BaseAlphaTrendStrategy",
+        display_name="Base Alpha Trend Strategy",
         trade_direction="LONG",
         required_indicators=['atr_14'],
         exit_rules=[
@@ -397,6 +369,27 @@ def register_default_strategies():
                 grace_period_bars=0,
                 momentum_protection=False
             ),
+            # Time-based exit - max_hold_days (handled by max_position_duration)
+        ]
+    )
+    StrategyExitRulesRegistry.register(alphatrend_config)
+
+    # Random Control Strategy
+    random_config = StrategyExitConfig(
+        strategy_name="RandomControlStrategy",
+        display_name="Random Control Strategy",
+        trade_direction="LONG",
+        required_indicators=['atr_14'],
+        exit_rules=[
+            # Stop Loss - ATR based
+            StrategyExitRule(
+                rule_type=ExitRuleType.STOP_LOSS_ATR,
+                params={'atr_column': 'atr_14', 'multiple': 2.0},
+                description="Stop Loss: Entry - (ATR14 × 2.0)",
+                grace_period_bars=0,
+                momentum_protection=False
+            ),
+            # Random exit (handled by strategy itself)
         ]
     )
     StrategyExitRulesRegistry.register(random_config)
