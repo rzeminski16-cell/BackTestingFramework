@@ -1559,13 +1559,6 @@ class FactorDocumentationView(ctk.CTkFrame):
             'column': 'estimated_eps',
             'category': 'EPS Fundamentals'
         },
-        'eps_earnings_growth': {
-            'name': 'Earnings Growth',
-            'calculation': '(Current EPS - Prior Year EPS) / |Prior Year EPS| × 100',
-            'raw_data': 'fundamental_data.csv',
-            'column': 'reported_eps (calculated YoY)',
-            'category': 'EPS Fundamentals'
-        },
         'eps_earnings_surprise': {
             'name': 'Earnings Surprise',
             'calculation': 'Actual EPS - Estimated EPS',
@@ -1575,9 +1568,9 @@ class FactorDocumentationView(ctk.CTkFrame):
         },
         'eps_earnings_surprise_pct': {
             'name': 'Earnings Surprise %',
-            'calculation': '(Actual EPS - Estimated EPS) / |Estimated EPS| × 100',
+            'calculation': 'Percentage surprise from analyst estimates',
             'raw_data': 'fundamental_data.csv',
-            'column': 'earnings_surprise (calculated %)',
+            'column': 'surprise_pct',
             'category': 'EPS Fundamentals'
         },
         # Value Factors
@@ -2237,8 +2230,7 @@ class FactorDocumentationView(ctk.CTkFrame):
                     'eps_eps': 'reported_eps',
                     'eps_estimated_eps': 'estimated_eps',
                     'eps_earnings_surprise': 'earnings_surprise',
-                    'eps_earnings_growth': 'reported_eps',  # Calculated from this
-                    'eps_earnings_surprise_pct': 'earnings_surprise',  # Calculated from this
+                    'eps_earnings_surprise_pct': 'surprise_pct',
                 }
 
                 for factor_key, col_name in eps_columns.items():
@@ -2354,6 +2346,45 @@ class FactorDocumentationView(ctk.CTkFrame):
                     self.factor_availability['options_put_call_ratio'] = 100.0
                 else:
                     print(f"[WARNING] Columns 'put_volume' and/or 'call_volume' not found in options_data")
+
+        # Compute composite factor availability based on their source factors
+        self._compute_composite_availability()
+
+    def _compute_composite_availability(self):
+        """Compute availability for composite factors based on their source factors."""
+        # EPS composite - based on EPS factors
+        eps_factors = ['eps_eps', 'eps_estimated_eps', 'eps_earnings_surprise', 'eps_earnings_surprise_pct']
+        eps_avails = [self.factor_availability.get(f, 0) for f in eps_factors]
+        if any(a > 0 for a in eps_avails):
+            self.factor_availability['composite_eps'] = sum(eps_avails) / len(eps_avails)
+
+        # Value composite - based on value factors
+        value_factors = ['value_pe_ratio', 'value_price_to_book', 'value_price_to_sales',
+                        'value_peg_ratio', 'value_dividend_yield', 'value_ev_to_ebitda']
+        value_avails = [self.factor_availability.get(f, 0) for f in value_factors]
+        if any(a > 0 for a in value_avails):
+            self.factor_availability['composite_value'] = sum(value_avails) / len(value_avails)
+
+        # Quality composite - based on quality factors
+        quality_factors = ['quality_return_on_equity', 'quality_return_on_assets',
+                          'quality_profit_margin', 'quality_operating_margin',
+                          'quality_current_ratio', 'quality_debt_to_equity']
+        quality_avails = [self.factor_availability.get(f, 0) for f in quality_factors]
+        if any(a > 0 for a in quality_avails):
+            self.factor_availability['composite_quality'] = sum(quality_avails) / len(quality_avails)
+
+        # Growth composite - based on growth factors
+        growth_factors = ['growth_revenue_growth', 'growth_earnings_growth',
+                         'growth_earnings_surprise', 'growth_earnings_surprise_pct']
+        growth_avails = [self.factor_availability.get(f, 0) for f in growth_factors]
+        if any(a > 0 for a in growth_avails):
+            self.factor_availability['composite_growth'] = sum(growth_avails) / len(growth_avails)
+
+        # Overall fundamental composite - based on other composites
+        fund_composites = ['composite_eps', 'composite_value', 'composite_quality', 'composite_growth']
+        fund_avails = [self.factor_availability.get(f, 0) for f in fund_composites]
+        if any(a > 0 for a in fund_avails):
+            self.factor_availability['composite_fundamental'] = sum(fund_avails) / len([a for a in fund_avails if a > 0])
 
     def _refresh_data(self):
         """Refresh the display."""

@@ -61,13 +61,12 @@ class FundamentalFactors:
 
     # EPS-related factors only - use when fundamental data is mostly missing
     # These factors focus on earnings per share and earnings surprise data
-    # Column names: reported_eps, estimated_eps, earnings_surprise
+    # Column names: reported_eps, estimated_eps, earnings_surprise, surprise_pct
     EPS_FACTORS = {
         'eps': {'source': 'reported_eps', 'lower_better': False},
         'estimated_eps': {'source': 'estimated_eps', 'lower_better': False},
-        'earnings_growth': {'source': 'reported_eps', 'lower_better': False, 'derived': 'yoy_growth'},
         'earnings_surprise': {'source': 'earnings_surprise', 'lower_better': False},
-        'earnings_surprise_pct': {'source': 'earnings_surprise', 'lower_better': False, 'derived': 'pct'},
+        'earnings_surprise_pct': {'source': 'surprise_pct', 'lower_better': False},
     }
 
     def __init__(self, logger: Optional[AuditLogger] = None):
@@ -174,11 +173,14 @@ class FundamentalFactors:
 
         factors_df = pd.DataFrame(results)
 
+        # Get all factor column names (exclude _trade_idx)
+        all_factor_cols = [c for c in factors_df.columns if c != '_trade_idx']
+
         # Count factors by category
-        value_count = len([c for c in factors_df.columns if c.startswith('value_')])
-        quality_count = len([c for c in factors_df.columns if c.startswith('quality_')])
-        growth_count = len([c for c in factors_df.columns if c.startswith('growth_')])
-        eps_count = len([c for c in factors_df.columns if c.startswith('eps_')])
+        value_count = len([c for c in all_factor_cols if c.startswith('value_')])
+        quality_count = len([c for c in all_factor_cols if c.startswith('quality_')])
+        growth_count = len([c for c in all_factor_cols if c.startswith('growth_')])
+        eps_count = len([c for c in all_factor_cols if c.startswith('eps_')])
 
         result = FundamentalFactorResult(
             value_factors=value_count,
@@ -186,7 +188,7 @@ class FundamentalFactors:
             growth_factors=growth_count + eps_count,  # EPS factors are growth-related
             trades_with_data=trades_with_data,
             total_trades=len(trades_df),
-            factor_names=list(factors_to_compute.keys())
+            factor_names=all_factor_cols
         )
 
         if self.logger:
@@ -360,7 +362,8 @@ class FundamentalFactors:
         for col in result_df.columns:
             if col != '_trade_idx' and col not in trades_df.columns:
                 if '_trade_idx' in result_df.columns:
-                    trades_df[col] = result_df.set_index('_trade_idx')[col]
+                    # Reset trades_df index to match _trade_idx
+                    trades_df[col] = result_df.set_index('_trade_idx')[col].reindex(trades_df.index).values
                 else:
                     trades_df[col] = result_df[col].values
 
