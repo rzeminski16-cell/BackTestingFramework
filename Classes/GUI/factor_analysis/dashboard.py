@@ -2373,18 +2373,19 @@ class FactorDocumentationView(ctk.CTkFrame):
         if any(a > 0 for a in quality_avails):
             self.factor_availability['composite_quality'] = sum(quality_avails) / len(quality_avails)
 
-        # Growth composite - based on growth factors
+        # Growth composite - based on growth factors (only if traditional growth factors exist)
         growth_factors = ['growth_revenue_growth', 'growth_earnings_growth',
                          'growth_earnings_surprise', 'growth_earnings_surprise_pct']
         growth_avails = [self.factor_availability.get(f, 0) for f in growth_factors]
         if any(a > 0 for a in growth_avails):
-            self.factor_availability['composite_growth'] = sum(growth_avails) / len(growth_avails)
+            self.factor_availability['composite_growth'] = sum(a for a in growth_avails if a > 0) / max(1, len([a for a in growth_avails if a > 0]))
 
-        # Overall fundamental composite - based on other composites
+        # Overall fundamental composite - based on available composites
         fund_composites = ['composite_eps', 'composite_value', 'composite_quality', 'composite_growth']
         fund_avails = [self.factor_availability.get(f, 0) for f in fund_composites]
-        if any(a > 0 for a in fund_avails):
-            self.factor_availability['composite_fundamental'] = sum(fund_avails) / len([a for a in fund_avails if a > 0])
+        available_fund_avails = [a for a in fund_avails if a > 0]
+        if available_fund_avails:
+            self.factor_availability['composite_fundamental'] = sum(available_fund_avails) / len(available_fund_avails)
 
     def _refresh_data(self):
         """Refresh the display."""
@@ -2989,8 +2990,37 @@ class FactorAnalysisDashboard:
             factor_types = {}
             factor_details = {}
 
-            # Extract point-biserial correlations
-            if 'point_biserial' in tier1:
+            # Extract Pearson correlations (primary)
+            if 'correlations_pearson' in tier1:
+                for corr in tier1['correlations_pearson']:
+                    factor_name = corr.factor if hasattr(corr, 'factor') else corr.get('factor', 'Unknown')
+                    correlation = corr.correlation if hasattr(corr, 'correlation') else corr.get('correlation', 0)
+                    p_val = corr.p_value if hasattr(corr, 'p_value') else corr.get('p_value', 1)
+
+                    correlations[factor_name] = correlation
+                    p_values[factor_name] = p_val
+                    # Determine factor type from name
+                    if factor_name.startswith('eps_'):
+                        factor_types[factor_name] = 'EPS Fundamentals'
+                    elif factor_name.startswith('value_'):
+                        factor_types[factor_name] = 'Value'
+                    elif factor_name.startswith('quality_'):
+                        factor_types[factor_name] = 'Quality'
+                    elif factor_name.startswith('growth_'):
+                        factor_types[factor_name] = 'Growth'
+                    elif factor_name.startswith('insider_'):
+                        factor_types[factor_name] = 'Insider'
+                    elif factor_name.startswith('options_'):
+                        factor_types[factor_name] = 'Options'
+                    elif factor_name.startswith('regime_'):
+                        factor_types[factor_name] = 'Regime'
+                    elif factor_name.startswith('composite_'):
+                        factor_types[factor_name] = 'Composite'
+                    else:
+                        factor_types[factor_name] = 'Technical'
+
+            # Fallback to point-biserial if available
+            elif 'point_biserial' in tier1:
                 for corr in tier1['point_biserial']:
                     factor_name = corr.factor if hasattr(corr, 'factor') else corr.get('factor', 'Unknown')
                     correlation = corr.correlation if hasattr(corr, 'correlation') else corr.get('correlation', 0)
@@ -2998,22 +3028,46 @@ class FactorAnalysisDashboard:
 
                     correlations[factor_name] = correlation
                     p_values[factor_name] = p_val
-                    factor_types[factor_name] = 'Technical'  # Default type
+                    factor_types[factor_name] = 'Technical'
 
-            # Extract descriptive stats
+            # Extract descriptive stats (returned as DataFrame)
             if 'descriptive_stats' in tier1:
-                for factor_name, stats in tier1['descriptive_stats'].items():
-                    factor_details[factor_name] = {
-                        'mean': stats.get('mean', 0),
-                        'std': stats.get('std', 0),
-                        'min': stats.get('min', 0),
-                        'max': stats.get('max', 0),
-                        'skewness': stats.get('skewness', 0),
-                        'kurtosis': stats.get('kurtosis', 0),
-                        'good_mean': stats.get('good_mean', 0),
-                        'bad_mean': stats.get('bad_mean', 0),
-                        'mean_diff': stats.get('mean_diff', 0),
-                    }
+                desc_stats = tier1['descriptive_stats']
+                if isinstance(desc_stats, pd.DataFrame) and len(desc_stats) > 0:
+                    # Group by factor and aggregate stats
+                    for factor_name in desc_stats['factor'].unique():
+                        factor_data = desc_stats[desc_stats['factor'] == factor_name]
+                        overall_mean = factor_data['mean'].mean()
+                        overall_std = factor_data['std'].mean()
+                        good_row = factor_data[factor_data['class'] == 'Good']
+                        bad_row = factor_data[factor_data['class'] == 'Bad']
+                        good_mean = good_row['mean'].values[0] if len(good_row) > 0 else overall_mean
+                        bad_mean = bad_row['mean'].values[0] if len(bad_row) > 0 else overall_mean
+                        factor_details[factor_name] = {
+                            'mean': overall_mean,
+                            'std': overall_std,
+                            'min': factor_data['min'].min(),
+                            'max': factor_data['max'].max(),
+                            'skewness': factor_data['skewness'].mean(),
+                            'kurtosis': factor_data['kurtosis'].mean(),
+                            'good_mean': good_mean,
+                            'bad_mean': bad_mean,
+                            'mean_diff': good_mean - bad_mean,
+                        }
+                elif isinstance(desc_stats, dict):
+                    # Handle dict format (fallback)
+                    for factor_name, stats in desc_stats.items():
+                        factor_details[factor_name] = {
+                            'mean': stats.get('mean', 0),
+                            'std': stats.get('std', 0),
+                            'min': stats.get('min', 0),
+                            'max': stats.get('max', 0),
+                            'skewness': stats.get('skewness', 0),
+                            'kurtosis': stats.get('kurtosis', 0),
+                            'good_mean': stats.get('good_mean', 0),
+                            'bad_mean': stats.get('bad_mean', 0),
+                            'mean_diff': stats.get('mean_diff', 0),
+                        }
 
             results['tier1'] = {
                 'correlations': correlations,
