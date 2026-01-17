@@ -2091,6 +2091,7 @@ class FactorDocumentationView(ctk.CTkFrame):
 
         # Availability - check if we have data for this factor
         availability = self._get_factor_availability(factor_key)
+        warning = self._get_missing_column_warning(factor_key)
         avail_color = self._get_availability_color(availability)
 
         avail_frame = Theme.create_frame(row_content)
@@ -2112,7 +2113,21 @@ class FactorDocumentationView(ctk.CTkFrame):
             fill_width = max(1, int(50 * availability / 100))
             fill_bar = ctk.CTkFrame(bar_frame, fg_color=avail_color, height=6, width=fill_width, corner_radius=3)
             fill_bar.place(x=0, y=0)
+        elif warning:
+            # Show warning for missing column
+            Theme.create_label(
+                avail_frame, "Missing",
+                font=Fonts.BODY_XS,
+                text_color=Colors.ERROR
+            ).pack(side="left")
+            # Add tooltip-like indicator
+            Theme.create_label(
+                avail_frame, "!",
+                font=Fonts.LABEL_BOLD,
+                text_color=Colors.ERROR
+            ).pack(side="left", padx=2)
         else:
+            # No data loaded yet
             Theme.create_label(
                 avail_frame, "N/A",
                 font=Fonts.BODY_XS,
@@ -2145,6 +2160,16 @@ class FactorDocumentationView(ctk.CTkFrame):
                                 self.factor_availability[factor_key] = availability
                                 return availability
 
+        # Check if column is in missing_columns (warning case)
+        if hasattr(self, 'missing_columns') and factor_key in self.missing_columns:
+            return None  # Return None to show "N/A" with warning
+
+        return None
+
+    def _get_missing_column_warning(self, factor_key: str) -> Optional[str]:
+        """Get warning message if column is missing for a factor."""
+        if hasattr(self, 'missing_columns') and factor_key in self.missing_columns:
+            return self.missing_columns[factor_key]
         return None
 
     def _get_availability_color(self, availability: Optional[float]) -> str:
@@ -2178,6 +2203,7 @@ class FactorDocumentationView(ctk.CTkFrame):
     def _compute_availability(self):
         """Compute factor availability from data."""
         self.factor_availability = {}
+        self.missing_columns = {}  # Track missing columns for warnings
 
         # Get factor data from results
         if self.results:
@@ -2200,26 +2226,72 @@ class FactorDocumentationView(ctk.CTkFrame):
 
         # Also check raw data sources
         if self.data:
-            # Check fundamental data
+            # Check fundamental data for specific EPS columns
             fund_data = self.data.get('fundamental_data')
             if isinstance(fund_data, pd.DataFrame) and len(fund_data) > 0:
                 total = len(fund_data)
+                fund_cols = [c.lower() for c in fund_data.columns]
+
+                # EPS-related columns to check
+                eps_columns = {
+                    'eps_eps': 'reported_eps',
+                    'eps_estimated_eps': 'estimated_eps',
+                    'eps_earnings_surprise': 'earnings_surprise',
+                    'eps_earnings_growth': 'reported_eps',  # Calculated from this
+                    'eps_earnings_surprise_pct': 'earnings_surprise',  # Calculated from this
+                }
+
+                for factor_key, col_name in eps_columns.items():
+                    col_lower = col_name.lower()
+                    if col_lower in fund_cols:
+                        # Find actual column name (case-insensitive)
+                        actual_col = None
+                        for c in fund_data.columns:
+                            if c.lower() == col_lower:
+                                actual_col = c
+                                break
+                        if actual_col:
+                            non_null = fund_data[actual_col].notna().sum()
+                            availability = (non_null / total) * 100
+                            self.factor_availability[factor_key] = availability
+                    else:
+                        # Column not found - add warning
+                        self.missing_columns[factor_key] = f"Column '{col_name}' not found in fundamental_data"
+                        print(f"[WARNING] Factor '{factor_key}': Column '{col_name}' not found in fundamental_data.csv")
+
+                # Store all fundamental columns availability
                 for col in fund_data.columns:
                     non_null = fund_data[col].notna().sum()
                     availability = (non_null / total) * 100
                     self.factor_availability[f'fund_{col.lower()}'] = availability
+                    self.factor_availability[col.lower()] = availability
 
-            # Check price data (technical factors usually have high availability)
+            # Check price data (technical factors)
             price_data = self.data.get('price_data')
             if isinstance(price_data, pd.DataFrame) and len(price_data) > 0:
                 # Calculate actual availability based on required columns
                 total = len(price_data)
+                price_cols = [c.lower() for c in price_data.columns]
 
-                # Check availability of key price columns
-                close_avail = (price_data['close'].notna().sum() / total * 100) if 'close' in price_data.columns else 0
-                high_avail = (price_data['high'].notna().sum() / total * 100) if 'high' in price_data.columns else 0
-                low_avail = (price_data['low'].notna().sum() / total * 100) if 'low' in price_data.columns else 0
-                volume_avail = (price_data['volume'].notna().sum() / total * 100) if 'volume' in price_data.columns else 0
+                # Check availability of key price columns with warnings
+                def get_col_avail(col_name):
+                    col_lower = col_name.lower()
+                    if col_lower in price_cols:
+                        # Find actual column name
+                        actual_col = None
+                        for c in price_data.columns:
+                            if c.lower() == col_lower:
+                                actual_col = c
+                                break
+                        if actual_col:
+                            return (price_data[actual_col].notna().sum() / total * 100)
+                    print(f"[WARNING] Column '{col_name}' not found in price_data.csv")
+                    return 0
+
+                close_avail = get_col_avail('close')
+                high_avail = get_col_avail('high')
+                low_avail = get_col_avail('low')
+                volume_avail = get_col_avail('volume')
 
                 # Technical factors that only need close price
                 close_only_factors = ['rsi', 'macd', 'macd_signal', 'macd_hist', 'sma', 'ema', 'bollinger']
@@ -2228,19 +2300,60 @@ class FactorDocumentationView(ctk.CTkFrame):
 
                 # Technical factors that need high, low, close
                 hlc_factors = ['adx', 'atr', 'stochastic', 'cci']
-                hlc_avail = min(high_avail, low_avail, close_avail)
+                hlc_avail = min(high_avail, low_avail, close_avail) if all([high_avail, low_avail, close_avail]) else 0
                 for factor in hlc_factors:
                     self.factor_availability[factor] = hlc_avail
 
                 # Technical factors that need high, low, close, volume
                 hlcv_factors = ['obv', 'vwap', 'mfi']
-                hlcv_avail = min(high_avail, low_avail, close_avail, volume_avail)
+                hlcv_avail = min(high_avail, low_avail, close_avail, volume_avail) if all([high_avail, low_avail, close_avail, volume_avail]) else 0
                 for factor in hlcv_factors:
                     self.factor_availability[factor] = hlcv_avail
 
                 # Regime factors (derived from price data)
                 self.factor_availability['regime_volatility'] = close_avail
                 self.factor_availability['regime_trend'] = hlc_avail
+
+            # Check insider data
+            insider_data = self.data.get('insider_data')
+            if isinstance(insider_data, pd.DataFrame) and len(insider_data) > 0:
+                total = len(insider_data)
+                insider_cols = [c.lower() for c in insider_data.columns]
+
+                # Required columns for insider factors
+                required_insider_cols = ['date', 'symbol', 'transaction_type', 'shares']
+                all_present = all(col in insider_cols for col in required_insider_cols)
+
+                if all_present:
+                    # All insider factors have same availability
+                    insider_factors = ['insider_buy_count', 'insider_sell_count', 'insider_net_shares',
+                                      'insider_score', 'insider_buy_sell_ratio']
+                    for factor in insider_factors:
+                        self.factor_availability[factor] = 100.0
+                else:
+                    missing = [col for col in required_insider_cols if col not in insider_cols]
+                    print(f"[WARNING] Insider data missing columns: {missing}")
+
+            # Check options data
+            options_data = self.data.get('options_data')
+            if isinstance(options_data, pd.DataFrame) and len(options_data) > 0:
+                total = len(options_data)
+                options_cols = [c.lower() for c in options_data.columns]
+
+                if 'implied_volatility' in options_cols:
+                    for c in options_data.columns:
+                        if c.lower() == 'implied_volatility':
+                            non_null = options_data[c].notna().sum()
+                            self.factor_availability['options_implied_volatility'] = (non_null / total) * 100
+                            self.factor_availability['options_iv_percentile'] = (non_null / total) * 100
+                            break
+                else:
+                    print(f"[WARNING] Column 'implied_volatility' not found in options_data")
+
+                if 'put_volume' in options_cols and 'call_volume' in options_cols:
+                    self.factor_availability['options_put_call_ratio'] = 100.0
+                else:
+                    print(f"[WARNING] Columns 'put_volume' and/or 'call_volume' not found in options_data")
 
     def _refresh_data(self):
         """Refresh the display."""

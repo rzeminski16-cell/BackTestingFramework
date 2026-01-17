@@ -265,50 +265,67 @@ class FundamentalFactors:
         if weights is None:
             weights = {}
 
+        # Helper function to safely compute mean across columns
+        def safe_mean(data, cols):
+            """Compute row-wise mean, handling single column case."""
+            if len(cols) == 0:
+                return None
+            if len(cols) == 1:
+                return data[cols[0]]
+            return data[cols].mean(axis=1)
+
         # Value composite
         value_cols = [c for c in df.columns if c.startswith('value_') and pd.api.types.is_numeric_dtype(df[c])]
         if value_cols:
             # Normalize each factor (z-score)
             value_normalized = df[value_cols].apply(lambda x: (x - x.mean()) / x.std() if x.std() > 0 else 0)
+            if isinstance(value_normalized, pd.Series):
+                value_normalized = value_normalized.to_frame()
             # Some factors are "lower is better" - invert them
             for col in value_cols:
                 factor_name = col.replace('value_', '')
                 if factor_name in self.VALUE_FACTORS and self.VALUE_FACTORS[factor_name].get('lower_better'):
                     value_normalized[col] = -value_normalized[col]
-            df['composite_value'] = value_normalized.mean(axis=1)
+            df['composite_value'] = safe_mean(value_normalized, value_cols)
 
         # Quality composite
         quality_cols = [c for c in df.columns if c.startswith('quality_') and pd.api.types.is_numeric_dtype(df[c])]
         if quality_cols:
             quality_normalized = df[quality_cols].apply(lambda x: (x - x.mean()) / x.std() if x.std() > 0 else 0)
+            if isinstance(quality_normalized, pd.Series):
+                quality_normalized = quality_normalized.to_frame()
             for col in quality_cols:
                 factor_name = col.replace('quality_', '')
                 if factor_name in self.QUALITY_FACTORS and self.QUALITY_FACTORS[factor_name].get('lower_better'):
                     quality_normalized[col] = -quality_normalized[col]
-            df['composite_quality'] = quality_normalized.mean(axis=1)
+            df['composite_quality'] = safe_mean(quality_normalized, quality_cols)
 
         # Growth composite
         growth_cols = [c for c in df.columns if c.startswith('growth_') and pd.api.types.is_numeric_dtype(df[c])]
         if growth_cols:
             growth_normalized = df[growth_cols].apply(lambda x: (x - x.mean()) / x.std() if x.std() > 0 else 0)
-            df['composite_growth'] = growth_normalized.mean(axis=1)
+            if isinstance(growth_normalized, pd.Series):
+                growth_normalized = growth_normalized.to_frame()
+            df['composite_growth'] = safe_mean(growth_normalized, growth_cols)
 
         # EPS composite (for eps_only mode)
         eps_cols = [c for c in df.columns if c.startswith('eps_') and pd.api.types.is_numeric_dtype(df[c])]
         if eps_cols:
             eps_normalized = df[eps_cols].apply(lambda x: (x - x.mean()) / x.std() if x.std() > 0 else 0)
+            if isinstance(eps_normalized, pd.Series):
+                eps_normalized = eps_normalized.to_frame()
             # Apply lower_better inversions for EPS factors
             for col in eps_cols:
                 factor_name = col.replace('eps_', '')
                 if factor_name in self.EPS_FACTORS and self.EPS_FACTORS[factor_name].get('lower_better'):
                     eps_normalized[col] = -eps_normalized[col]
-            df['composite_eps'] = eps_normalized.mean(axis=1)
+            df['composite_eps'] = safe_mean(eps_normalized, eps_cols)
 
         # Overall fundamental score
         composite_cols = ['composite_value', 'composite_quality', 'composite_growth', 'composite_eps']
         available_composites = [c for c in composite_cols if c in df.columns]
         if available_composites:
-            df['composite_fundamental'] = df[available_composites].mean(axis=1)
+            df['composite_fundamental'] = safe_mean(df, available_composites)
 
         return df
 
