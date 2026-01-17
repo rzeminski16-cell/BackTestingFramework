@@ -1542,315 +1542,365 @@ class ScenarioView(ctk.CTkFrame):
 class FactorDocumentationView(ctk.CTkFrame):
     """View displaying factor documentation: calculations, raw data sources, and availability."""
 
-    # Factor documentation: name -> (calculation method, raw data source, category)
+    # Factor documentation: name -> (calculation method, raw data source with exact column, category)
     FACTOR_DOCS = {
         # EPS Factors (default for fundamental analysis)
         'eps_eps': {
             'name': 'EPS',
             'calculation': 'Direct value from earnings report: Net Income / Shares Outstanding',
-            'raw_data': 'Quarterly/Annual earnings reports (eps field)',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'eps',
             'category': 'EPS Fundamentals'
         },
         'eps_estimated_eps': {
             'name': 'Estimated EPS',
             'calculation': 'Analyst consensus estimate for upcoming earnings',
-            'raw_data': 'Analyst estimates data (estimated_eps field)',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'estimated_eps',
             'category': 'EPS Fundamentals'
         },
         'eps_earnings_growth': {
             'name': 'Earnings Growth',
             'calculation': '(Current EPS - Prior Year EPS) / |Prior Year EPS| × 100',
-            'raw_data': 'Year-over-year earnings data (earnings_growth_yoy field)',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'earnings_growth_yoy',
             'category': 'EPS Fundamentals'
         },
         'eps_earnings_surprise': {
             'name': 'Earnings Surprise',
             'calculation': 'Actual EPS - Estimated EPS',
-            'raw_data': 'Earnings reports + analyst estimates (earnings_surprise field)',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'earnings_surprise',
             'category': 'EPS Fundamentals'
         },
         'eps_earnings_surprise_pct': {
             'name': 'Earnings Surprise %',
             'calculation': '(Actual EPS - Estimated EPS) / |Estimated EPS| × 100',
-            'raw_data': 'Earnings reports + analyst estimates (surprise_pct field)',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'surprise_pct',
             'category': 'EPS Fundamentals'
         },
         # Value Factors
         'value_pe_ratio': {
             'name': 'P/E Ratio',
             'calculation': 'Stock Price / Earnings Per Share (TTM)',
-            'raw_data': 'Price data + earnings reports (pe_ratio field)',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'pe_ratio',
             'category': 'Value'
         },
         'value_price_to_book': {
             'name': 'Price to Book',
             'calculation': 'Market Cap / Total Book Value',
-            'raw_data': 'Price data + balance sheet (price_to_book field)',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'price_to_book',
             'category': 'Value'
         },
         'value_price_to_sales': {
             'name': 'Price to Sales',
             'calculation': 'Market Cap / Revenue (TTM)',
-            'raw_data': 'Price data + income statement (price_to_sales_ttm field)',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'price_to_sales_ttm',
             'category': 'Value'
         },
         'value_peg_ratio': {
             'name': 'PEG Ratio',
             'calculation': 'P/E Ratio / Earnings Growth Rate',
-            'raw_data': 'P/E data + growth estimates (peg_ratio field)',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'peg_ratio',
             'category': 'Value'
         },
         'value_dividend_yield': {
             'name': 'Dividend Yield',
             'calculation': 'Annual Dividends Per Share / Stock Price × 100',
-            'raw_data': 'Dividend data + price data (dividend_yield field)',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'dividend_yield',
             'category': 'Value'
         },
         'value_ev_to_ebitda': {
             'name': 'EV/EBITDA',
             'calculation': 'Enterprise Value / EBITDA',
-            'raw_data': 'Market data + financials (ev_to_ebitda field)',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'ev_to_ebitda',
             'category': 'Value'
         },
         # Quality Factors
         'quality_return_on_equity': {
             'name': 'Return on Equity',
             'calculation': 'Net Income / Shareholders Equity × 100',
-            'raw_data': 'Income statement + balance sheet (return_on_equity_ttm field)',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'return_on_equity_ttm',
             'category': 'Quality'
         },
         'quality_return_on_assets': {
             'name': 'Return on Assets',
             'calculation': 'Net Income / Total Assets × 100',
-            'raw_data': 'Income statement + balance sheet (return_on_assets_ttm field)',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'return_on_assets_ttm',
             'category': 'Quality'
         },
         'quality_profit_margin': {
             'name': 'Profit Margin',
             'calculation': 'Net Income / Revenue × 100',
-            'raw_data': 'Income statement (profit_margin field)',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'profit_margin',
             'category': 'Quality'
         },
         'quality_operating_margin': {
             'name': 'Operating Margin',
             'calculation': 'Operating Income / Revenue × 100',
-            'raw_data': 'Income statement (operating_margin_ttm field)',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'operating_margin_ttm',
             'category': 'Quality'
         },
         'quality_current_ratio': {
             'name': 'Current Ratio',
             'calculation': 'Current Assets / Current Liabilities',
-            'raw_data': 'Balance sheet (currentratio field)',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'currentratio',
             'category': 'Quality'
         },
         'quality_debt_to_equity': {
             'name': 'Debt to Equity',
             'calculation': 'Total Liabilities / Shareholders Equity',
-            'raw_data': 'Balance sheet (debt_to_equity field)',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'debt_to_equity',
             'category': 'Quality'
         },
         # Growth Factors
         'growth_revenue_growth': {
             'name': 'Revenue Growth',
             'calculation': '(Current Revenue - Prior Year Revenue) / |Prior Year Revenue| × 100',
-            'raw_data': 'Year-over-year revenue data (revenue_growth_yoy field)',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'revenue_growth_yoy',
             'category': 'Growth'
         },
         'growth_earnings_growth': {
             'name': 'Earnings Growth',
             'calculation': '(Current EPS - Prior Year EPS) / |Prior Year EPS| × 100',
-            'raw_data': 'Year-over-year earnings data (earnings_growth_yoy field)',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'earnings_growth_yoy',
             'category': 'Growth'
         },
         'growth_earnings_surprise': {
             'name': 'Earnings Surprise',
             'calculation': 'Actual EPS - Estimated EPS',
-            'raw_data': 'Earnings reports + analyst estimates (earnings_surprise field)',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'earnings_surprise',
             'category': 'Growth'
         },
         'growth_earnings_surprise_pct': {
             'name': 'Earnings Surprise %',
             'calculation': '(Actual EPS - Estimated EPS) / |Estimated EPS| × 100',
-            'raw_data': 'Earnings reports + analyst estimates (surprise_pct field)',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'surprise_pct',
             'category': 'Growth'
         },
         # Technical Factors
         'rsi': {
             'name': 'RSI (Relative Strength Index)',
             'calculation': '100 - (100 / (1 + RS)), where RS = Avg Gain / Avg Loss over N periods',
-            'raw_data': 'Price data (close prices)',
+            'raw_data': 'price_data.csv',
+            'column': 'close',
             'category': 'Technical - Momentum'
         },
         'macd': {
             'name': 'MACD',
             'calculation': '12-period EMA - 26-period EMA',
-            'raw_data': 'Price data (close prices)',
+            'raw_data': 'price_data.csv',
+            'column': 'close',
             'category': 'Technical - Trend'
         },
         'macd_signal': {
             'name': 'MACD Signal',
             'calculation': '9-period EMA of MACD line',
-            'raw_data': 'Price data (close prices)',
+            'raw_data': 'price_data.csv',
+            'column': 'close',
             'category': 'Technical - Trend'
         },
         'macd_hist': {
             'name': 'MACD Histogram',
             'calculation': 'MACD - Signal Line',
-            'raw_data': 'Price data (close prices)',
+            'raw_data': 'price_data.csv',
+            'column': 'close',
             'category': 'Technical - Trend'
         },
         'sma': {
             'name': 'SMA (Simple Moving Average)',
             'calculation': 'Sum of closing prices over N periods / N',
-            'raw_data': 'Price data (close prices)',
+            'raw_data': 'price_data.csv',
+            'column': 'close',
             'category': 'Technical - Trend'
         },
         'ema': {
             'name': 'EMA (Exponential Moving Average)',
             'calculation': 'Weighted average with exponential decay, more weight on recent prices',
-            'raw_data': 'Price data (close prices)',
+            'raw_data': 'price_data.csv',
+            'column': 'close',
             'category': 'Technical - Trend'
         },
         'adx': {
             'name': 'ADX (Average Directional Index)',
             'calculation': 'Smoothed average of DX = |+DI - -DI| / (+DI + -DI) × 100',
-            'raw_data': 'Price data (high, low, close)',
+            'raw_data': 'price_data.csv',
+            'column': 'high, low, close',
             'category': 'Technical - Trend'
         },
         'atr': {
             'name': 'ATR (Average True Range)',
             'calculation': 'Average of True Range over N periods. TR = max(H-L, |H-Prev Close|, |L-Prev Close|)',
-            'raw_data': 'Price data (high, low, close)',
+            'raw_data': 'price_data.csv',
+            'column': 'high, low, close',
             'category': 'Technical - Volatility'
         },
         'bollinger': {
             'name': 'Bollinger Bands',
             'calculation': 'Middle: SMA(N), Upper: SMA + K×StdDev, Lower: SMA - K×StdDev',
-            'raw_data': 'Price data (close prices)',
+            'raw_data': 'price_data.csv',
+            'column': 'close',
             'category': 'Technical - Volatility'
         },
         'obv': {
             'name': 'OBV (On-Balance Volume)',
             'calculation': 'Cumulative sum: +Volume if close > prev close, -Volume if close < prev close',
-            'raw_data': 'Price data (close) + Volume data',
+            'raw_data': 'price_data.csv',
+            'column': 'close, volume',
             'category': 'Technical - Volume'
         },
         'vwap': {
             'name': 'VWAP (Volume Weighted Avg Price)',
             'calculation': 'Sum(Price × Volume) / Sum(Volume)',
-            'raw_data': 'Price data (typical price) + Volume data',
+            'raw_data': 'price_data.csv',
+            'column': 'high, low, close, volume',
             'category': 'Technical - Volume'
         },
         'stochastic': {
             'name': 'Stochastic Oscillator',
             'calculation': '%K = (Close - Lowest Low) / (Highest High - Lowest Low) × 100',
-            'raw_data': 'Price data (high, low, close)',
+            'raw_data': 'price_data.csv',
+            'column': 'high, low, close',
             'category': 'Technical - Momentum'
         },
         'cci': {
             'name': 'CCI (Commodity Channel Index)',
             'calculation': '(Typical Price - SMA) / (0.015 × Mean Deviation)',
-            'raw_data': 'Price data (high, low, close)',
+            'raw_data': 'price_data.csv',
+            'column': 'high, low, close',
             'category': 'Technical - Momentum'
         },
         'mfi': {
             'name': 'MFI (Money Flow Index)',
             'calculation': '100 - (100 / (1 + Money Ratio)), Money Ratio = Positive MF / Negative MF',
-            'raw_data': 'Price data (typical price) + Volume data',
+            'raw_data': 'price_data.csv',
+            'column': 'high, low, close, volume',
             'category': 'Technical - Volume'
         },
         # Insider Factors
         'insider_buy_count': {
             'name': 'Insider Buy Count',
             'calculation': 'Count of insider purchase transactions in lookback window',
-            'raw_data': 'Insider transaction filings (SEC Form 4)',
+            'raw_data': 'insider_data.csv',
+            'column': 'transaction_type, shares',
             'category': 'Insider'
         },
         'insider_sell_count': {
             'name': 'Insider Sell Count',
             'calculation': 'Count of insider sale transactions in lookback window',
-            'raw_data': 'Insider transaction filings (SEC Form 4)',
+            'raw_data': 'insider_data.csv',
+            'column': 'transaction_type, shares',
             'category': 'Insider'
         },
         'insider_net_shares': {
             'name': 'Insider Net Shares',
             'calculation': 'Total shares bought - Total shares sold in lookback window',
-            'raw_data': 'Insider transaction filings (SEC Form 4)',
+            'raw_data': 'insider_data.csv',
+            'column': 'transaction_type, shares',
             'category': 'Insider'
         },
         'insider_score': {
             'name': 'Insider Score',
             'calculation': 'Composite score based on transaction size, frequency, and insider role',
-            'raw_data': 'Insider transaction filings (SEC Form 4)',
+            'raw_data': 'insider_data.csv',
+            'column': 'transaction_type, shares, insider_title',
             'category': 'Insider'
         },
         'insider_buy_sell_ratio': {
             'name': 'Buy/Sell Ratio',
             'calculation': 'Buy Count / (Sell Count + 1)',
-            'raw_data': 'Insider transaction filings (SEC Form 4)',
+            'raw_data': 'insider_data.csv',
+            'column': 'transaction_type',
             'category': 'Insider'
         },
         # Options Factors
         'options_implied_volatility': {
             'name': 'Implied Volatility',
             'calculation': 'Volatility implied by option prices using Black-Scholes model',
-            'raw_data': 'Options chain data (option prices, strikes, expiries)',
+            'raw_data': 'options_data.csv',
+            'column': 'implied_volatility',
             'category': 'Options'
         },
         'options_put_call_ratio': {
             'name': 'Put/Call Ratio',
             'calculation': 'Put Volume / Call Volume',
-            'raw_data': 'Options volume data',
+            'raw_data': 'options_data.csv',
+            'column': 'put_volume, call_volume',
             'category': 'Options'
         },
         'options_iv_percentile': {
             'name': 'IV Percentile',
             'calculation': '% of days in past year with lower IV than current IV',
-            'raw_data': 'Historical implied volatility data',
+            'raw_data': 'options_data.csv',
+            'column': 'implied_volatility (historical)',
             'category': 'Options'
         },
         # Regime Factors
         'regime_volatility': {
             'name': 'Volatility Regime',
             'calculation': 'Classification based on realized volatility vs historical distribution',
-            'raw_data': 'Price data (returns for volatility calculation)',
+            'raw_data': 'price_data.csv',
+            'column': 'close (for returns calculation)',
             'category': 'Regime'
         },
         'regime_trend': {
             'name': 'Trend Regime',
             'calculation': 'Classification based on price vs moving averages and ADX',
-            'raw_data': 'Price data (close prices)',
+            'raw_data': 'price_data.csv',
+            'column': 'close, high, low',
             'category': 'Regime'
         },
         # Composite Scores
         'composite_eps': {
             'name': 'Composite EPS Score',
             'calculation': 'Z-score normalized average of all EPS factors',
-            'raw_data': 'Computed from: eps, estimated_eps, earnings_growth, earnings_surprise',
+            'raw_data': 'Derived from fundamental_data.csv',
+            'column': 'eps, estimated_eps, earnings_growth_yoy, earnings_surprise, surprise_pct',
             'category': 'Composite'
         },
         'composite_value': {
             'name': 'Composite Value Score',
             'calculation': 'Z-score normalized average of value factors (lower=better inverted)',
-            'raw_data': 'Computed from: pe_ratio, price_to_book, price_to_sales, peg_ratio, etc.',
+            'raw_data': 'Derived from fundamental_data.csv',
+            'column': 'pe_ratio, price_to_book, price_to_sales_ttm, peg_ratio, dividend_yield, ev_to_ebitda',
             'category': 'Composite'
         },
         'composite_quality': {
             'name': 'Composite Quality Score',
             'calculation': 'Z-score normalized average of quality factors',
-            'raw_data': 'Computed from: roe, roa, profit_margin, current_ratio, etc.',
+            'raw_data': 'Derived from fundamental_data.csv',
+            'column': 'return_on_equity_ttm, return_on_assets_ttm, profit_margin, operating_margin_ttm, currentratio, debt_to_equity',
             'category': 'Composite'
         },
         'composite_growth': {
             'name': 'Composite Growth Score',
             'calculation': 'Z-score normalized average of growth factors',
-            'raw_data': 'Computed from: revenue_growth, earnings_growth, earnings_surprise',
+            'raw_data': 'Derived from fundamental_data.csv',
+            'column': 'revenue_growth_yoy, earnings_growth_yoy, earnings_surprise, surprise_pct',
             'category': 'Composite'
         },
         'composite_fundamental': {
             'name': 'Overall Fundamental Score',
             'calculation': 'Average of available composite scores (value, quality, growth, eps)',
-            'raw_data': 'Computed from composite scores',
+            'raw_data': 'Derived from composite scores',
+            'column': 'composite_value, composite_quality, composite_growth, composite_eps',
             'category': 'Composite'
         },
     }
@@ -1941,19 +1991,22 @@ class FactorDocumentationView(ctk.CTkFrame):
 
         header_content = Theme.create_frame(header_frame)
         header_content.pack(fill="x", padx=Sizes.PAD_S, pady=Sizes.PAD_S)
-        header_content.grid_columnconfigure(0, weight=1, minsize=150)
-        header_content.grid_columnconfigure(1, weight=2, minsize=250)
-        header_content.grid_columnconfigure(2, weight=2, minsize=200)
-        header_content.grid_columnconfigure(3, weight=0, minsize=100)
+        header_content.grid_columnconfigure(0, weight=1, minsize=120)
+        header_content.grid_columnconfigure(1, weight=2, minsize=200)
+        header_content.grid_columnconfigure(2, weight=1, minsize=120)
+        header_content.grid_columnconfigure(3, weight=1, minsize=150)
+        header_content.grid_columnconfigure(4, weight=0, minsize=100)
 
         Theme.create_label(header_content, "Factor", font=Fonts.LABEL_BOLD).grid(
             row=0, column=0, sticky="w", padx=Sizes.PAD_XS)
         Theme.create_label(header_content, "Calculation Method", font=Fonts.LABEL_BOLD).grid(
             row=0, column=1, sticky="w", padx=Sizes.PAD_XS)
-        Theme.create_label(header_content, "Raw Data Source", font=Fonts.LABEL_BOLD).grid(
+        Theme.create_label(header_content, "Data Source", font=Fonts.LABEL_BOLD).grid(
             row=0, column=2, sticky="w", padx=Sizes.PAD_XS)
-        Theme.create_label(header_content, "Availability", font=Fonts.LABEL_BOLD).grid(
+        Theme.create_label(header_content, "Column Name(s)", font=Fonts.LABEL_BOLD).grid(
             row=0, column=3, sticky="w", padx=Sizes.PAD_XS)
+        Theme.create_label(header_content, "Availability", font=Fonts.LABEL_BOLD).grid(
+            row=0, column=4, sticky="w", padx=Sizes.PAD_XS)
 
         # Group factors by category
         factors_by_category: Dict[str, List[tuple]] = {}
@@ -1997,10 +2050,11 @@ class FactorDocumentationView(ctk.CTkFrame):
 
         row_content = Theme.create_frame(row_card)
         row_content.pack(fill="x", padx=Sizes.PAD_S, pady=Sizes.PAD_S)
-        row_content.grid_columnconfigure(0, weight=1, minsize=150)
-        row_content.grid_columnconfigure(1, weight=2, minsize=250)
-        row_content.grid_columnconfigure(2, weight=2, minsize=200)
-        row_content.grid_columnconfigure(3, weight=0, minsize=100)
+        row_content.grid_columnconfigure(0, weight=1, minsize=120)
+        row_content.grid_columnconfigure(1, weight=2, minsize=200)
+        row_content.grid_columnconfigure(2, weight=1, minsize=120)
+        row_content.grid_columnconfigure(3, weight=1, minsize=150)
+        row_content.grid_columnconfigure(4, weight=0, minsize=100)
 
         # Factor name
         Theme.create_label(
@@ -2014,23 +2068,32 @@ class FactorDocumentationView(ctk.CTkFrame):
             row_content, doc['calculation'],
             font=Fonts.BODY_XS,
             text_color=Colors.TEXT_SECONDARY,
-            wraplength=250
+            wraplength=200
         ).grid(row=0, column=1, sticky="w", padx=Sizes.PAD_XS)
 
-        # Raw data source
+        # Raw data source (file name)
         Theme.create_label(
             row_content, doc['raw_data'],
             font=Fonts.BODY_XS,
             text_color=Colors.TEXT_SECONDARY,
-            wraplength=200
+            wraplength=120
         ).grid(row=0, column=2, sticky="w", padx=Sizes.PAD_XS)
+
+        # Column name(s) - exact column names used
+        column_name = doc.get('column', 'N/A')
+        Theme.create_label(
+            row_content, column_name,
+            font=Fonts.MONO if column_name != 'N/A' else Fonts.BODY_XS,
+            text_color=Colors.PRIMARY if column_name != 'N/A' else Colors.TEXT_MUTED,
+            wraplength=150
+        ).grid(row=0, column=3, sticky="w", padx=Sizes.PAD_XS)
 
         # Availability - check if we have data for this factor
         availability = self._get_factor_availability(factor_key)
         avail_color = self._get_availability_color(availability)
 
         avail_frame = Theme.create_frame(row_content)
-        avail_frame.grid(row=0, column=3, sticky="w", padx=Sizes.PAD_XS)
+        avail_frame.grid(row=0, column=4, sticky="w", padx=Sizes.PAD_XS)
 
         if availability is not None:
             # Show percentage
