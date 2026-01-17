@@ -548,14 +548,14 @@ class RuleEngine:
         Apply exit rules to recalculate exit points for a given trades DataFrame.
 
         Exit logic (AND):
-        - Exit when (Original Strategy Exit Rules) AND (User-Defined Rules) are ALL satisfied
-        - If no strategy is set, only user-defined rules are checked
-        - If no user-defined rules, only strategy rules are checked
-        - Scans from entry+1 to end of data to find first bar where all conditions met
+        - User-defined rules are ADDITIONAL conditions on top of the original exit
+        - Exit when (Original Exit Conditions) AND (User-Defined Rules) are ALL satisfied
+        - Since user rules are extra conditions, exits can only be on original date OR LATER
+        - Scans from original exit date forward to find first bar where user rules are met
 
         Args:
             trades_df: DataFrame of trades to process
-            rules: List of user-defined rules
+            rules: List of user-defined rules (additional conditions)
 
         Returns:
             DataFrame with recalculated exit points and P/L
@@ -588,62 +588,38 @@ class RuleEngine:
             entry_date = pd.to_datetime(entry_date)
             original_exit_date = pd.to_datetime(original_exit_date) if original_exit_date is not None else None
 
-            # Find entry bar index
-            entry_mask = pdf['date'] <= entry_date
-            if not entry_mask.any():
+            # If no original exit date or no user rules, keep original trade
+            if original_exit_date is None or not rules:
                 result_rows.append(trade.to_dict())
                 continue
 
-            entry_bar_idx = entry_mask.sum() - 1
+            # Find original exit bar index - this is our starting point
+            # User rules are ADDITIONAL conditions, so exit can only be on original date or LATER
+            exit_mask = pdf['date'] <= original_exit_date
+            if not exit_mask.any():
+                result_rows.append(trade.to_dict())
+                continue
 
-            # For exit rules, scan to end of available data (not just original exit)
-            # This allows finding exits that might occur after original exit if rules weren't met
+            original_exit_bar_idx = exit_mask.sum() - 1
             end_bar_idx = len(pdf) - 1
 
-            # Search for first bar after entry where ALL exit rules are satisfied
+            # Search for first bar from original exit onward where ALL user rules are satisfied
             new_exit_bar_idx = None
             new_exit_date = None
             new_exit_price = None
 
-            # Make sure we have bars to check (entry+1 to end of data)
-            start_bar = entry_bar_idx + 1
-
-            for bar_idx in range(start_bar, end_bar_idx + 1):
-                # Check 1: Original strategy exit rules (if strategy is set)
-                strategy_rules_met = True
-                if self._strategy_evaluator and self._strategy_config and self._strategy_config.exit_rules:
-                    strategy_rules_met = self._strategy_evaluator.check_exit_rules_at_bar(
-                        pdf, bar_idx, entry_bar_idx, entry_price
-                    )
-
-                # Check 2: User-defined exit rules
+            # Start scanning from original exit date (not entry)
+            # Since user rules are extra conditions, we check if they're met at original exit
+            # If not, we scan forward
+            for bar_idx in range(original_exit_bar_idx, end_bar_idx + 1):
+                # Check user-defined exit rules (additional conditions)
                 user_rules_met = True
-                if rules:  # Only check if user has defined rules
-                    for rule in rules:
-                        if not self._check_exit_rule_at_bar(pdf, bar_idx, rule):
-                            user_rules_met = False
-                            break
+                for rule in rules:
+                    if not self._check_exit_rule_at_bar(pdf, bar_idx, rule):
+                        user_rules_met = False
+                        break
 
-                # AND logic: Exit when BOTH strategy rules AND user rules are satisfied
-                # If no strategy rules defined, only user rules matter
-                # If no user rules defined, only strategy rules matter
-                has_strategy_rules = self._strategy_evaluator and self._strategy_config and self._strategy_config.exit_rules
-                has_user_rules = bool(rules)
-
-                if has_strategy_rules and has_user_rules:
-                    # Both must be satisfied
-                    all_conditions_met = strategy_rules_met and user_rules_met
-                elif has_strategy_rules:
-                    # Only strategy rules
-                    all_conditions_met = strategy_rules_met
-                elif has_user_rules:
-                    # Only user rules
-                    all_conditions_met = user_rules_met
-                else:
-                    # No rules defined - use original exit
-                    all_conditions_met = False
-
-                if all_conditions_met:
+                if user_rules_met:
                     new_exit_bar_idx = bar_idx
                     new_exit_date = pdf.iloc[bar_idx]['date']
                     new_exit_price = pdf.iloc[bar_idx]['close']
@@ -728,18 +704,17 @@ class RuleEngine:
                 })
             result['per_rule'] = rule_counts
         else:
-            # Exit mode - use a lightweight preview to avoid UI freezing
-            # Only do full calculation on a sample of trades for preview
-            has_strategy_rules = self._strategy_evaluator and self._strategy_config and self._strategy_config.exit_rules
+            # Exit mode - user rules are additional conditions
+            # Exits can only be on original date or LATER (delayed exits)
             has_user_rules = bool(rules)
 
-            if not has_strategy_rules and not has_user_rules:
+            if not has_user_rules:
                 # No rules defined - quick return
                 result = {
                     'total_trades': total,
                     'passing_trades': total,
-                    'modified_exits': 0,
-                    'unmodified_exits': total,
+                    'delayed_exits': 0,
+                    'unchanged_exits': total,
                     'pass_rate': 100.0,
                     'mode': self.mode.value,
                     'is_estimate': False,
@@ -758,24 +733,24 @@ class RuleEngine:
             # Apply rules only to sample
             sample_modified = self._apply_exit_rules_to_df(sample_df, rules)
 
-            # Count modified exits in sample
-            original_exits = sample_df['exit_date'].values
-            new_exits = sample_modified['exit_date'].values
-            sample_modified_count = sum(1 for i in range(len(original_exits))
+            # Count delayed exits in sample (exits that are later than original)
+            original_exits = pd.to_datetime(sample_df['exit_date'].values)
+            new_exits = pd.to_datetime(sample_modified['exit_date'].values)
+            sample_delayed_count = sum(1 for i in range(len(original_exits))
                                if not pd.isna(original_exits[i]) and not pd.isna(new_exits[i])
-                               and original_exits[i] != new_exits[i])
+                               and new_exits[i] > original_exits[i])
 
             # Estimate for full dataset
             if is_estimate and len(sample_df) > 0:
-                estimated_modified = int((sample_modified_count / len(sample_df)) * total)
+                estimated_delayed = int((sample_delayed_count / len(sample_df)) * total)
             else:
-                estimated_modified = sample_modified_count
+                estimated_delayed = sample_delayed_count
 
             result = {
                 'total_trades': total,
                 'passing_trades': total,  # All trades kept in exit mode
-                'modified_exits': estimated_modified,
-                'unmodified_exits': total - estimated_modified,
+                'delayed_exits': estimated_delayed,
+                'unchanged_exits': total - estimated_delayed,
                 'pass_rate': 100.0,  # All trades pass in exit mode
                 'mode': self.mode.value,
                 'is_estimate': is_estimate,

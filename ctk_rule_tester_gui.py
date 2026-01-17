@@ -1209,10 +1209,10 @@ class CTkRuleTesterGUI:
                 text=f"Preview ({mode}): {passing} of {total} trades pass ({pct:.1f}%)"
             )
         else:
-            # Exit mode - show modified exits count
-            modified = preview.get('modified_exits', 0)
+            # Exit mode - show delayed exits count (exits that are later due to extra conditions)
+            delayed = preview.get('delayed_exits', 0)
             self.preview_label.configure(
-                text=f"Preview ({mode}): {modified} of {total} trades would have earlier exits"
+                text=f"Preview ({mode}): {delayed} of {total} trades would have delayed exits"
             )
 
     def _build_rules_from_widgets(self):
@@ -1286,6 +1286,7 @@ class CTkRuleTesterGUI:
         # Show progress bar and disable button
         self._show_progress("Applying rules...")
         self.apply_rules_btn.configure(state="disabled")
+        self.root.update()  # Force UI update to show progress bar
 
         # Run calculation in background thread
         def calculate_thread():
