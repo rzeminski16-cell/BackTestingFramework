@@ -28,6 +28,7 @@ from Classes.RuleTester import (
     StrategyExitRulesRegistry
 )
 from Classes.FactorAnalysis.data.trade_log_loader import TradeLogLoader
+from Classes.Config.strategy_preset import StrategyParameterPreset
 
 # Try to import plotting libraries
 try:
@@ -149,6 +150,10 @@ class CTkRuleTesterGUI:
         self.strategy_frame = Theme.create_frame(main_frame)
         # Don't pack initially - will be shown when Exit mode is selected
 
+        # Initialize preset manager
+        self.preset_manager = StrategyParameterPreset()
+        self._selected_preset_params: Dict[str, Any] = {}
+
         ctk.CTkLabel(
             self.strategy_frame,
             text="Original Strategy:",
@@ -168,18 +173,37 @@ class CTkRuleTesterGUI:
             values=display_names,
             variable=self.strategy_var,
             command=self._on_strategy_changed,
-            width=250,
+            width=200,
             font=Fonts.BODY_M
         )
-        self.strategy_menu.pack(side="left", padx=(0, Sizes.PAD_M))
+        self.strategy_menu.pack(side="left", padx=(0, Sizes.PAD_S))
 
-        # Strategy description
+        # Parameter preset selector
+        ctk.CTkLabel(
+            self.strategy_frame,
+            text="Parameters:",
+            font=Fonts.BODY_M,
+            text_color=Colors.TEXT_PRIMARY
+        ).pack(side="left", padx=(0, Sizes.PAD_S))
+
+        self.preset_var = ctk.StringVar(value="")
+        self.preset_menu = ctk.CTkOptionMenu(
+            self.strategy_frame,
+            values=["(No presets)"],
+            variable=self.preset_var,
+            command=self._on_preset_changed,
+            width=180,
+            font=Fonts.BODY_M
+        )
+        self.preset_menu.pack(side="left", padx=(0, Sizes.PAD_M))
+
+        # Strategy/preset description
         self.strategy_desc_label = ctk.CTkLabel(
             self.strategy_frame,
             text="",
             font=Fonts.BODY_S,
             text_color=Colors.TEXT_MUTED,
-            wraplength=600
+            wraplength=500
         )
         self.strategy_desc_label.pack(side="left")
 
@@ -217,15 +241,18 @@ class CTkRuleTesterGUI:
             self.mode_desc_label.configure(text="(Rules evaluated at trade exit date)")
             # Show strategy selector for exit mode
             self.strategy_frame.pack(fill="x", pady=(0, Sizes.PAD_S), before=self.tabview)
-            # Update strategy description
+            # Initialize preset dropdown and update strategy
             self._on_strategy_changed(self.strategy_var.get())
 
         # Update rule engine mode if it exists
         if self.rule_engine:
             self.rule_engine.set_mode(self.rule_mode)
-            # Set strategy if in exit mode
+            # Set strategy and parameters if in exit mode
             if self.rule_mode == RuleMode.EXIT:
-                self._on_strategy_changed(self.strategy_var.get())
+                strategy_name = self._strategy_name_map.get(self.strategy_var.get(), self.strategy_var.get())
+                self.rule_engine.set_strategy(strategy_name)
+                if self._selected_preset_params:
+                    self.rule_engine.set_strategy_parameters(self._selected_preset_params)
             # Refresh feature list since statistics might differ
             self._populate_features_list()
 
@@ -234,19 +261,89 @@ class CTkRuleTesterGUI:
         # Get the actual strategy name from display name
         strategy_name = self._strategy_name_map.get(display_name, display_name)
 
+        # Update preset dropdown with presets for this strategy
+        self._update_preset_dropdown(strategy_name)
+
         # Update the rule engine with the selected strategy
         if self.rule_engine:
             self.rule_engine.set_strategy(strategy_name)
+            # Apply selected preset parameters if any
+            if self._selected_preset_params:
+                self.rule_engine.set_strategy_parameters(self._selected_preset_params)
 
-        # Get strategy config and show description
+        # Update description
+        self._update_strategy_description()
+
+    def _update_preset_dropdown(self, strategy_name: str):
+        """Update the preset dropdown with presets for the selected strategy."""
+        presets = self.preset_manager.list_presets(strategy_name)
+
+        if presets:
+            preset_names = [p.get("preset_name", "Unknown") for p in presets]
+            self.preset_menu.configure(values=preset_names)
+            # Select the first preset by default
+            self.preset_var.set(preset_names[0])
+            self._on_preset_changed(preset_names[0])
+        else:
+            self.preset_menu.configure(values=["(No presets)"])
+            self.preset_var.set("(No presets)")
+            self._selected_preset_params = {}
+
+    def _on_preset_changed(self, preset_name: str):
+        """Handle preset selection change."""
+        if preset_name == "(No presets)":
+            self._selected_preset_params = {}
+            self._update_strategy_description()
+            return
+
+        # Get the strategy name
+        display_name = self.strategy_var.get()
+        strategy_name = self._strategy_name_map.get(display_name, display_name)
+
+        # Load preset parameters
+        preset_data = self.preset_manager.load_preset(strategy_name, preset_name)
+        if preset_data:
+            self._selected_preset_params = preset_data.get("parameters", {})
+        else:
+            self._selected_preset_params = {}
+
+        # Update the rule engine with the selected parameters
+        if self.rule_engine:
+            self.rule_engine.set_strategy_parameters(self._selected_preset_params)
+
+        # Update description
+        self._update_strategy_description()
+
+    def _update_strategy_description(self):
+        """Update the strategy description label with current settings."""
+        display_name = self.strategy_var.get()
+        strategy_name = self._strategy_name_map.get(display_name, display_name)
         config = StrategyExitRulesRegistry.get(strategy_name)
+
         if config and config.exit_rules:
-            rules_desc = ", ".join([r.description for r in config.exit_rules[:3]])
-            if len(config.exit_rules) > 3:
-                rules_desc += f", ... (+{len(config.exit_rules) - 3} more)"
-            self.strategy_desc_label.configure(
-                text=f"Exit rules: {rules_desc}"
-            )
+            # Show key parameters from preset
+            param_parts = []
+            if self._selected_preset_params:
+                # Show exit-related parameters
+                key_params = ['grace_period_bars', 'momentum_gain_pct', 'atr_stop_loss_multiple', 'stop_loss_percent']
+                for key in key_params:
+                    if key in self._selected_preset_params:
+                        value = self._selected_preset_params[key]
+                        # Format the parameter name nicely
+                        nice_name = key.replace('_', ' ').title()
+                        param_parts.append(f"{nice_name}: {value}")
+
+            if param_parts:
+                self.strategy_desc_label.configure(
+                    text=f"Params: {', '.join(param_parts)}"
+                )
+            else:
+                rules_desc = ", ".join([r.description for r in config.exit_rules[:2]])
+                if len(config.exit_rules) > 2:
+                    rules_desc += f", +{len(config.exit_rules) - 2} more"
+                self.strategy_desc_label.configure(
+                    text=f"Exit rules: {rules_desc}"
+                )
         elif config and not config.exit_rules:
             self.strategy_desc_label.configure(
                 text="No predefined exit rules - only user-defined rules will apply"
@@ -394,10 +491,12 @@ class CTkRuleTesterGUI:
             # Initialize rule engine with current mode
             self.rule_engine = RuleEngine(self.trades_df, self.price_data_dict, self.rule_mode)
 
-            # Set strategy if in exit mode
+            # Set strategy and parameters if in exit mode
             if self.rule_mode == RuleMode.EXIT:
                 strategy_name = self._strategy_name_map.get(self.strategy_var.get(), self.strategy_var.get())
                 self.rule_engine.set_strategy(strategy_name)
+                if self._selected_preset_params:
+                    self.rule_engine.set_strategy_parameters(self._selected_preset_params)
 
             # Update summary
             self._update_data_summary(files, tickers)
