@@ -129,6 +129,7 @@ class PortfolioReportGenerator:
 
         self._create_correlation_sheet(wb, result)
         self._create_capital_allocation_sheet(wb, result)
+        self._create_stable_metrics_sheet(wb, result)
 
         if hasattr(result, 'capital_allocation_events') and result.capital_allocation_events:
             self._create_capital_events_sheet(wb, result)
@@ -750,3 +751,281 @@ class PortfolioReportGenerator:
             cell.fill = self.HEADER_FILL
             cell.font = self.HEADER_FONT
             cell.alignment = Alignment(horizontal='center')
+
+    def _create_stable_metrics_sheet(self, wb: Workbook, result):
+        """
+        Create Stable Metrics sheet with regression-based performance metrics.
+
+        Includes:
+        - Regressed Annual Return (RAR%)
+        - R² of log-equity regression
+        - RAR% Adjusted (RAR% × R²)
+        - R-Cubed metric
+        - Robust Sharpe Ratio
+        - Equity curve with regression line visualization
+        - Largest drawdowns table
+        """
+        from Classes.Core.stable_metrics import StableMetricsCalculator
+
+        ws = wb.create_sheet("Stable Metrics")
+
+        # Title
+        ws['A1'] = "STABLE PERFORMANCE METRICS"
+        ws['A1'].font = Font(bold=True, size=16)
+        ws.merge_cells('A1:E1')
+
+        row = 3
+
+        # Get portfolio equity curve
+        equity_df = result.portfolio_equity_curve
+        if equity_df is None or len(equity_df) < 2:
+            ws[f'A{row}'] = "Insufficient data for stable metrics calculation"
+            return
+
+        # Calculate stable metrics
+        stable_result = StableMetricsCalculator.calculate_all(equity_df)
+
+        # Section A: Regression Analysis
+        ws[f'A{row}'] = "A. REGRESSION ANALYSIS"
+        ws[f'A{row}'].font = Font(bold=True, size=12)
+        self._apply_header_style(ws, row, 1, 2)
+        row += 1
+
+        regression_metrics = [
+            ("Regressed Annual Return (RAR%)", f"{stable_result.rar_pct:.2f}%"),
+            ("R² (Log-Equity Regression)", f"{stable_result.r_squared:.4f}"),
+            ("RAR% Adjusted (RAR% × R²)", f"{stable_result.rar_adjusted:.2f}%"),
+            ("CAGR (Classical)", f"{stable_result.cagr:.2f}%"),
+            ("RAR% vs CAGR Difference", f"{stable_result.rar_pct - stable_result.cagr:.2f}%"),
+            ("Bars Per Year Used", str(stable_result.bars_per_year)),
+        ]
+
+        for metric, value in regression_metrics:
+            ws[f'A{row}'] = metric
+            ws[f'B{row}'] = value
+            row += 1
+
+        # R² Warning if applicable
+        if stable_result.r_squared_warning:
+            row += 1
+            ws[f'A{row}'] = "Warning:"
+            ws[f'A{row}'].font = Font(bold=True, color="9C0006")
+            ws[f'B{row}'] = stable_result.r_squared_warning
+            ws[f'B{row}'].font = Font(italic=True, color="9C0006")
+            ws.merge_cells(f'B{row}:E{row}')
+            row += 1
+
+        row += 2
+
+        # Section B: R-Cubed Analysis
+        ws[f'A{row}'] = "B. R-CUBED ANALYSIS"
+        ws[f'A{row}'].font = Font(bold=True, size=12)
+        self._apply_header_style(ws, row, 1, 2)
+        row += 1
+
+        ws[f'A{row}'] = "R-Cubed = RAR% / (Avg Max Drawdown × Length Adjustment)"
+        ws[f'A{row}'].font = Font(italic=True, size=9)
+        ws.merge_cells(f'A{row}:E{row}')
+        row += 1
+
+        r_cubed_metrics = [
+            ("R-Cubed", f"{stable_result.r_cubed:.2f}"),
+            ("Average Max Drawdown (%)", f"{stable_result.avg_max_drawdown_pct:.2f}%"),
+            ("Average Max Drawdown Length (days)", f"{stable_result.avg_max_drawdown_length_days:.1f}"),
+            ("Length Adjustment Factor", f"{stable_result.length_adjustment_factor:.4f}"),
+            ("Drawdowns Used in Calculation", str(stable_result.num_drawdowns_used)),
+        ]
+
+        for metric, value in r_cubed_metrics:
+            ws[f'A{row}'] = metric
+            ws[f'B{row}'] = value
+            row += 1
+
+        # R-Cubed interpretation
+        row += 1
+        r_cubed_val = stable_result.r_cubed
+        if r_cubed_val >= 2.0:
+            interpretation = "Excellent - Strong risk-adjusted returns with manageable drawdowns"
+            fill = self.POSITIVE_FILL
+        elif r_cubed_val >= 1.5:
+            interpretation = "Good - Solid risk/reward profile"
+            fill = self.POSITIVE_FILL
+        elif r_cubed_val >= 1.0:
+            interpretation = "Fair - Acceptable but room for improvement"
+            fill = self.NEUTRAL_FILL
+        else:
+            interpretation = "Poor - High risk relative to returns"
+            fill = self.NEGATIVE_FILL
+
+        ws[f'A{row}'] = f"R-Cubed = {r_cubed_val:.2f}: {interpretation}"
+        ws[f'A{row}'].fill = fill
+        ws.merge_cells(f'A{row}:E{row}')
+        row += 1
+
+        # Drawdown warning if applicable
+        if stable_result.drawdown_warning:
+            ws[f'A{row}'] = "Note: " + stable_result.drawdown_warning
+            ws[f'A{row}'].font = Font(italic=True, color="DAA520")
+            ws.merge_cells(f'A{row}:E{row}')
+            row += 1
+
+        row += 2
+
+        # Section C: Robust Sharpe Ratio
+        ws[f'A{row}'] = "C. ROBUST SHARPE RATIO"
+        ws[f'A{row}'].font = Font(bold=True, size=12)
+        self._apply_header_style(ws, row, 1, 2)
+        row += 1
+
+        ws[f'A{row}'] = "Robust Sharpe = RAR% / Annualized Std Dev of Monthly Returns"
+        ws[f'A{row}'].font = Font(italic=True, size=9)
+        ws.merge_cells(f'A{row}:E{row}')
+        row += 1
+
+        robust_sharpe_metrics = [
+            ("Robust Sharpe Ratio", f"{stable_result.robust_sharpe_ratio:.3f}"),
+            ("Monthly Return Std (Annualized)", f"{stable_result.monthly_return_std_annualized:.2f}%"),
+        ]
+
+        for metric, value in robust_sharpe_metrics:
+            ws[f'A{row}'] = metric
+            ws[f'B{row}'] = value
+            row += 1
+
+        # Robust Sharpe interpretation
+        row += 1
+        robust_sharpe_val = stable_result.robust_sharpe_ratio
+        if robust_sharpe_val >= 1.0:
+            interpretation = "Excellent - Strong risk-adjusted performance"
+            fill = self.POSITIVE_FILL
+        elif robust_sharpe_val >= 0.5:
+            interpretation = "Good - Acceptable risk/return trade-off"
+            fill = self.POSITIVE_FILL
+        else:
+            interpretation = "Poor - Returns do not adequately compensate for risk"
+            fill = self.NEGATIVE_FILL
+
+        ws[f'A{row}'] = f"Robust Sharpe = {robust_sharpe_val:.3f}: {interpretation}"
+        ws[f'A{row}'].fill = fill
+        ws.merge_cells(f'A{row}:E{row}')
+        row += 1
+
+        if stable_result.monthly_returns_warning:
+            ws[f'A{row}'] = "Note: " + stable_result.monthly_returns_warning
+            ws[f'A{row}'].font = Font(italic=True, color="DAA520")
+            ws.merge_cells(f'A{row}:E{row}')
+            row += 1
+
+        row += 2
+
+        # Section D: Largest Drawdowns Table
+        ws[f'A{row}'] = "D. LARGEST DRAWDOWNS (Used for R-Cubed)"
+        ws[f'A{row}'].font = Font(bold=True, size=12)
+        self._apply_header_style(ws, row, 1, 6)
+        row += 1
+
+        if stable_result.largest_drawdowns:
+            # Headers
+            headers = ["#", "Start Date", "Trough Date", "Recovery Date", "Drawdown %", "Duration (days)"]
+            for col, header in enumerate(headers, 1):
+                ws.cell(row=row, column=col, value=header)
+                self._apply_header_style(ws, row, col, col)
+            row += 1
+
+            # Data rows
+            for i, dd in enumerate(stable_result.largest_drawdowns, 1):
+                dd_dict = dd.to_dict()
+                ws.cell(row=row, column=1, value=i)
+                ws.cell(row=row, column=2, value=dd_dict['start_date'])
+                ws.cell(row=row, column=3, value=dd_dict['trough_date'])
+                ws.cell(row=row, column=4, value=dd_dict['recovery_date'])
+                ws.cell(row=row, column=5, value=dd_dict['drawdown_pct'])
+                ws.cell(row=row, column=6, value=dd.duration_days)
+
+                # Color code based on severity
+                dd_pct = dd.drawdown_pct
+                if dd_pct >= 20:
+                    ws.cell(row=row, column=5).fill = self.NEGATIVE_FILL
+                elif dd_pct >= 10:
+                    ws.cell(row=row, column=5).fill = self.NEUTRAL_FILL
+                else:
+                    ws.cell(row=row, column=5).fill = self.POSITIVE_FILL
+                row += 1
+        else:
+            ws[f'A{row}'] = "No significant drawdowns detected"
+            row += 1
+
+        row += 2
+
+        # Section E: Equity Curve with Regression Line
+        ws[f'A{row}'] = "E. EQUITY CURVE WITH REGRESSION LINE"
+        ws[f'A{row}'].font = Font(bold=True, size=12)
+        self._apply_header_style(ws, row, 1, 3)
+        row += 1
+
+        # Get regression line data
+        if 'equity' in equity_df.columns:
+            equity_values = equity_df['equity'].values
+        else:
+            equity_values = equity_df.iloc[:, 0].values
+
+        # Handle NaN values
+        valid_mask = ~np.isnan(equity_values) & (equity_values > 0)
+        if np.any(valid_mask):
+            equity_clean = equity_values[valid_mask]
+            regression_line = StableMetricsCalculator.get_regression_line_data(
+                equity_clean,
+                stable_result.regression_slope,
+                stable_result.regression_intercept
+            )
+
+            # Sample data if too large
+            max_points = 150
+            if len(equity_clean) > max_points:
+                step = len(equity_clean) // max_points
+                sample_indices = range(0, len(equity_clean), step)
+            else:
+                sample_indices = range(len(equity_clean))
+
+            # Headers for chart data
+            ws.cell(row=row, column=1, value="Bar").font = self.HEADER_FONT
+            ws.cell(row=row, column=2, value="Equity").font = self.HEADER_FONT
+            ws.cell(row=row, column=3, value="Regression Line").font = self.HEADER_FONT
+            row += 1
+
+            data_start_row = row
+            for idx in sample_indices:
+                ws.cell(row=row, column=1, value=idx + 1)
+                ws.cell(row=row, column=2, value=float(equity_clean[idx]))
+                ws.cell(row=row, column=3, value=float(regression_line[idx]))
+                row += 1
+
+            data_end_row = row - 1
+
+            # Create chart
+            if data_end_row > data_start_row:
+                chart = LineChart()
+                chart.title = f"Equity with Regression (RAR% = {stable_result.rar_pct:.2f}%, R² = {stable_result.r_squared:.4f})"
+                chart.style = 10
+                chart.x_axis.title = "Bar"
+                chart.y_axis.title = "Equity"
+                chart.width = 16
+                chart.height = 10
+
+                # Equity curve data
+                equity_data = Reference(ws, min_col=2, min_row=data_start_row - 1, max_row=data_end_row)
+                chart.add_data(equity_data, titles_from_data=True)
+
+                # Regression line data
+                reg_data = Reference(ws, min_col=3, min_row=data_start_row - 1, max_row=data_end_row)
+                chart.add_data(reg_data, titles_from_data=True)
+
+                ws.add_chart(chart, f"E{data_start_row - 1}")
+
+        # Format column widths
+        ws.column_dimensions['A'].width = 35
+        ws.column_dimensions['B'].width = 25
+        ws.column_dimensions['C'].width = 18
+        ws.column_dimensions['D'].width = 18
+        ws.column_dimensions['E'].width = 15
+        ws.column_dimensions['F'].width = 18

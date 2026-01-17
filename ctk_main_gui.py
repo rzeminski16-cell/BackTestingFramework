@@ -166,7 +166,7 @@ class CTkMainLauncher(ctk.CTk):
         cards_frame = ctk.CTkFrame(main_frame, fg_color="transparent")
         cards_frame.pack(fill="both", expand=True)
 
-        # Configure grid columns to be equal width
+        # Configure grid columns to be equal width (3 columns, 3 rows for 8 features)
         cards_frame.grid_columnconfigure(0, weight=1)
         cards_frame.grid_columnconfigure(1, weight=1)
         cards_frame.grid_columnconfigure(2, weight=1)
@@ -217,6 +217,12 @@ class CTkMainLauncher(ctk.CTk):
                 "description": "Interactive exploration of AlphaTrend indicator parameters and signals",
                 "icon": "\U0001F4C8",  # Chart with upward trend
                 "command": self._launch_alphatrend_explorer
+            },
+            {
+                "title": "Rule Tester",
+                "description": "Test how entry/exit rules affect strategy performance with lookback support",
+                "icon": "\U0001F50D",  # Magnifying glass
+                "command": self._launch_rule_tester
             }
         ]
 
@@ -295,6 +301,10 @@ class CTkMainLauncher(ctk.CTk):
             subprocess.Popen(["streamlit", "run", str(script_path)])
         else:
             self._show_error(f"AlphaTrend Explorer app not found: {script_path}")
+
+    def _launch_rule_tester(self):
+        """Launch the Rule Tester GUI."""
+        self._launch_module("rule_tester")
 
     def _show_error(self, message: str):
         """Show an error dialog."""

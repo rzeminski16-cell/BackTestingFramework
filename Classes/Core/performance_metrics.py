@@ -1263,6 +1263,93 @@ class CentralizedPerformanceMetrics:
         return cls.calculate_all_metrics(equity_curve, trades, initial_capital)
 
     # ========================================================================
+    # STABLE METRICS
+    # ========================================================================
+
+    @staticmethod
+    def calculate_stable_metrics(
+        equity_curve: Optional[pd.DataFrame] = None,
+        equity_column: str = 'equity',
+        date_column: str = 'date'
+    ):
+        """
+        Calculate stable performance metrics (RAR%, R-Cubed, Robust Sharpe).
+
+        These metrics are regression-based and provide more robust estimates
+        of underlying strategy performance.
+
+        Args:
+            equity_curve: DataFrame with equity values
+            equity_column: Name of equity column
+            date_column: Name of date column
+
+        Returns:
+            StableMetricsResult object with all stable metrics
+        """
+        from .stable_metrics import StableMetricsCalculator
+
+        if equity_curve is None or len(equity_curve) < 2:
+            from .stable_metrics import StableMetricsResult
+            return StableMetricsResult()
+
+        return StableMetricsCalculator.calculate_all(
+            equity_curve=equity_curve,
+            equity_column=equity_column,
+            date_column=date_column
+        )
+
+    @classmethod
+    def calculate_all_metrics_with_stable(
+        cls,
+        equity_curve: Optional[pd.DataFrame] = None,
+        trades: Optional[List[Any]] = None,
+        initial_capital: float = 100000.0,
+        risk_free_rate: Optional[float] = None,
+        trading_days: Optional[int] = None
+    ) -> Dict[str, Any]:
+        """
+        Calculate all metrics including stable metrics.
+
+        This combines standard metrics with stable metrics (RAR%, R-Cubed,
+        Robust Sharpe Ratio) for comprehensive performance analysis.
+
+        Args:
+            equity_curve: DataFrame with 'equity' column
+            trades: List of trade objects
+            initial_capital: Initial capital for percentage calculations
+            risk_free_rate: Annual risk-free rate (default: 3.5%)
+            trading_days: Trading days per year (default: 252)
+
+        Returns:
+            Dictionary containing all metrics including stable metrics
+        """
+        # Calculate standard metrics
+        metrics = cls.calculate_all_metrics(
+            equity_curve=equity_curve,
+            trades=trades,
+            initial_capital=initial_capital,
+            risk_free_rate=risk_free_rate,
+            trading_days=trading_days
+        )
+
+        # Calculate stable metrics
+        stable_result = cls.calculate_stable_metrics(equity_curve)
+
+        # Add stable metrics to the dictionary
+        stable_dict = stable_result.to_dict()
+        for key, value in stable_dict.items():
+            metrics[f'stable_{key}'] = value
+
+        # Also add convenience keys without prefix for common metrics
+        metrics['rar_pct'] = stable_result.rar_pct
+        metrics['r_squared'] = stable_result.r_squared
+        metrics['rar_adjusted'] = stable_result.rar_adjusted
+        metrics['r_cubed'] = stable_result.r_cubed
+        metrics['robust_sharpe_ratio'] = stable_result.robust_sharpe_ratio
+
+        return metrics
+
+    # ========================================================================
     # UTILITY METHODS
     # ========================================================================
 

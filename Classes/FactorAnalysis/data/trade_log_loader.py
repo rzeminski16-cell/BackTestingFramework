@@ -68,7 +68,7 @@ class TradeLogLoader:
         date_columns = ['entry_date', 'exit_date']
         for col in date_columns:
             if col in df.columns:
-                df[col] = pd.to_datetime(df[col], errors='coerce', dayfirst=True)
+                df[col] = pd.to_datetime(df[col], errors='coerce')
 
         # Ensure numeric columns
         numeric_columns = ['entry_price', 'exit_price', 'pl', 'pl_pct', 'quantity',
