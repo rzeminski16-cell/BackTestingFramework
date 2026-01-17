@@ -259,21 +259,30 @@ class OutlierHandlingConfig:
 class FactorEngineeringConfig:
     """Configuration for factor engineering."""
 
+    # EPS-only mode: When True, only EPS-related fundamental factors are used.
+    # This is the default because fundamental data is mostly missing for whole periods.
+    # EPS factors include: eps, estimated_eps, earnings_growth, earnings_surprise, surprise_pct
+    eps_only_fundamentals: bool = True
+
     technical: FactorCategoryConfig = field(default_factory=lambda: FactorCategoryConfig(
         enabled=True, include_all=True, normalization=NormalizationType.ZSCORE
     ))
+    # Value factors are disabled by default when eps_only_fundamentals=True
     value: FactorCategoryConfig = field(default_factory=lambda: FactorCategoryConfig(
-        enabled=True,
+        enabled=False,  # Disabled by default - most fundamental data is missing
         factors=("pe_ratio", "price_to_book", "price_to_sales_ttm", "peg_ratio", "dividend_yield"),
         normalization=NormalizationType.ZSCORE
     ))
+    # Quality factors are disabled by default when eps_only_fundamentals=True
     quality: FactorCategoryConfig = field(default_factory=lambda: FactorCategoryConfig(
-        enabled=True,
+        enabled=False,  # Disabled by default - most fundamental data is missing
         factors=("return_on_equity_ttm", "return_on_assets_ttm", "current_ratio", "debt_to_equity"),
         normalization=NormalizationType.ZSCORE
     ))
+    # Growth factors are disabled by default when eps_only_fundamentals=True
+    # (EPS-related growth factors are handled separately via eps_only mode)
     growth: FactorCategoryConfig = field(default_factory=lambda: FactorCategoryConfig(
-        enabled=True,
+        enabled=False,  # Disabled by default - use eps_only_fundamentals instead
         factors=("revenue_growth_yoy", "earnings_growth_yoy", "earnings_surprise"),
         normalization=NormalizationType.ZSCORE
     ))
@@ -296,6 +305,7 @@ class FactorEngineeringConfig:
 
     def to_dict(self) -> Dict[str, Any]:
         return {
+            "eps_only_fundamentals": self.eps_only_fundamentals,
             "categories": {
                 "technical": self.technical.to_dict(),
                 "value": self.value.to_dict(),
@@ -313,6 +323,7 @@ class FactorEngineeringConfig:
     def from_dict(cls, data: Dict[str, Any]) -> "FactorEngineeringConfig":
         categories = data.get("categories", {})
         return cls(
+            eps_only_fundamentals=data.get("eps_only_fundamentals", True),
             technical=FactorCategoryConfig.from_dict(categories.get("technical", {})),
             value=FactorCategoryConfig.from_dict(categories.get("value", {})),
             quality=FactorCategoryConfig.from_dict(categories.get("quality", {})),

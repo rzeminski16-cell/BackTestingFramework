@@ -286,18 +286,22 @@ class FactorAnalyzer:
                 )
                 factor_columns.extend(self.technical_factors.get_factor_names())
 
-            # Fundamental factors (value, quality, growth)
-            fundamental_enabled = (
+            # Fundamental factors (EPS-only by default, or value/quality/growth if enabled)
+            # EPS-only mode is used when fundamental data is mostly missing for whole periods
+            eps_only_mode = fe_config.eps_only_fundamentals
+            traditional_fundamental_enabled = (
                 fe_config.value.enabled or
                 fe_config.quality.enabled or
                 fe_config.growth.enabled
             )
+            fundamental_enabled = eps_only_mode or traditional_fundamental_enabled
+
             if fundamental_enabled and input_data.fundamental_data is not None:
                 aligned_fund = self.aligner.align_fundamentals(
                     trades_df, input_data.fundamental_data
                 )
                 trades_df = self.fundamental_factors.compute_all(
-                    trades_df, aligned_fund
+                    trades_df, aligned_fund, eps_only=eps_only_mode
                 )
                 factor_columns.extend(self.fundamental_factors.get_factor_names())
 
