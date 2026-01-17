@@ -214,7 +214,7 @@ class RuleEngine:
         price_features = self.get_price_features()
         return sorted(set(features + price_features))
 
-    def detect_feature_type(self, feature: str) -> str:
+    def detect_feature_type(self, feature: str, sample_size: int = 50) -> str:
         """
         Detect if a feature is continuous or discrete.
 
@@ -222,11 +222,12 @@ class RuleEngine:
 
         Args:
             feature: Feature name to check
+            sample_size: Number of trades to sample for faster detection
 
         Returns:
             'continuous' or 'discrete'
         """
-        values = self.get_feature_values_at_reference(feature)
+        values = self.get_feature_values_at_reference(feature, sample_size=sample_size)
 
         if values is None or len(values) == 0:
             return 'continuous'
@@ -238,29 +239,38 @@ class RuleEngine:
             return 'discrete'
         return 'continuous'
 
-    def get_feature_values_at_reference(self, feature: str) -> Optional[pd.Series]:
+    def get_feature_values_at_reference(self, feature: str, sample_size: Optional[int] = None) -> Optional[pd.Series]:
         """
         Get feature values at each trade's reference date (entry or exit based on mode).
 
         Args:
             feature: Feature name to retrieve
+            sample_size: If provided, only sample this many trades for faster response
 
         Returns:
-            Series with feature values indexed like trades_df, or None if unavailable
+            Series with feature values indexed like trades_df (or sample), or None if unavailable
         """
-        cache_key = f"{feature}_{self.mode.value}"
+        if self.trades_df is None or len(self.trades_df) == 0:
+            return None
+
+        # Determine which trades to process
+        if sample_size is not None and len(self.trades_df) > sample_size:
+            # Use sampling for faster response
+            trades_to_process = self.trades_df.sample(n=sample_size, random_state=42)
+            cache_key = f"{feature}_{self.mode.value}_sample{sample_size}"
+        else:
+            trades_to_process = self.trades_df
+            cache_key = f"{feature}_{self.mode.value}"
 
         # Check cache
         if cache_key in self._feature_cache:
             return self._feature_cache[cache_key]
 
-        if self.trades_df is None or len(self.trades_df) == 0:
-            return None
-
         date_col = self.get_reference_date_column()
         values = []
+        indices = []
 
-        for idx, trade in self.trades_df.iterrows():
+        for idx, trade in trades_to_process.iterrows():
             ref_date = trade.get(date_col)
             symbol = str(trade.get('symbol', '')).upper()
 
@@ -269,6 +279,7 @@ class RuleEngine:
 
             if pdf is None or ref_date is None or pd.isna(ref_date):
                 values.append(np.nan)
+                indices.append(idx)
                 continue
 
             # Find the row for this date (or closest prior date to avoid lookahead)
@@ -277,6 +288,7 @@ class RuleEngine:
 
             if len(matching) == 0:
                 values.append(np.nan)
+                indices.append(idx)
                 continue
 
             # Get the most recent row on or before reference date
@@ -287,22 +299,24 @@ class RuleEngine:
                 values.append(row[feature])
             else:
                 values.append(np.nan)
+            indices.append(idx)
 
-        result = pd.Series(values, index=self.trades_df.index)
+        result = pd.Series(values, index=indices)
         self._feature_cache[cache_key] = result
         return result
 
-    def get_feature_statistics(self, feature: str) -> Dict[str, Any]:
+    def get_feature_statistics(self, feature: str, sample_size: int = 100) -> Dict[str, Any]:
         """
         Get statistics for a feature.
 
         Args:
             feature: Feature name
+            sample_size: Number of trades to sample for faster statistics calculation
 
         Returns:
             Dict with min, max, mean, std, unique values (for discrete), etc.
         """
-        values = self.get_feature_values_at_reference(feature)
+        values = self.get_feature_values_at_reference(feature, sample_size=sample_size)
 
         if values is None or len(values) == 0:
             return {}
@@ -312,12 +326,13 @@ class RuleEngine:
         if len(values_clean) == 0:
             return {'error': 'All values are NaN'}
 
-        feature_type = self.detect_feature_type(feature)
+        feature_type = self.detect_feature_type(feature, sample_size=sample_size)
 
         stats = {
             'feature_type': feature_type,
             'count': len(values_clean),
             'missing': len(values) - len(values_clean),
+            'is_sampled': len(self.trades_df) > sample_size,
         }
 
         if feature_type == 'continuous':

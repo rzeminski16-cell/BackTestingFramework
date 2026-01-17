@@ -533,6 +533,27 @@ class CTkRuleTesterGUI:
             width=150
         ).pack(side="left")
 
+        # Progress bar for feature loading (hidden by default)
+        self.features_progress_frame = Theme.create_frame(btn_frame)
+        self.features_progress_frame.pack(side="right", padx=Sizes.PAD_M)
+        self.features_progress_frame.pack_forget()  # Hide initially
+
+        self.features_progress_label = ctk.CTkLabel(
+            self.features_progress_frame,
+            text="Building rule cards...",
+            font=Fonts.BODY_S,
+            text_color=Colors.TEXT_SECONDARY
+        )
+        self.features_progress_label.pack(side="left", padx=(0, Sizes.PAD_S))
+
+        self.features_progress_bar = ctk.CTkProgressBar(
+            self.features_progress_frame,
+            width=150,
+            height=12,
+            mode="indeterminate"
+        )
+        self.features_progress_bar.pack(side="left")
+
         self.continue_to_rules_btn = Theme.create_button(
             btn_frame,
             "Continue to Rule Builder ->",
@@ -609,9 +630,44 @@ class CTkRuleTesterGUI:
         self.selection_label.configure(text=f"Selected: {len(selected)} feature(s)")
 
     def _go_to_rules_tab(self):
-        """Navigate to rules tab and set up rule builders."""
-        self._setup_rule_builders()
+        """Navigate to rules tab and set up rule builders with progress feedback."""
+        # Show progress bar and disable button
+        self._show_features_progress("Building rule cards...")
+        self.continue_to_rules_btn.configure(state="disabled")
+
+        # Schedule the setup to run after a small delay to allow UI to update
+        self.root.after(50, self._setup_rule_builders_with_progress)
+
+    def _setup_rule_builders_with_progress(self):
+        """Set up rule builders with UI updates for responsiveness."""
+        try:
+            self._setup_rule_builders()
+            self._on_rule_builder_ready()
+        except Exception as e:
+            self._on_rule_builder_error(str(e))
+
+    def _show_features_progress(self, message: str = "Processing..."):
+        """Show the features progress bar with a message."""
+        self.features_progress_label.configure(text=message)
+        self.features_progress_frame.pack(side="right", padx=Sizes.PAD_M, before=self.continue_to_rules_btn)
+        self.features_progress_bar.start()
+
+    def _hide_features_progress(self):
+        """Hide the features progress bar."""
+        self.features_progress_bar.stop()
+        self.features_progress_frame.pack_forget()
+
+    def _on_rule_builder_ready(self):
+        """Called when rule builder setup completes."""
+        self._hide_features_progress()
+        self.continue_to_rules_btn.configure(state="normal")
         self.tabview.set("3. Build Rules")
+
+    def _on_rule_builder_error(self, error_msg: str):
+        """Called when rule builder setup fails."""
+        self._hide_features_progress()
+        self.continue_to_rules_btn.configure(state="normal")
+        show_error(self.root, "Error", f"Failed to build rule cards: {error_msg}")
 
     # =========================================================================
     # TAB 3: RULE BUILDER
@@ -654,6 +710,27 @@ class CTkRuleTesterGUI:
             text_color=Colors.TEXT_SECONDARY
         )
         self.preview_label.pack(side="left", padx=Sizes.PAD_XL)
+
+        # Progress bar (hidden by default)
+        self.progress_frame = Theme.create_frame(btn_frame)
+        self.progress_frame.pack(side="right", padx=Sizes.PAD_M)
+        self.progress_frame.pack_forget()  # Hide initially
+
+        self.progress_label = ctk.CTkLabel(
+            self.progress_frame,
+            text="Processing...",
+            font=Fonts.BODY_S,
+            text_color=Colors.TEXT_SECONDARY
+        )
+        self.progress_label.pack(side="left", padx=(0, Sizes.PAD_S))
+
+        self.progress_bar = ctk.CTkProgressBar(
+            self.progress_frame,
+            width=150,
+            height=12,
+            mode="indeterminate"
+        )
+        self.progress_bar.pack(side="left")
 
         self.apply_rules_btn = Theme.create_button(
             btn_frame,
@@ -708,6 +785,8 @@ class CTkRuleTesterGUI:
 
         for feature in self.selected_features:
             self._create_rule_builder_card(feature)
+            # Update UI to keep progress bar animating and maintain responsiveness
+            self.root.update()
 
         self._update_preview()
 
@@ -774,9 +853,16 @@ class CTkRuleTesterGUI:
         widgets['feature_type'] = feature_type
         self.feature_widgets[feature] = widgets
 
-    def _create_histogram(self, parent, feature: str):
-        """Create histogram for a continuous feature."""
-        values = self.rule_engine.get_feature_values_at_reference(feature)
+    def _create_histogram(self, parent, feature: str, sample_size: int = 500):
+        """Create histogram for a continuous feature.
+
+        Args:
+            parent: Parent widget
+            feature: Feature name
+            sample_size: Max number of trades to sample for histogram (for performance)
+        """
+        # Use sampling for faster histogram generation
+        values = self.rule_engine.get_feature_values_at_reference(feature, sample_size=sample_size)
         if values is None or len(values) == 0:
             return
 
@@ -1194,10 +1280,47 @@ class CTkRuleTesterGUI:
                 pass  # Skip invalid rules
 
     def _apply_rules_and_show_results(self):
-        """Apply rules and navigate to results tab."""
+        """Apply rules and navigate to results tab with progress feedback."""
         self._build_rules_from_widgets()
-        self._calculate_results()
+
+        # Show progress bar and disable button
+        self._show_progress("Applying rules...")
+        self.apply_rules_btn.configure(state="disabled")
+
+        # Run calculation in background thread
+        def calculate_thread():
+            try:
+                self._calculate_results()
+                # Update UI in main thread
+                self.root.after(0, self._on_calculation_complete)
+            except Exception as e:
+                self.root.after(0, lambda: self._on_calculation_error(str(e)))
+
+        thread = threading.Thread(target=calculate_thread, daemon=True)
+        thread.start()
+
+    def _show_progress(self, message: str = "Processing..."):
+        """Show the progress bar with a message."""
+        self.progress_label.configure(text=message)
+        self.progress_frame.pack(side="right", padx=Sizes.PAD_M, before=self.apply_rules_btn)
+        self.progress_bar.start()
+
+    def _hide_progress(self):
+        """Hide the progress bar."""
+        self.progress_bar.stop()
+        self.progress_frame.pack_forget()
+
+    def _on_calculation_complete(self):
+        """Called when calculation completes successfully."""
+        self._hide_progress()
+        self.apply_rules_btn.configure(state="normal")
         self.tabview.set("4. Results")
+
+    def _on_calculation_error(self, error_msg: str):
+        """Called when calculation fails."""
+        self._hide_progress()
+        self.apply_rules_btn.configure(state="normal")
+        show_error(self.root, "Error", f"Calculation failed: {error_msg}")
 
     # =========================================================================
     # TAB 4: RESULTS
