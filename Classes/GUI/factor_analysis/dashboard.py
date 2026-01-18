@@ -883,21 +883,22 @@ class Tier1View(ctk.CTkFrame):
         factor_types = results.get('factor_types', {})
 
         for factor, corr in correlations.items():
+            # Skip factors with NA availability (None correlation means no data)
+            if corr is None:
+                continue
+
             factors.append({
                 'name': factor,
                 'type': factor_types.get(factor, 'Unknown'),
-                'correlation': corr if corr is not None else 0,  # Use 0 for sorting if N/A
-                'correlation_display': corr,  # Keep original for display (may be None)
+                'correlation': corr,
+                'correlation_display': corr,
                 'p_value': p_values.get(factor, 1.0) if p_values.get(factor) is not None else None
             })
 
-        # Sort by absolute correlation (factors with valid correlations first, then by value)
-        def sort_key(x):
-            if x['correlation_display'] is None:
-                return (1, 0)  # Put N/A factors at the end
-            return (0, -abs(x['correlation']))  # Valid correlations sorted by absolute value
+        # Sort by absolute correlation (descending - highest correlation first)
+        factors.sort(key=lambda x: -abs(x['correlation']))
 
-        self.factor_panel.set_factors(sorted(factors, key=sort_key))
+        self.factor_panel.set_factors(factors)
 
 
 class Tier2View(ctk.CTkFrame):
