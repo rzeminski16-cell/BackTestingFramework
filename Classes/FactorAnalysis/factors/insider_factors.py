@@ -268,8 +268,8 @@ class InsiderFactors:
         Returns:
             trades_df with insider factor columns added
         """
-        # Compute factors
-        result_df, result = self.compute_factors(trades_df, insider_df)
+        # Compute factors (insider_df is already aligned to trades)
+        result_df, result = self.compute_factors(insider_df)
 
         # Store factor names
         self._factor_names = result.factor_names.copy()

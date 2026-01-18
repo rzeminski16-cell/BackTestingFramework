@@ -318,7 +318,7 @@ class FactorAnalyzer:
 
             # Insider factors
             if fe_config.insider.enabled and input_data.insider_data is not None:
-                aligned_insider = self.aligner.align_insider_data(
+                aligned_insider, _ = self.aligner.align_insider_data(
                     trades_df, input_data.insider_data
                 )
                 trades_df = self.insider_factors.compute_all(
