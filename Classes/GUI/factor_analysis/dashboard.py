@@ -881,32 +881,28 @@ class Tier1View(ctk.CTkFrame):
         correlations = results.get('correlations', {})
         p_values = results.get('p_values', {})
         factor_types = results.get('factor_types', {})
-        factor_details = results.get('factor_details', {})
 
         for factor, corr in correlations.items():
-            # Check if factor has data: either has a valid correlation OR has factor details
-            has_data = corr is not None or factor in factor_details
-
-            # Skip factors with NA availability (no data at all)
-            if not has_data:
+            # Skip factors with NA correlation (None or NaN means no valid correlation)
+            if corr is None:
                 continue
+            # Also skip NaN values
+            try:
+                if pd.isna(corr):
+                    continue
+            except (TypeError, ValueError):
+                pass
 
             factors.append({
                 'name': factor,
                 'type': factor_types.get(factor, 'Unknown'),
-                'correlation': corr if corr is not None else 0,  # Use 0 for sorting if N/A
-                'correlation_display': corr,  # Keep original for display (may be None)
+                'correlation': corr,
+                'correlation_display': corr,
                 'p_value': p_values.get(factor, 1.0) if p_values.get(factor) is not None else None
             })
 
         # Sort by absolute correlation (descending - highest correlation first)
-        # Factors with None correlation go to end
-        def sort_key(x):
-            if x['correlation_display'] is None:
-                return (1, 0)  # Put N/A correlations at the end
-            return (0, -abs(x['correlation']))  # Valid correlations sorted by absolute value
-
-        factors.sort(key=sort_key)
+        factors.sort(key=lambda x: -abs(x['correlation']))
 
         self.factor_panel.set_factors(factors)
 
