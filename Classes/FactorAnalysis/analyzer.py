@@ -358,7 +358,7 @@ class FactorAnalyzer:
 
             # 7. Normalize factors (always apply if there are factor columns)
             if factor_columns:
-                trades_df = self.normalizer.normalize(trades_df, factor_columns)
+                trades_df, _ = self.normalizer.normalize(trades_df, factor_columns)
 
             # 8. Calculate quality score
             trades_df, quality_report = self.quality_scorer.score_all_trades(trades_df)
