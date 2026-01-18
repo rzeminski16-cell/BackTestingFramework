@@ -2308,23 +2308,39 @@ class FactorDocumentationView(ctk.CTkFrame):
 
             # Check insider data
             insider_data = self.data.get('insider_data')
+            insider_factors = ['insider_buy_count', 'insider_sell_count', 'insider_net_shares',
+                              'insider_score', 'insider_buy_sell_ratio']
+
+            # First, try to get availability from computed factors (most accurate)
+            if isinstance(factor_df, pd.DataFrame) and len(factor_df) > 0:
+                factor_cols_lower = {c.lower(): c for c in factor_df.columns}
+                total_trades = len(factor_df)
+
+                # Check if we have computed insider factors in trades data
+                for factor in insider_factors:
+                    factor_lower = factor.lower()
+                    if factor_lower in factor_cols_lower:
+                        actual_col = factor_cols_lower[factor_lower]
+                        non_null = factor_df[actual_col].notna().sum()
+                        # Insider factors count 0 as valid data (no transactions)
+                        # So availability is 100% if we computed them
+                        self.factor_availability[factor] = (non_null / total_trades) * 100
+
+            # Fall back to raw insider data check only if factors weren't computed
             if isinstance(insider_data, pd.DataFrame) and len(insider_data) > 0:
-                total = len(insider_data)
                 insider_cols = [c.lower() for c in insider_data.columns]
 
                 # Required columns for insider factors
                 required_insider_cols = ['date', 'symbol', 'transaction_type', 'shares']
                 all_present = all(col in insider_cols for col in required_insider_cols)
 
-                if all_present:
-                    # All insider factors have same availability
-                    insider_factors = ['insider_buy_count', 'insider_sell_count', 'insider_net_shares',
-                                      'insider_score', 'insider_buy_sell_ratio']
-                    for factor in insider_factors:
-                        self.factor_availability[factor] = 100.0
-                else:
+                if not all_present:
                     missing = [col for col in required_insider_cols if col not in insider_cols]
                     print(f"[WARNING] Insider data missing columns: {missing}")
+                elif not any(f in self.factor_availability for f in insider_factors):
+                    # Only set defaults if we didn't compute them from factor_df
+                    for factor in insider_factors:
+                        self.factor_availability[factor] = 100.0
 
             # Check options data
             options_data = self.data.get('options_data')
