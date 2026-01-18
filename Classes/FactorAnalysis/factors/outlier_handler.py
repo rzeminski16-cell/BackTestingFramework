@@ -115,6 +115,12 @@ class OutlierHandler:
             if len(values) < 3:
                 continue
 
+            # Convert boolean to int to avoid numpy boolean subtract error
+            col_data = df[col]
+            if col_data.dtype == bool or col_data.dtype == 'boolean':
+                col_data = col_data.astype(int)
+                values = values.astype(int)
+
             # Calculate z-scores
             mean = values.mean()
             std = values.std()
@@ -122,7 +128,7 @@ class OutlierHandler:
             if std == 0:
                 continue
 
-            zscores = (df[col] - mean) / std
+            zscores = (col_data - mean) / std
             outlier_mask = zscores.abs() > threshold
 
             # Create outlier flag column

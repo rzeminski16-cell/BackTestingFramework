@@ -203,6 +203,12 @@ class ScenarioDetector:
         valid_cols = [c for c in factor_columns
                      if c in df.columns and pd.api.types.is_numeric_dtype(df[c])]
 
+        # Convert boolean columns to int to avoid numpy boolean subtract error
+        df = df.copy()
+        for col in valid_cols:
+            if df[col].dtype == bool or df[col].dtype == 'boolean':
+                df[col] = df[col].astype(int)
+
         if not valid_cols:
             if self.logger:
                 self.logger.warning("No valid factor columns for scenario detection")
