@@ -233,6 +233,21 @@ class TemporalAligner:
 
         fundamental_df = fundamental_df.sort_values('_as_of_date')
 
+        # Get all columns from fundamental data for creating empty rows
+        all_columns = list(fundamental_df.columns)
+
+        # Debug: Show date ranges and symbols
+        fund_symbols = set(fundamental_df['symbol'].str.upper().unique()) if 'symbol' in fundamental_df.columns else set()
+        trade_symbols = set(trades_df['symbol'].str.upper().unique()) if 'symbol' in trades_df.columns else set()
+        fund_date_range = (fundamental_df['_as_of_date'].min(), fundamental_df['_as_of_date'].max())
+        trade_date_range = (trades_df['entry_date'].min(), trades_df['entry_date'].max())
+
+        print(f"[DEBUG] Fundamental symbols ({len(fund_symbols)}): {list(fund_symbols)[:10]}...")
+        print(f"[DEBUG] Trade symbols ({len(trade_symbols)}): {list(trade_symbols)[:10]}...")
+        print(f"[DEBUG] Symbol overlap: {fund_symbols & trade_symbols}")
+        print(f"[DEBUG] Fundamental date range: {fund_date_range}")
+        print(f"[DEBUG] Trade date range: {trade_date_range}")
+
         for idx, trade in trades_df.iterrows():
             entry_date = trade['entry_date']
             effective_date = entry_date - pd.Timedelta(days=delay)
@@ -257,10 +272,11 @@ class TemporalAligner:
                 matched += 1
                 days_before_list.append(days_before)
             else:
-                result_rows.append({
-                    '_fundamental_date': None,
-                    '_fundamental_days_before_entry': None
-                })
+                # Create empty row with all columns to preserve structure
+                empty_row = {col: np.nan for col in all_columns}
+                empty_row['_fundamental_date'] = None
+                empty_row['_fundamental_days_before_entry'] = None
+                result_rows.append(empty_row)
                 missing += 1
 
         aligned_df = pd.DataFrame(result_rows)
