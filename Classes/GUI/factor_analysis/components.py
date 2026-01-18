@@ -222,10 +222,10 @@ class FactorListPanel(ctk.CTkFrame):
         self.filter_var = ctk.StringVar(value="All")
         self.filter_combo = Theme.create_combobox(
             filter_frame,
-            values=["All", "Technical", "Value", "Quality", "Growth", "Insider", "Options"],
+            values=["All", "Technical", "EPS Fundamentals", "Value", "Quality", "Growth", "Insider", "Regime", "Composite", "Options", "Other"],
             variable=self.filter_var,
             command=self._on_filter_change,
-            width=120
+            width=140
         )
         self.filter_combo.pack(side="left", padx=(Sizes.PAD_S, 0))
 
@@ -310,30 +310,39 @@ class FactorListPanel(ctk.CTkFrame):
         type_label.pack(side="left")
         type_label.bind("<Button-1>", lambda e, n=name: self._on_factor_click(n))
 
-        # Correlation (with color coding)
-        corr = factor.get('correlation', 0)
-        corr_color = Colors.SUCCESS if corr > 0 else Colors.ERROR if corr < 0 else Colors.TEXT_SECONDARY
+        # Correlation (with color coding) - use correlation_display if available, else correlation
+        corr_display = factor.get('correlation_display', factor.get('correlation', 0))
+        if corr_display is None:
+            corr_text = "N/A"
+            corr_color = Colors.TEXT_MUTED
+        else:
+            corr_text = f"{corr_display:.3f}"
+            corr_color = Colors.SUCCESS if corr_display > 0 else Colors.ERROR if corr_display < 0 else Colors.TEXT_SECONDARY
         corr_label = Theme.create_label(
-            row, f"{corr:.3f}", width=90,
+            row, corr_text, width=90,
             text_color=corr_color
         )
         corr_label.pack(side="left")
         corr_label.bind("<Button-1>", lambda e, n=name: self._on_factor_click(n))
 
         # P-value (with significance indicator)
-        p_val = factor.get('p_value', 1)
-        p_text = f"{p_val:.4f}"
-        if p_val < 0.01:
-            p_text += " ***"
-            p_color = Colors.SUCCESS
-        elif p_val < 0.05:
-            p_text += " **"
-            p_color = Colors.WARNING
-        elif p_val < 0.1:
-            p_text += " *"
-            p_color = Colors.TEXT_PRIMARY
-        else:
+        p_val = factor.get('p_value')
+        if p_val is None:
+            p_text = "N/A"
             p_color = Colors.TEXT_MUTED
+        else:
+            p_text = f"{p_val:.4f}"
+            if p_val < 0.01:
+                p_text += " ***"
+                p_color = Colors.SUCCESS
+            elif p_val < 0.05:
+                p_text += " **"
+                p_color = Colors.WARNING
+            elif p_val < 0.1:
+                p_text += " *"
+                p_color = Colors.TEXT_PRIMARY
+            else:
+                p_color = Colors.TEXT_MUTED
 
         p_label = Theme.create_label(row, p_text, width=90, text_color=p_color)
         p_label.pack(side="left")

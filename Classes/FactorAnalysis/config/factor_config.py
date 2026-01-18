@@ -431,6 +431,8 @@ class Tier3Config:
     bayesian_logistic_regression: bool = False
     n_estimators: int = 100
     random_state: int = 42
+    min_samples: int = 30  # Minimum samples required for ML analysis
+    min_samples_leaf: int = 5  # Minimum samples per leaf in random forest
 
     def __post_init__(self):
         if self.n_estimators <= 0:
@@ -444,7 +446,9 @@ class Tier3Config:
             "mutual_information": self.mutual_information,
             "bayesian_logistic_regression": self.bayesian_logistic_regression,
             "n_estimators": self.n_estimators,
-            "random_state": self.random_state
+            "random_state": self.random_state,
+            "min_samples": self.min_samples,
+            "min_samples_leaf": self.min_samples_leaf
         }
 
     @classmethod
@@ -456,7 +460,9 @@ class Tier3Config:
             mutual_information=data.get("mutual_information", True),
             bayesian_logistic_regression=data.get("bayesian_logistic_regression", False),
             n_estimators=data.get("n_estimators", 100),
-            random_state=data.get("random_state", 42)
+            random_state=data.get("random_state", 42),
+            min_samples=data.get("min_samples", 30),
+            min_samples_leaf=data.get("min_samples_leaf", 5)
         )
 
 

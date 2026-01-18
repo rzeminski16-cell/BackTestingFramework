@@ -886,12 +886,18 @@ class Tier1View(ctk.CTkFrame):
             factors.append({
                 'name': factor,
                 'type': factor_types.get(factor, 'Unknown'),
-                'correlation': corr,
-                'p_value': p_values.get(factor, 1.0)
+                'correlation': corr if corr is not None else 0,  # Use 0 for sorting if N/A
+                'correlation_display': corr,  # Keep original for display (may be None)
+                'p_value': p_values.get(factor, 1.0) if p_values.get(factor) is not None else None
             })
 
-        # Sort by absolute correlation
-        self.factor_panel.set_factors(sorted(factors, key=lambda x: abs(x['correlation']), reverse=True))
+        # Sort by absolute correlation (factors with valid correlations first, then by value)
+        def sort_key(x):
+            if x['correlation_display'] is None:
+                return (1, 0)  # Put N/A factors at the end
+            return (0, -abs(x['correlation']))  # Valid correlations sorted by absolute value
+
+        self.factor_panel.set_factors(sorted(factors, key=sort_key))
 
 
 class Tier2View(ctk.CTkFrame):
@@ -3071,6 +3077,31 @@ class FactorAnalysisDashboard:
                             'bad_mean': bad_mean,
                             'mean_diff': good_mean - bad_mean,
                         }
+                        # Add factor to correlations dict if not already present (with N/A value)
+                        if factor_name not in correlations:
+                            correlations[factor_name] = None  # No correlation available
+                            p_values[factor_name] = None
+                            # Determine factor type from name
+                            if factor_name.startswith('eps_'):
+                                factor_types[factor_name] = 'EPS Fundamentals'
+                            elif factor_name.startswith('value_'):
+                                factor_types[factor_name] = 'Value'
+                            elif factor_name.startswith('quality_'):
+                                factor_types[factor_name] = 'Quality'
+                            elif factor_name.startswith('growth_'):
+                                factor_types[factor_name] = 'Growth'
+                            elif factor_name.startswith('insider_'):
+                                factor_types[factor_name] = 'Insider'
+                            elif factor_name.startswith('options_'):
+                                factor_types[factor_name] = 'Options'
+                            elif factor_name.startswith('regime_'):
+                                factor_types[factor_name] = 'Regime'
+                            elif factor_name.startswith('composite_'):
+                                factor_types[factor_name] = 'Composite'
+                            elif factor_name.startswith('tech_'):
+                                factor_types[factor_name] = 'Technical'
+                            else:
+                                factor_types[factor_name] = 'Other'
                 elif isinstance(desc_stats, dict):
                     # Handle dict format (fallback)
                     for factor_name, stats in desc_stats.items():
