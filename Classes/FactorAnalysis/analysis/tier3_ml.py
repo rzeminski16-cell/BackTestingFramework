@@ -216,7 +216,7 @@ class Tier3ML:
         result.n_features = len(valid_cols)
 
         # Random Forest feature importance
-        if self.config.random_forest:
+        if self.config.random_forest_importance:
             rf_result = self._run_random_forest(X_scaled, y, valid_cols)
             result.rf_accuracy = rf_result.get('accuracy')
             result.rf_cv_accuracy = rf_result.get('cv_accuracy')
@@ -225,10 +225,10 @@ class Tier3ML:
             result.model_params = rf_result.get('params', {})
 
         # SHAP analysis
-        if self.config.shap and SHAP_AVAILABLE and self._model is not None:
+        if self.config.shap_analysis and SHAP_AVAILABLE and self._model is not None:
             result.shap_available = True
             result.shap_results = self._run_shap_analysis(X_scaled, valid_cols)
-        elif self.config.shap and not SHAP_AVAILABLE:
+        elif self.config.shap_analysis and not SHAP_AVAILABLE:
             if self.logger:
                 self.logger.warning("SHAP library not available")
 

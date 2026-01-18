@@ -219,7 +219,7 @@ class ScenarioDetector:
             result = self._detect_binary_scenarios(
                 df, valid_cols, outcome_column, return_column, baseline
             )
-        elif self.config.scenario_mode == ScenarioMode.CLUSTERING:
+        elif self.config.scenario_mode == ScenarioMode.AUTOMATIC_CLUSTERING:
             result = self._detect_clustering_scenarios(
                 df, valid_cols, outcome_column, return_column, baseline
             )
@@ -489,8 +489,8 @@ class ScenarioDetector:
 
         if n_total > 0 and baseline_good_rate > 0:
             # Binomial test for significant difference from baseline
-            p_value = stats.binom_test(n_good, n_total, baseline_good_rate)
-            confidence = 1 - p_value
+            result = stats.binomtest(n_good, n_total, baseline_good_rate)
+            confidence = 1 - result.pvalue
         else:
             confidence = 0
 

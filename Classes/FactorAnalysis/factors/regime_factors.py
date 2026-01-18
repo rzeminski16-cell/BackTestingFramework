@@ -32,12 +32,14 @@ class RegimeFactors:
     - Combined market regime
     """
 
+    # Only include numeric factors that can be used in statistical analysis
+    # String factors (regime_volatility, regime_trend, regime_momentum, regime_combined)
+    # are created but excluded from FACTOR_NAMES since they can't be correlated
     FACTOR_NAMES = [
-        'regime_volatility',
-        'regime_trend',
-        'regime_momentum',
-        'regime_combined',
-        'regime_score'
+        'regime_score',
+        'regime_volatility_numeric',
+        'regime_trend_numeric',
+        'regime_momentum_numeric'
     ]
 
     def __init__(
