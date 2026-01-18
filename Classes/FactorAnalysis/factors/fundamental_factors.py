@@ -400,9 +400,18 @@ class FundamentalFactors:
                 cols_added.append(col)
 
         print(f"[INFO] Added {len(cols_added)} factor columns to trades_df: {cols_added}")
+        print(f"[DEBUG] trades_df columns with eps_: {[c for c in trades_df.columns if c.startswith('eps_')]}")
+        print(f"[DEBUG] trades_df shape before composite: {trades_df.shape}")
 
         # Create composite scores
-        trades_df = self.create_composite_scores(trades_df)
+        try:
+            trades_df = self.create_composite_scores(trades_df)
+            print(f"[DEBUG] trades_df shape after composite: {trades_df.shape}")
+        except Exception as e:
+            print(f"[ERROR] create_composite_scores failed: {e}")
+            import traceback
+            traceback.print_exc()
+            raise
 
         # Add composite names to factor list
         composite_cols = [c for c in trades_df.columns if c.startswith('composite_')]

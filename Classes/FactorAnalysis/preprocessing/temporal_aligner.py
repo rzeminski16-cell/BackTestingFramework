@@ -253,9 +253,12 @@ class TemporalAligner:
             effective_date = entry_date - pd.Timedelta(days=delay)
             symbol = trade.get('symbol', '')
 
+            # Normalize symbol - remove common suffixes like _DAILY, _WEEKLY, etc.
+            normalized_symbol = symbol.upper().split('_')[0] if symbol else ''
+
             # Filter for symbol
-            if 'symbol' in fundamental_df.columns and symbol:
-                symbol_data = fundamental_df[fundamental_df['symbol'].str.upper() == symbol.upper()]
+            if 'symbol' in fundamental_df.columns and normalized_symbol:
+                symbol_data = fundamental_df[fundamental_df['symbol'].str.upper() == normalized_symbol]
             else:
                 symbol_data = fundamental_df
 
