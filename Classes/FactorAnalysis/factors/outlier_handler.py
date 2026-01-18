@@ -100,6 +100,10 @@ class OutlierHandler:
             columns = [c for c in df.columns
                       if pd.api.types.is_numeric_dtype(df[c])
                       and not c.startswith('_')]
+        else:
+            # Filter passed columns to only numeric ones
+            columns = [c for c in columns
+                      if c in df.columns and pd.api.types.is_numeric_dtype(df[c])]
 
         outliers_by_column = {}
         outlier_details = []
