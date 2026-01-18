@@ -296,14 +296,25 @@ class FactorAnalyzer:
             )
             fundamental_enabled = eps_only_mode or traditional_fundamental_enabled
 
+            # Debug: Check if fundamental data is available
+            has_fundamental = input_data.fundamental_data is not None
+            fund_len = len(input_data.fundamental_data) if has_fundamental else 0
+            print(f"[DEBUG] Fundamental data available: {has_fundamental}, rows: {fund_len}")
+            print(f"[DEBUG] eps_only_mode: {eps_only_mode}, fundamental_enabled: {fundamental_enabled}")
+
             if fundamental_enabled and input_data.fundamental_data is not None:
+                print(f"[DEBUG] Fundamental data columns: {list(input_data.fundamental_data.columns)}")
                 aligned_fund = self.aligner.align_fundamentals(
                     trades_df, input_data.fundamental_data
                 )
+                print(f"[DEBUG] Aligned fundamental data rows: {len(aligned_fund)}, columns: {list(aligned_fund.columns)}")
                 trades_df = self.fundamental_factors.compute_all(
                     trades_df, aligned_fund, eps_only=eps_only_mode
                 )
                 factor_columns.extend(self.fundamental_factors.get_factor_names())
+                print(f"[DEBUG] After compute_all, trades_df columns: {[c for c in trades_df.columns if c.startswith('eps_') or c.startswith('composite_')]}")
+            else:
+                print(f"[DEBUG] Skipping fundamental factors - enabled: {fundamental_enabled}, data available: {has_fundamental}")
 
             # Insider factors
             if fe_config.insider.enabled and input_data.insider_data is not None:
