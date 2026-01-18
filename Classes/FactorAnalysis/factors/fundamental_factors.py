@@ -130,6 +130,23 @@ class FundamentalFactors:
         fundamental_df = fundamental_df.copy()
         fundamental_df.columns = [c.lower().strip() for c in fundamental_df.columns]
 
+        # Log available columns and required source columns
+        available_cols = list(fundamental_df.columns)
+        required_sources = {v['source'].lower() for v in factors_to_compute.values()}
+        missing_sources = required_sources - set(available_cols)
+
+        if missing_sources:
+            print(f"[WARNING] Missing source columns in fundamental_data: {missing_sources}")
+            print(f"[INFO] Available columns: {available_cols}")
+            print(f"[INFO] Required sources: {required_sources}")
+
+        if self.logger:
+            self.logger.info("Fundamental data columns", {
+                "available": available_cols,
+                "required_sources": list(required_sources),
+                "missing_sources": list(missing_sources)
+            })
+
         results = []
         trades_with_data = 0
 
@@ -175,6 +192,10 @@ class FundamentalFactors:
 
         # Get all factor column names (exclude _trade_idx)
         all_factor_cols = [c for c in factors_df.columns if c != '_trade_idx']
+
+        # Log factor computation results
+        print(f"[INFO] Computed {len(all_factor_cols)} fundamental factors: {all_factor_cols}")
+        print(f"[INFO] Trades with data: {trades_with_data}/{len(trades_df)}")
 
         # Count factors by category
         value_count = len([c for c in all_factor_cols if c.startswith('value_')])
@@ -357,15 +378,18 @@ class FundamentalFactors:
         # Store factor names
         self._factor_names = result.factor_names.copy()
 
-        # Merge with trades
+        # Merge with trades - use positional assignment since _trade_idx is positional
         trades_df = trades_df.copy()
+        trades_df = trades_df.reset_index(drop=True)  # Reset to 0-based index for alignment
+
+        cols_added = []
         for col in result_df.columns:
             if col != '_trade_idx' and col not in trades_df.columns:
-                if '_trade_idx' in result_df.columns:
-                    # Reset trades_df index to match _trade_idx
-                    trades_df[col] = result_df.set_index('_trade_idx')[col].reindex(trades_df.index).values
-                else:
-                    trades_df[col] = result_df[col].values
+                # Use positional assignment - result_df rows align with trades_df rows by position
+                trades_df[col] = result_df[col].values
+                cols_added.append(col)
+
+        print(f"[INFO] Added {len(cols_added)} factor columns to trades_df: {cols_added}")
 
         # Create composite scores
         trades_df = self.create_composite_scores(trades_df)

@@ -329,6 +329,17 @@ class FactorAnalyzer:
                 )
                 factor_columns.extend(self.regime_factors.get_factor_names())
 
+            # Filter factor_columns to only include columns that exist in trades_df
+            valid_factor_columns = [c for c in factor_columns if c in trades_df.columns]
+            missing_factors = set(factor_columns) - set(valid_factor_columns)
+            if missing_factors:
+                self.logger.warning(f"Factor columns not found in trades_df: {missing_factors}")
+                print(f"[WARNING] Factor columns not found in trades_df: {missing_factors}")
+            factor_columns = valid_factor_columns
+
+            self.logger.info(f"Valid factor columns for analysis: {len(factor_columns)}")
+            print(f"[INFO] Valid factor columns for analysis ({len(factor_columns)}): {factor_columns}")
+
             # 6. Handle outliers
             trades_df, outlier_result = self.outlier_handler.handle_outliers(
                 trades_df, factor_columns
