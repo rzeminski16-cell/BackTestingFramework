@@ -150,6 +150,14 @@ class FundamentalFactors:
         results = []
         trades_with_data = 0
 
+        # Debug: Show first few rows of fundamental data
+        print(f"[DEBUG] fundamental_df shape: {fundamental_df.shape}")
+        print(f"[DEBUG] trades_df shape: {trades_df.shape}")
+        if len(fundamental_df) > 0:
+            print(f"[DEBUG] First fundamental row columns: {list(fundamental_df.iloc[0].index)}")
+            print(f"[DEBUG] factors_to_compute: {list(factors_to_compute.keys())}")
+            print(f"[DEBUG] Source columns needed: {[v['source'] for v in factors_to_compute.values()]}")
+
         for idx in range(len(trades_df)):
             row_data = {'_trade_idx': idx}
             has_any_data = False
@@ -171,6 +179,8 @@ class FundamentalFactors:
                             row_data[factor_name] = np.nan
                     else:
                         row_data[factor_name] = np.nan
+                        if idx == 0:  # Only log once
+                            print(f"[DEBUG] Source column '{source_col}' NOT FOUND in fund_row.index")
 
                 # Compute derived factors
                 derived = self._compute_derived_factors(fund_row)
