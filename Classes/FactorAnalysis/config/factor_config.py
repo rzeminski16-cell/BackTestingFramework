@@ -532,6 +532,7 @@ class ScenarioAnalysisConfig:
     interaction_mode: InteractionMode = InteractionMode.USER_GUIDED
     n_clusters: int = 3
     user_interactions: Optional[tuple] = None
+    min_lift: float = 1.2  # Minimum lift ratio for favorable/unfavorable scenarios
 
     def __post_init__(self):
         if self.min_trades_per_scenario < 1:
@@ -546,7 +547,8 @@ class ScenarioAnalysisConfig:
             "metric": self.metric,
             "best_scenario_threshold": self.best_scenario_threshold,
             "interaction_mode": self.interaction_mode.value,
-            "n_clusters": self.n_clusters
+            "n_clusters": self.n_clusters,
+            "min_lift": self.min_lift
         }
         if self.user_interactions:
             result["user_interactions"] = [list(i) for i in self.user_interactions]
@@ -562,7 +564,8 @@ class ScenarioAnalysisConfig:
             best_scenario_threshold=data.get("best_scenario_threshold", 0.5),
             interaction_mode=InteractionMode(data.get("interaction_mode", "user_guided")),
             n_clusters=data.get("n_clusters", 3),
-            user_interactions=tuple(tuple(i) for i in interactions) if interactions else None
+            user_interactions=tuple(tuple(i) for i in interactions) if interactions else None,
+            min_lift=data.get("min_lift", 1.2)
         )
 
 
