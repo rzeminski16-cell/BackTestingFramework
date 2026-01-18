@@ -881,28 +881,41 @@ class Tier1View(ctk.CTkFrame):
         correlations = results.get('correlations', {})
         p_values = results.get('p_values', {})
         factor_types = results.get('factor_types', {})
+        factor_details = results.get('factor_details', {})
 
         for factor, corr in correlations.items():
-            # Skip factors with NA correlation (None or NaN means no valid correlation)
-            if corr is None:
+            # Determine if factor has data (availability)
+            # A factor has data if it's in factor_details OR has a valid (non-None) correlation
+            has_data = factor in factor_details or corr is not None
+
+            # Skip factors with no data (NA availability)
+            if not has_data:
                 continue
-            # Also skip NaN values
-            try:
-                if pd.isna(corr):
-                    continue
-            except (TypeError, ValueError):
-                pass
+
+            # Check if correlation is valid (not None and not NaN)
+            corr_is_valid = corr is not None
+            if corr_is_valid:
+                try:
+                    corr_is_valid = not pd.isna(corr)
+                except (TypeError, ValueError):
+                    pass
 
             factors.append({
                 'name': factor,
                 'type': factor_types.get(factor, 'Unknown'),
-                'correlation': corr,
-                'correlation_display': corr,
+                'correlation': corr if corr_is_valid else 0,  # Use 0 for sorting if invalid
+                'correlation_display': corr if corr_is_valid else None,  # Show N/A for invalid
                 'p_value': p_values.get(factor, 1.0) if p_values.get(factor) is not None else None
             })
 
-        # Sort by absolute correlation (descending - highest correlation first)
-        factors.sort(key=lambda x: -abs(x['correlation']))
+        # Sort by absolute correlation (descending)
+        # Factors with valid correlation first, then factors with N/A correlation
+        def sort_key(x):
+            if x['correlation_display'] is None:
+                return (1, 0)  # N/A correlations at the end
+            return (0, -abs(x['correlation']))
+
+        factors.sort(key=sort_key)
 
         self.factor_panel.set_factors(factors)
 
