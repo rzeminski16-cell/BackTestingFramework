@@ -2197,6 +2197,7 @@ class FactorDocumentationView(ctk.CTkFrame):
         """Compute factor availability from data."""
         self.factor_availability = {}
         self.missing_columns = {}  # Track missing columns for warnings
+        factor_df = None  # Initialize to avoid UnboundLocalError
 
         # Get factor data from results
         if self.results:
