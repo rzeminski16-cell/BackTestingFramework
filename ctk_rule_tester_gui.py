@@ -24,10 +24,11 @@ from Classes.GUI.ctk_theme import Theme, Colors, Fonts, Sizes, show_error, show_
 from Classes.RuleTester import (
     Rule, RuleEngine, RuleMode, CompareType, RuleMetricsCalculator,
     extract_ticker_from_filename, load_price_data_for_tickers,
-    export_filtered_trades, export_comparison_report,
+    export_filtered_trades, export_comparison_report, export_exit_comparison_csv,
     StrategyExitRulesRegistry
 )
 from Classes.FactorAnalysis.data.trade_log_loader import TradeLogLoader
+from Classes.Config.strategy_preset import StrategyParameterPreset
 
 # Try to import plotting libraries
 try:
@@ -149,6 +150,10 @@ class CTkRuleTesterGUI:
         self.strategy_frame = Theme.create_frame(main_frame)
         # Don't pack initially - will be shown when Exit mode is selected
 
+        # Initialize preset manager
+        self.preset_manager = StrategyParameterPreset()
+        self._selected_preset_params: Dict[str, Any] = {}
+
         ctk.CTkLabel(
             self.strategy_frame,
             text="Original Strategy:",
@@ -168,18 +173,37 @@ class CTkRuleTesterGUI:
             values=display_names,
             variable=self.strategy_var,
             command=self._on_strategy_changed,
-            width=250,
+            width=200,
             font=Fonts.BODY_M
         )
-        self.strategy_menu.pack(side="left", padx=(0, Sizes.PAD_M))
+        self.strategy_menu.pack(side="left", padx=(0, Sizes.PAD_S))
 
-        # Strategy description
+        # Parameter preset selector
+        ctk.CTkLabel(
+            self.strategy_frame,
+            text="Parameters:",
+            font=Fonts.BODY_M,
+            text_color=Colors.TEXT_PRIMARY
+        ).pack(side="left", padx=(0, Sizes.PAD_S))
+
+        self.preset_var = ctk.StringVar(value="")
+        self.preset_menu = ctk.CTkOptionMenu(
+            self.strategy_frame,
+            values=["(No presets)"],
+            variable=self.preset_var,
+            command=self._on_preset_changed,
+            width=180,
+            font=Fonts.BODY_M
+        )
+        self.preset_menu.pack(side="left", padx=(0, Sizes.PAD_M))
+
+        # Strategy/preset description
         self.strategy_desc_label = ctk.CTkLabel(
             self.strategy_frame,
             text="",
             font=Fonts.BODY_S,
             text_color=Colors.TEXT_MUTED,
-            wraplength=600
+            wraplength=500
         )
         self.strategy_desc_label.pack(side="left")
 
@@ -217,15 +241,18 @@ class CTkRuleTesterGUI:
             self.mode_desc_label.configure(text="(Rules evaluated at trade exit date)")
             # Show strategy selector for exit mode
             self.strategy_frame.pack(fill="x", pady=(0, Sizes.PAD_S), before=self.tabview)
-            # Update strategy description
+            # Initialize preset dropdown and update strategy
             self._on_strategy_changed(self.strategy_var.get())
 
         # Update rule engine mode if it exists
         if self.rule_engine:
             self.rule_engine.set_mode(self.rule_mode)
-            # Set strategy if in exit mode
+            # Set strategy and parameters if in exit mode
             if self.rule_mode == RuleMode.EXIT:
-                self._on_strategy_changed(self.strategy_var.get())
+                strategy_name = self._strategy_name_map.get(self.strategy_var.get(), self.strategy_var.get())
+                self.rule_engine.set_strategy(strategy_name)
+                if self._selected_preset_params:
+                    self.rule_engine.set_strategy_parameters(self._selected_preset_params)
             # Refresh feature list since statistics might differ
             self._populate_features_list()
 
@@ -234,19 +261,89 @@ class CTkRuleTesterGUI:
         # Get the actual strategy name from display name
         strategy_name = self._strategy_name_map.get(display_name, display_name)
 
+        # Update preset dropdown with presets for this strategy
+        self._update_preset_dropdown(strategy_name)
+
         # Update the rule engine with the selected strategy
         if self.rule_engine:
             self.rule_engine.set_strategy(strategy_name)
+            # Apply selected preset parameters if any
+            if self._selected_preset_params:
+                self.rule_engine.set_strategy_parameters(self._selected_preset_params)
 
-        # Get strategy config and show description
+        # Update description
+        self._update_strategy_description()
+
+    def _update_preset_dropdown(self, strategy_name: str):
+        """Update the preset dropdown with presets for the selected strategy."""
+        presets = self.preset_manager.list_presets(strategy_name)
+
+        if presets:
+            preset_names = [p.get("preset_name", "Unknown") for p in presets]
+            self.preset_menu.configure(values=preset_names)
+            # Select the first preset by default
+            self.preset_var.set(preset_names[0])
+            self._on_preset_changed(preset_names[0])
+        else:
+            self.preset_menu.configure(values=["(No presets)"])
+            self.preset_var.set("(No presets)")
+            self._selected_preset_params = {}
+
+    def _on_preset_changed(self, preset_name: str):
+        """Handle preset selection change."""
+        if preset_name == "(No presets)":
+            self._selected_preset_params = {}
+            self._update_strategy_description()
+            return
+
+        # Get the strategy name
+        display_name = self.strategy_var.get()
+        strategy_name = self._strategy_name_map.get(display_name, display_name)
+
+        # Load preset parameters
+        preset_data = self.preset_manager.load_preset(strategy_name, preset_name)
+        if preset_data:
+            self._selected_preset_params = preset_data.get("parameters", {})
+        else:
+            self._selected_preset_params = {}
+
+        # Update the rule engine with the selected parameters
+        if self.rule_engine:
+            self.rule_engine.set_strategy_parameters(self._selected_preset_params)
+
+        # Update description
+        self._update_strategy_description()
+
+    def _update_strategy_description(self):
+        """Update the strategy description label with current settings."""
+        display_name = self.strategy_var.get()
+        strategy_name = self._strategy_name_map.get(display_name, display_name)
         config = StrategyExitRulesRegistry.get(strategy_name)
+
         if config and config.exit_rules:
-            rules_desc = ", ".join([r.description for r in config.exit_rules[:3]])
-            if len(config.exit_rules) > 3:
-                rules_desc += f", ... (+{len(config.exit_rules) - 3} more)"
-            self.strategy_desc_label.configure(
-                text=f"Exit rules: {rules_desc}"
-            )
+            # Show key parameters from preset
+            param_parts = []
+            if self._selected_preset_params:
+                # Show exit-related parameters
+                key_params = ['grace_period_bars', 'momentum_gain_pct', 'atr_stop_loss_multiple', 'stop_loss_percent']
+                for key in key_params:
+                    if key in self._selected_preset_params:
+                        value = self._selected_preset_params[key]
+                        # Format the parameter name nicely
+                        nice_name = key.replace('_', ' ').title()
+                        param_parts.append(f"{nice_name}: {value}")
+
+            if param_parts:
+                self.strategy_desc_label.configure(
+                    text=f"Params: {', '.join(param_parts)}"
+                )
+            else:
+                rules_desc = ", ".join([r.description for r in config.exit_rules[:2]])
+                if len(config.exit_rules) > 2:
+                    rules_desc += f", +{len(config.exit_rules) - 2} more"
+                self.strategy_desc_label.configure(
+                    text=f"Exit rules: {rules_desc}"
+                )
         elif config and not config.exit_rules:
             self.strategy_desc_label.configure(
                 text="No predefined exit rules - only user-defined rules will apply"
@@ -394,10 +491,12 @@ class CTkRuleTesterGUI:
             # Initialize rule engine with current mode
             self.rule_engine = RuleEngine(self.trades_df, self.price_data_dict, self.rule_mode)
 
-            # Set strategy if in exit mode
+            # Set strategy and parameters if in exit mode
             if self.rule_mode == RuleMode.EXIT:
                 strategy_name = self._strategy_name_map.get(self.strategy_var.get(), self.strategy_var.get())
                 self.rule_engine.set_strategy(strategy_name)
+                if self._selected_preset_params:
+                    self.rule_engine.set_strategy_parameters(self._selected_preset_params)
 
             # Update summary
             self._update_data_summary(files, tickers)
@@ -1434,7 +1533,16 @@ class CTkRuleTesterGUI:
             "Export Comparison Report",
             command=self._export_report,
             width=180
-        ).pack(side="left")
+        ).pack(side="left", padx=(0, Sizes.PAD_S))
+
+        # Exit comparison export button (for validating exit rule changes)
+        self.export_exit_comparison_btn = Theme.create_button(
+            export_btn_frame,
+            "Export Exit Comparison",
+            command=self._export_exit_comparison,
+            width=180
+        )
+        self.export_exit_comparison_btn.pack(side="left")
 
         self.export_status_label = ctk.CTkLabel(
             export_btn_frame,
@@ -1657,6 +1765,127 @@ class CTkRuleTesterGUI:
             text=f"Report saved to {output_path}",
             text_color=Colors.SUCCESS
         )
+
+    def _export_exit_comparison(self):
+        """Export exit comparison CSV for validating exit rule changes."""
+        if self.rule_mode != RuleMode.EXIT:
+            show_error(self.root, "Error", "Exit comparison export is only available in Exit mode.")
+            return
+
+        if not self.rule_engine or self.trades_df is None:
+            show_error(self.root, "Error", "No data to export. Load trade logs first.")
+            return
+
+        if not self.price_data_dict:
+            show_error(self.root, "Error", "No price data available.")
+            return
+
+        # Get original trades (before rules applied)
+        original_trades = self.trades_df.copy()
+
+        # Get modified trades (after rules applied)
+        modified_trades = self.rule_engine.apply_rules(self.rules)
+
+        if len(original_trades) != len(modified_trades):
+            show_error(self.root, "Error", "Trade count mismatch. Cannot export comparison.")
+            return
+
+        # Collect indicators used by strategy exit rules and user-defined rules
+        indicator_columns = self._get_exit_rule_indicators()
+
+        # Generate filename with strategy and preset info
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        strategy_name = self._strategy_name_map.get(self.strategy_var.get(), "unknown")
+        preset_name = self.preset_var.get().replace(" ", "_")
+        output_path = Path("logs") / f"exit_comparison_{strategy_name}_{preset_name}_{timestamp}.csv"
+        output_path.parent.mkdir(exist_ok=True)
+
+        # Build rules description
+        rules_desc = "; ".join([str(r) for r in self.rules]) if self.rules else "No user-defined rules"
+
+        try:
+            export_exit_comparison_csv(
+                original_trades=original_trades,
+                modified_trades=modified_trades,
+                price_data_dict=self.price_data_dict,
+                output_path=str(output_path),
+                rules_description=rules_desc,
+                indicator_columns=indicator_columns
+            )
+            self.export_status_label.configure(
+                text=f"Exit comparison saved to {output_path}",
+                text_color=Colors.SUCCESS
+            )
+        except Exception as e:
+            show_error(self.root, "Export Error", f"Failed to export: {str(e)}")
+
+    def _get_exit_rule_indicators(self) -> List[str]:
+        """
+        Get list of indicators used by strategy exit rules and user-defined rules.
+
+        Only returns indicators that actually exist in the price data.
+
+        Returns:
+            List of indicator column names that exist in price data
+        """
+        requested_indicators = []
+
+        # 1. Get indicators from strategy's exit config (required_indicators)
+        strategy_config = self.rule_engine.get_strategy_config() if self.rule_engine else None
+        if strategy_config and hasattr(strategy_config, 'required_indicators'):
+            requested_indicators.extend(strategy_config.required_indicators)
+
+        # Also extract indicators from individual exit rules' params
+        if strategy_config and hasattr(strategy_config, 'exit_rules'):
+            for exit_rule in strategy_config.exit_rules:
+                if hasattr(exit_rule, 'params'):
+                    # Check common param keys that reference indicators
+                    for key in ['indicator', 'atr_column', 'ema_column', 'sma_column']:
+                        if key in exit_rule.params:
+                            requested_indicators.append(exit_rule.params[key])
+
+        # 2. Get indicators from user-defined rules
+        for rule in self.rules:
+            # The feature being compared
+            if hasattr(rule, 'feature') and rule.feature:
+                requested_indicators.append(rule.feature)
+            # If comparing to another feature
+            if hasattr(rule, 'compare_feature') and rule.compare_feature:
+                requested_indicators.append(rule.compare_feature)
+
+        # Get available columns from price data
+        available_columns = set()
+        if self.price_data_dict:
+            for pdf in self.price_data_dict.values():
+                available_columns.update(pdf.columns)
+                break  # Just need one to get column names
+
+        # Filter to only indicators that exist in price data
+        # Also try to match variations (e.g., 'atr_14' -> 'atr_14_atr')
+        matched_indicators = []
+        seen = set()
+
+        for ind in requested_indicators:
+            if not ind or ind in seen:
+                continue
+
+            if ind in available_columns:
+                # Exact match
+                matched_indicators.append(ind)
+                seen.add(ind)
+            else:
+                # Try to find a close match (e.g., 'ema_50' -> 'ema_50_ema')
+                for col in available_columns:
+                    col_lower = col.lower()
+                    ind_lower = ind.lower()
+                    # Check if the indicator name is a prefix of the column
+                    if col_lower.startswith(ind_lower + '_') or col_lower == ind_lower:
+                        if col not in seen:
+                            matched_indicators.append(col)
+                            seen.add(col)
+                        break
+
+        return matched_indicators
 
 
 # Helper function for Theme (if not available in ctk_theme)

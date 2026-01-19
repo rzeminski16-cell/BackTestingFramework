@@ -133,6 +133,7 @@ class RuleEngine:
         # Strategy configuration for exit rules (lazy import to avoid circular dependency)
         self._strategy_config: Optional['StrategyExitConfig'] = None
         self._strategy_evaluator: Optional['StrategyExitRuleEvaluator'] = None
+        self._strategy_parameters: Dict[str, Any] = {}
 
     def set_strategy(self, strategy_name: str) -> bool:
         """
@@ -153,8 +154,32 @@ class RuleEngine:
             return False
 
         self._strategy_config = config
-        self._strategy_evaluator = StrategyExitRuleEvaluator(config)
+        self._strategy_evaluator = StrategyExitRuleEvaluator(config, self._strategy_parameters)
         return True
+
+    def set_strategy_parameters(self, parameters: Dict[str, Any]) -> None:
+        """
+        Set the strategy parameters for exit rule evaluation.
+
+        These parameters override the default values in the exit rules.
+        Common parameters include:
+        - grace_period_bars: Bars after entry before EMA exit rule is active
+        - momentum_gain_pct: Minimum gain % to qualify for momentum protection
+        - atr_stop_loss_multiple: ATR multiplier for stop loss calculation
+        - stop_loss_percent: Percentage-based stop loss
+
+        Args:
+            parameters: Dictionary of parameter names and values
+        """
+        self._strategy_parameters = parameters.copy() if parameters else {}
+
+        # Update evaluator if it exists
+        if self._strategy_evaluator:
+            self._strategy_evaluator.set_parameters(self._strategy_parameters)
+
+    def get_strategy_parameters(self) -> Dict[str, Any]:
+        """Get the current strategy parameters."""
+        return self._strategy_parameters.copy()
 
     def get_strategy_config(self) -> Optional['StrategyExitConfig']:
         """Get the current strategy configuration."""

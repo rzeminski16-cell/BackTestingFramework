@@ -100,17 +100,67 @@ class StrategyExitRulesRegistry:
 class StrategyExitRuleEvaluator:
     """
     Evaluates strategy exit rules against price data.
+
+    Supports parameter overrides from presets to customize exit rule behavior.
     """
 
-    def __init__(self, strategy_config: StrategyExitConfig):
+    def __init__(self, strategy_config: StrategyExitConfig, parameters: Optional[Dict[str, Any]] = None):
         """
         Initialize evaluator with strategy configuration.
 
         Args:
             strategy_config: The strategy's exit configuration
+            parameters: Optional dictionary of parameters to override defaults.
+                        Common parameters:
+                        - grace_period_bars: Override grace period for EMA exit rules
+                        - momentum_gain_pct: Override momentum gain threshold
+                        - atr_stop_loss_multiple: Override ATR multiplier for stop loss
+                        - stop_loss_percent: Override percentage stop loss
         """
         self.config = strategy_config
         self.is_long = strategy_config.trade_direction.upper() == "LONG"
+        self._parameters: Dict[str, Any] = parameters.copy() if parameters else {}
+
+    def set_parameters(self, parameters: Dict[str, Any]) -> None:
+        """
+        Set parameters to override default exit rule values.
+
+        Args:
+            parameters: Dictionary of parameter names and values
+        """
+        self._parameters = parameters.copy() if parameters else {}
+
+    def get_parameters(self) -> Dict[str, Any]:
+        """Get the current parameters."""
+        return self._parameters.copy()
+
+    def _get_param(self, rule: StrategyExitRule, param_name: str, default: Any) -> Any:
+        """
+        Get a parameter value, checking overrides first.
+
+        Priority:
+        1. Self._parameters (from preset)
+        2. Rule.params (from exit rule definition)
+        3. Default value
+
+        Args:
+            rule: The exit rule being evaluated
+            param_name: Name of the parameter
+            default: Default value if not found
+
+        Returns:
+            The parameter value
+        """
+        # Check global parameters first (from preset)
+        if param_name in self._parameters:
+            return self._parameters[param_name]
+        # Then check rule-specific params
+        if param_name in rule.params:
+            return rule.params[param_name]
+        # Use the rule's attribute if it matches (for grace_period_bars, etc.)
+        if hasattr(rule, param_name):
+            return getattr(rule, param_name)
+        return default
 
     def check_exit_rules_at_bar(
         self,
@@ -170,12 +220,14 @@ class StrategyExitRuleEvaluator:
     ) -> bool:
         """Check if a single exit rule is triggered."""
 
-        # Check grace period
-        if rule.grace_period_bars > 0 and bars_since_entry <= rule.grace_period_bars:
+        # Check grace period (use parameterized value)
+        grace_period = self._get_param(rule, 'grace_period_bars', rule.grace_period_bars)
+        if grace_period > 0 and bars_since_entry <= grace_period:
             return False
 
-        # Check momentum protection
-        if rule.momentum_protection and current_gain_pct >= rule.momentum_gain_pct:
+        # Check momentum protection (use parameterized value)
+        momentum_threshold = self._get_param(rule, 'momentum_gain_pct', rule.momentum_gain_pct)
+        if rule.momentum_protection and current_gain_pct >= momentum_threshold:
             return False
 
         current_bar = pdf.iloc[bar_idx]
@@ -215,7 +267,14 @@ class StrategyExitRuleEvaluator:
     ) -> bool:
         """Check ATR-based stop loss."""
         atr_col = rule.params.get('atr_column', 'atr_14')
-        multiple = rule.params.get('multiple', 2.0)
+        # Use parameterized ATR multiple (check atr_stop_loss_multiple from preset first)
+        multiple = self._get_param(rule, 'atr_stop_loss_multiple', None)
+        if multiple is None:
+            multiple = self._get_param(rule, 'multiple', 2.0)
+
+        # If ATR multiple is 0, ATR stop loss is disabled
+        if multiple == 0:
+            return False
 
         # Get ATR at entry
         if entry_bar_idx >= 0 and entry_bar_idx < len(pdf):
@@ -240,7 +299,14 @@ class StrategyExitRuleEvaluator:
         current_price: float
     ) -> bool:
         """Check percentage-based stop loss."""
-        pct = rule.params.get('percent', 2.0)
+        # Use parameterized stop loss percent (check stop_loss_percent from preset first)
+        pct = self._get_param(rule, 'stop_loss_percent', None)
+        if pct is None:
+            pct = self._get_param(rule, 'percent', 2.0)
+
+        # If percentage is 0, percentage stop loss is disabled
+        if pct == 0:
+            return False
 
         if self.is_long:
             stop_price = entry_price * (1 - pct / 100)
