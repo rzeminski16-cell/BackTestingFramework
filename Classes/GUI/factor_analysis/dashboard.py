@@ -3187,11 +3187,20 @@ class FactorAnalysisDashboard:
                     shap_val = shap.mean_abs_shap if hasattr(shap, 'mean_abs_shap') else shap.get('mean_abs_shap', 0)
                     shap_values[name] = shap_val
 
+            # Extract model metrics from Tier3Result attributes
+            model_metrics = {}
+            if hasattr(tier3, 'rf_accuracy') and tier3.rf_accuracy is not None:
+                model_metrics['accuracy'] = tier3.rf_accuracy
+            if hasattr(tier3, 'rf_cv_accuracy') and tier3.rf_cv_accuracy is not None:
+                model_metrics['cv_accuracy'] = tier3.rf_cv_accuracy
+            if hasattr(tier3, 'rf_cv_std') and tier3.rf_cv_std is not None:
+                model_metrics['cv_std'] = tier3.rf_cv_std
+
             results['tier3'] = {
                 'feature_importance': feature_importance,
                 'shap_values': shap_values,
                 'factor_types': results.get('tier1', {}).get('factor_types', {}),
-                'model_metrics': tier3.get('model_metrics', {}) if isinstance(tier3, dict) else {}
+                'model_metrics': model_metrics
             }
 
         # Format Scenarios

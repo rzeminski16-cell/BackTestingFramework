@@ -12,10 +12,16 @@ This is the primary entry point for factor analysis. It orchestrates:
 
 import pandas as pd
 import numpy as np
+import warnings
 from typing import Dict, List, Optional, Tuple, Any, Union
 from pathlib import Path
 from dataclasses import dataclass, field
 from datetime import datetime
+
+# Suppress numpy warnings for empty arrays (common with sparse data)
+warnings.filterwarnings('ignore', message='Mean of empty slice')
+warnings.filterwarnings('ignore', message='invalid value encountered in')
+warnings.filterwarnings('ignore', message='Degrees of freedom <= 0 for slice')
 
 # Configuration
 from .config.factor_config import (
