@@ -1,52 +1,33 @@
 {
   "_description": "Centralized strategy parameter configuration. All systems should reference this file.",
-  "_version": "1.0",
+  "_version": "2.0",
 
   "strategies": {
-    "AlphaTrendStrategy": {
-      "display_name": "Alpha Trend Strategy",
-      "description": "Trend-following strategy using AlphaTrend indicator with volume confirmation",
+    "BaseAlphaTrendStrategy": {
+      "display_name": "Base Alpha Trend Strategy",
+      "description": "Simplified AlphaTrend strategy with time-based exit. Entry on AlphaTrend buy signal, exit after max hold days.",
       "trade_direction": "LONG",
+      "required_indicators": ["atr_14"],
+      "exit_rules": [
+        {
+          "rule_type": "stop_loss_atr",
+          "params": {"atr_column": "atr_14", "multiple": 2.0},
+          "description": "Stop Loss: Entry - (ATR14 x atr_multiplier)",
+          "grace_period_bars": 0,
+          "momentum_protection": false
+        },
+        {
+          "rule_type": "max_duration",
+          "params": {"max_bars": 10},
+          "description": "Time-based exit after max_hold_days",
+          "grace_period_bars": 0,
+          "momentum_protection": false
+        }
+      ],
       "parameters": {
-        "volume_short_ma": {
-          "type": "int",
-          "default": 4,
-          "configurable": true,
-          "optimization": {
-            "min": 2,
-            "max": 20,
-            "step": 1
-          },
-          "description": "Short MA period for volume filter",
-          "category": "Volume Filter"
-        },
-        "volume_long_ma": {
-          "type": "int",
-          "default": 30,
-          "configurable": true,
-          "optimization": {
-            "min": 10,
-            "max": 100,
-            "step": 5
-          },
-          "description": "Long MA period for volume filter",
-          "category": "Volume Filter"
-        },
-        "volume_alignment_window": {
-          "type": "int",
-          "default": 14,
-          "configurable": true,
-          "optimization": {
-            "min": 1,
-            "max": 30,
-            "step": 1
-          },
-          "description": "Bars to wait for volume confirmation after signal",
-          "category": "Volume Filter"
-        },
-        "atr_stop_loss_multiple": {
+        "atr_multiplier": {
           "type": "float",
-          "default": 2.5,
+          "default": 2.0,
           "configurable": true,
           "optimization": {
             "min": 0.5,
@@ -55,54 +36,6 @@
           },
           "description": "ATR multiplier for stop loss calculation",
           "category": "Stop Loss"
-        },
-        "stop_loss_percent": {
-          "type": "float",
-          "default": 0.0,
-          "configurable": true,
-          "optimization": {
-            "min": 0.0,
-            "max": 10.0,
-            "step": 0.5
-          },
-          "description": "Percentage stop loss (fallback if ATR multiple is 0)",
-          "category": "Stop Loss"
-        },
-        "grace_period_bars": {
-          "type": "int",
-          "default": 14,
-          "configurable": true,
-          "optimization": {
-            "min": 0,
-            "max": 30,
-            "step": 1
-          },
-          "description": "Bars to ignore EMA exit signal after entry",
-          "category": "Exit Protection"
-        },
-        "momentum_gain_pct": {
-          "type": "float",
-          "default": 2.0,
-          "configurable": true,
-          "optimization": {
-            "min": 0.0,
-            "max": 10.0,
-            "step": 0.5
-          },
-          "description": "Percentage gain threshold for momentum protection",
-          "category": "Exit Protection"
-        },
-        "momentum_lookback": {
-          "type": "int",
-          "default": 7,
-          "configurable": true,
-          "optimization": {
-            "min": 1,
-            "max": 30,
-            "step": 1
-          },
-          "description": "Bars lookback for momentum calculation",
-          "category": "Exit Protection"
         },
         "risk_percent": {
           "type": "float",
@@ -113,10 +46,22 @@
             "max": 10.0,
             "step": 0.5
           },
-          "description": "Percentage of equity to risk per trade",
+          "description": "Percentage of equity to risk per trade at stop loss",
           "category": "Position Sizing"
         },
-        "atr_multiplier": {
+        "max_hold_days": {
+          "type": "int",
+          "default": 10,
+          "configurable": true,
+          "optimization": {
+            "min": 1,
+            "max": 60,
+            "step": 1
+          },
+          "description": "Maximum days to hold a position before forced exit",
+          "category": "Exit Rules"
+        },
+        "alpha_atr_multiplier": {
           "type": "float",
           "default": 1.0,
           "configurable": true,
@@ -155,10 +100,20 @@
       }
     },
 
-    "RandomBaseStrategy": {
-      "display_name": "Random Base Strategy",
-      "description": "Baseline strategy using random entry/exit for benchmarking",
+    "RandomControlStrategy": {
+      "display_name": "Random Control Strategy",
+      "description": "Control/baseline strategy with random entry and exit for comparison. Uses risk-based position sizing.",
       "trade_direction": "LONG",
+      "required_indicators": ["atr_14"],
+      "exit_rules": [
+        {
+          "rule_type": "stop_loss_atr",
+          "params": {"atr_column": "atr_14", "multiple": 2.0},
+          "description": "Stop Loss: Entry - (ATR14 x atr_multiplier)",
+          "grace_period_bars": 0,
+          "momentum_protection": false
+        }
+      ],
       "parameters": {
         "entry_probability": {
           "type": "float",
@@ -166,10 +121,10 @@
           "configurable": true,
           "optimization": {
             "min": 0.01,
-            "max": 0.20,
+            "max": 0.30,
             "step": 0.01
           },
-          "description": "Probability of entry each bar (0.10 = 10%)",
+          "description": "Probability of entry each day (0.10 = 10%)",
           "category": "Entry/Exit"
         },
         "exit_probability": {
@@ -178,25 +133,13 @@
           "configurable": true,
           "optimization": {
             "min": 0.01,
-            "max": 0.20,
+            "max": 0.30,
             "step": 0.01
           },
-          "description": "Probability of exit each bar (0.10 = 10%)",
+          "description": "Probability of exit each day (0.10 = 10%)",
           "category": "Entry/Exit"
         },
-        "position_size_pct": {
-          "type": "float",
-          "default": 5.0,
-          "configurable": true,
-          "optimization": {
-            "min": 1.0,
-            "max": 20.0,
-            "step": 1.0
-          },
-          "description": "Position size as percentage of equity",
-          "category": "Position Sizing"
-        },
-        "stop_loss_atr_multiple": {
+        "atr_multiplier": {
           "type": "float",
           "default": 2.0,
           "configurable": true,
@@ -205,8 +148,20 @@
             "max": 5.0,
             "step": 0.25
           },
-          "description": "ATR multiplier for stop loss",
+          "description": "ATR multiplier for stop loss calculation",
           "category": "Stop Loss"
+        },
+        "risk_percent": {
+          "type": "float",
+          "default": 2.0,
+          "configurable": true,
+          "optimization": {
+            "min": 0.5,
+            "max": 10.0,
+            "step": 0.5
+          },
+          "description": "Percentage of equity to risk per trade at stop loss",
+          "category": "Position Sizing"
         },
         "random_seed": {
           "type": "int",

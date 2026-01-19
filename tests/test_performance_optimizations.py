@@ -119,7 +119,7 @@ class TestNumbaCalculations(unittest.TestCase):
 
     def test_alphatrend_numba_matches_python(self):
         """Verify Numba AlphaTrend produces identical results to Python version."""
-        from strategies.alphatrend_strategy import _alphatrend_numba
+        from strategies.base_alphatrend_strategy import _alphatrend_numba
 
         # Pure Python implementation (reference)
         def alphatrend_python(up_band, down_band, momentum_bullish):
@@ -160,7 +160,7 @@ class TestNumbaCalculations(unittest.TestCase):
 
     def test_filter_signals_numba_matches_python(self):
         """Verify Numba signal filtering produces identical results."""
-        from strategies.alphatrend_strategy import _filter_signals_numba
+        from strategies.base_alphatrend_strategy import _filter_signals_numba
 
         # Pure Python implementation (reference)
         def filter_signals_python(cross_up, cross_down):

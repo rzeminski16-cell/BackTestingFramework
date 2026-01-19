@@ -3,13 +3,19 @@ Strategy Exit Rules Configuration.
 
 Defines the exit rules for each strategy in a machine-readable format
 so the Rule Tester can properly apply AND logic with user-defined rules.
+
+All strategy definitions are loaded from the centralized config/strategy_parameters.json.
+This ensures all systems share a single source of truth for available strategies.
 """
 
 from dataclasses import dataclass, field
-from typing import List, Dict, Any, Optional, Callable
+from typing import List, Dict, Any, Optional
 from enum import Enum
 import pandas as pd
 import numpy as np
+
+# Import centralized strategy configuration
+from config.strategy_config import StrategyConfig
 
 
 class ExitRuleType(Enum):
@@ -67,33 +73,103 @@ class StrategyExitConfig:
 class StrategyExitRulesRegistry:
     """
     Registry of all strategy exit configurations.
+
+    This registry reads from the centralized strategy_parameters.json
+    to ensure all systems use the same strategy definitions.
     """
 
     _strategies: Dict[str, StrategyExitConfig] = {}
+    _initialized: bool = False
+
+    @classmethod
+    def _ensure_initialized(cls) -> None:
+        """Ensure strategies are loaded from config."""
+        if not cls._initialized:
+            cls._load_from_config()
+            cls._initialized = True
+
+    @classmethod
+    def _load_from_config(cls) -> None:
+        """Load all strategies from centralized config."""
+        cls._strategies.clear()
+
+        # Load strategies from StrategyConfig
+        for strategy_name in StrategyConfig.get_strategies():
+            info = StrategyConfig.get_strategy_info(strategy_name)
+            exit_rules_data = StrategyConfig.get_exit_rules(strategy_name)
+
+            # Convert JSON exit rules to StrategyExitRule objects
+            exit_rules = []
+            for rule_data in exit_rules_data:
+                rule_type_str = rule_data.get('rule_type', 'stop_loss_atr')
+                try:
+                    rule_type = ExitRuleType(rule_type_str)
+                except ValueError:
+                    # Skip unknown rule types
+                    continue
+
+                exit_rules.append(StrategyExitRule(
+                    rule_type=rule_type,
+                    params=rule_data.get('params', {}),
+                    description=rule_data.get('description', ''),
+                    grace_period_bars=rule_data.get('grace_period_bars', 0),
+                    momentum_protection=rule_data.get('momentum_protection', False),
+                    momentum_gain_pct=rule_data.get('momentum_gain_pct', 0.0)
+                ))
+
+            config = StrategyExitConfig(
+                strategy_name=strategy_name,
+                display_name=info.get('display_name', strategy_name),
+                trade_direction=info.get('trade_direction', 'LONG'),
+                required_indicators=info.get('required_indicators', []),
+                exit_rules=exit_rules
+            )
+            cls._strategies[strategy_name] = config
+
+        # Always add "None" option for custom rules only
+        cls._strategies["None"] = StrategyExitConfig(
+            strategy_name="None",
+            display_name="No Strategy (Custom Rules Only)",
+            trade_direction="LONG",
+            required_indicators=[],
+            exit_rules=[]
+        )
+
+    @classmethod
+    def reload(cls) -> None:
+        """Force reload of strategies from config."""
+        StrategyConfig.reload()
+        cls._initialized = False
+        cls._ensure_initialized()
 
     @classmethod
     def register(cls, config: StrategyExitConfig) -> None:
-        """Register a strategy exit configuration."""
+        """Register a strategy exit configuration (for programmatic additions)."""
+        cls._ensure_initialized()
         cls._strategies[config.strategy_name] = config
 
     @classmethod
     def get(cls, strategy_name: str) -> Optional[StrategyExitConfig]:
         """Get a strategy exit configuration by name."""
+        cls._ensure_initialized()
         return cls._strategies.get(strategy_name)
 
     @classmethod
     def get_all(cls) -> Dict[str, StrategyExitConfig]:
         """Get all registered strategies."""
+        cls._ensure_initialized()
         return cls._strategies.copy()
 
     @classmethod
     def get_strategy_names(cls) -> List[str]:
         """Get list of all registered strategy names."""
+        cls._ensure_initialized()
         return list(cls._strategies.keys())
 
     @classmethod
     def get_display_names(cls) -> Dict[str, str]:
         """Get mapping of strategy_name -> display_name."""
+        cls._ensure_initialized()
         return {name: config.display_name for name, config in cls._strategies.items()}
 
 
@@ -411,91 +487,3 @@ class StrategyExitRuleEvaluator:
         """Check if max holding duration exceeded."""
         max_bars = rule.params.get('max_bars', 100)
         return bars_since_entry >= max_bars
-
-
-# =============================================================================
-# REGISTER KNOWN STRATEGIES
-# =============================================================================
-
-def register_default_strategies():
-    """Register the default strategy exit configurations."""
-
-    # AlphaTrend Strategy
-    alphatrend_config = StrategyExitConfig(
-        strategy_name="AlphaTrendStrategy",
-        display_name="Alpha Trend Strategy",
-        trade_direction="LONG",
-        required_indicators=['ema_50', 'atr_14'],
-        exit_rules=[
-            # Stop Loss - ATR based
-            StrategyExitRule(
-                rule_type=ExitRuleType.STOP_LOSS_ATR,
-                params={'atr_column': 'atr_14', 'multiple': 2.5},
-                description="Stop Loss: Entry - (ATR14 × 2.5)",
-                grace_period_bars=0,
-                momentum_protection=False
-            ),
-            # EMA Exit - with grace period and momentum protection
-            StrategyExitRule(
-                rule_type=ExitRuleType.INDICATOR_CROSS,
-                params={'indicator': 'ema_50', 'direction': 'below'},
-                description="Exit when Close < EMA(50)",
-                grace_period_bars=14,  # Default grace period
-                momentum_protection=True,
-                momentum_gain_pct=2.0  # Default momentum threshold
-            ),
-        ]
-    )
-    StrategyExitRulesRegistry.register(alphatrend_config)
-
-    # Random Base Strategy
-    random_config = StrategyExitConfig(
-        strategy_name="RandomBaseStrategy",
-        display_name="Random Base Strategy",
-        trade_direction="LONG",
-        required_indicators=['atr_14'],
-        exit_rules=[
-            # Stop Loss - ATR based
-            StrategyExitRule(
-                rule_type=ExitRuleType.STOP_LOSS_ATR,
-                params={'atr_column': 'atr_14', 'multiple': 2.0},
-                description="Stop Loss: Entry - (ATR14 × 2.0)",
-                grace_period_bars=0,
-                momentum_protection=False
-            ),
-        ]
-    )
-    StrategyExitRulesRegistry.register(random_config)
-
-    # RSI Strategy
-    rsi_config = StrategyExitConfig(
-        strategy_name="RSIStrategy",
-        display_name="RSI Strategy",
-        trade_direction="LONG",
-        required_indicators=['rsi_14'],
-        exit_rules=[
-            # RSI Overbought Exit
-            StrategyExitRule(
-                rule_type=ExitRuleType.INDICATOR_THRESHOLD,
-                params={'indicator': 'rsi_14', 'operator': '>', 'threshold': 70},
-                description="Exit when RSI(14) > 70 (overbought)",
-                grace_period_bars=0,
-                momentum_protection=False
-            ),
-        ]
-    )
-    StrategyExitRulesRegistry.register(rsi_config)
-
-    # No Strategy (user-defined rules only)
-    no_strategy_config = StrategyExitConfig(
-        strategy_name="None",
-        display_name="No Strategy (Custom Rules Only)",
-        trade_direction="LONG",
-        required_indicators=[],
-        exit_rules=[]  # No original exit rules - only user-defined rules apply
-    )
-    StrategyExitRulesRegistry.register(no_strategy_config)
-
-
-# Register strategies on module load
-register_default_strategies()

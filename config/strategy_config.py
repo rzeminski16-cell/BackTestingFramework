@@ -58,7 +58,47 @@ class StrategyConfig:
             'name': strategy_name,
             'display_name': strategy.get('display_name', strategy_name),
             'description': strategy.get('description', ''),
-            'trade_direction': strategy.get('trade_direction', 'LONG')
+            'trade_direction': strategy.get('trade_direction', 'LONG'),
+            'required_indicators': strategy.get('required_indicators', [])
+        }
+
+    @classmethod
+    def get_exit_rules(cls, strategy_name: str) -> List[Dict[str, Any]]:
+        """
+        Get exit rules for a strategy (used by Rule Tester).
+
+        Returns:
+            List of exit rule configurations.
+        """
+        config = cls._load_config()
+        strategy = config.get('strategies', {}).get(strategy_name, {})
+        return strategy.get('exit_rules', [])
+
+    @classmethod
+    def get_required_indicators(cls, strategy_name: str) -> List[str]:
+        """
+        Get required indicators for a strategy.
+
+        Returns:
+            List of indicator column names.
+        """
+        config = cls._load_config()
+        strategy = config.get('strategies', {}).get(strategy_name, {})
+        return strategy.get('required_indicators', [])
+
+    @classmethod
+    def get_display_names(cls) -> Dict[str, str]:
+        """
+        Get mapping of strategy_name -> display_name for all strategies.
+
+        Returns:
+            Dict mapping internal names to display names.
+        """
+        config = cls._load_config()
+        strategies = config.get('strategies', {})
+        return {
+            name: info.get('display_name', name)
+            for name, info in strategies.items()
         }
 
     @classmethod
