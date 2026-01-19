@@ -1823,15 +1823,17 @@ class CTkRuleTesterGUI:
         """
         Get list of indicators used by strategy exit rules and user-defined rules.
 
+        Only returns indicators that actually exist in the price data.
+
         Returns:
-            List of indicator column names
+            List of indicator column names that exist in price data
         """
-        indicators = []
+        requested_indicators = []
 
         # 1. Get indicators from strategy's exit config (required_indicators)
         strategy_config = self.rule_engine.get_strategy_config() if self.rule_engine else None
         if strategy_config and hasattr(strategy_config, 'required_indicators'):
-            indicators.extend(strategy_config.required_indicators)
+            requested_indicators.extend(strategy_config.required_indicators)
 
         # Also extract indicators from individual exit rules' params
         if strategy_config and hasattr(strategy_config, 'exit_rules'):
@@ -1840,26 +1842,50 @@ class CTkRuleTesterGUI:
                     # Check common param keys that reference indicators
                     for key in ['indicator', 'atr_column', 'ema_column', 'sma_column']:
                         if key in exit_rule.params:
-                            indicators.append(exit_rule.params[key])
+                            requested_indicators.append(exit_rule.params[key])
 
         # 2. Get indicators from user-defined rules
         for rule in self.rules:
             # The feature being compared
             if hasattr(rule, 'feature') and rule.feature:
-                indicators.append(rule.feature)
+                requested_indicators.append(rule.feature)
             # If comparing to another feature
             if hasattr(rule, 'compare_feature') and rule.compare_feature:
-                indicators.append(rule.compare_feature)
+                requested_indicators.append(rule.compare_feature)
 
-        # Remove duplicates while preserving order
+        # Get available columns from price data
+        available_columns = set()
+        if self.price_data_dict:
+            for pdf in self.price_data_dict.values():
+                available_columns.update(pdf.columns)
+                break  # Just need one to get column names
+
+        # Filter to only indicators that exist in price data
+        # Also try to match variations (e.g., 'atr_14' -> 'atr_14_atr')
+        matched_indicators = []
         seen = set()
-        unique_indicators = []
-        for ind in indicators:
-            if ind and ind not in seen:
-                seen.add(ind)
-                unique_indicators.append(ind)
 
-        return unique_indicators
+        for ind in requested_indicators:
+            if not ind or ind in seen:
+                continue
+
+            if ind in available_columns:
+                # Exact match
+                matched_indicators.append(ind)
+                seen.add(ind)
+            else:
+                # Try to find a close match (e.g., 'ema_50' -> 'ema_50_ema')
+                for col in available_columns:
+                    col_lower = col.lower()
+                    ind_lower = ind.lower()
+                    # Check if the indicator name is a prefix of the column
+                    if col_lower.startswith(ind_lower + '_') or col_lower == ind_lower:
+                        if col not in seen:
+                            matched_indicators.append(col)
+                            seen.add(col)
+                        break
+
+        return matched_indicators
 
 
 # Helper function for Theme (if not available in ctk_theme)
