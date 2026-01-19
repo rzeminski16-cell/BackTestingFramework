@@ -1,12 +1,29 @@
 {
   "_description": "Centralized strategy parameter configuration. All systems should reference this file.",
-  "_version": "1.0",
+  "_version": "2.0",
 
   "strategies": {
     "BaseAlphaTrendStrategy": {
       "display_name": "Base Alpha Trend Strategy",
       "description": "Simplified AlphaTrend strategy with time-based exit. Entry on AlphaTrend buy signal, exit after max hold days.",
       "trade_direction": "LONG",
+      "required_indicators": ["atr_14"],
+      "exit_rules": [
+        {
+          "rule_type": "stop_loss_atr",
+          "params": {"atr_column": "atr_14", "multiple": 2.0},
+          "description": "Stop Loss: Entry - (ATR14 x atr_multiplier)",
+          "grace_period_bars": 0,
+          "momentum_protection": false
+        },
+        {
+          "rule_type": "max_duration",
+          "params": {"max_bars": 10},
+          "description": "Time-based exit after max_hold_days",
+          "grace_period_bars": 0,
+          "momentum_protection": false
+        }
+      ],
       "parameters": {
         "atr_multiplier": {
           "type": "float",
@@ -87,6 +104,16 @@
       "display_name": "Random Control Strategy",
       "description": "Control/baseline strategy with random entry and exit for comparison. Uses risk-based position sizing.",
       "trade_direction": "LONG",
+      "required_indicators": ["atr_14"],
+      "exit_rules": [
+        {
+          "rule_type": "stop_loss_atr",
+          "params": {"atr_column": "atr_14", "multiple": 2.0},
+          "description": "Stop Loss: Entry - (ATR14 x atr_multiplier)",
+          "grace_period_bars": 0,
+          "momentum_protection": false
+        }
+      ],
       "parameters": {
         "entry_probability": {
           "type": "float",
