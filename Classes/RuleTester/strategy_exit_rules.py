@@ -394,25 +394,6 @@ def register_default_strategies():
     )
     StrategyExitRulesRegistry.register(random_config)
 
-    # RSI Strategy
-    rsi_config = StrategyExitConfig(
-        strategy_name="RSIStrategy",
-        display_name="RSI Strategy",
-        trade_direction="LONG",
-        required_indicators=['rsi_14'],
-        exit_rules=[
-            # RSI Overbought Exit
-            StrategyExitRule(
-                rule_type=ExitRuleType.INDICATOR_THRESHOLD,
-                params={'indicator': 'rsi_14', 'operator': '>', 'threshold': 70},
-                description="Exit when RSI(14) > 70 (overbought)",
-                grace_period_bars=0,
-                momentum_protection=False
-            ),
-        ]
-    )
-    StrategyExitRulesRegistry.register(rsi_config)
-
     # No Strategy (user-defined rules only)
     no_strategy_config = StrategyExitConfig(
         strategy_name="None",

@@ -18,43 +18,54 @@ For each bar in data:
 
 The framework includes two strategies:
 
-1. **AlphaTrend** - A production-ready trend-following strategy
-2. **RandomBaseStrategy** - A baseline random strategy for comparison
+1. **BaseAlphaTrendStrategy** - A simplified AlphaTrend strategy with time-based exits
+2. **RandomControlStrategy** - A baseline random strategy for comparison
 
 ---
 
-## RandomBaseStrategy (Baseline)
+## RandomControlStrategy (Baseline)
 
 A random entry/exit strategy for establishing baseline performance. Use this to validate that your E-ratio calculations are working correctly (E-ratio should hover around 1.0 for random entries).
 
-### What RandomBaseStrategy Does
+### What RandomControlStrategy Does
 
 1. **Entry**: Randomly enters with configurable probability (default 10%)
 2. **Exit**: Randomly exits with configurable probability (default 10%)
-3. **Risk Management**: Uses ATR-based stop losses
+3. **Risk Management**: Uses ATR-based stop losses with risk-based position sizing
 
-### Running RandomBaseStrategy
+### Running RandomControlStrategy
 
 ```python
-from strategies.random_base_strategy import RandomBaseStrategy
+from strategies.random_control_strategy import RandomControlStrategy
 
 # Default parameters
-strategy = RandomBaseStrategy()
+strategy = RandomControlStrategy()
 
 # Custom parameters
-strategy = RandomBaseStrategy(
-    entry_probability=0.10,       # 10% chance to enter each bar
-    exit_probability=0.10,        # 10% chance to exit each bar
-    position_size_pct=5.0,        # 5% of capital per trade
-    stop_loss_atr_multiple=2.0    # Stop loss = entry - (ATR × 2)
+strategy = RandomControlStrategy(
+    entry_probability=0.10,    # 10% chance to enter each bar
+    exit_probability=0.10,     # 10% chance to exit each bar
+    atr_multiplier=2.0,        # Stop loss = entry - (ATR14 × 2.0)
+    risk_percent=2.0,          # Risk 2% of equity per trade
+    random_seed=42             # Optional: for reproducibility
 )
 ```
 
-### Required Data for RandomBaseStrategy
+### Parameters
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `entry_probability` | float | 0.10 | Probability of entry each bar (0.0-1.0) |
+| `exit_probability` | float | 0.10 | Probability of exit each bar (0.0-1.0) |
+| `atr_multiplier` | float | 2.0 | ATR multiplier for stop loss |
+| `risk_percent` | float | 2.0 | Percent of equity to risk per trade |
+| `random_seed` | int | None | Random seed for reproducibility |
+
+### Required Data for RandomControlStrategy
 
 Your CSV must have:
-- `date`, `open`, `high`, `low`, `close`, `volume`
-- `atr_14` - 14-period ATR
+- `date`, `close`
+- `atr_14_atr` - 14-period ATR
 
 ### Use Cases
 
@@ -64,40 +75,62 @@ Your CSV must have:
 
 ---
 
-## AlphaTrend (Production Strategy)
+## BaseAlphaTrendStrategy (Production Strategy)
 
-The framework includes **AlphaTrend**, a production-ready trend-following strategy.
+The framework includes **BaseAlphaTrendStrategy**, a simplified AlphaTrend trend-following strategy with time-based exits.
 
-### What AlphaTrend Does
+### What BaseAlphaTrendStrategy Does
 
-1. **Entry**: Buys when the AlphaTrend indicator signals an uptrend AND volume is increasing
-2. **Exit**: Sells when price falls below the 50-day EMA
-3. **Risk Management**: Uses ATR-based stop losses
+1. **Entry**: Buys when the AlphaTrend indicator signals an uptrend (crossover above smoothed line)
+2. **Exit**: Time-based exit after holding for max_hold_days (default 10 days)
+3. **Risk Management**: Uses ATR-based stop losses with risk-based position sizing
 
-### Running AlphaTrend
+### The AlphaTrend Indicator
+
+The AlphaTrend indicator creates dynamic bands around price and generates signals based on momentum shifts:
+
+1. **Adaptive Coefficient**: Calculated using volatility ratio (ATR14 / long-term ATR average)
+2. **Upper/Lower Bands**: Dynamic support/resistance levels based on ATR
+3. **Momentum Detection**: Uses MFI (Money Flow Index) with dynamic thresholds
+4. **AlphaTrend Line**: State-dependent line that ratchets up in uptrends, down in downtrends
+5. **Buy Signal**: Generated when AlphaTrend crosses above its smoothed line
+
+### Running BaseAlphaTrendStrategy
 
 ```python
-from strategies.alphatrend_strategy import AlphaTrendStrategy
+from strategies.base_alphatrend_strategy import BaseAlphaTrendStrategy
 
 # Default parameters
-strategy = AlphaTrendStrategy()
+strategy = BaseAlphaTrendStrategy()
 
 # Custom parameters
-strategy = AlphaTrendStrategy(
-    volume_short_ma=4,        # Short volume MA
-    volume_long_ma=30,        # Long volume MA
-    atr_stop_loss_multiple=2.5,  # Stop loss = entry - (ATR × this)
-    grace_period_bars=14,     # Ignore EMA exit for this many bars after entry
-    risk_percent=2.0          # Risk 2% of equity per trade
+strategy = BaseAlphaTrendStrategy(
+    atr_multiplier=2.0,         # Stop loss = entry - (ATR14 × 2.0)
+    risk_percent=2.0,           # Risk 2% of equity per trade
+    max_hold_days=10,           # Exit after 10 days
+    alpha_atr_multiplier=1.0,   # ATR multiplier for AlphaTrend bands
+    smoothing_length=3,         # EMA period for AlphaTrend smoothing
+    percentile_period=100       # Lookback for dynamic MFI thresholds
 )
 ```
 
-### Required Data for AlphaTrend
+### Parameters
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `atr_multiplier` | float | 2.0 | ATR multiplier for stop loss |
+| `risk_percent` | float | 2.0 | Percent of equity to risk per trade |
+| `max_hold_days` | int | 10 | Maximum days to hold a position |
+| `alpha_atr_multiplier` | float | 1.0 | Base multiplier for ATR bands in AlphaTrend |
+| `smoothing_length` | int | 3 | EMA period for AlphaTrend smoothing |
+| `percentile_period` | int | 100 | Lookback period for dynamic MFI thresholds |
+
+### Required Data for BaseAlphaTrendStrategy
 
 Your CSV must have:
 - `date`, `open`, `high`, `low`, `close`, `volume`
-- `atr_14` - 14-period ATR
-- `ema_50` - 50-period EMA
+- `atr_14_atr` - 14-period ATR
+- `mfi_14_mfi` - 14-period Money Flow Index
 
 ### Parameter Tuning
 
@@ -107,19 +140,19 @@ All strategy parameters are defined in `config/strategy_parameters.json`. Use th
 from config.strategy_config import StrategyConfig
 
 # Get all parameters with defaults and optimization ranges
-params = StrategyConfig.get_optimization_params('AlphaTrendStrategy')
+params = StrategyConfig.get_optimization_params('BaseAlphaTrendStrategy')
 
 # Get just the default values
-defaults = StrategyConfig.get_defaults('AlphaTrendStrategy')
+defaults = StrategyConfig.get_defaults('BaseAlphaTrendStrategy')
 ```
 
 **Tuning Guidelines:**
 
 | For More Trades | For Fewer Trades |
 |-----------------|------------------|
-| Lower `volume_long_ma` | Higher `volume_long_ma` |
-| Increase `grace_period_bars` | Decrease `grace_period_bars` |
-| Lower `atr_stop_loss_multiple` | Higher `atr_stop_loss_multiple` |
+| Shorter `percentile_period` | Longer `percentile_period` |
+| Lower `alpha_atr_multiplier` | Higher `alpha_atr_multiplier` |
+| Shorter `max_hold_days` | Longer `max_hold_days` |
 
 See [Configuration Guide](CONFIGURATION.md#strategy-parameters) for full parameter documentation.
 

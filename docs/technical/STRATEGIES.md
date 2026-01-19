@@ -535,42 +535,79 @@ def prepare_data(self, data: pd.DataFrame) -> pd.DataFrame:
 
 ---
 
-## The Included AlphaTrend Strategy
+## Included Strategies
 
-The framework includes a production-ready strategy.
+The framework includes two strategies for production use and baseline comparison.
 
-### What It Does
+### BaseAlphaTrendStrategy
 
-1. **Enters** when AlphaTrend indicator signals uptrend AND volume confirms
-2. **Exits** when price falls below 50-day EMA (with grace period)
-3. Uses ATR-based stop losses
+A simplified AlphaTrend strategy with time-based exits.
 
-### Key Parameters
+**What It Does:**
+1. **Enters** when AlphaTrend indicator signals uptrend (crosses above smoothed line)
+2. **Exits** after holding for `max_hold_days` (time-based exit)
+3. Uses ATR-based stop losses with risk-based position sizing
+
+**Key Parameters:**
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
-| `volume_short_ma` | 4 | Short volume MA |
-| `volume_long_ma` | 30 | Long volume MA |
-| `atr_stop_loss_multiple` | 2.5 | Stop loss = entry - (ATR × this) |
-| `grace_period_bars` | 14 | Bars to ignore EMA exit |
+| `atr_multiplier` | 2.0 | Stop loss = entry - (ATR14 × this) |
 | `risk_percent` | 2.0 | % of equity to risk per trade |
+| `max_hold_days` | 10 | Maximum days to hold position |
+| `alpha_atr_multiplier` | 1.0 | ATR multiplier for AlphaTrend bands |
+| `smoothing_length` | 3 | EMA period for smoothing |
+| `percentile_period` | 100 | Lookback for MFI thresholds |
 
-### Required Columns
-
+**Required Columns:**
 - `date`, `open`, `high`, `low`, `close`, `volume`
-- `atr_14` - 14-period ATR
-- `ema_50` - 50-period EMA
+- `atr_14_atr` - 14-period ATR
+- `mfi_14_mfi` - 14-period Money Flow Index
 
-### Usage
+**Usage:**
 
 ```python
-from strategies.alphatrend_strategy import AlphaTrendStrategy
+from strategies.base_alphatrend_strategy import BaseAlphaTrendStrategy
 
-strategy = AlphaTrendStrategy(
-    volume_short_ma=4,
-    volume_long_ma=30,
-    atr_stop_loss_multiple=2.5,
-    grace_period_bars=14,
+strategy = BaseAlphaTrendStrategy(
+    atr_multiplier=2.0,
+    risk_percent=2.0,
+    max_hold_days=10
+)
+```
+
+### RandomControlStrategy
+
+A random baseline strategy for comparison purposes.
+
+**What It Does:**
+1. **Enters** randomly with configurable probability (default 10%)
+2. **Exits** randomly with configurable probability (default 10%)
+3. Uses ATR-based stop losses with risk-based position sizing
+
+**Key Parameters:**
+
+| Parameter | Default | Description |
+|-----------|---------|-------------|
+| `entry_probability` | 0.10 | Probability of entry each bar |
+| `exit_probability` | 0.10 | Probability of exit each bar |
+| `atr_multiplier` | 2.0 | Stop loss = entry - (ATR14 × this) |
+| `risk_percent` | 2.0 | % of equity to risk per trade |
+| `random_seed` | None | Random seed for reproducibility |
+
+**Required Columns:**
+- `date`, `close`
+- `atr_14_atr` - 14-period ATR
+
+**Usage:**
+
+```python
+from strategies.random_control_strategy import RandomControlStrategy
+
+strategy = RandomControlStrategy(
+    entry_probability=0.10,
+    exit_probability=0.10,
+    atr_multiplier=2.0,
     risk_percent=2.0
 )
 ```
