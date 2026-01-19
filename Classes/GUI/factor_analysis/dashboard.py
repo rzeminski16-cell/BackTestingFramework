@@ -876,46 +876,34 @@ class Tier1View(ctk.CTkFrame):
         """Update the view with analysis results."""
         self.results = results
 
-        # Build factor list with all factor types
+        # Build factor list - ONLY include factors with valid correlations
         factors = []
         correlations = results.get('correlations', {})
         p_values = results.get('p_values', {})
         factor_types = results.get('factor_types', {})
-        factor_details = results.get('factor_details', {})
 
         for factor, corr in correlations.items():
-            # Determine if factor has data (availability)
-            # A factor has data if it's in factor_details OR has a valid (non-None) correlation
-            has_data = factor in factor_details or corr is not None
-
-            # Skip factors with no data (NA availability)
-            if not has_data:
+            # Skip factors with None correlation
+            if corr is None:
                 continue
 
-            # Check if correlation is valid (not None and not NaN)
-            corr_is_valid = corr is not None
-            if corr_is_valid:
-                try:
-                    corr_is_valid = not pd.isna(corr)
-                except (TypeError, ValueError):
-                    pass
+            # Skip factors with NaN correlation
+            try:
+                if pd.isna(corr):
+                    continue
+            except (TypeError, ValueError):
+                pass
 
             factors.append({
                 'name': factor,
                 'type': factor_types.get(factor, 'Unknown'),
-                'correlation': corr if corr_is_valid else 0,  # Use 0 for sorting if invalid
-                'correlation_display': corr if corr_is_valid else None,  # Show N/A for invalid
+                'correlation': corr,
+                'correlation_display': corr,
                 'p_value': p_values.get(factor, 1.0) if p_values.get(factor) is not None else None
             })
 
-        # Sort by absolute correlation (descending)
-        # Factors with valid correlation first, then factors with N/A correlation
-        def sort_key(x):
-            if x['correlation_display'] is None:
-                return (1, 0)  # N/A correlations at the end
-            return (0, -abs(x['correlation']))
-
-        factors.sort(key=sort_key)
+        # Sort by absolute correlation (descending - highest correlation first)
+        factors.sort(key=lambda x: -abs(x['correlation']))
 
         self.factor_panel.set_factors(factors)
 
@@ -2312,26 +2300,39 @@ class FactorDocumentationView(ctk.CTkFrame):
                 low_avail = get_col_avail('low')
                 volume_avail = get_col_avail('volume')
 
+                # For technical factors, only use raw data availability as FALLBACK
+                # If computed factor already has availability from factor_df, don't overwrite
+                def set_if_not_computed(factor_name, raw_avail):
+                    """Set availability only if not already computed from factor_df."""
+                    # Check if any computed factor column matches this factor name
+                    factor_lower = factor_name.lower()
+                    already_computed = any(
+                        factor_lower in key.lower() or key.lower().startswith(f'tech_{factor_lower}')
+                        for key in self.factor_availability.keys()
+                    )
+                    if not already_computed:
+                        self.factor_availability[factor_name] = raw_avail
+
                 # Technical factors that only need close price
                 close_only_factors = ['rsi', 'macd', 'macd_signal', 'macd_hist', 'sma', 'ema', 'bollinger']
                 for factor in close_only_factors:
-                    self.factor_availability[factor] = close_avail
+                    set_if_not_computed(factor, close_avail)
 
                 # Technical factors that need high, low, close
                 hlc_factors = ['adx', 'atr', 'stochastic', 'cci']
                 hlc_avail = min(high_avail, low_avail, close_avail) if all([high_avail, low_avail, close_avail]) else 0
                 for factor in hlc_factors:
-                    self.factor_availability[factor] = hlc_avail
+                    set_if_not_computed(factor, hlc_avail)
 
                 # Technical factors that need high, low, close, volume
                 hlcv_factors = ['obv', 'vwap', 'mfi']
                 hlcv_avail = min(high_avail, low_avail, close_avail, volume_avail) if all([high_avail, low_avail, close_avail, volume_avail]) else 0
                 for factor in hlcv_factors:
-                    self.factor_availability[factor] = hlcv_avail
+                    set_if_not_computed(factor, hlcv_avail)
 
                 # Regime factors (derived from price data)
-                self.factor_availability['regime_volatility'] = close_avail
-                self.factor_availability['regime_trend'] = hlc_avail
+                set_if_not_computed('regime_volatility', close_avail)
+                set_if_not_computed('regime_trend', hlc_avail)
 
             # Check insider data
             insider_data = self.data.get('insider_data')
