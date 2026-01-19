@@ -24,7 +24,7 @@ from Classes.GUI.ctk_theme import Theme, Colors, Fonts, Sizes, show_error, show_
 from Classes.RuleTester import (
     Rule, RuleEngine, RuleMode, CompareType, RuleMetricsCalculator,
     extract_ticker_from_filename, load_price_data_for_tickers,
-    export_filtered_trades, export_comparison_report,
+    export_filtered_trades, export_comparison_report, export_exit_comparison_csv,
     StrategyExitRulesRegistry
 )
 from Classes.FactorAnalysis.data.trade_log_loader import TradeLogLoader
@@ -1533,7 +1533,16 @@ class CTkRuleTesterGUI:
             "Export Comparison Report",
             command=self._export_report,
             width=180
-        ).pack(side="left")
+        ).pack(side="left", padx=(0, Sizes.PAD_S))
+
+        # Exit comparison export button (for validating exit rule changes)
+        self.export_exit_comparison_btn = Theme.create_button(
+            export_btn_frame,
+            "Export Exit Comparison",
+            command=self._export_exit_comparison,
+            width=180
+        )
+        self.export_exit_comparison_btn.pack(side="left")
 
         self.export_status_label = ctk.CTkLabel(
             export_btn_frame,
@@ -1756,6 +1765,55 @@ class CTkRuleTesterGUI:
             text=f"Report saved to {output_path}",
             text_color=Colors.SUCCESS
         )
+
+    def _export_exit_comparison(self):
+        """Export exit comparison CSV for validating exit rule changes."""
+        if self.rule_mode != RuleMode.EXIT:
+            show_error(self.root, "Error", "Exit comparison export is only available in Exit mode.")
+            return
+
+        if not self.rule_engine or self.trades_df is None:
+            show_error(self.root, "Error", "No data to export. Load trade logs first.")
+            return
+
+        if not self.price_data_dict:
+            show_error(self.root, "Error", "No price data available.")
+            return
+
+        # Get original trades (before rules applied)
+        original_trades = self.trades_df.copy()
+
+        # Get modified trades (after rules applied)
+        modified_trades = self.rule_engine.apply_rules(self.rules)
+
+        if len(original_trades) != len(modified_trades):
+            show_error(self.root, "Error", "Trade count mismatch. Cannot export comparison.")
+            return
+
+        # Generate filename with strategy and preset info
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        strategy_name = self._strategy_name_map.get(self.strategy_var.get(), "unknown")
+        preset_name = self.preset_var.get().replace(" ", "_")
+        output_path = Path("logs") / f"exit_comparison_{strategy_name}_{preset_name}_{timestamp}.csv"
+        output_path.parent.mkdir(exist_ok=True)
+
+        # Build rules description
+        rules_desc = "; ".join([str(r) for r in self.rules]) if self.rules else "No user-defined rules"
+
+        try:
+            export_exit_comparison_csv(
+                original_trades=original_trades,
+                modified_trades=modified_trades,
+                price_data_dict=self.price_data_dict,
+                output_path=str(output_path),
+                rules_description=rules_desc
+            )
+            self.export_status_label.configure(
+                text=f"Exit comparison saved to {output_path}",
+                text_color=Colors.SUCCESS
+            )
+        except Exception as e:
+            show_error(self.root, "Export Error", f"Failed to export: {str(e)}")
 
 
 # Helper function for Theme (if not available in ctk_theme)
