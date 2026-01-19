@@ -12,10 +12,16 @@ This is the primary entry point for factor analysis. It orchestrates:
 
 import pandas as pd
 import numpy as np
+import warnings
 from typing import Dict, List, Optional, Tuple, Any, Union
 from pathlib import Path
 from dataclasses import dataclass, field
 from datetime import datetime
+
+# Suppress numpy warnings for empty arrays (common with sparse data)
+warnings.filterwarnings('ignore', message='Mean of empty slice')
+warnings.filterwarnings('ignore', message='invalid value encountered in')
+warnings.filterwarnings('ignore', message='Degrees of freedom <= 0 for slice')
 
 # Configuration
 from .config.factor_config import (
@@ -286,24 +292,39 @@ class FactorAnalyzer:
                 )
                 factor_columns.extend(self.technical_factors.get_factor_names())
 
-            # Fundamental factors (value, quality, growth)
-            fundamental_enabled = (
+            # Fundamental factors (EPS-only by default, or value/quality/growth if enabled)
+            # EPS-only mode is used when fundamental data is mostly missing for whole periods
+            eps_only_mode = fe_config.eps_only_fundamentals
+            traditional_fundamental_enabled = (
                 fe_config.value.enabled or
                 fe_config.quality.enabled or
                 fe_config.growth.enabled
             )
+            fundamental_enabled = eps_only_mode or traditional_fundamental_enabled
+
+            # Debug: Check if fundamental data is available
+            has_fundamental = input_data.fundamental_data is not None
+            fund_len = len(input_data.fundamental_data) if has_fundamental else 0
+            print(f"[DEBUG] Fundamental data available: {has_fundamental}, rows: {fund_len}")
+            print(f"[DEBUG] eps_only_mode: {eps_only_mode}, fundamental_enabled: {fundamental_enabled}")
+
             if fundamental_enabled and input_data.fundamental_data is not None:
+                print(f"[DEBUG] Fundamental data columns: {list(input_data.fundamental_data.columns)}")
                 aligned_fund = self.aligner.align_fundamentals(
                     trades_df, input_data.fundamental_data
                 )
+                print(f"[DEBUG] Aligned fundamental data rows: {len(aligned_fund)}, columns: {list(aligned_fund.columns)}")
                 trades_df = self.fundamental_factors.compute_all(
-                    trades_df, aligned_fund
+                    trades_df, aligned_fund, eps_only=eps_only_mode
                 )
                 factor_columns.extend(self.fundamental_factors.get_factor_names())
+                print(f"[DEBUG] After compute_all, trades_df columns: {[c for c in trades_df.columns if c.startswith('eps_') or c.startswith('composite_')]}")
+            else:
+                print(f"[DEBUG] Skipping fundamental factors - enabled: {fundamental_enabled}, data available: {has_fundamental}")
 
             # Insider factors
             if fe_config.insider.enabled and input_data.insider_data is not None:
-                aligned_insider = self.aligner.align_insider_data(
+                aligned_insider, _ = self.aligner.align_insider_data(
                     trades_df, input_data.insider_data
                 )
                 trades_df = self.insider_factors.compute_all(
@@ -325,6 +346,17 @@ class FactorAnalyzer:
                 )
                 factor_columns.extend(self.regime_factors.get_factor_names())
 
+            # Filter factor_columns to only include columns that exist in trades_df
+            valid_factor_columns = [c for c in factor_columns if c in trades_df.columns]
+            missing_factors = set(factor_columns) - set(valid_factor_columns)
+            if missing_factors:
+                self.logger.warning(f"Factor columns not found in trades_df: {missing_factors}")
+                print(f"[WARNING] Factor columns not found in trades_df: {missing_factors}")
+            factor_columns = valid_factor_columns
+
+            self.logger.info(f"Valid factor columns for analysis: {len(factor_columns)}")
+            print(f"[INFO] Valid factor columns for analysis ({len(factor_columns)}): {factor_columns}")
+
             # 6. Handle outliers
             trades_df, outlier_result = self.outlier_handler.handle_outliers(
                 trades_df, factor_columns
@@ -332,7 +364,7 @@ class FactorAnalyzer:
 
             # 7. Normalize factors (always apply if there are factor columns)
             if factor_columns:
-                trades_df = self.normalizer.normalize(trades_df, factor_columns)
+                trades_df, _ = self.normalizer.normalize(trades_df, factor_columns)
 
             # 8. Calculate quality score
             trades_df, quality_report = self.quality_scorer.score_all_trades(trades_df)

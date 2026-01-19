@@ -876,22 +876,36 @@ class Tier1View(ctk.CTkFrame):
         """Update the view with analysis results."""
         self.results = results
 
-        # Build factor list with all factor types
+        # Build factor list - ONLY include factors with valid correlations
         factors = []
         correlations = results.get('correlations', {})
         p_values = results.get('p_values', {})
         factor_types = results.get('factor_types', {})
 
         for factor, corr in correlations.items():
+            # Skip factors with None correlation
+            if corr is None:
+                continue
+
+            # Skip factors with NaN correlation
+            try:
+                if pd.isna(corr):
+                    continue
+            except (TypeError, ValueError):
+                pass
+
             factors.append({
                 'name': factor,
                 'type': factor_types.get(factor, 'Unknown'),
                 'correlation': corr,
-                'p_value': p_values.get(factor, 1.0)
+                'correlation_display': corr,
+                'p_value': p_values.get(factor, 1.0) if p_values.get(factor) is not None else None
             })
 
-        # Sort by absolute correlation
-        self.factor_panel.set_factors(sorted(factors, key=lambda x: abs(x['correlation']), reverse=True))
+        # Sort by absolute correlation (descending - highest correlation first)
+        factors.sort(key=lambda x: -abs(x['correlation']))
+
+        self.factor_panel.set_factors(factors)
 
 
 class Tier2View(ctk.CTkFrame):
@@ -1539,6 +1553,889 @@ class ScenarioView(ctk.CTkFrame):
                              wraplength=400).pack(side="left")
 
 
+class FactorDocumentationView(ctk.CTkFrame):
+    """View displaying factor documentation: calculations, raw data sources, and availability."""
+
+    # Factor documentation: name -> (calculation method, raw data source with exact column, category)
+    FACTOR_DOCS = {
+        # EPS Factors (default for fundamental analysis)
+        'eps_eps': {
+            'name': 'EPS',
+            'calculation': 'Direct value from earnings report: Net Income / Shares Outstanding',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'reported_eps',
+            'category': 'EPS Fundamentals'
+        },
+        'eps_estimated_eps': {
+            'name': 'Estimated EPS',
+            'calculation': 'Analyst consensus estimate for upcoming earnings',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'estimated_eps',
+            'category': 'EPS Fundamentals'
+        },
+        'eps_earnings_surprise': {
+            'name': 'Earnings Surprise',
+            'calculation': 'Actual EPS - Estimated EPS',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'earnings_surprise',
+            'category': 'EPS Fundamentals'
+        },
+        'eps_earnings_surprise_pct': {
+            'name': 'Earnings Surprise %',
+            'calculation': 'Percentage surprise from analyst estimates',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'surprise_pct',
+            'category': 'EPS Fundamentals'
+        },
+        # Value Factors
+        'value_pe_ratio': {
+            'name': 'P/E Ratio',
+            'calculation': 'Stock Price / Earnings Per Share (TTM)',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'pe_ratio',
+            'category': 'Value'
+        },
+        'value_price_to_book': {
+            'name': 'Price to Book',
+            'calculation': 'Market Cap / Total Book Value',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'price_to_book',
+            'category': 'Value'
+        },
+        'value_price_to_sales': {
+            'name': 'Price to Sales',
+            'calculation': 'Market Cap / Revenue (TTM)',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'price_to_sales_ttm',
+            'category': 'Value'
+        },
+        'value_peg_ratio': {
+            'name': 'PEG Ratio',
+            'calculation': 'P/E Ratio / Earnings Growth Rate',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'peg_ratio',
+            'category': 'Value'
+        },
+        'value_dividend_yield': {
+            'name': 'Dividend Yield',
+            'calculation': 'Annual Dividends Per Share / Stock Price × 100',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'dividend_yield',
+            'category': 'Value'
+        },
+        'value_ev_to_ebitda': {
+            'name': 'EV/EBITDA',
+            'calculation': 'Enterprise Value / EBITDA',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'ev_to_ebitda',
+            'category': 'Value'
+        },
+        # Quality Factors
+        'quality_return_on_equity': {
+            'name': 'Return on Equity',
+            'calculation': 'Net Income / Shareholders Equity × 100',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'return_on_equity_ttm',
+            'category': 'Quality'
+        },
+        'quality_return_on_assets': {
+            'name': 'Return on Assets',
+            'calculation': 'Net Income / Total Assets × 100',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'return_on_assets_ttm',
+            'category': 'Quality'
+        },
+        'quality_profit_margin': {
+            'name': 'Profit Margin',
+            'calculation': 'Net Income / Revenue × 100',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'profit_margin',
+            'category': 'Quality'
+        },
+        'quality_operating_margin': {
+            'name': 'Operating Margin',
+            'calculation': 'Operating Income / Revenue × 100',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'operating_margin_ttm',
+            'category': 'Quality'
+        },
+        'quality_current_ratio': {
+            'name': 'Current Ratio',
+            'calculation': 'Current Assets / Current Liabilities',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'currentratio',
+            'category': 'Quality'
+        },
+        'quality_debt_to_equity': {
+            'name': 'Debt to Equity',
+            'calculation': 'Total Liabilities / Shareholders Equity',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'debt_to_equity',
+            'category': 'Quality'
+        },
+        # Growth Factors
+        'growth_revenue_growth': {
+            'name': 'Revenue Growth',
+            'calculation': '(Current Revenue - Prior Year Revenue) / |Prior Year Revenue| × 100',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'revenue_growth_yoy',
+            'category': 'Growth'
+        },
+        'growth_earnings_growth': {
+            'name': 'Earnings Growth',
+            'calculation': '(Current EPS - Prior Year EPS) / |Prior Year EPS| × 100',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'earnings_growth_yoy',
+            'category': 'Growth'
+        },
+        'growth_earnings_surprise': {
+            'name': 'Earnings Surprise',
+            'calculation': 'Actual EPS - Estimated EPS',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'earnings_surprise',
+            'category': 'Growth'
+        },
+        'growth_earnings_surprise_pct': {
+            'name': 'Earnings Surprise %',
+            'calculation': '(Actual EPS - Estimated EPS) / |Estimated EPS| × 100',
+            'raw_data': 'fundamental_data.csv',
+            'column': 'surprise_pct',
+            'category': 'Growth'
+        },
+        # Technical Factors
+        'rsi': {
+            'name': 'RSI (Relative Strength Index)',
+            'calculation': '100 - (100 / (1 + RS)), where RS = Avg Gain / Avg Loss over N periods',
+            'raw_data': 'price_data.csv',
+            'column': 'close',
+            'category': 'Technical - Momentum'
+        },
+        'macd': {
+            'name': 'MACD',
+            'calculation': '12-period EMA - 26-period EMA',
+            'raw_data': 'price_data.csv',
+            'column': 'close',
+            'category': 'Technical - Trend'
+        },
+        'macd_signal': {
+            'name': 'MACD Signal',
+            'calculation': '9-period EMA of MACD line',
+            'raw_data': 'price_data.csv',
+            'column': 'close',
+            'category': 'Technical - Trend'
+        },
+        'macd_hist': {
+            'name': 'MACD Histogram',
+            'calculation': 'MACD - Signal Line',
+            'raw_data': 'price_data.csv',
+            'column': 'close',
+            'category': 'Technical - Trend'
+        },
+        'sma': {
+            'name': 'SMA (Simple Moving Average)',
+            'calculation': 'Sum of closing prices over N periods / N',
+            'raw_data': 'price_data.csv',
+            'column': 'close',
+            'category': 'Technical - Trend'
+        },
+        'ema': {
+            'name': 'EMA (Exponential Moving Average)',
+            'calculation': 'Weighted average with exponential decay, more weight on recent prices',
+            'raw_data': 'price_data.csv',
+            'column': 'close',
+            'category': 'Technical - Trend'
+        },
+        'adx': {
+            'name': 'ADX (Average Directional Index)',
+            'calculation': 'Smoothed average of DX = |+DI - -DI| / (+DI + -DI) × 100',
+            'raw_data': 'price_data.csv',
+            'column': 'high, low, close',
+            'category': 'Technical - Trend'
+        },
+        'atr': {
+            'name': 'ATR (Average True Range)',
+            'calculation': 'Average of True Range over N periods. TR = max(H-L, |H-Prev Close|, |L-Prev Close|)',
+            'raw_data': 'price_data.csv',
+            'column': 'high, low, close',
+            'category': 'Technical - Volatility'
+        },
+        'bollinger': {
+            'name': 'Bollinger Bands',
+            'calculation': 'Middle: SMA(N), Upper: SMA + K×StdDev, Lower: SMA - K×StdDev',
+            'raw_data': 'price_data.csv',
+            'column': 'close',
+            'category': 'Technical - Volatility'
+        },
+        'obv': {
+            'name': 'OBV (On-Balance Volume)',
+            'calculation': 'Cumulative sum: +Volume if close > prev close, -Volume if close < prev close',
+            'raw_data': 'price_data.csv',
+            'column': 'close, volume',
+            'category': 'Technical - Volume'
+        },
+        'vwap': {
+            'name': 'VWAP (Volume Weighted Avg Price)',
+            'calculation': 'Sum(Price × Volume) / Sum(Volume)',
+            'raw_data': 'price_data.csv',
+            'column': 'high, low, close, volume',
+            'category': 'Technical - Volume'
+        },
+        'stochastic': {
+            'name': 'Stochastic Oscillator',
+            'calculation': '%K = (Close - Lowest Low) / (Highest High - Lowest Low) × 100',
+            'raw_data': 'price_data.csv',
+            'column': 'high, low, close',
+            'category': 'Technical - Momentum'
+        },
+        'cci': {
+            'name': 'CCI (Commodity Channel Index)',
+            'calculation': '(Typical Price - SMA) / (0.015 × Mean Deviation)',
+            'raw_data': 'price_data.csv',
+            'column': 'high, low, close',
+            'category': 'Technical - Momentum'
+        },
+        'mfi': {
+            'name': 'MFI (Money Flow Index)',
+            'calculation': '100 - (100 / (1 + Money Ratio)), Money Ratio = Positive MF / Negative MF',
+            'raw_data': 'price_data.csv',
+            'column': 'high, low, close, volume',
+            'category': 'Technical - Volume'
+        },
+        # Insider Factors
+        # Raw columns: date, symbol, insider_title, transaction_type, shares, price, value, executive, security_type
+        'insider_buy_count': {
+            'name': 'Insider Buy Count',
+            'calculation': 'Count of insider purchase transactions in lookback window',
+            'raw_data': 'insider_data.csv',
+            'column': 'date, symbol, transaction_type',
+            'category': 'Insider'
+        },
+        'insider_sell_count': {
+            'name': 'Insider Sell Count',
+            'calculation': 'Count of insider sale transactions in lookback window',
+            'raw_data': 'insider_data.csv',
+            'column': 'date, symbol, transaction_type',
+            'category': 'Insider'
+        },
+        'insider_net_shares': {
+            'name': 'Insider Net Shares',
+            'calculation': 'Total shares bought - Total shares sold in lookback window',
+            'raw_data': 'insider_data.csv',
+            'column': 'date, symbol, transaction_type, shares',
+            'category': 'Insider'
+        },
+        'insider_score': {
+            'name': 'Insider Score',
+            'calculation': 'Composite score based on transaction size, frequency, and insider role',
+            'raw_data': 'insider_data.csv',
+            'column': 'date, symbol, transaction_type, shares, value, insider_title, executive',
+            'category': 'Insider'
+        },
+        'insider_buy_sell_ratio': {
+            'name': 'Buy/Sell Ratio',
+            'calculation': 'Buy Count / (Sell Count + 1)',
+            'raw_data': 'insider_data.csv',
+            'column': 'date, symbol, transaction_type',
+            'category': 'Insider'
+        },
+        # Options Factors
+        'options_implied_volatility': {
+            'name': 'Implied Volatility',
+            'calculation': 'Volatility implied by option prices using Black-Scholes model',
+            'raw_data': 'options_data.csv',
+            'column': 'implied_volatility',
+            'category': 'Options'
+        },
+        'options_put_call_ratio': {
+            'name': 'Put/Call Ratio',
+            'calculation': 'Put Volume / Call Volume',
+            'raw_data': 'options_data.csv',
+            'column': 'put_volume, call_volume',
+            'category': 'Options'
+        },
+        'options_iv_percentile': {
+            'name': 'IV Percentile',
+            'calculation': '% of days in past year with lower IV than current IV',
+            'raw_data': 'options_data.csv',
+            'column': 'implied_volatility (historical)',
+            'category': 'Options'
+        },
+        # Regime Factors
+        'regime_volatility': {
+            'name': 'Volatility Regime',
+            'calculation': 'Classification based on realized volatility vs historical distribution',
+            'raw_data': 'price_data.csv',
+            'column': 'close (for returns calculation)',
+            'category': 'Regime'
+        },
+        'regime_trend': {
+            'name': 'Trend Regime',
+            'calculation': 'Classification based on price vs moving averages and ADX',
+            'raw_data': 'price_data.csv',
+            'column': 'close, high, low',
+            'category': 'Regime'
+        },
+        # Composite Scores
+        'composite_eps': {
+            'name': 'Composite EPS Score',
+            'calculation': 'Z-score normalized average of all EPS factors',
+            'raw_data': 'Derived from fundamental_data.csv',
+            'column': 'reported_eps, estimated_eps, earnings_surprise',
+            'category': 'Composite'
+        },
+        'composite_value': {
+            'name': 'Composite Value Score',
+            'calculation': 'Z-score normalized average of value factors (lower=better inverted)',
+            'raw_data': 'Derived from fundamental_data.csv',
+            'column': 'pe_ratio, price_to_book, price_to_sales_ttm, peg_ratio, dividend_yield, ev_to_ebitda',
+            'category': 'Composite'
+        },
+        'composite_quality': {
+            'name': 'Composite Quality Score',
+            'calculation': 'Z-score normalized average of quality factors',
+            'raw_data': 'Derived from fundamental_data.csv',
+            'column': 'return_on_equity_ttm, return_on_assets_ttm, profit_margin, operating_margin_ttm, currentratio, debt_to_equity',
+            'category': 'Composite'
+        },
+        'composite_growth': {
+            'name': 'Composite Growth Score',
+            'calculation': 'Z-score normalized average of growth factors',
+            'raw_data': 'Derived from fundamental_data.csv',
+            'column': 'revenue_growth_yoy, reported_eps (YoY calc), earnings_surprise',
+            'category': 'Composite'
+        },
+        'composite_fundamental': {
+            'name': 'Overall Fundamental Score',
+            'calculation': 'Average of available composite scores (value, quality, growth, eps)',
+            'raw_data': 'Derived from composite scores',
+            'column': 'composite_value, composite_quality, composite_growth, composite_eps',
+            'category': 'Composite'
+        },
+    }
+
+    def __init__(self, parent, **kwargs):
+        super().__init__(parent, fg_color="transparent", **kwargs)
+
+        self.data: Dict[str, Any] = {}
+        self.results: Dict[str, Any] = {}
+        self.factor_availability: Dict[str, float] = {}
+        self._create_widgets()
+
+    def _create_widgets(self):
+        """Create view widgets."""
+        # Main scrollable container
+        main_scroll = ctk.CTkScrollableFrame(self, fg_color="transparent")
+        main_scroll.pack(fill="both", expand=True)
+
+        # Header
+        header = Theme.create_frame(main_scroll)
+        header.pack(fill="x", pady=(0, Sizes.PAD_M))
+
+        Theme.create_header(header, "Factor Documentation", size="l").pack(side="left")
+
+        Theme.create_button(
+            header, "Refresh",
+            command=self._refresh_data,
+            style="secondary",
+            width=80,
+            height=28
+        ).pack(side="right")
+
+        # Info banner
+        info_card = Theme.create_card(main_scroll)
+        info_card.pack(fill="x", pady=Sizes.PAD_S)
+
+        info_content = Theme.create_frame(info_card)
+        info_content.pack(fill="x", padx=Sizes.PAD_M, pady=Sizes.PAD_M)
+
+        Theme.create_label(
+            info_content,
+            "This tab shows how each factor is calculated, what raw data is required, "
+            "and the availability of that data in your dataset.",
+            font=Fonts.BODY_S,
+            text_color=Colors.TEXT_SECONDARY,
+            wraplength=800
+        ).pack(anchor="w")
+
+        # Filter options
+        filter_frame = Theme.create_frame(main_scroll)
+        filter_frame.pack(fill="x", pady=Sizes.PAD_S)
+
+        Theme.create_label(filter_frame, "Filter by category:", font=Fonts.LABEL).pack(side="left")
+
+        self.category_var = ctk.StringVar(value="All")
+        categories = ["All", "EPS Fundamentals", "Value", "Quality", "Growth",
+                     "Technical - Momentum", "Technical - Trend", "Technical - Volatility",
+                     "Technical - Volume", "Insider", "Options", "Regime", "Composite"]
+
+        self.category_menu = ctk.CTkOptionMenu(
+            filter_frame,
+            variable=self.category_var,
+            values=categories,
+            command=self._on_category_change,
+            width=200,
+            fg_color=Colors.SURFACE,
+            button_color=Colors.PRIMARY,
+            button_hover_color=Colors.PRIMARY_HOVER
+        )
+        self.category_menu.pack(side="left", padx=Sizes.PAD_S)
+
+        # Factor table container
+        self.table_container = Theme.create_frame(main_scroll)
+        self.table_container.pack(fill="both", expand=True, pady=Sizes.PAD_S)
+
+        # Create the factor table
+        self._create_factor_table()
+
+    def _create_factor_table(self, category_filter: str = "All"):
+        """Create or recreate the factor documentation table."""
+        # Clear existing content
+        for widget in self.table_container.winfo_children():
+            widget.destroy()
+
+        # Table header
+        header_frame = Theme.create_card(self.table_container)
+        header_frame.pack(fill="x", pady=(0, Sizes.PAD_XS))
+
+        header_content = Theme.create_frame(header_frame)
+        header_content.pack(fill="x", padx=Sizes.PAD_S, pady=Sizes.PAD_S)
+        header_content.grid_columnconfigure(0, weight=1, minsize=120)
+        header_content.grid_columnconfigure(1, weight=2, minsize=200)
+        header_content.grid_columnconfigure(2, weight=1, minsize=120)
+        header_content.grid_columnconfigure(3, weight=1, minsize=150)
+        header_content.grid_columnconfigure(4, weight=0, minsize=100)
+
+        Theme.create_label(header_content, "Factor", font=Fonts.LABEL_BOLD).grid(
+            row=0, column=0, sticky="w", padx=Sizes.PAD_XS)
+        Theme.create_label(header_content, "Calculation Method", font=Fonts.LABEL_BOLD).grid(
+            row=0, column=1, sticky="w", padx=Sizes.PAD_XS)
+        Theme.create_label(header_content, "Data Source", font=Fonts.LABEL_BOLD).grid(
+            row=0, column=2, sticky="w", padx=Sizes.PAD_XS)
+        Theme.create_label(header_content, "Column Name(s)", font=Fonts.LABEL_BOLD).grid(
+            row=0, column=3, sticky="w", padx=Sizes.PAD_XS)
+        Theme.create_label(header_content, "Availability", font=Fonts.LABEL_BOLD).grid(
+            row=0, column=4, sticky="w", padx=Sizes.PAD_XS)
+
+        # Group factors by category
+        factors_by_category: Dict[str, List[tuple]] = {}
+        for factor_key, doc in self.FACTOR_DOCS.items():
+            category = doc['category']
+            if category_filter != "All" and category != category_filter:
+                continue
+            if category not in factors_by_category:
+                factors_by_category[category] = []
+            factors_by_category[category].append((factor_key, doc))
+
+        # Display factors grouped by category
+        for category in sorted(factors_by_category.keys()):
+            factors = factors_by_category[category]
+
+            # Category header
+            cat_header = Theme.create_frame(self.table_container)
+            cat_header.pack(fill="x", pady=(Sizes.PAD_M, Sizes.PAD_XS))
+
+            Theme.create_label(
+                cat_header, category,
+                font=Fonts.HEADER_S,
+                text_color=Colors.PRIMARY
+            ).pack(side="left")
+
+            # Category count
+            Theme.create_label(
+                cat_header, f"({len(factors)} factors)",
+                font=Fonts.BODY_XS,
+                text_color=Colors.TEXT_MUTED
+            ).pack(side="left", padx=Sizes.PAD_S)
+
+            # Factor rows
+            for factor_key, doc in sorted(factors, key=lambda x: x[1]['name']):
+                self._create_factor_row(factor_key, doc)
+
+    def _create_factor_row(self, factor_key: str, doc: Dict[str, str]):
+        """Create a single factor documentation row."""
+        row_card = Theme.create_card(self.table_container)
+        row_card.pack(fill="x", pady=1)
+
+        row_content = Theme.create_frame(row_card)
+        row_content.pack(fill="x", padx=Sizes.PAD_S, pady=Sizes.PAD_S)
+        row_content.grid_columnconfigure(0, weight=1, minsize=120)
+        row_content.grid_columnconfigure(1, weight=2, minsize=200)
+        row_content.grid_columnconfigure(2, weight=1, minsize=120)
+        row_content.grid_columnconfigure(3, weight=1, minsize=150)
+        row_content.grid_columnconfigure(4, weight=0, minsize=100)
+
+        # Factor name
+        Theme.create_label(
+            row_content, doc['name'],
+            font=Fonts.LABEL_BOLD,
+            text_color=Colors.TEXT_PRIMARY
+        ).grid(row=0, column=0, sticky="w", padx=Sizes.PAD_XS)
+
+        # Calculation method
+        Theme.create_label(
+            row_content, doc['calculation'],
+            font=Fonts.BODY_XS,
+            text_color=Colors.TEXT_SECONDARY,
+            wraplength=200
+        ).grid(row=0, column=1, sticky="w", padx=Sizes.PAD_XS)
+
+        # Raw data source (file name)
+        Theme.create_label(
+            row_content, doc['raw_data'],
+            font=Fonts.BODY_XS,
+            text_color=Colors.TEXT_SECONDARY,
+            wraplength=120
+        ).grid(row=0, column=2, sticky="w", padx=Sizes.PAD_XS)
+
+        # Column name(s) - exact column names used
+        column_name = doc.get('column', 'N/A')
+        Theme.create_label(
+            row_content, column_name,
+            font=Fonts.MONO if column_name != 'N/A' else Fonts.BODY_XS,
+            text_color=Colors.PRIMARY if column_name != 'N/A' else Colors.TEXT_MUTED,
+            wraplength=150
+        ).grid(row=0, column=3, sticky="w", padx=Sizes.PAD_XS)
+
+        # Availability - check if we have data for this factor
+        availability = self._get_factor_availability(factor_key)
+        warning = self._get_missing_column_warning(factor_key)
+        avail_color = self._get_availability_color(availability)
+
+        avail_frame = Theme.create_frame(row_content)
+        avail_frame.grid(row=0, column=4, sticky="w", padx=Sizes.PAD_XS)
+
+        if availability is not None:
+            # Show percentage
+            Theme.create_label(
+                avail_frame, f"{availability:.1f}%",
+                font=Fonts.LABEL_BOLD,
+                text_color=avail_color
+            ).pack(side="left")
+
+            # Mini progress bar
+            bar_frame = ctk.CTkFrame(avail_frame, fg_color=Colors.BG_DARK, height=6, width=50, corner_radius=3)
+            bar_frame.pack(side="left", padx=Sizes.PAD_XS)
+            bar_frame.pack_propagate(False)
+
+            fill_width = max(1, int(50 * availability / 100))
+            fill_bar = ctk.CTkFrame(bar_frame, fg_color=avail_color, height=6, width=fill_width, corner_radius=3)
+            fill_bar.place(x=0, y=0)
+        elif warning:
+            # Show warning for missing column
+            Theme.create_label(
+                avail_frame, "Missing",
+                font=Fonts.BODY_XS,
+                text_color=Colors.ERROR
+            ).pack(side="left")
+            # Add tooltip-like indicator
+            Theme.create_label(
+                avail_frame, "!",
+                font=Fonts.LABEL_BOLD,
+                text_color=Colors.ERROR
+            ).pack(side="left", padx=2)
+        else:
+            # No data loaded yet
+            Theme.create_label(
+                avail_frame, "N/A",
+                font=Fonts.BODY_XS,
+                text_color=Colors.TEXT_MUTED
+            ).pack(side="left")
+
+    def _get_factor_availability(self, factor_key: str) -> Optional[float]:
+        """Get the availability percentage for a factor."""
+        # Check if we have pre-computed availability
+        if factor_key in self.factor_availability:
+            return self.factor_availability[factor_key]
+
+        # Try to match factor key to column in results data
+        if self.results and 'factor_data' in self.results:
+            factor_df = self.results['factor_data']
+            if isinstance(factor_df, pd.DataFrame):
+                # Try various column name patterns
+                patterns = [
+                    factor_key,
+                    factor_key.replace('_', ''),
+                    factor_key.lower(),
+                ]
+                for pattern in patterns:
+                    for col in factor_df.columns:
+                        if pattern in col.lower() or col.lower() in pattern:
+                            non_null = factor_df[col].notna().sum()
+                            total = len(factor_df)
+                            if total > 0:
+                                availability = (non_null / total) * 100
+                                self.factor_availability[factor_key] = availability
+                                return availability
+
+        # Check if column is in missing_columns (warning case)
+        if hasattr(self, 'missing_columns') and factor_key in self.missing_columns:
+            return None  # Return None to show "N/A" with warning
+
+        return None
+
+    def _get_missing_column_warning(self, factor_key: str) -> Optional[str]:
+        """Get warning message if column is missing for a factor."""
+        if hasattr(self, 'missing_columns') and factor_key in self.missing_columns:
+            return self.missing_columns[factor_key]
+        return None
+
+    def _get_availability_color(self, availability: Optional[float]) -> str:
+        """Get color based on availability percentage."""
+        if availability is None:
+            return Colors.TEXT_MUTED
+        if availability >= 80:
+            return Colors.SUCCESS
+        if availability >= 50:
+            return Colors.WARNING
+        if availability >= 20:
+            return Colors.ERROR
+        return Colors.TEXT_MUTED
+
+    def _on_category_change(self, category: str):
+        """Handle category filter change."""
+        self._create_factor_table(category)
+
+    def set_data(self, data: Dict[str, Any]):
+        """Set the data for this view."""
+        self.data = data
+        self._compute_availability()
+        self._refresh_data()
+
+    def set_results(self, results: Dict[str, Any]):
+        """Set the analysis results for this view."""
+        self.results = results
+        self._compute_availability()
+        self._refresh_data()
+
+    def _compute_availability(self):
+        """Compute factor availability from data."""
+        self.factor_availability = {}
+        self.missing_columns = {}  # Track missing columns for warnings
+        factor_df = None  # Initialize to avoid UnboundLocalError
+
+        # Get factor data from results
+        if self.results:
+            if 'factor_data' in self.results:
+                factor_df = self.results['factor_data']
+            elif 'trades_with_factors' in self.results:
+                factor_df = self.results['trades_with_factors']
+            else:
+                factor_df = None
+
+            if isinstance(factor_df, pd.DataFrame) and len(factor_df) > 0:
+                total = len(factor_df)
+                for col in factor_df.columns:
+                    non_null = factor_df[col].notna().sum()
+                    availability = (non_null / total) * 100
+                    # Map column to factor key
+                    col_lower = col.lower()
+                    self.factor_availability[col_lower] = availability
+                    self.factor_availability[col] = availability
+
+        # Also check raw data sources
+        if self.data:
+            # Check fundamental data for specific EPS columns
+            fund_data = self.data.get('fundamental_data')
+            if isinstance(fund_data, pd.DataFrame) and len(fund_data) > 0:
+                total = len(fund_data)
+                fund_cols = [c.lower() for c in fund_data.columns]
+
+                # EPS-related columns to check
+                eps_columns = {
+                    'eps_eps': 'reported_eps',
+                    'eps_estimated_eps': 'estimated_eps',
+                    'eps_earnings_surprise': 'earnings_surprise',
+                    'eps_earnings_surprise_pct': 'surprise_pct',
+                }
+
+                for factor_key, col_name in eps_columns.items():
+                    col_lower = col_name.lower()
+                    if col_lower in fund_cols:
+                        # Find actual column name (case-insensitive)
+                        actual_col = None
+                        for c in fund_data.columns:
+                            if c.lower() == col_lower:
+                                actual_col = c
+                                break
+                        if actual_col:
+                            non_null = fund_data[actual_col].notna().sum()
+                            availability = (non_null / total) * 100
+                            self.factor_availability[factor_key] = availability
+                    else:
+                        # Column not found - add warning
+                        self.missing_columns[factor_key] = f"Column '{col_name}' not found in fundamental_data"
+                        print(f"[WARNING] Factor '{factor_key}': Column '{col_name}' not found in fundamental_data.csv")
+
+                # Store all fundamental columns availability
+                for col in fund_data.columns:
+                    non_null = fund_data[col].notna().sum()
+                    availability = (non_null / total) * 100
+                    self.factor_availability[f'fund_{col.lower()}'] = availability
+                    self.factor_availability[col.lower()] = availability
+
+            # Check price data (technical factors)
+            price_data = self.data.get('price_data')
+            if isinstance(price_data, pd.DataFrame) and len(price_data) > 0:
+                # Calculate actual availability based on required columns
+                total = len(price_data)
+                price_cols = [c.lower() for c in price_data.columns]
+
+                # Check availability of key price columns with warnings
+                def get_col_avail(col_name):
+                    col_lower = col_name.lower()
+                    if col_lower in price_cols:
+                        # Find actual column name
+                        actual_col = None
+                        for c in price_data.columns:
+                            if c.lower() == col_lower:
+                                actual_col = c
+                                break
+                        if actual_col:
+                            return (price_data[actual_col].notna().sum() / total * 100)
+                    print(f"[WARNING] Column '{col_name}' not found in price_data.csv")
+                    return 0
+
+                close_avail = get_col_avail('close')
+                high_avail = get_col_avail('high')
+                low_avail = get_col_avail('low')
+                volume_avail = get_col_avail('volume')
+
+                # For technical factors, only use raw data availability as FALLBACK
+                # If computed factor already has availability from factor_df, don't overwrite
+                def set_if_not_computed(factor_name, raw_avail):
+                    """Set availability only if not already computed from factor_df."""
+                    # Check if any computed factor column matches this factor name
+                    factor_lower = factor_name.lower()
+                    already_computed = any(
+                        factor_lower in key.lower() or key.lower().startswith(f'tech_{factor_lower}')
+                        for key in self.factor_availability.keys()
+                    )
+                    if not already_computed:
+                        self.factor_availability[factor_name] = raw_avail
+
+                # Technical factors that only need close price
+                close_only_factors = ['rsi', 'macd', 'macd_signal', 'macd_hist', 'sma', 'ema', 'bollinger']
+                for factor in close_only_factors:
+                    set_if_not_computed(factor, close_avail)
+
+                # Technical factors that need high, low, close
+                hlc_factors = ['adx', 'atr', 'stochastic', 'cci']
+                hlc_avail = min(high_avail, low_avail, close_avail) if all([high_avail, low_avail, close_avail]) else 0
+                for factor in hlc_factors:
+                    set_if_not_computed(factor, hlc_avail)
+
+                # Technical factors that need high, low, close, volume
+                hlcv_factors = ['obv', 'vwap', 'mfi']
+                hlcv_avail = min(high_avail, low_avail, close_avail, volume_avail) if all([high_avail, low_avail, close_avail, volume_avail]) else 0
+                for factor in hlcv_factors:
+                    set_if_not_computed(factor, hlcv_avail)
+
+                # Regime factors (derived from price data)
+                set_if_not_computed('regime_volatility', close_avail)
+                set_if_not_computed('regime_trend', hlc_avail)
+
+            # Check insider data
+            insider_data = self.data.get('insider_data')
+            insider_factors = ['insider_buy_count', 'insider_sell_count', 'insider_net_shares',
+                              'insider_score', 'insider_buy_sell_ratio']
+
+            # First, try to get availability from computed factors (most accurate)
+            if isinstance(factor_df, pd.DataFrame) and len(factor_df) > 0:
+                factor_cols_lower = {c.lower(): c for c in factor_df.columns}
+                total_trades = len(factor_df)
+
+                # Check if we have computed insider factors in trades data
+                for factor in insider_factors:
+                    factor_lower = factor.lower()
+                    if factor_lower in factor_cols_lower:
+                        actual_col = factor_cols_lower[factor_lower]
+                        non_null = factor_df[actual_col].notna().sum()
+                        # Insider factors count 0 as valid data (no transactions)
+                        # So availability is 100% if we computed them
+                        self.factor_availability[factor] = (non_null / total_trades) * 100
+
+            # Fall back to raw insider data check only if factors weren't computed
+            if isinstance(insider_data, pd.DataFrame) and len(insider_data) > 0:
+                insider_cols = [c.lower() for c in insider_data.columns]
+
+                # Required columns for insider factors
+                required_insider_cols = ['date', 'symbol', 'transaction_type', 'shares']
+                all_present = all(col in insider_cols for col in required_insider_cols)
+
+                if not all_present:
+                    missing = [col for col in required_insider_cols if col not in insider_cols]
+                    print(f"[WARNING] Insider data missing columns: {missing}")
+                elif not any(f in self.factor_availability for f in insider_factors):
+                    # Only set defaults if we didn't compute them from factor_df
+                    for factor in insider_factors:
+                        self.factor_availability[factor] = 100.0
+
+            # Check options data
+            options_data = self.data.get('options_data')
+            if isinstance(options_data, pd.DataFrame) and len(options_data) > 0:
+                total = len(options_data)
+                options_cols = [c.lower() for c in options_data.columns]
+
+                if 'implied_volatility' in options_cols:
+                    for c in options_data.columns:
+                        if c.lower() == 'implied_volatility':
+                            non_null = options_data[c].notna().sum()
+                            self.factor_availability['options_implied_volatility'] = (non_null / total) * 100
+                            self.factor_availability['options_iv_percentile'] = (non_null / total) * 100
+                            break
+                else:
+                    print(f"[WARNING] Column 'implied_volatility' not found in options_data")
+
+                if 'put_volume' in options_cols and 'call_volume' in options_cols:
+                    self.factor_availability['options_put_call_ratio'] = 100.0
+                else:
+                    print(f"[WARNING] Columns 'put_volume' and/or 'call_volume' not found in options_data")
+
+        # Compute composite factor availability based on their source factors
+        self._compute_composite_availability()
+
+    def _compute_composite_availability(self):
+        """Compute availability for composite factors based on their source factors."""
+        # EPS composite - based on EPS factors
+        eps_factors = ['eps_eps', 'eps_estimated_eps', 'eps_earnings_surprise', 'eps_earnings_surprise_pct']
+        eps_avails = [self.factor_availability.get(f, 0) for f in eps_factors]
+        if any(a > 0 for a in eps_avails):
+            self.factor_availability['composite_eps'] = sum(eps_avails) / len(eps_avails)
+
+        # Value composite - based on value factors
+        value_factors = ['value_pe_ratio', 'value_price_to_book', 'value_price_to_sales',
+                        'value_peg_ratio', 'value_dividend_yield', 'value_ev_to_ebitda']
+        value_avails = [self.factor_availability.get(f, 0) for f in value_factors]
+        if any(a > 0 for a in value_avails):
+            self.factor_availability['composite_value'] = sum(value_avails) / len(value_avails)
+
+        # Quality composite - based on quality factors
+        quality_factors = ['quality_return_on_equity', 'quality_return_on_assets',
+                          'quality_profit_margin', 'quality_operating_margin',
+                          'quality_current_ratio', 'quality_debt_to_equity']
+        quality_avails = [self.factor_availability.get(f, 0) for f in quality_factors]
+        if any(a > 0 for a in quality_avails):
+            self.factor_availability['composite_quality'] = sum(quality_avails) / len(quality_avails)
+
+        # Growth composite - based on growth factors (only if traditional growth factors exist)
+        growth_factors = ['growth_revenue_growth', 'growth_earnings_growth',
+                         'growth_earnings_surprise', 'growth_earnings_surprise_pct']
+        growth_avails = [self.factor_availability.get(f, 0) for f in growth_factors]
+        if any(a > 0 for a in growth_avails):
+            self.factor_availability['composite_growth'] = sum(a for a in growth_avails if a > 0) / max(1, len([a for a in growth_avails if a > 0]))
+
+        # Overall fundamental composite - based on available composites
+        fund_composites = ['composite_eps', 'composite_value', 'composite_quality', 'composite_growth']
+        fund_avails = [self.factor_availability.get(f, 0) for f in fund_composites]
+        available_fund_avails = [a for a in fund_avails if a > 0]
+        if available_fund_avails:
+            self.factor_availability['composite_fundamental'] = sum(available_fund_avails) / len(available_fund_avails)
+
+    def _refresh_data(self):
+        """Refresh the display."""
+        self._create_factor_table(self.category_var.get())
+
+
 class ExportView(ctk.CTkFrame):
     """View for exporting analysis results."""
 
@@ -1828,6 +2725,7 @@ class FactorAnalysisDashboard:
 
     VIEWS = [
         {"id": "summary", "label": "Data Summary"},
+        {"id": "factor_docs", "label": "Factor Documentation"},
         {"id": "tier1", "label": "Tier 1 Analysis"},
         {"id": "tier2", "label": "Tier 2 Analysis"},
         {"id": "tier3", "label": "Tier 3 Analysis"},
@@ -1931,6 +2829,7 @@ class FactorAnalysisDashboard:
 
         # Create views
         self.views["summary"] = DataSummaryView(self.view_container)
+        self.views["factor_docs"] = FactorDocumentationView(self.view_container)
         self.views["tier1"] = Tier1View(self.view_container)
         self.views["tier2"] = Tier2View(self.view_container)
         self.views["tier3"] = Tier3View(self.view_container)
@@ -1984,6 +2883,10 @@ class FactorAnalysisDashboard:
             if self.config:
                 self.views['summary'].set_config(self.config)
             self.views['summary'].set_data(self.data)
+
+        # Also update factor documentation view with raw data
+        if 'factor_docs' in self.views:
+            self.views['factor_docs'].set_data(self.data)
 
     def _run_analysis(self):
         """Run the factor analysis."""
@@ -2131,8 +3034,37 @@ class FactorAnalysisDashboard:
             factor_types = {}
             factor_details = {}
 
-            # Extract point-biserial correlations
-            if 'point_biserial' in tier1:
+            # Extract Pearson correlations (primary)
+            if 'correlations_pearson' in tier1:
+                for corr in tier1['correlations_pearson']:
+                    factor_name = corr.factor if hasattr(corr, 'factor') else corr.get('factor', 'Unknown')
+                    correlation = corr.correlation if hasattr(corr, 'correlation') else corr.get('correlation', 0)
+                    p_val = corr.p_value if hasattr(corr, 'p_value') else corr.get('p_value', 1)
+
+                    correlations[factor_name] = correlation
+                    p_values[factor_name] = p_val
+                    # Determine factor type from name
+                    if factor_name.startswith('eps_'):
+                        factor_types[factor_name] = 'EPS Fundamentals'
+                    elif factor_name.startswith('value_'):
+                        factor_types[factor_name] = 'Value'
+                    elif factor_name.startswith('quality_'):
+                        factor_types[factor_name] = 'Quality'
+                    elif factor_name.startswith('growth_'):
+                        factor_types[factor_name] = 'Growth'
+                    elif factor_name.startswith('insider_'):
+                        factor_types[factor_name] = 'Insider'
+                    elif factor_name.startswith('options_'):
+                        factor_types[factor_name] = 'Options'
+                    elif factor_name.startswith('regime_'):
+                        factor_types[factor_name] = 'Regime'
+                    elif factor_name.startswith('composite_'):
+                        factor_types[factor_name] = 'Composite'
+                    else:
+                        factor_types[factor_name] = 'Technical'
+
+            # Fallback to point-biserial if available
+            elif 'point_biserial' in tier1:
                 for corr in tier1['point_biserial']:
                     factor_name = corr.factor if hasattr(corr, 'factor') else corr.get('factor', 'Unknown')
                     correlation = corr.correlation if hasattr(corr, 'correlation') else corr.get('correlation', 0)
@@ -2140,22 +3072,71 @@ class FactorAnalysisDashboard:
 
                     correlations[factor_name] = correlation
                     p_values[factor_name] = p_val
-                    factor_types[factor_name] = 'Technical'  # Default type
+                    factor_types[factor_name] = 'Technical'
 
-            # Extract descriptive stats
+            # Extract descriptive stats (returned as DataFrame)
             if 'descriptive_stats' in tier1:
-                for factor_name, stats in tier1['descriptive_stats'].items():
-                    factor_details[factor_name] = {
-                        'mean': stats.get('mean', 0),
-                        'std': stats.get('std', 0),
-                        'min': stats.get('min', 0),
-                        'max': stats.get('max', 0),
-                        'skewness': stats.get('skewness', 0),
-                        'kurtosis': stats.get('kurtosis', 0),
-                        'good_mean': stats.get('good_mean', 0),
-                        'bad_mean': stats.get('bad_mean', 0),
-                        'mean_diff': stats.get('mean_diff', 0),
-                    }
+                desc_stats = tier1['descriptive_stats']
+                if isinstance(desc_stats, pd.DataFrame) and len(desc_stats) > 0:
+                    # Group by factor and aggregate stats
+                    for factor_name in desc_stats['factor'].unique():
+                        factor_data = desc_stats[desc_stats['factor'] == factor_name]
+                        overall_mean = factor_data['mean'].mean()
+                        overall_std = factor_data['std'].mean()
+                        good_row = factor_data[factor_data['class'] == 'Good']
+                        bad_row = factor_data[factor_data['class'] == 'Bad']
+                        good_mean = good_row['mean'].values[0] if len(good_row) > 0 else overall_mean
+                        bad_mean = bad_row['mean'].values[0] if len(bad_row) > 0 else overall_mean
+                        factor_details[factor_name] = {
+                            'mean': overall_mean,
+                            'std': overall_std,
+                            'min': factor_data['min'].min(),
+                            'max': factor_data['max'].max(),
+                            'skewness': factor_data['skewness'].mean(),
+                            'kurtosis': factor_data['kurtosis'].mean(),
+                            'good_mean': good_mean,
+                            'bad_mean': bad_mean,
+                            'mean_diff': good_mean - bad_mean,
+                        }
+                        # Add factor to correlations dict if not already present (with N/A value)
+                        if factor_name not in correlations:
+                            correlations[factor_name] = None  # No correlation available
+                            p_values[factor_name] = None
+                            # Determine factor type from name
+                            if factor_name.startswith('eps_'):
+                                factor_types[factor_name] = 'EPS Fundamentals'
+                            elif factor_name.startswith('value_'):
+                                factor_types[factor_name] = 'Value'
+                            elif factor_name.startswith('quality_'):
+                                factor_types[factor_name] = 'Quality'
+                            elif factor_name.startswith('growth_'):
+                                factor_types[factor_name] = 'Growth'
+                            elif factor_name.startswith('insider_'):
+                                factor_types[factor_name] = 'Insider'
+                            elif factor_name.startswith('options_'):
+                                factor_types[factor_name] = 'Options'
+                            elif factor_name.startswith('regime_'):
+                                factor_types[factor_name] = 'Regime'
+                            elif factor_name.startswith('composite_'):
+                                factor_types[factor_name] = 'Composite'
+                            elif factor_name.startswith('tech_'):
+                                factor_types[factor_name] = 'Technical'
+                            else:
+                                factor_types[factor_name] = 'Other'
+                elif isinstance(desc_stats, dict):
+                    # Handle dict format (fallback)
+                    for factor_name, stats in desc_stats.items():
+                        factor_details[factor_name] = {
+                            'mean': stats.get('mean', 0),
+                            'std': stats.get('std', 0),
+                            'min': stats.get('min', 0),
+                            'max': stats.get('max', 0),
+                            'skewness': stats.get('skewness', 0),
+                            'kurtosis': stats.get('kurtosis', 0),
+                            'good_mean': stats.get('good_mean', 0),
+                            'bad_mean': stats.get('bad_mean', 0),
+                            'mean_diff': stats.get('mean_diff', 0),
+                        }
 
             results['tier1'] = {
                 'correlations': correlations,
@@ -2206,11 +3187,20 @@ class FactorAnalysisDashboard:
                     shap_val = shap.mean_abs_shap if hasattr(shap, 'mean_abs_shap') else shap.get('mean_abs_shap', 0)
                     shap_values[name] = shap_val
 
+            # Extract model metrics from Tier3Result attributes
+            model_metrics = {}
+            if hasattr(tier3, 'rf_accuracy') and tier3.rf_accuracy is not None:
+                model_metrics['accuracy'] = tier3.rf_accuracy
+            if hasattr(tier3, 'rf_cv_accuracy') and tier3.rf_cv_accuracy is not None:
+                model_metrics['cv_accuracy'] = tier3.rf_cv_accuracy
+            if hasattr(tier3, 'rf_cv_std') and tier3.rf_cv_std is not None:
+                model_metrics['cv_std'] = tier3.rf_cv_std
+
             results['tier3'] = {
                 'feature_importance': feature_importance,
                 'shap_values': shap_values,
                 'factor_types': results.get('tier1', {}).get('factor_types', {}),
-                'model_metrics': tier3.get('model_metrics', {}) if isinstance(tier3, dict) else {}
+                'model_metrics': model_metrics
             }
 
         # Format Scenarios
@@ -2415,6 +3405,11 @@ class FactorAnalysisDashboard:
 
         if 'scenarios' in self.results:
             self.views['scenarios'].update_results({'scenarios': self.results['scenarios']})
+
+        # Update factor documentation view with data and results
+        if 'factor_docs' in self.views:
+            self.views['factor_docs'].set_data(self.data)
+            self.views['factor_docs'].set_results(self.results)
 
         self.status_label.configure(text="Analysis complete", text_color=Colors.SUCCESS)
         self._log_audit("Analysis completed successfully")

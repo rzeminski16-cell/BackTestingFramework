@@ -239,6 +239,9 @@ class Tier2Hypothesis:
 
             for class_val in df[class_column].dropna().unique():
                 group_data = df[df[class_column] == class_val][col].dropna()
+                # Convert boolean to int to avoid numpy boolean subtract error
+                if group_data.dtype == bool:
+                    group_data = group_data.astype(int)
                 if len(group_data) >= 2:
                     groups.append(group_data)
                     group_means[str(class_val)] = float(group_data.mean())
@@ -250,9 +253,12 @@ class Tier2Hypothesis:
                 f_stat, p_val = stats.f_oneway(*groups)
 
                 # Effect size (eta-squared)
-                total_mean = df[col].dropna().mean()
+                col_data = df[col].dropna()
+                if col_data.dtype == bool:
+                    col_data = col_data.astype(int)
+                total_mean = col_data.mean()
                 ss_between = sum(len(g) * (g.mean() - total_mean) ** 2 for g in groups)
-                ss_total = ((df[col].dropna() - total_mean) ** 2).sum()
+                ss_total = ((col_data - total_mean) ** 2).sum()
                 eta_squared = ss_between / ss_total if ss_total > 0 else 0
 
                 results.append(ANOVAResult(
@@ -297,6 +303,9 @@ class Tier2Hypothesis:
             groups = []
             for class_val in df[class_column].dropna().unique():
                 group_data = df[df[class_column] == class_val][col].dropna()
+                # Convert boolean to int to avoid numpy boolean subtract error
+                if group_data.dtype == bool:
+                    group_data = group_data.astype(int)
                 if len(group_data) >= 2:
                     groups.append(group_data)
 
@@ -400,6 +409,12 @@ class Tier2Hypothesis:
 
             good_vals = df.loc[good_mask, col].dropna()
             bad_vals = df.loc[bad_mask, col].dropna()
+
+            # Convert boolean to int to avoid numpy boolean subtract error
+            if good_vals.dtype == bool:
+                good_vals = good_vals.astype(int)
+            if bad_vals.dtype == bool:
+                bad_vals = bad_vals.astype(int)
 
             if len(good_vals) < 2 or len(bad_vals) < 2:
                 continue

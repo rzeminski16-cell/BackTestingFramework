@@ -173,9 +173,15 @@ class InteractionAnalyzer:
         outcome_column: str
     ) -> Optional[Interaction]:
         """Test interaction between two factors."""
-        # Create binary splits at median
-        f1_median = df[factor1].median()
-        f2_median = df[factor2].median()
+        # Create binary splits at median (convert boolean to int for numeric operations)
+        f1_data = df[factor1]
+        f2_data = df[factor2]
+        if f1_data.dtype == bool:
+            f1_data = f1_data.astype(int)
+        if f2_data.dtype == bool:
+            f2_data = f2_data.astype(int)
+        f1_median = f1_data.median()
+        f2_median = f2_data.median()
 
         df_temp = df.copy()
         df_temp['_f1_high'] = df_temp[factor1] >= f1_median
@@ -255,11 +261,19 @@ class InteractionAnalyzer:
         """Permutation test for interaction significance."""
         # Simplify by permuting outcome labels
         outcomes = df[outcome_column].values.copy()
-        f1_median = df[factor1].median()
-        f2_median = df[factor2].median()
 
-        f1_high = (df[factor1] >= f1_median).values
-        f2_high = (df[factor2] >= f2_median).values
+        # Convert boolean to int for numeric operations
+        f1_data = df[factor1]
+        f2_data = df[factor2]
+        if f1_data.dtype == bool:
+            f1_data = f1_data.astype(int)
+        if f2_data.dtype == bool:
+            f2_data = f2_data.astype(int)
+        f1_median = f1_data.median()
+        f2_median = f2_data.median()
+
+        f1_high = (f1_data >= f1_median).values
+        f2_high = (f2_data >= f2_median).values
 
         perm_effects = []
 

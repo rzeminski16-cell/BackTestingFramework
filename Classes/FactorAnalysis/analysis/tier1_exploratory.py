@@ -128,6 +128,10 @@ class Tier1Exploratory:
             for class_val in df[class_column].unique():
                 class_data = df[df[class_column] == class_val][col].dropna()
 
+                # Convert boolean to int for numeric operations
+                if class_data.dtype == bool:
+                    class_data = class_data.astype(int)
+
                 if len(class_data) > 0:
                     stats_list.append({
                         'factor': col,
@@ -185,6 +189,12 @@ class Tier1Exploratory:
                 continue
 
             try:
+                # Convert boolean to int to avoid numpy boolean subtract error
+                if x.dtype == bool:
+                    x = x.astype(int)
+                if y.dtype == bool:
+                    y = y.astype(int)
+
                 if method == 'pearson':
                     r, p = stats.pearsonr(x, y)
                 else:
@@ -232,6 +242,10 @@ class Tier1Exploratory:
             values = df[col].dropna()
             if len(values) < 10:
                 continue
+
+            # Convert boolean to int for numeric operations
+            if values.dtype == bool:
+                values = values.astype(int)
 
             # Basic stats
             dist_info = {

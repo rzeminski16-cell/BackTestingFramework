@@ -203,6 +203,12 @@ class ScenarioDetector:
         valid_cols = [c for c in factor_columns
                      if c in df.columns and pd.api.types.is_numeric_dtype(df[c])]
 
+        # Convert boolean columns to int to avoid numpy boolean subtract error
+        df = df.copy()
+        for col in valid_cols:
+            if df[col].dtype == bool or df[col].dtype == 'boolean':
+                df[col] = df[col].astype(int)
+
         if not valid_cols:
             if self.logger:
                 self.logger.warning("No valid factor columns for scenario detection")
@@ -219,7 +225,7 @@ class ScenarioDetector:
             result = self._detect_binary_scenarios(
                 df, valid_cols, outcome_column, return_column, baseline
             )
-        elif self.config.scenario_mode == ScenarioMode.CLUSTERING:
+        elif self.config.scenario_mode == ScenarioMode.AUTOMATIC_CLUSTERING:
             result = self._detect_clustering_scenarios(
                 df, valid_cols, outcome_column, return_column, baseline
             )
@@ -489,8 +495,8 @@ class ScenarioDetector:
 
         if n_total > 0 and baseline_good_rate > 0:
             # Binomial test for significant difference from baseline
-            p_value = stats.binom_test(n_good, n_total, baseline_good_rate)
-            confidence = 1 - p_value
+            result = stats.binomtest(n_good, n_total, baseline_good_rate)
+            confidence = 1 - result.pvalue
         else:
             confidence = 0
 

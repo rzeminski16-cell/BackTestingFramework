@@ -123,6 +123,21 @@ class TechnicalFactors:
         trades_df['entry_date'] = pd.to_datetime(trades_df['entry_date'])
         price_df['date'] = pd.to_datetime(price_df['date'])
 
+        # Check symbol overlap before processing
+        use_symbol_filtering = False
+        if 'symbol' in price_df.columns and 'symbol' in trades_df.columns:
+            price_symbols = set(price_df['symbol'].str.upper().dropna().unique())
+            trade_symbols = set(trades_df['symbol'].str.upper().dropna().unique())
+            symbol_overlap = price_symbols & trade_symbols
+            use_symbol_filtering = len(symbol_overlap) > 0
+            if self.logger:
+                self.logger.info("Symbol overlap check", {
+                    'price_symbols': len(price_symbols),
+                    'trade_symbols': len(trade_symbols),
+                    'overlap': len(symbol_overlap),
+                    'using_symbol_filter': use_symbol_filtering
+                })
+
         results = []
         trades_with_data = 0
 
@@ -130,9 +145,12 @@ class TechnicalFactors:
             entry_date = trade['entry_date']
             symbol = trade.get('symbol', '')
 
-            # Filter price data for symbol
-            if 'symbol' in price_df.columns and symbol:
+            # Filter price data for symbol only if there's overlap
+            if use_symbol_filtering and symbol:
                 symbol_prices = price_df[price_df['symbol'].str.upper() == symbol.upper()]
+                # Fall back to all prices if no match for this specific symbol
+                if len(symbol_prices) == 0:
+                    symbol_prices = price_df
             else:
                 symbol_prices = price_df
 

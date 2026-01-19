@@ -147,6 +147,9 @@ class FactorNormalizer:
         Returns:
             Normalized series
         """
+        # Convert boolean to int to avoid numpy boolean subtract error
+        if series.dtype == bool or series.dtype == 'boolean':
+            series = series.astype(int)
         mean = series.mean()
         std = max(series.std(), min_std)
         return (series - mean) / std
