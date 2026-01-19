@@ -1790,6 +1790,9 @@ class CTkRuleTesterGUI:
             show_error(self.root, "Error", "Trade count mismatch. Cannot export comparison.")
             return
 
+        # Collect indicators used by strategy exit rules and user-defined rules
+        indicator_columns = self._get_exit_rule_indicators()
+
         # Generate filename with strategy and preset info
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         strategy_name = self._strategy_name_map.get(self.strategy_var.get(), "unknown")
@@ -1806,7 +1809,8 @@ class CTkRuleTesterGUI:
                 modified_trades=modified_trades,
                 price_data_dict=self.price_data_dict,
                 output_path=str(output_path),
-                rules_description=rules_desc
+                rules_description=rules_desc,
+                indicator_columns=indicator_columns
             )
             self.export_status_label.configure(
                 text=f"Exit comparison saved to {output_path}",
@@ -1814,6 +1818,48 @@ class CTkRuleTesterGUI:
             )
         except Exception as e:
             show_error(self.root, "Export Error", f"Failed to export: {str(e)}")
+
+    def _get_exit_rule_indicators(self) -> List[str]:
+        """
+        Get list of indicators used by strategy exit rules and user-defined rules.
+
+        Returns:
+            List of indicator column names
+        """
+        indicators = []
+
+        # 1. Get indicators from strategy's exit config (required_indicators)
+        strategy_config = self.rule_engine.get_strategy_config() if self.rule_engine else None
+        if strategy_config and hasattr(strategy_config, 'required_indicators'):
+            indicators.extend(strategy_config.required_indicators)
+
+        # Also extract indicators from individual exit rules' params
+        if strategy_config and hasattr(strategy_config, 'exit_rules'):
+            for exit_rule in strategy_config.exit_rules:
+                if hasattr(exit_rule, 'params'):
+                    # Check common param keys that reference indicators
+                    for key in ['indicator', 'atr_column', 'ema_column', 'sma_column']:
+                        if key in exit_rule.params:
+                            indicators.append(exit_rule.params[key])
+
+        # 2. Get indicators from user-defined rules
+        for rule in self.rules:
+            # The feature being compared
+            if hasattr(rule, 'feature') and rule.feature:
+                indicators.append(rule.feature)
+            # If comparing to another feature
+            if hasattr(rule, 'compare_feature') and rule.compare_feature:
+                indicators.append(rule.compare_feature)
+
+        # Remove duplicates while preserving order
+        seen = set()
+        unique_indicators = []
+        for ind in indicators:
+            if ind and ind not in seen:
+                seen.add(ind)
+                unique_indicators.append(ind)
+
+        return unique_indicators
 
 
 # Helper function for Theme (if not available in ctk_theme)

@@ -466,7 +466,7 @@ def export_exit_comparison_csv(
     - Original exit (date, price, pnl)
     - New exit (date, price, pnl)
     - Delta columns (days difference, pnl difference)
-    - Indicator values at both exit points
+    - Indicator values at both exit points (only for specified indicators)
 
     Args:
         original_trades: Original trades DataFrame before rule application
@@ -474,7 +474,8 @@ def export_exit_comparison_csv(
         price_data_dict: Dict of ticker -> price DataFrame for indicator lookup
         output_path: Path to save CSV
         rules_description: Description of rules applied
-        indicator_columns: List of indicator columns to include (auto-detected if None)
+        indicator_columns: List of indicator columns to include (from strategy + user rules).
+                          If None or empty, no indicator columns are included.
 
     Returns:
         Path to saved file
@@ -483,9 +484,18 @@ def export_exit_comparison_csv(
     if len(original_trades) != len(modified_trades):
         raise ValueError("Original and modified trades must have same length")
 
-    # Auto-detect indicator columns if not provided
+    # Use provided indicators or empty list
     if indicator_columns is None:
-        indicator_columns = _detect_indicator_columns(price_data_dict)
+        indicator_columns = []
+
+    # Remove duplicates while preserving order
+    seen = set()
+    unique_indicators = []
+    for col in indicator_columns:
+        if col not in seen:
+            seen.add(col)
+            unique_indicators.append(col)
+    indicator_columns = unique_indicators
 
     # Build comparison DataFrame
     rows = []
