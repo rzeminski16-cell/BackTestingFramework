@@ -1179,11 +1179,34 @@ BackTestingFramework/
 
 ## Next Steps
 
-After familiarizing yourself with this workflow:
+After familiarizing yourself with this workflow, explore the detailed documentation:
 
-- **[FACTOR_ANALYSIS.md](FACTOR_ANALYSIS.md)** - Complete Factor Analysis module documentation
-- **[TOOLS.md](TOOLS.md)** - Complete reference for all CLI tools and utilities
-- **[STRATEGIES.md](STRATEGIES.md)** - Detailed guide for creating custom strategies
-- **[CONFIGURATION.md](CONFIGURATION.md)** - All configuration options explained
-- **[PORTFOLIO_MODE.md](PORTFOLIO_MODE.md)** - Advanced multi-security backtesting
-- **[technical/ARCHITECTURE.md](technical/ARCHITECTURE.md)** - Framework internals
+### Concepts
+- **[Backtesting](concepts/BACKTESTING.md)** - Core backtesting concepts and execution model
+- **[Strategies](concepts/STRATEGIES.md)** - How strategies work and signal types
+- **[Portfolio Mode](concepts/PORTFOLIO_MODE.md)** - Multi-security backtesting with capital management
+- **[Optimization](concepts/OPTIMIZATION.md)** - Walk-forward and univariate optimization
+- **[Edge Analysis](concepts/EDGE_ANALYSIS.md)** - E-ratio and trade entry validation
+- **[Factor Analysis](concepts/FACTOR_ANALYSIS.md)** - Statistical trade outcome analysis
+- **[Vulnerability Scoring](concepts/VULNERABILITY_SCORING.md)** - Position scoring for capital contention
+
+### Applications
+- **[Applications Overview](applications/OVERVIEW.md)** - All 8 GUI applications at a glance
+- **[Backtest GUI](applications/BACKTEST_GUI.md)** - Running backtests
+- **[Optimization Tools](applications/OPTIMIZATION_GUI.md)** - Parameter optimization
+- **[Analysis Tools](applications/ANALYSIS_TOOLS.md)** - Edge analysis, rule tester, vulnerability
+- **[Data Collection](applications/DATA_COLLECTION.md)** - Gathering market data
+
+### Strategy Development
+- **[Strategy Guide](strategy-development/STRATEGY_GUIDE.md)** - Creating custom strategies
+- **[Strategy Structure](strategy-development/STRATEGY_STRUCTURE.md)** - Anatomy of a strategy
+- **[Signals and Exits](strategy-development/SIGNALS_AND_EXITS.md)** - Signal types and exit rules
+- **[Testing Your Strategy](strategy-development/TESTING_YOUR_STRATEGY.md)** - Validation techniques
+
+### Reference
+- **[Configuration](reference/CONFIGURATION.md)** - All configuration options
+- **[Metrics Glossary](reference/METRICS_GLOSSARY.md)** - 50+ performance metrics explained
+- **[Securities](reference/SECURITIES.md)** - Available securities universe
+
+### Architecture
+- **[System Architecture](overview/ARCHITECTURE.md)** - High-level system design with diagrams
