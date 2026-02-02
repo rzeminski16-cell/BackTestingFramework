@@ -125,10 +125,12 @@ class ScenarioValidator:
 
         if scenario.scenario_type == ScenarioType.BEST:
             # Test if good rate is significantly higher than baseline
-            p_value = stats.binom_test(n_good, n_scenario, baseline_rate, alternative='greater')
+            result = stats.binomtest(n_good, n_scenario, baseline_rate, alternative='greater')
+            p_value = result.pvalue
         else:
             # Test if good rate is significantly lower than baseline
-            p_value = stats.binom_test(n_good, n_scenario, baseline_rate, alternative='less')
+            result = stats.binomtest(n_good, n_scenario, baseline_rate, alternative='less')
+            p_value = result.pvalue
 
         is_significant = p_value < self.alpha
 

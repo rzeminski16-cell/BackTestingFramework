@@ -59,7 +59,8 @@ from Classes.GUI.wizard_base import WizardBase, WizardStep, ReviewStep
 from Classes.GUI.results_window import ResultsWindow
 
 # Import available strategies
-from strategies.alphatrend_strategy import AlphaTrendStrategy
+from strategies.base_alphatrend_strategy import BaseAlphaTrendStrategy
+from strategies.random_control_strategy import RandomControlStrategy
 
 # Import centralized strategy configuration
 from config.strategy_config import StrategyConfig
@@ -951,7 +952,8 @@ class BacktestWizard(WizardBase):
     """Main Backtest Wizard application."""
 
     STRATEGIES = {
-        'AlphaTrendStrategy': AlphaTrendStrategy
+        'BaseAlphaTrendStrategy': BaseAlphaTrendStrategy,
+        'RandomControlStrategy': RandomControlStrategy
     }
 
     def __init__(self, root: tk.Tk):

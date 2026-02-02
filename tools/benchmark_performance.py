@@ -21,7 +21,7 @@ import pandas as pd
 from Classes.Config.config import BacktestConfig, CommissionConfig, CommissionMode
 from Classes.Engine.single_security_engine import SingleSecurityEngine
 from Classes.Data.data_loader import DataLoader
-from strategies.alphatrend_strategy import AlphaTrendStrategy
+from strategies.base_alphatrend_strategy import BaseAlphaTrendStrategy
 
 
 def format_time(seconds: float) -> str:

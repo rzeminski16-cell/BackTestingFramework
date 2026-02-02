@@ -27,7 +27,7 @@ from Classes.Engine.single_security_engine import SingleSecurityEngine
 from Classes.Analysis.excel_report_generator import ExcelReportGenerator
 from Classes.Analysis.performance_metrics import PerformanceMetrics
 
-from strategies.alphatrend_strategy import AlphaTrendStrategy
+from strategies.base_alphatrend_strategy import BaseAlphaTrendStrategy
 
 
 def main():

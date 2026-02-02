@@ -1,7 +1,7 @@
 {
   "trade_classification": {
     "method": "threshold",
-    "good_threshold_pct": 10.0,
+    "good_threshold_pct": 1.0,
     "bad_threshold_pct": 0.0,
     "min_holding_period": 1,
     "exclude_partial_exits": false,

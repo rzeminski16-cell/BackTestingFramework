@@ -431,6 +431,9 @@ class Tier3Config:
     bayesian_logistic_regression: bool = False
     n_estimators: int = 100
     random_state: int = 42
+    min_samples: int = 30  # Minimum samples required for ML analysis
+    min_samples_leaf: int = 5  # Minimum samples per leaf in random forest
+    max_depth: int = 10  # Maximum depth of random forest trees
 
     def __post_init__(self):
         if self.n_estimators <= 0:
@@ -444,7 +447,10 @@ class Tier3Config:
             "mutual_information": self.mutual_information,
             "bayesian_logistic_regression": self.bayesian_logistic_regression,
             "n_estimators": self.n_estimators,
-            "random_state": self.random_state
+            "random_state": self.random_state,
+            "min_samples": self.min_samples,
+            "min_samples_leaf": self.min_samples_leaf,
+            "max_depth": self.max_depth
         }
 
     @classmethod
@@ -456,7 +462,10 @@ class Tier3Config:
             mutual_information=data.get("mutual_information", True),
             bayesian_logistic_regression=data.get("bayesian_logistic_regression", False),
             n_estimators=data.get("n_estimators", 100),
-            random_state=data.get("random_state", 42)
+            random_state=data.get("random_state", 42),
+            min_samples=data.get("min_samples", 30),
+            min_samples_leaf=data.get("min_samples_leaf", 5),
+            max_depth=data.get("max_depth", 10)
         )
 
 
@@ -526,6 +535,9 @@ class ScenarioAnalysisConfig:
     interaction_mode: InteractionMode = InteractionMode.USER_GUIDED
     n_clusters: int = 3
     user_interactions: Optional[tuple] = None
+    min_lift: float = 1.2  # Minimum lift ratio for favorable/unfavorable scenarios
+    max_factors: int = 10  # Maximum number of factors to consider in scenario detection
+    max_scenarios: int = 20  # Maximum number of scenarios to return
 
     def __post_init__(self):
         if self.min_trades_per_scenario < 1:
@@ -540,7 +552,10 @@ class ScenarioAnalysisConfig:
             "metric": self.metric,
             "best_scenario_threshold": self.best_scenario_threshold,
             "interaction_mode": self.interaction_mode.value,
-            "n_clusters": self.n_clusters
+            "n_clusters": self.n_clusters,
+            "min_lift": self.min_lift,
+            "max_factors": self.max_factors,
+            "max_scenarios": self.max_scenarios
         }
         if self.user_interactions:
             result["user_interactions"] = [list(i) for i in self.user_interactions]
@@ -556,7 +571,10 @@ class ScenarioAnalysisConfig:
             best_scenario_threshold=data.get("best_scenario_threshold", 0.5),
             interaction_mode=InteractionMode(data.get("interaction_mode", "user_guided")),
             n_clusters=data.get("n_clusters", 3),
-            user_interactions=tuple(tuple(i) for i in interactions) if interactions else None
+            user_interactions=tuple(tuple(i) for i in interactions) if interactions else None,
+            min_lift=data.get("min_lift", 1.2),
+            max_factors=data.get("max_factors", 10),
+            max_scenarios=data.get("max_scenarios", 20)
         )
 
 

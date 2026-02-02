@@ -51,7 +51,8 @@ from Classes.GUI.wizard_base import WizardBase, WizardStep, ReviewStep
 from Classes.GUI.results_window import OptimizationResultsWindow
 
 # Import available strategies
-from strategies.alphatrend_strategy import AlphaTrendStrategy
+from strategies.base_alphatrend_strategy import BaseAlphaTrendStrategy
+from strategies.random_control_strategy import RandomControlStrategy
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -1069,7 +1070,8 @@ class OptimizationWizard(WizardBase):
     """Main Optimization Wizard application."""
 
     STRATEGIES = {
-        'AlphaTrendStrategy': AlphaTrendStrategy
+        'BaseAlphaTrendStrategy': BaseAlphaTrendStrategy,
+        'RandomControlStrategy': RandomControlStrategy
     }
 
     def __init__(self, root: tk.Tk):

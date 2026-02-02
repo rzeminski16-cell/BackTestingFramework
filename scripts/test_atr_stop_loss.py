@@ -10,7 +10,7 @@ project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
 import pandas as pd
 import numpy as np
-from strategies.alphatrend_strategy import AlphaTrendStrategy
+from strategies.base_alphatrend_strategy import BaseBaseAlphaTrendStrategy
 from Classes.Config.config import BacktestConfig, CommissionConfig, CommissionMode
 from Classes.Data.data_loader import DataLoader
 from Classes.Engine.single_security_engine import SingleSecurityEngine
@@ -21,17 +21,17 @@ def test_atr_stop_loss_parameter():
     print("-" * 50)
 
     # Test with default value (2.5 - enabled by default)
-    strategy1 = AlphaTrendStrategy()
+    strategy1 = BaseAlphaTrendStrategy()
     assert strategy1.atr_stop_loss_multiple == 2.5, "Default atr_stop_loss_multiple should be 2.5"
     print("✓ Default parameter value is 2.5 (ATR-based stop loss enabled)")
 
     # Test with disabled ATR stop loss (0.0 = use percentage-based)
-    strategy2 = AlphaTrendStrategy(atr_stop_loss_multiple=0.0)
+    strategy2 = BaseAlphaTrendStrategy(atr_stop_loss_multiple=0.0)
     assert strategy2.atr_stop_loss_multiple == 0.0, "Disabled atr_stop_loss_multiple not set correctly"
     print("✓ Disabled parameter value (0.0) set correctly - falls back to percentage-based")
 
     # Test with custom value
-    strategy3 = AlphaTrendStrategy(atr_stop_loss_multiple=1.5)
+    strategy3 = BaseAlphaTrendStrategy(atr_stop_loss_multiple=1.5)
     assert strategy3.atr_stop_loss_multiple == 1.5, "Custom atr_stop_loss_multiple not set correctly"
     print("✓ Custom parameter value (1.5) set correctly")
     print()
@@ -55,13 +55,13 @@ def test_stop_loss_calculation():
     })
 
     # Test percentage-based stop loss (default)
-    strategy1 = AlphaTrendStrategy(stop_loss_percent=2.0, atr_stop_loss_multiple=0.0)
+    strategy1 = BaseAlphaTrendStrategy(stop_loss_percent=2.0, atr_stop_loss_multiple=0.0)
     prepared_data1 = strategy1.prepare_data(test_data)
     print(f"✓ Percentage-based stop loss mode (atr_stop_loss_multiple=0.0)")
     print(f"  Expected SL at 2% below price: {102.0 * 0.98} = 99.96")
 
     # Test ATR-based stop loss
-    strategy2 = AlphaTrendStrategy(atr_stop_loss_multiple=2.5)
+    strategy2 = BaseAlphaTrendStrategy(atr_stop_loss_multiple=2.5)
     prepared_data2 = strategy2.prepare_data(test_data)
     print(f"✓ ATR-based stop loss mode (atr_stop_loss_multiple=2.5)")
     print(f"  Expected SL at price - (ATR * 2.5): {102.0 - (2.0 * 2.5)} = 97.0")
@@ -86,7 +86,7 @@ def test_backtest_integration():
             print(f"✓ Loaded {len(data)} bars of real data for AAPL")
 
             # Test with percentage-based stop loss
-            strategy1 = AlphaTrendStrategy(
+            strategy1 = BaseAlphaTrendStrategy(
                 stop_loss_percent=2.0,
                 atr_stop_loss_multiple=0.0,  # Disabled
                 risk_percent=2.0
@@ -97,7 +97,7 @@ def test_backtest_integration():
             print(f"✓ Backtest with percentage-based SL: {result1.num_trades} trades executed")
 
             # Test with ATR-based stop loss
-            strategy2 = AlphaTrendStrategy(
+            strategy2 = BaseAlphaTrendStrategy(
                 atr_stop_loss_multiple=2.0,  # 2x ATR
                 risk_percent=2.0
             )
@@ -107,7 +107,7 @@ def test_backtest_integration():
             print(f"✓ Backtest with ATR-based SL (2.0x): {result2.num_trades} trades executed")
 
             # Test with different ATR multiple
-            strategy3 = AlphaTrendStrategy(
+            strategy3 = BaseAlphaTrendStrategy(
                 atr_stop_loss_multiple=1.5,  # 1.5x ATR
                 risk_percent=2.0
             )

@@ -9,7 +9,7 @@ This module provides tools to:
 """
 
 from .rule_engine import Rule, RuleEngine, RuleMode, CompareType, extract_ticker_from_filename, load_price_data_for_tickers
-from .metrics_calculator import RuleMetricsCalculator, export_filtered_trades, export_comparison_report
+from .metrics_calculator import RuleMetricsCalculator, export_filtered_trades, export_comparison_report, export_exit_comparison_csv
 from .strategy_exit_rules import (
     ExitRuleType,
     StrategyExitRule,
@@ -28,6 +28,7 @@ __all__ = [
     'load_price_data_for_tickers',
     'export_filtered_trades',
     'export_comparison_report',
+    'export_exit_comparison_csv',
     'ExitRuleType',
     'StrategyExitRule',
     'StrategyExitConfig',

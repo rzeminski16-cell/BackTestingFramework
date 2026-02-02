@@ -34,6 +34,8 @@ class InsiderFactors:
     - Executive vs non-executive activity
     """
 
+    # Only include numeric factors that can be used in statistical analysis
+    # String factors (insider_sentiment, insider_activity_level) are excluded
     FACTOR_NAMES = [
         'insider_buy_count',
         'insider_sell_count',
@@ -44,7 +46,8 @@ class InsiderFactors:
         'insider_net_value',
         'insider_score',
         'insider_executive_ratio',
-        'insider_sentiment'
+        'insider_executive_net',
+        'insider_sentiment_numeric'
     ]
 
     def __init__(self, logger: Optional[AuditLogger] = None):
@@ -268,8 +271,8 @@ class InsiderFactors:
         Returns:
             trades_df with insider factor columns added
         """
-        # Compute factors
-        result_df, result = self.compute_factors(trades_df, insider_df)
+        # Compute factors (insider_df is already aligned to trades)
+        result_df, result = self.compute_factors(insider_df)
 
         # Store factor names
         self._factor_names = result.factor_names.copy()

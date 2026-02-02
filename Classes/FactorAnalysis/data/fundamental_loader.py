@@ -47,12 +47,11 @@ class FundamentalLoader:
 
     PROFITABILITY_METRICS = [
         'profit_margin', 'operating_margin_ttm', 'gross_profit_ttm',
-        'ebit', 'ebitda', 'netincome', 'revenue_ttm', 'eps'
+        'ebit', 'ebitda', 'netincome', 'revenue_ttm', 'reported_eps'
     ]
 
     GROWTH_METRICS = [
-        'revenue_growth_yoy', 'earnings_growth_yoy', 'earnings_surprise',
-        'surprise_pct', 'estimated_eps'
+        'revenue_growth_yoy', 'earnings_surprise', 'estimated_eps'
     ]
 
     QUALITY_METRICS = [
