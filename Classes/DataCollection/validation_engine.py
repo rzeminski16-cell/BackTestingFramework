@@ -65,6 +65,11 @@ class ValidationReport:
     results: List[ValidationResult] = field(default_factory=list)
     data_quality_score: float = 100.0
 
+    @property
+    def quality_score(self) -> float:
+        """Alias for data_quality_score for backward compatibility."""
+        return self.data_quality_score
+
     def get_errors(self) -> List[ValidationResult]:
         """Get all error-level results."""
         return [r for r in self.results if r.severity == ValidationSeverity.ERROR and not r.passed]
@@ -79,6 +84,10 @@ class ValidationEngine:
     Comprehensive data validation engine.
 
     Validates DataFrames for all data types collected by the system.
+
+    Note: Column names are automatically normalized to lowercase to handle
+    data from various sources (Yahoo Finance, Alpha Vantage, CSV files)
+    that may use different casing conventions.
     """
 
     def __init__(self, config: ValidationConfig, logger: Optional[SessionLogger] = None):
@@ -92,6 +101,27 @@ class ValidationEngine:
         self.config = config
         self.logger = logger
 
+    def _normalize_columns(self, df: pd.DataFrame) -> pd.DataFrame:
+        """
+        Normalize column names to lowercase for consistent validation.
+
+        This handles data from various sources that may use different
+        casing conventions (e.g., 'Open' vs 'open', 'Date' vs 'date').
+
+        Args:
+            df: Input DataFrame
+
+        Returns:
+            DataFrame with lowercase column names
+        """
+        if df.empty or len(df.columns) == 0:
+            return df
+
+        df = df.copy()
+        # Convert column names to strings first, then lowercase
+        df.columns = [str(col).lower() for col in df.columns]
+        return df
+
     def validate_daily_data(
         self,
         df: pd.DataFrame,
@@ -102,13 +132,16 @@ class ValidationEngine:
         Validate daily price and indicator data.
 
         Args:
-            df: DataFrame with daily data
+            df: DataFrame with daily data (column names will be normalized to lowercase)
             symbol: Stock symbol for logging
             indicator_columns: List of indicator column names
 
         Returns:
             ValidationReport with all check results
         """
+        # Normalize column names to handle various input sources
+        df = self._normalize_columns(df)
+
         file_name = f"{symbol}_daily.csv"
         results = []
 
@@ -143,6 +176,9 @@ class ValidationEngine:
         indicator_columns: Optional[List[str]] = None
     ) -> ValidationReport:
         """Validate weekly price and indicator data."""
+        # Normalize column names to handle various input sources
+        df = self._normalize_columns(df)
+
         file_name = f"{symbol}_weekly.csv"
         results = []
 
@@ -177,12 +213,15 @@ class ValidationEngine:
         Validate fundamental data.
 
         Args:
-            df: DataFrame with fundamental data
+            df: DataFrame with fundamental data (column names will be normalized to lowercase)
             symbol: Stock symbol for logging
 
         Returns:
             ValidationReport
         """
+        # Normalize column names to handle various input sources
+        df = self._normalize_columns(df)
+
         file_name = f"{symbol}_fundamental.csv"
         results = []
 
@@ -222,6 +261,9 @@ class ValidationEngine:
         symbol: str
     ) -> ValidationReport:
         """Validate insider transaction data."""
+        # Normalize column names to handle various input sources
+        df = self._normalize_columns(df)
+
         file_name = f"{symbol}_insider.csv"
         results = []
 
@@ -255,6 +297,9 @@ class ValidationEngine:
         pair: str
     ) -> ValidationReport:
         """Validate forex data."""
+        # Normalize column names to handle various input sources
+        df = self._normalize_columns(df)
+
         file_name = f"{pair}_weekly.csv"
         results = []
 
@@ -281,10 +326,23 @@ class ValidationEngine:
         self,
         df: pd.DataFrame,
         symbol: str,
-        expiration: str
+        expiration: Optional[str] = None
     ) -> ValidationReport:
-        """Validate options data."""
-        file_name = f"{symbol}_{expiration}_options.csv"
+        """
+        Validate options data.
+
+        Args:
+            df: DataFrame with options data (column names will be normalized to lowercase)
+            symbol: Stock symbol
+            expiration: Optional expiration date identifier for file naming
+
+        Returns:
+            ValidationReport
+        """
+        # Normalize column names to handle various input sources
+        df = self._normalize_columns(df)
+
+        file_name = f"{symbol}_{expiration}_options.csv" if expiration else f"{symbol}_options.csv"
         results = []
 
         required_cols = ['strike', 'option_type']
