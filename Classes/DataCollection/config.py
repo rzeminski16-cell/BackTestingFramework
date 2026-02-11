@@ -27,13 +27,6 @@ class DateRangeType(Enum):
     LAST_N_DAYS = "last_n_days"
 
 
-class QuarterlyAnnual(Enum):
-    """Fundamental data frequency."""
-    BOTH = "both"
-    QUARTERLY_ONLY = "quarterly_only"
-    ANNUAL_ONLY = "annual_only"
-
-
 class TransactionType(Enum):
     """Insider transaction types."""
     ALL = "all"
@@ -308,15 +301,12 @@ class WeeklyDataConfig(TabConfig):
 
 @dataclass
 class FundamentalDataConfig(TabConfig):
-    """Configuration for fundamental data collection."""
+    """Configuration for fundamental data collection.
+
+    Note: Only quarterly data is collected. Annual reports are not supported.
+    """
     categories: List[str] = field(default_factory=list)
     include_analyst_estimates: bool = False
-    quarterly_annual: QuarterlyAnnual = QuarterlyAnnual.BOTH
-
-    def __post_init__(self):
-        super().__post_init__()
-        if isinstance(self.quarterly_annual, str):
-            self.quarterly_annual = QuarterlyAnnual(self.quarterly_annual)
 
     def to_dict(self) -> Dict[str, Any]:
         return {
@@ -328,7 +318,6 @@ class FundamentalDataConfig(TabConfig):
             "missing_data_handling": self.missing_data_handling.value,
             "categories": self.categories,
             "include_analyst_estimates": self.include_analyst_estimates,
-            "quarterly_annual": self.quarterly_annual.value,
         }
 
 

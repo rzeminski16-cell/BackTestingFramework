@@ -1,33 +1,26 @@
 """
-Fundamental data fetcher using Alpha Vantage API.
+Fundamental data fetcher using Alpha Vantage API - Unified Quarterly Data.
 
-This module fetches and calculates fundamental metrics for each security/quarter:
+This module fetches and unifies fundamental metrics from multiple sources into
+a single quarterly timeline with one unique row per report publication date.
 
-Core Metrics (User Requested):
-- EPS (TTM) Diluted
-- EPS Growth Rate (YoY %)
-- EPS Surprise/Revision Trend (Last 4 quarters)
-- Revenue Growth (TTM YoY %)
-- Operating Margin (TTM %)
-- P/E Ratio (Forward)
-- PEG Ratio
-- Price/Book
-- Price/Cash Flow
-- Free Cash Flow (TTM)
-- FCF Trend (YoY %)
-- FCF Yield (%)
-- Debt-to-Equity Ratio
+Key Features:
+- Uses earnings reportedDate as the master timeline (actual publication date)
+- Maps all financial statements (income, balance, cash flow) to nearest earnings date
+- One unique row per quarterly report date
+- Forward-fills missing data to ensure completeness
+- Quarterly data only (no annual reports)
 
-Additional Metrics from Alpha Vantage:
-- EBITDA
-- Return on Equity (ROE)
-- Return on Assets (ROA)
-- Gross Margin (TTM)
-- Dividend Yield
-- Beta
+Core Metrics Included:
+- EPS (TTM) Diluted, Growth, Surprise Trend
+- Revenue (TTM) and Growth
+- Operating Margin, Gross Margin, Profit Margin
+- P/E Ratio (Forward & Trailing), PEG Ratio
+- Price/Book, Price/Cash Flow
+- Free Cash Flow (TTM), FCF Trend, FCF Yield
+- Debt-to-Equity Ratio, Current Ratio
+- EBITDA, ROE, ROA, Beta
 - Analyst Target Price
-- Current Ratio
-- Interest Coverage
 """
 
 import logging
@@ -53,9 +46,10 @@ RECENT_QUARTERS_FOR_FORWARD_PE = 8  # ~2 years
 @dataclass
 class QuarterData:
     """Data for a single quarter."""
-    year: int
-    quarter: int
-    quarter_end_date: datetime
+    report_date: datetime  # Actual publication date (from earnings)
+    fiscal_quarter_end: datetime  # Fiscal period ending date
+    year: int  # Calendar year
+    quarter: int  # Calendar quarter (1-4)
     metrics: Dict[str, Any] = field(default_factory=dict)
 
 
@@ -87,20 +81,12 @@ def get_quarter_from_date(date: datetime) -> Tuple[int, int]:
     return date.year, quarter
 
 
-def fiscal_to_calendar_quarter(fiscal_date: datetime, fiscal_year_end_month: int) -> Tuple[int, int]:
-    """
-    Convert fiscal quarter to calendar quarter.
-
-    Most companies have December fiscal year end (80-90%), but some differ.
-    """
-    # For simplicity, we use the fiscal date directly as it represents
-    # when the data was reported for
-    return get_quarter_from_date(fiscal_date)
-
-
 class FundamentalDataFetcher:
     """
-    Fetches and calculates fundamental metrics for securities.
+    Fetches and unifies fundamental metrics for securities.
+
+    Creates a single quarterly timeline based on earnings publication dates,
+    with all financial data from multiple sources unified into one row per quarter.
 
     Usage:
         config = AlphaVantageConfig.load()
@@ -328,7 +314,7 @@ class FundamentalDataFetcher:
         """
         Get EPS surprise trend for last N quarters.
 
-        Returns string like "Beat, Beat, Miss, Beat" or summary like "3/4 Beat"
+        Returns string like "3/4 Beat" or "2/4 Beat"
         """
         quarterly_earnings = earnings_data.get('quarterlyEarnings', [])
         if not quarterly_earnings:
@@ -361,10 +347,77 @@ class FundamentalDataFetcher:
         beat_count = sum(1 for s in surprises if s == 'Beat')
         return f"{beat_count}/{len(surprises)} Beat"
 
+    def _create_quarterly_timeline(self,
+                                   symbol: str,
+                                   raw_data: Dict[str, Any],
+                                   start_year: int,
+                                   end_year: int) -> List[QuarterData]:
+        """
+        Create the master quarterly timeline based on earnings publication dates.
+
+        This is the key method that establishes the unified timeline.
+        """
+        earnings = raw_data.get('earnings', {})
+        quarterly_earnings = earnings.get('quarterlyEarnings', [])
+
+        if not quarterly_earnings:
+            logger.warning(f"No quarterly earnings data for {symbol}")
+            return []
+
+        timeline = []
+
+        for earning in quarterly_earnings:
+            fiscal_date_str = earning.get('fiscalDateEnding')
+            reported_date_str = earning.get('reportedDate')
+
+            if not fiscal_date_str or not reported_date_str:
+                continue
+
+            try:
+                fiscal_date = datetime.strptime(fiscal_date_str, '%Y-%m-%d')
+                reported_date = datetime.strptime(reported_date_str, '%Y-%m-%d')
+
+                year, quarter = get_quarter_from_date(fiscal_date)
+
+                # Filter by year range
+                if year < start_year or year > end_year:
+                    continue
+
+                # Skip future reports
+                if reported_date > datetime.now():
+                    continue
+
+                quarter_data = QuarterData(
+                    report_date=reported_date,
+                    fiscal_quarter_end=fiscal_date,
+                    year=year,
+                    quarter=quarter
+                )
+
+                timeline.append(quarter_data)
+
+            except ValueError as e:
+                logger.warning(f"Error parsing dates for {symbol}: {e}")
+                continue
+
+        # Sort by report date (chronological)
+        timeline.sort(key=lambda x: x.report_date)
+
+        # Remove duplicates (keep first occurrence)
+        seen_dates = set()
+        unique_timeline = []
+        for qtr in timeline:
+            date_key = qtr.report_date.date()
+            if date_key not in seen_dates:
+                seen_dates.add(date_key)
+                unique_timeline.append(qtr)
+
+        logger.info(f"Created timeline with {len(unique_timeline)} quarters for {symbol}")
+        return unique_timeline
+
     def _calculate_metrics_for_quarter(self,
                                        symbol: str,
-                                       year: int,
-                                       quarter: int,
+                                       quarter_data: QuarterData,
                                        raw_data: Dict[str, Any],
                                        is_recent: bool = False) -> Dict[str, Any]:
         """
@@ -372,8 +425,7 @@ class FundamentalDataFetcher:
 
         Args:
             symbol: Stock symbol
-            year: Year
-            quarter: Quarter (1-4)
+            quarter_data: Quarter timeline data
             raw_data: Raw API data
             is_recent: Whether this is a recent quarter (for Forward P/E)
 
@@ -381,7 +433,9 @@ class FundamentalDataFetcher:
             Dictionary of metrics
         """
         metrics = {}
-        quarter_end = get_quarter_end_date(year, quarter)
+
+        report_date = quarter_data.report_date
+        fiscal_end = quarter_data.fiscal_quarter_end
 
         # Extract data from API responses
         overview = raw_data.get('overview', {})
@@ -396,7 +450,7 @@ class FundamentalDataFetcher:
         quarterly_earnings = earnings.get('quarterlyEarnings', [])
 
         # Get price at quarter end for ratio calculations
-        price = self._get_price_at_date(symbol, quarter_end)
+        price = self._get_price_at_date(symbol, fiscal_end)
         metrics['price_at_quarter_end'] = price
 
         # =====================================================================
@@ -414,7 +468,7 @@ class FundamentalDataFetcher:
 
             try:
                 fiscal_date = datetime.strptime(fiscal_date_str, '%Y-%m-%d')
-                if fiscal_date <= quarter_end:
+                if fiscal_date <= fiscal_end:
                     reported_eps = parse_float(earning.get('reportedEPS'))
                     if reported_eps is not None:
                         quarterly_eps_values.append({
@@ -435,6 +489,19 @@ class FundamentalDataFetcher:
             eps_ttm = sum(q['eps'] for q in quarterly_eps_values[:4])
         metrics['eps_ttm'] = eps_ttm
 
+        # Current quarter EPS metrics
+        if quarterly_eps_values:
+            current_eps = quarterly_eps_values[0]
+            metrics['eps_reported'] = current_eps['eps']
+            metrics['eps_estimated'] = current_eps['estimated']
+            metrics['eps_surprise'] = current_eps['surprise']
+            metrics['eps_surprise_pct'] = current_eps['surprise_pct']
+        else:
+            metrics['eps_reported'] = None
+            metrics['eps_estimated'] = None
+            metrics['eps_surprise'] = None
+            metrics['eps_surprise_pct'] = None
+
         # EPS Growth Rate (YoY)
         if len(quarterly_eps_values) >= 8:
             current_eps_ttm = sum(q['eps'] for q in quarterly_eps_values[:4])
@@ -444,18 +511,18 @@ class FundamentalDataFetcher:
             metrics['eps_growth_yoy_pct'] = None
 
         # EPS Surprise Trend
-        metrics['eps_surprise_trend'] = self._get_eps_surprise_trend(earnings, quarter_end, 4)
+        metrics['eps_surprise_trend'] = self._get_eps_surprise_trend(earnings, fiscal_end, 4)
 
         # =====================================================================
         # Revenue Metrics
         # =====================================================================
 
         # Revenue (TTM)
-        revenue_ttm = self._calculate_ttm_sum(quarterly_income, 'totalRevenue', quarter_end)
+        revenue_ttm = self._calculate_ttm_sum(quarterly_income, 'totalRevenue', fiscal_end)
         metrics['revenue_ttm'] = revenue_ttm
 
         # Revenue Growth (YoY)
-        prior_year_end = quarter_end.replace(year=year - 1)
+        prior_year_end = fiscal_end.replace(year=fiscal_end.year - 1)
         prior_revenue_ttm = self._calculate_ttm_sum(quarterly_income, 'totalRevenue', prior_year_end)
         metrics['revenue_growth_yoy_pct'] = self._calculate_yoy_growth(revenue_ttm, prior_revenue_ttm)
 
@@ -464,7 +531,7 @@ class FundamentalDataFetcher:
         # =====================================================================
 
         # Operating Income (TTM)
-        operating_income_ttm = self._calculate_ttm_sum(quarterly_income, 'operatingIncome', quarter_end)
+        operating_income_ttm = self._calculate_ttm_sum(quarterly_income, 'operatingIncome', fiscal_end)
         metrics['operating_income_ttm'] = operating_income_ttm
 
         # Operating Margin (TTM)
@@ -474,7 +541,7 @@ class FundamentalDataFetcher:
             metrics['operating_margin_ttm_pct'] = None
 
         # Gross Profit (TTM)
-        gross_profit_ttm = self._calculate_ttm_sum(quarterly_income, 'grossProfit', quarter_end)
+        gross_profit_ttm = self._calculate_ttm_sum(quarterly_income, 'grossProfit', fiscal_end)
         metrics['gross_profit_ttm'] = gross_profit_ttm
 
         # Gross Margin (TTM)
@@ -483,8 +550,18 @@ class FundamentalDataFetcher:
         else:
             metrics['gross_margin_ttm_pct'] = None
 
+        # Net Income (TTM)
+        net_income_ttm = self._calculate_ttm_sum(quarterly_income, 'netIncome', fiscal_end)
+        metrics['net_income_ttm'] = net_income_ttm
+
+        # Profit Margin (TTM)
+        if net_income_ttm is not None and revenue_ttm and revenue_ttm != 0:
+            metrics['profit_margin_ttm_pct'] = (net_income_ttm / revenue_ttm) * 100
+        else:
+            metrics['profit_margin_ttm_pct'] = None
+
         # EBITDA (TTM)
-        metrics['ebitda_ttm'] = self._calculate_ttm_sum(quarterly_income, 'ebitda', quarter_end)
+        metrics['ebitda_ttm'] = self._calculate_ttm_sum(quarterly_income, 'ebitda', fiscal_end)
 
         # =====================================================================
         # Valuation Ratios
@@ -519,25 +596,38 @@ class FundamentalDataFetcher:
                 metrics['peg_ratio'] = None
 
         # Price/Book
-        book_value_report = self._find_quarterly_report(quarterly_balance, quarter_end)
+        book_value_report = self._find_quarterly_report(quarterly_balance, fiscal_end)
         if book_value_report:
             total_equity = parse_float(book_value_report.get('totalShareholderEquity'))
             shares_outstanding = parse_float(overview.get('SharesOutstanding'))
 
             if total_equity and shares_outstanding and shares_outstanding > 0:
                 book_value_per_share = total_equity / shares_outstanding
+                metrics['book_value_per_share'] = book_value_per_share
                 if price and book_value_per_share > 0:
                     metrics['price_to_book'] = price / book_value_per_share
                 else:
                     metrics['price_to_book'] = None
             else:
+                metrics['book_value_per_share'] = None
                 metrics['price_to_book'] = None
         else:
+            metrics['book_value_per_share'] = None
             metrics['price_to_book'] = None
 
-        # Price/Cash Flow
-        ocf_ttm = self._calculate_ttm_sum(quarterly_cash, 'operatingCashflow', quarter_end)
+        # Price/Sales (TTM)
         shares_outstanding = parse_float(overview.get('SharesOutstanding'))
+        if revenue_ttm and shares_outstanding and shares_outstanding > 0:
+            revenue_per_share = revenue_ttm / shares_outstanding
+            if price and revenue_per_share > 0:
+                metrics['price_to_sales_ttm'] = price / revenue_per_share
+            else:
+                metrics['price_to_sales_ttm'] = None
+        else:
+            metrics['price_to_sales_ttm'] = None
+
+        # Price/Cash Flow
+        ocf_ttm = self._calculate_ttm_sum(quarterly_cash, 'operatingCashflow', fiscal_end)
 
         if ocf_ttm and shares_outstanding and shares_outstanding > 0:
             ocf_per_share = ocf_ttm / shares_outstanding
@@ -556,7 +646,7 @@ class FundamentalDataFetcher:
         metrics['operating_cash_flow_ttm'] = ocf_ttm
 
         # Capital Expenditures (TTM)
-        capex_ttm = self._calculate_ttm_sum(quarterly_cash, 'capitalExpenditures', quarter_end)
+        capex_ttm = self._calculate_ttm_sum(quarterly_cash, 'capitalExpenditures', fiscal_end)
         metrics['capex_ttm'] = capex_ttm
 
         # Free Cash Flow (TTM) = OCF - CapEx
@@ -595,8 +685,16 @@ class FundamentalDataFetcher:
         # Balance Sheet Metrics
         # =====================================================================
 
-        balance_report = self._find_quarterly_report(quarterly_balance, quarter_end)
+        balance_report = self._find_quarterly_report(quarterly_balance, fiscal_end)
         if balance_report:
+            # Total Assets, Liabilities, Equity
+            metrics['total_assets'] = parse_float(balance_report.get('totalAssets'))
+            metrics['total_liabilities'] = parse_float(balance_report.get('totalLiabilities'))
+            metrics['total_equity'] = parse_float(balance_report.get('totalShareholderEquity'))
+
+            # Cash and Equivalents
+            metrics['cash_and_equivalents'] = parse_float(balance_report.get('cashAndCashEquivalentsAtCarryingValue'))
+
             # Debt-to-Equity
             short_term_debt = parse_float(balance_report.get('shortTermDebt')) or 0
             long_term_debt = parse_float(balance_report.get('longTermDebt')) or 0
@@ -623,6 +721,10 @@ class FundamentalDataFetcher:
                 metrics['current_ratio'] = None
 
         else:
+            metrics['total_assets'] = None
+            metrics['total_liabilities'] = None
+            metrics['total_equity'] = None
+            metrics['cash_and_equivalents'] = None
             metrics['debt_to_equity'] = None
             metrics['current_ratio'] = None
 
@@ -632,10 +734,21 @@ class FundamentalDataFetcher:
 
         if is_recent:
             metrics['roe_ttm_pct'] = parse_float(overview.get('ReturnOnEquityTTM'))
+            if metrics['roe_ttm_pct'] is not None:
+                metrics['roe_ttm_pct'] = metrics['roe_ttm_pct'] * 100  # Convert to percentage
+
             metrics['roa_ttm_pct'] = parse_float(overview.get('ReturnOnAssetsTTM'))
+            if metrics['roa_ttm_pct'] is not None:
+                metrics['roa_ttm_pct'] = metrics['roa_ttm_pct'] * 100  # Convert to percentage
+
             metrics['dividend_yield_pct'] = parse_float(overview.get('DividendYield'))
+            if metrics['dividend_yield_pct'] is not None:
+                metrics['dividend_yield_pct'] = metrics['dividend_yield_pct'] * 100  # Convert to percentage
+
             metrics['beta'] = parse_float(overview.get('Beta'))
             metrics['analyst_target_price'] = parse_float(overview.get('AnalystTargetPrice'))
+            metrics['market_cap'] = parse_float(overview.get('MarketCapitalization'))
+            metrics['shares_outstanding'] = parse_float(overview.get('SharesOutstanding'))
         else:
             # These are current values, not historical - set to None for old quarters
             metrics['roe_ttm_pct'] = None
@@ -643,15 +756,42 @@ class FundamentalDataFetcher:
             metrics['dividend_yield_pct'] = None
             metrics['beta'] = None
             metrics['analyst_target_price'] = None
+            metrics['market_cap'] = None
+            metrics['shares_outstanding'] = None
 
         # Interest Coverage (calculate from income statement)
-        interest_expense_ttm = self._calculate_ttm_sum(quarterly_income, 'interestExpense', quarter_end)
+        interest_expense_ttm = self._calculate_ttm_sum(quarterly_income, 'interestExpense', fiscal_end)
         if operating_income_ttm is not None and interest_expense_ttm and interest_expense_ttm != 0:
             metrics['interest_coverage'] = operating_income_ttm / abs(interest_expense_ttm)
         else:
             metrics['interest_coverage'] = None
 
         return metrics
+
+    def _forward_fill_metrics(self, df: pd.DataFrame) -> pd.DataFrame:
+        """
+        Forward-fill missing fundamental data.
+
+        Rules:
+        1. Only fill forward, never backward (prevents lookahead bias)
+        2. Fill within same symbol only
+        3. Preserve None for first occurrence (no data available)
+        4. Fill across all metric columns except identifiers
+        """
+        if df.empty:
+            return df
+
+        df = df.copy()
+        df = df.sort_values(['symbol', 'report_date'])
+
+        # Identify metric columns (exclude identifiers)
+        exclude_cols = ['report_date', 'symbol', 'fiscal_quarter_end', 'year', 'quarter']
+        metric_cols = [col for col in df.columns if col not in exclude_cols]
+
+        # Forward-fill within each symbol group
+        df[metric_cols] = df.groupby('symbol')[metric_cols].fillna(method='ffill')
+
+        return df
 
     def fetch_fundamental_data(self,
                                symbol: str,
@@ -660,13 +800,16 @@ class FundamentalDataFetcher:
         """
         Fetch fundamental data for a symbol across all quarters.
 
+        Creates a unified quarterly timeline with one row per earnings report date,
+        all financial data unified, and missing values forward-filled.
+
         Args:
             symbol: Stock symbol
             start_year: First year to include
             end_year: Last year to include
 
         Returns:
-            DataFrame with quarterly fundamental data
+            DataFrame with quarterly fundamental data (one row per quarter)
         """
         logger.info(f"Fetching fundamental data for {symbol} ({start_year}-{end_year})")
 
@@ -691,56 +834,57 @@ class FundamentalDataFetcher:
             )
             return pd.DataFrame()
 
+        # Create the unified quarterly timeline
+        timeline = self._create_quarterly_timeline(symbol, raw_data, start_year, end_year)
+
+        if not timeline:
+            logger.warning(f"No quarterly timeline created for {symbol}")
+            return pd.DataFrame()
+
         # Determine recent quarters cutoff
         current_date = datetime.now()
-        current_year, current_quarter = get_quarter_from_date(current_date)
-        recent_cutoff = get_quarter_end_date(current_year, current_quarter) - timedelta(days=RECENT_QUARTERS_FOR_FORWARD_PE * 91)
+        recent_cutoff = current_date - timedelta(days=RECENT_QUARTERS_FOR_FORWARD_PE * 91)
 
-        # Generate all quarters
+        # Calculate metrics for each quarter
         records = []
-        for year in range(start_year, end_year + 1):
-            for quarter in range(1, 5):
-                quarter_end = get_quarter_end_date(year, quarter)
+        for quarter_data in timeline:
+            is_recent = quarter_data.report_date >= recent_cutoff
 
-                # Skip future quarters
-                if quarter_end > current_date:
-                    continue
+            try:
+                metrics = self._calculate_metrics_for_quarter(
+                    symbol, quarter_data, raw_data, is_recent
+                )
 
-                is_recent = quarter_end >= recent_cutoff
+                record = {
+                    'report_date': quarter_data.report_date.strftime('%Y-%m-%d'),
+                    'symbol': symbol,
+                    'fiscal_quarter_end': quarter_data.fiscal_quarter_end.strftime('%Y-%m-%d'),
+                    'year': quarter_data.year,
+                    'quarter': quarter_data.quarter,
+                    **metrics
+                }
+                records.append(record)
 
-                try:
-                    metrics = self._calculate_metrics_for_quarter(
-                        symbol, year, quarter, raw_data, is_recent
-                    )
-
-                    record = {
-                        'symbol': symbol,
-                        'year': year,
-                        'quarter': quarter,
-                        'quarter_end_date': quarter_end.strftime('%Y-%m-%d'),
-                        'is_recent': is_recent,
-                        **metrics
-                    }
-                    records.append(record)
-
-                except Exception as e:
-                    self.handler.log_issue(
-                        'calculation_error',
-                        f"Error calculating metrics for {symbol} {year}Q{quarter}: {e}",
-                        {'symbol': symbol, 'year': year, 'quarter': quarter},
-                        'warning'
-                    )
-                    continue
+            except Exception as e:
+                self.handler.log_issue(
+                    'calculation_error',
+                    f"Error calculating metrics for {symbol} {quarter_data.year}Q{quarter_data.quarter}: {e}",
+                    {'symbol': symbol, 'year': quarter_data.year, 'quarter': quarter_data.quarter},
+                    'warning'
+                )
+                continue
 
         if not records:
             return pd.DataFrame()
 
         df = pd.DataFrame(records)
 
+        # Forward-fill missing values
+        df = self._forward_fill_metrics(df)
+
         # Log summary
-        non_null_counts = df.notna().sum()
         total_quarters = len(df)
-        logger.info(f"Generated {total_quarters} quarters of data for {symbol}")
+        logger.info(f"Generated {total_quarters} quarters of unified data for {symbol}")
 
         return df
 
@@ -769,7 +913,8 @@ class FundamentalDataFetcher:
 
         print(f"\nFetching fundamental data for {total} symbols...")
         print(f"Date range: {start_year} - {end_year}")
-        print(f"Output directory: {output_dir}\n")
+        print(f"Output directory: {output_dir}")
+        print(f"Mode: Unified quarterly data only\n")
 
         for i, symbol in enumerate(symbols, 1):
             print(f"[{i}/{total}] Processing {symbol}...", end=" ", flush=True)
@@ -781,7 +926,7 @@ class FundamentalDataFetcher:
                     print("No data")
                     continue
 
-                output_file = output_dir / f"{symbol}_fundamental_data.csv"
+                output_file = output_dir / f"{symbol}_fundamental_quarterly.csv"
                 df.to_csv(output_file, index=False)
                 results[symbol] = output_file
                 print(f"OK ({len(df)} quarters)")
