@@ -92,9 +92,6 @@ class RandomControlStrategy(BaseStrategy):
         if self.random_seed is not None:
             random.seed(self.random_seed)
 
-        # Validate parameters
-        self._validate_parameters()
-
     def _validate_parameters(self) -> None:
         """Validate strategy parameters."""
         if not 0.0 <= self.entry_probability <= 1.0:
