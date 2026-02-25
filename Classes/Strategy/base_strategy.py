@@ -16,7 +16,6 @@ OPTIONAL COMPONENTS (may be left blank):
 2. should_adjust_stop(): Trailing stop loss rules
 3. should_partial_exit(): Partial exit rules
 4. should_pyramid(): Pyramiding rules (max 1 pyramid per trade)
-5. max_position_duration: Max bars to hold position (checked in exit rules)
 
 """
 from abc import ABC, abstractmethod
@@ -57,7 +56,6 @@ class BaseStrategy(ABC):
     - should_adjust_stop(): Trailing stop logic
     - should_partial_exit(): Partial exit logic
     - should_pyramid(): Pyramiding logic (max 1 per trade)
-    - max_position_duration: Max bars before forced exit
 
     IMPORTANT - RAW DATA REQUIREMENT:
     All indicators specified in required_columns() MUST exist in the raw data CSV.
@@ -130,19 +128,6 @@ class BaseStrategy(ABC):
             BaseFundamentalRules instance
         """
         return AlwaysPassFundamentalRules()
-
-    @property
-    def max_position_duration(self) -> Optional[int]:
-        """
-        Maximum position duration in bars.
-
-        OPTIONAL: Override to force exit after N bars.
-        Default: None (no duration limit)
-
-        Returns:
-            Max bars to hold position, or None
-        """
-        return None
 
     @abstractmethod
     def required_columns(self) -> List[str]:
@@ -366,12 +351,6 @@ class BaseStrategy(ABC):
             Signal.sell() if exit conditions met, None otherwise
 
         Example:
-            # Max duration check
-            if self.max_position_duration:
-                bars_held = context.current_index - self._entry_bar[context.symbol]
-                if bars_held >= self.max_position_duration:
-                    return Signal.sell(reason="Max duration reached")
-
             # Technical exit
             if context.current_price < context.get_indicator_value('ema_50'):
                 return Signal.sell(reason="Price below EMA-50")

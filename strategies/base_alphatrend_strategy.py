@@ -1,10 +1,9 @@
 """
 Base Alpha Trend Strategy
 
-A simplified AlphaTrend-based strategy with time-based exits.
+A simplified AlphaTrend-based strategy with stop-loss-only exits.
 
 Entry: AlphaTrend indicator buy signal (crossover of AlphaTrend above smoothed line)
-Exit: Position held for more than max_hold_days days
 Stop Loss: ATR14 x atr_multiplier
 Position Sizing: Risk-based (lose risk_percent% of equity at stop loss)
 
@@ -43,10 +42,9 @@ STRATEGY STRUCTURE:
 - Entry Rules: AlphaTrend buy signal
 - Initial Stop Loss: ATR-based (ATR14 x atr_multiplier)
 - Position Sizing: Risk-based sizing (risk_percent% of equity at stop loss)
-- Max Position Duration: max_hold_days bars
 - Trailing Stop: None
 - Partial Exit: None
-- Full Exit Rules: Time-based (max_hold_days)
+- Full Exit Rules: Stop loss only
 - Pyramiding: None
 
 RAW DATA INDICATORS (NOT OPTIMIZABLE):
@@ -56,7 +54,6 @@ RAW DATA INDICATORS (NOT OPTIMIZABLE):
 OPTIMIZABLE PARAMETERS:
     - atr_multiplier: ATR multiplier for stop loss (default: 2.0)
     - risk_percent: Percent of equity to risk per trade (default: 2.0)
-    - max_hold_days: Maximum days to hold position (default: 10)
     - alpha_atr_multiplier: Base multiplier for ATR bands in AlphaTrend (default: 1.0)
     - smoothing_length: EMA period for AlphaTrend smoothing (default: 3)
     - percentile_period: Lookback period for dynamic MFI thresholds (default: 100)
@@ -168,13 +165,12 @@ def _filter_signals_numba(cross_up, cross_down):
 
 class BaseAlphaTrendStrategy(BaseStrategy):
     """
-    Base AlphaTrend Strategy with time-based exits.
+    Base AlphaTrend Strategy with stop-loss-only exits.
 
     A simplified version of AlphaTrend that uses:
     - AlphaTrend indicator for entry signals
     - ATR-based stop loss
     - Risk-based position sizing
-    - Time-based exit (max holding period)
 
     No advanced features like trailing stops, partial exits, or pyramiding.
     """
@@ -184,8 +180,6 @@ class BaseAlphaTrendStrategy(BaseStrategy):
                  atr_multiplier: float = 2.0,
                  # Position sizing
                  risk_percent: float = 2.0,
-                 # Exit parameters
-                 max_hold_days: int = 10,
                  # AlphaTrend calculation parameters
                  alpha_atr_multiplier: float = 1.0,
                  smoothing_length: int = 3,
@@ -196,7 +190,6 @@ class BaseAlphaTrendStrategy(BaseStrategy):
         Args:
             atr_multiplier: ATR multiplier for stop loss (default: 2.0)
             risk_percent: Percent of equity to risk per trade (default: 2.0)
-            max_hold_days: Maximum days to hold position (default: 10)
             alpha_atr_multiplier: Base multiplier for ATR bands in AlphaTrend (default: 1.0)
             smoothing_length: EMA period for AlphaTrend smoothing (default: 3)
             percentile_period: Lookback for dynamic MFI thresholds (default: 100)
@@ -204,7 +197,6 @@ class BaseAlphaTrendStrategy(BaseStrategy):
         super().__init__(
             atr_multiplier=atr_multiplier,
             risk_percent=risk_percent,
-            max_hold_days=max_hold_days,
             alpha_atr_multiplier=alpha_atr_multiplier,
             smoothing_length=smoothing_length,
             percentile_period=percentile_period
@@ -213,7 +205,6 @@ class BaseAlphaTrendStrategy(BaseStrategy):
         # Store parameters
         self.atr_multiplier = atr_multiplier
         self.risk_percent = risk_percent
-        self.max_hold_days = max_hold_days
         self.alpha_atr_multiplier = alpha_atr_multiplier
         self.smoothing_length = smoothing_length
         self.percentile_period = percentile_period
@@ -222,11 +213,6 @@ class BaseAlphaTrendStrategy(BaseStrategy):
     def trade_direction(self) -> TradeDirection:
         """This is a LONG-only strategy."""
         return TradeDirection.LONG
-
-    @property
-    def max_position_duration(self) -> Optional[int]:
-        """Maximum bars to hold a position."""
-        return self.max_hold_days
 
     def required_columns(self) -> List[str]:
         """
@@ -379,17 +365,15 @@ class BaseAlphaTrendStrategy(BaseStrategy):
         """
         Generate exit signal.
 
-        Exit is handled by max_position_duration property (time-based exit).
-        No other exit conditions are used in this simplified strategy.
+        This strategy relies on stop loss for exits. No additional exit
+        conditions are used.
 
         Args:
             context: Current market context
 
         Returns:
-            None (exit handled by max_position_duration)
+            None (exit handled by stop loss only)
         """
-        # Exit is handled by the max_position_duration property
-        # No additional exit conditions
         return None
 
     def position_size(self, context: StrategyContext, signal: Signal) -> float:

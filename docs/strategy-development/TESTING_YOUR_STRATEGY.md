@@ -246,7 +246,7 @@ def generate_signal(self, context):
 # CORRECT: Only use current and past data
 def generate_signal(self, context):
     current = context.current_bar
-    previous = context.get_previous_bar(1)
+    previous = context.get_bar(-1)
     # Only historical data
 ```
 

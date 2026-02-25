@@ -10,6 +10,7 @@ from dataclasses import dataclass, field
 from ..Strategy.base_strategy import BaseStrategy
 from ..Strategy.strategy_context import StrategyContext
 from ..Models.signal import Signal, SignalType
+from ..Models.trade_direction import TradeDirection
 from ..Models.order import Order, OrderSide, OrderType
 from ..Models.trade import Trade, reset_trade_counter
 from ..Models.position import Position
@@ -292,12 +293,20 @@ class PortfolioEngine:
                             )
                             continue
 
-                    # Check trailing stop
+                    # Check trailing stop (direction-aware)
                     new_stop = strategy.should_adjust_stop(context)
                     if new_stop is not None:
                         current_stop = pm.position.stop_loss
-                        if current_stop is None or new_stop > current_stop:
-                            pm.adjust_stop_loss(new_stop)
+                        direction = pm.position.direction
+
+                        if direction == TradeDirection.LONG:
+                            # For LONG: stop can only move up
+                            if current_stop is None or new_stop > current_stop:
+                                pm.adjust_stop_loss(new_stop)
+                        else:
+                            # For SHORT: stop can only move down
+                            if current_stop is None or new_stop < current_stop:
+                                pm.adjust_stop_loss(new_stop)
 
                     # Check partial exit
                     partial_fraction = strategy.should_partial_exit(context)
@@ -324,10 +333,23 @@ class PortfolioEngine:
                         signal.size, signal.reason, capital, pm
                     )
                 elif signal.type == SignalType.ADJUST_STOP and pm.has_position:
+                    # Adjust stop loss (direction-aware)
                     if signal.new_stop_loss is not None:
                         current_stop = pm.position.stop_loss
-                        if current_stop is None or signal.new_stop_loss > current_stop:
-                            pm.adjust_stop_loss(signal.new_stop_loss)
+                        direction = pm.position.direction
+
+                        if direction == TradeDirection.LONG:
+                            if current_stop is None or signal.new_stop_loss > current_stop:
+                                pm.adjust_stop_loss(signal.new_stop_loss)
+                        else:
+                            if current_stop is None or signal.new_stop_loss < current_stop:
+                                pm.adjust_stop_loss(signal.new_stop_loss)
+                elif signal.type == SignalType.PYRAMID and pm.has_position:
+                    # Pyramid - add to position with break-even stop
+                    capital = self._pyramid_position(
+                        symbol, current_date, current_price,
+                        signal, strategy, context, capital, pm
+                    )
                 elif signal.type == SignalType.BUY and not pm.has_position:
                     # Collect BUY signals for capital contention processing
                     new_signals.append((symbol, signal, context, strategy))
@@ -914,6 +936,9 @@ class PortfolioEngine:
                        pm: PositionManager,
                        override_quantity: Optional[float] = None) -> float:
         """Open position with capital constraints."""
+        # Apply slippage to BUY orders (pay more due to slippage)
+        execution_price = price * (1 + self.config.slippage_percent / 100)
+
         fx_rate = self._get_fx_rate(symbol, date)
 
         # Use override_quantity if provided (e.g., for reduced positions)
@@ -925,13 +950,16 @@ class PortfolioEngine:
         if quantity <= 0:
             return capital
 
-        # Create and execute order
+        # Adjust quantity to account for slippage (reduce shares to maintain same capital allocation)
+        quantity = quantity * (price / execution_price)
+
+        # Create and execute order with slippage-adjusted price
         entry_order = Order(
             symbol=symbol,
             side=OrderSide.BUY,
             quantity=quantity,
             order_type=OrderType.MARKET,
-            price=price,
+            price=execution_price,
             timestamp=date,
             stop_loss=signal.stop_loss,
             take_profit=signal.take_profit,
@@ -953,18 +981,31 @@ class PortfolioEngine:
             if metadata:
                 security_currency = metadata.currency
 
-        # Open position
+        # Calculate entry equity (total equity before this position)
+        total_position_value = 0
+        for sym, other_pm in self.position_managers.items():
+            if other_pm.has_position and sym != symbol:
+                other_price = self._last_known_prices.get(sym, 0)
+                if other_price:
+                    pos_val = other_pm.get_position_value(other_price)
+                    pos_val_base = self._convert_to_base_currency(pos_val, sym, date)
+                    total_position_value += pos_val_base
+        entry_equity = capital + total_position_value
+
+        # Open position with actual execution price (including slippage)
         pm.open_position(
             symbol=symbol,
             entry_date=date,
-            entry_price=price,
+            entry_price=execution_price,
             quantity=quantity,
             stop_loss=signal.stop_loss,
             take_profit=signal.take_profit,
             entry_reason=signal.reason,
             commission_paid=entry_commission,
             entry_fx_rate=entry_fx_rate,
-            security_currency=security_currency
+            security_currency=security_currency,
+            entry_equity=entry_equity,
+            direction=signal.direction
         )
 
         capital -= total_cost_base
@@ -973,6 +1014,9 @@ class PortfolioEngine:
     def _close_position(self, symbol: str, date: datetime, price: float,
                         reason: str, capital: float, pm: PositionManager) -> float:
         """Close position."""
+        # Apply slippage to SELL orders (receive less due to slippage)
+        execution_price = price * (1 - self.config.slippage_percent / 100)
+
         position = pm.get_position()
         quantity = position.current_quantity
 
@@ -981,7 +1025,7 @@ class PortfolioEngine:
             side=OrderSide.SELL,
             quantity=quantity,
             order_type=OrderType.MARKET,
-            price=price,
+            price=execution_price,
             timestamp=date,
             reason=reason
         )
@@ -994,18 +1038,29 @@ class PortfolioEngine:
 
         exit_fx_rate = self._get_fx_rate(symbol, date)
 
+        # Calculate slippage cost in security currency
+        slippage_pct = self.config.slippage_percent / 100
+        entry_slippage_per_share = position.entry_price * slippage_pct / (1 + slippage_pct)
+        entry_slippage = entry_slippage_per_share * position.initial_quantity
+        exit_slippage_per_share = execution_price * slippage_pct / (1 - slippage_pct)
+        exit_slippage = exit_slippage_per_share * quantity
+        total_slippage_sec = entry_slippage + exit_slippage
+        avg_fx_rate = (position.entry_fx_rate + exit_fx_rate) / 2
+        total_slippage_base = total_slippage_sec * avg_fx_rate
+
         # Get capital allocation info from position manager if available
         trade_info = pm.pending_trade_info or {}
 
         self.trade_executor.create_trade(
             position=position,
             exit_date=date,
-            exit_price=price,
+            exit_price=execution_price,
             exit_reason=reason,
             exit_commission=exit_commission,
             entry_fx_rate=position.entry_fx_rate,
             exit_fx_rate=exit_fx_rate,
             security_currency=position.security_currency,
+            slippage_cost=total_slippage_base,
             entry_capital_available=trade_info.get('entry_capital_available', 0.0),
             entry_capital_required=trade_info.get('entry_capital_required', 0.0),
             concurrent_positions=trade_info.get('concurrent_positions', 0),
@@ -1021,6 +1076,9 @@ class PortfolioEngine:
                       fraction: float, reason: str, capital: float,
                       pm: PositionManager) -> float:
         """Partial exit."""
+        # Apply slippage to SELL orders (receive less due to slippage)
+        execution_price = price * (1 - self.config.slippage_percent / 100)
+
         position = pm.get_position()
         exit_quantity = position.current_quantity * fraction
 
@@ -1029,7 +1087,7 @@ class PortfolioEngine:
             side=OrderSide.SELL,
             quantity=exit_quantity,
             order_type=OrderType.MARKET,
-            price=price,
+            price=execution_price,
             timestamp=date,
             reason=reason
         )
@@ -1043,11 +1101,61 @@ class PortfolioEngine:
         pm.add_partial_exit(
             exit_date=date,
             quantity=exit_quantity,
-            price=price,
+            price=execution_price,
             reason=reason,
             commission_paid=exit_commission
         )
 
+        return capital
+
+    def _pyramid_position(self, symbol: str, date: datetime, price: float,
+                          signal: Signal, strategy: BaseStrategy,
+                          context: StrategyContext, capital: float,
+                          pm: PositionManager) -> float:
+        """Add to existing position (pyramid) with break-even stop."""
+        # Apply slippage to pyramid (same as BUY)
+        execution_price = price * (1 + self.config.slippage_percent / 100)
+
+        fx_rate = self._get_fx_rate(symbol, date)
+
+        # Calculate pyramid size - use signal.size as fraction of available capital
+        capital_to_use = capital * signal.size
+        quantity = capital_to_use / (execution_price * fx_rate)
+
+        if quantity <= 0:
+            return capital
+
+        # Adjust quantity for slippage
+        quantity = quantity * (price / execution_price)
+
+        # Create pyramid order
+        pyramid_order = Order(
+            symbol=symbol,
+            side=OrderSide.BUY,
+            quantity=quantity,
+            order_type=OrderType.MARKET,
+            price=execution_price,
+            timestamp=date,
+            reason=signal.reason
+        )
+
+        pyramid_commission = self.trade_executor.execute_order(pyramid_order)
+        total_cost = pyramid_order.total_value() + pyramid_commission
+        total_cost_base = self._convert_to_base_currency(total_cost, symbol, date)
+
+        if total_cost_base > capital:
+            return capital
+
+        # Add pyramid to position (updates average price and sets break-even stop)
+        pm.add_pyramid(
+            pyramid_date=date,
+            quantity=quantity,
+            price=execution_price,
+            commission=pyramid_commission,
+            reason=signal.reason
+        )
+
+        capital -= total_cost_base
         return capital
 
     def _get_unified_dates(self, data_dict: Dict[str, pd.DataFrame]) -> List[datetime]:

@@ -5,7 +5,7 @@
   "strategies": {
     "BaseAlphaTrendStrategy": {
       "display_name": "Base Alpha Trend Strategy",
-      "description": "Simplified AlphaTrend strategy with time-based exit. Entry on AlphaTrend buy signal, exit after max hold days.",
+      "description": "Simplified AlphaTrend strategy with stop-loss-only exit. Entry on AlphaTrend buy signal, exit on stop loss.",
       "trade_direction": "LONG",
       "required_indicators": ["atr_14"],
       "exit_rules": [
@@ -13,13 +13,6 @@
           "rule_type": "stop_loss_atr",
           "params": {"atr_column": "atr_14", "multiple": 2.0},
           "description": "Stop Loss: Entry - (ATR14 x atr_multiplier)",
-          "grace_period_bars": 0,
-          "momentum_protection": false
-        },
-        {
-          "rule_type": "max_duration",
-          "params": {"max_bars": 10},
-          "description": "Time-based exit after max_hold_days",
           "grace_period_bars": 0,
           "momentum_protection": false
         }
@@ -48,18 +41,6 @@
           },
           "description": "Percentage of equity to risk per trade at stop loss",
           "category": "Position Sizing"
-        },
-        "max_hold_days": {
-          "type": "int",
-          "default": 10,
-          "configurable": true,
-          "optimization": {
-            "min": 1,
-            "max": 60,
-            "step": 1
-          },
-          "description": "Maximum days to hold a position before forced exit",
-          "category": "Exit Rules"
         },
         "alpha_atr_multiplier": {
           "type": "float",
