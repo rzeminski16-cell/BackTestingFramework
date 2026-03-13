@@ -17,6 +17,7 @@ from .backtest_result import BacktestResult
 from ..Data.currency_converter import CurrencyConverter
 from ..Data.security_registry import SecurityRegistry
 from ..Data.historical_data_view import HistoricalDataView
+from ..Models.trade import reset_trade_counter
 
 
 class SingleSecurityEngine:
@@ -70,6 +71,9 @@ class SingleSecurityEngine:
         Raises:
             ValueError: If data is invalid
         """
+        # Reset trade counter for consistent IDs across runs
+        reset_trade_counter()
+
         # Validate data
         if len(data) == 0:
             raise ValueError(f"No data provided for {symbol}")
@@ -626,8 +630,10 @@ class SingleSecurityEngine:
         if quantity <= 0:
             return capital
 
-        # Adjust quantity for slippage
-        quantity = quantity * (price / execution_price)
+        # BUG FIX: Removed double slippage adjustment.
+        # quantity is already calculated using execution_price (slippage-adjusted),
+        # so no further adjustment is needed. Previously this line applied a second
+        # slippage reduction: quantity = quantity * (price / execution_price)
 
         # Create pyramid order
         pyramid_order = Order(
