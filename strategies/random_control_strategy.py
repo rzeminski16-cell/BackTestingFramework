@@ -73,6 +73,13 @@ class RandomControlStrategy(BaseStrategy):
             risk_percent: Percent of equity to risk per trade (default: 2.0)
             random_seed: Random seed for reproducibility (default: None = random)
         """
+        # Store parameters BEFORE super().__init__() which calls _validate_parameters()
+        self.entry_probability = entry_probability
+        self.exit_probability = exit_probability
+        self.atr_multiplier = atr_multiplier
+        self.risk_percent = risk_percent
+        self.random_seed = random_seed
+
         super().__init__(
             entry_probability=entry_probability,
             exit_probability=exit_probability,
@@ -81,16 +88,8 @@ class RandomControlStrategy(BaseStrategy):
             random_seed=random_seed
         )
 
-        # Store parameters
-        self.entry_probability = entry_probability
-        self.exit_probability = exit_probability
-        self.atr_multiplier = atr_multiplier
-        self.risk_percent = risk_percent
-        self.random_seed = random_seed
-
-        # Initialize random number generator
-        if self.random_seed is not None:
-            random.seed(self.random_seed)
+        # Initialize per-instance random number generator (avoids global state pollution)
+        self._rng = random.Random(self.random_seed)
 
     def _validate_parameters(self) -> None:
         """Validate strategy parameters."""
@@ -184,7 +183,7 @@ class RandomControlStrategy(BaseStrategy):
             return None
 
         # Random entry check
-        if random.random() < self.entry_probability:
+        if self._rng.random() < self.entry_probability:
             return Signal.buy(
                 size=1.0,
                 stop_loss=self.calculate_initial_stop_loss(context),
@@ -208,7 +207,7 @@ class RandomControlStrategy(BaseStrategy):
             Signal.sell() if random check passes, None otherwise
         """
         # Random exit check
-        if random.random() < self.exit_probability:
+        if self._rng.random() < self.exit_probability:
             return Signal.sell(reason=f"Random exit (p={self.exit_probability:.0%})")
 
         return None

@@ -6,6 +6,8 @@ from datetime import datetime
 from typing import Optional, Dict, Any, List
 import uuid
 
+from .trade_direction import TradeDirection
+
 
 # Global trade counter for generating sequential IDs
 _trade_counter = 0
@@ -174,15 +176,22 @@ class Trade:
         """
         duration_days = (exit_date - position.entry_date).days
 
-        # Calculate P/L including partial exits
+        # Calculate P/L including partial exits (direction-aware)
         pl = 0.0
+        is_short = position.direction == TradeDirection.SHORT
 
         # P/L from partial exits
         for partial_exit in position.partial_exits:
-            pl += (partial_exit.price - position.entry_price) * partial_exit.quantity
+            if is_short:
+                pl += (position.entry_price - partial_exit.price) * partial_exit.quantity
+            else:
+                pl += (partial_exit.price - position.entry_price) * partial_exit.quantity
 
         # P/L from final exit
-        pl += (exit_price - position.entry_price) * position.current_quantity
+        if is_short:
+            pl += (position.entry_price - exit_price) * position.current_quantity
+        else:
+            pl += (exit_price - position.entry_price) * position.current_quantity
 
         # Subtract total commission
         pl -= commission_paid
@@ -198,7 +207,7 @@ class Trade:
             exit_date=exit_date,
             exit_price=exit_price,
             quantity=position.initial_quantity,  # Initial quantity for trade record
-            side="LONG",
+            side=position.direction.value,
             initial_stop_loss=position.stop_loss,  # Stop at entry
             final_stop_loss=position.stop_loss,    # Final stop (may have been adjusted)
             take_profit=position.take_profit,

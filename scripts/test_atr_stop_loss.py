@@ -10,7 +10,7 @@ project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
 import pandas as pd
 import numpy as np
-from strategies.base_alphatrend_strategy import BaseBaseAlphaTrendStrategy
+from strategies.base_alphatrend_strategy import BaseAlphaTrendStrategy
 from Classes.Config.config import BacktestConfig, CommissionConfig, CommissionMode
 from Classes.Data.data_loader import DataLoader
 from Classes.Engine.single_security_engine import SingleSecurityEngine

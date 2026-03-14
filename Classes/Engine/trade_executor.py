@@ -104,12 +104,16 @@ class TradeExecutor:
         # P/L in security currency (before FX conversion)
         pl_in_sec_currency = trade.pl + total_commission  # Add back commission temporarily
 
+        # Convert commission to base currency for proper subtraction
+        avg_fx_rate = (entry_fx_rate + exit_fx_rate) / 2
+        commission_base = total_commission * avg_fx_rate
+
         # Security P/L: What the P/L would be if FX rate stayed constant at entry rate
         # This isolates the price movement from the FX movement
-        trade.security_pl = pl_in_sec_currency * entry_fx_rate - total_commission
+        trade.security_pl = pl_in_sec_currency * entry_fx_rate - commission_base
 
         # Total P/L: Actual P/L in base currency using the exit FX rate
-        total_pl_in_base = pl_in_sec_currency * exit_fx_rate - total_commission
+        total_pl_in_base = pl_in_sec_currency * exit_fx_rate - commission_base
 
         # FX P/L: The difference caused by FX rate changes
         # If entry_fx_rate == exit_fx_rate, this will be 0
