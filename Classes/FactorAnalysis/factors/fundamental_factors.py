@@ -61,17 +61,10 @@ class FundamentalFactors:
 
     # EPS-related factors only - use when fundamental data is mostly missing
     # These factors focus on earnings per share and earnings surprise data
-<<<<<<< HEAD
     EPS_FACTORS = {
         'eps': {'source': 'eps', 'lower_better': False},
         'estimated_eps': {'source': 'estimated_eps', 'lower_better': False},
         'earnings_growth': {'source': 'earnings_growth_yoy', 'lower_better': False},
-=======
-    # Column names: reported_eps, estimated_eps, earnings_surprise, surprise_pct
-    EPS_FACTORS = {
-        'eps': {'source': 'reported_eps', 'lower_better': False},
-        'estimated_eps': {'source': 'estimated_eps', 'lower_better': False},
->>>>>>> 8d6cbfca3240476658cddc8917a791e973447f3e
         'earnings_surprise': {'source': 'earnings_surprise', 'lower_better': False},
         'earnings_surprise_pct': {'source': 'surprise_pct', 'lower_better': False},
     }
@@ -215,17 +208,10 @@ class FundamentalFactors:
         print(f"[INFO] Trades with data: {trades_with_data}/{len(trades_df)}")
 
         # Count factors by category
-<<<<<<< HEAD
-        value_count = len([c for c in factors_df.columns if c.startswith('value_')])
-        quality_count = len([c for c in factors_df.columns if c.startswith('quality_')])
-        growth_count = len([c for c in factors_df.columns if c.startswith('growth_')])
-        eps_count = len([c for c in factors_df.columns if c.startswith('eps_')])
-=======
         value_count = len([c for c in all_factor_cols if c.startswith('value_')])
         quality_count = len([c for c in all_factor_cols if c.startswith('quality_')])
         growth_count = len([c for c in all_factor_cols if c.startswith('growth_')])
         eps_count = len([c for c in all_factor_cols if c.startswith('eps_')])
->>>>>>> 8d6cbfca3240476658cddc8917a791e973447f3e
 
         result = FundamentalFactorResult(
             value_factors=value_count,
