@@ -123,8 +123,8 @@ class TestTradeClassification:
         from Classes.FactorAnalysis import TradeClassifier, TradeClassificationConfig
 
         config = TradeClassificationConfig(
-            good_threshold=0.03,
-            bad_threshold=-0.02
+            good_threshold_pct=0.03,
+            bad_threshold_pct=-0.02
         )
         classifier = TradeClassifier(config=config)
         assert classifier is not None
@@ -134,11 +134,11 @@ class TestTradeClassification:
         from Classes.FactorAnalysis import TradeClassifier
 
         classifier = TradeClassifier()
-        result = classifier.classify(sample_trades)
+        result_df, classification_result = classifier.classify_trades(sample_trades)
 
-        assert 'trade_class' in result.columns
-        assert 'trade_class_numeric' in result.columns
-        assert set(result['trade_class'].unique()).issubset({'good', 'bad', 'indeterminate'})
+        assert 'trade_class' in result_df.columns
+        assert 'trade_class_numeric' in result_df.columns
+        assert set(result_df['trade_class'].unique()).issubset({'good', 'bad', 'indeterminate'})
 
 
 class TestConfiguration:
@@ -171,8 +171,8 @@ class TestConfiguration:
         # Invalid threshold (good should be > bad)
         with pytest.raises(ValueError):
             TradeClassificationConfig(
-                good_threshold=-0.05,
-                bad_threshold=0.05
+                good_threshold_pct=-0.05,
+                bad_threshold_pct=0.05
             )
 
 
@@ -183,9 +183,12 @@ class TestDataValidation:
     def sample_trades(self):
         """Create sample trade data."""
         return pd.DataFrame({
+            'trade_id': [1, 2, 3],
             'symbol': ['AAPL', 'MSFT', 'GOOG'],
             'entry_date': ['2024-01-01', '2024-01-02', '2024-01-03'],
             'exit_date': ['2024-01-02', '2024-01-03', '2024-01-04'],
+            'entry_price': [150.0, 300.0, 140.0],
+            'exit_price': [155.0, 295.0, 145.0],
             'pl': [100, -50, 75],
             'pl_pct': [0.05, -0.02, 0.03]
         })

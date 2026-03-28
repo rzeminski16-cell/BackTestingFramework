@@ -302,15 +302,6 @@ class FactorAnalyzer:
             )
             fundamental_enabled = eps_only_mode or traditional_fundamental_enabled
 
-<<<<<<< HEAD
-=======
-            # Debug: Check if fundamental data is available
-            has_fundamental = input_data.fundamental_data is not None
-            fund_len = len(input_data.fundamental_data) if has_fundamental else 0
-            print(f"[DEBUG] Fundamental data available: {has_fundamental}, rows: {fund_len}")
-            print(f"[DEBUG] eps_only_mode: {eps_only_mode}, fundamental_enabled: {fundamental_enabled}")
-
->>>>>>> 8d6cbfca3240476658cddc8917a791e973447f3e
             if fundamental_enabled and input_data.fundamental_data is not None:
                 print(f"[DEBUG] Fundamental data columns: {list(input_data.fundamental_data.columns)}")
                 aligned_fund = self.aligner.align_fundamentals(
