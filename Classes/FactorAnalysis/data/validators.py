@@ -390,7 +390,7 @@ class DataValidator:
                 entry_dates.min().strftime('%Y-%m-%d'),
                 entry_dates.max().strftime('%Y-%m-%d')
             )
-        except:
+        except Exception:
             pass
 
         if 'symbol' in df.columns:
@@ -438,7 +438,7 @@ class DataValidator:
                 dates.min().strftime('%Y-%m-%d'),
                 dates.max().strftime('%Y-%m-%d')
             )
-        except:
+        except Exception:
             pass
 
         if 'symbol' in df.columns:
@@ -477,7 +477,7 @@ class DataValidator:
                 dates.min().strftime('%Y-%m-%d'),
                 dates.max().strftime('%Y-%m-%d')
             )
-        except:
+        except Exception:
             pass
 
         result.symbols = df['symbol'].unique().tolist()
@@ -513,7 +513,7 @@ class DataValidator:
                 dates.min().strftime('%Y-%m-%d'),
                 dates.max().strftime('%Y-%m-%d')
             )
-        except:
+        except Exception:
             pass
 
         result.symbols = df['symbol'].unique().tolist()
@@ -553,7 +553,7 @@ class DataValidator:
                 dates.min().strftime('%Y-%m-%d'),
                 dates.max().strftime('%Y-%m-%d')
             )
-        except:
+        except Exception:
             pass
 
         result.symbols = df['symbol'].unique().tolist()

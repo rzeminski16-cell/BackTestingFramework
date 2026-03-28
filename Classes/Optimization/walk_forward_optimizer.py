@@ -502,7 +502,7 @@ class WalkForwardOptimizer:
                 param: getattr(default_strategy, param, None)
                 for param in param_config.keys()
             }
-        except:
+        except Exception:
             # If can't instantiate, use config mins or medians as defaults
             default_params = {}
             for param_name, param_spec in param_config.items():

@@ -5,6 +5,7 @@ NOTE: All metric calculations are delegated to CentralizedPerformanceMetrics
 to ensure consistency across the framework.
 """
 import itertools
+import logging
 import pandas as pd
 from typing import Dict, List, Any, Type
 from ..Strategy.base_strategy import BaseStrategy
@@ -20,6 +21,9 @@ from ..Core.performance_metrics import (
     TRADING_DAYS_PER_YEAR,
     MAX_PROFIT_FACTOR,
 )
+
+
+logger = logging.getLogger(__name__)
 
 
 class StrategyOptimizer:
@@ -125,7 +129,7 @@ class StrategyOptimizer:
             # Optimize separately for each security
             results = {}
             for symbol, data in data_dict.items():
-                print(f"Optimizing {symbol}...")
+                logger.info(f"Optimizing {symbol}...")
                 results[symbol] = self.optimize(
                     strategy_class, param_grid, symbol, data
                 )
@@ -174,7 +178,7 @@ class StrategyOptimizer:
                         total_metric += metric_value
                         valid_count += 1
                 except Exception as e:
-                    print(f"Error testing {params} on {symbol}: {e}")
+                    logger.error(f"Error testing {params} on {symbol}: {e}")
                     continue
 
             # Calculate average metric across securities
@@ -194,7 +198,7 @@ class StrategyOptimizer:
 
         best_params = combination_scores[0][0]
 
-        print(f"Best global parameters: {best_params}")
+        logger.info(f"Best global parameters: {best_params}")
 
         # Run final backtest with best parameters for each security
         results = {}
