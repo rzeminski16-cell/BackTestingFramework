@@ -79,6 +79,7 @@ class Trade:
     exit_date: datetime
     pnl: float
     pnl_percent: float
+    initial_stop_loss: Optional[float] = None
 
     @classmethod
     def from_position(cls, position: Position) -> "Trade":
@@ -96,4 +97,5 @@ class Trade:
             exit_date=position.exit_date,
             pnl=position.pnl,
             pnl_percent=position.pnl_percent,
+            initial_stop_loss=position.stop_loss,
         )

@@ -942,7 +942,18 @@ class EnhancedPortfolioReportGenerator:
             except Exception:
                 pass
 
-        # 4. Rolling Metrics (right side) - with anomaly filtering
+        # 4. R-Multiple Distribution
+        if all_trades:
+            try:
+                r_dist_img = self.viz.create_r_multiple_distribution(all_trades)
+                img = Image(r_dist_img)
+                img.width = 600
+                img.height = 350
+                ws.add_image(img, f'A{chart_row + 18}')
+            except Exception:
+                pass
+
+        # 5. Rolling Metrics (right side) - with anomaly filtering
         try:
             rolling_img, _ = self.viz.create_rolling_metrics_chart(
                 equity_df,
@@ -956,7 +967,7 @@ class EnhancedPortfolioReportGenerator:
         except Exception:
             pass
 
-        # 5. Contribution Analysis
+        # 6. Contribution Analysis
         if len(result.symbol_results) > 1:
             symbol_pnl = {sym: res.total_return for sym, res in result.symbol_results.items()}
             try:
@@ -1256,6 +1267,16 @@ class EnhancedPortfolioReportGenerator:
                 img.width = 500
                 img.height = 300
                 ws.add_image(img, f'E3')
+            except Exception:
+                pass
+
+            # R-Multiple distribution
+            try:
+                r_dist_img = self.viz.create_r_multiple_distribution(all_trades)
+                img = Image(r_dist_img)
+                img.width = 600
+                img.height = 350
+                ws.add_image(img, f'E20')
             except Exception:
                 pass
 

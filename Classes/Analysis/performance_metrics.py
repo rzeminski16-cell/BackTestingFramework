@@ -164,6 +164,23 @@ class PerformanceMetrics:
         best_day = PerformanceMetrics.calculate_best_day(equity_curve)
         worst_day = PerformanceMetrics.calculate_worst_day(equity_curve)
 
+        # R-Multiple metrics
+        r_multiples = CentralizedPerformanceMetrics.calculate_r_multiples(trades)
+        r_trades_count = len(r_multiples)
+        if r_multiples:
+            winning_r = [r for r in r_multiples if r >= 0]
+            losing_r = [r for r in r_multiples if r < 0]
+            avg_r_multiple = float(np.mean(r_multiples))
+            avg_win_r = float(np.mean(winning_r)) if winning_r else 0.0
+            avg_loss_r = float(np.mean(losing_r)) if losing_r else 0.0
+            r_expectancy = ((len(winning_r) / r_trades_count * avg_win_r) +
+                           (len(losing_r) / r_trades_count * avg_loss_r))
+        else:
+            avg_r_multiple = 0.0
+            avg_win_r = 0.0
+            avg_loss_r = 0.0
+            r_expectancy = 0.0
+
         metrics.update({
             'win_rate': win_rate,
             'num_wins': num_wins,
@@ -183,6 +200,12 @@ class PerformanceMetrics:
             'downside_deviation': downside_deviation,
             'best_day': best_day,
             'worst_day': worst_day,
+            # R-Multiple metrics
+            'r_trades_count': r_trades_count,
+            'avg_r_multiple': avg_r_multiple,
+            'avg_win_r': avg_win_r,
+            'avg_loss_r': avg_loss_r,
+            'r_expectancy': r_expectancy,
             # FX P&L metrics
             'total_security_pl': total_security_pl,
             'total_fx_pl': total_fx_pl,

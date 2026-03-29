@@ -148,6 +148,32 @@ AVAILABLE_METRICS: Dict[str, MetricDefinition] = {
         higher_is_better=True,
         format_str="${:,.2f}",
     )),
+
+    # R-Multiple Metrics
+    "avg_r_multiple": CENTRALIZED_METRICS.get("avg_r_multiple", MetricDefinition(
+        name="Avg R-Multiple",
+        description="Average R-multiple across all trades with stop loss",
+        higher_is_better=True,
+        format_str="{:.2f}R",
+    )),
+    "avg_win_r": CENTRALIZED_METRICS.get("avg_win_r", MetricDefinition(
+        name="Avg Winning R",
+        description="Average R-multiple of winning trades",
+        higher_is_better=True,
+        format_str="{:.2f}R",
+    )),
+    "avg_loss_r": CENTRALIZED_METRICS.get("avg_loss_r", MetricDefinition(
+        name="Avg Losing R",
+        description="Average R-multiple of losing trades",
+        higher_is_better=False,
+        format_str="{:.2f}R",
+    )),
+    "r_expectancy": CENTRALIZED_METRICS.get("r_expectancy", MetricDefinition(
+        name="R-Expectancy",
+        description="Expected R-multiple per trade (win_rate * avg_win_R + loss_rate * avg_loss_R)",
+        higher_is_better=True,
+        format_str="{:.2f}R",
+    )),
 }
 
 
@@ -398,3 +424,21 @@ class PerformanceMetrics:
         if len(equity) == 0:
             return 0.0
         return equity.iloc[-1]
+
+    # R-Multiple metrics
+
+    def _calc_avg_r_multiple(self) -> float:
+        """Calculate average R-multiple using centralized method."""
+        return CentralizedPerformanceMetrics.calculate_avg_r_multiple(self.result.trades)
+
+    def _calc_avg_win_r(self) -> float:
+        """Calculate average winning R-multiple using centralized method."""
+        return CentralizedPerformanceMetrics.calculate_avg_win_r(self.result.trades)
+
+    def _calc_avg_loss_r(self) -> float:
+        """Calculate average losing R-multiple using centralized method."""
+        return CentralizedPerformanceMetrics.calculate_avg_loss_r(self.result.trades)
+
+    def _calc_r_expectancy(self) -> float:
+        """Calculate R-expectancy using centralized method."""
+        return CentralizedPerformanceMetrics.calculate_r_expectancy(self.result.trades)

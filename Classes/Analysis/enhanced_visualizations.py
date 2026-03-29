@@ -345,6 +345,105 @@ class EnhancedVisualizations:
         plt.tight_layout()
         return self._get_figure_bytes(fig)
 
+    def create_r_multiple_distribution(
+        self,
+        trades: List[Any],
+        title: str = "R-Multiple Distribution",
+        figsize: Tuple[int, int] = (12, 6)
+    ) -> BytesIO:
+        """
+        Create back-to-back histogram of R-multiple distribution.
+
+        Losing trades on the left, winning trades on the right, with 1R-increment bins.
+        Includes summary statistics panel.
+
+        Args:
+            trades: List of Trade objects with initial_stop_loss attribute
+            title: Chart title
+            figsize: Figure size
+
+        Returns:
+            BytesIO containing PNG image
+        """
+        from Classes.Core.performance_metrics import CentralizedPerformanceMetrics
+
+        r_multiples = CentralizedPerformanceMetrics.calculate_r_multiples(trades)
+
+        if not r_multiples:
+            fig, ax = plt.subplots(figsize=figsize)
+            ax.text(0.5, 0.5, 'No R-multiple data available.\n'
+                    'Trades may be missing stop loss information.',
+                    ha='center', va='center', fontsize=12, color=self.COLORS['neutral'])
+            ax.axis('off')
+            return self._get_figure_bytes(fig)
+
+        winning = [r for r in r_multiples if r >= 0]
+        losing = [r for r in r_multiples if r < 0]
+
+        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=figsize)
+
+        # Create bins with whole number boundaries (1R increments)
+        min_r = min(r_multiples)
+        max_r = max(r_multiples)
+        min_bin = int(np.floor(min_r))
+        max_bin = int(np.ceil(max_r)) + 1
+        losing_bins = np.arange(min_bin, 1, 1)
+        winning_bins = np.arange(0, max_bin + 1, 1)
+
+        # Ensure at least 2 bin edges
+        if len(losing_bins) < 2:
+            losing_bins = np.arange(min_bin - 1, 1, 1)
+        if len(winning_bins) < 2:
+            winning_bins = np.arange(0, max_bin + 2, 1)
+
+        # Plot losing trades histogram (left)
+        if losing:
+            ax1.hist(losing, bins=losing_bins, color=self.COLORS['negative'],
+                     edgecolor='white', linewidth=0.5, alpha=0.85)
+
+        ax1.set_xlabel('R-Multiple', fontsize=10)
+        ax1.set_ylabel('Number of Trades', fontsize=10)
+        ax1.set_title(f'Losing Trades ({len(losing)})', fontsize=11,
+                      color=self.COLORS['negative'], fontweight='bold')
+        ax1.axvline(x=0, color=self.COLORS['neutral'], linestyle='-', alpha=0.5)
+        ax1.grid(True, alpha=0.3, color=self.COLORS['grid'])
+
+        # Plot winning trades histogram (right)
+        if winning:
+            ax2.hist(winning, bins=winning_bins, color=self.COLORS['positive'],
+                     edgecolor='white', linewidth=0.5, alpha=0.85)
+
+        ax2.set_xlabel('R-Multiple', fontsize=10)
+        ax2.set_ylabel('Number of Trades', fontsize=10)
+        ax2.set_title(f'Winning Trades ({len(winning)})', fontsize=11,
+                      color=self.COLORS['positive'], fontweight='bold')
+        ax2.axvline(x=0, color=self.COLORS['neutral'], linestyle='-', alpha=0.5)
+        ax2.grid(True, alpha=0.3, color=self.COLORS['grid'])
+
+        # Set same y-axis scale for both charts
+        y_max = max(ax1.get_ylim()[1], ax2.get_ylim()[1])
+        ax1.set_ylim(0, y_max)
+        ax2.set_ylim(0, y_max)
+
+        # Calculate summary stats
+        avg_r = np.mean(r_multiples)
+        avg_win_r = np.mean(winning) if winning else 0.0
+        avg_loss_r = np.mean(losing) if losing else 0.0
+        total = len(r_multiples)
+        win_rate = len(winning) / total * 100
+        r_expectancy = (len(winning) / total * avg_win_r) + (len(losing) / total * avg_loss_r)
+
+        # Add stats as suptitle subtitle
+        stats_text = (f'Trades with R: {total} | Win Rate: {win_rate:.1f}% | '
+                      f'Avg R: {avg_r:.2f} | Avg Win: {avg_win_r:.2f}R | '
+                      f'Avg Loss: {avg_loss_r:.2f}R | R-Expectancy: {r_expectancy:.2f}R')
+
+        fig.suptitle(title, fontsize=13, fontweight='bold', y=0.98)
+        fig.text(0.5, 0.92, stats_text, ha='center', fontsize=9, color=self.COLORS['neutral'])
+        fig.tight_layout(rect=[0, 0, 1, 0.90])
+
+        return self._get_figure_bytes(fig)
+
     def create_rolling_metrics_chart(
         self,
         equity_curve: pd.DataFrame,
