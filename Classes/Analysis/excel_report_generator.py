@@ -311,8 +311,8 @@ class ExcelReportGenerator:
         metrics['strategy_exposure'] = self._calculate_exposure(equity_curve, trades)
 
         # Monthly/Quarterly returns
-        metrics['monthly_returns'] = self._calculate_period_returns(equity_curve, 'M')
-        metrics['quarterly_returns'] = self._calculate_period_returns(equity_curve, 'Q')
+        metrics['monthly_returns'] = self._calculate_period_returns(equity_curve, 'ME')
+        metrics['quarterly_returns'] = self._calculate_period_returns(equity_curve, 'QE')
 
         # Trade distribution
         metrics['return_distribution'] = self._calculate_return_distribution(trades)
