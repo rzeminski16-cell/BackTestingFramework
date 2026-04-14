@@ -47,36 +47,9 @@ python ctk_backtest_gui.py
 
 The GUI walks you through:
 1. Selecting securities from your `raw_data/` folder
-2. Choosing a strategy (e.g., AlphaTrendStrategy, RandomBaseStrategy)
+2. Choosing a strategy from the registered strategy list
 3. Setting commission and capital
 4. Running the backtest and viewing results
-
-### Run a Backtest (Python)
-
-```python
-from pathlib import Path
-from Classes.Config.config import BacktestConfig, CommissionConfig, CommissionMode
-from Classes.Data.data_loader import DataLoader
-from Classes.Engine.single_security_engine import SingleSecurityEngine
-from strategies.alphatrend_strategy import AlphaTrendStrategy
-
-# Configure
-config = BacktestConfig(
-    initial_capital=100000.0,
-    commission=CommissionConfig(CommissionMode.PERCENTAGE, 0.001)
-)
-
-# Load data and run
-loader = DataLoader(Path('raw_data'))
-data = loader.load_csv('AAPL')
-strategy = AlphaTrendStrategy()
-engine = SingleSecurityEngine(config)
-result = engine.run('AAPL', data, strategy)
-
-# View results
-print(f"Total Return: {result.total_return_pct:.2f}%")
-print(f"Number of Trades: {result.num_trades}")
-```
 
 ## Data Requirements
 

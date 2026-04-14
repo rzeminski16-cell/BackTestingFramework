@@ -81,7 +81,7 @@ flowchart TD
 `DataLoader` reads the CSV into a pandas DataFrame. `DataValidator` ensures required columns exist, sorts by date, and removes duplicates. `SecurityRegistry` looks up the security's currency so the engine knows whether FX conversion is needed.
 
 ### 2. Preparation
-`strategy.prepare_data()` runs once. It validates that all `required_columns()` exist in the data, then calls `_prepare_data_impl()` for any strategy-specific indicator calculations (e.g. AlphaTrend signals). The framework checks new columns for look-ahead bias.
+`strategy.prepare_data()` runs once. It validates that all `required_columns()` exist in the data, then calls `_prepare_data_impl()` for any strategy-specific indicator calculations. The framework checks new columns for look-ahead bias.
 
 ### 3. Execution
 The engine iterates bar-by-bar. On each bar:

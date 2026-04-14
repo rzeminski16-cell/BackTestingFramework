@@ -44,7 +44,7 @@ class StrategyParameterPreset:
         Save a parameter preset to disk.
 
         Args:
-            strategy_name: Name of the strategy (e.g., "AlphaTrendStrategy")
+            strategy_name: Name of the strategy class
             preset_name: Name for this preset (e.g., "Aggressive", "Conservative")
             parameters: Dictionary of parameter names and values
             description: Optional description of the preset

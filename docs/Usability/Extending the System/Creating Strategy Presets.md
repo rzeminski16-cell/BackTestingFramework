@@ -25,7 +25,7 @@ config/strategy_presets/{StrategyName}__{PresetName}.json
 
 Example:
 ```
-config/strategy_presets/BaseAlphaTrendStrategy__Conservative.json
+config/strategy_presets/YourStrategy__Conservative.json
 ```
 
 ---
@@ -34,15 +34,12 @@ config/strategy_presets/BaseAlphaTrendStrategy__Conservative.json
 
 ```json
 {
-  "strategy": "BaseAlphaTrendStrategy",
+  "strategy": "YourStrategy",
   "preset_name": "Conservative",
   "description": "Wide stops, low risk per trade",
   "parameters": {
     "atr_multiplier": 3.0,
-    "risk_percent": 1.0,
-    "alpha_atr_multiplier": 1.0,
-    "smoothing_length": 5,
-    "percentile_period": 100
+    "risk_percent": 1.0
   }
 }
 ```
@@ -59,8 +56,8 @@ Select the preset from the dropdown in the strategy parameters panel. The values
 import json
 from pathlib import Path
 
-preset = json.loads(Path('config/strategy_presets/BaseAlphaTrendStrategy__Conservative.json').read_text())
-strategy = BaseAlphaTrendStrategy(**preset['parameters'])
+preset = json.loads(Path('config/strategy_presets/YourStrategy__Conservative.json').read_text())
+strategy = YourStrategy(**preset['parameters'])
 ```
 
 ---

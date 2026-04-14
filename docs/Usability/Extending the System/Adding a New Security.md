@@ -36,12 +36,7 @@ raw_data/daily/TSLA.csv
 
 ### Strategy-Specific Columns
 
-Depending on which strategy you want to run, you'll need additional pre-calculated indicator columns. For example, `BaseAlphaTrendStrategy` requires:
-
-| Column | Description |
-|---|---|
-| `atr_14_atr` | 14-period Average True Range |
-| `mfi_14_mfi` | 14-period Money Flow Index |
+Depending on which strategy you want to run, you'll need additional pre-calculated indicator columns (e.g. `atr_14_atr` for ATR-based stop loss).
 
 > [!tip] Check Required Columns
 > Call `strategy.required_columns()` on any strategy instance to see exactly which columns it needs.

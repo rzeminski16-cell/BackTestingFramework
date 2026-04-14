@@ -53,7 +53,6 @@ from Classes.Analysis.excel_report_generator import ExcelReportGenerator
 from Classes.Analysis.portfolio_report_generator import PortfolioReportGenerator
 
 # Import available strategies
-from strategies.base_alphatrend_strategy import BaseAlphaTrendStrategy
 from strategies.random_control_strategy import RandomControlStrategy
 
 
@@ -1209,7 +1208,6 @@ class CTkBacktestWizard(CTkWizardBase):
     """Main Backtest Wizard application using CustomTkinter."""
 
     STRATEGIES = {
-        'BaseAlphaTrendStrategy': BaseAlphaTrendStrategy,
         'RandomControlStrategy': RandomControlStrategy
     }
 

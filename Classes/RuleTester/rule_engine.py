@@ -140,7 +140,7 @@ class RuleEngine:
         Set the strategy for exit rule evaluation.
 
         Args:
-            strategy_name: Name of the strategy (e.g., "AlphaTrendStrategy")
+            strategy_name: Name of the strategy class
 
         Returns:
             True if strategy was found and set, False otherwise

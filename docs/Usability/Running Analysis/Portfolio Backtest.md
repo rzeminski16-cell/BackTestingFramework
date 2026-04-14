@@ -67,7 +67,7 @@ from Classes.Config.capital_contention import (
     CapitalContentionConfig, CapitalContentionMode
 )
 from Classes.Data.data_loader import DataLoader
-from strategies.base_alphatrend_strategy import BaseAlphaTrendStrategy
+from strategies.your_strategy import YourStrategy
 from pathlib import Path
 
 config = PortfolioConfig(
@@ -83,7 +83,7 @@ loader = DataLoader(Path('raw_data/daily'))
 symbols = ['AAPL', 'MSFT', 'GOOGL']
 data = {sym: loader.load_csv(sym) for sym in symbols}
 
-strategy = BaseAlphaTrendStrategy()
+strategy = YourStrategy()
 engine = PortfolioEngine(config)
 result = engine.run(data, strategy)
 ```
