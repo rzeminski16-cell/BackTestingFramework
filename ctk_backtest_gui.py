@@ -632,10 +632,16 @@ class CTkStrategyStep(CTkWizardStep):
 
             # Parameters
             for param_name, param_value in param_list:
+                # Full parameter definition from centralized config (includes
+                # ``type`` and ``allowed_values`` if applicable).
+                central_def = StrategyConfig.get_param_info(strategy_name, param_name) or {}
+                allowed_values = central_def.get('allowed_values')
+
+                # Optimisation-config overrides (may contain min/max range hints).
                 spec = param_spec.get(param_name, {})
                 min_val = spec.get('min', '')
                 max_val = spec.get('max', '')
-                param_type = spec.get('type', 'float')
+                param_type = central_def.get('type') or spec.get('type', 'float')
 
                 param_frame = Theme.create_frame(self.params_scroll)
                 param_frame.pack(fill="x", pady=Sizes.PAD_XS, padx=(Sizes.PAD_M, 0))
@@ -644,16 +650,27 @@ class CTkStrategyStep(CTkWizardStep):
 
                 var = ctk.StringVar(value=str(param_value))
                 self.param_entries[param_name] = var
-                entry = Theme.create_entry(param_frame, width=100)
-                entry.configure(textvariable=var)
-                entry.pack(side="left", padx=(0, Sizes.PAD_S))
 
-                if min_val != '' and max_val != '':
-                    if param_type == 'int':
-                        range_str = f"[{int(min_val)} - {int(max_val)}]"
-                    else:
-                        range_str = f"[{min_val:.2f} - {max_val:.2f}]"
-                    Theme.create_hint(param_frame, range_str).pack(side="left")
+                if allowed_values:
+                    # Discrete-value dropdown (e.g. ma_length, ema_sma).
+                    combo = Theme.create_combobox(
+                        param_frame,
+                        values=[str(v) for v in allowed_values],
+                        variable=var,
+                        width=120,
+                    )
+                    combo.pack(side="left", padx=(0, Sizes.PAD_S))
+                else:
+                    entry = Theme.create_entry(param_frame, width=100)
+                    entry.configure(textvariable=var)
+                    entry.pack(side="left", padx=(0, Sizes.PAD_S))
+
+                    if min_val != '' and max_val != '':
+                        if param_type == 'int':
+                            range_str = f"[{int(min_val)} - {int(max_val)}]"
+                        else:
+                            range_str = f"[{min_val:.2f} - {max_val:.2f}]"
+                        Theme.create_hint(param_frame, range_str).pack(side="left")
 
     def _load_preset(self):
         preset_name = self.preset_var.get()
@@ -709,10 +726,15 @@ class CTkStrategyStep(CTkWizardStep):
         for param_name, var in self.param_entries.items():
             value_str = var.get()
             original = original_params.get(param_name)
+            central_def = StrategyConfig.get_param_info(strategy_name, param_name) or {}
+            param_type = central_def.get('type')
 
-            if isinstance(original, float):
+            # Prefer explicit type from centralized config over inference.
+            if param_type == 'string':
+                current_params[param_name] = value_str
+            elif param_type == 'float' or isinstance(original, float):
                 current_params[param_name] = float(value_str)
-            elif isinstance(original, int):
+            elif param_type == 'int' or isinstance(original, int):
                 current_params[param_name] = int(value_str)
             else:
                 try:

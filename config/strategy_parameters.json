@@ -41,7 +41,10 @@
           "type": "string",
           "default": "EMA",
           "configurable": true,
-          "optimization": null,
+          "optimization": {
+            "values": ["EMA", "SMA"]
+          },
+          "allowed_values": ["EMA", "SMA"],
           "description": "Moving average type: 'EMA' or 'SMA'",
           "category": "Indicator"
         },
