@@ -17,7 +17,7 @@ Run your first backtest in under 5 minutes.
    python ctk_main_gui.py
    ```
 2. Click **Backtesting**
-3. Select a strategy (e.g. `BaseAlphaTrendStrategy`)
+3. Select a strategy from the registered strategy list
 4. Choose a security (e.g. `AAPL`)
 5. Set your capital (e.g. `100000`) and leave other defaults
 6. Click **Run Backtest**
@@ -32,7 +32,7 @@ from pathlib import Path
 from Classes.Engine.single_security_engine import SingleSecurityEngine
 from Classes.Config.config import BacktestConfig, CommissionConfig
 from Classes.Data.data_loader import DataLoader
-from strategies.base_alphatrend_strategy import BaseAlphaTrendStrategy
+from strategies.your_strategy import YourStrategy
 
 # 1. Configure
 config = BacktestConfig(
@@ -45,10 +45,7 @@ loader = DataLoader(Path('raw_data/daily'))
 data = loader.load_csv('AAPL')
 
 # 3. Create strategy
-strategy = BaseAlphaTrendStrategy(
-    atr_multiplier=2.0,
-    risk_percent=2.0
-)
+strategy = YourStrategy()
 
 # 4. Run
 engine = SingleSecurityEngine(config)
@@ -59,12 +56,6 @@ print(f"Total Return: {result.total_return_pct:.2f}%")
 print(f"Trades: {result.num_trades}")
 print(f"Sharpe Ratio: {result.sharpe_ratio:.2f}")
 ```
-
-> [!example] Expected Output
-> With default parameters on AAPL, you should see roughly:
-> - ~109 trades
-> - ~409% total return
-> - Results vary with data coverage period
 
 ---
 

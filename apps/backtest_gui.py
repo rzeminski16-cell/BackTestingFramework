@@ -59,7 +59,6 @@ from Classes.GUI.wizard_base import WizardBase, WizardStep, ReviewStep
 from Classes.GUI.results_window import ResultsWindow
 
 # Import available strategies
-from strategies.base_alphatrend_strategy import BaseAlphaTrendStrategy
 from strategies.random_control_strategy import RandomControlStrategy
 
 # Import centralized strategy configuration
@@ -952,7 +951,6 @@ class BacktestWizard(WizardBase):
     """Main Backtest Wizard application."""
 
     STRATEGIES = {
-        'BaseAlphaTrendStrategy': BaseAlphaTrendStrategy,
         'RandomControlStrategy': RandomControlStrategy
     }
 

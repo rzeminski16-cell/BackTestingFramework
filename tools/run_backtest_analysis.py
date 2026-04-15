@@ -9,13 +9,13 @@ Usage:
 
 Examples:
     # Basic usage with defaults
-    python run_backtest_analysis.py logs/AlphaTrendStrategy_Fundamental_Constraints_Base
+    python run_backtest_analysis.py logs/YourStrategy
 
     # With custom output directory
-    python run_backtest_analysis.py logs/AlphaTrendStrategy_Fundamental_Constraints_Base -o analysis_output/my_analysis
+    python run_backtest_analysis.py logs/YourStrategy -o analysis_output/my_analysis
 
     # With custom thresholds
-    python run_backtest_analysis.py logs/AlphaTrendStrategy_Fundamental_Constraints_Base --gb-threshold 7.5 --min-trades 5
+    python run_backtest_analysis.py logs/YourStrategy --gb-threshold 7.5 --min-trades 5
 """
 
 import argparse
@@ -37,7 +37,7 @@ def parse_args():
         epilog="""
 Examples:
     # Basic usage
-    python run_backtest_analysis.py logs/AlphaTrendStrategy_Fundamental_Constraints_Base
+    python run_backtest_analysis.py logs/YourStrategy
 
     # With custom output directory
     python run_backtest_analysis.py logs/MyStrategy -o analysis_output/MyAnalysis

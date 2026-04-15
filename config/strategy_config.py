@@ -9,13 +9,13 @@ Usage:
     from config.strategy_config import StrategyConfig
 
     # Get default parameters for a strategy
-    defaults = StrategyConfig.get_defaults('AlphaTrendStrategy')
+    defaults = StrategyConfig.get_defaults('YourStrategy')
 
     # Get optimization ranges
-    opt_params = StrategyConfig.get_optimization_params('AlphaTrendStrategy')
+    opt_params = StrategyConfig.get_optimization_params('YourStrategy')
 
     # Get all configurable parameters
-    configurable = StrategyConfig.get_configurable_params('AlphaTrendStrategy')
+    configurable = StrategyConfig.get_configurable_params('YourStrategy')
 """
 
 import json

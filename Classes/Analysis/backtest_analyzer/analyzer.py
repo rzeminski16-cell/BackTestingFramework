@@ -347,9 +347,9 @@ def run_analysis(trade_logs_folder: str,
 
     Example:
         results = run_analysis(
-            trade_logs_folder="logs/AlphaTrendStrategy",
+            trade_logs_folder="logs/YourStrategy",
             raw_data_directory="raw_data",
-            output_directory="analysis_output/AlphaTrendStrategy",
+            output_directory="analysis_output/YourStrategy",
             gb_profit_good_threshold=7.5,  # Override default 5%
         )
     """

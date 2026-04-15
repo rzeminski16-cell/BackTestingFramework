@@ -64,7 +64,7 @@ pip install -r requirements.txt
 | `numba` | JIT compilation for performance-critical loops (significant speedup) |
 
 > [!tip] Numba
-> The framework works without Numba but runs noticeably faster with it installed. Strategy calculations like the AlphaTrend indicator are JIT-compiled when Numba is available.
+> The framework works without Numba but runs noticeably faster with it installed. Performance-critical strategy calculations are JIT-compiled when Numba is available.
 
 ---
 

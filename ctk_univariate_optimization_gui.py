@@ -34,7 +34,6 @@ from Classes.Optimization.univariate_optimizer import (
 from Classes.Optimization.univariate_report import UnivariateReportGenerator
 
 # Import available strategies
-from strategies.base_alphatrend_strategy import BaseAlphaTrendStrategy
 from strategies.random_control_strategy import RandomControlStrategy
 
 # Import centralized strategy configuration
@@ -62,7 +61,6 @@ def get_strategy_parameters() -> Dict[str, Dict[str, Any]]:
 STRATEGY_PARAMETERS = get_strategy_parameters()
 
 STRATEGIES = {
-    'BaseAlphaTrendStrategy': BaseAlphaTrendStrategy,
     'RandomControlStrategy': RandomControlStrategy
 }
 

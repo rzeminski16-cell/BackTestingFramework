@@ -50,8 +50,6 @@ The GUIs are thin wrappers. They collect user input, construct config objects, a
 ## Technology
 
 - **CustomTkinter** — modern-looking Tk-based GUI framework
-- **Streamlit** — alternative web-based dashboard (for AlphaTrend Explorer)
-- **Plotly** — interactive charts in the Streamlit dashboard
 
 ---
 

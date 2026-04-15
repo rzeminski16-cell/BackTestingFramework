@@ -44,7 +44,7 @@ Test a strategy against one security's historical data in isolation.
 from Classes.Engine.single_security_engine import SingleSecurityEngine
 from Classes.Config.config import BacktestConfig, CommissionConfig, CommissionMode
 from Classes.Data.data_loader import DataLoader
-from strategies.base_alphatrend_strategy import BaseAlphaTrendStrategy
+from strategies.your_strategy import YourStrategy
 from pathlib import Path
 
 config = BacktestConfig(
@@ -56,7 +56,7 @@ config = BacktestConfig(
 loader = DataLoader(Path('raw_data/daily'))
 data = loader.load_csv('AAPL')
 
-strategy = BaseAlphaTrendStrategy(atr_multiplier=2.5, risk_percent=2.0)
+strategy = YourStrategy(atr_multiplier=2.5, risk_percent=2.0)
 
 engine = SingleSecurityEngine(config)
 result = engine.run('AAPL', data, strategy)

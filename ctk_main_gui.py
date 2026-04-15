@@ -213,12 +213,6 @@ class CTkMainLauncher(ctk.CTk):
                 "command": self._launch_data_collection
             },
             {
-                "title": "AlphaTrend Explorer",
-                "description": "Interactive exploration of AlphaTrend indicator parameters and signals",
-                "icon": "\U0001F4C8",  # Chart with upward trend
-                "command": self._launch_alphatrend_explorer
-            },
-            {
                 "title": "Rule Tester",
                 "description": "Test how entry/exit rules affect strategy performance with lookback support",
                 "icon": "\U0001F50D",  # Magnifying glass
@@ -293,14 +287,6 @@ class CTkMainLauncher(ctk.CTk):
             subprocess.Popen([sys.executable, str(script_path)])
         else:
             self._show_error(f"Data Collection GUI not found: {script_path}")
-
-    def _launch_alphatrend_explorer(self):
-        """Launch the AlphaTrend Explorer Streamlit app."""
-        script_path = Path(__file__).parent / "apps" / "alphatrend_explorer.py"
-        if script_path.exists():
-            subprocess.Popen(["streamlit", "run", str(script_path)])
-        else:
-            self._show_error(f"AlphaTrend Explorer app not found: {script_path}")
 
     def _launch_rule_tester(self):
         """Launch the Rule Tester GUI."""

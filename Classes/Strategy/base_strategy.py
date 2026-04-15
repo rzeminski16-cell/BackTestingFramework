@@ -154,8 +154,7 @@ class BaseStrategy(ABC):
         Pre-calculate custom strategy-specific indicators before backtesting.
 
         OPTIONAL: Only override for strategy-specific calculations that are
-        approved exceptions (e.g., AlphaTrend signals). Standard indicators
-        MUST come from raw data.
+        approved exceptions. Standard indicators MUST come from raw data.
 
         CRITICAL - PREVENT LOOK-AHEAD BIAS:
         Only use CAUSAL operations that don't look ahead:

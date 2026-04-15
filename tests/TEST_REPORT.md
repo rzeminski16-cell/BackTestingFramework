@@ -20,15 +20,6 @@ Comprehensive testing of the BackTestingFramework was conducted, including:
    - **Fix:** Changed to `config.commission.value`
    - **Impact:** Would cause crash when creating SingleSecurityEngine with commission config
 
-2. **Column Name Mismatches in AlphaTrend Strategy** (`strategies/alphatrend_strategy.py`)
-   - **Issue:** Strategy expected columns `atr_14`, `ema_50`, `mfi_14` but raw data has Alpha Vantage naming convention (`atr_14_atr`, `sma_50_sma`, `mfi_14_mfi`)
-   - **Fix:** Updated `required_columns()` to expect raw data names and added column normalization in `_prepare_data_impl()`
-   - **Impact:** Would cause MissingColumnError when running backtests with real data
-
-3. **Outdated Test Script** (`scripts/test_atr_stop_loss.py`)
-   - **Issue:** Test expected old default value of `atr_stop_loss_multiple=0.0` but strategy now defaults to `2.5`
-   - **Fix:** Updated test to reflect current default values
-
 ---
 
 ## Test Results
@@ -125,7 +116,6 @@ Comprehensive testing of the BackTestingFramework was conducted, including:
 
 ### Strategy Layer
 - BaseStrategy
-- AlphaTrendStrategy
 - StrategyContext
 
 ### Analysis Layer
@@ -152,8 +142,6 @@ Comprehensive testing of the BackTestingFramework was conducted, including:
 ## Files Modified
 
 1. `Classes/Engine/single_security_engine.py` - Fixed commission config attribute
-2. `strategies/alphatrend_strategy.py` - Fixed column name mismatches
-3. `scripts/test_atr_stop_loss.py` - Updated test to match current defaults
 
 ---
 

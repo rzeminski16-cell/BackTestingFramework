@@ -9,7 +9,7 @@ This script:
 5. Generates comprehensive Excel report
 
 Usage:
-    python tools/compare_trade_logs.py --framework logs/AlphaTrendStrategy_test_1/AlphaTrendStrategy_test_1_AAPL_trades.csv --tradingview logs/AlphaTrendStrategy_test_1/AlphaTrendStrategy_test_1_AAPL_trades_Trading_view.csv
+    python tools/compare_trade_logs.py --framework logs/YourStrategy/YourStrategy_AAPL_trades.csv --tradingview logs/YourStrategy/YourStrategy_AAPL_trades_Trading_view.csv
 """
 
 import sys
