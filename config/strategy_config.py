@@ -220,21 +220,29 @@ class StrategyConfig:
             # Range check if optimization bounds exist
             opt = param_def.get('optimization')
             if opt:
-                num_value = float(value) if param_type == 'float' else int(value)
-                if opt.get('min') is not None and num_value < opt['min']:
-                    errors.append(f"Parameter {name} must be >= {opt['min']}")
-                if opt.get('max') is not None and num_value > opt['max']:
-                    errors.append(f"Parameter {name} must be <= {opt['max']}")
-                # Discrete allowed-value check
-                if opt.get('values') is not None and num_value not in opt['values']:
-                    errors.append(
-                        f"Parameter {name} must be one of {opt['values']}"
-                    )
+                if param_type in ('int', 'float'):
+                    num_value = float(value) if param_type == 'float' else int(value)
+                    if opt.get('min') is not None and num_value < opt['min']:
+                        errors.append(f"Parameter {name} must be >= {opt['min']}")
+                    if opt.get('max') is not None and num_value > opt['max']:
+                        errors.append(f"Parameter {name} must be <= {opt['max']}")
+                    # Discrete allowed-value check
+                    if opt.get('values') is not None and num_value not in opt['values']:
+                        errors.append(
+                            f"Parameter {name} must be one of {opt['values']}"
+                        )
+                else:
+                    # Non-numeric parameters (e.g. strings) only support
+                    # discrete allowed-value checks.
+                    if opt.get('values') is not None and value not in opt['values']:
+                        errors.append(
+                            f"Parameter {name} must be one of {opt['values']}"
+                        )
 
         return errors
 
     @classmethod
-    def get_optimization_grid(cls, strategy_name: str, param_name: str) -> List[Union[int, float]]:
+    def get_optimization_grid(cls, strategy_name: str, param_name: str) -> List[Any]:
         """
         Generate a grid of values for optimization.
 
@@ -252,7 +260,10 @@ class StrategyConfig:
         if opt.get('values'):
             if param_type == 'int':
                 return [int(v) for v in opt['values']]
-            return [float(v) for v in opt['values']]
+            if param_type == 'float':
+                return [float(v) for v in opt['values']]
+            # String / other - preserve values verbatim.
+            return list(opt['values'])
 
         min_val = opt['min']
         max_val = opt['max']

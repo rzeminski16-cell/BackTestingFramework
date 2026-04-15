@@ -255,7 +255,7 @@ class EnhancedPortfolioReportGenerator:
 
         # Monthly/Yearly returns
         metrics['monthly_returns'] = self._calculate_period_returns(equity_df, 'ME')
-        metrics['yearly_returns'] = self._calculate_period_returns(equity_df, 'Y')
+        metrics['yearly_returns'] = self._calculate_period_returns(equity_df, 'YE')
 
         # Detect rolling metric anomalies for reporting and filtered Sharpe calculation
         anomalies, filtered_sharpe = PerformanceMetrics.detect_rolling_anomalies(

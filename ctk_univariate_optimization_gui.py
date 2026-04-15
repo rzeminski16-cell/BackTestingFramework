@@ -68,7 +68,18 @@ STRATEGIES = {
 
 
 class ParameterRangeWidget(ctk.CTkFrame):
-    """Widget for configuring a parameter's optimization range with slider and interval."""
+    """Widget for configuring a parameter's optimization range.
+
+    Supports two modes:
+
+    * **Range mode** (default) - user picks a numeric min/max/interval which is
+      expanded into a grid by ``ParameterConfig.from_range``.
+    * **Discrete mode** - activated automatically when ``param_config`` contains
+      a ``values`` list (e.g. ``ma_length`` restricted to 7, 14, 20, ...). In
+      this mode the user toggles individual values via checkboxes instead of
+      editing min/max/step (which are meaningless for a discrete, non-uniform
+      set).
+    """
 
     def __init__(
         self,
@@ -86,9 +97,21 @@ class ParameterRangeWidget(ctk.CTkFrame):
 
         self.param_type = param_config.get('type', 'float')
         self.default = param_config.get('default', 0)
-        self.min_val = param_config.get('min', 0)
-        self.max_val = param_config.get('max', 100)
-        self.step = param_config.get('step', 1)
+
+        # A param with an explicit ``values`` list is a discrete selector
+        # (e.g. ma_length in {7, 14, 20, 30, 50, 90, 200} or ema_sma in
+        # {"EMA", "SMA"}). In that case min/max/step are None / irrelevant.
+        self.allowed_values: Optional[List[Any]] = param_config.get('values')
+        self.is_discrete = self.allowed_values is not None
+
+        # Defaults for range mode (fall back to sensible values if the
+        # centralized config leaves them as ``None``).
+        self.min_val = param_config.get('min') if param_config.get('min') is not None else 0
+        self.max_val = param_config.get('max') if param_config.get('max') is not None else 100
+        self.step = param_config.get('step') if param_config.get('step') is not None else 1
+
+        # State for discrete mode.
+        self.value_vars: Dict[Any, ctk.BooleanVar] = {}
 
         self._create_widgets()
 
@@ -110,18 +133,37 @@ class ParameterRangeWidget(ctk.CTkFrame):
             top_frame, f"(default: {self.default})"
         ).pack(side="left", padx=(Sizes.PAD_S, 0))
 
-        # Control value entry (always visible)
+        # Control value entry (always visible). For discrete params we use a
+        # dropdown restricted to the allowed values; for numeric params a
+        # plain entry box.
         control_frame = Theme.create_frame(top_frame)
         control_frame.pack(side="right")
         Theme.create_label(control_frame, "Control:").pack(side="left", padx=(0, Sizes.PAD_XS))
         self.control_var = ctk.StringVar(value=str(self.default))
-        self.control_entry = Theme.create_entry(control_frame, width=80)
-        self.control_entry.configure(textvariable=self.control_var)
+        if self.is_discrete:
+            self.control_entry = Theme.create_combobox(
+                control_frame,
+                values=[str(v) for v in self.allowed_values],
+                variable=self.control_var,
+                width=100,
+            )
+        else:
+            self.control_entry = Theme.create_entry(control_frame, width=80)
+            self.control_entry.configure(textvariable=self.control_var)
         self.control_entry.pack(side="left")
 
-        # Range configuration frame (shown when enabled)
+        # Range / values configuration frame (shown when enabled)
         self.range_frame = Theme.create_frame(self)
 
+        if self.is_discrete:
+            self._build_discrete_selector()
+        else:
+            self._build_range_selector()
+
+    # ------------------------------------------------------------------
+    # Range-mode sub-widgets (numeric params)
+    # ------------------------------------------------------------------
+    def _build_range_selector(self) -> None:
         # Range row
         range_row = Theme.create_frame(self.range_frame)
         range_row.pack(fill="x", pady=Sizes.PAD_XS)
@@ -159,12 +201,15 @@ class ParameterRangeWidget(ctk.CTkFrame):
 
         self.slider = Theme.create_slider(
             slider_row,
-            from_=self.min_val,
-            to=self.max_val,
+            from_=float(self.min_val),
+            to=float(self.max_val),
             command=self._on_slider_change
         )
         self.slider.pack(side="left", fill="x", expand=True, padx=Sizes.PAD_S)
-        self.slider.set(self.default)
+        try:
+            self.slider.set(float(self.default))
+        except (TypeError, ValueError):
+            pass
 
         self.slider_value_label = Theme.create_label(slider_row, f"{self.default}")
         self.slider_value_label.pack(side="left", padx=(0, Sizes.PAD_S))
@@ -176,6 +221,38 @@ class ParameterRangeWidget(ctk.CTkFrame):
 
         self._update_count()
 
+    # ------------------------------------------------------------------
+    # Discrete-mode sub-widgets (params with explicit ``values``)
+    # ------------------------------------------------------------------
+    def _build_discrete_selector(self) -> None:
+        hint_row = Theme.create_frame(self.range_frame)
+        hint_row.pack(fill="x", pady=Sizes.PAD_XS, padx=(Sizes.PAD_L, 0))
+        Theme.create_hint(
+            hint_row,
+            "Select which values to test:"
+        ).pack(side="left")
+        self.count_label = Theme.create_hint(hint_row, "")
+        self.count_label.pack(side="left", padx=(Sizes.PAD_M, 0))
+
+        values_row = Theme.create_frame(self.range_frame)
+        values_row.pack(fill="x", pady=Sizes.PAD_XS, padx=(Sizes.PAD_L, 0))
+
+        # One checkbox per allowed value. All selected by default.
+        for value in self.allowed_values:
+            var = ctk.BooleanVar(value=True)
+            self.value_vars[value] = var
+            cb = Theme.create_checkbox(
+                values_row, str(value),
+                variable=var,
+                command=self._update_count,
+            )
+            cb.pack(side="left", padx=(0, Sizes.PAD_S))
+
+        self._update_count()
+
+    # ------------------------------------------------------------------
+    # Shared handlers
+    # ------------------------------------------------------------------
     def _on_enabled_change(self):
         if self.enabled_var.get():
             self.range_frame.pack(fill="x", pady=(Sizes.PAD_XS, Sizes.PAD_S))
@@ -193,6 +270,11 @@ class ParameterRangeWidget(ctk.CTkFrame):
         self.slider_value_label.configure(text=str(val))
 
     def _update_count(self, *args):
+        if self.is_discrete:
+            count = sum(1 for v in self.value_vars.values() if v.get())
+            self.count_label.configure(text=f"({count} values)")
+            return
+
         try:
             min_val = float(self.min_var.get())
             max_val = float(self.max_var.get())
@@ -214,18 +296,34 @@ class ParameterRangeWidget(ctk.CTkFrame):
     def is_enabled(self) -> bool:
         return self.enabled_var.get()
 
+    def _cast(self, value: Any) -> Any:
+        """Cast a value string to the parameter's Python type."""
+        if self.param_type == 'int':
+            return int(value)
+        if self.param_type == 'float':
+            return float(value)
+        # string / other - return as-is.
+        return value
+
     def get_control_value(self) -> Any:
         try:
-            val = self.control_var.get()
-            if self.param_type == 'int':
-                return int(val)
-            return float(val)
-        except ValueError:
+            return self._cast(self.control_var.get())
+        except (ValueError, TypeError):
             return self.default
 
     def get_parameter_config(self) -> Optional[ParameterConfig]:
         if not self.is_enabled():
             return None
+
+        if self.is_discrete:
+            selected = [v for v, var in self.value_vars.items() if var.get()]
+            if not selected:
+                return None
+            return ParameterConfig(
+                name=self.param_name,
+                values=[self._cast(v) for v in selected],
+                param_type=self.param_type,
+            )
 
         try:
             min_val = float(self.min_var.get())
