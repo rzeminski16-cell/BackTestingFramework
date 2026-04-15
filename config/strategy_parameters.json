@@ -50,11 +50,10 @@
           "default": 20,
           "configurable": true,
           "optimization": {
-            "min": 5,
-            "max": 200,
-            "step": 1
+            "values": [7, 14, 20, 30, 50, 90, 200]
           },
-          "description": "Length of the moving average",
+          "allowed_values": [7, 14, 20, 30, 50, 90, 200],
+          "description": "Length of the moving average. Must be one of 7, 14, 20, 30, 50, 90, 200 (read from raw data).",
           "category": "Indicator"
         },
         "atr_sl": {

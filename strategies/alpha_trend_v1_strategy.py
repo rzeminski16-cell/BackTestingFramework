@@ -22,12 +22,16 @@ Position Sizing: Risk-based. ``risk_perc`` of total equity is risked at the
 
 RAW DATA INDICATORS (NOT OPTIMIZABLE):
     - atr_14_atr: 14-period ATR used for stop loss calculation.
+    - ema_{N}_ema / sma_{N}_sma: Pre-calculated moving average from raw data,
+      where ``N`` must match one of the supported ``ma_length`` values.
 
 OPTIMIZABLE PARAMETERS:
     - ma_offset: Number of bars to offset the comparison MA (default: 2).
     - ema_sma: Moving-average type. Either ``"EMA"`` or ``"SMA"`` (default:
       ``"EMA"``).
-    - ma_length: Length of the moving average (default: 20).
+    - ma_length: Length of the moving average. Must be one of the supported
+      values: 7, 14, 20, 30, 50, 90, 200 (default: 20). The chosen length /
+      type determines which raw-data column is read.
     - atr_sl: Multiplier on the 14-day ATR used to compute the initial stop
       loss distance (default: 2.0).
     - time_exit: Number of days to hold before a forced time-based exit
@@ -50,11 +54,15 @@ class AlphaTrendV1Strategy(BaseStrategy):
     """
     AlphaTrendV1 - long-only trend-following strategy using the AlphaMACross
     indicator for entries, an ATR-based stop loss and a time-based exit.
+
+    Moving averages are NOT calculated by the strategy - they are read directly
+    from the pre-calculated raw-data columns (e.g. ``ema_20_ema`` or
+    ``sma_50_sma``) to keep backtests deterministic and fast.
     """
 
-    # Column names used for the computed MA series.
-    _MA_COL = "alpha_ma"
-    _MA_OFFSET_COL = "alpha_ma_offset"
+    # Supported MA lengths - these must correspond to pre-calculated columns
+    # in the raw data (e.g. ``ema_20_ema``, ``sma_50_sma`` etc.).
+    SUPPORTED_MA_LENGTHS = (7, 14, 20, 30, 50, 90, 200)
 
     def __init__(self,
                  # Indicator parameters
@@ -71,7 +79,8 @@ class AlphaTrendV1Strategy(BaseStrategy):
             ma_offset: Number of bars to offset the second MA by.
             ema_sma: Moving average type. ``"EMA"`` or ``"SMA"`` (case
                 insensitive).
-            ma_length: Window length for the moving average.
+            ma_length: Window length for the moving average. Must be one of
+                ``SUPPORTED_MA_LENGTHS``.
             atr_sl: Multiplier applied to the 14-day ATR to get the SL
                 distance.
             time_exit: Maximum holding period in days before forced exit.
@@ -86,6 +95,12 @@ class AlphaTrendV1Strategy(BaseStrategy):
         self.time_exit = int(time_exit)
         self.risk_perc = float(risk_perc)
 
+        # Resolve the raw-data MA column name now so that it can be returned
+        # by required_columns() before ``super().__init__`` runs. We do a
+        # light-weight pre-check on length here; full validation happens in
+        # ``_validate_parameters`` once parameters are stored.
+        self._ma_column = self._resolve_ma_column(self.ema_sma, self.ma_length)
+
         super().__init__(
             ma_offset=self.ma_offset,
             ema_sma=self.ema_sma,
@@ -94,6 +109,24 @@ class AlphaTrendV1Strategy(BaseStrategy):
             time_exit=self.time_exit,
             risk_perc=self.risk_perc,
         )
+
+    # ------------------------------------------------------------------
+    # Helpers
+    # ------------------------------------------------------------------
+    @staticmethod
+    def _resolve_ma_column(ema_sma: str, ma_length: int) -> str:
+        """Map (type, length) to the expected raw-data column name.
+
+        EMA columns follow the pattern ``ema_{N}_ema`` and SMA columns follow
+        ``sma_{N}_sma`` (matching the project's raw data CSV convention).
+        """
+        ema_sma = ema_sma.upper()
+        if ema_sma == "EMA":
+            return f"ema_{int(ma_length)}_ema"
+        if ema_sma == "SMA":
+            return f"sma_{int(ma_length)}_sma"
+        # Fallback - validated separately, keeps error messages useful.
+        return f"{ema_sma.lower()}_{int(ma_length)}"
 
     # ------------------------------------------------------------------
     # Validation
@@ -110,9 +143,11 @@ class AlphaTrendV1Strategy(BaseStrategy):
                 f"ema_sma must be 'EMA' or 'SMA', got {self.ema_sma!r}"
             )
 
-        if self.ma_length < 2:
+        if self.ma_length not in self.SUPPORTED_MA_LENGTHS:
             raise ValueError(
-                f"ma_length must be >= 2, got {self.ma_length}"
+                f"ma_length must be one of {list(self.SUPPORTED_MA_LENGTHS)}, "
+                f"got {self.ma_length}. The strategy reads MAs directly from "
+                f"raw data so only pre-calculated lengths are supported."
             )
 
         if self.atr_sl <= 0:
@@ -139,38 +174,39 @@ class AlphaTrendV1Strategy(BaseStrategy):
         return TradeDirection.LONG
 
     def required_columns(self) -> List[str]:
-        """Columns that must exist in the raw CSV data."""
-        return ["date", "close", "atr_14_atr"]
+        """Columns that must exist in the raw CSV data.
+
+        Includes the MA column that corresponds to the configured
+        ``ema_sma`` / ``ma_length`` combination so that the framework fails
+        fast with a clear error if the raw data is missing it.
+        """
+        return ["date", "close", "atr_14_atr", self._ma_column]
 
     # ------------------------------------------------------------------
-    # Indicator computation
+    # Indicator preparation
     # ------------------------------------------------------------------
     def _prepare_data_impl(self, data: pd.DataFrame) -> pd.DataFrame:
-        """Pre-calculate the strategy-specific AlphaMACross indicator.
+        """Normalise column names used by the strategy.
 
-        Adds two causal columns to the dataframe:
-            * ``alpha_ma``: the MA of ``close`` using the configured type and
-              length.
-            * ``alpha_ma_offset``: the same MA shifted forward by
-              ``ma_offset`` bars (i.e. the MA value ``ma_offset`` bars ago).
+        The MA itself is read from the raw data (``self._ma_column``). No
+        calculation is performed here - we only create short-alias columns to
+        keep the rest of the strategy clean:
 
-        It also normalises the ATR column name so the rest of the strategy can
-        use ``atr_14``.
+            * ``atr_14``: alias for ``atr_14_atr``.
+            * ``alpha_ma_offset``: the MA column shifted forward by
+              ``ma_offset`` bars (causal - this is the value of the MA at bar
+              ``t - ma_offset``).
         """
         df = data.copy()
 
-        # Normalise ATR column so internal references stay short.
+        # Short alias for ATR so the rest of the strategy does not need to
+        # know the raw-data column name.
         df["atr_14"] = df["atr_14_atr"]
 
-        close = df["close"]
-        if self.ema_sma == "EMA":
-            ma_series = close.ewm(span=self.ma_length, adjust=False).mean()
-        else:  # SMA
-            ma_series = close.rolling(window=self.ma_length, min_periods=self.ma_length).mean()
-
-        df[self._MA_COL] = ma_series
-        # shift(n>=0) is causal - pushes previously-known MA values forward.
-        df[self._MA_OFFSET_COL] = ma_series.shift(self.ma_offset)
+        # Causal shift: `.shift(n)` with n >= 0 pushes values forward in time,
+        # so at bar ``t`` this column holds the MA value from ``t -
+        # ma_offset``. It never reveals future information.
+        df["alpha_ma_offset"] = df[self._ma_column].shift(self.ma_offset)
 
         return df
 
@@ -179,20 +215,19 @@ class AlphaTrendV1Strategy(BaseStrategy):
     # ------------------------------------------------------------------
     def generate_entry_signal(self, context: StrategyContext) -> Optional[Signal]:
         """Return a BUY signal when the AlphaMACross indicator fires long."""
-        # We need at least two bars of MA / MA-offset history to detect a
-        # cross-over. Minimum index required for both values to be available
-        # is ``ma_length + ma_offset`` (so that the shifted MA at t-1 is
-        # defined too).
-        min_index = self.ma_length + self.ma_offset
-        if context.current_index < min_index:
+        # Need at least two bars of MA and MA-offset history to evaluate the
+        # crossover. The offset column is only defined from bar ``ma_offset``
+        # onwards, so we need ``current_index >= ma_offset + 1``. We also
+        # guard against NaN for any warmup values of the raw-data MA itself.
+        if context.current_index < self.ma_offset + 1:
             return None
 
-        ma_now = context.get_indicator_value(self._MA_COL, offset=0)
-        ma_prev = context.get_indicator_value(self._MA_COL, offset=-1)
-        ma_off_now = context.get_indicator_value(self._MA_OFFSET_COL, offset=0)
-        ma_off_prev = context.get_indicator_value(self._MA_OFFSET_COL, offset=-1)
+        ma_now = context.get_indicator_value(self._ma_column, offset=0)
+        ma_prev = context.get_indicator_value(self._ma_column, offset=-1)
+        ma_off_now = context.get_indicator_value("alpha_ma_offset", offset=0)
+        ma_off_prev = context.get_indicator_value("alpha_ma_offset", offset=-1)
 
-        # Guard against missing indicator values (warmup / NaN).
+        # Guard against missing indicator values (warmup / NaN from raw data).
         for value in (ma_now, ma_prev, ma_off_now, ma_off_prev):
             if value is None or (isinstance(value, float) and np.isnan(value)):
                 return None

@@ -115,8 +115,8 @@ INDICATORS_WITH_PERIOD = [
 
 # Default indicator periods
 DEFAULT_INDICATOR_PERIODS = {
-    "SMA": [20, 50, 200],
-    "EMA": [12, 26],
+    "SMA": [7, 14, 20, 30, 50, 90, 200],
+    "EMA": [7, 12, 14, 20, 26, 30, 50, 90, 200],
     "RSI": [14],
     "ATR": [14],
     "ADX": [14],
