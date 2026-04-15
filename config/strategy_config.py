@@ -156,6 +156,7 @@ class StrategyConfig:
                     'min': opt.get('min'),
                     'max': opt.get('max'),
                     'step': opt.get('step'),
+                    'values': opt.get('values'),
                     'description': param.get('description', '')
                 }
         return result
@@ -224,6 +225,11 @@ class StrategyConfig:
                     errors.append(f"Parameter {name} must be >= {opt['min']}")
                 if opt.get('max') is not None and num_value > opt['max']:
                     errors.append(f"Parameter {name} must be <= {opt['max']}")
+                # Discrete allowed-value check
+                if opt.get('values') is not None and num_value not in opt['values']:
+                    errors.append(
+                        f"Parameter {name} must be one of {opt['values']}"
+                    )
 
         return errors
 
@@ -241,6 +247,13 @@ class StrategyConfig:
 
         opt = params[param_name]
         param_type = opt['type']
+
+        # If an explicit discrete list of values is provided, use it directly.
+        if opt.get('values'):
+            if param_type == 'int':
+                return [int(v) for v in opt['values']]
+            return [float(v) for v in opt['values']]
+
         min_val = opt['min']
         max_val = opt['max']
         step = opt['step']
