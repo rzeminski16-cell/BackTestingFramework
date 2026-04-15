@@ -1,0 +1,47 @@
+{
+  "name": "Utilities",
+  "securities": [
+    "AWR",
+    "BIP",
+    "CPK",
+    "DTE",
+    "EAI",
+    "EE",
+    "EIX",
+    "ELPC",
+    "EXC",
+    "FRMI",
+    "HE",
+    "MSEX",
+    "NJR",
+    "NRG",
+    "NWN",
+    "OKLO",
+    "ORA",
+    "RNW",
+    "SO",
+    "SPH",
+    "SR",
+    "VST",
+    "WEC",
+    "WTTR",
+    "YORW"
+  ],
+  "description": "Utilities group (25 tickers).",
+  "created_date": "2026-04-15T00:00:00.000000",
+  "modified_date": "2026-04-15T00:00:00.000000",
+  "metadata": {
+    "group": "Utilities"
+  },
+  "default_capital_contention": {
+    "mode": "default",
+    "vulnerability_config": {
+      "immunity_days": 7,
+      "min_profit_threshold": 0.02,
+      "decay_rate_fast": 5.0,
+      "decay_rate_slow": 1.0,
+      "swap_threshold": 50.0,
+      "base_score": 100.0
+    }
+  }
+}
