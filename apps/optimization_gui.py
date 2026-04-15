@@ -52,6 +52,7 @@ from Classes.GUI.results_window import OptimizationResultsWindow
 
 # Import available strategies
 from strategies.random_control_strategy import RandomControlStrategy
+from strategies.alpha_trend_v1_strategy import AlphaTrendV1Strategy
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -1069,6 +1070,7 @@ class OptimizationWizard(WizardBase):
     """Main Optimization Wizard application."""
 
     STRATEGIES = {
+        'AlphaTrendV1Strategy': AlphaTrendV1Strategy,
         'RandomControlStrategy': RandomControlStrategy
     }
 

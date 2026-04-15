@@ -60,6 +60,7 @@ from Classes.GUI.results_window import ResultsWindow
 
 # Import available strategies
 from strategies.random_control_strategy import RandomControlStrategy
+from strategies.alpha_trend_v1_strategy import AlphaTrendV1Strategy
 
 # Import centralized strategy configuration
 from config.strategy_config import StrategyConfig
@@ -951,6 +952,7 @@ class BacktestWizard(WizardBase):
     """Main Backtest Wizard application."""
 
     STRATEGIES = {
+        'AlphaTrendV1Strategy': AlphaTrendV1Strategy,
         'RandomControlStrategy': RandomControlStrategy
     }
 

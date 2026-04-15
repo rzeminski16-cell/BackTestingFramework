@@ -1,0 +1,15 @@
+{
+  "strategy_name": "AlphaTrendV1Strategy",
+  "preset_name": "Default",
+  "description": "Default parameters for AlphaTrend V1: 20-period EMA crossover vs 2-bar offset, ATR(14)x2 stop loss, 30 day time exit, 2% risk per trade.",
+  "parameters": {
+    "ma_offset": 2,
+    "ema_sma": "EMA",
+    "ma_length": 20,
+    "atr_sl": 2.0,
+    "time_exit": 30,
+    "risk_perc": 2.0
+  },
+  "created_at": "2026-04-15T00:00:00.000000",
+  "modified_at": "2026-04-15T00:00:00.000000"
+}

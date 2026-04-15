@@ -3,6 +3,98 @@
   "_version": "2.0",
 
   "strategies": {
+    "AlphaTrendV1Strategy": {
+      "display_name": "AlphaTrend V1",
+      "description": "Trend-following long-only strategy. Enters on MA crossover vs its offset copy (AlphaMACross), exits on ATR-based stop loss or after a fixed holding period. Uses risk-based position sizing.",
+      "trade_direction": "LONG",
+      "required_indicators": ["atr_14"],
+      "exit_rules": [
+        {
+          "rule_type": "stop_loss_atr",
+          "params": {"atr_column": "atr_14", "multiple": 2.0},
+          "description": "Stop Loss: Entry - (atr_sl x ATR14)",
+          "grace_period_bars": 0,
+          "momentum_protection": false
+        },
+        {
+          "rule_type": "time_exit",
+          "params": {"days": 30},
+          "description": "Time Exit: close the position after time_exit days",
+          "grace_period_bars": 0,
+          "momentum_protection": false
+        }
+      ],
+      "parameters": {
+        "ma_offset": {
+          "type": "int",
+          "default": 2,
+          "configurable": true,
+          "optimization": {
+            "min": 1,
+            "max": 10,
+            "step": 1
+          },
+          "description": "Number of bars to offset the comparison MA (acts as smoothing)",
+          "category": "Indicator"
+        },
+        "ema_sma": {
+          "type": "string",
+          "default": "EMA",
+          "configurable": true,
+          "optimization": null,
+          "description": "Moving average type: 'EMA' or 'SMA'",
+          "category": "Indicator"
+        },
+        "ma_length": {
+          "type": "int",
+          "default": 20,
+          "configurable": true,
+          "optimization": {
+            "min": 5,
+            "max": 200,
+            "step": 1
+          },
+          "description": "Length of the moving average",
+          "category": "Indicator"
+        },
+        "atr_sl": {
+          "type": "float",
+          "default": 2.0,
+          "configurable": true,
+          "optimization": {
+            "min": 0.5,
+            "max": 5.0,
+            "step": 0.25
+          },
+          "description": "Multiplier applied to 14-day ATR to find the initial stop loss",
+          "category": "Strategy"
+        },
+        "time_exit": {
+          "type": "int",
+          "default": 30,
+          "configurable": true,
+          "optimization": {
+            "min": 1,
+            "max": 180,
+            "step": 1
+          },
+          "description": "Number of days after which the position is closed",
+          "category": "Strategy"
+        },
+        "risk_perc": {
+          "type": "float",
+          "default": 2.0,
+          "configurable": true,
+          "optimization": {
+            "min": 0.5,
+            "max": 10.0,
+            "step": 0.5
+          },
+          "description": "Total risk as a percent of total capital per trade",
+          "category": "Strategy"
+        }
+      }
+    },
     "RandomControlStrategy": {
       "display_name": "Random Control Strategy",
       "description": "Control/baseline strategy with random entry and exit for comparison. Uses risk-based position sizing.",
