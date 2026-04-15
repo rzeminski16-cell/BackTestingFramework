@@ -1,0 +1,47 @@
+{
+  "name": "Financials",
+  "securities": [
+    "AGBK",
+    "AMP",
+    "BOKF",
+    "CET",
+    "COF",
+    "EFSC",
+    "FGN",
+    "FHI",
+    "FNF",
+    "GBCI",
+    "HOMB",
+    "JCAP",
+    "KMPB",
+    "MARA",
+    "MFIC",
+    "NDAQ",
+    "ORI",
+    "PAX",
+    "PRU",
+    "PYPL",
+    "RJF",
+    "SCHW",
+    "SLM",
+    "STT",
+    "TSLX"
+  ],
+  "description": "Financials group (25 tickers).",
+  "created_date": "2026-04-15T00:00:00.000000",
+  "modified_date": "2026-04-15T00:00:00.000000",
+  "metadata": {
+    "group": "Financials"
+  },
+  "default_capital_contention": {
+    "mode": "default",
+    "vulnerability_config": {
+      "immunity_days": 7,
+      "min_profit_threshold": 0.02,
+      "decay_rate_fast": 5.0,
+      "decay_rate_slow": 1.0,
+      "swap_threshold": 50.0,
+      "base_score": 100.0
+    }
+  }
+}

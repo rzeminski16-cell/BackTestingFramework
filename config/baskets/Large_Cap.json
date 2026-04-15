@@ -1,0 +1,47 @@
+{
+  "name": "Large Cap",
+  "securities": [
+    "ADBE",
+    "CCL",
+    "CME",
+    "CMI",
+    "CSCO",
+    "DDOG",
+    "DLTR",
+    "EA",
+    "ECL",
+    "HAL",
+    "HON",
+    "JAZZ",
+    "KLAC",
+    "L",
+    "LULU",
+    "MA",
+    "MTZ",
+    "NKE",
+    "NRG",
+    "OXY",
+    "RSG",
+    "SNDK",
+    "SRE",
+    "TRU",
+    "WSM"
+  ],
+  "description": "Large Cap group - mixed sectors (25 tickers).",
+  "created_date": "2026-04-15T00:00:00.000000",
+  "modified_date": "2026-04-15T00:00:00.000000",
+  "metadata": {
+    "group": "Large Cap"
+  },
+  "default_capital_contention": {
+    "mode": "default",
+    "vulnerability_config": {
+      "immunity_days": 7,
+      "min_profit_threshold": 0.02,
+      "decay_rate_fast": 5.0,
+      "decay_rate_slow": 1.0,
+      "swap_threshold": 50.0,
+      "base_score": 100.0
+    }
+  }
+}
