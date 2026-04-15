@@ -484,7 +484,16 @@ class AlphaVantageClient:
                     continue
 
                 # Parse response
-                data = response.json()
+                try:
+                    data = response.json()
+                except ValueError as e:
+                    last_error = (
+                        f"Invalid JSON from Alpha Vantage "
+                        f"(size={len(response.content)} bytes): {str(e)}"
+                    )
+                    retry_count += 1
+                    time.sleep(self._calculate_backoff(retry_count))
+                    continue
 
                 # Check for API error messages
                 if "Error Message" in data:
@@ -496,12 +505,92 @@ class AlphaVantageClient:
                         response_time=elapsed
                     )
 
-                if "Note" in data and "rate limit" in data["Note"].lower():
-                    wait_time = self._calculate_backoff(retry_count)
-                    self._notify_progress(f"Rate limit warning, waiting {wait_time:.0f}s...")
-                    time.sleep(wait_time)
-                    retry_count += 1
-                    continue
+                # Alpha Vantage returns HTTP 200 for several soft-failures
+                # where the body is a small JSON object containing only a
+                # "Note" or "Information" field. These must not be treated
+                # as success.
+                note_text = data.get("Note") if isinstance(data.get("Note"), str) else None
+                info_text = data.get("Information") if isinstance(data.get("Information"), str) else None
+                advisory = note_text or info_text
+
+                if advisory:
+                    advisory_lower = advisory.lower()
+
+                    # Rate-limit advisories: retry with backoff
+                    if "rate limit" in advisory_lower or "requests per" in advisory_lower:
+                        wait_time = self._calculate_backoff(retry_count)
+                        self._notify_progress(
+                            f"Rate limit warning, waiting {wait_time:.0f}s..."
+                        )
+
+                        if self.logger:
+                            self.logger.log_warning(
+                                "API Rate Limit",
+                                advisory,
+                                endpoint=endpoint_str,
+                                symbol=params.get("symbol"),
+                                recovery_action=(
+                                    f"Retry {retry_count + 1}/"
+                                    f"{self.api_config.max_retries} after "
+                                    f"{wait_time:.0f}s"
+                                )
+                            )
+
+                        time.sleep(wait_time)
+                        retry_count += 1
+                        last_error = f"Rate limit: {advisory}"
+                        continue
+
+                    # Premium-endpoint advisories: fail fast with an
+                    # actionable message (no amount of retrying fixes this).
+                    if "premium" in advisory_lower:
+                        hint = (
+                            " Hint: TIME_SERIES_DAILY_ADJUSTED is a premium "
+                            "endpoint on Alpha Vantage's free tier. Use "
+                            "TIME_SERIES_DAILY (set adjusted=False) or "
+                            "upgrade the API key."
+                        ) if endpoint_str == APIEndpoint.TIME_SERIES_DAILY_ADJUSTED.value else ""
+                        return APIResponse(
+                            success=False,
+                            data=None,
+                            error_message=f"Premium endpoint: {advisory}{hint}",
+                            status_code=response.status_code,
+                            response_time=elapsed,
+                            retry_count=retry_count
+                        )
+
+                    # Any other advisory-only payload: surface as a failure
+                    # rather than silently returning empty data.
+                    return APIResponse(
+                        success=False,
+                        data=None,
+                        error_message=f"Alpha Vantage advisory: {advisory}",
+                        status_code=response.status_code,
+                        response_time=elapsed,
+                        retry_count=retry_count
+                    )
+
+                # Sanity check: the response should contain real payload
+                # keys. If it only has metadata (or is empty), treat as
+                # failure so downstream transformers don't silently yield
+                # empty DataFrames.
+                payload_keys = [
+                    k for k in data.keys()
+                    if k not in ("Meta Data", "Information", "Note")
+                ]
+                if not payload_keys:
+                    return APIResponse(
+                        success=False,
+                        data=None,
+                        error_message=(
+                            "Empty Alpha Vantage response "
+                            f"(keys={list(data.keys())}, "
+                            f"size={len(response.content)} bytes)"
+                        ),
+                        status_code=response.status_code,
+                        response_time=elapsed,
+                        retry_count=retry_count
+                    )
 
                 # Success - cache and return
                 if use_cache:
