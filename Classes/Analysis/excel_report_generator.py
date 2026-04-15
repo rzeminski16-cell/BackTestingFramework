@@ -178,7 +178,19 @@ class ExcelReportGenerator:
             except Exception:
                 pass
 
-        # 4. Win/Loss streak visualization
+        # 4. R-Multiple distribution
+        if trades:
+            try:
+                r_dist_img = self._viz.create_r_multiple_distribution(trades)
+                img = Image(r_dist_img)
+                img.width = 600
+                img.height = 350
+                ws.add_image(img, f'A{row}')
+                row += 20
+            except Exception:
+                pass
+
+        # 5. Win/Loss streak visualization
         if trades:
             try:
                 streak_img = self._viz.create_streak_visualization(trades)

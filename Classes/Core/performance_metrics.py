@@ -269,6 +269,36 @@ METRIC_DEFINITIONS: Dict[str, MetricDefinition] = {
         category="trade"
     ),
 
+    # R-Multiple Metrics
+    "avg_r_multiple": MetricDefinition(
+        name="Avg R-Multiple",
+        description="Average R-multiple across all trades with stop loss",
+        higher_is_better=True,
+        format_str="{:.2f}R",
+        category="trade"
+    ),
+    "avg_win_r": MetricDefinition(
+        name="Avg Winning R",
+        description="Average R-multiple of winning trades",
+        higher_is_better=True,
+        format_str="{:.2f}R",
+        category="trade"
+    ),
+    "avg_loss_r": MetricDefinition(
+        name="Avg Losing R",
+        description="Average R-multiple of losing trades",
+        higher_is_better=False,
+        format_str="{:.2f}R",
+        category="trade"
+    ),
+    "r_expectancy": MetricDefinition(
+        name="R-Expectancy",
+        description="Expected R-multiple per trade (win_rate * avg_win_R + loss_rate * avg_loss_R)",
+        higher_is_better=True,
+        format_str="{:.2f}R",
+        category="trade"
+    ),
+
     # Daily Metrics
     "best_day": MetricDefinition(
         name="Best Day",
@@ -1052,6 +1082,139 @@ class CentralizedPerformanceMetrics:
         return float(np.mean(durations)) if durations else 0.0
 
     # ========================================================================
+    # R-MULTIPLE CALCULATIONS
+    # ========================================================================
+
+    @staticmethod
+    def calculate_r_multiple(trade) -> Optional[float]:
+        """
+        Calculate R-multiple for a single trade.
+
+        R-multiple = profit per unit / initial risk per unit
+        For LONG:  R = entry - stop, R-multiple = (exit - entry) / R
+        For SHORT: R = stop - entry, R-multiple = (entry - exit) / R
+
+        Args:
+            trade: Trade object (supports both System 1 and System 2 trade types)
+
+        Returns:
+            R-multiple as float, or None if stop loss data is missing/invalid
+        """
+        # Get initial_stop_loss (duck-typed for both systems)
+        if hasattr(trade, 'initial_stop_loss'):
+            stop_loss = trade.initial_stop_loss
+        elif isinstance(trade, dict):
+            stop_loss = trade.get('initial_stop_loss')
+        else:
+            return None
+
+        if stop_loss is None or stop_loss <= 0:
+            return None
+
+        # Get entry and exit prices
+        if hasattr(trade, 'entry_price'):
+            entry_price = trade.entry_price
+            exit_price = trade.exit_price
+        elif isinstance(trade, dict):
+            entry_price = trade.get('entry_price', 0)
+            exit_price = trade.get('exit_price', 0)
+        else:
+            return None
+
+        # Determine trade side
+        side = None
+        if hasattr(trade, 'side'):
+            side_val = trade.side
+            if isinstance(side_val, str):
+                side = side_val.upper()
+            elif hasattr(side_val, 'value'):
+                side = side_val.value.upper()
+        elif isinstance(trade, dict):
+            side_val = trade.get('side', 'LONG')
+            side = side_val.upper() if isinstance(side_val, str) else str(side_val).upper()
+
+        if side is None:
+            side = 'LONG'
+
+        # Calculate initial risk (R)
+        if side == 'SHORT':
+            initial_risk = stop_loss - entry_price
+        else:
+            initial_risk = entry_price - stop_loss
+
+        if initial_risk <= 0:
+            return None
+
+        # Calculate R-multiple
+        if side == 'SHORT':
+            pl_per_unit = entry_price - exit_price
+        else:
+            pl_per_unit = exit_price - entry_price
+
+        return pl_per_unit / initial_risk
+
+    @classmethod
+    def calculate_r_multiples(cls, trades: List[Any]) -> List[float]:
+        """
+        Calculate R-multiples for all trades that have valid stop loss data.
+
+        Args:
+            trades: List of trade objects
+
+        Returns:
+            List of R-multiple values (trades without stop loss are excluded)
+        """
+        if not trades:
+            return []
+
+        r_multiples = []
+        for trade in trades:
+            r = cls.calculate_r_multiple(trade)
+            if r is not None:
+                r_multiples.append(r)
+        return r_multiples
+
+    @classmethod
+    def calculate_avg_r_multiple(cls, trades: List[Any]) -> float:
+        """Calculate average R-multiple across all trades with stop loss."""
+        r_multiples = cls.calculate_r_multiples(trades)
+        return float(np.mean(r_multiples)) if r_multiples else 0.0
+
+    @classmethod
+    def calculate_avg_win_r(cls, trades: List[Any]) -> float:
+        """Calculate average R-multiple of winning trades (R >= 0)."""
+        r_multiples = cls.calculate_r_multiples(trades)
+        winning = [r for r in r_multiples if r >= 0]
+        return float(np.mean(winning)) if winning else 0.0
+
+    @classmethod
+    def calculate_avg_loss_r(cls, trades: List[Any]) -> float:
+        """Calculate average R-multiple of losing trades (R < 0)."""
+        r_multiples = cls.calculate_r_multiples(trades)
+        losing = [r for r in r_multiples if r < 0]
+        return float(np.mean(losing)) if losing else 0.0
+
+    @classmethod
+    def calculate_r_expectancy(cls, trades: List[Any]) -> float:
+        """
+        Calculate R-expectancy: expected R-multiple per trade.
+
+        Formula: (win_rate * avg_win_R) + (loss_rate * avg_loss_R)
+        """
+        r_multiples = cls.calculate_r_multiples(trades)
+        if not r_multiples:
+            return 0.0
+
+        winning = [r for r in r_multiples if r >= 0]
+        losing = [r for r in r_multiples if r < 0]
+        total = len(r_multiples)
+
+        avg_win = float(np.mean(winning)) if winning else 0.0
+        avg_loss = float(np.mean(losing)) if losing else 0.0
+
+        return (len(winning) / total * avg_win) + (len(losing) / total * avg_loss)
+
+    # ========================================================================
     # COMPREHENSIVE METRIC CALCULATION
     # ========================================================================
 
@@ -1187,6 +1350,12 @@ class CentralizedPerformanceMetrics:
             losses = [p for p in pnls if p < 0]
             metrics['largest_win'] = max(wins) if wins else 0.0
             metrics['largest_loss'] = min(losses) if losses else 0.0
+
+            # R-Multiple metrics
+            metrics['avg_r_multiple'] = cls.calculate_avg_r_multiple(trades)
+            metrics['avg_win_r'] = cls.calculate_avg_win_r(trades)
+            metrics['avg_loss_r'] = cls.calculate_avg_loss_r(trades)
+            metrics['r_expectancy'] = cls.calculate_r_expectancy(trades)
         else:
             # Set defaults for trade-based metrics
             metrics['total_trades'] = 0
@@ -1203,6 +1372,10 @@ class CentralizedPerformanceMetrics:
             metrics['num_losses'] = 0
             metrics['largest_win'] = 0.0
             metrics['largest_loss'] = 0.0
+            metrics['avg_r_multiple'] = 0.0
+            metrics['avg_win_r'] = 0.0
+            metrics['avg_loss_r'] = 0.0
+            metrics['r_expectancy'] = 0.0
 
         return metrics
 

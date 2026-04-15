@@ -1506,6 +1506,16 @@ class CTkBacktestWizard(CTkWizardBase):
         msg_queue.put(("log", f"Avg Trade Duration:  {metrics['avg_trade_duration']:.1f} days"))
         msg_queue.put(("log", f"Sharpe Ratio:        {metrics['sharpe_ratio']:.2f}"))
         msg_queue.put(("log", f"Max Drawdown:        ${metrics['max_drawdown']:,.2f} ({metrics['max_drawdown_pct']:.2f}%)"))
+
+        # R-Multiple analysis
+        if metrics.get('r_trades_count', 0) > 0:
+            msg_queue.put(("log", ""))
+            msg_queue.put(("log", f"--- R-Multiple Analysis ({metrics['r_trades_count']} trades with stop loss) ---"))
+            msg_queue.put(("log", f"Avg R-Multiple:      {metrics['avg_r_multiple']:.2f}R"))
+            msg_queue.put(("log", f"Avg Winning R:       {metrics['avg_win_r']:.2f}R"))
+            msg_queue.put(("log", f"Avg Losing R:        {metrics['avg_loss_r']:.2f}R"))
+            msg_queue.put(("log", f"R-Expectancy:        {metrics['r_expectancy']:.2f}R"))
+
         msg_queue.put(("log", "=" * 60))
 
         # Save trade log
@@ -1568,6 +1578,29 @@ class CTkBacktestWizard(CTkWizardBase):
                 msg_queue.put(("log", f"  {swap.date.strftime('%Y-%m-%d')}: {swap.closed_symbol} -> {swap.new_symbol}"))
             if len(result.vulnerability_swaps) > 5:
                 msg_queue.put(("log", f"  ... and {len(result.vulnerability_swaps) - 5} more"))
+
+        # R-Multiple analysis across all portfolio trades
+        all_trades = []
+        for sym_result in result.symbol_results.values():
+            all_trades.extend(sym_result.trades)
+        if all_trades:
+            from Classes.Core.performance_metrics import CentralizedPerformanceMetrics
+            r_multiples = CentralizedPerformanceMetrics.calculate_r_multiples(all_trades)
+            if r_multiples:
+                import numpy as np
+                winning_r = [r for r in r_multiples if r >= 0]
+                losing_r = [r for r in r_multiples if r < 0]
+                avg_r = float(np.mean(r_multiples))
+                avg_win = float(np.mean(winning_r)) if winning_r else 0.0
+                avg_loss = float(np.mean(losing_r)) if losing_r else 0.0
+                total_r = len(r_multiples)
+                r_exp = (len(winning_r) / total_r * avg_win) + (len(losing_r) / total_r * avg_loss)
+
+                msg_queue.put(("log", f"\n--- R-Multiple Analysis ({total_r} trades with stop loss) ---"))
+                msg_queue.put(("log", f"  Avg R-Multiple:    {avg_r:.2f}R"))
+                msg_queue.put(("log", f"  Avg Winning R:     {avg_win:.2f}R"))
+                msg_queue.put(("log", f"  Avg Losing R:      {avg_loss:.2f}R"))
+                msg_queue.put(("log", f"  R-Expectancy:      {r_exp:.2f}R"))
 
         msg_queue.put(("log", "=" * 60))
 
