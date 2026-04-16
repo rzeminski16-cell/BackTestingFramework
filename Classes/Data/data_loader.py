@@ -96,7 +96,14 @@ class DataLoader:
         file_path = self.data_directory / f"{symbol}.csv"
 
         if not file_path.exists():
-            raise FileNotFoundError(f"CSV file not found for {symbol}: {file_path}")
+            # Try common data-frequency suffixed filenames (e.g., ACMR_daily.csv)
+            for suffix in ('_daily', '_weekly', '_monthly', '_hourly'):
+                suffixed_path = self.data_directory / f"{symbol}{suffix}.csv"
+                if suffixed_path.exists():
+                    file_path = suffixed_path
+                    break
+            else:
+                raise FileNotFoundError(f"CSV file not found for {symbol}: {file_path}")
 
         # Load CSV
         df = pd.read_csv(file_path)
@@ -186,11 +193,24 @@ class DataLoader:
         """
         Get list of available symbols (CSV files in data directory).
 
+        Strips common suffixes like '_daily' from filenames to return
+        clean ticker symbols (e.g., 'ACMR' instead of 'ACMR_daily').
+
         Returns:
             List of symbol names
         """
         csv_files = list(self.data_directory.glob("*.csv"))
-        symbols = [f.stem for f in csv_files if f.stem.upper() != 'SAMPLE']
+        symbols = set()
+        for f in csv_files:
+            stem = f.stem
+            if stem.upper() == 'SAMPLE':
+                continue
+            # Strip common data-frequency suffixes from filenames
+            for suffix in ('_daily', '_weekly', '_monthly', '_hourly'):
+                if stem.endswith(suffix):
+                    stem = stem[:-len(suffix)]
+                    break
+            symbols.add(stem)
         return sorted(symbols)
 
     def filter_by_date_range(self, df: pd.DataFrame,

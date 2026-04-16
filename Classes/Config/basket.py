@@ -185,7 +185,19 @@ class BasketManager:
 
         filepath = self._get_basket_path(name)
         if not filepath.exists():
-            return None
+            # Search by name field in case the filename doesn't match
+            # the sanitized basket name (e.g., '&' vs 'and')
+            for f in self.directory.glob("*.json"):
+                try:
+                    with open(f, 'r') as fh:
+                        data = json.load(fh)
+                    if data.get('name') == name:
+                        filepath = f
+                        break
+                except (json.JSONDecodeError, KeyError):
+                    continue
+            else:
+                return None
 
         try:
             with open(filepath, 'r') as f:
