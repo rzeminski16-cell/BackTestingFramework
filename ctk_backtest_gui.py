@@ -382,10 +382,8 @@ class CTkModeSecuritiesStep(CTkWizardStep):
                 self._on_contention_mode_change()
 
     def _open_basket_manager(self):
-        """Open basket manager dialog (placeholder - needs CTK conversion)."""
-        # TODO: Convert BasketManagerDialog to CTK
-        from Classes.GUI.basket_manager_dialog import BasketManagerDialog
-        import tkinter as tk
+        """Open basket manager dialog."""
+        from Classes.GUI.ctk_basket_manager_dialog import CTkBasketManagerDialog
 
         def on_basket_selected(basket):
             if basket:
@@ -394,11 +392,8 @@ class CTkModeSecuritiesStep(CTkWizardStep):
                 self.wizard.basket_var.set(basket.name)
                 self._on_basket_selected(basket.name)
 
-        # Create a temporary tk root for the old dialog
-        temp_root = tk.Toplevel()
-        temp_root.withdraw()
-        BasketManagerDialog(
-            temp_root,
+        CTkBasketManagerDialog(
+            self.wizard.winfo_toplevel(),
             self.wizard.available_securities,
             on_basket_selected=on_basket_selected
         )
