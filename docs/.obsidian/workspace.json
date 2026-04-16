@@ -1,0 +1,210 @@
+{
+  "main": {
+    "id": "bdb5641738ddd867",
+    "type": "split",
+    "children": [
+      {
+        "id": "a019ffec045af50a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "83cd5e073af3a14e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Usability/Running Analysis/Portfolio Backtest.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Portfolio Backtest"
+            }
+          },
+          {
+            "id": "f788287a28f5acac",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.12.7"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.12.7"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "a8ee1e2245cc4360",
+    "type": "split",
+    "children": [
+      {
+        "id": "f8ec6c8bf41c17aa",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "74146a9e9fdcfc98",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "987c59b6fa7c7aa7",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "f9f7a8409f5e3195",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "205a696b5f18b934",
+    "type": "split",
+    "children": [
+      {
+        "id": "59d33f5ba834b2dd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c9b7dc7dfa43a9b9",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Usability/Running Analysis/Portfolio Backtest.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Portfolio Backtest"
+            }
+          },
+          {
+            "id": "9bf6af7ca43d9059",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Usability/Running Analysis/Portfolio Backtest.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Portfolio Backtest"
+            }
+          },
+          {
+            "id": "2b1ed5bde606545e",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "631e87d4286954c2",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "f80f484fba58f2b3",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Usability/Running Analysis/Portfolio Backtest.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Portfolio Backtest"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "f788287a28f5acac",
+  "lastOpenFiles": [
+    "Usability/Extending the System/Adding a New Strategy.md",
+    "Usability/Reference/Metrics Glossary.md",
+    "Usability/Getting Started/Quick Start.md",
+    "2026-03-14.md",
+    "Untitled 1.canvas",
+    "Untitled.canvas",
+    "Usability/_Usability Index.md"
+  ]
+}
