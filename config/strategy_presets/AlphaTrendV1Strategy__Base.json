@@ -1,0 +1,15 @@
+{
+  "strategy_name": "AlphaTrendV1Strategy",
+  "preset_name": "Base",
+  "description": "",
+  "parameters": {
+    "ma_length": 20,
+    "atr_sl": 1.5,
+    "risk_perc": 1.5,
+    "time_exit": 350,
+    "ma_offset": 2,
+    "ema_sma": "SMA"
+  },
+  "created_at": "2026-04-16T09:22:56.841114",
+  "modified_at": "2026-04-16T09:22:56.841128"
+}
