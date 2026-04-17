@@ -55,6 +55,7 @@ from Classes.Analysis.portfolio_report_generator import PortfolioReportGenerator
 # Import available strategies
 from strategies.random_control_strategy import RandomControlStrategy
 from strategies.alpha_trend_v1_strategy import AlphaTrendV1Strategy
+from strategies.alpha_trend_v2_strategy import AlphaTrendV2Strategy
 
 
 # =============================================================================
@@ -1227,6 +1228,7 @@ class CTkBacktestWizard(CTkWizardBase):
 
     STRATEGIES = {
         'AlphaTrendV1Strategy': AlphaTrendV1Strategy,
+        'AlphaTrendV2Strategy': AlphaTrendV2Strategy,
         'RandomControlStrategy': RandomControlStrategy
     }
 
