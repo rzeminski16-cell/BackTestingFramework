@@ -1,0 +1,22 @@
+{
+  "strategy_name": "AlphaTrendV2Strategy",
+  "preset_name": "Default",
+  "description": "Default parameters for AlphaTrend V2: 20-period EMA crossover vs 2-bar offset, ATR(14)x2 stop loss, 2% risk per trade. Combined-indicator exit with ADX<20, ROC(10)<0%, MACD signal<0 and MFI<50 for 3 consecutive bars all enabled; all enabled rules must fire simultaneously to exit.",
+  "parameters": {
+    "ma_offset": 2,
+    "ema_sma": "EMA",
+    "ma_length": 20,
+    "atr_sl": 2.0,
+    "risk_perc": 2.0,
+    "adx_exit_enabled": true,
+    "adx_threshold": 20.0,
+    "roc_exit_enabled": true,
+    "roc_period": 10,
+    "roc_threshold": 0.0,
+    "macd_exit_enabled": true,
+    "mfi_exit_enabled": true,
+    "mfi_consecutive_days": 3
+  },
+  "created_at": "2026-04-17T00:00:00.000000",
+  "modified_at": "2026-04-17T00:00:00.000000"
+}

@@ -97,6 +97,183 @@
         }
       }
     },
+    "AlphaTrendV2Strategy": {
+      "display_name": "AlphaTrend V2",
+      "description": "Trend-following long-only strategy. Identical entry, stop loss and position sizing as AlphaTrend V1 but replaces the time exit with a combined multi-indicator exit (ADX + ROC + MACD + MFI) where each sub-rule can be independently toggled. When multiple rules are enabled, ALL enabled rules must simultaneously signal exit to close the position.",
+      "trade_direction": "LONG",
+      "required_indicators": ["atr_14", "adx_14_adx", "macd_14_macd_signal", "mfi_14_mfi"],
+      "exit_rules": [
+        {
+          "rule_type": "stop_loss_atr",
+          "params": {"atr_column": "atr_14", "multiple": 2.0},
+          "description": "Stop Loss: Entry - (atr_sl x ATR14)",
+          "grace_period_bars": 0,
+          "momentum_protection": false
+        },
+        {
+          "rule_type": "combined_indicator_exit",
+          "params": {
+            "adx_threshold": 20.0,
+            "roc_period": 10,
+            "roc_threshold": 0.0,
+            "macd_exit_level": 0.0,
+            "mfi_exit_level": 50.0,
+            "mfi_consecutive_days": 3
+          },
+          "description": "Combined exit: all ENABLED of [ADX<threshold, ROC<threshold, MACD_signal<0, MFI<50 for N consecutive bars] must fire.",
+          "grace_period_bars": 0,
+          "momentum_protection": false
+        }
+      ],
+      "parameters": {
+        "ma_offset": {
+          "type": "int",
+          "default": 2,
+          "configurable": true,
+          "optimization": {
+            "min": 1,
+            "max": 10,
+            "step": 1
+          },
+          "description": "Number of bars to offset the comparison MA (acts as smoothing)",
+          "category": "Indicator"
+        },
+        "ema_sma": {
+          "type": "string",
+          "default": "EMA",
+          "configurable": true,
+          "optimization": {
+            "values": ["EMA", "SMA"]
+          },
+          "allowed_values": ["EMA", "SMA"],
+          "description": "Moving average type: 'EMA' or 'SMA'",
+          "category": "Indicator"
+        },
+        "ma_length": {
+          "type": "int",
+          "default": 20,
+          "configurable": true,
+          "optimization": {
+            "values": [7, 14, 20, 30, 50, 90, 200]
+          },
+          "allowed_values": [7, 14, 20, 30, 50, 90, 200],
+          "description": "Length of the moving average. Must be one of 7, 14, 20, 30, 50, 90, 200 (read from raw data).",
+          "category": "Indicator"
+        },
+        "atr_sl": {
+          "type": "float",
+          "default": 2.0,
+          "configurable": true,
+          "optimization": {
+            "min": 0.5,
+            "max": 5.0,
+            "step": 0.25
+          },
+          "description": "Multiplier applied to 14-day ATR to find the initial stop loss",
+          "category": "Strategy"
+        },
+        "risk_perc": {
+          "type": "float",
+          "default": 2.0,
+          "configurable": true,
+          "optimization": {
+            "min": 0.5,
+            "max": 10.0,
+            "step": 0.5
+          },
+          "description": "Total risk as a percent of total capital per trade",
+          "category": "Strategy"
+        },
+        "adx_exit_enabled": {
+          "type": "bool",
+          "default": true,
+          "configurable": true,
+          "optimization": {
+            "values": [true, false]
+          },
+          "description": "Enable the ADX exit sub-rule (ADX < adx_threshold)",
+          "category": "Exit"
+        },
+        "adx_threshold": {
+          "type": "float",
+          "default": 20.0,
+          "configurable": true,
+          "optimization": {
+            "min": 10.0,
+            "max": 40.0,
+            "step": 1.0
+          },
+          "description": "ADX level below which the ADX sub-rule signals exit",
+          "category": "Exit"
+        },
+        "roc_exit_enabled": {
+          "type": "bool",
+          "default": true,
+          "configurable": true,
+          "optimization": {
+            "values": [true, false]
+          },
+          "description": "Enable the ROC exit sub-rule (ROC < roc_threshold)",
+          "category": "Exit"
+        },
+        "roc_period": {
+          "type": "int",
+          "default": 10,
+          "configurable": true,
+          "optimization": {
+            "min": 2,
+            "max": 60,
+            "step": 1
+          },
+          "description": "Lookback period (bars) for the rate-of-change calculation",
+          "category": "Exit"
+        },
+        "roc_threshold": {
+          "type": "float",
+          "default": 0.0,
+          "configurable": true,
+          "optimization": {
+            "min": -20.0,
+            "max": 20.0,
+            "step": 0.5
+          },
+          "description": "ROC % level below which the ROC sub-rule signals exit",
+          "category": "Exit"
+        },
+        "macd_exit_enabled": {
+          "type": "bool",
+          "default": true,
+          "configurable": true,
+          "optimization": {
+            "values": [true, false]
+          },
+          "description": "Enable the MACD exit sub-rule (macd_14_macd_signal < 0)",
+          "category": "Exit"
+        },
+        "mfi_exit_enabled": {
+          "type": "bool",
+          "default": true,
+          "configurable": true,
+          "optimization": {
+            "values": [true, false]
+          },
+          "description": "Enable the MFI exit sub-rule (MFI < 50 for N consecutive bars)",
+          "category": "Exit"
+        },
+        "mfi_consecutive_days": {
+          "type": "int",
+          "default": 3,
+          "configurable": true,
+          "optimization": {
+            "min": 1,
+            "max": 20,
+            "step": 1
+          },
+          "description": "Number of consecutive bars MFI must be below 50 for the MFI sub-rule to exit",
+          "category": "Exit"
+        }
+      }
+    },
     "RandomControlStrategy": {
       "display_name": "Random Control Strategy",
       "description": "Control/baseline strategy with random entry and exit for comparison. Uses risk-based position sizing.",
