@@ -1,0 +1,22 @@
+{
+  "strategy_name": "AlphaTrendV2Strategy",
+  "preset_name": "mfi_base",
+  "description": "",
+  "parameters": {
+    "ma_length": 14,
+    "atr_sl": 2.0,
+    "risk_perc": 1.5,
+    "roc_period": 14,
+    "adx_exit_enabled": 0,
+    "roc_exit_enabled": 0,
+    "macd_exit_enabled": 0,
+    "mfi_exit_enabled": 1,
+    "ma_offset": 10,
+    "ema_sma": "SMA",
+    "adx_threshold": 20.0,
+    "roc_threshold": 0.0,
+    "mfi_consecutive_days": 14
+  },
+  "created_at": "2026-04-19T12:15:15.766446",
+  "modified_at": "2026-04-19T12:15:15.766453"
+}
