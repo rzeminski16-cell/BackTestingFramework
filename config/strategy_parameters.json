@@ -276,9 +276,9 @@
     },
     "AlphaTrendV2C2Strategy": {
       "display_name": "AlphaTrend V2C2",
-      "description": "Trend-following long-only strategy. Identical entry, initial stop loss and position sizing as AlphaTrend V2, but with a three-stage lifecycle exit: peace-period (initial SL only), short-term (initial SL OR ADX OR MACD) and long-term (moving SL tightening via a linear Max%-sensitivity*time schedule, plus MFI consecutive-days rule). Vulnerability scoring is unchanged and continues to operate at the portfolio level.",
+      "description": "Trend-following long-only strategy. Identical entry, initial stop loss and position sizing as AlphaTrend V2, but with a three-stage lifecycle exit: peace-period (initial SL only), short-term (initial SL plus optional break-even consecutive-bars rule) and long-term (trailing SL at a fixed percent below close, moves up only; plus the portfolio-level vulnerability scorer).",
       "trade_direction": "LONG",
-      "required_indicators": ["atr_14", "adx_14_adx", "macd_14_macd_signal", "mfi_14_mfi"],
+      "required_indicators": ["atr_14"],
       "exit_rules": [
         {
           "rule_type": "stop_loss_atr",
@@ -292,15 +292,10 @@
           "params": {
             "peace_period_candles": 5,
             "short_term_candles": 15,
-            "adx_threshold": 20.0,
-            "macd_exit_level": 0.0,
-            "mfi_threshold": 50.0,
-            "mfi_consecutive_days": 3,
-            "sl_sensitivity": 0.5,
-            "sl_max_pct": 20.0,
-            "sl_min_pct": 5.0
+            "break_even_consecutive_bars": 7,
+            "trailing_sl_pct": 20.0
           },
-          "description": "Three-stage lifecycle: peace (SL only), short-term (SL OR ADX OR MACD), long-term (moving SL + MFI consecutive-days).",
+          "description": "Three-stage lifecycle: peace (SL only), short-term (SL + optional close-below-entry for N consecutive bars), long-term (trailing SL + portfolio vulnerability scorer).",
           "grace_period_bars": 0,
           "momentum_protection": false
         }
@@ -385,88 +380,32 @@
             "max": 120,
             "step": 1
           },
-          "description": "Length of the short-term stage in bars (ADX OR MACD OR SL)",
+          "description": "Length of the short-term stage in bars (SL + optional break-even consecutive-bars rule)",
           "category": "Exit"
         },
-        "adx_exit_enabled": {
+        "short_phase_exit_enabled": {
           "type": "bool",
           "default": true,
           "configurable": true,
           "optimization": {
             "values": [true, false]
           },
-          "description": "Enable the ADX exit sub-rule during the short-term stage (ADX < adx_threshold)",
+          "description": "Enable the short-phase break-even exit rule. When true, the trade is closed when the close stays strictly below the entry price for break_even_consecutive_bars consecutive bars. The initial SL is always active regardless of this flag.",
           "category": "Exit"
         },
-        "adx_threshold": {
-          "type": "float",
-          "default": 20.0,
-          "configurable": true,
-          "optimization": {
-            "min": 10.0,
-            "max": 40.0,
-            "step": 1.0
-          },
-          "description": "ADX level below which the ADX sub-rule signals exit",
-          "category": "Exit"
-        },
-        "macd_exit_enabled": {
-          "type": "bool",
-          "default": true,
-          "configurable": true,
-          "optimization": {
-            "values": [true, false]
-          },
-          "description": "Enable the MACD exit sub-rule during the short-term stage (macd_14_macd_signal < 0)",
-          "category": "Exit"
-        },
-        "mfi_exit_enabled": {
-          "type": "bool",
-          "default": true,
-          "configurable": true,
-          "optimization": {
-            "values": [true, false]
-          },
-          "description": "Enable the MFI exit sub-rule during the long-term stage (MFI < mfi_threshold for N consecutive bars)",
-          "category": "Exit"
-        },
-        "mfi_threshold": {
-          "type": "float",
-          "default": 50.0,
-          "configurable": true,
-          "optimization": {
-            "min": 10.0,
-            "max": 90.0,
-            "step": 1.0
-          },
-          "description": "MFI level below which the MFI sub-rule fires (long-term stage)",
-          "category": "Exit"
-        },
-        "mfi_consecutive_days": {
+        "break_even_consecutive_bars": {
           "type": "int",
-          "default": 3,
+          "default": 7,
           "configurable": true,
           "optimization": {
             "min": 1,
-            "max": 20,
+            "max": 30,
             "step": 1
           },
-          "description": "Number of consecutive bars MFI must be below mfi_threshold for the MFI sub-rule to fire",
+          "description": "Number of consecutive bars (including current) the close must stay strictly below the entry price for the short-phase rule to fire",
           "category": "Exit"
         },
-        "sl_sensitivity": {
-          "type": "float",
-          "default": 0.5,
-          "configurable": true,
-          "optimization": {
-            "min": 0.0,
-            "max": 5.0,
-            "step": 0.05
-          },
-          "description": "Slope of the long-term SL schedule: SL% = max(sl_max_pct - sl_sensitivity * bars_since_entry, sl_min_pct)",
-          "category": "Exit"
-        },
-        "sl_max_pct": {
+        "trailing_sl_pct": {
           "type": "float",
           "default": 20.0,
           "configurable": true,
@@ -475,19 +414,7 @@
             "max": 50.0,
             "step": 0.5
           },
-          "description": "Initial SL distance (percent of close) at the start of the long-term stage",
-          "category": "Exit"
-        },
-        "sl_min_pct": {
-          "type": "float",
-          "default": 5.0,
-          "configurable": true,
-          "optimization": {
-            "min": 0.5,
-            "max": 30.0,
-            "step": 0.5
-          },
-          "description": "Minimum SL distance (percent of close) that the long-term SL schedule is clamped to",
+          "description": "Long-term trailing SL distance as a percent of the current close. The SL only moves up, never down.",
           "category": "Exit"
         }
       }

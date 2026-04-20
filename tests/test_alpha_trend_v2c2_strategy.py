@@ -3,13 +3,12 @@ Tests for AlphaTrendV2C2Strategy.
 
 Covers:
 - Parameter validation
-- Required columns change with enabled sub-rules
+- Required columns
 - Stage classification by bars since entry
 - Peace-period: no strategy exit
-- Short-term: OR semantics between ADX and MACD
-- Long-term: MFI consecutive-days rule
-- Long-term moving SL: initial move respects "enough room" rule,
-  subsequent bars tighten only, clamp at sl_min_pct
+- Short-term: break-even consecutive-bars rule with configurable toggle
+- Long-term: no strategy exit beyond trailing SL
+- Long-term trailing SL: moves up only, tracks close at trailing_sl_pct
 - Registration with StrategyConfig
 """
 import unittest
@@ -28,9 +27,6 @@ from config.strategy_config import StrategyConfig
 def _make_data(
     closes,
     atr=2.0,
-    adx=None,
-    macd_signal=None,
-    mfi=None,
     start_date="2020-01-01",
     ma_lengths: Sequence[int] = (7, 14, 20, 30, 50, 90, 200),
 ):
@@ -45,12 +41,6 @@ def _make_data(
         "close": closes,
         "volume": np.full(n, 1_000_000.0),
         "atr_14_atr": np.full(n, float(atr)),
-        "adx_14_adx": (np.full(n, 25.0) if adx is None
-                       else np.asarray(adx, dtype=float)),
-        "macd_14_macd_signal": (np.full(n, 1.0) if macd_signal is None
-                                else np.asarray(macd_signal, dtype=float)),
-        "mfi_14_mfi": (np.full(n, 60.0) if mfi is None
-                       else np.asarray(mfi, dtype=float)),
     }
     series = pd.Series(closes)
     for length in ma_lengths:
@@ -101,12 +91,9 @@ class TestParameterValidation(unittest.TestCase):
         s = AlphaTrendV2C2Strategy()
         self.assertEqual(s.peace_period_candles, 5)
         self.assertEqual(s.short_term_candles, 15)
-        self.assertEqual(s.adx_threshold, 20.0)
-        self.assertEqual(s.mfi_threshold, 50.0)
-        self.assertEqual(s.mfi_consecutive_days, 3)
-        self.assertEqual(s.sl_sensitivity, 0.5)
-        self.assertEqual(s.sl_max_pct, 20.0)
-        self.assertEqual(s.sl_min_pct, 5.0)
+        self.assertTrue(s.short_phase_exit_enabled)
+        self.assertEqual(s.break_even_consecutive_bars, 7)
+        self.assertEqual(s.trailing_sl_pct, 20.0)
         self.assertEqual(s.trade_direction, TradeDirection.LONG)
 
     def test_invalid_stage_lengths(self):
@@ -115,19 +102,15 @@ class TestParameterValidation(unittest.TestCase):
         with self.assertRaises(ValueError):
             AlphaTrendV2C2Strategy(short_term_candles=-1)
 
-    def test_invalid_sl_bounds(self):
+    def test_invalid_trailing_sl_pct(self):
         with self.assertRaises(ValueError):
-            AlphaTrendV2C2Strategy(sl_max_pct=0.0)
+            AlphaTrendV2C2Strategy(trailing_sl_pct=0.0)
         with self.assertRaises(ValueError):
-            AlphaTrendV2C2Strategy(sl_min_pct=0.0)
-        with self.assertRaises(ValueError):
-            AlphaTrendV2C2Strategy(sl_min_pct=30.0, sl_max_pct=20.0)
-        with self.assertRaises(ValueError):
-            AlphaTrendV2C2Strategy(sl_sensitivity=-0.1)
+            AlphaTrendV2C2Strategy(trailing_sl_pct=100.0)
 
-    def test_invalid_mfi_consecutive_days(self):
+    def test_invalid_break_even_consecutive_bars(self):
         with self.assertRaises(ValueError):
-            AlphaTrendV2C2Strategy(mfi_consecutive_days=0)
+            AlphaTrendV2C2Strategy(break_even_consecutive_bars=0)
 
     def test_invalid_ma_length(self):
         with self.assertRaises(ValueError):
@@ -135,20 +118,12 @@ class TestParameterValidation(unittest.TestCase):
 
 
 class TestRequiredColumns(unittest.TestCase):
-    def test_all_rules_enabled_requires_all_columns(self):
+    def test_required_columns(self):
         s = AlphaTrendV2C2Strategy()
         cols = s.required_columns()
-        for c in ("date", "close", "atr_14_atr", "ema_20_ema",
-                  "adx_14_adx", "macd_14_macd_signal", "mfi_14_mfi"):
+        for c in ("date", "close", "atr_14_atr", "ema_20_ema"):
             self.assertIn(c, cols)
-
-    def test_disabled_rules_drop_their_columns(self):
-        s = AlphaTrendV2C2Strategy(
-            adx_exit_enabled=False,
-            macd_exit_enabled=False,
-            mfi_exit_enabled=False,
-        )
-        cols = s.required_columns()
+        # ADX / MACD / MFI are no longer required.
         self.assertNotIn("adx_14_adx", cols)
         self.assertNotIn("macd_14_macd_signal", cols)
         self.assertNotIn("mfi_14_mfi", cols)
@@ -160,24 +135,20 @@ class TestRequiredColumns(unittest.TestCase):
 
 class TestPeacePeriod(unittest.TestCase):
     def test_no_exit_during_peace_period(self):
-        """Even with ADX/MACD/MFI all firing, peace-period returns no exit."""
+        """Even with price below entry every bar, peace-period returns no exit."""
         n = 60
         s = AlphaTrendV2C2Strategy(
             peace_period_candles=5,
             short_term_candles=15,
-            adx_exit_enabled=True, adx_threshold=20.0,
-            macd_exit_enabled=True,
-            mfi_exit_enabled=True, mfi_threshold=50.0, mfi_consecutive_days=3,
+            short_phase_exit_enabled=True,
+            break_even_consecutive_bars=3,
         )
-        df = s.prepare_data(_make_data(
-            [100.0] * n,
-            adx=np.full(n, 5.0),
-            macd_signal=np.full(n, -1.0),
-            mfi=np.full(n, 20.0),
-        ))
+        # Close stays below entry the whole time.
+        closes = [100.0] * 20 + [90.0] * (n - 20)
+        df = s.prepare_data(_make_data(closes))
 
         entry_index = 20
-        pos = _open_position_at(df, entry_index)
+        pos = _open_position_at(df, entry_index, price=100.0)
 
         # Bars since entry: 0, 1, 2, 3, 4 -> all peace-period
         for offset in range(5):
@@ -190,7 +161,7 @@ class TestPeacePeriod(unittest.TestCase):
 
 
 # ---------------------------------------------------------------------------
-# Short-term: ADX OR MACD
+# Short-term: break-even consecutive-bars rule
 # ---------------------------------------------------------------------------
 
 class TestShortTerm(unittest.TestCase):
@@ -198,145 +169,121 @@ class TestShortTerm(unittest.TestCase):
         defaults = dict(
             peace_period_candles=2,
             short_term_candles=10,
-            adx_exit_enabled=True, adx_threshold=20.0,
-            macd_exit_enabled=True,
-            mfi_exit_enabled=False,
+            short_phase_exit_enabled=True,
+            break_even_consecutive_bars=3,
         )
         defaults.update(kwargs)
         return AlphaTrendV2C2Strategy(**defaults)
 
-    def test_adx_alone_triggers_short_term_exit(self):
+    def test_fires_when_close_below_entry_for_n_bars(self):
         n = 60
-        s = self._strat()
-        df = s.prepare_data(_make_data(
-            [100.0] * n,
-            adx=np.full(n, 10.0),          # ADX fires
-            macd_signal=np.full(n, 1.0),   # MACD does NOT fire
-        ))
+        s = self._strat(break_even_consecutive_bars=3)
+        # Closes: flat 100 before entry; post-entry all 90 (below entry=100).
+        closes = [100.0] * 20 + [90.0] * (n - 20)
+        df = s.prepare_data(_make_data(closes))
         entry_index = 20
-        pos = _open_position_at(df, entry_index)
-        # Short-term: offset 2..11
-        ctx = _make_context(df, index=entry_index + 5, current_position=pos)
-        signal = s.generate_exit_signal(ctx)
-        self.assertIsNotNone(signal)
-        self.assertIn("ADX", signal.reason)
+        pos = _open_position_at(df, entry_index, price=100.0)
 
-    def test_macd_alone_triggers_short_term_exit(self):
-        n = 60
-        s = self._strat()
-        df = s.prepare_data(_make_data(
-            [100.0] * n,
-            adx=np.full(n, 30.0),
-            macd_signal=np.full(n, -0.5),
-        ))
-        entry_index = 20
-        pos = _open_position_at(df, entry_index)
-        ctx = _make_context(df, index=entry_index + 5, current_position=pos)
-        signal = s.generate_exit_signal(ctx)
-        self.assertIsNotNone(signal)
-        self.assertIn("MACD", signal.reason)
-
-    def test_neither_fires_no_exit(self):
-        n = 60
-        s = self._strat()
-        df = s.prepare_data(_make_data(
-            [100.0] * n,
-            adx=np.full(n, 30.0),
-            macd_signal=np.full(n, 1.0),
-        ))
-        entry_index = 20
-        pos = _open_position_at(df, entry_index)
-        ctx = _make_context(df, index=entry_index + 5, current_position=pos)
+        # Offset 2 is first short-term bar. bars_since_entry=2, need 3
+        # below-entry bars (current + 2 prior, scanning back to entry bar + 1).
+        # Prior bars are offsets 1 and 2 after entry (both 90), plus current.
+        # But the rule only looks at bars after entry -> at offset 2 only 2
+        # bars are available so the rule cannot fire.
+        ctx = _make_context(df, index=entry_index + 2, current_position=pos)
         self.assertIsNone(s.generate_exit_signal(ctx))
 
-    def test_mfi_disabled_in_short_term(self):
-        """MFI below threshold should NOT cause an exit during short-term."""
+        # Offset 3: 3 consecutive below-entry closes -> fires.
+        ctx = _make_context(df, index=entry_index + 3, current_position=pos)
+        signal = s.generate_exit_signal(ctx)
+        self.assertIsNotNone(signal)
+        self.assertIn("below entry", signal.reason)
+
+    def test_does_not_fire_when_any_bar_at_or_above_entry(self):
         n = 60
-        s = self._strat(mfi_exit_enabled=True, mfi_threshold=50.0,
-                        mfi_consecutive_days=3)
-        df = s.prepare_data(_make_data(
-            [100.0] * n,
-            adx=np.full(n, 30.0),             # ADX does not fire
-            macd_signal=np.full(n, 1.0),      # MACD does not fire
-            mfi=np.full(n, 20.0),             # MFI fires - but only in long-term
-        ))
+        s = self._strat(break_even_consecutive_bars=3)
+        # Post-entry closes: 90, 90, 100, 90, 90, 90, ...
+        # One bar equal to entry breaks the 3-bar streak at offsets 3 and 4.
+        post = [90.0, 90.0, 100.0, 90.0, 90.0] + [90.0] * (n - 25)
+        closes = [100.0] * 20 + post
+        df = s.prepare_data(_make_data(closes))
         entry_index = 20
-        pos = _open_position_at(df, entry_index)
+        pos = _open_position_at(df, entry_index, price=100.0)
+
+        # Offset 3: last 3 closes are 90, 100, 90 -> streak broken by 100.
+        ctx = _make_context(df, index=entry_index + 3, current_position=pos)
+        self.assertIsNone(s.generate_exit_signal(ctx))
+
+        # Offset 4: last 3 closes are 100, 90, 90 -> streak broken by 100.
+        ctx = _make_context(df, index=entry_index + 4, current_position=pos)
+        self.assertIsNone(s.generate_exit_signal(ctx))
+
+        # Offset 5: last 3 closes are 90, 90, 90 -> fires.
+        ctx = _make_context(df, index=entry_index + 5, current_position=pos)
+        self.assertIsNotNone(s.generate_exit_signal(ctx))
+
+    def test_disabled_flag_suppresses_rule(self):
+        n = 60
+        s = self._strat(short_phase_exit_enabled=False,
+                        break_even_consecutive_bars=3)
+        closes = [100.0] * 20 + [90.0] * (n - 20)
+        df = s.prepare_data(_make_data(closes))
+        entry_index = 20
+        pos = _open_position_at(df, entry_index, price=100.0)
+
+        # Anywhere in short-term: even with many bars below entry, no exit.
+        for offset in (3, 5, 8, 11):
+            ctx = _make_context(df, index=entry_index + offset,
+                                current_position=pos)
+            self.assertIsNone(s.generate_exit_signal(ctx),
+                              f"unexpected exit at offset {offset}")
+
+    def test_close_at_entry_does_not_count_as_below(self):
+        n = 60
+        s = self._strat(break_even_consecutive_bars=3)
+        # All closes exactly at entry price -> rule must not fire.
+        closes = [100.0] * n
+        df = s.prepare_data(_make_data(closes))
+        entry_index = 20
+        pos = _open_position_at(df, entry_index, price=100.0)
         ctx = _make_context(df, index=entry_index + 5, current_position=pos)
         self.assertIsNone(s.generate_exit_signal(ctx))
 
 
 # ---------------------------------------------------------------------------
-# Long-term: MFI consecutive-days with configurable threshold
+# Long-term: no strategy exit beyond trailing SL
 # ---------------------------------------------------------------------------
 
-class TestLongTermMfi(unittest.TestCase):
-    def test_mfi_fires_only_in_long_term(self):
+class TestLongTerm(unittest.TestCase):
+    def test_no_strategy_exit_in_long_term(self):
         n = 60
         s = AlphaTrendV2C2Strategy(
             peace_period_candles=2,
             short_term_candles=3,
-            adx_exit_enabled=False,
-            macd_exit_enabled=False,
-            mfi_exit_enabled=True, mfi_threshold=50.0, mfi_consecutive_days=3,
+            short_phase_exit_enabled=True,
+            break_even_consecutive_bars=3,
         )
-        # MFI stays below 50 everywhere.
-        df = s.prepare_data(_make_data([100.0] * n, mfi=np.full(n, 20.0)))
-
+        # Closes way below entry even after short-term. Once in long-term
+        # the short-phase rule no longer applies -> no strategy exit.
+        closes = [100.0] * 20 + [80.0] * (n - 20)
+        df = s.prepare_data(_make_data(closes))
         entry_index = 20
-        pos = _open_position_at(df, entry_index)
+        pos = _open_position_at(df, entry_index, price=100.0, stop=70.0)
 
-        # Peace period (offsets 0,1): no exit
-        ctx = _make_context(df, index=entry_index + 1, current_position=pos)
-        self.assertIsNone(s.generate_exit_signal(ctx))
-
-        # Short term (offsets 2,3,4): no exit (MFI not in short term)
-        ctx = _make_context(df, index=entry_index + 3, current_position=pos)
-        self.assertIsNone(s.generate_exit_signal(ctx))
-
-        # Long term (offset 5+): exit
-        ctx = _make_context(df, index=entry_index + 5, current_position=pos)
-        signal = s.generate_exit_signal(ctx)
-        self.assertIsNotNone(signal)
-        self.assertIn("MFI", signal.reason)
-
-    def test_custom_mfi_threshold(self):
-        n = 60
-        s = AlphaTrendV2C2Strategy(
-            peace_period_candles=0,
-            short_term_candles=0,
-            adx_exit_enabled=False,
-            macd_exit_enabled=False,
-            mfi_exit_enabled=True, mfi_threshold=30.0, mfi_consecutive_days=2,
-        )
-        # MFI at 40 - below 50 (default) but ABOVE the custom 30 threshold.
-        df = s.prepare_data(_make_data([100.0] * n, mfi=np.full(n, 40.0)))
-        entry_index = 20
-        pos = _open_position_at(df, entry_index)
+        # Offset 5: bars_since_entry=5 -> stage = long (peace=2 + short=3).
         ctx = _make_context(df, index=entry_index + 5, current_position=pos)
         self.assertIsNone(s.generate_exit_signal(ctx))
 
-        # Below 30 -> fires
-        df2 = s.prepare_data(_make_data([100.0] * n, mfi=np.full(n, 25.0)))
-        ctx2 = _make_context(df2, index=entry_index + 5, current_position=pos)
-        self.assertIsNotNone(s.generate_exit_signal(ctx2))
-
 
 # ---------------------------------------------------------------------------
-# Long-term moving SL
+# Long-term trailing SL
 # ---------------------------------------------------------------------------
 
-class TestLongTermMovingSL(unittest.TestCase):
+class TestLongTermTrailingSL(unittest.TestCase):
     def _strat(self, **kwargs):
         defaults = dict(
             peace_period_candles=0,
             short_term_candles=0,
-            adx_exit_enabled=False,
-            macd_exit_enabled=False,
-            mfi_exit_enabled=False,
-            sl_sensitivity=0.5,
-            sl_max_pct=20.0,
-            sl_min_pct=5.0,
+            trailing_sl_pct=20.0,
         )
         defaults.update(kwargs)
         return AlphaTrendV2C2Strategy(**defaults)
@@ -346,13 +293,11 @@ class TestLongTermMovingSL(unittest.TestCase):
         s = AlphaTrendV2C2Strategy(
             peace_period_candles=5,
             short_term_candles=10,
-            adx_exit_enabled=False,
-            macd_exit_enabled=False,
-            mfi_exit_enabled=False,
+            trailing_sl_pct=20.0,
         )
         df = s.prepare_data(_make_data([100.0] * n))
         entry_index = 20
-        pos = _open_position_at(df, entry_index, stop=80.0)
+        pos = _open_position_at(df, entry_index, stop=70.0)
         # Offset 3: peace. Offset 10: short. Both should NOT move SL.
         for offset in (3, 10):
             ctx = _make_context(df, index=entry_index + offset,
@@ -360,104 +305,84 @@ class TestLongTermMovingSL(unittest.TestCase):
             self.assertIsNone(s.should_adjust_stop(ctx),
                               f"unexpected SL adjust at offset {offset}")
 
-    def test_first_move_waits_for_room(self):
-        """If the computed SL would WIDEN the stop, no move happens yet."""
+    def test_trailing_sl_tightens_when_room_exists(self):
+        """SL computed at trailing_sl_pct below close; applies when tighter."""
         n = 60
-        s = self._strat(sl_sensitivity=0.0, sl_max_pct=20.0, sl_min_pct=5.0)
-        # Current SL at 95 means SL% is 5% of 100 - very tight.
-        # Computed SL% = 20% -> new SL = 80. That would widen, so no move.
+        s = self._strat(trailing_sl_pct=20.0)
         df = s.prepare_data(_make_data([100.0] * n))
         entry_index = 20
-        pos = _open_position_at(df, entry_index, stop=95.0)
-        ctx = _make_context(df, index=entry_index + 1, current_position=pos)
-        self.assertIsNone(s.should_adjust_stop(ctx))
-
-    def test_first_move_fires_when_room_exists(self):
-        """If computed SL tightens, the first long-term move fires."""
-        n = 60
-        s = self._strat(sl_sensitivity=0.0, sl_max_pct=20.0, sl_min_pct=5.0)
-        # Current SL at 70 -> distance 30%. Computed 20% -> SL=80 tightens.
-        df = s.prepare_data(_make_data([100.0] * n))
-        entry_index = 20
+        # Current SL at 70 (30% below) -> computed SL=80 tightens.
         pos = _open_position_at(df, entry_index, stop=70.0)
         ctx = _make_context(df, index=entry_index + 1, current_position=pos)
         new_sl = s.should_adjust_stop(ctx)
         self.assertIsNotNone(new_sl)
         self.assertAlmostEqual(new_sl, 80.0, places=6)
 
-    def test_subsequent_moves_only_tighten(self):
-        """After the first move, each bar tightens by sl_sensitivity%."""
+    def test_sl_never_widens(self):
+        """If computed SL is below current SL, no move happens."""
         n = 60
-        s = self._strat(sl_sensitivity=1.0, sl_max_pct=20.0, sl_min_pct=5.0)
+        s = self._strat(trailing_sl_pct=20.0)
+        # Current SL at 95 -> computed SL=80 is looser, so no move.
         df = s.prepare_data(_make_data([100.0] * n))
         entry_index = 20
-        pos = _open_position_at(df, entry_index, stop=70.0)
+        pos = _open_position_at(df, entry_index, stop=95.0)
+        ctx = _make_context(df, index=entry_index + 1, current_position=pos)
+        self.assertIsNone(s.should_adjust_stop(ctx))
 
-        # Offset 1: SL% = 20 - 1*1 = 19 -> SL = 81
+    def test_sl_follows_rising_price(self):
+        """As close rises, trailing SL moves up accordingly."""
+        n = 60
+        s = self._strat(trailing_sl_pct=20.0)
+        # Prices rise from 100 to 120.
+        closes = list(np.linspace(100.0, 120.0, n))
+        df = s.prepare_data(_make_data(closes))
+        entry_index = 20
+        # Start with a deep SL so all trailing moves are accepted.
+        pos = _open_position_at(df, entry_index, price=closes[entry_index],
+                                stop=50.0)
+
+        # Offset 1: close = closes[21] -> SL = close * 0.8
         ctx1 = _make_context(df, index=entry_index + 1, current_position=pos)
         sl1 = s.should_adjust_stop(ctx1)
-        self.assertAlmostEqual(sl1, 81.0, places=6)
+        self.assertAlmostEqual(sl1, closes[entry_index + 1] * 0.8, places=6)
         pos.stop_loss = sl1
 
-        # Offset 2: SL% = 18 -> SL = 82 (tighter than 81)
-        ctx2 = _make_context(df, index=entry_index + 2, current_position=pos)
-        sl2 = s.should_adjust_stop(ctx2)
-        self.assertAlmostEqual(sl2, 82.0, places=6)
+        # Offset 5: price is higher -> SL should be higher than sl1.
+        ctx5 = _make_context(df, index=entry_index + 5, current_position=pos)
+        sl5 = s.should_adjust_stop(ctx5)
+        self.assertAlmostEqual(sl5, closes[entry_index + 5] * 0.8, places=6)
+        self.assertGreater(sl5, sl1)
 
-    def test_clamped_at_min_pct(self):
-        """SL% is clamped at sl_min_pct once the schedule runs out."""
-        n = 80
-        s = self._strat(sl_sensitivity=1.0, sl_max_pct=20.0, sl_min_pct=5.0)
-        df = s.prepare_data(_make_data([100.0] * n))
-        entry_index = 20
-        pos = _open_position_at(df, entry_index, stop=70.0)
-
-        # After 15+ bars: schedule would give 5%, clamped.
-        # At offset 20: 20 - 1*20 = 0 -> clamped to 5 -> SL = 95.
-        ctx = _make_context(df, index=entry_index + 20, current_position=pos)
-        new_sl = s.should_adjust_stop(ctx)
-        self.assertAlmostEqual(new_sl, 95.0, places=6)
-
-    def test_sl_never_widens_after_armed(self):
-        """Once armed, a larger-SL-distance recompute should not apply."""
+    def test_sl_does_not_move_when_price_falls(self):
+        """After a tighter SL is set, a later lower price does not move SL down."""
         n = 60
-        s = self._strat(sl_sensitivity=5.0, sl_max_pct=20.0, sl_min_pct=5.0)
-        df = s.prepare_data(_make_data([100.0] * n))
+        s = self._strat(trailing_sl_pct=20.0)
+        # Price up then down.
+        closes = [100.0] * 20 + [120.0] * 5 + [110.0] * (n - 25)
+        df = s.prepare_data(_make_data(closes))
         entry_index = 20
-        pos = _open_position_at(df, entry_index, stop=70.0)
+        pos = _open_position_at(df, entry_index, price=100.0, stop=50.0)
 
-        # First move: offset 1 -> SL% = 15 -> SL=85. Set as current stop.
+        # Offset 1 at price 120 -> SL = 96. Apply.
         ctx1 = _make_context(df, index=entry_index + 1, current_position=pos)
         sl1 = s.should_adjust_stop(ctx1)
-        self.assertAlmostEqual(sl1, 85.0, places=6)
-        pos.stop_loss = sl1 + 2.0  # Manually set tighter current stop = 87.
+        self.assertAlmostEqual(sl1, 96.0, places=6)
+        pos.stop_loss = sl1
 
-        # Offset 2 recompute SL% = 10 -> SL = 90 (tighter than 87) - should apply.
-        ctx2 = _make_context(df, index=entry_index + 2, current_position=pos)
-        sl2 = s.should_adjust_stop(ctx2)
-        self.assertAlmostEqual(sl2, 90.0, places=6)
-
-        # Now artificially bump current stop to 95 (very tight). Next recompute
-        # gives 95 again -> equal, should NOT update.
-        pos.stop_loss = 95.0
-        ctx3 = _make_context(df, index=entry_index + 3, current_position=pos)
-        sl3 = s.should_adjust_stop(ctx3)
-        # 20 - 5*3 = 5 -> min clamp -> SL = 95. Equal -> no adjust.
-        self.assertIsNone(sl3)
+        # Offset 6 at price 110 -> computed SL = 88 which is < 96 -> no move.
+        ctx6 = _make_context(df, index=entry_index + 6, current_position=pos)
+        self.assertIsNone(s.should_adjust_stop(ctx6))
 
 
 # ---------------------------------------------------------------------------
-# No exit without position / registration
+# Misc
 # ---------------------------------------------------------------------------
 
 class TestMisc(unittest.TestCase):
     def test_no_exit_without_position(self):
         n = 60
         s = AlphaTrendV2C2Strategy()
-        df = s.prepare_data(_make_data([100.0] * n,
-                                       adx=np.full(n, 5.0),
-                                       macd_signal=np.full(n, -1.0),
-                                       mfi=np.full(n, 10.0)))
+        df = s.prepare_data(_make_data([100.0] * n))
         ctx = _make_context(df, index=30, current_position=None)
         self.assertIsNone(s.generate_exit_signal(ctx))
         self.assertIsNone(s.should_adjust_stop(ctx))
@@ -472,11 +397,16 @@ class TestRegistration(unittest.TestCase):
         params = StrategyConfig.get_parameters("AlphaTrendV2C2Strategy")
         for name in ("ma_offset", "ma_length", "atr_sl", "risk_perc",
                      "peace_period_candles", "short_term_candles",
-                     "adx_exit_enabled", "adx_threshold",
-                     "macd_exit_enabled",
-                     "mfi_exit_enabled", "mfi_threshold", "mfi_consecutive_days",
-                     "sl_sensitivity", "sl_max_pct", "sl_min_pct"):
+                     "short_phase_exit_enabled", "break_even_consecutive_bars",
+                     "trailing_sl_pct"):
             self.assertIn(name, params)
+        # Deprecated params should be gone.
+        for removed in ("adx_exit_enabled", "adx_threshold",
+                        "macd_exit_enabled",
+                        "mfi_exit_enabled", "mfi_threshold",
+                        "mfi_consecutive_days",
+                        "sl_sensitivity", "sl_max_pct", "sl_min_pct"):
+            self.assertNotIn(removed, params)
 
 
 if __name__ == "__main__":
