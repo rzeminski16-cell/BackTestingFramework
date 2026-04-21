@@ -30,7 +30,6 @@ Each subsystem explained in isolation.
 | [[Position Management]] | PositionManager, TradeExecutor, trade lifecycle |
 | [[Optimisation Engine]] | Walk-forward, Bayesian search, univariate sweeps |
 | [[Factor Analysis Component]] | Tier 1/2/3 analysis, scenario detection |
-| [[Vulnerability Scorer]] | Position scoring, immunity, decay, feature weighting |
 | [[Reporting]] | Excel reports, trade logs, equity curves, metrics calculation |
 | [[GUI Layer]] | CustomTkinter architecture and application structure |
 

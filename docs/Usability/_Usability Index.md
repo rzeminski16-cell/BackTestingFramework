@@ -31,7 +31,6 @@ Step-by-step guides for each analysis tool in the system.
 | [[Univariate Optimisation]] | Sweep a single parameter to understand sensitivity |
 | [[Edge Analysis]] | Validate entry quality with E-ratio and R-multiples |
 | [[Factor Analysis]] | Identify which conditions drive good vs bad trades |
-| [[Vulnerability Scoring]] | Analyse and tune capital contention scoring |
 | [[Reading Reports]] | Interpret Excel reports, trade logs, and equity curves |
 
 ---
@@ -47,7 +46,6 @@ Guides for analysts who need to expand the framework's capabilities.
 | [[Adding a New Indicator]] | Add a pre-calculated indicator to raw data files |
 | [[Creating a Security Basket]] | Define a group of securities for portfolio testing |
 | [[Creating Strategy Presets]] | Save and load parameter combinations |
-| [[Creating Vulnerability Presets]] | Configure vulnerability scorer parameters |
 
 ---
 

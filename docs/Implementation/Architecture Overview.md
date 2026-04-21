@@ -22,7 +22,6 @@ graph TB
         A3[ctk_optimization_gui.py]
         A4[ctk_edge_analysis_gui.py]
         A5[ctk_factor_analysis_gui.py]
-        A6[ctk_vulnerability_gui.py]
     end
 
     subgraph APP["Application Layer"]
@@ -31,7 +30,7 @@ graph TB
         B3[WalkForwardOptimizer]
         B4[UnivariateOptimizer]
         B5[FactorAnalyzer]
-        B6[VulnerabilityScorer]
+        B6[VulnerabilityScoreCalculator]
     end
 
     subgraph CORE["Core Layer"]
@@ -110,8 +109,7 @@ Classes/
 ├── Indicators/        → Indicator utilities
 ├── Models/            → Trade, Position, Signal, Order, TradeDirection
 ├── Optimization/      → WalkForwardOptimizer, UnivariateOptimizer, BayesianSearch
-├── Strategy/          → BaseStrategy, StrategyContext, FundamentalRules
-└── VulnerabilityScorer/ → Scoring, features, simulation
+└── Strategy/          → BaseStrategy, StrategyContext, FundamentalRules
 ```
 
 ---

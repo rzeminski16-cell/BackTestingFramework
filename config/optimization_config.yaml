@@ -152,41 +152,50 @@ strategy_parameters:
 
 # Vulnerability Score Parameters (for portfolio capital contention optimization)
 # These parameters can be optimized when using the Vulnerability Score capital contention mode
+# Scoring: vulnerability = % distance below a compound-growth target price.
+# Positions trading above target are immune; new trades (age < min_trade_age_days) are also immune.
 vulnerability_score_parameters:
-  immunity_days:
-    min: 3
-    max: 14
+  min_trade_age_days:
+    min: 30
+    max: 200
     type: int
-    step: 1
-    description: "Days a new trade is protected from being swapped"
+    step: 10
+    description: "Trade age (days) below which a position is immune from swapping"
 
-  min_profit_threshold:
-    min: 0.005
-    max: 0.05
+  target_monthly_growth:
+    min: 0.01
+    max: 0.15
     type: float
-    step: 0.005
-    description: "Profit % below which trade is considered stagnant (0.02 = 2%)"
+    step: 0.01
+    description: "Target monthly compound growth rate (0.05 = 5%/month)"
 
-  decay_rate_fast:
-    min: 2.0
-    max: 10.0
-    type: float
-    step: 1.0
-    description: "Points lost per day for stagnant trades"
-
-  decay_rate_slow:
-    min: 0.5
+  alpha:
+    min: 0.0
     max: 3.0
     type: float
-    step: 0.5
-    description: "Points lost per day for performing trades"
+    step: 0.25
+    description: "Performance adjustment exponent (0 disables, higher = more sensitive)"
 
-  swap_threshold:
-    min: 30.0
-    max: 70.0
+  beta:
+    min: 0.0
+    max: 3.0
     type: float
-    step: 5.0
-    description: "Score below which position can be swapped (0-100)"
+    step: 0.25
+    description: "Pullback leniency factor (0 disables, higher = more leniency on pullbacks)"
+
+  avg_window_days:
+    min: 3
+    max: 21
+    type: int
+    step: 1
+    description: "Rolling window (days) for averaging entry/current reference prices"
+
+  pullback_window_days:
+    min: 5
+    max: 30
+    type: int
+    step: 1
+    description: "Lookback window (days) for the pullback mean daily return (r14)"
 
 
 # Performance Thresholds for Reporting

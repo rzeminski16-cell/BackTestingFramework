@@ -8,8 +8,7 @@ from .ctk_theme import Theme, Colors, Fonts, Sizes, show_error, show_info, ask_y
 from ..Config.basket import Basket, BasketManager
 from ..Config.capital_contention import (
     CapitalContentionConfig, CapitalContentionMode, VulnerabilityScoreConfig,
-    EnhancedVulnerabilityConfig, FeatureWeightConfig,
-    ENHANCED_FEATURE_DEFINITIONS, FEATURE_PARAMETER_DEFINITIONS, VULNERABILITY_CORE_PARAM_DEFINITIONS
+    VULNERABILITY_SCORE_PARAM_DEFINITIONS,
 )
 
 
@@ -359,160 +358,92 @@ class CTkBasketManagerDialog:
 
 
 class CTkVulnerabilityScoreConfigDialog:
-    """
-    Dialog for configuring vulnerability score parameters using CustomTkinter.
-    """
+    """Dialog for configuring target-price vulnerability score parameters (CustomTkinter)."""
 
-    def __init__(self, parent, current_config=None,
+    def __init__(self, parent, current_config: Optional[VulnerabilityScoreConfig] = None,
                  on_save: Optional[Callable] = None):
-        """
-        Initialize the vulnerability score config dialog.
-
-        Args:
-            parent: Parent window
-            current_config: Current VulnerabilityScoreConfig
-            on_save: Callback when configuration is saved
-        """
         self.parent = parent
         self.on_save = on_save
-        self.current_config = current_config if current_config else VulnerabilityScoreConfig()
+        self.current_config = current_config if isinstance(current_config, VulnerabilityScoreConfig) \
+            else VulnerabilityScoreConfig()
 
         self.dialog = ctk.CTkToplevel(parent)
         self.dialog.title("Vulnerability Score Configuration")
-        self.dialog.geometry("550x500")
+        self.dialog.geometry("640x560")
         self.dialog.transient(parent)
         self.dialog.configure(fg_color=Colors.BG_DARK)
 
-        # Center on parent
         self.dialog.update_idletasks()
-        x = parent.winfo_x() + (parent.winfo_width() - 550) // 2
-        y = parent.winfo_y() + (parent.winfo_height() - 500) // 2
+        x = parent.winfo_x() + (parent.winfo_width() - 640) // 2
+        y = parent.winfo_y() + (parent.winfo_height() - 560) // 2
         self.dialog.geometry(f"+{x}+{y}")
-
         self.dialog.grab_set()
 
+        self._vars: dict = {}
         self._create_widgets()
 
-    def _create_widgets(self):
-        """Create dialog widgets."""
-        main_frame = Theme.create_frame(self.dialog)
-        main_frame.pack(fill="both", expand=True, padx=Sizes.PAD_M, pady=Sizes.PAD_M)
+    def _create_widgets(self) -> None:
+        main = Theme.create_frame(self.dialog)
+        main.pack(fill="both", expand=True, padx=Sizes.PAD_M, pady=Sizes.PAD_M)
 
-        # Title
-        Theme.create_header(main_frame, "Vulnerability Score Parameters", size="l").pack(pady=(0, Sizes.PAD_L))
+        Theme.create_header(main, "Target-Price Vulnerability Parameters", size="l").pack(pady=(0, Sizes.PAD_L))
 
-        # Parameters card
-        params_card = Theme.create_card(main_frame)
+        params_card = Theme.create_card(main)
         params_card.pack(fill="x", pady=(0, Sizes.PAD_M))
 
         params_content = Theme.create_frame(params_card)
         params_content.pack(fill="x", padx=Sizes.PAD_M, pady=Sizes.PAD_M)
 
-        # Immunity Days
-        imm_def = VULNERABILITY_CORE_PARAM_DEFINITIONS['immunity_days']
-        imm_frame = Theme.create_frame(params_content)
-        imm_frame.pack(fill="x", pady=Sizes.PAD_S)
-        Theme.create_label(imm_frame, "Immunity Days:", width=150).pack(side="left")
-        self.immunity_var = ctk.StringVar(value=str(self.current_config.immunity_days))
-        Theme.create_entry(imm_frame, width=80).configure(textvariable=self.immunity_var)
-        imm_entry = Theme.create_entry(imm_frame, width=80)
-        imm_entry.configure(textvariable=self.immunity_var)
-        imm_entry.pack(side="left")
-        Theme.create_hint(imm_frame, f"[{imm_def['min']}-{imm_def['max']}]").pack(side="left", padx=Sizes.PAD_S)
+        for name, spec in VULNERABILITY_SCORE_PARAM_DEFINITIONS.items():
+            row = Theme.create_frame(params_content)
+            row.pack(fill="x", pady=Sizes.PAD_S)
+            Theme.create_label(row, f"{name}:", width=180).pack(side="left")
+            var = ctk.StringVar(value=str(getattr(self.current_config, name)))
+            self._vars[name] = (var, spec['type'])
+            entry = Theme.create_entry(row, width=100)
+            entry.configure(textvariable=var)
+            entry.pack(side="left")
+            Theme.create_hint(row, f"[{spec['min']}-{spec['max']}]").pack(side="left", padx=Sizes.PAD_S)
 
-        # Min Profit Threshold
-        profit_frame = Theme.create_frame(params_content)
-        profit_frame.pack(fill="x", pady=Sizes.PAD_S)
-        Theme.create_label(profit_frame, "Min Profit Threshold:", width=150).pack(side="left")
-        self.profit_var = ctk.StringVar(value=str(self.current_config.min_profit_threshold))
-        profit_entry = Theme.create_entry(profit_frame, width=80)
-        profit_entry.configure(textvariable=self.profit_var)
-        profit_entry.pack(side="left")
-        Theme.create_hint(profit_frame, "[0.0-0.20] (0.02=2%)").pack(side="left", padx=Sizes.PAD_S)
-
-        # Decay Rate Fast
-        fast_def = FEATURE_PARAMETER_DEFINITIONS['fast_decay_rate']
-        fast_frame = Theme.create_frame(params_content)
-        fast_frame.pack(fill="x", pady=Sizes.PAD_S)
-        Theme.create_label(fast_frame, "Decay Rate (Fast):", width=150).pack(side="left")
-        self.decay_fast_var = ctk.StringVar(value=str(self.current_config.decay_rate_fast))
-        fast_entry = Theme.create_entry(fast_frame, width=80)
-        fast_entry.configure(textvariable=self.decay_fast_var)
-        fast_entry.pack(side="left")
-        Theme.create_hint(fast_frame, f"[{fast_def['min']}-{fast_def['max']}] pts/day").pack(side="left", padx=Sizes.PAD_S)
-
-        # Decay Rate Slow
-        slow_def = FEATURE_PARAMETER_DEFINITIONS['slow_decay_rate']
-        slow_frame = Theme.create_frame(params_content)
-        slow_frame.pack(fill="x", pady=Sizes.PAD_S)
-        Theme.create_label(slow_frame, "Decay Rate (Slow):", width=150).pack(side="left")
-        self.decay_slow_var = ctk.StringVar(value=str(self.current_config.decay_rate_slow))
-        slow_entry = Theme.create_entry(slow_frame, width=80)
-        slow_entry.configure(textvariable=self.decay_slow_var)
-        slow_entry.pack(side="left")
-        Theme.create_hint(slow_frame, f"[{slow_def['min']}-{slow_def['max']}] pts/day").pack(side="left", padx=Sizes.PAD_S)
-
-        # Swap Threshold
-        thresh_def = VULNERABILITY_CORE_PARAM_DEFINITIONS['swap_threshold']
-        thresh_frame = Theme.create_frame(params_content)
-        thresh_frame.pack(fill="x", pady=Sizes.PAD_S)
-        Theme.create_label(thresh_frame, "Swap Threshold:", width=150).pack(side="left")
-        self.threshold_var = ctk.StringVar(value=str(self.current_config.swap_threshold))
-        thresh_entry = Theme.create_entry(thresh_frame, width=80)
-        thresh_entry.configure(textvariable=self.threshold_var)
-        thresh_entry.pack(side="left")
-        Theme.create_hint(thresh_frame, f"[{int(thresh_def['min'])}-{int(thresh_def['max'])}]").pack(side="left", padx=Sizes.PAD_S)
-
-        # Description card
-        desc_card = Theme.create_card(main_frame)
+        desc_card = Theme.create_card(main)
         desc_card.pack(fill="x", pady=(0, Sizes.PAD_M))
-
         desc_content = Theme.create_frame(desc_card)
         desc_content.pack(fill="x", padx=Sizes.PAD_M, pady=Sizes.PAD_M)
-
         Theme.create_header(desc_content, "How It Works", size="s").pack(anchor="w", pady=(0, Sizes.PAD_S))
+        Theme.create_label(
+            desc_content,
+            (
+                "Score = % distance below target price. Positions at/above target or younger\n"
+                "than min_trade_age_days are immune. Target path compounds from entry at the\n"
+                "configured monthly growth rate; alpha tightens for laggards, beta relaxes\n"
+                "during 14-day pullbacks. The most-below-target position is closed first."
+            ),
+            text_color=Colors.TEXT_SECONDARY,
+            justify="left",
+        ).pack(anchor="w")
 
-        desc_text = (
-            "When a new BUY signal arrives with no capital available:\n"
-            "1. Each open position gets a vulnerability score (0-100)\n"
-            "2. New trades start at 100 and are protected during immunity period\n"
-            "3. After immunity, stagnant trades (low P/L) decay faster\n"
-            "4. If weakest position < swap threshold, it's closed for new signal"
-        )
-        Theme.create_label(desc_content, desc_text, text_color=Colors.TEXT_SECONDARY, justify="left").pack(anchor="w")
-
-        # Buttons
-        btn_frame = Theme.create_frame(main_frame)
+        btn_frame = Theme.create_frame(main)
         btn_frame.pack(fill="x")
-
-        Theme.create_button(btn_frame, "Reset Defaults", command=self._reset_defaults, style="secondary", width=120).pack(side="left")
+        Theme.create_button(btn_frame, "Reset Defaults", command=self._reset, style="secondary", width=140).pack(side="left")
         Theme.create_button(btn_frame, "Cancel", command=self.dialog.destroy, style="secondary", width=80).pack(side="right")
         Theme.create_button(btn_frame, "Save", command=self._save, style="success", width=80).pack(side="right", padx=Sizes.PAD_S)
 
-    def _reset_defaults(self):
-        """Reset to default values."""
+    def _reset(self) -> None:
         defaults = VulnerabilityScoreConfig()
-        self.immunity_var.set(str(defaults.immunity_days))
-        self.profit_var.set(str(defaults.min_profit_threshold))
-        self.decay_fast_var.set(str(defaults.decay_rate_fast))
-        self.decay_slow_var.set(str(defaults.decay_rate_slow))
-        self.threshold_var.set(str(defaults.swap_threshold))
+        for name, (var, _) in self._vars.items():
+            var.set(str(getattr(defaults, name)))
 
-    def _save(self):
-        """Save configuration."""
+    def _save(self) -> None:
         try:
-            config = VulnerabilityScoreConfig(
-                immunity_days=int(self.immunity_var.get()),
-                min_profit_threshold=float(self.profit_var.get()),
-                decay_rate_fast=float(self.decay_fast_var.get()),
-                decay_rate_slow=float(self.decay_slow_var.get()),
-                swap_threshold=float(self.threshold_var.get())
-            )
-
-            if self.on_save:
-                self.on_save(config)
-
-            self.dialog.destroy()
-
-        except ValueError as e:
+            kwargs = {}
+            for name, (var, vtype) in self._vars.items():
+                raw = var.get().strip()
+                kwargs[name] = int(raw) if vtype == 'int' else float(raw)
+            config = VulnerabilityScoreConfig(**kwargs)
+        except (ValueError, TypeError) as e:
             show_error(self.dialog, "Invalid Value", f"Please enter valid numbers: {e}")
+            return
+
+        if self.on_save:
+            self.on_save(config)
+        self.dialog.destroy()

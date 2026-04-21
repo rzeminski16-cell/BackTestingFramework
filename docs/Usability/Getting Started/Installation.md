@@ -93,7 +93,6 @@ This opens the **main launcher**, giving you access to all analysis tools from a
 > - `python ctk_univariate_optimization_gui.py` — Univariate sweeps
 > - `python ctk_edge_analysis_gui.py` — Edge analysis
 > - `python ctk_factor_analysis_gui.py` — Factor analysis
-> - `python ctk_vulnerability_gui.py` — Vulnerability scoring
 
 ---
 

@@ -8,7 +8,6 @@ Features:
 - Optimization: Walk-forward strategy optimization
 - Edge Analysis: E-ratio and R-multiple analysis from trade logs
 - Factor Analysis: Strategy performance factor analysis
-- Vulnerability Modeler: Vulnerability score parameter optimization
 """
 
 import customtkinter as ctk
@@ -201,12 +200,6 @@ class CTkMainLauncher(ctk.CTk):
                 "command": self._launch_factor_analysis
             },
             {
-                "title": "Vulnerability Modeler",
-                "description": "Model and optimize vulnerability score parameters",
-                "icon": "\u26A0",  # Warning sign
-                "command": self._launch_vulnerability
-            },
-            {
                 "title": "Data Collection",
                 "description": "Collect and prepare raw data from Alpha Vantage API",
                 "icon": "\U0001F4E5",  # Inbox tray
@@ -275,10 +268,6 @@ class CTkMainLauncher(ctk.CTk):
     def _launch_factor_analysis(self):
         """Launch the factor analysis GUI."""
         self._launch_module("factor_analysis")
-
-    def _launch_vulnerability(self):
-        """Launch the vulnerability modeler GUI."""
-        self._launch_module("vulnerability")
 
     def _launch_data_collection(self):
         """Launch the data collection GUI."""
