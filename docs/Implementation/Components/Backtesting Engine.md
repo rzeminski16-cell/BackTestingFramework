@@ -66,10 +66,12 @@ When a new BUY signal arrives and capital is insufficient:
 | Mode | Behaviour |
 |---|---|
 | `DEFAULT` | Skip the signal |
-| `VULNERABILITY_SCORE` | Score all open positions. If any score < `swap_threshold`, close the weakest and enter the new trade |
-| `ENHANCED_VULNERABILITY` | Same, but using feature-weighted scoring |
+| `VULNERABILITY_SCORE` | Score all open positions against a compound-growth target price. If at least one non-immune position is below target, close the one furthest below target and enter the new trade |
 
-See [[Vulnerability Scorer]] for scoring implementation details.
+Scores are computed by `VulnerabilityScoreCalculator` in
+`Classes/Engine/vulnerability_score.py`. See [[Configuration Options]] for the
+configurable parameters (`min_trade_age_days`, `target_monthly_growth`,
+`alpha`, `beta`, `avg_window_days`, `pullback_window_days`).
 
 ---
 

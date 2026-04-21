@@ -1285,8 +1285,10 @@ class BacktestWizard(WizardBase):
         msg_queue.put(("log", f"Capital Contention: {self.capital_contention_config.mode.value}"))
         if self.capital_contention_config.mode == CapitalContentionMode.VULNERABILITY_SCORE:
             vc = self.capital_contention_config.vulnerability_config
-            msg_queue.put(("log", f"  - Immunity Days: {vc.immunity_days}"))
-            msg_queue.put(("log", f"  - Swap Threshold: {vc.swap_threshold}"))
+            msg_queue.put(("log", f"  - Min Trade Age (days): {vc.min_trade_age_days}"))
+            msg_queue.put(("log", f"  - Target Monthly Growth: {vc.target_monthly_growth}"))
+            msg_queue.put(("log", f"  - Alpha: {vc.alpha}"))
+            msg_queue.put(("log", f"  - Beta: {vc.beta}"))
         msg_queue.put(("log", "=" * 60))
 
         # Load data for all securities
@@ -1343,8 +1345,10 @@ class BacktestWizard(WizardBase):
         results_window.log(f"Capital Contention: {self.capital_contention_config.mode.value}")
         if self.capital_contention_config.mode == CapitalContentionMode.VULNERABILITY_SCORE:
             vc = self.capital_contention_config.vulnerability_config
-            results_window.log(f"  - Immunity Days: {vc.immunity_days}")
-            results_window.log(f"  - Swap Threshold: {vc.swap_threshold}")
+            results_window.log(f"  - Min Trade Age (days): {vc.min_trade_age_days}")
+            results_window.log(f"  - Target Monthly Growth: {vc.target_monthly_growth}")
+            results_window.log(f"  - Alpha: {vc.alpha}")
+            results_window.log(f"  - Beta: {vc.beta}")
         results_window.log("=" * 60)
 
         # Load data for all securities

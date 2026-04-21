@@ -44,17 +44,18 @@ When a new BUY signal arrives but no capital is available, the system must decid
 Simply ignore new signals when capital is exhausted. First-come, first-served.
 
 ### `VULNERABILITY_SCORE`
-Score existing positions and potentially **swap** a weak position for the new signal. A position becomes vulnerable when its score drops below the `swap_threshold`.
+Score existing positions against a compound-growth target price and potentially
+**swap** the position furthest below its target for the new signal. The score
+is the percentage distance of the current (averaged) price below a target:
 
-The score decays over time:
-- **Immunity period** — new positions are protected for N days (score = 100)
-- **Fast decay** — applied to stagnant positions (P/L below threshold)
-- **Slow decay** — applied to profitable positions
+`P_target(t) = P_entry * (1 + g_d)^t * perf_ratio^(-alpha) * (1 + beta * min(r14, 0))`
 
-See [[Vulnerability Scoring]] for the full scoring guide.
+where `g_d` comes from `target_monthly_growth`, `perf_ratio` measures realized
+daily return vs. `g_d`, and `r14` is the mean of recent daily returns.
 
-### `ENHANCED_VULNERABILITY`
-Feature-based scoring with configurable weights for multiple factors (momentum, volatility, drawdown from peak, etc.). See [[Vulnerability Scoring]] for details.
+Immunities:
+- **Age immunity** — positions younger than `min_trade_age_days` are never swapped
+- **At/above target** — positions whose current reference price is at or above target are immune (score = 0)
 
 ---
 
@@ -74,8 +75,10 @@ config = PortfolioConfig(
     initial_capital=100000.0,
     commission=CommissionConfig(),
     capital_contention=CapitalContentionConfig.vulnerability_score_mode(
-        immunity_days=7,
-        swap_threshold=50.0
+        min_trade_age_days=100,
+        target_monthly_growth=0.05,
+        alpha=1.0,
+        beta=1.0,
     )
 )
 
@@ -109,6 +112,5 @@ Pre-defined groups of securities live in `config/baskets/` as JSON files. See [[
 
 ## Next Steps
 
-- [[Vulnerability Scoring]] — tune the capital contention scorer
 - [[Walk-Forward Optimisation]] — optimise parameters across the portfolio
 - [[Portfolio Execution Flow]] — understand the engine's multi-security logic

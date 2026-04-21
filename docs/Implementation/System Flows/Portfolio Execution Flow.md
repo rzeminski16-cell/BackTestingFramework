@@ -40,8 +40,8 @@ flowchart TD
 
     CONTENTION -->|DEFAULT| SKIP["Skip signal — no capital"]
     CONTENTION -->|VULNERABILITY_SCORE| SCORE["Score all open positions"]
-    SCORE --> VULN{"Any score < swap_threshold?"}
-    VULN -->|Yes| SWAP["Close weakest position\nOpen new position"]
+    SCORE --> VULN{"Any non-immune position below target?"}
+    VULN -->|Yes| SWAP["Close position furthest below target\nOpen new position"]
     VULN -->|No| SKIP
 
     EXEC_SELL --> NEXT_SYM[Next symbol]
@@ -80,16 +80,17 @@ When a BUY signal arrives but capital is insufficient:
 The signal is simply skipped. The engine logs that a signal was missed due to insufficient capital.
 
 ### VULNERABILITY_SCORE Mode
-1. Calculate vulnerability score for every open position
-2. Find the position with the lowest score
-3. If that score < `swap_threshold`:
-   - Close the vulnerable position (capital returns to pool)
-   - Execute the new BUY signal
-4. If all scores >= threshold:
-   - Skip the signal
-
-### ENHANCED_VULNERABILITY Mode
-Same as above, but scoring uses the multi-feature weighted system (see [[Vulnerability Scorer]]).
+1. For every open position, compute a target price
+   `P_target(t) = P_entry * (1 + g_d)^t * perf_ratio^(-alpha) * (1 + beta * min(r14, 0))`
+   where `g_d` comes from `target_monthly_growth`, `perf_ratio = (1 + r_long) / (1 + g_d)`
+   and `r14` is the mean of recent daily returns.
+2. Each position's vulnerability score is the percentage distance of the
+   current (averaged) price below its target, or `0` when:
+   - the trade is younger than `min_trade_age_days` (age immunity), or
+   - the current price is at or above the target.
+3. If at least one position is non-immune, close the one with the largest
+   % distance below target and execute the new BUY signal.
+4. If all positions are immune, skip the signal.
 
 ---
 
@@ -114,5 +115,4 @@ The engine tracks:
 ## Related
 
 - [[Portfolio Backtest]] — user guide
-- [[Vulnerability Scorer]] — scoring implementation
 - [[Backtest Execution Flow]] — single-security flow (building block)

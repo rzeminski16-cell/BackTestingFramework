@@ -124,6 +124,7 @@ class PortfolioEngine:
             self.vulnerability_calculator = VulnerabilityScoreCalculator(
                 config.capital_contention.vulnerability_config
             )
+            # Historical data attached in run() once data_dict is prepared.
 
         # Tracking
         self.signal_rejections: List[SignalRejection] = []
@@ -172,6 +173,11 @@ class PortfolioEngine:
         for symbol, data in data_dict.items():
             prepared_data_dict[symbol] = strategy.prepare_data(data)
         data_dict = prepared_data_dict
+
+        # Supply historical price data to the vulnerability calculator so it can
+        # compute rolling reference prices and pullback returns per symbol.
+        if self.vulnerability_calculator is not None:
+            self.vulnerability_calculator.set_data(data_dict)
 
         # Get unified date range across all securities
         all_dates = self._get_unified_dates(data_dict)

@@ -54,7 +54,7 @@ Used for [[Portfolio Backtest|portfolio backtests]]. Includes all BacktestConfig
 
 | Field | Type | Default | Description |
 |---|---|---|---|
-| `mode` | CapitalContentionMode | DEFAULT | `DEFAULT`, `VULNERABILITY_SCORE`, or `ENHANCED_VULNERABILITY` |
+| `mode` | CapitalContentionMode | DEFAULT | `DEFAULT` or `VULNERABILITY_SCORE` |
 | `vulnerability_config` | VulnerabilityScoreConfig | (see below) | Parameters for vulnerability scoring |
 
 ### Capital Contention Modes
@@ -62,23 +62,25 @@ Used for [[Portfolio Backtest|portfolio backtests]]. Includes all BacktestConfig
 | Mode | Behaviour |
 |---|---|
 | `DEFAULT` | Ignore new signals when no capital available |
-| `VULNERABILITY_SCORE` | Score positions, swap weak ones for new signals |
-| `ENHANCED_VULNERABILITY` | Feature-weighted scoring with multiple factors |
+| `VULNERABILITY_SCORE` | Score positions against a compound-growth target price; swap the position furthest below its target for the new signal |
 
 ---
 
 ## VulnerabilityScoreConfig
 
-Parameters for the `VULNERABILITY_SCORE` mode:
+Parameters for the `VULNERABILITY_SCORE` mode. The vulnerability score of an
+open position is the % distance of the current reference price below a
+compound-growth target price. Positions at or above their target are immune
+(score = 0), as are positions younger than `min_trade_age_days`.
 
 | Field | Type | Default | Range | Description |
 |---|---|---|---|---|
-| `immunity_days` | int | 7 | 1–30 | Days new positions are protected from swapping |
-| `min_profit_threshold` | float | 0.02 | 0.0–0.20 | P/L below this = "stagnant" (fast decay) |
-| `decay_rate_fast` | float | 5.0 | 1.0–20.0 | Points lost per day for stagnant trades |
-| `decay_rate_slow` | float | 1.0 | 0.1–5.0 | Points lost per day for performing trades |
-| `swap_threshold` | float | 50.0 | 10–90 | Score below which position can be swapped |
-| `base_score` | float | 100.0 | — | Starting score |
+| `min_trade_age_days` | int | 100 | 0–365 | Age (days) below which a position is immune from swapping |
+| `target_monthly_growth` | float | 0.05 | 0.0–0.50 | Target monthly compound growth rate (0.05 = 5%/month) |
+| `alpha` | float | 1.0 | 0.0–5.0 | Sensitivity of the target to realized long-run performance |
+| `beta` | float | 1.0 | 0.0–20.0 | Sensitivity of the target to recent negative returns (pullback leniency) |
+| `avg_window_days` | int | 7 | 1–30 | Window for averaging entry and current reference prices |
+| `pullback_window_days` | int | 14 | 1–60 | Window for the mean daily return used in the pullback factor |
 
 ---
 
@@ -118,4 +120,3 @@ See [[Creating Strategy Presets]] for saving parameter combinations.
 
 - [[Single Security Backtest]] — use these config options
 - [[Portfolio Backtest]] — portfolio-specific configuration
-- [[Vulnerability Scoring]] — deep dive into scoring parameters

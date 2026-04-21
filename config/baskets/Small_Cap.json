@@ -36,12 +36,12 @@
   "default_capital_contention": {
     "mode": "default",
     "vulnerability_config": {
-      "immunity_days": 7,
-      "min_profit_threshold": 0.02,
-      "decay_rate_fast": 5.0,
-      "decay_rate_slow": 1.0,
-      "swap_threshold": 50.0,
-      "base_score": 100.0
+      "min_trade_age_days": 100,
+      "target_monthly_growth": 0.05,
+      "alpha": 1.0,
+      "beta": 1.0,
+      "avg_window_days": 7,
+      "pullback_window_days": 14
     }
   }
 }

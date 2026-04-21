@@ -15,8 +15,7 @@ from Classes.Config.config import (
 )
 from Classes.Config.capital_contention import (
     CapitalContentionConfig, CapitalContentionMode,
-    VulnerabilityScoreConfig, EnhancedVulnerabilityConfig,
-    FeatureWeightConfig
+    VulnerabilityScoreConfig,
 )
 
 
@@ -188,40 +187,64 @@ class TestOptimizationConfig:
 class TestVulnerabilityScoreConfig:
     def test_default_config(self):
         config = VulnerabilityScoreConfig()
-        assert config.immunity_days == 7
-        assert config.swap_threshold == 50.0
-        assert config.base_score == 100.0
+        assert config.min_trade_age_days == 100
+        assert config.target_monthly_growth == 0.05
+        assert config.alpha == 1.0
+        assert config.beta == 1.0
+        assert config.avg_window_days == 7
+        assert config.pullback_window_days == 14
 
-    def test_negative_immunity_rejected(self):
+    def test_negative_min_trade_age_rejected(self):
         with pytest.raises(ValueError, match="non-negative"):
-            VulnerabilityScoreConfig(immunity_days=-1)
+            VulnerabilityScoreConfig(min_trade_age_days=-1)
 
-    def test_negative_threshold_rejected(self):
-        with pytest.raises(ValueError, match="between 0 and"):
-            VulnerabilityScoreConfig(swap_threshold=-1.0)
+    def test_monthly_growth_below_minus_one_rejected(self):
+        with pytest.raises(ValueError, match="greater than -1"):
+            VulnerabilityScoreConfig(target_monthly_growth=-1.5)
 
-    def test_threshold_above_base_rejected(self):
-        with pytest.raises(ValueError, match="between 0 and"):
-            VulnerabilityScoreConfig(swap_threshold=150.0)
+    def test_negative_alpha_rejected(self):
+        with pytest.raises(ValueError, match="non-negative"):
+            VulnerabilityScoreConfig(alpha=-0.1)
 
-    def test_negative_base_score_rejected(self):
-        with pytest.raises(ValueError):
-            VulnerabilityScoreConfig(base_score=0.0)
+    def test_negative_beta_rejected(self):
+        with pytest.raises(ValueError, match="non-negative"):
+            VulnerabilityScoreConfig(beta=-0.1)
+
+    def test_zero_avg_window_rejected(self):
+        with pytest.raises(ValueError, match="at least 1"):
+            VulnerabilityScoreConfig(avg_window_days=0)
+
+    def test_zero_pullback_window_rejected(self):
+        with pytest.raises(ValueError, match="at least 1"):
+            VulnerabilityScoreConfig(pullback_window_days=0)
 
     def test_to_dict_and_from_dict_roundtrip(self):
         original = VulnerabilityScoreConfig(
-            immunity_days=10,
-            min_profit_threshold=0.05,
-            decay_rate_fast=8.0,
-            decay_rate_slow=2.0,
-            swap_threshold=60.0
+            min_trade_age_days=60,
+            target_monthly_growth=0.03,
+            alpha=1.5,
+            beta=0.8,
+            avg_window_days=5,
+            pullback_window_days=21,
         )
         d = original.to_dict()
         restored = VulnerabilityScoreConfig.from_dict(d)
-        assert restored.immunity_days == original.immunity_days
-        assert restored.min_profit_threshold == original.min_profit_threshold
-        assert restored.decay_rate_fast == original.decay_rate_fast
-        assert restored.swap_threshold == original.swap_threshold
+        assert restored.min_trade_age_days == original.min_trade_age_days
+        assert restored.target_monthly_growth == original.target_monthly_growth
+        assert restored.alpha == original.alpha
+        assert restored.beta == original.beta
+        assert restored.avg_window_days == original.avg_window_days
+        assert restored.pullback_window_days == original.pullback_window_days
+
+    def test_from_dict_ignores_unknown_keys(self):
+        data = {
+            'min_trade_age_days': 80,
+            'target_monthly_growth': 0.04,
+            'legacy_field': 'ignored',
+        }
+        config = VulnerabilityScoreConfig.from_dict(data)
+        assert config.min_trade_age_days == 80
+        assert config.target_monthly_growth == 0.04
 
 
 # =============================================================================
@@ -234,79 +257,17 @@ class TestCapitalContentionConfig:
         assert config.mode == CapitalContentionMode.DEFAULT
 
     def test_vulnerability_score_mode(self):
-        config = CapitalContentionConfig.vulnerability_score_mode(immunity_days=10)
+        config = CapitalContentionConfig.vulnerability_score_mode(min_trade_age_days=60)
         assert config.mode == CapitalContentionMode.VULNERABILITY_SCORE
-        assert config.vulnerability_config.immunity_days == 10
+        assert config.vulnerability_config.min_trade_age_days == 60
 
     def test_to_dict_and_from_dict_roundtrip(self):
         original = CapitalContentionConfig.vulnerability_score_mode(
-            swap_threshold=65.0
+            target_monthly_growth=0.03, alpha=2.0, beta=0.5,
         )
         d = original.to_dict()
         restored = CapitalContentionConfig.from_dict(d)
         assert restored.mode == CapitalContentionMode.VULNERABILITY_SCORE
-        assert restored.vulnerability_config.swap_threshold == 65.0
-
-
-# =============================================================================
-# EnhancedVulnerabilityConfig Tests
-# =============================================================================
-
-class TestEnhancedVulnerabilityConfig:
-    def test_default_features_populated(self):
-        config = EnhancedVulnerabilityConfig()
-        assert 'days_held' in config.features
-        assert 'current_pl_pct' in config.features
-
-    def test_conservative_preset(self):
-        config = EnhancedVulnerabilityConfig.conservative_preset()
-        assert config.name == "Conservative"
-        assert config.immunity_days == 14
-        assert config.swap_threshold == 30.0
-
-    def test_aggressive_preset(self):
-        config = EnhancedVulnerabilityConfig.aggressive_preset()
-        assert config.name == "Aggressive"
-        assert config.immunity_days == 3
-        assert config.swap_threshold == 70.0
-
-    def test_momentum_focused_preset(self):
-        config = EnhancedVulnerabilityConfig.momentum_focused_preset()
-        assert config.name == "Momentum Focused"
-
-    def test_invalid_immunity_days(self):
-        with pytest.raises(ValueError, match="non-negative"):
-            EnhancedVulnerabilityConfig(immunity_days=-1)
-
-    def test_invalid_base_score(self):
-        with pytest.raises(ValueError, match="positive"):
-            EnhancedVulnerabilityConfig(base_score=0.0)
-
-    def test_to_dict_and_from_dict_roundtrip(self):
-        original = EnhancedVulnerabilityConfig.aggressive_preset()
-        d = original.to_dict()
-        restored = EnhancedVulnerabilityConfig.from_dict(d)
-        assert restored.name == original.name
-        assert restored.immunity_days == original.immunity_days
-        assert len(restored.features) == len(original.features)
-
-    def test_to_simple_config(self):
-        config = EnhancedVulnerabilityConfig()
-        simple = config.to_simple_config()
-        assert isinstance(simple, VulnerabilityScoreConfig)
-        assert simple.immunity_days == config.immunity_days
-
-
-class TestFeatureWeightConfig:
-    def test_default(self):
-        fw = FeatureWeightConfig()
-        assert fw.enabled is True
-        assert fw.weight == 1.0
-
-    def test_to_dict_and_from_dict(self):
-        original = FeatureWeightConfig(enabled=False, weight=3.5, decay_point=21)
-        d = original.to_dict()
-        restored = FeatureWeightConfig.from_dict(d)
-        assert restored.enabled == False
-        assert restored.weight == 3.5
-        assert restored.decay_point == 21
+        assert restored.vulnerability_config.target_monthly_growth == 0.03
+        assert restored.vulnerability_config.alpha == 2.0
+        assert restored.vulnerability_config.beta == 0.5

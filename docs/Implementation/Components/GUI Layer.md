@@ -20,7 +20,6 @@ The desktop interface built with CustomTkinter.
 | `ctk_univariate_optimization_gui.py` | Univariate Optimisation | Single parameter sweeps |
 | `ctk_edge_analysis_gui.py` | Edge Analysis | E-ratio and R-multiple analysis |
 | `ctk_factor_analysis_gui.py` | Factor Analysis | Tier 1/2/3 trade driver analysis |
-| `ctk_vulnerability_gui.py` | Vulnerability Scoring | Portfolio scoring simulation |
 
 ---
 

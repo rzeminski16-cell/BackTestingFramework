@@ -256,14 +256,23 @@ class PortfolioReportGenerator:
 
         if hasattr(result.config.capital_contention, 'vulnerability_config'):
             vc = result.config.capital_contention.vulnerability_config
-            ws[f'A{row}'] = "Immunity Days:"
-            ws[f'B{row}'] = vc.immunity_days
+            ws[f'A{row}'] = "Min Trade Age (days):"
+            ws[f'B{row}'] = vc.min_trade_age_days
             row += 1
-            ws[f'A{row}'] = "Min Profit Threshold:"
-            ws[f'B{row}'] = f"{vc.min_profit_threshold * 100:.1f}%"
+            ws[f'A{row}'] = "Target Monthly Growth:"
+            ws[f'B{row}'] = f"{vc.target_monthly_growth * 100:.2f}%"
             row += 1
-            ws[f'A{row}'] = "Swap Threshold:"
-            ws[f'B{row}'] = vc.swap_threshold
+            ws[f'A{row}'] = "Alpha (perf sensitivity):"
+            ws[f'B{row}'] = vc.alpha
+            row += 1
+            ws[f'A{row}'] = "Beta (pullback leniency):"
+            ws[f'B{row}'] = vc.beta
+            row += 1
+            ws[f'A{row}'] = "Avg Window (days):"
+            ws[f'B{row}'] = vc.avg_window_days
+            row += 1
+            ws[f'A{row}'] = "Pullback Window (days):"
+            ws[f'B{row}'] = vc.pullback_window_days
 
         # Adjust column widths
         ws.column_dimensions['A'].width = 25
@@ -492,10 +501,10 @@ class PortfolioReportGenerator:
                 ws.cell(row=row, column=3, value=f"{swap.closed_score:.1f}")
                 ws.cell(row=row, column=4, value=swap.new_symbol)
 
-                # Color by score
-                if swap.closed_score < 25:
+                # Color by score (higher = more below target = more vulnerable)
+                if swap.closed_score >= 25:
                     ws.cell(row=row, column=3).fill = self.NEGATIVE_FILL
-                elif swap.closed_score < 50:
+                elif swap.closed_score >= 10:
                     ws.cell(row=row, column=3).fill = self.NEUTRAL_FILL
 
                 row += 1

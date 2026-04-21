@@ -420,9 +420,7 @@ class TestCapitalContentionVulnerability:
 
     def test_vulnerability_mode_initializes_calculator(self):
         """When vulnerability mode is used, calculator should be created."""
-        vuln_config = VulnerabilityScoreConfig(
-            immunity_days=5, swap_threshold=50.0
-        )
+        vuln_config = VulnerabilityScoreConfig(min_trade_age_days=5)
         config = _make_portfolio_config(
             mode=CapitalContentionMode.VULNERABILITY_SCORE,
             vuln_config=vuln_config,
@@ -440,7 +438,7 @@ class TestCapitalContentionVulnerability:
         """Vulnerability scores should be recorded each day when positions are open."""
         reset_trade_counter()
         vuln_config = VulnerabilityScoreConfig(
-            immunity_days=2, swap_threshold=50.0, decay_rate_fast=5.0,
+            min_trade_age_days=2, target_monthly_growth=0.05, alpha=0.0, beta=0.0,
         )
         config = _make_portfolio_config(
             initial_capital=100000.0,

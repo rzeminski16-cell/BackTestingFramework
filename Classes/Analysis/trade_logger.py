@@ -326,10 +326,13 @@ class PortfolioTradeLogger:
                     'symbol': result.symbol,
                     'score': result.score,
                     'days_open': result.days_open,
-                    'current_pl_percent': result.current_pl_percent,
                     'is_immune': result.is_immune,
-                    'is_vulnerable': result.is_vulnerable,
-                    'decay_type': result.decay_type
+                    'immunity_reason': result.immunity_reason,
+                    'reference_price': result.reference_price,
+                    'target_price': result.target_price,
+                    'realized_daily_return': result.realized_daily_return,
+                    'r14': result.r14,
+                    'perf_ratio': result.perf_ratio,
                 })
 
         if rows:

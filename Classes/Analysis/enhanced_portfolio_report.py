@@ -1711,9 +1711,10 @@ class EnhancedPortfolioReportGenerator:
                 ws.cell(row=row, column=2, value=swap.closed_symbol)
 
                 score_cell = ws.cell(row=row, column=3, value=f"{swap.closed_score:.1f}")
-                if swap.closed_score < 25:
+                # Higher score = more below target = more vulnerable
+                if swap.closed_score >= 25:
                     score_cell.fill = self.negative_fill
-                elif swap.closed_score < 50:
+                elif swap.closed_score >= 10:
                     score_cell.fill = self.neutral_fill
 
                 ws.cell(row=row, column=4, value=swap.new_symbol)
