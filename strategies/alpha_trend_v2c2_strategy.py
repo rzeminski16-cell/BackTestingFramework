@@ -6,12 +6,14 @@ AlphaTrendV2C2 is a trend-following long-only strategy identical to
 exit logic is replaced with a three-stage lifecycle:
 
 1. Peace-period: only the initial ATR-based stop loss can close the trade.
-2. Short-term: exit on initial stop loss, OR when the ADX sub-rule fires, OR
-   when the MACD sub-rule fires.
-3. Long-term: the stop loss starts moving (tightening only) using a linear
-   schedule ``Max% - sensitivity * time``, clamped below at ``Min%``. The MFI
-   consecutive-days sub-rule is also active. The global vulnerability scorer
-   is left untouched and operates at the portfolio level as usual.
+2. Short-term: initial SL is always active. If the short-phase exit rule is
+   enabled, the trade is also closed when the close price stays strictly below
+   the entry price (break-even) for ``break_even_consecutive_bars`` consecutive
+   bars (including the current bar).
+3. Long-term: a trailing stop loss is maintained ``trailing_sl_pct`` percent
+   below the current close and only moves up (never down). The portfolio-level
+   vulnerability scorer continues to run as usual and can retire the position;
+   no other strategy-level exit is active in this stage.
 
 Stage boundaries are measured in bars since trade entry:
   bars < peace_period_candles                    -> peace-period
@@ -20,22 +22,15 @@ Stage boundaries are measured in bars since trade entry:
   otherwise                                      -> long-term
 
 Entry: MA crosses above MA offset by ``ma_offset`` bars (AlphaMACross).
-Stop Loss: ``entry_price - atr_sl * ATR_14`` at entry. In long-term, the SL
-    is recomputed every bar as ``close * (1 - sl_pct/100)`` where
-    ``sl_pct = max(sl_max_pct - sl_sensitivity * bars_since_entry,
-    sl_min_pct)``. The SL never widens: the first long-term tightening only
-    happens when the new SL is at or above the current SL, and afterwards the
-    SL is updated only when the recomputed SL is tighter than the current one.
+Stop Loss: ``entry_price - atr_sl * ATR_14`` at entry. In the long-term
+    stage, the SL is recomputed every bar as
+    ``close * (1 - trailing_sl_pct/100)`` and applied only when it is tighter
+    (higher) than the current SL.
 Position Sizing: Risk-based, identical to V1/V2.
 
 RAW DATA INDICATORS (NOT OPTIMIZABLE):
     - atr_14_atr: 14-period ATR used for initial stop loss.
     - ema_{N}_ema / sma_{N}_sma: Pre-calculated moving average from raw data.
-    - adx_14_adx: ADX 14, required when ``adx_exit_enabled`` is True.
-    - macd_14_macd_signal: MACD signal line, required when
-      ``macd_exit_enabled`` is True.
-    - mfi_14_mfi: Money Flow Index 14, required when ``mfi_exit_enabled`` is
-      True.
 
 OPTIMIZABLE PARAMETERS:
     - ma_offset: Number of bars to offset the comparison MA.
@@ -47,18 +42,12 @@ OPTIMIZABLE PARAMETERS:
       stop loss.
     - peace_period_candles: Length of the peace-period stage in bars.
     - short_term_candles: Length of the short-term stage in bars.
-    - adx_exit_enabled: Toggle ADX exit sub-rule (short-term only).
-    - adx_threshold: ADX level below which the ADX sub-rule exits.
-    - macd_exit_enabled: Toggle MACD exit sub-rule (short-term only).
-    - mfi_exit_enabled: Toggle MFI exit sub-rule (long-term only).
-    - mfi_threshold: MFI level below which the MFI sub-rule fires.
-    - mfi_consecutive_days: Number of consecutive bars (including current)
-      during which MFI must stay below ``mfi_threshold``.
-    - sl_sensitivity: Slope of the long-term SL schedule (percent per bar).
-    - sl_max_pct: Initial SL distance (percent of price) at the start of the
-      long-term stage.
-    - sl_min_pct: Minimum SL distance (percent of price) the schedule is
-      clamped to.
+    - short_phase_exit_enabled: Toggle the short-phase break-even exit rule
+      (SL remains active regardless).
+    - break_even_consecutive_bars: Number of consecutive bars the close must
+      stay strictly below the entry price for the short-phase rule to fire.
+    - trailing_sl_pct: Distance of the long-term trailing SL as a percent of
+      the current close.
 """
 from typing import Dict, List, Optional, Tuple
 
@@ -75,13 +64,12 @@ class AlphaTrendV2C2Strategy(BaseStrategy):
     """
     AlphaTrendV2C2 - long-only trend-following strategy that keeps V2's
     entry/sizing/initial-SL but replaces the combined exit with a three-stage
-    exit: peace-period (SL only), short-term (SL OR ADX OR MACD) and
-    long-term (moving SL + MFI consecutive-days rule).
+    exit: peace-period (SL only), short-term (SL + optional break-even
+    consecutive-bars rule) and long-term (trailing SL only, plus the
+    portfolio-level vulnerability scorer).
     """
 
     SUPPORTED_MA_LENGTHS = (7, 14, 20, 30, 50, 90, 200)
-
-    MACD_EXIT_LEVEL = 0.0
 
     def __init__(self,
                  # Indicator parameters (same as V2)
@@ -94,18 +82,11 @@ class AlphaTrendV2C2Strategy(BaseStrategy):
                  # Stage lengths
                  peace_period_candles: int = 5,
                  short_term_candles: int = 15,
-                 # Short-term exit sub-rule toggles / params
-                 adx_exit_enabled: bool = True,
-                 adx_threshold: float = 20.0,
-                 macd_exit_enabled: bool = True,
-                 # Long-term MFI exit sub-rule
-                 mfi_exit_enabled: bool = True,
-                 mfi_threshold: float = 50.0,
-                 mfi_consecutive_days: int = 3,
-                 # Long-term moving-SL schedule
-                 sl_sensitivity: float = 0.5,
-                 sl_max_pct: float = 20.0,
-                 sl_min_pct: float = 5.0):
+                 # Short-phase break-even exit rule
+                 short_phase_exit_enabled: bool = True,
+                 break_even_consecutive_bars: int = 7,
+                 # Long-phase trailing SL
+                 trailing_sl_pct: float = 20.0):
         """Initialise the AlphaTrendV2C2 strategy.
 
         Args:
@@ -117,20 +98,15 @@ class AlphaTrendV2C2Strategy(BaseStrategy):
             risk_perc: Percent of total equity risked per trade.
             peace_period_candles: Length of the peace-period stage in bars.
             short_term_candles: Length of the short-term stage in bars.
-            adx_exit_enabled: Enable the ADX exit sub-rule (short-term only).
-            adx_threshold: ADX < ``adx_threshold`` triggers the ADX sub-rule.
-            macd_exit_enabled: Enable the MACD signal-line exit sub-rule.
-            mfi_exit_enabled: Enable the MFI exit sub-rule (long-term only).
-            mfi_threshold: MFI level the MFI sub-rule compares against.
-            mfi_consecutive_days: Number of consecutive bars (including the
-                current bar) during which MFI must stay below
-                ``mfi_threshold``.
-            sl_sensitivity: Slope (percent per bar) for the long-term SL
-                schedule.
-            sl_max_pct: Starting SL distance for the long-term schedule, in
-                percent of the current close.
-            sl_min_pct: Minimum SL distance the schedule is clamped to, in
-                percent of the current close.
+            short_phase_exit_enabled: Enable the short-phase break-even
+                consecutive-bars exit rule. The initial SL is always active
+                regardless of this flag.
+            break_even_consecutive_bars: Number of consecutive bars
+                (including the current bar) during which the close must stay
+                strictly below the entry price for the short-phase rule to
+                fire.
+            trailing_sl_pct: Distance of the long-term trailing SL as a
+                percent of the current close. The SL only moves up.
         """
         self.ma_offset = int(ma_offset)
         self.ema_sma = str(ema_sma).strip().upper()
@@ -141,24 +117,15 @@ class AlphaTrendV2C2Strategy(BaseStrategy):
         self.peace_period_candles = int(peace_period_candles)
         self.short_term_candles = int(short_term_candles)
 
-        self.adx_exit_enabled = bool(adx_exit_enabled)
-        self.adx_threshold = float(adx_threshold)
-        self.macd_exit_enabled = bool(macd_exit_enabled)
+        self.short_phase_exit_enabled = bool(short_phase_exit_enabled)
+        self.break_even_consecutive_bars = int(break_even_consecutive_bars)
 
-        self.mfi_exit_enabled = bool(mfi_exit_enabled)
-        self.mfi_threshold = float(mfi_threshold)
-        self.mfi_consecutive_days = int(mfi_consecutive_days)
-
-        self.sl_sensitivity = float(sl_sensitivity)
-        self.sl_max_pct = float(sl_max_pct)
-        self.sl_min_pct = float(sl_min_pct)
+        self.trailing_sl_pct = float(trailing_sl_pct)
 
         self._ma_column = self._resolve_ma_column(self.ema_sma, self.ma_length)
 
-        # Per-symbol cache of (entry_date, entry_bar_index) and a flag tracking
-        # whether the long-term moving SL has been armed (had its first move).
+        # Per-symbol cache of (entry_date, entry_bar_index).
         self._entry_bar_index: Dict[str, Tuple[pd.Timestamp, int]] = {}
-        self._long_term_sl_armed: Dict[str, bool] = {}
 
         super().__init__(
             ma_offset=self.ma_offset,
@@ -168,15 +135,9 @@ class AlphaTrendV2C2Strategy(BaseStrategy):
             risk_perc=self.risk_perc,
             peace_period_candles=self.peace_period_candles,
             short_term_candles=self.short_term_candles,
-            adx_exit_enabled=self.adx_exit_enabled,
-            adx_threshold=self.adx_threshold,
-            macd_exit_enabled=self.macd_exit_enabled,
-            mfi_exit_enabled=self.mfi_exit_enabled,
-            mfi_threshold=self.mfi_threshold,
-            mfi_consecutive_days=self.mfi_consecutive_days,
-            sl_sensitivity=self.sl_sensitivity,
-            sl_max_pct=self.sl_max_pct,
-            sl_min_pct=self.sl_min_pct,
+            short_phase_exit_enabled=self.short_phase_exit_enabled,
+            break_even_consecutive_bars=self.break_even_consecutive_bars,
+            trailing_sl_pct=self.trailing_sl_pct,
         )
 
     # ------------------------------------------------------------------
@@ -228,28 +189,16 @@ class AlphaTrendV2C2Strategy(BaseStrategy):
                 f"{self.short_term_candles}"
             )
 
-        if self.mfi_consecutive_days < 1:
+        if self.break_even_consecutive_bars < 1:
             raise ValueError(
-                f"mfi_consecutive_days must be >= 1, got "
-                f"{self.mfi_consecutive_days}"
+                f"break_even_consecutive_bars must be >= 1, got "
+                f"{self.break_even_consecutive_bars}"
             )
 
-        if self.sl_max_pct <= 0 or self.sl_max_pct >= 100:
+        if self.trailing_sl_pct <= 0 or self.trailing_sl_pct >= 100:
             raise ValueError(
-                f"sl_max_pct must be in (0, 100), got {self.sl_max_pct}"
-            )
-        if self.sl_min_pct <= 0 or self.sl_min_pct >= 100:
-            raise ValueError(
-                f"sl_min_pct must be in (0, 100), got {self.sl_min_pct}"
-            )
-        if self.sl_min_pct > self.sl_max_pct:
-            raise ValueError(
-                f"sl_min_pct ({self.sl_min_pct}) must be <= "
-                f"sl_max_pct ({self.sl_max_pct})"
-            )
-        if self.sl_sensitivity < 0:
-            raise ValueError(
-                f"sl_sensitivity must be >= 0, got {self.sl_sensitivity}"
+                f"trailing_sl_pct must be in (0, 100), got "
+                f"{self.trailing_sl_pct}"
             )
 
     # ------------------------------------------------------------------
@@ -260,14 +209,7 @@ class AlphaTrendV2C2Strategy(BaseStrategy):
         return TradeDirection.LONG
 
     def required_columns(self) -> List[str]:
-        cols = ["date", "close", "atr_14_atr", self._ma_column]
-        if self.adx_exit_enabled:
-            cols.append("adx_14_adx")
-        if self.macd_exit_enabled:
-            cols.append("macd_14_macd_signal")
-        if self.mfi_exit_enabled:
-            cols.append("mfi_14_mfi")
-        return cols
+        return ["date", "close", "atr_14_atr", self._ma_column]
 
     # ------------------------------------------------------------------
     # Indicator prep
@@ -298,8 +240,6 @@ class AlphaTrendV2C2Strategy(BaseStrategy):
         if not is_long_signal:
             return None
 
-        # Reset long-term SL state for this symbol on any new entry.
-        self._long_term_sl_armed[context.symbol] = False
         # Invalidate any stale entry-bar cache from a previous trade.
         self._entry_bar_index.pop(context.symbol, None)
 
@@ -389,51 +329,37 @@ class AlphaTrendV2C2Strategy(BaseStrategy):
     # ------------------------------------------------------------------
     # Sub-rules
     # ------------------------------------------------------------------
-    def _adx_exit(self, context: StrategyContext) -> Optional[bool]:
-        adx = context.get_indicator_value("adx_14_adx")
-        if not self._is_valid(adx):
-            return None
-        return bool(adx < self.adx_threshold)
+    def _break_even_exit(self, context: StrategyContext,
+                         bars_since_entry: int) -> bool:
+        """Return True if the close has stayed strictly below the entry
+        price for ``break_even_consecutive_bars`` consecutive bars
+        (including the current bar).
 
-    def _macd_exit(self, context: StrategyContext) -> Optional[bool]:
-        macd_signal = context.get_indicator_value("macd_14_macd_signal")
-        if not self._is_valid(macd_signal):
-            return None
-        return bool(macd_signal < self.MACD_EXIT_LEVEL)
+        The rule cannot look further back than the entry bar itself, so at
+        least that many bars must have elapsed since entry.
+        """
+        n = self.break_even_consecutive_bars
+        # The rule checks the current bar plus (n-1) prior bars; we only
+        # consider bars from the entry bar onwards (exclusive of entry bar).
+        if bars_since_entry < n:
+            return False
 
-    def _mfi_exit(self, context: StrategyContext) -> Optional[bool]:
-        if context.current_index < self.mfi_consecutive_days - 1:
-            return None
-        for k in range(self.mfi_consecutive_days):
-            value = context.get_indicator_value("mfi_14_mfi", offset=-k)
-            if not self._is_valid(value):
-                return None
-            if value >= self.mfi_threshold:
+        entry_price = float(context.position.entry_price)
+        for k in range(n):
+            close = context.get_indicator_value("close", offset=-k)
+            if not self._is_valid(close):
+                return False
+            if float(close) >= entry_price:
                 return False
         return True
 
     # ------------------------------------------------------------------
-    # Long-term moving SL
+    # Long-term trailing SL
     # ------------------------------------------------------------------
-    def _long_term_sl_price(self, context: StrategyContext,
-                            bars_since_entry: int) -> float:
-        """Compute the current long-term SL price from the linear schedule.
-
-        ``sl_pct = max(sl_max_pct - sl_sensitivity * bars_since_entry,
-        sl_min_pct)`` then ``SL = close * (1 - sl_pct/100)`` for a long
-        position.
-        """
-        sl_pct = self.sl_max_pct - self.sl_sensitivity * float(bars_since_entry)
-        if sl_pct < self.sl_min_pct:
-            sl_pct = self.sl_min_pct
-        return context.current_price * (1.0 - sl_pct / 100.0)
-
     def should_adjust_stop(self, context: StrategyContext) -> Optional[float]:
-        """Move the SL every bar in the long-term stage, tightening only.
-
-        The first move only happens when the computed SL is at least the
-        current SL (i.e. there is enough room to tighten). The engine also
-        enforces monotonic tightening for LONG positions.
+        """Maintain a trailing SL at ``trailing_sl_pct`` below close during
+        the long-term stage. The SL only moves up: the engine also enforces
+        monotonic tightening for LONG positions.
         """
         if not context.has_position:
             return None
@@ -444,20 +370,9 @@ class AlphaTrendV2C2Strategy(BaseStrategy):
         if self._stage(bars) != "long":
             return None
 
+        new_stop = context.current_price * (1.0 - self.trailing_sl_pct / 100.0)
         current_stop = context.position.stop_loss
-        new_stop = self._long_term_sl_price(context, bars)
 
-        symbol = context.symbol
-        armed = self._long_term_sl_armed.get(symbol, False)
-
-        if not armed:
-            if current_stop is not None and new_stop < current_stop:
-                # Not enough room yet - wait for a future bar.
-                return None
-            self._long_term_sl_armed[symbol] = True
-            return new_stop
-
-        # Already armed - only tighten.
         if current_stop is not None and new_stop <= current_stop:
             return None
         return new_stop
@@ -480,21 +395,18 @@ class AlphaTrendV2C2Strategy(BaseStrategy):
             return None
 
         if stage == "short":
-            fired: List[str] = []
-            if self.adx_exit_enabled and self._adx_exit(context) is True:
-                fired.append("ADX")
-            if self.macd_exit_enabled and self._macd_exit(context) is True:
-                fired.append("MACD")
-            if fired:
+            # Initial SL is always active (engine-handled). The break-even
+            # consecutive-bars rule is optional.
+            if self.short_phase_exit_enabled and self._break_even_exit(context, bars):
                 return Signal.sell(
-                    reason=f"Short-term exit ({', '.join(fired)})"
+                    reason=(
+                        f"Short-term exit (close below entry for "
+                        f"{self.break_even_consecutive_bars} bars)"
+                    )
                 )
             return None
 
-        # Long-term: only the MFI sub-rule can generate a strategy exit.
-        # (The moving SL is handled in should_adjust_stop; the vulnerability
-        # scorer continues to run at the portfolio level as usual.)
-        if self.mfi_exit_enabled and self._mfi_exit(context) is True:
-            return Signal.sell(reason="Long-term exit (MFI)")
-
+        # Long-term: no strategy-level exit beyond the trailing SL (handled
+        # in should_adjust_stop) and the portfolio-level vulnerability
+        # scorer.
         return None

@@ -1,0 +1,25 @@
+{
+  "strategy_name": "AlphaTrendV2C2Strategy",
+  "preset_name": "AlphaTrendV2Combined",
+  "description": "",
+  "parameters": {
+    "ma_length": 14,
+    "atr_sl": 2.0,
+    "risk_perc": 1.5,
+    "peace_period_candles": 10,
+    "adx_exit_enabled": 1,
+    "macd_exit_enabled": 1,
+    "mfi_exit_enabled": 1,
+    "ma_offset": 10,
+    "ema_sma": "SMA",
+    "short_term_candles": 100,
+    "adx_threshold": 10.0,
+    "mfi_threshold": 40.0,
+    "mfi_consecutive_days": 14,
+    "sl_sensitivity": 0.5,
+    "sl_max_pct": 20.0,
+    "sl_min_pct": 5.0
+  },
+  "created_at": "2026-04-19T18:43:08.702430",
+  "modified_at": "2026-04-19T19:11:05.844955"
+}
