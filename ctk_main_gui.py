@@ -216,6 +216,12 @@ class CTkMainLauncher(ctk.CTk):
                 "description": "Explore how the vulnerability score evolves per trade and tune the parameters live",
                 "icon": "\U0001F4C9",  # Chart with downwards trend
                 "command": self._launch_vulnerability_visualizer
+            },
+            {
+                "title": "Pattern Analysis",
+                "description": "Analyze MA-crossover signal density before each trade entry to find predictive patterns",
+                "icon": "\U0001F50E",  # Magnifying glass tilted right
+                "command": self._launch_pattern_analysis
             }
         ]
 
@@ -290,6 +296,10 @@ class CTkMainLauncher(ctk.CTk):
     def _launch_vulnerability_visualizer(self):
         """Launch the Vulnerability Score Visualizer GUI."""
         self._launch_module("vulnerability_visualizer")
+
+    def _launch_pattern_analysis(self):
+        """Launch the Pattern Analysis GUI."""
+        self._launch_module("pattern_analysis")
 
     def _show_error(self, message: str):
         """Show an error dialog."""
