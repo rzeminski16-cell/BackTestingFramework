@@ -1,0 +1,17 @@
+# Example config for tools/run_pattern_analysis.py
+#
+# Each entry under `combos` is one MA configuration to analyze.
+#   ma_type: SMA or EMA
+#   ma_length: 7, 14, 20, 30, or 50
+#   ma_offset: number of bars to shift the MA (>= 1)
+#
+# `windows` is optional; defaults to [30, 60, 90, 120].
+
+combos:
+  - {ma_type: EMA, ma_length: 14, ma_offset: 5}
+  - {ma_type: EMA, ma_length: 20, ma_offset: 5}
+  - {ma_type: EMA, ma_length: 50, ma_offset: 10}
+  - {ma_type: SMA, ma_length: 14, ma_offset: 5}
+  - {ma_type: SMA, ma_length: 20, ma_offset: 10}
+
+windows: [30, 60, 90, 120]
