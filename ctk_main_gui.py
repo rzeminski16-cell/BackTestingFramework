@@ -210,6 +210,12 @@ class CTkMainLauncher(ctk.CTk):
                 "description": "Test how entry/exit rules affect strategy performance with lookback support",
                 "icon": "\U0001F50D",  # Magnifying glass
                 "command": self._launch_rule_tester
+            },
+            {
+                "title": "Vulnerability Visualizer",
+                "description": "Explore how the vulnerability score evolves per trade and tune the parameters live",
+                "icon": "\U0001F4C9",  # Chart with downwards trend
+                "command": self._launch_vulnerability_visualizer
             }
         ]
 
@@ -280,6 +286,10 @@ class CTkMainLauncher(ctk.CTk):
     def _launch_rule_tester(self):
         """Launch the Rule Tester GUI."""
         self._launch_module("rule_tester")
+
+    def _launch_vulnerability_visualizer(self):
+        """Launch the Vulnerability Score Visualizer GUI."""
+        self._launch_module("vulnerability_visualizer")
 
     def _show_error(self, message: str):
         """Show an error dialog."""
