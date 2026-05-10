@@ -23,6 +23,7 @@ import platform
 import threading
 import queue
 import customtkinter as ctk
+import tkinter as tk
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional
@@ -989,27 +990,59 @@ class CTkOptimizationResultsWindow(ctk.CTkToplevel):
 
         Theme.create_button(btn_frame, "Close", command=self.destroy, style="secondary", width=100).pack(side="right")
 
+    def _is_alive(self) -> bool:
+        """Return True if this window's tk widgets still exist."""
+        try:
+            return bool(self.winfo_exists())
+        except tk.TclError:
+            return False
+
     def log(self, message: str):
-        self.progress_panel.log(message)
+        if not self._is_alive():
+            return
+        try:
+            self.progress_panel.log(message)
+        except tk.TclError:
+            pass
 
     def update_progress(self, current: int, total: int, detail: str = ""):
+        if not self._is_alive():
+            return
         progress = current / total if total > 0 else 0
-        self.progress_panel.update_progress(progress, detail)
+        try:
+            self.progress_panel.update_progress(progress, detail)
+        except tk.TclError:
+            pass
 
     def on_complete(self):
-        self.progress_panel.set_complete("Optimization Complete")
-        self.cancel_btn.configure(state="disabled")
+        if not self._is_alive():
+            return
+        try:
+            self.progress_panel.set_complete("Optimization Complete")
+            self.cancel_btn.configure(state="disabled")
+        except tk.TclError:
+            pass
 
     def on_error(self, error: str):
-        self.progress_panel.log(f"ERROR: {error}", level="error")
-        self.progress_panel.status_label.configure(text="Error", text_color=Colors.ERROR)
+        if not self._is_alive():
+            return
+        try:
+            self.progress_panel.log(f"ERROR: {error}", level="error")
+            self.progress_panel.status_label.configure(text="Error", text_color=Colors.ERROR)
+        except tk.TclError:
+            pass
 
     def _on_cancel(self):
         if self.on_cancel_callback:
             self.on_cancel_callback()
 
     def disable_cancel(self):
-        self.cancel_btn.configure(state="disabled")
+        if not self._is_alive():
+            return
+        try:
+            self.cancel_btn.configure(state="disabled")
+        except tk.TclError:
+            pass
 
 
 # =============================================================================

@@ -23,6 +23,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Type
 import customtkinter as ctk
+import tkinter as tk
 
 from Classes.GUI.ctk_theme import Theme, Colors, Fonts, Sizes, ask_yes_no, show_error, show_info, ProgressPanel
 from Classes.GUI.ctk_components import SecuritySelector
@@ -1007,13 +1008,31 @@ class CTkUnivariateOptimizationGUI(ctk.CTk):
 
     def _update_progress(self, stage: str, current: int, total: int):
         """Update progress display."""
+        # Guard against the window/widgets being destroyed before this
+        # `after`-scheduled callback fires.
+        try:
+            if not self.winfo_exists():
+                return
+        except tk.TclError:
+            return
         progress = current / total if total > 0 else 0
-        self.progress_panel.update_progress(progress, stage)
-        self.progress_panel.log(f"[{current}/{total}] {stage}")
+        try:
+            self.progress_panel.update_progress(progress, stage)
+            self.progress_panel.log(f"[{current}/{total}] {stage}")
+        except tk.TclError:
+            pass
 
     def _on_optimization_complete(self, result):
         """Handle optimization completion."""
-        self.progress_panel.set_complete("Optimization Complete")
+        try:
+            if not self.winfo_exists():
+                return
+        except tk.TclError:
+            return
+        try:
+            self.progress_panel.set_complete("Optimization Complete")
+        except tk.TclError:
+            return
 
         # Display summary
         self.progress_panel.log("\n" + "=" * 50)
@@ -1040,7 +1059,15 @@ class CTkUnivariateOptimizationGUI(ctk.CTk):
 
     def _on_optimization_error(self, error: str):
         """Handle optimization error."""
-        self.progress_panel.log(f"\nERROR: {error}", level="error")
+        try:
+            if not self.winfo_exists():
+                return
+        except tk.TclError:
+            return
+        try:
+            self.progress_panel.log(f"\nERROR: {error}", level="error")
+        except tk.TclError:
+            return
         show_error(self, "Optimization Error", f"Optimization failed: {error}")
         self._reset_ui()
 
