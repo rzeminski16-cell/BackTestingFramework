@@ -107,7 +107,103 @@ def _skew(arr: np.ndarray) -> float:
 def _coerce_float_column(df: pd.DataFrame, col: str) -> pd.Series:
     if col not in df.columns:
         return pd.Series([], dtype="float64")
-    return pd.to_numeric(df[col], errors="coerce")
+    return _robust_to_numeric(df[col])
+
+
+# Strings that mean "missing" rather than "malformed".
+_NULL_STRINGS = {
+    "", "nan", "na", "n/a", "none", "null", "-", "--", "?",
+}
+
+
+def _robust_to_numeric(series: pd.Series) -> pd.Series:
+    """Coerce a pandas Series of mixed/dirty strings to numeric.
+
+    Handles:
+      * already-numeric series (passed through unchanged)
+      * leading/trailing whitespace
+      * % / $ / GBP / EUR / JPY / commas (thousand separators)
+      * parentheses for negatives, e.g. ``(1.23)`` -> ``-1.23``
+      * common null-tokens (empty, ``nan``, ``N/A``, ``null``, ``-``)
+
+    Returns:
+        A numeric series of float64. Invalid values become NaN; null-tokens
+        are also NaN (the caller can distinguish missing vs malformed by
+        inspecting the original series).
+    """
+    # Fast path: already numeric.
+    if pd.api.types.is_numeric_dtype(series):
+        return pd.to_numeric(series, errors="coerce")
+
+    # Normalise to string, strip, lowercase for null detection.
+    s = series.astype(str).str.strip()
+
+    # Treat known null tokens as NaN
+    null_mask = s.str.lower().isin(_NULL_STRINGS)
+
+    # Strip currency, percent, comma thousands separators
+    cleaned = (
+        s.str.replace("%", "", regex=False)
+         .str.replace("$", "", regex=False)
+         .str.replace("£", "", regex=False)   # GBP
+         .str.replace("€", "", regex=False)   # EUR
+         .str.replace("¥", "", regex=False)   # JPY/CNY
+         .str.replace(",", "", regex=False)
+         .str.strip()
+    )
+    # Parentheses for negatives: (1.23) -> -1.23
+    paren_mask = cleaned.str.startswith("(") & cleaned.str.endswith(")")
+    cleaned = cleaned.where(
+        ~paren_mask,
+        "-" + cleaned.str.slice(1, -1),
+    )
+
+    out = pd.to_numeric(cleaned, errors="coerce")
+    out[null_mask] = np.nan
+    return out
+
+
+def _parse_diagnostic(
+    series: pd.Series, parsed: pd.Series, source_files: pd.Series
+) -> tuple[int, int, list[str]]:
+    """Return (missing_count, malformed_count, sample_bad_values).
+
+    Distinguishes between values that were missing in the source (NaN /
+    empty / common null-token) and values that look populated but failed
+    to parse as numbers.
+    """
+    if pd.api.types.is_numeric_dtype(series):
+        # Numeric column: only "missing" can apply.
+        missing = int(parsed.isna().sum())
+        return missing, 0, []
+
+    s_str = series.astype(str).str.strip()
+    null_mask = s_str.str.lower().isin(_NULL_STRINGS) | series.isna()
+    parsed_nan = parsed.isna()
+    malformed_mask = parsed_nan & ~null_mask
+
+    missing = int(null_mask.sum())
+    malformed = int(malformed_mask.sum())
+
+    samples: list[str] = []
+    if malformed:
+        bad_values = series[malformed_mask].astype(str).head(5).tolist()
+        bad_files = source_files[malformed_mask].head(5).tolist() if source_files is not None else []
+        for i, v in enumerate(bad_values):
+            file_hint = f" [{bad_files[i]}]" if i < len(bad_files) else ""
+            samples.append(f"'{v}'{file_hint}")
+    return missing, malformed, samples
+
+
+def _column_presence_per_file(frames: List[pd.DataFrame], col: str) -> List[Path]:
+    """Return list of source file names where the column is missing."""
+    missing_files: List[Path] = []
+    for f in frames:
+        if col not in f.columns:
+            # Stash the file name from the _source_file column we always add
+            src = f["_source_file"].iloc[0] if "_source_file" in f.columns and len(f) > 0 else "?"
+            missing_files.append(src)
+    return missing_files
 
 
 def _compute_r_multiples(df: pd.DataFrame) -> np.ndarray:
@@ -147,7 +243,11 @@ def _compute_r_multiples(df: pd.DataFrame) -> np.ndarray:
 
 
 def _load_single(path: Path) -> pd.DataFrame:
-    df = pd.read_csv(path)
+    # utf-8-sig strips a BOM if present (which would otherwise hide the
+    # first column behind '﻿trade_id' and break column lookups).
+    df = pd.read_csv(path, encoding="utf-8-sig", skipinitialspace=True)
+    # Normalise column names: strip whitespace (handles trailing tabs etc.).
+    df.columns = [str(c).strip() for c in df.columns]
     df["_source_file"] = path.name
     return df
 
@@ -181,6 +281,7 @@ def load_trade_logs(
     paths = [Path(p) for p in paths]
     frames = [_load_single(p) for p in paths]
     df = pd.concat(frames, ignore_index=True)
+    src_series = df["_source_file"] if "_source_file" in df.columns else pd.Series([""] * len(df))
 
     warnings: List[str] = []
 
@@ -195,12 +296,31 @@ def load_trade_logs(
     else:
         if pct_col not in df.columns:
             raise ValueError(f"Column '{pct_col}' not present in CSV")
-        raw = pd.to_numeric(df[pct_col], errors="coerce")
-        nan_count = int(raw.isna().sum())
-        if nan_count:
+
+        # Flag files that are missing the column entirely - their rows show
+        # up as NaN after concat and shouldn't be reported as "malformed".
+        missing_in_files = _column_presence_per_file(frames, pct_col)
+        if missing_in_files:
             warnings.append(
-                f"Dropped {nan_count} rows with non-numeric '{pct_col}' values."
+                f"Column '{pct_col}' is missing in {len(missing_in_files)} "
+                f"file(s): {', '.join(map(str, missing_in_files[:3]))}"
+                + ("..." if len(missing_in_files) > 3 else "")
             )
+
+        raw = _robust_to_numeric(df[pct_col])
+        missing, malformed, samples = _parse_diagnostic(df[pct_col], raw, src_series)
+
+        if malformed:
+            sample_str = ", ".join(samples)
+            warnings.append(
+                f"Dropped {malformed} row(s) with unparseable '{pct_col}' "
+                f"values. Examples: {sample_str}"
+            )
+        if missing:
+            warnings.append(
+                f"Dropped {missing} row(s) with missing/empty '{pct_col}' values."
+            )
+
         # Convert percent units to fractional units (1.5% -> 0.015).
         pct_returns = raw.dropna().to_numpy(dtype="float64") / 100.0
 
@@ -208,7 +328,15 @@ def load_trade_logs(
     if r_multiple_column is not None:
         if r_multiple_column not in df.columns:
             raise ValueError(f"Column '{r_multiple_column}' not present in CSV")
-        r_raw = pd.to_numeric(df[r_multiple_column], errors="coerce")
+        r_raw = _robust_to_numeric(df[r_multiple_column])
+        missing_r, malformed_r, samples_r = _parse_diagnostic(
+            df[r_multiple_column], r_raw, src_series
+        )
+        if malformed_r:
+            warnings.append(
+                f"Dropped {malformed_r} row(s) with unparseable "
+                f"'{r_multiple_column}' values. Examples: {', '.join(samples_r)}"
+            )
         r_multiples = r_raw.dropna().to_numpy(dtype="float64")
     else:
         r_multiples = _compute_r_multiples(df)
