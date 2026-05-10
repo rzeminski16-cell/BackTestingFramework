@@ -213,15 +213,9 @@ class CTkMainLauncher(ctk.CTk):
             },
             {
                 "title": "Vulnerability Visualizer",
-                "description": "Visualize vulnerability score evolution across trades and tune parameters interactively",
-                "icon": "\U0001F4C9",  # Chart with downward trend
+                "description": "Explore how the vulnerability score evolves per trade and tune the parameters live",
+                "icon": "\U0001F4C9",  # Chart with downwards trend
                 "command": self._launch_vulnerability_visualizer
-            },
-            {
-                "title": "Monte Carlo",
-                "description": "Bootstrap trade-log returns to simulate equity curves, drawdowns and probability of loss",
-                "icon": "\U0001F3B2",  # Game die
-                "command": self._launch_monte_carlo
             }
         ]
 
@@ -296,10 +290,6 @@ class CTkMainLauncher(ctk.CTk):
     def _launch_vulnerability_visualizer(self):
         """Launch the Vulnerability Score Visualizer GUI."""
         self._launch_module("vulnerability_visualizer")
-
-    def _launch_monte_carlo(self):
-        """Launch the Monte Carlo simulation GUI."""
-        self._launch_module("monte_carlo")
 
     def _show_error(self, message: str):
         """Show an error dialog."""
