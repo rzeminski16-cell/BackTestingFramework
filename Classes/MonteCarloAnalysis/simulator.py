@@ -225,6 +225,12 @@ class MonteCarloSimulator:
         else:
             raise ValueError(f"Unknown sampling method: {cfg.sampling_method}")
 
+        # Clip extreme sampled returns. This is most useful when sampling
+        # R-multiples from a pool that contains a few outliers from tight
+        # stops; without clipping those values can dominate the simulation.
+        if cfg.return_clip > 0:
+            sampled = np.clip(sampled, -cfg.return_clip, cfg.return_clip)
+
         # Apply costs (commission + slippage) once, vectorized.
         if cfg.commission_pct or cfg.slippage_pct:
             sampled = sampled - cfg.commission_pct - cfg.slippage_pct

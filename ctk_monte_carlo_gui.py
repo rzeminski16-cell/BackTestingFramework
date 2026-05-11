@@ -232,9 +232,15 @@ class DataReviewStep(CTkWizardStep):
         )
         Theme.create_hint(
             parent,
-            "Choose which column drives the simulation. Per-trade returns from "
-            "pl_pct are scaled by `risk_per_trade`. R-multiples are interpreted "
-            "directly: a +1R sampled trade gains `risk_per_trade * equity`.",
+            "% returns and R-multiples model different sizing schemes and will "
+            "give different results:\n"
+            "  - % returns: equity update = equity * (1 + risk * pct). Models "
+            "fixed-fraction positions (1% of equity invested per trade).\n"
+            "  - R-multiples: equity update = equity * (1 + risk * R). Models "
+            "risk-based sizing (a fixed % of equity risked per trade), so a tight "
+            "stop means a large position. This is the standard quant interpretation.\n"
+            "R-multiples drop trades without a valid initial_stop_loss, so the "
+            "trade count and win rate may differ from % returns.",
         ).pack(anchor="w", pady=(0, Sizes.PAD_S))
 
         self.return_source_var = ctk.StringVar(value=TradeLogReturnSource.PCT_RETURN.value)
@@ -255,12 +261,18 @@ class DataReviewStep(CTkWizardStep):
             command=self._refresh,
         ).pack(side="left")
 
-        # Summary stats card
+        # Side-by-side summary stats
         Theme.create_header(parent, "Summary statistics", size="s").pack(
             anchor="w", pady=(Sizes.PAD_M, Sizes.PAD_XS),
         )
-        self.summary_pct_frame = Theme.create_card(parent)
-        self.summary_pct_frame.pack(fill="x", pady=Sizes.PAD_XS)
+        stats_row = Theme.create_frame(parent)
+        stats_row.pack(fill="x", pady=Sizes.PAD_XS)
+        self.summary_pct_frame = Theme.create_card(stats_row)
+        self.summary_pct_frame.pack(side="left", fill="both", expand=True,
+                                    padx=(0, Sizes.PAD_S))
+        self.summary_r_frame = Theme.create_card(stats_row)
+        self.summary_r_frame.pack(side="left", fill="both", expand=True,
+                                  padx=(Sizes.PAD_S, 0))
 
         # Warnings
         Theme.create_header(parent, "Validation", size="s").pack(
@@ -277,53 +289,122 @@ class DataReviewStep(CTkWizardStep):
         if log is None:
             return
 
-        # Refresh summary card
-        for child in self.summary_pct_frame.winfo_children():
+        source = TradeLogReturnSource(self.return_source_var.get())
+        self.mc_wizard.return_source = source
+        self.mc_wizard.return_pool = log.returns_for(source)
+
+        self._render_card(
+            self.summary_pct_frame, "Trade returns (%)",
+            log.summary_stats(TradeLogReturnSource.PCT_RETURN),
+            unit="%", scale=100.0,
+            is_selected=(source == TradeLogReturnSource.PCT_RETURN),
+        )
+        self._render_card(
+            self.summary_r_frame, "R-multiples",
+            log.summary_stats(TradeLogReturnSource.R_MULTIPLE),
+            unit="R", scale=1.0,
+            is_selected=(source == TradeLogReturnSource.R_MULTIPLE),
+        )
+
+        # Outlier advisory for R-multiples
+        r_stats = log.summary_stats(TradeLogReturnSource.R_MULTIPLE)
+        extras: List[str] = []
+        if r_stats["count"] > 0 and r_stats["outliers_10"] > 0:
+            extras.append(
+                f"R-multiple pool contains {r_stats['outliers_10']} trade(s) "
+                f"with |R| > 10 (max |R|={r_stats['abs_max']:.1f}). These "
+                f"likely come from very tight stops and can dominate Monte "
+                f"Carlo results; consider enabling R-multiple clipping in "
+                f"the Advanced step."
+            )
+        # Win-rate / count mismatch advisory
+        pct_stats = log.summary_stats(TradeLogReturnSource.PCT_RETURN)
+        if (pct_stats["count"] > 0 and r_stats["count"] > 0
+                and pct_stats["count"] != r_stats["count"]):
+            diff = pct_stats["count"] - r_stats["count"]
+            extras.append(
+                f"R-multiples are computed on {r_stats['count']} of "
+                f"{pct_stats['count']} trades (excluded {diff} without a "
+                f"valid initial_stop_loss). This is why the two pools have "
+                f"different win rates."
+            )
+        if self.mc_wizard.return_pool is None or self.mc_wizard.return_pool.size == 0:
+            extras.append(
+                "Selected return source has no usable data. Pick the other "
+                "source or load CSVs with the missing columns."
+            )
+        self._refresh_warnings(extras)
+
+    def _render_card(self, frame, title: str, stats: dict, *,
+                     unit: str, scale: float, is_selected: bool) -> None:
+        for child in frame.winfo_children():
             child.destroy()
 
-        source = TradeLogReturnSource(self.return_source_var.get())
-        arr = log.returns_for(source)
-        stats = log.summary_stats(source)
+        border_color = Colors.PRIMARY_LIGHT if is_selected else Colors.BORDER
+        try:
+            frame.configure(border_color=border_color, border_width=2)
+        except Exception:
+            pass
 
-        if arr.size == 0:
+        header_row = Theme.create_frame(frame)
+        header_row.pack(fill="x", padx=Sizes.PAD_M, pady=(Sizes.PAD_M, 0))
+        Theme.create_label(
+            header_row, title, font=Fonts.LABEL_BOLD,
+            text_color=Colors.PRIMARY_LIGHT if is_selected else Colors.TEXT_SECONDARY,
+        ).pack(side="left")
+        if is_selected:
             Theme.create_label(
-                self.summary_pct_frame,
-                "No data available for the selected return source. "
-                "(R-multiples need entry_price, exit_price and initial_stop_loss.)",
-                text_color=Colors.WARNING, wraplength=700,
-            ).pack(anchor="w", padx=Sizes.PAD_M, pady=Sizes.PAD_M)
-            self.mc_wizard.return_source = source
-            self.mc_wizard.return_pool = arr
-            self._refresh_warnings(extra=["Return source has no usable data."])
-            return
+                header_row, "* used for simulation", font=Fonts.HINT,
+                text_color=Colors.PRIMARY_LIGHT,
+            ).pack(side="left", padx=(Sizes.PAD_S, 0))
 
-        unit = "%" if source == TradeLogReturnSource.PCT_RETURN else "R"
-        # Normalise display: pct_returns are stored as fractions
-        scale = 100.0 if source == TradeLogReturnSource.PCT_RETURN else 1.0
+        if stats["count"] == 0:
+            Theme.create_label(
+                frame, "No usable data for this source.",
+                text_color=Colors.WARNING, wraplength=350,
+            ).pack(anchor="w", padx=Sizes.PAD_M, pady=Sizes.PAD_M)
+            return
 
         rows = [
             ("Trades", f"{stats['count']:,}"),
+            ("Win rate", f"{stats['win_rate'] * 100:.2f}%"),
             ("Mean", f"{stats['mean'] * scale:+.4f} {unit}"),
             ("Median", f"{stats['median'] * scale:+.4f} {unit}"),
             ("Std dev", f"{stats['std'] * scale:.4f} {unit}"),
-            ("Min / Max", f"{stats['min'] * scale:+.4f} / {stats['max'] * scale:+.4f} {unit}"),
-            ("Win rate", f"{stats['win_rate'] * 100:.2f}%"),
+            ("Min", f"{stats['min'] * scale:+.4f} {unit}"),
+            ("Max", f"{stats['max'] * scale:+.4f} {unit}"),
+            ("5th pct", f"{stats['p5'] * scale:+.4f} {unit}"),
+            ("95th pct", f"{stats['p95'] * scale:+.4f} {unit}"),
             ("Skew", f"{stats['skew']:+.3f}"),
         ]
-        grid = Theme.create_frame(self.summary_pct_frame)
+        # Outlier counts make sense for R-multiples (where |R| is unitless)
+        if unit == "R":
+            rows.extend([
+                ("|R| > 5", f"{stats['outliers_5']}"),
+                ("|R| > 10", f"{stats['outliers_10']}"),
+                ("|R| > 20", f"{stats['outliers_20']}"),
+            ])
+
+        grid = Theme.create_frame(frame)
         grid.pack(fill="x", padx=Sizes.PAD_M, pady=Sizes.PAD_M)
         for i, (k, v) in enumerate(rows):
             Theme.create_label(
                 grid, k + ":", font=Fonts.LABEL_BOLD,
                 text_color=Colors.TEXT_SECONDARY,
             ).grid(row=i, column=0, sticky="w", padx=(0, Sizes.PAD_M), pady=2)
-            Theme.create_label(
-                grid, v, font=Fonts.MONO,
-            ).grid(row=i, column=1, sticky="w", pady=2)
 
-        self.mc_wizard.return_source = source
-        self.mc_wizard.return_pool = arr
-        self._refresh_warnings()
+            # Outlier rows colored if non-zero
+            value_color = Colors.TEXT_PRIMARY
+            if unit == "R" and k.startswith("|R|"):
+                try:
+                    n = int(v)
+                    if n > 0:
+                        value_color = Colors.WARNING if k == "|R| > 5" else Colors.ERROR
+                except ValueError:
+                    pass
+            Theme.create_label(
+                grid, v, font=Fonts.MONO, text_color=value_color,
+            ).grid(row=i, column=1, sticky="w", pady=2)
 
     def _refresh_warnings(self, extra: Optional[List[str]] = None) -> None:
         for child in self.warnings_frame.winfo_children():
@@ -592,6 +673,9 @@ class AdvancedStep(CTkWizardStep):
         self.dd_reduced_risk_var: Optional[ctk.StringVar] = None
         self.commission_var: Optional[ctk.StringVar] = None
         self.slippage_var: Optional[ctk.StringVar] = None
+        self.clip_enabled_var: Optional[ctk.BooleanVar] = None
+        self.clip_value_var: Optional[ctk.StringVar] = None
+        self.clip_entry: Optional[ctk.CTkEntry] = None
         self.seed_enabled_var: Optional[ctk.BooleanVar] = None
         self.seed_var: Optional[ctk.StringVar] = None
 
@@ -672,6 +756,43 @@ class AdvancedStep(CTkWizardStep):
         e2.configure(textvariable=self.slippage_var)
         e2.grid(row=1, column=1, sticky="w", padx=(Sizes.PAD_M, 0))
 
+        # --- Outlier clipping ----
+        clip_card = Theme.create_card(parent)
+        clip_card.pack(fill="x", pady=Sizes.PAD_S)
+        Theme.create_header(clip_card, "Return clipping", size="s").pack(
+            anchor="w", padx=Sizes.PAD_M, pady=(Sizes.PAD_M, Sizes.PAD_XS),
+        )
+
+        self.clip_enabled_var = ctk.BooleanVar(value=False)
+        Theme.create_switch(
+            clip_card, "Clip extreme sampled returns",
+            variable=self.clip_enabled_var, command=self._toggle_clip,
+        ).pack(anchor="w", padx=Sizes.PAD_M)
+
+        Theme.create_hint(
+            clip_card,
+            "Caps every sampled return at +/- the value below before equity is "
+            "updated. Most useful for R-multiples: trades with tight stops can "
+            "produce R values of -50 or worse, which wipe equity in a single "
+            "sample. A clip of 5-10 R is a common floor for risk-based sizing.",
+        ).pack(anchor="w", padx=Sizes.PAD_M, pady=(0, Sizes.PAD_S))
+
+        clipframe = Theme.create_frame(clip_card)
+        clipframe.pack(fill="x", padx=Sizes.PAD_M, pady=(0, Sizes.PAD_M))
+
+        self.clip_value_var = ctk.StringVar(value="10")
+        Theme.create_label(
+            clipframe, "Clip threshold:", font=Fonts.LABEL_BOLD,
+        ).grid(row=0, column=0, sticky="w", pady=Sizes.PAD_S)
+        self.clip_entry = Theme.create_entry(clipframe, placeholder="10", width=120)
+        self.clip_entry.configure(textvariable=self.clip_value_var)
+        self.clip_entry.grid(row=0, column=1, sticky="w", padx=(Sizes.PAD_M, 0))
+        Theme.create_hint(
+            clipframe,
+            "Units match the selected return source (R for R-multiples, "
+            "% for trade returns).",
+        ).grid(row=0, column=2, sticky="w", padx=(Sizes.PAD_M, 0))
+
         # --- Reproducibility ----
         seed_card = Theme.create_card(parent)
         seed_card.pack(fill="x", pady=Sizes.PAD_S)
@@ -696,6 +817,7 @@ class AdvancedStep(CTkWizardStep):
 
         self._toggle_dd()
         self._toggle_seed()
+        self._toggle_clip()
 
     def on_enter(self) -> None:
         # Update parent estimate now that the user can toggle DD logic.
@@ -716,6 +838,12 @@ class AdvancedStep(CTkWizardStep):
         if self.seed_entry:
             self.seed_entry.configure(state=state)
 
+    def _toggle_clip(self) -> None:
+        enabled = bool(self.clip_enabled_var.get()) if self.clip_enabled_var else False
+        state = "normal" if enabled else "disabled"
+        if self.clip_entry:
+            self.clip_entry.configure(state=state)
+
     def get_summary(self) -> Dict[str, str]:
         s: Dict[str, str] = {}
         if self.dd_enabled_var and self.dd_enabled_var.get():
@@ -725,6 +853,10 @@ class AdvancedStep(CTkWizardStep):
             s["DD reduction"] = "off"
         s["Commission"] = (self.commission_var.get() if self.commission_var else "-") + "%"
         s["Slippage"] = (self.slippage_var.get() if self.slippage_var else "-") + "%"
+        if self.clip_enabled_var and self.clip_enabled_var.get():
+            s["Clip"] = "+/- " + (self.clip_value_var.get() or "-")
+        else:
+            s["Clip"] = "off"
         if self.seed_enabled_var and self.seed_enabled_var.get():
             s["Seed"] = self.seed_var.get() if self.seed_var else "-"
         else:
@@ -756,6 +888,14 @@ class AdvancedStep(CTkWizardStep):
             except (ValueError, TypeError):
                 self.validation_errors.append(f"{name} must be a non-negative number.")
 
+        if self.clip_enabled_var and self.clip_enabled_var.get():
+            try:
+                c = float(self.clip_value_var.get())
+                if c <= 0:
+                    raise ValueError
+            except (ValueError, TypeError):
+                self.validation_errors.append("Clip threshold must be a positive number.")
+
         if self.seed_enabled_var and self.seed_enabled_var.get():
             try:
                 int(self.seed_var.get())
@@ -774,7 +914,10 @@ class MonteCarloResultsWindow(ctk.CTkToplevel):
 
     MAX_PLOTTED_CURVES = 100
 
-    def __init__(self, parent, sim_result: SimulationResult, sim_metrics: SimulationMetrics):
+    def __init__(self, parent, sim_result: SimulationResult,
+                 sim_metrics: SimulationMetrics,
+                 loaded_log: Optional[LoadedTradeLog] = None,
+                 source: Optional[TradeLogReturnSource] = None):
         super().__init__(parent)
         self.title("Monte Carlo Simulation Results")
         self.geometry("1200x800")
@@ -782,6 +925,8 @@ class MonteCarloResultsWindow(ctk.CTkToplevel):
 
         self.sim_result = sim_result
         self.sim_metrics = sim_metrics
+        self.loaded_log = loaded_log
+        self.source = source
         self.analyzer = SimulationAnalyzer(sim_result)
         self._figures: Dict[str, plt.Figure] = {}
 
@@ -812,7 +957,7 @@ class MonteCarloResultsWindow(ctk.CTkToplevel):
         self.tabs.pack(fill="both", expand=True, padx=Sizes.PAD_M, pady=(0, Sizes.PAD_M))
 
         for name in ("Equity Curves", "Final Distribution", "Drawdowns",
-                     "Percentile Curves", "Metrics"):
+                     "Percentile Curves", "R-Multiple Distribution", "Metrics"):
             self.tabs.add(name)
 
     def _populate_tabs(self) -> None:
@@ -820,6 +965,7 @@ class MonteCarloResultsWindow(ctk.CTkToplevel):
         self._build_final_dist_tab(self.tabs.tab("Final Distribution"))
         self._build_drawdown_tab(self.tabs.tab("Drawdowns"))
         self._build_percentile_tab(self.tabs.tab("Percentile Curves"))
+        self._build_r_multiple_tab(self.tabs.tab("R-Multiple Distribution"))
         self._build_metrics_tab(self.tabs.tab("Metrics"))
 
     # ---- chart builders ----
@@ -916,6 +1062,92 @@ class MonteCarloResultsWindow(ctk.CTkToplevel):
         _apply_dark_matplotlib_style(fig)
         fig.tight_layout()
         self._embed_fig(fig, parent, "percentile_curves")
+
+    def _build_r_multiple_tab(self, parent) -> None:
+        """Histogram of R-multiples from the loaded trade log.
+
+        Always plots the R-multiples computed from price + stop columns,
+        independent of which return source was used for the simulation,
+        so the user can inspect the underlying risk-normalised return
+        distribution and spot outliers from tight stops.
+        """
+        if self.loaded_log is None:
+            Theme.create_label(
+                parent,
+                "No loaded trade log was passed to the results window.",
+                text_color=Colors.WARNING,
+            ).pack(expand=True, padx=Sizes.PAD_M, pady=Sizes.PAD_M)
+            return
+
+        r = self.loaded_log.r_multiples
+        if r.size == 0:
+            Theme.create_label(
+                parent,
+                "No R-multiples could be computed from the input data. "
+                "R-multiples require entry_price, exit_price and "
+                "initial_stop_loss columns with valid stops.",
+                wraplength=600, text_color=Colors.WARNING,
+            ).pack(expand=True, padx=Sizes.PAD_M, pady=Sizes.PAD_M)
+            return
+
+        # Stats banner (above the chart)
+        stats = self.loaded_log.summary_stats(TradeLogReturnSource.R_MULTIPLE)
+        banner = Theme.create_frame(parent)
+        banner.pack(fill="x", padx=Sizes.PAD_M, pady=(Sizes.PAD_S, 0))
+        rows = [
+            ("Trades", f"{stats['count']:,}"),
+            ("Win rate", f"{stats['win_rate'] * 100:.1f}%"),
+            ("Mean", f"{stats['mean']:+.3f}R"),
+            ("Median", f"{stats['median']:+.3f}R"),
+            ("Min / Max", f"{stats['min']:+.2f} / {stats['max']:+.2f}R"),
+            ("|R| > 5", f"{stats['outliers_5']}"),
+            ("|R| > 10", f"{stats['outliers_10']}"),
+            ("|R| > 20", f"{stats['outliers_20']}"),
+        ]
+        for i, (k, v) in enumerate(rows):
+            Theme.create_label(
+                banner, f"{k}: {v}",
+                font=Fonts.MONO_S,
+                text_color=Colors.TEXT_SECONDARY,
+            ).grid(row=0, column=i, padx=Sizes.PAD_S, pady=Sizes.PAD_XS, sticky="w")
+
+        # Histogram - main view clipped to a sensible range, plus a separate
+        # "full range" line showing extremes
+        p1, p99 = np.percentile(r, 1), np.percentile(r, 99)
+        view_lo = min(p1, -1.0) - 0.5
+        view_hi = max(p99, 1.0) + 0.5
+        # Cap the view so a single extreme outlier doesn't squash the histogram
+        view_lo = max(view_lo, -30.0)
+        view_hi = min(view_hi, 30.0)
+        in_view = (r >= view_lo) & (r <= view_hi)
+        outside = int((~in_view).sum())
+
+        fig, ax = plt.subplots(figsize=(11, 6), dpi=100)
+        ax.hist(r[in_view], bins=50,
+                color=Colors.CHART_LINE, alpha=0.85, edgecolor=Colors.BORDER)
+        ax.axvline(0, color=Colors.TEXT_MUTED, linewidth=1, alpha=0.6)
+        ax.axvline(float(np.median(r)), color=Colors.CHART_POSITIVE,
+                   linewidth=2, label=f"Median {np.median(r):+.2f}R")
+        ax.axvline(float(np.mean(r)), color=Colors.PRIMARY_LIGHT,
+                   linewidth=1.5, linestyle="--", label=f"Mean {np.mean(r):+.2f}R")
+        # Mark clip threshold if used
+        clip = self.sim_result.config.return_clip
+        if clip > 0 and self.source == TradeLogReturnSource.R_MULTIPLE:
+            ax.axvline(clip, color=Colors.WARNING, linewidth=1.5, linestyle=":",
+                       label=f"Clip +/-{clip:.1f}R")
+            ax.axvline(-clip, color=Colors.WARNING, linewidth=1.5, linestyle=":")
+
+        title = "R-multiple distribution"
+        if outside:
+            title += f"  (view clipped to [{view_lo:.1f}, {view_hi:.1f}]R; " \
+                     f"{outside} trade(s) outside)"
+        ax.set_title(title)
+        ax.set_xlabel("R-multiple")
+        ax.set_ylabel("Count")
+        ax.legend(loc="upper left")
+        _apply_dark_matplotlib_style(fig)
+        fig.tight_layout()
+        self._embed_fig(fig, parent, "r_multiple_distribution")
 
     def _build_metrics_tab(self, parent) -> None:
         m = self.sim_metrics
@@ -1104,6 +1336,27 @@ class MonteCarloWizard(CTkWizardBase):
 
     # ---- run + progress -----
 
+    def _resolve_clip_value(self) -> float:
+        """Convert the user's clip threshold to simulator units.
+
+        The simulator stores returns in fractional units for % returns (so a
+        +1.5% trade is 0.015) and raw R for R-multiples. The user enters the
+        threshold in display units (10 = "10%" for pct, 10 = "10R" for R).
+        Return 0 to disable clipping.
+        """
+        if not (self.advanced_step.clip_enabled_var
+                and self.advanced_step.clip_enabled_var.get()):
+            return 0.0
+        try:
+            v = float(self.advanced_step.clip_value_var.get())
+        except (ValueError, TypeError):
+            return 0.0
+        if v <= 0:
+            return 0.0
+        if self.return_source == TradeLogReturnSource.PCT_RETURN:
+            return v / 100.0
+        return v
+
     def _build_config(self) -> SimulationConfig:
         cfg = SimulationConfig(
             num_simulations=int(self.sim_step.num_sims_var.get()),
@@ -1122,6 +1375,7 @@ class MonteCarloWizard(CTkWizardBase):
             if self.advanced_step.dd_enabled_var.get() else 0.005,
             commission_pct=float(self.advanced_step.commission_var.get()) / 100.0,
             slippage_pct=float(self.advanced_step.slippage_var.get()) / 100.0,
+            return_clip=self._resolve_clip_value(),
             random_seed=int(self.advanced_step.seed_var.get())
             if self.advanced_step.seed_enabled_var.get() else None,
         )
@@ -1208,7 +1462,10 @@ class MonteCarloWizard(CTkWizardBase):
             return
 
         metrics = SimulationAnalyzer(self._sim_result).metrics()
-        MonteCarloResultsWindow(self.root, self._sim_result, metrics)
+        MonteCarloResultsWindow(
+            self.root, self._sim_result, metrics,
+            loaded_log=self.loaded_log, source=self.return_source,
+        )
 
 
 # ============================================================================

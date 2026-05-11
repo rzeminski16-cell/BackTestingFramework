@@ -75,13 +75,24 @@ class LoadedTradeLog:
     # ---- summary stats ---------------------------------------------------
 
     def summary_stats(self, source: TradeLogReturnSource) -> dict:
-        """Return summary statistics for the chosen return series."""
+        """Return summary statistics for the chosen return series.
+
+        Adds percentile and outlier diagnostics (especially important for
+        R-multiples, where tight stops can produce extreme values that
+        dominate Monte Carlo simulations).
+        """
         arr = self.returns_for(source)
         if arr.size == 0:
             return {
                 "count": 0, "mean": 0.0, "median": 0.0, "std": 0.0,
                 "min": 0.0, "max": 0.0, "win_rate": 0.0, "skew": 0.0,
+                "p1": 0.0, "p5": 0.0, "p95": 0.0, "p99": 0.0,
+                "abs_max": 0.0, "outliers_5": 0, "outliers_10": 0, "outliers_20": 0,
             }
+        abs_arr = np.abs(arr)
+        # Outlier thresholds are sensible for R-multiples; for fractional
+        # pct returns the thresholds are large enough that the counts are 0,
+        # which is the right answer (pct returns rarely have outliers >5).
         return {
             "count": int(arr.size),
             "mean": float(np.mean(arr)),
@@ -91,6 +102,14 @@ class LoadedTradeLog:
             "max": float(np.max(arr)),
             "win_rate": float(np.mean(arr > 0)),
             "skew": _skew(arr),
+            "p1": float(np.percentile(arr, 1)),
+            "p5": float(np.percentile(arr, 5)),
+            "p95": float(np.percentile(arr, 95)),
+            "p99": float(np.percentile(arr, 99)),
+            "abs_max": float(np.max(abs_arr)),
+            "outliers_5": int(np.sum(abs_arr > 5)),
+            "outliers_10": int(np.sum(abs_arr > 10)),
+            "outliers_20": int(np.sum(abs_arr > 20)),
         }
 
 
