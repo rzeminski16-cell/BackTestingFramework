@@ -10,7 +10,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from enum import Enum
 from pathlib import Path
-from typing import List, Optional, Sequence, Union
+from typing import Dict, List, Optional, Sequence, Tuple, Union
 
 import numpy as np
 import pandas as pd
@@ -52,6 +52,10 @@ class LoadedTradeLog:
     r_multiples: np.ndarray
     warnings: List[str] = field(default_factory=list)
     is_canonical: bool = False
+    # Per-reason exclusion counts for R-multiples. Keys:
+    #   "missing_entry_price", "missing_exit_price", "missing_stop",
+    #   "stop_non_positive", "stop_wrong_side", "stop_equals_entry"
+    r_excluded_reasons: Dict[str, int] = field(default_factory=dict)
 
     # ---- selection --------------------------------------------------------
 
@@ -225,16 +229,30 @@ def _column_presence_per_file(frames: List[pd.DataFrame], col: str) -> List[Path
     return missing_files
 
 
-def _compute_r_multiples(df: pd.DataFrame) -> np.ndarray:
+def _compute_r_multiples(df: pd.DataFrame) -> Tuple[np.ndarray, Dict[str, int]]:
     """Compute R-multiples from price + stop loss columns when present.
 
-    R = (exit - entry) for LONG, (entry - exit) for SHORT, divided by initial
-    risk per share (entry - stop_loss for LONG; stop_loss - entry for SHORT).
-    Rows with missing/invalid stop loss data are dropped.
+    Definition (matches Classes/Core/performance_metrics.calculate_r_multiple):
+      For LONG : initial_risk = entry - stop;  R = (exit - entry) / initial_risk
+      For SHORT: initial_risk = stop - entry;  R = (entry - exit) / initial_risk
+
+    A row is excluded when ANY of the following holds:
+      * entry_price is missing / unparseable
+      * exit_price  is missing / unparseable
+      * stop_loss   is missing / unparseable
+      * stop_loss <= 0 (sentinel for "no stop set" - matches framework)
+      * initial_risk <= 0 (stop is on the wrong side of entry, or equal)
+
+    Returns:
+        (r_multiples_for_valid_rows, breakdown_of_exclusion_reasons)
     """
     needed = {"entry_price", "exit_price", "initial_stop_loss"}
     if not needed.issubset(df.columns):
-        return np.array([], dtype="float64")
+        missing_cols = sorted(needed - set(df.columns))
+        return np.array([], dtype="float64"), {
+            "columns_missing": len(df),
+            "missing_columns_list": missing_cols,  # documented separately
+        }
 
     entry = _coerce_float_column(df, "entry_price")
     exit_ = _coerce_float_column(df, "exit_price")
@@ -244,21 +262,51 @@ def _compute_r_multiples(df: pd.DataFrame) -> np.ndarray:
         side = df["side"].astype(str).str.upper().str.strip()
     else:
         side = pd.Series(["LONG"] * len(df), index=df.index)
-
     is_long = side != "SHORT"
 
-    initial_risk = np.where(is_long, entry - stop, stop - entry)
-    pl_per_unit = np.where(is_long, exit_ - entry, entry - exit_)
+    initial_risk = pd.Series(
+        np.where(is_long, entry - stop, stop - entry),
+        index=df.index,
+    )
+    pl_per_unit = pd.Series(
+        np.where(is_long, exit_ - entry, entry - exit_),
+        index=df.index,
+    )
 
-    valid = (
-        ~entry.isna() & ~exit_.isna() & ~stop.isna()
-        & (initial_risk > 0)
+    # Reason masks, applied in priority order (each row counted once).
+    missing_entry = entry.isna()
+    missing_exit = exit_.isna() & ~missing_entry
+    missing_stop = stop.isna() & ~missing_entry & ~missing_exit
+    stop_non_positive = (
+        ~missing_entry & ~missing_exit & ~missing_stop & (stop <= 0)
+    )
+    stop_equals_entry = (
+        ~missing_entry & ~missing_exit & ~missing_stop & ~stop_non_positive
+        & (initial_risk == 0)
+    )
+    stop_wrong_side = (
+        ~missing_entry & ~missing_exit & ~missing_stop & ~stop_non_positive
+        & ~stop_equals_entry & (initial_risk < 0)
+    )
+
+    breakdown = {
+        "missing_entry_price": int(missing_entry.sum()),
+        "missing_exit_price": int(missing_exit.sum()),
+        "missing_stop": int(missing_stop.sum()),
+        "stop_non_positive": int(stop_non_positive.sum()),
+        "stop_equals_entry": int(stop_equals_entry.sum()),
+        "stop_wrong_side": int(stop_wrong_side.sum()),
+    }
+
+    valid = ~(
+        missing_entry | missing_exit | missing_stop
+        | stop_non_positive | stop_equals_entry | stop_wrong_side
     )
     if not valid.any():
-        return np.array([], dtype="float64")
+        return np.array([], dtype="float64"), breakdown
 
     r_mult = pl_per_unit[valid] / initial_risk[valid]
-    return np.asarray(r_mult, dtype="float64")
+    return np.asarray(r_mult, dtype="float64"), breakdown
 
 
 def _load_single(path: Path) -> pd.DataFrame:
@@ -344,6 +392,7 @@ def load_trade_logs(
         pct_returns = raw.dropna().to_numpy(dtype="float64") / 100.0
 
     # --- R-multiples ------------------------------------------------------
+    r_excluded_reasons: Dict[str, int] = {}
     if r_multiple_column is not None:
         if r_multiple_column not in df.columns:
             raise ValueError(f"Column '{r_multiple_column}' not present in CSV")
@@ -358,12 +407,38 @@ def load_trade_logs(
             )
         r_multiples = r_raw.dropna().to_numpy(dtype="float64")
     else:
-        r_multiples = _compute_r_multiples(df)
+        r_multiples, r_excluded_reasons = _compute_r_multiples(df)
         if r_multiples.size == 0:
             warnings.append(
                 "Could not compute R-multiples: missing entry_price, exit_price "
                 "or initial_stop_loss columns (or all rows had invalid stops)."
             )
+        else:
+            # Build a focused warning when stops were populated but the row
+            # was still excluded. The user often manually inspects the column
+            # and sees values, but the values mean the stop is on the wrong
+            # side of entry, equal to entry, or set to 0 (sentinel).
+            stop_excluded_total = (
+                r_excluded_reasons.get("stop_non_positive", 0)
+                + r_excluded_reasons.get("stop_equals_entry", 0)
+                + r_excluded_reasons.get("stop_wrong_side", 0)
+            )
+            if stop_excluded_total > 0:
+                parts = []
+                if r_excluded_reasons.get("stop_non_positive", 0):
+                    parts.append(f"{r_excluded_reasons['stop_non_positive']} "
+                                 f"with stop <= 0")
+                if r_excluded_reasons.get("stop_equals_entry", 0):
+                    parts.append(f"{r_excluded_reasons['stop_equals_entry']} "
+                                 f"with stop == entry")
+                if r_excluded_reasons.get("stop_wrong_side", 0):
+                    parts.append(f"{r_excluded_reasons['stop_wrong_side']} "
+                                 f"with stop on wrong side of entry "
+                                 f"(stop >= entry for LONG / stop <= entry for SHORT)")
+                warnings.append(
+                    f"Dropped {stop_excluded_total} row(s) from R-multiples "
+                    f"despite populated initial_stop_loss: " + "; ".join(parts) + "."
+                )
 
     is_canonical = CANONICAL_COLUMNS.issubset(set(df.columns))
 
@@ -385,4 +460,5 @@ def load_trade_logs(
         r_multiples=r_multiples,
         warnings=warnings,
         is_canonical=is_canonical,
+        r_excluded_reasons=r_excluded_reasons,
     )
