@@ -208,7 +208,9 @@ class Trade:
             exit_price=exit_price,
             quantity=position.initial_quantity,  # Initial quantity for trade record
             side=position.direction.value,
-            initial_stop_loss=position.stop_loss,  # Stop at entry
+            # initial_stop_loss is the immutable stop captured at entry time
+            # (preserved across pyramiding break-even and trailing updates).
+            initial_stop_loss=position.initial_stop_loss,
             final_stop_loss=position.stop_loss,    # Final stop (may have been adjusted)
             take_profit=position.take_profit,
             pl=pl,

@@ -179,6 +179,14 @@ class TestPosition:
             take_profit=120.0,
         )
         defaults.update(kwargs)
+        # Flip stop / take-profit defaults to be valid for SHORT so the
+        # entry-time validation in Position.__post_init__ does not reject
+        # the test setup. Caller can still override explicitly.
+        if (defaults["direction"] == TradeDirection.SHORT
+                and "stop_loss" not in kwargs
+                and "take_profit" not in kwargs):
+            defaults["stop_loss"] = 110.0
+            defaults["take_profit"] = 80.0
         return Position(**defaults)
 
     def test_is_open(self):
@@ -357,6 +365,100 @@ class TestPosition:
         pos = self._make_position()
         with pytest.raises(NotImplementedError):
             _ = pos.current_value
+
+
+# =============================================================================
+# Position stop-loss invariant tests (entry-time validation + immutability)
+# =============================================================================
+
+class TestPositionInitialStopLoss:
+    """Regression tests for the bug where initial_stop_loss was lost across
+    pyramiding / trailing-stop updates and could be recorded above the entry
+    price on the resulting Trade record."""
+
+    def _long(self, **overrides):
+        kw = dict(
+            symbol="AAPL", entry_date=datetime(2024, 1, 1),
+            entry_price=100.0, initial_quantity=100.0, current_quantity=100.0,
+            direction=TradeDirection.LONG, stop_loss=95.0,
+        )
+        kw.update(overrides)
+        return Position(**kw)
+
+    def test_initial_stop_loss_auto_populates_from_stop_loss(self):
+        pos = self._long(stop_loss=95.0)
+        assert pos.initial_stop_loss == 95.0
+
+    def test_initial_stop_loss_none_when_no_stop_provided(self):
+        pos = self._long(stop_loss=None)
+        assert pos.initial_stop_loss is None
+
+    def test_long_with_stop_above_entry_raises(self):
+        with pytest.raises(ValueError, match="LONG"):
+            self._long(stop_loss=110.0)
+
+    def test_long_with_stop_equal_to_entry_raises(self):
+        with pytest.raises(ValueError, match="LONG"):
+            self._long(stop_loss=100.0)
+
+    def test_short_with_stop_below_entry_raises(self):
+        with pytest.raises(ValueError, match="SHORT"):
+            Position(
+                symbol="AAPL", entry_date=datetime(2024, 1, 1),
+                entry_price=100.0, initial_quantity=100.0, current_quantity=100.0,
+                direction=TradeDirection.SHORT, stop_loss=95.0,
+            )
+
+    def test_short_with_stop_above_entry_is_valid(self):
+        pos = Position(
+            symbol="AAPL", entry_date=datetime(2024, 1, 1),
+            entry_price=100.0, initial_quantity=100.0, current_quantity=100.0,
+            direction=TradeDirection.SHORT, stop_loss=105.0,
+        )
+        assert pos.initial_stop_loss == 105.0
+
+    def test_non_positive_stop_raises(self):
+        with pytest.raises(ValueError, match="positive"):
+            self._long(stop_loss=-1.0)
+
+    def test_update_stop_loss_does_not_change_initial_stop_loss(self):
+        pos = self._long(stop_loss=95.0)
+        pos.update_stop_loss(98.0)
+        assert pos.stop_loss == 98.0
+        assert pos.initial_stop_loss == 95.0
+
+    def test_trailing_stop_above_entry_does_not_change_initial(self):
+        # On a profitable LONG, the trailing stop eventually moves above
+        # entry. The original entry stop must be preserved.
+        pos = self._long(stop_loss=95.0)
+        pos.update_stop_loss(105.0)  # trailing past entry
+        assert pos.stop_loss == 105.0
+        assert pos.initial_stop_loss == 95.0
+
+    def test_pyramid_breakeven_does_not_change_initial(self):
+        # Simulate what PositionManager.add_pyramid does: replace
+        # position.stop_loss with the break-even price (which is above
+        # entry for a LONG). initial_stop_loss must survive.
+        pos = self._long(stop_loss=95.0)
+        breakeven = 100.5  # any value > entry; mirrors break-even calc
+        pos.stop_loss = breakeven
+        assert pos.initial_stop_loss == 95.0
+
+    def test_trade_from_position_preserves_initial_stop_loss(self):
+        # The original bug: stop_loss gets trailed/break-evened, then
+        # Trade.from_position copied position.stop_loss into BOTH
+        # initial_stop_loss and final_stop_loss on the trade record.
+        from Classes.Models.trade import Trade
+        pos = self._long(stop_loss=95.0)
+        # Simulate trailing past entry
+        pos.update_stop_loss(105.0)
+        # Build a trade as the engine does
+        trade = Trade.from_position(
+            position=pos, exit_date=datetime(2024, 1, 15),
+            exit_price=110.0, exit_reason="take profit", commission_paid=10.0,
+        )
+        assert trade.initial_stop_loss == 95.0  # the bug we fixed
+        assert trade.final_stop_loss == 105.0
 
 
 # =============================================================================

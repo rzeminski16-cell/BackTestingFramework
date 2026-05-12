@@ -39,7 +39,11 @@ class Position:
         initial_quantity: Original position size (before pyramiding)
         current_quantity: Current position size (after partial exits)
         direction: Trade direction (LONG or SHORT)
-        stop_loss: Current stop loss price
+        stop_loss: Current stop loss price (mutable - trailing / break-even
+            adjustments are applied here)
+        initial_stop_loss: Stop loss at entry time. Set once in __post_init__
+            from the value passed as ``stop_loss``; never mutated thereafter.
+            This is what trade records persist as the original risk reference.
         take_profit: Take profit price
         partial_exits: List of partial exit records
         pyramid_entries: List of pyramid entry records
@@ -57,6 +61,7 @@ class Position:
     current_quantity: float
     direction: TradeDirection = TradeDirection.LONG
     stop_loss: Optional[float] = None
+    initial_stop_loss: Optional[float] = None
     take_profit: Optional[float] = None
     partial_exits: List[PartialExit] = field(default_factory=list)
     pyramid_entries: List[PyramidEntry] = field(default_factory=list)
@@ -66,6 +71,36 @@ class Position:
     entry_fx_rate: float = 1.0  # FX rate at entry
     security_currency: str = "GBP"  # Currency security is denominated in
     entry_equity: float = 0.0  # Total portfolio equity at time of entry
+
+    def __post_init__(self) -> None:
+        # Validate stop side relative to entry. A LONG with stop >= entry
+        # would trigger immediately; a SHORT with stop <= entry would do the
+        # same. Both indicate a strategy bug, not a valid trade setup.
+        if self.stop_loss is not None and self.entry_price > 0:
+            if self.direction == TradeDirection.LONG and self.stop_loss >= self.entry_price:
+                raise ValueError(
+                    f"Invalid LONG stop loss: stop_loss ({self.stop_loss}) must "
+                    f"be strictly less than entry_price ({self.entry_price}). "
+                    f"Symbol={self.symbol!r}"
+                )
+            if self.direction == TradeDirection.SHORT and self.stop_loss <= self.entry_price:
+                raise ValueError(
+                    f"Invalid SHORT stop loss: stop_loss ({self.stop_loss}) must "
+                    f"be strictly greater than entry_price ({self.entry_price}). "
+                    f"Symbol={self.symbol!r}"
+                )
+            if self.stop_loss <= 0:
+                raise ValueError(
+                    f"Invalid stop loss: stop_loss ({self.stop_loss}) must be "
+                    f"positive. Symbol={self.symbol!r}"
+                )
+
+        # Capture the entry stop loss exactly once. If the caller did not
+        # provide an explicit initial_stop_loss, mirror the entry stop_loss.
+        # Subsequent updates to stop_loss (trailing, break-even after pyramid)
+        # never touch this field.
+        if self.initial_stop_loss is None:
+            self.initial_stop_loss = self.stop_loss
 
     @property
     def is_open(self) -> bool:
