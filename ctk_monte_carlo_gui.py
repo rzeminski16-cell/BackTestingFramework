@@ -322,11 +322,30 @@ class DataReviewStep(CTkWizardStep):
         if (pct_stats["count"] > 0 and r_stats["count"] > 0
                 and pct_stats["count"] != r_stats["count"]):
             diff = pct_stats["count"] - r_stats["count"]
+            # Build a breakdown sentence from the exclusion reasons.
+            reasons = log.r_excluded_reasons or {}
+            parts: List[str] = []
+            if reasons.get("missing_entry_price"):
+                parts.append(f"{reasons['missing_entry_price']} missing/unparseable entry_price")
+            if reasons.get("missing_exit_price"):
+                parts.append(f"{reasons['missing_exit_price']} missing/unparseable exit_price")
+            if reasons.get("missing_stop"):
+                parts.append(f"{reasons['missing_stop']} missing/unparseable initial_stop_loss")
+            if reasons.get("stop_non_positive"):
+                parts.append(f"{reasons['stop_non_positive']} with stop <= 0 (sentinel for 'no stop')")
+            if reasons.get("stop_equals_entry"):
+                parts.append(f"{reasons['stop_equals_entry']} with stop == entry (zero initial risk)")
+            if reasons.get("stop_wrong_side"):
+                parts.append(f"{reasons['stop_wrong_side']} with stop on the wrong side of entry "
+                             "(stop >= entry for LONG, or stop <= entry for SHORT)")
+
+            breakdown = ("; ".join(parts)) if parts else "reason unknown"
             extras.append(
                 f"R-multiples are computed on {r_stats['count']} of "
-                f"{pct_stats['count']} trades (excluded {diff} without a "
-                f"valid initial_stop_loss). This is why the two pools have "
-                f"different win rates."
+                f"{pct_stats['count']} trades (excluded {diff}). Breakdown: "
+                f"{breakdown}. Inspect those rows in the source CSV to "
+                f"confirm; populated values can still be invalid (e.g. stop "
+                f"placed above entry for a long trade, or stop set to 0)."
             )
         if self.mc_wizard.return_pool is None or self.mc_wizard.return_pool.size == 0:
             extras.append(
