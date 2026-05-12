@@ -222,6 +222,12 @@ class CTkMainLauncher(ctk.CTk):
                 "description": "Analyze MA-crossover signal density before each trade entry to find predictive patterns",
                 "icon": "\U0001F50E",  # Magnifying glass tilted right
                 "command": self._launch_pattern_analysis
+            },
+            {
+                "title": "Monte Carlo",
+                "description": "Bootstrap trade-log returns to simulate equity curves, drawdowns and probability of loss",
+                "icon": "\U0001F3B2",  # Game die
+                "command": self._launch_monte_carlo
             }
         ]
 
@@ -300,6 +306,10 @@ class CTkMainLauncher(ctk.CTk):
     def _launch_pattern_analysis(self):
         """Launch the Pattern Analysis GUI."""
         self._launch_module("pattern_analysis")
+
+    def _launch_monte_carlo(self):
+        """Launch the Monte Carlo simulation GUI."""
+        self._launch_module("monte_carlo")
 
     def _show_error(self, message: str):
         """Show an error dialog."""

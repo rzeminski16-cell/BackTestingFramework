@@ -60,6 +60,13 @@ class SimulationConfig:
     commission_pct: float = 0.0
     slippage_pct: float = 0.0
 
+    # Outlier clipping. When > 0, every sampled return is clipped to
+    # [-return_clip, +return_clip] before the equity update. This is most
+    # useful for R-multiples, where trades with very tight stops produce
+    # extreme R values (e.g. -100R) that can wipe out simulations.
+    # 0 disables clipping.
+    return_clip: float = 0.0
+
     # Reproducibility
     random_seed: Optional[int] = None
 
@@ -88,6 +95,8 @@ class SimulationConfig:
                 errors.append("reduced_risk must be in [0, risk_per_trade]")
         if self.commission_pct < 0 or self.slippage_pct < 0:
             errors.append("commission_pct and slippage_pct must be >= 0")
+        if self.return_clip < 0:
+            errors.append("return_clip must be >= 0 (0 disables clipping)")
         return errors
 
     def to_dict(self) -> Dict[str, Any]:
