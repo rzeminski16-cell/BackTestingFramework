@@ -20,6 +20,7 @@ Features:
 """
 
 import customtkinter as ctk
+import tkinter as tk
 from pathlib import Path
 from datetime import datetime
 from typing import Dict, List, Any, Optional
@@ -1165,23 +1166,50 @@ class CTkResultsWindow(ctk.CTkToplevel):
 
         Theme.create_button(btn_frame, "Close", command=self.destroy, style="secondary", width=100).pack(side="right")
 
+    def _is_alive(self) -> bool:
+        """Return True if this window's tk widgets still exist."""
+        try:
+            return bool(self.winfo_exists())
+        except tk.TclError:
+            return False
+
     def log(self, message: str):
         """Add a message to the log."""
-        self.progress_panel.log(message)
+        if not self._is_alive():
+            return
+        try:
+            self.progress_panel.log(message)
+        except tk.TclError:
+            pass
 
     def update_progress(self, current: int, total: int, detail: str = ""):
         """Update progress bar."""
+        if not self._is_alive():
+            return
         progress = current / total if total > 0 else 0
-        self.progress_panel.update_progress(progress, detail)
+        try:
+            self.progress_panel.update_progress(progress, detail)
+        except tk.TclError:
+            pass
 
     def on_complete(self):
         """Mark as complete."""
-        self.progress_panel.set_complete("Backtest Complete")
+        if not self._is_alive():
+            return
+        try:
+            self.progress_panel.set_complete("Backtest Complete")
+        except tk.TclError:
+            pass
 
     def on_error(self, error: str):
         """Show error."""
-        self.progress_panel.log(f"ERROR: {error}", level="error")
-        self.progress_panel.status_label.configure(text="Error", text_color=Colors.ERROR)
+        if not self._is_alive():
+            return
+        try:
+            self.progress_panel.log(f"ERROR: {error}", level="error")
+            self.progress_panel.status_label.configure(text="Error", text_color=Colors.ERROR)
+        except tk.TclError:
+            pass
 
 
 # =============================================================================
@@ -1322,6 +1350,14 @@ class CTkBacktestWizard(CTkWizardBase):
 
             def update_ui():
                 """Process messages from background thread to update UI."""
+                # Stop polling if the user closed the results window. The
+                # worker thread may still be running and will keep posting
+                # to the queue, but those messages have no consumer now.
+                try:
+                    if not results_window.winfo_exists():
+                        return
+                except tk.TclError:
+                    return
                 try:
                     while True:
                         msg_type, data = msg_queue.get_nowait()
@@ -1338,6 +1374,11 @@ class CTkBacktestWizard(CTkWizardBase):
                             return
                 except queue.Empty:
                     pass
+                except tk.TclError:
+                    # Window was destroyed between the check above and now
+                    # (e.g. forwarded methods touch widgets that no longer
+                    # exist). Stop polling.
+                    return
                 self.root.after(100, update_ui)
 
             def run_in_thread():
