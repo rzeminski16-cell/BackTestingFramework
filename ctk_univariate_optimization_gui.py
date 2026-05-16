@@ -27,6 +27,7 @@ import tkinter as tk
 
 from Classes.GUI.ctk_theme import Theme, Colors, Fonts, Sizes, ask_yes_no, show_error, show_info, ProgressPanel
 from Classes.GUI.ctk_components import SecuritySelector
+from Classes.Config.basket import BasketManager
 from Classes.Data.data_loader import DataLoader
 from Classes.Strategy.base_strategy import BaseStrategy
 from Classes.Optimization.univariate_optimizer import (
@@ -367,6 +368,9 @@ class CTkUnivariateOptimizationGUI(ctk.CTk):
         self.data_loader = DataLoader(Path('raw_data/daily'))
         self.available_securities = self.data_loader.get_available_symbols()
 
+        # Basket manager (for portfolio-mode pre-made security lists)
+        self.basket_manager = BasketManager()
+
         # State
         self.parameter_widgets: Dict[str, ParameterRangeWidget] = {}
         self.metric_vars: Dict[str, ctk.BooleanVar] = {}
@@ -468,6 +472,21 @@ class CTkUnivariateOptimizationGUI(ctk.CTk):
             variable=self.mode_var, value="portfolio",
             command=self._on_mode_change
         ).pack(side="left")
+
+        # Basket dropdown for portfolio mode (hidden initially)
+        self._manual_basket_label = "(Select securities manually)"
+        self.basket_frame = Theme.create_frame(content)
+
+        Theme.create_label(self.basket_frame, "Basket:").pack(side="left", padx=(0, Sizes.PAD_S))
+        self.basket_var = ctk.StringVar(value=self._manual_basket_label)
+        self.basket_combo = Theme.create_combobox(
+            self.basket_frame,
+            values=self._get_basket_values(),
+            variable=self.basket_var,
+            command=self._on_basket_selected,
+            width=250
+        )
+        self.basket_combo.pack(side="left", padx=(0, Sizes.PAD_M))
 
         # Run mode for portfolio (hidden initially)
         self.run_mode_frame = Theme.create_frame(content)
@@ -762,14 +781,35 @@ class CTkUnivariateOptimizationGUI(ctk.CTk):
         if mode == "portfolio":
             self.security_selector.multi_select = True
             self.security_selector.update_securities(sorted(self.available_securities))
-            self.run_mode_frame.pack(fill="x", pady=Sizes.PAD_S, after=self.security_selector.master.winfo_children()[1])
+            # Refresh the basket list in case the user created baskets since
+            # the GUI started, then show the basket + run-mode rows.
+            self.basket_combo.configure(values=self._get_basket_values())
+            self.basket_frame.pack(fill="x", pady=Sizes.PAD_S, before=self.security_selector)
+            self.run_mode_frame.pack(fill="x", pady=Sizes.PAD_S, before=self.security_selector)
         else:
             self.security_selector.multi_select = False
             selected = self.security_selector.get_selected()
             self.security_selector.update_securities(sorted(self.available_securities))
             if selected:
                 self.security_selector.set_selected([selected[0]])
+            self.basket_frame.pack_forget()
             self.run_mode_frame.pack_forget()
+
+    def _get_basket_values(self) -> List[str]:
+        """Return the dropdown values: manual sentinel + saved basket names."""
+        return [self._manual_basket_label] + self.basket_manager.list_baskets()
+
+    def _on_basket_selected(self, basket_name: str):
+        """Populate the security selector from the chosen basket."""
+        if basket_name == self._manual_basket_label:
+            return
+        basket = self.basket_manager.load(basket_name)
+        if basket is None:
+            return
+        # Filter to securities that are actually available locally.
+        available = set(self.available_securities)
+        valid = [s for s in basket.securities if s in available]
+        self.security_selector.set_selected(valid)
 
     def _on_security_change(self, selected: List[str]):
         """Handle security selection change."""
