@@ -421,7 +421,7 @@
     },
     "AlphaTrendV2C3Strategy": {
       "display_name": "AlphaTrend V2C3",
-      "description": "Trend-following long-only strategy. Identical to AlphaTrend V2C2 except the entry signal must be confirmed by an n-bar closing high. After an AlphaMACross long signal, the trade is opened on the first bar (within an entry_wait_candles-bar window after the cross) whose close is strictly greater than the maximum close over the prior high_lookback_candles bars. A new cross resets the wait window; if the window expires without confirmation, the signal is discarded. Stop loss, position sizing and the three-stage exit lifecycle are unchanged from V2C2.",
+      "description": "Trend-following long-only strategy. Identical to AlphaTrend V2C2 except (1) the entry signal must be confirmed by an n-bar closing high, and (2) the long-term trailing stop loss uses a multiple of the 14-day ATR (same indicator as the initial SL) instead of a fixed percentage. After an AlphaMACross long signal, the trade is opened on the first bar (within an entry_wait_candles-bar window after the cross) whose close is strictly greater than the maximum close over the prior high_lookback_candles bars. A new cross resets the wait window; if the window expires without confirmation, the signal is discarded. Initial stop loss, position sizing and the three-stage exit lifecycle are otherwise unchanged from V2C2.",
       "trade_direction": "LONG",
       "required_indicators": ["atr_14"],
       "exit_rules": [
@@ -438,9 +438,9 @@
             "peace_period_candles": 5,
             "short_term_candles": 15,
             "break_even_consecutive_bars": 7,
-            "trailing_sl_pct": 20.0
+            "trailing_atr_mult": 2.0
           },
-          "description": "Three-stage lifecycle: peace (SL only), short-term (SL + optional close-below-entry for N consecutive bars), long-term (trailing SL + portfolio vulnerability scorer).",
+          "description": "Three-stage lifecycle: peace (SL only), short-term (SL + optional close-below-entry for N consecutive bars), long-term (ATR-based trailing SL + portfolio vulnerability scorer).",
           "grace_period_bars": 0,
           "momentum_protection": false
         }
@@ -574,16 +574,16 @@
           "description": "Number of consecutive bars (including current) the close must stay strictly below the entry price for the short-phase rule to fire",
           "category": "Exit"
         },
-        "trailing_sl_pct": {
+        "trailing_atr_mult": {
           "type": "float",
-          "default": 20.0,
+          "default": 2.0,
           "configurable": true,
           "optimization": {
-            "min": 1.0,
-            "max": 50.0,
-            "step": 0.5
+            "min": 0.5,
+            "max": 10.0,
+            "step": 0.25
           },
-          "description": "Long-term trailing SL distance as a percent of the current close. The SL only moves up, never down.",
+          "description": "Multiplier on the 14-day ATR for the long-term trailing SL. The SL is maintained at close - (trailing_atr_mult x ATR14) and only moves up, never down.",
           "category": "Exit"
         }
       }

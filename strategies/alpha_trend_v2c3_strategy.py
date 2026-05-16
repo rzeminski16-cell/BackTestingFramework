@@ -2,9 +2,12 @@
 AlphaTrendV2C3 Strategy
 
 AlphaTrendV2C3 is identical to ``AlphaTrendV2C2Strategy`` in every respect
-(initial stop loss, position sizing, three-stage exit lifecycle, long-term
-trailing SL) except for the entry condition. The MA-cross signal from V2/V2C2
-must now be confirmed by an n-bar closing-high before a trade is opened:
+(initial stop loss, position sizing, three-stage exit lifecycle) except for:
+  1. The entry condition: the MA-cross signal must now be confirmed by an
+     n-bar closing-high before a trade is opened.
+  2. The long-term trailing stop loss: instead of a fixed percentage below
+     close, it is maintained ``trailing_atr_mult`` * 14-day ATR below close
+     (same indicator used for the initial SL). The SL only moves up.
 
 Entry rule:
   1. Detect AlphaMACross long signal: ``MA`` crosses above ``MA`` shifted by
@@ -21,12 +24,14 @@ Entry rule:
   5. If the wait window expires without confirmation, the pending signal is
      discarded; a new MA-cross is required.
 
-OPTIMIZABLE PARAMETERS (in addition to all V2C2 parameters):
+OPTIMIZABLE PARAMETERS (V2C3-specific changes vs V2C2):
     - high_lookback_candles: Number of prior closes (excluding the current
       bar) used to evaluate the n-bar closing high.
     - entry_wait_candles: Number of bars after the cross during which the
       strategy keeps watching for the high confirmation. ``0`` means the
       high must be reached on the cross bar itself.
+    - trailing_atr_mult: Multiplier on 14-day ATR for the long-term trailing
+      stop loss. Replaces V2C2's ``trailing_sl_pct``.
 """
 from typing import Dict, List, Optional, Tuple
 
@@ -48,8 +53,13 @@ class AlphaTrendV2C3Strategy(AlphaTrendV2C2Strategy):
     ``high_lookback_candles`` bars. A new cross resets the wait window.
     """
 
+    # Internal placeholder passed to V2C2's __init__ to satisfy the parent's
+    # validation. V2C3 overrides should_adjust_stop, so trailing_sl_pct is
+    # never consulted at runtime.
+    _TRAILING_SL_PCT_PLACEHOLDER: float = 20.0
+
     def __init__(self,
-                 # All V2C2 parameters
+                 # All V2C2 parameters (except trailing_sl_pct, replaced below)
                  ma_offset: int = 2,
                  ema_sma: str = "EMA",
                  ma_length: int = 20,
@@ -59,13 +69,17 @@ class AlphaTrendV2C3Strategy(AlphaTrendV2C2Strategy):
                  short_term_candles: int = 15,
                  short_phase_exit_enabled: bool = True,
                  break_even_consecutive_bars: int = 7,
-                 trailing_sl_pct: float = 20.0,
                  # New V2C3 parameters
+                 trailing_atr_mult: float = 2.0,
                  high_lookback_candles: int = 10,
                  entry_wait_candles: int = 3):
         """Initialise the AlphaTrendV2C3 strategy.
 
         Args:
+            trailing_atr_mult: Multiplier on the 14-day ATR for the long-term
+                trailing stop loss. The SL is maintained at
+                ``close - trailing_atr_mult * ATR_14`` and only moves up.
+                Replaces V2C2's ``trailing_sl_pct``.
             high_lookback_candles: Number of prior bars (excluding the current
                 bar) used to compute the closing-high reference. The current
                 close must be strictly greater than the maximum close over
@@ -78,6 +92,7 @@ class AlphaTrendV2C3Strategy(AlphaTrendV2C2Strategy):
         """
         # Set V2C3-specific attrs before super().__init__ so that
         # _validate_parameters (called inside super) can see them.
+        self.trailing_atr_mult = float(trailing_atr_mult)
         self.high_lookback_candles = int(high_lookback_candles)
         self.entry_wait_candles = int(entry_wait_candles)
 
@@ -95,10 +110,13 @@ class AlphaTrendV2C3Strategy(AlphaTrendV2C2Strategy):
             short_term_candles=short_term_candles,
             short_phase_exit_enabled=short_phase_exit_enabled,
             break_even_consecutive_bars=break_even_consecutive_bars,
-            trailing_sl_pct=trailing_sl_pct,
+            trailing_sl_pct=self._TRAILING_SL_PCT_PLACEHOLDER,
         )
 
-        # Make the V2C3-specific params introspectable on ``self.params``.
+        # V2C3 replaces V2C2's trailing_sl_pct with trailing_atr_mult; drop
+        # the inherited entry from params and surface the new one instead.
+        self.params.pop("trailing_sl_pct", None)
+        self.params["trailing_atr_mult"] = self.trailing_atr_mult
         self.params["high_lookback_candles"] = self.high_lookback_candles
         self.params["entry_wait_candles"] = self.entry_wait_candles
 
@@ -107,6 +125,10 @@ class AlphaTrendV2C3Strategy(AlphaTrendV2C2Strategy):
     # ------------------------------------------------------------------
     def _validate_parameters(self) -> None:
         super()._validate_parameters()
+        if self.trailing_atr_mult <= 0:
+            raise ValueError(
+                f"trailing_atr_mult must be > 0, got {self.trailing_atr_mult}"
+            )
         if self.high_lookback_candles < 1:
             raise ValueError(
                 f"high_lookback_candles must be >= 1, got "
@@ -193,3 +215,30 @@ class AlphaTrendV2C3Strategy(AlphaTrendV2C2Strategy):
             ),
             direction=self.trade_direction,
         )
+
+    # ------------------------------------------------------------------
+    # Long-term trailing SL (ATR-based, replaces V2C2's percentage version)
+    # ------------------------------------------------------------------
+    def should_adjust_stop(self, context: StrategyContext) -> Optional[float]:
+        """Maintain a trailing SL at ``trailing_atr_mult * ATR_14`` below
+        close during the long-term stage. The SL only moves up.
+        """
+        if not context.has_position:
+            return None
+
+        bars = self._bars_since_entry(context)
+        if bars is None:
+            return None
+        if self._stage(bars) != "long":
+            return None
+
+        atr = context.get_indicator_value("atr_14")
+        if not self._is_valid(atr) or atr <= 0:
+            return None
+
+        new_stop = context.current_price - (self.trailing_atr_mult * float(atr))
+        current_stop = context.position.stop_loss
+
+        if current_stop is not None and new_stop <= current_stop:
+            return None
+        return new_stop

@@ -130,11 +130,12 @@ class TestParameterValidation(unittest.TestCase):
         s = AlphaTrendV2C3Strategy()
         self.assertEqual(s.high_lookback_candles, 10)
         self.assertEqual(s.entry_wait_candles, 3)
-        # V2C2 defaults still hold.
+        # V2C3 replaces V2C2's trailing_sl_pct with an ATR-based multiplier.
+        self.assertEqual(s.trailing_atr_mult, 2.0)
+        # V2C2 defaults still hold for the unchanged params.
         self.assertEqual(s.peace_period_candles, 5)
         self.assertEqual(s.short_term_candles, 15)
         self.assertEqual(s.break_even_consecutive_bars, 7)
-        self.assertEqual(s.trailing_sl_pct, 20.0)
         self.assertEqual(s.trade_direction, TradeDirection.LONG)
 
     def test_invalid_high_lookback_candles(self):
@@ -152,13 +153,19 @@ class TestParameterValidation(unittest.TestCase):
         s = AlphaTrendV2C3Strategy(entry_wait_candles=0)
         self.assertEqual(s.entry_wait_candles, 0)
 
+    def test_invalid_trailing_atr_mult(self):
+        with self.assertRaises(ValueError):
+            AlphaTrendV2C3Strategy(trailing_atr_mult=0.0)
+        with self.assertRaises(ValueError):
+            AlphaTrendV2C3Strategy(trailing_atr_mult=-1.0)
+
     def test_inherited_validation_still_applies(self):
         # ma_length must be one of the supported values.
         with self.assertRaises(ValueError):
             AlphaTrendV2C3Strategy(ma_length=21)
-        # trailing_sl_pct must be in (0, 100).
+        # atr_sl must be > 0 (inherited from V2C2).
         with self.assertRaises(ValueError):
-            AlphaTrendV2C3Strategy(trailing_sl_pct=0.0)
+            AlphaTrendV2C3Strategy(atr_sl=0.0)
 
 
 class TestRequiredColumns(unittest.TestCase):
@@ -422,21 +429,56 @@ class TestExitInheritance(unittest.TestCase):
         self.assertIsNotNone(signal)
         self.assertIn("below entry", signal.reason)
 
-    def test_trailing_sl_still_works(self):
-        """Long-term trailing SL behaviour is inherited from V2C2."""
+    def test_trailing_sl_uses_atr_multiple(self):
+        """Long-term trailing SL is computed as close - trailing_atr_mult * ATR_14."""
         n = 60
         s = AlphaTrendV2C3Strategy(
             peace_period_candles=0,
             short_term_candles=0,
-            trailing_sl_pct=20.0,
+            trailing_atr_mult=2.0,
         )
-        df = s.prepare_data(_make_data([100.0] * n))
+        # ATR fixed at 2.0 in _make_data; close=100 -> new_stop = 100 - 2*2 = 96.
+        df = s.prepare_data(_make_data([100.0] * n, atr=2.0))
         entry_index = 20
         pos = _open_position_at(df, entry_index, stop=70.0)
         ctx = _make_context(df, index=entry_index + 1, current_position=pos)
         new_sl = s.should_adjust_stop(ctx)
         self.assertIsNotNone(new_sl)
-        self.assertAlmostEqual(new_sl, 80.0, places=6)
+        self.assertAlmostEqual(new_sl, 96.0, places=6)
+
+    def test_trailing_sl_only_moves_up(self):
+        """The trailing SL must not move down: a tighter existing stop wins."""
+        n = 60
+        s = AlphaTrendV2C3Strategy(
+            peace_period_candles=0,
+            short_term_candles=0,
+            trailing_atr_mult=2.0,
+        )
+        df = s.prepare_data(_make_data([100.0] * n, atr=2.0))
+        entry_index = 20
+        # Existing stop already above the would-be new stop (96.0).
+        pos = _open_position_at(df, entry_index, stop=98.0)
+        ctx = _make_context(df, index=entry_index + 1, current_position=pos)
+        new_sl = s.should_adjust_stop(ctx)
+        self.assertIsNone(new_sl)
+
+    def test_trailing_sl_inactive_outside_long_stage(self):
+        """Trailing SL must not adjust during peace or short-term stages."""
+        n = 60
+        s = AlphaTrendV2C3Strategy(
+            peace_period_candles=5,
+            short_term_candles=10,
+            trailing_atr_mult=2.0,
+        )
+        df = s.prepare_data(_make_data([100.0] * n, atr=2.0))
+        entry_index = 20
+        pos = _open_position_at(df, entry_index, stop=70.0)
+        # Peace stage (bars_since_entry=2): no adjust.
+        ctx_peace = _make_context(df, index=entry_index + 2, current_position=pos)
+        self.assertIsNone(s.should_adjust_stop(ctx_peace))
+        # Short stage (bars_since_entry=10): no adjust.
+        ctx_short = _make_context(df, index=entry_index + 10, current_position=pos)
+        self.assertIsNone(s.should_adjust_stop(ctx_short))
 
 
 # ---------------------------------------------------------------------------
@@ -454,20 +496,24 @@ class TestRegistration(unittest.TestCase):
 
     def test_has_v2c3_parameters(self):
         params = StrategyConfig.get_parameters("AlphaTrendV2C3Strategy")
-        # New params present.
-        for name in ("high_lookback_candles", "entry_wait_candles"):
+        # New params present (trailing_atr_mult replaces V2C2's trailing_sl_pct).
+        for name in ("high_lookback_candles", "entry_wait_candles",
+                     "trailing_atr_mult"):
             self.assertIn(name, params)
         # Inherited V2C2 params still present.
         for name in ("ma_offset", "ma_length", "atr_sl", "risk_perc",
                      "peace_period_candles", "short_term_candles",
                      "short_phase_exit_enabled",
-                     "break_even_consecutive_bars", "trailing_sl_pct"):
+                     "break_even_consecutive_bars"):
             self.assertIn(name, params)
+        # The replaced V2C2 parameter must not appear in V2C3.
+        self.assertNotIn("trailing_sl_pct", params)
 
     def test_defaults_match_strategy(self):
         defaults = StrategyConfig.get_defaults("AlphaTrendV2C3Strategy")
         self.assertEqual(defaults["high_lookback_candles"], 10)
         self.assertEqual(defaults["entry_wait_candles"], 3)
+        self.assertEqual(defaults["trailing_atr_mult"], 2.0)
 
 
 if __name__ == "__main__":
