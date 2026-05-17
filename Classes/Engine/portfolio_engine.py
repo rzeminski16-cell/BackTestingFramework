@@ -65,6 +65,30 @@ class VulnerabilitySwap:
 
 
 @dataclass
+class RejectionPositionContext:
+    """
+    Per-rejection record tying a rejected signal to the weakest open position
+    at the time, plus that position's eventual outcome.
+
+    Written one row per rejection event (weakest open position only). Final
+    fields are backfilled when the tracked position closes (or at end of
+    backtest, in which case ``position_open_at_end`` is True).
+    """
+    rejection_date: datetime
+    rejected_symbol: str
+    rejected_close_price: Optional[float]
+    rejection_reason: str
+    position_symbol: Optional[str] = None
+    position_entry_date: Optional[datetime] = None
+    position_duration_days_at_rejection: Optional[int] = None
+    position_pl_pct_at_rejection: Optional[float] = None
+    position_score_at_rejection: Optional[float] = None
+    position_final_duration_days: Optional[int] = None
+    position_final_pl_pct: Optional[float] = None
+    position_open_at_end: Optional[bool] = None
+
+
+@dataclass
 class PortfolioBacktestResult:
     """
     Extended backtest result with portfolio-specific information.
@@ -87,6 +111,10 @@ class PortfolioBacktestResult:
     # Configuration used
     config: PortfolioConfig
     strategy_name: str
+
+    # Per-rejection context joining the rejected signal to the weakest open
+    # position at the time, plus the eventual outcome of that position.
+    rejection_position_contexts: List[RejectionPositionContext] = field(default_factory=list)
 
 
 class PortfolioEngine:
@@ -131,6 +159,7 @@ class PortfolioEngine:
         self.vulnerability_swaps: List[VulnerabilitySwap] = []
         self.vulnerability_history: List[Dict[str, VulnerabilityResult]] = []
         self.capital_allocation_events: List[CapitalAllocationEvent] = []
+        self.rejection_position_contexts: List[RejectionPositionContext] = []
 
         # Cache for vulnerability scores (reset per day to avoid duplicate calculations)
         self._current_day_vuln_scores: Optional[Dict[str, VulnerabilityResult]] = None
@@ -158,6 +187,7 @@ class PortfolioEngine:
         self.vulnerability_swaps = []
         self.vulnerability_history = []
         self.capital_allocation_events = []
+        self.rejection_position_contexts = []
         self.trade_executor = TradeExecutor(self.config.commission)
 
         # Reset trade ID counter for this backtest
@@ -394,7 +424,7 @@ class PortfolioEngine:
                 final_bar = final_data.iloc[-1]
                 capital = self._close_position(
                     symbol, final_bar['date'], final_bar['close'],
-                    "End of backtest period", capital, pm
+                    "End of backtest period", capital, pm, open_at_end=True
                 )
 
         # Create equity curve
@@ -439,7 +469,8 @@ class PortfolioEngine:
             vulnerability_history=self.vulnerability_history,
             capital_allocation_events=self.capital_allocation_events,
             config=self.config,
-            strategy_name=strategy.get_name()
+            strategy_name=strategy.get_name(),
+            rejection_position_contexts=self.rejection_position_contexts,
         )
 
     def _process_buy_signals(self, signals: List[tuple], capital: float,
@@ -480,10 +511,10 @@ class PortfolioEngine:
             quantity = strategy.position_size(context, signal)
             if quantity <= 0:
                 # Record rejection instead of silently skipping
-                self._record_signal_rejection(
+                self._record_rejection_with_context(
                     current_date, symbol, "BUY",
                     f"Position size calculation returned {quantity:.4f} (stop too tight or insufficient equity)",
-                    capital, 0.0
+                    capital, 0.0, current_prices
                 )
                 continue
             fx_rate = self._get_fx_rate(symbol, current_date)
@@ -627,10 +658,10 @@ class PortfolioEngine:
                     num_open_positions, open_position_symbols.copy(), other_signals,
                     f"Rejected: insufficient capital even for 50% position ({capital:.2f} < {required_capital * 0.5:.2f})"
                 )
-                self._record_signal_rejection(
+                self._record_rejection_with_context(
                     current_date, symbol, "BUY",
                     f"Insufficient capital for even 50% position (available: {capital:.2f}, min required: {required_capital * 0.5:.2f})",
-                    capital, required_capital
+                    capital, required_capital, current_prices
                 )
 
         return capital
@@ -736,10 +767,10 @@ class PortfolioEngine:
                 len(open_position_symbols), open_position_symbols.copy(), other_signals,
                 "Rejected: insufficient capital and no positions to swap"
             )
-            self._record_signal_rejection(
+            self._record_rejection_with_context(
                 current_date, new_symbol, "BUY",
                 "Insufficient capital and no positions to swap",
-                capital, required_capital
+                capital, required_capital, current_prices
             )
             return capital
 
@@ -836,11 +867,11 @@ class PortfolioEngine:
                 f"Rejected: {swap_decision.reason}",
                 vulnerability_scores=vuln_scores
             )
-            self._record_signal_rejection(
+            self._record_rejection_with_context(
                 current_date, new_symbol, "BUY",
                 swap_decision.reason,
-                capital, required_capital,
-                swap_decision
+                capital, required_capital, current_prices,
+                vulnerability_decision=swap_decision
             )
 
         return capital
@@ -899,6 +930,132 @@ class PortfolioEngine:
             required_capital=required_capital,
             vulnerability_decision=vulnerability_decision
         ))
+
+    def _record_rejection_with_context(self, date: datetime, symbol: str,
+                                       signal_type: str, reason: str,
+                                       available_capital: float,
+                                       required_capital: float,
+                                       current_prices: Dict[str, float],
+                                       vulnerability_decision: Optional[SwapDecision] = None):
+        """
+        Record a signal rejection and a per-rejection row that captures the
+        weakest open position at the time (for later cross-referencing to
+        the eventual outcome of that position).
+        """
+        self._record_signal_rejection(
+            date, symbol, signal_type, reason,
+            available_capital, required_capital, vulnerability_decision
+        )
+
+        # Resolve which vulnerability scores (if any) apply to this rejection.
+        vuln_scores: Optional[Dict[str, VulnerabilityResult]] = self._current_day_vuln_scores
+        if vuln_scores is None and vulnerability_decision is not None:
+            vuln_scores = vulnerability_decision.all_scores or None
+
+        ctx = RejectionPositionContext(
+            rejection_date=date,
+            rejected_symbol=symbol,
+            rejected_close_price=current_prices.get(symbol),
+            rejection_reason=reason,
+        )
+
+        weakest = self._find_weakest_for_rejection(current_prices, vuln_scores)
+        if weakest is not None:
+            sym, pos, pl_pct, score = weakest
+            ctx.position_symbol = sym
+            ctx.position_entry_date = pos.entry_date
+            ctx.position_duration_days_at_rejection = (date - pos.entry_date).days
+            ctx.position_pl_pct_at_rejection = pl_pct
+            ctx.position_score_at_rejection = score
+
+        self.rejection_position_contexts.append(ctx)
+
+    def _find_weakest_for_rejection(self, current_prices: Dict[str, float],
+                                    vuln_scores: Optional[Dict[str, VulnerabilityResult]]
+                                    ) -> Optional[Tuple[str, Position, float, Optional[float]]]:
+        """
+        Identify the weakest open position at the moment of a rejection.
+
+        Vulnerability mode (scores available): highest score wins (most
+        vulnerable, including immune positions). Default mode: lowest
+        realized+unrealized P/L % wins (worst performer). Returns None when
+        no positions are open.
+        """
+        open_positions: Dict[str, Position] = {
+            sym: pm.get_position()
+            for sym, pm in self.position_managers.items()
+            if pm.has_position
+        }
+        if not open_positions:
+            return None
+
+        if vuln_scores:
+            scored = {s: vuln_scores[s] for s in open_positions if s in vuln_scores}
+            if scored:
+                weakest_sym = max(scored.keys(), key=lambda s: scored[s].score)
+                pos = open_positions[weakest_sym]
+                price = current_prices.get(weakest_sym) or self._last_known_prices.get(weakest_sym)
+                pl_pct = self._calculate_position_pl_pct(pos, price) if price else 0.0
+                return weakest_sym, pos, pl_pct, scored[weakest_sym].score
+
+        # Default mode: lowest P/L %
+        pls: List[Tuple[str, Position, float]] = []
+        for sym, pos in open_positions.items():
+            price = current_prices.get(sym) or self._last_known_prices.get(sym)
+            if price:
+                pls.append((sym, pos, self._calculate_position_pl_pct(pos, price)))
+
+        if not pls:
+            return None
+
+        weakest_sym, weakest_pos, pl_pct = min(pls, key=lambda x: x[2])
+        return weakest_sym, weakest_pos, pl_pct, None
+
+    def _calculate_position_pl_pct(self, position: Position, current_price: float) -> float:
+        """
+        Realized (partial exits) + unrealized P/L %, expressed against the
+        initial cost basis (entry_price * initial_quantity). Matches the
+        formula used by Trade.pl_pct so a position's rejection-time P/L can
+        be compared apples-to-apples with its final trade P/L.
+        """
+        if position.entry_price <= 0 or position.initial_quantity <= 0:
+            return 0.0
+
+        is_short = position.direction == TradeDirection.SHORT
+        pl = 0.0
+
+        for pe in position.partial_exits:
+            if is_short:
+                pl += (position.entry_price - pe.price) * pe.quantity
+            else:
+                pl += (pe.price - position.entry_price) * pe.quantity
+
+        if is_short:
+            pl += (position.entry_price - current_price) * position.current_quantity
+        else:
+            pl += (current_price - position.entry_price) * position.current_quantity
+
+        pl -= position.total_commission_paid
+
+        initial_cost = position.entry_price * position.initial_quantity
+        return pl / initial_cost * 100.0
+
+    def _backfill_rejection_contexts(self, position: Position, exit_price: float,
+                                     exit_date: datetime, open_at_end: bool) -> None:
+        """
+        Fill the final outcome on rejection contexts that reference this
+        (symbol, entry_date) position and haven't been backfilled yet.
+        """
+        final_pl_pct = self._calculate_position_pl_pct(position, exit_price)
+        final_duration = (exit_date - position.entry_date).days
+
+        for ctx in self.rejection_position_contexts:
+            if (ctx.position_symbol == position.symbol
+                    and ctx.position_entry_date == position.entry_date
+                    and ctx.position_final_pl_pct is None):
+                ctx.position_final_pl_pct = final_pl_pct
+                ctx.position_final_duration_days = final_duration
+                ctx.position_open_at_end = open_at_end
 
     def _get_fx_rate(self, symbol: str, date: datetime) -> float:
         """Get FX rate to convert from security currency to base currency."""
@@ -1018,7 +1175,8 @@ class PortfolioEngine:
         return capital
 
     def _close_position(self, symbol: str, date: datetime, price: float,
-                        reason: str, capital: float, pm: PositionManager) -> float:
+                        reason: str, capital: float, pm: PositionManager,
+                        open_at_end: bool = False) -> float:
         """Close position."""
         # Apply slippage to SELL orders (receive less due to slippage)
         execution_price = price * (1 - self.config.slippage_percent / 100)
@@ -1072,6 +1230,11 @@ class PortfolioEngine:
             concurrent_positions=trade_info.get('concurrent_positions', 0),
             competing_signals=trade_info.get('competing_signals', [])
         )
+
+        # Backfill any rejection contexts that reference this position so
+        # readers of rejection_position_tracking.csv can see how the trade
+        # the rejection competed with eventually finished.
+        self._backfill_rejection_contexts(position, execution_price, date, open_at_end)
 
         # Clear pending trade info
         pm.pending_trade_info = None

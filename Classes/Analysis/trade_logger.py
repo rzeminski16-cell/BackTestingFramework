@@ -14,6 +14,7 @@ logs/
 │       ├── {symbol}_trades.csv (per security)
 │       ├── portfolio_trades.csv (consolidated)
 │       ├── signal_rejections.csv
+│       ├── rejection_position_tracking.csv (per-rejection position context)
 │       ├── vulnerability_log.csv (if using vulnerability score)
 │       ├── config.json
 │       └── reports/
@@ -246,6 +247,12 @@ class PortfolioTradeLogger:
             filepath = self._log_signal_rejections(result.signal_rejections)
             logged_files["signal_rejections"] = filepath
 
+        # Log per-rejection position context (signal vs. weakest open position)
+        contexts = getattr(result, 'rejection_position_contexts', None)
+        if contexts:
+            filepath = self._log_rejection_position_tracking(contexts)
+            logged_files["rejection_position_tracking"] = filepath
+
         # Log vulnerability swaps and history
         if result.vulnerability_swaps:
             filepath = self._log_vulnerability_swaps(result.vulnerability_swaps)
@@ -296,6 +303,38 @@ class PortfolioTradeLogger:
         filepath = self.base_dir / "signal_rejections.csv"
         df.to_csv(filepath, index=False)
         print(f"Logged {len(rejections)} signal rejections")
+        return filepath
+
+    def _log_rejection_position_tracking(self, contexts: List) -> Path:
+        """
+        Log per-rejection position context to CSV.
+
+        One row per signal rejection, with the weakest open position at the
+        time and the eventual outcome of that position so the user can answer
+        "should I have swapped this position for the rejected signal?".
+        """
+        rows = []
+        for c in contexts:
+            rows.append({
+                'rejection_date': c.rejection_date,
+                'rejected_symbol': c.rejected_symbol,
+                'rejected_signal_date': c.rejection_date,
+                'rejected_close_price': c.rejected_close_price,
+                'rejection_reason': c.rejection_reason,
+                'position_symbol': c.position_symbol,
+                'position_open_date': c.position_entry_date,
+                'position_duration_days_at_rejection': c.position_duration_days_at_rejection,
+                'position_pl_pct_at_rejection': c.position_pl_pct_at_rejection,
+                'position_score_at_rejection': c.position_score_at_rejection,
+                'position_final_duration_days': c.position_final_duration_days,
+                'position_final_pl_pct': c.position_final_pl_pct,
+                'position_open_at_end': c.position_open_at_end,
+            })
+
+        df = pd.DataFrame(rows)
+        filepath = self.base_dir / "rejection_position_tracking.csv"
+        df.to_csv(filepath, index=False)
+        print(f"Logged {len(contexts)} rejection position contexts")
         return filepath
 
     def _log_vulnerability_swaps(self, swaps: List) -> Path:
