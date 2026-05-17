@@ -23,6 +23,7 @@ from Classes.Engine.portfolio_engine import (
     CapitalAllocationEvent,
     SignalRejection,
     VulnerabilitySwap,
+    RejectionPositionContext,
 )
 from Classes.Engine.backtest_result import BacktestResult
 from Classes.Config.config import (
@@ -455,3 +456,153 @@ class TestCapitalContentionVulnerability:
         result = engine.run({"AAPL": data}, strategy)
         # Should have vulnerability history entries for days when position is open
         assert len(result.vulnerability_history) > 0
+
+
+# =============================================================================
+# Rejection Position Context Tests
+# =============================================================================
+
+class TestRejectionPositionContext:
+    """
+    The rejection_position_tracking CSV needs one row per rejection that pairs
+    the rejected signal with the weakest open position at that moment, plus
+    that position's eventual outcome. These tests verify the engine populates
+    that data correctly in both DEFAULT and end-of-backtest scenarios.
+    """
+
+    def test_dataclass_defaults(self):
+        ctx = RejectionPositionContext(
+            rejection_date=datetime(2024, 1, 5),
+            rejected_symbol="AAPL",
+            rejected_close_price=101.5,
+            rejection_reason="Insufficient capital",
+        )
+        assert ctx.position_symbol is None
+        assert ctx.position_final_pl_pct is None
+        assert ctx.position_open_at_end is None
+
+    def _build_contention_setup(self):
+        """Two symbols, capital only enough for one full position at a time."""
+        reset_trade_counter()
+        # Each position needs ~100 * 101.5 = ~10150. Only one can fit.
+        config = _make_portfolio_config(initial_capital=10500.0)
+        engine = PortfolioEngine(config)
+        data_dict = {
+            "AAPL": _make_price_data(symbol_offset=0.0, num_bars=15),
+            "GOOG": _make_price_data(symbol_offset=0.0, num_bars=15),
+        }
+        strategy = PortfolioDeterministicStrategy(
+            buy_bars={3}, sell_bars={10}, stop_loss_price=50.0,
+            position_size_shares=100,
+        )
+        return engine, data_dict, strategy
+
+    def test_rejection_creates_context_with_open_position(self):
+        """A rejection while a position is open should add a context row that
+        names the open position as the weakest candidate."""
+        engine, data_dict, strategy = self._build_contention_setup()
+        result = engine.run(data_dict, strategy)
+
+        assert len(result.rejection_position_contexts) > 0, (
+            "Expected at least one rejection context to be recorded"
+        )
+
+        ctx = result.rejection_position_contexts[0]
+        # The rejected signal's metadata should be present
+        assert ctx.rejected_symbol in {"AAPL", "GOOG"}
+        assert ctx.rejected_close_price is not None
+        # Some other symbol was the open (weakest) position
+        assert ctx.position_symbol is not None
+        assert ctx.position_symbol != ctx.rejected_symbol
+        # P/L % and duration captured at rejection time
+        assert ctx.position_duration_days_at_rejection is not None
+        assert ctx.position_pl_pct_at_rejection is not None
+
+    def test_context_backfilled_after_position_closes(self):
+        """Once the tracked position closes (sell signal at bar 10), the
+        context should have its final outcome filled in."""
+        engine, data_dict, strategy = self._build_contention_setup()
+        result = engine.run(data_dict, strategy)
+
+        # Find a context where the tracked position was named
+        named = [c for c in result.rejection_position_contexts
+                 if c.position_symbol is not None]
+        assert named, "Expected contexts with a named open position"
+
+        # The position will close at bar 10 (sell_bars={10}), so final fields
+        # should be populated for all of those contexts.
+        for ctx in named:
+            assert ctx.position_final_duration_days is not None
+            assert ctx.position_final_pl_pct is not None
+            assert ctx.position_open_at_end is False, (
+                f"Position closed naturally, expected open_at_end=False, "
+                f"got {ctx.position_open_at_end}"
+            )
+
+    def test_open_at_end_when_position_never_closes(self):
+        """If the position is still open at backtest end, the final fields
+        should reflect the end-of-backtest close and open_at_end should be True."""
+        reset_trade_counter()
+        config = _make_portfolio_config(initial_capital=10500.0)
+        engine = PortfolioEngine(config)
+        data_dict = {
+            "AAPL": _make_price_data(symbol_offset=0.0, num_bars=15),
+            "GOOG": _make_price_data(symbol_offset=0.0, num_bars=15),
+        }
+        # Buy at bar 3 but never sell - position stays open through end
+        strategy = PortfolioDeterministicStrategy(
+            buy_bars={3}, sell_bars=set(), stop_loss_price=50.0,
+            position_size_shares=100,
+        )
+        result = engine.run(data_dict, strategy)
+
+        named = [c for c in result.rejection_position_contexts
+                 if c.position_symbol is not None]
+        assert named, "Expected at least one rejection context with named position"
+
+        # All tracked positions are force-closed at end of backtest
+        for ctx in named:
+            assert ctx.position_open_at_end is True
+            assert ctx.position_final_duration_days is not None
+
+    def test_default_mode_context_score_is_none(self):
+        """In DEFAULT mode there is no vulnerability calculation, so the
+        score field should be None."""
+        engine, data_dict, strategy = self._build_contention_setup()
+        result = engine.run(data_dict, strategy)
+
+        named = [c for c in result.rejection_position_contexts
+                 if c.position_symbol is not None]
+        assert named
+        for ctx in named:
+            assert ctx.position_score_at_rejection is None
+
+    def test_vulnerability_mode_context_includes_score(self):
+        """In VULNERABILITY_SCORE mode the score field should be populated."""
+        reset_trade_counter()
+        vuln_config = VulnerabilityScoreConfig(
+            min_trade_age_days=1, target_monthly_growth=0.05, alpha=0.0, beta=0.0,
+        )
+        config = _make_portfolio_config(
+            initial_capital=10500.0,
+            mode=CapitalContentionMode.VULNERABILITY_SCORE,
+            vuln_config=vuln_config,
+        )
+        engine = PortfolioEngine(config)
+        data_dict = {
+            "AAPL": _make_price_data(symbol_offset=0.0, num_bars=15),
+            "GOOG": _make_price_data(symbol_offset=0.0, num_bars=15),
+        }
+        strategy = PortfolioDeterministicStrategy(
+            buy_bars={3}, sell_bars={10}, stop_loss_price=50.0,
+            position_size_shares=100,
+        )
+        result = engine.run(data_dict, strategy)
+
+        named = [c for c in result.rejection_position_contexts
+                 if c.position_symbol is not None]
+        assert named, "Expected rejection contexts in vulnerability mode"
+        # At least one context should have a non-None score (the position is
+        # past min_trade_age_days=1, so a score can be computed).
+        scored = [c for c in named if c.position_score_at_rejection is not None]
+        assert scored, "Expected at least one context with a vulnerability score"
