@@ -50,6 +50,7 @@ from Classes.DataCollection import (
     OptionsCollector,
 )
 from Classes.DataCollection.file_manager import DataTransformer
+from Classes.DataCollection.fundamental_collector import FundamentalCollector
 from Classes.DataCollection.logging_manager import (
     DecisionLogEntry,
     DataIssueEntry,
@@ -1182,6 +1183,7 @@ class FundamentalTab(BaseTab):
         validator = self.app.validator
         logger = self.app.logger
 
+        collector = FundamentalCollector(client)
         total_tickers = len(tickers)
 
         for i, ticker in enumerate(tickers):
@@ -1192,61 +1194,21 @@ class FundamentalTab(BaseTab):
                 progress_callback(f"Fetching {ticker} fundamentals...", i / total_tickers)
                 logger.log_session_info(f"FETCHING {ticker} FUNDAMENTAL")
 
-                all_data = []
+                # Assemble a tidy point-in-time panel: the income statement,
+                # balance sheet and cash flow joined per fiscal period, with a
+                # real publication date recovered from the EARNINGS endpoint.
+                # The current OVERVIEW snapshot is stored separately (it has no
+                # history and must not be backfilled onto historical rows).
+                panel, snapshot = collector.collect(ticker, frequency=config["frequency"])
 
-                # Get company overview
-                overview_response = client.get_company_overview(ticker)
-                if overview_response.success:
-                    overview_df = DataTransformer.transform_fundamental_overview(overview_response.data)
-                    if not overview_df.empty:
-                        all_data.append(overview_df)
-
-                # Get earnings
-                earnings_response = client.get_earnings(ticker)
-                if earnings_response.success:
-                    earnings_df = DataTransformer.transform_earnings(earnings_response.data)
-                    if not earnings_df.empty:
-                        all_data.append(earnings_df)
-
-                # Get income statement, balance sheet, cash flow
-                for endpoint, transform_func in [
-                    (client.get_income_statement, "income_statement"),
-                    (client.get_balance_sheet, "balance_sheet"),
-                    (client.get_cash_flow, "cash_flow"),
-                ]:
-                    response = endpoint(ticker)
-                    if response.success and response.data:
-                        # These endpoints return quarterly and annual reports
-                        quarterly = response.data.get("quarterlyReports", [])
-                        annual = response.data.get("annualReports", [])
-
-                        if config["frequency"] in ["both", "quarterly"] and quarterly:
-                            df = pd.DataFrame(quarterly)
-                            df["report_type"] = "quarterly"
-                            all_data.append(df)
-
-                        if config["frequency"] in ["both", "annual"] and annual:
-                            df = pd.DataFrame(annual)
-                            df["report_type"] = "annual"
-                            all_data.append(df)
-
-                if not all_data:
+                if panel.empty:
                     results["failed"].append((ticker, "No fundamental data returned"))
                     continue
 
-                # Combine all data (this is simplified - real implementation would merge properly)
-                combined_df = pd.concat(all_data, ignore_index=True) if len(all_data) > 1 else all_data[0]
+                validation_report = validator.validate_fundamental_data(panel, ticker)
 
-                # Add symbol column
-                combined_df["symbol"] = ticker
-
-                # Validate and write
-                validation_report = validator.validate_fundamental_data(combined_df, ticker)
-
-                file_meta = file_manager.write_fundamental_data(
-                    combined_df, ticker,
-                    missing_handling=config["missing_handling"]
-                )
+                file_meta = file_manager.write_fundamental_data(panel, ticker)
+                file_manager.write_overview_snapshot(snapshot, ticker)
 
                 if validation_report.passed:
                     results["success"].append((ticker, file_meta))

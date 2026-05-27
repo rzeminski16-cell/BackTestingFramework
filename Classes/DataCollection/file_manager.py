@@ -245,17 +245,41 @@ class FileManager:
         self,
         df: pd.DataFrame,
         symbol: str,
-        missing_handling: MissingDataHandling = MissingDataHandling.SKIP
+        missing_handling: MissingDataHandling = MissingDataHandling.SKIP,
+        merge_existing: bool = True
     ) -> FileMetadata:
-        """Write fundamental data to CSV."""
+        """
+        Write the point-in-time fundamental panel to CSV.
+
+        The panel produced by ``FundamentalCollector`` already has one row per
+        (frequency, fiscal period) with the statements joined and a real
+        ``report_date``. Missing line items must stay as honest NaNs, so no
+        forward-fill / interpolation / dropna is applied here regardless of
+        ``missing_handling`` (kept for signature compatibility).
+
+        When ``merge_existing`` is set and a file already exists, the new panel
+        is merged with it (de-duplicated on symbol/frequency/fiscal date) so the
+        local store accumulates history that ages out of the Alpha Vantage API.
+        """
+        from .fundamental_collector import merge_panels
+
         file_name = f"{symbol}_fundamental.csv"
         file_path = self.get_output_path('fundamental', file_name)
 
-        df = self._prepare_dataframe(df)
-        df = self._handle_missing_data(df, missing_handling)
+        df = df.copy()
+        df.columns = [str(col).lower().strip() for col in df.columns]
+
+        if merge_existing and file_path.exists():
+            try:
+                existing = pd.read_csv(file_path)
+                existing.columns = [str(col).lower().strip() for col in existing.columns]
+                df = merge_panels(existing, df)
+            except Exception:
+                pass
+
         df = self._order_columns_fundamental(df)
 
-        missing_handled = df.isna().sum().sum()
+        missing_handled = int(df.isna().sum().sum())
         df.to_csv(
             file_path,
             index=False,
@@ -274,6 +298,44 @@ class FileManager:
         )
 
         self._files_created[file_name] = metadata
+        return metadata
+
+    def write_overview_snapshot(
+        self,
+        df: pd.DataFrame,
+        symbol: str
+    ) -> Optional[FileMetadata]:
+        """
+        Write the current OVERVIEW snapshot to a separate file.
+
+        These values have no history and must never be backfilled onto the
+        historical panel; they are stored under ``fundamentals/_overview/`` for
+        current-day screening only.
+        """
+        if df is None or df.empty:
+            return None
+
+        snapshot_dir = self.output_dir / 'fundamentals' / '_overview'
+        snapshot_dir.mkdir(parents=True, exist_ok=True)
+        file_path = snapshot_dir / f"{symbol}_overview.csv"
+
+        df = df.copy()
+        df.columns = [str(col).lower().strip() for col in df.columns]
+        df.to_csv(
+            file_path,
+            index=False,
+            encoding=self.CSV_ENCODING,
+            lineterminator=self.CSV_LINE_TERMINATOR,
+            date_format=self.DATE_FORMAT
+        )
+
+        metadata = self._create_file_metadata(
+            df=df,
+            file_name=f"{symbol}_overview.csv",
+            file_path=file_path,
+            symbol=symbol,
+            data_type='fundamental'
+        )
         return metadata
 
     def write_insider_data(
@@ -549,12 +611,11 @@ class FileManager:
         return df[ordered]
 
     def _order_columns_fundamental(self, df: pd.DataFrame) -> pd.DataFrame:
-        """Order columns for fundamental data."""
+        """Order columns for the point-in-time fundamental panel."""
         priority_order = [
-            'date', 'quarter_end_date', 'symbol', 'year', 'quarter',
-            'eps', 'eps_ttm', 'eps_growth_yoy_pct',
-            'revenue', 'revenue_ttm', 'revenue_growth_yoy_pct',
-            'pe_ratio', 'pe_ratio_trailing', 'pe_ratio_forward'
+            'symbol', 'frequency', 'fiscaldateending', 'report_date',
+            'reporttime', 'reportedcurrency',
+            'reported_eps', 'estimated_eps', 'earnings_surprise', 'surprise_pct',
         ]
 
         ordered = []
@@ -654,7 +715,7 @@ class FileManager:
         """Create metadata for a written file."""
         # Get date range if date column exists
         date_range = None
-        for date_col in ['date', 'quarter_end_date', 'snapshot_date']:
+        for date_col in ['date', 'quarter_end_date', 'snapshot_date', 'fiscaldateending', 'report_date']:
             if date_col in df.columns:
                 dates = pd.to_datetime(df[date_col])
                 date_range = [

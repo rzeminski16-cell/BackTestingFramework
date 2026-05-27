@@ -186,35 +186,102 @@ class ValidationEngine:
         file_name = f"{symbol}_fundamental.csv"
         results = []
 
-        # Check for either date or quarter_end_date
-        if 'date' not in df.columns and 'quarter_end_date' not in df.columns:
+        # The point-in-time panel is keyed by fiscal_date_ending; each period is
+        # one row with the statements joined and a real publication date.
+        if 'fiscaldateending' not in df.columns:
             results.append(ValidationResult(
                 passed=False,
                 check_name="Required date column",
-                message="Missing 'date' or 'quarter_end_date' column",
+                message="Missing 'fiscaldateending' column",
                 severity=ValidationSeverity.ERROR
             ))
-        else:
-            date_col = 'date' if 'date' in df.columns else 'quarter_end_date'
-            results.extend(self._check_date_column(df, date_col))
-            results.extend(self._check_temporal_order(df, date_col))
-            results.extend(self._check_duplicates(df, date_col))
+            return self._create_report(file_name, results)
 
-        # Check for reasonable quarter values if present
-        if 'quarter' in df.columns:
-            results.extend(self._check_quarter_values(df))
+        results.extend(self._check_date_column(df, 'fiscaldateending'))
 
-        # Check for placeholder values
+        # One row per period: duplicates are checked per frequency because an
+        # annual fiscal-year-end legitimately shares its date with Q4.
+        dup_keys = [c for c in ['frequency', 'fiscaldateending'] if c in df.columns]
+        results.extend(self._check_duplicates_multi(df, dup_keys))
+
+        # Point-in-time guarantee: data cannot be known before it was reported.
+        results.extend(self._check_report_after_fiscal(df))
+
+        # Regression guard: the previous pipeline forward-filled the current
+        # OVERVIEW snapshot across all history, collapsing line items to a single
+        # value. Flag any sign of that returning.
+        results.extend(self._check_not_smeared(df))
+
+        # Sanity: balance sheet should roughly satisfy A = L + E.
+        results.extend(self._check_accounting_identity(df))
+
         results.extend(self._check_placeholder_values(df))
-
-        # Check numeric columns are actually numeric
-        numeric_cols = df.select_dtypes(include=[np.number]).columns.tolist()
-        for col in numeric_cols:
-            results.extend(self._check_reasonable_values(df, col))
-
-        results.extend(self._check_data_points(df, min_points=4))  # At least 1 year of quarters
+        results.extend(self._check_data_points(df, min_points=4))
 
         return self._create_report(file_name, results)
+
+    def _check_report_after_fiscal(self, df: pd.DataFrame) -> List[ValidationResult]:
+        """report_date must be on or after fiscal_date_ending (no look-ahead)."""
+        if 'report_date' not in df.columns or 'fiscaldateending' not in df.columns:
+            return []
+        fde = pd.to_datetime(df['fiscaldateending'], errors='coerce')
+        rep = pd.to_datetime(df['report_date'], errors='coerce')
+        both = fde.notna() & rep.notna()
+        violations = int((both & (rep < fde)).sum())
+        return [ValidationResult(
+            passed=violations == 0,
+            check_name="Point-in-time report date",
+            message=(
+                "report_date is on/after fiscal_date_ending for all rows"
+                if violations == 0
+                else f"{violations} row(s) have report_date before fiscal_date_ending"
+            ),
+            severity=ValidationSeverity.ERROR,
+            column='report_date'
+        )]
+
+    def _check_not_smeared(self, df: pd.DataFrame) -> List[ValidationResult]:
+        """Flag line-item columns that are suspiciously constant across periods."""
+        results = []
+        for col in ('totalrevenue', 'totalassets'):
+            if col not in df.columns:
+                continue
+            values = pd.to_numeric(df[col], errors='coerce').dropna()
+            if len(values) > 4 and values.nunique() == 1:
+                results.append(ValidationResult(
+                    passed=False,
+                    check_name="No smeared values",
+                    message=(
+                        f"'{col}' has a single value across {len(values)} periods "
+                        "- possible forward-fill/snapshot smearing"
+                    ),
+                    severity=ValidationSeverity.ERROR,
+                    column=col
+                ))
+        return results
+
+    def _check_accounting_identity(self, df: pd.DataFrame) -> List[ValidationResult]:
+        """Assets should approximately equal liabilities + shareholder equity."""
+        cols = ['totalassets', 'totalliabilities', 'totalshareholderequity']
+        if not all(c in df.columns for c in cols):
+            return []
+        sub = df[cols].apply(pd.to_numeric, errors='coerce').dropna()
+        if sub.empty:
+            return []
+        assets = sub['totalassets']
+        imbalance = (assets - (sub['totalliabilities'] + sub['totalshareholderequity'])).abs()
+        rel = (imbalance / assets.abs().replace(0, np.nan)).dropna()
+        bad = int((rel > 0.05).sum())
+        return [ValidationResult(
+            passed=bad == 0,
+            check_name="Accounting identity",
+            message=(
+                "Balance sheet satisfies A = L + E"
+                if bad == 0
+                else f"{bad} period(s) violate A = L + E by more than 5%"
+            ),
+            severity=ValidationSeverity.WARNING
+        )]
 
     def validate_insider_data(
         self,

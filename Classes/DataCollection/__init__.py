@@ -30,6 +30,11 @@ from .config import (
 from .alpha_vantage_client import AlphaVantageClient
 from .validation_engine import ValidationEngine, ValidationResult
 from .file_manager import FileManager
+from .fundamental_collector import (
+    FundamentalCollector,
+    build_fundamental_panel,
+    extract_overview_snapshot,
+)
 from .logging_manager import LoggingManager, SessionLogger
 from .options_collector import OptionsCollector
 
@@ -59,6 +64,9 @@ __all__ = [
     'ValidationEngine',
     'ValidationResult',
     'FileManager',
+    'FundamentalCollector',
+    'build_fundamental_panel',
+    'extract_overview_snapshot',
     'LoggingManager',
     'SessionLogger',
     'OptionsCollector',
