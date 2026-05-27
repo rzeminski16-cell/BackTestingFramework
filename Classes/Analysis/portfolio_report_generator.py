@@ -61,13 +61,15 @@ class PortfolioReportGenerator:
     NEGATIVE_FILL = PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid") if OPENPYXL_AVAILABLE else None
     NEUTRAL_FILL = PatternFill(start_color="FFEB9C", end_color="FFEB9C", fill_type="solid") if OPENPYXL_AVAILABLE else None
 
-    def __init__(self, output_dir: Path, use_enhanced: bool = True):
+    def __init__(self, output_dir: Path, use_enhanced: bool = True,
+                 benchmark_name: Optional[str] = None):
         """
         Initialize report generator.
 
         Args:
             output_dir: Directory to save reports
             use_enhanced: If True (default), use enhanced report generator with advanced visualizations
+            benchmark_name: Benchmark to compare against (defaults to the registry default)
         """
         if not OPENPYXL_AVAILABLE:
             raise ImportError("openpyxl is required for report generation. Install with: pip install openpyxl")
@@ -75,12 +77,14 @@ class PortfolioReportGenerator:
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
         self.use_enhanced = use_enhanced and ENHANCED_REPORTS_AVAILABLE
+        self.benchmark_name = benchmark_name
 
         # Initialize enhanced generator if available and requested
         self._enhanced_generator = None
         if self.use_enhanced:
             try:
-                self._enhanced_generator = EnhancedPortfolioReportGenerator(self.output_dir)
+                self._enhanced_generator = EnhancedPortfolioReportGenerator(
+                    self.output_dir, benchmark_name=benchmark_name)
             except Exception:
                 self.use_enhanced = False
 
@@ -120,6 +124,7 @@ class PortfolioReportGenerator:
         self._create_per_security_sheet(wb, result)
         self._create_trades_sheet(wb, result)
         self._create_equity_curve_sheet(wb, result)
+        self._create_benchmark_sheet(wb, result)
 
         if result.signal_rejections:
             self._create_signal_rejections_sheet(wb, result)
@@ -385,6 +390,20 @@ class PortfolioReportGenerator:
         widths = [10, 10, 12, 12, 12, 12, 12, 12, 10, 10, 12, 15, 15, 20, 25, 25]
         for col, width in enumerate(widths, 1):
             ws.column_dimensions[chr(64 + col)].width = width
+
+    def _create_benchmark_sheet(self, wb: Workbook, result):
+        """Create Sheet: portfolio vs benchmark comparison."""
+        try:
+            from .benchmark import BenchmarkLoader, write_comparison_sheet
+            ws = wb.create_sheet("Benchmark")
+            try:
+                comparison = BenchmarkLoader().compare(
+                    result.portfolio_equity_curve, self.benchmark_name)
+            except Exception:
+                comparison = None
+            write_comparison_sheet(ws, comparison, title="PORTFOLIO VS BENCHMARK")
+        except Exception:
+            pass
 
     def _create_equity_curve_sheet(self, wb: Workbook, result):
         """Create equity curve visualization."""

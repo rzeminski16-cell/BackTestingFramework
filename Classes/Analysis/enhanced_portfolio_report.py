@@ -73,13 +73,15 @@ class EnhancedPortfolioReportGenerator:
         'dark_gray': '666666',
     }
 
-    def __init__(self, output_dir: Path, include_matplotlib_charts: bool = True):
+    def __init__(self, output_dir: Path, include_matplotlib_charts: bool = True,
+                 benchmark_name: Optional[str] = None):
         """
         Initialize enhanced report generator.
 
         Args:
             output_dir: Directory to save reports
             include_matplotlib_charts: Whether to include matplotlib visualizations
+            benchmark_name: Benchmark to compare against (defaults to the registry default)
         """
         if not OPENPYXL_AVAILABLE:
             raise ImportError("openpyxl is required for report generation")
@@ -87,6 +89,7 @@ class EnhancedPortfolioReportGenerator:
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
         self.include_matplotlib_charts = include_matplotlib_charts and MATPLOTLIB_AVAILABLE
+        self.benchmark_name = benchmark_name
 
         # Initialize visualizations module if available
         if self.include_matplotlib_charts:
@@ -155,6 +158,7 @@ class EnhancedPortfolioReportGenerator:
         self._create_executive_summary(wb, result, metrics)
         self._create_dashboard_visualizations(wb, result, metrics)
         self._create_performance_metrics(wb, result, metrics)
+        self._create_benchmark_analysis(wb, result)
         self._create_per_security_analysis(wb, result, metrics)
         self._create_trade_analysis(wb, result, metrics)
         self._create_trade_log(wb, result)
@@ -178,6 +182,20 @@ class EnhancedPortfolioReportGenerator:
         wb.save(filepath)
         print(f"Enhanced portfolio report saved to {filepath}")
         return filepath
+
+    def _create_benchmark_analysis(self, wb, result):
+        """Create Sheet: portfolio vs benchmark comparison."""
+        try:
+            from .benchmark import BenchmarkLoader, write_comparison_sheet
+            ws = wb.create_sheet("Benchmark")
+            try:
+                comparison = BenchmarkLoader().compare(
+                    result.portfolio_equity_curve, self.benchmark_name)
+            except Exception:
+                comparison = None
+            write_comparison_sheet(ws, comparison, title="PORTFOLIO VS BENCHMARK")
+        except Exception:
+            pass
 
     def _calculate_comprehensive_metrics(self, result) -> Dict[str, Any]:
         """Calculate all metrics needed for the report."""

@@ -105,6 +105,9 @@ class APIEndpoint(Enum):
     # Options
     HISTORICAL_OPTIONS = "HISTORICAL_OPTIONS"
 
+    # Index
+    INDEX_DATA = "INDEX_DATA"
+
 
 @dataclass
 class APIResponse:
@@ -880,6 +883,34 @@ class AlphaVantageClient:
         return self._make_request(
             APIEndpoint.HISTORICAL_OPTIONS,
             params
+        )
+
+    # === Index Data ===
+
+    def get_index_data(
+        self,
+        symbol: str,
+        interval: str = "daily",
+        outputsize: str = "full"
+    ) -> APIResponse:
+        """
+        Get index OHLC time series via the premium INDEX_DATA endpoint.
+
+        Args:
+            symbol: Index symbol (e.g. SPX, DJI, IXIC, NDX, RUT, VIX)
+            interval: "daily", "weekly", or "monthly"
+            outputsize: "compact" (latest 100 points) or "full"
+
+        Returns:
+            APIResponse with the index time series
+        """
+        return self._make_request(
+            APIEndpoint.INDEX_DATA,
+            {
+                "symbol": symbol,
+                "interval": interval,
+                "outputsize": outputsize
+            }
         )
 
     # === Batch Operations ===

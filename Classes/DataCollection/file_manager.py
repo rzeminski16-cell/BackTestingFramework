@@ -117,6 +117,7 @@ class FileManager:
             self.output_dir / 'insider_transactions',
             self.output_dir / 'forex',
             self.output_dir / 'options',
+            self.output_dir / 'benchmarks',
         ]
 
         for directory in directories:
@@ -140,6 +141,7 @@ class FileManager:
             'insider': 'insider_transactions',
             'forex': 'forex',
             'options': 'options',
+            'benchmark': 'benchmarks',
         }
 
         subdir = type_dirs.get(data_type, data_type)
@@ -336,6 +338,42 @@ class FileManager:
             symbol=symbol,
             data_type='fundamental'
         )
+        return metadata
+
+    def write_benchmark_data(
+        self,
+        df: pd.DataFrame,
+        symbol: str,
+        interval: str = "daily"
+    ) -> FileMetadata:
+        """
+        Write a benchmark/index price series to raw_data/benchmarks/.
+
+        Args:
+            df: DataFrame with at least 'date' and 'close' columns.
+            symbol: Index symbol (e.g. SPX).
+            interval: Sampling interval (daily/weekly/monthly).
+        """
+        file_name = f"{symbol}_{interval}.csv"
+        file_path = self.get_output_path('benchmark', file_name)
+
+        df = self._prepare_dataframe(df)
+        df.to_csv(
+            file_path,
+            index=False,
+            encoding=self.CSV_ENCODING,
+            lineterminator=self.CSV_LINE_TERMINATOR,
+            date_format=self.DATE_FORMAT
+        )
+
+        metadata = self._create_file_metadata(
+            df=df,
+            file_name=file_name,
+            file_path=file_path,
+            symbol=symbol,
+            data_type='benchmark'
+        )
+        self._files_created[file_name] = metadata
         return metadata
 
     def write_insider_data(

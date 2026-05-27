@@ -40,7 +40,7 @@ class ExcelReportGenerator:
 
     def __init__(self, output_directory: Path, initial_capital: float = 100000.0,
                  risk_free_rate: float = 0.035, benchmark_name: str = "S&P 500",
-                 use_enhanced: bool = False):
+                 use_enhanced: bool = False, benchmark_loader=None):
         """
         Initialize Excel report generator.
 
@@ -50,12 +50,15 @@ class ExcelReportGenerator:
             risk_free_rate: Annual risk-free rate (default 3.5%)
             benchmark_name: Name of benchmark for comparison
             use_enhanced: If True, include enhanced matplotlib visualizations
+            benchmark_loader: Optional BenchmarkLoader (defaults to one over
+                raw_data/benchmarks). Allows pointing at a custom directory.
         """
         self.output_directory = Path(output_directory)
         self.output_directory.mkdir(parents=True, exist_ok=True)
         self.initial_capital = initial_capital
         self.risk_free_rate = risk_free_rate
         self.benchmark_name = benchmark_name
+        self._benchmark_loader = benchmark_loader
         self.use_enhanced = use_enhanced and ENHANCED_REPORTS_AVAILABLE
 
         # Initialize enhanced visualization generator if available
@@ -115,6 +118,7 @@ class ExcelReportGenerator:
         self._create_period_analysis(wb, result, metrics)
         self._create_costs_analysis(wb, result, metrics)
         self._create_performance_analysis(wb, result, metrics)
+        self._create_benchmark_analysis(wb, result, metrics)
         self._create_stable_metrics(wb, result, metrics)
         self._create_visualizations(wb, result, metrics)
         # Market conditions tab removed for single security backtests
@@ -1598,6 +1602,104 @@ class ExcelReportGenerator:
         # Format columns
         for col_idx in range(1, 11):
             ws.column_dimensions[chr(64 + col_idx)].width = 14
+
+    def _compute_benchmark_comparison(self, result: BacktestResult):
+        """Load the configured benchmark and compare it to the equity curve.
+
+        Returns a BenchmarkComparison, or None if the benchmark module/data is
+        unavailable. Never raises - the report must generate regardless.
+        """
+        try:
+            from .benchmark import BenchmarkLoader
+            loader = self._benchmark_loader or BenchmarkLoader()
+            return loader.compare(result.equity_curve, self.benchmark_name, self.risk_free_rate)
+        except Exception:
+            return None
+
+    def _create_benchmark_analysis(self, wb: Workbook, result: BacktestResult, metrics: Dict[str, Any]):
+        """Create Sheet: Benchmark comparison (strategy vs index)."""
+        ws = wb.create_sheet("Benchmark")
+        ws.column_dimensions['A'].width = 34
+        ws.column_dimensions['B'].width = 22
+        ws.column_dimensions['C'].width = 18
+
+        row = 1
+        ws.merge_cells(f'A{row}:D{row}')
+        ws[f'A{row}'] = "BENCHMARK COMPARISON"
+        ws[f'A{row}'].font = Font(bold=True, size=14)
+        ws[f'A{row}'].alignment = Alignment(horizontal='center')
+        row += 2
+
+        comparison = self._compute_benchmark_comparison(result)
+
+        if comparison is None or not comparison.is_valid:
+            reason = comparison.reason if comparison is not None else "benchmark module unavailable"
+            row = self._add_section_header(ws, row, f"BENCHMARK: {self.benchmark_name}")
+            ws[f'A{row}'] = "Benchmark comparison unavailable"
+            ws[f'A{row}'].font = self.metric_font
+            row += 1
+            ws[f'A{row}'] = f"Reason: {reason}"
+            row += 1
+            ws[f'A{row}'] = "Collect index data with: python scripts/collect_benchmarks.py"
+            return
+
+        row = self._add_section_header(
+            ws, row, f"{comparison.benchmark_name} ({comparison.benchmark_symbol})")
+        ws[f'A{row}'] = "Comparison Window"
+        ws[f'A{row}'].font = self.metric_font
+        ws[f'B{row}'] = f"{comparison.start_date:%Y-%m-%d} to {comparison.end_date:%Y-%m-%d}"
+        row += 2
+
+        row = self._add_section_header(ws, row, "RETURN VS BENCHMARK")
+        row = self._add_metrics_table(ws, row, [
+            ("Strategy Total Return", comparison.strategy_total_return_pct, "percentage"),
+            ("Benchmark Total Return", comparison.benchmark_total_return_pct, "percentage"),
+            ("Excess Return", comparison.excess_return_pct, "percentage"),
+            ("Strategy CAGR", comparison.strategy_cagr, "percentage"),
+            ("Benchmark CAGR", comparison.benchmark_cagr, "percentage"),
+        ])
+        row += 1
+
+        row = self._add_section_header(ws, row, "RISK-ADJUSTED VS BENCHMARK")
+        row = self._add_metrics_table(ws, row, [
+            ("Alpha (annualized)", comparison.alpha, "percentage"),
+            ("Beta", comparison.beta, "decimal"),
+            ("Correlation", comparison.correlation, "decimal"),
+            ("Tracking Error (annualized)", comparison.tracking_error, "percentage"),
+            ("Information Ratio", comparison.information_ratio, "decimal"),
+            ("Up Capture", comparison.up_capture, "percentage"),
+            ("Down Capture", comparison.down_capture, "percentage"),
+        ])
+        row += 1
+
+        # Month-end equity comparison (strategy vs rebased benchmark) for charting.
+        try:
+            be = comparison.benchmark_equity
+            if be is not None and not be.empty:
+                row = self._add_section_header(ws, row, "EQUITY COMPARISON (month-end)")
+                ws[f'A{row}'] = "Date"
+                ws[f'B{row}'] = "Strategy"
+                ws[f'C{row}'] = "Benchmark"
+                for col in ('A', 'B', 'C'):
+                    ws[f'{col}{row}'].font = self.metric_font
+                row += 1
+
+                strat = result.equity_curve[['date', 'equity']].copy()
+                strat['date'] = pd.to_datetime(strat['date'])
+                merged = pd.merge_asof(
+                    be.sort_values('date'), strat.sort_values('date'),
+                    on='date', direction='backward', suffixes=('_bench', '_strat')
+                ).dropna().set_index('date')
+                monthly = merged.resample('ME').last().dropna()
+                for dt, r in monthly.iterrows():
+                    ws[f'A{row}'] = dt.strftime('%Y-%m-%d')
+                    ws[f'B{row}'] = float(r['equity_strat'])
+                    ws[f'B{row}'].number_format = '$#,##0'
+                    ws[f'C{row}'] = float(r['equity_bench'])
+                    ws[f'C{row}'].number_format = '$#,##0'
+                    row += 1
+        except Exception:
+            pass
 
     def _create_costs_analysis(self, wb: Workbook, result: BacktestResult, metrics: Dict[str, Any]):
         """Create Sheet: Costs Analysis."""
