@@ -588,6 +588,319 @@
         }
       }
     },
+    "AlphaTrendV3C1Strategy": {
+      "display_name": "AlphaTrend V3C1",
+      "description": "Trend-following long-only strategy. Identical to AlphaTrend V2C3 plus two independently toggleable rules: (1) an additional entry filter requiring a pre-calculated EMA of length entry_ema_length to be strictly above a pre-calculated SMA of length entry_sma_length (both read from raw data) on the bar the trade would open; and (2) an additional overextension exit that closes the position when the close is at least exit_ema_distance_pct percent above a pre-calculated EMA of length exit_ema_length, measured as (close - EMA) / EMA * 100. The exit is evaluated only in the short-term and long-term stages (never during the peace period). When both flags are off the strategy behaves exactly like V2C3.",
+      "trade_direction": "LONG",
+      "required_indicators": ["atr_14"],
+      "exit_rules": [
+        {
+          "rule_type": "stop_loss_atr",
+          "params": {"atr_column": "atr_14", "multiple": 2.0},
+          "description": "Initial Stop Loss: Entry - (atr_sl x ATR14)",
+          "grace_period_bars": 0,
+          "momentum_protection": false
+        },
+        {
+          "rule_type": "three_stage_exit",
+          "params": {
+            "peace_period_candles": 5,
+            "short_term_candles": 15,
+            "break_even_consecutive_bars": 7,
+            "trailing_atr_mult": 2.0
+          },
+          "description": "Three-stage lifecycle: peace (SL only), short-term (SL + optional close-below-entry for N consecutive bars + EMA-distance exit), long-term (ATR-based trailing SL + EMA-distance exit + portfolio vulnerability scorer).",
+          "grace_period_bars": 0,
+          "momentum_protection": false
+        }
+      ],
+      "parameters": {
+        "ma_offset": {
+          "type": "int",
+          "default": 2,
+          "configurable": true,
+          "optimization": {
+            "min": 1,
+            "max": 10,
+            "step": 1
+          },
+          "description": "Number of bars to offset the comparison MA (acts as smoothing)",
+          "category": "Indicator"
+        },
+        "ema_sma": {
+          "type": "string",
+          "default": "EMA",
+          "configurable": true,
+          "optimization": {
+            "values": [
+              "EMA",
+              "SMA"
+            ]
+          },
+          "allowed_values": [
+            "EMA",
+            "SMA"
+          ],
+          "description": "Moving average type: 'EMA' or 'SMA'",
+          "category": "Indicator"
+        },
+        "ma_length": {
+          "type": "int",
+          "default": 20,
+          "configurable": true,
+          "optimization": {
+            "values": [
+              7,
+              14,
+              20,
+              30,
+              50,
+              90,
+              200
+            ]
+          },
+          "allowed_values": [
+            7,
+            14,
+            20,
+            30,
+            50,
+            90,
+            200
+          ],
+          "description": "Length of the moving average. Must be one of 7, 14, 20, 30, 50, 90, 200 (read from raw data).",
+          "category": "Indicator"
+        },
+        "atr_sl": {
+          "type": "float",
+          "default": 2.0,
+          "configurable": true,
+          "optimization": {
+            "min": 0.5,
+            "max": 5.0,
+            "step": 0.25
+          },
+          "description": "Multiplier applied to 14-day ATR to find the initial stop loss",
+          "category": "Strategy"
+        },
+        "risk_perc": {
+          "type": "float",
+          "default": 2.0,
+          "configurable": true,
+          "optimization": {
+            "min": 0.5,
+            "max": 10.0,
+            "step": 0.5
+          },
+          "description": "Total risk as a percent of total capital per trade",
+          "category": "Strategy"
+        },
+        "high_lookback_candles": {
+          "type": "int",
+          "default": 10,
+          "configurable": true,
+          "optimization": {
+            "min": 2,
+            "max": 60,
+            "step": 1
+          },
+          "description": "Number of prior bars (excluding the current bar) used to evaluate the closing-high entry confirmation. The current close must be strictly greater than the maximum close over these bars.",
+          "category": "Entry"
+        },
+        "entry_wait_candles": {
+          "type": "int",
+          "default": 3,
+          "configurable": true,
+          "optimization": {
+            "min": 0,
+            "max": 30,
+            "step": 1
+          },
+          "description": "Number of bars after the cross during which the strategy keeps watching for the high confirmation. 0 means the high must be reached on the cross bar itself.",
+          "category": "Entry"
+        },
+        "entry_ema_sma_filter_enabled": {
+          "type": "bool",
+          "default": true,
+          "configurable": true,
+          "optimization": {
+            "values": [
+              true,
+              false
+            ]
+          },
+          "description": "Enable the additional entry filter requiring entry_ema_length EMA to be strictly above entry_sma_length SMA on the bar the trade would open. When false, entries behave exactly like V2C3.",
+          "category": "Entry"
+        },
+        "entry_ema_length": {
+          "type": "int",
+          "default": 20,
+          "configurable": true,
+          "optimization": {
+            "values": [
+              7,
+              14,
+              20,
+              30,
+              50,
+              90,
+              200
+            ]
+          },
+          "allowed_values": [
+            7,
+            14,
+            20,
+            30,
+            50,
+            90,
+            200
+          ],
+          "description": "Length of the EMA used by the entry filter (EMA must be above the SMA). Must be one of 7, 14, 20, 30, 50, 90, 200 (read from raw data).",
+          "category": "Entry"
+        },
+        "entry_sma_length": {
+          "type": "int",
+          "default": 50,
+          "configurable": true,
+          "optimization": {
+            "values": [
+              7,
+              14,
+              20,
+              30,
+              50,
+              90,
+              200
+            ]
+          },
+          "allowed_values": [
+            7,
+            14,
+            20,
+            30,
+            50,
+            90,
+            200
+          ],
+          "description": "Length of the SMA used by the entry filter (EMA must be above the SMA). Must be one of 7, 14, 20, 30, 50, 90, 200 (read from raw data).",
+          "category": "Entry"
+        },
+        "peace_period_candles": {
+          "type": "int",
+          "default": 5,
+          "configurable": true,
+          "optimization": {
+            "min": 0,
+            "max": 60,
+            "step": 1
+          },
+          "description": "Length of the peace-period stage in bars (only the initial SL can close the trade during this stage)",
+          "category": "Exit"
+        },
+        "short_term_candles": {
+          "type": "int",
+          "default": 15,
+          "configurable": true,
+          "optimization": {
+            "min": 0,
+            "max": 120,
+            "step": 1
+          },
+          "description": "Length of the short-term stage in bars (SL + optional break-even consecutive-bars rule + EMA-distance exit)",
+          "category": "Exit"
+        },
+        "short_phase_exit_enabled": {
+          "type": "bool",
+          "default": true,
+          "configurable": true,
+          "optimization": {
+            "values": [
+              true,
+              false
+            ]
+          },
+          "description": "Enable the short-phase break-even exit rule. When true, the trade is closed when the close stays strictly below the entry price for break_even_consecutive_bars consecutive bars. The initial SL is always active regardless of this flag.",
+          "category": "Exit"
+        },
+        "break_even_consecutive_bars": {
+          "type": "int",
+          "default": 7,
+          "configurable": true,
+          "optimization": {
+            "min": 1,
+            "max": 30,
+            "step": 1
+          },
+          "description": "Number of consecutive bars (including current) the close must stay strictly below the entry price for the short-phase rule to fire",
+          "category": "Exit"
+        },
+        "trailing_atr_mult": {
+          "type": "float",
+          "default": 2.0,
+          "configurable": true,
+          "optimization": {
+            "min": 0.5,
+            "max": 10.0,
+            "step": 0.25
+          },
+          "description": "Multiplier on the 14-day ATR for the long-term trailing SL. The SL is maintained at close - (trailing_atr_mult x ATR14) and only moves up, never down.",
+          "category": "Exit"
+        },
+        "ema_distance_exit_enabled": {
+          "type": "bool",
+          "default": true,
+          "configurable": true,
+          "optimization": {
+            "values": [
+              true,
+              false
+            ]
+          },
+          "description": "Enable the additional overextension exit that closes the position when the close is at least exit_ema_distance_pct percent above the exit_ema_length EMA. Fires only in the short-term and long-term stages (never during the peace period).",
+          "category": "Exit"
+        },
+        "exit_ema_length": {
+          "type": "int",
+          "default": 20,
+          "configurable": true,
+          "optimization": {
+            "values": [
+              7,
+              14,
+              20,
+              30,
+              50,
+              90,
+              200
+            ]
+          },
+          "allowed_values": [
+            7,
+            14,
+            20,
+            30,
+            50,
+            90,
+            200
+          ],
+          "description": "Length of the EMA used by the overextension exit. Must be one of 7, 14, 20, 30, 50, 90, 200 (read from raw data).",
+          "category": "Exit"
+        },
+        "exit_ema_distance_pct": {
+          "type": "float",
+          "default": 10.0,
+          "configurable": true,
+          "optimization": {
+            "min": 1.0,
+            "max": 50.0,
+            "step": 1.0
+          },
+          "description": "Minimum percentage the close must exceed the exit EMA by for the overextension exit to fire, measured as (close - EMA) / EMA * 100.",
+          "category": "Exit"
+        }
+      }
+    },
     "RandomControlStrategy": {
       "display_name": "Random Control Strategy",
       "description": "Control/baseline strategy with random entry and exit for comparison. Uses risk-based position sizing.",
