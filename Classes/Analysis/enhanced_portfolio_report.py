@@ -74,7 +74,7 @@ class EnhancedPortfolioReportGenerator:
     }
 
     def __init__(self, output_dir: Path, include_matplotlib_charts: bool = True,
-                 benchmark_name: Optional[str] = None):
+                 benchmark_name: Optional[str] = None, prefer_native_charts: bool = True):
         """
         Initialize enhanced report generator.
 
@@ -82,6 +82,8 @@ class EnhancedPortfolioReportGenerator:
             output_dir: Directory to save reports
             include_matplotlib_charts: Whether to include matplotlib visualizations
             benchmark_name: Benchmark to compare against (defaults to the registry default)
+            prefer_native_charts: Render native interactive Excel charts instead of
+                embedded matplotlib PNGs (default True).
         """
         if not OPENPYXL_AVAILABLE:
             raise ImportError("openpyxl is required for report generation")
@@ -90,6 +92,7 @@ class EnhancedPortfolioReportGenerator:
         self.output_dir.mkdir(parents=True, exist_ok=True)
         self.include_matplotlib_charts = include_matplotlib_charts and MATPLOTLIB_AVAILABLE
         self.benchmark_name = benchmark_name
+        self.prefer_native_charts = prefer_native_charts
 
         # Initialize visualizations module if available
         if self.include_matplotlib_charts:
@@ -912,6 +915,22 @@ class EnhancedPortfolioReportGenerator:
         ws.merge_cells(f'A{row}:N{row}')
         row += 2
 
+        if self.prefer_native_charts:
+            equity_df = result.portfolio_equity_curve
+            all_trades = metrics.get('all_trades', [])
+            symbol_pnl = {s: r.total_return for s, r in result.symbol_results.items()}
+            ws[f'A{row}'] = "Native, interactive Excel charts (hover for values, rescale, edit)."
+            ws[f'A{row}'].font = Font(italic=True, size=9)
+            self._native_chart(wb, ws, "A4", "equity_drawdown", equity_curve=equity_df)
+            self._native_chart(wb, ws, "A24", "drawdown", equity_curve=equity_df)
+            self._native_chart(wb, ws, "A44", "rolling", equity_curve=equity_df)
+            self._native_chart(wb, ws, "A64", "capital_utilization", equity_curve=equity_df)
+            self._native_chart(wb, ws, "K4", "trade_distribution", trades=all_trades)
+            self._native_chart(wb, ws, "K24", "r_multiple", trades=all_trades)
+            if len(result.symbol_results) > 1:
+                self._native_chart(wb, ws, "K44", "contribution", symbol_pnl=symbol_pnl)
+            return
+
         if not self.include_matplotlib_charts or self.viz is None:
             ws[f'A{row}'] = "Note: Install matplotlib for enhanced visualizations (pip install matplotlib)"
             ws[f'A{row}'].font = Font(italic=True, color=self.COLORS['dark_gray'])
@@ -1021,6 +1040,100 @@ class EnhancedPortfolioReportGenerator:
             chart.add_data(data, titles_from_data=True)
 
             ws.add_chart(chart, "D" + str(start_row))
+
+    def _native_chart(self, wb, ws, anchor, kind, *, equity_curve=None, trades=None, symbol_pnl=None):
+        """Render a single native interactive Excel chart by kind.
+
+        Series come from the matplotlib-free report_data module (single source of
+        truth), so chart values match the framework's metrics exactly. Never raises.
+        """
+        try:
+            from . import report_data as rd
+            from . import excel_charts as ec
+        except Exception:
+            return
+
+        try:
+            if kind == "equity_drawdown" and equity_curve is not None:
+                dd = rd.compute_equity_drawdown(equity_curve)
+                if not dd["dates"]:
+                    return
+                sdates, seq = ec.sample_series(dd["equity"], dd["dates"])
+                _, shwm = ec.sample_series(dd["high_water_mark"], dd["dates"])
+                block = ec.write_series_block(wb, ["Date", "Equity", "High-Water Mark"],
+                                              list(zip(sdates, seq, shwm)))
+                ec.add_line_chart(ws, anchor, block, title="Equity Curve",
+                                  x_title="Date", y_title="Equity ($)")
+            elif kind == "drawdown" and equity_curve is not None:
+                dd = rd.compute_equity_drawdown(equity_curve)
+                if not dd["dates"]:
+                    return
+                sdates, sdraw = ec.sample_series(dd["drawdown_pct"], dd["dates"])
+                block = ec.write_series_block(wb, ["Date", "Drawdown %"], list(zip(sdates, sdraw)))
+                ec.add_stacked_area_chart(ws, anchor, block, title="Underwater Drawdown",
+                                          x_title="Date", y_title="Drawdown %")
+            elif kind == "trade_distribution" and trades:
+                dist = rd.compute_trade_return_distribution(trades)
+                if not dist["n"]:
+                    return
+                block = ec.write_series_block(wb, ["Return %", "Count"],
+                                              list(zip(dist["labels"], dist["counts"])))
+                ec.add_bar_chart(ws, anchor, block, title="Trade Return Distribution",
+                                 x_title="Return % (bin center)", y_title="Count")
+            elif kind == "r_multiple" and trades:
+                rm = rd.compute_r_multiple_distribution(trades)
+                if not rm.get("available"):
+                    return
+                block = ec.write_series_block(wb, ["R bucket", "Count"],
+                                              list(zip(rm["labels"], rm["counts"])))
+                ec.add_bar_chart(ws, anchor, block, title="R-Multiple Distribution",
+                                 x_title="R bucket", y_title="Count")
+            elif kind == "rolling" and equity_curve is not None:
+                roll = rd.compute_rolling_metrics(equity_curve, window=90)
+                if not roll.get("available"):
+                    return
+                sdates, ssh = ec.sample_series(roll["sharpe"], roll["dates"])
+                _, sso = ec.sample_series(roll["sortino"], roll["dates"])
+                block = ec.write_series_block(wb, ["Date", "Sharpe", "Sortino"],
+                                              list(zip(sdates, ssh, sso)))
+                ec.add_line_chart(ws, anchor, block, title="Rolling 90-Day Sharpe/Sortino",
+                                  x_title="Date", y_title="Ratio")
+            elif kind == "win_rate" and trades:
+                wr = rd.compute_win_rate_over_time(trades, window=20)
+                if not wr.get("available"):
+                    return
+                block = ec.write_series_block(wb, ["Date", "Win Rate %", "Profit Factor"],
+                                              list(zip(wr["dates"], wr["win_rates"], wr["profit_factors"])))
+                ec.add_line_chart(ws, anchor, block, title="Rolling Win Rate / Profit Factor",
+                                  x_title="Date")
+            elif kind == "streaks" and trades:
+                st = rd.compute_streaks(trades)
+                if not st.get("available"):
+                    return
+                block = ec.write_series_block(wb, ["Streak Length", "Win Streaks", "Loss Streaks"],
+                                              list(zip(st["lengths"], st["win_counts"], st["loss_counts"])))
+                ec.add_bar_chart(ws, anchor, block, title="Streak Length Distribution",
+                                 x_title="Streak Length", y_title="Count")
+            elif kind == "contribution" and symbol_pnl:
+                con = rd.compute_contribution(symbol_pnl)
+                if not con.get("available"):
+                    return
+                block = ec.write_series_block(wb, ["Security", "P/L ($)"],
+                                              list(zip(con["symbols"], con["pnls"])))
+                ec.add_bar_chart(ws, anchor, block, title="P/L Contribution by Security",
+                                 x_title="Security", y_title="P/L ($)")
+            elif kind == "capital_utilization" and equity_curve is not None:
+                cu = rd.compute_capital_utilization(equity_curve)
+                if not cu.get("available"):
+                    return
+                sdates, scash = ec.sample_series(cu["cash"], cu["dates"])
+                _, sinv = ec.sample_series(cu["invested"], cu["dates"])
+                block = ec.write_series_block(wb, ["Date", "Cash", "Invested"],
+                                              list(zip(sdates, scash, sinv)))
+                ec.add_stacked_area_chart(ws, anchor, block, title="Capital Utilization",
+                                          x_title="Date", y_title="$")
+        except Exception:
+            pass
 
     def _create_performance_metrics(self, wb: Workbook, result, metrics: Dict[str, Any]):
         """Create detailed Performance Metrics sheet."""
@@ -1276,8 +1389,12 @@ class EnhancedPortfolioReportGenerator:
         ]
         row = self._add_metrics_table(ws, row, duration_data)
 
-        # Add visualizations if available
-        if self.include_matplotlib_charts and self.viz:
+        # Add visualizations
+        if self.prefer_native_charts:
+            self._native_chart(wb, ws, 'E3', 'trade_distribution', trades=all_trades)
+            self._native_chart(wb, ws, 'E23', 'r_multiple', trades=all_trades)
+            self._native_chart(wb, ws, f'A{row + 4}', 'streaks', trades=all_trades)
+        elif self.include_matplotlib_charts and self.viz:
             # Trade distribution histogram
             try:
                 dist_img = self.viz.create_trade_distribution_histogram(all_trades)
@@ -1416,6 +1533,11 @@ class EnhancedPortfolioReportGenerator:
         for col_idx, width in enumerate(widths, 1):
             ws.column_dimensions[get_column_letter(col_idx)].width = width
 
+        # Make the trade log a sortable/filterable Excel Table with a frozen header.
+        from . import excel_charts as ec
+        ec.make_table(ws, f"A1:S{len(all_trades) + 1}", "TradeLog")
+        ec.freeze(ws, "A2")
+
         # Add note about the data at the bottom
         last_row = len(all_trades) + 3
         ws[f'A{last_row}'] = "Notes:"
@@ -1446,7 +1568,22 @@ class EnhancedPortfolioReportGenerator:
             ws[f'A{row}'] = "Insufficient data for rolling metrics calculation"
             return
 
-        if self.include_matplotlib_charts and self.viz:
+        if self.prefer_native_charts:
+            equity_df = result.portfolio_equity_curve
+            try:
+                from . import report_data as rd
+                roll = rd.compute_rolling_metrics(equity_df, window=90)
+                detected_anomalies = roll.get("anomalies", []) if roll.get("available") else []
+                metrics['rolling_anomalies'] = detected_anomalies
+            except Exception:
+                detected_anomalies = []
+            self._native_chart(wb, ws, f'A{row}', 'rolling', equity_curve=equity_df)
+            row += 20
+            all_trades = metrics.get('all_trades', [])
+            if len(all_trades) >= 25:
+                self._native_chart(wb, ws, f'A{row}', 'win_rate', trades=all_trades)
+                row += 20
+        elif self.include_matplotlib_charts and self.viz:
             equity_df = result.portfolio_equity_curve
             try:
                 # Get rolling chart with anomaly detection (90-day window)
@@ -1645,7 +1782,9 @@ class EnhancedPortfolioReportGenerator:
 
         row = self._add_metrics_table(ws, row, alloc_data)
 
-        if self.include_matplotlib_charts and self.viz and 'capital' in equity_df.columns:
+        if self.prefer_native_charts and 'capital' in equity_df.columns:
+            self._native_chart(wb, ws, f'A{row + 2}', 'capital_utilization', equity_curve=equity_df)
+        elif self.include_matplotlib_charts and self.viz and 'capital' in equity_df.columns:
             try:
                 cap_img = self.viz.create_capital_utilization_chart(equity_df)
                 img = Image(cap_img)

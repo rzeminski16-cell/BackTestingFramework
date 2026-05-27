@@ -62,7 +62,7 @@ class PortfolioReportGenerator:
     NEUTRAL_FILL = PatternFill(start_color="FFEB9C", end_color="FFEB9C", fill_type="solid") if OPENPYXL_AVAILABLE else None
 
     def __init__(self, output_dir: Path, use_enhanced: bool = True,
-                 benchmark_name: Optional[str] = None):
+                 benchmark_name: Optional[str] = None, prefer_native_charts: bool = True):
         """
         Initialize report generator.
 
@@ -70,6 +70,7 @@ class PortfolioReportGenerator:
             output_dir: Directory to save reports
             use_enhanced: If True (default), use enhanced report generator with advanced visualizations
             benchmark_name: Benchmark to compare against (defaults to the registry default)
+            prefer_native_charts: Render native interactive Excel charts instead of matplotlib PNGs.
         """
         if not OPENPYXL_AVAILABLE:
             raise ImportError("openpyxl is required for report generation. Install with: pip install openpyxl")
@@ -78,13 +79,15 @@ class PortfolioReportGenerator:
         self.output_dir.mkdir(parents=True, exist_ok=True)
         self.use_enhanced = use_enhanced and ENHANCED_REPORTS_AVAILABLE
         self.benchmark_name = benchmark_name
+        self.prefer_native_charts = prefer_native_charts
 
         # Initialize enhanced generator if available and requested
         self._enhanced_generator = None
         if self.use_enhanced:
             try:
                 self._enhanced_generator = EnhancedPortfolioReportGenerator(
-                    self.output_dir, benchmark_name=benchmark_name)
+                    self.output_dir, benchmark_name=benchmark_name,
+                    prefer_native_charts=prefer_native_charts)
             except Exception:
                 self.use_enhanced = False
 
