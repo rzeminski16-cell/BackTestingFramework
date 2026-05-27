@@ -1,0 +1,27 @@
+{
+  "strategy_name": "AlphaTrendV3C1Strategy",
+  "preset_name": "Base",
+  "description": "",
+  "parameters": {
+    "ma_length": 14,
+    "atr_sl": 2.5,
+    "risk_perc": 1.5,
+    "high_lookback_candles": 10,
+    "peace_period_candles": 7,
+    "entry_wait_candles": 10,
+    "entry_ema_sma_filter_enabled": 1,
+    "entry_ema_length": 200,
+    "entry_sma_length": 200,
+    "short_phase_exit_enabled": 1,
+    "trailing_atr_mult": 4.0,
+    "ema_distance_exit_enabled": 1,
+    "exit_ema_length": 20,
+    "exit_ema_distance_pct": 10.0,
+    "ma_offset": 10,
+    "ema_sma": "SMA",
+    "short_term_candles": 90,
+    "break_even_consecutive_bars": 7
+  },
+  "created_at": "2026-05-27T12:02:54.488217",
+  "modified_at": "2026-05-27T12:02:54.488225"
+}
