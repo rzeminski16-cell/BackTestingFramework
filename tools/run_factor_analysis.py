@@ -23,6 +23,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from Classes.FactorAnalysis.analyzer import FactorAnalyzer
 from Classes.FactorAnalysis.config.factor_config import FactorAnalysisConfig
 from Classes.FactorAnalysis.data.fundamental_panel import build_aggregate
+from Classes.FactorAnalysis.data import insider_panel
 from Classes.FactorAnalysis.output.html_generator import generate_html_report
 
 
@@ -36,6 +37,7 @@ def main() -> int:
     parser.add_argument("--eps-only", action="store_true",
                         help="Restrict fundamentals to EPS factors (default: full value/quality/growth)")
     parser.add_argument("--no-fundamentals", action="store_true", help="Skip fundamental factors")
+    parser.add_argument("--no-insider", action="store_true", help="Skip insider factors")
     parser.add_argument("--quiet", action="store_true")
     args = parser.parse_args()
 
@@ -58,19 +60,36 @@ def main() -> int:
             print("No fundamental panels found; proceeding without fundamental factors.")
             fundamental_df = None
 
+    # 1b. Insider: clean raw transactions for the analyzer, and write the
+    # point-in-time aggregate panel (raw_data/insider_transactions/insider_data.csv).
+    insider_df = None
+    if not args.no_insider:
+        idir = raw / "insider_transactions"
+        insider_df = insider_panel.load_transactions(idir)
+        if insider_df is not None and not insider_df.empty:
+            panel = insider_panel.build_aggregate(idir, out_path=idir / "insider_data.csv")
+            n_sym = insider_df["symbol"].nunique() if "symbol" in insider_df.columns else 0
+            print(f"Insider: {len(insider_df)} cleaned transactions, {n_sym} symbols "
+                  f"-> aggregate panel {len(panel)} rows ({idir / 'insider_data.csv'})")
+        else:
+            insider_df = None
+
     # 2. Configure: enable the full fundamental factor set unless --eps-only.
     # Config dataclasses are frozen, so rebuild with dataclasses.replace.
     config = FactorAnalysisConfig()
     fe = config.factor_engineering
+    replacements = {}
     if not args.eps_only:
-        fe = dataclasses.replace(
-            fe,
+        replacements.update(
             eps_only_fundamentals=False,
             quality=dataclasses.replace(fe.quality, enabled=True),
             growth=dataclasses.replace(fe.growth, enabled=True),
             # Value factors need price-derived ratios (P/E, P/B) not in the panel -> left off.
         )
-        config = dataclasses.replace(config, factor_engineering=fe)
+    if insider_df is not None:
+        replacements["insider"] = dataclasses.replace(fe.insider, enabled=True)
+    if replacements:
+        config = dataclasses.replace(config, factor_engineering=dataclasses.replace(fe, **replacements))
 
     analyzer = FactorAnalyzer(config=config, verbose=not args.quiet)
 
@@ -86,7 +105,8 @@ def main() -> int:
     print(f"Loaded {len(trades_df)} trades.")
 
     # 4. Run the analysis.
-    result = analyzer.analyze(trades_df, price_data=args.price_data, fundamental_data=fundamental_df)
+    result = analyzer.analyze(trades_df, price_data=args.price_data,
+                              fundamental_data=fundamental_df, insider_data=insider_df)
     if not result.success:
         print(f"Analysis failed: {result.error}")
         return 1
