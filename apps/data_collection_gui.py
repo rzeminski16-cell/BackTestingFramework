@@ -1820,17 +1820,19 @@ class BenchmarkTab(BaseTab):
 
             try:
                 progress_callback(f"Fetching {symbol} index data...", i / total)
-                logger.log_session_info(f"FETCHING {symbol} INDEX_DATA ({interval})")
+                logger.log_session_info(f"FETCHING {symbol} (INDEX_DATA, ETF fallback) [{interval}]")
 
-                df = collector.collect(symbol, interval=interval, outputsize=outputsize)
+                result = collector.collect(symbol, interval=interval, outputsize=outputsize)
 
-                if df.empty:
-                    results["failed"].append(
-                        (symbol, "No index data returned (INDEX_DATA requires a premium API key)"))
+                if result.empty:
+                    # Surface the real API error (e.g. premium-only / invalid call).
+                    results["failed"].append((symbol, result.error or "no data returned"))
+                    logger.log_session_info(f"  {symbol} failed: {result.error}")
                     continue
 
-                file_meta = file_manager.write_benchmark_data(df, symbol, interval=interval)
+                file_meta = file_manager.write_benchmark_data(result.df, symbol, interval=interval)
                 results["success"].append((symbol, file_meta))
+                logger.log_session_info(f"  {symbol} collected via {result.source} ({result.symbol_used})")
                 progress_callback(f"Completed {symbol}", (i + 1) / total)
 
             except Exception as e:

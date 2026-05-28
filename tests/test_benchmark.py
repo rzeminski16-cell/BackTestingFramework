@@ -203,5 +203,67 @@ class TestPortfolioWiring(unittest.TestCase):
             self.assertIn("Benchmark", wb.sheetnames)
 
 
+class _FakeResp:
+    def __init__(self, success, data=None, error_message=None):
+        self.success = success
+        self.data = data
+        self.error_message = error_message
+
+
+def _daily_payload():
+    return {"Meta Data": {"2. Symbol": "SPY"},
+            "Time Series (Daily)": {
+                "2024-01-02": {"1. open": "470", "2. high": "472", "3. low": "468",
+                               "4. close": "471", "5. volume": "1000"},
+                "2024-01-03": {"1. open": "471", "2. high": "474", "3. low": "470",
+                               "4. close": "473", "5. volume": "1100"}}}
+
+
+class TestBenchmarkCollector(unittest.TestCase):
+    def _registry(self):
+        from Classes.DataCollection.benchmark_collector import load_benchmark_registry
+        return load_benchmark_registry(REGISTRY_PATH)
+
+    def test_index_data_success(self):
+        from Classes.DataCollection.benchmark_collector import BenchmarkCollector
+        idx = {"Meta Data": {}, "Time Series (Daily)": {
+            "2024-01-02": {"1. open": "1", "2. high": "1", "3. low": "1", "4. close": "100"}}}
+
+        class C:
+            def get_index_data(self, *a, **k): return _FakeResp(True, idx)
+            def get_daily_prices(self, *a, **k): return _FakeResp(False, error_message="should not be called")
+        res = BenchmarkCollector(C(), registry=self._registry()).collect("SPX")
+        self.assertFalse(res.empty)
+        self.assertEqual(res.source, "index_data")
+
+    def test_falls_back_to_etf_proxy(self):
+        from Classes.DataCollection.benchmark_collector import BenchmarkCollector
+
+        class C:
+            def get_index_data(self, *a, **k):
+                return _FakeResp(False, error_message="Invalid API call / premium endpoint")
+            def get_daily_prices(self, symbol, adjusted=True, outputsize="full"):
+                assert symbol == "SPY"  # resolved from registry etf
+                return _FakeResp(True, _daily_payload())
+        res = BenchmarkCollector(C(), registry=self._registry()).collect("SPX")
+        self.assertFalse(res.empty)
+        self.assertEqual(res.source, "etf_proxy")
+        self.assertIn("close", res.df.columns)
+        self.assertEqual(res.df["symbol"].iloc[0], "SPX")  # stored under the index name
+
+    def test_both_fail_surfaces_real_error(self):
+        from Classes.DataCollection.benchmark_collector import BenchmarkCollector
+
+        class C:
+            def get_index_data(self, *a, **k):
+                return _FakeResp(False, error_message="premium endpoint")
+            def get_daily_prices(self, *a, **k):
+                return _FakeResp(False, error_message="rate limit")
+        res = BenchmarkCollector(C(), registry=self._registry()).collect("SPX")
+        self.assertTrue(res.empty)
+        self.assertIn("premium endpoint", res.error)
+        self.assertIn("rate limit", res.error)
+
+
 if __name__ == "__main__":
     unittest.main()
