@@ -48,15 +48,23 @@ class FundamentalFactors:
         'return_on_assets': {'source': 'return_on_assets_ttm', 'lower_better': False},
         'profit_margin': {'source': 'profit_margin', 'lower_better': False},
         'operating_margin': {'source': 'operating_margin_ttm', 'lower_better': False},
+        'gross_margin': {'source': 'gross_margin', 'lower_better': False},
+        'ebitda_margin': {'source': 'ebitda_margin', 'lower_better': False},
+        'fcf_margin': {'source': 'fcf_margin', 'lower_better': False},
+        'asset_turnover': {'source': 'asset_turnover', 'lower_better': False},
         'current_ratio': {'source': 'currentratio', 'lower_better': False},
         'debt_to_equity': {'source': 'debt_to_equity', 'lower_better': True},
+        'accruals_ratio': {'source': 'accruals_ratio', 'lower_better': True},
     }
 
     GROWTH_FACTORS = {
         'revenue_growth': {'source': 'revenue_growth_yoy', 'lower_better': False},
         'earnings_growth': {'source': 'earnings_growth_yoy', 'lower_better': False},
+        'eps_growth': {'source': 'eps_growth_yoy', 'lower_better': False},
+        'fcf_growth': {'source': 'fcf_growth_yoy', 'lower_better': False},
         'earnings_surprise': {'source': 'earnings_surprise', 'lower_better': False},
         'earnings_surprise_pct': {'source': 'surprise_pct', 'lower_better': False},
+        'share_count_change': {'source': 'shares_growth_yoy', 'lower_better': True},
     }
 
     # EPS-related factors only - use when fundamental data is mostly missing
@@ -241,39 +249,47 @@ class FundamentalFactors:
 
     def _compute_derived_factors(self, fund_row: pd.Series) -> Dict[str, float]:
         """
-        Compute derived fundamental factors.
+        Compute derived quality factors, preferring the point-in-time TTM ratios
+        produced by Classes/FactorAnalysis/data/fundamental_panel.py and falling
+        back to single-quarter raw values only when TTM columns are absent.
 
-        Args:
-            fund_row: Series with fundamental data
-
-        Returns:
-            Dictionary of derived factor values
+        (debt_to_equity / margins / ROE / ROA / growth are mapped directly as
+        factor sources elsewhere; here we add gross margin, free cash flow and
+        an earnings-quality accruals proxy.)
         """
         derived = {}
 
-        # Debt-to-equity (if not present)
-        if 'debt_to_equity' not in fund_row.index or pd.isna(fund_row.get('debt_to_equity')):
-            liabilities = fund_row.get('totalliabilities', fund_row.get('total_liabilities'))
-            equity = fund_row.get('totalshareholderequity', fund_row.get('total_shareholder_equity'))
-            if pd.notna(liabilities) and pd.notna(equity) and equity != 0:
-                derived['quality_debt_to_equity_derived'] = float(liabilities) / float(equity)
+        def val(*names):
+            for n in names:
+                if n in fund_row.index and pd.notna(fund_row.get(n)):
+                    return float(fund_row[n])
+            return None
 
-        # Gross margin
-        gross_profit = fund_row.get('gross_profit_ttm', fund_row.get('grossprofit'))
-        revenue = fund_row.get('revenue_ttm', fund_row.get('totalrevenue'))
-        if pd.notna(gross_profit) and pd.notna(revenue) and revenue != 0:
-            derived['quality_gross_margin'] = float(gross_profit) / float(revenue)
+        # Gross margin (prefer TTM from the panel).
+        gross_margin = val('gross_margin')
+        if gross_margin is None:
+            gp = val('gross_profit_ttm', 'grossprofit')
+            rev = val('revenue_ttm', 'totalrevenue')
+            if gp is not None and rev:
+                gross_margin = gp / rev * 100
+        if gross_margin is not None:
+            derived['quality_gross_margin'] = gross_margin
 
-        # FCF yield (simplified - without market cap)
-        operating_cf = fund_row.get('operatingcashflow')
-        capex = fund_row.get('capitalexpenditures')
-        if pd.notna(operating_cf) and pd.notna(capex):
-            derived['quality_free_cash_flow'] = float(operating_cf) - abs(float(capex))
+        # Free cash flow (prefer TTM from the panel).
+        fcf = val('freecashflow', 'free_cash_flow')
+        if fcf is None:
+            ocf = val('operating_cash_flow_ttm', 'operatingcashflow')
+            capex = val('capex_ttm', 'capitalexpenditures')
+            if ocf is not None and capex is not None:
+                fcf = ocf - abs(capex)
+        if fcf is not None:
+            derived['quality_free_cash_flow'] = fcf
 
-        # Earnings quality (accruals ratio proxy)
-        net_income = fund_row.get('netincome')
-        if pd.notna(operating_cf) and pd.notna(net_income) and net_income != 0:
-            derived['quality_earnings_quality'] = float(operating_cf) / float(net_income)
+        # Earnings quality: TTM operating cash flow / TTM net income (accruals proxy).
+        ocf_ttm = val('operating_cash_flow_ttm', 'operatingcashflow')
+        ni_ttm = val('net_income_ttm', 'netincome')
+        if ocf_ttm is not None and ni_ttm not in (None, 0):
+            derived['quality_earnings_quality'] = ocf_ttm / ni_ttm
 
         return derived
 
@@ -294,82 +310,56 @@ class FundamentalFactors:
         """
         df = factors_df.copy()
 
-        # Default equal weights within categories
-        if weights is None:
-            weights = {}
+        def _composite(prefix: str, factor_map: Dict) -> Optional[pd.Series]:
+            """Z-score-normalize a factor category and average into a composite.
 
-        # Helper function to safely compute mean across columns
-        def safe_mean(data, cols):
-            """Compute row-wise mean, handling single column case."""
-            if len(cols) == 0:
+            Robust to all-NaN / zero-variance columns (those contribute NaN rather
+            than crashing), and skips categories with no usable data entirely.
+            """
+            cols = [
+                c for c in df.columns
+                if c.startswith(prefix)
+                and pd.api.types.is_numeric_dtype(df[c])
+                and df[c].notna().any()
+            ]
+            if not cols:
                 return None
-            if len(cols) == 1:
-                return data[cols[0]]
-            return data[cols].mean(axis=1)
 
-        # Value composite
-        value_cols = [c for c in df.columns if c.startswith('value_') and pd.api.types.is_numeric_dtype(df[c])]
-        if value_cols:
-            # Normalize each factor (z-score)
-            value_normalized = df[value_cols].apply(lambda x: (x - x.mean()) / x.std() if x.std() > 0 else 0)
-            if isinstance(value_normalized, pd.Series):
-                value_normalized = value_normalized.to_frame()
-            # Some factors are "lower is better" - invert them
-            for col in value_cols:
-                factor_name = col.replace('value_', '')
-                if factor_name in self.VALUE_FACTORS and self.VALUE_FACTORS[factor_name].get('lower_better'):
-                    value_normalized[col] = -value_normalized[col]
-            df['composite_value'] = safe_mean(value_normalized, value_cols)
+            def zscore(col):
+                std = col.std()
+                if std and std > 0:
+                    return (col - col.mean()) / std
+                return col * 0.0  # preserves the Series shape (NaN stays NaN)
 
-        # Quality composite
-        quality_cols = [c for c in df.columns if c.startswith('quality_') and pd.api.types.is_numeric_dtype(df[c])]
-        if quality_cols:
-            quality_normalized = df[quality_cols].apply(lambda x: (x - x.mean()) / x.std() if x.std() > 0 else 0)
-            if isinstance(quality_normalized, pd.Series):
-                quality_normalized = quality_normalized.to_frame()
-            for col in quality_cols:
-                factor_name = col.replace('quality_', '')
-                if factor_name in self.QUALITY_FACTORS and self.QUALITY_FACTORS[factor_name].get('lower_better'):
-                    quality_normalized[col] = -quality_normalized[col]
-            df['composite_quality'] = safe_mean(quality_normalized, quality_cols)
+            normalized = df[cols].apply(zscore)
+            if isinstance(normalized, pd.Series):
+                normalized = normalized.to_frame()
 
-        # Growth composite
-        growth_cols = [c for c in df.columns if c.startswith('growth_') and pd.api.types.is_numeric_dtype(df[c])]
-        if growth_cols:
-            growth_normalized = df[growth_cols].apply(lambda x: (x - x.mean()) / x.std() if x.std() > 0 else 0)
-            if isinstance(growth_normalized, pd.Series):
-                growth_normalized = growth_normalized.to_frame()
-            df['composite_growth'] = safe_mean(growth_normalized, growth_cols)
+            # Invert "lower is better" factors so higher composite = better.
+            for col in cols:
+                factor_name = col[len(prefix):]
+                if factor_name in factor_map and factor_map[factor_name].get('lower_better'):
+                    normalized[col] = -normalized[col]
 
-        # EPS composite (for eps_only mode)
-        eps_cols = [c for c in df.columns if c.startswith('eps_') and pd.api.types.is_numeric_dtype(df[c])]
-        if eps_cols:
-            eps_normalized = df[eps_cols].apply(lambda x: (x - x.mean()) / x.std() if x.std() > 0 else 0)
-            if isinstance(eps_normalized, pd.Series):
-                eps_normalized = eps_normalized.to_frame()
-            # Apply lower_better inversions for EPS factors
-            for col in eps_cols:
-                factor_name = col.replace('eps_', '')
-                if factor_name in self.EPS_FACTORS and self.EPS_FACTORS[factor_name].get('lower_better'):
-                    eps_normalized[col] = -eps_normalized[col]
-            df['composite_eps'] = safe_mean(eps_normalized, eps_cols)
+            return normalized[cols].mean(axis=1) if len(cols) > 1 else normalized[cols[0]]
 
-        # EPS composite (for eps_only mode)
-        eps_cols = [c for c in df.columns if c.startswith('eps_') and pd.api.types.is_numeric_dtype(df[c])]
-        if eps_cols:
-            eps_normalized = df[eps_cols].apply(lambda x: (x - x.mean()) / x.std() if x.std() > 0 else 0)
-            # Apply lower_better inversions for EPS factors
-            for col in eps_cols:
-                factor_name = col.replace('eps_', '')
-                if factor_name in self.EPS_FACTORS and self.EPS_FACTORS[factor_name].get('lower_better'):
-                    eps_normalized[col] = -eps_normalized[col]
-            df['composite_eps'] = eps_normalized.mean(axis=1)
+        for prefix, factor_map, name in (
+            ('value_', self.VALUE_FACTORS, 'composite_value'),
+            ('quality_', self.QUALITY_FACTORS, 'composite_quality'),
+            ('growth_', self.GROWTH_FACTORS, 'composite_growth'),
+            ('eps_', self.EPS_FACTORS, 'composite_eps'),
+        ):
+            composite = _composite(prefix, factor_map)
+            if composite is not None:
+                df[name] = composite
 
-        # Overall fundamental score
-        composite_cols = ['composite_value', 'composite_quality', 'composite_growth', 'composite_eps']
-        available_composites = [c for c in composite_cols if c in df.columns]
-        if available_composites:
-            df['composite_fundamental'] = safe_mean(df, available_composites)
+        # Overall fundamental score = mean of available category composites.
+        composite_cols = [c for c in ('composite_value', 'composite_quality',
+                                      'composite_growth', 'composite_eps') if c in df.columns]
+        if composite_cols:
+            df['composite_fundamental'] = (
+                df[composite_cols].mean(axis=1) if len(composite_cols) > 1 else df[composite_cols[0]]
+            )
 
         return df
 
