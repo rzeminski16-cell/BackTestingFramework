@@ -77,6 +77,8 @@ class EnhancedOptimizationReportGenerator:
         self.config = config
         self.report_config = config.get('reporting', {})
         self.decimal_places = config.get('report', {}).get('excel', {}).get('decimal_places', 4)
+        # Native interactive Excel charts by default (can be disabled via config).
+        self.prefer_native_charts = config.get('report', {}).get('excel', {}).get('prefer_native_charts', True)
 
         # Initialize visualization module
         self.include_matplotlib_charts = MATPLOTLIB_AVAILABLE and IMAGE_AVAILABLE
@@ -1165,8 +1167,10 @@ class EnhancedOptimizationReportGenerator:
             ws.cell(row=row, column=7, value=f"{cumulative_return:.2f}%").font = Font(bold=True, size=11)
             row += 3
 
-        # Visualization if matplotlib available
-        if self.include_matplotlib_charts and self.viz:
+        # Visualization
+        if self.prefer_native_charts:
+            self._native_wf_equity_chart(wb, ws, f'A{row}', multi_results)
+        elif self.include_matplotlib_charts and self.viz:
             try:
                 equity_img = self._create_wf_equity_chart(multi_results)
                 if equity_img:
@@ -1218,6 +1222,37 @@ class EnhancedOptimizationReportGenerator:
         plt.close(fig)
         buf.seek(0)
         return buf
+
+    def _native_wf_equity_chart(self, wb, ws, anchor, multi_results):
+        """Native multi-series line chart of walk-forward OOS normalized equity.
+
+        Uses the same compounding of out_sample_total_return_pct as the data
+        table above it, so chart values match the table exactly.
+        """
+        try:
+            from Classes.Analysis import excel_charts as ec
+            series = {}
+            max_windows = 0
+            for symbol, wf in multi_results.individual_results.items():
+                equity, val = [], 100.0
+                for window in wf.windows:
+                    val = val * (1 + window.out_sample_total_return_pct / 100)
+                    equity.append(round(val, 4))
+                if equity:
+                    series[symbol] = equity
+                    max_windows = max(max_windows, len(equity))
+            if not series or max_windows == 0:
+                return
+            symbols = list(series.keys())
+            rows = []
+            for i in range(max_windows):
+                rows.append([i + 1] + [series[s][i] if i < len(series[s]) else None for s in symbols])
+            block = ec.write_series_block(wb, ["Window"] + symbols, rows)
+            ec.add_line_chart(ws, anchor, block,
+                              title="Walk-Forward OOS Equity (normalized to 100)",
+                              x_title="Window", y_title="Equity")
+        except Exception:
+            pass
 
     def _create_parameter_stability(self, wb: Workbook, multi_results: MultiSecurityResults, metrics: Dict[str, Any]):
         """Create Parameter Stability Over Time sheet."""

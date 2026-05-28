@@ -15,7 +15,7 @@ import numpy as np
 import warnings
 from typing import Dict, List, Optional, Tuple, Any, Union
 from pathlib import Path
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, asdict, is_dataclass
 from datetime import datetime
 
 # Suppress numpy warnings for empty arrays (common with sparse data)
@@ -108,6 +108,46 @@ class AnalysisOutput:
     key_findings: List[str]
     warnings: List[str]
     error: Optional[str] = None
+
+
+def _as_dict(obj: Any) -> Any:
+    """Coerce a result object into a (recursively) plain dict so the dict-based
+    report generators work. Tries to_dict(), then dataclasses.asdict(), then
+    __dict__; passes dicts/None through unchanged."""
+    if obj is None or isinstance(obj, dict):
+        return obj
+    if hasattr(obj, "to_dict"):
+        try:
+            return obj.to_dict()
+        except Exception:
+            pass
+    if is_dataclass(obj):
+        try:
+            return asdict(obj)
+        except Exception:
+            pass
+    if hasattr(obj, "__dict__"):
+        try:
+            return dict(vars(obj))
+        except Exception:
+            pass
+    return obj
+
+
+def _scenarios_as_container(scenarios: Any) -> Any:
+    """Coerce a ScenarioResult into the dict-with-objects shape the report
+    generators expect (container accessed via .get(), items via attributes).
+    Dicts/None pass through unchanged."""
+    if scenarios is None or isinstance(scenarios, dict):
+        return scenarios
+    return {
+        'mode': getattr(scenarios, 'mode', None),
+        'n_clusters': getattr(scenarios, 'n_clusters', None),
+        'baseline_metrics': getattr(scenarios, 'baseline_metrics', {}) or {},
+        'best_scenarios': list(getattr(scenarios, 'best_scenarios', []) or []),
+        'worst_scenarios': list(getattr(scenarios, 'worst_scenarios', []) or []),
+        'all_scenarios': list(getattr(scenarios, 'all_scenarios', []) or []),
+    }
 
 
 class FactorAnalyzer:
@@ -646,8 +686,8 @@ class FactorAnalyzer:
             'quality_score': result.quality_score,
             'tier1': result.tier1,
             'tier2': result.tier2,
-            'tier3': result.tier3,
-            'scenarios': result.scenarios,
+            'tier3': _as_dict(result.tier3),
+            'scenarios': _scenarios_as_container(result.scenarios),
             'key_findings': result.key_findings,
             'enriched_trades': result.enriched_trades
         }
@@ -674,8 +714,8 @@ class FactorAnalyzer:
             'quality_score': result.quality_score,
             'tier1': result.tier1,
             'tier2': result.tier2,
-            'tier3': result.tier3,
-            'scenarios': result.scenarios,
+            'tier3': _as_dict(result.tier3),
+            'scenarios': _scenarios_as_container(result.scenarios),
             'key_findings': result.key_findings
         }
 

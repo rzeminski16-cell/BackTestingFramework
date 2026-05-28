@@ -40,7 +40,8 @@ class ExcelReportGenerator:
 
     def __init__(self, output_directory: Path, initial_capital: float = 100000.0,
                  risk_free_rate: float = 0.035, benchmark_name: str = "S&P 500",
-                 use_enhanced: bool = False):
+                 use_enhanced: bool = False, benchmark_loader=None,
+                 prefer_native_charts: bool = True):
         """
         Initialize Excel report generator.
 
@@ -50,12 +51,16 @@ class ExcelReportGenerator:
             risk_free_rate: Annual risk-free rate (default 3.5%)
             benchmark_name: Name of benchmark for comparison
             use_enhanced: If True, include enhanced matplotlib visualizations
+            benchmark_loader: Optional BenchmarkLoader (defaults to one over
+                raw_data/benchmarks). Allows pointing at a custom directory.
         """
         self.output_directory = Path(output_directory)
         self.output_directory.mkdir(parents=True, exist_ok=True)
         self.initial_capital = initial_capital
         self.risk_free_rate = risk_free_rate
         self.benchmark_name = benchmark_name
+        self._benchmark_loader = benchmark_loader
+        self.prefer_native_charts = prefer_native_charts
         self.use_enhanced = use_enhanced and ENHANCED_REPORTS_AVAILABLE
 
         # Initialize enhanced visualization generator if available
@@ -115,18 +120,232 @@ class ExcelReportGenerator:
         self._create_period_analysis(wb, result, metrics)
         self._create_costs_analysis(wb, result, metrics)
         self._create_performance_analysis(wb, result, metrics)
+        self._create_benchmark_analysis(wb, result, metrics)
         self._create_stable_metrics(wb, result, metrics)
         self._create_visualizations(wb, result, metrics)
         # Market conditions tab removed for single security backtests
 
-        # Add enhanced visualizations if available
-        if self.use_enhanced and self._viz:
+        # Visualizations: native interactive Excel charts by default; matplotlib
+        # PNGs only if explicitly preferred (and available).
+        if self.prefer_native_charts:
+            self._create_native_charts_sheet(wb, result, metrics)
+        elif self.use_enhanced and self._viz:
             self._create_enhanced_visualizations(wb, result, metrics)
 
         # Save workbook
         wb.save(filepath)
 
         return filepath
+
+    def _create_native_charts_sheet(self, wb: Workbook, result: BacktestResult, metrics: Dict[str, Any]):
+        """
+        Create the "Enhanced Charts" sheet using NATIVE interactive Excel charts.
+
+        All series come from the matplotlib-free ``report_data`` module (the
+        single source of truth), so the numbers match the framework's metrics
+        exactly. The only matplotlib usage is the optional trade-clustering PNG,
+        which has no native Excel equivalent (hybrid).
+        """
+        from . import report_data as rd
+        from . import excel_charts as ec
+
+        ws = wb.create_sheet("Enhanced Charts")
+        ws['A1'] = "ENHANCED VISUALIZATIONS"
+        ws['A1'].font = Font(bold=True, size=16)
+        ws.merge_cells('A1:N1')
+        ws.column_dimensions['A'].width = 16
+        ws['A2'] = "Native, interactive Excel charts (hover for values, rescale, edit)."
+        ws['A2'].font = Font(italic=True, size=9)
+
+        trades = result.trades
+        equity_df = result.equity_curve
+        state = {"row": 4}
+
+        def header(text):
+            ws.cell(row=state["row"], column=1, value=text).font = Font(bold=True, size=12)
+            state["row"] += 1
+
+        def bump(n):
+            state["row"] += n
+
+        # 1. Equity curve + high-water mark, and underwater drawdown
+        try:
+            dd = rd.compute_equity_drawdown(equity_df)
+            if dd["dates"]:
+                sdates, seq = ec.sample_series(dd["equity"], dd["dates"])
+                _, shwm = ec.sample_series(dd["high_water_mark"], dd["dates"])
+                _, sdraw = ec.sample_series(dd["drawdown_pct"], dd["dates"])
+                header("Equity Curve & High-Water Mark")
+                block = ec.write_series_block(wb, ["Date", "Equity", "High-Water Mark"],
+                                              list(zip(sdates, seq, shwm)))
+                ec.add_line_chart(ws, f"A{state['row']}", block, title="Equity Curve",
+                                  x_title="Date", y_title="Equity ($)")
+                bump(20)
+                header("Underwater Drawdown (%)")
+                block = ec.write_series_block(wb, ["Date", "Drawdown %"], list(zip(sdates, sdraw)))
+                ec.add_stacked_area_chart(ws, f"A{state['row']}", block, title="Drawdown",
+                                          x_title="Date", y_title="Drawdown %")
+                bump(20)
+        except Exception:
+            pass
+
+        # 2. Monthly returns grid with color-scale conditional formatting
+        try:
+            mr = rd.compute_monthly_returns(equity_df)
+            if mr["years"]:
+                header("Monthly Returns (%)")
+                ws.cell(row=state["row"], column=1, value="Year").font = Font(bold=True)
+                for j, mname in enumerate(mr["months"]):
+                    ws.cell(row=state["row"], column=2 + j, value=mname).font = Font(bold=True)
+                ws.cell(row=state["row"], column=14, value="Total").font = Font(bold=True)
+                state["row"] += 1
+                first = state["row"]
+                for yi, year in enumerate(mr["years"]):
+                    ws.cell(row=state["row"], column=1, value=year)
+                    for j, val in enumerate(mr["rows"][yi]):
+                        if val is not None:
+                            c = ws.cell(row=state["row"], column=2 + j, value=round(val, 2))
+                            c.number_format = '0.0'
+                    t = ws.cell(row=state["row"], column=14, value=round(mr["year_totals"][yi], 2))
+                    t.number_format = '0.0'
+                    state["row"] += 1
+                ec.apply_color_scale(ws, f"B{first}:M{state['row'] - 1}")
+                bump(2)
+        except Exception:
+            pass
+
+        # 3. Trade return distribution
+        try:
+            dist = rd.compute_trade_return_distribution(trades)
+            if dist["n"]:
+                header(f"Trade Return Distribution (n={dist['n']}, win rate {dist['win_rate']:.1f}%)")
+                block = ec.write_series_block(wb, ["Return %", "Count"],
+                                              list(zip(dist["labels"], dist["counts"])))
+                ec.add_bar_chart(ws, f"A{state['row']}", block, title="Trade Returns",
+                                 x_title="Return % (bin center)", y_title="Count")
+                bump(20)
+        except Exception:
+            pass
+
+        # 4. R-multiple distribution
+        try:
+            rm = rd.compute_r_multiple_distribution(trades)
+            if rm.get("available"):
+                header(f"R-Multiple Distribution (avg {rm['avg_r']:.2f}R, expectancy {rm['r_expectancy']:.2f}R)")
+                block = ec.write_series_block(wb, ["R bucket", "Count"],
+                                              list(zip(rm["labels"], rm["counts"])))
+                ec.add_bar_chart(ws, f"A{state['row']}", block, title="R-Multiples",
+                                 x_title="R bucket", y_title="Count")
+                bump(20)
+        except Exception:
+            pass
+
+        # 5. Rolling Sharpe/Sortino + volatility, with anomaly table
+        try:
+            roll = rd.compute_rolling_metrics(equity_df, window=90)
+            if roll.get("available"):
+                sdates, ssh = ec.sample_series(roll["sharpe"], roll["dates"])
+                _, sso = ec.sample_series(roll["sortino"], roll["dates"])
+                _, svo = ec.sample_series(roll["volatility"], roll["dates"])
+                header("Rolling 90-Day Sharpe / Sortino")
+                block = ec.write_series_block(wb, ["Date", "Sharpe", "Sortino"],
+                                              list(zip(sdates, ssh, sso)))
+                ec.add_line_chart(ws, f"A{state['row']}", block, title="Rolling Sharpe/Sortino",
+                                  x_title="Date", y_title="Ratio")
+                bump(20)
+                header("Rolling 90-Day Volatility (%)")
+                block = ec.write_series_block(wb, ["Date", "Volatility %"], list(zip(sdates, svo)))
+                ec.add_line_chart(ws, f"A{state['row']}", block, title="Rolling Volatility",
+                                  x_title="Date", y_title="Vol %")
+                bump(20)
+                if roll["anomalies"]:
+                    header(f"Filtered anomalies ({len(roll['anomalies'])})")
+                    for k, lbl in enumerate(["Date", "Metric", "Value", "Reason"]):
+                        ws.cell(row=state["row"], column=1 + k, value=lbl).font = Font(bold=True)
+                    state["row"] += 1
+                    for a in roll["anomalies"][:50]:
+                        ws.cell(row=state["row"], column=1, value=a["date"])
+                        ws.cell(row=state["row"], column=2, value=a["metric"])
+                        ws.cell(row=state["row"], column=3, value=round(a["value"], 2))
+                        ws.cell(row=state["row"], column=4, value=a["reason"])
+                        state["row"] += 1
+                    bump(2)
+        except Exception:
+            pass
+
+        # 6. Rolling win rate / profit factor
+        try:
+            wr = rd.compute_win_rate_over_time(trades, window=20)
+            if wr.get("available"):
+                header("Rolling Win Rate & Profit Factor (20-trade)")
+                block = ec.write_series_block(wb, ["Date", "Win Rate %", "Profit Factor"],
+                                              list(zip(wr["dates"], wr["win_rates"], wr["profit_factors"])))
+                ec.add_line_chart(ws, f"A{state['row']}", block, title="Win Rate / Profit Factor",
+                                  x_title="Date")
+                bump(20)
+        except Exception:
+            pass
+
+        # 7. MAE/MFE scatter charts
+        try:
+            mm = rd.compute_mae_mfe(trades)
+            if mm.get("available") and len(mm["returns"]) > 2:
+                header("Risk vs Reward (stop distance vs return)")
+                block = ec.write_series_block(wb, ["Stop Distance %", "Trade Return %"],
+                                              list(zip(mm["mae"], mm["returns"])))
+                ec.add_scatter_chart(ws, f"A{state['row']}", block, title="Stop Distance vs Return",
+                                     x_title="Stop Distance %", y_title="Return %")
+                bump(20)
+                header("Duration vs Return")
+                block = ec.write_series_block(wb, ["Duration (days)", "Trade Return %"],
+                                              list(zip(mm["durations"], mm["returns"])))
+                ec.add_scatter_chart(ws, f"A{state['row']}", block, title="Duration vs Return",
+                                     x_title="Days", y_title="Return %")
+                bump(20)
+        except Exception:
+            pass
+
+        # 8. Streak length distribution
+        try:
+            st = rd.compute_streaks(trades)
+            if st.get("available"):
+                header("Win/Loss Streak Length Distribution")
+                block = ec.write_series_block(wb, ["Streak Length", "Win Streaks", "Loss Streaks"],
+                                              list(zip(st["lengths"], st["win_counts"], st["loss_counts"])))
+                ec.add_bar_chart(ws, f"A{state['row']}", block, title="Streaks",
+                                 x_title="Streak Length", y_title="Count")
+                bump(20)
+        except Exception:
+            pass
+
+        # 9. Capital utilization (only if capital/position columns are present)
+        try:
+            cu = rd.compute_capital_utilization(equity_df)
+            if cu.get("available"):
+                sdates, scash = ec.sample_series(cu["cash"], cu["dates"])
+                _, sinv = ec.sample_series(cu["invested"], cu["dates"])
+                header("Capital Utilization (Cash vs Invested)")
+                block = ec.write_series_block(wb, ["Date", "Cash", "Invested"],
+                                              list(zip(sdates, scash, sinv)))
+                ec.add_stacked_area_chart(ws, f"A{state['row']}", block, title="Capital Utilization",
+                                          x_title="Date", y_title="$")
+                bump(20)
+        except Exception:
+            pass
+
+        # 10. Hybrid: trade clustering has no native equivalent — keep matplotlib PNG.
+        if self._viz and trades:
+            try:
+                from openpyxl.drawing.image import Image
+                header("Trade Clustering (detail image)")
+                cluster_img = self._viz.create_trade_clustering_analysis(trades)
+                img = Image(cluster_img)
+                img.width = 700
+                img.height = 500
+                ws.add_image(img, f"A{state['row']}")
+                bump(28)
+            except Exception:
+                pass
 
     def _create_enhanced_visualizations(self, wb: Workbook, result: BacktestResult, metrics: Dict[str, Any]):
         """Create enhanced visualizations sheet with matplotlib charts."""
@@ -1598,6 +1817,104 @@ class ExcelReportGenerator:
         # Format columns
         for col_idx in range(1, 11):
             ws.column_dimensions[chr(64 + col_idx)].width = 14
+
+    def _compute_benchmark_comparison(self, result: BacktestResult):
+        """Load the configured benchmark and compare it to the equity curve.
+
+        Returns a BenchmarkComparison, or None if the benchmark module/data is
+        unavailable. Never raises - the report must generate regardless.
+        """
+        try:
+            from .benchmark import BenchmarkLoader
+            loader = self._benchmark_loader or BenchmarkLoader()
+            return loader.compare(result.equity_curve, self.benchmark_name, self.risk_free_rate)
+        except Exception:
+            return None
+
+    def _create_benchmark_analysis(self, wb: Workbook, result: BacktestResult, metrics: Dict[str, Any]):
+        """Create Sheet: Benchmark comparison (strategy vs index)."""
+        ws = wb.create_sheet("Benchmark")
+        ws.column_dimensions['A'].width = 34
+        ws.column_dimensions['B'].width = 22
+        ws.column_dimensions['C'].width = 18
+
+        row = 1
+        ws.merge_cells(f'A{row}:D{row}')
+        ws[f'A{row}'] = "BENCHMARK COMPARISON"
+        ws[f'A{row}'].font = Font(bold=True, size=14)
+        ws[f'A{row}'].alignment = Alignment(horizontal='center')
+        row += 2
+
+        comparison = self._compute_benchmark_comparison(result)
+
+        if comparison is None or not comparison.is_valid:
+            reason = comparison.reason if comparison is not None else "benchmark module unavailable"
+            row = self._add_section_header(ws, row, f"BENCHMARK: {self.benchmark_name}")
+            ws[f'A{row}'] = "Benchmark comparison unavailable"
+            ws[f'A{row}'].font = self.metric_font
+            row += 1
+            ws[f'A{row}'] = f"Reason: {reason}"
+            row += 1
+            ws[f'A{row}'] = "Collect index data with: python scripts/collect_benchmarks.py"
+            return
+
+        row = self._add_section_header(
+            ws, row, f"{comparison.benchmark_name} ({comparison.benchmark_symbol})")
+        ws[f'A{row}'] = "Comparison Window"
+        ws[f'A{row}'].font = self.metric_font
+        ws[f'B{row}'] = f"{comparison.start_date:%Y-%m-%d} to {comparison.end_date:%Y-%m-%d}"
+        row += 2
+
+        row = self._add_section_header(ws, row, "RETURN VS BENCHMARK")
+        row = self._add_metrics_table(ws, row, [
+            ("Strategy Total Return", comparison.strategy_total_return_pct, "percentage"),
+            ("Benchmark Total Return", comparison.benchmark_total_return_pct, "percentage"),
+            ("Excess Return", comparison.excess_return_pct, "percentage"),
+            ("Strategy CAGR", comparison.strategy_cagr, "percentage"),
+            ("Benchmark CAGR", comparison.benchmark_cagr, "percentage"),
+        ])
+        row += 1
+
+        row = self._add_section_header(ws, row, "RISK-ADJUSTED VS BENCHMARK")
+        row = self._add_metrics_table(ws, row, [
+            ("Alpha (annualized)", comparison.alpha, "percentage"),
+            ("Beta", comparison.beta, "decimal"),
+            ("Correlation", comparison.correlation, "decimal"),
+            ("Tracking Error (annualized)", comparison.tracking_error, "percentage"),
+            ("Information Ratio", comparison.information_ratio, "decimal"),
+            ("Up Capture", comparison.up_capture, "percentage"),
+            ("Down Capture", comparison.down_capture, "percentage"),
+        ])
+        row += 1
+
+        # Month-end equity comparison (strategy vs rebased benchmark) for charting.
+        try:
+            be = comparison.benchmark_equity
+            if be is not None and not be.empty:
+                row = self._add_section_header(ws, row, "EQUITY COMPARISON (month-end)")
+                ws[f'A{row}'] = "Date"
+                ws[f'B{row}'] = "Strategy"
+                ws[f'C{row}'] = "Benchmark"
+                for col in ('A', 'B', 'C'):
+                    ws[f'{col}{row}'].font = self.metric_font
+                row += 1
+
+                strat = result.equity_curve[['date', 'equity']].copy()
+                strat['date'] = pd.to_datetime(strat['date'])
+                merged = pd.merge_asof(
+                    be.sort_values('date'), strat.sort_values('date'),
+                    on='date', direction='backward', suffixes=('_bench', '_strat')
+                ).dropna().set_index('date')
+                monthly = merged.resample('ME').last().dropna()
+                for dt, r in monthly.iterrows():
+                    ws[f'A{row}'] = dt.strftime('%Y-%m-%d')
+                    ws[f'B{row}'] = float(r['equity_strat'])
+                    ws[f'B{row}'].number_format = '$#,##0'
+                    ws[f'C{row}'] = float(r['equity_bench'])
+                    ws[f'C{row}'].number_format = '$#,##0'
+                    row += 1
+        except Exception:
+            pass
 
     def _create_costs_analysis(self, wb: Workbook, result: BacktestResult, metrics: Dict[str, Any]):
         """Create Sheet: Costs Analysis."""

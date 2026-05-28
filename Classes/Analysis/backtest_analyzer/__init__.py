@@ -15,20 +15,18 @@ The Backtest Analyzer processes trade logs to generate:
 2. **Technical Features Master CSV** - All filtered trades with technical
    indicators at entry and classification flags (GB_Flag, Outcomes_Flag)
 
-3. **Fundamental Data CSVs** - Per-security files with point-in-time fundamental
-   metrics from Alpha Vantage (EPS, P/E, FCF, margins, etc.)
+3. **Summary Reports** - Statistics and coverage reports
 
-4. **Summary Reports** - Statistics and coverage reports
+Point-in-time raw fundamentals are collected separately by
+``Classes.DataCollection.FundamentalCollector`` (see ``raw_data/fundamentals/``);
+derived metrics should be computed from that panel via the factor-analysis
+``FundamentalLoader`` rather than re-fetched here.
 
 Quick Start
 -----------
 Command line (backtest analysis)::
 
     python run_backtest_analysis.py logs/MyStrategy
-
-Command line (fundamental data fetch)::
-
-    python run_fundamental_data_fetch.py logs/MyStrategy
 
 Programmatic::
 
@@ -68,15 +66,6 @@ AlphaVantageConfig
 AlphaVantageClient
     API client with caching and rate limiting.
 
-FundamentalDataFetcher
-    Fetches point-in-time fundamental data for each security/quarter:
-    - EPS (TTM), EPS Growth, EPS Surprise Trend
-    - Revenue Growth, Operating Margin, Gross Margin
-    - P/E (Trailing & Forward), PEG, P/B, P/CF
-    - FCF, FCF Trend, FCF Yield
-    - Debt-to-Equity, Current Ratio, Interest Coverage
-    - ROE, ROA, Dividend Yield, Beta
-
 InteractiveHandler
     Handles user prompts for ambiguous data with answer memory.
 
@@ -103,14 +92,12 @@ See Also
 --------
 docs/BACKTEST_ANALYSIS_GUIDE.md : Complete documentation
 run_backtest_analysis.py : CLI tool for backtest analysis
-run_fundamental_data_fetch.py : CLI tool for fundamental data fetching
 """
 
 from .config import AnalysisConfig
 from .analyzer import BacktestAnalyzer
 from .alpha_vantage_config import AlphaVantageConfig, create_sample_config
 from .alpha_vantage_client import AlphaVantageClient
-from .fundamental_data_fetcher import FundamentalDataFetcher
 from .interactive_handler import InteractiveHandler
 
 __all__ = [
@@ -118,7 +105,6 @@ __all__ = [
     'BacktestAnalyzer',
     'AlphaVantageConfig',
     'AlphaVantageClient',
-    'FundamentalDataFetcher',
     'InteractiveHandler',
     'create_sample_config',
 ]

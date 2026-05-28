@@ -50,6 +50,8 @@ from Classes.DataCollection import (
     OptionsCollector,
 )
 from Classes.DataCollection.file_manager import DataTransformer
+from Classes.DataCollection.fundamental_collector import FundamentalCollector
+from Classes.DataCollection.benchmark_collector import BenchmarkCollector, load_benchmark_registry
 from Classes.DataCollection.logging_manager import (
     DecisionLogEntry,
     DataIssueEntry,
@@ -1182,6 +1184,7 @@ class FundamentalTab(BaseTab):
         validator = self.app.validator
         logger = self.app.logger
 
+        collector = FundamentalCollector(client)
         total_tickers = len(tickers)
 
         for i, ticker in enumerate(tickers):
@@ -1192,61 +1195,21 @@ class FundamentalTab(BaseTab):
                 progress_callback(f"Fetching {ticker} fundamentals...", i / total_tickers)
                 logger.log_session_info(f"FETCHING {ticker} FUNDAMENTAL")
 
-                all_data = []
+                # Assemble a tidy point-in-time panel: the income statement,
+                # balance sheet and cash flow joined per fiscal period, with a
+                # real publication date recovered from the EARNINGS endpoint.
+                # The current OVERVIEW snapshot is stored separately (it has no
+                # history and must not be backfilled onto historical rows).
+                panel, snapshot = collector.collect(ticker, frequency=config["frequency"])
 
-                # Get company overview
-                overview_response = client.get_company_overview(ticker)
-                if overview_response.success:
-                    overview_df = DataTransformer.transform_fundamental_overview(overview_response.data)
-                    if not overview_df.empty:
-                        all_data.append(overview_df)
-
-                # Get earnings
-                earnings_response = client.get_earnings(ticker)
-                if earnings_response.success:
-                    earnings_df = DataTransformer.transform_earnings(earnings_response.data)
-                    if not earnings_df.empty:
-                        all_data.append(earnings_df)
-
-                # Get income statement, balance sheet, cash flow
-                for endpoint, transform_func in [
-                    (client.get_income_statement, "income_statement"),
-                    (client.get_balance_sheet, "balance_sheet"),
-                    (client.get_cash_flow, "cash_flow"),
-                ]:
-                    response = endpoint(ticker)
-                    if response.success and response.data:
-                        # These endpoints return quarterly and annual reports
-                        quarterly = response.data.get("quarterlyReports", [])
-                        annual = response.data.get("annualReports", [])
-
-                        if config["frequency"] in ["both", "quarterly"] and quarterly:
-                            df = pd.DataFrame(quarterly)
-                            df["report_type"] = "quarterly"
-                            all_data.append(df)
-
-                        if config["frequency"] in ["both", "annual"] and annual:
-                            df = pd.DataFrame(annual)
-                            df["report_type"] = "annual"
-                            all_data.append(df)
-
-                if not all_data:
+                if panel.empty:
                     results["failed"].append((ticker, "No fundamental data returned"))
                     continue
 
-                # Combine all data (this is simplified - real implementation would merge properly)
-                combined_df = pd.concat(all_data, ignore_index=True) if len(all_data) > 1 else all_data[0]
+                validation_report = validator.validate_fundamental_data(panel, ticker)
 
-                # Add symbol column
-                combined_df["symbol"] = ticker
-
-                # Validate and write
-                validation_report = validator.validate_fundamental_data(combined_df, ticker)
-
-                file_meta = file_manager.write_fundamental_data(
-                    combined_df, ticker,
-                    missing_handling=config["missing_handling"]
-                )
+                file_meta = file_manager.write_fundamental_data(panel, ticker)
+                file_manager.write_overview_snapshot(snapshot, ticker)
 
                 if validation_report.passed:
                     results["success"].append((ticker, file_meta))
@@ -1750,6 +1713,133 @@ class OptionsTab(BaseTab):
         return results
 
 
+class BenchmarkTab(BaseTab):
+    """Tab for index / benchmark data collection (Alpha Vantage INDEX_DATA)."""
+
+    def __init__(self, parent, app: 'DataCollectionApp', **kwargs):
+        super().__init__(parent, app, **kwargs)
+        try:
+            self._registry = load_benchmark_registry()
+        except Exception:
+            self._registry = {"default": None, "benchmarks": {}}
+        self._create_widgets()
+
+    def _create_widgets(self):
+        container = ctk.CTkScrollableFrame(self)
+        container.pack(fill="both", expand=True, padx=10, pady=10)
+
+        # Index selection from the registry
+        idx_frame = ctk.CTkFrame(container)
+        idx_frame.pack(fill="x", pady=10)
+        ctk.CTkLabel(idx_frame, text="Indices", font=("", 14, "bold")).pack(anchor="w", padx=5, pady=5)
+
+        self.index_vars = {}
+        default_name = self._registry.get("default")
+        for name, entry in self._registry.get("benchmarks", {}).items():
+            symbol = entry.get("symbol", "")
+            var = tk.BooleanVar(value=(name == default_name))
+            self.index_vars[name] = (var, symbol)
+            ctk.CTkCheckBox(idx_frame, text=f"{name}  ({symbol})", variable=var).pack(anchor="w", padx=20, pady=2)
+
+        # Custom index symbols
+        custom_frame = ctk.CTkFrame(idx_frame, fg_color="transparent")
+        custom_frame.pack(fill="x", padx=20, pady=10)
+        ctk.CTkLabel(custom_frame, text="Custom index symbols (comma-separated, e.g., SPX, DJI):").pack(anchor="w")
+        self.custom_entry = ctk.CTkEntry(custom_frame, width=300)
+        self.custom_entry.pack(anchor="w", pady=5)
+
+        # Options
+        opt_frame = ctk.CTkFrame(container)
+        opt_frame.pack(fill="x", pady=10)
+        ctk.CTkLabel(opt_frame, text="Options", font=("", 14, "bold")).pack(anchor="w", padx=5, pady=5)
+
+        ctk.CTkLabel(opt_frame, text="Interval:").pack(anchor="w", padx=20, pady=(10, 5))
+        self.interval_var = tk.StringVar(value="daily")
+        for value, label in [("daily", "Daily"), ("weekly", "Weekly"), ("monthly", "Monthly")]:
+            ctk.CTkRadioButton(opt_frame, text=label, variable=self.interval_var, value=value).pack(anchor="w", padx=40)
+
+        ctk.CTkLabel(opt_frame, text="Output size:").pack(anchor="w", padx=20, pady=(10, 5))
+        self.outputsize_var = tk.StringVar(value="full")
+        ctk.CTkRadioButton(opt_frame, text="Full history", variable=self.outputsize_var, value="full").pack(anchor="w", padx=40)
+        ctk.CTkRadioButton(opt_frame, text="Compact (latest 100)", variable=self.outputsize_var, value="compact").pack(anchor="w", padx=40)
+
+        ctk.CTkLabel(
+            container,
+            text=("Note: INDEX_DATA is a premium Alpha Vantage endpoint (premium API key required).\n"
+                  "Files are saved to raw_data/benchmarks/ and used automatically as report benchmarks."),
+            justify="left", text_color="gray"
+        ).pack(anchor="w", padx=5, pady=10)
+
+    def get_config(self) -> Dict[str, Any]:
+        symbols = []
+        for _name, (var, symbol) in self.index_vars.items():
+            if var.get() and symbol:
+                symbols.append(symbol)
+
+        custom = self.custom_entry.get().strip()
+        if custom:
+            symbols.extend([s.strip().upper().lstrip("^") for s in custom.split(",") if s.strip()])
+
+        # De-duplicate, preserving order
+        seen = set()
+        unique = []
+        for s in symbols:
+            if s not in seen:
+                seen.add(s)
+                unique.append(s)
+
+        return {
+            "symbols": unique,
+            "interval": self.interval_var.get(),
+            "outputsize": self.outputsize_var.get(),
+        }
+
+    def validate(self) -> tuple:
+        if not self.get_config()["symbols"]:
+            return False, "Please select or enter at least one index"
+        return True, ""
+
+    def collect_data(self, progress_callback: Callable) -> Dict[str, Any]:
+        """Collect index/benchmark data via INDEX_DATA."""
+        config = self.get_config()
+        symbols = config["symbols"]
+        interval = config["interval"]
+        outputsize = config["outputsize"]
+        results = {"success": [], "failed": [], "partial": []}
+
+        client = self.app.api_client
+        file_manager = self.app.file_manager
+        logger = self.app.logger
+
+        collector = BenchmarkCollector(client)
+        total = len(symbols)
+
+        for i, symbol in enumerate(symbols):
+            if self.app.cancelled:
+                break
+
+            try:
+                progress_callback(f"Fetching {symbol} index data...", i / total)
+                logger.log_session_info(f"FETCHING {symbol} INDEX_DATA ({interval})")
+
+                df = collector.collect(symbol, interval=interval, outputsize=outputsize)
+
+                if df.empty:
+                    results["failed"].append(
+                        (symbol, "No index data returned (INDEX_DATA requires a premium API key)"))
+                    continue
+
+                file_meta = file_manager.write_benchmark_data(df, symbol, interval=interval)
+                results["success"].append((symbol, file_meta))
+                progress_callback(f"Completed {symbol}", (i + 1) / total)
+
+            except Exception as e:
+                results["failed"].append((symbol, str(e)))
+                logger.log_exception("Collection Error", str(e), e, symbol=symbol)
+
+        return results
+
+
 class DataCollectionApp(ctk.CTk):
     """Main application window for the Data Collection System."""
 
@@ -1874,6 +1964,10 @@ class DataCollectionApp(ctk.CTk):
         self.tabs["options"] = OptionsTab(self.tabview.tab("Options"), self)
         self.tabs["options"].pack(fill="both", expand=True)
 
+        self.tabview.add("Benchmarks")
+        self.tabs["benchmarks"] = BenchmarkTab(self.tabview.tab("Benchmarks"), self)
+        self.tabs["benchmarks"].pack(fill="both", expand=True)
+
         # Bottom section: Progress and controls
         bottom_frame = ctk.CTkFrame(main_frame)
         bottom_frame.pack(fill="x", pady=10)
@@ -1964,7 +2058,7 @@ class DataCollectionApp(ctk.CTk):
 
         # Confirm start
         config = current_tab.get_config()
-        item_count = len(config.get("tickers", config.get("pairs", [])))
+        item_count = len(config.get("tickers", config.get("pairs", config.get("symbols", []))))
         if not messagebox.askyesno(
             "Confirm",
             f"Start collecting {tab_key} data for {item_count} items?\n\n"

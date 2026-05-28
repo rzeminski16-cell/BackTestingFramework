@@ -28,6 +28,8 @@ from .config_manager import FactorConfigManagerGUI
 from .data_upload import FactorDataUploadGUI
 
 # Import Factor Analysis components
+import dataclasses
+
 try:
     from ...FactorAnalysis.analyzer import FactorAnalyzer, AnalysisInput, AnalysisOutput
     from ...FactorAnalysis.config.factor_config import (
@@ -39,6 +41,7 @@ try:
         ScenarioAnalysisConfig,
         ThresholdType
     )
+    from ...FactorAnalysis.data.fundamental_panel import enrich_dataframe
     ANALYZER_AVAILABLE = True
 except ImportError as e:
     ANALYZER_AVAILABLE = False
@@ -2910,13 +2913,9 @@ class FactorAnalysisDashboard:
 
         def run_thread():
             try:
-                import time
-
-                for i in range(8):
-                    progress_dialog.update_stage(i)
-                    time.sleep(0.5)
-
-                # Generate results with all factor types
+                # Honest progress: the analyzer runs as a single blocking step
+                # (no fabricated stage delays). Real errors surface below.
+                progress_dialog.update_stage(0)
                 self.results = self._generate_analysis_results()
 
                 progress_dialog.complete()
@@ -2958,18 +2957,33 @@ class FactorAnalysisDashboard:
         )
 
         # Build full config
-        return FactorAnalysisConfig(
+        cfg = FactorAnalysisConfig(
             profile_name=gui_config.get('profile_name', 'gui_analysis'),
             strategy_name=gui_config.get('strategy_name', 'unnamed'),
             trade_classification=trade_classification,
             data_alignment=data_alignment
         )
 
+        # Enable the full fundamental factor set (value/quality/growth) now that
+        # ratios are derived point-in-time from the panels. Config is frozen, so
+        # rebuild it with dataclasses.replace.
+        fe = cfg.factor_engineering
+        fe = dataclasses.replace(
+            fe,
+            eps_only_fundamentals=False,
+            quality=dataclasses.replace(fe.quality, enabled=True),
+            growth=dataclasses.replace(fe.growth, enabled=True),
+        )
+        return dataclasses.replace(cfg, factor_engineering=fe)
+
     def _generate_analysis_results(self) -> Dict[str, Any]:
         """Generate analysis results using the actual FactorAnalyzer."""
         if not ANALYZER_AVAILABLE:
-            print("Analyzer not available, using fallback mock data")
-            return self._generate_fallback_results()
+            raise RuntimeError(
+                "Factor analyzer is unavailable (missing dependencies, e.g. scipy / "
+                "scikit-learn). Install requirements and retry - no fabricated results "
+                "will be shown."
+            )
 
         try:
             # Build config from GUI settings
@@ -2997,6 +3011,13 @@ class FactorAnalysisDashboard:
             if price_data is None or (hasattr(price_data, 'empty') and price_data.empty):
                 price_data = self.data.get('weekly_price_data')
             fundamental_data = self.data.get('fundamental_data')
+            # Enrich with point-in-time derived ratios (TTM margins, ROE/ROA,
+            # D/E, growth, FCF) so the full fundamental factor set is usable.
+            if fundamental_data is not None and not getattr(fundamental_data, 'empty', True):
+                try:
+                    fundamental_data = enrich_dataframe(fundamental_data)
+                except Exception as e:
+                    print(f"[warn] fundamental enrichment skipped: {e}")
             insider_data = self.data.get('insider_data')
             options_data = self.data.get('options_data')
 
@@ -3010,17 +3031,17 @@ class FactorAnalysisDashboard:
             )
 
             if not output.success:
-                print(f"Analysis failed: {output.error}")
-                return self._generate_fallback_results()
+                raise RuntimeError(f"Factor analysis failed: {output.error}")
 
             # Convert AnalysisOutput to GUI format
             return self._format_analysis_output(output)
 
-        except Exception as e:
-            print(f"Error running analyzer: {e}")
+        except Exception:
+            # Surface the real error to the user (handled by the run thread).
+            # Never substitute fabricated results.
             import traceback
             traceback.print_exc()
-            return self._generate_fallback_results()
+            raise
 
     def _format_analysis_output(self, output: 'AnalysisOutput') -> Dict[str, Any]:
         """Format AnalysisOutput for GUI display."""
@@ -3234,8 +3255,12 @@ class FactorAnalysisDashboard:
         return results
 
     def _generate_fallback_results(self) -> Dict[str, Any]:
-        """Generate fallback mock results when analyzer is not available."""
-        # Determine available factor types based on loaded data
+        """Removed: fabricated/mock results are never shown. Fails loudly instead."""
+        raise RuntimeError(
+            "Mock factor-analysis results have been removed so fabricated numbers "
+            "are never displayed. Resolve the underlying analysis error instead."
+        )
+        # (unreachable) legacy mock generation retained below for reference only
         factor_types = {}
 
         # Technical factors (from price data)
