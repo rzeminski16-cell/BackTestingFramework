@@ -399,12 +399,20 @@ class PortfolioReportGenerator:
         try:
             from .benchmark import BenchmarkLoader, write_comparison_sheet
             ws = wb.create_sheet("Benchmark")
+            loader = BenchmarkLoader()
             try:
-                comparison = BenchmarkLoader().compare(
-                    result.portfolio_equity_curve, self.benchmark_name)
+                if self.benchmark_name:
+                    comparisons = {self.benchmark_name: loader.compare(
+                        result.portfolio_equity_curve, self.benchmark_name)}
+                else:
+                    comparisons = loader.compare_all(result.portfolio_equity_curve)
             except Exception:
-                comparison = None
-            write_comparison_sheet(ws, comparison, title="PORTFOLIO VS BENCHMARK")
+                comparisons = {}
+            write_comparison_sheet(
+                ws, comparisons,
+                equity_curve=result.portfolio_equity_curve,
+                title="PORTFOLIO VS BENCHMARK",
+            )
         except Exception:
             pass
 

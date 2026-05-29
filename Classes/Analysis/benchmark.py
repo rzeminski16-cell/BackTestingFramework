@@ -16,7 +16,7 @@ from __future__ import annotations
 import logging
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Tuple, Union
 
 import numpy as np
 import pandas as pd
@@ -242,37 +242,231 @@ def compute_benchmark_comparison(
 
 def write_comparison_sheet(
     ws,
-    comparison: Optional[BenchmarkComparison],
+    comparisons: Union[BenchmarkComparison, Dict[str, BenchmarkComparison], None],
     *,
+    equity_curve: Optional[pd.DataFrame] = None,
     title: str = "BENCHMARK COMPARISON",
     collect_hint: str = "python scripts/collect_benchmarks.py",
 ) -> None:
     """
-    Render a benchmark comparison onto an openpyxl worksheet.
+    Render benchmark comparisons onto an openpyxl worksheet.
 
-    Shared by the portfolio report generators so the benchmark section looks
-    the same everywhere. Renders an "unavailable" note (never raises) when the
-    comparison could not be computed.
+    Accepts either a single BenchmarkComparison (backward-compatible) or a
+    dict of {benchmark_name: BenchmarkComparison} for multi-benchmark display.
+    Produces a side-by-side metrics table plus a multi-series return-over-time
+    chart. ``equity_curve`` (DataFrame with 'date'/'equity' columns) adds the
+    strategy line to the chart.
     """
-    from openpyxl.styles import Font
+    from openpyxl.styles import Font, PatternFill, Alignment
+    from openpyxl.utils import get_column_letter
 
-    ws.column_dimensions['A'].width = 34
-    ws.column_dimensions['B'].width = 26
+    # Normalise: accept single comparison or dict
+    if comparisons is None:
+        comp_dict: Dict[str, BenchmarkComparison] = {}
+    elif isinstance(comparisons, BenchmarkComparison):
+        comp_dict = {comparisons.benchmark_name or "Benchmark": comparisons}
+    else:
+        comp_dict = dict(comparisons)
 
-    ws.cell(row=1, column=1, value=title).font = Font(bold=True, size=14)
-    row = 3
+    valid_comps: Dict[str, BenchmarkComparison] = {
+        name: c for name, c in comp_dict.items() if c is not None and c.is_valid
+    }
 
-    if comparison is None or not comparison.is_valid:
-        reason = comparison.reason if comparison is not None else "benchmark module unavailable"
-        ws.cell(row=row, column=1, value="Benchmark comparison unavailable").font = Font(bold=True)
-        ws.cell(row=row + 1, column=1, value=f"Reason: {reason}")
-        ws.cell(row=row + 2, column=1, value=f"Collect index data with: {collect_hint}")
+    # Style helpers
+    DARK_BLUE   = PatternFill(start_color="1F4E79", end_color="1F4E79", fill_type="solid")
+    MED_BLUE    = PatternFill(start_color="2E75B6", end_color="2E75B6", fill_type="solid")
+    ALT_FILL    = PatternFill(start_color="EBF3FB", end_color="EBF3FB", fill_type="solid")
+    WHITE_FILL  = PatternFill(start_color="FFFFFF", end_color="FFFFFF", fill_type="solid")
+    GREEN_FILL  = PatternFill(start_color="C6EFCE", end_color="C6EFCE", fill_type="solid")
+    RED_FILL    = PatternFill(start_color="FFC7CE", end_color="FFC7CE", fill_type="solid")
+    WHITE_FONT  = Font(color="FFFFFF", bold=True, size=11)
+    BOLD_FONT   = Font(bold=True)
+    CENTER      = Alignment(horizontal="center", vertical="center", wrap_text=True)
+    LEFT        = Alignment(horizontal="left", vertical="center")
+
+    title_cell = ws.cell(row=1, column=1, value=title)
+    title_cell.font = Font(bold=True, size=14)
+
+    HEADER_ROW     = 3
+    METRIC_COL     = 1
+    STRATEGY_COL   = 2
+    bench_names    = list(valid_comps.keys())
+    n_bench        = len(bench_names)
+
+    # ── No valid comparisons ─────────────────────────────────────────────────
+    if not valid_comps:
+        reasons = [f"{name}: {c.reason}" for name, c in comp_dict.items()
+                   if c is not None and not c.is_valid]
+        if not reasons:
+            reasons = ["benchmark module unavailable"]
+        r = 3
+        ws.cell(row=r, column=1, value="Benchmark comparison unavailable").font = BOLD_FONT
+        for i, reason in enumerate(reasons):
+            ws.cell(row=r + 1 + i, column=1, value=f"  {reason}")
+        ws.cell(row=r + len(reasons) + 1, column=1,
+                value=f"Collect index data with: {collect_hint}")
+        ws.column_dimensions['A'].width = 60
         return
 
-    for label, value in comparison.summary_rows():
-        ws.cell(row=row, column=1, value=label).font = Font(bold=label == "Benchmark")
-        ws.cell(row=row, column=2, value=value)
-        row += 1
+    # ── Metric rows definition ───────────────────────────────────────────────
+    # (label, strategy_fn | None, benchmark_fn, highlight_fn | None)
+    # strategy_fn receives the first valid comp (strategy values are identical)
+    # benchmark_fn receives the per-benchmark comp
+    # highlight_fn(comp) -> "green"|"red"|None
+    first = next(iter(valid_comps.values()))
+
+    METRICS = [
+        ("Comparison Window",
+         None,
+         lambda c: f"{c.start_date:%Y-%m-%d} → {c.end_date:%Y-%m-%d}",
+         None),
+        ("Total Return (%)",
+         lambda c: f"{c.strategy_total_return_pct:.2f}%",
+         lambda c: f"{c.benchmark_total_return_pct:.2f}%",
+         None),
+        ("CAGR (%)",
+         lambda c: f"{c.strategy_cagr:.2f}%",
+         lambda c: f"{c.benchmark_cagr:.2f}%",
+         None),
+        ("Excess Return (%)",
+         None,
+         lambda c: f"{c.excess_return_pct:+.2f}%",
+         lambda c: "green" if c.excess_return_pct > 0 else ("red" if c.excess_return_pct < 0 else None)),
+        ("Alpha (annualized, %)",
+         None,
+         lambda c: f"{c.alpha:.2f}%",
+         lambda c: "green" if c.alpha > 0 else ("red" if c.alpha < 0 else None)),
+        ("Beta",
+         None,
+         lambda c: f"{c.beta:.2f}",
+         None),
+        ("Correlation",
+         None,
+         lambda c: f"{c.correlation:.2f}",
+         None),
+        ("Tracking Error (ann., %)",
+         None,
+         lambda c: f"{c.tracking_error:.2f}%",
+         None),
+        ("Information Ratio",
+         None,
+         lambda c: f"{c.information_ratio:.2f}",
+         lambda c: "green" if c.information_ratio > 0.5 else ("red" if c.information_ratio < 0 else None)),
+        ("Up Capture (%)",
+         None,
+         lambda c: f"{c.up_capture:.1f}%",
+         lambda c: "green" if c.up_capture > 100 else None),
+        ("Down Capture (%)",
+         None,
+         lambda c: f"{c.down_capture:.1f}%",
+         lambda c: "red" if c.down_capture > 100 else ("green" if c.down_capture < 80 else None)),
+    ]
+
+    # ── Header row ───────────────────────────────────────────────────────────
+    hdr = ws.cell(row=HEADER_ROW, column=METRIC_COL, value="Metric")
+    hdr.font, hdr.fill, hdr.alignment = WHITE_FONT, DARK_BLUE, LEFT
+
+    shdr = ws.cell(row=HEADER_ROW, column=STRATEGY_COL, value="Strategy")
+    shdr.font, shdr.fill, shdr.alignment = WHITE_FONT, DARK_BLUE, CENTER
+
+    for j, bname in enumerate(bench_names):
+        c = ws.cell(row=HEADER_ROW, column=STRATEGY_COL + 1 + j, value=bname)
+        c.font, c.fill, c.alignment = WHITE_FONT, MED_BLUE, CENTER
+
+    # ── Data rows ────────────────────────────────────────────────────────────
+    data_start = HEADER_ROW + 1
+    for i, (label, strat_fn, bench_fn, hi_fn) in enumerate(METRICS):
+        row = data_start + i
+        row_fill = ALT_FILL if i % 2 == 0 else WHITE_FILL
+
+        lbl_cell = ws.cell(row=row, column=METRIC_COL, value=label)
+        lbl_cell.font, lbl_cell.fill, lbl_cell.alignment = BOLD_FONT, row_fill, LEFT
+
+        strat_val = strat_fn(first) if strat_fn else "—"
+        sc = ws.cell(row=row, column=STRATEGY_COL, value=strat_val)
+        sc.fill, sc.alignment = row_fill, CENTER
+
+        for j, (bname, comp) in enumerate(valid_comps.items()):
+            col = STRATEGY_COL + 1 + j
+            val = bench_fn(comp)
+            bc = ws.cell(row=row, column=col, value=val)
+            bc.alignment = CENTER
+            if hi_fn:
+                colour = hi_fn(comp)
+                bc.fill = (GREEN_FILL if colour == "green" else
+                           RED_FILL if colour == "red" else row_fill)
+            else:
+                bc.fill = row_fill
+
+    # ── Column widths ────────────────────────────────────────────────────────
+    ws.column_dimensions['A'].width = 28
+    ws.column_dimensions[get_column_letter(STRATEGY_COL)].width = 16
+    for j in range(n_bench):
+        ws.column_dimensions[get_column_letter(STRATEGY_COL + 1 + j)].width = 18
+    ws.row_dimensions[HEADER_ROW].height = 28
+
+    # ── Return-over-time chart ───────────────────────────────────────────────
+    try:
+        from .excel_charts import write_series_block, add_line_chart
+
+        # Build a date->equity map for the strategy (optional)
+        strat_map: Dict = {}
+        if equity_curve is not None and not equity_curve.empty:
+            ec_tmp = equity_curve[["date", "equity"]].copy()
+            ec_tmp["date"] = pd.to_datetime(ec_tmp["date"], errors="coerce")
+            ec_tmp = ec_tmp.dropna(subset=["date"])
+            strat_map = dict(zip(ec_tmp["date"], ec_tmp["equity"].astype(float)))
+
+        # Date->equity maps per benchmark (already rebased to strategy start equity)
+        bench_maps: Dict[str, Dict] = {}
+        for bname, comp in valid_comps.items():
+            bdf = comp.benchmark_equity.copy()
+            bdf["date"] = pd.to_datetime(bdf["date"], errors="coerce")
+            bench_maps[bname] = dict(zip(bdf["date"], bdf["equity"].astype(float)))
+
+        # Union of all dates, sorted
+        all_dates: List[pd.Timestamp] = sorted(set().union(
+            strat_map.keys(),
+            *(m.keys() for m in bench_maps.values())
+        ))
+
+        include_strategy = bool(strat_map)
+        headers = ["Date"] + (["Strategy"] if include_strategy else []) + bench_names
+
+        rows_data = []
+        for d in all_dates:
+            row_vals: List[Any] = [d.strftime("%Y-%m-%d")]
+            if include_strategy:
+                row_vals.append(strat_map.get(d))
+            for bname in bench_names:
+                row_vals.append(bench_maps[bname].get(d))
+            rows_data.append(row_vals)
+
+        # Down-sample for chart rendering
+        max_pts = 500
+        if len(rows_data) > max_pts:
+            step = max(1, len(rows_data) // max_pts)
+            idxs = list(range(0, len(rows_data), step))
+            if idxs[-1] != len(rows_data) - 1:
+                idxs.append(len(rows_data) - 1)
+            rows_data = [rows_data[i] for i in idxs]
+
+        block = write_series_block(ws.parent, headers, rows_data)
+        if block:
+            chart_anchor_row = data_start + len(METRICS) + 2
+            add_line_chart(
+                ws,
+                f"A{chart_anchor_row}",
+                block,
+                title="Return Over Time: Strategy vs Benchmarks",
+                x_title="Date",
+                y_title="Portfolio Value ($)",
+                width=26,
+                height=14,
+                smooth=True,
+            )
+    except Exception as exc:
+        logger.warning("Benchmark return-over-time chart failed: %s", exc)
 
 
 class BenchmarkLoader:
@@ -348,3 +542,20 @@ class BenchmarkLoader:
             benchmark_name=friendly, benchmark_symbol=symbol,
             risk_free_rate=risk_free_rate,
         )
+
+    def compare_all(
+        self,
+        equity_curve: pd.DataFrame,
+        risk_free_rate: Optional[float] = None,
+    ) -> Dict[str, BenchmarkComparison]:
+        """Compare equity_curve against every benchmark in the registry.
+
+        Returns a dict of {benchmark_name: BenchmarkComparison}, preserving
+        registry order. Invalid comparisons (missing data) are included so
+        callers can surface informative messages.
+        """
+        results: Dict[str, BenchmarkComparison] = {}
+        for name in self.registry.get("benchmarks", {}):
+            results[name] = self.compare(equity_curve, benchmark_name=name,
+                                         risk_free_rate=risk_free_rate)
+        return results
