@@ -25,3 +25,11 @@ analysis_output/
 
 # Log files (generated during testing/backtesting)
 logs/
+raw_data/daily/*
+!raw_data/daily/A*
+raw_data/weekly/*
+!raw_data/weekly/A*
+raw_data/fundamentals/*
+!raw_data/fundamentals/A*
+raw_data/fundamentals/_overview/*
+!raw_data/fundamentals/_overview/A*
