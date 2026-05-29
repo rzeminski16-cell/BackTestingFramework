@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import json
 import logging
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
@@ -130,10 +131,16 @@ def resolve_benchmark(name_or_symbol: str, registry: Dict[str, Any]) -> Optional
 
 
 class BenchmarkCollector:
-    """Fetches index series via INDEX_DATA and assembles tidy price frames."""
+    """
+    Fetches a benchmark/index price series, trying the premium INDEX_DATA
+    endpoint first and falling back to an ETF proxy via the standard daily
+    time-series endpoint (which works on any API tier). Surfaces the real API
+    error so failures aren't silent.
+    """
 
-    def __init__(self, client: Any):
+    def __init__(self, client: Any, registry: Optional[Dict[str, Any]] = None):
         self.client = client
+        self._registry = registry  # lazily loaded if None
 
     @staticmethod
     def _data(response: Any) -> Dict[str, Any]:
@@ -141,39 +148,101 @@ class BenchmarkCollector:
             return response.data or {}
         return {}
 
+    def _registry_entry(self, symbol: str) -> Optional[Dict[str, Any]]:
+        if self._registry is None:
+            try:
+                self._registry = load_benchmark_registry()
+            except Exception:
+                self._registry = {"benchmarks": {}}
+        resolved = resolve_benchmark(symbol, self._registry)
+        return resolved[1] if resolved else None
+
     def collect(
         self,
         symbol: str,
         interval: str = "daily",
-        outputsize: str = "full"
-    ) -> pd.DataFrame:
-        """Fetch and parse a single index series. Empty DataFrame on failure."""
-        response = self.client.get_index_data(symbol, interval=interval, outputsize=outputsize)
-        if not getattr(response, "success", False):
-            logger.warning(
-                "INDEX_DATA fetch failed for %s: %s",
-                symbol, getattr(response, "error_message", "unknown error")
-            )
-            return pd.DataFrame()
-        df = transform_index_data(self._data(response))
-        if not df.empty:
-            df["symbol"] = symbol
-        return df
+        outputsize: str = "full",
+        etf_symbol: Optional[str] = None,
+    ) -> "BenchmarkResult":
+        """
+        Fetch one benchmark series.
+
+        Order of attempts:
+          1. INDEX_DATA(symbol)  - premium index endpoint
+          2. TIME_SERIES_DAILY(etf proxy)  - standard tier, ETF tracking the index
+
+        The ETF proxy is taken from the argument, else the registry entry for the
+        symbol. Returns a BenchmarkResult carrying the data, the source used, and
+        the real error message if both attempts fail.
+        """
+        errors = []
+
+        # 1) Premium index endpoint.
+        try:
+            resp = self.client.get_index_data(symbol, interval=interval, outputsize=outputsize)
+            if getattr(resp, "success", False):
+                df = transform_index_data(self._data(resp))
+                if not df.empty:
+                    df["symbol"] = symbol
+                    return BenchmarkResult(df, "index_data", symbol)
+                errors.append(f"INDEX_DATA({symbol}): response had no parseable time series")
+            else:
+                errors.append(f"INDEX_DATA({symbol}): {getattr(resp, 'error_message', 'request failed')}")
+        except Exception as exc:  # pragma: no cover - defensive
+            errors.append(f"INDEX_DATA({symbol}): {exc}")
+
+        # 2) ETF proxy via standard daily endpoint.
+        entry = self._registry_entry(symbol)
+        proxy = etf_symbol or (entry or {}).get("etf")
+        # If the symbol itself looks like an ETF/stock ticker (not a known index), try it directly.
+        if not proxy and entry is None:
+            proxy = symbol
+        if proxy:
+            try:
+                resp2 = self.client.get_daily_prices(proxy, adjusted=False, outputsize=outputsize)
+                if getattr(resp2, "success", False):
+                    from .file_manager import DataTransformer
+                    pdf = DataTransformer.transform_daily_prices(self._data(resp2), adjusted=False)
+                    if not pdf.empty:
+                        pdf["symbol"] = symbol
+                        return BenchmarkResult(pdf, "etf_proxy", proxy)
+                    errors.append(f"ETF proxy {proxy}: response had no rows")
+                else:
+                    errors.append(f"ETF proxy {proxy}: {getattr(resp2, 'error_message', 'request failed')}")
+            except Exception as exc:  # pragma: no cover - defensive
+                errors.append(f"ETF proxy {proxy}: {exc}")
+
+        return BenchmarkResult(pd.DataFrame(), "", symbol, error="; ".join(errors))
 
     def collect_registry(
         self,
         registry: Optional[Dict[str, Any]] = None,
         outputsize: str = "full"
-    ) -> Dict[str, pd.DataFrame]:
-        """Collect every benchmark in the registry. Returns {symbol: DataFrame}."""
+    ) -> Dict[str, "BenchmarkResult"]:
+        """Collect every benchmark in the registry. Returns {symbol: BenchmarkResult}."""
         registry = registry or load_benchmark_registry()
-        out: Dict[str, pd.DataFrame] = {}
+        out: Dict[str, BenchmarkResult] = {}
         for name, entry in registry.get("benchmarks", {}).items():
             symbol = entry.get("symbol")
-            interval = entry.get("interval", "daily")
             if not symbol:
                 continue
-            df = self.collect(symbol, interval=interval, outputsize=outputsize)
-            if not df.empty:
-                out[symbol] = df
+            out[symbol] = self.collect(
+                symbol,
+                interval=entry.get("interval", "daily"),
+                outputsize=outputsize,
+                etf_symbol=entry.get("etf"),
+            )
         return out
+
+
+@dataclass
+class BenchmarkResult:
+    """Outcome of a benchmark fetch: data, the source used, and any error."""
+    df: pd.DataFrame
+    source: str            # 'index_data' | 'etf_proxy' | ''
+    symbol_used: str
+    error: Optional[str] = None
+
+    @property
+    def empty(self) -> bool:
+        return self.df is None or self.df.empty

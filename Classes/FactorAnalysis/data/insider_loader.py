@@ -69,11 +69,13 @@ class InsiderLoader:
         # Normalize column names
         df.columns = [str(c).lower().strip().replace(' ', '_') for c in df.columns]
 
-        # Parse date columns
+        # Parse date columns. The collected insider files use ISO (YYYY-MM-DD);
+        # dayfirst=True previously misread those (e.g. 2021-01-05 -> 2021-05-01),
+        # which silently zeroed out all windowed activity.
         date_columns = ['date', 'filing_date', 'transaction_date']
         for col in date_columns:
             if col in df.columns:
-                df[col] = pd.to_datetime(df[col], errors='coerce', dayfirst=True)
+                df[col] = pd.to_datetime(df[col], errors='coerce')
 
         # Normalize transaction_type
         if 'transaction_type' in df.columns:
@@ -93,9 +95,21 @@ class InsiderLoader:
             if col in df.columns:
                 df[col] = pd.to_numeric(df[col], errors='coerce')
 
-        # Ensure boolean executive column
-        if 'executive' in df.columns:
-            df['executive'] = df['executive'].astype(bool)
+        # Executive flag (boolean). Prefer an explicit is_executive column, else
+        # derive it from the insider title, else default to False. (Previously
+        # this read AV's 'executive' field - which is the insider NAME - so the
+        # executive-activity factors were always zero.)
+        from .insider_panel import is_executive_from_title
+        if 'is_executive' in df.columns:
+            if df['is_executive'].dtype == object:
+                df['is_executive'] = df['is_executive'].map(
+                    lambda v: str(v).strip().lower() in ('true', '1', 'yes', 't'))
+            else:
+                df['is_executive'] = df['is_executive'].astype(bool)
+        elif 'insider_title' in df.columns:
+            df['is_executive'] = is_executive_from_title(df['insider_title'])
+        else:
+            df['is_executive'] = False
 
         return df
 
@@ -301,9 +315,9 @@ class InsiderLoader:
         # Executive transactions (weighted more heavily)
         exec_buys = 0
         exec_sells = 0
-        if 'executive' in window_data.columns:
-            exec_buys = len(buys[buys['executive'] == True])
-            exec_sells = len(sells[sells['executive'] == True])
+        if 'is_executive' in window_data.columns:
+            exec_buys = len(buys[buys['is_executive'] == True])
+            exec_sells = len(sells[sells['is_executive'] == True])
 
         # Calculate insider score
         # Higher score = more bullish insider activity

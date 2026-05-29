@@ -143,6 +143,11 @@ class TradeClassifier:
         if pl_column not in df.columns:
             raise ValueError(f"P&L column '{pl_column}' not found in DataFrame")
 
+        # Coerce the P&L column to numeric. Trade logs sometimes load return/P&L
+        # as strings (object dtype), which breaks the threshold comparisons
+        # ("'>' not supported between instances of 'float' and 'str'").
+        df[pl_column] = pd.to_numeric(df[pl_column], errors='coerce')
+
         # Calculate duration if not present
         if duration_column not in df.columns:
             if 'entry_date' in df.columns and 'exit_date' in df.columns:
@@ -151,6 +156,7 @@ class TradeClassifier:
                 ).dt.days
             else:
                 df[duration_column] = 0
+        df[duration_column] = pd.to_numeric(df[duration_column], errors='coerce').fillna(0)
 
         # Compute thresholds
         if self.config.threshold_type == ThresholdType.PERCENTILE:

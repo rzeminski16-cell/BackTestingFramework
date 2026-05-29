@@ -1,12 +1,12 @@
 {
-  "description": "Benchmark/index registry. Maps a friendly benchmark name to the Alpha Vantage INDEX_DATA symbol used for collection and report comparisons. 'default' is used by reports when no benchmark is specified. INDEX_DATA is a premium Alpha Vantage endpoint.",
+  "description": "Benchmark/index registry. Each benchmark has an INDEX_DATA 'symbol' (premium Alpha Vantage index endpoint) and an 'etf' proxy ticker used as a fallback via the standard TIME_SERIES_DAILY endpoint (works on any API tier). Collection tries INDEX_DATA first, then the ETF proxy. 'default' is used by reports when no benchmark is specified.",
   "default": "S&P 500",
   "benchmarks": {
-    "S&P 500": {"symbol": "SPX", "interval": "daily", "aliases": ["SPX", "SP500", "GSPC", "^GSPC"]},
-    "Dow Jones": {"symbol": "DJI", "interval": "daily", "aliases": ["DJI", "DJIA", "^DJI"]},
-    "Nasdaq Composite": {"symbol": "IXIC", "interval": "daily", "aliases": ["IXIC", "^IXIC"]},
-    "Nasdaq 100": {"symbol": "NDX", "interval": "daily", "aliases": ["NDX", "^NDX"]},
-    "Russell 2000": {"symbol": "RUT", "interval": "daily", "aliases": ["RUT", "^RUT"]},
-    "CBOE VIX": {"symbol": "VIX", "interval": "daily", "aliases": ["VIX", "^VIX"]}
+    "S&P 500": {"symbol": "SPX", "etf": "SPY", "interval": "daily", "aliases": ["SPX", "SP500", "GSPC", "^GSPC", "SPY"]},
+    "Dow Jones": {"symbol": "DJI", "etf": "DIA", "interval": "daily", "aliases": ["DJI", "DJIA", "^DJI", "DIA"]},
+    "Nasdaq Composite": {"symbol": "IXIC", "etf": "ONEQ", "interval": "daily", "aliases": ["IXIC", "^IXIC", "ONEQ"]},
+    "Nasdaq 100": {"symbol": "NDX", "etf": "QQQ", "interval": "daily", "aliases": ["NDX", "^NDX", "QQQ"]},
+    "Russell 2000": {"symbol": "RUT", "etf": "IWM", "interval": "daily", "aliases": ["RUT", "^RUT", "IWM"]},
+    "CBOE VIX": {"symbol": "VIX", "etf": "VIXY", "interval": "daily", "aliases": ["VIX", "^VIX", "VIXY"]}
   }
 }

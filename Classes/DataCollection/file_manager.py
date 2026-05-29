@@ -670,8 +670,8 @@ class FileManager:
     def _order_columns_insider(self, df: pd.DataFrame) -> pd.DataFrame:
         """Order columns for insider data."""
         priority_order = [
-            'date', 'symbol', 'insider_name', 'insider_title',
-            'transaction_type', 'shares', 'price', 'value',
+            'date', 'symbol', 'insider_name', 'insider_title', 'is_executive',
+            'security_type', 'transaction_type', 'shares', 'price', 'value',
             'ownership_after', 'relationship'
         ]
 
@@ -1071,40 +1071,74 @@ class DataTransformer:
 
     @staticmethod
     def transform_insider_transactions(response_data: Dict[str, Any]) -> pd.DataFrame:
-        """Transform insider transactions to DataFrame."""
+        """
+        Transform Alpha Vantage INSIDER_TRANSACTIONS into a clean DataFrame.
+
+        Fixes the prior field mapping (AV's field is ``executive``, not
+        ``executive_name``), keeps ``security_type``, derives an ``is_executive``
+        boolean from the title, normalizes the A/D flag to buy/sell, parses
+        numerics/dates, computes value, drops empty rows and de-duplicates.
+        """
+        # Insider/officer/director title keywords -> is_executive flag.
+        EXEC_TITLE_PATTERN = (
+            r"\b(?:CEO|CFO|COO|CTO|CIO|President|Chief|Officer|Director|Chairman|"
+            r"Chairwoman|VP|Vice[\s-]?President|Treasurer|Secretary|EVP|SVP|Founder|Partner)\b"
+        )
+
         transactions = response_data.get('data', [])
         if not transactions:
             return pd.DataFrame()
 
         df = pd.DataFrame(transactions)
 
-        # Rename columns to match our schema
         column_map = {
             'transaction_date': 'date',
             'ticker': 'symbol',
-            'executive_name': 'insider_name',
+            'executive': 'insider_name',
             'executive_title': 'insider_title',
+            'security_type': 'security_type',
             'acquisition_or_disposal': 'transaction_type',
             'shares': 'shares',
             'share_price': 'price',
         }
-
         df = df.rename(columns={k: v for k, v in column_map.items() if k in df.columns})
 
-        # Normalize transaction type
-        if 'transaction_type' in df.columns:
-            df['transaction_type'] = df['transaction_type'].map({
-                'A': 'BUY', 'D': 'SELL',
-                'P': 'BUY', 'S': 'SELL',
-            }).fillna(df['transaction_type'])
+        if 'date' in df.columns:
+            df['date'] = pd.to_datetime(df['date'], errors='coerce')
 
-        # Calculate value
+        # Normalize A/D (and P/S variants) -> buy/sell.
+        if 'transaction_type' in df.columns:
+            tt = df['transaction_type'].astype(str).str.strip().str.upper()
+            df['transaction_type'] = tt.map(
+                {'A': 'buy', 'D': 'sell', 'P': 'buy', 'S': 'sell'}
+            ).fillna(tt.str.lower())
+
+        for col in ('shares', 'price'):
+            if col in df.columns:
+                df[col] = pd.to_numeric(df[col], errors='coerce')
+
         if 'shares' in df.columns and 'price' in df.columns:
-            df['shares'] = pd.to_numeric(df['shares'], errors='coerce')
-            df['price'] = pd.to_numeric(df['price'], errors='coerce')
             df['value'] = df['shares'] * df['price']
 
-        return df
+        # Derive executive flag from title.
+        if 'insider_title' in df.columns:
+            df['is_executive'] = df['insider_title'].astype(str).str.contains(
+                EXEC_TITLE_PATTERN, case=False, regex=True, na=False
+            )
+
+        # Clean: require a date, drop non-positive share rows, de-duplicate.
+        if 'date' in df.columns:
+            df = df.dropna(subset=['date'])
+        if 'shares' in df.columns:
+            df = df[df['shares'].fillna(0) > 0]
+        dedup_keys = [c for c in ['date', 'symbol', 'insider_name', 'transaction_type', 'shares', 'price']
+                      if c in df.columns]
+        if dedup_keys:
+            df = df.drop_duplicates(subset=dedup_keys)
+        if 'date' in df.columns:
+            df = df.sort_values('date')
+
+        return df.reset_index(drop=True)
 
     @staticmethod
     def transform_forex_weekly(response_data: Dict[str, Any], pair: str) -> pd.DataFrame:

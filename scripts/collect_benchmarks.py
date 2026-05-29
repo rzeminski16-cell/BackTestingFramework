@@ -67,14 +67,15 @@ def main() -> int:
 
     failures = 0
     for symbol, interval in jobs:
-        df = collector.collect(symbol, interval=interval, outputsize=args.outputsize)
-        if df.empty:
-            print(f"{symbol} ({interval}): no data (premium key / network required for INDEX_DATA)")
+        result = collector.collect(symbol, interval=interval, outputsize=args.outputsize)
+        if result.empty:
+            print(f"{symbol} ({interval}): FAILED - {result.error}")
             failures += 1
             continue
-        meta = file_manager.write_benchmark_data(df, symbol, interval=interval)
+        meta = file_manager.write_benchmark_data(result.df, symbol, interval=interval)
         span = f"{meta.date_range[0]} .. {meta.date_range[1]}" if meta.date_range else "?"
-        print(f"{symbol} ({interval}): {meta.rows} rows [{span}] -> {meta.file_path}")
+        print(f"{symbol} ({interval}) via {result.source} ({result.symbol_used}): "
+              f"{meta.rows} rows [{span}] -> {meta.file_path}")
 
     return 1 if failures else 0
 

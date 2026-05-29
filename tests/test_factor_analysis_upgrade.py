@@ -16,6 +16,8 @@ import pandas as pd
 from Classes.FactorAnalysis.data.fundamental_panel import enrich_dataframe
 from Classes.FactorAnalysis.factors.fundamental_factors import FundamentalFactors
 from Classes.FactorAnalysis.output.html_generator import generate_html_report
+from Classes.FactorAnalysis.preprocessing.trade_classifier import TradeClassifier
+from Classes.FactorAnalysis.config.factor_config import TradeClassificationConfig, ThresholdType
 
 
 class TestEnrichDataframe(unittest.TestCase):
@@ -87,6 +89,34 @@ class TestHtmlReport(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             path = generate_html_report(result, Path(tmp) / "r.html")
             self.assertTrue(path.exists())
+
+
+class TestClassifierNumericCoercion(unittest.TestCase):
+    """Trade return/duration columns loaded as strings must not crash classification
+    ("'>' not supported between instances of 'float' and 'str'")."""
+
+    def _df(self):
+        return pd.DataFrame({
+            "pl_pct": ["5.2", "-3.1", "0.4", "8.0", "-6.5", "bad", "12.0", "-9.0", "1.0", "-0.5"],
+            "duration_days": ["10", "30", "5", "12", "40", "7", "25", "35", "3", "22"],
+            "entry_date": pd.date_range("2021-01-01", periods=10),
+            "exit_date": pd.date_range("2021-02-01", periods=10),
+        })
+
+    def test_absolute_thresholds_with_string_columns(self):
+        cfg = TradeClassificationConfig(good_threshold_pct=2.0, bad_threshold_pct=-1.0,
+                                        threshold_type=ThresholdType.ABSOLUTE)
+        out, _ = TradeClassifier(config=cfg).classify_trades(self._df())
+        self.assertIn("trade_class", out.columns)
+        self.assertEqual(len(out), 10)
+        # unparseable 'bad' -> NaN -> indeterminate (not a crash)
+        self.assertIn("indeterminate", out["trade_class"].unique())
+
+    def test_percentile_thresholds_with_string_columns(self):
+        cfg = TradeClassificationConfig(good_threshold_pct=20.0, bad_threshold_pct=-20.0,
+                                        threshold_type=ThresholdType.PERCENTILE)
+        out, _ = TradeClassifier(config=cfg).classify_trades(self._df())
+        self.assertEqual(len(out), 10)
 
 
 if __name__ == "__main__":
