@@ -33,3 +33,5 @@ raw_data/fundamentals/*
 !raw_data/fundamentals/A*
 raw_data/fundamentals/_overview/*
 !raw_data/fundamentals/_overview/A*
+raw_data/insider_transactions/*
+!raw_data/insider_transactions/A*

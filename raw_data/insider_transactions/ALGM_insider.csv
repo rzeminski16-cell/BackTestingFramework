@@ -1,0 +1,242 @@
+date,symbol,insider_name,insider_title,is_executive,security_type,transaction_type,shares,price,value
+2020-10-28,ALGM,"TEEBAGY, THOMAS C. JR.",SVP of Operations and Quality,True,Common Stock,sell,119183.0,13.195,1572619.685
+2020-11-02,ALGM,"OEP, SKNA, L.P.",10% Owner,False,Common Stock,sell,1125000.0,13.195,14844375.0
+2020-11-02,ALGM,"SANKEN, ELECTRIC CO., LTD.",10% Owner,False,Common Stock,sell,2625000.0,13.195,34636875.0
+2021-02-09,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,100000.0,29.1638,2916380.0
+2021-02-09,ALGM,"DOOGUE, MICHAEL",SVP of Technology and Products,True,Common Stock,sell,90829.0,29.1638,2648918.7901999997
+2021-02-09,ALGM,"SANKEN, ELECTRIC CO., LTD.",10% Owner,False,Common Stock,sell,5200000.0,29.1638,151651760.0
+2021-02-09,ALGM,"MARTIN, JOSEPH R",Director,True,Common Stock,sell,11709.0,29.1638,341478.93419999996
+2021-02-09,ALGM,"TEEBAGY, THOMAS C. JR.",SVP of Operations and Quality,True,Common Stock,sell,101756.0,29.1638,2967591.6328
+2021-02-09,ALGM,"LURY, RICHARD R.",Director,True,Common Stock,sell,11709.0,29.1638,341478.93419999996
+2021-02-09,ALGM,"KAZEROUNIAN, REZA",Director,True,Common Stock,sell,19000.0,29.1638,554112.2
+2021-02-09,ALGM,"GLOVER, MAX R.",SVP of Worldwide Sales,True,Common Stock,sell,29272.0,29.1638,853682.7535999999
+2021-02-09,ALGM,"BROWN, CHRISTOPHER",See Remarks,False,Common Stock,sell,12500.0,29.1638,364547.5
+2021-02-09,ALGM,"OEP, SKNA, L.P.",10% Owner,False,Common Stock,sell,11355799.0,29.1638,331178250.87619996
+2021-03-08,ALGM,"OEP, SKNA, L.P.",10% Owner,False,Common Stock,sell,1832852.0,29.1638,53452929.1576
+2021-04-26,ALGM,"TEEBAGY, THOMAS C. JR.",SVP of Operations and Quality,True,Common Stock,sell,93576.0,26.9,2517194.4
+2021-04-27,ALGM,"TEEBAGY, THOMAS C. JR.",SVP of Operations and Quality,True,Common Stock,sell,56670.0,26.85,1521589.5
+2021-05-18,ALGM,"WALSH, PAUL V JR","SVP, CFO & Treasurer",True,Common Stock,sell,65275.0,23.98,1565294.5
+2021-05-19,ALGM,"WALSH, PAUL V JR","SVP, CFO & Treasurer",True,Common Stock,sell,4725.0,23.59,111462.75
+2021-05-24,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,1100.0,25.01,27511.0
+2021-05-24,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,1040.0,25.0,26000.0
+2021-05-24,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,919.0,25.0,22975.0
+2021-05-24,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,1000.0,25.0,25000.0
+2021-05-25,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,21847.0,25.45,556006.15
+2021-05-25,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,21787.0,25.45,554479.15
+2021-05-25,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,21881.0,25.44,556652.64
+2021-05-26,ALGM,"DOOGUE, MICHAEL",SVP of Technology and Products,True,Common Stock,sell,8913.0,26.05,232183.65
+2021-05-26,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,17234.0,25.82,444981.88
+2021-05-26,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,17019.0,25.83,439600.76999999996
+2021-05-26,ALGM,"GLOVER, MAX R.",SVP of Worldwide Sales,True,Common Stock,sell,12000.0,26.06,312720.0
+2021-05-26,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,17173.0,25.82,443406.86
+2021-05-26,ALGM,"LURY, RICHARD R.",Director,True,Common Stock,sell,11900.0,26.06,310114.0
+2021-05-26,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,17153.0,25.83,443061.99
+2021-05-27,ALGM,"BROWN, CHRISTOPHER","Sr. VP, General Counsel",True,Common Stock,sell,26250.0,26.63,699037.5
+2021-06-01,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,17759.0,25.98,461378.82
+2021-06-01,ALGM,"BROWN, CHRISTOPHER",SVP and General Counsel,True,Common Stock,sell,26250.0,25.88,679350.0
+2021-06-01,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,17936.0,25.98,465977.28
+2021-06-01,ALGM,"DOOGUE, MICHAEL",SVP of Technology and Products,True,Common Stock,sell,8913.0,26.1,232629.30000000002
+2021-06-01,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,17791.0,25.98,462210.18
+2021-06-01,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,17520.0,25.98,455169.60000000003
+2021-06-02,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,22480.0,26.18,588526.4
+2021-06-02,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,22241.0,26.17,582046.9700000001
+2021-06-02,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,22209.0,26.17,581209.53
+2021-06-02,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,22064.0,26.17,577414.88
+2021-06-17,ALGM,"WALSH, PAUL V JR","SVP, CFO & Treasurer",True,Common Stock,sell,70000.0,27.22,1905400.0
+2021-07-01,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,21176.0,27.33,578740.08
+2021-07-01,ALGM,"DOOGUE, MICHAEL",SVP of Technology and Products,True,Common Stock,sell,8913.0,27.34,243681.42
+2021-07-01,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,21029.0,27.33,574722.57
+2021-07-01,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,21094.0,27.33,576499.02
+2021-07-01,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,21042.0,27.32,574867.4400000001
+2021-07-02,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,6820.0,27.56,187959.19999999998
+2021-07-02,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,6800.0,27.56,187408.0
+2021-07-06,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,12158.0,28.23,343220.34
+2021-07-06,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,12171.0,28.24,343709.04
+2021-07-06,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,12024.0,28.24,339557.76
+2021-07-06,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,12086.0,28.25,341429.5
+2021-07-19,ALGM,"WALSH, PAUL V JR","SVP, CFO & Treasurer",True,Common Stock,sell,70000.0,25.11,1757700.0
+2021-07-30,ALGM,"TEEBAGY, THOMAS C. JR.",SVP of Operations and Quality,True,Common Stock,sell,150000.0,27.1,4065000.0
+2021-08-02,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,20139.0,27.92,562280.88
+2021-08-02,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,20266.0,27.92,565826.7200000001
+2021-08-02,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,20496.0,27.92,572248.3200000001
+2021-08-02,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,19951.0,27.92,557031.92
+2021-08-02,ALGM,"DOOGUE, MICHAEL",SVP of Technology and Products,True,Common Stock,sell,8913.0,27.91,248761.83
+2021-08-03,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,14123.0,27.8,392619.4
+2021-08-03,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,14214.0,27.8,395149.2
+2021-08-03,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,14108.0,27.8,392202.4
+2021-08-03,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,14121.0,27.8,392563.8
+2021-08-04,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,5613.0,28.27,158679.51
+2021-08-04,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,5290.0,28.29,149654.1
+2021-08-04,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,5738.0,28.28,162270.64
+2021-08-04,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,5941.0,28.28,168011.48
+2021-08-05,ALGM,"DOOGUE, MICHAEL",SVP of Technology and Products,True,Common Stock,sell,32714.0,28.92,946088.88
+2021-08-06,ALGM,"DOOGUE, MICHAEL",SVP of Technology and Products,True,Common Stock,sell,5112.0,28.97,148094.63999999998
+2021-08-16,ALGM,"LURY, RICHARD R.",Director,True,Common Stock,sell,35700.0,29.51,1053507.0
+2021-08-18,ALGM,"WALSH, PAUL V JR","SVP, CFO & Treasurer",True,Common Stock,sell,49402.0,27.94,1380291.8800000001
+2021-08-19,ALGM,"WALSH, PAUL V JR","SVP, CFO & Treasurer",True,Common Stock,sell,20598.0,27.88,574272.24
+2021-09-01,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,25166.0,30.26,761523.16
+2021-09-01,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,25272.0,30.25,764478.0
+2021-09-01,ALGM,"DOOGUE, MICHAEL",SVP of Technology and Products,True,Common Stock,sell,16739.0,30.23,506019.97000000003
+2021-09-01,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,25075.0,30.26,758769.5
+2021-09-01,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,25097.0,30.26,759435.2200000001
+2021-09-02,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,14903.0,30.46,453945.38
+2021-09-02,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,14728.0,30.45,448467.6
+2021-09-02,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,14834.0,30.45,451695.3
+2021-09-02,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,14925.0,30.45,454466.25
+2021-09-03,ALGM,"DOOGUE, MICHAEL",SVP of Technology and Products,True,Common Stock,sell,53478.0,31.23,1670117.94
+2021-09-13,ALGM,"LURY, RICHARD R.",Director,True,Common Stock,sell,11900.0,32.6,387940.0
+2021-09-13,ALGM,"GLOVER, MAX R.",SVP of Worldwide Sales,True,Common Stock,sell,14000.0,33.06,462840.00000000006
+2021-09-13,ALGM,"DOOGUE, MICHAEL",SVP of Technology and Products,True,Common Stock,sell,83390.0,33.59,2801070.1
+2021-09-14,ALGM,"DOOGUE, MICHAEL",SVP of Technology and Products,True,Common Stock,sell,16610.0,33.92,563411.2000000001
+2021-09-20,ALGM,"WALSH, PAUL V JR","SVP, CFO & Treasurer",True,Common Stock,sell,70000.0,33.25,2327500.0
+2021-09-29,ALGM,"FUJITA, NORIHARU",Director,True,Common Stock,sell,12143.0,31.88,387118.83999999997
+2021-10-01,ALGM,"DOOGUE, MICHAEL",SVP of Technology and Products,True,Common Stock,sell,16739.0,31.54,527948.0599999999
+2021-10-18,ALGM,"WALSH, PAUL V JR","SVP, CFO & Treasurer",True,Common Stock,sell,70000.0,30.94,2165800.0
+2021-10-21,ALGM,"TEEBAGY, THOMAS C. JR.",SVP of Operations and Quality,True,Common Stock,sell,2789.0,33.36,93041.04
+2021-10-22,ALGM,"TEEBAGY, THOMAS C. JR.",SVP of Operations and Quality,True,Common Stock,sell,7952.0,33.45,265994.4
+2021-10-25,ALGM,"TEEBAGY, THOMAS C. JR.",SVP of Operations and Quality,True,Common Stock,sell,4831.0,33.42,161452.02000000002
+2021-10-29,ALGM,"TEEBAGY, THOMAS C. JR.",SVP of Operations and Quality,True,Common Stock,sell,68620.0,33.26,2282301.1999999997
+2021-10-29,ALGM,"MARTIN, JOSEPH R",Director,True,Common Stock,sell,20000.0,33.41,668199.9999999999
+2021-11-01,ALGM,"TEEBAGY, THOMAS C. JR.",SVP of Operations and Quality,True,Common Stock,sell,157179.0,30.47,4789244.13
+2021-11-01,ALGM,"DOOGUE, MICHAEL",SVP of Technology and Products,True,Common Stock,sell,28044.0,30.5,855342.0
+2021-11-02,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,41870.0,31.25,1308437.5
+2021-11-02,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,41943.0,31.25,1310718.75
+2021-11-02,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,41993.0,31.25,1312281.25
+2021-11-02,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,41968.0,31.25,1311500.0
+2021-11-03,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,48007.0,31.61,1517501.27
+2021-11-03,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,18130.0,31.29,567287.7
+2021-11-03,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,18057.0,31.29,565003.53
+2021-11-03,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,18032.0,31.29,564221.28
+2021-11-03,ALGM,"OEP, SKNA, L.P.",10% Owner,False,Common Stock,sell,8625000.0,30.25,260906250.0
+2021-11-09,ALGM,"WALSH, PAUL V JR","SVP, CFO & Treasurer",True,Common Stock,sell,75000.0,32.26,2419500.0
+2021-11-19,ALGM,"GLOVER, MAX R.",SVP of Worldwide Sales,True,Common Stock,sell,1753.0,32.59,57130.270000000004
+2021-11-19,ALGM,"BROWN, CHRISTOPHER",SVP and General Counsel,True,Common Stock,sell,2132.0,32.59,69481.88
+2021-11-19,ALGM,"DOOGUE, MICHAEL",SVP of Technology and Products,True,Common Stock,sell,2311.0,32.59,75315.49
+2021-11-19,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,10502.0,32.59,342260.18000000005
+2021-11-19,ALGM,"WALSH, PAUL V JR","SVP, CFO & Treasurer",True,Common Stock,sell,2350.0,32.59,76586.50000000001
+2021-11-19,ALGM,"TEEBAGY, THOMAS C. JR.",SVP of Operations and Quality,True,Common Stock,sell,2101.0,32.59,68471.59000000001
+2021-11-23,ALGM,"MARTIN, JOSEPH R",Director,True,Common Stock,sell,13000.0,30.61,397930.0
+2021-11-23,ALGM,"WALSH, PAUL V JR","SVP, CFO & Treasurer",True,Common Stock,sell,50000.0,30.75,1537500.0
+2021-12-07,ALGM,"WALSH, PAUL V JR","SVP, CFO & Treasurer",True,Common Stock,sell,75000.0,33.92,2544000.0
+2021-12-21,ALGM,"WALSH, PAUL V JR","SVP, CFO & Treasurer",True,Common Stock,sell,50000.0,33.42,1671000.0
+2021-12-27,ALGM,"TEEBAGY, THOMAS C. JR.",SVP of Operations and Quality,True,Common Stock,sell,5000.0,34.61,173050.0
+2022-03-18,ALGM,"DOOGUE, MICHAEL",SVP of Technology and Products,True,Common Stock,sell,7500.0,29.04,217800.0
+2022-05-16,ALGM,"DOOGUE, MICHAEL",SVP of Technology and Products,True,Common Stock,sell,14024.0,23.48,329283.52
+2022-05-16,ALGM,"TEEBAGY, THOMAS C. JR.",SVP of Operations and Quality,True,Common Stock,sell,11992.0,23.48,281572.16000000003
+2022-05-16,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,99480.0,23.48,2335790.4
+2022-05-16,ALGM,"GLOVER, MAX R.",SVP of Worldwide Sales,True,Common Stock,sell,6055.0,23.48,142171.4
+2022-05-23,ALGM,"MARTIN, JOSEPH R",Director,True,Common Stock,sell,8278.0,24.17,200079.26
+2022-06-03,ALGM,"BRIANSKY, SHARON","SVP, GC and Secretary",True,Common Stock,buy,15949.0,25.08,400000.92
+2022-06-03,ALGM,"GLOVER, MAX R.",SVP of Worldwide Sales,True,Common Stock,buy,10965.0,25.08,275002.19999999995
+2022-06-03,ALGM,"DOOGUE, MICHAEL",SVP of Technology and Products,True,Common Stock,buy,10965.0,25.08,275002.19999999995
+2022-06-13,ALGM,"VIG, RAVI","Director, President and CEO",True,Common Stock,sell,244437.0,21.45,5243173.649999999
+2022-11-04,ALGM,"MARTIN, JOSEPH R",Director,True,Common Stock,sell,16349.0,25.9202,423769.3498
+2022-11-11,ALGM,"DOOGUE, MICHAEL","SVP, CTO",True,Common Stock,sell,26665.0,28.8125,768285.3125
+2022-11-14,ALGM,"DOOGUE, MICHAEL","SVP, CTO",True,Common Stock,sell,9059.0,28.7591,260528.6869
+2022-11-15,ALGM,"DOOGUE, MICHAEL","SVP, CTO",True,Common Stock,sell,24276.0,29.2499,710070.5724000001
+2022-11-18,ALGM,"VALENTE, JOANNE","SVP, CHRO",True,Common Stock,sell,713.0,29.51,21040.63
+2022-11-18,ALGM,"TEEBAGY, THOMAS C. JR.",SVP of Operations and Quality,True,Common Stock,sell,2108.0,29.51,62207.08
+2022-11-18,ALGM,"DOOGUE, MICHAEL","SVP, CTO",True,Common Stock,sell,2319.0,29.51,68433.69
+2022-11-18,ALGM,"GLOVER, MAX R.",SVP of Worldwide Sales,True,Common Stock,sell,2644.0,29.51,78024.44
+2022-12-01,ALGM,"DOOGUE, MICHAEL","SVP, CTO",True,Common Stock,sell,7500.0,30.9982,232486.5
+2022-12-05,ALGM,"DOOGUE, MICHAEL","SVP, CTO",True,Common Stock,sell,75000.0,33.1293,2484697.5
+2022-12-30,ALGM,"VALENTE, JOANNE","SVP, CHRO",True,Common Stock,sell,5000.0,30.0092,150046.0
+2023-01-03,ALGM,"VALENTE, JOANNE","SVP, CHRO",True,Common Stock,sell,2500.0,30.2734,75683.5
+2023-01-04,ALGM,"VALENTE, JOANNE","SVP, CHRO",True,Common Stock,sell,1123.0,30.0692,33767.711599999995
+2023-01-06,ALGM,"VALENTE, JOANNE","SVP, CHRO",True,Common Stock,sell,1377.0,30.0036,41314.9572
+2023-01-11,ALGM,"GLOVER, MAX R.",SVP of Worldwide Sales,True,Common Stock,sell,15000.0,32.0624,480935.99999999994
+2023-01-17,ALGM,"GLOVER, MAX R.",SVP of Worldwide Sales,True,Common Stock,sell,25000.0,34.2136,855340.0
+2023-02-02,ALGM,"OEP, SKNA, L.P.",10% Owner,False,Common Stock,sell,4980000.0,37.76,188044800.0
+2023-02-02,ALGM,"D'ANTILIO, DEREK","SVP, CFO & Treasurer",True,Common Stock,buy,36497.0,41.1,1500026.7
+2023-02-02,ALGM,"BRIANSKY, SHARON","SVP, GC and Secretary",True,Common Stock,buy,18249.0,41.1,750033.9
+2023-02-02,ALGM,"GLOVER, MAX R.",SVP of Worldwide Sales,True,Common Stock,sell,40000.0,40.1287,1605148.0
+2023-02-03,ALGM,"LYNCH, SUSAN D",Director,True,Common Stock,buy,240.0,41.53,9967.2
+2023-02-08,ALGM,"LURY, RICHARD R.",Director,True,Common Stock,sell,6000.0,42.58,255480.0
+2023-02-13,ALGM,"D'ANTILIO, DEREK","SVP, CFO & Treasurer",True,Common Stock,sell,14609.0,43.68,638121.12
+2023-02-13,ALGM,"BRIANSKY, SHARON","SVP, GC and Secretary",True,Common Stock,sell,7374.0,43.68,322096.32
+2023-05-16,ALGM,"D'ANTILIO, DEREK","SVP, CFO & Treasurer",True,Common Stock,sell,7084.0,38.14,270183.76
+2023-05-16,ALGM,"NARAYAN, SUMAN","SVP, Products",True,Common Stock,sell,6871.0,38.14,262059.94
+2023-05-16,ALGM,"NARGOLWALA, VINEET A","Director, President and CEO",True,Common Stock,sell,11521.0,38.14,439410.94
+2023-05-16,ALGM,"BRIANSKY, SHARON","SVP, GC and Secretary",True,Common Stock,sell,4723.0,38.14,180135.22
+2023-05-16,ALGM,"DOOGUE, MICHAEL","SVP, CTO",True,Common Stock,sell,12901.0,38.14,492044.14
+2023-05-16,ALGM,"GLOVER, MAX R.",SVP of Worldwide Sales,True,Common Stock,sell,12721.0,38.14,485178.94
+2023-05-16,ALGM,"VALENTE, JOANNE","SVP, CHRO",True,Common Stock,sell,4596.0,38.14,175291.44
+2023-06-03,ALGM,"GLOVER, MAX R.",SVP of Worldwide Sales,True,Common Stock,sell,4918.0,39.48,194162.63999999998
+2023-06-03,ALGM,"NARAYAN, SUMAN","SVP, Products",True,Common Stock,sell,4707.0,39.48,185832.36
+2023-06-03,ALGM,"BRIANSKY, SHARON","SVP, GC and Secretary",True,Common Stock,sell,5784.0,39.48,228352.31999999998
+2023-06-03,ALGM,"DOOGUE, MICHAEL","SVP, CTO",True,Common Stock,sell,4315.0,39.48,170356.19999999998
+2023-06-13,ALGM,"NARGOLWALA, VINEET A","Director, President and CEO",True,Common Stock,sell,54098.0,40.76,2205034.48
+2023-08-01,ALGM,"NARGOLWALA, VINEET A","Director, President and CEO",True,Common Stock,sell,7681.0,45.24,347488.44
+2023-08-16,ALGM,"NARGOLWALA, VINEET A","Director, President and CEO",True,Common Stock,buy,5000.0,38.6699,193349.5
+2023-08-23,ALGM,"MARTIN, JOSEPH R",Director,True,Common Stock,sell,17000.0,38.728,658376.0
+2023-09-01,ALGM,"NARAYAN, SUMAN","SVP, Products",True,Common Stock,sell,714.0,38.39,27410.46
+2023-09-15,ALGM,"D'ANTILIO, DEREK","SVP, CFO & Treasurer",True,Common Stock,buy,1488.0,33.63,50041.44
+2023-11-14,ALGM,"LYNCH, SUSAN D",Director,True,Common Stock,buy,350.0,27.37,9579.5
+2023-11-17,ALGM,"GLOVER, MAX R.",SVP of Worldwide Sales,True,Common Stock,sell,78410.0,28.04,2198616.4
+2023-11-17,ALGM,"NARGOLWALA, VINEET A","Director, President and CEO",True,Common Stock,buy,1000.0,27.84,27840.0
+2023-11-17,ALGM,"VALENTE, JOANNE","SVP, CHRO",True,Common Stock,sell,15284.0,28.04,428563.36
+2023-11-17,ALGM,"DOOGUE, MICHAEL","SVP, CTO",True,Common Stock,sell,45606.0,28.04,1278792.24
+2024-02-13,ALGM,"BRIANSKY, SHARON","SVP, GC and Secretary",True,Common Stock,sell,5469.0,30.34,165929.46
+2024-02-13,ALGM,"D'ANTILIO, DEREK","SVP, CFO & Treasurer",True,Common Stock,sell,10725.0,30.34,325396.5
+2024-03-08,ALGM,"GLOVER, MAX R.",SVP of Worldwide Sales,True,Common Stock,sell,15000.0,31.7657,476485.5
+2024-05-16,ALGM,"NARAYAN, SUMAN","SVP, Products",True,Common Stock,sell,10816.0,29.75,321776.0
+2024-05-16,ALGM,"BRIANSKY, SHARON","SVP, GC and Secretary",True,Common Stock,sell,7773.0,29.75,231246.75
+2024-05-16,ALGM,"D'ANTILIO, DEREK","SVP, CFO & Treasurer",True,Common Stock,sell,12494.0,29.75,371696.5
+2024-05-16,ALGM,"DOOGUE, MICHAEL","SVP, CTO",True,Common Stock,sell,19110.0,29.75,568522.5
+2024-05-16,ALGM,"GLOVER, MAX R.",SVP of Worldwide Sales,True,Common Stock,sell,26540.0,29.75,789565.0
+2024-05-16,ALGM,"WEBSTER, ROALD GRAHAM","SVP, CAO",True,Common Stock,sell,3113.0,29.75,92611.75
+2024-05-16,ALGM,"NARGOLWALA, VINEET A","Director, President and CEO",True,Common Stock,sell,24160.0,29.75,718760.0
+2024-05-30,ALGM,"LURY, RICHARD R.",Director,True,Common Stock,sell,8500.0,30.0,255000.0
+2024-06-03,ALGM,"NARAYAN, SUMAN","SVP, Products",True,Common Stock,sell,1570.0,29.27,45953.9
+2024-06-03,ALGM,"BRIANSKY, SHARON","SVP, GC and Secretary",True,Common Stock,sell,1929.0,29.27,56461.83
+2024-06-13,ALGM,"NARGOLWALA, VINEET A","Director, President and CEO",True,Common Stock,sell,36066.0,29.12,1050241.92
+2024-07-29,ALGM,"SANKEN, ELECTRIC CO., LTD.",10% Owner,False,Common Stock,sell,28750000.0,23.16,665850000.0
+2024-08-01,ALGM,"NARGOLWALA, VINEET A","Director, President and CEO",True,Common Stock,sell,7681.0,24.17,185649.77000000002
+2024-08-07,ALGM,"SANKEN, ELECTRIC CO., LTD.",10% Owner,False,Common Stock,sell,10017315.0,23.16,232001015.4
+2024-08-08,ALGM,"SCHORR, PAUL IV",Director,True,Common Stock,buy,6873.0,26.92,185021.16
+2024-08-08,ALGM,"PUMA, MARY G",Director,True,Common Stock,buy,6873.0,26.92,185021.16
+2024-08-08,ALGM,"LURY, RICHARD R.",Director,True,Common Stock,buy,6873.0,26.92,185021.16
+2024-08-08,ALGM,"LYNCH, SUSAN D",Director,True,Common Stock,buy,6873.0,26.92,185021.16
+2024-08-08,ALGM,"MARTIN, JOSEPH R",Director,True,Common Stock,buy,6873.0,26.92,185021.16
+2024-08-08,ALGM,"ALDRICH, DAVID J",Director,True,Common Stock,buy,6873.0,26.92,185021.16
+2024-08-08,ALGM,"RAUBACHER, JENNIE",Director,True,Common Stock,buy,6873.0,26.92,185021.16
+2024-08-08,ALGM,"SUZUKI, YOSHIHIRO",Director,True,Common Stock,buy,6873.0,26.92,185021.16
+2024-08-30,ALGM,"NARAYAN, SUMAN","SVP, Products",True,Common Stock,sell,714.0,24.53,17514.420000000002
+2024-11-05,ALGM,"NARGOLWALA, VINEET A","Director, President and CEO",True,Common Stock,buy,200.0,19.87,3974.0
+2024-11-05,ALGM,"NARGOLWALA, VINEET A","Director, President and CEO",True,Common Stock,buy,4800.0,19.89,95472.0
+2024-11-18,ALGM,"DOOGUE, MICHAEL","SVP, CTO",True,Common Stock,sell,2319.0,19.24,44617.56
+2024-11-18,ALGM,"DOOGUE, MICHAEL","SVP, CTO",True,Common Stock,buy,15000.0,19.0,285000.0
+2024-11-18,ALGM,"GLOVER, MAX R.",SVP of Worldwide Sales,True,Common Stock,sell,2644.0,19.24,50870.56
+2025-05-16,ALGM,"HAGEN, ERIN","SVP, CHRO",True,Common Stock,sell,4899.0,27.51,134771.49000000002
+2025-05-16,ALGM,"DOOGUE, MICHAEL","Director, President and CEO",True,Common Stock,sell,21730.0,27.51,597792.3
+2025-05-16,ALGM,"BRIANSKY, SHARON","SVP, GC and Secretary",True,Common Stock,sell,18712.0,27.51,514767.12000000005
+2025-05-16,ALGM,"WEBSTER, ROALD GRAHAM","VP, Chief Accounting Officer",True,Common Stock,sell,4948.0,27.51,136119.48
+2025-05-16,ALGM,"D'ANTILIO, DEREK","EVP, CFO & Treasurer",True,Common Stock,sell,29911.0,27.51,822851.6100000001
+2025-06-04,ALGM,"LURY, RICHARD R.",Director,True,Common Stock,sell,6849.0,27.6005,189035.8245
+2025-06-11,ALGM,"LURY, RICHARD R.",Director,True,Common Stock,sell,3100.0,30.45,94395.0
+2025-08-04,ALGM,"HAGEN, ERIN","SVP, CHRO",True,Common Stock,sell,5043.0,31.18,157240.74
+2025-08-12,ALGM,"LURY, RICHARD R.",Director,True,Common Stock,sell,7000.0,31.8104,222672.80000000002
+2025-08-22,ALGM,"WEBSTER, ROALD GRAHAM","VP, Chief Accounting Officer",True,Common Stock,sell,8266.0,32.8082,271192.5812
+2025-12-10,ALGM,"BRIANSKY, SHARON","SVP, GC and Secretary",True,Common Stock,sell,27873.0,30.0,836190.0
+2026-02-13,ALGM,"BRIANSKY, SHARON","SVP, GC and Secretary",True,Common Stock,sell,8991.0,42.38,381038.58
+2026-02-13,ALGM,"D'ANTILIO, DEREK","EVP, CFO & Treasurer",True,Common Stock,sell,17808.0,42.38,754703.04
+2026-02-17,ALGM,"BRIANSKY, SHARON","SVP, GC and Secretary",True,Common Stock,sell,9258.0,41.56,384762.48000000004
+2026-02-27,ALGM,"BRIANSKY, SHARON","SVP, GC and Secretary",True,Common Stock,sell,9107.0,36.47,332132.29
+2026-02-27,ALGM,"D'ANTILIO, DEREK","EVP, CFO & Treasurer",True,Common Stock,sell,9995.0,36.47,364517.64999999997
+2026-02-27,ALGM,"HAGEN, ERIN","SVP, CHRO",True,Common Stock,sell,1996.0,36.47,72794.12
+2026-03-02,ALGM,"HAGEN, ERIN","SVP, CHRO",True,Common Stock,sell,2598.0,35.0,90930.0
+2026-03-02,ALGM,"BRIANSKY, SHARON","SVP, GC and Secretary",True,Common Stock,sell,9727.0,35.0,340445.0
+2026-03-24,ALGM,"MADORMO, RICHARD","SVP, Worldwide Sales",True,Common Stock,sell,6498.0,32.58,211704.84
+2026-05-11,ALGM,"DOOGUE, MICHAEL","Director, President and CEO",True,Common Stock,sell,30089.0,47.2349,1421250.9061
+2026-05-11,ALGM,"BRIANSKY, SHARON","SVP, GC and Secretary",True,Common Stock,sell,8948.0,47.5391,425379.86679999996
+2026-05-14,ALGM,"LYNCH, SUSAN D",Director,True,Common Stock,sell,16711.0,45.4566,759625.2426
+2026-05-16,ALGM,"D'ANTILIO, DEREK","EVP, CFO & Treasurer",True,Common Stock,sell,37840.0,43.1,1630904.0
+2026-05-16,ALGM,"KENT, IAN","SVP, Global Operations",True,Common Stock,sell,2345.0,43.1,101069.5
+2026-05-16,ALGM,"COLEMAN, TROY","SVP, General Manager, Products",True,Common Stock,sell,9670.0,43.1,416777.0
+2026-05-16,ALGM,"DOOGUE, MICHAEL","Director, President and CEO",True,Common Stock,sell,60508.0,43.1,2607894.8000000003
+2026-05-16,ALGM,"BRIANSKY, SHARON","SVP, GC and Secretary",True,Common Stock,sell,13942.0,43.1,600900.2000000001
+2026-05-16,ALGM,"MADORMO, RICHARD","SVP, Worldwide Sales",True,Common Stock,sell,5439.0,43.1,234420.9
+2026-05-16,ALGM,"WEBSTER, ROALD GRAHAM","VP, Chief Accounting Officer",True,Common Stock,sell,4277.0,43.1,184338.7
+2026-05-16,ALGM,"HAGEN, ERIN","SVP, CHRO",True,Common Stock,sell,5815.0,43.1,250626.5
+2026-05-18,ALGM,"KENT, IAN","SVP, Global Operations",True,Common Stock,sell,2642.0,41.56,109801.52
+2026-05-21,ALGM,"WEBSTER, ROALD GRAHAM","VP, Chief Accounting Officer",True,Common Stock,sell,5217.0,44.885,234165.04499999998

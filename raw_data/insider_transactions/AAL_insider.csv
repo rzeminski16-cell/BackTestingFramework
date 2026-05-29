@@ -1,0 +1,928 @@
+date,symbol,insider_name,insider_title,is_executive,security_type,transaction_type,shares,price,value
+2003-12-12,AAL,"CAMPBELL, JEFFREY C",Sr. VP and CFO,True,Common stock,buy,7200.0,11.61,83592.0
+2003-12-12,AAL,"CAMPBELL, JEFFREY C",Sr. VP and CFO,True,Common stock,sell,3000.0,12.47,37410.0
+2003-12-12,AAL,"CAMPBELL, JEFFREY C",Sr. VP and CFO,True,Common stock,sell,4200.0,12.48,52416.0
+2003-12-19,AAL,"AMR, CORP",10% Owner,False,Series A Non-Voting Convertible Preferred Stock,sell,113765.0,26.0,2957890.0
+2004-04-21,AAL,"BEER, JAMES A",Sr. VP Finance and CFO,True,Common stock,sell,5200.0,12.58,65416.0
+2004-04-21,AAL,"MARLETT, CHARLES D",Corporate Secretary,True,Common stock,sell,4800.0,12.58,60384.0
+2004-04-22,AAL,"KENNEDY, GARY F",Sr. VP and General Counsel,True,Common stock,sell,3242.0,13.1,42470.2
+2004-04-22,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common stock,sell,12000.0,13.1035,157242.0
+2004-04-22,AAL,"KENNEDY, GARY F",Sr. VP and General Counsel,True,Common stock,sell,5200.0,13.1035,68138.2
+2004-04-22,AAL,"KENNEDY, GARY F",Sr. VP and General Counsel,True,Common stock,sell,812.0,13.26,10767.119999999999
+2004-07-26,AAL,"BEER, JAMES A",Sr. VP Finance and CFO,True,Common stock,sell,829.0,8.877,7359.033
+2004-11-10,AAL,"AMR, CORP",10% Owner,False,Series B- AA Common Stock,sell,6733847.0,27.5,185180792.5
+2005-01-26,AAL,"ROSE, MATTHEW K",Director,True,Common Stock,buy,1000.0,8.16,8160.0
+2005-04-20,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,12375.0,10.51,130061.25
+2005-04-20,AAL,"MARLETT, CHARLES D",Corporate Secretary,True,Common Stock,sell,5250.0,10.51,55177.5
+2005-04-20,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,12375.0,10.51,130061.25
+2005-04-20,AAL,"BEER, JAMES A",Sr. VP and CFO,True,Common Stock,sell,5625.0,10.51,59118.75
+2005-04-20,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,9375.0,10.51,98531.25
+2005-07-22,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,buy,6000.0,3.26,19560.0
+2005-07-22,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Stock Option (right to buy),sell,6000.0,3.26,19560.0
+2005-07-22,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,12000.0,13.75,165000.0
+2005-07-25,AAL,"ROBINSON, RAY M",Director,True,Common Stock,buy,1000.0,13.86,13860.0
+2005-07-26,AAL,"BEER, JAMES A",Sr. VP and CFO,True,Common Stock,buy,5600.0,10.68,59808.0
+2005-07-26,AAL,"BEER, JAMES A",Sr. VP and CFO,True,Stock Option (right to buy),sell,15000.0,8.88,133200.0
+2005-07-26,AAL,"BEER, JAMES A",Sr. VP and CFO,True,Common Stock,buy,15000.0,8.88,133200.0
+2005-07-26,AAL,"BEER, JAMES A",Sr. VP and CFO,True,Common Stock,sell,26200.0,13.4,351080.0
+2005-07-26,AAL,"BEER, JAMES A",Sr. VP and CFO,True,Stock Option (right to buy),sell,5600.0,10.68,59808.0
+2006-01-19,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,buy,4266.0,17.1283,73069.3278
+2006-01-19,AAL,"BEER, JAMES A",Sr. VP and CFO,True,Stock Option (right to buy),sell,948.0,16.785,15912.18
+2006-01-19,AAL,"BEER, JAMES A",Sr. VP and CFO,True,Stock Option (right to buy),sell,7200.0,13.02,93744.0
+2006-01-19,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,buy,33600.0,10.68,358848.0
+2006-01-19,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,25600.0,20.082,514099.2
+2006-01-19,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,4266.0,20.118,85823.38799999999
+2006-01-19,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,11600.0,20.02,232232.0
+2006-01-19,AAL,"BEER, JAMES A",Sr. VP and CFO,True,Common Stock,sell,14400.0,20.2611,291759.83999999997
+2006-01-19,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,buy,11600.0,8.877,102973.20000000001
+2006-01-19,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Stock Option (right to buy),sell,4266.0,17.128,73068.048
+2006-01-19,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Stock Option (right to buy),sell,11600.0,8.877,102973.20000000001
+2006-01-19,AAL,"BEER, JAMES A",Sr. VP and CFO,True,Common Stock,buy,14400.0,13.02,187488.0
+2006-01-19,AAL,"BEER, JAMES A",Sr. VP and CFO,True,Common Stock,buy,3792.0,16.785,63648.72
+2006-01-19,AAL,"BEER, JAMES A",Sr. VP and CFO,True,Common Stock,sell,3792.0,20.3,76977.6
+2006-01-19,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,buy,25600.0,10.68,273408.0
+2006-01-19,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Stock Option (right to buy),sell,12800.0,10.68,136704.0
+2006-01-20,AAL,"GARTON, DANIEL P",Executive Vice President,True,Stock Option (right to buy),sell,15000.0,8.877,133155.0
+2006-01-20,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,buy,15000.0,8.877,133155.0
+2006-01-20,AAL,"GARTON, DANIEL P",Executive Vice President,True,Stock Option (right to buy),sell,16800.0,10.68,179424.0
+2006-01-20,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,buy,21330.0,16.1789,345095.937
+2006-01-20,AAL,"GARTON, DANIEL P",Executive Vice President,True,Stock Option (right to buy),sell,4266.0,16.179,69019.61399999999
+2006-01-20,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,69930.0,19.8378,1387257.354
+2006-01-27,AAL,"MARLETT, CHARLES D",Corporate Secretary,True,Common Stock,sell,11376.0,20.2269,230101.2144
+2006-01-27,AAL,"MARLETT, CHARLES D",Corporate Secretary,True,Common Stock,sell,4000.0,20.17,80680.0
+2006-01-27,AAL,"MARLETT, CHARLES D",Corporate Secretary,True,Stock Option (right to buy),sell,2844.0,16.179,46013.075999999994
+2006-01-27,AAL,"MARLETT, CHARLES D",Corporate Secretary,True,Common Stock,sell,11200.0,20.1505,225685.6
+2006-01-27,AAL,"MARLETT, CHARLES D",Corporate Secretary,True,Stock Option (right to buy),sell,4000.0,8.877,35508.0
+2006-01-27,AAL,"MARLETT, CHARLES D",Corporate Secretary,True,Common Stock,buy,4000.0,8.877,35508.0
+2006-01-27,AAL,"MARLETT, CHARLES D",Corporate Secretary,True,Stock Option (right to buy),sell,5600.0,10.68,59808.0
+2006-01-27,AAL,"MARLETT, CHARLES D",Corporate Secretary,True,Common Stock,buy,11376.0,16.179,184052.30399999997
+2006-01-27,AAL,"MARLETT, CHARLES D",Corporate Secretary,True,Common Stock,buy,11200.0,10.68,119616.0
+2006-01-30,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Stock Option (right to buy),sell,6000.0,3.26,19560.0
+2006-01-30,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,6000.0,21.7033,130219.79999999999
+2006-01-30,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,buy,6000.0,3.26,19560.0
+2006-02-22,AAL,"BEER, JAMES A",Sr. VP and CFO,True,Stock Option (right to buy),sell,1138.0,24.519,27902.622
+2006-02-22,AAL,"BEER, JAMES A",Sr. VP and CFO,True,Stock Option (right to buy),sell,1990.0,22.053,43885.47
+2006-02-22,AAL,"BEER, JAMES A",Sr. VP and CFO,True,Common Stock,buy,9954.0,22.053,219515.562
+2006-02-22,AAL,"BEER, JAMES A",Sr. VP and CFO,True,Stock Option (right to buy),sell,1991.0,22.053,43907.523
+2006-02-22,AAL,"BEER, JAMES A",Sr. VP and CFO,True,Stock Option (right to buy),sell,1137.0,24.519,27878.103
+2006-02-22,AAL,"BEER, JAMES A",Sr. VP and CFO,True,Common Stock,buy,5688.0,24.519,139464.072
+2006-02-22,AAL,"BEER, JAMES A",Sr. VP and CFO,True,Common Stock,sell,9954.0,25.3345,252179.61299999998
+2006-02-22,AAL,"BEER, JAMES A",Sr. VP and CFO,True,Common Stock,sell,5688.0,25.3548,144218.1024
+2006-04-19,AAL,"MARLETT, CHARLES D",Corporate Secretary,True,Common Stock,sell,3200.0,24.575,78640.0
+2006-04-19,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,5340.0,24.575,131230.5
+2006-04-19,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,5797.0,24.575,142461.275
+2006-04-21,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,57660.0,23.3262,1344988.692
+2006-04-21,AAL,"MARLETT, CHARLES D",Corporate Secretary,True,Common Stock,sell,30050.0,23.3262,700952.31
+2006-04-21,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,71203.0,23.3262,1660895.4186
+2006-05-26,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,2400.0,25.6,61440.0
+2006-05-26,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,700.0,25.62,17934.0
+2006-05-26,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,1800.0,25.57,46026.0
+2006-05-26,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,6000.0,25.58,153480.0
+2006-05-26,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,2500.0,25.61,64025.0
+2006-05-26,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Stock Option (right to buy),sell,4266.0,16.179,69019.61399999999
+2006-05-26,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,buy,21330.0,16.179,345098.06999999995
+2006-05-26,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,330.0,25.63,8457.9
+2006-05-26,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,7600.0,25.59,194484.0
+2006-07-20,AAL,"REDING, ROBERT W",Sr VP Tech Opns,True,Common Stock,sell,10000.0,24.46,244600.0
+2006-08-16,AAL,"REDING, ROBERT W",Sr VP Tech Opns,True,Common Stock,sell,10000.0,21.0,210000.0
+2006-08-16,AAL,"REDING, ROBERT W",Sr VP Tech Opns,True,Stock Option (right to buy),sell,10000.0,6.5,65000.0
+2006-08-16,AAL,"REDING, ROBERT W",Sr VP Tech Opns,True,Common Stock,buy,10000.0,6.5,65000.0
+2006-10-19,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,buy,12800.0,10.68,136704.0
+2006-10-19,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,28440.0,26.1571,743907.924
+2006-10-19,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,buy,11600.0,8.877,102973.20000000001
+2006-10-19,AAL,"REDING, ROBERT W",Sr VP Tech Opns,True,Stock Option (right to buy),sell,11600.0,8.877,102973.20000000001
+2006-10-19,AAL,"GARTON, DANIEL P",Executive Vice President,True,Stock Option (right to buy),sell,5688.0,20.649,117451.512
+2006-10-19,AAL,"REDING, ROBERT W",Sr VP Tech Opns,True,Common Stock,sell,11600.0,26.2955,305027.8
+2006-10-19,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Stock Option (right to buy),sell,12800.0,10.68,136704.0
+2006-10-19,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Stock Option (right to buy),sell,11600.0,8.877,102973.20000000001
+2006-10-19,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,12800.0,25.7594,329720.32
+2006-10-19,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,11600.0,26.0757,302478.12
+2006-10-19,AAL,"REDING, ROBERT W",Sr VP Tech Opns,True,Common Stock,buy,11600.0,8.877,102973.20000000001
+2006-10-19,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,buy,28440.0,20.649,587257.56
+2006-10-27,AAL,"REDING, ROBERT W",Sr VP Tech Opns,True,Common Stock,buy,7800.0,10.68,83304.0
+2006-10-27,AAL,"REDING, ROBERT W",Sr VP Tech Opns,True,Stock Option (right to buy),sell,7800.0,10.68,83304.0
+2006-10-27,AAL,"REDING, ROBERT W",Sr VP Tech Opns,True,Common Stock,sell,7800.0,27.85,217230.0
+2006-11-10,AAL,"REDING, ROBERT W",Sr VP Tech Opns,True,Common Stock,sell,3875.0,29.0,112375.0
+2006-11-13,AAL,"REDING, ROBERT W",Sr VP Tech Opns,True,Common Stock,sell,5000.0,29.5,147500.0
+2006-11-13,AAL,"REDING, ROBERT W",Sr VP Tech Opns,True,Common Stock,buy,5000.0,10.68,53400.0
+2006-11-14,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,5900.0,30.51,180009.0
+2006-11-14,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,1000.0,30.5,30500.0
+2006-11-14,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,800.0,30.45,24360.0
+2006-11-14,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,500.0,30.54,15270.0
+2006-11-14,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,6600.0,30.41,200706.0
+2006-11-14,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,buy,8534.0,20.649,176218.56600000002
+2006-11-14,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,8534.0,30.1063,256927.1642
+2006-11-14,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,buy,28440.0,20.6487,587249.028
+2006-11-14,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,1300.0,30.52,39676.0
+2006-11-14,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,3000.0,30.47,91410.0
+2006-11-14,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,2000.0,30.43,60860.0
+2006-11-14,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,2000.0,30.57,61140.0
+2006-11-14,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,2300.0,30.53,70219.0
+2006-11-14,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,3100.0,30.55,94705.0
+2006-11-14,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,3340.0,30.42,101602.8
+2006-11-14,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,3900.0,30.56,119184.0
+2006-11-14,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,4700.0,30.44,143068.0
+2007-04-19,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,49363.0,30.64,1512482.32
+2007-04-19,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Stock Option (right to buy),sell,34400.0,8.877,305368.80000000005
+2007-04-19,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,buy,49363.0,8.877,438195.351
+2007-04-19,AAL,"HORTON, THOMAS W",EVP Fin & Plng & CFO,True,Common Stock,sell,16500.0,30.62,505230.0
+2007-04-19,AAL,"GARTON, DANIEL P",Executive Vice President,True,Stock Option (right to buy),sell,11840.0,13.665,161793.59999999998
+2007-04-19,AAL,"HORTON, THOMAS W",EVP Fin & Plng & CFO,True,Common Stock,sell,16500.0,29.412,485298.0
+2007-04-19,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,buy,6691.0,13.665,91432.515
+2007-04-19,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,1075.0,31.44,33798.0
+2007-04-19,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,6691.0,31.425,210264.67500000002
+2007-04-19,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,9686.0,31.3835,303980.581
+2007-04-19,AAL,"GARTON, DANIEL P",Executive Vice President,True,Stock Option (right to buy),sell,15000.0,8.877,133155.0
+2007-04-19,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,buy,10761.0,8.877,95525.39700000001
+2007-04-20,AAL,"HORTON, THOMAS W",EVP Fin & Plng & CFO,True,Common Stock,sell,16500.0,29.412,485298.0
+2007-04-20,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,207900.0,29.7378,6182488.62
+2007-04-23,AAL,"REDING, ROBERT W",Sr VP Tech Opns,True,Common Stock,sell,25799.0,29.8696,770605.8104
+2007-04-23,AAL,"HORTON, THOMAS W",EVP Fin & Plng & CFO,True,Common Stock,sell,106260.0,29.8696,3173943.696
+2007-04-23,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,78540.0,29.8696,2345958.384
+2007-04-23,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,106260.0,29.8696,3173943.696
+2007-07-20,AAL,"BOREN, DAVID L",Director,True,Common Stock,buy,1185.0,21.11,25015.35
+2007-07-20,AAL,"BOREN, DAVID L",Director,True,Common Stock,buy,1185.0,10.81,12809.85
+2007-07-20,AAL,"BOREN, DAVID L",Director,True,Common Stock,buy,1185.0,6.27,7429.95
+2007-07-23,AAL,"BOREN, DAVID L",Director,True,Common Stock,sell,3555.0,26.76,95131.8
+2007-07-24,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,8100.0,29.0741,235500.21000000002
+2007-07-24,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,buy,6000.0,3.26,19560.0
+2007-07-24,AAL,"REDING, ROBERT W",Sr VP Tech Opns,True,Common Stock,buy,12800.0,10.68,136704.0
+2007-07-24,AAL,"REDING, ROBERT W",Sr VP Tech Opns,True,Common Stock,buy,10000.0,6.5,65000.0
+2007-07-24,AAL,"REDING, ROBERT W",Sr VP Tech Opns,True,Common Stock,sell,8019.0,28.4551,228181.4469
+2007-07-24,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,677.0,28.86,19538.22
+2007-07-24,AAL,"REDING, ROBERT W",Sr VP Tech Opns,True,Common Stock,sell,10000.0,29.0,290000.0
+2007-07-24,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,buy,12800.0,10.68,136704.0
+2007-07-24,AAL,"REDING, ROBERT W",Sr VP Tech Opns,True,Common Stock,sell,7727.0,28.4534,219859.42179999998
+2007-07-24,AAL,"REDING, ROBERT W",Sr VP Tech Opns,True,Stock Option (right to buy),sell,12800.0,10.68,136704.0
+2007-07-24,AAL,"REDING, ROBERT W",Sr VP Tech Opns,True,Stock Option (right to buy),sell,10000.0,6.5,65000.0
+2007-07-24,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,5323.0,28.8626,153635.61980000001
+2007-07-24,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,4700.0,29.08,136676.0
+2007-07-24,AAL,"REDING, ROBERT W",Sr VP Tech Opns,True,Common Stock,sell,7054.0,28.59,201673.86
+2007-07-25,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,7412.0,28.39,210426.68
+2007-07-25,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,buy,15400.0,13.665,210441.0
+2007-07-25,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,7988.0,28.385,226739.38
+2007-07-26,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,buy,15000.0,8.877,133155.0
+2007-07-26,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,buy,33600.0,10.68,358848.0
+2007-07-26,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,6087.0,27.3863,166700.4081
+2007-07-26,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,10265.0,27.3666,280918.149
+2007-07-26,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,20839.0,27.3713,570390.5207
+2007-07-26,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,23249.0,28.12,653761.88
+2007-07-26,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,buy,11840.0,13.665,161793.59999999998
+2007-07-27,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,26000.0,25.4789,662451.4
+2008-04-17,AAL,"REDING, ROBERT W",Executive VP Operations,True,Common Stock,sell,25184.0,8.5295,214806.928
+2008-04-17,AAL,"HORTON, THOMAS W",EVP Fin & Plng & CFO,True,Common Stock,sell,103984.0,8.5295,886931.528
+2008-04-17,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,200.0,8.64,1728.0
+2008-04-17,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,200.0,8.4,1680.0
+2008-04-17,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,103984.0,8.5295,886931.528
+2008-04-17,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,200.0,8.6,1720.0
+2008-04-17,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,12810.0,8.5,108885.0
+2008-04-17,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,1500.0,8.57,12855.0
+2008-04-17,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,6700.0,8.51,57017.0
+2008-04-17,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,5700.0,8.53,48620.99999999999
+2008-04-17,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,5500.0,8.54,46969.99999999999
+2008-04-17,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,5210.0,8.48,44180.8
+2008-04-17,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,76380.0,8.5295,651483.2100000001
+2008-04-17,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,5000.0,8.69,43450.0
+2008-04-17,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,9400.0,8.49,79806.0
+2008-04-17,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,5200.0,8.46,43992.00000000001
+2008-04-17,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,1900.0,8.58,16302.0
+2008-04-17,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,1200.0,8.45,10140.0
+2008-04-17,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,3000.0,8.47,25410.000000000004
+2008-04-17,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,2000.0,8.62,17240.0
+2008-04-17,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,1500.0,8.61,12915.0
+2008-04-17,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,1400.0,8.68,12152.0
+2008-04-17,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,1000.0,8.66,8660.0
+2008-04-17,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,1000.0,8.43,8430.0
+2008-04-17,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,1400.0,8.63,12082.000000000002
+2008-04-17,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,700.0,8.42,5894.0
+2008-04-17,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,600.0,8.67,5202.0
+2008-04-17,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,400.0,8.65,3460.0
+2008-04-17,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,200.0,8.59,1718.0
+2008-04-17,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,3200.0,8.52,27264.0
+2008-04-17,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,700.0,8.44,5908.0
+2008-04-17,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,3700.0,8.55,31635.000000000004
+2008-05-14,AAL,"REDING, ROBERT W",Executive VP Operations,True,Common Stock,sell,2497.0,9.25,23097.25
+2008-05-14,AAL,"REDING, ROBERT W",Executive VP Operations,True,Common Stock,sell,10000.0,9.1,91000.0
+2008-05-14,AAL,"REDING, ROBERT W",Executive VP Operations,True,Common Stock,sell,2078.0,9.08,18868.24
+2008-05-14,AAL,"REDING, ROBERT W",Executive VP Operations,True,Common Stock,sell,7922.0,9.07,71852.54000000001
+2008-07-18,AAL,"IBARGUEN, ALBERTO",Director,True,Common Stock,buy,7500.0,6.5372,49029.0
+2008-07-25,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,8748.0,8.53,74620.43999999999
+2008-07-25,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,3645.0,8.53,31091.85
+2008-07-25,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,6015.0,8.53,51307.95
+2008-07-25,AAL,"REDING, ROBERT W",Executive VP Operations,True,Common Stock,sell,3645.0,8.53,31091.85
+2008-08-12,AAL,"ROBINSON, RAY M",Director,True,Common Stock,buy,2000.0,12.879,25758.0
+2009-04-15,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,18846.0,5.01,94418.45999999999
+2009-04-15,AAL,"REDING, ROBERT W",Executive VP Operations,True,Common Stock,sell,6944.0,5.01,34789.439999999995
+2009-04-15,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,12101.0,5.01,60626.009999999995
+2009-04-15,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,6944.0,5.01,34789.439999999995
+2009-04-15,AAL,"HORTON, THOMAS W",EVP Fin & Plng & CFO,True,Common Stock,sell,12101.0,5.01,60626.009999999995
+2009-04-16,AAL,"RODIN, JUDITH",Director,True,Common Stock,buy,1000.0,5.21,5210.0
+2009-04-27,AAL,"BACHMANN, JOHN W",Director,True,Common Stock,buy,5000.0,4.55,22750.0
+2009-07-24,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,1244.0,4.66,5797.04
+2009-07-24,AAL,"REDING, ROBERT W",Executive VP Operations,True,Common Stock,sell,1244.0,4.66,5797.04
+2009-07-24,AAL,"HORTON, THOMAS W",EVP Fin & Plng & CFO,True,Common Stock,sell,2222.0,4.66,10354.52
+2009-07-24,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,5290.0,4.66,24651.4
+2009-07-24,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,3161.0,4.66,14730.26
+2010-02-09,AAL,"GUPTA, RAJAT K",Director,True,Common Stock,buy,5000.0,7.9578,39789.0
+2010-02-11,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,10000.0,8.37,83699.99999999999
+2010-02-12,AAL,"REDING, ROBERT W",Executive VP Operations,True,Common Stock,sell,10000.0,8.6,86000.0
+2010-02-12,AAL,"REDING, ROBERT W",Executive VP Operations,True,Common Stock,sell,10000.0,8.7,87000.0
+2010-02-18,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,31666.0,8.75,277077.5
+2010-02-18,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,18334.0,8.74,160239.16
+2010-04-21,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,6282.0,7.77,48811.14
+2010-04-21,AAL,"REDING, ROBERT W",Executive VP Operations,True,Common Stock,sell,9560.0,7.77,74281.2
+2010-04-21,AAL,"HORTON, THOMAS W",EVP Fin & Plng & CFO,True,Common Stock,sell,3439.0,7.77,26721.03
+2010-04-21,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,3439.0,7.77,26721.03
+2010-04-21,AAL,"REDING, ROBERT W",Executive VP Operations,True,Common Stock,sell,3440.0,7.77,26728.8
+2010-04-21,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,1958.0,7.77,15213.66
+2010-07-23,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,2831.0,6.89,19505.59
+2010-07-23,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,5290.0,6.89,36448.1
+2010-07-23,AAL,"REDING, ROBERT W",Executive VP Operations,True,Common Stock,sell,1124.0,6.89,7744.36
+2010-07-23,AAL,"HORTON, THOMAS W",EVP Fin & Plng & CFO,True,Common Stock,sell,1984.0,6.89,13669.76
+2010-07-23,AAL,"REDING, ROBERT W",Executive VP Operations,True,Common Stock,sell,3126.0,7.1268,22278.376800000002
+2010-07-23,AAL,"GOREN, ISABELLA D",SVP/ Chief Financial Officer,True,Common Stock,sell,1125.0,6.89,7751.25
+2010-07-23,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,1125.0,6.89,7751.25
+2010-11-11,AAL,"REDING, ROBERT W",Executive VP Operations,True,Common Stock,sell,7397.0,8.6,63614.2
+2011-01-26,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,12000.0,7.45,89400.0
+2011-01-27,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,15759.0,7.57,119295.63
+2011-04-20,AAL,"REDING, ROBERT W",Executive VP Operations,True,Common Stock,sell,14283.0,5.64,80556.12
+2011-04-20,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,14283.0,5.64,80556.12
+2011-04-20,AAL,"HORTON, THOMAS W",EVP Fin & Plng & CFO,True,Common Stock,sell,14283.0,5.64,80556.12
+2011-04-20,AAL,"GOREN, ISABELLA D",SVP/ Chief Financial Officer,True,Common Stock,sell,8134.0,5.64,45875.759999999995
+2011-04-20,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,8134.0,5.64,45875.759999999995
+2011-04-20,AAL,"ARPEY, GERARD J","Director, Chairman, President, CEO",True,Common Stock,sell,30418.0,5.64,171557.52
+2011-04-21,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,39717.0,5.5293,219607.20810000002
+2011-05-19,AAL,"REDING, ROBERT W",Executive VP Operations,True,Common Stock,sell,39717.0,6.69,265706.73000000004
+2011-05-20,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,6758.0,6.66,45008.28
+2011-05-20,AAL,"REDING, ROBERT W",Executive VP Operations,True,Common Stock,sell,11863.0,6.66,79007.58
+2011-05-20,AAL,"ARPEY, GERARD J","Director, Chairman and CEO",True,Common Stock,sell,30682.0,6.66,204342.12
+2011-05-20,AAL,"ARPEY, GERARD J","Director, Chairman and CEO",True,Common Stock,sell,37028.0,6.66,246606.48
+2011-05-20,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,14440.0,6.66,96170.40000000001
+2011-05-20,AAL,"GOREN, ISABELLA D",SVP/ Chief Financial Officer,True,Common Stock,sell,6758.0,6.66,45008.28
+2011-05-20,AAL,"HORTON, THOMAS W",President,True,Common Stock,sell,11863.0,6.66,79007.58
+2011-07-21,AAL,"BENNETT, STEPHEN M",Director,True,Common Stock,buy,20000.0,4.89,97800.0
+2011-08-17,AAL,"BACHMANN, JOHN W",Director,True,Common Stock,buy,20000.0,3.81,76200.0
+2013-04-23,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,60503.0,3.86,233541.58
+2013-04-26,AAL,"GOREN, ISABELLA D",SVP/ Chief Financial Officer,True,Common Stock,sell,30000.0,4.0,120000.0
+2013-04-29,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,41408.0,4.12,170600.96
+2013-04-29,AAL,"GOREN, ISABELLA D",SVP/ Chief Financial Officer,True,Common Stock,sell,20000.0,4.13,82600.0
+2013-05-14,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,buy,3704.0,5.83,21594.32
+2013-05-14,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,buy,3703.0,5.83,21588.49
+2013-05-14,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,buy,6505.0,5.83,37924.15
+2013-05-14,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,buy,3705.0,5.83,21600.15
+2013-05-14,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,buy,6504.0,5.83,37918.32
+2013-05-15,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,14195.0,5.91,83892.45
+2013-05-15,AAL,"GOREN, ISABELLA D",SVP/ Chief Financial Officer,True,Common Stock,buy,4336.0,6.13,26579.68
+2013-05-15,AAL,"GOREN, ISABELLA D",SVP/ Chief Financial Officer,True,Common Stock,buy,4335.0,6.13,26573.55
+2013-05-15,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,8095.0,5.91,47841.450000000004
+2013-05-15,AAL,"GOREN, ISABELLA D",SVP/ Chief Financial Officer,True,Common Stock,sell,20972.0,6.33,132752.76
+2013-05-16,AAL,"GOREN, ISABELLA D",SVP/ Chief Financial Officer,True,Common Stock,sell,3545.0,6.82,24176.9
+2013-05-16,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,5319.0,6.82,36275.58
+2013-05-16,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,2817.0,6.82,19211.940000000002
+2013-05-16,AAL,"GOREN, ISABELLA D",SVP/ Chief Financial Officer,True,Common Stock,sell,9462.0,6.88,65098.56
+2013-05-16,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,200.0,6.83,1366.0
+2013-11-14,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,buy,16439.0,11.96,196610.44
+2013-11-14,AAL,"GOREN, ISABELLA D",SVP/ Chief Financial Officer,True,Stock Option (right to buy),sell,16500.0,11.8,194700.0
+2013-11-14,AAL,"REAM, JAMES B",Senior V.P. Operations,False,Common Stock,buy,17665.0,11.96,211273.40000000002
+2013-11-14,AAL,"REAM, JAMES B",Senior V.P. Operations,False,Common Stock,buy,16439.0,11.96,196610.44
+2013-11-14,AAL,"REAM, JAMES B",Senior V.P. Operations,False,Common Stock,buy,8700.0,11.96,104052.00000000001
+2013-11-14,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,buy,20113.0,12.05,242361.65000000002
+2013-11-14,AAL,"GOREN, ISABELLA D",SVP/ Chief Financial Officer,True,Common Stock,buy,19790.0,11.96,236688.40000000002
+2013-11-14,AAL,"GOREN, ISABELLA D",SVP/ Chief Financial Officer,True,Common Stock,buy,4008.0,11.96,47935.68
+2013-11-14,AAL,"GOREN, ISABELLA D",SVP/ Chief Financial Officer,True,Common Stock,buy,4088.0,11.8,48238.4
+2013-11-14,AAL,"GOREN, ISABELLA D",SVP/ Chief Financial Officer,True,Common Stock,buy,8700.0,11.96,104052.00000000001
+2013-11-14,AAL,"GOREN, ISABELLA D",SVP/ Chief Financial Officer,True,Common Stock,buy,10319.0,11.96,123415.24
+2013-11-14,AAL,"GOREN, ISABELLA D",SVP/ Chief Financial Officer,True,Common Stock,buy,16439.0,11.96,196610.44
+2013-11-14,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Stock Option (right to buy),sell,11600.0,11.8,136880.0
+2013-11-14,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,buy,10366.0,12.05,124910.3
+2013-11-14,AAL,"HORTON, THOMAS W","Chairman,President and CEO",True,Common Stock,buy,21862.0,11.96,261469.52000000002
+2013-11-14,AAL,"HORTON, THOMAS W","Chairman,President and CEO",True,Common Stock,buy,72486.0,11.96,866932.56
+2013-11-14,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,buy,33727.0,11.8,397978.60000000003
+2013-11-14,AAL,"HORTON, THOMAS W","Chairman,President and CEO",True,Common Stock,buy,34755.0,11.96,415669.80000000005
+2013-11-14,AAL,"GARTON, DANIEL P",Executive Vice President,True,Stock Option (right to buy),sell,15000.0,11.8,177000.0
+2013-11-14,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,buy,15000.0,11.8,177000.0
+2013-11-14,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,buy,15023.0,11.8,177271.40000000002
+2013-11-14,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,buy,17972.0,11.8,212069.6
+2013-11-14,AAL,"IBARGUEN, ALBERTO",Director,True,Common Stock,sell,9000.0,12.04,108359.99999999999
+2013-11-14,AAL,"HORTON, THOMAS W","Chairman,President and CEO",True,Common Stock,buy,11813.0,11.96,141283.48
+2013-11-14,AAL,"HORTON, THOMAS W","Chairman,President and CEO",True,Common Stock,buy,28881.0,11.96,345416.76
+2013-11-14,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,buy,4008.0,11.96,47935.68
+2013-11-14,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,buy,8621.0,11.8,101727.8
+2013-11-14,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,buy,8700.0,11.96,104052.00000000001
+2013-11-14,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,buy,28326.0,11.8,334246.80000000005
+2013-11-15,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,7300.0,11.89,86797.0
+2013-11-15,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,982.0,11.71,11499.220000000001
+2013-11-15,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,2000.0,11.69,23380.0
+2013-11-15,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,2202.0,11.78,25939.559999999998
+2013-11-15,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,5659.0,11.72,66323.48000000001
+2013-11-15,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,6773.0,11.7,79244.09999999999
+2013-11-15,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,11382.0,11.68,132941.76
+2013-11-15,AAL,"REAM, JAMES B",Senior V.P. Operations,False,Common Stock,sell,2959.0,11.7,34620.299999999996
+2013-11-15,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,30000.0,12.06,361800.0
+2013-11-15,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,43400.0,11.87,515157.99999999994
+2013-11-15,AAL,"PURCELL, PHILIP J",Director,True,Common Stock,sell,10000.0,11.75,117500.0
+2013-11-15,AAL,"REAM, JAMES B",Senior V.P. Operations,False,Common Stock,sell,28551.0,11.73,334903.23000000004
+2013-11-15,AAL,"REAM, JAMES B",Senior V.P. Operations,False,Common Stock,sell,4973.0,11.68,58084.64
+2013-11-15,AAL,"REAM, JAMES B",Senior V.P. Operations,False,Common Stock,sell,874.0,11.69,10217.06
+2013-11-15,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,13734.0,11.8,162061.2
+2013-11-15,AAL,"REAM, JAMES B",Senior V.P. Operations,False,Common Stock,sell,2545.0,11.7,29776.5
+2013-11-15,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,1616.0,11.77,19020.32
+2013-11-15,AAL,"REAM, JAMES B",Senior V.P. Operations,False,Common Stock,sell,2473.0,11.72,28983.56
+2013-11-15,AAL,"HORTON, THOMAS W","Chairman,President and CEO",True,Common Stock,sell,1330.0,11.72,15587.6
+2013-11-15,AAL,"REAM, JAMES B",Senior V.P. Operations,False,Common Stock,sell,429.0,11.71,5023.59
+2013-11-15,AAL,"GOREN, ISABELLA D",SVP/ Chief Financial Officer,True,Common Stock,sell,6884.0,11.68,80405.12
+2013-11-15,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,43316.0,11.87,514160.92
+2013-11-15,AAL,"GOREN, ISABELLA D",SVP/ Chief Financial Officer,True,Common Stock,sell,4097.0,11.7,47934.899999999994
+2013-11-15,AAL,"GOREN, ISABELLA D",SVP/ Chief Financial Officer,True,Common Stock,sell,3423.0,11.72,40117.560000000005
+2013-11-15,AAL,"GOREN, ISABELLA D",SVP/ Chief Financial Officer,True,Common Stock,sell,1210.0,11.69,14144.9
+2013-11-15,AAL,"GOREN, ISABELLA D",SVP/ Chief Financial Officer,True,Common Stock,sell,594.0,11.71,6955.740000000001
+2013-11-15,AAL,"GOREN, ISABELLA D",SVP/ Chief Financial Officer,True,Common Stock,sell,4088.0,12.0,49056.0
+2013-11-15,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,8621.0,11.96,103107.16
+2013-11-15,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,4122.0,11.7,48227.399999999994
+2013-11-15,AAL,"HORTON, THOMAS W","Chairman,President and CEO",True,Common Stock,sell,33971.0,11.73,398479.83
+2013-11-15,AAL,"HORTON, THOMAS W","Chairman,President and CEO",True,Common Stock,sell,23855.0,11.7,279103.5
+2013-11-15,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,1217.0,11.69,14226.73
+2013-11-15,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,598.0,11.71,7002.580000000001
+2013-11-15,AAL,"GOREN, ISABELLA D",SVP/ Chief Financial Officer,True,Common Stock,sell,43048.0,11.75,505814.0
+2013-11-15,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,6928.0,11.68,80919.04
+2013-11-15,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,3445.0,11.72,40375.4
+2013-12-09,AAL,"GARTON, DANIEL P",Executive Vice President,True,Common Stock,sell,17807.0,22.55,401547.85000000003
+2013-12-09,AAL,"REAM, JAMES B",Senior V.P. Operations,False,Common Stock,sell,17807.0,22.55,401547.85000000003
+2013-12-09,AAL,"KENNEDY, GARY F",Sr. VP / General Counsel,True,Common Stock,sell,17807.0,22.55,401547.85000000003
+2013-12-09,AAL,"HORTON, THOMAS W",Director,True,Common Stock,sell,71618.0,22.55,1614985.9000000001
+2013-12-09,AAL,"GOREN, ISABELLA D",SVP / Chief Financial Officer,True,Common Stock,buy,13279.0,22.55,299441.45
+2013-12-11,AAL,"HORTON, THOMAS W",Director,True,Common Stock,sell,5503.0,26.3218,144848.8654
+2013-12-16,AAL,"IBARGUEN, ALBERTO",Director,True,Common Stock,sell,2594.0,26.48,68689.12
+2014-01-09,AAL,"HORTON, THOMAS W",Director,True,Common Stock,sell,8497.0,26.9,228569.3
+2014-01-17,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,buy,51020.0,6.7,341834.0
+2014-01-17,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,21650.0,30.0,649500.0
+2014-01-17,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,18352.0,30.0,550560.0
+2014-01-17,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,17314.0,30.0,519420.0
+2014-01-17,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,11395.0,30.0,341850.0
+2014-01-17,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,7668.0,30.0,230040.0
+2014-01-17,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,7716.0,30.0,231480.0
+2014-01-17,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,4491.0,30.0,134730.0
+2014-01-17,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,3350.0,30.0,100500.0
+2014-01-17,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,buy,26020.0,8.84,230016.8
+2014-01-17,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,buy,39096.0,7.62,297911.52
+2014-01-17,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,9931.0,30.0,297930.0
+2014-01-17,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,119200.0,30.0,3576000.0
+2014-01-17,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,66950.0,30.0,2008500.0
+2014-01-17,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,39625.0,30.0,1188750.0
+2014-01-17,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,buy,119200.0,7.42,884464.0
+2014-01-17,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,buy,74666.0,3.1,231464.6
+2014-01-17,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,buy,25000.0,4.02,100499.99999999999
+2014-01-17,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,buy,55000.0,27.55,1515250.0
+2014-01-17,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,46495.0,30.0,1394850.0
+2014-01-17,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,29165.0,30.0,874950.0
+2014-01-17,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,50509.0,30.0,1515270.0
+2014-01-17,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,buy,63809.0,8.14,519405.26
+2014-01-31,AAL,"ISOM, ROBERT D JR",Chief Operating Officer,True,Common Stock,sell,55298.0,33.8,1869072.4
+2014-01-31,AAL,"ISOM, ROBERT D JR",Chief Operating Officer,True,Common Stock,sell,380557.0,33.3969,12709424.0733
+2014-01-31,AAL,"ISOM, ROBERT D JR",Chief Operating Officer,True,Common Stock,buy,292000.0,3.1,905200.0
+2014-01-31,AAL,"ISOM, ROBERT D JR",Chief Operating Officer,True,Common Stock,buy,143855.0,6.7,963828.5
+2014-02-07,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,buy,51020.0,6.7,341834.0
+2014-02-07,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,buy,26020.0,8.84,230016.8
+2014-02-07,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,sell,343523.0,35.2903,12123029.7269
+2014-02-07,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,sell,370290.0,35.3356,13084419.324
+2014-02-07,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,sell,75250.0,35.38,2662345.0
+2014-02-07,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,buy,51500.0,19.3,993950.0
+2014-02-07,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,buy,200000.0,3.1,620000.0
+2014-02-07,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,sell,13893.0,35.27,490006.11000000004
+2014-02-07,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,buy,25000.0,7.65,191250.0
+2014-02-07,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,sell,17584.0,35.26,620011.84
+2014-02-07,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,buy,175000.0,2.8,489999.99999999994
+2014-02-07,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,buy,292000.0,3.1,905200.0
+2014-02-10,AAL,"HORTON, THOMAS W",Director,True,Common Stock,sell,16102.0,34.66,558095.32
+2014-02-12,AAL,"KIRBY, J SCOTT",President,True,Common Stock,buy,237919.0,3.1,737548.9
+2014-02-12,AAL,"KIRBY, J SCOTT",President,True,Common Stock,buy,95753.0,6.7,641545.1
+2014-02-12,AAL,"KIRBY, J SCOTT",President,True,Common Stock,sell,293940.0,34.6277,10178466.137999998
+2014-02-12,AAL,"KIRBY, J SCOTT",President,True,Common Stock,sell,18446.0,34.78,641551.88
+2014-02-12,AAL,"KIRBY, J SCOTT",President,True,Common Stock,sell,21286.0,34.65,737559.9
+2014-02-13,AAL,"KIRBY, J SCOTT",President,True,Common Stock,buy,126025.0,7.42,935105.5
+2014-02-13,AAL,"PARKER, W DOUGLAS","Director, CEO",True,Common Stock,buy,206250.0,20.97,4325062.5
+2014-02-13,AAL,"KIRBY, J SCOTT",President,True,Common Stock,sell,26957.0,34.69,935138.33
+2014-02-13,AAL,"KIRBY, J SCOTT",President,True,Common Stock,sell,26627.0,34.32,913838.64
+2014-02-13,AAL,"PARKER, W DOUGLAS","Director, CEO",True,Common Stock,sell,206250.0,34.33,7080562.5
+2014-02-13,AAL,"KIRBY, J SCOTT",President,True,Common Stock,sell,51195.0,34.3347,1757764.9664999999
+2014-02-13,AAL,"KIRBY, J SCOTT",President,True,Common Stock,buy,112262.0,8.14,913812.68
+2014-02-13,AAL,"PARKER, W DOUGLAS","Director, CEO",True,Common Stock,sell,197000.0,34.35,6766950.0
+2014-02-13,AAL,"PARKER, W DOUGLAS","Director, CEO",True,Common Stock,sell,103125.0,34.33,3540281.25
+2014-02-13,AAL,"PARKER, W DOUGLAS","Director, CEO",True,Common Stock,sell,86954.0,34.33,2985130.82
+2014-02-13,AAL,"PARKER, W DOUGLAS","Director, CEO",True,Common Stock,buy,103125.0,25.6,2640000.0
+2014-02-13,AAL,"KIRBY, J SCOTT",President,True,Common Stock,sell,184703.0,34.3347,6341722.094099999
+2014-02-13,AAL,"PARKER, W DOUGLAS","Director, CEO",True,Common Stock,sell,109046.0,34.69,3782805.7399999998
+2014-02-13,AAL,"PARKER, W DOUGLAS","Director, CEO",True,Common Stock,buy,196000.0,19.3,3782800.0
+2014-02-24,AAL,"KIRBY, J SCOTT",President,True,Common Stock,sell,20625.0,36.2255,747150.9374999999
+2014-02-24,AAL,"KIRBY, J SCOTT",President,True,Common Stock,buy,20625.0,25.6,528000.0
+2014-03-10,AAL,"HORTON, THOMAS W",Director,True,Common Stock,sell,17762.0,39.02,693073.2400000001
+2014-03-14,AAL,"OLEARY, DENISE M",Director,True,Common Stock,buy,4125.0,24.61,101516.25
+2014-03-18,AAL,"KRAEMER, RICHARD C",Director,True,Common Stock,buy,4125.0,24.61,101516.25
+2014-04-10,AAL,"PARKER, W DOUGLAS","Director, CEO",True,Common Stock,sell,23873.0,35.29,842478.1699999999
+2014-04-10,AAL,"ISOM, ROBERT D JR",Chief Operating Officer,True,Common Stock,sell,10315.0,35.29,364016.35
+2014-04-10,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,9500.0,35.29,335255.0
+2014-04-10,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,sell,10451.0,35.29,368815.79
+2014-04-10,AAL,"KIRBY, J SCOTT",President,True,Common Stock,sell,16713.0,35.29,589801.77
+2014-04-10,AAL,"HORTON, THOMAS W",Director,True,Common Stock,sell,17974.0,35.78,643109.72
+2014-04-10,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,sell,9500.0,35.29,335255.0
+2014-04-11,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,9837.0,33.6799,331309.17630000005
+2014-04-11,AAL,"PARKER, W DOUGLAS","Director, CEO",True,Common Stock,sell,24719.0,33.6799,832533.4481
+2014-04-11,AAL,"ISOM, ROBERT D JR",Chief Operating Officer,True,Common Stock,sell,10681.0,33.6799,359735.01190000004
+2014-04-11,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,sell,10821.0,33.6799,364450.1979
+2014-04-11,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,sell,9837.0,33.6799,331309.17630000005
+2014-04-11,AAL,"KIRBY, J SCOTT",President,True,Common Stock,sell,17305.0,33.6799,582830.6695000001
+2014-04-21,AAL,"KIRBY, J SCOTT",President,True,Common Stock,sell,16483.0,35.4,583498.2
+2014-04-21,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,sell,10307.0,35.4,364867.8
+2014-04-21,AAL,"ISOM, ROBERT D JR",Chief Operating Officer,True,Common Stock,sell,10173.0,35.4,360124.2
+2014-04-21,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,sell,9369.0,35.4,331662.6
+2014-04-21,AAL,"PARKER, W DOUGLAS","Director, CEO",True,Common Stock,sell,23545.0,35.4,833493.0
+2014-04-21,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,9369.0,35.4,331662.6
+2014-06-05,AAL,"ISOM, ROBERT D JR",Chief Operating Officer,True,Common Stock,sell,119200.0,42.54,5070768.0
+2014-06-05,AAL,"ISOM, ROBERT D JR",Chief Operating Officer,True,Common Stock,buy,119200.0,7.42,884464.0
+2014-09-23,AAL,"KRAEMER, RICHARD C",Director,True,Common Stock,buy,4125.0,10.74,44302.5
+2015-01-22,AAL,"SCHIFTER, RICHARD P",Director,True,Common Stock,buy,66.0,55.59,3668.94
+2015-02-17,AAL,"ROBINSON, RAY M",Director,True,Common Stock,sell,6612.0,49.1657,325083.6084
+2015-03-16,AAL,"OLEARY, DENISE M",Director,True,Common Stock,buy,4125.0,10.74,44302.5
+2015-03-23,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,27223.0,55.52,1511420.9600000002
+2015-03-23,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,buy,39095.0,7.62,297903.9
+2015-03-23,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,4682.0,55.47,259710.54
+2015-03-23,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,33724.0,55.52,1872356.4800000002
+2015-03-23,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,buy,31905.0,8.14,259706.7
+2015-03-23,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,5371.0,55.47,297929.37
+2015-04-10,AAL,"KIRBY, J SCOTT",President,True,Common Stock,sell,16713.0,47.73,797711.49
+2015-04-10,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,sell,9500.0,47.73,453434.99999999994
+2015-04-10,AAL,"ISOM, ROBERT D JR",EVP andChief Operating Officer,True,Common Stock,sell,9500.0,47.73,453434.99999999994
+2015-04-10,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,23873.0,47.73,1139458.29
+2015-04-10,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,9500.0,47.73,453434.99999999994
+2015-04-10,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,sell,9500.0,47.73,453434.99999999994
+2015-04-11,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,sell,9837.0,47.73,469520.00999999995
+2015-04-11,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,9837.0,47.73,469520.00999999995
+2015-04-11,AAL,"KIRBY, J SCOTT",President,True,Common Stock,sell,17305.0,47.73,825967.6499999999
+2015-04-11,AAL,"ISOM, ROBERT D JR",EVP andChief Operating Officer,True,Common Stock,sell,9837.0,47.73,469520.00999999995
+2015-04-11,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,sell,9837.0,47.73,469520.00999999995
+2015-04-11,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,24719.0,47.73,1179837.8699999999
+2015-04-29,AAL,"KIRBY, J SCOTT",President,True,Common Stock,sell,12403.0,50.52,626599.56
+2015-04-29,AAL,"KIRBY, J SCOTT",President,True,Common Stock,buy,206346.0,7.62,1572356.52
+2015-04-29,AAL,"KIRBY, J SCOTT",President,True,Common Stock,sell,31518.0,50.52,1592289.36
+2015-04-29,AAL,"KIRBY, J SCOTT",President,True,Common Stock,sell,31124.0,50.52,1572384.48
+2015-04-29,AAL,"KIRBY, J SCOTT",President,True,Common Stock,sell,24532.0,50.52,1239356.6400000001
+2015-04-29,AAL,"KIRBY, J SCOTT",President,True,Common Stock,sell,21388.0,50.52,1080521.76
+2015-04-29,AAL,"KIRBY, J SCOTT",President,True,Common Stock,sell,9045.0,50.52,456953.4
+2015-04-29,AAL,"KIRBY, J SCOTT",President,True,Common Stock,buy,70881.0,8.84,626588.04
+2015-04-29,AAL,"KIRBY, J SCOTT",President,True,Common Stock,sell,127889.0,50.05,6400844.449999999
+2015-04-29,AAL,"KIRBY, J SCOTT",President,True,Common Stock,sell,19753.0,50.52,997921.56
+2015-04-29,AAL,"KIRBY, J SCOTT",President,True,Common Stock,buy,82500.0,19.3,1592250.0
+2015-04-29,AAL,"KIRBY, J SCOTT",President,True,Common Stock,sell,64700.0,49.22,3184534.0
+2015-04-29,AAL,"KIRBY, J SCOTT",President,True,Common Stock,buy,56131.0,8.14,456906.34
+2015-04-29,AAL,"KIRBY, J SCOTT",President,True,Common Stock,sell,73506.0,50.52,3713523.12
+2015-04-30,AAL,"KIRBY, J SCOTT",President,True,Common Stock,sell,4200.0,49.26,206892.0
+2015-04-30,AAL,"KIRBY, J SCOTT",President,True,Common Stock,sell,65682.0,48.62,3193458.84
+2015-05-01,AAL,"ISOM, ROBERT D JR",EVP/Chief Operating Officer,True,Common Stock,sell,94765.0,49.18,4660542.7
+2015-05-01,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,buy,119200.0,7.42,884464.0
+2015-05-01,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,buy,12500.0,45.01,562625.0
+2015-05-01,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,sell,119200.0,49.42,5890864.0
+2015-05-01,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,sell,466.0,49.39,23015.74
+2015-05-01,AAL,"ISOM, ROBERT D JR",EVP/Chief Operating Officer,True,Common Stock,sell,8758.0,49.35,432207.3
+2015-05-01,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,sell,1163.0,49.39,57440.57
+2015-05-01,AAL,"ISOM, ROBERT D JR",EVP/Chief Operating Officer,True,Common Stock,sell,8757.0,49.31,431807.67000000004
+2015-05-01,AAL,"ISOM, ROBERT D JR",EVP/Chief Operating Officer,True,Common Stock,sell,8603.0,49.1,422407.3
+2015-05-01,AAL,"ISOM, ROBERT D JR",EVP/Chief Operating Officer,True,Common Stock,sell,7256.0,49.32,357865.92
+2015-05-01,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,sell,2250.0,49.4,111150.0
+2015-05-01,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,sell,9729.0,49.39,480515.31
+2015-05-01,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,buy,12500.0,38.44,480500.0
+2015-05-01,AAL,"ISOM, ROBERT D JR",EVP/Chief Operating Officer,True,Common Stock,sell,8758.0,49.36,432294.88
+2015-05-01,AAL,"ISOM, ROBERT D JR",EVP/Chief Operating Officer,True,Common Stock,sell,4793.0,49.1,235336.30000000002
+2015-05-01,AAL,"ISOM, ROBERT D JR",EVP/Chief Operating Officer,True,Common Stock,sell,9157.0,49.1,449608.7
+2015-05-01,AAL,"ISOM, ROBERT D JR",EVP/Chief Operating Officer,True,Common Stock,sell,8603.0,49.17,423009.51
+2015-05-01,AAL,"ISOM, ROBERT D JR",EVP/Chief Operating Officer,True,Common Stock,buy,25009.0,8.84,221079.56
+2015-05-01,AAL,"ISOM, ROBERT D JR",EVP/Chief Operating Officer,True,Common Stock,sell,4127.0,49.31,203502.37
+2015-05-01,AAL,"ISOM, ROBERT D JR",EVP/Chief Operating Officer,True,Common Stock,sell,4124.0,49.35,203519.4
+2015-05-01,AAL,"ISOM, ROBERT D JR",EVP/Chief Operating Officer,True,Common Stock,sell,3419.0,49.32,168625.08
+2015-05-01,AAL,"ISOM, ROBERT D JR",EVP/Chief Operating Officer,True,Common Stock,buy,20714.0,8.14,168611.96000000002
+2015-05-01,AAL,"ISOM, ROBERT D JR",EVP/Chief Operating Officer,True,Common Stock,sell,8600.0,49.09,422174.00000000006
+2015-05-01,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,sell,11392.0,49.39,562650.88
+2015-05-01,AAL,"ISOM, ROBERT D JR",EVP/Chief Operating Officer,True,Common Stock,sell,4495.0,49.17,221019.15
+2015-05-01,AAL,"ISOM, ROBERT D JR",EVP/Chief Operating Officer,True,Common Stock,sell,4123.0,49.36,203511.28
+2015-05-01,AAL,"ISOM, ROBERT D JR",EVP/Chief Operating Officer,True,Common Stock,buy,25001.0,8.84,221008.84
+2015-05-01,AAL,"ISOM, ROBERT D JR",EVP/Chief Operating Officer,True,Common Stock,sell,4503.0,49.09,221052.27000000002
+2015-05-01,AAL,"ISOM, ROBERT D JR",EVP/Chief Operating Officer,True,Common Stock,sell,4503.0,49.1,221097.30000000002
+2015-05-01,AAL,"ISOM, ROBERT D JR",EVP/Chief Operating Officer,True,Common Stock,buy,26620.0,8.84,235320.8
+2015-05-01,AAL,"ISOM, ROBERT D JR",EVP/Chief Operating Officer,True,Common Stock,buy,25000.0,8.84,221000.0
+2015-05-01,AAL,"ISOM, ROBERT D JR",EVP/Chief Operating Officer,True,Common Stock,buy,25000.0,8.14,203500.0
+2015-05-07,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,buy,75000.0,3.1,232500.0
+2015-05-07,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,sell,29475.0,49.06,1446043.5
+2015-05-07,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,sell,33515.0,49.24,1650278.6
+2015-05-07,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,buy,95714.0,8.14,779111.9600000001
+2015-05-07,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,sell,87161.0,49.2094,4289140.5134000005
+2015-05-07,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,sell,119200.0,49.07,5849144.0
+2015-05-07,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,sell,4740.0,49.06,232544.40000000002
+2015-05-07,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,buy,119200.0,7.42,884464.0
+2015-05-07,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,sell,15823.0,49.24,779124.52
+2015-05-11,AAL,"SCHIFTER, RICHARD P",Director,True,Common Stock,sell,65.0,49.645,3226.925
+2015-06-22,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,40036.0,42.92,1718345.12
+2015-06-22,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,55400.0,42.8659,2374770.8600000003
+2015-06-22,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,buy,113090.0,6.7,757703.0
+2015-06-22,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,17654.0,42.92,757709.68
+2015-07-01,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,buy,113090.0,6.7,757703.0
+2015-07-01,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,39622.0,40.65,1610634.3
+2015-07-01,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,18640.0,40.65,757716.0
+2015-07-01,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,54828.0,40.508,2220972.6240000003
+2015-08-03,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,4952.0,40.24,199268.48
+2015-08-03,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,8129.0,40.24,327110.96
+2015-08-03,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,24885.0,40.24,1001372.4
+2015-08-03,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,buy,64270.0,3.1,199237.0
+2015-08-03,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,17071.0,40.24,686937.04
+2015-08-03,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,58053.0,40.4163,2346287.4639
+2015-08-03,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,buy,48820.0,6.7,327094.0
+2015-09-01,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,buy,113090.0,3.1,350579.0
+2015-09-01,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,43635.0,38.63,1685620.05
+2015-09-01,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,60379.0,38.9218,2350059.3622
+2015-09-01,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,9076.0,38.63,350605.88
+2015-10-01,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,43622.0,38.5,1679447.0
+2015-10-01,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,buy,113090.0,3.1,350579.0
+2015-10-01,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,60362.0,38.3433,2314478.2746
+2015-10-01,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,9106.0,38.5,350581.0
+2015-10-29,AAL,"KRAEMER, RICHARD C",Director,True,Common Stock,sell,15000.0,45.6,684000.0
+2015-11-02,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,61243.0,46.4851,2846886.9793000002
+2015-11-02,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,44258.0,46.2,2044719.6
+2015-11-02,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,7589.0,46.2,350611.80000000005
+2015-11-02,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,buy,113090.0,3.1,350579.0
+2015-12-01,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,buy,113090.0,3.1,350579.0
+2015-12-01,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,43895.0,41.47,1820325.65
+2015-12-01,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,8454.0,41.47,350587.38
+2015-12-01,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,60741.0,41.6048,2527117.1568
+2015-12-09,AAL,"LEIBMAN, MAYA",EVP Chief Information Officer,True,Common Stock,sell,14294.0,43.65,623933.1
+2015-12-09,AAL,"GOULET,, BEVERLY K.",EVP Chief Integration Officer,True,Common Stock,sell,14294.0,43.65,623933.1
+2015-12-11,AAL,"LEIBMAN, MAYA",EVP Chief Information Officer,True,Common Stock,sell,19778.0,42.7547,845602.4566
+2015-12-16,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,262875.0,43.2,11356200.0
+2015-12-16,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,sell,112661.0,43.2,4866955.2
+2015-12-16,AAL,"GOULET,, BEVERLY K.",EVP Chief Integration Officer,True,Common Stock,sell,93884.0,43.2,4055788.8000000003
+2015-12-16,AAL,"LEIBMAN, MAYA",EVP Chief Information Officer,True,Common Stock,sell,93884.0,43.2,4055788.8000000003
+2015-12-16,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,sell,112661.0,43.2,4866955.2
+2015-12-16,AAL,"KIRBY, J SCOTT",President,True,Common Stock,sell,187768.0,43.2,8111577.600000001
+2015-12-16,AAL,"ISOM, ROBERT D JR",EVP/Chief Operating Officer,True,Common Stock,sell,131437.0,43.2,5678078.4
+2015-12-16,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,112661.0,43.2,4866955.2
+2016-01-04,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,64121.0,40.8605,2620016.1205
+2016-01-04,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,8491.0,41.29,350593.39
+2016-01-04,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,40478.0,41.29,1671336.6199999999
+2016-01-04,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,buy,113090.0,3.1,350579.0
+2016-02-01,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,buy,113090.0,3.1,350579.0
+2016-02-01,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,60429.0,38.9351,2352809.1579
+2016-02-01,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,43671.0,39.0,1703169.0
+2016-02-01,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,8990.0,39.0,350610.0
+2016-02-22,AAL,"LEIBMAN, MAYA",EVP Chief Information Officer,True,Common Stock,sell,100000.0,40.7347,4073469.9999999995
+2016-03-01,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,57320.0,41.3065,2367688.58
+2016-03-01,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,41215.0,41.44,1707949.5999999999
+2016-03-01,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,6401.0,41.44,265257.44
+2016-03-01,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,210.0,41.44,8702.4
+2016-03-01,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,buy,106190.0,3.1,329189.0
+2016-03-01,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,7944.0,41.44,329199.36
+2016-03-01,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,buy,6900.0,38.44,265236.0
+2016-03-11,AAL,"NOCELLA, ANDREW P",SVP Chief Marketing Officer,True,Common Stock,sell,496.0,42.45,21055.2
+2016-03-11,AAL,"NOCELLA, ANDREW P",SVP Chief Marketing Officer,True,Common Stock,sell,11320.0,42.45,480534.00000000006
+2016-03-11,AAL,"NOCELLA, ANDREW P",SVP Chief Marketing Officer,True,Common Stock,buy,12500.0,38.44,480500.0
+2016-03-11,AAL,"NOCELLA, ANDREW P",SVP Chief Marketing Officer,True,Common Stock,sell,684.0,42.4325,29023.829999999998
+2016-03-23,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,535.0,42.8,22898.0
+2016-03-23,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,buy,12500.0,38.44,480500.0
+2016-03-23,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,11227.0,42.8,480515.6
+2016-04-01,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,buy,113100.0,38.44,4347564.0
+2016-04-01,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,4113.0,40.13,165054.69
+2016-04-01,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,106013.0,41.01,4347593.13
+2016-04-01,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,2974.0,41.01,121963.73999999999
+2016-04-10,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,sell,9500.0,38.5,365750.0
+2016-04-10,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,sell,9500.0,38.5,365750.0
+2016-04-10,AAL,"GOULET,, BEVERLY K.",EVP Chief Integration Officer,True,Common Stock,sell,8896.0,38.5,342496.0
+2016-04-10,AAL,"NOCELLA, ANDREW P",SVP Chief Marketing Officer,True,Common Stock,sell,3058.0,38.5,117733.0
+2016-04-10,AAL,"KIRBY, J SCOTT",President,True,Common Stock,sell,16713.0,38.5,643450.5
+2016-04-10,AAL,"ISOM, ROBERT D JR",EVP/Chief Operating Officer,True,Common Stock,sell,9500.0,38.5,365750.0
+2016-04-10,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,23873.0,38.5,919110.5
+2016-04-10,AAL,"LEIBMAN, MAYA",EVP Chief Information Officer,True,Common Stock,sell,9490.0,38.5,365365.0
+2016-04-10,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,9500.0,38.5,365750.0
+2016-04-15,AAL,"KIRBY, J SCOTT",President,True,Common Stock,sell,15375.0,40.91,628991.25
+2016-04-15,AAL,"KIRBY, J SCOTT",President,True,Common Stock,buy,18000.0,38.44,691920.0
+2016-04-15,AAL,"KIRBY, J SCOTT",President,True,Common Stock,sell,501.0,41.17,20626.170000000002
+2016-04-15,AAL,"KIRBY, J SCOTT",President,True,Common Stock,sell,692.0,41.3,28579.6
+2016-04-15,AAL,"LEIBMAN, MAYA",EVP Chief Information Officer,True,Common Stock,sell,6834.0,40.91,279578.94
+2016-04-15,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,sell,8542.0,40.91,349453.22
+2016-04-15,AAL,"GOULET,, BEVERLY K.",EVP Chief Integration Officer,True,Common Stock,sell,6834.0,40.91,279578.94
+2016-04-15,AAL,"ISOM, ROBERT D JR",EVP/Chief Operating Officer,True,Common Stock,sell,10250.0,40.91,419327.49999999994
+2016-04-15,AAL,"NOCELLA, ANDREW P",SVP Chief Marketing Officer,True,Common Stock,sell,5858.0,40.91,239650.77999999997
+2016-04-15,AAL,"KIRBY, J SCOTT",President,True,Common Stock,sell,16807.0,41.17,691944.1900000001
+2016-04-15,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,8542.0,40.91,349453.22
+2016-04-15,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,sell,8542.0,40.91,349453.22
+2016-04-20,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,26717.0,41.26,1102343.42
+2016-04-22,AAL,"GOULET,, BEVERLY K.",EVP Chief Integration Officer,True,Common Stock,sell,7735.0,38.21,295554.35000000003
+2016-04-22,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,27070.0,38.21,1034344.7000000001
+2016-04-22,AAL,"NOCELLA, ANDREW P",SVP Chief Marketing Officer,True,Common Stock,sell,7735.0,38.21,295554.35000000003
+2016-04-22,AAL,"KIRBY, J SCOTT",President,True,Common Stock,sell,17403.0,38.21,664968.63
+2016-04-22,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,sell,9668.0,38.21,369414.28
+2016-04-22,AAL,"ISOM, ROBERT D JR",EVP/Chief Operating Officer,True,Common Stock,sell,11602.0,38.21,443312.42
+2016-04-22,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,9668.0,38.21,369414.28
+2016-04-22,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,sell,9668.0,38.21,369414.28
+2016-04-22,AAL,"LEIBMAN, MAYA",EVP Chief Information Officer,True,Common Stock,sell,7735.0,38.21,295554.35000000003
+2016-05-13,AAL,"BENJAMIN, JEFFREY D",Director,True,Common Stock,buy,35000.0,31.7862,1112517.0
+2016-06-13,AAL,"SCHIFTER, RICHARD P",Director,True,Common Stock,buy,3000.0,32.13,96390.00000000001
+2016-07-12,AAL,"GOULET,, BEVERLY K.",EVP Chief Integration Officer,True,Common Stock,sell,20000.0,32.75,655000.0
+2016-07-13,AAL,"GOULET,, BEVERLY K.",EVP Chief Integration Officer,True,Common Stock,sell,20000.0,35.0,700000.0
+2016-09-07,AAL,"GOULET,, BEVERLY K.",EVP Chief Integration Officer,True,Common Stock,sell,20000.0,37.5,750000.0
+2016-09-14,AAL,"LEIBMAN, MAYA",EVP Chief Information Officer,True,Common Stock,sell,10000.0,36.3432,363432.00000000006
+2016-10-19,AAL,"GOULET,, BEVERLY K.",EVP Chief Integration Officer,True,Common Stock,sell,20000.0,40.0,800000.0
+2016-10-31,AAL,"NOCELLA, ANDREW P",SVP Chief Marketing Officer,True,Common Stock,sell,8581.0,40.71,349332.51
+2016-10-31,AAL,"NOCELLA, ANDREW P",SVP Chief Marketing Officer,True,Common Stock,sell,10268.0,40.68,417702.24
+2016-10-31,AAL,"NOCELLA, ANDREW P",SVP Chief Marketing Officer,True,Common Stock,sell,171383.0,40.6483,6966427.5989
+2016-10-31,AAL,"NOCELLA, ANDREW P",SVP Chief Marketing Officer,True,Common Stock,sell,4711.0,40.71,191784.81
+2016-10-31,AAL,"NOCELLA, ANDREW P",SVP Chief Marketing Officer,True,Common Stock,buy,25164.0,7.62,191749.68
+2016-10-31,AAL,"NOCELLA, ANDREW P",SVP Chief Marketing Officer,True,Common Stock,buy,10268.0,8.14,83581.52
+2016-11-01,AAL,"GOULET,, BEVERLY K.",EVP Chief Integration Officer,True,Common Stock,sell,5000.0,40.51,202550.0
+2016-11-15,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,20000.0,44.7346,894692.0
+2016-11-16,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,24100.0,44.2111,1065487.51
+2016-11-17,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,12366.0,45.5,562653.0
+2016-11-17,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,45456.0,45.247,2056747.632
+2016-11-17,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,57.0,45.5,2593.5
+2016-11-17,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,buy,12500.0,45.01,562625.0
+2016-11-21,AAL,"LEIBMAN, MAYA",EVP Chief Information Officer,True,Common Stock,sell,10000.0,46.35,463500.0
+2016-11-23,AAL,"GOULET,, BEVERLY K.",EVP Chief Integration Officer,True,Common Stock,sell,5000.0,46.1849,230924.5
+2016-11-23,AAL,"LEIBMAN, MAYA",EVP Chief Information Officer,True,Common Stock,sell,1653.0,46.34,76600.02
+2016-11-30,AAL,"ISOM, ROBERT D JR",President,True,Common Stock,sell,13515.0,46.6117,629957.1255
+2016-11-30,AAL,"ISOM, ROBERT D JR",President,True,Common Stock,sell,9768.0,46.66,455774.87999999995
+2016-11-30,AAL,"ISOM, ROBERT D JR",President,True,Common Stock,sell,46717.0,46.66,2179815.2199999997
+2016-11-30,AAL,"ISOM, ROBERT D JR",President,True,Common Stock,buy,70000.0,31.14,2179800.0
+2016-12-01,AAL,"GOULET,, BEVERLY K.",EVP Chief Integration Officer,True,Common Stock,sell,5000.0,46.2,231000.0
+2016-12-07,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,6257.0,47.62,297958.33999999997
+2016-12-07,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,buy,39096.0,7.62,297911.52
+2016-12-07,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,19062.0,47.62,907732.44
+2016-12-07,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,13777.0,47.62,656060.74
+2016-12-13,AAL,"LEIBMAN, MAYA",EVP Chief Information Officer,True,Common Stock,sell,9915.0,47.95,475424.25
+2016-12-16,AAL,"ISOM, ROBERT D JR",President,True,Common Stock,sell,20000.0,48.6091,972182.0
+2016-12-28,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,43882.0,48.4831,2127535.3942
+2016-12-28,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,35183.0,48.73,1714467.5899999999
+2016-12-28,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,buy,231060.0,7.42,1714465.2
+2016-12-28,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,82171.0,48.73,4004192.8299999996
+2016-12-28,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,69824.0,47.8863,3343613.0112
+2017-01-11,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,82672.0,49.0,4050928.0
+2017-01-11,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,buy,90000.0,45.01,4050900.0
+2017-01-11,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,4129.0,49.0,202321.0
+2017-01-11,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,3199.0,49.0,156751.0
+2017-02-06,AAL,"ISOM, ROBERT D JR",President,True,Common Stock,sell,37668.0,45.0,1695060.0
+2017-02-06,AAL,"ISOM, ROBERT D JR",President,True,Common Stock,sell,31.0,45.315,1404.7649999999999
+2017-02-06,AAL,"ISOM, ROBERT D JR",President,True,Common Stock,sell,19861.0,45.0,893745.0
+2017-02-06,AAL,"ISOM, ROBERT D JR",President,True,Common Stock,sell,59727.0,45.0,2687715.0
+2017-02-06,AAL,"ISOM, ROBERT D JR",President,True,Common Stock,buy,117287.0,7.62,893726.9400000001
+2017-02-07,AAL,"ROBINSON, RAY M",Director,True,Common Stock,sell,200.0,45.23,9046.0
+2017-02-07,AAL,"ROBINSON, RAY M",Director,True,Common Stock,sell,7800.0,45.22,352716.0
+2017-02-10,AAL,"OLEARY, DENISE M",Director,True,Common Stock,sell,2882.0,46.45,133868.9
+2017-02-10,AAL,"OLEARY, DENISE M",Director,True,Common Stock,buy,4125.0,32.45,133856.25
+2017-02-16,AAL,"NOCELLA, ANDREW P",SVP Chief Marketing Officer,True,Common Stock,sell,239.0,47.54,11362.06
+2017-02-16,AAL,"NOCELLA, ANDREW P",SVP Chief Marketing Officer,True,Common Stock,buy,13750.0,45.01,618887.5
+2017-02-16,AAL,"NOCELLA, ANDREW P",SVP Chief Marketing Officer,True,Common Stock,sell,13019.0,47.54,618923.26
+2017-02-16,AAL,"NOCELLA, ANDREW P",SVP Chief Marketing Officer,True,Common Stock,sell,492.0,47.5,23370.0
+2017-03-01,AAL,"LEIBMAN, MAYA",EVP Chief Information Officer,True,Common Stock,sell,9455.0,46.79,442399.45
+2017-03-01,AAL,"KRAEMER, RICHARD C",Director,True,Common Stock,sell,2843.0,47.09,133876.87
+2017-03-01,AAL,"KRAEMER, RICHARD C",Director,True,Common Stock,buy,4125.0,32.45,133856.25
+2017-04-15,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,sell,4139.0,43.35,179425.65
+2017-04-15,AAL,"LEIBMAN, MAYA",EVP Chief Information Officer,True,Common Stock,sell,3253.0,43.35,141017.55000000002
+2017-04-15,AAL,"GOULET,, BEVERLY K.",EVP Chief Integration Officer,True,Common Stock,sell,3246.0,43.35,140714.1
+2017-04-15,AAL,"ISOM, ROBERT D JR",President,True,Common Stock,sell,5125.0,43.35,222168.75
+2017-04-15,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,sell,4098.0,43.35,177648.30000000002
+2017-04-15,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,4098.0,43.35,177648.30000000002
+2017-04-20,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,sell,8727.0,45.22,394634.94
+2017-04-20,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,45606.0,45.22,2062303.3199999998
+2017-04-20,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,sell,8727.0,45.22,394634.94
+2017-04-20,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,8727.0,45.22,394634.94
+2017-04-20,AAL,"ISOM, ROBERT D JR",President,True,Common Stock,sell,10472.0,45.22,473543.83999999997
+2017-04-20,AAL,"GOULET,, BEVERLY K.",EVP Chief Integration Officer,True,Common Stock,sell,8727.0,45.22,394634.94
+2017-04-20,AAL,"LEIBMAN, MAYA",EVP Chief Information Officer,True,Common Stock,sell,8727.0,45.22,394634.94
+2017-04-22,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,sell,19336.0,45.15,873020.4
+2017-04-22,AAL,"LEIBMAN, MAYA",EVP Chief Information Officer,True,Common Stock,sell,15469.0,45.15,698425.35
+2017-04-22,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,19336.0,45.15,873020.4
+2017-04-22,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,54139.0,45.15,2444375.85
+2017-04-22,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,sell,19336.0,45.15,873020.4
+2017-04-22,AAL,"ISOM, ROBERT D JR",President,True,Common Stock,sell,23203.0,45.15,1047615.45
+2017-04-22,AAL,"GOULET,, BEVERLY K.",EVP Chief Integration Officer,True,Common Stock,sell,15469.0,45.15,698425.35
+2017-05-04,AAL,"ALBAUGH, JAMES F",Director,True,Common Stock,buy,3000.0,43.8507,131552.1
+2017-05-10,AAL,"HART, MATTHEW J",Director,True,Common Stock,sell,2830.0,47.3,133859.0
+2017-05-10,AAL,"LEIBMAN, MAYA",EVP Chief Information Officer,True,Common Stock,sell,13155.0,47.4976,624830.928
+2017-05-10,AAL,"HART, MATTHEW J",Director,True,Common Stock,buy,4125.0,32.45,133856.25
+2017-05-11,AAL,"LEIBMAN, MAYA",EVP Chief Information Officer,True,Common Stock,sell,10702.0,46.9225,502164.595
+2017-06-02,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,buy,117287.0,7.62,893726.9400000001
+2017-06-02,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,sell,75320.0,50.0,3766000.0
+2017-06-02,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,sell,33458.0,50.0,1672900.0
+2017-06-02,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,buy,95714.0,8.14,779111.9600000001
+2017-06-02,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,33400.0,49.7375,1661232.5
+2017-06-02,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,sell,104223.0,50.0002,5211170.8445999995
+2017-08-02,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,50000.0,50.3514,2517570.0
+2017-08-11,AAL,"LEIBMAN, MAYA",EVP Chief Information Officer,True,Common Stock,sell,10000.0,47.9737,479737.0
+2017-09-14,AAL,"ROBINSON, RAY M",Director,True,Common Stock,sell,3100.0,46.756,144943.6
+2017-09-14,AAL,"ROBINSON, RAY M",Director,True,Common Stock,sell,376.0,46.753,17579.128
+2017-10-18,AAL,"ISOM, ROBERT D JR",President,True,Common Stock,sell,5491.0,52.03,285696.73
+2017-11-17,AAL,"IBARGUEN, ALBERTO",Director,True,Common Stock,sell,4229.0,47.6,201300.4
+2017-11-23,AAL,"LEIBMAN, MAYA",EVP Chief Information Officer,True,Common Stock,sell,1653.0,48.66,80434.98
+2018-01-02,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,buy,196820.0,8.84,1739888.8
+2018-01-02,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,buy,240536.0,8.14,1957963.04
+2018-01-02,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,142119.0,52.33,7437087.27
+2018-01-02,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,224572.0,52.3219,11750033.7268
+2018-01-02,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,70665.0,52.33,3697899.4499999997
+2018-01-29,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,sell,39662.0,52.7722,2093050.9963999998
+2018-01-29,AAL,"KRAEMER, RICHARD C",Director,True,Common Stock,sell,3000.0,52.7131,158139.3
+2018-02-05,AAL,"HART, MATTHEW J",Director,True,Common Stock,sell,35182.0,51.9015,1825998.5729999999
+2018-04-15,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,sell,9132.0,45.87,418884.83999999997
+2018-04-15,AAL,"ISOM, ROBERT D JR",President,True,Common Stock,sell,12393.0,45.87,568466.9099999999
+2018-04-15,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,9084.0,45.87,416683.07999999996
+2018-04-15,AAL,"LEIBMAN, MAYA",EVP Chief Information Officer,True,Common Stock,sell,7045.0,45.87,323154.14999999997
+2018-04-15,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,sell,9084.0,45.87,416683.07999999996
+2018-04-20,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,4094.0,46.78,191517.32
+2018-04-20,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,sell,4094.0,46.78,191517.32
+2018-04-20,AAL,"LEIBMAN, MAYA",EVP Chief Information Officer,True,Common Stock,sell,4094.0,46.78,191517.32
+2018-04-20,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,sell,4094.0,46.78,191517.32
+2018-04-20,AAL,"ISOM, ROBERT D JR",President,True,Common Stock,sell,4912.0,46.78,229783.36000000002
+2018-04-20,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,54008.0,46.78,2526494.24
+2018-04-24,AAL,"ISOM, ROBERT D JR",President,True,Common Stock,sell,5000.0,46.72,233600.0
+2018-04-25,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,sell,7463.0,45.25,337700.75
+2018-04-25,AAL,"ISOM, ROBERT D JR",President,True,Common Stock,sell,14071.0,45.25,636712.75
+2018-04-25,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,29334.0,45.25,1327363.5
+2018-04-25,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,sell,7463.0,45.25,337700.75
+2018-04-25,AAL,"LEIBMAN, MAYA",EVP Chief Information Officer,True,Common Stock,sell,7463.0,45.25,337700.75
+2018-04-25,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,7463.0,45.25,337700.75
+2018-05-22,AAL,"ISOM, ROBERT D JR",President,True,Common Stock,sell,10000.0,45.0,450000.0
+2018-10-18,AAL,"ISOM, ROBERT D JR",President,True,Common Stock,sell,5150.0,32.06,165109.0
+2018-10-29,AAL,"CAHILL, JOHN T",Director,True,Common Stock,buy,25000.0,33.4705,836762.5
+2018-11-19,AAL,"BENJAMIN, JEFFREY D",Director,True,Common Stock,buy,15000.0,35.6867,535300.5
+2018-11-23,AAL,"LEIBMAN, MAYA",EVP Chief Information Officer,True,Common Stock,sell,1551.0,37.95,58860.450000000004
+2019-02-14,AAL,"LEIBMAN, MAYA",EVP Chief Information Officer,True,Common Stock,sell,560.0,36.59,20490.4
+2019-02-20,AAL,"ISOM, ROBERT D JR",President,True,Common Stock,sell,8808.0,35.06,308808.48000000004
+2019-02-20,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,sell,4323.0,35.06,151564.38
+2019-02-20,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,4323.0,35.06,151564.38
+2019-02-20,AAL,"LEIBMAN, MAYA",EVP Chief Information Officer,True,Common Stock,sell,4279.0,35.06,150021.74000000002
+2019-02-20,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,23159.0,35.06,811954.54
+2019-02-20,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,sell,4317.0,35.06,151354.02000000002
+2019-04-11,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,buy,117287.0,7.62,893726.9400000001
+2019-04-11,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,sell,26271.0,34.02,893739.42
+2019-04-11,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,66020.0,34.02,2246000.4000000004
+2019-04-11,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,buy,294748.0,7.62,2245979.7600000002
+2019-04-11,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,sell,35815.0,34.02,1218426.3
+2019-04-11,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,90005.0,34.02,3061970.1
+2019-04-20,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,sell,8899.0,34.37,305858.63
+2019-04-20,AAL,"ISOM, ROBERT D JR",President,True,Common Stock,sell,10678.0,34.37,367002.86
+2019-04-20,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,8899.0,34.37,305858.63
+2019-04-20,AAL,"LEIBMAN, MAYA",EVP Chief Information Officer,True,Common Stock,sell,8899.0,34.37,305858.63
+2019-04-20,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,sell,8899.0,34.37,305858.63
+2019-04-20,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,41053.0,34.37,1410991.6099999999
+2019-04-25,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,sell,3732.0,33.41,124686.11999999998
+2019-04-25,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,14667.0,33.41,490024.47
+2019-04-25,AAL,"LEIBMAN, MAYA",EVP Chief Information Officer,True,Common Stock,sell,3732.0,33.41,124686.11999999998
+2019-04-25,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,sell,3732.0,33.41,124686.11999999998
+2019-04-25,AAL,"ISOM, ROBERT D JR",President,True,Common Stock,sell,7036.0,33.41,235072.75999999998
+2019-04-25,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,3732.0,33.41,124686.11999999998
+2019-06-04,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,buy,5000.0,27.7163,138581.5
+2019-06-04,AAL,"ISOM, ROBERT D JR",President,True,Common Stock,buy,15000.0,27.75,416250.0
+2019-06-04,AAL,"LEIBMAN, MAYA",EVP Chief Information Officer,True,Common Stock,buy,5000.0,27.63,138150.0
+2019-06-04,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,buy,5000.0,27.7639,138819.5
+2019-06-04,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,buy,50000.0,28.0857,1404285.0
+2019-06-04,AAL,"CAHILL, JOHN T",Director,True,Common Stock,buy,25000.0,28.5989,714972.5
+2019-06-04,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,buy,5000.0,27.7639,138819.5
+2019-08-02,AAL,"ROBINSON, RAY M",Director,True,Common Stock,sell,6930.0,29.1115,201742.695
+2019-08-05,AAL,"EMBLER, MICHAEL J",Director,True,Common Stock,buy,4000.0,28.1799,112719.6
+2019-08-29,AAL,"ISOM, ROBERT D JR",President,True,Common Stock,buy,2500.0,26.3376,65844.0
+2019-10-18,AAL,"ISOM, ROBERT D JR",President,True,Common Stock,sell,5151.0,28.22,145361.22
+2019-10-28,AAL,"ALBAUGH, JAMES F",Director,True,Common Stock,buy,10000.0,31.407,314070.0
+2020-02-19,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,6489.0,28.33,183833.37
+2020-02-19,AAL,"ISOM, ROBERT D JR",President,True,Common Stock,sell,14344.0,28.33,406365.51999999996
+2020-02-19,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,33456.0,28.33,947808.48
+2020-02-19,AAL,"LEIBMAN, MAYA",EVP Chief Information Officer,True,Common Stock,sell,6492.0,28.33,183918.36
+2020-02-19,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,sell,6491.0,28.33,183890.03
+2020-02-19,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,sell,6489.0,28.33,183833.37
+2020-02-20,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,13615.0,28.51,388163.65
+2020-02-20,AAL,"LEIBMAN, MAYA",EVP Chief Information Officer,True,Common Stock,sell,2144.0,28.51,61125.44
+2020-02-20,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,sell,2144.0,28.51,61125.44
+2020-02-20,AAL,"ISOM, ROBERT D JR",President,True,Common Stock,sell,6531.0,28.51,186198.81
+2020-02-20,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,2144.0,28.51,61125.44
+2020-02-20,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,sell,2144.0,28.51,61125.44
+2020-02-24,AAL,"CAHILL, JOHN T",Director,True,Common Stock,buy,25000.0,25.1351,628377.5
+2020-02-28,AAL,"EMBLER, MICHAEL J",Director,True,Common Stock,buy,4000.0,19.328,77312.0
+2020-02-28,AAL,"CAHILL, JOHN T",Director,True,Common Stock,buy,25000.0,18.965,474125.0
+2020-04-25,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,6303.0,10.31,64983.93
+2020-04-25,AAL,"PARKER, W DOUGLAS","Director, Chairman and CEO",True,Common Stock,sell,29081.0,10.31,299825.11
+2020-04-25,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,sell,6303.0,10.31,64983.93
+2020-04-25,AAL,"ISOM, ROBERT D JR",President,True,Common Stock,sell,11883.0,10.31,122513.73000000001
+2020-04-25,AAL,"JOHNSON, STEPHEN L",EVP Corporate Affairs,True,Common Stock,sell,6303.0,10.31,64983.93
+2020-04-25,AAL,"LEIBMAN, MAYA",EVP Chief Information Officer,True,Common Stock,sell,6303.0,10.31,64983.93
+2021-02-18,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,8383.0,17.71,148462.93
+2021-02-18,AAL,"ISOM, ROBERT D JR",President,True,Common Stock,sell,16705.0,17.71,295845.55
+2021-02-18,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,sell,8391.0,17.71,148604.61000000002
+2021-02-19,AAL,"KERR, DEREK J",Executive VP and CFO,True,Common Stock,sell,3220.0,18.68,60149.6
+2021-02-19,AAL,"ISOM, ROBERT D JR",President,True,Common Stock,sell,9809.0,18.68,183232.12
+2021-02-19,AAL,"EBERWEIN, ELISE R",EVP People and Communications,True,Common Stock,sell,3220.0,18.68,60149.6
+2022-10-14,AAL,"AIYAR, PRIYA",EVP Chief Legal Officer,True,Common Stock,sell,5880.0,13.11,77086.8
+2022-10-14,AAL,"RAJA, VASU",EVP Chief Commercial Officer,True,Common Stock,sell,596.0,13.11,7813.5599999999995
+2022-10-18,AAL,"RAJA, VASU",EVP Chief Commercial Officer,True,Common Stock,sell,1851.0,13.59,25155.09
+2022-11-16,AAL,"SEYMOUR, DAVID",EVP Chief Operating Officer,True,Common Stock,sell,14308.0,14.09,201599.72
+2022-11-16,AAL,"RAJA, VASU",EVP Chief Commercial Officer,True,Common Stock,sell,2128.0,14.09,29983.52
+2022-11-16,AAL,"OWENS, ANGELA",VP Corporate Controller,True,Common Stock,sell,2046.0,14.09,28828.14
+2022-11-16,AAL,"AIYAR, PRIYA",EVP Chief Legal Officer,True,Common Stock,sell,7214.0,14.09,101645.26
+2022-11-18,AAL,"RAJA, VASU",EVP Chief Commercial Officer,True,Common Stock,sell,6609.0,14.29,94442.61
+2022-11-19,AAL,"OWENS, ANGELA",VP Corporate Controller,True,Common Stock,sell,3808.0,14.05,53502.4
+2022-11-19,AAL,"RAJA, VASU",EVP Chief Commercial Officer,True,Common Stock,sell,4113.0,14.05,57787.65
+2022-11-19,AAL,"AIYAR, PRIYA",EVP Chief Legal Officer,True,Common Stock,sell,12175.0,14.05,171058.75
+2022-11-19,AAL,"SEYMOUR, DAVID",EVP Chief Operating Officer,True,Common Stock,sell,27892.0,14.05,391882.60000000003
+2022-11-22,AAL,"RAJA, VASU",EVP Chief Commercial Officer,True,Common Stock,sell,12775.0,13.84,176806.0
+2022-12-01,AAL,"SEYMOUR, DAVID",EVP Chief Operating Officer,True,Common Stock,sell,1398.0,14.05,19641.9
+2022-12-01,AAL,"AIYAR, PRIYA",EVP Chief Legal Officer,True,Common Stock,sell,3209.0,14.05,45086.450000000004
+2023-01-31,AAL,"SEYMOUR, DAVID",EVP Chief Operating Officer,True,Common Stock,sell,74614.0,16.0255,1195726.6570000001
+2023-02-16,AAL,"ISOM, ROBERT D JR",CEO and President,True,Common Stock,sell,27791.0,16.39,455494.49
+2023-02-16,AAL,"AIYAR, PRIYA",EVP Chief Legal Officer,True,Common Stock,sell,1745.0,16.39,28600.55
+2023-02-16,AAL,"JOHNSON, STEPHEN L",EVP,True,Common Stock,sell,14311.0,16.39,234557.29
+2023-02-16,AAL,"PARKER, W DOUGLAS",Director,True,Common Stock,sell,50647.0,16.39,830104.3300000001
+2023-02-18,AAL,"OWENS, ANGELA",VP Corporate Controller,True,Common Stock,sell,1602.0,16.36,26208.719999999998
+2023-02-18,AAL,"RAJA, VASU",EVP Chief Commercial Officer,True,Common Stock,sell,3540.0,16.36,57914.4
+2023-02-18,AAL,"AIYAR, PRIYA",EVP Chief Legal Officer,True,Common Stock,sell,3273.0,16.36,53546.28
+2023-02-18,AAL,"MAY, DEVON E",EVP Chief Financial Officer,True,Common Stock,sell,3536.0,16.36,57848.96
+2023-02-18,AAL,"SEYMOUR, DAVID",EVP Chief Operating Officer,True,Common Stock,sell,6797.0,16.36,111198.92
+2023-02-24,AAL,"JOHNSON, STEPHEN L",EVP,True,Common Stock,sell,23518.0,15.56,365940.08
+2023-02-24,AAL,"PARKER, W DOUGLAS",Director,True,Common Stock,sell,26179.0,15.56,407345.24
+2023-02-24,AAL,"ISOM, ROBERT D JR","Director, CEO and President",True,Common Stock,sell,33903.0,15.56,527530.68
+2023-03-11,AAL,"JOHNSON, STEPHEN L",EVP,True,Common Stock,sell,12552.0,15.46,194053.92
+2023-03-11,AAL,"ISOM, ROBERT D JR","Director, CEO and President",True,Common Stock,sell,23627.0,15.46,365273.42000000004
+2023-03-11,AAL,"PARKER, W DOUGLAS",Director,True,Common Stock,sell,46033.0,15.46,711670.18
+2023-03-13,AAL,"RAJA, VASU",EVP Chief Commercial Officer,True,Common Stock,sell,9954.0,15.07,150006.78
+2023-05-01,AAL,"OWENS, ANGELA",SVP Corporate Controller,True,Common Stock,sell,21984.0,13.79,303159.36
+2023-05-12,AAL,"STEENLAND, DOUGLAS M",Director,True,Common Stock,sell,2000.0,13.8838,27767.600000000002
+2023-05-15,AAL,"STEENLAND, DOUGLAS M",Director,True,Common Stock,sell,1950.0,14.1,27495.0
+2023-11-16,AAL,"SEYMOUR, DAVID",EVP Chief Operating Officer,True,Common Stock,sell,15702.0,12.19,191407.38
+2023-11-16,AAL,"RAJA, VASU",EVP Chief Commercial Officer,True,Common Stock,sell,3438.0,12.19,41909.22
+2023-11-16,AAL,"OWENS, ANGELA",SVP Corporate Controller,True,Common Stock,sell,2046.0,12.19,24940.739999999998
+2023-11-16,AAL,"AIYAR, PRIYA",EVP Chief Legal Officer,True,Common Stock,sell,10413.0,12.19,126934.47
+2023-11-16,AAL,"MAY, DEVON E",EVP Chief Financial Officer,True,Common Stock,sell,8264.0,12.19,100738.15999999999
+2023-11-19,AAL,"AIYAR, PRIYA",EVP Chief Legal Officer,True,Common Stock,sell,7692.0,12.29,94534.68
+2023-11-19,AAL,"MAY, DEVON E",EVP Chief Financial Officer,True,Common Stock,sell,7692.0,12.29,94534.68
+2023-11-19,AAL,"RAJA, VASU",EVP Chief Commercial Officer,True,Common Stock,sell,3323.0,12.29,40839.67
+2023-11-19,AAL,"SEYMOUR, DAVID",EVP Chief Operating Officer,True,Common Stock,sell,14645.0,12.29,179987.05
+2023-11-19,AAL,"OWENS, ANGELA",SVP Corporate Controller,True,Common Stock,sell,1904.0,12.29,23400.16
+2023-11-20,AAL,"RAJA, VASU",EVP Chief Commercial Officer,True,Common Stock,sell,5298.0,12.23,64794.54
+2023-11-21,AAL,"RAJA, VASU",EVP Chief Commercial Officer,True,Common Stock,sell,5121.0,12.29,62937.09
+2023-12-12,AAL,"OWENS, ANGELA",SVP Corporate Controller,True,Common Stock,sell,2858.0,14.04,40126.32
+2023-12-12,AAL,"AIYAR, PRIYA",EVP Chief Legal Officer,True,Common Stock,sell,14549.0,14.04,204267.96
+2023-12-12,AAL,"SEYMOUR, DAVID",EVP Chief Operating Officer,True,Common Stock,sell,21985.0,14.04,308669.39999999997
+2023-12-12,AAL,"RAJA, VASU",EVP Chief Commercial Officer,True,Common Stock,sell,4896.0,14.04,68739.84
+2023-12-12,AAL,"MAY, DEVON E",EVP Chief Financial Officer,True,Common Stock,sell,11547.0,14.04,162119.88
+2023-12-14,AAL,"RAJA, VASU",EVP Chief Commercial Officer,True,Common Stock,sell,7545.0,14.3,107893.5
+2024-02-16,AAL,"AIYAR, PRIYA",EVP Chief Legal Officer,True,Common Stock,sell,1768.0,14.64,25883.52
+2024-02-16,AAL,"ISOM, ROBERT D JR","Director, CEO and President",True,Common Stock,sell,11478.0,14.64,168037.92
+2024-02-16,AAL,"JOHNSON, STEPHEN L",Vice Chair,False,Common Stock,sell,6976.0,14.64,102128.64
+2024-02-24,AAL,"JOHNSON, STEPHEN L",Vice Chair,False,Common Stock,sell,3497.0,15.13,52909.61
+2024-02-24,AAL,"ISOM, ROBERT D JR","Director, CEO and President",True,Common Stock,sell,5387.0,15.13,81505.31
+2024-05-02,AAL,"SEYMOUR, DAVID",EVP Chief Operating Officer,True,Common Stock,sell,26971.0,13.86,373818.06
+2024-05-02,AAL,"MAY, DEVON E",EVP Chief Financial Officer,True,Common Stock,sell,22256.0,13.86,308468.16
+2024-05-02,AAL,"RAJA, VASU",EVP Chief Commercial Officer,True,Common Stock,sell,26971.0,13.86,373818.06
+2024-05-02,AAL,"AIYAR, PRIYA",EVP Chief Legal Officer,True,Common Stock,sell,22256.0,13.86,308468.16
+2024-05-02,AAL,"OWENS, ANGELA",SVP Corporate Controller,True,Common Stock,sell,5011.0,13.86,69452.45999999999
+2024-07-12,AAL,"SEYMOUR, DAVID",EVP Chief Operating Officer,True,Common Stock,sell,3169.0,10.68,33844.92
+2024-07-12,AAL,"AIYAR, PRIYA",EVP Chief Legal Officer,True,Common Stock,sell,5182.0,10.68,55343.76
+2024-09-20,AAL,"JOHNSON, STEPHEN L",Vice Chair,False,Common Stock,sell,34360.0,11.01,378303.6
+2024-09-20,AAL,"JOHNSON, STEPHEN L",Vice Chair,False,Common Stock,sell,22392.0,11.01,246535.91999999998
+2024-09-20,AAL,"ISOM, ROBERT D JR","Director, CEO and President",True,Common Stock,sell,55239.0,11.01,608181.39
+2024-09-20,AAL,"ISOM, ROBERT D JR","Director, CEO and President",True,Common Stock,sell,111858.0,11.01,1231556.58
+2024-11-16,AAL,"AIYAR, PRIYA",EVP Chief Legal Officer,True,Common Stock,sell,10413.0,14.39,149843.07
+2024-11-16,AAL,"SEYMOUR, DAVID",EVP Chief Operating Officer,True,Common Stock,sell,15702.0,14.39,225951.78
+2024-11-16,AAL,"MAY, DEVON E",EVP Chief Financial Officer,True,Common Stock,sell,8264.0,14.39,118918.96
+2024-11-16,AAL,"OWENS, ANGELA",SVP Corporate Controller,True,Common Stock,sell,2046.0,14.39,29441.940000000002
+2024-12-12,AAL,"SEYMOUR, DAVID",EVP Chief Operating Officer,True,Common Stock,sell,21985.0,17.24,379021.39999999997
+2024-12-12,AAL,"OWENS, ANGELA",SVP Corporate Controller,True,Common Stock,sell,2898.0,17.24,49961.52
+2024-12-12,AAL,"AIYAR, PRIYA",EVP Chief Legal Officer,True,Common Stock,sell,14549.0,17.24,250824.75999999998
+2024-12-12,AAL,"MAY, DEVON E",EVP Chief Financial Officer,True,Common Stock,sell,11547.0,17.24,199070.27999999997
+2024-12-27,AAL,"ISOM, ROBERT D JR","Director, CEO and President",True,Common Stock,sell,102441.0,17.2149,1763511.5709
+2025-01-27,AAL,"OWENS, ANGELA",SVP Corporate Controller,True,Common Stock,sell,51906.0,17.1524,890312.4744
+2025-02-20,AAL,"MAY, DEVON E",EVP Chief Financial Officer,True,Common Stock,sell,16948.0,15.86,268795.27999999997
+2025-02-20,AAL,"JOHNSON, STEPHEN L",Vice Chair,False,Common Stock,sell,23744.0,15.86,376579.83999999997
+2025-02-20,AAL,"SEYMOUR, DAVID",EVP Chief Operating Officer,True,Common Stock,sell,16920.0,15.86,268351.2
+2025-02-20,AAL,"OWENS, ANGELA",SVP Corporate Controller,True,Common Stock,sell,5127.0,15.86,81314.22
+2025-02-27,AAL,"ISOM, ROBERT D JR","Director, CEO and President",True,Common Stock,sell,83719.0,14.53,1216437.0699999998
+2025-02-28,AAL,"ISOM, ROBERT D JR","Director, CEO and President",True,Common Stock,sell,50854.0,14.35,729754.9
+2025-02-28,AAL,"JOHNSON, STEPHEN L",Vice Chair,False,Common Stock,sell,35277.0,14.35,506224.95
+2025-02-28,AAL,"JOHNSON, STEPHEN L",Vice Chair,False,Common Stock,sell,37518.0,14.35,538383.2999999999
+2025-05-02,AAL,"OWENS, ANGELA",SVP Corporate Controller,True,Common Stock,sell,5011.0,10.52,52715.72
+2025-05-02,AAL,"SEYMOUR, DAVID",EVP Chief Operating Officer,True,Common Stock,sell,13895.0,10.52,146175.4
+2025-05-02,AAL,"MAY, DEVON E",EVP Chief Financial Officer,True,Common Stock,sell,11466.0,10.52,120622.31999999999
+2025-07-12,AAL,"SEYMOUR, DAVID",EVP Chief Operating Officer,True,Common Stock,sell,1633.0,12.22,19955.260000000002
+2025-09-20,AAL,"JOHNSON, STEPHEN L",Vice Chair,False,Common Stock,sell,17701.0,12.45,220377.44999999998
+2025-09-20,AAL,"ISOM, ROBERT D JR","Director, CEO and President",True,Common Stock,sell,57625.0,12.45,717431.25
+2025-09-20,AAL,"ISOM, ROBERT D JR","Director, CEO and President",True,Common Stock,sell,27620.0,12.45,343869.0
+2025-09-20,AAL,"JOHNSON, STEPHEN L",Vice Chair,False,Common Stock,sell,22392.0,12.45,278780.39999999997
+2025-12-09,AAL,"SEYMOUR, DAVID",EVP Chief Operating Officer,True,Common Stock,sell,62507.0,15.0109,938286.3263
+2025-12-12,AAL,"OWENS, ANGELA",SVP Corporate Controller,True,Common Stock,sell,4601.0,14.96,68830.96
+2025-12-12,AAL,"MAY, DEVON E",EVP Chief Financial Officer,True,Common Stock,sell,11547.0,14.96,172743.12
+2025-12-12,AAL,"SEYMOUR, DAVID",EVP Chief Operating Officer,True,Common Stock,sell,21985.0,14.96,328895.60000000003
+2025-12-16,AAL,"SEYMOUR, DAVID",EVP Chief Operating Officer,True,Common Stock,sell,25595.0,16.007,409699.16500000004
+2026-02-18,AAL,"ISOM, ROBERT D JR","Director, CEO and President",True,Common Stock,sell,45884.0,14.1,646964.4
+2026-02-18,AAL,"MAY, DEVON E",EVP Chief Financial Officer,True,Common Stock,sell,8670.0,14.1,122247.0
+2026-02-18,AAL,"SEYMOUR, DAVID",EVP Chief Operating Officer,True,Common Stock,sell,9055.0,14.1,127675.5
+2026-02-18,AAL,"JOHNSON, STEPHEN L",Vice Chair,False,Common Stock,sell,24449.0,14.1,344730.89999999997
+2026-02-18,AAL,"OWENS, ANGELA",SVP Corporate Controller,True,Common Stock,sell,11849.0,14.1,167070.9
+2026-02-20,AAL,"OWENS, ANGELA",SVP Corporate Controller,True,Common Stock,sell,7808.0,13.59,106110.72
+2026-02-20,AAL,"JOHNSON, STEPHEN L",Vice Chair,False,Common Stock,sell,17078.0,13.59,232090.02
+2026-02-20,AAL,"MAY, DEVON E",EVP Chief Financial Officer,True,Common Stock,sell,8350.0,13.59,113476.5
+2026-02-20,AAL,"SEYMOUR, DAVID",EVP Chief Operating Officer,True,Common Stock,sell,8350.0,13.59,113476.5
+2026-02-27,AAL,"ISOM, ROBERT D JR","Director, CEO and President",True,Common Stock,sell,48429.0,13.07,632967.03
+2026-05-01,AAL,"RICHMOND, ANTHONY J.","EVP, Chief Legal Officer",True,common stock,sell,70598.0,11.84,835880.32
+2026-05-02,AAL,"OWENS, ANGELA",SVP Corporate Controller,True,Common Stock,sell,8097.0,11.84,95868.48
+2026-05-02,AAL,"MAY, DEVON E",EVP Chief Financial Officer,True,Common Stock,sell,33721.0,11.84,399256.64
+2026-05-02,AAL,"SEYMOUR, DAVID",EVP Chief Operating Officer,True,Common Stock,sell,40865.0,11.84,483841.6

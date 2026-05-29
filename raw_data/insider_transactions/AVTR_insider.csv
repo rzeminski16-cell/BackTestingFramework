@@ -1,0 +1,478 @@
+date,symbol,insider_name,insider_title,is_executive,security_type,transaction_type,shares,price,value
+2019-05-17,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",sell,14049.0,14.0,196686.0
+2019-05-17,AVTR,"CONNOLLY, THOMAS",Director,True,"Common Stock, par value $0.01 per share",sell,14049.0,14.0,196686.0
+2019-05-17,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",buy,13099.0,14.0,183386.0
+2019-05-17,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",buy,13099.0,14.0,183386.0
+2019-05-17,AVTR,"CONNOLLY, THOMAS",Director,True,"Common Stock, par value $0.01 per share",buy,13099.0,14.0,183386.0
+2019-05-17,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",sell,14049.0,14.0,196686.0
+2019-05-21,AVTR,"NEW, MOUNTAIN INVESTMENTS III, LLC",10% Owner,False,Common Stock,sell,100.0,14.0,1400.0
+2019-08-06,AVTR,"CONNOLLY, THOMAS",Director,True,"Common Stock, par value $0.01 per share",sell,88.0,16.66,1466.08
+2019-08-06,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",sell,88.0,16.66,1466.08
+2019-08-06,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",buy,88.0,16.66,1466.08
+2019-08-06,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",buy,88.0,16.66,1466.08
+2019-08-06,AVTR,"CONNOLLY, THOMAS",Director,True,"Common Stock, par value $0.01 per share",buy,88.0,16.66,1466.08
+2019-08-06,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",sell,88.0,16.66,1466.08
+2019-08-12,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",sell,16245.0,16.5133,268258.55850000004
+2019-08-12,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",buy,16245.0,16.5133,268258.55850000004
+2019-08-12,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",buy,16245.0,16.5133,268258.55850000004
+2019-08-12,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",sell,16245.0,16.5133,268258.55850000004
+2019-08-12,AVTR,"CONNOLLY, THOMAS",Director,True,"Common Stock, par value $0.01 per share",buy,16245.0,16.5133,268258.55850000004
+2019-08-12,AVTR,"CONNOLLY, THOMAS",Director,True,"Common Stock, par value $0.01 per share",sell,16245.0,16.5133,268258.55850000004
+2019-09-06,AVTR,"CONNOLLY, THOMAS",Director,True,"Common Stock, par value $0.01 per share",sell,67437.0,16.5133,1113607.4121
+2019-09-06,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",buy,67437.0,16.5133,1113607.4121
+2019-09-06,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",buy,49200.0,17.0639,839543.88
+2019-09-06,AVTR,"CONNOLLY, THOMAS",Director,True,"Common Stock, par value $0.01 per share",buy,49200.0,17.0639,839543.88
+2019-09-06,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",sell,67437.0,16.5133,1113607.4121
+2019-09-06,AVTR,"CONNOLLY, THOMAS",Director,True,"Common Stock, par value $0.01 per share",sell,49200.0,17.0639,839543.88
+2019-09-06,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",sell,49200.0,17.0639,839543.88
+2019-09-06,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",buy,49200.0,17.0639,839543.88
+2019-09-06,AVTR,"CONNOLLY, THOMAS",Director,True,"Common Stock, par value $0.01 per share",buy,67437.0,16.5133,1113607.4121
+2019-09-06,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",sell,67437.0,16.5133,1113607.4121
+2019-09-06,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",buy,67437.0,16.5133,1113607.4121
+2019-09-06,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",sell,49200.0,17.0639,839543.88
+2019-09-09,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",buy,149694.0,16.4566,2463454.2804
+2019-09-09,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",buy,149694.0,16.4566,2463454.2804
+2019-09-09,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",sell,149694.0,16.4566,2463454.2804
+2019-09-09,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",sell,149694.0,16.4566,2463454.2804
+2019-09-09,AVTR,"CONNOLLY, THOMAS",Director,True,"Common Stock, par value $0.01 per share",buy,149694.0,16.4566,2463454.2804
+2019-09-09,AVTR,"CONNOLLY, THOMAS",Director,True,"Common Stock, par value $0.01 per share",sell,149694.0,16.4566,2463454.2804
+2019-09-25,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",sell,9922.0,14.8,146845.6
+2019-09-25,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",sell,3800.0,14.78,56164.0
+2019-09-25,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",buy,100.0,14.785,1478.5
+2019-09-25,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",buy,9922.0,14.8,146845.6
+2019-09-25,AVTR,"CONNOLLY, THOMAS",Director,True,"Common Stock, par value $0.01 per share",buy,3800.0,14.78,56164.0
+2019-09-25,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",buy,3800.0,14.78,56164.0
+2019-09-25,AVTR,"CONNOLLY, THOMAS",Director,True,"Common Stock, par value $0.01 per share",sell,3800.0,14.78,56164.0
+2019-09-25,AVTR,"CONNOLLY, THOMAS",Director,True,"Common Stock, par value $0.01 per share",buy,100.0,14.785,1478.5
+2019-09-25,AVTR,"CONNOLLY, THOMAS",Director,True,"Common Stock, par value $0.01 per share",sell,100.0,14.775,1477.5
+2019-09-25,AVTR,"CONNOLLY, THOMAS",Director,True,"Common Stock, par value $0.01 per share",sell,5164.0,14.79,76375.56
+2019-09-25,AVTR,"CONNOLLY, THOMAS",Director,True,"Common Stock, par value $0.01 per share",buy,4146.0,14.76,61194.96
+2019-09-25,AVTR,"CONNOLLY, THOMAS",Director,True,"Common Stock, par value $0.01 per share",buy,1768.0,14.7,25989.6
+2019-09-25,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",buy,100.0,14.775,1477.5
+2019-09-25,AVTR,"CONNOLLY, THOMAS",Director,True,"Common Stock, par value $0.01 per share",sell,9922.0,14.8,146845.6
+2019-09-25,AVTR,"CONNOLLY, THOMAS",Director,True,"Common Stock, par value $0.01 per share",buy,5164.0,14.79,76375.56
+2019-09-25,AVTR,"CONNOLLY, THOMAS",Director,True,"Common Stock, par value $0.01 per share",sell,100.0,14.785,1478.5
+2019-09-25,AVTR,"CONNOLLY, THOMAS",Director,True,"Common Stock, par value $0.01 per share",sell,1768.0,14.7,25989.6
+2019-09-25,AVTR,"CONNOLLY, THOMAS",Director,True,"Common Stock, par value $0.01 per share",buy,100.0,14.775,1477.5
+2019-09-25,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",sell,1768.0,14.7,25989.6
+2019-09-25,AVTR,"CONNOLLY, THOMAS",Director,True,"Common Stock, par value $0.01 per share",sell,4146.0,14.76,61194.96
+2019-09-25,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",buy,1768.0,14.7,25989.6
+2019-09-25,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",buy,4146.0,14.76,61194.96
+2019-09-25,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",sell,5164.0,14.79,76375.56
+2019-09-25,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",buy,100.0,14.775,1477.5
+2019-09-25,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",sell,100.0,14.775,1477.5
+2019-09-25,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",sell,100.0,14.785,1478.5
+2019-09-25,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",buy,5164.0,14.79,76375.56
+2019-09-25,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",buy,1768.0,14.7,25989.6
+2019-09-25,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",sell,1768.0,14.7,25989.6
+2019-09-25,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",sell,4146.0,14.76,61194.96
+2019-09-25,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",buy,3800.0,14.78,56164.0
+2019-09-25,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",buy,4146.0,14.76,61194.96
+2019-09-25,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",buy,100.0,14.785,1478.5
+2019-09-25,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",sell,100.0,14.785,1478.5
+2019-09-25,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",buy,5164.0,14.79,76375.56
+2019-09-25,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",sell,5164.0,14.79,76375.56
+2019-09-25,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",sell,4146.0,14.76,61194.96
+2019-09-25,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",sell,9922.0,14.8,146845.6
+2019-09-25,AVTR,"CONNOLLY, THOMAS",Director,True,"Common Stock, par value $0.01 per share",buy,9922.0,14.8,146845.6
+2019-09-25,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",sell,100.0,14.775,1477.5
+2019-09-25,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",sell,3800.0,14.78,56164.0
+2019-09-25,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",buy,9922.0,14.8,146845.6
+2020-02-18,AVTR,"OHRI, DEVASHISH","EVP, IMEA",True,Common Stock,sell,20000.0,17.54,350800.0
+2020-02-18,AVTR,"OHRI, DEVASHISH","EVP, IMEA",True,Common Stock,buy,20000.0,1.6,32000.0
+2020-03-10,AVTR,"GUPTA, RAJIV",Director,True,Common Stock,buy,143000.0,1.6,228800.0
+2020-03-12,AVTR,"STUBBLEFIELD, MICHAEL",CEO,True,Common Stock,buy,200000.0,1.6,320000.0
+2020-04-24,AVTR,"MCALLISTER, ERIC","EVP, CHRO",True,Common Stock,sell,8975.0,14.04,126008.99999999999
+2020-05-17,AVTR,"ECK, STEVEN W",SVP & Chief Accounting Officer,True,Common Stock,sell,573.0,17.86,10233.779999999999
+2020-05-17,AVTR,"OHRI, DEVASHISH","EVP, IMEA",True,Common Stock,sell,16791.0,17.86,299887.26
+2020-05-17,AVTR,"BROPHY, GERARD","EVP, Biopharma Production",True,Common Stock,sell,13790.0,17.86,246289.4
+2020-05-17,AVTR,"MILLER, JUSTIN",EVP & General Counsel,True,Common Stock,sell,9155.0,17.86,163508.3
+2020-05-17,AVTR,"BRAMWELL, JAMES","EVP, Strategic Partners",True,Common Stock,sell,12102.0,17.86,216141.72
+2020-05-17,AVTR,"SZLOSEK, THOMAS A",EVP & CFO,True,Common Stock,sell,21287.0,17.86,380185.82
+2020-05-17,AVTR,"STUBBLEFIELD, MICHAEL",CEO,True,Common Stock,sell,108700.0,17.86,1941382.0
+2020-05-17,AVTR,"COUTURIER, CHRISTOPHE","EVP, Services",True,Common Stock,sell,11189.0,17.86,199835.54
+2020-05-17,AVTR,"VANDERHAEGEN, FREDERIC","EVP, Europe",True,Common Stock,sell,2210.0,17.86,39470.6
+2020-05-17,AVTR,"MCALLISTER, ERIC","EVP, CHRO",True,Common Stock,sell,9155.0,17.86,163508.3
+2020-05-17,AVTR,"WONDRASCH, MICHAEL",EVP & CIO,True,Common Stock,sell,9155.0,17.86,163508.3
+2020-05-20,AVTR,"BROPHY, GERARD","EVP, Biopharma Production",True,Common Stock,sell,25495.0,17.36,442593.2
+2020-05-22,AVTR,"WONDRASCH, MICHAEL",EVP & CIO,True,Common Stock,sell,22987.0,17.82,409628.34
+2020-05-26,AVTR,"NEW, MOUNTAIN INVESTMENTS III, LLC",10% Owner,False,Common Stock,sell,20886424.0,15.9047,332192307.7928
+2020-05-29,AVTR,"OHRI, DEVASHISH","EVP, IMEA",True,Common Stock,buy,35000.0,1.6,56000.0
+2020-05-29,AVTR,"OHRI, DEVASHISH","EVP, IMEA",True,Common Stock,buy,30000.0,1.6,48000.0
+2020-05-29,AVTR,"OHRI, DEVASHISH","EVP, IMEA",True,Common Stock,sell,35000.0,19.07,667450.0
+2020-05-29,AVTR,"OHRI, DEVASHISH","EVP, IMEA",True,Common Stock,sell,30000.0,18.57,557100.0
+2020-06-11,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",buy,2055.0,16.92,34770.600000000006
+2020-06-11,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",sell,2055.0,16.92,34770.600000000006
+2020-06-11,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",sell,2055.0,16.92,34770.600000000006
+2020-06-11,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",buy,2055.0,16.92,34770.600000000006
+2020-06-12,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",buy,300.0,16.98,5094.0
+2020-06-12,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",sell,300.0,16.98,5094.0
+2020-06-12,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",sell,300.0,16.98,5094.0
+2020-06-12,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",buy,300.0,16.98,5094.0
+2020-06-18,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",sell,6798.0,17.51,119032.98000000001
+2020-06-18,AVTR,"CONNOLLY, THOMAS",Director,True,6.250% Series A Mandatory Convertible Preferred Stock,sell,630.0,59.4455,37450.665
+2020-06-18,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",sell,6798.0,17.51,119032.98000000001
+2020-06-18,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",buy,6798.0,17.51,119032.98000000001
+2020-06-18,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",buy,6798.0,17.51,119032.98000000001
+2020-06-18,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,6.250% Series A Mandatory Convertible Preferred Stock,buy,630.0,59.4455,37450.665
+2020-06-18,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,6.250% Series A Mandatory Convertible Preferred Stock,sell,630.0,59.4455,37450.665
+2020-06-18,AVTR,"CONNOLLY, THOMAS",Director,True,6.250% Series A Mandatory Convertible Preferred Stock,buy,630.0,59.4455,37450.665
+2020-06-18,AVTR,"NATAURI, JO",Director,True,6.250% Series A Mandatory Convertible Preferred Stock,buy,630.0,59.4455,37450.665
+2020-06-18,AVTR,"NATAURI, JO",Director,True,6.250% Series A Mandatory Convertible Preferred Stock,sell,630.0,59.4455,37450.665
+2020-06-23,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",buy,300.0,17.75,5325.0
+2020-06-23,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",sell,300.0,17.75,5325.0
+2020-06-23,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",buy,300.0,17.75,5325.0
+2020-06-23,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",sell,300.0,17.75,5325.0
+2020-06-25,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",sell,151.0,16.84,2542.84
+2020-06-25,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",buy,151.0,16.84,2542.84
+2020-06-25,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",buy,151.0,16.84,2542.84
+2020-06-25,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",sell,151.0,16.84,2542.84
+2020-06-30,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",buy,1103.0,17.1,18861.300000000003
+2020-06-30,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",buy,1103.0,17.1,18861.300000000003
+2020-06-30,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",buy,1910.0,17.1,32661.000000000004
+2020-06-30,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",sell,400.0,17.0,6800.0
+2020-06-30,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",sell,3653.0,17.1,62466.3
+2020-06-30,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",sell,400.0,17.0,6800.0
+2020-06-30,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",buy,400.0,17.0,6800.0
+2020-06-30,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",buy,400.0,17.0,6800.0
+2020-06-30,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",sell,3653.0,17.1,62466.3
+2020-06-30,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",buy,584.0,17.1,9986.400000000001
+2020-06-30,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",buy,1910.0,17.1,32661.000000000004
+2020-06-30,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",buy,584.0,17.1,9986.400000000001
+2020-07-01,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",sell,2006.0,16.99,34081.939999999995
+2020-07-01,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",buy,347.0,16.99,5895.53
+2020-07-01,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",sell,2006.0,16.99,34081.939999999995
+2020-07-01,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",buy,62.0,16.99,1053.3799999999999
+2020-07-01,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",sell,10000.0,17.0,170000.0
+2020-07-01,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",buy,62.0,16.99,1053.3799999999999
+2020-07-01,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",sell,13404.0,17.09,229074.36
+2020-07-01,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",sell,10000.0,17.0,170000.0
+2020-07-01,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",buy,347.0,16.99,5895.53
+2020-07-01,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",buy,436.0,16.99,7407.639999999999
+2020-07-01,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",buy,646.0,16.99,10975.539999999999
+2020-07-01,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",buy,436.0,16.99,7407.639999999999
+2020-07-01,AVTR,"GOLDMAN, SACHS &AMP; CO. LLC",10% Owner,False,"Common Stock, par value $0.01 per share",buy,646.0,16.99,10975.539999999999
+2020-07-01,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",sell,13404.0,17.09,229074.36
+2020-07-30,AVTR,"OHRI, DEVASHISH","EVP, IMEA",True,Common Stock,buy,35000.0,1.6,56000.0
+2020-07-30,AVTR,"OHRI, DEVASHISH","EVP, IMEA",True,Common Stock,sell,35000.0,21.37,747950.0
+2020-08-19,AVTR,"GUPTA, RAJIV",Director,True,Common Stock,buy,1147970.0,1.6,1836752.0
+2020-08-21,AVTR,"NEW, MOUNTAIN INVESTMENTS III, LLC",10% Owner,False,Common Stock,sell,25575472.0,19.5065,498887944.56799996
+2020-09-08,AVTR,"MILLER, JUSTIN",EVP & General Counsel,True,Common Stock,sell,22887.0,21.17,484517.79000000004
+2020-09-16,AVTR,"OHRI, DEVASHISH","EVP, IMEA",True,Common Stock,buy,35000.0,1.6,56000.0
+2020-09-16,AVTR,"OHRI, DEVASHISH","EVP, IMEA",True,Common Stock,sell,35000.0,23.02,805700.0
+2020-10-05,AVTR,"OHRI, DEVASHISH","EVP, IMEA",True,Common Stock,sell,50000.0,23.34,1167000.0
+2020-10-05,AVTR,"OHRI, DEVASHISH","EVP, IMEA",True,Common Stock,sell,18440.0,23.53,433893.2
+2020-10-05,AVTR,"OHRI, DEVASHISH","EVP, IMEA",True,Common Stock,buy,18440.0,1.6,29504.0
+2020-10-05,AVTR,"OHRI, DEVASHISH","EVP, IMEA",True,Common Stock,buy,35000.0,1.6,56000.0
+2020-10-05,AVTR,"OHRI, DEVASHISH","EVP, IMEA",True,Common Stock,sell,35000.0,23.47,821450.0
+2020-10-05,AVTR,"OHRI, DEVASHISH","EVP, IMEA",True,Common Stock,buy,50000.0,1.6,80000.0
+2020-11-10,AVTR,"NEW, MOUNTAIN INVESTMENTS III, LLC",10% Owner,False,Common Stock,sell,36016093.0,24.8081,893490836.7533
+2020-12-04,AVTR,"STUBBLEFIELD, MICHAEL","Director, President and CEO",True,Common Stock,buy,880601.0,1.6,1408961.6
+2020-12-04,AVTR,"STUBBLEFIELD, MICHAEL","Director, President and CEO",True,Common Stock,sell,412188.0,27.08,11162051.04
+2020-12-07,AVTR,"STUBBLEFIELD, MICHAEL","Director, President and CEO",True,Common Stock,buy,210369.0,1.6,336590.4
+2020-12-07,AVTR,"STUBBLEFIELD, MICHAEL","Director, President and CEO",True,Common Stock,sell,98452.0,27.45,2702507.4
+2020-12-11,AVTR,"SHAW, CHRISTI",Director,True,Common Stock,sell,14286.0,26.68,381150.48
+2020-12-21,AVTR,"BRAMWELL, JAMES","EVP, Strategic Partners",True,Common Stock,sell,10020.0,27.14,271942.8
+2020-12-31,AVTR,"ECK, STEVEN W",SVP & Chief Accounting Officer,True,Common Stock,sell,3052.0,28.15,85913.8
+2021-01-02,AVTR,"VANDERHAEGEN, FREDERIC","EVP, Europe",True,Common Stock,sell,1017.0,28.15,28628.55
+2021-01-02,AVTR,"SZLOSEK, THOMAS A",EVP & CFO,True,Common Stock,sell,8135.0,28.15,229000.25
+2021-01-02,AVTR,"BROPHY, GERARD","EVP, Biopharma Production",True,Common Stock,sell,6559.0,28.15,184635.84999999998
+2021-01-02,AVTR,"WONDRASCH, MICHAEL",EVP & CIO,True,Common Stock,sell,4083.0,28.15,114936.45
+2021-01-04,AVTR,"BROPHY, GERARD","EVP, Biopharma Production",True,Common Stock,sell,59418.0,27.84,1654197.1199999999
+2021-01-04,AVTR,"BROPHY, GERARD","EVP, Biopharma Production",True,Common Stock,buy,59418.0,18.45,1096262.0999999999
+2021-01-06,AVTR,"BROPHY, GERARD","EVP, Biopharma Production",True,Common Stock,sell,11509.0,27.24,313505.16
+2021-01-11,AVTR,"BRAMWELL, JAMES","EVP, Strategic Partners",True,Common Stock,sell,2505.0,30.0,75150.0
+2021-01-11,AVTR,"BROPHY, GERARD","EVP, Biopharma Production",True,Common Stock,sell,216332.0,30.08,6507266.56
+2021-01-11,AVTR,"BROPHY, GERARD","EVP, Biopharma Production",True,Common Stock,buy,216332.0,23.2,5018902.399999999
+2021-01-11,AVTR,"BROPHY, GERARD","EVP, Biopharma Production",True,Common Stock,sell,162248.0,30.04,4873929.92
+2021-01-11,AVTR,"BROPHY, GERARD","EVP, Biopharma Production",True,Common Stock,buy,162248.0,23.2,3764153.6
+2021-01-13,AVTR,"MURRAY, MARK CHRISTOPHER","EVP, Biomaterials & AT",True,Common Stock,sell,918.0,29.2,26805.6
+2021-02-05,AVTR,"WONDRASCH, MICHAEL",EVP & CIO,True,Common Stock,buy,40000.0,23.2,928000.0
+2021-02-05,AVTR,"WONDRASCH, MICHAEL",EVP & CIO,True,Common Stock,sell,40000.0,29.77,1190800.0
+2021-02-05,AVTR,"WONDRASCH, MICHAEL",EVP & CIO,True,Common Stock,sell,9468.0,29.77,281862.36
+2021-02-22,AVTR,"BRAMWELL, JAMES","EVP, Strategic Partners",True,Common Stock,sell,1216.0,28.69,34887.04
+2021-02-22,AVTR,"VANDERHAEGEN, FREDERIC","EVP, Europe",True,Common Stock,sell,398.0,28.69,11418.62
+2021-02-22,AVTR,"OHRI, DEVASHISH","EVP, IMEA",True,Common Stock,sell,1210.0,28.69,34714.9
+2021-02-22,AVTR,"SZLOSEK, THOMAS A",EVP & CFO,True,Common Stock,sell,2980.0,28.69,85496.2
+2021-02-22,AVTR,"MILLER, JUSTIN",EVP & General Counsel,True,Common Stock,sell,1350.0,28.69,38731.5
+2021-02-22,AVTR,"ECK, STEVEN W",SVP & Chief Accounting Officer,True,Common Stock,sell,449.0,28.69,12881.810000000001
+2021-02-22,AVTR,"COUTURIER, CHRISTOPHE","EVP, Services",True,Common Stock,sell,1313.0,28.69,37669.97
+2021-02-22,AVTR,"WONDRASCH, MICHAEL",EVP & CIO,True,Common Stock,sell,1209.0,28.69,34686.21
+2021-02-22,AVTR,"BROPHY, GERARD","EVP, Biopharma Production",True,Common Stock,sell,19769.0,28.62,565788.78
+2021-02-22,AVTR,"BROPHY, GERARD","EVP, Biopharma Production",True,Common Stock,buy,19769.0,17.67,349318.23000000004
+2021-02-22,AVTR,"BROPHY, GERARD","EVP, Biopharma Production",True,Common Stock,sell,3072.0,28.69,88135.68000000001
+2021-02-22,AVTR,"STUBBLEFIELD, MICHAEL","Director, President and CEO",True,Common Stock,sell,10141.0,28.69,290945.29000000004
+2021-02-24,AVTR,"BROPHY, GERARD","EVP, Biopharma Production",True,Common Stock,sell,3059.0,27.93,85437.87
+2021-02-24,AVTR,"ECK, STEVEN W",SVP & Chief Accounting Officer,True,Common Stock,sell,2577.0,27.94,72001.38
+2021-03-02,AVTR,"WONDRASCH, MICHAEL",EVP & CIO,True,Common Stock,sell,3036.0,28.71,87163.56
+2021-03-09,AVTR,"VANDERHAEGEN, FREDERIC","EVP, Europe",True,Common Stock,sell,10000.0,28.21,282100.0
+2021-04-12,AVTR,"VANDERHAEGEN, FREDERIC","EVP, Europe",True,Common Stock,sell,10000.0,31.75,317500.0
+2021-04-12,AVTR,"OHRI, DEVASHISH","EVP, IMEA",True,Common Stock,buy,100160.0,1.6,160256.0
+2021-04-12,AVTR,"VANDERHAEGEN, FREDERIC","EVP, Europe",True,Common Stock,sell,17075.0,31.83,543497.25
+2021-04-12,AVTR,"OHRI, DEVASHISH","EVP, IMEA",True,Common Stock,sell,100160.0,32.37,3242179.1999999997
+2021-04-12,AVTR,"MILLER, JUSTIN",EVP & General Counsel,True,Common Stock,sell,2895.0,31.75,91916.25
+2021-04-12,AVTR,"BRAMWELL, JAMES","EVP, Strategic Partners",True,Common Stock,sell,2505.0,32.0,80160.0
+2021-04-12,AVTR,"MILLER, JUSTIN",EVP & General Counsel,True,Common Stock,buy,100000.0,23.21,2321000.0
+2021-04-12,AVTR,"MILLER, JUSTIN",EVP & General Counsel,True,Common Stock,sell,100000.0,33.21,3321000.0
+2021-04-30,AVTR,"OHRI, DEVASHISH","EVP, IMEA",True,Common Stock,sell,53649.0,32.58,1747884.42
+2021-04-30,AVTR,"OHRI, DEVASHISH","EVP, IMEA",True,Common Stock,buy,53649.0,23.21,1245193.29
+2021-05-11,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",sell,2626771.0,30.68,80589334.28
+2021-05-11,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",buy,92661.0,30.86,2859518.46
+2021-05-11,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",sell,24729495.0,30.86,763152215.6999999
+2021-05-14,AVTR,"OHRI, DEVASHISH","EVP, IMEA",True,Common Stock,buy,25000.0,23.21,580250.0
+2021-05-14,AVTR,"OHRI, DEVASHISH","EVP, IMEA",True,Common Stock,sell,25000.0,31.5,787500.0
+2021-05-17,AVTR,"ECK, STEVEN W",SVP & Chief Accounting Officer,True,Common Stock,sell,553.0,30.9,17087.7
+2021-05-17,AVTR,"BROPHY, GERARD","EVP, Biopharma Production",True,Common Stock,sell,19683.0,30.9,608204.7
+2021-05-17,AVTR,"VANDERHAEGEN, FREDERIC","EVP, Europe",True,Common Stock,sell,2210.0,30.9,68289.0
+2021-05-17,AVTR,"WONDRASCH, MICHAEL",EVP & CIO,True,Common Stock,sell,13655.0,30.9,421939.5
+2021-05-17,AVTR,"OHRI, DEVASHISH","EVP, IMEA",True,Common Stock,sell,16793.0,30.9,518903.69999999995
+2021-05-17,AVTR,"BRAMWELL, JAMES","EVP, Strategic Partners",True,Common Stock,sell,14324.0,30.9,442611.6
+2021-05-17,AVTR,"SZLOSEK, THOMAS A",EVP & CFO,True,Common Stock,sell,23261.0,30.9,718764.9
+2021-05-17,AVTR,"MILLER, JUSTIN",EVP & General Counsel,True,Common Stock,sell,13655.0,30.9,421939.5
+2021-05-17,AVTR,"STUBBLEFIELD, MICHAEL","Director, President and CEO",True,Common Stock,sell,106200.0,30.9,3281580.0
+2021-05-20,AVTR,"BROPHY, GERARD","EVP, Biopharma Production",True,Common Stock,sell,19603.0,31.1,609653.3
+2021-05-20,AVTR,"MILLER, JUSTIN",EVP & General Counsel,True,Common Stock,sell,18488.0,31.12,575346.56
+2021-05-20,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,sell,25010.0,31.13,778561.2999999999
+2021-05-21,AVTR,"WONDRASCH, MICHAEL",EVP & CIO,True,Common Stock,sell,18488.0,31.41,580708.08
+2021-05-24,AVTR,"GUPTA, RAJIV",Director,True,Common Stock,sell,157571.0,31.57,4974516.47
+2021-05-24,AVTR,"OHRI, DEVASHISH","EVP, IMEA",True,Common Stock,buy,9124.0,17.67,161221.08000000002
+2021-05-24,AVTR,"OHRI, DEVASHISH","EVP, IMEA",True,Common Stock,sell,9124.0,31.75,289687.0
+2021-05-24,AVTR,"GUPTA, RAJIV",Director,True,Common Stock,sell,180000.0,31.74,5713200.0
+2021-05-26,AVTR,"OHRI, DEVASHISH","EVP, IMEA",True,Common Stock,sell,15000.0,31.87,478050.0
+2021-05-26,AVTR,"GUPTA, RAJIV",Director,True,Common Stock,sell,150000.0,31.89,4783500.0
+2021-05-26,AVTR,"OHRI, DEVASHISH","EVP, IMEA",True,Common Stock,buy,15000.0,23.21,348150.0
+2021-05-27,AVTR,"GUPTA, RAJIV",Director,True,Common Stock,sell,78109.0,31.94,2494801.46
+2021-05-27,AVTR,"OHRI, DEVASHISH","EVP, IMEA",True,Common Stock,buy,100000.0,23.21,2321000.0
+2021-05-27,AVTR,"OHRI, DEVASHISH","EVP, IMEA",True,Common Stock,sell,100000.0,31.99,3199000.0
+2021-06-08,AVTR,"STUBBLEFIELD, MICHAEL","Director, President and CEO",True,Common Stock,sell,152643.0,32.04,4890681.72
+2021-06-08,AVTR,"STUBBLEFIELD, MICHAEL","Director, President and CEO",True,Common Stock,buy,152643.0,3.13,477772.58999999997
+2021-06-09,AVTR,"STUBBLEFIELD, MICHAEL","Director, President and CEO",True,Common Stock,sell,235170.0,32.03,7532495.100000001
+2021-06-09,AVTR,"STUBBLEFIELD, MICHAEL","Director, President and CEO",True,Common Stock,buy,235170.0,3.13,736082.1
+2021-06-10,AVTR,"STUBBLEFIELD, MICHAEL","Director, President and CEO",True,Common Stock,buy,57375.0,4.19,240401.25000000003
+2021-06-10,AVTR,"STUBBLEFIELD, MICHAEL","Director, President and CEO",True,Common Stock,buy,42512.0,3.13,133062.56
+2021-06-10,AVTR,"STUBBLEFIELD, MICHAEL","Director, President and CEO",True,Common Stock,sell,42512.0,32.48,1380789.7599999998
+2021-06-10,AVTR,"STUBBLEFIELD, MICHAEL","Director, President and CEO",True,Common Stock,sell,57375.0,32.48,1863539.9999999998
+2021-06-25,AVTR,"GUPTA, RAJIV",Director,True,Common Stock,sell,68605.0,35.32,2423128.6
+2021-06-28,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,sell,28096.0,35.73,1003870.08
+2021-07-09,AVTR,"BRAMWELL, JAMES","EVP, Strategic Partners",True,Common Stock,sell,6110.0,35.56,217271.6
+2021-07-09,AVTR,"BRAMWELL, JAMES","EVP, Strategic Partners",True,Common Stock,sell,12221.0,35.64,435556.44
+2021-07-12,AVTR,"NATAURI, JO",Director,True,"Common Stock, par value $0.01 per share",buy,300.0,36.334,10900.2
+2021-07-20,AVTR,"BRAMWELL, JAMES","EVP, Strategic Partners",True,Common Stock,sell,6112.0,37.0,226144.0
+2021-07-30,AVTR,"BROPHY, GERARD","EVP, Biopharma Production",True,Common Stock,sell,81125.0,37.24,3021095.0
+2021-07-30,AVTR,"BROPHY, GERARD","EVP, Biopharma Production",True,Common Stock,buy,81125.0,23.2,1882100.0
+2021-08-20,AVTR,"GUPTA, RAJIV",Director,True,Common Stock,sell,100000.0,38.81,3881000.0
+2021-08-26,AVTR,"ECK, STEVEN W",SVP & Chief Accounting Officer,True,Common Stock,sell,17383.0,40.08,696710.64
+2021-09-01,AVTR,"GUPTA, RAJIV",Director,True,Common Stock,sell,100000.0,39.45,3945000.0000000005
+2021-09-20,AVTR,"STUBBLEFIELD, MICHAEL","Director, President and CEO",True,Common Stock,sell,141300.0,42.37,5986881.0
+2021-10-01,AVTR,"GUPTA, RAJIV",Director,True,Common Stock,sell,100000.0,39.94,3994000.0
+2021-11-01,AVTR,"GUPTA, RAJIV",Director,True,Common Stock,sell,100000.0,40.31,4031000.0
+2021-11-11,AVTR,"VANDERHAEGEN, FREDERIC","EVP, Europe",True,Common Stock,sell,60804.0,38.41,2335481.6399999997
+2021-11-12,AVTR,"VANDERHAEGEN, FREDERIC","EVP, Europe",True,Common Stock,buy,80000.0,23.2,1856000.0
+2021-11-12,AVTR,"VANDERHAEGEN, FREDERIC","EVP, Europe",True,Common Stock,sell,80000.0,38.25,3060000.0
+2021-12-01,AVTR,"GUPTA, RAJIV",Director,True,Common Stock,sell,100000.0,39.3,3929999.9999999995
+2021-12-08,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,sell,5828.0,40.0,233120.0
+2021-12-08,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,buy,5828.0,17.67,102980.76000000001
+2021-12-09,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,sell,7859.0,40.24,316246.16000000003
+2021-12-09,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,buy,7859.0,17.67,138868.53000000003
+2021-12-21,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,buy,38309.0,23.21,889151.89
+2021-12-21,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,sell,38309.0,41.0,1570669.0
+2021-12-22,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,sell,28125.0,41.53,1168031.25
+2021-12-22,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,buy,28125.0,23.21,652781.25
+2021-12-27,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,sell,10184.0,41.63,423959.92000000004
+2021-12-27,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,buy,10184.0,23.21,236370.64
+2021-12-31,AVTR,"HENSON, MEGHAN","EVP, Chief HR Officer",True,Common Stock,sell,1877.0,42.14,79096.78
+2021-12-31,AVTR,"LEWIS, SHERI","EVP, Global Ops & Supply Chain",True,Common Stock,sell,4093.0,42.14,172479.02
+2022-01-02,AVTR,"BROPHY, GERARD","EVP, Biopharma Production",True,Common Stock,sell,6516.0,42.14,274584.24
+2022-01-02,AVTR,"WONDRASCH, MICHAEL",EVP & CIO,True,Common Stock,sell,9517.0,42.14,401046.38
+2022-01-02,AVTR,"VANDERHAEGEN, FREDERIC","EVP, Europe",True,Common Stock,sell,1017.0,42.14,42856.38
+2022-01-02,AVTR,"SZLOSEK, THOMAS A",EVP & CFO,True,Common Stock,sell,8101.0,42.14,341376.14
+2022-01-03,AVTR,"BROPHY, GERARD","EVP, Biopharma Production",True,Common Stock,sell,59418.0,40.77,2422471.8600000003
+2022-01-03,AVTR,"BROPHY, GERARD","EVP, Biopharma Production",True,Common Stock,buy,59418.0,18.45,1096262.0999999999
+2022-01-05,AVTR,"BROPHY, GERARD","EVP, Biopharma Production",True,Common Stock,sell,11551.0,38.65,446446.14999999997
+2022-01-13,AVTR,"MURRAY, MARK CHRISTOPHER","EVP, Biomaterials & AT",True,Common Stock,sell,918.0,37.5,34425.0
+2022-02-20,AVTR,"VANDERHAEGEN, FREDERIC","EVP, Europe",True,Common Stock,sell,398.0,28.69,11418.62
+2022-02-20,AVTR,"BROPHY, GERARD","EVP, Biopharma Production",True,Common Stock,sell,3072.0,34.0,104448.0
+2022-02-20,AVTR,"ECK, STEVEN W",SVP & Chief Accounting Officer,True,Common Stock,sell,448.0,34.0,15232.0
+2022-02-20,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,sell,1267.0,34.0,43078.0
+2022-02-20,AVTR,"MILLER, JUSTIN",EVP & General Counsel,True,Common Stock,sell,1328.0,34.0,45152.0
+2022-02-20,AVTR,"STUBBLEFIELD, MICHAEL","Director, President and CEO",True,Common Stock,sell,10959.0,34.0,372606.0
+2022-02-20,AVTR,"SZLOSEK, THOMAS A",EVP & CFO,True,Common Stock,sell,4040.0,34.0,137360.0
+2022-02-23,AVTR,"BROPHY, GERARD","EVP, Biopharma Production",True,Common Stock,sell,3059.0,33.79,103363.61
+2022-02-25,AVTR,"SZLOSEK, THOMAS A",EVP & CFO,True,Common Stock,sell,2043.0,35.39,72301.77
+2022-02-25,AVTR,"VANDERHAEGEN, FREDERIC","EVP, Americas & Europe",True,Common Stock,sell,216.0,35.39,7644.24
+2022-02-25,AVTR,"LEWIS, SHERI","EVP, Global Ops & Supply Chain",True,Common Stock,sell,1137.0,35.39,40238.43
+2022-02-25,AVTR,"HENSON, MEGHAN","EVP, Chief HR Officer",True,Common Stock,sell,931.0,35.39,32948.090000000004
+2022-02-25,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,sell,467.0,35.39,16527.13
+2022-02-25,AVTR,"MILLER, JUSTIN",EVP & General Counsel,True,Common Stock,sell,583.0,35.39,20632.37
+2022-02-25,AVTR,"STUBBLEFIELD, MICHAEL","Director, CEO",True,Common Stock,sell,7866.0,35.39,278377.74
+2022-02-25,AVTR,"ECK, STEVEN W",SVP & Chief Accounting Officer,True,Common Stock,sell,518.0,35.39,18332.02
+2022-02-25,AVTR,"BROPHY, GERARD","EVP, Biopharma Production",True,Common Stock,sell,2043.0,35.39,72301.77
+2022-03-01,AVTR,"BROPHY, GERARD","EVP, Biopharma Production",True,Common Stock,sell,2027.0,34.47,69870.69
+2022-04-05,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,sell,568.0,31.62,17960.16
+2022-05-17,AVTR,"BROPHY, GERARD","EVP, Biopharma Production",True,Common Stock,sell,19683.0,31.33,616668.39
+2022-05-17,AVTR,"STUBBLEFIELD, MICHAEL","Director, President and CEO",True,Common Stock,sell,108700.0,31.33,3405571.0
+2022-05-17,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,sell,16212.0,31.33,507921.95999999996
+2022-05-17,AVTR,"ECK, STEVEN W",SVP & Chief Accounting Officer,True,Common Stock,sell,573.0,31.33,17952.09
+2022-05-17,AVTR,"VANDERHAEGEN, FREDERIC","EVP, Americas & Europe",True,Common Stock,sell,2210.0,31.33,69239.3
+2022-05-17,AVTR,"SZLOSEK, THOMAS A",EVP & CFO,True,Common Stock,sell,23261.0,31.33,728767.13
+2022-05-17,AVTR,"MILLER, JUSTIN",EVP & General Counsel,True,Common Stock,sell,12935.0,31.33,405253.55
+2022-05-20,AVTR,"BROPHY, GERARD","EVP, Biopharma Production",True,Common Stock,sell,19603.0,31.27,612985.8099999999
+2022-05-23,AVTR,"VANDERHAEGEN, FREDERIC","EVP, Americas & Europe",True,Common Stock,sell,39000.0,31.61,1232790.0
+2022-11-16,AVTR,"SZLOSEK, THOMAS A",EVP & CFO,True,Common Stock,buy,12500.0,20.708,258849.99999999997
+2022-11-16,AVTR,"STUBBLEFIELD, MICHAEL","Director, CEO",True,Common Stock,buy,15000.0,20.95,314250.0
+2022-12-31,AVTR,"LEWIS, SHERI","EVP, Global Ops & Supply Chain",True,Common Stock,sell,6075.0,21.09,128121.75
+2022-12-31,AVTR,"HENSON, MEGHAN","EVP, Chief HR Officer",True,Common Stock,sell,1790.0,21.09,37751.1
+2023-01-02,AVTR,"VANDERHAEGEN, FREDERIC","EVP, Americas & Europe",True,Common Stock,sell,1017.0,21.09,21448.53
+2023-01-02,AVTR,"BROPHY, GERARD","EVP, Biopharma Production",True,Common Stock,sell,6727.0,21.09,141872.43
+2023-01-02,AVTR,"SZLOSEK, THOMAS A",EVP & CFO,True,Common Stock,sell,8313.0,21.09,175321.17
+2023-01-31,AVTR,"BROPHY, GERARD","EVP, Biopharma Production",True,Common Stock,sell,15221.0,23.9,363781.89999999997
+2023-01-31,AVTR,"SZLOSEK, THOMAS A",EVP & CFO,True,Common Stock,sell,24187.0,23.9,578069.2999999999
+2023-01-31,AVTR,"MILLER, JUSTIN",EVP & General Counsel,True,Common Stock,sell,7942.0,23.9,189813.8
+2023-01-31,AVTR,"VANDERHAEGEN, FREDERIC","EVP, Americas & Europe",True,Common Stock,sell,2515.0,23.9,60108.5
+2023-01-31,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,sell,7658.0,23.9,183026.19999999998
+2023-01-31,AVTR,"STUBBLEFIELD, MICHAEL","Director, CEO",True,Common Stock,sell,91140.0,23.9,2178246.0
+2023-02-02,AVTR,"BROPHY, GERARD","EVP, Biopharma Production",True,Common Stock,sell,11339.0,25.06,284155.33999999997
+2023-02-20,AVTR,"STUBBLEFIELD, MICHAEL","Director, President & CEO",True,Common Stock,sell,15026.0,24.54,368738.04
+2023-02-20,AVTR,"ECK, STEVEN W",SVP & Chief Accounting Officer,True,Common Stock,sell,435.0,24.54,10674.9
+2023-02-20,AVTR,"SZLOSEK, THOMAS A",EVP & CFO,True,Common Stock,sell,4253.0,24.54,104368.62
+2023-02-20,AVTR,"MILLER, JUSTIN",EVP & General Counsel,True,Common Stock,sell,1167.0,24.54,28638.18
+2023-02-20,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,sell,1167.0,24.54,28638.18
+2023-02-20,AVTR,"WONDRASCH, MICHAEL",EVP & CIO,True,Common Stock,sell,1356.0,24.54,33276.24
+2023-02-20,AVTR,"BROPHY, GERARD","EVP, Biopharma Production",True,Common Stock,sell,3072.0,24.54,75386.88
+2023-02-20,AVTR,"BRAMWELL, JAMES","EVP, Americas",True,Common Stock,sell,1066.0,24.54,26159.64
+2023-02-20,AVTR,"VANDERHAEGEN, FREDERIC","EVP, Americas & Europe",True,Common Stock,sell,398.0,24.54,9766.92
+2023-02-22,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,sell,19160.0,24.12,462139.2
+2023-02-23,AVTR,"LEWIS, SHERI","EVP, Global Ops & Supply Chain",True,Common Stock,sell,970.0,24.59,23852.3
+2023-02-23,AVTR,"SZLOSEK, THOMAS A",EVP & CFO,True,Common Stock,sell,2082.0,24.59,51196.38
+2023-02-23,AVTR,"HENSON, MEGHAN","EVP, Chief HR Officer",True,Common Stock,sell,816.0,24.59,20065.44
+2023-02-23,AVTR,"ECK, STEVEN W",SVP & Chief Accounting Officer,True,Common Stock,sell,421.0,24.59,10352.39
+2023-02-23,AVTR,"MILLER, JUSTIN",EVP & General Counsel,True,Common Stock,sell,468.0,24.59,11508.12
+2023-02-23,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,sell,416.0,24.59,10229.44
+2023-02-23,AVTR,"BROPHY, GERARD","EVP, Biopharma Production",True,Common Stock,sell,1893.0,24.59,46548.87
+2023-02-23,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,sell,3078.0,24.24,74610.72
+2023-02-23,AVTR,"VANDERHAEGEN, FREDERIC","EVP, Americas and Europe",True,Common Stock,sell,213.0,24.59,5237.67
+2023-02-23,AVTR,"STUBBLEFIELD, MICHAEL","Director, President & CEO",True,Common Stock,sell,7422.0,24.59,182506.98
+2023-02-23,AVTR,"BRAMWELL, JAMES","EVP, Americas",True,Common Stock,sell,569.0,24.59,13991.71
+2023-02-25,AVTR,"BRAMWELL, JAMES","EVP, Americas",True,Common Stock,sell,511.0,24.62,12580.82
+2023-02-25,AVTR,"HENSON, MEGHAN","EVP, Chief HR Officer",True,Common Stock,sell,800.0,24.62,19696.0
+2023-02-25,AVTR,"SZLOSEK, THOMAS A",EVP & CFO,True,Common Stock,sell,2040.0,24.62,50224.8
+2023-02-25,AVTR,"VANDERHAEGEN, FREDERIC","EVP, Americas and Europe",True,Common Stock,sell,299.0,24.62,7361.38
+2023-02-25,AVTR,"BROPHY, GERARD","EVP, Biopharma Production",True,Common Stock,sell,2040.0,24.62,50224.8
+2023-02-25,AVTR,"MILLER, JUSTIN",EVP & General Counsel,True,Common Stock,sell,560.0,24.62,13787.2
+2023-02-25,AVTR,"STUBBLEFIELD, MICHAEL","Director, President & CEO",True,Common Stock,sell,7685.0,24.62,189204.7
+2023-02-25,AVTR,"LEWIS, SHERI","EVP, Global Ops & Supply Chain",True,Common Stock,sell,1340.0,24.62,32990.8
+2023-02-25,AVTR,"ECK, STEVEN W",SVP & Chief Accounting Officer,True,Common Stock,sell,505.0,24.62,12433.1
+2023-02-25,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,sell,467.0,24.62,11497.54
+2023-02-27,AVTR,"BROPHY, GERARD","EVP, Biopharma Production",True,Common Stock,sell,3059.0,25.0,76475.0
+2023-02-28,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,sell,2324.0,24.32,56519.68
+2023-03-03,AVTR,"BROPHY, GERARD","EVP, Biopharma Production",True,Common Stock,sell,3914.0,25.0,97850.0
+2023-04-05,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,sell,569.0,20.82,11846.58
+2023-04-11,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,sell,1498.0,21.18,31727.64
+2023-05-17,AVTR,"SZLOSEK, THOMAS A",EVP & CFO,True,Common Stock,sell,23261.0,20.28,471733.08
+2023-05-17,AVTR,"ECK, STEVEN W",SVP & Chief Accounting Officer,True,Common Stock,sell,553.0,20.28,11214.84
+2023-05-17,AVTR,"BRAMWELL, JAMES","EVP, Strategic Partners",True,Common Stock,sell,18917.0,20.28,383636.76
+2023-05-17,AVTR,"VANDERHAEGEN, FREDERIC","EVP, Americas and Europe",True,Common Stock,sell,2210.0,20.28,44818.8
+2023-05-17,AVTR,"BROPHY, GERARD","EVP, Biopharma Production",True,Common Stock,sell,19683.0,20.28,399171.24000000005
+2023-05-17,AVTR,"STUBBLEFIELD, MICHAEL","Director, President & CEO",True,Common Stock,sell,106200.0,20.28,2153736.0
+2023-05-17,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,sell,15706.0,20.28,318517.68
+2023-05-17,AVTR,"MILLER, JUSTIN",EVP & General Counsel,True,Common Stock,sell,12449.0,20.28,252465.72
+2023-07-18,AVTR,"SAHIN, KITTY","EVP, Strategy&Corp Development",True,Common Stock,sell,3931.0,21.01,82590.31000000001
+2023-08-25,AVTR,"VANDERHAEGEN, FREDERIC","EVP, Americas and Europe",True,Common Stock,sell,25000.0,21.47,536750.0
+2023-09-05,AVTR,"HANKAMER, BRITTANY","EVP, Chief HR Officer",True,Common Stock,sell,309.0,21.7,6705.3
+2023-09-07,AVTR,"ECK, STEVEN W",SVP & Chief Accounting Officer,True,Common Stock,sell,7577.0,20.64,156389.28
+2023-12-31,AVTR,"LEWIS, SHERI","EVP, Global Ops & Supply Chain",True,Common Stock,sell,4556.0,22.83,104013.48
+2024-02-20,AVTR,"BRAMWELL, JAMES","EVP Sales, Customer Excellence",True,Common Stock,sell,1216.0,24.05,29244.8
+2024-02-20,AVTR,"STUBBLEFIELD, MICHAEL","Director, President & CEO",True,Common Stock,sell,9711.0,24.05,233549.55000000002
+2024-02-20,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,sell,1392.0,24.05,33477.6
+2024-02-20,AVTR,"HANKAMER, BRITTANY","EVP, Chief HR Officer",True,Common Stock,sell,289.0,24.05,6950.45
+2024-02-20,AVTR,"ECK, STEVEN W",SVP & Chief Accounting Officer,True,Common Stock,sell,435.0,24.05,10461.75
+2024-02-22,AVTR,"BRAMWELL, JAMES","EVP Sales, Customer Excellence",True,Common Stock,sell,2842.0,24.59,69884.78
+2024-02-22,AVTR,"STUBBLEFIELD, MICHAEL","Director, President & CEO",True,Common Stock,sell,41177.0,24.59,1012542.43
+2024-02-22,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,sell,2574.0,24.59,63294.659999999996
+2024-02-23,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,sell,416.0,24.35,10129.6
+2024-02-23,AVTR,"BRAMWELL, JAMES","EVP Sales, Customer Excellence",True,Common Stock,sell,569.0,24.35,13855.150000000001
+2024-02-23,AVTR,"HANKAMER, BRITTANY","EVP, Chief HR Officer",True,Common Stock,sell,421.0,24.35,10251.35
+2024-02-23,AVTR,"STUBBLEFIELD, MICHAEL","Director, President & CEO",True,Common Stock,sell,7422.0,24.35,180725.7
+2024-02-23,AVTR,"ECK, STEVEN W",SVP & Chief Accounting Officer,True,Common Stock,sell,422.0,24.35,10275.7
+2024-02-24,AVTR,"BRAMWELL, JAMES","EVP Sales, Customer Excellence",True,Common Stock,sell,1955.0,24.35,47604.25
+2024-02-24,AVTR,"HANKAMER, BRITTANY","EVP, Chief HR Officer",True,Common Stock,sell,437.0,24.35,10640.95
+2024-02-24,AVTR,"STUBBLEFIELD, MICHAEL","Director, President & CEO",True,Common Stock,sell,9595.0,24.35,233638.25
+2024-02-24,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,sell,648.0,24.35,15778.800000000001
+2024-02-24,AVTR,"ECK, STEVEN W",SVP & Chief Accounting Officer,True,Common Stock,sell,438.0,24.35,10665.300000000001
+2024-02-24,AVTR,"SAHIN, KITTY","EVP, Strategy&Corp Development",True,Common Stock,sell,1059.0,24.35,25786.65
+2024-02-25,AVTR,"BRAMWELL, JAMES","EVP Sales, Customer Excellence",True,Common Stock,sell,511.0,24.35,12442.85
+2024-02-25,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,sell,467.0,24.35,11371.45
+2024-02-25,AVTR,"ECK, STEVEN W",SVP & Chief Accounting Officer,True,Common Stock,sell,505.0,24.35,12296.75
+2024-02-25,AVTR,"HANKAMER, BRITTANY","EVP, Chief HR Officer",True,Common Stock,sell,369.0,24.35,8985.15
+2024-02-25,AVTR,"STUBBLEFIELD, MICHAEL","Director, President & CEO",True,Common Stock,sell,7685.0,24.35,187129.75
+2024-02-27,AVTR,"BRAMWELL, JAMES","EVP Sales, Customer Excellence",True,Common Stock,sell,6203.0,24.49,151911.47
+2024-02-29,AVTR,"BRAMWELL, JAMES","EVP Sales, Customer Excellence",True,Common Stock,sell,4910.0,24.52,120393.2
+2024-02-29,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,sell,13074.0,24.53,320705.22000000003
+2024-03-08,AVTR,"ECK, STEVEN W",SVP & Chief Accounting Officer,True,Common Stock,sell,3685.0,25.63,94446.55
+2024-04-05,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,sell,569.0,25.87,14720.03
+2024-04-16,AVTR,"STONE, RANDY LEE","EVP, Laboratory Solutions",True,Common Stock,sell,6762.0,24.6,166345.2
+2024-07-18,AVTR,"SAHIN, KITTY","EVP, Strategy&Corp Development",True,Common Stock,sell,3931.0,20.74,81528.93999999999
+2024-07-24,AVTR,"SOKENU, CLAUDIUS","EVP, Chief Legal & Compliance",True,Common Stock,sell,3122.0,22.37,69839.14
+2024-07-30,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,sell,10000.0,27.0,270000.0
+2024-07-31,AVTR,"ECK, STEVEN W",SVP & Chief Accounting Officer,True,Common Stock,sell,1337.0,26.75,35764.75
+2024-07-31,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,sell,100.0,28.0,2800.0
+2024-08-14,AVTR,"HANKAMER, BRITTANY","EVP, Chief HR Officer",True,Common Stock,sell,180.0,25.07,4512.6
+2024-09-05,AVTR,"ECK, STEVEN W",SVP & Chief Accounting Officer,True,Common Stock,sell,3525.0,25.06,88336.5
+2024-10-02,AVTR,"GOURDIER, BENOIT","EVP,  Bioscience Production",True,Common Stock,sell,1263.0,25.54,32257.02
+2025-02-23,AVTR,"GOURDIER, BENOIT","EVP,  Bioscience Production",True,Common Stock,sell,2842.0,17.3,49166.6
+2025-02-23,AVTR,"STUBBLEFIELD, MICHAEL","Director, President & CEO",True,Common Stock,sell,14674.0,17.3,253860.2
+2025-02-23,AVTR,"ECK, STEVEN W",SVP & Chief Accounting Officer,True,Common Stock,sell,1956.0,17.3,33838.8
+2025-02-23,AVTR,"SOKENU, CLAUDIUS","EVP, Chief Legal & Compliance",True,Common Stock,sell,2318.0,17.3,40101.4
+2025-02-23,AVTR,"BRAMWELL, JAMES","EVP Sales, Customer Excellence",True,Common Stock,sell,3443.0,17.3,59563.9
+2025-02-23,AVTR,"HANKAMER, BRITTANY","EVP, Chief HR Officer",True,Common Stock,sell,1537.0,17.3,26590.100000000002
+2025-02-23,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,sell,1506.0,17.3,26053.8
+2025-02-24,AVTR,"BRAMWELL, JAMES","EVP Sales, Customer Excellence",True,Common Stock,sell,2181.0,17.47,38102.07
+2025-02-24,AVTR,"STUBBLEFIELD, MICHAEL","Director, President & CEO",True,Common Stock,sell,6800.0,17.47,118795.99999999999
+2025-02-24,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,sell,750.0,17.47,13102.5
+2025-02-24,AVTR,"HANKAMER, BRITTANY","EVP, Chief HR Officer",True,Common Stock,sell,437.0,17.47,7634.389999999999
+2025-02-24,AVTR,"ECK, STEVEN W",SVP & Chief Accounting Officer,True,Common Stock,sell,439.0,17.47,7669.33
+2025-02-25,AVTR,"STUBBLEFIELD, MICHAEL","Director, President & CEO",True,Common Stock,sell,4969.0,17.56,87255.64
+2025-02-25,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,sell,556.0,17.56,9763.359999999999
+2025-02-25,AVTR,"ECK, STEVEN W",SVP & Chief Accounting Officer,True,Common Stock,sell,505.0,17.56,8867.8
+2025-02-25,AVTR,"BRAMWELL, JAMES","EVP Sales, Customer Excellence",True,Common Stock,sell,583.0,17.56,10237.48
+2025-02-25,AVTR,"HANKAMER, BRITTANY","EVP, Chief HR Officer",True,Common Stock,sell,369.0,17.56,6479.639999999999
+2025-02-26,AVTR,"ECK, STEVEN W",SVP & Chief Accounting Officer,True,Common Stock,sell,4907.0,17.53,86019.71
+2025-02-26,AVTR,"BRAMWELL, JAMES","EVP Sales, Customer Excellence",True,Common Stock,sell,3758.0,17.53,65877.74
+2025-02-27,AVTR,"ECK, STEVEN W",SVP & Chief Accounting Officer,True,Common Stock,sell,1033.0,17.0,17561.0
+2025-02-27,AVTR,"BRAMWELL, JAMES","EVP Sales, Customer Excellence",True,Common Stock,sell,774.0,17.0,13158.0
+2025-04-05,AVTR,"COUTURIER, CHRISTOPHE","EVP, AMEA",True,Common Stock,sell,569.0,15.13,8608.970000000001
+2025-04-28,AVTR,"KANG, LAN",Director,True,Common Stock,buy,5000.0,12.57,62850.0
+2025-04-28,AVTR,"SUMME, GREGORY L",Director,True,Common Stock,buy,25000.0,12.5,312500.0
+2025-04-28,AVTR,"PEACOCK, JONATHAN M",Director,True,Common Stock,buy,8091.0,12.81,103645.71
+2025-04-29,AVTR,"MASSARO, JOSEPH R",Director,True,Common Stock,buy,8100.0,12.3,99630.0
+2025-05-07,AVTR,"SUMME, GREGORY L",Director,True,Common Stock,buy,25000.0,12.0,300000.0
+2025-05-22,AVTR,"SUMME, GREGORY L",Director,True,Common Stock,buy,20000.0,12.65,253000.0
+2025-05-23,AVTR,"SUMME, GREGORY L",Director,True,Common Stock,buy,30000.0,12.5,375000.0
+2025-06-21,AVTR,"WALKER, COREY",President Laboratory Solutions,True,Common Stock,sell,2730.0,13.57,37046.1
+2025-07-24,AVTR,"SOKENU, CLAUDIUS","EVP, Chief Legal & Compliance",True,Common Stock,sell,3123.0,14.01,43753.229999999996
+2025-07-31,AVTR,"ECK, STEVEN W",SVP & Chief Accounting Officer,True,Common Stock,sell,1385.0,13.44,18614.399999999998
+2025-08-05,AVTR,"ECK, STEVEN W",SVP & Chief Accounting Officer,True,Common Stock,sell,3476.0,11.39,39591.64
+2025-08-14,AVTR,"HANKAMER, BRITTANY","EVP, Chief HR Officer",True,Common Stock,sell,181.0,12.98,2349.38
+2025-08-21,AVTR,"SUMME, GREGORY L",Director,True,Common Stock,buy,100000.0,12.56,1256000.0
+2025-10-02,AVTR,"GOURDIER, BENOIT","EVP,  Bioscience Production",True,Common Stock,sell,1264.0,13.77,17405.28
+2025-10-30,AVTR,"SUMME, GREGORY L",Director,True,Common Stock,buy,100000.0,11.25,1125000.0
+2025-11-17,AVTR,"LIGNER, EMMANUEL","Director, President and CEO",True,Common Stock,buy,87500.0,11.35,993125.0
+2025-12-05,AVTR,"MEHRA, SANJEEV K",Director,True,Common Stock,buy,350000.0,11.09,3881500.0
+2026-02-12,AVTR,"SUMME, GREGORY L",Director,True,Common Stock,buy,100000.0,9.4,940000.0
+2026-02-19,AVTR,"LUCIER, GREGORY T",Director,True,Common Stock,buy,50000.0,9.16,458000.0
+2026-02-20,AVTR,"GOURDIER, BENOIT","EVP,  Bioscience & Medtech",True,Common Stock,sell,4160.0,9.03,37564.799999999996
+2026-02-20,AVTR,"JONES, R. BRENT","EVP, Chief Financial Officer",True,Common Stock,sell,9506.0,9.03,85839.18
+2026-02-20,AVTR,"ECK, STEVEN W",SVP & Chief Accounting Officer,True,Common Stock,sell,2125.0,9.03,19188.75
+2026-02-20,AVTR,"HANKAMER, BRITTANY","EVP, Chief HR Officer",True,Common Stock,sell,1453.0,9.03,13120.589999999998
+2026-02-20,AVTR,"WALKER, COREY","President, VWR Dist. & Servs.",True,Common Stock,sell,4963.0,9.03,44815.89
+2026-02-20,AVTR,"SOKENU, CLAUDIUS","EVP, Chief Legal & Compliance",True,Common Stock,sell,2919.0,9.03,26358.57
+2026-02-23,AVTR,"ECK, STEVEN W",SVP & Chief Accounting Officer,True,Common Stock,sell,2017.0,8.89,17931.13
+2026-02-23,AVTR,"JONES, R. BRENT","EVP, Chief Financial Officer",True,Common Stock,sell,2805.0,8.89,24936.45
+2026-02-23,AVTR,"GOURDIER, BENOIT","EVP,  Bioscience & Medtech",True,Common Stock,sell,3029.0,8.89,26927.81
+2026-02-23,AVTR,"HANKAMER, BRITTANY","EVP, Chief HR Officer",True,Common Stock,sell,1324.0,8.89,11770.36
+2026-02-23,AVTR,"SOKENU, CLAUDIUS","EVP, Chief Legal & Compliance",True,Common Stock,sell,2376.0,8.89,21122.640000000003
+2026-02-24,AVTR,"ECK, STEVEN W",SVP & Chief Accounting Officer,True,Common Stock,sell,452.0,9.11,4117.719999999999
+2026-02-24,AVTR,"HANKAMER, BRITTANY","EVP, Chief HR Officer",True,Common Stock,sell,359.0,9.11,3270.49
+2026-03-10,AVTR,"MEHRA, SANJEEV K",Director,True,Common Stock,buy,125000.0,8.01,1001250.0
+2026-05-01,AVTR,"DINGEMANS, SIMON",Director,True,Common Stock,buy,25000.0,8.14,203500.0
+2026-05-08,AVTR,"LUCIER, GREGORY T",Director,True,Common Stock,buy,10000.0,8.32,83200.0

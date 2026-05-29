@@ -1,0 +1,955 @@
+date,symbol,insider_name,insider_title,is_executive,security_type,transaction_type,shares,price,value
+2014-02-21,ALLE,"LEWIS, RAYMOND H JR",Sr. V. President - HR & Comm.,True,Ordinary Shares,buy,1428.0,29.0956,41548.516800000005
+2014-02-21,ALLE,"LEWIS, RAYMOND H JR",Sr. V. President - HR & Comm.,True,Ordinary Shares,sell,1531.0,52.04,79673.24
+2014-02-22,ALLE,"LEWIS, RAYMOND H JR",Sr. V. President - HR & Comm.,True,Ordinary Shares,sell,151.0,52.27,7892.77
+2014-02-22,ALLE,"MUHLENKAMP, CHRIS E",Sr. Vice President,True,Ordinary Shares,sell,181.0,52.27,9460.87
+2014-02-22,ALLE,"ECKERSLEY, TIMOTHY P",Sr. Vice President,True,Ordinary Shares,sell,399.0,52.27,20855.73
+2014-02-22,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,sell,393.0,52.27,20542.11
+2014-02-22,ALLE,"SANTORO, BARBARA A",Sr. V. Pres./Sec./Gen. Counsel,False,Ordinary Shares,sell,246.0,52.27,12858.42
+2014-02-22,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Ordinary Shares,sell,123.0,52.27,6429.21
+2014-02-24,ALLE,"ECKERSLEY, TIMOTHY P",Sr. Vice President,True,Ordinary Shares,sell,529.0,52.72,27888.88
+2014-02-24,ALLE,"MUHLENKAMP, CHRIS E",Sr. Vice President,True,Ordinary Shares,sell,234.0,52.72,12336.48
+2014-02-24,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,sell,508.0,52.72,26781.76
+2014-02-24,ALLE,"LEWIS, RAYMOND H JR",Sr. V. President - HR & Comm.,True,Ordinary Shares,buy,1766.0,25.0173,44180.5518
+2014-02-24,ALLE,"SANTORO, BARBARA A",Sr. V. Pres./Sec./Gen. Counsel,False,Ordinary Shares,sell,281.0,52.72,14814.32
+2014-02-24,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Ordinary Shares,sell,167.0,52.72,8804.24
+2014-02-24,ALLE,"LEWIS, RAYMOND H JR",Sr. V. President - HR & Comm.,True,Ordinary Shares,sell,3058.0,52.36,160116.88
+2014-02-24,ALLE,"LEWIS, RAYMOND H JR",Sr. V. President - HR & Comm.,True,Ordinary Shares,buy,1553.0,32.3319,50211.4407
+2014-02-24,ALLE,"LEWIS, RAYMOND H JR",Sr. V. President - HR & Comm.,True,Ordinary Shares,sell,200.0,52.72,10544.0
+2014-02-25,ALLE,"LEWIS, RAYMOND H JR",Sr. V. President - HR & Comm.,True,Ordinary Shares,sell,252.0,53.0,13356.0
+2014-02-26,ALLE,"LEWIS, RAYMOND H JR",Sr. V. President - HR & Comm.,True,Ordinary Shares,sell,322.0,54.36,17503.92
+2014-03-11,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Stock Option (Right to Buy),buy,38344.0,54.125,2075369.0
+2014-03-11,ALLE,"YU, FENG WILLIAM",Sr. Vice President,True,Stock Option (Right to Buy),buy,1918.0,54.125,103811.75
+2014-03-11,ALLE,"ECKERSLEY, TIMOTHY P",Sr. Vice President,True,Stock Option (Right to Buy),buy,6391.0,54.125,345912.875
+2014-03-11,ALLE,"LEWIS, RAYMOND H JR",Sr. V. President - HR & Comm.,True,Stock Option (Right to Buy),buy,3835.0,54.125,207569.375
+2014-03-11,ALLE,"SANTORO, BARBARA A",Sr. V. Pres./Sec./Gen. Counsel,False,Stock Option (Right to Buy),buy,4793.0,54.125,259421.125
+2014-03-11,ALLE,"MUHLENKAMP, CHRIS E",Sr. Vice President,True,Stock Option (Right to Buy),buy,3835.0,54.125,207569.375
+2014-03-11,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Stock Option (Right to Buy),buy,9586.0,54.125,518842.25
+2014-03-11,ALLE,"ECKERSLEY, TIMOTHY P",Sr. Vice President,True,Ordinary Shares,sell,1574.0,54.2478,85386.03719999999
+2014-03-11,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Stock Option (Right to Buy),buy,1918.0,54.125,103811.75
+2014-03-31,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,buy,31.82,52.17,1660.0494
+2014-04-07,ALLE,"MUHLENKAMP, CHRIS E",Sr. Vice President,True,Ordinary Shares,sell,1809.0,52.765,95451.885
+2014-04-08,ALLE,"MORETTI, LUCIA V",Senior Vice President,True,Stock Option (Right to Buy),buy,3520.0,51.295,180558.4
+2014-04-09,ALLE,"SCHAFFER, DEAN I",Director,True,Ordinary Shares,buy,973.0,51.41,50021.93
+2014-08-01,ALLE,"CHESSER, MICHAEL J",Director,True,Ordinary Shares,buy,496.0,50.348,24972.608
+2014-08-01,ALLE,"CICO, CARLA",Director,True,Ordinary Shares,buy,496.0,50.348,24972.608
+2014-08-01,ALLE,"WELCH, MARTIN E",Director,True,Ordinary Shares,buy,496.0,50.348,24972.608
+2014-08-01,ALLE,"SCHAFFER, DEAN I",Director,True,Ordinary Shares,buy,496.0,50.348,24972.608
+2014-08-01,ALLE,"HACHIGIAN, KIRK S",Director,True,Ordinary Shares,buy,496.0,50.348,24972.608
+2014-11-01,ALLE,"ECKERSLEY, TIMOTHY P",Sr. Vice President,True,Ordinary Shares,sell,6574.0,53.72,353155.27999999997
+2014-11-17,ALLE,"LEWIS, RAYMOND H JR",Sr. V. President - HR & Comm.,True,Ordinary Shares (ESP),sell,783.5312,52.84,41401.788608
+2014-11-17,ALLE,"LEWIS, RAYMOND H JR",Sr. V. President - HR & Comm.,True,Phantom Stock Units,sell,679.5842,52.84,35909.229128000006
+2014-12-10,ALLE,"HACHIGIAN, KIRK S",Director,True,Ordinary Shares,sell,344.0,54.535,18760.039999999997
+2014-12-10,ALLE,"WELCH, MARTIN E",Director,True,Ordinary Shares,sell,344.0,54.535,18760.039999999997
+2014-12-10,ALLE,"CHESSER, MICHAEL J",Director,True,Ordinary Shares,sell,344.0,54.535,18760.039999999997
+2014-12-10,ALLE,"CICO, CARLA",Director,True,Ordinary Shares,sell,573.0,54.535,31248.554999999997
+2015-01-30,ALLE,"YU, FENG WILLIAM",Sr. Vice President,True,Ordinary Shares,sell,1418.0,54.52,77309.36
+2015-01-30,ALLE,"YU, FENG WILLIAM",Sr. Vice President,True,Ordinary Shares,buy,3253.0,23.7787,77352.11110000001
+2015-02-20,ALLE,"LEWIS, RAYMOND H JR",Sr. V. President - HR & Comm.,True,Ordinary Shares,sell,516.0,57.85,29850.600000000002
+2015-02-20,ALLE,"LEWIS, RAYMOND H JR",Sr. V. President - HR & Comm.,True,Ordinary Shares,sell,499.0,57.85,28867.15
+2015-02-20,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,5703.0,57.85,329918.55
+2015-02-20,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Ordinary Shares,sell,273.0,57.85,15793.050000000001
+2015-02-20,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,5885.0,57.85,340447.25
+2015-02-20,ALLE,"ECKERSLEY, TIMOTHY P",Sr. Vice President,True,Ordinary Shares,sell,792.0,57.85,45817.200000000004
+2015-02-20,ALLE,"KEMP, TRACY L",Sr. Vice President,True,Ordinary Shares,sell,270.0,57.85,15619.5
+2015-02-20,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,sell,1249.0,57.85,72254.65000000001
+2015-02-20,ALLE,"MUHLENKAMP, CHRIS E",Sr. Vice President,True,Ordinary Shares,sell,117.0,57.85,6768.45
+2015-02-20,ALLE,"MUHLENKAMP, CHRIS E",Sr. Vice President,True,Ordinary Shares,sell,114.0,57.85,6594.900000000001
+2015-02-20,ALLE,"KEMP, TRACY L",Sr. Vice President,True,Ordinary Shares,sell,263.0,57.85,15214.550000000001
+2015-02-20,ALLE,"ECKERSLEY, TIMOTHY P",Sr. Vice President,True,Ordinary Shares,sell,767.0,57.85,44370.950000000004
+2015-02-20,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Ordinary Shares,sell,282.0,57.85,16313.7
+2015-02-20,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,sell,1209.0,57.85,69940.65000000001
+2015-02-22,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,sell,383.0,57.85,22156.55
+2015-02-22,ALLE,"KEMP, TRACY L",Sr. Vice President,True,Ordinary Shares,sell,191.0,57.85,11049.35
+2015-02-22,ALLE,"ECKERSLEY, TIMOTHY P",Sr. Vice President,True,Ordinary Shares,sell,410.0,57.85,23718.5
+2015-02-22,ALLE,"LEWIS, RAYMOND H JR",Sr. V. President - HR & Comm.,True,Ordinary Shares,sell,181.0,57.85,10470.85
+2015-02-22,ALLE,"MUHLENKAMP, CHRIS E",Sr. Vice President,True,Ordinary Shares,sell,181.0,57.85,10470.85
+2015-02-22,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Ordinary Shares,sell,123.0,57.85,7115.55
+2015-02-24,ALLE,"ECKERSLEY, TIMOTHY P",Sr. Vice President,True,Ordinary Shares,sell,530.0,58.345,30922.85
+2015-02-24,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Ordinary Shares,sell,167.0,58.345,9743.615
+2015-02-24,ALLE,"MUHLENKAMP, CHRIS E",Sr. Vice President,True,Ordinary Shares,sell,215.0,58.345,12544.175
+2015-02-24,ALLE,"LEWIS, RAYMOND H JR",Sr. V. President - HR & Comm.,True,Ordinary Shares,sell,195.0,58.345,11377.275
+2015-02-24,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,sell,507.0,58.345,29580.915
+2015-02-24,ALLE,"KEMP, TRACY L",Sr. Vice President,True,Ordinary Shares,sell,212.0,58.345,12369.14
+2015-02-27,ALLE,"MUHLENKAMP, CHRIS E",Sr. Vice President,True,Ordinary Shares,buy,1732.49,58.115,100683.65635
+2015-03-06,ALLE,"LEWIS, RAYMOND H JR",Sr. V. President - HR & Comm.,True,Ordinary Shares,sell,1309.0,57.7296,75568.04639999999
+2015-03-06,ALLE,"LEWIS, RAYMOND H JR",Sr. V. President - HR & Comm.,True,Ordinary Shares,sell,2491.0,57.7442,143840.8022
+2015-03-06,ALLE,"LEWIS, RAYMOND H JR",Sr. V. President - HR & Comm.,True,Ordinary Shares,buy,1326.0,25.0173,33172.9398
+2015-03-06,ALLE,"LEWIS, RAYMOND H JR",Sr. V. President - HR & Comm.,True,Ordinary Shares,buy,1165.0,32.3319,37666.663499999995
+2015-03-11,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,2137.0,57.92,123775.04000000001
+2015-03-11,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Ordinary Shares,sell,68.0,57.92,3938.56
+2015-03-11,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,sell,535.0,57.92,30987.2
+2015-03-11,ALLE,"MUHLENKAMP, CHRIS E",Sr. Vice President,True,Ordinary Shares,sell,147.0,57.92,8514.24
+2015-03-11,ALLE,"BRAUN, JEFFREY N",SVP & General Counsel,True,Ordinary Shares,sell,98.0,57.92,5676.16
+2015-03-11,ALLE,"ECKERSLEY, TIMOTHY P",Sr. Vice President,True,Ordinary Shares,sell,357.0,57.92,20677.440000000002
+2015-03-11,ALLE,"LEWIS, RAYMOND H JR",Sr. V. President - HR & Comm.,True,Ordinary Shares,sell,147.0,57.92,8514.24
+2015-03-11,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Ordinary Shares,sell,63.0,57.92,3648.96
+2015-03-11,ALLE,"KEMP, TRACY L",Sr. Vice President,True,Ordinary Shares,sell,98.0,57.92,5676.16
+2015-03-12,ALLE,"CICO, CARLA",Director,True,Ordinary Shares,buy,426.0,58.4882,24915.9732
+2015-03-12,ALLE,"SCHAFFER, DEAN I",Director,True,Ordinary Shares,buy,426.0,58.4882,24915.9732
+2015-03-12,ALLE,"HACHIGIAN, KIRK S",Director,True,Ordinary Shares,buy,426.0,58.4882,24915.9732
+2015-03-12,ALLE,"ECKERSLEY, TIMOTHY P",Sr. Vice President,True,Ordinary Shares,sell,1000.0,58.0014,58001.399999999994
+2015-03-12,ALLE,"WELCH, MARTIN E",Director,True,Ordinary Shares,buy,426.0,58.4882,24915.9732
+2015-03-12,ALLE,"CHESSER, MICHAEL J",Director,True,Ordinary Shares,buy,426.0,58.4882,24915.9732
+2015-04-08,ALLE,"MORETTI, LUCIA V",Senior Vice President,True,Ordinary Shares,sell,193.0,60.11,11601.23
+2015-04-09,ALLE,"SCHAFFER, DEAN I",Director,True,Ordinary Shares,sell,281.0,61.47,17273.07
+2015-08-03,ALLE,"WELCH, MARTIN E",Director,True,Ordinary Shares,buy,408.0,62.9699,25691.7192
+2015-08-03,ALLE,"SCHAFFER, DEAN I",Director,True,Ordinary Shares,buy,407.0,62.9699,25628.7493
+2015-08-03,ALLE,"CHESSER, MICHAEL J",Director,True,Ordinary Shares,buy,395.0,62.9699,24873.110500000003
+2015-08-03,ALLE,"CICO, CARLA",Director,True,Ordinary Shares,buy,395.0,62.9699,24873.110500000003
+2015-08-03,ALLE,"HACHIGIAN, KIRK S",Director,True,Ordinary Shares,buy,395.0,62.9699,24873.110500000003
+2015-11-04,ALLE,"MUHLENKAMP, CHRIS E",Sr. Vice President,True,Ordinary Shares,buy,3106.0,32.3319,100422.8814
+2015-11-04,ALLE,"MUHLENKAMP, CHRIS E",Sr. Vice President,True,Ordinary Shares,buy,1278.0,54.125,69171.75
+2015-11-04,ALLE,"MUHLENKAMP, CHRIS E",Sr. Vice President,True,Ordinary Shares,sell,8278.0,64.52,534096.5599999999
+2015-11-04,ALLE,"MUHLENKAMP, CHRIS E",Sr. Vice President,True,Ordinary Shares,buy,361.0,25.0124,9029.4764
+2015-11-04,ALLE,"MUHLENKAMP, CHRIS E",Sr. Vice President,True,Ordinary Shares,buy,3533.0,25.0173,88386.1209
+2015-12-02,ALLE,"YU, FENG WILLIAM",Sr. Vice President,True,Ordinary Shares,sell,6508.0,67.85,441567.8
+2016-01-07,ALLE,"YU, FENG WILLIAM",Sr. Vice President,True,Ordinary Shares,sell,912.0,61.37,55969.439999999995
+2016-01-07,ALLE,"YU, FENG WILLIAM",Sr. Vice President,True,Ordinary Shares,buy,2310.0,24.2336,55979.615999999995
+2016-02-03,ALLE,"LEWIS, RAYMOND H JR",Sr. V. President - HR & Comm.,True,Ordinary Shares,sell,1039.0,58.595,60880.205
+2016-02-03,ALLE,"KEMP, TRACY L",Sr. Vice President,True,Ordinary Shares,sell,546.0,58.595,31992.87
+2016-02-03,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,sell,2581.0,58.595,151233.695
+2016-02-03,ALLE,"MUHLENKAMP, CHRIS E",Sr. Vice President,True,Ordinary Shares,sell,578.0,58.595,33867.909999999996
+2016-02-03,ALLE,"ECKERSLEY, TIMOTHY P",Sr. Vice President,True,Ordinary Shares,sell,852.0,58.595,49922.94
+2016-02-03,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Ordinary Shares,sell,547.0,58.595,32051.465
+2016-02-03,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,14605.0,58.595,855779.975
+2016-02-10,ALLE,"MORETTI, LUCIA V",Senior Vice President,True,Ordinary Shares,sell,1752.0,58.46,102421.92
+2016-02-12,ALLE,"HACHIGIAN, KIRK S",Director,True,Ordinary Shares,buy,22.0,57.89,1273.58
+2016-02-16,ALLE,"MORETTI, LUCIA V",Senior Vice President,True,Stock Option (Right to Buy),buy,4729.0,57.85,273572.65
+2016-02-16,ALLE,"BRAUN, JEFFREY N",SVP & General Counsel,True,Stock Option (Right to Buy),buy,6306.0,57.85,364802.10000000003
+2016-02-16,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Stock Option (Right to Buy),buy,47289.0,57.85,2735668.65
+2016-02-16,ALLE,"GRAVES, TODD V",Sr. Vice President,True,Stock Option (Right to Buy),buy,3941.0,57.85,227986.85
+2016-02-16,ALLE,"LEWIS, RAYMOND H JR",Sr. V. President - HR & Comm.,True,Stock Option (Right to Buy),buy,4729.0,57.85,273572.65
+2016-02-16,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Stock Option (Right to Buy),buy,11823.0,57.85,683960.55
+2016-02-16,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Stock Option (Right to Buy),buy,2207.0,57.85,127674.95
+2016-02-16,ALLE,"YU, FENG WILLIAM",Sr. Vice President,True,Stock Option (Right to Buy),buy,4729.0,57.85,273572.65
+2016-02-16,ALLE,"MUHLENKAMP, CHRIS E",Sr. Vice President,True,Stock Option (Right to Buy),buy,4729.0,57.85,273572.65
+2016-02-16,ALLE,"ECKERSLEY, TIMOTHY P",Sr. Vice President,True,Stock Option (Right to Buy),buy,7882.0,57.85,455973.7
+2016-02-16,ALLE,"KEMP, TRACY L",Sr. Vice President,True,Stock Option (Right to Buy),buy,3941.0,57.85,227986.85
+2016-02-20,ALLE,"GRAVES, TODD V",Sr. Vice President,True,Ordinary Shares,sell,89.0,58.385,5196.264999999999
+2016-02-20,ALLE,"ECKERSLEY, TIMOTHY P",Sr. Vice President,True,Ordinary Shares,sell,228.0,58.385,13311.779999999999
+2016-02-20,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,sell,342.0,58.385,19967.67
+2016-02-20,ALLE,"KEMP, TRACY L",Sr. Vice President,True,Ordinary Shares,sell,111.0,58.385,6480.735
+2016-02-20,ALLE,"MUHLENKAMP, CHRIS E",Sr. Vice President,True,Ordinary Shares,sell,133.0,58.385,7765.205
+2016-02-20,ALLE,"MORETTI, LUCIA V",Senior Vice President,True,Ordinary Shares,sell,186.0,58.17,10819.62
+2016-02-20,ALLE,"LEWIS, RAYMOND H JR",Sr. V. President - HR & Comm.,True,Ordinary Shares,sell,137.0,58.385,7998.745
+2016-02-20,ALLE,"BRAUN, JEFFREY N",SVP & General Counsel,True,Ordinary Shares,sell,160.0,58.385,9341.6
+2016-02-20,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Ordinary Shares,sell,74.0,58.385,4320.49
+2016-02-20,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,1999.0,58.385,116711.61499999999
+2016-02-22,ALLE,"ECKERSLEY, TIMOTHY P",Sr. Vice President,True,Ordinary Shares,sell,410.0,60.24,24698.4
+2016-02-22,ALLE,"LEWIS, RAYMOND H JR",Sr. V. President - HR & Comm.,True,Ordinary Shares,sell,155.0,60.24,9337.2
+2016-02-22,ALLE,"GRAVES, TODD V",Sr. Vice President,True,Ordinary Shares,sell,214.0,60.24,12891.36
+2016-02-22,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Ordinary Shares,sell,123.0,60.24,7409.52
+2016-02-22,ALLE,"KEMP, TRACY L",Sr. Vice President,True,Ordinary Shares,sell,159.0,60.24,9578.16
+2016-02-22,ALLE,"MUHLENKAMP, CHRIS E",Sr. Vice President,True,Ordinary Shares,sell,151.0,60.24,9096.24
+2016-02-22,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,sell,392.0,60.24,23614.08
+2016-02-29,ALLE,"YU, FENG WILLIAM",Sr. Vice President,True,Ordinary Shares,buy,596.0,63.59,37899.64
+2016-03-07,ALLE,"LEWIS, RAYMOND H JR",Sr. V. President - HR & Comm.,True,Ordinary Shares,buy,441.0,25.02,11033.82
+2016-03-07,ALLE,"LEWIS, RAYMOND H JR",Sr. V. President - HR & Comm.,True,Ordinary Shares,buy,1941.0,32.33,62752.53
+2016-03-07,ALLE,"LEWIS, RAYMOND H JR",Sr. V. President - HR & Comm.,True,Ordinary Shares,buy,1278.0,54.13,69178.14
+2016-03-07,ALLE,"LEWIS, RAYMOND H JR",Sr. V. President - HR & Comm.,True,Ordinary Shares,sell,5058.0,63.18,319564.44
+2016-03-07,ALLE,"LEWIS, RAYMOND H JR",Sr. V. President - HR & Comm.,True,Ordinary Shares,buy,1398.0,57.85,80874.3
+2016-03-11,ALLE,"MUHLENKAMP, CHRIS E",Sr. Vice President,True,Ordinary Shares,sell,147.0,63.655,9357.285
+2016-03-11,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Ordinary Shares,sell,68.0,63.655,4328.54
+2016-03-11,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,sell,535.0,63.655,34055.425
+2016-03-11,ALLE,"GRAVES, TODD V",Sr. Vice President,True,Ordinary Shares,sell,98.0,63.655,6238.1900000000005
+2016-03-11,ALLE,"ECKERSLEY, TIMOTHY P",Sr. Vice President,True,Ordinary Shares,sell,244.0,63.655,15531.82
+2016-03-11,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,2137.0,63.655,136030.73500000002
+2016-03-11,ALLE,"LEWIS, RAYMOND H JR",Sr. V. President - HR & Comm.,True,Ordinary Shares,sell,147.0,63.655,9357.285
+2016-03-11,ALLE,"BRAUN, JEFFREY N",SVP & General Counsel,True,Ordinary Shares,sell,98.0,63.655,6238.1900000000005
+2016-03-11,ALLE,"KEMP, TRACY L",Sr. Vice President,True,Ordinary Shares,sell,98.0,63.655,6238.1900000000005
+2016-04-06,ALLE,"ECKERSLEY, TIMOTHY P",Sr. Vice President,True,Ordinary Shares,sell,3587.0,65.99,236706.12999999998
+2016-05-05,ALLE,"LEWIS, RAYMOND H JR",Sr. V. President - HR & Comm.,True,Ordinary Shares,sell,4354.0,65.184,283811.136
+2016-05-10,ALLE,"LEWIS, RAYMOND H JR",Sr. V. President - HR & Comm.,True,Ordinary Shares,sell,1278.0,66.775,85338.45000000001
+2016-05-10,ALLE,"LEWIS, RAYMOND H JR",Sr. V. President - HR & Comm.,True,Ordinary Shares,buy,1278.0,54.125,69171.75
+2016-07-01,ALLE,"WELCH, MARTIN E",Director,True,Ordinary Shares,sell,334.0,68.925,23020.95
+2016-07-01,ALLE,"CHESSER, MICHAEL J",Director,True,Ordinary Shares,sell,334.0,68.925,23020.95
+2016-07-01,ALLE,"HACHIGIAN, KIRK S",Director,True,Ordinary Shares,sell,334.0,68.925,23020.95
+2016-07-01,ALLE,"CICO, CARLA",Director,True,Ordinary Shares,sell,557.0,67.96,37853.719999999994
+2016-07-01,ALLE,"SCHAFFER, DEAN I",Director,True,Ordinary Shares,sell,334.0,68.925,23020.95
+2016-07-29,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Ordinary Shares,buy,3178.0,25.0173,79504.9794
+2016-07-29,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Ordinary Shares,buy,1268.0,19.4509,24663.7412
+2016-07-29,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Ordinary Shares,buy,729.0,29.1191,21227.8239
+2016-07-29,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Ordinary Shares,buy,325.0,25.0279,8134.067499999999
+2016-07-29,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Ordinary Shares,buy,2000.0,26.7379,53475.8
+2016-07-29,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Ordinary Shares,sell,9300.0,72.9,677970.0
+2016-07-29,ALLE,"ECKERSLEY, TIMOTHY P",Sr. Vice President,True,Ordinary Shares,sell,10000.0,72.3614,723614.0
+2016-07-29,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Ordinary Shares,buy,1779.0,29.0956,51761.072400000005
+2016-08-01,ALLE,"YU, FENG WILLIAM",Sr. Vice President,True,Ordinary Shares,buy,21535.0,18.6969,402637.7415
+2016-08-01,ALLE,"YU, FENG WILLIAM",Sr. Vice President,True,Ordinary Shares,sell,21535.0,72.8,1567748.0
+2016-08-09,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,19564.0,71.025,1389533.1
+2016-11-02,ALLE,"YU, FENG WILLIAM",Sr. Vice President,True,Ordinary Shares,buy,1142.0,29.0956,33227.1752
+2016-11-02,ALLE,"YU, FENG WILLIAM",Sr. Vice President,True,Ordinary Shares,buy,2280.0,29.0956,66337.96800000001
+2016-11-02,ALLE,"YU, FENG WILLIAM",Sr. Vice President,True,Ordinary Shares,buy,2467.0,25.0173,61717.679099999994
+2016-11-02,ALLE,"YU, FENG WILLIAM",Sr. Vice President,True,Ordinary Shares,buy,1398.0,57.85,80874.3
+2016-11-02,ALLE,"YU, FENG WILLIAM",Sr. Vice President,True,Ordinary Shares,buy,1278.0,54.125,69171.75
+2016-11-02,ALLE,"YU, FENG WILLIAM",Sr. Vice President,True,Ordinary Shares,sell,11818.0,63.5178,750653.3604
+2016-11-02,ALLE,"YU, FENG WILLIAM",Sr. Vice President,True,Ordinary Shares,buy,3253.0,32.3319,105175.67069999999
+2016-12-13,ALLE,"MEADOR, SHELLEY A",V. President HR & Comm.,True,Ordinary Shares,sell,913.0,65.475,59778.674999999996
+2016-12-13,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Ordinary Shares,sell,990.0,65.475,64820.24999999999
+2016-12-17,ALLE,"MEADOR, SHELLEY A",V. President HR & Comm.,True,Ordinary Shares,sell,751.0,64.77,48642.27
+2017-02-02,ALLE,"GRAVES, TODD V",Sr. Vice President,True,Ordinary Shares,sell,584.0,65.405,38196.520000000004
+2017-02-02,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Ordinary Shares,sell,658.0,65.405,43036.49
+2017-02-02,ALLE,"MORETTI, LUCIA V",Senior Vice President,True,Ordinary Shares,sell,2310.0,65.81,152021.1
+2017-02-02,ALLE,"GRAVES, TODD V",Sr. Vice President,True,Ordinary Shares,sell,1487.0,65.405,97257.235
+2017-02-02,ALLE,"ECKERSLEY, TIMOTHY P",Sr. Vice President,True,Ordinary Shares,sell,1459.0,65.405,95425.895
+2017-02-02,ALLE,"KEMP, TRACY L",Sr. Vice President,True,Ordinary Shares,sell,1168.0,65.405,76393.04000000001
+2017-02-02,ALLE,"KEMP, TRACY L",Sr. Vice President,True,Ordinary Shares,sell,1567.0,65.405,102489.635
+2017-02-02,ALLE,"MUHLENKAMP, CHRIS E",Sr. Vice President,True,Ordinary Shares,sell,1649.0,65.405,107852.845
+2017-02-02,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,25598.0,65.405,1674237.19
+2017-02-02,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,4964.0,65.405,324670.42
+2017-02-02,ALLE,"MUHLENKAMP, CHRIS E",Sr. Vice President,True,Ordinary Shares,sell,1752.0,65.405,114589.56
+2017-02-02,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,sell,2371.0,65.405,155075.255
+2017-02-02,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,sell,5245.0,65.405,343049.22500000003
+2017-02-02,ALLE,"ECKERSLEY, TIMOTHY P",Sr. Vice President,True,Ordinary Shares,sell,2286.0,65.405,149515.83000000002
+2017-02-02,ALLE,"MEADOR, SHELLEY A",Sr. V. President HR & Comm.,True,Ordinary Shares,sell,657.0,65.405,42971.085
+2017-02-10,ALLE,"ECKERSLEY, TIMOTHY P",Sr. Vice President,True,Ordinary Shares,buy,9374.0,25.0173,234512.1702
+2017-02-10,ALLE,"ECKERSLEY, TIMOTHY P",Sr. Vice President,True,Ordinary Shares,sell,24557.0,71.9028,1765717.0596
+2017-02-10,ALLE,"ECKERSLEY, TIMOTHY P",Sr. Vice President,True,Ordinary Shares,buy,3260.0,19.4549,63422.973999999995
+2017-02-10,ALLE,"ECKERSLEY, TIMOTHY P",Sr. Vice President,True,Ordinary Shares,buy,3977.0,29.0956,115713.20120000001
+2017-02-13,ALLE,"KEMP, TRACY L",Sr. Vice President,True,Stock Option (Right to Buy),buy,3431.0,71.835,246465.88499999998
+2017-02-13,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Stock Option (Right to Buy),buy,11664.0,71.835,837883.44
+2017-02-13,ALLE,"WOOD, JEFFREY M",Senior Vice President,True,Stock Option (Right to Buy),buy,3431.0,71.835,246465.88499999998
+2017-02-13,ALLE,"BRAUN, JEFFREY N",SVP & General Counsel,True,Stock Option (Right to Buy),buy,6175.0,71.835,443581.12499999994
+2017-02-13,ALLE,"GRAVES, TODD V",Sr. Vice President,True,Stock Option (Right to Buy),buy,3431.0,71.835,246465.88499999998
+2017-02-13,ALLE,"MORETTI, LUCIA V",Senior Vice President,True,Stock Option (Right to Buy),buy,4117.0,71.835,295744.69499999995
+2017-02-13,ALLE,"MUHLENKAMP, CHRIS E",Sr. Vice President,True,Ordinary Shares,sell,4263.0,71.2631,303794.5953
+2017-02-13,ALLE,"MUHLENKAMP, CHRIS E",Sr. Vice President,True,Stock Option (Right to Buy),buy,4803.0,71.835,345023.50499999995
+2017-02-13,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Stock Option (Right to Buy),buy,2059.0,71.835,147908.26499999998
+2017-02-13,ALLE,"MEADOR, SHELLEY A",Sr. V. President HR & Comm.,True,Stock Option (Right to Buy),buy,4117.0,71.835,295744.69499999995
+2017-02-13,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Stock Option (Right to Buy),buy,45966.0,71.835,3301967.61
+2017-02-13,ALLE,"ECKERSLEY, TIMOTHY P",Sr. Vice President,True,Stock Option (Right to Buy),buy,7547.0,71.835,542138.745
+2017-02-16,ALLE,"KEMP, TRACY L",Sr. Vice President,True,Ordinary Shares,buy,3738.0,25.0173,93514.66739999999
+2017-02-16,ALLE,"GRAVES, TODD V",Sr. Vice President,True,Ordinary Shares,sell,114.0,72.505,8265.57
+2017-02-16,ALLE,"MEADOR, SHELLEY A",Sr. V. President HR & Comm.,True,Ordinary Shares,sell,124.0,72.505,8990.619999999999
+2017-02-16,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,1996.0,72.505,144719.97999999998
+2017-02-16,ALLE,"WOOD, JEFFREY M",Senior Vice President,True,Ordinary Shares,sell,133.0,72.505,9643.164999999999
+2017-02-16,ALLE,"MUHLENKAMP, CHRIS E",Sr. Vice President,True,Ordinary Shares,sell,127.0,72.505,9208.135
+2017-02-16,ALLE,"MORETTI, LUCIA V",Senior Vice President,True,Ordinary Shares,sell,186.0,67.74,12599.64
+2017-02-16,ALLE,"KEMP, TRACY L",Sr. Vice President,True,Ordinary Shares,buy,1664.0,29.0956,48415.0784
+2017-02-16,ALLE,"KEMP, TRACY L",Sr. Vice President,True,Ordinary Shares,sell,7786.0,72.92,567755.12
+2017-02-16,ALLE,"ECKERSLEY, TIMOTHY P",Sr. Vice President,True,Ordinary Shares,sell,316.0,72.505,22911.579999999998
+2017-02-16,ALLE,"BRAUN, JEFFREY N",SVP & General Counsel,True,Ordinary Shares,sell,213.0,72.505,15443.564999999999
+2017-02-16,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,sell,499.0,72.505,36179.994999999995
+2017-02-16,ALLE,"KEMP, TRACY L",Sr. Vice President,True,Ordinary Shares,sell,114.0,72.505,8265.57
+2017-02-16,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Ordinary Shares,sell,118.0,72.505,8555.59
+2017-02-20,ALLE,"MORETTI, LUCIA V",Senior Vice President,True,Ordinary Shares,sell,186.0,68.2,12685.2
+2017-02-20,ALLE,"BRAUN, JEFFREY N",SVP & General Counsel,True,Ordinary Shares,sell,157.0,73.08,11473.56
+2017-02-20,ALLE,"GRAVES, TODD V",Sr. Vice President,True,Ordinary Shares,sell,91.0,73.08,6650.28
+2017-02-20,ALLE,"MUHLENKAMP, CHRIS E",Sr. Vice President,True,Ordinary Shares,sell,127.0,73.08,9281.16
+2017-02-20,ALLE,"KEMP, TRACY L",Sr. Vice President,True,Ordinary Shares,sell,114.0,73.08,8331.119999999999
+2017-02-20,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,1996.0,73.08,145867.68
+2017-02-20,ALLE,"MEADOR, SHELLEY A",Sr. V. President HR & Comm.,True,Ordinary Shares,sell,79.0,73.08,5773.32
+2017-02-20,ALLE,"ECKERSLEY, TIMOTHY P",Sr. Vice President,True,Ordinary Shares,sell,316.0,73.08,23093.28
+2017-02-20,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,sell,500.0,73.08,36540.0
+2017-02-20,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Ordinary Shares,sell,74.0,73.08,5407.92
+2017-02-20,ALLE,"WOOD, JEFFREY M",Senior Vice President,True,Ordinary Shares,sell,128.0,73.08,9354.24
+2017-03-11,ALLE,"ECKERSLEY, TIMOTHY P",Sr. Vice President,True,Ordinary Shares,sell,338.0,74.225,25088.05
+2017-03-11,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,2134.0,74.225,158396.15
+2017-03-11,ALLE,"MEADOR, SHELLEY A",Sr. V. President HR & Comm.,True,Ordinary Shares,sell,73.0,74.225,5418.424999999999
+2017-03-11,ALLE,"KEMP, TRACY L",Sr. Vice President,True,Ordinary Shares,sell,143.0,74.225,10614.175
+2017-03-11,ALLE,"BRAUN, JEFFREY N",SVP & General Counsel,True,Ordinary Shares,sell,98.0,74.225,7274.049999999999
+2017-03-11,ALLE,"WOOD, JEFFREY M",Senior Vice President,True,Ordinary Shares,sell,108.0,74.225,8016.299999999999
+2017-03-11,ALLE,"GRAVES, TODD V",Sr. Vice President,True,Ordinary Shares,sell,98.0,74.225,7274.049999999999
+2017-03-11,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,sell,534.0,74.225,39636.149999999994
+2017-03-11,ALLE,"MUHLENKAMP, CHRIS E",Sr. Vice President,True,Ordinary Shares,sell,136.0,74.225,10094.599999999999
+2017-03-11,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Ordinary Shares,sell,68.0,74.225,5047.299999999999
+2017-04-08,ALLE,"MORETTI, LUCIA V",Senior Vice President,True,Ordinary Shares,sell,193.0,74.905,14456.665
+2017-04-28,ALLE,"BRAUN, JEFFREY N",SVP & General Counsel,True,Ordinary Shares,buy,2102.0,57.85,121600.7
+2017-04-28,ALLE,"BRAUN, JEFFREY N",SVP & General Counsel,True,Ordinary Shares,sell,7455.0,79.46,592374.2999999999
+2017-04-28,ALLE,"BRAUN, JEFFREY N",SVP & General Counsel,True,Ordinary Shares,buy,2796.0,57.85,161748.6
+2017-04-28,ALLE,"BRAUN, JEFFREY N",SVP & General Counsel,True,Ordinary Shares,buy,2557.0,54.125,138397.625
+2017-04-28,ALLE,"WOOD, JEFFREY M",Senior Vice President,True,Ordinary Shares,sell,4071.0,79.87,325150.77
+2017-06-02,ALLE,"GRAVES, TODD V",Sr. Vice President,True,Ordinary Shares,sell,1858.0,79.19,147135.02
+2017-06-08,ALLE,"WELCH, MARTIN E",Director,True,Ordinary Shares,sell,296.0,77.97,23079.12
+2017-06-08,ALLE,"SCHAFFER, DEAN I",Director,True,Ordinary Shares,sell,296.0,77.97,23079.12
+2017-06-08,ALLE,"HACHIGIAN, KIRK S",Director,True,Ordinary Shares,sell,296.0,77.97,23079.12
+2017-06-08,ALLE,"CHESSER, MICHAEL J",Director,True,Ordinary Shares,sell,296.0,77.97,23079.12
+2017-06-08,ALLE,"CICO, CARLA",Director,True,Ordinary Shares,sell,492.0,78.36,38553.12
+2017-06-15,ALLE,"CICO, CARLA",Director,True,Ordinary Shares,buy,32.0,79.829,2554.528
+2017-08-04,ALLE,"ECKERSLEY, TIMOTHY P",Sr. Vice President,True,Ordinary Shares,sell,12782.0,81.14,1037131.48
+2017-10-31,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,sell,2500.0,83.39,208475.0
+2017-12-31,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Ordinary Shares,sell,640.0,79.56,50918.4
+2017-12-31,ALLE,"MUHLENKAMP, CHRIS E",Sr. Vice President,True,Ordinary Shares,sell,1590.0,79.56,126500.40000000001
+2017-12-31,ALLE,"KEMP, TRACY L",Sr. Vice President,True,Ordinary Shares,sell,1285.0,79.56,102234.6
+2017-12-31,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,19533.0,79.56,1554045.48
+2017-12-31,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,sell,3709.0,79.56,295088.04000000004
+2017-12-31,ALLE,"GRAVES, TODD V",Sr. Vice President,True,Ordinary Shares,sell,1043.0,79.56,82981.08
+2017-12-31,ALLE,"MUHLENKAMP, CHRIS E",Sr. Vice President,True,Ordinary Shares,sell,1572.0,79.56,125068.32
+2017-12-31,ALLE,"ECKERSLEY, TIMOTHY P",Sr. Vice President,True,Ordinary Shares,sell,2496.0,79.56,198581.76
+2017-12-31,ALLE,"MEADOR, SHELLEY A",Sr. V. President HR & Comm.,True,Ordinary Shares,sell,639.0,79.56,50838.840000000004
+2017-12-31,ALLE,"MORETTI, LUCIA V",Senior Vice President,True,Ordinary Shares,sell,1985.0,81.76,162293.6
+2017-12-31,ALLE,"BRAUN, JEFFREY N",SVP & General Counsel,True,Ordinary Shares,sell,1526.0,79.56,121408.56
+2018-02-08,ALLE,"CHESSER, MICHAEL J",Director,True,Ordinary Shares,sell,306.0,78.74,24094.44
+2018-02-13,ALLE,"BRAUN, JEFFREY N",SVP & General Counsel,True,Ordinary Shares,sell,150.0,79.67,11950.5
+2018-02-13,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,sell,287.0,79.67,22865.29
+2018-02-13,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Ordinary Shares,sell,92.0,79.67,7329.64
+2018-02-13,ALLE,"WOOD, JEFFREY M",Senior Vice President,True,Ordinary Shares,sell,138.0,79.67,10994.460000000001
+2018-02-13,ALLE,"MUHLENKAMP, CHRIS E",Sr. Vice President,True,Ordinary Shares,sell,113.0,79.67,9002.710000000001
+2018-02-13,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,1694.0,79.67,134960.98
+2018-02-13,ALLE,"KEMP, TRACY L",Sr. Vice President,True,Ordinary Shares,sell,83.0,79.67,6612.610000000001
+2018-02-13,ALLE,"ECKERSLEY, TIMOTHY P",Sr. Vice President,True,Ordinary Shares,sell,168.0,79.67,13384.56
+2018-02-13,ALLE,"MEADOR, SHELLEY A",Sr. V. President HR & Comm.,True,Ordinary Shares,sell,99.0,79.67,7887.33
+2018-02-13,ALLE,"MORETTI, LUCIA V",Senior Vice President,True,Ordinary Shares,sell,150.0,83.1738,12476.07
+2018-02-13,ALLE,"GRAVES, TODD V",Sr. Vice President,True,Ordinary Shares,sell,83.0,79.67,6612.610000000001
+2018-02-15,ALLE,"ECKERSLEY, TIMOTHY P",Sr. Vice President,True,Ordinary Shares,sell,421.372,82.26,34662.06072
+2018-02-16,ALLE,"MORETTI, LUCIA V",Senior Vice President,True,Ordinary Shares,sell,186.0,82.9361,15426.114599999999
+2018-02-16,ALLE,"WOOD, JEFFREY M",Senior Vice President,True,Ordinary Shares,sell,171.0,82.695,14140.845
+2018-02-16,ALLE,"GRAVES, TODD V",Sr. Vice President,True,Ordinary Shares,sell,103.0,82.695,8517.585
+2018-02-16,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,1884.0,82.695,155797.37999999998
+2018-02-16,ALLE,"MEADOR, SHELLEY A",Sr. V. President HR & Comm.,True,Ordinary Shares,sell,116.0,82.695,9592.619999999999
+2018-02-16,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Ordinary Shares,sell,106.0,82.695,8765.67
+2018-02-16,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,sell,446.0,82.695,36881.969999999994
+2018-02-16,ALLE,"KEMP, TRACY L",Sr. Vice President,True,Ordinary Shares,sell,103.0,82.695,8517.585
+2018-02-16,ALLE,"ECKERSLEY, TIMOTHY P",Sr. Vice President,True,Ordinary Shares,sell,189.0,82.695,15629.355
+2018-02-16,ALLE,"BRAUN, JEFFREY N",SVP & General Counsel,True,Ordinary Shares,sell,165.0,82.695,13644.675
+2018-02-16,ALLE,"MUHLENKAMP, CHRIS E",Sr. Vice President,True,Ordinary Shares,sell,120.0,82.695,9923.4
+2018-02-20,ALLE,"MORETTI, LUCIA V",Senior Vice President,True,Ordinary Shares,sell,187.0,82.7952,15482.702399999998
+2018-02-20,ALLE,"MEADOR, SHELLEY A",Sr. V. President HR & Comm.,True,Ordinary Shares,sell,72.0,86.855,6253.56
+2018-02-20,ALLE,"WOOD, JEFFREY M",Senior Vice President,True,Ordinary Shares,sell,161.0,86.855,13983.655
+2018-02-20,ALLE,"GRAVES, TODD V",Sr. Vice President,True,Ordinary Shares,sell,83.0,86.855,7208.965
+2018-02-20,ALLE,"BRAUN, JEFFREY N",SVP & General Counsel,True,Ordinary Shares,sell,124.0,86.855,10770.02
+2018-02-20,ALLE,"MUHLENKAMP, CHRIS E",Sr. Vice President,True,Ordinary Shares,sell,120.0,86.855,10422.6
+2018-02-20,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Ordinary Shares,sell,66.0,86.855,5732.43
+2018-02-20,ALLE,"ECKERSLEY, TIMOTHY P",Sr. Vice President,True,Ordinary Shares,sell,190.0,86.855,16502.45
+2018-02-20,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,sell,446.0,86.855,38737.33
+2018-02-20,ALLE,"KEMP, TRACY L",Sr. Vice President,True,Ordinary Shares,sell,104.0,86.855,9032.92
+2018-02-20,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,1884.0,86.855,163634.82
+2018-02-22,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Stock Option (Right to Buy),buy,2643.0,86.93,229755.99000000002
+2018-02-22,ALLE,"MUHLENKAMP, CHRIS E",Sr. Vice President,True,Stock Option (Right to Buy),buy,4698.0,86.93,408397.14
+2018-02-22,ALLE,"ECKERSLEY, TIMOTHY P",Sr. Vice President,True,Stock Option (Right to Buy),buy,7046.0,86.93,612508.78
+2018-02-22,ALLE,"BRAUN, JEFFREY N",SVP & General Counsel,True,Stock Option (Right to Buy),buy,6165.0,86.93,535923.4500000001
+2018-02-22,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Stock Option (Right to Buy),buy,11743.0,86.93,1020818.9900000001
+2018-02-22,ALLE,"MEADOR, SHELLEY A",Sr. V. President HR & Comm.,True,Stock Option (Right to Buy),buy,4110.0,86.93,357282.30000000005
+2018-02-22,ALLE,"KEMP, TRACY L",Sr. Vice President,True,Stock Option (Right to Buy),buy,3523.0,86.93,306254.39
+2018-02-22,ALLE,"GRAVES, TODD V",Sr. Vice President,True,Stock Option (Right to Buy),buy,2936.0,86.93,255226.48
+2018-02-22,ALLE,"MORETTI, LUCIA V",Senior Vice President,True,Stock Option (Right to Buy),buy,4698.0,86.93,408397.14
+2018-02-22,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Stock Option (Right to Buy),buy,42861.0,86.93,3725906.7300000004
+2018-02-22,ALLE,"WOOD, JEFFREY M",Senior Vice President,True,Stock Option (Right to Buy),buy,3699.0,86.93,321554.07
+2018-02-26,ALLE,"ECKERSLEY, TIMOTHY P",Sr. Vice President,True,Ordinary Shares,sell,7970.0,86.3985,688596.045
+2018-02-28,ALLE,"MUHLENKAMP, CHRIS E",Sr. Vice President,True,Ordinary Shares,buy,7000.0,43.36,303520.0
+2018-02-28,ALLE,"MUHLENKAMP, CHRIS E",Sr. Vice President,True,Ordinary Shares,buy,1553.0,32.3319,50211.4407
+2018-02-28,ALLE,"MUHLENKAMP, CHRIS E",Sr. Vice President,True,Ordinary Shares,sell,3944.0,86.3263,340470.92720000003
+2018-02-28,ALLE,"MUHLENKAMP, CHRIS E",Sr. Vice President,True,Ordinary Shares,sell,8553.0,85.51,731367.03
+2018-03-08,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Ordinary Shares,buy,1471.0,57.85,85097.35
+2018-03-08,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Ordinary Shares,buy,2433.0,57.85,140749.05000000002
+2018-03-08,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Ordinary Shares,sell,10480.0,84.64,887027.2
+2018-03-08,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Ordinary Shares,buy,686.0,71.835,49278.81
+2018-03-08,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Ordinary Shares,buy,3972.0,32.33,128414.76
+2018-03-08,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Ordinary Shares,buy,1918.0,54.125,103811.75
+2018-03-09,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,buy,1559.0,29.1159,45391.6881
+2018-03-09,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,sell,20200.0,85.8332,1733830.6400000001
+2018-03-09,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,buy,3806.0,29.0956,110737.8536
+2018-03-09,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,buy,2835.0,19.4574,55161.729
+2018-03-13,ALLE,"KEMP, TRACY L",Sr. Vice President,True,Ordinary Shares,buy,6607.0,43.36,286479.52
+2018-03-13,ALLE,"KEMP, TRACY L",Sr. Vice President,True,Ordinary Shares,buy,4931.0,32.33,159419.22999999998
+2018-03-13,ALLE,"KEMP, TRACY L",Sr. Vice President,True,Ordinary Shares,sell,14821.0,86.01,1274754.21
+2018-04-08,ALLE,"MORETTI, LUCIA V",Senior Vice President,True,Ordinary Shares,sell,2625.0,85.0786,223331.32499999998
+2018-06-07,ALLE,"SCHAFFER, DEAN I",Director,True,Ordinary Shares,sell,367.0,79.92,29330.64
+2018-06-07,ALLE,"CICO, CARLA",Director,True,Ordinary Shares,sell,612.0,77.99,47729.88
+2018-06-07,ALLE,"WELCH, MARTIN E",Director,True,Ordinary Shares,sell,367.0,79.92,29330.64
+2018-06-07,ALLE,"HACHIGIAN, KIRK S",Director,True,Ordinary Shares,sell,367.0,79.92,29330.64
+2018-07-31,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Ordinary Shares,sell,81.0,81.275,6583.275000000001
+2018-09-11,ALLE,"RANCK, DOUGLAS P",V. President/Controller,True,Ordinary Shares,sell,3200.0,89.78,287296.0
+2018-12-31,ALLE,"ECKERSLEY, TIMOTHY P",Sr. Vice President,True,Ordinary Shares,sell,2539.0,79.39,201571.21
+2019-02-06,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP & President - Americas,True,Ordinary Shares,sell,2159.0,89.165,192507.23500000002
+2019-02-06,ALLE,"RANCK, DOUGLAS P",V. President/Controller & CAO,True,Ordinary Shares,sell,292.0,89.165,26036.18
+2019-02-06,ALLE,"BRAUN, JEFFREY N",SVP & General Counsel,True,Ordinary Shares,sell,1439.0,89.165,128308.43500000001
+2019-02-06,ALLE,"MORETTI, LUCIA V",Senior Vice President,True,Ordinary Shares,sell,1574.0,83.806,131910.644
+2019-02-06,ALLE,"MEADOR, SHELLEY A",Sr. V. President HR & Comm.,True,Ordinary Shares,sell,292.0,89.165,26036.18
+2019-02-06,ALLE,"MUHLENKAMP, CHRIS E",Sr. VP - Global Ops & ISC,True,Ordinary Shares,sell,1135.0,89.165,101202.27500000001
+2019-02-06,ALLE,"WOOD, JEFFREY M",Sr VP & Pres. - Asia Pacific,True,Ordinary Shares,sell,379.0,89.165,33793.535
+2019-02-06,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,sell,2650.0,89.165,236287.25000000003
+2019-02-06,ALLE,"KEMP, TRACY L",Sr. Vice President,True,Ordinary Shares,sell,923.0,89.165,82299.29500000001
+2019-02-06,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,6292.0,89.165,561026.18
+2019-02-13,ALLE,"MORETTI, LUCIA V",SVP & Pres. - EMEIA,True,Ordinary Shares,sell,150.0,86.18,12927.000000000002
+2019-02-13,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP & President - Americas,True,Ordinary Shares,sell,264.0,93.275,24624.600000000002
+2019-02-13,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,1603.0,93.275,149519.825
+2019-02-13,ALLE,"RANCK, DOUGLAS P","VP, Controller & CAO",True,Ordinary Shares,sell,92.0,93.275,8581.300000000001
+2019-02-13,ALLE,"WENOS, VINCENT",VP-Global Tech & Engineering,True,Ordinary Shares,sell,83.0,93.275,7741.825000000001
+2019-02-13,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,sell,259.0,93.275,24158.225000000002
+2019-02-13,ALLE,"MEADOR, SHELLEY A",SVP & CHRO,True,Ordinary Shares,sell,99.0,93.275,9234.225
+2019-02-13,ALLE,"BRAUN, JEFFREY N","SVP, GC, Secretary & CCO",True,Ordinary Shares,sell,137.0,93.275,12778.675000000001
+2019-02-13,ALLE,"WOOD, JEFFREY M",Sr VP & Pres. - Asia Pacific,True,Ordinary Shares,sell,144.0,93.275,13431.6
+2019-02-13,ALLE,"MUHLENKAMP, CHRIS E",Sr. VP - Global Ops & ISC,True,Ordinary Shares,sell,112.0,93.275,10446.800000000001
+2019-02-13,ALLE,"KEMP, TRACY L",SVP & CIO,True,Ordinary Shares,sell,83.0,93.275,7741.825000000001
+2019-02-15,ALLE,"MUHLENKAMP, CHRIS E",Sr. VP - Global Ops & ISC,True,Ordinary Shares,sell,618.45,91.56,56625.28200000001
+2019-02-16,ALLE,"MUHLENKAMP, CHRIS E",Sr. VP - Global Ops & ISC,True,Ordinary Shares,sell,119.0,91.625,10903.375
+2019-02-16,ALLE,"RANCK, DOUGLAS P","VP, Controller & CAO",True,Ordinary Shares,sell,106.0,91.625,9712.25
+2019-02-16,ALLE,"MORETTI, LUCIA V",SVP & Pres. - EMEIA,True,Ordinary Shares,sell,187.0,87.36,16336.32
+2019-02-16,ALLE,"WOOD, JEFFREY M",Sr VP & Pres. - Asia Pacific,True,Ordinary Shares,sell,169.0,91.625,15484.625
+2019-02-16,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP & President - Americas,True,Ordinary Shares,sell,298.0,91.625,27304.25
+2019-02-16,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,1782.0,91.625,163275.75
+2019-02-16,ALLE,"MEADOR, SHELLEY A",SVP & CHRO,True,Ordinary Shares,sell,112.0,91.625,10262.0
+2019-02-16,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,sell,324.0,91.625,29686.5
+2019-02-16,ALLE,"BRAUN, JEFFREY N","SVP, GC, Secretary & CCO",True,Ordinary Shares,sell,152.0,91.625,13927.0
+2019-02-16,ALLE,"KEMP, TRACY L",SVP & CIO,True,Ordinary Shares,sell,104.0,91.625,9529.0
+2019-02-20,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,sell,9889.0,88.0,870232.0
+2019-02-20,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,buy,8970.0,25.0173,224405.18099999998
+2019-02-20,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,sell,25009.0,87.22,2181284.98
+2019-02-20,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,buy,5916.0,32.3319,191275.52039999998
+2019-02-20,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,buy,919.0,25.0472,23018.376800000002
+2019-02-22,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP & President - Americas,True,Ordinary Shares,sell,238.0,89.04,21191.52
+2019-02-22,ALLE,"RANCK, DOUGLAS P","VP, Controller & CAO",True,Ordinary Shares,sell,114.0,89.04,10150.560000000001
+2019-02-22,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,1443.0,89.04,128484.72000000002
+2019-02-22,ALLE,"MUHLENKAMP, CHRIS E",Sr. VP - Global Ops & ISC,True,Ordinary Shares,sell,105.0,89.04,9349.2
+2019-02-22,ALLE,"BRAUN, JEFFREY N","SVP, GC, Secretary & CCO",True,Ordinary Shares,sell,132.0,89.04,11753.28
+2019-02-22,ALLE,"MEADOR, SHELLEY A",SVP & CHRO,True,Ordinary Shares,sell,96.0,89.04,8547.84
+2019-02-22,ALLE,"WOOD, JEFFREY M",Sr VP & Pres. - Asia Pacific,True,Ordinary Shares,sell,83.0,89.04,7390.320000000001
+2019-02-22,ALLE,"KEMP, TRACY L",SVP & CIO,True,Ordinary Shares,sell,83.0,89.04,7390.320000000001
+2019-02-22,ALLE,"MORETTI, LUCIA V",SVP & Pres. - EMEIA,True,Ordinary Shares,sell,165.0,87.97,14515.05
+2019-02-22,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,sell,395.0,89.04,35170.8
+2019-02-22,ALLE,"WENOS, VINCENT",VP-Global Tech & Engineering,True,Ordinary Shares,sell,69.0,89.04,6143.76
+2019-02-27,ALLE,"RANCK, DOUGLAS P","VP, Controller & CAO",True,Ordinary Shares,sell,3400.0,89.256,303470.4
+2019-02-27,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP & President - Americas,True,Ordinary Shares,sell,11175.0,88.95,994016.25
+2019-02-28,ALLE,"BRAUN, JEFFREY N","SVP, GC, Secretary & CCO",True,Ordinary Shares,sell,2211.0,90.29,199631.19
+2019-03-05,ALLE,"KEMP, TRACY L",SVP-Chief Cust. & Digital Ofr.,True,Ordinary Shares,buy,2202.0,43.36,95478.72
+2019-03-05,ALLE,"KEMP, TRACY L",SVP-Chief Cust. & Digital Ofr.,True,Ordinary Shares,sell,2202.0,90.732,199791.864
+2019-03-05,ALLE,"KEMP, TRACY L",SVP & CIO,True,Ordinary Shares,sell,2793.0,90.53,252850.29
+2019-03-14,ALLE,"MUHLENKAMP, CHRIS E",Sr. VP - Global Ops & ISC,True,Ordinary Shares,sell,12034.0,88.96,1070544.64
+2019-03-14,ALLE,"MUHLENKAMP, CHRIS E",Sr. VP - Global Ops & ISC,True,Ordinary Shares,buy,6964.0,43.36,301959.04
+2019-04-30,ALLE,"WOOD, JEFFREY M",Sr VP & Pres. - Asia Pacific,True,Ordinary Shares,sell,5357.0,99.17,531253.6900000001
+2019-04-30,ALLE,"WOOD, JEFFREY M",Sr VP & Pres. - Asia Pacific,True,Ordinary Shares,buy,1063.0,43.58,46325.54
+2019-04-30,ALLE,"WENOS, VINCENT",VP-Global Tech & Engineering,True,Ordinary Shares,sell,99.0,98.94,9795.06
+2019-04-30,ALLE,"WOOD, JEFFREY M",Sr VP & Pres. - Asia Pacific,True,Ordinary Shares,buy,938.0,54.125,50769.25
+2019-04-30,ALLE,"WOOD, JEFFREY M",Sr VP & Pres. - Asia Pacific,True,Ordinary Shares,buy,3356.0,57.85,194144.6
+2019-06-05,ALLE,"HACHIGIAN, KIRK S",Director,True,Ordinary Shares,sell,487.0,102.005,49676.435
+2019-06-05,ALLE,"SCHAFFER, DEAN I",Director,True,Ordinary Shares,sell,487.0,102.005,49676.435
+2019-06-05,ALLE,"WELCH, MARTIN E",Director,True,Ordinary Shares,sell,487.0,102.005,49676.435
+2019-06-05,ALLE,"PARENT, HAUGHEY NICOLE",Director,True,Ordinary Shares,sell,487.0,102.005,49676.435
+2019-06-05,ALLE,"SZEWS, CHARLES L",Director,True,Ordinary Shares,sell,487.0,102.005,49676.435
+2019-06-05,ALLE,"CICO, CARLA",Director,True,Ordinary Shares,sell,608.0,99.85,60708.799999999996
+2019-06-12,ALLE,"BRAUN, JEFFREY N","SVP, GC, Secretary & CCO",True,Ordinary Shares,sell,6218.0,104.439,649401.7019999999
+2019-06-12,ALLE,"BRAUN, JEFFREY N","SVP, GC, Secretary & CCO",True,Ordinary Shares,buy,4116.0,71.835,295672.86
+2019-06-12,ALLE,"BRAUN, JEFFREY N","SVP, GC, Secretary & CCO",True,Ordinary Shares,buy,2102.0,57.85,121600.7
+2019-06-12,ALLE,"RANCK, DOUGLAS P","VP, Controller & CAO",True,Ordinary Shares,sell,3036.0,104.637,317677.93200000003
+2019-07-31,ALLE,"RANCK, DOUGLAS P","VP, Controller & CAO",True,Ordinary Shares,sell,81.0,104.02,8425.619999999999
+2019-10-25,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,sell,20421.0,114.55,2339225.55
+2019-10-25,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,buy,20421.0,43.36,885454.5599999999
+2019-10-28,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP - Americas,True,Ordinary Shares,buy,2364.0,32.3319,76432.61159999999
+2019-10-28,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP - Americas,True,Ordinary Shares,sell,2364.0,116.275,274874.10000000003
+2019-10-30,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP - Americas,True,Ordinary Shares,sell,10000.0,116.125,1161250.0
+2019-10-30,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP - Americas,True,Ordinary Shares,buy,10000.0,32.3319,323319.0
+2019-10-31,ALLE,"KEMP, TRACY L",SVP-Chief Cust. & Digital Ofr.,True,Ordinary Shares,buy,1174.0,86.93,102055.82
+2019-10-31,ALLE,"MUHLENKAMP, CHRIS E",Sr. VP - Global Ops & ISC,True,Ordinary Shares,sell,2916.0,115.567,336993.372
+2019-10-31,ALLE,"KEMP, TRACY L",SVP-Chief Cust. & Digital Ofr.,True,Ordinary Shares,sell,17860.0,115.84,2068902.4000000001
+2019-10-31,ALLE,"KEMP, TRACY L",SVP-Chief Cust. & Digital Ofr.,True,Ordinary Shares,buy,2287.0,71.835,164286.645
+2019-10-31,ALLE,"KEMP, TRACY L",SVP-Chief Cust. & Digital Ofr.,True,Ordinary Shares,buy,2557.0,54.125,138397.625
+2019-10-31,ALLE,"KEMP, TRACY L",SVP-Chief Cust. & Digital Ofr.,True,Ordinary Shares,buy,3496.0,57.85,202243.6
+2019-10-31,ALLE,"KEMP, TRACY L",SVP-Chief Cust. & Digital Ofr.,True,Ordinary Shares,buy,3941.0,57.85,227986.85
+2019-10-31,ALLE,"KEMP, TRACY L",SVP-Chief Cust. & Digital Ofr.,True,Ordinary Shares,buy,4405.0,43.36,191000.8
+2019-11-01,ALLE,"BRAUN, JEFFREY N","SVP, GC and Secretary",True,Ordinary Shares,sell,3147.0,117.786,370672.542
+2019-11-01,ALLE,"BRAUN, JEFFREY N","SVP, GC and Secretary",True,Ordinary Shares,buy,2055.0,86.93,178641.15000000002
+2019-11-15,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP - Americas,True,Ordinary Shares,buy,4643.0,43.36,201320.48
+2019-11-15,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP - Americas,True,Ordinary Shares,sell,4643.0,119.18,553352.74
+2019-11-25,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP - Americas,True,Ordinary Shares,buy,10000.0,43.36,433600.0
+2019-11-25,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP - Americas,True,Ordinary Shares,sell,10000.0,119.735,1197350.0
+2019-11-26,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP - Americas,True,Ordinary Shares,sell,5000.0,120.09,600450.0
+2019-11-26,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP - Americas,True,Ordinary Shares,buy,5000.0,43.36,216800.0
+2020-02-06,ALLE,"KEMP, TRACY L",SVP-Chief Cust. & Digital Ofr.,True,Ordinary Shares,sell,1014.0,132.68,134537.52000000002
+2020-02-06,ALLE,"WOOD, JEFFREY M",SVP - Asia Pacific,True,Ordinary Shares,sell,1021.0,132.68,135466.28
+2020-02-06,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,178.0,132.68,23617.04
+2020-02-06,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,sell,3995.0,132.68,530056.6
+2020-02-06,ALLE,"RANCK, DOUGLAS P","VP, Controller & CAO",True,Ordinary Shares,sell,330.0,132.68,43784.4
+2020-02-06,ALLE,"MORETTI, LUCIA V",SVP - EMEIA,True,Ordinary Shares,sell,1781.0,127.885,227763.185
+2020-02-06,ALLE,"MEADOR, SHELLEY A",SVP - HR & Communications,True,Ordinary Shares,sell,1213.0,132.68,160940.84
+2020-02-06,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP - Americas,True,Ordinary Shares,sell,2200.0,132.68,291896.0
+2020-02-06,ALLE,"BRAUN, JEFFREY N","SVP, GC and Secretary",True,Ordinary Shares,sell,1799.0,132.68,238691.32
+2020-02-06,ALLE,"MUHLENKAMP, CHRIS E",Sr. VP - Global Ops & ISC,True,Ordinary Shares,sell,1462.0,132.68,193978.16
+2020-02-06,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,18990.0,132.68,2519593.2
+2020-02-13,ALLE,"MORETTI, LUCIA V",SVP - EMEIA,True,Ordinary Shares,sell,151.0,130.89,19764.39
+2020-02-13,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,sell,407.0,136.93,55730.51
+2020-02-13,ALLE,"WENOS, VINCENT",SVP - Chief Technology Officer,True,Ordinary Shares,sell,83.0,136.93,11365.19
+2020-02-13,ALLE,"BRAUN, JEFFREY N","SVP, GC and Secretary",True,Ordinary Shares,sell,138.0,136.93,18896.34
+2020-02-13,ALLE,"KEMP, TRACY L",SVP-Chief Cust. & Digital Ofr.,True,Ordinary Shares,sell,84.0,136.93,11502.12
+2020-02-13,ALLE,"WOOD, JEFFREY M",SVP - Asia Pacific,True,Ordinary Shares,sell,84.0,136.93,11502.12
+2020-02-13,ALLE,"MUHLENKAMP, CHRIS E",Sr. VP - Global Ops & ISC,True,Ordinary Shares,sell,112.0,136.93,15336.16
+2020-02-13,ALLE,"RANCK, DOUGLAS P","VP, Controller & CAO",True,Ordinary Shares,sell,92.0,136.93,12597.560000000001
+2020-02-13,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,1603.0,136.93,219498.79
+2020-02-13,ALLE,"MEADOR, SHELLEY A",SVP - HR & Communications,True,Ordinary Shares,sell,100.0,136.93,13693.0
+2020-02-13,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,58.0,136.93,7941.9400000000005
+2020-02-13,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP - Americas,True,Ordinary Shares,sell,264.0,136.93,36149.520000000004
+2020-02-19,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,2371.0,134.53,318970.63
+2020-02-19,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,6480.0,133.05,862164.0000000001
+2020-02-19,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,buy,43243.0,43.36,1875016.48
+2020-02-19,ALLE,"RANCK, DOUGLAS P","VP, Controller & CAO",True,Ordinary Shares,sell,3525.0,133.97,472244.25
+2020-02-19,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,6210.0,134.07,832574.7
+2020-02-19,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,buy,4658.0,57.85,269465.3
+2020-02-19,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,17473.0,131.82,2303290.86
+2020-02-19,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,buy,41947.0,57.85,2426633.95
+2020-02-19,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,buy,38344.0,54.125,2075369.0
+2020-02-19,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,95658.0,131.0,12531198.0
+2020-02-20,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,5554.0,128.51,713744.5399999999
+2020-02-20,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,30004.0,129.7,3891518.8
+2020-02-20,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,5202.0,130.29,677768.58
+2020-02-20,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP - Americas,True,Stock Option (Right to Buy),buy,5855.0,129.325,757197.8749999999
+2020-02-20,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,buy,42631.0,57.85,2466203.35
+2020-02-20,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,1871.0,131.29,245643.59
+2020-02-21,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,1522.0,128.295,195264.99
+2020-02-21,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP - Americas,True,Ordinary Shares,sell,234.0,128.295,30021.03
+2020-02-21,ALLE,"BRAUN, JEFFREY N","SVP, GC and Secretary",True,Ordinary Shares,sell,143.0,128.295,18346.184999999998
+2020-02-21,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,324.0,128.295,41567.579999999994
+2020-02-21,ALLE,"RANCK, DOUGLAS P","VP, Controller & CAO",True,Ordinary Shares,sell,112.0,128.295,14369.039999999999
+2020-02-21,ALLE,"WENOS, VINCENT",SVP - Chief Technology Officer,True,Ordinary Shares,sell,65.0,128.295,8339.175
+2020-02-21,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,sell,430.0,128.295,55166.84999999999
+2020-02-21,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,79.0,128.295,10135.304999999998
+2020-02-21,ALLE,"WOOD, JEFFREY M",SVP - Asia Pacific,True,Ordinary Shares,sell,88.0,128.295,11289.96
+2020-02-21,ALLE,"MUHLENKAMP, CHRIS E",Sr. VP - Global Ops & ISC,True,Ordinary Shares,sell,110.0,128.295,14112.449999999999
+2020-02-21,ALLE,"MEADOR, SHELLEY A",SVP - HR & Communications,True,Ordinary Shares,sell,102.0,128.295,13086.089999999998
+2020-02-21,ALLE,"KEMP, TRACY L",SVP-Chief Cust. & Digital Ofr.,True,Ordinary Shares,sell,95.0,128.295,12188.025
+2020-02-21,ALLE,"MORETTI, LUCIA V",SVP - EMEIA,True,Ordinary Shares,sell,188.0,132.26,24864.879999999997
+2020-02-22,ALLE,"MUHLENKAMP, CHRIS E",Sr. VP - Global Ops & ISC,True,Ordinary Shares,sell,106.0,128.295,13599.269999999999
+2020-02-22,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,55.0,128.295,7056.224999999999
+2020-02-22,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP - Americas,True,Ordinary Shares,sell,238.0,128.295,30534.209999999995
+2020-02-22,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,1443.0,128.295,185129.68499999997
+2020-02-22,ALLE,"BRAUN, JEFFREY N","SVP, GC and Secretary",True,Ordinary Shares,sell,166.0,128.295,21296.969999999998
+2020-02-22,ALLE,"MEADOR, SHELLEY A",SVP - HR & Communications,True,Ordinary Shares,sell,97.0,128.295,12444.614999999998
+2020-02-22,ALLE,"WENOS, VINCENT",SVP - Chief Technology Officer,True,Ordinary Shares,sell,69.0,128.295,8852.355
+2020-02-22,ALLE,"WOOD, JEFFREY M",SVP - Asia Pacific,True,Ordinary Shares,sell,87.0,128.295,11161.664999999999
+2020-02-22,ALLE,"MORETTI, LUCIA V",SVP - EMEIA,True,Ordinary Shares,sell,166.0,132.26,21955.16
+2020-02-22,ALLE,"SHANNON, PATRICK S",Sr. V. President & CFO,True,Ordinary Shares,sell,396.0,128.295,50804.81999999999
+2020-02-22,ALLE,"RANCK, DOUGLAS P","VP, Controller & CAO",True,Ordinary Shares,sell,114.0,128.295,14625.63
+2020-02-22,ALLE,"KEMP, TRACY L",SVP-Chief Cust. & Digital Ofr.,True,Ordinary Shares,sell,83.0,128.295,10648.484999999999
+2020-02-24,ALLE,"BRAUN, JEFFREY N","SVP, GC and Secretary",True,Ordinary Shares,sell,4405.0,125.44,552563.2
+2020-02-25,ALLE,"MEADOR, SHELLEY A",SVP - HR & Communications,True,Ordinary Shares,buy,2433.0,57.85,140749.05000000002
+2020-02-25,ALLE,"MEADOR, SHELLEY A",SVP - HR & Communications,True,Ordinary Shares,buy,2207.0,57.85,127674.95
+2020-02-25,ALLE,"MEADOR, SHELLEY A",SVP - HR & Communications,True,Ordinary Shares,sell,6558.0,127.069,833318.502
+2020-02-25,ALLE,"MEADOR, SHELLEY A",SVP - HR & Communications,True,Ordinary Shares,buy,1918.0,54.125,103811.75
+2020-03-05,ALLE,"KEMP, TRACY L",SVP-Chief Cust. & Digital Ofr.,True,Ordinary Shares,sell,4801.0,121.513,583383.9130000001
+2020-03-06,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,1765.0,117.6623,207673.9595
+2020-03-06,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,buy,638.0,88.08,56195.04
+2020-03-06,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,buy,344.0,71.835,24711.239999999998
+2020-03-06,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,buy,783.0,86.93,68066.19
+2020-04-30,ALLE,"WENOS, VINCENT",SVP - Chief Technology Officer,True,Ordinary Shares,sell,99.0,100.09,9908.91
+2020-06-05,ALLE,"SZEWS, CHARLES L",Director,True,Ordinary Shares,sell,70.0,113.39,7937.3
+2020-06-05,ALLE,"HACHIGIAN, KIRK S",Director,True,Ordinary Shares,sell,70.0,113.39,7937.3
+2020-06-05,ALLE,"WELCH, MARTIN E",Director,True,Ordinary Shares,sell,70.0,113.39,7937.3
+2020-06-05,ALLE,"SCHAFFER, DEAN I",Director,True,Ordinary Shares,sell,70.0,113.39,7937.3
+2020-06-05,ALLE,"PARENT, HAUGHEY NICOLE",Director,True,Ordinary Shares,sell,70.0,113.39,7937.3
+2020-07-29,ALLE,"KEMP, TRACY L",SVP-Chief Cust. & Digital Ofr.,True,Ordinary Shares,sell,23.0,98.725,2270.6749999999997
+2020-07-29,ALLE,"WENOS, VINCENT",SVP - Chief Technology Officer,True,Ordinary Shares,sell,46.0,98.725,4541.349999999999
+2020-07-31,ALLE,"RANCK, DOUGLAS P","VP, Controller & CAO",True,Ordinary Shares,sell,82.0,98.025,8038.05
+2020-08-12,ALLE,"WOOD, JEFFREY M",SVP - Asia Pacific,True,Ordinary Shares,sell,5402.0,104.0412,562030.5624
+2020-08-12,ALLE,"WOOD, JEFFREY M",SVP - Asia Pacific,True,Ordinary Shares,buy,1971.0,57.85,114022.35
+2020-08-12,ALLE,"WOOD, JEFFREY M",SVP - Asia Pacific,True,Ordinary Shares,buy,3431.0,71.835,246465.88499999998
+2020-09-30,ALLE,"WOOD, JEFFREY M",SVP - Asia Pacific,True,Ordinary Shares,sell,330.0,99.81,32937.3
+2020-10-30,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,48.0,97.185,4664.88
+2020-11-09,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP - Americas,True,Ordinary Shares,sell,6427.0,106.25,682868.75
+2020-11-09,ALLE,"BRAUN, JEFFREY N",SVP and GC,True,Ordinary Shares,sell,385.0,111.7444,43021.594
+2020-11-11,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,734.0,118.34,86861.56
+2020-12-31,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,2541.0,115.345,293091.645
+2021-02-04,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,158.0,112.16,17721.28
+2021-02-04,ALLE,"SHANNON, PATRICK S",Sr. VP & CFO,True,Ordinary Shares,sell,2728.0,112.16,305972.48
+2021-02-04,ALLE,"BRAUN, JEFFREY N",SVP and GC,True,Ordinary Shares,sell,1435.0,112.16,160949.6
+2021-02-04,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,2414.0,112.16,270754.24
+2021-02-04,ALLE,"RANCK, DOUGLAS P","VP, Controller & CAO",True,Ordinary Shares,sell,356.0,112.16,39928.96
+2021-02-04,ALLE,"KEMP, TRACY L",SVP-Chief Info. & Digital Ofr.,True,Ordinary Shares,sell,843.0,112.16,94550.87999999999
+2021-02-04,ALLE,"MEADOR, SHELLEY A",SVP - HR & Communications,True,Ordinary Shares,sell,976.0,112.16,109468.16
+2021-02-04,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,13333.0,112.16,1495429.28
+2021-02-04,ALLE,"FARRER, CYNTHIA D",VP - Global Ops & ISC,True,Ordinary Shares,sell,158.0,112.16,17721.28
+2021-02-20,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,160.0,108.45,17352.0
+2021-02-20,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,74.0,108.45,8025.3
+2021-02-20,ALLE,"MEADOR, SHELLEY A",SVP - HR & Communications,True,Ordinary Shares,sell,84.0,108.45,9109.800000000001
+2021-02-20,ALLE,"WENOS, VINCENT",SVP - Chief Technology Officer,True,Ordinary Shares,sell,66.0,108.45,7157.7
+2021-02-20,ALLE,"FARRER, CYNTHIA D",VP - Global Ops & ISC,True,Ordinary Shares,sell,33.0,108.45,3578.85
+2021-02-20,ALLE,"BRAUN, JEFFREY N",SVP and GC,True,Ordinary Shares,sell,107.0,108.45,11604.15
+2021-02-20,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,220.0,108.45,23859.0
+2021-02-20,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,1143.0,108.45,123958.35
+2021-02-20,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,247.0,108.45,26787.15
+2021-02-20,ALLE,"RANCK, DOUGLAS P","VP, Controller & CAO",True,Ordinary Shares,sell,77.0,108.45,8350.65
+2021-02-20,ALLE,"SHANNON, PATRICK S",Sr. VP & CFO,True,Ordinary Shares,sell,347.0,108.45,37632.15
+2021-02-20,ALLE,"KEMP, TRACY L",SVP-Chief Info. & Digital Ofr.,True,Ordinary Shares,sell,74.0,108.45,8025.3
+2021-02-21,ALLE,"KEMP, TRACY L",SVP-Chief Info. & Digital Ofr.,True,Ordinary Shares,sell,95.0,108.45,10302.75
+2021-02-21,ALLE,"WENOS, VINCENT",SVP - Chief Technology Officer,True,Ordinary Shares,sell,65.0,108.45,7049.25
+2021-02-21,ALLE,"FARRER, CYNTHIA D",VP - Global Ops & ISC,True,Ordinary Shares,sell,50.0,108.45,5422.5
+2021-02-21,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,82.0,108.45,8892.9
+2021-02-21,ALLE,"SHANNON, PATRICK S",Sr. VP & CFO,True,Ordinary Shares,sell,431.0,108.45,46741.950000000004
+2021-02-21,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,1522.0,108.45,165060.9
+2021-02-21,ALLE,"MEADOR, SHELLEY A",SVP - HR & Communications,True,Ordinary Shares,sell,102.0,108.45,11061.9
+2021-02-21,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,235.0,108.45,25485.75
+2021-02-21,ALLE,"RANCK, DOUGLAS P","VP, Controller & CAO",True,Ordinary Shares,sell,113.0,108.45,12254.85
+2021-02-21,ALLE,"BRAUN, JEFFREY N",SVP and GC,True,Ordinary Shares,sell,144.0,108.45,15616.800000000001
+2021-02-22,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,239.0,107.89,25785.71
+2021-02-22,ALLE,"BRAUN, JEFFREY N",SVP and GC,True,Ordinary Shares,sell,133.0,107.89,14349.37
+2021-02-22,ALLE,"RANCK, DOUGLAS P","VP, Controller & CAO",True,Ordinary Shares,sell,114.0,107.89,12299.460000000001
+2021-02-22,ALLE,"SHANNON, PATRICK S",Sr. VP & CFO,True,Ordinary Shares,sell,397.0,107.89,42832.33
+2021-02-22,ALLE,"FARRER, CYNTHIA D",VP - Global Ops & ISC,True,Ordinary Shares,sell,51.0,107.89,5502.39
+2021-02-22,ALLE,"MEADOR, SHELLEY A",SVP - HR & Communications,True,Ordinary Shares,sell,97.0,107.89,10465.33
+2021-02-22,ALLE,"WENOS, VINCENT",SVP - Chief Technology Officer,True,Ordinary Shares,sell,69.0,107.89,7444.41
+2021-02-22,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,56.0,107.89,6041.84
+2021-02-22,ALLE,"KEMP, TRACY L",SVP-Chief Info. & Digital Ofr.,True,Ordinary Shares,sell,83.0,107.89,8954.87
+2021-02-22,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,1443.0,107.89,155685.27
+2021-04-30,ALLE,"WENOS, VINCENT",SVP - Chief Technology Officer,True,Ordinary Shares,sell,99.0,135.23,13387.769999999999
+2021-04-30,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,370.0,135.23,50035.1
+2021-05-11,ALLE,"BRAUN, JEFFREY N",SVP and GC,True,Ordinary Shares,sell,4114.0,139.5284,574019.8376
+2021-05-11,ALLE,"BRAUN, JEFFREY N",SVP and GC,True,Ordinary Shares,buy,2055.0,86.93,178641.15000000002
+2021-05-11,ALLE,"BRAUN, JEFFREY N",SVP and GC,True,Ordinary Shares,buy,2059.0,71.835,147908.26499999998
+2021-05-11,ALLE,"RANCK, DOUGLAS P","VP, Controller & CAO",True,Ordinary Shares,buy,1048.0,88.08,92307.84
+2021-05-11,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,825.0,139.8563,115381.44750000001
+2021-05-11,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,buy,639.0,88.08,56283.119999999995
+2021-05-11,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,1031.0,139.7056,144036.4736
+2021-05-11,ALLE,"BRAUN, JEFFREY N",SVP and GC,True,Ordinary Shares,sell,3145.0,139.5743,438961.1735
+2021-05-11,ALLE,"RANCK, DOUGLAS P","VP, Controller & CAO",True,Ordinary Shares,buy,736.0,57.85,42577.6
+2021-05-11,ALLE,"RANCK, DOUGLAS P","VP, Controller & CAO",True,Ordinary Shares,buy,1373.0,71.835,98629.45499999999
+2021-05-11,ALLE,"RANCK, DOUGLAS P","VP, Controller & CAO",True,Ordinary Shares,buy,2643.0,86.93,229755.99000000002
+2021-05-11,ALLE,"RANCK, DOUGLAS P","VP, Controller & CAO",True,Ordinary Shares,sell,5800.0,140.2058,813193.64
+2021-05-11,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,buy,392.0,86.93,34076.560000000005
+2021-05-14,ALLE,"FARRER, CYNTHIA D",VP - Global Ops & ISC,True,Ordinary Shares,buy,1419.0,57.85,82089.15000000001
+2021-05-14,ALLE,"FARRER, CYNTHIA D",VP - Global Ops & ISC,True,Ordinary Shares,buy,321.0,71.835,23059.034999999996
+2021-05-14,ALLE,"FARRER, CYNTHIA D",VP - Global Ops & ISC,True,Ordinary Shares,sell,1740.0,141.0,245340.0
+2021-05-18,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,3195.0,138.99,444073.05000000005
+2021-05-18,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,buy,3195.0,54.125,172929.375
+2021-05-18,ALLE,"MEADOR, SHELLEY A",SVP - HR & Communications,True,Ordinary Shares,sell,5500.0,138.0653,759359.15
+2021-05-21,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,buy,1300.0,54.125,70362.5
+2021-05-21,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,1300.0,139.49,181337.0
+2021-05-25,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,1896.0,139.49,264473.04000000004
+2021-05-25,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,buy,1896.0,54.125,102621.0
+2021-05-25,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,buy,3496.0,57.85,202243.6
+2021-05-25,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,3496.0,139.99,489405.04000000004
+2021-05-28,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,3496.0,140.99,492901.04000000004
+2021-05-28,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,buy,3496.0,57.85,202243.6
+2021-06-01,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,3941.0,141.66,558282.0599999999
+2021-06-01,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,buy,3941.0,57.85,227986.85
+2021-06-01,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,3941.0,141.99,559582.5900000001
+2021-06-16,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,947.0,138.7074,131355.90780000002
+2021-06-16,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,150.0,139.0984,20864.76
+2021-06-16,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,947.0,138.7362,131383.1814
+2021-06-16,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,797.0,138.5679,110438.61630000001
+2021-06-25,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,870.0,139.3339,121220.493
+2021-06-25,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,860.0,139.3128,119809.008
+2021-06-25,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,246.0,140.0,34440.0
+2021-06-25,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,865.0,139.3186,120510.589
+2021-07-26,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,547.0,139.601,76361.747
+2021-07-26,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,597.0,139.6465,83368.9605
+2021-07-26,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,430.0,138.83,59696.90000000001
+2021-07-26,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,517.0,139.6559,72202.1003
+2021-07-26,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,400.0,138.7772,55510.88
+2021-07-26,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,350.0,138.6977,48544.195
+2021-07-29,ALLE,"WENOS, VINCENT",SVP - Chief Technology Officer,True,Ordinary Shares,sell,46.0,136.57,6282.219999999999
+2021-07-29,ALLE,"KEMP, TRACY L",SVP-Chief Info. & Digital Ofr.,True,Ordinary Shares,sell,23.0,136.57,3141.1099999999997
+2021-08-25,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,169.0,141.6665,23941.6385
+2021-08-25,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,549.0,141.0345,77427.94050000001
+2021-08-25,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,947.0,141.304,133814.888
+2021-08-25,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,778.0,141.1965,109850.877
+2021-08-25,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,398.0,141.5972,56355.6856
+2021-09-02,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,68190.0,147.0,10023930.0
+2021-09-27,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,947.0,137.5503,130260.1341
+2021-09-27,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,944.0,137.5187,129817.6528
+2021-09-27,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,947.0,137.5351,130245.7397
+2021-10-25,ALLE,"SHANNON, PATRICK S",Sr. VP & CFO,True,Ordinary Shares,buy,3826.0,54.125,207082.25
+2021-10-25,ALLE,"SHANNON, PATRICK S",Sr. VP & CFO,True,Ordinary Shares,sell,3826.0,131.4967,503106.3742
+2021-10-26,ALLE,"SHANNON, PATRICK S",Sr. VP & CFO,True,Ordinary Shares,buy,10487.0,57.85,606672.9500000001
+2021-10-26,ALLE,"SHANNON, PATRICK S",Sr. VP & CFO,True,Ordinary Shares,sell,16247.0,131.19,2131443.93
+2021-10-26,ALLE,"FARRER, CYNTHIA D",SVP - Global Ops & ISC,True,Ordinary Shares,sell,66.0,130.705,8626.53
+2021-10-26,ALLE,"SHANNON, PATRICK S",Sr. VP & CFO,True,Ordinary Shares,buy,5760.0,54.125,311760.0
+2021-11-02,ALLE,"RANCK, DOUGLAS P","VP, Controller & CAO",True,Ordinary Shares,sell,2000.0,131.6181,263236.2
+2021-11-12,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,2841.0,135.0,383535.0
+2021-11-18,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,buy,2500.0,71.835,179587.49999999997
+2021-11-18,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,2500.0,136.95,342375.0
+2022-02-03,ALLE,"RANCK, DOUGLAS P","VP, Controller & CAO",True,Ordinary Shares,sell,162.0,118.02,19119.239999999998
+2022-02-03,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,5898.0,118.02,696081.96
+2022-02-03,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,108.0,118.02,12746.16
+2022-02-03,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,768.0,118.02,90639.36
+2022-02-03,ALLE,"FARRER, CYNTHIA D",SVP - Global Ops & ISC,True,Ordinary Shares,sell,74.0,118.02,8733.48
+2022-02-03,ALLE,"KEMP, TRACY L",SVP-Chief Info. & Digital Ofr.,True,Ordinary Shares,sell,471.0,118.02,55587.42
+2022-02-03,ALLE,"BRAUN, JEFFREY N",SVP and GC,True,Ordinary Shares,sell,741.0,118.02,87452.81999999999
+2022-02-03,ALLE,"SHANNON, PATRICK S",Sr. VP & CFO,True,Ordinary Shares,sell,1368.0,118.02,161451.36
+2022-02-03,ALLE,"WENOS, VINCENT",SVP - Chief Technology Officer,True,Ordinary Shares,sell,288.0,118.02,33989.76
+2022-02-18,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,101.0,114.505,11565.005
+2022-02-18,ALLE,"FARRER, CYNTHIA D",SVP - Global Ops & ISC,True,Ordinary Shares,sell,56.0,114.505,6412.28
+2022-02-18,ALLE,"WENOS, VINCENT",SVP - Chief Technology Officer,True,Ordinary Shares,sell,81.0,114.505,9274.904999999999
+2022-02-18,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,121.0,114.505,13855.105
+2022-02-18,ALLE,"BRAUN, JEFFREY N",SVP and GC,True,Ordinary Shares,sell,146.0,114.505,16717.73
+2022-02-18,ALLE,"RANCK, DOUGLAS P","VP, Controller & CAO",True,Ordinary Shares,sell,101.0,114.505,11565.005
+2022-02-18,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,1448.0,114.505,165803.24
+2022-02-18,ALLE,"SHANNON, PATRICK S",Sr. VP & CFO,True,Ordinary Shares,sell,312.0,114.505,35725.56
+2022-02-18,ALLE,"KEMP, TRACY L",SVP-Chief Info. & Digital Ofr.,True,Ordinary Shares,sell,99.0,114.505,11335.994999999999
+2022-02-18,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,156.0,114.505,17862.78
+2022-02-20,ALLE,"SHANNON, PATRICK S",Sr. VP & CFO,True,Ordinary Shares,sell,221.0,114.505,25305.605
+2022-02-20,ALLE,"RANCK, DOUGLAS P","VP, Controller & CAO",True,Ordinary Shares,sell,77.0,114.505,8816.885
+2022-02-20,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,1143.0,114.505,130879.215
+2022-02-20,ALLE,"WENOS, VINCENT",SVP - Chief Technology Officer,True,Ordinary Shares,sell,51.0,114.505,5839.755
+2022-02-20,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,102.0,114.505,11679.51
+2022-02-20,ALLE,"FARRER, CYNTHIA D",SVP - Global Ops & ISC,True,Ordinary Shares,sell,33.0,114.505,3778.665
+2022-02-20,ALLE,"KEMP, TRACY L",SVP-Chief Info. & Digital Ofr.,True,Ordinary Shares,sell,74.0,114.505,8473.369999999999
+2022-02-20,ALLE,"BRAUN, JEFFREY N",SVP and GC,True,Ordinary Shares,sell,107.0,114.505,12252.035
+2022-02-20,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,74.0,114.505,8473.369999999999
+2022-02-21,ALLE,"RANCK, DOUGLAS P","VP, Controller & CAO",True,Ordinary Shares,sell,113.0,114.505,12939.064999999999
+2022-02-21,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,150.0,114.505,17175.75
+2022-02-21,ALLE,"FARRER, CYNTHIA D",SVP - Global Ops & ISC,True,Ordinary Shares,sell,51.0,114.505,5839.755
+2022-02-21,ALLE,"SHANNON, PATRICK S",Sr. VP & CFO,True,Ordinary Shares,sell,275.0,114.505,31488.875
+2022-02-21,ALLE,"PETRATIS, DAVID D","Director, Chairman, President & CEO",True,Ordinary Shares,sell,1522.0,114.505,174276.61
+2022-02-21,ALLE,"KEMP, TRACY L",SVP-Chief Info. & Digital Ofr.,True,Ordinary Shares,sell,96.0,114.505,10992.48
+2022-02-21,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,82.0,114.505,9389.41
+2022-02-21,ALLE,"WENOS, VINCENT",SVP - Chief Technology Officer,True,Ordinary Shares,sell,51.0,114.505,5839.755
+2022-02-21,ALLE,"BRAUN, JEFFREY N",SVP and GC,True,Ordinary Shares,sell,144.0,114.505,16488.72
+2022-03-10,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,948.0,113.05,107171.4
+2022-05-05,ALLE,"BRAUN, JEFFREY N",SVP and GC,True,Ordinary Shares,sell,2186.0,114.02,249247.72
+2022-05-09,ALLE,"KEMP, TRACY L",SVP-Chief Info. & Digital Ofr.,True,Ordinary Shares,sell,2544.0,112.55,286327.2
+2022-06-03,ALLE,"PARENT, HAUGHEY NICOLE",Director,True,Ordinary Shares,sell,241.0,112.36,27078.76
+2022-06-03,ALLE,"VARDHAN, DEV",Director,True,Ordinary Shares,sell,241.0,112.36,27078.76
+2022-06-03,ALLE,"MIZELL, STEVEN",Director,True,Ordinary Shares,sell,241.0,112.36,27078.76
+2022-06-03,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,2046.0,111.3153,227751.10379999998
+2022-06-03,ALLE,"WELCH, MARTIN E",Director,True,Ordinary Shares,sell,241.0,112.36,27078.76
+2022-06-03,ALLE,"SCHAFFER, DEAN I",Director,True,Ordinary Shares,sell,241.0,112.36,27078.76
+2022-06-03,ALLE,"HACHIGIAN, KIRK S",Director,True,Ordinary Shares,sell,241.0,112.36,27078.76
+2022-06-06,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,2150.0,112.0749,240961.035
+2022-07-26,ALLE,"FARRER, CYNTHIA D",SVP - Global Ops & ISC,True,Ordinary Shares,sell,16.0,102.0,1632.0
+2022-07-29,ALLE,"WENOS, VINCENT",SVP - Chief Technology Officer,True,Ordinary Shares,sell,43.0,104.44,4490.92
+2022-07-29,ALLE,"KEMP, TRACY L",SVP-Chief Info. & Digital Ofr.,True,Ordinary Shares,sell,23.0,104.44,2402.12
+2022-07-29,ALLE,"WAGNES, MICHAEL J.",Sr. VP & CFO,True,Ordinary Shares,sell,826.0,104.44,86267.44
+2022-10-26,ALLE,"FARRER, CYNTHIA D",SVP - Global Ops & ISC,True,Ordinary Shares,sell,66.0,97.675,6446.55
+2022-10-28,ALLE,"STONE, JOHN H","Director, President and CEO",True,Ordinary Shares,buy,12400.0,104.4551,1295243.24
+2022-10-28,ALLE,"STONE, JOHN H","Director, President and CEO",True,Ordinary Shares,buy,100.0,103.69,10369.0
+2022-11-22,ALLE,"BRAUN, JEFFREY N","SVP, GC and Secretary",True,Ordinary Shares,sell,1354.0,113.5677,153770.66580000002
+2023-02-08,ALLE,"PRECZEWSKI, JENNIFER L",SVP - Chief HR Officer,True,Ordinary Shares,sell,26.0,120.22,3125.72
+2023-02-08,ALLE,"MUSIAL, NICKOLAS A.","VP, Controller & CAO",True,Ordinary Shares,sell,18.0,120.22,2163.96
+2023-02-08,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,186.0,120.22,22360.92
+2023-02-08,ALLE,"KEMP, TRACY L",SVP-Chief Info. & Digital Ofr.,True,Ordinary Shares,sell,186.0,120.22,22360.92
+2023-02-08,ALLE,"WENOS, VINCENT",SVP - Chief Technology Officer,True,Ordinary Shares,sell,138.0,120.22,16590.36
+2023-02-08,ALLE,"BRAUN, JEFFREY N",SVP and GC,True,Ordinary Shares,sell,289.0,120.22,34743.58
+2023-02-08,ALLE,"FARRER, CYNTHIA D",SVP - Global Ops & ISC,True,Ordinary Shares,sell,24.0,120.22,2885.2799999999997
+2023-02-08,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,276.0,120.22,33180.72
+2023-02-08,ALLE,"ILARDI, DAVID S.",SVP - Allegion Americas,True,Ordinary Shares,sell,21.0,120.22,2524.62
+2023-02-08,ALLE,"WAGNES, MICHAEL J.",Sr. VP & CFO,True,Ordinary Shares,sell,48.0,120.22,5770.5599999999995
+2023-02-17,ALLE,"PRECZEWSKI, JENNIFER L",SVP - Chief HR Officer,True,Ordinary Shares,sell,74.0,117.675,8707.949999999999
+2023-02-17,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,393.0,117.675,46246.275
+2023-02-17,ALLE,"MUSIAL, NICKOLAS A.","VP, Controller & CAO",True,Ordinary Shares,sell,89.0,117.675,10473.074999999999
+2023-02-17,ALLE,"WAGNES, MICHAEL J.",Sr. VP & CFO,True,Ordinary Shares,sell,246.0,117.675,28948.05
+2023-02-17,ALLE,"WENOS, VINCENT",SVP - Chief Technology Officer,True,Ordinary Shares,sell,86.0,117.675,10120.05
+2023-02-17,ALLE,"ILARDI, DAVID S.",SVP - Allegion Americas,True,Ordinary Shares,sell,148.0,117.675,17415.899999999998
+2023-02-17,ALLE,"BRAUN, JEFFREY N",SVP and GC,True,Ordinary Shares,sell,157.0,117.675,18474.975
+2023-02-17,ALLE,"KEMP, TRACY L",SVP-Chief Info. & Digital Ofr.,True,Ordinary Shares,sell,117.0,117.675,13767.975
+2023-02-17,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,99.0,117.675,11649.824999999999
+2023-02-17,ALLE,"FARRER, CYNTHIA D",SVP - Global Ops & ISC,True,Ordinary Shares,sell,67.0,117.675,7884.224999999999
+2023-02-17,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,157.0,117.675,18474.975
+2023-02-18,ALLE,"ILARDI, DAVID S.",SVP - Allegion Americas,True,Ordinary Shares,sell,104.0,117.675,12238.199999999999
+2023-02-18,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,105.0,117.675,12355.875
+2023-02-18,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,121.0,117.675,14238.675
+2023-02-18,ALLE,"BRAUN, JEFFREY N",SVP and GC,True,Ordinary Shares,sell,146.0,117.675,17180.55
+2023-02-18,ALLE,"KEMP, TRACY L",SVP-Chief Info. & Digital Ofr.,True,Ordinary Shares,sell,99.0,117.675,11649.824999999999
+2023-02-18,ALLE,"MUSIAL, NICKOLAS A.","VP, Controller & CAO",True,Ordinary Shares,sell,52.0,117.675,6119.099999999999
+2023-02-18,ALLE,"FARRER, CYNTHIA D",SVP - Global Ops & ISC,True,Ordinary Shares,sell,56.0,117.675,6589.8
+2023-02-18,ALLE,"PRECZEWSKI, JENNIFER L",SVP - Chief HR Officer,True,Ordinary Shares,sell,32.0,117.675,3765.6
+2023-02-18,ALLE,"WAGNES, MICHAEL J.",Sr. VP & CFO,True,Ordinary Shares,sell,87.0,117.675,10237.725
+2023-02-18,ALLE,"WENOS, VINCENT",SVP - Chief Technology Officer,True,Ordinary Shares,sell,81.0,117.675,9531.675
+2023-02-18,ALLE,"ILARDI, DAVID S.",SVP - Allegion Americas,True,Ordinary Shares,sell,47.0,117.675,5530.724999999999
+2023-02-18,ALLE,"MUSIAL, NICKOLAS A.","VP, Controller & CAO",True,Ordinary Shares,sell,40.0,117.675,4707.0
+2023-02-18,ALLE,"PRECZEWSKI, JENNIFER L",SVP - Chief HR Officer,True,Ordinary Shares,sell,52.0,117.675,6119.099999999999
+2023-02-20,ALLE,"ILARDI, DAVID S.",SVP - Allegion Americas,True,Ordinary Shares,sell,31.0,117.675,3647.9249999999997
+2023-02-20,ALLE,"KEMP, TRACY L",SVP-Chief Info. & Digital Ofr.,True,Ordinary Shares,sell,74.0,117.675,8707.949999999999
+2023-02-20,ALLE,"WENOS, VINCENT",SVP - Chief Technology Officer,True,Ordinary Shares,sell,52.0,117.675,6119.099999999999
+2023-02-20,ALLE,"MUSIAL, NICKOLAS A.","VP, Controller & CAO",True,Ordinary Shares,sell,33.0,117.675,3883.275
+2023-02-20,ALLE,"WAGNES, MICHAEL J.",Sr. VP & CFO,True,Ordinary Shares,sell,74.0,117.675,8707.949999999999
+2023-02-20,ALLE,"PRECZEWSKI, JENNIFER L",SVP - Chief HR Officer,True,Ordinary Shares,sell,49.0,117.675,5766.075
+2023-02-20,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,74.0,117.675,8707.949999999999
+2023-02-20,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,102.0,117.675,12002.85
+2023-02-20,ALLE,"BRAUN, JEFFREY N",SVP and GC,True,Ordinary Shares,sell,107.0,117.675,12591.225
+2023-02-20,ALLE,"FARRER, CYNTHIA D",SVP - Global Ops & ISC,True,Ordinary Shares,sell,33.0,117.675,3883.275
+2023-03-10,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,623.0,109.43,68174.89
+2023-05-03,ALLE,"BRAUN, JEFFREY N",SVP and GC,True,Ordinary Shares,sell,2278.0,110.3367,251347.00259999998
+2023-06-02,ALLE,"WELCH, MARTIN E",Director,True,Ordinary Shares,sell,293.0,107.41,31471.129999999997
+2023-06-02,ALLE,"MIZELL, STEVEN",Director,True,Ordinary Shares,sell,293.0,107.41,31471.129999999997
+2023-06-02,ALLE,"SCHAFFER, DEAN I",Director,True,Ordinary Shares,sell,293.0,107.41,31471.129999999997
+2023-06-02,ALLE,"PARENT, HAUGHEY NICOLE",Director,True,Ordinary Shares,sell,293.0,107.41,31471.129999999997
+2023-06-02,ALLE,"HACHIGIAN, KIRK S",Director,True,Ordinary Shares,sell,293.0,107.41,31471.129999999997
+2023-06-02,ALLE,"VARDHAN, DEV",Director,True,Ordinary Shares,sell,293.0,107.41,31471.129999999997
+2023-06-02,ALLE,"PETERS, LAUREN B",Director,True,Ordinary Shares,sell,293.0,107.41,31471.129999999997
+2023-07-27,ALLE,"STONE, JOHN H","Director, President and CEO",True,Ordinary Shares,buy,17500.0,116.6224,2040892.0
+2023-07-31,ALLE,"HAWES, JENNIFER L",SVP - Chief HR Officer,True,Ordinary Shares,buy,426.0,88.08,37522.08
+2023-07-31,ALLE,"HAWES, JENNIFER L",SVP - Chief HR Officer,True,Ordinary Shares,sell,324.0,117.6711,38125.4364
+2023-07-31,ALLE,"HAWES, JENNIFER L",SVP - Chief HR Officer,True,Ordinary Shares,sell,426.0,117.3715,50000.259
+2023-12-08,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,4068.0,110.5224,449605.12320000003
+2023-12-08,ALLE,"PETERS, LAUREN B",Director,True,Ordinary Shares,sell,270.0,109.505,29566.35
+2023-12-08,ALLE,"PARENT, HAUGHEY NICOLE",Director,True,Ordinary Shares,sell,198.0,109.505,21681.989999999998
+2023-12-08,ALLE,"VARDHAN, DEV",Director,True,Ordinary Shares,sell,183.0,109.505,20039.415
+2023-12-08,ALLE,"MIZELL, STEVEN",Director,True,Ordinary Shares,sell,86.0,109.505,9417.43
+2023-12-15,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,6103.0,118.0008,720158.8824
+2024-02-07,ALLE,"MUSIAL, NICKOLAS A.","VP, Controller & CAO",True,Ordinary Shares,sell,41.0,126.83,5200.03
+2024-02-07,ALLE,"KEMP, TRACY L",SVP-Chief Info. & Digital Ofr.,True,Ordinary Shares,sell,459.0,126.83,58214.97
+2024-02-07,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,481.0,126.83,61005.229999999996
+2024-02-07,ALLE,"BRAUN, JEFFREY N",SVP and GC,True,Ordinary Shares,sell,708.0,126.83,89795.64
+2024-02-07,ALLE,"HAWES, JENNIFER L",SVP - Chief HR Officer,True,Ordinary Shares,sell,55.0,126.83,6975.65
+2024-02-07,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,683.0,126.83,86624.89
+2024-02-07,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,1841.0,126.83,233494.03
+2024-02-07,ALLE,"WAGNES, MICHAEL J.",Sr. VP & CFO,True,Ordinary Shares,sell,109.0,126.83,13824.47
+2024-02-07,ALLE,"WENOS, VINCENT",SVP - Chief Technology Officer,True,Ordinary Shares,sell,412.0,126.83,52253.96
+2024-02-07,ALLE,"ILARDI, DAVID S.",SVP - Allegion Americas,True,Ordinary Shares,sell,50.0,126.83,6341.5
+2024-02-17,ALLE,"HAWES, JENNIFER L",SVP - Chief HR Officer,True,Ordinary Shares,sell,535.0,133.42,71379.7
+2024-02-17,ALLE,"WAGNES, MICHAEL J.",Sr. VP & CFO,True,Ordinary Shares,sell,229.0,133.42,30553.179999999997
+2024-02-17,ALLE,"ILARDI, DAVID S.",SVP - Allegion Americas,True,Ordinary Shares,sell,147.0,133.42,19612.739999999998
+2024-02-17,ALLE,"HAWES, JENNIFER L",SVP - Chief HR Officer,True,Ordinary Shares,sell,62.0,133.42,8272.039999999999
+2024-02-17,ALLE,"KEMP, TRACY L",SVP-Chief Info. & Digital Ofr.,True,Ordinary Shares,sell,90.0,133.42,12007.8
+2024-02-17,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,221.0,133.42,29485.819999999996
+2024-02-17,ALLE,"WENOS, VINCENT",SVP - Chief Technology Officer,True,Ordinary Shares,sell,85.0,133.42,11340.699999999999
+2024-02-17,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,98.0,133.42,13075.159999999998
+2024-02-17,ALLE,"MUSIAL, NICKOLAS A.","VP, Controller & CAO",True,Ordinary Shares,sell,88.0,133.42,11740.96
+2024-02-17,ALLE,"BRAUN, JEFFREY N",SVP and GC,True,Ordinary Shares,sell,156.0,133.42,20813.519999999997
+2024-02-18,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,170.0,133.42,22681.399999999998
+2024-02-18,ALLE,"WENOS, VINCENT",SVP - Chief Technology Officer,True,Ordinary Shares,sell,81.0,133.42,10807.019999999999
+2024-02-18,ALLE,"WAGNES, MICHAEL J.",Sr. VP & CFO,True,Ordinary Shares,sell,88.0,133.42,11740.96
+2024-02-18,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,104.0,133.42,13875.679999999998
+2024-02-18,ALLE,"MUSIAL, NICKOLAS A.","VP, Controller & CAO",True,Ordinary Shares,sell,39.0,133.42,5203.379999999999
+2024-02-18,ALLE,"MUSIAL, NICKOLAS A.","VP, Controller & CAO",True,Ordinary Shares,sell,52.0,133.42,6937.839999999999
+2024-02-18,ALLE,"ILARDI, DAVID S.",SVP - Allegion Americas,True,Ordinary Shares,sell,39.0,133.42,5203.379999999999
+2024-02-18,ALLE,"ILARDI, DAVID S.",SVP - Allegion Americas,True,Ordinary Shares,sell,102.0,133.42,13608.839999999998
+2024-02-18,ALLE,"HAWES, JENNIFER L",SVP - Chief HR Officer,True,Ordinary Shares,sell,44.0,133.42,5870.48
+2024-02-18,ALLE,"KEMP, TRACY L",SVP-Chief Info. & Digital Ofr.,True,Ordinary Shares,sell,90.0,133.42,12007.8
+2024-02-18,ALLE,"HAWES, JENNIFER L",SVP - Chief HR Officer,True,Ordinary Shares,sell,27.0,133.42,3602.3399999999997
+2024-02-18,ALLE,"BRAUN, JEFFREY N",SVP and GC,True,Ordinary Shares,sell,145.0,133.42,19345.899999999998
+2024-02-21,ALLE,"BRAUN, JEFFREY N",SVP and GC,True,Ordinary Shares,sell,3000.0,131.0,393000.0
+2024-02-22,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,buy,639.0,88.08,56283.119999999995
+2024-02-22,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,5391.0,132.844,716162.004
+2024-02-22,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,buy,4752.0,109.135,518609.52
+2024-02-22,ALLE,"STONE, JOHN H","Director, President and CEO",True,Ordinary Shares,buy,10000.0,132.4146,1324146.0
+2024-02-24,ALLE,"WENOS, VINCENT",SVP - Chief Technology Officer,True,Ordinary Shares,sell,97.0,128.68,12481.960000000001
+2024-02-24,ALLE,"BRAUN, JEFFREY N",SVP and GC,True,Ordinary Shares,sell,160.0,128.68,20588.800000000003
+2024-02-24,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,228.0,128.68,29339.04
+2024-02-24,ALLE,"KEMP, TRACY L",SVP-Chief Info. & Digital Ofr.,True,Ordinary Shares,sell,97.0,128.68,12481.960000000001
+2024-02-24,ALLE,"HAWES, JENNIFER L",SVP - Chief HR Officer,True,Ordinary Shares,sell,106.0,128.68,13640.08
+2024-02-24,ALLE,"MUSIAL, NICKOLAS A.","VP, Controller & CAO",True,Ordinary Shares,sell,98.0,128.68,12610.640000000001
+2024-02-24,ALLE,"STONE, JOHN H","Director, President and CEO",True,Ordinary Shares,sell,1162.0,128.68,149526.16
+2024-02-24,ALLE,"WAGNES, MICHAEL J.",Sr. VP & CFO,True,Ordinary Shares,sell,317.0,128.68,40791.560000000005
+2024-02-24,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,1555.0,128.68,200097.40000000002
+2024-02-24,ALLE,"ILARDI, DAVID S.",SVP - Allegion Americas,True,Ordinary Shares,sell,158.0,128.68,20331.440000000002
+2024-03-10,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,855.0,132.575,113351.62499999999
+2024-03-10,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,2563.0,132.575,339789.725
+2024-03-11,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,5089.0,130.6346,664799.4794000001
+2024-03-11,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,5047.0,129.99,656059.53
+2024-03-11,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,buy,5047.0,71.835,362551.245
+2024-03-12,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,2291.0,132.75,304130.25
+2024-04-13,ALLE,"RUBIN, ELLEN",Director,True,Ordinary Shares,sell,46.0,128.34,5903.64
+2024-05-28,ALLE,"KEMP, TRACY L",SVP-Chief Info. & Digital Ofr.,True,Ordinary Shares,sell,2194.0,121.9823,267629.1662
+2024-06-06,ALLE,"SCHAFFER, DEAN I",Director,True,Ordinary Shares,sell,327.0,117.695,38486.265
+2024-06-06,ALLE,"WELCH, MARTIN E",Director,True,Ordinary Shares,sell,327.0,117.695,38486.265
+2024-06-08,ALLE,"MIZELL, STEVEN",Director,True,Ordinary Shares,sell,294.0,116.52,34256.88
+2024-06-08,ALLE,"HACHIGIAN, KIRK S",Director,True,Ordinary Shares,sell,485.0,116.52,56512.2
+2024-06-08,ALLE,"VARDHAN, DEV",Director,True,Ordinary Shares,sell,294.0,116.52,34256.88
+2024-06-08,ALLE,"PETERS, LAUREN B",Director,True,Ordinary Shares,sell,294.0,116.52,34256.88
+2024-06-08,ALLE,"RUBIN, ELLEN",Director,True,Ordinary Shares,sell,294.0,116.52,34256.88
+2024-06-08,ALLE,"PARENT, HAUGHEY NICOLE",Director,True,Ordinary Shares,sell,294.0,116.52,34256.88
+2024-07-26,ALLE,"MIZELL, STEVEN",Director,True,Ordinary Shares,buy,1000.0,136.5297,136529.69999999998
+2024-07-26,ALLE,"STONE, JOHN H","Director, President and CEO",True,Ordinary Shares,buy,3233.0,134.498,434832.034
+2024-07-26,ALLE,"STONE, JOHN H","Director, President and CEO",True,Ordinary Shares,buy,1767.0,135.8762,240093.2454
+2024-08-01,ALLE,"STONE, JOHN H","Director, President and CEO",True,Ordinary Shares,sell,5659.0,135.37,766058.8300000001
+2024-09-09,ALLE,"MAIN, SUE",Director,True,Ordinary Shares,sell,226.0,134.98,30505.479999999996
+2024-10-25,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,8035.0,144.92,1164432.2
+2024-10-25,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,buy,3904.0,129.33,504904.32000000007
+2024-10-25,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,buy,2769.0,115.34,319376.46
+2024-10-25,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,buy,1362.0,112.59,153347.58000000002
+2024-11-22,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,5000.0,141.37,706850.0
+2024-11-22,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,buy,5000.0,86.93,434650.00000000006
+2024-11-25,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,9707.0,142.63,1384509.41
+2024-11-25,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,buy,2046.0,86.93,177858.78000000003
+2024-11-25,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,buy,7661.0,88.08,674780.88
+2024-12-02,ALLE,"KEMP, TRACY L",SVP-Chief Info. & Digital Ofr.,True,Ordinary Shares,sell,2466.0,139.47,343933.02
+2024-12-02,ALLE,"KEMP, TRACY L",SVP-Chief Info. & Digital Ofr.,True,Ordinary Shares,buy,1144.0,71.835,82179.23999999999
+2024-12-03,ALLE,"STONE, JOHN H","Director, President and CEO",True,Ordinary Shares,buy,7500.0,140.6995,1055246.25
+2025-02-05,ALLE,"HAWES, JENNIFER L",SVP - Chief HR Officer,True,Ordinary Shares,sell,129.0,128.67,16598.429999999997
+2025-02-05,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,1151.0,128.67,148099.16999999998
+2025-02-05,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,1130.0,128.67,145397.09999999998
+2025-02-05,ALLE,"BRAUN, JEFFREY N","SVP, GC and Secretary",True,Ordinary Shares,sell,1826.0,128.67,234951.41999999998
+2025-02-05,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,735.0,128.67,94572.45
+2025-02-05,ALLE,"WAGNES, MICHAEL J.",Sr. VP & CFO,True,Ordinary Shares,sell,1487.0,128.67,191332.28999999998
+2025-02-05,ALLE,"KEMP, TRACY L",SVP-Chief Info. & Digital Ofr.,True,Ordinary Shares,sell,735.0,128.67,94572.45
+2025-02-05,ALLE,"WENOS, VINCENT",SVP - Chief Technology Officer,True,Ordinary Shares,sell,698.0,128.67,89811.65999999999
+2025-02-05,ALLE,"MUSIAL, NICKOLAS A.","VP, Controller & CAO",True,Ordinary Shares,sell,155.0,128.67,19943.85
+2025-02-05,ALLE,"ILARDI, DAVID S.",SVP - Allegion Americas,True,Ordinary Shares,sell,912.0,128.67,117347.04
+2025-02-17,ALLE,"ILARDI, DAVID S.",SVP - Allegion Americas,True,Ordinary Shares,sell,124.0,133.505,16554.62
+2025-02-17,ALLE,"BRAUN, JEFFREY N","SVP, GC and Secretary",True,Ordinary Shares,sell,237.0,133.505,31640.684999999998
+2025-02-17,ALLE,"HAWES, JENNIFER L",SVP - Chief HR Officer,True,Ordinary Shares,sell,74.0,133.505,9879.369999999999
+2025-02-17,ALLE,"KEMP, TRACY L",SVP-Chief Info. & Digital Ofr.,True,Ordinary Shares,sell,90.0,133.505,12015.449999999999
+2025-02-17,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,98.0,133.505,13083.49
+2025-02-17,ALLE,"MUSIAL, NICKOLAS A.","VP, Controller & CAO",True,Ordinary Shares,sell,89.0,133.505,11881.945
+2025-02-17,ALLE,"WENOS, VINCENT",SVP - Chief Technology Officer,True,Ordinary Shares,sell,86.0,133.505,11481.43
+2025-02-17,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,221.0,133.505,29504.605
+2025-02-17,ALLE,"WAGNES, MICHAEL J.",Sr. VP & CFO,True,Ordinary Shares,sell,206.0,133.505,27502.03
+2025-02-19,ALLE,"MUSIAL, NICKOLAS A.","VP, Controller & CAO",True,Ordinary Shares,sell,403.0,124.7,50254.1
+2025-02-19,ALLE,"SENGSTACK, GREGG C",Director,True,Ordinary Shares,buy,8000.0,125.24,1001920.0
+2025-02-19,ALLE,"MUSIAL, NICKOLAS A.","VP, Controller & CAO",True,Ordinary Shares,buy,403.0,57.85,23313.55
+2025-02-22,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,214.0,126.96,27169.44
+2025-02-22,ALLE,"WENOS, VINCENT",SVP - Chief Technology Officer,True,Ordinary Shares,sell,92.0,126.96,11680.32
+2025-02-22,ALLE,"WAGNES, MICHAEL J.",Sr. VP & CFO,True,Ordinary Shares,sell,274.0,126.96,34787.04
+2025-02-22,ALLE,"HAWES, JENNIFER L",SVP - Chief HR Officer,True,Ordinary Shares,sell,113.0,126.96,14346.48
+2025-02-22,ALLE,"KEMP, TRACY L",SVP-Chief Info. & Digital Ofr.,True,Ordinary Shares,sell,92.0,126.96,11680.32
+2025-02-22,ALLE,"BRAUN, JEFFREY N","SVP, GC and Secretary",True,Ordinary Shares,sell,225.0,126.96,28566.0
+2025-02-22,ALLE,"MUSIAL, NICKOLAS A.","VP, Controller & CAO",True,Ordinary Shares,sell,81.0,126.96,10283.76
+2025-02-22,ALLE,"STONE, JOHN H","Director, President and CEO",True,Ordinary Shares,sell,1007.0,126.96,127848.71999999999
+2025-02-22,ALLE,"ILARDI, DAVID S.",SVP - Allegion Americas,True,Ordinary Shares,sell,160.0,126.96,20313.6
+2025-02-22,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,105.0,126.96,13330.8
+2025-02-24,ALLE,"WENOS, VINCENT",SVP - Chief Technology Officer,True,Ordinary Shares,sell,97.0,128.15,12430.550000000001
+2025-02-24,ALLE,"STONE, JOHN H","Director, President and CEO",True,Ordinary Shares,sell,1159.0,128.15,148525.85
+2025-02-24,ALLE,"WAGNES, MICHAEL J.",Sr. VP & CFO,True,Ordinary Shares,sell,333.0,128.15,42673.950000000004
+2025-02-24,ALLE,"BRAUN, JEFFREY N","SVP, GC and Secretary",True,Ordinary Shares,sell,252.0,128.15,32293.800000000003
+2025-02-24,ALLE,"MARTENS, ROBERT C.",SVP Chief Innovation & Design,True,Ordinary Shares,sell,117.0,128.15,14993.550000000001
+2025-02-24,ALLE,"MUSIAL, NICKOLAS A.","VP, Controller & CAO",True,Ordinary Shares,sell,85.0,128.15,10892.75
+2025-02-24,ALLE,"HAWES, JENNIFER L",SVP - Chief HR Officer,True,Ordinary Shares,sell,105.0,128.15,13455.75
+2025-02-24,ALLE,"ECKERSLEY, TIMOTHY P",Sr. VP-Allegion International,True,Ordinary Shares,sell,228.0,128.15,29218.2
+2025-02-24,ALLE,"ILARDI, DAVID S.",SVP - Allegion Americas,True,Ordinary Shares,sell,157.0,128.15,20119.55
+2025-02-24,ALLE,"KEMP, TRACY L",SVP-Chief Info. & Digital Ofr.,True,Ordinary Shares,sell,97.0,128.15,12430.550000000001
+2025-02-28,ALLE,"WAGNES, MICHAEL J.",Sr. VP & CFO,True,Ordinary Shares,buy,1577.0,57.85,91229.45
+2025-03-04,ALLE,"ILARDI, DAVID S.",SVP - Allegion Americas,True,Ordinary Shares,buy,789.0,57.85,45643.65
+2025-03-04,ALLE,"ILARDI, DAVID S.",SVP - Allegion Americas,True,Ordinary Shares,sell,789.0,125.28,98845.92
+2025-03-10,ALLE,"BRAUN, JEFFREY N","SVP, GC and Secretary",True,Ordinary Shares,sell,2018.0,134.6817,271787.6706
+2025-03-11,ALLE,"KEMP, TRACY L",SVP-Chief Info. & Digital Ofr.,True,Ordinary Shares,sell,2032.0,126.7424,257540.55680000002
+2025-05-09,ALLE,"WENOS, VINCENT",SVP - Chief Technology Officer,True,Ordinary Shares,sell,961.0,141.8755,136342.35549999998
+2025-05-09,ALLE,"WENOS, VINCENT",SVP - Chief Technology Officer,True,Ordinary Shares,buy,961.0,71.835,69033.435
+2025-06-06,ALLE,"PARENT, HAUGHEY NICOLE",Director,True,Ordinary Shares,sell,319.0,139.34,44449.46
+2025-06-06,ALLE,"VARDHAN, DEV",Director,True,Ordinary Shares,sell,319.0,139.34,44449.46
+2025-06-06,ALLE,"PETERS, LAUREN B",Director,True,Ordinary Shares,sell,319.0,139.34,44449.46
+2025-06-06,ALLE,"MAIN, SUE",Director,True,Ordinary Shares,sell,319.0,139.34,44449.46
+2025-06-06,ALLE,"RUBIN, ELLEN",Director,True,Ordinary Shares,sell,319.0,139.34,44449.46
+2025-06-06,ALLE,"MIZELL, STEVEN",Director,True,Ordinary Shares,sell,319.0,139.34,44449.46
+2025-07-25,ALLE,"KEMP, TRACY L",SVP-Chief Info. & Digital Ofr,True,Ordinary Shares,buy,2349.0,86.93,204198.57
+2025-07-25,ALLE,"KEMP, TRACY L",SVP-Chief Info. & Digital Ofr,True,Ordinary Shares,sell,1500.0,164.9759,247463.85
+2025-07-25,ALLE,"KEMP, TRACY L",SVP-Chief Info. & Digital Ofr,True,Ordinary Shares,sell,2349.0,164.888,387321.912
+2025-08-01,ALLE,"STONE, JOHN H","Director, President and CEO",True,Ordinary Shares,sell,5653.0,164.595,930455.535
+2025-08-07,ALLE,"ECKERSLEY, TIMOTHY P",SVP - Allegion International,True,Ordinary Shares,sell,5264.0,164.12,863927.68
+2025-08-07,ALLE,"ECKERSLEY, TIMOTHY P",SVP - Allegion International,True,Ordinary Shares,sell,5546.0,165.37,917142.02
+2025-11-25,ALLE,"PETERS, LAUREN B",Director,True,Ordinary Shares,buy,1600.0,165.4409,264705.44
+2026-01-03,ALLE,"SENGSTACK, GREGG C",Director,True,Ordinary Shares,sell,147.0,160.1,23534.7
+2026-01-03,ALLE,"PETERS, LAUREN B",Director,True,Ordinary Shares,sell,123.0,160.1,19692.3
+2026-02-04,ALLE,"ILARDI, DAVID S.",SVP - Allegion Americas,True,Ordinary Shares,sell,1212.0,171.205,207500.46000000002
+2026-02-04,ALLE,"WAGNES, MICHAEL J.",SVP and CFO,True,Ordinary Shares,sell,2773.0,171.205,474751.465
+2026-02-04,ALLE,"HAWES, JENNIFER L",SVP - Chief HR Officer,True,Ordinary Shares,sell,830.0,171.205,142100.15000000002
+2026-02-04,ALLE,"MUSIAL, NICKOLAS A.","VP, Controller & CAO",True,Ordinary Shares,sell,188.0,171.205,32186.54
+2026-02-04,ALLE,"MARTENS, ROBERT C.",SVP-Chief Innovation & Design,True,Ordinary Shares,sell,907.0,171.205,155282.935
+2026-02-04,ALLE,"STONE, JOHN H","Director, President and CEO",True,Ordinary Shares,sell,12393.0,171.205,2121743.565
+2026-02-04,ALLE,"KEMP, TRACY L",SVP-Chief Info. & Digital Ofr,True,Ordinary Shares,sell,828.0,171.205,141757.74000000002
+2026-02-04,ALLE,"ECKERSLEY, TIMOTHY P",SVP - Allegion International,True,Ordinary Shares,sell,1157.0,171.205,198084.18500000003
+2026-02-04,ALLE,"ECKERSLEY, TIMOTHY P",SVP - Allegion International,True,Ordinary Shares,sell,886.0,171.205,151687.63
+2026-02-04,ALLE,"WENOS, VINCENT",SVP - Chief Technology Officer,True,Ordinary Shares,sell,827.0,171.205,141586.535
+2026-02-18,ALLE,"MIZELL, STEVEN",Director,True,Ordinary Shares,sell,400.0,163.79,65516.0
+2026-02-19,ALLE,"MIZELL, STEVEN",Director,True,Ordinary Shares,sell,1000.0,161.51,161510.0
+2026-02-20,ALLE,"KEMP, TRACY L",SVP-Chief Info. & Digital Ofr,True,Ordinary Shares,sell,98.0,162.92,15966.159999999998
+2026-02-20,ALLE,"STONE, JOHN H","Director, President and CEO",True,Ordinary Shares,sell,1658.0,162.92,270121.36
+2026-02-20,ALLE,"ECKERSLEY, TIMOTHY P",SVP - Allegion International,True,Ordinary Shares,sell,226.0,162.92,36819.92
+2026-02-20,ALLE,"MARTENS, ROBERT C.",SVP-Chief Innovation & Design,True,Ordinary Shares,sell,103.0,162.92,16780.76
+2026-02-20,ALLE,"WENOS, VINCENT",SVP - Chief Technology Officer,True,Ordinary Shares,sell,98.0,162.92,15966.159999999998
+2026-02-20,ALLE,"ILARDI, DAVID S.",SVP - Allegion Americas,True,Ordinary Shares,sell,173.0,162.92,28185.159999999996
+2026-02-20,ALLE,"HAWES, JENNIFER L",SVP - Chief HR Officer,True,Ordinary Shares,sell,109.0,162.92,17758.28
+2026-02-20,ALLE,"MUSIAL, NICKOLAS A.","VP, Controller & CAO",True,Ordinary Shares,sell,102.0,162.92,16617.84
+2026-02-20,ALLE,"WAGNES, MICHAEL J.",SVP and CFO,True,Ordinary Shares,sell,444.0,162.92,72336.48
+2026-02-22,ALLE,"ECKERSLEY, TIMOTHY P",SVP - Allegion International,True,Ordinary Shares,sell,213.0,162.92,34701.96
+2026-02-22,ALLE,"ILARDI, DAVID S.",SVP - Allegion Americas,True,Ordinary Shares,sell,159.0,162.92,25904.28
+2026-02-22,ALLE,"STONE, JOHN H","Director, President and CEO",True,Ordinary Shares,sell,1527.0,162.92,248778.83999999997
+2026-02-22,ALLE,"HAWES, JENNIFER L",SVP - Chief HR Officer,True,Ordinary Shares,sell,100.0,162.92,16291.999999999998
+2026-02-22,ALLE,"KEMP, TRACY L",SVP-Chief Info. & Digital Ofr,True,Ordinary Shares,sell,92.0,162.92,14988.64
+2026-02-22,ALLE,"WENOS, VINCENT",SVP - Chief Technology Officer,True,Ordinary Shares,sell,92.0,162.92,14988.64
+2026-02-22,ALLE,"MUSIAL, NICKOLAS A.","VP, Controller & CAO",True,Ordinary Shares,sell,82.0,162.92,13359.439999999999
+2026-02-22,ALLE,"MARTENS, ROBERT C.",SVP-Chief Innovation & Design,True,Ordinary Shares,sell,96.0,162.92,15640.32
+2026-02-22,ALLE,"WAGNES, MICHAEL J.",SVP and CFO,True,Ordinary Shares,sell,417.0,162.92,67937.64
+2026-02-24,ALLE,"MUSIAL, NICKOLAS A.","VP, Controller & CAO",True,Ordinary Shares,sell,85.0,160.16,13613.6
+2026-02-24,ALLE,"WENOS, VINCENT",SVP - Chief Technology Officer,True,Ordinary Shares,sell,97.0,160.16,15535.52
+2026-02-24,ALLE,"WAGNES, MICHAEL J.",SVP and CFO,True,Ordinary Shares,sell,482.0,160.16,77197.12
+2026-02-24,ALLE,"HAWES, JENNIFER L",SVP - Chief HR Officer,True,Ordinary Shares,sell,106.0,160.16,16976.96
+2026-02-24,ALLE,"ECKERSLEY, TIMOTHY P",SVP - Allegion International,True,Ordinary Shares,sell,228.0,160.16,36516.479999999996
+2026-02-24,ALLE,"KEMP, TRACY L",SVP-Chief Info. & Digital Ofr,True,Ordinary Shares,sell,97.0,160.16,15535.52
+2026-02-24,ALLE,"ILARDI, DAVID S.",SVP - Allegion Americas,True,Ordinary Shares,sell,157.0,160.16,25145.12
+2026-02-24,ALLE,"MARTENS, ROBERT C.",SVP-Chief Innovation & Design,True,Ordinary Shares,sell,107.0,160.16,17137.12
+2026-02-24,ALLE,"STONE, JOHN H","Director, President and CEO",True,Ordinary Shares,sell,1767.0,160.16,283002.72
+2026-02-24,ALLE,"ILARDI, DAVID S.",SVP - Allegion Americas,True,Ordinary Shares,sell,240.0,160.16,38438.4
+2026-03-11,ALLE,"MAIN, SUE",Director,True,Ordinary Shares,buy,600.0,150.0533,90031.98000000001
+2026-03-11,ALLE,"MAIN, SUE",Director,True,Ordinary Shares,buy,100.0,147.26,14726.0
+2026-03-11,ALLE,"MAIN, SUE",Director,True,Ordinary Shares,buy,1300.0,149.5827,194457.50999999998
+2026-05-07,ALLE,"MARTENS, ROBERT C.",SVP-Chief Innovation & Design,True,Ordinary Shares,sell,3993.0,137.15,547639.9500000001

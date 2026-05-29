@@ -1,0 +1,343 @@
+date,symbol,insider_name,insider_title,is_executive,security_type,transaction_type,shares,price,value
+2021-07-01,AVPT,"EPSTEIN, JEFF",Director,True,Common Stock,buy,50000.0,10.0,500000.0
+2021-12-31,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,7490.0,6.29,47112.1
+2022-03-21,AVPT,"BROWN, BRIAN MICHAEL","Director, General Counsel",True,Stock Option (Right to Buy),buy,39632.0,5.88,233036.16
+2022-03-21,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Stock Option (Right to Buy),buy,138250.0,5.88,812910.0
+2022-03-21,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Stock Option (Right to Buy),buy,138250.0,5.88,812910.0
+2022-03-21,AVPT,"CACI, JAMES",Chief Financial Officer,True,Stock Option (Right to Buy),buy,82950.0,5.88,487746.0
+2022-03-31,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,1579.0,5.26,8305.539999999999
+2022-07-01,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,2552.0,4.34,11075.68
+2022-07-05,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,sell,732374.0,4.62,3383567.88
+2022-07-05,AVPT,"BROWN, BRIAN MICHAEL","Director, General Counsel",True,Common Stock,sell,780829.0,4.62,3607429.98
+2022-09-01,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,39796.0,4.41,175500.36000000002
+2022-09-01,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,sell,30615.0,4.41,135012.15
+2022-09-01,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,9950.0,4.92,48954.0
+2022-09-01,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,29241.0,4.41,128952.81
+2022-09-30,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,2552.0,4.01,10233.519999999999
+2022-12-02,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,sell,7654.0,4.92,37657.68
+2022-12-02,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,7311.0,4.92,35970.12
+2022-12-31,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,2896.0,4.11,11902.560000000001
+2023-03-01,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,9950.0,4.94,49153.00000000001
+2023-03-01,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,7311.0,4.94,36116.340000000004
+2023-03-01,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,sell,7654.0,4.94,37810.76
+2023-03-13,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Stock Option (Right to Buy),buy,200959.0,4.22,848046.98
+2023-03-13,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Stock Option (Right to Buy),buy,200959.0,4.22,848046.98
+2023-03-13,AVPT,"CACI, JAMES",Chief Financial Officer,True,Stock Option (Right to Buy),buy,140672.0,4.22,593635.84
+2023-03-13,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Stock Option (Right to Buy),buy,100480.0,4.22,424025.6
+2023-03-21,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,6185.0,4.15,25667.750000000004
+2023-03-21,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,11294.0,4.15,46870.100000000006
+2023-03-21,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,24467.0,4.15,101538.05
+2023-03-21,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,sell,18822.0,4.15,78111.3
+2023-03-31,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,2552.0,4.12,10514.24
+2023-06-01,AVPT,"TEPER, JEFF",Director,True,Common Stock,buy,26636.0,6.57,174998.52000000002
+2023-06-01,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,7311.0,6.57,48033.270000000004
+2023-06-01,AVPT,"EPSTEIN, JEFF",Director,True,Common Stock,buy,26636.0,6.57,174998.52000000002
+2023-06-01,AVPT,"HO, JOHN CHI ON",Director,True,Common Stock,buy,26636.0,6.57,174998.52000000002
+2023-06-01,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,sell,7654.0,6.57,50286.78
+2023-06-01,AVPT,"SCHIJNS, JANET",Director,True,Common Stock,buy,26636.0,6.57,174998.52000000002
+2023-06-01,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,9963.0,6.57,65456.91
+2023-06-13,AVPT,"SIXTH, STREET PARTNERS MANAGEMENT COMPANY, L.P.",10% Owner,False,Common Stock,sell,1054277.0,6.16,6494346.32
+2023-06-13,AVPT,"SIXTH, STREET PARTNERS MANAGEMENT COMPANY, L.P.",10% Owner,False,Common Stock,sell,1345723.0,6.16,8289653.680000001
+2023-06-13,AVPT,"SIXTH, STREET PARTNERS MANAGEMENT COMPANY, L.P.",10% Owner,False,Common Stock,sell,2100000.0,6.16,12936000.0
+2023-06-21,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,1547.0,6.01,9297.47
+2023-06-21,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,sell,4706.0,6.01,28283.059999999998
+2023-06-21,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,2824.0,6.01,16972.239999999998
+2023-06-21,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,6133.0,6.01,36859.33
+2023-06-30,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,2552.0,5.76,14699.519999999999
+2023-09-01,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,7311.0,6.85,50080.35
+2023-09-01,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,sell,7654.0,6.85,52429.899999999994
+2023-09-01,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,9949.0,6.85,68150.65
+2023-09-15,AVPT,"SIXTH, STREET PARTNERS MANAGEMENT COMPANY, L.P.",Former 10% Owner,False,Common Stock,sell,7777746.0,6.0,46666476.0
+2023-09-15,AVPT,"SIXTH, STREET PARTNERS MANAGEMENT COMPANY, L.P.",Former 10% Owner,False,Common Stock,sell,3904714.0,6.0,23428284.0
+2023-09-15,AVPT,"SIXTH, STREET PARTNERS MANAGEMENT COMPANY, L.P.",Former 10% Owner,False,Common Stock,sell,4984140.0,6.0,29904840.0
+2023-09-21,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,6117.0,6.6,40372.2
+2023-09-21,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,2824.0,6.6,18638.399999999998
+2023-09-21,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,sell,4706.0,6.6,31059.6
+2023-09-21,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,1547.0,6.6,10210.199999999999
+2023-09-30,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,2552.0,6.31,16103.119999999999
+2023-10-05,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,4469.0,7.0,31283.0
+2023-10-06,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,31487.0,7.02,221038.74
+2023-10-09,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,4044.0,7.0,28308.0
+2023-11-01,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,20000.0,7.34,146800.0
+2023-11-17,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,15000.0,8.3,124500.00000000001
+2023-12-01,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,7311.0,8.32,60827.520000000004
+2023-12-01,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,20000.0,8.12,162399.99999999997
+2023-12-01,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,sell,7654.0,8.32,63681.28
+2023-12-01,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,9949.0,8.32,82775.68000000001
+2023-12-15,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,15000.0,8.47,127050.00000000001
+2023-12-21,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,1547.0,8.36,12932.919999999998
+2023-12-21,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,2824.0,8.36,23608.64
+2023-12-21,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,sell,4706.0,8.36,39342.159999999996
+2023-12-21,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,6117.0,8.36,51138.119999999995
+2023-12-31,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,2552.0,8.21,20951.920000000002
+2024-01-02,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,6582.0,7.99,52590.18
+2024-01-02,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,13418.0,7.88,105733.84
+2024-02-01,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,20000.0,7.78,155600.0
+2024-03-01,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,7310.0,8.01,58553.1
+2024-03-01,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,20000.0,8.1061,162122.0
+2024-03-01,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,sell,7654.0,8.01,61308.54
+2024-03-01,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,9949.0,8.01,79691.48999999999
+2024-03-05,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Stock Option (Right to Buy),buy,234960.0,7.46,1752801.6
+2024-03-05,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,15825.0,15.3,242122.5
+2024-03-05,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Stock Option (Right to Buy),buy,234960.0,7.46,1752801.6
+2024-03-13,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,15152.0,7.85,118943.2
+2024-03-13,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,20039.0,7.85,157306.15
+2024-03-13,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,24478.0,7.85,192152.3
+2024-03-13,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,sell,11656.0,7.85,91499.59999999999
+2024-03-14,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,buy,102319.0,14.66,1499996.54
+2024-03-14,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,buy,34106.0,14.66,499993.96
+2024-03-20,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,3061.0,8.0,24488.0
+2024-03-21,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,6117.0,8.03,49119.509999999995
+2024-03-21,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,6939.0,8.0008,55517.5512
+2024-03-21,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,1547.0,8.03,12422.41
+2024-03-21,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,sell,4706.0,15.05,70825.3
+2024-03-21,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,sell,4706.0,8.03,37789.18
+2024-03-21,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,2824.0,8.03,22676.719999999998
+2024-03-31,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,2552.0,7.44,18986.88
+2024-04-01,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,20000.0,7.7447,154894.0
+2024-05-01,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,20000.0,7.86,157200.0
+2024-05-17,AVPT,"TEPER, JEFF",Director,True,Common Stock,sell,60428.0,8.78,530557.84
+2024-05-17,AVPT,"TEPER, JEFF",Director,True,Common Stock,buy,264333.0,8.78,2320843.7399999998
+2024-05-20,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,20000.0,9.12,182399.99999999997
+2024-05-20,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,20000.0,8.96,179200.00000000003
+2024-06-01,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,7311.0,9.02,65945.22
+2024-06-01,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,sell,7654.0,9.02,69039.08
+2024-06-01,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,9949.0,9.02,89739.98
+2024-06-03,AVPT,"HO, JOHN CHI ON",Director,True,Common Stock,buy,19189.0,9.12,175003.68
+2024-06-03,AVPT,"SCHIJNS, JANET",Director,True,Common Stock,buy,19189.0,9.12,175003.68
+2024-06-03,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,20000.0,9.05,181000.0
+2024-06-03,AVPT,"EPSTEIN, JEFF",Director,True,Common Stock,buy,19189.0,9.12,175003.68
+2024-06-03,AVPT,"TEPER, JEFF",Director,True,Common Stock,buy,19189.0,9.12,175003.68
+2024-06-13,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,sell,2915.0,9.03,26322.449999999997
+2024-06-13,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,3789.0,9.03,34214.67
+2024-06-13,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,5010.0,9.03,45240.299999999996
+2024-06-13,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,6120.0,9.03,55263.6
+2024-06-21,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,2824.0,10.05,28381.2
+2024-06-21,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,1547.0,10.05,15547.35
+2024-06-21,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,6117.0,10.05,61475.850000000006
+2024-06-21,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,sell,4706.0,10.05,47295.3
+2024-06-24,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,sell,44500.0,9.86,438770.0
+2024-06-30,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,2552.0,10.42,26591.84
+2024-07-01,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,20000.0,10.37,207399.99999999997
+2024-08-01,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,20000.0,10.78,215600.0
+2024-08-19,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,sell,10000.0,10.77,107700.0
+2024-08-20,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,sell,10000.0,10.95,109500.0
+2024-08-20,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,30000.0,10.91,327300.0
+2024-08-21,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,sell,10000.0,10.89,108900.0
+2024-08-22,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,sell,10000.0,10.85,108500.0
+2024-08-23,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,sell,10000.0,10.83,108300.0
+2024-08-26,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,sell,10000.0,10.8,108000.0
+2024-09-01,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,9949.0,11.55,114910.95000000001
+2024-09-01,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,7310.0,11.55,84430.5
+2024-09-01,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,sell,586.0,11.55,6768.3
+2024-09-01,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,sell,7654.0,11.55,88403.70000000001
+2024-09-13,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,5010.0,11.9,59619.0
+2024-09-13,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,3789.0,11.9,45089.1
+2024-09-13,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,sell,2915.0,11.9,34688.5
+2024-09-13,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,sell,1205.0,11.9,14339.5
+2024-09-13,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,6120.0,11.9,72828.0
+2024-09-16,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,sell,10000.0,11.91,119100.0
+2024-09-17,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,sell,10000.0,11.87,118699.99999999999
+2024-09-18,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,sell,10000.0,11.73,117300.0
+2024-09-19,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,sell,10000.0,11.91,119100.0
+2024-09-20,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,sell,10000.0,11.94,119400.0
+2024-09-21,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,2824.0,11.94,33718.56
+2024-09-21,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,1547.0,11.94,18471.18
+2024-09-21,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,6117.0,11.94,73036.98
+2024-09-21,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,sell,721.0,11.94,8608.74
+2024-09-21,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,sell,4706.0,11.94,56189.64
+2024-09-23,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,sell,10000.0,11.9,119000.0
+2024-09-30,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,2552.0,11.77,30037.039999999997
+2024-10-14,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,sell,10000.0,12.37,123699.99999999999
+2024-10-15,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,sell,10000.0,12.18,121800.0
+2024-10-16,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,sell,10000.0,12.24,122400.0
+2024-10-17,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,sell,10000.0,12.1,121000.0
+2024-10-18,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,sell,10000.0,12.24,122400.0
+2024-10-21,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,sell,10000.0,12.1,121000.0
+2024-11-14,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,sell,10000.0,15.77,157700.0
+2024-11-15,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,sell,10000.0,15.68,156800.0
+2024-11-18,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,sell,10000.0,15.66,156600.0
+2024-11-19,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,sell,10000.0,15.88,158800.0
+2024-11-20,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,20215.0,17.12,346080.80000000005
+2024-11-20,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,sell,10000.0,17.12,171200.0
+2024-11-21,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,sell,10000.0,17.81,178100.0
+2024-12-01,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,sell,586.0,17.65,10342.9
+2024-12-01,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,9949.0,17.65,175599.84999999998
+2024-12-01,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,sell,7654.0,17.65,135093.09999999998
+2024-12-01,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,7310.0,17.65,129021.49999999999
+2024-12-10,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,buy,86888.0,18.22,1583099.3599999999
+2024-12-10,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,buy,1480.0,18.53,27424.4
+2024-12-10,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,buy,39356.0,18.53,729266.68
+2024-12-10,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,buy,39391.0,18.22,717704.0199999999
+2024-12-10,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,buy,113544.0,18.53,2103970.3200000003
+2024-12-10,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,buy,6884.0,18.22,125426.48
+2024-12-10,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,sell,5369.0,18.53,99487.57
+2024-12-10,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,buy,6881.0,18.53,127504.93000000001
+2024-12-10,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,21382.0,18.53,396208.46
+2024-12-10,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,buy,113646.0,18.22,2070630.1199999999
+2024-12-10,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,buy,1480.0,18.22,26965.6
+2024-12-10,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,buy,23697.0,18.53,439105.41000000003
+2024-12-10,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Common Stock,buy,130773.0,18.22,2382684.06
+2024-12-10,AVPT,"HO, JOHN CHI ON",Director,True,Common Stock,buy,23371.0,18.53,433064.63
+2024-12-10,AVPT,"HO, JOHN CHI ON",Director,True,Common Stock,buy,23392.0,18.22,426202.24
+2024-12-10,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,buy,1451.0,18.53,26887.030000000002
+2024-12-10,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,buy,1452.0,18.22,26455.44
+2024-12-10,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,1143.0,18.53,21179.79
+2024-12-10,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,sell,30988.0,18.53,574207.64
+2024-12-10,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,buy,86809.0,18.53,1608570.77
+2024-12-10,AVPT,"TEPER, JEFF",Director,True,Common Stock,buy,3000.0,18.22,54660.0
+2024-12-10,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Common Stock,buy,130658.0,18.53,2421092.74
+2024-12-10,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,133729.0,18.53,2477998.37
+2024-12-10,AVPT,"TEPER, JEFF",Director,True,Common Stock,buy,3000.0,18.53,55590.0
+2024-12-10,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,buy,23710.0,18.22,431996.19999999995
+2024-12-12,AVPT,"EPSTEIN, JEFF",Director,True,Common Stock,buy,428906.0,17.8,7634526.800000001
+2024-12-13,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,6120.0,18.37,112424.40000000001
+2024-12-13,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,3788.0,18.37,69585.56
+2024-12-13,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,sell,1205.0,18.37,22135.850000000002
+2024-12-13,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,sell,2914.0,18.37,53530.18
+2024-12-13,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,5010.0,18.37,92033.70000000001
+2024-12-20,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,buy,39360.0,17.76,699033.6000000001
+2024-12-20,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,10687.0,17.89,191190.43
+2024-12-20,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,571.0,17.89,10215.19
+2024-12-20,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,buy,1451.0,17.76,25769.760000000002
+2024-12-20,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,buy,86809.0,17.76,1541727.84
+2024-12-20,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,sell,15489.0,17.89,277098.21
+2024-12-20,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,buy,30000.0,17.89,536700.0
+2024-12-20,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,buy,1480.0,17.76,26284.800000000003
+2024-12-20,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,buy,113545.0,17.76,2016559.2000000002
+2024-12-20,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Common Stock,buy,130657.0,17.76,2320468.3200000003
+2024-12-20,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,sell,3521.0,17.89,62990.69
+2024-12-20,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,buy,6883.0,17.76,122242.08000000002
+2024-12-20,AVPT,"TEPER, JEFF",Director,True,Common Stock,buy,3001.0,17.76,53297.76
+2024-12-20,AVPT,"HO, JOHN CHI ON",Director,True,Common Stock,buy,23371.0,17.76,415068.96
+2024-12-20,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,66835.0,17.89,1195678.1500000001
+2024-12-20,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,buy,23695.0,17.76,420823.2
+2024-12-21,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,2824.0,17.89,50521.36
+2024-12-21,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,1547.0,17.89,27675.83
+2024-12-21,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,sell,1020.0,17.89,18247.8
+2024-12-21,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,6117.0,17.89,109433.13
+2024-12-21,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,sell,4706.0,17.89,84190.34
+2024-12-31,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,2552.0,16.51,42133.520000000004
+2025-02-11,AVPT,"EPSTEIN, JEFF",Director,True,Common Stock,buy,88738.0,19.49,1729503.6199999999
+2025-03-01,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,sell,586.0,14.94,8754.84
+2025-03-01,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,7310.0,14.94,109211.4
+2025-03-01,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,sell,7654.0,14.94,114350.76
+2025-03-01,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,9949.0,14.94,148638.06
+2025-03-05,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,sell,3636.0,15.3,55630.8
+2025-03-05,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,11336.0,15.3,173440.80000000002
+2025-03-13,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,3788.0,13.79,52236.52
+2025-03-13,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,6120.0,13.79,84394.79999999999
+2025-03-13,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,sell,2914.0,13.79,40184.06
+2025-03-13,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,5010.0,13.79,69087.9
+2025-03-14,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,buy,68213.0,14.66,1000002.58
+2025-03-14,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Stock Option (Right to Buy),buy,149825.0,8.34,1249540.5
+2025-03-14,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Common Stock,buy,85266.0,14.66,1249999.56
+2025-03-14,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Stock Option (Right to Buy),buy,119860.0,8.34,999632.4
+2025-03-14,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,buy,22169.0,14.66,324997.54
+2025-03-14,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,buy,66507.0,14.66,974992.62
+2025-03-21,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,6117.0,15.05,92060.85
+2025-03-21,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,1547.0,15.05,23282.350000000002
+2025-03-21,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,2824.0,15.05,42501.200000000004
+2025-03-24,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,35000.0,15.4,539000.0
+2025-04-23,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,35000.0,15.11,528850.0
+2025-05-23,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,35000.0,18.19,636650.0
+2025-06-01,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,sell,586.0,18.65,10928.9
+2025-06-01,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,10572.0,18.65,197167.8
+2025-06-01,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,sell,7654.0,18.65,142747.09999999998
+2025-06-01,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,7310.0,18.65,136331.5
+2025-06-02,AVPT,"EPSTEIN, JEFF",Director,True,Common Stock,sell,500000.0,18.77,9385000.0
+2025-06-05,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,3957.0,18.95,74985.15
+2025-06-05,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,2835.0,18.95,53723.25
+2025-06-05,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,sell,910.0,18.95,17244.5
+2025-06-13,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,4025.0,18.59,74824.75
+2025-06-13,AVPT,"LU, ZHIJIAN",10% Owner,False,Common Stock,sell,1205.0,18.59,22400.95
+2025-06-13,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,6120.0,18.59,113770.8
+2025-06-13,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,sell,2914.0,18.59,54171.26
+2025-06-13,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,5010.0,18.59,93135.9
+2025-06-20,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,2823.0,17.96,50701.08
+2025-06-20,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,sell,4706.0,17.96,84519.76000000001
+2025-06-20,AVPT,"LU, ZHIJIAN",No longer a 10% owner,False,Common Stock,sell,721.0,17.96,12949.16
+2025-06-20,AVPT,"HO, JOHN CHI ON",Director,True,Common Stock,buy,9744.0,17.96,175002.24000000002
+2025-06-20,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,6500.0,17.96,116740.0
+2025-06-20,AVPT,"EPSTEIN, JEFF",Director,True,Common Stock,buy,9744.0,17.96,175002.24000000002
+2025-06-20,AVPT,"SCHIJNS, JANET",Director,True,Common Stock,buy,9744.0,17.96,175002.24000000002
+2025-06-20,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,1547.0,17.96,27784.120000000003
+2025-06-20,AVPT,"TEPER, JEFF",Director,True,Common Stock,buy,9744.0,17.96,175002.24000000002
+2025-06-23,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,35000.0,18.23,638050.0
+2025-06-24,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,sell,22300.0,19.08,425483.99999999994
+2025-07-23,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,35000.0,18.74,655900.0
+2025-08-25,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,35000.0,15.47,541450.0
+2025-08-29,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,10572.0,16.36,172957.91999999998
+2025-08-29,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,7310.0,16.36,119591.59999999999
+2025-08-29,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,sell,7654.0,16.36,125219.44
+2025-09-05,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,3957.0,16.27,64380.39
+2025-09-05,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,2835.0,16.27,46125.45
+2025-09-12,AVPT,"GONG, XUNKAI","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,4025.0,15.61,62830.25
+2025-09-12,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,6120.0,15.61,95533.2
+2025-09-12,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer, 10% Owner",True,Common Stock,sell,2914.0,15.61,45487.54
+2025-09-12,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,5010.0,15.61,78206.09999999999
+2025-09-18,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,500000.0,15.21,7605000.0
+2025-09-18,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer",True,Common Stock,sell,2068966.0,15.21,31468972.860000003
+2025-09-18,AVPT,"HO, JOHN CHI ON",Director,True,Common Stock,sell,650000.0,15.21,9886500.0
+2025-09-18,AVPT,"GONG, XUNKAI","Director, Executive Chairman",True,Common Stock,sell,2068966.0,15.21,31468972.860000003
+2025-09-18,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,216000.0,15.21,3285360.0
+2025-09-19,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer",True,Common Stock,sell,4706.0,15.67,73743.02
+2025-09-19,AVPT,"GONG, XUNKAI","Director, Executive Chairman",True,Common Stock,sell,6500.0,15.67,101855.0
+2025-09-19,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,2823.0,15.67,44236.409999999996
+2025-09-19,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,1547.0,15.67,24241.49
+2025-09-22,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,buy,30000.0,15.75,472500.0
+2025-09-23,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,16054.0,15.53,249318.62
+2025-09-23,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,18267.0,15.59,284782.52999999997
+2025-09-23,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,679.0,15.49,10517.710000000001
+2025-09-29,AVPT,"GONG, XUNKAI","Director, Executive Chairman",True,Common Stock,sell,31950.0,15.34,490113.0
+2025-09-30,AVPT,"GONG, XUNKAI","Director, Executive Chairman",True,Common Stock,sell,28050.0,14.84,416262.0
+2025-10-06,AVPT,"GONG, XUNKAI","Director, Executive Chairman",True,Common Stock,sell,55833.0,15.31,854803.23
+2025-10-07,AVPT,"GONG, XUNKAI","Director, Executive Chairman",True,Common Stock,sell,4167.0,15.08,62838.36
+2025-10-13,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer",True,Common Stock,buy,569707.0,14.61,8323419.27
+2025-10-13,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer",True,Common Stock,buy,1716047.0,14.61,25071446.669999998
+2025-10-13,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer",True,Common Stock,buy,362850.0,14.61,5301238.5
+2025-10-15,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer",True,Common Stock,buy,1542779.0,14.61,22540001.189999998
+2025-10-15,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer",True,Common Stock,sell,1542779.0,14.61,22540001.189999998
+2025-10-17,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer",True,Common Stock,buy,37974.0,14.08,534673.92
+2025-10-17,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer",True,Common Stock,buy,299435.0,14.08,4216044.8
+2025-10-17,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer",True,Common Stock,buy,158634.0,14.08,2233566.72
+2025-10-24,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,1848.0,15.03,27775.44
+2025-11-03,AVPT,"GONG, XUNKAI","Director, Executive Chairman",True,Common Stock,sell,41679.0,13.96,581838.8400000001
+2025-11-04,AVPT,"GONG, XUNKAI","Director, Executive Chairman",True,Common Stock,sell,18321.0,13.8,252829.80000000002
+2025-12-05,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,2835.0,13.4,37989.0
+2025-12-05,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,3957.0,13.4,53023.8
+2025-12-08,AVPT,"GONG, XUNKAI","Director, Executive Chairman",True,Common Stock,sell,49535.0,13.46,666741.1000000001
+2025-12-09,AVPT,"GONG, XUNKAI","Director, Executive Chairman",True,Common Stock,sell,10465.0,13.38,140021.7
+2025-12-12,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,buy,21000.0,13.89,291690.0
+2025-12-12,AVPT,"GONG, XUNKAI","Director, Executive Chairman",True,Common Stock,sell,4025.0,13.89,55907.25
+2025-12-12,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer",True,Common Stock,sell,2914.0,13.89,40475.46
+2025-12-12,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,5010.0,13.89,69588.90000000001
+2025-12-12,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,6120.0,13.89,85006.8
+2025-12-19,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer",True,Common Stock,sell,4706.0,13.94,65601.64
+2025-12-19,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,2823.0,13.94,39352.619999999995
+2025-12-19,AVPT,"GONG, XUNKAI","Director, Executive Chairman",True,Common Stock,sell,6500.0,13.94,90610.0
+2025-12-19,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,1547.0,13.94,21565.18
+2025-12-30,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,buy,928.0,13.97,12964.16
+2026-01-12,AVPT,"GONG, XUNKAI","Director, Executive Chairman",True,Common Stock,sell,32002.0,13.66,437147.32
+2026-01-13,AVPT,"GONG, XUNKAI","Director, Executive Chairman",True,Common Stock,sell,27998.0,13.39,374893.22000000003
+2026-02-04,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,322.0,10.53,3390.66
+2026-03-05,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,18005.0,11.29,203276.44999999998
+2026-03-05,AVPT,"GONG, XUNKAI","Director, Executive Chairman",True,Common Stock,buy,44439.0,11.29,501716.30999999994
+2026-03-05,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,buy,17775.0,11.29,200679.74999999997
+2026-03-05,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,buy,11107.0,11.29,125398.02999999998
+2026-03-05,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer",True,Common Stock,buy,44439.0,11.29,501716.30999999994
+2026-03-05,AVPT,"GONG, XUNKAI","Director, Executive Chairman",True,Common Stock,sell,48539.0,11.29,548005.3099999999
+2026-03-05,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,12899.0,11.29,145629.71
+2026-03-05,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer",True,Common Stock,sell,35118.0,11.29,396482.22
+2026-03-13,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,7499.0,10.43,78214.56999999999
+2026-03-13,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,10066.0,10.43,104988.37999999999
+2026-03-13,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,6120.0,10.43,63831.6
+2026-03-13,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,5010.0,10.43,52254.299999999996
+2026-03-13,AVPT,"GONG, XUNKAI","Director, Executive Chairman",True,Common Stock,sell,3988.0,10.43,41594.84
+2026-03-13,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer",True,Common Stock,sell,2914.0,10.43,30393.02
+2026-03-16,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer",True,Stock Option (Right to Buy),buy,252609.0,10.52,2657446.6799999997
+2026-03-16,AVPT,"GONG, XUNKAI","Director, Executive Chairman",True,Stock Option (Right to Buy),buy,325947.0,10.52,3428962.44
+2026-03-20,AVPT,"BROWN, BRIAN MICHAEL","Director, Chief Legal Officer",True,Common Stock,sell,1546.0,10.3,15923.800000000001
+2026-03-20,AVPT,"CACI, JAMES",Chief Financial Officer,True,Common Stock,sell,2823.0,10.3,29076.9
+2026-03-20,AVPT,"GONG, XUNKAI","Director, Executive Chairman",True,Common Stock,sell,6117.0,10.3,63005.100000000006
+2026-03-20,AVPT,"JIANG, TIANYI","Director, Chief Executive Officer",True,Common Stock,sell,4706.0,10.3,48471.8

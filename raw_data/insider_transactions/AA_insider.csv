@@ -1,0 +1,301 @@
+date,symbol,insider_name,insider_title,is_executive,security_type,transaction_type,shares,price,value
+2017-07-06,AA,"WILLIAMS, STEVEN W",Director,True,Common Stock,buy,885.0,33.89,29992.65
+2017-07-06,AA,"ZEDILLO, ERNESTO",Director,True,Common Stock,buy,544.0,33.89,18436.16
+2017-07-06,AA,"FLYNN, TIMOTHY PATRICK",Director,True,Common Stock,buy,966.0,33.89,32737.74
+2017-07-17,AA,"SIGURDSSON, TOMAS MAR",Exec VP and COO,True,Common Stock,sell,3203.0,36.4,116589.2
+2017-08-29,AA,"HEETER, JEFFREY D.","EVP, Gen. Counsel & Secretary",True,Phantom Stock Units,buy,6194.0,42.28,261882.32
+2017-09-13,AA,"BEERMAN, MOLLY S.",Vice President and Controller,True,Common Stock,sell,568.41,44.72,25419.295199999997
+2017-10-04,AA,"ZEDILLO, ERNESTO",Director,True,Common Stock,buy,384.0,47.91,18397.44
+2017-10-04,AA,"WILLIAMS, STEVEN W",Director,True,Common Stock,buy,626.0,47.91,29991.659999999996
+2017-10-04,AA,"FLYNN, TIMOTHY PATRICK",Director,True,Common Stock,buy,645.0,47.91,30901.949999999997
+2018-01-04,AA,"WILLIAMS, STEVEN W",Director,True,Common Stock,buy,548.0,54.7,29975.600000000002
+2018-01-04,AA,"FLYNN, TIMOTHY PATRICK",Director,True,Common Stock,buy,548.0,54.7,29975.600000000002
+2018-01-04,AA,"ZEDILLO, ERNESTO",Director,True,Common Stock,buy,337.0,54.7,18433.9
+2018-01-22,AA,"OPLINGER, WILLIAM F",Executive VP & CFO,True,Common Stock,buy,2384.0,36.38,86729.92000000001
+2018-01-22,AA,"OPLINGER, WILLIAM F",Executive VP & CFO,True,Common Stock,sell,40293.0,52.8555,2129706.6615
+2018-01-22,AA,"OPLINGER, WILLIAM F",Executive VP & CFO,True,Common Stock,sell,50629.0,52.8555,2676021.1095
+2018-01-22,AA,"OPLINGER, WILLIAM F",Executive VP & CFO,True,Common Stock,buy,44473.0,22.78,1013094.9400000001
+2018-01-22,AA,"OPLINGER, WILLIAM F",Executive VP & CFO,True,Common Stock,sell,44934.0,52.8555,2375009.037
+2018-01-22,AA,"OPLINGER, WILLIAM F",Executive VP & CFO,True,Common Stock,sell,39958.0,52.8555,2112000.069
+2018-01-22,AA,"OPLINGER, WILLIAM F",Executive VP & CFO,True,Common Stock,buy,40293.0,19.89,801427.77
+2018-01-22,AA,"OPLINGER, WILLIAM F",Executive VP & CFO,True,Common Stock,sell,44473.0,52.8555,2350642.6515
+2018-01-22,AA,"OPLINGER, WILLIAM F",Executive VP & CFO,True,Common Stock,buy,39958.0,34.83,1391737.14
+2018-01-22,AA,"OPLINGER, WILLIAM F",Executive VP & CFO,True,Common Stock,sell,6804.0,52.8555,359628.822
+2018-01-22,AA,"OPLINGER, WILLIAM F",Executive VP & CFO,True,Common Stock,buy,44934.0,15.1,678503.4
+2018-01-22,AA,"OPLINGER, WILLIAM F",Executive VP & CFO,True,Common Stock,sell,2384.0,52.8555,126007.512
+2018-01-22,AA,"OPLINGER, WILLIAM F",Executive VP & CFO,True,Common Stock,buy,50629.0,24.73,1252055.17
+2018-01-22,AA,"SIGURDSSON, TOMAS MAR",Exec VP and COO,True,Common Stock,sell,2193.0,52.94,116097.42
+2018-01-22,AA,"HEETER, JEFFREY D.","EVP, Gen. Counsel & Secretary",True,"Common Stock, par value $0.01 per share",sell,2014.0,52.94,106621.15999999999
+2018-01-22,AA,"FISHER, LEIGH ANN",Exec VP and CAO,True,"Common Stock,  par value $0.01 per share",sell,1213.0,52.94,64216.219999999994
+2018-01-22,AA,"OPLINGER, WILLIAM F",Executive VP & CFO,True,Common Stock,buy,6804.0,30.33,206365.31999999998
+2018-01-24,AA,"OPLINGER, WILLIAM F",Executive VP & CFO,True,"Common Stock, par value $0.01 per share",sell,10538.0,53.3,561675.4
+2018-01-24,AA,"FISHER, LEIGH ANN",Exec VP and CAO,True,"Common Stock, par value $0.01 per share",sell,581.0,53.3,30967.3
+2018-01-24,AA,"SIGURDSSON, TOMAS MAR",Exec VP and COO,True,"Common Stock, par value $0.01 per share",sell,2201.0,53.3,117313.29999999999
+2018-01-24,AA,"HARVEY, ROY CHRISTOPHER","Director, President, CEO & Director, 10% Owner",True,"Common Stock, par value $0.01 per share",sell,4833.0,53.3,257598.9
+2018-01-31,AA,"SIGURDSSON, TOMAS MAR",Exec VP and COO,True,"Common Stock, par value $0.01 per share",sell,10000.0,51.3687,513686.99999999994
+2018-04-04,AA,"CITRINO, MARY ANNE",Director,True,Common Stock,buy,639.0,46.92,29981.88
+2018-04-04,AA,"ZEDILLO, ERNESTO",Director,True,Common Stock,buy,392.0,46.92,18392.64
+2018-04-04,AA,"WILLIAMS, STEVEN W",Director,True,Common Stock,buy,639.0,46.92,29981.88
+2018-04-04,AA,"FLYNN, TIMOTHY PATRICK",Director,True,Common Stock,buy,639.0,46.92,29981.88
+2018-07-05,AA,"FLYNN, TIMOTHY PATRICK",Director,True,Common Stock,buy,639.0,46.88,29956.320000000003
+2018-07-05,AA,"ZEDILLO, ERNESTO",Director,True,Common Stock,buy,393.0,46.88,18423.84
+2018-07-05,AA,"CITRINO, MARY ANNE",Director,True,Common Stock,buy,639.0,46.88,29956.320000000003
+2018-07-05,AA,"WILLIAMS, STEVEN W",Director,True,Common Stock,buy,639.0,46.88,29956.320000000003
+2018-10-03,AA,"FLYNN, TIMOTHY PATRICK",Director,True,"Common Stock, par value $0.01 per share",buy,699.0,42.89,29980.11
+2018-10-03,AA,"CITRINO, MARY ANNE",Director,True,"Common Stock, par value $0.01 per share",buy,699.0,42.89,29980.11
+2018-10-03,AA,"WILLIAMS, STEVEN W",Director,True,"Common Stock, par value $0.01 per share",buy,699.0,42.89,29980.11
+2018-10-03,AA,"ZEDILLO, ERNESTO",Director,True,"Common Stock, par value $0.01 per share",buy,429.0,42.89,18399.81
+2019-01-04,AA,"FLYNN, TIMOTHY PATRICK",Director,True,"Common Stock, par value $0.01 per share",buy,1058.0,28.34,29983.72
+2019-01-04,AA,"ZEDILLO, ERNESTO",Director,True,"Common Stock, par value $0.01 per share",buy,650.0,28.34,18421.0
+2019-01-04,AA,"CITRINO, MARY ANNE",Director,True,"Common Stock, par value $0.01 per share",buy,1058.0,28.34,29983.72
+2019-01-04,AA,"WILLIAMS, STEVEN W",Director,True,"Common Stock, par value $0.01 per share",buy,1058.0,28.34,29983.72
+2019-01-22,AA,"REYES, TIMOTHY D.","President, Aluminum segment",True,"Common Stock, par value $0.01 per share",sell,3259.0,27.81,90632.79
+2019-01-22,AA,"HEETER, JEFFREY D.","EVP, Gen. Counsel & Secretary",True,"Common Stock, par value $0.01 per share",sell,4952.0,27.81,137715.12
+2019-01-22,AA,"FISHER, LEIGH ANN",EVP and Chief Admin. Officer,True,"Common Stock, par value $0.01 per share",sell,1754.0,27.81,48778.74
+2019-01-24,AA,"FISHER, LEIGH ANN",EVP and Chief Admin. Officer,True,"Common Stock, par value $0.01 per share",sell,1074.0,27.96,30029.04
+2019-01-24,AA,"HARVEY, ROY CHRISTOPHER","Director, President, CEO & Director",True,"Common Stock, par value $0.01 per share",sell,10696.0,27.96,299060.16000000003
+2019-01-24,AA,"REYES, TIMOTHY D.","President, Aluminum segment",True,"Common Stock, par value $0.01 per share",sell,1083.0,27.96,30280.68
+2019-01-24,AA,"OPLINGER, WILLIAM F",Executive VP & CFO,True,"Common Stock, par value $0.01 per share",sell,9481.0,27.96,265088.76
+2019-02-12,AA,"HEETER, JEFFREY D.","EVP, Gen. Counsel & Secretary",True,Phantom Stock Units,buy,3087.0,28.32,87423.84
+2019-04-03,AA,"FLYNN, TIMOTHY PATRICK",Director,True,"Common Stock, par value $0.01 per share",buy,1045.0,28.69,29981.050000000003
+2019-04-03,AA,"WILLIAMS, STEVEN W",Director,True,"Common Stock, par value $0.01 per share",buy,1045.0,28.69,29981.050000000003
+2019-07-03,AA,"FLYNN, TIMOTHY PATRICK",Director,True,"Common Stock, par value $0.01 per share",buy,1321.0,22.7,29986.7
+2019-07-03,AA,"WILLIAMS, STEVEN W",Director,True,"Common Stock, par value $0.01 per share",buy,1321.0,22.7,29986.7
+2019-10-03,AA,"WILLIAMS, STEVEN W",Director,True,"Common Stock, par value $0.01 per share",buy,1574.0,19.05,29984.7
+2019-10-03,AA,"FLYNN, TIMOTHY PATRICK",Director,True,"Common Stock, par value $0.01 per share",buy,1837.0,19.05,34994.85
+2020-01-06,AA,"FLYNN, TIMOTHY PATRICK",Director,True,"Common Stock, par value $0.01 per share",buy,1666.0,21.0,34986.0
+2020-01-06,AA,"WILLIAMS, STEVEN W",Director,True,"Common Stock, par value $0.01 per share",buy,1428.0,21.0,29988.0
+2020-02-03,AA,"REYES, TIMOTHY D.",EVP & Chief Commercial Officer,True,"Common Stock, par value $0.01 per share",sell,727.0,14.24,10352.48
+2020-02-03,AA,"OPLINGER, WILLIAM F",EVP & CFO,True,"Common Stock, par value $0.01 per share",sell,3275.0,14.24,46636.0
+2020-02-03,AA,"O'NEILL, MICHELLE L",EVP & Chief Ext. Aff. Officer,True,"Common Stock, par value $0.01 per share",sell,989.0,14.24,14083.36
+2020-02-03,AA,"KAHRS, BENJAMIN D",EVP & Chief Innovation Officer,True,"Common Stock, par value $0.01 per share",sell,1730.0,14.24,24635.2
+2020-02-03,AA,"FISHER, LEIGH ANN",EVP & Chief H.R. Officer,True,"Common Stock, par value $0.01 per share",sell,1083.0,14.24,15421.92
+2020-02-03,AA,"HEETER, JEFFREY D.",EVP & Gen. Counsel,True,"Common Stock, par value $0.01 per share",sell,1348.0,14.24,19195.52
+2020-02-03,AA,"HARVEY, ROY CHRISTOPHER","Director, President, CEO & Director",True,"Common Stock, par value $0.01 per share",sell,8279.0,14.24,117892.96
+2020-02-03,AA,"BEERMAN, MOLLY S.",Senior VP & Controller,True,"Common Stock, par value $0.01 per share",sell,1244.0,14.24,17714.56
+2020-03-03,AA,"KAHRS, BENJAMIN D",EVP & Chief Innovation Officer,True,Phantom Stock Units,buy,4368.0,13.37,58400.159999999996
+2020-04-03,AA,"FLYNN, TIMOTHY PATRICK",Director,True,"Common Stock, par value $0.01 per share",buy,5862.0,5.97,34996.14
+2020-04-03,AA,"WILLIAMS, STEVEN W",Director,True,"Common Stock, par value $0.01 per share",buy,5025.0,5.97,29999.25
+2020-04-17,AA,"NEVELS, JAMES E",Director,True,"Common Stock, par value $0.01 per share",buy,200.0,7.32,1464.0
+2020-05-18,AA,"NEVELS, JAMES E",Director,True,"Common Stock, par value $0.01 per share",buy,200.0,7.12,1424.0
+2020-06-17,AA,"NEVELS, JAMES E",Director,True,"Common Stock, par value $0.01 per share",buy,200.0,11.5,2300.0
+2020-07-06,AA,"FLYNN, TIMOTHY PATRICK",Director,True,"Common Stock, par value $0.01 per share",buy,3051.0,11.47,34994.97
+2020-07-06,AA,"WILLIAMS, STEVEN W",Director,True,"Common Stock, par value $0.01 per share",buy,2615.0,11.47,29994.050000000003
+2020-07-17,AA,"NEVELS, JAMES E",Director,True,"Common Stock, par value $0.01 per share",buy,200.0,13.66,2732.0
+2020-08-17,AA,"NEVELS, JAMES E",Director,True,"Common Stock, par value $0.01 per share",buy,100.0,14.73,1473.0
+2020-08-17,AA,"NEVELS, JAMES E",Director,True,"Common Stock, par value $0.01 per share",buy,100.0,14.72,1472.0
+2020-09-17,AA,"NEVELS, JAMES E",Director,True,"Common Stock, par value $0.01 per share",buy,100.0,13.3,1330.0
+2020-09-17,AA,"NEVELS, JAMES E",Director,True,"Common Stock, per value $0.01 per share",buy,100.0,13.295,1329.5
+2020-10-05,AA,"FLYNN, TIMOTHY PATRICK",Director,True,"Common Stock, par value $0.01 per share",buy,2933.0,11.93,34990.69
+2020-10-05,AA,"WILLIAMS, STEVEN W",Director,True,"Common Stock, par value $0.01 per share",buy,2514.0,11.93,29992.02
+2020-10-19,AA,"NEVELS, JAMES E",Director,True,"Common Stock, par value $0.01 per share",buy,200.0,12.75,2550.0
+2020-11-17,AA,"NEVELS, JAMES E",Director,True,"Common Stock, par value $0.01 per share",buy,200.0,17.29,3458.0
+2020-12-02,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",sell,1500.0,21.185,31777.499999999996
+2021-01-06,AA,"FLYNN, TIMOTHY PATRICK",Director,True,"Common Stock, par value $0.01 per share",buy,1388.0,25.21,34991.48
+2021-01-06,AA,"WILLIAMS, STEVEN W",Director,True,"Common Stock, par value $0.01 per share",buy,1190.0,25.21,29999.9
+2021-01-25,AA,"ELAM, HARDEN SONYA",EVP & Chief Ext. Aff. Officer,True,"Common Stock, par value $0.01 per share",sell,763.0,19.34,14756.42
+2021-01-25,AA,"HARVEY, ROY CHRISTOPHER","Director, President, CEO & Director",True,"Common Stock, par value $0.01 per share",sell,8475.0,19.34,163906.5
+2021-01-25,AA,"BEERMAN, MOLLY S.",Senior VP & Controller,True,"Common Stock, par value $0.01 per share",sell,919.0,19.34,17773.46
+2021-01-25,AA,"REYES, TIMOTHY D.",EVP & Chief Commercial Officer,True,"Common Stock, par value $0.01 per share",sell,863.0,19.34,16690.42
+2021-01-25,AA,"OPLINGER, WILLIAM F",EVP & CFO,True,"Common Stock, par value $0.01 per share",sell,2351.0,19.34,45468.34
+2021-01-25,AA,"HEETER, JEFFREY D.",EVP & Gen. Counsel,True,"Common Stock, par value $0.01 per share",sell,1524.0,19.34,29474.16
+2021-01-25,AA,"KAHRS, BENJAMIN D",EVP & Chief Innovation Officer,True,"Common Stock, par value $0.01 per share",sell,1392.0,19.34,26921.28
+2021-01-27,AA,"OPLINGER, WILLIAM F",EVP & CFO,True,"Common Stock, par value $0.01 per share",sell,267.0,18.66,4982.22
+2021-01-27,AA,"HARVEY, ROY CHRISTOPHER","Director, President, CEO & Director",True,"Common Stock, par value $0.01 per share",sell,1033.0,18.66,19275.78
+2021-01-27,AA,"REYES, TIMOTHY D.",EVP & Chief Commercial Officer,True,"Common Stock, par value $0.01 per share",sell,91.0,18.66,1698.06
+2021-01-27,AA,"HEETER, JEFFREY D.",EVP & Gen. Counsel,True,"Common Stock, par value $0.01 per share",sell,160.0,18.66,2985.6
+2021-01-27,AA,"NEVELS, JAMES E",Director,True,"Common Stock, par value $0.01 per share",buy,400.0,17.5,7000.0
+2021-02-03,AA,"KAHRS, BENJAMIN D",EVP & Chief Innovation Officer,True,Phantom Stock Units,buy,616.0,19.52,12024.32
+2021-03-10,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",buy,1000.0,24.73,24730.0
+2021-03-10,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",buy,1000.0,19.89,19890.0
+2021-03-10,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",buy,2214.0,15.1,33431.4
+2021-03-10,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",sell,2731.0,31.8881,87086.4011
+2021-03-10,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",sell,4214.0,31.9097,134467.47580000001
+2021-04-05,AA,"WILLIAMS, STEVEN W",Director,True,"Common Stock, par value $0.01 per share",buy,2139.0,31.55,67485.45
+2021-04-20,AA,"HARVEY, ROY CHRISTOPHER","Director, President, CEO & Director",True,"Common Stock, par value $0.01 per share",buy,46580.0,24.73,1151923.4
+2021-04-20,AA,"HARVEY, ROY CHRISTOPHER","Director, President, CEO & Director",True,"Common Stock, par value $0.01 per share",buy,12431.0,19.89,247252.59
+2021-04-20,AA,"HARVEY, ROY CHRISTOPHER","Director, President, CEO & Director",True,"Common Stock, par value $0.01 per share",sell,238037.0,32.9111,7834059.5106999995
+2021-04-20,AA,"HARVEY, ROY CHRISTOPHER","Director, President, CEO & Director",True,"Common Stock, par value $0.01 per share",buy,4625.0,22.78,105357.5
+2021-04-20,AA,"HARVEY, ROY CHRISTOPHER","Director, President, CEO & Director",True,"Common Stock, par value $0.01 per share",buy,98047.0,27.96,2741394.12
+2021-04-20,AA,"HEETER, JEFFREY D.",EVP & Gen. Counsel,True,"Common Stock, par value $0.01 per share",buy,12260.0,27.96,342789.60000000003
+2021-04-20,AA,"HARVEY, ROY CHRISTOPHER","Director, President, CEO & Director",True,"Common Stock, par value $0.01 per share",buy,76354.0,15.1,1152945.4
+2021-04-20,AA,"HEETER, JEFFREY D.",EVP & Gen. Counsel,True,"Common Stock, par value $0.01 per share",sell,12260.0,35.3527,433424.10199999996
+2021-04-26,AA,"REYES, TIMOTHY D.",EVP & Chief Commercial Officer,True,"Common Stock, par value $0.01 per share",sell,20260.0,36.8166,745904.316
+2021-04-26,AA,"REYES, TIMOTHY D.",EVP & Chief Commercial Officer,True,"Common Stock, par value $0.01 per share",buy,12260.0,27.96,342789.60000000003
+2021-04-27,AA,"HEETER, JEFFREY D.",EVP & Gen. Counsel,True,Phantom Stock Units,sell,9436.0,36.76,346867.36
+2021-05-07,AA,"KAHRS, BENJAMIN D",EVP & Chief Innovation Officer,True,"Common Stock, par value $0.01 per share",sell,28082.0,39.6823,1114358.3486
+2021-05-07,AA,"KAHRS, BENJAMIN D",EVP & Chief Innovation Officer,True,"Common Stock, par value $0.01 per share",buy,16574.0,15.1,250267.4
+2021-05-07,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",buy,1953.0,34.83,68022.98999999999
+2021-05-07,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",buy,2482.0,37.68,93521.76
+2021-05-07,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",sell,4435.0,41.1834,182648.379
+2021-06-01,AA,"HEETER, JEFFREY D.",EVP & Gen. Counsel,True,"Common Stock, par value $0.01 per share",sell,23089.0,40.5333,935873.3637
+2021-07-06,AA,"WILLIAMS, STEVEN W",Director,True,"Common Stock, par value $0.01 per share",buy,1850.0,36.47,67469.5
+2021-09-13,AA,"REYES, TIMOTHY D.",EVP & Chief Commercial Officer,True,"Common Stock, par value $0.01 per share",buy,7390.0,37.68,278455.2
+2021-09-13,AA,"REYES, TIMOTHY D.",EVP & Chief Commercial Officer,True,"Common Stock, par value $0.01 per share",sell,17390.0,50.0249,869933.011
+2021-10-05,AA,"WILLIAMS, STEVEN W",Director,True,"Common Stock, par value $0.01 per share",buy,1376.0,49.05,67492.8
+2021-11-16,AA,"OPLINGER, WILLIAM F",EVP & CFO,True,"Common Stock, par value $0.01 per share",sell,166369.0,48.3961,8051610.760899999
+2021-11-16,AA,"OPLINGER, WILLIAM F",EVP & CFO,True,"Common Stock, par value $0.01 per share",buy,32130.0,37.68,1210658.4
+2021-11-16,AA,"OPLINGER, WILLIAM F",EVP & CFO,True,"Common Stock, par value $0.01 per share",buy,19613.0,27.96,548379.48
+2021-11-16,AA,"OPLINGER, WILLIAM F",EVP & CFO,True,"Common Stock, par value $0.01 per share",buy,22466.0,15.1,339236.6
+2022-01-05,AA,"WILLIAMS, STEVEN W",Director,True,"Common Stock, par value $0.01 per share",buy,1152.0,58.55,67449.59999999999
+2022-01-24,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",sell,2673.0,58.02,155087.46000000002
+2022-01-24,AA,"REYES, TIMOTHY D.",EVP & Chief Commercial Officer,True,"Common Stock, par value $0.01 per share",sell,1826.0,58.02,105944.52
+2022-01-24,AA,"OPLINGER, WILLIAM F",EVP & CFO,True,"Common Stock, par value $0.01 per share",sell,3335.0,58.02,193496.7
+2022-01-24,AA,"KAHRS, BENJAMIN D",EVP & Chief Innovation Officer,True,"Common Stock, par value $0.01 per share",sell,3660.0,58.02,212353.2
+2022-01-24,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",sell,141.0,58.02,8180.820000000001
+2022-01-24,AA,"HEETER, JEFFREY D.",EVP & Gen. Counsel,True,"Common Stock, par value $0.01 per share",sell,2127.0,58.02,123408.54000000001
+2022-01-24,AA,"BEERMAN, MOLLY S.",Senior VP & Controller,True,"Common Stock, par value $0.01 per share",sell,2142.0,58.02,124278.84000000001
+2022-01-24,AA,"HARVEY, ROY CHRISTOPHER","Director, President, CEO & Director",True,"Common Stock, par value $0.01 per share",sell,22342.0,58.02,1296282.84
+2022-01-24,AA,"ELAM, HARDEN SONYA",EVP & Chief Ext. Aff. Officer,True,"Common Stock, par value $0.01 per share",sell,1336.0,58.02,77514.72
+2022-01-25,AA,"HEETER, JEFFREY D.",EVP & Gen. Counsel,True,"Common Stock, par value $0.01 per share",buy,12050.0,37.68,454044.0
+2022-01-25,AA,"HEETER, JEFFREY D.",EVP & Gen. Counsel,True,Employee Stock Option (right to buy),sell,6130.0,27.96,171394.80000000002
+2022-01-25,AA,"HEETER, JEFFREY D.",EVP & Gen. Counsel,True,"Common Stock, par value $0.01 per share",buy,11260.0,53.3,600158.0
+2022-01-25,AA,"HEETER, JEFFREY D.",EVP & Gen. Counsel,True,Employee Stock Option (right to buy),sell,12050.0,37.68,454044.0
+2022-01-25,AA,"HEETER, JEFFREY D.",EVP & Gen. Counsel,True,Employee Stock Options (right to buy),sell,11260.0,53.3,600158.0
+2022-01-25,AA,"HEETER, JEFFREY D.",EVP & Gen. Counsel,True,"Common Stock, par value $0.01 per share",buy,6130.0,27.96,171394.80000000002
+2022-01-25,AA,"HEETER, JEFFREY D.",EVP & Gen. Counsel,True,"Common Stock, par value $0.01 per share",sell,29440.0,60.3097,1775517.568
+2022-01-26,AA,"BEERMAN, MOLLY S.",Senior VP & Controller,True,"Common Stock, par value $0.01 per share",sell,1825.0,60.75,110868.75
+2022-01-26,AA,"KAHRS, BENJAMIN D",EVP & Chief Innovation Officer,True,Phantom Stock Units,sell,4817.0,61.765,297522.005
+2022-01-26,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",sell,3730.0,61.6279,229872.06699999998
+2022-01-26,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",buy,888.0,37.68,33459.84
+2022-01-26,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",sell,9340.0,62.5451,584171.2339999999
+2022-01-26,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",buy,1700.0,53.3,90610.0
+2022-01-26,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",buy,2030.0,27.96,56758.8
+2022-01-26,AA,"HEETER, JEFFREY D.",EVP & Gen. Counsel,True,"Common Stock, par value $0.01 per share",sell,13421.0,60.75,815325.75
+2022-01-26,AA,"HEETER, JEFFREY D.",EVP & Gen. Counsel,True,"Common Stock, par value $0.01 per share",sell,8332.0,63.0514,525344.2648
+2022-01-26,AA,"KAHRS, BENJAMIN D",EVP & Chief Innovation Officer,True,"Common Stock, par value $0.01 per share",sell,2561.0,60.75,155580.75
+2022-01-26,AA,"REYES, TIMOTHY D.",EVP & Chief Commercial Officer,True,"Common Stock, par value $0.01 per share",sell,10779.0,60.75,654824.25
+2022-01-26,AA,"OPLINGER, WILLIAM F",EVP & CFO,True,"Common Stock, par value $0.01 per share",sell,20801.0,60.75,1263660.75
+2022-01-26,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",buy,2900.0,53.3,154570.0
+2022-01-26,AA,"HARVEY, ROY CHRISTOPHER","Director, President, CEO & Director",True,"Common Stock, par value $0.01 per share",sell,197310.0,60.5424,11945620.944
+2022-01-26,AA,"HARVEY, ROY CHRISTOPHER","Director, President, CEO & Director",True,"Common Stock, par value $0.01 per share",sell,108222.0,60.75,6574486.5
+2022-01-26,AA,"HARVEY, ROY CHRISTOPHER","Director, President, CEO & Director",True,"Common Stock, par value $0.01 per share",buy,27474.0,34.83,956919.4199999999
+2022-01-26,AA,"HARVEY, ROY CHRISTOPHER","Director, President, CEO & Director",True,"Common Stock, par value $0.01 per share",buy,88360.0,37.68,3329404.8
+2022-01-26,AA,"HARVEY, ROY CHRISTOPHER","Director, President, CEO & Director",True,"Common Stock, par value $0.01 per share",buy,73290.0,53.3,3906357.0
+2022-01-26,AA,"HARVEY, ROY CHRISTOPHER","Director, President, CEO & Director",True,"Common Stock, par value $0.01 per share",sell,40837.0,60.9823,2490334.1851
+2022-01-26,AA,"HARVEY, ROY CHRISTOPHER","Director, President, CEO & Director",True,"Common Stock, par value $0.01 per share",buy,49023.0,27.96,1370683.08
+2022-02-02,AA,"KAHRS, BENJAMIN D",EVP & Chief Innovation Officer,True,"Common Stock, par value $0.01 per share",sell,15376.0,59.0353,907726.7728
+2022-02-03,AA,"HEETER, JEFFREY D.",EVP & Gen. Counsel,True,"Common Stock, par value $0.01 per share",sell,17696.0,60.5601,1071671.5296
+2022-02-04,AA,"BEERMAN, MOLLY S.",Senior VP & Controller,True,"Common Stock, par value $0.01 per share",sell,12500.0,64.5285,806606.2499999999
+2022-02-04,AA,"SLAVEN, JOHN D",EVP & Chief Operations Officer,True,"Common Stock, par value $0.01 per share",sell,12267.0,62.183,762798.861
+2022-02-04,AA,"SLAVEN, JOHN D",EVP & Chief Operations Officer,True,"Common Stock, par value $0.01 per share",buy,12267.0,29.24,358687.07999999996
+2022-02-18,AA,"ELAM, HARDEN SONYA",EVP & Chief Ext. Aff. Officer,True,"Common Stock, par value $0.01 per share",sell,1317.0,78.185,102969.645
+2022-02-22,AA,"SLAVEN, JOHN D",EVP & Chief Operations Officer,True,"Common Stock, par value $0.01 per share",sell,11709.0,74.09,867519.81
+2022-02-22,AA,"SLAVEN, JOHN D",EVP & Chief Operations Officer,True,"Common Stock, par value $0.01 per share",sell,2692.0,74.09,199450.28
+2022-02-24,AA,"SLAVEN, JOHN D",EVP & Chief Operations Officer,True,"Common Stock, par value $0.01 per share",buy,6133.0,29.24,179328.91999999998
+2022-02-24,AA,"SLAVEN, JOHN D",EVP & Chief Operations Officer,True,"Common Stock, par value $0.01 per share",sell,28326.0,75.3287,2133760.7561999997
+2022-04-05,AA,"WILLIAMS, STEVEN W",Director,True,"Common Stock, par value $0.01 per share",buy,769.0,87.71,67448.98999999999
+2022-07-06,AA,"WILLIAMS, STEVEN W",Director,True,"Common Stock, par value $0.01 per share",buy,1583.0,42.63,67483.29000000001
+2022-10-05,AA,"WILLIAMS, STEVEN W",Director,True,"Common Stock, par value $0.01 per share",buy,1871.0,40.08,74989.68
+2022-11-18,AA,"OPLINGER, WILLIAM F",EVP & CFO,True,"Common Stock, par value $0.01 per share",buy,60.226,48.14,2899.27964
+2023-01-05,AA,"WILLIAMS, STEVEN W",Director,True,"Common Stock, par value $0.01 per share",buy,1538.0,45.49,69963.62000000001
+2023-01-23,AA,"ELAM, HARDEN SONYA",EVP & Chief Ext. Aff. Officer,True,"Common Stock, par value $0.01 per share",sell,2883.0,51.75,149195.25
+2023-01-23,AA,"KAHRS, BENJAMIN D",EVP & Chief Innovation Officer,True,"Common Stock, par value $0.01 per share",sell,2551.0,51.75,132014.25
+2023-01-23,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",sell,7228.0,51.75,374049.0
+2023-01-23,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",buy,134.0,51.75,6934.5
+2023-01-23,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",sell,70.0,51.75,3622.5
+2023-01-23,AA,"BACCHI, RENATO",EVP & Chief Strategy Officer,True,"Common Stock, par value $0.01 per share",sell,6572.0,51.75,340101.0
+2023-01-23,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",buy,33.0,51.75,1707.75
+2023-01-23,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",sell,1810.0,51.75,93667.5
+2023-01-23,AA,"HARVEY, ROY CHRISTOPHER","Director, President, CEO & Director",True,"Common Stock, par value $0.01 per share",sell,82573.0,51.75,4273152.75
+2023-01-23,AA,"HEETER, JEFFREY D.",EVP & Gen. Counsel,True,"Common Stock, par value $0.01 per share",sell,7892.0,51.75,408411.0
+2023-01-23,AA,"SLAVEN, JOHN D",EVP & Chief Operations Officer,True,"Common Stock, par value $0.01 per share",sell,9784.0,51.75,506322.0
+2023-01-23,AA,"OPLINGER, WILLIAM F",EVP & CFO,True,"Common Stock, par value $0.01 per share",sell,14282.0,51.75,739093.5
+2023-01-23,AA,"BEERMAN, MOLLY S.",Senior VP & Controller,True,"Common Stock, par value $0.01 per share",sell,2576.0,51.75,133308.0
+2023-01-25,AA,"HARVEY, ROY CHRISTOPHER","Director, President, CEO & Director",True,"Common Stock, par value $0.01 per share",sell,226184.0,52.19,11804542.959999999
+2023-01-25,AA,"OPLINGER, WILLIAM F",EVP & CFO,True,"Common Stock, par value $0.01 per share",sell,42923.0,52.19,2240151.37
+2023-01-25,AA,"BACCHI, RENATO",EVP & Chief Strategy Officer,True,"Common Stock, par value $0.01 per share",sell,7127.0,52.19,371958.13
+2023-01-25,AA,"HEETER, JEFFREY D.",EVP & Gen. Counsel,True,"Common Stock, par value $0.01 per share",sell,16668.0,51.9464,865842.5952
+2023-01-25,AA,"HEETER, JEFFREY D.",EVP & Gen. Counsel,True,"Common Stock, par value $0.01 per share",sell,25740.0,52.19,1343370.5999999999
+2023-01-25,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",sell,1100.0,51.87,57057.0
+2023-01-25,AA,"KAHRS, BENJAMIN D",EVP & Chief Innovation Officer,True,"Common Stock, par value $0.01 per share",sell,7130.0,52.19,372114.7
+2023-01-25,AA,"SLAVEN, JOHN D",EVP & Chief Operations Officer,True,"Common Stock, par value $0.01 per share",sell,25977.0,52.19,1355739.63
+2023-01-25,AA,"BEERMAN, MOLLY S.",Senior VP & Controller,True,"Common Stock, par value $0.01 per share",sell,7126.0,52.19,371905.94
+2023-01-27,AA,"OPLINGER, WILLIAM F",EVP & CFO,True,"Common Stock, par value $0.01 per share",buy,9807.0,27.96,274203.72000000003
+2023-01-27,AA,"OPLINGER, WILLIAM F",EVP & CFO,True,"Common Stock, par value $0.01 per share",sell,134444.0,53.0351,7130250.9844
+2023-01-27,AA,"HEETER, JEFFREY D.",EVP & Gen. Counsel,True,"Common Stock, par value $0.01 per share",sell,40130.0,51.21,2055057.3
+2023-01-31,AA,"ELAM, HARDEN SONYA",EVP & Chief Ext. Aff. Officer,True,"Common Stock, par value $0.01 per share",sell,4514.0,51.8702,234142.08279999997
+2023-02-01,AA,"BACCHI, RENATO",EVP & CSIO,True,"Common Stock, par value $0.01 per share",sell,10000.0,53.5,535000.0
+2023-02-08,AA,"HARVEY, ROY CHRISTOPHER","Director, President, CEO & Director",True,"Common Stock, par value $0.01 per share",sell,30000.0,51.339,1540170.0
+2023-04-05,AA,"WILLIAMS, STEVEN W",Director,True,"Common Stock, par value $0.01 per share",buy,1775.0,39.43,69988.25
+2023-07-06,AA,"WILLIAMS, STEVEN W",Director,True,"Common Stock, par value $0.01 per share",buy,2151.0,32.54,69993.54
+2023-10-04,AA,"WILLIAMS, STEVEN W",Director,True,"Common Stock, par value $0.01 per share",buy,2577.0,27.16,69991.32
+2024-01-04,AA,"WILLIAMS, STEVEN W",Director,True,"Common Stock, par value $0.01 per share",buy,3051.0,31.13,94977.62999999999
+2024-01-29,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",sell,845.0,30.91,26118.95
+2024-01-29,AA,"BACCHI, RENATO",EVP & Chief Commercial Officer,True,"Common Stock, par value $0.01 per share",sell,3593.0,30.91,111059.63
+2024-01-29,AA,"BACCHI, RENATO",EVP & Chief Commercial Officer,True,"Common Stock, par value $0.01 per share",sell,2340.0,30.91,72329.4
+2024-01-29,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",sell,46.0,30.91,1421.86
+2024-01-29,AA,"BACCHI, RENATO",EVP & Chief Commercial Officer,True,"Common Stock, par value $0.01 per share",sell,4275.0,30.91,132140.25
+2024-01-29,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",buy,87.0,30.91,2689.17
+2024-01-29,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",sell,1560.0,30.91,48219.6
+2024-01-29,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",buy,1593.0,30.91,49239.63
+2024-01-29,AA,"HENRY, RENEE",SVP & Controller,True,"Common Stock, par value $0.01 per share",sell,733.0,30.91,22657.03
+2024-01-29,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",sell,11364.0,30.91,351261.24
+2024-01-29,AA,"OPLINGER, WILLIAM F","Director, President, CEO & Director",True,"Common Stock, par value $0.01 per share",sell,28653.0,30.91,885664.23
+2024-01-29,AA,"OPLINGER, WILLIAM F","Director, President, CEO & Director",True,"Common Stock, par value $0.01 per share",sell,13714.0,30.91,423899.74
+2024-01-29,AA,"BEERMAN, MOLLY S.",EVP & CFO,True,"Common Stock, par value $0.01 per share",sell,2139.0,30.91,66116.49
+2024-01-29,AA,"BEERMAN, MOLLY S.",EVP & CFO,True,"Common Stock, par value $0.01 per share",sell,3320.0,30.91,102621.2
+2024-01-29,AA,"BEERMAN, MOLLY S.",EVP & CFO,True,"Common Stock, par value $0.01 per share",sell,2328.0,30.91,71958.48
+2024-01-29,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",sell,17642.0,30.91,545314.22
+2024-03-13,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",sell,26468.0,30.7761,814581.8147999999
+2024-03-13,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",sell,1440.0,30.67,44164.8
+2024-04-03,AA,"WILLIAMS, STEVEN W",Director,True,"Common Stock, par value $0.01 per share",buy,2050.0,37.18,76219.0
+2024-07-03,AA,"WILLIAMS, STEVEN W",Director,True,"Common Stock, par value $0.01 per share",buy,1799.0,42.38,76241.62000000001
+2024-10-03,AA,"WILLIAMS, STEVEN W",Director,True,"Common Stock, par value $0.01 per share",buy,1997.0,38.17,76225.49
+2024-10-22,AA,"BACCHI, RENATO",EVP & Chief Commercial Officer,True,"Common Stock, par value $0.01 per share",sell,23867.0,42.294,1009430.8979999999
+2025-01-06,AA,"WILLIAMS, STEVEN W",Director,True,"Common Stock, par value $0.01 per share",buy,2089.0,36.49,76227.61
+2025-01-24,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",sell,3564.0,37.43,133400.52
+2025-01-24,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",buy,71.0,37.43,2657.53
+2025-01-24,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",sell,38.0,37.43,1422.34
+2025-01-24,AA,"BEERMAN, MOLLY S.",EVP & CFO,True,"Common Stock, par value $0.01 per share",sell,2846.0,37.43,106525.78
+2025-01-24,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",sell,805.0,37.43,30131.15
+2025-01-24,AA,"BACCHI, RENATO",EVP & Chief Commercial Officer,True,"Common Stock, par value $0.01 per share",sell,2093.0,37.43,78340.99
+2025-01-24,AA,"OPLINGER, WILLIAM F","Director, President, CEO & Director",True,"Common Stock, par value $0.01 per share",sell,12163.0,37.43,455261.09
+2025-01-24,AA,"GAGSTETTER, NICOL",EVP & Chief Ext. Aff. Officer,True,"Common Stock, par value $0.01 per share",sell,722.0,37.43,27024.46
+2025-01-24,AA,"HASTINGS, ANDREW",EVP & Gen. Counsel,True,"Common Stock, par value $0.01 per share",sell,1814.0,37.43,67898.02
+2025-01-24,AA,"HENRY, RENEE",SVP & Controller,True,"Common Stock, par value $0.01 per share",sell,406.0,37.43,15196.58
+2025-01-27,AA,"OPLINGER, WILLIAM F","Director, President, CEO & Director",True,"Common Stock, par value $0.01 per share",sell,3353.0,34.97,117254.40999999999
+2025-01-27,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",buy,226.0,34.97,7903.219999999999
+2025-01-27,AA,"BEERMAN, MOLLY S.",EVP & CFO,True,"Common Stock, par value $0.01 per share",sell,638.0,34.97,22310.86
+2025-01-27,AA,"HENRY, RENEE",SVP & Controller,True,"Common Stock, par value $0.01 per share",sell,621.0,34.97,21716.37
+2025-01-27,AA,"BACCHI, RENATO",EVP & Chief Commercial Officer,True,"Common Stock, par value $0.01 per share",sell,1838.0,34.97,64274.86
+2025-01-27,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",buy,33.0,34.97,1154.01
+2025-01-27,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",sell,515.0,34.97,18009.55
+2025-01-27,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",sell,3493.0,34.97,122150.20999999999
+2025-01-27,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",sell,120.0,34.97,4196.4
+2025-01-29,AA,"BEERMAN, MOLLY S.",EVP & CFO,True,"Common Stock, par value $0.01 per share",sell,497.0,35.13,17459.61
+2025-01-29,AA,"BACCHI, RENATO",EVP & Chief Commercial Officer,True,"Common Stock, par value $0.01 per share",sell,1425.0,35.13,50060.25000000001
+2025-01-29,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",sell,93.0,35.13,3267.09
+2025-01-29,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",sell,2724.0,35.13,95694.12000000001
+2025-01-29,AA,"OPLINGER, WILLIAM F","Director, President, CEO & Director",True,"Common Stock, par value $0.01 per share",sell,3996.0,35.13,140379.48
+2025-01-29,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",buy,175.0,35.13,6147.75
+2025-04-03,AA,"WILLIAMS, STEVEN W",Director,True,"Common Stock, par value $0.01 per share",buy,2789.0,27.33,76223.37
+2025-07-03,AA,"WILLIAMS, STEVEN W",Director,True,"Common Stock, par value $0.01 per share",buy,1022.0,31.15,31835.3
+2026-01-26,AA,"HENRY, RENEE",SVP & Controller,True,"Common Stock, par value $0.01 per share",sell,1303.0,58.55,76290.65
+2026-01-26,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",buy,248.0,58.55,14520.4
+2026-01-26,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",sell,2304.0,58.55,134899.19999999998
+2026-01-26,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",buy,80.0,58.55,4684.0
+2026-01-26,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",sell,42.0,58.55,2459.1
+2026-01-26,AA,"HASTINGS, ANDREW",EVP & Gen. Counsel,True,"Common Stock, par value $0.01 per share",sell,1758.0,58.55,102930.9
+2026-01-26,AA,"BACCHI, RENATO",EVP & Chief Commercial Officer,True,"Common Stock, par value $0.01 per share",sell,7214.0,58.55,422379.69999999995
+2026-01-26,AA,"BEERMAN, MOLLY S.",EVP & CFO,True,"Common Stock, par value $0.01 per share",sell,10205.0,58.55,597502.75
+2026-01-26,AA,"OPLINGER, WILLIAM F","Director, President, CEO & Director",True,"Common Stock, par value $0.01 per share",sell,21078.0,58.55,1234116.9
+2026-01-26,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",sell,7630.0,58.55,446736.5
+2026-01-26,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",sell,133.0,58.55,7787.15
+2026-01-29,AA,"OPLINGER, WILLIAM F","Director, President, CEO & Director",True,"Common Stock, par value $0.01 per share",sell,14840.0,60.64,899897.6
+2026-01-29,AA,"BEERMAN, MOLLY S.",EVP & CFO,True,"Common Stock, par value $0.01 per share",sell,3940.0,60.64,238921.6
+2026-01-29,AA,"BACCHI, RENATO",EVP & Chief Commercial Officer,True,"Common Stock, par value $0.01 per share",sell,2290.0,60.64,138865.6
+2026-01-29,AA,"HASTINGS, ANDREW",EVP & Gen. Counsel,True,"Common Stock, par value $0.01 per share",sell,1736.0,60.64,105271.04000000001
+2026-01-29,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",buy,35.0,60.64,2122.4
+2026-01-29,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",sell,683.0,60.64,41417.12
+2026-01-29,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",sell,2819.0,60.64,170944.16
+2026-01-29,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",sell,19.0,60.64,1152.16
+2026-01-29,AA,"HENRY, RENEE",SVP & Controller,True,"Common Stock, par value $0.01 per share",sell,366.0,60.64,22194.24
+2026-02-23,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",sell,762.0,59.81,45575.22
+2026-02-23,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",sell,41.0,59.81,2452.21
+2026-02-23,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",sell,2059.0,59.81,123148.79000000001
+2026-02-23,AA,"OPLINGER, WILLIAM F","Director, President, CEO & Director",True,"Common Stock, par value $0.01 per share",sell,3801.0,59.81,227337.81
+2026-02-23,AA,"BEERMAN, MOLLY S.",EVP & CFO,True,"Common Stock, par value $0.01 per share",sell,3040.0,59.81,181822.4
+2026-02-23,AA,"BACCHI, RENATO",EVP & Chief Commercial Officer,True,"Common Stock, par value $0.01 per share",sell,2113.0,59.81,126378.53
+2026-02-23,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",buy,29.0,59.81,1734.49
+2026-02-23,AA,"JONES, TAMMI A",EVP & CHRO,True,"Common Stock, par value $0.01 per share",buy,77.0,59.81,4605.37

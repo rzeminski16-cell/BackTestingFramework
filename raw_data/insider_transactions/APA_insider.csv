@@ -1,0 +1,415 @@
+date,symbol,insider_name,insider_title,is_executive,security_type,transaction_type,shares,price,value
+2021-11-22,APA,"CHRISTMANN, JOHN J","Director, CEO and President",True,Phantom Stock Units,buy,143.8507,26.53,3816.359071
+2021-11-22,APA,"RAGAUSS, PETER A",Director,True,Phantom Stock Units,buy,138.0,26.53,3661.1400000000003
+2021-11-22,APA,"RABUN, DANIEL WAYNE",Director,True,Phantom Stock Units,buy,134.0,26.53,3555.02
+2021-11-22,APA,"NELSON, AMY H",Director,True,Phantom Stock Units,buy,143.0,26.53,3793.79
+2021-11-22,APA,"LOWE, JOHN E",Director,True,Phantom Stock Units,buy,210.0,26.53,5571.3
+2021-11-22,APA,"JOUNG, CHANSOO",Director,True,Phantom Stock Units,buy,143.0,26.53,3793.79
+2021-11-22,APA,"ELLIS, JULIET S",Director,True,Phantom Stock Units,buy,87.0,26.53,2308.11
+2021-11-22,APA,"BAY, ANNELL R",Director,True,Phantom Stock Units,buy,141.0,26.53,3740.73
+2021-11-22,APA,"MONTGOMERY, WILLIAM C",Director,True,Phantom Stock Units,buy,143.0,26.53,3793.79
+2022-01-01,APA,"LANNIE, P ANTHONY",Exec. Vice Pres & Gen Counsel,False,Common Stock,sell,3355.0,26.89,90215.95
+2022-01-01,APA,"PURSELL, DAVID A",Exec. Vice Pres - Development,False,Common Stock,sell,3327.0,26.89,89463.03
+2022-01-01,APA,"PURSELL, DAVID A",Exec. Vice Pres - Development,False,Common Stock,sell,12872.0,26.89,346128.08
+2022-01-01,APA,"CHRISTMANN, JOHN J","Director, CEO and President",True,Common Stock,sell,13167.0,26.89,354060.63
+2022-01-01,APA,"RINEY, STEPHEN J",Executive Vice Pres & CFO,True,Common Stock,sell,4775.0,26.89,128399.75
+2022-01-01,APA,"HOYT, REBECCA A","Sr. VP, Chief Acct Officer",True,Common Stock,sell,1948.0,26.89,52381.72
+2022-01-03,APA,"PURSELL, DAVID A",Exec. Vice Pres - Development,False,Common Stock,sell,5704.0,28.06,160054.24
+2022-01-03,APA,"RINEY, STEPHEN J",Executive Vice Pres & CFO,True,Common Stock,sell,15623.0,28.06,438381.38
+2022-01-03,APA,"CHRISTMANN, JOHN J","Director, CEO and President",True,Common Stock,sell,37488.0,28.06,1051913.28
+2022-01-03,APA,"CHRISTMANN, JOHN J","Director, CEO and President",True,Common Stock,sell,22128.0,28.06,620911.6799999999
+2022-01-03,APA,"HOYT, REBECCA A","Sr. VP, Chief Acct Officer",True,Common Stock,sell,3336.0,28.06,93608.15999999999
+2022-01-03,APA,"RINEY, STEPHEN J",Executive Vice Pres & CFO,True,Common Stock,sell,9222.0,28.06,258769.31999999998
+2022-01-03,APA,"PURSELL, DAVID A",Exec. Vice Pres - Development,False,Common Stock,sell,9662.0,28.06,271115.72
+2022-01-03,APA,"HOYT, REBECCA A","Sr. VP, Chief Acct Officer",True,Common Stock,sell,5650.0,28.06,158539.0
+2022-01-03,APA,"BRETCHES, D. CLAY","Exec. VP, Operations",True,Common Stock,sell,3503.0,28.06,98294.18
+2022-01-03,APA,"LANNIE, P ANTHONY",Exec. Vice Pres & Gen Counsel,False,Common Stock,sell,9967.0,28.06,279674.01999999996
+2022-01-03,APA,"BRETCHES, D. CLAY","Exec. VP, Operations",True,Common Stock,sell,2068.0,28.06,58028.079999999994
+2022-01-03,APA,"LANNIE, P ANTHONY",Exec. Vice Pres & Gen Counsel,False,Common Stock,sell,5884.0,28.06,165105.03999999998
+2022-01-15,APA,"BRETCHES, D. CLAY","Exec. VP, Operations",True,Common Stock,sell,2391.0,32.09,76727.19
+2022-01-15,APA,"BRETCHES, D. CLAY","Exec. VP, Operations",True,Common Stock,sell,3380.0,32.09,108464.20000000001
+2022-01-28,APA,"LANNIE, P ANTHONY",Exec. Vice Pres & Gen Counsel,False,Common Stock,sell,28128.0,26.89,756361.92
+2022-01-28,APA,"HOYT, REBECCA A","Sr. VP, Chief Acct Officer",True,Common Stock,sell,15860.0,26.89,426475.4
+2022-01-28,APA,"CHRISTMANN, JOHN J","Director, CEO and President",True,Common Stock,sell,107198.0,26.89,2882554.22
+2022-01-28,APA,"BRETCHES, D. CLAY","Exec. VP, Operations",True,Common Stock,sell,5976.0,26.89,160694.64
+2022-01-28,APA,"RINEY, STEPHEN J",Executive Vice Pres & CFO,True,Common Stock,sell,43436.0,26.89,1167994.04
+2022-01-28,APA,"PURSELL, DAVID A",Exec. Vice Pres - Development,False,Common Stock,sell,23902.0,26.89,642724.78
+2022-02-01,APA,"PURSELL, DAVID A",Exec. Vice Pres - Development,False,Common Stock,sell,8899.0,34.71,308884.29
+2022-02-01,APA,"HOYT, REBECCA A","Sr. VP, Chief Acct Officer",True,Common Stock,sell,4697.0,34.71,163032.87
+2022-02-01,APA,"CHRISTMANN, JOHN J","Director, CEO and President",True,Common Stock,sell,18085.0,34.71,627730.35
+2022-02-01,APA,"HOYT, REBECCA A","Sr. VP, Chief Acct Officer",True,Common Stock,sell,2773.0,34.71,96250.83
+2022-02-01,APA,"CHRISTMANN, JOHN J","Director, CEO and President",True,Common Stock,sell,30638.0,34.71,1063444.98
+2022-02-01,APA,"RINEY, STEPHEN J",Executive Vice Pres & CFO,True,Common Stock,sell,13102.0,34.71,454770.42
+2022-02-01,APA,"BRETCHES, D. CLAY","Exec. VP, Operations",True,Common Stock,sell,3283.0,34.71,113952.93000000001
+2022-02-01,APA,"PURSELL, DAVID A",Exec. Vice Pres - Development,False,Common Stock,sell,5253.0,34.71,182331.63
+2022-02-01,APA,"LANNIE, P ANTHONY",Exec. Vice Pres & Gen Counsel,False,Common Stock,sell,8247.0,34.71,286253.37
+2022-02-01,APA,"BRETCHES, D. CLAY","Exec. VP, Operations",True,Common Stock,sell,8343.0,34.71,289585.53
+2022-02-01,APA,"RINEY, STEPHEN J",Executive Vice Pres & CFO,True,Common Stock,sell,7734.0,34.71,268447.14
+2022-02-01,APA,"LANNIE, P ANTHONY",Exec. Vice Pres & Gen Counsel,False,Common Stock,sell,4868.0,34.71,168968.28
+2022-02-22,APA,"BAY, ANNELL R",Director,True,Phantom Stock Units,buy,250.0,31.04,7760.0
+2022-02-22,APA,"MONTGOMERY, WILLIAM C",Director,True,Phantom Stock Units,buy,253.0,31.04,7853.12
+2022-02-22,APA,"RABUN, DANIEL WAYNE",Director,True,Phantom Stock Units,buy,237.0,31.04,7356.48
+2022-02-22,APA,"CHRISTMANN, JOHN J","Director, CEO and President",True,Phantom Stock Units,buy,246.4786,31.04,7650.695744
+2022-02-22,APA,"NELSON, AMY H",Director,True,Phantom Stock Units,buy,251.0,31.04,7791.04
+2022-02-22,APA,"MCKAY, LAMAR",Director,True,Phantom Stock Units,buy,33.0,31.04,1024.32
+2022-02-22,APA,"ELLIS, JULIET S",Director,True,Phantom Stock Units,buy,156.0,31.04,4842.24
+2022-02-22,APA,"JOUNG, CHANSOO",Director,True,Phantom Stock Units,buy,253.0,31.04,7853.12
+2022-02-22,APA,"LOWE, JOHN E",Director,True,Phantom Stock Units,buy,371.0,31.04,11515.84
+2022-02-22,APA,"RAGAUSS, PETER A",Director,True,Phantom Stock Units,buy,243.0,31.04,7542.719999999999
+2022-02-24,APA,"RINEY, STEPHEN J",Executive Vice Pres & CFO,True,Common Stock,buy,6300.0,31.4696,198258.48
+2022-02-24,APA,"RINEY, STEPHEN J",Executive Vice Pres & CFO,True,Common Stock,sell,12300.0,31.415,386404.5
+2022-02-24,APA,"RINEY, STEPHEN J",Executive Vice Pres & CFO,True,Common Stock,buy,6000.0,31.7648,190588.80000000002
+2022-02-25,APA,"JOUNG, CHANSOO",Director,True,Common Stock,buy,40000.0,32.9248,1316992.0
+2022-03-07,APA,"LANNIE, P ANTHONY",Exec. Vice Pres & Gen Counsel,False,Common Stock,buy,40800.0,40.3598,1646679.84
+2022-03-07,APA,"LANNIE, P ANTHONY",Exec. Vice Pres & Gen Counsel,False,Common Stock,sell,40800.0,39.9,1627920.0
+2022-05-16,APA,"LANNIE, P ANTHONY",Exec. Vice Pres & Gen Counsel,False,Common Stock,sell,86750.0,41.26,3579305.0
+2022-05-23,APA,"RABUN, DANIEL WAYNE",Director,True,Phantom Stock Units,buy,170.0,44.15,7505.5
+2022-05-23,APA,"CHRISTMANN, JOHN J","Director, CEO and President",True,Phantom Stock Units,buy,173.9866,44.15,7681.50839
+2022-05-23,APA,"RAGAUSS, PETER A",Director,True,Phantom Stock Units,buy,175.0,44.15,7726.25
+2022-05-23,APA,"ELLIS, JULIET S",Director,True,Phantom Stock Units,buy,114.0,44.15,5033.099999999999
+2022-05-23,APA,"JOUNG, CHANSOO",Director,True,Phantom Stock Units,buy,181.0,44.15,7991.15
+2022-05-23,APA,"NELSON, AMY H",Director,True,Phantom Stock Units,buy,181.0,44.15,7991.15
+2022-05-23,APA,"LOWE, JOHN E",Director,True,Phantom Stock Units,buy,268.0,44.15,11832.199999999999
+2022-05-23,APA,"MCKAY, LAMAR",Director,True,Phantom Stock Units,buy,27.0,44.15,1192.05
+2022-05-23,APA,"BAY, ANNELL R",Director,True,Phantom Stock Units,buy,179.0,44.15,7902.849999999999
+2022-07-15,APA,"HOYT, REBECCA A","Sr. VP, Chief Acct Officer",True,Phantom Stock Units,sell,272.0867,31.99,8704.053533
+2022-08-22,APA,"MCKAY, LAMAR",Director,True,Phantom Stock Units,buy,37.0,36.79,1361.23
+2022-08-22,APA,"RABUN, DANIEL WAYNE",Director,True,Phantom Stock Units,buy,212.0,36.79,7799.48
+2022-08-22,APA,"NELSON, AMY H",Director,True,Phantom Stock Units,buy,224.0,36.79,8240.96
+2022-08-22,APA,"LOWE, JOHN E",Director,True,Phantom Stock Units,buy,329.0,36.79,12103.91
+2022-08-22,APA,"BAY, ANNELL R",Director,True,Phantom Stock Units,buy,223.0,36.79,8204.17
+2022-08-22,APA,"JOUNG, CHANSOO",Director,True,Phantom Stock Units,buy,224.0,36.79,8240.96
+2022-08-22,APA,"ELLIS, JULIET S",Director,True,Phantom Stock Units,buy,142.0,36.79,5224.18
+2022-08-22,APA,"CHRISTMANN, JOHN J","Director, CEO and President",True,Phantom Stock Units,buy,209.3845,36.79,7703.255755
+2022-08-22,APA,"RAGAUSS, PETER A",Director,True,Phantom Stock Units,buy,216.0,36.79,7946.639999999999
+2022-11-22,APA,"JOUNG, CHANSOO",Director,True,Phantom Stock Units,buy,354.0,47.78,16914.12
+2022-11-22,APA,"MCKAY, LAMAR",Director,True,Phantom Stock Units,buy,67.0,47.78,3201.26
+2022-11-22,APA,"ELLIS, JULIET S",Director,True,Phantom Stock Units,buy,226.0,47.78,10798.28
+2022-11-22,APA,"BAY, ANNELL R",Director,True,Phantom Stock Units,buy,350.0,47.78,16723.0
+2022-11-22,APA,"NELSON, AMY H",Director,True,Phantom Stock Units,buy,352.0,47.78,16818.56
+2022-11-22,APA,"RABUN, DANIEL WAYNE",Director,True,Phantom Stock Units,buy,333.0,47.78,15910.74
+2022-11-22,APA,"CHRISTMANN, JOHN J","Director, CEO and President",True,Phantom Stock Units,buy,323.5424,47.78,15458.855872
+2022-11-22,APA,"RAGAUSS, PETER A",Director,True,Phantom Stock Units,buy,342.0,47.78,16340.76
+2023-01-01,APA,"BRETCHES, D. CLAY","Exec. VP, Operations",True,Common Stock,sell,5976.0,46.68,278959.68
+2023-01-01,APA,"PURSELL, DAVID A",Exec. Vice Pres - Development,False,Common Stock,sell,23904.0,26.89,642778.56
+2023-01-01,APA,"LANNIE, P ANTHONY",Exec. Vice Pres & Gen Counsel,False,Common Stock,sell,28128.0,46.68,1313015.04
+2023-01-01,APA,"HOYT, REBECCA A","Sr. VP, Chief Acct Officer",True,Common Stock,sell,15860.0,46.68,740344.8
+2023-01-01,APA,"RINEY, STEPHEN J",Executive Vice Pres & CFO,True,Common Stock,sell,43436.0,46.68,2027592.48
+2023-01-01,APA,"CHRISTMANN, JOHN J","Director, CEO and President",True,Common Stock,sell,107198.0,46.68,5004002.64
+2023-01-03,APA,"HOYT, REBECCA A","Sr. VP, Chief Acct Officer",True,Common Stock,sell,2959.0,43.62,129071.57999999999
+2023-01-03,APA,"BRETCHES, D. CLAY","Exec. VP, Operations",True,Common Stock,sell,11715.0,43.62,511008.3
+2023-01-03,APA,"HOYT, REBECCA A","Sr. VP, Chief Acct Officer",True,Common Stock,sell,1747.0,43.62,76204.14
+2023-01-03,APA,"RINEY, STEPHEN J",Executive Vice Pres & CFO,True,Common Stock,sell,8253.0,43.62,359995.86
+2023-01-03,APA,"RINEY, STEPHEN J",Executive Vice Pres & CFO,True,Common Stock,sell,4872.0,43.62,212516.63999999998
+2023-01-03,APA,"BRETCHES, D. CLAY","Exec. VP, Operations",True,Common Stock,sell,3504.0,43.62,152844.47999999998
+2023-01-03,APA,"LANNIE, P ANTHONY",Exec. Vice Pres & Gen Counsel,False,Common Stock,sell,3067.0,43.62,133782.53999999998
+2023-01-03,APA,"LANNIE, P ANTHONY",Exec. Vice Pres & Gen Counsel,False,Common Stock,sell,5195.0,43.62,226605.9
+2023-01-03,APA,"BRETCHES, D. CLAY","Exec. VP, Operations",True,Common Stock,sell,2068.0,43.62,90206.15999999999
+2023-01-03,APA,"CHRISTMANN, JOHN J","Director, CEO and President",True,Common Stock,sell,19297.0,43.62,841735.1399999999
+2023-01-03,APA,"CHRISTMANN, JOHN J","Director, CEO and President",True,Common Stock,sell,11390.0,43.62,496831.8
+2023-01-03,APA,"PURSELL, DAVID A",Exec. Vice Pres - Development,False,Common Stock,sell,5606.0,43.62,244533.71999999997
+2023-01-03,APA,"PURSELL, DAVID A",Exec. Vice Pres - Development,False,Common Stock,sell,3309.0,43.62,144338.58
+2023-01-05,APA,"BRETCHES, D. CLAY","Exec. VP, Operations",True,Common Stock,sell,7403.0,41.76,309149.27999999997
+2023-01-05,APA,"HOYT, REBECCA A","Sr. VP, Chief Acct Officer",True,Common Stock,sell,2773.0,41.76,115800.48
+2023-01-05,APA,"LANNIE, P ANTHONY",Exec. Vice Pres & Gen Counsel,False,Common Stock,sell,4868.0,41.76,203287.68
+2023-01-05,APA,"PURSELL, DAVID A",Exec. Vice Pres - Development,False,Common Stock,sell,5254.0,41.76,219407.03999999998
+2023-01-05,APA,"PURSELL, DAVID A",Exec. Vice Pres - Development,False,Common Stock,sell,8900.0,41.76,371664.0
+2023-01-05,APA,"RINEY, STEPHEN J",Executive Vice Pres & CFO,True,Common Stock,sell,7734.0,41.76,322971.83999999997
+2023-01-05,APA,"CHRISTMANN, JOHN J","Director, CEO and President",True,Common Stock,sell,30638.0,41.76,1279442.88
+2023-01-05,APA,"BRETCHES, D. CLAY","Exec. VP, Operations",True,Common Stock,sell,3283.0,41.76,137098.08
+2023-01-05,APA,"LANNIE, P ANTHONY",Exec. Vice Pres & Gen Counsel,False,Common Stock,sell,8247.0,41.76,344394.72
+2023-01-05,APA,"HOYT, REBECCA A","Sr. VP, Chief Acct Officer",True,Common Stock,sell,4697.0,41.76,196146.72
+2023-01-05,APA,"CHRISTMANN, JOHN J","Director, CEO and President",True,Common Stock,sell,18085.0,41.76,755229.6
+2023-01-05,APA,"RINEY, STEPHEN J",Executive Vice Pres & CFO,True,Common Stock,sell,13102.0,41.76,547139.52
+2023-01-05,APA,"BRETCHES, D. CLAY","Exec. VP, Operations",True,Common Stock,sell,8343.0,41.76,348403.68
+2023-01-25,APA,"LANNIE, P ANTHONY",Exec. Vice Pres & Gen Counsel,False,Common Stock,sell,45286.0,46.68,2113950.48
+2023-01-25,APA,"HOYT, REBECCA A","Sr. VP, Chief Acct Officer",True,Common Stock,sell,25792.0,46.68,1203970.56
+2023-01-25,APA,"RINEY, STEPHEN J",Executive Vice Pres & CFO,True,Common Stock,sell,71948.0,46.68,3358532.64
+2023-01-25,APA,"CHRISTMANN, JOHN J","Director, CEO and President",True,Common Stock,sell,168243.0,46.68,7853583.24
+2023-01-25,APA,"BRETCHES, D. CLAY","Exec. VP, Operations",True,Common Stock,sell,32581.0,46.68,1520881.08
+2023-01-25,APA,"MADDOX, MARK D",Executive VP - Administration,True,Common Stock,sell,25339.0,46.68,1182824.52
+2023-01-25,APA,"PURSELL, DAVID A",Exec. Vice Pres - Development,False,Common Stock,sell,48872.0,46.68,2281344.96
+2023-02-01,APA,"BRETCHES, D. CLAY","Exec. VP, Operations",True,Common Stock,sell,2885.0,43.4,125209.0
+2023-02-01,APA,"HENDERSON, TRACEY K",Executive VP Exploration,True,Common Stock,sell,2987.0,43.4,129635.8
+2023-02-01,APA,"BRETCHES, D. CLAY","Exec. VP, Operations",True,Common Stock,sell,4887.0,43.4,212095.8
+2023-02-01,APA,"HENDERSON, TRACEY K",Executive VP Exploration,True,Common Stock,sell,1760.0,43.4,76384.0
+2023-02-01,APA,"CHRISTMANN, JOHN J","Director, CEO and President",True,Common Stock,sell,15297.0,43.4,663889.7999999999
+2023-02-01,APA,"CHRISTMANN, JOHN J","Director, CEO and President",True,Common Stock,sell,9030.0,43.4,391902.0
+2023-02-01,APA,"HOYT, REBECCA A","Sr. VP, Chief Acct Officer",True,Common Stock,sell,1523.0,43.4,66098.2
+2023-02-01,APA,"PURSELL, DAVID A",Exec. Vice Pres - Development,False,Common Stock,sell,2885.0,43.4,125209.0
+2023-02-01,APA,"RINEY, STEPHEN J",Executive Vice Pres & CFO,True,Common Stock,sell,7196.0,43.4,312306.39999999997
+2023-02-01,APA,"RINEY, STEPHEN J",Executive Vice Pres & CFO,True,Common Stock,sell,4248.0,43.4,184363.19999999998
+2023-02-01,APA,"PURSELL, DAVID A",Exec. Vice Pres - Development,False,Common Stock,sell,4887.0,43.4,212095.8
+2023-02-01,APA,"HOYT, REBECCA A","Sr. VP, Chief Acct Officer",True,Common Stock,sell,2579.0,43.4,111928.59999999999
+2023-02-01,APA,"MADDOX, MARK D",Executive VP - Administration,True,Common Stock,sell,3122.0,43.4,135494.8
+2023-02-01,APA,"MADDOX, MARK D",Executive VP - Administration,True,Common Stock,sell,1844.0,43.4,80029.59999999999
+2023-02-01,APA,"LANNIE, P ANTHONY",Exec. Vice Pres & Gen Counsel,False,Common Stock,sell,4529.0,43.4,196558.6
+2023-02-01,APA,"LANNIE, P ANTHONY",Exec. Vice Pres & Gen Counsel,False,Common Stock,sell,2674.0,43.4,116051.59999999999
+2023-02-22,APA,"ELLIS, JULIET S",Director,True,Phantom Stock Units,buy,295.0,37.86,11168.7
+2023-02-22,APA,"MCKAY, LAMAR",Director,True,Phantom Stock Units,buy,94.0,37.86,3558.84
+2023-02-22,APA,"RABUN, DANIEL WAYNE",Director,True,Phantom Stock Units,buy,430.0,37.86,16279.8
+2023-02-22,APA,"BAY, ANNELL R",Director,True,Phantom Stock Units,buy,451.0,37.86,17074.86
+2023-02-22,APA,"JOUNG, CHANSOO",Director,True,Phantom Stock Units,buy,455.0,37.86,17226.3
+2023-02-22,APA,"HOOPER, CHARLES W",Director,True,Phantom Stock Units,buy,32.0,37.86,1211.52
+2023-02-22,APA,"STOVER, DAVID L",Director,True,Phantom Stock Units,buy,29.0,37.86,1097.94
+2023-02-22,APA,"RAGAUSS, PETER A",Director,True,Phantom Stock Units,buy,440.0,37.86,16658.4
+2023-02-22,APA,"NELSON, AMY H",Director,True,Phantom Stock Units,buy,455.0,37.86,17226.3
+2023-02-22,APA,"CHRISTMANN, JOHN J","Director, CEO and President",True,Phantom Stock Units,buy,410.4527,37.86,15539.739222
+2023-05-22,APA,"NELSON, AMY H",Director,True,Phantom Stock Units,buy,528.0,33.47,17672.16
+2023-05-22,APA,"BAY, ANNELL R",Director,True,Phantom Stock Units,buy,524.0,33.47,17538.28
+2023-05-22,APA,"ELLIS, JULIET S",Director,True,Phantom Stock Units,buy,346.0,33.47,11580.619999999999
+2023-05-22,APA,"MCKAY, LAMAR",Director,True,Phantom Stock Units,buy,124.0,33.47,4150.28
+2023-05-22,APA,"HOOPER, CHARLES W",Director,True,Phantom Stock Units,buy,46.0,33.47,1539.62
+2023-05-22,APA,"RABUN, DANIEL WAYNE",Director,True,Phantom Stock Units,buy,499.0,33.47,16701.53
+2023-05-22,APA,"STOVER, DAVID L",Director,True,Phantom Stock Units,buy,45.0,33.47,1506.1499999999999
+2023-05-22,APA,"CHRISTMANN, JOHN J","Director, CEO and President",True,Phantom Stock Units,buy,467.3545,33.47,15642.355114999998
+2023-05-22,APA,"RAGAUSS, PETER A",Director,True,Phantom Stock Units,buy,512.0,33.47,17136.64
+2023-05-22,APA,"JOUNG, CHANSOO",Director,True,Phantom Stock Units,buy,529.0,33.47,17705.63
+2023-05-26,APA,"HENDERSON, TRACEY K",Executive VP Exploration,True,Common Stock,sell,2537.0,33.41,84761.17
+2023-05-26,APA,"HENDERSON, TRACEY K",Executive VP Exploration,True,Common Stock,sell,1968.0,33.41,65750.87999999999
+2023-05-26,APA,"HENDERSON, TRACEY K",Executive VP Exploration,True,Common Stock,sell,4297.0,33.41,143562.77
+2023-07-15,APA,"HOYT, REBECCA A","Sr. VP, Chief Acct Officer",True,Phantom Stock Units,sell,271.396,36.64,9943.94944
+2023-08-22,APA,"JOUNG, CHANSOO",Director,True,Phantom Stock Units,buy,427.0,42.61,18194.47
+2023-08-22,APA,"ELLIS, JULIET S",Director,True,Phantom Stock Units,buy,282.0,42.61,12016.02
+2023-08-22,APA,"NELSON, AMY H",Director,True,Phantom Stock Units,buy,425.0,42.61,18109.25
+2023-08-22,APA,"MCKAY, LAMAR",Director,True,Phantom Stock Units,buy,111.0,42.61,4729.71
+2023-08-22,APA,"HOOPER, CHARLES W",Director,True,Phantom Stock Units,buy,45.0,42.61,1917.45
+2023-08-22,APA,"RABUN, DANIEL WAYNE",Director,True,Phantom Stock Units,buy,404.0,42.61,17214.44
+2023-08-22,APA,"STOVER, DAVID L",Director,True,Phantom Stock Units,buy,43.0,42.61,1832.23
+2023-08-22,APA,"CHRISTMANN, JOHN J","Director, CEO and President",True,Phantom Stock Units,buy,369.8473,42.61,15759.193453
+2023-08-22,APA,"RAGAUSS, PETER A",Director,True,Phantom Stock Units,buy,413.0,42.61,17597.93
+2023-08-22,APA,"BAY, ANNELL R",Director,True,Phantom Stock Units,buy,423.0,42.61,18024.03
+2023-11-22,APA,"RAGAUSS, PETER A",Director,True,Phantom Stock Units,buy,492.0,36.56,17987.52
+2023-11-22,APA,"STOVER, DAVID L",Director,True,Phantom Stock Units,buy,60.0,36.56,2193.6000000000004
+2023-11-22,APA,"CHRISTMANN, JOHN J","Director, CEO and President",True,Phantom Stock Units,buy,433.5792,36.56,15851.655552000002
+2023-11-22,APA,"JOUNG, CHANSOO",Director,True,Phantom Stock Units,buy,508.0,36.56,18572.48
+2023-11-22,APA,"RABUN, DANIEL WAYNE",Director,True,Phantom Stock Units,buy,481.0,36.56,17585.36
+2023-11-22,APA,"NELSON, AMY H",Director,True,Phantom Stock Units,buy,508.0,36.56,18572.48
+2023-11-22,APA,"HOOPER, CHARLES W",Director,True,Phantom Stock Units,buy,62.0,36.56,2266.7200000000003
+2023-11-22,APA,"MCKAY, LAMAR",Director,True,Phantom Stock Units,buy,142.0,36.56,5191.52
+2023-11-22,APA,"ELLIS, JULIET S",Director,True,Phantom Stock Units,buy,340.0,36.56,12430.400000000001
+2023-11-22,APA,"BAY, ANNELL R",Director,True,Phantom Stock Units,buy,504.0,36.56,18426.24
+2024-01-01,APA,"PURSELL, DAVID A",Exec. Vice Pres - Development,False,Common Stock,sell,48871.0,35.88,1753491.4800000002
+2024-01-01,APA,"BRETCHES, D. CLAY","Exec. VP, Operations",True,Common Stock,sell,32581.0,35.88,1169006.28
+2024-01-01,APA,"HOYT, REBECCA A","Sr. VP, Chief Acct Officer",True,Common Stock,sell,25793.0,35.88,925452.8400000001
+2024-01-01,APA,"CHRISTMANN, JOHN J","Director, CEO and President",True,Common Stock,sell,168243.0,35.88,6036558.840000001
+2024-01-01,APA,"RINEY, STEPHEN J",Executive Vice Pres & CFO,True,Common Stock,sell,71951.0,35.88,2581601.8800000004
+2024-01-01,APA,"LANNIE, P ANTHONY",Exec. Vice Pres & Gen Counsel,False,Common Stock,sell,45288.0,35.88,1624933.4400000002
+2024-01-01,APA,"MADDOX, MARK D",Executive VP - Administration,True,Common Stock,sell,25343.0,35.88,909306.8400000001
+2024-01-04,APA,"CHRISTMANN, JOHN J","Director, CEO and President",True,Common Stock,sell,15297.0,34.05,520862.85
+2024-01-04,APA,"CHRISTMANN, JOHN J","Director, CEO and President",True,Common Stock,sell,9030.0,34.05,307471.5
+2024-01-04,APA,"MADDOX, MARK D",Executive VP - Administration,True,Common Stock,sell,3123.0,34.05,106338.15
+2024-01-04,APA,"HOYT, REBECCA A","Sr. VP, Chief Acct Officer",True,Common Stock,sell,1523.0,34.05,51858.149999999994
+2024-01-04,APA,"HENDERSON, TRACEY K",Executive VP Exploration,True,Common Stock,sell,2987.0,34.05,101707.34999999999
+2024-01-04,APA,"HENDERSON, TRACEY K",Executive VP Exploration,True,Common Stock,sell,1852.0,34.05,63060.59999999999
+2024-01-04,APA,"BRETCHES, D. CLAY","Exec. VP, Operations",True,Common Stock,sell,2886.0,34.05,98268.29999999999
+2024-01-04,APA,"BRETCHES, D. CLAY","Exec. VP, Operations",True,Common Stock,sell,4888.0,34.05,166436.4
+2024-01-04,APA,"HOYT, REBECCA A","Sr. VP, Chief Acct Officer",True,Common Stock,sell,2580.0,34.05,87848.99999999999
+2024-01-04,APA,"MADDOX, MARK D",Executive VP - Administration,True,Common Stock,sell,1844.0,34.05,62788.2
+2024-01-04,APA,"PURSELL, DAVID A",Exec. Vice Pres - Development,False,Common Stock,sell,2886.0,34.05,98268.29999999999
+2024-01-04,APA,"LANNIE, P ANTHONY",Exec. Vice Pres & Gen Counsel,False,Common Stock,sell,4529.0,34.05,154212.44999999998
+2024-01-04,APA,"LANNIE, P ANTHONY",Exec. Vice Pres & Gen Counsel,False,Common Stock,sell,2674.0,34.05,91049.7
+2024-01-04,APA,"PURSELL, DAVID A",Exec. Vice Pres - Development,False,Common Stock,sell,4888.0,34.05,166436.4
+2024-01-04,APA,"RINEY, STEPHEN J",Executive Vice Pres & CFO,True,Common Stock,sell,4248.0,34.05,144644.4
+2024-01-04,APA,"RINEY, STEPHEN J",Executive Vice Pres & CFO,True,Common Stock,sell,7196.0,34.05,245023.8
+2024-01-05,APA,"CHRISTMANN, JOHN J","Director, CEO and President",True,Common Stock,sell,30639.0,34.34,1052143.26
+2024-01-05,APA,"CHRISTMANN, JOHN J","Director, CEO and President",True,Common Stock,sell,18085.0,34.34,621038.9
+2024-01-05,APA,"LANNIE, P ANTHONY",Exec. Vice Pres & Gen Counsel,False,Common Stock,sell,8247.0,34.34,283201.98000000004
+2024-01-05,APA,"LANNIE, P ANTHONY",Exec. Vice Pres & Gen Counsel,False,Common Stock,sell,4868.0,34.34,167167.12000000002
+2024-01-05,APA,"MADDOX, MARK D",Executive VP - Administration,True,Common Stock,sell,3133.0,34.34,107587.22000000002
+2024-01-05,APA,"PURSELL, DAVID A",Exec. Vice Pres - Development,False,Common Stock,sell,5254.0,34.34,180422.36000000002
+2024-01-05,APA,"PURSELL, DAVID A",Exec. Vice Pres - Development,False,Common Stock,sell,8900.0,34.34,305626.00000000006
+2024-01-05,APA,"HOYT, REBECCA A","Sr. VP, Chief Acct Officer",True,Common Stock,sell,4697.0,34.34,161294.98
+2024-01-05,APA,"BRETCHES, D. CLAY","Exec. VP, Operations",True,Common Stock,sell,7403.0,34.34,254219.02000000002
+2024-01-05,APA,"BRETCHES, D. CLAY","Exec. VP, Operations",True,Common Stock,sell,3284.0,34.34,112772.56000000001
+2024-01-05,APA,"BRETCHES, D. CLAY","Exec. VP, Operations",True,Common Stock,sell,8344.0,34.34,286532.96
+2024-01-05,APA,"MADDOX, MARK D",Executive VP - Administration,True,Common Stock,sell,5307.0,34.34,182242.38
+2024-01-05,APA,"RINEY, STEPHEN J",Executive Vice Pres & CFO,True,Common Stock,sell,13103.0,34.34,449957.02
+2024-01-05,APA,"HOYT, REBECCA A","Sr. VP, Chief Acct Officer",True,Common Stock,sell,2773.0,34.34,95224.82
+2024-01-05,APA,"RINEY, STEPHEN J",Executive Vice Pres & CFO,True,Common Stock,sell,7734.0,34.34,265585.56
+2024-01-25,APA,"BRETCHES, D. CLAY","Exec. VP, Operations",True,Common Stock,sell,49019.0,35.88,1758801.7200000002
+2024-01-25,APA,"PURSELL, DAVID A",Exec. Vice Pres - Development,False,Common Stock,sell,58823.0,35.88,2110569.24
+2024-01-25,APA,"MADDOX, MARK D",Executive VP - Administration,True,Common Stock,sell,35076.0,35.88,1258526.8800000001
+2024-01-25,APA,"RINEY, STEPHEN J",President & CFO,True,Common Stock,sell,86600.0,35.88,3107208.0
+2024-01-25,APA,"HOYT, REBECCA A","Sr. VP, Chief Acct Officer",True,Common Stock,sell,31046.0,35.88,1113930.48
+2024-01-25,APA,"CHRISTMANN, JOHN J","Director, CEO",True,Common Stock,sell,202502.0,35.88,7265771.760000001
+2024-01-25,APA,"LANNIE, P ANTHONY",Exec. Vice Pres & Gen Counsel,False,Common Stock,sell,54508.0,35.88,1955747.04
+2024-01-25,APA,"HENDERSON, TRACEY K",Executive VP Exploration,True,Common Stock,sell,28399.0,35.88,1018956.1200000001
+2024-02-01,APA,"BRETCHES, D. CLAY","Exec. VP, Operations",True,Common Stock,sell,2017.0,30.8,62123.6
+2024-02-01,APA,"LANNIE, P ANTHONY",Exec. Vice Pres & Gen Counsel,False,Common Stock,sell,1558.0,30.8,47986.4
+2024-02-01,APA,"LANNIE, P ANTHONY",Exec. Vice Pres & Gen Counsel,False,Common Stock,sell,2638.0,30.8,81250.40000000001
+2024-02-01,APA,"CHRISTMANN, JOHN J","Director, CEO",True,Common Stock,sell,10691.0,30.8,329282.8
+2024-02-01,APA,"CHRISTMANN, JOHN J","Director, CEO",True,Common Stock,sell,6311.0,30.8,194378.80000000002
+2024-02-01,APA,"MADDOX, MARK D",Executive VP - Administration,True,Common Stock,sell,1345.0,30.8,41426.0
+2024-02-01,APA,"BRETCHES, D. CLAY","Exec. VP, Operations",True,Common Stock,sell,3416.0,30.8,105212.8
+2024-02-01,APA,"RINEY, STEPHEN J",President & CFO,True,Common Stock,sell,5029.0,30.8,154893.2
+2024-02-01,APA,"HENDERSON, TRACEY K",Executive VP Exploration,True,Common Stock,sell,1634.0,30.8,50327.200000000004
+2024-02-01,APA,"MADDOX, MARK D",Executive VP - Administration,True,Common Stock,sell,2277.0,30.8,70131.6
+2024-02-01,APA,"PURSELL, DAVID A",Exec. Vice Pres - Development,False,Common Stock,sell,3416.0,30.8,105212.8
+2024-02-01,APA,"RINEY, STEPHEN J",President & CFO,True,Common Stock,sell,2969.0,30.8,91445.2
+2024-02-01,APA,"HOYT, REBECCA A","Sr. VP, Chief Acct Officer",True,Common Stock,sell,1087.0,30.8,33479.6
+2024-02-01,APA,"PURSELL, DAVID A",Exec. Vice Pres - Development,False,Common Stock,sell,2017.0,30.8,62123.6
+2024-02-01,APA,"HENDERSON, TRACEY K",Executive VP Exploration,True,Common Stock,sell,2767.0,30.8,85223.6
+2024-02-01,APA,"HOYT, REBECCA A","Sr. VP, Chief Acct Officer",True,Common Stock,sell,1841.0,30.8,56702.8
+2024-02-22,APA,"RABUN, DANIEL WAYNE",Director,True,Phantom Stock Units,buy,600.0,30.22,18132.0
+2024-02-22,APA,"RAGAUSS, PETER A",Director,True,Phantom Stock Units,buy,613.0,30.22,18524.86
+2024-02-22,APA,"ELLIS, JULIET S",Director,True,Phantom Stock Units,buy,425.0,30.22,12843.5
+2024-02-22,APA,"BAY, ANNELL R",Director,True,Phantom Stock Units,buy,626.0,30.22,18917.719999999998
+2024-02-22,APA,"STOVER, DAVID L",Director,True,Phantom Stock Units,buy,84.0,30.22,2538.48
+2024-02-22,APA,"MCKAY, LAMAR",Director,True,Phantom Stock Units,buy,190.0,30.22,5741.8
+2024-02-22,APA,"NELSON, AMY H",Director,True,Phantom Stock Units,buy,630.0,30.22,19038.6
+2024-02-22,APA,"JOUNG, CHANSOO",Director,True,Phantom Stock Units,buy,632.0,30.22,19099.04
+2024-02-22,APA,"HOOPER, CHARLES W",Director,True,Phantom Stock Units,buy,86.0,30.22,2598.92
+2024-02-22,APA,"CHRISTMANN, JOHN J","Director, CEO",True,Phantom Stock Units,buy,528.1287,30.22,15960.049313999998
+2024-05-22,APA,"RAGAUSS, PETER A",Director,True,Phantom Stock Units,buy,631.0,30.13,19012.03
+2024-05-22,APA,"CHRISTMANN, JOHN J","Director, CEO",True,Phantom Stock Units,buy,534.0884,30.13,16092.083491999998
+2024-05-22,APA,"HOOPER, CHARLES W",Director,True,Phantom Stock Units,buy,99.0,30.13,2982.87
+2024-05-22,APA,"NELSON, AMY H",Director,True,Phantom Stock Units,buy,650.0,30.13,19584.5
+2024-05-22,APA,"RABUN, DANIEL WAYNE",Director,True,Phantom Stock Units,buy,617.0,30.13,18590.21
+2024-05-22,APA,"ELLIS, JULIET S",Director,True,Phantom Stock Units,buy,441.0,30.13,13287.33
+2024-05-22,APA,"BAY, ANNELL R",Director,True,Phantom Stock Units,buy,646.0,30.13,19463.98
+2024-05-22,APA,"JOUNG, CHANSOO",Director,True,Phantom Stock Units,buy,651.0,30.13,19614.63
+2024-05-22,APA,"MCKAY, LAMAR",Director,True,Phantom Stock Units,buy,211.0,30.13,6357.429999999999
+2024-05-22,APA,"STOVER, DAVID L",Director,True,Phantom Stock Units,buy,97.0,30.13,2922.61
+2024-05-26,APA,"HENDERSON, TRACEY K",Executive VP Exploration,True,Common Stock,sell,1968.0,29.36,57780.479999999996
+2024-05-26,APA,"HENDERSON, TRACEY K",Executive VP Exploration,True,Common Stock,sell,2537.0,29.36,74486.31999999999
+2024-05-26,APA,"HENDERSON, TRACEY K",Executive VP Exploration,True,Common Stock,sell,4297.0,29.36,126159.92
+2024-07-15,APA,"HOYT, REBECCA A","Sr. VP, Chief Acct Officer",True,Phantom Stock Units,sell,271.5612,31.46,8543.315352
+2024-08-22,APA,"HOOPER, CHARLES W",Director,True,Phantom Stock Units,buy,123.0,27.92,3434.1600000000003
+2024-08-22,APA,"MCKAY, LAMAR",Director,True,Phantom Stock Units,buy,252.0,27.92,7035.84
+2024-08-22,APA,"BAY, ANNELL R",Director,True,Phantom Stock Units,buy,716.0,27.92,19990.72
+2024-08-22,APA,"CHRISTMANN, JOHN J","Director, CEO",True,Phantom Stock Units,buy,581.1463,27.92,16225.604696
+2024-08-22,APA,"STOVER, DAVID L",Director,True,Phantom Stock Units,buy,121.0,27.92,3378.32
+2024-08-22,APA,"JOUNG, CHANSOO",Director,True,Phantom Stock Units,buy,722.0,27.92,20158.24
+2024-08-22,APA,"RAGAUSS, PETER A",Director,True,Phantom Stock Units,buy,701.0,27.92,19571.920000000002
+2024-08-22,APA,"ELLIS, JULIET S",Director,True,Phantom Stock Units,buy,496.0,27.92,13848.320000000002
+2024-11-11,APA,"CHRISTMANN, JOHN J","Director, CEO",True,Common Stock,buy,65000.0,22.2579,1446763.5
+2024-11-22,APA,"ELLIS, JULIET S",Director,True,Phantom Stock Units,buy,636.0,22.77,14481.72
+2024-11-22,APA,"BAY, ANNELL R",Director,True,Phantom Stock Units,buy,910.0,22.77,20720.7
+2024-11-22,APA,"STOVER, DAVID L",Director,True,Phantom Stock Units,buy,172.0,22.77,3916.44
+2024-11-22,APA,"HOOPER, CHARLES W",Director,True,Phantom Stock Units,buy,175.0,22.77,3984.75
+2024-11-22,APA,"RAGAUSS, PETER A",Director,True,Phantom Stock Units,buy,892.0,22.77,20310.84
+2024-11-22,APA,"MCKAY, LAMAR",Director,True,Phantom Stock Units,buy,346.0,22.77,7878.42
+2024-11-22,APA,"JOUNG, CHANSOO",Director,True,Phantom Stock Units,buy,918.0,22.77,20902.86
+2024-11-22,APA,"CHRISTMANN, JOHN J","Director, CEO",True,Phantom Stock Units,buy,718.9676,22.77,16370.892251999998
+2024-12-12,APA,"ELLIS, JULIET S",Director,True,Common Stock,buy,4391.0,22.7799,100026.5409
+2025-01-01,APA,"HOYT, REBECCA A","Sr. VP, Chief Acct Officer",True,Common Stock,sell,31045.0,23.09,716829.05
+2025-01-01,APA,"HENDERSON, TRACEY K",Executive VP Exploration,True,Common Stock,sell,28400.0,23.09,655756.0
+2025-01-01,APA,"CHRISTMANN, JOHN J","Director, CEO",True,Common Stock,sell,202502.0,23.09,4675771.18
+2025-01-01,APA,"BRETCHES, D. CLAY","Exec. VP, Operations",True,Common Stock,sell,49018.0,23.09,1131825.6199999999
+2025-01-01,APA,"MADDOX, MARK D",Executive VP - Administration,True,Common Stock,sell,35076.0,23.09,809904.84
+2025-01-01,APA,"RINEY, STEPHEN J",President & CFO,True,Common Stock,sell,86600.0,23.09,1999594.0
+2025-01-04,APA,"HENDERSON, TRACEY K",Executive VP Exploration,True,Common Stock,sell,3398.0,23.42,79581.16
+2025-01-04,APA,"MADDOX, MARK D",Executive VP - Administration,True,Common Stock,sell,3189.0,23.42,74686.38
+2025-01-04,APA,"HENDERSON, TRACEY K",Executive VP Exploration,True,Common Stock,sell,5755.0,23.42,134782.1
+2025-01-04,APA,"CHRISTMANN, JOHN J","Director, CEO",True,Common Stock,sell,25990.0,23.42,608685.8
+2025-01-04,APA,"CHRISTMANN, JOHN J","Director, CEO",True,Common Stock,sell,15341.0,23.42,359286.22000000003
+2025-01-04,APA,"HOYT, REBECCA A","Sr. VP, Chief Acct Officer",True,Common Stock,sell,4421.0,23.42,103539.82
+2025-01-04,APA,"RINEY, STEPHEN J",President & CFO,True,Common Stock,sell,12225.0,23.42,286309.5
+2025-01-04,APA,"BRETCHES, D. CLAY","Exec. VP, Operations",True,Common Stock,sell,4903.0,23.42,114828.26000000001
+2025-01-04,APA,"MADDOX, MARK D",Executive VP - Administration,True,Common Stock,sell,5400.0,23.42,126468.00000000001
+2025-01-04,APA,"RINEY, STEPHEN J",President & CFO,True,Common Stock,sell,7217.0,23.42,169022.14
+2025-01-04,APA,"HOYT, REBECCA A","Sr. VP, Chief Acct Officer",True,Common Stock,sell,2610.0,23.42,61126.200000000004
+2025-01-04,APA,"BRETCHES, D. CLAY","Exec. VP, Operations",True,Common Stock,sell,8304.0,23.42,194479.68000000002
+2025-02-01,APA,"CHRISTMANN, JOHN J","Director, CEO",True,Common Stock,sell,15005.0,21.93,329059.65
+2025-02-01,APA,"HOYT, REBECCA A","Sr. VP, Chief Acct Officer",True,Common Stock,sell,1358.0,21.93,29780.94
+2025-02-01,APA,"HENDERSON, TRACEY K",Executive VP Exploration,True,Common Stock,sell,3458.0,21.93,75833.94
+2025-02-01,APA,"CHRISTMANN, JOHN J","Director, CEO",True,Common Stock,sell,8857.0,21.93,194234.01
+2025-02-01,APA,"RINEY, STEPHEN J",President & CFO,True,Common Stock,sell,5040.0,21.93,110527.2
+2025-02-01,APA,"HENDERSON, TRACEY K",Executive VP Exploration,True,Common Stock,sell,2042.0,21.93,44781.06
+2025-02-01,APA,"BRETCHES, D. CLAY","Exec. VP, Operations",True,Common Stock,sell,2520.0,21.93,55263.6
+2025-02-01,APA,"HOYT, REBECCA A","Sr. VP, Chief Acct Officer",True,Common Stock,sell,2300.0,21.93,50439.0
+2025-02-01,APA,"MADDOX, MARK D",Executive VP - Administration,True,Common Stock,sell,1896.0,21.93,41579.28
+2025-02-01,APA,"MADDOX, MARK D",Executive VP - Administration,True,Common Stock,sell,3211.0,21.93,70417.23
+2025-02-01,APA,"BRETCHES, D. CLAY","Exec. VP, Operations",True,Common Stock,sell,4269.0,21.93,93619.17
+2025-02-01,APA,"RINEY, STEPHEN J",President & CFO,True,Common Stock,sell,8538.0,21.93,187238.34
+2025-02-05,APA,"HOYT, REBECCA A","Sr. VP, Chief Acct Officer",True,Common Stock,sell,17124.0,23.38,400359.12
+2025-02-05,APA,"RINEY, STEPHEN J",President & CFO,True,Common Stock,sell,47765.0,23.38,1116745.7
+2025-02-05,APA,"BRETCHES, D. CLAY","Exec. VP, Operations",True,Common Stock,sell,32445.0,23.38,758564.1
+2025-02-05,APA,"MADDOX, MARK D",Executive VP - Administration,True,Common Stock,sell,20729.0,23.38,484644.01999999996
+2025-02-05,APA,"CHRISTMANN, JOHN J","Director, CEO",True,Common Stock,sell,101539.0,23.38,2373981.82
+2025-02-05,APA,"HENDERSON, TRACEY K",Executive VP Exploration,True,Common Stock,sell,19826.0,23.38,463531.88
+2025-02-21,APA,"HOOPER, CHARLES W",Director,True,Phantom Stock Units,buy,201.0,22.79,4580.79
+2025-02-21,APA,"WEAVING, ANYA",Director,True,Phantom Stock Units,buy,65.0,22.79,1481.35
+2025-02-21,APA,"MCKAY, LAMAR",Director,True,Phantom Stock Units,buy,384.0,22.79,8751.36
+2025-02-21,APA,"JOUNG, CHANSOO",Director,True,Phantom Stock Units,buy,950.0,22.79,21650.5
+2025-02-21,APA,"CHRISTMANN, JOHN J","Director, CEO",True,Phantom Stock Units,buy,726.2234,22.79,16550.631286
+2025-02-21,APA,"ELLIS, JULIET S",Director,True,Phantom Stock Units,buy,666.0,22.79,15178.14
+2025-02-21,APA,"BAY, ANNELL R",Director,True,Phantom Stock Units,buy,942.0,22.79,21468.18
+2025-02-21,APA,"BOB, MATTHEW REGIS",Director,True,Phantom Stock Units,buy,65.0,22.79,1481.35
+2025-02-21,APA,"RAGAUSS, PETER A",Director,True,Phantom Stock Units,buy,923.0,22.79,21035.17
+2025-02-21,APA,"STOVER, DAVID L",Director,True,Phantom Stock Units,buy,197.0,22.79,4489.63
+2025-04-03,APA,"JOUNG, CHANSOO",Director,True,Common Stock,buy,75000.0,18.2482,1368615.0
+2025-05-22,APA,"BAY, ANNELL R",Director,True,Phantom Stock Units,buy,1334.0,16.74,22331.159999999996
+2025-05-22,APA,"FISHER, KENNETH M.",Director,True,Phantom Stock Units,buy,61.0,16.74,1021.1399999999999
+2025-05-22,APA,"JOUNG, CHANSOO",Director,True,Phantom Stock Units,buy,1343.0,16.74,22481.82
+2025-05-22,APA,"HOOPER, CHARLES W",Director,True,Phantom Stock Units,buy,311.0,16.74,5206.139999999999
+2025-05-22,APA,"ELLIS, JULIET S",Director,True,Phantom Stock Units,buy,953.0,16.74,15953.22
+2025-05-22,APA,"BOB, MATTHEW REGIS",Director,True,Phantom Stock Units,buy,126.0,16.74,2109.24
+2025-05-22,APA,"MCKAY, LAMAR",Director,True,Phantom Stock Units,buy,583.0,16.74,9759.419999999998
+2025-05-22,APA,"WEAVING, ANYA",Director,True,Phantom Stock Units,buy,126.0,16.74,2109.24
+2025-05-22,APA,"CHRISTMANN, JOHN J","Director, CEO",True,Phantom Stock Units,buy,999.5333,16.74,16732.187442
+2025-05-22,APA,"RAGAUSS, PETER A",Director,True,Phantom Stock Units,buy,1306.0,16.74,21862.44
+2025-05-22,APA,"STOVER, DAVID L",Director,True,Phantom Stock Units,buy,307.0,16.74,5139.179999999999
+2025-05-26,APA,"HENDERSON, TRACEY K",Executive VP Exploration,True,Common Stock,sell,1968.0,16.85,33160.8
+2025-08-22,APA,"WEAVING, ANYA",Director,True,Phantom Stock Units,buy,130.0,21.64,2813.2000000000003
+2025-08-22,APA,"ELLIS, JULIET S",Director,True,Phantom Stock Units,buy,779.0,21.64,16857.56
+2025-08-22,APA,"BAY, ANNELL R",Director,True,Phantom Stock Units,buy,1077.0,21.64,23306.28
+2025-08-22,APA,"BOB, MATTHEW REGIS",Director,True,Phantom Stock Units,buy,130.0,21.64,2813.2000000000003
+2025-08-22,APA,"STOVER, DAVID L",Director,True,Phantom Stock Units,buy,273.0,21.64,5907.72
+2025-08-22,APA,"CHRISTMANN, JOHN J","Director, CEO",True,Phantom Stock Units,buy,784.7537,21.64,16982.070068
+2025-08-22,APA,"MCKAY, LAMAR",Director,True,Phantom Stock Units,buy,505.0,21.64,10928.2
+2025-08-22,APA,"FISHER, KENNETH M.",Director,True,Phantom Stock Units,buy,78.0,21.64,1687.92
+2025-08-22,APA,"HOOPER, CHARLES W",Director,True,Phantom Stock Units,buy,276.0,21.64,5972.64
+2025-08-22,APA,"JOUNG, CHANSOO",Director,True,Phantom Stock Units,buy,1086.0,21.64,23501.04
+2025-08-22,APA,"RAGAUSS, PETER A",Director,True,Phantom Stock Units,buy,1057.0,21.64,22873.48
+2026-01-02,APA,"HENDERSON, TRACEY K",Executive VP Exploration,True,Common Stock,sell,19829.0,25.36,502863.44
+2026-01-02,APA,"MADDOX, MARK D",Executive VP - Administration,True,Common Stock,sell,20729.0,25.36,525687.44
+2026-01-02,APA,"CHRISTMANN, JOHN J","Director, CEO",True,Common Stock,sell,101540.0,25.36,2575054.4
+2026-01-02,APA,"RODGERS, BEN C",EVP and CFO,True,Common Stock,sell,15141.0,25.36,383975.76
+2026-01-02,APA,"RINEY, STEPHEN J",President,True,Common Stock,sell,47767.0,25.36,1211371.1199999999
+2026-01-02,APA,"RAYPHOLE, ROBERT P.",VP CAO & Controller,True,Common Stock,sell,948.0,25.36,24041.28
+2026-01-04,APA,"RAYPHOLE, ROBERT P.",VP CAO & Controller,True,Common Stock,sell,322.0,25.36,8165.92
+2026-01-04,APA,"HENDERSON, TRACEY K",Executive VP Exploration,True,Common Stock,sell,1634.0,25.36,41438.24
+2026-01-04,APA,"RAYPHOLE, ROBERT P.",VP CAO & Controller,True,Common Stock,sell,880.0,25.36,22316.8
+2026-01-04,APA,"CHRISTMANN, JOHN J","Director, CEO",True,Common Stock,sell,6311.0,25.36,160046.96
+2026-01-04,APA,"CHRISTMANN, JOHN J","Director, CEO",True,Common Stock,sell,10692.0,25.36,271149.12
+2026-01-04,APA,"RINEY, STEPHEN J",President,True,Common Stock,sell,2969.0,25.36,75293.84
+2026-01-04,APA,"RODGERS, BEN C",EVP and CFO,True,Common Stock,sell,1676.0,25.36,42503.36
+2026-01-04,APA,"RODGERS, BEN C",EVP and CFO,True,Common Stock,sell,989.0,25.36,25081.04
+2026-01-04,APA,"HENDERSON, TRACEY K",Executive VP Exploration,True,Common Stock,sell,2768.0,25.36,70196.48
+2026-01-04,APA,"MADDOX, MARK D",Executive VP - Administration,True,Common Stock,sell,1345.0,25.36,34109.2
+2026-01-04,APA,"MADDOX, MARK D",Executive VP - Administration,True,Common Stock,sell,2278.0,25.36,57770.08
+2026-01-04,APA,"RINEY, STEPHEN J",President,True,Common Stock,sell,5030.0,25.36,127560.8
+2026-01-08,APA,"RAYPHOLE, ROBERT P.",VP CAO & Controller,True,Common Stock,sell,414.0,25.37,10503.18
+2026-01-08,APA,"RAYPHOLE, ROBERT P.",VP CAO & Controller,True,Common Stock,sell,1132.0,25.37,28718.84
+2026-01-08,APA,"HENDERSON, TRACEY K",Executive VP Exploration,True,Common Stock,sell,2042.0,25.37,51805.54
+2026-01-08,APA,"HENDERSON, TRACEY K",Executive VP Exploration,True,Common Stock,sell,3459.0,25.37,87754.83
+2026-01-08,APA,"MADDOX, MARK D",Executive VP - Administration,True,Common Stock,sell,1896.0,25.37,48101.520000000004
+2026-01-08,APA,"RINEY, STEPHEN J",President,True,Common Stock,sell,5040.0,25.37,127864.8
+2026-01-08,APA,"RINEY, STEPHEN J",President,True,Common Stock,sell,8538.0,25.37,216609.06
+2026-01-08,APA,"CHRISTMANN, JOHN J","Director, CEO",True,Common Stock,sell,8857.0,25.37,224702.09
+2026-01-08,APA,"RODGERS, BEN C",EVP and CFO,True,Common Stock,sell,2372.0,25.37,60177.64
+2026-01-08,APA,"CHRISTMANN, JOHN J","Director, CEO",True,Common Stock,sell,15005.0,25.37,380676.85000000003
+2026-01-08,APA,"MADDOX, MARK D",Executive VP - Administration,True,Common Stock,sell,3212.0,25.37,81488.44
+2026-01-08,APA,"RODGERS, BEN C",EVP and CFO,True,Common Stock,sell,1400.0,25.37,35518.0
+2026-01-09,APA,"RAYPHOLE, ROBERT P.",VP CAO & Controller,True,Common Stock,sell,855.0,25.2,21546.0
+2026-01-09,APA,"RAYPHOLE, ROBERT P.",VP CAO & Controller,True,Common Stock,sell,382.0,25.2,9626.4
+2026-01-28,APA,"RAYPHOLE, ROBERT P.",VP CAO & Controller,True,Common Stock,sell,720.0,25.36,18259.2
+2026-01-28,APA,"RODGERS, BEN C",EVP and CFO,True,Common Stock,sell,11312.0,25.36,286872.32
+2026-01-28,APA,"RINEY, STEPHEN J",President,True,Common Stock,sell,33950.0,25.36,860972.0
+2026-01-28,APA,"CHRISTMANN, JOHN J","Director, CEO",True,Common Stock,sell,72170.0,25.36,1830231.2
+2026-01-28,APA,"HENDERSON, TRACEY K",Executive VP Exploration,True,Common Stock,sell,18682.0,25.36,473775.51999999996
+2026-01-28,APA,"MADDOX, MARK D",Executive VP - Administration,True,Common Stock,sell,15374.0,25.36,389884.64
+2026-02-01,APA,"HENDERSON, TRACEY K",Executive VP Exploration,True,Common Stock,sell,2424.0,26.41,64017.840000000004
+2026-02-01,APA,"RODGERS, BEN C",EVP and CFO,True,Common Stock,sell,1662.0,26.41,43893.42
+2026-02-01,APA,"CHRISTMANN, JOHN J","Director, CEO",True,Common Stock,sell,10514.0,26.41,277674.74
+2026-02-01,APA,"RINEY, STEPHEN J",President,True,Common Stock,sell,5982.0,26.41,157984.62
+2026-02-01,APA,"WARNICA, KIMBERLY O.","EVP, CLO & Secretary",True,Common Stock,sell,2616.0,26.41,69088.56
+2026-02-01,APA,"MADDOX, MARK D",Executive VP - Administration,True,Common Stock,sell,2424.0,26.41,64017.840000000004
+2026-02-12,APA,"MADDOX, MARK D",Executive VP - Administration,True,Phantom Stock Units,buy,967.004,28.26,27327.533040000002
+2026-02-25,APA,"MADDOX, MARK D",Executive VP - Administration,True,Phantom Stock Units,buy,449.581,28.72,12911.96632
+2026-02-27,APA,"MADDOX, MARK D",Executive VP - Administration,True,Phantom Stock Units,buy,35.864,29.1,1043.6424
+2026-03-18,APA,"BOB, MATTHEW REGIS",Director,True,"Common Stock, par value $0.625 per share",sell,23000.0,36.2336,833372.8
+2026-05-20,APA,"MADDOX, MARK D",Executive VP - Administration,True,Phantom Stock Units,buy,15500.0,39.32,609460.0
+2026-05-20,APA,"MADDOX, MARK D",Executive VP - Administration,True,Common Stock,sell,9800.0,40.04,392392.0

@@ -1,0 +1,1790 @@
+date,symbol,insider_name,insider_title,is_executive,security_type,transaction_type,shares,price,value
+2003-12-19,AEP,"BROOKS, E R",Director,True,Common Stock,sell,50328.0,30.0,1509840.0
+2004-01-02,AEP,"MORRIS, MICHAEL G","Director, President, CEO",True,Stock Option (Right to Buy),buy,149000.0,30.76,4583240.0
+2004-02-11,AEP,"DRAPER, E LINN JR","Director, Chairman of the Board",True,Common Stock,sell,8900.0,33.41,297348.99999999994
+2004-02-11,AEP,"DRAPER, E LINN JR","Director, Chairman of the Board",True,Common Stock,buy,116666.0,27.06,3156981.96
+2004-02-11,AEP,"DRAPER, E LINN JR","Director, Chairman of the Board",True,Common Stock,sell,52400.0,33.4,1750160.0
+2004-02-11,AEP,"DRAPER, E LINN JR","Director, Chairman of the Board",True,Common Stock,sell,14400.0,33.38,480672.00000000006
+2004-02-11,AEP,"DRAPER, E LINN JR","Director, Chairman of the Board",True,Common Stock,sell,10400.0,33.42,347568.0
+2004-02-11,AEP,"DRAPER, E LINN JR","Director, Chairman of the Board",True,Common Stock,sell,3300.0,33.44,110351.99999999999
+2004-02-11,AEP,"DRAPER, E LINN JR","Director, Chairman of the Board",True,Common Stock,sell,2000.0,33.43,66860.0
+2004-02-11,AEP,"DRAPER, E LINN JR","Director, Chairman of the Board",True,Common Stock,sell,19000.0,33.34,633460.0000000001
+2004-02-11,AEP,"DRAPER, E LINN JR","Director, Chairman of the Board",True,Common Stock,sell,5200.0,33.39,173628.0
+2004-02-11,AEP,"DRAPER, E LINN JR","Director, Chairman of the Board",True,Common Stock,sell,1066.0,33.45,35657.700000000004
+2004-02-27,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,buy,3533.0,34.5,121888.5
+2004-02-27,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,buy,373.0,34.5,12868.5
+2004-05-06,AEP,"BOYLE, COULTER R",Senior Vice President,True,Common Stock,buy,4399.0,27.06,119036.93999999999
+2004-11-01,AEP,"KOEPPEL, HOLLY K",EVP of AEPSC (subsidiary),True,Common Stock,buy,10000.0,27.06,270600.0
+2004-11-01,AEP,"KOEPPEL, HOLLY K",EVP of AEPSC (subsidiary),True,Common Stock,sell,10000.0,33.1,331000.0
+2004-11-03,AEP,"KOEPPEL, HOLLY K",EVP of AEPSC (subsidiary),True,Common Stock,sell,10166.0,33.25,338019.5
+2004-11-03,AEP,"KOEPPEL, HOLLY K",EVP of AEPSC (subsidiary),True,Common Stock,sell,9166.0,33.5,307061.0
+2004-11-03,AEP,"KOEPPEL, HOLLY K",EVP of AEPSC (subsidiary),True,Common Stock,buy,10166.0,27.06,275091.95999999996
+2004-11-03,AEP,"KOEPPEL, HOLLY K",EVP of AEPSC (subsidiary),True,Common Stock,buy,9166.0,27.06,248031.96
+2004-11-09,AEP,"TOMASKY, SUSAN",EVP and CFO,True,Common Stock,sell,18133.0,34.11,618516.63
+2004-11-09,AEP,"TOMASKY, SUSAN",EVP and CFO,True,Common Stock,buy,29333.0,27.06,793750.98
+2004-11-09,AEP,"TOMASKY, SUSAN",EVP and CFO,True,Common Stock,sell,11100.0,34.05,377954.99999999994
+2004-11-09,AEP,"TOMASKY, SUSAN",EVP and CFO,True,Common Stock,sell,100.0,34.1,3410.0
+2005-01-03,AEP,"MORRIS, MICHAEL G","Director, President, CEO",True,Common Stock,sell,14900.0,34.21,509729.0
+2005-01-03,AEP,"MORRIS, MICHAEL G","Director, President, CEO",True,Common Stock,sell,1100.0,34.26,37686.0
+2005-02-02,AEP,"POWERS, ROBERT P",EVP of AEPSC (subsidiary),True,Common Stock,sell,1900.0,35.35,67165.0
+2005-02-02,AEP,"POWERS, ROBERT P",EVP of AEPSC (subsidiary),True,Common Stock,sell,1066.0,35.34,37672.44
+2005-02-02,AEP,"POWERS, ROBERT P",EVP of AEPSC (subsidiary),True,Common Stock,sell,14600.0,35.4,516840.0
+2005-02-02,AEP,"POWERS, ROBERT P",EVP of AEPSC (subsidiary),True,Common Stock,buy,58666.0,27.06,1587501.96
+2005-02-02,AEP,"POWERS, ROBERT P",EVP of AEPSC (subsidiary),True,Common Stock,sell,300.0,35.33,10599.0
+2005-02-02,AEP,"POWERS, ROBERT P",EVP of AEPSC (subsidiary),True,Common Stock,buy,8333.0,27.95,232907.35
+2005-02-02,AEP,"POWERS, ROBERT P",EVP of AEPSC (subsidiary),True,Common Stock,sell,600.0,35.36,21216.0
+2005-02-02,AEP,"POWERS, ROBERT P",EVP of AEPSC (subsidiary),True,Common Stock,sell,1600.0,35.39,56624.0
+2005-02-02,AEP,"POWERS, ROBERT P",EVP of AEPSC (subsidiary),True,Common Stock,sell,500.0,35.32,17660.0
+2005-02-02,AEP,"POWERS, ROBERT P",EVP of AEPSC (subsidiary),True,Common Stock,sell,500.0,35.46,17730.0
+2005-02-02,AEP,"POWERS, ROBERT P",EVP of AEPSC (subsidiary),True,Common Stock,sell,500.0,35.48,17740.0
+2005-02-02,AEP,"POWERS, ROBERT P",EVP of AEPSC (subsidiary),True,Common Stock,sell,200.0,35.47,7094.0
+2005-02-02,AEP,"POWERS, ROBERT P",EVP of AEPSC (subsidiary),True,Common Stock,sell,1100.0,35.42,38962.0
+2005-02-02,AEP,"POWERS, ROBERT P",EVP of AEPSC (subsidiary),True,Common Stock,sell,39100.0,35.38,1383358.0
+2005-02-02,AEP,"POWERS, ROBERT P",EVP of AEPSC (subsidiary),True,Common Stock,sell,5033.0,35.5,178671.5
+2005-05-06,AEP,"BOYLE, COULTER R",Senior Vice President,True,Common Stock,sell,3800.0,35.15,133570.0
+2005-05-06,AEP,"BOYLE, COULTER R",Senior Vice President,True,Common Stock,sell,599.0,35.18,21072.82
+2005-05-06,AEP,"BOYLE, COULTER R",Senior Vice President,True,Common Stock,sell,266.0,35.14,9347.24
+2005-05-06,AEP,"BOYLE, COULTER R",Senior Vice President,True,Common Stock,buy,2366.0,27.95,66129.7
+2005-05-06,AEP,"BOYLE, COULTER R",Senior Vice President,True,Common Stock,sell,2100.0,35.11,73731.0
+2005-05-09,AEP,"HOWELL, WILLIAM R",Director,True,Phantom Stock Unit,sell,5320.808,35.16,187079.60927999998
+2005-07-01,AEP,"KEANE, JOHN B","SVP, GC, Secretary",True,Common Stock,sell,1598.0,36.86,58902.28
+2005-08-02,AEP,"ENGLISH, CARL L",President-Utility Group,True,Common Stock,sell,3195.0,38.4,122688.0
+2005-08-04,AEP,"TOMASKY, SUSAN",EVP and CFO,True,Common Stock,buy,29333.0,27.06,793750.98
+2005-08-04,AEP,"TOMASKY, SUSAN",EVP and CFO,True,Common Stock,sell,20000.0,38.85,777000.0
+2005-08-04,AEP,"TOMASKY, SUSAN",EVP and CFO,True,Common Stock,sell,200.0,38.86,7772.0
+2005-08-04,AEP,"TOMASKY, SUSAN",EVP and CFO,True,Comon Stock,sell,3900.0,38.87,151593.0
+2005-08-04,AEP,"TOMASKY, SUSAN",EVP and CFO,True,Common Stock,sell,633.0,38.89,24617.37
+2005-08-04,AEP,"TOMASKY, SUSAN",EVP and CFO,True,Common Stock,sell,300.0,38.9,11670.0
+2005-08-04,AEP,"TOMASKY, SUSAN",EVP and CFO,True,Common Stock,sell,4300.0,38.88,167184.0
+2005-08-10,AEP,"HAGAN, THOMAS M",EVP of AEPSC (subsidiary),True,Common Stock,buy,25000.0,27.06,676500.0
+2005-08-10,AEP,"HAGAN, THOMAS M",EVP of AEPSC (subsidiary),True,Common Stock,sell,25000.0,38.0,950000.0
+2005-09-13,AEP,"MCCELLON-ALLEN, VENITA",AVP of AEPSC (Subsidiary),False,Common Stock,sell,1065.0,38.2,40683.0
+2005-10-31,AEP,"KOEPPEL, HOLLY K",EVP of AEPSC (subsidiary),True,Employee Stock Option (right to buy),sell,20167.0,27.06,545719.02
+2005-10-31,AEP,"KOEPPEL, HOLLY K",EVP of AEPSC (subsidiary),True,Common Stock,buy,20167.0,27.06,545719.02
+2005-10-31,AEP,"KOEPPEL, HOLLY K",EVP of AEPSC (subsidiary),True,Common Stock,sell,20167.0,38.0,766346.0
+2006-01-04,AEP,"MORRIS, MICHAEL G","Director, President, CEO",True,Common Stock,sell,200.0,37.19,7438.0
+2006-01-04,AEP,"MORRIS, MICHAEL G","Director, President, CEO",True,Common Stock,sell,600.0,37.11,22266.0
+2006-01-04,AEP,"MORRIS, MICHAEL G","Director, President, CEO",True,Common Stock,sell,1500.0,37.21,55815.0
+2006-01-04,AEP,"MORRIS, MICHAEL G","Director, President, CEO",True,Common Stock,sell,1000.0,37.22,37220.0
+2006-01-04,AEP,"MORRIS, MICHAEL G","Director, President, CEO",True,Common Stock,sell,100.0,37.24,3724.0
+2006-01-04,AEP,"MORRIS, MICHAEL G","Director, President, CEO",True,Common Stock,sell,400.0,37.25,14900.0
+2006-01-04,AEP,"MORRIS, MICHAEL G","Director, President, CEO",True,Common Stock,sell,900.0,37.26,33534.0
+2006-01-04,AEP,"MORRIS, MICHAEL G","Director, President, CEO",True,Common Stock,sell,2000.0,37.27,74540.0
+2006-01-04,AEP,"MORRIS, MICHAEL G","Director, President, CEO",True,Common Stock,sell,300.0,37.2,11160.0
+2006-01-04,AEP,"MORRIS, MICHAEL G","Director, President, CEO",True,Common Stock,sell,200.0,37.16,7431.999999999999
+2006-01-04,AEP,"MORRIS, MICHAEL G","Director, President, CEO",True,Common Stock,sell,100.0,37.17,3717.0
+2006-01-04,AEP,"MORRIS, MICHAEL G","Director, President, CEO",True,Common Stock,sell,400.0,37.18,14872.0
+2006-01-04,AEP,"MORRIS, MICHAEL G","Director, President, CEO",True,Common Stock,sell,3400.0,37.12,126207.99999999999
+2006-01-04,AEP,"MORRIS, MICHAEL G","Director, President, CEO",True,Common Stock,sell,200.0,37.14,7428.0
+2006-01-04,AEP,"MORRIS, MICHAEL G","Director, President, CEO",True,Common Stock,sell,300.0,37.28,11184.0
+2006-01-04,AEP,"MORRIS, MICHAEL G","Director, President, CEO",True,Common Stock,sell,6400.0,37.15,237760.0
+2006-01-24,AEP,"HAGAN, THOMAS M",EVP of AEPSC (subsidiary),True,Common STock,sell,5270.0,37.125,195648.75
+2006-02-06,AEP,"KOEPPEL, HOLLY K",EVP of AEPSC (subsidiary),True,Common Stock,sell,27067.0,36.21,980096.0700000001
+2006-02-06,AEP,"KOEPPEL, HOLLY K",EVP of AEPSC (subsidiary),True,Common Stock,sell,1134.0,36.22,41073.479999999996
+2006-02-06,AEP,"KOEPPEL, HOLLY K",EVP of AEPSC (subsidiary),True,Common Stock,sell,1700.0,36.19,61522.99999999999
+2006-02-06,AEP,"KOEPPEL, HOLLY K",EVP of AEPSC (subsidiary),True,Common Stock,sell,2100.0,36.18,75978.0
+2006-02-06,AEP,"KOEPPEL, HOLLY K",EVP of AEPSC (subsidiary),True,Common Stock,sell,4500.0,36.2,162900.0
+2006-02-06,AEP,"KOEPPEL, HOLLY K",EVP of AEPSC (subsidiary),True,Employee Stock Option (right to buy),sell,20167.0,27.06,545719.02
+2006-02-06,AEP,"KOEPPEL, HOLLY K",EVP of AEPSC (subsidiary),True,Common Stock,buy,38501.0,27.06,1041837.0599999999
+2006-02-06,AEP,"KOEPPEL, HOLLY K",EVP of AEPSC (subsidiary),True,Employee Stock Option (right to buy),sell,18334.0,27.06,496118.04
+2006-02-06,AEP,"KOEPPEL, HOLLY K",EVP of AEPSC (subsidiary),True,Common Stock,sell,2000.0,36.17,72340.0
+2006-02-22,AEP,"MORRIS, MICHAEL G","Director, Director, President, CEO",True,Common Stock,sell,706.0,36.43,25719.579999999998
+2006-02-22,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,155.0,36.43,5646.65
+2006-02-24,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,buy,2818.0,36.42,102631.56
+2006-02-24,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,buy,2843.0,36.42,103542.06
+2006-05-03,AEP,"BROOKS, E R",Director,True,Common Stock,sell,800.0,33.19,26552.0
+2006-05-03,AEP,"BROOKS, E R",Director,True,Common Stock,sell,700.0,33.18,23226.0
+2006-05-03,AEP,"BROOKS, E R",Director,True,Common Stock,sell,100.0,33.21,3321.0
+2006-05-03,AEP,"BROOKS, E R",Director,True,Common Stock,sell,400.0,33.24,13296.0
+2006-05-03,AEP,"BROOKS, E R",Director,True,Common Stock,sell,100.0,33.25,3325.0
+2006-05-03,AEP,"BROOKS, E R",Director,True,Common Stock,sell,2400.0,33.2,79680.0
+2006-07-03,AEP,"KEANE, JOHN B","SVP, GC, Secretary",True,Common Stock,sell,1598.0,34.6,55290.8
+2006-08-02,AEP,"ENGLISH, CARL L",President-Utility Group,True,Common Stock,sell,3195.0,36.84,117703.80000000002
+2006-11-13,AEP,"KOEPPEL, HOLLY K",EVP and CFO,True,Common Stock,sell,2300.0,41.43,95289.0
+2006-11-13,AEP,"KOEPPEL, HOLLY K",EVP and CFO,True,Common Stock,buy,12000.0,27.95,335400.0
+2006-11-13,AEP,"KOEPPEL, HOLLY K",EVP and CFO,True,Common Stock,sell,4500.0,41.4,186300.0
+2006-11-13,AEP,"KOEPPEL, HOLLY K",EVP and CFO,True,Common Stock,sell,2000.0,41.5,83000.0
+2006-11-13,AEP,"KOEPPEL, HOLLY K",EVP and CFO,True,Common Stock,sell,900.0,41.47,37323.0
+2006-11-13,AEP,"KOEPPEL, HOLLY K",EVP and CFO,True,Employee Stock Option (right to buy),sell,12000.0,27.95,335400.0
+2006-11-13,AEP,"KOEPPEL, HOLLY K",EVP and CFO,True,Common Stock,sell,1500.0,41.39,62085.0
+2006-11-13,AEP,"KOEPPEL, HOLLY K",EVP and CFO,True,Common Stock,sell,800.0,41.44,33152.0
+2006-11-14,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,2700.0,41.06,110862.0
+2006-11-14,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,buy,50000.0,35.625,1781250.0
+2006-11-14,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,900.0,41.11,36999.0
+2006-11-14,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,4000.0,41.09,164360.0
+2006-11-14,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,7000.0,41.08,287560.0
+2006-11-14,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,6200.0,41.07,254634.0
+2006-11-14,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,1700.0,41.03,69751.0
+2006-11-14,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,4500.0,41.04,184680.0
+2006-11-14,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,4300.0,41.05,176515.0
+2006-11-14,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,6200.0,41.01,254262.0
+2006-11-14,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,9500.0,41.0,389500.0
+2006-11-14,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,3000.0,41.1,123300.0
+2006-11-20,AEP,"SMITH, STEPHEN P","SVP, Treasurer",True,Employee Stock Option (right to buy),buy,8700.0,25.73,223851.0
+2006-11-20,AEP,"SMITH, STEPHEN P","SVP, Treasurer",True,Common Stock,sell,12000.0,41.5,498000.0
+2006-11-20,AEP,"SMITH, STEPHEN P","SVP, Treasurer",True,Common Stock,buy,14500.0,25.73,373085.0
+2006-11-20,AEP,"SMITH, STEPHEN P","SVP, Treasurer",True,Employee Stock Option (right to buy),buy,5800.0,27.95,162110.0
+2006-11-21,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,12000.0,41.386,496632.00000000006
+2006-11-21,AEP,"SMITH, STEPHEN P","SVP, Treasurer",True,Common Stock,buy,2300.0,25.73,59179.0
+2006-11-21,AEP,"SMITH, STEPHEN P","SVP, Treasurer",True,Common Stock,buy,16200.0,27.95,452790.0
+2006-11-21,AEP,"SMITH, STEPHEN P","SVP, Treasurer",True,Common Stock,sell,11900.0,41.348,492041.2
+2006-11-21,AEP,"SMITH, STEPHEN P","SVP, Treasurer",True,Common Stock,sell,6600.0,41.4,273240.0
+2006-11-21,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,buy,12000.0,27.06,324720.0
+2007-01-26,AEP,"MORRIS, MICHAEL G","Director, President, CEO",True,Common Stock,sell,8066.0,42.448,342385.568
+2007-01-26,AEP,"SMITH, STEPHEN P","SVP, Treasurer",True,Common Stock,sell,543.0,42.448,23049.264
+2007-01-26,AEP,"AKINS, NICHOLAS K",EVP,True,Common Stock,sell,233.0,42.448,9890.384
+2007-01-26,AEP,"POWERS, ROBERT P",EVP,True,Common Stock,sell,1550.0,42.448,65794.4
+2007-01-26,AEP,"KOEPPEL, HOLLY K",EVP and CFO,True,Common Stock,sell,1556.0,42.448,66049.088
+2007-01-26,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,11123.0,42.448,472149.104
+2007-01-26,AEP,"HAGAN, THOMAS M",EVP,True,Common Stock,sell,673.0,42.448,28567.504
+2007-01-26,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,1564.0,42.448,66388.672
+2007-02-22,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,155.0,45.52,7055.6
+2007-03-12,AEP,"SMITH, STEPHEN P","SVP, Treasurer",True,Employee Stock Option (right to buy),buy,850.0,25.73,21870.5
+2007-03-12,AEP,"SMITH, STEPHEN P","SVP, Treasurer",True,Common Stock,sell,600.0,45.29,27174.0
+2007-05-01,AEP,"POWERS, ROBERT P",EVP,True,Common Stock,sell,400.0,50.355,20142.0
+2007-05-01,AEP,"POWERS, ROBERT P",EVP,True,Common Stock,sell,6200.0,50.34,312108.0
+2007-05-01,AEP,"POWERS, ROBERT P",EVP,True,Common Stock,sell,4100.0,50.36,206476.0
+2007-05-01,AEP,"POWERS, ROBERT P",EVP,True,Common Stock,sell,10600.0,50.37,533922.0
+2007-05-01,AEP,"POWERS, ROBERT P",EVP,True,Common Stock,sell,8100.0,50.38,408078.0
+2007-05-01,AEP,"POWERS, ROBERT P",EVP,True,Common Stock,sell,200.0,50.385,10077.0
+2007-05-01,AEP,"AKINS, NICHOLAS K",EVP,True,Common Stock,sell,300.0,50.38,15114.0
+2007-05-01,AEP,"BROOKS, E R",Director,True,Common Stock,sell,2500.0,50.42,126050.0
+2007-05-01,AEP,"POWERS, ROBERT P",EVP,True,Common Stock,sell,6000.0,50.26,301560.0
+2007-05-01,AEP,"POWERS, ROBERT P",EVP,True,Common Stock,sell,5400.0,50.25,271350.0
+2007-05-01,AEP,"POWERS, ROBERT P",EVP,True,Common Stock,sell,3800.0,50.27,191026.0
+2007-05-01,AEP,"POWERS, ROBERT P",EVP,True,Common Stock,sell,3700.0,50.28,186036.0
+2007-05-01,AEP,"POWERS, ROBERT P",EVP,True,Common Stock,sell,3600.0,50.29,181044.0
+2007-05-01,AEP,"POWERS, ROBERT P",EVP,True,Common Stock,sell,12800.0,50.31,643968.0
+2007-05-01,AEP,"POWERS, ROBERT P",EVP,True,Common Stock,sell,12500.0,50.32,629000.0
+2007-05-01,AEP,"POWERS, ROBERT P",EVP,True,Employee Stock Option (right to buy),buy,62500.0,35.625,2226562.5
+2007-05-01,AEP,"POWERS, ROBERT P",EVP,True,Common Stock,sell,1900.0,50.24,95456.0
+2007-05-01,AEP,"AKINS, NICHOLAS K",EVP,True,Common Stock,sell,1800.0,50.34,90612.0
+2007-05-01,AEP,"POWERS, ROBERT P",EVP,True,Common Stock,sell,4400.0,50.39,221716.0
+2007-05-01,AEP,"POWERS, ROBERT P",EVP,True,Common Stock,sell,7300.0,50.41,367993.0
+2007-05-01,AEP,"POWERS, ROBERT P",EVP,True,Common Stock,sell,3500.0,50.4,176400.0
+2007-05-01,AEP,"POWERS, ROBERT P",EVP,True,Common Stock,sell,13100.0,50.35,659585.0
+2007-05-01,AEP,"POWERS, ROBERT P",EVP,True,Common Stock,sell,2700.0,50.42,136134.0
+2007-05-01,AEP,"POWERS, ROBERT P",EVP,True,Common Stock,sell,3500.0,50.43,176505.0
+2007-05-01,AEP,"POWERS, ROBERT P",EVP,True,Common Stock,sell,900.0,50.44,45396.0
+2007-05-01,AEP,"AKINS, NICHOLAS K",EVP,True,Common Stock,sell,1000.0,50.36,50360.0
+2007-05-01,AEP,"AKINS, NICHOLAS K",EVP,True,Common Stock,sell,500.0,50.35,25175.0
+2007-05-01,AEP,"AKINS, NICHOLAS K",EVP,True,Common Stock,sell,2200.0,50.33,110726.0
+2007-05-01,AEP,"AKINS, NICHOLAS K",EVP,True,Common Stock,sell,700.0,50.37,35259.0
+2007-05-01,AEP,"AKINS, NICHOLAS K",EVP,True,Common Stock,sell,2300.0,50.31,115713.0
+2007-05-01,AEP,"AKINS, NICHOLAS K",EVP,True,Common Stock,buy,10000.0,35.625,356250.0
+2007-05-01,AEP,"HAGAN, THOMAS M",EVP of AEPSC (subsidiary),True,Common Stock,sell,62500.0,50.25,3140625.0
+2007-05-01,AEP,"HAGAN, THOMAS M",EVP of AEPSC (subsidiary),True,Common Stock,buy,62500.0,35.625,2226562.5
+2007-05-01,AEP,"POWERS, ROBERT P",EVP,True,Employee Stock Option (right to buy),buy,70800.0,43.79,3100332.0
+2007-05-01,AEP,"POWERS, ROBERT P",EVP,True,Common Stock,sell,14200.0,50.33,714686.0
+2007-05-01,AEP,"POWERS, ROBERT P",EVP,True,Common Stock,sell,4400.0,50.3,221320.0
+2007-05-01,AEP,"AKINS, NICHOLAS K",EVP,True,Common Stock,sell,1200.0,50.32,60384.0
+2007-05-02,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,100.0,50.61,5061.0
+2007-05-02,AEP,"KOEPPEL, HOLLY K",EVP of AEPSC (subsidiary),True,Common Stock,sell,3000.0,50.55,151650.0
+2007-05-02,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,2100.0,50.71,106491.0
+2007-05-02,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,2800.0,50.67,141876.0
+2007-05-02,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,200.0,50.49,10098.0
+2007-05-02,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,1000.0,50.63,50630.0
+2007-05-02,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,2000.0,50.62,101240.0
+2007-05-02,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,700.0,50.64,35448.0
+2007-05-02,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,1200.0,50.6,60720.0
+2007-05-02,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,6200.0,50.58,313596.0
+2007-05-02,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,3700.0,50.57,187109.0
+2007-05-02,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,7900.0,50.56,399424.0
+2007-05-02,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,6390.0,50.55,323014.5
+2007-05-02,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,1000.0,50.54,50540.0
+2007-05-02,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,1100.0,50.52,55572.0
+2007-05-02,AEP,"KOEPPEL, HOLLY K",EVP of AEPSC (subsidiary),True,Common Stock,sell,2100.0,50.54,106134.0
+2007-05-02,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,5400.0,50.69,273726.0
+2007-05-02,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,2500.0,50.59,126475.00000000001
+2007-05-02,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,300.0,50.51,15153.0
+2007-05-02,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,200.0,50.81,10162.0
+2007-05-02,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,2610.0,50.48,131752.8
+2007-05-02,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,400.0,50.74,20296.0
+2007-05-02,AEP,"KOEPPEL, HOLLY K",EVP of AEPSC (subsidiary),True,Common Stock,sell,1000.0,50.57,50570.0
+2007-05-02,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,100.0,50.75,5075.0
+2007-05-02,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,100.0,50.76,5076.0
+2007-05-02,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,400.0,50.68,20272.0
+2007-05-02,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,100.0,50.8,5080.0
+2007-05-02,AEP,"KOEPPEL, HOLLY K",EVP of AEPSC (subsidiary),True,Common Stock,sell,3900.0,50.56,197184.0
+2007-05-02,AEP,"KOEPPEL, HOLLY K",EVP of AEPSC (subsidiary),True,Common Stock,sell,11500.0,50.59,581785.0
+2007-05-02,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,buy,50000.0,35.625,1781250.0
+2007-05-02,AEP,"KOEPPEL, HOLLY K",EVP of AEPSC (subsidiary),True,Common Stock,sell,100.0,50.65,5065.0
+2007-05-02,AEP,"KOEPPEL, HOLLY K",EVP of AEPSC (subsidiary),True,Common Stock,sell,400.0,50.66,20264.0
+2007-05-02,AEP,"KOEPPEL, HOLLY K",EVP of AEPSC (subsidiary),True,Common Stock,sell,700.0,50.67,35469.0
+2007-05-02,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,500.0,50.72,25360.0
+2007-05-02,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Employee Stock Option (right to buy),sell,50000.0,35.625,1781250.0
+2007-05-02,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,1000.0,50.73,50730.0
+2007-05-02,AEP,"KOEPPEL, HOLLY K",EVP of AEPSC (subsidiary),True,Common Stock,sell,1000.0,50.63,50630.0
+2007-05-02,AEP,"KOEPPEL, HOLLY K",EVP of AEPSC (subsidiary),True,Common Stock,buy,23700.0,35.625,844312.5
+2007-05-16,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,9400.0,49.75,467650.0
+2007-05-16,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,buy,9400.0,27.95,262730.0
+2007-05-16,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Employee Stock Option (right to buy),sell,9400.0,27.95,262730.0
+2007-05-17,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,19600.0,49.29,966084.0
+2007-05-17,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,1500.0,49.28,73920.0
+2007-05-17,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,2300.0,49.27,113321.0
+2007-05-17,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,3200.0,49.33,157856.0
+2007-05-17,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,1800.0,49.31,88758.0
+2007-05-17,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,3700.0,49.34,182558.0
+2007-05-17,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,4400.0,49.32,217008.0
+2007-05-17,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Employee Stock Option (right to buy),sell,50000.0,35.625,1781250.0
+2007-05-17,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,buy,50000.0,35.625,1781250.0
+2007-05-17,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,12400.0,49.3,611320.0
+2007-05-17,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,1100.0,49.35,54285.0
+2007-06-29,AEP,"KOEPPEL, HOLLY K",EVP of AEPSC (subsidiary),True,Common Stock,buy,1500.0,27.95,41925.0
+2007-06-29,AEP,"KOEPPEL, HOLLY K",EVP of AEPSC (subsidiary),True,Employee Stock Option (right to buy),sell,1500.0,27.95,41925.0
+2007-07-02,AEP,"KEANE, JOHN B","SVP, GC, Secretary",True,Common Stock,sell,2014.0,45.83,92301.62
+2007-08-02,AEP,"ENGLISH, CARL L",President-Utility Group,True,Common Stock,sell,5277.0,46.02,242847.54
+2007-08-09,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,500.0,47.53,23765.0
+2007-08-09,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,100.0,47.525,4752.5
+2007-08-09,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,1400.0,47.52,66528.0
+2007-08-09,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,2000.0,47.51,95020.0
+2007-08-09,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,200.0,47.5,9500.0
+2007-08-09,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,800.0,47.49,37992.0
+2007-08-09,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,200.0,47.495,9499.0
+2007-08-09,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,3100.0,47.47,147157.0
+2007-08-09,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,1500.0,47.43,71145.0
+2007-08-09,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,2800.0,47.46,132888.0
+2007-08-09,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,100.0,47.45,4745.0
+2007-08-09,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,1700.0,47.54,80818.0
+2007-08-09,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,5800.0,47.42,275036.0
+2007-08-09,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stick,sell,800.0,47.41,37928.0
+2007-08-09,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,5700.0,47.48,270636.0
+2007-08-09,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,2800.0,47.39,132692.0
+2007-08-09,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,200.0,47.465,9493.0
+2007-08-09,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,1300.0,47.55,61814.99999999999
+2007-08-09,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,1600.0,47.4,75840.0
+2007-08-09,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,4100.0,47.35,194135.0
+2007-08-09,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,3000.0,47.44,142320.0
+2007-08-09,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,1100.0,47.36,52096.0
+2007-08-09,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,1400.0,47.37,66318.0
+2007-08-09,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,600.0,47.34,28404.000000000004
+2007-08-09,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,500.0,47.32,23660.0
+2007-08-09,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,700.0,47.31,33117.0
+2007-08-09,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,200.0,47.3,9460.0
+2007-08-09,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Employee Stock Option (right to buy),sell,50000.0,35.625,1781250.0
+2007-08-09,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,300.0,47.33,14199.0
+2007-08-09,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,300.0,47.59,14277.000000000002
+2007-08-09,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,1700.0,47.58,80886.0
+2007-08-09,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,100.0,47.57,4757.0
+2007-08-09,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,2000.0,47.56,95120.0
+2007-08-09,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,buy,50000.0,35.625,1781250.0
+2007-08-09,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,200.0,47.625,9525.0
+2007-08-09,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,1100.0,47.38,52118.0
+2007-08-09,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,100.0,47.6,4760.0
+2007-08-22,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Employee Stock Option (right to buy),sell,29334.0,27.06,793778.0399999999
+2007-08-22,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,1000.0,46.53,46530.0
+2007-08-22,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,1700.0,46.51,79067.0
+2007-08-22,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,buy,29334.0,27.06,793778.0399999999
+2007-08-22,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Employee Stock Option (right to buy),sell,25000.0,27.95,698750.0
+2007-08-22,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,100.0,46.55,4655.0
+2007-08-22,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,50934.0,47.5,2419365.0
+2007-08-22,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,buy,25000.0,27.95,698750.0
+2007-08-22,AEP,"TOMASKY, SUSAN",Executive Vice President,True,Common Stock,sell,600.0,46.52,27912.000000000004
+2007-10-26,AEP,"KOEPPEL, HOLLY K",EVP of AEPSC (subsidiary),True,Common Stock,sell,3000.0,47.5,142500.0
+2007-10-26,AEP,"KOEPPEL, HOLLY K",EVP of AEPSC (subsidiary),True,Common Stock,buy,3000.0,27.95,83850.0
+2007-10-26,AEP,"KOEPPEL, HOLLY K",EVP of AEPSC (subsidiary),True,Employee Stock Option (right to buy),sell,3000.0,27.95,83850.0
+2007-10-29,AEP,"KOEPPEL, HOLLY K",EVP of AEPSC (subsidiary),True,Common Stock,buy,8500.0,27.95,237575.0
+2007-10-29,AEP,"KOEPPEL, HOLLY K",EVP of AEPSC (subsidiary),True,Common Stock,sell,4000.0,47.75,191000.0
+2007-10-29,AEP,"KOEPPEL, HOLLY K",EVP of AEPSC (subsidiary),True,Common Stock,sell,4500.0,48.0,216000.0
+2007-10-29,AEP,"KOEPPEL, HOLLY K",EVP of AEPSC (subsidiary),True,Employee Stock Option,sell,8500.0,27.95,237575.0
+2008-01-22,AEP,"KOEPPEL, HOLLY K",EVP and CFO,True,Common Stock,sell,36651.0,47.74,1749718.74
+2008-01-22,AEP,"POWERS, ROBERT P",President-AEP Utilities,True,Common Stock,sell,38898.0,47.74,1856990.52
+2008-01-22,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,17288.0,47.74,825329.12
+2008-01-22,AEP,"HAGAN, THOMAS M",EVP,True,Common Stock,sell,36651.0,47.74,1749718.74
+2008-01-22,AEP,"SMITH, STEPHEN P",SVP,True,Common Stock,sell,20746.0,47.74,990414.04
+2008-01-22,AEP,"TIERNEY, BRIAN X",Executive Vice President,True,Common Stock,sell,16424.0,47.74,784081.76
+2008-01-22,AEP,"MORRIS, MICHAEL G","Director, President, CEO",True,Common Stock,sell,259320.0,47.74,12379936.8
+2008-02-04,AEP,"HOAGLIN, THOMAS E",Director,True,Common Stock,buy,1000.0,43.97,43970.0
+2008-02-07,AEP,"KOEPPEL, HOLLY K",EVP and CFO,True,Phantom Stock,buy,18352.0,43.68,801615.36
+2008-02-13,AEP,"TIERNEY, BRIAN X",Executive VP of AEPSC,True,Common Stock,buy,5693.0,43.86,249694.98
+2008-02-13,AEP,"TIERNEY, BRIAN X",Executive VP of AEPSC,True,Phantom Stock,buy,12084.0,43.86,530004.24
+2008-02-20,AEP,"POWERS, ROBERT P",President-AEP Utilities,True,Phantom Stock,buy,17205.0,42.25,726911.25
+2008-02-22,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,193.0,42.3,8163.9
+2008-02-22,AEP,"MORRIS, MICHAEL G","Director, Director, President, CEO",True,Common Stock,sell,870.0,42.3,36801.0
+2008-05-30,AEP,"SMITH, STEPHEN P",SVP,True,Common Stock,buy,4650.0,25.73,119644.5
+2008-05-30,AEP,"SMITH, STEPHEN P",SVP,True,Employee Stock Option (right to buy),sell,4650.0,25.73,119644.5
+2008-05-30,AEP,"SMITH, STEPHEN P",SVP,True,Common Stock,buy,11000.0,27.95,307450.0
+2008-05-30,AEP,"SMITH, STEPHEN P",SVP,True,Employee Stock Option (right to buy),sell,11000.0,27.95,307450.0
+2008-08-08,AEP,"MCCELLON-ALLEN, VENITA",EVP,True,Phantom Stock,buy,263.5,39.1,10302.85
+2008-08-08,AEP,"MCCELLON-ALLEN, VENITA",EVP,True,Common Stock,buy,658.74,39.1,25756.734
+2009-05-11,AEP,"TIERNEY, BRIAN X",Executive VP,True,Phantom Stock,buy,4291.0,26.1,111995.1
+2009-05-13,AEP,"TUCKER, SARA MARTINEZ",Director,True,Common Stock,buy,1500.0,26.357,39535.5
+2009-11-30,AEP,"MORRIS, MICHAEL G","Director, President, CEO",True,Common Stock,sell,28866.0,32.19,929196.5399999999
+2010-02-02,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,buy,15500.0,27.06,419430.0
+2010-02-02,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,12100.0,35.05,424104.99999999994
+2010-02-02,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,1100.0,35.06,38566.0
+2010-02-02,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,2300.0,35.07,80661.0
+2010-02-02,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,1050.0,35.03,36781.5
+2010-02-03,AEP,"POWERS, ROBERT P",President-AEP Utilities,True,Common Stock,buy,16667.0,27.95,465842.64999999997
+2010-02-03,AEP,"POWERS, ROBERT P",President-AEP Utilities,True,Common Stock,sell,29334.0,34.68,1017303.12
+2010-02-03,AEP,"POWERS, ROBERT P",President-AEP Utilities,True,Common Stock,sell,16667.0,34.68,578011.5599999999
+2010-02-03,AEP,"POWERS, ROBERT P",President-AEP Utilities,True,Common Stock,buy,29334.0,27.06,793778.0399999999
+2010-05-17,AEP,"TIERNEY, BRIAN X",Executive VP,True,Phantom Stock,buy,13541.0,32.99,446717.59
+2010-08-05,AEP,"AKINS, NICHOLAS K",Executive VP,True,Common Stock,sell,900.0,36.24,32616.0
+2010-08-05,AEP,"AKINS, NICHOLAS K",Executive VP,True,Common Stock,buy,1500.0,27.95,41925.0
+2010-08-05,AEP,"AKINS, NICHOLAS K",Executive VP,True,Common Stock,sell,300.0,36.271,10881.300000000001
+2010-08-05,AEP,"AKINS, NICHOLAS K",Executive VP,True,Common Stock,buy,4400.0,27.06,119064.0
+2010-08-05,AEP,"AKINS, NICHOLAS K",Executive VP,True,Common Stock,sell,500.0,36.27,18135.0
+2010-08-05,AEP,"AKINS, NICHOLAS K",Executive VP,True,Common Stock,sell,600.0,36.24,21744.0
+2010-08-05,AEP,"AKINS, NICHOLAS K",Executive VP,True,Common Stock,sell,3600.0,36.27,130572.00000000001
+2010-11-30,AEP,"MORRIS, MICHAEL G","Director, President, CEO",True,Common Stock,sell,28867.0,35.6,1027665.2000000001
+2011-07-28,AEP,"MILLER, D. MICHAEL",Senior Vice President,True,Common Stock,sell,1705.0,37.16,63357.799999999996
+2011-08-05,AEP,"CORDES, JAMES F",Director,True,Common Stock,buy,2000.0,35.8376,71675.2
+2011-11-30,AEP,"MORRIS, MICHAEL G","Director, Executive Chairman",True,Common Stock,sell,28867.0,39.68,1145442.56
+2011-12-30,AEP,"MORRIS, MICHAEL G","Director, Executive Chairman",True,Common Stock,sell,8188.0,41.31,338246.28
+2012-04-27,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,buy,1421.19,38.7,55000.05300000001
+2012-04-27,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Phantom Stock,buy,4241.42,38.7,164142.95400000003
+2012-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,534.0,51.23,27356.82
+2012-05-01,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,1909.0,38.88,74221.92
+2012-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,476.0,51.23,24385.48
+2012-05-01,AEP,"WELCH, DENNIS E",Executive Vice President,True,Common Stock,sell,3682.0,38.88,143156.16
+2012-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,2040.0,38.88,79315.20000000001
+2012-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,1909.0,38.88,74221.92
+2012-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,444.0,38.88,17262.72
+2012-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,486.0,38.88,18895.68
+2012-05-01,AEP,"FEINBERG, DAVID MATTHEW",Senior Vice President,True,Common Stock,sell,497.0,38.88,19323.36
+2012-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,342.0,38.88,13296.960000000001
+2012-05-02,AEP,"WELCH, DENNIS E",Executive Vice President,True,Common Stock,sell,6791.0,38.7,262811.7
+2012-05-02,AEP,"WELCH, DENNIS E",Executive Vice President,True,Common Stock,sell,300.0,38.701,11610.3
+2012-05-02,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,2487.0,38.69,96222.03
+2012-05-02,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,100.0,38.695,3869.5
+2012-05-03,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Phantom Stock,buy,1037.61,38.55,39999.86549999999
+2012-11-02,AEP,"WELCH, DENNIS E",Executive Vice President,True,Common Stock,buy,10000.0,38.65,386500.0
+2012-11-02,AEP,"WELCH, DENNIS E",Executive Vice President,True,Common Stock,sell,10000.0,44.51,445100.0
+2012-11-02,AEP,"WELCH, DENNIS E",Executive Vice President,True,Employee Stock Option (right to buy),sell,10000.0,38.65,386500.0
+2012-11-13,AEP,"LIN, SANDRA BEACH",Director,True,Common Stock,buy,1000.0,41.5567,41556.7
+2013-02-20,AEP,"RICHARD, OLIVER G III",Director,True,Common Stock,buy,2195.0,45.526,99929.57
+2013-03-31,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock,buy,709.439,48.63,34500.01857
+2013-03-31,AEP,"SANDOR, RICHARD L",Director,True,Phantom Stock,buy,709.439,48.63,34500.01857
+2013-03-31,AEP,"NOWELL, LIONEL L III",Director,True,Phantom Stock,buy,709.439,48.63,34500.01857
+2013-03-31,AEP,"HOAGLIN, THOMAS E",Director,True,Phantom Stock,buy,709.439,48.63,34500.01857
+2013-03-31,AEP,"CROSBY, RALPH D JR",Director,True,Phantom Stock,buy,709.439,48.63,34500.01857
+2013-03-31,AEP,"MORRIS, MICHAEL G",Director,True,Phantom Stock,buy,709.439,48.63,34500.01857
+2013-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,975.0,51.23,49949.25
+2013-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,126.0,51.23,6454.98
+2013-05-01,AEP,"WELCH, DENNIS E",Executive Vice President,True,Common Stock,sell,5395.0,51.23,276385.85
+2013-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,392.0,51.23,20082.16
+2013-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,367.0,51.23,18801.41
+2013-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,446.0,51.23,22848.579999999998
+2013-05-01,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,3098.0,51.23,158710.53999999998
+2013-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,3098.0,51.23,158710.53999999998
+2013-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,2252.0,51.23,115369.95999999999
+2013-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,2405.0,51.23,123208.15
+2013-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,522.0,51.23,26742.059999999998
+2013-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,508.0,51.23,26024.84
+2013-05-01,AEP,"WELCH, DENNIS E",Executive Vice President,True,Common Stock,sell,1503.0,51.23,76998.69
+2013-05-01,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,2252.0,51.23,115369.95999999999
+2013-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,7512.0,51.23,384839.75999999995
+2013-06-30,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock,buy,770.433,44.78,34499.98974
+2013-06-30,AEP,"NOWELL, LIONEL L III",Director,True,Phantom Stock,buy,770.433,44.78,34499.98974
+2013-06-30,AEP,"HOAGLIN, THOMAS E",Director,True,Phantom Stock,buy,770.433,44.78,34499.98974
+2013-06-30,AEP,"SANDOR, RICHARD L",Director,True,Phantom Stock,buy,770.433,44.78,34499.98974
+2013-06-30,AEP,"MORRIS, MICHAEL G",Director,True,Phantom Stock,buy,770.433,44.78,34499.98974
+2013-06-30,AEP,"CROSBY, RALPH D JR",Director,True,Phantom Stock,buy,770.433,44.78,34499.98974
+2013-07-29,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,5804.0,46.533,270077.532
+2013-08-05,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,7927.0,51.4,407447.8
+2013-08-05,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,7604.0,46.39,352749.56
+2013-08-05,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,7604.0,46.39,352749.56
+2013-08-05,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,7604.0,46.39,352749.56
+2013-08-06,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,400.0,45.995,18398.0
+2013-08-06,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,1041.0,45.72,47594.52
+2013-08-06,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,100.0,46.012,4601.2
+2013-08-06,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,4354.0,45.99,200240.46000000002
+2013-08-06,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,2890.0,46.0,132940.0
+2013-08-06,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,25.0,45.715,1142.875
+2013-08-06,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,300.0,45.73,13718.999999999998
+2013-08-06,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,9651.0,45.71,441147.21
+2013-08-06,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,100.0,46.015,4601.5
+2013-08-06,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,410.0,46.01,18864.1
+2013-09-30,AEP,"SANDOR, RICHARD L",Director,True,Phantom Stock,buy,795.848,43.35,34500.0108
+2013-09-30,AEP,"HOAGLIN, THOMAS E",Director,True,Phantom Stock,buy,795.848,43.35,34500.0108
+2013-09-30,AEP,"CROSBY, RALPH D JR",Director,True,Phantom Stock,buy,795.848,43.35,34500.0108
+2013-09-30,AEP,"NOWELL, LIONEL L III",Director,True,Phantom Stock,buy,795.848,43.35,34500.0108
+2013-09-30,AEP,"MORRIS, MICHAEL G",Director,True,Phantom Stock,buy,795.848,43.35,34500.0108
+2013-09-30,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock,buy,795.848,43.35,34500.0108
+2013-09-30,AEP,"TURNER, JOHN F",Director,True,Phantom Stock,buy,795.848,43.35,34500.0108
+2013-10-25,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,2931.0,46.68,136819.08
+2013-11-04,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,2240.0,47.03,105347.2
+2013-12-09,AEP,"MORRIS, MICHAEL G",Director,True,Common Stock,buy,149000.0,30.76,4583240.0
+2013-12-09,AEP,"MORRIS, MICHAEL G",Director,True,Employee Stock Option Plan (right to buy),sell,149000.0,46.673,6954277.0
+2013-12-31,AEP,"HOAGLIN, THOMAS E",Director,True,Phantom Stock,buy,775.567,46.74,36250.001580000004
+2013-12-31,AEP,"SANDOR, RICHARD L",Director,True,Phantom Stock,buy,775.567,46.74,36250.001580000004
+2013-12-31,AEP,"MORRIS, MICHAEL G",Director,True,Phantom Stock,buy,775.567,46.74,36250.001580000004
+2013-12-31,AEP,"NOWELL, LIONEL L III",Director,True,Phantom Stock,buy,775.567,46.74,36250.001580000004
+2013-12-31,AEP,"CROSBY, RALPH D JR",Director,True,Phantom Stock,buy,775.567,46.74,36250.001580000004
+2013-12-31,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock,buy,775.567,46.74,36250.001580000004
+2013-12-31,AEP,"TURNER, JOHN F",Director,True,Phantom Stock,buy,775.567,46.74,36250.001580000004
+2014-02-07,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,1100.0,47.82,52602.0
+2014-02-07,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,3573.0,47.8,170789.4
+2014-02-07,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,1300.0,47.81,62153.0
+2014-03-31,AEP,"MORRIS, MICHAEL G",Director,True,Phantom Stock,buy,715.555,50.66,36250.016299999996
+2014-03-31,AEP,"HOAGLIN, THOMAS E",Director,True,Phantom Stock,buy,715.555,50.66,36250.016299999996
+2014-03-31,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock,buy,715.555,50.66,36250.016299999996
+2014-03-31,AEP,"CROSBY, RALPH D JR",Director,True,Phantom Stock,buy,715.555,50.66,36250.016299999996
+2014-03-31,AEP,"SANDOR, RICHARD L",Director,True,Phantom Stock,buy,715.555,50.66,36250.016299999996
+2014-03-31,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Unit,buy,715.555,50.66,36250.016299999996
+2014-03-31,AEP,"TURNER, JOHN F",Director,True,Phantom Stock,buy,715.555,50.66,36250.016299999996
+2014-03-31,AEP,"NOWELL, LIONEL L III",Director,True,Phantom Stock,buy,715.555,50.66,36250.016299999996
+2014-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,1250.0,52.082,65102.5
+2014-05-01,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,buy,4265.0,52.082,222129.73
+2014-05-01,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,2045.0,52.082,106507.69
+2014-05-01,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,2220.0,52.082,115622.04000000001
+2014-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,545.0,53.87,29359.149999999998
+2014-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,530.0,53.87,28551.1
+2014-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,buy,1875.0,52.082,97653.75
+2014-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,894.0,53.87,48159.78
+2014-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,921.0,53.87,49614.27
+2014-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,7880.0,52.082,410406.16000000003
+2014-05-01,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,3234.0,53.87,174215.58
+2014-05-01,AEP,"WELCH, DENNIS E",Executive Vice President,True,Common Stock,buy,1875.0,52.082,97653.75
+2014-05-01,AEP,"WELCH, DENNIS E",Executive Vice President,True,Common Stock,sell,5561.0,53.87,299571.07
+2014-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,625.0,52.082,32551.25
+2014-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,618.0,53.87,33291.659999999996
+2014-05-01,AEP,"WELCH, DENNIS E",Executive Vice President,True,Common Stock,sell,1569.0,53.87,84522.03
+2014-05-01,AEP,"HILLEBRAND, LANA L","Senior VP, Chief Admin Officer",True,Common Stock,sell,1369.0,52.082,71300.258
+2014-05-01,AEP,"HILLEBRAND, LANA L","Senior VP, Chief Admin Officer",True,Common Stock,buy,4212.0,52.082,219369.384
+2014-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,651.0,52.082,33905.382
+2014-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,341.0,52.082,17759.962
+2014-05-01,AEP,"HILLEBRAND, LANA L","Senior VP, Chief Admin Officer",True,Common Stock,sell,2843.0,52.082,148069.126
+2014-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,buy,992.0,52.082,51665.344
+2014-05-01,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,2350.0,53.87,126594.5
+2014-05-01,AEP,"WELCH, DENNIS E",Executive Vice President,True,Common Stock,sell,976.0,52.082,50832.032
+2014-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,634.0,52.082,33019.988
+2014-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,2511.0,53.87,135267.57
+2014-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,2350.0,53.87,126594.5
+2014-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,7841.0,53.87,422394.67
+2014-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,buy,15140.0,52.082,788521.48
+2014-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,2220.0,52.082,115622.04000000001
+2014-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,304.0,52.082,15832.928
+2014-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,buy,4265.0,52.082,222129.73
+2014-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,3234.0,53.87,174215.58
+2014-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,7260.0,52.082,378115.32
+2014-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,buy,938.0,52.082,48852.916
+2014-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,383.0,53.87,20632.21
+2014-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,2045.0,52.082,106507.69
+2014-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,517.0,52.082,26926.394
+2014-05-01,AEP,"WELCH, DENNIS E",Executive Vice President,True,Common Stock,sell,899.0,52.082,46821.718
+2014-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,1101.0,53.87,59310.869999999995
+2014-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,buy,2132.0,52.082,111038.82400000001
+2014-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,711.0,52.082,37030.302
+2014-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,1421.0,52.082,74008.522
+2014-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,466.0,53.87,25103.42
+2014-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,409.0,53.87,22032.829999999998
+2014-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,buy,775.0,52.082,40363.55
+2014-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,258.0,52.082,13437.156
+2014-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,497.0,53.87,26773.39
+2014-05-05,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,2600.0,53.281,138530.6
+2014-05-05,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,58.0,52.82,3063.56
+2014-05-05,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,800.0,52.8,42240.0
+2014-05-05,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,100.0,52.702,5270.2
+2014-05-05,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,200.0,52.71,10542.0
+2014-05-05,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,100.0,52.72,5272.0
+2014-05-05,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,5083.0,53.28,270822.24
+2014-05-05,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,500.0,52.86,26430.0
+2014-05-05,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,2050.0,52.8,108240.0
+2014-05-05,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,900.0,52.7,47430.0
+2014-05-05,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,200.0,52.81,10562.0
+2014-05-05,AEP,"WELCH, DENNIS E",Exective Vice President,True,Common Stock,sell,8900.0,53.23,473747.0
+2014-05-05,AEP,"WELCH, DENNIS E",Exective Vice President,True,Common Stock,sell,2500.0,53.225,133062.5
+2014-05-05,AEP,"WELCH, DENNIS E",Exective Vice President,True,Common Stock,sell,100.0,53.26,5326.0
+2014-05-05,AEP,"WELCH, DENNIS E",Exective Vice President,True,Common Stock,sell,200.0,53.27,10654.0
+2014-05-05,AEP,"WELCH, DENNIS E",Exective Vice President,True,Common Stock,sell,400.0,53.22,21288.0
+2014-05-05,AEP,"WELCH, DENNIS E",Exective Vice President,True,Common Stock,sell,1200.0,53.235,63882.0
+2014-05-05,AEP,"WELCH, DENNIS E",Exective Vice President,True,Common Stock,sell,200.0,53.228,10645.6
+2014-05-05,AEP,"WELCH, DENNIS E",Exective Vice President,True,Common Stock,sell,1000.0,53.245,53245.0
+2014-05-05,AEP,"WELCH, DENNIS E",Exective Vice President,True,Common Stock,sell,100.0,53.25,5325.0
+2014-05-05,AEP,"WELCH, DENNIS E",Exective Vice President,True,Common Stock,sell,100.0,53.255,5325.5
+2014-05-05,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,3201.0,52.7,168692.7
+2014-05-05,AEP,"WELCH, DENNIS E",Exective Vice President,True,Common Stock,sell,9785.0,53.24,520953.4
+2014-05-08,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,1771.0,53.11,94057.81
+2014-06-30,AEP,"CROSBY, RALPH D JR",Director,True,Phantom Stock,buy,670.837,54.04,36252.03148
+2014-06-30,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Unit,buy,670.837,54.04,36252.03148
+2014-06-30,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock,buy,670.837,54.04,36252.03148
+2014-06-30,AEP,"NOWELL, LIONEL L III",Director,True,Phantom Stock,buy,670.837,54.04,36252.03148
+2014-06-30,AEP,"HOAGLIN, THOMAS E",Director,True,Phantom Stock,buy,670.837,54.04,36252.03148
+2014-08-04,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,7927.0,51.4,407447.8
+2014-08-04,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,7927.0,51.4,407447.8
+2014-08-08,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,8603.0,49.85,428859.55
+2014-08-14,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,8503.0,50.92,432972.76
+2014-08-14,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Phantom Stock,sell,19554.0,51.14,999991.56
+2014-08-14,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,100.0,50.922,5092.2
+2014-09-30,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Unit,buy,694.311,52.21,36249.97731
+2014-09-30,AEP,"NOWELL, LIONEL L III",Director,True,Phantom Stock,buy,694.311,52.21,36249.97731
+2014-09-30,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock,buy,694.311,52.21,36249.97731
+2014-09-30,AEP,"HOAGLIN, THOMAS E",Director,True,Phantom Stock,buy,694.311,52.21,36249.97731
+2014-09-30,AEP,"CROSBY, RALPH D JR",Director,True,Phantom Stock,buy,694.311,52.21,36249.97731
+2014-10-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,759.0,52.38,39756.420000000006
+2014-12-31,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Unit,buy,617.589,60.72,37500.004080000006
+2014-12-31,AEP,"HOAGLIN, THOMAS E",Director,True,Phantom Stock,buy,617.589,60.72,37500.004080000006
+2014-12-31,AEP,"CROSBY, RALPH D JR",Director,True,Phantom Stock,buy,617.589,60.72,37500.004080000006
+2014-12-31,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock,buy,617.589,60.72,37500.004080000006
+2014-12-31,AEP,"NOWELL, LIONEL L III",Director,True,Phantom Stock,buy,617.589,60.72,37500.004080000006
+2015-02-09,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,394.0,58.86,23190.84
+2015-02-09,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,400.0,58.87,23548.0
+2015-02-17,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,793.0,58.23,46176.39
+2015-03-31,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Unit,buy,666.667,56.25,37500.01875
+2015-03-31,AEP,"NOWELL, LIONEL L III",Director,True,Phantom Stock,buy,666.667,56.25,37500.01875
+2015-03-31,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock,buy,666.667,56.25,37500.01875
+2015-03-31,AEP,"HOAGLIN, THOMAS E",Director,True,Phantom Stock,buy,666.667,56.25,37500.01875
+2015-03-31,AEP,"CROSBY, RALPH D JR",Director,True,Phantom Stock,buy,666.667,56.25,37500.01875
+2015-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,buy,1029.0,56.59,58231.11
+2015-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,2048.0,56.59,115896.32
+2015-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,425.0,57.03,24237.75
+2015-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,665.0,56.59,37632.350000000006
+2015-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,buy,268.0,56.59,15166.12
+2015-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,222.0,56.59,12562.980000000001
+2015-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,buy,2186.0,56.59,123705.74
+2015-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,1061.0,56.59,60041.990000000005
+2015-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,buy,2213.0,56.59,125233.67000000001
+2015-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,1622.0,57.03,92502.66
+2015-05-01,AEP,"HILLEBRAND, LANA L","Senior VP, Chief Admin Officer",True,Common Stock,sell,1400.0,56.59,79226.0
+2015-05-01,AEP,"HILLEBRAND, LANA L","Senior VP, Chief Admin Officer",True,Common Stock,sell,637.0,56.59,36047.83
+2015-05-01,AEP,"WELCH, DENNIS E",Executive Vice President,True,Common Stock,sell,857.0,56.59,48497.630000000005
+2015-05-01,AEP,"WELCH, DENNIS E",Executive Vice President,True,Common Stock,buy,1788.0,56.59,101182.92000000001
+2015-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,1152.0,56.59,65191.68000000001
+2015-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,503.0,56.59,28464.77
+2015-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,buy,1828.0,56.59,103446.52
+2015-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,buy,1012.0,56.59,57269.08
+2015-05-01,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,buy,4427.0,56.59,250523.93000000002
+2015-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,1138.0,56.59,64399.420000000006
+2015-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,1048.0,56.59,59306.32000000001
+2015-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,457.0,56.59,25861.63
+2015-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,517.0,56.59,29257.030000000002
+2015-05-01,AEP,"WELCH, DENNIS E",Executive Vice President,True,Common Stock,sell,1012.0,56.59,57269.08
+2015-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,526.0,56.59,29766.34
+2015-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,858.0,56.59,48554.22
+2015-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,buy,1851.0,56.59,104748.09000000001
+2015-05-01,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,2122.0,56.59,120083.98000000001
+2015-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,buy,803.0,56.59,45441.770000000004
+2015-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,1012.0,56.59,57269.08
+2015-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,933.0,56.59,52798.47
+2015-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,495.0,56.59,28012.050000000003
+2015-05-01,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,3357.0,57.03,191449.71
+2015-05-01,AEP,"WELCH, DENNIS E",Executive Vice President,True,Common Stock,sell,933.0,56.59,52798.47
+2015-05-01,AEP,"HILLEBRAND, LANA L","Senior VP, Chief Admin Officer",True,Common Stock,buy,2037.0,56.59,115273.83
+2015-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,443.0,56.59,25069.370000000003
+2015-05-01,AEP,"HILLEBRAND, LANA L","Senior VP, Chief Admin Officer",True,Common Stock,sell,1368.0,56.59,77415.12000000001
+2015-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,535.0,56.59,30275.65
+2015-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,970.0,56.59,54892.3
+2015-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,buy,4427.0,56.59,250523.93000000002
+2015-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,2122.0,56.59,120083.98000000001
+2015-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,2305.0,56.59,130439.95000000001
+2015-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,buy,974.0,56.59,55118.66
+2015-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,buy,4272.0,56.59,241752.48
+2015-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,2224.0,56.59,125856.16
+2015-05-01,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,2305.0,56.59,130439.95000000001
+2015-05-01,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,buy,4272.0,56.59,241752.48
+2015-05-01,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,2048.0,56.59,115896.32
+2015-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,784.0,57.03,44711.520000000004
+2015-05-01,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,2224.0,56.59,125856.16
+2015-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,964.0,56.59,54552.76
+2015-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,702.0,57.03,40035.06
+2015-05-01,AEP,"WELCH, DENNIS E",Executive Vice President,True,Common Stock,buy,1945.0,56.59,110067.55
+2015-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,buy,15715.0,56.59,889311.8500000001
+2015-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,517.0,56.59,29257.030000000002
+2015-05-01,AEP,"WELCH, DENNIS E",Executive Vice President,True,Common Stock,sell,1629.0,57.03,92901.87
+2015-05-01,AEP,"HILLEBRAND, LANA L","Senior VP, Chief Admin Officer",True,Common Stock,sell,3003.0,56.59,169939.77000000002
+2015-05-01,AEP,"HILLEBRAND, LANA L","Senior VP, Chief Admin Officer",True,Common Stock,buy,4371.0,56.59,247354.89
+2015-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,8139.0,57.03,464167.17
+2015-05-01,AEP,"WELCH, DENNIS E",Executive Vice President,True,Common Stock,sell,931.0,56.59,52685.29
+2015-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,3357.0,57.03,191449.71
+2015-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,887.0,56.59,50195.33
+2015-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,1376.0,57.03,78473.28
+2015-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,7945.0,56.59,449607.55000000005
+2015-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,buy,7319.0,56.59,414182.21
+2015-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,buy,15264.0,56.59,863789.76
+2015-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,8180.0,56.59,462906.2
+2015-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,7535.0,56.59,426405.65
+2015-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,buy,1945.0,56.59,110067.55
+2015-05-04,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,200.0,57.06,11412.0
+2015-05-04,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,300.0,56.95,17085.0
+2015-05-04,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,200.0,57.02,11404.0
+2015-05-04,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,300.0,57.04,17112.0
+2015-05-04,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,291.0,57.47,16723.77
+2015-05-04,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,500.0,57.476,28738.0
+2015-05-04,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,200.0,57.01,11402.0
+2015-05-04,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,841.0,56.92,47869.72
+2015-05-04,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,301.0,57.0,17157.0
+2015-05-04,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,1200.0,57.035,68442.0
+2015-05-04,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,816.0,57.446,46875.936
+2015-05-04,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,100.0,56.97,5697.0
+2015-05-07,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,3000.0,55.51,166530.0
+2015-05-07,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,642.0,55.5,35631.0
+2015-06-30,AEP,"HOAGLIN, THOMAS E",Director,True,Phantom Stock,buy,707.948,52.97,37500.00556
+2015-06-30,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock,buy,707.948,52.97,37500.00556
+2015-06-30,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Unit,buy,707.948,52.97,37500.00556
+2015-06-30,AEP,"NOWELL, LIONEL L III",Director,True,Phantom Stock,buy,707.948,52.97,37500.00556
+2015-06-30,AEP,"CROSBY, RALPH D JR",Director,True,Phantom Stock,buy,707.948,52.97,37500.00556
+2015-08-03,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,8233.0,57.06,469774.98000000004
+2015-08-03,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,8233.0,57.06,469774.98000000004
+2015-08-03,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,8233.0,57.06,469774.98000000004
+2015-08-04,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,8935.0,56.755,507105.92500000005
+2015-08-04,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,8935.0,56.8,507508.0
+2015-08-07,AEP,"ZEBULA, CHARLES E",Exective Vice President,True,Common Stock,sell,194.0,56.77,11013.380000000001
+2015-08-07,AEP,"ZEBULA, CHARLES E",Exective Vice President,True,Common Stock,sell,5115.0,56.91,291094.64999999997
+2015-09-30,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock Units,buy,659.515,56.86,37500.022899999996
+2015-09-30,AEP,"HOAGLIN, THOMAS E",Director,True,Phantom Stock Units,buy,659.515,56.86,37500.022899999996
+2015-09-30,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,659.515,56.86,37500.022899999996
+2015-09-30,AEP,"CROSBY, RALPH D JR",Director,True,Phantom Stock Units,buy,659.515,56.86,37500.022899999996
+2015-09-30,AEP,"NOWELL, LIONEL L III",Director,True,Phantom Stock Units,buy,659.515,56.86,37500.022899999996
+2015-10-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,1165.0,56.14,65403.1
+2015-11-23,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,500.0,55.98,27990.0
+2015-11-23,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,373.0,55.97,20876.81
+2015-11-23,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,400.0,55.99,22396.0
+2015-12-31,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock Units,buy,675.734,58.27,39375.02018000001
+2015-12-31,AEP,"CROSBY, RALPH D JR",Director,True,Phantom Stock Units,buy,675.734,58.27,39375.02018000001
+2015-12-31,AEP,"NOWELL, LIONEL L III",Director,True,Phantom Stock Units,buy,675.734,58.27,39375.02018000001
+2015-12-31,AEP,"HOAGLIN, THOMAS E",Director,True,Phantom Stock Units,buy,675.734,58.27,39375.02018000001
+2015-12-31,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,675.734,58.27,39375.02018000001
+2016-02-02,AEP,"NOWELL, LIONEL L III",Director,True,Common Stock,sell,8209.0,62.0,508958.0
+2016-03-31,AEP,"CROSBY, RALPH D JR",Director,True,Phantom Stock Units,buy,592.997,66.4,39375.0008
+2016-03-31,AEP,"HOAGLIN, THOMAS E",Director,True,Phantom Stock Units,buy,592.997,66.4,39375.0008
+2016-03-31,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock Units,buy,592.997,66.4,39375.0008
+2016-03-31,AEP,"NOWELL, LIONEL L III",Director,True,Phantom Stock Units,buy,592.997,66.4,39375.0008
+2016-03-31,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,592.997,66.4,39375.0008
+2016-05-02,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,1052.0,64.77,68138.04
+2016-05-02,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,970.0,64.77,62826.899999999994
+2016-05-02,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,760.0,64.77,49225.2
+2016-05-02,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,825.0,64.77,53435.25
+2016-05-02,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,847.0,64.77,54860.189999999995
+2016-05-02,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,1602.0,64.77,103761.54
+2016-05-02,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,buy,1070.0,64.77,69303.9
+2016-05-02,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,524.0,64.77,33939.479999999996
+2016-05-02,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,231.0,64.77,14961.869999999999
+2016-05-02,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,6191.0,64.77,400991.06999999995
+2016-05-02,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,5703.0,64.77,369383.31
+2016-05-02,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,buy,11894.0,64.77,770374.38
+2016-05-02,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,8257.0,64.77,534805.89
+2016-05-02,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,7607.0,64.77,492705.38999999996
+2016-05-02,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,2129.0,64.77,137895.33
+2016-05-02,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,279.0,64.77,18070.829999999998
+2016-05-02,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,923.0,64.77,59782.71
+2016-05-02,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,847.0,64.77,54860.189999999995
+2016-05-02,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,1003.0,64.77,64964.31
+2016-05-02,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,buy,2022.0,64.77,130964.93999999999
+2016-05-02,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,2312.0,64.77,149748.24
+2016-05-02,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,505.0,64.77,32708.85
+2016-05-02,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,485.0,64.77,31413.449999999997
+2016-05-02,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,buy,1054.0,64.77,68267.58
+2016-05-02,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,buy,990.0,64.77,64122.299999999996
+2016-05-02,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,1740.0,64.77,112699.79999999999
+2016-05-02,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,buy,4441.0,64.77,287643.57
+2016-05-02,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,2395.0,64.77,155124.15
+2016-05-02,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,2206.0,64.77,142882.62
+2016-05-02,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,buy,4601.0,64.77,298006.76999999996
+2016-05-02,AEP,"HILLEBRAND, LANA L","Senior VP, Chief Admin Officer",True,Common Stock,buy,2117.0,64.77,137118.09
+2016-05-02,AEP,"HILLEBRAND, LANA L","Senior VP, Chief Admin Officer",True,Common Stock,buy,4545.0,64.77,294379.64999999997
+2016-05-02,AEP,"HILLEBRAND, LANA L","Senior VP, Chief Admin Officer",True,Common Stock,sell,1720.0,64.77,111404.4
+2016-05-02,AEP,"HILLEBRAND, LANA L","Senior VP, Chief Admin Officer",True,Common Stock,sell,2825.0,64.77,182975.25
+2016-05-02,AEP,"HILLEBRAND, LANA L","Senior VP, Chief Admin Officer",True,Common Stock,sell,972.0,64.77,62956.439999999995
+2016-05-02,AEP,"HILLEBRAND, LANA L","Senior VP, Chief Admin Officer",True,Common Stock,sell,1145.0,64.77,74161.65
+2016-05-02,AEP,"HILLEBRAND, LANA L","Senior VP, Chief Admin Officer",True,Common Stock,buy,1597.0,64.77,103437.68999999999
+2016-05-02,AEP,"HILLEBRAND, LANA L","Senior VP, Chief Admin Officer",True,Common Stock,sell,733.0,64.77,47476.409999999996
+2016-05-02,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,buy,1585.0,64.77,102660.45
+2016-05-02,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,461.0,64.77,29858.969999999998
+2016-05-02,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,buy,16332.0,64.77,1057823.64
+2016-05-02,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,buy,15864.0,64.77,1027511.2799999999
+2016-05-02,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,2395.0,64.77,155124.15
+2016-05-02,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,989.0,64.77,64057.53
+2016-05-02,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,buy,4601.0,64.77,298006.76999999996
+2016-05-02,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,buy,2300.0,64.77,148971.0
+2016-05-02,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,2206.0,64.77,142882.62
+2016-05-02,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,1089.0,64.77,70534.53
+2016-05-02,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,920.0,64.77,59588.399999999994
+2016-05-02,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,911.0,64.77,59005.469999999994
+2016-05-02,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,674.0,64.77,43654.979999999996
+2016-05-02,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,buy,692.0,64.77,44820.84
+2016-05-02,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,556.0,64.77,36012.119999999995
+2016-05-02,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,buy,835.0,64.77,54082.95
+2016-05-02,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,1183.0,64.77,76622.90999999999
+2016-05-02,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,buy,2272.0,64.77,147157.44
+2016-05-02,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,1197.0,64.77,77529.69
+2016-05-02,AEP,"HILLEBRAND, LANA L","Senior VP, Chief Admin Officer",True,Common Stock,sell,864.0,64.77,55961.28
+2016-05-02,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,buy,1767.0,64.77,114448.59
+2016-05-02,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,buy,4441.0,64.77,287643.57
+2016-05-02,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,1103.0,64.77,71441.31
+2016-05-02,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,buy,1926.0,64.77,124747.01999999999
+2016-05-02,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,buy,3375.0,64.77,218598.75
+2016-05-02,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,8500.0,64.77,550545.0
+2016-05-02,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,7832.0,64.77,507278.63999999996
+2016-05-02,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,920.0,64.77,59588.399999999994
+2016-05-02,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,buy,1900.0,64.77,123062.99999999999
+2016-05-02,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,338.0,64.77,21892.26
+2016-05-02,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,buy,1012.0,64.77,65547.23999999999
+2016-05-02,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,278.0,64.77,18006.059999999998
+2016-05-02,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,256.0,64.77,16581.12
+2016-05-02,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,2129.0,64.77,137895.33
+2016-05-02,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,buy,1767.0,64.77,114448.59
+2016-05-02,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,2312.0,64.77,149748.24
+2016-05-02,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,538.0,64.77,34846.259999999995
+2016-05-02,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,516.0,64.77,33421.32
+2016-05-02,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,546.0,64.77,35364.42
+2016-05-02,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,buy,3342.0,64.77,216461.34
+2016-05-02,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,1757.0,64.77,113800.89
+2016-05-02,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,1618.0,64.77,104797.86
+2016-05-02,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,buy,534.0,64.77,34587.18
+2016-05-04,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Phantom Stock,sell,24315.0,65.39,1589957.85
+2016-05-04,AEP,"POWERS, ROBERT P","Executive Vice President, COO",True,Common Stock,sell,1046.0,65.39,68397.94
+2016-05-05,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Phantom Stock,buy,12279.0,65.15,799976.8500000001
+2016-05-25,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,buy,4489.0,63.43,284737.27
+2016-05-26,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,buy,4425.0,64.33,284660.25
+2016-06-30,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock Units,buy,561.778,70.09,39375.02002
+2016-06-30,AEP,"CROSBY, RALPH D JR",Director,True,Phantom Stock Units,buy,561.778,70.09,39375.02002
+2016-06-30,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,561.778,70.09,39375.02002
+2016-06-30,AEP,"HOAGLIN, THOMAS E",Director,True,Phantom Stock Units,buy,561.778,70.09,39375.02002
+2016-06-30,AEP,"NOTEBAERT, RICHARD C",Director,True,Phantom Stock Units,buy,561.778,70.09,39375.02002
+2016-06-30,AEP,"ANDERSON, DAVID J",Director,True,Phantom Stock Units,buy,561.778,70.09,39375.02002
+2016-06-30,AEP,"NOWELL, LIONEL L III",Director,True,Phantom Stock Units,buy,561.778,70.09,39375.02002
+2016-09-30,AEP,"ANDERSON, DAVID J",Director,True,Phantom Stock Units,buy,613.222,64.21,39374.984619999996
+2016-09-30,AEP,"HOAGLIN, THOMAS E",Director,True,Phantom Stock Units,buy,613.222,64.21,39374.984619999996
+2016-09-30,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,613.222,64.21,39374.984619999996
+2016-09-30,AEP,"CROSBY, RALPH D JR",Director,True,Phantom Stock Units,buy,613.222,64.21,39374.984619999996
+2016-09-30,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock Units,buy,613.222,64.21,39374.984619999996
+2016-09-30,AEP,"NOTEBAERT, RICHARD C",Director,True,Phantom Stock Units,buy,613.222,64.21,39374.984619999996
+2016-09-30,AEP,"NOWELL, LIONEL L III",Director,True,Phantom Stock Units,buy,613.222,64.21,39374.984619999996
+2016-10-03,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,1123.0,63.51,71321.73
+2016-12-31,AEP,"CROSBY, RALPH D JR",Director,True,Phantom Stock Units,buy,625.397,62.96,39374.99512000001
+2016-12-31,AEP,"HOAGLIN, THOMAS E",Director,True,Phantom Stock Units,buy,625.397,62.96,39374.99512000001
+2016-12-31,AEP,"ANDERSON, DAVID J",Director,True,Phantom Stock Units,buy,625.397,62.96,39374.99512000001
+2016-12-31,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock Units,buy,625.397,62.96,39374.99512000001
+2016-12-31,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,625.397,62.96,39374.99512000001
+2016-12-31,AEP,"NOTEBAERT, RICHARD C",Director,True,Phantom Stock Units,buy,625.397,62.96,39374.99512000001
+2016-12-31,AEP,"NOWELL, LIONEL L III",Director,True,Phantom Stock Units,buy,625.397,62.96,39374.99512000001
+2017-01-02,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,525.0,67.64,35511.0
+2017-02-23,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,1314.0,65.9,86592.6
+2017-03-31,AEP,"NOTEBAERT, RICHARD C",Director,True,Phantom Stock Units,buy,586.548,67.13,39374.96724
+2017-03-31,AEP,"NOWELL, LIONEL L III",Director,True,Phantom Stock Units,buy,568.548,67.13,38166.627239999994
+2017-03-31,AEP,"ANDERSON, DAVID J",Director,True,Phantom Stock Units,buy,586.548,67.13,39374.96724
+2017-03-31,AEP,"HOAGLIN, THOMAS E",Director,True,Phantom Stock Units,buy,586.548,67.13,39374.96724
+2017-03-31,AEP,"CROSBY, RALPH D JR",Director,True,Phantom Stock Units,buy,586.548,67.13,39374.96724
+2017-03-31,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock Units,buy,586.548,67.13,39374.96724
+2017-03-31,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,586.548,67.13,39374.96724
+2017-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,1782.0,67.64,120534.48
+2017-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,buy,9328.0,67.64,630945.92
+2017-05-01,AEP,"POWERS, ROBERT P",Vice Chairman,True,Common Stock,buy,4603.0,67.64,311346.92
+2017-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,buy,2630.0,67.64,177893.2
+2017-05-01,AEP,"HILLEBRAND, LANA L","Exec VP, Chief Admin Officer",True,Common Stock,buy,2194.0,67.64,148402.16
+2017-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,878.0,67.64,59387.92
+2017-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,buy,1831.0,67.64,123848.84
+2017-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,1225.0,67.64,82859.0
+2017-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,1129.0,67.64,76365.56
+2017-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,buy,3716.0,64.77,240685.31999999998
+2017-05-01,AEP,"POWERS, ROBERT P",Vice Chairman,True,Common Stock,sell,1369.0,67.64,92599.16
+2017-05-01,AEP,"HILLEBRAND, LANA L","Exec VP, Chief Admin Officer",True,Common Stock,sell,1162.0,67.64,78597.68000000001
+2017-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,1261.0,67.64,85294.04
+2017-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,2207.0,67.64,149281.48
+2017-05-01,AEP,"POWERS, ROBERT P",Vice Chairman,True,Common Stock,sell,1803.0,67.64,121954.92
+2017-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,622.0,67.64,42072.08
+2017-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,572.0,67.64,38690.08
+2017-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,buy,1194.0,67.64,80762.16
+2017-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,1934.0,67.64,130815.76
+2017-05-01,AEP,"POWERS, ROBERT P",Vice Chairman,True,Common Stock,sell,1261.0,67.64,85294.04
+2017-05-01,AEP,"POWERS, ROBERT P",Vice Chairman,True,Common Stock,buy,2630.0,67.64,177893.2
+2017-05-01,AEP,"HILLEBRAND, LANA L","Exec VP, Chief Admin Officer",True,Common Stock,buy,1654.0,67.64,111876.56
+2017-05-01,AEP,"HILLEBRAND, LANA L","Exec VP, Chief Admin Officer",True,Common Stock,sell,876.0,67.64,59252.64
+2017-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,buy,449.0,67.64,30370.36
+2017-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,buy,553.0,67.64,37404.92
+2017-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,265.0,67.64,17924.6
+2017-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,288.0,67.64,19480.32
+2017-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,buy,12326.0,67.64,833730.64
+2017-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,215.0,64.77,13925.55
+2017-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,buy,1969.0,67.64,133183.16
+2017-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,343.0,67.64,23200.52
+2017-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,8557.0,67.64,578795.48
+2017-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,953.0,67.64,64460.92
+2017-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,buy,717.0,67.64,48497.88
+2017-05-01,AEP,"CHODAK, PAUL III",Executive Vice President,True,Common Stock,sell,144.0,67.47,9715.68
+2017-05-01,AEP,"CHODAK, PAUL III",Executive Vice President,True,Common Stock,sell,196.0,67.47,13224.119999999999
+2017-05-01,AEP,"CHODAK, PAUL III",Executive Vice President,True,Common Stock,sell,217.0,67.47,14640.99
+2017-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,4856.0,67.64,328459.84
+2017-05-01,AEP,"HILLEBRAND, LANA L","Exec VP, Chief Admin Officer",True,Common Stock,sell,663.0,67.64,44845.32
+2017-05-01,AEP,"HILLEBRAND, LANA L","Exec VP, Chief Admin Officer",True,Common Stock,sell,589.0,67.64,39839.96
+2017-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,856.0,67.64,57899.840000000004
+2017-05-01,AEP,"HILLEBRAND, LANA L","Exec VP, Chief Admin Officer",True,Common Stock,buy,1252.0,67.64,84685.28
+2017-05-01,AEP,"HILLEBRAND, LANA L","Exec VP, Chief Admin Officer",True,Common Stock,sell,778.0,67.64,52623.92
+2017-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,buy,2354.0,67.64,159224.56
+2017-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,4472.0,67.64,302486.08
+2017-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,6416.0,67.64,433978.24
+2017-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,7883.0,67.64,533206.12
+2017-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,590.0,67.64,39907.6
+2017-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,564.0,67.64,38148.96
+2017-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,502.0,67.64,33955.28
+2017-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,5910.0,67.64,399752.4
+2017-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,buy,1643.0,67.64,111132.52
+2017-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,buy,1092.0,67.64,73862.88
+2017-05-01,AEP,"PATTON, CHARLES R.",Executive Vice President,True,Common Stock,sell,609.0,67.47,41089.229999999996
+2017-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,878.0,67.64,59387.92
+2017-05-01,AEP,"PATTON, CHARLES R.",Executive Vice President,True,Common Stock,sell,778.0,67.47,52491.659999999996
+2017-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,buy,1831.0,67.64,123848.84
+2017-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,534.0,67.64,36119.76
+2017-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,buy,1563.0,67.64,105721.32
+2017-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,234.0,67.64,15827.76
+2017-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,374.0,67.64,25297.36
+2017-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,1369.0,67.64,92599.16
+2017-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,749.0,67.64,50662.36
+2017-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,814.0,67.64,55058.96
+2017-05-01,AEP,"PATTON, CHARLES R.",Executive Vice President,True,Common Stock,sell,1017.0,67.47,68616.99
+2017-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,787.0,67.64,53232.68
+2017-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,558.0,67.64,37743.12
+2017-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,buy,1995.0,67.64,134941.8
+2017-05-01,AEP,"HILLEBRAND, LANA L","Exec VP, Chief Admin Officer",True,Common Stock,sell,1032.0,67.64,69804.48
+2017-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,buy,1027.0,67.64,69466.28
+2017-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,1039.0,67.64,70277.96
+2017-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,724.0,67.64,48971.36
+2017-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,667.0,67.64,45115.88
+2017-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,buy,1391.0,67.64,94087.24
+2017-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,953.0,67.64,64460.92
+2017-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,1025.0,67.64,69331.0
+2017-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,944.0,67.64,63852.16
+2017-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,buy,16440.0,67.64,1112001.6
+2017-05-01,AEP,"POWERS, ROBERT P",Vice Chairman,True,Common Stock,buy,3463.0,67.64,234237.32
+2017-05-01,AEP,"POWERS, ROBERT P",Vice Chairman,True,Common Stock,sell,2396.0,67.64,162065.44
+2017-05-01,AEP,"POWERS, ROBERT P",Vice Chairman,True,Common Stock,sell,2207.0,67.64,149281.48
+2017-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,1821.0,67.64,123172.44
+2017-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,1677.0,67.64,113432.28
+2017-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,buy,3498.0,67.64,236604.72
+2017-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,2396.0,67.64,162065.44
+2017-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,buy,4603.0,67.64,311346.92
+2017-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,956.0,67.64,64663.840000000004
+2017-05-01,AEP,"POWERS, ROBERT P",Vice Chairman,True,Common Stock,sell,1660.0,67.64,112282.4
+2017-05-02,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,buy,1154.0,67.64,78056.56
+2017-05-16,AEP,"CHODAK, PAUL III",Executive Vice President,True,Common Stock,sell,1110.0,68.204,75706.43999999999
+2017-05-19,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Phantom Stock,sell,12073.62,68.72,829699.1664
+2017-06-30,AEP,"NOTEBAERT, RICHARD C",Director,True,Phantom Stock Units,buy,566.791,69.47,39374.97077
+2017-06-30,AEP,"ANDERSON, DAVID J",Director,True,Phantom Stock Units,buy,566.791,69.47,39374.97077
+2017-06-30,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock Units,buy,566.791,69.47,39374.97077
+2017-06-30,AEP,"NOWELL, LIONEL L III",Director,True,Phantom Stock Units,buy,566.791,69.47,39374.97077
+2017-06-30,AEP,"HOAGLIN, THOMAS E",Director,True,Phantom Stock Units,buy,566.791,69.47,39374.97077
+2017-06-30,AEP,"CROSBY, RALPH D JR",Director,True,Phantom Stock Units,buy,566.791,69.47,39374.97077
+2017-06-30,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,566.791,69.47,39374.97077
+2017-09-30,AEP,"LIN, SANDRA BEACH",Director,True,Phantom Stock Units,buy,560.578,70.24,39374.998719999996
+2017-09-30,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,560.578,70.24,39374.998719999996
+2017-09-30,AEP,"ANDERSON, DAVID J",Director,True,Phantom Stock Units,buy,560.578,70.24,39374.998719999996
+2017-09-30,AEP,"HOAGLIN, THOMAS E",Director,True,Phantom Stock Units,buy,560.578,70.24,39374.998719999996
+2017-09-30,AEP,"CROSBY, RALPH D JR",Director,True,Phantom Stock Units,buy,560.578,70.24,39374.998719999996
+2017-09-30,AEP,"NOWELL, LIONEL L III",Director,True,Phantom Stock Units,buy,560.578,70.24,39374.998719999996
+2017-09-30,AEP,"RASMUSSEN, STEPHEN S",Director,True,Phantom Stock Units,buy,560.578,70.24,39374.998719999996
+2017-09-30,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock Units,buy,560.578,70.24,39374.998719999996
+2017-09-30,AEP,"NOTEBAERT, RICHARD C",Director,True,Phantom Stock Units,buy,560.578,70.24,39374.998719999996
+2017-12-31,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock Units,buy,535.205,73.57,39375.03185
+2017-12-31,AEP,"HOAGLIN, THOMAS E",Director,True,Phantom Stock Units,buy,535.205,73.57,39375.03185
+2017-12-31,AEP,"RASMUSSEN, STEPHEN S",Director,True,Phantom Stock Units,buy,535.205,73.57,39375.03185
+2017-12-31,AEP,"NOWELL, LIONEL L III",Director,True,Phantom Stock Units,buy,535.05,73.57,39363.62849999999
+2017-12-31,AEP,"LIN, SANDRA BEACH",Director,True,Phantom Stock Units,buy,535.205,73.57,39375.03185
+2017-12-31,AEP,"ANDERSON, DAVID J",Director,True,Phantom Stock Units,buy,535.205,73.57,39375.03185
+2017-12-31,AEP,"CROSBY, RALPH D JR",Director,True,Phantom Stock Units,buy,535.205,73.57,39375.03185
+2017-12-31,AEP,"NOTEBAERT, RICHARD C",Director,True,Phantom Stock Units,buy,535.205,73.57,39375.03185
+2017-12-31,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,535.205,73.57,39375.03185
+2018-01-02,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,641.0,68.63,43991.829999999994
+2018-03-31,AEP,"NOWELL, LIONEL L III",Director,True,Phantom Stock Units,buy,574.06,68.59,39374.7754
+2018-03-31,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock Units,buy,574.06,68.59,39374.7754
+2018-03-31,AEP,"HOAGLIN, THOMAS E",Director,True,Phantom Stock Units,buy,574.06,68.59,39374.7754
+2018-03-31,AEP,"CROSBY, RALPH D JR",Director,True,Phantom Stock Units,buy,574.06,68.59,39374.7754
+2018-03-31,AEP,"LIN, SANDRA BEACH",Director,True,Phantom Stock Units,buy,574.06,68.59,39374.7754
+2018-03-31,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,574.06,68.59,39374.7754
+2018-03-31,AEP,"NOTEBAERT, RICHARD C",Director,True,Phantom Stock Units,buy,574.06,68.59,39374.7754
+2018-03-31,AEP,"ANDERSON, DAVID J",Director,True,Phantom Stock Units,buy,574.06,68.59,39374.7754
+2018-03-31,AEP,"RICHARD, OLIVER G III",Director,True,Phantom Stock Units,buy,574.06,68.59,39374.7754
+2018-03-31,AEP,"RASMUSSEN, STEPHEN S",Director,True,Phantom Stock Units,buy,574.06,68.59,39374.7754
+2018-05-01,AEP,"PATTON, CHARLES R.",Executive Vice President,True,Common Stock,buy,1235.0,68.63,84758.04999999999
+2018-05-01,AEP,"PATTON, CHARLES R.",Executive Vice President,True,Common Stock,sell,863.0,68.63,59227.689999999995
+2018-05-01,AEP,"PATTON, CHARLES R.",Executive Vice President,True,Common Stock,sell,715.0,68.63,49070.45
+2018-05-01,AEP,"PATTON, CHARLES R.",Executive Vice President,True,Common Stock,buy,1578.0,68.63,108298.14
+2018-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,733.0,68.63,50305.78999999999
+2018-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,1220.0,69.44,84716.8
+2018-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,2572.0,68.63,176516.36
+2018-05-01,AEP,"HILLEBRAND, LANA L","Exec VP, Chief Admin Officer",True,Common Stock,sell,720.0,68.63,49413.6
+2018-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,259.0,68.63,17775.17
+2018-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,buy,1617.0,68.63,110974.70999999999
+2018-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,1035.0,68.63,71032.04999999999
+2018-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,859.0,68.63,58953.17
+2018-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,buy,1894.0,68.63,129985.21999999999
+2018-05-01,AEP,"HILLEBRAND, LANA L","Exec VP, Chief Admin Officer",True,Common Stock,sell,569.0,69.44,39511.36
+2018-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,675.0,68.63,46325.25
+2018-05-01,AEP,"HILLEBRAND, LANA L","Exec VP, Chief Admin Officer",True,Common Stock,sell,950.0,68.63,65198.49999999999
+2018-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,4573.0,69.44,317549.12
+2018-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,492.0,68.63,33765.96
+2018-05-01,AEP,"HILLEBRAND, LANA L","Exec VP, Chief Admin Officer",True,Common Stock,buy,1296.0,68.63,88944.48
+2018-05-01,AEP,"HILLEBRAND, LANA L","Exec VP, Chief Admin Officer",True,Common Stock,sell,576.0,68.63,39530.88
+2018-05-01,AEP,"PATTON, CHARLES R.",Executive Vice President,True,Common Stock,sell,508.0,69.44,35275.52
+2018-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,623.0,69.44,43261.119999999995
+2018-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,553.0,68.63,37952.39
+2018-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,buy,1194.0,68.63,81944.22
+2018-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,570.0,68.63,39119.1
+2018-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,buy,1062.0,68.63,72885.06
+2018-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,1486.0,68.63,101984.18
+2018-05-01,AEP,"PATTON, CHARLES R.",Executive Vice President,True,Common Stock,sell,675.0,68.63,46325.25
+2018-05-01,AEP,"PATTON, CHARLES R.",Executive Vice President,True,Common Stock,sell,560.0,68.63,38432.799999999996
+2018-05-01,AEP,"HILLEBRAND, LANA L","Exec VP, Chief Admin Officer",True,Common Stock,buy,1712.0,68.63,117494.56
+2018-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,1233.0,68.63,84620.79
+2018-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,1978.0,68.63,135750.13999999998
+2018-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,1640.0,68.63,112553.2
+2018-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,buy,3618.0,68.63,248303.34
+2018-05-01,AEP,"HILLEBRAND, LANA L","Exec VP, Chief Admin Officer",True,Common Stock,sell,762.0,68.63,52296.06
+2018-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,508.0,69.44,35275.52
+2018-05-01,AEP,"CHODAK, PAUL III",Executive Vice President,True,Common Stock,buy,607.0,68.63,41658.409999999996
+2018-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,560.0,68.63,38432.799999999996
+2018-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,1035.0,68.63,71032.04999999999
+2018-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,2101.0,68.63,144191.63
+2018-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,1743.0,68.63,119622.09
+2018-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,buy,3844.0,68.63,263813.72
+2018-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,929.0,68.63,63757.27
+2018-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,buy,1700.0,68.63,116670.99999999999
+2018-05-01,AEP,"PATTON, CHARLES R.",Executive Vice President,True,Common Stock,sell,580.0,83.67,48528.6
+2018-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,buy,12746.0,68.63,874757.98
+2018-05-01,AEP,"CHODAK, PAUL III",Executive Vice President,True,Common Stock,sell,184.0,68.63,12627.919999999998
+2018-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,732.0,69.44,50830.08
+2018-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,884.0,68.63,60668.92
+2018-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,732.0,69.44,50830.08
+2018-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,786.0,68.63,53943.17999999999
+2018-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,653.0,68.63,44815.39
+2018-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,buy,1439.0,68.63,98758.56999999999
+2018-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,859.0,68.63,58953.17
+2018-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,buy,1235.0,68.63,84758.04999999999
+2018-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,771.0,68.63,52913.729999999996
+2018-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,4374.0,68.63,300187.62
+2018-05-01,AEP,"CHODAK, PAUL III",Executive Vice President,True,Common Stock,sell,370.0,69.44,25692.8
+2018-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,buy,2719.0,68.63,186604.97
+2018-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,254.0,68.63,17432.02
+2018-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,211.0,68.63,14480.929999999998
+2018-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,buy,465.0,68.63,31912.949999999997
+2018-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,313.0,68.63,21481.19
+2018-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,buy,572.0,68.63,39256.36
+2018-05-01,AEP,"CHODAK, PAUL III",Executive Vice President,True,Common Stock,sell,310.0,68.63,21275.3
+2018-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,211.0,69.44,14651.84
+2018-05-01,AEP,"CHODAK, PAUL III",Executive Vice President,True,Common Stock,sell,135.0,68.63,9265.05
+2018-05-01,AEP,"CHODAK, PAUL III",Executive Vice President,True,Common Stock,buy,445.0,68.63,30540.35
+2018-05-01,AEP,"CHODAK, PAUL III",Executive Vice President,True,Common Stock,sell,423.0,68.63,29030.489999999998
+2018-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,5780.0,68.63,396681.39999999997
+2018-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,6966.0,68.63,478076.57999999996
+2018-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,buy,9646.0,68.63,662004.98
+2018-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,buy,1894.0,68.63,129985.21999999999
+2018-05-04,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,721.0,69.63,50203.229999999996
+2018-06-30,AEP,"ANDERSON, DAVID J",Director,True,Phantom Stock Units,buy,568.59,69.25,39374.857500000006
+2018-06-30,AEP,"HOAGLIN, THOMAS E",Director,True,Phantom Stock Units,buy,568.59,69.25,39374.857500000006
+2018-06-30,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,568.59,69.25,39374.857500000006
+2018-06-30,AEP,"NOTEBAERT, RICHARD C",Director,True,Phantom Stock Units,buy,568.59,69.25,39374.857500000006
+2018-06-30,AEP,"RICHARD, OLIVER G III",Director,True,Phantom Stock Units,buy,568.59,69.25,39374.857500000006
+2018-06-30,AEP,"LIN, SANDRA BEACH",Director,True,Phantom Stock Units,buy,568.59,69.25,39374.857500000006
+2018-06-30,AEP,"NOWELL, LIONEL L III",Director,True,Phantom Stock Units,buy,568.59,69.25,39374.857500000006
+2018-06-30,AEP,"CROSBY, RALPH D JR",Director,True,Phantom Stock Units,buy,568.59,69.25,39374.857500000006
+2018-06-30,AEP,"RASMUSSEN, STEPHEN S",Director,True,Phantom Stock Units,buy,568.59,69.25,39374.857500000006
+2018-06-30,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock Units,buy,568.59,69.25,39374.857500000006
+2018-09-30,AEP,"LIN, SANDRA BEACH",Director,True,Phantom Stock Units,buy,555.51,70.88,39374.5488
+2018-09-30,AEP,"NOTEBAERT, RICHARD C",Director,True,Phantom Stock Units,buy,555.51,70.88,39374.5488
+2018-09-30,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,555.51,70.88,39374.5488
+2018-09-30,AEP,"NOWELL, LIONEL L III",Director,True,Phantom Stock Units,buy,555.51,70.88,39374.5488
+2018-09-30,AEP,"CROSBY, RALPH D JR",Director,True,Phantom Stock Units,buy,555.51,70.88,39374.5488
+2018-09-30,AEP,"RICHARD, OLIVER G III",Director,True,Phantom Stock Units,buy,555.51,70.88,39374.5488
+2018-09-30,AEP,"HOAGLIN, THOMAS E",Director,True,Phantom Stock Units,buy,555.51,70.88,39374.5488
+2018-09-30,AEP,"RASMUSSEN, STEPHEN S",Director,True,Phantom Stock Units,buy,555.51,70.88,39374.5488
+2018-09-30,AEP,"ANDERSON, DAVID J",Director,True,Phantom Stock Units,buy,555.51,70.88,39374.5488
+2018-09-30,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock Units,buy,555.51,70.88,39374.5488
+2018-11-14,AEP,"CHODAK, PAUL III",Executive Vice President,True,Common Stock,sell,847.0,76.47,64770.09
+2018-11-20,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,300.0,77.541,23262.3
+2018-11-20,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,581.0,77.55,45056.549999999996
+2018-12-31,AEP,"ANDERSON, DAVID J",Director,True,Phantom Stock Units,buy,526.82,74.74,39374.5268
+2018-12-31,AEP,"LIN, SANDRA BEACH",Director,True,Phantom Stock Units,buy,526.82,74.74,39374.5268
+2018-12-31,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock Units,buy,526.82,74.74,39374.5268
+2018-12-31,AEP,"CROSBY, RALPH D JR",Director,True,Phantom Stock Units,buy,526.82,74.74,39374.5268
+2018-12-31,AEP,"NOTEBAERT, RICHARD C",Director,True,Phantom Stock Units,buy,526.82,74.74,39374.5268
+2018-12-31,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,526.82,74.74,39374.5268
+2018-12-31,AEP,"NOWELL, LIONEL L III",Director,True,Phantom Stock Units,buy,526.82,74.74,39374.5268
+2018-12-31,AEP,"HOAGLIN, THOMAS E",Director,True,Phantom Stock Units,buy,526.82,74.74,39374.5268
+2018-12-31,AEP,"RASMUSSEN, STEPHEN S",Director,True,Phantom Stock Units,buy,526.82,74.74,39374.5268
+2018-12-31,AEP,"RICHARD, OLIVER G III",Director,True,Phantom Stock Units,buy,526.82,74.74,39374.5268
+2019-01-02,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,655.0,84.95,55642.25
+2019-03-31,AEP,"LIN, SANDRA BEACH",Director,True,Phantom Stock Units,buy,470.15,83.75,39375.0625
+2019-03-31,AEP,"RASMUSSEN, STEPHEN S",Director,True,Phantom Stock Units,buy,470.15,83.75,39375.0625
+2019-03-31,AEP,"NOWELL, LIONEL L III",Director,True,Phantom Stock Units,buy,470.15,83.75,39375.0625
+2019-03-31,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock Units,buy,470.15,83.75,39375.0625
+2019-03-31,AEP,"HOAGLIN, THOMAS E",Director,True,Phantom Stock Units,buy,470.15,83.75,39375.0625
+2019-03-31,AEP,"RICHARD, OLIVER G III",Director,True,Phantom Stock Units,buy,470.15,83.75,39375.0625
+2019-03-31,AEP,"BEASLEY, J BARNIE",Director,True,Phantom Stock Units,buy,156.72,83.75,13125.3
+2019-03-31,AEP,"ANDERSON, DAVID J",Director,True,Phantom Stock Units,buy,470.15,83.75,39375.0625
+2019-03-31,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,470.15,83.75,39375.0625
+2019-03-31,AEP,"CROSBY, RALPH D JR",Director,True,Phantom Stock Units,buy,470.15,83.75,39375.0625
+2019-03-31,AEP,"BEASLEY, J BARNIE",Director,True,Phantom Stock Units,buy,313.43,83.75,26249.7625
+2019-03-31,AEP,"NOTEBAERT, RICHARD C",Director,True,Phantom Stock Units,buy,470.15,83.75,39375.0625
+2019-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,4524.0,84.95,384313.8
+2019-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,916.0,83.67,76641.72
+2019-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,758.0,84.95,64392.1
+2019-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,815.0,84.95,69234.25
+2019-05-01,AEP,"PATTON, CHARLES R.",Executive Vice President,True,Common Stock,sell,525.0,84.95,44598.75
+2019-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,buy,1236.0,83.67,103416.12
+2019-05-01,AEP,"PATTON, CHARLES R.",Executive Vice President,True,Common Stock,sell,485.0,84.95,41200.75
+2019-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,573.0,83.67,47942.91
+2019-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,663.0,83.67,55473.21
+2019-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,759.0,83.67,63505.53
+2019-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,4733.0,84.95,402068.35000000003
+2019-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,buy,9985.0,83.67,835444.9500000001
+2019-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,4528.0,83.67,378857.76
+2019-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,699.0,84.95,59380.05
+2019-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,buy,3979.0,83.67,332922.93
+2019-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,1804.0,83.67,150940.68
+2019-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,2175.0,83.67,181982.25
+2019-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,buy,1280.0,83.67,107097.6
+2019-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,580.0,83.67,48528.6
+2019-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,700.0,83.67,58569.0
+2019-05-01,AEP,"CHODAK, PAUL III",Executive Vice President,True,Common Stock,sell,581.0,84.95,49355.950000000004
+2019-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,485.0,84.95,41200.75
+2019-05-01,AEP,"PATTON, CHARLES R.",Executive Vice President,True,Common Stock,buy,1280.0,83.67,107097.6
+2019-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,5457.0,83.67,456587.19
+2019-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,525.0,84.95,44598.75
+2019-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,645.0,84.95,54792.75
+2019-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,146.0,84.95,12402.7
+2019-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,758.0,84.95,64392.1
+2019-05-01,AEP,"CHODAK, PAUL III",Executive Vice President,True,Common Stock,sell,536.0,84.95,45533.200000000004
+2019-05-01,AEP,"PATTON, CHARLES R.",Executive Vice President,True,Common Stock,sell,700.0,83.67,58569.0
+2019-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,1402.0,84.95,119099.90000000001
+2019-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,1262.0,84.95,107206.90000000001
+2019-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,1539.0,83.67,128768.13
+2019-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,1277.0,83.67,106846.59
+2019-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,buy,2816.0,83.67,235614.72
+2019-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,135.0,84.95,11468.25
+2019-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,218.0,83.67,18240.06
+2019-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,814.0,83.67,68107.38
+2019-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,264.0,83.67,22088.88
+2019-05-01,AEP,"CHODAK, PAUL III",Executive Vice President,True,Common Stock,sell,249.0,83.67,20833.83
+2019-05-01,AEP,"CHODAK, PAUL III",Executive Vice President,True,Common Stock,sell,212.0,83.67,17738.04
+2019-05-01,AEP,"CHODAK, PAUL III",Executive Vice President,True,Common Stock,buy,461.0,83.67,38571.87
+2019-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,buy,1675.0,83.67,140147.25
+2019-05-01,AEP,"HILLEBRAND, LANA L","Exec VP, Chief Admin Officer",True,Common Stock,sell,572.0,84.95,48591.4
+2019-05-01,AEP,"HILLEBRAND, LANA L","Exec VP, Chief Admin Officer",True,Common Stock,sell,589.0,84.95,50035.55
+2019-05-01,AEP,"HILLEBRAND, LANA L","Exec VP, Chief Admin Officer",True,Common Stock,sell,744.0,83.67,62250.48
+2019-05-01,AEP,"HILLEBRAND, LANA L","Exec VP, Chief Admin Officer",True,Common Stock,sell,597.0,83.67,49950.99
+2019-05-01,AEP,"HILLEBRAND, LANA L","Exec VP, Chief Admin Officer",True,Common Stock,buy,1341.0,83.67,112201.47
+2019-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,buy,1490.0,83.67,124668.3
+2019-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,buy,482.0,83.67,40328.94
+2019-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,676.0,83.67,56560.92
+2019-05-02,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,11152.0,84.938,947228.576
+2019-05-14,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,300.0,85.81,25743.0
+2019-05-14,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,4392.0,86.02,377799.83999999997
+2019-05-14,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,1203.0,85.807,103225.821
+2019-05-15,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,4535.0,85.724,388758.34
+2019-05-22,AEP,"CHODAK, PAUL III",Executive Vice President,True,Common Stock,sell,1103.0,86.53,95442.59
+2019-05-22,AEP,"CHODAK, PAUL III",Executive Vice President,True,Common Stock,sell,200.0,86.495,17299.0
+2019-06-05,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,700.0,89.41,62587.0
+2019-06-05,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,1052.0,89.408,94057.216
+2019-06-30,AEP,"LIN, SANDRA BEACH",Director,True,Phantom Stock Units,buy,447.39,88.01,39374.793900000004
+2019-06-30,AEP,"RASMUSSEN, STEPHEN S",Director,True,Phantom Stock Units,buy,447.39,88.01,39374.793900000004
+2019-06-30,AEP,"RICHARD, OLIVER G III",Director,True,Phantom Stock Units,buy,447.39,88.01,39374.793900000004
+2019-06-30,AEP,"NOWELL, LIONEL L III",Director,True,Phantom Stock Units,buy,447.39,88.01,39374.793900000004
+2019-06-30,AEP,"NOTEBAERT, RICHARD C",Director,True,Phantom Stock Units,buy,447.39,88.01,39374.793900000004
+2019-06-30,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock Units,buy,447.39,88.01,39374.793900000004
+2019-06-30,AEP,"CROSBY, RALPH D JR",Director,True,Phantom Stock Units,buy,447.39,88.01,39374.793900000004
+2019-06-30,AEP,"BEASLEY, J BARNIE",Director,True,Phantom Stock Units,buy,447.39,88.01,39374.793900000004
+2019-06-30,AEP,"ANDERSON, DAVID J",Director,True,Phantom Stock Units,buy,447.39,88.01,39374.793900000004
+2019-06-30,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,447.39,88.01,39374.793900000004
+2019-06-30,AEP,"HOAGLIN, THOMAS E",Director,True,Phantom Stock Units,buy,447.39,88.01,39374.793900000004
+2019-07-29,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,4458.0,89.73,400016.34
+2019-08-22,AEP,"ZEBULA, CHARLES E",Exective Vice President,True,Common Stock,sell,1216.0,90.975,110625.59999999999
+2019-09-30,AEP,"BEASLEY, J BARNIE",Director,True,Phantom Stock Units,buy,420.26,93.69,39374.1594
+2019-09-30,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,420.26,93.69,39374.1594
+2019-09-30,AEP,"RICHARD, OLIVER G III",Director,True,Phantom Stock Units,buy,420.26,93.69,39374.1594
+2019-09-30,AEP,"LIN, SANDRA BEACH",Director,True,Phantom Stock Units,buy,420.26,93.96,39487.62959999999
+2019-09-30,AEP,"ANDERSON, DAVID J",Director,True,Phantom Stock Units,buy,420.26,93.69,39374.1594
+2019-09-30,AEP,"RASMUSSEN, STEPHEN S",Director,True,Phantom Stock Units,buy,420.26,93.69,39374.1594
+2019-09-30,AEP,"GARCIA, ART A",Director,True,Phantom Stock Units,buy,140.09,93.69,13125.0321
+2019-09-30,AEP,"NOWELL, LIONEL L III",Director,True,Phantom Stock Units,buy,420.26,93.69,39374.1594
+2019-09-30,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock Units,buy,420.26,93.69,39374.1594
+2019-09-30,AEP,"CROSBY, RALPH D JR",Director,True,Phantom Stock Units,buy,420.26,93.69,39374.1594
+2019-09-30,AEP,"HOAGLIN, THOMAS E",Director,True,Phantom Stock Units,buy,420.26,93.69,39374.1594
+2019-09-30,AEP,"NOTEBAERT, RICHARD C",Director,True,Phantom Stock Units,buy,420.26,93.69,39374.1594
+2019-12-31,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock Units,buy,416.62,94.51,39374.7562
+2019-12-31,AEP,"RASMUSSEN, STEPHEN S",Director,True,Phantom Stock Units,buy,416.62,94.51,39374.7562
+2019-12-31,AEP,"LIN, SANDRA BEACH",Director,True,Phantom Stock Units,buy,416.62,94.51,39374.7562
+2019-12-31,AEP,"HOAGLIN, THOMAS E",Director,True,Phantom Stock Units,buy,416.62,94.51,39374.7562
+2019-12-31,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,416.62,94.51,39374.7562
+2019-12-31,AEP,"BEASLEY, J BARNIE",Director,True,Phantom Stock Units,buy,416.62,94.51,39374.7562
+2019-12-31,AEP,"CROSBY, RALPH D JR",Director,True,Phantom Stock Units,buy,416.62,94.51,39374.7562
+2019-12-31,AEP,"NOTEBAERT, RICHARD C",Director,True,Phantom Stock Units,buy,416.62,94.51,39374.7562
+2019-12-31,AEP,"NOWELL, LIONEL L III",Director,True,Phantom Stock Units,buy,416.62,94.51,39374.7562
+2019-12-31,AEP,"ANDERSON, DAVID J",Director,True,Phantom Stock Units,buy,416.62,94.51,39374.7562
+2019-12-31,AEP,"RICHARD, OLIVER G III",Director,True,Phantom Stock Units,buy,416.62,94.51,39374.7562
+2020-02-21,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,9329.0,102.21,953517.09
+2020-02-21,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,1804.0,102.87,185577.48
+2020-02-21,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,9096.0,102.03,928064.88
+2020-02-24,AEP,"AKINS, NICHOLAS K",President and CEO,True,Common Stock,sell,29950.0,101.58,3042321.0
+2020-02-24,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,18573.0,101.55,1886088.15
+2020-02-24,AEP,"AKINS, NICHOLAS K",President and CEO,True,Common Stock,sell,37807.0,100.57,3802249.9899999998
+2020-02-24,AEP,"AKINS, NICHOLAS K",President and CEO,True,Common Stock,sell,1900.0,102.2,194180.0
+2020-02-26,AEP,"BEASLEY, J BARNIE",Director,True,Common Stock,sell,1613.0,97.43,157154.59
+2020-03-03,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,7330.0,97.051,711383.83
+2020-03-03,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,3800.0,97.11,369018.0
+2020-03-04,AEP,"ZEBULA, CHARLES E",Exective Vice President,True,Common Stock,sell,100.0,99.28,9928.0
+2020-03-04,AEP,"ZEBULA, CHARLES E",Exective Vice President,True,Common Stock,sell,4200.0,99.25,416850.0
+2020-03-04,AEP,"ZEBULA, CHARLES E",Exective Vice President,True,Common Stock,sell,3406.0,99.24,338011.44
+2020-03-04,AEP,"CHODAK, PAUL III",Executive Vice President,True,Common Stock,sell,5759.0,100.0,575900.0
+2020-03-05,AEP,"HILLEBRAND, LANA L","Exec. VP, Chief Admin Officer",True,Common Stock,sell,8944.0,100.0,894400.0
+2020-03-31,AEP,"LIN, SANDRA BEACH",Director,True,Phantom Stock Units,buy,509.5,79.98,40749.810000000005
+2020-03-31,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,509.5,79.98,40749.810000000005
+2020-03-31,AEP,"RASMUSSEN, STEPHEN S",Director,True,Phantom Stock Units,buy,509.5,79.98,40749.810000000005
+2020-03-31,AEP,"NOTEBAERT, RICHARD C",Director,True,Phantom Stock Units,buy,509.5,79.98,40749.810000000005
+2020-03-31,AEP,"NOWELL, LIONEL L III",Director,True,Phantom Stock Units,buy,509.5,79.98,40749.810000000005
+2020-03-31,AEP,"RICHARD, OLIVER G III",Director,True,Phantom Stock Units,buy,509.5,79.98,40749.810000000005
+2020-03-31,AEP,"MCCARTHY, MARGARET M",Director,True,Phantom Stock Units,buy,509.5,79.98,40749.810000000005
+2020-03-31,AEP,"BEASLEY, J BARNIE",Director,True,Phantom Stock Units,buy,509.5,79.98,40749.810000000005
+2020-03-31,AEP,"CROSBY, RALPH D JR",Director,True,Phantom Stock Units,buy,509.5,79.98,40749.810000000005
+2020-03-31,AEP,"GARCIA, ART A",Director,True,Phantom Stock Units,buy,509.5,79.98,40749.810000000005
+2020-03-31,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock Units,buy,509.5,79.98,40749.810000000005
+2020-03-31,AEP,"ANDERSON, DAVID J",Director,True,Phantom Stock Units,buy,509.5,79.98,40749.810000000005
+2020-03-31,AEP,"HOAGLIN, THOMAS E",Director,True,Phantom Stock Units,buy,509.5,79.98,40749.810000000005
+2020-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,150.0,81.39,12208.5
+2020-05-01,AEP,"CHODAK, PAUL III",Executive Vice President,True,Common Stock,sell,552.0,81.39,44927.28
+2020-05-01,AEP,"CHODAK, PAUL III",Executive Vice President,True,Common Stock,sell,598.0,81.39,48671.22
+2020-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,688.0,81.39,55996.32
+2020-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,839.0,81.39,68286.21
+2020-05-01,AEP,"CHODAK, PAUL III",Executive Vice President,True,Common Stock,sell,550.0,81.39,44764.5
+2020-05-01,AEP,"HILLEBRAND, LANA L","Exec VP, Chief Admin Officer",True,Common Stock,sell,536.0,81.39,43625.04
+2020-05-01,AEP,"HILLEBRAND, LANA L","Exec VP, Chief Admin Officer",True,Common Stock,sell,520.0,81.39,42322.8
+2020-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,603.0,81.39,49078.17
+2020-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,674.0,81.39,54856.86
+2020-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,664.0,81.39,54042.96
+2020-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,780.0,81.39,63484.2
+2020-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,207.0,81.39,16847.73
+2020-05-01,AEP,"HILLEBRAND, LANA L","Exec VP, Chief Admin Officer",True,Common Stock,sell,470.0,81.39,38253.3
+2020-05-01,AEP,"PATTON, CHARLES R.",Executive Vice President,True,Common Stock,sell,409.0,81.39,33288.51
+2020-05-01,AEP,"PATTON, CHARLES R.",Executive Vice President,True,Common Stock,sell,499.0,81.39,40613.61
+2020-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,4176.0,81.39,339884.64
+2020-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,170.0,81.39,13836.3
+2020-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,541.0,81.39,44031.99
+2020-05-01,AEP,"PATTON, CHARLES R.",Executive Vice President,True,Common Stock,sell,541.0,81.39,44031.99
+2020-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,4659.0,81.39,379196.01
+2020-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,590.0,81.39,48020.1
+2020-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,720.0,81.39,58600.8
+2020-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,983.0,81.39,80006.37
+2020-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,2948.0,81.39,239937.72
+2020-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,499.0,81.39,40613.61
+2020-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,2948.0,81.39,239937.72
+2020-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,1300.0,81.39,105807.0
+2020-05-01,AEP,"TIERNEY, BRIAN X","Executive VP, CFO",True,Common Stock,sell,1199.0,81.39,97586.61
+2020-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,4875.0,81.39,396776.25
+2020-05-01,AEP,"BARTON, LISA M",Executive Vice President,True,Common Stock,sell,780.0,81.39,63484.2
+2020-05-04,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,2777.0,81.19,225464.63
+2020-05-04,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,5632.0,81.97,461655.04
+2020-05-04,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,5074.0,82.87,420482.38
+2020-05-04,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,2244.0,81.19,182190.36
+2020-05-04,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,5813.0,80.99,470794.87
+2020-06-30,AEP,"ANDERSON, DAVID J",Director,True,Phantom Stock Units,buy,511.678,79.64,40750.03592
+2020-06-30,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock Units,buy,511.678,79.64,40750.03592
+2020-06-30,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,511.678,79.64,40750.03592
+2020-06-30,AEP,"BEASLEY, J BARNIE",Director,True,Phantom Stock Units,buy,511.678,79.64,40750.03592
+2020-06-30,AEP,"LIN, SANDRA BEACH",Director,True,Phantom Stock Units,buy,511.678,79.64,40750.03592
+2020-06-30,AEP,"CROSBY, RALPH D JR",Director,True,Phantom Stock Units,buy,511.678,79.64,40750.03592
+2020-06-30,AEP,"NOTEBAERT, RICHARD C",Director,True,Phantom Stock Units,buy,511.678,79.64,40750.03592
+2020-06-30,AEP,"MCCARTHY, MARGARET M",Director,True,Phantom Stock Units,buy,511.678,79.64,40750.03592
+2020-06-30,AEP,"GARCIA, ART A",Director,True,Phantom Stock Units,buy,511.678,79.64,40750.03592
+2020-06-30,AEP,"HOAGLIN, THOMAS E",Director,True,Phantom Stock Units,buy,511.678,79.64,40750.03592
+2020-06-30,AEP,"RASMUSSEN, STEPHEN S",Director,True,Phantom Stock Units,buy,511.678,79.64,40750.03592
+2020-09-30,AEP,"NOTEBAERT, RICHARD C",Director,True,Phantom Stock Units,buy,498.59,81.73,40749.7607
+2020-09-30,AEP,"ANDERSON, DAVID J",Director,True,Phantom Stock Units,buy,498.59,81.73,40749.7607
+2020-09-30,AEP,"CROSBY, RALPH D JR",Director,True,Phantom Stock Units,buy,498.59,81.73,40749.7607
+2020-09-30,AEP,"GARCIA, ART A",Director,True,Phantom Stock Units,buy,498.59,81.73,40749.7607
+2020-09-30,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock Units,buy,498.59,81.73,40749.7607
+2020-09-30,AEP,"HOAGLIN, THOMAS E",Director,True,Phantom Stock Units,buy,498.59,81.73,40749.7607
+2020-09-30,AEP,"RASMUSSEN, STEPHEN S",Director,True,Phantom Stock Units,buy,498.59,81.73,40749.7607
+2020-09-30,AEP,"LIN, SANDRA BEACH",Director,True,Phantom Stock Units,buy,498.59,81.73,40749.7607
+2020-09-30,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,498.59,81.73,40749.7607
+2020-09-30,AEP,"RICHARD, OLIVER G III",Director,True,Phantom Stock Units,buy,498.59,81.73,40749.7607
+2020-09-30,AEP,"BEASLEY, J BARNIE",Director,True,Phantom Stock Units,buy,498.59,81.73,40749.7607
+2020-09-30,AEP,"MCCARTHY, MARGARET M",Director,True,Phantom Stock Units,buy,498.59,81.73,40749.7607
+2020-11-12,AEP,"CHODAK, PAUL III",Executive Vice President,True,Common Stock,sell,2024.0,90.671,183518.10400000002
+2020-12-29,AEP,"HILLEBRAND, LANA L","Exec. VP, Chief Admin Officer",True,Common Stock,sell,2421.0,81.28,196778.88
+2020-12-31,AEP,"CROSBY, RALPH D JR",Director,True,Phantom Stock Units,buy,489.37,83.27,40749.8399
+2020-12-31,AEP,"ANDERSON, DAVID J",Director,True,Phantom Stock Units,buy,489.37,83.27,40749.8399
+2020-12-31,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock Units,buy,489.37,83.27,40749.8399
+2020-12-31,AEP,"LIN, SANDRA BEACH",Director,True,Phantom Stock Units,buy,489.37,83.27,40749.8399
+2020-12-31,AEP,"GARCIA, ART A",Director,True,Phantom Stock Units,buy,489.37,83.27,40749.8399
+2020-12-31,AEP,"HOAGLIN, THOMAS E",Director,True,Phantom Stock Units,buy,489.37,83.27,40749.8399
+2020-12-31,AEP,"NOTEBAERT, RICHARD C",Director,True,Phantom Stock Units,buy,489.37,83.27,40749.8399
+2020-12-31,AEP,"MCCARTHY, MARGARET M",Director,True,Phantom Stock Units,buy,489.37,83.27,40749.8399
+2020-12-31,AEP,"RASMUSSEN, STEPHEN S",Director,True,Phantom Stock Units,buy,489.37,83.27,40749.8399
+2020-12-31,AEP,"ROBERTS, DARYL",Director,True,Phantom Stock Units,buy,163.12,83.27,13583.0024
+2020-12-31,AEP,"RICHARD, OLIVER G III",Director,True,Phantom Stock Units,buy,489.37,83.27,40749.8399
+2020-12-31,AEP,"BEASLEY, J BARNIE",Director,True,Phantom Stock Units,buy,489.37,83.27,40749.8399
+2020-12-31,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,489.37,83.27,40749.8399
+2021-01-25,AEP,"HILLEBRAND, LANA L","Exec VP, Chief Admin Officer",True,Common Stock,sell,271.0,82.59,22381.89
+2021-01-25,AEP,"HILLEBRAND, LANA L","Exec VP, Chief Admin Officer",True,Common Stock,sell,281.0,82.59,23207.79
+2021-01-25,AEP,"HILLEBRAND, LANA L","Exec VP, Chief Admin Officer",True,Common Stock,sell,199.0,82.59,16435.41
+2021-02-16,AEP,"BARTON, LISA M","Exec VP, COO",True,Common Stock,sell,6147.0,78.61,483215.67
+2021-02-26,AEP,"AKINS, NICHOLAS K",President and CEO,True,Common Stock,sell,32902.0,76.38,2513054.76
+2021-02-26,AEP,"MCCULLOUGH, MARK C",EVP - Transmission,True,Common Stock,sell,9205.0,76.23,701697.15
+2021-02-26,AEP,"AKINS, NICHOLAS K",President and CEO,True,Common Stock,sell,18585.0,75.34,1400193.9000000001
+2021-02-26,AEP,"BARTON, LISA M","Exec VP, COO",True,Common Stock,sell,10257.0,76.23,781891.11
+2021-02-26,AEP,"AKINS, NICHOLAS K",President and CEO,True,Common Stock,sell,14996.0,77.03,1155141.8800000001
+2021-03-01,AEP,"BEASLEY, J BARNIE",Director,True,Common Stock,sell,2048.0,76.71,157102.08
+2021-03-01,AEP,"GARCIA, ART A",Director,True,Common Stock,buy,1325.0,75.42,99931.5
+2021-03-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,11951.0,75.42,901344.42
+2021-03-01,AEP,"AKINS, NICHOLAS K",President and CEO,True,Common Stock,sell,2100.0,75.42,158382.0
+2021-03-23,AEP,"PATTON, CHARLES R.",Executive Vice President,True,Common Stock,sell,14791.0,85.0,1257235.0
+2021-03-31,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,481.11,84.7,40750.017
+2021-03-31,AEP,"ANDERSON, DAVID J",Director,True,Phantom Stock Units,buy,489.37,83.27,40749.8399
+2021-03-31,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock Units,buy,481.11,84.7,40750.017
+2021-03-31,AEP,"HOAGLIN, THOMAS E",Director,True,Phantom Stock Units,buy,481.11,84.7,40750.017
+2021-03-31,AEP,"LIN, SANDRA BEACH",Director,True,Phantom Stock Units,buy,481.11,84.7,40750.017
+2021-03-31,AEP,"MCCARTHY, MARGARET M",Director,True,Phantom Stock Units,buy,481.11,84.7,40750.017
+2021-03-31,AEP,"NOTEBAERT, RICHARD C",Director,True,Phantom Stock Units,buy,481.11,84.7,40750.017
+2021-03-31,AEP,"RASMUSSEN, STEPHEN S",Director,True,Phantom Stock Units,buy,481.11,84.7,40750.017
+2021-03-31,AEP,"RICHARD, OLIVER G III",Director,True,Phantom Stock Units,buy,481.11,84.7,40750.017
+2021-03-31,AEP,"BEASLEY, J BARNIE",Director,True,Phantom Stock Units,buy,489.37,83.27,40749.8399
+2021-03-31,AEP,"CROSBY, RALPH D JR",Director,True,Phantom Stock Units,buy,489.37,83.27,40749.8399
+2021-03-31,AEP,"GARCIA, ART A",Director,True,Phantom Stock Units,buy,489.37,83.27,40749.8399
+2021-03-31,AEP,"ANDERSON, DAVID J",Director,True,Phantom Stock Units,buy,481.11,84.7,40750.017
+2021-03-31,AEP,"BEASLEY, J BARNIE",Director,True,Phantom Stock Units,buy,481.11,84.7,40750.017
+2021-03-31,AEP,"CROSBY, RALPH D JR",Director,True,Phantom Stock Units,buy,481.11,84.7,40750.017
+2021-03-31,AEP,"ROBERTS, DARYL",Director,True,Phantom Stock Units,buy,481.11,84.7,40750.017
+2021-03-31,AEP,"GARCIA, ART A",Director,True,Phantom Stock Units,buy,481.11,84.7,40750.017
+2021-04-01,AEP,"AKINS, NICHOLAS K",President and CEO,True,Common Stock,sell,2100.0,84.9,178290.0
+2021-05-01,AEP,"BARTON, LISA M",Exec VP and COO,True,Common Stock,sell,745.0,88.71,66088.95
+2021-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,88.0,88.71,7806.48
+2021-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,463.0,88.71,41072.729999999996
+2021-05-01,AEP,"CHODAK, PAUL III",Executive Vice President,True,Common Stock,sell,571.0,88.71,50653.409999999996
+2021-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,869.0,88.71,77088.98999999999
+2021-05-01,AEP,"BARTON, LISA M",Exec VP and COO,True,Common Stock,sell,611.0,88.71,54201.81
+2021-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,713.0,88.71,63250.229999999996
+2021-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,143.0,88.71,12685.529999999999
+2021-05-01,AEP,"CHODAK, PAUL III",Executive Vice President,True,Common Stock,sell,461.0,88.71,40895.31
+2021-05-01,AEP,"CHODAK, PAUL III",Executive Vice President,True,Common Stock,sell,569.0,88.71,50475.99
+2021-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,118.0,88.71,10467.779999999999
+2021-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,529.0,88.71,46927.59
+2021-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,453.0,88.71,40185.63
+2021-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,624.0,88.71,55355.03999999999
+2021-05-01,AEP,"BARTON, LISA M",Exec VP and COO,True,Common Stock,sell,4578.0,88.71,406114.37999999995
+2021-05-01,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,698.0,88.71,61919.579999999994
+2021-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,516.0,88.71,45774.35999999999
+2021-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,3359.0,88.71,297976.88999999996
+2021-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,4825.0,88.71,428025.74999999994
+2021-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,560.0,88.71,49677.6
+2021-05-01,AEP,"TIERNEY, BRIAN X",Executive VP,True,Common Stock,sell,1241.0,88.71,110089.10999999999
+2021-05-01,AEP,"TIERNEY, BRIAN X",Executive VP,True,Common Stock,sell,1018.0,88.71,90306.78
+2021-05-01,AEP,"TIERNEY, BRIAN X",Executive VP,True,Common Stock,sell,755.0,88.71,66976.04999999999
+2021-05-01,AEP,"SLOAT, JULIA A","Executive VP, CFO",True,Common Stock,sell,105.0,88.71,9314.55
+2021-05-01,AEP,"SLOAT, JULIA A","Executive VP, CFO",True,Common Stock,sell,156.0,88.71,13838.759999999998
+2021-05-01,AEP,"TIERNEY, BRIAN X",Executive VP,True,Common Stock,sell,4578.0,88.71,406114.37999999995
+2021-05-01,AEP,"PATTON, CHARLES R.",Executive Vice President,True,Common Stock,sell,516.0,88.71,45774.35999999999
+2021-05-01,AEP,"PATTON, CHARLES R.",Executive Vice President,True,Common Stock,sell,424.0,88.71,37613.04
+2021-05-01,AEP,"PATTON, CHARLES R.",Executive Vice President,True,Common Stock,sell,315.0,88.71,27943.649999999998
+2021-05-01,AEP,"RISCH, THERACE",Senior Vice President,True,Common Stock,sell,633.0,88.71,56153.42999999999
+2021-05-01,AEP,"BARTON, LISA M",Exec VP and COO,True,Common Stock,sell,566.0,88.71,50209.85999999999
+2021-05-01,AEP,"RISCH, THERACE",Senior Vice President,True,Common Stock,sell,238.0,88.71,21112.98
+2021-05-01,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,4324.0,88.71,383582.04
+2021-05-01,AEP,"SLOAT, JULIA A","Executive VP, CFO",True,Common Stock,sell,142.0,88.71,12596.82
+2021-05-03,AEP,"CHODAK, PAUL III",Executive Vice President,True,Common Stock,sell,7668.0,89.15,683602.2000000001
+2021-05-03,AEP,"AKINS, NICHOLAS K","President, CEO",True,Common Stock,sell,2100.0,89.33,187593.0
+2021-05-04,AEP,"MCCULLOUGH, MARK C",EVP - Transmission,True,Common Stock,sell,2062.0,88.39,182260.18
+2021-05-04,AEP,"AKINS, NICHOLAS K",President and CEO,True,Common Stock,sell,15068.0,88.39,1331860.52
+2021-05-04,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,2539.0,88.39,224422.21
+2021-05-04,AEP,"CHODAK, PAUL III",Executive Vice President,True,Common Stock,sell,1869.0,88.09,164640.21
+2021-05-04,AEP,"BARTON, LISA M","Exec VP, COO",True,Common Stock,sell,7827.0,88.39,691828.53
+2021-05-04,AEP,"PATTON, CHARLES R.",Executive Vice President,True,Common Stock,sell,1507.0,88.39,133203.73
+2021-06-01,AEP,"AKINS, NICHOLAS K",President and CEO,True,Common Stock,sell,2100.0,86.17,180957.0
+2021-06-30,AEP,"BEASLEY, J BARNIE",Director,True,Phantom Stock Units,buy,481.73,84.59,40749.540700000005
+2021-06-30,AEP,"RICHARD, OLIVER G III",Director,True,Phantom Stock Units,buy,481.73,84.59,40749.540700000005
+2021-06-30,AEP,"GARCIA, ART A",Director,True,Phantom Stock Units,buy,481.73,84.59,40749.540700000005
+2021-06-30,AEP,"LIN, SANDRA BEACH",Director,True,Phantom Stock Units,buy,481.73,84.59,40749.540700000005
+2021-06-30,AEP,"ROBERTS, DARYL",Director,True,Phantom Stock Units,buy,481.73,84.59,40749.540700000005
+2021-06-30,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock Units,buy,481.59,84.59,40737.6981
+2021-06-30,AEP,"MCCARTHY, MARGARET M",Director,True,Phantom Stock Units,buy,481.73,84.59,40749.540700000005
+2021-06-30,AEP,"HOAGLIN, THOMAS E",Director,True,Phantom Stock Units,buy,481.59,84.59,40737.6981
+2021-06-30,AEP,"RASMUSSEN, STEPHEN S",Director,True,Phantom Stock Units,buy,481.73,84.59,40749.540700000005
+2021-06-30,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,481.73,84.59,40749.540700000005
+2021-06-30,AEP,"ANDERSON, DAVID J",Director,True,Phantom Stock Units,buy,481.73,84.59,40749.540700000005
+2021-07-01,AEP,"AKINS, NICHOLAS K",President and CEO,True,Common Stock,sell,2100.0,84.73,177933.0
+2021-07-01,AEP,"TIERNEY, BRIAN X",Executive VP,True,Common Stock,sell,3405.0,85.26,290310.3
+2021-07-08,AEP,"TIERNEY, BRIAN X",Executive VP,True,Common Stock,sell,243.0,85.31,20730.33
+2021-07-08,AEP,"TIERNEY, BRIAN X",Executive VP,True,Common Stock,sell,437.0,85.31,37280.47
+2021-07-08,AEP,"TIERNEY, BRIAN X",Executive VP,True,Common Stock,sell,972.0,85.31,82921.32
+2021-07-08,AEP,"TIERNEY, BRIAN X",Executive VP,True,Common Stock,sell,274.0,85.31,23374.940000000002
+2021-07-26,AEP,"GARCIA, ART A",Director,True,Common Stock,buy,1175.0,85.989,101037.07500000001
+2021-08-02,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,339.0,88.34,29947.260000000002
+2021-08-02,AEP,"AKINS, NICHOLAS K",President and CEO,True,Common Stock,sell,2100.0,88.25,185325.0
+2021-08-02,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,203.0,88.34,17933.02
+2021-08-02,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,195.0,88.34,17226.3
+2021-09-01,AEP,"AKINS, NICHOLAS K",President and CEO,True,Common Stock,sell,2100.0,89.76,188496.0
+2021-09-14,AEP,"MCCULLOUGH, MARK C",Executive Vice President,True,Common Stock,sell,2652.0,88.12,233694.24000000002
+2021-09-30,AEP,"RASMUSSEN, STEPHEN S",Director,True,Phantom Stock Units,buy,501.97,81.18,40749.924600000006
+2021-09-30,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock Units,buy,501.97,81.18,40749.924600000006
+2021-09-30,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,501.97,81.18,40749.924600000006
+2021-09-30,AEP,"BEASLEY, J BARNIE",Director,True,Phantom Stock Units,buy,501.97,81.18,40749.924600000006
+2021-09-30,AEP,"HOAGLIN, THOMAS E",Director,True,Phantom Stock Units,buy,501.97,81.18,40749.924600000006
+2021-09-30,AEP,"LIN, SANDRA BEACH",Director,True,Phantom Stock Units,buy,501.97,81.18,40749.924600000006
+2021-09-30,AEP,"RICHARD, OLIVER G III",Director,True,Phantom Stock Units,buy,501.97,81.18,40749.924600000006
+2021-09-30,AEP,"ANDERSON, DAVID J",Director,True,Phantom Stock Units,buy,501.97,81.18,40749.924600000006
+2021-09-30,AEP,"ROBERTS, DARYL",Director,True,Phantom Stock Units,buy,501.97,81.18,40749.924600000006
+2021-09-30,AEP,"GARCIA, ART A",Director,True,Phantom Stock Units,buy,501.97,81.18,40749.924600000006
+2021-09-30,AEP,"MCCARTHY, MARGARET M",Director,True,Phantom Stock Units,buy,501.97,81.18,40749.924600000006
+2021-10-01,AEP,"SLOAT, JULIA A","Executive VP, CFO",True,Common Stock,sell,45.0,81.38,3662.1
+2021-10-01,AEP,"AKINS, NICHOLAS K",President and CEO,True,Common Stock,sell,2100.0,81.79,171759.0
+2021-10-01,AEP,"HALL, GREG B",Executive Vice President,True,Common Stock,buy,90.0,81.38,7324.2
+2021-11-01,AEP,"AKINS, NICHOLAS K",President and CEO,True,Common Stock,sell,2100.0,84.64,177744.0
+2021-12-01,AEP,"AKINS, NICHOLAS K",President and CEO,True,Common Stock,sell,2100.0,81.5,171150.0
+2021-12-31,AEP,"HOAGLIN, THOMAS E",Director,True,Phantom Stock Units,buy,458.02,88.97,40750.0394
+2021-12-31,AEP,"RASMUSSEN, STEPHEN S",Director,True,Phantom Stock Units,buy,458.02,88.97,40750.0394
+2021-12-31,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,458.02,88.97,40750.0394
+2021-12-31,AEP,"ROBERTS, DARYL",Director,True,Phantom Stock Units,buy,458.02,88.97,40750.0394
+2021-12-31,AEP,"RICHARD, OLIVER G III",Director,True,Phantom Stock Units,buy,458.02,88.97,40750.0394
+2021-12-31,AEP,"BEASLEY, J BARNIE",Director,True,Phantom Stock Units,buy,458.02,88.97,40750.0394
+2021-12-31,AEP,"GARCIA, ART A",Director,True,Phantom Stock Units,buy,458.02,88.97,40750.0394
+2021-12-31,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock Units,buy,458.02,88.97,40750.0394
+2021-12-31,AEP,"ANDERSON, DAVID J",Director,True,Phantom Stock Units,buy,458.02,88.97,40750.0394
+2021-12-31,AEP,"MCCARTHY, MARGARET M",Director,True,Phantom Stock Units,buy,458.02,88.97,40750.0394
+2021-12-31,AEP,"LIN, SANDRA BEACH",Director,True,Phantom Stock Units,buy,458.02,88.97,40750.0394
+2022-01-03,AEP,"AKINS, NICHOLAS K",President and CEO,True,Common Stock,sell,2100.0,88.63,186123.0
+2022-02-01,AEP,"AKINS, NICHOLAS K",President and CEO,True,Common Stock,sell,2100.0,89.91,188811.0
+2022-02-22,AEP,"HALL, GREG B",Executive Vice President,True,Common Stock,sell,1064.0,85.71,91195.43999999999
+2022-02-25,AEP,"PATTON, CHARLES R.",Executive Vice President,True,Common Stock,sell,5575.0,87.19,486084.25
+2022-02-28,AEP,"HALL, GREG B",Executive Vice President,True,Common Stock,sell,2574.0,88.74,228416.75999999998
+2022-03-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,2780.0,90.35,251172.99999999997
+2022-03-04,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,5200.0,95.75,497900.0
+2022-03-15,AEP,"BARTON, LISA M","Exec VP, COO",True,Common Stock,sell,6989.0,95.54,667729.06
+2022-03-15,AEP,"CHODAK, PAUL III",Executive Vice President,True,Common Stock,sell,6361.0,95.54,607729.9400000001
+2022-03-16,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,300.0,95.73,28719.0
+2022-03-16,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,3912.0,93.98,367649.76
+2022-03-16,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,2874.0,94.86,272627.64
+2022-03-31,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,408.43,99.77,40749.0611
+2022-03-31,AEP,"VON, THAER LEWIS",Director,True,Phantom Stock Units,buy,272.29,99.77,27166.3733
+2022-03-31,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock Units,buy,408.43,99.77,40749.0611
+2022-03-31,AEP,"ROBERTS, DARYL",Director,True,Phantom Stock Units,buy,408.43,99.77,40749.0611
+2022-03-31,AEP,"RICHARD, OLIVER G III",Director,True,Phantom Stock Units,buy,408.43,99.77,40749.0611
+2022-03-31,AEP,"LIN, SANDRA BEACH",Director,True,Phantom Stock Units,buy,408.43,99.77,40749.0611
+2022-03-31,AEP,"FOWKE, BENJAMIN G S III",Director,True,Phantom Stock Units,buy,272.29,99.77,27166.3733
+2022-03-31,AEP,"GARCIA, ART A",Director,True,Phantom Stock Units,buy,408.43,99.77,40749.0611
+2022-03-31,AEP,"ANDERSON, DAVID J",Director,True,Phantom Stock Units,buy,408.43,99.77,40749.0611
+2022-03-31,AEP,"BEASLEY, J BARNIE",Director,True,Phantom Stock Units,buy,408.43,99.77,40749.0611
+2022-03-31,AEP,"MCCARTHY, MARGARET M",Director,True,Phantom Stock Units,buy,408.43,99.77,40749.0611
+2022-03-31,AEP,"HOAGLIN, THOMAS E",Director,True,Phantom Stock Units,buy,408.43,99.77,40749.0611
+2022-04-04,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,2699.0,100.85,272194.14999999997
+2022-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,120.0,99.11,11893.2
+2022-05-01,AEP,"CHODAK, PAUL III",Executive Vice President,True,Common Stock,sell,659.0,99.11,65313.49
+2022-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,89.0,99.11,8820.789999999999
+2022-05-01,AEP,"AKINS, NICHOLAS K",President and CEO,True,Common Stock,sell,4449.0,99.11,440940.39
+2022-05-01,AEP,"RISCH, THERACE",Executive Vice President,True,Common Stock,sell,607.0,99.11,60159.77
+2022-05-01,AEP,"AKINS, NICHOLAS K",President and CEO,True,Common Stock,sell,3454.0,99.11,342325.94
+2022-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,577.0,99.11,57186.47
+2022-05-01,AEP,"AKINS, NICHOLAS K",President and CEO,True,Common Stock,sell,4850.0,99.11,480683.5
+2022-05-01,AEP,"BARTON, LISA M","Exec VP, COO",True,Common Stock,sell,1194.0,99.11,118337.34
+2022-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,467.0,99.11,46284.37
+2022-05-01,AEP,"SLOAT, JULIA A","Executive VP, CFO",True,Common Stock,sell,108.0,99.11,10703.88
+2022-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,645.0,99.11,63925.95
+2022-05-01,AEP,"SLOAT, JULIA A","Executive VP, CFO",True,Common Stock,sell,146.0,99.11,14470.06
+2022-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,114.0,99.11,11298.539999999999
+2022-05-01,AEP,"BARTON, LISA M","Exec VP, COO",True,Common Stock,sell,4737.0,99.11,469484.07
+2022-05-01,AEP,"SLOAT, JULIA A","Executive VP, CFO",True,Common Stock,sell,533.0,99.11,52825.63
+2022-05-01,AEP,"PATTON, CHARLES R.",Executive Vice President,True,Common Stock,sell,437.0,99.11,43311.07
+2022-05-01,AEP,"RISCH, THERACE",Executive Vice President,True,Common Stock,sell,260.0,99.11,25768.6
+2022-05-01,AEP,"PATTON, CHARLES R.",Executive Vice President,True,Common Stock,sell,324.0,99.11,32111.64
+2022-05-01,AEP,"PATTON, CHARLES R.",Executive Vice President,True,Common Stock,sell,448.0,99.11,44401.28
+2022-05-01,AEP,"HALL, GREG B",Executive Vice President,True,Common Stock,sell,86.0,99.11,8523.46
+2022-05-01,AEP,"HALL, GREG B",Executive Vice President,True,Common Stock,sell,109.0,99.11,10802.99
+2022-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,732.0,99.11,72548.52
+2022-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,742.0,99.11,73539.62
+2022-05-01,AEP,"HALL, GREG B",Executive Vice President,True,Common Stock,sell,116.0,99.11,11496.76
+2022-05-01,AEP,"CHODAK, PAUL III",Executive Vice President,True,Common Stock,sell,589.0,99.11,58375.79
+2022-05-01,AEP,"CHODAK, PAUL III",Executive Vice President,True,Common Stock,sell,477.0,99.11,47275.47
+2022-05-01,AEP,"BARTON, LISA M","Exec VP, COO",True,Common Stock,sell,585.0,99.11,57979.35
+2022-05-01,AEP,"BARTON, LISA M","Exec VP, COO",True,Common Stock,sell,631.0,99.11,62538.409999999996
+2022-05-01,AEP,"ULRICH, PHILLIP R.",Senior Vice President,True,Resticted Stock Units,sell,110.0,99.11,10902.1
+2022-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,543.0,99.11,53816.73
+2022-05-01,AEP,"RISCH, THERACE",Executive Vice President,True,Common Stock,sell,255.0,99.11,25273.05
+2022-05-02,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,2890.0,99.47,287468.3
+2022-05-05,AEP,"SLOAT, JULIA A","Executive VP, CFO",True,Common Stock,sell,1803.0,100.15,180570.45
+2022-05-05,AEP,"HALL, GREG B",Executive Vice President,True,Common Stock,sell,759.0,100.15,76013.85
+2022-05-05,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,2454.0,100.15,245768.1
+2022-05-05,AEP,"BARTON, LISA M","Exec VP, COO",True,Common Stock,sell,8612.0,100.15,862491.8
+2022-05-05,AEP,"CHODAK, PAUL III",Executive Vice President,True,Common Stock,sell,2008.0,100.15,201101.2
+2022-05-20,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,1902.0,99.05,188393.1
+2022-06-06,AEP,"RISCH, THERACE",Executive Vice President,True,Common Stock,sell,5330.0,102.35,545525.5
+2022-06-30,AEP,"GARCIA, ART A",Director,True,Phantom Stock Units,buy,424.745,95.94,40750.035299999996
+2022-06-30,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock Units,buy,424.745,95.94,40750.035299999996
+2022-06-30,AEP,"FOWKE, BENJAMIN G S III",Director,True,Phantom Stock Units,buy,424.745,95.94,40750.035299999996
+2022-06-30,AEP,"JAMES, DONNA",Director,True,Phantom Stock Units,buy,141.582,95.94,13583.377079999998
+2022-06-30,AEP,"RICHARD, OLIVER G III",Director,True,Phantom Stock Units,buy,424.745,95.94,40750.035299999996
+2022-06-30,AEP,"MCCARTHY, MARGARET M",Director,True,Phantom Stock Units,buy,424.745,95.94,40750.035299999996
+2022-06-30,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,424.745,95.94,40750.035299999996
+2022-06-30,AEP,"ROBERTS, DARYL",Director,True,Phantom Stock Units,buy,424.745,95.94,40750.035299999996
+2022-06-30,AEP,"LIN, SANDRA BEACH",Director,True,Phantom Stock Units,buy,424.745,95.94,40750.035299999996
+2022-06-30,AEP,"VON, THAER LEWIS",Director,True,Phantom Stock Units,buy,424.745,95.94,40750.035299999996
+2022-06-30,AEP,"BEASLEY, J BARNIE",Director,True,Phantom Stock Units,buy,424.745,95.94,40750.035299999996
+2022-09-30,AEP,"ROBERTS, DARYL",Director,True,Phantom Stock Units,buy,471.37,86.45,40749.9365
+2022-09-30,AEP,"JAMES, DONNA",Director,True,Phantom Stock Units,buy,471.37,86.45,40749.9365
+2022-09-30,AEP,"GARCIA, ART A",Director,True,Phantom Stock Units,buy,471.37,86.45,40749.9365
+2022-09-30,AEP,"FOWKE, BENJAMIN G S III",Director,True,Phantom Stock Units,buy,471.37,86.45,40749.9365
+2022-09-30,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock Units,buy,471.37,86.45,40749.9365
+2022-09-30,AEP,"BEASLEY, J BARNIE",Director,True,Phantom Stock Units,buy,471.37,86.45,40749.9365
+2022-09-30,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,471.37,86.45,40749.9365
+2022-09-30,AEP,"RICHARD, OLIVER G III",Director,True,Phantom Stock Units,buy,471.37,86.45,40749.9365
+2022-09-30,AEP,"MCCARTHY, MARGARET M",Director,True,Phantom Stock Units,buy,471.37,86.45,40749.9365
+2022-09-30,AEP,"LIN, SANDRA BEACH",Director,True,Phantom Stock Units,buy,471.37,86.45,40749.9365
+2022-09-30,AEP,"VON, THAER LEWIS",Director,True,Phantom Stock Units,buy,471.37,86.45,40749.9365
+2022-10-01,AEP,"SLOAT, JULIA A","Executive VP, CFO",True,Common Stock,sell,30.0,86.45,2593.5
+2022-10-01,AEP,"HALL, GREG B",Executive Vice President,True,Common Stock,sell,58.0,86.45,5014.1
+2022-10-06,AEP,"HALL, GREG B",Executive Vice President,True,Common Stock,sell,129.0,87.48,11284.92
+2022-12-31,AEP,"JAMES, DONNA",Director,True,Phantom Stock Units,buy,141.582,94.95,13443.2109
+2022-12-31,AEP,"BEASLEY, J BARNIE",Director,True,Phantom Stock Units,buy,429.173,94.95,40749.976350000004
+2022-12-31,AEP,"FOWKE, BENJAMIN G S III",Director,True,Phantom Stock Units,buy,429.173,94.95,40749.976350000004
+2022-12-31,AEP,"GARCIA, ART A",Director,True,Phantom Stock Units,buy,429.173,94.95,40749.976350000004
+2022-12-31,AEP,"RICHARD, OLIVER G III",Director,True,Phantom Stock Units,buy,429.173,94.95,40749.976350000004
+2022-12-31,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock Units,buy,429.173,94.95,40749.976350000004
+2022-12-31,AEP,"MCCARTHY, MARGARET M",Director,True,Phantom Stock Units,buy,429.173,94.95,40749.976350000004
+2022-12-31,AEP,"LIN, SANDRA BEACH",Director,True,Phantom Stock Units,buy,429.173,94.95,40749.976350000004
+2022-12-31,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,429.173,94.95,40749.976350000004
+2022-12-31,AEP,"VON, THAER LEWIS",Director,True,Phantom Stock Units,buy,429.173,94.95,40749.976350000004
+2022-12-31,AEP,"ROBERTS, DARYL",Director,True,Phantom Stock Units,buy,429.173,94.95,40749.976350000004
+2022-12-31,AEP,"JAMES, DONNA",Director,True,Phantom Stock Units,buy,429.175,94.95,40750.16625
+2023-02-21,AEP,"BEAM, CHRISTIAN T",Executive Vice President,True,Restricted Stock Units,sell,145.0,90.85,13173.25
+2023-02-21,AEP,"SLOAT, JULIA A","Executive VP, CFO",True,Restricted Stock Units,sell,556.0,90.85,50512.6
+2023-02-21,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Restricted Stock Units,sell,105.0,90.85,9539.25
+2023-02-21,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Restricted Stock Units,sell,490.0,90.85,44516.5
+2023-02-21,AEP,"KELLY, ANN P",Executive Vice President & CFO,True,Restricted Stock Units,sell,269.0,90.85,24438.649999999998
+2023-02-21,AEP,"SIMMONS, PEGGY",Executive Vice President,True,Restricted Stock Units,sell,102.0,90.85,9266.699999999999
+2023-02-21,AEP,"RISCH, THERACE",Executive Vice President,True,Restricted Stock Units,sell,333.0,90.85,30253.05
+2023-02-21,AEP,"SUNDARARAJAN, RAJA",Executive Vice President,True,Restricted Stock Units,sell,134.0,90.85,12173.9
+2023-02-21,AEP,"ULRICH, PHILLIP R.",Senior Vice President,True,Restricted Stock Units,sell,320.0,90.85,29072.0
+2023-02-21,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Restricted Stock Units,sell,441.0,90.85,40064.85
+2023-02-21,AEP,"KELLY, ANN P",Executive Vice President & CFO,True,Restricted Stock Units,sell,114.0,90.85,10356.9
+2023-02-21,AEP,"AKINS, NICHOLAS K",CEO,True,Restricted Stock Units,sell,2983.0,90.85,271005.55
+2023-02-21,AEP,"HALL, GREG B",Executive Vice President,True,Restricted Stock Units,sell,320.0,90.85,29072.0
+2023-02-22,AEP,"AKINS, NICHOLAS K",Executive Chair,False,Common Stock,sell,6977.0,90.39,630651.03
+2023-02-22,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,1004.0,90.39,90751.56
+2023-02-24,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,3998.0,89.44,357581.12
+2023-02-24,AEP,"AKINS, NICHOLAS K",Executive Chair,False,Common Stock,sell,51034.0,89.44,4564480.96
+2023-02-27,AEP,"HALL, GREG B",Executive Vice President,True,Common Stock,sell,884.0,90.99,80435.15999999999
+2023-03-20,AEP,"BEAM, CHRISTIAN T",Executive Vice President,True,Common Stock,sell,2829.0,91.16,257891.63999999998
+2023-03-21,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,3997.0,91.69,366484.93
+2023-03-31,AEP,"RICHARD, OLIVER G III",Director,True,Phantom Stock Units,buy,467.084,90.99,42499.97316
+2023-03-31,AEP,"MCCARTHY, MARGARET M",Director,True,Phantom Stock Units,buy,467.084,90.99,42499.97316
+2023-03-31,AEP,"LIN, SANDRA BEACH",Director,True,Phantom Stock Units,buy,467.084,90.99,42499.97316
+2023-03-31,AEP,"GARCIA, ART A",Director,True,Phantom Stock Units,buy,467.084,90.99,42499.97316
+2023-03-31,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock Units,buy,467.084,90.99,42499.97316
+2023-03-31,AEP,"FOWKE, BENJAMIN G S III",Director,True,Phantom Stock Units,buy,467.084,90.99,42499.97316
+2023-03-31,AEP,"ROBERTS, DARYL",Director,True,Phantom Stock Units,buy,467.084,90.99,42499.97316
+2023-03-31,AEP,"JAMES, DONNA",Director,True,Phantom Stock Units,buy,467.084,90.99,42499.97316
+2023-03-31,AEP,"VON, THAER LEWIS",Director,True,Phantom Stock Units,buy,467.084,90.99,42499.97316
+2023-03-31,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,467.084,90.99,42499.97316
+2023-03-31,AEP,"BEASLEY, J BARNIE",Director,True,Phantom Stock Units,buy,467.084,90.99,42499.97316
+2023-05-01,AEP,"SMYTH, ANTONIO P",Executive Vice President,True,Common Stock,sell,178.0,92.65,16491.7
+2023-05-01,AEP,"RISCH, THERACE",Executive Vice President,True,Common Stock,sell,1510.0,92.65,139901.5
+2023-05-01,AEP,"ULRICH, PHILLIP R.",Senior Vice President,True,Common Stock,buy,114.0,92.65,10562.1
+2023-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,667.0,92.65,61797.55
+2023-05-01,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Common Stock,sell,483.0,92.65,44749.950000000004
+2023-05-01,AEP,"SMYTH, ANTONIO P",Executive Vice President,True,Common Stock,sell,267.0,92.65,24737.550000000003
+2023-05-01,AEP,"SLOAT, JULIA A","President, CEO",True,Common Stock,sell,3080.0,92.65,285362.0
+2023-05-01,AEP,"SLOAT, JULIA A","President, CEO",True,Common Stock,sell,168.0,92.65,15565.2
+2023-05-01,AEP,"SIMMONS, PEGGY",Executive Vice President,True,Common Stock,sell,99.0,92.65,9172.35
+2023-05-01,AEP,"SIMMONS, PEGGY",Executive Vice President,True,Common Stock,sell,77.0,92.65,7134.05
+2023-05-01,AEP,"SMYTH, ANTONIO P",Executive Vice President,True,Common Stock,sell,625.0,92.65,57906.25
+2023-05-01,AEP,"SLOAT, JULIA A","President, CEO",True,Common Stock,sell,823.0,92.65,76250.95000000001
+2023-05-01,AEP,"BEAM, CHRISTIAN T",Executive Vice President,True,Common Stock,sell,107.0,92.65,9913.550000000001
+2023-05-01,AEP,"RISCH, THERACE",Executive Vice President,True,Common Stock,sell,444.0,92.65,41136.600000000006
+2023-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,87.0,92.65,8060.55
+2023-05-01,AEP,"AKINS, NICHOLAS K",Executive Chair,False,Common Stock,sell,3555.0,92.65,329370.75
+2023-05-01,AEP,"BEAM, CHRISTIAN T",Executive Vice President,True,Common Stock,sell,136.0,92.65,12600.400000000001
+2023-05-01,AEP,"SIMMONS, PEGGY",Executive Vice President,True,Common Stock,sell,101.0,92.65,9357.650000000001
+2023-05-01,AEP,"AKINS, NICHOLAS K",Executive Chair,False,Common Stock,sell,4988.0,92.65,462138.2
+2023-05-01,AEP,"HALL, GREG B",Executive Vice President,True,Common Stock,sell,140.0,92.65,12971.0
+2023-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,768.0,92.65,71155.20000000001
+2023-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,562.0,92.65,52069.3
+2023-05-01,AEP,"HALL, GREG B",Executive Vice President,True,Common Stock,sell,178.0,92.65,16491.7
+2023-05-01,AEP,"BUONAIUTO, JOSPEH M","Controller, Chief Actg Officer",True,Common Stock,sell,111.0,92.65,10284.150000000001
+2023-05-02,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,1616.0,92.75,149884.0
+2023-05-02,AEP,"AKINS, NICHOLAS K",Executive Chair,False,Common Stock,sell,10491.0,92.75,973040.25
+2023-05-02,AEP,"BEAM, CHRISTIAN T",Executive Vice President,True,Common Stock,sell,513.0,92.75,47580.75
+2023-06-30,AEP,"LIN, SANDRA BEACH",Director,True,Phantom Stock Units,buy,504.751,84.2,42500.0342
+2023-06-30,AEP,"BEASLEY, J BARNIE",Director,True,Phantom Stock Units,buy,504.751,84.2,42500.0342
+2023-06-30,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock Units,buy,504.751,84.2,42500.0342
+2023-06-30,AEP,"VON, THAER LEWIS",Director,True,Phantom Stock Units,buy,504.751,84.2,42500.0342
+2023-06-30,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,504.751,84.2,42500.0342
+2023-06-30,AEP,"MCCARTHY, MARGARET M",Director,True,Phantom Stock Units,buy,504.751,84.2,42500.0342
+2023-06-30,AEP,"JAMES, DONNA",Director,True,Phantom Stock Units,buy,504.751,84.2,42500.0342
+2023-06-30,AEP,"GARCIA, ART A",Director,True,Phantom Stock Units,buy,504.751,84.2,42500.0342
+2023-06-30,AEP,"ROBERTS, DARYL",Director,True,Phantom Stock Units,buy,504.751,84.2,42500.0342
+2023-06-30,AEP,"FOWKE, BENJAMIN G S III",Director,True,Phantom Stock Units,buy,504.751,84.2,42500.0342
+2023-06-30,AEP,"RICHARD, OLIVER G III",Director,True,Phantom Stock Units,buy,504.751,84.2,42500.0342
+2023-09-30,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock Units,buy,565.009,75.22,42499.97698
+2023-09-30,AEP,"ROBERTS, DARYL",Director,True,Phantom Stock Units,buy,565.009,75.22,42499.97698
+2023-09-30,AEP,"MCCARTHY, MARGARET M",Director,True,Phantom Stock Units,buy,565.009,75.22,42499.97698
+2023-09-30,AEP,"GARCIA, ART A",Director,True,Phantom Stock Units,buy,565.009,75.22,42499.97698
+2023-09-30,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,565.009,75.22,42499.97698
+2023-09-30,AEP,"ZEBULA, CHARLES E",Executive Vice President,True,Restricted Stock Units,buy,19941.5,75.22,1499999.63
+2023-09-30,AEP,"STODDARD, DANIEL G.",Director,True,Phantom Stock Units,buy,376.67,75.22,28333.1174
+2023-09-30,AEP,"LIN, SANDRA BEACH",Director,True,Phantom Stock Units,buy,565.009,75.22,42499.97698
+2023-09-30,AEP,"VON, THAER LEWIS",Director,True,Phantom Stock Units,buy,565.009,75.22,42499.97698
+2023-09-30,AEP,"BEASLEY, J BARNIE",Director,True,Phantom Stock Units,buy,565.009,75.22,42499.97698
+2023-12-31,AEP,"GARCIA, ART A",Director,True,Phantom Stock Units,buy,523.27,81.22,42499.9894
+2023-12-31,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock Units,buy,523.27,81.22,42499.9894
+2023-12-31,AEP,"FOWKE, BENJAMIN G S III",Director,True,Phantom Stock Units,buy,523.27,81.22,42499.9894
+2023-12-31,AEP,"JAMES, DONNA",Director,True,Phantom Stock Units,buy,523.27,81.22,42499.9894
+2023-12-31,AEP,"VON, THAER LEWIS",Director,True,Phantom Stock Units,buy,523.27,81.22,42499.9894
+2023-12-31,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,523.27,81.22,42499.9894
+2023-12-31,AEP,"ROBERTS, DARYL",Director,True,Phantom Stock Units,buy,523.27,81.22,42499.9894
+2023-12-31,AEP,"MCCARTHY, MARGARET M",Director,True,Phantom Stock Units,buy,523.27,81.22,42499.9894
+2023-12-31,AEP,"STODDARD, DANIEL G.",Director,True,Common Stock,buy,400.01,81.22,32488.8122
+2023-12-31,AEP,"STODDARD, DANIEL G.",Director,True,Phantom Stock Units,buy,523.27,81.22,42499.9894
+2023-12-31,AEP,"FOWKE, BENJAMIN G S III",Director,True,Common Stock,buy,492.49,81.22,40000.0378
+2023-12-31,AEP,"LIN, SANDRA BEACH",Director,True,Phantom Stock Units,buy,523.27,81.22,42499.9894
+2023-12-31,AEP,"BEASLEY, J BARNIE",Director,True,Phantom Stock Units,buy,523.27,81.22,42499.9894
+2024-02-21,AEP,"ZEBULA, CHARLES E",Executive VP  & CFO,True,Common Stock,sell,650.0,82.56,53664.0
+2024-02-21,AEP,"STURGESS, KATE","Controller, CAO",False,Common Stock,sell,162.0,82.56,13374.720000000001
+2024-02-21,AEP,"RISCH, THERACE",Executive Vice President,True,Common Stock,sell,311.0,82.65,25704.15
+2024-02-21,AEP,"ZEBULA, CHARLES E",Executive VP  & CFO,True,Common Stock,sell,551.0,82.56,45490.56
+2024-02-21,AEP,"SLOAT, JULIA A","President, CEO",True,Common Stock,sell,3412.0,82.56,281694.72000000003
+2024-02-21,AEP,"RISCH, THERACE",Executive Vice President,True,Common Stock,sell,379.0,82.65,31324.350000000002
+2024-02-21,AEP,"HALL, GREG B",Executive Vice President,True,Common Stock,sell,479.0,82.56,39546.24
+2024-02-21,AEP,"SLOAT, JULIA A","President, CEO",True,Common Stock,sell,855.0,82.56,70588.8
+2024-02-21,AEP,"HALL, GREG B",Executive Vice President,True,Common Stock,sell,473.0,82.56,39050.880000000005
+2024-02-21,AEP,"BEAM, CHRISTIAN T",Executive Vice President,True,Common Stock,sell,139.0,82.56,11475.84
+2024-02-21,AEP,"ULRICH, PHILLIP R.",Senior Vice President,True,Common Stock,sell,335.0,82.56,27657.600000000002
+2024-02-21,AEP,"SMYTH, ANTONIO P",Executive Vice President,True,Common Stock,sell,116.0,82.56,9576.960000000001
+2024-02-21,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,738.0,82.56,60929.28
+2024-02-21,AEP,"SIMMONS, PEGGY",Executive Vice President,True,Common Stock,sell,373.0,82.56,30794.88
+2024-02-21,AEP,"SIMMONS, PEGGY",Executive Vice President,True,Common Stock,sell,106.0,82.56,8751.36
+2024-02-21,AEP,"BEAM, CHRISTIAN T",Executive Vice President,True,Common Stock,sell,365.0,82.56,30134.4
+2024-02-21,AEP,"ULRICH, PHILLIP R.",Senior Vice President,True,Common Stock,sell,287.0,82.56,23694.72
+2024-02-21,AEP,"SMYTH, ANTONIO P",Executive Vice President,True,Common Stock,sell,129.0,82.56,10650.24
+2024-02-21,AEP,"SMYTH, ANTONIO P",Executive Vice President,True,Common Stock,sell,137.0,82.56,11310.720000000001
+2024-02-23,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,1369.0,82.56,113024.64
+2024-02-26,AEP,"FOWKE, BENJAMIN G S III","Director, Interim CEO & President",True,Common Stock,buy,72771.0,82.45,5999968.95
+2024-03-22,AEP,"ZEBULA, CHARLES E",Executive VP  & CFO,True,Common Stock,buy,152.0,83.84,12743.68
+2024-03-22,AEP,"RISCH, THERACE",Executive Vice President,True,Common Stock,sell,53.0,83.84,4443.52
+2024-03-22,AEP,"ULRICH, PHILLIP R.",Senior Vice President,True,Common Stock,sell,19.0,83.84,1592.96
+2024-03-22,AEP,"BEAM, CHRISTIAN T",Executive Vice President,True,Common Stock,sell,20.0,83.84,1676.8000000000002
+2024-03-22,AEP,"ZEBULA, CHARLES E",Executive VP  & CFO,True,Common Stock,sell,83.0,83.84,6958.72
+2024-03-22,AEP,"SMYTH, ANTONIO P",Executive Vice President,True,Common Stock,sell,19.0,83.84,1592.96
+2024-03-22,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,buy,176.0,83.84,14755.84
+2024-03-22,AEP,"RISCH, THERACE",Executive Vice President,True,Common Stock,buy,105.0,83.84,8803.2
+2024-03-22,AEP,"HALL, GREG B",Executive Vice President,True,Common Stock,sell,21.0,83.84,1760.64
+2024-03-22,AEP,"SIMMONS, PEGGY",Executive Vice President,True,Common Stock,sell,16.0,83.84,1341.44
+2024-03-22,AEP,"HALL, GREG B",Executive Vice President,True,Common Stock,buy,40.0,83.84,3353.6000000000004
+2024-03-22,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,95.0,83.84,7964.8
+2024-03-31,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,493.61,86.1,42499.820999999996
+2024-03-31,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock Units,buy,493.61,86.1,42499.820999999996
+2024-03-31,AEP,"LINGINFELTER, HENRY P",Director,True,Phantom Stock Units,buy,329.07,86.1,28332.926999999996
+2024-03-31,AEP,"STODDARD, DANIEL G.",Director,True,Phantom Stock Units,buy,493.61,86.1,42499.820999999996
+2024-03-31,AEP,"STODDARD, DANIEL G.",Director,True,Common Stock,buy,387.14,86.1,33332.75399999999
+2024-03-31,AEP,"FOWKE, BENJAMIN G S III","Director, Interim CEO & President",True,Phantom Stock Units,buy,493.61,86.1,42499.820999999996
+2024-03-31,AEP,"MCCARTHY, MARGARET M",Director,True,Phantom Stock Units,buy,493.61,86.1,42499.820999999996
+2024-03-31,AEP,"JAMES, DONNA",Director,True,Phantom Stock Units,buy,493.61,86.1,42499.820999999996
+2024-03-31,AEP,"ROBERTS, DARYL",Director,True,Phantom Stock Units,buy,493.61,86.1,42499.820999999996
+2024-03-31,AEP,"GARY, HUNTER CLARK",Director,True,Phantom Stock Units,buy,329.07,86.1,28332.926999999996
+2024-03-31,AEP,"VON, THAER LEWIS",Director,True,Phantom Stock Units,buy,493.61,86.1,42499.820999999996
+2024-03-31,AEP,"LIN, SANDRA BEACH",Director,True,Phantom Stock Units,buy,493.61,86.1,42499.820999999996
+2024-03-31,AEP,"GARCIA, ART A",Director,True,Phantom Stock Units,buy,493.61,86.1,42499.820999999996
+2024-03-31,AEP,"FOWKE, BENJAMIN G S III","Director, Interim CEO & President",True,Common Stock,buy,309.72,86.1,26666.892
+2024-04-02,AEP,"BEASLEY, J BARNIE",Director,True,Phantom Stock Units,buy,493.61,86.1,42499.820999999996
+2024-04-22,AEP,"ZEBULA, CHARLES E",Executive VP  & CFO,True,Common Stock,buy,8883.92,84.9,754244.8080000001
+2024-04-22,AEP,"ZEBULA, CHARLES E",Executive VP  & CFO,True,Common Stock,buy,17667.84,84.9,1499999.6160000002
+2024-05-01,AEP,"ZEBULA, CHARLES E",Executive VP  & CFO,True,Common Stock,sell,695.0,88.15,61264.25000000001
+2024-05-01,AEP,"BEAM, CHRISTIAN T",Executive Vice President,True,Common Stock,sell,135.0,88.15,11900.25
+2024-05-01,AEP,"RISCH, THERACE",Executive Vice President,True,Common Stock,sell,275.0,88.15,24241.25
+2024-05-01,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,801.0,88.15,70608.15000000001
+2024-05-01,AEP,"HALL, GREG B",Executive Vice President,True,Common Stock,sell,124.0,88.15,10930.6
+2024-05-01,AEP,"SMYTH, ANTONIO P",Executive Vice President,True,Common Stock,sell,652.0,88.15,57473.8
+2024-05-01,AEP,"ULRICH, PHILLIP R.",Senior Vice President,True,Common Stock,sell,119.0,88.15,10489.85
+2024-05-01,AEP,"SMYTH, ANTONIO P",Executive Vice President,True,Common Stock,sell,124.0,88.15,10930.6
+2024-05-01,AEP,"SIMMONS, PEGGY",Executive Vice President,True,Common Stock,sell,102.0,88.15,8991.300000000001
+2024-05-31,AEP,"HALL, GREG B",Executive Vice President,True,Common Stock,sell,5880.0,88.25,518910.0
+2024-06-05,AEP,"SMYTH, ANTONIO P",Executive Vice President,True,Common Stock,sell,4898.0,90.0,440820.0
+2024-06-30,AEP,"LINGINFELTER, HENRY P",Director,True,Phantom Stock Units,buy,484.38,87.74,42499.5012
+2024-06-30,AEP,"STODDARD, DANIEL G.",Director,True,Common Stock,buy,436.89,87.74,38332.728599999995
+2024-06-30,AEP,"GARY, HUNTER CLARK",Director,True,Phantom Stock Units,buy,484.38,87.74,42499.5012
+2024-06-30,AEP,"STODDARD, DANIEL G.",Director,True,Phantom Stock Units,buy,484.38,87.74,42499.5012
+2024-06-30,AEP,"JAMES, DONNA",Director,True,Phantom Stock Units,buy,484.38,87.74,42499.5012
+2024-06-30,AEP,"ROBERTS, DARYL",Director,True,Phantom Stock Units,buy,484.38,87.74,42499.5012
+2024-06-30,AEP,"GOODSPEED, LINDA",Director,True,Phantom Stock Units,buy,487.74,87.74,42794.3076
+2024-06-30,AEP,"VON, THAER LEWIS",Director,True,Phantom Stock Units,buy,484.38,87.74,42499.5012
+2024-06-30,AEP,"LIN, SANDRA BEACH",Director,True,Phantom Stock Units,buy,484.37,87.74,42498.6238
+2024-06-30,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,484.38,87.74,42499.5012
+2024-06-30,AEP,"MCCARTHY, MARGARET M",Director,True,Phantom Stock Units,buy,484.38,87.74,42499.5012
+2024-06-30,AEP,"GARCIA, ART A",Director,True,Phantom Stock Units,buy,484.38,87.74,42499.5012
+2024-07-15,AEP,"HALL, GREG B",Executive Vice President,True,Restricted Stock Units,buy,16494.0,90.94,1499964.3599999999
+2024-07-30,AEP,"RISCH, THERACE",Executive Vice President,True,Common Stock,sell,5274.0,97.98,516746.52
+2024-08-01,AEP,"FEHRMAN, WILLIAM","Director, CEO and President",True,Restricted Stock Units,buy,39510.0,101.24,3999992.4
+2024-08-01,AEP,"FOWKE, BENJAMIN G S III","Director, Senior Advisor",True,Common Stock,sell,33514.0,101.24,3392957.36
+2024-08-01,AEP,"FEHRMAN, WILLIAM","Director, CEO and President",True,Restricted Stock Units,buy,11853.0,101.24,1199997.72
+2024-08-26,AEP,"FOWKE, BENJAMIN G S III","Director, Senior Advisor",True,Common Stock,buy,10098.0,99.02,999903.96
+2024-08-26,AEP,"FOWKE, BENJAMIN G S III","Director, Senior Advisor",True,Common Stock,sell,4606.0,99.02,456086.12
+2024-09-26,AEP,"FOWKE, BENJAMIN G S III","Director, Senior Advisor",True,Common Stock,sell,4502.0,100.74,453531.48
+2024-09-26,AEP,"FOWKE, BENJAMIN G S III","Director, Senior Advisor",True,Common Stock,buy,9926.0,100.74,999945.24
+2024-09-30,AEP,"MCCARTHY, MARGARET M",Director,True,Phantom Stock Units,buy,414.23,102.6,42499.998
+2024-09-30,AEP,"GARCIA, ART A",Director,True,Phantom Stock Units,buy,138.08,102.6,14167.008
+2024-09-30,AEP,"ROBERTS, DARYL",Director,True,Phantom Stock Units,buy,414.23,102.6,42499.998
+2024-09-30,AEP,"STODDARD, DANIEL G.",Director,True,Phantom Stock Units,buy,414.23,102.6,42499.998
+2024-09-30,AEP,"VON, THAER LEWIS",Director,True,Phantom Stock Units,buy,414.23,102.6,42499.998
+2024-09-30,AEP,"JAMES, DONNA",Director,True,Phantom Stock Units,buy,414.23,102.6,42499.998
+2024-09-30,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,414.23,102.6,42499.998
+2024-09-30,AEP,"GARY, HUNTER CLARK",Director,True,Phantom Stock Units,buy,414.23,102.6,42499.998
+2024-09-30,AEP,"LINGINFELTER, HENRY P",Director,True,Phantom Stock Units,buy,414.23,102.6,42499.998
+2024-09-30,AEP,"LIN, SANDRA BEACH",Director,True,Phantom Stock Units,buy,414.23,102.6,42499.998
+2024-09-30,AEP,"GARCIA, ART A",Director,True,Phantom Stock Units,buy,276.15,102.6,28332.989999999994
+2024-10-01,AEP,"STODDARD, DANIEL G.",Director,True,Common Stock,buy,389.86,102.6,39999.636
+2024-10-01,AEP,"LIES, QUINTON S",Executive Vice President,True,Restricted Stock Units,sell,406.0,102.22,41501.32
+2024-10-01,AEP,"LIES, QUINTON S",Executive Vice President,True,Restricted Stock Units,sell,29.0,102.22,2964.38
+2024-10-01,AEP,"LIES, QUINTON S",Executive Vice President,True,Restricted Stock Units,sell,111.0,102.22,11346.42
+2024-10-04,AEP,"RISCH, THERACE",Executive Vice President,True,Restricted Stock Units,buy,4986.0,100.28,499996.08
+2024-11-01,AEP,"ULRICH, PHILLIP R.",Executive Vice President,True,Restricted Stock Units,buy,5141.0,97.25,499962.25
+2024-11-01,AEP,"ULRICH, PHILLIP R.",Executive Vice President,True,Restricted Stock Units,buy,5141.38,97.25,499999.205
+2024-12-31,AEP,"LIN, SANDRA BEACH",Director,True,Phantom Stock Units,buy,460.8,92.23,42499.584
+2024-12-31,AEP,"LINGINFELTER, HENRY P",Director,True,Phantom Stock Units,buy,460.8,92.23,42499.584
+2024-12-31,AEP,"STODDARD, DANIEL G.",Director,True,Common Stock,buy,433.69,92.23,39999.2287
+2024-12-31,AEP,"GARY, HUNTER CLARK",Director,True,Phantom Stock Units,buy,460.8,92.23,42499.584
+2024-12-31,AEP,"FOWKE, BENJAMIN G S III",Director,True,Phantom Stock Units,buy,351.79,92.23,32445.591700000004
+2024-12-31,AEP,"MCCARTHY, MARGARET M",Director,True,Phantom Stock Units,buy,460.8,92.23,42499.584
+2024-12-31,AEP,"FOWKE, BENJAMIN G S III",Director,True,Common Stock,buy,328.61,92.23,30307.700300000004
+2024-12-31,AEP,"ZEBULA, CHARLES E",Executive VP  & CFO,True,Common Stock,sell,9477.0,92.23,874063.7100000001
+2024-12-31,AEP,"JAMES, DONNA",Director,True,Phantom Stock Units,buy,460.8,92.23,42499.584
+2024-12-31,AEP,"ROBERTS, DARYL",Director,True,Phantom Stock Units,buy,460.8,92.23,42499.584
+2024-12-31,AEP,"VON, THAER LEWIS",Director,True,Phantom Stock Units,buy,460.8,92.23,42499.584
+2024-12-31,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,460.8,92.23,42499.584
+2025-02-21,AEP,"LIES, QUINTON S",Executive Vice President,True,Common Stock,sell,328.0,105.33,34548.24
+2025-02-21,AEP,"RISCH, THERACE",Executive Vice President,True,Common Stock,sell,307.0,105.33,32336.309999999998
+2025-02-21,AEP,"FERNEAU, KELLY J",Executive Vice President,True,Common Stock,sell,111.0,105.33,11691.63
+2025-02-21,AEP,"FERNEAU, KELLY J",Executive Vice President,True,Common Stock,sell,29.0,105.33,3054.57
+2025-02-21,AEP,"STURGESS, KATE","Controller, CAO",False,Common Stock,sell,177.0,105.33,18643.41
+2025-02-21,AEP,"LIES, QUINTON S",Executive Vice President,True,Common Stock,sell,387.0,105.33,40762.71
+2025-02-21,AEP,"LIES, QUINTON S",Executive Vice President,True,Common Stock,sell,154.0,105.33,16220.82
+2025-02-21,AEP,"ULRICH, PHILLIP R.",Executive Vice President,True,Common Stock,sell,332.0,105.33,34969.56
+2025-02-21,AEP,"ULRICH, PHILLIP R.",Executive Vice President,True,Common Stock,sell,316.0,105.33,33284.28
+2025-02-21,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,438.0,105.33,46134.54
+2025-02-21,AEP,"LIES, QUINTON S",Executive Vice President,True,Common Stock,sell,305.0,105.33,32125.649999999998
+2025-02-21,AEP,"ULRICH, PHILLIP R.",Executive Vice President,True,Common Stock,sell,294.0,105.33,30967.02
+2025-02-21,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,516.0,105.33,54350.28
+2025-02-21,AEP,"RISCH, THERACE",Executive Vice President,True,Common Stock,sell,263.0,105.33,27701.79
+2025-02-21,AEP,"FERNEAU, KELLY J",Executive Vice President,True,Common Stock,sell,333.0,105.33,35074.89
+2025-02-21,AEP,"RISCH, THERACE",Executive Vice President,True,Common Stock,sell,245.0,105.33,25805.85
+2025-02-21,AEP,"SMYTH, ANTONIO P",Executive Vice President,True,Common Stock,sell,119.0,105.33,12534.27
+2025-02-21,AEP,"FERNEAU, KELLY J",Executive Vice President,True,Common Stock,sell,149.0,105.33,15694.17
+2025-02-21,AEP,"SMYTH, ANTONIO P",Executive Vice President,True,Common Stock,sell,127.0,105.33,13376.91
+2025-02-21,AEP,"STURGESS, KATE","Controller, CAO",False,Common Stock,sell,167.0,105.33,17590.11
+2025-02-21,AEP,"SMYTH, ANTONIO P",Executive Vice President,True,Common Stock,sell,133.0,105.33,14008.89
+2025-02-21,AEP,"ZEBULA, CHARLES E",Senior Advisor,False,Common Stock,sell,424.0,105.33,44659.92
+2025-02-21,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,518.0,105.33,54560.94
+2025-02-21,AEP,"ZEBULA, CHARLES E",Senior Advisor,False,Common Stock,sell,380.0,105.33,40025.4
+2025-02-21,AEP,"SMYTH, ANTONIO P",Executive Vice President,True,Common Stock,sell,263.0,105.33,27701.79
+2025-02-21,AEP,"FEHRMAN, WILLIAM","Director, CEO and President",True,Common Stock,sell,1222.0,105.33,128713.26
+2025-03-10,AEP,"FEHRMAN, WILLIAM","Director, CEO and President",True,Common Stock,sell,15.0,107.32,1609.8
+2025-03-10,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,54.0,107.32,5795.28
+2025-03-10,AEP,"FEHRMAN, WILLIAM","Director, CEO and President",True,Common Stock,buy,34.0,107.32,3648.8799999999997
+2025-03-10,AEP,"STURGESS, KATE","Controller, CAO",False,Common Stock,buy,171.0,107.32,18351.719999999998
+2025-03-10,AEP,"FERNEAU, KELLY J",Executive Vice President,True,Common Stock,buy,41.0,107.32,4400.12
+2025-03-10,AEP,"LIES, QUINTON S",Executive Vice President,True,Common Stock,buy,114.0,107.32,12234.48
+2025-03-10,AEP,"SMYTH, ANTONIO P",Executive Vice President,True,Common Stock,buy,48.0,107.32,5151.36
+2025-03-10,AEP,"LIES, QUINTON S",Executive Vice President,True,Common Stock,sell,49.0,107.32,5258.679999999999
+2025-03-10,AEP,"RISCH, THERACE",Executive Vice President,True,Common Stock,buy,119.0,107.32,12771.08
+2025-03-10,AEP,"RISCH, THERACE",Executive Vice President,True,Common Stock,sell,47.0,107.32,5044.04
+2025-03-10,AEP,"ULRICH, PHILLIP R.",Executive Vice President,True,Common Stock,buy,108.0,107.32,11590.56
+2025-03-10,AEP,"ULRICH, PHILLIP R.",Executive Vice President,True,Common Stock,sell,13.0,107.32,1395.1599999999999
+2025-03-10,AEP,"FERNEAU, KELLY J",Executive Vice President,True,Common Stock,sell,11.0,107.32,1180.52
+2025-03-10,AEP,"ZEBULA, CHARLES E",Senior Advisor,False,Common Stock,sell,64.0,107.32,6868.48
+2025-03-10,AEP,"ZEBULA, CHARLES E",Senior Advisor,False,Common Stock,buy,143.0,107.32,15346.759999999998
+2025-03-10,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,buy,179.0,107.32,19210.28
+2025-03-31,AEP,"LINGINFELTER, HENRY P",Director,True,Phantom Stock Units,buy,388.94,109.27,42499.4738
+2025-03-31,AEP,"ROBERTS, DARYL",Director,True,Phantom Stock Units,buy,388.94,109.27,42499.4738
+2025-03-31,AEP,"JAMES, DONNA",Director,True,Phantom Stock Units,buy,388.94,109.27,42499.4738
+2025-03-31,AEP,"VON, THAER LEWIS",Director,True,Phantom Stock Units,buy,388.94,109.27,42499.4738
+2025-03-31,AEP,"GARY, HUNTER CLARK",Director,True,Phantom Stock Units,buy,388.94,109.27,42499.4738
+2025-05-19,AEP,"LIES, QUINTON S",Executive Vice President,True,Common Stock,sell,10141.0,102.68,1041277.8800000001
+2025-06-03,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,8057.0,102.94,829387.58
+2025-06-10,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,8058.0,101.49,817806.4199999999
+2025-06-11,AEP,"CANNON, DOUGLAS A",Executive Vice President,True,Resticted Stock Units,buy,4772.0,101.93,486409.96
+2025-06-11,AEP,"CANNON, DOUGLAS A",Executive Vice President,True,Resticted Stock Units,buy,17806.0,101.93,1814965.58
+2025-06-12,AEP,"MIHALIK, TREVOR I",Executive VP & CFO,True,Restricted Stock Units,buy,48534.0,103.02,4999972.68
+2025-06-17,AEP,"FEINBERG, DAVID MATTHEW",Executive Vice President,True,Common Stock,sell,8058.0,101.74,819820.9199999999
+2025-06-30,AEP,"STODDARD, DANIEL G.",Director,True,Phantom Stock Units,buy,409.59,103.76,42499.0584
+2025-06-30,AEP,"SAUVAGE, JOSEPH G",Director,True,Phantom Stock Units,sell,409.59,103.76,42499.0584
+2025-06-30,AEP,"MCCARTHY, MARGARET M",Director,True,Phantom Stock Units,buy,409.59,103.76,42499.0584
+2025-06-30,AEP,"LIN, SANDRA BEACH",Director,True,Phantom Stock Units,buy,409.59,103.76,42499.0584
+2025-06-30,AEP,"FOWKE, BENJAMIN G S III",Director,True,Phantom Stock Units,buy,409.59,103.76,42499.0584
+2025-06-30,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,409.59,103.76,42499.0584
+2025-06-30,AEP,"GARCIA, ART A",Director,True,Phantom Stock Units,buy,409.59,103.76,42499.0584
+2025-06-30,AEP,"ROBERTS, DARYL",Director,True,Phantom Stock Units,buy,409.59,103.76,42499.0584
+2025-06-30,AEP,"LINGINFELTER, HENRY P",Director,True,Phantom Stock Units,buy,409.59,103.76,42499.0584
+2025-06-30,AEP,"GARY, HUNTER CLARK",Director,True,Phantom Stock Units,buy,409.59,103.76,42499.0584
+2025-06-30,AEP,"VON, THAER LEWIS",Director,True,Phantom Stock Units,buy,409.59,103.76,42499.0584
+2025-06-30,AEP,"JAMES, DONNA",Director,True,Phantom Stock Units,buy,136.53,103.76,14166.3528
+2025-07-14,AEP,"BERNTSEN, ROBERT",Executive Vice President,True,Resticted Stock Units,buy,3774.0,105.02,396345.48
+2025-07-14,AEP,"BERNTSEN, ROBERT",Executive Vice President,True,Resticted Stock Units,buy,13883.0,105.02,1457992.66
+2025-07-21,AEP,"ECKERT, JOHANNES G",Executive Vice President,True,Resticted Stock Units,buy,2040.0,108.55,221442.0
+2025-07-22,AEP,"TUCKER, SARA MARTINEZ",Director,True,Common Stock,buy,1815.0,110.16,199940.4
+2025-08-01,AEP,"FEHRMAN, WILLIAM","Director, CEO and President",True,Resticted Stock Units,sell,6193.0,113.58,703400.94
+2025-08-15,AEP,"FOWKE, BENJAMIN G S III",Director,True,Common Stock,sell,5000.0,111.99,559950.0
+2025-08-15,AEP,"FERNEAU, KELLY J",Executive Vice President,True,Common Stock,sell,3428.0,111.99,383901.72
+2025-09-12,AEP,"FOWKE, BENJAMIN G S III",Director,True,Common Stock,sell,5000.0,108.65,543250.0
+2025-09-29,AEP,"KNAPP, ALICIA R",Executive Vice President,True,Resticted Stock Units,buy,4136.0,109.78,454050.08
+2025-09-29,AEP,"KNAPP, ALICIA R",Executive Vice President,True,Resticted Stock Units,buy,5875.0,109.78,644957.5
+2025-09-30,AEP,"ROBERTS, DARYL",Director,True,Phantom Stock Units,buy,377.0,112.5,42412.5
+2025-09-30,AEP,"LINGINFELTER, HENRY P",Director,True,Phantom Stock Units,buy,377.0,112.5,42412.5
+2025-09-30,AEP,"GARY, HUNTER CLARK",Director,True,Phantom Stock Units,buy,377.0,112.5,42412.5
+2025-09-30,AEP,"GARCIA, ART A",Director,True,Phantom Stock Units,buy,377.0,112.5,42412.5
+2025-09-30,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,377.0,112.5,42412.5
+2025-09-30,AEP,"VON, THAER LEWIS",Director,True,Phantom Stock Units,buy,377.0,112.5,42412.5
+2025-09-30,AEP,"LIN, SANDRA BEACH",Director,True,Phantom Stock Units,buy,377.0,112.5,42412.5
+2025-09-30,AEP,"FOWKE, BENJAMIN G S III",Director,True,Phantom Stock Units,buy,377.0,112.5,42412.5
+2025-09-30,AEP,"STODDARD, DANIEL G.",Director,True,Common Stock,buy,355.0,112.5,39937.5
+2025-09-30,AEP,"STODDARD, DANIEL G.",Director,True,Phantom Stock Units,buy,377.0,112.5,42412.5
+2025-09-30,AEP,"SAUVAGE, JOSEPH G",Director,True,Phantom Stock Units,sell,377.0,112.5,42412.5
+2025-09-30,AEP,"MCCARTHY, MARGARET M",Director,True,Phantom Stock Units,buy,377.0,112.5,42412.5
+2025-10-01,AEP,"FERNEAU, KELLY J",Executive Vice President,True,Restricted Stock Units,sell,351.0,112.75,39575.25
+2025-10-01,AEP,"FERNEAU, KELLY J",Executive Vice President,True,Restricted Stock Units,sell,53.0,112.75,5975.75
+2025-10-02,AEP,"FERNEAU, KELLY J",Executive Vice President,True,Common Stock,sell,1006.0,112.0,112672.0
+2025-10-10,AEP,"FOWKE, BENJAMIN G S III",Director,True,Common Stock,sell,5000.0,117.52,587600.0
+2025-10-21,AEP,"FERNEAU, KELLY J",Executive Vice President,True,Resticted Stock Units,buy,6386.0,117.43,749907.9800000001
+2025-11-14,AEP,"FOWKE, BENJAMIN G S III",Director,True,Common Stock,sell,5000.0,121.58,607900.0
+2025-12-12,AEP,"FOWKE, BENJAMIN G S III",Director,True,Common Stock,sell,5000.0,115.07,575350.0
+2025-12-18,AEP,"FEHRMAN, WILLIAM","Director, CEO and President",True,Restricted Stock Units,buy,43260.0,115.58,4999990.8
+2025-12-31,AEP,"STODDARD, DANIEL G.",Director,True,Phantom Stock Units,buy,368.0,115.31,42434.08
+2025-12-31,AEP,"GARCIA, ART A",Director,True,Phantom Stock Units,buy,368.0,115.31,42434.08
+2025-12-31,AEP,"LIN, SANDRA BEACH",Director,True,Phantom Stock Units,buy,368.0,115.31,42434.08
+2025-12-31,AEP,"MCCARTHY, MARGARET M",Director,True,Phantom Stock Units,buy,368.0,115.31,42434.08
+2025-12-31,AEP,"TUCKER, SARA MARTINEZ",Director,True,Phantom Stock Units,buy,368.0,115.31,42434.08
+2025-12-31,AEP,"FOWKE, BENJAMIN G S III",Director,True,Phantom Stock Units,buy,368.0,115.31,42434.08
+2025-12-31,AEP,"GARY, HUNTER CLARK",Director,True,Phantom Stock Units,buy,368.0,115.31,42434.08
+2025-12-31,AEP,"ROBERTS, DARYL",Director,True,Phantom Stock Units,buy,123.0,115.31,14183.130000000001
+2025-12-31,AEP,"STODDARD, DANIEL G.",Director,True,Common Stock,buy,346.0,115.31,39897.26
+2025-12-31,AEP,"ROBERTS, DARYL",Director,True,Phantom Stock Units,buy,245.0,115.31,28250.95
+2026-01-09,AEP,"ULRICH, PHILLIP R.",Executive Vice President,True,Resticted Stock Units,buy,21383.0,116.91,2499886.53
+2026-02-16,AEP,"FERNEAU, KELLY J",Executive Vice President,True,Resticted Stock Units,buy,2693.0,129.94,349928.42
+2026-02-17,AEP,"DIXON, KATE","Controller, CAO",False,Resticted Stock Units,buy,1919.0,130.24,249930.56000000003
+2026-02-17,AEP,"ULRICH, PHILLIP R.",Executive Vice President,True,Resticted Stock Units,buy,2879.0,130.24,374960.96
+2026-02-17,AEP,"MIHALIK, TREVOR I",Executive VP & CFO,True,Resticted Stock Units,buy,7678.0,130.24,999982.7200000001
+2026-02-17,AEP,"ECKERT, JOHANNES G",Executive Vice President,True,Resticted Stock Units,buy,2879.0,130.24,374960.96
+2026-02-17,AEP,"FEHRMAN, WILLIAM","Director, CEO and President",True,Resticted Stock Units,buy,26105.0,130.24,3399915.2
+2026-02-17,AEP,"KNAPP, ALICIA R",President Nuclear Development,True,Resticted Stock Units,buy,4798.0,130.24,624891.52
+2026-02-17,AEP,"FERNEAU, KELLY J",Executive Vice President,True,Resticted Stock Units,buy,2495.0,130.2,324849.0
+2026-02-17,AEP,"BERNTSEN, ROBERT",Executive Vice President,True,Phantom Stock Units,buy,3839.0,130.24,499991.36000000004
+2026-02-17,AEP,"CANNON, DOUGLAS A",President AEP Transmission,True,Resticted Stock Units,buy,4798.0,130.24,624891.52
+2026-02-23,AEP,"BERNTSEN, ROBERT",Executive Vice President,True,Common Stock,sell,404.0,132.03,53340.12
+2026-02-23,AEP,"ECKERT, JOHANNES G",Executive Vice President,True,Common Stock,sell,242.0,132.03,31951.260000000002
+2026-02-23,AEP,"DIXON, KATE","Controller, CAO",False,Common Stock,sell,168.0,132.03,22181.04
+2026-02-23,AEP,"DIXON, KATE","Controller, CAO",False,Common Stock,sell,118.0,132.03,15579.54
+2026-02-23,AEP,"ULRICH, PHILLIP R.",Executive Vice President,True,Common Stock,sell,333.0,132.03,43965.99
+2026-02-23,AEP,"CANNON, DOUGLAS A",President AEP Transmission,True,Common Stock,sell,496.0,132.03,65486.88
+2026-02-23,AEP,"FEHRMAN, WILLIAM","Director, CEO and President",True,Common Stock,sell,4161.0,132.06,549501.66
+2026-02-23,AEP,"FERNEAU, KELLY J",Executive Vice President,True,Common Stock,sell,136.0,132.03,17956.08
+2026-02-23,AEP,"FERNEAU, KELLY J",Executive Vice President,True,Common Stock,sell,165.0,132.03,21784.95
+2026-02-23,AEP,"DIXON, KATE","Controller, CAO",False,Common Stock,sell,169.0,132.03,22313.07
+2026-02-23,AEP,"FEHRMAN, WILLIAM","Director, CEO and President",True,Common Stock,sell,1241.0,132.03,163849.23
+2026-02-23,AEP,"ULRICH, PHILLIP R.",Executive Vice President,True,Common Stock,sell,319.0,132.03,42117.57
+2026-02-23,AEP,"FERNEAU, KELLY J",Executive Vice President,True,Common Stock,sell,288.0,132.03,38024.64
+2026-02-23,AEP,"KNAPP, ALICIA R",President Nuclear Development,True,Common Stock,sell,416.0,132.03,54924.48
+2026-02-23,AEP,"MIHALIK, TREVOR I",Executive VP & CFO,True,Common Stock,sell,1590.0,132.03,209927.7
+2026-02-23,AEP,"MIHALIK, TREVOR I",Executive VP & CFO,True,Common Stock,sell,1424.0,132.03,188010.72
+2026-02-23,AEP,"ULRICH, PHILLIP R.",Executive Vice President,True,Common Stock,sell,298.0,132.03,39344.94
+2026-02-24,AEP,"FERNEAU, KELLY J",Executive Vice President,True,Resticted Stock Units,sell,1351.0,131.46,177602.46000000002
+2026-02-27,AEP,"ULRICH, PHILLIP R.",Executive Vice President,True,Resticted Stock Units,sell,4106.0,132.08,542320.4800000001
+2026-03-10,AEP,"ULRICH, PHILLIP R.",Executive Vice President,True,Common Stock,sell,50.0,132.31,6615.5
+2026-03-10,AEP,"KNAPP, ALICIA R",President Nuclear Development,True,Common Stock,buy,9.0,132.31,1190.79
+2026-03-10,AEP,"BERNTSEN, ROBERT",Executive Vice President,True,Common Stock,buy,9.0,132.31,1190.79
+2026-03-10,AEP,"CANNON, DOUGLAS A",President AEP Transmission,True,Common Stock,buy,11.0,132.31,1455.41
+2026-03-10,AEP,"MIHALIK, TREVOR I",Executive VP & CFO,True,Common Stock,sell,28.0,132.31,3704.6800000000003
+2026-03-10,AEP,"FEHRMAN, WILLIAM","Director, CEO and President",True,Common Stock,buy,96.0,132.31,12701.76
+2026-03-10,AEP,"DIXON, KATE","Controller, CAO",False,Common Stock,sell,24.0,132.31,3175.44
+2026-03-10,AEP,"FERNEAU, KELLY J",Executive Vice President,True,Common Stock,buy,14.0,132.31,1852.3400000000001
+2026-03-10,AEP,"FERNEAU, KELLY J",Executive Vice President,True,Common Stock,sell,8.0,132.31,1058.48
+2026-03-10,AEP,"ULRICH, PHILLIP R.",Executive Vice President,True,Common Stock,buy,110.0,132.31,14554.1
+2026-03-10,AEP,"FEHRMAN, WILLIAM","Director, CEO and President",True,Common Stock,sell,45.0,132.31,5953.95
+2026-03-10,AEP,"DIXON, KATE","Controller, CAO",False,Common Stock,buy,52.0,132.31,6880.12
+2026-03-10,AEP,"MIHALIK, TREVOR I",Executive VP & CFO,True,Common Stock,buy,61.0,132.31,8070.91
+2026-05-01,AEP,"CANNON, DOUGLAS A",President AEP Transmission,True,Resticted Stock Units,sell,1770.0,136.91,242330.69999999998
+2026-05-01,AEP,"DIXON, KATE","Controller, CAO",False,Resticted Stock Units,sell,636.0,136.91,87074.76
+2026-05-01,AEP,"HALL, GREG B",Executive Vice President,True,Resticted Stock Units,sell,4306.0,136.91,589534.46

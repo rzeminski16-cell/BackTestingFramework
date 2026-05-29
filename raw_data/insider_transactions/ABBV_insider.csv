@@ -1,0 +1,1104 @@
+date,symbol,insider_name,insider_title,is_executive,security_type,transaction_type,shares,price,value
+2013-03-31,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,193.0,40.78,7870.54
+2013-03-31,ABBV,"LIDDY, EDWARD M",Director,True,Stock Equivalent Units,buy,846.0,40.78,34499.88
+2013-03-31,ABBV,"TILTON, GLENN F",Director,True,Stock Equivalent Units,buy,846.0,40.78,34499.88
+2013-03-31,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,809.0,40.78,32991.020000000004
+2013-05-01,ABBV,"ALBAN, CARLOS","EVP, Commercial Operations",True,"Common stock, $0.01 par value",buy,34600.0,28.3122,979602.12
+2013-05-01,ABBV,"ALBAN, CARLOS","EVP, Commercial Operations",True,"Common stock, $0.01 par value",buy,17700.0,28.1251,497814.27
+2013-05-01,ABBV,"ALBAN, CARLOS","EVP, Commercial Operations",True,"Common stock, $0.01 par value",buy,33900.0,28.8628,978448.92
+2013-05-01,ABBV,"ALBAN, CARLOS","EVP, Commercial Operations",True,"Common stock, $0.01 par value",buy,21000.0,26.8472,563791.2000000001
+2013-05-01,ABBV,"ALBAN, CARLOS","EVP, Commercial Operations",True,"Common stock, $0.01 par value",sell,28122.0,45.6837,1284717.0114
+2013-05-01,ABBV,"ALBAN, CARLOS","EVP, Commercial Operations",True,"Common stock, $0.01 par value",sell,27320.0,45.6648,1247562.336
+2013-05-01,ABBV,"ALBAN, CARLOS","EVP, Commercial Operations",True,"Common stock, $0.01 par value",sell,30550.0,45.6768,1395426.24
+2013-05-01,ABBV,"ALBAN, CARLOS","EVP, Commercial Operations",True,"Common stock, $0.01 par value",sell,27664.0,45.6797,1263683.2208
+2013-05-01,ABBV,"ALBAN, CARLOS","EVP, Commercial Operations",True,"Common stock, $0.01 par value",buy,35700.0,27.294,974395.8
+2013-06-30,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,798.0,41.34,32989.32
+2013-06-30,ABBV,"LIDDY, EDWARD M",Director,True,Stock Equivalent Units,buy,834.0,41.34,34477.560000000005
+2013-06-30,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,190.0,41.34,7854.6
+2013-06-30,ABBV,"TILTON, GLENN F",Director,True,Stock Equivalent Units,buy,834.0,41.34,34477.560000000005
+2013-08-01,ABBV,"SCHUMACHER, LAURA J","EVP, Bus.Dev.,Ext.Aff.&GC",True,"Common stock, $0.01 par value",sell,5443.0,45.48,247547.63999999998
+2013-08-01,ABBV,"SCHUMACHER, LAURA J","EVP, Bus.Dev.,Ext.Aff.&GC",True,"Common stock, $0.01 par value",buy,774.0,32.572,25210.728000000003
+2013-08-01,ABBV,"SCHUMACHER, LAURA J","EVP, Bus.Dev.,Ext.Aff.&GC",True,"Common stock, $0.01 par value",buy,5634.0,32.572,183510.64800000002
+2013-08-09,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",sell,2618.0,45.06,117967.08
+2013-08-09,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",buy,5700.0,22.9407,130761.99
+2013-08-09,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",buy,2158.0,24.0731,51949.7498
+2013-08-09,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",sell,3845.0,44.7793,172176.4085
+2013-08-09,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",buy,1734.0,34.7642,60281.122800000005
+2013-08-12,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",sell,5006.0,45.0074,225307.04439999998
+2013-08-12,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",buy,6842.0,24.0731,164708.1502
+2013-08-14,ABBV,"HURWICH, THOMAS A.","VP, Controller",True,"Common stock, $0.01 par value",buy,191.0,29.4031,5615.9920999999995
+2013-08-14,ABBV,"HURWICH, THOMAS A.","VP, Controller",True,"Common stock, $0.01 par value",buy,1465.0,27.1537,39780.1705
+2013-08-14,ABBV,"HURWICH, THOMAS A.","VP, Controller",True,"Common stock, $0.01 par value",buy,3793.0,27.3719,103821.6167
+2013-08-14,ABBV,"HURWICH, THOMAS A.","VP, Controller",True,"Common stock, $0.01 par value",buy,5351.0,27.6264,147828.8664
+2013-08-14,ABBV,"HURWICH, THOMAS A.","VP, Controller",True,"Common stock, $0.01 par value",sell,9138.0,44.93,410570.34
+2013-08-14,ABBV,"HURWICH, THOMAS A.","VP, Controller",True,"Common stock, $0.01 par value",buy,703.0,27.9329,19636.828700000002
+2013-08-16,ABBV,"SCHUMACHER, LAURA J","EVP, Bus.Dev.,Ext.Aff.&GC",True,"Common stock, $0.01 par value",buy,4011.0,34.4889,138334.9779
+2013-08-16,ABBV,"SCHUMACHER, LAURA J","EVP, Bus.Dev.,Ext.Aff.&GC",True,"Common stock, $0.01 par value",buy,1039.0,30.2135,31391.8265
+2013-08-16,ABBV,"SCHUMACHER, LAURA J","EVP, Bus.Dev.,Ext.Aff.&GC",True,"Common stock, $0.01 par value",buy,5425.0,28.9148,156862.79
+2013-08-16,ABBV,"SCHUMACHER, LAURA J","EVP, Bus.Dev.,Ext.Aff.&GC",True,"Common stock, $0.01 par value",sell,8928.0,43.21,385778.88
+2013-08-19,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",buy,1312.0,37.18,48780.159999999996
+2013-08-19,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",sell,1270.0,43.01,54622.7
+2013-09-16,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",sell,4989.0,45.5,226999.5
+2013-09-16,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",buy,4100.0,27.294,111905.40000000001
+2013-09-16,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",buy,2200.0,28.3225,62309.5
+2013-09-17,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",sell,1789.0,46.48,83152.72
+2013-09-17,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",buy,4600.0,28.8628,132768.88
+2013-09-17,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",buy,1997.0,37.18,74248.46
+2013-09-17,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",sell,3695.0,46.0,169970.0
+2013-09-30,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,176.0,44.73,7872.48
+2013-09-30,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,737.0,44.73,32966.009999999995
+2013-09-30,ABBV,"LIDDY, EDWARD M",Director,True,Stock Equivalent Units,buy,771.0,44.73,34486.829999999994
+2013-09-30,ABBV,"TILTON, GLENN F",Director,True,Stock Equivalent Units,buy,771.0,44.73,34486.829999999994
+2013-11-19,ABBV,"HURWICH, THOMAS A.","VP, Controller",True,"Common stock, $0.01 par value",buy,2158.0,24.0731,51949.7498
+2013-11-19,ABBV,"HURWICH, THOMAS A.","VP, Controller",True,"Common stock, $0.01 par value",sell,1063.0,48.87,51948.81
+2013-12-19,ABBV,"CHASE, WILLIAM J","EVP, Chief Financial Officer",True,"Common stock, $0.01 par value",buy,963.0,28.9667,27894.932099999998
+2013-12-19,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",sell,1682.0,54.32,91366.24
+2013-12-19,ABBV,"CHASE, WILLIAM J","EVP, Chief Financial Officer",True,"Common stock, $0.01 par value",buy,1620.0,34.4889,55872.018000000004
+2013-12-19,ABBV,"CHASE, WILLIAM J","EVP, Chief Financial Officer",True,"Common stock, $0.01 par value",sell,6149.0,54.32,334013.68
+2013-12-19,ABBV,"CHASE, WILLIAM J","EVP, Chief Financial Officer",True,"Common stock, $0.01 par value",buy,3438.0,35.985,123716.43
+2013-12-19,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",buy,304.0,28.3745,8625.848
+2013-12-19,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",buy,2186.0,28.4057,62094.860199999996
+2013-12-19,ABBV,"CHASE, WILLIAM J","EVP, Chief Financial Officer",True,"Common stock, $0.01 par value",buy,1591.0,35.2421,56070.1811
+2013-12-31,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,624.0,52.81,32953.44
+2013-12-31,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,149.0,52.81,7868.6900000000005
+2013-12-31,ABBV,"TILTON, GLENN F",Director,True,Stock Equivalent Units,buy,653.0,52.81,34484.93
+2013-12-31,ABBV,"LIDDY, EDWARD M",Director,True,Stock Equivalent Units,buy,653.0,52.81,34484.93
+2014-01-03,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",sell,1626.0,51.98,84519.48
+2014-02-01,ABBV,"RICHMOND, TIMOTHY J.","SVP, Human Resources",True,"Common stock, $0.01 par value",sell,3235.0,49.23,159259.05
+2014-02-05,ABBV,"RICHMOND, TIMOTHY J.","SVP, Human Resources",True,"Common stock, $0.01 par value",sell,700.0,47.785,33449.5
+2014-02-05,ABBV,"RICHMOND, TIMOTHY J.","SVP, Human Resources",True,"Common stock, $0.01 par value",sell,200.0,47.783,9556.6
+2014-02-05,ABBV,"RICHMOND, TIMOTHY J.","SVP, Human Resources",True,"Common stock, $0.01 par value",sell,560.0,47.781,26757.36
+2014-02-05,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",sell,300.0,47.845,14353.5
+2014-02-05,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",sell,387.0,47.835,18512.145
+2014-02-10,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",sell,1389.0,48.89,67908.21
+2014-02-10,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",buy,1466.0,45.06,66057.96
+2014-02-17,ABBV,"RICHMOND, TIMOTHY J.","SVP, Human Resources",True,"Common stock, $0.01 par value",sell,534.0,50.73,27089.82
+2014-02-18,ABBV,"HURWICH, THOMAS A.","VP, Controller",True,"Common stock, $0.01 par value",sell,8428.0,50.73,427552.44
+2014-02-18,ABBV,"HURWICH, THOMAS A.","VP, Controller",True,"Common stock, $0.01 par value",buy,9138.0,44.93,410570.34
+2014-02-18,ABBV,"RICHMOND, TIMOTHY J.","SVP, Human Resources",True,"Common stock, $0.01 par value",sell,558.0,50.73,28307.339999999997
+2014-02-18,ABBV,"RICHMOND, TIMOTHY J.","SVP, Human Resources",True,"Common stock, $0.01 par value",sell,200.0,51.235,10247.0
+2014-02-18,ABBV,"SCHUMACHER, LAURA J","EVP, Bus.Dev.,Ext.Aff.&GC",True,"Common stock, $0.01 par value",buy,8928.0,43.21,385778.88
+2014-02-18,ABBV,"RICHMOND, TIMOTHY J.","SVP, Human Resources",True,"Common stock, $0.01 par value",sell,265.0,51.225,13574.625
+2014-02-18,ABBV,"SCHUMACHER, LAURA J","EVP, Bus.Dev.,Ext.Aff.&GC",True,"Common stock, $0.01 par value",sell,8021.0,50.73,406905.32999999996
+2014-02-28,ABBV,"RICHMOND, TIMOTHY J.","SVP, Human Resources",True,"Common stock, $0.01 par value",sell,6669.0,50.91,339518.79
+2014-02-28,ABBV,"HURWICH, THOMAS A.","VP, Controller",True,"Common stock, $0.01 par value",sell,3360.0,50.91,171057.59999999998
+2014-02-28,ABBV,"ALBAN, CARLOS","EVP, Commercial Operations",True,"Common stock, $0.01 par value",sell,15319.0,50.91,779890.2899999999
+2014-02-28,ABBV,"CHASE, WILLIAM J","EVP, Chief Financial Officer",True,"Common stock, $0.01 par value",sell,9873.0,51.91,512507.43
+2014-02-28,ABBV,"GONZALEZ, RICHARD A",Chairman of the Board and CEO,True,"Common stock, $0.01 par value",sell,46811.0,50.91,2383148.01
+2014-02-28,ABBV,"SCHUMACHER, LAURA J","EVP, Bus.Dev.,Ext.Aff.&GC",True,"Common stock, $0.01 par value",sell,21940.0,50.91,1116965.4
+2014-02-28,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",sell,6336.0,51.91,328901.75999999995
+2014-03-03,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",sell,1200.0,50.246,60295.200000000004
+2014-03-03,ABBV,"CHASE, WILLIAM J","EVP, Chief Financial Officer",True,"Common stock, $0.01 par value",sell,100.0,51.195,5119.5
+2014-03-03,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",sell,200.0,50.263,10052.6
+2014-03-03,ABBV,"SCHUMACHER, LAURA J","EVP, Bus.Dev.,Ext.Aff.&GC",True,"Common stock, $0.01 par value",sell,1543.0,50.03,77196.29000000001
+2014-03-03,ABBV,"ALBAN, CARLOS","EVP, Commercial Operations",True,"Common stock, $0.01 par value",sell,600.0,50.094,30056.4
+2014-03-03,ABBV,"SCHUMACHER, LAURA J","EVP, Bus.Dev.,Ext.Aff.&GC",True,"Common stock, $0.01 par value",sell,100.0,50.031,5003.099999999999
+2014-03-03,ABBV,"SCHUMACHER, LAURA J","EVP, Bus.Dev.,Ext.Aff.&GC",True,"Common stock, $0.01 par value",sell,2500.0,50.034,125085.0
+2014-03-03,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",sell,100.0,50.253,5025.3
+2014-03-03,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",sell,162.0,50.24,8138.88
+2014-03-03,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",sell,100.0,50.261,5026.1
+2014-03-03,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",sell,100.0,50.264,5026.400000000001
+2014-03-03,ABBV,"ALBAN, CARLOS","EVP, Commercial Operations",True,"Common stock, $0.01 par value",sell,400.0,50.091,20036.4
+2014-03-03,ABBV,"ALBAN, CARLOS","EVP, Commercial Operations",True,"Common stock, $0.01 par value",sell,282.0,50.09,14125.380000000001
+2014-03-03,ABBV,"CHASE, WILLIAM J","EVP, Chief Financial Officer",True,"Common stock, $0.01 par value",sell,2448.0,50.191,122867.568
+2014-03-03,ABBV,"CHASE, WILLIAM J","EVP, Chief Financial Officer",True,"Common stock, $0.01 par value",sell,1400.0,50.194,70271.6
+2014-03-03,ABBV,"ALBAN, CARLOS","EVP, Commercial Operations",True,"Common stock, $0.01 par value",sell,1600.0,50.086,80137.59999999999
+2014-03-03,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",sell,581.0,50.25,29195.25
+2014-03-04,ABBV,"GONZALEZ, RICHARD A",Chairman of the Board and CEO,True,"Common stock, $0.01 par value",sell,269.0,51.19,13770.109999999999
+2014-03-04,ABBV,"GONZALEZ, RICHARD A",Chairman of the Board and CEO,True,"Common stock, $0.01 par value",sell,500.0,51.214,25607.0
+2014-03-04,ABBV,"GONZALEZ, RICHARD A",Chairman of the Board and CEO,True,"Common stock, $0.01 par value",sell,2230.0,51.2,114176.0
+2014-03-04,ABBV,"GONZALEZ, RICHARD A",Chairman of the Board and CEO,True,"Common stock, $0.01 par value",sell,1800.0,51.196,92152.8
+2014-03-31,ABBV,"LIDDY, EDWARD M",Director,True,Stock Equivalent Units,buy,671.0,51.4,34489.4
+2014-03-31,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,153.0,51.4,7864.2
+2014-03-31,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,642.0,51.4,32998.799999999996
+2014-03-31,ABBV,"TILTON, GLENN F",Director,True,Stock Equivalent Units,buy,671.0,51.4,34489.4
+2014-06-30,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,584.0,56.44,32960.96
+2014-06-30,ABBV,"LIDDY, EDWARD M",Director,True,Stock Equivalent Units,buy,611.0,56.44,34484.84
+2014-06-30,ABBV,"TILTON, GLENN F",Director,True,Stock Equivalent Units,buy,611.0,56.44,34484.84
+2014-09-30,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,571.0,57.76,32980.96
+2014-09-30,ABBV,"TILTON, GLENN F",Director,True,Stock Equivalent Units,buy,597.0,57.76,34482.72
+2014-09-30,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,136.0,57.76,7855.36
+2014-09-30,ABBV,"LIDDY, EDWARD M",Director,True,Stock Equivalent Units,buy,597.0,57.76,34482.72
+2014-11-06,ABBV,"HURWICH, THOMAS A.","VP, Controller",True,"Common stock, $0.01 par value",buy,10000.0,24.0731,240731.0
+2014-11-06,ABBV,"HURWICH, THOMAS A.","VP, Controller",True,"Common stock, $0.01 par value",sell,6737.0,62.54,421331.98
+2014-11-24,ABBV,"HURWICH, THOMAS A.","VP, Controller",True,"Common stock, $0.01 par value",sell,1400.0,67.8111,94935.54
+2014-11-24,ABBV,"HURWICH, THOMAS A.","VP, Controller",True,"Common stock, $0.01 par value",sell,100.0,67.815,6781.5
+2014-12-22,ABBV,"CHASE, WILLIAM J","EVP, Chief Financial Officer",True,"Common stock, $0.01 par value",buy,8495.0,24.0731,204500.9845
+2014-12-22,ABBV,"CHASE, WILLIAM J","EVP, Chief Financial Officer",True,"Common stock, $0.01 par value",sell,8495.0,68.0,577660.0
+2014-12-31,ABBV,"TILTON, GLENN F",Director,True,Stock Equivalent Units,buy,527.0,65.44,34486.88
+2014-12-31,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,120.0,65.44,7852.799999999999
+2014-12-31,ABBV,"LIDDY, EDWARD M",Director,True,Stock Equivalent Units,buy,527.0,65.44,34486.88
+2014-12-31,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,504.0,65.44,32981.76
+2015-02-09,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",sell,1425.0,56.9,81082.5
+2015-02-09,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",buy,2250.0,24.0731,54164.475
+2015-02-17,ABBV,"RICHMOND, TIMOTHY J.","SVP, Human Resources",True,"Common stock, $0.01 par value",sell,551.0,58.05,31985.55
+2015-02-17,ABBV,"RICHMOND, TIMOTHY J.","SVP, Human Resources",True,"Common stock, $0.01 par value",sell,241.0,58.701,14146.941
+2015-02-27,ABBV,"HURWICH, THOMAS A.","VP, Controller",True,"Common stock, $0.01 par value",sell,2524.0,60.52,152752.48
+2015-02-27,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",sell,5901.0,60.52,357128.52
+2015-02-27,ABBV,"CHASE, WILLIAM J","EVP, Chief Financial Officer",True,"Common stock, $0.01 par value",sell,10299.0,60.52,623295.48
+2015-02-27,ABBV,"ALBAN, CARLOS","EVP, Commercial Operations",True,"Common stock, $0.01 par value",sell,12706.0,60.52,768967.12
+2015-02-27,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,43784.0,60.52,2649807.68
+2015-02-27,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",sell,2112.0,60.467,127706.304
+2015-02-27,ABBV,"HURWICH, THOMAS A.","VP, Controller",True,"Common stock, $0.01 par value",sell,1185.0,60.571,71776.635
+2015-02-27,ABBV,"RICHMOND, TIMOTHY J.","SVP, Human Resources",True,"Common stock, $0.01 par value",sell,6128.0,60.52,370866.56
+2015-02-27,ABBV,"RICHMOND, TIMOTHY J.","SVP, Human Resources",True,"Common stock, $0.01 par value",sell,2074.0,60.507,125491.518
+2015-02-27,ABBV,"SCHUMACHER, LAURA J","EVP, Bus.Dev.,Ext.Aff.&GC",True,"Common stock, $0.01 par value",sell,17584.0,60.52,1064183.6800000002
+2015-02-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,24825.0,60.5,1501912.5
+2015-02-28,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",sell,4592.0,60.5,277816.0
+2015-02-28,ABBV,"RICHMOND, TIMOTHY J.","SVP, Human Resources",True,"Common stock, $0.01 par value",sell,4592.0,60.5,277816.0
+2015-02-28,ABBV,"SCHUMACHER, LAURA J","EVP, Bus.Dev.,Ext.Aff.&GC",True,"Common stock, $0.01 par value",sell,8317.0,60.5,503178.5
+2015-02-28,ABBV,"ALBAN, CARLOS","EVP, Commercial Operations",True,"Common stock, $0.01 par value",sell,7200.0,60.5,435600.0
+2015-02-28,ABBV,"HURWICH, THOMAS A.","VP, Controller",True,"Common stock, $0.01 par value",sell,1862.0,60.5,112651.0
+2015-02-28,ABBV,"CHASE, WILLIAM J","EVP, Chief Financial Officer",True,"Common stock, $0.01 par value",sell,8192.0,60.5,495616.0
+2015-03-02,ABBV,"SCHUMACHER, LAURA J","EVP, Bus.Dev.,Ext.Aff.&GC",True,"Common stock, $0.01 par value",sell,25000.0,60.3,1507500.0
+2015-03-02,ABBV,"RICHMOND, TIMOTHY J.","SVP, Human Resources",True,"Common stock, $0.01 par value",sell,12314.0,60.3,742534.2
+2015-03-31,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,563.0,58.54,32958.02
+2015-03-31,ABBV,"LIDDY, EDWARD M",Director,True,Stock Equivalent Units,buy,589.0,58.54,34480.06
+2015-03-31,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,134.0,58.54,7844.36
+2015-03-31,ABBV,"TILTON, GLENN F",Director,True,Stock Equivalent Units,buy,589.0,58.54,34480.06
+2015-04-08,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,6994.0,64.72,452651.68
+2015-04-08,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1300.0,64.87,84331.0
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,800.0,64.52,51616.0
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",buy,175477.0,35.88,6296114.760000001
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,2958.0,64.9,191974.2
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,2100.0,64.56,135576.0
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1800.0,64.5,116100.0
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,400.0,64.53,25812.0
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1000.0,64.915,64915.00000000001
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1300.0,64.905,84376.5
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,3100.0,64.865,201081.49999999997
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,223.0,64.91,14474.929999999998
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,300.0,64.92,19476.0
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,100.0,64.8675,6486.750000000001
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,3200.0,64.69,207008.0
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1000.0,64.875,64875.0
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,2500.0,64.82,162049.99999999997
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,14488.0,64.85,939546.7999999999
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1200.0,64.845,77814.0
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,300.0,64.94,19482.0
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,2100.0,64.84,136164.0
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,600.0,64.835,38900.99999999999
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,3900.0,64.83,252837.0
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,400.0,64.8425,25937.0
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1400.0,64.815,90741.0
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1300.0,64.81,84253.0
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,100.0,64.8,6480.0
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,300.0,64.79,19437.000000000004
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,300.0,64.8525,19455.750000000004
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,600.0,64.96,38975.99999999999
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1300.0,64.93,84409.00000000001
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,300.0,64.95,19485.0
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,14000.0,64.86,908040.0
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,800.0,64.8575,51886.0
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,900.0,64.62,58158.00000000001
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1805.0,64.685,116756.425
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,4317.0,64.68,279223.56000000006
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,2500.0,64.67,161675.0
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,3800.0,64.66,245708.0
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,200.0,64.655,12931.0
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,400.0,64.695,25877.999999999996
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,3000.0,64.64,193920.0
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,3548.0,64.61,229236.28
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,5600.0,64.6,361759.99999999994
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,800.0,64.59,51672.0
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1100.0,64.705,71175.5
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,8100.0,64.65,523665.00000000006
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1400.0,64.725,90614.99999999999
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,506.0,64.745,32760.97
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,34900.0,64.7,2258030.0
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,900.0,64.735,58261.5
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1800.0,64.88,116783.99999999999
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,200.0,64.8825,12976.499999999998
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,2969.0,64.89,192658.41
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,900.0,64.76,58284.00000000001
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,100.0,64.77,6477.0
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,300.0,64.58,19374.0
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,100.0,64.7475,6474.75
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,2500.0,64.75,161875.0
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,300.0,64.715,19414.5
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,8100.0,64.71,524150.99999999994
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,4400.0,64.74,284856.0
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,4000.0,64.73,258920.00000000003
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1300.0,64.57,83940.99999999999
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,400.0,64.7375,25895.0
+2015-04-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1869.0,64.855,121213.99500000001
+2015-05-19,ABBV,"HURWICH, THOMAS A.","VP, Controller",True,"Common stock, $0.01 par value",buy,6200.0,22.9407,142232.34
+2015-05-19,ABBV,"HURWICH, THOMAS A.","VP, Controller",True,"Common stock, $0.01 par value",sell,6200.0,66.0,409200.0
+2015-06-02,ABBV,"SEVERINO, MICHAEL","EVP, R&D and CSO",True,"Common stock, $0.01 par value",sell,21576.0,66.93,1444081.6800000002
+2015-06-30,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,117.0,67.19,7861.23
+2015-06-30,ABBV,"LIDDY, EDWARD M",Director,True,Stock Equivalent Units,buy,513.0,67.19,34468.47
+2015-06-30,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,491.0,67.19,32990.29
+2015-06-30,ABBV,"TILTON, GLENN F",Director,True,Stock Equivalent Units,buy,513.0,67.19,34468.47
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1997.0,71.11,142006.67
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,100.0,71.045,7104.5
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,2200.0,71.1,156420.0
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,200.0,71.095,14219.0
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,2500.0,71.09,177725.0
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,2800.0,71.08,199024.0
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,100.0,71.225,7122.499999999999
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,200.0,71.075,14215.0
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,2124.0,71.07,150952.68
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,200.0,71.115,14222.999999999998
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,100.0,71.085,7108.499999999999
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,200.0,71.065,14213.0
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1200.0,71.33,85596.0
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,2300.0,71.06,163438.0
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,300.0,71.31,21393.0
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,2100.0,71.3,149730.0
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,700.0,71.29,49903.00000000001
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,100.0,71.295,7129.5
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,350.0,71.265,24942.75
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,11707.0,71.26,834240.8200000001
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,100.0,71.255,7125.5
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1200.0,71.25,85500.0
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1400.0,71.27,99778.0
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,5403.0,71.23,384855.69
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,100.0,71.245,7124.5
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,500.0,71.34,35670.0
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1000.0,71.28,71280.0
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1700.0,71.12,120904.00000000001
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1782.0,71.19,126860.58
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,300.0,71.1975,21359.25
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,2200.0,71.2,156640.0
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,100.0,71.165,7116.500000000001
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,100.0,71.145,7114.5
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,500.0,71.155,35577.5
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,600.0,71.15,42690.0
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,500.0,71.14,35570.0
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,800.0,71.13,56904.0
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,800.0,71.16,56928.0
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,300.0,71.185,21355.5
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1936.0,71.24,137920.63999999998
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,100.0,71.105,7110.5
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,100.0,71.2175,7121.75
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1000.0,71.17,71170.0
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,2125.0,71.21,151321.25
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1000.0,71.215,71215.0
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",buy,65000.0,35.88,2332200.0
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,2200.0,71.22,156684.0
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,758.0,71.0,53818.0
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,200.0,71.02,14204.0
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1300.0,71.03,92339.0
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,700.0,71.04,49728.00000000001
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1800.0,71.05,127890.0
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,100.0,71.125,7112.5
+2015-07-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,818.0,71.18,58225.240000000005
+2015-09-30,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,144.0,54.41,7835.039999999999
+2015-09-30,ABBV,"TILTON, GLENN F",Director,True,Stock Equivalent Units,buy,634.0,54.41,34495.939999999995
+2015-09-30,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,606.0,54.41,32972.46
+2015-09-30,ABBV,"LIDDY, EDWARD M",Director,True,Stock Equivalent Units,buy,634.0,54.41,34495.939999999995
+2015-12-31,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,132.0,59.24,7819.68
+2015-12-31,ABBV,"TILTON, GLENN F",Director,True,Stock Equivalent Units,buy,582.0,59.24,34477.68
+2015-12-31,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,557.0,59.24,32996.68
+2015-12-31,ABBV,"LIDDY, EDWARD M",Director,True,Stock Equivalent Units,buy,582.0,59.24,34477.68
+2016-02-05,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",buy,3400.0,22.9407,77998.38
+2016-02-05,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",sell,2112.0,56.76,119877.12
+2016-02-29,ABBV,"CHASE, WILLIAM J","EVP, Chief Financial Officer",True,"Common stock, $0.01 par value",sell,45658.0,56.0,2556848.0
+2016-02-29,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,54178.0,56.0,3033968.0
+2016-02-29,ABBV,"RICHMOND, TIMOTHY J.","SVP, Human Resources",True,"Common stock, $0.01 par value",sell,2074.0,55.322,114737.82800000001
+2016-02-29,ABBV,"ALBAN, CARLOS","EVP, Commercial Operations",True,"Common stock, $0.01 par value",sell,39930.0,56.0,2236080.0
+2016-02-29,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",sell,1776.0,55.377,98349.55200000001
+2016-02-29,ABBV,"SEVERINO, MICHAEL","EVP, R&D and CSO",True,"Common stock, $0.01 par value",sell,8053.0,56.0,450968.0
+2016-02-29,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,89311.0,56.0,5001416.0
+2016-02-29,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",sell,13608.0,56.0,762048.0
+2016-02-29,ABBV,"HURWICH, THOMAS A.","VP, Controller",True,"Common stock, $0.01 par value",sell,4812.0,56.0,269472.0
+2016-02-29,ABBV,"RICHMOND, TIMOTHY J.","SVP, Human Resources",True,"Common stock, $0.01 par value",sell,27890.0,56.0,1561840.0
+2016-02-29,ABBV,"HURWICH, THOMAS A.","VP, Controller",True,"Common stock, $0.01 par value",sell,1444.0,55.247,79776.668
+2016-03-01,ABBV,"RICHMOND, TIMOTHY J.","SVP, Human Resources",True,"Common stock, $0.01 par value",sell,10792.0,55.0,593560.0
+2016-03-08,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,500.0,56.11,28055.0
+2016-03-08,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,300.0,56.12,16836.0
+2016-03-08,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,100.0,56.15,5615.0
+2016-03-08,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,19900.0,56.09,1116191.0
+2016-03-08,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,3400.0,56.1,190740.0
+2016-03-08,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,800.0,56.13,44904.0
+2016-03-31,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,137.0,57.12,7825.44
+2016-03-31,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,577.0,57.12,32958.24
+2016-03-31,ABBV,"TILTON, GLENN F",Director,True,Stock Equivalent Units,buy,603.0,57.12,34443.36
+2016-03-31,ABBV,"LIDDY, EDWARD M",Director,True,Stock Equivalent Units,buy,603.0,57.12,34443.36
+2016-05-10,ABBV,"HURWICH, THOMAS A.","VP, Controller",True,"Common stock, $0.01 par value",buy,6000.0,27.29,163740.0
+2016-05-10,ABBV,"RICHMOND, TIMOTHY J.","SVP, Human Resources",True,"Common stock, $0.01 par value",sell,21583.0,63.52,1370952.1600000001
+2016-05-10,ABBV,"ALBAN, CARLOS","EVP, Commercial Operations",True,"Common stock, $0.01 par value",sell,47438.0,63.52,3013261.7600000002
+2016-05-10,ABBV,"HURWICH, THOMAS A.","VP, Controller",True,"Common stock, $0.01 par value",sell,5900.0,63.59,375181.0
+2016-05-10,ABBV,"HURWICH, THOMAS A.","VP, Controller",True,"Common stock, $0.01 par value",sell,100.0,63.6,6360.0
+2016-05-11,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,39000.0,63.8,2488200.0
+2016-06-02,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,300.0,63.8075,19142.25
+2016-06-02,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1000.0,63.93,63930.0
+2016-06-02,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,400.0,63.875,25550.0
+2016-06-02,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,5397.0,63.83,344490.51
+2016-06-02,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,13019.0,63.89,831783.91
+2016-06-02,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,9434.0,63.81,601983.54
+2016-06-02,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1700.0,63.895,108621.5
+2016-06-02,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,400.0,63.835,25534.0
+2016-06-02,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,5402.0,63.9,345187.8
+2016-06-02,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1100.0,63.865,70251.5
+2016-06-02,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,7261.0,63.82,463397.02
+2016-06-02,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,190468.0,63.8,12151858.4
+2016-06-02,ABBV,"SEVERINO, MICHAEL","EVP, R&D and CSO",True,"Common stock, $0.01 par value",sell,21574.0,62.83,1355494.42
+2016-06-02,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",buy,285953.0,35.88,10259993.64
+2016-06-02,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,600.0,63.815,38289.0
+2016-06-02,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1511.0,63.85,96477.35
+2016-06-02,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,4400.0,63.91,281204.0
+2016-06-02,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,4900.0,63.805,312644.5
+2016-06-02,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1300.0,63.845,82998.5
+2016-06-02,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,4300.0,63.86,274598.0
+2016-06-02,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,600.0,63.925,38355.0
+2016-06-02,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,7717.0,63.84,492653.28
+2016-06-02,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,2019.0,63.92,129054.48000000001
+2016-06-02,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,700.0,63.905,44733.5
+2016-06-02,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,11726.0,63.88,749056.88
+2016-06-02,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1700.0,63.915,108655.5
+2016-06-02,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,5699.0,63.87,363995.13
+2016-06-02,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,2900.0,63.885,185266.5
+2016-06-24,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,100.0,60.025,6002.5
+2016-06-24,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",buy,42533.0,28.3122,1204202.8026
+2016-06-24,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",buy,38940.0,28.1251,1095191.394
+2016-06-24,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,100.0,60.11,6011.0
+2016-06-24,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,100.0,60.09,6009.0
+2016-06-24,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,200.0,60.08,12016.0
+2016-06-24,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,100.0,60.07,6007.0
+2016-06-24,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,100.0,60.065,6006.5
+2016-06-24,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,72500.0,60.05,4353625.0
+2016-06-24,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,100.0,60.06,6006.0
+2016-06-24,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",buy,38333.0,24.2082,927972.9306000001
+2016-06-24,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,300.0,60.03,18009.0
+2016-06-24,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,83893.0,60.0,5033580.0
+2016-06-24,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,300.0,60.02,18006.0
+2016-06-24,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",buy,66300.0,28.8628,1913603.64
+2016-06-24,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,1513.0,60.005,90787.565
+2016-06-24,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,1100.0,60.01,66011.0
+2016-06-24,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,100.0,60.12,6012.0
+2016-06-24,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,100.0,60.125,6012.5
+2016-06-24,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,200.0,60.14,12028.0
+2016-06-24,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,300.0,60.145,18043.5
+2016-06-24,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,25000.0,60.04,1501000.0
+2016-06-30,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,531.0,61.91,32874.21
+2016-06-30,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,120.0,61.91,7429.2
+2016-06-30,ABBV,"TILTON, GLENN F",Director,True,Stock Equivalent Units,buy,573.0,61.91,35474.43
+2016-06-30,ABBV,"LIDDY, EDWARD M",Director,True,Stock Equivalent Units,buy,539.0,61.91,33369.49
+2016-09-07,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,50000.0,65.0,3250000.0
+2016-09-30,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,104.0,63.07,6559.28
+2016-09-30,ABBV,"LIDDY, EDWARD M",Director,True,Stock Equivalent Units,buy,495.0,63.07,31219.65
+2016-09-30,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,519.0,63.07,32733.33
+2016-09-30,ABBV,"TILTON, GLENN F",Director,True,Stock Equivalent Units,buy,594.0,63.07,37463.58
+2016-11-16,ABBV,"HURWICH, THOMAS A.","VP, Controller",True,"Common stock, $0.01 par value",buy,3100.0,28.8628,89474.68
+2016-11-16,ABBV,"HURWICH, THOMAS A.","VP, Controller",True,"Common stock, $0.01 par value",sell,3100.0,62.0,192200.0
+2016-12-02,ABBV,"CHASE, WILLIAM J","EVP, Chief Financial Officer",True,"Common stock, $0.01 par value",buy,6600.0,27.29,180114.0
+2016-12-02,ABBV,"CHASE, WILLIAM J","EVP, Chief Financial Officer",True,"Common stock, $0.01 par value",sell,6600.0,59.19,390654.0
+2016-12-09,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, $0.01 par value",sell,13871.0,60.9,844743.9
+2016-12-31,ABBV,"TILTON, GLENN F",Director,True,Stock Equivalent Units,buy,598.0,62.62,37446.76
+2016-12-31,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,523.0,62.62,32750.26
+2016-12-31,ABBV,"LIDDY, EDWARD M",Director,True,Stock Equivalent Units,buy,499.0,62.62,31247.379999999997
+2016-12-31,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,104.0,62.62,6512.48
+2017-02-02,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",sell,1558.0,60.89,94866.62
+2017-02-02,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",buy,2400.0,27.29,65496.0
+2017-02-28,ABBV,"RICHMOND, TIMOTHY J.","SVP, Human Resources",True,"Common stock, $0.01 par value",sell,18902.0,62.22,1176082.44
+2017-02-28,ABBV,"CHASE, WILLIAM J","EVP, Chief Financial Officer",True,"Common stock, $0.01 par value",sell,40212.0,62.22,2501990.64
+2017-02-28,ABBV,"ALBAN, CARLOS","EVP, Commercial Operations",True,"Common stock, $0.01 par value",sell,34721.0,62.22,2160340.62
+2017-02-28,ABBV,"SEVERINO, MICHAEL","EVP, R&D and CSO",True,"Common stock, $0.01 par value",buy,30699.0,62.22,1910091.78
+2017-02-28,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,35583.0,62.22,2213974.26
+2017-02-28,ABBV,"HURWICH, THOMAS A.","VP, Controller",True,"Common stock, $0.01 par value",sell,200.0,61.89,12378.0
+2017-02-28,ABBV,"HURWICH, THOMAS A.","VP, Controller",True,"Common stock, $0.01 par value",sell,1911.0,61.891,118273.701
+2017-02-28,ABBV,"HURWICH, THOMAS A.","VP, Controller",True,"Common stock, $0.01 par value",sell,200.0,61.895,12379.0
+2017-02-28,ABBV,"HURWICH, THOMAS A.","VP, Controller",True,"Common stock, $0.01 par value",sell,4947.0,62.22,307802.33999999997
+2017-02-28,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, $0.01 par value",sell,20673.0,62.22,1286274.06
+2017-02-28,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",sell,19096.0,62.22,1188153.1199999999
+2017-02-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,112867.0,62.22,7022584.74
+2017-03-08,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",buy,53650.0,29.2265,1568001.725
+2017-03-08,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,72016.0,64.25,4627028.0
+2017-03-08,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",buy,18366.0,24.2082,444607.80120000005
+2017-03-10,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,230.0,65.24,15005.199999999999
+2017-03-10,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,9696.0,65.21,632276.1599999999
+2017-03-10,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,100.0,65.2,6520.0
+2017-03-10,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,100.0,65.17,6517.0
+2017-03-10,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,410.0,65.11,26695.1
+2017-03-10,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,100.0,65.13,6513.0
+2017-03-10,ABBV,"MICHAEL, ROBERT A.","VP, Controller",True,"Common stock, $0.01 par value",sell,5132.0,65.29,335068.28
+2017-03-10,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,757.0,65.16,49326.119999999995
+2017-03-10,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,600.0,65.3,39180.0
+2017-03-10,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,100.0,65.299,6529.900000000001
+2017-03-10,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,9816.0,65.29,640886.64
+2017-03-10,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,2300.0,65.28,150144.0
+2017-03-10,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,15491.0,65.27,1011097.57
+2017-03-10,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,300.0,65.22,19566.0
+2017-03-10,ABBV,"RICHMOND, TIMOTHY J.","SVP, Human Resources",True,"Common stock, $0.01 par value",sell,22451.0,65.29,1465825.79
+2017-03-28,ABBV,"ABBVIE, INC.",10% Owner,False,Class A Common Stock,sell,450000.0,22.5,10125000.0
+2017-03-31,ABBV,"TILTON, GLENN F",Director,True,Stock Equivalent Units,buy,575.0,65.16,37467.0
+2017-03-31,ABBV,"LIDDY, EDWARD M",Director,True,Stock Equivalent Units,buy,479.0,65.16,31211.64
+2017-03-31,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,100.0,65.16,6516.0
+2017-03-31,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,502.0,65.16,32710.32
+2017-05-04,ABBV,"ALBAN, CARLOS","EVP, Commercial Operations",True,"Common stock, $0.01 par value",sell,43000.0,67.0,2881000.0
+2017-05-18,ABBV,"CHASE, WILLIAM J","EVP, Chief Financial Officer",True,"Common stock, $0.01 par value",buy,25500.0,28.86,735930.0
+2017-05-18,ABBV,"CHASE, WILLIAM J","EVP, Chief Financial Officer",True,"Common stock, $0.01 par value",buy,12800.0,28.13,360064.0
+2017-05-18,ABBV,"CHASE, WILLIAM J","EVP, Chief Financial Officer",True,"Common stock, $0.01 par value",sell,38300.0,65.35,2502905.0
+2017-05-19,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,8175.0,65.485,535339.875
+2017-05-19,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,8100.0,65.475,530347.5
+2017-05-19,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,800.0,65.49,52391.99999999999
+2017-05-19,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1100.0,65.515,72066.5
+2017-05-19,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,200.0,65.5,13100.0
+2017-05-19,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,500.0,65.44,32720.0
+2017-05-19,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1400.0,65.47,91658.0
+2017-05-19,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1600.0,65.495,104792.0
+2017-05-19,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,700.0,65.46,45821.99999999999
+2017-05-19,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,600.0,65.45,39270.0
+2017-05-19,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,700.0,65.5075,45855.24999999999
+2017-05-19,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,30549.0,65.505,2001112.2449999999
+2017-05-19,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,600.0,65.48,39288.0
+2017-05-19,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,600.0,65.455,39273.0
+2017-05-19,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,300.0,65.445,19633.499999999996
+2017-05-19,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1300.0,65.51,85163.0
+2017-05-19,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,14011.0,65.465,917230.115
+2017-06-02,ABBV,"SEVERINO, MICHAEL","EVP, R&D and CSO",True,"Common stock, $0.01 par value",sell,21576.0,66.71,1439334.96
+2017-06-14,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",buy,79800.0,29.2265,2332274.7
+2017-06-14,ABBV,"ALBAN, CARLOS","EVP, Commercial Operations",True,"Common stock, $0.01 par value",buy,45800.0,24.2082,1108735.56
+2017-06-14,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,79800.0,70.0,5586000.0
+2017-06-14,ABBV,"ALBAN, CARLOS","EVP, Commercial Operations",True,"Common stock, $0.01 par value",sell,45800.0,70.0,3206000.0
+2017-06-30,ABBV,"LIDDY, EDWARD M",Director,True,Stock Equivalent Units,buy,430.0,72.51,31179.300000000003
+2017-06-30,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,451.0,72.51,32702.010000000002
+2017-06-30,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,90.0,72.51,6525.900000000001
+2017-06-30,ABBV,"TILTON, GLENN F",Director,True,Stock Equivalent Units,buy,517.0,72.51,37487.670000000006
+2017-07-31,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, $0.01 par value",sell,400.0,70.17,28068.0
+2017-07-31,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, $0.01 par value",sell,400.0,70.1,28039.999999999996
+2017-07-31,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, $0.01 par value",sell,100.0,70.09,7009.0
+2017-07-31,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, $0.01 par value",sell,300.0,70.185,21055.5
+2017-07-31,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, $0.01 par value",sell,500.0,70.18,35090.0
+2017-07-31,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, $0.01 par value",sell,100.0,70.15,7015.000000000001
+2017-07-31,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, $0.01 par value",sell,200.0,70.175,14035.0
+2017-07-31,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, $0.01 par value",sell,800.0,70.13,56104.0
+2017-07-31,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, $0.01 par value",sell,700.0,70.12,49084.0
+2017-07-31,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, $0.01 par value",sell,200.0,70.115,14022.999999999998
+2017-07-31,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, $0.01 par value",sell,1000.0,70.11,70110.0
+2017-07-31,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, $0.01 par value",sell,600.0,70.16,42096.0
+2017-07-31,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, $0.01 par value",sell,400.0,70.07,28027.999999999996
+2017-07-31,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, $0.01 par value",sell,100.0,70.14,7014.0
+2017-07-31,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, $0.01 par value",sell,100.0,70.08,7008.0
+2017-07-31,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, $0.01 par value",sell,200.0,70.45,14090.0
+2017-07-31,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, $0.01 par value",sell,100.0,70.05,7005.0
+2017-07-31,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, $0.01 par value",sell,100.0,70.29,7029.000000000001
+2017-07-31,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, $0.01 par value",sell,200.0,70.25,14050.0
+2017-07-31,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, $0.01 par value",sell,600.0,70.23,42138.0
+2017-07-31,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, $0.01 par value",sell,400.0,70.22,28088.0
+2017-07-31,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, $0.01 par value",sell,700.0,70.21,49146.99999999999
+2017-07-31,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, $0.01 par value",sell,600.0,70.02,42012.0
+2017-07-31,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, $0.01 par value",sell,100.0,70.34,7034.0
+2017-07-31,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, $0.01 par value",sell,1200.0,70.19,84228.0
+2017-07-31,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, $0.01 par value",sell,1537.0,70.01,107605.37000000001
+2017-07-31,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, $0.01 par value",sell,100.0,70.005,7000.5
+2017-07-31,ABBV,"RAPP, EDWARD J",Director,True,"Common Stock, $0.01 par value",buy,4000.0,70.4455,281782.0
+2017-07-31,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, $0.01 par value",sell,5663.0,70.0,396410.0
+2017-07-31,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, par value $0.01",sell,100.0,70.37,7037.0
+2017-07-31,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, $0.01 par value",sell,500.0,70.2,35100.0
+2017-07-31,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, $0.01 par value",sell,300.0,70.04,21012.000000000004
+2017-08-03,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,65826.0,71.0,4673646.0
+2017-08-03,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",buy,65861.0,51.42,3386572.62
+2017-08-03,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,35.0,71.005,2485.1749999999997
+2017-08-04,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1900.0,71.08,135052.0
+2017-08-04,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",buy,22038.0,51.42,1133193.96
+2017-08-04,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,500.0,71.105,35552.5
+2017-08-04,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,737.0,71.13,52422.81
+2017-08-04,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,101.0,71.0,7171.0
+2017-08-04,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,15600.0,71.06,1108536.0
+2017-08-04,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,3000.0,71.07,213209.99999999997
+2017-08-04,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,200.0,71.11,14222.0
+2017-08-07,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,2602.0,71.04,184846.08000000002
+2017-08-07,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1153.0,71.015,81880.295
+2017-08-07,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1800.0,71.06,127908.0
+2017-08-07,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",buy,193131.0,51.42,9930796.02
+2017-08-07,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1100.0,71.045,78149.5
+2017-08-07,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,3158.0,71.02,224281.15999999997
+2017-08-07,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,157163.0,71.0,11158573.0
+2017-08-07,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,100.0,71.055,7105.500000000001
+2017-08-07,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,6200.0,71.05,440510.0
+2017-08-07,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1200.0,71.03,85236.0
+2017-08-07,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,446.0,71.035,31681.609999999997
+2017-08-07,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,1809.0,71.025,128484.225
+2017-08-07,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,6779.0,71.005,481342.89499999996
+2017-08-07,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,9618.0,71.01,682974.18
+2017-09-11,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",sell,3600.0,84.995,305982.0
+2017-09-11,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",buy,4800.0,24.2082,116199.36
+2017-09-11,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",sell,1030.0,85.04,87591.20000000001
+2017-09-11,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",sell,2338.0,85.06,198870.28
+2017-09-11,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",sell,132.0,85.03,11223.960000000001
+2017-09-11,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",sell,1200.0,84.99,101988.0
+2017-09-28,ABBV,"MICHAEL, ROBERT A.","VP, Controller",True,"Common stock, $0.01 par value",sell,6699.0,88.0,589512.0
+2017-09-30,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,73.0,88.86,6486.78
+2017-09-30,ABBV,"LIDDY, EDWARD M",Director,True,Stock Equivalent Units,buy,351.0,88.86,31189.86
+2017-09-30,ABBV,"TILTON, GLENN F",Director,True,Stock Equivalent Units,buy,422.0,88.86,37498.92
+2017-09-30,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,368.0,88.86,32700.48
+2017-10-30,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, $0.01 par value",sell,11568.0,90.4922,1046813.7696
+2017-10-30,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, $0.01 par value",sell,4482.0,91.2203,408849.3846
+2017-10-30,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, $0.01 par value",sell,2150.0,89.3823,192171.945
+2017-10-30,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, $0.01 par value",sell,100.0,92.02,9202.0
+2017-11-10,ABBV,"SEVERINO, MICHAEL","EVP, R&D and CSO",True,"Common stock, $0.01 par value",sell,25633.0,94.6909,2427211.8397
+2017-11-21,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,218193.0,94.0076,20511800.266799998
+2017-11-21,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",buy,218193.0,58.88,12847203.84
+2017-12-09,ABBV,"GOSEBRUCH, HENRY O",Chief Strategy Officer,True,"Common stock, $0.01 par value",sell,14235.0,95.95,1365848.25
+2017-12-14,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",buy,144367.0,35.88,5179887.96
+2017-12-14,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",buy,144367.0,96.7068,13961270.5956
+2017-12-15,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",buy,1143.0,35.88,41010.840000000004
+2017-12-15,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",buy,1143.0,96.86,110710.98
+2017-12-18,ABBV,"RICHMOND, TIMOTHY J.","SVP, Human Resources",True,"Common stock, $0.01 par value",buy,87040.0,35.88,3122995.2
+2017-12-18,ABBV,"RICHMOND, TIMOTHY J.","SVP, Human Resources",True,"Common stock, $0.01 par value",sell,87040.0,98.4496,8569053.184
+2017-12-31,ABBV,"LIDDY, EDWARD M",Director,True,Stock Equivalent Units,buy,323.0,96.71,31237.329999999998
+2017-12-31,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,338.0,96.71,32687.98
+2017-12-31,ABBV,"TILTON, GLENN F",Director,True,Stock Equivalent Units,buy,387.0,96.71,37426.77
+2017-12-31,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,67.0,96.71,6479.57
+2018-02-19,ABBV,"MICHAEL, ROBERT A.","VP, Controller",True,"Common stock, $0.01 par value",sell,838.0,118.6,99386.79999999999
+2018-02-20,ABBV,"MICHAEL, ROBERT A.","VP, Controller",True,"Common stock, $0.01 par value",sell,592.0,120.33,71235.36
+2018-02-20,ABBV,"MICHAEL, ROBERT A.","VP, Controller",True,"Common stock, $0.01 par value",sell,400.0,120.2901,48116.04
+2018-02-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,79491.0,118.26,9400605.66
+2018-02-28,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,27835.0,118.26,3291767.1
+2018-02-28,ABBV,"CHASE, WILLIAM J","EVP, Chief Financial Officer",True,"Common stock, $0.01 par value",sell,28407.0,118.26,3359411.8200000003
+2018-02-28,ABBV,"ALBAN, CARLOS","EVP, Commercial Operations",True,"Common stock, $0.01 par value",sell,2579.0,117.8474,303928.4446
+2018-02-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,8280.0,117.8845,976083.66
+2018-02-28,ABBV,"MICHAEL, ROBERT A.","VP, Controller",True,"Common stock, $0.01 par value",sell,4294.0,119.4349,512853.4606
+2018-02-28,ABBV,"CHASE, WILLIAM J","EVP, Chief Financial Officer",True,"Common stock, $0.01 par value",sell,38528.0,119.4444,4601953.8432
+2018-02-28,ABBV,"MICHAEL, ROBERT A.","VP, Controller",True,"Common stock, $0.01 par value",sell,2387.0,118.26,282286.62
+2018-02-28,ABBV,"SEVERINO, MICHAEL","EVP, R&D and CSO",True,"Common stock, $0.01 par value",sell,27683.0,118.26,3273791.58
+2018-02-28,ABBV,"SEVERINO, MICHAEL","EVP, R&D and CSO",True,"Common stock, $0.01 par value",sell,2643.0,117.928,311683.70399999997
+2018-02-28,ABBV,"ALBAN, CARLOS","EVP, Commercial Operations",True,"Common stock, $0.01 par value",sell,25976.0,118.26,3071921.7600000002
+2018-02-28,ABBV,"RICHMOND, TIMOTHY J.","SVP, Human Resources",True,"Common stock, $0.01 par value",sell,18129.0,118.6746,2151451.8234
+2018-02-28,ABBV,"RICHMOND, TIMOTHY J.","SVP, Human Resources",True,"Common stock, $0.01 par value",sell,12183.0,118.26,1440761.58
+2018-02-28,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",sell,1337.0,117.7695,157457.8215
+2018-02-28,ABBV,"SALEKI-GERHARDT, AZITA","SVP, Operations",True,"Common stock, $0.01 par value",sell,12683.0,118.26,1499891.58
+2018-02-28,ABBV,"GOSEBRUCH, HENRY O","EVP, Chief Strategy Officer",True,"Common stock, $0.01 par value",sell,17418.0,118.26,2059852.6800000002
+2018-03-01,ABBV,"ALBAN, CARLOS","EVP, Commercial Operations",True,"Common stock, $0.01 par value",sell,19169.0,113.7511,2180494.8359
+2018-03-01,ABBV,"ALBAN, CARLOS","EVP, Commercial Operations",True,"Common stock, $0.01 par value",buy,48100.0,29.2265,1405794.6500000001
+2018-03-01,ABBV,"CHASE, WILLIAM J","EVP, Chief Financial Officer",True,"Common stock, $0.01 par value",sell,32400.0,114.4965,3709686.6
+2018-03-01,ABBV,"CHASE, WILLIAM J","EVP, Chief Financial Officer",True,"Common stock, $0.01 par value",buy,19000.0,24.2082,459955.80000000005
+2018-03-01,ABBV,"ALBAN, CARLOS","EVP, Commercial Operations",True,"Common stock, $0.01 par value",sell,14829.0,114.4278,1696849.8462
+2018-03-01,ABBV,"ALBAN, CARLOS","EVP, Commercial Operations",True,"Common stock, $0.01 par value",sell,46997.0,114.6342,5387463.497400001
+2018-03-01,ABBV,"CHASE, WILLIAM J","EVP, Chief Financial Officer",True,"Common stock, $0.01 par value",buy,13400.0,28.3122,379383.48
+2018-03-01,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,25000.0,117.8459,2946147.5
+2018-03-31,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,346.0,94.65,32748.9
+2018-03-31,ABBV,"LIDDY, EDWARD M",Director,True,Stock Equivalent Units,buy,330.0,94.65,31234.500000000004
+2018-03-31,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,69.0,94.65,6530.85
+2018-06-15,ABBV,"RICHMOND, TIMOTHY J.","SVP, Human Resources",True,"Common stock, $0.01 par value",buy,17588.0,99.4704,1749485.3952
+2018-06-20,ABBV,"RAPP, EDWARD J",Director,True,"Common stock, $0.01 par value",buy,1013.0,98.6266,99908.74579999999
+2018-06-27,ABBV,"TILTON, GLENN F",Director,True,"Common Stock, $0.01 par value",buy,5400.0,91.9026,496274.04000000004
+2018-06-30,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,357.0,92.65,33076.05
+2018-06-30,ABBV,"LIDDY, EDWARD M",Director,True,Stock Equivalent Units,buy,341.0,92.65,31593.65
+2018-06-30,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,71.0,92.65,6578.150000000001
+2018-08-17,ABBV,"SEVERINO, MICHAEL","EVP, R&D and CSO",True,"Common Stock, $0.01 par value",sell,20800.0,96.9688,2016951.04
+2018-08-17,ABBV,"SEVERINO, MICHAEL","EVP, R&D and CSO",True,"Common Stock, $0.01 par value",sell,29200.0,97.9147,2859109.2399999998
+2018-09-30,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,359.0,94.58,33954.22
+2018-09-30,ABBV,"LIDDY, EDWARD M",Director,True,Stock Equivalent Units,buy,343.0,94.58,32440.94
+2018-09-30,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,72.0,94.58,6809.76
+2018-11-29,ABBV,"GOSEBRUCH, HENRY O","EVP, Chief Strategy Officer",True,"Common stock, $0.01 par value",sell,42450.0,90.1046,3824940.27
+2018-12-04,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",buy,94140.0,51.42,4840678.8
+2018-12-04,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,10000.0,92.3705,923705.0000000001
+2018-12-04,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,41642.0,93.6647,3900385.4373999997
+2018-12-04,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,33198.0,94.3418,3131959.0764
+2018-12-04,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,9300.0,91.7745,853502.85
+2018-12-09,ABBV,"GOSEBRUCH, HENRY O","EVP, Chief Strategy Officer",True,"Common stock, $0.01 par value",sell,13446.0,86.96,1169264.16
+2018-12-11,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common Stock, $0.01 par value",sell,16850.0,88.75,1495437.5
+2018-12-12,ABBV,"CHASE, WILLIAM J","EVP, Finance & Administration",True,"Common Stock, $0.01 par value",sell,60000.0,90.0,5400000.0
+2018-12-13,ABBV,"SCHUMACHER, LAURA J",Executive Vice President,True,"Common stock, $0.01 par value",sell,49852.0,88.6,4416887.199999999
+2018-12-28,ABBV,"SCHUMACHER, LAURA J",Vice Chairman,True,"Common Stock, $0.01 par value",sell,25000.0,90.0,2250000.0
+2018-12-31,ABBV,"LIDDY, EDWARD M",Director,True,Stock Equivalent Units,buy,352.0,92.19,32450.879999999997
+2018-12-31,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,74.0,92.19,6822.0599999999995
+2018-12-31,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,368.0,92.19,33925.92
+2019-02-28,ABBV,"GOSEBRUCH, HENRY O","EVP, Chief Strategy Officer",True,"Common stock, $0.01 par value",sell,22956.0,79.41,1822935.96
+2019-02-28,ABBV,"RICHMOND, TIMOTHY J.","EVP, Chief HR Officer",True,"Common stock, $0.01 par value",sell,12345.0,79.41,980316.45
+2019-02-28,ABBV,"SALEKI-GERHARDT, AZITA","EVP, Operations",True,"Common stock, $0.01 par value",sell,12569.0,79.41,998104.2899999999
+2019-02-28,ABBV,"MICHAEL, ROBERT A.","SVP, Chief Financial Officer",True,"Common stock, $0.01 par value",sell,3206.0,79.41,254588.46
+2019-02-28,ABBV,"CHASE, WILLIAM J","EVP, Finance & Administration",True,"Common stock, $0.01 par value",sell,27276.0,79.41,2165987.1599999997
+2019-02-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common stock, $0.01 par value",sell,72925.0,79.41,5790974.25
+2019-02-28,ABBV,"ALBAN, CARLOS",Vice Chairman,True,"Common Stock, $0.01 par value",sell,24125.0,79.41,1915766.25
+2019-02-28,ABBV,"STEWART, JEFFREY RYAN","SVP, US Commercial Operations",True,"Common stock, $0.01 par value",sell,6907.0,79.41,548484.87
+2019-02-28,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,"Common stock, $0.01 par value",sell,26710.0,79.41,2121041.1
+2019-02-28,ABBV,"SCHUMACHER, LAURA J",Vice Chairman,True,"Common stock, $0.01 par value",sell,24275.0,79.41,1927677.75
+2019-02-28,ABBV,"DURKIN, BRIAN L","VP, Controller",True,"Common stock, $0.01 par value",sell,758.0,79.41,60192.78
+2019-03-05,ABBV,"SALEKI-GERHARDT, AZITA","EVP, Operations",True,"Common stock, $0.01 par value",sell,15797.0,79.0327,1248479.5619
+2019-03-14,ABBV,"SCHUMACHER, LAURA J",Vice Chairman,True,"Common Stock, $0.01 par value",sell,25000.0,80.0,2000000.0
+2019-03-25,ABBV,"DURKIN, BRIAN L","VP, Controller",True,"Common Stock, $0.01 par value",sell,475.0,79.69,37852.75
+2019-03-31,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,85.0,80.59,6850.150000000001
+2019-03-31,ABBV,"LIDDY, EDWARD M",Director,True,Stock Equivalent Units,buy,403.0,80.59,32477.77
+2019-03-31,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,421.0,80.59,33928.39
+2019-06-26,ABBV,"RAPP, EDWARD J",Director,True,"Common Stock, $0.01 par value",buy,7500.0,67.3,504750.0
+2019-06-26,ABBV,"CHASE, WILLIAM J","EVP, Finance & Administration",True,"Common Stock, $0.01 par value",buy,30400.0,67.3,2045920.0
+2019-06-26,ABBV,"AUSTIN, ROXANNE S",Director,True,"Common Stock, $0.01 par value",buy,11500.0,67.5,776250.0
+2019-06-30,ABBV,"LIDDY, EDWARD M",Director,True,Stock Equivalent Units,buy,446.0,72.72,32433.12
+2019-06-30,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,94.0,72.72,6835.68
+2019-06-30,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,467.0,72.72,33960.24
+2019-07-25,ABBV,"DURKIN, BRIAN L","VP, Controller",True,"Common Stock, $0.01 par value",sell,613.0,67.46,41352.979999999996
+2019-07-29,ABBV,"GOSEBRUCH, HENRY O","EVP, Chief Strategy Officer",True,"Common Stock, $0.01 par value",buy,30000.0,67.2795,2018385.0
+2019-07-30,ABBV,"AUSTIN, ROXANNE S",Director,True,"Common Stock, $0.01 par value",buy,10000.0,66.35,663500.0
+2019-07-31,ABBV,"AUSTIN, ROXANNE S",Director,True,"Common Stock, $0.01 par value",buy,30000.0,66.023,1980690.0
+2019-08-01,ABBV,"AUSTIN, ROXANNE S",Director,True,"Common stock, $0.01 par value",buy,25000.0,65.656,1641400.0000000002
+2019-08-16,ABBV,"STEWART, JEFFREY RYAN","SVP, US Commercial Operations",True,"Common stock, $0.01 par value",buy,15552.0,64.4399,1002169.3248
+2019-08-29,ABBV,"DONOGHOE, NICHOLAS","SVP, Enterprise Innovation",True,"Common stock, $0.01 par value",buy,7525.0,66.187,498057.175
+2019-09-16,ABBV,"SCHUMACHER, LAURA J",Vice Chairman,True,"Common stock, $0.01 par value",buy,25000.0,70.4209,1760522.5
+2019-09-27,ABBV,"RICHMOND, TIMOTHY J.","EVP, Chief HR Officer",True,"Common stock, $0.01 par value",sell,15515.0,75.016,1163873.24
+2019-09-30,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,449.0,75.72,33998.28
+2019-09-30,ABBV,"LIDDY, EDWARD M",Director,True,Stock Equivalent Units,buy,429.0,75.72,32483.88
+2019-09-30,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,90.0,75.72,6814.8
+2019-12-10,ABBV,"STEWART, JEFFREY RYAN","SVP, US Commercial Operations",True,"Common Stock, $0.01 par value",sell,1713.0,86.44,148071.72
+2019-12-31,ABBV,"LIDDY, EDWARD M",Director,True,Stock Equivalent Units,buy,367.0,88.54,32494.180000000004
+2019-12-31,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Unites,buy,77.0,88.54,6817.580000000001
+2019-12-31,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,384.0,88.54,33999.36
+2020-01-02,ABBV,"DONOGHOE, NICHOLAS","SVP, Enterprise Innovation",True,"Common stock, $0.01 par value",sell,902.0,88.54,79863.08
+2020-02-28,ABBV,"DONOGHOE, NICHOLAS","SVP, Enterprise Innovation",True,"Common Stock, $0.01 par value",sell,2355.0,85.42,201164.1
+2020-02-28,ABBV,"DURKIN, BRIAN L","VP, Controller",True,"Common Stock, $0.01 par value",sell,1941.0,85.42,165800.22
+2020-02-28,ABBV,"MICHAEL, ROBERT A.","EVP, Chief Financial Officer",True,"Common Stock, $0.01 par value",sell,7438.0,85.42,635353.96
+2020-02-28,ABBV,"ALBAN, CARLOS",Vice Chairman,True,"Common Stock, $0.01 par value",sell,32092.0,85.42,2741298.64
+2020-02-28,ABBV,"GOSEBRUCH, HENRY O","EVP, Chief Strategy Officer",True,"Common Stock, $0.01 par value",sell,26038.0,85.42,2224165.96
+2020-02-28,ABBV,"HUDSON, THOMAS J","SVP, R&D and CSO",True,"Common Stock, $0.01 par value",sell,5477.0,85.42,467845.34
+2020-02-28,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,"Common Stock, $0.01 par value",sell,33492.0,85.42,2860886.64
+2020-02-28,ABBV,"SALEKI-GERHARDT, AZITA","EVP, Operations",True,"Common Stock, $0.01 par value",sell,16342.0,85.42,1395933.6400000001
+2020-02-28,ABBV,"SCHUMACHER, LAURA J",Vice Chairman,True,"Common Stock, $0.01 par value",sell,33745.0,85.42,2882497.9
+2020-02-28,ABBV,"STEWART, JEFFREY RYAN","SVP, US Commercial Operations",True,"Common Stock, $0.01 par value",sell,9703.0,85.42,828830.26
+2020-02-28,ABBV,"RICHMOND, TIMOTHY J.","EVP, Chief HR Officer",True,"Common Stock, $0.01 par value",sell,15462.0,85.42,1320764.04
+2020-02-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common Stock, $0.01 par value",sell,88719.0,85.42,7578376.98
+2020-03-03,ABBV,"RAPP, EDWARD J",Director,True,"Common Stock, $0.01 par value",buy,2875.0,87.8668,252617.05
+2020-03-18,ABBV,"DURKIN, BRIAN L","VP, Controller",True,"Common Stock, $0.01 par value",buy,2200.0,68.184,150004.8
+2020-03-20,ABBV,"DURKIN, BRIAN L","VP, Controller",True,"Common Stock, $0.01 par value",buy,750.0,69.0,51750.0
+2020-03-20,ABBV,"DURKIN, BRIAN L","VP, Controller",True,"Common Stock, $0.01 par value",buy,1550.0,69.0,106950.0
+2020-03-20,ABBV,"DURKIN, BRIAN L","VP, Controller",True,"Common Stock, $0.01 par value",buy,800.0,67.5,54000.0
+2020-03-30,ABBV,"DURKIN, BRIAN L","VP, Controller",True,"Common Stock, $0.01 par value",buy,750.0,69.0,51750.0
+2020-03-31,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,90.0,76.19,6857.099999999999
+2020-03-31,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,446.0,76.19,33980.74
+2020-03-31,ABBV,"LIDDY, EDWARD M",Director,True,Stock Equivalent Units,buy,426.0,76.19,32456.94
+2020-05-05,ABBV,"RICHMOND, TIMOTHY J.","EVP, Chief HR Officer",True,"Common Stock, $0.01 par value",sell,19445.0,85.0,1652825.0
+2020-05-12,ABBV,"STEWART, JEFFREY RYAN","SVP, US Commercial Operations",True,"Common Stock, $0.01 par value",sell,23024.0,90.0022,2072210.6528
+2020-06-30,ABBV,"LIDDY, EDWARD M",Director,True,Stock Equivalent Units,buy,335.0,98.18,32890.3
+2020-06-30,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,350.0,98.18,34363.0
+2020-06-30,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,71.0,98.18,6970.780000000001
+2020-07-07,ABBV,"ALBAN, CARLOS",Vice Chairman,True,"Common Stock, $0.01 par value",sell,30325.0,100.0018,3032554.585
+2020-07-07,ABBV,"ALBAN, CARLOS",Vice Chairman,True,"Common Stock, $0.01 par value",sell,23000.0,100.0,2300000.0
+2020-09-30,ABBV,"LIDDY, EDWARD M",Director,True,Stock Equivalent Units,buy,385.0,87.59,33722.15
+2020-09-30,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,402.0,87.59,35211.18
+2020-09-30,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,82.0,87.59,7182.38
+2020-11-04,ABBV,"SALEKI-GERHARDT, AZITA","EVP, Operations",True,"Common Stock, $0.01 par value",sell,4800.0,93.61,449328.0
+2020-11-04,ABBV,"SALEKI-GERHARDT, AZITA","EVP, Operations",True,"Common Stock, $0.01 par value",buy,4800.0,24.2082,116199.36
+2020-11-04,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,"Common Stock, $0.01 par value",sell,90679.0,93.61,8488461.19
+2020-11-09,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common Stock, $0.01 par value",sell,37450.0,95.74,3585463.0
+2020-11-10,ABBV,"SALEKI-GERHARDT, AZITA","EVP, Operations",True,"Common Stock, $0.01 par value",sell,17426.0,98.0,1707748.0
+2020-11-12,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common Stock, $0.01 par value",buy,109097.0,58.88,6423631.36
+2020-11-12,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common Stock, $0.01 par value",sell,16171.0,97.4889,1576493.0019
+2020-11-12,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common Stock, $0.01 par value",sell,177983.0,97.0615,17275296.9545
+2020-11-12,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common Stock, $0.01 par value",buy,85057.0,54.86,4666227.02
+2020-11-16,ABBV,"ALBAN, CARLOS",Vice Chairman,True,"Common Stock, $0.01 par value",sell,115830.0,100.0,11583000.0
+2020-11-16,ABBV,"ALBAN, CARLOS",Vice Chairman,True,"Common Stock, $0.01 par value",buy,115830.0,35.88,4155980.4000000004
+2020-11-20,ABBV,"GOSEBRUCH, HENRY O","EVP, Chief Strategy Officer",True,"Common Stock, $0.01 par shar",sell,33100.0,99.49,3293119.0
+2020-11-20,ABBV,"GOSEBRUCH, HENRY O","EVP, Chief Strategy Officer",True,"Common Stock, $0.01 par share",sell,6900.0,98.83,681927.0
+2020-11-27,ABBV,"RICHMOND, TIMOTHY J.","EVP, Chief HR Officer",True,"Common Stock, $0.01 par value",buy,51990.0,51.42,2673325.8000000003
+2020-11-27,ABBV,"RICHMOND, TIMOTHY J.","EVP, Chief HR Officer",True,"Common Stock, $0.01 par value",sell,51990.0,105.0,5458950.0
+2020-12-10,ABBV,"STEWART, JEFFREY RYAN","SVP, US Commercial Operations",True,"Common Stock, $0.01 par value",sell,1791.0,108.67,194627.97
+2020-12-29,ABBV,"STEWART, JEFFREY RYAN","EVP, Commercial Operations",True,"Common Stock, $0.01 par value",sell,25290.0,105.0,2655450.0
+2020-12-29,ABBV,"STEWART, JEFFREY RYAN","EVP, Commercial Operations",True,"Common Stock, $0.01 par value",buy,25290.0,51.42,1300411.8
+2020-12-31,ABBV,"LIDDY, EDWARD M",Director,True,Stock Equivalent Units,buy,314.0,107.15,33645.1
+2020-12-31,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,328.0,107.05,35112.4
+2020-12-31,ABBV,"STROM, CARRIE C",SVP & Pres Global Allerg Aesth,True,"Common Stock, $0.01 par value",sell,2576.0,107.15,276018.4
+2020-12-31,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,67.0,107.15,7179.05
+2021-02-22,ABBV,"SORG, ELAINE K.","SVP, US Commercial Operations",True,"Common Stock, $0.01 par value",sell,19995.0,104.71,2093676.45
+2021-02-22,ABBV,"SORG, ELAINE K.","SVP, US Commercial Operations",True,"Common Stock, $0.01 par value",sell,200.0,105.28,21056.0
+2021-02-22,ABBV,"SORG, ELAINE K.","SVP, US Commercial Operations",True,"Common Stock, $0.01 par value",buy,5192.0,79.02,410271.83999999997
+2021-02-22,ABBV,"SORG, ELAINE K.","SVP, US Commercial Operations",True,"Common Stock, $0.01 par value",buy,15003.0,93.5,1402780.5
+2021-02-28,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common Stock, $0.01 par value",sell,74384.0,107.74,8014132.159999999
+2021-02-28,ABBV,"STEWART, JEFFREY RYAN","SVP, US Commercial Operations",True,"Common Stock, $0.01 par value",sell,10957.0,107.74,1180507.18
+2021-02-28,ABBV,"SALEKI-GERHARDT, AZITA","EVP, Operations",True,"Common Stock, $0.01 par value",sell,15785.0,107.74,1700675.9
+2021-02-28,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,"Common Stock, $0.01 par value",sell,29077.0,107.74,3132755.98
+2021-02-28,ABBV,"HUDSON, THOMAS J","SVP, R&D and CSO",True,"Common Stock, $0.01 par value",sell,7740.0,107.74,833907.6
+2021-02-28,ABBV,"MICHAEL, ROBERT A.","EVP, Chief Financial Officer",True,"Common Stock, $0.01 par value",sell,14006.0,107.74,1509006.44
+2021-02-28,ABBV,"RICHMOND, TIMOTHY J.","EVP, Chief HR Officer",True,"Common Stock, $0.01 par value",sell,15524.0,107.74,1672555.76
+2021-02-28,ABBV,"SORG, ELAINE K.","SVP, US Commercial Operations",True,"Common Stock, $0.01 par value",sell,6716.0,107.74,723581.84
+2021-02-28,ABBV,"DURKIN, BRIAN L","VP, Controller",True,"Common Stock, $0.01 par value",sell,2392.0,107.74,257714.08
+2021-02-28,ABBV,"SCHUMACHER, LAURA J",Vice Chairman,True,"Common Stock, $0.01 par value",sell,29203.0,107.74,3146331.2199999997
+2021-02-28,ABBV,"GOSEBRUCH, HENRY O","EVP, Chief Strategy Officer",True,"Common Stock, $0.01 par value",sell,22833.0,107.74,2460027.42
+2021-03-01,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common Stock, $0.01 par value",sell,631.0,109.325,68984.075
+2021-03-01,ABBV,"SORG, ELAINE K.","SVP, US Commercial Operations",True,"Common Stock, $0.01 par value",sell,4219.0,108.6052,458205.33879999997
+2021-03-01,ABBV,"SORG, ELAINE K.","SVP, US Commercial Operations",True,"Common Stock, $0.01 par value",sell,4221.0,108.6086,458436.9006
+2021-03-01,ABBV,"RICHMOND, TIMOTHY J.","EVP, Chief HR Officer",True,"Common Stock, $0.01 par value",sell,19514.0,108.5908,2119040.8712
+2021-03-01,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common Stock, $0.01 par value",sell,169482.0,108.6087,18407219.6934
+2021-03-01,ABBV,"STEWART, JEFFREY RYAN","SVP, US Commercial Operations",True,"Common Stock, $0.01 par value",sell,13773.0,108.5875,1495575.6375000002
+2021-03-02,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,Option (Right To Buy),sell,170113.0,54.86,9332399.18
+2021-03-02,ABBV,"STROM, CARRIE C",SVP & Pres Global Allerg Aesth,True,"Common Stock, $0.01 par value",sell,810.0,108.41,87812.09999999999
+2021-03-02,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common Stock, $0.01 par value",buy,170113.0,54.86,9332399.18
+2021-03-05,ABBV,"STROM, CARRIE C",SVP & Pres Global Allerg Aesth,True,"Common Stock, $0.01 par value",sell,448.0,105.65,47331.200000000004
+2021-03-06,ABBV,"STROM, CARRIE C",SVP & Pres Global Allerg Aesth,True,"Common Stock, $0.01 par value",sell,356.0,106.7,37985.200000000004
+2021-03-07,ABBV,"STROM, CARRIE C",SVP & Pres Global Allerg Aesth,True,"Common Stock, $0.01 par value",sell,123.0,106.7,13124.1
+2021-03-31,ABBV,"LIDDY, EDWARD M",Director,True,Stock Equivalent Units,buy,311.0,108.22,33656.42
+2021-03-31,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,66.0,108.22,7142.5199999999995
+2021-03-31,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,325.0,108.22,35171.5
+2021-05-03,ABBV,"STROM, CARRIE C",SVP & Pres Global Allerg Aesth,True,"Common Stock, $0.01 par value",sell,4184.0,112.4,470281.60000000003
+2021-05-03,ABBV,"STROM, CARRIE C",SVP & Pres Global Allerg Aesth,True,"Common Stock, $0.01 par value",buy,4184.0,41.39,173175.76
+2021-05-07,ABBV,"STROM, CARRIE C",SVP & Pres Global Allerg Aesth,True,"Common Stock, $0.01 par value",sell,234.0,116.08,27162.72
+2021-05-07,ABBV,"ALPERN, ROBERT J",Director,True,"Common Stock, $0.01 par value",buy,1681.0,115.96,194928.75999999998
+2021-05-11,ABBV,"STROM, CARRIE C",SVP & Pres Global Allerg Aesth,True,"Common Stock, $0.01 par value",sell,2887.0,116.22,335527.14
+2021-05-24,ABBV,"SALEKI-GERHARDT, AZITA","EVP, Operations",True,"Common Stock, $0.01 par value",sell,77863.0,116.2431,9051036.4953
+2021-05-24,ABBV,"SALEKI-GERHARDT, AZITA","EVP, Operations",True,"Common Stock, $0.01 par value",buy,12400.0,29.23,362452.0
+2021-05-24,ABBV,"SALEKI-GERHARDT, AZITA","EVP, Operations",True,"Common Stock, $0.01 par value",buy,74520.0,35.88,2673777.6
+2021-05-24,ABBV,"SALEKI-GERHARDT, AZITA","EVP, Operations",True,"Common Stock, $0.01 par value",sell,9057.0,116.7049,1056996.2793
+2021-06-30,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,312.0,112.67,35153.04
+2021-06-30,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,63.0,112.67,7098.21
+2021-06-30,ABBV,"LIDDY, EDWARD M",Director,True,Stock Equivalent Units,buy,284.0,112.67,31998.28
+2021-08-23,ABBV,"STROM, CARRIE C",SVP & Pres Global Allerg Aesth,True,"Common Stock, $0.01 par value",sell,5057.0,120.0,606840.0
+2021-08-23,ABBV,"SORG, ELAINE K.","SVP, US Commercial Operations",True,"Common Stock, $0.01 par value",buy,7080.0,114.36,809668.8
+2021-08-23,ABBV,"SORG, ELAINE K.","SVP, US Commercial Operations",True,"Common Stock, $0.01 par value",sell,6000.0,120.0,720000.0
+2021-08-23,ABBV,"SORG, ELAINE K.","SVP, US Commercial Operations",True,"Common Stock, $0.01 par value",sell,7080.0,120.0,849600.0
+2021-09-30,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,326.0,107.87,35165.62
+2021-09-30,ABBV,"LIDDY, EDWARD M",Director,True,Stock Equivalent Units,buy,266.0,107.87,28693.420000000002
+2021-09-30,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,66.0,107.87,7119.42
+2021-11-02,ABBV,"AUSTIN, ROXANNE S",Director,True,"Common Stock, $0.01 par value",sell,6844.0,115.23,788634.12
+2021-11-02,ABBV,"AUSTIN, ROXANNE S",Director,True,"Common Stock, $0.01 par value",sell,25000.0,116.11,2902750.0
+2021-11-02,ABBV,"AUSTIN, ROXANNE S",Director,True,"Common Stock, $0.01 par value",sell,20000.0,117.1,2342000.0
+2021-11-03,ABBV,"AUSTIN, ROXANNE S",Director,True,"Common Stock, $0.01 par value",sell,20000.0,117.23,2344600.0
+2021-12-06,ABBV,"RICHMOND, TIMOTHY J.","EVP, Chief HR Officer",True,"Common Stock, $0.01 par value",buy,50350.0,58.88,2964608.0
+2021-12-06,ABBV,"RICHMOND, TIMOTHY J.","EVP, Chief HR Officer",True,"Common Stock, $0.01 par value",sell,50350.0,120.0,6042000.0
+2021-12-09,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common Stock, $0.01 par value",sell,109624.0,123.4758,13535911.099200001
+2021-12-09,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common Stock, $0.01 par value",sell,64476.0,122.8012,7917730.1712
+2021-12-09,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common Stock, $0.01 par value",buy,174100.0,61.36,10682776.0
+2021-12-09,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,Option (Right To Buy),sell,174100.0,61.36,10682776.0
+2021-12-10,ABBV,"SORG, ELAINE K.","SVP, US Commercial Operations",True,"Common Stock, $0.01 par value",sell,5137.0,124.15,637758.55
+2021-12-10,ABBV,"STEWART, JEFFREY RYAN","EVP, Chief Commercial Officer",True,"Common Stock, $0.01 par value",sell,1713.0,124.15,212668.95
+2021-12-13,ABBV,"SORG, ELAINE K.","SVP, US Commercial Operations",True,"Common Stock, $0.01 par value",sell,3229.0,125.85,406369.64999999997
+2021-12-15,ABBV,"STEWART, JEFFREY RYAN","EVP, Chief Commercial Officer",True,"Common Stock, $0.01 par value",sell,2152.0,128.0,275456.0
+2021-12-17,ABBV,"SCHUMACHER, LAURA J",Vice Chairman,True,"Common Stock, $0.01 par value",sell,177556.0,130.2313,23123348.702800002
+2021-12-17,ABBV,"SCHUMACHER, LAURA J",Vice Chairman,True,"Common Stock, $0.01 par value",sell,4114.0,130.6099,537329.1286
+2021-12-17,ABBV,"SCHUMACHER, LAURA J",Vice Chairman,True,"Common Stock, $0.01 par value",buy,78450.0,54.86,4303767.0
+2021-12-17,ABBV,"SCHUMACHER, LAURA J",Vice Chairman,True,"Common Stock, $0.01 par value",buy,103220.0,58.88,6077593.600000001
+2021-12-17,ABBV,"SCHUMACHER, LAURA J",Vice Chairman,True,Option (Right To Buy),sell,78450.0,54.86,4303767.0
+2021-12-17,ABBV,"SCHUMACHER, LAURA J",Vice Chairman,True,Option (Right To Buy),sell,103220.0,58.88,6077593.600000001
+2021-12-20,ABBV,"DURKIN, BRIAN L","VP, Controller",True,Option (right to buy),sell,7180.0,61.36,440564.8
+2021-12-20,ABBV,"DURKIN, BRIAN L","VP, Controller",True,"Common Stock, $0.01 par value",sell,11790.0,128.51,1515132.9
+2021-12-20,ABBV,"DURKIN, BRIAN L","VP, Controller",True,"Common Stock, $0.01 par value",buy,7180.0,61.36,440564.8
+2021-12-31,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,260.0,135.4,35204.0
+2021-12-31,ABBV,"LIDDY, EDWARD M",Director,True,Stock Equivalent Units,buy,212.0,135.4,28704.800000000003
+2021-12-31,ABBV,"STROM, CARRIE C",SVP & Pres Global Allerg Aesth,True,"Common Stock, $0.01 par value",sell,10336.0,135.93,1404972.48
+2021-12-31,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,53.0,135.4,7176.200000000001
+2022-02-07,ABBV,"STROM, CARRIE C",SVP & Pres Global Allerg Aesth,True,"Common Stock, $0.01 par value",buy,4184.0,47.27,197777.68000000002
+2022-02-07,ABBV,"STROM, CARRIE C",SVP & Pres Global Allerg Aesth,True,"Common Stock, $0.01 par value",sell,2396.0,141.17,338243.31999999995
+2022-02-25,ABBV,"SALEKI-GERHARDT, AZITA","EVP, Operations",True,"Common Stock, $0.01 par value",sell,22108.0,149.54,3306030.32
+2022-02-25,ABBV,"GOSEBRUCH, HENRY O","EVP, Chief Strategy Officer",True,"Common Stock, $0.01 par value",sell,30156.0,149.54,4509528.24
+2022-02-25,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,"Common Stock, $0.01 par value",sell,38857.0,149.54,5810675.779999999
+2022-02-25,ABBV,"STEWART, JEFFREY RYAN","EVP, Chief Commercial Officer",True,"Common Stock, $0.01 par value",sell,17093.0,149.54,2556087.2199999997
+2022-02-25,ABBV,"GONZALEZ, RICHARD A","Director, Chairman of the Board and CEO",True,"Common Stock, $0.01 par value",sell,102812.0,149.54,15374506.479999999
+2022-02-25,ABBV,"STROM, CARRIE C",SVP & Pres Global Allerg Aesth,True,"Common Stock, $0.01 par value",sell,2840.0,149.54,424693.6
+2022-02-25,ABBV,"MICHAEL, ROBERT A.",Vice Chairman,True,"Common Stock, $0.01 par value",sell,34286.0,149.54,5127128.4399999995
+2022-02-25,ABBV,"DURKIN, BRIAN L","VP, Controller",True,"Common Stock, $0.01 par value",sell,7589.0,149.54,1134859.06
+2022-02-25,ABBV,"RICHMOND, TIMOTHY J.","EVP, Chief HR Officer",True,"Common Stock, $0.01 par value",sell,21027.0,149.54,3144377.5799999996
+2022-02-25,ABBV,"SCHUMACHER, LAURA J",Vice Chairman,True,"Common Stock, $0.01 par value",sell,40490.0,149.54,6054874.6
+2022-02-25,ABBV,"SORG, ELAINE K.","SVP, US Commercial Operations",True,"Common Stock, $0.01 par value",sell,11125.0,149.54,1663632.5
+2022-02-25,ABBV,"HUDSON, THOMAS J","SVP, R&D and CSO",True,"Common Stock, $0.01 par value",sell,13408.0,149.54,2005032.3199999998
+2022-03-01,ABBV,"SORG, ELAINE K.","SVP, US Commercial Operations",True,"Common Stock, $0.01 par value",sell,2333.0,147.5922,344332.6026
+2022-03-01,ABBV,"GOSEBRUCH, HENRY O","EVP, Chief Strategy Officer",True,"Common Stock, $0.01 par value",sell,8303.0,148.6224,1234011.7872
+2022-03-01,ABBV,"MICHAEL, ROBERT A.",Vice Chairman,True,"Common Stock, $0.01 par value",sell,4236.0,149.0633,631432.1388
+2022-03-01,ABBV,"STEWART, JEFFREY RYAN","EVP, Chief Commercial Officer",True,"Common Stock, $0.01 par value",sell,6229.0,147.4276,918326.5204
+2022-03-01,ABBV,"RICHMOND, TIMOTHY J.","EVP, Chief HR Officer",True,"Common Stock, $0.01 par value",sell,14424.0,148.5854,2143195.8096
+2022-03-01,ABBV,"STEWART, JEFFREY RYAN","EVP, Chief Commercial Officer",True,"Common Stock, $0.01 par value",sell,12659.0,148.4935,1879779.2165
+2022-03-01,ABBV,"SORG, ELAINE K.","SVP, US Commercial Operations",True,"Common Stock, $0.01 par value",sell,700.0,149.0729,104351.03
+2022-03-01,ABBV,"RICHMOND, TIMOTHY J.","EVP, Chief HR Officer",True,"Common Stock, $0.01 par value",sell,2627.0,149.0883,391654.9641
+2022-03-01,ABBV,"RICHMOND, TIMOTHY J.","EVP, Chief HR Officer",True,"Common Stock, $0.01 par value",sell,9381.0,147.5235,1383917.9535
+2022-03-01,ABBV,"STEWART, JEFFREY RYAN","EVP, Chief Commercial Officer",True,"Common Stock, $0.01 par value",sell,2600.0,149.0357,387492.81999999995
+2022-03-01,ABBV,"SORG, ELAINE K.","SVP, US Commercial Operations",True,"Common Stock, $0.01 par value",sell,3451.0,148.5897,512783.0547
+2022-03-01,ABBV,"GOSEBRUCH, HENRY O","EVP, Chief Strategy Officer",True,"Common Stock, $0.01 par value",sell,15733.0,146.8105,2309769.5965
+2022-03-01,ABBV,"GOSEBRUCH, HENRY O","EVP, Chief Strategy Officer",True,"Common Stock, $0.01 par value",sell,5167.0,147.6015,762656.9504999999
+2022-03-01,ABBV,"GOSEBRUCH, HENRY O","EVP, Chief Strategy Officer",True,"Common Stock, $0.01 par value",sell,4000.0,148.706,594824.0
+2022-03-01,ABBV,"GOSEBRUCH, HENRY O","EVP, Chief Strategy Officer",True,"Common Stock, $0.01 par value",sell,1101.0,149.1441,164207.6541
+2022-03-01,ABBV,"MICHAEL, ROBERT A.",Vice Chairman,True,"Common Stock, $0.01 par value",sell,26937.0,148.4901,3999877.8237000005
+2022-03-01,ABBV,"GOSEBRUCH, HENRY O","EVP, Chief Strategy Officer",True,"Common Stock, $0.01 par value",sell,100.0,149.381,14938.1
+2022-03-01,ABBV,"GOSEBRUCH, HENRY O","EVP, Chief Strategy Officer",True,"Common Stock, $0.01 par value",sell,5596.0,147.5369,825616.4924
+2022-03-01,ABBV,"MICHAEL, ROBERT A.",Vice Chairman,True,"Common Stock, $0.01 par value",sell,11932.0,147.4134,1758936.6888
+2022-03-02,ABBV,"STROM, CARRIE C",SVP & Pres Global Allerg Aesth,True,"Common Stock, $0.01 par value",sell,810.0,147.69,119628.9
+2022-03-05,ABBV,"STROM, CARRIE C",SVP & Pres Global Allerg Aesth,True,"Common Stock, $0.01 par value",sell,448.0,150.56,67450.88
+2022-03-06,ABBV,"STROM, CARRIE C",SVP & Pres Global Allerg Aesth,True,"Common Stock, $0.01 par value",sell,355.0,150.56,53448.8
+2022-03-09,ABBV,"DURKIN, BRIAN L","VP, Controller",True,"Common Stock, $0.01 par value",sell,11682.0,150.0082,1752395.7924
+2022-03-09,ABBV,"DURKIN, BRIAN L","VP, Controller",True,"Common Stock, $0.01 par value",sell,6946.0,150.0008,1041905.5568
+2022-03-09,ABBV,"DURKIN, BRIAN L","VP, Controller",True,Option (Right to Buy),sell,11682.0,79.02,923111.6399999999
+2022-03-09,ABBV,"DURKIN, BRIAN L","VP, Controller",True,"Common Stock, $0.01 par value",buy,11682.0,79.02,923111.6399999999
+2022-03-24,ABBV,"STEWART, JEFFREY RYAN","EVP, Chief Commercial Officer",True,"Common Stock, $0.01 par value",sell,27690.0,159.2046,4408375.374
+2022-03-24,ABBV,"STEWART, JEFFREY RYAN","EVP, Chief Commercial Officer",True,"Common Stock, $0.01 par value",buy,27690.0,58.88,1630387.2000000002
+2022-03-24,ABBV,"STEWART, JEFFREY RYAN","EVP, Chief Commercial Officer",True,Option (Right to Buy),sell,27690.0,58.88,1630387.2000000002
+2022-03-31,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,217.0,162.11,35177.87
+2022-03-31,ABBV,"LIDDY, EDWARD M",Director,True,Stock Equivalent Units,buy,177.0,162.11,28693.47
+2022-03-31,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,44.0,162.11,7132.84
+2022-05-06,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,"Common Stock, $0.01 par value",buy,74309.0,54.44,4045381.96
+2022-05-06,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,"Common Stock, $0.01 par value",buy,25691.0,54.86,1409408.26
+2022-05-06,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,"Common Stock, $0.01 par value",sell,40176.0,150.1,6030417.6
+2022-05-06,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,"Common Stock, $0.01 par value",sell,45988.0,151.13,6950166.4399999995
+2022-05-06,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,Option (Right to Buy),sell,74309.0,54.44,4045381.96
+2022-05-06,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,Option (Right to Buy),sell,25691.0,54.86,1409408.26
+2022-05-06,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,"Common Stock, $0.01 par value",sell,13836.0,151.78,2100028.08
+2022-05-07,ABBV,"STROM, CARRIE C",SVP & Pres Global Allerg Aesth,True,"Common Stock, $0.01 par value",sell,234.0,152.83,35762.22
+2022-05-09,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,"Common Stock, $0.01 par value",sell,31714.0,150.63,4777079.82
+2022-05-09,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,"Common Stock, $0.01 par value",buy,33701.0,58.88,1984314.8800000001
+2022-05-09,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,"Common Stock, $0.01 par value",sell,47215.0,149.53,7060058.95
+2022-05-09,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,Option (Right to Buy),sell,66299.0,54.86,3637163.14
+2022-05-09,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,"Common Stock, $0.01 par value",buy,66299.0,54.86,3637163.14
+2022-05-09,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,Option (Right to Buy),sell,33701.0,58.88,1984314.8800000001
+2022-05-09,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,"Common Stock, $0.01 par value",sell,21071.0,151.42,3190570.82
+2022-05-10,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,"Common Stock, $0.01 par value",sell,28536.0,152.24,4344320.640000001
+2022-05-10,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,Option (Right to Buy),sell,29221.0,61.36,1793000.56
+2022-05-10,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,"Common Stock, $0.01 par value",sell,48591.0,152.83,7426162.53
+2022-05-10,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,"Common Stock, $0.01 par value",buy,29221.0,61.36,1793000.56
+2022-05-10,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,"Common Stock, $0.01 par value",buy,70779.0,58.88,4167467.52
+2022-05-10,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,"Common Stock, $0.01 par value",sell,22873.0,151.16,3457482.6799999997
+2022-05-10,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,Option (Right to Buy),sell,70779.0,58.88,4167467.52
+2022-05-11,ABBV,"STROM, CARRIE C",SVP & Pres Global Allerg Aesth,True,"Common Stock, $0.01 par value",sell,2876.0,152.09,437410.84
+2022-05-16,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,"Common Stock, $0.01 par value",sell,53327.0,154.8,8255019.600000001
+2022-05-16,ABBV,"GOSEBRUCH, HENRY O","EVP, Chief Strategy Officer",True,Option (Right to Buy),sell,83960.0,54.86,4606045.6
+2022-05-16,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,Option (Right to Buy),sell,70879.0,61.36,4349135.44
+2022-05-16,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,"Common Stock, $0.01 par value",buy,70879.0,61.36,4349135.44
+2022-05-16,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,"Common Stock, $0.01 par value",sell,400.0,155.44,62176.0
+2022-05-16,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,"Common Stock, $0.01 par value",buy,29121.0,79.02,2301141.42
+2022-05-16,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,Option (Right to Buy),sell,29121.0,79.2,2306383.2
+2022-05-16,ABBV,"GOSEBRUCH, HENRY O","EVP, Chief Strategy Officer",True,"Common Stock, $0.01 par value",buy,83960.0,54.86,4606045.6
+2022-05-16,ABBV,"GOSEBRUCH, HENRY O","EVP, Chief Strategy Officer",True,"Common Stock, $0.01 par value",sell,83960.0,155.0,13013800.0
+2022-05-16,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,"Common Stock, $0.01 par value",sell,46273.0,154.04,7127892.92
+2022-05-17,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,Option (Right to Buy),sell,64636.0,93.5,6043466.0
+2022-05-17,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,"Common Stock, $0.01 par value",buy,35364.0,79.02,2794463.28
+2022-05-17,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,"Common Stock, $0.01 par value",sell,2100.0,155.27,326067.0
+2022-05-17,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,"Common Stock, $0.01 par value",buy,64636.0,93.5,6043466.0
+2022-05-17,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,"Common Stock, $0.01 par value",sell,43621.0,153.43,6692770.03
+2022-05-17,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,"Common Stock, $0.01 par value",sell,54279.0,154.49,8385562.710000001
+2022-05-17,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,Option (Right to Buy),sell,35364.0,79.02,2794463.28
+2022-05-23,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,"Common Stock, $0.01 par value",buy,46320.0,114.36,5297155.2
+2022-05-23,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,"Common Stock, $0.01 par value",buy,11742.0,93.5,1097877.0
+2022-05-23,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,"Common Stock, $0.01 par value",buy,21739.0,105.92,2302594.88
+2022-05-23,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,"Common Stock, $0.01 par value",sell,68196.0,150.79,10283274.84
+2022-05-23,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,Option (Right to Buy),sell,46320.0,114.36,5297155.2
+2022-05-23,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,Option (Right to Buy),sell,11742.0,93.5,1097877.0
+2022-05-23,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,Option (Right to Buy),sell,21739.0,105.92,2302594.88
+2022-05-23,ABBV,"SEVERINO, MICHAEL",Vice Chairman,True,"Common Stock, $0.01 par value",sell,11605.0,151.53,1758505.65
+2022-06-30,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,237.0,153.16,36298.92
+2022-06-30,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,47.0,153.16,7198.5199999999995
+2022-09-30,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,55.0,134.21,7381.55
+2022-09-30,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,288.0,134.21,38652.48
+2022-12-12,ABBV,"RICHMOND, TIMOTHY J.","EVP, CHIEF HR OFFICER",True,"Common stock, $0.01 par value",buy,42370.0,54.86,2324418.2
+2022-12-12,ABBV,"RICHMOND, TIMOTHY J.","EVP, CHIEF HR OFFICER",True,"Common stock, $0.01 par value",sell,3075.0,164.1,504607.5
+2022-12-12,ABBV,"RICHMOND, TIMOTHY J.","EVP, CHIEF HR OFFICER",True,"Common stock, $0.01 par value",sell,39295.0,163.39,6420410.05
+2022-12-31,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,46.0,161.61,7434.06
+2022-12-31,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,239.0,161.61,38624.79
+2023-02-17,ABBV,"SALEKI-GERHARDT, AZITA","EVP, OPERATIONS",True,"Common Stock, $0.01 par value",sell,14246.0,149.13,2124505.98
+2023-02-17,ABBV,"AUSTIN, ROXANNE S",Director,True,"Common Stock, $0.01 par value",sell,10000.0,150.5,1505000.0
+2023-02-17,ABBV,"SALEKI-GERHARDT, AZITA","EVP, OPERATIONS",True,"Common Stock, $0.01 par value",buy,25000.0,51.42,1285500.0
+2023-02-17,ABBV,"SALEKI-GERHARDT, AZITA","EVP, OPERATIONS",True,Option (Right to Buy),sell,25000.0,51.42,1285500.0
+2023-02-17,ABBV,"SALEKI-GERHARDT, AZITA","EVP, OPERATIONS",True,"Common Stock, $0.01 par value",sell,10754.0,150.05,1613637.7000000002
+2023-02-17,ABBV,"AUSTIN, ROXANNE S",Director,True,"Common Stock, $0.01 par value",sell,6222.0,150.5,936411.0
+2023-02-21,ABBV,"STROM, CARRIE C",SVP & PRES GLOBAL ALLERG AESTH,True,"Common Stock, $0.01 par value",buy,6370.0,67.25,428382.5
+2023-02-21,ABBV,"STROM, CARRIE C",SVP & PRES GLOBAL ALLERG AESTH,True,"Common Stock, $0.01 par value",sell,5615.0,150.71,846236.65
+2023-02-21,ABBV,"STROM, CARRIE C",SVP & PRES GLOBAL ALLERG AESTH,True,"Common Stock, $0.01 par value",sell,7780.0,151.28,1176958.4
+2023-02-21,ABBV,"STROM, CARRIE C",SVP & PRES GLOBAL ALLERG AESTH,True,Option (Right to Buy),sell,6370.0,67.25,428382.5
+2023-02-21,ABBV,"STROM, CARRIE C",SVP & PRES GLOBAL ALLERG AESTH,True,"Common Stock, $0.01 par value",sell,567.0,150.78,85492.26
+2023-02-21,ABBV,"STROM, CARRIE C",SVP & PRES GLOBAL ALLERG AESTH,True,"Common Stock, $0.01 par value",sell,400.0,151.34,60536.0
+2023-02-21,ABBV,"STROM, CARRIE C",SVP & PRES GLOBAL ALLERG AESTH,True,"Common Stock, $0.01 par value",buy,7809.0,56.93,444566.37
+2023-02-21,ABBV,"STROM, CARRIE C",SVP & PRES GLOBAL ALLERG AESTH,True,"Common Stock, $0.01 par value",sell,6533.0,150.74,984784.42
+2023-02-21,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,"Common Stock, $0.01 par value",buy,7364.0,93.5,688534.0
+2023-02-21,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,Option (Right to buy),sell,7364.0,93.5,688534.0
+2023-02-21,ABBV,"SORG, ELAINE K.","SVP, US COMMERCIAL OPERATIONS",True,Option (Right to Buy),sell,15321.0,105.92,1622800.32
+2023-02-21,ABBV,"STROM, CARRIE C",SVP & PRES GLOBAL ALLERG AESTH,True,Option (Right to Buy),sell,7809.0,56.93,444566.37
+2023-02-21,ABBV,"SORG, ELAINE K.","SVP, US COMMERCIAL OPERATIONS",True,"Common Stock, $0.01 par value",sell,6901.0,150.74,1040256.7400000001
+2023-02-21,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,"Common Stock, $0.01 par value",sell,3933.0,151.29,595023.57
+2023-02-21,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,"Common Stock, $0.01 par value",sell,3431.0,150.73,517154.62999999995
+2023-02-21,ABBV,"SORG, ELAINE K.","SVP, US COMMERCIAL OPERATIONS",True,"Common Stock, $0.01 par value",sell,8420.0,151.29,1273861.8
+2023-02-21,ABBV,"SORG, ELAINE K.","SVP, US COMMERCIAL OPERATIONS",True,"Common Stock, $0.01 par value",buy,15321.0,105.92,1622800.32
+2023-02-21,ABBV,"STROM, CARRIE C",SVP & PRES GLOBAL ALLERG AESTH,True,"Common Stock, $0.01 par value",sell,7646.0,151.29,1156763.3399999999
+2023-02-28,ABBV,"GONZALEZ, RICHARD A","Director, CHAIRMAN OF THE BOARD AND CEO",True,"Common Stock, $0.01 par value",sell,113810.0,154.28,17558606.8
+2023-02-28,ABBV,"DURKIN, BRIAN L","VP, CONTROLLER",True,"Common Stock, $0.01 par value",sell,11182.0,154.28,1725158.96
+2023-02-28,ABBV,"MICHAEL, ROBERT A.",VICE CHAIRMAN,True,"Common Stock, $0.01 par value",sell,48335.0,154.28,7457123.8
+2023-02-28,ABBV,"SALEKI-GERHARDT, AZITA","EVP, OPERATIONS",True,"Common Stock, $0.01 par value",sell,33359.0,154.28,5146626.5200000005
+2023-02-28,ABBV,"HUDSON, THOMAS J","SVP, R&D AND CSO",True,"Common Stock, $0.01 par value",sell,27922.0,154.28,4307806.16
+2023-02-28,ABBV,"RICHMOND, TIMOTHY J.","EVP, CHIEF HR OFFICER",True,"Common stock, $0.01 par value",sell,35111.0,154.28,5416925.08
+2023-02-28,ABBV,"STEWART, JEFFREY RYAN","EVP, COMMERCIAL OPERATIONS",True,"Common Stock, $0.01 par value",sell,24910.0,154.28,3843114.8
+2023-02-28,ABBV,"SORG, ELAINE K.","SVP, US COMMERCIAL OPERATIONS",True,"Common Stock, $0.01 par value",sell,19850.0,154.28,3062458.0
+2023-02-28,ABBV,"REENTS, SCOTT T","EVP, CHIEF FINANCIAL OFFICER",True,"Common Stock, $0.01 par value",sell,12683.0,154.28,1956733.24
+2023-02-28,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,"Common Stock, $0.01 par value",sell,9656.0,154.28,1489727.68
+2023-02-28,ABBV,"STROM, CARRIE C",SVP & PRES GLOBAL ALLERG AESTH,True,"Common Stock, $0.01 par value",sell,5762.0,154.28,888961.36
+2023-03-01,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,"Common Stock, $0.01 par value",sell,11330.0,153.06,1734169.8
+2023-03-01,ABBV,"SALEKI-GERHARDT, AZITA","EVP, OPERATIONS",True,"Common Stock, $0.01 par value",sell,9220.0,153.05,1411121.0
+2023-03-01,ABBV,"SORG, ELAINE K.","SVP, US COMMERCIAL OPERATIONS",True,Option (Right to Buy),sell,15003.0,93.5,1402780.5
+2023-03-01,ABBV,"REENTS, SCOTT T","EVP, CHIEF FINANCIAL OFFICER",True,"Common Stock, $0.01 par value",sell,850.0,153.38,130373.0
+2023-03-01,ABBV,"REENTS, SCOTT T","EVP, CHIEF FINANCIAL OFFICER",True,"Common Stock, $0.01 par value",sell,15092.0,153.06,2309981.52
+2023-03-01,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,"Common Stock, $0.01 par value",sell,805.0,153.38,123470.9
+2023-03-01,ABBV,"SALEKI-GERHARDT, AZITA","EVP, OPERATIONS",True,"Common Stock, $0.01 par value",sell,26990.0,155.0,4183450.0
+2023-03-01,ABBV,"SALEKI-GERHARDT, AZITA","EVP, OPERATIONS",True,"Common Stock, $0.01 par value",buy,26990.0,51.42,1387825.8
+2023-03-01,ABBV,"RICHMOND, TIMOTHY J.","EVP, CHIEF HR OFFICER",True,"Common stock, $0.01 par value",sell,27395.0,153.0784,4193582.7679999997
+2023-03-01,ABBV,"SORG, ELAINE K.","SVP, US COMMERCIAL OPERATIONS",True,"Common Stock, $0.01 par value",sell,15003.0,155.0,2325465.0
+2023-03-01,ABBV,"SORG, ELAINE K.","SVP, US COMMERCIAL OPERATIONS",True,"Common Stock, $0.01 par value",buy,15003.0,93.5,1402780.5
+2023-03-01,ABBV,"SALEKI-GERHARDT, AZITA","EVP, OPERATIONS",True,Option (Right to Buy),sell,26990.0,51.42,1387825.8
+2023-03-01,ABBV,"SALEKI-GERHARDT, AZITA","EVP, OPERATIONS",True,"Common Stock, $0.01 par value",sell,780.0,153.39,119644.19999999998
+2023-03-01,ABBV,"RICHMOND, TIMOTHY J.","EVP, CHIEF HR OFFICER",True,"Common stock, $0.01 par value",sell,16746.0,153.62,2572520.52
+2023-03-02,ABBV,"STROM, CARRIE C",SVP & PRES GLOBAL ALLERG AESTH,True,"Common Stock, $0.01 par value",sell,810.0,155.27,125768.70000000001
+2023-03-05,ABBV,"STROM, CARRIE C",SVP & PRES GLOBAL ALLERG AESTH,True,"Common Stock, $0.01 par value",sell,449.0,156.06,70070.94
+2023-03-13,ABBV,"STEWART, JEFFREY RYAN","EVP, CHIEF COMMERCIAL OFFICER",True,Option (Right to Buy),sell,21810.0,54.86,1196496.6
+2023-03-13,ABBV,"STEWART, JEFFREY RYAN","EVP, CHIEF COMMERCIAL OFFICER",True,"Common Stock, $0.01 par value",sell,31315.0,152.27,4768335.050000001
+2023-03-13,ABBV,"STEWART, JEFFREY RYAN","EVP, CHIEF COMMERCIAL OFFICER",True,"Common Stock, $0.01 par value",buy,21810.0,54.86,1196496.6
+2023-03-13,ABBV,"STEWART, JEFFREY RYAN","EVP, CHIEF COMMERCIAL OFFICER",True,"Common Stock, $0.01 par value",sell,21810.0,152.3,3321663.0000000005
+2023-03-31,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,243.0,159.37,38726.91
+2023-03-31,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,47.0,159.37,7490.39
+2023-04-03,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,Option (Right to buy),sell,3520.0,105.92,372838.4
+2023-04-03,ABBV,"SORG, ELAINE K.","SVP, US COMMERCIAL OPERATIONS",True,"Common Stock, $0.01 par value",buy,15002.0,93.5,1402687.0
+2023-04-03,ABBV,"SORG, ELAINE K.","SVP, US COMMERCIAL OPERATIONS",True,"Common Stock, $0.01 par value",sell,15002.0,160.03,2400770.06
+2023-04-03,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,"Common Stock, $0.01 par value",buy,3520.0,105.92,372838.4
+2023-04-03,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,"Common Stock, $0.01 par value",sell,3520.0,160.0,563200.0
+2023-04-03,ABBV,"SORG, ELAINE K.","SVP, US COMMERCIAL OPERATIONS",True,Option (Right to Buy),sell,15002.0,93.5,1402687.0
+2023-04-17,ABBV,"SORG, ELAINE K.","SVP, US COMMERCIAL OPERATIONS",True,"Common Stock, $0.01 par value",sell,6999.0,161.64,1131318.3599999999
+2023-04-17,ABBV,"SORG, ELAINE K.","SVP, US COMMERCIAL OPERATIONS",True,"Common Stock, $0.01 par value",sell,500.0,162.04,81020.0
+2023-04-25,ABBV,"SORG, ELAINE K.","SVP, US COMMERCIAL OPERATIONS",True,"Common Stock, $0.01 par value",sell,6130.0,165.0,1011450.0
+2023-04-25,ABBV,"SORG, ELAINE K.","SVP, US COMMERCIAL OPERATIONS",True,"Common Stock, $0.01 par value",buy,6130.0,144.54,886030.2
+2023-04-25,ABBV,"SORG, ELAINE K.","SVP, US COMMERCIAL OPERATIONS",True,Option (Right to Buy),sell,6130.0,144.54,886030.2
+2023-04-28,ABBV,"TILTON, GLENN F",Director,True,Stock Equivalent Units,sell,2230.0,151.12,336997.60000000003
+2023-05-11,ABBV,"STROM, CARRIE C",SVP & PRES GLOBAL ALLERG AESTH,True,"Common Stock, $0.01 par value",sell,2876.0,146.42,421103.92
+2023-06-30,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,287.0,134.73,38667.509999999995
+2023-06-30,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,55.0,134.73,7410.15
+2023-07-31,ABBV,"GONZALEZ, RICHARD A","Director, CHAIRMAN OF THE BOARD AND CEO",True,"Common Stock, $0.01 par value",sell,18500.0,149.15,2759275.0
+2023-08-01,ABBV,"GONZALEZ, RICHARD A","Director, CHAIRMAN OF THE BOARD AND CEO",True,"Common Stock, $0.01 par value",sell,60000.0,148.58,8914800.0
+2023-09-30,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,50.0,149.06,7453.0
+2023-09-30,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,259.0,149.06,38606.54
+2023-12-26,ABBV,"DONOGHOE, NICHOLAS","EVP, CHIEF BUS/STRAT OFFICER",True,"Common Stock, $0.01 par value",sell,2912.0,154.72,450544.64
+2023-12-31,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,48.0,154.97,7438.5599999999995
+2023-12-31,ABBV,"QUAGGIN, SUSAN E",Director,True,Stock Equivalent Units,buy,64.0,154.97,9918.08
+2023-12-31,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,250.0,154.97,38742.5
+2024-02-02,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,Option (Right to buy),sell,2919.0,144.54,421912.25999999995
+2024-02-02,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,"Common Stock, $0.01 par value",buy,2919.0,144.54,421912.25999999995
+2024-02-02,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,"Common Stock, $0.01 par value",sell,2919.0,170.0,496230.0
+2024-02-21,ABBV,"SALEKI-GERHARDT, AZITA","EVP, CHIEF OPERATIONS OFFICER",True,Option (Right to Buy),sell,52870.0,58.88,3112985.6
+2024-02-21,ABBV,"SALEKI-GERHARDT, AZITA","EVP, CHIEF OPERATIONS OFFICER",True,"Common Stock, $0.01 par value",sell,52870.0,173.71,9184047.700000001
+2024-02-21,ABBV,"SALEKI-GERHARDT, AZITA","EVP, CHIEF OPERATIONS OFFICER",True,"Common Stock, $0.01 par value",buy,52870.0,58.88,3112985.6
+2024-02-23,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,Option (Right to buy),buy,3519.0,105.92,372732.48
+2024-02-23,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,"Common Stock, $0.01 par value",sell,13753.0,177.51,2441295.03
+2024-02-23,ABBV,"REENTS, SCOTT T","EVP, CHIEF FINANCIAL OFFICER",True,"Common Stock, $0.01 par value",buy,14140.0,61.36,867630.4
+2024-02-23,ABBV,"REENTS, SCOTT T","EVP, CHIEF FINANCIAL OFFICER",True,"Common Stock, $0.01 par value",sell,14140.0,177.44,2509001.6
+2024-02-23,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,Option (Right to buy),buy,7315.0,149.62,1094470.3
+2024-02-23,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,"Common Stock, $0.01 par value",buy,2919.0,144.54,421912.25999999995
+2024-02-23,ABBV,"REENTS, SCOTT T","EVP, CHIEF FINANCIAL OFFICER",True,Option (Right to buy),sell,14140.0,61.36,867630.4
+2024-02-28,ABBV,"BUCKBEE, KEVIN K","SVP, CONTROLLER",True,"Common Stock, $0.01 par value",sell,5339.0,178.99,955627.6100000001
+2024-02-28,ABBV,"MICHAEL, ROBERT A.",PRES & CHIEF OPERATING OFFICER,True,"Common Stock, $0.01 par value",sell,37638.0,178.99,6736825.62
+2024-02-28,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,"Common Stock, $0.01 par value",sell,7885.0,178.99,1411336.1500000001
+2024-02-28,ABBV,"STEWART, JEFFREY RYAN","EVP, CHIEF COMMERCIAL OFFICER",True,"Common Stock, $0.01 par value",sell,26121.0,178.99,4675397.79
+2024-02-28,ABBV,"HUDSON, THOMAS J","SVP, CSO, GLOBAL RESEARCH",True,"Common Stock, $0.01 par value",sell,20634.0,178.99,3693279.66
+2024-02-28,ABBV,"SALEKI-GERHARDT, AZITA","EVP, CHIEF OPERATIONS OFFICER",True,"Common Stock, $0.01 par value",sell,23966.0,178.99,4289674.34
+2024-02-28,ABBV,"THAKKAR, ROOPAL","SVP, CMO, GLOBAL THERAPEUTICS",True,"Common Stock, $0.01 par value",sell,4914.0,178.99,879556.8600000001
+2024-02-28,ABBV,"GONZALEZ, RICHARD A","Director, CHAIRMAN OF THE BOARD AND CEO",True,"Common Stock, $0.01 par value",sell,110249.0,178.99,19733468.51
+2024-02-28,ABBV,"GONZALEZ, RICHARD A","Director, CHAIRMAN OF THE BOARD AND CEO",True,"Common Stock, $0.01 par value",sell,138616.0,177.27,24572458.32
+2024-02-28,ABBV,"RICHMOND, TIMOTHY J.","EVP, CHIEF HR OFFICER",True,"Common stock, $0.01 par value",sell,23847.0,178.99,4268374.53
+2024-02-28,ABBV,"DONOGHOE, NICHOLAS","EVP, CHIEF BUS/STRAT OFFICER",True,"Common Stock, $0.01 par value",sell,16771.0,178.99,3001841.29
+2024-02-28,ABBV,"REENTS, SCOTT T","EVP, CHIEF FINANCIAL OFFICER",True,"Common Stock, $0.01 par value",sell,11634.0,178.99,2082369.6600000001
+2024-02-29,ABBV,"MICHAEL, ROBERT A.",PRES & CHIEF OPERATING OFFICER,True,Option (Right to Buy),sell,11420.0,61.36,700731.2
+2024-02-29,ABBV,"BUCKBEE, KEVIN K","SVP, CONTROLLER",True,"Common Stock, $0.01 par value",sell,5144.0,176.65,908687.6
+2024-02-29,ABBV,"MICHAEL, ROBERT A.",PRES & CHIEF OPERATING OFFICER,True,"Common Stock, $0.01 par value",buy,11420.0,61.36,700731.2
+2024-02-29,ABBV,"MICHAEL, ROBERT A.",PRES & CHIEF OPERATING OFFICER,True,"Common Stock, $0.01 par value",buy,10140.0,54.86,556280.4
+2024-02-29,ABBV,"MICHAEL, ROBERT A.",PRES & CHIEF OPERATING OFFICER,True,"Common Stock, $0.01 par value",sell,47319.0,176.46,8349910.74
+2024-02-29,ABBV,"MICHAEL, ROBERT A.",PRES & CHIEF OPERATING OFFICER,True,Option (Right to Buy),sell,10140.0,54.86,556280.4
+2024-02-29,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,"Common Stock, $0.01 par value",sell,3387.0,178.04,603021.48
+2024-02-29,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,"Common Stock, $0.01 par value",sell,6504.0,177.05,1151533.2000000002
+2024-02-29,ABBV,"MICHAEL, ROBERT A.",PRES & CHIEF OPERATING OFFICER,True,"Common Stock, $0.01 par value",sell,21560.0,176.44,3804046.4
+2024-03-01,ABBV,"RICHMOND, TIMOTHY J.","EVP, CHIEF HR OFFICER",True,"Common stock, $0.01 par value",buy,45700.0,61.36,2804152.0
+2024-03-01,ABBV,"RICHMOND, TIMOTHY J.","EVP, CHIEF HR OFFICER",True,Option (Right to buy),sell,45700.0,61.36,2804152.0
+2024-03-01,ABBV,"RICHMOND, TIMOTHY J.","EVP, CHIEF HR OFFICER",True,"Common stock, $0.01 par value",sell,20127.0,177.71,3576769.1700000004
+2024-03-01,ABBV,"RICHMOND, TIMOTHY J.","EVP, CHIEF HR OFFICER",True,"Common stock, $0.01 par value",sell,9853.0,176.35,1737576.55
+2024-03-01,ABBV,"RICHMOND, TIMOTHY J.","EVP, CHIEF HR OFFICER",True,"Common stock, $0.01 par value",sell,15412.0,176.4,2718676.8000000003
+2024-03-01,ABBV,"RICHMOND, TIMOTHY J.","EVP, CHIEF HR OFFICER",True,"Common stock, $0.01 par value",sell,30288.0,177.71,5382480.48
+2024-03-18,ABBV,"STEWART, JEFFREY RYAN","EVP, CHIEF COMMERCIAL OFFICER",True,"Common Stock, $0.01 par value",sell,27740.0,178.69,4956860.6
+2024-03-18,ABBV,"STEWART, JEFFREY RYAN","EVP, CHIEF COMMERCIAL OFFICER",True,Option (Right to Buy),sell,26110.0,61.36,1602109.6
+2024-03-18,ABBV,"STEWART, JEFFREY RYAN","EVP, CHIEF COMMERCIAL OFFICER",True,"Common Stock, $0.01 par value",buy,26110.0,61.36,1602109.6
+2024-03-18,ABBV,"STEWART, JEFFREY RYAN","EVP, CHIEF COMMERCIAL OFFICER",True,"Common Stock, $0.01 par value",sell,5099.0,179.03,912873.97
+2024-03-18,ABBV,"STEWART, JEFFREY RYAN","EVP, CHIEF COMMERCIAL OFFICER",True,"Common Stock, $0.01 par value",sell,26110.0,178.85,4669773.5
+2024-03-20,ABBV,"DONOGHOE, NICHOLAS","EVP, CHIEF BUS/STRAT OFFICER",True,"Common Stock, $0.01 par value",sell,21082.0,176.3,3716756.6
+2024-03-31,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,212.0,182.1,38605.2
+2024-03-31,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,41.0,182.1,7466.099999999999
+2024-03-31,ABBV,"QUAGGIN, SUSAN E",Director,True,Stock Equivalent Units,buy,82.0,182.1,14932.199999999999
+2024-06-30,ABBV,"QUAGGIN, SUSAN E",Director,True,Stock Equivalent Units,buy,87.0,171.52,14922.240000000002
+2024-06-30,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,225.0,171.52,38592.0
+2024-06-30,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,43.0,171.52,7375.360000000001
+2024-07-17,ABBV,"GONZALEZ, RICHARD A","Director, EXECUTIVE CHAIRMAN OF BOARD",True,"Common Stock, $0.01 par value",buy,76377.0,93.5,7141249.5
+2024-07-17,ABBV,"GONZALEZ, RICHARD A","Director, EXECUTIVE CHAIRMAN OF BOARD",True,"Common Stock, $0.01 par value",buy,119418.0,79.02,9436410.36
+2024-07-17,ABBV,"GONZALEZ, RICHARD A","Director, EXECUTIVE CHAIRMAN OF BOARD",True,"Common Stock, $0.01 par value",buy,87050.0,61.36,5341388.0
+2024-07-17,ABBV,"GONZALEZ, RICHARD A","Director, EXECUTIVE CHAIRMAN OF BOARD",True,"Common Stock, $0.01 par value",sell,282845.0,175.0,49497875.0
+2024-08-05,ABBV,"GONZALEZ, RICHARD A","Director, EXECUTIVE CHAIRMAN OF BOARD",True,"Common Stock, $0.01 par value",sell,66500.0,186.52,12403580.0
+2024-09-30,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,164.0,197.48,32386.719999999998
+2024-09-30,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,37.0,197.48,7306.759999999999
+2024-09-30,ABBV,"QUAGGIN, SUSAN E",Director,True,Stock Equivalent Units,buy,75.0,197.48,14811.0
+2024-12-16,ABBV,"BUCKBEE, KEVIN K","SVP, CONTROLLER",True,Option (Right to buy),sell,1800.0,93.5,168300.0
+2024-12-16,ABBV,"BUCKBEE, KEVIN K","SVP, CONTROLLER",True,"Common Stock, $0.01 par value",buy,1800.0,93.5,168300.0
+2024-12-16,ABBV,"BUCKBEE, KEVIN K","SVP, CONTROLLER",True,"Common Stock, $0.01 par value",sell,1800.0,172.24,310032.0
+2024-12-31,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,182.0,177.7,32341.399999999998
+2024-12-31,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,42.0,177.7,7463.4
+2024-12-31,ABBV,"QUAGGIN, SUSAN E",Director,True,Stock Equivalent Units,buy,84.0,177.7,14926.8
+2025-02-20,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,"Common Stock, $0.01 par value",sell,1784.0,197.4,352161.60000000003
+2025-02-20,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,"Common Stock, $0.01 par value",sell,3994.0,198.12,791291.28
+2025-02-26,ABBV,"RICHMOND, TIMOTHY J.","EVP, CHIEF HR OFFICER",True,"Common stock, $0.01 par value",sell,1526.0,203.64,310754.63999999996
+2025-02-26,ABBV,"RICHMOND, TIMOTHY J.","EVP, CHIEF HR OFFICER",True,"Common stock, $0.01 par value",sell,13073.0,202.92,2652773.1599999997
+2025-02-26,ABBV,"RICHMOND, TIMOTHY J.","EVP, CHIEF HR OFFICER",True,"Common stock, $0.01 par value",sell,4781.0,202.93,970208.3300000001
+2025-02-26,ABBV,"RICHMOND, TIMOTHY J.","EVP, CHIEF HR OFFICER",True,Option (Right to buy),sell,22210.0,114.36,2539935.6
+2025-02-26,ABBV,"BUCKBEE, KEVIN K","SVP, CONTROLLER",True,"Common Stock, $0.01 par value",sell,16260.0,203.41,3307446.6
+2025-02-26,ABBV,"RICHMOND, TIMOTHY J.","EVP, CHIEF HR OFFICER",True,"Common stock, $0.01 par value",sell,4308.0,201.97,870086.76
+2025-02-26,ABBV,"RICHMOND, TIMOTHY J.","EVP, CHIEF HR OFFICER",True,"Common stock, $0.01 par value",buy,22210.0,114.36,2539935.6
+2025-02-26,ABBV,"BUCKBEE, KEVIN K","SVP, CONTROLLER",True,"Common Stock, $0.01 par value",sell,2684.0,203.4,545925.6
+2025-02-26,ABBV,"BUCKBEE, KEVIN K","SVP, CONTROLLER",True,Option (Right to buy),sell,6522.0,105.92,690810.24
+2025-02-26,ABBV,"BUCKBEE, KEVIN K","SVP, CONTROLLER",True,"Common Stock, $0.01 par value",buy,6522.0,105.92,690810.24
+2025-02-26,ABBV,"BUCKBEE, KEVIN K","SVP, CONTROLLER",True,"Common Stock, $0.01 par value",buy,9738.0,93.5,910503.0
+2025-02-26,ABBV,"RICHMOND, TIMOTHY J.","EVP, CHIEF HR OFFICER",True,"Common stock, $0.01 par value",sell,1400.0,202.06,282884.0
+2025-02-26,ABBV,"BUCKBEE, KEVIN K","SVP, CONTROLLER",True,Option (Right to buy),sell,9738.0,93.5,910503.0
+2025-02-26,ABBV,"RICHMOND, TIMOTHY J.","EVP, CHIEF HR OFFICER",True,"Common stock, $0.01 par value",sell,4829.0,203.63,983329.27
+2025-02-28,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,"Common Stock, $0.01 par value",sell,6811.0,206.62,1407288.82
+2025-02-28,ABBV,"GONZALEZ, RICHARD A",Director,True,"Common Stock, $0.01 par value",sell,92460.0,205.11,18964470.6
+2025-02-28,ABBV,"REENTS, SCOTT T","EVP, CHIEF FINANCIAL OFFICER",True,"Common Stock, $0.01 par value",sell,10973.0,205.02,2249684.46
+2025-02-28,ABBV,"DONOGHOE, NICHOLAS","EVP, CHIEF BUS/STRAT OFFICER",True,"Common Stock, $0.01 par value",sell,11230.0,205.02,2302374.6
+2025-02-28,ABBV,"THAKKAR, ROOPAL","EVP, R&D and CSO",True,"Common Stock, $0.01 par value",sell,4678.0,205.02,959083.56
+2025-02-28,ABBV,"GONZALEZ, RICHARD A",Director,True,"Common Stock, $0.01 par value",sell,73209.0,205.02,15009309.180000002
+2025-02-28,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,"Common Stock, $0.01 par value",sell,7870.0,205.02,1613507.4000000001
+2025-02-28,ABBV,"SALEKI-GERHARDT, AZITA","EVP, CHIEF OPERATIONS OFFICER",True,"Common Stock, $0.01 par value",sell,17056.0,205.02,3496821.12
+2025-02-28,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,"Common Stock, $0.01 par value",sell,363.0,207.19,75209.97
+2025-02-28,ABBV,"BUCKBEE, KEVIN K","SVP, CONTROLLER",True,"Common Stock, $0.01 par value",sell,3699.0,205.02,758368.98
+2025-02-28,ABBV,"RICHMOND, TIMOTHY J.","EVP, CHIEF HR OFFICER",True,"Common stock, $0.01 par value",sell,16904.0,205.02,3465658.08
+2025-02-28,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,"Common Stock, $0.01 par value",sell,2718.0,205.38,558222.84
+2025-02-28,ABBV,"MICHAEL, ROBERT A.","Director, CHIEF EXECUTIVE OFFICER",True,"Common Stock, $0.01 par value",sell,27186.0,205.02,5573673.720000001
+2025-02-28,ABBV,"STEWART, JEFFREY RYAN","EVP, CHIEF COMMERCIAL OFFICER",True,"Common Stock, $0.01 par value",sell,20226.0,205.02,4146734.52
+2025-03-03,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,Option (Right to buy),sell,7775.0,175.28,1362802.0
+2025-03-03,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,"Common Stock, $0.01 par value",sell,18008.0,210.0,3781680.0
+2025-03-03,ABBV,"RICHMOND, TIMOTHY J.","EVP, CHIEF HR OFFICER",True,"Common stock, $0.01 par value",sell,5677.0,209.8,1191034.6
+2025-03-03,ABBV,"RICHMOND, TIMOTHY J.","EVP, CHIEF HR OFFICER",True,"Common stock, $0.01 par value",sell,14973.0,210.66,3154212.18
+2025-03-03,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,Option (Right to buy),sell,2918.0,144.54,421767.72
+2025-03-03,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,Option (Right to buy),sell,7315.0,149.62,1094470.3
+2025-03-03,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,"Common Stock, $0.01 par value",buy,7775.0,175.28,1362802.0
+2025-03-03,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,"Common Stock, $0.01 par value",buy,2918.0,144.54,421767.72
+2025-03-03,ABBV,"GONZALEZ, RICHARD A",Director,True,"Common Stock, $0.01 par value",sell,6168.0,210.53,1298549.04
+2025-03-03,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,"Common Stock, $0.01 par value",buy,7315.0,149.62,1094470.3
+2025-03-03,ABBV,"RICHMOND, TIMOTHY J.","EVP, CHIEF HR OFFICER",True,"Common stock, $0.01 par value",sell,600.0,211.32,126792.0
+2025-03-14,ABBV,"REENTS, SCOTT T","EVP, CHIEF FINANCIAL OFFICER",True,"Common Stock, $0.01 par value",sell,17644.0,212.34,3746526.96
+2025-03-31,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,35.0,209.52,7333.200000000001
+2025-03-31,ABBV,"STEWART, JEFFREY RYAN","EVP, CHIEF COMMERCIAL OFFICER",True,"Common Stock, $0.01 par value",sell,33132.0,210.54,6975611.279999999
+2025-03-31,ABBV,"STEWART, JEFFREY RYAN","EVP, CHIEF COMMERCIAL OFFICER",True,"Common Stock, $0.01 par value",sell,25700.0,209.49,5383893.0
+2025-03-31,ABBV,"QUAGGIN, SUSAN E",Director,True,Stock Equivalent Units,buy,71.0,209.52,14875.92
+2025-03-31,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,155.0,209.52,32475.600000000002
+2025-03-31,ABBV,"STEWART, JEFFREY RYAN","EVP, CHIEF COMMERCIAL OFFICER",True,"Common Stock, $0.01 par value",buy,25700.0,79.02,2030814.0
+2025-03-31,ABBV,"STEWART, JEFFREY RYAN","EVP, CHIEF COMMERCIAL OFFICER",True,Option (Right to Buy),sell,25700.0,79.02,2030814.0
+2025-06-30,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,177.0,185.62,32854.74
+2025-06-30,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,40.0,185.62,7424.8
+2025-06-30,ABBV,"QUAGGIN, SUSAN E",Director,True,Stock Equivalent Units,buy,81.0,185.62,15035.220000000001
+2025-08-05,ABBV,"DONOGHOE, NICHOLAS","EVP, CHIEF BUS/STRAT OFFICER",True,"Common Stock, $0.01 par value",sell,3234.17,198.27,641238.8859
+2025-08-05,ABBV,"DONOGHOE, NICHOLAS","EVP, CHIEF BUS/STRAT OFFICER",True,"Common Stock, $0.01 par value",sell,10061.0,198.59,1998013.99
+2025-08-12,ABBV,"SALEKI-GERHARDT, AZITA","EVP, CHIEF OPERATIONS OFFICER",True,"Common Stock, $0.01 par value",buy,42370.0,54.86,2324418.2
+2025-08-12,ABBV,"SALEKI-GERHARDT, AZITA","EVP, CHIEF OPERATIONS OFFICER",True,"Common Stock, $0.01 par value",sell,42370.0,198.42,8407055.4
+2025-08-12,ABBV,"SALEKI-GERHARDT, AZITA","EVP, CHIEF OPERATIONS OFFICER",True,Option (Right to Buy),sell,42370.0,54.86,2324418.2
+2025-09-30,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,145.0,231.54,33573.299999999996
+2025-09-30,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,33.0,231.54,7640.82
+2025-09-30,ABBV,"QUAGGIN, SUSAN E",Director,True,Stock Equivalent Units,buy,67.0,231.54,15513.18
+2025-12-31,ABBV,"QUAGGIN, SUSAN E",Director,True,Stock Equivalent Units,buy,68.0,228.49,15537.32
+2025-12-31,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,147.0,228.49,33588.03
+2025-12-31,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,34.0,228.49,7768.66
+2026-02-25,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,"Common Stock, $0.01 par value",buy,7775.0,175.28,1362802.0
+2026-02-25,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,Option (Right to buy),sell,7314.0,149.62,1094320.68
+2026-02-25,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,"Common Stock, $0.01 par value",buy,7314.0,149.62,1094320.68
+2026-02-25,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,"Common Stock, $0.01 par value",buy,7292.0,192.86,1406335.12
+2026-02-25,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,Option (Right to buy),sell,7292.0,192.86,1406335.12
+2026-02-25,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,"Common Stock, $0.01 par value",sell,22381.0,230.0,5147630.0
+2026-02-25,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,Option (Right to buy),sell,7775.0,175.28,1362802.0
+2026-02-27,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,"Common Stock, $0.01 par value",sell,14850.0,232.08,3446388.0
+2026-02-27,ABBV,"MICHAEL, ROBERT A.","Director, CHAIRMAN OF THE BOARD AND CEO",True,"Common Stock, $0.01 par value",sell,36523.0,232.08,8476257.84
+2026-02-27,ABBV,"PURDUE, DAVID RYAN","SVP, Controller",True,"Common Stock, $0.01 par value",sell,2692.0,232.08,624759.36
+2026-02-27,ABBV,"REENTS, SCOTT T","EVP, CHIEF FINANCIAL OFFICER",True,"Common Stock, $0.01 par value",sell,21638.0,232.08,5021747.04
+2026-02-27,ABBV,"STEWART, JEFFREY RYAN","EVP, CHIEF COMMERCIAL OFFICER",True,"Common Stock, $0.01 par value",sell,23812.0,232.08,5526288.96
+2026-02-27,ABBV,"PURDUE, DAVID RYAN","SVP, Controller",True,"Common Stock, $0.01 par value",sell,2108.0,232.08,489224.64
+2026-02-27,ABBV,"THAKKAR, ROOPAL","EVP, R&D and CSO",True,"Common Stock, $0.01 par value",sell,8037.0,232.08,1865226.9600000002
+2026-02-27,ABBV,"CRUM, DEMETRIS D","EVP, CHIEF HR OFFICER",True,"Common Stock, $0.01 par value",sell,1594.0,232.08,369935.52
+2026-02-27,ABBV,"SALEKI-GERHARDT, AZITA","EVP, CHIEF OPERATIONS OFFICER",True,"Common Stock, $0.01 par value",sell,16309.0,232.08,3784992.72
+2026-02-27,ABBV,"DONOGHOE, NICHOLAS","EVP, CHIEF BUS/STRAT OFFICER",True,"Common Stock, $0.01 par value",sell,12874.0,232.08,2987797.9200000004
+2026-03-02,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,"Common Stock, $0.01 par value",sell,5777.0,233.51,1348987.27
+2026-03-02,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,"Common Stock, $0.01 par value",sell,10291.0,234.66,2414886.06
+2026-03-02,ABBV,"SIATIS, PERRY C","EVP, GC AND SECRETARY",True,"Common Stock, $0.01 par value",sell,2600.0,235.26,611676.0
+2026-03-04,ABBV,"PURDUE, DAVID RYAN","SVP, Controller",True,"Common Stock, $0.01 par value",sell,5230.0,233.56,1221518.8
+2026-03-31,ABBV,"RAPP, EDWARD J",Director,True,Stock Equivalent Units,buy,155.0,217.49,33710.950000000004
+2026-03-31,ABBV,"ALPERN, ROBERT J",Director,True,Stock Equivalent Units,buy,35.0,217.49,7612.150000000001
+2026-03-31,ABBV,"QUAGGIN, SUSAN E",Director,True,Stock Equivalent Units,buy,71.0,217.49,15441.79

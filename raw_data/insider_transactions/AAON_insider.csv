@@ -1,0 +1,1116 @@
+date,symbol,insider_name,insider_title,is_executive,security_type,transaction_type,shares,price,value
+1997-03-11,AAON,"BOWEN, WILLIAM A",Director,True,Stock Option,sell,5000.0,3.1945,15972.5
+1997-03-11,AAON,"JOHNSON, JOHN B JR","Director, Secretary",True,Stock Option,sell,22000.0,3.1945,70279.0
+2003-11-25,AAON,"PANTALEONI, ANTHONY",Director,True,"Common Stock, par value $.004",sell,218.0,19.05,4152.900000000001
+2003-11-25,AAON,"PANTALEONI, ANTHONY",Director,True,"Common Stock, par value $.004",sell,2782.0,19.24,53525.67999999999
+2003-11-25,AAON,"PANTALEONI, ANTHONY",Director,True,"Common Stock, par value $.004",sell,2000.0,19.25,38500.0
+2003-12-02,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,4222.0,19.25,81273.5
+2003-12-02,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,600.0,19.42,11652.000000000002
+2003-12-02,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,100.0,19.28,1928.0
+2003-12-02,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,200.0,19.4,3879.9999999999995
+2003-12-12,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,100.0,19.31,1930.9999999999998
+2003-12-15,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,100.0,19.25,1925.0
+2003-12-18,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,200.0,19.25,3850.0
+2003-12-18,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, $.004 par value",sell,1404.0,19.29,27083.16
+2003-12-29,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,777.0,19.29,14988.33
+2003-12-29,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,693.0,19.25,13340.25
+2003-12-29,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,100.0,19.28,1928.0
+2004-01-14,AAON,"FERGUS, ROBERT G",Vice President,True,"Common Stock, par value $.004",sell,5000.0,19.75,98750.0
+2004-01-14,AAON,"FERGUS, ROBERT G",Vice President,True,"Common Stock, par value $.004",sell,5000.0,20.0,100000.0
+2004-01-15,AAON,"BOWEN, WILLIAM A",Director,True,"Common Stock, par value $.004",sell,5000.0,21.0086,105043.0
+2004-01-15,AAON,"BOWEN, WILLIAM A",Director,True,"Common Stock, par value $.004",buy,5000.0,3.1945,15972.5
+2004-01-16,AAON,"JOHNSON, JOHN B JR","Director, Secretary",True,"Common Stock, par value $.004",buy,22000.0,3.1945,70279.0
+2004-01-16,AAON,"JOHNSON, JOHN B JR","Director, Secretary",True,"Common Stock, par value $.004",sell,22000.0,21.17,465740.00000000006
+2004-01-25,AAON,"NAUGLE, THOMAS E",Director,True,"Common Stock, par value $.004",buy,200.0,19.76,3952.0000000000005
+2004-02-25,AAON,"NAUGLE, THOMAS E",Director,True,"Common Stock, par value $.004",buy,200.0,19.76,3952.0000000000005
+2004-02-26,AAON,"NAUGLE, THOMAS E",Director,True,"Common Stock, par value $.004",buy,3000.0,19.89,59670.0
+2004-03-03,AAON,"BOWEN, WILLIAM A",Director,True,"Common Stock, par value $.004",sell,7000.0,20.03,140210.0
+2004-03-05,AAON,"NAUGLE, THOMAS E",Director,True,"Common Stock, par value $.004",buy,1800.0,20.1,36180.0
+2004-03-05,AAON,"PANTALEONI, ANTHONY",Director,True,"Common Stock, par value $.004",sell,10000.0,20.112,201119.99999999997
+2004-03-17,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,200.0,20.02,4004.0
+2004-03-17,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,3515.0,20.0,70300.0
+2004-03-17,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,5175.0,20.06,103810.5
+2004-03-17,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,900.0,20.1,18090.0
+2004-03-17,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,400.0,20.01,8004.000000000001
+2004-05-18,AAON,"PANTALEONI, ANTHONY",Director,True,"Common Stock, par value $.004",sell,941.0,20.0,18820.0
+2004-05-18,AAON,"PANTALEONI, ANTHONY",Director,True,"Common Stock, par value $.004",sell,11000.0,20.07,220770.0
+2004-05-19,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,100.0,19.7,1970.0
+2004-05-19,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,300.0,19.71,5913.0
+2004-05-20,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,145.0,19.7,2856.5
+2004-05-21,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,19455.0,19.7,383263.5
+2004-05-25,AAON,"STEPHENSON, CC JR",Director,True,Plan C Stock Option,buy,2000.0,20.4,40800.0
+2004-05-26,AAON,"PANTALEONI, ANTHONY",Director,True,"Common Stock, par value $.004",sell,6751.0,20.0421,135304.2171
+2004-06-02,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,9000.0,19.9,179100.0
+2004-06-03,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,667.0,20.03,13360.01
+2004-06-03,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,1000.0,19.9,19900.0
+2004-06-03,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,100.0,20.12,2012.0
+2004-06-03,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,19233.0,20.0,384660.0
+2004-12-22,AAON,"NAUGLE, THOMAS E",Director,True,"Common Stock, par value $.004",sell,3000.0,14.7,44100.0
+2004-12-22,AAON,"NAUGLE, THOMAS E",Director,True,"Common Stock, par value $.004",sell,2000.0,14.73,29460.0
+2005-03-02,AAON,"FERGUS, ROBERT G",Vice President,True,"Common Stock, par value $.004",sell,2000.0,15.24,30480.0
+2005-03-02,AAON,"FERGUS, ROBERT G",Vice President,True,"Common Stock, par value $.004",sell,900.0,15.21,13689.0
+2005-03-02,AAON,"FERGUS, ROBERT G",Vice President,True,"Common Stock, par value $.004",sell,100.0,15.3,1530.0
+2005-03-23,AAON,"BOWEN, WILLIAM A",Director,True,Stock Option,sell,10000.0,16.06,160600.0
+2005-03-23,AAON,"BOWEN, WILLIAM A",Director,True,"Common Stock, par value $.004",buy,10000.0,3.1945,31945.0
+2005-09-02,AAON,"PANTALEONI, ANTHONY",Director,True,"Common stock, par value $.004",sell,6000.0,18.0,108000.0
+2005-09-06,AAON,"PANTALEONI, ANTHONY",Director,True,"Common Stock, par value $.004",sell,11030.0,18.0,198540.0
+2005-09-07,AAON,"PANTALEONI, ANTHONY",Director,True,"Common stock, par value $.004",sell,128.0,18.0,2304.0
+2005-09-09,AAON,"PANTALEONI, ANTHONY",Director,True,"Common Stock, par value $.004",sell,784.0,18.0,14112.0
+2005-09-12,AAON,"PANTALEONI, ANTHONY",Director,True,"Common Stock, par value $.004",sell,172.0,18.0,3096.0
+2005-09-13,AAON,"PANTALEONI, ANTHONY",Director,True,"Common Stock, par value $.004",sell,1886.0,18.0,33948.0
+2005-12-05,AAON,"FERGUS, ROBERT G",Vice President,True,"Common Stock, par value $.004",sell,2310.0,18.1,41811.0
+2005-12-05,AAON,"FERGUS, ROBERT G",Vice President,True,"Common Stock, par value $.004",buy,2310.0,5.78,13351.800000000001
+2005-12-07,AAON,"FERGUS, ROBERT G",Vice President,True,"Common Stock, par value $.004",sell,1440.0,17.92,25804.800000000003
+2005-12-07,AAON,"FERGUS, ROBERT G",Vice President,True,"Common Stock, par value $.004",buy,1440.0,5.78,8323.2
+2006-02-23,AAON,"PANTALEONI, ANTHONY",Director,True,"common stock, par value $.004",sell,9300.0,21.6965,201777.45
+2006-02-24,AAON,"PANTALEONI, ANTHONY",Director,True,"common stock, par value $.004",sell,10700.0,21.6196,231329.71999999997
+2006-03-03,AAON,"NAUGLE, THOMAS E",Director,True,"Common Stock, par value $.004",sell,5000.0,21.5,107500.0
+2006-04-27,AAON,"JOHNSON, JOHN B JR","Director, Secretary",True,"Common Stock, par value $.004",sell,27055.0,26.5,716957.5
+2006-04-27,AAON,"PANTALEONI, ANTHONY",Director,True,"Common Stock, par value $.004",sell,20000.0,26.2955,525910.0
+2006-05-01,AAON,"FERGUS, ROBERT G",Vice President,True,"Common Stock, par value $.004",sell,1000.0,27.0,27000.0
+2006-05-09,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,8873.0,26.73,237175.29
+2006-05-09,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,11677.0,27.24,318081.48
+2006-05-09,AAON,"RYAN, JERRY E",Director,True,"Common Stock, par value $.004",sell,4798.0,27.27,130841.45999999999
+2006-05-10,AAON,"RYAN, JERRY E",Director,True,"Common Stock, par value $.004",sell,3327.0,27.27,90727.29
+2006-05-11,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",buy,17500.0,2.33,40775.0
+2006-05-11,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,4827.0,27.58,133128.66
+2006-05-12,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,12673.0,27.0,342171.0
+2006-06-07,AAON,"NAUGLE, THOMAS E",Director,True,"Common Stock, par value $.004",buy,48375.0,5.0,241875.0
+2006-06-07,AAON,"NAUGLE, THOMAS E",Director,True,Stock Option,sell,13500.0,23.1974,313164.89999999997
+2006-11-21,AAON,"SHEFFIELD, KATHY I",Vice President and Treasurer,True,"Common Stock, par value $.004",buy,2200.0,5.78,12716.0
+2006-11-21,AAON,"SHEFFIELD, KATHY I",Vice President and Treasurer,True,"Common Stock, par value $.004",sell,2200.0,27.85,61270.0
+2006-11-30,AAON,"SHEFFIELD, KATHY I",Vice President and Treasurer,True,"Common Stock, par value $.004",buy,2800.0,5.78,16184.0
+2006-11-30,AAON,"SHEFFIELD, KATHY I",Vice President and Treasurer,True,"Common Stock, par value $.004",sell,2800.0,27.69,77532.0
+2006-12-21,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",buy,50000.0,2.33,116500.0
+2006-12-21,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,15000.0,25.36,380400.0
+2007-03-05,AAON,"JOHNSON, JOHN B JR","Director, Secretary",True,"Common Stock, par value $.004",buy,39875.0,3.19,127201.25
+2007-03-06,AAON,"PANTALEONI, ANTHONY",Director,True,"Common Stock, par value $.004",buy,61875.0,3.19,197381.25
+2007-03-09,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",buy,61875.0,3.19,197381.25
+2007-03-16,AAON,"PANTALEONI, ANTHONY",Director,True,"Common Stock, par value $.004",sell,61875.0,3.19,197381.25
+2007-03-16,AAON,"PANTALEONI, ANTHONY",Director,True,"Common Stock, par value $.004",sell,35000.0,26.83,939049.9999999999
+2007-03-20,AAON,"JOHNSON, JOHN B JR","Director, Secretary",True,"Common Stock, par value $.004",sell,9875.0,27.05,267118.75
+2007-05-11,AAON,"JOHNSON, JOHN B JR","Director, Secretary",True,"Common Stock, par value $.004",sell,10000.0,29.56,295600.0
+2007-05-14,AAON,"JOHNSON, JOHN B JR","Director, Secretary",True,"Common Stock, par value $.004",sell,10000.0,30.02,300200.0
+2007-09-19,AAON,"SHEFFIELD, KATHY I",Vice President and Treasurer,True,"Common Stock, par value $.004",sell,10500.0,20.766,218042.99999999997
+2007-09-19,AAON,"SHEFFIELD, KATHY I",Vice President and Treasurer,True,"Common Stock, par value $.004",buy,12000.0,3.85,46200.0
+2007-09-20,AAON,"KNEBEL, DAVID E","Vice President, Sales & Techno",True,"Common Stock, par value $.004",buy,20000.0,6.65,133000.0
+2007-09-20,AAON,"KNEBEL, DAVID E","Vice President, Sales & Techno",True,"Common Stock, par value $.004",sell,20000.0,20.686,413720.0
+2007-09-20,AAON,"SHEFFIELD, KATHY I",Vice President and Treasurer,True,"Common Stock, par value $.004",sell,1500.0,20.75,31125.0
+2007-09-20,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",buy,67500.0,2.26,152550.0
+2007-09-20,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,67500.0,20.72,1398600.0
+2007-11-09,AAON,"SHORT, JACK E",Director,True,"Common Stock, par value $.004",buy,2000.0,17.417,34834.0
+2008-05-12,AAON,"KNEBEL, DAVID E","Vice President, Sales & Techno",True,"Common Stock, par value $.004",sell,200.0,20.4,4079.9999999999995
+2008-05-12,AAON,"KNEBEL, DAVID E","Vice President, Sales & Techno",True,"Common Stock, par value $.004",buy,400.0,6.65,2660.0
+2008-05-12,AAON,"KNEBEL, DAVID E","Vice President, Sales & Techno",True,"Common Stock, par value $.004",buy,200.0,6.65,1330.0
+2008-05-12,AAON,"KNEBEL, DAVID E","Vice President, Sales & Techno",True,"Common Stock, par value $.004",sell,400.0,20.12,8048.0
+2008-05-13,AAON,"KNEBEL, DAVID E","Vice President, Sales & Techno",True,"Common Stock, par value $.004",buy,16900.0,6.65,112385.0
+2008-05-13,AAON,"JOHNSON, JOHN B JR","Director, Secretary",True,"Common Stock, par value $.004",sell,5000.0,20.45,102250.0
+2008-05-13,AAON,"KNEBEL, DAVID E","Vice President, Sales & Techno",True,"Common Stock, par value $.004",sell,16900.0,20.2,341380.0
+2008-08-05,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",buy,168750.0,2.67,450562.5
+2008-08-08,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,68750.0,21.66,1489125.0
+2008-09-16,AAON,"SHORT, JACK E",Director,True,"Common Stock, par value $.004",sell,1666.0,19.12,31853.920000000002
+2008-10-01,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",buy,16875.0,3.85,64968.75
+2008-10-15,AAON,"LEVINE, JERRY R",Director,True,"Common Stock, par value $.004",buy,3600.0,12.0,43200.0
+2008-11-11,AAON,"SHORT, JACK E",Director,True,"Common Stock, par value $.004",sell,6000.0,19.55,117300.0
+2008-11-11,AAON,"SHORT, JACK E",Director,True,"Common Stock, par value $.004",buy,3000.0,12.0,36000.0
+2008-11-11,AAON,"SHORT, JACK E",Director,True,"Common Stock, par value $.004",buy,3000.0,11.77,35310.0
+2008-12-08,AAON,"SHEFFIELD, KATHY I",Vice President and Treasurer,True,"Common Stock, par value $.004",buy,14250.0,3.85,54862.5
+2008-12-08,AAON,"SHEFFIELD, KATHY I",Vice President and Treasurer,True,"Common Stock, par value $.004",sell,14250.0,21.02,299535.0
+2009-05-20,AAON,"KNEBEL, DAVID E","Vice President, Sales & Techno",True,"Common Stock, par value $.004",buy,5000.0,6.65,33250.0
+2009-05-20,AAON,"KNEBEL, DAVID E","Vice President, Sales & Techno",True,"Common Stock, par value $.004",sell,5000.0,21.01,105050.00000000001
+2009-05-26,AAON,"KNEBEL, DAVID E","President, Sales & Technology",True,"Common Stock, par value $.004",sell,200.0,21.12,4224.0
+2009-06-01,AAON,"KNEBEL, DAVID E","Vice President, Sales & Techno",True,"Common Stock, par value $.004",sell,4800.0,21.0,100800.0
+2009-06-01,AAON,"KNEBEL, DAVID E","Vice President, Sales & Techno",True,"Common Stock, par value $.004",buy,4800.0,6.65,31920.0
+2009-06-02,AAON,"SHORT, JACK E",Director,True,"Common Stock, par value $.004",sell,3084.0,21.04,64887.36
+2009-06-12,AAON,"KNEBEL, DAVID E","Vice President, Sales & Techno",True,"Common Stock, par value $.004",buy,10000.0,6.65,66500.0
+2009-06-12,AAON,"KNEBEL, DAVID E","Vice President, Sales & Techno",True,"Common Stock, par value $.004",sell,10000.0,21.02,210200.0
+2010-05-18,AAON,"SHEFFIELD, KATHY I",Vice President and Treasurer,True,"Common Stock, par value $.004",buy,16875.0,5.72,96525.0
+2010-05-18,AAON,"SHEFFIELD, KATHY I",Vice President and Treasurer,True,"Common Stock, par value $.004",sell,16875.0,24.81,418668.75
+2010-05-28,AAON,"KNEBEL, DAVID E","Vice President, Sales & Techno",True,"Common Stock, par value $.004",buy,2500.0,9.68,24200.0
+2010-05-28,AAON,"KNEBEL, DAVID E","Vice President, Sales & Techno",True,"Common Stock, par value $.004",sell,12500.0,24.68,308500.0
+2010-05-28,AAON,"KNEBEL, DAVID E","Vice President, Sales & Techno",True,"Common Stock, par value $.004",buy,10000.0,6.65,66500.0
+2010-06-15,AAON,"SHORT, JACK E",Director,True,"Common Stock, par value $.004",sell,2850.0,24.29,69226.5
+2010-09-29,AAON,"FERGUS, ROBERT G",Vice President,True,"Common Stock, par value $.004",sell,2000.0,24.26,48520.0
+2011-08-05,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",buy,4500.0,9.07,40815.0
+2011-08-05,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",buy,4500.0,8.0,36000.0
+2011-08-05,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",buy,4500.0,10.37,46665.0
+2011-08-18,AAON,"LEVINE, JERRY R",Director,True,"Common Stock, par value $.004",buy,3600.0,8.0,28800.0
+2011-08-19,AAON,"KNEBEL, DAVID E","Vice President, Sales & Techno",True,"Common Stock, par value $.004",buy,10000.0,6.45,64500.0
+2011-08-19,AAON,"KNEBEL, DAVID E","Vice President, Sales & Techno",True,Stock Option,sell,10000.0,6.45,64500.0
+2011-11-10,AAON,"KNEBEL, DAVID E","Vice President, Sales & Techno",True,"Common Stock, par value $.004",buy,10000.0,6.45,64500.0
+2011-11-10,AAON,"KNEBEL, DAVID E","Vice President, Sales & Techno",True,Stock Option,sell,10000.0,6.45,64500.0
+2011-11-18,AAON,"KNEBEL, DAVID E","Vice President, Sales & Techno",True,"Common Stock, par value $.004",sell,10000.0,21.12,211200.0
+2012-07-25,AAON,"LEVINE, JERRY R",Director,True,"Common Stock, par value $.004",buy,4000.0,12.97,51880.0
+2012-08-03,AAON,"SHORT, JACK E",Director,True,"Common Stock, par value $.004",buy,4500.0,10.37,46665.0
+2012-08-17,AAON,"KNEBEL, DAVID E","Sr Vice-President,Sales & Tech",True,"Common Stock, par value $.004",buy,10000.0,6.45,64500.0
+2012-08-17,AAON,"KNEBEL, DAVID E","Sr Vice-President,Sales & Tech",True,Stock Option,sell,10000.0,6.45,64500.0
+2012-08-17,AAON,"KNEBEL, DAVID E","Sr Vice-President,Sales & Tech",True,"Common Stock, par value $.004",sell,10000.0,19.23,192300.0
+2012-08-21,AAON,"SHEFFIELD, KATHY I",Sr. Vice President Admin/Treas,True,Stock Option,sell,22500.0,6.45,145125.0
+2012-08-21,AAON,"SHEFFIELD, KATHY I",Sr. Vice President Admin/Treas,True,"Common Stock, par value $.004",buy,22500.0,6.45,145125.0
+2012-08-21,AAON,"SHEFFIELD, KATHY I",Sr. Vice President Admin/Treas,True,"Common Stock, par value $.004",sell,22500.0,19.58,440549.99999999994
+2012-08-31,AAON,"ASBJORNSON, SCOTT M","Vice President,Finance & CFO",True,"Common Stock, par value $.004",sell,41100.0,18.4,756239.9999999999
+2012-08-31,AAON,"ASBJORNSON, SCOTT M","Vice President,Finance & CFO",True,"Common Stock, par value $.004",buy,6000.0,15.51,93060.0
+2012-08-31,AAON,"ASBJORNSON, SCOTT M","Vice President,Finance & CFO",True,"Common Stock, par value $.004",buy,4500.0,10.21,45945.00000000001
+2012-08-31,AAON,"ASBJORNSON, SCOTT M","Vice President,Finance & CFO",True,"Common Stock, par value $.004",buy,22500.0,12.29,276525.0
+2012-08-31,AAON,"ASBJORNSON, SCOTT M","Vice President,Finance & CFO",True,"Common Stock, par value $.004",buy,4500.0,7.21,32445.0
+2012-08-31,AAON,"ASBJORNSON, SCOTT M","Vice President,Finance & CFO",True,"Common Stock, par value $.004",buy,3600.0,11.31,40716.0
+2012-09-14,AAON,"KNEBEL, DAVID E","Sr Vice-President,Sales & Tech",True,"Common Stock, par value $.004",buy,11250.0,7.21,81112.5
+2012-09-14,AAON,"KNEBEL, DAVID E","Sr Vice-President,Sales & Tech",True,"Common Stock, par value $.004",sell,11250.0,20.45,230062.5
+2012-11-20,AAON,"JOHNSON, JOHN B JR","Director, Secretary",True,"Common Stock, par value $.004",buy,4500.0,8.0,36000.0
+2012-11-20,AAON,"JOHNSON, JOHN B JR","Director, Secretary",True,"Common Stock, par value $.004",buy,4500.0,10.37,46665.0
+2012-11-20,AAON,"JOHNSON, JOHN B JR","Director, Secretary",True,"Common Stock, par value $.004",buy,4500.0,9.07,40815.0
+2012-11-20,AAON,"JOHNSON, JOHN B JR","Director, Secretary",True,Plan C Stock Option,sell,4500.0,8.0,36000.0
+2012-11-20,AAON,"JOHNSON, JOHN B JR","Director, Secretary",True,Plan C Stock Option,sell,4500.0,9.07,40815.0
+2012-11-20,AAON,"JOHNSON, JOHN B JR","Director, Secretary",True,"Common Stock, par value $.004",sell,4500.0,20.2,90900.0
+2012-11-20,AAON,"JOHNSON, JOHN B JR","Director, Secretary",True,Plan C Stock Option,sell,4500.0,10.37,46665.0
+2012-12-03,AAON,"SHEFFIELD, KATHY I",Sr. Vice President Admin/Treas,True,"Common Stock, par value $.004",buy,11250.0,7.21,81112.5
+2012-12-03,AAON,"KNEBEL, DAVID E","Sr.Vice President,Sales & Tech",True,Stock Option (Right to Buy),sell,22500.0,12.29,276525.0
+2012-12-03,AAON,"SHEFFIELD, KATHY I",Sr. Vice President Admin/Treas,True,Stock Option,sell,22500.0,12.29,276525.0
+2012-12-03,AAON,"SHEFFIELD, KATHY I",Sr. Vice President Admin/Treas,True,"Common Stock, par value $.004",sell,11250.0,21.35,240187.50000000003
+2012-12-03,AAON,"SHEFFIELD, KATHY I",Sr. Vice President Admin/Treas,True,Stock Option,sell,11250.0,7.21,81112.5
+2012-12-03,AAON,"KNEBEL, DAVID E","Sr.Vice President,Sales & Tech",True,"Common Stock, par value $.004",buy,22500.0,12.29,276525.0
+2012-12-03,AAON,"SHEFFIELD, KATHY I",Sr. Vice President Admin/Treas,True,"Common Stock, par value $.004",sell,22500.0,21.35,480375.00000000006
+2012-12-03,AAON,"KNEBEL, DAVID E","Sr.Vice President,Sales & Tech",True,"Common Stock, par value$.004",sell,22500.0,21.35,480375.00000000006
+2012-12-03,AAON,"SHEFFIELD, KATHY I",Sr. Vice President Admin/Treas,True,"Common Stock, par value $.004",buy,22500.0,12.29,276525.0
+2012-12-06,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,3239.0,21.08,68278.12
+2013-06-13,AAON,"KNEBEL, DAVID E","Sr.Vice President,Sales & Tech",True,"Common Stock, par value $.004",buy,4500.0,11.31,50895.0
+2013-06-13,AAON,"KNEBEL, DAVID E","Sr.Vice President,Sales & Tech",True,Stock Option (Right to Buy),sell,12000.0,10.23,122760.0
+2013-06-13,AAON,"KNEBEL, DAVID E","Sr.Vice President,Sales & Tech",True,"Common Stock, par value $.004",sell,12000.0,32.59,391080.00000000006
+2013-06-13,AAON,"KNEBEL, DAVID E","Sr.Vice President,Sales & Tech",True,"Common Stock, par value $.004",sell,4500.0,32.59,146655.00000000003
+2013-06-13,AAON,"KNEBEL, DAVID E","Sr.Vice President,Sales & Tech",True,"Common Stock, par value $.004",buy,12000.0,10.23,122760.0
+2013-06-13,AAON,"KNEBEL, DAVID E","Sr.Vice President,Sales & Tech",True,Stock Option (Right to Buy),sell,4500.0,11.31,50895.0
+2013-07-31,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,3876.0,21.57,83605.32
+2013-08-06,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",buy,646.0,23.0,14858.0
+2013-10-31,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,19150.0,27.01,517241.50000000006
+2013-11-22,AAON,"JOHNSON, JOHN B JR","Director, Secretary",True,"Common Stock, par value $.004",sell,15700.0,29.32,460324.0
+2013-12-06,AAON,"KNEBEL, DAVID E","Sr.Vice President,Sales & Tech",True,"Common Stock, par value $.004",buy,4500.0,6.82,30690.0
+2013-12-06,AAON,"KNEBEL, DAVID E","Sr.Vice President,Sales & Tech",True,"Common Stock, par value $.004",sell,13500.0,30.76,415260.0
+2013-12-06,AAON,"KNEBEL, DAVID E","Sr.Vice President,Sales & Tech",True,"Common Stock, par value $.004",sell,4500.0,30.76,138420.0
+2013-12-06,AAON,"KNEBEL, DAVID E","Sr.Vice President,Sales & Tech",True,"Common Stock, par value $.004",buy,13500.0,10.34,139590.0
+2013-12-06,AAON,"KNEBEL, DAVID E","Sr.Vice President,Sales & Tech",True,"Common Stock, par value $.004",buy,9000.0,6.81,61290.0
+2013-12-06,AAON,"KNEBEL, DAVID E","Sr.Vice President,Sales & Tech",True,"Common Stock, par value $.004",sell,9000.0,30.76,276840.0
+2013-12-27,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,270.0,32.74,8839.800000000001
+2014-01-02,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,283.0,31.69,8968.27
+2014-03-13,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,170000.0,27.37,4652900.0
+2014-03-20,AAON,"KNEBEL, DAVID E","Sr.Vice President,Sales & Tech",True,Stock Option (Right to Buy),sell,2250.0,6.81,15322.5
+2014-03-20,AAON,"KNEBEL, DAVID E","Sr.Vice President,Sales & Tech",True,"Common Stock, par value $.004",buy,2250.0,6.81,15322.5
+2014-03-21,AAON,"KNEBEL, DAVID E","Sr.Vice President,Sales & Tech",True,"Common Stock, par value $.004",buy,3000.0,12.98,38940.0
+2014-03-21,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,917.0,29.3,26868.100000000002
+2014-03-21,AAON,"KNEBEL, DAVID E","Sr.Vice President,Sales & Tech",True,Stock Option (Right to Buy),sell,3000.0,12.98,38940.0
+2014-03-21,AAON,"KNEBEL, DAVID E","Sr.Vice President,Sales & Tech",True,"Common Stock, par value $.004",sell,13375.0,29.11,389346.25
+2014-03-21,AAON,"LEVINE, JERRY R",Director,True,"Common Stock, par value $.004",sell,15000.0,28.75,431250.0
+2014-04-01,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,232.0,28.64,6644.4800000000005
+2014-05-15,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,366.0,29.88,10936.08
+2014-05-16,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,366.0,30.28,11082.48
+2014-05-19,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,366.0,30.48,11155.68
+2014-07-01,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,232.0,34.18,7929.76
+2014-08-13,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,285.0,18.6,5301.0
+2014-08-18,AAON,"LEVINE, JERRY R",Director,True,Stock Option (Right to Buy),sell,6250.0,7.13,44562.5
+2014-08-18,AAON,"LEVINE, JERRY R",Director,True,"Common Stock, par value $.004",buy,7875.0,5.77,45438.75
+2014-08-18,AAON,"LEVINE, JERRY R",Director,True,"Common Stock, par value $.004",buy,6250.0,7.13,44562.5
+2014-08-18,AAON,"LEVINE, JERRY R",Director,True,Stock Option (Right to Buy),sell,7875.0,5.77,45438.75
+2014-11-04,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,4170.0,20.13,83942.09999999999
+2014-11-04,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",buy,695.0,20.13,13990.349999999999
+2014-11-04,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",buy,1390.0,20.13,27980.699999999997
+2014-12-05,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,230.0,21.23,4882.900000000001
+2014-12-28,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,354.0,22.37,7918.9800000000005
+2015-01-02,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,418.0,21.93,9166.74
+2015-04-01,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,344.0,23.84,8200.96
+2015-05-15,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,527.0,23.14,12194.78
+2015-05-19,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,1076.0,23.62,25415.120000000003
+2015-05-20,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,420.0,24.29,10201.8
+2015-05-20,AAON,"FERGUS, ROBERT G",Vice President,True,"Common Stock, par value $.004",sell,486.0,24.29,11804.939999999999
+2015-05-20,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,3160.0,24.29,76756.4
+2015-05-20,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,596.0,24.29,14476.84
+2015-05-20,AAON,"SHEFFIELD, KATHY I",Sr. Vice President Admin/Treas,True,"Common Stock, par value $.004",sell,580.0,24.29,14088.199999999999
+2015-05-26,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,Stock Option (Right to Buy),sell,6750.0,4.54,30645.0
+2015-05-26,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,Stock Option (Right to Buy),sell,2025.0,5.03,10185.75
+2015-05-26,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",buy,6750.0,4.54,30645.0
+2015-05-26,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",buy,2025.0,5.03,10185.75
+2015-05-26,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,8775.0,24.22,212530.5
+2015-05-27,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,Stock Option (Right to Buy),sell,13500.0,8.65,116775.0
+2015-05-27,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,Stock Option (Right to Buy),sell,20250.0,6.89,139522.5
+2015-05-27,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",buy,13500.0,8.65,116775.0
+2015-05-27,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",buy,20250.0,6.89,139522.5
+2015-05-27,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,33750.0,24.3,820125.0
+2015-06-22,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,4000.0,23.5,94000.0
+2015-07-01,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,348.0,22.85,7951.8
+2015-08-13,AAON,"FERGUS, ROBERT G",Vice President,True,"Common Stock, par value $.004",sell,279.0,22.88,6383.5199999999995
+2015-08-13,AAON,"SHEFFIELD, KATHY I",Sr. Vice President Admin/Treas,True,"Common Stock, par value $.004",sell,279.0,22.88,6383.5199999999995
+2015-08-13,AAON,"NEALE, SAM",Vice President,True,"Common Stock, par value $.004",sell,231.0,22.88,5285.28
+2015-08-13,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,279.0,22.88,6383.5199999999995
+2015-12-28,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,342.0,23.52,8043.84
+2016-01-02,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,643.0,23.22,14930.46
+2016-01-02,AAON,"NEALE, SAM",Vice President,True,"Common Stock, par value $.004",sell,256.0,23.22,5944.32
+2016-01-02,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,356.0,23.22,8266.32
+2016-01-02,AAON,"FERGUS, ROBERT G",Vice President,True,"Common Stock, par value $.004",sell,285.0,23.22,6617.7
+2016-01-02,AAON,"SHEFFIELD, KATHY I",Sr. Vice President Admin/Treas,True,"Common Stock, par value $.004",sell,356.0,23.22,8266.32
+2016-02-26,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,2433.0,24.95,60703.35
+2016-02-29,AAON,"SHEFFIELD, KATHY I",Sr. Vice President Admin/Treas,True,"Common Stock, par value $.004",buy,11875.0,4.54,53912.5
+2016-02-29,AAON,"SHEFFIELD, KATHY I",Sr. Vice President Admin/Treas,True,"Common Stock, par value $.004",sell,11875.0,24.9108,295815.75
+2016-02-29,AAON,"SHEFFIELD, KATHY I",Sr. Vice President Admin/Treas,True,"Common Stock, par value $.004",sell,900.0,24.9979,22498.11
+2016-02-29,AAON,"SHEFFIELD, KATHY I",Sr. Vice President Admin/Treas,True,Stock Option (Right to Buy),sell,11875.0,4.54,53912.5
+2016-03-01,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,760.0,26.0,19760.0
+2016-03-03,AAON,"NEALE, SAM",Vice President,True,"Common Stock, par value $.004",sell,700.0,25.8,18060.0
+2016-03-04,AAON,"NEALE, SAM",Vice President,True,"Common Stock, par value $.004",sell,40.0,25.6,1024.0
+2016-03-07,AAON,"NEALE, SAM",Vice President,True,"Common Stock, par value $.004",sell,7552.0,25.2894,190985.5488
+2016-03-08,AAON,"NEALE, SAM",Vice President,True,"Common Stock, par value $.004",sell,6750.0,25.53,172327.5
+2016-03-08,AAON,"NEALE, SAM",Vice President,True,"Common Stock, par value $.004",buy,6750.0,6.89,46507.5
+2016-03-08,AAON,"NEALE, SAM",Vice President,True,Stock Option (Right to Buy),sell,6750.0,6.89,46507.5
+2016-04-01,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,332.0,28.2,9362.4
+2016-05-19,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,536.0,26.94,14439.84
+2016-05-20,AAON,"SHEFFIELD, KATHY I",Sr. Vice President Admin/Treas,True,"Common Stock, par value $.004",sell,583.0,27.37,15956.710000000001
+2016-05-20,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,405.0,27.37,11084.85
+2016-05-20,AAON,"NEALE, SAM",Vice President,True,"Common Stock, par value $.004",sell,363.0,27.37,9935.31
+2016-05-20,AAON,"FERGUS, ROBERT G",Vice President,True,"Common Stock, par value $.004",sell,475.0,27.37,13000.75
+2016-05-20,AAON,"ASBJORNSON, NORMAN H","Director, President, 10% Owner",True,"Common Stock, par value $.004",sell,3087.0,27.37,84491.19
+2016-05-20,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,582.0,27.37,15929.34
+2016-07-01,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,340.0,27.24,9261.6
+2016-08-12,AAON,"FERGUS, ROBERT G",Vice President,True,"Common Stock, par value $.004",sell,272.0,27.22,7403.84
+2016-08-12,AAON,"SHEFFIELD, KATHY I",Sr. Vice President Admin/Treas,True,"Common Stock, par value $.004",sell,274.0,27.22,7458.28
+2016-08-12,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,274.0,27.22,7458.28
+2016-08-12,AAON,"NEALE, SAM",Vice President,True,"Common Stock, par value $.004",sell,219.0,27.22,5961.179999999999
+2016-08-24,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,1792.0,28.0,50176.0
+2016-09-14,AAON,"NEALE, SAM",Vice President,True,Stock Option (Right to Buy),sell,4500.0,8.65,38925.0
+2016-09-14,AAON,"NEALE, SAM",Vice President,True,Stock Option (Right to Buy),sell,800.0,21.93,17544.0
+2016-09-14,AAON,"NEALE, SAM",Vice President,True,"Common Stock, par value $.004",sell,3171.0,27.3116,86605.0836
+2016-09-14,AAON,"NEALE, SAM",Vice President,True,"Common Stock, par value $.004",buy,800.0,21.93,17544.0
+2016-09-14,AAON,"NEALE, SAM",Vice President,True,"Common Stock, par value $.004",buy,4500.0,8.65,38925.0
+2016-11-23,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,1976.0,33.0,65208.0
+2016-12-15,AAON,"SHEFFIELD, KATHY I",Sr. Vice President Admin/Treas,True,"Common Stock, par value $.004",sell,10125.0,32.7657,331752.7125
+2016-12-15,AAON,"SHEFFIELD, KATHY I",Sr. Vice President Admin/Treas,True,"Common Stock, par value $.004",buy,10125.0,5.03,50928.75
+2016-12-15,AAON,"SHEFFIELD, KATHY I",Sr. Vice President Admin/Treas,True,Stock Option (Right to Buy),sell,10125.0,5.03,50928.75
+2016-12-15,AAON,"SHEFFIELD, KATHY I",Sr. Vice President Admin/Treas,True,"Common Stock, par value $.004",sell,12369.0,32.75,405084.75
+2016-12-28,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,339.0,33.4,11322.6
+2017-01-02,AAON,"FERGUS, ROBERT G",Vice President,True,"Common Stock, par value $.004",sell,283.0,33.05,9353.15
+2017-01-02,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,641.0,33.05,21185.05
+2017-01-02,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,353.0,33.05,11666.65
+2017-01-02,AAON,"SHEFFIELD, KATHY I",Sr. Vice President Admin/Treas,True,"Common Stock, par value $.004",sell,353.0,33.05,11666.65
+2017-01-02,AAON,"NEALE, SAM",Vice President,True,"Common Stock, par value $.004",sell,253.0,33.05,8361.65
+2017-01-04,AAON,"SHEFFIELD, KATHY I",Sr. Vice President Admin/Treas,True,"Common Stock, par value $.004",sell,460.0,34.1,15686.0
+2017-01-04,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,155.0,34.1,5285.5
+2017-01-04,AAON,"FERGUS, ROBERT G",Vice President,True,"Common Stock, par value $.004",sell,212.0,34.1,7229.200000000001
+2017-01-04,AAON,"NEALE, SAM",Vice President,True,"Common Stock, par value $.004",sell,252.0,34.1,8593.2
+2017-01-04,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,460.0,34.1,15686.0
+2017-01-26,AAON,"ASBJORNSON, NORMAN H","Director, CEO, 10% Owner",True,"Common Stock, par value $.004",sell,2225.0,34.85,77541.25
+2017-02-26,AAON,"ASBJORNSON, NORMAN H","Director, CEO, 10% Owner",True,"Common Stock, par value $.004",sell,2410.0,34.5,83145.0
+2017-03-02,AAON,"LEVINE, JERRY R",Director,True,"Common Stock, par value $.004",sell,20000.0,35.382,707640.0
+2017-03-10,AAON,"CREWS, MIKEL D",Vice President of Operations,True,"Common Stock, par value $.004",sell,68.0,35.4,2407.2
+2017-03-10,AAON,"LEVINE, JERRY R",Director,True,"Common Stock, par value $.004",sell,20000.0,35.2338,704676.0
+2017-03-10,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,579.0,35.4,20496.6
+2017-03-10,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,4500.0,35.374,159183.0
+2017-03-10,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,5611.0,35.45,198909.95
+2017-03-10,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",buy,4500.0,8.65,38925.0
+2017-03-10,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,Stock Option (Right to Buy),sell,4500.0,8.65,38925.0
+2017-03-14,AAON,"NEALE, SAM",Vice President,True,"Common Stock, par value $.004",buy,848.0,22.15,18783.199999999997
+2017-03-14,AAON,"NEALE, SAM",Vice President,True,"Common Stock, par value $.004",sell,1248.0,35.39,44166.72
+2017-03-14,AAON,"NEALE, SAM",Vice President,True,Stock Option (Right to Buy),sell,800.0,21.93,17544.0
+2017-03-14,AAON,"NEALE, SAM",Vice President,True,Stock Option (Right to Buy),sell,848.0,22.15,18783.199999999997
+2017-03-14,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,7801.0,35.35,275765.35000000003
+2017-03-14,AAON,"NEALE, SAM",Vice President,True,"Common Stock, par value $.004",buy,800.0,21.93,17544.0
+2017-03-16,AAON,"SHEFFIELD, KATHY I",Sr. Vice President Admin/Treas,True,Stock Option (Right to Buy),sell,15000.0,6.89,103350.0
+2017-03-16,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,1370.0,36.5,50005.0
+2017-03-16,AAON,"SHEFFIELD, KATHY I",Sr. Vice President Admin/Treas,True,"Common Stock, par value $.004",sell,17110.0,36.55,625370.5
+2017-03-16,AAON,"SHEFFIELD, KATHY I",Sr. Vice President Admin/Treas,True,"Common Stock, par value $.004",buy,5000.0,4.54,22700.0
+2017-03-16,AAON,"SHEFFIELD, KATHY I",Sr. Vice President Admin/Treas,True,"Common Stock, par value $.004",sell,20000.0,36.53,730600.0
+2017-03-16,AAON,"SHEFFIELD, KATHY I",Sr. Vice President Admin/Treas,True,Stock Option (Right to Buy),sell,5000.0,4.54,22700.0
+2017-03-16,AAON,"SHEFFIELD, KATHY I",Sr. Vice President Admin/Treas,True,"Common Stock, par value $.004",buy,15000.0,6.89,103350.0
+2017-04-01,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,400.0,35.35,14140.0
+2017-05-16,AAON,"FIELDS, GARY D","Director, President",True,"Common Stock, par value $.004",sell,1054.0,36.65,38629.1
+2017-05-16,AAON,"ASBJORNSON, NORMAN H","Director, CEO, 10% Owner",True,"Common Stock, par value $.004",sell,1594.0,36.65,58420.1
+2017-05-20,AAON,"SHEFFIELD, KATHY I",Sr. Vice President Admin/Treas,True,"Common Stock, par value $.004",sell,579.0,36.65,21220.35
+2017-05-20,AAON,"ASBJORNSON, NORMAN H","Director, CEO, 10% Owner",True,"Common Stock, par value $.004",sell,3068.0,36.65,112442.2
+2017-05-20,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,578.0,36.65,21183.7
+2017-05-20,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,408.0,36.65,14953.199999999999
+2017-05-20,AAON,"NEALE, SAM",Vice President,True,"Common Stock, par value $.004",sell,360.0,36.65,13194.0
+2017-05-26,AAON,"SHEFFIELD, KATHY I",Sr. Vice President Admin/Treas,True,"Common Stock, par value $.004",sell,177.0,36.55,6469.349999999999
+2017-06-06,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",buy,1336.0,22.15,29592.399999999998
+2017-06-06,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,Stock Option (Right to Buy),sell,1336.0,22.15,29592.399999999998
+2017-06-06,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,Stock Option (Right to Buy),sell,1922.0,21.93,42149.46
+2017-06-06,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,3258.0,36.6352,119357.4816
+2017-06-06,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,Stock Option (Right to Buy),sell,4500.0,8.65,38925.0
+2017-06-06,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,2057.0,36.725,75543.325
+2017-06-06,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",buy,1922.0,21.93,42149.46
+2017-06-06,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",buy,4500.0,8.65,38925.0
+2017-06-06,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,4500.0,36.7512,165380.4
+2017-07-01,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,339.0,36.85,12492.15
+2017-08-13,AAON,"NEALE, SAM",Vice President,True,"Common Stock, par value $.004",sell,220.0,33.1,7282.0
+2017-08-13,AAON,"SHEFFIELD, KATHY I",Sr. Vice President Admin/Treas,True,"Common Stock, par value $.004",sell,272.0,33.1,9003.2
+2017-08-13,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,272.0,33.1,9003.2
+2017-08-15,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,292.0,32.7,9548.400000000001
+2017-09-07,AAON,"SHORT, JACK E",Director,True,"Common Stock, par value $.004",sell,5062.0,31.91,161528.42
+2017-11-04,AAON,"CREWS, MIKEL D",Vice President of Operations,True,"Common Stock, par value $.004",sell,508.0,34.45,17500.600000000002
+2017-11-30,AAON,"SHEFFIELD, KATHY I",Sr. Vice President Admin/Treas,True,"Common Stock, par value $.004",sell,3829.0,36.45,139567.05000000002
+2017-12-01,AAON,"FIELDS, GARY D","Director, President",True,"Common Stock, par value $.004",sell,36.0,36.35,1308.6000000000001
+2017-12-28,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,335.0,36.8,12327.999999999998
+2018-01-02,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,635.0,36.95,23463.25
+2018-01-02,AAON,"NEALE, SAM",Vice President,True,"Common Stock, par value $.004",sell,250.0,36.95,9237.5
+2018-01-02,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,350.0,36.95,12932.500000000002
+2018-01-04,AAON,"CREWS, MIKEL D",Vice President of Operations,True,"Common Stock, par value $.004",sell,860.0,37.45,32207.000000000004
+2018-01-04,AAON,"FIELDS, GARY D","Director, President",True,"Common Stock, par value $.004",sell,218.0,37.45,8164.1
+2018-01-04,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,770.0,37.45,28836.500000000004
+2018-01-04,AAON,"NEALE, SAM",Vice President,True,"Common Stock, par value $.004",sell,585.0,37.45,21908.25
+2018-01-04,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,456.0,37.45,17077.2
+2018-01-26,AAON,"ASBJORNSON, NORMAN H","Director, CEO, 10% Owner",True,"Common Stock, par value $.004",sell,2009.0,36.3,72926.7
+2018-02-06,AAON,"CREWS, MIKEL D",Vice President of Operations,True,"Common Stock, par value $.004",sell,41.0,33.7,1381.7
+2018-02-22,AAON,"ASBJORNSON, NORMAN H","Director, CEO, 10% Owner",True,"Common Stock, par value $.004",sell,1336.0,34.85,46559.6
+2018-02-26,AAON,"ASBJORNSON, NORMAN H","Director, CEO, 10% Owner",True,"Common Stock, par value $.004",sell,2140.0,35.75,76505.0
+2018-02-27,AAON,"CREWS, MIKEL D",Vice President of Operations,True,"Common Stock, par value $.004",sell,64.0,38.65,2473.6
+2018-03-05,AAON,"NEALE, SAM",Vice President,True,Stock Option (Right to Buy),sell,1695.0,35.6,60342.0
+2018-03-05,AAON,"NEALE, SAM",Vice President,True,Stock Option (Right to Buy),sell,4500.0,35.6,160200.0
+2018-03-05,AAON,"NEALE, SAM",Vice President,True,"Common Stock, par value $.004",buy,800.0,21.93,17544.0
+2018-03-05,AAON,"NEALE, SAM",Vice President,True,"Common Stock, par value $.004",sell,7840.0,35.6,279104.0
+2018-03-05,AAON,"NEALE, SAM",Vice President,True,"Common Stock, par value $.004",buy,1695.0,34.1,57799.5
+2018-03-05,AAON,"NEALE, SAM",Vice President,True,"Common Stock, par value $.004",buy,845.0,22.15,18716.75
+2018-03-05,AAON,"NEALE, SAM",Vice President,True,Stock Option (Right to Buy),sell,800.0,35.6,28480.0
+2018-03-05,AAON,"NEALE, SAM",Vice President,True,"Common Stock, par value $.004",buy,4500.0,8.65,38925.0
+2018-03-05,AAON,"NEALE, SAM",Vice President,True,Stock Option (Right to Buy),sell,845.0,35.6,30082.0
+2018-03-12,AAON,"CREWS, MIKEL D",Vice President of Operations,True,"Common Stock, par value $.004",sell,62.0,38.2,2368.4
+2018-03-13,AAON,"NEALE, SAM",Vice President,True,"Common Stock, par value $.004",buy,5000.0,34.1,170500.0
+2018-03-13,AAON,"NEALE, SAM",Vice President,True,"Common Stock, par value $.004",sell,5000.0,38.38,191900.0
+2018-04-01,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,316.0,39.0,12324.0
+2018-05-15,AAON,"ASBJORNSON, NORMAN H","Director, CEO, 10% Owner",True,"Common Stock, par value $.004",sell,1424.0,29.5,42008.0
+2018-05-15,AAON,"FIELDS, GARY D","Director, President",True,"Common Stock, par value $.004",sell,1502.0,29.5,44309.0
+2018-05-16,AAON,"ASBJORNSON, NORMAN H","Director, CEO, 10% Owner",True,"Common Stock, par value $.004",buy,8000.0,29.669,237352.0
+2018-05-20,AAON,"ASBJORNSON, NORMAN H","Director, CEO, 10% Owner",True,"Common Stock, par value $.004",sell,2691.0,31.55,84901.05
+2018-05-20,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,346.0,31.55,10916.300000000001
+2018-05-20,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,500.0,31.55,15775.0
+2018-06-14,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,3912.0,33.1264,129590.47679999999
+2018-07-01,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,300.0,33.25,9975.0
+2018-08-07,AAON,"FIELDS, GARY D","Director, President",True,"Common Stock, par value $.004",sell,1600.0,38.701,61921.6
+2018-08-16,AAON,"SHORT, JACK E",Director,True,"Common Stock, par value $.004",sell,5851.0,40.453,236690.50300000003
+2018-08-16,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,809.0,40.25,32562.25
+2018-08-17,AAON,"SHORT, JACK E",Director,True,"Common Stock, par value $.004",sell,4149.0,40.34,167370.66
+2018-08-21,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,5533.0,42.69,236203.77
+2018-11-04,AAON,"CREWS, MIKEL D",Vice President of Operations,True,"Common Stock, par value $.004",sell,468.0,39.01,18256.68
+2018-11-04,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",sell,431.0,39.01,16813.309999999998
+2018-11-08,AAON,"SHORT, JACK E",Director,True,"Common Stock, par value $.004",sell,9123.0,43.809,399669.507
+2018-11-08,AAON,"FIELDS, GARY D","Director, President",True,"Common Stock, par value $.004",sell,1600.0,44.218,70748.8
+2018-11-14,AAON,"WAKEFIELD, STEPHEN E","VP, Engineering",True,"Common Stock, par value $.004",sell,80.0,41.52,3321.6000000000004
+2018-12-01,AAON,"FIELDS, GARY D","Director, President",True,"Common Stock, par value $.004",sell,32.0,37.95,1214.4
+2019-01-02,AAON,"FIELDS, GARY D","Director, President",True,"Common Stock, par value $.004",sell,408.0,35.07,14308.56
+2019-01-02,AAON,"ASBJORNSON, NORMAN H","Director, CEO, 10% Owner",True,"Common Stock, par value $.004",sell,313.0,35.07,10976.91
+2019-01-02,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",sell,531.0,35.07,18622.170000000002
+2019-01-02,AAON,"WAKEFIELD, STEPHEN E","VP, Engineering",True,"Common Stock, par value $.004",sell,204.0,35.07,7154.28
+2019-01-02,AAON,"CREWS, MIKEL D",Vice President of Operations,True,"Common Stock, par value $.004",sell,132.0,35.07,4629.24
+2019-01-02,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,531.0,35.07,18622.170000000002
+2019-01-02,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,303.0,35.07,10626.210000000001
+2019-01-04,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",sell,760.0,35.61,27063.6
+2019-01-04,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,686.0,35.61,24428.46
+2019-01-04,AAON,"FIELDS, GARY D","Director, President",True,"Common Stock, par value $.004",sell,196.0,35.61,6979.5599999999995
+2019-01-04,AAON,"CREWS, MIKEL D",Vice President of Operations,True,"Common Stock, par value $.004",sell,774.0,35.61,27562.14
+2019-01-04,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,412.0,35.61,14671.32
+2019-01-26,AAON,"ASBJORNSON, NORMAN H","Director, CEO, 10% Owner",True,"Common Stock, par value $.004",sell,1929.0,35.71,68884.59
+2019-02-06,AAON,"CREWS, MIKEL D",Vice President of Operations,True,"Common Stock, par value $.004",sell,40.0,37.37,1494.8
+2019-02-06,AAON,"WAKEFIELD, STEPHEN E","VP, Engineering",True,"Common Stock, par value $.004",sell,32.0,37.37,1195.84
+2019-02-06,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",sell,32.0,37.37,1195.84
+2019-02-22,AAON,"ASBJORNSON, NORMAN H","Director, CEO, 10% Owner",True,"Common Stock, par value $.004",sell,1315.0,42.18,55466.7
+2019-02-26,AAON,"ASBJORNSON, NORMAN H","Director, CEO, 10% Owner",True,"Common Stock, par value $.004",sell,2114.0,41.75,88259.5
+2019-02-27,AAON,"CREWS, MIKEL D",Vice President of Operations,True,"Common Stock, par value $.004",sell,63.0,41.56,2618.28
+2019-03-05,AAON,"FIELDS, GARY D","Director, President",True,"Common Stock, par value $.004",sell,2000.0,42.385,84770.0
+2019-03-05,AAON,"WAKEFIELD, STEPHEN E","VP, Engineering",True,"Common Stock, par value $.004",sell,635.0,41.883,26595.705
+2019-05-07,AAON,"WAKEFIELD, STEPHEN E","VP, Engineering",True,"Common Stock, par value $.004",sell,1118.0,47.83,53473.939999999995
+2019-05-14,AAON,"FIELDS, GARY D","Director, President",True,"Common Stock, par value $.004",sell,1506.0,46.57,70134.42
+2019-05-14,AAON,"ASBJORNSON, NORMAN H","Director, CEO, 10% Owner",True,"Common Stock, par value $.004",sell,1440.0,46.57,67060.8
+2019-05-20,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,503.0,46.74,23510.22
+2019-05-20,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,421.0,46.74,19677.54
+2019-05-20,AAON,"ASBJORNSON, NORMAN H","Director, CEO, 10% Owner",True,"Common Stock, par value $.004",sell,2707.0,46.74,126525.18000000001
+2019-06-06,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,Stock Option (Right to Buy),sell,2640.0,48.0,126720.0
+2019-06-06,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,Stock Option (Right to Buy),sell,3000.0,48.03,144090.0
+2019-06-07,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,3824.0,48.83,186725.91999999998
+2019-06-10,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,Stock Option (Right to Buy),sell,1922.0,48.82,93832.04
+2019-06-10,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,Stock Option (Right to Buy),sell,2672.0,48.82,130447.04
+2019-06-11,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,1100.0,47.97,52767.0
+2019-08-19,AAON,"FIELDS, GARY D","Director, President",True,Stock Option (Right to Buy),sell,7679.0,47.59,365443.61000000004
+2019-08-19,AAON,"FIELDS, GARY D","Director, President",True,"Common Stock, par value $.004",buy,10457.0,33.73,352714.61
+2019-08-19,AAON,"FIELDS, GARY D","Director, President",True,"Common Stock, par value $.004",sell,8889.0,47.59,423027.51
+2019-08-19,AAON,"FIELDS, GARY D","Director, President",True,Stock Option (Right to Buy),sell,2778.0,47.59,132205.02000000002
+2019-08-21,AAON,"FIELDS, GARY D","Director, President",True,"Common Stock, par value $.004",sell,6330.0,47.51,300738.3
+2019-08-21,AAON,"FIELDS, GARY D","Director, President",True,Stock Option (Right to Buy),sell,7261.0,47.51,344970.11
+2019-08-21,AAON,"FIELDS, GARY D","Director, President",True,"Common Stock, par value $.004",buy,7261.0,34.1,247600.1
+2019-09-12,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,Stock Option (Right to Buy),sell,4000.0,50.38,201520.0
+2019-09-12,AAON,"WAKEFIELD, STEPHEN E","VP, Engineering",True,Stock Option (Right to Buy),sell,1532.0,50.54,77427.28
+2019-09-12,AAON,"WAKEFIELD, STEPHEN E","VP, Engineering",True,"Common Stock, par value $.004",sell,3341.0,50.54,168854.13999999998
+2019-09-12,AAON,"FIELDS, GARY D","Director, President",True,Stock Option (Right to Buy),sell,12660.0,50.18,635278.8
+2019-09-12,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",buy,4000.0,8.7,34800.0
+2019-09-12,AAON,"FIELDS, GARY D","Director, President",True,"Common Stock, par value $.004",sell,10464.0,50.18,525083.52
+2019-09-12,AAON,"WAKEFIELD, STEPHEN E","VP, Engineering",True,Stock Option (Right to Buy),sell,960.0,50.54,48518.4
+2019-09-12,AAON,"WAKEFIELD, STEPHEN E","VP, Engineering",True,"Common Stock, par value $.004",buy,1532.0,22.76,34868.32
+2019-09-12,AAON,"WAKEFIELD, STEPHEN E","VP, Engineering",True,"Common Stock, par value $.004",buy,849.0,26.47,22473.03
+2019-09-12,AAON,"WAKEFIELD, STEPHEN E","VP, Engineering",True,"Common Stock, par value $.004",buy,960.0,32.8,31487.999999999996
+2019-09-12,AAON,"WAKEFIELD, STEPHEN E","VP, Engineering",True,Stock Option (Right to Buy),sell,849.0,50.54,42908.46
+2019-09-12,AAON,"FIELDS, GARY D","Director, President",True,"Common Stock, par value $.004",buy,12660.0,36.95,467787.00000000006
+2019-09-13,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,Stock Option (Right to Buy),sell,7980.0,49.9,398202.0
+2019-09-13,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",buy,13020.0,34.1,443982.0
+2019-09-13,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,21000.0,49.9,1047900.0
+2019-09-13,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,Stock Option (Right to Buy),sell,13020.0,49.9,649698.0
+2019-09-13,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",buy,7980.0,36.95,294861.0
+2019-11-04,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",sell,430.0,49.61,21332.3
+2019-11-04,AAON,"CREWS, MIKEL D",Vice President of Operations,True,"Common Stock, par value $.004",sell,462.0,49.61,22919.82
+2019-11-14,AAON,"WAKEFIELD, STEPHEN E","VP, Engineering",True,"Common Stock, par value $.004",sell,99.0,50.46,4995.54
+2019-11-22,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,272.0,48.39,13162.08
+2019-12-01,AAON,"FIELDS, GARY D","Director, President",True,"Common Stock, par value $.004",sell,32.0,49.37,1579.84
+2020-01-02,AAON,"CREWS, MIKEL D",Vice President of Operations,True,"Common Stock, par value $.004",sell,121.0,49.89,6036.6900000000005
+2020-01-02,AAON,"FIELDS, GARY D","Director, President",True,"Common Stock, par value $.004",sell,405.0,49.89,20205.45
+2020-01-02,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,303.0,49.89,15116.67
+2020-01-02,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",sell,527.0,49.89,26292.03
+2020-01-02,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,531.0,49.89,26491.59
+2020-01-02,AAON,"ASBJORNSON, NORMAN H","Director, CEO, 10% Owner",True,"Common Stock, par value $.004",sell,311.0,49.89,15515.79
+2020-01-02,AAON,"WAKEFIELD, STEPHEN E","VP, Engineering",True,"Common Stock, par value $.004",sell,202.0,49.89,10077.78
+2020-01-04,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,631.0,50.35,31770.850000000002
+2020-01-04,AAON,"CREWS, MIKEL D",Vice President of Operations,True,"Common Stock, par value $.004",sell,774.0,50.35,38970.9
+2020-01-04,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",sell,706.0,50.35,35547.1
+2020-01-04,AAON,"FIELDS, GARY D","Director, President",True,"Common Stock, par value $.004",sell,196.0,50.35,9868.6
+2020-01-04,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,411.0,50.35,20693.850000000002
+2020-01-26,AAON,"ASBJORNSON, NORMAN H","Director, CEO, 10% Owner",True,"Common Stock, par value $.004",sell,1884.0,53.45,100699.8
+2020-02-22,AAON,"ASBJORNSON, NORMAN H","Director, CEO, 10% Owner",True,"Common Stock, par value $.004",sell,1307.0,55.24,72198.68000000001
+2020-02-26,AAON,"ASBJORNSON, NORMAN H","Director, CEO, 10% Owner",True,"Common Stock, par value $.004",sell,2110.0,53.12,112083.2
+2020-02-27,AAON,"CREWS, MIKEL D",Vice President of Operations,True,"Common Stock, par value $.004",sell,51.0,57.59,2937.09
+2020-03-03,AAON,"FIELDS, GARY D","Director, President",True,"Common Stock, par value $.004",sell,3000.0,57.52,172560.0
+2020-03-03,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,1350.0,57.75,77962.5
+2020-03-03,AAON,"WAKEFIELD, STEPHEN E","VP, Engineering",True,"Common Stock, par value $.004",sell,601.0,57.57,34599.57
+2020-03-03,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",buy,1350.0,22.15,29902.499999999996
+2020-03-03,AAON,"CREWS, MIKEL D",Vice President of Operations,True,Stock Option (Right to Buy),sell,1250.0,57.28,71600.0
+2020-03-03,AAON,"SHORT, JACK E",Director,True,"Common Stock, par value $.004",sell,15000.0,56.07,841050.0
+2020-03-03,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,Stock Option (Right to Buy),sell,3525.0,58.14,204943.5
+2020-03-03,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",buy,3525.0,8.7,30667.499999999996
+2020-03-03,AAON,"CREWS, MIKEL D",Vice President of Operations,True,"Common Stock, par value $.004",buy,1250.0,7.18,8975.0
+2020-03-04,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",buy,3500.0,34.1,119350.0
+2020-03-04,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",buy,1600.0,8.7,13919.999999999998
+2020-03-04,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",sell,1600.0,58.87,94192.0
+2020-03-04,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,Stock Option (Right to Buy),sell,3500.0,58.76,205660.0
+2020-03-11,AAON,"FIELDS, GARY D","Director, President",True,"Common Stock, par value $.004",sell,341.0,44.22,15079.02
+2020-03-11,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",sell,288.0,44.22,12735.36
+2020-03-11,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,170.0,44.22,7517.4
+2020-03-11,AAON,"WAKEFIELD, STEPHEN E","VP, Engineering",True,"Common Stock, par value $.004",sell,273.0,44.22,12072.06
+2020-03-11,AAON,"ASBJORNSON, NORMAN H","Director, CEO, 10% Owner",True,"Common Stock, par value $.004",sell,173.0,44.22,7650.0599999999995
+2020-03-11,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,57.0,44.22,2520.54
+2020-05-08,AAON,"CREWS, MIKEL D",Vice President of Operations,True,"Common Stock, par value $.004",sell,1313.0,48.94,64258.219999999994
+2020-05-08,AAON,"CREWS, MIKEL D",Vice President of Operations,True,"Common Stock, par value $.004",sell,1600.0,48.94,78304.0
+2020-05-08,AAON,"CREWS, MIKEL D",Vice President of Operations,True,Common Stock,sell,23740.0,44.22,1049782.8
+2020-05-12,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",sell,1217.0,47.53,57844.01
+2020-05-27,AAON,"CREWS, MIKEL D",Retired VP of Operations,True,Stock Option (Right to Buy),sell,29216.0,55.01,1607172.16
+2020-05-27,AAON,"CREWS, MIKEL D",Retired VP of Operations,True,"Common Stock, par value $.004",buy,29216.0,41.37,1208665.92
+2020-05-28,AAON,"CREWS, MIKEL D",Retired VP of Operations,True,"Common Stock, par value $.004",buy,11015.0,41.37,455690.55
+2020-05-28,AAON,"CREWS, MIKEL D",Retired VP of Operations,True,Stock Option (Right to Buy),sell,11015.0,55.11,607036.65
+2020-06-01,AAON,"CREWS, MIKEL D",Retired VP of Operations,True,"Common Stock, par value $.004",sell,19769.0,54.52,1077805.8800000001
+2020-06-01,AAON,"CREWS, MIKEL D",Retired VP of Operations,True,"Common Stock, par value $.004",buy,19769.0,41.37,817843.5299999999
+2020-06-03,AAON,"CREWS, MIKEL D",Retired VP of Operations,True,"Common Stock, par value $.004",buy,31600.0,36.95,1167620.0
+2020-06-03,AAON,"CREWS, MIKEL D",Retired VP of Operations,True,Stock Option (Right to Buy),sell,31600.0,55.59,1756644.0
+2020-06-04,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",buy,961.0,21.93,21074.73
+2020-06-04,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,2955.0,56.03,165568.65
+2020-06-04,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,961.0,56.06,53873.66
+2020-06-05,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",buy,13800.0,41.37,570906.0
+2020-06-05,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,Stock Option (Right to Buy),sell,13800.0,57.85,798330.0
+2020-06-05,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,Stock Option (Right to Buy),sell,7980.0,57.85,461643.0
+2020-06-05,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,Stock Option (Right to Buy),sell,6510.0,57.85,376603.5
+2020-06-05,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,Stock Option (Right to Buy),sell,1336.0,57.85,77287.6
+2020-06-05,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",buy,1336.0,22.15,29592.399999999998
+2020-06-05,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",buy,7980.0,36.95,294861.0
+2020-06-05,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",sell,918.0,58.23,53455.14
+2020-06-05,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",buy,918.0,22.15,20333.699999999997
+2020-06-05,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",buy,6510.0,34.1,221991.0
+2020-06-05,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,29626.0,57.85,1713864.1
+2020-06-08,AAON,"CREWS, MIKEL D",Retired VP of Operations,True,"Common Stock, par value $.004",buy,3190.0,22.15,70658.5
+2020-06-08,AAON,"CREWS, MIKEL D",Retired VP of Operations,True,"Common Stock, par value $.004",buy,1350.0,8.65,11677.5
+2020-06-08,AAON,"CREWS, MIKEL D",Retired VP of Operations,True,Stock Option (Right to Buy),sell,27150.0,58.05,1576057.5
+2020-06-08,AAON,"CREWS, MIKEL D",Retired VP of Operations,True,Stock Option (Right to Buy),sell,3190.0,58.58,186870.19999999998
+2020-06-08,AAON,"CREWS, MIKEL D",Retired VP of Operations,True,Stock Option (Right to Buy),sell,1350.0,58.58,79083.0
+2020-06-08,AAON,"CREWS, MIKEL D",Retired VP of Operations,True,Stock Option (Right to Buy),sell,1000.0,58.58,58580.0
+2020-06-08,AAON,"CREWS, MIKEL D",Retired VP of Operations,True,"Common Stock, par value $.004",sell,16506.0,58.58,966921.48
+2020-06-08,AAON,"CREWS, MIKEL D",Retired VP of Operations,True,"Common Stock, par value $.004",buy,10966.0,34.1,373940.60000000003
+2020-06-08,AAON,"CREWS, MIKEL D",Retired VP of Operations,True,"Common Stock, par value $.004",buy,1000.0,7.18,7180.0
+2020-06-09,AAON,"CREWS, MIKEL D",Retired VP of Operations,True,Stock Option (Right to Buy),sell,3345.0,57.5,192337.5
+2020-06-09,AAON,"CREWS, MIKEL D",Retired VP of Operations,True,"Common Stock, par value $.004",buy,3345.0,34.15,114231.75
+2020-06-09,AAON,"CREWS, MIKEL D",Retired VP of Operations,True,"Common Stock, par value $.004",sell,19529.0,57.5,1122917.5
+2020-06-09,AAON,"CREWS, MIKEL D",Retired VP of Operations,True,"Common Stock, par value $.004",buy,16184.0,34.1,551874.4
+2020-08-11,AAON,"LACKEY, PAUL K JR",Director,True,"Common Stock, par value $.004",sell,10124.0,60.38,611287.12
+2020-08-12,AAON,"CREWS, MIKEL D",Retired VP of Operations,True,"Common Stock, par value $.004",sell,21937.0,59.6,1307445.2
+2020-08-12,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,3385.0,60.17,203675.45
+2020-11-10,AAON,"LACKEY, PAUL K JR",Director,True,"Common Stock, par value $.004",sell,3000.0,65.0,195000.0
+2021-01-02,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",sell,524.0,66.63,34914.119999999995
+2021-01-02,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",sell,403.0,66.63,26851.89
+2021-01-02,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,"Common Stock, par value $.004",sell,201.0,66.63,13392.63
+2021-01-02,AAON,"ASBJORNSON, NORMAN H","Director, Executive Chairman, 10% Owner",True,"Common Stock, par value $.004",sell,309.0,66.63,20588.67
+2021-01-02,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,87.0,66.63,5796.8099999999995
+2021-01-02,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,215.0,66.63,14325.449999999999
+2021-01-04,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,655.0,64.71,42385.049999999996
+2021-01-04,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",sell,195.0,64.71,12618.449999999999
+2021-01-04,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",sell,675.0,64.71,43679.24999999999
+2021-01-04,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,410.0,64.71,26531.1
+2021-01-26,AAON,"ASBJORNSON, NORMAN H","Director, Executive Chairman, 10% Owner",True,"Common Stock, par value $.004",sell,1858.0,73.73,136990.34
+2021-02-22,AAON,"ASBJORNSON, NORMAN H","Director, Executive Chairman, 10% Owner",True,"Common Stock, par value $.004",sell,1305.0,76.0,99180.0
+2021-03-02,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,"Common Stock, par value $.004",buy,1532.0,22.76,34868.32
+2021-03-02,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,Stock Option (Right to Buy),sell,1532.0,74.88,114716.15999999999
+2021-03-02,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",buy,2778.0,32.7,90840.6
+2021-03-02,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",buy,14940.0,34.1,509454.0
+2021-03-02,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",buy,6090.0,36.95,225025.50000000003
+2021-03-02,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",sell,23808.0,75.15,1789171.2000000002
+2021-03-02,AAON,"FIELDS, GARY D","Director, President and CEO",True,Stock Option (Right to Buy),sell,2778.0,75.15,208766.7
+2021-03-02,AAON,"FIELDS, GARY D","Director, President and CEO",True,Stock Option (Right to Buy),sell,14940.0,75.15,1122741.0
+2021-03-02,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,"Common Stock, par value $.004",sell,926.0,75.26,69690.76000000001
+2021-03-02,AAON,"FIELDS, GARY D","Director, President and CEO",True,Stock Option (Right to Buy),sell,6090.0,75.15,457663.50000000006
+2021-03-03,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",buy,7157.0,36.95,264451.15
+2021-03-03,AAON,"FIELDS, GARY D","Director, President and CEO",True,Stock Option (Right to Buy),sell,7157.0,75.08,537347.5599999999
+2021-03-03,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,Common Stock,sell,625.0,74.87,46793.75
+2021-03-08,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,1856.0,74.09,137511.04
+2021-03-08,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",buy,1336.0,22.15,29592.399999999998
+2021-03-08,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",buy,7980.0,36.95,294861.0
+2021-03-08,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",buy,6510.0,34.1,221991.0
+2021-03-08,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,"Common Stock, par value $.004",sell,175.0,73.63,12885.25
+2021-03-08,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,15826.0,73.84,1168591.84
+2021-03-08,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,Stock Option (Right to Buy),sell,7980.0,73.84,589243.2000000001
+2021-03-08,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,Stock Option (Right to Buy),sell,6510.0,73.84,480698.4
+2021-03-08,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,Stock Option (Right to Buy),sell,1336.0,73.84,98650.24
+2021-03-10,AAON,"LACKEY, PAUL K JR",Director,True,"Common Stock, par value $.004",sell,2000.0,75.0,150000.0
+2021-03-11,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",sell,454.0,73.36,33305.44
+2021-03-11,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",sell,399.0,73.36,29270.64
+2021-03-11,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,160.0,73.36,11737.6
+2021-03-11,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,"Common Stock, par value $.004",sell,384.0,73.36,28170.239999999998
+2021-03-11,AAON,"ASBJORNSON, NORMAN H","Director, Executive Chairman, 10% Owner",True,"Common Stock, par value $.004",sell,480.0,73.36,35212.8
+2021-03-11,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,286.0,73.36,20980.96
+2021-03-12,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,Stock Option (Right to Buy),buy,5828.0,74.73,435526.44
+2021-03-12,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,Stock Option (Right to Buy),buy,13800.0,74.73,1031274.0
+2021-03-12,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",buy,13800.0,41.37,570906.0
+2021-03-12,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,19628.0,74.73,1466800.4400000002
+2021-03-12,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",buy,5828.0,44.22,257714.16
+2021-03-16,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,"Common Stock, par value $.004",sell,986.0,74.18,73141.48000000001
+2021-03-16,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",sell,32.0,64.24,2055.68
+2021-05-11,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",sell,1365.0,65.24,89052.59999999999
+2021-05-11,AAON,"ASBJORNSON, NORMAN H","Director, Executive Chairman, 10% Owner",True,"Common Stock, par value $.004",sell,1292.0,65.24,84290.07999999999
+2021-05-16,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,1632.0,68.64,112020.48
+2021-05-16,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,Stock Option (Right to Buy),sell,11349.0,74.36,843911.64
+2021-05-16,AAON,"ASBJORNSON, SCOTT M","Vice President, Finance & CFO",True,"Common Stock, par value $.004",sell,1112.0,68.64,76327.68000000001
+2021-08-11,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",buy,3430.0,36.95,126738.50000000001
+2021-08-11,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",sell,3430.0,70.09,240408.7
+2021-08-20,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",buy,501.0,36.95,18511.95
+2021-08-20,AAON,"FIELDS, GARY D","Director, President and CEO",True,Stock Option (Right to Buy),sell,501.0,69.54,34839.54
+2021-08-23,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",buy,2810.0,36.95,103829.50000000001
+2021-08-23,AAON,"FIELDS, GARY D","Director, President and CEO",True,Stock Option (Right to Buy),sell,2810.0,69.55,195435.5
+2021-09-13,AAON,"LACKEY, PAUL K JR",Director,True,"Common Stock, par value $.004",sell,688.0,65.39,44988.32
+2021-11-23,AAON,"LACKEY, PAUL K JR",Director,True,"Common Stock, par value $.004",sell,1615.0,77.69,125469.34999999999
+2021-11-23,AAON,"FIELDS, GARY D","Director, President and CEO",True,Stock Option (Right to Buy),sell,5332.0,78.022,416013.304
+2021-11-23,AAON,"FIELDS, GARY D","Director, President and CEO",True,Stock Option (Right to Buy),sell,15000.0,78.022,1170330.0
+2021-11-23,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",buy,5332.0,36.95,197017.40000000002
+2021-11-23,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",sell,3672.0,78.2,287150.4
+2021-11-23,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",sell,20332.0,78.022,1586343.304
+2021-11-23,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",buy,15000.0,41.37,620550.0
+2021-11-23,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",buy,3672.0,22.15,81334.79999999999
+2021-12-01,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",sell,2000.0,78.42,156840.0
+2021-12-01,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",sell,32.0,77.33,2474.56
+2021-12-01,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",buy,1000.0,34.1,34100.0
+2021-12-01,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,Stock Option (Right to Buy),sell,1000.0,78.42,78420.0
+2021-12-02,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,Stock Option (Right to Buy),sell,1000.0,79.2,79200.0
+2021-12-02,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,Stock Option (Right to Buy),sell,1000.0,79.5,79500.0
+2021-12-02,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,Stock Option (Right to Buy),sell,660.0,78.64,51902.4
+2021-12-02,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,Stock Option (Right to Buy),sell,900.0,78.64,70776.0
+2021-12-02,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",buy,1000.0,34.1,34100.0
+2021-12-02,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",buy,900.0,22.15,19935.0
+2021-12-02,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,1560.0,78.64,122678.4
+2021-12-02,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",buy,660.0,21.93,14473.8
+2021-12-03,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",buy,4000.0,34.1,136400.0
+2021-12-03,AAON,"LACKEY, PAUL K JR",Director,True,"Common Stock, par value $.004",sell,687.0,79.06,54314.22
+2021-12-03,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,4000.0,79.25,317000.0
+2021-12-06,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",buy,1000.0,34.1,34100.0
+2021-12-06,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,Stock Option (Right to Buy),sell,1000.0,81.0,81000.0
+2021-12-06,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,Stock Option (Right to Buy),sell,1000.0,81.5,81500.0
+2021-12-13,AAON,"LACKEY, PAUL K JR",Director,True,"Common Stock, par value $.004",sell,1000.0,80.71,80710.0
+2022-01-02,AAON,"ASBJORNSON, NORMAN H","Director, Executive Chairman, 10% Owner",True,"Common Stock, par value $.004",sell,305.0,79.43,24226.15
+2022-01-02,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,"Common Stock, par value $.004",sell,86.0,79.43,6830.9800000000005
+2022-01-02,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",sell,398.0,79.43,31613.140000000003
+2022-01-02,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",sell,518.0,79.43,41144.740000000005
+2022-01-02,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,"Common Stock, par value $.004",sell,199.0,79.43,15806.570000000002
+2022-01-04,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",sell,209.0,78.95,16500.55
+2022-01-04,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",sell,193.0,78.95,15237.35
+2022-01-04,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,"Common Stock, par value $.004",sell,269.0,78.95,21237.55
+2022-02-22,AAON,"ASBJORNSON, NORMAN H","Director, Executive Chairman, 10% Owner",True,"Common Stock, par value $.004",sell,1312.0,57.55,75505.59999999999
+2022-03-04,AAON,"STEWART, DAVID RAYMOND",Director,True,"Common Stock, par value $.004",buy,1000.0,53.63,53630.0
+2022-03-11,AAON,"ASBJORNSON, NORMAN H","Director, Executive Chairman, 10% Owner",True,"Common Stock, par value $.004",sell,464.0,53.84,24981.760000000002
+2022-03-11,AAON,"STEWART, LARRY GENE",Executive Vice President,True,"Common Stock, par value $.004",sell,120.0,53.84,6460.8
+2022-03-11,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,"Common Stock, par value $.004",sell,595.0,53.84,32034.800000000003
+2022-03-11,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",sell,475.0,53.84,25574.0
+2022-03-11,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",sell,712.0,53.84,38334.08
+2022-03-11,AAON,"WICHMAN, GORDON DOUGLAS",Vice President,True,"Common Stock, par value $.004",sell,152.0,53.84,8183.68
+2022-03-15,AAON,"STEWART, LARRY GENE",Executive Vice President,True,"Common Stock, par value $.004",sell,56.0,70.87,3968.7200000000003
+2022-03-24,AAON,"ASBJORNSON, NORMAN H","Director, Executive Chairman, 10% Owner",True,"Common Stock, par value $.004",sell,150.0,53.84,8076.000000000001
+2022-04-01,AAON,"STEWART, LARRY GENE",Executive Vice President,True,"Common Stock, par value $.004",sell,52.0,56.2,2922.4
+2022-04-02,AAON,"EASON, CHRISTOPHER DOUGLAS",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,98.0,56.2,5507.6
+2022-05-10,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,Stock Option (Right to Buy),sell,2000.0,54.7,109400.0
+2022-05-10,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",buy,2000.0,34.1,68200.0
+2022-05-11,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",sell,114.0,50.2,5722.8
+2022-05-11,AAON,"ASBJORNSON, NORMAN H","Director, 10% Owner",True,"Common Stock, par value $.004",sell,133.0,50.2,6676.6
+2022-05-11,AAON,"EASON, CHRISTOPHER DOUGLAS",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,37.0,50.2,1857.4
+2022-05-12,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",sell,59.0,53.01,3127.5899999999997
+2022-05-12,AAON,"ASBJORNSON, NORMAN H","Director, 10% Owner",True,"Common Stock, par value $.004",sell,1774.0,53.01,94039.73999999999
+2022-05-13,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",buy,4000.0,34.1,136400.0
+2022-05-13,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,Stock Option (Right to Buy),sell,4000.0,53.8,215200.0
+2022-05-23,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",sell,2000.0,52.5,105000.0
+2022-05-23,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",buy,2000.0,34.1,68200.0
+2022-05-25,AAON,"WICHMAN, GORDON DOUGLAS",Vice President,True,"Common Stock, par value $.004",buy,300.0,32.8,9840.0
+2022-05-25,AAON,"WICHMAN, GORDON DOUGLAS",Vice President,True,"Common Stock, par value $.004",buy,800.0,32.37,25895.999999999996
+2022-05-25,AAON,"WICHMAN, GORDON DOUGLAS",Vice President,True,"Common Stock, par value $.004",buy,304.0,26.47,8046.879999999999
+2022-05-25,AAON,"WICHMAN, GORDON DOUGLAS",Vice President,True,"Common Stock, par value $.004",buy,620.0,33.2,20584.0
+2022-05-25,AAON,"WICHMAN, GORDON DOUGLAS",Vice President,True,Stock Option (Right to Buy),sell,800.0,52.14,41712.0
+2022-05-25,AAON,"WICHMAN, GORDON DOUGLAS",Vice President,True,"Common Stock, par value $.004",sell,1374.0,52.17,71681.58
+2022-05-25,AAON,"WICHMAN, GORDON DOUGLAS",Vice President,True,Stock Option (Right to Buy),sell,304.0,52.14,15850.56
+2022-05-25,AAON,"WICHMAN, GORDON DOUGLAS",Vice President,True,Stock Option (Right to Buy),sell,300.0,52.14,15642.0
+2022-05-25,AAON,"WICHMAN, GORDON DOUGLAS",Vice President,True,Stock Option (Right to Buy),sell,620.0,52.14,32326.8
+2022-05-25,AAON,"WICHMAN, GORDON DOUGLAS",Vice President,True,"Common Stock, par value $.004",sell,2024.0,52.14,105531.36
+2022-05-26,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",sell,2000.0,52.5,105000.0
+2022-05-26,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",buy,2000.0,34.1,68200.0
+2022-05-27,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",sell,2000.0,53.2,106400.0
+2022-05-27,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",buy,2000.0,34.1,68200.0
+2022-06-01,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,Stock Option (Right to Buy),sell,1000.0,53.8,53800.0
+2022-06-01,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",buy,1000.0,34.1,34100.0
+2022-06-01,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,Stock Option (Right to Buy),sell,1000.0,54.2,54200.0
+2022-06-02,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",buy,1475.0,34.1,50297.5
+2022-06-02,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",sell,1475.0,54.56,80476.0
+2022-06-06,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",buy,2000.0,36.95,73900.0
+2022-06-06,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",buy,126.0,36.95,4655.700000000001
+2022-06-06,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,Stock Option (Right to Buy),sell,1000.0,56.0,56000.0
+2022-06-06,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,Stock Option (Right to Buy),sell,2000.0,55.68,111360.0
+2022-06-06,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,Stock Option (Right to Buy),sell,126.0,56.4,7106.4
+2022-06-06,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",buy,1000.0,36.95,36950.0
+2022-06-07,AAON,"KIDWELL, CASEY","VP, Administration",True,"Common Stock, par value $.004",sell,75.0,55.45,4158.75
+2022-06-15,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",buy,359.0,36.95,13265.050000000001
+2022-06-15,AAON,"GADIWALLA, RONY D","VP, Information Technology",True,"Common Stock, par value $.004",sell,359.0,52.6,18883.4
+2022-08-11,AAON,"FIELDS, GARY D","Director, President and CEO",True,Stock Option (Right to Buy),sell,1389.0,61.41,85298.48999999999
+2022-08-11,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",buy,12660.0,36.95,467787.00000000006
+2022-08-11,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",buy,1389.0,32.7,45420.3
+2022-08-11,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",buy,7470.0,34.1,254727.0
+2022-08-11,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",sell,12660.0,61.41,777450.6
+2022-08-11,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",sell,7470.0,61.41,458732.69999999995
+2022-08-12,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,Stock Option (Right to Buy),sell,3780.0,54.2,204876.0
+2022-08-12,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,Stock Option (Right to Buy),sell,4494.0,73.36,329679.84
+2022-08-12,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,Stock Option (Right to Buy),sell,17346.0,44.22,767040.12
+2022-08-12,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,Stock Option (Right to Buy),sell,18800.0,41.37,777756.0
+2022-08-12,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,Stock Option (Right to Buy),sell,8498.0,36.95,314001.10000000003
+2022-08-12,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,"Common Stock, par value $.004",sell,1000.0,61.7,61700.0
+2022-08-12,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,"Common Stock, par value $.004",buy,1000.0,36.95,36950.0
+2022-08-15,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,"Common Stock, par value $.004",sell,4000.0,63.21,252840.0
+2022-08-15,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,"Common Stock, par value $.004",sell,3000.0,63.13,189390.0
+2022-08-15,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,"Common Stock, par value $.004",buy,7000.0,36.95,258650.00000000003
+2022-08-16,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,Stock Option (Right to Buy),sell,6654.0,63.42,421996.68
+2022-08-16,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,"Common Stock, par value $.004",buy,6654.0,36.95,245865.30000000002
+2022-08-16,AAON,"STEWART, LARRY GENE",Former - Executive VP,True,Stock Option (Right to Buy),sell,8634.0,46.88,404761.92000000004
+2022-08-16,AAON,"STEWART, LARRY GENE",Former - Executive VP,True,Stock Option (Right to Buy),sell,5544.0,54.2,300484.8
+2022-08-16,AAON,"STEWART, LARRY GENE",Former - Executive VP,True,Stock Option (Right to Buy),sell,4944.0,73.36,362691.84
+2022-08-17,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,Stock Option (Right to Buy),sell,303.0,63.11,19122.329999999998
+2022-08-17,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,"Common Stock, par value $.004",buy,303.0,36.95,11195.85
+2022-08-18,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,Stock Option (Right to Buy),sell,1441.0,63.12,90955.92
+2022-08-18,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,"Common Stock, par value $.004",buy,1441.0,36.95,53244.950000000004
+2022-09-12,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,"Common Stock, par value $.004",buy,3000.0,36.95,110850.00000000001
+2022-09-12,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,"Common Stock, par value $.004",sell,3000.0,58.25,174750.0
+2022-09-12,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,"Common Stock, par value $.004",buy,5237.0,36.95,193507.15000000002
+2022-09-12,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,Stock Option (Right to Buy),sell,5237.0,58.93,308616.41
+2022-09-12,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,Stock Option (Right to Buy),sell,3000.0,58.91,176730.0
+2022-10-03,AAON,"STEWART, LARRY GENE",Former - Executive VP,True,"Common Stock, par value $.004",sell,1500.0,55.52,83280.0
+2022-10-03,AAON,"STEWART, LARRY GENE",Former - Executive VP,True,Stock Option (Right to Buy),sell,1500.0,55.48,83220.0
+2022-10-03,AAON,"STEWART, LARRY GENE",Former - Executive VP,True,"Common Stock, par value $.004",buy,1500.0,46.88,70320.0
+2022-10-04,AAON,"STEWART, LARRY GENE",Former - Executive VP,True,Stock Option (Right to Buy),sell,2756.0,55.92,154115.52000000002
+2022-10-04,AAON,"STEWART, LARRY GENE",Former - Executive VP,True,"Common Stock, par value $.004",buy,2756.0,46.88,129201.28000000001
+2022-10-05,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,Stock Option (Right to Buy),sell,3000.0,56.46,169380.0
+2022-10-05,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,"Common Stock, par value $.004",buy,3000.0,41.37,124109.99999999999
+2022-10-13,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,"Common Stock, par value $.004",buy,5000.0,41.37,206850.0
+2022-10-13,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,"Common Stock, par value $.004",sell,5000.0,55.12,275600.0
+2022-10-17,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,"Common Stock, par value $.004",sell,5000.0,55.51,277550.0
+2022-10-17,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,"Common Stock, par value $.004",buy,3801.0,41.37,157247.37
+2022-10-17,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,"Common Stock, par value $.004",buy,5000.0,41.37,206850.0
+2022-10-17,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,"Common Stock, par value $.004",sell,3801.0,55.71,211753.71
+2022-10-18,AAON,"STEWART, LARRY GENE",Former - Executive VP,True,"Common Stock, par value $.004",sell,515.0,56.69,29195.35
+2022-10-18,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,"Common Stock, par value $.004",buy,439.0,41.37,18161.43
+2022-10-18,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,"Common Stock, par value $.004",sell,439.0,57.0,25023.0
+2022-10-23,AAON,"WICHMAN, GORDON DOUGLAS",Vice President,True,"Common Stock, par value $.004",sell,205.0,56.25,11531.25
+2022-10-24,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,"Common Stock, par value $.004",sell,5000.0,57.04,285200.0
+2022-10-24,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,"Common Stock, par value $.004",buy,5000.0,41.37,206850.0
+2022-10-24,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,Stock Option (Right to Buy),sell,2000.0,58.84,117680.0
+2022-10-24,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,"Common Stock, par value $.004",sell,2500.0,58.04,145100.0
+2022-10-24,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,"Common Stock, par value $.004",buy,2000.0,41.37,82740.0
+2022-10-24,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,"Common Stock, par value $.004",buy,2500.0,41.37,103425.0
+2022-10-25,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,"Common Stock, par value $.004",buy,2000.0,44.22,88440.0
+2022-10-25,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,Stock Option (Right to Buy),sell,2000.0,61.5,123000.0
+2022-10-25,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,"Common Stock, par value $.004",sell,3000.0,60.74,182220.0
+2022-10-25,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,"Common Stock, par value $.004",buy,1460.0,41.37,60400.2
+2022-10-25,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,Stock Option (Right to Buy),sell,1460.0,60.74,88680.40000000001
+2022-10-25,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,Stock Option (Right to Buy),sell,1540.0,60.74,93539.6
+2022-10-25,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,"Common Stock, par value $.004",buy,1540.0,44.22,68098.8
+2022-10-27,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,"Common Stock, par value $.004",buy,2000.0,44.22,88440.0
+2022-10-27,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,Stock Option (Right to Buy),sell,2000.0,63.13,126260.0
+2022-10-28,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,Stock Option (Right to Buy),sell,6024.0,64.42,388066.08
+2022-10-28,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,"Common Stock, par value $.004",buy,6024.0,44.22,266381.27999999997
+2022-11-08,AAON,"STEWART, LARRY GENE",Former - Executive VP,True,"Common Stock, par value $.004",buy,2472.0,73.36,181345.92
+2022-11-08,AAON,"STEWART, LARRY GENE",Former - Executive VP,True,"Common Stock, par value $.004",sell,2472.0,77.88,192519.36
+2022-11-10,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,Stock Option (Right to Buy),sell,2247.0,78.61,176636.67
+2022-11-10,AAON,"GADIWALLA, RONY D","Former - VP, Info. Technology",True,"Common Stock, par value $.004",buy,2247.0,73.36,164839.92
+2022-11-11,AAON,"WICHMAN, GORDON DOUGLAS",Vice President,True,"Common Stock, par value $.004",buy,600.0,34.4,20640.0
+2022-11-11,AAON,"WICHMAN, GORDON DOUGLAS",Vice President,True,"Common Stock, par value $.004",buy,2000.0,32.37,64739.99999999999
+2022-11-11,AAON,"WICHMAN, GORDON DOUGLAS",Vice President,True,"Common Stock, par value $.004",sell,600.0,79.61,47766.0
+2022-11-11,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",buy,11400.0,41.37,471617.99999999994
+2022-11-11,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",sell,11400.0,78.92,899688.0
+2022-11-11,AAON,"WICHMAN, GORDON DOUGLAS",Vice President,True,Stock Option (Right to Buy),sell,2000.0,79.61,159220.0
+2022-11-15,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,"Common Stock, par value $.004",buy,2000.0,34.1,68200.0
+2022-11-15,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,"Common Stock, par value $.004",buy,13500.0,34.1,460350.0
+2022-11-15,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,Stock Option (Right to Buy),sell,2000.0,80.0,160000.0
+2022-11-15,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,Stock Option (Right to Buy),sell,13500.0,80.06,1080810.0
+2022-12-01,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",buy,5000.0,41.37,206850.0
+2022-12-01,AAON,"FIELDS, GARY D","Director, President and CEO",True,Stock Option (Right to Buy),sell,5000.0,78.64,393200.0
+2023-01-02,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,"Common Stock, par value $.004",sell,85.0,75.32,6402.2
+2023-01-02,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",sell,335.0,75.32,25232.199999999997
+2023-01-02,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,"Common Stock, par value $.004",sell,196.0,75.32,14762.72
+2023-02-28,AAON,"TEIS, ROBERT","VP, Sales and Marketing",True,"Common Stock, par value $.004",sell,44.0,90.96,4002.24
+2023-03-03,AAON,"WICHMAN, GORDON DOUGLAS",Vice President,True,"Common Stock, par value $.004",buy,5000.0,32.37,161850.0
+2023-03-03,AAON,"WICHMAN, GORDON DOUGLAS",Vice President,True,"Common Stock, par value $.004",buy,620.0,33.2,20584.0
+2023-03-03,AAON,"WICHMAN, GORDON DOUGLAS",Vice President,True,Stock Option (Right to Buy),sell,620.0,92.87,57579.4
+2023-03-03,AAON,"WICHMAN, GORDON DOUGLAS",Vice President,True,Stock Option (Right to Buy),sell,5000.0,92.87,464350.0
+2023-03-09,AAON,"KIDWELL, CASEY","VP, Administration",True,"Common Stock, par value $.004",sell,1607.0,92.63,148856.41
+2023-03-09,AAON,"KIDWELL, CASEY","VP, Administration",True,"Common Stock, par value $.004",buy,1607.0,64.47,103603.29
+2023-03-11,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,"Common Stock, par value $.004",sell,273.0,90.48,24701.04
+2023-03-11,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,"Common Stock, par value $.004",sell,552.0,90.48,49944.96
+2023-03-11,AAON,"TEIS, ROBERT","VP, Sales and Marketing",True,"Common Stock, par value $.004",sell,240.0,90.48,21715.2
+2023-03-11,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",sell,710.0,90.48,64240.8
+2023-03-11,AAON,"WICHMAN, GORDON DOUGLAS",Vice President,True,"Common Stock, par value $.004",sell,125.0,90.48,11310.0
+2023-03-13,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,"Common Stock, par value $.004",buy,516.0,89.3,46078.799999999996
+2023-03-15,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,"Common Stock, par value $.004",sell,139.0,88.31,12275.09
+2023-03-15,AAON,"KIDWELL, CASEY","VP, Administration",True,"Common Stock, par value $.004",sell,79.0,88.31,6976.49
+2023-03-15,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,"Common Stock, par value $.004",sell,150.0,88.31,13246.5
+2023-03-15,AAON,"EASON, CHRISTOPHER DOUGLAS",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,36.0,88.31,3179.16
+2023-03-15,AAON,"WICHMAN, GORDON DOUGLAS",Vice President,True,"Common Stock, par value $.004",sell,83.0,88.31,7329.7300000000005
+2023-03-15,AAON,"TEIS, ROBERT","VP, Sales and Marketing",True,"Common Stock, par value $.004",sell,56.0,88.31,4945.360000000001
+2023-03-15,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",sell,629.0,88.31,55546.99
+2023-04-02,AAON,"EASON, CHRISTOPHER DOUGLAS",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,80.0,96.69,7735.2
+2023-04-18,AAON,"TEIS, ROBERT","VP, Sales and Marketing",True,"Common Stock, par value $.004",sell,146.0,97.25,14198.5
+2023-05-11,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",sell,504.0,97.04,48908.16
+2023-05-11,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",sell,110.0,95.79,10536.900000000001
+2023-05-11,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",buy,504.0,36.95,18622.800000000003
+2023-05-11,AAON,"EASON, CHRISTOPHER DOUGLAS",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,30.0,95.79,2873.7000000000003
+2023-05-12,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",sell,13800.0,94.862,1309095.5999999999
+2023-05-12,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",buy,13800.0,41.37,570906.0
+2023-05-12,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",sell,98.0,94.69,9279.619999999999
+2023-05-12,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",buy,12156.0,36.95,449164.2
+2023-05-12,AAON,"FIELDS, GARY D","Director, President and CEO",True,Stock Option (Right to Buy),sell,12156.0,94.862,1153142.4719999998
+2023-05-30,AAON,"KIDWELL, CASEY","VP, Administration",True,"Common Stock, par value $.004",sell,31.0,88.36,2739.16
+2023-06-05,AAON,"TEIS, ROBERT","VP, Sales and Marketing",True,"Common Stock, par value $.004",sell,190.0,91.16,17320.399999999998
+2023-06-07,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,"Common Stock, par value $.004",sell,6900.0,95.0,655500.0
+2023-06-07,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,"Common Stock, par value $.004",buy,6900.0,36.95,254955.00000000003
+2023-06-07,AAON,"KIDWELL, CASEY","VP, Administration",True,"Common Stock, par value $.004",buy,1036.0,54.2,56151.200000000004
+2023-06-07,AAON,"KIDWELL, CASEY","VP, Administration",True,"Common Stock, par value $.004",sell,1036.0,95.01,98430.36
+2023-06-07,AAON,"KIDWELL, CASEY","VP, Administration",True,"Common Stock, par value $.004",buy,554.0,53.11,29422.94
+2023-06-07,AAON,"KIDWELL, CASEY","VP, Administration",True,"Common Stock, par value $.004",sell,1607.0,95.01,152681.07
+2023-06-07,AAON,"KIDWELL, CASEY","VP, Administration",True,"Common Stock, par value $.004",buy,1607.0,64.47,103603.29
+2023-06-07,AAON,"KIDWELL, CASEY","VP, Administration",True,"Common Stock, par value $.004",sell,60.0,95.58,5734.8
+2023-06-07,AAON,"KIDWELL, CASEY","VP, Administration",True,"Common Stock, par value $.004",sell,554.0,95.01,52635.54
+2023-06-15,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",buy,30000.0,41.37,1241100.0
+2023-06-15,AAON,"FIELDS, GARY D","Director, President and CEO",True,"Common Stock, par value $.004",sell,30000.0,93.8,2814000.0
+2023-07-18,AAON,"GAZDER, XERXES P",Chief Information Officer,True,"Common Stock, par value $.004",sell,52.0,104.9,5454.8
+2023-09-01,AAON,"TEIS, ROBERT","VP, Sales and Marketing",True,"Common Stock, par value $.004",buy,2100.0,24.5,51450.0
+2023-09-01,AAON,"TEIS, ROBERT","VP, Sales and Marketing",True,"Common Stock, par value $.004",sell,2100.0,65.795,138169.5
+2023-09-01,AAON,"TEIS, ROBERT","VP, Sales and Marketing",True,"Common Stock, par value $.004",sell,33.0,65.66,2166.7799999999997
+2023-09-08,AAON,"WICHMAN, GORDON DOUGLAS",Vice President,True,Stock Option (Right to Buy),sell,1500.0,66.11,99165.0
+2023-09-08,AAON,"WICHMAN, GORDON DOUGLAS",Vice President,True,"Common Stock, par value $.004",buy,1500.0,21.58,32369.999999999996
+2023-09-08,AAON,"WICHMAN, GORDON DOUGLAS",Vice President,True,"Common Stock, par value $.004",sell,4500.0,66.11,297495.0
+2023-09-08,AAON,"WICHMAN, GORDON DOUGLAS",Vice President,True,"Common Stock, par value $.004",buy,4500.0,27.58,124109.99999999999
+2023-09-15,AAON,"STEWART, DAVID RAYMOND",Director,True,"Common Stock, par value $.004",buy,500.0,60.17,30085.0
+2023-10-23,AAON,"WICHMAN, GORDON DOUGLAS",Vice President,True,"Common Stock, par value $.004",sell,321.0,53.54,17186.34
+2023-11-27,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,"Common Stock, par value $.004",sell,5000.0,64.0,320000.0
+2023-11-27,AAON,"ASBJORNSON, NORMAN H","Director, 10% Owner",True,"Common Stock, par value $.004",sell,3438.0,63.9,219688.19999999998
+2023-11-27,AAON,"ASBJORNSON, NORMAN H","Director, 10% Owner",True,"Common Stock, par value $.004",sell,1707.0,63.97,109196.79
+2023-11-27,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,"Common Stock, par value $.004",buy,5000.0,24.63,123150.0
+2023-12-05,AAON,"ASBJORNSON, NORMAN H","Director, 10% Owner",True,"Common Stock, par value $.004",sell,99884.0,63.48,6340636.319999999
+2023-12-14,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,Stock Option (Right to Buy),sell,39691.0,27.58,1094677.78
+2023-12-14,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,"Common Stock, par value $.004",buy,33300.0,24.63,820179.0
+2023-12-14,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,"Common Stock, par value $.004",buy,849.0,17.65,14984.849999999999
+2023-12-14,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,"Common Stock, par value $.004",buy,2160.0,21.87,47239.200000000004
+2023-12-14,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,"Common Stock, par value $.004",buy,39691.0,27.58,1094677.78
+2023-12-14,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,Stock Option (Right to Buy),sell,849.0,17.65,14984.849999999999
+2023-12-14,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,Stock Option (Right to Buy),sell,2160.0,21.87,47239.200000000004
+2023-12-14,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,Stock Option (Right to Buy),sell,33300.0,24.63,820179.0
+2023-12-14,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,"Common Stock, par value $.004",sell,76000.0,70.31,5343560.0
+2023-12-15,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,"Common Stock, par value $.004",sell,30000.0,71.88,2156400.0
+2023-12-15,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,Stock Option (Right to Buy),sell,30000.0,27.58,827400.0
+2023-12-15,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,"Common Stock, par value $.004",buy,30000.0,27.58,827400.0
+2023-12-19,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,"Common Stock, par value $.004",buy,18064.0,27.58,498205.12
+2023-12-19,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,Stock Option (Right to Buy),sell,18064.0,27.58,498205.12
+2023-12-19,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,"Common Stock, par value $.004",sell,18064.0,72.29,1305846.56
+2023-12-20,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,"Common Stock, par value $.004",buy,21445.0,27.58,591453.1
+2023-12-20,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,Stock Option (Right to Buy),sell,20491.0,29.48,604074.68
+2023-12-20,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,"Common Stock, par value $.004",sell,21445.0,72.61,1557121.45
+2023-12-20,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,"Common Stock, par value $.004",buy,20491.0,29.48,604074.68
+2023-12-20,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,"Common Stock, par value $.004",sell,20491.0,72.93,1494408.6300000001
+2023-12-20,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,Stock Option (Right to Buy),sell,21445.0,27.58,591453.1
+2023-12-26,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,"Common Stock, par value $.004",buy,15000.0,29.48,442200.0
+2023-12-26,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,"Common Stock, par value $.004",sell,15000.0,74.0,1110000.0
+2023-12-26,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,Stock Option (Right to Buy),sell,15000.0,29.48,442200.0
+2023-12-27,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,Stock Option (Right to Buy),sell,2597.0,29.48,76559.56
+2023-12-27,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,"Common Stock, par value $.004",buy,12403.0,48.91,606630.73
+2023-12-27,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,"Common Stock, par value $.004",buy,2597.0,29.48,76559.56
+2023-12-27,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,Stock Option (Right to Buy),sell,12403.0,48.91,606630.73
+2023-12-27,AAON,"WAKEFIELD, STEPHEN E",Chief Operating Officer,True,"Common Stock, par value $.004",sell,15000.0,75.0,1125000.0
+2024-03-06,AAON,"TEIS, ROBERT","VP, Business Technology",True,"Common Stock, par value $.004",sell,164.0,81.0,13284.0
+2024-03-06,AAON,"WICHMAN, GORDON DOUGLAS",Vice President,True,"Common Stock, par value $.004",sell,102.0,81.0,8262.0
+2024-03-06,AAON,"WAKEFIELD, STEPHEN E",Vice President,True,"Common Stock, par value $.004",sell,127.0,81.0,10287.0
+2024-03-06,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,"Common Stock, par value $.004",sell,182.0,81.0,14742.0
+2024-03-06,AAON,"GAZDER, XERXES P",Chief Information Officer,True,"Common Stock, par value $.004",sell,81.0,81.0,6561.0
+2024-03-06,AAON,"EASON, CHRISTOPHER DOUGLAS",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,51.0,81.0,4131.0
+2024-03-06,AAON,"FIELDS, GARY D","Director, CEO",True,"Common Stock, par value $.004",sell,1225.0,81.0,99225.0
+2024-03-06,AAON,"KIDWELL, CASEY","VP, Administration",True,"Common Stock, par value $.004",sell,122.0,81.0,9882.0
+2024-03-11,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,"Common Stock, par value $.004",sell,440.0,79.73,35081.200000000004
+2024-03-11,AAON,"TEIS, ROBERT","VP, Business Technology",True,"Common Stock, par value $.004",sell,376.0,79.73,29978.480000000003
+2024-03-11,AAON,"ASBJORNSON, NORMAN H","Director, 10% Owner",True,"Common Stock, par value $.004",sell,805.0,80.01,64408.05
+2024-03-11,AAON,"EASON, CHRISTOPHER DOUGLAS",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,14.0,79.73,1116.22
+2024-03-11,AAON,"WICHMAN, GORDON DOUGLAS",Vice President,True,"Common Stock, par value $.004",sell,198.0,79.73,15786.54
+2024-03-11,AAON,"FIELDS, GARY D","Director, CEO",True,"Common Stock, par value $.004",sell,1825.0,79.73,145507.25
+2024-03-11,AAON,"WAKEFIELD, STEPHEN E",Vice President,True,"Common Stock, par value $.004",sell,881.0,79.73,70242.13
+2024-03-12,AAON,"ASBJORNSON, NORMAN H","Director, 10% Owner",True,"Common Stock, par value $.004",sell,19083.0,80.5,1536181.5
+2024-03-13,AAON,"WAKEFIELD, STEPHEN E",Vice President,True,Stock Option (Right to Buy),sell,12696.0,29.48,374278.08
+2024-03-13,AAON,"WAKEFIELD, STEPHEN E",Vice President,True,Stock Option (Right to Buy),sell,2646.0,36.13,95599.98000000001
+2024-03-13,AAON,"WAKEFIELD, STEPHEN E",Vice President,True,Stock Option (Right to Buy),sell,7820.0,48.91,382476.19999999995
+2024-03-13,AAON,"WAKEFIELD, STEPHEN E",Vice President,True,"Common Stock, par value $.004",buy,12696.0,29.48,374278.08
+2024-03-13,AAON,"WAKEFIELD, STEPHEN E",Vice President,True,"Common Stock, par value $.004",buy,7820.0,48.91,382476.19999999995
+2024-03-13,AAON,"WAKEFIELD, STEPHEN E",Vice President,True,"Common Stock, par value $.004",buy,1493.0,62.04,92625.72
+2024-03-13,AAON,"WAKEFIELD, STEPHEN E",Vice President,True,"Common Stock, par value $.004",sell,24655.0,80.86,1993603.3
+2024-03-13,AAON,"WAKEFIELD, STEPHEN E",Vice President,True,"Common Stock, par value $.004",buy,2646.0,36.13,95599.98000000001
+2024-03-13,AAON,"WAKEFIELD, STEPHEN E",Vice President,True,Stock Option (Right to Buy),sell,1493.0,62.04,92625.72
+2024-03-14,AAON,"ASBJORNSON, NORMAN H","Director, 10% Owner",True,"Common Stock, par value $.004",sell,30397.0,81.3,2471276.1
+2024-03-14,AAON,"ASBJORNSON, NORMAN H","Director, 10% Owner",True,"Common Stock, par value $.004",sell,19136.0,81.3,1555756.8
+2024-03-15,AAON,"WICHMAN, GORDON DOUGLAS",Vice President,True,"Common Stock, par value $.004",sell,127.0,82.45,10471.15
+2024-03-15,AAON,"KIDWELL, CASEY","VP, Administration",True,"Common Stock, par value $.004",sell,125.0,82.45,10306.25
+2024-03-15,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,"Common Stock, par value $.004",sell,236.0,82.45,19458.2
+2024-03-15,AAON,"WAKEFIELD, STEPHEN E",Vice President,True,"Common Stock, par value $.004",sell,322.0,82.45,26548.9
+2024-03-15,AAON,"ASBJORNSON, NORMAN H","Director, 10% Owner",True,"Common Stock, par value $.004",sell,26149.0,83.15,2174289.35
+2024-03-15,AAON,"EASON, CHRISTOPHER DOUGLAS",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,58.0,82.45,4782.1
+2024-03-15,AAON,"FIELDS, GARY D","Director, CEO",True,"Common Stock, par value $.004",sell,1550.0,82.45,127797.5
+2024-03-15,AAON,"TEIS, ROBERT","VP, Business Technology",True,"Common Stock, par value $.004",sell,89.0,82.45,7338.05
+2024-04-18,AAON,"TEIS, ROBERT","VP, Business Technology",True,"Common Stock, par value $.004",sell,238.0,85.24,20287.12
+2024-05-11,AAON,"FIELDS, GARY D","Director, CEO",True,"Common Stock, par value $.004",sell,278.0,77.29,21486.620000000003
+2024-05-11,AAON,"EASON, CHRISTOPHER DOUGLAS",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,49.0,77.29,3787.2100000000005
+2024-05-12,AAON,"FIELDS, GARY D","Director, CEO",True,"Common Stock, par value $.004",sell,151.0,77.29,11670.79
+2024-05-15,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,"Common Stock, par value $.004",sell,13500.0,77.0,1039500.0
+2024-05-15,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,"Common Stock, par value $.004",buy,13500.0,24.63,332505.0
+2024-05-15,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,Stock Option (Right to Buy),sell,13500.0,24.63,332505.0
+2024-05-22,AAON,"FIELDS, GARY D","Director, CEO",True,Stock Option (Right to Buy),sell,28200.0,27.58,777756.0
+2024-05-22,AAON,"FIELDS, GARY D","Director, CEO",True,"Common Stock, par value $.004",sell,28200.0,76.13,2146866.0
+2024-05-22,AAON,"FIELDS, GARY D","Director, CEO",True,"Common Stock, par value $.004",buy,28200.0,27.58,777756.0
+2024-05-30,AAON,"KIDWELL, CASEY","VP, Administration",True,"Common Stock, par value $.004",sell,50.0,74.93,3746.5000000000005
+2024-06-07,AAON,"KIDWELL, CASEY","VP, Administration",True,"Common Stock, par value $.004",sell,97.0,71.99,6983.03
+2024-07-12,AAON,"WAKEFIELD, STEPHEN E",Vice President,True,Stock Option (Right to Buy),sell,2646.0,36.13,95599.98000000001
+2024-07-12,AAON,"WAKEFIELD, STEPHEN E",Vice President,True,"Common Stock, par value $.004",buy,27300.0,27.58,752934.0
+2024-07-12,AAON,"WAKEFIELD, STEPHEN E",Vice President,True,"Common Stock, par value $.004",sell,27300.0,90.13,2460549.0
+2024-07-12,AAON,"WAKEFIELD, STEPHEN E",Vice President,True,Stock Option (Right to Buy),sell,27300.0,27.58,752934.0
+2024-07-12,AAON,"WAKEFIELD, STEPHEN E",Vice President,True,"Common Stock, par value $.004",sell,2646.0,90.08,238351.68
+2024-07-12,AAON,"WAKEFIELD, STEPHEN E",Vice President,True,"Common Stock, par value $.004",buy,2646.0,36.13,95599.98000000001
+2024-07-18,AAON,"GAZDER, XERXES P",Chief Information Officer,True,"Common Stock, par value $.004",sell,83.0,87.35,7250.049999999999
+2024-08-06,AAON,"ASBJORNSON, NORMAN H","Director, 10% Owner",True,"Common Stock, par value $.004",sell,11022.0,87.41,963433.02
+2024-08-06,AAON,"FIELDS, GARY D","Director, CEO",True,Stock Option (Right to Buy),sell,51648.0,29.48,1522583.04
+2024-08-06,AAON,"FIELDS, GARY D","Director, CEO",True,"Common Stock, par value $.004",sell,31007.0,86.44,2680245.08
+2024-08-06,AAON,"FIELDS, GARY D","Director, CEO",True,"Common Stock, par value $.004",sell,20641.0,86.21,1779460.6099999999
+2024-08-06,AAON,"FIELDS, GARY D","Director, CEO",True,"Common Stock, par value $.004",buy,51648.0,29.48,1522583.04
+2024-08-13,AAON,"ASBJORNSON, NORMAN H","Director, 10% Owner",True,Stock Option (Right to Buy),sell,57480.0,15.71,903010.8
+2024-08-13,AAON,"ASBJORNSON, NORMAN H","Director, 10% Owner",True,"Common Stock, par value $.004",buy,57480.0,15.71,903010.8
+2024-08-13,AAON,"ASBJORNSON, NORMAN H","Director, 10% Owner",True,"Common Stock, par value $.004",sell,10291.0,87.77,903241.07
+2024-08-30,AAON,"TEIS, ROBERT","VP, Business Technology",True,"Common Stock, par value $.004",sell,28.0,95.51,2674.28
+2024-11-12,AAON,"TEIS, ROBERT","VP, Business Technology",True,"Common Stock, par value $.004",sell,3369.0,136.29,459161.00999999995
+2024-11-12,AAON,"KIDWELL, CASEY","VP, Administration",True,Stock Option (Right to Buy),sell,831.0,35.41,29425.709999999995
+2024-11-12,AAON,"KIDWELL, CASEY","VP, Administration",True,Stock Option (Right to Buy),sell,1554.0,36.13,56146.020000000004
+2024-11-12,AAON,"KIDWELL, CASEY","VP, Administration",True,"Common Stock, par value $.004",buy,831.0,35.41,29425.709999999995
+2024-11-12,AAON,"KIDWELL, CASEY","VP, Administration",True,"Common Stock, par value $.004",buy,1554.0,36.13,56146.020000000004
+2024-11-12,AAON,"KIDWELL, CASEY","VP, Administration",True,"Common Stock, par value $.004",buy,2411.0,42.97,103600.67
+2024-11-12,AAON,"KIDWELL, CASEY","VP, Administration",True,"Common Stock, par value $.004",sell,4796.0,136.38,654078.48
+2024-11-12,AAON,"KIDWELL, CASEY","VP, Administration",True,Stock Option (Right to Buy),sell,2411.0,42.97,103600.67
+2024-11-13,AAON,"WICHMAN, GORDON DOUGLAS",Vice President,True,Stock Option (Right to Buy),sell,6000.0,21.58,129479.99999999999
+2024-11-13,AAON,"WICHMAN, GORDON DOUGLAS",Vice President,True,"Common Stock, par value $.004",sell,6000.0,135.15,810900.0
+2024-11-13,AAON,"WICHMAN, GORDON DOUGLAS",Vice President,True,"Common Stock, par value $.004",buy,6000.0,21.58,129479.99999999999
+2024-11-15,AAON,"FIELDS, GARY D","Director, CEO",True,"Common Stock, par value $.004",sell,35000.0,132.03,4621050.0
+2024-11-15,AAON,"FIELDS, GARY D","Director, CEO",True,Stock Option (Right to Buy),sell,35000.0,31.69,1109150.0
+2024-11-15,AAON,"FIELDS, GARY D","Director, CEO",True,"Common Stock, par value $.004",buy,35000.0,31.69,1109150.0
+2024-11-18,AAON,"KIDWELL, CASEY","VP, Administration",True,Stock Option (Right to Buy),sell,1421.0,62.04,88158.84
+2024-11-18,AAON,"KIDWELL, CASEY","VP, Administration",True,"Common Stock, par value $.004",buy,1421.0,62.04,88158.84
+2024-11-18,AAON,"KIDWELL, CASEY","VP, Administration",True,"Common Stock, par value $.004",sell,1421.0,135.14,192033.93999999997
+2024-11-25,AAON,"WAKEFIELD, STEPHEN E",Vice President,True,"Common Stock, par value $.004",sell,2892.0,141.1,408061.2
+2024-11-25,AAON,"WAKEFIELD, STEPHEN E",Vice President,True,"Common Stock, par value $.004",sell,2858.0,138.6,396118.8
+2024-11-25,AAON,"FIELDS, GARY D","Director, CEO",True,Stock Option (Right to Buy),sell,12160.0,31.69,385350.4
+2024-11-25,AAON,"FIELDS, GARY D","Director, CEO",True,"Common Stock, par value $.004",buy,12160.0,31.69,385350.4
+2024-11-25,AAON,"FIELDS, GARY D","Director, CEO",True,"Common Stock, par value $.004",sell,12160.0,139.66,1698265.5999999999
+2024-12-05,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,"Common Stock, par value $.004",sell,5000.0,138.0,690000.0
+2024-12-05,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,"Common Stock, par value $.004",buy,5000.0,24.63,123150.0
+2024-12-05,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,Stock Option (Right to Buy),sell,5000.0,24.63,123150.0
+2024-12-13,AAON,"WAKEFIELD, STEPHEN E",Vice President,True,"Common Stock, par value $.004",sell,5362.0,130.99,702368.38
+2025-01-01,AAON,"TOBOLSKI, MATTHEW JOSEPH",President & COO,True,"Common Stock, par value $.004",sell,281.0,117.68,33068.08
+2025-01-01,AAON,"BENSON, DAVID E","Fellow, AAON, Inc.",False,"Common Stock, par value $.004",sell,173.0,117.68,20358.64
+2025-01-10,AAON,"GAZDER, XERXES P",Former CIO,True,"Common Stock, par value $.004",sell,626.0,119.51,74813.26000000001
+2025-01-10,AAON,"GAZDER, XERXES P",Former CIO,True,Stock Option (Right to Buy),sell,947.0,62.04,58751.88
+2025-01-10,AAON,"GAZDER, XERXES P",Former CIO,True,Stock Option (Right to Buy),sell,2240.0,34.82,77996.8
+2025-01-10,AAON,"GAZDER, XERXES P",Former CIO,True,"Common Stock, par value $.004",buy,947.0,62.04,58751.88
+2025-01-10,AAON,"GAZDER, XERXES P",Former CIO,True,"Common Stock, par value $.004",buy,2240.0,34.82,77996.8
+2025-01-10,AAON,"GAZDER, XERXES P",Former CIO,True,"Common Stock, par value $.004",sell,1190.0,119.51,142216.9
+2025-01-28,AAON,"EASON, CHRISTOPHER DOUGLAS",Principal Accounting Officer,True,"Common Stock, par value $.004",sell,734.0,111.77,82039.18
+2025-01-28,AAON,"KIDWELL, CASEY",Chief Administration Officer,True,"Common Stock, par value $.004",buy,4949.0,111.77,553149.73
+2025-01-28,AAON,"KIDWELL, CASEY",Chief Administration Officer,True,"Common Stock, par value $.004",sell,1511.0,111.77,168884.47
+2025-01-28,AAON,"KIDWELL, CASEY",Chief Administration Officer,True,"Common Stock, par value $.004",buy,3417.0,111.77,381918.08999999997
+2025-01-28,AAON,"KIDWELL, CASEY",Chief Administration Officer,True,"Common Stock, par value $.004",sell,995.0,111.77,111211.15
+2025-01-28,AAON,"FIELDS, GARY D","Director, CEO",True,"Common Stock, par value $.004",buy,45480.0,111.77,5083299.6
+2025-01-28,AAON,"FIELDS, GARY D","Director, CEO",True,"Common Stock, par value $.004",sell,16685.0,111.77,1864882.45
+2025-01-28,AAON,"TEIS, ROBERT","VP, Business Technology",True,"Common Stock, par value $.004",sell,876.0,111.77,97910.51999999999
+2025-01-28,AAON,"WICHMAN, GORDON DOUGLAS",Executive Director,True,"Common Stock, par value $.004",sell,1536.0,111.77,171678.72
+2025-01-28,AAON,"WICHMAN, GORDON DOUGLAS",Executive Director,True,"Common Stock, par value $.004",buy,6017.0,111.77,672520.09
+2025-01-28,AAON,"WAKEFIELD, STEPHEN E",Executive Vice President,True,"Common Stock, par value $.004",buy,8427.0,111.77,941885.7899999999
+2025-01-28,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,"Common Stock, par value $.004",buy,9362.0,111.77,1046390.74
+2025-01-28,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,"Common Stock, par value $.004",sell,2893.0,111.77,323350.61
+2025-01-28,AAON,"TEIS, ROBERT","VP, Business Technology",True,"Common Stock, par value $.004",buy,2769.0,111.77,309491.13
+2025-01-28,AAON,"EASON, CHRISTOPHER DOUGLAS",Principal Accounting Officer,True,"Common Stock, par value $.004",buy,2274.0,111.77,254164.97999999998
+2025-01-28,AAON,"WAKEFIELD, STEPHEN E",Executive Vice President,True,"Common Stock, par value $.004",sell,2520.0,111.77,281660.39999999997
+2025-03-05,AAON,"STEWART, DAVID RAYMOND",Director,True,"Common Stock, par value $.004",buy,1000.0,80.86,80860.0
+2025-03-05,AAON,"ASBJORNSON, NORMAN H","Director, 10% Owner",True,Stock Option (Right to Buy),sell,52485.0,13.95,732165.75
+2025-03-05,AAON,"ASBJORNSON, NORMAN H","Director, 10% Owner",True,"Common Stock, par value $.004",buy,52485.0,13.95,732165.75
+2025-03-05,AAON,"ASBJORNSON, NORMAN H","Director, 10% Owner",True,"Common Stock, par value $.004",sell,8839.0,82.82,732045.98
+2025-03-06,AAON,"WICHMAN, GORDON DOUGLAS",Executive Director,True,"Common Stock, par value $.004",sell,102.0,81.25,8287.5
+2025-03-06,AAON,"EASON, CHRISTOPHER DOUGLAS",Principal Accounting Officer,True,"Common Stock, par value $.004",sell,51.0,81.25,4143.75
+2025-03-06,AAON,"WAKEFIELD, STEPHEN E",Executive Vice President,True,"Common Stock, par value $.004",sell,192.0,81.25,15600.0
+2025-03-06,AAON,"FIELDS, GARY D","Director, CEO",True,"Common Stock, par value $.004",sell,1225.0,81.25,99531.25
+2025-03-06,AAON,"TEIS, ROBERT","VP, Business Technology",True,"Common Stock, par value $.004",sell,164.0,81.25,13325.0
+2025-03-06,AAON,"KIDWELL, CASEY",Chief Administration Officer,True,"Common Stock, par value $.004",sell,184.0,81.25,14950.0
+2025-03-06,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,"Common Stock, par value $.004",sell,275.0,81.25,22343.75
+2025-03-11,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,"Common Stock, par value $.004",sell,485.0,82.39,39959.15
+2025-03-11,AAON,"EASON, CHRISTOPHER DOUGLAS",Principal Accounting Officer,True,"Common Stock, par value $.004",sell,75.0,82.39,6179.25
+2025-03-11,AAON,"FIELDS, GARY D","Director, CEO",True,"Common Stock, par value $.004",sell,1368.0,82.39,112709.52
+2025-03-11,AAON,"SHAUB, MATTHEW",Executive Vice President,True,"Common Stock, par value $.004",sell,40.0,82.39,3295.6
+2025-03-11,AAON,"KIDWELL, CASEY",Chief Administration Officer,True,"Common Stock, par value $.004",sell,161.0,82.39,13264.79
+2025-03-11,AAON,"TEIS, ROBERT","VP, Business Technology",True,"Common Stock, par value $.004",sell,273.0,82.39,22492.47
+2025-03-11,AAON,"WAKEFIELD, STEPHEN E",Executive Vice President,True,"Common Stock, par value $.004",sell,574.0,82.39,47291.86
+2025-03-11,AAON,"WICHMAN, GORDON DOUGLAS",Executive Director,True,"Common Stock, par value $.004",sell,141.0,82.39,11616.99
+2025-03-14,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,"Common Stock, par value $.004",sell,359.0,82.14,29488.26
+2025-03-14,AAON,"KIDWELL, CASEY",Chief Administration Officer,True,"Common Stock, par value $.004",sell,190.0,82.14,15606.6
+2025-03-14,AAON,"TEIS, ROBERT","VP, Business Technology",True,"Common Stock, par value $.004",sell,90.0,82.14,7392.6
+2025-03-14,AAON,"WAKEFIELD, STEPHEN E",Executive Vice President,True,"Common Stock, par value $.004",sell,322.0,82.14,26449.08
+2025-03-14,AAON,"EASON, CHRISTOPHER DOUGLAS",Principal Accounting Officer,True,"Common Stock, par value $.004",sell,58.0,82.14,4764.12
+2025-03-14,AAON,"FIELDS, GARY D","Director, CEO",True,"Common Stock, par value $.004",sell,1550.0,82.14,127317.0
+2025-03-14,AAON,"WICHMAN, GORDON DOUGLAS",Executive Director,True,"Common Stock, par value $.004",sell,128.0,82.14,10513.92
+2025-05-06,AAON,"FIELDS, GARY D","Director, CEO",True,"Common Stock, par value $.004",sell,12912.0,98.04,1265892.48
+2025-05-06,AAON,"FIELDS, GARY D","Director, CEO",True,"Common Stock, par value $.004",sell,24277.0,98.29,2386186.33
+2025-05-06,AAON,"FIELDS, GARY D","Director, CEO",True,Stock Option (Right to Buy),sell,12912.0,29.48,380645.76
+2025-05-06,AAON,"FIELDS, GARY D","Director, CEO",True,"Common Stock, par value $.004",buy,12912.0,29.48,380645.76
+2025-05-07,AAON,"FIELDS, GARY D","Director, CEO",True,"Common Stock, par value $.004",sell,28866.0,95.57,2758723.6199999996
+2025-05-08,AAON,"FIELDS, GARY D","Director, CEO",True,"Common Stock, par value $.004",sell,8357.0,98.66,824501.62
+2025-05-12,AAON,"FIELDS, GARY D",Director,True,"Common Stock, par value $.004",sell,151.0,104.63,15799.13
+2025-05-19,AAON,"WICHMAN, GORDON DOUGLAS",Executive Director,True,"Common Stock, par value $.004",sell,3975.0,105.75,420356.25
+2025-05-20,AAON,"WICHMAN, GORDON DOUGLAS",Executive Director,True,"Common Stock, par value $.004",buy,20000.0,27.58,551600.0
+2025-05-20,AAON,"WICHMAN, GORDON DOUGLAS",Executive Director,True,"Common Stock, par value $.004",sell,1302.0,104.58,136163.16
+2025-05-20,AAON,"WICHMAN, GORDON DOUGLAS",Executive Director,True,"Common Stock, par value $.004",buy,1302.0,21.58,28097.159999999996
+2025-05-20,AAON,"WICHMAN, GORDON DOUGLAS",Executive Director,True,Stock Option (Right to Buy),sell,20000.0,27.58,551600.0
+2025-05-20,AAON,"WICHMAN, GORDON DOUGLAS",Executive Director,True,Stock Option (Right to Buy),sell,1302.0,21.58,28097.159999999996
+2025-05-20,AAON,"WICHMAN, GORDON DOUGLAS",Executive Director,True,"Common Stock, par value $.004",sell,20000.0,104.47,2089400.0
+2025-05-30,AAON,"KIDWELL, CASEY",Chief Administration Officer,True,"Common Stock, par value $.004",sell,76.0,96.29,7318.040000000001
+2025-08-25,AAON,"EASON, CHRISTOPHER DOUGLAS",Principal Accounting Officer,True,Stock Option (Right to Buy),sell,596.0,79.73,47519.08
+2025-08-25,AAON,"EASON, CHRISTOPHER DOUGLAS",Principal Accounting Officer,True,"Common Stock, par value $.004",buy,7231.0,43.5,314548.5
+2025-08-25,AAON,"EASON, CHRISTOPHER DOUGLAS",Principal Accounting Officer,True,"Common Stock, par value $.004",sell,7231.0,85.07,615141.1699999999
+2025-08-25,AAON,"EASON, CHRISTOPHER DOUGLAS",Principal Accounting Officer,True,"Common Stock, par value $.004",buy,2142.0,36.13,77390.46
+2025-08-25,AAON,"EASON, CHRISTOPHER DOUGLAS",Principal Accounting Officer,True,"Common Stock, par value $.004",buy,300.0,29.48,8844.0
+2025-08-25,AAON,"EASON, CHRISTOPHER DOUGLAS",Principal Accounting Officer,True,"Common Stock, par value $.004",sell,300.0,85.08,25524.0
+2025-08-25,AAON,"EASON, CHRISTOPHER DOUGLAS",Principal Accounting Officer,True,"Common Stock, par value $.004",sell,549.0,85.08,46708.92
+2025-08-25,AAON,"EASON, CHRISTOPHER DOUGLAS",Principal Accounting Officer,True,"Common Stock, par value $.004",sell,2142.0,85.12,182327.04
+2025-08-25,AAON,"EASON, CHRISTOPHER DOUGLAS",Principal Accounting Officer,True,"Common Stock, par value $.004",buy,549.0,48.91,26851.589999999997
+2025-08-25,AAON,"EASON, CHRISTOPHER DOUGLAS",Principal Accounting Officer,True,Stock Option (Right to Buy),sell,1185.0,62.05,73529.25
+2025-08-25,AAON,"EASON, CHRISTOPHER DOUGLAS",Principal Accounting Officer,True,Stock Option (Right to Buy),sell,2142.0,36.13,77390.46
+2025-08-25,AAON,"EASON, CHRISTOPHER DOUGLAS",Principal Accounting Officer,True,Stock Option (Right to Buy),sell,549.0,48.91,26851.589999999997
+2025-08-25,AAON,"EASON, CHRISTOPHER DOUGLAS",Principal Accounting Officer,True,Stock Option (Right to Buy),sell,7231.0,43.5,314548.5
+2025-08-25,AAON,"EASON, CHRISTOPHER DOUGLAS",Principal Accounting Officer,True,Stock Option (Right to Buy),sell,300.0,29.48,8844.0
+2025-08-25,AAON,"EASON, CHRISTOPHER DOUGLAS",Principal Accounting Officer,True,"Common Stock, par value $.004",sell,596.0,85.08,50707.68
+2025-08-25,AAON,"EASON, CHRISTOPHER DOUGLAS",Principal Accounting Officer,True,"Common Stock, par value $.004",buy,596.0,79.73,47519.08
+2025-08-25,AAON,"EASON, CHRISTOPHER DOUGLAS",Principal Accounting Officer,True,"Common Stock, par value $.004",sell,1185.0,85.06,100796.1
+2025-08-25,AAON,"EASON, CHRISTOPHER DOUGLAS",Principal Accounting Officer,True,"Common Stock, par value $.004",buy,1185.0,62.05,73529.25
+2025-09-04,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,Stock Option (Right to Buy),sell,9350.0,24.63,230290.5
+2025-09-04,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,"Common Stock, par value $.004",sell,200.0,81.12,16224.0
+2025-09-04,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,"Common Stock, par value $.004",buy,9350.0,24.63,230290.5
+2025-09-04,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,"Common Stock, par value $.004",sell,9150.0,81.09,741973.5
+2025-09-12,AAON,"SHAUB, MATTHEW",Executive Vice President,True,"Common Stock, par value $.004",buy,428.0,81.7,34967.6
+2025-11-11,AAON,"FIELDS, GARY D",Director,True,Stock Option (Right to Buy),sell,20976.0,36.13,757862.88
+2025-11-11,AAON,"FIELDS, GARY D",Director,True,"Common Stock, par value $.004",buy,5770.0,31.69,182851.30000000002
+2025-11-11,AAON,"FIELDS, GARY D",Director,True,"Common Stock, par value $.004",sell,5770.0,105.21,607061.7
+2025-11-11,AAON,"FIELDS, GARY D",Director,True,"Common Stock, par value $.004",buy,20976.0,36.13,757862.88
+2025-11-11,AAON,"FIELDS, GARY D",Director,True,"Common Stock, par value $.004",sell,20976.0,105.21,2206884.96
+2025-11-11,AAON,"FIELDS, GARY D",Director,True,Stock Option (Right to Buy),sell,5770.0,31.69,182851.30000000002
+2025-11-12,AAON,"FIELDS, GARY D",Director,True,"Common Stock, par value $.004",sell,767.0,105.14,80642.38
+2025-11-12,AAON,"FIELDS, GARY D",Director,True,Stock Option (Right to Buy),sell,2786.0,36.13,100658.18000000001
+2025-11-12,AAON,"FIELDS, GARY D",Director,True,"Common Stock, par value $.004",buy,767.0,31.69,24306.23
+2025-11-12,AAON,"FIELDS, GARY D",Director,True,"Common Stock, par value $.004",buy,2786.0,36.13,100658.18000000001
+2025-11-12,AAON,"FIELDS, GARY D",Director,True,Stock Option (Right to Buy),sell,767.0,31.69,24306.23
+2025-11-12,AAON,"FIELDS, GARY D",Director,True,"Common Stock, par value $.004",sell,2786.0,105.14,292920.04
+2025-12-11,AAON,"WAKEFIELD, STEPHEN E",Executive Vice President,True,"Common Stock, par value $.004",buy,1000.0,82.25,82250.0
+2025-12-12,AAON,"WAKEFIELD, STEPHEN E",Executive Vice President,True,"Common Stock, par value $.004",buy,1000.0,80.85,80850.0
+2025-12-12,AAON,"WAKEFIELD, STEPHEN E",Executive Vice President,True,"Common Stock, par value $.004",buy,4141.0,77.59,321300.19
+2026-01-02,AAON,"TOBOLSKI, MATTHEW JOSEPH","Director, CEO",True,"Common Stock, par value $.004",sell,281.0,78.62,22092.22
+2026-01-30,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,"Common Stock, par value $.004",buy,2217.0,95.64,212033.88
+2026-01-30,AAON,"FIELDS, GARY D",Director,True,"Common Stock, par value $.004",buy,5447.0,95.64,520951.08
+2026-01-30,AAON,"KIDWELL, CASEY",Chief Administration Officer,True,"Common Stock, par value $.004",sell,232.0,95.64,22188.48
+2026-01-30,AAON,"KIDWELL, CASEY",Chief Administration Officer,True,"Common Stock, par value $.004",buy,726.0,95.64,69434.64
+2026-01-30,AAON,"KIDWELL, CASEY",Chief Administration Officer,True,"Common Stock, par value $.004",sell,505.0,95.64,48298.2
+2026-01-30,AAON,"KIDWELL, CASEY",Chief Administration Officer,True,"Common Stock, par value $.004",buy,1478.0,95.64,141355.92
+2026-01-30,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,"Common Stock, par value $.004",sell,315.0,95.64,30126.6
+2026-01-30,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,"Common Stock, par value $.004",buy,1089.0,95.64,104151.96
+2026-01-30,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,"Common Stock, par value $.004",sell,741.0,95.64,70869.24
+2026-01-30,AAON,"FIELDS, GARY D",Director,True,"Common Stock, par value $.004",sell,2144.0,95.64,205052.16
+2026-01-30,AAON,"WAKEFIELD, STEPHEN E",Principal Engineering Advisor,False,"Common Stock, par value $.004",sell,531.0,95.64,50784.840000000004
+2026-01-30,AAON,"FIELDS, GARY D",Director,True,"Common Stock, par value $.004",sell,2896.0,95.64,276973.44
+2026-01-30,AAON,"WICHMAN, GORDON DOUGLAS",Executive Vice President,True,"Common Stock, par value $.004",buy,726.0,95.64,69434.64
+2026-01-30,AAON,"FIELDS, GARY D",Director,True,"Common Stock, par value $.004",buy,11089.0,95.64,1060551.96
+2026-01-30,AAON,"WICHMAN, GORDON DOUGLAS",Executive Vice President,True,"Common Stock, par value $.004",buy,1478.0,95.64,141355.92
+2026-01-30,AAON,"WICHMAN, GORDON DOUGLAS",Executive Vice President,True,"Common Stock, par value $.004",sell,439.0,95.64,41985.96
+2026-01-30,AAON,"WICHMAN, GORDON DOUGLAS",Executive Vice President,True,"Common Stock, par value $.004",sell,200.0,95.64,19128.0
+2026-01-30,AAON,"WAKEFIELD, STEPHEN E",Principal Engineering Advisor,False,"Common Stock, par value $.004",buy,1552.0,95.64,148433.28
+2026-01-30,AAON,"WAKEFIELD, STEPHEN E",Principal Engineering Advisor,False,"Common Stock, par value $.004",buy,762.0,95.64,72877.68000000001
+2026-01-30,AAON,"WAKEFIELD, STEPHEN E",Principal Engineering Advisor,False,"Common Stock, par value $.004",sell,239.0,95.64,22857.96
+2026-03-06,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,"Common Stock, par value $.004",sell,180.0,88.33,15899.4
+2026-03-06,AAON,"FIELDS, GARY D",Director,True,"Common Stock, par value $.004",sell,1225.0,88.33,108204.25
+2026-03-06,AAON,"WICHMAN, GORDON DOUGLAS",Executive Vice President,True,"Common Stock, par value $.004",sell,102.0,88.33,9009.66
+2026-03-06,AAON,"KIDWELL, CASEY",Chief Administration Officer,True,"Common Stock, par value $.004",sell,120.0,88.33,10599.6
+2026-03-12,AAON,"TOBOLSKI, MATTHEW JOSEPH","Director, CEO",True,"Common Stock, par value $.004",sell,413.0,91.51,37793.630000000005
+2026-03-12,AAON,"FIELDS, GARY D",Director,True,"Common Stock, par value $.004",sell,1025.0,91.51,93797.75
+2026-03-12,AAON,"FIELDS, GARY D",Director,True,"Common Stock, par value $.004",sell,334.0,91.51,30564.34
+2026-03-12,AAON,"KIDWELL, CASEY",Chief Administration Officer,True,"Common Stock, par value $.004",sell,91.0,91.51,8327.41
+2026-03-12,AAON,"KIDWELL, CASEY",Chief Administration Officer,True,Stock Option (Right to Buy),sell,2840.0,62.04,176193.6
+2026-03-12,AAON,"KIDWELL, CASEY",Chief Administration Officer,True,Stock Option (Right to Buy),sell,831.0,35.41,29425.709999999995
+2026-03-12,AAON,"KIDWELL, CASEY",Chief Administration Officer,True,Stock Option (Right to Buy),sell,1554.0,36.13,56146.020000000004
+2026-03-12,AAON,"WICHMAN, GORDON DOUGLAS",Executive Vice President,True,"Common Stock, par value $.004",sell,89.0,91.51,8144.39
+2026-03-12,AAON,"WICHMAN, GORDON DOUGLAS",Executive Vice President,True,"Common Stock, par value $.004",sell,55.0,91.51,5033.05
+2026-03-12,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,"Common Stock, par value $.004",sell,155.0,91.51,14184.050000000001
+2026-03-12,AAON,"KIDWELL, CASEY",Chief Administration Officer,True,"Common Stock, par value $.004",sell,831.0,90.0,74790.0
+2026-03-12,AAON,"THOMPSON, REBECCA",Chief Financial Officer,True,"Common Stock, par value $.004",sell,169.0,91.51,15465.19
+2026-03-12,AAON,"KIDWELL, CASEY",Chief Administration Officer,True,"Common Stock, par value $.004",sell,2840.0,90.0,255600.0
+2026-03-12,AAON,"KIDWELL, CASEY",Chief Administration Officer,True,"Common Stock, par value $.004",buy,2840.0,62.04,176193.6
+2026-03-12,AAON,"SHAUB, MATTHEW",Executive Vice President,True,"Common Stock, par value $.004",sell,114.0,91.51,10432.140000000001
+2026-03-12,AAON,"KIDWELL, CASEY",Chief Administration Officer,True,"Common Stock, par value $.004",sell,89.0,91.51,8144.39
+2026-03-12,AAON,"KIDWELL, CASEY",Chief Administration Officer,True,"Common Stock, par value $.004",sell,1554.0,90.0,139860.0
+2026-03-12,AAON,"SHAUB, MATTHEW",Executive Vice President,True,"Common Stock, par value $.004",sell,40.0,91.51,3660.4
+2026-03-12,AAON,"KIDWELL, CASEY",Chief Administration Officer,True,"Common Stock, par value $.004",buy,831.0,35.41,29425.709999999995
+2026-03-12,AAON,"KIDWELL, CASEY",Chief Administration Officer,True,"Common Stock, par value $.004",buy,1554.0,36.13,56146.020000000004
+2026-04-21,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,Stock Option (Right to Buy),sell,2287.0,29.48,67420.76
+2026-04-21,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,2287.0,100.11,228951.57
+2026-04-21,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",buy,2287.0,29.48,67420.76
+2026-04-23,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,7292.0,100.1,729929.2
+2026-04-23,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",buy,7292.0,29.48,214968.16
+2026-04-23,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,Stock Option (Right to Buy),sell,7292.0,29.48,214968.16
+2026-04-24,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,21914.0,100.21,2196001.94
+2026-04-24,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",buy,21914.0,29.48,646024.72
+2026-04-24,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,Stock Option (Right to Buy),sell,21914.0,29.48,646024.72
+2026-04-27,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,400.0,100.27,40108.0
+2026-04-27,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,Stock Option (Right to Buy),sell,400.0,29.48,11792.0
+2026-04-27,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",buy,400.0,29.48,11792.0
+2026-05-07,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",sell,9672.0,136.59,1321098.48
+2026-05-07,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,"Common Stock, par value $.004",buy,9672.0,29.48,285130.56
+2026-05-07,AAON,"THOMPSON, REBECCA",Chief Accounting Officer,True,Stock Option (Right to Buy),sell,9672.0,29.48,285130.56
+2026-05-12,AAON,"FIELDS, GARY D",Director,True,Stock Option (Right to Buy),sell,5253.0,31.69,166467.57
+2026-05-12,AAON,"FIELDS, GARY D",Director,True,"Common Stock, par value $.004",sell,26018.0,134.07,3488233.26
+2026-05-12,AAON,"FIELDS, GARY D",Director,True,"Common Stock, par value $.004",buy,5253.0,31.69,166467.57
+2026-05-12,AAON,"FIELDS, GARY D",Director,True,Stock Option (Right to Buy),sell,26018.0,48.91,1272540.38
+2026-05-12,AAON,"FIELDS, GARY D",Director,True,"Common Stock, par value $.004",buy,26018.0,48.91,1272540.38
+2026-05-12,AAON,"FIELDS, GARY D",Director,True,"Common Stock, par value $.004",sell,5253.0,134.05,704164.65
+2026-05-13,AAON,"FIELDS, GARY D",Director,True,Stock Option (Right to Buy),sell,19081.0,36.13,689396.53
+2026-05-13,AAON,"TOBOLSKI, MATTHEW JOSEPH","Director, Chief Executive Officer",True,"Common Stock, par value $.004",sell,467.0,135.37,63217.79
+2026-05-13,AAON,"FIELDS, GARY D",Director,True,"Common Stock, par value $.004",sell,19081.0,137.6,2625545.6
+2026-05-13,AAON,"TOBOLSKI, MATTHEW JOSEPH","Director, Chief Executive Officer",True,"Common Stock, par value $.004",sell,8000.0,135.37,1082960.0
+2026-05-13,AAON,"FIELDS, GARY D",Director,True,"Common Stock, par value $.004",buy,19081.0,36.13,689396.53
+2026-05-14,AAON,"KIDWELL, CASEY",Chief Administration Officer,True,Stock Option (Right to Buy),sell,2084.0,79.73,166157.32
+2026-05-14,AAON,"KIDWELL, CASEY",Chief Administration Officer,True,"Common Stock, par value $.004",sell,1069.0,138.31,147853.39
+2026-05-14,AAON,"KIDWELL, CASEY",Chief Administration Officer,True,Stock Option (Right to Buy),sell,1069.0,82.39,88074.91
+2026-05-14,AAON,"KIDWELL, CASEY",Chief Administration Officer,True,"Common Stock, par value $.004",sell,2084.0,138.3,288217.2
+2026-05-14,AAON,"KIDWELL, CASEY",Chief Administration Officer,True,"Common Stock, par value $.004",buy,1069.0,82.39,88074.91
+2026-05-14,AAON,"KIDWELL, CASEY",Chief Administration Officer,True,"Common Stock, par value $.004",buy,2084.0,79.73,166157.32

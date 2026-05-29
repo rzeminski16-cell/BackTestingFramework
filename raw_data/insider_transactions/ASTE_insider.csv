@@ -1,0 +1,1728 @@
+date,symbol,insider_name,insider_title,is_executive,security_type,transaction_type,shares,price,value
+2000-03-31,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,99.0,25.2525,2499.9975
+2000-06-30,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,101.0,24.7525,2500.0025
+2000-09-30,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,297.0,8.4175,2499.9975
+2000-12-31,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,230.0,10.87,2500.1
+2001-03-12,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,200.0,12.5,2500.0
+2001-03-12,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,200.0,12.5,2500.0
+2001-05-14,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,138.0,18.1159,2499.9942
+2001-05-14,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,138.0,18.1159,2499.9942
+2001-07-30,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,136.0,18.3824,2500.0064
+2001-07-30,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,136.0,18.3824,2500.0064
+2001-10-22,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,187.0,13.369,2500.003
+2001-10-22,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,187.0,13.369,2500.003
+2002-04-09,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,145.0,17.2414,2500.0029999999997
+2002-05-08,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,135.0,18.5185,2499.9975
+2002-07-26,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,188.0,13.32,2504.16
+2002-10-24,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,263.0,9.54,2509.02
+2003-03-14,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,779.0,6.42,5001.18
+2003-05-15,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,611.0,8.19,5004.09
+2003-07-24,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,436.0,11.48,5005.28
+2003-10-23,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,477.0,10.49,5003.7300000000005
+2004-03-18,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,347.0,14.43,5007.21
+2004-04-28,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,282.0,17.75,5005.5
+2004-07-30,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,294.0,17.03,5006.820000000001
+2004-10-28,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,337.0,14.84,5001.08
+2005-03-24,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,230.0,21.83,5020.9
+2005-03-24,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,230.0,21.83,5020.9
+2005-05-23,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,242.0,20.71,5011.820000000001
+2005-05-23,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,242.0,20.71,5011.820000000001
+2005-08-30,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,173.0,28.9,4999.7
+2005-08-30,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,173.0,28.9,4999.7
+2005-10-27,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,183.0,27.4,5014.2
+2005-10-27,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,183.0,27.4,5014.2
+2005-12-01,ASTE,"STAFFORD, ROBERT G",Group VP- Aggregate & Mining,True,Common Stock,sell,10000.0,29.5,295000.0
+2005-12-01,ASTE,"STAFFORD, ROBERT G",Group VP- Aggregate & Mining,True,Common Stock,sell,10000.0,28.5,285000.0
+2005-12-01,ASTE,"STAFFORD, ROBERT G",Group VP- Aggregate & Mining,True,Common Stock,sell,10000.0,29.0,290000.0
+2005-12-01,ASTE,"STAFFORD, ROBERT G",Group VP- Aggregate & Mining,True,Common Stock,sell,7802.0,29.9208,233442.0816
+2005-12-02,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Common Stock,buy,917.0,14.5,13296.5
+2005-12-02,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Common Stock,sell,200.0,29.85,5970.0
+2005-12-02,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Common Stock,sell,717.0,29.8625,21411.412500000002
+2005-12-08,ASTE,"VIG, JOSEPH P",President-Kolberg Pioneer,True,Common Stock,sell,3527.0,29.98,105739.46
+2005-12-08,ASTE,"VIG, JOSEPH P",President-Kolberg Pioneer,True,Common Stock,buy,3527.0,17.375,61281.625
+2005-12-09,ASTE,"VIG, JOSEPH P",President-Kolberg Pioneer,True,Common Stock,sell,7669.0,29.98,229916.62
+2005-12-09,ASTE,"VIG, JOSEPH P",President-Kolberg Pioneer,True,Common Stock,buy,6896.0,14.5,99992.0
+2005-12-09,ASTE,"VIG, JOSEPH P",President-Kolberg Pioneer,True,Common Stock,buy,773.0,17.375,13430.875
+2005-12-14,ASTE,"STAFFORD, ROBERT G",Group VP-Aggregate & Mining,True,Common Stock,buy,54246.0,17.375,942524.25
+2005-12-14,ASTE,"PATEK, RICHARD A",President-Telsmith,True,Common Stock,sell,10000.0,32.5301,325301.0
+2005-12-14,ASTE,"PATEK, RICHARD A",President-Telsmith,True,Common Stock,buy,10000.0,17.375,173750.0
+2005-12-14,ASTE,"STAFFORD, ROBERT G",Group VP-Aggregate & Mining,True,Common Stock,sell,54246.0,32.5221,1764193.8366
+2006-01-12,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Phantom Stock,buy,344.5155,34.248,11798.966843999999
+2006-01-12,ASTE,"ODGERS, ALAN W",President-Astec Underground,True,Phantom Shares,buy,93.5234,34.248,3202.9894031999997
+2006-01-12,ASTE,"VIG, JOSEPH P",President-Kolberg Pioneer,True,Phantom Stock,buy,30.3684,34.248,1040.0569632
+2006-01-12,ASTE,"DORRIS, RICHARD J",President-Heatec,True,Phantom Stock,buy,73.6391,34.248,2521.9918967999997
+2006-01-12,ASTE,"PATEK, RICHARD A",President-Telsmith,True,Phantom Stock,buy,115.0429,34.248,3939.9892391999997
+2006-01-12,ASTE,"GUTH, ALBERT E","Director, Group VP Administration",True,Phantom Stock,buy,149.6725,34.248,5125.9837800000005
+2006-01-12,ASTE,"ELLIOTT, JEFFREY J",President-JCI,True,Phantom Stock,buy,129.0875,34.248,4420.9887
+2006-01-12,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,57.1419,34.248,1956.9957911999998
+2006-01-12,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Phantom Stock,buy,156.0671,34.248,5344.9860408
+2006-01-12,ASTE,"HALL, F MCKAMY",VP & CFO,True,Phantom Stock,buy,147.0739,34.248,5036.9869272
+2006-01-12,ASTE,"FERRY, JAMES NEAL",Executive VP,True,Phantom Stock,buy,235.0495,34.248,8049.975275999999
+2006-01-12,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Phantom Stock,buy,114.9553,34.248,3936.9891143999994
+2006-01-12,ASTE,"CAMPBELL, THOMAS R",VP-Mobile Asphalt Paving,True,Phantom Stock,buy,160.768,34.248,5505.982464
+2006-01-12,ASTE,"STAFFORD, ROBERT G",Group VP-Aggregate & Mining,True,Phantom Stock,buy,150.2273,34.248,5144.9845704
+2006-01-12,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,buy,115.3349,34.248,3949.9896552
+2006-03-06,ASTE,"ODGERS, ALAN W",President-Astec Underground,True,Common Stock,buy,1500.0,14.42,21630.0
+2006-03-06,ASTE,"ODGERS, ALAN W",President-Astec Underground,True,Common Stock,sell,1500.0,36.0113,54016.95
+2006-03-08,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Common Stock,buy,20000.0,5.375,107500.0
+2006-03-16,ASTE,"DORRIS, RICHARD J",President-Heatec,True,Common Stock,sell,1000.0,34.46,34460.0
+2006-03-16,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,204.0,34.43,7023.72
+2006-03-16,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,204.0,34.43,7023.72
+2006-03-16,ASTE,"MOFFAT, R DOUGLAS",Director,True,Common Stock,buy,204.0,34.43,7023.72
+2006-03-16,ASTE,"DORRIS, RICHARD J",President-Heatec,True,Common Stock,buy,1000.0,25.5,25500.0
+2006-03-16,ASTE,"GREEN, RONALD F",Director,True,Common Stock,buy,204.0,34.43,7023.72
+2006-03-16,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Common Stock,buy,6269.0,15.95,99990.54999999999
+2006-03-16,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Common Stock,buy,4678.0,21.373,99982.894
+2006-03-16,ASTE,"CASEY, PHILLIP E",Director,True,Common Stock,buy,204.0,34.43,7023.72
+2006-03-17,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Common Stock,sell,18600.0,34.5186,642045.96
+2006-03-17,ASTE,"STAFFORD, ROBERT G",Group VP-Aggregate & Mining,True,Common Stock,buy,1396.0,5.375,7503.5
+2006-03-17,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Common Stock,sell,10000.0,34.5186,345186.0
+2006-04-11,ASTE,"GUTH, ALBERT E","Director, Group VP Administration",True,Phantom Shares,buy,243.0383,38.442,9342.8783286
+2006-04-11,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Phantom Stock,buy,344.6186,38.442,13247.828221200001
+2006-04-11,ASTE,"ODGERS, ALAN W",President-Astec Underground,True,Phantom Shares,buy,74.0326,38.442,2845.9612092
+2006-04-11,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Phantom Shares,buy,409.8069,38.442,15753.7968498
+2006-04-11,ASTE,"VIG, JOSEPH P",President-Kolberg Pioneer,True,Phantom Shares,buy,92.4503,38.442,3553.9744326
+2006-04-11,ASTE,"FERRY, JAMES NEAL",Executive VP,True,Phantom shares,buy,479.2872,38.442,18424.7585424
+2006-04-11,ASTE,"ELLIOTT, JEFFREY J",President-JCI,True,Phantom Shares,buy,320.6867,38.442,12327.838121399998
+2006-04-11,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,167.4709,38.442,6437.9163378
+2006-04-11,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Phantom Shares,buy,689.0811,38.442,26489.6556462
+2006-04-11,ASTE,"PATEK, RICHARD A",President-Telsmith,True,Phantom Shares,buy,226.5982,38.442,8710.8880044
+2006-04-11,ASTE,"HALL, F MCKAMY",VP & CFO,True,Phantom shares,buy,217.4937,38.442,8360.8928154
+2006-04-11,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Shares,buy,291.8645,38.442,11219.855109
+2006-04-11,ASTE,"STAFFORD, ROBERT G",Group VP-Aggregate & Mining,True,Phantom Shares,buy,352.8126,38.442,13562.821969199998
+2006-04-11,ASTE,"DORRIS, RICHARD J",President-Heatec,True,Phantom Shares,buy,148.8977,38.442,5723.925383399999
+2006-04-11,ASTE,"CAMPBELL, THOMAS R",VP-Mobile Asphalt Paving,True,Phantom Stock,buy,185.5238,38.442,7131.9059196
+2006-04-27,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,176.0,39.81,7006.56
+2006-04-27,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,176.0,39.81,7006.56
+2006-04-27,ASTE,"CASEY, PHILLIP E",Director,True,Common Stock,buy,176.0,39.81,7006.56
+2006-04-28,ASTE,"GREEN, RONALD F",Director,True,Common Stock,buy,176.0,39.81,7006.56
+2006-04-28,ASTE,"MOFFAT, R DOUGLAS",Director,True,Common Stock,buy,176.0,39.81,7006.56
+2006-05-01,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Common Stock,sell,26731.0,39.1591,1046761.9021000001
+2006-05-01,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Common Stock,buy,29000.0,12.969,376101.0
+2006-05-01,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Common Stock,sell,29000.0,39.1591,1135613.9000000001
+2006-05-01,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Common Stock,buy,26731.0,14.5,387599.5
+2006-05-02,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Common Stock,sell,7000.0,38.7207,271044.9
+2006-05-02,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Common Stock,buy,7000.0,14.5,101500.0
+2006-05-03,ASTE,"GUTH, ALBERT E","Director, Group VP Administration",True,Common Stock,sell,10000.0,39.25,392500.0
+2006-05-03,ASTE,"GUTH, ALBERT E","Director, Group VP Administration",True,Common Stock,buy,10000.0,17.375,173750.0
+2006-05-05,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Common Stock,sell,910.0,39.5,35945.0
+2006-05-05,ASTE,"HALL, F MCKAMY",VP & CFO,True,Common Stock,buy,20110.0,25.5,512805.0
+2006-05-05,ASTE,"HALL, F MCKAMY",VP & CFO,True,Common Stock,sell,20110.0,39.5021,794387.231
+2006-05-05,ASTE,"HALL, F MCKAMY",VP & CFO,True,Common Stock,sell,10000.0,39.5021,395021.0
+2006-05-05,ASTE,"HALL, F MCKAMY",VP & CFO,True,Common Stock,buy,10000.0,19.43,194300.0
+2006-05-08,ASTE,"HALL, F MCKAMY",VP & CFO,True,Common Stock,buy,1190.0,25.5,30345.0
+2006-05-08,ASTE,"VIG, JOSEPH P",President-Kolberg Pioneer,True,Common Stock,buy,8355.0,14.5,121147.5
+2006-05-08,ASTE,"VIG, JOSEPH P",President-Kolberg Pioneer,True,Common Stock,sell,8355.0,39.0063,325897.6365
+2006-05-08,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Common Stock,sell,4476.0,39.5,176802.0
+2006-05-08,ASTE,"HALL, F MCKAMY",VP & CFO,True,Common Stock,sell,1190.0,39.5,47005.0
+2006-05-09,ASTE,"HALL, F MCKAMY",VP & CFO,True,Common Stock,sell,12896.0,39.45,508747.2
+2006-05-09,ASTE,"HALL, F MCKAMY",VP & CFO,True,Common Stock,buy,12896.0,25.5,328848.0
+2006-05-10,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Common Stock,sell,3056.0,39.0153,119230.75680000002
+2006-05-10,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Common Stock,sell,2600.0,39.02,101452.00000000001
+2006-05-10,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Common Stock,sell,2400.0,39.0311,93674.64
+2006-05-10,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Common Stock,sell,2500.0,39.0485,97621.25
+2006-05-26,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Common Stock,sell,5000.0,35.0,175000.0
+2006-05-31,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,176.0,39.81,7006.56
+2006-07-11,ASTE,"DORRIS, RICHARD J",President-Heatec,True,Phantom Stock,buy,81.8604,32.311,2644.9913844
+2006-07-11,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Phantom Stock,buy,125.4058,32.311,4051.9868038
+2006-07-11,ASTE,"STAFFORD, ROBERT G","Director, VP-Corporate R&D",True,Phantom Stock,buy,138.5592,32.3111,4477.000167120001
+2006-07-11,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,buy,119.4636,32.311,3859.9883796
+2006-07-11,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Phantom Stock,buy,386.1521,32.311,12476.960503100001
+2006-07-11,ASTE,"SMITH, W NORMAN","Director, Group VP- Asphalt",True,Phantom Stock,buy,169.106,32.311,5463.983966
+2006-07-11,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,73.009,32.311,2358.993799
+2006-07-11,ASTE,"GUTH, ALBERT E","Director, Group VP Administration",True,Phantom Stock,buy,158.2428,32.311,5112.9831108
+2006-07-11,ASTE,"VIG, JOSEPH P",President-Kolberg Pioneer,True,Phantom Shares,buy,37.1662,32.311,1200.8770882000001
+2006-07-11,ASTE,"CAMPBELL, THOMAS R",VP-Mobile Asphalt Paving,True,Phantom Stock,buy,243.8481,32.311,7878.975959099999
+2006-07-11,ASTE,"FERRY, JAMES NEAL",Executive VP,True,Phantom Stock,buy,260.7463,32.311,8424.9736993
+2006-07-11,ASTE,"ELLIOTT, JEFFREY J",President-JCI,True,Phantom Stock,buy,118.6589,32.311,3833.9877179
+2006-07-11,ASTE,"PATEK, RICHARD A",President-Telsmith,True,Phantom Stock,buy,116.6472,32.311,3768.9876792
+2006-07-11,ASTE,"ODGERS, ALAN W",President-Astec Underground,True,Phantom Stock,buy,102.7511,32.311,3319.9907921
+2006-07-28,ASTE,"CASEY, PHILLIP E",Director,True,Common Stock,buy,335.0,20.95,7018.25
+2006-07-28,ASTE,"GREEN, RONALD F",Director,True,Common Stock,buy,335.0,20.95,7018.25
+2006-07-28,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,335.0,20.95,7018.25
+2006-07-28,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,335.0,20.95,7018.25
+2006-07-28,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,335.0,20.95,7018.25
+2006-08-02,ASTE,"ANDERSON, STEPHEN C",Assistant Secretary,True,Common Stock,buy,700.0,20.47,14329.0
+2006-08-03,ASTE,"SMITH, W NORMAN","Director, Group VP Asphalt",True,Common Stock,buy,40000.0,4.75,190000.0
+2006-08-04,ASTE,"GENDELL, JEFFREY L ET AL",10% Owner,False,"Common Stock, par value $0.20",buy,65600.0,20.51,1345456.0
+2006-08-07,ASTE,"GENDELL, JEFFREY L ET AL",10% Owner,False,"Common Stock, par value $0.20",buy,120600.0,20.71,2497626.0
+2006-08-11,ASTE,"GENDELL, JEFFREY L ET AL",10% Owner,False,"Comm Stock, par value $0.20",buy,21400.0,20.53,439342.0
+2006-08-14,ASTE,"ANDERSON, STEPHEN C",Assistant Secretary,True,Common Stock,buy,300.0,21.25,6375.0
+2006-08-17,ASTE,"GENDELL, JEFFREY L ET AL",10% Owner,False,"Common Stock, par value $0.20",buy,52000.0,23.38,1215760.0
+2006-08-18,ASTE,"GENDELL, JEFFREY L ET AL",10% Owner,False,"Common Stock, par value $0.20",buy,15000.0,23.08,346200.0
+2006-08-31,ASTE,"GENDELL, JEFFREY L ET AL",10% Owner,False,"Common Stock, par value $0.20",buy,27500.0,23.51,646525.0
+2006-09-01,ASTE,"GENDELL, JEFFREY L ET AL",10% Owner,False,"Common Stock, par value $0.20",buy,72500.0,23.58,1709549.9999999998
+2006-10-11,ASTE,"SMITH, W NORMAN","Director, Group VP Asphalt",True,Phantom Stock,buy,216.0302,26.45,5713.99879
+2006-10-11,ASTE,"GUTH, ALBERT E","Director, Group VP Administration",True,Phantom Stock,buy,193.3081,26.45,5112.999245
+2006-10-11,ASTE,"DORRIS, RICHARD J",President-Heatec,True,Phantom Stock,buy,100.6049,26.45,2660.999605
+2006-10-11,ASTE,"VIG, JOSEPH P",President- Kolberg Pioneer,True,Phantom Stock,buy,52.9732,26.449,1401.0881668
+2006-10-11,ASTE,"PATEK, RICHARD A",President-Telsmith,True,Phantom Stock,buy,173.3081,26.45,4583.999245
+2006-10-11,ASTE,"ELLIOTT, JEFFREY J",President-JCI,True,Phantom Stock,buy,173.8752,26.45,4598.99904
+2006-10-11,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,buy,151.9849,26.449,4019.8486201000005
+2006-10-11,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Phantom Stock,buy,159.8488,26.449,4227.840911200001
+2006-10-11,ASTE,"CAMPBELL, THOMAS R",VP-Mobile Asphalt Paving,True,Phantom Stock,buy,217.6181,26.45,5755.998745
+2006-10-11,ASTE,"FERRY, JAMES NEAL",Executive VP,True,Phantom Stock,buy,318.5255,26.45,8424.999475
+2006-10-11,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Phantom Stock,buy,469.7164,26.45,12423.99878
+2006-10-11,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,88.3554,26.449,2336.9119746
+2006-10-30,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Common Stock,buy,1000.0,17.375,17375.0
+2006-10-30,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Common Stock,sell,1000.0,32.42,32420.0
+2006-11-13,ASTE,"ELLIOTT, JEFFREY J",President-JCI,True,Phantom Shares,sell,3000.0,33.608,100823.99999999999
+2006-11-17,ASTE,"GREEN, RONALD F",Director,True,Common Stock,buy,205.0,34.29,7029.45
+2006-11-17,ASTE,"CASEY, PHILLIP E",Director,True,Common Stock,buy,205.0,34.29,7029.45
+2006-11-17,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,205.0,34.29,7029.45
+2006-11-17,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,205.0,34.29,7029.45
+2006-11-17,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,205.0,34.29,7029.45
+2006-11-21,ASTE,"STAFFORD, ROBERT G","Director, VP-Corporate R&D",True,Common Stock,buy,32290.0,12.969,418769.01
+2006-11-21,ASTE,"STAFFORD, ROBERT G","Director, VP-Corporate R&D",True,Common Stock,sell,41954.0,35.0,1468390.0
+2006-11-21,ASTE,"STAFFORD, ROBERT G","Director, VP-Corporate R&D",True,Common Stock,buy,9664.0,24.375,235560.0
+2006-11-22,ASTE,"SMITH, W NORMAN","Director, Group VP Asphalt",True,Common Stock,sell,16607.0,35.084,582639.988
+2006-11-24,ASTE,"SMITH, W NORMAN","Director, Group VP Asphalt",True,Common Stock,sell,3393.0,35.1877,119391.8661
+2007-01-05,ASTE,"GUTH, ALBERT E",Director,True,Phantom Stock,sell,1073.46,33.81,36293.6826
+2007-01-23,ASTE,"CAMPBELL, THOMAS R","Director, VP-Mobile Asphalt Paving",True,Phantom Stock,buy,156.0134,36.85,5749.09379
+2007-01-23,ASTE,"FERRY, JAMES NEAL",Chief Operating Officer,True,Phantom Stock,buy,228.3348,36.85,8414.13738
+2007-01-23,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Phantom Stock,buy,157.0175,36.85,5786.094875000001
+2007-01-23,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Shares,buy,113.9774,36.85,4200.067190000001
+2007-01-23,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Phantom Stock,buy,128.306,36.85,4728.0761
+2007-01-23,ASTE,"VIG, JOSEPH P",President-Kolberg Pioneer,True,Phantom Stock,buy,32.7365,36.85,1206.340025
+2007-01-23,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Phantom Stock,buy,337.1561,36.85,12424.202285
+2007-01-23,ASTE,"GUTH, ALBERT E",Director,True,Phantom Stock,buy,145.9183,36.85,5377.089355
+2007-01-23,ASTE,"PATEK, RICHARD A",President-Telsmith,True,Phantom Stock,buy,112.4035,36.85,4142.068975
+2007-01-23,ASTE,"GONIGAM, TIMOTHY D",President-Asp Mobile Screens,True,Phantom Shares,buy,63.3389,36.85,2334.038465
+2007-01-23,ASTE,"ELLIOTT, JEFFREY J",President-JCI,True,Phantom Stock,buy,126.4878,36.85,4661.07543
+2007-01-23,ASTE,"DORRIS, RICHARD J",President-Heatec,True,Phantom Stock,buy,81.7381,36.85,3012.0489850000004
+2007-03-05,ASTE,"HALL, F MCKAMY",VP & CFO,True,Common Stock,sell,3404.0,36.6,124586.40000000001
+2007-03-07,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Common Stock,sell,5000.0,39.01,195050.0
+2007-03-07,ASTE,"HALL, F MCKAMY",VP & CFO,True,Common Stock,buy,17196.0,29.594,508898.424
+2007-03-07,ASTE,"DORRIS, RICHARD J",President-Heatec,True,Common Stock,sell,5000.0,39.1516,195758.0
+2007-03-07,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Common Stock,sell,16180.0,38.7922,627657.796
+2007-03-07,ASTE,"HALL, F MCKAMY",VP & CFO,True,Common Stock,buy,5804.0,25.5,148002.0
+2007-03-07,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Common Stock,buy,5000.0,19.43,97150.0
+2007-03-07,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Common Stock,buy,180.0,17.375,3127.5
+2007-03-07,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Common Stock,buy,10000.0,19.43,194300.0
+2007-03-07,ASTE,"HALL, F MCKAMY",VP & CFO,True,Common Stock,sell,17196.0,39.0854,672112.5384
+2007-03-07,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Common Stock,buy,6000.0,25.5,153000.0
+2007-03-07,ASTE,"HALL, F MCKAMY",VP & CFO,True,Common Stock,sell,5804.0,39.0854,226851.6616
+2007-03-07,ASTE,"DORRIS, RICHARD J",President-Heatec,True,Common Stock,buy,5000.0,19.43,97150.0
+2007-03-15,ASTE,"GUTH, ALBERT E",Director,True,Common Stock,buy,10000.0,12.969,129690.0
+2007-03-15,ASTE,"GUTH, ALBERT E",Director,True,Common Stock,buy,6000.0,29.594,177564.0
+2007-03-15,ASTE,"GUTH, ALBERT E",Director,True,Common Stock,sell,22389.0,38.024,851319.336
+2007-03-15,ASTE,"GUTH, ALBERT E",Director,True,Common Stock,buy,5500.0,25.5,140250.0
+2007-03-15,ASTE,"GUTH, ALBERT E",Director,True,Common Stock,buy,889.0,14.5,12890.5
+2007-03-19,ASTE,"STAFFORD, ROBERT G","Director, Corporate VP R&D",True,Common Stock,buy,35000.0,14.5,507500.0
+2007-03-19,ASTE,"STAFFORD, ROBERT G","Director, Corporate VP R&D",True,Common Stock,sell,35000.0,39.1,1368500.0
+2007-04-17,ASTE,"VIG, JOSEPH P",President-KPI,True,Phantom Stock,buy,94.6371,43.73,4138.480383
+2007-04-17,ASTE,"PATEK, RICHARD A",President-Telsmith,True,Phantom Stock,buy,320.6037,43.73,14019.999801
+2007-04-20,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Phantom Shares,buy,410.7596,42.84,17596.941264
+2007-04-20,ASTE,"ELLIOTT, JEFFREY J",President-JCI,True,Phantom Shares,buy,326.8441,42.84,14002.001244000003
+2007-04-20,ASTE,"PFEIFFER, JAMES F",President-American Augers,True,Phantom Shares,buy,205.9932,42.84,8824.748688000001
+2007-04-20,ASTE,"DORRIS, RICHARD J",President-Heatec,True,Phantom Shares,buy,150.0689,42.84,6428.9516760000015
+2007-04-20,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Phantom Shares,buy,893.9718,42.84,38297.75191200001
+2007-04-20,ASTE,"CARGOULD, FRANK D",President- Breaker Technology,True,Phantom Stock,buy,636.5313,42.84,27269.000892
+2007-04-20,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Shares,buy,301.983,42.84,12936.951720000001
+2007-04-20,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Shares,buy,185.0205,42.84,7926.27822
+2007-04-20,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Shares,buy,140.5093,42.84,6019.418412
+2007-04-20,ASTE,"FERRY, JAMES NEAL",Chief Operating Officer,True,Phantom Shares,buy,513.8546,42.84,22013.531064000003
+2007-04-24,ASTE,"CAMPBELL, THOMAS R",VP-Mobile Asphalt Paving,True,Phantom Stock,buy,411.3172,42.84,17620.828848
+2007-04-27,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Common Stock,sell,20000.0,41.6933,833866.0
+2007-04-30,ASTE,"VIG, JOSEPH P",President-KPI,True,Common Stock,sell,4854.0,42.22,204935.88
+2007-04-30,ASTE,"ODGERS, ALAN W",President- Astec Underground,True,Common Stock,sell,1000.0,42.0,42000.0
+2007-04-30,ASTE,"ODGERS, ALAN W",President- Astec Underground,True,Common Stock,buy,1000.0,23.76,23760.0
+2007-04-30,ASTE,"VIG, JOSEPH P",President-KPI,True,Common Stock,buy,4854.0,19.43,94313.22
+2007-05-01,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Common Stock,sell,10000.0,40.0016,400016.00000000006
+2007-05-02,ASTE,"CASEY, PHILLIP E",Director,True,Common Stock,buy,344.0,40.79,14031.76
+2007-05-02,ASTE,"ELLIOTT, JEFFREY J",President-JCI,True,Common Stock,sell,5146.0,40.4245,208024.477
+2007-05-02,ASTE,"ELLIOTT, JEFFREY J",President-JCI,True,Common Stock,buy,5146.0,19.43,99986.78
+2007-05-02,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,344.0,40.79,14031.76
+2007-05-02,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,344.0,40.79,14031.76
+2007-05-02,ASTE,"HALL, F MCKAMY",Vice President & CFO,True,Common Stock,buy,2200.0,29.594,65106.8
+2007-05-02,ASTE,"GREEN, RONALD F",Director,True,Common Stock,buy,344.0,40.79,14031.76
+2007-05-02,ASTE,"HALL, F MCKAMY",Vice President & CFO,True,Common Stock,sell,2200.0,41.7659,91884.98000000001
+2007-05-02,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,344.0,40.79,14031.76
+2007-05-02,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,344.0,40.79,14031.76
+2007-05-03,ASTE,"HALL, F MCKAMY",Vice President & CFO,True,Common Stock,buy,8604.0,29.594,254626.776
+2007-05-03,ASTE,"BROCK, BENJAMIN G","President, Astec, Inc.",True,Common Stock,sell,1104.0,41.55,45871.2
+2007-05-03,ASTE,"HALL, F MCKAMY",Vice President & CFO,True,Common Stock,sell,8604.0,41.5245,357276.798
+2007-05-08,ASTE,"ELLIOTT, JEFFREY J",President-JCI,True,Common Stock,sell,1215.57,40.33,49023.93809999999
+2007-05-10,ASTE,"STAFFORD, ROBERT G",Director,True,Common Stock,sell,10000.0,42.0,420000.0
+2007-05-10,ASTE,"STAFFORD, ROBERT G",Director,True,Common Stock,buy,6079.0,29.594,179901.926
+2007-05-10,ASTE,"STAFFORD, ROBERT G",Director,True,Common Stock,buy,3921.0,25.5,99985.5
+2007-05-15,ASTE,"CAMPBELL, THOMAS R",Group VP- Mob. Asp. Pav & Undg,True,Common Stock,sell,600.0,41.55,24930.0
+2007-05-15,ASTE,"CAMPBELL, THOMAS R",Group VP- Mob. Asp. Pav & Undg,True,Common Stock,buy,600.0,19.43,11658.0
+2007-05-18,ASTE,"SILVIOUS, DAVID C",Corporate Controller,False,Common Stock,buy,3000.0,25.5,76500.0
+2007-05-18,ASTE,"SILVIOUS, DAVID C",Corporate Controller,False,Common Stock,buy,2500.0,12.969,32422.5
+2007-05-18,ASTE,"SILVIOUS, DAVID C",Corporate Controller,False,Common Stock,buy,5000.0,14.5,72500.0
+2007-05-18,ASTE,"SILVIOUS, DAVID C",Corporate Controller,False,Common Stock,sell,10500.0,42.2302,443417.10000000003
+2007-05-18,ASTE,"CAMPBELL, THOMAS R",Group VP-Mob. Asp. Pav & Und,True,Common Stock,buy,15400.0,19.43,299222.0
+2007-05-18,ASTE,"CAMPBELL, THOMAS R",Group VP-Mob. Asp. Pav & Und,True,Common Stock,sell,15400.0,41.758,643073.2000000001
+2007-05-21,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Common Stock,buy,1090.0,25.5,27795.0
+2007-05-21,ASTE,"ANDERSON, STEPHEN C",Corporate Secretary,True,Common Stock,sell,1000.0,42.99,42990.0
+2007-05-21,ASTE,"ANDERSON, STEPHEN C",Corporate Secretary,True,Common Stock,buy,1000.0,42.99,42990.0
+2007-05-21,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Common stock,sell,1090.0,42.9,46761.0
+2007-05-22,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Common Stock,sell,20000.0,42.14,842800.0
+2007-05-24,ASTE,"STAFFORD, ROBERT G","Director, VP R&D",True,Common Stock,sell,20000.0,42.7076,854152.0
+2007-05-24,ASTE,"STAFFORD, ROBERT G","Director, VP R&D",True,Common Stock,buy,20000.0,29.594,591880.0
+2007-05-31,ASTE,"STAFFORD, ROBERT G","Director, Corporate VP-R& D",True,Common Stock,buy,10000.0,29.594,295940.0
+2007-05-31,ASTE,"STAFFORD, ROBERT G","Director, Corporate VP-R& D",True,Common Stock,sell,10000.0,43.45,434500.0
+2007-06-01,ASTE,"STAFFORD, ROBERT G","Director, Corporate VP-R& D",True,Common Stock,sell,1220.0,43.9742,53648.524000000005
+2007-06-01,ASTE,"STAFFORD, ROBERT G","Director, Corporate VP-R& D",True,Common Stock,buy,1220.0,29.594,36104.68
+2007-06-15,ASTE,"STAFFORD, ROBERT G","Director, Corporate VP-R& D",True,Common Stock,sell,38780.0,44.6198,1730355.8439999998
+2007-06-15,ASTE,"STAFFORD, ROBERT G","Director, Corporate VP-R& D",True,Common Stock,buy,36079.0,25.5,920014.5
+2007-06-15,ASTE,"STAFFORD, ROBERT G","Director, Corporate VP-R& D",True,Common Stock,buy,2701.0,29.594,79933.394
+2007-06-18,ASTE,"PATEK, RICHARD A",President-Telsmith,True,Common Stock,sell,15000.0,44.3365,665047.5
+2007-06-18,ASTE,"PATEK, RICHARD A",President-Telsmith,True,Common Stock,buy,15000.0,29.594,443910.0
+2007-06-19,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav &  Und,True,Common Stock,sell,12000.0,44.9933,539919.6
+2007-06-19,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav &  Und,True,Common Stock,buy,12000.0,25.5,306000.0
+2007-07-17,ASTE,"BROCK, J DON","Director, President &  CEO, 10% Owner",True,Phantom Stock,buy,268.988,49.2587,13249.9991956
+2007-07-17,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Phantom Stock,sell,192.2825,49.2192,9463.990824
+2007-07-17,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav &  Und,True,Phantom Stock,buy,124.039,49.2587,6109.9998893
+2007-07-17,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,buy,91.3544,49.2587,4499.998983279999
+2007-07-17,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,57.8578,49.2587,2850.0000128599995
+2007-07-17,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Phantom Stock,buy,123.3285,49.2587,6075.00158295
+2007-07-17,ASTE,"DORRIS, RICHARD J",President-Heatec,True,Phantom Stock,buy,63.9481,49.2587,3150.0002734699997
+2007-07-17,ASTE,"PATEK, RICHARD A",President-Telsmith,True,Phantom Stock,buy,88.3093,49.2587,4350.001315909999
+2007-07-17,ASTE,"FERRY, JAMES NEAL","Director, COO &  Grp VP Agg/Mining",True,Phantom Stock,buy,182.7088,49.2587,8999.997966559999
+2007-07-17,ASTE,"VIG, JOSEPH P",President-Kolberg Pioneer,True,Phantom Stock,buy,28.6723,49.2587,1412.36022401
+2007-07-17,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,57.3909,49.2587,2827.00112583
+2007-07-17,ASTE,"ODGERS, ALAN W",President-Astec Underground,True,Phantom Stock,buy,83.0716,49.2587,4091.99902292
+2007-07-17,ASTE,"PFEIFFER, JAMES F",President-American Augers,True,Phantom Stock,buy,60.436,49.2587,2976.9987932
+2007-07-23,ASTE,"GENDELL, JEFFREY L ET AL",10% Owner,False,Common Stock,sell,107200.0,55.24,5921728.0
+2007-07-27,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Common Stock,sell,20000.0,50.2279,1004558.0
+2007-08-01,ASTE,"BROCK, BENJAMIN G","President-Astec, Inc.",True,Common Stock,sell,9000.0,52.66,473939.99999999994
+2007-08-01,ASTE,"CASEY, PHILLIP E",Director,True,Common Stock,buy,133.0,52.91,7037.03
+2007-08-01,ASTE,"GREEN, RONALD F",Director,True,Common Stock,buy,133.0,52.91,7037.03
+2007-08-01,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,133.0,52.91,7037.03
+2007-08-01,ASTE,"BROCK, BENJAMIN G","President-Astec, Inc.",True,Common Stock,sell,5000.0,52.66,263300.0
+2007-08-01,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,133.0,52.91,7037.03
+2007-08-01,ASTE,"FRIERSON, DANIEL K",Director,True,Common stock,buy,133.0,52.91,7037.03
+2007-08-01,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,133.0,52.91,7037.03
+2007-08-01,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Common Stock,sell,1299.0316,52.4,68069.25584
+2007-08-03,ASTE,"BROCK, J DON","Director, President &  CEO, 10% Owner",True,Common Stock,sell,2447.0,52.5638,128623.6186
+2007-08-06,ASTE,"BROCK, J DON","Director, President &  CEO, 10% Owner",True,Common Stock,sell,8500.0,50.87,432395.0
+2007-08-07,ASTE,"BROCK, BENJAMIN G","President-Astec, Inc.",True,Common Stock,buy,3500.0,29.594,103579.0
+2007-08-07,ASTE,"BROCK, BENJAMIN G","President-Astec, Inc.",True,Common Stock,buy,1500.0,25.5,38250.0
+2007-08-07,ASTE,"BROCK, J DON","Director, President &  CEO, 10% Owner",True,Common Stock,sell,2645.0,50.3866,133272.557
+2007-08-07,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Common Stock,sell,5020.0,52.0,261040.0
+2007-08-07,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Common Stock,buy,5000.0,19.43,97150.0
+2007-08-10,ASTE,"BROCK, J DON","Director, President &  CEO, 10% Owner",True,Common Stock,sell,17355.0,51.6367,896154.9284999999
+2007-08-14,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Common Stock,buy,7710.0,12.969,99990.98999999999
+2007-08-14,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Common Stock,buy,6896.0,14.5,99992.0
+2007-08-14,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Common Stock,buy,5146.0,19.43,99986.78
+2007-08-14,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Common Stock,buy,3379.0,29.594,99998.126
+2007-08-14,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav &  Und,True,Common Stock,buy,3379.0,29.594,99998.126
+2007-08-14,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Common Stock,buy,3921.0,25.5,99985.5
+2007-08-14,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Common Stock,buy,5754.0,17.375,99975.75
+2007-08-27,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav &  Und,True,Common Stock,sell,3379.0,51.4545,173864.7555
+2007-08-27,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Common Stock,buy,807.0,29.594,23882.358
+2007-08-27,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Common Stock,sell,807.0,52.14,42076.98
+2007-09-05,ASTE,"ANDERSON, STEPHEN C",Corporate Secretary,True,Common Stock,sell,700.0,52.3,36610.0
+2007-09-06,ASTE,"STAFFORD, ROBERT G","Director, Corporate VP-R& D",True,Common Stock,sell,12856.0,53.9,692938.4
+2007-09-06,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav &  Und,True,Common Stock,sell,12000.0,54.089,649068.0
+2007-09-06,ASTE,"STAFFORD, ROBERT G","Director, Corporate VP-R& D",True,Common Stock,buy,7710.0,12.969,99990.98999999999
+2007-09-06,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav &  Und,True,Common Stock,buy,12000.0,25.5,306000.0
+2007-09-06,ASTE,"STAFFORD, ROBERT G","Director, Corporate VP-R& D",True,Common Stock,buy,5146.0,19.43,99986.78
+2007-09-11,ASTE,"GENDELL, JEFFREY L ET AL",Former 10% Owner,False,Common Stock,sell,164443.0,53.62,8817433.66
+2007-09-12,ASTE,"GENDELL, JEFFREY L ET AL",Former 10% Owner,False,Common Stock,sell,100000.0,53.7,5370000.0
+2007-09-13,ASTE,"PATEK, RICHARD A",President-Telsmith,True,Common Stock,sell,4300.0,53.6072,230510.96
+2007-09-13,ASTE,"PATEK, RICHARD A",President-Telsmith,True,Copmmon Stock,sell,5700.0,53.8951,307202.07
+2007-09-13,ASTE,"PATEK, RICHARD A",President-Telsmith,True,Common Stock,buy,10000.0,29.594,295940.0
+2007-09-18,ASTE,"WINTERS, DAVID L",President-Carlson Paving,True,Common Stock,sell,383.0706,56.9791,21827.01802446
+2007-09-18,ASTE,"ELLIOTT, JEFFREY J",Presidelnt-JCI,False,Common Stock,sell,631.0,55.5615,35059.3065
+2007-09-18,ASTE,"ELLIOTT, JEFFREY J",Presidelnt-JCI,False,Common Stock09,buy,4000.0,19.43,77720.0
+2007-09-18,ASTE,"ELLIOTT, JEFFREY J",Presidelnt-JCI,False,Common Stock,sell,3369.0,55.51,187013.19
+2007-09-19,ASTE,"HALL, F MCKAMY",Vice President &  CFO,True,Common Stock,sell,3200.0,56.5,180800.0
+2007-09-19,ASTE,"HALL, F MCKAMY",Vice President &  CFO,True,Common Stock,sell,300.0,56.58,16974.0
+2007-09-19,ASTE,"HALL, F MCKAMY",Vice President &  CFO,True,Common Stock,sell,100.0,56.56,5656.0
+2007-09-19,ASTE,"HALL, F MCKAMY",Vice President &  CFO,True,Common Stock,sell,200.0,56.53,11306.0
+2007-09-19,ASTE,"HALL, F MCKAMY",Vice President &  CFO,True,Common Stock,sell,100.0,56.6,5660.0
+2007-09-19,ASTE,"HALL, F MCKAMY",Vice President &  CFO,True,Common Stock,buy,5000.0,29.594,147970.0
+2007-09-19,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Common Stock,sell,40000.0,56.8236,2272944.0
+2007-09-19,ASTE,"HALL, F MCKAMY",Vice President &  CFO,True,Common Stock,sell,100.0,56.52,5652.0
+2007-09-19,ASTE,"HALL, F MCKAMY",Vice President &  CFO,True,Common Stock,sell,92.0,56.5,5198.0
+2007-09-19,ASTE,"HALL, F MCKAMY",Vice President &  CFO,True,Common Stock,sell,100.0,56.5,5650.0
+2007-09-19,ASTE,"HALL, F MCKAMY",Vice President &  CFO,True,Common Stock,sell,200.0,56.5,11300.0
+2007-09-19,ASTE,"HALL, F MCKAMY",Vice President &  CFO,True,Common Stock,sell,200.0,56.56,11312.0
+2007-09-19,ASTE,"HALL, F MCKAMY",Vice President &  CFO,True,Common Stock,sell,187.0,56.5,10565.5
+2007-09-19,ASTE,"HALL, F MCKAMY",Vice President &  CFO,True,Common Stock,sell,100.0,56.55,5655.0
+2007-10-16,ASTE,"VIG, JOSEPH P",President-Kolberg Pioneer,True,Phantom Stock,buy,27.8547,59.16,1647.8840519999999
+2007-10-16,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,40.9543,59.16,2422.856388
+2007-10-16,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Phantom Stock,buy,81.9086,59.16,4845.712776
+2007-10-16,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,buy,76.0604,59.16,4499.7332639999995
+2007-10-16,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav &  Und,True,Phantom Stock,buy,103.2731,59.16,6109.636595999999
+2007-10-16,ASTE,"PATEK, RICHARD A",President-Telsmith,True,Phantom Stock,buy,85.5595,59.16,5061.700019999999
+2007-10-16,ASTE,"BROCK, J DON","Director, President &  CEO, 10% Owner",True,Phantom Stock,buy,223.9556,59.16,13249.213296
+2007-10-16,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Phantom Stock,buy,102.6816,59.16,6074.643456
+2007-10-16,ASTE,"PFEIFFER, JAMES F",President-American Augers,True,Phantom Stock,buy,58.7017,59.16,3472.792572
+2007-10-16,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,48.1716,59.16,2849.831856
+2007-10-30,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,156.0,44.88,7001.280000000001
+2007-10-30,ASTE,"FRIERSON, DANIEL K",Director,True,Common stock,buy,156.0,44.88,7001.280000000001
+2007-10-30,ASTE,"GREEN, RONALD F",Director,True,Common Stock,buy,156.0,44.88,7001.280000000001
+2007-10-30,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,156.0,44.88,7001.280000000001
+2007-10-30,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,156.0,44.88,7001.280000000001
+2007-10-30,ASTE,"CASEY, PHILLIP E",Director,True,Common Stock,buy,156.0,44.88,7001.280000000001
+2008-01-10,ASTE,"PFEIFFER, JAMES F",President-American Augers,True,Phantom Stock,buy,103.0564,28.8871,2977.00053244
+2008-01-10,ASTE,"PATEK, RICHARD A",President-Telsmith,True,Phantom Stock,buy,150.1708,28.8871,4337.998916680001
+2008-01-10,ASTE,"BROCK, J DON","Director, President &  CEO, 10% Owner",True,Phantom Stock,buy,458.6822,28.8871,13249.99857962
+2008-01-10,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,97.8638,28.8871,2827.00137698
+2008-01-10,ASTE,"VIG, JOSEPH P",President-Kolberg Pioneer,True,Phantom Stock,buy,48.8924,28.8871,1412.3596480400001
+2008-01-10,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Phantom Stock,buy,143.8012,28.8871,4153.9996445199995
+2008-01-10,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,buy,155.7789,28.8871,4500.00066219
+2008-01-10,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Phantom Stock,buy,210.3015,28.8871,6075.000460650001
+2008-01-10,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,98.66,28.8871,2850.0012859999997
+2008-01-10,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav &  Und,True,Phantom Stock,buy,214.7671,28.8871,6203.99869441
+2008-03-04,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,182.0,38.52,7010.64
+2008-03-04,ASTE,"CASEY, PHILLIP E",Director,True,Common Stock,buy,182.0,38.52,7010.64
+2008-03-04,ASTE,"FRIERSON, DANIEL K",Director,True,Common stock,buy,182.0,38.52,7010.64
+2008-03-04,ASTE,"GREEN, RONALD F",Director,True,Common Stock,buy,182.0,38.52,7010.64
+2008-03-04,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,182.0,38.52,7010.64
+2008-03-04,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,182.0,38.52,7010.64
+2008-03-13,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Common Stock,buy,54246.0,17.375,942524.25
+2008-04-09,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Phantom Shares,buy,1063.9261,38.654,41124.9994694
+2008-04-09,ASTE,"PFEIFFER, JAMES F",President-American Augers,True,Phantom Stock,buy,251.3582,38.654,9715.999862800001
+2008-04-09,ASTE,"DORRIS, RICHARD J",President-Heatec,True,Phantom Stock,buy,44.3162,38.654,1712.9983948000001
+2008-04-09,ASTE,"CLINE, JOE K","President, Astec Underground",True,Phantom Stock,buy,150.3596,38.654,5811.9999784
+2008-04-09,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Phantom Stock,buy,362.0583,38.654,13995.0015282
+2008-04-09,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Phantom Stock,buy,472.1374,38.654,18249.999059600003
+2008-04-09,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,196.1246,38.654,7581.0002884000005
+2008-04-09,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav & Und,True,Phantom Stock,buy,472.1374,38.654,18249.999059600003
+2008-04-09,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,buy,353.5469,38.564,13634.1826516
+2008-04-09,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,97.01,38.654,3749.8245400000005
+2008-04-09,ASTE,"PETERSON, A. NEIL",COB-Peterson Pacific,False,Phantom Stock,buy,63.64,38.654,2459.9405600000005
+2008-04-09,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,156.5427,38.654,6051.0015258
+2008-04-09,ASTE,"VIG, JOSEPH P","Pres-KPI, Group VP-ConAgg",True,Phantom Stock,buy,124.34,38.654,4806.23836
+2008-04-09,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Phantom Stock,buy,379.5726,38.654,14671.999280400003
+2008-04-09,ASTE,"ANDERSON, STEPHEN C",Corporate Secretary,True,Phantom Stock,buy,155.22,38.654,5999.87388
+2008-04-25,ASTE,"FRIERSON, DANIEL K",Director,True,Common stock,buy,192.0,36.52,7011.84
+2008-04-25,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,192.0,36.52,7011.84
+2008-04-25,ASTE,"CASEY, PHILLIP E",Director,True,Common Stock,buy,192.0,36.52,7011.84
+2008-04-25,ASTE,"GREEN, RONALD F",Director,True,Common Stock,buy,192.0,36.52,7011.84
+2008-04-25,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,192.0,36.52,7011.84
+2008-04-25,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,192.0,36.52,7011.84
+2008-05-06,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Common Stock,sell,1500.0,37.75,56625.0
+2008-05-06,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Common Stock,sell,2000.0,37.8931,75786.2
+2008-05-06,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Common Stock,sell,1600.0,37.5471,60075.36
+2008-05-06,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Common Stock,sell,2500.0,37.6473,94118.25
+2008-05-06,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Common Stock,sell,2400.0,37.24,89376.0
+2008-05-07,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Common Stock,sell,3000.0,38.1933,114579.90000000001
+2008-05-07,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Common Stock,sell,4000.0,37.92,151680.0
+2008-05-07,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Common Stock,sell,3000.0,38.1439,114431.70000000001
+2008-05-15,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Common Stock,buy,7000.0,29.594,207158.0
+2008-05-15,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Common Stock,sell,7000.0,40.0,280000.0
+2008-07-08,ASTE,"VIG, JOSEPH P","Pres-KPI, Group VP-ConAgg",True,Phantom Stock,buy,51.8509,30.2683,1569.43859647
+2008-07-08,ASTE,"CLINE, JOE K","President, Astec Underground",True,Phantom Stock,buy,67.5955,30.2683,2046.00087265
+2008-07-08,ASTE,"ANDERSON, STEPHEN C",Corporate Secretary,True,Phantom Stock,buy,115.6325,30.2683,3499.9991997499997
+2008-07-08,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Phantom Stock,buy,152.4697,30.2683,4614.9986205099995
+2008-07-08,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,buy,154.6172,30.2683,4679.9997947599995
+2008-07-10,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Phantom Stock,buy,133.6547,30.2683,4045.50055601
+2008-07-10,ASTE,"PFEIFFER, JAMES F",President-American Augers,True,Phantom Stock,buy,98.9761,32.1126,3178.3799088600003
+2008-07-10,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Phantom Shares,buy,424.2883,30.2683,12842.48555089
+2008-07-10,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,116.6959,32.1126,3747.40875834
+2008-07-10,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Phantom Shares,buy,424.2883,32.1126,13625.00046258
+2008-07-10,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Phantom Stock,buy,194.6277,32.1126,6250.00147902
+2008-07-10,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Phantom Stock,buy,194.6277,30.2683,5891.04961191
+2008-07-10,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,91.6734,32.1126,2943.87122484
+2008-07-10,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,91.2072,32.1126,2928.90033072
+2008-07-10,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav & Und,True,Phantom Stock,buy,194.4934,30.2683,5886.98457922
+2008-07-10,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Phantom Stock,buy,133.6547,32.1126,4291.999919219999
+2008-07-10,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav & Und,True,Phantom Stock,buy,194.4934,32.1126,6245.688756840001
+2008-07-10,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,91.6734,30.2683,2774.79797322
+2008-07-10,ASTE,"PFEIFFER, JAMES F",President-American Augers,True,Phantom Stock,buy,98.9761,30.2683,2995.83828763
+2008-07-10,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,91.2072,30.2683,2760.68689176
+2008-07-10,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,116.6959,30.2683,3532.18650997
+2008-07-24,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,213.0,32.93,7014.09
+2008-07-24,ASTE,"FRIERSON, DANIEL K",Director,True,Common stock,buy,213.0,32.93,7014.09
+2008-07-24,ASTE,"HILL, THOMAS W.",Director,True,Common Stock,buy,213.0,32.93,7014.09
+2008-07-24,ASTE,"GREEN, RONALD F",Director,True,Common Stock,buy,213.0,32.93,7014.09
+2008-07-24,ASTE,"CASEY, PHILLIP E",Director,True,Common Stock,buy,213.0,32.93,7014.09
+2008-07-24,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,213.0,32.93,7014.09
+2008-07-24,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,213.0,32.93,7014.09
+2008-10-09,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav & Und,True,Phantom Stock,buy,275.2189,22.7092,6250.00104388
+2008-10-09,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Phantom Stock,buy,237.1286,22.7092,5385.00080312
+2008-10-09,ASTE,"ANDERSON, STEPHEN C",Corporate Secretary,True,Phantom Stock,buy,154.1226,22.7092,3500.00094792
+2008-10-09,ASTE,"VIG, JOSEPH P","Pres-KPI, Group VP-ConAgg",True,Phantom Stock,buy,80.6237,22.7092,1830.89972804
+2008-10-09,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,110.7481,22.7092,2515.00075252
+2008-10-09,ASTE,"CLINE, JOE K","President, Astec Underground",True,Phantom Stock,buy,77.2374,22.7092,1753.9995640799998
+2008-10-09,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Phantom Stock,buy,599.9771,22.7092,13624.99995932
+2008-10-09,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Phantom Stock,buy,220.5274,22.7092,5008.00083208
+2008-10-09,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,165.1313,22.7092,3749.99971796
+2008-10-09,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Phantom Stock,buy,275.2189,22.7092,6250.00104388
+2008-10-09,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,buy,206.0839,22.7092,4680.00050188
+2008-10-09,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,129.9033,22.7092,2950.00002036
+2008-10-09,ASTE,"PFEIFFER, JAMES F",President-American Augers,True,Phantom Stock,buy,163.6341,22.7092,3715.9995037199997
+2008-10-28,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Common Stock,buy,35890.0,12.969,465457.41
+2008-11-12,ASTE,"GREEN, RONALD F",Director,True,Common Stock,buy,289.0,24.25,7008.25
+2008-11-12,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,289.0,24.25,7008.25
+2008-11-12,ASTE,"HILL, THOMAS W.",Director,True,Common Stock,buy,289.0,24.25,7008.25
+2008-11-12,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,289.0,24.25,7008.25
+2008-11-12,ASTE,"CASEY, PHILLIP E",Director,True,Common Stock,buy,289.0,24.25,7008.25
+2008-11-12,ASTE,"FRIERSON, DANIEL K",Director,True,Common stock,buy,289.0,24.25,7008.25
+2008-11-12,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,289.0,24.25,7008.25
+2008-12-08,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav & Und,True,Common Stock,sell,7228.0,33.2568,240380.15039999998
+2008-12-08,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav & Und,True,Common Stock,sell,27000.0,33.0739,892995.3
+2008-12-08,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav & Und,True,Common Stock,sell,3621.0,33.15,120036.15
+2008-12-08,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav & Und,True,Common Stock,sell,2000.0,33.25,66500.0
+2008-12-08,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav & Und,True,Common Stock,sell,3000.0,33.1123,99336.9
+2008-12-08,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav & Und,True,Common Stock,buy,7228.0,26.125,188831.5
+2008-12-08,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav & Und,True,Common Stock,buy,37621.0,29.594,1113355.874
+2008-12-10,ASTE,"VIG, JOSEPH P","Pres-KPI, Group VP-ConAgg",True,Common Stock,buy,2000.0,29.594,59188.0
+2008-12-10,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Common Stock,sell,6000.0,32.0,192000.0
+2008-12-10,ASTE,"STAFFORD, ROBERT G",Director,True,Common Stock,sell,2800.0,31.9107,89349.95999999999
+2008-12-10,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Common Stock,buy,6000.0,29.594,177564.0
+2008-12-10,ASTE,"VIG, JOSEPH P","Pres-KPI, Group VP-ConAgg",True,Common Stock,sell,2000.0,33.1201,66240.2
+2008-12-17,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Common Stock,buy,46621.0,29.594,1379701.874
+2008-12-17,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Common Stock,sell,46621.0,33.0,1538493.0
+2008-12-30,ASTE,"STAFFORD, ROBERT G",Director,True,Common Stock,sell,242.4471,29.14,7064.908494
+2009-01-13,ASTE,"ANDERSON, STEPHEN C",Corporate Secretary,True,Phantom Stock,buy,124.9933,28.0,3499.8124000000003
+2009-01-13,ASTE,"VIG, JOSEPH P","Pres-KPI, Group VP-ConAgg",True,Phantom Stock,buy,56.0484,28.0,1569.3552
+2009-01-13,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,111.8154,28.0,3130.8312
+2009-01-13,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav & Und,True,Phantom Stock,buy,223.2023,28.0,6249.664400000001
+2009-01-13,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Phantom Stock,buy,486.5811,28.0,13624.2708
+2009-01-13,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,buy,167.1339,28.0,4679.7492
+2009-01-13,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Phantom Stock,buy,223.2023,28.0,6249.664400000001
+2009-01-13,ASTE,"CLINE, JOE K","President, Astec Underground",True,Phantom Stock,buy,73.0675,28.0,2045.8899999999999
+2009-01-13,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Phantom Stock,buy,178.8476,28.0,5007.7328
+2009-01-13,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,113.4582,28.0,3176.8296
+2009-01-13,ASTE,"PFEIFFER, JAMES F",President-American Augers,True,Phantom Stock,buy,114.3867,28.0,3202.8276
+2009-01-13,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,104.8158,28.0,2934.8424
+2009-01-13,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Phantom Stock,buy,164.8126,28.0,4614.7528
+2009-02-27,ASTE,"STAFFORD, ROBERT G",Director,True,Common Stock,buy,322.0,21.76,7006.72
+2009-02-27,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,322.0,21.76,7006.72
+2009-02-27,ASTE,"HILL, THOMAS W.",Director,True,Common Stock,buy,322.0,21.76,7006.72
+2009-02-27,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,322.0,21.76,7006.72
+2009-02-27,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,322.0,21.76,7006.72
+2009-02-27,ASTE,"CASEY, PHILLIP E",Director,True,Common Stock,buy,322.0,21.76,7006.72
+2009-02-27,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,322.0,21.76,7006.72
+2009-02-27,ASTE,"GREEN, RONALD F",Director,True,Common Stock,buy,322.0,21.76,7006.72
+2009-04-13,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,buy,363.0283,27.06,9823.545798
+2009-04-13,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,189.4044,27.06,5125.283064
+2009-04-13,ASTE,"ANDERSON, STEPHEN C",Corporate Secretary,True,Phantom Stock,buy,221.7418,27.06,6000.333108
+2009-04-13,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav & Und,True,Phantom Stock,buy,674.4646,27.06,18251.012076
+2009-04-13,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,104.1447,27.06,2818.155582
+2009-04-13,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Phantom Stock,buy,342.7758,27.06,9275.513148
+2009-04-13,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Phantom Stock,buy,402.2765,27.06,10885.60209
+2009-04-13,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Phantom Stock,buy,674.4646,27.06,18251.012076
+2009-04-13,ASTE,"CLINE, JOE K","President, Astec Underground",True,Phantom Stock,buy,92.5402,27.06,2504.137812
+2009-04-13,ASTE,"PFEIFFER, JAMES F",President-American Augers,True,Phantom Stock,buy,381.322,27.06,10318.57332
+2009-04-13,ASTE,"VIG, JOSEPH P","Pres-KPI, Group VP-ConAgg",True,Phantom Stock,buy,190.2522,27.06,5148.224531999999
+2009-04-13,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Phantom Stock,buy,1519.8551,27.06,41127.279006
+2009-04-13,ASTE,"DORRIS, RICHARD J",President-Heatec,True,Phantom Stock,buy,61.3024,27.06,1658.842944
+2009-04-13,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,203.8177,27.06,5515.306962
+2009-04-27,ASTE,"GREEN, RONALD F",Director,True,Common Stock,buy,253.0,27.73,7015.6900000000005
+2009-04-27,ASTE,"HILL, THOMAS W.",Director,True,Common Stock,buy,253.0,27.73,7015.6900000000005
+2009-04-27,ASTE,"CASEY, PHILLIP E",Director,True,Common Stock,buy,253.0,27.73,7015.6900000000005
+2009-04-27,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,253.0,27.73,7015.6900000000005
+2009-04-27,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,253.0,27.76,7023.280000000001
+2009-04-27,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,253.0,27.73,7015.6900000000005
+2009-04-27,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,253.0,27.73,7015.6900000000005
+2009-04-30,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Common Stock,sell,4000.0,29.85,119400.0
+2009-05-27,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Common Stock,sell,10000.0,29.7846,297846.0
+2009-05-27,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Common Stock,buy,10000.0,25.5,255000.0
+2009-07-13,ASTE,"ANDERSON, STEPHEN C",Corporate Secretary,True,Phantom Stock,buy,144.2472,24.26,3499.437072
+2009-07-13,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Phantom Stock,buy,190.2003,24.26,4614.259278
+2009-07-13,ASTE,"CLINE, JOE K","President, Astec Underground",True,Phantom Stock,buy,78.3056,24.26,1899.693856
+2009-07-13,ASTE,"VIG, JOSEPH P","Pres-KPI, Group VP-ConAgg",True,Phantom Stock,buy,58.8248,24.26,1427.0896480000001
+2009-07-20,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Phantom Stock,buy,176.8883,24.26,4291.310158
+2009-07-20,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Phantom Stock,buy,257.5843,24.26,6248.995118
+2009-07-20,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Phantom Stock,buy,561.5338,24.26,13622.809988000003
+2009-07-20,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav & Und,True,Phantom Stock,buy,257.5843,24.26,6248.995118
+2009-07-20,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,buy,192.8791,24.26,4679.246966
+2009-07-20,ASTE,"PFEIFFER, JAMES F",President-American Augers,True,Phantom Stock,buy,142.6811,24.26,3461.443486
+2009-07-20,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,116.1396,24.26,2817.5466960000003
+2009-07-20,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,120.9616,24.26,2934.528416
+2009-07-20,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,121.5798,24.26,2949.5259480000004
+2009-07-27,ASTE,"GREEN, RONALD F",Director,True,Common Stock,buy,267.0,26.27,7014.09
+2009-07-27,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,267.0,26.27,7014.09
+2009-07-27,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,267.0,26.27,7014.09
+2009-07-27,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,267.0,26.27,7014.09
+2009-07-27,ASTE,"CASEY, PHILLIP E",Director,True,Common Stock,buy,267.0,26.27,7014.09
+2009-07-27,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,267.0,26.27,7014.09
+2009-07-27,ASTE,"HILL, THOMAS W.",Director,True,Common Stock,buy,267.0,26.27,7014.09
+2009-08-06,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Common Stock,buy,10000.0,25.5,255000.0
+2009-08-06,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Common Stock,sell,10000.0,28.4691,284691.0
+2009-08-07,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Common Stock,sell,10000.0,29.0,290000.0
+2009-08-07,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Common Stock,buy,10000.0,25.5,255000.0
+2009-08-13,ASTE,"BROCK, BENJAMIN G","President-Astec, Inc.",True,Common Stock,sell,1184.0,28.95,34276.799999999996
+2009-08-13,ASTE,"BROCK, BENJAMIN G","President-Astec, Inc.",True,Common Stock,sell,214.0,28.14,6021.96
+2009-09-09,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,237.0,25.5,6043.5
+2009-10-12,ASTE,"VIG, JOSEPH P","Pres-KPI, Group VP-ConAgg",True,Phantom Stock,buy,69.6115,26.124,1818.5308260000002
+2009-10-12,ASTE,"ANDERSON, STEPHEN C",Corporate Secretary,True,Phantom Stock,buy,133.9754,26.124,3499.9733496
+2009-10-12,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Phantom Stock,buy,521.5471,26.124,13624.8964404
+2009-10-12,ASTE,"CLINE, JOE K","President, Astec Underground",True,Phantom Stock,buy,60.4229,26.124,1578.4878396
+2009-10-12,ASTE,"PFEIFFER, JAMES F",President-American Augers,True,Phantom Stock,buy,154.5693,26.124,4037.9683932
+2009-10-12,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,96.2709,26.124,2514.9809916
+2009-10-12,ASTE,"VIG, JOSEPH P","Pres-KPI, Group VP-ConAgg",True,Phantom Stock,buy,68.5883,26.124,1791.8007492
+2009-10-12,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,buy,179.1442,26.124,4679.9630808
+2009-10-12,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Phantom Stock,buy,191.7762,26.124,5009.9614488
+2009-10-12,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav & Und,True,Phantom Stock,buy,239.2418,26.124,6249.9527832
+2009-10-12,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,107.8693,26.124,2817.9775932
+2009-10-12,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,121.6114,26.124,3176.9762136
+2009-10-12,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Phantom Stock,buy,239.2418,26.124,6249.9527832
+2009-10-12,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Phantom Stock,buy,206.1307,26.124,5384.9584067999995
+2009-10-23,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,280.0,25.01,7002.8
+2009-10-23,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,280.0,25.01,7002.8
+2009-10-23,ASTE,"CASEY, PHILLIP E",Director,True,Common Stock,buy,280.0,25.01,7002.8
+2009-10-23,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,280.0,25.01,7002.8
+2009-10-23,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,280.0,25.01,7002.8
+2009-10-23,ASTE,"GREEN, RONALD F",Director,True,Common Stock,buy,280.0,25.01,7002.8
+2009-10-28,ASTE,"FRIERSON, DANIEL K",Director,True,Common stock,buy,256.0,22.938,5872.128
+2009-10-28,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,sell,256.0,22.995,5886.72
+2009-11-16,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,sell,1211.0,26.2103,31740.6733
+2009-11-16,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,256.0,24.063,6160.128
+2009-11-16,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,246.0,17.29,4253.34
+2009-11-16,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,237.0,25.5,6043.5
+2009-11-16,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,229.0,18.579,4254.591
+2009-11-16,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,243.0,24.875,6044.625
+2010-01-12,ASTE,"CLINE, JOE K","President, Astec Underground",True,Phantom Stock,buy,63.8521,28.36,1810.845556
+2010-01-12,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,102.2881,28.36,2900.890516
+2010-01-12,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav & Und,True,Phantom Stock,buy,216.7121,28.36,6145.955156
+2010-01-12,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Phantom Stock,buy,173.5778,28.36,4922.666408
+2010-01-12,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,97.7112,28.36,2771.089632
+2010-01-12,ASTE,"ANDERSON, STEPHEN C",Corporate Secretary,True,Phantom Stock,buy,121.3588,28.36,3441.735568
+2010-01-12,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Phantom Stock,buy,186.7192,28.36,5295.356512
+2010-01-12,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Phantom Stock,buy,216.7121,28.36,6145.955156
+2010-01-12,ASTE,"PFEIFFER, JAMES F",President-American Augers,True,Phantom Stock,buy,140.0134,28.36,3970.7800239999997
+2010-01-12,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,101.768,28.36,2886.14048
+2010-01-12,ASTE,"VIG, JOSEPH P","Pres-KPI, Group VP-ConAgg",True,Phantom Stock,buy,58.8868,28.36,1670.029648
+2010-01-12,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,buy,162.2741,28.36,4602.093476
+2010-01-12,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Phantom Stock,buy,472.4325,28.36,13398.1857
+2010-02-26,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,283.0,24.75,7004.25
+2010-02-26,ASTE,"CASEY, PHILLIP E",Director,True,Common Stock,buy,283.0,24.75,7004.25
+2010-02-26,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,283.0,24.75,7004.25
+2010-02-26,ASTE,"GREEN, RONALD F",Director,True,Common Stock,buy,283.0,24.75,7004.25
+2010-02-26,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,283.0,24.75,7004.25
+2010-02-26,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,283.0,24.75,7004.25
+2010-03-18,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,715.0,8.438,6033.17
+2010-03-18,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,243.0,24.875,6044.625
+2010-03-18,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,555.0,10.875,6035.625
+2010-04-08,ASTE,"VIG, JOSEPH P","Pres-KPI, Group VP-ConAgg",True,Phantom Stock,buy,48.9605,29.7011,1454.1807065500002
+2010-04-08,ASTE,"DORRIS, RICHARD J",President-Heatec,True,Phantom Stock,buy,56.7319,29.7011,1684.99983509
+2010-04-08,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,211.1706,29.7011,6271.99910766
+2010-04-08,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Phantom Stock,buy,458.7372,29.7011,13624.999450919999
+2010-04-08,ASTE,"PFEIFFER, JAMES F",President-American Augers,True,Phantom Stock,buy,135.9882,29.7011,4038.9991270200003
+2010-04-08,ASTE,"CLINE, JOE K","President, Astec Underground",True,Phantom Stock,buy,59.0551,29.7011,1754.0014306100002
+2010-04-08,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,197.1307,29.7011,5854.99863377
+2010-04-08,ASTE,"ANDERSON, STEPHEN C",Corporate Secretary,True,Phantom Stock,buy,117.8408,29.7011,3500.00138488
+2010-04-08,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav & Und,True,Phantom Stock,buy,210.4299,29.7011,6249.99950289
+2010-04-08,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Phantom Stock,buy,210.4299,29.7011,6249.99950289
+2010-04-08,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Phantom Stock,buy,144.5064,29.7011,4291.99903704
+2010-04-08,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,buy,472.3731,29.7011,14030.000680410001
+2010-04-08,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Phantom Stock,buy,391.063,29.7011,11615.001269299999
+2010-04-08,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,94.8786,29.7011,2817.9987864600002
+2010-04-23,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Common Stock,buy,21097.0,14.5,305906.5
+2010-04-23,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Common Stock,sell,21097.0,36.0,759492.0
+2010-04-26,ASTE,"GREEN, RONALD F",Director,True,Common Stock,buy,657.0,17.03,11188.710000000001
+2010-04-26,ASTE,"CLINE, JOE K","President, Astec Underground",True,Common Stock,sell,10000.0,36.2861,362861.0
+2010-04-26,ASTE,"GREEN, RONALD F",Director,True,Common Stock,sell,2063.0,36.3546,74999.5398
+2010-04-26,ASTE,"GREEN, RONALD F",Director,True,Common Stock,buy,776.0,14.43,11197.68
+2010-04-26,ASTE,"CLINE, JOE K","President, Astec Underground",True,Common Stock,buy,10000.0,14.5,145000.0
+2010-04-26,ASTE,"GREEN, RONALD F",Director,True,Common Stock,buy,630.0,17.75,11182.5
+2010-04-27,ASTE,"GREEN, RONALD F",Director,True,Common Stock,buy,193.0,36.3,7005.9
+2010-04-27,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,193.0,36.3,7005.9
+2010-04-27,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,193.0,36.3,7005.9
+2010-04-27,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,193.0,36.3,7005.9
+2010-04-27,ASTE,"CASEY, PHILLIP E",Director,True,Common Stock,buy,193.0,36.3,7005.9
+2010-04-27,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,193.0,36.3,7005.9
+2010-04-30,ASTE,"BAKER, JAMES B",Director,True,Common Stock,buy,193.0,36.3,7005.9
+2010-05-11,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Common Stock,sell,3000.0,32.05,96149.99999999999
+2010-05-12,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Common Stock,sell,3000.0,32.6,97800.0
+2010-05-12,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Common Stock,sell,2000.0,32.6016,65203.2
+2010-05-12,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Common Stock,sell,2000.0,32.35,64700.0
+2010-07-08,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Phantom Stock,buy,152.1063,28.22,4292.439786
+2010-07-08,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Phantom Stock,buy,221.4969,28.22,6250.642518
+2010-07-08,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Phantom Stock,buy,163.5533,28.22,4615.474126
+2010-07-08,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav & Und,True,Phantom Stock,buy,221.4969,28.22,6250.642518
+2010-07-08,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,106.8501,28.22,3015.3098219999997
+2010-07-08,ASTE,"ANDERSON, STEPHEN C",Corporate Secretary,True,Phantom Stock,buy,124.0383,28.22,3500.360826
+2010-07-08,ASTE,"PFEIFFER, JAMES F",President-American Augers,True,Phantom Stock,buy,122.6916,28.22,3462.3569519999996
+2010-07-08,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,107.2045,28.22,3025.31099
+2010-07-08,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Phantom Stock,buy,482.8632,28.22,13626.399503999999
+2010-07-08,ASTE,"VIG, JOSEPH P","Pres-KPI, Group VP-ConAgg",True,Phantom Stock,buy,54.6924,28.22,1543.419528
+2010-07-08,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,buy,165.8569,28.22,4680.481718
+2010-07-08,ASTE,"CLINE, JOE K","President, Astec Underground",True,Phantom Stock,buy,72.5092,28.22,2046.209624
+2010-07-08,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,110.9611,28.22,3131.3222419999997
+2010-07-23,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Common Stock,buy,18500.0,12.969,239926.5
+2010-07-23,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Common Stock,sell,18500.0,31.01,573685.0
+2010-07-30,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,227.0,30.91,7016.57
+2010-07-30,ASTE,"CASEY, PHILLIP E",Director,True,Common Stock,buy,227.0,30.91,7016.57
+2010-07-30,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,227.0,30.91,7016.57
+2010-07-30,ASTE,"GREEN, RONALD F",Director,True,Common Stock,buy,227.0,30.91,7016.57
+2010-07-30,ASTE,"BAKER, JAMES B",Director,True,Common Stock,buy,227.0,30.91,7016.57
+2010-07-30,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,227.0,30.91,7016.57
+2010-07-30,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,227.0,30.91,7016.57
+2010-08-05,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,sell,2648.7769,30.85,81714.76736499999
+2010-08-12,ASTE,"DORRIS, RICHARD J",President-Heatec,True,Phantom Stock,sell,738.5854,27.46,20281.555084000003
+2010-10-05,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,buy,164.4471,28.459,4680.0000189
+2010-10-05,ASTE,"PFEIFFER, JAMES F",President-American Augers,True,Phantom Stock,buy,141.8883,28.459,4037.9991296999997
+2010-10-05,ASTE,"VIG, JOSEPH P","Pres-KPI, Group VP-ConAgg",True,Phantom Stock,buy,64.3347,28.459,1830.9012272999998
+2010-10-05,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,132.0145,28.459,3757.0006555
+2010-10-05,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav & Und,True,Phantom Stock,buy,219.6142,28.459,6250.0005178
+2010-10-05,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Phantom Stock,buy,175.9725,28.459,5008.0013775
+2010-10-05,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,90.8324,28.459,2584.9992716
+2010-10-05,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,106.2933,28.459,3025.0010247
+2010-10-05,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Phantom Stock,buy,478.7589,28.459,13624.9995351
+2010-10-05,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Phantom Stock,buy,219.6142,28.459,6250.0005178
+2010-10-05,ASTE,"CLINE, JOE K","President, Astec Underground",True,Phantom Stock,buy,61.6325,28.459,1753.9993175
+2010-10-05,ASTE,"ANDERSON, STEPHEN C",Corporate Secretary,True,Phantom Stock,buy,122.9839,28.459,3499.9988101
+2010-10-05,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Phantom Stock,buy,189.2196,28.459,5385.0005964
+2010-10-22,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,230.0,30.55,7026.5
+2010-10-22,ASTE,"CASEY, PHILLIP E",Director,True,Common Stock,buy,230.0,30.55,7026.5
+2010-10-22,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,230.0,30.55,7026.5
+2010-10-22,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,230.0,30.55,7026.5
+2010-10-22,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,230.0,30.55,7026.5
+2010-10-22,ASTE,"BAKER, JAMES B",Director,True,Common Stock,buy,230.0,30.55,7026.5
+2010-10-22,ASTE,"GREEN, RONALD F",Director,True,Common Stock,buy,230.0,30.55,7026.5
+2010-11-01,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,237.0,18.5,4384.5
+2010-11-01,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,446.0,9.54,4254.839999999999
+2010-11-01,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,327.0,13.38,4375.26
+2010-11-01,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,351.0,12.5,4387.5
+2010-11-01,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,229.0,18.579,4254.591
+2010-11-01,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,319.0,13.32,4249.08
+2010-11-01,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,246.0,17.29,4253.34
+2010-11-01,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,242.0,18.15,4392.299999999999
+2010-11-08,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Common Stock,sell,14854.0,32.0512,476088.5248
+2010-11-08,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Common Stock,buy,14854.0,19.43,288613.22
+2010-11-11,ASTE,"BROCK, BENJAMIN G","President-Astec, Inc.",True,Common Stock,sell,500.0,31.3,15650.0
+2010-11-11,ASTE,"BROCK, BENJAMIN G","President-Astec, Inc.",True,Common Stock,sell,785.0,31.4,24649.0
+2010-11-19,ASTE,"VIG, JOSEPH P","Pres-KPI, Group VP-ConAgg",True,Common Stock,sell,2000.0,32.0005,64001.00000000001
+2010-11-19,ASTE,"VIG, JOSEPH P","Pres-KPI, Group VP-ConAgg",True,Common Stock,buy,2000.0,19.43,38860.0
+2011-01-10,ASTE,"ANDERSON, STEPHEN C",Corporate Secretary,True,Phantom Stock,buy,106.132,32.85,3486.4362
+2011-01-10,ASTE,"PFEIFFER, JAMES F",President-American Augers,True,Phantom Stock,buy,122.4763,32.85,4023.346455
+2011-01-10,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,91.4251,32.85,3003.314535
+2011-01-10,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav & Und,True,Phantom Stock,buy,189.5214,32.85,6225.7779900000005
+2011-01-10,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,buy,152.8301,32.85,5020.468785
+2011-01-10,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,91.7284,32.85,3013.27794
+2011-01-10,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Phantom Stock,buy,413.1567,32.85,13572.197595000001
+2011-01-10,ASTE,"VIG, JOSEPH P","Pres-KPI, Group VP-ConAgg",True,Phantom Stock,buy,55.5192,32.85,1823.80572
+2011-01-10,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Phantom Stock,buy,189.5214,32.85,6225.7779900000005
+2011-01-10,ASTE,"CLINE, JOE K","President, Astec Underground",True,Phantom Stock,buy,53.1873,32.85,1747.2028050000001
+2011-01-10,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,116.5329,32.85,3828.1057650000002
+2011-01-10,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Phantom Stock,buy,151.8597,32.85,4988.591145
+2011-01-10,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Phantom Stock,buy,163.2917,32.85,5364.132345
+2011-02-28,ASTE,"BAKER, JAMES B",Director,True,Common Stock,buy,244.0,33.82,8252.08
+2011-02-28,ASTE,"GREEN, RONALD F",Director,True,Common Stock,buy,244.0,33.82,8252.08
+2011-02-28,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,244.0,33.82,8252.08
+2011-02-28,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,244.0,33.82,8252.08
+2011-02-28,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,244.0,33.82,8252.08
+2011-02-28,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,244.0,33.82,8252.08
+2011-02-28,ASTE,"CASEY, PHILLIP E",Director,True,Common Stock,buy,244.0,33.82,8252.08
+2011-04-08,ASTE,"VIG, JOSEPH P","Pres-KPI, Group VP-ConAgg",True,Phantom Stock,buy,119.4118,38.0341,4541.72034238
+2011-04-08,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,138.9017,38.0341,5283.001147970001
+2011-04-08,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Phantom Stock,buy,112.8461,38.0341,4291.999852010001
+2011-04-08,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,101.8823,38.0341,3875.0015864300003
+2011-04-08,ASTE,"PFEIFFER, JAMES F",President-American Augers,True,Phantom Stock,buy,91.0762,38.0341,3464.0012984200002
+2011-04-08,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,157.9635,38.0341,6007.999555350001
+2011-04-08,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav & Und,True,Phantom Stock,buy,274.0961,38.0341,10424.99847701
+2011-04-08,ASTE,"CLINE, JOE K","President, Astec Underground",True,Phantom Stock,buy,46.1165,38.0341,1753.9995726500001
+2011-04-08,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Phantom Stock,buy,303.0176,38.0341,11525.00170016
+2011-04-08,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Phantom Stock,buy,631.0127,38.0341,24000.00013307
+2011-04-08,ASTE,"ANDERSON, STEPHEN C",Corporate Secretary,True,Phantom Stock,buy,147.2363,38.0341,5600.000157830001
+2011-04-08,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,buy,362.7534,38.0341,13796.99909094
+2011-04-08,ASTE,"DORRIS, RICHARD J",President-Heatec,True,Phantom Stock,buy,48.6406,38.0341,1850.0014444600001
+2011-04-08,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Phantom Stock,buy,343.3498,38.0341,13059.000628180002
+2011-04-29,ASTE,"GREEN, RONALD F",Director,True,Common Stock,sell,100.0,38.981,3898.1000000000004
+2011-04-29,ASTE,"GREEN, RONALD F",Director,True,Common Stock,sell,100.0,38.81,3881.0
+2011-04-29,ASTE,"GREEN, RONALD F",Director,True,Common Stock,sell,100.0,38.957,3895.7000000000003
+2011-04-29,ASTE,"GREEN, RONALD F",Director,True,Common Stock,sell,200.0,38.919,7783.799999999999
+2011-04-29,ASTE,"GREEN, RONALD F",Director,True,Common Stock,sell,1000.0,38.864,38864.0
+2011-05-02,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,217.0,38.08,8263.359999999999
+2011-05-02,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,217.0,38.08,8263.359999999999
+2011-05-02,ASTE,"GREEN, RONALD F",Director,True,Common Stock,buy,217.0,38.08,8263.359999999999
+2011-05-02,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,217.0,38.08,8263.359999999999
+2011-05-02,ASTE,"BAKER, JAMES B",Director,True,Common Stock,buy,217.0,38.08,8263.359999999999
+2011-05-02,ASTE,"CASEY, PHILLIP E",Director,True,Common Stock,buy,217.0,38.08,8263.359999999999
+2011-05-02,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,217.0,38.08,8263.359999999999
+2011-05-03,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,217.0,38.08,8263.359999999999
+2011-05-31,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Common Stock,buy,1298.0,14.5,18821.0
+2011-05-31,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Common Stock,buy,5000.0,19.43,97150.0
+2011-05-31,ASTE,"VIG, JOSEPH P","Pres-KPI, Group VP-ConAgg",True,Common Stock,buy,2000.0,19.43,38860.0
+2011-05-31,ASTE,"VIG, JOSEPH P","Pres-KPI, Group VP-ConAgg",True,Common Stock,sell,2000.0,37.0109,74021.8
+2011-05-31,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Common Stock,sell,6298.0,37.0379,233264.6942
+2011-07-13,ASTE,"ANDERSON, STEPHEN C",Corporate Secretary,True,Phantom Stock,buy,92.2358,39.03,3599.963274
+2011-07-13,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Phantom Stock,buy,162.0532,39.03,6324.936396
+2011-07-13,ASTE,"CLINE, JOE K","President, Astec Underground",True,Phantom Stock,buy,52.4207,39.03,2045.9799209999999
+2011-07-13,ASTE,"PFEIFFER, JAMES F",President-American Augers,True,Phantom Stock,buy,88.7001,39.03,3461.9649030000005
+2011-07-13,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,79.3228,39.03,3095.9688840000003
+2011-07-13,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,buy,123.4422,39.03,4817.949066
+2011-07-13,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Phantom Stock,buy,358.6948,39.03,13999.858044
+2011-07-13,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Phantom Stock,buy,129.95,39.03,5071.9484999999995
+2011-07-13,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,80.0658,39.03,3124.968174
+2011-07-13,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,99.2816,39.03,3874.960848
+2011-07-13,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Phantom Stock,buy,109.9656,39.03,4291.957368
+2011-07-13,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav & Und,True,Phantom Stock,buy,164.6153,39.03,6424.935159
+2011-07-13,ASTE,"VIG, JOSEPH P","Pres-KPI, Group VP-ConAgg",True,Phantom Stock,buy,45.237,39.03,1765.60011
+2011-07-29,ASTE,"BAKER, JAMES B",Director,True,Common Stock,buy,219.0,37.68,8251.92
+2011-07-29,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,219.0,37.68,8251.92
+2011-07-29,ASTE,"CASEY, PHILLIP E",Director,True,Common Stock,buy,219.0,37.68,8251.92
+2011-07-29,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,219.0,37.68,8251.92
+2011-07-29,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,219.0,37.68,8251.92
+2011-07-29,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,219.0,37.68,8251.92
+2011-07-29,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,219.0,37.68,8251.92
+2011-10-12,ASTE,"VIG, JOSEPH P","Pres-KPI, Group VP-ConAgg",True,Phantom Stock,buy,63.6912,32.3445,2060.0600184
+2011-10-12,ASTE,"COLWELL, CHRIS E",President-Carlson Paving,True,Phantom Stock,buy,114.8572,32.3445,3714.9987054
+2011-10-12,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,119.804,32.3445,3875.0004779999995
+2011-10-12,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav & Und,True,Phantom Stock,buy,198.6427,32.3445,6424.998810149999
+2011-10-12,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Phantom Stock,buy,154.8331,32.3445,5007.99920295
+2011-10-12,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,buy,160.3982,32.3445,5187.9995799
+2011-10-12,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,96.6161,32.3445,3124.9994464499996
+2011-10-12,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Phantom Stock,buy,187.2961,32.3445,6057.998706449999
+2011-10-12,ASTE,"ANDERSON, STEPHEN C",Corporate Secretary,True,Phantom Stock,buy,122.1228,32.3445,3950.0009045999996
+2011-10-12,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Phantom Stock,buy,432.8402,32.3445,13999.999848899997
+2011-10-12,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Phantom Stock,buy,198.6427,32.3445,6424.998810149999
+2011-10-12,ASTE,"PFEIFFER, JAMES F",President-American Augers,True,Phantom Stock,buy,124.8744,32.3445,4039.0000307999994
+2011-10-12,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,95.7195,32.3445,3095.9993677499997
+2011-10-12,ASTE,"CLINE, JOE K","President, Astec Underground",True,Phantom Stock,buy,63.2565,32.3445,2045.99986425
+2011-10-28,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,238.0,34.7,8258.6
+2011-10-28,ASTE,"CASEY, PHILLIP E",Director,True,Common Stock,buy,238.0,34.7,8258.6
+2011-10-28,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,238.0,34.7,8258.6
+2011-10-28,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,238.0,34.7,8258.6
+2011-10-28,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,238.0,34.7,8258.6
+2011-10-28,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,238.0,34.7,8258.6
+2011-10-28,ASTE,"BAKER, JAMES B",Director,True,Common Stock,buy,238.0,34.7,8258.6
+2011-10-31,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Common Stock,sell,14651.0,33.2402,487002.17020000005
+2011-10-31,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Common Stock,buy,14651.0,14.5,212439.5
+2011-11-03,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Common Stock,sell,7300.0,34.0,248200.0
+2011-11-04,ASTE,"BROCK, BENJAMIN G","President-Astec, Inc.",True,Common Stock,sell,485.0,33.95,16465.75
+2011-11-07,ASTE,"BROCK, BENJAMIN G","President-Astec, Inc.",True,Common Stock,sell,1000.0,34.4,34400.0
+2012-01-17,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav & Und,True,Phantom Stock,buy,181.5946,35.381,6424.9985426
+2012-01-17,ASTE,"PFEIFFER, JAMES F",President-American Augers,True,Phantom Stock,buy,114.1573,35.381,4038.9994313
+2012-01-17,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,buy,136.1748,35.381,4818.0005988
+2012-01-17,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Phantom Stock,buy,395.6926,35.381,13999.9998806
+2012-01-17,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Phantom Stock,buy,181.5946,35.381,6424.9985426
+2012-01-17,ASTE,"CLINE, JOE K","President, Astec Underground",True,Phantom Stock,buy,49.5746,35.381,1753.9989225999998
+2012-01-17,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,88.3242,35.381,3124.9985202000003
+2012-01-17,ASTE,"VIG, JOSEPH P","Pres-KPI, Group VP-ConAgg",True,Phantom Stock,buy,58.225,35.381,2060.058725
+2012-01-17,ASTE,"COLWELL, CHRIS E",President-Carlson Paving,True,Phantom Stock,buy,75.012,35.381,2653.999572
+2012-01-17,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,91.2637,35.381,3229.0009697
+2012-01-17,ASTE,"ANDERSON, STEPHEN C",VP-Administration & Corp Sec,True,Phantom Stock,buy,116.588,35.381,4125.0000279999995
+2012-01-17,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Phantom Stock,buy,141.5449,35.381,5008.000106900001
+2012-01-17,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Phantom Stock,buy,171.2218,35.381,6057.9985058
+2012-01-17,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,75.012,35.381,2653.999572
+2012-02-24,ASTE,"CASEY, PHILLIP E",Director,True,Common Stock,buy,207.0,39.9,8259.3
+2012-02-24,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,207.0,39.9,8259.3
+2012-02-24,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,207.0,39.9,8259.3
+2012-02-24,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,207.0,39.9,8259.3
+2012-02-24,ASTE,"BAKER, JAMES B",Director,True,Common Stock,buy,207.0,39.9,8259.3
+2012-02-24,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,207.0,39.9,8259.3
+2012-02-24,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,207.0,39.9,8259.3
+2012-02-27,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Common Stock,sell,25322.0,39.3303,995921.8566
+2012-02-27,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Common Stock,buy,25322.0,19.43,492006.46
+2012-03-08,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Common Stock,sell,775.0,35.9,27822.5
+2012-03-08,ASTE,"BROCK, BENJAMIN G","President-Astec, Inc.",True,Common Stock,sell,529.0,35.9,18991.1
+2012-03-08,ASTE,"ELLIOTT, JEFFREY J",Presidelnt-JCI,False,Common Stock,sell,532.0,35.9,19098.8
+2012-03-08,ASTE,"DORRIS, RICHARD J",President-Heatec,True,Common Stock,sell,335.0,35.9,12026.5
+2012-03-08,ASTE,"VIG, JOSEPH P","Pres-KPI, Group VP-ConAgg",True,Common Stock,sell,529.0,35.9,18991.1
+2012-03-08,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Common Stock,sell,471.0,35.9,16908.899999999998
+2012-03-08,ASTE,"PFEIFFER, JAMES F",President-American Augers,True,Common Stock,sell,535.0,35.9,19206.5
+2012-03-08,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Common Stock,sell,513.0,35.9,18416.7
+2012-03-08,ASTE,"SILVIOUS, DAVID C",Chief Financial Officer,True,Common Stock,sell,184.0,35.9,6605.599999999999
+2012-03-08,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav & Und,True,Common stock,sell,820.0,35.9,29438.0
+2012-03-08,ASTE,"LEFFEW, ROBIN A",Corporate Controller,False,Common Stock,sell,184.0,35.9,6605.599999999999
+2012-03-08,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Common Stock,sell,529.0,35.9,18991.1
+2012-03-08,ASTE,"HALL, F MCKAMY",VP Business Development,True,Common Stock,sell,250.0,35.9,8975.0
+2012-03-08,ASTE,"ANDERSON, STEPHEN C",VP-Administration & Corp Sec,True,Common Stock,sell,184.0,35.9,6605.599999999999
+2012-03-08,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Common Stock,sell,2250.0,35.9,80775.0
+2012-03-08,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Common Stock,sell,249.0,35.9,8939.1
+2012-04-10,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Phantom Stock,buy,402.7647,35.07,14124.958029
+2012-04-10,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Phantom Stock,buy,912.4582,35.07,31999.909074000003
+2012-04-10,ASTE,"PFEIFFER, JAMES F",President-American Augers,True,Phantom Stock,buy,98.7736,35.07,3463.9901520000003
+2012-04-10,ASTE,"COLWELL, CHRIS E",President-Carlson Paving,True,Phantom Stock,buy,187.225,35.07,6565.98075
+2012-04-10,ASTE,"VIG, JOSEPH P","Pres-KPI, Group VP-ConAgg",True,Phantom Stock,buy,155.9613,35.07,5469.562791
+2012-04-10,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,255.0891,35.07,8945.974737
+2012-04-10,ASTE,"ANDERSON, STEPHEN C",VP-Administration & Corp Sec,True,Phantom Stock,buy,235.2431,35.07,8249.975517
+2012-04-10,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,113.4585,35.07,3978.989595
+2012-04-10,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Phantom Stock,buy,472.2827,35.07,16562.954288999998
+2012-04-10,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,buy,417.3071,35.07,14634.959997
+2012-04-10,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav & Und,True,Phantom Stock,buy,402.7647,35.07,14124.958029
+2012-04-10,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Phantom Stock,buy,125.0353,35.07,4384.9879710000005
+2012-04-10,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,91.7306,35.07,3216.992142
+2012-05-04,ASTE,"CASEY, PHILLIP E",Director,True,Common Stock,buy,276.0,29.97,8271.72
+2012-05-04,ASTE,"BAKER, JAMES B",Director,True,Common Stock,buy,276.0,29.97,8271.72
+2012-05-04,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,276.0,29.97,8271.72
+2012-05-04,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,276.0,29.97,8271.72
+2012-05-04,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,276.0,29.97,8271.72
+2012-05-04,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,276.0,29.97,8271.72
+2012-05-04,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,276.0,29.97,8271.72
+2012-05-07,ASTE,"DORRIS, RICHARD J",President-Heatec,True,Common Stock,sell,600.0,29.3233,17593.98
+2012-05-17,ASTE,"ANDERSON, STEPHEN C",VP-Administration & Corp Sec,True,Common Stock,sell,416.0,28.5871,11892.2336
+2012-05-18,ASTE,"ANDERSON, STEPHEN C",VP-Administration & Corp Sec,True,Phantom Stock,sell,2355.7159,28.3764,66846.73666476
+2012-05-30,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Common Stock,sell,10000.0,28.41,284100.0
+2012-07-09,ASTE,"COLWELL, CHRIS E",President-Carlson Paving,True,Phantom Stock,buy,93.7342,29.541,2769.0020022
+2012-07-09,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,135.4052,29.541,4000.0050132
+2012-07-09,ASTE,"PFEIFFER, JAMES F",President-American Augers,True,Phantom Stock,buy,136.6238,29.541,4036.0036757999997
+2012-07-09,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Phantom Stock,buy,224.2649,29.541,6625.0094109
+2012-07-09,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav & Und,True,Phantom Stock,buy,224.2649,29.541,6625.0094109
+2012-07-09,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,buy,169.2565,29.541,5000.0062665
+2012-07-09,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Phantom Stock,buy,173.1494,29.541,5115.006425400001
+2012-07-09,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Phantom Stock,buy,490.8438,29.541,14500.016695799999
+2012-07-09,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,92.9557,29.541,2746.0043336999997
+2012-07-09,ASTE,"VIG, JOSEPH P","Pres-KPI, Group VP-ConAgg",True,Phantom Stock,buy,71.8995,29.541,2123.9831295
+2012-07-09,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Phantom Stock,buy,211.4352,29.541,6246.007243200001
+2012-07-09,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,109.1704,29.541,3225.0027864
+2012-08-13,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,269.0,30.69,8255.61
+2012-08-13,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,269.0,30.69,8255.61
+2012-08-13,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,269.0,30.69,8255.61
+2012-08-13,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,269.0,30.69,8255.61
+2012-08-13,ASTE,"CASEY, PHILLIP E",Director,True,Common Stock,buy,269.0,30.69,8255.61
+2012-08-13,ASTE,"BAKER, JAMES B",Director,True,Common Stock,buy,269.0,30.69,8255.61
+2012-08-13,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,269.0,30.69,8255.61
+2012-08-16,ASTE,"BROCK, BENJAMIN G","President-Astec, Inc.",True,Common Stock,sell,6000.0,30.15,180900.0
+2012-10-11,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,102.9818,31.3162,3224.9986451600003
+2012-10-11,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,102.3113,31.3162,3204.00113306
+2012-10-11,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Phantom Stock,buy,170.9658,31.3162,5353.9991859599995
+2012-10-11,ASTE,"SMITH, W NORMAN","Director, Group VP-Asphalt",True,Phantom Stock,buy,223.9735,31.3162,7013.9989207
+2012-10-11,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,buy,159.6618,31.3162,5000.00086116
+2012-10-11,ASTE,"COLWELL, CHRIS E",President-Carlson Paving,True,Phantom Stock,buy,103.1734,31.3162,3230.9988290799997
+2012-10-11,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Phantom Stock,buy,140.0234,31.3162,4385.00079908
+2012-10-11,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav & Und,True,Phantom Stock,buy,211.5518,31.3162,6624.998479159999
+2012-10-11,ASTE,"VIG, JOSEPH P","Pres-KPI, Group VP-ConAgg",True,Phantom Stock,buy,58.1284,31.3162,1820.3606000799998
+2012-10-11,ASTE,"BROCK, J DON","Director, President & CEO, 10% Owner",True,Phantom Stock,buy,463.0191,31.3162,14499.998739419998
+2012-10-11,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,127.7294,31.3162,3999.99943628
+2012-10-26,ASTE,"BAKER, JAMES B",Director,True,Common Stock,buy,281.0,29.41,8264.210000000001
+2012-10-26,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,281.0,29.41,8264.210000000001
+2012-10-26,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,281.0,29.41,8264.210000000001
+2012-10-26,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,281.0,29.41,8264.210000000001
+2012-10-26,ASTE,"CASEY, PHILLIP E",Director,True,Common Stock,buy,281.0,29.41,8264.210000000001
+2012-10-26,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,281.0,29.41,8264.210000000001
+2012-10-26,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,281.0,29.41,8264.210000000001
+2012-11-13,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Common Stock,sell,1400.0,28.9161,40482.54
+2012-11-30,ASTE,"VIG, JOSEPH P","Pres-KPI, Group VP-ConAgg",True,Common Stock,buy,1146.0,19.43,22266.78
+2012-11-30,ASTE,"VIG, JOSEPH P","Pres-KPI, Group VP-ConAgg",True,Common Stock,sell,1146.0,28.9417,33167.188200000004
+2012-12-12,ASTE,"BROCK, J DON","Director, CEO, 10% Owner",True,Phantom Stock,buy,1331.5594,31.0197,41304.57312018
+2012-12-12,ASTE,"VIG, JOSEPH P","Pres-KPI, Group VP-ConAgg",True,Phantom Stock,buy,88.7513,31.0197,2753.03870061
+2012-12-12,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,87.454,31.0197,2712.7968438
+2012-12-12,ASTE,"SMITH, W NORMAN","Director, President",True,Phantom Stock,buy,634.1682,31.0197,19671.70731354
+2012-12-12,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Phantom Stock,buy,468.5866,31.0197,14535.41575602
+2012-12-12,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Phantom Stock,buy,294.0525,31.0197,9121.42033425
+2012-12-12,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,buy,59.5192,31.0197,1846.26772824
+2012-12-12,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,142.6028,31.0197,4423.49607516
+2012-12-12,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,69.8565,31.0197,2166.92767305
+2012-12-12,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav & Und,True,Phantom Stock,buy,173.4921,31.0197,5381.67289437
+2013-01-11,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,93.2775,34.5742,3224.9949404999998
+2013-01-11,ASTE,"BROCK, J DON","Director, CEO, 10% Owner",True,Phantom Stock,buy,419.3874,34.5742,14499.98384508
+2013-01-11,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Phantom Stock,buy,147.9425,34.5742,5114.9935835
+2013-01-11,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,115.6931,34.5742,3999.9963780199996
+2013-01-11,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav & Und,True,Phantom Stock,buy,191.6166,34.5742,6624.99065172
+2013-01-11,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,buy,144.6163,34.5742,4999.992879459999
+2013-01-11,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,79.4233,34.5742,2745.99705886
+2013-01-11,ASTE,"VIG, JOSEPH P","Pres-KPI, Group VP-ConAgg",True,Phantom Stock,buy,61.4324,34.5742,2123.97608408
+2013-01-11,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Phantom Stock,buy,180.6547,34.5742,6245.991728739999
+2013-01-11,ASTE,"COLWELL, CHRIS E",President-Carlson Paving,True,Phantom Stock,buy,80.0885,34.5742,2768.9958166999995
+2013-01-11,ASTE,"SMITH, W NORMAN","Director, President",True,Phantom Stock,buy,216.9245,34.5742,7499.991047899999
+2013-01-31,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,855.0,10.49,8968.95
+2013-01-31,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,1096.0,8.19,8976.24
+2013-01-31,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,1398.0,6.42,8975.16
+2013-01-31,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,782.0,11.48,8977.36
+2013-02-28,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Common Stock,sell,263.0,35.02,9210.26
+2013-02-28,ASTE,"BROCK, J DON","Director, CEO, 10% Owner",True,Common Stock,sell,2306.0,35.02,80756.12000000001
+2013-02-28,ASTE,"SMITH, W NORMAN","Director, President",True,Common Stock,sell,775.0,35.02,27140.500000000004
+2013-02-28,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav & Und,True,Common stock,sell,943.0,35.02,33023.86
+2013-02-28,ASTE,"ANDERSON, STEPHEN C",VP-Administration & Corp Sec,True,Common Stock,sell,262.0,35.02,9175.240000000002
+2013-02-28,ASTE,"HAVEN, MATTHEW B",President-Telsmith,True,Common Stock,sell,316.0,35.02,11066.320000000002
+2013-02-28,ASTE,"SILVIOUS, DAVID C",Chief Financial Officer,True,Common Stock,sell,262.0,35.02,9175.240000000002
+2013-02-28,ASTE,"DORRIS, RICHARD J",Grp VP-Energy; Pres Heatec,True,Common Stock,sell,449.0,35.02,15723.980000000001
+2013-02-28,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Common Stock,sell,653.0,35.02,22868.06
+2013-02-28,ASTE,"LEFFEW, ROBIN A",Corporate Controller,False,Common Stock,sell,196.0,35.02,6863.920000000001
+2013-02-28,ASTE,"KRUGER, TOMMIE",Managing Director-Osborn,True,Common Stock,sell,541.0,35.02,18945.820000000003
+2013-02-28,ASTE,"VIG, JOSEPH P","Pres-KPI, Group VP-ConAgg",True,Common Stock,sell,719.0,35.02,25179.38
+2013-02-28,ASTE,"ELLIOTT, JEFFREY J",Presidelnt-JCI,False,Common Stock,sell,625.0,35.02,21887.500000000004
+2013-02-28,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Common Stock,sell,334.0,35.02,11696.68
+2013-02-28,ASTE,"BROCK, BENJAMIN G","Prs-Ast., Inc.; Grp VP-Asphlt",True,Common Stock,sell,827.0,35.02,28961.54
+2013-02-28,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Common Stock,sell,606.0,35.02,21222.120000000003
+2013-03-01,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,232.0,35.61,8261.52
+2013-03-01,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,232.0,35.61,8261.52
+2013-03-01,ASTE,"BAKER, JAMES B",Director,True,Common Stock,buy,232.0,35.61,8261.52
+2013-03-01,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,232.0,35.61,8261.52
+2013-03-01,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,232.0,35.61,8261.52
+2013-03-01,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,232.0,35.61,8261.52
+2013-03-01,ASTE,"CASEY, PHILLIP E",Director,True,Common Stock,buy,232.0,35.61,8261.52
+2013-04-09,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Phantom Stock,buy,519.6058,33.7833,17553.99862314
+2013-04-09,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,97.4742,33.7833,3293.0001408599996
+2013-04-09,ASTE,"VIG, JOSEPH P","Pres-KPI, Group VP-ConAgg",True,Phantom Stock,buy,182.5535,33.7833,6167.25965655
+2013-04-09,ASTE,"BROCK, J DON","Director, CEO",True,Phantom Stock,buy,917.6131,38.7833,35588.064141229996
+2013-04-09,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,145.3973,33.7833,4912.000605089999
+2013-04-09,ASTE,"SMITH, W NORMAN","Director, President",True,Phantom Stock,buy,525.4075,33.7833,17749.99919475
+2013-04-09,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,buy,152.4422,33.7833,5150.00057526
+2013-04-09,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Phantom Stock,buy,392.2648,33.7833,13251.999417839997
+2013-04-09,ASTE,"COLWELL, CHRIS E",President-Carlson Paving,True,Phantom Stock,buy,280.0792,33.7833,9461.999637359999
+2013-04-09,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav & Und,True,Phantom Stock,buy,394.4256,33.7833,13324.998372479999
+2013-04-09,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,98.1846,33.7833,3316.99979718
+2013-04-09,ASTE,"HAVEN, MATTHEW B",President-Telsmith,True,Phantom Shares,buy,232.5705,33.7833,7856.99897265
+2013-04-26,ASTE,"BAKER, JAMES B",Director,True,Common Stock,buy,251.0,32.9,8257.9
+2013-04-26,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,251.0,32.9,8257.9
+2013-04-26,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,251.0,32.9,8257.9
+2013-04-26,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,251.0,32.9,8257.9
+2013-04-26,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,251.0,32.9,8257.9
+2013-04-26,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,251.0,32.9,8257.9
+2013-04-26,ASTE,"CASEY, PHILLIP E",Director,True,Common Stock,buy,251.0,32.9,8257.9
+2013-05-06,ASTE,"ANDERSON, STEPHEN C",VP-Administration & Corp Sec,True,Common Stock,sell,538.0,34.75,18695.5
+2013-05-28,ASTE,"DORRIS, RICHARD J",Grp VP-Energy; Pres Heatec,True,Common Stock,sell,450.0,35.43,15943.5
+2013-05-30,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Phantom Stock,buy,44.0872,35.7209,1574.8344624800002
+2013-05-30,ASTE,"SMITH, W NORMAN","Director, President",True,Phantom Stock,buy,59.0897,35.7209,2110.73726473
+2013-05-30,ASTE,"BROCK, J DON","Director, CEO",True,Phantom Stock,buy,123.4474,35.7209,4409.65223066
+2013-07-05,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Phantom Stock,buy,179.258,36.0486,6461.999938800001
+2013-07-05,ASTE,"BROCK, J DON","Director, CEO",True,Phantom Stock,buy,416.1049,36.0486,14999.99909814
+2013-07-05,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,114.4289,36.0486,4125.00164454
+2013-07-05,ASTE,"SMITH, W NORMAN","Director, President",True,Phantom Stock,buy,214.9875,36.0486,7749.998392500001
+2013-07-05,ASTE,"COLWELL, CHRIS E",President-Carlson Paving,True,Phantom Stock,buy,83.221,36.0486,3000.0005406
+2013-07-05,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,92.2366,36.0486,3325.00029876
+2013-07-05,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,buy,142.8627,36.0486,5150.000327219999
+2013-07-05,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,78.4774,36.0486,2829.0004016400003
+2013-07-05,ASTE,"HAVEN, MATTHEW B",President-Telsmith,True,Phantom Shares,buy,128.9093,36.0486,4646.99979198
+2013-07-05,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Phantom Stock,buy,145.6367,36.0486,5249.99914362
+2013-07-05,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav & Und,True,Phantom Stock,buy,189.3277,36.0486,6824.99852622
+2013-07-05,ASTE,"VIG, JOSEPH P","Pres-KPI, Group VP-ConAgg",True,Phantom Stock,buy,60.9477,36.0486,2197.07925822
+2013-07-26,ASTE,"BAKER, JAMES B",Director,True,Common Stock,buy,233.0,36.62,8532.46
+2013-07-26,ASTE,"CASEY, PHILLIP E",Director,True,Common Stock,buy,233.0,36.62,8532.46
+2013-07-26,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,233.0,36.62,8532.46
+2013-07-26,ASTE,"VIG, JOSEPH P","Pres-KPI, Group VP-ConAgg",True,Common Stock,sell,2750.0,35.89,98697.5
+2013-07-26,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,233.0,36.62,8532.46
+2013-07-26,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,233.0,36.62,8532.46
+2013-07-26,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,233.0,36.62,8532.46
+2013-07-26,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,233.0,36.62,8532.46
+2013-07-29,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Common Stock,sell,1200.0,35.37,42444.0
+2013-07-31,ASTE,"BROCK, J DON","Director, CEO",True,Common Stock,sell,3600.0,35.27,126972.00000000001
+2013-08-01,ASTE,"SMITH, W NORMAN","Director, President",True,Common Stock,sell,10000.0,35.5,355000.0
+2013-08-01,ASTE,"BROCK, J DON","Director, CEO",True,Common Stock,sell,13500.0,35.46,478710.0
+2013-08-02,ASTE,"BROCK, J DON","Director, CEO",True,Common Stock,sell,3500.0,35.5,124250.0
+2013-08-05,ASTE,"BROCK, J DON","Director, CEO",True,Common Stock,sell,4585.0,35.51,162813.34999999998
+2013-08-06,ASTE,"PATEK, RICHARD A",Pres-Telsmith & Grp VP Agg,True,Phantom Stock,sell,5000.0,34.9088,174544.0
+2013-08-13,ASTE,"BROCK, J DON","Director, CEO",True,Common Stock,sell,2315.0,35.36,81858.4
+2013-08-14,ASTE,"BROCK, J DON","Director, CEO",True,Common Stock,sell,2500.0,35.05,87625.0
+2013-08-30,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Phantom Stock,buy,29.115,34.7906,1012.9283189999999
+2013-08-30,ASTE,"PATEK, RICHARD A",Group VP Aggregate & Mining,True,Phantom Stock,buy,31.4096,34.7906,1092.75882976
+2013-08-30,ASTE,"SMITH, W NORMAN","Director, President",True,Phantom Stock,buy,61.2875,34.7906,2132.2288975
+2013-08-30,ASTE,"BROCK, J DON","Director, CEO",True,Phantom Stock,buy,127.9449,34.7906,4451.27983794
+2013-10-10,ASTE,"BROCK, J DON","Director, CEO",True,Phantom Stock,buy,419.2052,35.782,15000.000466399999
+2013-10-10,ASTE,"CAMPBELL, THOMAS R",Group VP-Asp. Pav & Und,True,Phantom Stock,buy,190.7384,35.782,6825.0014288
+2013-10-10,ASTE,"COLWELL, CHRIS E",President-Carlson Paving,True,Phantom Stock,buy,97.8145,35.782,3499.9984389999995
+2013-10-10,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,92.2531,35.782,3301.0004242
+2013-10-10,ASTE,"VIG, JOSEPH P",Group VP-ConAgg,True,Phantom Stock,buy,52.6315,35.782,1883.260333
+2013-10-10,ASTE,"PATEK, RICHARD A",Group VP Aggregate & Mining,True,Phantom Stock,buy,38.6996,35.782,1384.7490871999998
+2013-10-10,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Phantom Stock,buy,125.7616,35.782,4500.0015711999995
+2013-10-10,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,buy,143.9271,35.782,5149.9994922
+2013-10-10,ASTE,"SMITH, W NORMAN","Director, President",True,Phantom Stock,buy,216.5893,35.782,7749.998332599999
+2013-10-10,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,92.9238,35.782,3324.9994116
+2013-10-10,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,115.2814,35.782,4124.9990548
+2013-10-25,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,240.0,34.49,8277.6
+2013-10-25,ASTE,"BAKER, JAMES B",Director,True,Common Stock,buy,240.0,34.49,8277.6
+2013-10-25,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,240.0,34.49,8277.6
+2013-10-25,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,240.0,34.49,8277.6
+2013-10-25,ASTE,"CASEY, PHILLIP E",Director,True,Common Stock,buy,240.0,34.49,8277.6
+2013-10-25,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,240.0,34.49,8277.6
+2013-10-25,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,240.0,34.49,8277.6
+2013-11-19,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,630.0,17.75,11182.5
+2013-11-19,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,sell,1287.0,33.4492,43049.1204
+2013-11-19,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,657.0,17.03,11188.710000000001
+2013-11-25,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,776.0,14.43,11197.68
+2013-11-25,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,657.0,17.03,11188.710000000001
+2013-11-25,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,630.0,17.75,11182.5
+2013-11-25,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,470.0,21.83,10260.099999999999
+2013-11-25,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,495.0,20.71,10251.45
+2013-11-29,ASTE,"SMITH, W NORMAN","Director, President",True,Phantom Stock,buy,58.7542,36.7637,2160.02178254
+2013-11-29,ASTE,"BROCK, J DON","Director, CEO",True,Phantom Stock,buy,122.5662,36.7637,4505.987006939999
+2013-11-29,ASTE,"CARGOULD, FRANK D",President-Breaker Technology,True,Phantom Stock,buy,27.9735,36.7637,1028.40936195
+2013-11-29,ASTE,"PATEK, RICHARD A",Group VP Aggregate & Mining,True,Phantom Stock,buy,29.9145,36.7637,1099.76770365
+2014-01-09,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Phantom Stock,buy,43.6137,37.0411,1615.4994230700001
+2014-01-09,ASTE,"SMITH, W NORMAN","Director, Group President Mobile Asphalt",True,Phantom Stock,buy,209.227,37.0411,7749.998229700001
+2014-01-09,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,89.7652,37.0411,3325.0017497199997
+2014-01-09,ASTE,"VIG, JOSEPH P",Group President-ConAgg,True,Phantom Stock,buy,59.3147,37.0411,2197.08173417
+2014-01-09,ASTE,"BROCK, J DON","Director, Chairman",True,Phantom Stock,buy,404.9556,37.0411,15000.00087516
+2014-01-09,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,76.3746,37.0411,2828.99919606
+2014-01-09,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,buy,139.0347,37.0411,5149.99822617
+2014-01-09,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,111.3628,37.0411,4125.0006110799995
+2014-01-09,ASTE,"COLWELL, CHRIS E",President-Carlson Paving,True,Phantom Stock,buy,80.9911,37.0411,2999.9994342100003
+2014-02-28,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,204.0,40.52,8266.08
+2014-02-28,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Common Stock,sell,523.0,40.52,21191.960000000003
+2014-02-28,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Common Stock,sell,338.0,40.52,13695.76
+2014-02-28,ASTE,"DORRIS, RICHARD J",Chief Operating Officer,True,Common Stock,sell,449.0,40.52,18193.480000000003
+2014-02-28,ASTE,"ANDERSON, STEPHEN C",VP-Administration & Corp Sec,True,Common Stock,sell,262.0,40.52,10616.240000000002
+2014-02-28,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Common Stock,sell,606.0,40.52,24555.120000000003
+2014-02-28,ASTE,"SMITH, W NORMAN","Director, Group President Mobile Asphalt",True,Common Stock,sell,775.0,40.52,31403.000000000004
+2014-02-28,ASTE,"BROCK, J DON","Director, Chairman",True,Common Stock,sell,2250.0,40.52,91170.0
+2014-02-28,ASTE,"KRUGER, TOMMIE",Managing Director-Osborn,True,Common Stock,sell,241.0,40.52,9765.320000000002
+2014-02-28,ASTE,"KRUGER, TOMMIE",Managing Director-Osborn,True,Common Stock,sell,809.0,40.44,32715.96
+2014-02-28,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,204.0,40.52,8266.08
+2014-02-28,ASTE,"SILVIOUS, DAVID C",Chief Financial Officer,True,Common Stock,sell,262.0,40.52,10616.240000000002
+2014-02-28,ASTE,"LEFFEW, ROBIN A",Corporate Controller,False,Common Stock,sell,870.0,40.436,35179.32
+2014-02-28,ASTE,"VIG, JOSEPH P",Group President-ConAgg,True,Common Stock,sell,690.0,40.52,27958.800000000003
+2014-02-28,ASTE,"SWANSON, MALCOLM L","President-Astec, Inc.",True,Common Stock,sell,310.0,40.52,12561.2
+2014-02-28,ASTE,"HAVEN, MATTHEW B",President-Telsmith,True,Common Stock,sell,316.0,40.52,12804.320000000002
+2014-02-28,ASTE,"LEFFEW, ROBIN A",Corporate Controller,False,Common Stock,sell,196.0,40.52,7941.920000000001
+2014-02-28,ASTE,"BROCK, BENJAMIN G","Prs-Ast., Inc.; Grp VP-Asphlt",True,Common Stock,sell,596.0,40.52,24149.920000000002
+2014-02-28,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,204.0,40.52,8266.08
+2014-02-28,ASTE,"MAY, JEFFREY L",President-KPI,True,Common Stock,sell,376.0,40.52,15235.52
+2014-02-28,ASTE,"WILKEY, THOMAS H","President-Heatec, Inc.",True,Common Stock,sell,449.0,40.52,18193.480000000003
+2014-02-28,ASTE,"SILVIOUS, DAVID C",Chief Financial Officer,True,Common Stock,sell,954.0,40.1,38255.4
+2014-02-28,ASTE,"BROCK, J DON","Director, Chairman",True,Common Stock,sell,13000.0,40.53,526890.0
+2014-02-28,ASTE,"BAKER, JAMES B",Director,True,Common Stock,buy,204.0,40.52,8266.08
+2014-02-28,ASTE,"CASEY, PHILLIP E",Director,True,Common Stock,buy,204.0,40.52,8266.08
+2014-02-28,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,204.0,40.52,8266.08
+2014-02-28,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,204.0,40.52,8266.08
+2014-02-28,ASTE,"ELLIOTT, JEFFREY J",Presidelnt-JCI,False,Common Stock,sell,625.0,40.52,25325.000000000004
+2014-03-25,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Phantom Stock,buy,24.5974,45.01,1107.128974
+2014-03-25,ASTE,"SMITH, W NORMAN","Director, Group President Mobile Asphalt",True,Phantom Stock,buy,48.5851,45.01,2186.8153509999997
+2014-03-25,ASTE,"BROCK, J DON","Director, Chairman",True,Phantom Stock,buy,101.2831,45.01,4558.752331
+2014-04-07,ASTE,"SMITH, W NORMAN","Director, Group President Mobile Asphalt",True,Phantom Stock,buy,261.7008,43.1294,11286.99848352
+2014-04-07,ASTE,"COLWELL, CHRIS E",President-Carlson Paving,True,Phantom Stock,buy,223.0265,43.1294,9618.999129099999
+2014-04-07,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Phantom Stock,buy,57.7448,43.1294,2490.49857712
+2014-04-07,ASTE,"VIG, JOSEPH P",Group President-ConAgg,True,Phantom Stock,buy,115.198,43.1294,4968.420621199999
+2014-04-07,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,103.9662,43.1294,4483.99982628
+2014-04-07,ASTE,"WILKEY, THOMAS H","President-Heatec, Inc.",True,Phantom Stock,buy,151.7294,43.1294,6543.9979843599995
+2014-04-07,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,98.4479,43.1294,4245.99885826
+2014-04-07,ASTE,"SWANSON, MALCOLM L","President-Astec, Inc.",True,Phantom Stock,buy,139.4408,43.1294,6013.998039519999
+2014-04-07,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,buy,122.886,43.1294,5299.999448399999
+2014-04-07,ASTE,"BROCK, J DON","Director, Chairman",True,Phantom Stock,buy,495.277,43.1294,21360.999843799997
+2014-04-07,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,79.6904,43.1294,3436.9991377599995
+2014-04-25,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,199.0,41.64,8286.36
+2014-04-25,ASTE,"KRUGER, TOMMIE",Managing Director-Osborn,True,Common Stock,buy,4000.0,17.76,71040.0
+2014-04-25,ASTE,"BAKER, JAMES B",Director,True,Common Stock,buy,199.0,41.64,8286.36
+2014-04-25,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,199.0,41.64,8286.36
+2014-04-25,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,199.0,41.64,8286.36
+2014-04-25,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,199.0,41.64,8286.36
+2014-04-25,ASTE,"CASEY, PHILLIP E",Director,True,Common Stock,buy,199.0,41.64,8286.36
+2014-04-25,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,199.0,41.64,8286.36
+2014-04-25,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,199.0,41.64,8286.36
+2014-04-29,ASTE,"KRUGER, TOMMIE",Managing Director-Osborn,True,Common Stock,sell,4359.0,40.02,174447.18000000002
+2014-04-30,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,5000.0,39.8099,199049.5
+2014-05-29,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Phantom Stock,buy,27.6421,40.35,1115.358735
+2014-05-29,ASTE,"SMITH, W NORMAN","Director, Group President Mobile Asphalt",True,Phantom Stock,buy,54.9653,40.35,2217.849855
+2014-05-29,ASTE,"BROCK, J DON","Director, Chairman",True,Phantom Stock,buy,114.4584,40.35,4618.39644
+2014-05-30,ASTE,"ELLIOTT, JEFFREY J",Presidelnt-JCI,False,Common Stock,sell,854.0,40.08,34228.32
+2014-05-30,ASTE,"ELLIOTT, JEFFREY J",Presidelnt-JCI,False,Common Stock,buy,854.0,19.53,16678.620000000003
+2014-07-08,ASTE,"SWANSON, MALCOLM L","President-Astec, Inc.",True,Phantom Stock,buy,108.8228,42.5,4624.969
+2014-07-08,ASTE,"BROCK, J DON","Director, Chairman",True,Phantom Stock,buy,352.9388,42.5,14999.899000000001
+2014-07-08,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Phantom Stock,buy,39.5939,39.5939,1567.6769172099998
+2014-07-08,ASTE,"COLWELL, CHRIS E",President-Carlson Paving,True,Phantom Stock,buy,76.023,42.5,3230.9775
+2014-07-08,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,100.4699,42.5,4269.9707499999995
+2014-07-08,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,81.1759,42.5,3449.97575
+2014-07-08,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,buy,124.705,42.5,5299.9625
+2014-07-08,ASTE,"SMITH, W NORMAN","Director, Group President Mobile Asphalt",True,Phantom Stock,buy,188.234,42.5,7999.945000000001
+2014-07-09,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,68.6819,42.5,2918.98075
+2014-07-09,ASTE,"WILKEY, THOMAS H","President-Heatec, Inc.",True,Phantom Stock,buy,88.2347,42.5,3749.9747500000003
+2014-07-25,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,205.0,40.38,8277.9
+2014-07-25,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,205.0,40.38,8277.9
+2014-07-25,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,205.0,40.38,8277.9
+2014-07-25,ASTE,"BAKER, JAMES B",Director,True,Common Stock,buy,205.0,40.38,8277.9
+2014-07-25,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,205.0,40.38,8277.9
+2014-07-25,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,205.0,40.38,8277.9
+2014-07-25,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,205.0,40.38,8277.9
+2014-08-21,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Common Stock,buy,10000.0,19.43,194300.0
+2014-08-21,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Common Stock,sell,6200.0,41.5191,257418.42
+2014-08-25,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Common Stock,sell,1250.0,41.36,51700.0
+2014-08-29,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Phantom Stock,buy,26.9991,41.56,1122.082596
+2014-08-29,ASTE,"SMITH, W NORMAN","Director, Group President Mobile Asphalt",True,Phantom Stock,buy,53.9496,41.56,2242.145376
+2014-08-29,ASTE,"BROCK, J DON","Director, Chairman",True,Phantom Stock,buy,112.25,41.56,4665.110000000001
+2014-10-09,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,89.9349,35.4145,3184.99951605
+2014-10-09,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,96.1753,35.4145,3406.0001618499996
+2014-10-09,ASTE,"WILKEY, THOMAS H","President-Heatec, Inc.",True,Phantom Stock,buy,105.8888,35.4145,3749.9989075999997
+2014-10-09,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Phantom Stock,buy,225.8961,35.4145,7999.997433449999
+2014-10-09,ASTE,"BROCK, J DON","Director, Chairman",True,Phantom Stock,buy,423.5552,35.4145,14999.995630399999
+2014-10-09,ASTE,"COLWELL, CHRIS E",President-Carlson Paving,True,Phantom Stock,buy,106.4253,35.4145,3768.9987868499993
+2014-10-09,ASTE,"SWANSON, MALCOLM L","President-Astec, Inc.",True,Phantom Stock,buy,130.5962,35.4145,4624.9991248999995
+2014-10-09,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,118.0307,35.4145,4179.99822515
+2014-10-09,ASTE,"SCHWARZ, JEFFREY M.",President-JCI,True,Phantom Stock,buy,110.7738,35.4145,3922.9987400999994
+2014-10-09,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,buy,149.6562,35.4145,5299.9994949
+2014-10-09,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Phantom Stock,buy,44.798,35.4145,1586.4987709999998
+2014-10-24,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,227.0,36.37,8255.99
+2014-10-24,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,227.0,36.37,8255.99
+2014-10-24,ASTE,"BAKER, JAMES B",Director,True,Common Stock,buy,227.0,36.37,8255.99
+2014-10-24,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,227.0,36.37,8255.99
+2014-10-24,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,227.0,36.37,8255.99
+2014-10-24,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,227.0,36.37,8255.99
+2014-10-24,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,227.0,36.37,8255.99
+2014-11-28,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Phantom Stock,buy,27.7669,40.669,1129.2520561
+2014-11-28,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Phantom Stock,buy,55.8199,40.669,2270.1395131
+2014-11-28,ASTE,"BROCK, J DON","Director, Chairman",True,Phantom Stock,buy,116.0269,40.669,4718.6979961
+2015-01-12,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,80.6373,36.1991,2918.99768643
+2015-01-12,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,120.4449,36.1991,4359.996979590001
+2015-01-12,ASTE,"SWANSON, MALCOLM L","President-Astec, Inc.",True,Phantom Stock,buy,127.7655,36.1991,4624.99611105
+2015-01-12,ASTE,"SCHWARZ, JEFFREY M.",President-JCI,True,Phantom Stock,buy,136.6055,36.1991,4944.99615505
+2015-01-12,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,buy,146.4124,36.1991,5299.99710884
+2015-01-12,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Phantom Stock,buy,220.9998,36.1991,7999.99386018
+2015-01-12,ASTE,"COLWELL, CHRIS E",President-Carlson Paving,True,Phantom Stock,buy,89.2563,36.1991,3230.99772933
+2015-01-12,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Phantom Stock,buy,51.1338,36.1991,1850.9975395800002
+2015-01-12,ASTE,"BROCK, J DON","Director, Chairman",True,Phantom Stock,buy,414.3747,36.1991,14999.991202770001
+2015-01-12,ASTE,"WILKEY, THOMAS H","President-Heatec, Inc.",True,Phantom Stock,buy,111.5773,36.1991,4038.99784043
+2015-01-12,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,102.6268,36.1991,3714.9977958800005
+2015-02-27,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,193.0,42.88,8275.84
+2015-02-27,ASTE,"BAKER, JAMES B",Director,True,Common Stock,buy,193.0,42.88,8275.84
+2015-02-27,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,193.0,42.88,8275.84
+2015-02-27,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,193.0,42.88,8275.84
+2015-02-27,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,193.0,42.88,8275.84
+2015-02-27,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,193.0,42.88,8275.84
+2015-02-27,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,193.0,42.88,8275.84
+2015-02-28,ASTE,"LEFFEW, ROBIN A",Corporate Controller,False,Common Stock,sell,196.0,42.77,8382.92
+2015-02-28,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Common Stock,sell,151.0,42.77,6458.27
+2015-02-28,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Common Stock,sell,606.0,42.77,25918.620000000003
+2015-02-28,ASTE,"ANDERSON, STEPHEN C",VP-Administration & Corp Sec,True,Common Stock,sell,262.0,42.77,11205.740000000002
+2015-02-28,ASTE,"MAY, JEFFREY L",President-KPI,True,Common Stock,sell,294.0,42.77,12574.380000000001
+2015-02-28,ASTE,"SWANSON, MALCOLM L","President-Astec, Inc.",True,Common Stock,sell,310.0,42.77,13258.7
+2015-02-28,ASTE,"WILKEY, THOMAS H","President-Heatec, Inc.",True,Common Stock,sell,449.0,42.77,19203.730000000003
+2015-02-28,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Common Stock,sell,775.0,42.77,33146.75
+2015-02-28,ASTE,"SILVIOUS, DAVID C",Chief Financial Officer,True,Common Stock,sell,262.0,42.77,11205.740000000002
+2015-02-28,ASTE,"BROCK, J DON","Director, Chairman",True,Common Stock,sell,2250.0,42.77,96232.5
+2015-02-28,ASTE,"DORRIS, RICHARD J",Chief Operating Officer,True,Common Stock,sell,449.0,42.77,19203.730000000003
+2015-02-28,ASTE,"BROCK, BENJAMIN G","Director, Chief Executive Officer",True,Common Stock,sell,575.0,42.77,24592.75
+2015-02-28,ASTE,"HAVEN, MATTHEW B",President-Telsmith,True,Common Stock,sell,316.0,42.77,13515.320000000002
+2015-03-27,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Phantom Stock,buy,26.6555,42.6613,1137.1582821499999
+2015-03-27,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Phantom Stock,buy,53.862,42.6613,2297.8229406
+2015-04-09,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Phantom Stock,buy,62.7004,42.196,2645.7060784
+2015-04-09,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,buy,173.9946,42.196,7341.876141599999
+2015-04-09,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,77.352,42.196,3263.944992
+2015-04-09,ASTE,"COLWELL, CHRIS E",President-Carlson Paving,True,Phantom Stock,buy,258.7879,42.196,10919.814228399999
+2015-04-09,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,82.8501,42.196,3495.9428196
+2015-04-09,ASTE,"WILKEY, THOMAS H","President-Heatec, Inc.",True,Phantom Stock,buy,191.9581,42.196,8099.8639876
+2015-04-09,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,191.0575,42.196,8061.86227
+2015-04-09,ASTE,"SWANSON, MALCOLM L","President-Astec, Inc.",True,Phantom Stock,buy,113.4449,42.196,4786.9210004
+2015-04-09,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Phantom Stock,buy,196.2238,42.196,8279.8594648
+2015-04-24,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,192.0,43.08,8271.36
+2015-04-24,ASTE,"BAKER, JAMES B",Director,True,Common Stock,buy,192.0,43.08,8271.36
+2015-04-24,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,192.0,43.08,8271.36
+2015-04-24,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,192.0,43.08,8271.36
+2015-04-24,ASTE,"LEFFEW, ROBIN A",Corporate Controller,False,Common Stock,sell,404.0,42.9,17331.6
+2015-04-24,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,192.0,43.08,8271.36
+2015-04-24,ASTE,"BROCK, BENJAMIN G","Director, Chief Executive Officer",True,Common Stock,sell,5000.0,43.0,215000.0
+2015-04-24,ASTE,"BROCK, BENJAMIN G","Director, Chief Executive Officer",True,Common Stock,sell,2000.0,43.02,86040.0
+2015-04-24,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,192.0,43.08,8271.36
+2015-04-24,ASTE,"BROCK, BENJAMIN G","Director, Chief Executive Officer",True,Common Stock,sell,1000.0,42.95,42950.0
+2015-04-24,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,192.0,43.08,8271.36
+2015-04-27,ASTE,"BROCK, BENJAMIN G","Director, Chief Executive Officer",True,Common Stock,sell,3000.0,43.3,129899.99999999999
+2015-04-27,ASTE,"BROCK, BENJAMIN G","Director, Chief Executive Officer",True,Common Stock,sell,1400.0,43.12,60368.0
+2015-04-27,ASTE,"BROCK, BENJAMIN G","Director, Chief Executive Officer",True,Common Stock,sell,49.0,43.5,2131.5
+2015-04-27,ASTE,"BROCK, BENJAMIN G","Director, Chief Executive Officer",True,Common Stock,sell,351.0,42.88,15050.880000000001
+2015-04-28,ASTE,"BROCK, BENJAMIN G","Director, Chief Executive Officer",True,Common Stock,sell,11700.0,43.7,511290.00000000006
+2015-04-28,ASTE,"BROCK, BENJAMIN G","Director, Chief Executive Officer",True,Common Stock,sell,2500.0,43.15,107875.0
+2015-04-28,ASTE,"BROCK, BENJAMIN G","Director, Chief Executive Officer",True,Common Stock,sell,300.0,43.9,13170.0
+2015-04-28,ASTE,"BROCK, BENJAMIN G","Director, Chief Executive Officer",True,Common Stock,sell,1700.0,43.85,74545.0
+2015-04-28,ASTE,"BROCK, BENJAMIN G","Director, Chief Executive Officer",True,Common Stock,sell,1000.0,43.4,43400.0
+2015-05-01,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Phantom Stock,sell,3400.9287,42.11,143213.10755699998
+2015-05-28,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Phantom Stock,buy,27.3727,41.87,1146.0949489999998
+2015-05-28,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Phantom Stock,buy,55.4778,41.87,2322.855486
+2015-07-09,ASTE,"SWANSON, MALCOLM L","President-Astec, Inc.",True,Phantom Stock,buy,118.4374,40.418,4787.0028332
+2015-07-09,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,74.3976,40.418,3007.0021967999996
+2015-07-09,ASTE,"WILKEY, THOMAS H","President-Heatec, Inc.",True,Phantom Stock,buy,96.4917,40.418,3900.0015305999996
+2015-07-09,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Phantom Stock,buy,204.8593,40.418,8280.0031874
+2015-07-09,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Phantom Stock,buy,47.3985,40.418,1915.752573
+2015-07-09,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,94.6856,40.418,3827.0025807999996
+2015-07-09,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,109.8768,40.418,4441.0005024
+2015-07-09,ASTE,"COLWELL, CHRIS E",President-Carlson Paving,True,Phantom Stock,buy,83.1313,40.418,3360.0008833999996
+2015-07-24,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,219.0,37.78,8273.82
+2015-07-24,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,219.0,37.78,8273.82
+2015-07-24,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,219.0,37.78,8273.82
+2015-07-24,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,219.0,37.78,8273.82
+2015-07-24,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,219.0,37.78,8273.82
+2015-07-24,ASTE,"BAKER, JAMES B",Director,True,Common Stock,buy,219.0,37.78,8273.82
+2015-07-24,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,219.0,37.78,8273.82
+2015-08-12,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,614.0,20.95,12863.3
+2015-08-12,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,374.0,34.43,12876.82
+2015-08-12,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,323.0,39.81,12858.630000000001
+2015-08-12,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,355.0,28.9,10259.5
+2015-08-12,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,374.0,27.4,10247.6
+2015-08-12,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,375.0,34.29,12858.75
+2015-08-28,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Phantom Stock,buy,30.8603,37.38,1153.558014
+2015-08-28,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Phantom Stock,buy,62.8375,37.38,2348.86575
+2015-10-08,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,94.7406,37.0274,3507.99809244
+2015-10-08,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Phantom Stock,buy,223.6181,37.0274,8279.996835939999
+2015-10-08,ASTE,"CLAUDE, STEVEN L",Group President-Infrastructure,True,Phantom Stock,buy,74.2693,37.0274,2749.9990788200002
+2015-10-08,ASTE,"SWANSON, MALCOLM L","President-Astec, Inc.",True,Phantom Stock,buy,129.2826,37.0274,4786.99854324
+2015-10-08,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,119.9381,37.0274,4440.99600394
+2015-10-08,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,88.583,37.0274,3279.9981742
+2015-10-08,ASTE,"WILKEY, THOMAS H","President-Heatec, Inc.",True,Phantom Stock,buy,105.3273,37.0274,3899.9960680199997
+2015-10-08,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Phantom Stock,buy,44.3455,37.0274,1641.9985667
+2015-10-08,ASTE,"COLWELL, CHRIS E",President-Carlson Paving,True,Phantom Stock,buy,105.8675,37.0274,3919.9982695000003
+2015-10-23,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,259.0,31.95,8275.05
+2015-10-23,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,259.0,31.95,8275.05
+2015-10-23,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,259.0,31.95,8275.05
+2015-10-23,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,259.0,31.95,8275.05
+2015-10-23,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,259.0,31.95,8275.05
+2015-10-23,ASTE,"BAKER, JAMES B",Director,True,Common Stock,buy,259.0,31.95,8275.05
+2015-10-23,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,259.0,31.95,8275.05
+2015-11-25,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Phantom Stock,buy,28.4437,40.824,1161.1856088
+2015-11-25,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Phantom Stock,buy,58.2434,40.824,2377.7285616
+2016-01-08,ASTE,"COLWELL, CHRIS E",President-Carlson Paving,True,Phantom Stock,buy,107.8712,36.3396,3919.99625952
+2016-01-08,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Phantom Stock,buy,227.8504,36.3396,8279.99239584
+2016-01-08,ASTE,"SWANSON, MALCOLM L","President-Astec, Inc.",True,Phantom Stock,buy,131.7295,36.3396,4786.9973382
+2016-01-08,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Phantom Stock,buy,52.7179,36.3396,1915.74739884
+2016-01-08,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,122.2082,36.3396,4440.99710472
+2016-01-08,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,96.5337,36.3396,3507.9960445199995
+2016-01-08,ASTE,"CLAUDE, STEVEN L",Group President-Infrastructure,True,Phantom Stock,buy,178.8681,36.3396,6499.99520676
+2016-01-08,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,105.312,36.3396,3826.9959551999996
+2016-01-08,ASTE,"WILKEY, THOMAS H","President-Heatec, Inc.",True,Phantom Stock,buy,115.5763,36.3396,4199.99651148
+2016-02-26,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,206.0,40.1,8260.6
+2016-02-26,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,206.0,40.1,8260.6
+2016-02-26,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,206.0,40.1,8260.6
+2016-02-26,ASTE,"BAKER, JAMES B",Director,True,Common Stock,buy,206.0,40.1,8260.6
+2016-02-26,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,206.0,40.1,8260.6
+2016-02-26,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,206.0,40.1,8260.6
+2016-02-28,ASTE,"BROCK, BENJAMIN G","Director, Chief Executive Officer",True,Common Stock,sell,1297.0,42.19,54720.43
+2016-02-28,ASTE,"KRUGER, TOMMIE",Managing Director-Osborn,True,Common Stock,sell,1352.0,42.19,57040.88
+2016-02-28,ASTE,"DORRIS, RICHARD J",Chief Operating Officer,True,Common Stock,sell,1089.0,42.19,45944.909999999996
+2016-02-28,ASTE,"CLAUDE, STEVEN L",Group President-Infrastructure,True,Common Stock,sell,439.0,42.19,18521.41
+2016-02-28,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Common Stock,sell,1581.0,42.19,66702.39
+2016-02-28,ASTE,"SWANSON, MALCOLM L","President-Astec, Inc.",True,Common Stock,sell,722.0,42.19,30461.179999999997
+2016-02-28,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Common Stock,sell,437.0,42.19,18437.03
+2016-02-28,ASTE,"ANDERSON, STEPHEN C",VP-Administration & Corp Sec,True,Common Stock,sell,520.0,42.19,21938.8
+2016-02-28,ASTE,"WILKEY, THOMAS H","President-Heatec, Inc.",True,Common Stock,sell,1130.0,42.19,47674.7
+2016-02-28,ASTE,"SILVIOUS, DAVID C",Chief Financial Officer,True,Common Stock,sell,520.0,42.19,21938.8
+2016-02-28,ASTE,"LEFFEW, ROBIN A",Corporate Controller,False,Common Stock,sell,400.0,42.19,16876.0
+2016-02-28,ASTE,"RICHMOND, JEFFREY L",President-Roadtec,True,Common Stock,sell,1878.0,42.19,79232.81999999999
+2016-02-29,ASTE,"ANDERSON, STEPHEN C",VP-Administration & Corp Sec,True,Common Stock,sell,1076.0,43.0864,46360.9664
+2016-03-28,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Phantom Stock,buy,26.2786,44.49,1169.134914
+2016-03-28,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Phantom Stock,buy,54.0787,44.49,2405.961363
+2016-04-06,ASTE,"WILKEY, THOMAS H","President-Heatec, Inc.",True,Phantom Stock,buy,189.8843,45.47,8634.039121
+2016-04-06,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,132.9234,45.47,6044.026997999999
+2016-04-06,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Phantom Stock,buy,221.4657,45.47,10070.045379
+2016-04-06,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Phantom Stock,buy,70.4919,45.47,3205.266693
+2016-04-06,ASTE,"SCHWARZ, JEFFREY M.",President-JCI,True,Phantom Stock,buy,63.3388,45.47,2880.0152359999997
+2016-04-06,ASTE,"COLWELL, CHRIS E",President-Carlson Paving,True,Phantom Stock,buy,226.8319,45.47,10314.046493
+2016-04-06,ASTE,"SWANSON, MALCOLM L","President-Astec, Inc.",True,Phantom Stock,buy,157.6211,45.47,7167.031417
+2016-04-06,ASTE,"HAVEN, MATTHEW B",President-Telsmith,True,Phantom Shares,buy,23.6289,45.47,1074.406083
+2016-04-06,ASTE,"CLAUDE, STEVEN L",Group President-Infrastructure,True,Phantom Stock,buy,175.4351,45.47,7977.033997
+2016-04-06,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,68.441,45.47,3112.01227
+2016-04-07,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,100.5063,45.47,4570.021460999999
+2016-04-28,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,1019.0,63.83,65042.77
+2016-05-10,ASTE,"ELLIOTT, JEFFREY J",Group VP Aggregate & Mining,True,Common Stock,sell,506.0,49.54,25067.239999999998
+2016-05-10,ASTE,"SWANSON, MALCOLM L","President-Astec, Inc.",True,Common Stock,sell,2987.0,49.33,147348.71
+2016-05-11,ASTE,"ELLIOTT, JEFFREY J",Group VP Aggregate & Mining,True,Common Stock,sell,212.0,49.63,10521.560000000001
+2016-05-11,ASTE,"ELLIOTT, JEFFREY J",Group VP Aggregate & Mining,True,Common Stock,sell,2000.0,48.88,97760.0
+2016-05-13,ASTE,"MAY, JEFFREY L",President-KPI,True,Common Stock,sell,800.0,50.09,40072.0
+2016-05-18,ASTE,"LEFFEW, ROBIN A",Corporate Controller,False,Common Stock,sell,404.0,52.0,21008.0
+2016-05-24,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Common Stock,sell,1900.0,53.06,100814.0
+2016-05-25,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Common Stock,sell,1769.0,53.07,93880.83
+2016-05-27,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Phantom Stock,buy,22.3005,52.86,1178.80443
+2016-05-27,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Phantom Stock,buy,46.0369,52.86,2433.510534
+2016-07-08,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Phantom Stock,buy,34.0995,58.146,1982.749527
+2016-07-08,ASTE,"SCHWARZ, JEFFREY M.",President-JCI,True,Phantom Stock,buy,21.1322,58.146,1228.7529012
+2016-07-08,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Phantom Stock,buy,147.3877,58.146,8570.0052042
+2016-07-08,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,58.3875,58.146,3394.9995750000003
+2016-07-08,ASTE,"SWANSON, MALCOLM L","President-Astec, Inc.",True,Phantom Stock,buy,85.1994,58.146,4954.0043124
+2016-07-08,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,53.5205,58.146,3112.002993
+2016-07-08,ASTE,"CLAUDE, STEVEN L",Group President-Infrastructure,True,Phantom Stock,buy,115.6916,58.146,6727.0037735999995
+2016-07-08,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,79.0425,58.146,4596.005205
+2016-07-08,ASTE,"WILKEY, THOMAS H","President-Heatec, Inc.",True,Phantom Stock,buy,69.4287,58.146,4037.0011902000006
+2016-07-08,ASTE,"IRVINE, JOHN J. III","President-Roadtec, Inc.",True,Phantom Stock,buy,58.9895,58.146,3430.003467
+2016-07-08,ASTE,"COLWELL, CHRIS E",President-Carlson Paving,True,Phantom Stock,buy,59.815,58.146,3478.00299
+2016-07-29,ASTE,"CLAUDE, STEVEN L",Group President-Infrastructure,True,Common Stock,buy,1987.0,60.23,119677.01
+2016-08-01,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,250.0,60.28,15070.0
+2016-08-01,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,250.0,60.28,15070.0
+2016-08-01,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,250.0,60.28,15070.0
+2016-08-01,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,250.0,60.28,15070.0
+2016-08-01,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,250.0,60.28,15070.0
+2016-08-01,ASTE,"ANDERSON, STEPHEN C",VP-Administration & Corp Sec,True,Common Stock,sell,1070.0,60.59,64831.3
+2016-08-01,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Common Stock,sell,10000.0,60.218,602180.0
+2016-08-01,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,250.0,60.28,15070.0
+2016-08-01,ASTE,"BAKER, JAMES B",Director,True,Common Stock,buy,250.0,60.28,15070.0
+2016-08-02,ASTE,"CLAUDE, STEVEN L",Group President-Infrastructure,True,Phantom Stock,sell,545.8275,60.7569,33162.78683475
+2016-08-05,ASTE,"SILVIOUS, DAVID C",Chief Financial Officer,True,Common Stock,sell,1076.0,59.98,64538.479999999996
+2016-08-30,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Phantom Stock,buy,19.7651,59.93,1184.522443
+2016-08-30,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Phantom Stock,buy,40.9316,59.93,2453.030788
+2016-10-12,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,78.5787,58.4891,4595.99744217
+2016-10-12,ASTE,"IRVINE, JOHN J. III","President-Roadtec, Inc.",True,Phantom Stock,buy,91.2307,58.4891,5336.00153537
+2016-10-12,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,67.722,58.4891,3960.9988301999997
+2016-10-12,ASTE,"COLWELL, CHRIS E",President-Carlson Paving,True,Phantom Stock,buy,69.3633,58.4891,4056.99699003
+2016-10-12,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Phantom Stock,buy,146.523,58.4891,8569.9983993
+2016-10-12,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Phantom Stock,buy,33.8995,58.4891,1982.7512454500002
+2016-10-12,ASTE,"SCHWARZ, JEFFREY M.",President-JCI,True,Phantom Stock,buy,21.0082,58.4891,1228.7507106199998
+2016-10-12,ASTE,"WILKEY, THOMAS H","President-Heatec, Inc.",True,Phantom Stock,buy,69.0214,58.4891,4036.99956674
+2016-10-12,ASTE,"SWANSON, MALCOLM L","President-Astec, Inc.",True,Phantom Stock,buy,84.6995,58.4891,4953.9975254500005
+2016-10-12,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,62.0799,58.4891,3630.99747909
+2016-11-01,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,231.0,54.27,12536.37
+2016-11-01,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,231.0,54.27,12536.37
+2016-11-01,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,231.0,54.27,12536.37
+2016-11-01,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,231.0,54.27,12536.37
+2016-11-01,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,231.0,54.27,12536.37
+2016-11-01,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,231.0,54.27,12536.37
+2016-11-01,ASTE,"BAKER, JAMES B",Director,True,Common Stock,buy,231.0,54.27,12536.37
+2016-11-09,ASTE,"IRVINE, JOHN J. III","President-Roadtec, Inc.",True,Common Stock,sell,3221.0,64.5058,207773.1818
+2016-11-10,ASTE,"KRUGER, TOMMIE",Managing Director-Osborn,True,Common Stock,sell,1945.0,63.36,123235.2
+2016-11-28,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Phantom Stock,buy,17.7905,66.8833,1189.8873486500001
+2016-11-28,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Phantom Stock,buy,36.9566,66.8833,2471.7793647800004
+2016-11-30,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Common Stock,sell,1699.0,66.93,113714.07
+2017-01-10,ASTE,"IRVINE, JOHN J. III","President-Roadtec, Inc.",True,Phantom Stock,buy,73.2301,67.6498,4954.00161898
+2017-01-10,ASTE,"SWANSON, MALCOLM L","President-Astec, Inc.",True,Phantom Stock,buy,73.2301,67.6498,4954.00161898
+2017-01-10,ASTE,"SCHWARZ, JEFFREY M.",President-JCI,True,Phantom Stock,buy,15.5691,67.6498,1053.24650118
+2017-01-10,ASTE,"COLWELL, CHRIS E",President-Carlson Paving,True,Phantom Stock,buy,59.9706,67.6498,4056.99909588
+2017-01-10,ASTE,"WILKEY, THOMAS H","President-Heatec, Inc.",True,Phantom Stock,buy,59.675,67.6498,4037.0018149999996
+2017-01-10,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Phantom Stock,buy,126.6818,67.6498,8569.99843364
+2017-01-10,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Phantom Stock,buy,25.122,67.6498,1699.4982756
+2017-01-10,ASTE,"MERWE, JACO VAN DER",Group Pres Energry,False,Phantom Stock,buy,28.2706,67.6498,1912.5004358800002
+2017-01-10,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,53.6735,67.6498,3631.0015402999998
+2017-01-10,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,50.1849,67.6498,3394.99844802
+2017-01-10,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,67.9381,67.6498,4595.9988773800005
+2017-01-31,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,179.0,70.02,12533.58
+2017-01-31,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,179.0,70.02,12533.58
+2017-01-31,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,179.0,70.02,12533.58
+2017-02-28,ASTE,"WILKEY, THOMAS H","President-Heatec, Inc.",True,Common Stock,sell,449.0,65.35,29342.149999999998
+2017-02-28,ASTE,"ELLIOTT, JEFFREY J",Group VP Aggregate & Mining,True,Common Stock,sell,469.0,65.35,30649.149999999998
+2017-02-28,ASTE,"HAVEN, MATTHEW B",President-Telsmith,True,Common Stock,sell,323.0,65.35,21108.05
+2017-02-28,ASTE,"SCHWARZ, JEFFREY M.",President-JCI,True,Common Stock,sell,138.0,65.35,9018.3
+2017-02-28,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Common Stock,sell,5000.0,62.77,313850.0
+2017-02-28,ASTE,"IRVINE, JOHN J. III","President-Roadtec, Inc.",True,Common Stock,sell,327.0,65.35,21369.449999999997
+2017-02-28,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Common Stock,sell,113.0,65.35,7384.549999999999
+2017-02-28,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Common Stock,sell,454.0,65.35,29668.899999999998
+2017-02-28,ASTE,"MAY, JEFFREY L",President-KPI,True,Common Stock,sell,294.0,65.35,19212.899999999998
+2017-02-28,ASTE,"DORRIS, RICHARD J",Chief Operating Officer,True,Common Stock,sell,337.0,65.35,22022.949999999997
+2017-02-28,ASTE,"COLWELL, CHRIS E",President-Carlson Paving,True,Common Stock,sell,421.0,65.35,27512.35
+2017-03-31,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Phantom Stock,buy,41.7893,59.5399,2488.13074307
+2017-03-31,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Phantom Stock,buy,20.0568,59.5399,1194.17986632
+2017-04-06,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,193.7675,62.0073,12014.99950275
+2017-04-07,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Phantom Stock,buy,101.222,62.0073,6276.5029206
+2017-04-07,ASTE,"SCHWARZ, JEFFREY M.",President-JCI,True,Phantom Stock,buy,56.9127,62.0073,3529.00286271
+2017-04-07,ASTE,"MERWE, JACO VAN DER",Group Pres Energry,False,Phantom Stock,buy,60.0994,62.0073,3726.6015256200003
+2017-04-07,ASTE,"WILKEY, THOMAS H","President-Heatec, Inc.",True,Phantom Stock,buy,163.9807,62.0073,10168.00045911
+2017-04-07,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,51.9455,62.0073,3221.0002021500004
+2017-04-07,ASTE,"COLWELL, CHRIS E",President-Carlson Paving,True,Phantom Stock,buy,186.7522,62.0073,11579.99969106
+2017-04-07,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,129.0654,62.0073,8002.996977420001
+2017-04-07,ASTE,"SWANSON, MALCOLM L","President-Astec, Inc.",True,Phantom Stock,buy,225.2315,62.0073,13965.997189950001
+2017-04-07,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Phantom Stock,buy,458.7041,62.0073,28443.002739929998
+2017-04-07,ASTE,"IRVINE, JOHN J. III","President-Roadtec, Inc.",True,Phantom Stock,buy,192.0419,62.0073,11907.99970587
+2017-04-28,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,1170.0,55.56,65005.200000000004
+2017-04-28,ASTE,"BAKER, JAMES B",Director,True,Common Stock,buy,1019.0,63.83,65042.77
+2017-04-28,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,1019.0,63.83,65042.77
+2017-04-28,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,196.0,63.83,12510.68
+2017-04-28,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,196.0,63.83,12510.68
+2017-04-28,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,1019.0,63.83,65042.77
+2017-04-28,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,1019.0,63.83,65042.77
+2017-04-28,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,1019.0,63.83,65042.77
+2017-04-28,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,1019.0,63.83,65042.77
+2017-04-28,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,196.0,63.83,12510.68
+2017-05-26,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Phantom Stock,buy,45.3259,55.9985,2538.18241115
+2017-05-26,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Phantom Stock,buy,21.5418,55.9985,1206.3084873
+2017-07-12,ASTE,"COLWELL, CHRIS E",President-Carlson Paving,True,Phantom Stock,buy,75.2274,55.8174,4198.9978767600005
+2017-07-12,ASTE,"IRVINE, JOHN J. III","President-Roadtec, Inc.",True,Phantom Stock,buy,91.871,55.8174,5128.0003553999995
+2017-07-12,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,62.9553,55.8174,3514.00116222
+2017-07-12,ASTE,"MERWE, JACO VAN DER",Group Pres Energry,False,Phantom Stock,buy,35.4621,55.8174,1979.40222054
+2017-07-12,ASTE,"BREMMER, MICHAEL A",President-CEI Enterprises,True,Phantom Stock,buy,67.3267,55.8174,3758.00134458
+2017-07-12,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,85.2243,55.8174,4756.9988428199995
+2017-07-12,ASTE,"WILKEY, THOMAS H","President-Heatec, Inc.",True,Phantom Stock,buy,74.8512,55.8174,4177.99937088
+2017-07-12,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Phantom Stock,buy,158.911,55.8174,8869.9988514
+2017-07-12,ASTE,"SCHWARZ, JEFFREY M.",President-JCI,True,Phantom Stock,buy,19.528,55.8174,1090.0021872
+2017-07-12,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Phantom Stock,buy,31.5135,55.8174,1759.0016349
+2017-07-12,ASTE,"SWANSON, MALCOLM L","President-Astec, Inc.",True,Phantom Stock,buy,91.871,55.8174,5128.0003553999995
+2017-07-31,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,250.0,50.07,12517.5
+2017-07-31,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,250.0,50.07,12517.5
+2017-07-31,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,250.0,50.07,12517.5
+2017-08-29,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Phantom Stock,buy,54.2252,47.1849,2558.61063948
+2017-08-29,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Phantom Stock,buy,25.6779,47.1849,1211.6091437100001
+2017-10-10,ASTE,"MERWE, JACO VAN DER",Group Pres Energry,False,Phantom Stock,buy,37.7244,52.47,1979.3992680000001
+2017-10-10,ASTE,"SCHWARZ, JEFFREY M.",President-JCI,True,Phantom Stock,buy,24.2377,52.47,1271.752119
+2017-10-10,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Phantom Stock,buy,39.1128,52.47,2052.248616
+2017-10-13,ASTE,"BARKER, JOEL SCOTT",President-GEFCO,True,Phantom Stock,buy,94.9304,52.47,4980.998088
+2017-10-13,ASTE,"SWANSON, MALCOLM L","President-Astec, Inc.",True,Phantom Stock,buy,97.732,52.47,5127.9980399999995
+2017-10-13,ASTE,"CUMMING, LAWRENCE R",President-Peterson Pacific,True,Phantom Stock,buy,90.6613,52.47,4756.998411
+2017-10-13,ASTE,"IRVINE, JOHN J. III","President-Roadtec, Inc.",True,Phantom Stock,buy,97.732,52.47,5127.9980399999995
+2017-10-13,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Phantom Stock,buy,169.049,52.47,8870.00103
+2017-10-13,ASTE,"ANDERSON, MICHAEL G",President-CEI,True,Phantom Stock,buy,74.7665,52.47,3922.9982549999995
+2017-10-13,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,78.1208,52.47,4098.9983760000005
+2017-10-13,ASTE,"WILKEY, THOMAS H","President-Heatec, Inc.",True,Phantom Stock,buy,79.6265,52.47,4178.002455
+2017-10-13,ASTE,"COLWELL, CHRIS E",President-Carlson Paving,True,Phantom Stock,buy,68.5916,52.47,3599.001252
+2017-11-01,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,243.0,51.57,12531.51
+2017-11-01,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,243.0,51.57,12531.51
+2017-11-01,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,243.0,51.57,12531.51
+2017-11-24,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Phantom Stock,sell,4263.3164,54.5039,232367.37073395998
+2017-11-24,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Common Stock,sell,988.9236,54.5039,53900.19300204
+2017-11-29,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Phantom Stock,buy,21.9571,55.4759,1218.08988389
+2017-11-29,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Phantom Stock,buy,46.5235,55.4759,2580.93303365
+2018-01-10,ASTE,"BARKER, JOEL SCOTT",President-GEFCO,True,Phantom Stock,buy,70.7608,60.33,4268.999064
+2018-01-10,ASTE,"IRVINE, JOHN J. III","President-Roadtec, Inc.",True,Phantom Stock,buy,84.9992,60.33,5128.001736
+2018-01-10,ASTE,"SWANSON, MALCOLM L","President-Astec, Inc.",True,Phantom Stock,buy,84.9992,60.33,5128.001736
+2018-01-10,ASTE,"VOLNER, JODY D",President-Peterson Pacific,True,Phantom Stock,buy,30.2503,60.33,1825.000599
+2018-01-10,ASTE,"MERWE, JACO VAN DER",Group Pres Energry,False,Phantom Stock,buy,32.1443,61.5785,1979.39777755
+2018-01-10,ASTE,"WILKEY, THOMAS H","President-Heatec, Inc.",True,Phantom Stock,buy,69.2524,60.33,4177.997291999999
+2018-01-10,ASTE,"ANDERSON, MICHAEL G",President-CEI,True,Phantom Stock,buy,109.0171,60.33,6577.001643
+2018-01-10,ASTE,"COLWELL, CHRIS E",President-Carlson Paving,True,Phantom Stock,buy,69.6005,60.33,4198.998165
+2018-01-10,ASTE,"GONIGAM, TIMOTHY D",President-Astec Mobile Screens,True,Phantom Stock,buy,58.2463,60.33,3513.9992789999997
+2018-01-10,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Phantom Stock,buy,147.0247,60.33,8870.000151
+2018-01-11,ASTE,"SCHWARZ, JEFFREY M.",President-JCI,True,Phantom Stock,buy,17.701,61.5785,1090.0010285
+2018-01-31,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,199.0,63.04,12544.96
+2018-01-31,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,199.0,63.04,12544.96
+2018-01-31,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,199.0,63.04,12544.96
+2018-02-28,ASTE,"PATEK, RICHARD A",Group Pres Aggregate & Mining,False,Common Stock,sell,238.0,60.92,14498.960000000001
+2018-02-28,ASTE,"DORRIS, RICHARD J",Chief Operating Officer,True,Common Stock,sell,305.0,60.92,18580.600000000002
+2018-02-28,ASTE,"ELLIOTT, JEFFREY J",Grp Pres Agg & Mining-Domestic,False,Common Stock,sell,435.0,60.92,26500.2
+2018-03-29,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Phantom Stock,buy,46.6481,55.7427,2600.29104387
+2018-04-09,ASTE,"MERWE, JACO VAN DER",Group Pres Energry,False,Phantom Stock,buy,80.4679,54.2266,4363.500626139999
+2018-04-09,ASTE,"ANDERSON, STEPHEN C",VP-Administration & Corp Sec,True,Phantom Stock,buy,203.7008,54.2266,11046.00180128
+2018-04-09,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Phantom Stock,buy,324.3611,54.2266,17588.99962526
+2018-04-27,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,225.0,55.56,12501.0
+2018-04-27,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,1170.0,55.56,65005.200000000004
+2018-04-27,ASTE,"BAKER, JAMES B",Director,True,Common Stock,buy,1170.0,55.56,65005.200000000004
+2018-04-27,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,1170.0,55.56,65005.200000000004
+2018-04-27,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,225.0,55.56,12501.0
+2018-04-27,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,1170.0,55.56,65005.200000000004
+2018-04-27,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,1170.0,55.56,65005.200000000004
+2018-04-27,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,225.0,55.56,12501.0
+2018-04-27,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,1170.0,55.56,65005.200000000004
+2018-05-01,ASTE,"BROCK, BENJAMIN G","Director, Chief Executive Officer",True,Common Stock,sell,11000.0,54.4133,598546.3
+2018-05-02,ASTE,"BROCK, BENJAMIN G","Director, Chief Executive Officer",True,Common Stock,sell,25000.0,54.7356,1368390.0
+2018-05-03,ASTE,"BROCK, BENJAMIN G","Director, Chief Executive Officer",True,Common Stock,sell,5000.0,54.401,272005.0
+2018-05-04,ASTE,"BROCK, BENJAMIN G","Director, Chief Executive Officer",True,Common Stock,sell,17439.0,54.8014,955681.6146
+2018-05-30,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Phantom Stock,buy,43.7668,60.26,2637.387368
+2018-07-12,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Phantom Stock,buy,109.7,61.0301,6695.00197
+2018-07-12,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Phantom Stock,buy,149.6966,61.0301,9135.99846766
+2018-07-12,ASTE,"MERWE, JACO VAN DER",Group Pres Energry,False,Phantom Stock,buy,34.4093,61.0301,2100.00301993
+2018-07-31,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,266.0,47.0,12502.0
+2018-07-31,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,266.0,47.0,12502.0
+2018-07-31,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,266.0,47.0,12502.0
+2018-08-30,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Phantom Stock,buy,59.6502,48.9925,2922.4124235
+2018-10-05,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Phantom Stock,buy,179.7113,50.8371,9136.00132923
+2018-10-05,ASTE,"MERWE, JACO VAN DER",Group Pres Energry,False,Phantom Stock,buy,42.7188,50.8371,2171.69990748
+2018-10-05,ASTE,"SCHWARZ, JEFFREY M.",Group President-AAM US,True,Phantom Stock,buy,33.3369,50.8371,1694.75131899
+2018-10-31,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,353.0,35.43,12506.789999999999
+2018-10-31,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,353.0,35.43,12506.789999999999
+2018-10-31,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,353.0,35.43,12506.789999999999
+2018-11-29,ASTE,"SMITH, W NORMAN","Director, Vice Chairman",True,Phantom Stock,buy,82.8763,35.58,2948.738754
+2019-01-08,ASTE,"MERWE, JACO VAN DER",Group Pres Energry,False,Phantom Stock,buy,64.2462,36.1889,2324.99930718
+2019-01-08,ASTE,"SCHWARZ, JEFFREY M.",Group President-AAM,True,Phantom Stock,buy,48.3574,36.1889,1750.0011128599997
+2019-01-08,ASTE,"SMITH, W NORMAN","Director, VP-Business Development",True,Phantom Stock,buy,252.4531,36.1889,9135.999990589999
+2019-01-31,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,341.0,36.74,12528.34
+2019-01-31,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,341.0,36.74,12528.34
+2019-01-31,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,341.0,36.74,12528.34
+2019-02-28,ASTE,"SCHWARZ, JEFFREY M.",Group President-Agg & Mining,True,Common Stock,sell,194.0,39.09,7583.460000000001
+2019-02-28,ASTE,"SCHWARZ, JEFFREY M.",Group President-Agg & Mining,True,Common Stock,buy,1562.0,39.09,61058.58
+2019-02-28,ASTE,"MERWE, JACO VAN DER",Group President-Infrastructure,True,Common Stock,buy,299.0,39.09,11687.910000000002
+2019-04-08,ASTE,"MERWE, JACO VAN DER",Group President-Infrastructure,True,Phantom Stock,buy,69.4061,40.6261,2819.69915921
+2019-04-08,ASTE,"SCHWARZ, JEFFREY M.",Group President-Agg & Mining,True,Phantom Stock,buy,105.8556,40.6261,4300.50019116
+2019-04-08,ASTE,"BARKER, JOEL SCOTT",Group President-Energy,True,Phantom Stock,buy,121.4982,40.6261,4935.99802302
+2019-04-26,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,1968.0,33.03,65003.04
+2019-04-26,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,1968.0,33.03,65003.04
+2019-04-26,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,1968.0,33.03,65003.04
+2019-04-26,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,1968.0,33.03,65003.04
+2019-04-26,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,379.0,33.03,12518.37
+2019-04-26,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,1968.0,33.03,65003.04
+2019-04-26,ASTE,"BAKER, JAMES B",Director,True,Common Stock,buy,1968.0,33.03,65003.04
+2019-04-26,ASTE,"HOWELL, MARY L",Director,True,Common Stock,buy,1968.0,33.03,65003.04
+2019-04-26,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,1968.0,33.03,65003.04
+2019-04-26,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,379.0,33.03,12518.37
+2019-04-26,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,379.0,33.03,12518.37
+2019-04-26,ASTE,"SOUTHERN, WILLIAM BRADLEY",Director,True,Common Stock,buy,1968.0,33.03,65003.04
+2019-04-26,ASTE,"COOK, TRACEY H",Director,True,Common Stock,buy,1968.0,33.03,65003.04
+2019-05-08,ASTE,"MERWE, JACO VAN DER",Group President-Infrastructure,True,Common Stock,buy,2000.0,32.75,65500.0
+2019-07-11,ASTE,"BARKER, JOEL SCOTT",Group President-Energy,True,Phantom Stock,buy,309.1944,31.0743,9607.99954392
+2019-07-11,ASTE,"SCHWARZ, JEFFREY M.",Group President-Agg & Mining,True,Phantom Stock,buy,59.1325,31.0743,1837.5010447500001
+2019-07-11,ASTE,"MERWE, JACO VAN DER",Group President-Infrastructure,True,Phantom Stock,buy,74.8207,31.0743,2325.00087801
+2019-07-31,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,377.0,33.16,12501.319999999998
+2019-07-31,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,377.0,33.16,12501.319999999998
+2019-07-31,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,377.0,33.16,12501.319999999998
+2019-08-06,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,sell,650.0,29.8,19370.0
+2019-08-12,ASTE,"RUFFALO, BARRY","Director, CEO & President",True,Common Stock,buy,25383.0,29.55,750067.65
+2019-08-22,ASTE,"MERWE, JACO VAN DER",Group President-Infrastructure,True,Common Stock,buy,2000.0,28.0,56000.0
+2019-08-29,ASTE,"ANDERSON, STEPHEN C",VP-Administration & Corp Sec,True,Common Stock,buy,2200.0,27.7491,61048.02
+2019-10-07,ASTE,"BARKER, JOEL SCOTT",Group President-Energy,True,Phantom Stock,buy,245.8646,29.8945,7349.9992847
+2019-10-07,ASTE,"SCHWARZ, JEFFREY M.",Group President-Agg & Mining,True,Phantom Stock,buy,61.4662,29.8945,1837.5013159
+2019-10-07,ASTE,"MERWE, JACO VAN DER",Group President-Infrastructure,True,Phantom Stock,buy,77.7735,29.8945,2324.99989575
+2019-10-31,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,358.0,34.96,12515.68
+2019-10-31,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,358.0,34.96,12515.68
+2019-10-31,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,358.0,34.96,12515.68
+2019-11-07,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,sell,700.0,38.15,26705.0
+2020-01-13,ASTE,"BARKER, JOEL SCOTT",Sr VP-Innovation,True,Phantom Stock,buy,173.2898,42.4145,7350.0002221
+2020-01-13,ASTE,"MERWE, JACO VAN DER",Group President-Infrastructure,True,Phantom Stock,buy,54.8162,42.4145,2325.0017149
+2020-01-13,ASTE,"SCHWARZ, JEFFREY M.",Group President-Agg & Mining,True,Phantom Stock,buy,43.3224,42.4145,1837.4979348
+2020-01-31,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,299.0,41.89,12525.11
+2020-01-31,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,299.0,41.89,12525.11
+2020-01-31,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,299.0,41.89,12525.11
+2020-02-28,ASTE,"LEFFEW, ROBIN A",Corporate Controller,False,Common Stock,sell,408.0,38.65,15769.199999999999
+2020-02-28,ASTE,"MERWE, JACO VAN DER",Group President-Infrastructure,True,Common Stock,buy,5742.0,38.65,221928.3
+2020-02-28,ASTE,"LEFFEW, ROBIN A",Corporate Controller,False,Common Stock,buy,2207.0,38.65,85300.55
+2020-02-28,ASTE,"ANDERSON, STEPHEN C",VP-Administration & Corp Sec,True,Common Stock,sell,664.0,38.65,25663.6
+2020-02-28,ASTE,"MERWE, JACO VAN DER",Group President-Infrastructure,True,Common Stock,sell,317.0,38.65,12252.05
+2020-02-28,ASTE,"BARKER, JOEL SCOTT",Sr VP-Innovation,True,Common Stock,buy,5060.0,38.65,195569.0
+2020-02-28,ASTE,"SCHWARZ, JEFFREY M.",Group President-Agg & Mining,True,Common Stock,buy,6818.0,38.65,263515.7
+2020-02-28,ASTE,"RUFFALO, BARRY A.","Director, CEO & President",True,Common Stock,buy,1810.0,38.65,69956.5
+2020-02-28,ASTE,"ANDERSON, STEPHEN C",VP-Administration & Corp Sec,True,Common Stock,buy,3633.0,38.65,140415.44999999998
+2020-02-28,ASTE,"SCHWARZ, JEFFREY M.",Group President-Agg & Mining,True,Common Stock,sell,489.0,38.65,18899.85
+2020-03-16,ASTE,"LITCHFIELD, MATTHEW T SR",CIO,True,Common Stock,buy,2861.0,28.84,82511.24
+2020-03-16,ASTE,"WEYENBERG, REBECCA A",Chief Financial Officer,True,Common Stock,buy,8452.0,28.84,243755.68
+2020-03-16,ASTE,"RUFFALO, BARRY A.","Director, CEO & President",True,Common Stock,buy,19505.0,28.84,562524.2
+2020-03-16,ASTE,"ANDERSON, STEPHEN C",SrVP-Administration & Corp Sec,False,Common Stock,buy,2856.0,28.84,82367.04
+2020-03-16,ASTE,"AVERKAMP, TIMOTHY A",Group President,True,Common Stock,buy,6103.0,28.84,176010.52
+2020-03-16,ASTE,"MERWE, JACO VAN DER",Group President,True,Common Stock,buy,6799.0,28.84,196083.16
+2020-03-17,ASTE,"LEFFEW, ROBIN A",Corporate Controller,False,Common Stock,buy,740.0,28.84,21341.6
+2020-04-09,ASTE,"WEYENBERG, REBECCA A",Chief Financial Officer,True,Phantom Stock,buy,235.9173,39.7385,9374.999626050001
+2020-05-01,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,2494.0,40.11,100034.34
+2020-05-01,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,2494.0,40.11,100034.34
+2020-05-01,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,2494.0,40.11,100034.34
+2020-05-01,ASTE,"SOUTHERN, WILLIAM BRADLEY",Director,True,Common Stock,buy,2494.0,40.11,100034.34
+2020-05-01,ASTE,"HOWELL, MARY L",Director,True,Common Stock,buy,2494.0,40.11,100034.34
+2020-05-01,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,312.0,40.11,12514.32
+2020-05-01,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,312.0,40.11,12514.32
+2020-05-01,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,2494.0,40.11,100034.34
+2020-05-01,ASTE,"COOK, TRACEY H",Director,True,Common Stock,buy,2494.0,40.11,100034.34
+2020-05-01,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,2494.0,40.11,100034.34
+2020-05-01,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,buy,2494.0,40.11,100034.34
+2020-05-01,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,312.0,40.11,12514.32
+2020-05-01,ASTE,"BAKER, JAMES B",Director,True,Common Stock,buy,2494.0,40.11,100034.34
+2020-05-18,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,sell,500.0,39.25,19625.0
+2020-05-18,ASTE,"WEYENBERG, REBECCA A",Chief Financial Officer,True,Common Stock,buy,50.0,39.37,1968.4999999999998
+2020-07-08,ASTE,"WEYENBERG, REBECCA A",Chief Financial Officer,True,Phantom Stock,buy,213.5652,43.8976,9374.999723519999
+2020-07-31,ASTE,"POTTS, CHARLES F",Director,True,Deferred Common Stock,buy,276.0,45.3,12502.8
+2020-07-31,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,276.0,45.3,12502.8
+2020-07-31,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,276.0,45.3,12502.8
+2020-08-12,ASTE,"RUFFALO, BARRY A.","Director, CEO & President",True,Common Stock,sell,3131.0,55.37,173363.47
+2020-08-12,ASTE,"LOWE, ROBERT FRANK",VP - Corporate Controller,True,Common Stock,buy,469.0,55.9,26217.1
+2020-08-20,ASTE,"FRIERSON, DANIEL K",Director,True,Common Stock,sell,100.0,52.34,5234.0
+2020-08-21,ASTE,"WEYENBERG, REBECCA A",Chief Financial Officer,True,Common Stock,buy,190.0,52.2,9918.0
+2020-10-30,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,468.0,50.8,23774.399999999998
+2020-10-30,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,468.0,50.8,23774.399999999998
+2020-10-30,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,468.0,50.8,23774.399999999998
+2020-11-04,ASTE,"AVERKAMP, TIMOTHY A",Group President,True,Common Stock,sell,267.0,48.51,12952.17
+2021-01-13,ASTE,"WEYENBERG, REBECCA A",Chief Financial Officer,True,Phantom Stock,buy,140.91,66.53,9374.7423
+2021-02-28,ASTE,"RUFFALO, BARRY A.","Director, President & CEO",True,Common Stock,sell,149.0,67.92,10120.08
+2021-02-28,ASTE,"ANDERSON, STEPHEN C",SVP of Admin/IR,True,Common Stock,sell,621.0,67.92,42178.32
+2021-02-28,ASTE,"MERWE, JACO VAN DER",Group President,True,Common Stock,sell,886.0,67.92,60177.12
+2021-03-02,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,274.0,59.47,16294.779999999999
+2021-03-02,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,274.0,59.47,16294.779999999999
+2021-03-02,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,274.0,59.47,16294.779999999999
+2021-03-10,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,sell,800.0,73.78,59024.0
+2021-03-16,ASTE,"WEYENBERG, REBECCA A",Chief Financial Officer,True,Common Stock,sell,2056.0,77.23,158784.88
+2021-03-16,ASTE,"AVERKAMP, TIMOTHY A",Group President,True,Common Stock,sell,1481.0,77.23,114377.63
+2021-03-16,ASTE,"AVERKAMP, TIMOTHY A",Group President,True,Common Stock,buy,4068.0,77.23,314171.64
+2021-03-16,ASTE,"SRINIVASAN, REUBEN",SVP and CHRO,True,Common Stock,sell,242.0,77.23,18689.66
+2021-03-16,ASTE,"RUFFALO, BARRY A.","Director, President & CEO",True,Common Stock,sell,4788.0,77.23,369777.24
+2021-03-16,ASTE,"MERWE, JACO VAN DER",Group President,True,Common Stock,buy,4532.0,77.23,350006.36000000004
+2021-03-16,ASTE,"MERWE, JACO VAN DER",Group President,True,Common Stock,sell,1686.0,77.23,130209.78000000001
+2021-03-16,ASTE,"LITCHFIELD, MATTHEW T SR",Chief Information Officer,True,Common Stock,buy,1908.0,77.23,147354.84
+2021-03-16,ASTE,"LITCHFIELD, MATTHEW T SR",Chief Information Officer,True,Common Stock,sell,690.0,77.23,53288.700000000004
+2021-03-16,ASTE,"RUFFALO, BARRY A.","Director, President & CEO",True,Common Stock,buy,13004.0,77.23,1004298.92
+2021-03-16,ASTE,"WEYENBERG, REBECCA A",Chief Financial Officer,True,Common Stock,buy,5634.0,77.23,435113.82
+2021-03-30,ASTE,"SRINIVASAN, REUBEN",SVP and CHRO,True,Common Stock,buy,1966.0,73.66,144815.56
+2021-03-30,ASTE,"SRINIVASAN, REUBEN",SVP and CHRO,True,Common Stock,sell,479.0,73.66,35283.14
+2021-04-28,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,1263.0,79.2,100029.6
+2021-04-28,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,206.0,79.2,16315.2
+2021-04-28,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,1263.0,79.2,100029.6
+2021-04-28,ASTE,"HOWELL, MARY L",Director,True,Common Stock,buy,1263.0,79.2,100029.6
+2021-04-28,ASTE,"BAKER, JAMES B",Director,True,Common Stock,buy,1263.0,79.2,100029.6
+2021-04-28,ASTE,"COOK, TRACEY H",Director,True,Common Stock,buy,1263.0,79.2,100029.6
+2021-04-28,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,1263.0,79.2,100029.6
+2021-04-28,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,206.0,79.2,16315.2
+2021-04-28,ASTE,"SOUTHERN, WILLIAM BRADLEY",Director,True,Common Stock,buy,1263.0,79.2,100029.6
+2021-04-28,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,206.0,79.2,16315.2
+2021-04-28,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,1263.0,79.2,100029.6
+2021-04-28,ASTE,"TELLOCK, GLEN E",Director,True,Common Stock,buy,1263.0,79.2,100029.6
+2021-04-30,ASTE,"RUFFALO, BARRY A.","Director, President & CEO",True,Common Stock,buy,13251.0,67.92,900007.92
+2021-04-30,ASTE,"WEYENBERG, REBECCA A",Chief Financial Officer,True,Common Stock,buy,5890.0,67.92,400048.8
+2021-04-30,ASTE,"MERWE, JACO VAN DER",Group President,True,Common Stock,buy,3166.0,67.92,215034.72
+2021-04-30,ASTE,"LITCHFIELD, MATTHEW T SR",Chief Information Officer,True,Common Stock,buy,1436.0,67.92,97533.12
+2021-04-30,ASTE,"PASRICHA, ANSHU",GC and Corp Secretary,True,Common Stock,buy,2945.0,67.92,200024.4
+2021-04-30,ASTE,"PALM, JAMIE E","VP, CAO & Corporate Controller",True,Common Stock,buy,405.0,67.92,27507.600000000002
+2021-04-30,ASTE,"AVERKAMP, TIMOTHY A",Group President,True,Common Stock,buy,3166.0,67.92,215034.72
+2021-04-30,ASTE,"SRINIVASAN, REUBEN",SVP and CHRO,True,Common Stock,buy,1657.0,67.92,112543.44
+2021-07-30,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,266.0,61.31,16308.460000000001
+2021-07-30,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,266.0,61.31,16308.460000000001
+2021-07-30,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,266.0,61.31,16308.460000000001
+2021-08-12,ASTE,"RUFFALO, BARRY A.","Director, President & CEO",True,Common Stock,sell,3330.0,64.01,213153.30000000002
+2021-08-31,ASTE,"RUFFALO, BARRY A.","Director, President & CEO",True,Common Stock,buy,24.0,61.48,1475.52
+2021-08-31,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,33.0,61.48,2028.84
+2021-10-07,ASTE,"PASRICHA, ANSHU",GC and Corp Secretary,True,Common Stock,sell,346.0,53.03,18348.38
+2021-10-31,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,305.0,53.38,16280.900000000001
+2021-10-31,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,305.0,53.38,16280.900000000001
+2021-10-31,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,305.0,53.38,16280.900000000001
+2021-11-05,ASTE,"AVERKAMP, TIMOTHY A",Group President,True,Common Stock,sell,267.0,61.5,16420.5
+2021-11-09,ASTE,"PALM, JAMIE E","VP, CAO & Corporate Controller",True,Common Stock,sell,152.0,74.48,11320.960000000001
+2021-11-16,ASTE,"LITCHFIELD, MATTHEW T SR",Chief Information Officer,True,Common Stock,sell,1081.0,71.11,76869.91
+2021-12-02,ASTE,"RUFFALO, BARRY A.","Director, President & CEO",True,Common Stock,buy,26.0,61.74,1605.24
+2021-12-02,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,36.0,61.74,2222.64
+2021-12-04,ASTE,"WEYENBERG, REBECCA A",Chief Financial Officer,True,Common Stock,sell,701.0,63.97,44842.97
+2022-01-31,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,258.0,63.09,16277.220000000001
+2022-01-31,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,258.0,63.09,16277.220000000001
+2022-01-31,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,258.0,63.09,16277.220000000001
+2022-02-28,ASTE,"RUFFALO, BARRY A.","Director, President & CEO",True,Common Stock,sell,164.0,50.89,8345.960000000001
+2022-02-28,ASTE,"MERWE, JACO VAN DER",Group President,True,Common Stock,sell,623.0,50.89,31704.47
+2022-03-16,ASTE,"AVERKAMP, TIMOTHY A",Group President,True,Common Stock,sell,1278.0,42.17,53893.26
+2022-03-16,ASTE,"AVERKAMP, TIMOTHY A",Group President,True,Common Stock,buy,3265.0,42.17,137685.05000000002
+2022-03-16,ASTE,"RUFFALO, BARRY A.","Director, President & CEO",True,Common Stock,sell,4527.0,42.17,190903.59
+2022-03-16,ASTE,"RUFFALO, BARRY A.","Director, President & CEO",True,Common Stock,buy,10436.0,42.17,440086.12
+2022-03-16,ASTE,"MERWE, JACO VAN DER",Group President,True,Common Stock,sell,1433.0,42.17,60429.61
+2022-03-16,ASTE,"MERWE, JACO VAN DER",Group President,True,Common Stock,buy,3637.0,42.17,153372.29
+2022-03-16,ASTE,"LITCHFIELD, MATTHEW T SR",Chief Information Officer,True,Common Stock,buy,1531.0,42.17,64562.270000000004
+2022-03-16,ASTE,"WEYENBERG, REBECCA A",Chief Financial Officer,True,Common Stock,buy,4522.0,42.17,190692.74000000002
+2022-03-16,ASTE,"LITCHFIELD, MATTHEW T SR",Chief Information Officer,True,Common Stock,sell,653.0,42.17,27537.010000000002
+2022-03-16,ASTE,"WEYENBERG, REBECCA A",Chief Financial Officer,True,Common Stock,sell,1774.0,42.17,74809.58
+2022-03-31,ASTE,"GEHL, WILLIAM D",Director,True,Common Stock,buy,51.0,42.8,2182.7999999999997
+2022-03-31,ASTE,"WEYENBERG, REBECCA A",Chief Financial Officer,True,Common Stock,buy,33.0,42.8,1412.3999999999999
+2022-03-31,ASTE,"RUFFALO, BARRY A.","Director, President & CEO",True,Common Stock,buy,107.0,42.8,4579.599999999999
+2022-04-29,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,411.0,39.58,16267.38
+2022-04-29,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,411.0,39.58,16267.38
+2022-04-29,ASTE,"SANSOM, WILLIAM B",Director,True,Common Stock,buy,411.0,39.58,16267.38
+2022-04-30,ASTE,"MERWE, JACO VAN DER",Group President,True,Common Stock,sell,257.0,39.1,10048.7
+2022-04-30,ASTE,"WEYENBERG, REBECCA A",Chief Financial Officer,True,Common Stock,sell,479.0,39.1,18728.9
+2022-04-30,ASTE,"LITCHFIELD, MATTHEW T SR",Chief Information Officer,True,Common Stock,sell,117.0,39.1,4574.7
+2022-04-30,ASTE,"AVERKAMP, TIMOTHY A",Group President,True,Common Stock,sell,257.0,39.1,10048.7
+2022-04-30,ASTE,"RUFFALO, BARRY A.","Director, President & CEO",True,Common Stock,sell,1736.0,39.1,67877.6
+2022-07-31,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,382.0,49.13,18767.66
+2022-07-31,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,382.0,49.13,18767.66
+2022-08-12,ASTE,"RUFFALO, BARRY A.","Director, President & CEO",True,Common Stock,sell,3330.0,44.43,147951.9
+2022-10-31,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,433.0,43.4,18792.2
+2022-10-31,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,433.0,43.4,18792.2
+2022-11-05,ASTE,"AVERKAMP, TIMOTHY A",Group President,True,Common Stock,sell,267.0,44.07,11766.69
+2022-11-09,ASTE,"PALM, JAMIE E","VP, CAO & Corporate Controller",True,Common Stock,sell,152.0,44.18,6715.36
+2023-01-31,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,435.0,43.11,18752.85
+2023-01-31,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,435.0,43.11,18752.85
+2023-02-28,ASTE,"PASRICHA, ANSHU",GC and Corp Secretary,True,Common Stock,sell,448.0,44.98,20151.039999999997
+2023-02-28,ASTE,"WEYENBERG, REBECCA A",Chief Financial Officer,True,Common Stock,sell,584.0,44.98,26268.32
+2023-02-28,ASTE,"MERWE, JACO VAN DER",Chief Executive Officer,True,Common Stock,sell,896.0,44.98,40302.079999999994
+2023-02-28,ASTE,"AVERKAMP, TIMOTHY A",Group President,True,Common Stock,sell,419.0,44.98,18846.62
+2023-03-16,ASTE,"MERWE, JACO VAN DER",Chief Executive Officer,True,Common Stock,sell,822.0,39.66,32600.519999999997
+2023-03-16,ASTE,"AVERKAMP, TIMOTHY A",Group President,True,Common Stock,sell,738.0,39.66,29269.079999999998
+2023-03-16,ASTE,"WEYENBERG, REBECCA A",Chief Financial Officer,True,Common Stock,sell,1022.0,39.66,40532.52
+2023-04-26,ASTE,"DOREY, WILLIAM GLENWOOD",Director,True,Common Stock,buy,464.0,40.49,18787.36
+2023-04-26,ASTE,"POTTS, CHARLES F",Director,True,Common Stock,buy,464.0,40.49,18787.36
+2023-04-30,ASTE,"MERWE, JACO VAN DER",Chief Executive Officer,True,Common Stock,sell,260.0,41.28,10732.800000000001
+2023-04-30,ASTE,"WEYENBERG, REBECCA A",Chief Financial Officer,True,Common Stock,sell,484.0,41.28,19979.52
+2023-04-30,ASTE,"AVERKAMP, TIMOTHY A",Group President,True,Common Stock,sell,260.0,41.28,10732.800000000001
+2024-02-27,ASTE,"WEYENBERG, REBECCA A",Chief Financial Officer,True,Common Stock,sell,733.0,35.38,25933.54
+2024-02-27,ASTE,"MERWE, JACO VAN DER",Chief Executive Officer,True,Common Stock,sell,1886.0,35.38,66726.68000000001
+2024-02-27,ASTE,"SNYMAN, BAREND",Group President,True,Common Stock,sell,235.0,35.38,8314.300000000001
+2024-02-27,ASTE,"NORRIS, MICHAEL PAUL",GROUP PRESIDENT,True,Common Stock,sell,391.0,35.38,13833.580000000002
+2024-02-28,ASTE,"WEYENBERG, REBECCA A",Chief Financial Officer,True,Common Stock,sell,592.0,36.33,21507.36
+2024-02-28,ASTE,"MERWE, JACO VAN DER",Chief Executive Officer,True,Common Stock,sell,638.0,36.33,23178.539999999997
+2024-02-28,ASTE,"NORRIS, MICHAEL PAUL",GROUP PRESIDENT,True,Common Stock,sell,296.0,36.33,10753.68
+2024-04-30,ASTE,"MERWE, JACO VAN DER",Chief Executive Officer,True,Common Stock,sell,416.0,42.92,17854.72
+2024-04-30,ASTE,"NORRIS, MICHAEL PAUL",GROUP PRESIDENT,True,Common Stock,sell,142.0,42.92,6094.64
+2024-05-08,ASTE,"NORRIS, MICHAEL PAUL",GROUP PRESIDENT,True,Common Stock,buy,1000.0,33.46,33460.0
+2024-05-16,ASTE,"MERWE, JACO VAN DER",Chief Executive Officer,True,Common Stock,buy,2000.0,33.7,67400.0
+2024-08-15,ASTE,"SNYMAN, BAREND",Group President,True,Common Stock,sell,389.0,32.0,12448.0
+2025-02-26,ASTE,"HARRIS, BRIAN JAMES",Chief Financial Officer,True,Common Stock,sell,611.0,31.17,19044.870000000003
+2025-02-26,ASTE,"GILBERT, EDWARD TERRELL JR",GC & CORPORATE SECRETARY,True,Common Stock,sell,554.0,31.17,17268.18
+2025-02-26,ASTE,"PUTNEY, ROBERT GERALD","VP, Chief Accounting Officer",True,Common Stock,sell,56.0,31.17,1745.52
+2025-02-26,ASTE,"SNYMAN, BAREND",Group President,True,Common Stock,sell,881.0,31.17,27460.77
+2025-02-26,ASTE,"NORRIS, MICHAEL PAUL",GROUP PRESIDENT,True,Common Stock,sell,811.0,31.17,25278.870000000003
+2025-02-26,ASTE,"MERWE, JACO VAN DER",Chief Executive Officer,True,Common Stock,sell,4086.0,31.17,127360.62000000001
+2025-02-27,ASTE,"MERWE, JACO VAN DER",Chief Executive Officer,True,Common Stock,sell,1948.0,35.49,69134.52
+2025-02-27,ASTE,"PUTNEY, ROBERT GERALD","VP, Chief Accounting Officer",True,Common Stock,sell,40.0,35.49,1419.6000000000001
+2025-02-27,ASTE,"NORRIS, MICHAEL PAUL",GROUP PRESIDENT,True,Common Stock,sell,568.0,35.49,20158.32
+2025-02-27,ASTE,"SNYMAN, BAREND",Group President,True,Common Stock,sell,287.0,35.49,10185.630000000001
+2025-02-28,ASTE,"MERWE, JACO VAN DER",Chief Executive Officer,True,Common Stock,sell,630.0,35.85,22585.5
+2025-02-28,ASTE,"NORRIS, MICHAEL PAUL",GROUP PRESIDENT,True,Common Stock,sell,385.0,35.85,13802.25
+2025-05-01,ASTE,"GILBERT, EDWARD TERRELL JR",GC & CORPORATE SECRETARY,True,Common Stock,sell,512.0,36.4,18636.8
+2025-08-15,ASTE,"SNYMAN, BAREND",Group President,True,Common Stock,sell,493.0,45.73,22544.89
+2025-09-11,ASTE,"SNYMAN, BAREND",Group President,True,Common Stock,sell,2498.0,47.2166,117947.0668
+2026-02-20,ASTE,"GILBERT, EDWARD TERRELL JR",GC & CORPORATE SECRETARY,True,Common Stock,sell,487.0,57.44,27973.28
+2026-02-20,ASTE,"SNYMAN, BAREND",Group President,True,Common Stock,sell,648.0,57.44,37221.119999999995
+2026-02-20,ASTE,"NORRIS, MICHAEL PAUL",GROUP PRESIDENT,True,Common Stock,sell,597.0,57.44,34291.68
+2026-02-20,ASTE,"HARRIS, BRIAN JAMES",Chief Financial Officer,True,Common Stock,sell,1191.0,57.44,68411.04
+2026-02-21,ASTE,"PUTNEY, ROBERT GERALD","VP, Chief Accounting Officer",True,Common Stock,sell,75.0,58.72,4404.0
+2026-02-21,ASTE,"MERWE, JACO VAN DER",Chief Executive Officer,True,Common Stock,sell,3377.0,58.72,198297.44
+2026-02-26,ASTE,"SNYMAN, BAREND",Group President,True,Common Stock,sell,856.0,61.31,52481.36
+2026-02-26,ASTE,"HARRIS, BRIAN JAMES",Chief Financial Officer,True,Common Stock,sell,535.0,61.31,32800.85
+2026-02-26,ASTE,"PUTNEY, ROBERT GERALD","VP, Chief Accounting Officer",True,Common Stock,sell,52.0,61.31,3188.12
+2026-02-26,ASTE,"MERWE, JACO VAN DER",Chief Executive Officer,True,Common Stock,sell,4063.0,61.31,249102.53
+2026-02-26,ASTE,"GILBERT, EDWARD TERRELL JR",GC & CORPORATE SECRETARY,True,Common Stock,sell,501.0,61.31,30716.31
+2026-02-26,ASTE,"NORRIS, MICHAEL PAUL",GROUP PRESIDENT,True,Common Stock,sell,815.0,61.31,49967.65
+2026-02-27,ASTE,"SNYMAN, BAREND",Group President,True,Common Stock,sell,254.0,62.34,15834.36
+2026-02-27,ASTE,"SNYMAN, BAREND",Group President,True,Common Stock,sell,325.0,62.34,20260.5
+2026-02-27,ASTE,"SNYMAN, BAREND",Group President,True,Common Stock,buy,1071.0,62.34,66766.14
+2026-02-27,ASTE,"SNYMAN, BAREND",Group President,True,Common Stock,buy,1477.0,62.34,92076.18000000001
+2026-02-27,ASTE,"PUTNEY, ROBERT GERALD","VP, Chief Accounting Officer",True,Common Stock,sell,42.0,62.34,2618.28
+2026-02-27,ASTE,"PUTNEY, ROBERT GERALD","VP, Chief Accounting Officer",True,Common Stock,sell,53.0,62.34,3304.02
+2026-02-27,ASTE,"PUTNEY, ROBERT GERALD","VP, Chief Accounting Officer",True,Common Stock,sell,73.0,62.34,4550.820000000001
+2026-02-27,ASTE,"MERWE, JACO VAN DER",Chief Executive Officer,True,Common Stock,buy,9114.0,62.34,568166.76
+2026-02-27,ASTE,"SNYMAN, BAREND",Group President,True,Common Stock,sell,449.0,62.34,27990.66
+2026-02-27,ASTE,"MERWE, JACO VAN DER",Chief Executive Officer,True,Common Stock,sell,2601.0,62.34,162146.34
+2026-02-27,ASTE,"MERWE, JACO VAN DER",Chief Executive Officer,True,Common Stock,sell,3587.0,62.34,223613.58000000002
+2026-02-27,ASTE,"NORRIS, MICHAEL PAUL",GROUP PRESIDENT,True,Common Stock,sell,920.0,62.34,57352.8
+2026-02-27,ASTE,"NORRIS, MICHAEL PAUL",GROUP PRESIDENT,True,Common Stock,sell,667.0,62.34,41580.78
+2026-02-27,ASTE,"NORRIS, MICHAEL PAUL",GROUP PRESIDENT,True,Common Stock,sell,521.0,62.34,32479.140000000003
+2026-02-27,ASTE,"SNYMAN, BAREND",Group President,True,Common Stock,sell,539.0,62.34,33601.26
+2026-02-27,ASTE,"MERWE, JACO VAN DER",Chief Executive Officer,True,Common Stock,buy,6608.0,62.34,411942.72000000003
+2026-02-27,ASTE,"MERWE, JACO VAN DER",Chief Executive Officer,True,Common Stock,sell,2033.0,62.34,126737.22
+2026-03-03,ASTE,"GILBERT, EDWARD TERRELL JR",GC & CORPORATE SECRETARY,True,Common Stock,sell,975.0,61.07,59543.25

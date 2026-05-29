@@ -1,0 +1,1961 @@
+date,symbol,insider_name,insider_title,is_executive,security_type,transaction_type,shares,price,value
+2003-09-29,AES,"LURASCHI, WILLIAM R",Executive Vice President,True,Common Stock,buy,13427.0,7.4595,100158.7065
+2003-09-30,AES,"SANT, ROGER W",Director,True,Director Deferred Units,buy,997.37,6.768,6750.200159999999
+2003-09-30,AES,"LADER, PHILIP",Director,True,Units,buy,702.0,6.768,4751.1359999999995
+2003-11-03,AES,"SANT, ROGER W",Director,True,,sell,2900.0,8.62,24997.999999999996
+2003-11-03,AES,"SANT, ROGER W",Director,True,,sell,10000.0,8.61,86100.0
+2003-11-03,AES,"SANT, ROGER W",Director,True,Common Stock,sell,16500.0,8.63,142395.0
+2003-11-25,AES,"RUGGIRELLO, JOHN R",Executive VP and COO,True,Stock Option,sell,18724.0,8.48,158779.52000000002
+2003-11-25,AES,"SHARP, BARRY J",Executive VP and CFO,True,Common Stock,sell,25844.0,8.47,218898.68000000002
+2003-12-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,17700.0,8.85,156645.0
+2003-12-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,4100.0,8.82,36162.0
+2003-12-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,19900.0,8.83,175717.0
+2003-12-01,AES,"SANT, ROGER W",Director,True,,sell,5000.0,8.9,44500.0
+2003-12-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,10400.0,8.86,92144.0
+2003-12-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,6100.0,8.87,54106.99999999999
+2003-12-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,800.0,8.84,7072.0
+2003-12-02,AES,"SANT, ROGER W",Director,True,Common Stock,sell,11800.0,8.84,104312.0
+2003-12-02,AES,"SANT, ROGER W",Director,True,Common Stock,sell,400.0,8.82,3528.0
+2003-12-02,AES,"SANT, ROGER W",Director,True,,buy,66104.0,5.34,352995.36
+2003-12-31,AES,"LADER, PHILIP",Director,True,Units,buy,1008.0,8.432,8499.456
+2004-01-02,AES,"SANT, ROGER W",Director,True,Common Stock,sell,30000.0,9.45,283500.0
+2004-01-02,AES,"SANT, ROGER W",Director,True,Common Stock,sell,10000.0,9.49,94900.0
+2004-01-02,AES,"SANT, ROGER W",Director,True,Common Stock,sell,20000.0,9.46,189200.00000000003
+2004-01-05,AES,"SANT, ROGER W",Director,True,Common Stock,sell,7800.0,9.58,74724.0
+2004-01-05,AES,"SANT, ROGER W",Director,True,Common Stock,sell,300.0,9.57,2871.0
+2004-01-05,AES,"SANT, ROGER W",Director,True,Common Stock,sell,3400.0,9.56,32504.0
+2004-01-05,AES,"SANT, ROGER W",Director,True,Common Stock,sell,25800.0,9.55,246390.00000000003
+2004-01-05,AES,"SANT, ROGER W",Director,True,Common Stock,sell,2700.0,9.6,25920.0
+2004-02-02,AES,"SANT, ROGER W",Director,True,Common Stock,sell,7900.0,9.35,73865.0
+2004-02-02,AES,"SANT, ROGER W",Director,True,Common Stock,sell,2000.0,9.33,18660.0
+2004-02-02,AES,"SANT, ROGER W",Director,True,Common Stock,sell,700.0,9.87,6908.999999999999
+2004-02-02,AES,"SANT, ROGER W",Director,True,Common Stock,sell,10000.0,9.75,97500.0
+2004-02-02,AES,"SANT, ROGER W",Director,True,Common Stock,sell,3000.0,9.32,27960.0
+2004-02-02,AES,"SANT, ROGER W",Director,True,Common Stock,sell,5000.0,9.31,46550.0
+2004-02-02,AES,"SANT, ROGER W",Director,True,Common Stock,sell,7600.0,9.26,70376.0
+2004-02-02,AES,"SANT, ROGER W",Director,True,Common Stock,sell,2700.0,9.36,25272.0
+2004-02-02,AES,"SANT, ROGER W",Director,True,Common Stock,sell,3900.0,9.37,36543.0
+2004-02-02,AES,"SANT, ROGER W",Director,True,Common Stock,sell,7000.0,9.47,66290.0
+2004-02-02,AES,"SANT, ROGER W",Director,True,Common Stock,sell,22400.0,9.25,207200.0
+2004-02-02,AES,"SANT, ROGER W",Director,True,Common Stock,sell,31000.0,9.45,292950.0
+2004-02-02,AES,"SANT, ROGER W",Director,True,Common Stock,sell,3000.0,9.38,28140.000000000004
+2004-02-02,AES,"SANT, ROGER W",Director,True,Common Stock,sell,24000.0,9.43,226320.0
+2004-02-02,AES,"SANT, ROGER W",Director,True,Common Stock,sell,42000.0,9.44,396480.0
+2004-02-02,AES,"SANT, ROGER W",Director,True,Common Stock,sell,4000.0,9.46,37840.0
+2004-02-02,AES,"SANT, ROGER W",Director,True,Common Stock,sell,7200.0,9.82,70704.0
+2004-02-02,AES,"SANT, ROGER W",Director,True,Common Stock,sell,5000.0,9.83,49150.0
+2004-02-02,AES,"SANT, ROGER W",Director,True,Common Stock,sell,4000.0,9.84,39360.0
+2004-02-02,AES,"SANT, ROGER W",Director,True,Common Stock,sell,3100.0,9.85,30535.0
+2004-02-02,AES,"SANT, ROGER W",Director,True,Common Stock,sell,2000.0,9.42,18840.0
+2004-02-02,AES,"SANT, ROGER W",Director,True,Common Stock,sell,2500.0,9.39,23475.0
+2004-02-04,AES,"LURASCHI, WILLIAM R",ExecVP&GenCounsel,False,Units,buy,2230.0,8.97,20003.100000000002
+2004-02-04,AES,"RUGGIRELLO, JOHN R",Executive VP and COO,True,Stock Option Grant,buy,60345.0,8.97,541294.65
+2004-02-04,AES,"RUGGIRELLO, JOHN R",Executive VP and COO,True,Units,buy,2787.0,8.97,24999.390000000003
+2004-02-04,AES,"HEMPHILL, ROBERT F JR",Executive VP (See Remarks),True,Stock Option Grant,buy,63718.0,8.97,571550.4600000001
+2004-02-04,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Units,buy,6800.0,8.97,60996.00000000001
+2004-02-04,AES,"SHARP, BARRY J",Executive VP and CFO,True,Stock Option Grant,buy,68403.0,8.97,613574.91
+2004-02-04,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Stock Option Grant,buy,168666.0,8.97,1512934.02
+2004-02-04,AES,"SHARP, BARRY J",Executive VP and CFO,True,Units,buy,3344.0,8.97,29995.680000000004
+2004-02-04,AES,"LURASCHI, WILLIAM R",ExecVP&GenCounsel,False,Stock Option Grant,buy,56222.0,8.97,504311.34
+2004-02-04,AES,"BRANDT, JOSEPH C",Executive VP & COO,True,Stock Option Grant,buy,68403.0,8.97,613574.91
+2004-02-04,AES,"BRANDT, JOSEPH C",Executive VP & COO,True,Units,buy,2169.0,8.97,19455.93
+2004-02-18,AES,"ROSSOTTI, CHARLES O",Director,True,Common Stock,buy,25000.0,9.3,232500.00000000003
+2004-03-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,5100.0,9.05,46155.0
+2004-03-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,8600.0,8.97,77142.0
+2004-03-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,1700.0,8.94,15198.0
+2004-03-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,5000.0,8.96,44800.00000000001
+2004-03-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,1900.0,9.04,17176.0
+2004-03-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,21400.0,9.06,193884.0
+2004-03-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,8900.0,9.01,80189.0
+2004-03-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,2200.0,9.03,19866.0
+2004-03-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,45800.0,8.99,411742.0
+2004-03-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,49100.0,8.98,440918.0
+2004-03-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,6300.0,9.02,56826.0
+2004-03-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,40000.0,9.0,360000.0
+2004-03-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,4000.0,9.1,36400.0
+2004-03-11,AES,"DARMAN, RICHARD",Director,True,Common Stock,buy,5000.0,8.017,40085.0
+2004-03-11,AES,"ODEEN, PHILIP A",Director,True,Common Stock,buy,3000.0,8.0,24000.0
+2004-03-12,AES,"DARMAN, RICHARD",Director,True,Common Stock,buy,5000.0,7.95,39750.0
+2004-03-15,AES,"BRANDT, JOSEPH C",Executive VP & COO,True,Common Stock,buy,2000.0,8.01,16020.0
+2004-03-31,AES,"LADER, PHILIP",Director,True,Units,buy,596.0,9.224,5497.504
+2004-03-31,AES,"SANT, ROGER W",Director,True,Director Deferred Units,buy,650.45,9.224,5999.750800000001
+2004-04-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,4900.0,8.46,41454.00000000001
+2004-04-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,33200.0,8.48,281536.0
+2004-04-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,16300.0,8.52,138876.0
+2004-04-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,41600.0,8.49,353184.0
+2004-04-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,49900.0,8.5,424150.0
+2004-04-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,28200.0,8.51,239982.0
+2004-04-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,5100.0,8.45,43095.0
+2004-04-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,5900.0,8.53,50326.99999999999
+2004-04-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,200.0,8.62,1723.9999999999998
+2004-04-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,6800.0,8.47,57596.00000000001
+2004-04-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,2500.0,8.6,21500.0
+2004-04-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,5400.0,8.56,46224.0
+2004-04-28,AES,"ROSSOTTI, CHARLES O",Director,True,Common Stock,buy,18636.0,8.58,159896.88
+2004-04-28,AES,"DARMAN, RICHARD",Director,True,Units,buy,46591.0,8.58,399750.78
+2004-04-28,AES,"ODEEN, PHILIP A",Director,True,Units,buy,11643.0,8.58,99896.94
+2004-04-28,AES,"ODEEN, PHILIP A",Director,True,Stock Option Grant,buy,6329.0,8.58,54302.82
+2004-04-28,AES,"LADER, PHILIP",Director,True,Units,buy,14557.0,8.58,124899.06
+2004-04-28,AES,"SANDSTROM, SVEN",Director,True,Common Stock,buy,18636.0,8.58,159896.88
+2004-04-28,AES,"MCARTHUR, JOHN H",Director,True,Common Stock,buy,20385.0,8.58,174903.3
+2004-04-28,AES,"SANT, ROGER W",Director,True,Director Deferred Units,buy,18636.0,9.58,178532.88
+2004-04-28,AES,"LADER, PHILIP",Director,True,Stock Option Grant,buy,6329.0,8.58,54302.82
+2004-04-28,AES,"EMERSON, ALICE F",Director,True,Units,buy,11305.0,8.58,96996.9
+2004-05-03,AES,"SANT, ROGER W",Director,True,Common Stock,sell,10000.0,8.8,88000.0
+2004-05-03,AES,"SANT, ROGER W",Director,True,Common Stock,sell,10000.0,8.86,88600.0
+2004-05-03,AES,"SANT, ROGER W",Director,True,Common Stock,sell,20000.0,8.9,178000.0
+2004-05-03,AES,"SANT, ROGER W",Director,True,Common Stock,sell,5000.0,8.81,44050.0
+2004-05-03,AES,"SANT, ROGER W",Director,True,Common Stock,sell,125000.0,8.77,1096250.0
+2004-05-03,AES,"SANT, ROGER W",Director,True,Common Stock,sell,5000.0,9.04,45199.99999999999
+2004-05-03,AES,"SANT, ROGER W",Director,True,Common Stock,sell,15000.0,8.85,132750.0
+2004-05-03,AES,"SANT, ROGER W",Director,True,Common Stock,sell,5000.0,8.95,44750.0
+2004-05-03,AES,"SANT, ROGER W",Director,True,Common Stock,sell,5000.0,8.83,44150.0
+2004-05-10,AES,"BRANDT, JOSEPH C",Executive VP & COO,True,Common Stock,buy,3000.0,7.97,23910.0
+2004-05-17,AES,"DARMAN, RICHARD",Director,True,Common Stock,buy,5000.0,7.9,39500.0
+2004-06-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,5000.0,9.17,45850.0
+2004-06-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,10000.0,9.03,90300.0
+2004-06-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,15000.0,9.24,138600.0
+2004-06-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,5000.0,9.25,46250.0
+2004-06-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,5000.0,9.22,46100.0
+2004-06-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,5000.0,9.19,45950.0
+2004-06-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,10000.0,9.09,90900.0
+2004-06-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,10000.0,9.08,90800.0
+2004-06-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,5000.0,9.07,45350.0
+2004-06-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,20000.0,9.05,181000.0
+2004-06-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,15000.0,9.02,135300.0
+2004-06-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,5000.0,8.99,44950.0
+2004-06-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,5000.0,9.2,46000.0
+2004-06-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,10000.0,9.12,91199.99999999999
+2004-06-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,5000.0,9.11,45550.0
+2004-06-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,10000.0,9.14,91400.0
+2004-06-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,10000.0,9.04,90399.99999999999
+2004-06-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,20000.0,9.16,183200.0
+2004-06-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,5000.0,8.96,44800.00000000001
+2004-06-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,10000.0,9.01,90100.0
+2004-06-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,15000.0,9.15,137250.0
+2004-06-22,AES,"ODEEN, PHILIP A",Director,True,Common Stock,buy,2000.0,9.75,19500.0
+2004-06-25,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,50000.0,9.95,497499.99999999994
+2004-06-25,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,30000.0,8.405,252149.99999999997
+2004-06-25,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,30000.0,9.94,298200.0
+2004-06-25,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,50000.0,8.405,420249.99999999994
+2004-06-25,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,5000.0,8.405,42025.0
+2004-06-25,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,2000.0,8.405,16810.0
+2004-06-25,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,11000.0,9.94,109340.0
+2004-06-25,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,2800.0,8.405,23534.0
+2004-06-25,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,2000.0,9.97,19940.0
+2004-06-25,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,5000.0,9.95,49750.0
+2004-06-25,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,5000.0,9.96,49800.00000000001
+2004-06-25,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,8000.0,8.405,67240.0
+2004-06-25,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,8000.0,9.91,79280.0
+2004-06-25,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,2200.0,8.405,18491.0
+2004-06-25,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,2200.0,9.92,21824.0
+2004-06-25,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,11000.0,8.405,92455.0
+2004-06-25,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,2800.0,9.93,27804.0
+2004-06-30,AES,"SANT, ROGER W",Director,True,Common Stock,sell,5987.0,9.81,58732.47
+2004-07-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,15393.0,9.82,151159.26
+2004-07-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,16544.0,9.83,162627.52
+2004-07-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,4888.0,9.84,48097.92
+2004-07-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,13037.0,9.85,128414.45
+2004-07-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,13054.0,9.8,127929.20000000001
+2004-07-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,2026.0,9.9,20057.4
+2004-07-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,14506.0,9.87,143174.22
+2004-07-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,11730.0,9.88,115892.40000000001
+2004-07-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,10971.0,9.81,107625.51000000001
+2004-07-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,12262.0,9.86,120903.31999999999
+2004-07-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,8150.0,9.89,80603.5
+2004-07-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,13167.0,9.76,128509.92
+2004-07-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,2200.0,9.79,21537.999999999996
+2004-07-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,9137.0,9.78,89359.86
+2004-07-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,1900.0,9.67,18373.0
+2004-07-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,13627.0,9.77,133135.79
+2004-07-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,5011.0,9.68,48506.479999999996
+2004-07-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,4300.0,9.71,41753.00000000001
+2004-07-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,2239.0,9.72,21763.08
+2004-07-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,6194.0,9.7,60081.799999999996
+2004-07-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,10986.0,9.74,107003.64
+2004-07-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,8678.0,9.73,84436.94
+2004-07-14,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,111000.0,8.405,932954.9999999999
+2004-07-14,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,5000.0,8.405,42025.0
+2004-07-14,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,5000.0,10.28,51400.0
+2004-07-14,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,111000.0,10.25,1137750.0
+2004-08-02,AES,"SANT, ROGER W",Director,True,Common Stock,sell,11400.0,9.62,109667.99999999999
+2004-08-02,AES,"SANT, ROGER W",Director,True,Common Stock,sell,2100.0,9.61,20181.0
+2004-08-02,AES,"SANT, ROGER W",Director,True,Common Stock,sell,20100.0,9.66,194166.0
+2004-08-02,AES,"SANT, ROGER W",Director,True,Common Stock,sell,57700.0,9.64,556228.0
+2004-08-02,AES,"SANT, ROGER W",Director,True,Common Stock,sell,39100.0,9.65,377315.0
+2004-08-02,AES,"SANT, ROGER W",Director,True,Common Stock,sell,1500.0,9.6,14400.0
+2004-08-02,AES,"SANT, ROGER W",Director,True,Common Stock,sell,39900.0,9.63,384237.00000000006
+2004-08-02,AES,"SANT, ROGER W",Director,True,Common Stock,sell,5400.0,9.67,52218.0
+2004-08-02,AES,"SANT, ROGER W",Director,True,Common Stock,sell,5800.0,9.69,56202.0
+2004-08-02,AES,"SANT, ROGER W",Director,True,Common Stock,sell,17000.0,9.68,164560.0
+2004-08-04,AES,"RUGGIRELLO, JOHN R",Executive VP and COO,True,Common Stock,sell,9900.0,9.48,93852.0
+2004-08-04,AES,"RUGGIRELLO, JOHN R",Executive VP and COO,True,Common Stock,sell,3200.0,9.4,30080.0
+2004-08-04,AES,"RUGGIRELLO, JOHN R",Executive VP and COO,True,Common Stock,buy,1200.0,4.625,5550.0
+2004-08-04,AES,"RUGGIRELLO, JOHN R",Executive VP and COO,True,Common Stock,sell,1200.0,9.45,11340.0
+2004-08-04,AES,"RUGGIRELLO, JOHN R",Executive VP and COO,True,Common Stock,buy,23600.0,4.625,109150.0
+2004-08-04,AES,"RUGGIRELLO, JOHN R",Executive VP and COO,True,Common Stock,buy,7100.0,4.625,32837.5
+2004-08-04,AES,"RUGGIRELLO, JOHN R",Executive VP and COO,True,Common Stock,buy,15500.0,4.625,71687.5
+2004-08-04,AES,"RUGGIRELLO, JOHN R",Executive VP and COO,True,Common Stock,sell,15500.0,9.49,147095.0
+2004-08-04,AES,"RUGGIRELLO, JOHN R",Executive VP and COO,True,Common Stock,sell,500.0,9.51,4755.0
+2004-08-04,AES,"RUGGIRELLO, JOHN R",Executive VP and COO,True,Common Stock,buy,3500.0,4.625,16187.5
+2004-08-04,AES,"RUGGIRELLO, JOHN R",Executive VP and COO,True,Common Stock,buy,2400.0,4.625,11100.0
+2004-08-04,AES,"RUGGIRELLO, JOHN R",Executive VP and COO,True,Common Stock,buy,500.0,4.625,2312.5
+2004-08-04,AES,"RUGGIRELLO, JOHN R",Executive VP and COO,True,Common Stock,buy,5800.0,4.625,26825.0
+2004-08-04,AES,"RUGGIRELLO, JOHN R",Executive VP and COO,True,Common Stock,buy,5100.0,4.625,23587.5
+2004-08-04,AES,"RUGGIRELLO, JOHN R",Executive VP and COO,True,Common Stock,buy,2200.0,4.625,10175.0
+2004-08-04,AES,"RUGGIRELLO, JOHN R",Executive VP and COO,True,Common Stock,sell,23600.0,9.47,223492.00000000003
+2004-08-04,AES,"RUGGIRELLO, JOHN R",Executive VP and COO,True,Common Stock,buy,9900.0,4.625,45787.5
+2004-08-04,AES,"RUGGIRELLO, JOHN R",Executive VP and COO,True,Common Stock,sell,5800.0,9.44,54752.0
+2004-08-04,AES,"RUGGIRELLO, JOHN R",Executive VP and COO,True,Common Stock,sell,3500.0,9.52,33320.0
+2004-08-04,AES,"RUGGIRELLO, JOHN R",Executive VP and COO,True,Common Stock,sell,2200.0,9.42,20724.0
+2004-08-04,AES,"RUGGIRELLO, JOHN R",Executive VP and COO,True,Common Stock,buy,3200.0,4.625,14800.0
+2004-08-04,AES,"RUGGIRELLO, JOHN R",Executive VP and COO,True,Common Stock,sell,2400.0,9.39,22536.0
+2004-08-04,AES,"RUGGIRELLO, JOHN R",Executive VP and COO,True,Common Stock,sell,5100.0,9.41,47991.0
+2004-08-04,AES,"RUGGIRELLO, JOHN R",Executive VP and COO,True,Common Stock,sell,7100.0,9.43,66953.0
+2004-09-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,4000.0,10.09,40360.0
+2004-09-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,1000.0,10.07,10070.0
+2004-09-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,2000.0,10.06,20120.0
+2004-09-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,6000.0,9.98,59880.0
+2004-09-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,3000.0,9.99,29970.0
+2004-09-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,5000.0,9.85,49250.0
+2004-09-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,4000.0,9.83,39320.0
+2004-09-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,6000.0,9.87,59219.99999999999
+2004-09-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,2000.0,9.82,19640.0
+2004-09-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,5000.0,9.75,48750.0
+2004-09-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,9000.0,9.86,88740.0
+2004-09-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,4000.0,9.78,39120.0
+2004-09-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,5000.0,10.05,50250.0
+2004-09-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,21000.0,9.88,207480.00000000003
+2004-09-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,30000.0,9.89,296700.0
+2004-09-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,12000.0,9.95,119399.99999999999
+2004-09-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,18000.0,9.91,178380.0
+2004-09-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,3500.0,9.97,34895.0
+2004-09-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,2000.0,10.1,20200.0
+2004-09-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,9000.0,9.96,89640.00000000001
+2004-09-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,9500.0,10.03,95285.0
+2004-09-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,2000.0,10.02,20040.0
+2004-09-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,32000.0,9.9,316800.0
+2004-09-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,2000.0,10.01,20020.0
+2004-09-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,3000.0,10.04,30119.999999999996
+2004-10-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,70300.0,10.1,710030.0
+2004-10-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,18800.0,10.12,190255.99999999997
+2004-10-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,2700.0,10.03,27081.0
+2004-10-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,5000.0,10.05,50250.0
+2004-10-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,800.0,10.01,8008.0
+2004-10-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,6700.0,10.11,67737.0
+2004-10-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,10000.0,10.06,100600.0
+2004-10-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,15000.0,10.15,152250.0
+2004-10-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,8000.0,10.13,81040.0
+2004-10-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,18500.0,10.08,186480.0
+2004-10-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,14700.0,10.09,148323.0
+2004-10-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,16000.0,10.07,161120.0
+2004-10-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,12500.0,10.0,125000.0
+2004-10-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,1000.0,10.14,10140.0
+2004-11-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,18100.0,10.96,198376.00000000003
+2004-11-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,24600.0,10.98,270108.0
+2004-11-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,39400.0,10.97,432218.0
+2004-11-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,49100.0,11.0,540100.0
+2004-11-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,20000.0,11.05,221000.0
+2004-11-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,22300.0,10.95,244184.99999999997
+2004-11-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,2600.0,11.01,28626.0
+2004-11-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,23900.0,10.99,262661.0
+2004-12-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,17100.0,12.25,209475.0
+2004-12-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,5000.0,12.35,61750.0
+2004-12-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,10100.0,12.27,123927.0
+2004-12-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,8200.0,12.33,101106.0
+2004-12-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,4200.0,12.32,51744.0
+2004-12-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,6200.0,12.3,76260.0
+2004-12-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,7700.0,12.28,94556.0
+2004-12-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,10000.0,12.15,121500.0
+2004-12-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,1900.0,12.13,23047.0
+2004-12-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,4100.0,12.26,50266.0
+2004-12-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,5000.0,12.2,61000.0
+2004-12-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,4100.0,12.31,50471.0
+2004-12-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,10000.0,12.36,123600.0
+2004-12-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,700.0,12.09,8463.0
+2004-12-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,2700.0,12.41,33507.0
+2004-12-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,500.0,12.43,6215.0
+2004-12-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,15800.0,12.44,196552.0
+2004-12-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,12300.0,12.4,152520.0
+2004-12-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,33700.0,12.45,419565.0
+2004-12-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,10000.0,12.47,124700.0
+2004-12-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,15400.0,12.34,190036.0
+2004-12-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,3000.0,12.12,36360.0
+2004-12-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,600.0,12.1,7260.0
+2004-12-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,3800.0,12.08,45904.0
+2004-12-01,AES,"SANT, ROGER W",Director,True,Common Stock,sell,7900.0,12.29,97091.0
+2004-12-08,AES,"SANT, ROGER W",Director,True,Common Stock,buy,480000.0,5.125,2460000.0
+2004-12-08,AES,"SANT, ROGER W",Director,True,Common Stock,buy,237836.0,4.75,1129721.0
+2004-12-08,AES,"SANT, ROGER W",Director,True,Stock Option,buy,480000.0,12.29,5899200.0
+2004-12-08,AES,"SANT, ROGER W",Director,True,Stock Option,buy,237836.0,12.29,2923004.44
+2005-01-07,AES,"SHARP, BARRY J",Executive VP and CFO,True,Common Stock,buy,72648.0,12.84,932800.32
+2005-01-11,AES,"EMERSON, ALICE F",Director,True,Common Stock,sell,4944.0,13.0344,64442.073599999996
+2005-01-11,AES,"EMERSON, ALICE F",Director,True,Common Stock,buy,4944.0,4.5625,22557.0
+2005-01-11,AES,"EMERSON, ALICE F",Director,True,Stock Option,buy,4944.0,13.0344,64442.073599999996
+2005-02-25,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Units,buy,4143.0,16.81,69643.83
+2005-02-25,AES,"BRANDT, JOSEPH C",Executive VP & COO,True,Units,buy,1849.0,16.81,31081.69
+2005-02-25,AES,"RUGGIRELLO, JOHN R",Executive VP and COO,True,Stock Option Grant,buy,34843.0,16.81,585710.83
+2005-02-25,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Units,buy,1358.0,16.81,22827.98
+2005-02-25,AES,"BRANDT, JOSEPH C",Executive VP & COO,True,Stock Option Grant,buy,39743.0,16.81,668079.83
+2005-02-25,AES,"RUGGIRELLO, JOHN R",Executive VP and COO,True,Units,buy,1849.0,16.81,31081.69
+2005-02-25,AES,"LURASCHI, WILLIAM R",ExecVP&GenCounsel,False,Units,buy,1536.0,16.81,25820.159999999996
+2005-02-25,AES,"LURASCHI, WILLIAM R",ExecVP&GenCounsel,False,Stock Option Grant,buy,32666.0,16.81,549115.46
+2005-02-25,AES,"SHARP, BARRY J",Executive VP and CFO,True,Stock Option Grant,buy,41376.0,16.81,695530.5599999999
+2005-02-25,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Stock Option Grant,buy,32666.0,16.81,549115.46
+2005-02-25,AES,"SHARP, BARRY J",Executive VP and CFO,True,Units,buy,2191.0,16.81,36830.71
+2005-02-25,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Stock Option Grant,buy,97997.0,16.81,1647329.5699999998
+2005-04-07,AES,"EMERSON, ALICE F",Director,True,Common Stock,sell,17348.0,16.9827,294615.87960000004
+2005-04-28,AES,"KOSKINEN, JOHN A",Director,True,Units,buy,9663.0,16.03,154897.89
+2005-04-28,AES,"MCARTHUR, JOHN H",Director,True,Units,buy,6051.0,16.03,96997.53000000001
+2005-04-28,AES,"LADER, PHILIP",Director,True,Stock Option Grant,buy,3656.0,16.03,58605.68000000001
+2005-04-28,AES,"MOOSE, SANDRA O",Director,True,Units,buy,3556.0,16.03,57002.68000000001
+2005-04-28,AES,"MOOSE, SANDRA O",Director,True,Stock Option Grant,buy,3656.0,16.03,58605.68000000001
+2005-04-28,AES,"LADER, PHILIP",Director,True,Units,buy,7792.0,16.03,124905.76000000001
+2005-04-28,AES,"DARMAN, RICHARD",Director,True,Units,buy,24938.0,16.03,399756.14
+2005-04-28,AES,"SANDSTROM, SVEN",Director,True,Units,buy,9975.0,16.03,159899.25
+2005-04-28,AES,"JOHNSON, KRISTINA M",Director,True,Units,buy,6675.0,16.03,107000.25000000001
+2005-04-28,AES,"ODEEN, PHILIP A",Director,True,Units,buy,6700.0,16.03,107401.00000000001
+2005-04-28,AES,"ROSSOTTI, CHARLES O",Director,True,Units,buy,9975.0,16.03,159899.25
+2005-05-02,AES,"EMERSON, ALICE F",Director,True,Common Stock,buy,25678.0,16.08,412902.23999999993
+2005-05-04,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Restricted Stock Units,buy,59079.0,16.08,949990.32
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,5000.0,15.29,76450.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,11600.0,2.2,25520.000000000004
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,7600.0,15.43,117268.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,7600.0,2.2,16720.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,3000.0,15.44,46320.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,3000.0,2.2,6600.000000000001
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,11600.0,15.42,178872.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,3500.0,15.53,54355.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,32000.0,15.24,487680.0
+2005-05-11,AES,"MCARTHUR, JOHN H",Director,True,Common Stock,sell,5865.0,15.2,89148.0
+2005-05-11,AES,"MCARTHUR, JOHN H",Director,True,Common Stock,buy,17725.0,6.7,118757.5
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,15000.0,15.15,227250.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,7500.0,2.2,16500.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,7500.0,15.27,114525.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,3800.0,2.2,8360.0
+2005-05-11,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,buy,3700.0,5.125,18962.5
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,6200.0,2.2,13640.000000000002
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,28000.0,2.2,61600.00000000001
+2005-05-11,AES,"MCARTHUR, JOHN H",Director,True,Common Stock,buy,5865.0,7.91,46392.15
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,6200.0,15.25,94550.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,32000.0,2.2,70400.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,9700.0,15.45,149865.0
+2005-05-11,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,1000.0,15.51,15510.0
+2005-05-11,AES,"MCARTHUR, JOHN H",Director,True,Common Stock,sell,17725.0,15.2,269420.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,4300.0,15.55,66865.0
+2005-05-11,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,buy,700.0,5.125,3587.5
+2005-05-11,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,700.0,15.92,11144.0
+2005-05-11,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,10300.0,15.55,160165.0
+2005-05-11,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,3700.0,15.6,57720.0
+2005-05-11,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,buy,10300.0,5.125,52787.5
+2005-05-11,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,2000.0,15.52,31040.0
+2005-05-11,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,buy,2000.0,5.125,10250.0
+2005-05-11,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,buy,1000.0,5.125,5125.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,5440.0,15.92,86604.8
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,19300.0,15.55,300115.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,5440.0,7.3275,39861.6
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,9700.0,2.2,21340.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,5000.0,15.46,77300.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,3100.0,15.47,47957.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,3100.0,2.2,6820.000000000001
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,18000.0,15.5,279000.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,18000.0,2.2,39600.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,4500.0,15.52,69840.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,4300.0,7.3275,31508.25
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,4500.0,2.2,9900.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,3800.0,15.26,57988.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,4700.0,15.54,73038.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,1600.0,2.2,3520.0000000000005
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,14200.0,2.2,31240.000000000004
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,1600.0,15.56,24896.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,1600.0,7.3275,11724.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,3700.0,15.57,57609.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,3700.0,7.3275,27111.75
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,1000.0,15.58,15580.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,300.0,15.66,4698.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,700.0,15.65,10955.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,700.0,7.3275,5129.25
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,1200.0,15.64,18768.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,1200.0,7.3275,8793.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,200.0,15.63,3126.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,9100.0,15.6,141960.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,9100.0,7.3275,66680.25
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,5300.0,15.59,82627.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,5300.0,7.3275,38835.75
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,2000.0,15.7,31400.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,2000.0,7.3275,14655.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,300.0,15.81,4743.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,300.0,7.3275,2198.25
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,1000.0,7.3275,7327.5
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,200.0,7.3275,1465.5
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,28000.0,15.17,424760.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,100.0,15.86,1586.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,5000.0,15.21,76050.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,5000.0,2.2,11000.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,33000.0,15.2,501600.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,33000.0,2.2,72600.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,15500.0,15.19,235445.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,15500.0,2.2,34100.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,3500.0,15.18,53130.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,3500.0,2.2,7700.000000000001
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,8400.0,15.37,129108.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,4700.0,2.2,10340.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,200.0,15.85,3170.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,15000.0,2.2,33000.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,1600.0,15.39,24624.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,800.0,2.2,1760.0000000000002
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,800.0,15.38,12304.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,14200.0,15.4,218680.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,15000.0,15.35,230250.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,15500.0,15.3,237150.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,19300.0,2.2,42460.0
+2005-05-11,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,8400.0,2.2,18480.0
+2005-05-12,AES,"DARMAN, RICHARD",Director,True,Common Stock,buy,2000.0,14.789,29578.0
+2005-06-13,AES,"SANT, ROGER W",Director,True,Common Stock,sell,6400.0,14.99,95936.0
+2005-06-13,AES,"SANT, ROGER W",Director,True,Common Stock,sell,131100.0,15.0,1966500.0
+2005-06-13,AES,"SANT, ROGER W",Director,True,Common Stock,sell,200.0,15.02,3004.0
+2005-06-13,AES,"SANT, ROGER W",Director,True,Common Stock,sell,2000.0,15.04,30080.0
+2005-06-13,AES,"SANT, ROGER W",Director,True,Common Stock,sell,250600.0,14.98,3753988.0
+2005-06-13,AES,"SANT, ROGER W",Director,True,Common Stock,sell,2500.0,15.03,37575.0
+2005-06-13,AES,"SANT, ROGER W",Director,True,Common Stock,sell,7200.0,15.01,108072.0
+2005-06-14,AES,"SANT, ROGER W",Director,True,Common Stock,sell,3800.0,15.06,57228.0
+2005-06-14,AES,"SANT, ROGER W",Director,True,Common Stock,sell,5600.0,15.07,84392.0
+2005-06-14,AES,"SANT, ROGER W",Director,True,Common Stock,sell,7300.0,15.05,109865.0
+2005-06-14,AES,"SANT, ROGER W",Director,True,Common Stock,sell,248.0,15.04,3729.9199999999996
+2005-06-14,AES,"SANT, ROGER W",Director,True,Common Stock,sell,300.0,15.09,4527.0
+2005-06-14,AES,"SANT, ROGER W",Director,True,Common Stock,sell,1000.0,15.13,15130.0
+2005-06-14,AES,"SANT, ROGER W",Director,True,Common Stock,sell,2200.0,15.11,33242.0
+2005-06-14,AES,"SANT, ROGER W",Director,True,Common Stock,sell,81100.0,15.1,1224610.0
+2005-06-14,AES,"SANT, ROGER W",Director,True,Common Stock,sell,2500.0,15.18,37950.0
+2005-06-14,AES,"SANT, ROGER W",Director,True,Common Stock,sell,81800.0,15.08,1233544.0
+2005-07-05,AES,"SANT, ROGER W",Director,True,Common Stock,sell,5987.0,16.5,98785.5
+2005-12-20,AES,"RUGGIRELLO, JOHN R",Executive VP and COO,True,Stock Option Exercise,buy,76000.0,15.82,1202320.0
+2005-12-20,AES,"SHARP, BARRY J",Executive VP and CFO,True,Common Stock,sell,20000.0,15.82,316400.0
+2005-12-20,AES,"SHARP, BARRY J",Executive VP and CFO,True,Common Stock,buy,100000.0,15.82,1582000.0
+2006-02-05,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,10392.0,21.5,223428.0
+2006-02-06,AES,"RUGGIRELLO, JOHN R",Executive VP,True,Common Stock,sell,700.0,17.26,12082.000000000002
+2006-02-06,AES,"RUGGIRELLO, JOHN R",Executive VP,True,Common Stock,sell,6300.0,17.23,108549.0
+2006-02-06,AES,"RUGGIRELLO, JOHN R",Executive VP,True,Common Stock,sell,1900.0,17.22,32717.999999999996
+2006-02-06,AES,"RUGGIRELLO, JOHN R",Executive VP,True,Common Stock,sell,3100.0,17.21,53351.0
+2006-02-06,AES,"RUGGIRELLO, JOHN R",Executive VP,True,Common Stock,sell,300.0,17.24,5171.999999999999
+2006-02-06,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,4108.0,17.14,70411.12
+2006-02-06,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,300.0,17.15,5145.0
+2006-02-06,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,8500.0,17.15,145775.0
+2006-02-06,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,700.0,17.16,12012.0
+2006-02-06,AES,"RUGGIRELLO, JOHN R",Executive VP,True,Common Stock,sell,6200.0,17.25,106950.0
+2006-02-06,AES,"RUGGIRELLO, JOHN R",Executive VP,True,Common Stock,sell,57500.0,17.2,989000.0
+2006-02-08,AES,"QASIM, SHAHZAD","President, EAME Region",True,Common Stock,sell,10400.0,17.265,179556.0
+2006-02-08,AES,"QASIM, SHAHZAD","President, EAME Region",True,Common Stock,buy,19332.0,11.03,213231.96
+2006-02-08,AES,"QASIM, SHAHZAD","President, EAME Region",True,Common Stock,sell,19332.0,17.262,333708.984
+2006-02-09,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,26200.0,17.22,451163.99999999994
+2006-02-09,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1800.0,17.23,31014.0
+2006-02-09,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,55600.0,17.2,956320.0
+2006-02-09,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,2600.0,17.21,44746.0
+2006-02-09,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,9600.0,17.27,165792.0
+2006-02-09,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,400.0,17.28,6912.0
+2006-02-09,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,3800.0,17.25,65550.0
+2006-02-10,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,11300.0,17.17,194021.00000000003
+2006-02-10,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,5200.0,17.16,89232.0
+2006-02-10,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,13000.0,17.15,222949.99999999997
+2006-02-10,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1800.0,17.14,30852.0
+2006-02-10,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1400.0,17.2,24080.0
+2006-02-10,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1800.0,17.12,30816.0
+2006-02-10,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,900.0,17.11,15399.0
+2006-02-10,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,4600.0,17.13,78798.0
+2006-02-10,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,5000.0,17.02,85100.0
+2006-02-10,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,9800.0,17.03,166894.0
+2006-02-10,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,10000.0,17.0,170000.0
+2006-02-10,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,5200.0,17.04,88608.0
+2006-02-10,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,4200.0,17.05,71610.0
+2006-02-10,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,13500.0,17.06,230309.99999999997
+2006-02-10,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1300.0,17.07,22191.0
+2006-02-10,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,9600.0,17.08,163967.99999999997
+2006-02-10,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1200.0,17.1,20520.0
+2006-02-10,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,200.0,17.18,3436.0
+2006-02-13,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,200.0,17.09,3418.0
+2006-02-13,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,6800.0,17.058,115994.4
+2006-02-13,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,100.0,17.11,1711.0
+2006-02-13,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1700.0,17.0,28900.0
+2006-02-13,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,4300.0,17.08,73443.99999999999
+2006-02-13,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,400.0,17.02,6808.0
+2006-02-13,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,5800.0,17.13,99354.0
+2006-02-13,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,3400.0,17.1,58140.00000000001
+2006-02-13,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,3700.0,17.04,63048.0
+2006-02-13,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,2200.0,17.01,37422.0
+2006-02-13,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,300.0,17.12,5136.0
+2006-02-13,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,800.0,17.03,13624.0
+2006-02-13,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,200.0,17.15,3429.9999999999995
+2006-02-14,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,4000.0,17.0,68000.0
+2006-02-14,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,900.0,17.01,15309.000000000002
+2006-02-15,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,800.0,17.1,13680.000000000002
+2006-02-15,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,22600.0,17.0,384200.0
+2006-02-15,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,4600.0,17.08,78567.99999999999
+2006-02-15,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1500.0,17.01,25515.000000000004
+2006-02-15,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,6800.0,17.05,115940.0
+2006-02-15,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,500.0,17.13,8565.0
+2006-02-15,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,5000.0,17.07,85350.0
+2006-02-15,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1000.0,17.11,17110.0
+2006-02-15,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,4700.0,17.03,80041.0
+2006-02-15,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,600.0,17.17,10302.000000000002
+2006-02-15,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,3800.0,17.14,65132.0
+2006-02-15,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1400.0,17.15,24009.999999999996
+2006-02-15,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1600.0,17.16,27456.0
+2006-02-15,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1700.0,17.02,28934.0
+2006-02-15,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1600.0,17.12,27392.0
+2006-02-15,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,2100.0,17.04,35784.0
+2006-02-15,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,4900.0,17.06,83594.0
+2006-02-24,AES,"RUGGIRELLO, JOHN R",Executive VP,True,Common Stock,buy,995.0,17.58,17492.1
+2006-02-24,AES,"MILLER, BRIAN A","VP, General Counsel and Secy",True,Stock Option Grant (right to buy),buy,27036.0,17.58,475292.87999999995
+2006-02-24,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Stock Option Grant (right to buy),buy,35782.0,17.58,629047.5599999999
+2006-02-24,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,buy,1127.0,17.58,19812.66
+2006-02-24,AES,"QASIM, SHAHZAD","President, EAME Region",True,Common Stock,buy,994.0,17.58,17474.519999999997
+2006-02-24,AES,"QASIM, SHAHZAD","President, EAME Region",True,Stock Option Gratn (right to buy),buy,25445.0,17.58,447323.1
+2006-02-24,AES,"KLOOSTERBOER, JAY L","VP, Business Excellence",True,Common Stock,buy,1089.0,17.58,19144.62
+2006-02-24,AES,"GEE, DAVID","President, North Amer Region",True,Stock Option Grant (right to buy),buy,40553.0,17.58,712921.7399999999
+2006-02-24,AES,"GLUSKI, ANDRES","President, Latin America Regn",True,Stock Option Grant (right to buy),buy,40553.0,17.58,712921.7399999999
+2006-02-24,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,buy,622.0,17.58,10934.759999999998
+2006-02-24,AES,"GEE, DAVID","President, North Amer Region",True,Common Stock,buy,1089.0,17.58,19144.62
+2006-02-24,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,buy,1106.0,17.58,19443.48
+2006-02-24,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,1099.0,17.3,19012.7
+2006-02-24,AES,"GLUSKI, ANDRES","President, Latin America Regn",True,Common Stock,buy,1325.0,17.58,23293.499999999996
+2006-02-24,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Stock Option Grant (right to buy),buy,47710.0,17.58,838741.7999999999
+2006-02-24,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Stock Option Grant (right to buy),buy,152671.0,17.58,2683956.1799999997
+2006-02-24,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Stock Option Grant (right to buy),buy,40553.0,17.58,712921.7399999999
+2006-02-24,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Stock Option Grant (right to buy),buy,2863.0,17.58,50331.53999999999
+2006-02-24,AES,"MILLER, BRIAN A","VP, General Counsel and Secy",True,Common Stock,buy,1073.0,17.58,18863.339999999997
+2006-02-24,AES,"KLOOSTERBOER, JAY L","VP, Business Excellence",True,Stock Option Grant (right to buy),buy,24809.0,17.58,436142.22
+2006-02-24,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,buy,1089.0,17.58,19144.62
+2006-02-27,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Units,buy,1955.0,17.66,34525.3
+2006-02-27,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Units,buy,10450.0,17.66,184547.0
+2006-02-27,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Units,buy,2658.0,17.66,46940.28
+2006-02-27,AES,"MILLER, BRIAN A","VP, General Counsel and Secy",True,Units,buy,1472.0,17.66,25995.52
+2006-02-27,AES,"QASIM, SHAHZAD","President, EAME Region",True,Units,buy,1303.0,17.66,23010.98
+2006-02-27,AES,"RUGGIRELLO, JOHN R",Executive VP,True,Units,buy,1999.0,17.66,35302.340000000004
+2006-02-27,AES,"GLUSKI, ANDRES","President, Latin America Regn",True,Units,buy,1222.0,17.66,21580.52
+2006-02-27,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Units,buy,3482.0,17.66,61492.12
+2006-02-27,AES,"KLOOSTERBOER, JAY L","VP, Business Excellence",True,Units,buy,2509.0,17.66,44308.94
+2006-02-27,AES,"GEE, DAVID","President, North Amer Region",True,Units,buy,2346.0,17.66,41430.36
+2006-04-13,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,10000.0,11.0313,110313.0
+2006-04-13,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,5800.0,2.2,12760.000000000002
+2006-04-13,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,2700.0,16.33,44090.99999999999
+2006-04-13,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,275100.0,16.34,4495134.0
+2006-04-13,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,1300.0,2.2,2860.0000000000005
+2006-04-13,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,20868.0,16.37,341609.16000000003
+2006-04-13,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,1500.0,2.2,3300.0000000000005
+2006-04-13,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,1500.0,16.3,24450.0
+2006-04-13,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,1300.0,16.29,21177.0
+2006-04-13,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,10000.0,16.39,163900.0
+2006-04-13,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,20868.0,11.0313,230201.1684
+2006-04-13,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,14200.0,16.35,232170.00000000003
+2006-04-13,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,14200.0,11.0313,156644.46
+2006-04-13,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,5800.0,16.32,94656.0
+2006-04-13,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,1600.0,11.0313,17650.079999999998
+2006-04-13,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,6100.0,16.31,99490.99999999999
+2006-04-13,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,7500.0,16.35,122625.00000000001
+2006-04-13,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,6100.0,2.2,13420.000000000002
+2006-04-13,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,1600.0,16.36,26176.0
+2006-04-13,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,275100.0,2.2,605220.0
+2006-04-13,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,2700.0,2.2,5940.000000000001
+2006-04-13,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,7500.0,2.2,16500.0
+2006-04-18,AES,"ROSSOTTI, CHARLES O",Director,True,Common Stock,sell,6100.0,16.89,103029.0
+2006-04-18,AES,"ROSSOTTI, CHARLES O",Director,True,Common Stock,sell,19000.0,16.9,321100.0
+2006-04-18,AES,"ROSSOTTI, CHARLES O",Director,True,Common Stock,sell,8800.0,16.88,148544.0
+2006-04-18,AES,"ROSSOTTI, CHARLES O",Director,True,Common Stock,sell,6200.0,16.87,104594.0
+2006-04-18,AES,"ROSSOTTI, CHARLES O",Director,True,Common Stock,sell,2100.0,16.86,35406.0
+2006-04-18,AES,"ROSSOTTI, CHARLES O",Director,True,Common Stock,sell,3300.0,16.84,55572.0
+2006-04-18,AES,"ROSSOTTI, CHARLES O",Director,True,Common Stock,sell,700.0,16.91,11837.0
+2006-04-18,AES,"ROSSOTTI, CHARLES O",Director,True,Common Stock,sell,6600.0,16.85,111210.00000000001
+2006-04-18,AES,"ROSSOTTI, CHARLES O",Director,True,Common Stock,sell,2100.0,16.82,35322.0
+2006-04-18,AES,"ROSSOTTI, CHARLES O",Director,True,Common Stock,sell,200.0,16.79,3358.0
+2006-04-18,AES,"ROSSOTTI, CHARLES O",Director,True,Common Stock,sell,2200.0,16.94,37268.0
+2006-04-18,AES,"ROSSOTTI, CHARLES O",Director,True,Common Stock,sell,4000.0,16.83,67320.0
+2006-04-18,AES,"ROSSOTTI, CHARLES O",Director,True,Common Stock,sell,3300.0,16.93,55869.0
+2006-04-18,AES,"ROSSOTTI, CHARLES O",Director,True,Common Stock,sell,3200.0,16.92,54144.00000000001
+2006-04-18,AES,"ROSSOTTI, CHARLES O",Director,True,Common Stock,sell,400.0,16.81,6723.999999999999
+2006-04-18,AES,"ROSSOTTI, CHARLES O",Director,True,Common STock,sell,6800.0,16.8,114240.0
+2006-05-11,AES,"DARMAN, RICHARD",Director,True,Units,buy,22674.0,17.63,399742.62
+2006-05-11,AES,"SANDSTROM, SVEN",Director,True,Units,buy,9070.0,17.63,159904.09999999998
+2006-05-11,AES,"LADER, PHILIP",Director,True,Units,buy,7085.0,17.63,124908.54999999999
+2006-05-11,AES,"ODEEN, PHILIP A",Director,True,Units,buy,5666.0,17.63,99891.57999999999
+2006-05-11,AES,"MOOSE, SANDRA O",Director,True,Units,buy,3233.0,17.63,56997.78999999999
+2006-05-11,AES,"ODEEN, PHILIP A",Director,True,Stock Option Grant (Right to buy),buy,4772.0,17.63,84130.36
+2006-05-11,AES,"MCARTHUR, JOHN H",Director,True,Units,buy,5502.0,17.63,97000.26
+2006-05-11,AES,"LADER, PHILIP",Director,True,Stock Option Grant (Right to buy),buy,4772.0,17.63,84130.36
+2006-05-11,AES,"ROSSOTTI, CHARLES O",Director,True,Units,buy,9070.0,17.63,159904.09999999998
+2006-05-11,AES,"KOSKINEN, JOHN A",Director,True,Units,buy,9353.0,17.63,164893.38999999998
+2006-05-11,AES,"JOHNSON, KRISTINA M",Director,True,Units,buy,6092.0,17.63,107401.95999999999
+2006-05-11,AES,"MOOSE, SANDRA O",Director,True,Stock Option Grant (Right to buy),buy,4772.0,17.63,84130.36
+2006-05-12,AES,"QASIM, SHAHZAD","President, EAME Region",True,Common Stock,buy,20000.0,2.83,56600.0
+2006-05-12,AES,"QASIM, SHAHZAD","President, EAME Region",True,Common Stock,sell,20000.0,18.14,362800.0
+2006-05-15,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,1600.0,18.09,28944.0
+2006-05-15,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,2400.0,18.12,43488.0
+2006-05-15,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,3500.0,18.15,63524.99999999999
+2006-05-15,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,500.0,18.23,9115.0
+2006-05-15,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,4000.0,18.18,72720.0
+2006-05-15,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,1900.0,18.16,34504.0
+2006-05-15,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,4400.0,18.07,79508.0
+2006-05-15,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,2100.0,18.1,38010.0
+2006-05-15,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,4700.0,18.08,84975.99999999999
+2006-05-15,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,4000.0,18.2,72800.0
+2006-05-15,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,2800.0,18.06,50568.0
+2006-05-15,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,7109.0,18.05,128317.45000000001
+2006-05-15,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,891.0,18.05,16082.550000000001
+2006-05-15,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,1028.0,18.04,18545.12
+2006-05-15,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,2600.0,18.03,46878.0
+2006-05-15,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,600.0,18.01,10806.000000000002
+2006-05-15,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,buy,5319.0,2.83,15052.77
+2006-05-15,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,200.0,18.02,3604.0
+2006-05-15,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,buy,39009.0,2.83,110395.47
+2006-05-16,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,845.0,18.17,15353.650000000001
+2006-05-16,AES,"GLUSKI, ANDRES","President, Latin America Regn",True,Common Stock,sell,5500.0,18.18,99990.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,100.0,17.81,1780.9999999999998
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,900.0,17.74,15965.999999999998
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,12900.0,18.01,232329.00000000003
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,1600.0,17.8,28480.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,1700.0,17.92,30464.000000000004
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,1900.0,17.9,34010.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,500.0,17.94,8970.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,2600.0,17.91,46566.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,500.0,17.93,8965.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,12400.0,18.0,223200.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,600.0,17.95,10770.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,11800.0,17.67,208506.00000000003
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,500.0,17.96,8980.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,3200.0,17.75,56800.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,1700.0,17.73,30141.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,5800.0,18.03,104574.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,11700.0,17.61,206037.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,14600.0,17.64,257544.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,2300.0,17.98,41354.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,1900.0,17.58,33402.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,4300.0,18.04,77572.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,4000.0,18.05,72200.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,3800.0,18.06,68628.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,2700.0,18.07,48789.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,9300.0,18.02,167586.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,1500.0,18.08,27119.999999999996
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,1400.0,17.57,24598.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,14900.0,17.65,262985.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,3200.0,17.59,56288.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,9400.0,17.6,165440.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,7900.0,17.62,139198.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,8900.0,17.63,156907.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,1900.0,17.56,33364.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,600.0,17.99,10793.999999999998
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,4000.0,17.72,70880.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,1600.0,18.17,29072.000000000004
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,200.0,17.83,3565.9999999999995
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,3500.0,17.71,61985.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,3400.0,17.86,60724.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,11885.0,17.66,209889.1
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,12500.0,17.78,222250.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,3500.0,17.77,62195.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,3200.0,18.09,57888.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,800.0,17.78,14224.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,2000.0,17.85,35700.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,buy,29158.0,2.83,82517.14
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,1100.0,17.89,19679.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,4400.0,17.88,78672.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,buy,132627.0,2.83,375334.41000000003
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,2000.0,17.87,35740.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,1300.0,17.79,23127.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,600.0,18.2,10920.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,13400.0,17.7,237180.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Stock Option (Right to buy),buy,25000.0,11.0313,275782.5
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,4800.0,17.68,84864.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,2700.0,18.13,48951.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,200.0,17.84,3568.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,400.0,17.82,7128.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,2700.0,18.18,49086.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,1200.0,18.16,21792.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,1500.0,18.15,27224.999999999996
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,500.0,18.19,9095.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,800.0,18.12,14496.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Stock Option Grant (Right to buy),buy,81200.0,2.83,229796.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,3000.0,18.11,54330.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,2500.0,18.1,45250.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,10600.0,17.69,187514.0
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,1100.0,18.08,19887.999999999996
+2006-05-17,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev and Strategy,False,Common Stock,sell,3600.0,18.14,65304.0
+2006-07-05,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,1100.0,18.96,20856.0
+2006-07-05,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,buy,2880.0,11.0313,31770.144
+2006-07-05,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,1780.0,18.97,33766.6
+2006-07-11,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,1836.0,19.52,35838.72
+2006-07-11,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,buy,1836.0,11.0313,20253.4668
+2006-08-14,AES,"GLUSKI, ANDRES","President, Latin America Regn",True,Common Stock,sell,1500.0,20.18,30270.0
+2006-08-14,AES,"GLUSKI, ANDRES","President, Latin America Regn",True,Common Stock,sell,1500.0,20.2,30300.0
+2006-08-14,AES,"GLUSKI, ANDRES","President, Latin America Regn",True,Common Stock,sell,2900.0,20.21,58609.0
+2006-08-14,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,25000.0,20.2,505000.0
+2006-08-14,AES,"GLUSKI, ANDRES","President, Latin America Regn",True,Common Stock,buy,20000.0,13.19,263800.0
+2006-08-14,AES,"GLUSKI, ANDRES","President, Latin America Regn",True,Common Stock,sell,800.0,20.16,16128.0
+2006-08-14,AES,"GLUSKI, ANDRES","President, Latin America Regn",True,Common Stock,sell,3700.0,20.19,74703.0
+2006-08-14,AES,"GLUSKI, ANDRES","President, Latin America Regn",True,Common Stock,sell,2600.0,20.24,52623.99999999999
+2006-08-14,AES,"GLUSKI, ANDRES","President, Latin America Regn",True,Common Stock,sell,600.0,20.23,12138.0
+2006-08-14,AES,"GLUSKI, ANDRES","President, Latin America Regn",True,Common Stock,sell,900.0,20.22,18198.0
+2006-08-14,AES,"GLUSKI, ANDRES","President, Latin America Regn",True,Common Stock,sell,1600.0,20.26,32416.000000000004
+2006-08-14,AES,"GLUSKI, ANDRES","President, Latin America Regn",True,Common Stock,sell,3900.0,20.17,78663.0
+2006-08-16,AES,"QASIM, SHAHZAD","President, Europe/Asia Region",True,Common Stock,sell,13485.0,20.34,274284.9
+2006-08-16,AES,"QASIM, SHAHZAD","President, Europe/Asia Region",True,Common Stock,sell,50000.0,20.1,1005000.0000000001
+2006-08-16,AES,"QASIM, SHAHZAD","President, Europe/Asia Region",True,Common Stock,buy,10018.0,2.83,28350.940000000002
+2006-08-16,AES,"QASIM, SHAHZAD","President, Europe/Asia Region",True,Common Stock,buy,53467.0,2.83,151311.61000000002
+2006-09-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,25000.0,21.18,529500.0
+2006-09-12,AES,"QASIM, SHAHZAD","President, Europe/Africa",True,Common Stock,buy,60000.0,13.19,791400.0
+2006-09-12,AES,"QASIM, SHAHZAD","President, Europe/Africa",True,Common Stock,sell,60000.0,20.1,1206000.0
+2006-09-20,AES,"QASIM, SHAHZAD","President, Europe/Africa",True,Common Stock,sell,9000.0,20.55,184950.0
+2006-09-20,AES,"QASIM, SHAHZAD","President, Europe/Africa",True,Common Stock,sell,5379.0,20.5038,110289.9402
+2006-09-20,AES,"QASIM, SHAHZAD","President, Europe/Africa",True,Common Stock,buy,14379.0,13.19,189659.00999999998
+2006-09-22,AES,"QASIM, SHAHZAD","President, Europe/Africa",True,Common Stock,buy,64.0,20.44,1308.16
+2006-09-25,AES,"QASIM, SHAHZAD","President, Europe/Africa",True,Common Stock,buy,20000.0,13.19,263800.0
+2006-09-25,AES,"QASIM, SHAHZAD","President, Europe/Africa",True,Common Stock,sell,10000.0,20.82,208200.0
+2006-09-25,AES,"QASIM, SHAHZAD","President, Europe/Africa",True,Common Stock,sell,8000.0,20.6281,165024.8
+2006-09-25,AES,"QASIM, SHAHZAD","President, Europe/Africa",True,Common Stock,sell,2000.0,20.73,41460.0
+2006-09-26,AES,"QASIM, SHAHZAD","President, Europe/Africa",True,Common Stock,buy,60597.0,13.19,799274.4299999999
+2006-09-26,AES,"QASIM, SHAHZAD","President, Europe/Africa",True,Common Stock,sell,20000.0,20.625,412500.0
+2006-09-26,AES,"QASIM, SHAHZAD","President, Europe/Africa",True,Common Stock,sell,16000.0,20.69,331040.0
+2006-09-26,AES,"QASIM, SHAHZAD","President, Europe/Africa",True,Common Stock,sell,12597.0,20.71,260883.87000000002
+2006-09-26,AES,"QASIM, SHAHZAD","President, Europe/Africa",True,Common Stock,sell,6000.0,20.645,123870.0
+2006-09-26,AES,"QASIM, SHAHZAD","President, Europe/Africa",True,Common Stock,sell,6000.0,20.6858,124114.8
+2006-09-27,AES,"QASIM, SHAHZAD","President, Europe/Africa",True,Common Stock,sell,5000.0,20.68,103400.0
+2006-09-27,AES,"QASIM, SHAHZAD","President, Europe/Africa",True,Common Stock,buy,29403.0,13.19,387825.57
+2006-09-27,AES,"QASIM, SHAHZAD","President, Europe/Africa",True,Common Stock,sell,5000.0,20.6001,103000.5
+2006-09-27,AES,"QASIM, SHAHZAD","President, Europe/Africa",True,Common Stock,sell,10000.0,20.69,206900.0
+2006-09-27,AES,"QASIM, SHAHZAD","President, Europe/Africa",True,Common Stock,sell,5000.0,20.6448,103224.0
+2006-09-27,AES,"QASIM, SHAHZAD","President, Europe/Africa",True,Common Stock,sell,4403.0,20.62,90789.86
+2006-09-29,AES,"QASIM, SHAHZAD","President, Europe/Africa",True,Common Stock,sell,5742.0,20.66,118629.72
+2006-09-29,AES,"QASIM, SHAHZAD","President, Europe/Africa",True,Common Stock,sell,3000.0,20.42,61260.00000000001
+2006-09-29,AES,"QASIM, SHAHZAD","President, Europe/Africa",True,Common Stock,sell,7000.0,20.3783,142648.1
+2006-09-29,AES,"QASIM, SHAHZAD","President, Europe/Africa",True,Common Stock,buy,15742.0,8.97,141205.74000000002
+2006-10-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1000.0,20.35,20350.0
+2006-10-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1100.0,20.34,22374.0
+2006-10-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,100.0,20.36,2036.0
+2006-10-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,5400.0,20.31,109674.0
+2006-10-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,800.0,20.3,16240.0
+2006-10-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,300.0,20.26,6078.000000000001
+2006-10-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,500.0,20.27,10135.0
+2006-10-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,200.0,20.33,4065.9999999999995
+2006-10-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,200.0,20.28,4056.0
+2006-10-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,200.0,20.32,4064.0
+2006-10-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,100.0,20.29,2029.0
+2006-10-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,15000.0,20.4,306000.0
+2006-10-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,100.0,20.39,2039.0
+2006-10-12,AES,"QASIM, SHAHZAD",Executive Vice President,True,Common Stock,sell,10000.0,20.8,208000.0
+2006-11-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,100.0,21.96,2196.0
+2006-11-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,500.0,21.9,10950.0
+2006-11-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1200.0,21.93,26316.0
+2006-11-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,900.0,21.92,19728.0
+2006-11-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,200.0,22.03,4406.0
+2006-11-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1700.0,21.95,37315.0
+2006-11-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,20000.0,22.05,441000.0
+2006-11-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,100.0,21.94,2194.0
+2006-11-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,300.0,21.91,6573.0
+2006-11-15,AES,"QASIM, SHAHZAD",Executive Vice President,True,Common Stock,buy,12222.0,17.125,209301.75
+2006-11-15,AES,"QASIM, SHAHZAD",Executive Vice President,True,Common Stock,sell,4646.0,22.46,104349.16
+2006-11-15,AES,"QASIM, SHAHZAD",Executive Vice President,True,Common Stock,buy,4646.0,16.81,78099.26
+2006-11-15,AES,"QASIM, SHAHZAD",Executive Vice President,True,Common Stock,sell,5000.0,22.333,111664.99999999999
+2006-11-15,AES,"QASIM, SHAHZAD",Executive Vice President,True,Common Stock,sell,6868.0,22.473,154344.56399999998
+2006-11-15,AES,"QASIM, SHAHZAD",Executive Vice President,True,Common Stock,sell,354.0,22.46,7950.84
+2006-11-17,AES,"QASIM, SHAHZAD",Executive Vice President,True,Common Stock,buy,5000.0,17.125,85625.0
+2006-11-17,AES,"QASIM, SHAHZAD",Executive Vice President,True,Common Stock,sell,5000.0,22.162,110810.0
+2006-11-20,AES,"QASIM, SHAHZAD",Executive Vice President,True,Common Stock,buy,5000.0,17.125,85625.0
+2006-11-20,AES,"QASIM, SHAHZAD",Executive Vice President,True,Common Stock,sell,5000.0,22.7,113500.0
+2006-11-28,AES,"KLOOSTERBOER, JAY L",Executive VP,True,Common Stock,buy,29752.0,7.29,216892.08
+2006-11-28,AES,"KLOOSTERBOER, JAY L",Executive VP,True,Common Stock,sell,29752.0,22.86,680130.72
+2006-12-01,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,1100.0,23.49,25839.0
+2006-12-01,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,buy,3750.0,19.5,73125.0
+2006-12-01,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,400.0,23.52,9408.0
+2006-12-01,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,500.0,23.53,11765.0
+2006-12-01,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,300.0,23.54,7062.0
+2006-12-01,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,3800.0,23.51,89338.0
+2006-12-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,3600.0,23.44,84384.0
+2006-12-01,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,3374.0,23.55,79457.7
+2006-12-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1200.0,23.39,28068.0
+2006-12-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,2000.0,23.4,46800.0
+2006-12-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,600.0,23.42,14052.000000000002
+2006-12-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,200.0,23.43,4686.0
+2006-12-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,900.0,23.41,21069.0
+2006-12-01,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,5500.0,23.48,129140.0
+2006-12-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1200.0,23.38,28056.0
+2006-12-01,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,buy,4224.0,17.13,72357.12
+2006-12-01,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,2000.0,23.44,46880.0
+2006-12-01,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,buy,131.0,21.0,2751.0
+2006-12-01,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,3900.0,23.38,91182.0
+2006-12-01,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,900.0,23.56,21204.0
+2006-12-01,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,buy,9649.0,13.11,126498.39
+2006-12-01,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,1500.0,23.39,35085.0
+2006-12-01,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,buy,30000.0,13.19,395700.0
+2006-12-01,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,3000.0,23.4,70200.0
+2006-12-01,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,5500.0,23.46,129030.0
+2006-12-01,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,1500.0,23.37,35055.0
+2006-12-01,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,600.0,23.43,14058.0
+2006-12-01,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,5700.0,23.47,133779.0
+2006-12-01,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,900.0,23.58,21222.0
+2006-12-01,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,2800.0,23.57,65996.0
+2006-12-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,15300.0,23.45,358785.0
+2006-12-01,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,300.0,23.41,7023.0
+2006-12-01,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,4023.0,23.42,94218.66
+2006-12-04,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,2400.0,23.68,56832.0
+2006-12-04,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,100.0,23.67,2367.0
+2006-12-04,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,1900.0,23.65,44935.0
+2006-12-04,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,3635.0,23.64,85931.40000000001
+2006-12-04,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,1500.0,23.53,35295.0
+2006-12-04,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,3000.0,23.62,70860.0
+2006-12-04,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,1900.0,23.58,44802.0
+2006-12-04,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,265.0,23.59,6251.35
+2006-12-04,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,800.0,23.57,18856.0
+2006-12-04,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,2300.0,23.55,54165.0
+2006-12-04,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,200.0,23.63,4726.0
+2006-12-04,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,1300.0,23.69,30797.0
+2006-12-04,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,3700.0,23.61,87357.0
+2006-12-04,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,1100.0,23.54,25894.0
+2006-12-04,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,2500.0,23.51,58775.00000000001
+2006-12-04,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,buy,25000.0,2.83,70750.0
+2006-12-04,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,900.0,23.66,21294.0
+2006-12-04,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,2800.0,23.71,66388.0
+2006-12-04,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,3800.0,23.7,90060.0
+2006-12-04,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,635.0,23.59,14979.65
+2006-12-04,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,100.0,23.46,2346.0
+2006-12-04,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,5193.0,23.73,123229.89
+2006-12-04,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,buy,12993.0,8.97,116547.21
+2006-12-04,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,buy,8235.0,2.83,23305.05
+2006-12-04,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,4200.0,23.6,99120.0
+2006-12-04,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,200.0,23.72,4744.0
+2006-12-04,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,1100.0,23.5,25850.0
+2006-12-04,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,700.0,23.44,16408.0
+2006-12-11,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,400.0,22.96,9184.0
+2006-12-11,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,buy,1088.0,8.97,9759.36
+2006-12-11,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,buy,704.0,2.83,1992.3200000000002
+2006-12-11,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,buy,5165.0,2.83,14616.95
+2006-12-11,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,968.0,22.99,22254.32
+2006-12-11,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,1400.0,23.02,32228.0
+2006-12-11,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,1285.0,22.98,29529.3
+2006-12-11,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,1592.0,23.03,36663.76
+2006-12-11,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,buy,10000.0,13.19,131900.0
+2006-12-11,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,buy,4168.0,13.11,54642.479999999996
+2006-12-11,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,buy,1012.0,19.5,19734.0
+2006-12-11,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,buy,1120.0,17.125,19180.0
+2006-12-11,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,1088.0,22.94,24958.72
+2006-12-11,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,3800.0,23.05,87590.0
+2006-12-11,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,1500.0,23.24,34860.0
+2006-12-11,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,600.0,23.06,13836.0
+2006-12-11,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,1500.0,23.08,34620.0
+2006-12-11,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,2500.0,23.1,57750.0
+2006-12-11,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,1300.0,23.18,30134.0
+2006-12-11,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,200.0,23.2,4640.0
+2006-12-11,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,200.0,23.11,4622.0
+2006-12-11,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,700.0,23.22,16254.0
+2006-12-11,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,1308.0,23.03,30123.24
+2006-12-11,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,500.0,23.04,11520.0
+2006-12-11,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,400.0,23.07,9228.0
+2006-12-11,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,1312.0,22.97,30136.64
+2006-12-11,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,704.0,23.21,16339.84
+2006-12-22,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,2665.0,22.3,59429.5
+2006-12-22,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,5334.0,22.27,118788.18
+2006-12-22,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,4319.0,22.26,96140.94
+2006-12-22,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,4422.0,22.28,98522.16
+2006-12-22,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,3000.0,22.09,66270.0
+2006-12-22,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,1500.0,22.32,33480.0
+2006-12-22,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,1150.0,22.22,25553.0
+2006-12-22,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,5000.0,22.33,111649.99999999999
+2006-12-22,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,buy,4289.0,13.19,56571.909999999996
+2006-12-22,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,buy,30000.0,13.19,395700.0
+2006-12-22,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,1300.0,22.25,28925.0
+2006-12-22,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,300.0,22.23,6669.0
+2006-12-22,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,2360.0,22.29,52604.4
+2006-12-22,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,2000.0,22.14,44280.0
+2006-12-22,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,100.0,22.19,2219.0
+2006-12-22,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,1500.0,22.24,33360.0
+2006-12-22,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,3475.0,22.12,76867.0
+2006-12-22,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,4000.0,22.2,88800.0
+2006-12-22,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,2500.0,22.16,55400.0
+2006-12-22,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,900.0,22.15,19935.0
+2006-12-22,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,1000.0,22.24,22240.0
+2006-12-22,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,500.0,22.17,11085.0
+2006-12-22,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,500.0,22.31,11155.0
+2006-12-22,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,1000.0,22.25,22250.0
+2006-12-22,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,6131.0,22.26,136476.06
+2006-12-22,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,buy,25000.0,2.83,70750.0
+2006-12-22,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,900.0,22.11,19899.0
+2006-12-22,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,2289.0,22.3,51044.700000000004
+2006-12-22,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,100.0,22.18,2218.0
+2006-12-22,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,1044.0,22.13,23103.719999999998
+2007-01-03,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,6700.0,22.05,147735.0
+2007-01-03,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,800.0,22.09,17672.0
+2007-01-03,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,1600.0,22.08,35328.0
+2007-01-03,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,11100.0,22.29,247419.0
+2007-01-03,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,1900.0,22.06,41914.0
+2007-01-03,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,600.0,22.03,13218.0
+2007-01-03,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,274600.0,2.2,604120.0
+2007-01-03,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,25000.0,19.5,487500.0
+2007-01-03,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,19600.0,22.13,433748.0
+2007-01-03,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,5900.0,22.11,130449.0
+2007-01-03,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock (see footnotes 4 &amp; 5 for last 2 rows of table),sell,3000.0,22.31,66930.0
+2007-01-03,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,9900.0,22.3,220770.0
+2007-01-03,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,4700.0,22.1,103870.0
+2007-01-03,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,895.0,22.04,19725.8
+2007-01-03,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,29800.0,22.07,657686.0
+2007-01-03,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,13600.0,22.12,300832.0
+2007-01-03,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,1200.0,22.26,26712.000000000004
+2007-01-03,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,13700.0,22.16,303592.0
+2007-01-03,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,5900.0,22.21,131039.0
+2007-01-03,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,19200.0,22.2,426240.0
+2007-01-03,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,4000.0,22.28,89120.0
+2007-01-03,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,28900.0,22.24,642736.0
+2007-01-03,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,24400.0,22.22,542168.0
+2007-01-03,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,25000.0,22.07,551750.0
+2007-01-03,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,11000.0,22.23,244530.0
+2007-01-03,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,13100.0,22.19,290689.0
+2007-01-03,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,5400.0,22.17,119718.00000000001
+2007-01-03,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,11300.0,22.25,251425.0
+2007-01-03,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,4900.0,22.15,108535.0
+2007-01-03,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,20000.0,22.18,443600.0
+2007-01-03,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,26505.0,22.14,586820.7000000001
+2007-01-31,AES,"GLUSKI, ANDRES","President, Latin America Regn",True,Units,buy,89.0,20.79,1850.31
+2007-02-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,2100.0,20.71,43491.0
+2007-02-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,4400.0,20.78,91432.0
+2007-02-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,3800.0,20.77,78926.0
+2007-02-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1600.0,20.76,33216.0
+2007-02-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1300.0,20.69,26897.0
+2007-02-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,400.0,20.73,8292.0
+2007-02-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,200.0,20.7,4140.0
+2007-02-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1200.0,20.75,24900.0
+2007-02-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1500.0,20.68,31020.0
+2007-02-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1000.0,20.65,20650.0
+2007-02-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,200.0,20.82,4164.0
+2007-02-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1400.0,20.67,28938.000000000004
+2007-02-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1300.0,20.72,26936.0
+2007-02-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,2000.0,20.66,41320.0
+2007-02-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,200.0,20.8,4160.0
+2007-02-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,2400.0,20.79,49896.0
+2007-02-05,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,buy,10392.0,2.83,29409.36
+2007-02-06,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,buy,545.0,8.97,4888.650000000001
+2007-02-06,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,buy,6497.0,8.97,58278.090000000004
+2007-02-06,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,19958.0,21.5,429097.0
+2007-02-06,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,sell,545.0,21.5,11717.5
+2007-02-06,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,buy,13461.0,13.19,177550.59
+2007-02-09,AES,"MCLAREN, JOHN",Executive VP,True,Common Stock,sell,20000.0,22.75,455000.0
+2007-02-09,AES,"MCLAREN, JOHN",Executive VP,True,Common Stock,buy,20000.0,13.91,278200.0
+2007-02-23,AES,"GLUSKI, ANDRES","President, Latin America Regn",True,Common Stock,buy,1075.0,22.52,24209.0
+2007-02-23,AES,"GLUSKI, ANDRES","President, Latin America Regn",True,Common Stock,buy,81.0,22.24,1801.4399999999998
+2007-02-23,AES,"FREEMAN, CATHERINE",Vice President and Controller,True,Common Stock,buy,577.0,22.52,12994.039999999999
+2007-02-23,AES,"GLUSKI, ANDRES","President, Latin America Regn",True,Units,buy,1099.0,22.52,24749.48
+2007-02-23,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev,False,Common Stock,buy,624.0,20.82,12991.68
+2007-02-23,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,buy,799.0,22.52,17993.48
+2007-02-23,AES,"GEE, DAVID","President, North Amer Region",True,Common Stock,buy,577.0,22.52,12994.039999999999
+2007-02-23,AES,"GEE, DAVID","President, North Amer Region",True,Common Stock,buy,633.0,19.97,12641.009999999998
+2007-02-23,AES,"GEE, DAVID","President, North Amer Region",True,Units,buy,2988.0,22.52,67289.76
+2007-02-23,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev,False,Common Stock,buy,799.0,22.52,17993.48
+2007-02-23,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Units,buy,8446.0,22.52,190203.91999999998
+2007-02-23,AES,"LURASCHI, WILLIAM R",ExecVP Corp Dev,False,Units,buy,2871.0,22.52,64654.92
+2007-02-23,AES,"HARKER, VICTORIA D",Executive VP & CFO,True,Common Stock,buy,1075.0,22.52,24209.0
+2007-02-23,AES,"FREEMAN, CATHERINE",Vice President and Controller,True,Units,buy,1852.0,22.52,41707.04
+2007-02-23,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,buy,799.0,22.52,17993.48
+2007-02-23,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,buy,78.0,22.41,1747.98
+2007-02-23,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,buy,64.0,20.78,1329.92
+2007-02-23,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Units,buy,1865.0,22.52,41999.799999999996
+2007-02-23,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,45.0,22.41,1008.45
+2007-02-23,AES,"KLOOSTERBOER, JAY L",Executive VP,True,Units,buy,2256.0,22.52,50805.12
+2007-02-23,AES,"KLOOSTERBOER, JAY L",Executive VP,True,Common Stock,buy,73.0,22.32,1629.3600000000001
+2007-02-23,AES,"KLOOSTERBOER, JAY L",Executive VP,True,Common Stock,buy,799.0,22.52,17993.48
+2007-02-23,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,924.0,22.52,20808.48
+2007-02-23,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Units,buy,1943.0,22.52,43756.36
+2007-02-23,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,buy,64.0,22.16,1418.24
+2007-02-23,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,buy,577.0,22.52,12994.039999999999
+2007-02-23,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Units,buy,2651.0,22.52,59700.52
+2007-02-23,AES,"JAISINGHANI, HARESH R","President, Asia Region",True,Common Stock,buy,635.0,22.52,14300.199999999999
+2007-02-23,AES,"HARKER, VICTORIA D",Executive VP & CFO,True,Units,buy,1276.0,22.52,28735.52
+2007-02-28,AES,"GLUSKI, ANDRES","President, Latin America Regn",True,Units,buy,87.0,21.32,1854.84
+2007-03-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,200.0,20.29,4058.0
+2007-03-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,900.0,20.62,18558.0
+2007-03-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,500.0,20.28,10140.0
+2007-03-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,100.0,20.24,2023.9999999999998
+2007-03-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,700.0,20.35,14245.000000000002
+2007-03-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,2800.0,20.39,57092.0
+2007-03-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,500.0,20.37,10185.0
+2007-03-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1800.0,20.38,36684.0
+2007-03-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,500.0,20.22,10110.0
+2007-03-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,176.0,20.3,3572.8
+2007-03-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,100.0,20.19,2019.0000000000002
+2007-03-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,6700.0,20.96,140432.0
+2007-03-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1296.0,20.65,26762.399999999998
+2007-03-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,104.0,20.25,2106.0
+2007-03-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,100.0,20.23,2023.0
+2007-03-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,400.0,20.27,8108.0
+2007-03-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,600.0,20.6,12360.0
+2007-03-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,400.0,20.2,8080.0
+2007-03-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,100.0,20.51,2051.0
+2007-03-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,200.0,20.58,4116.0
+2007-03-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,100.0,20.56,2056.0
+2007-03-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,100.0,20.52,2052.0
+2007-03-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,800.0,20.5,16400.0
+2007-03-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,424.0,20.31,8611.439999999999
+2007-03-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,2100.0,20.41,42861.0
+2007-03-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,200.0,20.53,4106.0
+2007-03-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,300.0,20.36,6108.0
+2007-03-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,500.0,20.34,10170.0
+2007-03-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,200.0,20.32,4064.0
+2007-03-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,100.0,20.59,2059.0
+2007-03-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,300.0,20.42,6126.000000000001
+2007-03-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,400.0,20.63,8252.0
+2007-03-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1300.0,20.4,26519.999999999996
+2007-03-30,AES,"GLUSKI, ANDRES","President, Latin America Regn",True,Units,buy,162.0,21.52,3486.24
+2007-04-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,3896.0,21.6,84153.6
+2007-04-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,300.0,21.525,6457.5
+2007-04-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,3800.0,21.5375,81842.5
+2007-04-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,300.0,21.53,6459.0
+2007-04-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,300.0,21.535,6460.5
+2007-04-02,AES,"GLUSKI, ANDRES","President, Latin America Regn",True,Common Stock,buy,353.0,21.05,7430.650000000001
+2007-04-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,buy,460.0,21.05,9683.0
+2007-04-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,3200.0,21.61,69152.0
+2007-04-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,900.0,21.65,19485.0
+2007-04-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,400.0,21.59,8636.0
+2007-04-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,204.0,21.62,4410.4800000000005
+2007-04-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,2700.0,21.64,58428.0
+2007-04-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1800.0,21.54,38772.0
+2007-04-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,300.0,21.515,6454.5
+2007-04-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,400.0,21.52,8608.0
+2007-04-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,200.0,21.63,4326.0
+2007-04-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1900.0,21.57,40983.0
+2007-04-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,2800.0,21.5175,60248.99999999999
+2007-04-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1600.0,21.5275,34444.0
+2007-04-30,AES,"GLUSKI, ANDRES",Executive VP & COO,True,Units,buy,109.0,21.99,2396.91
+2007-05-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,200.0,22.07,4414.0
+2007-05-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,600.0,22.16,13296.0
+2007-05-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,800.0,22.15,17720.0
+2007-05-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,900.0,22.12,19908.0
+2007-05-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,104.0,22.11,2299.44
+2007-05-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1800.0,22.09,39762.0
+2007-05-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,500.0,22.21,11105.0
+2007-05-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,95.0,22.1,2099.5
+2007-05-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,400.0,22.13,8852.0
+2007-05-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,3000.0,22.14,66420.0
+2007-05-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,5800.0,22.2,128760.0
+2007-05-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,200.0,22.19,4438.0
+2007-05-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,3401.0,22.24,75638.23999999999
+2007-05-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1800.0,22.23,40014.0
+2007-05-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,4800.0,22.22,106656.0
+2007-05-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,600.0,22.08,13247.999999999998
+2007-05-30,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,1200.0,23.7,28440.0
+2007-05-31,AES,"GLUSKI, ANDRES",Executive VP & COO,True,Units,buy,101.0,23.73,2396.73
+2007-06-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,100.0,23.63,2363.0
+2007-06-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,400.0,23.81,9524.0
+2007-06-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,200.0,23.85,4770.0
+2007-06-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,100.0,23.71,2371.0
+2007-06-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1935.0,23.7,45859.5
+2007-06-01,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,140.0,22.6,3164.0
+2007-06-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1601.0,23.69,37927.69
+2007-06-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,2200.0,23.78,52316.0
+2007-06-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,7000.0,24.0,168000.0
+2007-06-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,264.0,23.68,6251.5199999999995
+2007-06-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,200.0,23.79,4758.0
+2007-06-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1000.0,23.67,23670.0
+2007-06-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,4500.0,23.77,106965.0
+2007-06-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,4300.0,23.76,102168.0
+2007-06-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,200.0,23.62,4724.0
+2007-06-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,500.0,23.64,11820.0
+2007-06-01,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,500.0,23.66,11830.0
+2007-06-29,AES,"GLUSKI, ANDRES",Executive VP & COO,True,Units,buy,109.0,21.88,2384.92
+2007-07-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,100.0,22.17,2217.0
+2007-07-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,500.0,22.24,11120.0
+2007-07-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,600.0,22.26,13356.000000000002
+2007-07-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,6500.0,22.2,144300.0
+2007-07-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,4300.0,22.21,95503.0
+2007-07-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,100.0,22.23,2223.0
+2007-07-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1199.0,22.19,26605.81
+2007-07-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,400.0,22.25,8900.0
+2007-07-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,1501.0,22.18,33292.18
+2007-07-02,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,sell,9800.0,22.22,217756.0
+2007-07-03,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Units,sell,595.0,22.5,13387.5
+2007-07-05,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,buy,459.0,22.02,10107.18
+2007-07-31,AES,"GLUSKI, ANDRES",Executive VP & COO,True,Units,buy,122.0,19.65,2397.2999999999997
+2007-08-31,AES,"GLUSKI, ANDRES",Executive VP & COO,True,Units,buy,132.0,18.11,2390.52
+2007-09-28,AES,"GLUSKI, ANDRES",Executive VP & COO,True,Units,buy,120.0,20.04,2404.7999999999997
+2007-10-12,AES,"DARMAN, RICHARD",Director,True,Units,buy,24471.0,21.44,524658.24
+2007-10-12,AES,"LADER, PHILIP",Director,True,Units,buy,7643.0,21.44,163865.92
+2007-10-12,AES,"KOSKINEN, JOHN A",Director,True,Units,buy,11141.0,21.44,238863.04
+2007-10-12,AES,"JOHNSON, KRISTINA M",Director,True,Units,buy,8193.0,21.44,175657.92
+2007-10-12,AES,"MOOSE, SANDRA O",Director,True,Stock Option (Right to Buy),buy,5027.0,21.44,107778.88
+2007-10-12,AES,"ODEEN, PHILIP A",Director,True,Units,buy,6477.0,21.44,138866.88
+2007-10-12,AES,"LADER, PHILIP",Director,True,Stock Option Grant (Right to Buy),buy,5027.0,21.44,107778.88
+2007-10-12,AES,"MCARTHUR, JOHN H",Director,True,Units,buy,6241.0,21.44,133807.04
+2007-10-12,AES,"MOOSE, SANDRA O",Director,True,Units,buy,3675.0,21.44,78792.0
+2007-10-12,AES,"ROSSOTTI, CHARLES O",Director,True,Units,buy,10208.0,21.44,218859.52000000002
+2007-10-12,AES,"SANDSTROM, SVEN",Director,True,Units,buy,10208.0,21.44,218859.52000000002
+2007-10-12,AES,"ODEEN, PHILIP A",Director,True,Stock Options (Right to Buy),buy,5027.0,21.44,107778.88
+2007-10-31,AES,"GLUSKI, ANDRES",Executive VP & COO,True,Units,buy,112.0,21.41,2397.92
+2007-11-30,AES,"GLUSKI, ANDRES",Executive VP & COO,True,Units,buy,110.0,21.85,2403.5
+2007-12-31,AES,"GLUSKI, ANDRES",Executive VP & COO,True,Units,buy,112.0,21.39,2395.6800000000003
+2008-02-22,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Units,buy,2884.0,18.87,54421.08
+2008-02-22,AES,"GEE, DAVID",EVP & Regional Pres N.A.,True,Units,buy,3200.0,18.87,60384.0
+2008-02-22,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,buy,96.0,20.46,1964.16
+2008-02-22,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,buy,967.0,18.87,18247.29
+2008-02-22,AES,"KLOOSTERBOER, JAY L",Executive VP,True,Units,buy,2441.0,18.87,46061.670000000006
+2008-02-22,AES,"HARKER, VICTORIA D",Executive VP & CFO,True,Units,buy,4074.0,18.87,76876.38
+2008-02-22,AES,"HARKER, VICTORIA D",Executive VP & CFO,True,Common Stock,buy,545.0,21.05,11472.25
+2008-02-22,AES,"LURASCHI, WILLIAM R",Executive Vice President,True,Common Stock,buy,967.0,18.87,18247.29
+2008-02-22,AES,"LURASCHI, WILLIAM R",Executive Vice President,True,Units,buy,3654.0,18.87,68950.98000000001
+2008-02-22,AES,"LURASCHI, WILLIAM R",Executive Vice President,True,Common Stock,buy,542.0,21.05,11409.1
+2008-02-22,AES,"GLUSKI, ANDRES",Executive VP & COO,True,Units,buy,4206.0,18.87,79367.22
+2008-02-22,AES,"GLUSKI, ANDRES",Executive VP & COO,True,Common Stock,buy,125.0,19.52,2440.0
+2008-02-22,AES,"KLOOSTERBOER, JAY L",Executive VP,True,Common Stock,buy,967.0,18.87,18247.29
+2008-02-22,AES,"WOODRUFF, MARK",EVP and Reg Pres Asia & ME,True,Common Stock,buy,702.0,18.87,13246.740000000002
+2008-02-22,AES,"HARKER, VICTORIA D",Executive VP & CFO,True,Common Stock,buy,967.0,18.87,18247.29
+2008-02-22,AES,"GLUSKI, ANDRES",Executive VP & COO,True,Common Stock,buy,802.0,18.87,15133.740000000002
+2008-02-22,AES,"KLOOSTERBOER, JAY L",Executive VP,True,Common Stock,buy,540.0,21.05,11367.0
+2008-02-22,AES,"WOOD, MARY E",VP & Controller,True,Common Stock,buy,239.0,20.4,4875.599999999999
+2008-02-22,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,buy,702.0,18.87,13246.740000000002
+2008-02-22,AES,"WOODRUFF, MARK",EVP and Reg Pres Asia & ME,True,Units,buy,2093.0,18.87,39494.91
+2008-02-22,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,1133.0,18.87,21379.710000000003
+2008-02-22,AES,"GEE, DAVID",EVP & Regional Pres N.A.,True,Common Stock,buy,778.0,18.87,14680.86
+2008-02-22,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Units,buy,9801.0,18.87,184944.87
+2008-02-22,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Units,buy,2090.0,18.87,39438.3
+2008-02-22,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,408.0,20.5,8364.0
+2008-02-22,AES,"HEMPHILL, ROBERT F JR",Executive VP,True,Common Stock,buy,78.0,19.25,1501.5
+2008-02-22,AES,"GEE, DAVID",EVP & Regional Pres N.A.,True,Common Stock,buy,542.0,21.05,11409.1
+2008-02-22,AES,"HALL,, III EDWARD C",Executive Vice President,True,Common Stock,buy,967.0,18.87,18247.29
+2008-02-22,AES,"HALL,, III EDWARD C",Executive Vice President,True,Units,buy,1614.0,18.87,30456.18
+2008-02-22,AES,"VESEY, ANDREW",EVP & Regional Pres L.A.,True,Common Stock,buy,1033.0,18.87,19492.710000000003
+2008-02-22,AES,"VESEY, ANDREW",EVP & Regional Pres L.A.,True,Units,buy,1059.0,18.87,19983.33
+2008-02-22,AES,"WOODRUFF, MARK",EVP and Reg Pres Asia & ME,True,Common Stock,buy,502.0,20.95,10516.9
+2008-02-22,AES,"WOOD, MARY E",VP & Controller,True,Common Stock,buy,736.0,18.87,13888.320000000002
+2008-03-24,AES,"GLUSKI, ANDRES",Executive VP & COO,True,Common Stock,buy,100.0,16.22,1622.0
+2008-03-24,AES,"GLUSKI, ANDRES",Executive VP & COO,True,Common Stock,buy,200.0,16.18,3236.0
+2008-03-24,AES,"GLUSKI, ANDRES",Executive VP & COO,True,Common Stock,buy,100.0,16.14,1614.0
+2008-03-24,AES,"GLUSKI, ANDRES",Executive VP & COO,True,Common Stock,buy,400.0,16.17,6468.000000000001
+2008-03-24,AES,"GLUSKI, ANDRES",Executive VP & COO,True,Common Stock,buy,136.0,17.74,2412.64
+2008-03-24,AES,"GLUSKI, ANDRES",Executive VP & COO,True,Common Stock,buy,800.0,16.2,12960.0
+2008-03-24,AES,"GLUSKI, ANDRES",Executive VP & COO,True,Common Stock,buy,1200.0,16.24,19487.999999999996
+2008-03-24,AES,"GLUSKI, ANDRES",Executive VP & COO,True,Common Stock,buy,350.0,16.25,5687.5
+2008-03-24,AES,"GLUSKI, ANDRES",Executive VP & COO,True,Common Stock,buy,950.0,16.26,15447.000000000002
+2008-03-24,AES,"GLUSKI, ANDRES",Executive VP & COO,True,Common Stock,buy,900.0,16.3,14670.0
+2008-03-24,AES,"GLUSKI, ANDRES",Executive VP & COO,True,Common Stock,buy,600.0,16.21,9726.0
+2008-03-24,AES,"GLUSKI, ANDRES",Executive VP & COO,True,Common Stock,buy,600.0,16.23,9738.0
+2008-04-09,AES,"NAILL, ROGER",Senior Vice President,True,Common Stock,sell,900.0,17.4,15659.999999999998
+2008-04-24,AES,"LADER, PHILIP",Director,True,Units,buy,12358.0,17.71,218860.18000000002
+2008-04-24,AES,"MOOSE, SANDRA O",Director,True,Units,buy,7555.0,17.71,133799.05000000002
+2008-04-24,AES,"KOSKINEN, JOHN A",Director,True,Units,buy,14052.0,17.71,248860.92
+2008-04-24,AES,"SANDSTROM, SVEN",Director,True,Units,buy,12358.0,17.71,218860.18000000002
+2008-04-24,AES,"JOHNSON, KRISTINA M",Director,True,Units,buy,8261.0,17.71,146302.31
+2008-04-24,AES,"ROSSOTTI, CHARLES O",Director,True,Units,buy,12358.0,17.71,218860.18000000002
+2008-04-24,AES,"ODEEN, PHILIP A",Director,True,Units,buy,11761.0,17.71,208287.31
+2008-08-13,AES,"ODEEN, PHILIP A",Director,True,Common Stock,buy,2000.0,15.8,31600.0
+2008-08-27,AES,"NAILL, ROGER",Senior Vice President,True,Common Stock,sell,2700.0,15.46,41742.0
+2008-08-27,AES,"NAILL, ROGER",Senior Vice President,True,Common Stock,sell,2000.0,15.48,30960.0
+2008-08-27,AES,"NAILL, ROGER",Senior Vice President,True,Common Stock,sell,1100.0,15.47,17017.0
+2008-08-27,AES,"NAILL, ROGER",Senior Vice President,True,Common Stock,sell,4200.0,15.45,64890.0
+2008-08-28,AES,"NAILL, ROGER",Senior Vice President,True,Common Stock,buy,627.0,17.79,11154.33
+2008-09-16,AES,"NAILL, ROGER",Senior Vice President,True,Common Stock,sell,333.0,14.75,4911.75
+2008-09-16,AES,"KOSKINEN, JOHN A",Director,True,Common Stock,buy,10000.0,12.48,124800.0
+2008-10-02,AES,"KOSKINEN, JOHN A",Director,True,Common Stock,buy,10000.0,10.6,106000.0
+2008-10-06,AES,"KOSKINEN, JOHN A",Director,True,Common Stock,buy,10000.0,8.89,88900.0
+2008-10-06,AES,"ODEEN, PHILIP A",Director,True,Common Stock,buy,200.0,9.83,1966.0
+2008-10-06,AES,"ODEEN, PHILIP A",Director,True,Common Stock,buy,2200.0,9.81,21582.0
+2008-10-06,AES,"ODEEN, PHILIP A",Director,True,Common Stock,buy,3600.0,9.82,35352.0
+2008-10-06,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,buy,585.0,16.85,9857.25
+2008-10-06,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,55000.0,8.64,475200.00000000006
+2008-10-06,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,417.0,16.85,7026.450000000001
+2008-10-06,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,buy,10000.0,8.69,86900.0
+2008-10-07,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,buy,10000.0,9.0,90000.0
+2008-12-12,AES,"MORSE, JOHN B JR",Director,True,Units,buy,13220.0,7.27,96109.4
+2008-12-31,AES,"KLOOSTERBOER, JAY L",Executive VP,True,Common Stock,buy,591.0,14.33,8469.03
+2008-12-31,AES,"KLOOSTERBOER, JAY L",Executive VP,True,Common Stock,sell,6788.0,8.24,55933.12
+2008-12-31,AES,"NAILL, ROGER",Senior Vice President,True,Common Stock,sell,1886.0,8.24,15540.640000000001
+2008-12-31,AES,"HALL,, III EDWARD C",Executive Vice President,True,Common Stock,buy,687.0,14.33,9844.710000000001
+2008-12-31,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,45808.0,8.24,377457.92
+2008-12-31,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,400.0,7.81,3124.0
+2008-12-31,AES,"HALL,, III EDWARD C",Executive Vice President,True,Common Stock,sell,2143.0,8.24,17658.32
+2008-12-31,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,3036.0,8.24,25016.64
+2008-12-31,AES,"SANTOROSKI, RICHARD",Vice President,True,Common Stock,sell,2859.0,8.24,23558.16
+2008-12-31,AES,"SANTOROSKI, RICHARD",Vice President,True,Common Stock,buy,634.0,14.04,8901.359999999999
+2008-12-31,AES,"VESEY, ANDREW",EVP & Regional Pres L.A.,True,Common Stock,sell,1100.0,8.24,9064.0
+2008-12-31,AES,"WOODRUFF, MARK",EVP and Reg Pres Asia & ME,True,Common Stock,buy,610.0,14.33,8741.3
+2008-12-31,AES,"WOODRUFF, MARK",EVP and Reg Pres Asia & ME,True,Common Stock,sell,4486.0,8.24,36964.64
+2008-12-31,AES,"MCLAREN, JOHN",Executive VP,True,Common Stock,sell,4840.0,8.24,39881.6
+2008-12-31,AES,"VESEY, ANDREW",EVP & Regional Pres L.A.,True,Common Stock,buy,674.0,14.33,9658.42
+2008-12-31,AES,"GLUSKI, ANDRES",Executive VP & COO,True,Common Stock,sell,4599.0,8.24,37895.76
+2009-01-31,AES,"HALL,, III EDWARD C",Executive Vice President,True,Units,buy,211.0,7.91,1669.01
+2009-02-02,AES,"WOOD, MARY E",VP & Controller,True,Common Stock,sell,1598.0,7.88,12592.24
+2009-02-20,AES,"HALL,, III EDWARD C",Executive Vice President,True,Common Stock,buy,2742.0,6.71,18398.82
+2009-02-20,AES,"GLUSKI, ANDRES",Executive VP & COO,True,Units,buy,13547.0,6.71,90900.37
+2009-02-20,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Restricted Stock Units,buy,37258.0,6.71,250001.18
+2009-02-20,AES,"SANTOROSKI, RICHARD",Vice President,True,Units,buy,1872.0,6.71,12561.12
+2009-02-20,AES,"SANTOROSKI, RICHARD",Vice President,True,Common Stock,buy,2742.0,6.71,18398.82
+2009-02-20,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Restricted Stock Units,buy,225186.0,6.71,1510998.06
+2009-02-20,AES,"HALL,, III EDWARD C",Executive Vice President,True,Restricted Stock Units,buy,44709.0,6.71,299997.39
+2009-02-20,AES,"WOOD, MARY E",VP & Controller,True,Common Stock,buy,2742.0,6.71,18398.82
+2009-02-20,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Units,buy,25225.0,6.71,169259.75
+2009-02-20,AES,"GLUSKI, ANDRES",Executive VP & COO,True,Restricted Stock Units,buy,85693.0,6.71,575000.03
+2009-02-20,AES,"VESEY, ANDREW",EVP & Regional Pres L.A.,True,Restricted Stock Units,buy,37258.0,6.71,250001.18
+2009-02-20,AES,"VESEY, ANDREW",EVP & Regional Pres L.A.,True,Units,buy,1485.0,6.71,9964.35
+2009-02-20,AES,"HARKER, VICTORIA D",Executive VP & CFO,True,Units,buy,10902.0,6.71,73152.42
+2009-02-20,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,2742.0,6.71,18398.82
+2009-02-20,AES,"HARKER, VICTORIA D",Executive VP & CFO,True,Restricted Stock Units,buy,55887.0,6.71,375001.77
+2009-02-20,AES,"SANTOROSKI, RICHARD",Vice President,True,Restricted Stock Units,buy,13040.0,6.71,87498.4
+2009-02-20,AES,"WOODRUFF, MARK",EVP and Reg Pres Asia & ME,True,Restricted Stock Units,buy,31669.0,6.71,212498.99
+2009-02-20,AES,"HARKER, VICTORIA D",Executive VP & CFO,True,Common Stock,buy,2742.0,6.71,18398.82
+2009-02-20,AES,"VESEY, ANDREW",EVP & Regional Pres L.A.,True,Common Stock,buy,2742.0,6.71,18398.82
+2009-02-20,AES,"MCLAREN, JOHN",Executive VP,True,Restricted Stock Units,buy,37641.0,6.71,252571.11
+2009-02-20,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Units,buy,7663.0,6.71,51418.73
+2009-02-20,AES,"WOODRUFF, MARK",EVP and Reg Pres Asia & ME,True,Units,buy,6088.0,6.71,40850.48
+2009-02-20,AES,"GLUSKI, ANDRES",Executive VP & COO,True,Common Stock,buy,2742.0,6.71,18398.82
+2009-02-20,AES,"HALL,, III EDWARD C",Executive Vice President,True,Units,buy,5871.0,6.71,39394.409999999996
+2009-02-20,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,buy,2742.0,6.71,18398.82
+2009-02-20,AES,"WOOD, MARY E",VP & Controller,True,Restricted Stock Units,buy,13497.0,6.71,90564.87
+2009-02-20,AES,"WOODRUFF, MARK",EVP and Reg Pres Asia & ME,True,Common Stock,buy,2742.0,6.71,18398.82
+2009-02-28,AES,"HALL,, III EDWARD C",Executive Vice President,True,Units,buy,265.0,6.3,1669.5
+2009-03-31,AES,"HALL,, III EDWARD C",Executive Vice President,True,Units,buy,373.0,5.81,2167.1299999999997
+2009-03-31,AES,"HALL,, III EDWARD C",Executive Vice President,True,Common Stock,buy,316.0,5.95,1880.2
+2009-03-31,AES,"SANTOROSKI, RICHARD",Vice President,True,Common Stock,buy,213.0,5.95,1267.3500000000001
+2009-04-23,AES,"MORSE, JOHN B JR",Director,True,Units,buy,24045.0,6.69,160861.05000000002
+2009-04-23,AES,"BODMAN, SAMUEL W III",Director,True,Director Deferred Units,buy,37199.0,6.69,248861.31000000003
+2009-04-23,AES,"KHANNA, TARUN",Director,True,Director Deferred Units,buy,33457.0,6.69,223827.33000000002
+2009-04-23,AES,"KOSKINEN, JOHN A",Director,True,Units,buy,34957.0,6.69,233862.33000000002
+2009-04-23,AES,"ODEEN, PHILIP A",Director,True,Stock Option (Right to Buy),buy,26442.0,6.69,176896.98
+2009-04-23,AES,"MOOSE, SANDRA O",Director,True,Units,buy,20000.0,6.69,133800.0
+2009-04-23,AES,"SANDSTROM, SVEN",Director,True,Units,buy,32714.0,6.69,218856.66
+2009-04-23,AES,"ODEEN, PHILIP A",Director,True,Units,buy,29154.0,6.69,195040.26
+2009-04-23,AES,"ROSSOTTI, CHARLES O",Director,True,Units,buy,32714.0,6.69,218856.66
+2009-04-23,AES,"LADER, PHILIP",Director,True,Units,buy,34209.0,6.69,228858.21000000002
+2009-04-30,AES,"SANTOROSKI, RICHARD",Vice President,True,Common Stock,buy,1525.0,6.57,10019.25
+2009-04-30,AES,"HALL,, III EDWARD C",Executive Vice President,True,Common Stock,buy,279.0,6.57,1833.03
+2009-04-30,AES,"HALL,, III EDWARD C",Executive Vice President,True,Units,buy,3654.0,7.07,25833.780000000002
+2009-05-29,AES,"HALL,, III EDWARD C",Executive Vice President,True,Common Stock,buy,203.0,8.81,1788.43
+2009-05-29,AES,"HALL,, III EDWARD C",Executive Vice President,True,Units,buy,183.0,9.99,1828.17
+2009-06-30,AES,"HALL,, III EDWARD C",Executive Vice President,True,Common Stock,buy,180.0,10.32,1857.6000000000001
+2009-06-30,AES,"HALL,, III EDWARD C",Executive Vice President,True,Units,buy,158.0,11.61,1834.3799999999999
+2009-07-31,AES,"HALL,, III EDWARD C",Executive Vice President,True,Units,buy,143.0,12.79,1828.9699999999998
+2009-07-31,AES,"HALL,, III EDWARD C",Executive Vice President,True,Common Stock,buy,167.0,11.96,1997.3200000000002
+2009-08-31,AES,"HALL,, III EDWARD C",Executive Vice President,True,Units,buy,134.0,13.67,1831.78
+2009-08-31,AES,"HALL,, III EDWARD C",Executive Vice President,True,Common Stock,buy,117.0,13.75,1608.75
+2009-09-30,AES,"HALL,, III EDWARD C",Executive Vice President,True,Units,buy,124.0,14.82,1837.68
+2009-10-30,AES,"HALL,, III EDWARD C",Executive Vice President,True,Units,buy,140.0,13.07,1829.8
+2009-11-30,AES,"HALL,, III EDWARD C",Executive Vice President,True,Units,buy,144.0,12.74,1834.56
+2009-12-31,AES,"GLUSKI, ANDRES",Executive VP & COO,True,Common Stock,sell,2546.0,13.31,33887.26
+2009-12-31,AES,"VESEY, ANDREW",EVP & Regional Pres L.A.,True,Common Stock,buy,1262.0,11.22,14159.640000000001
+2009-12-31,AES,"VESEY, ANDREW",EVP & Regional Pres L.A.,True,Common Stock,sell,1684.0,13.31,22414.04
+2009-12-31,AES,"SANTOROSKI, RICHARD",Vice President,True,Common Stock,sell,1682.0,13.31,22387.420000000002
+2009-12-31,AES,"GLUSKI, ANDRES",Executive VP & COO,True,Common Stock,buy,1372.0,11.22,15393.84
+2009-12-31,AES,"WOODRUFF, MARK",Executive Vice President,True,Common Stock,buy,1675.0,11.22,18793.5
+2009-12-31,AES,"HALL,, III EDWARD C",Executive Vice President,True,Units,buy,138.0,13.31,1836.78
+2009-12-31,AES,"HALL,, III EDWARD C",Executive Vice President,True,Common Stock,sell,1761.0,13.31,23438.91
+2009-12-31,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,23558.0,13.31,313556.98000000004
+2009-12-31,AES,"WOODRUFF, MARK",Executive Vice President,True,Common Stock,sell,2185.0,13.31,29082.350000000002
+2009-12-31,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,buy,1648.0,11.22,18490.56
+2009-12-31,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,1386.0,11.22,15550.92
+2009-12-31,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,1626.0,13.31,21642.06
+2010-02-19,AES,"HALL,, III EDWARD C",Executive Vice President,True,Units,buy,4052.0,12.18,49353.36
+2010-02-19,AES,"WOOD, MARY E",VP & Controller,True,Common Stock,buy,3016.0,12.18,36734.88
+2010-02-19,AES,"WOODRUFF, MARK",Executive Vice President,True,Common Stock,buy,1728.0,12.18,21047.04
+2010-02-19,AES,"HALL,, III EDWARD C",Executive Vice President,True,Common Stock,buy,1759.0,12.18,21424.62
+2010-02-19,AES,"WOOD, MARY E",VP & Controller,True,Units,buy,491.0,12.18,5980.38
+2010-02-19,AES,"WOODRUFF, MARK",Executive Vice President,True,Units,buy,3827.0,12.18,46612.86
+2010-02-19,AES,"VESEY, ANDREW",EVP & Regional Pres L.A.,True,Common Stock,buy,1759.0,12.18,21424.62
+2010-02-19,AES,"VESEY, ANDREW",EVP & Regional Pres L.A.,True,Units,buy,3888.0,12.18,47355.84
+2010-02-19,AES,"SANTOROSKI, RICHARD",Executive Vice President,True,Common Stock,buy,1708.0,12.18,20803.44
+2010-02-19,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,1953.0,12.18,23787.54
+2010-02-19,AES,"GLUSKI, ANDRES",Executive VP & COO,True,Units,buy,7799.0,12.18,94991.81999999999
+2010-02-19,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Units,buy,4913.0,12.18,59840.34
+2010-02-19,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Units,buy,15417.0,12.18,187779.06
+2010-02-19,AES,"HARKER, VICTORIA D",Executive VP & CFO,True,Common Stock,buy,3414.0,12.18,41582.52
+2010-02-19,AES,"GLUSKI, ANDRES",Executive VP & COO,True,Common Stock,buy,1836.0,12.18,22362.48
+2010-02-19,AES,"SANTOROSKI, RICHARD",Executive Vice President,True,Units,buy,1121.0,12.18,13653.779999999999
+2010-02-19,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,buy,1766.0,12.18,21509.88
+2010-02-19,AES,"HARKER, VICTORIA D",Executive VP & CFO,True,Units,buy,6999.0,12.18,85247.81999999999
+2010-04-22,AES,"MORSE, JOHN B JR",Director,True,Units,buy,15789.0,12.34,194836.26
+2010-04-22,AES,"BODMAN, SAMUEL W III",Director,True,Units,buy,12334.0,12.34,152201.56
+2010-04-22,AES,"MOOSE, SANDRA O",Director,True,Units,buy,12334.0,12.34,152201.56
+2010-04-22,AES,"ROSSOTTI, CHARLES O",Director,True,Units,buy,20327.0,12.34,250835.18
+2010-04-22,AES,"ODEEN, PHILIP A",Director,True,Units,buy,24380.0,12.34,300849.2
+2010-04-22,AES,"LADER, PHILIP",Director,True,Units,buy,21320.0,12.34,263088.8
+2010-04-22,AES,"KOSKINEN, JOHN A",Director,True,Units,buy,21138.0,12.34,260842.91999999998
+2010-04-22,AES,"KHANNA, TARUN",Director,True,Units,buy,19922.0,12.34,245837.48
+2010-04-22,AES,"SANDSTROM, SVEN",Director,True,Units,buy,20327.0,12.34,250835.18
+2010-05-12,AES,"ODEEN, PHILIP A",Director,True,Common Stock,buy,5000.0,11.06,55300.0
+2010-05-12,AES,"ODEEN, PHILIP A",Director,True,Common Stock,buy,3000.0,11.11,33330.0
+2010-11-15,AES,"HARKER, VICTORIA D",Executive VP & CFO,True,Common Stock,sell,14200.0,11.59,164578.0
+2010-11-15,AES,"HARKER, VICTORIA D",Executive VP & CFO,True,Common Stock,sell,16770.0,11.6,194532.0
+2010-11-15,AES,"HARKER, VICTORIA D",Executive VP & CFO,True,Common Stock,sell,9060.0,11.61,105186.59999999999
+2010-11-15,AES,"HARKER, VICTORIA D",Executive VP & CFO,True,Common Stock,sell,1498.0,11.58,17346.84
+2010-11-15,AES,"HARKER, VICTORIA D",Executive VP & CFO,True,Common Stock,buy,41528.0,6.71,278652.88
+2010-11-22,AES,"WOODRUFF, MARK",Executive Vice President,True,Common Stock,sell,54901.0,11.06,607205.06
+2010-11-22,AES,"WOODRUFF, MARK",Executive Vice President,True,Common Stock,buy,54901.0,2.83,155369.83000000002
+2010-12-20,AES,"WOODRUFF, MARK",Executive Vice President,True,Common Stock,buy,15555.0,8.97,139528.35
+2010-12-20,AES,"WOODRUFF, MARK",Executive Vice President,True,Common Stock,sell,15555.0,11.74,182615.7
+2010-12-20,AES,"WOODRUFF, MARK",Executive Vice President,True,Common Stock,buy,7487.0,2.83,21188.21
+2010-12-20,AES,"WOODRUFF, MARK",Executive Vice President,True,Common Stock,sell,7487.0,11.74,87897.38
+2010-12-21,AES,"WOODRUFF, MARK",Executive Vice President,True,Common Stock,sell,45381.0,12.12,550017.72
+2010-12-31,AES,"SANTOROSKI, RICHARD",Executive Vice President,True,Common Stock,sell,1683.0,12.18,20498.94
+2010-12-31,AES,"VESEY, ANDREW",EVP & Regional Pres L.A.,True,Common Stock,sell,1731.0,12.18,21083.579999999998
+2011-01-13,AES,"JOHNSON, KRISTINA M",Director,True,Director Deferred Units,buy,4221.0,12.93,54577.53
+2011-02-18,AES,"HALL,, III EDWARD C",Executive Vice President,True,Units,buy,4948.0,12.88,63730.240000000005
+2011-02-18,AES,"SANTOROSKI, RICHARD",Executive Vice President,True,Units,buy,1525.0,12.88,19642.0
+2011-02-18,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Units,buy,5116.0,12.88,65894.08
+2011-02-18,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Units,buy,16638.0,12.88,214297.44
+2011-02-18,AES,"VESEY, ANDREW",EVP & Regional Pres L.A.,True,Units,buy,4282.0,12.88,55152.16
+2011-02-18,AES,"HARKER, VICTORIA D",Executive VP & CFO,True,Units,buy,5015.0,12.88,64593.200000000004
+2011-02-18,AES,"GLUSKI, ANDRES",Executive VP & COO,True,Units,buy,8253.0,12.88,106298.64
+2011-02-18,AES,"WOOD, MARY E",VP & Controller,True,Units,buy,496.0,12.88,6388.4800000000005
+2011-03-24,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,19400.0,12.6,244440.0
+2011-03-24,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,28100.0,2.83,79523.0
+2011-03-25,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,28100.0,2.83,79523.0
+2011-03-25,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,19400.0,12.61,244634.0
+2011-03-30,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,28100.0,2.83,79523.0
+2011-03-30,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,19400.0,13.04,252975.99999999997
+2011-03-31,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,19400.0,12.98,251812.0
+2011-03-31,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,28100.0,2.83,79523.0
+2011-04-21,AES,"JOHNSON, KRISTINA M",Director,True,Units,buy,15537.0,13.01,202136.37
+2011-04-21,AES,"KHANNA, TARUN",Director,True,Units,buy,18896.0,13.01,245836.96
+2011-04-21,AES,"ODEEN, PHILIP A",Director,True,Units,buy,27240.0,13.01,354392.4
+2011-04-21,AES,"MOOSE, SANDRA O",Director,True,Units,buy,11699.0,13.01,152203.99
+2011-04-21,AES,"ROSSOTTI, CHARLES O",Director,True,Units,buy,19281.0,13.01,250845.81
+2011-04-21,AES,"LADER, PHILIP",Director,True,Units,buy,20222.0,13.01,263088.22
+2011-04-21,AES,"BODMAN, SAMUEL W III",Director,True,Units,buy,11699.0,13.01,152203.99
+2011-04-21,AES,"KOSKINEN, JOHN A",Director,True,Units,buy,20049.0,13.01,260837.49
+2011-04-21,AES,"MORSE, JOHN B JR",Director,True,Units,buy,15376.0,13.01,200041.76
+2011-04-21,AES,"SANDSTROM, SVEN",Director,True,Units,buy,19281.0,13.01,250845.81
+2011-05-18,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,28100.0,2.83,79523.0
+2011-05-18,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,19400.0,12.53,243082.0
+2011-05-19,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,28100.0,2.83,79523.0
+2011-05-19,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,19400.0,12.81,248514.0
+2011-06-16,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,19400.0,12.16,235904.0
+2011-06-16,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,28100.0,2.83,79523.0
+2011-06-17,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,28100.0,2.83,79523.0
+2011-06-17,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,19400.0,12.31,238814.0
+2011-07-06,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,28100.0,2.83,79523.0
+2011-07-06,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,19400.0,12.88,249872.00000000003
+2011-07-07,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,sell,19400.0,13.12,254527.99999999997
+2011-07-07,AES,"HANRAHAN, PAUL T","Director, President and CEO",True,Common Stock,buy,28100.0,2.83,79523.0
+2011-07-29,AES,"TERRIFIC, INVESTMENT CORP",10% Owner,False,"Common Stock, par value $0.01 per share",sell,26725.0,12.31,328984.75
+2011-09-06,AES,"GLUSKI, ANDRES",Executive VP & COO,True,Common Stock,buy,19940.0,9.99,199200.6
+2011-12-09,AES,"ZHANG, GUOBAO",Director,True,Director Deferred Units,buy,7993.0,11.86,94796.98
+2011-12-30,AES,"HARKER, VICTORIA D",CFO & Pres Global Business Svs,True,Common Stock,sell,6901.0,11.84,81707.84
+2011-12-30,AES,"TREHAN, RITA",Vice President Human Resources,True,Common Stock,sell,809.0,11.84,9578.56
+2011-12-30,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,6901.0,11.84,81707.84
+2011-12-30,AES,"GLUSKI, ANDRES",President and CEO,True,Common Stock,sell,15036.0,11.84,178026.24
+2012-02-01,AES,"SANTOROSKI, RICHARD",EVP Global Commercial Support,True,Units,sell,525.0,12.96,6804.0
+2012-02-17,AES,"VESEY, ANDREW",COO Utilities,True,Units,buy,5032.0,13.7,68938.4
+2012-02-17,AES,"VESEY, ANDREW",COO Utilities,True,Common Stock,sell,2769.0,13.7,37935.299999999996
+2012-02-17,AES,"WALKUP, GARDNER","Vice President, Strategy",True,Common Stock,sell,2154.0,13.7,29509.8
+2012-02-17,AES,"WALKUP, GARDNER","Vice President, Strategy",True,Units,buy,1121.0,13.7,15357.699999999999
+2012-02-17,AES,"TREHAN, RITA",Vice President Human Resources,True,Common Stock,sell,1008.0,13.7,13809.599999999999
+2012-02-17,AES,"WOOD, MARY E",VP & Controller,True,Common Stock,sell,704.0,13.7,9644.8
+2012-02-17,AES,"WOOD, MARY E",VP & Controller,True,Units,buy,1319.0,13.7,18070.3
+2012-02-17,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,1961.0,13.7,26865.699999999997
+2012-02-17,AES,"HARKER, VICTORIA D",CFO & Pres Global Business Svs,True,Units,buy,6704.0,13.7,91844.79999999999
+2012-02-17,AES,"GLUSKI, ANDRES",President and CEO,True,Units,buy,8862.0,13.7,121409.4
+2012-02-17,AES,"GLUSKI, ANDRES",President and CEO,True,Common Stock,sell,3767.0,13.7,51607.899999999994
+2012-02-17,AES,"HALL,, III EDWARD C",COO Generation,True,Units,buy,4850.0,13.7,66445.0
+2012-02-17,AES,"HALL,, III EDWARD C",COO Generation,True,Common Stock,sell,2479.0,13.7,33962.299999999996
+2012-02-17,AES,"HARKER, VICTORIA D",CFO & Pres Global Business Svs,True,Common Stock,sell,2531.0,13.7,34674.7
+2012-02-17,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Units,buy,5358.0,13.7,73404.59999999999
+2012-03-09,AES,"LADER, PHILIP",Director,True,Common Stock,buy,5865.0,7.91,46392.15
+2012-05-09,AES,"TREHAN, RITA",Vice President Human Resources,True,Common Stock,buy,4250.0,11.79,50107.5
+2012-05-09,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,buy,41667.0,12.04,501670.68
+2012-05-17,AES,"VESEY, ANDREW",COO Utilities,True,Common Stock,buy,8400.0,11.98,100632.0
+2012-07-17,AES,"WALKUP, GARDNER","Vice President, Strategy",True,Common Stock,buy,7500.0,12.59,94425.0
+2012-09-14,AES,"SANDSTROM, SVEN",Director,True,Common Stock,sell,16488.0,11.55,190436.40000000002
+2012-09-14,AES,"SANDSTROM, SVEN",Director,True,Common Stock,buy,45830.0,0.95,43538.5
+2012-09-30,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,17444.0,10.97,191360.68000000002
+2012-11-15,AES,"KOSKINEN, JOHN A",Director,True,Common Stock,buy,123.0,9.69,1191.87
+2012-11-20,AES,"ODEEN, PHILIP A",Director,True,Common Stock,buy,2000.0,9.86,19720.0
+2012-11-20,AES,"HACKENSON, ELIZABETH",Sr. VP and CIO,True,Common Stock,buy,10000.0,9.89,98900.0
+2012-12-11,AES,"LADER, PHILIP",Director,True,Common Stock,buy,17725.0,10.72,190012.0
+2012-12-11,AES,"LADER, PHILIP",Director,True,Common Stock,buy,6329.0,10.72,67846.88
+2013-02-15,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Units,buy,5950.0,11.17,66461.5
+2013-02-15,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,11468.0,11.17,128097.56
+2013-02-15,AES,"HACKENSON, ELIZABETH",Sr. VP and CIO,True,Common Stock,sell,2106.0,11.17,23524.02
+2013-02-15,AES,"WOOD, MARY E",VP & Controller,True,Common Stock,sell,1461.0,11.17,16319.37
+2013-02-15,AES,"WOOD, MARY E",VP & Controller,True,Units,buy,1790.0,11.17,19994.3
+2013-02-15,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,4012.0,11.17,44814.04
+2013-02-15,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Units,buy,13026.0,11.17,145500.42
+2013-02-15,AES,"KOSKINEN, JOHN A",Director,True,Common Stock,buy,107.0,11.22,1200.54
+2013-02-15,AES,"VESEY, ANDREW",EVP and COO,True,Units,buy,6131.0,11.17,68483.27
+2013-02-15,AES,"HACKENSON, ELIZABETH",Sr. VP and CIO,True,Units,buy,846.0,11.17,9449.82
+2013-02-15,AES,"VESEY, ANDREW",EVP and COO,True,Common Stock,sell,5285.0,11.17,59033.45
+2013-03-15,AES,"SANDSTROM, SVEN",Director,True,Common Stock,sell,4771.0,12.39,59112.69
+2013-03-15,AES,"SANDSTROM, SVEN",Director,True,Common Stock,buy,6985.0,6.7,46799.5
+2013-03-20,AES,"ROSSOTTI, CHARLES O",Director,True,Common Stock,buy,4187.0,3.62,15156.94
+2013-03-20,AES,"ROSSOTTI, CHARLES O",Director,True,Common Stock,buy,17725.0,6.7,118757.5
+2013-05-14,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,buy,22489.0,8.97,201726.33000000002
+2013-05-15,AES,"KOSKINEN, JOHN A",Director,True,Common Stock,buy,92.0,13.145,1209.34
+2013-09-04,AES,"O'FLYNN, THOMAS M.",EVP and CFO,True,Common Stock,sell,4887.0,12.64,61771.68
+2013-09-30,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,19557.0,13.29,259912.52999999997
+2013-12-07,AES,"VESEY, ANDREW",EVP and COO,True,Common Stock,sell,5936.0,15.02,89158.72
+2013-12-18,AES,"TERRIFIC, INVESTMENT CORP",Former 10% Owner,False,"Common Stock, par value $0.01 per share",sell,20000000.0,12.912,258240000.00000003
+2013-12-18,AES,"TERRIFIC, INVESTMENT CORP",Former 10% Owner,False,"Common Stock, par value $0.01 per share",sell,46000000.0,13.181,606326000.0
+2013-12-19,AES,"HARRINGTON, CHARLES L.",Director,True,Deferred Units,buy,351.0,14.12,4956.12
+2013-12-31,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,6671.0,14.51,96796.20999999999
+2013-12-31,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,16928.0,14.51,245625.28
+2013-12-31,AES,"HACKENSON, ELIZABETH",Sr. VP and CIO,True,Common Stock,sell,3501.0,14.51,50799.51
+2013-12-31,AES,"VESEY, ANDREW",EVP and COO,True,Common Stock,sell,7514.0,14.51,109028.14
+2014-01-30,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,9649.0,13.95,134603.55
+2014-01-30,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,buy,12369.0,8.97,110949.93000000001
+2014-02-15,AES,"VESEY, ANDREW",EVP and COO,True,Common Stock,sell,3770.0,14.62,55117.399999999994
+2014-02-15,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,13589.0,14.62,198671.18
+2014-02-15,AES,"HACKENSON, ELIZABETH",Sr. VP and CIO,True,Common Stock,sell,1449.0,14.62,21184.379999999997
+2014-02-15,AES,"O'FLYNN, THOMAS M.",EVP and CFO,True,Common Stock,sell,3393.0,14.62,49605.659999999996
+2014-02-15,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,2523.0,14.62,36886.259999999995
+2014-02-17,AES,"HACKENSON, ELIZABETH",Sr. VP and CIO,True,Common Stock,sell,980.0,14.62,14327.599999999999
+2014-02-17,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,10527.0,14.62,153904.74
+2014-02-17,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,1760.0,14.62,25731.199999999997
+2014-02-17,AES,"VESEY, ANDREW",EVP and COO,True,Common Stock,sell,2310.0,14.62,33772.2
+2014-02-18,AES,"VESEY, ANDREW",EVP and COO,True,Common Stock,sell,2756.0,14.76,40678.56
+2014-02-18,AES,"HACKENSON, ELIZABETH",Sr. VP and CIO,True,Common Stock,sell,899.0,14.76,13269.24
+2014-02-18,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,1942.0,14.76,28663.92
+2014-02-18,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,5444.0,14.76,80353.44
+2014-02-21,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Units,buy,4180.0,14.63,61153.4
+2014-02-21,AES,"HACKENSON, ELIZABETH",Sr. VP and CIO,True,Common Stock,sell,1618.0,14.63,23671.34
+2014-02-21,AES,"HACKENSON, ELIZABETH",Sr. VP and CIO,True,Units,buy,680.0,14.63,9948.4
+2014-02-21,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Units,buy,11552.0,14.63,169005.76
+2014-02-21,AES,"VESEY, ANDREW",EVP and COO,True,Common Stock,sell,4828.0,14.63,70633.64
+2014-02-21,AES,"O'FLYNN, THOMAS M.",EVP and CFO,True,Units,buy,3702.0,14.63,54160.26
+2014-02-21,AES,"VESEY, ANDREW",EVP and COO,True,Units,buy,4886.0,14.63,71482.18000000001
+2014-02-21,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,9538.0,14.63,139540.94
+2014-02-21,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,3401.0,14.63,49756.630000000005
+2014-05-13,AES,"VIRAG, SHARON","VP, Controller",True,Common Stock,sell,1908.0,14.09,26883.72
+2014-09-04,AES,"O'FLYNN, THOMAS M.",EVP and CFO,True,Common Stock,sell,6423.0,14.68,94289.64
+2014-09-30,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,19557.0,14.18,277318.26
+2014-11-03,AES,"VESEY, ANDREW",EVP and COO,True,Common Stock,buy,1946.0,11.54,22456.84
+2015-02-20,AES,"HACKENSON, ELIZABETH",Sr. VP and CIO,True,Units,buy,406.0,11.89,4827.34
+2015-02-20,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Units,buy,5033.0,11.89,59842.37
+2015-02-20,AES,"HACKENSON, ELIZABETH",Sr. VP and CIO,True,Common Stock,sell,3251.0,11.89,38654.39
+2015-02-20,AES,"MENDOZA, TISH",Sr. VP & Chief HR Officer,True,Units,buy,1736.0,11.89,20641.04
+2015-02-20,AES,"CHILTON, MICHAEL",Sr. VP Global Engr & Const,True,Units,buy,1578.0,11.89,18762.420000000002
+2015-02-20,AES,"O'FLYNN, THOMAS M.",EVP and CFO,True,Units,buy,6013.0,11.89,71494.57
+2015-02-20,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Units,buy,14693.0,11.89,174699.77000000002
+2015-02-20,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,38481.0,11.89,457539.09
+2015-02-20,AES,"VIRAG, SHARON","VP, Controller",True,Units,buy,2764.0,11.89,32863.96
+2015-02-20,AES,"DA, SANTOS BERNERD",Sr. VP and COO,True,Units,buy,2151.0,11.89,25575.39
+2015-02-20,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,6548.0,11.89,77855.72
+2015-02-21,AES,"HACKENSON, ELIZABETH",Sr. VP and CIO,True,Common Stock,sell,863.0,11.89,10261.07
+2015-02-21,AES,"MENDOZA, TISH",Sr. VP & Chief HR Officer,True,Common Stock,sell,574.0,11.89,6824.860000000001
+2015-02-21,AES,"DA, SANTOS BERNERD",Sr. VP and COO,True,Common Stock,sell,684.0,11.89,8132.76
+2015-02-21,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,12012.0,11.89,142822.68
+2015-02-21,AES,"O'FLYNN, THOMAS M.",EVP and CFO,True,Common Stock,sell,2452.0,11.89,29154.280000000002
+2015-02-21,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,1799.0,11.89,21390.11
+2015-02-21,AES,"VIRAG, SHARON","VP, Controller",True,Common Stock,sell,864.0,11.89,10272.960000000001
+2015-02-21,AES,"CHILTON, MICHAEL",Sr. VP Global Engr & Const,True,Common Stock,sell,1256.0,11.89,14933.84
+2015-02-23,AES,"CHILTON, MICHAEL",Sr. VP Global Engr & Const,True,Common Stock,sell,1129.0,11.86,13389.939999999999
+2015-02-23,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,2586.0,11.86,30669.96
+2015-02-23,AES,"O'FLYNN, THOMAS M.",EVP and CFO,True,Common Stock,sell,3444.0,11.86,40845.84
+2015-02-23,AES,"DA, SANTOS BERNERD",Sr. VP and COO,True,Common Stock,sell,498.0,11.86,5906.28
+2015-02-23,AES,"HACKENSON, ELIZABETH",Sr. VP and CIO,True,Common Stock,sell,1449.0,11.86,17185.14
+2015-02-23,AES,"MENDOZA, TISH",Sr. VP & Chief HR Officer,True,Common Stock,sell,752.0,11.86,8918.72
+2015-02-23,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,11618.0,11.86,137789.47999999998
+2015-02-24,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,1743.0,11.64,20288.52
+2015-02-24,AES,"CHILTON, MICHAEL",Sr. VP Global Engr & Const,True,Common Stock,sell,775.0,11.64,9021.0
+2015-02-24,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,7508.0,11.64,87393.12000000001
+2015-02-24,AES,"DA, SANTOS BERNERD",Sr. VP and COO,True,Common Stock,sell,966.0,11.64,11244.24
+2015-02-24,AES,"HACKENSON, ELIZABETH",Sr. VP and CIO,True,Common Stock,sell,1035.0,11.64,12047.400000000001
+2015-02-24,AES,"MENDOZA, TISH",Sr. VP & Chief HR Officer,True,Common Stock,sell,664.0,11.64,7728.96
+2015-05-13,AES,"VIRAG, SHARON","VP, Controller",True,Common Stock,sell,1909.0,13.36,25504.239999999998
+2015-09-04,AES,"O'FLYNN, THOMAS M.",EVP and CFO,True,Common Stock,sell,7042.0,11.03,77673.26
+2015-11-09,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,buy,20250.0,9.88,200070.00000000003
+2015-11-10,AES,"CHILTON, MICHAEL",Sr. VP Global Engr & Const,True,Units,buy,3515.0,10.07,35396.05
+2015-11-10,AES,"CHILTON, MICHAEL",Sr. VP Global Engr & Const,True,Common Stock,buy,8458.0,10.05,85002.90000000001
+2015-11-10,AES,"O'FLYNN, THOMAS M.",EVP and CFO,True,Common Stock,buy,20000.0,10.08,201600.0
+2015-11-11,AES,"DA, SANTOS BERNERD",Sr. VP and COO,True,Common Stock,buy,5000.0,10.13,50650.00000000001
+2015-11-12,AES,"HACKENSON, ELIZABETH",Sr. VP and CIO,True,Common Stock,buy,5000.0,9.81,49050.0
+2015-12-11,AES,"CHILTON, MICHAEL",Sr. VP Global Engr & Const,True,Common Stock,sell,3114.0,8.97,27932.58
+2016-02-15,AES,"DA, SANTOS BERNERD",Sr. VP and COO,True,Common Stock,sell,498.0,9.17,4566.66
+2016-02-15,AES,"CHILTON, MICHAEL",Sr. VP Global Engr & Const,True,Common Stock,sell,1129.0,9.17,10352.93
+2016-02-15,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,2652.0,9.17,24318.84
+2016-02-15,AES,"SOUZA, FABIAN",VP and Controller,True,Common Stock,sell,595.0,9.17,5456.15
+2016-02-15,AES,"O'FLYNN, THOMAS M.",EVP and CFO,True,Common Stock,sell,3492.0,9.17,32021.64
+2016-02-15,AES,"MENDOZA, TISH",Sr. VP & Chief HR Officer,True,Common Stock,sell,752.0,9.17,6895.84
+2016-02-15,AES,"HACKENSON, ELIZABETH",Sr. VP and CIO,True,Common Stock,sell,1449.0,9.17,13287.33
+2016-02-15,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,11554.0,9.17,105950.18
+2016-02-19,AES,"DA, SANTOS BERNERD",Sr. VP and COO,True,Common Stock,sell,1110.0,9.41,10445.1
+2016-02-19,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,52807.0,9.41,496913.87
+2016-02-19,AES,"HACKENSON, ELIZABETH",Sr. VP and CIO,True,Common Stock,sell,1062.0,9.41,9993.42
+2016-02-19,AES,"HACKENSON, ELIZABETH",Sr. VP and CIO,True,Common Stock,sell,910.0,9.41,8563.1
+2016-02-19,AES,"HACKENSON, ELIZABETH",Sr. VP and CIO,True,Common Stock,sell,4024.0,9.41,37865.840000000004
+2016-02-19,AES,"MENDOZA, TISH",Sr. VP & Chief HR Officer,True,Units,buy,1801.0,9.41,16947.41
+2016-02-19,AES,"MENDOZA, TISH",Sr. VP & Chief HR Officer,True,Common Stock,sell,574.0,9.41,5401.34
+2016-02-19,AES,"MENDOZA, TISH",Sr. VP & Chief HR Officer,True,Common Stock,sell,2040.0,9.41,19196.4
+2016-02-19,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Units,buy,4176.0,9.41,39296.16
+2016-02-19,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,2215.0,9.41,20843.15
+2016-02-19,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,1769.0,9.41,16646.29
+2016-02-19,AES,"O'FLYNN, THOMAS M.",EVP and CFO,True,Units,buy,5053.0,9.41,47548.73
+2016-02-19,AES,"MENDOZA, TISH",Sr. VP & Chief HR Officer,True,Common Stock,sell,1098.0,9.41,10332.18
+2016-02-19,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,14013.0,9.41,131862.33000000002
+2016-02-19,AES,"DA, SANTOS BERNERD",Sr. VP and COO,True,Common Stock,sell,716.0,9.41,6737.56
+2016-02-19,AES,"DA, SANTOS BERNERD",Sr. VP and COO,True,Common Stock,sell,1351.0,9.41,12712.91
+2016-02-19,AES,"O'FLYNN, THOMAS M.",EVP and CFO,True,Common Stock,sell,10397.0,9.41,97835.77
+2016-02-19,AES,"SOUZA, FABIAN",VP and Controller,True,Common Stock,sell,910.0,9.41,8563.1
+2016-02-19,AES,"SOUZA, FABIAN",VP and Controller,True,Common Stock,sell,468.0,9.41,4403.88
+2016-02-19,AES,"CHILTON, MICHAEL",Sr. VP Global Engr & Const,True,Common Stock,sell,957.0,9.41,9005.37
+2016-02-19,AES,"CHILTON, MICHAEL",Sr. VP Global Engr & Const,True,Common Stock,sell,1380.0,9.41,12985.800000000001
+2016-02-19,AES,"O'FLYNN, THOMAS M.",EVP and CFO,True,Common Stock,sell,3712.0,9.41,34929.92
+2016-02-19,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Units,buy,12168.0,9.41,114500.88
+2016-02-19,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,9813.0,9.41,92340.33
+2016-02-19,AES,"CHILTON, MICHAEL",Sr. VP Global Engr & Const,True,Units,buy,1679.0,9.41,15799.39
+2016-02-19,AES,"DA, SANTOS BERNERD",Sr. VP and COO,True,Units,buy,1791.0,9.41,16853.31
+2016-02-19,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,7403.0,9.41,69662.23
+2016-02-19,AES,"O'FLYNN, THOMAS M.",EVP and CFO,True,Common Stock,sell,2452.0,9.41,23073.32
+2016-03-07,AES,"SOUZA, FABIAN",VP and Controller,True,Common Stock,sell,2764.0,10.96,30293.440000000002
+2016-12-12,AES,"CHILTON, MICHAEL",Sr. VP Global Engr & Const,True,Common Stock,sell,3114.0,12.01,37399.14
+2017-02-01,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Units,sell,22505.0,11.24,252956.2
+2017-02-01,AES,"SOUZA, FABIAN",VP and Controller,True,Units,sell,1035.0,11.24,11633.4
+2017-02-01,AES,"CHILTON, MICHAEL",Sr. VP Global Engr & Const,True,Units,sell,446.0,11.24,5013.04
+2017-02-17,AES,"CHILTON, MICHAEL",Sr. VP Global Engr & Const,True,Common Stock,sell,1103.0,11.46,12640.380000000001
+2017-02-17,AES,"O'FLYNN, THOMAS M.",EVP and CFO,True,Common Stock,sell,3712.0,11.46,42539.520000000004
+2017-02-17,AES,"SOUZA, FABIAN",VP and Controller,True,Common Stock,sell,755.0,11.46,8652.300000000001
+2017-02-17,AES,"SOUZA, FABIAN",VP and Controller,True,Common Stock,sell,910.0,11.46,10428.6
+2017-02-17,AES,"HACKENSON, ELIZABETH",Sr. VP and CIO,True,Common Stock,sell,1767.0,11.46,20249.82
+2017-02-17,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,12188.0,11.46,139674.48
+2017-02-17,AES,"DA, SANTOS BERNERD",Sr. VP and COO,True,Common Stock,sell,1013.0,11.46,11608.980000000001
+2017-02-17,AES,"DA, SANTOS BERNERD",Sr. VP and COO,True,Common Stock,sell,2482.0,11.46,28443.72
+2017-02-17,AES,"MENDOZA, TISH",Sr. VP & Chief HR Officer,True,Common Stock,sell,1706.0,11.46,19550.760000000002
+2017-02-17,AES,"CHILTON, MICHAEL",Sr. VP Global Engr & Const,True,Common Stock,sell,2027.0,11.46,23229.420000000002
+2017-02-17,AES,"HACKENSON, ELIZABETH",Sr. VP and CIO,True,Common Stock,sell,1244.0,11.46,14256.240000000002
+2017-02-17,AES,"MENDOZA, TISH",Sr. VP & Chief HR Officer,True,Common Stock,sell,1142.0,11.46,13087.320000000002
+2017-02-17,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,3410.0,11.46,39078.600000000006
+2017-02-17,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,2187.0,11.46,25063.02
+2017-02-17,AES,"O'FLYNN, THOMAS M.",EVP and CFO,True,Common Stock,sell,5446.0,11.46,62411.16
+2017-02-17,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,16019.0,11.46,183577.74000000002
+2017-02-21,AES,"SOUZA, FABIAN",VP and Controller,True,Common Stock,sell,468.0,11.78,5513.04
+2017-02-21,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,1800.0,11.78,21204.0
+2017-02-21,AES,"DA, SANTOS BERNERD",Sr. VP and COO,True,Common Stock,sell,600.0,11.78,7068.0
+2017-02-21,AES,"CHILTON, MICHAEL",Sr. VP Global Engr & Const,True,Common Stock,sell,1220.0,11.78,14371.599999999999
+2017-02-21,AES,"HACKENSON, ELIZABETH",Sr. VP and CIO,True,Common Stock,sell,863.0,11.78,10166.14
+2017-02-21,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,13078.0,11.78,154058.84
+2017-02-21,AES,"MENDOZA, TISH",Sr. VP & Chief HR Officer,True,Common Stock,sell,493.0,11.78,5807.54
+2017-02-21,AES,"O'FLYNN, THOMAS M.",EVP and CFO,True,Common Stock,sell,2452.0,11.78,28884.559999999998
+2017-02-24,AES,"MENDOZA, TISH",Sr. VP & Chief HR Officer,True,Common Stock,sell,1284.0,11.93,15318.119999999999
+2017-02-24,AES,"SOUZA, FABIAN",VP and Controller,True,Common Stock,buy,4270.0,11.93,50941.1
+2017-02-24,AES,"O'FLYNN, THOMAS M.",EVP and CFO,True,Common Stock,sell,6436.0,11.93,76781.48
+2017-02-24,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,buy,22255.0,11.93,265502.14999999997
+2017-02-24,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,4736.0,11.93,56500.479999999996
+2017-02-24,AES,"MENDOZA, TISH",Sr. VP & Chief HR Officer,True,Common Stock,buy,10939.0,11.93,130502.27
+2017-02-24,AES,"O'FLYNN, THOMAS M.",EVP and CFO,True,Common Stock,buy,37594.0,11.93,448496.42
+2017-02-24,AES,"HACKENSON, ELIZABETH",Sr. VP and CIO,True,Common Stock,buy,10989.0,11.93,131098.77
+2017-02-24,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,36131.0,11.93,431042.83
+2017-02-24,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,buy,106552.0,11.93,1271165.3599999999
+2017-02-24,AES,"DA, SANTOS BERNERD",Sr. VP and COO,True,Common Stock,sell,1619.0,11.93,19314.67
+2017-02-24,AES,"DA, SANTOS BERNERD",Sr. VP and COO,True,Common Stock,buy,19237.0,11.93,229497.41
+2017-02-24,AES,"HACKENSON, ELIZABETH",Sr. VP and CIO,True,Common Stock,sell,2329.0,11.93,27784.969999999998
+2017-04-23,AES,"O'FLYNN, THOMAS M.",EVP and CFO,True,Common Stock,sell,21503.0,11.38,244704.14
+2017-04-23,AES,"DA, SANTOS BERNERD",Sr. VP and COO,True,Common Stock,sell,4974.0,11.38,56604.12
+2017-11-10,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,buy,24632.0,10.17,250507.44
+2017-11-13,AES,"DA, SANTOS BERNERD",Sr. VP and COO,True,Common Stock,buy,4700.0,10.6,49820.0
+2017-11-13,AES,"O'FLYNN, THOMAS M.",EVP and CFO,True,Common Stock,buy,9500.0,10.64,101080.0
+2017-11-13,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,buy,1000.0,10.37,10370.0
+2017-11-13,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,buy,8500.0,10.5,89250.0
+2018-02-01,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Units,sell,5008.0,11.51,57642.08
+2018-02-01,AES,"O'FLYNN, THOMAS M.",EVP and CFO,True,Units,sell,2082.0,11.51,23963.82
+2018-02-01,AES,"DA, SANTOS BERNERD",Sr. VP and COO,True,Units,sell,3265.0,11.51,37580.15
+2018-02-01,AES,"MOHAN, VINEET",Sr. VP Global Engr & Const,True,Units,sell,8503.0,11.51,97869.53
+2018-02-19,AES,"BLAKE, SARAH",Vice President & Controller,True,Common Stock,sell,872.0,10.45,9112.4
+2018-02-19,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,3147.0,10.45,32886.149999999994
+2018-02-19,AES,"TIGRE, MARGARET",SVP Finance,True,Common Stock,sell,1082.0,10.45,11306.9
+2018-02-19,AES,"O'FLYNN, THOMAS M.",EVP and CFO,True,Common Stock,sell,4963.0,10.45,51863.35
+2018-02-19,AES,"MOHAN, VINEET",Sr. VP Global Engr & Const,True,Common Stock,sell,1806.0,10.45,18872.699999999997
+2018-02-19,AES,"MENDOZA, TISH",Sr. VP & Chief HR Officer,True,Common Stock,sell,1573.0,10.45,16437.85
+2018-02-19,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,14653.0,10.45,153123.84999999998
+2018-02-19,AES,"DA, SANTOS BERNERD",Sr. VP and COO,True,Common Stock,sell,2288.0,10.45,23909.6
+2018-02-20,AES,"BLAKE, SARAH",Vice President & Controller,True,Common Stock,sell,418.0,10.4,4347.2
+2018-02-20,AES,"DA, SANTOS BERNERD",Sr. VP and COO,True,Common Stock,sell,921.0,10.4,9578.4
+2018-02-20,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,11183.0,10.4,116303.2
+2018-02-20,AES,"MOHAN, VINEET",Sr. VP Global Engr & Const,True,Common Stock,sell,1018.0,10.4,10587.2
+2018-02-20,AES,"O'FLYNN, THOMAS M.",EVP and CFO,True,Common Stock,sell,3376.0,10.4,35110.4
+2018-02-20,AES,"TIGRE, MARGARET",SVP Finance,True,Common Stock,sell,814.0,10.4,8465.6
+2018-02-20,AES,"MILLER, BRIAN A","EVP, General Counsel and Secy",True,Common Stock,sell,1982.0,10.4,20612.8
+2018-02-20,AES,"MENDOZA, TISH",Sr. VP & Chief HR Officer,True,Common Stock,sell,1053.0,10.4,10951.2
+2018-02-23,AES,"MOHAN, VINEET",Sr. VP Global Engr & Const,True,Common Stock,buy,8151.0,10.49,85503.99
+2018-02-23,AES,"O'FLYNN, THOMAS M.",EVP and CFO,True,Common Stock,buy,32066.0,10.49,336372.34
+2018-02-23,AES,"TIGRE, MARGARET",SVP Finance,True,Common Stock,buy,8880.0,10.49,93151.2
+2018-02-23,AES,"BLAKE, SARAH",Vice President & Controller,True,Common Stock,buy,4652.0,10.49,48799.48
+2018-02-23,AES,"MENDOZA, TISH",Sr. VP & Chief HR Officer,True,Common Stock,sell,1363.0,10.49,14297.87
+2018-02-23,AES,"FREEDMAN, PAUL L",SVP and General Counsel,True,Common Stock,buy,8258.0,10.49,86626.42
+2018-02-23,AES,"TIGRE, MARGARET",SVP Finance,True,Common Stock,sell,1023.0,10.49,10731.27
+2018-02-23,AES,"O'FLYNN, THOMAS M.",EVP and CFO,True,Common Stock,sell,5142.0,10.49,53939.58
+2018-02-23,AES,"DA, SANTOS BERNERD",EVP and COO,True,Common Stock,sell,1363.0,10.49,14297.87
+2018-02-23,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,buy,90884.0,10.49,953373.16
+2018-02-23,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,24706.0,10.49,259165.94
+2018-02-23,AES,"DA, SANTOS BERNERD",EVP and COO,True,Common Stock,buy,16408.0,10.49,172119.92
+2018-02-23,AES,"MENDOZA, TISH",Sr. VP & Chief HR Officer,True,Common Stock,buy,9330.0,10.49,97871.7
+2018-02-24,AES,"DA, SANTOS BERNERD",EVP and COO,True,Common Stock,sell,1927.0,10.49,20214.23
+2018-02-24,AES,"O'FLYNN, THOMAS M.",EVP and CFO,True,Common Stock,sell,3772.0,10.49,39568.28
+2018-02-24,AES,"MENDOZA, TISH",Sr. VP & Chief HR Officer,True,Common Stock,sell,1065.0,10.49,11171.85
+2018-02-24,AES,"BLAKE, SARAH",Vice President & Controller,True,Common Stock,sell,689.0,10.49,7227.610000000001
+2018-02-24,AES,"TIGRE, MARGARET",SVP Finance,True,Common Stock,sell,769.0,10.49,8066.81
+2018-02-24,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,17155.0,10.49,179955.95
+2018-02-24,AES,"MOHAN, VINEET",Sr. VP Global Engr & Const,True,Common Stock,sell,931.0,10.49,9766.19
+2018-04-23,AES,"O'FLYNN, THOMAS M.",EVP and CFO,True,Common Stock,sell,20331.0,11.86,241125.65999999997
+2018-04-23,AES,"DA, SANTOS BERNERD",EVP and COO,True,Common Stock,sell,6568.0,11.86,77896.48
+2018-05-14,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,buy,100000.0,6.71,671000.0
+2018-08-10,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,buy,91030.0,6.71,610811.3
+2018-12-26,AES,"UBBEN, JEFFREY W","Director, See Remarks",True,Common Stock,buy,35000.0,13.75,481250.0
+2019-02-19,AES,"MORENO, LEONARDO","SVP, Corporate Strategy",True,Common Stock,sell,985.0,17.18,16922.3
+2019-02-19,AES,"MENDOZA, TISH",Sr. VP & Chief HR Officer,True,Common Stock,sell,1573.0,17.18,27024.14
+2019-02-19,AES,"FREEDMAN, PAUL L",SVP and General Counsel,True,Common Stock,sell,1073.0,17.18,18434.14
+2019-02-19,AES,"DUBUC, MANUEL PEREZ","SVP, New Energy Solutions",True,Common Stock,sell,1052.0,17.18,18073.36
+2019-02-19,AES,"DA, SANTOS BERNERD",EVP and COO,True,Common Stock,sell,2216.0,17.18,38070.88
+2019-02-19,AES,"PIMENTA, GUSTAVO",EVP and CFO,True,Common Stock,sell,1284.0,17.18,22059.12
+2019-02-19,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,14774.0,17.18,253817.32
+2019-02-19,AES,"BLAKE, SARAH",Vice President & Controller,True,Common Stock,sell,873.0,17.18,14998.14
+2019-02-19,AES,"NEBREDA, JULIAN","VP, Andes SBU President",True,Common Stock,sell,295.0,17.18,5068.1
+2019-02-22,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,124896.0,17.53,2189426.8800000004
+2019-02-22,AES,"DUBUC, MANUEL PEREZ","SVP, New Energy Solutions",True,Common Stock,sell,5234.0,17.53,91752.02
+2019-02-22,AES,"MENDOZA, TISH",Sr. VP & Chief HR Officer,True,Common Stock,sell,7830.0,17.53,137259.90000000002
+2019-02-22,AES,"DA, SANTOS BERNERD",EVP and COO,True,Common Stock,sell,11878.0,17.53,208221.34000000003
+2019-02-22,AES,"NEBREDA, JULIAN","SVP, Andes SBU President",True,Common Stock,sell,1453.0,17.53,25471.09
+2019-02-23,AES,"NEBREDA, JULIAN","SVP, Andes SBU President",True,Common Stock,sell,405.0,17.53,7099.650000000001
+2019-02-23,AES,"DA, SANTOS BERNERD",EVP and COO,True,Common Stock,sell,1647.0,17.53,28871.910000000003
+2019-02-23,AES,"MENDOZA, TISH",Sr. VP & Chief HR Officer,True,Common Stock,sell,937.0,17.53,16425.61
+2019-02-23,AES,"PIMENTA, GUSTAVO",EVP and CFO,True,Common Stock,sell,1291.0,17.53,22631.230000000003
+2019-02-23,AES,"MORENO, LEONARDO","SVP, Corporate Strategy",True,Common Stock,sell,488.0,17.53,8554.640000000001
+2019-02-23,AES,"BLAKE, SARAH",Vice President & Controller,True,Common Stock,sell,460.0,17.53,8063.8
+2019-02-23,AES,"DUBUC, MANUEL PEREZ","SVP, New Energy Solutions",True,Common Stock,sell,862.0,17.53,15110.86
+2019-02-23,AES,"FREEDMAN, PAUL L",SVP and General Counsel,True,Common Stock,sell,890.0,17.53,15601.7
+2019-02-23,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,14633.0,17.53,256516.49000000002
+2019-02-24,AES,"DA, SANTOS BERNERD",EVP and COO,True,Common Stock,sell,1931.0,17.53,33850.43
+2019-02-24,AES,"FREEDMAN, PAUL L",SVP and General Counsel,True,Common Stock,sell,771.0,17.53,13515.630000000001
+2019-02-24,AES,"MENDOZA, TISH",Sr. VP & Chief HR Officer,True,Common Stock,sell,1076.0,17.53,18862.280000000002
+2019-02-24,AES,"DUBUC, MANUEL PEREZ","SVP, New Energy Solutions",True,Common Stock,sell,727.0,17.53,12744.310000000001
+2019-02-24,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,15955.0,17.53,279691.15
+2019-02-24,AES,"MORENO, LEONARDO","SVP, Corporate Strategy",True,Common Stock,sell,400.0,17.53,7012.0
+2019-02-24,AES,"NEBREDA, JULIAN","SVP, Andes SBU President",True,Common Stock,sell,175.0,17.53,3067.75
+2019-02-24,AES,"BLAKE, SARAH",Vice President & Controller,True,Common Stock,sell,689.0,17.53,12078.17
+2019-02-24,AES,"PIMENTA, GUSTAVO",EVP and CFO,True,Common Stock,sell,996.0,17.53,17459.88
+2019-05-09,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,buy,65000.0,12.18,791700.0
+2019-05-09,AES,"UBBEN, JEFFREY W","Director, See Remarks",True,Common Stock,buy,2482000.0,16.11,39985020.0
+2019-05-13,AES,"UBBEN, JEFFREY W","Director, See Remarks",True,Common Stock,buy,100000.0,15.96,1596000.0
+2019-08-12,AES,"UBBEN, JEFFREY W","Director, See Remarks",True,Common Stock,buy,200000.0,15.25,3050000.0
+2019-08-30,AES,"NEBREDA, JULIAN","SVP, Andes SBU President",True,Common Stock,sell,6000.0,15.25,91500.0
+2019-08-30,AES,"NEBREDA, JULIAN","SVP, Andes SBU President",True,Common Stock,buy,12864.0,12.18,156683.52
+2019-08-30,AES,"NEBREDA, JULIAN","SVP, Andes SBU President",True,Common Stock,sell,12864.0,15.24,196047.36000000002
+2020-01-27,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,buy,23158.0,12.18,282064.44
+2020-01-27,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,17151.0,20.08,344392.07999999996
+2020-02-22,AES,"KOHAN, SHERRY",Vice President & Controller,True,Common Stock,sell,554.0,20.75,11495.5
+2020-02-22,AES,"DUBUC, MANUEL PEREZ","SVP, New Energy Solutions",True,Common Stock,sell,909.0,20.75,18861.75
+2020-02-22,AES,"PIMENTA, GUSTAVO",EVP and CFO,True,Common Stock,sell,1395.0,20.75,28946.25
+2020-02-22,AES,"DA, SANTOS BERNERD",EVP and COO,True,Common Stock,sell,2456.0,20.75,50962.0
+2020-02-22,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,9186.0,20.75,190609.5
+2020-02-22,AES,"FREEDMAN, PAUL L",SVP and General Counsel,True,Common Stock,sell,874.0,20.75,18135.5
+2020-02-22,AES,"MORENO, LEONARDO","SVP, Corporate Strategy",True,Common Stock,sell,874.0,20.75,18135.5
+2020-02-22,AES,"KRUEGER, LISA","SVP, US SBU President",True,Common Stock,sell,745.0,20.75,15458.75
+2020-02-22,AES,"MENDOZA, TISH",Sr. VP & Chief HR Officer,True,Common Stock,sell,1121.0,20.75,23260.75
+2020-02-22,AES,"NEBREDA, JULIAN","SVP, Andes SBU President",True,Common Stock,sell,991.0,20.75,20563.25
+2020-02-23,AES,"KOHAN, SHERRY",Vice President & Controller,True,Common Stock,sell,926.0,20.75,19214.5
+2020-02-23,AES,"MORENO, LEONARDO","SVP, Corporate Strategy",True,Common Stock,sell,548.0,20.75,11371.0
+2020-02-23,AES,"MENDOZA, TISH",Sr. VP & Chief HR Officer,True,Common Stock,sell,914.0,20.75,18965.5
+2020-02-23,AES,"PIMENTA, GUSTAVO",EVP and CFO,True,Common Stock,sell,1282.0,20.75,26601.5
+2020-02-23,AES,"DA, SANTOS BERNERD",EVP and COO,True,Common Stock,sell,1647.0,20.75,34175.25
+2020-02-23,AES,"NEBREDA, JULIAN","SVP, Andes SBU President",True,Common Stock,sell,928.0,20.75,19256.0
+2020-02-23,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,11890.0,20.75,246717.5
+2020-02-23,AES,"FREEDMAN, PAUL L",SVP and General Counsel,True,Common Stock,sell,954.0,20.75,19795.5
+2020-02-23,AES,"DUBUC, MANUEL PEREZ","SVP, New Energy Solutions",True,Common Stock,sell,865.0,20.75,17948.75
+2020-02-24,AES,"MENDOZA, TISH",Sr. VP & Chief HR Officer,True,Common Stock,sell,6862.0,20.25,138955.5
+2020-02-24,AES,"FREEDMAN, PAUL L",SVP and General Counsel,True,Common Stock,sell,732.0,20.25,14823.0
+2020-02-24,AES,"KOHAN, SHERRY",Vice President & Controller,True,Common Stock,sell,707.0,20.25,14316.75
+2020-02-24,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,17156.0,20.25,347409.0
+2020-02-24,AES,"DA, SANTOS BERNERD",EVP and COO,True,Common Stock,sell,13346.0,20.25,270256.5
+2020-02-24,AES,"MENDOZA, TISH",Sr. VP & Chief HR Officer,True,Common Stock,sell,1098.0,20.25,22234.5
+2020-02-24,AES,"DA, SANTOS BERNERD",EVP and COO,True,Common Stock,sell,2893.0,20.25,58583.25
+2020-02-24,AES,"PIMENTA, GUSTAVO",EVP and CFO,True,Common Stock,sell,1021.0,20.25,20675.25
+2020-02-24,AES,"DUBUC, MANUEL PEREZ","SVP, New Energy Solutions",True,Common Stock,sell,746.0,20.25,15106.5
+2020-02-24,AES,"NEBREDA, JULIAN","SVP, Andes SBU President",True,Common Stock,sell,4540.0,20.25,91935.0
+2020-02-24,AES,"MORENO, LEONARDO","SVP, Corporate Strategy",True,Common Stock,sell,345.0,20.25,6986.25
+2020-02-24,AES,"MORENO, LEONARDO","SVP, Corporate Strategy",True,Common Stock,sell,2138.0,20.25,43294.5
+2020-02-24,AES,"DUBUC, MANUEL PEREZ","SVP, New Energy Solutions",True,Common Stock,sell,4663.0,20.25,94425.75
+2020-02-24,AES,"NEBREDA, JULIAN","SVP, Andes SBU President",True,Common Stock,sell,727.0,20.25,14721.75
+2020-02-24,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,107252.0,20.25,2171853.0
+2020-03-03,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,77045.0,17.43,1342894.35
+2020-03-03,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,buy,107807.0,12.88,1388554.1600000001
+2020-03-03,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,93258.0,17.43,1625486.94
+2020-03-03,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,buy,99734.0,9.76,973403.84
+2020-03-13,AES,"MORSE, JOHN B JR",Director,True,Common Stock,buy,10000.0,12.99,129900.0
+2020-03-19,AES,"NEBREDA, JULIAN","SVP, Andes SBU President",True,Common Stock,buy,3000.0,9.5,28500.0
+2020-03-19,AES,"PIMENTA, GUSTAVO",EVP and CFO,True,Common Stock,buy,5230.0,9.5,49685.0
+2020-03-19,AES,"DA, SANTOS BERNERD",EVP and COO,True,Common Stock,buy,2500.0,9.5,23750.0
+2020-03-19,AES,"DA, SANTOS BERNERD",EVP and COO,True,Common Stock,buy,576.0,9.8635,5681.376
+2020-03-19,AES,"DA, SANTOS BERNERD",EVP and COO,True,Common Stock,buy,924.0,9.856,9106.944
+2020-03-19,AES,"MENDOZA, TISH",Sr. VP & Chief HR Officer,True,Common Stock,buy,3240.0,9.28,30067.199999999997
+2020-03-19,AES,"MORENO, LEONARDO","SVP, Corporate Strategy",True,Common Stock,buy,2500.0,9.52,23800.0
+2020-03-19,AES,"RUBIOLO, JUAN IGNACIO","SVP, MCAC SBU President",True,Common Stock,buy,5300.0,9.1165,48317.450000000004
+2020-03-19,AES,"KRUEGER, LISA","SVP, US SBU President",True,Common Stock,buy,3000.0,9.5,28500.0
+2020-03-19,AES,"FREEDMAN, PAUL L",SVP and General Counsel,True,Common Stock,buy,2650.0,9.4977,25168.905
+2020-03-19,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,buy,9523.0,9.5,90468.5
+2020-03-20,AES,"KHANNA, TARUN",Director,True,Common Stock,buy,4300.0,11.27,48461.0
+2020-05-15,AES,"UBBEN, JEFFREY W","Director, See Remarks",True,Common Stock,buy,500000.0,11.67,5835000.0
+2020-06-11,AES,"UBBEN, JEFFREY W","Director, See Remarks",True,Common Stock,buy,500000.0,12.22,6110000.0
+2021-02-19,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,11828.0,28.31,334850.68
+2021-02-19,AES,"DA, SANTOS BERNERD",EVP and COO,True,Common Stock,sell,1836.0,28.31,51977.159999999996
+2021-02-19,AES,"MENDOZA, TISH",Sr. VP & Chief HR Officer,True,Common Stock,sell,1098.0,28.31,31084.379999999997
+2021-02-19,AES,"DA, SANTOS BERNERD",EVP and COO,True,Common Stock,sell,14888.0,28.31,421479.27999999997
+2021-02-19,AES,"KOHAN, SHERRY",Vice President & Controller,True,Common Stock,sell,301.0,28.31,8521.31
+2021-02-19,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,88307.0,28.31,2499971.17
+2021-02-19,AES,"KRUEGER, LISA","SVP, US SBU President",True,Common Stock,sell,839.0,28.31,23752.09
+2021-02-19,AES,"FREEDMAN, PAUL L",SVP and General Counsel,True,Common Stock,sell,7531.0,28.31,213202.61
+2021-02-19,AES,"PIMENTA, GUSTAVO",EVP and CFO,True,Common Stock,sell,1783.0,28.31,50476.729999999996
+2021-02-19,AES,"PIMENTA, GUSTAVO",EVP and CFO,True,Common Stock,sell,11085.0,28.31,313816.35
+2021-02-19,AES,"MENDOZA, TISH",Sr. VP & Chief HR Officer,True,Common Stock,sell,7950.0,28.31,225064.5
+2021-02-19,AES,"FREEDMAN, PAUL L",SVP and General Counsel,True,Common Stock,sell,1006.0,28.31,28479.859999999997
+2021-02-22,AES,"FREEDMAN, PAUL L",EVP and General Counsel,True,Common Stock,sell,1022.0,27.0,27594.0
+2021-02-22,AES,"DA, SANTOS BERNERD",EVP and COO,True,Common Stock,sell,3561.0,27.0,96147.0
+2021-02-22,AES,"PIMENTA, GUSTAVO",EVP and CFO,True,Common Stock,sell,1809.0,27.0,48843.0
+2021-02-22,AES,"KOHAN, SHERRY",Vice President & Controller,True,Common Stock,sell,650.0,27.0,17550.0
+2021-02-22,AES,"KRUEGER, LISA","EVP, US SBU President",True,Common Stock,sell,863.0,27.0,23301.0
+2021-02-22,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,13317.0,27.0,359559.0
+2021-02-22,AES,"MENDOZA, TISH",EVP & Chief HR Officer,True,Common Stock,sell,1376.0,27.0,37152.0
+2021-02-23,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,14626.0,27.22,398119.72
+2021-02-23,AES,"KOHAN, SHERRY",Vice President & Controller,True,Common Stock,sell,973.0,27.22,26485.059999999998
+2021-02-23,AES,"PIMENTA, GUSTAVO",EVP and CFO,True,Common Stock,sell,1935.0,27.22,52670.7
+2021-02-23,AES,"DA, SANTOS BERNERD",EVP and COO,True,Common Stock,sell,2467.0,27.22,67151.73999999999
+2021-02-23,AES,"FREEDMAN, PAUL L",EVP and General Counsel,True,Common Stock,sell,1242.0,27.22,33807.24
+2021-02-23,AES,"MENDOZA, TISH",EVP & Chief HR Officer,True,Common Stock,sell,1320.0,27.22,35930.4
+2021-04-22,AES,"KOEPPEL, HOLLY K",Director,True,Units,buy,9966.0,28.32,282237.12
+2021-04-22,AES,"MILLER, JAMES H",Director,True,Units,buy,6670.0,28.32,188894.4
+2021-04-22,AES,"MORSE, JOHN B JR",Director,True,Units,buy,16596.0,28.32,469998.72000000003
+2021-04-22,AES,"NAIM, MOISES",Director,True,Units,buy,9710.0,28.32,274987.2
+2021-04-22,AES,"MONIE, ALAIN",Director,True,Units,buy,10064.0,28.32,285012.48
+2021-04-22,AES,"DAVIDSON, JANET",Director,True,Units,buy,7150.0,28.32,202488.0
+2021-04-22,AES,"KHANNA, TARUN",Director,True,Units,buy,8651.0,28.32,244996.32
+2021-04-22,AES,"SEBASTIAN, TERESA MOSLEY",Director,True,Deferred Units,buy,5650.0,28.32,160008.0
+2021-04-22,AES,"LAULIS, JULIA M.",Director,True,Units,buy,9181.0,28.32,260005.92
+2021-07-15,AES,"SHAUGHNESSY, MAURA",Director,True,Units,buy,8979.0,24.58,220703.81999999998
+2021-08-10,AES,"DA, SANTOS BERNERD",EVP and COO,True,Common Stock,sell,51941.0,24.33,1263724.5299999998
+2021-08-10,AES,"MENDOZA, TISH",EVP & Chief HR Officer,True,Common Stock,sell,32028.0,24.38,780842.64
+2021-08-10,AES,"DA, SANTOS BERNERD",EVP and COO,True,Common Stock,buy,21211.0,11.17,236926.87
+2021-08-10,AES,"DA, SANTOS BERNERD",EVP and COO,True,Common Stock,buy,30730.0,14.63,449579.9
+2021-08-10,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,245665.0,24.43,6001595.95
+2021-08-10,AES,"MENDOZA, TISH",EVP & Chief HR Officer,True,Common Stock,buy,32028.0,11.17,357752.76
+2021-08-10,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,buy,245665.0,13.7,3365610.5
+2021-09-14,AES,"SHAUGHNESSY, MAURA",Director,True,Common Stock,buy,12500.0,23.7938,297422.5
+2021-09-14,AES,"SHAUGHNESSY, MAURA",Director,True,Common Stock,buy,5000.0,23.805,119025.0
+2021-09-14,AES,"SHAUGHNESSY, MAURA",Director,True,Common Stock,buy,12500.0,23.79,297375.0
+2022-01-05,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,374391.0,23.94,8962920.540000001
+2022-01-05,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,buy,524511.0,11.17,5858787.87
+2022-01-05,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,150120.0,23.39,3511306.8000000003
+2022-02-18,AES,"KOHAN, SHERRY",Vice President & Controller,True,Common Stock,sell,293.0,21.26,6229.18
+2022-02-18,AES,"FREEDMAN, PAUL L","EVP, GC and Corp. Secretary",True,Common Stock,sell,991.0,21.26,21068.66
+2022-02-18,AES,"MENDOZA, TISH",EVP & Chief HR Officer,True,Common Stock,sell,1093.0,21.26,23237.18
+2022-02-18,AES,"NEBREDA, JULIAN","EVP, Pres. US&Glob. Bus. Lines",True,Common Stock,sell,479.0,21.26,10183.54
+2022-02-18,AES,"NEBREDA, JULIAN","EVP, Pres. US&Glob. Bus. Lines",True,Common Stock,sell,654.0,21.26,13904.04
+2022-02-18,AES,"MENDOZA, TISH",EVP & Chief HR Officer,True,Common Stock,sell,1223.0,21.26,26000.980000000003
+2022-02-18,AES,"FREEDMAN, PAUL L","EVP, GC and Corp. Secretary",True,Common Stock,sell,1110.0,21.26,23598.600000000002
+2022-02-18,AES,"COUGHLIN, STEPHEN",EVP and CFO,True,Common Stock,sell,1441.0,21.26,30635.660000000003
+2022-02-18,AES,"DA, SANTOS BERNERD",EVP and COO,True,Common Stock,sell,1472.0,21.26,31294.72
+2022-02-18,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,11917.0,21.26,253355.42
+2022-02-18,AES,"DA, SANTOS BERNERD",EVP and COO,True,Common Stock,sell,1821.0,21.26,38714.46000000001
+2022-02-18,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,10587.0,21.26,225079.62000000002
+2022-02-18,AES,"KOHAN, SHERRY",Vice President & Controller,True,Common Stock,sell,238.0,21.26,5059.88
+2022-02-22,AES,"DA, SANTOS BERNERD",EVP and COO,True,Common Stock,sell,3429.0,21.01,72043.29000000001
+2022-02-22,AES,"MENDOZA, TISH",EVP & Chief HR Officer,True,Common Stock,sell,1361.0,21.01,28594.61
+2022-02-22,AES,"NEBREDA, JULIAN","EVP, Pres. US&Glob. Bus. Lines",True,Common Stock,sell,939.0,21.01,19728.390000000003
+2022-02-22,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,13324.0,21.01,279937.24000000005
+2022-02-22,AES,"FREEDMAN, PAUL L","EVP, GC and Corp. Secretary",True,Common Stock,sell,992.0,21.01,20841.920000000002
+2022-02-22,AES,"KOHAN, SHERRY",Vice President & Controller,True,Common Stock,sell,634.0,21.01,13320.34
+2022-03-03,AES,"NEBREDA, JULIAN","EVP, Pres. US&Glob. Bus. Lines",True,Common Stock,sell,5128.0,21.46,110046.88
+2022-03-03,AES,"MENDOZA, TISH",EVP & Chief HR Officer,True,Common Stock,sell,7467.0,21.46,160241.82
+2022-03-03,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,72823.0,21.46,1562781.58
+2022-03-03,AES,"FREEDMAN, PAUL L","EVP, GC and Corp. Secretary",True,Common Stock,sell,5507.0,21.46,118180.22
+2022-03-03,AES,"DA, SANTOS BERNERD",EVP and COO,True,Common Stock,sell,18741.0,21.46,402181.86000000004
+2022-03-04,AES,"COUGHLIN, STEPHEN",EVP and CFO,True,Common Stock,buy,47000.0,21.3,1001100.0
+2022-04-21,AES,"KHANNA, TARUN",Director,True,Units,buy,9996.0,23.01,230007.96000000002
+2022-04-21,AES,"MORSE, JOHN B JR",Director,True,Units,buy,20230.0,23.01,465492.30000000005
+2022-04-21,AES,"MONIE, ALAIN",Director,True,Units,buy,7605.0,23.01,174991.05000000002
+2022-04-21,AES,"SEBASTIAN, TERESA MOSLEY",Director,True,Deferred Units,buy,7605.0,23.01,174991.05000000002
+2022-04-21,AES,"DAVIDSON, JANET",Director,True,Units,buy,9344.0,23.01,215005.44
+2022-04-21,AES,"NAIM, MOISES",Director,True,Units,buy,11951.0,23.01,274992.51
+2022-04-21,AES,"LAULIS, JULIA M.",Director,True,Units,buy,11951.0,23.01,274992.51
+2022-04-21,AES,"SHAUGHNESSY, MAURA",Director,True,Units,buy,11951.0,23.01,274992.51
+2022-04-21,AES,"MILLER, JAMES H",Director,True,Units,buy,9083.0,23.01,208999.83000000002
+2022-04-21,AES,"KOEPPEL, HOLLY K",Director,True,Units,buy,12821.0,23.01,295011.21
+2022-06-01,AES,"MILLER, JAMES H",Director,True,Common Stock,sell,19280.0,21.6843,418073.304
+2022-06-01,AES,"MILLER, JAMES H",Director,True,Common Stock,buy,19280.0,14.26,274932.8
+2022-12-28,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,buy,748625.0,11.89,8901151.25
+2022-12-28,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,748625.0,28.43,21283408.75
+2023-02-17,AES,"KOHAN, SHERRY",SVP & Chief Accounting Officer,True,Common Stock,sell,266.0,26.23,6977.18
+2023-02-17,AES,"FREEDMAN, PAUL L","EVP, GC and Corp. Secretary",True,Common Stock,sell,1125.0,26.23,29508.75
+2023-02-17,AES,"DA, SANTOS BERNERD",EVP and COO,True,Common Stock,sell,1523.0,26.23,39948.29
+2023-02-17,AES,"COUGHLIN, STEPHEN",EVP and CFO,True,Common Stock,sell,1462.0,26.23,38348.26
+2023-02-17,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,11084.0,26.23,290733.32
+2023-02-17,AES,"MENDOZA, TISH",EVP & Chief HR Officer,True,Common Stock,sell,1232.0,26.23,32315.36
+2023-02-21,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,12361.0,25.57,316070.77
+2023-02-21,AES,"KOHAN, SHERRY",SVP & Chief Accounting Officer,True,Common Stock,sell,328.0,25.57,8386.960000000001
+2023-02-21,AES,"MENDOZA, TISH",EVP & Chief HR Officer,True,Common Stock,sell,1062.0,25.57,27155.34
+2023-02-21,AES,"FREEDMAN, PAUL L","EVP, GC and Corp. Secretary",True,Common Stock,sell,1006.0,25.57,25723.420000000002
+2023-02-21,AES,"DA, SANTOS BERNERD",EVP and COO,True,Common Stock,sell,1868.0,25.57,47764.76
+2023-02-24,AES,"MENDOZA, TISH",EVP & Chief HR Officer,True,Common Stock,buy,18468.0,25.32,467609.76
+2023-02-24,AES,"FREEDMAN, PAUL L","EVP, GC and Corp. Secretary",True,Common Stock,buy,15956.0,25.32,404005.92
+2023-02-24,AES,"RUBIOLO, JUAN IGNACIO","EVP, President Int. Businesses",True,Common Stock,buy,15839.0,25.32,401043.48
+2023-02-24,AES,"KOHAN, SHERRY",SVP & Chief Accounting Officer,True,Common Stock,buy,5799.0,25.32,146830.68
+2023-02-24,AES,"KOHAN, SHERRY",SVP & Chief Accounting Officer,True,Common Stock,sell,2330.0,25.32,58995.6
+2023-02-24,AES,"KOHAN, SHERRY",SVP & Chief Accounting Officer,True,Common Stock,sell,366.0,25.32,9267.12
+2023-02-24,AES,"KOHAN, SHERRY",SVP & Chief Accounting Officer,True,Common Stock,buy,3752.0,25.32,95000.64
+2023-02-24,AES,"FREEDMAN, PAUL L","EVP, GC and Corp. Secretary",True,Common Stock,sell,1763.0,25.32,44639.16
+2023-02-24,AES,"FREEDMAN, PAUL L","EVP, GC and Corp. Secretary",True,Common Stock,sell,7211.0,25.32,182582.52
+2023-02-24,AES,"FREEDMAN, PAUL L","EVP, GC and Corp. Secretary",True,Common Stock,buy,9326.0,25.32,236134.32
+2023-02-24,AES,"RUBIOLO, JUAN IGNACIO","EVP, President Int. Businesses",True,Common Stock,buy,10594.0,25.32,268240.08
+2023-02-24,AES,"MENDOZA, TISH",EVP & Chief HR Officer,True,Common Stock,sell,7836.0,25.32,198407.52
+2023-02-24,AES,"DA, SANTOS BERNERD",EVP and COO,True,Common Stock,sell,14637.0,25.32,370608.84
+2023-02-24,AES,"MENDOZA, TISH",EVP & Chief HR Officer,True,Common Stock,buy,10847.0,25.32,274646.04
+2023-02-24,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,buy,82341.0,25.32,2084874.12
+2023-02-24,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,99089.0,25.32,2508933.48
+2023-02-24,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,buy,197782.0,25.32,5007840.24
+2023-02-24,AES,"COUGHLIN, STEPHEN",EVP and CFO,True,Common Stock,buy,12025.0,25.32,304473.0
+2023-02-24,AES,"COUGHLIN, STEPHEN",EVP and CFO,True,Common Stock,sell,1677.0,25.32,42461.64
+2023-02-24,AES,"DA, SANTOS BERNERD",EVP and COO,True,Common Stock,buy,12819.0,25.32,324577.08
+2023-02-24,AES,"DA, SANTOS BERNERD",EVP and COO,True,Common Stock,sell,2291.0,25.32,58008.12
+2023-02-24,AES,"RUBIOLO, JUAN IGNACIO","EVP, President Int. Businesses",True,Common Stock,buy,26782.0,25.32,678120.24
+2023-02-24,AES,"DA, SANTOS BERNERD",EVP and COO,True,Common Stock,buy,32453.0,25.32,821709.96
+2023-02-24,AES,"MENDOZA, TISH",EVP & Chief HR Officer,True,Common Stock,sell,1931.0,25.32,48892.92
+2023-02-24,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,16644.0,25.32,421426.08
+2023-04-20,AES,"MONIE, ALAIN",Director,True,Units,buy,7331.0,23.87,174990.97
+2023-04-20,AES,"NAIM, MOISES",Director,True,Units,buy,11521.0,23.87,275006.27
+2023-04-20,AES,"DAVIDSON, JANET",Director,True,Units,buy,9007.0,23.87,214997.09
+2023-04-20,AES,"MORSE, JOHN B JR",Director,True,Units,buy,12736.0,23.87,304008.32
+2023-04-20,AES,"SHAUGHNESSY, MAURA",Director,True,Units,buy,11521.0,23.87,275006.27
+2023-04-20,AES,"SEBASTIAN, TERESA MOSLEY",Director,True,Deferred Units,buy,7331.0,23.87,174990.97
+2023-04-20,AES,"LAULIS, JULIA M.",Director,True,Units,buy,11521.0,23.87,275006.27
+2023-04-20,AES,"KOEPPEL, HOLLY K",Director,True,Units,buy,7331.0,23.87,174990.97
+2023-04-20,AES,"KHANNA, TARUN",Director,True,Units,buy,9636.0,23.87,230011.32
+2023-06-14,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,buy,50000.0,14.63,731500.0
+2023-07-17,AES,"ANDERSON, GERARD M",Director,True,Units,buy,8060.0,21.38,172322.8
+2023-08-08,AES,"SHAUGHNESSY, MAURA",Director,True,Common Stock,buy,12500.0,19.49,243624.99999999997
+2023-08-08,AES,"SHAUGHNESSY, MAURA",Director,True,Common Stock,buy,12000.0,19.46,233520.0
+2023-08-08,AES,"SHAUGHNESSY, MAURA",Director,True,Common Stock,buy,12000.0,19.44,233280.00000000003
+2023-08-10,AES,"LAULIS, JULIA M.",Director,True,Common Stock,buy,1500.0,19.51,29265.000000000004
+2023-08-16,AES,"MONIE, ALAIN",Director,True,Common Stock,buy,27400.0,18.27,500598.0
+2023-11-07,AES,"DA, SANTOS BERNERD","EVP and President, Renewables",True,Common Stock,buy,3000.0,16.36,49080.0
+2023-11-07,AES,"COUGHLIN, STEPHEN",EVP and CFO,True,Common Stock,buy,1529.0,16.4,25075.6
+2023-11-07,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,buy,50000.0,16.38,819000.0
+2023-11-07,AES,"FREEDMAN, PAUL L","EVP, GC and Corp. Secretary",True,Common Stock,buy,1530.0,16.4,25091.999999999996
+2023-11-08,AES,"RUBIOLO, JUAN IGNACIO","EVP and Pres., Energy Infrast.",True,Common Stock,buy,2450.0,16.37,40106.5
+2023-11-09,AES,"FALU, RICARDO MANUEL","SVP, COO, Pres. New Enrgy Tech",True,Common Stock,buy,2450.0,16.3,39935.0
+2023-11-19,AES,"FALU, RICARDO MANUEL","SVP, COO, Pres. New Enrgy Tech",True,Common Stock,sell,2948.0,17.01,50145.48
+2023-11-19,AES,"RUBIOLO, JUAN IGNACIO","EVP and Pres., Energy Infrast.",True,Common Stock,sell,345.0,17.01,5868.450000000001
+2023-11-21,AES,"FALU, RICARDO MANUEL","EVP, COO, Pres. New Enrgy Tech",True,Common Stock,buy,302.0,16.89,5100.78
+2023-12-08,AES,"AES, CORP",10% Owner,False,Class A Common Stock,sell,7087500.0,22.05,156279375.0
+2023-12-13,AES,"MENDOZA, TISH",EVP & Chief HR Officer,True,Common Stock,sell,21678.0,18.95,410798.1
+2023-12-13,AES,"MENDOZA, TISH",EVP & Chief HR Officer,True,Common Stock,buy,24643.0,14.63,360527.09
+2023-12-13,AES,"MENDOZA, TISH",EVP & Chief HR Officer,True,Common Stock,sell,21594.0,18.95,409206.3
+2023-12-28,AES,"FALU, RICARDO MANUEL","EVP, COO, Pres. New Enrgy Tech",True,Common Stock,buy,73.0,19.21,1402.3300000000002
+2024-01-18,AES,"BHANDARI, INDERPAL S",Director,True,Units,buy,1541.0,17.38,26782.579999999998
+2024-02-12,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,361986.0,16.88,6110323.68
+2024-02-12,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,buy,396053.0,14.63,5794255.390000001
+2024-02-19,AES,"COUGHLIN, STEPHEN",EVP and CFO,True,Common Stock,sell,1492.0,16.77,25020.84
+2024-02-19,AES,"FALU, RICARDO MANUEL","EVP, COO, Pres. New Enrgy Tech",True,Common Stock,sell,798.0,16.77,13382.46
+2024-02-22,AES,"KOHAN, SHERRY",SVP & Chief Accounting Officer,True,Common Stock,sell,249.0,16.0,3984.0
+2024-02-22,AES,"DA, SANTOS BERNERD","EVP and President, Renewables",True,Common Stock,sell,8875.0,16.0,142000.0
+2024-02-22,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,9469.0,16.0,151504.0
+2024-02-22,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,75940.0,16.0,1215040.0
+2024-02-22,AES,"MENDOZA, TISH",EVP & Chief HR Officer,True,Common Stock,sell,1141.0,16.0,18256.0
+2024-02-22,AES,"DA, SANTOS BERNERD","EVP and President, Renewables",True,Common Stock,sell,1349.0,16.0,21584.0
+2024-02-22,AES,"FREEDMAN, PAUL L","EVP, GC and Corp. Secretary",True,Common Stock,sell,7003.0,16.0,112048.0
+2024-02-22,AES,"FREEDMAN, PAUL L","EVP, GC and Corp. Secretary",True,Common Stock,sell,1040.0,16.0,16640.0
+2024-02-22,AES,"RUBIOLO, JUAN IGNACIO","EVP and Pres., Energy Infrast.",True,Common Stock,sell,535.0,16.0,8560.0
+2024-02-22,AES,"RUBIOLO, JUAN IGNACIO","EVP and Pres., Energy Infrast.",True,Common Stock,sell,3635.0,16.0,58160.0
+2024-02-22,AES,"KOHAN, SHERRY",SVP & Chief Accounting Officer,True,Common Stock,sell,1797.0,16.0,28752.0
+2024-02-22,AES,"MENDOZA, TISH",EVP & Chief HR Officer,True,Common Stock,sell,7563.0,16.0,121008.0
+2024-02-24,AES,"FREEDMAN, PAUL L","EVP, GC and Corp. Secretary",True,Common Stock,sell,1353.0,16.0,21648.0
+2024-02-24,AES,"DA, SANTOS BERNERD","EVP and President, Renewables",True,Common Stock,sell,1773.0,16.0,28368.0
+2024-02-24,AES,"KOHAN, SHERRY",SVP & Chief Accounting Officer,True,Common Stock,sell,553.0,16.0,8848.0
+2024-02-24,AES,"KOHAN, SHERRY",SVP & Chief Accounting Officer,True,Common Stock,sell,358.0,16.0,5728.0
+2024-02-24,AES,"MENDOZA, TISH",EVP & Chief HR Officer,True,Common Stock,sell,1481.0,16.0,23696.0
+2024-02-24,AES,"RUBIOLO, JUAN IGNACIO","EVP and Pres., Energy Infrast.",True,Common Stock,sell,1230.0,16.0,19680.0
+2024-02-24,AES,"RUBIOLO, JUAN IGNACIO","EVP and Pres., Energy Infrast.",True,Common Stock,sell,1176.0,16.0,18816.0
+2024-02-24,AES,"FREEDMAN, PAUL L","EVP, GC and Corp. Secretary",True,Common Stock,sell,1699.0,16.0,27184.0
+2024-02-24,AES,"RUBIOLO, JUAN IGNACIO","EVP and Pres., Energy Infrast.",True,Common Stock,sell,2973.0,16.0,47568.0
+2024-02-24,AES,"DA, SANTOS BERNERD","EVP and President, Renewables",True,Common Stock,sell,2107.0,16.0,33712.0
+2024-02-24,AES,"COUGHLIN, STEPHEN",EVP and CFO,True,Common Stock,sell,1940.0,16.0,31040.0
+2024-02-24,AES,"COUGHLIN, STEPHEN",EVP and CFO,True,Common Stock,sell,1641.0,16.0,26256.0
+2024-02-24,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,16644.0,16.0,266304.0
+2024-02-24,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,13751.0,16.0,220016.0
+2024-02-24,AES,"MENDOZA, TISH",EVP & Chief HR Officer,True,Common Stock,sell,1865.0,16.0,29840.0
+2024-02-24,AES,"FALU, RICARDO MANUEL","EVP, COO, Pres. New Enrgy Tech",True,Common Stock,sell,857.0,16.0,13712.0
+2024-02-24,AES,"FALU, RICARDO MANUEL","EVP, COO, Pres. New Enrgy Tech",True,Common Stock,sell,1099.0,16.0,17584.0
+2024-04-25,AES,"BHANDARI, INDERPAL S",Director,True,Units,buy,5838.0,17.13,100004.93999999999
+2024-04-25,AES,"MORSE, JOHN B JR",Director,True,Units,buy,9428.0,17.13,161501.63999999998
+2024-04-25,AES,"DAVIDSON, JANET",Director,True,Units,buy,2335.0,17.13,39998.549999999996
+2024-04-25,AES,"SEBASTIAN, TERESA MOSLEY",Director,True,Units,buy,1168.0,17.13,20007.84
+2024-04-25,AES,"NAIM, MOISES",Director,True,Units,buy,5838.0,17.13,100004.93999999999
+2024-04-25,AES,"LAULIS, JULIA M.",Director,True,Units,buy,5838.0,17.13,100004.93999999999
+2024-04-25,AES,"SHAUGHNESSY, MAURA",Director,True,Units,buy,5838.0,17.13,100004.93999999999
+2024-05-20,AES,"MENDOZA, TISH",EVP & Chief HR Officer,True,Common Stock,buy,66250.0,11.89,787712.5
+2024-05-20,AES,"DA, SANTOS BERNERD","EVP and President, Renewables",True,Common Stock,buy,66250.0,11.89,787712.5
+2024-05-20,AES,"DA, SANTOS BERNERD","EVP and President, Renewables",True,Common Stock,sell,66250.0,21.15,1401187.5
+2024-05-20,AES,"MENDOZA, TISH",EVP & Chief HR Officer,True,Common Stock,sell,66250.0,21.21,1405162.5
+2024-06-06,AES,"KOHAN, SHERRY",SVP & Chief Accounting Officer,True,Common Stock,sell,15000.0,20.35,305250.0
+2024-11-19,AES,"RUBIOLO, JUAN IGNACIO","EVP and Pres., Energy Infrast.",True,Common Stock,sell,4913.0,13.75,67553.75
+2024-11-19,AES,"FALU, RICARDO MANUEL","EVP, COO, Pres. New Enrgy Tech",True,Common Stock,sell,4407.0,13.75,60596.25
+2025-02-21,AES,"COUGHLIN, STEPHEN",EVP and CFO,True,Common Stock,sell,5285.0,10.59,55968.15
+2025-02-21,AES,"MENDOZA, TISH",EVP & Chief HR Officer,True,Common Stock,sell,14483.0,10.59,153374.97
+2025-02-21,AES,"KOHAN, SHERRY",SVP & Chief Accounting Officer,True,Common Stock,sell,2698.0,10.59,28571.82
+2025-02-21,AES,"KOHAN, SHERRY",SVP & Chief Accounting Officer,True,Common Stock,sell,1340.0,10.59,14190.6
+2025-02-21,AES,"FREEDMAN, PAUL L","EVP, GC and Corp. Secretary",True,Common Stock,sell,13308.0,10.59,140931.72
+2025-02-21,AES,"FREEDMAN, PAUL L","EVP, GC and Corp. Secretary",True,Common Stock,sell,4016.0,10.59,42529.44
+2025-02-21,AES,"MENDOZA, TISH",EVP & Chief HR Officer,True,Common Stock,sell,4148.0,10.59,43927.32
+2025-02-21,AES,"FALU, RICARDO MANUEL","EVP, COO, Pres. New Enrgy Tech",True,Common Stock,sell,3619.0,10.59,38325.21
+2025-02-21,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,32991.0,10.59,349374.69
+2025-02-21,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,122183.0,10.59,1293917.97
+2025-02-21,AES,"RUBIOLO, JUAN IGNACIO","EVP and Pres., Energy Infrast.",True,Common Stock,sell,3779.0,10.59,40019.61
+2025-02-21,AES,"RUBIOLO, JUAN IGNACIO","EVP and Pres., Energy Infrast.",True,Common Stock,sell,9968.0,10.59,105561.12
+2025-02-21,AES,"COUGHLIN, STEPHEN",EVP and CFO,True,Common Stock,sell,13180.0,10.59,139576.2
+2025-02-21,AES,"DA, SANTOS BERNERD","EVP and President, Renewables",True,Common Stock,sell,4710.0,10.59,49878.9
+2025-02-21,AES,"DA, SANTOS BERNERD","EVP and President, Renewables",True,Common Stock,sell,16203.0,10.59,171589.77
+2025-02-24,AES,"MENDOZA, TISH",EVP & Chief HR Officer,True,Common Stock,sell,1499.0,10.72,16069.28
+2025-02-24,AES,"FALU, RICARDO MANUEL","EVP, COO, Pres. New Enrgy Tech",True,Common Stock,sell,1099.0,10.72,11781.28
+2025-02-24,AES,"MENDOZA, TISH",EVP & Chief HR Officer,True,Common Stock,sell,1886.0,10.72,20217.920000000002
+2025-02-24,AES,"KOHAN, SHERRY",SVP & Chief Accounting Officer,True,Common Stock,sell,355.0,10.72,3805.6000000000004
+2025-02-24,AES,"RUBIOLO, JUAN IGNACIO","EVP and Pres., Energy Infrast.",True,Common Stock,sell,3125.0,10.72,33500.0
+2025-02-24,AES,"RUBIOLO, JUAN IGNACIO","EVP and Pres., Energy Infrast.",True,Common Stock,sell,1293.0,10.72,13860.960000000001
+2025-02-24,AES,"RUBIOLO, JUAN IGNACIO","EVP and Pres., Energy Infrast.",True,Common Stock,sell,1236.0,10.72,13249.92
+2025-02-24,AES,"FREEDMAN, PAUL L","EVP, GC and Corp. Secretary",True,Common Stock,sell,1722.0,10.72,18459.84
+2025-02-24,AES,"COUGHLIN, STEPHEN",EVP and CFO,True,Common Stock,sell,1734.0,10.72,18588.48
+2025-02-24,AES,"FALU, RICARDO MANUEL","EVP, COO, Pres. New Enrgy Tech",True,Common Stock,sell,722.0,10.72,7739.84
+2025-02-24,AES,"DA, SANTOS BERNERD","EVP and President, Renewables",True,Common Stock,sell,1787.0,10.72,19156.64
+2025-02-24,AES,"COUGHLIN, STEPHEN",EVP and CFO,True,Common Stock,sell,1671.0,10.72,17913.120000000003
+2025-02-24,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,16644.0,10.72,178423.68000000002
+2025-02-24,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,13751.0,10.72,147410.72
+2025-02-24,AES,"FREEDMAN, PAUL L","EVP, GC and Corp. Secretary",True,Common Stock,sell,1372.0,10.72,14707.84
+2025-02-24,AES,"DA, SANTOS BERNERD","EVP and President, Renewables",True,Common Stock,sell,2124.0,10.72,22769.280000000002
+2025-02-24,AES,"KOHAN, SHERRY",SVP & Chief Accounting Officer,True,Common Stock,sell,549.0,10.72,5885.280000000001
+2025-05-09,AES,"LAULIS, JULIA M.",Director,True,Units,buy,8993.0,11.12,100002.15999999999
+2025-05-09,AES,"ANDERSON, GERARD M",Director,True,Units,buy,8993.0,11.12,100002.15999999999
+2025-05-09,AES,"SHAUGHNESSY, MAURA",Director,True,Units,buy,8993.0,11.12,100002.15999999999
+2025-05-09,AES,"BHANDARI, INDERPAL S",Director,True,Units,buy,8993.0,11.12,100002.15999999999
+2025-05-09,AES,"MORSE, JOHN B JR",Director,True,Units,buy,14523.0,11.12,161495.75999999998
+2025-05-09,AES,"KOEPPEL, HOLLY K",Director,True,Units,buy,5621.0,11.12,62505.52
+2025-05-09,AES,"DAVIDSON, JANET",Director,True,Units,buy,5396.0,11.12,60003.52
+2025-05-09,AES,"SEBASTIAN, TERESA MOSLEY",Director,True,Units,buy,1799.0,11.12,20004.879999999997
+2025-11-19,AES,"FALU, RICARDO MANUEL","EVP, COO, Pres. New Enrgy Tech",True,Common Stock,sell,9240.0,13.77,127234.8
+2025-11-19,AES,"RUBIOLO, JUAN IGNACIO","EVP and Pres., Energy Infrast.",True,Common Stock,sell,7121.0,13.77,98056.17
+2026-02-20,AES,"MENDOZA, TISH",EVP & Chief HR Officer,True,Common Stock,sell,13801.0,16.51,227854.51
+2026-02-20,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,32896.0,16.51,543112.9600000001
+2026-02-20,AES,"DA, SANTOS BERNERD","EVP and President, US & RENs.",True,Common Stock,sell,3583.0,16.51,59155.33000000001
+2026-02-20,AES,"DA, SANTOS BERNERD","EVP and President, US & RENs.",True,Common Stock,sell,14188.0,16.51,234243.88000000003
+2026-02-20,AES,"COUGHLIN, STEPHEN",EVP and CFO,True,Common Stock,sell,7073.0,16.51,116775.23000000001
+2026-02-20,AES,"FALU, RICARDO MANUEL","EVP, COO, Pres. New Enrgy Tech",True,Common Stock,sell,9356.0,16.51,154467.56000000003
+2026-02-20,AES,"DA, SANTOS BERNERD","EVP and President, US & RENs.",True,Common Stock,sell,5414.0,16.51,89385.14000000001
+2026-02-20,AES,"KOHAN, SHERRY",SVP & Chief Accounting Officer,True,Common Stock,sell,1180.0,16.51,19481.800000000003
+2026-02-20,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,123760.0,16.51,2043277.6
+2026-02-20,AES,"KOHAN, SHERRY",SVP & Chief Accounting Officer,True,Common Stock,sell,4791.0,16.51,79099.41
+2026-02-20,AES,"KOHAN, SHERRY",SVP & Chief Accounting Officer,True,Common Stock,sell,1782.0,16.51,29420.820000000003
+2026-02-20,AES,"FALU, RICARDO MANUEL","EVP, COO, Pres. New Enrgy Tech",True,Common Stock,sell,4187.0,16.51,69127.37000000001
+2026-02-20,AES,"RUBIOLO, JUAN IGNACIO","EVP and Pres., Energy Infrast.",True,Common Stock,sell,4238.0,16.51,69969.38
+2026-02-20,AES,"FALU, RICARDO MANUEL","EVP, COO, Pres. New Enrgy Tech",True,Common Stock,sell,6326.0,16.51,104442.26000000001
+2026-02-20,AES,"COUGHLIN, STEPHEN",EVP and CFO,True,Common Stock,sell,4682.0,16.51,77299.82
+2026-02-20,AES,"MENDOZA, TISH",EVP & Chief HR Officer,True,Common Stock,sell,5512.0,16.51,91003.12000000001
+2026-02-20,AES,"RUBIOLO, JUAN IGNACIO","EVP and Pres., Energy Infrast.",True,Common Stock,sell,6403.0,16.51,105713.53000000001
+2026-02-20,AES,"COUGHLIN, STEPHEN",EVP and CFO,True,Common Stock,sell,15425.0,16.51,254666.75000000003
+2026-02-20,AES,"RUBIOLO, JUAN IGNACIO","EVP and Pres., Energy Infrast.",True,Common Stock,sell,14805.0,16.51,244430.55000000002
+2026-02-20,AES,"FREEDMAN, PAUL L","EVP, GC and Corp. Secretary",True,Common Stock,sell,5478.0,16.51,90441.78000000001
+2026-02-20,AES,"FREEDMAN, PAUL L","EVP, GC and Corp. Secretary",True,Common Stock,sell,3626.0,16.51,59865.26
+2026-02-20,AES,"FREEDMAN, PAUL L","EVP, GC and Corp. Secretary",True,Common Stock,sell,12933.0,16.51,213523.83000000002
+2026-02-20,AES,"MENDOZA, TISH",EVP & Chief HR Officer,True,Common Stock,sell,3648.0,16.51,60228.48
+2026-02-24,AES,"COUGHLIN, STEPHEN",EVP and CFO,True,Common Stock,sell,1669.0,16.27,27154.63
+2026-02-24,AES,"DA, SANTOS BERNERD","EVP and President, US & RENs.",True,Common Stock,sell,1532.0,16.27,24925.64
+2026-02-24,AES,"GLUSKI, ANDRES","Director, President and CEO",True,Common Stock,sell,13751.0,16.27,223728.77
+2026-02-24,AES,"FALU, RICARDO MANUEL","EVP, COO, Pres. New Enrgy Tech",True,Common Stock,sell,992.0,16.27,16139.84
+2026-02-24,AES,"RUBIOLO, JUAN IGNACIO","EVP and Pres., Energy Infrast.",True,Common Stock,sell,4036.0,16.27,65665.72
+2026-02-24,AES,"RUBIOLO, JUAN IGNACIO","EVP and Pres., Energy Infrast.",True,Common Stock,sell,1597.0,16.27,25983.19
+2026-02-24,AES,"MENDOZA, TISH",EVP & Chief HR Officer,True,Common Stock,sell,1487.0,16.27,24193.489999999998
+2026-02-24,AES,"FREEDMAN, PAUL L","EVP, GC and Corp. Secretary",True,Common Stock,sell,1388.0,16.27,22582.76
+2026-02-24,AES,"KOHAN, SHERRY",SVP & Chief Accounting Officer,True,Common Stock,sell,483.0,16.27,7858.41
+2026-04-29,AES,"DAVIDSON, JANET",Director,True,Units,buy,2076.0,14.45,29998.199999999997
+2026-04-29,AES,"NAIM, MOISES",Director,True,Units,buy,6920.0,14.45,99994.0
+2026-04-29,AES,"ANDERSON, GERARD M",Director,True,Units,buy,6920.0,14.45,99994.0
+2026-05-15,AES,"AES, CORP",10% Owner,False,Class A Common Stock,sell,10066414.0,21.0,211394694.0

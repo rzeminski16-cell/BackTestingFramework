@@ -1,0 +1,1458 @@
+date,symbol,insider_name,insider_title,is_executive,security_type,transaction_type,shares,price,value
+2003-09-02,AIR,"GOODWIN, JAMES E",Director,True,phantom stock units,buy,1075.0,8.14,8750.5
+2003-09-02,AIR,"WALFISH, MARC JAY",Director,True,phantom stock units,buy,1075.0,8.14,8750.5
+2003-09-02,AIR,"FOGLEMAN, RONALD R",Director,True,phantom stock units,buy,1075.0,8.14,8750.5
+2003-12-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock Units,buy,817.0,10.71,8750.070000000002
+2003-12-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock Units,buy,817.0,10.71,8750.070000000002
+2003-12-01,AIR,"GOODWIN, JAMES E",Director,True,Phantom Stock Units,buy,817.0,10.71,8750.070000000002
+2004-01-05,AIR,"EICHNER, IRA A",Director,True,"Com
+mon Stock",sell,13278.0,16.16,214572.48
+2004-01-05,AIR,"CLARK, JAMES JOHN",Vice President,True,Common Stock,buy,1350.0,10.0,13500.0
+2004-01-05,AIR,"CLARK, JAMES JOHN",Vice President,True,Common Stock,buy,20000.0,8.59,171800.0
+2004-01-05,AIR,"CLARK, JAMES JOHN",Vice President,True,,buy,5000.0,8.59,42950.0
+2004-01-05,AIR,"CLARK, JAMES JOHN",Vice President,True,Stock Option,,1350.0,10.0,13500.0
+2004-01-05,AIR,"CLARK, JAMES JOHN",Vice President,True,Stock Option,sell,20000.0,8.59,171800.0
+2004-01-05,AIR,"CLARK, JAMES JOHN",Vice President,True,Stock Option,sell,5000.0,8.59,42950.0
+2004-01-06,AIR,"STORCH, DAVID P","Director, President & CEO",True,Common Stock,buy,45517.0,14.5,659996.5
+2004-01-06,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,,sell,12000.0,8.59,103080.0
+2004-01-06,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,buy,3000.0,8.59,25770.0
+2004-01-06,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,buy,12000.0,8.59,103080.0
+2004-01-06,AIR,"STORCH, DAVID P","Director, President & CEO",True,Stock Option,sell,56000.0,8.59,481040.0
+2004-01-06,AIR,"STORCH, DAVID P","Director, President & CEO",True,Stock Option,sell,179200.0,8.59,1539328.0
+2004-01-06,AIR,"STORCH, DAVID P","Director, President & CEO",True,Stock Option,sell,45517.0,14.5,659996.5
+2004-01-06,AIR,"STORCH, DAVID P","Director, President & CEO",True,Stock Option,sell,9311.0,14.5,135009.5
+2004-01-06,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Stock Option,sell,3000.0,8.59,25770.0
+2004-01-06,AIR,"STORCH, DAVID P","Director, President & CEO",True,Common Stock,buy,9311.0,14.5,135009.5
+2004-01-06,AIR,"STORCH, DAVID P","Director, President & CEO",True,Common Stock,buy,56000.0,8.59,481040.0
+2004-01-06,AIR,"STORCH, DAVID P","Director, President & CEO",True,Common Stock,buy,179200.0,8.59,1539328.0
+2004-01-06,AIR,"STORCH, DAVID P","Director, President & CEO",True,Common Stock,sell,208494.0,16.18,3373432.92
+2004-01-07,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Common Stock,buy,4000.0,8.59,34360.0
+2004-01-07,AIR,"CLARK, JAMES JOHN",Vice President,True,Common Stock,buy,2250.0,9.1667,20625.075
+2004-01-07,AIR,"CLARK, JAMES JOHN",Vice President,True,"Stock Option</va
+lue></securityTitle><conversionOrExercisePrice>9.1667",sell,2250.0,9.1667,20625.075
+2004-01-07,AIR,"CLARK, JAMES JOHN",Vice President,True,,buy,3000.0,11.6667,35000.1
+2004-01-07,AIR,"CLARK, JAMES JOHN",Vice President,True,"Common Stock</va
+lue></securityTitle><transactionDate>2004-01-07",sell,3990.0,16.05,64039.5
+2004-01-07,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,"Com
+mon Stock",buy,24000.0,13.4375,322500.0
+2004-01-07,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Stock Option,sell,24000.0,13.4375,322500.0
+2004-01-07,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Stock Option,sell,4000.0,8.59,34360.0
+2004-01-07,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Common Stock,sell,26946.0,16.05,432483.30000000005
+2004-01-07,AIR,"CLARK, JAMES JOHN",Vice President,True,Stock Option,sell,3000.0,11.6667,35000.1
+2004-01-16,AIR,"MCDONALD, JAMES M",Vice President,True,Stock Option,sell,9000.0,8.59,77310.0
+2004-01-16,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,sell,6469.0,15.52,100398.87999999999
+2004-01-16,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,sell,1293.0,15.52,20067.36
+2004-01-16,AIR,"MCDONALD, JAMES M",Vice President,True,Stock Option,sell,1000.0,3.2,3200.0
+2004-01-16,AIR,"MCDONALD, JAMES M",Vice President,True,Stock Option,sell,1800.0,8.59,15462.0
+2004-01-16,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,buy,1800.0,8.59,15462.0
+2004-01-16,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,buy,1000.0,3.2,3200.0
+2004-01-16,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,sell,500.0,15.52,7760.0
+2004-01-16,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,buy,9000.0,8.59,77310.0
+2004-01-23,AIR,"CLARK, JAMES JOHN",Vice President,True,Common Stock,sell,3584.0,15.33,54942.72
+2004-01-23,AIR,"CLARK, JAMES JOHN",Vice President,True,Common Stock,buy,5000.0,8.59,42950.0
+2004-01-23,AIR,"CLARK, JAMES JOHN",Vice President,True,Stock Option,sell,5000.0,8.59,42950.0
+2004-02-24,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Common Stock,sell,9402.0,12.39,116490.78
+2004-02-24,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Common Stock,buy,12000.0,8.59,103080.0
+2004-02-24,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Stock Option,sell,12000.0,8.59,103080.0
+2004-03-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock Units,buy,668.0,13.09,8744.12
+2004-03-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock Units,buy,668.0,13.09,8744.12
+2004-03-05,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Stock Option,sell,4000.0,8.59,34360.0
+2004-03-05,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Common Stock,sell,3078.0,12.75,39244.5
+2004-03-05,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Common Stock,buy,4000.0,8.59,34360.0
+2004-06-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock Units,buy,875.0,10.0,8750.0
+2004-06-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock Units,buy,875.0,10.0,8750.0
+2004-07-07,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,buy,3700.0,10.32,38184.0
+2004-07-07,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,buy,4800.0,10.32,49536.0
+2004-07-07,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,buy,800.0,10.32,8256.0
+2004-07-08,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,buy,1900.0,10.01,19019.0
+2004-07-11,AIR,"CLARK, JAMES JOHN",Vice President,True,Common Stock,sell,368.0,10.0,3680.0
+2004-07-11,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,220.0,10.0,2200.0
+2004-07-11,AIR,"SHARP, MICHAEL J",VP/Chief Accounting Officer,True,Common Stock,sell,147.0,10.0,1470.0
+2004-07-22,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,buy,8000.0,10.42,83360.0
+2004-07-30,AIR,"WALFISH, MARC JAY",Director,True,Common Stock,buy,5000.0,10.28,51400.0
+2004-09-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock Units,buy,793.0,11.04,8754.72
+2004-09-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock Units,buy,793.0,11.04,8754.72
+2004-09-30,AIR,"EICHNER, IRA A",Director,True,Common Stock,sell,25000.0,12.4,310000.0
+2004-09-30,AIR,"EICHNER, IRA A",Director,True,Common Stock,sell,50000.0,12.35,617500.0
+2004-09-30,AIR,"EICHNER, IRA A",Director,True,Common Stock,sell,12500.0,12.45,155625.0
+2004-10-01,AIR,"EICHNER, IRA A",Director,True,Common Stock,sell,11700.0,12.35,144495.0
+2004-10-01,AIR,"EICHNER, IRA A",Director,True,Common Stock,sell,100.0,12.37,1237.0
+2004-10-01,AIR,"EICHNER, IRA A",Director,True,Common Stock,sell,400.0,12.4,4960.0
+2004-10-01,AIR,"EICHNER, IRA A",Director,True,Common Stock,sell,300.0,12.39,3717.0
+2004-10-08,AIR,"CLARK, JAMES JOHN",Vice President,True,Common Stock,sell,132.0,11.52,1520.6399999999999
+2004-10-08,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,265.0,11.52,3052.7999999999997
+2004-10-14,AIR,"CLARK, JAMES JOHN",Vice President,True,Common Stock,sell,110.0,11.09,1219.9
+2004-10-14,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,198.0,11.09,2195.82
+2004-12-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock Units,buy,616.0,14.2,8747.199999999999
+2004-12-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock Units,buy,616.0,14.2,8747.199999999999
+2004-12-22,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,5000.0,14.3,71500.0
+2004-12-22,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Common Stock,buy,10000.0,6.96,69600.0
+2004-12-22,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,10000.0,14.5,145000.0
+2004-12-22,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,200.0,14.64,2928.0
+2004-12-22,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,300.0,14.75,4425.0
+2004-12-22,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,1000.0,14.68,14680.0
+2004-12-22,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,100.0,14.72,1472.0
+2004-12-22,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,5000.0,14.4,72000.0
+2004-12-22,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,400.0,14.55,5820.0
+2004-12-22,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,1800.0,14.65,26370.0
+2004-12-23,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,200.0,14.35,2870.0
+2004-12-23,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,500.0,14.55,7275.0
+2004-12-23,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,500.0,14.07,7035.0
+2004-12-23,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,400.0,14.28,5712.0
+2004-12-23,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Common Stock,sell,8994.0,14.53,130682.81999999999
+2004-12-23,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,1000.0,14.21,14210.0
+2004-12-23,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,1600.0,14.27,22832.0
+2004-12-23,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,2000.0,14.4,28800.0
+2004-12-27,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,900.0,14.24,12816.0
+2004-12-27,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,500.0,14.19,7095.0
+2004-12-27,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,1000.0,14.3,14300.0
+2004-12-27,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,100.0,14.2,1420.0
+2004-12-27,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,1000.0,14.33,14330.0
+2004-12-28,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,400.0,14.3,5720.0
+2004-12-28,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,100.0,14.27,1427.0
+2004-12-28,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,300.0,14.25,4275.0
+2004-12-28,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,600.0,14.32,8592.0
+2004-12-28,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,100.0,14.3,1430.0
+2004-12-28,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,200.0,14.25,2850.0
+2004-12-28,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,100.0,14.35,1435.0
+2004-12-28,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,1000.0,14.28,14280.0
+2004-12-28,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,500.0,14.24,7120.0
+2004-12-29,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,buy,3000.0,8.59,25770.0
+2004-12-29,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,11559.0,13.85,160092.15
+2004-12-29,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,buy,10000.0,6.96,69600.0
+2004-12-29,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Stock Option,sell,3000.0,8.59,25770.0
+2004-12-29,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Stock Option,sell,10000.0,6.96,69600.0
+2005-01-03,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,3000.0,13.42,40260.0
+2005-01-03,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,1000.0,13.4,13400.0
+2005-01-03,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,2000.0,13.65,27300.0
+2005-01-03,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,6000.0,13.67,82020.0
+2005-01-03,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,4100.0,13.7,56170.0
+2005-01-03,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,900.0,13.69,12321.0
+2005-01-03,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,400.0,13.75,5500.0
+2005-01-03,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,1600.0,13.73,21968.0
+2005-01-03,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,6000.0,13.45,80700.0
+2005-01-03,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,2000.0,13.55,27100.0
+2005-01-03,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,100.0,13.76,1376.0
+2005-01-13,AIR,"EICHNER, IRA A",Director,True,Common Stock,buy,36000.0,9.1667,330001.2
+2005-01-13,AIR,"EICHNER, IRA A",Director,True,Stock Option,sell,36000.0,9.1667,330001.2
+2005-01-13,AIR,"EICHNER, IRA A",Director,True,Common Stock,sell,30921.0,11.29,349098.08999999997
+2005-03-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock Units,buy,745.0,11.75,8753.75
+2005-03-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock Units,buy,745.0,11.75,8753.75
+2005-03-18,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,buy,71278.0,6.96,496094.88
+2005-03-18,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Stock Option,sell,300000.0,13.3334,4000020.0
+2005-03-18,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Stock Option,sell,44800.0,8.59,384832.0
+2005-03-18,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Stock Option,sell,240000.0,11.13,2671200.0
+2005-03-18,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,buy,44800.0,8.59,384832.0
+2005-03-18,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,buy,300000.0,13.3334,4000020.0
+2005-03-18,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Stock Option,sell,71278.0,6.96,496094.88
+2005-03-18,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,buy,240000.0,11.13,2671200.0
+2005-03-18,AIR,"EICHNER, IRA A",Director,True,Stock Option,sell,36000.0,11.6667,420001.2
+2005-03-18,AIR,"EICHNER, IRA A",Director,True,Common Stock,buy,36000.0,11.6667,420001.2
+2005-03-18,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Stock Option,sell,90000.0,11.6667,1050003.0
+2005-03-18,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,buy,90000.0,11.6667,1050003.0
+2005-03-18,AIR,"EICHNER, IRA A",Director,True,Common Stock,sell,30226.0,14.96,452180.96
+2005-03-18,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,822038.0,14.96,12297688.48
+2005-03-21,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,13470.0,14.6498,197332.806
+2005-03-21,AIR,"CLARK, JAMES JOHN",Vice President,True,Common Stock,sell,23871.0,27.95,667194.45
+2005-03-22,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Common Stock,sell,2850.0,14.38,40983.0
+2005-03-22,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Common Stock,sell,222.0,14.39,3194.58
+2005-03-22,AIR,"EICHNER, IRA A",Director,True,Stock Option,buy,28074.0,14.96,419987.04000000004
+2005-03-22,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Common Stock,sell,3723.0,14.5,53983.5
+2005-03-22,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,31300.0,14.4487,452244.31
+2005-03-23,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,14700.0,14.0305,206248.35
+2005-03-23,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Common Stock,sell,3205.0,14.0,44870.0
+2005-06-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock Units,buy,556.0,15.73,8745.880000000001
+2005-06-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock Units,buy,556.0,15.73,8745.880000000001
+2005-07-13,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,147.0,16.26,2390.2200000000003
+2005-07-13,AIR,"CLARK, JAMES JOHN",Vice President,True,Common Stock,sell,257.0,16.26,4178.820000000001
+2005-07-22,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Common Stock,sell,14091.0,17.5,246592.5
+2005-07-22,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Common Stock,buy,10000.0,6.96,69600.0
+2005-07-22,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Stock Option,sell,10000.0,6.96,69600.0
+2005-07-22,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Common Stock,buy,8319.0,12.39,103072.41
+2005-07-22,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Stock Option,sell,8319.0,12.39,103072.41
+2005-07-25,AIR,"MCDONALD, JAMES M",Vice President,True,Stock Option,sell,3000.0,16.0834,48250.200000000004
+2005-07-25,AIR,"MCDONALD, JAMES M",Vice President,True,Stock Option,sell,1000.0,3.2,3200.0
+2005-07-25,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,buy,7500.0,13.4375,100781.25
+2005-07-25,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,buy,4000.0,14.9,59600.0
+2005-07-25,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,buy,3000.0,16.0834,48250.200000000004
+2005-07-25,AIR,"MCDONALD, JAMES M",Vice President,True,Stock Option,sell,4000.0,14.9,59600.0
+2005-07-25,AIR,"MCDONALD, JAMES M",Vice President,True,Stock Option,sell,20000.0,6.96,139200.0
+2005-07-25,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,buy,20000.0,6.96,139200.0
+2005-07-25,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,buy,1000.0,3.2,3200.0
+2005-07-25,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,sell,24820.0,17.5,434350.0
+2005-07-25,AIR,"MCDONALD, JAMES M",Vice President,True,Stock Option,sell,7500.0,13.4375,100781.25
+2005-07-29,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,buy,50000.0,14.96,748000.0
+2005-07-29,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,153183.0,17.97,2752698.51
+2005-07-29,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,buy,71279.0,6.96,496101.84
+2005-07-29,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Stock Option,sell,50000.0,14.96,748000.0
+2005-07-29,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Stock Option,sell,71279.0,6.96,496101.84
+2005-07-29,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,buy,10000.0,6.96,69600.0
+2005-07-29,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,6936.0,17.97,124639.92
+2005-07-29,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Stock Option,sell,70188.0,14.96,1050012.48
+2005-07-29,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Stock Option,sell,10000.0,6.96,69600.0
+2005-07-29,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,buy,70188.0,14.96,1050012.48
+2005-08-09,AIR,"SHARP, MICHAEL J",VP/Chief Accounting Officer,True,Stock Option,sell,3000.0,6.96,20880.0
+2005-08-09,AIR,"SHARP, MICHAEL J",VP/Chief Accounting Officer,True,Common Stock,buy,3000.0,6.96,20880.0
+2005-08-09,AIR,"SHARP, MICHAEL J",VP/Chief Accounting Officer,True,Common Stock,sell,1744.0,17.1,29822.4
+2005-09-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock Units,buy,492.0,17.79,8752.68
+2005-09-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock Units,buy,492.0,17.79,8752.68
+2005-09-13,AIR,"PULSIFER, HOWARD A","VP, GC & Secretary",True,Common Stock,sell,3601.0,18.0,64818.0
+2005-09-13,AIR,"PULSIFER, HOWARD A","VP, GC & Secretary",True,Common Stock,buy,3705.0,17.0,62985.0
+2005-09-13,AIR,"PULSIFER, HOWARD A","VP, GC & Secretary",True,Stock Option,sell,3705.0,17.0,62985.0
+2005-10-03,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,14787.0,18.09,267496.83
+2005-10-03,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Stock Option,sell,15216.0,17.25,262476.0
+2005-10-03,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,buy,15216.0,17.25,262476.0
+2005-10-04,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Stock Option,sell,3684.0,17.1,62996.40000000001
+2005-10-04,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Common Stock,sell,3548.0,18.03,63970.44
+2005-10-04,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Common Stock,buy,3684.0,17.1,62996.40000000001
+2005-10-14,AIR,"CLARK, JAMES JOHN",Vice President,True,Common Stock,sell,220.0,16.97,3733.3999999999996
+2005-10-14,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Common Stock,sell,945.0,16.97,16036.65
+2005-10-14,AIR,"SHARP, MICHAEL J",VP/Chief Accounting Officer,True,Common Stock,sell,110.0,16.97,1866.6999999999998
+2005-10-14,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,440.0,16.97,7466.799999999999
+2005-10-21,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,buy,6000.0,15.49,92940.0
+2005-12-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock Units,buy,422.0,20.72,8743.84
+2005-12-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock Units,buy,422.0,20.72,8743.84
+2005-12-14,AIR,"STORCH, DAVID P","Director, Chairman, Pres., CEO, Director",True,Stock Option,sell,60000.0,11.13,667800.0
+2005-12-14,AIR,"STORCH, DAVID P","Director, Chairman, Pres., CEO, Director",True,Common Stock,sell,223293.0,22.41,5003996.13
+2005-12-14,AIR,"STORCH, DAVID P","Director, Chairman, Pres., CEO, Director",True,Common Stock,buy,175473.0,14.9,2614547.7
+2005-12-14,AIR,"STORCH, DAVID P","Director, Chairman, Pres., CEO, Director",True,Stock Option,sell,175473.0,14.9,2614547.7
+2005-12-14,AIR,"STORCH, DAVID P","Director, Chairman, Pres., CEO, Director",True,Common Stock,buy,60000.0,11.13,667800.0
+2006-01-04,AIR,"STORCH, DAVID P","Director, Chairman, Pres., CEO, Director",True,Common Stock,sell,50000.0,24.6414,1232070.0
+2006-01-05,AIR,"STORCH, DAVID P","Director, Chairman, Pres., CEO, Director",True,Common Stock,sell,59475.0,25.34,1507096.5
+2006-01-05,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Stock Option,sell,9000.0,16.0834,144750.6
+2006-01-05,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,37759.0,25.34,956813.0599999999
+2006-01-05,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Stock Option,sell,21600.0,13.4375,290250.0
+2006-01-05,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Stock Option,sell,12000.0,14.9,178800.0
+2006-01-05,AIR,"STORCH, DAVID P","Director, Chairman, Pres., CEO, Director",True,Common Stock,sell,22180.0,24.939,553147.02
+2006-01-05,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Common Stock,sell,10000.0,24.8164,248164.00000000003
+2006-01-05,AIR,"CLARK, JAMES JOHN",Vice President,True,Stock Option,sell,20000.0,6.96,139200.0
+2006-01-05,AIR,"STORCH, DAVID P","Director, Chairman, Pres., CEO, Director",True,Common Stock,buy,76302.0,14.96,1141477.9200000002
+2006-01-05,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,buy,9000.0,36.0,324000.0
+2006-01-05,AIR,"STORCH, DAVID P","Director, Chairman, Pres., CEO, Director",True,Common Stock,sell,57596.0,25.34,1459482.64
+2006-01-05,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,buy,21600.0,13.4375,290250.0
+2006-01-05,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,buy,7250.0,17.75,128687.5
+2006-01-05,AIR,"CLARK, JAMES JOHN",Vice President,True,Common Stock,sell,9985.0,25.34,253019.9
+2006-01-05,AIR,"CLARK, JAMES JOHN",Vice President,True,Common Stock,buy,20000.0,6.96,139200.0
+2006-01-05,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Stock Option,sell,7250.0,17.75,128687.5
+2006-01-05,AIR,"STORCH, DAVID P","Director, Chairman, Pres., CEO, Director",True,Stock Option,sell,76302.0,14.96,1141477.9200000002
+2006-01-12,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Stock Option,sell,16000.0,13.4375,215000.0
+2006-01-12,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Common Stock,buy,2694.0,12.75,34348.5
+2006-01-12,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Common Stock,buy,8655.0,16.0834,139201.82700000002
+2006-01-12,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Common Stock,sell,33600.0,25.52,857472.0
+2006-01-12,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Common Stock,buy,16000.0,13.4375,215000.0
+2006-01-12,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Common Stock,buy,16000.0,14.9,238400.0
+2006-01-12,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Common Stock,buy,4790.0,14.53,69598.7
+2006-01-12,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Stock Option,sell,2694.0,12.75,34348.5
+2006-01-12,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Stock Option,sell,16000.0,14.9,238400.0
+2006-01-13,AIR,"BOYCE, MICHAEL ROSS",Director,True,Common Stock,buy,2000.0,25.228,50456.0
+2006-01-13,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Common Stock,sell,2700.0,25.075,67702.5
+2006-01-19,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,12091.0,25.2291,305045.0481
+2006-02-10,AIR,"SHARP, MICHAEL J",VP/Chief Accounting Officer,True,Common Stock,buy,1000.0,8.59,8590.0
+2006-02-10,AIR,"SHARP, MICHAEL J",VP/Chief Accounting Officer,True,Stock Option,sell,5000.0,8.59,42950.0
+2006-02-10,AIR,"SHARP, MICHAEL J",VP/Chief Accounting Officer,True,Stock Option,sell,1500.0,6.96,10440.0
+2006-02-10,AIR,"SHARP, MICHAEL J",VP/Chief Accounting Officer,True,Common Stock,buy,1500.0,6.96,10440.0
+2006-02-10,AIR,"SHARP, MICHAEL J",VP/Chief Accounting Officer,True,Common Stock,sell,4133.0,24.99,103283.67
+2006-02-10,AIR,"SHARP, MICHAEL J",VP/Chief Accounting Officer,True,Common Stock,buy,5000.0,8.59,42950.0
+2006-02-10,AIR,"SHARP, MICHAEL J",VP/Chief Accounting Officer,True,Stock Option,sell,1000.0,8.59,8590.0
+2006-02-15,AIR,"STORCH, DAVID P","Director, Chairman, Pres., CEO, Director",True,Stock Option,sell,141079.0,14.96,2110541.8400000003
+2006-02-15,AIR,"STORCH, DAVID P","Director, Chairman, Pres., CEO, Director",True,Common Stock,buy,141079.0,14.96,2110541.8400000003
+2006-02-15,AIR,"STORCH, DAVID P","Director, Chairman, Pres., CEO, Director",True,Common Stock,sell,104024.0,26.42,2748314.08
+2006-03-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock Units,buy,334.0,26.19,8747.460000000001
+2006-03-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock Units,buy,334.0,26.19,8747.460000000001
+2006-03-20,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,buy,1000.0,3.2,3200.0
+2006-03-20,AIR,"MCDONALD, JAMES M",Vice President,True,Stock Option,sell,3750.0,23.0834,86562.75
+2006-03-20,AIR,"MCDONALD, JAMES M",Vice President,True,Stock Option,sell,6000.0,22.625,135750.0
+2006-03-20,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,sell,12091.0,27.42,331535.22000000003
+2006-03-20,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,buy,4000.0,17.75,71000.0
+2006-03-20,AIR,"MCDONALD, JAMES M",Vice President,True,Stock Option,sell,1000.0,3.2,3200.0
+2006-03-20,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,buy,6000.0,22.625,135750.0
+2006-03-20,AIR,"MCDONALD, JAMES M",Vice President,True,Stock Option,sell,4000.0,17.75,71000.0
+2006-03-20,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,buy,3750.0,23.0834,86562.75
+2006-03-21,AIR,"CLARK, JAMES JOHN",Vice President,True,Common Stock,buy,20000.0,13.4375,268750.0
+2006-03-21,AIR,"CLARK, JAMES JOHN",Vice President,True,Stock Option,sell,4500.0,16.0834,72375.3
+2006-03-21,AIR,"CLARK, JAMES JOHN",Vice President,True,Common Stock,buy,12000.0,14.9,178800.0
+2006-03-21,AIR,"CLARK, JAMES JOHN",Vice President,True,Common Stock,buy,4500.0,16.0834,72375.3
+2006-03-21,AIR,"CLARK, JAMES JOHN",Vice President,True,Stock Option,sell,12000.0,14.9,178800.0
+2006-03-21,AIR,"CLARK, JAMES JOHN",Vice President,True,Stock Option,sell,20000.0,13.4375,268750.0
+2006-03-24,AIR,"SHARP, MICHAEL J",VP/Chief Accounting Officer,True,Common Stock,sell,5600.0,27.3,152880.0
+2006-03-24,AIR,"SHARP, MICHAEL J",VP/Chief Accounting Officer,True,Common Stock,sell,516.0,27.47,14174.519999999999
+2006-03-27,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,300.0,27.87,8361.0
+2006-03-27,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,600.0,28.0,16800.0
+2006-03-27,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,800.0,27.99,22392.0
+2006-03-27,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,1700.0,27.86,47362.0
+2006-03-27,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,700.0,27.91,19537.0
+2006-03-27,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,buy,178556.0,14.96,2671197.7600000002
+2006-03-27,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,500.0,27.89,13945.0
+2006-03-27,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Stock Option,sell,178556.0,14.96,2671197.7600000002
+2006-03-27,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,100.0,27.92,2792.0
+2006-03-27,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,524.0,27.88,14609.119999999999
+2006-03-27,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,200.0,27.75,5550.0
+2006-03-27,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,1076.0,27.9,30020.399999999998
+2006-03-27,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,400.0,27.98,11192.0
+2006-03-27,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,100.0,27.78,2778.0
+2006-03-27,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,1400.0,27.82,38948.0
+2006-03-27,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,100.0,27.74,2774.0
+2006-03-27,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,800.0,27.97,22376.0
+2006-03-27,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,200.0,27.96,5592.0
+2006-03-27,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,400.0,27.93,11172.0
+2006-03-27,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,3966.0,27.85,110453.1
+2006-03-27,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,100.0,27.95,2795.0
+2006-03-27,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,4234.0,27.83,117832.21999999999
+2006-03-27,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,600.0,27.79,16674.0
+2006-03-27,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,1000.0,27.81,27810.0
+2006-03-27,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,700.0,27.8,19460.0
+2006-03-27,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,100.0,27.76,2776.0
+2006-03-27,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,3834.0,27.84,106738.56
+2006-03-28,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,1000.0,27.43,27430.0
+2006-03-28,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,300.0,27.4,8220.0
+2006-03-28,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,1000.0,27.47,27470.0
+2006-03-28,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,1100.0,27.46,30206.0
+2006-03-28,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,100.0,27.44,2744.0
+2006-03-28,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,700.0,27.42,19194.0
+2006-03-28,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,1251.0,27.41,34289.91
+2006-03-28,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,10800.0,27.38,295704.0
+2006-03-28,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,2900.0,27.37,79373.0
+2006-03-28,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,3800.0,27.36,103968.0
+2006-03-28,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,8849.0,27.35,242020.15000000002
+2006-03-28,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,1300.0,27.39,35607.0
+2006-03-29,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,800.0,27.48,21984.0
+2006-03-29,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,2600.0,27.33,71058.0
+2006-03-29,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,2400.0,27.34,65616.0
+2006-03-29,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,8700.0,27.35,237945.0
+2006-03-29,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,18400.0,27.36,503424.0
+2006-03-29,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,4900.0,27.42,134358.0
+2006-03-29,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,400.0,27.46,10984.0
+2006-03-29,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,700.0,27.53,19271.0
+2006-03-29,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,1800.0,27.44,49392.0
+2006-03-29,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,3200.0,27.45,87840.0
+2006-03-29,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,7000.0,27.41,191870.0
+2006-03-29,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,38000.0,27.4,1041200.0
+2006-03-29,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,1300.0,27.49,35737.0
+2006-03-29,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,500.0,27.25,13625.0
+2006-03-29,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,3500.0,27.43,96005.0
+2006-03-29,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,200.0,27.47,5494.0
+2006-03-29,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,20556.0,27.37,562617.72
+2006-03-29,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,5800.0,27.38,158804.0
+2006-03-29,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,700.0,27.28,19096.0
+2006-03-29,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,11100.0,27.39,304029.0
+2006-03-29,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,900.0,27.26,24534.0
+2006-03-29,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,1000.0,27.27,27270.0
+2006-03-29,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,6100.0,27.3,166530.0
+2006-03-29,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,1800.0,27.31,49158.0
+2006-03-29,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,2000.0,27.32,54640.0
+2006-03-29,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,1100.0,27.29,30019.0
+2006-03-31,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,1400.0,28.29,39606.0
+2006-03-31,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,3800.0,28.34,107692.0
+2006-03-31,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,2100.0,28.26,59346.0
+2006-03-31,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,600.0,28.35,17010.0
+2006-03-31,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,400.0,28.38,11352.0
+2006-03-31,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,1000.0,27.7801,27780.100000000002
+2006-03-31,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,700.0,28.45,19915.0
+2006-03-31,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,600.0,28.27,16962.0
+2006-03-31,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,300.0,28.41,8523.0
+2006-03-31,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,200.0,28.31,5662.0
+2006-03-31,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,200.0,28.36,5672.0
+2006-03-31,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,9200.0,28.37,261004.0
+2006-03-31,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,2000.0,28.4,56800.0
+2006-03-31,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,2900.0,28.42,82418.0
+2006-03-31,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,100.0,28.43,2843.0
+2006-03-31,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,500.0,28.39,14195.0
+2006-04-03,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,400.0,29.15,11660.0
+2006-04-03,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,100.0,29.07,2907.0
+2006-04-03,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,200.0,29.06,5812.0
+2006-04-03,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,300.0,29.04,8712.0
+2006-04-03,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,1105.0,29.08,32133.399999999998
+2006-04-03,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,100.0,29.05,2905.0
+2006-04-03,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,4200.0,29.3,123060.0
+2006-04-03,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,200.0,29.11,5822.0
+2006-04-03,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,1000.0,29.14,29140.0
+2006-04-03,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,1300.0,29.1,37830.0
+2006-04-03,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,100.0,29.09,2909.0
+2006-04-03,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,200.0,29.26,5852.0
+2006-04-03,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,200.0,29.29,5858.0
+2006-04-03,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,200.0,29.25,5850.0
+2006-04-03,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,400.0,29.23,11692.0
+2006-04-03,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,100.0,29.02,2902.0
+2006-04-03,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,400.0,29.19,11676.0
+2006-04-03,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,400.0,29.22,11688.0
+2006-04-03,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,400.0,29.21,11684.0
+2006-04-03,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,200.0,29.2,5840.0
+2006-04-03,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,200.0,29.16,5832.0
+2006-04-03,AIR,"STORCH, DAVID P","Director, President, CEO & Director",True,Common Stock,sell,300.0,29.03,8709.0
+2006-04-04,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,1000.0,28.115,28115.0
+2006-04-04,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Common Stock,sell,5000.0,28.0748,140374.0
+2006-04-24,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,9382.0,29.0,272078.0
+2006-06-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock Units,buy,365.0,23.97,8749.05
+2006-06-02,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock Units,buy,365.0,23.97,8749.05
+2006-07-11,AIR,"SHARP, MICHAEL J",VP/Chief Accounting Officer,True,Common Stock,sell,147.0,23.55,3461.85
+2006-07-11,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,220.0,23.55,5181.0
+2006-07-13,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,294.0,23.93,7035.42
+2006-07-13,AIR,"CLARK, JAMES JOHN",Vice President,True,Common Stock,sell,515.0,23.93,12323.95
+2006-07-13,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Common Stock,sell,736.0,23.93,17612.48
+2006-07-14,AIR,"SHARP, MICHAEL J",VP/Chief Accounting Officer,True,Stock Option,sell,3000.0,16.0834,48250.200000000004
+2006-07-14,AIR,"SHARP, MICHAEL J",VP/Chief Accounting Officer,True,Common Stock,buy,3000.0,16.0834,48250.200000000004
+2006-07-15,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Common Stock,sell,736.0,23.93,17612.48
+2006-07-15,AIR,"STORCH, DAVID P","Director, Chrmn, Pres, CEO & Dir",True,Common Stock,sell,7656.0,22.7,173791.19999999998
+2006-07-15,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,sell,1851.0,22.7,42017.7
+2006-07-15,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Common Stock,sell,1767.0,22.7,40110.9
+2006-07-15,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,1767.0,22.7,40110.9
+2006-07-15,AIR,"CLARK, JAMES JOHN",Vice President,True,Common Stock,sell,1767.0,22.7,40110.9
+2006-07-15,AIR,"SHARP, MICHAEL J",VP/Chief Accounting Officer,True,Common Stock,sell,588.0,22.7,13347.6
+2006-07-17,AIR,"SHARP, MICHAEL J",VP/Chief Accounting Officer,True,Common Stock,sell,257.0,22.7,5833.9
+2006-07-19,AIR,"SHARP, MICHAEL J",VP/Chief Accounting Officer,True,Common Stock,sell,2806.0,23.65,66361.9
+2006-07-21,AIR,"STORCH, DAVID P","Director, Chrmn, Pres, CEO & Dir",True,Common Stock,sell,4908.0,22.9,112393.2
+2006-07-21,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Common Stock,sell,1963.0,22.9,44952.7
+2006-07-21,AIR,"SHARP, MICHAEL J",VP/Chief Accounting Officer,True,Common Stock,sell,196.0,22.9,4488.4
+2006-07-21,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,sell,2056.0,22.9,47082.399999999994
+2006-07-21,AIR,"CLARK, JAMES JOHN",Vice President,True,Common Stock,sell,1963.0,22.9,44952.7
+2006-07-28,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,sell,100.0,24.25,2425.0
+2006-07-28,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,sell,3000.0,24.23,72690.0
+2006-07-28,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,sell,4000.0,24.18,96720.0
+2006-07-31,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,sell,3000.0,24.21,72630.0
+2006-08-04,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,sell,1500.0,23.55,35325.0
+2006-08-04,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,sell,1300.0,23.52,30576.0
+2006-08-04,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,sell,1000.0,23.59,23590.0
+2006-08-04,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,sell,1000.0,23.56,23560.0
+2006-08-04,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,sell,600.0,23.58,14147.999999999998
+2006-08-04,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,sell,1700.0,24.15,41055.0
+2006-08-04,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,sell,900.0,23.6,21240.0
+2006-08-04,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,sell,1900.0,23.57,44783.0
+2006-09-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,390.0,22.45,8755.5
+2006-09-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock Units,buy,390.0,22.45,8755.5
+2006-09-22,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Common Stock,sell,10000.0,24.9201,249201.00000000003
+2006-09-26,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Stock Option,sell,345.0,16.0834,5548.773
+2006-09-26,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Common Stock,buy,345.0,16.0834,5548.773
+2006-10-05,AIR,"STORCH, DAVID P","Director, Chrmn, Pres, CEO & Dir",True,Stock Option,sell,71279.0,6.96,496101.84
+2006-10-05,AIR,"STORCH, DAVID P","Director, Chrmn, Pres, CEO & Dir",True,Common Stock,buy,71279.0,6.96,496101.84
+2006-10-05,AIR,"STORCH, DAVID P","Director, Chrmn, Pres, CEO & Dir",True,Stock Option,sell,50000.0,14.96,748000.0
+2006-10-05,AIR,"SHARP, MICHAEL J",VP/Chief Accounting Officer,True,Common Stock,sell,2200.0,24.14,53108.0
+2006-10-05,AIR,"STORCH, DAVID P","Director, Chrmn, Pres, CEO & Dir",True,Common Stock,buy,50000.0,22.41,1120500.0
+2006-10-05,AIR,"STORCH, DAVID P","Director, Chrmn, Pres, CEO & Dir",True,Common Stock,sell,78936.0,24.23,1912619.28
+2006-10-06,AIR,"STORCH, DAVID P","Director, Chrmn, Pres, CEO & Dir",True,Common Stock,sell,42343.0,23.7371,1005100.0253000001
+2006-10-10,AIR,"CLARK, JAMES JOHN",Vice President,True,Common Stock,sell,10000.0,25.1,251000.0
+2006-12-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,332.0,26.32,8738.24
+2006-12-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,332.0,26.32,8738.24
+2006-12-06,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,10172.0,28.0,284816.0
+2006-12-22,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,sell,200.0,28.49,5698.0
+2006-12-22,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,sell,100.0,28.48,2848.0
+2006-12-22,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,sell,1100.0,28.45,31295.0
+2006-12-22,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,sell,100.0,28.46,2846.0
+2007-01-04,AIR,"STORCH, DAVID P","Director, Chrmn, Pres, CEO & Dir",True,Common Stock,buy,142557.0,6.96,992196.72
+2007-01-04,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Common Stock,sell,10000.0,29.1089,291089.0
+2007-01-04,AIR,"STORCH, DAVID P","Director, Chrmn, Pres, CEO & Dir",True,Stock Option,sell,142557.0,6.96,992196.72
+2007-01-04,AIR,"STORCH, DAVID P","Director, Chrmn, Pres, CEO & Dir",True,Common Stock,sell,143394.0,29.08,4169897.5199999996
+2007-01-04,AIR,"STORCH, DAVID P","Director, Chrmn, Pres, CEO & Dir",True,Common Stock,buy,75000.0,23.5,1762500.0
+2007-01-04,AIR,"STORCH, DAVID P","Director, Chrmn, Pres, CEO & Dir",True,Stock Option,sell,75000.0,23.5,1762500.0
+2007-01-09,AIR,"FITZGERALD, GERALD F JR",Director,True,Common Stock,buy,5000.0,27.64,138200.0
+2007-01-16,AIR,"SHARP, MICHAEL J",VP/Chief Accounting Officer,True,Common Stock,buy,5500.0,6.96,38280.0
+2007-01-16,AIR,"SHARP, MICHAEL J",VP/Chief Accounting Officer,True,Stock Option,sell,5500.0,6.96,38280.0
+2007-01-18,AIR,"SHARP, MICHAEL J",VP/Chief Accounting Officer,True,Common Stock,sell,5500.0,28.3955,156175.25
+2007-02-16,AIR,"STORCH, DAVID P","Director, Chrmn, Pres, CEO & Dir",True,Common Stock,buy,75000.0,23.5,1762500.0
+2007-02-16,AIR,"STORCH, DAVID P","Director, Chrmn, Pres, CEO & Dir",True,Common Stock,sell,84595.0,31.52,2666434.4
+2007-02-16,AIR,"STORCH, DAVID P","Director, Chrmn, Pres, CEO & Dir",True,Stock Option,sell,25000.0,23.5,587500.0
+2007-02-16,AIR,"STORCH, DAVID P","Director, Chrmn, Pres, CEO & Dir",True,Common Stock,buy,25000.0,23.5,587500.0
+2007-02-16,AIR,"STORCH, DAVID P","Director, Chrmn, Pres, CEO & Dir",True,Stock Option,sell,75000.0,23.5,1762500.0
+2007-03-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock Units,buy,301.0,29.13,8768.13
+2007-03-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock Units,buy,301.0,29.13,8768.13
+2007-03-29,AIR,"WALFISH, MARC JAY",Director,True,Common Stock,buy,2000.0,27.74,55480.0
+2007-04-12,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,sell,1000.0,28.5,28500.0
+2007-06-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock Units,buy,269.0,32.5,8742.5
+2007-06-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock Units,buy,269.0,32.5,8742.5
+2007-06-15,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,buy,4951.0,27.42,135756.42
+2007-06-15,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,buy,7954.0,17.5,139195.0
+2007-06-15,AIR,"MCDONALD, JAMES M",Vice President,True,Stock Option,sell,116.0,27.42,3180.7200000000003
+2007-06-15,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,buy,30000.0,6.96,208800.0
+2007-06-15,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,buy,996.0,15.52,15457.92
+2007-06-15,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,buy,4981.0,15.52,77305.12
+2007-06-15,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,buy,206.0,15.52,3197.12
+2007-06-15,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,buy,2000.0,3.2,6400.0
+2007-06-15,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,buy,1000.0,14.9,14900.0
+2007-06-15,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,buy,3405.0,17.5,59587.5
+2007-06-15,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,buy,5759.0,17.5,100782.5
+2007-06-15,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,buy,183.0,17.5,3202.5
+2007-06-15,AIR,"MCDONALD, JAMES M",Vice President,True,Stock Option,sell,2589.0,27.42,70990.38
+2007-06-15,AIR,"MCDONALD, JAMES M",Vice President,True,Stock Option,sell,4951.0,27.42,135756.42
+2007-06-15,AIR,"MCDONALD, JAMES M",Vice President,True,Stock Option,sell,183.0,17.5,3202.5
+2007-06-15,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,buy,2589.0,27.42,70990.38
+2007-06-15,AIR,"MCDONALD, JAMES M",Vice President,True,Stock Option,sell,3405.0,17.5,59587.5
+2007-06-15,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,buy,37780.0,33.66,1271674.7999999998
+2007-06-15,AIR,"MCDONALD, JAMES M",Vice President,True,Stock Option,sell,1000.0,14.9,14900.0
+2007-06-15,AIR,"MCDONALD, JAMES M",Vice President,True,Stock Option,sell,2000.0,3.2,6400.0
+2007-06-15,AIR,"MCDONALD, JAMES M",Vice President,True,Stock Option,sell,30000.0,6.96,208800.0
+2007-06-15,AIR,"MCDONALD, JAMES M",Vice President,True,Common Stock,buy,116.0,27.42,3180.7200000000003
+2007-06-15,AIR,"MCDONALD, JAMES M",Vice President,True,Stock Option,sell,4981.0,15.52,77305.12
+2007-06-15,AIR,"MCDONALD, JAMES M",Vice President,True,Stock Option,sell,206.0,15.52,3197.12
+2007-06-15,AIR,"MCDONALD, JAMES M",Vice President,True,Stock Option,sell,7954.0,17.5,139195.0
+2007-06-15,AIR,"MCDONALD, JAMES M",Vice President,True,Stock Option,sell,5759.0,17.5,100782.5
+2007-06-15,AIR,"MCDONALD, JAMES M",Vice President,True,Stock Option,sell,996.0,15.52,15457.92
+2007-07-11,AIR,"SHARP, MICHAEL J",VP/Chief Accounting Officer,True,Common Stock,sell,295.0,33.7,9941.5
+2007-07-11,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,442.0,33.7,14895.400000000001
+2007-07-11,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Common Stock,sell,1105.0,33.7,37238.5
+2007-07-11,AIR,"CLARK, JAMES JOHN",Vice President,True,Common Stock,sell,737.0,33.7,24836.9
+2007-07-16,AIR,"MCDONALD, JAMES M",former Vice President,True,Common Stock,sell,300.0,34.71,10413.0
+2007-07-16,AIR,"MCDONALD, JAMES M",former Vice President,True,Common Stock,sell,400.0,34.74,13896.0
+2007-07-16,AIR,"MCDONALD, JAMES M",former Vice President,True,Common Stock,sell,300.0,34.84,10452.000000000002
+2007-07-16,AIR,"MCDONALD, JAMES M",former Vice President,True,Common Stock,sell,600.0,34.76,20856.0
+2007-07-16,AIR,"MCDONALD, JAMES M",former Vice President,True,Common Stock,sell,400.0,34.77,13908.000000000002
+2007-07-16,AIR,"MCDONALD, JAMES M",former Vice President,True,Common Stock,sell,500.0,34.72,17360.0
+2007-07-16,AIR,"MCDONALD, JAMES M",former Vice President,True,Common Stock,sell,300.0,34.75,10425.0
+2007-07-16,AIR,"MCDONALD, JAMES M",former Vice President,True,Common Stock,sell,3459.0,34.7,120027.3
+2007-07-16,AIR,"MCDONALD, JAMES M",former Vice President,True,Common Stock,sell,500.0,34.8,17400.0
+2007-07-16,AIR,"MCDONALD, JAMES M",former Vice President,True,Common Stock,sell,1600.0,34.83,55728.0
+2007-07-16,AIR,"MCDONALD, JAMES M",former Vice President,True,Common Stock,sell,22660.0,34.581,783605.4600000001
+2007-07-16,AIR,"MCDONALD, JAMES M",former Vice President,True,Common Stock,sell,5000.0,34.5,172500.0
+2007-07-16,AIR,"MCDONALD, JAMES M",former Vice President,True,Common Stock,sell,400.0,34.81,13924.0
+2007-07-17,AIR,"MCDONALD, JAMES M",former Vice President,True,Common Stock,sell,3700.0,34.5,127650.0
+2007-07-17,AIR,"MCDONALD, JAMES M",former Vice President,True,Common Stock,sell,1900.0,34.55,65645.0
+2007-07-20,AIR,"SHARP, MICHAEL J",VP/Chief Accounting Officer,True,Common Stock,buy,3000.0,23.0834,69250.2
+2007-07-20,AIR,"SHARP, MICHAEL J",VP/Chief Accounting Officer,True,Stock Option,sell,3000.0,23.0834,69250.2
+2007-07-20,AIR,"SHARP, MICHAEL J",VP/Chief Accounting Officer,True,Common Stock,buy,5000.0,13.4375,67187.5
+2007-07-20,AIR,"SHARP, MICHAEL J",VP/Chief Accounting Officer,True,Common Stock,sell,8705.0,32.7794,285344.677
+2007-07-20,AIR,"SHARP, MICHAEL J",VP/Chief Accounting Officer,True,Stock Option,sell,5000.0,13.4375,67187.5
+2007-07-21,AIR,"ROMENESKO, TIMOTHY J","Vice President, CFO",True,Common Stock,sell,1964.0,32.77,64360.280000000006
+2007-07-21,AIR,"CLARK, JAMES JOHN",Vice President,True,Common Stock,sell,1964.0,32.77,64360.280000000006
+2007-07-21,AIR,"MCDONALD, JAMES M",former Vice President,True,Common Stock,sell,2024.0,32.77,66326.48000000001
+2007-07-21,AIR,"SHARP, MICHAEL J",VP/Chief Accounting Officer,True,Common Stock,sell,197.0,32.77,6455.6900000000005
+2007-07-21,AIR,"STORCH, DAVID P",Chairman & CEO,True,Common Stock,sell,4909.0,32.77,160867.93000000002
+2007-07-21,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,1964.0,32.77,64360.280000000006
+2007-08-08,AIR,"MCDONALD, JAMES M",former Vice President,True,Common Stock,sell,6237.0,34.0,212058.0
+2007-08-09,AIR,"MCDONALD, JAMES M",former Vice President,True,Common Stock,sell,2900.0,33.0,95700.0
+2007-08-10,AIR,"MCDONALD, JAMES M",former Vice President,True,Common Stock,sell,4643.0,33.3985,155069.23549999998
+2007-08-17,AIR,"STORCH, DAVID P",Chairman & CEO,True,Stock Option,sell,100000.0,23.5,2350000.0
+2007-08-17,AIR,"STORCH, DAVID P",Chairman & CEO,True,Common Stock,sell,84240.0,31.77,2676304.8
+2007-08-17,AIR,"STORCH, DAVID P",Chairman & CEO,True,Common Stock,buy,100000.0,23.5,2350000.0
+2007-09-04,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock Units,buy,280.0,31.2,8736.0
+2007-09-04,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock Units,buy,280.0,31.2,8736.0
+2007-10-02,AIR,"ROMENESKO, TIMOTHY J","Director, President and COO",True,Common Stock,sell,12638.0,31.2,394305.6
+2007-10-02,AIR,"ROMENESKO, TIMOTHY J","Director, President and COO",True,Stock Option,sell,15000.0,23.0834,346251.0
+2007-10-02,AIR,"ROMENESKO, TIMOTHY J","Director, President and COO",True,Common Stock,buy,15000.0,23.0834,346251.0
+2007-10-03,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Stock Option,sell,12000.0,23.0834,277000.8
+2007-10-03,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,sell,10068.0,31.45,316638.6
+2007-10-03,AIR,"PULSIFER, HOWARD A",Vice President & Secretary,True,Common Stock,buy,12000.0,23.0834,277000.8
+2007-10-08,AIR,"CLARK, JAMES JOHN",Group Vice President,True,Common Stock,sell,177.0,32.53,5757.81
+2007-10-08,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Common Stock,sell,619.0,32.53,20136.07
+2007-10-08,AIR,"CLARK, JAMES JOHN",Group Vice President,True,Stock Option,sell,6000.0,23.0834,138500.4
+2007-10-08,AIR,"CLARK, JAMES JOHN",Group Vice President,True,Common Stock,buy,6000.0,23.0834,138500.4
+2007-10-08,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Common Stock,sell,89.0,32.53,2895.17
+2007-10-08,AIR,"PULSIFER, HOWARD A","Vice President, GC & Secretary",True,Common Stock,sell,354.0,32.53,11515.62
+2007-10-08,AIR,"CLARK, JAMES JOHN",Group Vice President,True,Common Stock,sell,4946.0,32.53,160893.38
+2007-10-17,AIR,"BOYCE, MICHAEL ROSS",Director,True,Common Stock,sell,2000.0,32.5695,65138.99999999999
+2007-12-03,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock Units,buy,272.0,32.26,8774.72
+2007-12-03,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock Units,buy,271.0,32.26,8742.46
+2007-12-21,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,common stock,sell,24781.0,35.8046,887273.7926
+2007-12-21,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,stock option,sell,187441.0,14.96,2804117.3600000003
+2007-12-21,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,common stock,sell,35230.0,37.0,1303510.0
+2007-12-21,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Common Stock,sell,9650.0,36.6725,353889.625
+2007-12-21,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,stock option,sell,70000.0,23.5,1645000.0
+2007-12-21,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,common stock,sell,119836.0,37.0,4433932.0
+2007-12-21,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,common stock,buy,187441.0,6.96,1304589.36
+2007-12-21,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,stock option,buy,187441.0,14.96,2804117.3600000003
+2007-12-21,AIR,"PULSIFER, HOWARD A",VP & Secretary,True,stock option,buy,9100.0,17.75,161525.0
+2007-12-21,AIR,"PULSIFER, HOWARD A",VP & Secretary,True,common stock,sell,39100.0,35.6023,1392049.93
+2007-12-21,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,stock option,buy,70000.0,23.5,1645000.0
+2007-12-21,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,common stock,sell,10000.0,36.48,364799.99999999994
+2007-12-21,AIR,"PULSIFER, HOWARD A",VP & Secretary,True,common stock,buy,30000.0,6.96,208800.0
+2007-12-24,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,common stock,sell,31058.0,37.013,1149549.754
+2007-12-26,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,common stock,sell,36547.0,37.2851,1362658.5497
+2008-01-02,AIR,"SHARP, MICHAEL J","VP, Controller, CAO",True,Common Stock,buy,2500.0,6.96,17400.0
+2008-01-02,AIR,"SHARP, MICHAEL J","VP, Controller, CAO",True,Common Stock,buy,2500.0,13.4375,33593.75
+2008-01-02,AIR,"SHARP, MICHAEL J","VP, Controller, CAO",True,Common Stock,buy,4750.0,17.75,84312.5
+2008-01-02,AIR,"SHARP, MICHAEL J","VP, Controller, CAO",True,stock option,sell,4750.0,17.75,84312.5
+2008-01-02,AIR,"SHARP, MICHAEL J","VP, Controller, CAO",True,stock option,sell,2500.0,13.4375,33593.75
+2008-01-02,AIR,"SHARP, MICHAEL J","VP, Controller, CAO",True,Common Stock,sell,9750.0,37.1561,362271.97500000003
+2008-01-02,AIR,"SHARP, MICHAEL J","VP, Controller, CAO",True,stock option,sell,2500.0,6.96,17400.0
+2008-03-03,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock Units,buy,341.0,25.61,8733.01
+2008-03-03,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock Units,buy,341.0,25.61,8733.01
+2008-06-01,AIR,"POULTON, RICHARD J.",Vice President-CFO & Treasurer,True,Stock Option,buy,10000.0,19.28,192800.0
+2008-06-02,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock Units,buy,598.0,18.87,11284.26
+2008-06-02,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock Units,buy,597.0,18.87,11265.390000000001
+2008-07-15,AIR,"CLARK, JAMES JOHN",Group Vice President,True,Common Stock,sell,3534.0,13.28,46931.52
+2008-07-15,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Common Stock,sell,15315.0,13.28,203383.19999999998
+2008-07-15,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Common Stock,sell,1179.0,13.28,15657.119999999999
+2008-07-21,AIR,"CLARK, JAMES JOHN",Group Vice President,True,Common Stock,sell,1964.0,15.63,30697.320000000003
+2008-07-21,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Common Stock,sell,197.0,15.63,3079.11
+2008-07-21,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Common Stock,sell,4909.0,15.63,76727.67
+2008-07-21,AIR,"FITZGERALD, GERALD F JR",Director,True,Common Stock,buy,10000.0,15.5792,155792.0
+2008-07-29,AIR,"BOYCE, MICHAEL ROSS",Director,True,Common Stock,buy,10000.0,17.1638,171637.99999999997
+2008-07-29,AIR,"BOYCE, MICHAEL ROSS",Director,True,Common Stock,buy,4300.0,16.9529,72897.47
+2008-09-02,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock Units,buy,688.0,16.35,11248.800000000001
+2008-09-02,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock Units,buy,688.0,16.35,11248.800000000001
+2008-10-08,AIR,"KELLY, PATRICK J",Director,True,Common Stock,buy,8000.0,12.6002,100801.59999999999
+2008-10-08,AIR,"BOBINS, NORMAN",Director,True,Common Stock,buy,5000.0,12.5002,62501.0
+2008-10-08,AIR,"WOODARD, RONALD B",Director,True,Common Stock,buy,4000.0,12.3,49200.0
+2008-10-09,AIR,"FITZGERALD, GERALD F JR",Director,True,Common Stock,buy,2500.0,11.7911,29477.75
+2008-10-09,AIR,"BOYCE, MICHAEL ROSS",Director,True,Common Stock,buy,10000.0,11.7683,117683.0
+2008-10-10,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Common Stock,buy,10000.0,10.2,102000.0
+2008-12-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,757.0,14.85,11241.449999999999
+2008-12-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,758.0,14.85,11256.3
+2009-03-02,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,940.0,11.97,11251.800000000001
+2009-03-02,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,940.0,11.97,11251.800000000001
+2009-03-02,AIR,"REGAN, ROBERT J","VP, GC",True,Common Stock,sell,123.0,13.22,1626.0600000000002
+2009-03-20,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Common Stock,buy,10000.0,11.92,119200.0
+2009-06-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,721.0,15.61,11254.81
+2009-06-01,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Common Stock,sell,7657.0,15.61,119525.76999999999
+2009-06-01,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Common Stock,sell,312.0,16.51,5151.120000000001
+2009-06-01,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Common Stock,sell,2651.0,15.61,41382.11
+2009-06-01,AIR,"CLARK, JAMES JOHN",Group Vice President,True,Common Stock,sell,1767.0,15.61,27582.87
+2009-06-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,721.0,15.61,11254.81
+2009-06-01,AIR,"POULTON, RICHARD J.",Vice President-CFO & Treasurer,True,Common Stock,sell,1473.0,15.61,22993.53
+2009-07-13,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Stock Option,buy,100000.0,15.1,1510000.0
+2009-07-13,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Stock Option,buy,10000.0,15.1,151000.0
+2009-07-13,AIR,"CLARK, JAMES JOHN",Group Vice President,True,Stock Option,buy,10000.0,15.1,151000.0
+2009-07-13,AIR,"STINSON, TERRY DEAN",Group Vice President,True,Stock Option,buy,10000.0,15.1,151000.0
+2009-07-13,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Stock Option,buy,200000.0,15.1,3020000.0
+2009-07-13,AIR,"REGAN, ROBERT J","VP, GC",True,Stock Option,buy,20000.0,15.1,302000.0
+2009-07-13,AIR,"POULTON, RICHARD J.",Vice President-CFO & Treasurer,True,Stock Option,buy,60000.0,15.1,906000.0
+2009-08-04,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Common Stock,buy,30000.0,6.96,208800.0
+2009-08-04,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Common Stock,sell,18461.0,19.5037,360057.80569999997
+2009-09-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,671.0,16.75,11239.25
+2009-09-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,672.0,16.75,11256.0
+2009-12-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,592.0,19.02,11259.84
+2009-12-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,592.0,19.02,11259.84
+2009-12-17,AIR,"STINSON, TERRY DEAN",Group Vice President,True,Common Stock,sell,1931.0,15.61,30142.91
+2009-12-23,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Common Stock,sell,3000.0,24.45,73350.0
+2009-12-28,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Common Stock,sell,30243.0,23.8471,721207.8453
+2009-12-28,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Common Stock,buy,2140.0,16.05,34347.0
+2009-12-28,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Common Stock,buy,4000.0,14.9,59600.0
+2009-12-28,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Common Stock,buy,20094.0,16.05,322508.7
+2009-12-28,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Common Stock,buy,1868.0,17.5,32690.0
+2009-12-28,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Common Stock,buy,2141.0,16.05,34363.05
+2010-01-05,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Common Stock,sell,6250.0,23.811,148818.75
+2010-01-05,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Common Stock,buy,2500.0,13.4375,33593.75
+2010-01-05,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Common Stock,buy,3750.0,14.9,55875.0
+2010-01-11,AIR,"CLARK, JAMES JOHN",Group Vice President,True,Common Stock,buy,30000.0,6.96,208800.0
+2010-01-11,AIR,"CLARK, JAMES JOHN",Group Vice President,True,Common Stock,sell,30000.0,24.9818,749454.0
+2010-03-01,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Common Stock,sell,123.0,22.68,2789.64
+2010-03-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,492.0,22.87,11252.04
+2010-03-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,492.0,22.87,11252.04
+2010-04-01,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Common Stock,buy,3750.0,14.9,55875.0
+2010-04-01,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Common Stock,buy,2500.0,6.96,17400.0
+2010-04-01,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Common Stock,sell,6250.0,24.9136,155710.0
+2010-04-06,AIR,"BROCKSMITH, JAMES G JR",Director,True,Common Stock,sell,10000.0,25.0979,250979.0
+2010-04-06,AIR,"BROCKSMITH, JAMES G JR",Director,True,Common Stock,buy,10000.0,11.75,117500.0
+2010-06-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,611.0,18.39,11236.29
+2010-06-01,AIR,"STINSON, TERRY DEAN",Group Vice President,True,Common Stock,sell,1931.0,18.39,35511.090000000004
+2010-06-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,611.0,18.39,11236.29
+2010-07-12,AIR,"POULTON, RICHARD J.",Vice President-CFO & Treasurer,True,Stock Option,buy,24239.0,17.27,418607.52999999997
+2010-07-12,AIR,"STINSON, TERRY DEAN",Group Vice President,True,Stock Option,buy,20000.0,17.27,345400.0
+2010-07-12,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Stock Option,buy,9165.0,17.27,158279.55
+2010-07-12,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Stock Option,buy,40664.0,17.27,702267.28
+2010-07-12,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Stock Option,buy,84163.0,17.27,1453495.01
+2010-07-12,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Stock Option,buy,24239.0,17.27,418607.52999999997
+2010-07-15,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Common Stock,sell,3534.0,17.02,60148.68
+2010-07-15,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Common Stock,sell,1179.0,17.02,20066.579999999998
+2010-07-15,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Common Stock,sell,15315.0,17.02,260661.3
+2010-09-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,683.0,16.48,11255.84
+2010-09-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,683.0,16.48,11255.84
+2010-09-29,AIR,"KLEIMAN, DANY",Group Vice President,True,Common Stock,sell,1343.0,18.6,24979.800000000003
+2010-10-08,AIR,"KLEIMAN, DANY",Group Vice President,True,Common Stock,sell,1100.0,21.46,23606.0
+2010-10-12,AIR,"KLEIMAN, DANY",Group Vice President,True,Common Stock,sell,1706.0,21.22,36201.32
+2010-12-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,446.0,25.19,11234.74
+2010-12-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,446.0,25.19,11234.74
+2010-12-22,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Common Stock,sell,3000.0,27.8583,83574.9
+2010-12-23,AIR,"KLEIMAN, DANY",Group Vice President,True,Common Stock,sell,890.0,28.0,24920.0
+2010-12-28,AIR,"POULTON, RICHARD J.",Vice President-CFO & Treasurer,True,Common Stock,buy,10000.0,15.1,151000.0
+2010-12-28,AIR,"POULTON, RICHARD J.",Vice President-CFO & Treasurer,True,Common Stock,sell,10000.0,27.9284,279284.0
+2011-01-18,AIR,"MARTINEZ, RANDY J",Group Vice President,True,Stock Option,buy,10000.0,27.8,278000.0
+2011-02-28,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Common Stock,sell,123.0,27.29,3356.67
+2011-03-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,426.0,26.36,11229.36
+2011-03-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,427.0,26.36,11255.72
+2011-03-21,AIR,"KLEIMAN, DANY",Group Vice President,True,Common Stock,sell,751.0,27.19,20419.690000000002
+2011-03-21,AIR,"GOODWIN, JAMES E",Director,True,Common Stock,sell,10000.0,27.1888,271888.0
+2011-03-21,AIR,"GOODWIN, JAMES E",Director,True,Common Stock,buy,10000.0,13.48,134800.0
+2011-04-04,AIR,"FOGLEMAN, RONALD R",Director,True,Common Stock,buy,10000.0,15.05,150500.0
+2011-04-04,AIR,"FOGLEMAN, RONALD R",Director,True,Common Stock,sell,10000.0,27.517,275170.0
+2011-04-07,AIR,"FOGLEMAN, RONALD R",Director,True,Common Stock,sell,9000.0,27.3679,246311.09999999998
+2011-06-01,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Common Stock,sell,25790.0,25.78,664866.2000000001
+2011-06-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,485.0,25.78,12503.300000000001
+2011-06-01,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Common Stock,sell,10065.0,25.78,259475.7
+2011-06-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,485.0,25.78,12503.300000000001
+2011-06-01,AIR,"MARTINEZ, RANDY J",Group Vice President,True,Common Stock,sell,630.0,25.78,16241.400000000001
+2011-06-01,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Common Stock,sell,1098.0,25.78,28306.440000000002
+2011-06-01,AIR,"STINSON, TERRY DEAN",Group Vice President,True,Common Stock,sell,3049.0,25.78,78603.22
+2011-06-01,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Common Stock,sell,1102.0,25.78,28409.56
+2011-06-01,AIR,"POULTON, RICHARD J.",Vice President-CFO & Treasurer,True,Common Stock,sell,5348.0,25.78,137871.44
+2011-06-01,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Common Stock,sell,1259.0,25.78,32457.02
+2011-07-07,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Common Stock,buy,116668.0,22.41,2614529.88
+2011-07-07,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Common Stock,sell,8368.0,30.1,251876.80000000002
+2011-07-07,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Common Stock,buy,9341.0,25.52,238382.32
+2011-07-07,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Common Stock,sell,99217.0,30.1,2986431.7
+2011-07-11,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Stock Option,buy,49022.0,29.65,1453502.3
+2011-07-11,AIR,"KLEIMAN, DANY",Group Vice President,True,Stock Option,buy,20000.0,29.65,593000.0
+2011-07-11,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Stock Option,buy,5338.0,29.65,158271.69999999998
+2011-07-11,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Stock Option,buy,14118.0,29.65,418598.69999999995
+2011-07-11,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Stock Option,buy,23685.0,29.65,702260.25
+2011-07-11,AIR,"POULTON, RICHARD J.",Vice President-CFO & Treasurer,True,Stock Option,buy,14118.0,29.65,418598.69999999995
+2011-07-13,AIR,"POULTON, RICHARD J.",Vice President-CFO & Treasurer,True,Common Stock,sell,6500.0,30.253,196644.5
+2011-07-14,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Common Stock,buy,417.0,24.99,10420.83
+2011-07-14,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Common Stock,sell,6201.0,30.2579,187629.2379
+2011-07-14,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Common Stock,buy,344.0,24.99,8596.56
+2011-07-14,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Common Stock,buy,1221.0,17.1,20879.100000000002
+2011-07-14,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Common Stock,buy,1719.0,24.99,42957.81
+2011-07-22,AIR,"POULTON, RICHARD J.",Vice President-CFO & Treasurer,True,Common Stock,buy,10000.0,15.1,151000.0
+2011-07-22,AIR,"POULTON, RICHARD J.",Vice President-CFO & Treasurer,True,Common Stock,sell,10000.0,31.2642,312642.0
+2011-09-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,542.0,23.04,12487.68
+2011-09-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,542.0,23.04,12487.68
+2011-12-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,695.0,17.99,12503.05
+2011-12-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,695.0,17.99,12503.05
+2012-01-10,AIR,"WALFISH, MARC JAY",Director,True,Common Stock,buy,2500.0,20.35,50875.0
+2012-02-29,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Common Stock,sell,123.0,22.05,2712.15
+2012-03-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,560.0,22.33,12504.8
+2012-03-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,560.0,22.33,12504.8
+2012-03-28,AIR,"WALFISH, MARC JAY",Director,True,Common Stock,buy,2500.0,18.58,46449.99999999999
+2012-06-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,1081.0,11.56,12496.36
+2012-06-19,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Common Stock,buy,20000.0,10.9252,218504.0
+2012-06-19,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Common Stock,buy,5000.0,10.47,52350.0
+2012-06-26,AIR,"BOYCE, MICHAEL ROSS",Director,True,Common Stock,buy,7500.0,11.82,88650.0
+2012-07-16,AIR,"STINSON, TERRY DEAN",Group Vice President,True,Stock Option,buy,25000.0,12.9,322500.0
+2012-07-16,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Stock Option,buy,43200.0,12.9,557280.0
+2012-07-16,AIR,"KLEIMAN, DANY",Group Vice President,True,Stock Option,buy,25000.0,12.9,322500.0
+2012-07-16,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Stock Option,buy,72000.0,12.9,928800.0
+2012-07-16,AIR,"MARTINEZ, RANDY J",Group Vice President,True,Stock Option,buy,25000.0,12.9,322500.0
+2012-07-16,AIR,"POULTON, RICHARD J.",Vice President-CFO & Treasurer,True,Stock Option,buy,43200.0,12.9,557280.0
+2012-07-16,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Stock Option,buy,17280.0,12.9,222912.0
+2012-07-16,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Stock Option,buy,144000.0,12.9,1857600.0
+2012-07-27,AIR,"WALFISH, MARC JAY",Director,True,Common Stock,buy,5000.0,13.8,69000.0
+2012-09-04,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,850.0,14.7,12495.0
+2012-09-04,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,850.0,14.7,12495.0
+2012-10-11,AIR,"POULTON, RICHARD J.",Vice President-CFO & Treasurer,True,Common Stock,sell,37873.0,16.37,619981.01
+2012-10-11,AIR,"POULTON, RICHARD J.",Vice President-CFO & Treasurer,True,Common Stock,buy,40000.0,15.1,604000.0
+2012-10-12,AIR,"POULTON, RICHARD J.",Vice President-CFO & Treasurer,True,Common Stock,sell,8724.0,16.283,142052.89200000002
+2012-12-03,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,822.0,15.19,12486.18
+2012-12-03,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,822.0,15.19,12486.18
+2012-12-11,AIR,"WALFISH, MARC JAY",Director,True,Common Stock,buy,10000.0,3.82,38200.0
+2012-12-11,AIR,"WALFISH, MARC JAY",Director,True,Common Stock,buy,3500.0,6.96,24360.0
+2012-12-21,AIR,"FOGLEMAN, RONALD R",Director,True,Common Stock,sell,3500.0,18.2788,63975.8
+2012-12-21,AIR,"FOGLEMAN, RONALD R",Director,True,Common Stock,buy,3500.0,6.96,24360.0
+2013-01-07,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Common Stock,sell,1275.0,19.9086,25383.465
+2013-01-08,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Common Stock,sell,1725.0,19.5618,33744.105
+2013-03-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,721.0,17.32,12487.72
+2013-03-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,721.0,17.32,12487.72
+2013-03-22,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Common Stock,sell,25658.0,18.5561,476112.41380000004
+2013-05-31,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Common Stock,sell,6957.0,20.06,139557.41999999998
+2013-05-31,AIR,"MARTINEZ, RANDY J",Aviation Services Group VP,True,Common Stock,sell,2157.0,20.06,43269.42
+2013-05-31,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Common Stock,sell,35125.0,20.06,704607.5
+2013-05-31,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Common Stock,sell,16971.0,20.06,340438.25999999995
+2013-05-31,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Common Stock,sell,11655.0,20.06,233799.3
+2013-05-31,AIR,"HOLMES, JOHN MCCLAIN III",Aviation Services Group VP,True,Common Stock,sell,2246.0,20.06,45054.759999999995
+2013-05-31,AIR,"HOLMES, JOHN MCCLAIN III",Aviation Services Group VP,True,Common Stock,sell,2129.0,20.06,42707.74
+2013-05-31,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Common Stock,sell,24203.0,20.06,485512.18
+2013-05-31,AIR,"STINSON, TERRY DEAN",Technology Products Group VP,True,Common Stock,sell,1800.0,20.06,36108.0
+2013-05-31,AIR,"MARTINEZ, RANDY J",Aviation Services Group VP,True,Common Stock,sell,2152.0,20.06,43169.119999999995
+2013-05-31,AIR,"STINSON, TERRY DEAN",Technology Products Group VP,True,Common Stock,sell,1912.0,20.06,38354.72
+2013-05-31,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Common Stock,sell,6982.0,20.06,140058.91999999998
+2013-05-31,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Common Stock,sell,2724.0,20.06,54643.439999999995
+2013-05-31,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Common Stock,sell,2615.0,20.06,52456.899999999994
+2013-06-03,AIR,"STINSON, TERRY DEAN",Technology Products Group VP,True,Common Stock,sell,2239.0,20.68,46302.52
+2013-06-03,AIR,"STINSON, TERRY DEAN",Technology Products Group VP,True,Common Stock,sell,2189.0,20.68,45268.52
+2013-06-03,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Common Stock,sell,1619.0,20.68,33480.92
+2013-06-03,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,604.0,20.68,12490.72
+2013-06-03,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Common Stock,sell,36233.0,20.68,749298.44
+2013-06-03,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Common Stock,sell,14845.0,20.68,306994.6
+2013-06-03,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Common Stock,sell,2600.0,20.68,53768.0
+2013-06-03,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Common Stock,sell,1687.0,20.68,34887.159999999996
+2013-06-03,AIR,"MARTINEZ, RANDY J",Aviation Services Group VP,True,Common Stock,sell,1289.0,20.68,26656.52
+2013-06-03,AIR,"MARTINEZ, RANDY J",Aviation Services Group VP,True,Common Stock,sell,1295.0,20.68,26780.6
+2013-06-03,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Common Stock,sell,2589.0,20.68,53540.52
+2013-06-03,AIR,"HOLMES, JOHN MCCLAIN III",Aviation Services Group VP,True,Common Stock,sell,4530.0,20.68,93680.4
+2013-06-03,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Common Stock,sell,52585.0,20.68,1087457.8
+2013-06-03,AIR,"HOLMES, JOHN MCCLAIN III",Aviation Services Group VP,True,Common Stock,sell,4592.0,20.68,94962.56
+2013-06-03,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Common Stock,sell,21598.0,20.68,446646.64
+2013-06-03,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,604.0,20.68,12490.72
+2013-07-11,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Common Stock,sell,1786.0,24.63,43989.18
+2013-07-11,AIR,"GOODWIN, JAMES E",Director,True,Common Stock,buy,3500.0,6.96,24360.0
+2013-07-11,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Common Stock,sell,23647.0,24.63,582425.61
+2013-07-11,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Common Stock,buy,2109.0,17.5,36907.5
+2013-07-11,AIR,"GOODWIN, JAMES E",Director,True,Common Stock,sell,990.0,24.63,24383.7
+2013-07-11,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Common Stock,buy,27607.0,17.97,496097.79
+2013-07-15,AIR,"KLEIMAN, DANY",Aviation Services Group VP,True,Stock Option,buy,27500.0,25.43,699325.0
+2013-07-15,AIR,"HOLMES, JOHN MCCLAIN III",Aviation Services Group VP,True,Stock Option,buy,27500.0,25.43,699325.0
+2013-07-15,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Stock Option,buy,79200.0,25.43,2014056.0
+2013-07-15,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Stock Option,buy,47520.0,25.43,1208433.6
+2013-07-15,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Stock Option,buy,19008.0,25.43,483373.44
+2013-07-15,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Stock Option,buy,158400.0,25.43,4028112.0
+2013-07-15,AIR,"MARTINEZ, RANDY J",Aviation Services Group VP,True,Stock Option,buy,27500.0,25.43,699325.0
+2013-07-30,AIR,"HOLMES, JOHN MCCLAIN III",Aviation Services Group VP,True,Common Stock,sell,10000.0,23.5318,235318.0
+2013-07-30,AIR,"KLEIMAN, DANY",Aviation Services Group VP,True,Common Stock,buy,1050.0,17.27,18133.5
+2013-07-30,AIR,"KLEIMAN, DANY",Aviation Services Group VP,True,Common Stock,sell,1050.0,24.0336,25235.28
+2013-07-31,AIR,"HOLMES, JOHN MCCLAIN III",Aviation Services Group VP,True,Common Stock,sell,4007.0,24.0505,96370.3535
+2013-07-31,AIR,"KLEIMAN, DANY",Aviation Services Group VP,True,Common Stock,buy,5000.0,12.9,64500.0
+2013-07-31,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Common Stock,sell,2500.0,24.1148,60287.0
+2013-07-31,AIR,"KLEIMAN, DANY",Aviation Services Group VP,True,Common Stock,buy,18950.0,17.27,327266.5
+2013-07-31,AIR,"KLEIMAN, DANY",Aviation Services Group VP,True,Common Stock,sell,23950.0,24.0374,575695.7300000001
+2013-07-31,AIR,"HOLMES, JOHN MCCLAIN III",Aviation Services Group VP,True,Common Stock,buy,6667.0,17.27,115139.09
+2013-07-31,AIR,"HOLMES, JOHN MCCLAIN III",Aviation Services Group VP,True,Common Stock,buy,2500.0,15.1,37750.0
+2013-07-31,AIR,"HOLMES, JOHN MCCLAIN III",Aviation Services Group VP,True,Common Stock,buy,2000.0,19.28,38560.0
+2013-07-31,AIR,"HOLMES, JOHN MCCLAIN III",Aviation Services Group VP,True,Common Stock,sell,16617.0,24.1752,401719.2984
+2013-07-31,AIR,"HOLMES, JOHN MCCLAIN III",Aviation Services Group VP,True,Common Stock,buy,5000.0,12.9,64500.0
+2013-08-01,AIR,"WOODARD, RONALD B",Director,True,Common Stock,sell,3500.0,24.6722,86352.7
+2013-08-01,AIR,"WOODARD, RONALD B",Director,True,Common Stock,buy,3500.0,9.7,33950.0
+2013-08-08,AIR,"HOLMES, JOHN MCCLAIN III",Aviation Services Group VP,True,Common Stock,sell,438.0,24.68,10809.84
+2013-09-03,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,490.0,25.51,12499.900000000001
+2013-09-03,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,490.0,25.51,12499.900000000001
+2013-10-01,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Common Stock,sell,3000.0,27.3891,82167.3
+2013-10-15,AIR,"MARTINEZ, RANDY J",Aviation Services Group VP,True,Common Stock,sell,4754.0,27.31,129831.73999999999
+2013-12-02,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,414.0,30.17,12490.380000000001
+2013-12-02,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,414.0,30.17,12490.380000000001
+2013-12-26,AIR,"WOODARD, RONALD B",Director,True,Common Stock,sell,17000.0,28.8844,491034.8
+2014-03-03,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,684.0,29.24,20000.16
+2014-03-03,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,427.0,29.24,12485.48
+2014-03-25,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Common Stock,buy,10000.0,15.1,151000.0
+2014-03-25,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Common Stock,sell,6982.0,27.53,192214.46000000002
+2014-03-26,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Common Stock,sell,3018.0,27.442,82819.956
+2014-04-10,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Common Stock,sell,10000.0,25.9696,259696.0
+2014-06-02,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Common Stock,sell,12858.0,24.3,312449.4
+2014-06-02,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,2933.0,24.5,71858.5
+2014-06-02,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,2627.0,24.5,64361.5
+2014-06-02,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Common Stock,sell,1401.0,24.3,34044.3
+2014-06-02,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Common Stock,sell,6213.0,24.3,150975.9
+2014-06-02,AIR,"MARTINEZ, RANDY J",Aviation Services Group VP,True,Common Stock,sell,441.0,24.3,10716.300000000001
+2014-06-02,AIR,"HOLMES, JOHN MCCLAIN III",Aviation Services Group VP,True,Common Stock,sell,526.0,24.3,12781.800000000001
+2014-06-02,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,1506.0,24.5,36897.0
+2014-06-02,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Common Stock,sell,3692.0,24.3,89715.6
+2014-07-18,AIR,"KLEIMAN, DANY",Aviation Services Group VP,True,Common Stock,sell,3205.0,27.5,88137.5
+2014-07-18,AIR,"KLEIMAN, DANY",Aviation Services Group VP,True,Common Stock,buy,5000.0,12.9,64500.0
+2014-07-18,AIR,"FOGLEMAN, RONALD R",Director,True,Common Stock,buy,3500.0,9.7,33950.0
+2014-07-18,AIR,"FOGLEMAN, RONALD R",Director,True,Common Stock,sell,3500.0,27.2703,95446.05
+2014-07-22,AIR,"GOODWIN, JAMES E",Director,True,Common Stock,buy,3500.0,9.7,33950.0
+2014-07-22,AIR,"GOODWIN, JAMES E",Director,True,Common Stock,sell,1229.0,27.64,33969.56
+2014-07-22,AIR,"WALFISH, MARC JAY",Director,True,Common Stock,buy,3500.0,9.7,33950.0
+2014-07-22,AIR,"HOLMES, JOHN MCCLAIN III",Aviation Services Group VP,True,Common Stock,sell,700.0,28.0242,19616.94
+2014-07-23,AIR,"HOLMES, JOHN MCCLAIN III",Aviation Services Group VP,True,Common Stock,sell,440.0,27.5,12100.0
+2014-07-24,AIR,"HOLMES, JOHN MCCLAIN III",Aviation Services Group VP,True,Common Stock,buy,5000.0,12.9,64500.0
+2014-07-24,AIR,"HOLMES, JOHN MCCLAIN III",Aviation Services Group VP,True,Common Stock,sell,5000.0,27.4806,137403.0
+2014-07-25,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Common Stock,sell,2750.0,27.1088,74549.2
+2014-07-31,AIR,"PACE, PETER",Director,True,Common Stock,sell,2200.0,26.8659,59104.98
+2014-09-02,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,534.0,27.6,14738.400000000001
+2014-09-02,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,830.0,27.6,22908.0
+2014-09-16,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Common Stock,sell,3675.0,24.3,89302.5
+2014-09-16,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Common Stock,sell,1292.0,24.3,31395.600000000002
+2014-09-16,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Common Stock,sell,770.0,24.3,18711.0
+2014-09-16,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Common Stock,sell,292.0,24.3,7095.6
+2014-12-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,488.0,25.58,12483.039999999999
+2014-12-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,784.0,25.58,20054.719999999998
+2015-03-02,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,649.0,30.69,19917.81
+2015-03-02,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,408.0,30.69,12521.52
+2015-03-23,AIR,"HOLMES, JOHN MCCLAIN III",Group Vice President,True,Common Stock,sell,4689.0,32.96,154549.44
+2015-03-23,AIR,"HOLMES, JOHN MCCLAIN III",Group Vice President,True,Common Stock,buy,5500.0,25.43,139865.0
+2015-04-02,AIR,"HOLMES, JOHN MCCLAIN III",Group Vice President,True,Common Stock,sell,811.0,30.3045,24576.949500000002
+2015-04-10,AIR,"MARTINEZ, RANDY J",Aviation Services Group VP,True,Common Stock,sell,50500.0,30.331,1531715.5
+2015-04-10,AIR,"MARTINEZ, RANDY J",Aviation Services Group VP,True,Common Stock,buy,5000.0,15.1,75500.0
+2015-04-10,AIR,"MARTINEZ, RANDY J",Aviation Services Group VP,True,Common Stock,buy,10000.0,27.8,278000.0
+2015-04-10,AIR,"MARTINEZ, RANDY J",Aviation Services Group VP,True,Common Stock,buy,5500.0,25.43,139865.0
+2015-04-10,AIR,"MARTINEZ, RANDY J",Aviation Services Group VP,True,Common Stock,buy,10000.0,12.9,129000.0
+2015-04-10,AIR,"MARTINEZ, RANDY J",Aviation Services Group VP,True,Common Stock,buy,20000.0,17.27,345400.0
+2015-04-13,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Common Stock,buy,81698.0,15.1,1233639.8
+2015-04-13,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Common Stock,buy,8825.0,15.1,133257.5
+2015-04-13,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Common Stock,sell,8825.0,30.47,268897.75
+2015-04-13,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Common Stock,sell,81698.0,30.4938,2491282.4724
+2015-04-14,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Common Stock,buy,84163.0,17.27,1453495.01
+2015-04-14,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Common Stock,buy,28800.0,12.9,371520.0
+2015-04-14,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Common Stock,sell,113971.0,30.45,3470416.9499999997
+2015-04-14,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Common Stock,buy,91175.0,15.1,1376742.5
+2015-04-14,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Common Stock,buy,40664.0,17.27,702267.28
+2015-04-14,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Common Stock,buy,118302.0,15.1,1786360.2
+2015-04-14,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Common Stock,buy,57600.0,12.9,743040.0
+2015-04-14,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Common Stock,sell,191493.0,30.45,5830961.85
+2015-04-15,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Common Stock,sell,37306.0,30.1338,1124171.5428
+2015-04-15,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Common Stock,sell,32668.0,30.1705,985609.894
+2015-04-17,AIR,"FOGLEMAN, RONALD R",Director,True,Common Stock,sell,12666.0,29.4582,373117.5612
+2015-04-21,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Common Stock,sell,5900.0,30.4511,179661.49
+2015-04-21,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Common Stock,buy,5000.0,12.9,64500.0
+2015-06-01,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Common Stock,sell,2976.0,29.54,87911.04
+2015-06-01,AIR,"HOLMES, JOHN MCCLAIN III",Group Vice President,True,Common Stock,sell,4563.0,29.54,134791.02
+2015-06-01,AIR,"MARTINEZ, RANDY J",Aviation Services Group VP,True,Common Stock,sell,2920.0,29.54,86256.8
+2015-06-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,679.0,29.54,20057.66
+2015-06-01,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Common Stock,sell,26104.0,29.54,771112.16
+2015-06-01,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Common Stock,sell,54964.0,29.54,1623636.56
+2015-06-01,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Common Stock,sell,7889.0,29.54,233041.06
+2015-06-24,AIR,"KLEIMAN, DANY",Aviation Services Group VP,True,Common Stock,sell,30762.0,31.64,973309.68
+2015-06-24,AIR,"KLEIMAN, DANY",Aviation Services Group VP,True,Common Stock,buy,20000.0,29.65,593000.0
+2015-06-24,AIR,"KLEIMAN, DANY",Aviation Services Group VP,True,Common Stock,buy,5500.0,25.43,139865.0
+2015-06-24,AIR,"KLEIMAN, DANY",Aviation Services Group VP,True,Common Stock,buy,10000.0,17.27,172700.0
+2015-06-24,AIR,"KLEIMAN, DANY",Aviation Services Group VP,True,Common Stock,sell,30756.0,31.65,973427.3999999999
+2015-07-17,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Common Stock,sell,5000.0,30.2116,151058.0
+2015-07-17,AIR,"PACE, PETER",Director,True,Common Stock,sell,5000.0,30.3165,151582.5
+2015-08-07,AIR,"HOLMES, JOHN MCCLAIN III",Group Vice President,True,Stock Option,buy,50134.0,26.62,1334567.08
+2015-08-07,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Stock Option,buy,41711.0,26.62,1110346.82
+2015-08-07,AIR,"FORTSON, JOHN C.","VP, CFO & Treasurer",True,Stock Option,buy,45455.0,26.62,1210012.1
+2015-08-07,AIR,"ROMENESKO, TIMOTHY J","Director, President & COO",True,Stock Option,buy,50134.0,26.62,1334567.08
+2015-08-07,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Stock Option,buy,17547.0,26.62,467101.14
+2015-08-07,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Stock Option,buy,153810.0,26.62,4094422.2
+2015-08-07,AIR,"SHARP, MICHAEL J","VP, Controller & CAO",True,Stock Option,buy,10862.0,26.62,289146.44
+2015-09-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,1157.0,23.55,27247.350000000002
+2015-09-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,609.0,23.55,14341.95
+2015-09-30,AIR,"WALFISH, MARC JAY",Director,True,Common Stock,buy,20000.0,18.8403,376806.0
+2015-12-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,595.0,24.65,14666.75
+2015-12-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,926.0,24.65,22825.899999999998
+2016-03-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,687.0,21.49,14763.63
+2016-03-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,1071.0,21.49,23015.789999999997
+2016-05-31,AIR,"SHARP, MICHAEL J",VP-Finance,True,Common Stock,sell,1127.0,24.41,27510.07
+2016-05-31,AIR,"HOLMES, JOHN MCCLAIN III",Vice President; COO Av Serv,True,Common Stock,sell,1545.0,24.41,37713.45
+2016-05-31,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Common Stock,sell,2941.0,24.41,71789.81
+2016-05-31,AIR,"ROMENESKO, TIMOTHY J","Director, Vice Chairman; COO Exped Serv",True,Common Stock,sell,1127.0,24.41,27510.07
+2016-05-31,AIR,"ROMENESKO, TIMOTHY J","Director, Vice Chairman; COO Exped Serv",True,Common Stock,sell,4942.0,24.41,120634.22
+2016-05-31,AIR,"STORCH, DAVID P","Director, Chairman, President & CEO",True,Common Stock,sell,10115.0,24.41,246907.15
+2016-06-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,990.0,24.39,24146.100000000002
+2016-07-11,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Stock Option,buy,60000.0,24.0,1440000.0
+2016-07-11,AIR,"STORCH, DAVID P","Director, Chairman, President & CEO",True,Stock Option,buy,225000.0,24.0,5400000.0
+2016-07-11,AIR,"ROMENESKO, TIMOTHY J","Director, Vice Chairman; COO Exped Serv",True,Stock Option,buy,75000.0,24.0,1800000.0
+2016-07-11,AIR,"HOLMES, JOHN MCCLAIN III",Vice President; COO Av Serv,True,Stock Option,buy,75000.0,24.0,1800000.0
+2016-09-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,763.0,26.21,19998.23
+2016-09-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,477.0,26.21,12502.17
+2016-09-26,AIR,"PACE, PETER",Director,True,Common Stock,sell,5000.0,29.1317,145658.5
+2016-09-30,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Common Stock,buy,34560.0,12.9,445824.0
+2016-09-30,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Common Stock,sell,20558.0,31.32,643876.56
+2016-10-03,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Common Stock,sell,14002.0,30.9172,432902.63440000004
+2016-10-07,AIR,"HOLMES, JOHN MCCLAIN III",Vice President; COO Av Serv,True,Common Stock,sell,113.0,31.9436,3609.6268
+2016-10-10,AIR,"HOLMES, JOHN MCCLAIN III",Vice President; COO Av Serv,True,Common Stock,buy,1021.0,12.9,13170.9
+2016-10-10,AIR,"HOLMES, JOHN MCCLAIN III",Vice President; COO Av Serv,True,Common Stock,sell,6387.0,31.616,201931.392
+2016-10-10,AIR,"HOLMES, JOHN MCCLAIN III",Vice President; COO Av Serv,True,Common Stock,sell,1021.0,31.616,32279.935999999998
+2016-10-11,AIR,"HOLMES, JOHN MCCLAIN III",Vice President; COO Av Serv,True,Common Stock,sell,3979.0,31.1391,123902.4789
+2016-10-11,AIR,"HOLMES, JOHN MCCLAIN III",Vice President; COO Av Serv,True,Common Stock,buy,3979.0,12.9,51329.1
+2016-12-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,541.0,36.98,20006.179999999997
+2016-12-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,813.0,36.98,30064.739999999998
+2016-12-29,AIR,"FOGLEMAN, RONALD R",Director,True,Common Stock,sell,3000.0,33.472,100416.0
+2017-03-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,679.0,34.95,23731.050000000003
+2017-03-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,437.0,34.95,15273.150000000001
+2017-04-03,AIR,"HOLMES, JOHN MCCLAIN III",Vice President; COO Av Serv,True,Common Stock,sell,5000.0,34.1033,170516.5
+2017-04-27,AIR,"HOLMES, JOHN MCCLAIN III",Vice President; COO Av Serv,True,Common Stock,buy,4000.0,33.44,133760.0
+2017-04-27,AIR,"HOLMES, JOHN MCCLAIN III",Vice President; COO Av Serv,True,Common Stock,sell,3805.0,35.96,136827.80000000002
+2017-05-16,AIR,"ANDERSON, ANTHONY",Director,True,Common Stock,sell,3500.0,35.2086,123230.09999999999
+2017-05-31,AIR,"ROMENESKO, TIMOTHY J","Director, Vice Chairman; COO Exped Serv",True,Common Stock,sell,3914.0,34.94,136755.16
+2017-05-31,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Common Stock,sell,2340.0,34.94,81759.59999999999
+2017-05-31,AIR,"STORCH, DAVID P","Director, Chairman, President & CEO",True,Common Stock,sell,7838.0,34.94,273859.72
+2017-06-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,678.0,34.95,23696.100000000002
+2017-07-10,AIR,"STORCH, DAVID P","Director, Chairman, President & CEO",True,Stock Option,buy,160000.0,35.26,5641600.0
+2017-07-10,AIR,"ROMENESKO, TIMOTHY J","Director, Vice Chairman; CFO",True,Stock Option,buy,33250.0,35.26,1172395.0
+2017-07-10,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Stock Option,buy,47000.0,35.26,1657220.0
+2017-07-10,AIR,"PACHAPA, ERIC","VP, Controller and CAO",True,Stock Option,buy,5100.0,35.26,179826.0
+2017-07-10,AIR,"HOLMES, JOHN MCCLAIN III",President; COO,True,Stock Option,buy,96000.0,35.26,3384960.0
+2017-07-13,AIR,"WOODARD, RONALD B",Director,True,Common Stock,sell,20000.0,37.2206,744412.0
+2017-07-17,AIR,"ROMENESKO, TIMOTHY J","Director, Vice Chairman; CFO",True,Common Stock,sell,43200.0,37.2765,1610344.8
+2017-07-17,AIR,"ROMENESKO, TIMOTHY J","Director, Vice Chairman; CFO",True,Common Stock,buy,43200.0,12.9,557280.0
+2017-07-21,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Common Stock,buy,19222.0,15.1,290252.2
+2017-07-21,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Common Stock,buy,20000.0,15.1,302000.0
+2017-07-21,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Common Stock,buy,8640.0,12.9,111456.0
+2017-07-21,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Common Stock,sell,27862.0,36.5233,1017612.1845999999
+2017-07-25,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Common Stock,sell,778.0,36.6271,28495.8838
+2017-07-25,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Common Stock,buy,778.0,15.1,11747.8
+2017-07-31,AIR,"HOLMES, JOHN MCCLAIN III",President; COO,True,Common Stock,sell,136.0,37.4,5086.4
+2017-07-31,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Common Stock,sell,338.0,37.4,12641.199999999999
+2017-07-31,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Common Stock,sell,1129.0,37.4,42224.6
+2017-07-31,AIR,"ROMENESKO, TIMOTHY J","Director, Vice Chairman; CFO",True,Common Stock,sell,798.0,37.4,29845.199999999997
+2017-09-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,420.0,36.25,15225.0
+2017-09-01,AIR,"FOGLEMAN, RONALD R",Director,True,Phantom Stock,buy,654.0,36.25,23707.5
+2017-10-10,AIR,"MILLIGAN, MICHAEL D",Chief Financial Officer,True,Stock Option,buy,9690.0,38.7,375003.0
+2017-12-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,451.0,41.16,18563.16
+2018-01-12,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Common Stock,buy,86400.0,12.9,1114560.0
+2018-01-12,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Common Stock,sell,49659.0,41.73,2072270.0699999998
+2018-01-15,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Common Stock,sell,76738.0,41.73,3202276.7399999998
+2018-01-16,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Common Stock,sell,13200.0,41.2289,544221.48
+2018-01-16,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Common Stock,sell,36741.0,41.2103,1514107.6323
+2018-01-17,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Common Stock,sell,25000.0,41.1785,1029462.5
+2018-03-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,302.0,41.41,12505.82
+2018-03-27,AIR,"ANDERSON, ANTHONY",Director,True,Common Stock,sell,5000.0,44.0747,220373.5
+2018-03-28,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Common Stock,sell,50000.0,44.02,2201000.0
+2018-04-03,AIR,"PACE, PETER",Director,True,Common Stock,sell,5000.0,42.58,212900.0
+2018-04-05,AIR,"STORCH, DAVID P","Director, Chairman & CEO",True,Common Stock,sell,48500.0,43.7328,2121040.8
+2018-05-31,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Common Stock,sell,1152.0,44.69,51482.88
+2018-05-31,AIR,"STORCH, DAVID P",Director,True,Common Stock,sell,3868.0,44.69,172860.91999999998
+2018-06-01,AIR,"STORCH, DAVID P",Director,True,Common Stock,buy,2648.0,45.32,120007.36
+2018-07-09,AIR,"MILLIGAN, MICHAEL D",Vice President-CFO,True,Stock Option,buy,18300.0,48.09,880047.0000000001
+2018-07-09,AIR,"PACHAPA, ERIC","VP, Controller and CAO",True,Stock Option,buy,9150.0,48.09,440023.50000000006
+2018-07-09,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Stock Option,buy,82300.0,48.09,3957807.0000000005
+2018-07-09,AIR,"REGAN, ROBERT J","VP, GC & Secretary",True,Stock Option,buy,25600.0,48.09,1231104.0
+2018-07-19,AIR,"STORCH, DAVID P",Director,True,Common Stock,buy,102540.0,26.62,2729614.8000000003
+2018-07-19,AIR,"STORCH, DAVID P",Director,True,Common Stock,sell,234462.0,47.08,11038470.959999999
+2018-07-19,AIR,"STORCH, DAVID P",Director,True,Common Stock,buy,49022.0,29.65,1453502.3
+2018-07-19,AIR,"STORCH, DAVID P",Director,True,Common Stock,buy,158400.0,25.43,4028112.0
+2018-07-20,AIR,"STORCH, DAVID P",Director,True,Common Stock,sell,11764.0,47.0703,553735.0092000001
+2018-07-25,AIR,"STORCH, DAVID P",Director,True,Common Stock,sell,20000.0,46.8207,936414.0
+2018-07-26,AIR,"STORCH, DAVID P",Director,True,Common Stock,sell,43736.0,47.3662,2071608.1232
+2018-07-31,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Stock Option,sell,24239.0,17.27,418607.52999999997
+2018-07-31,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Common Stock,sell,8316.0,47.41,394261.56
+2018-07-31,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Common Stock,sell,24239.0,47.3575,1147898.4425000001
+2018-07-31,AIR,"STORCH, DAVID P",Director,True,Common Stock,sell,33129.0,47.41,1570645.89
+2018-07-31,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,sell,9764.0,47.41,462911.24
+2018-07-31,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,sell,1462.0,47.41,69313.42
+2018-07-31,AIR,"REGAN, ROBERT J","VP, GC, Secretary",True,Common Stock,buy,24239.0,17.27,418607.52999999997
+2018-08-02,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,sell,1200.0,46.7376,56085.12
+2018-08-02,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Stock Option,sell,600.0,24.0,14400.0
+2018-08-02,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,buy,600.0,35.26,21156.0
+2018-08-02,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,buy,600.0,24.0,14400.0
+2018-08-02,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,sell,1800.0,46.7612,84170.16
+2018-08-02,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Stock Option,sell,600.0,35.26,21156.0
+2018-09-27,AIR,"WOODARD, RONALD B",Director,True,Common Stock,sell,10239.0,46.636,477506.004
+2018-09-28,AIR,"STORCH, DAVID P",Director,True,Common Stock,sell,12896.0,48.0054,619077.6384
+2018-09-28,AIR,"STORCH, DAVID P",Director,True,Common Stock,sell,8630.0,48.0645,414796.635
+2018-10-03,AIR,"STORCH, DAVID P",Director,True,Common Stock,sell,10000.0,46.88,468800.0
+2018-10-04,AIR,"STORCH, DAVID P",Director,True,Common Stock,sell,8800.0,47.094,414427.2
+2018-10-15,AIR,"STORCH, DAVID P",Director,True,Common Stock,sell,22570.0,44.048,994163.36
+2018-10-16,AIR,"STORCH, DAVID P",Director,True,Common Stock,sell,983.0,45.065,44298.895
+2018-12-03,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,396.0,44.62,17669.52
+2019-01-10,AIR,"STORCH, DAVID P",Director,True,Common Stock,sell,30000.0,38.72,1161600.0
+2019-01-15,AIR,"GILLEN, SEAN M.",VP-CFO,True,Stock Option,buy,6730.0,37.15,250019.5
+2019-01-15,AIR,"GILLEN, SEAN M.",VP-CFO,True,Stock Option,buy,6739.0,37.15,250353.84999999998
+2019-03-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,398.0,36.57,14554.86
+2019-04-02,AIR,"ANDERSON, ANTHONY",Director,True,Common Stock,sell,3615.0,33.2333,120138.3795
+2019-06-03,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,484.0,30.6,14810.400000000001
+2019-06-03,AIR,"STORCH, DAVID P",Director,True,Common Stock,sell,917.0,30.09,27592.53
+2019-07-08,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Stock Option,buy,126225.0,37.66,4753633.5
+2019-07-08,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Stock Option,buy,15750.0,37.66,593145.0
+2019-07-08,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Stock Option,buy,17000.0,37.66,640220.0
+2019-07-08,AIR,"GILLEN, SEAN M.",VP-CFO,True,Stock Option,buy,17385.0,10.3,179065.5
+2019-07-08,AIR,"JESSUP, CHRISTOPHER A.",Vice President-CCO,True,Stock Option,buy,24250.0,37.66,913254.9999999999
+2019-07-08,AIR,"GILLEN, SEAN M.",VP-CFO,True,Stock Option,buy,24250.0,37.66,913254.9999999999
+2019-07-11,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,sell,18459.0,42.62,786722.58
+2019-07-31,AIR,"STORCH, DAVID P",Director,True,Common Stock,sell,59755.0,41.86,2501344.3
+2019-07-31,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,sell,587.0,41.86,24571.82
+2019-07-31,AIR,"JESSUP, CHRISTOPHER A.",Vice President-CCO,True,Common Stock,sell,1132.0,41.86,47385.52
+2019-07-31,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,sell,19928.0,41.86,834186.08
+2019-07-31,AIR,"REGAN, ROBERT J","VP, GC & Secretary",True,Common Stock,sell,14874.0,41.86,622625.64
+2019-09-03,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,613.0,43.13,26438.690000000002
+2019-09-03,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,378.0,43.13,16303.140000000001
+2019-09-30,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,sell,1000.0,42.0428,42042.8
+2019-12-02,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,354.0,43.73,15480.419999999998
+2019-12-23,AIR,"STORCH, DAVID P",Director,True,Common Stock,sell,16814.0,48.47,814974.58
+2019-12-23,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,sell,14122.0,48.1436,679883.9192
+2019-12-23,AIR,"STORCH, DAVID P",Director,True,Common Stock,buy,16814.0,26.62,447588.68
+2019-12-24,AIR,"STORCH, DAVID P",Director,True,Common Stock,buy,4793.0,26.62,127589.66
+2019-12-24,AIR,"STORCH, DAVID P",Director,True,Common Stock,sell,4793.0,48.0203,230161.2979
+2019-12-24,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,buy,3300.0,12.9,42570.0
+2019-12-24,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,sell,3300.0,48.023,158475.90000000002
+2019-12-26,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,sell,200.0,48.025,9605.0
+2019-12-26,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,buy,200.0,12.9,2580.0
+2019-12-31,AIR,"GILLEN, SEAN M.",VP-CFO,True,Common Stock,sell,2982.0,45.1,134488.2
+2020-01-06,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,buy,6500.0,12.9,83850.0
+2020-01-06,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,sell,17500.0,45.6485,798848.75
+2020-01-06,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,buy,11000.0,25.43,279730.0
+2020-01-08,AIR,"STORCH, DAVID P",Director,True,Common Stock,buy,29663.0,26.62,789629.06
+2020-01-08,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,sell,11000.0,47.4712,522183.2
+2020-01-08,AIR,"STORCH, DAVID P",Director,True,Common Stock,sell,60000.0,47.0792,2824752.0
+2020-01-08,AIR,"STORCH, DAVID P",Director,True,Common Stock,buy,30337.0,24.0,728088.0
+2020-01-08,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,buy,11000.0,25.43,279730.0
+2020-01-09,AIR,"STORCH, DAVID P",Director,True,Common Stock,buy,25000.0,24.0,600000.0
+2020-01-09,AIR,"STORCH, DAVID P",Director,True,Common Stock,sell,25000.0,46.8231,1170577.5
+2020-01-13,AIR,"ANDERSON, ANTHONY",Director,True,Common Stock,sell,5899.0,45.8777,270632.5523
+2020-01-13,AIR,"STORCH, DAVID P",Director,True,Common Stock,sell,7964.0,45.9777,366166.4028
+2020-01-14,AIR,"STORCH, DAVID P",Director,True,Common Stock,sell,9663.0,45.9504,444018.71520000004
+2020-03-02,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,415.0,36.41,15110.149999999998
+2020-06-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,562.0,20.08,11284.96
+2020-06-03,AIR,"STORCH, DAVID P",Director,True,Common Stock,sell,1738.0,24.94,43345.72
+2020-07-11,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,sell,18459.0,19.01,350905.59
+2020-07-31,AIR,"JESSUP, CHRISTOPHER A.",Vice President-CCO,True,Common Stock,sell,762.0,17.22,13121.64
+2020-07-31,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,sell,22483.0,17.22,387157.25999999995
+2020-07-31,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,sell,440.0,17.22,7576.799999999999
+2020-07-31,AIR,"STORCH, DAVID P",Director,True,Common Stock,sell,37212.0,17.22,640790.64
+2020-08-31,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,1092.0,20.18,22036.56
+2020-08-31,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,1041.0,20.18,21007.38
+2020-08-31,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,646.0,20.18,13036.28
+2020-10-07,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Stock Option,buy,50020.0,18.94,947378.8
+2020-10-07,AIR,"GILLEN, SEAN M.",VP-CFO,True,Stock Option,buy,71370.0,18.94,1351747.8
+2020-10-07,AIR,"GARASCIA, JESSICA A.",Vice President and Secretary,True,Stock Option,buy,44330.0,18.94,839610.2000000001
+2020-10-07,AIR,"JESSUP, CHRISTOPHER A.",Vice President-CCO,True,Stock Option,buy,80675.0,18.94,1527984.5
+2020-10-07,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Stock Option,buy,326600.0,18.94,6185804.0
+2020-11-30,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,352.0,28.37,9986.24
+2020-12-21,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,sell,29098.0,34.7074,1009915.9251999999
+2020-12-22,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,sell,5500.0,35.881,197345.5
+2020-12-31,AIR,"GARASCIA, JESSICA A.",Vice President and Secretary,True,Common Stock,sell,5848.0,36.22,211814.56
+2021-01-06,AIR,"ANDERSON, ANTHONY",Director,True,Common Stock,sell,2700.0,38.0308,102683.16
+2021-01-12,AIR,"STORCH, DAVID P",Director,True,Common Stock,sell,29793.0,38.9095,1159230.7335
+2021-03-01,AIR,"LEDUC, ROBERT F",Director,True,Phantom Stock,buy,178.0,42.06,7486.68
+2021-03-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,301.0,42.06,12660.060000000001
+2021-03-25,AIR,"STORCH, DAVID P",Director,True,Common Stock,sell,23826.0,42.5778,1014458.6628
+2021-03-26,AIR,"STORCH, DAVID P",Director,True,Common Stock,sell,26174.0,43.1425,1129211.795
+2021-03-26,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,sell,5615.0,42.7816,240218.68399999998
+2021-03-29,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,sell,7762.0,43.6113,338510.9106
+2021-03-30,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,sell,6623.0,42.0866,278739.55179999996
+2021-04-05,AIR,"STORCH, DAVID P",Director,True,Common Stock,sell,22724.0,42.1402,957593.9048
+2021-04-05,AIR,"STORCH, DAVID P",Director,True,Common Stock,buy,22724.0,24.0,545376.0
+2021-04-06,AIR,"STORCH, DAVID P",Director,True,Common Stock,buy,2000.0,24.0,48000.0
+2021-04-06,AIR,"STORCH, DAVID P",Director,True,Common Stock,sell,2000.0,42.1181,84236.2
+2021-06-01,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,293.0,42.56,12470.08
+2021-06-01,AIR,"LEDUC, ROBERT F",Director,True,Phantom Stock,buy,176.0,42.56,7490.56
+2021-07-12,AIR,"GILLEN, SEAN M.",VP-CFO,True,Stock Option,buy,14970.0,37.74,564967.8
+2021-07-12,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Stock Option,buy,23950.0,37.74,903873.0
+2021-07-12,AIR,"JESSUP, CHRISTOPHER A.",Vice President-CCO,True,Stock Option,buy,7580.0,37.74,286069.2
+2021-07-12,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Stock Option,buy,4860.0,37.74,183416.40000000002
+2021-07-12,AIR,"GARASCIA, JESSICA A.",Vice President and Secretary,True,Stock Option,buy,9350.0,37.74,352869.0
+2021-07-28,AIR,"BOYCE, MICHAEL ROSS",Director,True,Common Stock,buy,10000.0,36.1072,361072.0
+2021-07-30,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,buy,4400.0,24.0,105600.0
+2021-07-30,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,sell,4400.0,35.6809,156995.96
+2021-07-31,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,sell,5598.0,35.76,200184.47999999998
+2021-07-31,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,sell,412.0,35.76,14733.119999999999
+2021-07-31,AIR,"JESSUP, CHRISTOPHER A.",Vice President-CCO,True,Common Stock,sell,823.0,35.76,29430.48
+2021-08-31,AIR,"LEDUC, ROBERT F",Director,True,Phantom Stock,buy,421.0,33.85,14250.85
+2021-08-31,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,1057.0,33.85,35779.450000000004
+2021-11-30,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,727.0,32.66,23743.819999999996
+2021-11-30,AIR,"LEDUC, ROBERT F",Director,True,Phantom Stock,buy,436.0,32.66,14239.759999999998
+2022-01-26,AIR,"ANDERSON, ANTHONY",Director,True,Common Stock,sell,2250.0,40.79,91777.5
+2022-01-27,AIR,"STORCH, DAVID P",Director,True,Common Stock,sell,8693.0,40.44,351544.92
+2022-01-31,AIR,"STORCH, DAVID P",Director,True,Common Stock,sell,16307.0,40.1,653910.7000000001
+2022-02-02,AIR,"STORCH, DAVID P",Director,True,Common Stock,sell,49330.0,40.7564,2010513.212
+2022-02-02,AIR,"STORCH, DAVID P",Director,True,Common Stock,buy,49330.0,24.0,1183920.0
+2022-02-03,AIR,"STORCH, DAVID P",Director,True,Common Stock,buy,700.0,24.0,16800.0
+2022-02-03,AIR,"STORCH, DAVID P",Director,True,Common Stock,sell,700.0,40.7729,28541.03
+2022-02-28,AIR,"LEDUC, ROBERT F",Director,True,Phantom Stock,buy,317.0,44.94,14245.98
+2022-02-28,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,528.0,44.94,23728.32
+2022-03-24,AIR,"STORCH, DAVID P",Director,True,Common Stock,buy,47500.0,24.0,1140000.0
+2022-03-24,AIR,"STORCH, DAVID P",Director,True,Common Stock,sell,47500.0,50.8292,2414387.0
+2022-03-25,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,buy,21.0,50.93,1069.53
+2022-03-25,AIR,"JESSUP, CHRISTOPHER A.",Vice President-CCO,True,Stock Option,buy,59.0,50.93,3004.87
+2022-03-25,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Stock Option,buy,312.0,50.93,15890.16
+2022-03-28,AIR,"GILLEN, SEAN M.",VP-CFO,True,Common Stock,buy,10000.0,37.66,376599.99999999994
+2022-03-28,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,sell,4500.0,49.0317,220642.65
+2022-03-28,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,buy,4500.0,35.26,158670.0
+2022-03-28,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,sell,441.0,49.0317,21622.9797
+2022-03-28,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,buy,441.0,37.66,16608.059999999998
+2022-03-28,AIR,"GILLEN, SEAN M.",VP-CFO,True,Common Stock,sell,6730.0,48.6731,327569.963
+2022-03-28,AIR,"GILLEN, SEAN M.",VP-CFO,True,Common Stock,sell,10000.0,48.6731,486731.0
+2022-03-28,AIR,"GILLEN, SEAN M.",VP-CFO,True,Common Stock,buy,6730.0,37.15,250019.5
+2022-03-28,AIR,"GILLEN, SEAN M.",VP-CFO,True,Common Stock,sell,3500.0,48.6731,170355.85
+2022-03-28,AIR,"GILLEN, SEAN M.",VP-CFO,True,Common Stock,buy,3500.0,18.94,66290.0
+2022-03-28,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,buy,119.0,26.62,3167.78
+2022-03-28,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,sell,12500.0,48.303,603787.5
+2022-03-28,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,sell,119.0,49.5066,5891.2854
+2022-03-28,AIR,"JESSUP, CHRISTOPHER A.",Vice President-CCO,True,Common Stock,sell,400.0,49.54,19816.0
+2022-03-28,AIR,"JESSUP, CHRISTOPHER A.",Vice President-CCO,True,Common Stock,buy,800.0,24.0,19200.0
+2022-03-28,AIR,"JESSUP, CHRISTOPHER A.",Vice President-CCO,True,Common Stock,sell,800.0,49.6378,39710.24
+2022-03-29,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,buy,8709.0,37.66,327980.93999999994
+2022-03-29,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,buy,7000.0,18.94,132580.0
+2022-03-29,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,sell,7000.0,48.2586,337810.2
+2022-03-29,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,sell,20000.0,48.2338,964676.0
+2022-03-29,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,buy,20000.0,24.0,480000.0
+2022-03-29,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,sell,8709.0,48.2586,420284.1474
+2022-03-30,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,sell,3322.0,49.2816,163713.4752
+2022-03-30,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,buy,3322.0,24.0,79728.0
+2022-03-31,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,buy,8443.0,24.0,202632.0
+2022-03-31,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,sell,8443.0,48.9078,412928.5554
+2022-04-01,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,sell,8235.0,48.326,397964.61
+2022-04-01,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,sell,10000.0,48.326,483260.0
+2022-04-01,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,buy,8235.0,24.0,197640.0
+2022-04-01,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,buy,10000.0,26.62,266200.0
+2022-04-04,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,sell,10000.0,48.2232,482232.0
+2022-04-04,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,buy,10000.0,26.62,266200.0
+2022-04-05,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,sell,100.0,48.605,4860.5
+2022-04-05,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,buy,100.0,26.62,2662.0
+2022-04-06,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,buy,15100.0,26.62,401962.0
+2022-04-06,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,sell,15100.0,47.2325,713210.75
+2022-04-07,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,buy,14815.0,26.62,394375.3
+2022-04-07,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,sell,14815.0,48.8837,724212.0155
+2022-04-08,AIR,"JESSUP, CHRISTOPHER A.",Vice President-CCO,True,Common Stock,sell,3200.0,49.5545,158574.4
+2022-04-08,AIR,"JESSUP, CHRISTOPHER A.",Vice President-CCO,True,Common Stock,buy,3200.0,24.0,76800.0
+2022-04-08,AIR,"JESSUP, CHRISTOPHER A.",Vice President-CCO,True,Common Stock,sell,2900.0,49.6621,144020.09
+2022-04-11,AIR,"JESSUP, CHRISTOPHER A.",Vice President-CCO,True,Common Stock,buy,26891.0,18.94,509315.54000000004
+2022-04-11,AIR,"JESSUP, CHRISTOPHER A.",Vice President-CCO,True,Common Stock,sell,5541.0,49.639,275049.699
+2022-04-11,AIR,"JESSUP, CHRISTOPHER A.",Vice President-CCO,True,Common Stock,sell,26891.0,49.7964,1339074.9923999999
+2022-04-11,AIR,"JESSUP, CHRISTOPHER A.",Vice President-CCO,True,Common Stock,buy,2001.0,24.0,48024.0
+2022-04-11,AIR,"JESSUP, CHRISTOPHER A.",Vice President-CCO,True,Common Stock,sell,2001.0,49.7964,99642.5964
+2022-04-12,AIR,"STORCH, DAVID P",Director,True,Common Stock,buy,47409.0,24.0,1137816.0
+2022-04-12,AIR,"STORCH, DAVID P",Director,True,Common Stock,sell,25000.0,50.1874,1254685.0
+2022-04-12,AIR,"STORCH, DAVID P",Director,True,Common Stock,sell,47409.0,50.1344,2376821.7695999998
+2022-04-20,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,sell,25000.0,51.1937,1279842.5
+2022-04-20,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,buy,25000.0,18.94,473500.00000000006
+2022-05-31,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,493.0,48.22,23772.46
+2022-05-31,AIR,"LEDUC, ROBERT F",Director,True,Phantom Stock,buy,296.0,48.22,14273.119999999999
+2022-07-18,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Stock Option,buy,51820.0,41.88,2170221.6
+2022-07-18,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Stock Option,buy,5715.0,41.88,239344.2
+2022-07-18,AIR,"JESSUP, CHRISTOPHER A.",Vice President-CCO,True,Stock Option,buy,12065.0,41.88,505282.2
+2022-07-18,AIR,"GILLEN, SEAN M.",VP-CFO,True,Stock Option,buy,12065.0,41.88,505282.2
+2022-07-18,AIR,"GARASCIA, JESSICA A.",Vice President and Secretary,True,Stock Option,buy,7100.0,41.88,297348.0
+2022-07-29,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,sell,722.0,44.53,32150.66
+2022-07-29,AIR,"JESSUP, CHRISTOPHER A.",Vice President-CCO,True,Common Stock,sell,977.0,44.53,43505.81
+2022-07-29,AIR,"GILLEN, SEAN M.",VP-CFO,True,Common Stock,sell,1032.0,44.53,45954.96
+2022-07-29,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,sell,5354.0,44.53,238413.62
+2022-08-10,AIR,"STORCH, DAVID P",Director,True,Common Stock,sell,25000.0,46.8065,1170162.5
+2022-08-31,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,1020.0,42.88,43737.600000000006
+2022-08-31,AIR,"LEDUC, ROBERT F",Director,True,Phantom Stock,buy,332.0,42.88,14236.160000000002
+2022-10-13,AIR,"STORCH, DAVID P",Director,True,Common Stock,sell,20000.0,39.085,781700.0
+2022-10-25,AIR,"GILBERTSON, H JOHN JR",Director,True,Common Stock,sell,9894.0,43.3816,429217.5504
+2022-10-31,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,buy,22000.0,18.94,416680.0
+2022-10-31,AIR,"GARASCIA, JESSICA A.","VP, GC, CAO & Secretary",True,Common Stock,buy,15000.0,18.94,284100.0
+2022-10-31,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,sell,57000.0,44.5286,2538130.1999999997
+2022-10-31,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,buy,35000.0,24.0,840000.0
+2022-10-31,AIR,"GARASCIA, JESSICA A.","VP, GC, CAO & Secretary",True,Common Stock,sell,15000.0,44.3638,665457.0
+2022-11-04,AIR,"ANDERSON, ANTHONY",Director,True,Common Stock,sell,14000.0,42.7432,598404.8
+2022-11-30,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,510.0,46.56,23745.600000000002
+2022-11-30,AIR,"LEDUC, ROBERT F",Director,True,Phantom Stock,buy,306.0,46.56,14247.36
+2022-12-28,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,sell,798.0,44.25,35311.5
+2022-12-28,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,buy,798.0,18.94,15114.12
+2022-12-29,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,buy,34202.0,18.94,647785.88
+2022-12-29,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,sell,34202.0,44.2803,1514474.8206
+2023-01-03,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,sell,20000.0,44.5964,891928.0
+2023-01-03,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,sell,10000.0,44.3694,443694.0
+2023-01-03,AIR,"HOLMES, JOHN MCCLAIN III","Director, President & CEO",True,Common Stock,buy,10000.0,18.94,189400.0
+2023-01-03,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,buy,20000.0,18.94,378800.0
+2023-01-18,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,20767.0,49.2723,1023237.8541
+2023-01-18,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,buy,20767.0,18.94,393326.98000000004
+2023-01-20,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,buy,14233.0,18.94,269573.02
+2023-01-20,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,14233.0,48.0316,683633.7627999999
+2023-02-28,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,575.0,54.39,31274.25
+2023-02-28,AIR,"LEDUC, ROBERT F",Director,True,Phantom Stock,buy,262.0,54.39,14250.18
+2023-03-23,AIR,"GILLEN, SEAN M.",VP-CFO,True,Common Stock,buy,6000.0,37.66,225959.99999999997
+2023-03-23,AIR,"GILLEN, SEAN M.",VP-CFO,True,Common Stock,buy,14250.0,37.66,536655.0
+2023-03-23,AIR,"GILLEN, SEAN M.",VP-CFO,True,Common Stock,sell,14250.0,54.0496,770206.7999999999
+2023-03-23,AIR,"GILLEN, SEAN M.",VP-CFO,True,Common Stock,buy,6000.0,18.94,113640.00000000001
+2023-03-23,AIR,"GILLEN, SEAN M.",VP-CFO,True,Common Stock,sell,6000.0,54.0496,324297.6
+2023-03-24,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,buy,70000.0,18.94,1325800.0
+2023-03-24,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,70000.0,53.5211,3746477.0
+2023-03-27,AIR,"PACE, PETER",Director,True,Common Stock,sell,10000.0,54.6289,546289.0
+2023-03-27,AIR,"JESSUP, CHRISTOPHER A.",Vice President-CCO,True,Common Stock,sell,2625.0,55.025,144440.625
+2023-03-27,AIR,"JESSUP, CHRISTOPHER A.",Vice President-CCO,True,Common Stock,sell,9334.0,55.025,513603.35
+2023-03-27,AIR,"JESSUP, CHRISTOPHER A.",Vice President-CCO,True,Common Stock,buy,2625.0,18.94,49717.5
+2023-03-27,AIR,"JESSUP, CHRISTOPHER A.",Vice President-CCO,True,Common Stock,buy,9334.0,35.26,329116.83999999997
+2023-03-27,AIR,"GARASCIA, JESSICA A.","VP, GC, CAO & Secretary",True,Common Stock,buy,14552.0,18.94,275614.88
+2023-03-27,AIR,"VOGEL, JENNIFER L",Director,True,Common Stock,sell,7000.0,54.8857,384199.9
+2023-03-27,AIR,"GARASCIA, JESSICA A.","VP, GC, CAO & Secretary",True,Common Stock,sell,14552.0,54.7462,796666.7024000001
+2023-03-28,AIR,"JESSUP, CHRISTOPHER A.",Vice President-CCO,True,Common Stock,buy,5157.0,18.94,97673.58
+2023-03-28,AIR,"JESSUP, CHRISTOPHER A.",Vice President-CCO,True,Common Stock,sell,5157.0,55.0174,283724.7318
+2023-03-29,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,sell,7850.0,54.7411,429717.635
+2023-03-29,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,buy,7850.0,37.66,295631.0
+2023-03-29,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,sell,3500.0,54.7411,191593.85
+2023-03-29,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,sell,1620.0,54.7411,88680.58200000001
+2023-03-29,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,buy,1620.0,37.74,61138.8
+2023-03-29,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,buy,3500.0,18.94,66290.0
+2023-04-03,AIR,"JESSUP, CHRISTOPHER A.",Vice President-CCO,True,Common Stock,buy,19109.0,18.94,361924.46
+2023-04-03,AIR,"JESSUP, CHRISTOPHER A.",Vice President-CCO,True,Common Stock,sell,19109.0,55.0531,1052009.6879
+2023-05-31,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,623.0,50.11,31218.53
+2023-05-31,AIR,"LEDUC, ROBERT F",Director,True,Phantom Stock,buy,284.0,50.11,14231.24
+2023-07-24,AIR,"PATTERSON, TRACEY",Sr. VP & Chief HR Officer,True,Common Stock,buy,6350.0,58.27,370014.5
+2023-07-24,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Stock Option,buy,32320.0,58.27,1883286.4000000001
+2023-07-24,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,buy,42115.0,58.27,2454041.0500000003
+2023-07-24,AIR,"GILLEN, SEAN M.",Senior VP-CFO,True,Common Stock,buy,8755.0,58.27,510153.85000000003
+2023-07-24,AIR,"PATTERSON, TRACEY",Sr. VP & Chief HR Officer,True,Common Stock,buy,3605.0,58.27,210063.35
+2023-07-24,AIR,"PATTERSON, TRACEY",Sr. VP & Chief HR Officer,True,Stock Option,buy,2765.0,58.27,161116.55000000002
+2023-07-24,AIR,"JESSUP, CHRISTOPHER A.",Senior Vice President-CCO,True,Common Stock,buy,2920.0,58.27,170148.40000000002
+2023-07-24,AIR,"GILLEN, SEAN M.",Senior VP-CFO,True,Stock Option,buy,6715.0,58.27,391283.05000000005
+2023-07-24,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,buy,14040.0,58.27,818110.8
+2023-07-24,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Stock Option,buy,3185.0,58.27,185589.95
+2023-07-24,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,buy,4150.0,58.27,241820.5
+2023-07-24,AIR,"JESSUP, CHRISTOPHER A.",Senior Vice President-CCO,True,Common Stock,buy,8755.0,58.27,510153.85000000003
+2023-07-24,AIR,"JESSUP, CHRISTOPHER A.",Senior Vice President-CCO,True,Stock Option,buy,6715.0,58.27,391283.05000000005
+2023-07-24,AIR,"GILLEN, SEAN M.",Senior VP-CFO,True,Common Stock,buy,2920.0,58.27,170148.40000000002
+2023-07-24,AIR,"GARASCIA, JESSICA A.","Senior VP, GC, CAO & Secretary",True,Common Stock,buy,6950.0,58.27,404976.5
+2023-07-24,AIR,"GARASCIA, JESSICA A.","Senior VP, GC, CAO & Secretary",True,Stock Option,buy,5335.0,58.27,310870.45
+2023-07-24,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,buy,1385.0,58.27,80703.95
+2023-07-24,AIR,"GARASCIA, JESSICA A.","Senior VP, GC, CAO & Secretary",True,Common Stock,buy,2320.0,58.27,135186.4
+2023-07-25,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,sell,2846.0,58.1167,165400.1282
+2023-07-25,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,buy,2846.0,18.94,53903.240000000005
+2023-07-25,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,sell,9150.0,58.1167,531767.805
+2023-07-25,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,buy,9150.0,48.09,440023.50000000006
+2023-07-26,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,buy,7726.0,18.94,146330.44
+2023-07-26,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,7726.0,58.4082,451261.7532
+2023-07-27,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,10000.0,58.0174,580174.0
+2023-07-27,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,buy,10000.0,18.94,189400.0
+2023-07-28,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,10000.0,58.2778,582778.0
+2023-07-28,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,buy,10000.0,18.94,189400.0
+2023-07-31,AIR,"JESSUP, CHRISTOPHER A.",Senior Vice President-CCO,True,Common Stock,sell,4563.0,59.8,272867.39999999997
+2023-07-31,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,sell,2829.0,59.8,169174.19999999998
+2023-07-31,AIR,"GILLEN, SEAN M.",Senior VP-CFO,True,Common Stock,sell,4036.0,59.8,241352.8
+2023-08-04,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,buy,3237.0,35.26,114136.62
+2023-08-04,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,3237.0,60.2785,195121.5045
+2023-08-04,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,5000.0,60.2785,301392.5
+2023-08-04,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,buy,5000.0,18.94,94700.0
+2023-08-07,AIR,"GARASCIA, JESSICA A.","Senior VP, GC, CAO & Secretary",True,Common Stock,sell,14778.0,59.9494,885932.2331999999
+2023-08-07,AIR,"GARASCIA, JESSICA A.","Senior VP, GC, CAO & Secretary",True,Common Stock,buy,14778.0,18.94,279895.32
+2023-08-07,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,sell,5000.0,59.951,299755.0
+2023-08-07,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,buy,1620.0,37.74,61138.8
+2023-08-07,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,sell,1620.0,59.951,97120.62
+2023-08-07,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,buy,1905.0,41.88,79781.40000000001
+2023-08-07,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,sell,1905.0,59.951,114206.655
+2023-08-07,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,buy,5000.0,18.94,94700.0
+2023-08-10,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,4960.0,60.3153,299163.888
+2023-08-10,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,buy,4960.0,35.26,174889.59999999998
+2023-08-31,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,832.0,61.6,51251.200000000004
+2023-08-31,AIR,"LEDUC, ROBERT F",Director,True,Phantom Stock,buy,232.0,61.6,14291.2
+2023-09-28,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,buy,10000.0,18.94,189400.0
+2023-09-28,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,10000.0,60.771,607710.0
+2023-09-28,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,40827.0,60.771,2481097.617
+2023-09-28,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,buy,40827.0,35.26,1439560.02
+2023-09-29,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,10000.0,60.0502,600502.0
+2023-09-29,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,buy,10000.0,35.26,352600.0
+2023-10-02,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,buy,11810.0,35.26,416420.6
+2023-10-02,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,11810.0,58.5809,691840.429
+2023-10-04,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,buy,12363.0,35.26,435919.37999999995
+2023-10-04,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,12363.0,59.0374,729879.3761999999
+2023-10-06,AIR,"GARASCIA, JESSICA A.","Senior VP, GC, CAO & Secretary",True,Common Stock,buy,2366.0,41.88,99088.08
+2023-10-06,AIR,"GARASCIA, JESSICA A.","Senior VP, GC, CAO & Secretary",True,Common Stock,sell,2366.0,59.557,140911.862
+2023-10-06,AIR,"GARASCIA, JESSICA A.","Senior VP, GC, CAO & Secretary",True,Common Stock,sell,6232.0,59.557,371159.224
+2023-10-06,AIR,"GARASCIA, JESSICA A.","Senior VP, GC, CAO & Secretary",True,Common Stock,buy,6232.0,37.74,235195.68000000002
+2023-10-10,AIR,"GILLEN, SEAN M.",Senior VP-CFO,True,Common Stock,buy,3000.0,37.74,113220.0
+2023-10-10,AIR,"GILLEN, SEAN M.",Senior VP-CFO,True,Common Stock,buy,6000.0,18.94,113640.00000000001
+2023-10-10,AIR,"GILLEN, SEAN M.",Senior VP-CFO,True,Common Stock,sell,6000.0,60.4423,362653.80000000005
+2023-10-10,AIR,"GILLEN, SEAN M.",Senior VP-CFO,True,Common Stock,buy,6000.0,37.66,225959.99999999997
+2023-10-10,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,sell,4000.0,60.5904,242361.6
+2023-10-10,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,buy,4000.0,18.94,75760.0
+2023-10-10,AIR,"GILLEN, SEAN M.",Senior VP-CFO,True,Common Stock,sell,3000.0,60.4423,181326.90000000002
+2023-10-11,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,buy,10000.0,18.94,189400.0
+2023-10-11,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,10000.0,60.9906,609906.0
+2023-10-12,AIR,"PACE, PETER",Director,True,Common Stock,sell,5561.0,59.0944,328623.9584
+2023-11-30,AIR,"LEDUC, ROBERT F",Director,True,Phantom Stock,buy,205.0,69.3,14206.5
+2023-11-30,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,523.0,69.3,36243.9
+2024-02-29,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,543.0,66.78,36261.54
+2024-02-29,AIR,"LEDUC, ROBERT F",Director,True,Phantom Stock,buy,214.0,66.78,14290.92
+2024-04-02,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,buy,10000.0,18.94,189400.0
+2024-04-02,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,10000.0,58.2939,582939.0
+2024-04-02,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,18145.0,57.7798,1048414.471
+2024-04-04,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,29250.0,60.2072,1761060.6
+2024-04-04,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,buy,29250.0,18.94,553995.0
+2024-04-09,AIR,"GARASCIA, JESSICA A.","Senior VP, GC, CAO & Secretary",True,Common Stock,sell,7352.0,63.3722,465912.4144
+2024-05-02,AIR,"JESSUP, CHRISTOPHER A.",Senior Vice President-CCO,True,Common Stock,buy,16700.0,48.09,803103.0
+2024-05-02,AIR,"JESSUP, CHRISTOPHER A.",Senior Vice President-CCO,True,Common Stock,sell,16700.0,70.007,1169116.9000000001
+2024-05-03,AIR,"JESSUP, CHRISTOPHER A.",Senior Vice President-CCO,True,Common Stock,sell,13373.0,70.0522,936808.0706
+2024-05-03,AIR,"JESSUP, CHRISTOPHER A.",Senior Vice President-CCO,True,Common Stock,sell,1600.0,70.0522,112083.52
+2024-05-03,AIR,"JESSUP, CHRISTOPHER A.",Senior Vice President-CCO,True,Common Stock,buy,13373.0,37.66,503627.17999999993
+2024-05-03,AIR,"JESSUP, CHRISTOPHER A.",Senior Vice President-CCO,True,Common Stock,buy,1600.0,48.09,76944.0
+2024-05-06,AIR,"JESSUP, CHRISTOPHER A.",Senior Vice President-CCO,True,Common Stock,sell,5052.0,70.0912,354100.7424
+2024-05-06,AIR,"JESSUP, CHRISTOPHER A.",Senior Vice President-CCO,True,Common Stock,buy,10877.0,37.66,409627.81999999995
+2024-05-06,AIR,"JESSUP, CHRISTOPHER A.",Senior Vice President-CCO,True,Common Stock,buy,5052.0,37.74,190662.48
+2024-05-06,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,sell,5107.0,70.9626,362405.9982
+2024-05-06,AIR,"JESSUP, CHRISTOPHER A.",Senior Vice President-CCO,True,Common Stock,sell,10877.0,70.0912,762381.9824
+2024-05-31,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,511.0,70.99,36275.89
+2024-05-31,AIR,"LEDUC, ROBERT F",Director,True,Phantom Stock,buy,200.0,70.99,14197.999999999998
+2024-07-22,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,buy,1310.0,67.02,87796.2
+2024-07-22,AIR,"JESSUP, CHRISTOPHER A.",Senior Vice President-CCO,True,Stock Option,buy,11540.0,67.02,773410.7999999999
+2024-07-22,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Stock Option,buy,3440.0,67.02,230548.8
+2024-07-22,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,buy,3925.0,67.02,263053.5
+2024-07-22,AIR,"GILLEN, SEAN M.",Senior VP-CFO,True,Common Stock,buy,4395.0,67.02,294552.89999999997
+2024-07-22,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,buy,45120.0,67.02,3023942.4
+2024-07-22,AIR,"JESSUP, CHRISTOPHER A.",Senior Vice President-CCO,True,Common Stock,buy,13180.0,67.02,883323.6
+2024-07-22,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Stock Option,buy,39510.0,67.02,2647960.1999999997
+2024-07-22,AIR,"PATTERSON, TRACEY",Sr. VP & Chief HR Officer,True,Common Stock,buy,3135.0,67.02,210107.69999999998
+2024-07-22,AIR,"PATTERSON, TRACEY",Sr. VP & Chief HR Officer,True,Common Stock,buy,1045.0,67.02,70035.9
+2024-07-22,AIR,"PATTERSON, TRACEY",Sr. VP & Chief HR Officer,True,Stock Option,buy,2745.0,67.02,183969.9
+2024-07-22,AIR,"GILLEN, SEAN M.",Senior VP-CFO,True,Common Stock,buy,13180.0,67.02,883323.6
+2024-07-22,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,buy,15040.0,67.02,1007980.7999999999
+2024-07-22,AIR,"GILLEN, SEAN M.",Senior VP-CFO,True,Stock Option,buy,11540.0,67.02,773410.7999999999
+2024-07-22,AIR,"GARASCIA, JESSICA A.","Senior VP, GC, CAO & Secretary",True,Common Stock,buy,2440.0,67.02,163528.8
+2024-07-22,AIR,"JESSUP, CHRISTOPHER A.",Senior Vice President-CCO,True,Common Stock,buy,4395.0,67.02,294552.89999999997
+2024-07-22,AIR,"GARASCIA, JESSICA A.","Senior VP, GC, CAO & Secretary",True,Common Stock,buy,7325.0,67.02,490921.49999999994
+2024-07-22,AIR,"GARASCIA, JESSICA A.","Senior VP, GC, CAO & Secretary",True,Stock Option,buy,6415.0,67.02,429933.3
+2024-07-31,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,sell,762.0,64.6,49225.2
+2024-07-31,AIR,"JESSUP, CHRISTOPHER A.",Senior Vice President-CCO,True,Common Stock,sell,5948.0,64.6,384240.8
+2024-07-31,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,3757.0,64.6,242702.19999999998
+2024-07-31,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,18784.0,64.6,1213446.4
+2024-07-31,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,sell,3821.0,64.6,246836.59999999998
+2024-07-31,AIR,"JESSUP, CHRISTOPHER A.",Senior Vice President-CCO,True,Common Stock,sell,1188.0,64.6,76744.79999999999
+2024-07-31,AIR,"GARASCIA, JESSICA A.","Senior VP, GC, CAO & Secretary",True,Common Stock,sell,7343.0,64.6,474357.79999999993
+2024-07-31,AIR,"GILLEN, SEAN M.",Senior VP-CFO,True,Common Stock,sell,2348.0,64.6,151680.8
+2024-07-31,AIR,"GILLEN, SEAN M.",Senior VP-CFO,True,Common Stock,sell,11740.0,64.6,758403.9999999999
+2024-07-31,AIR,"GARASCIA, JESSICA A.","Senior VP, GC, CAO & Secretary",True,Common Stock,sell,1467.0,64.6,94768.2
+2024-08-30,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,551.0,65.78,36244.78
+2024-08-30,AIR,"LEDUC, ROBERT F",Director,True,Phantom Stock,buy,217.0,65.78,14274.26
+2024-11-29,AIR,"LEDUC, ROBERT F",Director,True,Phantom Stock,buy,205.0,69.52,14251.599999999999
+2024-11-29,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,521.0,69.52,36219.92
+2025-01-10,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,496.0,67.403,33431.888000000006
+2025-01-10,AIR,"GARASCIA, JESSICA A.","Senior VP, GC, CAO & Secretary",True,Common Stock,sell,1500.0,66.903,100354.50000000001
+2025-01-10,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,sell,6500.0,66.9313,435053.44999999995
+2025-01-10,AIR,"GILLEN, SEAN M.",Senior VP-CFO,True,Common Stock,sell,4000.0,66.3308,265323.2
+2025-01-10,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,12307.0,66.8311,822490.3477
+2025-01-10,AIR,"GILLEN, SEAN M.",Senior VP-CFO,True,Common Stock,buy,4000.0,37.74,150960.0
+2025-01-10,AIR,"GILLEN, SEAN M.",Senior VP-CFO,True,Common Stock,sell,8000.0,66.3308,530646.4
+2025-01-10,AIR,"GILLEN, SEAN M.",Senior VP-CFO,True,Common Stock,sell,5385.0,66.3308,357191.358
+2025-01-10,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,buy,32957.0,18.94,624205.5800000001
+2025-01-10,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,buy,12307.0,35.26,433944.81999999995
+2025-01-10,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,buy,496.0,35.26,17488.96
+2025-01-10,AIR,"GILLEN, SEAN M.",Senior VP-CFO,True,Common Stock,buy,8000.0,18.94,151520.0
+2025-01-10,AIR,"GILLEN, SEAN M.",Senior VP-CFO,True,Common Stock,buy,5385.0,37.66,202799.09999999998
+2025-01-10,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,8641.0,65.8368,568895.7888
+2025-01-10,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,11359.0,66.402,754260.318
+2025-01-10,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,14667.0,66.0529,968797.8842999999
+2025-01-10,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,buy,14667.0,18.94,277792.98000000004
+2025-01-10,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,32957.0,66.4647,2190477.1179
+2025-01-10,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,buy,48000.0,37.66,1807679.9999999998
+2025-01-10,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,48000.0,67.403,3235344.0000000005
+2025-01-15,AIR,"JESSUP, CHRISTOPHER A.",Senior Vice President-CCO,True,Common Stock,buy,500.0,18.94,9470.0
+2025-01-15,AIR,"JESSUP, CHRISTOPHER A.",Senior Vice President-CCO,True,Common Stock,sell,500.0,70.185,35092.5
+2025-01-16,AIR,"JESSUP, CHRISTOPHER A.",Senior Vice President-CCO,True,Common Stock,sell,7088.0,70.3469,498618.82720000006
+2025-01-16,AIR,"JESSUP, CHRISTOPHER A.",Senior Vice President-CCO,True,Common Stock,buy,26393.0,18.94,499883.42000000004
+2025-01-16,AIR,"JESSUP, CHRISTOPHER A.",Senior Vice President-CCO,True,Common Stock,sell,26393.0,70.416,1858489.488
+2025-01-17,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,5000.0,70.8053,354026.5
+2025-02-28,AIR,"LEDUC, ROBERT F",Director,True,Phantom Stock,buy,219.0,65.02,14239.38
+2025-02-28,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,558.0,65.02,36281.159999999996
+2025-03-25,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,63866.0,69.62,4446350.92
+2025-03-25,AIR,"JESSUP, CHRISTOPHER A.",Senior Vice President-CCO,True,Common Stock,sell,4326.0,69.62,301176.12
+2025-03-25,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,sell,1623.0,69.62,112993.26000000001
+2025-05-30,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,590.0,61.41,36231.9
+2025-05-30,AIR,"LEDUC, ROBERT F",Director,True,Phantom Stock,buy,232.0,61.41,14247.119999999999
+2025-07-23,AIR,"GARASCIA, JESSICA A.","Senior VP, GC, CAO & Secretary",True,Common Stock,sell,1183.0,77.078,91183.274
+2025-07-23,AIR,"GARASCIA, JESSICA A.","Senior VP, GC, CAO & Secretary",True,Common Stock,buy,889.0,58.27,51802.030000000006
+2025-07-23,AIR,"GILLEN, SEAN M.",Senior VP-CFO,True,Common Stock,buy,2000.0,58.27,116540.0
+2025-07-23,AIR,"GARASCIA, JESSICA A.","Senior VP, GC, CAO & Secretary",True,Common Stock,buy,1183.0,41.88,49544.04
+2025-07-23,AIR,"GILLEN, SEAN M.",Senior VP-CFO,True,Common Stock,sell,2000.0,77.374,154748.0
+2025-07-23,AIR,"GARASCIA, JESSICA A.","Senior VP, GC, CAO & Secretary",True,Common Stock,sell,1559.0,77.078,120164.602
+2025-07-23,AIR,"GARASCIA, JESSICA A.","Senior VP, GC, CAO & Secretary",True,Common Stock,buy,1559.0,37.74,58836.66
+2025-07-23,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,25000.0,77.3431,1933577.5000000002
+2025-07-23,AIR,"GILLEN, SEAN M.",Senior VP-CFO,True,Common Stock,buy,4000.0,37.74,150960.0
+2025-07-23,AIR,"GILLEN, SEAN M.",Senior VP-CFO,True,Common Stock,sell,4000.0,77.374,309496.0
+2025-07-23,AIR,"GILLEN, SEAN M.",Senior VP-CFO,True,Common Stock,sell,8000.0,77.374,618992.0
+2025-07-23,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Stock Option,buy,40380.0,79.45,3208191.0
+2025-07-23,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,buy,3837.0,18.94,72672.78
+2025-07-23,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,sell,3837.0,78.1213,299751.4281
+2025-07-23,AIR,"VOGEL, JENNIFER L",Director,True,Common Stock,sell,7000.0,78.0728,546509.6
+2025-07-23,AIR,"GILLEN, SEAN M.",Senior VP-CFO,True,Common Stock,buy,4000.0,41.88,167520.0
+2025-07-23,AIR,"GARASCIA, JESSICA A.","Senior VP, GC, CAO & Secretary",True,Common Stock,sell,889.0,77.078,68522.342
+2025-07-23,AIR,"GILLEN, SEAN M.",Senior VP-CFO,True,Common Stock,buy,8000.0,18.94,151520.0
+2025-07-23,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,sell,1911.0,78.6978,150391.4958
+2025-07-24,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,6551.0,78.1024,511648.8224
+2025-07-24,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,25000.0,78.0166,1950415.0
+2025-07-24,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,buy,25000.0,48.09,1202250.0
+2025-07-24,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,buy,6551.0,48.09,315037.59
+2025-07-31,AIR,"GILLEN, SEAN M.",Senior VP-CFO,True,Common Stock,sell,9938.0,74.71,742467.98
+2025-07-31,AIR,"GILLEN, SEAN M.",Senior VP-CFO,True,Common Stock,sell,2249.0,74.71,168022.78999999998
+2025-07-31,AIR,"GARASCIA, JESSICA A.","Senior VP, GC, CAO & Secretary",True,Common Stock,sell,881.0,74.71,65819.51
+2025-07-31,AIR,"JESSUP, CHRISTOPHER A.",Senior Vice President-CCO,True,Common Stock,sell,9938.0,74.71,742467.98
+2025-07-31,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,sell,4710.0,74.71,351884.1
+2025-07-31,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,9651.0,74.71,721026.21
+2025-07-31,AIR,"GARASCIA, JESSICA A.","Senior VP, GC, CAO & Secretary",True,Common Stock,sell,3892.0,74.71,290771.31999999995
+2025-07-31,AIR,"JESSUP, CHRISTOPHER A.",Senior Vice President-CCO,True,Common Stock,sell,2249.0,74.71,168022.78999999998
+2025-07-31,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,sell,1068.0,74.71,79790.28
+2025-07-31,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,42667.0,74.71,3187651.57
+2025-08-04,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,sell,5000.0,72.9163,364581.50000000006
+2025-08-07,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,10000.0,71.6994,716994.0
+2025-08-29,AIR,"LEDUC, ROBERT F",Director,True,Phantom Stock,buy,188.0,75.66,14224.08
+2025-08-29,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,479.0,75.66,36241.14
+2025-11-05,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,38462.0,83.501,3211615.4620000003
+2025-11-28,AIR,"LEDUC, ROBERT F",Director,True,Phantom Stock,buy,172.0,83.21,14312.119999999999
+2025-11-28,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,436.0,83.21,36279.56
+2026-01-02,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,23077.0,84.1229,1941304.1633000001
+2026-01-08,AIR,"GARASCIA, JESSICA A.","Senior VP, GC, CAO & Secretary",True,Common Stock,sell,4787.0,95.2528,455975.15359999996
+2026-01-09,AIR,"JESSUP, CHRISTOPHER A.",Senior Vice President-CCO,True,Common Stock,buy,59.0,50.93,3004.87
+2026-01-09,AIR,"JESSUP, CHRISTOPHER A.",Senior Vice President-CCO,True,Common Stock,sell,12065.0,97.0,1170305.0
+2026-01-09,AIR,"JESSUP, CHRISTOPHER A.",Senior Vice President-CCO,True,Common Stock,buy,12065.0,41.88,505282.2
+2026-01-09,AIR,"JESSUP, CHRISTOPHER A.",Senior Vice President-CCO,True,Common Stock,sell,8969.0,97.1288,871148.2072
+2026-01-09,AIR,"JESSUP, CHRISTOPHER A.",Senior Vice President-CCO,True,Common Stock,sell,2528.0,97.0,245216.0
+2026-01-09,AIR,"JESSUP, CHRISTOPHER A.",Senior Vice President-CCO,True,Common Stock,buy,2528.0,37.74,95406.72
+2026-01-09,AIR,"JESSUP, CHRISTOPHER A.",Senior Vice President-CCO,True,Common Stock,sell,59.0,97.0,5723.0
+2026-01-12,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,30000.0,97.501,2925030.0
+2026-01-12,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,buy,30000.0,48.09,1442700.0
+2026-01-13,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,buy,16802.0,48.09,808008.18
+2026-01-13,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,16802.0,98.9251,1662139.5302
+2026-01-14,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,buy,6000.0,37.66,225959.99999999997
+2026-01-14,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,buy,3947.0,48.09,189811.23
+2026-01-14,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,6000.0,99.407,596442.0
+2026-01-14,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,3947.0,99.407,392359.429
+2026-01-22,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,buy,1146.0,67.02,76804.92
+2026-01-22,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,sell,3837.0,105.9365,406478.3505
+2026-01-22,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,buy,3837.0,18.94,72672.78
+2026-01-22,AIR,"PACHAPA, ERIC",VP-CAO & Controller,True,Common Stock,sell,1146.0,105.9365,121403.22899999999
+2026-02-03,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,10000.0,108.4363,1084363.0
+2026-02-03,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,buy,10000.0,37.66,376599.99999999994
+2026-02-04,AIR,"FLANAGAN, SARAH LOUISE",Interim CFO VP Fin Ops,True,Common Stock,buy,10750.0,37.66,404844.99999999994
+2026-02-04,AIR,"FLANAGAN, SARAH LOUISE",Interim CFO VP Fin Ops,True,Common Stock,sell,10750.0,108.5574,1166992.05
+2026-02-27,AIR,"LEDUC, ROBERT F",Director,True,Phantom Stock,buy,121.0,117.17,14177.57
+2026-02-27,AIR,"WALFISH, MARC JAY",Director,True,Phantom Stock,buy,309.0,117.17,36205.53
+2026-03-26,AIR,"GARASCIA, JESSICA A.","Senior VP, GC, CAO & Secretary",True,Common Stock,buy,1778.0,58.27,103604.06000000001
+2026-03-26,AIR,"GARASCIA, JESSICA A.","Senior VP, GC, CAO & Secretary",True,Common Stock,buy,2138.0,67.02,143288.75999999998
+2026-03-26,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,buy,60000.0,37.66,2259600.0
+2026-03-26,AIR,"GARASCIA, JESSICA A.","Senior VP, GC, CAO & Secretary",True,Common Stock,sell,2138.0,112.2006,239884.8828
+2026-03-26,AIR,"NOLEN, BILLY",Director,True,Common Stock,sell,1562.0,111.0019,173384.9678
+2026-03-26,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,60000.0,112.4135,6744810.0
+2026-03-26,AIR,"GARASCIA, JESSICA A.","Senior VP, GC, CAO & Secretary",True,Common Stock,buy,2368.0,41.88,99171.84000000001
+2026-03-26,AIR,"GARASCIA, JESSICA A.","Senior VP, GC, CAO & Secretary",True,Common Stock,sell,2368.0,112.2006,265691.0208
+2026-03-26,AIR,"GARASCIA, JESSICA A.","Senior VP, GC, CAO & Secretary",True,Common Stock,sell,1778.0,112.2006,199492.66679999998
+2026-03-27,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,buy,23950.0,37.74,903873.0
+2026-03-27,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,2225.0,107.6039,239418.6775
+2026-03-27,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,sell,23950.0,107.6039,2577113.405
+2026-03-27,AIR,"HOLMES, JOHN MCCLAIN III","Director, Chairman, President & CEO",True,Common Stock,buy,2225.0,37.66,83793.49999999999

@@ -1,0 +1,1409 @@
+date,symbol,insider_name,insider_title,is_executive,security_type,transaction_type,shares,price,value
+2005-03-02,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,700.0,6.5,4550.0
+2005-03-02,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,200.0,6.42,1284.0
+2005-03-16,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,544.0,6.75,3672.0
+2005-03-16,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,357.0,7.0,2499.0
+2005-04-06,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,700.0,6.51,4557.0
+2005-04-06,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,200.0,6.76,1352.0
+2005-04-14,ATRO,"GUNDERMANN, PETER J","Director, President/CEO",True,$.01 PV Class B Stock,buy,4472.0,5.159,23071.048
+2005-04-14,ATRO,"GUNDERMANN, PETER J","Director, President/CEO",True,$.01 PV Common Stock,buy,6834.0,2.594,17727.396
+2005-04-14,ATRO,"GUNDERMANN, PETER J","Director, President/CEO",True,$.01 PV Common Stock,buy,11928.0,5.159,61536.551999999996
+2005-04-14,ATRO,"GUNDERMANN, PETER J","Director, President/CEO",True,$.01 PV Class B Stock,buy,2563.0,2.594,6648.422
+2005-04-20,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,720.0,6.47,4658.4
+2005-05-04,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,1000.0,6.98,6980.0
+2005-05-18,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,1000.0,6.92,6920.0
+2005-06-01,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,1000.0,7.9,7900.0
+2005-06-15,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,800.0,8.6,6880.0
+2005-07-06,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,819.0,9.0,7371.0
+2005-07-20,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,1000.0,10.0,10000.0
+2005-07-20,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,1000.0,8.5,8500.0
+2005-08-17,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,309.0,9.21,2845.8900000000003
+2005-08-17,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,200.0,8.84,1768.0
+2005-08-17,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,111.0,9.02,1001.2199999999999
+2005-09-07,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,1000.0,9.47,9470.0
+2005-09-21,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,914.0,9.06,8280.84
+2005-09-30,ATRO,"BURNEY, DAVID C","VP-Finance, Treasurer",True,$.01 PV Common Stock,buy,2445.0,4.17,10195.65
+2005-09-30,ATRO,"GUNDERMANN, PETER J","Director, President/CEO",True,$.01 PV Common Stock,buy,3665.0,4.17,15283.05
+2005-10-05,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,207.0,9.36,1937.52
+2005-10-05,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,197.0,9.37,1845.8899999999999
+2005-10-05,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,288.0,9.15,2635.2000000000003
+2005-10-19,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,300.0,9.32,2796.0
+2005-10-19,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,251.0,9.06,2274.06
+2005-10-19,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,300.0,9.2,2760.0
+2005-11-02,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,265.0,9.4,2491.0
+2005-11-02,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,241.0,9.2,2217.2
+2005-11-16,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,500.0,9.37,4685.0
+2005-11-16,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,230.0,9.35,2150.5
+2005-12-07,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,200.0,9.65,1930.0
+2005-12-07,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,498.0,9.6,4780.8
+2005-12-07,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,200.0,9.63,1926.0000000000002
+2005-12-21,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,399.0,10.04,4005.9599999999996
+2005-12-21,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,502.0,10.0,5020.0
+2006-01-04,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,1000.0,10.36,10360.0
+2006-01-19,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,99.0,10.12,1001.8799999999999
+2006-01-19,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,100.0,10.45,1045.0
+2006-01-19,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,600.0,10.1,6060.0
+2006-01-19,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,100.0,10.31,1031.0
+2006-01-19,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,99.0,10.13,1002.8700000000001
+2006-02-01,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,1000.0,10.7,10700.0
+2006-02-02,ATRO,"DRENNING, JOHN B",Director,True,$.01 Par Value Class B Stock,buy,2562.0,2.18,5585.160000000001
+2006-02-02,ATRO,"DRENNING, JOHN B",Director,True,$.01 Par Value Common Stock,sell,1837.0,11.16,20500.920000000002
+2006-02-02,ATRO,"BRADY, ROBERT T",Director,True,$.01 Par Value Common Stock,buy,6834.0,2.18,14898.12
+2006-02-02,ATRO,"BRADY, ROBERT T",Director,True,$.01 Par Value Common Stock,sell,1837.0,11.16,20500.920000000002
+2006-02-02,ATRO,"BRADY, ROBERT T",Director,True,$.01 Par Value Class B Stock,buy,2562.0,2.18,5585.160000000001
+2006-02-02,ATRO,"DRENNING, JOHN B",Director,True,$.01 Par Value Common Stock,buy,6834.0,2.18,14898.12
+2006-02-15,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,967.0,11.47,11091.49
+2006-03-01,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,301.0,13.2,3973.2
+2006-03-01,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,699.0,13.21,9233.79
+2006-03-06,ATRO,"BOUSHIE, RAYMOND W",Director,True,$.01 PV Com Stk,buy,4000.0,6.54,26160.0
+2006-03-06,ATRO,"BOUSHIE, RAYMOND W",Director,True,Option,sell,4000.0,6.54,26160.0
+2006-03-15,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,652.0,12.94,8436.88
+2006-03-15,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,99.0,12.99,1286.01
+2006-03-15,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,95.0,12.95,1230.25
+2006-03-15,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,99.0,12.96,1283.0400000000002
+2006-04-05,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,630.0,13.17,8297.1
+2006-04-05,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,200.0,13.16,2632.0
+2006-04-05,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,170.0,13.15,2235.5
+2006-04-19,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,1000.0,13.06,13060.0
+2006-04-24,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,buy,17643.0,13.492,238039.35600000003
+2006-04-24,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,Option,sell,2783.0,13.492,37548.236000000004
+2006-04-24,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Class B Stock,buy,4411.0,13.492,59513.21200000001
+2006-04-24,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,Option,sell,3715.0,13.492,50122.780000000006
+2006-04-24,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,Option,sell,14860.0,13.492,200491.12000000002
+2006-04-24,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,Option,sell,696.0,13.492,9390.432
+2006-05-03,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,100.0,13.88,1388.0
+2006-05-03,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,500.0,13.66,6830.0
+2006-05-03,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,100.0,13.76,1376.0
+2006-05-03,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,100.0,14.15,1415.0
+2006-05-03,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,200.0,14.1,2820.0
+2006-05-17,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,98.0,14.1,1381.8
+2006-05-17,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,99.0,14.09,1394.91
+2006-05-17,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,102.0,14.08,1436.16
+2006-05-17,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,401.0,14.07,5642.07
+2006-05-17,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,300.0,14.06,4218.0
+2006-06-07,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,1000.0,13.61,13610.0
+2006-06-21,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,124.0,11.73,1454.52
+2006-06-21,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,524.0,11.44,5994.5599999999995
+2006-06-21,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,100.0,11.69,1169.0
+2006-06-21,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,100.0,12.16,1216.0
+2006-06-21,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,100.0,11.49,1149.0
+2006-07-05,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,1000.0,12.58,12580.0
+2006-07-19,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,805.0,13.0,10465.0
+2006-07-19,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,195.0,13.01,2536.95
+2006-08-02,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,300.0,12.7,3810.0
+2006-08-02,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,200.0,12.5,2500.0
+2006-08-02,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,267.0,12.25,3270.75
+2006-08-02,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,233.0,12.66,2949.78
+2006-08-16,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,200.0,15.36,3072.0
+2006-08-16,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,195.0,15.41,3004.95
+2006-08-16,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,128.0,15.3,1958.4
+2006-08-16,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,477.0,15.4,7345.8
+2006-09-06,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,205.0,16.65,3413.2499999999995
+2006-09-06,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,795.0,16.66,13244.7
+2006-09-20,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,99.0,16.04,1587.9599999999998
+2006-09-20,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,554.0,16.0,8864.0
+2006-09-20,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,96.0,16.01,1536.96
+2006-09-20,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,99.0,16.03,1586.97
+2006-09-20,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,99.0,16.02,1585.98
+2006-09-30,ATRO,"BURNEY, DAVID C","VP-Finance, Treasurer",True,$.01 PV Common Stock,buy,1875.0,8.16,15300.0
+2006-10-04,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,100.0,14.5,1450.0
+2006-10-04,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,99.0,14.41,1426.59
+2006-10-04,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,200.0,14.29,2858.0
+2006-10-04,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,250.0,14.37,3592.5
+2006-10-04,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,198.0,14.4,2851.2000000000003
+2006-10-04,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,99.0,14.42,1427.58
+2006-10-18,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,99.0,16.56,1639.4399999999998
+2006-10-18,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,206.0,16.74,3448.4399999999996
+2006-10-18,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,198.0,16.55,3276.9
+2006-10-18,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,100.0,16.52,1652.0
+2006-10-18,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,298.0,16.5,4917.0
+2006-10-18,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,99.0,16.54,1637.4599999999998
+2006-11-01,ATRO,"KEANE, KEVIN T","Director, CHAIRMAN, 10% Owner",True,$.01 Par Value Common Stock,sell,200.0,16.95,3390.0
+2006-11-01,ATRO,"KEANE, KEVIN T","Director, CHAIRMAN, 10% Owner",True,$01 Par Value Common Stock,sell,400.0,17.07,6828.0
+2006-11-01,ATRO,"KEANE, KEVIN T","Director, CHAIRMAN, 10% Owner",True,$.01 Par Value Common Stock,sell,200.0,17.32,3464.0
+2006-11-01,ATRO,"KEANE, KEVIN T","Director, CHAIRMAN, 10% Owner",True,$01 Par Value Common Stock,sell,200.0,17.21,3442.0
+2006-11-15,ATRO,"KEANE, KEVIN T","Director, CHAIRMAN, 10% Owner",True,$.01 Par Value Common Stock,sell,98.0,17.12,1677.76
+2006-11-15,ATRO,"KEANE, KEVIN T","Director, CHAIRMAN, 10% Owner",True,$.01 Par Value Common Stock,sell,99.0,17.07,1689.93
+2006-11-15,ATRO,"KEANE, KEVIN T","Director, CHAIRMAN, 10% Owner",True,$.01 Par Value Common Stock,sell,99.0,17.06,1688.9399999999998
+2006-11-15,ATRO,"KEANE, KEVIN T","Director, CHAIRMAN, 10% Owner",True,$.01 Par Value Common Stock,sell,254.0,17.13,4351.0199999999995
+2006-11-15,ATRO,"KEANE, KEVIN T","Director, CHAIRMAN, 10% Owner",True,$.01 Par Value Common Stock,sell,100.0,17.03,1703.0
+2006-11-15,ATRO,"KEANE, KEVIN T","Director, CHAIRMAN, 10% Owner",True,$.01 Par Value Common Stock,sell,99.0,17.05,1687.95
+2006-11-15,ATRO,"KEANE, KEVIN T","Director, CHAIRMAN, 10% Owner",True,$.01 Par Value Common Stock,sell,163.0,17.01,2772.63
+2006-11-15,ATRO,"KEANE, KEVIN T","Director, CHAIRMAN, 10% Owner",True,$.01 Par Value Common Stock,sell,88.0,16.58,1459.04
+2006-11-20,ATRO,"BOUSHIE, RAYMOND W",Director,True,Option,sell,5000.0,13.41,67050.0
+2006-11-20,ATRO,"BOUSHIE, RAYMOND W",Director,True,$.01 PV Com Stk,buy,5000.0,13.41,67050.0
+2006-12-06,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,461.0,16.79,7740.19
+2006-12-06,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,394.0,16.82,6627.08
+2006-12-06,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,145.0,16.81,2437.45
+2006-12-20,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,200.0,16.42,3284.0000000000005
+2006-12-20,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,100.0,16.44,1644.0000000000002
+2006-12-20,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,300.0,16.4,4920.0
+2006-12-20,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,200.0,16.43,3286.0
+2006-12-20,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,100.0,16.17,1617.0000000000002
+2006-12-20,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,99.0,16.13,1596.87
+2007-01-03,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,1000.0,16.99,16990.0
+2007-01-08,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,buy,5467.0,3.392,18544.064
+2007-01-08,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Cl B Stk,buy,2050.0,3.392,6953.599999999999
+2007-01-08,ATRO,"MCKENNA, ROBERT J",Director,True,Option,sell,5467.0,3.392,18544.064
+2007-01-08,ATRO,"MCKENNA, ROBERT J",Director,True,Option,sell,2050.0,3.392,6953.599999999999
+2007-01-17,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,55.0,18.33,1008.1499999999999
+2007-01-17,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,124.0,16.8,2083.2000000000003
+2007-01-17,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,99.0,16.84,1667.16
+2007-01-17,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,99.0,16.83,1666.1699999999998
+2007-01-17,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,100.0,17.62,1762.0
+2007-01-17,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,99.0,17.65,1747.35
+2007-01-17,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,300.0,17.5,5250.0
+2007-01-17,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,99.0,17.66,1748.34
+2007-01-19,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,Option,sell,14819.0,11.244,166624.836
+2007-01-19,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,buy,14819.0,11.244,166624.836
+2007-02-05,ATRO,"DRENNING, JOHN B",Director,True,Option,sell,2562.0,3.392,8690.304
+2007-02-05,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Cl B Stk,buy,2562.0,3.392,8690.304
+2007-02-05,ATRO,"DRENNING, JOHN B",Director,True,Option,sell,6834.0,3.392,23180.928
+2007-02-05,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Com Stk,buy,6834.0,3.392,23180.928
+2007-02-07,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,100.0,18.11,1811.0
+2007-02-07,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,100.0,17.97,1797.0
+2007-02-07,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,100.0,18.15,1814.9999999999998
+2007-02-07,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,180.0,17.94,3229.2000000000003
+2007-02-07,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,99.0,17.99,1781.0099999999998
+2007-02-07,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,99.0,18.1,1791.9
+2007-02-07,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,98.0,18.12,1775.76
+2007-02-07,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,$.01 Par Value Common Stock,sell,199.0,18.09,3599.91
+2007-02-08,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Com Stk,buy,6834.0,3.392,23180.928
+2007-02-08,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Cl B Stk,buy,2562.0,3.392,8690.304
+2007-02-08,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Com Stk,sell,1723.0,18.5,31875.5
+2007-02-08,ATRO,"BRADY, ROBERT T",Director,True,Option,sell,2562.0,3.392,8690.304
+2007-02-08,ATRO,"BRADY, ROBERT T",Director,True,Option,sell,6834.0,3.392,23180.928
+2007-03-20,ATRO,"BOUSHIE, RAYMOND W",Director,True,Option,buy,5000.0,17.6,88000.0
+2007-03-20,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,Option,buy,5000.0,17.6,88000.0
+2007-03-20,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,5000.0,17.6,88000.0
+2007-03-20,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,5000.0,17.6,88000.0
+2007-03-20,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,5000.0,17.6,88000.0
+2007-09-04,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,sell,4100.0,33.0,135300.0
+2007-09-30,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,$.01 PV COMMON STOCK,buy,1522.0,13.4,20394.8
+2007-11-26,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,sell,6100.0,52.0,317200.0
+2008-01-07,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Com Stk,buy,6834.0,4.589,31361.226000000002
+2008-01-07,ATRO,"BRADY, ROBERT T",Director,True,Option,sell,2562.0,4.589,11757.018000000002
+2008-01-07,ATRO,"BRADY, ROBERT T",Director,True,Option,sell,6834.0,4.589,31361.226000000002
+2008-01-07,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Cl B Stk,buy,2562.0,4.589,11757.018000000002
+2008-01-07,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Com Stk,sell,1174.0,36.73,43121.02
+2008-02-06,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,buy,6834.0,4.589,31361.226000000002
+2008-02-06,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Cl B Stk,buy,2562.0,4.589,11757.018000000002
+2008-02-06,ATRO,"MCKENNA, ROBERT J",Director,True,Option,sell,2562.0,4.589,11757.018000000002
+2008-02-06,ATRO,"MCKENNA, ROBERT J",Director,True,Option,sell,6834.0,4.589,31361.226000000002
+2008-02-06,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Cl B Stk,buy,2562.0,4.589,11757.018000000002
+2008-02-06,ATRO,"DRENNING, JOHN B",Director,True,Option,sell,6834.0,4.589,31361.226000000002
+2008-02-06,ATRO,"DRENNING, JOHN B",Director,True,Option,sell,2562.0,4.589,11757.018000000002
+2008-02-06,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Com Stk,buy,6834.0,4.589,31361.226000000002
+2008-03-20,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,2500.0,19.11,47775.0
+2008-03-20,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,2500.0,19.11,47775.0
+2008-03-20,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,2500.0,19.11,47775.0
+2008-03-20,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,Option,buy,2500.0,19.11,47775.0
+2008-03-20,ATRO,"BOUSHIE, RAYMOND W",Director,True,Option,buy,2500.0,19.11,47775.0
+2008-08-07,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,sell,100.0,24.32,2432.0
+2008-08-07,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,sell,100.0,24.27,2427.0
+2008-08-07,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,sell,100.0,24.21,2421.0
+2008-08-07,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,sell,100.0,24.28,2428.0
+2008-08-07,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,sell,2030.0,24.0,48720.0
+2008-08-07,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,sell,700.0,24.1,16870.0
+2008-08-07,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,sell,100.0,24.39,2439.0
+2008-08-08,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,sell,4770.0,23.11,110234.7
+2008-08-11,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Cl B Stk,buy,1864.0,5.341,9955.624
+2008-08-11,ATRO,"MCKENNA, ROBERT J",Director,True,Option,sell,4970.0,5.341,26544.77
+2008-08-11,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,buy,4970.0,5.999,29815.03
+2008-08-11,ATRO,"MCKENNA, ROBERT J",Director,True,Option,sell,4000.0,5.49,21960.0
+2008-08-11,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Cl B Stk,buy,1864.0,5.999,11182.135999999999
+2008-08-11,ATRO,"MCKENNA, ROBERT J",Director,True,Option,sell,4970.0,5.999,29815.03
+2008-08-11,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,buy,4000.0,5.49,21960.0
+2008-08-11,ATRO,"MCKENNA, ROBERT J",Director,True,Option,sell,4970.0,5.183,25759.51
+2008-08-11,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,buy,4970.0,5.341,26544.77
+2008-08-11,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,buy,4970.0,5.183,25759.51
+2008-08-11,ATRO,"MCKENNA, ROBERT J",Director,True,Option,sell,1864.0,5.341,9955.624
+2008-08-11,ATRO,"MCKENNA, ROBERT J",Director,True,Option,sell,1864.0,5.999,11182.135999999999
+2008-10-17,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,1000.0,5.232,5232.0
+2008-10-17,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,1709.0,4.273,7302.557
+2008-10-17,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,1553.0,8.082,12551.346000000001
+2008-10-17,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,1000.0,5.232,5232.0
+2008-10-17,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,1243.0,4.146,5153.478
+2008-10-17,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,641.0,4.155,2663.355
+2008-10-17,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,2525.0,4.072,10281.8
+2008-10-17,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,932.0,4.262,3972.1839999999997
+2008-10-17,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,311.0,8.177,2543.047
+2008-10-17,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,388.0,6.117,2373.396
+2008-10-17,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,2188.0,5.2,11377.6
+2008-10-17,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,1725.0,7.864,13565.4
+2008-10-17,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,1243.0,5.969,7419.467000000001
+2008-10-17,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,625.0,15.288,9555.0
+2008-10-17,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,3844.0,4.917,18900.948
+2008-10-17,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,1670.0,31.848,53186.159999999996
+2008-10-17,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,1153.0,13.888,16012.864
+2008-10-17,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,1250.0,14.08,17600.0
+2008-10-17,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,2889.0,8.178,23626.242000000002
+2008-10-17,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,8386.0,4.263,35749.518
+2008-10-17,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,10200.0,4.392,44798.4
+2008-10-17,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,11000.0,4.072,44792.0
+2008-10-17,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,5000.0,5.2,26000.0
+2008-10-17,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,6250.0,7.864,49150.0
+2008-10-17,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,553.0,31.848,17611.944
+2008-10-17,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,427.0,4.917,2099.5589999999997
+2008-10-17,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,3615.0,13.888,50205.12
+2008-10-17,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,641.0,4.127,2645.4069999999997
+2008-10-17,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,1000.0,4.392,4392.0
+2008-10-17,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,3223.0,9.813,31627.299000000003
+2008-10-17,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,1243.0,4.146,5153.478
+2008-10-17,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,1000.0,4.392,4392.0
+2008-10-17,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,1250.0,14.08,17600.0
+2008-10-17,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,625.0,15.288,9555.0
+2008-10-17,ATRO,"BOUSHIE, RAYMOND W",Director,True,Option,buy,1250.0,14.08,17600.0
+2008-10-17,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,1709.0,4.273,7302.557
+2008-10-17,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,1553.0,8.082,12551.346000000001
+2008-10-17,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,Option,buy,1250.0,10.728,13410.0
+2008-10-17,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,Option,buy,1250.0,14.08,17600.0
+2008-10-17,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,Option,buy,625.0,15.288,9555.0
+2008-10-17,ATRO,"BOUSHIE, RAYMOND W",Director,True,Option,buy,625.0,15.288,9555.0
+2008-10-17,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,1250.0,10.728,13410.0
+2008-10-17,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,Option,buy,13978.0,4.262,59574.236
+2008-10-17,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,Option,buy,7375.0,4.072,30031.0
+2008-10-17,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,Option,buy,1234.0,8.177,10090.418
+2008-10-17,ATRO,"KEANE, KEVIN T","Director, Chairman, 10% Owner",True,Option,buy,6825.0,4.392,29975.4
+2008-10-17,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,1243.0,5.969,7419.467000000001
+2008-10-17,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,1709.0,4.799,8201.491
+2008-10-17,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,2350.0,4.392,10321.2
+2008-10-17,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,1250.0,14.08,17600.0
+2008-10-17,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,625.0,15.288,9555.0
+2008-10-17,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,1250.0,10.728,13410.0
+2008-10-17,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,1709.0,4.799,8201.491
+2008-10-17,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,1553.0,8.082,12551.346000000001
+2008-10-17,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,1243.0,5.969,7419.467000000001
+2008-10-17,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,1000.0,5.232,5232.0
+2008-10-17,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,1250.0,10.728,13410.0
+2008-11-03,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,1340.0,4.155,5567.700000000001
+2008-11-03,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,$.01 PV COMMON STOCK,buy,1863.0,4.155,7740.765
+2008-12-09,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,12690.0,7.88,99997.2
+2008-12-09,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,37440.0,7.88,295027.2
+2009-01-14,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,1863.0,4.127,7688.601
+2009-01-14,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,1340.0,4.127,5530.179999999999
+2009-02-02,ATRO,"DRENNING, JOHN B",Director,True,Option,sell,3573.0,4.799,17146.827
+2009-02-02,ATRO,"DRENNING, JOHN B",Director,True,Option,sell,4970.0,4.799,23851.030000000002
+2009-02-02,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Com Stk,sell,5430.0,7.55,40996.5
+2009-02-02,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Cl B Stk,buy,3573.0,4.799,17146.827
+2009-02-02,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Com Stk,buy,4970.0,4.799,23851.030000000002
+2009-02-04,ATRO,"BRADY, ROBERT T",Director,True,Option,sell,3573.0,4.799,17146.827
+2009-02-04,ATRO,"BRADY, ROBERT T",Director,True,Option,sell,4970.0,4.799,23851.030000000002
+2009-02-04,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Cl B Stk,buy,3573.0,4.799,17146.827
+2009-02-04,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Com Stk,sell,5766.0,7.11,40996.26
+2009-02-04,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Com Stk,buy,4970.0,4.799,23851.030000000002
+2009-03-05,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,buy,4000.0,7.4,29600.0
+2009-03-05,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,4000.0,7.4,29600.0
+2009-03-05,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,4000.0,7.4,29600.0
+2009-03-05,ATRO,"BOUSHIE, RAYMOND W",Director,True,Option,buy,4000.0,7.4,29600.0
+2009-03-05,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,4000.0,7.4,29600.0
+2009-12-03,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,37480.0,7.87,294967.6
+2009-12-03,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,12710.0,7.87,100027.7
+2010-01-18,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,892.0,4.917,4385.964
+2010-01-18,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,11183.0,4.917,54986.811
+2010-01-18,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,8037.0,4.917,39517.929
+2010-01-18,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,1243.0,4.917,6111.831
+2010-02-10,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Cl B Stk,buy,3573.0,4.273,15267.428999999998
+2010-02-10,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Com Stk,sell,4557.0,8.01,36501.57
+2010-02-10,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Com Stk,buy,4970.0,4.273,21236.809999999998
+2010-02-10,ATRO,"BRADY, ROBERT T",Director,True,Option,sell,3573.0,4.273,15267.428999999998
+2010-02-10,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Cl B Stk,buy,3573.0,4.273,15267.428999999998
+2010-02-10,ATRO,"DRENNING, JOHN B",Director,True,Option,sell,4970.0,4.273,21236.809999999998
+2010-02-10,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Com Stk,sell,4557.0,8.01,36501.57
+2010-02-10,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Com Stk,buy,4970.0,4.273,21236.809999999998
+2010-02-10,ATRO,"BRADY, ROBERT T",Director,True,Option,sell,4970.0,4.273,21236.809999999998
+2010-02-10,ATRO,"DRENNING, JOHN B",Director,True,Option,sell,3573.0,4.273,15267.428999999998
+2010-03-02,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,5000.0,8.83,44150.0
+2010-03-02,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,5000.0,8.83,44150.0
+2010-03-02,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,5000.0,8.83,44150.0
+2010-03-02,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,buy,5000.0,8.83,44150.0
+2010-03-02,ATRO,"BOUSHIE, RAYMOND W",Director,True,Option,buy,5000.0,8.83,44150.0
+2010-09-22,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,sell,5000.0,17.1,85500.0
+2010-09-30,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,buy,2822.0,7.53,21249.66
+2010-09-30,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,$.01 PV COMMON STOCK,buy,2822.0,7.53,21249.66
+2010-11-09,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Com Stk,sell,5000.0,23.0,115000.0
+2010-11-12,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,sell,4736.0,21.11,99976.95999999999
+2010-11-15,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,sell,600.0,21.1,12660.0
+2010-11-17,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,sell,3001.0,19.68,59059.68
+2010-11-18,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,sell,1663.0,19.65,32677.949999999997
+2010-12-02,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,5000.0,21.26,106300.00000000001
+2010-12-02,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,14700.0,21.26,312522.0
+2011-01-03,ATRO,"MCKENNA, ROBERT J",Director,True,Option,sell,4970.0,5.969,29665.93
+2011-01-03,ATRO,"MCKENNA, ROBERT J",Director,True,Option,sell,1243.0,5.969,7419.467000000001
+2011-01-03,ATRO,"MCKENNA, ROBERT J",Director,True,Option,sell,4970.0,8.082,40167.54
+2011-01-03,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Cl B Stk,buy,1243.0,5.969,7419.467000000001
+2011-01-03,ATRO,"MCKENNA, ROBERT J",Director,True,Option,sell,2795.0,8.082,22589.190000000002
+2011-01-03,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,buy,4970.0,5.969,29665.93
+2011-01-03,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Cl B Stk,buy,2795.0,8.082,22589.190000000002
+2011-01-03,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,buy,4970.0,8.082,40167.54
+2011-01-19,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,sell,699.0,6.117,4275.783
+2011-01-19,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,sell,1242.0,6.117,7597.314
+2011-01-19,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,$.01 PV CLASS B STOCK,buy,699.0,6.117,4275.783
+2011-01-19,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,$.01 PV COMMON STOCK,buy,1242.0,6.117,7597.314
+2011-01-23,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,sell,2889.0,8.178,23626.242000000002
+2011-01-23,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,sell,4333.0,8.178,35435.274000000005
+2011-01-23,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,sell,5801.0,9.813,56925.213
+2011-01-23,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV CLASS B STOCK,buy,5801.0,9.813,56925.213
+2011-01-23,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,buy,4333.0,8.178,35435.274000000005
+2011-01-23,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV CLASS B STOCK,buy,2889.0,8.178,23626.242000000002
+2011-01-23,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,sell,2256.0,9.813,22138.128
+2011-01-23,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,buy,2256.0,9.813,22138.128
+2011-02-07,ATRO,"BRADY, ROBERT T",Director,True,Option,sell,4970.0,8.082,40167.54
+2011-02-07,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Com Stk,sell,2607.0,24.07,62750.49
+2011-02-07,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Com Stk,sell,2607.0,24.07,62750.49
+2011-02-07,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Com Stk,buy,4970.0,8.082,40167.54
+2011-02-07,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Cl B Stk,buy,2795.0,8.082,22589.190000000002
+2011-02-07,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Cl B Stk,buy,2795.0,8.082,22589.190000000002
+2011-02-07,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Com Stk,buy,4970.0,8.082,40167.54
+2011-02-07,ATRO,"DRENNING, JOHN B",Director,True,Option,sell,4970.0,8.082,40167.54
+2011-02-07,ATRO,"DRENNING, JOHN B",Director,True,Option,sell,2795.0,8.082,22589.190000000002
+2011-02-07,ATRO,"BRADY, ROBERT T",Director,True,Option,sell,2795.0,8.082,22589.190000000002
+2011-02-28,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,2500.0,21.56,53900.0
+2011-02-28,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,2500.0,21.56,53900.0
+2011-02-28,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,buy,2500.0,21.56,53900.0
+2011-02-28,ATRO,"BOUSHIE, RAYMOND W",Director,True,Option,buy,2500.0,21.56,53900.0
+2011-02-28,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,2500.0,21.56,53900.0
+2011-04-26,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,buy,8057.0,9.813,79063.341
+2011-04-26,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,sell,8057.0,9.813,79063.341
+2011-05-06,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Common Stock,sell,5000.0,25.79,128950.0
+2011-08-16,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,5500.0,3.7,20350.0
+2011-08-16,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,250.0,19.6,4900.0
+2011-08-16,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,400.0,6.73,2692.0
+2011-08-16,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,500.0,8.03,4014.9999999999995
+2011-08-16,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,250.0,19.6,4900.0
+2011-08-16,ATRO,"BOUSHIE, RAYMOND W",Director,True,Option,buy,250.0,19.6,4900.0
+2011-08-16,ATRO,"BOUSHIE, RAYMOND W",Director,True,Option,buy,500.0,8.03,4014.9999999999995
+2011-08-16,ATRO,"BOUSHIE, RAYMOND W",Director,True,Option,buy,400.0,6.73,2692.0
+2011-08-16,ATRO,"BOUSHIE, RAYMOND W",Director,True,Option,buy,312.0,13.9,4336.8
+2011-08-16,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,buy,500.0,8.03,4014.9999999999995
+2011-08-16,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,625.0,12.8,8000.0
+2011-08-16,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,500.0,3.99,1995.0
+2011-08-16,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,500.0,4.76,2380.0
+2011-08-16,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,500.0,3.99,1995.0
+2011-08-16,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,621.0,3.77,2341.17
+2011-08-16,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,621.0,5.43,3372.0299999999997
+2011-08-16,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,buy,250.0,19.6,4900.0
+2011-08-16,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,312.0,13.9,4336.8
+2011-08-16,ATRO,"BOUSHIE, RAYMOND W",Director,True,Option,buy,625.0,12.8,8000.0
+2011-08-16,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,3748.0,7.15,26798.2
+2011-08-16,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,625.0,12.8,8000.0
+2011-08-16,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,400.0,6.73,2692.0
+2011-08-16,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,500.0,8.03,4014.9999999999995
+2011-08-16,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,3125.0,7.15,22343.75
+2011-08-16,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,buy,616.0,7.43,4576.88
+2011-08-16,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,buy,6989.0,3.87,27047.43
+2011-08-16,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,buy,3412.0,3.99,13613.880000000001
+2011-08-16,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,buy,3687.0,3.7,13641.900000000001
+2011-08-16,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,625.0,12.8,8000.0
+2011-08-16,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,312.0,13.9,4336.8
+2011-08-16,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,2500.0,4.73,11825.000000000002
+2011-08-16,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,625.0,9.75,6093.75
+2011-08-16,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,500.0,4.76,2380.0
+2011-08-16,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,1470.0,19.33,28415.1
+2011-08-16,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,3744.0,7.16,26807.04
+2011-08-16,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,835.0,28.95,24173.25
+2011-08-16,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,1807.0,12.63,22822.41
+2011-08-16,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,buy,625.0,9.75,6093.75
+2011-08-16,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,buy,400.0,6.73,2692.0
+2011-08-16,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,buy,312.0,13.9,4336.8
+2011-08-16,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,buy,625.0,12.8,8000.0
+2011-08-16,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,576.0,12.63,7274.88
+2011-08-16,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,buy,503.0,12.63,6352.89
+2011-08-16,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,buy,330.0,28.95,9553.5
+2011-08-16,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,5100.0,3.99,20349.0
+2011-08-16,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,500.0,19.33,9665.0
+2011-08-16,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,1271.0,7.15,9087.65
+2011-08-16,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,1269.0,7.16,9086.04
+2011-08-16,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,buy,1180.0,7.16,8448.8
+2011-08-16,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,buy,251.0,28.95,7266.45
+2011-08-16,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,buy,1175.0,7.15,8401.25
+2011-08-16,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,buy,762.0,7.15,5448.3
+2011-08-16,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,buy,1688.0,7.16,12086.08
+2011-08-16,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,buy,1684.0,7.15,12040.6
+2011-08-16,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,buy,1093.0,4.73,5169.89
+2011-08-16,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,buy,650.0,19.33,12564.499999999998
+2011-08-16,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,buy,683.0,3.87,2643.21
+2011-08-16,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,buy,1175.0,3.99,4688.25
+2011-08-16,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,buy,1300.0,3.7,4810.0
+2011-08-16,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,buy,756.0,12.63,9548.28
+2011-08-16,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,500.0,8.03,4014.9999999999995
+2011-08-16,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,722.0,7.43,5364.46
+2011-08-16,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,625.0,9.75,6093.75
+2011-08-16,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,buy,440.0,19.33,8505.199999999999
+2011-08-16,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,155.0,7.43,1151.6499999999999
+2011-08-16,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,465.0,3.87,1799.55
+2011-08-16,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,buy,1875.0,4.73,8868.75
+2011-08-16,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,1262.0,3.7,4669.400000000001
+2011-08-16,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,1093.0,4.73,5169.89
+2011-08-16,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,4193.0,3.87,16226.91
+2011-08-16,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,862.0,7.15,6163.3
+2011-08-16,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,276.0,28.95,7990.2
+2011-08-16,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,1175.0,3.99,4688.25
+2011-08-16,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,625.0,9.75,6093.75
+2011-08-16,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,312.0,13.9,4336.8
+2011-08-16,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,400.0,6.73,2692.0
+2011-08-16,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,250.0,19.6,4900.0
+2011-08-16,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,621.0,5.43,3372.0299999999997
+2011-08-16,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,621.0,3.77,2341.17
+2011-08-16,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,buy,1400.0,7.15,10010.0
+2011-08-16,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,500.0,4.76,2380.0
+2011-08-18,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Common Stock,sell,143.0,25.0,3575.0
+2011-08-19,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Common Stock,sell,5546.0,25.32,140424.72
+2011-08-22,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Common Stock,sell,1600.0,25.36,40576.0
+2011-08-23,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Common Stock,sell,2711.0,25.35,68723.85
+2011-08-25,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,$.01 PV Com Stk,sell,3600.0,27.07,97452.0
+2011-08-29,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,sell,3011.0,28.15,84759.65
+2011-08-29,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,$.01 PV Com Stk,sell,5000.0,28.06,140300.0
+2011-08-31,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,$.01 PV Com Stk,sell,6400.0,29.18,186752.0
+2011-09-14,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Com Stk,sell,5000.0,28.0,140000.0
+2011-09-30,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Class B Stock,buy,141.0,13.75,1938.75
+2011-09-30,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,$.01 PV COMMON STOCK,buy,1405.0,13.75,19318.75
+2011-09-30,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,buy,1405.0,13.75,19318.75
+2011-09-30,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Common Stock,buy,1405.0,13.75,19318.75
+2011-09-30,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV CLASS B STOCK,buy,141.0,13.75,1938.75
+2011-09-30,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Class B Stock,buy,141.0,13.75,1938.75
+2011-09-30,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,buy,1405.0,13.75,19318.75
+2011-09-30,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,$.01 PV CLASS B STOCK,buy,141.0,13.75,1938.75
+2011-11-14,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,sell,7222.0,7.43,53659.46
+2011-11-14,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,sell,722.0,7.43,5364.46
+2011-12-01,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,buy,3200.0,34.24,109568.0
+2011-12-01,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,3600.0,34.24,123264.0
+2011-12-01,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,buy,4300.0,34.24,147232.0
+2011-12-01,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,10700.0,34.24,366368.0
+2011-12-05,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,$.01 PV COMMON STOCK,sell,7000.0,36.09,252630.00000000003
+2011-12-13,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,sell,1200.0,36.19,43428.0
+2011-12-15,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,$.01 PV Cl B Stk,buy,1850.0,7.43,13745.5
+2011-12-15,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,$.01 PV Cl B Stk,buy,10237.0,3.99,40845.630000000005
+2011-12-15,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,$.01 PV Com Stk,buy,4936.0,7.43,36674.479999999996
+2011-12-15,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,$.01 PV Com Stk,buy,55912.0,3.87,216379.44
+2011-12-15,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,$.01 PV Com Stk,buy,27300.0,3.99,108927.0
+2011-12-15,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,$.01 PV Cl B Stk,buy,20967.0,3.87,81142.29000000001
+2011-12-15,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,sell,1850.0,7.43,13745.5
+2011-12-15,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,sell,55912.0,3.87,216379.44
+2011-12-15,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,sell,20967.0,3.87,81142.29000000001
+2011-12-15,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,sell,10237.0,3.99,40845.630000000005
+2011-12-15,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,sell,4936.0,7.43,36674.479999999996
+2011-12-15,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,sell,27300.0,3.99,108927.0
+2012-01-23,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,$.01 PV CLASS B STOCK,buy,466.0,7.43,3462.3799999999997
+2012-01-23,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,sell,466.0,7.43,3462.3799999999997
+2012-01-23,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,$.01 PV COMMON STOCK,buy,1242.0,7.43,9228.06
+2012-01-23,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,sell,1242.0,7.43,9228.06
+2012-02-09,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Cl B Stk,buy,1864.0,5.43,10121.519999999999
+2012-02-09,ATRO,"BRADY, ROBERT T",Director,True,Option,sell,1864.0,5.43,10121.519999999999
+2012-02-09,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Com Stk,buy,4970.0,5.43,26987.1
+2012-02-09,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Com Stk,buy,4970.0,5.43,26987.1
+2012-02-09,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Com Stk,sell,1041.0,35.66,37122.06
+2012-02-09,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Cl B Stk,buy,1864.0,5.43,10121.519999999999
+2012-02-09,ATRO,"BRADY, ROBERT T",Director,True,Option,sell,4970.0,5.43,26987.1
+2012-02-09,ATRO,"DRENNING, JOHN B",Director,True,Option,sell,4970.0,5.43,26987.1
+2012-02-09,ATRO,"DRENNING, JOHN B",Director,True,Option,sell,1864.0,5.43,10121.519999999999
+2012-02-09,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Com Stk,sell,1041.0,35.66,37122.06
+2012-02-28,ATRO,"BOUSHIE, RAYMOND W",Director,True,Option,buy,3000.0,34.49,103470.0
+2012-02-28,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,3000.0,34.49,103470.0
+2012-02-28,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,buy,3000.0,34.49,103470.0
+2012-02-28,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,3000.0,34.49,103470.0
+2012-02-28,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,3000.0,34.49,103470.0
+2012-02-29,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,sell,700.0,34.43,24101.0
+2012-03-01,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,sell,6840.0,33.95,232218.00000000003
+2012-03-02,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,$.01 PV Com Stk,sell,5000.0,33.0,165000.0
+2012-03-08,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,$.01 PV Com Stk,sell,10000.0,32.67,326700.0
+2012-03-09,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,$.01 PV Com Stk,sell,3500.0,33.53,117355.0
+2012-03-12,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,$.01 PV Com Stk,sell,9022.0,33.55,302688.1
+2012-03-13,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,$.01 PV Com Stk,sell,2478.0,33.55,83136.9
+2012-04-19,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,buy,10484.0,3.875,40625.5
+2012-04-19,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,sell,12579.0,3.87,48680.73
+2012-04-19,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV CLASS B STOCK,buy,12579.0,3.875,48743.625
+2012-04-19,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,sell,10484.0,3.87,40573.08
+2012-04-19,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,sell,2987.0,29.92,89371.04000000001
+2012-07-25,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,sell,12750.0,3.99,50872.5
+2012-07-25,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV CLASS B STOCK,buy,15300.0,3.99,61047.0
+2012-07-25,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,sell,15300.0,3.99,61047.0
+2012-07-25,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,buy,12750.0,3.99,50872.5
+2012-07-25,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,sell,3833.0,29.2,111923.59999999999
+2012-10-01,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Common Stock,buy,895.0,23.76,21265.2
+2012-10-01,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,$.01 PV COMMON STOCK,buy,895.0,23.76,21265.2
+2012-10-01,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,buy,860.0,23.76,20433.600000000002
+2012-10-01,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,buy,895.0,23.76,21265.2
+2012-10-18,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,sell,28050.0,3.99,111919.5
+2012-10-18,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,sell,23063.0,3.87,89253.81
+2012-10-19,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,sell,4672.0,12.63,59007.36
+2012-10-19,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,sell,26318.0,3.7,97376.6
+2012-10-19,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,sell,11516.0,7.15,82339.40000000001
+2012-10-19,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,sell,11550.0,4.73,54631.50000000001
+2012-10-29,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,2282.0,10.98,25056.36
+2012-10-29,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,1378.0,25.17,34684.26
+2012-10-29,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,6178.0,6.23,38488.94
+2012-10-29,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,buy,2145.0,3.22,6906.900000000001
+2012-10-29,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,2426.0,16.81,40781.06
+2012-10-29,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,1605.0,29.77,47780.85
+2012-10-29,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,1031.0,8.48,8742.880000000001
+2012-10-29,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,6184.0,6.22,38464.479999999996
+2012-10-29,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,2393.0,4.11,9835.230000000001
+2012-10-29,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,buy,1947.0,6.23,12129.810000000001
+2012-10-29,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,5127.0,3.22,16508.940000000002
+2012-10-29,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,buy,718.0,16.81,12069.58
+2012-10-29,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,buy,1939.0,6.22,12060.58
+2012-10-29,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,1939.0,3.47,6728.33
+2012-10-29,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,buy,414.0,25.17,10420.380000000001
+2012-10-29,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,buy,831.0,10.98,9124.380000000001
+2012-10-29,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,buy,1258.0,6.22,7824.759999999999
+2012-10-29,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,825.0,4.14,3415.4999999999995
+2012-10-29,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,3429.0,6.22,21328.379999999997
+2012-10-29,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,1031.0,8.48,8742.880000000001
+2012-10-29,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,buy,1805.0,4.11,7418.55
+2012-10-29,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,buy,545.0,25.17,13717.650000000001
+2012-10-29,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,buy,1939.0,3.47,6728.33
+2012-10-29,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,buy,1128.0,3.37,3801.36
+2012-10-29,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,buy,645.0,29.77,19201.65
+2012-10-29,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,buy,1073.0,16.81,18037.129999999997
+2012-10-29,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,buy,2779.0,6.22,17285.38
+2012-10-29,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,buy,2785.0,6.23,17350.550000000003
+2012-10-29,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,413.0,17.04,7037.5199999999995
+2012-10-29,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,buy,1248.0,10.98,13703.04
+2012-10-29,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,buy,2310.0,6.22,14368.199999999999
+2012-10-29,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,buy,3094.0,4.11,12716.34
+2012-10-29,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,1031.0,11.13,11475.03
+2012-10-29,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,1031.0,8.48,8742.880000000001
+2012-10-29,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,825.0,4.14,3415.4999999999995
+2012-10-29,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,825.0,6.98,5758.5
+2012-10-29,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,516.0,12.09,6238.44
+2012-10-29,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,buy,480.0,29.77,14289.6
+2012-10-29,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,769.0,3.37,2591.53
+2012-10-29,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,1031.0,11.13,11475.03
+2012-10-29,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,660.0,5.85,3860.9999999999995
+2012-10-29,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,825.0,4.14,3415.4999999999995
+2012-10-29,ATRO,"BOUSHIE, RAYMOND W",Director,True,Option,buy,1031.0,11.13,11475.03
+2012-10-29,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,buy,1031.0,11.13,11475.03
+2012-10-29,ATRO,"BOUSHIE, RAYMOND W",Director,True,Option,buy,450.0,29.99,13495.5
+2012-10-29,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,450.0,29.99,13495.5
+2012-10-29,ATRO,"BOUSHIE, RAYMOND W",Director,True,Option,buy,516.0,12.09,6238.44
+2012-10-29,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,825.0,6.98,5758.5
+2012-10-29,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,660.0,5.85,3860.9999999999995
+2012-10-29,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,516.0,12.09,6238.44
+2012-10-29,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,825.0,3.47,2862.75
+2012-10-29,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,1025.0,3.28,3362.0
+2012-10-29,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,413.0,17.04,7037.5199999999995
+2012-10-29,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,450.0,29.99,13495.5
+2012-10-29,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,buy,1031.0,8.48,8742.880000000001
+2012-10-29,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,buy,6084.0,3.22,19590.48
+2012-10-29,ATRO,"BOUSHIE, RAYMOND W",Director,True,Option,buy,413.0,17.04,7037.5199999999995
+2012-10-29,ATRO,"BOUSHIE, RAYMOND W",Director,True,Option,buy,825.0,6.98,5758.5
+2012-10-29,ATRO,"BOUSHIE, RAYMOND W",Director,True,Option,buy,660.0,5.85,3860.9999999999995
+2012-10-29,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,1031.0,11.13,11475.03
+2012-10-29,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,buy,450.0,29.99,13495.5
+2012-10-29,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,1025.0,3.28,3362.0
+2012-10-29,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,413.0,17.04,7037.5199999999995
+2012-10-29,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,2094.0,6.23,13045.62
+2012-10-29,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,buy,413.0,17.04,7037.5199999999995
+2012-10-29,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,buy,825.0,6.98,5758.5
+2012-10-29,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,buy,660.0,5.85,3860.9999999999995
+2012-10-29,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,buy,516.0,12.09,6238.44
+2012-10-29,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,450.0,29.99,13495.5
+2012-10-29,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,540.0,29.77,16075.8
+2012-10-29,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,825.0,16.81,13868.249999999998
+2012-10-29,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,2097.0,6.22,13043.34
+2012-10-29,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,825.0,3.47,2862.75
+2012-10-29,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,951.0,10.98,10441.98
+2012-10-29,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,1423.0,6.22,8851.06
+2012-10-29,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,1805.0,4.11,7418.55
+2012-10-29,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,2083.0,3.22,6707.26
+2012-10-29,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,516.0,12.09,6238.44
+2012-10-29,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,456.0,25.17,11477.52
+2012-10-29,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,660.0,5.85,3860.9999999999995
+2012-10-29,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,825.0,6.98,5758.5
+2012-11-13,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Com Stk,sell,5000.0,22.74,113699.99999999999
+2012-11-29,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,buy,5700.0,20.15,114854.99999999999
+2012-11-29,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,buy,7400.0,20.15,149110.0
+2012-11-29,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,18700.0,20.15,376805.0
+2012-11-29,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,6400.0,20.15,128959.99999999999
+2012-12-03,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,$.01 PV Com Stk,sell,42000.0,20.12,845040.0
+2012-12-04,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,$.01 PV Com Stk,sell,25000.0,20.05,501250.0
+2012-12-05,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,$.01 PV Com Stk,sell,2300.0,20.11,46253.0
+2012-12-06,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,$.01 PV Com Stk,sell,27607.0,20.01,552416.0700000001
+2012-12-07,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,$.01 PV Com Stk,sell,17251.0,20.22,348815.22
+2012-12-10,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,$.01 PV Com Stk,sell,27842.0,20.45,569368.9
+2013-01-04,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,sell,3175.0,3.37,10699.75
+2013-01-04,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Common Stock,buy,5467.0,3.37,18423.79
+2013-01-04,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Class B Stock,buy,3175.0,3.37,10699.75
+2013-01-04,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Common Stock,sell,1223.0,23.81,29119.629999999997
+2013-01-04,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,sell,5467.0,3.37,18423.79
+2013-01-22,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,$.01 PV CLASS B STOCK,buy,2166.0,3.37,7299.42
+2013-01-22,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,$.01 PV COMMON STOCK,buy,3727.0,3.37,12559.99
+2013-01-22,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,sell,2166.0,3.37,7299.42
+2013-01-22,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,sell,3727.0,3.37,12559.99
+2013-02-07,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Com Stk,sell,1048.0,24.61,25791.28
+2013-02-07,ATRO,"BRADY, ROBERT T",Director,True,Option,sell,2889.0,3.28,9475.92
+2013-02-07,ATRO,"BRADY, ROBERT T",Director,True,Option,sell,4970.0,3.28,16301.599999999999
+2013-02-07,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Cl B Stk,buy,2889.0,3.28,9475.92
+2013-02-07,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Com Stk,buy,4970.0,3.28,16301.599999999999
+2013-02-07,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Cl B Stk,buy,2889.0,3.28,9475.92
+2013-02-07,ATRO,"DRENNING, JOHN B",Director,True,Option,sell,2889.0,3.28,9475.92
+2013-02-07,ATRO,"DRENNING, JOHN B",Director,True,Option,sell,4970.0,3.28,16301.599999999999
+2013-02-07,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Com Stk,sell,1048.0,24.61,25791.28
+2013-02-07,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Com Stk,buy,4970.0,3.28,16301.599999999999
+2013-02-22,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,3000.0,27.7,83100.0
+2013-02-22,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,3000.0,27.7,83100.0
+2013-02-22,ATRO,"BOUSHIE, RAYMOND W",Director,True,Option,buy,3000.0,27.7,83100.0
+2013-02-22,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,buy,3000.0,27.7,83100.0
+2013-02-22,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,3000.0,27.7,83100.0
+2013-07-31,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,$.01 PV Com Stk,buy,29500.0,3.22,94990.0
+2013-07-31,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,sell,29500.0,3.22,94990.0
+2013-07-31,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,sell,17146.0,3.22,55210.12
+2013-07-31,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,$.01 PV Cl B Stk,buy,17146.0,3.22,55210.12
+2013-09-30,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,$.01 PV CLASS B STOCK,buy,122.0,22.76,2776.7200000000003
+2013-09-30,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Common Stock,buy,812.0,22.76,18481.120000000003
+2013-09-30,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Class B Stock,buy,122.0,22.76,2776.7200000000003
+2013-09-30,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,buy,811.0,22.76,18458.36
+2013-09-30,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,$.01 PV COMMON STOCK,buy,812.0,22.76,18481.120000000003
+2013-09-30,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Class B Stock,buy,122.0,22.76,2776.7200000000003
+2013-10-10,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,buy,791.0,10.08,7973.28
+2013-10-10,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,buy,1012.0,4.88,4938.5599999999995
+2013-10-10,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,1265.0,5.82,7362.3
+2013-10-10,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,600.0,23.08,13847.999999999998
+2013-10-10,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,600.0,23.08,13847.999999999998
+2013-10-10,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,690.0,24.99,17243.1
+2013-10-10,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,1265.0,3.45,4364.25
+2013-10-10,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,1012.0,4.88,4938.5599999999995
+2013-10-10,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,791.0,10.08,7973.28
+2013-10-10,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,1581.0,9.28,14671.679999999998
+2013-10-10,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,1581.0,7.07,11177.67
+2013-10-10,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,600.0,23.08,13847.999999999998
+2013-10-10,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,buy,1265.0,5.82,7362.3
+2013-10-10,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,633.0,14.2,8988.6
+2013-10-10,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,buy,633.0,14.2,8988.6
+2013-10-10,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,690.0,24.99,17243.1
+2013-10-10,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,buy,600.0,23.08,13847.999999999998
+2013-10-10,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,1581.0,9.28,14671.679999999998
+2013-10-10,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,1012.0,4.88,4938.5599999999995
+2013-10-10,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,791.0,10.08,7973.28
+2013-10-10,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,1581.0,9.28,14671.679999999998
+2013-10-10,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,1581.0,7.07,11177.67
+2013-10-10,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,1265.0,3.45,4364.25
+2013-10-10,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,buy,690.0,24.99,17243.1
+2013-10-10,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,1280.0,16.79,21491.199999999997
+2013-10-10,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,1265.0,2.89,3655.8500000000004
+2013-10-10,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,791.0,10.08,7973.28
+2013-10-10,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,1581.0,7.07,11177.67
+2013-10-10,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,633.0,14.2,8988.6
+2013-10-10,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,1265.0,3.45,4364.25
+2013-10-10,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,1265.0,2.89,3655.8500000000004
+2013-10-10,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,828.0,24.81,20542.68
+2013-10-10,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,633.0,14.2,8988.6
+2013-10-10,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,buy,1581.0,7.07,11177.67
+2013-10-10,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,1012.0,4.88,4938.5599999999995
+2013-10-10,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,1265.0,5.82,7362.3
+2013-10-10,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,3216.0,5.18,16658.879999999997
+2013-10-10,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,3211.0,5.19,16665.09
+2013-10-10,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,699.0,20.98,14665.02
+2013-10-10,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,1458.0,9.15,13340.7
+2013-10-10,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,2182.0,5.18,11302.76
+2013-10-10,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,buy,1913.0,9.15,17503.95
+2013-10-10,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,2767.0,3.43,9490.810000000001
+2013-10-10,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,2973.0,2.89,8591.970000000001
+2013-10-10,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,buy,1274.0,9.15,11657.1
+2013-10-10,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,buy,1929.0,5.18,9992.22
+2013-10-10,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,buy,2767.0,3.43,9490.810000000001
+2013-10-10,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,buy,3542.0,5.18,18347.559999999998
+2013-10-10,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,buy,4744.0,3.43,16271.92
+2013-10-10,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,3194.0,2.68,8559.92
+2013-10-10,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,buy,835.0,20.98,17518.3
+2013-10-10,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,1265.0,5.82,7362.3
+2013-10-10,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,buy,4261.0,5.18,22071.98
+2013-10-10,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,buy,1581.0,9.28,14671.679999999998
+2013-10-10,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,690.0,24.99,17243.1
+2013-10-10,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,1265.0,14.01,17722.65
+2013-10-10,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,buy,1140.0,16.79,19140.6
+2013-10-10,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,buy,736.0,24.81,18260.16
+2013-10-10,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,buy,1101.0,14.01,15425.01
+2013-10-10,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,buy,2985.0,5.19,15492.150000000001
+2013-10-10,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,buy,2973.0,5.18,15400.14
+2013-10-10,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,buy,3289.0,2.68,8814.52
+2013-10-10,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,buy,2973.0,2.89,8591.970000000001
+2013-10-10,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,buy,4271.0,5.19,22166.49
+2013-10-10,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,buy,1480.0,16.79,24849.199999999997
+2013-10-10,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,buy,989.0,24.81,24537.09
+2013-10-10,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,buy,1645.0,14.01,23046.45
+2013-10-10,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,buy,635.0,20.98,13322.300000000001
+2013-11-14,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,$.01 PV Com Stk,sell,20481.0,49.31,1009918.1100000001
+2013-11-15,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,$.01 PV Com Stk,sell,12750.0,49.51,631252.5
+2013-11-15,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,sell,5100.0,49.0,249900.0
+2013-11-18,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,$.01 PV Com Stk,sell,15244.0,49.01,747108.44
+2013-11-19,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,$.01 PV Com Stk,sell,7500.0,48.95,367125.0
+2013-11-22,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,sell,20000.0,48.6,972000.0
+2013-12-05,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,sell,10000.0,51.02,510200.00000000006
+2013-12-11,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,buy,2990.0,51.93,155270.7
+2013-12-11,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,buy,8300.0,51.93,431019.0
+2013-12-11,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,buy,2330.0,51.93,120996.9
+2013-12-11,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,buy,2600.0,51.93,135018.0
+2013-12-30,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,sell,1400.0,3.43,4802.0
+2013-12-30,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,buy,1400.0,3.43,4802.0
+2014-02-04,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Com Stk,sell,475.0,55.0,26125.0
+2014-02-04,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Cl B Stk,buy,5108.0,2.87,14659.960000000001
+2014-02-04,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Com Stk,buy,4000.0,2.87,11480.0
+2014-02-17,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Com Stk,buy,4000.0,2.89,11560.0
+2014-02-17,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,sell,8437.0,2.89,24382.93
+2014-02-17,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Com Stk,sell,369.0,59.43,21929.67
+2014-02-17,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Com Stk,buy,4000.0,2.89,11560.0
+2014-02-17,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Com Stk,sell,369.0,59.43,21929.67
+2014-02-17,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Cl B Stk,buy,3590.0,2.89,10375.1
+2014-02-17,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,sell,8437.0,2.89,24382.93
+2014-02-17,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Cl B Stk,buy,3590.0,2.89,10375.1
+2014-02-17,ATRO,"DRENNING, JOHN B",Director,True,Option,sell,3590.0,2.89,10375.1
+2014-02-17,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,sell,9400.0,2.89,27166.0
+2014-02-17,ATRO,"BRADY, ROBERT T",Director,True,Option,sell,4000.0,2.89,11560.0
+2014-02-17,ATRO,"BRADY, ROBERT T",Director,True,Option,sell,3590.0,2.89,10375.1
+2014-02-17,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Common Stock,buy,9400.0,2.89,27166.0
+2014-02-17,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Common Stock,sell,868.0,59.43,51585.24
+2014-02-17,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,sell,9400.0,2.89,27166.0
+2014-02-17,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,$.01 PV COMMON STOCK,buy,9400.0,2.89,27166.0
+2014-02-17,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,$.01 PV CLASS B STOCK,buy,8437.0,2.89,24382.93
+2014-02-17,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Class B Stock,buy,8437.0,2.89,24382.93
+2014-02-17,ATRO,"DRENNING, JOHN B",Director,True,Option,sell,4000.0,2.89,11560.0
+2014-02-18,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Com Stk,sell,5000.0,61.5,307500.0
+2014-02-20,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,sell,4105.0,61.5,252457.5
+2014-02-28,ATRO,"BOUSHIE, RAYMOND W",Director,True,Option,sell,2244.0,10.08,22619.52
+2014-02-28,ATRO,"BOUSHIE, RAYMOND W",Director,True,$.01 PV Class B Stk,buy,2244.0,10.08,22619.52
+2014-02-28,ATRO,"BOUSHIE, RAYMOND W",Director,True,Option,sell,5000.0,9.28,46400.0
+2014-02-28,ATRO,"BOUSHIE, RAYMOND W",Director,True,Option,sell,4487.0,9.28,41639.36
+2014-02-28,ATRO,"BOUSHIE, RAYMOND W",Director,True,$.01 PV Com Stk,sell,2031.0,66.9,135873.90000000002
+2014-02-28,ATRO,"BOUSHIE, RAYMOND W",Director,True,$.01 PV Com Stk,buy,5000.0,9.28,46400.0
+2014-02-28,ATRO,"BOUSHIE, RAYMOND W",Director,True,$.01 PV Com Stk,buy,2500.0,10.08,25200.0
+2014-02-28,ATRO,"BOUSHIE, RAYMOND W",Director,True,$.01 PV Class B Stk,buy,4487.0,9.28,41639.36
+2014-02-28,ATRO,"BOUSHIE, RAYMOND W",Director,True,Option,sell,2500.0,10.08,25200.0
+2014-03-03,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,2000.0,65.36,130720.0
+2014-03-03,ATRO,"BOUSHIE, RAYMOND W",Director,True,Option,buy,2000.0,65.36,130720.0
+2014-03-03,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,2000.0,65.36,130720.0
+2014-03-03,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,2000.0,65.36,130720.0
+2014-03-03,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,buy,2000.0,65.36,130720.0
+2014-03-04,ATRO,"BOUSHIE, RAYMOND W",Director,True,$.01 PV Com Stk,sell,3805.0,68.71,261441.55
+2014-03-05,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,buy,4000.0,3.45,13800.0
+2014-03-05,ATRO,"MCKENNA, ROBERT J",Director,True,Option,sell,3590.0,3.45,12385.5
+2014-03-05,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Cl B Stk,buy,4487.0,7.07,31723.09
+2014-03-05,ATRO,"MCKENNA, ROBERT J",Director,True,Option,sell,4487.0,7.07,31723.09
+2014-03-05,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,buy,5000.0,9.28,46400.0
+2014-03-05,ATRO,"MCKENNA, ROBERT J",Director,True,Option,sell,5000.0,9.28,46400.0
+2014-03-05,ATRO,"MCKENNA, ROBERT J",Director,True,Option,sell,4000.0,3.45,13800.0
+2014-03-05,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Cl B Stk,buy,3590.0,3.45,12385.5
+2014-03-05,ATRO,"MCKENNA, ROBERT J",Director,True,Option,sell,4487.0,9.28,41639.36
+2014-03-05,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Cl B Stk,buy,4487.0,9.28,41639.36
+2014-03-05,ATRO,"MCKENNA, ROBERT J",Director,True,Option,sell,5000.0,7.07,35350.0
+2014-03-05,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,$.01 PV Com Stk,sell,3900.0,69.21,269919.0
+2014-03-05,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,buy,5000.0,7.07,35350.0
+2014-03-05,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,sell,2520.0,71.96,181339.19999999998
+2014-03-06,ATRO,"BOUSHIE, RAYMOND W",Director,True,$.01 PV Com Stk,sell,300.0,71.57,21470.999999999996
+2014-03-06,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,$.01 PV Com Stk,sell,6100.0,69.68,425048.00000000006
+2014-03-10,ATRO,"BOUSHIE, RAYMOND W",Director,True,$.01 PV Com Stk,sell,7968.0,69.05,550190.4
+2014-03-21,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,sell,1712.0,20.98,35917.76
+2014-03-21,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,sell,1989.0,5.19,10322.910000000002
+2014-04-01,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Common Stock,sell,6000.0,63.1531,378918.60000000003
+2014-04-03,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,sell,10400.0,2.68,27872.0
+2014-04-03,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Common Stock,sell,844.0,62.66,52885.03999999999
+2014-04-03,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Class B Stock,buy,9334.0,2.68,25015.120000000003
+2014-04-03,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Common Stock,buy,10400.0,2.68,27872.0
+2014-04-03,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,sell,9334.0,2.68,25015.120000000003
+2014-05-01,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Common Stock,sell,6000.0,57.02,342120.0
+2014-05-13,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Com Stk,sell,2000.0,55.0,110000.0
+2014-05-27,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,sell,9064.0,2.68,24291.52
+2014-05-27,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,OPTION,sell,10100.0,2.68,27068.0
+2014-05-27,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,$.01 PV CLASS B STOCK,buy,9064.0,2.68,24291.52
+2014-05-27,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,$.01 PV COMMON STOCK,sell,925.0,55.53,51365.25
+2014-05-27,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,$.01 PV COMMON STOCK,buy,10100.0,2.68,27068.0
+2014-06-02,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,sell,13600.0,3.43,46648.0
+2014-06-02,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Class B Stock,buy,13463.0,3.43,46178.090000000004
+2014-06-02,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,sell,13463.0,3.43,46178.090000000004
+2014-06-02,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Common Stock,sell,3000.0,53.92,161760.0
+2014-06-02,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,buy,13600.0,3.43,46648.0
+2014-07-08,ATRO,"BURNEY, DAVID C","VP-FINANCE, TREASURER",True,$.01 PV COMMON STOCK,sell,4000.0,55.63,222520.0
+2014-07-16,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Common Stock,sell,267.0,54.02,14423.34
+2014-07-16,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,sell,4200.0,3.43,14406.0
+2014-07-16,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Common Stock,sell,3000.0,54.4,163200.0
+2014-07-16,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Common Stock,buy,4200.0,3.43,14406.0
+2014-08-06,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV COMMON STOCK,sell,4000.0,58.08,232320.0
+2014-08-13,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,sell,10534.0,63.12,664906.08
+2014-08-26,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,sell,3000.0,24.99,74970.0
+2014-08-26,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,$.01 PV Com Stk,buy,30000.0,11.18,335400.0
+2014-08-26,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,$.01 PV Cl B Stk,buy,18916.0,9.62,181971.91999999998
+2014-08-26,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,sell,2072.0,4.88,10111.36
+2014-08-26,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,sell,1296.0,14.2,18403.2
+2014-08-26,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,sell,600.0,23.08,13847.999999999998
+2014-08-26,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,sell,2590.0,5.82,15073.800000000001
+2014-08-26,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,sell,5000.0,7.07,35350.0
+2014-08-26,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV COMMON STOCK,sell,3200.0,63.5235,203275.19999999998
+2014-08-26,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,sell,2500.0,10.08,25200.0
+2014-08-26,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,sell,2500.0,14.2,35500.0
+2014-08-26,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,sell,5000.0,5.82,29100.0
+2014-08-26,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,sell,5000.0,9.28,46400.0
+2014-08-26,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,sell,4000.0,4.88,19520.0
+2014-08-26,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,sell,4487.0,7.07,31723.09
+2014-08-26,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,sell,1140.0,24.99,28488.6
+2014-08-26,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,sell,2244.0,10.08,22619.52
+2014-08-26,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,sell,3000.0,23.08,69240.0
+2014-08-26,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,sell,4487.0,9.28,41639.36
+2014-09-02,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Common Stock,sell,3000.0,63.73,191190.0
+2014-09-08,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,$.01 PV Com Stk,sell,13116.0,55.14,723216.24
+2014-09-09,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,$.01 PV Com Stk,sell,5031.0,55.3,278214.3
+2014-09-09,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV COMMON STOCK,sell,4000.0,54.3,217200.0
+2014-09-10,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,$.01 PV Com Stk,sell,27428.0,54.16,1485500.48
+2014-09-11,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,$.01 PV Com Stk,sell,3341.0,55.02,183821.82
+2014-10-03,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV CLASS B STOCK,buy,222.0,29.3,6504.6
+2014-10-03,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV COMMON STOCK,buy,503.0,29.3,14737.9
+2014-10-03,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,buy,503.0,29.3,14737.9
+2014-10-03,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Common Stock,buy,503.0,29.3,14737.9
+2014-10-03,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Class B Stock,buy,222.0,29.3,6504.6
+2014-10-03,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Class B Stock,buy,222.0,29.3,6504.6
+2014-10-07,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV COMMON STOCK,sell,4000.0,43.27,173080.0
+2014-11-03,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Common Stock,sell,3000.0,49.8938,149681.4
+2014-11-07,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Com Stk,sell,5000.0,52.6,263000.0
+2014-11-11,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV COMMON STOCK,sell,4000.0,53.29,213160.0
+2014-11-19,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,buy,11200.0,4.32,48384.0
+2014-11-19,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,sell,14302.0,4.32,61784.64000000001
+2014-11-19,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Class B Stock,buy,14302.0,4.32,61784.64000000001
+2014-11-19,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,sell,11200.0,4.32,48384.0
+2014-12-09,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV COMMON STOCK,sell,4000.0,45.92,183680.0
+2014-12-12,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,sell,17682.0,2.24,39607.68
+2014-12-12,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,sell,22203.0,46.89,1041098.67
+2014-12-12,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,buy,17682.0,2.24,39607.68
+2014-12-12,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,sell,38924.0,2.24,87189.76000000001
+2014-12-12,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,sell,25317.0,46.89,1187114.1300000001
+2014-12-12,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV CLASS B STOCK,buy,38924.0,2.24,87189.76000000001
+2014-12-23,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV CLASS B STOCK,buy,17963.0,2.86,51374.18
+2014-12-23,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,sell,8450.0,2.86,24167.0
+2014-12-23,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,buy,8450.0,2.86,24167.0
+2014-12-23,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,sell,9079.0,51.06,463573.74000000005
+2015-01-02,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,sell,7790.0,4.32,33652.8
+2015-01-02,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,sell,10334.0,2.86,29555.239999999998
+2015-01-02,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Class B Stock,buy,10334.0,2.86,29555.239999999998
+2015-01-02,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Common Stock,sell,1856.0,55.27,102581.12000000001
+2015-01-02,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Common Stock,buy,4550.0,2.86,13013.0
+2015-01-02,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,sell,6100.0,4.32,26352.0
+2015-01-02,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,sell,4550.0,2.86,13013.0
+2015-01-02,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Class B Stock,buy,7790.0,4.32,33652.8
+2015-01-02,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Common Stock,buy,6100.0,4.32,26352.0
+2015-01-06,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Common Stock,sell,3000.0,54.38,163140.0
+2015-02-02,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Common Stock,sell,3000.0,54.43,163290.0
+2015-02-04,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Cl B Stk,buy,5108.0,2.87,14659.960000000001
+2015-02-04,ATRO,"DRENNING, JOHN B",Director,True,Option,sell,4000.0,2.87,11480.0
+2015-02-04,ATRO,"BRADY, ROBERT T",Director,True,Option,sell,5108.0,2.87,14659.960000000001
+2015-02-04,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Com Stk,buy,4000.0,2.87,11480.0
+2015-02-04,ATRO,"BRADY, ROBERT T",Director,True,Option,sell,4000.0,2.87,11480.0
+2015-02-04,ATRO,"DRENNING, JOHN B",Director,True,Option,sell,5108.0,2.87,14659.960000000001
+2015-02-18,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV COMMON STOCK,buy,6900.0,4.32,29808.000000000004
+2015-02-18,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,OPTION,sell,11174.0,2.86,31957.64
+2015-02-18,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,OPTION,sell,8811.0,4.32,38063.520000000004
+2015-02-18,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,OPTION,sell,6900.0,4.32,29808.000000000004
+2015-02-18,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV CLASS B STOCK,buy,11174.0,2.86,31957.64
+2015-02-18,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV COMMON STOCK,buy,8750.0,2.86,25025.0
+2015-02-18,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,OPTION,sell,8750.0,2.86,25025.0
+2015-02-18,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV CLASS B STOCK,buy,8811.0,4.32,38063.520000000004
+2015-03-02,ATRO,"BOUSHIE, RAYMOND W",Director,True,Option,sell,4108.0,4.85,19923.8
+2015-03-02,ATRO,"BOUSHIE, RAYMOND W",Director,True,$.01 PV CLASS B STOCK,buy,4108.0,4.85,19923.8
+2015-03-02,ATRO,"BOUSHIE, RAYMOND W",Director,True,$.01 PV CLASS B STOCK,buy,3286.0,4.06,13341.159999999998
+2015-03-02,ATRO,"BOUSHIE, RAYMOND W",Director,True,Option,sell,4000.0,4.06,16239.999999999998
+2015-03-02,ATRO,"BOUSHIE, RAYMOND W",Director,True,$.01 PV Com Stk,buy,5000.0,4.85,24250.0
+2015-03-02,ATRO,"BOUSHIE, RAYMOND W",Director,True,$.01 PV Com Stk,buy,4000.0,4.06,16239.999999999998
+2015-03-02,ATRO,"BOUSHIE, RAYMOND W",Director,True,Option,sell,3286.0,4.06,13341.159999999998
+2015-03-02,ATRO,"BOUSHIE, RAYMOND W",Director,True,Option,sell,5000.0,4.85,24250.0
+2015-03-02,ATRO,"BOUSHIE, RAYMOND W",Director,True,$.01 PV Com Stk,sell,1039.0,70.99,73758.61
+2015-03-11,ATRO,"BOUSHIE, RAYMOND W",Director,True,$.01 PV Com Stk,sell,3000.0,71.0,213000.0
+2015-03-12,ATRO,"BOUSHIE, RAYMOND W",Director,True,$.01 PV Com Stk,sell,8000.0,74.282,594256.0
+2015-03-18,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Common Stock,sell,4550.0,73.38,333879.0
+2015-03-19,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,$.01 PV Com Stk,sell,25000.0,73.98,1849500.0
+2015-06-10,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Common Stock,sell,3100.0,70.68,219108.00000000003
+2015-06-26,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,sell,5000.0,71.53,357650.0
+2015-07-10,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,sell,5000.0,68.69,343450.0
+2015-07-24,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,sell,2000.0,65.98,131960.0
+2015-08-27,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Common Stock,sell,6000.0,51.71,310260.0
+2015-09-30,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Common Stock,buy,541.0,39.22,21218.02
+2015-09-30,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,buy,541.0,39.22,21218.02
+2015-09-30,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV COMMON STOCK,buy,541.0,39.22,21218.02
+2015-11-10,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,sell,525.0,47.0,24675.0
+2015-11-30,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Common Stock,sell,6000.0,38.52,231120.00000000003
+2015-12-11,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,sell,16841.0,36.04,606949.64
+2015-12-11,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,sell,30049.0,3.75,112683.75
+2015-12-11,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,buy,13484.0,3.75,50565.0
+2015-12-11,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV CLASS B STOCK,buy,30049.0,3.75,112683.75
+2015-12-11,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,sell,13484.0,3.75,50565.0
+2015-12-14,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV COMMON STOCK,sell,15000.0,37.02,555300.0
+2015-12-15,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Com Stk,sell,6000.0,38.0,228000.0
+2016-02-15,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,sell,4030.0,6.63,26718.899999999998
+2016-02-17,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV COMMON STOCK,buy,4610.0,6.63,30564.3
+2016-02-17,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,OPTION,sell,7462.0,6.63,49473.06
+2016-02-17,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,OPTION,sell,4610.0,6.63,30564.3
+2016-02-17,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV CLASS B STOCK,buy,7462.0,6.63,49473.06
+2016-02-26,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,4000.0,30.32,121280.0
+2016-02-26,ATRO,"BOUSHIE, RAYMOND W",Director,True,Option,buy,4000.0,30.32,121280.0
+2016-02-26,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,buy,4000.0,30.32,121280.0
+2016-02-26,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,4000.0,30.32,121280.0
+2016-02-26,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,4000.0,30.32,121280.0
+2016-03-01,ATRO,"MCKENNA, ROBERT J",Director,True,Option,sell,4047.0,7.3,29543.1
+2016-03-01,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Cl B Stk,buy,4379.0,3.53,15457.869999999999
+2016-03-01,ATRO,"MCKENNA, ROBERT J",Director,True,Option,sell,2500.0,7.3,18250.0
+2016-03-01,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Cl B Stk,buy,5474.0,4.22,23100.28
+2016-03-01,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,buy,5000.0,4.22,21100.0
+2016-03-01,ATRO,"MCKENNA, ROBERT J",Director,True,Option,sell,4000.0,3.53,14120.0
+2016-03-01,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Cl B Stk,buy,4047.0,7.3,29543.1
+2016-03-01,ATRO,"MCKENNA, ROBERT J",Director,True,Option,sell,5000.0,4.22,21100.0
+2016-03-01,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,buy,2500.0,7.3,18250.0
+2016-03-01,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,buy,4000.0,3.53,14120.0
+2016-03-01,ATRO,"MCKENNA, ROBERT J",Director,True,Option,sell,5474.0,4.22,23100.28
+2016-03-01,ATRO,"MCKENNA, ROBERT J",Director,True,Option,sell,4379.0,3.53,15457.869999999999
+2016-03-03,ATRO,"DRENNING, JOHN B",Director,True,Option,sell,8092.0,5.12,41431.04
+2016-03-03,ATRO,"BRADY, ROBERT T",Director,True,Option,sell,5000.0,5.12,25600.0
+2016-03-03,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Com Stk,buy,5000.0,5.12,25600.0
+2016-03-03,ATRO,"DRENNING, JOHN B",Director,True,Option,sell,5000.0,5.12,25600.0
+2016-03-03,ATRO,"BRADY, ROBERT T",Director,True,Option,sell,8092.0,5.12,41431.04
+2016-03-03,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Com Stk,sell,1884.0,35.59,67051.56000000001
+2016-03-03,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Com Stk,buy,5000.0,5.12,25600.0
+2016-03-03,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Cl B Stk,buy,8092.0,5.12,41431.04
+2016-03-03,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Com Stk,sell,1884.0,35.59,67051.56000000001
+2016-03-03,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Cl B Stk,buy,8092.0,5.12,41431.04
+2016-03-03,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Common Stock,sell,4030.0,35.39,142621.7
+2016-05-18,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Com Stk,buy,4500.0,35.399,159295.5
+2016-05-18,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Com Stk,buy,4500.0,35.39,159255.0
+2016-06-01,ATRO,"KRAMER, JAMES S",Executive Vice President,True,$.01 PV Common Stock,sell,3000.0,38.12,114359.99999999999
+2016-08-15,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Com Stk,sell,5000.0,43.47,217350.0
+2016-09-30,ATRO,"KRAMER, JAMES S",Executive Vice President,True,$.01 PV Common Stock,buy,641.0,28.82,18473.62
+2016-09-30,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV COMMON STOCK,buy,641.0,28.82,18473.62
+2016-09-30,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV CLASS B STOCK,buy,97.0,28.82,2795.54
+2016-09-30,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,buy,641.0,28.82,18473.62
+2016-09-30,ATRO,"HEDGES, NANCY L",Principal Accounting Officer,True,$.01 PV Common Stock,buy,641.0,28.82,18473.62
+2016-09-30,ATRO,"HEDGES, NANCY L",Principal Accounting Officer,True,$.01 PV Class B Stock,buy,97.0,28.82,2795.54
+2016-09-30,ATRO,"KRAMER, JAMES S",Executive Vice President,True,$.01 PV Class B Stock,buy,97.0,28.82,2795.54
+2016-09-30,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Class B Stock,buy,97.0,28.82,2795.54
+2016-11-14,ATRO,"KRAMER, JAMES S",Executive Vice President,True,$.01 PV Common Stock,sell,1238.0,34.91,43218.579999999994
+2016-11-14,ATRO,"KRAMER, JAMES S",Executive Vice President,True,Option,sell,7500.0,5.76,43200.0
+2016-11-14,ATRO,"KRAMER, JAMES S",Executive Vice President,True,$.01 PV Class B Stock,buy,7500.0,5.76,43200.0
+2016-11-22,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,sell,23523.0,5.76,135492.47999999998
+2016-11-22,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV CLASS B STOCK,buy,23523.0,5.76,135492.47999999998
+2016-11-22,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,sell,9788.0,5.76,56378.88
+2016-11-22,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,sell,4561.0,36.71,167434.31
+2016-11-22,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,sell,5227.0,36.71,191883.17
+2016-11-22,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,buy,9788.0,5.76,56378.88
+2016-11-22,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV CLASS B STOCK,sell,5731.0,36.71,210385.01
+2016-12-05,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,sell,1000.0,37.7302,37730.200000000004
+2016-12-06,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Class B Stock,buy,12168.0,5.76,70087.68
+2016-12-06,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,buy,6050.0,5.76,34848.0
+2016-12-06,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,sell,12168.0,5.76,70087.68
+2016-12-06,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,sell,6050.0,5.76,34848.0
+2016-12-14,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,Option,buy,4370.0,36.52,159592.40000000002
+2016-12-14,ATRO,"KRAMER, JAMES S",Executive Vice President,True,Option,buy,3670.0,36.52,134028.40000000002
+2016-12-14,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,buy,4820.0,36.52,176026.40000000002
+2016-12-14,ATRO,"HEDGES, NANCY L",Principal Accounting Officer,True,Option,buy,1520.0,36.52,55510.4
+2016-12-14,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,Option,buy,14460.0,36.52,528079.2000000001
+2016-12-16,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,sell,1000.0,37.02,37020.0
+2017-02-21,ATRO,"BRADY, ROBERT T",Director,True,Option,sell,10056.0,5.84,58727.04
+2017-02-21,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Cl B Stk,buy,10056.0,5.84,58727.04
+2017-02-21,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Com Stk,sell,2582.0,34.06,87942.92000000001
+2017-02-21,ATRO,"DRENNING, JOHN B",Director,True,Option,sell,5000.0,5.84,29200.0
+2017-02-21,ATRO,"DRENNING, JOHN B",Director,True,Option,sell,10056.0,5.84,58727.04
+2017-02-21,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Com Stk,buy,5000.0,5.84,29200.0
+2017-02-21,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Cl B Stk,buy,10056.0,5.84,58727.04
+2017-02-21,ATRO,"BRADY, ROBERT T",Director,True,Option,sell,5000.0,5.84,29200.0
+2017-02-21,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Com Stk,sell,2582.0,34.06,87942.92000000001
+2017-02-21,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Com Stk,buy,5000.0,5.84,29200.0
+2017-03-07,ATRO,"BOUSHIE, RAYMOND W",Director,True,Option,buy,4000.0,32.77,131080.0
+2017-03-07,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,4000.0,32.77,131080.0
+2017-03-07,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,4000.0,32.77,131080.0
+2017-03-07,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,buy,4000.0,32.77,131080.0
+2017-03-07,ATRO,"JOHNSON, WARREN C",Director,True,Option,buy,4000.0,32.77,131080.0
+2017-03-07,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,4000.0,32.77,131080.0
+2017-03-07,ATRO,"FRISBY, JEFFRY D",Director,True,Option,buy,4000.0,32.77,131080.0
+2017-03-07,ATRO,"KIM, NEIL Y.",Director,True,Option,buy,4000.0,32.77,131080.0
+2017-03-21,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,buy,3000.0,15.75,47250.0
+2017-03-21,ATRO,"MCKENNA, ROBERT J",Director,True,Option,sell,3000.0,14.55,43650.0
+2017-03-21,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Cl B Stk,buy,3523.0,8.95,31530.85
+2017-03-21,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Cl B Stk,buy,3570.0,15.75,56227.5
+2017-03-21,ATRO,"MCKENNA, ROBERT J",Director,True,Option,sell,2500.0,8.95,22375.0
+2017-03-21,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,buy,3000.0,14.55,43650.0
+2017-03-21,ATRO,"MCKENNA, ROBERT J",Director,True,Option,sell,3570.0,15.75,56227.5
+2017-03-21,ATRO,"MCKENNA, ROBERT J",Director,True,Option,sell,2713.0,14.55,39474.15
+2017-03-21,ATRO,"MCKENNA, ROBERT J",Director,True,Option,sell,3000.0,15.75,47250.0
+2017-03-21,ATRO,"MCKENNA, ROBERT J",Director,True,Option,sell,3523.0,8.95,31530.85
+2017-03-21,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Cl B Stk,buy,2713.0,14.55,39474.15
+2017-03-21,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,buy,2500.0,8.95,22375.0
+2017-05-15,ATRO,"KRAMER, JAMES S",Executive Vice President,True,Option,sell,4043.0,13.22,53448.46
+2017-05-15,ATRO,"KRAMER, JAMES S",Executive Vice President,True,Option,sell,2010.0,13.22,26572.2
+2017-05-15,ATRO,"KRAMER, JAMES S",Executive Vice President,True,$.01 PV Common Stock,sell,2010.0,30.68,61666.8
+2017-05-15,ATRO,"KRAMER, JAMES S",Executive Vice President,True,$.01 PV Common Stock,buy,2010.0,13.22,26572.2
+2017-05-15,ATRO,"KRAMER, JAMES S",Executive Vice President,True,$.01 PV Class B Stock,buy,4043.0,13.22,53448.46
+2017-05-15,ATRO,"KRAMER, JAMES S",Executive Vice President,True,$.01 PV Class B Stock,sell,598.0,30.68,18346.64
+2017-11-08,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,sell,2640.0,37.56,99158.40000000001
+2017-11-08,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,buy,2640.0,13.22,34900.8
+2017-11-08,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Class B Stock,buy,5310.0,13.22,70198.2
+2017-11-08,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Class B Stock,sell,158.0,37.56,5934.4800000000005
+2017-11-08,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,sell,5310.0,13.22,70198.2
+2017-11-08,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,sell,2640.0,13.22,34900.8
+2017-11-21,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,sell,45000.0,39.0,1755000.0
+2017-12-07,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,OPTION,sell,4445.0,13.22,58762.9
+2017-12-07,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV COMMON STOCK,sell,2006.0,43.87,88003.22
+2017-12-07,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV CLASS B STOCK,buy,4445.0,13.22,58762.9
+2017-12-07,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,OPTION,sell,2210.0,13.22,29216.2
+2017-12-07,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV COMMON STOCK,buy,2210.0,13.22,29216.2
+2017-12-12,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,Option,buy,6350.0,40.95,260032.50000000003
+2017-12-12,ATRO,"KRAMER, JAMES S",Executive Vice President,True,Option,buy,5340.0,40.95,218673.00000000003
+2017-12-12,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,buy,7010.0,40.95,287059.5
+2017-12-12,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,Option,buy,26300.0,40.95,1076985.0
+2017-12-12,ATRO,"MULATO, JAMES",Pres Astronics Test Systems,False,Option,buy,7950.0,40.95,325552.5
+2017-12-14,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV CLASS B STOCK,sell,4357.0,40.23,175282.11
+2017-12-14,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,sell,4968.0,13.22,65676.96
+2017-12-14,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,sell,4968.0,40.23,199862.63999999998
+2017-12-14,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV CLASS B STOCK,buy,12431.0,13.22,164337.82
+2017-12-14,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,sell,12431.0,13.22,164337.82
+2017-12-14,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,buy,4968.0,13.22,65676.96
+2018-01-03,ATRO,"KRAMER, JAMES S",Executive Vice President,True,$.01 PV Common Stock,buy,11800.0,3.27,38586.0
+2018-01-03,ATRO,"KRAMER, JAMES S",Executive Vice President,True,$.01 PV Class B Stock,buy,16627.0,3.27,54370.29
+2018-01-03,ATRO,"KRAMER, JAMES S",Executive Vice President,True,Option,sell,11800.0,3.27,38586.0
+2018-01-03,ATRO,"KRAMER, JAMES S",Executive Vice President,True,Option,sell,16627.0,3.27,54370.29
+2018-01-19,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,sell,2000.0,44.16,88320.0
+2018-02-02,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,sell,2000.0,43.48,86960.0
+2018-02-02,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,sell,2000.0,43.48,86960.0
+2018-02-09,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,sell,2000.0,38.99,77980.0
+2018-02-16,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,sell,2000.0,42.06,84120.0
+2018-02-16,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,sell,2000.0,41.82,83640.0
+2018-02-23,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,sell,2000.0,40.8,81600.0
+2018-03-02,ATRO,"KIM, NEIL Y.",Director,True,Option,buy,4000.0,39.15,156600.0
+2018-03-02,ATRO,"DRENNING, JOHN B",Director,True,Option,buy,4000.0,39.15,156600.0
+2018-03-02,ATRO,"MCKENNA, ROBERT J",Director,True,Option,buy,4000.0,39.15,156600.0
+2018-03-02,ATRO,"FRISBY, JEFFRY D",Director,True,Option,buy,4000.0,39.15,156600.0
+2018-03-02,ATRO,"KEANE, KEVIN T","Director, 10% Owner",True,Option,buy,4000.0,39.15,156600.0
+2018-03-02,ATRO,"BOUSHIE, RAYMOND W",Director,True,Option,buy,4000.0,39.15,156600.0
+2018-03-02,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,sell,2000.0,38.52,77040.0
+2018-03-02,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,sell,2000.0,39.6584,79316.8
+2018-03-02,ATRO,"JOHNSON, WARREN C",Director,True,Option,buy,4000.0,39.15,156600.0
+2018-03-02,ATRO,"BRADY, ROBERT T",Director,True,Option,buy,4000.0,39.15,156600.0
+2018-03-09,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,sell,2000.0,40.61,81220.0
+2018-03-13,ATRO,"DRENNING, JOHN B",Director,True,Option,sell,5029.0,6.35,31934.149999999998
+2018-03-13,ATRO,"DRENNING, JOHN B",Director,True,Option,sell,2500.0,6.35,15875.0
+2018-03-13,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Com Stk,buy,2500.0,6.35,15875.0
+2018-03-13,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Cl B Stk,buy,5029.0,6.35,31934.149999999998
+2018-03-13,ATRO,"DRENNING, JOHN B",Director,True,$.01 PV Com Stk,sell,1178.0,40.58,47803.24
+2018-03-15,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Com Stk,buy,2500.0,6.35,15875.0
+2018-03-15,ATRO,"BRADY, ROBERT T",Director,True,Option,sell,2500.0,6.35,15875.0
+2018-03-15,ATRO,"BRADY, ROBERT T",Director,True,Option,sell,5029.0,6.35,31934.149999999998
+2018-03-15,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Cl B Stk,buy,5029.0,6.35,31934.149999999998
+2018-03-16,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,sell,2000.0,38.91,77820.0
+2018-03-16,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,sell,2000.0,38.88,77760.0
+2018-03-23,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,sell,2000.0,36.1,72200.0
+2018-04-02,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,sell,2000.0,37.25,74500.0
+2018-04-02,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,sell,2000.0,36.66,73320.0
+2018-04-06,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,sell,2000.0,36.34,72680.0
+2018-04-13,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,sell,2000.0,36.42,72840.0
+2018-04-13,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,sell,2000.0,36.7,73400.0
+2018-04-20,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Com Stk,buy,4000.0,26.37,105480.0
+2018-04-20,ATRO,"MCKENNA, ROBERT J",Director,True,Option,sell,4000.0,26.37,105480.0
+2018-04-20,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,sell,2000.0,38.8,77600.0
+2018-04-20,ATRO,"MCKENNA, ROBERT J",Director,True,$.01 PV Cl B Stk,buy,600.0,26.37,15822.0
+2018-04-20,ATRO,"MCKENNA, ROBERT J",Director,True,Option,sell,600.0,26.37,15822.0
+2018-04-27,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,sell,2000.0,38.34,76680.0
+2018-05-11,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,sell,522.0,33.85,17669.7
+2018-08-03,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,sell,47322.0,45.0,2129490.0
+2018-08-22,ATRO,"KRAMER, JAMES S",Executive Vice President,True,$.01 PV Common Stock,sell,11800.0,46.02,543036.0
+2018-09-30,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,buy,829.0,25.63,21247.27
+2018-09-30,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV COMMON STOCK,buy,829.0,25.63,21247.27
+2018-09-30,ATRO,"HEDGES, NANCY L",Principal Accounting Officer,True,$.01 PV Common Stock,buy,829.0,25.63,21247.27
+2018-09-30,ATRO,"MULATO, JAMES",Pres Astronics Test Systems,False,$.01 PV Common Stock,buy,829.0,25.63,21247.27
+2018-09-30,ATRO,"KRAMER, JAMES S",Executive Vice President,True,$.01 PV Common Stock,buy,829.0,25.63,21247.27
+2018-11-21,ATRO,"KRAMER, JAMES S",Executive Vice President,True,$.01 PV Common Stock,sell,3200.0,30.0581,96185.92
+2018-11-30,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,sell,16880.0,2.85,48108.0
+2018-11-30,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,buy,16880.0,2.85,48108.0
+2018-11-30,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,sell,5794.0,31.72,183785.68
+2018-11-30,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,sell,29885.0,2.85,85172.25
+2018-11-30,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Class B Stock,buy,29885.0,2.85,85172.25
+2018-12-06,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV COMMON STOCK,sell,3144.0,31.87,100199.28
+2018-12-06,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV CLASS B STOCK,buy,21617.0,2.85,61608.450000000004
+2018-12-06,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,OPTION,sell,12690.0,2.85,36166.5
+2018-12-06,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,buy,35451.0,2.85,101035.35
+2018-12-06,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,sell,64644.0,2.85,184235.4
+2018-12-06,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV COMMON STOCK,buy,12690.0,2.85,36166.5
+2018-12-06,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV CLASS B STOCK,sell,5804.0,31.87,184973.48
+2018-12-06,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV CLASS B STOCK,buy,64644.0,2.85,184235.4
+2018-12-06,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,sell,35451.0,31.87,1129823.37
+2018-12-06,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,OPTION,sell,4586.0,2.85,13070.1
+2018-12-06,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,sell,35451.0,2.85,101035.35
+2018-12-13,ATRO,"KRAMER, JAMES S",Executive Vice President,True,Option,buy,7060.0,31.57,222884.2
+2018-12-13,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,Option,buy,34790.0,31.57,1098320.3
+2018-12-13,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,buy,9280.0,31.57,292969.6
+2018-12-13,ATRO,"MULATO, JAMES",Pres Astronics Test Systems,False,Option,buy,11570.0,31.57,365264.9
+2018-12-13,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,Option,buy,8410.0,31.57,265503.7
+2019-02-22,ATRO,"KRAMER, JAMES S",Executive Vice President,True,$.01 PV Common Stock,sell,2607.0,35.47,92470.29
+2019-02-22,ATRO,"KRAMER, JAMES S",Executive Vice President,True,$.01 PV Class B Stock,buy,20803.0,2.84,59080.52
+2019-02-22,ATRO,"KRAMER, JAMES S",Executive Vice President,True,$.01 PV Common Stock,buy,11750.0,2.84,33370.0
+2019-02-22,ATRO,"KRAMER, JAMES S",Executive Vice President,True,Option,sell,11750.0,2.84,33370.0
+2019-02-22,ATRO,"KRAMER, JAMES S",Executive Vice President,True,Option,sell,20803.0,2.84,59080.52
+2019-03-05,ATRO,"BRADY, ROBERT T",Director,True,Option,sell,4000.0,2.67,10680.0
+2019-03-05,ATRO,"BRADY, ROBERT T",Director,True,Option,sell,7081.0,2.67,18906.27
+2019-03-05,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Cl B Stk,buy,7081.0,2.67,18906.27
+2019-03-05,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Com Stk,buy,4000.0,2.67,10680.0
+2019-05-24,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,sell,2000.0,41.43,82860.0
+2019-06-07,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,sell,2000.0,43.78,87560.0
+2019-06-21,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,sell,2000.0,38.71,77420.0
+2019-07-05,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,sell,3000.0,40.43,121290.0
+2019-07-19,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,sell,2000.0,38.09,76180.0
+2019-08-02,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,sell,2000.0,35.78,71560.0
+2019-08-06,ATRO,"HEDGES, NANCY L",Principal Accounting Officer,True,$.01 PV Common Stock,buy,100.0,27.46,2746.0
+2019-08-15,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV COMMON STOCK,sell,4000.0,26.2,104800.0
+2019-11-08,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,sell,1000.0,30.94,30940.0
+2019-11-26,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Class B Stock,buy,29814.0,2.84,84671.76
+2019-11-26,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,sell,29814.0,2.84,84671.76
+2019-11-26,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,sell,6530.0,29.6,193288.0
+2019-11-26,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,sell,16840.0,2.84,47825.6
+2019-11-26,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,buy,16840.0,2.84,47825.6
+2019-12-03,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV COMMON STOCK,buy,12710.0,2.84,36096.4
+2019-12-03,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,buy,37480.0,2.84,106443.2
+2019-12-03,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV COMMON STOCK,sell,3499.0,28.58,100001.42
+2019-12-03,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV CLASS B STOCK,buy,66355.0,2.84,188448.19999999998
+2019-12-03,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,sell,37480.0,2.84,106443.2
+2019-12-03,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,sell,66355.0,2.84,188448.19999999998
+2019-12-03,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV CLASS B STOCK,sell,6976.0,28.58,199374.08
+2019-12-03,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,OPTION,sell,22502.0,2.84,63905.68
+2019-12-03,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,OPTION,sell,12710.0,2.84,36096.4
+2019-12-03,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV CLASS B STOCK,buy,22502.0,2.84,63905.68
+2019-12-03,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,sell,37480.0,28.58,1071178.4
+2019-12-09,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,buy,13600.0,30.04,408544.0
+2019-12-09,ATRO,"KUEHN, MICHAEL C",Executive Vice President,True,Option,buy,18150.0,30.04,545226.0
+2019-12-09,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,Option,buy,61200.0,30.04,1838448.0
+2019-12-09,ATRO,"MULATO, JAMES",Pres Astronics Test Systems,False,Option,buy,18150.0,30.04,545226.0
+2019-12-09,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,Option,buy,13600.0,30.04,408544.0
+2019-12-09,ATRO,"KRAMER, JAMES S",Executive Vice President,True,Option,buy,13600.0,30.04,408544.0
+2020-03-02,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Cl B Stk,sell,2180.0,20.27,44188.6
+2020-03-02,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Cl B Stk,buy,8852.0,3.19,28237.88
+2020-03-02,ATRO,"BRADY, ROBERT T",Director,True,Option,sell,8852.0,3.19,28237.88
+2020-03-02,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Com Stk,buy,5000.0,3.19,15950.0
+2020-03-02,ATRO,"MULATO, JAMES",Pres Astronics Test Systems,False,$.01 PV Common Stock,buy,600.0,19.77,11862.0
+2020-03-02,ATRO,"BRADY, ROBERT T",Director,True,Option,sell,5000.0,3.19,15950.0
+2020-03-12,ATRO,"MULATO, JAMES",Pres Astronics Test Systems,False,$.01 PV Common Stock,buy,2000.0,13.2,26400.0
+2020-03-12,ATRO,"HEDGES, NANCY L",Principal Accounting Officer,True,$.01 PV Common Stock,buy,725.0,13.6934,9927.715
+2020-05-07,ATRO,"FRISBY, JEFFRY D",Director,True,$.01 PV Com Stk,buy,4100.0,8.0,32800.0
+2020-11-12,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV CLASS B STOCK,buy,26025.0,7.68,199872.0
+2020-11-12,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,sell,26025.0,7.68,199872.0
+2020-11-24,ATRO,"KRAMER, JAMES S",Executive Vice President,True,$.01 PV Common Stock,buy,4350.0,7.68,33408.0
+2020-11-24,ATRO,"KRAMER, JAMES S",Executive Vice President,True,$.01 PV Common Stock,sell,3113.0,12.82,39908.66
+2020-11-24,ATRO,"KRAMER, JAMES S",Executive Vice President,True,$.01 PV Class B Stock,buy,7701.0,7.68,59143.68
+2020-11-24,ATRO,"KRAMER, JAMES S",Executive Vice President,True,Option,sell,7701.0,7.68,59143.68
+2020-11-24,ATRO,"KRAMER, JAMES S",Executive Vice President,True,Option,sell,4350.0,7.68,33408.0
+2020-11-27,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,sell,6500.0,7.68,49920.0
+2020-11-27,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Class B Stock,buy,11508.0,7.68,88381.44
+2020-11-27,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,buy,6500.0,7.68,49920.0
+2020-11-27,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,sell,11508.0,7.68,88381.44
+2020-11-27,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock612,sell,612.0,12.55,7680.6
+2020-12-02,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV CLASS B STOCK,buy,8852.0,7.68,67983.36
+2020-12-02,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV CLASS B STOCK,sell,3850.0,12.02,46277.0
+2020-12-02,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV COMMON STOCK,buy,5000.0,7.68,38400.0
+2020-12-02,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV COMMON STOCK,sell,5000.0,12.02,60100.0
+2020-12-02,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV COMMON STOCK,sell,8850.0,12.02,106377.0
+2020-12-02,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,buy,14700.0,7.68,112896.0
+2020-12-02,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,OPTION,sell,8852.0,7.68,67983.36
+2020-12-02,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,OPTION,sell,5000.0,7.68,38400.0
+2020-12-02,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,sell,14700.0,7.68,112896.0
+2021-01-22,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,buy,20250.0,14.45,292612.5
+2021-01-22,ATRO,"KRAMER, JAMES S",Executive Vice President,True,Option,buy,20250.0,14.45,292612.5
+2021-01-22,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,Option,buy,98900.0,14.45,1429105.0
+2021-01-22,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,Option,buy,20250.0,14.45,292612.5
+2021-01-22,ATRO,"KUEHN, MICHAEL C",Executive Vice President,True,Option,buy,27000.0,14.45,390150.0
+2021-01-22,ATRO,"MULATO, JAMES",Pres Astronics Test Systems,False,Option,buy,27000.0,14.45,390150.0
+2021-02-26,ATRO,"BOUSHIE, RAYMOND W",Director,True,$.01 PV CL B Stk,buy,4426.0,7.78,34434.28
+2021-02-26,ATRO,"BOUSHIE, RAYMOND W",Director,True,Option,sell,4426.0,7.78,34434.28
+2021-02-26,ATRO,"BOUSHIE, RAYMOND W",Director,True,Option,sell,2500.0,7.78,19450.0
+2021-02-26,ATRO,"BOUSHIE, RAYMOND W",Director,True,$.01 PV Com Stk,buy,2500.0,7.78,19450.0
+2021-02-26,ATRO,"BRADY, ROBERT T",Director,True,Option,sell,2500.0,7.78,19450.0
+2021-02-26,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Com Stk,buy,2500.0,7.78,19450.0
+2021-02-26,ATRO,"BRADY, ROBERT T",Director,True,Option,sell,4426.0,7.78,34434.28
+2021-02-26,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Cl B Stk,buy,4426.0,7.78,34434.28
+2021-03-17,ATRO,"HEDGES, NANCY L",Principal Accounting Officer,True,$.01 PV Common Stock,sell,452.0,18.65,8429.8
+2021-03-17,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV COMMON STOCK,sell,495.0,18.65,9231.75
+2021-03-17,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,sell,563.0,18.65,10499.949999999999
+2021-03-17,ATRO,"MULATO, JAMES",Pres Astronics Test Systems,False,$.01 PV Common Stock,sell,742.0,18.65,13838.3
+2021-03-17,ATRO,"KRAMER, JAMES S",Executive Vice President,True,$.01 PV Common Stock,sell,416.0,18.65,7758.4
+2021-03-17,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,sell,411.0,18.65,7665.15
+2021-08-13,ATRO,"HEDGES, NANCY L",Principal Accounting Officer,True,$.01 PV Common Stock,buy,700.0,13.69,9583.0
+2021-09-30,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,buy,3157.0,6.73,21246.61
+2021-09-30,ATRO,"KUEHN, MICHAEL C",Executive Vice President,True,$.01 PV Com Stk,buy,772.0,6.73,5195.56
+2021-09-30,ATRO,"KRAMER, JAMES S",Executive Vice President,True,$.01 PV Common Stock,buy,3157.0,6.73,21246.61
+2021-09-30,ATRO,"HEDGES, NANCY L",Principal Accounting Officer,True,$.01 PV Common Stock,buy,3157.0,6.73,21246.61
+2021-09-30,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV COMMON STOCK,buy,3157.0,6.73,21246.61
+2021-09-30,ATRO,"MULATO, JAMES",Pres Astronics Test Systems,False,$.01 PV Common Stock,buy,3157.0,6.73,21246.61
+2021-12-01,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV CLASS B STOCK,buy,16249.0,13.59,220823.91
+2021-12-09,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,Option,buy,24500.0,11.13,272685.0
+2021-12-09,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,Option,buy,115800.0,11.13,1288854.0
+2021-12-09,ATRO,"MULATO, JAMES",Pres Astronics Test Systems,False,Option,buy,32700.0,11.13,363951.0
+2021-12-09,ATRO,"KUEHN, MICHAEL C",Executive Vice President,True,Option,buy,32700.0,11.13,363951.0
+2021-12-09,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Opton,buy,24500.0,11.13,272685.0
+2021-12-09,ATRO,"KRAMER, JAMES S",Executive Vice President,True,Option,buy,24500.0,11.13,272685.0
+2022-01-28,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,sell,22254.0,9.2,204736.8
+2022-01-28,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,OPTION,sell,18700.0,9.2,172040.0
+2022-01-28,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,buy,18700.0,9.2,172040.0
+2022-01-28,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV CLASS B STOCK,buy,22254.0,9.2,204736.8
+2022-02-28,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Com Stk,sell,2713.0,14.23,38605.99
+2022-02-28,ATRO,"BRADY, ROBERT T",Director,True,.01 PV Cl B Stk,sell,4556.0,14.23,64831.880000000005
+2022-02-28,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Com Stk,buy,3000.0,13.69,41070.0
+2022-02-28,ATRO,"BRADY, ROBERT T",Director,True,.01 PV Cl B Stk,buy,4556.0,13.69,62371.64
+2022-02-28,ATRO,"BRADY, ROBERT T",Director,True,Option,sell,3000.0,13.69,41070.0
+2022-02-28,ATRO,"BRADY, ROBERT T",Director,True,Option,sell,4556.0,13.69,62371.64
+2022-03-10,ATRO,"KRAMER, JAMES S",Executive Vice President,True,$.01 PV Common Stock,sell,1797.0,14.47,26002.59
+2022-03-11,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV COMMON STOCK,sell,87.0,13.18,1146.66
+2022-03-11,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,sell,83.0,13.18,1093.94
+2022-03-11,ATRO,"KRAMER, JAMES S",Executive Vice President,True,$.01 PV Common Stock,sell,274.0,13.18,3611.3199999999997
+2022-03-11,ATRO,"MULATO, JAMES",Pres Astronics Test Systems,False,$.01 PV Common Stock,sell,513.0,13.18,6761.34
+2022-03-11,ATRO,"KUEHN, MICHAEL C",Executive Vice President,True,$.01 PV Com Stk,sell,79.0,13.18,1041.22
+2022-03-11,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV COMMON STOCK,sell,326.0,13.18,4296.68
+2022-03-11,ATRO,"HEDGES, NANCY L",Principal Accounting Officer,True,$.01 PV Common Stock,sell,786.0,13.18,10359.48
+2022-03-11,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,sell,276.0,13.18,3637.68
+2022-03-11,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,sell,90.0,13.18,1186.2
+2022-03-11,ATRO,"KUEHN, MICHAEL C",Executive Vice President,True,$.01 PV Com Stk,sell,640.0,13.18,8435.2
+2022-03-11,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,sell,328.0,13.18,4323.04
+2022-09-06,ATRO,"FRISBY, JEFFRY D",Director,True,$.01 PV Com Stk,buy,216.0,8.5,1836.0
+2022-09-07,ATRO,"FRISBY, JEFFRY D",Director,True,$.01 PV Com Stk,buy,4784.0,8.5,40664.0
+2022-09-09,ATRO,"HEDGES, NANCY L",Principal Accounting Officer,True,$.01 PV Common Stock,buy,2400.0,8.9063,21375.12
+2022-09-15,ATRO,"JOHNSON, WARREN C",Director,True,$.01 PV Com Stk,buy,5700.0,8.65,49305.0
+2022-12-16,ATRO,"KRAMER, JAMES S",Executive Vice President,True,Option,buy,26700.0,9.74,260058.0
+2022-12-16,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,buy,26700.0,9.74,260058.0
+2022-12-16,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,Option,buy,26700.0,9.74,260058.0
+2022-12-16,ATRO,"MULATO, JAMES",Pres Astronics Test Systems,False,Option,buy,35600.0,9.74,346744.0
+2022-12-16,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,Option,buy,125000.0,9.74,1217500.0
+2022-12-16,ATRO,"KUEHN, MICHAEL C",Executive Vice President,True,Option,buy,35600.0,9.74,346744.0
+2023-02-15,ATRO,"BRADY, ROBERT T",Director,True,.01 PV Cl B Stk,buy,3570.0,12.65,45160.5
+2023-02-15,ATRO,"BRADY, ROBERT T",Director,True,Option,sell,3000.0,12.65,37950.0
+2023-02-15,ATRO,"BRADY, ROBERT T",Director,True,01 PV Cl B Stk,sell,3570.0,14.97,53442.9
+2023-02-15,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Com Stk,sell,1982.0,14.97,29670.54
+2023-02-15,ATRO,"BRADY, ROBERT T",Director,True,Option,sell,3570.0,12.65,45160.5
+2023-02-15,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Com Stk,buy,3000.0,12.65,37950.0
+2023-03-10,ATRO,"KUEHN, MICHAEL C",Executive Vice President,True,$.01 PV Com Stk,sell,2245.0,14.47,32485.15
+2023-03-10,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV COMMON STOCK,sell,91.0,14.47,1316.77
+2023-03-10,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV COMMON STOCK,sell,2055.0,14.47,29735.850000000002
+2023-03-10,ATRO,"MULATO, JAMES",Pres Astronics Test Systems,False,$.01 PV Common Stock,sell,1900.0,14.47,27493.0
+2023-03-10,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,sell,90.0,14.47,1302.3
+2023-03-10,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,sell,85.0,14.47,1229.95
+2023-03-10,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,sell,1996.0,14.47,28882.120000000003
+2023-03-10,ATRO,"HEDGES, NANCY L",Principal Accounting Officer,True,$.01 PV Common Stock,sell,1520.0,14.47,21994.4
+2023-03-10,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,sell,1446.0,14.47,20923.620000000003
+2023-03-13,ATRO,"KRAMER, JAMES S",Executive Vice President,True,$.01 PV Common Stock,buy,176.694,12.81,2263.45014
+2023-03-13,ATRO,"HEDGES, NANCY L",Principal Accounting Officer,True,$.01 PV Common Stock,buy,152.262,12.81,1950.47622
+2023-06-06,ATRO,"KEANE, ROBERT S",Director,True,$0.01 PV Common Stock,sell,6500.0,17.0,110500.0
+2023-06-09,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,buy,262.514,17.44,4578.24416
+2023-06-09,ATRO,"HEDGES, NANCY L",Principal Accounting Officer,True,$.01 PV Common Stock,buy,121.04,17.44,2110.9376
+2023-06-09,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV COMMON STOCK,buy,166.003,17.44,2895.0923199999997
+2023-06-09,ATRO,"MULATO, JAMES",Pres Astronics Test Systems,False,$.01 PV Common Stock,buy,171.127,17.44,2984.4548800000002
+2023-06-09,ATRO,"KRAMER, JAMES S",Executive Vice President,True,$.01 PV Common Stock,buy,133.39,17.44,2326.3215999999998
+2023-06-09,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,buy,201.186,17.44,3508.6838400000006
+2023-06-09,ATRO,"KUEHN, MICHAEL C",Executive Vice President,True,$.01 PV Com Stk,buy,154.87,17.44,2700.9328000000005
+2023-08-21,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV COMMON STOCK,buy,269.985,16.77,4527.64845
+2023-08-21,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,buy,242.574,16.99,4121.33226
+2023-08-21,ATRO,"KRAMER, JAMES S",Executive Vice President,True,$.01 PV Common Stock,buy,137.186,16.99,2330.79014
+2023-08-21,ATRO,"KUEHN, MICHAEL C",Executive Vice President,True,$.01 PV Com Stk,buy,186.275,16.99,3164.81225
+2023-08-21,ATRO,"MULATO, JAMES",Pres Astronics Test Systems,False,$.01 PV Common Stock,buy,150.854,16.99,2563.00946
+2023-08-21,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV COMMON STOCK,buy,170.727,16.99,2900.6517299999996
+2023-08-21,ATRO,"HEDGES, NANCY L",Principal Accounting Officer,True,$.01 PV Common Stock,buy,124.485,16.99,2115.00015
+2023-09-29,ATRO,"HEDGES, NANCY L",Principal Accounting Officer,True,$.01 PV Common Stock,buy,2992.0,7.1,21243.2
+2023-09-29,ATRO,"MULATO, JAMES",Pres Astronics Test Systems,False,$.01 PV Common Stock,buy,2992.0,7.1,21243.2
+2023-09-29,ATRO,"KRAMER, JAMES S",Executive Vice President,True,$.01 PV Common Stock,buy,2992.0,7.1,21243.2
+2023-09-29,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Common Stock,buy,2992.0,7.1,21243.2
+2023-09-29,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV COMMON STOCK,buy,2992.0,7.1,21243.2
+2023-09-29,ATRO,"KUEHN, MICHAEL C",Executive Vice President,True,$.01 PV Com Stk,buy,422.0,7.1,2996.2
+2023-11-20,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV Com Stk,buy,187.139,15.5,2900.6545
+2023-11-20,ATRO,"KUEHN, MICHAEL C",Executive Vice President,True,$.01 PV Com Stk,buy,175.013,15.5,2712.7015
+2023-11-20,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Com Stk,buy,150.374,15.5,2330.797
+2023-11-20,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Com Stk,buy,146.015,15.5,2263.2324999999996
+2023-11-20,ATRO,"MULATO, JAMES",Pres Astronics Test Systems,False,$.01 PV Com Stk,buy,192.915,15.5,2990.1825
+2023-12-07,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,Option,buy,8300.0,15.15,125745.0
+2023-12-07,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,Option,buy,8300.0,15.15,125745.0
+2023-12-07,ATRO,"KUEHN, MICHAEL C",Executive Vice President,True,Option,buy,8300.0,15.15,125745.0
+2023-12-07,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,Option,buy,8300.0,15.15,125745.0
+2023-12-07,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,Option,buy,83900.0,15.15,1271085.0
+2023-12-07,ATRO,"MULATO, JAMES",Pres Astronics Test Systems,False,Option,buy,8300.0,15.15,125745.0
+2024-02-29,ATRO,"KUEHN, MICHAEL C",Executive Vice President,True,$.01 PV Com Stk,sell,2209.0,20.16,44533.44
+2024-03-01,ATRO,"KEANE, ROBERT S",Director,True,$.01 PV Com Stk,sell,32594.0,19.09,622219.46
+2024-03-04,ATRO,"KUEHN, MICHAEL C",Executive Vice President,True,$.01 PV Com Stk,buy,69.649,18.9,1316.3661
+2024-03-04,ATRO,"KEANE, ROBERT S",Director,True,$.01 PV Com Stk,sell,1859.0,19.09,35488.31
+2024-03-04,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Com Stk,buy,123.322,18.9,2330.7857999999997
+2024-03-04,ATRO,"KEANE, ROBERT S",Director,True,$.01 PV Com Stk,sell,1074.0,19.08,20491.92
+2024-03-04,ATRO,"HEDGES, NANCY L",Principal Accounting Officer,True,$.01 PV Com Stk,buy,111.905,18.9,2115.0045
+2024-03-04,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV Com Stk,buy,63.389,18.9,1198.0520999999999
+2024-03-04,ATRO,"MULATO, JAMES",Pres Astronics Test Systems,False,$.01 PV Com Stk,buy,71.779,18.9,1356.6230999999998
+2024-03-08,ATRO,"HEDGES, NANCY L",Principal Accounting Officer,True,$.01 PV Com Stk,sell,1692.0,18.9,31978.8
+2024-03-08,ATRO,"KUEHN, MICHAEL C",Executive Vice President,True,$.01 PV Com Stk,sell,137.0,18.9,2589.2999999999997
+2024-03-08,ATRO,"HEDGES, NANCY L",Principal Accounting Officer,True,$.01 PV Com Stk,sell,53.0,18.9,1001.6999999999999
+2024-03-08,ATRO,"KUEHN, MICHAEL C",Executive Vice President,True,$.01 PV Com Stk,sell,2226.0,18.9,42071.399999999994
+2024-03-08,ATRO,"MULATO, JAMES",Pres Astronics Test Systems,False,$.01 PV Com Stk,sell,1909.0,18.9,36080.1
+2024-03-08,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Com Stk,sell,63.0,18.9,1190.6999999999998
+2024-03-08,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Com Stk,sell,1994.0,18.9,37686.6
+2024-03-08,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV Com Stk,sell,111.0,18.9,2097.8999999999996
+2024-03-08,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Com Stk,sell,2532.0,18.9,47854.799999999996
+2024-03-08,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Com Stk,sell,72.0,18.9,1360.8
+2024-03-08,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV Com Stk,sell,3063.0,18.9,57890.7
+2024-03-08,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV Com Stk,sell,2242.0,18.9,42373.799999999996
+2024-03-08,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV Com Stk,sell,85.0,18.9,1606.4999999999998
+2024-03-14,ATRO,"KUEHN, MICHAEL C",Executive Vice President,True,$.01 PV Com Stk,sell,7074.0,17.72,125351.28
+2024-05-13,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Com Stk,buy,129.557,18.89,2447.33173
+2024-05-13,ATRO,"MULATO, JAMES",Pres Astronics Test Systems,False,$.01 PV Com Stk,buy,165.078,18.89,3118.32342
+2024-05-13,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV Com Stk,buy,157.251,18.89,2970.47139
+2024-05-13,ATRO,"HEDGES, NANCY L",Principal Accounting Officer,True,$.01 PV Com Stk,buy,117.522,18.89,2219.99058
+2024-05-13,ATRO,"KUEHN, MICHAEL C",Executive Vice President,True,$.01 PV Com Stk,buy,150.786,18.89,2848.34754
+2024-05-13,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV Com Stk,buy,252.634,18.89,4772.25626
+2024-05-13,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Com Stk,buy,194.915,18.89,3681.9443499999998
+2024-09-30,ATRO,"KRAMER, JAMES S","VP Luminescent Systems, Inc.",True,$.01 PV Com Stk,buy,1574.0,13.5,21249.0
+2024-09-30,ATRO,"HEDGES, NANCY L",Principal Accounting Officer,True,$.01 PV Com Stk,buy,1574.0,13.5,21249.0
+2024-09-30,ATRO,"MULATO, JAMES",Pres Astronics Test Systems,False,$.01 PV Com Stk,buy,1574.0,13.5,21249.0
+2024-09-30,ATRO,"PEABODY, MARK",VP Astronics Advanced Electron,True,$.01 PV Com Stk,buy,1574.0,13.5,21249.0
+2024-09-30,ATRO,"BURNEY, DAVID C","VP-FINANCE, CFO",True,$.01 PV Com Stk,buy,1574.0,13.5,21249.0
+2024-12-05,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,Option,buy,75800.0,16.55,1254490.0
+2024-12-23,ATRO,"PEABODY, MARK",Executive VP & Pres-Aerospace,True,$.01 PV Com Stk,sell,511.12,15.75,8050.14
+2025-03-07,ATRO,"KEANE, ROBERT S",Director,True,$.01 PV Com Stk,sell,26041.0,24.55,639306.55
+2025-03-07,ATRO,"KEANE, ROBERT S",Director,True,$.01 PV Com Stk,sell,51058.0,24.55,1253473.9000000001
+2025-03-18,ATRO,"PEABODY, MARK",Executive VP & Pres-Aerospace,True,$.01 PV Com Stk,sell,3306.0,24.91,82352.46
+2025-03-18,ATRO,"HEDGES, NANCY L",Principal Accounting Officer,True,$.01 PV Com Stk,buy,2770.0,24.91,69000.7
+2025-03-18,ATRO,"MULATO, JAMES",Pres Astronics Test Systems,False,$.01 PV Com Stk,buy,2293.0,24.91,57118.63
+2025-03-18,ATRO,"MULATO, JAMES",Pres Astronics Test Systems,False,$.01 PV Com Stk,buy,9413.0,24.91,234477.83
+2025-03-18,ATRO,"MULATO, JAMES",Pres Astronics Test Systems,False,$.01 PV Com Stk,sell,2293.0,24.91,57118.63
+2025-03-18,ATRO,"HEDGES, NANCY L",Principal Accounting Officer,True,$.01 PV Com Stk,buy,5500.0,24.91,137005.0
+2025-03-18,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV Com Stk,buy,4133.0,24.91,102953.03
+2025-03-18,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV Com Stk,sell,4133.0,24.91,102953.03
+2025-03-18,ATRO,"HEDGES, NANCY L",Principal Accounting Officer,True,$.01 PV Com Stk,sell,2770.0,24.91,69000.7
+2025-03-18,ATRO,"PEABODY, MARK",Executive VP & Pres-Aerospace,True,$.01 PV Com Stk,buy,3306.0,24.91,82352.46
+2025-03-18,ATRO,"PEABODY, MARK",Executive VP & Pres-Aerospace,True,$.01 PV Com Stk,buy,8850.0,24.91,220453.5
+2025-05-08,ATRO,"KEANE, ROBERT S",Director,True,$.01 PV Com Stk,sell,200000.0,27.01,5402000.0
+2025-05-09,ATRO,"KEANE, ROBERT S",Director,True,$.01 PV Com Stk,sell,37700.0,26.5,999050.0
+2025-09-05,ATRO,"MULATO, JAMES",Pres Astronics Test Systems,False,$.01 PV CL B STK,sell,129.0,37.73,4867.169999999999
+2025-09-05,ATRO,"MULATO, JAMES",Pres Astronics Test Systems,False,$.01 PV Com Stk,sell,1000.0,38.21,38210.0
+2025-09-30,ATRO,"MULATO, JAMES",Pres Astronics Test Systems,False,$.01 PV Com Stk,buy,1280.0,16.6,21248.0
+2025-09-30,ATRO,"HEDGES, NANCY L",Principal Accounting Officer,True,$.01 PV Com Stk,buy,1280.0,16.6,21248.0
+2025-09-30,ATRO,"PEABODY, MARK",Executive VP & Pres-Aerospace,True,$.01 PV Com Stk,buy,1280.0,16.6,21248.0
+2025-10-22,ATRO,"MULATO, JAMES",Pres Astronics Test Systems,False,$.01 PV Com Stk,buy,4300.0,27.72,119196.0
+2025-10-22,ATRO,"MULATO, JAMES",Pres Astronics Test Systems,False,$.01 PV CL B STK,buy,1387.0,27.72,38447.64
+2025-10-22,ATRO,"MULATO, JAMES",Pres Astronics Test Systems,False,Option,sell,1387.0,27.72,38447.64
+2025-10-22,ATRO,"MULATO, JAMES",Pres Astronics Test Systems,False,Option,sell,4300.0,27.72,119196.0
+2025-11-17,ATRO,"HEDGES, NANCY L",Principal Accounting Officer,True,$.01 PV CL B STK,buy,452.0,27.72,12529.439999999999
+2025-11-17,ATRO,"HEDGES, NANCY L",Principal Accounting Officer,True,Option,sell,228.0,31.76,7241.280000000001
+2025-11-17,ATRO,"HEDGES, NANCY L",Principal Accounting Officer,True,Option,sell,1400.0,27.72,38808.0
+2025-11-17,ATRO,"HEDGES, NANCY L",Principal Accounting Officer,True,Option,sell,452.0,27.72,12529.439999999999
+2025-11-17,ATRO,"HEDGES, NANCY L",Principal Accounting Officer,True,$.01 PV Com Stk,sell,1065.0,52.15,55539.75
+2025-11-17,ATRO,"HEDGES, NANCY L",Principal Accounting Officer,True,$.01 PV Com Stk,buy,1520.0,31.76,48275.200000000004
+2025-11-17,ATRO,"HEDGES, NANCY L",Principal Accounting Officer,True,$.01 PV Com Stk,buy,1400.0,27.72,38808.0
+2025-11-17,ATRO,"HEDGES, NANCY L",Principal Accounting Officer,True,$.01 PV Com Stk,sell,984.0,52.15,51315.6
+2025-11-17,ATRO,"HEDGES, NANCY L",Principal Accounting Officer,True,Option,sell,1520.0,31.76,48275.200000000004
+2025-11-17,ATRO,"HEDGES, NANCY L",Principal Accounting Officer,True,$.01 PV CL B STK,buy,228.0,31.76,7241.280000000001
+2025-11-19,ATRO,"PEABODY, MARK",Executive VP & Pres-Aerospace,True,Option,sell,4500.0,27.72,124740.0
+2025-11-19,ATRO,"PEABODY, MARK",Executive VP & Pres-Aerospace,True,$.01 PV CL B STK,buy,1451.0,27.72,40221.72
+2025-11-19,ATRO,"PEABODY, MARK",Executive VP & Pres-Aerospace,True,$.01 PV Com Stk,buy,4500.0,27.72,124740.0
+2025-11-19,ATRO,"PEABODY, MARK",Executive VP & Pres-Aerospace,True,Option,sell,1451.0,27.72,40221.72
+2025-11-20,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,Option,sell,4418.0,27.72,122466.95999999999
+2025-11-20,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV Com Stk,buy,13700.0,27.72,379764.0
+2025-11-20,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV CL B STK,buy,4418.0,27.72,122466.95999999999
+2025-11-20,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV Com Stk,sell,11707.0,49.35,577740.4500000001
+2025-11-20,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,Option,sell,13700.0,27.72,379764.0
+2025-12-01,ATRO,"MULATO, JAMES",Pres Astronics Test Systems,False,$.01 PV Com Stk,sell,9734.0,53.24,518238.16000000003
+2025-12-04,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,Option,buy,29750.0,51.72,1538670.0
+2026-02-26,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Com Stk,buy,4000.0,22.93,91720.0
+2026-02-26,ATRO,"BRADY, ROBERT T",Director,True,Option,sell,1290.0,22.63,29192.699999999997
+2026-02-26,ATRO,"BRADY, ROBERT T",Director,True,Option,sell,4000.0,22.63,90520.0
+2026-02-26,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV CL B STK,buy,1290.0,22.93,29579.7
+2026-02-26,ATRO,"BRADY, ROBERT T",Director,True,$.01 PV Com Stk,sell,1539.0,78.84,121334.76000000001
+2026-03-03,ATRO,"HEDGES, NANCY L",Principal Accounting Officer,True,$.01 PV Com Stk,sell,1821.0,81.35,148138.34999999998
+2026-03-03,ATRO,"PEABODY, MARK",Executive VP & Pres-Aerospace,True,$.01 PV Com Stk,sell,2642.0,81.35,214926.69999999998
+2026-03-03,ATRO,"DAVIS, JULIE M",Secretary,True,$.01 PV Com Stk,buy,3000.0,81.35,244049.99999999997
+2026-03-03,ATRO,"PEABODY, MARK",Executive VP & Pres-Aerospace,True,$.01 PV Com Stk,buy,10850.0,81.35,882647.4999999999
+2026-03-03,ATRO,"MULATO, JAMES",Pres Astronics Test Systems,False,$.01 PV Com Stk,sell,2801.0,81.35,227861.34999999998
+2026-03-03,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV Com Stk,buy,13550.0,81.35,1102292.5
+2026-03-03,ATRO,"GUNDERMANN, PETER J","Director, PRESIDENT/CEO",True,$.01 PV Com Stk,sell,3489.0,81.35,283830.14999999997
+2026-03-03,ATRO,"DAVIS, JULIE M",Secretary,True,$.01 PV Com Stk,sell,1472.0,81.35,119747.2
+2026-03-03,ATRO,"MULATO, JAMES",Pres Astronics Test Systems,False,$.01 PV Com Stk,buy,11500.0,81.35,935524.9999999999
+2026-03-03,ATRO,"HEDGES, NANCY L",Principal Accounting Officer,True,$.01 PV Com Stk,buy,5050.0,81.35,410817.5

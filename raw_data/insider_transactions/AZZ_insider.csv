@@ -1,0 +1,1396 @@
+date,symbol,insider_name,insider_title,is_executive,security_type,transaction_type,shares,price,value
+2004-05-03,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,Incentive Stock Option,sell,4000.0,10.25,41000.0
+2004-05-03,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,Common Stock $1 Par Value,buy,4000.0,10.25,41000.0
+2004-05-11,AZZ,"PETRO, JOHN V",Vice President Operations,True,Common Stock $1 Par Value,sell,1000.0,16.1,16100.000000000002
+2004-05-11,AZZ,"PETRO, JOHN V",Vice President Operations,True,Common Stock $1 Par Value,sell,3519.0,16.1,56655.9
+2004-05-11,AZZ,"PETRO, JOHN V",Vice President Operations,True,Incentive Stock Option,sell,3519.0,8.43,29665.17
+2004-05-11,AZZ,"PETRO, JOHN V",Vice President Operations,True,Common Stock $1 Par Value,buy,3519.0,8.43,29665.17
+2004-06-14,AZZ,"WALKER, W C",Director,True,Common Stock $1 par value,sell,512.0,15.0,7680.0
+2004-07-13,AZZ,"BOWEN, MARTIN C",Director,True,Common Stock $1 Par Value,sell,1000.0,15.7,15700.0
+2004-07-13,AZZ,"ROSEN, SAM",Director,True,Common Stock $1 Par Value,sell,1000.0,15.7,15700.0
+2004-07-13,AZZ,"DOWNEY, H KIRK",Director,True,Common Stock $1 Par Value,buy,1000.0,15.7,15700.0
+2004-07-13,AZZ,"JOYCE, KEVERN R",Director,True,Common Stock $1 Par Value,buy,1000.0,15.7,15700.0
+2004-07-13,AZZ,"FEEHAN, DANIEL R",Director,True,Common Stock $1 Par Value,buy,1000.0,15.7,15700.0
+2004-07-13,AZZ,"ROSEN, SAM",Director,True,Common Stock $1 Par Value,buy,1000.0,15.7,15700.0
+2004-07-13,AZZ,"JOHNSON, ROBERT J/TX",Director,True,Common Stock $1 Par Value,buy,1000.0,15.7,15700.0
+2004-07-13,AZZ,"BERCE, DANIEL E",Director,True,Common Stock $1 Par Value,buy,1000.0,15.7,15700.0
+2004-07-13,AZZ,"SCHUMACHER, ROBERT J",Director,True,Common Stock $1 Par Value,buy,1000.0,15.7,15700.0
+2004-07-13,AZZ,"BOWEN, MARTIN C",Director,True,Common Stock $1 Par Value,buy,1000.0,15.7,15700.0
+2004-11-19,AZZ,"PENDLEY, TIMOTHY E",VP Galvanizing Services,True,Common Stock $1 Par Value,sell,1977.0,14.38,28429.260000000002
+2004-11-19,AZZ,"PENDLEY, TIMOTHY E",VP Galvanizing Services,True,Incentive Stock Option,sell,1977.0,8.43,16666.11
+2004-11-19,AZZ,"PENDLEY, TIMOTHY E",VP Galvanizing Services,True,Common Stock $1 Par Value,buy,1977.0,8.43,16666.11
+2005-02-18,AZZ,"PERRY, DANA",Vice President Finance & CFO,True,Incentive Stock Option,buy,4000.0,10.25,41000.0
+2005-02-21,AZZ,"PERRY, DANA",Vice President Finance & CFO,True,Common Stock $1 Par Value,buy,4000.0,10.25,41000.0
+2005-05-04,AZZ,"DINGUS, DAVID H",Chief Executive Officer,True,Common Stock $1 Par Value,buy,9000.0,11.09,99810.0
+2005-05-04,AZZ,"DINGUS, DAVID H",Chief Executive Officer,True,Incentive Stock Option,sell,9000.0,11.09,99810.0
+2005-05-18,AZZ,"PENDLEY, TIMOTHY E",VP Galvanizing Services,True,Stock Appreciation Rights,buy,6740.0,6740.0,45427600.0
+2005-07-11,AZZ,"RUFFIN, ROBERT D",Vice President Human Resources,True,Common Stock $1 Par Value,buy,1000.0,17.75,17750.0
+2005-07-12,AZZ,"BOWEN, MARTIN C",Director,True,Common Stock $1 Par Value,buy,1000.0,17.65,17650.0
+2005-07-12,AZZ,"DOWNEY, H KIRK",Director,True,Common Stock $1 Par Value,buy,1000.0,17.65,17650.0
+2005-07-12,AZZ,"JOYCE, KEVERN R",Director,True,Common Stock $1 Par Value,buy,1000.0,17.65,17650.0
+2005-07-12,AZZ,"JOHNSON, ROBERT J/TX",Director,True,Common Stock $1 Par Value,buy,1000.0,17.65,17650.0
+2005-07-12,AZZ,"FEEHAN, DANIEL R",Director,True,Common Stock $1 Par Value,buy,1000.0,17.65,17650.0
+2005-07-12,AZZ,"SCHUMACHER, ROBERT J",Director,True,Common Stock $1 Par Value,buy,1000.0,17.65,17650.0
+2005-07-12,AZZ,"BERCE, DANIEL E",Director,True,Common Stock $1 Par Value,buy,1000.0,17.65,17650.0
+2005-07-12,AZZ,"ROSEN, SAM",Director,True,Common Stock $1 Par Value,buy,1000.0,17.65,17650.0
+2005-08-04,AZZ,"DOWNEY, H KIRK",Director,True,Common Stock $1 Par Value,sell,2000.0,19.0,38000.0
+2005-08-08,AZZ,"DOWNEY, H KIRK",Director,True,Non-Statutory Stock Option,sell,2000.0,8.43,16860.0
+2005-08-08,AZZ,"DOWNEY, H KIRK",Director,True,Common Stock $1 Par Value,buy,2000.0,8.43,16860.0
+2005-08-11,AZZ,"PENDLEY, TIMOTHY E",VP Galvanizing Services,True,Common Stock $1 Par Value,sell,289.0,19.75,5707.75
+2005-08-11,AZZ,"PENDLEY, TIMOTHY E",VP Galvanizing Services,True,Common Stock $1 Par Value,sell,700.0,19.65,13754.999999999998
+2005-08-11,AZZ,"PENDLEY, TIMOTHY E",VP Galvanizing Services,True,Common Stock $1 Par Value,buy,989.0,8.43,8337.27
+2005-08-11,AZZ,"PENDLEY, TIMOTHY E",VP Galvanizing Services,True,Incentive Stock Option,sell,989.0,8.43,8337.27
+2005-10-21,AZZ,"WATSON, CLEMENT H",Vice President Sales - EPG,True,Incentive Stock Option,sell,2000.0,17.8125,35625.0
+2005-10-21,AZZ,"WATSON, CLEMENT H",Vice President Sales - EPG,True,Common Stock $1 Par Value,buy,2000.0,17.8125,35625.0
+2005-10-21,AZZ,"WATSON, CLEMENT H",Vice President Sales - EPG,True,Common Stock $1 Par Value,sell,2000.0,18.9165,37833.0
+2006-01-10,AZZ,"JOHNSON, ROBERT J/TX",Director,True,Common Stock $1 Par Value,sell,500.0,21.4,10700.0
+2006-01-11,AZZ,"WRIGHT, FRED L",Senior Vice President,True,Common Stock ($1.00 par value),sell,10557.0,21.58,227820.05999999997
+2006-01-11,AZZ,"WRIGHT, FRED L",Senior Vice President,True,Common Stock ($1 par value),sell,6742.0,21.58,145492.36
+2006-01-11,AZZ,"PETRO, JOHN V",Vice President Operations,True,Common Stock ($1 Par Value),buy,7038.0,8.43,59330.34
+2006-01-11,AZZ,"PETRO, JOHN V",Vice President Operations,True,Incentive Stock Option,sell,7038.0,17.6,123868.8
+2006-01-11,AZZ,"WRIGHT, FRED L",Senior Vice President,True,Common Stock ($1.00 par value),buy,10557.0,8.43,88995.51
+2006-01-11,AZZ,"WRIGHT, FRED L",Senior Vice President,True,Incentive Stock Option Right-to-Buy,sell,6742.0,17.6,118659.20000000001
+2006-01-11,AZZ,"PETRO, JOHN V",Vice President Operations,True,Common Stock ($1 Par Value),sell,13781.0,21.55,296980.55
+2006-01-11,AZZ,"WRIGHT, FRED L",Senior Vice President,True,Common Stock ($1 par value),buy,6742.0,17.6,118659.20000000001
+2006-01-11,AZZ,"PETRO, JOHN V",Vice President Operations,True,Common Stock ($1 Par Value),buy,6743.0,17.6,118676.8
+2006-01-11,AZZ,"PETRO, JOHN V",Vice President Operations,True,Incentive StockOption,sell,6743.0,8.43,56843.49
+2006-01-11,AZZ,"WRIGHT, FRED L",Senior Vice President,True,Incentive Srock Option Right-to-Buy,sell,10557.0,8.43,88995.51
+2006-01-18,AZZ,"ROSEN, SAM",Director,True,Common Stock $1 Par Value,sell,5000.0,23.5,117500.0
+2006-01-20,AZZ,"WATSON, CLEMENT H",Vice President Sales - EPG,True,Incentive Stock Option Right-to-Buy,sell,2942.0,17.6,51779.200000000004
+2006-01-20,AZZ,"WATSON, CLEMENT H",Vice President Sales - EPG,True,Common Stock $1 Par Value,buy,10557.0,8.43,88995.51
+2006-01-20,AZZ,"WATSON, CLEMENT H",Vice President Sales - EPG,True,Common Stock $1 Par Value,buy,2942.0,17.6,51779.200000000004
+2006-01-20,AZZ,"WATSON, CLEMENT H",Vice President Sales - EPG,True,Incentive Stock Option Right-to-Buy,sell,10557.0,8.43,88995.51
+2006-01-20,AZZ,"WATSON, CLEMENT H",Vice President Sales - EPG,True,Common Stock $1 Par Value,sell,2942.0,23.4,68842.8
+2006-01-20,AZZ,"WATSON, CLEMENT H",Vice President Sales - EPG,True,Common Stock $1 Par Value,sell,10557.0,23.4,247033.8
+2006-01-23,AZZ,"WATSON, CLEMENT H",Vice President Sales - EPG,True,Common Stock $1 Par Value,buy,3800.0,17.6,66880.0
+2006-01-23,AZZ,"WATSON, CLEMENT H",Vice President Sales - EPG,True,Common Stock $1 Par Value,sell,3800.0,23.25,88350.0
+2006-01-23,AZZ,"WATSON, CLEMENT H",Vice President Sales - EPG,True,Incentive Stock Option Right-to-Buy,sell,3800.0,17.6,66880.0
+2006-01-31,AZZ,"PENDLEY, TIMOTHY E",VP Galvanizing Services,True,Incentive Stock Option,sell,1894.0,17.6,33334.4
+2006-01-31,AZZ,"PENDLEY, TIMOTHY E",VP Galvanizing Services,True,Common Stock $1 Par Value,sell,1894.0,24.37,46156.78
+2006-01-31,AZZ,"PENDLEY, TIMOTHY E",VP Galvanizing Services,True,Common Stock $1 Par Value,buy,1894.0,17.6,33334.4
+2006-02-01,AZZ,"BOWEN, MARTIN C",Director,True,Common Stock $1 Par Value,buy,10000.0,11.125,111250.0
+2006-02-01,AZZ,"BOWEN, MARTIN C",Director,True,Common Stock $1 Par Value,sell,10000.0,24.5559,245559.0
+2006-02-01,AZZ,"BOWEN, MARTIN C",Director,True,Non-Statutory Stock Option (Right to Buy),sell,10000.0,11.125,111250.0
+2006-02-07,AZZ,"BUTLER, RICHARD W",VP Corporate Controller,True,Incentive Stock Option,sell,1220.0,17.6,21472.0
+2006-02-07,AZZ,"BUTLER, RICHARD W",VP Corporate Controller,True,Common Stock $1 Par Value,buy,1220.0,17.6,21472.0
+2006-02-07,AZZ,"BUTLER, RICHARD W",VP Corporate Controller,True,Common Stock $1 Par Value,sell,1220.0,24.29,29633.8
+2006-03-06,AZZ,"RUFFIN, ROBERT D",Vice President Human Resources,True,Incentive Stock Option,sell,895.0,17.84,15966.8
+2006-03-06,AZZ,"RUFFIN, ROBERT D",Vice President Human Resources,True,Common Stock $1 Par Value,buy,895.0,17.84,15966.8
+2006-03-27,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,Incentive Stock Option,sell,946.0,8.8,8324.800000000001
+2006-04-27,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,Common Stock $1 Par Value,buy,11000.0,11.09,121990.0
+2006-04-27,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,Incentive Stock Option,sell,11000.0,11.09,121990.0
+2006-07-17,AZZ,"FEEHAN, DANIEL R",Director,True,Common Stock $1 Par Value,buy,1000.0,28.38,28380.0
+2006-07-17,AZZ,"ROSEN, SAM",Director,True,Common Stock $1 Par Value,buy,1000.0,28.38,28380.0
+2006-07-17,AZZ,"DOWNEY, H KIRK",Director,True,Common Stock $1 Par Value,buy,1000.0,28.38,28380.0
+2006-07-17,AZZ,"JOHNSON, ROBERT J/TX",Director,True,Common Stock $1 Par Value,buy,1000.0,28.38,28380.0
+2006-07-17,AZZ,"BERCE, DANIEL E",Director,True,Common Stock $1 Par Value,buy,1000.0,28.38,28380.0
+2006-07-17,AZZ,"JOYCE, KEVERN R",Director,True,Common Stock $1 Par Value,buy,1000.0,28.38,28380.0
+2006-07-17,AZZ,"BOWEN, MARTIN C",Director,True,Common Stock $1 Par Value,buy,1000.0,28.38,28380.0
+2006-07-17,AZZ,"SCHUMACHER, ROBERT J",Director,True,Common Stock $1 Par Value,buy,1000.0,28.38,28380.0
+2006-11-09,AZZ,"ROSEN, SAM",Director,True,Common Stock $1 Par Value,sell,1750.0,37.2586,65202.55
+2006-11-10,AZZ,"ROSEN, SAM",Director,True,Common Stock $1 Par Value,sell,500.0,37.406,18703.0
+2006-11-13,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,Common Stock $1 Par Value,sell,10000.0,37.01,370100.0
+2006-11-13,AZZ,"ROSEN, SAM",Director,True,Common Stock $1 Par Value,sell,500.0,37.4,18700.0
+2006-11-14,AZZ,"ROSEN, SAM",Director,True,Common Stock $1 Par Value,sell,675.0,37.35,25211.25
+2007-01-24,AZZ,"RUFFIN, ROBERT D",Vice President Human Resources,True,Common Stock $1 Par Value,sell,300.0,42.88,12864.0
+2007-01-24,AZZ,"RUFFIN, ROBERT D",Vice President Human Resources,True,Common Stock $1 Par Value,sell,700.0,42.89,30023.0
+2007-02-12,AZZ,"RUFFIN, ROBERT D",Vice President Human Resources,True,Common Stock $1 Par Value,buy,1040.0,17.6,18304.0
+2007-02-12,AZZ,"RUFFIN, ROBERT D",Vice President Human Resources,True,Incentive Stock Option,sell,1040.0,17.6,18304.0
+2007-04-13,AZZ,"PENDLEY, TIMOTHY E",VP Galvanizing Services,True,Common Stock $1 par value,sell,2802.0,51.53,144387.06
+2007-04-13,AZZ,"PENDLEY, TIMOTHY E",VP Galvanizing Services,True,Common Stock $1 par value,buy,2802.0,24.25,67948.5
+2007-04-13,AZZ,"WRIGHT, FRED L",Senior Vice President,True,Incentive Stock Option Right-to-Buy,sell,7039.0,8.43,59338.77
+2007-04-13,AZZ,"WRIGHT, FRED L",Senior Vice President,True,Incentive Stock Option Right-to-Buy,sell,1685.0,17.6,29656.000000000004
+2007-04-13,AZZ,"WRIGHT, FRED L",Senior Vice President,True,Incentive Stock Option Right-to-Buy,sell,9975.0,24.25,241893.75
+2007-04-13,AZZ,"PETRO, JOHN V",Vice President Operations,True,Incentive Stock Option Right-to-Buy,sell,2802.0,24.25,67948.5
+2007-04-13,AZZ,"WRIGHT, FRED L",Senior Vice President,True,Common Stock ($1.00 par value),sell,7039.0,50.8636,358028.88039999997
+2007-04-13,AZZ,"DOWNEY, H KIRK",Director,True,Incentive Stock Option,sell,2000.0,15.4,30800.0
+2007-04-13,AZZ,"WRIGHT, FRED L",Senior Vice President,True,Common Stock ($1.00 par value),buy,1685.0,17.6,29656.000000000004
+2007-04-13,AZZ,"WRIGHT, FRED L",Senior Vice President,True,Common Stock ($1.00 par value),buy,9975.0,24.25,241893.75
+2007-04-13,AZZ,"BOWEN, MARTIN C",Director,True,Common Stock $1 par value,sell,2000.0,51.0895,102179.0
+2007-04-13,AZZ,"WRIGHT, FRED L",Senior Vice President,True,Common Stock ($1.00 par value),buy,7039.0,8.43,59338.77
+2007-04-13,AZZ,"PENDLEY, TIMOTHY E",VP Galvanizing Services,True,Incentive Stock Option,sell,2802.0,24.25,67948.5
+2007-04-13,AZZ,"DOWNEY, H KIRK",Director,True,Common Stock $1 par value,buy,1700.0,15.4,26180.0
+2007-04-13,AZZ,"WRIGHT, FRED L",Senior Vice President,True,Common Stock ($1.00 par value),sell,1685.0,50.8636,85705.166
+2007-04-13,AZZ,"WRIGHT, FRED L",Senior Vice President,True,Common Stock ($1.00 par value),sell,9975.0,50.8636,507364.41
+2007-04-13,AZZ,"DOWNEY, H KIRK",Director,True,Common Stock $1 par value,sell,1700.0,51.45,87465.0
+2007-04-13,AZZ,"PETRO, JOHN V",Vice President Operations,True,Common Stock $1 par value,sell,513.0,51.3653,26350.3989
+2007-04-13,AZZ,"DOWNEY, H KIRK",Director,True,Common Stock $1 par value,sell,200.0,51.35,10270.0
+2007-04-13,AZZ,"PETRO, JOHN V",Vice President Operations,True,Common Stock $1 par value,sell,1685.0,51.3653,86550.5305
+2007-04-13,AZZ,"DOWNEY, H KIRK",Director,True,Common Stock $1 par value,buy,100.0,15.4,1540.0
+2007-04-13,AZZ,"DOWNEY, H KIRK",Director,True,Common Stock $1 par value,buy,200.0,15.4,3080.0
+2007-04-13,AZZ,"PETRO, JOHN V",Vice President Operations,True,Incentive Stock Option Right-to-Buy,sell,513.0,8.43,4324.59
+2007-04-13,AZZ,"PETRO, JOHN V",Vice President Operations,True,Incentive Stock Option Right-to-Buy,sell,1685.0,17.6,29656.000000000004
+2007-04-13,AZZ,"PETRO, JOHN V",Vice President Operations,True,Common Stock $1 par value,buy,1685.0,17.6,29656.000000000004
+2007-04-13,AZZ,"DOWNEY, H KIRK",Director,True,Common Stock $1 par value,sell,100.0,51.44,5144.0
+2007-04-13,AZZ,"PETRO, JOHN V",Vice President Operations,True,Common Stock $1 par value,buy,2802.0,24.25,67948.5
+2007-04-13,AZZ,"RUFFIN, ROBERT D",Vice President Human Resources,True,Common Stock $1 par value,sell,895.0,51.45,46047.75
+2007-04-13,AZZ,"BOWEN, MARTIN C",Director,True,Incentive Stock Option,sell,2000.0,15.4,30800.0
+2007-04-13,AZZ,"BOWEN, MARTIN C",Director,True,Common Stock $1 par value,buy,2000.0,8.43,16860.0
+2007-04-13,AZZ,"BOWEN, MARTIN C",Director,True,Common Stock $1 par value,buy,2000.0,15.4,30800.0
+2007-04-13,AZZ,"BOWEN, MARTIN C",Director,True,Incentive Stock Option,sell,2000.0,8.43,16860.0
+2007-04-13,AZZ,"PETRO, JOHN V",Vice President Operations,True,Common Stock $1 par value,buy,513.0,8.43,4324.59
+2007-04-13,AZZ,"PETRO, JOHN V",Vice President Operations,True,Common Stock $1 par value,sell,2802.0,51.3653,143925.5706
+2007-04-16,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,Common Stock $1 par value,sell,10500.0,11.09,116445.0
+2007-04-16,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,Common Stock $1 par value,buy,10500.0,11.09,116445.0
+2007-04-17,AZZ,"RUFFIN, ROBERT D",Vice President Human Resources,True,Common Stock,sell,100.0,53.34,5334.0
+2007-04-17,AZZ,"JOHNSON, ROBERT J/TX",Director,True,Common Stock $1 par value,sell,3400.0,53.7,182580.0
+2007-04-17,AZZ,"RUFFIN, ROBERT D",Vice President Human Resources,True,Common Stock,sell,940.0,53.31,50111.4
+2007-04-18,AZZ,"WATSON, CLEMENT H",Vice President Sales - EPG,True,Common Stock $1 par value,buy,9975.0,24.25,241893.75
+2007-04-18,AZZ,"WATSON, CLEMENT H",Vice President Sales - EPG,True,Common Stock $1 par value,sell,9975.0,53.0085,528759.7875
+2007-04-18,AZZ,"WATSON, CLEMENT H",Vice President Sales - EPG,True,Incentive Stock Option,sell,9975.0,24.25,241893.75
+2007-04-18,AZZ,"ROSEN, SAM",Director,True,Common Stock $1 par value,buy,10000.0,11.125,111250.0
+2007-04-18,AZZ,"ROSEN, SAM",Director,True,Non Statutory Stock Option Right-To-Buy,sell,10000.0,11.125,111250.0
+2007-04-24,AZZ,"ROSEN, SAM",Director,True,Common Stock $1 Par Value,sell,2670.0,55.02,146903.4
+2007-04-25,AZZ,"ROSEN, SAM",Director,True,Common Stock $1 Par Value,sell,4330.0,55.451,240102.83000000002
+2007-04-26,AZZ,"WRIGHT, FRED L",Senior Vice President,True,Common Stock $1 Par Value,sell,882.0,55.2,48686.4
+2007-04-27,AZZ,"SCHUMACHER, ROBERT J",Director,True,Non Statutory Stock Option Right to Buy,sell,10000.0,11.125,111250.0
+2007-04-27,AZZ,"SCHUMACHER, ROBERT J",Director,True,Common Stock $1 par value,buy,10000.0,11.125,111250.0
+2007-05-04,AZZ,"BERCE, DANIEL E",Director,True,Common Stock $1 Par Value,buy,4000.0,4.215,16860.0
+2007-05-04,AZZ,"PERRY, DANA","Director, Sr. VP Finance & CFO",True,Common Stock $1 Par Value,buy,26750.0,5.545,148328.75
+2007-05-04,AZZ,"PERRY, DANA","Director, Sr. VP Finance & CFO",True,Incentive Stock Option,sell,17736.0,8.363,148326.168
+2007-05-04,AZZ,"PERRY, DANA","Director, Sr. VP Finance & CFO",True,Incentive Stock Option,sell,19950.0,12.125,241893.75
+2007-05-04,AZZ,"PERRY, DANA","Director, Sr. VP Finance & CFO",True,Incentive Stock Option,sell,26750.0,5.545,148328.75
+2007-05-04,AZZ,"BERCE, DANIEL E",Director,True,Common Stock $1 Par Value,sell,4000.0,29.41,117640.0
+2007-05-04,AZZ,"BERCE, DANIEL E",Director,True,Common Stock $1 Par Value,buy,4000.0,7.7,30800.0
+2007-05-04,AZZ,"PERRY, DANA","Director, Sr. VP Finance & CFO",True,Common Stock $1 Par Value,sell,26750.0,29.17,780297.5
+2007-05-04,AZZ,"BERCE, DANIEL E",Director,True,Common Stock $1 Par Value,sell,4000.0,29.19,116760.0
+2007-05-04,AZZ,"BERCE, DANIEL E",Director,True,Incentive Stock Option,sell,4000.0,4.125,16500.0
+2007-05-04,AZZ,"PERRY, DANA","Director, Sr. VP Finance & CFO",True,Common Stock $1 Par Value,buy,19950.0,12.125,241893.75
+2007-05-04,AZZ,"PERRY, DANA","Director, Sr. VP Finance & CFO",True,Common Stock $1 Par Value,sell,19950.0,29.17,581941.5
+2007-05-04,AZZ,"PERRY, DANA","Director, Sr. VP Finance & CFO",True,Common Stock $1 Par Value,buy,17736.0,8.363,148326.168
+2007-05-04,AZZ,"BERCE, DANIEL E",Director,True,Incentive Stock Option,sell,4000.0,7.7,30800.0
+2007-05-04,AZZ,"PERRY, DANA","Director, Sr. VP Finance & CFO",True,Common Stock $1 Par Value,sell,17736.0,29.17,517359.12000000005
+2007-05-08,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,Common Stock $1 Par Value,buy,86302.0,12.125,1046411.75
+2007-05-08,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,Common Stock $1 Par Value,sell,86302.0,28.318,2443900.0360000003
+2007-05-08,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,Incentive Stock Option,sell,86302.0,12.125,1046411.75
+2007-05-09,AZZ,"PETRO, JOHN V",Vice President Operations,True,Common Stock $1 Par Value,sell,2400.0,29.504,70809.6
+2007-05-09,AZZ,"PETRO, JOHN V",Vice President Operations,True,Common Stock $1 Par Value,buy,2400.0,4.22,10128.0
+2007-05-09,AZZ,"PETRO, JOHN V",Vice President Operations,True,Incentive Stock Option Right-to-Buy,sell,2400.0,4.22,10128.0
+2007-07-10,AZZ,"STRICKLEN, JIM",VP Business & Manufacturing Sy,True,Incentive Stock Option Right-to-Buy,sell,19770.0,4.22,83429.4
+2007-07-10,AZZ,"FEEHAN, DANIEL R",Director,True,Incentive Stock Option Right-to-Buy,sell,4000.0,4.22,16880.0
+2007-07-10,AZZ,"STRICKLEN, JIM",VP Business & Manufacturing Sy,True,Common Stock $1 Par Value,sell,19770.0,37.5,741375.0
+2007-07-10,AZZ,"STRICKLEN, JIM",VP Business & Manufacturing Sy,True,Common Stock $1 Par Value,buy,3000.0,6.55,19650.0
+2007-07-10,AZZ,"STRICKLEN, JIM",VP Business & Manufacturing Sy,True,Common Stock $1 Par Value,sell,3000.0,37.5,112500.0
+2007-07-10,AZZ,"STRICKLEN, JIM",VP Business & Manufacturing Sy,True,Incentive Stock Option Right-to-Buy,sell,3000.0,6.55,19650.0
+2007-07-10,AZZ,"STRICKLEN, JIM",VP Business & Manufacturing Sy,True,Commom Stock $1 Par Value,buy,19770.0,4.22,83429.4
+2007-07-10,AZZ,"PETRO, JOHN V",Vice President Operations,True,Common Stock $1 Par Value,sell,10650.0,37.74,401931.0
+2007-07-10,AZZ,"FEEHAN, DANIEL R",Director,True,Incentive Stock Option Right-to-Buy,sell,4000.0,7.7,30800.0
+2007-07-10,AZZ,"FEEHAN, DANIEL R",Director,True,Common Stock $1 Par Value,buy,4000.0,7.7,30800.0
+2007-07-10,AZZ,"PETRO, JOHN V",Vice President Operations,True,Common Stock $1 Par Value,sell,10650.0,4.22,44943.0
+2007-07-10,AZZ,"PETRO, JOHN V",Vice President Operations,True,Common Stock $1 Par Value,buy,10650.0,4.22,44943.0
+2007-07-10,AZZ,"FEEHAN, DANIEL R",Director,True,Common Stock $1 Par Value,buy,4000.0,4.22,16880.0
+2007-07-10,AZZ,"FEEHAN, DANIEL R",Director,True,Common Stock $1 Par Value,sell,4000.0,37.49,149960.0
+2007-07-11,AZZ,"DOWNEY, H KIRK",Director,True,Common Stock $1 Par Value,buy,683.0,36.58,24984.14
+2007-07-11,AZZ,"JOYCE, KEVERN R",Director,True,Common Stock $1 Par Value,buy,683.0,36.58,24984.14
+2007-07-11,AZZ,"BERCE, DANIEL E",Director,True,Common Stock $1 Par Value,sell,683.0,36.58,24984.14
+2007-07-11,AZZ,"FEEHAN, DANIEL R",Director,True,Common Stock $1 Par Value,buy,683.0,36.58,24984.14
+2007-07-11,AZZ,"HEGEDUS, PETER A",Director,True,Common Stock $1 Par Value,buy,683.0,36.58,24984.14
+2007-07-11,AZZ,"ROSEN, SAM",Director,True,Common Stock $1 Par Value,buy,683.0,36.58,24984.14
+2007-07-11,AZZ,"BOWEN, MARTIN C",Director,True,Common Stock $1 Par Value,buy,683.0,36.58,24984.14
+2007-07-11,AZZ,"FEEHAN, DANIEL R",Director,True,Common Stock $1 Par Value,sell,683.0,36.58,24984.14
+2007-07-11,AZZ,"BERCE, DANIEL E",Director,True,Common Stock $1 Par Value,buy,683.0,36.58,24984.14
+2007-07-19,AZZ,"WATSON, CLEMENT H",Vice President Sales - EPG,True,Common Stock $1 Par Value,sell,14078.0,40.082,564274.3960000001
+2007-07-19,AZZ,"WATSON, CLEMENT H",Vice President Sales - EPG,True,Incentive Stock Option,sell,3370.0,8.8,29656.000000000004
+2007-07-19,AZZ,"WATSON, CLEMENT H",Vice President Sales - EPG,True,Common Stock $1 Par Value,buy,14078.0,4.215,59338.77
+2007-07-19,AZZ,"WATSON, CLEMENT H",Vice President Sales - EPG,True,Common Stock $1 Par Value,sell,3370.0,40.082,135076.34
+2007-07-19,AZZ,"WATSON, CLEMENT H",Vice President Sales - EPG,True,Common Stock $1 Par Value,buy,3370.0,8.8,29656.000000000004
+2007-07-19,AZZ,"WATSON, CLEMENT H",Vice President Sales - EPG,True,Incentive Stock Option,sell,14078.0,4.125,58071.75
+2007-07-30,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,Common Stock $1 Par Value,buy,20000.0,5.545,110900.0
+2007-07-30,AZZ,"DINGUS, DAVID H",Chief Executive Officer,True,Incentive Stock Option,sell,20000.0,5.545,110900.0
+2007-08-15,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,Common Stock $1 Par Value,buy,5000.0,5.545,27725.0
+2007-08-15,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,Incentive Stock Option,sell,5000.0,5.545,27725.0
+2007-10-08,AZZ,"DOWNEY, H KIRK",Director,True,Common Stock $1 Par Value,sell,7200.0,33.13,238536.00000000003
+2007-10-31,AZZ,"JOYCE, KEVERN R",Director,True,Common Stock $1 Par Value,sell,5357.0,33.07,177155.99
+2007-10-31,AZZ,"JOYCE, KEVERN R",Director,True,Common Stock $1 Par Value,buy,21000.0,8.44,177240.0
+2007-11-13,AZZ,"JOYCE, KEVERN R",Director,True,Common Stock $1 Par Value,sell,1700.0,29.0,49300.0
+2007-11-13,AZZ,"JOYCE, KEVERN R",Director,True,Common Stock $1 Par Value,sell,1700.0,2900.0,4930000.0
+2007-11-14,AZZ,"JOYCE, KEVERN R",Director,True,Common Stock $1 Par Value,sell,20000.0,29.25,585000.0
+2008-01-09,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,Common Stock $1 Par Value,sell,1500.0,34.12,51179.99999999999
+2008-01-09,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,Common Stock $1 Par Value,buy,15000.0,5.545,83175.0
+2008-01-09,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,Common Stock $1 Par Value,sell,13400.0,33.85,453590.0
+2008-01-09,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,Common Stock $1 Par Value,sell,100.0,33.78,3378.0
+2008-01-09,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,Incentive Stock Option,sell,15000.0,5.545,83175.0
+2008-01-14,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,Common Stock $1 Par Value,sell,800.0,34.0,27200.0
+2008-01-14,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,Common Stock $1 Par Value,sell,14200.0,34.17,485214.0
+2008-07-08,AZZ,"ROSEN, SAM",Director,True,Common Stock $1 Par Value,sell,145.0,43.8,6351.0
+2008-07-08,AZZ,"ROSEN, SAM",Director,True,Common Stock $1 Par Value,sell,4000.0,43.75,175000.0
+2008-11-03,AZZ,"JOYCE, KEVERN R",Director,True,Common Stock $1 Par Value,sell,600.0,30.05,18030.0
+2008-11-04,AZZ,"JOYCE, KEVERN R",Director,True,Common Stock $1 Par Value,sell,7400.0,30.0,222000.0
+2009-03-06,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,buy,708.0,15.4,10903.2
+2009-03-06,AZZ,"PENDLEY, TIMOTHY E",VP GALVANIZING,True,COMMON STOCK,buy,389.0,15.4,5990.6
+2009-03-06,AZZ,"PETRO, JOHN V",SENIOR VP OPERATIONS,True,COMMON STOCK,buy,359.0,15.4,5528.6
+2009-03-06,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,COMMON STOCK,buy,90.0,15.4,1386.0
+2009-06-01,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,buy,4620.0,11.55,53361.0
+2009-06-01,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,sell,1451.0,36.78,53367.78
+2009-06-01,AZZ,"JOYCE, KEVERN R",Director,True,STOCK APPRECIATION RIGHTS,sell,4620.0,11.55,53361.0
+2009-06-01,AZZ,"STRICKLEN, JIM",VP BUSINESS & MGMT SYSTEMS,True,COMMON STOCK,sell,7733.0,36.78,284419.74
+2009-06-01,AZZ,"STRICKLEN, JIM",VP BUSINESS & MGMT SYSTEMS,True,COMMON STOCK,buy,13480.0,11.55,155694.0
+2009-06-01,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,COMMON STOCK,buy,13480.0,11.55,155694.0
+2009-06-01,AZZ,"DOWNEY, H KIRK",Director,True,STOCK APPRECIATION RIGHTS,sell,4620.0,11.55,53361.0
+2009-06-01,AZZ,"STRICKLEN, JIM",VP BUSINESS & MGMT SYSTEMS,True,STOCK APPRECIATION RIGHTS,sell,13480.0,11.55,155694.0
+2009-06-01,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,COMMON STOCK,sell,857.0,36.78,31520.460000000003
+2009-06-01,AZZ,"JOYCE, KEVERN R",Director,True,COMMON STOCK,buy,4620.0,11.55,53361.0
+2009-06-01,AZZ,"JOYCE, KEVERN R",Director,True,COMMON STOCK,sell,1451.0,36.78,53367.78
+2009-06-01,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,STOCK APPRECIATION RIGHTS,sell,13480.0,11.55,155694.0
+2009-06-01,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,COMMON STOCK,sell,7604.0,36.78,279675.12
+2009-06-01,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,COMMON STOCK,buy,1520.0,11.55,17556.0
+2009-06-01,AZZ,"PETRO, JOHN V",SENIOR VP OPERATIONS,True,STOCK APPRECIATION RIGHTS,sell,13480.0,11.55,155694.0
+2009-06-01,AZZ,"STOVALL, BRYAN LEE",Vice President,True,COMMON STOCK,buy,1520.0,11.55,17556.0
+2009-06-01,AZZ,"PETRO, JOHN V",SENIOR VP OPERATIONS,True,COMMON STOCK,buy,13480.0,11.55,155694.0
+2009-06-01,AZZ,"PETRO, JOHN V",SENIOR VP OPERATIONS,True,COMMON STOCK,sell,6679.0,36.78,245653.62
+2009-06-01,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,buy,61400.0,11.55,709170.0
+2009-06-01,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,sell,33791.0,36.78,1242832.98
+2009-06-01,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,STOCK APPRECIATION RIGHTS,sell,61400.0,11.55,709170.0
+2009-06-01,AZZ,"WATSON, CLEMENT H",VP SALES & MARKETING,True,COMMON STOCK,buy,13480.0,11.55,155694.0
+2009-06-01,AZZ,"WATSON, CLEMENT H",VP SALES & MARKETING,True,COMMON STOCK,sell,7604.0,36.78,279675.12
+2009-06-01,AZZ,"WATSON, CLEMENT H",VP SALES & MARKETING,True,STOCK APPRECIATION RIGHTS,sell,13480.0,11.55,155694.0
+2009-06-01,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,STOCK APPRECIATION RIGHTS,sell,1520.0,11.55,17556.0
+2009-06-01,AZZ,"STOVALL, BRYAN LEE",Vice President,True,COMMON STOCK,sell,805.0,36.78,29607.9
+2009-06-01,AZZ,"STOVALL, BRYAN LEE",Vice President,True,STOCK APPRECIATION RIGHTS,sell,1520.0,11.55,17556.0
+2009-06-04,AZZ,"PERRY, DANA","Director, SENIOR VP & CFO",True,COMMON STOCK,sell,7394.0,38.39,283855.66000000003
+2009-06-04,AZZ,"PERRY, DANA","Director, SENIOR VP & CFO",True,STOCK APPRECIATION RIGHTS,sell,14200.0,11.55,164010.0
+2009-06-04,AZZ,"ROSEN, SAM",Director,True,COMMON STOCK,sell,1451.0,38.39,55703.89
+2009-06-04,AZZ,"ROSEN, SAM",Director,True,STOCK APPRECIATION RIGHTS,sell,4620.0,11.55,53361.0
+2009-06-04,AZZ,"ROSEN, SAM",Director,True,COMMON STOCK,buy,4620.0,11.55,53361.0
+2009-06-04,AZZ,"PERRY, DANA","Director, SENIOR VP & CFO",True,COMMON STOCK,buy,14200.0,11.55,164010.0
+2009-06-09,AZZ,"ESTES, WILLIAM G",Vice President,True,Common Stock,buy,3780.0,11.55,43659.0
+2009-06-09,AZZ,"ESTES, WILLIAM G",Vice President,True,Stock Appreciation Rights,sell,3780.0,11.55,43659.0
+2009-06-09,AZZ,"ESTES, WILLIAM G",Vice President,True,Common Stock,sell,1863.0,37.21,69322.23
+2009-06-10,AZZ,"PETITTO, JOHN A",Vice President,True,COMMON STOCK,sell,2048.0,37.1,75980.8
+2009-06-10,AZZ,"PETITTO, JOHN A",Vice President,True,STOCK APPRECIATION RIGHTS,sell,3780.0,11.55,43659.0
+2009-06-10,AZZ,"PETITTO, JOHN A",Vice President,True,COMMON STOCK,buy,3780.0,11.55,43659.0
+2009-06-25,AZZ,"BOWEN, MARTIN C",Director,True,COMMON STOCK,buy,4620.0,11.55,53361.0
+2009-06-25,AZZ,"BOWEN, MARTIN C",Director,True,COMMON STOCK,sell,1600.0,33.36,53376.0
+2009-06-25,AZZ,"BOWEN, MARTIN C",Director,True,STOCK APPRECIATION RIGHTS,sell,4620.0,11.55,53361.0
+2009-07-23,AZZ,"FEEHAN, DANIEL R",Director,True,COMMON STOCK,buy,4620.0,11.55,53361.0
+2009-07-23,AZZ,"PENDLEY, TIMOTHY E","Senior VP, COO GALVANIZING",True,STOCK APPRECIATION RIGHTS,sell,13480.0,11.55,155694.0
+2009-07-23,AZZ,"PENDLEY, TIMOTHY E","Senior VP, COO GALVANIZING",True,COMMON STOCK,buy,13480.0,11.55,155694.0
+2009-07-23,AZZ,"PENDLEY, TIMOTHY E","Senior VP, COO GALVANIZING",True,COMMON STOCK,sell,7225.0,35.75,258293.75
+2009-07-23,AZZ,"FEEHAN, DANIEL R",Director,True,STOCK APPRECIATION RIGHTS,sell,4620.0,11.55,53361.0
+2009-07-23,AZZ,"FEEHAN, DANIEL R",Director,True,COMMON STOCK,sell,1493.0,35.75,53374.75
+2009-07-30,AZZ,"BERCE, DANIEL E",Director,True,STOCK APPRECIATION RIGHTS,sell,4620.0,11.55,53361.0
+2009-07-30,AZZ,"BERCE, DANIEL E",Director,True,COMMON STOCK,buy,4620.0,11.55,53361.0
+2009-07-30,AZZ,"BERCE, DANIEL E",Director,True,COMMON STOCK,sell,1390.0,38.4,53376.0
+2009-08-03,AZZ,"ESTES, WILLIAM G",Vice President,True,COMMON STOCK $1 PAR VALUE,sell,1500.0,39.3342,59001.3
+2009-08-05,AZZ,"PETITTO, JOHN A",Vice President,True,COMMON STOCK,buy,1976.0,4.215,8328.84
+2009-08-05,AZZ,"PETITTO, JOHN A",Vice President,True,COMMON STOCK,sell,1976.0,38.19,75463.44
+2009-08-05,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,COMMON STOCK,sell,5000.0,38.14,190700.0
+2009-08-05,AZZ,"PETITTO, JOHN A",Vice President,True,INCENTIVE STOCK OPTION,sell,1976.0,4215.0,8328840.0
+2009-08-05,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,sell,30000.0,37.584,1127520.0
+2009-08-05,AZZ,"PETITTO, JOHN A",Vice President,True,COMMON STOCK,sell,1732.0,38.31,66352.92
+2009-08-06,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,INCENTIVE STOCK OPTION,sell,14720.0,5.545,81622.4
+2009-08-06,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,buy,14720.0,5.545,81622.4
+2009-08-13,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,sell,946.0,37.022,35022.812
+2009-08-13,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,sell,3954.0,37.022,146384.98799999998
+2009-08-13,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,buy,946.0,8.8,8324.800000000001
+2009-08-13,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,Incentive Stock Option,sell,3954.0,4.215,16666.11
+2009-08-13,AZZ,"DOWNEY, H KIRK",Director,True,Common Stock,sell,175.0,37.4601,6555.5175
+2009-08-13,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,buy,3954.0,4.215,16666.11
+2009-08-13,AZZ,"DOWNEY, H KIRK",Director,True,Common Stock,sell,1800.0,37.4642,67435.56
+2009-09-08,AZZ,"PENDLEY, TIMOTHY E",SR VP GALVANIZING,True,COMMON STOCK,buy,289.0,31.3,9045.7
+2009-09-08,AZZ,"STOVALL, BRYAN LEE",Vice President,True,COMMON STOCK,buy,202.0,15.4,3110.8
+2009-09-08,AZZ,"PERRY, DANA","Director, Sr VP & CFO",True,COMMON STOCK,buy,1379.0,15.4,21236.600000000002
+2009-09-08,AZZ,"PETRO, JOHN V",SENIOR VP OPERATIONS,True,COMMON STOCK,buy,319.0,31.3,9984.7
+2009-09-08,AZZ,"KOLADY, ASHOK",VP BUSINESS DEVELOPMENT,True,COMMON STOCK,buy,1187.0,15.4,18279.8
+2009-09-08,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,COMMON STOCK,buy,101.0,31.3,3161.3
+2009-09-08,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,buy,367.0,15.4,5651.8
+2009-09-08,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,COMMON STOCK,buy,206.0,15.4,3172.4
+2009-09-08,AZZ,"STRICKLEN, JIM",VP BUSINESS & MGMT SYSTEMS,True,COMMON STOCK,buy,536.0,15.4,8254.4
+2009-09-30,AZZ,"PETRO, JOHN V",SENIOR VP OPERATIONS,True,COMMON STOCK,sell,4900.0,40.746,199655.40000000002
+2009-09-30,AZZ,"WATSON, CLEMENT H",VP SALES & MARKETING,True,COMMON STOCK,sell,5000.0,40.07,200350.0
+2009-10-01,AZZ,"BOWEN, MARTIN C",Director,True,COMMON STOCK,sell,3020.0,40.0,120800.0
+2009-10-06,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,buy,40000.0,8.3625,334500.0
+2009-10-06,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,sell,40000.0,39.0056,1560224.0
+2009-10-06,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,INCENTIVE STOCK OPTION,sell,40000.0,8.3625,334500.0
+2009-10-07,AZZ,"PETRO, JOHN V",SENIOR VP OPERATIONS,True,COMMON STOCK,sell,1901.0,39.0,74139.0
+2009-10-07,AZZ,"STRICKLEN, JIM",VP BUSINESS & MGMT SYSTEMS,True,COMMON STOCK,sell,5000.0,39.85,199250.0
+2009-10-09,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,sell,367.0,40.0,14680.0
+2010-02-17,AZZ,"JOYCE, KEVERN R",Director,True,COMMON STOCK $1 PAR VALUE,buy,252.3057,30.3256,7651.321735920001
+2010-03-08,AZZ,"STOVALL, BRYAN LEE",Vice President,True,COMMON STOCK,buy,219.0,15.4,3372.6
+2010-03-08,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,Common Stock,buy,173.0,28.74,4972.0199999999995
+2010-03-08,AZZ,"PETITTO, JOHN A",Vice President,True,Common Stock,buy,129.0,28.74,3707.4599999999996
+2010-03-08,AZZ,"PERRY, DANA","Director, Sr, VP & CFO",True,Common Stock,buy,876.0,15.4,13490.4
+2010-03-08,AZZ,"STRICKLEN, JIM",VP BUSINESS & MGMT SYSTEMS,True,COMMON STOCK,buy,271.0,15.4,4173.400000000001
+2010-03-08,AZZ,"PENDLEY, TIMOTHY E",SR VP GALVANIZING,True,COMMON STOCK,buy,260.0,28.74,7472.4
+2010-03-08,AZZ,"KOLADY, ASHOK",VP BUSINESS DEVELOPMENT,True,COMMON STOCK,buy,553.0,15.4,8516.2
+2010-03-08,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,buy,341.0,15.4,5251.400000000001
+2010-03-08,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,Common Stock,buy,53.0,28.74,1523.22
+2010-04-12,AZZ,"JOYCE, KEVERN R",Director,True,COMMON STOCK,sell,1859.0,31.67,58874.530000000006
+2010-04-12,AZZ,"PERRY, DANA","Director, SR VP & CFO",True,COMMON STOCK,buy,9100.0,19.89,180999.0
+2010-04-12,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,sell,1718.0,34.27,58875.86000000001
+2010-04-12,AZZ,"ROSEN, SAM",Director,True,COMMON STOCK,sell,1472.0,39.98,58850.56
+2010-04-12,AZZ,"JOYCE, KEVERN R",Director,True,COMMON STOCK,buy,863.0,18.12,15637.560000000001
+2010-04-12,AZZ,"PERRY, DANA","Director, SR VP & CFO",True,COMMON STOCK,sell,6100.0,40.64,247904.0
+2010-04-12,AZZ,"JOYCE, KEVERN R",Director,True,COMMON STOCK,buy,2960.0,19.89,58874.4
+2010-04-12,AZZ,"HEGEDUS, PETER A",Director,True,STOCK APPRECIATION RIGHTS,sell,2960.0,19.89,58874.4
+2010-04-12,AZZ,"HEGEDUS, PETER A",Director,True,COMMON STOCK,sell,1718.0,39.98,68685.64
+2010-04-12,AZZ,"STRICKLEN, JIM",VP BUSINESS & MGMT SYSTEMS,True,COMMON STOCK,buy,8640.0,19.89,171849.6
+2010-04-12,AZZ,"STRICKLEN, JIM",VP BUSINESS & MGMT SYSTEMS,True,COMMON STOCK,sell,5483.0,40.64,222829.12
+2010-04-12,AZZ,"STRICKLEN, JIM",VP BUSINESS & MGMT SYSTEMS,True,COMMON STOCK,sell,868.0,40.64,35275.520000000004
+2010-04-12,AZZ,"STRICKLEN, JIM",VP BUSINESS & MGMT SYSTEMS,True,STOCK APPRECIATION RIGHTS,sell,8640.0,19.89,171849.6
+2010-04-12,AZZ,"STRICKLEN, JIM",VP BUSINESS & MGMT SYSTEMS,True,STOCK APPRECIATION RIGHTS,sell,1439.0,18.12,26074.68
+2010-04-12,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,STOCK APPRECIATIION RIGHTS,sell,980.0,19.89,19492.2
+2010-04-12,AZZ,"STRICKLEN, JIM",VP BUSINESS & MGMT SYSTEMS,True,COMMON STOCK,buy,1439.0,18.12,26074.68
+2010-04-12,AZZ,"HEGEDUS, PETER A",Director,True,COMMON STOCK,buy,2960.0,19.89,58874.4
+2010-04-12,AZZ,"STOVALL, BRYAN LEE",Vice President,True,STOCK APPRECIATION RIGHTS,sell,980.0,19.89,19492.2
+2010-04-12,AZZ,"WATSON, CLEMENT H",VP SALES & MARKETING,True,COMMON STOCK,buy,8640.0,19.89,171849.6
+2010-04-12,AZZ,"WATSON, CLEMENT H",VP SALES & MARKETING,True,STOCK APPRECIATION RIGHTS,sell,1439.0,18.12,26074.68
+2010-04-12,AZZ,"WATSON, CLEMENT H",VP SALES & MARKETING,True,STOCK APPRECIATION RIGHTS,sell,8640.0,19.89,171849.6
+2010-04-12,AZZ,"WATSON, CLEMENT H",VP SALES & MARKETING,True,COMMON STOCK,sell,821.0,39.98,32823.579999999994
+2010-04-12,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,COMMON STOCK,sell,5836.0,39.98,233323.27999999997
+2010-04-12,AZZ,"WATSON, CLEMENT H",VP SALES & MARKETING,True,COMMON STOCK,buy,1439.0,18.12,26074.68
+2010-04-12,AZZ,"JOYCE, KEVERN R",Director,True,STOCK APPRECIATION RIGHTS,sell,863.0,18.12,15637.560000000001
+2010-04-12,AZZ,"WATSON, CLEMENT H",VP SALES & MARKETING,True,COMMON STOCK,sell,5229.0,39.98,209055.41999999998
+2010-04-12,AZZ,"ESTES, WILLIAM G",Vice President,True,STOCK APPRECIATION RIGHTS,sell,1439.0,18.12,26074.68
+2010-04-12,AZZ,"ESTES, WILLIAM G",Vice President,True,STOCK APPRECIATION RIGHTS,sell,2420.0,19.89,48133.8
+2010-04-12,AZZ,"ESTES, WILLIAM G",Vice President,True,COMMON STOCK,sell,821.0,39.98,32823.579999999994
+2010-04-12,AZZ,"ESTES, WILLIAM G",Vice President,True,COMMON STOCK,sell,1465.0,39.98,58570.7
+2010-04-12,AZZ,"ESTES, WILLIAM G",Vice President,True,COMMON STOCK,buy,2420.0,19.89,48133.8
+2010-04-12,AZZ,"ROSEN, SAM",Director,True,COMMON STOCK,buy,2960.0,19.89,58874.4
+2010-04-12,AZZ,"STOVALL, BRYAN LEE",Vice President,True,STOCK APPRECIATION RIGHTS,sell,1439.0,18.12,26074.68
+2010-04-12,AZZ,"JOYCE, KEVERN R",Director,True,COMMON STOCK,sell,494.0,31.67,15644.980000000001
+2010-04-12,AZZ,"STOVALL, BRYAN LEE",Vice President,True,COMMON STOCK,buy,1439.0,18.12,26074.68
+2010-04-12,AZZ,"STOVALL, BRYAN LEE",Vice President,True,COMMON STOCK,sell,939.0,39.98,37541.219999999994
+2010-04-12,AZZ,"DOWNEY, H KIRK",Director,True,STOCK APPRECIATION RIGHTS,sell,2960.0,19.89,58874.4
+2010-04-12,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,COMMON STOCK,sell,679.0,38.46,26114.34
+2010-04-12,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,STOCK APPRECIATION RIGHTS,sell,1439.0,18.12,26074.68
+2010-04-12,AZZ,"PENDLEY, TIMOTHY E","Senior VP, COO GALVANIZING",True,COMMON STOCK,buy,8640.0,19.89,171849.6
+2010-04-12,AZZ,"PENDLEY, TIMOTHY E","Senior VP, COO GALVANIZING",True,COMMON STOCK,sell,5663.0,39.98,226406.74
+2010-04-12,AZZ,"PENDLEY, TIMOTHY E","Senior VP, COO GALVANIZING",True,COMMON STOCK,buy,3985.0,18.12,72208.2
+2010-04-12,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,COMMON STOCK,buy,8640.0,19.89,171849.6
+2010-04-12,AZZ,"PENDLEY, TIMOTHY E","Senior VP, COO GALVANIZING",True,COMMON STOCK,sell,2491.0,39.98,99590.18
+2010-04-12,AZZ,"PENDLEY, TIMOTHY E","Senior VP, COO GALVANIZING",True,STOCK APPRECIATION RIGHTS,sell,8640.0,19.89,171849.6
+2010-04-12,AZZ,"PENDLEY, TIMOTHY E","Senior VP, COO GALVANIZING",True,STOCK APPRECIATION RIGHTS,sell,3985.0,18.12,72208.2
+2010-04-12,AZZ,"STOVALL, BRYAN LEE",Vice President,True,COMMON STOCK,buy,980.0,19.89,19492.2
+2010-04-12,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,sell,456.0,34.27,15627.12
+2010-04-12,AZZ,"JOYCE, KEVERN R",Director,True,STOCK APPRECIATION RIGHTS,sell,2960.0,19.89,58874.4
+2010-04-12,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,buy,39300.0,19.89,781677.0
+2010-04-12,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,COMMON STOCK,sell,5836.0,40.64,237175.04
+2010-04-12,AZZ,"STOVALL, BRYAN LEE",Vice President,True,COMMON STOCK,sell,667.0,39.98,26666.659999999996
+2010-04-12,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,buy,863.0,18.12,15637.560000000001
+2010-04-12,AZZ,"DOWNEY, H KIRK",Director,True,STOCK APPRECIATION RIGHTS,sell,863.0,18.12,15637.560000000001
+2010-04-12,AZZ,"ESTES, WILLIAM G",Vice President,True,COMMON STOCK,buy,1439.0,18.12,26074.68
+2010-04-12,AZZ,"ROSEN, SAM",Director,True,STOCK APPRECIATION RIGHTS,sell,2960.0,19.89,58874.4
+2010-04-12,AZZ,"PERRY, DANA","Director, SR VP & CFO",True,STOCK APPRECIATION RIGHTS,sell,9100.0,19.89,180999.0
+2010-04-12,AZZ,"BOWEN, MARTIN C",Director,True,COMMON STOCK,sell,1448.0,40.64,58846.72
+2010-04-12,AZZ,"BOWEN, MARTIN C",Director,True,STOCK APPRECIATION RIGHTS,sell,2960.0,19.89,58874.4
+2010-04-12,AZZ,"STRICKLEN, JIM",VP BUSINESS & MGMT SYSTEMS,True,COMMON STOCK,buy,5483.0,40.64,222829.12
+2010-04-12,AZZ,"BOWEN, MARTIN C",Director,True,COMMON STOCK,buy,2960.0,19.89,58874.4
+2010-04-12,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,STOCK APPRECIATION RIGHTS,sell,8640.0,19.89,171849.6
+2010-04-12,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,COMMON STOCK,sell,955.0,38.46,36729.3
+2010-04-12,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,COMMON STOCK,buy,1439.0,18.12,26074.68
+2010-04-12,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,sell,25542.0,40.64,1038026.88
+2010-04-12,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,STOCK APPRECIATION RIGHTS,sell,39300.0,19.89,781677.0
+2010-04-12,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,buy,2960.0,19.89,58874.4
+2010-04-12,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,COMMON STOCK,buy,980.0,19.89,19492.2
+2010-04-16,AZZ,"PETITTO, JOHN A",Vice President,True,COMMON STOCK,sell,1564.0,41.06,64217.840000000004
+2010-04-16,AZZ,"PETITTO, JOHN A",Vice President,True,COMMON STOCK,buy,1439.0,18.12,26074.68
+2010-04-16,AZZ,"PETITTO, JOHN A",Vice President,True,COMMON STOCK,buy,2420.0,19.89,48133.8
+2010-04-16,AZZ,"PETITTO, JOHN A",Vice President,True,STOCK APPRECIATION RIGHTS,sell,1439.0,18.12,26074.68
+2010-04-16,AZZ,"PETITTO, JOHN A",Vice President,True,STOCK APPRECIATION RIGHTS,sell,2420.0,19.89,48133.8
+2010-04-16,AZZ,"PETITTO, JOHN A",Vice President,True,COMMON STOCK,sell,888.0,41.06,36461.28
+2010-04-23,AZZ,"PETRO, JOHN V",SENIOR VP OPERATIONS,True,STOCK APPRECIATION RIGHTS,sell,8640.0,19.89,171849.6
+2010-04-23,AZZ,"PETRO, JOHN V",SENIOR VP OPERATIONS,True,COMMON STOCK,buy,8640.0,19.89,171849.6
+2010-04-23,AZZ,"PETRO, JOHN V",SENIOR VP OPERATIONS,True,COMMON STOCK,sell,5773.0,41.62,240272.25999999998
+2010-04-26,AZZ,"STOVALL, BRYAN LEE",Vice President,True,COMMON STOCK,sell,715.0,42.0,30030.0
+2010-04-29,AZZ,"PETRO, JOHN V",SENIOR VP OPERATIONS,True,COMMON STOCK,sell,2867.0,42.1223,120764.63410000001
+2010-04-30,AZZ,"FEEHAN, DANIEL R",Director,True,COMMON STOCK,buy,2960.0,19.89,58874.4
+2010-04-30,AZZ,"BERCE, DANIEL E",Director,True,STOCK APPRECIATION RIGHTS,sell,2960.0,19.89,58874.4
+2010-04-30,AZZ,"BERCE, DANIEL E",Director,True,COMMON STOCK,buy,2960.0,19.89,58874.4
+2010-04-30,AZZ,"BERCE, DANIEL E",Director,True,COMMON STOCK,sell,1369.0,43.01,58880.689999999995
+2010-04-30,AZZ,"FEEHAN, DANIEL R",Director,True,STOCK APPRECIATION RIGHTS,sell,2960.0,19.89,58874.4
+2010-04-30,AZZ,"FEEHAN, DANIEL R",Director,True,COMMON STOCK,sell,1369.0,43.01,58880.689999999995
+2010-05-03,AZZ,"STOVALL, BRYAN LEE",Vice President,True,COMMON STOCK,buy,700.0,12.13,8491.0
+2010-05-03,AZZ,"STOVALL, BRYAN LEE",Vice President,True,COMMON STOCK,buy,1892.0,8.8,16649.600000000002
+2010-05-12,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,COMMON STOCK,sell,548.0,41.01,22473.48
+2010-06-25,AZZ,"AZZ, INC","10% Owner, SUBJECT COMPANY",False,COMMON STOCK,buy,982605.0,7.5,7369537.5
+2010-06-25,AZZ,"AZZ, INC","10% Owner, SUBJECT COMPANY",False,COMMON STOCK,buy,167999.0,7.5,1259992.5
+2010-06-25,AZZ,"AZZ, INC","10% Owner, SUBJECT COMPANY",False,COMMON STOCK,buy,987134.0,7.5,7403505.0
+2010-06-30,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,buy,36730.0,8.3625,307154.625
+2010-06-30,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,sell,341.0,38.05,12975.05
+2010-06-30,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,INCENTIVE STOCK OPTION,sell,36730.0,8.3625,307154.625
+2010-07-14,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,sell,24200.0,40.1843,972460.06
+2010-07-15,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,sell,3000.0,40.038,120113.99999999999
+2010-07-19,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,sell,9499.0,40.0112,380066.3888
+2010-07-20,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,sell,3301.0,40.0,132040.0
+2010-07-28,AZZ,"PETRO, JOHN V",SENIOR VP OPERATIONS,True,COMMON STOCK,sell,359.0,43.77,15713.43
+2010-08-02,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,sell,1089.0,44.58,48547.619999999995
+2010-08-02,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,sell,911.0,44.5301,40566.9211
+2010-08-04,AZZ,"KOLADY, ASHOK",VP BUSINESS DEVELOPMENT,True,COMMON STOCK,sell,773.0,44.13,34112.490000000005
+2010-08-04,AZZ,"KOLADY, ASHOK",VP BUSINESS DEVELOPMENT,True,STOCK APPRECIATION RIGHTS,sell,1439.0,18.12,26074.68
+2010-08-04,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,COMMON STOCK,buy,1439.0,18.12,26074.68
+2010-08-04,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,COMMON STOCK,sell,896.0,44.58,39943.68
+2010-08-04,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,STOCK APPRECIATION RIGHTS,sell,1439.0,18.12,26074.68
+2010-08-04,AZZ,"KOLADY, ASHOK",VP BUSINESS DEVELOPMENT,True,COMMON STOCK,buy,1439.0,18.12,26074.68
+2010-08-12,AZZ,"ROSEN, SAM",Director,True,COMMON STOCK,buy,8000.0,41.7479,333983.2
+2010-08-12,AZZ,"ROSEN, SAM",Director,True,COMMON STOCK,buy,4000.0,4.215,16860.0
+2010-08-12,AZZ,"ROSEN, SAM",Director,True,NON STATUTORY STOCK OPTION RIGHT TO BUY,sell,4000.0,4.215,16860.0
+2010-08-12,AZZ,"ROSEN, SAM",Director,True,NON STATUTORY STOCK OPTION RIGHT TO BUY,sell,4000.0,7.7,30800.0
+2010-08-12,AZZ,"ROSEN, SAM",Director,True,COMMON STOCK,buy,4000.0,7.7,30800.0
+2010-09-07,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,Common Stock,buy,435.0,31.3,13615.5
+2010-09-07,AZZ,"PERRY, DANA","Director, VP & Chief Financial Officer",True,COMMON STOCK,buy,503.0,15.4,7746.2
+2010-09-07,AZZ,"STRICKLEN, JIM",VP BUSINESS & MGMT SYSTEMS,True,COMMON STOCK,buy,427.0,15.4,6575.8
+2010-09-07,AZZ,"STOVALL, BRYAN LEE",Vice President,True,COMMON STOCK,buy,223.0,15.4,3434.2000000000003
+2010-09-07,AZZ,"PETITTO, JOHN A",Vice President,True,COMMON STOCK,buy,224.0,30.65,6865.599999999999
+2010-09-07,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,COMMON STOCK,buy,96.0,31.3,3004.8
+2010-09-07,AZZ,"KOLADY, ASHOK",VP BUSINESS DEVELOPMENT,True,COMMON STOCK,buy,826.0,15.4,12720.4
+2010-09-07,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,buy,418.0,31.3,13083.4
+2010-09-27,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,sell,868.0,42.99,37315.32
+2010-09-27,AZZ,"QUINN, FRANCIS D",Vice President,True,STOCK APPRECIATION RIGHTS,sell,1439.0,18.12,26074.68
+2010-09-27,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,buy,16603.0,18.12,300846.36000000004
+2010-09-27,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,sell,10499.0,42.99,451352.01
+2010-09-27,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,buy,1439.0,18.12,26074.68
+2010-09-27,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,STOCK APPRECIATION RIGHTS,sell,16603.0,18.12,300846.36000000004
+2010-11-02,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,COMMON STOCK,sell,1200.0,37.27,44724.00000000001
+2010-11-03,AZZ,"KOLADY, ASHOK",VP BUSINESS DEVELOPMENT,True,COMMON STOCK,sell,666.0,37.62,25054.92
+2010-11-15,AZZ,"PETITTO, JOHN A",Vice President,True,COMMON STOCK,sell,200.0,38.884,7776.8
+2010-11-15,AZZ,"PETITTO, JOHN A",Vice President,True,COMMON STOCK,sell,100.0,38.91,3890.9999999999995
+2010-11-15,AZZ,"PETITTO, JOHN A",Vice President,True,COMMON STOCK,sell,307.0,38.884,11937.388
+2010-11-15,AZZ,"PETITTO, JOHN A",Vice President,True,COMMON STOCK,sell,800.0,38.942,31153.6
+2011-01-26,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,sell,2000.0,41.3136,82627.2
+2011-01-28,AZZ,"PETRO, JOHN V",SENIOR VP OPERATIONS,True,COMMON STOCK,sell,2683.0,40.98,109949.34
+2011-01-28,AZZ,"PETRO, JOHN V",SENIOR VP OPERATIONS,True,STOCK APPRECIATION RIGHTS,sell,3985.0,18.12,72208.2
+2011-01-28,AZZ,"PETRO, JOHN V",SENIOR VP OPERATIONS,True,COMMON STOCK,buy,3985.0,18.12,72208.2
+2011-02-07,AZZ,"PETRO, JOHN V",SENIOR VP OPERATIONS,True,COMMON STOCK,sell,1302.0,41.25,53707.5
+2011-03-01,AZZ,"PETRO, JOHN V",SENIOR VP OPERATIONS,True,COMMON STOCK,sell,782.0,41.81,32695.420000000002
+2011-03-01,AZZ,"PETRO, JOHN V",SENIOR VP OPERATIONS,True,COMMON STOCK,buy,782.0,41.81,32695.420000000002
+2011-03-01,AZZ,"STOVALL, BRYAN LEE",Vice President,True,STOCK APPRECIATION RIGHTS,sell,1326.0,31.67,41994.420000000006
+2011-03-01,AZZ,"STOVALL, BRYAN LEE",Vice President,True,STOCK APPRECIATION RIGHTS,sell,1890.0,35.88,67813.20000000001
+2011-03-01,AZZ,"PETRO, JOHN V",SENIOR VP OPERATIONS,True,COMMON STOCK,buy,1887.0,41.81,78895.47
+2011-03-01,AZZ,"PETRO, JOHN V",SENIOR VP OPERATIONS,True,RESTRICTED STOCK UNITS,sell,1887.0,41.81,78895.47
+2011-03-01,AZZ,"PETITTO, JOHN A",Vice President,True,STOCK APPRECIATION RIGHTS,sell,1326.0,31.67,41994.420000000006
+2011-03-02,AZZ,"PETRO, JOHN V",SENIOR VP OPERATIONS,True,COMMON STOCK,buy,2608.0,41.9,109275.2
+2011-03-02,AZZ,"PETRO, JOHN V",SENIOR VP OPERATIONS,True,COMMON STOCK,sell,1081.0,41.9,45293.9
+2011-03-02,AZZ,"PETRO, JOHN V",SENIOR VP OPERATIONS,True,RESTRICTED STOCK UNITS,sell,2608.0,41.9,109275.2
+2011-03-04,AZZ,"KOLADY, ASHOK",VP BUSINESS DEVELOPMENT,True,COMMON STOCK,buy,6740.0,35.88,241831.2
+2011-03-04,AZZ,"KOLADY, ASHOK",VP BUSINESS DEVELOPMENT,True,COMMON STOCK,sell,5960.0,42.08,250796.8
+2011-03-04,AZZ,"PETRO, JOHN V",SENIOR VP OPERATIONS,True,COMMON STOCK,buy,10110.0,35.88,362746.80000000005
+2011-03-04,AZZ,"PETRO, JOHN V",SENIOR VP OPERATIONS,True,STOCK APPRECIATION RIGHTS,sell,10110.0,35.88,362746.80000000005
+2011-03-04,AZZ,"PETRO, JOHN V",SENIOR VP OPERATIONS,True,COMMON STOCK,sell,9238.0,42.08,388735.04
+2011-03-04,AZZ,"KOLADY, ASHOK",VP BUSINESS DEVELOPMENT,True,STOCK APPRECIATION RIGHTS,sell,6740.0,35.88,241831.2
+2011-03-07,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,buy,35.0,34.91,1221.85
+2011-03-07,AZZ,"CALDWELL, DARREN LLOYD",VP Operations Elec&Ind,True,COMMON STOCK,buy,64.0,34.91,2234.24
+2011-03-07,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,COMMON STOCK,buy,51.0,34.91,1780.4099999999999
+2011-03-07,AZZ,"STOVALL, BRYAN LEE",Vice President,True,COMMON STOCK,buy,292.0,15.4,4496.8
+2011-03-07,AZZ,"STRICKLEN, JIM",VP BUSINESS & MGMT SYSTEMS,True,COMMON STOCK,buy,678.0,15.4,10441.2
+2011-03-07,AZZ,"KOLADY, ASHOK",VP BUSINESS DEVELOPMENT,True,COMMON STOCK,buy,568.0,15.4,8747.2
+2011-03-07,AZZ,"PERRY, DANA","Director, Sr VP & CFO",True,COMMON STOCK,buy,876.0,15.4,13490.4
+2011-03-08,AZZ,"STOVALL, BRYAN LEE",Vice President,True,STOCK APPRECIATION RIGHTS,sell,1326.0,31.67,41994.420000000006
+2011-03-08,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,COMMON STOCK,buy,1326.0,31.67,41994.420000000006
+2011-03-08,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,COMMON STOCK,sell,1090.0,43.98,47938.2
+2011-03-08,AZZ,"STOVALL, BRYAN LEE",Vice President,True,COMMON STOCK,buy,1890.0,35.88,67813.20000000001
+2011-03-08,AZZ,"STOVALL, BRYAN LEE",Vice President,True,COMMON STOCK,sell,1669.0,43.98,73402.62
+2011-03-08,AZZ,"STOVALL, BRYAN LEE",Vice President,True,COMMON STOCK,buy,1439.0,18.12,26074.68
+2011-03-08,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,COMMON STOCK,sell,901.0,43.98,39625.979999999996
+2011-03-08,AZZ,"STOVALL, BRYAN LEE",Vice President,True,STOCK APPRECIATION RIGHTS,sell,1890.0,35.88,67813.20000000001
+2011-03-08,AZZ,"STOVALL, BRYAN LEE",Vice President,True,STOCK APPRECIATION RIGHTS,sell,1439.0,18.12,26074.68
+2011-03-08,AZZ,"STOVALL, BRYAN LEE",Vice President,True,COMMON STOCK,sell,901.0,43.98,39625.979999999996
+2011-03-08,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,COMMON STOCK,sell,5951.0,43.98,261724.97999999998
+2011-03-08,AZZ,"STOVALL, BRYAN LEE",Vice President,True,COMMON STOCK,buy,1326.0,31.67,41994.420000000006
+2011-03-08,AZZ,"STRICKLEN, JIM",VP BUSINESS & MGMT SYSTEMS,True,STOCK APPRECIATION RIGHTS,sell,1439.0,18.12,26074.68
+2011-03-08,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,COMMON STOCK,buy,1439.0,18.12,26074.68
+2011-03-08,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,COMMON STOCK,buy,6740.0,35.88,241831.2
+2011-03-08,AZZ,"STRICKLEN, JIM",VP BUSINESS & MGMT SYSTEMS,True,STOCK APPRECIATION RIGHTS,sell,1326.0,31.67,41994.420000000006
+2011-03-08,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,STOCK APPRECIATION RIGHTS,sell,10110.0,35.88,362746.80000000005
+2011-03-08,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,sell,2916.0,43.98,128245.68
+2011-03-08,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,STOCK APPRECIATION RIGHTS,sell,3985.0,18.12,72208.2
+2011-03-08,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,COMMON STOCK,sell,1669.0,43.98,73402.62
+2011-03-08,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,STOCK APPRECIATION RIGHTS,sell,1326.0,31.67,41994.420000000006
+2011-03-08,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,COMMON STOCK,buy,1890.0,35.88,67813.20000000001
+2011-03-08,AZZ,"STRICKLEN, JIM",VP BUSINESS & MGMT SYSTEMS,True,COMMON STOCK,buy,1326.0,31.67,41994.420000000006
+2011-03-08,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,COMMON STOCK,buy,1439.0,18.12,26074.68
+2011-03-08,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,COMMON STOCK,buy,1326.0,31.67,41994.420000000006
+2011-03-08,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,COMMON STOCK,sell,1090.0,43.98,47938.2
+2011-03-08,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,STOCK APPRECIATION RIGHTS,sell,1890.0,35.88,67813.20000000001
+2011-03-08,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,COMMON STOCK,sell,1439.0,18.12,26074.68
+2011-03-08,AZZ,"STOVALL, BRYAN LEE",Vice President,True,COMMON STOCK,sell,1090.0,43.98,47938.2
+2011-03-08,AZZ,"STRICKLEN, JIM",VP BUSINESS & MGMT SYSTEMS,True,COMMON STOCK,sell,5827.0,43.98,256271.46
+2011-03-08,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,STOCK APPRECIATION RIGHTS,sell,1439.0,18.12,26074.68
+2011-03-08,AZZ,"STRICKLEN, JIM",VP BUSINESS & MGMT SYSTEMS,True,COMON STOCK,buy,1439.0,18.12,26074.68
+2011-03-08,AZZ,"STRICKLEN, JIM",VP BUSINESS & MGMT SYSTEMS,True,COMMON STOCK,sell,817.0,43.98,35931.659999999996
+2011-03-08,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,STOCK APPRECIATION RIGHTS,sell,1326.0,31.67,41994.420000000006
+2011-03-08,AZZ,"STRICKLEN, JIM",VP BUSINESS & MGMT SYSTEMS,True,COMMON STOCK,buy,6740.0,35.88,241831.2
+2011-03-08,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,COMMON STOCK,sell,901.0,43.98,39625.979999999996
+2011-03-08,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,buy,3985.0,18.12,72208.2
+2011-03-08,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,sell,8740.0,43.98,384385.19999999995
+2011-03-08,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,buy,10110.0,35.88,362746.80000000005
+2011-03-08,AZZ,"STRICKLEN, JIM",VP BUSINESS & MGMT SYSTEMS,True,COMMON STOCK,sell,1053.0,43.98,46310.939999999995
+2011-03-08,AZZ,"STRICKLEN, JIM",VP BUSINESS & MGMT SYSTEMS,True,STOCK APPRECIATION RIGHTS,sell,6740.0,35.88,241831.2
+2011-03-08,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,STOCK APPRECIATION RIGHTS,sell,6740.0,35.88,241831.2
+2011-03-08,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,STOCK APPRECIATION RIGHTS,sell,3762.0,31.67,119142.54000000001
+2011-03-08,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,buy,3672.0,31.67,116292.24
+2011-03-08,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,sell,2262.0,43.98,99482.76
+2011-03-09,AZZ,"PETITTO, JOHN A",Vice President,True,COMMON STOCK,buy,1890.0,35.88,67813.20000000001
+2011-03-09,AZZ,"JOYCE, KEVERN R",Director,True,STOCK APPRECIATION RIGHTS,sell,2310.0,35.88,82882.8
+2011-03-09,AZZ,"PETITTO, JOHN A",Vice President,True,COMMON STOCK,sell,860.0,43.88,37736.8
+2011-03-09,AZZ,"PETITTO, JOHN A",Vice President,True,COMMON STOCK,sell,1073.0,43.88,47083.240000000005
+2011-03-09,AZZ,"PETITTO, JOHN A",Vice President,True,STOCK APPRECIATION RIGHTS,sell,1890.0,35.88,67813.20000000001
+2011-03-09,AZZ,"PETITTO, JOHN A",Vice President,True,STOCK APPRECIATION RIGHTS,sell,1439.0,18.12,26074.68
+2011-03-09,AZZ,"PETITTO, JOHN A",Vice President,True,STOCK APPRECIATION RIGHTS,sell,1326.0,31.67,41994.420000000006
+2011-03-09,AZZ,"JOYCE, KEVERN R",Director,True,STOCK APPRECIATION RIGHTS,sell,794.0,31.67,25145.98
+2011-03-09,AZZ,"JOYCE, KEVERN R",Director,True,COMMON STOCK,buy,2310.0,35.88,82882.8
+2011-03-09,AZZ,"PETITTO, JOHN A",Vice President,True,COMMON STOCK,buy,1439.0,18.12,26074.68
+2011-03-09,AZZ,"JOYCE, KEVERN R",Director,True,STOCK APPRECIATION RIGHTS,sell,862.0,18.12,15619.44
+2011-03-09,AZZ,"PETITTO, JOHN A",Vice President,True,COMMON STOCK,buy,860.0,43.88,37736.8
+2011-03-09,AZZ,"JOYCE, KEVERN R",Director,True,COMMON STOCK,sell,573.0,43.88,25143.24
+2011-03-09,AZZ,"PETITTO, JOHN A",Vice President,True,COMMON STOCK,buy,1326.0,31.67,41994.420000000006
+2011-03-09,AZZ,"PETITTO, JOHN A",Vice President,True,COMMON STOCK,sell,1654.0,43.88,72577.52
+2011-03-09,AZZ,"JOYCE, KEVERN R",Director,True,COMMON STOCK,buy,862.0,18.12,15619.44
+2011-03-09,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,buy,30700.0,35.88,1101516.0
+2011-03-09,AZZ,"JOYCE, KEVERN R",Director,True,COMMON STOCK,buy,794.0,31.67,25145.98
+2011-03-09,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,STOCK APPRECIATION RIGHTS,sell,30700.0,35.88,1101516.0
+2011-03-09,AZZ,"JOYCE, KEVERN R",Director,True,COMMON STOCK,sell,1889.0,43.88,82889.32
+2011-03-09,AZZ,"JOYCE, KEVERN R",Director,True,COMMON STOCK,sell,356.0,43.88,15621.28
+2011-03-09,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,sell,26303.0,43.88,1154175.6400000001
+2011-03-21,AZZ,"WATSON, CLEMENT H",VP SALES & MARKETING,True,COMMON STOCK,sell,1039.0,46.3,48105.7
+2011-03-21,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,STOCK APPRECIATION RIGHTS,sell,16604.0,18.12,300864.48000000004
+2011-03-21,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,sell,839.0,46.3,38845.7
+2011-03-21,AZZ,"WATSON, CLEMENT H",VP SALES & MARKETING,True,STOCK APPRECIATION RIGHTS,sell,6740.0,35.88,241831.2
+2011-03-21,AZZ,"WATSON, CLEMENT H",VP SALES & MARKETING,True,STOCK APPRECIATION RIGHTS,sell,1326.0,31.67,41994.420000000006
+2011-03-21,AZZ,"WATSON, CLEMENT H",VP SALES & MARKETING,True,STOCK APPRECIATION RIGHTS,sell,1439.0,18.12,26074.68
+2011-03-21,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,sell,9676.0,46.3,447998.8
+2011-03-21,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,sell,1039.0,46.3,48105.7
+2011-03-21,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,buy,16604.0,18.12,300864.48000000004
+2011-03-21,AZZ,"WATSON, CLEMENT H",VP SALES & MARKETING,True,COMMON STOCK,buy,6740.0,35.88,241831.2
+2011-03-21,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,buy,1326.0,31.67,41994.420000000006
+2011-03-21,AZZ,"QUINN, FRANCIS D",Vice President,True,STOCK APPRECIATION RIGHTS,sell,1326.0,31.67,41994.420000000006
+2011-03-21,AZZ,"WATSON, CLEMENT H",VP SALES & MARKETING,True,COMMON STOCK,sell,5700.0,46.3,263910.0
+2011-03-21,AZZ,"WATSON, CLEMENT H",VP SALES & MARKETING,True,COMMON STOCK,buy,1439.0,18.12,26074.68
+2011-03-21,AZZ,"WATSON, CLEMENT H",VP SALES & MARKETING,True,COMMON STOCK,sell,839.0,46.3,38845.7
+2011-03-21,AZZ,"WATSON, CLEMENT H",VP SALES & MARKETING,True,COMMON STOCK,buy,1326.0,31.67,41994.420000000006
+2011-03-21,AZZ,"QUINN, FRANCIS D",Vice President,True,STOCK APPRECIATION RIGHTS,sell,1439.0,18.12,26074.68
+2011-03-21,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,buy,1439.0,18.12,26074.68
+2011-03-28,AZZ,"ESTES, WILLIAM G",Vice President,True,COMMON STOCK,buy,1890.0,35.88,67813.20000000001
+2011-03-28,AZZ,"ESTES, WILLIAM G",Vice President,True,COMMON STOCK,sell,1591.0,44.94,71499.54
+2011-03-28,AZZ,"ESTES, WILLIAM G",Vice President,True,STOCK APPRECIATION RIGHTS,sell,1890.0,35.88,67813.20000000001
+2011-04-26,AZZ,"ESTES, WILLIAM G",Vice President,True,COMMON STOCK,sell,780.0,43.5,33930.0
+2011-04-26,AZZ,"ESTES, WILLIAM G",Vice President,True,STOCK APPRECIATION RIGHTS,sell,1439.0,18.12,26074.68
+2011-04-26,AZZ,"ESTES, WILLIAM G",Vice President,True,COMMON STOCK,buy,1326.0,31.67,41994.420000000006
+2011-04-26,AZZ,"ESTES, WILLIAM G",Vice President,True,COMMON STOCK,buy,1439.0,18.12,26074.68
+2011-04-26,AZZ,"ESTES, WILLIAM G",Vice President,True,STOCK APPRECIATION RIGHTS,sell,1326.0,31.67,41994.420000000006
+2011-04-26,AZZ,"ESTES, WILLIAM G",Vice President,True,COMMON STOCK,sell,1043.0,43.5,45370.5
+2011-04-29,AZZ,"BOWEN, MARTIN C",Director,True,COMMON STOCK,buy,2310.0,35.88,82882.8
+2011-04-29,AZZ,"FEEHAN, DANIEL R",Director,True,COMMON STOCK,sell,1893.0,43.78,82875.54000000001
+2011-04-29,AZZ,"BERCE, DANIEL E",Director,True,COMMON STOCK,sell,1893.0,43.78,82875.54000000001
+2011-04-29,AZZ,"HEGEDUS, PETER A",Director,True,COMMON STOCK,buy,2310.0,35.88,82882.8
+2011-04-29,AZZ,"FEEHAN, DANIEL R",Director,True,STOCK APPRECIATION RIGHTS,sell,2310.0,35.88,82882.8
+2011-04-29,AZZ,"FEEHAN, DANIEL R",Director,True,COMMON STOCK,buy,2310.0,35.88,82882.8
+2011-04-29,AZZ,"BERCE, DANIEL E",Director,True,COMMON STOCK,buy,2310.0,35.88,82882.8
+2011-04-29,AZZ,"ROSEN, SAM",Director,True,COMMON STOCK,sell,1893.0,43.78,82875.54000000001
+2011-04-29,AZZ,"ROSEN, SAM",Director,True,STOCK APPRECIATION RIGHTS,sell,2310.0,35.88,82882.8
+2011-04-29,AZZ,"BOWEN, MARTIN C",Director,True,COMMON STOCK,sell,1893.0,43.78,82875.54000000001
+2011-04-29,AZZ,"BERCE, DANIEL E",Director,True,STOCK APPRECIATION RIGHTS,sell,2310.0,35.88,82882.8
+2011-04-29,AZZ,"HEGEDUS, PETER A",Director,True,COMMON STOCK,sell,1893.0,43.78,82875.54000000001
+2011-04-29,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,buy,2310.0,35.88,82882.8
+2011-04-29,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,sell,1893.0,43.78,82875.54000000001
+2011-04-29,AZZ,"DOWNEY, H KIRK",Director,True,STOCK APPRECIATION RIGHTS,sell,2310.0,35.88,82882.8
+2011-04-29,AZZ,"HEGEDUS, PETER A",Director,True,STOCK APPRECIATION RIGHTS,sell,2310.0,35.88,82882.8
+2011-04-29,AZZ,"PERRY, DANA","Director, VP & Chief Financial Officer",True,COMMON STOCK,buy,10110.0,35.88,362746.80000000005
+2011-04-29,AZZ,"PERRY, DANA","Director, VP & Chief Financial Officer",True,COMMON STOCK,sell,8859.0,43.78,387847.02
+2011-04-29,AZZ,"PERRY, DANA","Director, VP & Chief Financial Officer",True,STOCK APPRECIATION RIGHTS,sell,10110.0,35.88,362746.80000000005
+2011-04-29,AZZ,"ROSEN, SAM",Director,True,COMMON STOCK,buy,2310.0,35.88,82882.8
+2011-04-29,AZZ,"BOWEN, MARTIN C",Director,True,STOCK APPRECIATION RIGHTS,sell,2310.0,35.88,82882.8
+2011-05-11,AZZ,"ESTES, WILLIAM G",Vice President,True,COMMON STOCK,sell,500.0,43.86,21930.0
+2011-05-12,AZZ,"PERRY, DANA","Director, VP & Chief Financial Officer",True,COMMON STOCK,sell,2000.0,43.5,87000.0
+2011-07-06,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,COMMON STOCK,sell,2200.0,51.64,113608.0
+2011-07-06,AZZ,"KOLADY, ASHOK",VP BUSINESS DEVELOPMENT,True,COMMON STOCK,sell,1740.0,52.07,90601.8
+2011-07-19,AZZ,"JOYCE, KEVERN R",Director,True,COMMON STOCK,buy,4000.0,7.7,30800.0
+2011-07-19,AZZ,"JOYCE, KEVERN R",Director,True,COMMON STOCK,sell,905.0,52.61,47612.05
+2011-07-19,AZZ,"JOYCE, KEVERN R",Director,True,COMMON STOCK,buy,4000.0,4.215,16860.0
+2011-07-22,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,sell,10000.0,52.5,525000.0
+2011-07-22,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,sell,2000.0,52.0,104000.0
+2011-07-26,AZZ,"JOYCE, KEVERN R",Director,True,COMMON STOCK,sell,10000.0,51.83,518300.0
+2011-07-27,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,sell,600.0,50.74,30444.0
+2011-07-27,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,sell,1083.0,50.7,54908.100000000006
+2011-08-15,AZZ,"ROSEN, SAM",Director,True,COMMON STOCK,sell,1000.0,43.085,43085.0
+2011-09-06,AZZ,"STRICKLEN, JIM",VP BUSINESS & MGMT SYSTEMS,True,COMMON STOCK,buy,302.0,35.69,10778.38
+2011-09-06,AZZ,"STOVALL, BRYAN LEE",Vice President,True,COMMON STOCK,buy,41.0,35.69,1463.29
+2011-09-06,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,buy,94.0,34.91,3281.5399999999995
+2011-09-06,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,COMMON STOCK,buy,169.0,34.91,5899.789999999999
+2011-09-06,AZZ,"KOLADY, ASHOK",VP BUSINESS DEVELOPMENT,True,COMMON STOCK,buy,350.0,35.69,12491.5
+2012-02-06,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,sell,120.0,51.21,6145.2
+2012-02-15,AZZ,"ROSEN, SAM",Director,True,COMMON STOCK,sell,1000.0,49.22,49220.0
+2012-03-05,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,buy,39.0,34.91,1361.4899999999998
+2012-03-05,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,COMMON STOCK,buy,81.0,34.91,2827.7099999999996
+2012-03-05,AZZ,"STRICKLEN, JIM",VP BUSINESS & MGMT SYSTEMS,True,COMMON STOCK,buy,192.0,35.69,6852.48
+2012-03-05,AZZ,"KOLADY, ASHOK",VP BUSINESS DEVELOPMENT,True,COMMON STOCK,buy,270.0,35.69,9636.3
+2012-03-09,AZZ,"WATSON, CLEMENT H",VP SALES & MARKETING,True,COMMON STOCK,buy,942.0,51.34,48362.280000000006
+2012-03-09,AZZ,"PERRY, DANA","Director, VP & Chief Financial Officer",True,COMMON STOCK,sell,850.0,51.34,43639.0
+2012-03-09,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,Common Stock,sell,343.0,51.34,17609.620000000003
+2012-03-09,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,sell,3417.0,51.34,175428.78
+2012-03-09,AZZ,"WATSON, CLEMENT H",VP SALES & MARKETING,True,COMMON STOCK,sell,343.0,51.34,17609.620000000003
+2012-03-09,AZZ,"STOVALL, BRYAN LEE",Vice President,True,COMMON STOCK,buy,942.0,51.34,48362.280000000006
+2012-03-09,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,Common Stock,buy,942.0,51.34,48362.280000000006
+2012-03-09,AZZ,"ESTES, WILLIAM G",Vice President,True,COMMON STOCK,sell,202.0,51.34,10370.68
+2012-03-09,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,sell,296.0,51.34,15196.640000000001
+2012-03-09,AZZ,"STOVALL, BRYAN LEE",Vice President,True,COMMON STOCK,sell,343.0,51.34,17609.620000000003
+2012-03-09,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,sell,559.0,51.34,28699.06
+2012-03-09,AZZ,"PERRY, DANA","Director, VP & Chief Financial Officer",True,COMMON STOCK,buy,3477.0,51.34,178509.18000000002
+2012-03-09,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,COMMON STOCK,sell,343.0,51.34,17609.620000000003
+2012-03-09,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,buy,2608.0,51.34,133894.72
+2012-03-09,AZZ,"STRICKLEN, JIM",VP BUSINESS & MGMT SYSTEMS,True,COMMON STOCK,buy,942.0,51.34,48362.280000000006
+2012-03-09,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,buy,10865.0,51.34,557809.1000000001
+2012-03-09,AZZ,"ESTES, WILLIAM G",Vice President,True,COMMON STOCK,buy,942.0,51.34,48362.280000000006
+2012-03-09,AZZ,"STRICKLEN, JIM",VP BUSINESS & MGMT SYSTEMS,True,COMMON STOCK,sell,296.0,51.34,15196.640000000001
+2012-03-09,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,COMMON STOCK,buy,942.0,51.34,48362.280000000006
+2012-03-09,AZZ,"KOLADY, ASHOK",VP BUSINESS DEVELOPMENT,True,COMMON STOCK,sell,249.0,51.34,12783.660000000002
+2012-03-09,AZZ,"KOLADY, ASHOK",VP BUSINESS DEVELOPMENT,True,COMMON STOCK,buy,942.0,51.34,48362.280000000006
+2012-03-09,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,buy,942.0,51.34,48362.280000000006
+2012-03-26,AZZ,"ESTES, WILLIAM G",Vice President,True,COMMON STOCK,buy,1326.0,31.67,41994.420000000006
+2012-03-26,AZZ,"ESTES, WILLIAM G",Vice President,True,COMMON STOCK,sell,694.0,53.2,36920.8
+2012-03-26,AZZ,"ESTES, WILLIAM G",Vice President,True,STOCK APPRECIATION RIGHTS,sell,1326.0,31.67,41994.420000000006
+2012-03-26,AZZ,"ESTES, WILLIAM G",Vice President,True,COMMON STOCK,sell,904.0,53.2,48092.8
+2012-03-26,AZZ,"ESTES, WILLIAM G",Vice President,True,STOCK APPRECIATION RIGHTS,sell,1439.0,18.12,26074.68
+2012-03-26,AZZ,"ESTES, WILLIAM G",Vice President,True,COMMON STOCK,buy,1439.0,18.12,26074.68
+2012-04-11,AZZ,"JOYCE, KEVERN R",Director,True,COMMON STOCK,sell,463.0,49.89,23099.07
+2012-04-11,AZZ,"DOWNEY, H KIRK",Director,True,STOCK APPRECIATION RIGHTS,sell,862.0,18.12,15619.44
+2012-04-11,AZZ,"JOYCE, KEVERN R",Director,True,Stock Appreciation Rights,sell,553.0,41.81,23120.93
+2012-04-11,AZZ,"JOYCE, KEVERN R",Director,True,COMMON STOCK,buy,794.0,31.67,25145.98
+2012-04-11,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,buy,553.0,41.81,23120.93
+2012-04-11,AZZ,"JOYCE, KEVERN R",Director,True,COMMON STOCK,buy,553.0,41.81,23120.93
+2012-04-11,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,sell,311.0,50.25,15627.75
+2012-04-11,AZZ,"JOYCE, KEVERN R",Director,True,COMMON STOCK,sell,504.0,49.89,25144.56
+2012-04-11,AZZ,"JOYCE, KEVERN R",Director,True,STOCK APPRECIATION RIGHTS,sell,794.0,31.67,25145.98
+2012-04-11,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,sell,501.0,50.25,25175.25
+2012-04-11,AZZ,"DOWNEY, H KIRK",Director,True,STOCK APPRECIATION RIGHTS,sell,794.0,31.67,25145.98
+2012-04-11,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,sell,460.0,50.25,23115.0
+2012-04-11,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,buy,794.0,31.67,25145.98
+2012-04-11,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,sell,500.0,50.25,25125.0
+2012-04-11,AZZ,"DOWNEY, H KIRK",Director,True,STOCK APPRECIATION RIGHTS,sell,553.0,41.81,23120.93
+2012-04-11,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,buy,862.0,18.12,15619.44
+2012-04-13,AZZ,"HEGEDUS, PETER A",Director,True,COMMON STOCK,buy,863.0,18.12,15637.560000000001
+2012-04-13,AZZ,"HEGEDUS, PETER A",Director,True,COMMON STOCK,sell,490.0,47.2,23128.0
+2012-04-13,AZZ,"HEGEDUS, PETER A",Director,True,STOCK APPRECIATION RIGHTS,sell,863.0,18.12,15637.560000000001
+2012-04-13,AZZ,"HEGEDUS, PETER A",Director,True,STOCK APPRECIATION RIGHTS,sell,862.0,18.12,15619.44
+2012-04-13,AZZ,"HEGEDUS, PETER A",Director,True,STOCK APPRECIATION RIGHTS,sell,794.0,31.67,25145.98
+2012-04-13,AZZ,"HEGEDUS, PETER A",Director,True,COMMON STOCK,sell,331.0,47.2,15623.2
+2012-04-13,AZZ,"HEGEDUS, PETER A",Director,True,COMMON STOCK,buy,553.0,41.81,23120.93
+2012-04-13,AZZ,"HEGEDUS, PETER A",Director,True,COMMON STOCK,buy,862.0,18.12,15619.44
+2012-04-13,AZZ,"HEGEDUS, PETER A",Director,True,COMMON STOCK,buy,794.0,31.67,25145.98
+2012-04-13,AZZ,"HEGEDUS, PETER A",Director,True,COMMON STOCK,sell,533.0,47.2,25157.600000000002
+2012-04-13,AZZ,"HEGEDUS, PETER A",Director,True,STOCK APPRECIATION RIGHTS,sell,553.0,41.81,23120.93
+2012-04-20,AZZ,"JOYCE, KEVERN R",Director,True,COMMON STOCK,buy,862.0,18.12,15619.44
+2012-04-20,AZZ,"JOYCE, KEVERN R",Director,True,STOCK APPRECIATION RIGHTS,sell,862.0,18.12,15619.44
+2012-04-20,AZZ,"JOYCE, KEVERN R",Director,True,COMMON STOCK,sell,313.0,49.89,15615.57
+2012-05-09,AZZ,"ESTES, WILLIAM G",Vice President,True,COMMON STOCK,buy,922.0,41.81,38548.82
+2012-05-09,AZZ,"ESTES, WILLIAM G",Vice President,True,STOCK APPRECIATION RIGHTS,sell,922.0,41.81,38548.82
+2012-05-09,AZZ,"ESTES, WILLIAM G",Vice President,True,COMMON STOCK,sell,775.0,53.39,41377.25
+2012-05-14,AZZ,"ROSEN, SAM",Director,True,COMMON STOCK,sell,1000.0,53.4911,53491.100000000006
+2012-05-15,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,sell,8501.0,53.85,457778.85000000003
+2012-05-15,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,STOCK APPRECIATION RIGHTS,sell,16604.0,18.12,300864.48000000004
+2012-05-15,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,buy,16604.0,18.12,300864.48000000004
+2012-05-21,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,STOCK APPRECIATION RIGHTS,sell,1439.0,18.12,26074.68
+2012-05-21,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,buy,3985.0,18.12,72208.2
+2012-05-21,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,sell,2128.0,53.38,113592.64
+2012-05-21,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,STOCK APPRECIATION RIGHTS,sell,3671.0,31.67,116260.57
+2012-05-21,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,STOCK APPRECIATION RIGHTS,sell,3985.0,18.12,72208.2
+2012-05-21,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,sell,2618.0,53.38,139748.84
+2012-05-21,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,buy,3671.0,31.67,116260.57
+2012-05-21,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,STOCK APPRECIATION RIGHTS,sell,2555.0,41.81,106824.55
+2012-05-21,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,COMMON STOCK,sell,983.0,53.38,52472.54
+2012-05-21,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,COMMON STOCK,buy,1439.0,18.12,26074.68
+2012-05-21,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,STOCK APPRECIATION RIGHTS,sell,1326.0,31.67,41994.420000000006
+2012-05-21,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,sell,2164.0,53.38,115514.32
+2012-05-21,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,buy,2555.0,41.81,106824.55
+2012-05-21,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,COMMON STOCK,sell,835.0,53.38,44572.3
+2012-05-21,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,COMMON STOCK,buy,1326.0,31.67,41994.420000000006
+2012-06-01,AZZ,"STRICKLEN, JIM",VP OF MANUFACTURING STRATEGIES,True,STOCK APPRECIATION RIGHTS,sell,1439.0,18.12,26074.68
+2012-06-01,AZZ,"STRICKLEN, JIM",VP OF MANUFACTURING STRATEGIES,True,COMMON STOCK,buy,1439.0,18.12,26074.68
+2012-06-01,AZZ,"STRICKLEN, JIM",VP OF MANUFACTURING STRATEGIES,True,COMMON STOCK,sell,765.0,54.44,41646.6
+2012-06-01,AZZ,"STRICKLEN, JIM",VP OF MANUFACTURING STRATEGIES,True,COMMON STOCK,sell,918.0,54.44,49975.92
+2012-06-01,AZZ,"STRICKLEN, JIM",VP OF MANUFACTURING STRATEGIES,True,COMMON STOCK,buy,1326.0,31.67,41994.420000000006
+2012-06-01,AZZ,"STRICKLEN, JIM",VP OF MANUFACTURING STRATEGIES,True,STOCK APPRECIATION RIGHTS,sell,922.0,41.81,38548.82
+2012-06-01,AZZ,"STRICKLEN, JIM",VP OF MANUFACTURING STRATEGIES,True,COMMON STOCK,buy,922.0,41.81,38548.82
+2012-06-01,AZZ,"STRICKLEN, JIM",VP OF MANUFACTURING STRATEGIES,True,COMMON STOCK,sell,733.0,54.44,39904.52
+2012-06-01,AZZ,"STRICKLEN, JIM",VP OF MANUFACTURING STRATEGIES,True,STOCK APPRECIATION RIGHTS,sell,1326.0,31.67,41994.420000000006
+2012-07-03,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,sell,2000.0,65.6378,131275.6
+2012-07-06,AZZ,"WATSON, CLEMENT H",VP SALES & MARKETING,True,COMMON STOCK,sell,882.0,66.89,58996.98
+2012-07-06,AZZ,"QUINN, FRANCIS D",Vice President,True,STOCK APPRECIATION RIGHTS,sell,1326.0,31.67,41994.420000000006
+2012-07-06,AZZ,"QUINN, FRANCIS D",Vice President,True,STOCK APPRECIATION RIGHTS,sell,1439.0,18.12,26074.68
+2012-07-06,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,buy,1326.0,31.67,41994.420000000006
+2012-07-06,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,sell,744.0,61.26,45577.439999999995
+2012-07-06,AZZ,"KOLADY, ASHOK",VP BUSINESS DEVELOPMENT,True,STOCK APPRECIATION RIGHTS,sell,1439.0,18.12,26074.68
+2012-07-06,AZZ,"KOLADY, ASHOK",VP BUSINESS DEVELOPMENT,True,COMMON STOCK,sell,1489.0,61.26,91216.14
+2012-07-06,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,COMMON STOCK,buy,1439.0,18.12,26074.68
+2012-07-06,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,sell,887.0,61.26,54337.619999999995
+2012-07-06,AZZ,"KOLADY, ASHOK",VP BUSINESS DEVELOPMENT,True,COMMON STOCK,buy,2878.0,18.12,52149.36
+2012-07-06,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,STOCK APPRECIATION RIGHTS,sell,922.0,41.81,38548.82
+2012-07-06,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,COMMON STOCK,sell,702.0,66.89,46956.78
+2012-07-06,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,COMMON STOCK,buy,922.0,41.81,38548.82
+2012-07-06,AZZ,"WATSON, CLEMENT H",VP SALES & MARKETING,True,STOCK APPRECIATION RIGHTS,sell,922.0,41.81,38548.82
+2012-07-06,AZZ,"WATSON, CLEMENT H",VP SALES & MARKETING,True,STOCK APPRECIATION RIGHTS,sell,1326.0,31.67,41994.420000000006
+2012-07-06,AZZ,"WATSON, CLEMENT H",VP SALES & MARKETING,True,STOCK APPRECIATION RIGHTS,sell,1439.0,18.12,26074.68
+2012-07-06,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,COMMON STOCK,buy,1326.0,31.67,41994.420000000006
+2012-07-06,AZZ,"WATSON, CLEMENT H",VP SALES & MARKETING,True,COMMON STOCK,buy,922.0,41.81,38548.82
+2012-07-06,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,buy,1439.0,18.12,26074.68
+2012-07-06,AZZ,"WATSON, CLEMENT H",VP SALES & MARKETING,True,COMMON STOCK,buy,1326.0,31.67,41994.420000000006
+2012-07-06,AZZ,"STOVALL, BRYAN LEE",Vice President,True,COMMON STOCK,buy,1439.0,18.12,26074.68
+2012-07-06,AZZ,"WATSON, CLEMENT H",VP SALES & MARKETING,True,COMMON STOCK,buy,1439.0,18.12,26074.68
+2012-07-06,AZZ,"STOVALL, BRYAN LEE",Vice President,True,STOCK APPRECIATION RIGHTS,sell,1326.0,31.67,41994.420000000006
+2012-07-06,AZZ,"STOVALL, BRYAN LEE",Vice President,True,STOCK APPRECIATION RIGHTS,sell,1439.0,18.12,26074.68
+2012-07-06,AZZ,"STOVALL, BRYAN LEE",Vice President,True,COMMON STOCK,sell,736.0,61.26,45087.36
+2012-07-06,AZZ,"STOVALL, BRYAN LEE",Vice President,True,COMMON STOCK,buy,922.0,41.81,38548.82
+2012-07-06,AZZ,"STOVALL, BRYAN LEE",Vice President,True,COMMON STOCK,sell,919.0,61.26,56297.939999999995
+2012-07-06,AZZ,"STOVALL, BRYAN LEE",Vice President,True,COMMON STOCK,buy,1326.0,31.67,41994.420000000006
+2012-07-06,AZZ,"STOVALL, BRYAN LEE",Vice President,True,COMMON STOCK,sell,795.0,61.26,48701.7
+2012-07-06,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,STOCK APPRECIATION RIGHTS,sell,1326.0,31.67,41994.420000000006
+2012-07-06,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,STOCK APPRECIATION RIGHTS,sell,922.0,41.81,38548.82
+2012-07-06,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,STOCK APPRECIATION RIGHTS,sell,1439.0,18.12,26074.68
+2012-07-06,AZZ,"STOVALL, BRYAN LEE",Vice President,True,STOCK APPRECIATION RIGHTS,sell,922.0,41.81,38548.82
+2012-07-06,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,COMMON STOCK,sell,736.0,61.26,45087.36
+2012-07-06,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,COMMON STOCK,buy,922.0,41.81,38548.82
+2012-07-06,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,COMMON STOCK,sell,919.0,61.26,56297.939999999995
+2012-07-06,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,COMMON STOCK,sell,795.0,61.26,48701.7
+2012-07-06,AZZ,"WATSON, CLEMENT H",VP SALES & MARKETING,True,COMMON STOCK,sell,772.0,66.89,51639.08
+2012-07-06,AZZ,"WATSON, CLEMENT H",VP SALES & MARKETING,True,COMMON STOCK,sell,702.0,66.89,46956.78
+2012-07-17,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,sell,14783.0,65.0,960895.0
+2012-07-18,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,sell,10217.0,65.0,664105.0
+2012-08-06,AZZ,"STOVALL, BRYAN LEE",Vice President,True,Incentive Stock Option,buy,5908.0,2.11,12465.88
+2012-09-04,AZZ,"KOLADY, ASHOK",Sr VP Elec & Ind and COO,True,COMMON STOCK,buy,650.0,17.85,11602.500000000002
+2012-09-04,AZZ,"STOVALL, BRYAN LEE",Vice President,True,COMMON STOCK,buy,93.0,17.85,1660.0500000000002
+2012-09-04,AZZ,"STRICKLEN, JIM",VP MANUFACTURING STRATEGIES,True,COMMON STOCK,buy,568.0,17.85,10138.800000000001
+2012-09-04,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,buy,165.0,17.45,2879.25
+2012-09-04,AZZ,"LINCOLN, JOHN SCOTT",Vice President,True,COMMON STOCK,buy,341.0,17.45,5950.45
+2012-09-28,AZZ,"KOLADY, ASHOK",Sr VP & COO Elec&Ind Products,True,STOCK APPRECIATION RIGHTS,sell,2652.0,15.835,41994.420000000006
+2012-09-28,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,STOCK APPRECIATION RIGHTS,sell,30596.0,15.835,484487.66000000003
+2012-09-28,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,sell,18367.0,37.98,697578.6599999999
+2012-09-28,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,buy,30594.0,15.835,484455.99000000005
+2012-09-28,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,sell,18366.0,37.98,697540.6799999999
+2012-09-28,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,STOCK APPRECIATION RIGHTS,sell,30594.0,15.835,484455.99000000005
+2012-09-28,AZZ,"KOLADY, ASHOK",Sr VP & COO Elec&Ind Products,True,COMMON STOCK,buy,2652.0,15.835,41994.420000000006
+2012-09-28,AZZ,"KOLADY, ASHOK",Sr VP & COO Elec&Ind Products,True,COMMON STOCK,sell,1669.0,37.98,63388.619999999995
+2012-09-28,AZZ,"KOLADY, ASHOK",Sr VP & COO Elec&Ind Products,True,COMMON STOCK,sell,1670.0,37.98,63426.59999999999
+2012-09-28,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,buy,30596.0,15.835,484487.66000000003
+2012-10-02,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,COMMON STOCK,sell,2200.0,37.56,82632.0
+2012-10-02,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,COMMON STOCK,sell,300.0,37.565,11269.5
+2012-10-04,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,sell,30000.0,36.5,1095000.0
+2012-10-16,AZZ,"KOLADY, ASHOK",Sr. VP & COO Electrical,True,COMMON STOCK,sell,1965.0,35.99,70720.35
+2012-10-18,AZZ,"JOYCE, KEVERN R",Director,True,COMMON STOCK,sell,10000.0,36.93,369300.0
+2012-10-18,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,sell,1500.0,37.0,55500.0
+2012-10-24,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,sell,20000.0,36.12,722400.0
+2012-10-31,AZZ,"ESTES, WILLIAM G",Vice President,True,COMMON STOCK,sell,1480.0,36.9179,54638.492000000006
+2012-11-05,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,buy,21290.0,20.905,445067.45
+2012-11-05,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,STOCK APPRECIATION RIGHTS,sell,21290.0,20.905,445067.45
+2012-11-05,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,sell,14431.0,39.44,569158.64
+2012-11-14,AZZ,"BERCE, DANIEL E",Director,True,COMMON STOCK $1.00 PAR VALUE,sell,6000.0,35.7,214200.00000000003
+2012-11-15,AZZ,"ROSEN, SAM",Director,True,COMMON STOCK,sell,3000.0,34.99,104970.0
+2012-11-15,AZZ,"ROSEN, SAM",Director,True,COMMON STOCK,sell,3000.0,35.77,107310.00000000001
+2012-11-15,AZZ,"BERCE, DANIEL E",Director,True,COMMON STOCK $1.00 PAR VALUE,sell,16000.0,35.59,569440.0
+2013-01-25,AZZ,"STRICKLEN, JIM",VP MANUFACTURING STRATEGIES,True,COMMON STOCK,sell,10526.0,43.17,454407.42000000004
+2013-03-01,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,STOCK APPRECIATION RIGHTS,sell,30594.0,15.835,484455.99000000005
+2013-03-01,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,sell,9409.0,45.36,426792.24
+2013-03-01,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,sell,5085.0,45.36,230655.6
+2013-03-01,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,buy,13321.0,25.67,341950.07
+2013-03-01,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,STOCK APPRECIATION RIGHTS,sell,21290.0,20.905,445067.45
+2013-03-01,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,buy,21290.0,20.905,445067.45
+2013-03-01,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,sell,17122.0,45.36,776653.92
+2013-03-01,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,STOCK APPRECIATION RIGHTS,sell,13321.0,25.67,341950.07
+2013-03-01,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,buy,30594.0,15.835,484455.99000000005
+2013-03-01,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,sell,13525.0,45.36,613494.0
+2013-03-04,AZZ,"KOLADY, ASHOK",Sr VP Electrical,True,COMMON STOCK,buy,777.0,17.85,13869.45
+2013-03-04,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,buy,54.0,27.5,1485.0
+2013-04-04,AZZ,"HEGEDUS, PETER A",Director,True,COMMON STOCK,buy,908.0,25.67,23308.36
+2013-04-04,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,sell,2881.0,47.69,137394.88999999998
+2013-04-04,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,buy,5110.0,20.905,106824.55
+2013-04-04,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,sell,3534.0,47.69,168536.46
+2013-04-04,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,buy,7342.0,15.835,116260.57
+2013-04-04,AZZ,"PERRY, DANA","Director, SrVP & Chief Financial Officer",True,COMMON STOCK,sell,1376.0,45.36,62415.36
+2013-04-04,AZZ,"PERRY, DANA","Director, SrVP & Chief Financial Officer",True,COMMON STOCK,buy,5030.0,45.36,228160.8
+2013-04-04,AZZ,"JOYCE, KEVERN R",Director,True,STOCK APPRECIATION RIGHTS,sell,908.0,25.67,23308.36
+2013-04-04,AZZ,"JOYCE, KEVERN R",Director,True,STOCK APPRECIATION RIGHTS,sell,1106.0,20.905,23120.93
+2013-04-04,AZZ,"JOYCE, KEVERN R",Director,True,STOCK APPRECIATION RIGHTS,sell,1588.0,15.835,25145.98
+2013-04-04,AZZ,"JOYCE, KEVERN R",Director,True,COMMON STOCK,sell,514.0,45.36,23315.04
+2013-04-04,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,sell,2030.0,47.69,96810.7
+2013-04-04,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,buy,3164.0,25.67,81219.88
+2013-04-04,AZZ,"JOYCE, KEVERN R",Director,True,COMMON STOCK,sell,510.0,45.36,23133.6
+2013-04-04,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,STOCK APPRECIATION RIGHTS,sell,3164.0,25.67,81219.88
+2013-04-04,AZZ,"KOLADY, ASHOK",Sr VP Electrical,True,COMMON STOCK,buy,1364.0,45.36,61871.04
+2013-04-04,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,COMMON STOCK,sell,850.0,48.04,40834.0
+2013-04-04,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,COMMON STOCK,buy,1364.0,45.36,61871.04
+2013-04-04,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,sell,1032.0,45.36,46811.52
+2013-04-04,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,STOCK APPRECIATION RIGHTS,sell,2652.0,15.835,41994.420000000006
+2013-04-04,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,STOCK APPRECIATION RIGHTS,sell,1846.0,20.905,38590.630000000005
+2013-04-04,AZZ,"JOYCE, KEVERN R",Director,True,COMMON STOCK,buy,1588.0,15.835,25145.98
+2013-04-04,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,COMMON STOCK,sell,571.0,45.36,25900.56
+2013-04-04,AZZ,"JOYCE, KEVERN R",Director,True,COMMON STOCK,sell,554.0,45.36,25129.44
+2013-04-04,AZZ,"JOYCE, KEVERN R",Director,True,COMMON STOCK,buy,1106.0,20.905,23120.93
+2013-04-04,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,STOCK APPRECIATION RIGHTS,sell,5110.0,20.905,106824.55
+2013-04-04,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,buy,3774.0,45.36,171188.63999999998
+2013-04-04,AZZ,"JOYCE, KEVERN R",Director,True,COMMON STOCK,buy,908.0,25.67,23308.36
+2013-04-04,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,buy,1588.0,15.835,25145.98
+2013-04-04,AZZ,"HEGEDUS, PETER A",Director,True,COMMON STOCK,sell,487.0,47.86,23307.82
+2013-04-04,AZZ,"HEGEDUS, PETER A",Director,True,STOCK APPRECIATION RIGHTS,sell,1588.0,15.835,25145.98
+2013-04-04,AZZ,"HEGEDUS, PETER A",Director,True,STOCK APPRECIATION RIGHTS,sell,1106.0,20.905,23120.93
+2013-04-04,AZZ,"HEGEDUS, PETER A",Director,True,STOCK APPRECIATION RIGHTS,sell,908.0,25.67,23308.36
+2013-04-04,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,COMMON STOCK,sell,1618.0,48.04,77728.72
+2013-04-04,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,sell,509.0,45.36,23088.239999999998
+2013-04-04,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,COMMON STOCK,buy,2652.0,15.835,41994.420000000006
+2013-04-04,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,COMMON STOCK,buy,1846.0,20.905,38590.630000000005
+2013-04-04,AZZ,"HEGEDUS, PETER A",Director,True,COMMON STOCK,sell,483.0,47.86,23116.38
+2013-04-04,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,buy,1364.0,45.36,61871.04
+2013-04-04,AZZ,"HEGEDUS, PETER A",Director,True,COMMON STOCK,buy,1106.0,20.905,23120.93
+2013-04-04,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,STOCK APPRECIATION RIGHTS,sell,1166.0,25.67,29931.22
+2013-04-04,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,STOCK APPRECIATION RIGHTS,sell,7342.0,15.835,116260.57
+2013-04-04,AZZ,"DOWNEY, H KIRK",Director,True,STOCK APPRECIATION RIGHTS,sell,908.0,25.67,23308.36
+2013-04-04,AZZ,"DOWNEY, H KIRK",Director,True,STOCK APPRECIATION RIGHTS,sell,1106.0,20.905,23120.93
+2013-04-04,AZZ,"DOWNEY, H KIRK",Director,True,STOCK APPRECIATION RIGHTS,sell,1588.0,15.835,25145.98
+2013-04-04,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,sell,493.0,47.25,23294.25
+2013-04-04,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,buy,908.0,25.67,23308.36
+2013-04-04,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,sell,489.0,47.25,23105.25
+2013-04-04,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,buy,1106.0,20.905,23120.93
+2013-04-04,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,sell,532.0,47.25,25137.0
+2013-04-04,AZZ,"KOLADY, ASHOK",Sr VP Electrical,True,COMMON STOCK,sell,509.0,45.36,23088.239999999998
+2013-04-04,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,COMMON STOCK,sell,1240.0,48.04,59569.6
+2013-04-04,AZZ,"HEGEDUS, PETER A",Director,True,COMMON STOCK,sell,525.0,47.86,25126.5
+2013-04-04,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,COMMON STOCK,buy,1166.0,25.67,29931.22
+2013-04-04,AZZ,"HEGEDUS, PETER A",Director,True,COMMON STOCK,buy,1588.0,15.835,25145.98
+2013-04-11,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,sell,8338.0,46.2486,385620.82680000004
+2013-04-22,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,sell,9000.0,41.538,373841.99999999994
+2013-04-22,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,COMMON STOCK,sell,2000.0,42.3537,84707.40000000001
+2013-04-25,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,sell,18600.0,44.0203,818777.58
+2013-05-03,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,sell,1200.0,42.8,51360.0
+2013-05-08,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,sell,4365.0,43.01,187738.65
+2013-05-15,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,sell,27035.0,41.8815,1132266.3525
+2013-08-01,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,sell,1100.0,38.0,41800.0
+2013-08-07,AZZ,"BUTLER, RICHARD W",VP CORPORATE CONTROLLER,True,COMMON STOCK,sell,6553.0,37.6,246392.80000000002
+2013-08-08,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,buy,1166.0,25.67,29931.22
+2013-08-08,AZZ,"QUINN, FRANCIS D",Vice President,True,STOCK APPRECIATION RIGHTS,sell,2652.0,15.835,41994.420000000006
+2013-08-08,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,sell,913.0,37.81,34520.53
+2013-08-08,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,buy,2652.0,15.835,41994.420000000006
+2013-08-08,AZZ,"QUINN, FRANCIS D",Vice President,True,STOCK APPRECIATION RIGHTS,sell,3689.0,20.905,77118.545
+2013-08-08,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,sell,1609.0,37.81,60836.29
+2013-08-08,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,buy,3689.0,20.905,77118.545
+2013-08-08,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,sell,1166.0,25.67,29931.22
+2013-08-08,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,sell,2573.0,37.81,97285.13
+2013-08-09,AZZ,"ROSEN, SAM",Director,True,COMMON STOCK,sell,1224.0,38.29,46866.96
+2013-08-09,AZZ,"ROSEN, SAM",Director,True,COMMON STOCK,buy,5174.0,9.06,46876.44
+2013-08-09,AZZ,"ROSEN, SAM",Director,True,COMMON STOCK,sell,3000.0,37.83,113490.0
+2013-08-09,AZZ,"ROSEN, SAM",Director,True,STOCK APPRECIATION RIGHTS,sell,5174.0,9.06,46876.44
+2013-09-09,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,buy,134.0,27.5,3685.0
+2013-09-09,AZZ,"KOLADY, ASHOK",Sr VP Electrical,True,COMMON STOCK,buy,188.0,32.06,6027.280000000001
+2013-10-15,AZZ,"DINGUS, DAVID H","Director, Chief Executive Officer",True,COMMON STOCK,sell,10000.0,42.5,425000.0
+2013-10-24,AZZ,"PENDLEY, TIMOTHY E",Senior VP GALVANIZING,True,COMMON STOCK,sell,2500.0,44.3623,110905.75
+2013-10-24,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,sell,700.0,44.5,31150.0
+2014-01-27,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,sell,1500.0,43.0,64500.0
+2014-02-11,AZZ,"ROSEN, SAM",Director,True,COMMON STOCK,sell,2000.0,42.3037,84607.4
+2014-03-03,AZZ,"BAZEMORE, EUGENE JACKSON JR",VP Corporate Development,True,COMMON STOCK,buy,210.0,32.06,6732.6
+2014-03-03,AZZ,"PENDLEY, TIMOTHY E",SVP GALVANIZING,True,COMMON STOCK,buy,60.0,27.5,1650.0
+2014-03-03,AZZ,"KOLADY, ASHOK",SVP Electrical,True,COMMON STOCK,buy,409.0,37.33,15267.97
+2014-04-28,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,buy,1000.0,20.91,20910.0
+2014-04-28,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,sell,373.0,43.92,16382.16
+2014-04-28,AZZ,"KOLADY, ASHOK",SVP Electrical,True,COMMON STOCK,sell,223.0,43.92,9794.16
+2014-04-28,AZZ,"PERRY, DANA","Director, SVP & Chief Financial Officer",True,COMMON STOCK,sell,1377.0,43.92,60477.840000000004
+2014-04-28,AZZ,"KOLADY, ASHOK",SVP Electrical,True,COMMON STOCK,buy,1000.0,20.91,20910.0
+2014-04-28,AZZ,"PENDLEY, TIMOTHY E",SVP GALVANIZING,True,COMMON STOCK,buy,2766.0,20.91,57837.06
+2014-04-28,AZZ,"PENDLEY, TIMOTHY E",SVP GALVANIZING,True,COMMON STOCK,sell,757.0,43.92,33247.44
+2014-04-28,AZZ,"PERRY, DANA","Director, SVP & Chief Financial Officer",True,COMMON STOCK,buy,3688.0,20.91,77116.08
+2014-04-30,AZZ,"JOYCE, KEVERN R",Director,True,STOCK APPRECIATION RIGHTS,sell,908.0,25.67,23308.36
+2014-04-30,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,sell,531.0,43.86,23289.66
+2014-04-30,AZZ,"JOYCE, KEVERN R",Director,True,COMMON STOCK,sell,557.0,41.86,23316.02
+2014-04-30,AZZ,"HEGEDUS, PETER A",Director,True,COMMON STOCK,buy,908.0,25.67,23308.36
+2014-04-30,AZZ,"JOYCE, KEVERN R",Director,True,COMMON STOCK,sell,552.0,41.86,23106.72
+2014-04-30,AZZ,"JOYCE, KEVERN R",Director,True,STOCK APPRECIATION RIGHTS,sell,1106.0,20.905,23120.93
+2014-04-30,AZZ,"JOYCE, KEVERN R",Director,True,COMMON STOCK,buy,908.0,25.67,23308.36
+2014-04-30,AZZ,"HEGEDUS, PETER A",Director,True,COMMON STOCK,sell,525.0,44.43,23325.75
+2014-04-30,AZZ,"JOYCE, KEVERN R",Director,True,COMMON STOCK,buy,1106.0,20.905,23120.93
+2014-04-30,AZZ,"DOWNEY, H KIRK",Director,True,STOCK APPRECIATION RIGHTS,sell,1106.0,20.905,23120.93
+2014-04-30,AZZ,"HEGEDUS, PETER A",Director,True,COMMON STOCK,buy,1106.0,20.905,23120.93
+2014-04-30,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,buy,1106.0,20.905,23120.93
+2014-04-30,AZZ,"HEGEDUS, PETER A",Director,True,COMMON STOCK,sell,520.0,44.43,23103.6
+2014-04-30,AZZ,"HEGEDUS, PETER A",Director,True,STOCK APPRECIATION RIGHTS,sell,908.0,25.67,23308.36
+2014-04-30,AZZ,"HEGEDUS, PETER A",Director,True,STOCK APPRECIATION RIGHTS,sell,1106.0,20.905,23120.93
+2014-04-30,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,sell,527.0,43.86,23114.22
+2014-04-30,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,buy,908.0,25.67,23308.36
+2014-04-30,AZZ,"DOWNEY, H KIRK",Director,True,STOCK APPRECIATION RIGHTS,sell,908.0,25.67,23308.36
+2014-05-12,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,sell,310.0,44.5,13795.0
+2014-09-08,AZZ,"STEINES, ROBERT JOSEPH",VP & Chief Accounting Officer,True,COMMON STOCK,buy,257.0,37.33,9593.81
+2014-09-08,AZZ,"EMERY, MATTHEW VARLEY",VP CHIEF INFORMATION OFFICER,True,COMMON STOCK,buy,558.0,37.33,20830.14
+2014-09-08,AZZ,"PENDLEY, TIMOTHY E",SVP GALVANIZING,True,COMMON STOCK,buy,114.0,27.5,3135.0
+2014-10-21,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,sell,1500.0,44.0,66000.0
+2014-10-24,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,sell,3298.0,44.11,145474.78
+2014-10-29,AZZ,"PENDLEY, TIMOTHY E",SVP GALVANIZING,True,COMMON STOCK,sell,2000.0,45.5,91000.0
+2014-11-14,AZZ,"ROSEN, SAM",Director,True,COMMON STOCK,sell,1000.0,45.61,45610.0
+2015-01-22,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,sell,761.0,39.32,29922.52
+2015-01-22,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,buy,1166.0,25.67,29931.22
+2015-01-22,AZZ,"FEHLMAN, PAUL WESLEY",SVP & CFO,True,COMMON STOCK,buy,2000.0,40.95,81900.0
+2015-01-22,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,buy,1847.0,20.905,38611.535
+2015-01-22,AZZ,"QUINN, FRANCIS D",Vice President,True,COMMON STOCK,sell,982.0,39.32,38612.24
+2015-01-23,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,buy,7500.0,41.986,314895.0
+2015-02-12,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,sell,4834.0,44.12,213276.08
+2015-03-01,AZZ,"PENDLEY, TIMOTHY E",SVP GALVANIZING,True,COMMON STOCK,sell,1291.0,45.62,58895.42
+2015-03-01,AZZ,"FORESTER, DEBBIE ROMINE","VP, Human Resources",True,COMMON STOCK,sell,91.0,45.62,4151.42
+2015-03-02,AZZ,"EMERY, MATTHEW VARLEY",VP CHIEF INFORMATION OFFICER,True,COMMON STOCK,buy,303.0,37.33,11310.99
+2015-03-02,AZZ,"PENDLEY, TIMOTHY E",SVP GALVANIZING,True,COMMON STOCK,buy,44.0,38.42,1690.48
+2015-03-02,AZZ,"MACKEY, TARA D",VP Chief Legal Officer,True,COMMON STOCK,buy,214.0,38.42,8221.880000000001
+2015-03-02,AZZ,"STEINES, ROBERT JOSEPH",VP & Chief Accounting Officer,True,COMMON STOCK,buy,147.0,37.33,5487.509999999999
+2015-07-06,AZZ,"HEGEDUS, PETER A",Director,True,COMMON STOCK,sell,454.0,51.33,23303.82
+2015-07-06,AZZ,"HEGEDUS, PETER A",Director,True,STOCK APPRECIATION RIGHTS,sell,908.0,25.67,23308.36
+2015-07-06,AZZ,"HEGEDUS, PETER A",Director,True,COMMON STOCK,buy,908.0,25.67,23308.36
+2015-07-15,AZZ,"DOWNEY, H KIRK",Director,True,STOCK APPRECIATION RIGHTS,sell,908.0,45.36,41186.88
+2015-07-15,AZZ,"DOWNEY, H KIRK",Director,True,STOCK APPRECIATION RIGHTS,sell,908.0,25.67,23308.36
+2015-07-15,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,sell,799.0,51.54,41180.46
+2015-07-15,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,sell,455.0,51.54,23450.7
+2015-07-15,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,sell,452.0,51.54,23296.079999999998
+2015-07-15,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,buy,908.0,25.67,23308.36
+2015-07-15,AZZ,"DOWNEY, H KIRK",Director,True,STOCK APPRECIATION RIGHTS,sell,534.0,43.92,23453.280000000002
+2015-07-15,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,buy,908.0,45.36,41186.88
+2015-07-15,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,buy,534.0,43.92,23453.280000000002
+2015-08-10,AZZ,"BOWEN, MARTIN C",Director,True,COMMON STOCK,buy,5174.0,9.06,46876.44
+2015-08-10,AZZ,"BOWEN, MARTIN C",Director,True,COMMON STOCK,sell,880.0,53.29,46895.2
+2015-08-14,AZZ,"BOWEN, MARTIN C",Director,True,COMMON STOCK,sell,2294.0,53.25,122155.5
+2015-08-14,AZZ,"PENDLEY, TIMOTHY E",SVP GALVANIZING,True,COMMON STOCK,sell,2500.0,53.37,133425.0
+2015-08-14,AZZ,"BOWEN, MARTIN C",Director,True,COMMON STOCK,sell,2000.0,53.23,106460.0
+2015-09-08,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,buy,199.0,38.42,7645.58
+2015-09-08,AZZ,"PENDLEY, TIMOTHY E",SVP GALVANIZING,True,COMMON STOCK,buy,93.0,38.42,3573.06
+2015-09-08,AZZ,"BACIUS, CHRIS M.","VP, Corporate Development",True,COMMON STOCK,buy,419.0,38.78,16248.82
+2015-09-08,AZZ,"FORESTER, DEBBIE ROMINE","VP, Human Resources",True,COMMON STOCK,buy,130.0,38.78,5041.400000000001
+2015-09-08,AZZ,"STEINES, ROBERT JOSEPH",VP & Chief Accounting Officer,True,COMMON STOCK,buy,327.0,37.33,12206.91
+2015-10-02,AZZ,"FEHLMAN, PAUL WESLEY",SVP & CFO,True,COMMON STOCK,buy,1500.0,47.3,70950.0
+2015-10-02,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,1867.0,46.96,87674.32
+2015-10-02,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,buy,5000.0,47.319,236595.0
+2015-11-03,AZZ,"PENDLEY, TIMOTHY E",SVP GALVANIZING,True,COMMON STOCK,sell,5500.0,57.23,314765.0
+2016-02-26,AZZ,"FEEHAN, DANIEL R",Director,True,STOCK APPRECIATION RIGHTS,sell,5174.0,9.06,46876.44
+2016-02-26,AZZ,"FEEHAN, DANIEL R",Director,True,COMMON STOCK,buy,5174.0,9.06,46876.44
+2016-02-26,AZZ,"FEEHAN, DANIEL R",Director,True,COMMON STOCK,sell,920.0,50.93,46855.6
+2016-03-01,AZZ,"BACIUS, CHRIS M.","VP, Corporate Development",True,COMMON STOCK,sell,375.0,52.68,19755.0
+2016-03-01,AZZ,"EMERY, MATTHEW VARLEY",VP CHIEF INFORMATION OFFICER,True,COMMON STOCK,sell,297.0,52.68,15645.96
+2016-03-01,AZZ,"BERCE, DANIEL E",Director,True,STOCK APPRECIATION RIGHTS,sell,5174.0,9.06,46876.44
+2016-03-01,AZZ,"BACIUS, CHRIS M.","VP, Corporate Development",True,COMMON STOCK,sell,75.0,52.58,3943.5
+2016-03-01,AZZ,"BERCE, DANIEL E",Director,True,COMMON STOCK,buy,5174.0,9.06,46876.44
+2016-03-01,AZZ,"STEINES, ROBERT JOSEPH",VP & Chief Accounting Officer,True,COMMON STOCK,sell,92.0,52.68,4846.56
+2016-03-01,AZZ,"PENDLEY, TIMOTHY E",SVP GALVANIZING,True,COMMON STOCK,sell,770.0,52.68,40563.6
+2016-03-01,AZZ,"BERCE, DANIEL E",Director,True,COMMON STOCK,sell,890.0,52.68,46885.2
+2016-03-07,AZZ,"BACIUS, CHRIS M.","VP, Corporate Development",True,COMMON STOCK,buy,247.0,38.78,9578.66
+2016-03-07,AZZ,"STEINES, ROBERT JOSEPH",VP & Chief Accounting Officer,True,COMMON STOCK,buy,143.0,37.33,5338.19
+2016-03-07,AZZ,"EMERY, MATTHEW VARLEY",VP CHIEF INFORMATION OFFICER,True,COMMON STOCK,buy,295.0,37.33,11012.35
+2016-03-07,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,buy,103.0,38.42,3957.26
+2016-03-07,AZZ,"PENDLEY, TIMOTHY E",SVP GALVANIZING,True,COMMON STOCK,buy,43.0,38.42,1652.0600000000002
+2016-03-07,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,buy,485.0,43.75,21218.75
+2016-03-07,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,buy,722.0,43.75,31587.5
+2016-04-27,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,856.0,57.47,49194.32
+2016-04-27,AZZ,"BACIUS, CHRIS M.","VP, Corporate Development",True,COMMON STOCK,sell,101.0,57.47,5804.47
+2016-04-27,AZZ,"EMERY, MATTHEW VARLEY",VP CHIEF INFORMATION OFFICER,True,COMMON STOCK,sell,82.0,57.47,4712.54
+2016-04-27,AZZ,"FEHLMAN, PAUL WESLEY",SVP & CFO,True,COMMON STOCK,sell,252.0,57.47,14482.44
+2016-04-27,AZZ,"STEINES, ROBERT JOSEPH",VP & Chief Accounting Officer,True,COMMON STOCK,sell,82.0,57.47,4712.54
+2016-04-27,AZZ,"PENDLEY, TIMOTHY E",SVP GALVANIZING,True,COMMON STOCK,sell,206.0,57.47,11838.82
+2016-04-27,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,277.0,57.47,15919.19
+2016-04-29,AZZ,"DOWNEY, H KIRK",Director,True,STOCK APPRECIATION RIGHTS,buy,454.0,45.36,20593.44
+2016-04-29,AZZ,"DOWNEY, H KIRK",Director,True,STOCK APPRECIATION RIGHTS,buy,534.0,43.92,23453.280000000002
+2016-04-29,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,sell,3564.0,54.56,194451.84
+2016-04-29,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,sell,186.0,54.96,10222.56
+2016-07-13,AZZ,"PENDLEY, TIMOTHY E",SVP GALVANIZING,True,COMMON STOCK,sell,2662.0,61.03,162461.86000000002
+2016-07-13,AZZ,"PENDLEY, TIMOTHY E",SVP GALVANIZING,True,COMMON STOCK,buy,6328.0,25.67,162439.76
+2016-07-13,AZZ,"PENDLEY, TIMOTHY E",SVP GALVANIZING,True,COMMON STOCK,sell,911.0,61.03,55598.33
+2016-07-13,AZZ,"PENDLEY, TIMOTHY E",SVP GALVANIZING,True,COMMON STOCK,sell,1751.0,61.03,106863.53
+2016-07-13,AZZ,"PENDLEY, TIMOTHY E",SVP GALVANIZING,True,COMMON STOCK,buy,5110.0,20.91,106850.1
+2016-07-13,AZZ,"PENDLEY, TIMOTHY E",SVP GALVANIZING,True,COMMON STOCK,sell,1002.0,61.03,61152.06
+2016-07-15,AZZ,"EISMAN, WALLACE P",Director,True,COMMON STOCK,buy,1000.0,62.27,62270.0
+2016-07-19,AZZ,"PENDLEY, TIMOTHY E",SVP GALVANIZING,True,COMMON STOCK,sell,1200.0,62.02,74424.0
+2016-09-06,AZZ,"PENDLEY, TIMOTHY E",SVP GALVANIZING,True,COMMON STOCK,buy,109.0,38.42,4187.78
+2016-09-06,AZZ,"EMERY, MATTHEW VARLEY",VP CHIEF INFORMATION OFFICER,True,COMMON STOCK,buy,214.0,47.66,10199.24
+2016-09-06,AZZ,"STEINES, ROBERT JOSEPH",VP & Chief Accounting Officer,True,COMMON STOCK,buy,277.0,47.66,13201.82
+2016-09-06,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,buy,361.0,38.42,13869.62
+2016-09-06,AZZ,"BACIUS, CHRIS M.","VP, Corporate Development",True,COMMON STOCK,buy,300.0,38.78,11634.0
+2016-10-10,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,buy,7500.0,55.239,414292.5
+2016-10-13,AZZ,"STEINES, ROBERT JOSEPH",VP & Chief Accounting Officer,True,COMMON STOCK,buy,1000.0,54.54,54540.0
+2016-10-17,AZZ,"MCCELLON-ALLEN, VENITA",Director,True,COMMON STOCK,buy,5000.0,53.91,269550.0
+2016-11-04,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,1367.0,52.65,71972.55
+2017-02-14,AZZ,"FEEHAN, DANIEL R",Director,True,STOCK APPRECIATION RIGHTS,sell,4764.0,15.835,75437.94
+2017-02-14,AZZ,"FEEHAN, DANIEL R",Director,True,COMMON STOCK,sell,1280.0,58.95,75456.0
+2017-02-14,AZZ,"FEEHAN, DANIEL R",Director,True,COMMON STOCK,buy,4764.0,15.835,75437.94
+2017-02-24,AZZ,"BERCE, DANIEL E",Director,True,COMMON STOCK,sell,1266.0,59.6,75453.6
+2017-02-24,AZZ,"BERCE, DANIEL E",Director,True,STOCK APPRECIATION RIGHTS,sell,4764.0,15.835,75437.94
+2017-02-24,AZZ,"BERCE, DANIEL E",Director,True,COMMON STOCK,buy,4764.0,15.835,75437.94
+2017-03-01,AZZ,"EMERY, MATTHEW VARLEY",VP CHIEF INFORMATION OFFICER,True,COMMON STOCK,sell,342.0,60.55,20708.1
+2017-03-01,AZZ,"PENDLEY, TIMOTHY E",SVP GALVANIZING,True,COMMON STOCK,sell,716.0,60.55,43353.799999999996
+2017-03-01,AZZ,"BACIUS, CHRIS M.","VP, Corporate Development",True,COMMON STOCK,sell,108.0,60.55,6539.4
+2017-03-01,AZZ,"FEHLMAN, PAUL WESLEY",SVP & CFO,True,COMMON STOCK,sell,926.0,60.55,56069.299999999996
+2017-03-01,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,4063.0,60.55,246014.65
+2017-03-01,AZZ,"STEINES, ROBERT JOSEPH",VP & Chief Accounting Officer,True,COMMON STOCK,sell,342.0,60.55,20708.1
+2017-03-01,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,334.0,60.55,20223.7
+2017-03-06,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,buy,132.0,49.85,6580.2
+2017-03-06,AZZ,"EMERY, MATTHEW VARLEY",VP CHIEF INFORMATION OFFICER,True,COMMON STOCK,buy,287.0,47.66,13678.419999999998
+2017-03-06,AZZ,"STEINES, ROBERT JOSEPH",VP & Chief Accounting Officer,True,COMMON STOCK,buy,126.0,47.66,6005.16
+2017-03-06,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,buy,485.0,43.75,21218.75
+2017-03-06,AZZ,"PENDLEY, TIMOTHY E",SVP GALVANIZING,True,COMMON STOCK,buy,37.0,49.85,1844.45
+2017-03-06,AZZ,"BACIUS, CHRIS M.","VP, Corporate Development",True,COMMON STOCK,buy,362.0,38.78,14038.36
+2017-04-27,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,1584.0,60.2,95356.8
+2017-04-27,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,384.0,60.2,23116.800000000003
+2017-04-27,AZZ,"PENDLEY, TIMOTHY E",SVP GALVANIZING,True,COMMON STOCK,sell,381.0,60.2,22936.2
+2017-04-27,AZZ,"STEINES, ROBERT JOSEPH",VP & Chief Accounting Officer,True,COMMON STOCK,sell,159.0,60.2,9571.800000000001
+2017-04-27,AZZ,"BACIUS, CHRIS M.","VP, Corporate Development",True,COMMON STOCK,sell,208.0,60.2,12521.6
+2017-04-27,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,sell,159.0,60.2,9571.800000000001
+2017-04-27,AZZ,"FEHLMAN, PAUL WESLEY",SVP & CFO,True,COMMON STOCK,sell,467.0,60.2,28113.4
+2017-05-01,AZZ,"DOWNEY, H KIRK",Director,True,STOCK APPRECIATION RIGHTS,sell,535.0,43.92,23497.2
+2017-05-01,AZZ,"PENDLEY, TIMOTHY E",SVP GALVANIZING,True,COMMON STOCK,sell,2500.0,59.26,148150.0
+2017-05-01,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,sell,137.0,59.1,8096.7
+2017-05-01,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,sell,398.0,59.05,23501.899999999998
+2017-05-01,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,buy,535.0,43.92,23497.2
+2017-05-10,AZZ,"DOWNEY, H KIRK",Director,True,COMMON STOCK,sell,4088.0,57.56,235305.28
+2017-07-11,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,buy,5000.0,49.587,247935.00000000003
+2017-07-11,AZZ,"FEHLMAN, PAUL WESLEY",SVP & CFO,True,COMMON STOCK,buy,1500.0,49.314,73971.0
+2017-09-06,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,buy,107.0,40.63,4347.41
+2018-02-26,AZZ,"FEEHAN, DANIEL R",Director,True,STOCK APPRECIATION RIGHTS,sell,3318.0,20.91,69379.38
+2018-02-26,AZZ,"BERCE, DANIEL E",Director,True,COMMON STOCK,buy,3318.0,20.91,69379.38
+2018-02-26,AZZ,"FEEHAN, DANIEL R",Director,True,COMMON STOCK,sell,1614.0,43.0,69402.0
+2018-02-26,AZZ,"BERCE, DANIEL E",Director,True,STOCK APPRECIATION RIGHTS,sell,3318.0,20.91,69379.38
+2018-02-26,AZZ,"BERCE, DANIEL E",Director,True,COMMON STOCK,sell,1614.0,43.0,69402.0
+2018-02-26,AZZ,"FEEHAN, DANIEL R",Director,True,COMMON STOCK,buy,3318.0,20.91,69379.38
+2018-03-05,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,buy,595.0,35.66,21217.699999999997
+2018-03-05,AZZ,"PENDLEY, TIMOTHY E",SVP GALVANIZING,True,COMMON STOCK,buy,53.0,35.66,1889.9799999999998
+2018-03-05,AZZ,"LAVELLE, KEN",President & GM - Electrical,True,COMMON STOCK,buy,423.0,35.66,15084.179999999998
+2018-03-05,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,buy,79.0,35.66,2817.14
+2018-03-05,AZZ,"BACIUS, CHRIS M.","VP, Corporate Development",True,COMMON STOCK,buy,405.0,35.66,14442.3
+2018-03-05,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,buy,333.0,35.66,11874.779999999999
+2018-03-05,AZZ,"BYELICK, JAMES DREW",VP & Chief Accounting Officer,True,COMMON STOCK,buy,167.0,35.66,5955.219999999999
+2018-04-27,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,465.0,45.75,21273.75
+2018-04-27,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,2042.0,45.75,93421.5
+2018-04-27,AZZ,"BYELICK, JAMES DREW",VP & Chief Accounting Officer,True,COMMON STOCK,sell,159.0,45.75,7274.25
+2018-04-27,AZZ,"BACIUS, CHRIS M.","VP, Corporate Development",True,COMMON STOCK,sell,332.0,45.75,15189.0
+2018-04-27,AZZ,"LAVELLE, KEN",President & GM - Electrical,True,COMMON STOCK,sell,97.0,45.75,4437.75
+2018-04-27,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,sell,288.0,45.75,13176.0
+2018-04-27,AZZ,"FEHLMAN, PAUL WESLEY",SVP & CFO,True,COMMON STOCK,sell,676.0,45.75,30927.0
+2018-05-18,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,407.0,42.0,17094.0
+2018-05-18,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,sell,44.0,42.0,1848.0
+2018-05-18,AZZ,"BACIUS, CHRIS M.","VP, Corporate Development",True,COMMON STOCK,sell,55.0,42.0,2310.0
+2018-05-18,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,55.0,42.0,2310.0
+2018-05-18,AZZ,"FEHLMAN, PAUL WESLEY",SVP & CFO,True,COMMON STOCK,sell,141.0,42.0,5922.0
+2018-07-11,AZZ,"FEEHAN, DANIEL R",Director,True,COMMON STOCK,buy,1362.0,45.36,61780.32
+2018-07-11,AZZ,"FEEHAN, DANIEL R",Director,True,COMMON STOCK,sell,1275.0,54.85,69933.75
+2018-07-11,AZZ,"BERCE, DANIEL E",Director,True,STOCK APPRECIATION RIGHTS,sell,1362.0,45.36,61780.32
+2018-07-11,AZZ,"BERCE, DANIEL E",Director,True,COMMON STOCK,sell,1284.0,54.85,70427.40000000001
+2018-07-11,AZZ,"BERCE, DANIEL E",Director,True,COMMON STOCK,sell,2003.0,54.3,108762.9
+2018-07-11,AZZ,"FEEHAN, DANIEL R",Director,True,COMMON STOCK,sell,2003.0,54.5,109163.5
+2018-07-11,AZZ,"FEEHAN, DANIEL R",Director,True,STOCK APPRECIATION RIGHTS,sell,1362.0,45.36,61780.32
+2018-07-11,AZZ,"FEEHAN, DANIEL R",Director,True,STOCK APPRECIATION RIGHTS,sell,2724.0,25.67,69925.08
+2018-07-11,AZZ,"FEEHAN, DANIEL R",Director,True,COMMON STOCK,sell,1127.0,54.85,61815.950000000004
+2018-07-11,AZZ,"BERCE, DANIEL E",Director,True,STOCK APPRECIATION RIGHTS,sell,2724.0,25.67,69925.08
+2018-07-11,AZZ,"FEEHAN, DANIEL R",Director,True,STOCK APPRECIATION RIGHTS,sell,1603.0,43.92,70403.76000000001
+2018-07-11,AZZ,"FEEHAN, DANIEL R",Director,True,COMMON STOCK,buy,1603.0,43.92,70403.76000000001
+2018-07-11,AZZ,"FEEHAN, DANIEL R",Director,True,COMMON STOCK,sell,1284.0,54.85,70427.40000000001
+2018-07-11,AZZ,"BERCE, DANIEL E",Director,True,COMMON STOCK,sell,235.0,54.85,12889.75
+2018-07-11,AZZ,"BERCE, DANIEL E",Director,True,COMMON STOCK,sell,1449.0,54.85,79477.65000000001
+2018-07-11,AZZ,"FEEHAN, DANIEL R",Director,True,COMMON STOCK,buy,2724.0,25.67,69925.08
+2018-07-11,AZZ,"FEEHAN, DANIEL R",Director,True,COMMON STOCK,sell,1449.0,54.85,79477.65000000001
+2018-07-11,AZZ,"BERCE, DANIEL E",Director,True,COMMON STOCK,sell,1127.0,54.85,61815.950000000004
+2018-07-11,AZZ,"FEEHAN, DANIEL R",Director,True,COMMON STOCK,sell,319.0,54.85,17497.15
+2018-07-11,AZZ,"FEEHAN, DANIEL R",Director,True,COMMON STOCK,sell,235.0,54.85,12889.75
+2018-07-11,AZZ,"BERCE, DANIEL E",Director,True,COMMON STOCK,sell,319.0,54.85,17497.15
+2018-07-11,AZZ,"BERCE, DANIEL E",Director,True,COMMON STOCK,buy,2724.0,25.67,69925.08
+2018-07-11,AZZ,"BERCE, DANIEL E",Director,True,COMMON STOCK,sell,1275.0,54.85,69933.75
+2018-07-11,AZZ,"BERCE, DANIEL E",Director,True,COMMON STOCK,buy,1362.0,45.36,61780.32
+2018-07-11,AZZ,"BERCE, DANIEL E",Director,True,COMMON STOCK,buy,1603.0,43.92,70403.76000000001
+2018-07-11,AZZ,"BERCE, DANIEL E",Director,True,STOCK APPRECIATION RIGHTS,sell,1603.0,43.92,70403.76000000001
+2018-08-08,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,buy,2648.0,43.92,116300.16
+2018-08-08,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,STOCK APPRECIATION RIGHTS,sell,2145.0,45.36,97297.2
+2018-08-08,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,sell,844.0,54.05,45618.2
+2018-08-08,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,sell,1799.0,54.1,97325.90000000001
+2018-08-08,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,sell,2150.0,54.1,116315.0
+2018-08-08,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,buy,2145.0,45.36,97297.2
+2018-08-08,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,STOCK APPRECIATION RIGHTS,sell,2648.0,43.92,116300.16
+2018-09-04,AZZ,"BACIUS, CHRIS M.","VP, Corporate Development",True,COMMON STOCK,buy,148.0,45.69,6762.12
+2018-09-04,AZZ,"BYELICK, JAMES DREW",VP & Chief Accounting Officer,True,COMMON STOCK,buy,188.0,40.63,7638.4400000000005
+2018-09-04,AZZ,"LAVELLE, KEN",President & GM - Electrical,True,COMMON STOCK,buy,151.0,40.63,6135.13
+2018-09-04,AZZ,"BACIUS, CHRIS M.","VP, Corporate Development",True,COMMON STOCK,buy,90.0,45.69,4112.099999999999
+2018-09-04,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,buy,119.0,35.66,4243.54
+2018-09-04,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,buy,203.0,45.69,9275.07
+2018-10-22,AZZ,"FEHLMAN, PAUL WESLEY",SVP & CFO,True,COMMON STOCK,buy,1000.0,45.4756,45475.6
+2018-10-22,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,buy,5000.0,45.767,228835.00000000003
+2018-11-08,AZZ,"JOYCE, KEVERN R",Director,True,STOCK APPRECIATION RIGHTS,sell,908.0,25.67,23308.36
+2018-11-08,AZZ,"JOYCE, KEVERN R",Director,True,COMMON STOCK,sell,418.0,47.7,19938.600000000002
+2018-11-08,AZZ,"JOYCE, KEVERN R",Director,True,COMMON STOCK,sell,490.0,47.59,23319.100000000002
+2018-11-08,AZZ,"JOYCE, KEVERN R",Director,True,COMMON STOCK,buy,908.0,25.67,23308.36
+2018-12-31,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,buy,144.0,34.31,4940.64
+2018-12-31,AZZ,"BYELICK, JAMES DREW",VP & Chief Accounting Officer,True,COMMON STOCK,buy,119.0,34.31,4082.8900000000003
+2019-04-27,AZZ,"STOVALL, BRYAN LEE",SVP - Metal Coatings,True,COMMON STOCK,sell,154.0,46.88,7219.52
+2019-04-27,AZZ,"FEHLMAN, PAUL WESLEY",SVP & CFO,True,COMMON STOCK,sell,467.0,46.88,21892.960000000003
+2019-04-27,AZZ,"BYELICK, JAMES DREW",VP & Chief Accounting Officer,True,COMMON STOCK,sell,161.0,46.88,7547.68
+2019-04-27,AZZ,"LAVELLE, KEN",President & GM - Electrical,True,COMMON STOCK,sell,87.0,46.88,4078.5600000000004
+2019-04-27,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,1279.0,46.88,59959.520000000004
+2019-04-27,AZZ,"DOUCET, MICHAEL",SVP - Alternative Coatings,True,COMMON STOCK,sell,51.0,46.88,2390.88
+2019-04-27,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,sell,213.0,46.88,9985.44
+2019-04-27,AZZ,"BACIUS, CHRIS M.","VP, Corporate Development",True,COMMON STOCK,sell,248.0,46.88,11626.24
+2019-04-27,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,238.0,46.88,11157.44
+2019-05-18,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,1175.0,45.56,53533.0
+2019-05-18,AZZ,"STOVALL, BRYAN LEE",SVP - Metal Coatings,True,COMMON STOCK,sell,118.0,45.56,5376.08
+2019-05-18,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,285.0,45.56,12984.6
+2019-05-18,AZZ,"FEHLMAN, PAUL WESLEY",SVP & CFO,True,COMMON STOCK,sell,429.0,45.56,19545.24
+2019-05-18,AZZ,"BYELICK, JAMES DREW",VP & Chief Accounting Officer,True,COMMON STOCK,sell,142.0,45.56,6469.52
+2019-05-18,AZZ,"LAVELLE, KEN",President & GM - Electrical,True,COMMON STOCK,sell,260.0,45.56,11845.6
+2019-05-18,AZZ,"BACIUS, CHRIS M.","VP, Corporate Development",True,COMMON STOCK,sell,244.0,45.56,11116.640000000001
+2019-05-18,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,sell,241.0,45.56,10979.960000000001
+2019-06-30,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,buy,497.0,34.31,17052.07
+2019-06-30,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,buy,350.0,34.31,12008.5
+2019-06-30,AZZ,"DOUCET, MICHAEL",SVP-Surface Technologies,True,COMMON STOCK,buy,402.0,34.31,13792.62
+2019-06-30,AZZ,"BYELICK, JAMES DREW",VP & Chief Accounting Officer,True,COMMON STOCK,buy,366.0,34.31,12557.460000000001
+2019-06-30,AZZ,"BACIUS, CHRIS M.","VP, Corporate Development",True,COMMON STOCK,buy,619.0,34.31,21237.890000000003
+2019-06-30,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,buy,619.0,34.31,21237.890000000003
+2019-06-30,AZZ,"LAVELLE, KEN",President & GM - Electrical,True,COMMON STOCK,buy,619.0,34.31,21237.890000000003
+2019-09-29,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,12087.0,42.84,517807.08
+2019-10-24,AZZ,"STOVALL, BRYAN LEE",SVP - Metal Coatings,True,COMMON STOCK,sell,122.0,37.87,4620.139999999999
+2019-12-31,AZZ,"DOUCET, MICHAEL",SVP-Surface Technologies,True,COMMON STOCK,buy,419.0,34.306,14374.213999999998
+2019-12-31,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,buy,158.0,34.306,5420.348
+2019-12-31,AZZ,"HILL, GARY L.",President & GM-Industrial,True,COMMON STOCK,buy,51.0,34.306,1749.6059999999998
+2020-04-27,AZZ,"LAVELLE, KEN",President & GM - Electrical,True,COMMON STOCK,sell,88.0,28.59,2515.92
+2020-04-27,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,127.0,28.59,3630.93
+2020-04-27,AZZ,"BACIUS, CHRIS M.","VP, Corporate Development",True,COMMON STOCK,sell,127.0,28.59,3630.93
+2020-04-27,AZZ,"HILL, GARY L.",President & GM-Industrial,True,COMMON STOCK,sell,153.0,28.59,4374.2699999999995
+2020-04-27,AZZ,"STOVALL, BRYAN LEE",President-Galv Solutions,True,COMMON STOCK,sell,76.0,28.59,2172.84
+2020-04-27,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,sell,127.0,28.59,3630.93
+2020-04-27,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,630.0,28.59,18011.7
+2020-04-27,AZZ,"DOUCET, MICHAEL",SVP-Surface Technologies,True,COMMON STOCK,sell,41.0,28.59,1172.19
+2020-04-27,AZZ,"FEHLMAN, PAUL WESLEY",SVP & CFO,True,COMMON STOCK,sell,300.0,28.59,8577.0
+2020-05-18,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,sell,222.0,30.06,6673.32
+2020-05-18,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,1189.0,30.06,35741.34
+2020-05-18,AZZ,"BACIUS, CHRIS M.","VP, Corporate Development",True,COMMON STOCK,sell,222.0,30.06,6673.32
+2020-05-18,AZZ,"DOUCET, MICHAEL",SVP-Surface Technologies,True,COMMON STOCK,sell,95.0,30.06,2855.7
+2020-05-18,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,297.0,30.06,8927.82
+2020-05-18,AZZ,"LAVELLE, KEN",President & GM - Electrical,True,COMMON STOCK,sell,247.0,30.06,7424.82
+2020-05-18,AZZ,"STOVALL, BRYAN LEE",President-Galv Solutions,True,COMMON STOCK,sell,98.0,30.06,2945.8799999999997
+2020-05-18,AZZ,"HILL, GARY L.",President & GM-Industrial,True,COMMON STOCK,sell,308.0,30.06,9258.48
+2020-05-22,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,sell,213.0,31.28,6662.64
+2020-05-22,AZZ,"BACIUS, CHRIS M.","VP, Corporate Development",True,COMMON STOCK,sell,213.0,31.28,6662.64
+2020-05-22,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,1422.0,31.28,44480.16
+2020-05-22,AZZ,"DOUCET, MICHAEL",SVP-Surface Technologies,True,COMMON STOCK,sell,93.0,31.28,2909.04
+2020-05-22,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,284.0,31.28,8883.52
+2020-05-22,AZZ,"STOVALL, BRYAN LEE",President-Galv Solutions,True,COMMON STOCK,sell,170.0,31.28,5317.6
+2020-05-22,AZZ,"LAVELLE, KEN",President & GM - Electrical,True,COMMON STOCK,sell,236.0,31.28,7382.08
+2020-05-22,AZZ,"HILL, GARY L.",President & GM-Industrial,True,COMMON STOCK,sell,294.0,31.28,9196.32
+2020-06-30,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,buy,728.0,29.172,21237.216
+2020-06-30,AZZ,"LAVELLE, KEN",President & GM - Electrical,True,COMMON STOCK,buy,728.0,29.172,21237.216
+2020-06-30,AZZ,"HILL, GARY L.",President & GM-Industrial,True,COMMON STOCK,buy,171.0,29.172,4988.412
+2020-06-30,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,buy,713.0,29.172,20799.636000000002
+2020-06-30,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,buy,497.0,29.172,14498.484
+2020-06-30,AZZ,"BACIUS, CHRIS M.","VP, Corporate Development",True,COMMON STOCK,buy,619.0,29.172,18057.468
+2020-07-14,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,buy,10000.0,28.9376,289376.0
+2020-07-15,AZZ,"LAVELLE, KEN",President & GM - Electrical,True,COMMON STOCK,buy,5500.0,30.83,169565.0
+2020-11-01,AZZ,"HILL, GARY L.",COO - Infrastructure Solutions,True,COMMON STOCK,sell,2300.0,33.59,77257.00000000001
+2020-12-31,AZZ,"SCHLOM, PHILIP A","VP, Chief Accounting Officer",True,COMMON STOCK,buy,281.0,28.28,7946.68
+2020-12-31,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,buy,158.0,34.31,5420.9800000000005
+2020-12-31,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,buy,145.0,34.31,4974.950000000001
+2020-12-31,AZZ,"HILL, GARY L.",COO - Infrastructure Solutions,True,COMMON STOCK,buy,50.0,34.31,1715.5
+2021-02-01,AZZ,"STOVALL, BRYAN LEE",COO - Metal Coatings,True,COMMON STOCK,buy,882.0,43.92,38737.44
+2021-02-01,AZZ,"STOVALL, BRYAN LEE",COO - Metal Coatings,True,COMMON STOCK,sell,87.0,48.885,4252.995
+2021-02-01,AZZ,"STOVALL, BRYAN LEE",COO - Metal Coatings,True,COMMON STOCK,sell,795.0,48.78,38780.1
+2021-02-03,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,2052.0,50.11,102825.72
+2021-02-04,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,3421.0,50.274,171987.354
+2021-02-04,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,23050.0,50.44,1162642.0
+2021-02-04,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,buy,26471.0,43.92,1162606.32
+2021-02-08,AZZ,"STOVALL, BRYAN LEE",COO - Metal Coatings,True,COMMON STOCK,sell,2500.0,50.583,126457.5
+2021-02-22,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,1000.0,51.35,51350.0
+2021-04-29,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,2250.0,53.2,119700.0
+2021-04-29,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,buy,2711.0,44.15,119690.65
+2021-04-29,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,130.0,53.2,6916.0
+2021-05-04,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,3623.0,53.51,193866.72999999998
+2021-05-04,AZZ,"HILL, GARY L.",COO - Infrastructure Solutions,True,COMMON STOCK,sell,466.0,53.51,24935.66
+2021-05-04,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,sell,373.0,53.51,19959.23
+2021-05-04,AZZ,"BACIUS, CHRIS M.","VP, Corporate Development",True,COMMON STOCK,sell,337.0,53.51,18032.87
+2021-05-04,AZZ,"STOVALL, BRYAN LEE",COO - Metal Coatings,True,COMMON STOCK,sell,448.0,53.51,23972.48
+2021-05-04,AZZ,"SCHLOM, PHILIP A","VP, Chief Accounting Officer",True,COMMON STOCK,sell,337.0,53.51,18032.87
+2021-05-04,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,448.0,53.51,23972.48
+2021-05-04,AZZ,"LAVELLE, KEN",President & GM - Electrical,True,COMMON STOCK,sell,373.0,53.51,19959.23
+2021-05-18,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,sell,874.0,54.04,47230.96
+2021-05-18,AZZ,"HILL, GARY L.",COO - Infrastructure Solutions,True,COMMON STOCK,sell,253.0,54.04,13672.119999999999
+2021-05-18,AZZ,"HILL, GARY L.",COO - Infrastructure Solutions,True,COMMON STOCK,sell,972.0,54.04,52526.88
+2021-05-18,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,7544.0,54.04,407677.76
+2021-05-18,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,sell,227.0,54.04,12267.08
+2021-05-18,AZZ,"BACIUS, CHRIS M.","VP, Corporate Development",True,COMMON STOCK,sell,874.0,54.04,47230.96
+2021-05-18,AZZ,"LAVELLE, KEN",President & GM - Electrical,True,COMMON STOCK,sell,972.0,54.04,52526.88
+2021-05-18,AZZ,"STOVALL, BRYAN LEE",COO - Metal Coatings,True,COMMON STOCK,sell,101.0,54.04,5458.04
+2021-05-18,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,303.0,54.04,16374.119999999999
+2021-05-18,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,1166.0,54.04,63010.64
+2021-05-18,AZZ,"BACIUS, CHRIS M.","VP, Corporate Development",True,COMMON STOCK,sell,227.0,54.04,12267.08
+2021-05-18,AZZ,"LAVELLE, KEN",President & GM - Electrical,True,COMMON STOCK,sell,253.0,54.04,13672.119999999999
+2021-05-18,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,1964.0,54.04,106134.56
+2021-05-22,AZZ,"LAVELLE, KEN",President & GM - Electrical,True,COMMON STOCK,sell,240.0,53.61,12866.4
+2021-05-22,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,288.0,53.61,15439.68
+2021-05-22,AZZ,"HILL, GARY L.",COO - Infrastructure Solutions,True,COMMON STOCK,sell,240.0,53.61,12866.4
+2021-05-22,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,2336.0,53.61,125232.95999999999
+2021-05-22,AZZ,"STOVALL, BRYAN LEE",COO - Metal Coatings,True,COMMON STOCK,sell,172.0,53.61,9220.92
+2021-05-22,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,sell,216.0,53.61,11579.76
+2021-05-22,AZZ,"BACIUS, CHRIS M.","VP, Corporate Development",True,COMMON STOCK,sell,216.0,53.61,11579.76
+2021-05-27,AZZ,"HILL, GARY L.",COO - Infrastructure Solutions,True,COMMON STOCK,sell,2830.0,52.532,148665.56
+2021-06-30,AZZ,"BACIUS, CHRIS M.","VP, Corporate Development",True,COMMON STOCK,buy,526.0,40.324,21210.424
+2021-06-30,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,buy,412.0,40.324,16613.487999999998
+2021-06-30,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,buy,526.0,40.324,21210.424
+2021-06-30,AZZ,"HILL, GARY L.",COO - Infrastructure Solutions,True,COMMON STOCK,buy,69.0,40.324,2782.3559999999998
+2021-06-30,AZZ,"LAVELLE, KEN",President & GM - Electrical,True,COMMON STOCK,buy,526.0,40.324,21210.424
+2021-06-30,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,buy,289.0,40.324,11653.635999999999
+2021-06-30,AZZ,"SCHLOM, PHILIP A","VP, Chief Accounting Officer",True,COMMON STOCK,buy,694.0,28.279,19625.626
+2021-07-09,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,1050.0,57.58,60459.0
+2021-07-22,AZZ,"BACIUS, CHRIS M.","VP, Corporate Development",True,COMMON STOCK,buy,2724.0,46.34,126230.16
+2021-07-22,AZZ,"BACIUS, CHRIS M.","VP, Corporate Development",True,COMMON STOCK,sell,73.0,52.09,3802.57
+2021-07-22,AZZ,"BACIUS, CHRIS M.","VP, Corporate Development",True,COMMON STOCK,sell,2424.0,52.09,126266.16
+2021-10-16,AZZ,"SCHLOM, PHILIP A","SVP, Chief Financial Officer",True,COMMON STOCK,sell,370.0,53.29,19717.3
+2021-12-31,AZZ,"SCHLOM, PHILIP A","SVP, Chief Financial Officer",True,COMMON STOCK,buy,353.0,28.279,9982.487
+2021-12-31,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,buy,138.0,40.324,5564.7119999999995
+2021-12-31,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,buy,114.0,40.324,4596.936
+2021-12-31,AZZ,"HILL, GARY L.",COO - Infrastructure Solutions,True,COMMON STOCK,buy,45.0,40.324,1814.58
+2022-05-04,AZZ,"LAVELLE, KEN",President & GM - Electrical,True,COMMON STOCK,sell,313.0,47.67,14920.710000000001
+2022-05-04,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,336.0,47.67,16017.12
+2022-05-04,AZZ,"LAVELLE, KEN",President & GM - Electrical,True,COMMON STOCK,sell,586.0,47.67,27934.620000000003
+2022-05-04,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,620.0,47.67,29555.4
+2022-05-04,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,3025.0,47.67,144201.75
+2022-05-04,AZZ,"HILL, GARY L.",COO - Infrastructure Solutions,True,COMMON STOCK,sell,329.0,47.67,15683.43
+2022-05-04,AZZ,"HILL, GARY L.",COO - Infrastructure Solutions,True,COMMON STOCK,sell,520.0,47.67,24788.4
+2022-05-04,AZZ,"SCHLOM, PHILIP A","SVP, Chief Financial Officer",True,COMMON STOCK,sell,326.0,47.67,15540.42
+2022-05-04,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,1905.0,47.67,90811.35
+2022-05-04,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,sell,287.0,47.67,13681.29
+2022-05-04,AZZ,"SCHLOM, PHILIP A","SVP, Chief Financial Officer",True,COMMON STOCK,sell,477.0,47.67,22738.59
+2022-05-04,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,sell,540.0,47.67,25741.8
+2022-05-04,AZZ,"BACIUS, CHRIS M.","VP, Corporate Development",True,COMMON STOCK,sell,280.0,47.67,13347.6
+2022-05-04,AZZ,"STOVALL, BRYAN LEE",COO - Metal Coatings,True,COMMON STOCK,sell,398.0,47.67,18972.66
+2022-05-04,AZZ,"STOVALL, BRYAN LEE",COO - Metal Coatings,True,COMMON STOCK,sell,618.0,47.67,29460.06
+2022-05-04,AZZ,"STOVALL, BRYAN LEE",COO - Metal Coatings,True,COMMON STOCK,sell,487.0,47.67,23215.29
+2022-05-04,AZZ,"BACIUS, CHRIS M.","VP, Corporate Development",True,COMMON STOCK,sell,496.0,47.67,23644.32
+2022-05-22,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,sell,291.0,43.43,12638.13
+2022-05-22,AZZ,"STOVALL, BRYAN LEE",COO - Metal Coatings,True,COMMON STOCK,sell,233.0,43.43,10119.19
+2022-05-22,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,2368.0,43.43,102842.24
+2022-05-22,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,10942.0,43.43,475211.06
+2022-05-22,AZZ,"HILL, GARY L.",COO - Infrastructure Solutions,True,COMMON STOCK,sell,324.0,43.43,14071.32
+2022-05-22,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,sell,1348.0,43.43,58543.64
+2022-05-22,AZZ,"BACIUS, CHRIS M.","VP, Corporate Development",True,COMMON STOCK,sell,291.0,43.43,12638.13
+2022-05-22,AZZ,"LAVELLE, KEN",President & GM - Electrical,True,COMMON STOCK,sell,324.0,43.43,14071.32
+2022-05-22,AZZ,"LAVELLE, KEN",President & GM - Electrical,True,COMMON STOCK,sell,1498.0,43.43,65058.14
+2022-05-22,AZZ,"BACIUS, CHRIS M.","VP, Corporate Development",True,COMMON STOCK,sell,1348.0,43.43,58543.64
+2022-05-22,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,1798.0,43.43,78087.14
+2022-05-22,AZZ,"HILL, GARY L.",COO - Infrastructure Solutions,True,COMMON STOCK,sell,1498.0,43.43,65058.14
+2022-05-22,AZZ,"STOVALL, BRYAN LEE",COO - Metal Coatings,True,COMMON STOCK,sell,719.0,43.43,31226.17
+2022-05-22,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,389.0,43.43,16894.27
+2022-07-01,AZZ,"LAVELLE, KEN",President & GM - Electrical,True,COMMON STOCK,buy,527.0,34.697,18285.319000000003
+2022-07-01,AZZ,"SCHLOM, PHILIP A","SVP, Chief Financial Officer",True,COMMON STOCK,buy,894.0,28.279,25281.426
+2022-07-01,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,buy,418.0,34.697,14503.346000000001
+2022-07-01,AZZ,"HILL, GARY L.",COO - Infrastructure Solutions,True,COMMON STOCK,buy,106.0,34.697,3677.8820000000005
+2022-07-01,AZZ,"BACIUS, CHRIS M.","VP, Corporate Development",True,COMMON STOCK,buy,527.0,34.697,18285.319000000003
+2022-07-01,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,buy,527.0,34.697,18285.319000000003
+2022-07-01,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,buy,527.0,34.697,18285.319000000003
+2022-08-10,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,buy,5000.0,42.487,212435.0
+2022-10-14,AZZ,"RUSSELL, KURT L.",COO - Precoat Metals,True,COMMON STOCK,buy,3000.0,34.89,104670.0
+2022-10-14,AZZ,"SCHLOM, PHILIP A","SVP, Chief Financial Officer",True,COMMON STOCK,buy,3000.0,34.99,104970.0
+2022-10-17,AZZ,"LAVELLE, KEN",President & GM - Electrical,True,COMMON STOCK,buy,2000.0,34.676,69352.0
+2022-11-01,AZZ,"STOVALL, BRYAN LEE",COO - Metal Coatings,True,COMMON STOCK,sell,3517.0,40.56,142649.52000000002
+2022-12-30,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,buy,172.0,34.17,5877.240000000001
+2023-05-04,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,331.0,36.3,12015.3
+2023-05-04,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,1935.0,36.3,70240.5
+2023-05-04,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,1192.0,36.3,43269.6
+2023-05-04,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,6553.0,36.3,237873.9
+2023-05-04,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,sell,497.0,36.3,18041.1
+2023-05-04,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,sell,985.0,36.3,35755.5
+2023-05-04,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,597.0,36.3,21671.1
+2023-05-04,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,sell,288.0,36.3,10454.4
+2023-05-04,AZZ,"STOVALL, BRYAN LEE",COO - Metal Coatings,True,COMMON STOCK,sell,393.0,36.3,14265.9
+2023-05-04,AZZ,"STOVALL, BRYAN LEE",COO - Metal Coatings,True,COMMON STOCK,sell,789.0,36.3,28640.699999999997
+2023-05-04,AZZ,"SCHLOM, PHILIP A","SVP, Chief Financial Officer",True,COMMON STOCK,sell,447.0,36.3,16226.099999999999
+2023-05-04,AZZ,"SCHLOM, PHILIP A","SVP, Chief Financial Officer",True,COMMON STOCK,sell,326.0,36.3,11833.8
+2023-05-04,AZZ,"SCHLOM, PHILIP A","SVP, Chief Financial Officer",True,COMMON STOCK,sell,886.0,36.3,32161.8
+2023-05-04,AZZ,"STOVALL, BRYAN LEE",COO - Metal Coatings,True,COMMON STOCK,sell,597.0,36.3,21671.1
+2023-05-04,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,3022.0,36.3,109698.59999999999
+2023-05-09,AZZ,"SCHLOM, PHILIP A","SVP, Chief Financial Officer",True,COMMON STOCK,sell,678.0,35.55,24102.899999999998
+2023-05-09,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,3171.0,35.55,112729.04999999999
+2023-05-09,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,sell,489.0,35.55,17383.949999999997
+2023-05-09,AZZ,"STOVALL, BRYAN LEE",COO - Metal Coatings,True,COMMON STOCK,sell,686.0,35.55,24387.3
+2023-05-09,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,563.0,35.55,20014.649999999998
+2023-05-12,AZZ,"RUSSELL, KURT L.",COO - Precoat Metals,True,COMMON STOCK,sell,4710.0,35.7,168147.0
+2023-06-30,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,buy,429.0,34.17,14658.93
+2023-06-30,AZZ,"SCHLOM, PHILIP A","SVP, Chief Financial Officer",True,COMMON STOCK,buy,608.0,34.918,21230.144
+2023-06-30,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,buy,621.0,34.17,21219.57
+2023-06-30,AZZ,"RUSSELL, KURT L.",COO - Precoat Metals,True,COMMON STOCK,buy,621.0,34.17,21219.57
+2023-12-29,AZZ,"MOSELEY, TIFFANY",Chief Accounting Officer,True,COMMON STOCK,buy,322.0,36.94,11894.679999999998
+2023-12-29,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,buy,181.0,34.17,6184.77
+2024-04-28,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,667.0,71.49,47683.829999999994
+2024-04-28,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,sell,492.0,71.49,35173.079999999994
+2024-04-28,AZZ,"STOVALL, BRYAN LEE",COO - Metal Coatings,True,COMMON STOCK,sell,725.0,71.49,51830.24999999999
+2024-04-28,AZZ,"SCHLOM, PHILIP A","SVP, Chief Financial Officer",True,COMMON STOCK,sell,677.0,71.49,48398.729999999996
+2024-04-28,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,3053.0,71.49,218258.96999999997
+2024-04-28,AZZ,"RUSSELL, KURT L.",COO - Precoat Metals,True,Restricted Stock Units,sell,991.0,71.49,70846.59
+2024-05-04,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,sell,1207.0,75.02,90549.14
+2024-05-04,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,1397.0,75.02,104802.93999999999
+2024-05-04,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,2064.0,75.02,154841.28
+2024-05-04,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,sell,347.0,75.02,26031.94
+2024-05-04,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,9622.0,75.02,721842.44
+2024-05-04,AZZ,"STOVALL, BRYAN LEE",COO - Metal Coatings,True,COMMON STOCK,sell,1103.0,75.02,82747.06
+2024-05-04,AZZ,"SCHLOM, PHILIP A","SVP, Chief Financial Officer",True,COMMON STOCK,sell,1372.0,75.02,102927.43999999999
+2024-05-04,AZZ,"STOVALL, BRYAN LEE",COO - Metal Coatings,True,COMMON STOCK,sell,435.0,75.02,32633.699999999997
+2024-05-04,AZZ,"SCHLOM, PHILIP A","SVP, Chief Financial Officer",True,COMMON STOCK,sell,373.0,75.02,27982.46
+2024-05-04,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,379.0,75.02,28432.579999999998
+2024-05-09,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,574.0,78.07,44812.17999999999
+2024-05-09,AZZ,"SCHLOM, PHILIP A","SVP, Chief Financial Officer",True,COMMON STOCK,sell,691.0,78.07,53946.369999999995
+2024-05-09,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,3225.0,78.07,251775.74999999997
+2024-05-09,AZZ,"EMERY, MATTHEW VARLEY",Chief Information & HR Officer,True,COMMON STOCK,sell,498.0,78.07,38878.85999999999
+2024-05-09,AZZ,"STOVALL, BRYAN LEE",COO - Metal Coatings,True,COMMON STOCK,sell,698.0,78.07,54492.85999999999
+2024-05-13,AZZ,"RUSSELL, KURT L.",COO - Precoat Metals,True,Restricted Stock Units,sell,6050.0,76.55,463127.5
+2024-05-22,AZZ,"MOSELEY, TIFFANY",Chief Accounting Officer,True,COMMON STOCK,sell,279.0,84.03,23444.37
+2024-06-30,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,buy,469.0,34.17,16025.730000000001
+2024-06-30,AZZ,"RUSSELL, KURT L.",COO - Precoat Metals,True,COMMON STOCK,buy,622.0,34.17,21253.74
+2024-06-30,AZZ,"CRAWFORD, JASON",Chief Financial Officer,True,COMMON STOCK,buy,622.0,34.17,21253.74
+2024-06-30,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,buy,622.0,34.17,21253.74
+2024-06-30,AZZ,"MOSELEY, TIFFANY",Chief Accounting Officer,True,COMMON STOCK,buy,420.0,36.94,15514.8
+2024-07-15,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,331.0,83.5,27638.5
+2024-07-16,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,5057.0,84.0,424788.0
+2024-07-16,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,3762.0,85.72,322478.64
+2024-07-16,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,615.0,83.85,51567.75
+2024-07-18,AZZ,"STOVALL, BRYAN LEE",COO - Metal Coatings,True,COMMON STOCK,sell,14545.0,84.7904,1233276.368
+2024-12-31,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,buy,164.0,34.17,5603.88
+2025-04-25,AZZ,"CRAWFORD, JASON",Chief Financial Officer,True,COMMON STOCK,sell,315.0,85.21,26841.149999999998
+2025-04-25,AZZ,"STOVALL, BRYAN LEE",COO - Metal Coatings,True,COMMON STOCK,sell,334.0,85.21,28460.14
+2025-04-25,AZZ,"VELLINES, JEFFREY",Pres & COO - Precoat Metals,True,Restricted Stock Units,sell,328.0,85.21,27948.879999999997
+2025-04-25,AZZ,"RUSSELL, KURT L.",Chief Strategy Officer,True,COMMON STOCK,sell,407.0,85.21,34680.469999999994
+2025-04-25,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,2275.0,85.21,193852.75
+2025-04-25,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,302.0,85.21,25733.42
+2025-04-28,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,578.0,86.86,50205.08
+2025-04-28,AZZ,"VELLINES, JEFFREY",Pres & COO - Precoat Metals,True,Restricted Stock Units,sell,425.0,86.86,36915.5
+2025-04-28,AZZ,"CRAWFORD, JASON",Chief Financial Officer,True,COMMON STOCK,sell,366.0,86.86,31790.76
+2025-04-28,AZZ,"STOVALL, BRYAN LEE",COO - Metal Coatings,True,COMMON STOCK,sell,628.0,86.86,54548.08
+2025-04-28,AZZ,"RUSSELL, KURT L.",Chief Strategy Officer,True,COMMON STOCK,sell,788.0,86.86,68445.68
+2025-04-28,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,3597.0,86.86,312435.42
+2025-04-30,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,26889.0,85.878,2309173.542
+2025-05-05,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,18851.0,89.91,1694893.41
+2025-05-09,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,10870.0,91.49,994496.2999999999
+2025-05-09,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,3244.0,91.49,296793.56
+2025-05-09,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,1870.0,91.49,171086.3
+2025-05-09,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,576.0,91.49,52698.24
+2025-05-09,AZZ,"STOVALL, BRYAN LEE",COO - Metal Coatings,True,COMMON STOCK,sell,2453.0,91.49,224424.97
+2025-05-09,AZZ,"STOVALL, BRYAN LEE",COO - Metal Coatings,True,COMMON STOCK,sell,763.0,91.49,69806.87
+2025-05-12,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,4973.0,93.906,466994.538
+2025-05-31,AZZ,"STOVALL, BRYAN LEE",COO - Metal Coatings,True,COMMON STOCK,sell,3568.0,93.1,332180.8
+2025-06-03,AZZ,"CRAWFORD, JASON",Chief Financial Officer,True,COMMON STOCK,sell,586.0,93.24,54638.64
+2025-06-30,AZZ,"CRAWFORD, JASON",Chief Financial Officer,True,COMMON STOCK,buy,305.0,69.63,21237.149999999998
+2025-06-30,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,buy,305.0,69.63,21237.149999999998
+2025-06-30,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,buy,305.0,69.63,21237.149999999998
+2025-06-30,AZZ,"RUSSELL, KURT L.",Chief Strategy Officer,True,COMMON STOCK,buy,305.0,69.63,21237.149999999998
+2025-07-16,AZZ,"STOVALL, BRYAN LEE",COO - Metal Coatings,True,COMMON STOCK,sell,5000.0,107.979,539895.0
+2025-07-22,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,26516.0,110.8544,2939415.2704
+2025-08-11,AZZ,"STOVALL, BRYAN LEE",COO - Metal Coatings,True,COMMON STOCK,sell,773.0,111.235,85984.655
+2025-08-11,AZZ,"STOVALL, BRYAN LEE",COO - Metal Coatings,True,COMMON STOCK,sell,400.0,111.242,44496.8
+2025-08-11,AZZ,"STOVALL, BRYAN LEE",COO - Metal Coatings,True,COMMON STOCK,sell,3827.0,111.709,427510.343
+2025-08-12,AZZ,"RUSSELL, KURT L.",Chief Strategy Officer,True,COMMON STOCK,sell,10321.0,112.2057,1158075.0296999998
+2026-01-08,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,1000.0,118.706,118706.0
+2026-01-09,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,1568.0,119.4268,187261.2224
+2026-01-21,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,2790.0,126.6355,353313.045
+2026-01-23,AZZ,"VELLINES, JEFFREY",Pres & COO - Precoat Metals,True,COMMON STOCK,sell,717.0,123.6,88621.2
+2026-02-03,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,25000.0,127.2856,3182140.0
+2026-02-11,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,2923.0,136.0,397528.0
+2026-04-24,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,2203.0,143.33,315755.99000000005
+2026-04-24,AZZ,"VELLINES, JEFFREY",Pres & COO - Precoat Metals,True,COMMON STOCK,sell,392.0,143.33,56185.36000000001
+2026-04-24,AZZ,"BELLA, TODD MICHAEL",President-Metal Coatings,True,COMMON STOCK,sell,132.0,143.33,18919.56
+2026-04-24,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,312.0,143.33,44718.96000000001
+2026-04-24,AZZ,"STOVALL, BRYAN LEE",COO - Metal Coatings,True,COMMON STOCK,sell,324.0,143.33,46438.920000000006
+2026-04-24,AZZ,"CRAWFORD, JASON",Chief Financial Officer,True,COMMON STOCK,sell,374.0,143.33,53605.420000000006
+2026-04-25,AZZ,"CRAWFORD, JASON",Chief Financial Officer,True,COMMON STOCK,sell,386.0,144.78,55885.08
+2026-04-25,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,2292.0,144.78,331835.76
+2026-04-25,AZZ,"VELLINES, JEFFREY",Pres & COO - Precoat Metals,True,COMMON STOCK,sell,331.0,144.78,47922.18
+2026-04-25,AZZ,"STOVALL, BRYAN LEE",COO - Metal Coatings,True,COMMON STOCK,sell,336.0,144.78,48646.08
+2026-04-25,AZZ,"BELLA, TODD MICHAEL",President-Metal Coatings,True,COMMON STOCK,sell,120.0,144.78,17373.6
+2026-04-25,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,304.0,144.78,44013.12
+2026-04-28,AZZ,"CRAWFORD, JASON",Chief Financial Officer,True,COMMON STOCK,sell,449.0,141.58,63569.420000000006
+2026-04-28,AZZ,"VELLINES, JEFFREY",Pres & COO - Precoat Metals,True,COMMON STOCK,sell,2363.0,141.58,334553.54000000004
+2026-04-28,AZZ,"VELLINES, JEFFREY",Pres & COO - Precoat Metals,True,COMMON STOCK,sell,427.0,141.58,60454.66
+2026-04-28,AZZ,"BELLA, TODD MICHAEL",President-Metal Coatings,True,COMMON STOCK,sell,210.0,141.58,29731.800000000003
+2026-04-28,AZZ,"STOVALL, BRYAN LEE",COO - Metal Coatings,True,COMMON STOCK,sell,632.0,141.58,89478.56000000001
+2026-04-28,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,19996.0,141.58,2831033.68
+2026-04-28,AZZ,"BELLA, TODD MICHAEL",President-Metal Coatings,True,COMMON STOCK,sell,1164.0,141.58,164799.12000000002
+2026-04-28,AZZ,"STOVALL, BRYAN LEE",COO - Metal Coatings,True,COMMON STOCK,sell,4037.0,141.58,571558.4600000001
+2026-04-28,AZZ,"CRAWFORD, JASON",Chief Financial Officer,True,COMMON STOCK,sell,2480.0,141.58,351118.4
+2026-04-28,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,582.0,141.58,82399.56000000001
+2026-04-28,AZZ,"FERGUSON, THOMAS E","Director, President and CEO",True,COMMON STOCK,sell,3622.0,141.58,512802.76000000007
+2026-04-28,AZZ,"MACKEY, TARA D",Chief Legal Officer,True,COMMON STOCK,sell,3679.0,141.58,520872.82000000007

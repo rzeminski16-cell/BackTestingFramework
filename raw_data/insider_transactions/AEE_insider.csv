@@ -1,0 +1,901 @@
+date,symbol,insider_name,insider_title,is_executive,security_type,transaction_type,shares,price,value
+2002-02-08,AEE,"MARK, RICHARD J",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,2024.0,42.5,86020.0
+2002-03-29,AEE,"MARK, RICHARD J",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,93.0,41.58,3866.94
+2002-05-20,AEE,"MARK, RICHARD J",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,300.0,43.99,13197.0
+2003-02-14,AEE,"RAINWATER, GARY L","Director, Chairman & Chief Exec. Officer",True,"Common Stock, $.01 Par Value",buy,9436.0,39.41,371872.75999999995
+2003-07-01,AEE,"MUELLER, CHARLES W",Director,True,"Common Stock, $.01 Par Value",buy,39.0,41.98,1637.2199999999998
+2003-09-30,AEE,"SALIGMAN, HARVEY",Director,True,"Common Stock, $.01 Par Value",buy,160.0,42.585,6813.6
+2003-09-30,AEE,"MILLER, PAUL L JR",Director,True,"Common Stock, $.01 Par Value",buy,147.0,42.585,6259.995
+2003-09-30,AEE,"MUELLER, CHARLES W",Director,True,"Common Stock
+, $.01 Par Value",buy,173.0,42.585,7367.205
+2003-09-30,AEE,"MUELLER, CHARLES W",Director,True,"Common Stock, $.01 Par Value",buy,137.0,42.585,5834.145
+2003-09-30,AEE,"GREENWALT, CLIFFORD L",Director,True,"Common Stock, $.01 Par Value",buy,85.0,42.585,3619.725
+2003-12-31,AEE,"MUELLER, CHARLES W",Director,True,"Common Stock, $.01 Par Value",buy,2557.0,42.585,108889.845
+2004-01-02,AEE,"GREENWALT, CLIFFORD L",Director,True,"Common S
+tock, $.01 Par Value",buy,1000.0,46.357,46357.0
+2004-01-02,AEE,"MILLER, PAUL L JR",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,46.357,46357.0
+2004-01-02,AEE,"OBERHELMAN, DOUGLAS R",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,46.357,46357.0
+2004-01-02,AEE,"SALIGMAN, HARVEY",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,46.357,46357.0
+2004-01-30,AEE,"DAVIS, JIMMY L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,72.0,48.045,3459.2400000000002
+2004-02-13,AEE,"MUELLER, CHARLES W",Director,True,"Common Stock, $.01 Par Value",buy,23300.0,38.5,897050.0
+2004-02-13,AEE,"MUELLER, CHARLES W",Director,True,"Common Stock, $.01 Par Value",buy,15000.0,35.875,538125.0
+2004-02-13,AEE,"MUELLER, CHARLES W",Director,True,"Common Stock, $.01 Par Value",sell,23300.0,46.63,1086479.0
+2004-02-13,AEE,"MUELLER, CHARLES W",Director,True,Stock Option,sell,15000.0,46.63,699450.0
+2004-02-13,AEE,"MUELLER, CHARLES W",Director,True,"Common Stock, $.01 Par Value",sell,63800.0,46.63,2974994.0
+2004-02-13,AEE,"MUELLER, CHARLES W",Director,True,"Common Stock, $.01 Par Value",buy,17700.0,43.0,761100.0
+2004-02-13,AEE,"MUELLER, CHARLES W",Director,True,"Common Stock, $.01 Par Value",sell,17700.0,46.63,825351.0
+2004-02-13,AEE,"MUELLER, CHARLES W",Director,True,"Common Stock, $.01 Par Value",buy,63800.0,39.25,2504150.0
+2004-02-17,AEE,"BIRDSONG, JERRE E",Vice President and Treasurer,True,"Common Stock, $.01 Par Value",sell,10700.0,46.57,498299.0
+2004-02-17,AEE,"BIRDSONG, JERRE E",Vice President and Treasurer,True,"Common Stock, $.01 Par Value",buy,9700.0,39.25,380725.0
+2004-02-17,AEE,"MUELLER, MICHAEL G",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,3000.0,46.6279,139883.69999999998
+2004-02-17,AEE,"MUELLER, MICHAEL G",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,3800.0,46.6279,177186.02
+2004-02-17,AEE,"MUELLER, MICHAEL G",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,3800.0,36.625,139175.0
+2004-02-17,AEE,"BIRDSONG, JERRE E",Vice President and Treasurer,True,Stock Option,sell,10575.0,46.57,492477.75
+2004-02-17,AEE,"BIRDSONG, JERRE E",Vice President and Treasurer,True,"Common Stock, $.01 Par Value",sell,6715.0,46.57,312717.55
+2004-02-17,AEE,"BIRDSONG, JERRE E",Vice President and Treasurer,True,"Common Stock, $.01 Par Value",buy,10575.0,31.0,327825.0
+2004-02-17,AEE,"BIRDSONG, JERRE E",Vice President and Treasurer,True,"Common Stock, $.01 Par Value",sell,1050.0,46.57,48898.5
+2004-02-17,AEE,"BIRDSONG, JERRE E",Vice President and Treasurer,True,"Common Stock, $.01 Par Value",sell,9700.0,46.57,451729.0
+2004-02-17,AEE,"BIRDSONG, JERRE E",Vice President and Treasurer,True,"Common Stock, $.01 Par Value",sell,3400.0,46.57,158338.0
+2004-02-17,AEE,"BIRDSONG, JERRE E",Vice President and Treasurer,True,"Common Stock, $.01 Par Value",buy,3400.0,38.5,130900.0
+2004-02-17,AEE,"BIRDSONG, JERRE E",Vice President and Treasurer,True,"Common Stock, $.01 Par Value",sell,625.0,46.57,29106.25
+2004-02-17,AEE,"BIRDSONG, JERRE E",Vice President and Treasurer,True,"Common Stock, $.01 Par Value",buy,625.0,43.0,26875.0
+2004-02-17,AEE,"BIRDSONG, JERRE E",Vice President and Treasurer,True,"Common Stock, $.01 Par Value",buy,1050.0,35.875,37668.75
+2004-02-17,AEE,"MUELLER, MICHAEL G",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,3000.0,31.0,93000.0
+2004-02-17,AEE,"BIRDSONG, JERRE E",Vice President and Treasurer,True,"Common Stock, $.01 Par Value",buy,10700.0,36.625,391887.5
+2004-02-19,AEE,"ZDELLAR, RONALD C",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,9700.0,39.25,380725.0
+2004-02-19,AEE,"ZDELLAR, RONALD C",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,2500.0,43.0,107500.0
+2004-02-19,AEE,"ZDELLAR, RONALD C",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,10700.0,36.625,391887.5
+2004-02-19,AEE,"ZDELLAR, RONALD C",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,3400.0,38.5,130900.0
+2004-02-19,AEE,"ZDELLAR, RONALD C",Vice President of Subsidiary,True,Stock Option,sell,2500.0,46.3027,115756.75
+2004-02-19,AEE,"ZDELLAR, RONALD C",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,3400.0,46.3027,157429.18
+2004-02-19,AEE,"ZDELLAR, RONALD C",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,10700.0,46.3027,495438.89
+2004-02-19,AEE,"ZDELLAR, RONALD C",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,9700.0,46.3027,449136.19
+2004-02-20,AEE,"NELSON, GREGORY L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,1070.0,38.5,41195.0
+2004-02-20,AEE,"NELSON, GREGORY L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,830.0,43.0,35690.0
+2004-02-20,AEE,"NELSON, GREGORY L",Vice President of Subsidiary,True,Stock Option,sell,1070.0,46.289,49529.23
+2004-02-20,AEE,"NELSON, GREGORY L",Vice President of Subsidiary,True,Stock Option,sell,10575.0,46.289,489506.175
+2004-02-20,AEE,"NELSON, GREGORY L",Vice President of Subsidiary,True,Stock Option,sell,830.0,46.289,38419.87
+2004-02-20,AEE,"NELSON, GREGORY L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,10575.0,31.0,327825.0
+2004-02-20,AEE,"NELSON, GREGORY L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,7175.0,46.289,332123.575
+2004-02-20,AEE,"NELSON, GREGORY L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,3350.0,39.25,131487.5
+2004-02-20,AEE,"NELSON, GREGORY L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,3350.0,46.289,155068.15
+2004-02-20,AEE,"NELSON, GREGORY L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,8025.0,36.625,293915.625
+2004-02-20,AEE,"NELSON, GREGORY L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,8025.0,46.289,371469.22500000003
+2004-02-26,AEE,"MUELLER, CHARLES W",Director,True,"Common Stock, $.01 Par Value",buy,75300.0,36.625,2757862.5
+2004-02-26,AEE,"MUELLER, CHARLES W",Director,True,"Common Stock, $.01 Par Value",sell,75300.0,46.362,3491058.6
+2004-02-27,AEE,"MILLER, PAUL L JR",Director,True,Common Stock,sell,100.0,46.9996,4699.96
+2004-03-01,AEE,"BIRDSONG, JERRE E",Vice President and Treasurer,True,"Common Stock, $.01 Par Value",sell,1463.0,47.88,70048.44
+2004-03-01,AEE,"BIRDSONG, JERRE E",Vice President and Treasurer,True,"Common Stock, $.01 Par Value",buy,1463.0,47.88,70048.44
+2004-03-03,AEE,"SIMPSON, JERRY L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,10575.0,31.0,327825.0
+2004-03-03,AEE,"SIMPSON, JERRY L",Vice President of Subsidiary,True,Stock Option,sell,3800.0,47.671,181149.8
+2004-03-03,AEE,"SIMPSON, JERRY L",Vice President of Subsidiary,True,Stock Option,sell,10575.0,47.671,504120.825
+2004-03-03,AEE,"SIMPSON, JERRY L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,3800.0,36.625,139175.0
+2004-03-03,AEE,"SIMPSON, JERRY L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,3350.0,39.25,131487.5
+2004-03-03,AEE,"SIMPSON, JERRY L",Vice President of Subsidiary,True,Stock Option,sell,3350.0,47.671,159697.85
+2004-03-04,AEE,"ZDELLAR, RONALD C",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,10575.0,31.0,327825.0
+2004-03-04,AEE,"ZDELLAR, RONALD C",Vice President of Subsidiary,True,Stock Option,sell,10575.0,47.9396,506961.26999999996
+2004-03-04,AEE,"ZDELLAR, RONALD C",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,8450.0,47.9396,405089.62
+2004-03-05,AEE,"MILLER, PAUL L JR",Director,True,Common Stock,sell,100.0,48.0573,4805.73
+2004-03-08,AEE,"MUELLER, CHARLES W",Director,True,"Common Stock, $.01 Par Value",sell,108100.0,47.4994,5134685.140000001
+2004-03-08,AEE,"MUELLER, CHARLES W",Director,True,"Common Stock, $.01 Par Value",buy,108100.0,31.0,3351100.0
+2004-03-09,AEE,"NELSON, CRAIG D",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,690.0,47.0562,32468.778
+2004-03-09,AEE,"AFFOLTER, RONALD D",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,721.0,47.0562,33927.5202
+2004-03-09,AEE,"BIRDSONG, JERRE E",Vice President and Treasurer,True,"Common Stock, $.01 Par Value",sell,714.0,47.0562,33598.1268
+2004-03-09,AEE,"COLE, DANIEL F",Sr. VP and Director of Subs,True,"Common Stock, $.01 Par Value",sell,1368.0,47.0562,64372.88159999999
+2004-03-09,AEE,"DAVIS, JIMMY L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,543.0,47.0562,25551.5166
+2004-03-09,AEE,"KELLEY, R ALAN",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,872.0,47.0562,41033.0064
+2004-03-09,AEE,"NASLUND, CHARLES D",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,772.0,47.0562,36327.386399999996
+2004-03-09,AEE,"MENNE, MICHAEL L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,327.0,47.0562,15387.3774
+2004-03-09,AEE,"MUELLER, CHARLES W",Director,True,"Common Stock, $.01 Par Value",sell,3429.0,47.0562,161355.70979999998
+2004-03-09,AEE,"AGATHEN, PAUL A",Former Sr VP & Dir. of Sub.,True,"Common Stock, $.01 Par Value",sell,1490.0,47.0562,70113.738
+2004-03-09,AEE,"WILLIS, SAMUEL E",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,687.0,47.0562,32327.609399999998
+2004-03-09,AEE,"SMITH, J KAY",Former VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,375.0,47.0562,17646.074999999997
+2004-03-09,AEE,"SIMPSON, JERRY L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,584.0,47.0562,27480.820799999998
+2004-03-09,AEE,"RANDOLPH, GARRY L",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,1579.0,47.0562,74301.7398
+2004-03-09,AEE,"NELSON, GREGORY L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,1179.0,47.0562,55479.2598
+2004-03-10,AEE,"VOSS, THOMAS R",SVP & Dir of Subsidiary,True,"Common Stock, $.01 Par Value",buy,700.0,35.875,25112.5
+2004-03-10,AEE,"VOSS, THOMAS R",SVP & Dir of Subsidiary,True,"Common Stock, $.01 Par Value",buy,3350.0,39.25,131487.5
+2004-03-10,AEE,"VOSS, THOMAS R",SVP & Dir of Subsidiary,True,"Common Stock, $.01 Par Value",buy,1070.0,38.5,41195.0
+2004-03-10,AEE,"VOSS, THOMAS R",SVP & Dir of Subsidiary,True,"Common Stock, $.01 Par Value",buy,830.0,43.0,35690.0
+2004-03-10,AEE,"VOSS, THOMAS R",SVP & Dir of Subsidiary,True,Stock Option,sell,700.0,47.0,32900.0
+2004-03-10,AEE,"VOSS, THOMAS R",SVP & Dir of Subsidiary,True,Stock Option,sell,830.0,47.0,39010.0
+2004-03-10,AEE,"VOSS, THOMAS R",SVP & Dir of Subsidiary,True,Stock Option,sell,1070.0,47.0,50290.0
+2004-03-10,AEE,"WILLIS, SAMUEL E",Vice President of Subsidiary,True,Stock Option,sell,700.0,47.01,32907.0
+2004-03-10,AEE,"VOSS, THOMAS R",SVP & Dir of Subsidiary,True,"Common Stock, $.01 Par Value",sell,3350.0,47.0,157450.0
+2004-03-10,AEE,"WILLIS, SAMUEL E",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,700.0,35.875,25112.5
+2004-03-10,AEE,"WILLIS, SAMUEL E",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,595.0,47.01,27970.949999999997
+2004-03-11,AEE,"SMITH, J KAY",Former VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,780.0,46.2342,36062.676
+2004-03-30,AEE,"DAVIS, JIMMY L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,85.0,46.16,3923.6
+2004-04-02,AEE,"MILLER, PAUL L JR",Director,True,Common Stock,sell,100.0,45.8644,4586.4400000000005
+2004-05-05,AEE,"NELSON, CRAIG D",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,138.0,43.25,5968.5
+2004-05-05,AEE,"NELSON, CRAIG D",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,138.0,43.25,5968.5
+2004-05-06,AEE,"BAXTER, WARNER L",EVP and CFO,True,"Common Stock, $.01 Par Value",buy,4850.0,39.25,190362.5
+2004-05-06,AEE,"BAXTER, WARNER L",EVP and CFO,True,"Common Stock, $.01 Par Value",buy,400.0,35.5,14200.0
+2004-05-06,AEE,"BAXTER, WARNER L",EVP and CFO,True,"Common Stock, $.01 Par Value",buy,5350.0,36.625,195943.75
+2004-05-06,AEE,"BAXTER, WARNER L",EVP and CFO,True,"Common Stock, $.01 Par Value",buy,5287.0,31.0,163897.0
+2004-05-06,AEE,"BAXTER, WARNER L",EVP and CFO,True,"Common Stock, $.01 Par Value",sell,3377.0,42.962,145082.674
+2004-05-06,AEE,"BAXTER, WARNER L",EVP and CFO,True,Stock Option,sell,5350.0,42.962,229846.7
+2004-05-06,AEE,"BAXTER, WARNER L",EVP and CFO,True,"Common Stock, $.01 Par Value",buy,220.0,43.0,9460.0
+2004-05-06,AEE,"BAXTER, WARNER L",EVP and CFO,True,"Common Stock, $.01 Par Value",buy,800.0,43.0,34400.0
+2004-05-06,AEE,"BAXTER, WARNER L",EVP and CFO,True,Stock Option,sell,230.0,43.03,9896.9
+2004-05-06,AEE,"BAXTER, WARNER L",EVP and CFO,True,"Common Stock, $.01 Par Value",buy,230.0,43.0,9890.0
+2004-05-06,AEE,"BAXTER, WARNER L",EVP and CFO,True,"Common Stock, $.01 Par Value",sell,200.0,43.03,8606.0
+2004-05-06,AEE,"BAXTER, WARNER L",EVP and CFO,True,Stock Option,sell,220.0,43.05,9471.0
+2004-05-06,AEE,"BAXTER, WARNER L",EVP and CFO,True,Stock Option,sell,400.0,42.962,17184.800000000003
+2004-05-06,AEE,"BAXTER, WARNER L",EVP and CFO,True,"Common Stock, $.01 Par Value",sell,1700.0,42.962,73035.40000000001
+2004-05-06,AEE,"BAXTER, WARNER L",EVP and CFO,True,"Common Stock, $.01 Par Value",buy,1700.0,38.5,65450.0
+2004-05-06,AEE,"BAXTER, WARNER L",EVP and CFO,True,Stock Option,sell,5287.0,42.962,227140.094
+2004-05-06,AEE,"BAXTER, WARNER L",EVP and CFO,True,Stock Option,sell,4850.0,42.962,208365.7
+2004-05-06,AEE,"BAXTER, WARNER L",EVP and CFO,True,"Common Stock, $.01 Par Value",sell,800.0,43.01,34408.0
+2004-05-07,AEE,"MILLER, PAUL L JR",Director,True,"Common Stock, $.01 Par Value",sell,100.0,42.5112,4251.12
+2004-05-12,AEE,"BAXTER, WARNER L",EVP and CFO,True,"Common Stock, $.01 Par Value",sell,1940.0,40.88,79307.20000000001
+2004-05-20,AEE,"WHITELEY, DAVID A",Sr. VP of Subsidiary,True,Stock Option,sell,700.0,43.36,30352.0
+2004-05-25,AEE,"WHITELEY, DAVID A",Sr. VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,700.0,43.36,30352.0
+2004-05-25,AEE,"WHITELEY, DAVID A",Sr. VP of Subsidiary,True,"Common Stock, $.01 Par Value",buy,7050.0,31.0,218550.0
+2004-05-25,AEE,"WHITELEY, DAVID A",Sr. VP of Subsidiary,True,"Common Stock, $.01 Par Value",buy,3800.0,36.625,139175.0
+2004-05-25,AEE,"WHITELEY, DAVID A",Sr. VP of Subsidiary,True,"Common Stock, $.01 Par Value",buy,1070.0,38.5,41195.0
+2004-05-25,AEE,"WHITELEY, DAVID A",Sr. VP of Subsidiary,True,"Common Stock, $.01 Par Value",buy,3350.0,39.25,131487.5
+2004-05-25,AEE,"WHITELEY, DAVID A",Sr. VP of Subsidiary,True,Stock Option,sell,3350.0,43.36,145256.0
+2004-05-25,AEE,"WHITELEY, DAVID A",Sr. VP of Subsidiary,True,Stock Option,sell,3800.0,43.36,164768.0
+2004-05-25,AEE,"WHITELEY, DAVID A",Sr. VP of Subsidiary,True,Stock Option,sell,1070.0,43.36,46395.2
+2004-05-25,AEE,"WHITELEY, DAVID A",Sr. VP of Subsidiary,True,"Common Stock, $.01 Par Value",buy,700.0,35.875,25112.5
+2004-05-25,AEE,"WHITELEY, DAVID A",Sr. VP of Subsidiary,True,Stock Option,sell,7050.0,43.36,305688.0
+2004-05-26,AEE,"SULLIVAN, STEVEN R","Sr. VP, Secretary & GC",True,"Common Stock, $.01 Par Value",sell,5300.0,43.7524,231887.72
+2004-05-26,AEE,"SULLIVAN, STEVEN R","Sr. VP, Secretary & GC",True,Stock Option,sell,10700.0,43.7524,468150.68
+2004-05-26,AEE,"SULLIVAN, STEVEN R","Sr. VP, Secretary & GC",True,"Common Stock, $.01 Par Value",buy,10575.0,31.0,327825.0
+2004-05-26,AEE,"SULLIVAN, STEVEN R","Sr. VP, Secretary & GC",True,"Common Stock, $.01 Par Value",buy,5300.0,39.8125,211006.25
+2004-05-26,AEE,"SULLIVAN, STEVEN R","Sr. VP, Secretary & GC",True,"Common Stock, $.01 Par Value",buy,10700.0,36.625,391887.5
+2004-05-26,AEE,"SULLIVAN, STEVEN R","Sr. VP, Secretary & GC",True,Stock Option,sell,10575.0,43.7524,462681.63
+2004-05-28,AEE,"MILLER, PAUL L JR",Director,True,"Common Stock, $.01 Par Value",sell,1000.0,43.9925,43992.5
+2004-06-04,AEE,"MILLER, PAUL L JR",Director,True,"Common Stock, $.01 Par Value",sell,100.0,44.1055,4410.55
+2004-07-02,AEE,"MILLER, PAUL L JR",Director,True,"Common Stock, $.01 Par Value",sell,100.0,42.619,4261.9
+2004-08-05,AEE,"WILLIS, SAMUEL E",Vice President of Subsidiary,True,Stock Option,sell,3525.0,45.02,158695.5
+2004-08-05,AEE,"WILLIS, SAMUEL E",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,2745.0,45.02,123579.90000000001
+2004-08-05,AEE,"WILLIS, SAMUEL E",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,3525.0,31.0,109275.0
+2004-08-05,AEE,"WILLIS, SAMUEL E",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,2500.0,45.02,112550.00000000001
+2004-08-05,AEE,"WILLIS, SAMUEL E",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,2500.0,43.0,107500.0
+2004-08-06,AEE,"MILLER, PAUL L JR",Director,True,"Common Stock, $.01 Par Value",sell,100.0,45.2467,4524.67
+2004-08-06,AEE,"WILLIS, SAMUEL E",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,3000.0,36.625,109875.0
+2004-08-06,AEE,"WILLIS, SAMUEL E",Vice President of Subsidiary,True,Stock Option,sell,3000.0,45.2053,135615.9
+2004-08-17,AEE,"WILLIS, SAMUEL E",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,6690.0,45.76,306134.39999999997
+2004-08-17,AEE,"WILLIS, SAMUEL E",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,7700.0,36.625,282012.5
+2004-08-17,AEE,"WILLIS, SAMUEL E",Vice President of Subsidiary,True,Stock Option,sell,7700.0,45.76,352352.0
+2004-09-03,AEE,"MILLER, PAUL L JR",Director,True,"Common Stock, $.01 Par Value",sell,100.0,46.7978,4679.780000000001
+2004-10-01,AEE,"MILLER, PAUL L JR",Director,True,"Common Stock, $.01 Par Value",sell,100.0,46.2178,4621.78
+2004-10-27,AEE,"KELLEY, R ALAN",SVP of Subsidiary,True,Stock Option,sell,1980.0,48.1566,95350.068
+2004-10-27,AEE,"KELLEY, R ALAN",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",buy,1980.0,35.875,71032.5
+2004-10-27,AEE,"KELLEY, R ALAN",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",buy,2500.0,43.0,107500.0
+2004-10-27,AEE,"RANDOLPH, GARRY L",SVP of Subsidiary,True,Stock Option,sell,2100.0,47.9288,100650.48000000001
+2004-10-27,AEE,"KELLEY, R ALAN",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",buy,3525.0,31.0,109275.0
+2004-10-27,AEE,"KELLEY, R ALAN",SVP of Subsidiary,True,Stock Option,sell,2500.0,48.1566,120391.5
+2004-10-27,AEE,"RANDOLPH, GARRY L",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",buy,10700.0,36.625,391887.5
+2004-10-27,AEE,"KELLEY, R ALAN",SVP of Subsidiary,True,Stock Option,sell,3400.0,48.1566,163732.44
+2004-10-27,AEE,"KELLEY, R ALAN",SVP of Subsidiary,True,Stock Option,sell,3525.0,48.1566,169752.01499999998
+2004-10-27,AEE,"RANDOLPH, GARRY L",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",buy,2100.0,35.875,75337.5
+2004-10-27,AEE,"RANDOLPH, GARRY L",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",buy,2500.0,43.0,107500.0
+2004-10-27,AEE,"RANDOLPH, GARRY L",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",buy,9700.0,39.25,380725.0
+2004-10-27,AEE,"SCHEPERS, DAVID J",Vice President of Subsidiary,True,Stock Option,sell,300.0,48.27,14481.000000000002
+2004-10-27,AEE,"KELLEY, R ALAN",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",buy,3400.0,38.5,130900.0
+2004-10-27,AEE,"RANDOLPH, GARRY L",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",buy,10575.0,31.0,327825.0
+2004-10-27,AEE,"RANDOLPH, GARRY L",SVP of Subsidiary,True,Stock Option,sell,10700.0,47.9288,512838.16000000003
+2004-10-27,AEE,"RANDOLPH, GARRY L",SVP of Subsidiary,True,Stock Option,sell,2500.0,47.9288,119822.0
+2004-10-27,AEE,"RANDOLPH, GARRY L",SVP of Subsidiary,True,Stock Option,sell,9700.0,47.9288,464909.36000000004
+2004-10-27,AEE,"RANDOLPH, GARRY L",SVP of Subsidiary,True,Stock Option,sell,10575.0,47.9288,506847.06
+2004-10-27,AEE,"SCHEPERS, DAVID J",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,500.0,36.625,18312.5
+2004-10-27,AEE,"RANDOLPH, GARRY L",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",buy,3400.0,38.5,130900.0
+2004-10-27,AEE,"SCHEPERS, DAVID J",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,700.0,31.0,21700.0
+2004-10-27,AEE,"KELLEY, R ALAN",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,5350.0,48.1566,257637.81
+2004-10-27,AEE,"SCHEPERS, DAVID J",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,500.0,48.28,24140.0
+2004-10-27,AEE,"KELLEY, R ALAN",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",buy,4850.0,39.25,190362.5
+2004-10-27,AEE,"KELLEY, R ALAN",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,4850.0,48.1566,233559.50999999998
+2004-10-27,AEE,"KELLEY, R ALAN",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",buy,5350.0,36.625,195943.75
+2004-10-27,AEE,"RANDOLPH, GARRY L",SVP of Subsidiary,True,Stock Option,sell,3400.0,47.9288,162957.92
+2004-10-27,AEE,"SCHEPERS, DAVID J",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,700.0,48.28,33796.0
+2004-10-27,AEE,"SCHEPERS, DAVID J",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,300.0,31.0,9300.0
+2004-10-28,AEE,"BAXTER, WARNER L",EVP and CFO,True,Stock Option,sell,1700.0,47.474,80705.79999999999
+2004-10-28,AEE,"BAXTER, WARNER L",EVP and CFO,True,"Common Stock, $.01 Par Value",sell,2298.0,47.474,109095.252
+2004-10-28,AEE,"BAXTER, WARNER L",EVP and CFO,True,Stock Option,sell,5350.0,47.474,253985.9
+2004-10-28,AEE,"BAXTER, WARNER L",EVP and CFO,True,Stock Option,sell,5288.0,47.474,251042.512
+2004-10-28,AEE,"BAXTER, WARNER L",EVP and CFO,True,"Common Stock, $.01 Par Value",buy,5350.0,36.625,195943.75
+2004-10-28,AEE,"BAXTER, WARNER L",EVP and CFO,True,Stock Option,sell,4850.0,47.474,230248.9
+2004-10-28,AEE,"BAXTER, WARNER L",EVP and CFO,True,"Common Stock, $.01 Par Value",buy,4850.0,39.25,190362.5
+2004-10-28,AEE,"BAXTER, WARNER L",EVP and CFO,True,"Common Stock, $.01 Par Value",sell,400.0,47.474,18989.6
+2004-10-28,AEE,"BAXTER, WARNER L",EVP and CFO,True,"Common Stock, $.01 Par Value",buy,1250.0,43.0,53750.0
+2004-10-28,AEE,"BAXTER, WARNER L",EVP and CFO,True,"Common Stock, $.01 Par Value",sell,1250.0,47.474,59342.49999999999
+2004-10-28,AEE,"BAXTER, WARNER L",EVP and CFO,True,"Common Stock, $.01 Par Value",buy,1700.0,38.5,65450.0
+2004-10-28,AEE,"BAXTER, WARNER L",EVP and CFO,True,"Common Stock, $.01 Par Value",buy,400.0,35.5,14200.0
+2004-10-28,AEE,"BAXTER, WARNER L",EVP and CFO,True,"Common Stock, $.01 Par Value",buy,5288.0,31.0,163928.0
+2004-10-29,AEE,"COLE, DANIEL F",Sr. VP and Director of Subs,True,"Common Stock, $.01 Par Value",buy,830.0,43.0,35690.0
+2004-10-29,AEE,"COLE, DANIEL F",Sr. VP and Director of Subs,True,"Common Stock, $.01 Par Value",sell,830.0,47.77,39649.100000000006
+2004-10-29,AEE,"COLE, DANIEL F",Sr. VP and Director of Subs,True,Stock Option,sell,1070.0,47.77,51113.9
+2004-10-29,AEE,"BIRDSONG, JERRE E",Vice President and Treasurer,True,"Common Stock, $.01 Par Value",sell,2000.0,47.8017,95603.4
+2004-10-29,AEE,"COLE, DANIEL F",Sr. VP and Director of Subs,True,"Common Stock, $.01 Par Value",buy,1070.0,38.5,41195.0
+2004-10-29,AEE,"COLE, DANIEL F",Sr. VP and Director of Subs,True,"Common Stock, $.01 Par Value",sell,915.0,47.77,43709.55
+2004-11-03,AEE,"VOSS, THOMAS R",SVP & Dir of Subsidiary,True,"Common Stock, $.01 Par Value",sell,11010.0,48.3828,532694.628
+2004-11-03,AEE,"VOSS, THOMAS R",SVP & Dir of Subsidiary,True,Stock Option,sell,16300.0,48.3828,788639.64
+2004-11-03,AEE,"VOSS, THOMAS R",SVP & Dir of Subsidiary,True,"Common Stock, $.01 Par Value",buy,10700.0,36.625,391887.5
+2004-11-03,AEE,"VOSS, THOMAS R",SVP & Dir of Subsidiary,True,Stock Option,sell,10700.0,48.3828,517695.96
+2004-11-03,AEE,"VOSS, THOMAS R",SVP & Dir of Subsidiary,True,"Common Stock, $.01 Par Value",buy,16300.0,31.0,505300.0
+2004-11-04,AEE,"AFFOLTER, RONALD D",Former VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,1070.0,49.1585,52599.594999999994
+2004-11-04,AEE,"AFFOLTER, RONALD D",Former VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,830.0,49.1585,40801.555
+2004-11-04,AEE,"AFFOLTER, RONALD D",Former VP of Subsidiary,True,Stock Option,sell,3800.0,49.1585,186802.3
+2004-11-04,AEE,"AFFOLTER, RONALD D",Former VP of Subsidiary,True,"Common Stock, $.01 Par Value",buy,4000.0,31.0,124000.0
+2004-11-04,AEE,"AFFOLTER, RONALD D",Former VP of Subsidiary,True,"Common Stock, $.01 Par Value",buy,1070.0,38.5,41195.0
+2004-11-04,AEE,"AFFOLTER, RONALD D",Former VP of Subsidiary,True,Stock Option,sell,3350.0,49.1585,164680.97499999998
+2004-11-04,AEE,"AFFOLTER, RONALD D",Former VP of Subsidiary,True,"Common Stock, $.01 Par Value",buy,830.0,43.0,35690.0
+2004-11-04,AEE,"AFFOLTER, RONALD D",Former VP of Subsidiary,True,"Common Stock, $.01 Par Value",buy,700.0,35.875,25112.5
+2004-11-04,AEE,"AFFOLTER, RONALD D",Former VP of Subsidiary,True,"Common Stock, $.01 Par Value",buy,3350.0,39.25,131487.5
+2004-11-04,AEE,"AFFOLTER, RONALD D",Former VP of Subsidiary,True,"Common Stock, $.01 Par Value",buy,3800.0,36.625,139175.0
+2004-11-04,AEE,"AFFOLTER, RONALD D",Former VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,4000.0,49.1585,196634.0
+2004-11-04,AEE,"AFFOLTER, RONALD D",Former VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,700.0,49.1585,34410.95
+2004-11-05,AEE,"DAVIS, JIMMY L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,98.0,48.63,4765.740000000001
+2004-11-05,AEE,"MILLER, PAUL L JR",Director,True,"Common Stock, $.01 Par Value",sell,100.0,48.6456,4864.56
+2004-11-09,AEE,"RAINWATER, GARY L","Director, Chairman & Chief Exec. Officer",True,"Common Stock, $.01 Par Value",buy,27900.0,36.625,1021837.5
+2004-11-09,AEE,"RAINWATER, GARY L","Director, Chairman & Chief Exec. Officer",True,"Common Stock, $.01 Par Value",buy,24450.0,31.0,757950.0
+2004-11-09,AEE,"RAINWATER, GARY L","Director, Chairman & Chief Exec. Officer",True,"Common Stock, $.01 Par Value",sell,11385.0,48.9234,556992.909
+2004-11-09,AEE,"RAINWATER, GARY L","Director, Chairman & Chief Exec. Officer",True,"Common Stock, $.01 Par Value",buy,25800.0,39.25,1012650.0
+2004-11-09,AEE,"RAINWATER, GARY L","Director, Chairman & Chief Exec. Officer",True,Stock Option,sell,24450.0,48.9234,1196177.1300000001
+2004-11-09,AEE,"RAINWATER, GARY L","Director, Chairman & Chief Exec. Officer",True,Stock Option,sell,25800.0,48.9234,1262223.72
+2004-11-09,AEE,"RAINWATER, GARY L","Director, Chairman & Chief Exec. Officer",True,"Common Stock, $.01 Par Value",sell,27900.0,48.9234,1364962.86
+2004-11-12,AEE,"WILLIS, SAMUEL E",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,9700.0,39.25,380725.0
+2004-11-12,AEE,"RANDOLPH, GARRY L",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,3300.0,49.1006,162031.98
+2004-11-12,AEE,"WILLIS, SAMUEL E",Vice President of Subsidiary,True,Stock Option,sell,3400.0,49.09,166906.0
+2004-11-12,AEE,"WILLIS, SAMUEL E",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,3400.0,38.5,130900.0
+2004-11-12,AEE,"WILLIS, SAMUEL E",Vice President of Subsidiary,True,Stock Option,sell,9700.0,49.09,476173.00000000006
+2004-11-12,AEE,"WILLIS, SAMUEL E",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,7915.0,49.09,388547.35000000003
+2004-11-16,AEE,"DAVIS, JIMMY L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,4850.0,39.25,190362.5
+2004-11-16,AEE,"DAVIS, JIMMY L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,4850.0,49.02,237747.00000000003
+2004-12-13,AEE,"RANDOLPH, GARRY L",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,815.0,49.09,40008.350000000006
+2004-12-14,AEE,"DAVIS, JIMMY L",Vice President of Subsidiary,True,Stock Option,sell,800.0,48.82,39056.0
+2004-12-14,AEE,"DAVIS, JIMMY L",Vice President of Subsidiary,True,Stock Option,sell,725.0,48.84,35409.0
+2004-12-14,AEE,"DAVIS, JIMMY L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,800.0,39.25,31400.0
+2004-12-14,AEE,"DAVIS, JIMMY L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,900.0,48.83,43947.0
+2004-12-14,AEE,"DAVIS, JIMMY L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,900.0,39.25,35325.0
+2004-12-14,AEE,"DAVIS, JIMMY L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,725.0,39.25,28456.25
+2004-12-17,AEE,"STOKES, PATRICK T",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,49.462,49462.0
+2005-01-06,AEE,"STOKES, PATRICK T",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,49.6973,49697.299999999996
+2005-01-06,AEE,"MUELLER, CHARLES W",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,49.6973,49697.299999999996
+2005-01-06,AEE,"SALIGMAN, HARVEY",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,49.6973,49697.299999999996
+2005-01-06,AEE,"HAYS, THOMAS A",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,49.6973,49697.299999999996
+2005-01-06,AEE,"ELLIOTT, SUSAN S",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,49.6973,49697.299999999996
+2005-01-06,AEE,"GREENWALT, CLIFFORD L",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,49.6973,49697.299999999996
+2005-01-06,AEE,"OBERHELMAN, DOUGLAS R",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,49.6973,49697.299999999996
+2005-01-06,AEE,"MACCARTHY, JOHN PETERS",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,49.6973,49697.299999999996
+2005-01-06,AEE,"LUMPKIN, RICHARD ANTHONY",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,49.6973,49697.299999999996
+2005-01-06,AEE,"LOHMAN, GORDON R",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,49.6973,49697.299999999996
+2005-01-06,AEE,"LIDDY, RICHARD A",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,49.6973,49697.299999999996
+2005-01-06,AEE,"MILLER, PAUL L JR",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,49.6973,49697.299999999996
+2005-02-04,AEE,"MILLER, PAUL L JR",Director,True,"Common Stock, $.01 Par Value",sell,100.0,50.4944,5049.44
+2005-02-11,AEE,"NELSON, CRAIG D",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,14100.0,51.2657,722846.37
+2005-02-11,AEE,"RANDOLPH, GARRY L",Former SVP of Subsidiary,True,"Common Stock, $.01 Par Value",buy,325.0,31.0,10075.0
+2005-02-11,AEE,"NELSON, CRAIG D",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,8025.0,36.625,293915.625
+2005-02-11,AEE,"NELSON, CRAIG D",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,9700.0,51.2657,497277.29000000004
+2005-02-11,AEE,"NELSON, CRAIG D",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,9700.0,39.25,380725.0
+2005-02-11,AEE,"RANDOLPH, GARRY L",Former SVP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,3200.0,51.25,164000.0
+2005-02-11,AEE,"COLE, DANIEL F",Sr. VP and Director of Subs,True,Stock Option,sell,8150.0,51.2691,417843.16500000004
+2005-02-11,AEE,"COLE, DANIEL F",Sr. VP and Director of Subs,True,"Common Stock, $.01 Par Value",buy,10700.0,36.625,391887.5
+2005-02-11,AEE,"COLE, DANIEL F",Sr. VP and Director of Subs,True,Stock Option,sell,10700.0,51.2691,548579.37
+2005-02-11,AEE,"RANDOLPH, GARRY L",Former SVP of Subsidiary,True,"Common Stock, $.01 Par Value",buy,3200.0,31.0,99200.0
+2005-02-11,AEE,"BREMER, CHARLES A",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,2675.0,36.625,97971.875
+2005-02-11,AEE,"SULLIVAN, STEVEN R","Sr. VP, Secretary & GC",True,"Common Stock, $.01 Par Value",buy,2900.0,31.0,89900.0
+2005-02-11,AEE,"COLE, DANIEL F",Sr. VP and Director of Subs,True,"Common Stock, $.01 Par Value",buy,3350.0,39.25,131487.5
+2005-02-11,AEE,"SULLIVAN, STEVEN R","Sr. VP, Secretary & GC",True,"Common Stock, $.01 Par Value",buy,625.0,31.0,19375.0
+2005-02-11,AEE,"NELSON, CRAIG D",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,8025.0,51.2657,411407.2425
+2005-02-11,AEE,"SULLIVAN, STEVEN R","Sr. VP, Secretary & GC",True,"Common Stock, $.01 Par Value",sell,625.0,51.05,31906.25
+2005-02-11,AEE,"SULLIVAN, STEVEN R","Sr. VP, Secretary & GC",True,Stock Option,sell,2900.0,51.0,147900.0
+2005-02-11,AEE,"RANDOLPH, GARRY L",Former SVP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,325.0,51.27,16662.75
+2005-02-11,AEE,"COLE, DANIEL F",Sr. VP and Director of Subs,True,"Common Stock, $.01 Par Value",buy,8150.0,31.0,252650.0
+2005-02-11,AEE,"COLE, DANIEL F",Sr. VP and Director of Subs,True,"Common Stock, $.01 Par Value",sell,5610.0,51.2691,287619.651
+2005-02-11,AEE,"COLE, DANIEL F",Sr. VP and Director of Subs,True,Stock Option,sell,3350.0,51.2691,171751.48500000002
+2005-02-11,AEE,"BIRDSONG, JERRE E",Vice President and Treasurer,True,"Common Stock, $.01 Par Value",buy,3525.0,31.0,109275.0
+2005-02-11,AEE,"BREMER, CHARLES A",Vice President of Subsidiary,True,Stock Option,sell,2675.0,51.268,137141.9
+2005-02-11,AEE,"BREMER, CHARLES A",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,7050.0,31.0,218550.0
+2005-02-11,AEE,"BIRDSONG, JERRE E",Vice President and Treasurer,True,Stock Option,sell,3525.0,51.26,180691.5
+2005-02-11,AEE,"SCHUKAR, SHAWN E",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,1484.0,51.21,75995.64
+2005-02-11,AEE,"WILLIS, SAMUEL E",Former VP of Subsidiary,True,"Common Stock, $.01 Par Value",buy,3525.0,31.0,109275.0
+2005-02-11,AEE,"WILLIS, SAMUEL E",Former VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,3525.0,51.19,180444.75
+2005-02-11,AEE,"BREMER, CHARLES A",Vice President of Subsidiary,True,Stock Option,sell,7050.0,51.268,361439.4
+2005-02-11,AEE,"NELSON, CRAIG D",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,14100.0,31.0,437100.0
+2005-02-11,AEE,"BORKOWSKI, MAUREEN A",VP of Subsidiary,True,"Common Stock, $.01 Par Value",buy,1367.0,51.21,70004.07
+2005-02-14,AEE,"SCHEPERS, DAVID J",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,2000.0,31.0,62000.0
+2005-02-14,AEE,"NASLUND, CHARLES D",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,6825.0,51.72,352989.0
+2005-02-14,AEE,"SCHEPERS, DAVID J",Vice President of Subsidiary,True,Stock Option,sell,2000.0,51.79,103580.0
+2005-02-14,AEE,"NASLUND, CHARLES D",Vice President of Subsidiary,True,Stock Option,sell,225.0,51.81,11657.25
+2005-02-14,AEE,"NASLUND, CHARLES D",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,2675.0,36.625,97971.875
+2005-02-14,AEE,"NASLUND, CHARLES D",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,2675.0,51.72,138351.0
+2005-02-14,AEE,"NASLUND, CHARLES D",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,225.0,31.0,6975.0
+2005-02-14,AEE,"WHITELEY, DAVID A",Sr. VP of Subsidiary,True,"Common Stock, $.01 Par Value",buy,830.0,43.0,35690.0
+2005-02-14,AEE,"WHITELEY, DAVID A",Sr. VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,7050.0,51.77,364978.5
+2005-02-14,AEE,"WHITELEY, DAVID A",Sr. VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,830.0,51.77,42969.100000000006
+2005-02-14,AEE,"WHITELEY, DAVID A",Sr. VP of Subsidiary,True,"Common Stock, $.01 Par Value",buy,7050.0,31.0,218550.0
+2005-02-14,AEE,"NASLUND, CHARLES D",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,6825.0,31.0,211575.0
+2005-02-15,AEE,"MUELLER, MICHAEL G",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,800.0,31.0,24800.0
+2005-02-15,AEE,"BAXTER, WARNER L",EVP and CFO,True,"Common Stock, $.01 Par Value",buy,2700.0,31.0,83700.0
+2005-02-15,AEE,"GLAESER, SCOTT A",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,1000.0,31.0,31000.0
+2005-02-15,AEE,"MUELLER, MICHAEL G",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,200.0,31.0,6200.0
+2005-02-15,AEE,"MUELLER, MICHAEL G",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,800.0,51.81,41448.0
+2005-02-15,AEE,"GLAESER, SCOTT A",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,1000.0,51.84,51840.0
+2005-02-15,AEE,"VOSS, THOMAS R",EVP & Dir of Subsidiary,True,"Common Stock, $.01 Par Value",buy,16300.0,31.0,505300.0
+2005-02-15,AEE,"BAXTER, WARNER L",EVP and CFO,True,"Common Stock, $.01 Par Value",sell,2700.0,51.57,139239.0
+2005-02-15,AEE,"BAXTER, WARNER L",EVP and CFO,True,"Common Stock, $.01 Par Value",buy,825.0,31.0,25575.0
+2005-02-15,AEE,"BAXTER, WARNER L",EVP and CFO,True,Stock Option,sell,825.0,51.61,42578.25
+2005-02-15,AEE,"VOSS, THOMAS R",EVP & Dir of Subsidiary,True,"Common Stock, $.01 Par Value",sell,16300.0,51.5123,839650.4900000001
+2005-02-15,AEE,"MUELLER, MICHAEL G",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,200.0,51.82,10364.0
+2005-02-16,AEE,"SIMPSON, JERRY L",Vice President of Subsidiary,True,Stock Option,sell,2800.0,51.2,143360.0
+2005-02-16,AEE,"SIMPSON, JERRY L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,725.0,31.0,22475.0
+2005-02-16,AEE,"SIMPSON, JERRY L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,2800.0,31.0,86800.0
+2005-02-16,AEE,"NELSON, GREGORY L",Vice President of Subsidiary,True,Stock Option,sell,3525.0,51.28,180762.0
+2005-02-16,AEE,"SIMPSON, JERRY L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,725.0,51.22,37134.5
+2005-02-16,AEE,"NELSON, GREGORY L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,3525.0,31.0,109275.0
+2005-02-17,AEE,"DAVIS, JIMMY L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,5700.0,36.625,208762.5
+2005-02-17,AEE,"DAVIS, JIMMY L",Vice President of Subsidiary,True,Stock Option,sell,5700.0,51.26,292182.0
+2005-02-17,AEE,"DAVIS, JIMMY L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,1300.0,36.625,47612.5
+2005-02-17,AEE,"DAVIS, JIMMY L",Vice President of Subsidiary,True,Stock Option,sell,1300.0,51.29,66677.0
+2005-02-18,AEE,"RAINWATER, GARY L","Director, Chairman & Chief Exec. Officer",True,Stock Option,sell,150.0,50.96,7644.0
+2005-02-18,AEE,"WEISENBORN, DENNIS W",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,1000.0,31.0,31000.0
+2005-02-18,AEE,"RANDOLPH, GARRY L",Former SVP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,276.0,51.01,14078.76
+2005-02-18,AEE,"RAINWATER, GARY L","Director, Chairman & Chief Exec. Officer",True,"Common Stock, $.01 Par Value",buy,150.0,31.0,4650.0
+2005-02-18,AEE,"RAINWATER, GARY L","Director, Chairman & Chief Exec. Officer",True,"Common Stock, $.01 Par Value",buy,8000.0,31.0,248000.0
+2005-02-18,AEE,"WEISENBORN, DENNIS W",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,1000.0,50.97,50970.0
+2005-02-18,AEE,"RAINWATER, GARY L","Director, Chairman & Chief Exec. Officer",True,"Common Stock, $.01 Par Value",sell,8000.0,50.85,406800.0
+2005-02-24,AEE,"JACKSON, GAYLE P W",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,51.025,51025.0
+2005-03-04,AEE,"ZDELLAR, RONALD C",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,832.0,51.77,43072.64
+2005-03-04,AEE,"MUELLER, MICHAEL G",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,1308.0,51.77,67715.16
+2005-03-04,AEE,"WHITELEY, DAVID A",Sr. VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,1939.0,51.77,100382.03
+2005-03-04,AEE,"SIMPSON, JERRY L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,733.0,51.77,37947.41
+2005-03-04,AEE,"SCHEPERS, DAVID J",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,199.0,51.77,10302.230000000001
+2005-03-04,AEE,"RANDOLPH, GARRY L",Former SVP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,1618.0,51.77,83763.86
+2005-03-04,AEE,"NELSON, CRAIG D",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,641.0,51.77,33184.57
+2005-03-04,AEE,"NELSON, GREGORY L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,926.0,51.77,47939.020000000004
+2005-03-04,AEE,"COLE, DANIEL F",Sr. VP and Director of Subs,True,"Common Stock, $.01 Par Value",sell,1456.0,51.77,75377.12000000001
+2005-03-04,AEE,"KELLEY, R ALAN",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,720.0,51.77,37274.4
+2005-03-04,AEE,"MILLER, PAUL L JR",Director,True,"Common Stock, $.01 Par Value",sell,100.0,51.7741,5177.41
+2005-03-04,AEE,"BIRDSONG, JERRE E",Vice President and Treasurer,True,"Common Stock, $.01 Par Value",sell,576.0,51.77,29819.52
+2005-03-04,AEE,"MUELLER, CHARLES W",Director,True,"Common Stock, $.01 Par Value",sell,3792.0,51.77,196311.84000000003
+2005-03-04,AEE,"MENNE, MICHAEL L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,398.0,51.77,20604.460000000003
+2005-03-04,AEE,"MOEHN, MICHAEL L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,758.0,51.77,39241.66
+2005-03-04,AEE,"WILLIS, SAMUEL E",Former VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,485.0,51.77,25108.45
+2005-03-10,AEE,"MOEHN, MICHAEL L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,1085.0,49.75,53978.75
+2005-04-01,AEE,"MILLER, PAUL L JR",Director,True,"Common Stock, $.01 Par Value",sell,100.0,49.2136,4921.36
+2005-05-03,AEE,"ZDELLAR, RONALD C",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,3000.0,52.01,156030.0
+2005-05-03,AEE,"ZDELLAR, RONALD C",Vice President of Subsidiary,True,Stock Option,sell,525.0,52.07,27336.75
+2005-05-03,AEE,"ZDELLAR, RONALD C",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,525.0,31.0,16275.0
+2005-05-03,AEE,"ZDELLAR, RONALD C",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,3000.0,31.0,93000.0
+2005-05-06,AEE,"BAXTER, WARNER L",EVP and CFO,True,Stock Option,sell,1700.0,42.962,73035.40000000001
+2005-05-06,AEE,"MILLER, PAUL L JR",Director,True,"Common Stock, $.01 Par Value",sell,100.0,52.868,5286.8
+2005-05-12,AEE,"KELLEY, R ALAN",SVP of subsidiary,True,"Common Stock, $.01 Par Value",sell,8725.0,52.94,461901.5
+2005-05-12,AEE,"KELLEY, R ALAN",SVP of Subsidiary,True,Stock Option,sell,5350.0,52.94,283229.0
+2005-05-12,AEE,"KELLEY, R ALAN",SVP of Subsidiary,True,Stock Option,sell,10575.0,52.94,559840.5
+2005-05-12,AEE,"KELLEY, R ALAN",SVP of subsidiary,True,"Common Stock, $.01 Par Value",buy,4850.0,39.25,190362.5
+2005-05-12,AEE,"KELLEY, R ALAN",SVP of subsidiary,True,Common Stock $.01 Par Value,sell,4850.0,52.94,256759.0
+2005-05-12,AEE,"KELLEY, R ALAN",SVP of subsidiary,True,"Common Stock, $.01 Par Value",buy,5350.0,36.625,195943.75
+2005-05-12,AEE,"KELLEY, R ALAN",SVP of subsidiary,True,"Common Stock, $.01 Par Value",buy,10575.0,31.0,327825.0
+2005-05-13,AEE,"RANDOLPH, GARRY L",Former SVP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,2200.0,52.5016,115503.52
+2005-05-16,AEE,"JOHNSON, JAMES C",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,52.6908,52690.8
+2005-05-17,AEE,"DAVIS, JIMMY L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,14100.0,31.0,437100.0
+2005-05-17,AEE,"DAVIS, JIMMY L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,14100.0,53.4445,753567.45
+2005-05-17,AEE,"DAVIS, JIMMY L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,3700.0,36.625,135512.5
+2005-05-17,AEE,"DAVIS, JIMMY L",Vice President of Subsidiary,True,Stock Option,sell,3700.0,53.4445,197744.65
+2005-05-18,AEE,"COLE, DANIEL F",Sr. VP and Director of Subs,True,"Common Stock, $.01 Par Value",buy,8150.0,31.0,252650.0
+2005-05-18,AEE,"COLE, DANIEL F",Sr. VP and Director of Subs,True,"Common Stock, $.01 Par Value",sell,6890.0,53.5321,368836.169
+2005-05-18,AEE,"COLE, DANIEL F",Sr. VP and Director of Subs,True,Stock Option,sell,8150.0,53.5321,436286.615
+2005-05-31,AEE,"MARK, RICHARD J",Senior VP of Subsidiary,True,"Common Stock, $.01 Par Value",buy,183.0,54.635,9998.205
+2005-06-03,AEE,"MILLER, PAUL L JR",Director,True,"Common Stock, $.01 Par Value",sell,100.0,54.43,5443.0
+2005-07-01,AEE,"MILLER, PAUL L JR",Director,True,"Common Stock, $.01 Par Value",sell,100.0,55.3961,5539.61
+2005-09-07,AEE,"POWERS, ROBERT L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,300.0,55.367,16610.1
+2005-11-23,AEE,"DAVIS, JIMMY L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,1189.0,52.42,62327.380000000005
+2005-11-30,AEE,"LIDDY, RICHARD A",Director,True,"Common Stock, $.01 Par Value",sell,1100.0,52.23,57453.0
+2006-01-06,AEE,"SALIGMAN, HARVEY",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,51.61,51610.0
+2006-01-06,AEE,"STOKES, PATRICK T",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,51.61,51610.0
+2006-01-06,AEE,"LUMPKIN, RICHARD ANTHONY",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,51.61,51610.0
+2006-01-06,AEE,"ELLIOTT, SUSAN S",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,51.61,51610.0
+2006-01-06,AEE,"JOHNSON, JAMES C",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,51.61,51610.0
+2006-01-06,AEE,"OBERHELMAN, DOUGLAS R",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,51.61,51610.0
+2006-01-06,AEE,"LIDDY, RICHARD A",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,51.61,51610.0
+2006-01-06,AEE,"JACKSON, GAYLE P W",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,51.61,51610.0
+2006-01-06,AEE,"LOHMAN, GORDON R",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,51.61,51610.0
+2006-01-06,AEE,"MUELLER, CHARLES W",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,51.61,51610.0
+2006-02-17,AEE,"LUMPKIN, RICHARD ANTHONY",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,49.9,49900.0
+2006-03-01,AEE,"MARTIN, DONNA K",SVP & CHRO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,1040.0,50.45,52468.0
+2006-03-01,AEE,"BAXTER, WARNER L",EVP and CFO,True,"Common Stock, $.01 Par Value",sell,5873.0,50.45,296292.85000000003
+2006-03-01,AEE,"BIRDSONG, JERRE E",Vice President and Treasurer,True,"Common Stock, $.01 Par Value",sell,939.0,50.45,47372.55
+2006-03-01,AEE,"COLE, DANIEL F",Sr. VP and Director of Subs,True,"Common Stock, $.01 Par Value",sell,2596.0,50.45,130968.20000000001
+2006-03-01,AEE,"KELLEY, R ALAN",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,1150.0,50.45,58017.5
+2006-03-01,AEE,"LYONS, MARTIN J",Vice President and Controller,True,"Common Stock, $.01 Par Value",sell,1863.0,50.45,93988.35
+2006-03-01,AEE,"MARK, RICHARD J",Senior VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,2078.0,50.45,104835.1
+2006-03-01,AEE,"MUELLER, CHARLES W",Director,True,"Common Stock, $.01 Par Value",sell,5133.0,50.45,258959.85
+2006-03-01,AEE,"MUELLER, MICHAEL G",President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,790.0,50.45,39855.5
+2006-03-01,AEE,"RAINWATER, GARY L","Director, Chairman & Chief Exec. Officer",True,"Common Stock, $.01 Par Value",sell,12403.0,50.45,625731.3500000001
+2006-03-01,AEE,"WHITELEY, DAVID A",Sr. VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,1268.0,50.45,63970.600000000006
+2006-03-01,AEE,"MUELLER, CHARLES W",Director,True,"Common Stock, $.01 Par Value",sell,5003.0,50.45,252401.35
+2006-03-01,AEE,"SULLIVAN, STEVEN R","Sr. VP, Secretary & GC",True,"Common Stock, $.01 Par Value",sell,4165.0,50.45,210124.25
+2006-03-01,AEE,"NASLUND, CHARLES D",Senior VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,1931.0,50.45,97418.95000000001
+2006-10-31,AEE,"WOODARD, JACKIE D",Director,True,Common stock $.01 par value,buy,1000.0,54.0965,54096.5
+2006-11-06,AEE,"BRAUER, STEPHEN F",Director,True,Common stock $.01 par value,buy,1000.0,54.9155,54915.5
+2007-01-12,AEE,"ELLIOTT, SUSAN S",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,54.1863,54186.3
+2007-01-12,AEE,"WOODARD, JACKIE D",Director,True,Common stock $.01 par value,buy,1000.0,54.1863,54186.3
+2007-01-12,AEE,"STOKES, PATRICK T",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,54.1863,54186.3
+2007-01-12,AEE,"SALIGMAN, HARVEY",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,54.1863,54186.3
+2007-01-12,AEE,"MUELLER, CHARLES W",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,54.1863,54186.3
+2007-01-12,AEE,"OBERHELMAN, DOUGLAS R",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,54.1863,54186.3
+2007-01-12,AEE,"JOHNSON, JAMES C",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,54.1863,54186.3
+2007-01-12,AEE,"LUMPKIN, RICHARD ANTHONY",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,54.1863,54186.3
+2007-01-12,AEE,"JACKSON, GAYLE P W",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,54.1863,54186.3
+2007-01-12,AEE,"LOHMAN, GORDON R",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,54.1863,54186.3
+2007-01-12,AEE,"LIDDY, RICHARD A",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,54.1863,54186.3
+2007-01-12,AEE,"BRAUER, STEPHEN F",Director,True,Common stock $.01 par value,buy,1000.0,54.1863,54186.3
+2007-03-02,AEE,"LYONS, MARTIN J",Vice President and Controller,True,"Common Stock, $.01 Par Value",sell,390.0,52.33,20408.7
+2007-03-02,AEE,"BAXTER, WARNER L",EVP and CFO,True,"Common Stock, $.01 Par Value",sell,1094.0,52.33,57249.02
+2007-03-02,AEE,"BIRDSONG, JERRE E",Vice President and Treasurer,True,"Common Stock, $.01 Par Value",sell,464.0,52.33,24281.12
+2007-03-02,AEE,"CISEL, SCOTT A",Pres. & COO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,158.0,52.33,8268.14
+2007-03-02,AEE,"COLE, DANIEL F",Sr. VP and Director of Subs,True,"Common Stock, $.01 Par Value",sell,1100.0,52.33,57563.0
+2007-03-02,AEE,"MUELLER, CHARLES W",Director,True,"Common Stock, $.01 Par Value",sell,2239.0,52.33,117166.87
+2007-03-02,AEE,"NASLUND, CHARLES D",Senior VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,551.0,52.33,28833.829999999998
+2007-03-02,AEE,"MUELLER, MICHAEL G",President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,400.0,52.33,20932.0
+2007-03-02,AEE,"MARK, RICHARD J",Senior VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,460.0,52.33,24071.8
+2007-03-02,AEE,"MARTIN, DONNA K",SVP & CHRO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,285.0,52.33,14914.05
+2007-03-02,AEE,"RAINWATER, GARY L","Director, Chairman & Chief Exec. Officer",True,"Common Stock, $.01 Par Value",sell,2189.0,52.33,114550.37
+2007-03-02,AEE,"VOSS, THOMAS R",EVP & COO,True,"Common Stock, $.01 Par Value",sell,847.0,52.33,44323.51
+2007-03-02,AEE,"WHITELEY, DAVID A",Resigned 1/31/2007,False,Common Stock $.01 Par Value,sell,551.0,52.33,28833.829999999998
+2007-03-02,AEE,"SERRI, ANDREW M",President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,251.0,52.33,13134.83
+2007-03-02,AEE,"KELLEY, R ALAN",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,542.0,52.33,28362.86
+2007-03-02,AEE,"SULLIVAN, STEVEN R","Sr. VP, Secretary & GC",True,"Common Stock, $.01 Par Value",sell,770.0,52.33,40294.1
+2007-03-08,AEE,"VOSS, THOMAS R",EVP & COO,True,"Common Stock, $.01 Par Value",sell,1354.0,50.5701,68471.9154
+2007-05-17,AEE,"BIRDSONG, JERRE E",Vice President and Treasurer,True,"Common Stock, $.01 Par Value",sell,2400.0,54.49,130776.0
+2007-11-15,AEE,"MARK, RICHARD J",Senior VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,3574.0,52.27,186812.98
+2007-12-27,AEE,"GALVIN, WALTER J",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,54.1455,54145.5
+2008-01-11,AEE,"STOKES, PATRICK T",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,53.29,53290.0
+2008-01-11,AEE,"SALIGMAN, HARVEY",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,53.29,53290.0
+2008-01-11,AEE,"JOHNSON, JAMES C",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,53.29,53290.0
+2008-01-11,AEE,"JACKSON, GAYLE P W",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,53.29,53290.0
+2008-01-11,AEE,"GALVIN, WALTER J",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,53.29,53290.0
+2008-01-11,AEE,"ELLIOTT, SUSAN S",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,53.29,53290.0
+2008-01-11,AEE,"BRAUER, STEPHEN F",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,53.29,53290.0
+2008-01-11,AEE,"MUELLER, CHARLES W",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,53.29,53290.0
+2008-01-11,AEE,"LOHMAN, GORDON R",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,53.29,53290.0
+2008-01-11,AEE,"LIDDY, RICHARD A",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,53.29,53290.0
+2008-01-11,AEE,"OBERHELMAN, DOUGLAS R",Director,True,"Common Stock, $.01 Par Value",buy,1000.0,53.29,53290.0
+2008-01-11,AEE,"WOODARD, JACKIE D",Director,True,Common stock $.01 par value,buy,1000.0,53.29,53290.0
+2008-02-22,AEE,"SERRI, ANDREW M",President & CEO of Subsidiary,True,"Common Stock, $.01 Par Value",buy,181.0,43.65,7900.65
+2008-02-25,AEE,"MUELLER, MICHAEL G",President of Subsidiary,True,"Common Stock, $.01 Par Value",buy,1192.0,43.87,52293.03999999999
+2008-03-03,AEE,"MARTIN, DONNA K",SVP & CHRO,True,"Common Stock, $.01 Par Value",sell,412.0,42.7,17592.4
+2008-03-03,AEE,"SULLIVAN, STEVEN R","Sr. VP, Secretary & GC",True,"Common Stock, $.01 Par Value",sell,1208.0,42.7,51581.600000000006
+2008-03-03,AEE,"COLE, DANIEL F",Sr. VP of Subs,True,"Common Stock, $.01 Par Value",sell,1704.0,42.7,72760.8
+2008-03-03,AEE,"LYONS, MARTIN J",Sr. VP & Chief Acct. Officer,True,"Common Stock, $.01 Par Value",sell,588.0,42.7,25107.600000000002
+2008-03-03,AEE,"VOSS, THOMAS R",Exec. VP & COO,True,"Common Stock, $.01 Par Value",sell,1346.0,42.7,57474.200000000004
+2008-03-03,AEE,"BAXTER, WARNER L",EVP and CFO,True,"Common Stock, $.01 Par Value",sell,1811.0,42.7,77329.70000000001
+2008-03-03,AEE,"MUELLER, MICHAEL G",President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,555.0,42.7,23698.5
+2008-03-03,AEE,"NASLUND, CHARLES D",Senior VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,830.0,42.7,35441.0
+2008-03-03,AEE,"MARK, RICHARD J",Senior VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,691.0,42.7,29505.7
+2008-03-03,AEE,"RAINWATER, GARY L","Director, Chairman & Chief Exec. Officer",True,"Common Stock, $.01 Par Value",sell,3624.0,42.7,154744.80000000002
+2008-03-03,AEE,"KELLEY, R ALAN","Chmn, Pres & CEO of Subs",True,"Common Stock, $.01 Par Value",sell,811.0,42.7,34629.700000000004
+2008-03-03,AEE,"MUELLER, CHARLES W",Director,True,"Common Stock, $.01 Par Value",sell,3462.0,42.7,147827.40000000002
+2008-03-05,AEE,"CISEL, SCOTT A","Chmn, Pres. & CEO of Subs",True,"Common Stock, $.01 Par Value",buy,1169.0,42.76,49986.439999999995
+2008-03-17,AEE,"MARK, RICHARD J",Senior VP of Subsidiary,True,"Common Stock, $.01 Par Value",buy,350.0,42.36,14826.0
+2008-08-11,AEE,"VOSS, THOMAS R",Exec. VP & COO,True,"Common Stock, $.01 Par Value",buy,2418.0,41.35,99984.3
+2008-08-14,AEE,"RAINWATER, GARY L","Director, Chairman & Chief Exec. Officer",True,"Common Stock, $.01 Par Value",buy,10165.0,41.28,419611.2
+2008-08-20,AEE,"SERRI, ANDREW M",President & CEO of Subsidiary,True,"Common Stock, $.01 Par Value",buy,2400.0,41.66,99983.99999999999
+2008-08-29,AEE,"MARK, RICHARD J",Senior VP of Subsidiary,True,"Common Stock, $.01 Par Value",buy,377.0,41.86,15781.22
+2008-11-14,AEE,"WOODARD, JACKIE D",Director,True,Common Stock $.01 Par Value,buy,164.0,33.645,5517.780000000001
+2009-03-02,AEE,"LYONS, MARTIN J",Sr. VP & Chief Acct. Officer,True,"Common Stock, $.01 Par Value",sell,495.0,23.78,11771.1
+2009-03-02,AEE,"BIRDSONG, JERRE E",Vice President and Treasurer,True,"Common Stock, $.01 Par Value",sell,470.0,23.78,11176.6
+2009-03-02,AEE,"MUELLER, CHARLES W",Director,True,"Common Stock, $.01 Par Value",sell,1960.0,23.78,46608.8
+2009-03-02,AEE,"MOEHN, MICHAEL L",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,361.0,23.78,8584.58
+2009-03-02,AEE,"MARTIN, DONNA K",SVP & CHRO,True,"Common Stock, $.01 Par Value",sell,410.0,23.78,9749.800000000001
+2009-03-02,AEE,"MARK, RICHARD J",Senior VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,577.0,23.78,13721.060000000001
+2009-03-02,AEE,"SULLIVAN, STEVEN R","Sr. VP, Secretary & GC",True,"Common Stock, $.01 Par Value",sell,921.0,23.78,21901.38
+2009-03-02,AEE,"VOSS, THOMAS R",Exec. VP & COO,True,"Common Stock, $.01 Par Value",sell,990.0,23.78,23542.2
+2009-03-02,AEE,"RAINWATER, GARY L","Director, Chairman & Chief Exec. Officer",True,"Common Stock, $.01 Par Value",sell,2811.0,23.78,66845.58
+2009-03-02,AEE,"NASLUND, CHARLES D",Senior VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,611.0,23.78,14529.58
+2009-03-02,AEE,"MUELLER, MICHAEL G",President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,388.0,23.78,9226.640000000001
+2009-03-02,AEE,"COLE, DANIEL F",Sr. VP of Subs,True,"Common Stock, $.01 Par Value",sell,1255.0,23.78,29843.9
+2009-03-02,AEE,"BAXTER, WARNER L",EVP and CFO,True,"Common Stock, $.01 Par Value",sell,1474.0,23.78,35051.72
+2009-03-12,AEE,"SERRI, ANDREW M",President & CEO of Subsidiary,True,"Common Stock, $.01 Par Value",buy,2697.0,19.78,53346.66
+2009-05-14,AEE,"MARTIN, DONNA K",Resigned 4/01/2009,False,"Common Stock, $.01 Par Value",sell,727.0,23.91,17382.57
+2009-11-25,AEE,"MARK, RICHARD J",Senior VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,1907.0,25.91,49410.37
+2010-03-01,AEE,"RAINWATER, GARY L","Director, Exec. Chmn",True,"Common Stock, $.01 Par Value",sell,2015.0,24.71,49790.65
+2010-03-01,AEE,"NASLUND, CHARLES D","Chmn, Pres & CEO of Subsidiary",True,"Common Stock, $.01 Par Value",sell,432.0,24.71,10674.720000000001
+2010-03-01,AEE,"LYONS, MARTIN J",Sr. VP & CFO,True,"Common Stock, $.01 Par Value",sell,326.0,24.71,8055.46
+2010-03-01,AEE,"COLE, DANIEL F","Chmn, Pres. & CEO of Sub.",True,"Common Stock, $.01 Par Value",sell,824.0,24.71,20361.04
+2010-03-01,AEE,"BIRDSONG, JERRE E",Vice President & Treasurer,True,"Common Stock, $.01 Par Value",sell,302.0,24.71,7462.42
+2010-03-01,AEE,"SULLIVAN, STEVEN R","Sr. VP, Secretary & GC",True,"Common Stock, $.01 Par Value",sell,689.0,24.71,17025.190000000002
+2010-03-01,AEE,"VOSS, THOMAS R",President & CEO,True,"Common Stock, $.01 Par Value",sell,698.0,24.71,17247.58
+2010-03-01,AEE,"MOEHN, MICHAEL L",Sr. Vice Pres. of Subsidiary,False,"Common Stock, $.01 Par Value",sell,254.0,24.71,6276.34
+2010-03-01,AEE,"MARK, RICHARD J",Senior VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,410.0,24.71,10131.1
+2010-03-01,AEE,"MUELLER, CHARLES W",Director,True,"Common Stock, $.01 Par Value",sell,437.0,24.71,10798.27
+2010-03-01,AEE,"BAXTER, WARNER L","Chmn, Pres. & CEO of Sub",True,"Common Stock, $.01 Par Value",sell,1088.0,24.71,26884.48
+2010-03-01,AEE,"MUELLER, MICHAEL G",President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,250.0,24.71,6177.5
+2010-11-05,AEE,"WOODARD, JACKIE D",Director,True,Common Stock $.01 Par Value,buy,134.0,29.748,3986.232
+2010-12-15,AEE,"GALVIN, WALTER J",Director,True,"Common Stock, $.01 Par Value",buy,4198.0,28.58,119978.84
+2011-01-18,AEE,"COLE, DANIEL F","Chmn, Pres. & CEO of Sub.",True,"Common Stock, $.01 Par Value",sell,910.0,28.19,25652.9
+2011-01-18,AEE,"SULLIVAN, STEVEN R","Sr. VP, Secretary & GC",True,"Common Stock, $.01 Par Value",sell,2391.0,28.19,67402.29000000001
+2011-01-18,AEE,"NASLUND, CHARLES D","Chmn, Pres & CEO of Subsidiary",True,"Common Stock, $.01 Par Value",sell,1251.0,28.19,35265.69
+2011-01-18,AEE,"BAXTER, WARNER L","Chmn, Pres. & CEO of Sub",True,"Common Stock, $.01 Par Value",sell,2782.0,28.19,78424.58
+2011-01-18,AEE,"BORKOWSKI, MAUREEN A",President & CEO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,325.0,28.19,9161.75
+2011-01-18,AEE,"VOSS, THOMAS R",President & CEO,True,"Common Stock, $.01 Par Value",sell,2165.0,28.19,61031.350000000006
+2011-01-18,AEE,"HEFLIN, ADAM C",Sr. Vice Pres. of Subsidiary,False,"Common Stock, $.01 Par Value",sell,585.0,28.19,16491.15
+2011-01-18,AEE,"MOEHN, MICHAEL L",Sr. Vice Pres. of Subsidiary,False,"Common Stock, $.01 Par Value",sell,696.0,28.19,19620.24
+2011-01-18,AEE,"BIRDSONG, JERRE E",Vice President & Treasurer,True,"Common Stock, $.01 Par Value",sell,676.0,28.19,19056.440000000002
+2011-01-18,AEE,"MARK, RICHARD J",Senior VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,962.0,28.19,27118.780000000002
+2011-01-18,AEE,"LYONS, MARTIN J",Sr. VP & CFO,True,"Common Stock, $.01 Par Value",sell,861.0,28.19,24271.59
+2011-01-18,AEE,"MUELLER, MICHAEL G",President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,388.0,28.19,10937.720000000001
+2011-03-01,AEE,"BIRDSONG, JERRE E",Vice President & Treasurer,True,"Common Stock, $.01 Par Value",sell,361.0,27.96,10093.56
+2011-03-01,AEE,"COLE, DANIEL F","Chmn, Pres. & CEO of Sub.",True,"Common Stock, $.01 Par Value",sell,979.0,27.96,27372.84
+2011-03-01,AEE,"CISEL, SCOTT A","Chmn, Pres. & CEO of Subs",True,"Common Stock, $.01 Par Value",sell,374.0,27.96,10457.04
+2011-03-01,AEE,"BORKOWSKI, MAUREEN A",President & CEO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,131.0,27.96,3662.76
+2011-03-01,AEE,"MUELLER, MICHAEL G",Vice President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,301.0,27.96,8415.960000000001
+2011-03-01,AEE,"MOEHN, MICHAEL L",Sr. Vice Pres. of Subsidiary,False,"Common Stock, $.01 Par Value",sell,309.0,27.96,8639.64
+2011-03-01,AEE,"BAXTER, WARNER L","Chmn, Pres. & CEO of Sub",True,"Common Stock, $.01 Par Value",sell,1395.0,27.96,39004.200000000004
+2011-03-01,AEE,"VOSS, THOMAS R","Chairman, President & CEO",True,"Common Stock, $.01 Par Value",sell,925.0,27.96,25863.0
+2011-03-01,AEE,"LYONS, MARTIN J",Sr. VP & CFO,True,"Common Stock, $.01 Par Value",sell,399.0,27.96,11156.04
+2011-03-01,AEE,"MARK, RICHARD J",Senior VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,541.0,27.96,15126.36
+2011-03-01,AEE,"NASLUND, CHARLES D","Chmn, Pres & CEO of Subsidiary",True,"Common Stock, $.01 Par Value",sell,588.0,27.96,16440.48
+2011-03-01,AEE,"SERRI, ANDREW M",President & CEO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,335.0,27.96,9366.6
+2011-03-01,AEE,"SULLIVAN, STEVEN R","Sr. VP, Secretary & GC",True,"Common Stock, $.01 Par Value",sell,904.0,27.96,25275.84
+2011-03-02,AEE,"SERRI, ANDREW M",President & CEO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,3197.0,27.62,88301.14
+2011-05-13,AEE,"JACKSON, GAYLE P W",Director,True,"Common Stock, $.01 Par Value",sell,3400.0,29.43,100062.0
+2011-05-13,AEE,"GALVIN, WALTER J",Director,True,"Common Stock, $.01 Par Value",buy,4045.0,29.67,120015.15000000001
+2012-01-17,AEE,"CISEL, SCOTT A","Chmn, Pres. & CEO of Subs",True,"Common Stock, $.01 Par Value",sell,1528.0,28.89,44143.92
+2012-01-17,AEE,"NELSON, GREGORY L","Sr VP, GC & Secretary",True,"Common Stock, $.01 Par Value",sell,968.0,28.89,27965.52
+2012-01-17,AEE,"NASLUND, CHARLES D",Sr VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,1295.0,28.89,37412.55
+2012-01-17,AEE,"COLE, DANIEL F","Chmn, Pres. & CEO of Sub.",True,"Common Stock, $.01 Par Value",sell,1354.0,28.89,39117.06
+2012-01-17,AEE,"BIRDSONG, JERRE E",Vice President & Treasurer,True,"Common Stock, $.01 Par Value",sell,667.0,28.89,19269.63
+2012-01-17,AEE,"BAXTER, WARNER L","Chmn, Pres. & CEO of Sub",True,"Common Stock, $.01 Par Value",sell,2788.0,28.89,80545.32
+2012-01-17,AEE,"MARK, RICHARD J",Sr VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,968.0,28.89,27965.52
+2012-01-17,AEE,"BORKOWSKI, MAUREEN A",President & CEO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,321.0,28.89,9273.69
+2012-01-17,AEE,"MOEHN, MICHAEL L",Sr. VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,702.0,28.89,20280.78
+2012-01-17,AEE,"LYONS, MARTIN J",Sr. VP & CFO,True,"Common Stock, $.01 Par Value",sell,858.0,28.89,24787.62
+2012-01-17,AEE,"HEFLIN, ADAM C",Sr. Vice Pres. of Subsidiary,False,"Common Stock, $.01 Par Value",sell,577.0,28.89,16669.53
+2012-01-17,AEE,"SULLIVAN, STEVEN R",Pres. & CEO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,2376.0,28.89,68642.64
+2012-02-28,AEE,"BIRDSONG, JERRE E",Vice President & Treasurer,True,"Common Stock, $.01 Par Value",sell,1230.0,31.97,39323.1
+2012-02-28,AEE,"BAXTER, WARNER L","Chmn, Pres. & CEO of Sub",True,"Common Stock, $.01 Par Value",sell,4643.0,31.97,148436.71
+2012-02-28,AEE,"NASLUND, CHARLES D",Sr VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,3588.0,31.97,114708.36
+2012-02-28,AEE,"VOSS, THOMAS R","Chairman, President & CEO",True,"Common Stock, $.01 Par Value",sell,3538.0,31.97,113109.86
+2012-02-28,AEE,"SULLIVAN, STEVEN R",Pres. & CEO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,3834.0,31.97,122572.98
+2012-02-28,AEE,"COLE, DANIEL F","Chmn, Pres. & CEO of Sub.",True,"Common Stock, $.01 Par Value",sell,2293.0,31.97,73307.20999999999
+2012-02-28,AEE,"BORKOWSKI, MAUREEN A",President & CEO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,540.0,31.97,17263.8
+2012-02-28,AEE,"MARK, RICHARD J",Sr VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,1572.0,31.97,50256.84
+2012-02-28,AEE,"LYONS, MARTIN J",Sr. VP & CFO,True,"Common Stock, $.01 Par Value",sell,1697.0,31.97,54253.09
+2012-02-28,AEE,"MOEHN, MICHAEL L",Sr. VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,1631.0,31.97,52143.07
+2012-02-28,AEE,"NELSON, GREGORY L","Sr VP, GC & Secretary",True,"Common Stock, $.01 Par Value",sell,1594.0,31.97,50960.18
+2012-02-28,AEE,"CISEL, SCOTT A","Chmn, Pres. & CEO of Subs",True,"Common Stock, $.01 Par Value",sell,2420.0,31.97,77367.4
+2012-02-28,AEE,"HEFLIN, ADAM C",Sr. Vice Pres. of Subsidiary,False,"Common Stock, $.01 Par Value",sell,2306.0,31.97,73722.81999999999
+2012-03-01,AEE,"SULLIVAN, STEVEN R",Pres. & CEO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,277.0,32.07,8883.39
+2012-03-01,AEE,"CISEL, SCOTT A","Chmn, Pres. & CEO of Subs",True,"Common Stock, $.01 Par Value",sell,140.0,32.07,4489.8
+2012-03-01,AEE,"NASLUND, CHARLES D",Sr VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,218.0,32.07,6991.26
+2012-03-01,AEE,"MOEHN, MICHAEL L",Sr. VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,94.0,32.07,3014.58
+2012-03-01,AEE,"BORKOWSKI, MAUREEN A",President & CEO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,65.0,32.07,2084.55
+2012-03-01,AEE,"MARK, RICHARD J",Sr VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,180.0,32.07,5772.6
+2012-03-01,AEE,"BIRDSONG, JERRE E",Vice President & Treasurer,True,"Common Stock, $.01 Par Value",sell,108.0,32.07,3463.56
+2012-03-01,AEE,"COLE, DANIEL F","Chmn, Pres. & CEO of Sub.",True,"Common Stock, $.01 Par Value",sell,264.0,32.07,8466.48
+2012-03-01,AEE,"LYONS, MARTIN J",Sr. VP & CFO,True,"Common Stock, $.01 Par Value",sell,121.0,32.07,3880.4700000000003
+2012-03-01,AEE,"NELSON, GREGORY L","Sr VP, GC & Secretary",True,"Common Stock, $.01 Par Value",sell,141.0,32.07,4521.87
+2012-03-01,AEE,"BAXTER, WARNER L","Chmn, Pres. & CEO of Sub",True,"Common Stock, $.01 Par Value",sell,425.0,32.07,13629.75
+2013-01-22,AEE,"NASLUND, CHARLES D",Sr VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,1396.0,31.7,44253.2
+2013-01-22,AEE,"NELSON, GREGORY L","Sr VP, GC & Secretary",True,"Common Stock, $.01 Par Value",sell,1275.0,31.7,40417.5
+2013-01-22,AEE,"STEINKE, BRUCE A","SVP, Finance & CAO",True,"Common Stock, $.01 Par Value",sell,554.0,31.7,17561.8
+2013-01-22,AEE,"VOSS, THOMAS R","Chairman, President & CEO",True,"Common Stock, $.01 Par Value",sell,3381.0,31.7,107177.7
+2013-01-22,AEE,"SULLIVAN, STEVEN R",Pres. & CEO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,2702.0,31.7,85653.4
+2013-01-22,AEE,"MOEHN, MICHAEL L",Sr. VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,1107.0,31.7,35091.9
+2013-01-22,AEE,"BAXTER, WARNER L","Chmn, Pres. & CEO of Sub",True,"Common Stock, $.01 Par Value",sell,4012.0,31.7,127180.4
+2013-01-22,AEE,"BIRDSONG, JERRE E",Vice President & Treasurer,True,"Common Stock, $.01 Par Value",sell,905.0,31.7,28688.5
+2013-01-22,AEE,"HEFLIN, ADAM C",Sr. Vice Pres. of Subsidiary,False,"Common Stock, $.01 Par Value",sell,1039.0,31.7,32936.299999999996
+2013-01-22,AEE,"MARK, RICHARD J","Chmn, Pres. & CEO  of Sub.",True,"Common Stock, $.01 Par Value",sell,1045.0,31.7,33126.5
+2013-01-22,AEE,"LYONS, MARTIN J",Executive VP & CFO,True,"Common Stock, $.01 Par Value",sell,1518.0,31.7,48120.6
+2013-01-22,AEE,"COLE, DANIEL F","Chmn, Pres. & CEO of Sub.",True,"Common Stock, $.01 Par Value",sell,1823.0,31.7,57789.1
+2013-01-22,AEE,"BORKOWSKI, MAUREEN A",President & CEO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,437.0,31.7,13852.9
+2013-03-08,AEE,"MOEHN, MICHAEL L",Sr. VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,1968.0,33.47,65868.95999999999
+2013-03-08,AEE,"NASLUND, CHARLES D",Executive VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,4193.0,33.47,140339.71
+2013-03-08,AEE,"NELSON, GREGORY L","Sr VP, GC & Secretary",True,"Common Stock, $.01 Par Value",sell,1667.0,33.47,55794.49
+2013-03-08,AEE,"STEINKE, BRUCE A","SVP, Finance & CAO",True,"Common Stock, $.01 Par Value",sell,727.0,33.47,24332.69
+2013-03-08,AEE,"VOSS, THOMAS R","Chairman, President & CEO",True,"Common Stock, $.01 Par Value",sell,12788.0,33.47,428014.36
+2013-03-08,AEE,"LYONS, MARTIN J",Executive VP & CFO,True,"Common Stock, $.01 Par Value",sell,3421.0,33.47,114500.87
+2013-03-08,AEE,"HEFLIN, ADAM C",Sr. Vice Pres. of Subsidiary,False,"Common Stock, $.01 Par Value",sell,3187.0,33.47,106668.89
+2013-03-08,AEE,"MARK, RICHARD J","Chmn, Pres. & CEO  of Sub.",True,"Common Stock, $.01 Par Value",sell,1300.0,33.47,43511.0
+2013-03-08,AEE,"COLE, DANIEL F","Chmn, Pres. & CEO of Sub.",True,"Common Stock, $.01 Par Value",sell,3184.0,33.47,106568.48
+2013-03-08,AEE,"BIRDSONG, JERRE E",Vice President & Treasurer,True,"Common Stock, $.01 Par Value",sell,1133.0,33.47,37921.51
+2013-03-08,AEE,"BAXTER, WARNER L","Chmn, Pres. & CEO of Sub",True,"Common Stock, $.01 Par Value",sell,5721.0,33.47,191481.87
+2013-03-08,AEE,"BORKOWSKI, MAUREEN A",President & CEO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,574.0,33.47,19211.78
+2013-03-08,AEE,"SULLIVAN, STEVEN R",Pres. & CEO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,3617.0,33.47,121060.98999999999
+2013-05-17,AEE,"GALVIN, WALTER J",Director,True,"Common Stock, $.01 Par Value",buy,3328.0,36.05,119974.4
+2014-03-10,AEE,"VOSS, THOMAS R",Chairman & CEO,True,"Common Stock, $.01 Par Value",sell,55241.0,40.41,2232288.8099999996
+2014-03-10,AEE,"LYONS, MARTIN J",Executive VP & CFO,True,"Common Stock, $.01 Par Value",sell,16538.0,40.41,668300.58
+2014-03-10,AEE,"HEFLIN, ADAM C",Former SVP & CNO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,11775.0,40.41,475827.74999999994
+2014-03-10,AEE,"COLE, DANIEL F","Chmn, Pres. & CEO of Sub.",True,"Common Stock, $.01 Par Value",sell,13870.0,40.41,560486.7
+2014-03-10,AEE,"BORKOWSKI, MAUREEN A",President & CEO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,2383.0,40.41,96297.03
+2014-03-10,AEE,"NELSON, GREGORY L","Sr VP, GC & Secretary",True,"Common Stock, $.01 Par Value",sell,5494.0,40.41,222012.53999999998
+2014-03-10,AEE,"NASLUND, CHARLES D",Executive VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,12772.0,40.41,516116.51999999996
+2014-03-10,AEE,"DIYA, FADI M",SVP & CNO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,4737.0,40.41,191422.16999999998
+2014-03-10,AEE,"BAXTER, WARNER L",President,True,"Common Stock, $.01 Par Value",sell,20287.0,40.41,819797.6699999999
+2014-03-10,AEE,"MARK, RICHARD J","Chmn, Pres. & CEO  of Sub.",True,"Common Stock, $.01 Par Value",sell,5083.0,40.41,205404.02999999997
+2014-03-10,AEE,"MOEHN, MICHAEL L",Sr. VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,7244.0,40.41,292730.04
+2014-03-10,AEE,"SULLIVAN, STEVEN R",Former Pres. & CEO of Sub,True,"Common Stock, $.01 Par Value",sell,13620.0,40.41,550384.2
+2014-03-10,AEE,"STEINKE, BRUCE A","SVP, Finance & CAO",True,"Common Stock, $.01 Par Value",sell,3817.0,40.41,154244.97
+2014-05-15,AEE,"DIYA, FADI M",SVP & CNO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,2000.0,39.26,78520.0
+2014-05-15,AEE,"NASLUND, CHARLES D",Executive VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,1920.0,39.26,75379.2
+2014-05-30,AEE,"GALVIN, WALTER J",Director,True,"Common Stock, $.01 Par Value",buy,9188.0,39.18,359985.84
+2014-06-09,AEE,"DIYA, FADI M",SVP & CNO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,2823.0,40.36,113936.28
+2015-02-27,AEE,"STEINKE, BRUCE A","SVP, Finance & CAO",True,"Common Stock, $.01 Par Value",sell,3005.0,42.41,127442.04999999999
+2015-02-27,AEE,"COLE, DANIEL F",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,10851.0,42.41,460190.91
+2015-02-27,AEE,"BORKOWSKI, MAUREEN A",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,2932.0,42.41,124346.12
+2015-02-27,AEE,"BIRK, MARK C",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,2736.0,42.41,116033.76
+2015-02-27,AEE,"BAXTER, WARNER L","Director, Chairman, President & CEO",True,"Common Stock, $.01 Par Value",sell,15842.0,42.41,671859.22
+2015-02-27,AEE,"NELSON, GREGORY L","Sr VP, GC & Secretary",True,"Common Stock, $.01 Par Value",sell,9845.0,42.41,417526.44999999995
+2015-02-27,AEE,"NASLUND, CHARLES D",Executive VP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,9984.0,42.41,423421.43999999994
+2015-02-27,AEE,"MARK, RICHARD J",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,4217.0,42.41,178842.96999999997
+2015-02-27,AEE,"LYONS, MARTIN J",Executive VP & CFO,True,"Common Stock, $.01 Par Value",sell,13201.0,42.41,559854.4099999999
+2015-02-27,AEE,"DIYA, FADI M",SVP & CNO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,2777.0,42.41,117772.56999999999
+2015-02-27,AEE,"MOEHN, MICHAEL L",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,6310.0,42.41,267607.1
+2015-03-09,AEE,"BRUNE, CATHERINE S","Director, 10% Owner",True,"Common Stock, $.01 Par Value",sell,1318.0,41.76,55039.68
+2016-03-01,AEE,"MOEHN, MICHAEL L",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,13040.0,46.95,612228.0
+2016-03-01,AEE,"BIRK, MARK C",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,8272.0,46.95,388370.4
+2016-03-01,AEE,"COLE, DANIEL F",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,18244.0,46.95,856555.8
+2016-03-01,AEE,"BAXTER, WARNER L","Director, Chairman, President & CEO",True,"Common Stock, $.01 Par Value",sell,39320.0,46.95,1846074.0
+2016-03-01,AEE,"STEINKE, BRUCE A","SVP, Finance & CAO",True,"Common Stock, $.01 Par Value",sell,7696.0,46.95,361327.2
+2016-03-01,AEE,"NELSON, GREGORY L","SVP, GC & Secretary",True,"Common Stock, $.01 Par Value",sell,23121.0,46.95,1085530.95
+2016-03-01,AEE,"MARK, RICHARD J",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,18904.0,46.95,887542.8
+2016-03-01,AEE,"LYONS, MARTIN J",Executive VP & CFO,True,"Common Stock, $.01 Par Value",sell,32316.0,46.95,1517236.2000000002
+2016-03-01,AEE,"LINDGREN, MARK C",SVP & Chief HR Officer of Sub,True,"Common Stock, $.01 Par Value",sell,8387.0,46.95,393769.65
+2016-03-01,AEE,"HEGER, MARY P","SVP, Chief Info Officer of Sub",True,"Common Stock, $.01 Par Value",sell,5711.0,46.95,268131.45
+2016-03-01,AEE,"BORKOWSKI, MAUREEN A",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,10323.0,46.95,484664.85000000003
+2016-03-01,AEE,"DIYA, FADI M",SVP & CNO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,7773.0,46.95,364942.35000000003
+2016-06-02,AEE,"MARK, RICHARD J",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,9300.0,48.89,454677.0
+2016-06-09,AEE,"LINDGREN, MARK C",SVP & Chief HR Officer of Sub,True,"Common Stock, $.01 Par Value",sell,3500.0,50.34,176190.0
+2016-06-15,AEE,"GALVIN, WALTER J",Director,True,"Common Stock, $.01 Par Value",buy,7051.0,51.05,359953.55
+2016-06-16,AEE,"NELSON, GREGORY L","SVP, GC & Secretary",True,"Common Stock, $.01 Par Value",sell,10000.0,51.14,511400.0
+2016-08-11,AEE,"STEINKE, BRUCE A","SVP, Finance & CAO",True,"Common Stock, $.01 Par Value",sell,3000.0,50.82,152460.0
+2016-09-07,AEE,"GALVIN, WALTER J",Director,True,"Common Stock, $.01 Par Value",sell,36989.0,49.94,1847230.66
+2016-11-23,AEE,"MOEHN, MICHAEL L",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,7500.0,49.05,367875.0
+2017-01-17,AEE,"BORKOWSKI, MAUREEN A",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,3850.0,52.08,200508.0
+2017-02-28,AEE,"BIRK, MARK C",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,3180.0,54.69,173914.19999999998
+2017-02-28,AEE,"BAXTER, WARNER L","Director, Chairman, President & CEO",True,"Common Stock, $.01 Par Value",sell,31629.0,54.69,1729790.01
+2017-02-28,AEE,"STEINKE, BRUCE A","SVP, Finance & CAO",True,"Common Stock, $.01 Par Value",sell,3180.0,54.69,173914.19999999998
+2017-02-28,AEE,"MARK, RICHARD J",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,7110.0,54.69,388845.89999999997
+2017-02-28,AEE,"LYONS, MARTIN J",Executive VP & CFO,True,"Common Stock, $.01 Par Value",sell,12416.0,54.69,679031.0399999999
+2017-02-28,AEE,"HEGER, MARY P",SVP & CIO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,2275.0,54.69,124419.75
+2017-02-28,AEE,"MOEHN, MICHAEL L",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,7133.0,54.69,390103.76999999996
+2017-02-28,AEE,"NELSON, GREGORY L","SVP, GC & Secretary",True,"Common Stock, $.01 Par Value",sell,8219.0,54.69,449497.11
+2017-02-28,AEE,"LINDGREN, MARK C",SVP & Chief HR Officer of Sub,True,"Common Stock, $.01 Par Value",sell,2337.0,54.69,127810.53
+2017-02-28,AEE,"BORKOWSKI, MAUREEN A",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,3790.0,54.69,207275.1
+2017-02-28,AEE,"DIYA, FADI M",SVP & CNO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,5204.0,54.69,284606.76
+2017-03-01,AEE,"NELSON, GREGORY L","SVP, GC & Secretary",True,"Common Stock, $.01 Par Value",sell,1834.0,54.33,99641.22
+2017-03-01,AEE,"LINDGREN, MARK C",SVP & Chief HR Officer of Sub,True,"Common Stock, $.01 Par Value",sell,1024.0,54.24,55541.76
+2017-03-01,AEE,"LYONS, MARTIN J",Executive VP & CFO,True,"Common Stock, $.01 Par Value",sell,1320.0,54.32,71702.4
+2017-03-01,AEE,"STEINKE, BRUCE A","SVP, Finance & CAO",True,"Common Stock, $.01 Par Value",sell,1392.0,54.31,75599.52
+2017-03-09,AEE,"DIYA, FADI M",SVP & CNO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,12000.0,54.26,651120.0
+2017-03-09,AEE,"NELSON, GREGORY L","SVP, GC & Secretary",True,"Common Stock, $.01 Par Value",sell,12000.0,54.26,651120.0
+2017-06-09,AEE,"BAXTER, WARNER L","Director, Chairman, President & CEO",True,"Common Stock, $.01 Par Value",sell,13310.0,56.23,748421.2999999999
+2017-06-20,AEE,"DIYA, FADI M",SVP & CNO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,3342.0,56.79,189792.18
+2017-11-22,AEE,"NELSON, GREGORY L","SVP, GC & Secretary",True,"Common Stock, $.01 Par Value",sell,12000.0,62.68,752160.0
+2018-02-28,AEE,"NELSON, GREGORY L","SVP, GC & Secretary",True,"Common Stock, $.01 Par Value",sell,12224.0,54.3,663763.2
+2018-02-28,AEE,"SCHUKAR, SHAWN E",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,2807.0,54.3,152420.1
+2018-02-28,AEE,"BIRK, MARK C",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,4361.0,54.3,236802.3
+2018-02-28,AEE,"LINDGREN, MARK C",SVP & Chief HR Officer of Sub,True,"Common Stock, $.01 Par Value",sell,3997.0,54.3,217037.09999999998
+2018-02-28,AEE,"STEINKE, BRUCE A","SVP, Finance & CAO",True,"Common Stock, $.01 Par Value",sell,4325.0,54.3,234847.5
+2018-02-28,AEE,"MOEHN, MICHAEL L",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,13958.0,54.3,757919.3999999999
+2018-02-28,AEE,"HEGER, MARY P",SVP & CIO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,3930.0,54.3,213399.0
+2018-02-28,AEE,"DIYA, FADI M",SVP & CNO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,8837.0,54.3,479849.1
+2018-02-28,AEE,"MARK, RICHARD J",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,12288.0,54.3,667238.3999999999
+2018-02-28,AEE,"LYONS, MARTIN J",Executive VP & CFO,True,"Common Stock, $.01 Par Value",sell,20185.0,54.3,1096045.5
+2018-02-28,AEE,"BAXTER, WARNER L","Director, Chairman, President & CEO",True,"Common Stock, $.01 Par Value",sell,64230.0,54.3,3487689.0
+2018-03-01,AEE,"LYONS, MARTIN J",Executive VP & CFO,True,"Common Stock, $.01 Par Value",sell,13111.0,54.52,714811.7200000001
+2018-03-01,AEE,"LINDGREN, MARK C",SVP & Chief HR Officer of Sub,True,"Common Stock, $.01 Par Value",sell,1923.0,54.28,104380.44
+2018-03-01,AEE,"STEINKE, BRUCE A","SVP, Finance & CAO",True,"Common Stock, $.01 Par Value",sell,1952.0,54.28,105954.56
+2018-03-01,AEE,"NELSON, GREGORY L","SVP, GC & Secretary",True,"Common Stock, $.01 Par Value",sell,1462.0,54.28,79357.36
+2018-05-24,AEE,"LINDGREN, MARK C","Director, SVP & Chief HR Officer of Sub",True,"Common Stock, $.01 Par Value",sell,5500.0,58.68,322740.0
+2018-06-07,AEE,"STEINKE, BRUCE A","SVP, Finance & CAO",True,"Common Stock, $.01 Par Value",sell,3000.0,56.66,169980.0
+2018-06-14,AEE,"BIRK, MARK C",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,3500.0,56.21,196735.0
+2018-11-15,AEE,"MOEHN, MICHAEL L",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,8000.0,69.0,552000.0
+2018-11-15,AEE,"NELSON, GREGORY L","SVP, GC & Secretary",True,"Common Stock, $.01 Par Value",sell,10000.0,69.0,690000.0
+2019-02-28,AEE,"HEGER, MARY P",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,5499.0,71.24,391748.75999999995
+2019-02-28,AEE,"LINDGREN, MARK C",SVP & Chief HR Officer of Sub,True,"Common Stock, $.01 Par Value",sell,6558.0,71.24,467191.92
+2019-02-28,AEE,"NWAMU, CHONDA J",SVP & Deputy GC of Subsidiary,True,"Common Stock, $.01 Par Value",sell,791.0,71.24,56350.84
+2019-02-28,AEE,"BIRK, MARK C",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,6836.0,71.24,486996.63999999996
+2019-02-28,AEE,"LYONS, MARTIN J",Executive VP & CFO,True,"Common Stock, $.01 Par Value",sell,28343.0,71.24,2019155.3199999998
+2019-02-28,AEE,"SCHUKAR, SHAWN E",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,3705.0,71.24,263944.19999999995
+2019-02-28,AEE,"BAXTER, WARNER L","Director, Chairman, President & CEO",True,"Common Stock, $.01 Par Value",sell,83202.0,71.24,5927310.4799999995
+2019-02-28,AEE,"NELSON, GREGORY L","SVP, GC & Secretary",True,"Common Stock, $.01 Par Value",sell,16598.0,71.24,1182441.52
+2019-02-28,AEE,"MARK, RICHARD J",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,17374.0,71.24,1237723.76
+2019-02-28,AEE,"DIYA, FADI M",SVP & CNO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,12833.0,71.24,914222.9199999999
+2019-02-28,AEE,"MOEHN, MICHAEL L",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,20443.0,71.24,1456359.3199999998
+2019-02-28,AEE,"STEINKE, BRUCE A","SVP, Finance & CAO",True,"Common Stock, $.01 Par Value",sell,6757.0,71.24,481368.68
+2019-03-01,AEE,"NELSON, GREGORY L","SVP, GC & Secretary",True,"Common Stock, $.01 Par Value",sell,18273.0,70.84,1294459.32
+2019-03-01,AEE,"BAXTER, WARNER L","Director, Chairman, President & CEO",True,"Common Stock, $.01 Par Value",sell,41090.0,70.77,2907939.3
+2019-03-01,AEE,"STEINKE, BRUCE A","SVP, Finance & CAO",True,"Common Stock, $.01 Par Value",sell,6441.0,70.84,456280.44
+2019-03-01,AEE,"LINDGREN, MARK C",SVP & Chief HR Officer of Sub,True,"Common Stock, $.01 Par Value",sell,2442.0,71.42,174407.64
+2019-03-01,AEE,"LYONS, MARTIN J",Executive VP & CFO,True,"Common Stock, $.01 Par Value",sell,17794.0,70.82,1260171.0799999998
+2019-03-01,AEE,"NELSON, GREGORY L","SVP, GC & Secretary",True,"Common Stock, $.01 Par Value",sell,11275.0,70.84,798721.0
+2019-03-07,AEE,"MOEHN, MICHAEL L",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,12000.0,71.18,854160.0000000001
+2019-03-07,AEE,"DIYA, FADI M",SVP & CNO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,15000.0,71.18,1067700.0
+2019-05-23,AEE,"SCHUKAR, SHAWN E",Chmn & President of Subsidiary,True,"Common Stock, $.01 par value",sell,1200.0,75.27,90324.0
+2019-06-13,AEE,"HEGER, MARY P",SVP of Subsidiary,True,"Common Stock, $.01 par value",sell,3000.0,76.02,228060.0
+2019-07-01,AEE,"AMIRTHALINGAM, BHAVANI",SVP & CDIO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,715.0,75.11,53703.65
+2020-02-28,AEE,"STEINKE, BRUCE A","SVP, Finance & CAO",True,"Common Stock, $.01 Par Value",sell,3808.0,79.0,300832.0
+2020-02-28,AEE,"HEGER, MARY P",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,3154.0,79.0,249166.0
+2020-02-28,AEE,"BAXTER, WARNER L","Director, Chairman, President & CEO",True,"Common Stock, $.01 Par Value",sell,54470.0,79.0,4303130.0
+2020-02-28,AEE,"MARK, RICHARD J",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,10558.0,79.0,834082.0
+2020-02-28,AEE,"LYONS, MARTIN J",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,17780.0,79.0,1404620.0
+2020-02-28,AEE,"MOEHN, MICHAEL L",Executive VP & CFO,True,"Common Stock, $.01 Par Value",sell,12719.0,79.0,1004801.0
+2020-02-28,AEE,"NWAMU, CHONDA J","SVP, GC & Secretary",True,"Common Stock, $.01 Par Value",sell,2057.0,79.0,162503.0
+2020-02-28,AEE,"LINDGREN, MARK C",SVP & Chief HR Officer of Sub,True,"Common Stock, $.01 Par Value",sell,3675.0,79.0,290325.0
+2020-02-28,AEE,"BIRK, MARK C",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,3847.0,79.0,303913.0
+2020-02-28,AEE,"DIYA, FADI M",SVP & CNO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,7902.0,79.0,624258.0
+2020-02-28,AEE,"SCHUKAR, SHAWN E",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,3147.0,79.0,248613.0
+2020-03-02,AEE,"BAXTER, WARNER L","Director, Chairman, President & CEO",True,"Common Stock, $.01 Par Value",sell,26901.0,79.68,2143471.68
+2020-03-02,AEE,"LYONS, MARTIN J",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,11605.0,79.61,923874.05
+2020-03-02,AEE,"LINDGREN, MARK C",SVP & Chief HR Officer of Sub,True,"Common Stock, $.01 Par Value",sell,2392.0,79.68,190594.56000000003
+2020-03-02,AEE,"SCHUKAR, SHAWN E",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,1587.0,79.36,125944.31999999999
+2020-03-02,AEE,"STEINKE, BRUCE A","SVP, Finance & CAO",True,"Common Stock, $.01 Par Value",sell,4571.0,79.6,363851.6
+2020-03-05,AEE,"NWAMU, CHONDA J","SVP, GC & Secretary",True,"Common Stock, $.01 Par Value",sell,1693.0,86.0,145598.0
+2020-03-12,AEE,"BIRK, MARK C",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,5000.0,73.07,365349.99999999994
+2020-03-13,AEE,"LINDGREN, MARK C",SVP & Chief HR Officer of Sub,True,"Common Stock, $.01 Par Value",sell,3650.0,73.85,269552.5
+2020-07-01,AEE,"AMIRTHALINGAM, BHAVANI",SVP & CDIO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,734.0,70.36,51644.24
+2020-11-19,AEE,"LYONS, MARTIN J",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,3800.0,78.0,296400.0
+2020-11-19,AEE,"MARK, RICHARD J",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,6300.0,78.0,491400.0
+2021-02-25,AEE,"NWAMU, CHONDA J","SVP, GC & Secretary",True,"Common Stock, $.01 Par Value",sell,2300.0,72.0,165600.0
+2021-02-26,AEE,"DIYA, FADI M",SVP & CNO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,6850.0,70.27,481349.5
+2021-02-26,AEE,"BAXTER, WARNER L","Director, Chairman, President & CEO",True,"Common Stock, $.01 Par Value",sell,53479.0,70.27,3757969.3299999996
+2021-02-26,AEE,"BIRK, MARK C",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,3522.0,70.27,247490.93999999997
+2021-02-26,AEE,"AMIRTHALINGAM, BHAVANI",SVP & CDIO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,2320.0,70.27,163026.4
+2021-02-26,AEE,"MOEHN, MICHAEL L",Executive VP & CFO,True,"Common Stock, $.01 Par Value",sell,17716.0,70.27,1244903.3199999998
+2021-02-26,AEE,"SCHUKAR, SHAWN E",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,3167.0,70.27,222545.09
+2021-02-26,AEE,"LYONS, MARTIN J",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,23897.0,70.27,1679242.19
+2021-02-26,AEE,"MARK, RICHARD J",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,15552.0,70.27,1092839.04
+2021-02-26,AEE,"STEINKE, BRUCE A","SVP, Finance & CAO",True,"Common Stock, $.01 Par Value",sell,2986.0,70.27,209826.22
+2021-02-26,AEE,"LINDGREN, MARK C",SVP & Chief HR Officer of Sub,True,"Common Stock, $.01 Par Value",sell,2885.0,70.27,202728.94999999998
+2021-02-26,AEE,"NWAMU, CHONDA J","SVP, GC & Secretary",True,"Common Stock, $.01 Par Value",sell,1782.0,70.27,125221.14
+2021-02-26,AEE,"HEGER, MARY P",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,2729.0,70.27,191766.83
+2021-03-01,AEE,"STEINKE, BRUCE A","SVP, Finance & CAO",True,"Common Stock, $.01 Par Value",sell,4279.0,71.07,304108.52999999997
+2021-03-01,AEE,"SCHUKAR, SHAWN E",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,1622.0,71.03,115210.66
+2021-03-01,AEE,"BAXTER, WARNER L","Director, Chairman, President & CEO",True,"Common Stock, $.01 Par Value",sell,33014.0,71.24,2351917.36
+2021-03-01,AEE,"LINDGREN, MARK C",SVP & Chief HR Officer of Sub,True,"Common Stock, $.01 Par Value",sell,2455.0,71.1,174550.5
+2021-03-01,AEE,"LYONS, MARTIN J",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,16242.0,71.15,1155618.3
+2021-03-11,AEE,"BIRK, MARK C",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,2000.0,76.1,152200.0
+2021-03-11,AEE,"MOEHN, MICHAEL L",Executive VP & CFO,True,"Common Stock, $.01 Par Value",sell,10000.0,76.1,761000.0
+2021-03-31,AEE,"MARK, RICHARD J",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,6000.0,81.17,487020.0
+2021-05-27,AEE,"DIYA, FADI M",SVP & CNO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,8000.0,83.91,671280.0
+2021-08-19,AEE,"MOEHN, MICHAEL L",Executive VP & CFO,True,"Common Stock, $.01 Par Value",sell,10000.0,89.89,898900.0
+2021-09-30,AEE,"MARK, RICHARD J",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,6000.0,82.18,493080.00000000006
+2021-11-22,AEE,"LINDGREN, MARK C",SVP & Chief HR Officer of Sub,True,"Common Stock, $.01 Par Value",sell,2700.0,85.71,231416.99999999997
+2021-12-14,AEE,"BAXTER, WARNER L","Director, Chairman, President & CEO",True,"Common Stock, $.01 Par Value",sell,57000.0,87.31,4976670.0
+2022-02-28,AEE,"BIRK, MARK C",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,2894.0,85.95,248739.30000000002
+2022-02-28,AEE,"AMIRTHALINGAM, BHAVANI",SVP & CDIO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,2657.0,85.95,228369.15
+2022-02-28,AEE,"SCHUKAR, SHAWN E",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,2554.0,85.95,219516.30000000002
+2022-02-28,AEE,"MOEHN, MICHAEL L",Executive VP & CFO,True,"Common Stock, $.01 Par Value",sell,9016.0,85.95,774925.2000000001
+2022-02-28,AEE,"LINDGREN, MARK C",SVP & Chief HR Officer of Sub,True,"Common Stock, $.01 Par Value",sell,2319.0,85.95,199318.05000000002
+2022-02-28,AEE,"MARK, RICHARD J",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,7205.0,85.95,619269.75
+2022-02-28,AEE,"BAXTER, WARNER L","Director, Executive Chairman",True,"Common Stock, $.01 Par Value",sell,44117.0,85.95,3791856.15
+2022-02-28,AEE,"HEGER, MARY P",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,2175.0,85.95,186941.25
+2022-02-28,AEE,"NWAMU, CHONDA J","SVP, GC & Secretary",True,"Common Stock, $.01 Par Value",sell,3811.0,85.95,327555.45
+2022-02-28,AEE,"DIYA, FADI M",SVP & CNO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,5958.0,85.95,512090.10000000003
+2022-02-28,AEE,"SHAW, THERESA A","SVP, Finance and CAO",True,"Common Stock, $.01 Par Value",sell,1088.0,85.95,93513.6
+2022-02-28,AEE,"SCHUKAR, SHAWN E",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,1562.0,85.96,134269.52
+2022-02-28,AEE,"LYONS, MARTIN J","Director, President & CEO",True,"Common Stock, $.01 Par Value",sell,12141.0,85.95,1043518.9500000001
+2022-03-01,AEE,"BAXTER, WARNER L","Director, Executive Chairman",True,"Common Stock, $.01 Par Value",sell,9221.0,84.63,780373.23
+2022-03-01,AEE,"LYONS, MARTIN J","Director, President & CEO",True,"Common Stock, $.01 Par Value",sell,4100.0,85.1,348910.0
+2022-03-01,AEE,"LYONS, MARTIN J","Director, President & CEO",True,"Common Stock, $.01 Par Value",sell,4064.0,85.78,348609.92
+2022-03-01,AEE,"LINDGREN, MARK C",SVP & Chief HR Officer of Sub,True,"Common Stock, $.01 Par Value",sell,1175.0,85.89,100920.75
+2022-03-01,AEE,"BAXTER, WARNER L","Director, Executive Chairman",True,"Common Stock, $.01 Par Value",sell,9179.0,85.18,781867.2200000001
+2022-03-01,AEE,"BAXTER, WARNER L","Director, Executive Chairman",True,"Common Stock, $.01 Par Value",sell,8945.0,85.83,767749.35
+2022-03-01,AEE,"SCHUKAR, SHAWN E",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,1600.0,85.4,136640.0
+2022-03-01,AEE,"MOEHN, MICHAEL L",Executive VP & CFO,True,"Common Stock, $.01 Par Value",sell,1410.0,86.02,121288.2
+2022-03-01,AEE,"MOEHN, MICHAEL L",Executive VP & CFO,True,"Common Stock, $.01 Par Value",sell,1515.0,85.39,129365.85
+2022-03-08,AEE,"BAXTER, WARNER L","Director, Executive Chairman",True,"Common Stock, $.01 Par Value",sell,21789.0,88.1,1919610.9
+2022-03-10,AEE,"NWAMU, CHONDA J","SVP, GC & Secretary",True,"Common Stock, $.01 Par Value",sell,1677.0,87.41,146586.57
+2022-03-10,AEE,"MARK, RICHARD J",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,3500.0,87.37,305795.0
+2022-03-31,AEE,"LYONS, MARTIN J","Director, President & CEO",True,"Common Stock, $.01 Par Value",sell,163.0,94.02,15325.26
+2022-03-31,AEE,"MARK, RICHARD J",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,6000.0,93.67,562020.0
+2022-03-31,AEE,"LINDGREN, MARK C",SVP & Chief HR Officer of Sub,True,"Common Stock, $.01 Par Value",sell,999.0,94.44,94345.56
+2022-03-31,AEE,"SCHUKAR, SHAWN E",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,574.0,94.48,54231.520000000004
+2022-06-01,AEE,"MOEHN, MICHAEL L",Executive VP & CFO,True,"Common Stock, $.01 Par Value",sell,2630.0,95.32,250691.59999999998
+2022-06-02,AEE,"BIRK, MARK C",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,4000.0,93.9,375600.0
+2022-08-09,AEE,"BAXTER, WARNER L","Director, Executive Chairman",True,"Common Stock, $.01 Par Value",sell,28278.0,92.97,2629005.66
+2022-08-09,AEE,"BAXTER, WARNER L","Director, Executive Chairman",True,"Common Stock, $.01 Par Value",sell,25722.0,93.44,2403463.68
+2022-08-17,AEE,"FLORES, RAFAEL",Director,True,"Common Stock, $.01 Par Value",sell,1600.0,96.07,153712.0
+2022-08-30,AEE,"DIYA, FADI M",SVP & CNO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,7000.0,95.21,666470.0
+2022-09-01,AEE,"MOEHN, MICHAEL L",Executive VP & CFO,True,"Common Stock, $.01 Par Value",sell,2696.0,92.76,250080.96000000002
+2022-11-15,AEE,"MOEHN, MICHAEL L",Executive VP & CFO,True,"Common Stock, $.01 Par Value",sell,3030.0,83.2,252096.0
+2022-12-14,AEE,"BAXTER, WARNER L","Director, Executive Chairman",True,"Common Stock, $.01 Par Value",sell,50000.0,90.32,4516000.0
+2023-02-23,AEE,"FLORES, RAFAEL",Director,True,"Common Stock, $.01 Par Value",sell,1900.0,86.15,163685.0
+2023-02-28,AEE,"LYONS, MARTIN J","Director, President & CEO",True,"Common Stock, $.01 Par Value",sell,22556.0,82.71,1865606.7599999998
+2023-02-28,AEE,"AMIRTHALINGAM, BHAVANI",EVP & CCTO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,3344.0,82.71,276582.24
+2023-02-28,AEE,"LINDGREN, MARK C",EVP & Chief HR Officer of Sub,True,"Common Stock, $.01 Par Value",sell,2721.0,82.71,225053.90999999997
+2023-02-28,AEE,"MOEHN, MICHAEL L",Sr Executive VP & CFO,True,"Common Stock, $.01 Par Value",sell,21178.0,82.71,1751632.38
+2023-02-28,AEE,"DIYA, FADI M",SVP & CNO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,7410.0,82.71,612881.1
+2023-02-28,AEE,"MIZELL, GWENDOLYN G",Chief Sustain & Diversity,True,"Common Stock, $.01 Par Value",sell,611.0,82.71,50535.81
+2023-02-28,AEE,"SCHUKAR, SHAWN E",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,3461.0,82.71,286259.31
+2023-02-28,AEE,"BAXTER, WARNER L","Director, Executive Chairman",True,"Common Stock, $.01 Par Value",sell,52832.0,82.71,4369734.72
+2023-02-28,AEE,"SHAW, THERESA A","SVP, Finance and CAO",True,"Common Stock, $.01 Par Value",sell,1352.0,82.71,111823.92
+2023-02-28,AEE,"NWAMU, CHONDA J","EVP, GC & Secretary",True,"Common Stock, $.01 Par Value",sell,7276.0,82.71,601797.96
+2023-02-28,AEE,"BIRK, MARK C",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,3855.0,82.71,318847.05
+2023-03-01,AEE,"MOEHN, MICHAEL L",Sr Executive VP & CFO,True,"Common Stock, $.01 Par Value",sell,3050.0,81.98,250039.0
+2023-03-01,AEE,"SCHUKAR, SHAWN E",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,4249.0,81.43,345996.07
+2023-03-01,AEE,"LYONS, MARTIN J","Director, President & CEO",True,"Common Stock, $.01 Par Value",sell,7293.0,81.4,593650.2000000001
+2023-03-01,AEE,"LYONS, MARTIN J","Director, President & CEO",True,"Common Stock, $.01 Par Value",sell,6886.0,80.8,556388.7999999999
+2023-03-02,AEE,"BAXTER, WARNER L","Director, Executive Chairman",True,"Common Stock, $.01 Par Value",sell,16793.0,81.25,1364431.25
+2023-03-02,AEE,"LINDGREN, MARK C",EVP & Chief HR Officer of Sub,True,"Common Stock, $.01 Par Value",sell,3130.0,81.19,254124.69999999998
+2023-03-02,AEE,"BAXTER, WARNER L","Director, Executive Chairman",True,"Common Stock, $.01 Par Value",sell,16949.0,81.92,1388462.08
+2023-03-02,AEE,"BAXTER, WARNER L","Director, Executive Chairman",True,"Common Stock, $.01 Par Value",sell,16077.0,82.35,1323940.95
+2023-03-09,AEE,"NWAMU, CHONDA J","EVP, GC & Secretary",True,"Common Stock, $.01 Par Value",sell,3660.0,83.4,305244.0
+2023-03-13,AEE,"DIYA, FADI M",SVP & CNO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,5000.0,84.41,422050.0
+2023-06-01,AEE,"MOEHN, MICHAEL L",Sr Executive VP & CFO,True,"Common Stock, $.01 Par Value",sell,3080.0,81.12,249849.6
+2023-06-13,AEE,"DIYA, FADI M",SVP & CNO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,36940.0,82.37,3042747.8000000003
+2023-09-01,AEE,"MOEHN, MICHAEL L",Sr Executive VP & CFO,True,"Common Stock, $.01 Par Value",sell,3155.0,79.63,251232.65
+2023-09-29,AEE,"LYONS, MARTIN J","Director, Chairman, President & CEO",True,"Common Stock, $.01 Par Value",sell,9172.0,74.83,686340.76
+2023-09-29,AEE,"MOEHN, MICHAEL L",Sr Executive VP & CFO,True,"Common Stock, $.01 Par Value",sell,8677.0,74.83,649299.91
+2023-11-15,AEE,"MOEHN, MICHAEL L",Sr Executive VP & CFO,True,"Common Stock, $.01 Par Value",sell,3244.0,77.28,250696.32
+2023-11-29,AEE,"FLORES, RAFAEL",Director,True,"Common Stock, $.01 Par Value",sell,1500.0,77.65,116475.00000000001
+2024-02-29,AEE,"BIRK, MARK C",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,1646.0,71.19,117178.73999999999
+2024-02-29,AEE,"LYONS, MARTIN J","Director, Chairman, President & CEO",True,"Common Stock, $.01 Par Value",sell,11496.0,71.19,818400.24
+2024-02-29,AEE,"SHAW, THERESA A","SVP, Finance and CAO",True,"Common Stock, $.01 Par Value",sell,828.0,71.19,58945.32
+2024-02-29,AEE,"SCHUKAR, SHAWN E",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,1589.0,71.19,113120.91
+2024-02-29,AEE,"NWAMU, CHONDA J","EVP, GC & Secretary",True,"Common Stock, $.01 Par Value",sell,3403.0,71.19,242259.56999999998
+2024-02-29,AEE,"SINGH, LEONARD P",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,1018.0,71.19,72471.42
+2024-02-29,AEE,"AMIRTHALINGAM, BHAVANI",EVP & CCTO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,1475.0,71.19,105005.25
+2024-02-29,AEE,"DIYA, FADI M",SVP & CNO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,3163.0,71.19,225173.97
+2024-02-29,AEE,"MOEHN, MICHAEL L",Sr Executive VP & CFO,True,"Common Stock, $.01 Par Value",sell,10543.0,71.19,750556.1699999999
+2024-02-29,AEE,"LINDGREN, MARK C",EVP & Chief HR Officer of Sub,True,"Common Stock, $.01 Par Value",sell,1342.0,71.19,95536.98
+2024-02-29,AEE,"MIZELL, GWENDOLYN G",Chief Sustain & Diversity,True,"Common Stock, $.01 Par Value",sell,363.0,71.19,25841.969999999998
+2024-03-04,AEE,"LYONS, MARTIN J","Director, Chairman, President & CEO",True,"Common Stock, $.01 Par Value",sell,7270.0,70.7,513989.0
+2024-03-04,AEE,"LINDGREN, MARK C",EVP & Chief HR Officer of Sub,True,"Common Stock, $.01 Par Value",sell,1630.0,70.7,115241.0
+2024-03-14,AEE,"SCHUKAR, SHAWN E",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,2330.0,71.26,166035.80000000002
+2024-05-16,AEE,"LINDGREN, MARK C",EVP & Chief HR Officer of Sub,True,"Common Stock, $.01 Par Value",sell,4000.0,75.53,302120.0
+2024-05-17,AEE,"DIYA, FADI M",SVP & CNO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,10000.0,74.5,745000.0
+2024-06-07,AEE,"FLORES, RAFAEL",Director,True,"Common Stock, $.01 Par Value",sell,1500.0,71.29,106935.00000000001
+2024-08-20,AEE,"MOEHN, MICHAEL L",Sr Executive VP & CFO,True,"Common Stock, $.01 Par Value",sell,6500.0,82.53,536445.0
+2024-08-28,AEE,"NWAMU, CHONDA J","EVP, GC & Secretary",True,"Common Stock, $.01 Par Value",sell,1610.0,81.94,131923.4
+2024-11-20,AEE,"MOEHN, MICHAEL L",Sr Executive VP & CFO,True,"Common Stock, $.01 Par Value",sell,6500.0,92.15,598975.0
+2025-02-19,AEE,"IVEY, CRAIG S",Director,True,"Common Stock, $.01 Par Value",sell,2716.0,98.27,266901.32
+2025-02-19,AEE,"FLORES, RAFAEL",Director,True,"Common Stock, $.01 Par Value",sell,1900.0,97.93,186067.0
+2025-02-20,AEE,"MOEHN, MICHAEL L",Sr Executive VP & CFO,True,"Common Stock, $.01 Par Value",sell,6500.0,97.54,634010.0
+2025-02-26,AEE,"SHAW, THERESA A","SVP, Finance and CAO",True,"Common Stock, $.01 Par Value",sell,1000.0,99.53,99530.0
+2025-02-28,AEE,"SINGH, LEONARD P",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,3565.0,101.56,362061.4
+2025-02-28,AEE,"SCHUKAR, SHAWN E",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,2330.0,101.56,236634.80000000002
+2025-02-28,AEE,"MOEHN, MICHAEL L",Sr Executive VP & CFO,True,"Common Stock, $.01 Par Value",sell,13344.0,101.56,1355216.6400000001
+2025-02-28,AEE,"LYONS, MARTIN J","Director, Chairman, President & CEO",True,"Common Stock, $.01 Par Value",sell,23357.0,101.56,2372136.92
+2025-02-28,AEE,"DIYA, FADI M",SVP & CNO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,4565.0,101.56,463621.4
+2025-02-28,AEE,"NWAMU, CHONDA J",Executive Vice President,True,"Common Stock, $.01 Par Value",sell,5047.0,101.56,512573.32
+2025-02-28,AEE,"BIRK, MARK C",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,5030.0,101.56,510846.8
+2025-02-28,AEE,"LINDGREN, MARK C",EVP & Chief HR Officer of Sub,True,"Common Stock, $.01 Par Value",sell,1534.0,101.56,155793.04
+2025-02-28,AEE,"MIZELL, GWENDOLYN G",SVP & CSO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,796.0,101.56,80841.76
+2025-02-28,AEE,"LEE, STEPHEN C","VP, INTERIM GC & SECRETARY",True,"Common Stock, $.01 Par Value",sell,682.0,101.56,69263.92
+2025-02-28,AEE,"SHAW, THERESA A","SVP, Finance and CAO",True,"Common Stock, $.01 Par Value",sell,1229.0,101.56,124817.24
+2025-03-04,AEE,"LINDGREN, MARK C",EVP & Chief HR Officer of Sub,True,"Common Stock, $.01 Par Value",sell,1870.0,103.79,194087.30000000002
+2025-03-04,AEE,"NWAMU, CHONDA J",Executive Vice President,True,"Common Stock, $.01 Par Value",sell,5500.0,101.37,557535.0
+2025-03-04,AEE,"SCHUKAR, SHAWN E",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,4743.0,103.79,492275.97000000003
+2025-03-04,AEE,"LYONS, MARTIN J","Director, Chairman, President & CEO",True,"Common Stock, $.01 Par Value",sell,14833.0,103.79,1539517.07
+2025-05-12,AEE,"MIZELL, GWENDOLYN G",SVP & CSO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,1126.0,97.4,109672.40000000001
+2025-05-20,AEE,"MOEHN, MICHAEL L",Sr Executive VP & CFO,True,"Common Stock, $.01 Par Value",sell,6500.0,98.62,641030.0
+2025-08-01,AEE,"MOEHN, MICHAEL L",Sr Executive VP & CFO,True,"Common Stock, $.01 Par Value",sell,6500.0,102.54,666510.0
+2025-08-22,AEE,"MIZELL, GWENDOLYN G",SVP & CSO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,1000.0,101.79,101790.0
+2025-09-03,AEE,"MIZELL, GWENDOLYN G",SVP & CSO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,1500.0,99.5,149250.0
+2025-09-12,AEE,"LINDGREN, MARK C",EVP & Chief HR Officer of Sub,True,"Common Stock, $.01 Par Value",sell,3500.0,100.89,353115.0
+2025-11-03,AEE,"MOEHN, MICHAEL L",Sr Executive VP & CFO,True,"Common Stock, $.01 Par Value",sell,6500.0,101.44,659360.0
+2025-11-14,AEE,"SMITH, PATRICK E",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,2404.0,104.8,251939.19999999998
+2025-11-14,AEE,"HARSHMAN, RICHARD J",Director,True,"Common Stock, $.01 Par Value",sell,2500.0,104.9,262250.0
+2025-11-14,AEE,"SHAW, THERESA A","SVP, Finance and CAO",True,"Common Stock, $.01 Par Value",sell,325.0,104.77,34050.25
+2025-11-17,AEE,"FLORES, RAFAEL",Director,True,"Common Stock, $.01 Par Value",sell,225.0,105.21,23672.25
+2025-11-17,AEE,"FLORES, RAFAEL",Director,True,"Common Stock, $.01 Par Value",sell,626.0,105.32,65930.31999999999
+2026-02-02,AEE,"MOEHN, MICHAEL L","Group President, Utilities",True,"Common Stock, $.01 Par Value",sell,6500.0,103.6,673400.0
+2026-02-17,AEE,"MIZELL, GWENDOLYN G",SVP & CSO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,3548.0,110.9,393473.2
+2026-02-17,AEE,"FLORES, RAFAEL",Director,True,"Common Stock, $.01 Par Value",sell,1600.0,111.52,178432.0
+2026-02-17,AEE,"SHAW, THERESA A",SVP and CATO,True,"Common Stock, $.01 Par Value",sell,325.0,111.89,36364.25
+2026-02-17,AEE,"ARORA, AJAY K",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,3000.0,111.44,334320.0
+2026-02-27,AEE,"ARORA, AJAY K",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,1035.0,113.28,117244.8
+2026-02-27,AEE,"SEIDLER, ERIC V",SVP of Subsidiary,True,"Common Stock, $.01 Par Value",sell,982.0,113.28,111240.96
+2026-02-27,AEE,"MOEHN, MICHAEL L","Group President, Utilities",True,"Common Stock, $.01 Par Value",sell,14355.0,113.28,1626134.4
+2026-02-27,AEE,"SINGH, LEONARD P",EVP & CFO,True,"Common Stock, $.01 Par Value",sell,5478.0,113.28,620547.84
+2026-02-27,AEE,"SMITH, PATRICK E",Chairman & President of Sub,True,"Common Stock, $.01 Par Value",sell,910.0,113.28,103084.8
+2026-02-27,AEE,"SCHUKAR, SHAWN E",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,3148.0,113.28,356605.44
+2026-02-27,AEE,"LYONS, MARTIN J","Director, Chairman, President & CEO",True,"Common Stock, $.01 Par Value",sell,28154.0,113.28,3189285.12
+2026-02-27,AEE,"MIZELL, GWENDOLYN G",SVP & CSO of Subsidiary,True,"Common Stock, $.01 Par Value",sell,943.0,113.28,106823.04000000001
+2026-02-27,AEE,"SHAW, THERESA A",SVP and CATO,True,"Common Stock, $.01 Par Value",sell,1296.0,113.28,146810.88
+2026-02-27,AEE,"LINDGREN, MARK C",EVP & Chief HR Officer of Sub,True,"Common Stock, $.01 Par Value",sell,2054.0,113.28,232677.12
+2026-02-27,AEE,"MARTIN, RYAN J",SVP Finance,True,"Common Stock, $.01 Par Value",sell,726.0,113.28,82241.28
+2026-03-03,AEE,"LYONS, MARTIN J","Director, Chairman, President & CEO",True,"Common Stock, $.01 Par Value",sell,26818.0,111.84,2999325.12
+2026-03-03,AEE,"LINDGREN, MARK C",EVP & Chief HR Officer of Sub,True,"Common Stock, $.01 Par Value",sell,2073.0,111.84,231844.32
+2026-03-03,AEE,"SCHUKAR, SHAWN E",Chmn & President of Subsidiary,True,"Common Stock, $.01 Par Value",sell,4975.0,111.84,556404.0
+2026-03-04,AEE,"MARTIN, RYAN J",SVP Finance,True,"Common Stock, $.01 Par Value",sell,1300.0,113.31,147303.0
+2026-05-01,AEE,"MOEHN, MICHAEL L","Group President, Utilities",True,"Common Stock, $.01 Par Value",sell,6500.0,113.63,738595.0
+2026-05-12,AEE,"SHAW, THERESA A",SVP and CATO,True,"Common Stock, $.01 Par Value",sell,1500.0,109.35,164025.0
+2026-05-14,AEE,"SHAW, THERESA A",SVP and CATO,True,"Common Stock, $.01 Par Value",sell,325.0,109.08,35451.0

@@ -1,0 +1,850 @@
+date,symbol,insider_name,insider_title,is_executive,security_type,transaction_type,shares,price,value
+2013-07-24,AGIO,"MARAGANORE, JOHN",Director,True,Common stock,buy,8333.0,18.0,149994.0
+2013-07-24,AGIO,"TESSIER-LAVIGNE, MARC",Director,True,Common stock,buy,55555.0,18.0,999990.0
+2014-03-06,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common Stock,sell,5468.0,35.54,194332.72
+2014-03-06,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common Stock,buy,5468.0,0.4675,2556.29
+2014-03-07,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common Stock,sell,12000.0,45.1,541200.0
+2014-03-07,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common Stock,buy,2334.0,0.6875,1604.625
+2014-03-07,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common Stock,buy,9666.0,0.4675,4518.8550000000005
+2014-03-10,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common Stock,buy,54000.0,0.3025,16335.0
+2014-03-10,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common Stock,buy,20000.0,0.3025,6050.0
+2014-03-19,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common Stock,buy,80000.0,0.3025,24200.0
+2014-03-25,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common Stock,buy,25000.0,0.3025,7562.5
+2014-04-01,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,sell,12000.0,38.08,456960.0
+2014-04-01,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,buy,12000.0,0.3025,3630.0
+2014-04-01,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,buy,3053.0,0.6875,2098.9375
+2014-04-01,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,sell,4000.0,38.08,152320.0
+2014-04-01,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,12000.0,0.4675,5610.0
+2014-04-01,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,4500.0,0.4675,2103.75
+2014-04-01,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,18000.0,0.4675,8415.0
+2014-04-01,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,4500.0,38.08,171360.0
+2014-04-07,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,sell,3000.0,45.17,135510.0
+2014-04-07,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,buy,569.0,2.34,1331.4599999999998
+2014-04-07,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,sell,2000.0,45.17,90340.0
+2014-04-29,AGIO,"MARAGANORE, JOHN",Director,True,Common stock,buy,2250.0,44.0,99000.0
+2014-04-29,AGIO,"CELGENE, EUROPEAN INVESTMENT CO LLC",10% Owner,False,Common Stock,buy,294800.0,44.0,12971200.0
+2014-05-01,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,4500.0,0.4675,2103.75
+2014-05-01,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,sell,7000.0,42.39,296730.0
+2014-05-01,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,sell,2000.0,42.39,84780.0
+2014-05-01,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,buy,826.0,2.34,1932.84
+2014-05-01,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,4500.0,42.39,190755.0
+2014-05-06,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,sell,5000.0,45.73,228649.99999999997
+2014-06-02,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,sell,3300.0,33.87,111770.99999999999
+2014-06-02,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,4500.0,0.4675,2103.75
+2014-06-02,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Stock option (right to buy),sell,4500.0,0.4675,2103.75
+2014-06-02,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,4500.0,33.76,151920.0
+2014-06-03,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,sell,3700.0,35.01,129536.99999999999
+2014-06-13,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,sell,5000.0,45.27,226350.00000000003
+2014-06-20,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,2004.0,50.05,100300.2
+2014-06-23,AGIO,"MARAGANORE, JOHN",Director,True,Common stock,buy,2300.0,43.98,101154.0
+2014-07-01,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,4500.0,46.52,209340.0
+2014-07-01,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Stock option (right to buy),sell,4500.0,0.4675,2103.75
+2014-07-01,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common Stock,sell,6500.0,46.52,302380.0
+2014-07-01,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,4500.0,0.4675,2103.75
+2014-07-01,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,sell,12000.0,46.52,558240.0
+2014-07-01,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,buy,1152.0,2.34,2695.68
+2014-07-01,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,sell,3500.0,46.52,162820.0
+2014-08-01,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,sell,7000.0,39.09,273630.0
+2014-08-01,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,4500.0,39.09,175905.00000000003
+2014-08-01,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,buy,7000.0,0.3025,2117.5
+2014-08-01,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,4235.0,39.17,165884.95
+2014-08-01,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,4500.0,0.4675,2103.75
+2014-08-01,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Stock option (right to buy),sell,4500.0,0.4675,2103.75
+2014-08-07,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,5000.0,0.4675,2337.5
+2014-08-07,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Stock option (right to buy),sell,5000.0,0.4675,2337.5
+2014-08-11,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,2265.0,40.17,90985.05
+2014-08-26,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,sell,5000.0,45.05,225250.0
+2014-08-26,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,buy,5000.0,0.3025,1512.5
+2014-09-02,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,buy,6745.0,0.3025,2040.3625
+2014-09-02,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,6500.0,46.3,300950.0
+2014-09-02,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,buy,6500.0,0.3025,1966.25
+2014-09-02,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,buy,9545.0,2.34,22335.3
+2014-09-02,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,sell,13000.0,46.3,601900.0
+2014-09-02,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,4500.0,46.3,208350.0
+2014-09-02,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,4500.0,0.4675,2103.75
+2014-09-02,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,sell,10000.0,46.3,463000.0
+2014-09-02,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Stock option (right to buy),sell,4500.0,0.4675,2103.75
+2014-09-19,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Stock option (right to buy),sell,37996.0,0.4675,17763.13
+2014-09-19,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,37996.0,50.45,1916898.2000000002
+2014-09-19,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,37996.0,0.4675,17763.13
+2014-09-26,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,buy,30000.0,0.3025,9075.0
+2014-09-26,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,sell,17500.0,56.53,989275.0
+2014-09-26,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,buy,7548.0,9.05,68309.40000000001
+2014-09-26,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,buy,9725.0,2.34,22756.5
+2014-09-26,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,30000.0,62.68,1880400.0
+2014-10-01,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,4500.0,0.4675,2103.75
+2014-10-01,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,buy,1500.0,9.05,13575.000000000002
+2014-10-01,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Stock option (right to buy),sell,4500.0,0.4675,2103.75
+2014-10-01,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,6500.0,60.07,390455.0
+2014-10-01,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,sell,1500.0,60.07,90105.0
+2014-10-01,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,sell,13000.0,60.07,780910.0
+2014-10-01,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,4500.0,60.07,270315.0
+2014-11-03,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Stock option (right to buy),sell,4500.0,0.4675,2103.75
+2014-11-03,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,4500.0,81.71,367695.0
+2014-11-03,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,4500.0,0.4675,2103.75
+2014-11-03,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,sell,13000.0,81.71,1062230.0
+2014-11-03,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,sell,2000.0,81.71,163420.0
+2014-11-03,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,buy,1772.0,9.05,16036.6
+2014-11-03,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,6500.0,81.71,531115.0
+2014-11-20,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,7500.0,0.4675,3506.25
+2014-11-20,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Stock option (right to buy),sell,7500.0,0.4675,3506.25
+2014-12-01,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,6500.0,97.03,630695.0
+2014-12-01,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,4500.0,0.4675,2103.75
+2014-12-01,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,4500.0,97.03,436635.0
+2014-12-01,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Stock option (right to buy),sell,4500.0,0.4675,2103.75
+2014-12-01,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,sell,12000.0,97.03,1164360.0
+2014-12-16,AGIO,"MARAGANORE, JOHN",Director,True,Common stock,buy,1806.0,110.75,200014.5
+2014-12-16,AGIO,"CELGENE, EUROPEAN INVESTMENT CO LLC",10% Owner,False,Common Stock,buy,228645.0,110.75,25322433.75
+2015-01-02,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,4500.0,110.08,495360.0
+2015-01-02,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,sell,12000.0,110.08,1320960.0
+2015-01-02,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,4500.0,0.4675,2103.75
+2015-01-02,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,6500.0,110.08,715520.0
+2015-01-02,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Stock option (right to buy),sell,4500.0,0.4675,2103.75
+2015-02-02,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,3900.0,114.31,445809.0
+2015-02-02,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,6500.0,114.31,743015.0
+2015-02-09,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,sell,15000.0,105.81,1587150.0
+2015-02-09,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,buy,14319.0,23.1,330768.9
+2015-02-11,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,sell,1513.0,120.14,181771.82
+2015-02-11,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,787.0,120.14,94550.18000000001
+2015-02-11,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,buy,1513.0,23.1,34950.3
+2015-02-13,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,684.0,120.31,82292.04000000001
+2015-02-13,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,sell,1316.0,120.31,158327.96
+2015-02-13,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,buy,1316.0,23.1,30399.600000000002
+2015-02-27,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,buy,25000.0,0.3025,7562.5
+2015-02-27,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,270.0,39.35,10624.5
+2015-03-02,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,1300.0,107.05,139165.0
+2015-03-02,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,6500.0,107.05,695825.0
+2015-03-05,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,2600.0,110.16,286416.0
+2015-03-16,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,5500.0,0.4675,2571.25
+2015-03-16,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,5500.0,106.81,587455.0
+2015-03-16,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,sell,7000.0,106.24,743680.0
+2015-03-16,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,buy,3477.0,23.1,80318.70000000001
+2015-03-16,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,sell,10000.0,106.24,1062400.0
+2015-03-16,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,buy,6068.0,31.64,191991.52
+2015-03-26,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,2426.0,90.81,220305.06
+2015-03-26,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,2426.0,90.84,220377.84
+2015-03-27,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,2426.0,96.35,233745.09999999998
+2015-03-27,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,2426.0,96.33,233696.58
+2015-04-01,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,3900.0,92.54,360906.0
+2015-04-08,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,5500.0,97.64,537020.0
+2015-04-13,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,1300.0,100.03,130039.0
+2015-04-13,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,2600.0,100.03,260078.0
+2015-04-15,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,sell,6583.0,99.54,655271.8200000001
+2015-04-23,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,2426.0,103.83,251891.58
+2015-04-23,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,2426.0,103.82,251867.31999999998
+2015-04-24,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,2426.0,106.49,258344.74
+2015-04-24,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,2426.0,106.45,258247.7
+2015-05-01,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,3900.0,93.63,365157.0
+2015-05-07,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,buy,10000.0,0.3025,3025.0
+2015-05-07,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,5500.0,96.32,529760.0
+2015-05-08,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,1300.0,101.32,131716.0
+2015-05-08,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,2600.0,101.32,263432.0
+2015-05-11,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,3107.0,110.01,341801.07
+2015-05-12,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,2093.0,110.03,230292.79
+2015-05-15,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,sell,7417.0,112.89,837305.13
+2015-05-19,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,2426.0,116.66,283017.16
+2015-05-19,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,2426.0,116.69,283089.94
+2015-05-20,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,2426.0,116.6,282871.6
+2015-05-27,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,sell,2171.0,120.05,260628.55
+2015-05-27,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,8929.0,120.05,1071926.45
+2015-05-27,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,buy,2171.0,23.1,50150.100000000006
+2015-06-01,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,buy,5000.0,35.16,175799.99999999997
+2015-06-01,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,6500.0,120.67,784355.0
+2015-06-01,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,5000.0,120.67,603350.0
+2015-06-08,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,5500.0,121.85,670175.0
+2015-06-10,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,buy,10000.0,0.3025,3025.0
+2015-06-11,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,buy,10000.0,0.3025,3025.0
+2015-06-12,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,buy,10000.0,0.3025,3025.0
+2015-06-15,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,sell,7000.0,105.23,736610.0
+2015-06-24,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,2426.0,104.6,253759.59999999998
+2015-06-24,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,2426.0,104.59,253735.34
+2015-06-25,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,2426.0,105.66,256331.16
+2015-06-26,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,7500.0,0.4675,3506.25
+2015-07-15,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,2426.0,114.38,277485.88
+2015-07-15,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,2426.0,114.35,277413.1
+2015-07-16,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,sell,20000.0,114.02,2280400.0
+2015-07-16,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,2426.0,114.17,276976.42
+2015-07-16,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,buy,8264.0,0.3025,2499.86
+2015-07-16,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,2426.0,114.2,277049.2
+2015-07-16,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,buy,11736.0,0.3025,3550.14
+2015-07-17,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,buy,3725.0,9.05,33711.25
+2015-07-17,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,buy,7273.0,2.34,17018.82
+2015-07-17,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,sell,13000.0,113.71,1478230.0
+2015-07-17,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,buy,1093.0,23.1,25248.300000000003
+2015-07-20,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,5500.0,113.87,626285.0
+2015-07-20,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,5500.0,31.64,174020.0
+2015-07-23,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,sell,7000.0,120.45,843150.0
+2015-07-23,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,buy,1319.0,23.1,30468.9
+2015-07-23,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,buy,5681.0,31.64,179746.84
+2015-08-03,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,buy,7299.0,31.64,230940.36000000002
+2015-08-03,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,8000.0,110.6,884800.0
+2015-08-06,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,buy,10000.0,0.3025,3025.0
+2015-08-10,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,5500.0,100.0,550000.0
+2015-08-10,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,5500.0,31.64,174020.0
+2015-08-17,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,2426.0,94.18,228480.68000000002
+2015-08-17,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,sell,20000.0,92.24,1844800.0
+2015-08-17,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,buy,20000.0,0.3025,6050.0
+2015-08-17,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,2426.0,94.21,228553.46
+2015-08-18,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,2426.0,95.69,232143.94
+2015-08-20,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,buy,10000.0,0.3025,3025.0
+2015-09-15,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,buy,17520.0,0.3025,5299.8
+2015-09-15,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,sell,20000.0,91.11,1822200.0
+2015-09-24,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,2426.0,84.42,204802.92
+2015-09-24,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,sell,4856.0,88.89,431649.84
+2015-09-24,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,2426.0,84.43,204827.18000000002
+2015-09-24,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,sell,6000.0,85.97,515820.0
+2015-09-24,AGIO,"GODDARD, GLENN","Senior Vice President, Finance",True,Common stock,buy,856.0,23.1,19773.600000000002
+2015-09-25,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,2426.0,82.07,199101.81999999998
+2015-09-25,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,2426.0,82.09,199150.34
+2015-09-30,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,5500.0,31.64,174020.0
+2015-09-30,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,5500.0,70.44,387420.0
+2015-09-30,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,buy,10000.0,0.3025,3025.0
+2015-10-15,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,sell,20000.0,71.04,1420800.0000000002
+2015-10-15,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,buy,10000.0,0.3025,3025.0
+2015-10-15,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,buy,8843.0,0.3025,2675.0074999999997
+2015-10-22,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,2426.0,61.21,148495.46
+2015-10-22,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,2426.0,61.22,148519.72
+2015-10-23,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,2426.0,61.1,148228.6
+2015-10-23,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,2426.0,61.11,148252.86
+2015-10-27,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,4000.0,80.26,321040.0
+2015-10-27,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,buy,4000.0,31.64,126560.0
+2015-11-02,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,5500.0,77.12,424160.0
+2015-11-02,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,5500.0,31.64,174020.0
+2015-11-16,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,1360.0,59.58,81028.8
+2015-11-16,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,buy,6612.0,2.34,15472.08
+2015-11-16,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,buy,2479.0,0.47,1165.1299999999999
+2015-11-16,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,buy,10909.0,0.47,5127.23
+2015-11-16,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,1213.0,59.38,72027.94
+2015-11-16,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,sell,20000.0,61.51,1230200.0
+2015-11-16,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,1362.0,59.59,81161.58
+2015-11-17,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,3490.0,59.99,209365.1
+2015-11-17,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,3492.0,59.98,209450.16
+2015-11-30,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,5500.0,65.99,362945.0
+2015-11-30,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,5500.0,31.64,174020.0
+2015-12-15,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,sell,20000.0,50.09,1001800.0000000001
+2015-12-28,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,2662.0,63.73,169649.25999999998
+2015-12-28,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,2662.0,63.72,169622.63999999998
+2015-12-29,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,2670.0,66.11,176513.7
+2015-12-29,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,2670.0,66.16,176647.19999999998
+2015-12-31,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,5500.0,31.64,174020.0
+2015-12-31,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,5500.0,65.27,358985.0
+2016-01-04,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,buy,10000.0,0.3025,3025.0
+2016-01-04,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,buy,57024.0,2.34,133436.16
+2016-01-04,AGIO,"HIGGONS, JOHN DUNCAN",Chief Operating Officer,True,Common stock,buy,1975.0,31.64,62489.0
+2016-01-05,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,buy,10000.0,0.3025,3025.0
+2016-01-07,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,buy,20000.0,0.3025,6050.0
+2016-01-07,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,15000.0,0.4675,7012.5
+2016-01-28,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,625.0,44.33,27706.25
+2016-01-28,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,627.0,44.33,27794.91
+2016-01-29,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,625.0,41.52,25950.000000000004
+2016-01-29,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,627.0,41.52,26033.04
+2016-02-03,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,10000.0,0.4675,4675.0
+2016-02-25,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,627.0,36.9,23136.3
+2016-02-25,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,625.0,36.9,23062.5
+2016-02-26,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,625.0,38.89,24306.25
+2016-02-26,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,627.0,38.89,24384.03
+2016-03-29,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,627.0,36.28,22747.56
+2016-03-29,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,625.0,36.28,22675.0
+2016-03-30,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,625.0,38.09,23806.250000000004
+2016-03-30,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,627.0,38.09,23882.430000000004
+2016-04-25,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,627.0,55.0,34485.0
+2016-04-25,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,625.0,55.0,34375.0
+2016-04-26,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,625.0,51.88,32425.0
+2016-04-26,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,627.0,51.88,32528.760000000002
+2016-05-25,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,625.0,50.5,31562.5
+2016-05-25,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,627.0,50.5,31663.5
+2016-05-26,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,625.0,52.88,33050.0
+2016-05-26,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,627.0,52.88,33155.76
+2016-06-08,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,27500.0,65.0,1787500.0
+2016-06-08,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,22306.0,0.4675,10428.055
+2016-06-08,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,5194.0,31.64,164338.16
+2016-06-10,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,15200.0,0.4675,7106.0
+2016-06-27,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,627.0,40.37,25311.989999999998
+2016-06-27,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,625.0,40.37,25231.25
+2016-06-28,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,625.0,43.38,27112.5
+2016-06-28,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,627.0,43.38,27199.260000000002
+2016-07-25,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,627.0,41.85,26239.95
+2016-07-25,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,625.0,41.85,26156.25
+2016-07-26,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,625.0,43.74,27337.5
+2016-07-26,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,627.0,43.74,27424.98
+2016-08-29,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,627.0,37.81,23706.870000000003
+2016-08-29,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,625.0,37.81,23631.25
+2016-08-30,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,625.0,36.81,23006.25
+2016-08-30,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,627.0,36.81,23079.870000000003
+2016-09-20,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,5000.0,50.0,250000.0
+2016-09-27,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,625.0,54.15,33843.75
+2016-09-27,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,627.0,54.15,33952.049999999996
+2016-09-28,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,627.0,54.0,33858.0
+2016-09-28,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,625.0,54.0,33750.0
+2016-10-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,5000.0,55.0,275000.0
+2016-10-26,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,627.0,48.91,30666.569999999996
+2016-10-26,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,625.0,48.91,30568.749999999996
+2016-10-27,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,627.0,48.97,30704.19
+2016-10-27,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,625.0,48.97,30606.25
+2016-11-09,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,2872.0,60.0,172320.0
+2016-11-10,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,2128.0,60.0,127680.0
+2016-11-14,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,14091.0,9.05,127523.55
+2016-11-14,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,6520.0,31.64,206292.80000000002
+2016-11-14,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,5000.0,65.0,325000.0
+2016-11-14,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,6889.0,0.4675,3220.6075
+2016-11-14,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,27500.0,65.0,1787500.0
+2017-02-16,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,buy,6000.0,0.3025,1815.0
+2017-02-16,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,6000.0,50.01,300060.0
+2017-02-21,AGIO,"NELSEN, ROBERT",Director,True,Common Stock,sell,34650.0,50.5576,1751820.84
+2017-02-21,AGIO,"NELSEN, ROBERT",Director,True,Common Stock,sell,1780.0,54.1733,96428.474
+2017-02-22,AGIO,"NELSEN, ROBERT",Director,True,Common Stock,sell,1000.0,50.3455,50345.5
+2017-02-22,AGIO,"NELSEN, ROBERT",Director,True,Common Stock,sell,46938.0,49.9043,2342408.0334
+2017-02-23,AGIO,"NELSEN, ROBERT",Director,True,Common Stock,sell,42596.0,47.727,2032979.292
+2017-02-23,AGIO,"NELSEN, ROBERT",Director,True,Common Stock,sell,8400.0,48.7478,409481.51999999996
+2017-02-27,AGIO,"NELSEN, ROBERT",Director,True,Common Stock,sell,53985.0,48.3621,2610827.9685
+2017-02-27,AGIO,"NELSEN, ROBERT",Director,True,Common Stock,sell,57488.0,50.279,2890439.1520000002
+2017-02-27,AGIO,"NELSEN, ROBERT",Director,True,Common Stock,sell,83750.0,49.1321,4114813.375
+2017-02-28,AGIO,"NELSEN, ROBERT",Director,True,Common Stock,sell,27622.0,49.4678,1366399.5716
+2017-02-28,AGIO,"NELSEN, ROBERT",Director,True,Common Stock,sell,20237.0,50.1762,1015415.7594
+2017-03-01,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,3000.0,50.47,151410.0
+2017-03-03,AGIO,"NELSEN, ROBERT",Director,True,Common Stock,sell,8734.0,51.3369,448376.4846
+2017-03-03,AGIO,"NELSEN, ROBERT",Director,True,Common Stock,sell,31425.0,50.692,1592996.1
+2017-03-03,AGIO,"NELSEN, ROBERT",Director,True,Common Stock,sell,400.0,52.1475,20859.0
+2017-03-06,AGIO,"NELSEN, ROBERT",Director,True,Common Stock,sell,40.0,49.431,1977.2399999999998
+2017-03-20,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,505.0,55.0,27775.0
+2017-03-20,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,5933.0,9.05,53693.65
+2017-03-20,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,5933.0,55.0,326315.0
+2017-03-22,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,509.0,52.31,26625.79
+2017-03-23,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,509.0,53.91,27440.19
+2017-04-03,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,2146.0,9.05,19421.300000000003
+2017-04-03,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,2146.0,58.03,124532.38
+2017-04-03,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,3000.0,58.62,175860.0
+2017-04-17,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,1527.0,55.27,84397.29000000001
+2017-04-17,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,509.0,55.13,28061.170000000002
+2017-04-18,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,509.0,50.92,25918.280000000002
+2017-04-24,AGIO,"CELGENE, EUROPEAN INVESTMENT CO LLC",10% Owner,False,Common Stock,buy,624575.0,49.5,30916462.5
+2017-05-01,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,3000.0,50.06,150180.0
+2017-05-24,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,509.0,47.27,24060.43
+2017-05-25,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,509.0,46.92,23882.280000000002
+2017-06-06,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,1100.0,50.02,55022.0
+2017-06-07,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,1900.0,50.02,95038.0
+2017-06-13,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,500.0,50.64,25320.0
+2017-06-14,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,500.0,51.09,25545.0
+2017-06-21,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,4292.0,55.0,236060.0
+2017-06-21,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,3000.0,0.4675,1402.5
+2017-06-21,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,4292.0,9.05,38842.600000000006
+2017-06-23,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,3000.0,0.4675,1402.5
+2017-07-03,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,3000.0,51.18,153540.0
+2017-07-07,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,2146.0,9.05,19421.300000000003
+2017-07-07,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,2146.0,55.0,118030.0
+2017-07-19,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,3000.0,56.15,168450.0
+2017-07-19,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,500.0,56.11,28055.0
+2017-07-20,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,500.0,57.13,28565.0
+2017-07-20,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,500.0,57.12,28560.0
+2017-08-01,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,2146.0,55.05,118137.29999999999
+2017-08-01,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,2146.0,9.05,19421.300000000003
+2017-08-01,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,3000.0,55.12,165360.0
+2017-08-02,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,24000.0,60.55,1453200.0
+2017-08-02,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,21000.0,60.06,1261260.0
+2017-08-02,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,buy,24000.0,0.3025,7260.0
+2017-08-22,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,500.0,56.63,28315.0
+2017-08-22,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,500.0,56.61,28305.0
+2017-08-23,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,500.0,57.07,28535.0
+2017-08-23,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,500.0,57.09,28545.0
+2017-09-01,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,6000.0,62.2,373200.0
+2017-09-01,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,buy,6000.0,0.3025,1815.0
+2017-09-01,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,2146.0,9.05,19421.300000000003
+2017-09-01,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,2146.0,61.99,133030.54
+2017-09-11,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,15000.0,65.0,975000.0
+2017-09-11,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,buy,6000.0,35.16,210959.99999999997
+2017-09-11,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,6000.0,65.0,390000.0
+2017-09-13,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,1000.0,65.47,65470.0
+2017-09-14,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,1000.0,65.71,65710.0
+2017-09-18,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,35000.0,67.12,2349200.0
+2017-09-18,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,buy,35000.0,0.3025,10587.5
+2017-10-02,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,1191.0,67.23,80070.93000000001
+2017-10-02,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,buy,6000.0,0.3025,1815.0
+2017-10-02,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,1191.0,9.05,10778.550000000001
+2017-10-02,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,955.0,31.64,30216.2
+2017-10-02,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,955.0,67.23,64204.65
+2017-10-02,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,6000.0,66.76,400560.00000000006
+2017-10-04,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,80000.0,70.14,5611200.0
+2017-10-04,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,10470.0,70.0,732900.0
+2017-10-04,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,buy,80000.0,0.3025,24200.0
+2017-10-16,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,1000.0,71.09,71090.0
+2017-10-17,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,1000.0,71.1,71100.0
+2017-11-01,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,buy,6000.0,0.3025,1815.0
+2017-11-01,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,942.0,64.64,60890.88
+2017-11-01,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,4260.0,63.32,269743.2
+2017-11-01,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,200.0,63.62,12724.0
+2017-11-01,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,100.0,65.45,6545.0
+2017-11-01,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,200.0,66.75,13350.0
+2017-11-01,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,900.0,63.09,56781.0
+2017-11-01,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,2146.0,31.64,67899.44
+2017-11-01,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,946.0,61.81,58472.26
+2017-11-01,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,598.0,65.42,39121.16
+2017-11-13,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,1000.0,62.07,62070.0
+2017-11-14,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,309.0,60.46,18682.14
+2017-11-14,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,691.0,59.36,41017.76
+2017-12-01,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,400.0,62.08,24832.0
+2017-12-01,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,buy,6000.0,0.3025,1815.0
+2017-12-01,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,5600.0,61.51,344456.0
+2017-12-01,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,600.0,59.89,35934.0
+2017-12-01,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,846.0,60.63,51292.98
+2017-12-01,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,700.0,61.76,43232.0
+2017-12-01,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,2146.0,31.64,67899.44
+2017-12-06,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,31818.0,2.3375,74374.575
+2017-12-06,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,253.0,58.95,14914.35
+2017-12-06,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,204.0,60.01,12242.039999999999
+2017-12-06,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,14875.0,0.4675,6954.0625
+2017-12-06,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,542.0,57.9,31381.8
+2017-12-06,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,543.0,57.9,31439.7
+2017-12-06,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,254.0,58.95,14973.300000000001
+2017-12-07,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,631.0,60.45,38143.950000000004
+2017-12-07,AGIO,"CANTLEY, LEWIS CLAYTON JR.",Director,True,Common stock,sell,288.0,59.68,17187.84
+2018-01-10,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,3000.0,0.4675,1402.5
+2018-01-10,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,3000.0,65.0,195000.0
+2018-01-12,AGIO,"ALENSON, CARMAN",Principal Accounting Officer,True,Common stock,sell,2150.0,75.0,161250.0
+2018-01-12,AGIO,"ALENSON, CARMAN",Principal Accounting Officer,True,Common stock,buy,2150.0,52.29,112423.5
+2018-01-16,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,22304.0,73.02,1628638.0799999998
+2018-01-16,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,10914.0,74.11,808836.54
+2018-01-16,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,6597.0,74.8,493455.6
+2018-01-16,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,13185.0,71.77,946287.45
+2018-01-16,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,buy,53000.0,0.3025,16032.5
+2018-01-23,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,32875.0,80.01,2630328.75
+2018-01-23,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,buy,32875.0,0.3025,9944.6875
+2018-01-23,AGIO,"HOERTER, STEVEN L.",Chief Commercial Officer,True,Common stock,buy,25000.0,39.76,994000.0
+2018-01-23,AGIO,"CELGENE, CORP /DE/",10% Owner,False,Common Stock,buy,851154.0,67.0,57027318.0
+2018-01-23,AGIO,"HOERTER, STEVEN L.",Chief Commercial Officer,True,Common stock,sell,25000.0,74.83,1870750.0
+2018-01-24,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,13533.0,80.01,1082775.33
+2018-01-24,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,buy,13533.0,0.3025,4093.7325
+2018-01-24,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,20.0,80.01,1600.2
+2018-01-26,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,buy,23572.0,0.3025,7130.53
+2018-01-26,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,9237.0,80.35,742192.95
+2018-01-26,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,2966.0,82.22,243864.52
+2018-01-26,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,11369.0,81.4,925436.6000000001
+2018-02-01,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,buy,2000.0,35.16,70320.0
+2018-02-01,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,8540.0,78.5,670390.0
+2018-02-01,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,685.0,79.23,54272.55
+2018-02-01,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,1315.0,78.5,103227.5
+2018-02-01,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,4460.0,79.23,353365.80000000005
+2018-02-01,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,buy,13000.0,0.3025,3932.5
+2018-02-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,2936.0,9.05,26570.800000000003
+2018-02-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,701.0,76.76,53808.76
+2018-02-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,1100.0,75.7,83270.0
+2018-02-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,799.0,74.89,59837.11
+2018-02-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,400.0,78.03,31212.0
+2018-02-16,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,buy,2000.0,35.16,70320.0
+2018-02-16,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,1500.0,77.51,116265.00000000001
+2018-02-16,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,500.0,78.08,39040.0
+2018-02-22,AGIO,"HOERTER, STEVEN L.",Chief Commercial Officer,True,Common stock,sell,2050.0,78.63,161191.5
+2018-02-22,AGIO,"HOERTER, STEVEN L.",Chief Commercial Officer,True,Common stock,buy,2050.0,39.76,81508.0
+2018-02-26,AGIO,"FOSTER-CHEEK, KAYE I",Director,True,Common stock,buy,2200.0,47.33,104126.0
+2018-03-01,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,buy,13000.0,0.3025,3932.5
+2018-03-01,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,2915.0,80.38,234307.69999999998
+2018-03-01,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,10085.0,81.3,819910.5
+2018-03-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,1100.0,83.21,91531.0
+2018-03-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,3000.0,9.05,27150.000000000004
+2018-03-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,400.0,82.04,32816.0
+2018-03-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,400.0,80.93,32372.000000000004
+2018-03-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,1100.0,84.1,92510.0
+2018-03-14,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,300.0,82.9,24870.0
+2018-03-14,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,buy,2000.0,35.16,70320.0
+2018-03-14,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,1700.0,82.23,139791.0
+2018-03-16,AGIO,"SCADDEN, DAVID",Director,True,Common stock,buy,200.0,83.44,16688.0
+2018-03-19,AGIO,"FOSTER-CHEEK, KAYE I",Director,True,Common stock,buy,6800.0,47.33,321844.0
+2018-03-19,AGIO,"FOSTER-CHEEK, KAYE I",Director,True,Common stock,sell,6800.0,81.97,557396.0
+2018-03-22,AGIO,"HOERTER, STEVEN L.",Chief Commercial Officer,True,Common stock,sell,2050.0,84.65,173532.5
+2018-03-22,AGIO,"HOERTER, STEVEN L.",Chief Commercial Officer,True,Common stock,buy,2050.0,39.76,81508.0
+2018-03-28,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,4100.0,2.34,9594.0
+2018-04-02,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,2600.0,76.4,198640.00000000003
+2018-04-02,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,1557.0,75.54,117615.78000000001
+2018-04-02,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,buy,13000.0,0.3025,3932.5
+2018-04-02,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,2113.0,79.49,167962.37
+2018-04-02,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,3390.0,78.59,266420.10000000003
+2018-04-02,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,3340.0,77.76,259718.40000000002
+2018-04-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,500.0,77.17,38585.0
+2018-04-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,3000.0,9.05,27150.000000000004
+2018-04-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,1300.0,73.9,96070.00000000001
+2018-04-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,800.0,76.17,60936.0
+2018-04-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,400.0,75.04,30016.000000000004
+2018-04-12,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,700.0,85.68,59976.00000000001
+2018-04-12,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,1300.0,84.78,110214.0
+2018-04-12,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,buy,2000.0,35.16,70320.0
+2018-04-23,AGIO,"HOERTER, STEVEN L.",Chief Commercial Officer,True,Common stock,sell,2050.0,85.95,176197.5
+2018-04-23,AGIO,"HOERTER, STEVEN L.",Chief Commercial Officer,True,Common stock,buy,2050.0,39.76,81508.0
+2018-05-01,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,2814.0,83.56,235137.84
+2018-05-01,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,100.0,84.35,8435.0
+2018-05-01,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,buy,13000.0,0.3025,3932.5
+2018-05-01,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,10086.0,82.88,835927.6799999999
+2018-05-07,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,3000.0,81.81,245430.0
+2018-05-07,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,3000.0,9.05,27150.000000000004
+2018-05-08,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,2000.0,81.38,162760.0
+2018-05-08,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,buy,2000.0,35.16,70320.0
+2018-05-11,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,1160.0,85.14,98762.4
+2018-05-11,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,840.0,84.81,71240.40000000001
+2018-05-11,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,buy,2000.0,35.16,70320.0
+2018-05-23,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,39774.0,90.11,3584035.14
+2018-05-23,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,buy,49374.0,0.3025,14935.635
+2018-05-23,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,299.0,92.03,27516.97
+2018-05-23,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,9301.0,91.6,851971.6
+2018-05-23,AGIO,"HOERTER, STEVEN L.",Chief Commercial Officer,True,Common stock,sell,2050.0,85.76,175808.0
+2018-05-23,AGIO,"HOERTER, STEVEN L.",Chief Commercial Officer,True,Common stock,buy,2050.0,39.76,81508.0
+2018-05-23,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,15177.0,90.0,1365930.0
+2018-05-23,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,15177.0,31.64,480200.28
+2018-05-30,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,buy,16193.0,0.3025,4898.3825
+2018-05-30,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,buy,23471.0,0.4675,10972.692500000001
+2018-05-30,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,buy,5962.0,0.3025,1803.5049999999999
+2018-05-30,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,45626.0,90.07,4109533.82
+2018-06-01,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,1510.0,94.37,142498.7
+2018-06-01,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,3190.0,96.4,307516.0
+2018-06-01,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,100.0,96.91,9691.0
+2018-06-01,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,buy,12892.0,0.4675,6027.01
+2018-06-01,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,sell,8200.0,95.11,779902.0
+2018-06-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,1259.0,93.27,117426.93
+2018-06-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,802.0,92.45,74144.90000000001
+2018-06-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,3000.0,9.05,27150.000000000004
+2018-06-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,939.0,94.28,88528.92
+2018-06-12,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,1800.0,92.84,167112.0
+2018-06-12,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,200.0,93.37,18674.0
+2018-06-12,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,buy,2000.0,35.16,70320.0
+2018-06-14,AGIO,"FOSTER-CHEEK, KAYE I",Director,True,Common stock,buy,9000.0,50.73,456570.0
+2018-06-14,AGIO,"FOSTER-CHEEK, KAYE I",Director,True,Common stock,sell,839.0,94.3,79117.7
+2018-06-14,AGIO,"FOSTER-CHEEK, KAYE I",Director,True,Common stock,sell,5980.0,93.78,560804.4
+2018-06-14,AGIO,"FOSTER-CHEEK, KAYE I",Director,True,Common stock,sell,2181.0,92.62,202004.22
+2018-06-22,AGIO,"HOERTER, STEVEN L.",Chief Commercial Officer,True,Common stock,sell,2050.0,97.58,200039.0
+2018-06-22,AGIO,"HOERTER, STEVEN L.",Chief Commercial Officer,True,Common stock,buy,2050.0,39.76,81508.0
+2018-07-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,3000.0,9.05,27150.000000000004
+2018-07-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,300.0,84.32,25295.999999999996
+2018-07-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,2700.0,83.41,225207.0
+2018-07-09,AGIO,"ALENSON, CARMAN",Principal Accounting Officer,True,Common stock,buy,272.0,52.29,14222.88
+2018-07-09,AGIO,"ALENSON, CARMAN",Principal Accounting Officer,True,Common stock,sell,272.0,84.94,23103.68
+2018-07-10,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,buy,2000.0,35.16,70320.0
+2018-07-10,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,1200.0,86.42,103704.0
+2018-07-10,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,800.0,87.26,69808.0
+2018-07-25,AGIO,"HOERTER, STEVEN L.",Chief Commercial Officer,True,Common stock,buy,2050.0,39.76,81508.0
+2018-07-25,AGIO,"HOERTER, STEVEN L.",Chief Commercial Officer,True,Common stock,sell,2050.0,84.58,173389.0
+2018-08-06,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,3000.0,9.05,27150.000000000004
+2018-08-06,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,300.0,78.32,23495.999999999996
+2018-08-06,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,2100.0,80.15,168315.0
+2018-08-06,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,600.0,80.87,48522.0
+2018-08-24,AGIO,"HOERTER, STEVEN L.",Chief Commercial Officer,True,Common stock,buy,2050.0,39.76,81508.0
+2018-08-24,AGIO,"HOERTER, STEVEN L.",Chief Commercial Officer,True,Common stock,sell,2050.0,74.92,153586.0
+2018-08-29,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,300.0,80.0,24000.0
+2018-08-29,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,buy,300.0,35.16,10547.999999999998
+2018-08-30,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,buy,1700.0,35.16,59771.99999999999
+2018-08-30,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,1700.0,80.03,136051.0
+2018-09-05,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,buy,72619.0,2.34,169928.46
+2018-09-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,3000.0,9.05,27150.000000000004
+2018-09-05,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,buy,2500.0,31.64,79100.0
+2018-09-05,AGIO,"ALENSON, CARMAN",Principal Accounting Officer,True,Common stock,buy,312.0,52.29,16314.48
+2018-09-05,AGIO,"ALENSON, CARMAN",Principal Accounting Officer,True,Common stock,sell,312.0,83.0,25896.0
+2018-09-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,640.0,82.52,52812.799999999996
+2018-09-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,2260.0,83.17,187964.2
+2018-09-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,100.0,84.38,8438.0
+2018-09-10,AGIO,"SCHENKEIN, DAVID P","Director, Chief Executive Officer",True,Common stock,buy,8730.0,31.64,276217.2
+2018-09-11,AGIO,"MARAGANORE, JOHN",Director,True,Common stock,sell,11155.0,72.52,808960.6
+2018-09-11,AGIO,"MARAGANORE, JOHN",Director,True,Common stock,sell,2400.0,73.82,177167.99999999997
+2018-09-12,AGIO,"MARAGANORE, JOHN",Director,True,Common stock,sell,14162.0,71.74,1015981.8799999999
+2018-09-28,AGIO,"ALENSON, CARMAN",Principal Accounting Officer,True,Common stock,sell,152.0,76.45,11620.4
+2018-10-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,3000.0,9.05,27150.000000000004
+2018-10-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common Stock,sell,21.0,71.77,1507.1699999999998
+2018-10-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,979.0,69.47,68011.13
+2018-10-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,900.0,68.56,61704.0
+2018-10-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,1100.0,71.05,78155.0
+2018-11-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,700.0,70.23,49161.0
+2018-11-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,2200.0,69.44,152768.0
+2018-11-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,3000.0,9.05,27150.000000000004
+2018-11-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,100.0,71.42,7142.0
+2018-12-21,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,20500.0,2.3375,47918.75
+2019-01-22,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,1960.0,52.82,103527.2
+2019-01-22,AGIO,"HIRSCH, ANDREW",Chief Financial Officer,True,Common stock,sell,4555.0,52.82,240595.1
+2019-01-22,AGIO,"HOERTER, STEVEN L.",Chief Commercial Officer,True,Common stock,sell,5769.0,52.82,304718.58
+2019-02-19,AGIO,"ALENSON, CARMAN",Principal Accounting Officer,True,Common stock,sell,278.0,58.03,16132.34
+2019-02-19,AGIO,"HIRSCH, ANDREW",Chief Financial Officer,True,Common stock,sell,821.0,58.03,47642.63
+2019-02-19,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,876.0,58.03,50834.28
+2019-02-19,AGIO,"HOERTER, STEVEN L.",Chief Commercial Officer,True,Common stock,sell,1040.0,58.03,60351.200000000004
+2019-02-19,AGIO,"SCHENKEIN, DAVID P",Director,True,Common stock,sell,2471.0,58.03,143392.13
+2019-02-19,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,818.0,58.03,47468.54
+2019-02-21,AGIO,"ALENSON, CARMAN",Principal Accounting Officer,True,Common stock,sell,1016.0,56.33,57231.28
+2019-02-27,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,4154.0,9.05,37593.700000000004
+2019-02-27,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,3080.0,31.64,97451.2
+2019-02-27,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,9000.0,65.0,585000.0
+2019-03-01,AGIO,"HOERTER, STEVEN L.",Chief Commercial Officer,True,Common stock,sell,5000.0,66.01,330050.0
+2019-03-01,AGIO,"HOERTER, STEVEN L.",Chief Commercial Officer,True,Common stock,buy,5000.0,39.76,198800.0
+2019-03-04,AGIO,"HOERTER, STEVEN L.",Chief Commercial Officer,True,Common stock,sell,5000.0,68.0,340000.0
+2019-03-04,AGIO,"HOERTER, STEVEN L.",Chief Commercial Officer,True,Common stock,buy,5000.0,39.76,198800.0
+2019-03-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,200.0,68.22,13644.0
+2019-03-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,428.0,31.64,13541.92
+2019-03-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,2572.0,39.76,102262.72
+2019-03-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,200.0,66.45,13290.0
+2019-03-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,2600.0,67.73,176098.0
+2019-03-15,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,8700.0,64.09,557583.0
+2019-03-15,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,1300.0,64.64,84032.0
+2019-03-15,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,buy,10000.0,35.16,351599.99999999994
+2019-04-01,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,100.0,68.72,6872.0
+2019-04-01,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,1500.0,68.09,102135.0
+2019-04-01,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,2546.0,66.85,170200.09999999998
+2019-04-01,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,5854.0,66.03,386539.62
+2019-04-01,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,buy,10000.0,35.16,351599.99999999994
+2019-04-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,3000.0,39.76,119280.0
+2019-04-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,599.0,68.12,40803.880000000005
+2019-04-05,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,sell,2401.0,67.61,162331.61
+2019-06-11,AGIO,"BILLER, SCOTT",Chief Scientific Officer,True,Common stock,buy,7218.0,2.3375,16872.075
+2019-11-12,AGIO,"CELGENE, CORP /DE/",10% Owner,False,Common Stock,buy,403225.0,31.0,12499975.0
+2019-11-13,AGIO,"SCHENKEIN, DAVID P",Director,True,Common stock,buy,8064.0,31.0,249984.0
+2019-11-13,AGIO,"FOUSE, JACQUALYN A","Director, Chief Executive Officer",True,Common stock,buy,40322.0,31.0,1249982.0
+2019-12-26,AGIO,"ALENSON, CARMAN",Principal Accounting Officer,True,Common stock,sell,2950.0,50.09,147765.5
+2020-02-04,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,buy,8526.0,35.16,299774.16
+2020-02-04,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,14191.0,50.0291,709962.9581
+2020-02-04,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,35447.0,50.1037,1776025.8539000002
+2020-02-05,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,buy,35447.0,35.16,1246316.5199999998
+2020-02-11,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,buy,621.0,35.16,21834.359999999997
+2020-02-11,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,621.0,50.0213,31063.2273
+2020-02-13,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,buy,7100.0,35.16,249635.99999999997
+2020-02-13,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,7100.0,50.1566,356111.86
+2020-02-18,AGIO,"SCHENKEIN, DAVID P",Director,True,Common stock,sell,2534.0,52.01,131793.34
+2020-02-18,AGIO,"ALENSON, CARMAN",Principal Accounting Officer,True,Common stock,sell,1163.0,52.01,60487.63
+2020-02-18,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,819.0,52.01,42596.189999999995
+2020-02-18,AGIO,"HIRSCH, ANDREW",Chief Financial Officer,True,Common stock,sell,886.0,52.01,46080.86
+2020-02-20,AGIO,"ALENSON, CARMAN",Principal Accounting Officer,True,Common stock,sell,2427.0,53.37,129528.98999999999
+2020-02-24,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,1596.0,48.66,77661.36
+2020-02-24,AGIO,"ALENSON, CARMAN",Principal Accounting Officer,True,Common stock,sell,219.0,48.66,10656.539999999999
+2020-02-24,AGIO,"HIRSCH, ANDREW",Chief Financial Officer,True,Common stock,sell,1056.0,48.66,51384.96
+2020-02-24,AGIO,"SCHENKEIN, DAVID P",Director,True,Common stock,sell,880.0,48.66,42820.799999999996
+2020-02-26,AGIO,"ALENSON, CARMAN",Principal Accounting Officer,True,Common stock,sell,472.0,47.12,22240.64
+2020-03-02,AGIO,"ALENSON, CARMAN",Principal Accounting Officer,True,Common stock,sell,345.0,47.3,16318.499999999998
+2020-04-14,AGIO,"CAR, BRUCE",Chief Scientific Officer,True,Common stock,sell,2027.0,40.64,82377.28
+2020-04-14,AGIO,"BILLER, JONATHAN",Chief Legal Officer,True,Common stock,sell,2529.0,40.64,102778.56
+2020-04-14,AGIO,"HIRSCH, ANDREW",Chief Financial Officer,True,Common stock,sell,1599.0,40.64,64983.36
+2020-04-14,AGIO,"FOUSE, JACQUALYN A","Director, Chief Executive Officer",True,Common stock,sell,3673.0,40.64,149270.72
+2020-04-14,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,2368.0,40.64,96235.52
+2020-04-22,AGIO,"HIRSCH, ANDREW",Chief Financial Officer,True,Common stock,sell,1927.0,45.91,88468.56999999999
+2020-05-20,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,3583.0,50.014,179200.162
+2020-05-20,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,buy,3583.0,35.16,125978.27999999998
+2020-09-02,AGIO,"ALENSON, CARMAN",Principal Accounting Officer,True,Common stock,sell,250.0,39.93,9982.5
+2020-12-03,AGIO,"BILLER, JONATHAN",Chief Financial Officer,True,Common stock,sell,1707.0,45.87,78300.09
+2021-01-06,AGIO,"CAR, BRUCE",Chief Scientific Officer,True,Common stock,sell,1191.0,44.0859,52506.3069
+2021-03-01,AGIO,"MILES, DARRIN",Chief Commercial Officer,True,Common stock,sell,2200.0,47.99,105578.0
+2021-03-05,AGIO,"MILES, DARRIN",Chief Commercial Officer,True,Common stock,sell,500.0,48.58,24290.0
+2021-04-15,AGIO,"ALENSON, CARMAN",Principal Accounting Officer,True,Common stock,sell,991.0,54.0,53514.0
+2021-04-16,AGIO,"ALENSON, CARMAN",Principal Accounting Officer,True,Common stock,sell,1118.0,55.89,62485.020000000004
+2021-04-19,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,buy,3210.0,35.16,112863.59999999999
+2021-04-19,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,3210.0,55.1572,177054.61200000002
+2021-04-20,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,buy,1888.0,39.76,75066.87999999999
+2021-04-20,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,buy,12513.0,35.16,439957.07999999996
+2021-04-20,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,14401.0,55.106,793581.506
+2021-05-14,AGIO,"MILES, DARRIN",Chief Commercial Officer,True,Common stock,sell,3462.0,55.41,191829.41999999998
+2021-06-07,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,4268.0,60.0357,256232.3676
+2021-06-07,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,buy,4268.0,39.76,169695.68
+2021-06-08,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,6675.0,60.0657,400938.5475
+2021-06-08,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,buy,6675.0,39.76,265398.0
+2021-06-09,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,7149.0,60.1646,430116.7254
+2021-06-09,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,buy,7149.0,39.76,284244.24
+2021-06-10,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,buy,20853.0,39.76,829115.2799999999
+2021-06-10,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,20853.0,60.0603,1252437.4359
+2021-06-17,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,buy,2502.0,39.76,99479.51999999999
+2021-06-17,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,2502.0,60.0198,150169.5396
+2021-06-18,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,buy,1885.0,39.76,74947.59999999999
+2021-06-18,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,buy,46608.0,50.4,2349043.1999999997
+2021-06-18,AGIO,"BOWDEN, CHRISTOPHER",Chief Medical Officer,True,Common stock,sell,48493.0,60.1087,2914851.1891
+2021-06-21,AGIO,"ALENSON, CARMAN",Principal Accounting Officer,True,Common stock,sell,1777.0,61.61,109480.97
+2021-06-21,AGIO,"ALENSON, CARMAN",Principal Accounting Officer,True,Common stock,buy,1777.0,51.51,91533.26999999999
+2021-12-02,AGIO,"GHEUENS, SARAH",Chief Medical Officer,True,Common stock,sell,248.0,35.0,8680.0
+2021-12-03,AGIO,"BILLER, JONATHAN",Chief Financial Officer,True,Common stock,sell,1823.0,35.8781,65405.776300000005
+2022-01-06,AGIO,"CAR, BRUCE",Chief Scientific Officer,True,Common stock,sell,1205.0,32.5801,39259.0205
+2022-02-10,AGIO,"BILLER, JONATHAN",Chief Financial Officer,True,Common stock,sell,1349.0,31.425,42392.325000000004
+2022-02-10,AGIO,"WASHBURN, THEODORE JAMES JR.",Principal Accounting Officer,True,Common stock,sell,273.0,31.425,8579.025
+2022-02-10,AGIO,"GHEUENS, SARAH",Chief Medical Officer,True,Common stock,sell,758.0,31.425,23820.15
+2022-02-10,AGIO,"PODDAR, RICHA",Chief Commercial Officer,True,Common stock,sell,725.0,31.425,22783.125
+2022-02-10,AGIO,"CAR, BRUCE",Chief Scientific Officer,True,Common stock,sell,1073.0,31.425,33719.025
+2022-02-10,AGIO,"BURNS, JAMES WILLIAM",Chief Legal Officer,True,Common stock,sell,643.0,31.425,20206.275
+2022-02-14,AGIO,"BURNS, JAMES WILLIAM",Chief Legal Officer,True,Common stock,sell,2155.0,30.5,65727.5
+2022-02-14,AGIO,"PODDAR, RICHA",Chief Commercial Officer,True,Common stock,sell,590.0,30.5,17995.0
+2022-02-14,AGIO,"WASHBURN, THEODORE JAMES JR.",Principal Accounting Officer,True,Common stock,sell,127.0,30.5,3873.5
+2022-02-14,AGIO,"FOUSE, JACQUALYN A","Director, Chief Executive Officer",True,Common stock,sell,3505.0,30.5,106902.5
+2022-02-14,AGIO,"WASHBURN, THEODORE JAMES JR.",Principal Accounting Officer,True,Common stock,sell,504.0,31.25,15750.0
+2022-02-16,AGIO,"WASHBURN, THEODORE JAMES JR.",Principal Accounting Officer,True,Common stock,sell,233.0,30.81,7178.73
+2022-02-22,AGIO,"CAR, BRUCE",Chief Scientific Officer,True,Common stock,sell,2041.0,29.08,59352.28
+2022-02-22,AGIO,"BILLER, JONATHAN",Chief Financial Officer,True,Common stock,sell,2688.0,29.08,78167.04
+2022-02-22,AGIO,"PODDAR, RICHA",Chief Commercial Officer,True,Common stock,sell,742.0,29.08,21577.359999999997
+2022-02-22,AGIO,"SCHENKEIN, DAVID P",Director,True,Common stock,sell,758.0,29.08,22042.64
+2022-02-22,AGIO,"FOUSE, JACQUALYN A","Director, Chief Executive Officer",True,Common stock,sell,3674.0,29.08,106839.92
+2022-02-22,AGIO,"GHEUENS, SARAH",Chief Medical Officer,True,Common stock,sell,955.0,29.08,27771.399999999998
+2022-02-22,AGIO,"WASHBURN, THEODORE JAMES JR.",Principal Accounting Officer,True,Common stock,sell,59.0,29.08,1715.7199999999998
+2022-02-22,AGIO,"BURNS, JAMES WILLIAM",Chief Legal Officer,True,Common stock,sell,215.0,29.08,6252.2
+2022-02-25,AGIO,"WASHBURN, THEODORE JAMES JR.",Principal Accounting Officer,True,Common stock,sell,108.0,30.0,3240.0
+2022-10-17,AGIO,"PODDAR, RICHA",Chief Commercial Officer,True,Common stock,sell,1485.0,27.48,40807.8
+2022-12-06,AGIO,"GHEUENS, SARAH",Chief Medical Officer,True,Common stock,sell,248.0,28.83,7149.839999999999
+2022-12-28,AGIO,"GHEUENS, SARAH",Chief Medical Officer,True,Common stock,sell,2783.0,28.48,79259.84
+2022-12-28,AGIO,"BURNS, JAMES WILLIAM",Chief Legal Officer,True,Common stock,sell,2597.0,28.48,73962.56
+2023-01-17,AGIO,"SCHENKEIN, DAVID P",Director,True,Common stock,sell,18966.0,28.82,546600.12
+2023-01-17,AGIO,"SCHENKEIN, DAVID P",Director,True,Common stock,sell,1034.0,29.49,30492.66
+2023-01-17,AGIO,"SCHENKEIN, DAVID P",Director,True,Common stock,buy,20000.0,9.05,181000.0
+2023-01-30,AGIO,"SCHENKEIN, DAVID P",Director,True,Common stock,sell,16700.0,29.22,487974.0
+2023-01-30,AGIO,"SCHENKEIN, DAVID P",Director,True,Common stock,sell,3300.0,29.88,98604.0
+2023-01-30,AGIO,"SCHENKEIN, DAVID P",Director,True,Common stock,buy,20000.0,9.05,181000.0
+2023-02-13,AGIO,"SCHENKEIN, DAVID P",Director,True,Common stock,buy,20000.0,9.05,181000.0
+2023-02-13,AGIO,"SCHENKEIN, DAVID P",Director,True,Common stock,sell,20000.0,28.62,572400.0
+2023-02-14,AGIO,"WASHBURN, THEODORE JAMES JR.",Principal Accounting Officer,True,Common stock,sell,127.0,28.91,3671.57
+2023-02-14,AGIO,"WASHBURN, THEODORE JAMES JR.",Principal Accounting Officer,True,Common stock,sell,504.0,28.59,14409.36
+2023-02-14,AGIO,"WASHBURN, THEODORE JAMES JR.",Principal Accounting Officer,True,Common stock,sell,273.0,28.44,7764.120000000001
+2023-02-14,AGIO,"BURNS, JAMES WILLIAM",Chief Legal Officer,True,Common stock,sell,643.0,28.44,18286.920000000002
+2023-02-14,AGIO,"GHEUENS, SARAH",Chief Medical Officer,True,Common stock,sell,758.0,28.44,21557.52
+2023-02-16,AGIO,"FOUSE, JACQUALYN A",Director,True,Common stock,sell,3648.0,28.91,105463.68000000001
+2023-02-16,AGIO,"WASHBURN, THEODORE JAMES JR.",Principal Accounting Officer,True,Common stock,sell,233.0,27.21,6339.93
+2023-02-16,AGIO,"BURNS, JAMES WILLIAM",Chief Legal Officer,True,Common stock,sell,609.0,28.91,17606.19
+2023-02-27,AGIO,"SCHENKEIN, DAVID P",Director,True,Common stock,sell,20000.0,25.37,507400.0
+2023-02-27,AGIO,"SCHENKEIN, DAVID P",Director,True,Common stock,buy,20000.0,9.05,181000.0
+2023-03-01,AGIO,"WASHBURN, THEODORE JAMES JR.",Principal Accounting Officer,True,Common stock,sell,273.0,25.31,6909.629999999999
+2023-03-03,AGIO,"WASHBURN, THEODORE JAMES JR.",Principal Accounting Officer,True,Common stock,sell,504.0,24.29,12242.16
+2023-03-03,AGIO,"GHEUENS, SARAH",Chief Medical Officer,True,Common stock,sell,1134.0,25.02,28372.68
+2023-03-03,AGIO,"BURNS, JAMES WILLIAM",Chief Legal Officer,True,Common stock,sell,1129.0,25.02,28247.579999999998
+2023-03-13,AGIO,"SCHENKEIN, DAVID P",Director,True,Common stock,sell,1667.0,22.72,37874.24
+2023-03-13,AGIO,"SCHENKEIN, DAVID P",Director,True,Common stock,buy,20000.0,9.05,181000.0
+2023-03-13,AGIO,"SCHENKEIN, DAVID P",Director,True,Common stock,sell,18333.0,22.47,411942.50999999995
+2023-03-27,AGIO,"SCHENKEIN, DAVID P",Director,True,Common stock,sell,20000.0,22.15,443000.0
+2023-03-27,AGIO,"SCHENKEIN, DAVID P",Director,True,Common stock,buy,20000.0,9.05,181000.0
+2023-04-03,AGIO,"SCHENKEIN, DAVID P",Director,True,Common stock,sell,16363.0,22.85,373894.55000000005
+2023-04-03,AGIO,"SCHENKEIN, DAVID P",Director,True,Common stock,buy,16363.0,9.05,148085.15000000002
+2023-04-12,AGIO,"FOUSE, JACQUALYN A",Director,True,Common stock,sell,4731.0,21.35,101006.85
+2023-06-30,AGIO,"JONES, CECILIA",Chief Financial Officer,True,Common stock,sell,1597.0,28.36,45290.92
+2023-06-30,AGIO,"BURNS, JAMES WILLIAM",Chief Legal Officer,True,Common stock,sell,1707.0,28.36,48410.52
+2023-06-30,AGIO,"MILANOVA, TSVETA",Chief Commercial Officer,True,Common stock,sell,1618.0,28.36,45886.479999999996
+2023-06-30,AGIO,"FOUSE, JACQUALYN A",Director,True,Common stock,sell,10718.0,28.36,303962.48
+2023-06-30,AGIO,"GOFF, BRIAN","Director, Chief Executive Officer",True,Common stock,sell,11449.0,28.36,324693.64
+2023-06-30,AGIO,"GHEUENS, SARAH",Chief Medical Officer,True,Common stock,sell,1707.0,28.36,48410.52
+2023-08-01,AGIO,"WASHBURN, THEODORE JAMES JR.",Principal Accounting Officer,True,Common stock,sell,1232.0,26.26,32352.320000000003
+2023-08-07,AGIO,"WASHBURN, THEODORE JAMES JR.",Principal Accounting Officer,True,Common stock,sell,2918.0,25.3927,74095.8986
+2023-08-08,AGIO,"GOFF, BRIAN","Director, Chief Executive Officer",True,Common stock,sell,10178.0,25.48,259335.44
+2023-08-09,AGIO,"FOSTER-CHEEK, KAYE I",Director,True,Common stock,sell,25000.0,25.9555,648887.5
+2023-08-09,AGIO,"FOSTER-CHEEK, KAYE I",Director,True,Common stock,buy,25000.0,18.09,452250.0
+2023-08-17,AGIO,"BURNS, JAMES WILLIAM",Chief Legal Officer,True,Common stock,sell,6395.0,26.28,168060.6
+2023-09-28,AGIO,"JONES, CECILIA",Chief Financial Officer,True,Common stock,sell,2179.0,24.79,54017.409999999996
+2024-01-05,AGIO,"MILANOVA, TSVETA",Chief Commercial Officer,True,Common stock,sell,2902.0,22.32,64772.64
+2024-01-09,AGIO,"GOFF, BRIAN","Director, Chief Executive Officer",True,Common stock,sell,12066.0,22.99,277397.33999999997
+2024-01-09,AGIO,"FOUSE, JACQUALYN A",Director,True,Common stock,sell,8391.0,22.99,192909.09
+2024-01-09,AGIO,"BURNS, JAMES WILLIAM",Chief Legal Officer,True,Common stock,sell,1163.0,22.99,26737.37
+2024-01-09,AGIO,"GHEUENS, SARAH",Chief Medical Officer,True,Common stock,sell,1789.0,22.99,41129.11
+2024-01-24,AGIO,"GHEUENS, SARAH",Chief Medical Officer,True,Common stock,sell,1708.0,21.64,36961.12
+2024-01-24,AGIO,"GOFF, BRIAN","Director, Chief Executive Officer",True,Common stock,sell,7635.0,21.64,165221.4
+2024-01-24,AGIO,"BURNS, JAMES WILLIAM",Chief Legal Officer,True,Common stock,sell,1708.0,21.64,36961.12
+2024-01-24,AGIO,"JONES, CECILIA",Chief Financial Officer,True,Common stock,sell,1886.0,21.64,40813.04
+2024-01-24,AGIO,"FOUSE, JACQUALYN A",Director,True,Common stock,sell,10722.0,21.64,232024.08000000002
+2024-01-24,AGIO,"MILANOVA, TSVETA",Chief Commercial Officer,True,Common stock,sell,1618.0,21.64,35013.520000000004
+2024-02-14,AGIO,"GHEUENS, SARAH",Chief Medical Officer,True,Common stock,sell,642.0,25.14,16139.880000000001
+2024-02-14,AGIO,"BURNS, JAMES WILLIAM",Chief Legal Officer,True,Common stock,sell,545.0,25.14,13701.300000000001
+2024-02-14,AGIO,"WASHBURN, THEODORE JAMES JR.",Principal Accounting Officer,True,Common stock,sell,273.0,25.14,6863.22
+2024-02-20,AGIO,"WASHBURN, THEODORE JAMES JR.",Principal Accounting Officer,True,Common stock,sell,504.0,26.63,13421.519999999999
+2024-02-23,AGIO,"SCHENKEIN, DAVID P",Director,True,Common stock,buy,47731.0,31.64,1510208.84
+2024-02-23,AGIO,"SCHENKEIN, DAVID P",Director,True,Common stock,sell,47731.0,33.05,1577509.5499999998
+2024-02-26,AGIO,"SCHENKEIN, DAVID P",Director,True,Common stock,buy,20411.0,31.64,645804.04
+2024-02-26,AGIO,"SCHENKEIN, DAVID P",Director,True,Common stock,sell,20411.0,33.19,677441.09
+2024-02-27,AGIO,"SCHENKEIN, DAVID P",Director,True,Common stock,buy,11858.0,31.64,375187.12
+2024-02-27,AGIO,"SCHENKEIN, DAVID P",Director,True,Common stock,sell,11858.0,33.6,398428.8
+2024-02-27,AGIO,"SCHENKEIN, DAVID P",Director,True,Common stock,buy,57471.0,31.64,1818382.44
+2024-02-27,AGIO,"SCHENKEIN, DAVID P",Director,True,Common stock,sell,57471.0,34.89,2005163.19
+2024-03-05,AGIO,"GHEUENS, SARAH",Chief Medical Officer,True,Common stock,sell,1293.0,32.57,42113.01
+2024-03-05,AGIO,"FOSTER-CHEEK, KAYE I",Director,True,Common stock,sell,300.0,32.21,9663.0
+2024-03-05,AGIO,"GOFF, BRIAN","Director, Chief Executive Officer",True,Common stock,sell,4156.0,32.57,135360.92
+2024-03-05,AGIO,"GHEUENS, SARAH",Chief Medical Officer,True,Common stock,sell,1349.0,32.57,43936.93
+2024-03-05,AGIO,"WASHBURN, THEODORE JAMES JR.",Principal Accounting Officer,True,Common stock,sell,295.0,32.57,9608.15
+2024-03-05,AGIO,"WASHBURN, THEODORE JAMES JR.",Principal Accounting Officer,True,Common stock,sell,919.0,32.57,29931.83
+2024-03-05,AGIO,"BURNS, JAMES WILLIAM",Chief Legal Officer,True,Common stock,sell,1293.0,32.57,42113.01
+2024-03-05,AGIO,"BURNS, JAMES WILLIAM",Chief Legal Officer,True,Common stock,sell,1349.0,32.57,43936.93
+2024-03-05,AGIO,"WASHBURN, THEODORE JAMES JR.",Principal Accounting Officer,True,Common stock,sell,1913.0,31.75,60737.75
+2024-03-05,AGIO,"JONES, CECILIA",Chief Financial Officer,True,Common stock,sell,672.0,32.57,21887.04
+2024-03-06,AGIO,"FOSTER-CHEEK, KAYE I",Director,True,Common stock,sell,4415.0,31.99,141235.85
+2024-03-07,AGIO,"FOSTER-CHEEK, KAYE I",Director,True,Common stock,sell,1285.0,31.62,40631.700000000004
+2024-04-10,AGIO,"FOUSE, JACQUALYN A",Director,True,Common stock,sell,7791.0,27.55,214642.05000000002
+2024-06-03,AGIO,"WASHBURN, THEODORE JAMES JR.",Principal Accounting Officer,True,Common stock,sell,1362.0,44.39,60459.18
+2024-06-05,AGIO,"GOFF, BRIAN","Director, Chief Executive Officer",True,Common stock,sell,12115.0,48.84,591696.6000000001
+2024-07-01,AGIO,"GHEUENS, SARAH",Chief Medical Officer,True,Common stock,sell,3705.0,43.85,162464.25
+2024-08-08,AGIO,"GOFF, BRIAN","Director, Chief Executive Officer",True,Common stock,sell,11091.0,42.75,474140.25
+2024-09-26,AGIO,"JONES, CECILIA",Chief Financial Officer,True,Common stock,sell,2542.0,49.03,124634.26000000001
+2024-11-07,AGIO,"BALLAL, RAHUL D.",Director,True,Common stock,sell,8132.0,53.32,433598.24
+2024-11-07,AGIO,"BURNS, JAMES WILLIAM",Chief Legal Officer,True,Common stock,sell,8341.0,52.56,438402.96
+2024-11-07,AGIO,"BALLAL, RAHUL D.",Director,True,Common stock,buy,10000.0,25.99,259899.99999999997
+2024-11-07,AGIO,"BALLAL, RAHUL D.",Director,True,Common stock,sell,1868.0,54.41,101637.87999999999
+2024-11-07,AGIO,"BURNS, JAMES WILLIAM",Chief Legal Officer,True,Common stock,sell,13411.0,52.0,697372.0
+2024-11-08,AGIO,"BALLAL, RAHUL D.",Director,True,Common stock,buy,10000.0,25.99,259899.99999999997
+2024-11-08,AGIO,"WASHBURN, THEODORE JAMES JR.",Principal Accounting Officer,True,Common stock,sell,772.0,56.09,43301.48
+2024-11-08,AGIO,"BALLAL, RAHUL D.",Director,True,Common stock,sell,1500.0,59.21,88815.0
+2024-11-08,AGIO,"BALLAL, RAHUL D.",Director,True,Common stock,sell,4929.0,58.57,288691.53
+2024-11-08,AGIO,"BALLAL, RAHUL D.",Director,True,Common stock,sell,3571.0,57.24,204404.04
+2024-12-11,AGIO,"SCADDEN, DAVID",Director,True,Common stock,sell,200.0,46.28,9256.0
+2024-12-11,AGIO,"SCADDEN, DAVID",Director,True,Common stock,buy,200.0,18.09,3618.0
+2025-01-06,AGIO,"MILANOVA, TSVETA",Chief Commercial Officer,True,Common stock,sell,2804.0,32.18,90232.72
+2025-02-05,AGIO,"WASHBURN, THEODORE JAMES JR.",Principal Accounting Officer,True,Common stock,sell,2272.0,34.39,78134.08
+2025-03-03,AGIO,"GHEUENS, SARAH",Chief Medical Officer,True,Common stock,sell,1187.0,35.54,42185.979999999996
+2025-03-03,AGIO,"BURNS, JAMES WILLIAM",Chief Legal Officer,True,Common stock,sell,1137.0,35.54,40408.979999999996
+2025-03-03,AGIO,"JONES, CECILIA",Chief Financial Officer,True,Common stock,sell,594.0,35.54,21110.76
+2025-03-03,AGIO,"BURNS, JAMES WILLIAM",Chief Legal Officer,True,Common stock,sell,1681.0,35.54,59742.74
+2025-03-03,AGIO,"BURNS, JAMES WILLIAM",Chief Legal Officer,True,Common stock,sell,1187.0,35.54,42185.979999999996
+2025-03-03,AGIO,"GHEUENS, SARAH",Chief Medical Officer,True,Common stock,sell,1137.0,35.54,40408.979999999996
+2025-03-03,AGIO,"GHEUENS, SARAH",Chief Medical Officer,True,Common stock,sell,1681.0,35.54,59742.74
+2025-03-03,AGIO,"GOFF, BRIAN","Director, Chief Executive Officer",True,Common stock,sell,8794.0,35.54,312538.76
+2025-03-03,AGIO,"GOFF, BRIAN","Director, Chief Executive Officer",True,Common stock,sell,4153.0,35.54,147597.62
+2025-03-03,AGIO,"MILANOVA, TSVETA",Chief Commercial Officer,True,Common stock,sell,1681.0,35.54,59742.74
+2025-03-03,AGIO,"WASHBURN, THEODORE JAMES JR.",Principal Accounting Officer,True,Common stock,sell,727.0,35.54,25837.579999999998
+2025-03-03,AGIO,"WASHBURN, THEODORE JAMES JR.",Principal Accounting Officer,True,Common stock,sell,697.0,35.54,24771.38
+2025-03-03,AGIO,"JONES, CECILIA",Chief Financial Officer,True,Common stock,sell,1681.0,35.54,59742.74
+2025-03-03,AGIO,"WASHBURN, THEODORE JAMES JR.",Principal Accounting Officer,True,Common stock,sell,231.0,35.54,8209.74
+2025-04-10,AGIO,"FOUSE, JACQUALYN A",Director,True,Common stock,sell,7497.0,25.9,194172.3
+2025-06-24,AGIO,"GOFF, BRIAN","Director, Chief Executive Officer",True,Common stock,sell,6229.0,33.54,208920.66
+2025-06-24,AGIO,"GOFF, BRIAN","Director, Chief Executive Officer",True,Common stock,sell,12471.0,33.54,418277.33999999997
+2025-06-24,AGIO,"MILANOVA, TSVETA",Chief Commercial Officer,True,Common stock,sell,2770.0,33.54,92905.8
+2025-06-24,AGIO,"GHEUENS, SARAH",Chief Medical Officer,True,Common stock,sell,2909.0,33.54,97567.86
+2025-06-24,AGIO,"BURNS, JAMES WILLIAM",Chief Legal Officer,True,Common stock,sell,2799.0,33.54,93878.45999999999
+2025-06-24,AGIO,"JONES, CECILIA",Chief Financial Officer,True,Common stock,sell,1780.0,33.54,59701.2
+2025-07-01,AGIO,"GHEUENS, SARAH",Chief Medical Officer,True,Common stock,sell,4091.0,34.17,139789.47
+2025-07-09,AGIO,"GHEUENS, SARAH",Chief Medical Officer,True,Common stock,sell,847.0,38.76,32829.72
+2025-07-09,AGIO,"GHEUENS, SARAH",Chief Medical Officer,True,Common stock,buy,11914.0,25.01,297969.14
+2025-07-09,AGIO,"GHEUENS, SARAH",Chief Medical Officer,True,Common stock,sell,11067.0,37.93,419771.31
+2025-07-10,AGIO,"SCADDEN, DAVID",Director,True,Common stock,buy,1400.0,18.09,25326.0
+2025-07-10,AGIO,"SCADDEN, DAVID",Director,True,Common stock,sell,1400.0,40.0,56000.0
+2025-08-08,AGIO,"GOFF, BRIAN","Director, Chief Executive Officer",True,Common stock,sell,11085.0,36.67,406486.95
+2025-08-27,AGIO,"SCADDEN, DAVID",Director,True,Common stock,buy,200.0,18.09,3618.0
+2025-08-27,AGIO,"SCADDEN, DAVID",Director,True,Common stock,sell,200.0,40.0,8000.0
+2025-09-05,AGIO,"WASHBURN, THEODORE JAMES JR.",Principal Accounting Officer,True,Common stock,sell,8546.0,36.87,315091.01999999996
+2025-09-26,AGIO,"JONES, CECILIA",Chief Financial Officer,True,Common stock,sell,3651.0,36.77,134247.27000000002
+2025-09-30,AGIO,"SCADDEN, DAVID",Director,True,Common stock,sell,200.0,40.0,8000.0
+2025-09-30,AGIO,"SCADDEN, DAVID",Director,True,Common stock,buy,200.0,18.09,3618.0
+2025-10-08,AGIO,"SCADDEN, DAVID",Director,True,Common stock,buy,200.0,18.09,3618.0
+2025-10-08,AGIO,"SCADDEN, DAVID",Director,True,Common stock,sell,200.0,41.0,8200.0
+2025-10-27,AGIO,"GHEUENS, SARAH",Chief Medical Officer,True,Common stock,buy,3302.0,25.01,82583.02
+2025-10-27,AGIO,"GHEUENS, SARAH",Chief Medical Officer,True,Common stock,sell,3302.0,43.92,145023.84
+2025-10-30,AGIO,"GHEUENS, SARAH",Chief Medical Officer,True,Common stock,sell,200.0,43.81,8762.0
+2025-10-30,AGIO,"GHEUENS, SARAH",Chief Medical Officer,True,Common stock,buy,200.0,25.01,5002.0
+2025-11-11,AGIO,"GHEUENS, SARAH",Chief Medical Officer,True,Common stock,sell,2454.0,43.78,107436.12000000001
+2025-11-11,AGIO,"GHEUENS, SARAH",Chief Medical Officer,True,Common stock,buy,2454.0,25.01,61374.54
+2025-11-12,AGIO,"SCADDEN, DAVID",Director,True,Common stock,buy,200.0,18.09,3618.0
+2025-11-12,AGIO,"SCADDEN, DAVID",Director,True,Common stock,sell,200.0,43.84,8768.0
+2025-12-30,AGIO,"GOFF, BRIAN","Director, Chief Executive Officer",True,Common stock,sell,12473.0,27.09,337893.57
+2025-12-30,AGIO,"GOFF, BRIAN","Director, Chief Executive Officer",True,Common stock,sell,6230.0,27.09,168770.7
+2025-12-30,AGIO,"BURNS, JAMES WILLIAM",Chief Legal Officer,True,Common stock,sell,2932.0,27.09,79427.88
+2025-12-30,AGIO,"MILANOVA, TSVETA",Chief Commercial Officer,True,Common stock,sell,2932.0,27.09,79427.88
+2025-12-30,AGIO,"JONES, CECILIA",Chief Financial Officer,True,Common stock,sell,2932.0,27.09,79427.88
+2025-12-30,AGIO,"GHEUENS, SARAH",Chief Medical Officer,True,Common stock,sell,2932.0,27.09,79427.88
+2026-01-05,AGIO,"MILANOVA, TSVETA",Chief Commercial Officer,True,Common stock,sell,2872.0,27.02,77601.44
+2026-03-02,AGIO,"GHEUENS, SARAH",Chief Medical Officer,True,Common stock,sell,1187.0,28.96,34375.520000000004
+2026-03-02,AGIO,"GHEUENS, SARAH",Chief Medical Officer,True,Common stock,sell,1681.0,28.96,48681.76
+2026-03-02,AGIO,"MILANOVA, TSVETA",Chief Commercial Officer,True,Common stock,sell,1187.0,28.96,34375.520000000004
+2026-03-02,AGIO,"MILANOVA, TSVETA",Chief Commercial Officer,True,Common stock,sell,1681.0,28.96,48681.76
+2026-03-02,AGIO,"JONES, CECILIA",Chief Financial Officer,True,Common stock,sell,1573.0,28.96,45554.08
+2026-03-02,AGIO,"JONES, CECILIA",Chief Financial Officer,True,Common stock,sell,1187.0,28.96,34375.520000000004
+2026-03-02,AGIO,"JONES, CECILIA",Chief Financial Officer,True,Common stock,sell,1681.0,28.96,48681.76
+2026-03-02,AGIO,"JONES, CECILIA",Chief Financial Officer,True,Common stock,sell,594.0,28.96,17202.24
+2026-03-02,AGIO,"GOFF, BRIAN","Director, Chief Executive Officer",True,Common stock,sell,5918.0,28.96,171385.28
+2026-03-02,AGIO,"WASHBURN, THEODORE JAMES JR.",Principal Accounting Officer,True,Common stock,sell,798.0,28.96,23110.08
+2026-03-02,AGIO,"WASHBURN, THEODORE JAMES JR.",Principal Accounting Officer,True,Common stock,sell,727.0,28.96,21053.920000000002
+2026-03-02,AGIO,"WASHBURN, THEODORE JAMES JR.",Principal Accounting Officer,True,Common stock,sell,698.0,28.96,20214.08
+2026-03-02,AGIO,"GOFF, BRIAN","Director, Chief Executive Officer",True,Common stock,sell,3870.0,28.96,112075.2
+2026-03-02,AGIO,"GOFF, BRIAN","Director, Chief Executive Officer",True,Common stock,sell,8267.0,28.96,239412.32
+2026-03-02,AGIO,"BURNS, JAMES WILLIAM",Chief Legal Officer,True,Common stock,sell,1681.0,28.96,48681.76
+2026-03-02,AGIO,"BURNS, JAMES WILLIAM",Chief Legal Officer,True,Common stock,sell,1187.0,28.96,34375.520000000004
+2026-03-02,AGIO,"BURNS, JAMES WILLIAM",Chief Legal Officer,True,Common stock,sell,1163.0,28.96,33680.48
+2026-03-03,AGIO,"WASHBURN, THEODORE JAMES JR.",Principal Accounting Officer,True,Common stock,sell,5272.0,28.88,152255.36
+2026-03-05,AGIO,"VISWANADHAN, KRISHNAN",Chief Corp Dev & Strategy,True,Common stock,sell,2959.0,27.8,82260.2
+2026-04-02,AGIO,"VISWANADHAN, KRISHNAN",Chief Corp Dev & Strategy,True,Common stock,sell,2959.0,34.71,102706.89
+2026-04-02,AGIO,"GOFF, BRIAN","Director, Chief Executive Officer",True,Common stock,sell,12472.0,34.71,432903.12
+2026-04-02,AGIO,"GOFF, BRIAN","Director, Chief Executive Officer",True,Common stock,sell,6596.0,34.71,228947.16
+2026-04-02,AGIO,"MILANOVA, TSVETA",Chief Commercial Officer,True,Common stock,sell,3262.0,34.71,113224.02
+2026-04-02,AGIO,"JONES, CECILIA",Chief Financial Officer,True,Common stock,sell,3141.0,34.71,109024.11
+2026-04-02,AGIO,"GHEUENS, SARAH",Chief Medical Officer,True,Common stock,sell,2940.0,34.71,102047.40000000001
+2026-04-02,AGIO,"BURNS, JAMES WILLIAM",Chief Legal Officer,True,Common stock,sell,3280.0,34.71,113848.8

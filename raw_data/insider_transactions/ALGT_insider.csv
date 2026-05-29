@@ -1,0 +1,775 @@
+date,symbol,insider_name,insider_title,is_executive,security_type,transaction_type,shares,price,value
+2007-05-30,ALGT,"FLYNN, TIMOTHY P",Director,True,Common Stock,sell,100000.0,31.75,3175000.0
+2007-05-30,ALGT,"LEVY, ANDREW C",Managing Director,True,Common Stock,sell,215000.0,31.75,6826250.0
+2007-05-30,ALGT,"PRIDDY, ROBERT L","Director, 10% Owner",True,Common Stock,sell,1500000.0,31.75,47625000.0
+2007-05-30,ALGT,"MARVIN, LINDA A",CFO and Managing Director,True,Common Stock,sell,150000.0,31.75,4762500.0
+2007-05-30,ALGT,"RYAN, DECLAN F",Director,True,Common Stock,sell,957143.0,31.75,30389290.25
+2007-05-30,ALGT,"HARRISON, M PONDER",Managing Director,True,Common Stock,sell,215000.0,31.75,6826250.0
+2007-05-30,ALGT,"FALK, MICHAEL","Director, 10% Owner",True,Common Stock,sell,1500000.0,31.75,47625000.0
+2007-05-30,ALGT,"MASON, A MAURICE",Director,True,Common Stock,sell,100000.0,31.75,3175000.0
+2007-05-30,ALGT,"FLYNN, TIMOTHY P",Director,True,Common Stock,buy,100000.0,31.75,3175000.0
+2007-08-08,ALGT,"BAXTER, MICHAEL P",Senior VP of Operations,True,Stock Option (right to buy),sell,24000.0,3.5,84000.0
+2007-08-08,ALGT,"BAXTER, MICHAEL P",Senior VP of Operations,True,Common Stock,buy,24000.0,3.5,84000.0
+2007-08-08,ALGT,"BAXTER, MICHAEL P",Senior VP of Operations,True,Common Stock,sell,24000.0,33.54,804960.0
+2007-08-08,ALGT,"MARVIN, LINDA A",CFO and Managing Director,True,Common Stock,sell,50000.0,33.55,1677499.9999999998
+2007-08-09,ALGT,"MARVIN, LINDA A",CFO and Managing Director,True,Common Stock,sell,15200.0,33.02,501904.00000000006
+2007-08-24,ALGT,"MARVIN, LINDA A",CFO and Managing Director,True,Common Stock,sell,14900.0,30.05,447745.0
+2007-08-27,ALGT,"MARVIN, LINDA A",CFO and Managing Director,True,Common Stock,sell,8300.0,30.23,250909.0
+2007-08-28,ALGT,"MARVIN, LINDA A",CFO and Managing Director,True,Common Stock,sell,11800.0,30.08,354944.0
+2007-09-04,ALGT,"MARVIN, LINDA A",CFO and Managing Director,True,Common Stock,sell,20000.0,28.24,564800.0
+2007-09-06,ALGT,"HARRISON, M PONDER",Managing Director,True,Common Stock,sell,1300.0,30.0,39000.0
+2007-09-06,ALGT,"MARVIN, LINDA A",CFO and Managing Director,True,Common Stock,sell,4600.0,30.04,138184.0
+2007-09-07,ALGT,"LEVY, ANDREW C",Managing Director,True,Common Stock,sell,5000.0,30.0,150000.0
+2007-09-07,ALGT,"HARRISON, M PONDER",Managing Director,True,Common Stock,sell,8700.0,30.0,261000.0
+2007-09-07,ALGT,"MARVIN, LINDA A",CFO and Managing Director,True,Common Stock,sell,10400.0,30.02,312208.0
+2007-09-18,ALGT,"LEVY, ANDREW C",Managing Director,True,Common Stock,sell,5000.0,30.0,150000.0
+2007-10-01,ALGT,"MARVIN, LINDA A",Former CFO & Managing Director,True,Common Stock,sell,16700.0,30.5601,510353.67
+2007-10-01,ALGT,"HARRISON, M PONDER",Managing Director,True,Common Stock,sell,10000.0,30.006,300060.0
+2007-10-03,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,5417.0,30.7632,166644.2544
+2007-10-03,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,5417.0,30.76,166626.92
+2007-10-04,ALGT,"LEVY, ANDREW C",Managing Director,True,Common Stock,sell,10000.0,32.3015,323015.0
+2007-10-09,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,13601.0,31.4678,427993.5478
+2007-10-09,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,13601.0,31.46,427887.46
+2007-10-11,ALGT,"LEVY, ANDREW C",Managing Director,True,Common Stock,sell,10000.0,34.1662,341662.00000000006
+2007-10-12,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,250000.0,31.5,7875000.0
+2007-10-22,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,250000.0,31.5,7875000.0
+2007-11-01,ALGT,"HARRISON, M PONDER",Managing Director,True,Common Stock,sell,10000.0,34.8654,348654.0
+2007-11-06,ALGT,"FLYNN, TIMOTHY P",Director,True,Common Stock,sell,50714.0,33.5992,1703949.8288000003
+2007-11-28,ALGT,"LEVY, ANDREW C",CFO and Managing Director,True,Common Stock,sell,10000.0,33.6441,336441.0
+2007-12-03,ALGT,"HARRISON, M PONDER",Managing Director,True,Common Stock,sell,10000.0,34.2531,342531.00000000006
+2007-12-06,ALGT,"LEVY, ANDREW C",CFO and Managing Director,True,Common Stock,sell,3400.0,34.6974,117971.16
+2007-12-07,ALGT,"LEVY, ANDREW C",CFO and Managing Director,True,Common Stock,sell,6600.0,35.4327,233855.81999999998
+2008-01-02,ALGT,"HARRISON, M PONDER",Managing Director,True,Common Stock,sell,10000.0,31.1476,311476.0
+2008-01-30,ALGT,"LEVY, ANDREW C",CFO and Managing Director,True,Common Stock,sell,10000.0,26.0,260000.0
+2008-02-01,ALGT,"HARRISON, M PONDER",Managing Director,True,Common Stock,sell,10000.0,30.231,302310.0
+2008-02-04,ALGT,"FALK, MICHAEL",Director,True,"Common Stock, $0.001 per share",sell,3182.0,30.75,97846.5
+2008-02-05,ALGT,"SHELDON, SCOTT",Principal Accounting Officer,True,Stock Option (right to buy),sell,3000.0,3.5,10500.0
+2008-02-05,ALGT,"SHELDON, SCOTT",Principal Accounting Officer,True,Common Stock,sell,1000.0,29.55,29550.0
+2008-02-05,ALGT,"SHELDON, SCOTT",Principal Accounting Officer,True,Common Stock,sell,2000.0,29.75,59500.0
+2008-02-05,ALGT,"SHELDON, SCOTT",Principal Accounting Officer,True,Common Stock,buy,3000.0,3.5,10500.0
+2008-02-06,ALGT,"LEVY, ANDREW C",CFO and Managing Director,True,Common Stock,sell,10000.0,30.4951,304951.0
+2008-02-07,ALGT,"BAXTER, MICHAEL P",Senior VP of Operations,True,Common Stock,buy,12000.0,3.5,42000.0
+2008-02-07,ALGT,"BAXTER, MICHAEL P",Senior VP of Operations,True,Stock Option (right to buy),sell,12000.0,3.5,42000.0
+2008-02-07,ALGT,"BAXTER, MICHAEL P",Senior VP of Operations,True,Common Stock,sell,12000.0,31.17,374040.0
+2008-03-12,ALGT,"FLYNN, TIMOTHY P",Director,True,Common Stock,sell,35000.0,25.4236,889826.0
+2008-04-29,ALGT,"HARRISON, M PONDER",Managing Director,True,Common Stock,sell,20000.0,27.6279,552558.0
+2008-05-22,ALGT,"LEVY, ANDREW C",CFO and Managing Director,True,Common Stock,sell,10000.0,21.3238,213237.99999999997
+2008-05-27,ALGT,"LEVY, ANDREW C",CFO & Managing Director,True,Common Stock,sell,10000.0,22.0005,220005.0
+2008-07-25,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,39829.0,21.7612,866726.8348
+2008-07-25,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,8200.0,21.875,179375.0
+2008-07-25,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,10123.0,21.7039,219708.5797
+2008-07-28,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,100000.0,21.5891,2158910.0
+2008-07-29,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,32300.0,22.8017,736494.91
+2008-08-01,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,28810.0,23.9994,691422.714
+2008-08-04,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,43700.0,24.7792,1082851.04
+2008-08-05,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,11135.0,25.9988,289496.638
+2008-08-05,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,1300.0,25.9808,33775.04
+2008-08-06,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,500.0,26.426,13213.0
+2008-08-06,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,3700.0,26.4576,97893.12
+2008-08-07,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,48178.0,26.3072,1267428.2816
+2008-08-08,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,16359.0,27.8412,455454.1908
+2008-08-08,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,43200.0,26.601,1149163.2
+2008-08-11,ALGT,"HARRISON, M PONDER",Managing Director,True,Common Stock,sell,40000.0,30.031,1201240.0
+2008-08-11,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,11910.0,29.9737,356986.767
+2008-08-12,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,118059.0,29.9649,3537626.1291
+2008-08-12,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,70031.0,30.52,2137346.12
+2008-08-13,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,100400.0,28.9638,2907965.52
+2008-08-14,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,100.0,28.0,2800.0
+2008-08-15,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,49500.0,30.8146,1525322.7
+2008-08-19,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,65563.0,29.8898,1959664.9574
+2008-08-20,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,34937.0,29.2165,1020736.8605
+2008-08-21,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,28497.0,28.7298,818713.1106
+2008-08-22,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,32876.0,29.0699,955702.0324
+2008-08-25,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,200.0,29.495,5899.0
+2008-08-26,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,136327.0,28.912,3941486.224
+2008-08-26,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,80000.0,28.4378,2275024.0
+2008-08-29,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,3965.0,28.9927,114956.0555
+2008-09-02,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,67635.0,31.6884,2143244.934
+2008-09-10,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,11700.0,31.9962,374355.54000000004
+2008-09-11,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,38300.0,31.0565,1189463.95
+2008-10-03,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,50000.0,28.3804,1419020.0
+2008-10-03,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,63751.0,28.9936,1848370.9936
+2008-10-06,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,10565.0,28.2014,297947.79099999997
+2008-10-15,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,25684.0,28.8055,739840.4619999999
+2008-10-15,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,buy,11150.0,28.2165,314613.975
+2008-12-01,ALGT,"LEVY, ANDREW C",CFO and Managing Director,True,Common Stock,sell,10000.0,39.3067,393067.0
+2009-01-02,ALGT,"LEVY, ANDREW C",CFO and Managing Director,True,Common Stock,sell,6768.0,48.01,324931.68
+2009-01-27,ALGT,"LEVY, ANDREW C",CFO,True,Common Stock,sell,250.0,40.632,10158.0
+2009-01-27,ALGT,"LEVY, ANDREW C",CFO,True,Common Stock,buy,250.0,40.632,10158.0
+2009-01-28,ALGT,"LEVY, ANDREW C",CFO,True,Common Stock,buy,2982.0,38.1752,113838.44639999999
+2009-01-28,ALGT,"LEVY, ANDREW C",CFO,True,Common Stock,sell,2982.0,38.1752,113838.44639999999
+2009-02-02,ALGT,"LEVY, ANDREW C",CFO and Managing Director,True,Common Stock,sell,5000.0,34.8454,174227.0
+2009-02-03,ALGT,"ELLMER, GARY",Director,True,Common Stock,buy,250.0,34.0,8500.0
+2009-02-04,ALGT,"ELLMER, GARY",Director,True,Common Stock,buy,150.0,33.5,5025.0
+2009-03-02,ALGT,"LEVY, ANDREW C",CFO & Managing Director,True,Common Stock,sell,5000.0,33.5205,167602.5
+2009-03-10,ALGT,"LEVY, ANDREW C",CFO & Managing Director,True,Common Stock,sell,10000.0,38.15,381500.0
+2009-04-01,ALGT,"LEVY, ANDREW C",CFO and Managing Director,True,Common Stock,sell,10000.0,42.8038,428038.0
+2009-05-01,ALGT,"LEVY, ANDREW C",CFO and Managing Director,True,Common Stock,sell,10000.0,50.808,508080.0
+2009-05-06,ALGT,"PAR, INVESTMENT PARTNERS LP",10% Owner,False,Common Stock,sell,2250000.0,50.0,112500000.0
+2009-05-11,ALGT,"FLYNN, TIMOTHY P",Director,True,Common Stock,sell,50000.0,49.125,2456250.0
+2009-05-28,ALGT,"HARRISON, M PONDER",Managing Director,True,Common Stock,sell,259.0,40.0,10360.0
+2009-05-29,ALGT,"HARRISON, M PONDER",Managing Director,True,Common Stock,sell,19741.0,40.0168,789971.6488000001
+2009-06-01,ALGT,"LEVY, ANDREW C",CFO and Managing Director,True,Common Stock,sell,10000.0,41.14,411400.0
+2009-06-11,ALGT,"HARRISON, M PONDER",Managing Director,True,Common Stock,sell,20000.0,40.017,800340.0000000001
+2009-07-01,ALGT,"LEVY, ANDREW C",CFO and Managing Director,True,Common Stock,sell,10000.0,38.779,387790.00000000006
+2009-07-02,ALGT,"HARRISON, M PONDER",Managing Director,True,Common Stock,sell,20000.0,38.666,773319.9999999999
+2009-08-03,ALGT,"LEVY, ANDREW C",CFO and Managing Director,True,Common Stock,sell,10000.0,42.6654,426654.0
+2009-08-10,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO, 10% Owner",True,Common Stock,sell,29471.0,40.3108,1187999.5868
+2009-08-11,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO, 10% Owner",True,Common Stock,sell,56229.0,40.2575,2263638.9675
+2009-08-12,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO, 10% Owner",True,Common Stock,sell,14300.0,40.0359,572513.37
+2009-08-12,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO, 10% Owner",True,Common Stock,sell,10000.0,39.9538,399538.0
+2009-08-12,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO, 10% Owner",True,Common Stock,sell,6800.0,39.7844,270533.92
+2009-10-16,ALGT,"LEVY, ANDREW C",President and CFO,True,Stock Appreciation Right,buy,75000.0,38.65,2898750.0
+2009-11-24,ALGT,"ELLMER, GARY",Director,True,Common Stock,sell,250.0,41.48,10370.0
+2010-01-27,ALGT,"SHELDON, SCOTT",Principal Accounting Officer,True,Common Stock,sell,6667.0,52.73,351550.91
+2010-01-27,ALGT,"SHELDON, SCOTT",Principal Accounting Officer,True,Common Stock,sell,5000.0,52.73,263650.0
+2010-01-27,ALGT,"SHELDON, SCOTT",Principal Accounting Officer,True,Common Stock,buy,6667.0,38.32,255479.44
+2010-01-27,ALGT,"SHELDON, SCOTT",Principal Accounting Officer,True,Common Stock,buy,5000.0,20.42,102100.00000000001
+2010-01-27,ALGT,"SHELDON, SCOTT",Principal Accounting Officer,True,Employee Stock Option (right to buy),sell,5000.0,20.42,102100.00000000001
+2010-01-27,ALGT,"SHELDON, SCOTT",Principal Accounting Officer,True,Employee Stock Option (right to buy),sell,6667.0,38.32,255479.44
+2010-02-01,ALGT,"POLLARD, CHARLES W.",Director,True,Common Stock,buy,475.0,51.3,24367.5
+2010-02-04,ALGT,"BREWER, MONTIE",Director,True,Common Stock,buy,2000.0,50.445,100890.0
+2010-06-01,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO, 10% Owner",True,Common Stock,sell,14578.0,53.9027,785793.5606000001
+2010-06-01,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO, 10% Owner",True,Common Stock,sell,2430.0,53.9027,130983.561
+2010-06-02,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO, 10% Owner",True,Common Stock,sell,3444.0,54.1135,186366.894
+2010-06-02,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO, 10% Owner",True,Common Stock,sell,20661.0,54.1135,1118039.0235000001
+2010-06-03,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO, 10% Owner",True,Common Stock,sell,4126.0,54.6895,225648.877
+2010-06-03,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO, 10% Owner",True,Common Stock,sell,24761.0,54.6895,1354166.7095
+2010-06-07,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO, 10% Owner",True,Common Stock,sell,23558.0,48.8535,1150890.753
+2010-06-08,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO, 10% Owner",True,Common Stock,sell,6442.0,48.1994,310500.53479999996
+2010-06-14,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO, 10% Owner",True,Common Stock,sell,36100.0,50.6005,1826678.0499999998
+2010-06-15,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO, 10% Owner",True,Common Stock,sell,32700.0,49.3899,1615049.73
+2010-08-06,ALGT,"BREWER, MONTIE",Director,True,Common Stock,buy,1000.0,40.2999,40299.9
+2010-10-16,ALGT,"LEVY, ANDREW C",President,True,Common Stock,sell,2462.0,40.2,98972.40000000001
+2010-10-28,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO, 10% Owner",True,COMMON STOCK,sell,30000.0,45.2358,1357074.0
+2010-11-01,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO, 10% Owner",True,Common Stock,sell,30000.0,47.1579,1414737.0
+2010-11-08,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO, 10% Owner",True,Common Stock,sell,21200.0,48.2768,1023468.16
+2010-12-07,ALGT,"LEVY, ANDREW C",President,True,Common Stock,sell,13346.0,52.4056,699405.1376
+2010-12-08,ALGT,"LEVY, ANDREW C",President,True,Common Stock,sell,46654.0,52.3685,2443199.999
+2010-12-13,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO, 10% Owner",True,Common Stock,sell,11546.0,51.52,594849.92
+2010-12-14,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO, 10% Owner",True,Common Stock,sell,13454.0,50.5857,680580.0078
+2011-02-15,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,sell,510.0,41.54,21185.399999999998
+2011-02-15,ALGT,"LEVY, ANDREW C",President,True,Common Stock,sell,942.0,41.54,39130.68
+2011-02-15,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO, 10% Owner",True,Common Stock,sell,989.0,41.54,41083.06
+2011-03-25,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO, 10% Owner",True,Stock Appreciation Right,buy,8271.0,42.22,349201.62
+2011-03-25,ALGT,"LEVY, ANDREW C",President,True,Stock Appreciation Right,buy,27570.0,42.22,1164005.4
+2011-03-25,ALGT,"BAUER, KRIS B",SVP-Operations,True,Stock Appreciation Right,buy,15163.0,42.22,640181.86
+2011-03-25,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Stock Appreciation Right,buy,12406.0,42.22,523781.32
+2011-05-05,ALGT,"FLYNN, TIMOTHY P",Director,True,Common Stock,sell,50000.0,46.8431,2342155.0
+2011-05-18,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,sell,220.0,46.0,10120.0
+2011-05-18,ALGT,"BAUER, KRIS B",SVP - Operations,True,Common Stock,sell,881.0,46.0,40526.0
+2011-09-07,ALGT,"ELLMER, GARY",Director,True,Common Stock,sell,1000.0,46.8348,46834.8
+2011-10-16,ALGT,"LEVY, ANDREW C",President,True,Common Stock,sell,2462.0,49.61,122139.81999999999
+2012-02-03,ALGT,"LEVY, ANDREW C",President,True,Common Stock,sell,29161.0,56.832,1657277.952
+2012-02-06,ALGT,"LEVY, ANDREW C",President,True,Common Stock,sell,20839.0,54.7451,1140833.1389
+2012-02-15,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,sell,510.0,53.82,27448.2
+2012-02-15,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO, 10% Owner",True,Common Stock,sell,1021.0,53.82,54950.22
+2012-02-15,ALGT,"LEVY, ANDREW C",President,True,Common Stock,sell,1021.0,53.82,54950.22
+2012-03-07,ALGT,"ALLARD, SCOTT MATTHEW",Chief Information Officer,True,Common Stock,sell,882.0,48.83,43068.06
+2012-05-01,ALGT,"BRICKER, JUDE",SVP - Planning,True,Common Stock,buy,3216.0,42.22,135779.52
+2012-05-01,ALGT,"BRICKER, JUDE",SVP - Planning,True,Stock Appreciation Right,sell,3216.0,60.03,193056.48
+2012-05-18,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,sell,220.0,63.33,13932.6
+2012-05-18,ALGT,"BAUER, KRIS B",SVP-Operations,True,Common Stock,sell,882.0,63.33,55857.06
+2012-05-24,ALGT,"REICHARTZ, MICHAEL",SVP - Marketing,True,Common Stock,sell,882.0,62.91,55486.619999999995
+2012-05-25,ALGT,"ALLARD, SCOTT MATTHEW",Chief Information Officer,True,Common Stock,sell,2451.0,64.23,157427.73
+2012-05-29,ALGT,"POLLARD, CHARLES W.",Director,True,Common Stock,sell,2500.0,63.9169,159792.25
+2012-06-13,ALGT,"ELLMER, GARY",Director,True,Common Stock,sell,150.0,66.95,10042.5
+2012-06-13,ALGT,"ELLMER, GARY",Director,True,Common Stock,sell,500.0,66.88,33440.0
+2012-06-22,ALGT,"BRICKER, JUDE",SVP - Planning,True,Common Stock,sell,860.0,70.8152,60901.072
+2012-08-13,ALGT,"LEVY, ANDREW C",President,True,Common Stock,buy,4595.0,42.22,194000.9
+2012-08-13,ALGT,"LEVY, ANDREW C",President,True,Common Stock,sell,3925.0,67.9,266507.5
+2012-08-13,ALGT,"LEVY, ANDREW C",President,True,Common Stock,sell,14231.0,67.9,966284.9
+2012-08-13,ALGT,"LEVY, ANDREW C",President,True,Common Stock,buy,25000.0,38.65,966250.0
+2012-08-13,ALGT,"LEVY, ANDREW C",President,True,Common Stock,sell,4595.0,67.9,312000.5
+2012-08-13,ALGT,"LEVY, ANDREW C",President,True,Stock Appreciation Right,sell,25000.0,67.9,1697500.0000000002
+2012-08-20,ALGT,"LEVY, ANDREW C",President,True,Common Stock,buy,8539.0,20.42,174366.38
+2012-08-20,ALGT,"LEVY, ANDREW C",President,True,Common Stock,sell,8539.0,70.14,598925.46
+2012-08-20,ALGT,"LEVY, ANDREW C",President,True,Employee Stock Option (right to buy),sell,8539.0,20.42,174366.38
+2012-08-21,ALGT,"LEVY, ANDREW C",President,True,Employee Stock Option (right to buy),sell,461.0,20.42,9413.62
+2012-08-21,ALGT,"LEVY, ANDREW C",President,True,Employee Stock Option (right to buy),sell,16009.0,36.97,591852.73
+2012-08-21,ALGT,"LEVY, ANDREW C",President,True,Common Stock,buy,461.0,20.42,9413.62
+2012-08-21,ALGT,"LEVY, ANDREW C",President,True,Common Stock,sell,7000.0,69.01,483070.00000000006
+2012-08-21,ALGT,"LEVY, ANDREW C",President,True,Common Stock,sell,9470.0,70.14,664225.8
+2012-08-21,ALGT,"LEVY, ANDREW C",President,True,Common Stock,buy,16009.0,36.97,591852.73
+2012-08-22,ALGT,"LEVY, ANDREW C",President,True,Common Stock,sell,16117.0,68.03,1096439.51
+2012-08-22,ALGT,"LEVY, ANDREW C",President,True,Common Stock,buy,12226.0,38.32,468500.32
+2012-08-22,ALGT,"LEVY, ANDREW C",President,True,Common Stock,buy,3991.0,36.97,147547.27
+2012-08-22,ALGT,"LEVY, ANDREW C",President,True,Employee Stock Option (right to buy),sell,12226.0,38.32,468500.32
+2012-08-22,ALGT,"LEVY, ANDREW C",President,True,Employee Stock Option (right to buy),sell,3991.0,36.97,147547.27
+2012-08-22,ALGT,"LEVY, ANDREW C",President,True,Common Stock,sell,100.0,69.0,6900.0
+2012-08-23,ALGT,"LEVY, ANDREW C",President,True,Common Stock,buy,5900.0,38.32,226088.0
+2012-08-23,ALGT,"LEVY, ANDREW C",President,True,Employee Stock Option (right to buy),sell,5900.0,38.32,226088.0
+2012-08-23,ALGT,"LEVY, ANDREW C",President,True,Common Stock,sell,5900.0,67.03,395477.0
+2012-08-24,ALGT,"LEVY, ANDREW C",President,True,Common Stock,sell,6072.0,67.06,407188.32
+2012-08-24,ALGT,"LEVY, ANDREW C",President,True,Common Stock,sell,802.0,66.62,53429.240000000005
+2012-08-24,ALGT,"LEVY, ANDREW C",President,True,Employee Stock Option (right to buy),sell,6874.0,38.32,263411.68
+2012-08-24,ALGT,"LEVY, ANDREW C",President,True,Common Stock,buy,6874.0,38.32,263411.68
+2012-10-16,ALGT,"LEVY, ANDREW C",President,True,Common Stock,sell,2462.0,68.96,169779.52
+2012-11-06,ALGT,"BRICKER, JUDE",SVP - Planning,True,Common Stock,sell,5000.0,74.3456,371728.0
+2012-11-09,ALGT,"LEVY, ANDREW C",President,True,Common Stock,buy,5410.0,36.97,200007.69999999998
+2012-12-04,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,buy,10000.0,20.42,204200.00000000003
+2012-12-04,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Employee Stock Option (right to buy),sell,13333.0,38.32,510920.56
+2012-12-04,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Employee Stock Option (right to buy),sell,10000.0,20.42,204200.00000000003
+2012-12-04,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,buy,13333.0,38.32,510920.56
+2012-12-04,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,sell,13333.0,73.21,976108.9299999999
+2012-12-04,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,sell,10000.0,72.22,722200.0
+2012-12-21,ALGT,"BAUER, KRIS B",SVP - Operations,True,Common Stock,sell,6903.0,75.86,523661.58
+2012-12-21,ALGT,"LEVY, ANDREW C",President,True,Common Stock,sell,9000.0,75.78,682020.0
+2012-12-21,ALGT,"LEVY, ANDREW C",President,True,Employee Stock Option (right to buy),sell,9000.0,20.42,183780.00000000003
+2012-12-21,ALGT,"LEVY, ANDREW C",President,True,Common Stock,buy,9000.0,20.42,183780.00000000003
+2012-12-27,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO, 10% Owner",True,Common Stock,sell,11000.0,71.67,788370.0
+2012-12-27,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO, 10% Owner",True,Employee Stock Option (right to buy),sell,11000.0,20.42,224620.00000000003
+2012-12-27,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO, 10% Owner",True,Common Stock,buy,11000.0,20.42,224620.00000000003
+2012-12-31,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO, 10% Owner",True,Employee Stock option (right to buy),sell,7000.0,20.42,142940.0
+2012-12-31,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO, 10% Owner",True,Common Stock,buy,7000.0,20.42,142940.0
+2012-12-31,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO, 10% Owner",True,Common Stock,sell,7000.0,73.63,515409.99999999994
+2012-12-31,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO, 10% Owner",True,Common Stock,buy,25000.0,38.32,958000.0
+2012-12-31,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO, 10% Owner",True,Employee Stock Option (right to buy),sell,25000.0,38.32,958000.0
+2012-12-31,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO, 10% Owner",True,Common Stock,sell,25000.0,73.082,1827049.9999999998
+2013-02-04,ALGT,"POLLARD, CHARLES W.",Director,True,Common Stock,sell,1500.0,74.35,111524.99999999999
+2013-02-08,ALGT,"ALLARD, SCOTT MATTHEW",Chief Information Officer,True,Common Stock,sell,571.0,75.73,43241.83
+2013-02-08,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO, 10% Owner",True,Common Stock,sell,916.0,75.73,69368.68000000001
+2013-02-08,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO, 10% Owner",True,Common Stock,sell,1011.0,75.73,76563.03
+2013-02-08,ALGT,"BRICKER, JUDE",SVP - Planning,True,Common Stock,sell,505.0,75.73,38243.65
+2013-02-08,ALGT,"ALLARD, SCOTT MATTHEW",Chief Information Officer,True,Common Stock,sell,606.0,75.73,45892.380000000005
+2013-02-08,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,sell,606.0,75.73,45892.380000000005
+2013-02-08,ALGT,"BRICKER, JUDE",SVP - Planning,True,Common Stock,sell,491.0,75.73,37183.43
+2013-02-08,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,sell,571.0,75.73,43241.83
+2013-02-15,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO, 10% Owner",True,Common Stock,sell,912.0,78.66,71737.92
+2013-02-15,ALGT,"BRICKER, JUDE",SVP - Planning,True,Common Stock,sell,312.0,78.66,24541.92
+2013-02-15,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,sell,452.0,78.66,35554.32
+2013-03-07,ALGT,"ALLARD, SCOTT MATTHEW",Chief Information Officer,True,Common Stock,sell,912.0,82.69,75413.28
+2013-03-08,ALGT,"BRICKER, JUDE",SVP - Planning,True,Stock Appreciation Right,buy,8599.0,85.24,732978.76
+2013-03-08,ALGT,"BAUER, KRIS B",SVP - Operations,True,Stock Appreciation Right,buy,8599.0,85.24,732978.76
+2013-03-08,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Stock Appreciation Right,buy,8599.0,85.24,732978.76
+2013-03-08,ALGT,"ALLARD, SCOTT MATTHEW",Chief Information Officer,True,Stock Appreciation Right,buy,8599.0,85.24,732978.76
+2013-03-26,ALGT,"ALLARD, SCOTT MATTHEW",Chief Information Officer,True,Common Stock,sell,1286.0,86.4201,111136.2486
+2013-03-27,ALGT,"BRICKER, JUDE",SVP - Planning,True,Common Stock,buy,3216.0,42.22,135779.52
+2013-03-27,ALGT,"BRICKER, JUDE",SVP - Planning,True,Common Stock,sell,3216.0,88.3,283972.8
+2013-03-28,ALGT,"BRICKER, JUDE",SVP - Planning,True,Common Stock,sell,1911.0,88.9,169887.90000000002
+2013-04-24,ALGT,"BRICKER, JUDE",SVP- Planning,True,Common Stock,sell,274.0,90.64,24835.36
+2013-04-29,ALGT,"ALLARD, SCOTT MATTHEW",Chief Information Officer,True,Common Stock,sell,2421.0,89.84,217502.64
+2013-05-06,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,buy,8270.0,42.22,349159.39999999997
+2013-05-06,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,sell,8270.0,91.23,754472.1
+2013-05-18,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,sell,228.0,93.56,21331.68
+2013-06-07,ALGT,"BRICKER, JUDE",SVP - Planning,True,Common Stock,sell,726.0,98.18,71278.68000000001
+2013-06-26,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,sell,3785.0,107.7,407644.5
+2013-06-26,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,sell,3178.0,105.3,334643.39999999997
+2013-08-06,ALGT,"ELLMER, GARY",Director,True,Common Stock,sell,1500.0,97.523,146284.5
+2013-09-16,ALGT,"LEVY, ANDREW C",President,True,Employee Stock Option (right to buy),sell,20600.0,38.32,789392.0
+2013-09-16,ALGT,"LEVY, ANDREW C",President,True,Common Stock,buy,20600.0,38.32,789392.0
+2013-09-16,ALGT,"LEVY, ANDREW C",President,True,Common Stock,sell,3297.0,99.11,326765.67
+2013-09-16,ALGT,"LEVY, ANDREW C",President,True,Common Stock,sell,17303.0,98.65,1706940.9500000002
+2013-09-17,ALGT,"LEVY, ANDREW C",President,True,Employee Stock Option (right to buy),sell,4400.0,38.32,168608.0
+2013-09-17,ALGT,"LEVY, ANDREW C",President,True,Common Stock,sell,4300.0,98.5,423550.0
+2013-09-17,ALGT,"LEVY, ANDREW C",President,True,Common Stock,sell,100.0,99.0,9900.0
+2013-09-17,ALGT,"LEVY, ANDREW C",President,True,Common Stock,buy,4400.0,38.32,168608.0
+2014-02-08,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,sell,533.0,90.1,48023.299999999996
+2014-02-08,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO, 10% Owner",True,Common Stock,sell,867.0,90.1,78116.7
+2014-02-08,ALGT,"ALLARD, SCOTT MATTHEW",Chief Information Officer,True,Common Stock,sell,534.0,90.1,48113.399999999994
+2014-03-07,ALGT,"ALLARD, SCOTT MATTHEW",Chief Information Officer,True,Common Stock,sell,913.0,104.31,95235.03
+2014-03-08,ALGT,"ALLARD, SCOTT MATTHEW",Chief Information Officer,True,Common Stock,sell,290.0,104.31,30249.9
+2014-03-08,ALGT,"BRICKER, JUDE",SVP - Planning,True,Common Stock,sell,291.0,104.31,30354.21
+2014-03-08,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,sell,290.0,104.31,30249.9
+2014-04-24,ALGT,"BRICKER, JUDE",SVP - Planning,True,Common Stock,sell,274.0,119.38,32710.12
+2014-06-04,ALGT,"ALLARD, SCOTT MATTHEW",Chief Information Officer,True,Common Stock,sell,2866.0,119.6,342773.6
+2014-06-04,ALGT,"ALLARD, SCOTT MATTHEW",Chief Information Officer,True,Common Stock,buy,2866.0,85.24,244297.84
+2014-07-30,ALGT,"ELLMER, GARY",Director,True,Common Stock,sell,1000.0,118.597,118597.0
+2014-08-18,ALGT,"BRICKER, JUDE",SVP - Planning,True,Common Stock,sell,3217.0,126.75,407754.75
+2014-08-18,ALGT,"BRICKER, JUDE",SVP - Planning,True,Common Stock,buy,2867.0,85.24,244383.08
+2014-08-18,ALGT,"BRICKER, JUDE",SVP - Planning,True,Common Stock,buy,3217.0,42.22,135821.74
+2014-08-18,ALGT,"BRICKER, JUDE",SVP - Planning,True,Common Stock,sell,3217.0,125.75,404537.75
+2014-08-18,ALGT,"BRICKER, JUDE",SVP - Planning,True,Common Stock,sell,2867.0,126.75,363392.25
+2014-08-18,ALGT,"BRICKER, JUDE",SVP - Planning,True,Common Stock,sell,2867.0,125.75,360525.25
+2014-08-19,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,sell,2866.0,127.05,364125.3
+2014-08-19,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,buy,2866.0,85.24,244297.84
+2014-08-19,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,sell,4136.0,127.05,525478.7999999999
+2014-08-19,ALGT,"LEVY, ANDREW C","Director, President & COO",True,Common Stock,sell,22975.0,127.05,2918973.75
+2014-08-19,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,buy,4136.0,42.22,174621.91999999998
+2014-08-19,ALGT,"LEVY, ANDREW C","Director, President & COO",True,Common Stock,buy,22975.0,42.22,970004.5
+2014-08-20,ALGT,"LEVY, ANDREW C","Director, President & COO",True,Common Stock,sell,9526.0,127.4,1213612.4000000001
+2014-08-20,ALGT,"LEVY, ANDREW C","Director, President & COO",True,Common Stock,sell,15169.0,127.4,1932530.6
+2014-08-20,ALGT,"LEVY, ANDREW C","Director, President & COO",True,Common Stock,buy,50000.0,38.65,1932500.0
+2014-08-21,ALGT,"LEVY, ANDREW C","Director, President & COO",True,Common Stock,sell,7335.0,125.2136,918441.756
+2014-08-22,ALGT,"LEVY, ANDREW C","Director, President & COO",True,Common Stock,sell,17970.0,125.0687,2247484.5390000003
+2014-09-09,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO, 10% Owner",True,Common Stock,sell,200000.0,126.2,25240000.0
+2014-09-18,ALGT,"ALLARD, SCOTT MATTHEW",Chief Information Officer,True,Common Stock,sell,4513.0,125.3235,565584.9554999999
+2014-09-19,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,sell,2093.0,125.01,261645.93000000002
+2014-11-17,ALGT,"ELLMER, GARY",Director,True,Common Stock,sell,300.0,132.45,39735.0
+2014-12-04,ALGT,"BRICKER, JUDE",SVP - Planning,True,Common Stock,sell,3042.0,144.7258,440255.8836
+2015-02-09,ALGT,"ALLARD, SCOTT MATTHEW",Chief Information Officer,True,Common Stock,sell,519.0,176.94,91831.86
+2015-02-09,ALGT,"ANDERSON, GREGORY CLARK",Principal Accounting Officer,True,Common Stock,sell,101.0,176.94,17870.94
+2015-02-09,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and President, 10% Owner",True,Common Stock,sell,849.0,176.94,150222.06
+2015-02-09,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,sell,519.0,176.94,91831.86
+2015-02-09,ALGT,"BRICKER, JUDE",SVP - Planning,True,Common Stock,sell,434.0,176.94,76791.95999999999
+2015-02-13,ALGT,"ALLARD, SCOTT MATTHEW",Chief Information Officer,True,Common Stock,sell,1338.0,178.6941,239092.7058
+2015-02-20,ALGT,"BRICKER, JUDE",SVP - Planning,True,Common Stock,sell,1113.0,183.942,204727.446
+2015-02-20,ALGT,"ANDERSON, GREGORY CLARK",Principal Accounting Officer,True,Common Stock,sell,208.0,181.27,37704.16
+2015-02-25,ALGT,"ALLARD, SCOTT MATTHEW",Chief Information Officer,True,Stock Appreciation Right,buy,6089.0,181.47,1104970.83
+2015-02-25,ALGT,"ANDERSON, GREGORY CLARK",Principal Accounting Officer,True,Stock Appreciation Right,buy,3349.0,181.47,607743.03
+2015-02-25,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and President, 10% Owner",True,Stock Appreciation Right,buy,6089.0,181.47,1104970.83
+2015-02-25,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Stock Appreciation Right,buy,6089.0,181.47,1104970.83
+2015-02-25,ALGT,"BRICKER, JUDE",SVP - Planning,True,Stock Appreciation Right,buy,6089.0,181.47,1104970.83
+2015-03-06,ALGT,"ALLARD, SCOTT MATTHEW",Chief Information Officer,True,Common Stock,sell,252.0,186.15,46909.8
+2015-03-06,ALGT,"ANDERSON, GREGORY CLARK",Principal Accounting Officer,True,Common Stock,sell,41.0,186.15,7632.150000000001
+2015-03-06,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and President, 10% Owner",True,Common Stock,sell,210.0,186.15,39091.5
+2015-03-06,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,sell,252.0,186.15,46909.8
+2015-03-06,ALGT,"BRICKER, JUDE",SVP - Planning,True,Common Stock,sell,252.0,186.15,46909.8
+2015-03-08,ALGT,"ALLARD, SCOTT MATTHEW",Chief Information Officer,True,Common Stock,sell,290.0,186.15,53983.5
+2015-03-08,ALGT,"BRICKER, JUDE",SVP - Planning,True,Common Stock,sell,290.0,186.15,53983.5
+2015-03-08,ALGT,"ANDERSON, GREGORY CLARK",Principal Accounting Officer,True,Common Stock,sell,61.0,186.15,11355.15
+2015-03-08,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and President, 10% Owner",True,Common Stock,sell,284.0,186.15,52866.6
+2015-03-08,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,sell,290.0,186.15,53983.5
+2015-03-09,ALGT,"ELLMER, GARY",Director,True,Common Stock,sell,280.0,190.0,53200.0
+2015-03-13,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,sell,2866.0,197.49,566006.3400000001
+2015-03-13,ALGT,"BRICKER, JUDE",SVP - Planning,True,Common Stock,sell,2866.0,197.49,566006.3400000001
+2015-03-13,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,buy,2866.0,85.24,244297.84
+2015-03-13,ALGT,"BRICKER, JUDE",SVP - Planning,True,Common Stock,buy,2866.0,85.24,244297.84
+2015-03-23,ALGT,"ANDERSON, GREGORY CLARK",Principal Accounting Officer,True,Common Stock,sell,279.0,196.0,54684.0
+2015-04-24,ALGT,"BRICKER, JUDE",SVP - Planning,True,Common Stock,sell,420.0,168.12,70610.40000000001
+2015-06-01,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,sell,1200.0,159.128,190953.59999999998
+2015-06-05,ALGT,"ELLMER, GARY",Director,True,Common Stock,sell,300.0,165.06,49518.0
+2015-06-23,ALGT,"ELLMER, GARY",Director,True,Common Stock,sell,520.0,178.82,92986.4
+2015-07-31,ALGT,"ALLARD, SCOTT MATTHEW",Chief Information Officer,True,Employee Stock Option (right to buy),sell,2596.0,108.59,281899.64
+2015-07-31,ALGT,"ALLARD, SCOTT MATTHEW",Chief Information Officer,True,Common Stock,buy,2865.0,85.24,244212.59999999998
+2015-07-31,ALGT,"ALLARD, SCOTT MATTHEW",Chief Information Officer,True,Common Stock,sell,2865.0,215.48,617350.2
+2015-07-31,ALGT,"ALLARD, SCOTT MATTHEW",Chief Information Officer,True,Common Stock,buy,2596.0,108.59,281899.64
+2015-07-31,ALGT,"ALLARD, SCOTT MATTHEW",Chief Information Officer,True,Common Stock,sell,2596.0,212.24,550975.04
+2015-08-03,ALGT,"BRICKER, JUDE",SVP - Planning,True,Common Stock,sell,2596.0,221.15,574105.4
+2015-08-03,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,buy,2596.0,108.59,281899.64
+2015-08-03,ALGT,"BRICKER, JUDE",SVP - Planning,True,Employee Stock Option (right to buy),sell,2596.0,108.59,281899.64
+2015-08-03,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,sell,2596.0,219.55,569951.8
+2015-08-03,ALGT,"REDMOND, JOHN",Director,True,Common Stock,sell,1500.0,220.85,331275.0
+2015-08-03,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Employee Stock Option (right to buy),sell,2596.0,108.59,281899.64
+2015-08-03,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,sell,1576.0,219.902,346565.55199999997
+2015-08-03,ALGT,"BRICKER, JUDE",SVP - Planning,True,Common Stock,buy,2596.0,108.59,281899.64
+2015-08-12,ALGT,"REDMOND, JOHN",Director,True,Common Stock,sell,6000.0,224.77,1348620.0
+2015-11-23,ALGT,"ELLMER, GARY",Director,True,Common Stock,sell,480.0,200.0,96000.0
+2016-02-25,ALGT,"ALLARD, SCOTT MATTHEW",Chief Information Officer,True,Common Stock,sell,151.0,169.3,25564.300000000003
+2016-02-25,ALGT,"ANDERSON, GREGORY CLARK",Principal Accounting Officer,True,Common Stock,sell,83.0,169.3,14051.900000000001
+2016-02-25,ALGT,"BRICKER, JUDE",SVP-Planning,True,Common Stock,sell,151.0,169.3,25564.300000000003
+2016-02-25,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,sell,151.0,169.3,25564.300000000003
+2016-02-25,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and President, 10% Owner",True,Common Stock,sell,231.0,169.3,39108.3
+2016-03-02,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and President, 10% Owner",True,Common Stock,buy,8271.0,42.22,349201.62
+2016-03-02,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and President, 10% Owner",True,Common Stock,sell,8271.0,171.94,1422115.74
+2016-03-06,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,sell,252.0,172.0,43344.0
+2016-03-06,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and President, 10% Owner",True,Common Stock,sell,322.0,172.0,55384.0
+2016-03-06,ALGT,"BRICKER, JUDE",SVP - Planning,True,Common Stock,sell,252.0,172.0,43344.0
+2016-03-06,ALGT,"ANDERSON, GREGORY CLARK",Principal Accounting Officer,True,Common Stock,sell,42.0,172.0,7224.0
+2016-03-06,ALGT,"ALLARD, SCOTT MATTHEW",Chief Information Officer,True,Common Stock,sell,252.0,172.0,43344.0
+2016-03-08,ALGT,"BRICKER, JUDE",SVP - Planning,True,Common Stock,sell,321.0,166.84,53555.64
+2016-03-08,ALGT,"ALLARD, SCOTT MATTHEW",Chief Information Officer,True,Common Stock,sell,289.0,166.84,48216.76
+2016-03-08,ALGT,"ANDERSON, GREGORY CLARK",Principal Accounting Officer,True,Common Stock,sell,63.0,166.84,10510.92
+2016-03-08,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and President, 10% Owner",True,Common Stock,sell,435.0,166.84,72575.40000000001
+2016-03-08,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,sell,321.0,166.84,53555.64
+2016-03-09,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and President, 10% Owner",True,Common Stock,sell,250000.0,163.5,40875000.0
+2016-03-09,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and President, 10% Owner",True,Common Stock,sell,3000.0,163.5,490500.0
+2016-03-09,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and President, 10% Owner",True,Common Stock,sell,39200.0,163.5,6409200.0
+2016-09-09,ALGT,"REDMOND, JOHN","Director, President",True,Stock Appreciation Right,buy,15000.0,146.03,2190450.0
+2016-10-28,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,buy,2867.0,85.24,244383.08
+2016-10-28,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,sell,2867.0,137.8,395072.60000000003
+2016-11-10,ALGT,"BRICKER, JUDE",SVP-Planning and COO,True,Common Stock,buy,2596.0,108.59,281899.64
+2016-11-10,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,buy,2596.0,108.59,281899.64
+2016-11-10,ALGT,"BRICKER, JUDE",SVP-Planning and COO,True,Common Stock,sell,2035.0,151.72,308750.2
+2016-11-10,ALGT,"BRICKER, JUDE",SVP-Planning and COO,True,Common Stock,sell,2596.0,151.55,393423.80000000005
+2016-11-10,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,sell,2596.0,153.699,399002.60400000005
+2016-11-10,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Employee Stock Option (right to buy),sell,2596.0,108.59,281899.64
+2016-11-10,ALGT,"BRICKER, JUDE",SVP-Planning and COO,True,Employee Stock Option (right to buy),sell,2596.0,108.59,281899.64
+2016-11-10,ALGT,"BRICKER, JUDE",SVP-Planning and COO,True,Common Stock,buy,2866.0,85.24,244297.84
+2016-11-10,ALGT,"BRICKER, JUDE",SVP-Planning and COO,True,Common Stock,sell,2866.0,154.23,442023.18
+2016-12-08,ALGT,"ALLARD, SCOTT MATTHEW",Chief Information Officer,True,Common Stock,sell,1838.0,170.725,313792.55
+2016-12-09,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,sell,600.0,171.475,102885.0
+2016-12-09,ALGT,"SHELDON, SCOTT",Chief Financial Officer,True,Common Stock,sell,1206.0,171.4,206708.4
+2016-12-28,ALGT,"ELLMER, GARY",Director,True,Common Stock,sell,285.0,165.76,47241.6
+2017-02-17,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman",True,Common Stock,sell,387.0,171.4,66331.8
+2017-02-17,ALGT,"ALLARD, SCOTT MATTHEW",EVP & Chief Information Off.,True,Common Stock,buy,318.0,171.4,54505.200000000004
+2017-02-17,ALGT,"BRICKER, JUDE","EVP, Planning & COO",True,Common Stock,sell,377.0,171.4,64617.8
+2017-02-17,ALGT,"ANDERSON, GREGORY CLARK",Principal Accounting Officer,True,Common Stock,sell,234.0,171.4,40107.6
+2017-02-17,ALGT,"SHELDON, SCOTT",EVP & Chief Financial Officer,True,Common Stock,sell,377.0,171.4,64617.8
+2017-02-25,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,231.0,173.55,40090.05
+2017-02-25,ALGT,"ANDERSON, GREGORY CLARK",Principal Accounting Officer,True,Common Stock,sell,83.0,173.55,14404.650000000001
+2017-02-25,ALGT,"BRICKER, JUDE","EVP, Planning & COO",True,Common Stock,sell,170.0,173.55,29503.500000000004
+2017-02-25,ALGT,"SHELDON, SCOTT",EVP & Chief Financial Officer,True,Common Stock,sell,170.0,173.55,29503.500000000004
+2017-02-25,ALGT,"ALLARD, SCOTT MATTHEW",EVP & Chief Information Off.,True,Common Stock,sell,151.0,173.55,26206.050000000003
+2017-03-06,ALGT,"ANDERSON, GREGORY CLARK",Principal Accounting Officer,True,Common Stock,sell,42.0,168.75,7087.5
+2017-03-06,ALGT,"ALLARD, SCOTT MATTHEW",EVP & Chief Information Off.,True,Common Stock,sell,374.0,168.75,63112.5
+2017-03-06,ALGT,"SHELDON, SCOTT",EVP & Chief Financial Officer,True,Common Stock,sell,386.0,168.75,65137.5
+2017-03-06,ALGT,"BRICKER, JUDE","EVP, Planning & COO",True,Common Stock,sell,386.0,168.75,65137.5
+2017-03-06,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,322.0,168.75,54337.5
+2017-03-09,ALGT,"REDMOND, JOHN","Director, President",True,Common Stock,sell,3506.0,158.95,557278.7
+2017-03-17,ALGT,"BRICKER, JUDE","EVP, Planning & COO",True,Common Stock,sell,2497.0,158.46,395674.62
+2017-03-17,ALGT,"BRICKER, JUDE","EVP, Planning & COO",True,Employee Stock Option (right to buy),sell,2597.0,108.59,282008.23
+2017-03-17,ALGT,"BRICKER, JUDE","EVP, Planning & COO",True,Common Stock,buy,2597.0,108.59,282008.23
+2017-03-17,ALGT,"BRICKER, JUDE","EVP, Planning & COO",True,Common Stock,sell,100.0,157.7,15769.999999999998
+2017-03-17,ALGT,"BRICKER, JUDE","EVP, Planning & COO",True,Common Stock,sell,1824.0,159.0,290016.0
+2017-03-24,ALGT,"ELLMER, GARY",Director,True,Common Stock,sell,580.0,162.0,93960.0
+2017-05-08,ALGT,"BRICKER, JUDE",EVP & Chief Operating Officer,True,Common Stock,sell,1049.0,146.0,153154.0
+2017-05-08,ALGT,"ANDERSON, GREGORY CLARK",SVP/Principal Accounting Offic,True,Common Stock,sell,697.0,146.0,101762.0
+2017-05-08,ALGT,"SHELDON, SCOTT",EVP & Chief Financial Officer,True,Common Stock,sell,1049.0,146.0,153154.0
+2017-05-08,ALGT,"ALLARD, SCOTT MATTHEW",EVP & Chief Information Off.,True,Common Stock,sell,1049.0,146.0,153154.0
+2017-05-22,ALGT,"ELLMER, GARY",Director,True,Common Stock,sell,135.0,142.912,19293.120000000003
+2017-05-23,ALGT,"ANDERSON, GREGORY CLARK",SVP/Principal Accounting Offic,True,Common Stock,sell,1500.0,142.0833,213124.95
+2017-09-09,ALGT,"REDMOND, JOHN","Director, President",True,Common Stock,sell,4195.0,115.35,483893.25
+2017-10-27,ALGT,"REDMOND, JOHN","Director, President",True,Common Stock,buy,11000.0,138.2801,1521081.1
+2017-10-27,ALGT,"SHELDON, SCOTT","EVP, CFO and COO",True,Common Stock,sell,3275.0,137.59,450607.25
+2017-10-27,ALGT,"SHELDON, SCOTT","EVP, CFO and COO",True,Common Stock,buy,2597.0,108.59,282008.23
+2017-10-27,ALGT,"SHELDON, SCOTT","EVP, CFO and COO",True,Employee Stock Option (right to buy),sell,2597.0,108.59,282008.23
+2017-10-27,ALGT,"SHELDON, SCOTT","EVP, CFO and COO",True,Common Stock,sell,2597.0,137.69,357580.93
+2017-12-06,ALGT,"ELLMER, GARY",Director,True,Common Stock,sell,1000.0,148.85,148850.0
+2017-12-28,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,16018.0,155.824,2495988.8320000004
+2017-12-29,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,1800.0,155.0042,279007.56
+2018-01-12,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,71678.0,165.5396,11865547.448800001
+2018-01-16,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,25023.0,169.2116,4234181.8668
+2018-01-16,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,1235.0,170.9953,211179.19549999997
+2018-01-16,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,30876.0,170.118,5252563.368
+2018-01-16,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,5539.0,168.0332,930735.8948
+2018-01-17,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,7746.0,167.2448,1295478.2208
+2018-01-17,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,24991.0,166.4291,4159229.6381
+2018-01-17,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,4200.0,168.3641,707129.2200000001
+2018-01-17,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,10894.0,165.3607,1801439.4658000001
+2018-02-17,ALGT,"SHELDON, SCOTT","EVP, CFO and COO",True,Common Stock,sell,331.0,167.0,55277.0
+2018-02-17,ALGT,"ANDERSON, GREGORY CLARK",SVP/Principal Accounting Offic,True,Common Stock,sell,183.0,167.0,30561.0
+2018-02-17,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,506.0,167.0,84502.0
+2018-02-21,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,528.0,168.25,88836.0
+2018-02-21,ALGT,"ANDERSON, GREGORY CLARK",SVP/Principal Accounting Offic,True,Common Stock,sell,187.0,168.25,31462.75
+2018-02-21,ALGT,"SHELDON, SCOTT","EVP, CFO and COO",True,Common Stock,sell,528.0,168.25,88836.0
+2018-02-21,ALGT,"REDMOND, JOHN","Director, President",True,Common Stock,sell,363.0,168.25,61074.75
+2018-02-25,ALGT,"SHELDON, SCOTT","EVP, CFO and COO",True,Common Stock,sell,217.0,169.15,36705.55
+2018-02-25,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,217.0,169.15,36705.55
+2018-02-25,ALGT,"ANDERSON, GREGORY CLARK",SVP/Principal Accounting Offic,True,Common Stock,sell,74.0,169.15,12517.1
+2018-03-06,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,buy,12645.0,85.24,1077859.8
+2018-03-06,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,900.0,164.57,148113.0
+2018-03-06,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,11200.0,163.21,1827952.0
+2018-03-06,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Employee Stock Option (right to buy),sell,12645.0,85.24,1077859.8
+2018-03-06,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,545.0,165.27,90072.15000000001
+2018-03-09,ALGT,"REDMOND, JOHN","Director, President",True,Common Stock,sell,3269.0,174.3,569786.7000000001
+2018-03-13,ALGT,"ANDERSON, GREGORY CLARK",SVP/Principal Accounting Offic,True,Common Stock,sell,1650.0,178.2508,294113.82
+2018-03-13,ALGT,"ELLMER, GARY",Director,True,Common Stock,sell,120.0,178.4,21408.0
+2018-05-07,ALGT,"ANDERSON, GREGORY CLARK",SVP/Principal Accounting Offic,True,Common Stock,sell,766.0,159.6,122253.59999999999
+2018-05-07,ALGT,"SHELDON, SCOTT","EVP, CFO and COO",True,Common Stock,sell,59.0,159.6,9416.4
+2018-05-14,ALGT,"SHELDON, SCOTT","EVP, CFO and COO",True,Common Stock,sell,1042.0,160.21,166938.82
+2018-05-14,ALGT,"SHELDON, SCOTT","EVP, CFO and COO",True,Common Stock,sell,1600.0,159.04,254464.0
+2018-05-14,ALGT,"SHELDON, SCOTT","EVP, CFO and COO",True,Common Stock,sell,1000.0,158.41,158410.0
+2018-05-14,ALGT,"SHELDON, SCOTT","EVP, CFO and COO",True,Common Stock,sell,800.0,161.49,129192.0
+2018-05-14,ALGT,"SHELDON, SCOTT","EVP, CFO and COO",True,Common Stock,sell,100.0,162.15,16215.0
+2018-08-22,ALGT,"WILSON, ROBERT PAUL III",EVP and CIO,True,Common Stock,sell,380.0,135.006,51302.28
+2018-09-09,ALGT,"REDMOND, JOHN","Director, President",True,Common Stock,sell,3935.0,132.55,521584.25000000006
+2018-10-31,ALGT,"REDMOND, JOHN","Director, President",True,Common Stock,buy,6000.0,115.0333,690199.7999999999
+2018-10-31,ALGT,"REDMOND, JOHN","Director, President",True,Common Stock,buy,6000.0,115.7977,694786.2000000001
+2018-12-20,ALGT,"WILSON, ROBERT PAUL III",EVP and CIO,True,Common Stock,sell,486.0,111.984,54424.223999999995
+2019-02-08,ALGT,"REDMOND, JOHN",President,True,Common Stock,sell,950.0,135.76,128971.99999999999
+2019-02-08,ALGT,"ANDERSON, GREGORY CLARK",SVP/Principal Accounting Offic,True,Common Stock,sell,275.0,135.76,37334.0
+2019-02-08,ALGT,"WILSON, ROBERT PAUL III",EVP and CIO,True,Common Stock,sell,273.0,135.76,37062.479999999996
+2019-02-08,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,460.0,135.76,62449.6
+2019-02-08,ALGT,"SHELDON, SCOTT","EVP, CFO and COO",True,Common Stock,sell,77.0,135.76,10453.519999999999
+2019-02-17,ALGT,"WILSON, ROBERT PAUL III",EVP and CIO,True,Common Stock,sell,157.0,139.21,21855.97
+2019-02-17,ALGT,"SHELDON, SCOTT","EVP, CFO and COO",True,Common Stock,sell,30.0,139.21,4176.3
+2019-02-17,ALGT,"ANDERSON, GREGORY CLARK",SVP/Principal Accounting Offic,True,Common Stock,sell,183.0,139.21,25475.43
+2019-02-17,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,506.0,139.21,70440.26000000001
+2019-02-21,ALGT,"SHELDON, SCOTT","EVP, CFO and COO",True,Common Stock,sell,32.0,137.02,4384.64
+2019-02-21,ALGT,"REDMOND, JOHN","Director, President",True,Common Stock,sell,327.0,137.02,44805.54
+2019-02-21,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,528.0,137.02,72346.56000000001
+2019-02-21,ALGT,"WILSON, ROBERT PAUL III",EVP and CIO,True,Common Stock,sell,187.0,137.02,25622.74
+2019-02-21,ALGT,"ANDERSON, GREGORY CLARK",SVP/Principal Accounting Offic,True,Common Stock,sell,187.0,137.02,25622.74
+2019-03-06,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,buy,9737.0,108.59,1057340.83
+2019-03-06,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,9737.0,128.05,1246822.85
+2019-03-06,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Employee Stock Option (right to buy),sell,9737.0,108.59,1057340.83
+2019-03-09,ALGT,"REDMOND, JOHN","Director, President",True,Common Stock,sell,3565.0,126.82,452113.3
+2019-03-26,ALGT,"ELLMER, GARY",Director,True,Common Stock,sell,1000.0,124.5,124500.0
+2019-05-03,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,465.0,148.616,69106.44
+2019-05-03,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,758.0,147.9378,112136.8524
+2019-05-03,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,46697.0,147.7608,6899986.0775999995
+2019-05-06,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,3521.0,147.5,519347.5
+2019-05-07,ALGT,"SHELDON, SCOTT",EVP and COO,True,Common Stock,sell,59.0,144.67,8535.529999999999
+2019-05-07,ALGT,"ANDERSON, GREGORY CLARK",EVP and CFO,True,Common Stock,sell,777.0,144.67,112408.59
+2019-05-07,ALGT,"WILSON, ROBERT PAUL III",EVP and CIO,True,Common Stock,sell,462.0,144.67,66837.54
+2019-05-09,ALGT,"WILSON, ROBERT PAUL III",EVP and CIO,True,Common Stock,sell,1823.0,141.2755,257545.2365
+2019-06-13,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,4222.0,148.171,625577.9619999999
+2019-07-12,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,10778.0,148.1746,1597025.8388
+2019-07-16,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,5755.0,152.0,874760.0
+2019-07-16,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,8803.0,150.4439,1324357.6517
+2019-07-16,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,4711.0,151.376,713132.336
+2019-07-24,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,1486.0,150.247,223267.04200000002
+2019-07-25,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,13209.0,154.0718,2035134.4061999999
+2019-07-25,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,9245.0,152.0,1405240.0
+2019-07-25,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,7591.0,156.82,1190420.6199999999
+2019-07-25,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,9200.0,155.9566,1434800.72
+2019-08-07,ALGT,"WILSON, ROBERT PAUL III",EVP and CIO,True,Common Stock,sell,1000.0,144.831,144831.0
+2019-08-09,ALGT,"ELLMER, GARY",Director,True,Common Stock,sell,1000.0,145.1,145100.0
+2019-09-09,ALGT,"REDMOND, JOHN","Director, President",True,Common Stock,sell,3935.0,148.95,586118.25
+2019-10-25,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,4947.0,165.3349,817911.7503000001
+2019-10-25,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,3744.0,161.0063,602807.5872000001
+2019-10-25,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,10578.0,162.094,1714630.332
+2019-10-25,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,14152.0,162.9807,2306502.8664
+2019-10-25,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,2700.0,159.0809,429518.43000000005
+2019-10-25,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,3900.0,160.4562,625779.1799999999
+2019-10-25,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,1108.0,167.9134,186048.0472
+2019-10-25,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,67.0,166.1,11128.699999999999
+2019-10-25,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,19712.0,164.4872,3242371.6864
+2019-10-28,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,2080.0,170.7231,355104.04799999995
+2019-10-28,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,8912.0,170.0426,1515419.6512
+2019-10-28,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,3100.0,168.5198,522411.38
+2020-02-08,ALGT,"ANDERSON, GREGORY CLARK",EVP and CFO,True,Common Stock,sell,232.0,162.58,37718.560000000005
+2020-02-08,ALGT,"REDMOND, JOHN","Director, President",True,Common Stock,sell,944.0,162.58,153475.52000000002
+2020-02-08,ALGT,"WILSON, ROBERT PAUL III",EVP and CIO,True,Common Stock,sell,232.0,162.58,37718.560000000005
+2020-02-08,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,667.0,162.58,108440.86000000002
+2020-02-08,ALGT,"SHELDON, SCOTT",EVP and COO,True,Common Stock,sell,40.0,162.58,6503.200000000001
+2020-02-14,ALGT,"WILSON, ROBERT PAUL III",EVP and CIO,True,Common Stock,sell,232.0,165.45,38384.399999999994
+2020-02-14,ALGT,"REDMOND, JOHN","Director, President",True,Common Stock,sell,1282.0,165.45,212106.9
+2020-02-14,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,1877.0,165.45,310549.64999999997
+2020-02-14,ALGT,"SHELDON, SCOTT",EVP and COO,True,Common Stock,sell,56.0,165.45,9265.199999999999
+2020-02-14,ALGT,"ANDERSON, GREGORY CLARK",EVP and CFO,True,Common Stock,sell,483.0,165.45,79912.34999999999
+2020-02-14,ALGT,"DEANGELO, SCOTT WAYNE","EVP, Marketing",True,Common Stock,sell,131.0,165.45,21673.949999999997
+2020-02-21,ALGT,"SHELDON, SCOTT",EVP and COO,True,Common Stock,sell,32.0,162.86,5211.52
+2020-02-21,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,528.0,162.86,85990.08
+2020-02-21,ALGT,"REDMOND, JOHN","Director, President",True,Common Stock,sell,528.0,162.86,85990.08
+2020-02-21,ALGT,"WILSON, ROBERT PAUL III",EVP and CIO,True,Common Stock,sell,187.0,162.86,30454.820000000003
+2020-02-21,ALGT,"ANDERSON, GREGORY CLARK",EVP and CFO,True,Common Stock,sell,302.0,162.86,49183.72
+2020-02-27,ALGT,"REDMOND, JOHN","Director, President",True,Common Stock,buy,7000.0,139.95,979649.9999999999
+2020-02-28,ALGT,"REDMOND, JOHN","Director, President",True,Common Stock,buy,4000.0,129.5,518000.0
+2020-03-13,ALGT,"ELLMER, GARY",Director,True,Common Stock,buy,490.0,108.8,53312.0
+2020-03-25,ALGT,"WILSON, ROBERT PAUL III",EVP and CIO,True,Common Stock,sell,4800.0,92.233,442718.4
+2020-05-22,ALGT,"POLLARD, CHARLES W.",Director,True,Common Stock,buy,1000.0,86.0,86000.0
+2020-06-03,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,25000.0,121.2972,3032430.0
+2020-06-03,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,35000.0,123.0564,4306974.0
+2020-06-03,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,35000.0,121.4439,4250536.5
+2020-06-04,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,16142.0,125.2252,2021385.1784
+2020-06-04,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,16410.0,126.9325,2082962.3250000002
+2020-06-04,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,37448.0,129.762,4859327.376
+2020-06-05,ALGT,"REDMOND, JOHN","Director, President",True,Common Stock,buy,5000.0,122.8938,614469.0
+2020-06-11,ALGT,"POLLARD, CHARLES W.",Director,True,Common Stock,buy,1000.0,104.98,104980.0
+2020-08-03,ALGT,"DEANGELO, SCOTT WAYNE","EVP, Marketing",True,Common Stock,sell,333.0,112.0,37296.0
+2020-08-05,ALGT,"ANDERSON, GREGORY CLARK",EVP and CFO,True,Common Stock,sell,1819.0,114.422,208133.618
+2020-08-05,ALGT,"WILSON, ROBERT PAUL III",EVP and CIO,True,Common Stock,sell,1076.0,114.4217,123117.7492
+2020-08-06,ALGT,"ELLMER, GARY",Director,True,Common Stock,sell,325.0,120.0,39000.0
+2020-08-06,ALGT,"ANDERSON, GREGORY CLARK",EVP and CFO,True,Common Stock,sell,1750.0,117.995,206491.25
+2020-08-10,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,16906.0,120.3881,2035281.2185999998
+2020-08-10,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,1901.0,122.6663,233188.6363
+2020-08-10,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,46987.0,119.2949,5605309.4662999995
+2020-08-11,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,34206.0,124.25,4250095.5
+2020-08-11,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,14626.0,122.411,1790383.286
+2020-08-11,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,13449.0,125.597,1689154.0529999998
+2020-08-12,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,21925.0,119.74,2625299.5
+2020-08-12,ALGT,"POLLARD, CHARLES W.",Director,True,Common Stock,buy,1000.0,120.0,120000.0
+2020-08-17,ALGT,"POLLARD, CHARLES W.",Director,True,Common Stock,buy,1000.0,115.0,115000.0
+2020-08-20,ALGT,"POLLARD, CHARLES W.",Director,True,Common Stock,buy,1000.0,115.0,115000.0
+2020-08-28,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,38212.0,132.5297,5064224.8964
+2020-08-28,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,34103.0,133.6738,4558677.6014
+2020-08-28,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,27685.0,134.3179,3718591.0615000003
+2020-11-05,ALGT,"ANDERSON, GREGORY CLARK",EVP and CFO,True,Common Stock,sell,1850.0,135.5686,250801.91
+2020-11-06,ALGT,"ANDERSON, GREGORY CLARK",EVP and CFO,True,Common Stock,sell,2000.0,137.2795,274559.0
+2020-11-13,ALGT,"DEANGELO, SCOTT WAYNE","EVP, Marketing",True,Common Stock,sell,1796.0,150.9134,271040.4664
+2020-11-18,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,2727.0,161.6798,440900.8146
+2020-11-18,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,1691.0,157.6891,266652.2681
+2020-11-18,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,1273.0,160.2,203934.59999999998
+2020-11-18,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,2600.0,162.1838,421677.88
+2020-11-18,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,7631.0,159.593,1217854.183
+2020-11-18,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,16345.0,160.3584,2621058.048
+2020-11-18,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,6519.0,161.2899,1051448.8580999998
+2020-11-19,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,2846.0,158.7088,451685.2448
+2020-11-19,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,12982.0,158.0338,2051594.7916
+2020-11-20,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,19203.0,155.5141,2986337.2623
+2020-11-20,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,1118.0,157.25,175805.5
+2020-11-20,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,2500.0,156.5388,391347.0
+2020-11-20,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,2000.0,153.6637,307327.4
+2020-11-20,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,20565.0,154.8957,3185430.0705
+2020-11-24,ALGT,"MARVIN, LINDA A",Director,True,Common Stock,sell,800.0,168.6479,134918.32
+2020-11-24,ALGT,"MARVIN, LINDA A",Director,True,Common Stock,sell,200.0,169.7,33940.0
+2020-12-30,ALGT,"REDMOND, JOHN","Director, President",True,Common Stock,buy,15000.0,146.03,2190450.0
+2020-12-30,ALGT,"REDMOND, JOHN","Director, President",True,Common Stock,sell,15000.0,186.97,2804550.0
+2021-02-05,ALGT,"SHELDON, SCOTT",EVP and COO,True,Common Stock,sell,1800.0,215.63,388134.0
+2021-02-05,ALGT,"SHELDON, SCOTT",EVP and COO,True,Common Stock,sell,600.0,217.44,130464.0
+2021-02-05,ALGT,"SHELDON, SCOTT",EVP and COO,True,Common Stock,sell,600.0,216.21,129726.0
+2021-02-05,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,8880.0,215.3819,1912591.272
+2021-02-05,ALGT,"SHELDON, SCOTT",EVP and COO,True,Common Stock,sell,400.0,218.38,87352.0
+2021-02-05,ALGT,"ELLMER, GARY",Director,True,Common Stock,sell,450.0,220.0989,99044.50499999999
+2021-02-05,ALGT,"ANDERSON, GREGORY CLARK",EVP and CFO,True,Common Stock,sell,3270.0,216.11,706679.7000000001
+2021-02-05,ALGT,"SHELDON, SCOTT",EVP and COO,True,Common Stock,sell,4307.0,216.1616,931008.0112
+2021-02-05,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,2936.0,216.759,636404.424
+2021-02-05,ALGT,"SHELDON, SCOTT",EVP and COO,True,Common Stock,sell,300.0,220.51,66153.0
+2021-02-05,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,1598.0,215.1334,343783.1732
+2021-02-05,ALGT,"MARVIN, LINDA A",Director,True,Common Stock,sell,1000.0,214.52,214520.0
+2021-02-05,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,433.0,220.8386,95623.1138
+2021-02-05,ALGT,"SHELDON, SCOTT",EVP and COO,True,Common Stock,sell,2317.0,217.3691,503644.2047
+2021-02-05,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,3100.0,218.9963,678888.53
+2021-02-05,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,2446.0,219.8988,537872.4648
+2021-02-05,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,2385.0,217.4642,518652.117
+2021-02-05,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,3861.0,213.6834,825031.6074
+2021-02-05,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,2070.0,216.0713,447267.591
+2021-02-05,ALGT,"SHELDON, SCOTT",EVP and COO,True,Common Stock,sell,1200.0,219.54,263448.0
+2021-02-08,ALGT,"ANDERSON, GREGORY CLARK",EVP and CFO,True,Common Stock,sell,412.0,212.02,87352.24
+2021-02-08,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,886.0,212.02,187849.72
+2021-02-08,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,54000.0,212.0831,11452487.4
+2021-02-08,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,13261.0,212.798,2821914.278
+2021-02-08,ALGT,"SHELDON, SCOTT",EVP and COO,True,Common Stock,sell,498.0,212.02,105585.96
+2021-02-08,ALGT,"WILSON, ROBERT PAUL III",EVP and CIO,True,Common Stock,sell,263.0,212.02,55761.26
+2021-02-08,ALGT,"ARETOS, REBECCA",Principal Accounting Officer,True,Common Stock,sell,53.0,212.02,11237.060000000001
+2021-02-08,ALGT,"REDMOND, JOHN","Director, President",True,Common Stock,sell,885.0,212.02,187637.7
+2021-02-08,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,5030.0,213.9,1075917.0
+2021-02-09,ALGT,"ARETOS, REBECCA",Principal Accounting Officer,True,Common Stock,sell,157.0,211.57,33216.49
+2021-02-09,ALGT,"SHELDON, SCOTT",EVP and COO,True,Common Stock,sell,2602.0,215.56,560887.12
+2021-02-10,ALGT,"DEANGELO, SCOTT WAYNE","EVP, Marketing",True,Common Stock,sell,240.0,211.1983,50687.592
+2021-02-17,ALGT,"DEANGELO, SCOTT WAYNE","EVP, Marketing",True,Common Stock,sell,781.0,220.0,171820.0
+2021-02-19,ALGT,"WILSON, ROBERT PAUL III",EVP and CIO,True,Common Stock,sell,160.0,243.84,39014.4
+2021-02-24,ALGT,"SHELDON, SCOTT",EVP and COO,True,Common Stock,sell,2100.0,256.2228,538067.88
+2021-02-24,ALGT,"ANDERSON, GREGORY CLARK",EVP and CFO,True,Common Stock,sell,2000.0,256.9644,513928.80000000005
+2021-02-24,ALGT,"SHELDON, SCOTT",EVP and COO,True,Common Stock,sell,600.0,258.6397,155183.82
+2021-02-24,ALGT,"MARVIN, LINDA A",Director,True,Common Stock,sell,1000.0,255.8486,255848.6
+2021-02-24,ALGT,"WILSON, ROBERT PAUL III",EVP and CIO,True,Common Stock,sell,90.0,257.73,23195.7
+2021-02-24,ALGT,"SHELDON, SCOTT",EVP and COO,True,Common Stock,sell,300.0,259.49,77847.0
+2021-02-25,ALGT,"WILSON, ROBERT PAUL III",EVP and CIO,True,Common Stock,sell,700.0,250.0,175000.0
+2021-03-03,ALGT,"REDMOND, JOHN","Director, President",True,Common Stock,sell,23500.0,260.0,6110000.0
+2021-08-18,ALGT,"SHELDON, SCOTT",EVP and COO,True,Common Stock,sell,1946.0,187.213,364316.49799999996
+2021-08-18,ALGT,"ANDERSON, GREGORY CLARK",EVP and CFO,True,Common Stock,sell,1767.0,187.213,330805.371
+2021-09-13,ALGT,"DEANGELO, SCOTT WAYNE",EVP and CMO,True,Common Stock,sell,616.0,190.349,117254.984
+2021-09-13,ALGT,"WILSON, ROBERT PAUL III",EVP and CIO,True,Common Stock,sell,693.0,190.349,131911.857
+2021-10-26,ALGT,"ARETOS, REBECCA",Principal Accounting Officer,True,Common Stock,sell,182.0,182.4545,33206.719
+2021-12-30,ALGT,"WILSON, ROBERT PAUL III",EVP and CIO,True,Common Stock,sell,1971.0,191.0983,376654.74929999997
+2021-12-30,ALGT,"ANDERSON, GREGORY CLARK",EVP and CFO,True,Common Stock,sell,4496.0,191.0983,859177.9567999999
+2021-12-30,ALGT,"SHELDON, SCOTT",EVP and COO,True,Common Stock,sell,4729.0,191.0983,903703.8607
+2021-12-30,ALGT,"ARETOS, REBECCA",Principal Accounting Officer,True,Common Stock,sell,332.0,191.0983,63444.6356
+2021-12-30,ALGT,"DEANGELO, SCOTT WAYNE",EVP and CMO,True,Common Stock,sell,1716.0,191.0983,327924.6828
+2022-02-02,ALGT,"DEANGELO, SCOTT WAYNE",EVP and CMO,True,Common Stock,sell,281.0,174.292,48976.052
+2022-02-02,ALGT,"WILSON, ROBERT PAUL III",EVP and CIO,True,Common Stock,sell,306.0,174.292,53333.352
+2022-02-02,ALGT,"ARETOS, REBECCA",Principal Accounting Officer,True,Common Stock,sell,87.0,174.292,15163.404
+2022-02-02,ALGT,"ANDERSON, GREGORY CLARK",EVP and CFO,True,Common Stock,sell,477.0,174.292,83137.284
+2022-02-02,ALGT,"SHELDON, SCOTT",EVP and COO,True,Common Stock,sell,576.0,174.292,100392.192
+2022-02-04,ALGT,"DEANGELO, SCOTT WAYNE",EVP and CMO,True,Common Stock,sell,2500.0,171.59,428975.0
+2022-02-04,ALGT,"ARETOS, REBECCA",Principal Accounting Officer,True,Common Stock,sell,1771.0,172.75,305940.25
+2022-02-07,ALGT,"SHELDON, SCOTT",EVP and COO,True,Common Stock,sell,5009.0,170.46,853834.14
+2022-02-07,ALGT,"SHELDON, SCOTT",EVP and COO,True,Common Stock,sell,500.0,173.29,86645.0
+2022-02-07,ALGT,"SHELDON, SCOTT",EVP and COO,True,Common Stock,sell,4511.0,171.33,772869.63
+2022-02-07,ALGT,"SHELDON, SCOTT",EVP and COO,True,Common Stock,sell,980.0,172.17,168726.59999999998
+2022-02-08,ALGT,"WILSON, ROBERT PAUL III",EVP and CIO,True,Common Stock,sell,400.0,180.0,72000.0
+2022-02-08,ALGT,"ANDERSON, GREGORY CLARK",EVP and CFO,True,Common Stock,sell,1712.0,177.04,303092.48
+2022-02-09,ALGT,"ELLMER, GARY",Director,True,Common Stock,sell,630.0,185.0,116550.0
+2022-02-09,ALGT,"ANDERSON, GREGORY CLARK",EVP and CFO,True,Common Stock,sell,787.0,182.5,143627.5
+2022-02-10,ALGT,"ELLMER, GARY",Director,True,Common Stock,sell,595.0,185.0,110075.0
+2022-02-25,ALGT,"ANDERSON, GREGORY CLARK",EVP and CFO,True,Common Stock,sell,1243.0,175.0309,217563.4087
+2022-03-04,ALGT,"WILSON, ROBERT PAUL III",EVP and CIO,True,Common Stock,sell,418.0,157.875,65991.75
+2022-03-10,ALGT,"GALLAGHER, MAURICE J JR","Director, CEO and Chairman, 10% Owner",True,Common Stock,sell,2193.0,145.848,319844.66400000005
+2022-04-01,ALGT,"DEANGELO, SCOTT WAYNE",EVP and CMO,True,Common Stock,sell,500.0,162.87,81435.0
+2022-05-17,ALGT,"WILSON, ROBERT PAUL III",EVP and CIO,True,Common Stock,sell,900.0,150.14,135126.0
+2022-07-01,ALGT,"DEANGELO, SCOTT WAYNE",EVP and CMO,True,Common Stock,sell,500.0,112.89,56445.0
+2022-08-03,ALGT,"ANDERSON, GREGORY CLARK",President and CFO,True,Common Stock,sell,858.0,114.771,98473.518
+2022-08-03,ALGT,"SHELDON, SCOTT",President and COO,True,Common Stock,sell,914.0,114.771,104900.694
+2022-08-25,ALGT,"WILSON, ROBERT PAUL III",EVP and CIO,True,Common Stock,sell,1800.0,101.149,182068.2
+2022-09-07,ALGT,"DEANGELO, SCOTT WAYNE",EVP and CMO,True,Common Stock,sell,378.0,96.726,36562.428
+2022-09-07,ALGT,"WILSON, ROBERT PAUL III",EVP and CIO,True,Common Stock,sell,446.0,96.726,43139.796
+2022-10-03,ALGT,"DEANGELO, SCOTT WAYNE",EVP and CMO,True,Common Stock,sell,1250.0,72.62,90775.0
+2023-01-03,ALGT,"DEANGELO, SCOTT WAYNE",EVP and CMO,True,Common Stock,sell,1250.0,69.37,86712.5
+2023-02-01,ALGT,"WILSON, ROBERT PAUL III",EVP and CIO,True,Common Stock,sell,334.0,86.21,28794.14
+2023-02-01,ALGT,"ANDERSON, GREGORY CLARK",President,True,Common Stock,sell,532.0,86.21,45863.719999999994
+2023-02-01,ALGT,"REDMOND, JOHN","Director, CEO",True,Common Stock,sell,1090.0,86.21,93968.9
+2023-02-01,ALGT,"DEANGELO, SCOTT WAYNE",EVP and CMO,True,Common Stock,sell,200.0,86.21,17242.0
+2023-02-01,ALGT,"GALLAGHER, MAURICE J JR","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,1761.0,86.21,151815.81
+2023-02-01,ALGT,"SHELDON, SCOTT",President and COO,True,Common Stock,sell,631.0,86.21,54398.509999999995
+2023-02-03,ALGT,"WILPER, KENY FRANK",Interim COO,True,Common Stock,sell,503.0,98.033,49310.599
+2023-02-03,ALGT,"WILSON, ROBERT PAUL III",EVP and CIO,True,Common Stock,sell,1980.0,100.98,199940.4
+2023-02-06,ALGT,"SHELDON, SCOTT",President and COO,True,Common Stock,sell,7304.0,96.709,706362.5360000001
+2023-02-27,ALGT,"DEANGELO, SCOTT WAYNE",EVP and CMO,True,Common Stock,sell,1382.0,102.8008,142070.7056
+2023-02-28,ALGT,"WILSON, ROBERT PAUL III",EVP and CIO,True,Common Stock,sell,790.0,101.0,79790.0
+2023-04-25,ALGT,"DEANGELO, SCOTT WAYNE",EVP and CMO,True,Common Stock,sell,75.0,90.75,6806.25
+2023-04-25,ALGT,"WILSON, ROBERT PAUL III",EVP and CIO,True,Common Stock,sell,25.0,90.75,2268.75
+2023-05-05,ALGT,"WILSON, ROBERT PAUL III",EVP and CIO,True,Common Stock,sell,80.0,106.64,8531.2
+2023-05-05,ALGT,"WILSON, ROBERT PAUL III",EVP and CIO,True,Common Stock,sell,1000.0,107.658,107658.0
+2023-05-11,ALGT,"WILSON, ROBERT PAUL III",EVP and CIO,True,Common Stock,sell,1000.0,100.665,100665.0
+2023-05-26,ALGT,"ANDERSON, GREGORY CLARK",President,True,Common Stock,sell,4033.0,100.0,403300.0
+2023-06-01,ALGT,"DEANGELO, SCOTT WAYNE",EVP and CMO,True,Common Stock,sell,707.0,98.309,69504.463
+2023-06-02,ALGT,"REDMOND, JOHN","Director, CEO",True,Common Stock,sell,10363.0,97.25,1007801.75
+2023-08-03,ALGT,"ANDERSON, GREGORY CLARK",President,True,Common Stock,sell,2527.0,121.53,307106.31
+2023-08-11,ALGT,"ELLMER, GARY",Director,True,Common Stock,sell,2000.0,104.76,209520.0
+2023-09-01,ALGT,"DEANGELO, SCOTT WAYNE",EVP and CMO,True,Common Stock,sell,1187.0,88.95,105583.65000000001
+2023-09-01,ALGT,"WILSON, ROBERT PAUL III",EVP and CIO,True,Common Stock,sell,1361.0,88.95,121060.95
+2023-09-26,ALGT,"REDMOND, JOHN","Director, CEO",True,Common Stock,sell,4985.0,75.43,376018.55000000005
+2023-10-01,ALGT,"ARETOS, REBECCA",Principal Accounting Officer,True,Common Stock,sell,133.0,76.86,10222.38
+2023-10-01,ALGT,"NEAL, ROBERT JAMES",CFO,True,Common Stock,sell,151.0,76.86,11605.86
+2023-10-01,ALGT,"WELLS, DREW ALLEN","SVP, Chief Revenue Officer",True,Common Stock,sell,121.0,76.86,9300.06
+2023-10-01,ALGT,"WILPER, KENY FRANK",COO,True,Common Stock,sell,191.0,76.86,14680.26
+2023-10-05,ALGT,"WILPER, KENY FRANK",COO,True,Common Stock,sell,591.0,74.83,44224.53
+2023-10-20,ALGT,"WILPER, KENY FRANK",COO,True,Common Stock,sell,410.0,73.31,30057.100000000002
+2023-10-20,ALGT,"WELLS, DREW ALLEN","SVP, Chief Revenue Officer",True,Common Stock,sell,355.0,73.31,26025.05
+2023-10-20,ALGT,"NEAL, ROBERT JAMES",CFO,True,Common Stock,sell,403.0,73.31,29543.93
+2023-10-20,ALGT,"ARETOS, REBECCA",Principal Accounting Officer,True,Common Stock,sell,390.0,73.31,28590.9
+2023-10-25,ALGT,"WILPER, KENY FRANK",COO,True,Common Stock,sell,1270.0,71.1,90297.0
+2023-11-07,ALGT,"DEANGELO, SCOTT WAYNE",EVP and CMO,True,Common Stock,sell,3680.0,61.0701,224737.968
+2024-01-28,ALGT,"ARETOS, REBECCA",Principal Accounting Officer,True,Common Stock,sell,34.0,80.91,2750.94
+2024-01-28,ALGT,"WELLS, DREW ALLEN","SVP, Chief Revenue Officer",True,Common Stock,sell,53.0,80.91,4288.23
+2024-01-28,ALGT,"NEAL, ROBERT JAMES",CFO,True,Common Stock,sell,53.0,80.91,4288.23
+2024-01-29,ALGT,"GALLAGHER, MAURICE J JR","Director, Chairman and CEO, 10% Owner",True,Common Stock,sell,738.0,80.35,59298.299999999996
+2024-02-12,ALGT,"ELLMER, GARY",Director,True,Common Stock,sell,2000.0,79.1,158200.0
+2024-04-03,ALGT,"ANDERSON, GREGORY CLARK",President,True,Common Stock,sell,13470.0,65.9,887673.0000000001
+2024-04-03,ALGT,"DEANGELO, SCOTT WAYNE",EVP and CMO,True,Common Stock,sell,9373.0,65.9,617680.7000000001
+2024-04-03,ALGT,"NEAL, ROBERT JAMES",CFO,True,Common Stock,sell,1253.0,65.9,82572.70000000001
+2024-04-03,ALGT,"WILSON, ROBERT PAUL III",EVP and CIO,True,Common Stock,sell,7160.0,65.9,471844.00000000006
+2024-04-03,ALGT,"WILPER, KENY FRANK",COO,True,Common Stock,sell,783.0,65.9,51599.700000000004
+2024-04-03,ALGT,"RICHINS, MICAH JOHN","President, Sunseeker Resorts",True,Common Stock,sell,120.0,65.9,7908.000000000001
+2024-04-03,ALGT,"ARETOS, REBECCA",Principal Accounting Officer,True,Common Stock,sell,721.0,65.9,47513.9
+2024-04-03,ALGT,"WELLS, DREW ALLEN","SVP, Chief Revenue Officer",True,Common Stock,sell,1253.0,65.9,82572.70000000001
+2024-05-09,ALGT,"DEANGELO, SCOTT WAYNE",EVP and CMO,True,Common Stock,sell,19687.0,53.6781,1056760.7547
+2024-05-10,ALGT,"WILSON, ROBERT PAUL III",EVP and CIO,True,Common Stock,sell,4600.0,53.998,248390.8
+2024-05-15,ALGT,"WILPER, KENY FRANK",COO,True,Common Stock,sell,875.0,56.5,49437.5
+2024-05-30,ALGT,"WILPER, KENY FRANK",COO,True,Common Stock,sell,1000.0,51.0,51000.0
+2024-06-04,ALGT,"WILSON, ROBERT PAUL III",EVP and CIO,True,Common Stock,sell,750.0,53.0,39750.0
+2024-07-01,ALGT,"WILSON, ROBERT PAUL III",EVP and CIO,True,Common Stock,sell,19072.0,49.46,943301.12
+2024-08-01,ALGT,"ANDERSON, GREGORY CLARK",President,True,Common Stock,sell,3561.0,49.83,177444.63
+2024-08-04,ALGT,"NEAL, ROBERT JAMES",CFO,True,Common Stock,sell,260.0,43.66,11351.599999999999
+2024-08-04,ALGT,"WELLS, DREW ALLEN","SVP, Chief Revenue Officer",True,Common Stock,sell,260.0,43.66,11351.599999999999
+2024-08-04,ALGT,"WILPER, KENY FRANK",COO,True,Common Stock,sell,260.0,43.66,11351.599999999999
+2024-08-04,ALGT,"ARETOS, REBECCA",Principal Accounting Officer,True,Common Stock,sell,143.0,43.66,6243.379999999999
+2024-08-19,ALGT,"WILPER, KENY FRANK",COO,True,Common Stock,sell,403.0,39.17,15785.51
+2024-08-26,ALGT,"ELLMER, GARY",Director,True,Common Stock,sell,1000.0,45.0,45000.0
+2024-09-01,ALGT,"DEANGELO, SCOTT WAYNE",EVP and CMO,True,Common Stock,sell,1917.0,42.08,80667.36
+2024-10-01,ALGT,"WILPER, KENY FRANK",COO,True,Common Stock,sell,191.0,56.41,10774.31
+2024-10-01,ALGT,"WELLS, DREW ALLEN","SVP, Chief Commercial Officer",True,Common Stock,sell,121.0,56.41,6825.61
+2024-10-01,ALGT,"NEAL, ROBERT JAMES",CFO,True,Common Stock,sell,151.0,56.41,8517.91
+2024-10-01,ALGT,"ANDERSON, GREGORY CLARK",President & CEO,True,Common Stock,sell,5090.0,56.41,287126.89999999997
+2024-10-01,ALGT,"ARETOS, REBECCA",Principal Accounting Officer,True,Common Stock,sell,154.0,56.41,8687.14
+2024-10-04,ALGT,"WILPER, KENY FRANK",COO,True,Common Stock,sell,296.0,55.96,16564.16
+2024-10-20,ALGT,"WELLS, DREW ALLEN","SVP, Chief Commercial Officer",True,Common Stock,sell,441.0,65.67,28960.47
+2024-10-20,ALGT,"NEAL, ROBERT JAMES",CFO,True,Common Stock,sell,533.0,65.67,35002.11
+2024-10-20,ALGT,"WILPER, KENY FRANK",COO,True,Common Stock,sell,410.0,65.67,26924.7
+2024-10-20,ALGT,"ARETOS, REBECCA",Principal Accounting Officer,True,Common Stock,sell,450.0,65.67,29551.5
+2024-10-23,ALGT,"WILPER, KENY FRANK",COO,True,Common Stock,sell,635.0,62.69,39808.15
+2024-11-25,ALGT,"GALLAGHER, MAURICE J JR","Director, Executive Chairman",True,Common Stock,sell,21443.0,84.157,1804578.551
+2024-11-25,ALGT,"GALLAGHER, MAURICE J JR","Director, Executive Chairman",True,Common Stock,sell,6876.0,85.385,587107.26
+2024-11-26,ALGT,"GALLAGHER, MAURICE J JR","Director, Executive Chairman",True,Common Stock,sell,2153.0,81.72,175943.16
+2024-11-26,ALGT,"GALLAGHER, MAURICE J JR","Director, Executive Chairman",True,Common Stock,sell,8229.0,81.02,666713.58
+2024-11-27,ALGT,"MORGAN, SANDRA DOUGLASS",Director,True,Common Stock,sell,350.0,80.77,28269.5
+2025-02-10,ALGT,"RICHINS, MICAH JOHN","President, Sunseeker Resorts",True,Common Stock,sell,315.0,88.35,27830.25
+2025-04-01,ALGT,"ANDERSON, GREGORY CLARK","Director, President & CEO",True,Common Stock,sell,4857.0,50.85,246978.45
+2025-04-03,ALGT,"WILPER, KENY FRANK",COO (former),True,Common Stock,sell,179.0,48.71,8719.09
+2025-04-03,ALGT,"WELLS, DREW ALLEN","SVP, Chief Commercial Officer",True,Common Stock,sell,179.0,48.71,8719.09
+2025-04-03,ALGT,"RICHINS, MICAH JOHN","President, Sunseeker Resorts",True,Common Stock,sell,110.0,48.71,5358.1
+2025-04-07,ALGT,"WILPER, KENY FRANK",COO (former),True,Common Stock,sell,278.0,41.41,11511.98
+2025-04-29,ALGT,"MORGAN, SANDRA DOUGLASS",Director,True,Common Stock,sell,350.0,45.7,15995.000000000002
+2025-08-01,ALGT,"ANDERSON, GREGORY CLARK","Director, President & CEO",True,Common Stock,sell,1813.0,48.12,87241.56
+2025-08-04,ALGT,"RICHINS, MICAH JOHN","President, Sunseeker Resorts",True,Common Stock,sell,343.0,48.59,16666.370000000003
+2025-08-04,ALGT,"ARETOS, REBECCA",Principal Accounting Officer,True,Common Stock,sell,220.0,48.59,10689.800000000001
+2025-08-04,ALGT,"NEAL, ROBERT JAMES",CFO,True,Common Stock,sell,260.0,48.59,12633.400000000001
+2025-08-04,ALGT,"HOLLINGSWORTH, TYLER JAY",COO,True,Common Stock,sell,195.0,48.59,9475.050000000001
+2025-08-04,ALGT,"WELLS, DREW ALLEN","SVP, Chief Commercial Officer",True,Common Stock,sell,260.0,48.59,12633.400000000001
+2025-08-11,ALGT,"ELLMER, GARY",Director,True,Common Stock,sell,2000.0,49.0,98000.0
+2025-09-23,ALGT,"RICHINS, MICAH JOHN","President, Sunseeker Resorts",True,Common Stock,sell,3383.0,61.98,209678.34
+2025-09-23,ALGT,"WELLS, DREW ALLEN","SVP, Chief Commercial Officer",True,Common Stock,sell,726.0,61.98,44997.479999999996
+2025-09-23,ALGT,"NEAL, ROBERT JAMES",CFO,True,Common Stock,sell,726.0,61.98,44997.479999999996
+2025-09-23,ALGT,"ARETOS, REBECCA",Principal Accounting Officer,True,Common Stock,sell,405.0,61.98,25101.899999999998
+2025-09-23,ALGT,"HOLLINGSWORTH, TYLER JAY",COO,True,Common Stock,sell,330.0,61.98,20453.399999999998
+2025-10-01,ALGT,"ANDERSON, GREGORY CLARK",President & CEO,True,Common Stock,sell,4832.0,59.47,287359.04
+2025-10-20,ALGT,"WELLS, DREW ALLEN",EVP,True,common stock,sell,355.0,65.91,23398.05
+2025-10-20,ALGT,"ARETOS, REBECCA",PAO,False,common stock,sell,450.0,65.91,29659.5
+2025-10-20,ALGT,"NEAL, ROBERT JAMES",EVP and CFO,True,common stock,sell,403.0,65.91,26561.73
+2025-10-20,ALGT,"HOLLINGSWORTH, TYLER JAY",COO,True,common stock,sell,361.0,65.91,23793.51
+2025-10-28,ALGT,"MORGAN, SANDRA DOUGLASS",Director,True,Common Stock,sell,350.0,65.0,22750.0
+2026-02-06,ALGT,"GALLAGHER, MAURICE J JR","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,100000.0,113.67,11367000.0
+2026-02-06,ALGT,"GALLAGHER, MAURICE J JR","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,75000.0,114.9852,8623890.0
+2026-02-09,ALGT,"GALLAGHER, MAURICE J JR","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,24139.0,114.7865,2770831.3235
+2026-02-09,ALGT,"GALLAGHER, MAURICE J JR","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,56243.0,114.8134,6457450.0562
+2026-02-09,ALGT,"GALLAGHER, MAURICE J JR","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,25000.0,116.1862,2904655.0
+2026-02-10,ALGT,"GALLAGHER, MAURICE J JR","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,861.0,114.0,98154.0
+2026-02-10,ALGT,"GALLAGHER, MAURICE J JR","Director, Executive Chairman, 10% Owner",True,Common Stock,sell,18757.0,113.519,2129275.883
+2026-04-01,ALGT,"ANDERSON, GREGORY CLARK","Director, CEO",True,Common Stock,sell,4832.0,83.12,401635.84
+2026-04-03,ALGT,"WELLS, DREW ALLEN","EVP, Chief Commercial Officer",True,Common Stock,sell,179.0,82.84,14828.36
+2026-04-03,ALGT,"NEAL, ROBERT JAMES",President & CFO,True,Common Stock,sell,179.0,82.84,14828.36
+2026-04-12,ALGT,"HOLLINGSWORTH, TYLER JAY","SVP, Chief Operating Officer",True,Common Stock,sell,87.0,85.58,7445.46
+2026-05-13,ALGT,"BRICKER, JUDE",Director,True,Common Stock,sell,40437.0,75.21,3041266.7699999996

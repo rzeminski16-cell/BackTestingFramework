@@ -1,0 +1,1792 @@
+date,symbol,insider_name,insider_title,is_executive,security_type,transaction_type,shares,price,value
+2001-05-18,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,2113.0,43.5,91915.5
+2003-12-08,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Common Stock,sell,21471.0,40.96,879452.16
+2003-12-08,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Common Stock,sell,53882.0,40.96,2207006.72
+2003-12-08,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Common Stock,sell,3285.0,40.68,133633.8
+2003-12-08,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Common Stock,buy,60090.0,26.69,1603802.1
+2003-12-08,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Common Stock,sell,6208.0,40.68,252541.44
+2003-12-08,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Common Stock,buy,24756.0,22.63,560228.28
+2003-12-12,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,sell,28477.0,41.8,1190338.5999999999
+2004-01-09,ALL,"LIDDY, EDWARD M","Director, Chairman, President and CEO",True,Common Stock,sell,8546.0,43.99,375938.54000000004
+2004-01-09,ALL,"LIDDY, EDWARD M","Director, Chairman, President and CEO",True,Common Stock,buy,10618.0,31.1,330219.8
+2004-02-06,ALL,"SYLLA, CASEY",President Allstate Financial,True,Common Stock,buy,24756.0,22.63,560228.28
+2004-02-06,ALL,"SYLLA, CASEY",President Allstate Financial,True,Common Stock,buy,3229.0,42.1,135940.9
+2004-02-06,ALL,"SYLLA, CASEY",President Allstate Financial,True,Common Stock,buy,6642.0,37.91,251798.21999999997
+2004-02-06,ALL,"SYLLA, CASEY",President Allstate Financial,True,Common Stock,sell,34627.0,45.47,1574489.69
+2004-02-06,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,buy,4000.0,35.0,140000.0
+2004-02-06,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,buy,12500.0,26.69,333625.0
+2004-02-06,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,buy,20492.0,35.0,717220.0
+2004-02-06,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,buy,3660.0,35.0,128100.0
+2004-02-06,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,38926.0,46.02,1791374.52
+2004-02-06,ALL,"CROCKETT, JOAN M",SVP - AIC,True,Common Stock,buy,954.0,32.22,30737.879999999997
+2004-02-06,ALL,"CROCKETT, JOAN M",SVP - AIC,True,Common Stock,sell,954.0,45.83,43721.82
+2004-02-06,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,4170.0,45.96,191653.2
+2004-02-06,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,buy,10150.0,33.38,338807.0
+2004-02-09,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Common Stock,sell,4724.0,46.35,218957.4
+2004-02-09,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Common Stock,buy,200.0,28.69,5738.0
+2004-02-09,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Common Stock,buy,3404.0,38.52,131122.08000000002
+2004-02-09,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Common Stock,sell,200.0,46.36,9272.0
+2004-02-09,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Common Stock,buy,1320.0,28.69,37870.8
+2004-02-09,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,14175.0,46.1,653467.5
+2004-02-09,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,buy,5368.0,31.78,170595.04
+2004-02-09,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,1309.0,46.3,60606.7
+2004-02-09,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,buy,10150.0,33.38,338807.0
+2004-02-10,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Common Stock,buy,314.0,41.31,12971.34
+2004-02-10,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Common Stock,buy,12876.0,41.69,536800.44
+2004-02-10,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Common Stock,buy,10000.0,36.64,366400.0
+2004-02-10,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Common Stock,sell,23190.0,46.5,1078335.0
+2004-02-23,ALL,"SMITH, JOSHUA I",Director,True,Common Stock,sell,6750.0,46.0725,310989.375
+2004-02-23,ALL,"SMITH, JOSHUA I",Director,True,Common Stock,buy,750.0,32.22,24165.0
+2004-02-23,ALL,"SMITH, JOSHUA I",Director,True,Common Stock,buy,3000.0,36.22,108660.0
+2004-02-23,ALL,"SMITH, JOSHUA I",Director,True,Common Stock,buy,3000.0,27.44,82320.0
+2004-03-08,ALL,"RUEBENSON, GEORGE E",Senior Vice President,True,Common Stock,buy,569.0,41.47,23596.43
+2004-03-08,ALL,"RUEBENSON, GEORGE E",Senior Vice President,True,Common Stock,sell,525.0,44.885,23564.625
+2004-04-12,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Common Stock,sell,19680.0,48.0,944640.0
+2004-04-12,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Common Stock,buy,19680.0,36.64,721075.2
+2004-05-18,ALL,"LIDDY, EDWARD M","Director, Chairman, President and CEO",True,Common Stock,sell,16057.0,43.31,695428.67
+2004-05-18,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,sell,2654.0,43.31,114944.74
+2004-05-18,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Common Stock,sell,549.0,43.28,23760.72
+2004-05-18,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Common Stock,sell,2533.0,43.31,109704.23000000001
+2004-05-18,ALL,"RUEBENSON, GEORGE E",Senior Vice President,True,Common Stock accompanied by tax withholding rights,sell,820.0,43.31,35514.200000000004
+2004-05-18,ALL,"SYLLA, CASEY",President Allstate Financial,True,Common Stock,sell,3891.0,43.31,168519.21000000002
+2004-05-18,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Common Stock,sell,3979.0,43.31,172330.49000000002
+2004-05-18,ALL,"CROCKETT, JOAN M",SVP - AIC,True,Common Stock,sell,2287.0,43.31,99049.97
+2004-05-18,ALL,"WILSON, THOMAS J","President, Allstate Protection",True,Common Stock,sell,4035.0,43.31,174755.85
+2004-05-18,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,1011.0,43.31,43786.41
+2004-06-01,ALL,"RILEY, H JOHN JR",Director,True,Common Share Unit,buy,1136.88,43.98,49999.9824
+2004-06-01,ALL,"ANDRESS, JAMES G",Director,True,Common Share Unit,buy,1136.88,43.98,49999.9824
+2004-07-30,ALL,"PILCH, SAMUEL H",Controller,False,Employee Stock Option (right to buy),sell,2501.0,36.66,91686.65999999999
+2004-07-30,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,buy,565.0,36.66,20712.899999999998
+2004-07-30,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,buy,3750.0,37.29,139837.5
+2004-07-30,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,12947.0,46.7078,604725.8866
+2004-07-30,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,buy,2501.0,36.66,91686.65999999999
+2004-07-30,ALL,"PILCH, SAMUEL H",Controller,False,Employee Stock Option (right to buy),sell,3750.0,37.29,139837.5
+2004-07-30,ALL,"PILCH, SAMUEL H",Controller,False,Employee Stock Option (right to buy),sell,500.0,26.69,13345.0
+2004-07-30,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,buy,381.0,36.66,13967.46
+2004-07-30,ALL,"PILCH, SAMUEL H",Controller,False,Employee Stock Option (right to buy),sell,565.0,36.66,20712.899999999998
+2004-07-30,ALL,"PILCH, SAMUEL H",Controller,False,Employee Stock Option (right to buy),sell,381.0,36.66,13967.46
+2004-07-30,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,buy,500.0,26.69,13345.0
+2004-07-30,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,buy,5750.0,26.69,153467.5
+2004-07-30,ALL,"PILCH, SAMUEL H",Controller,False,Employee Stock Option (right to buy),sell,5750.0,26.69,153467.5
+2004-08-02,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,12947.0,46.7078,604725.8866
+2004-08-04,ALL,"SYLLA, CASEY",President Allstate Financial,True,Common Stock,sell,80969.0,46.7781,3787575.9789
+2004-08-04,ALL,"SYLLA, CASEY",President Allstate Financial,True,Employee Stock Option (right to buy),sell,36384.0,36.64,1333109.76
+2004-08-04,ALL,"SYLLA, CASEY",President Allstate Financial,True,Employee Stock Option (right to buy),sell,42971.0,26.69,1146895.99
+2004-08-04,ALL,"SYLLA, CASEY",President Allstate Financial,True,Common Stock,buy,36384.0,36.64,1333109.76
+2004-08-04,ALL,"SYLLA, CASEY",President Allstate Financial,True,Employee Stock Option (right to buy),sell,1614.0,42.1,67949.40000000001
+2004-08-04,ALL,"SYLLA, CASEY",President Allstate Financial,True,Common Stock,buy,1614.0,42.1,67949.40000000001
+2004-08-04,ALL,"SYLLA, CASEY",President Allstate Financial,True,Common Stock,buy,42971.0,26.69,1146895.99
+2004-08-04,ALL,"SYLLA, CASEY",President Allstate Financial,True,Employee Stock Option (right to buy),sell,1000.0,26.69,26690.0
+2004-08-04,ALL,"SYLLA, CASEY",President Allstate Financial,True,Common Stock,buy,1000.0,26.69,26690.0
+2004-08-20,ALL,"LIDDY, EDWARD M","Director, Chairman, President and CEO",True,Common Stock,sell,30576.0,47.31,1446550.56
+2004-08-20,ALL,"LIDDY, EDWARD M","Director, Chairman, President and CEO",True,Common Stock,sell,13542.0,47.31,640672.02
+2004-08-20,ALL,"LIDDY, EDWARD M","Director, Chairman, President and CEO",True,Common Stock,sell,59241.0,47.31,2802691.71
+2004-08-20,ALL,"LIDDY, EDWARD M","Director, Chairman, President and CEO",True,Common Stock,sell,4000.0,47.57,190280.0
+2004-08-20,ALL,"LIDDY, EDWARD M","Director, Chairman, President and CEO",True,Common Stock,sell,9400.0,47.52,446688.00000000006
+2004-08-20,ALL,"LIDDY, EDWARD M","Director, Chairman, President and CEO",True,Common Stock,sell,13200.0,47.54,627528.0
+2004-08-20,ALL,"LIDDY, EDWARD M","Director, Chairman, President and CEO",True,Common Stock,sell,21100.0,47.51,1002461.0
+2004-08-20,ALL,"LIDDY, EDWARD M","Director, Chairman, President and CEO",True,Common Stock,sell,27200.0,47.55,1293360.0
+2004-08-20,ALL,"LIDDY, EDWARD M","Director, Chairman, President and CEO",True,Common Stock,buy,218676.0,15.22,3328248.72
+2004-08-20,ALL,"LIDDY, EDWARD M","Director, Chairman, President and CEO",True,Common Stock,buy,141262.0,9.93,1402731.66
+2004-08-20,ALL,"LIDDY, EDWARD M","Director, Chairman, President and CEO",True,Common Stock,buy,33434.0,41.58,1390185.72
+2004-08-20,ALL,"LIDDY, EDWARD M","Director, Chairman, President and CEO",True,Common Stock,buy,17860.0,31.1,555446.0
+2004-08-20,ALL,"LIDDY, EDWARD M","Director, Chairman, President and CEO",True,Common Stock,sell,3800.0,47.56,180728.0
+2004-08-20,ALL,"LIDDY, EDWARD M","Director, Chairman, President and CEO",True,Common Stock,sell,62518.0,47.31,2957726.58
+2004-08-20,ALL,"LIDDY, EDWARD M","Director, Chairman, President and CEO",True,Employee Stock Option (right to buy),sell,33434.0,41.58,1390185.72
+2004-08-20,ALL,"LIDDY, EDWARD M","Director, Chairman, President and CEO",True,Employee Stock Option (right to buy),sell,17860.0,31.1,555446.0
+2004-08-20,ALL,"LIDDY, EDWARD M","Director, Chairman, President and CEO",True,Employee Stock Option (right to buy),sell,218676.0,15.22,3328248.72
+2004-08-20,ALL,"LIDDY, EDWARD M","Director, Chairman, President and CEO",True,Employee Stock Option (right to buy),sell,121980.0,12.82,1563783.6
+2004-08-20,ALL,"LIDDY, EDWARD M","Director, Chairman, President and CEO",True,Employee Stock Option (right to buy),sell,141262.0,9.93,1402731.66
+2004-08-20,ALL,"LIDDY, EDWARD M","Director, Chairman, President and CEO",True,Common Stock,sell,59900.0,47.5,2845250.0
+2004-08-20,ALL,"LIDDY, EDWARD M","Director, Chairman, President and CEO",True,Common Stock,sell,55469.0,47.5007,2634816.3283
+2004-08-20,ALL,"LIDDY, EDWARD M","Director, Chairman, President and CEO",True,Common Stock,sell,34200.0,47.53,1625526.0
+2004-08-20,ALL,"LIDDY, EDWARD M","Director, Chairman, President and CEO",True,Common Stock,sell,114031.0,47.31,5394806.61
+2004-08-20,ALL,"LIDDY, EDWARD M","Director, Chairman, President and CEO",True,Common Stock,buy,121980.0,12.82,1563783.6
+2004-08-23,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,buy,2063.0,32.88,67831.44
+2004-08-23,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,2063.0,32.88,67831.44
+2004-08-23,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,sell,5133.0,47.88,245768.04
+2004-08-23,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,sell,188.0,47.695,8966.66
+2004-08-23,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,sell,348.0,47.695,16597.86
+2004-08-23,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,buy,3811.0,32.88,125305.68000000001
+2004-08-23,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,3811.0,32.88,125305.68000000001
+2004-09-17,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Common Stock,sell,2650.0,48.47,128445.5
+2004-09-17,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Employee Stock Option (right to buy),sell,17000.0,48.47,823990.0
+2004-09-17,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Common Stock,buy,20030.0,26.69,534600.7000000001
+2004-09-17,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Common Stock,buy,17000.0,31.78,540260.0
+2004-09-17,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Employee Stock Option (right to buy),sell,68000.0,48.47,3295960.0
+2004-09-17,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Common Stock,sell,94423.0,48.8041,4608229.5342999995
+2004-09-17,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Employee Stock Option (right to buy),sell,20030.0,48.47,970854.1
+2004-09-17,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Common Stock,buy,68000.0,33.38,2269840.0
+2004-09-17,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Common Stock,sell,1723.0,48.47,83513.81
+2004-09-17,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Common Stock,sell,6234.0,48.47,302161.98
+2004-11-10,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,sell,12454.0,49.85,620831.9
+2004-11-10,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,sell,2056.0,49.41,101586.95999999999
+2004-11-10,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,buy,15188.0,26.69,405367.72000000003
+2004-11-10,ALL,"PILCH, SAMUEL H",Controller,False,Employee Stock Option (right to buy),sell,4086.0,38.69,158087.34
+2004-11-10,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,3820.0,49.69,189815.8
+2004-11-10,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,buy,4086.0,38.69,158087.34
+2004-11-10,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,261.0,49.41,12896.009999999998
+2004-11-10,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,15188.0,26.69,405367.72000000003
+2004-11-11,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,6580.0,45.64,300311.2
+2004-11-11,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,3652.0,45.64,166677.28
+2004-11-11,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Common Stock,sell,98.0,50.23,4922.54
+2004-11-11,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Common Stock,buy,3652.0,45.64,166677.28
+2004-11-11,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Common Stock,buy,6580.0,45.64,300311.2
+2004-11-11,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Common Stock,sell,176.0,50.23,8840.48
+2004-11-11,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Common Stock,sell,9971.0,50.0,498550.0
+2004-12-03,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,1631.0,41.47,67637.56999999999
+2004-12-03,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,sell,1438.0,51.47,74013.86
+2004-12-03,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,sell,91.0,51.22,4661.0199999999995
+2004-12-03,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,buy,1631.0,41.47,67637.56999999999
+2004-12-20,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,sell,12358.0,50.295,621545.61
+2004-12-20,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Employee Stock Option (right to buy),sell,23288.0,26.69,621556.72
+2004-12-20,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,buy,23288.0,26.69,621556.72
+2004-12-20,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,sell,3725.0,50.295,187348.875
+2004-12-20,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,sell,3218.0,50.295,161849.31
+2004-12-20,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,buy,23000.0,22.63,520490.0
+2004-12-20,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,sell,26753.0,50.3219,1346261.7907
+2004-12-20,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Employee Stock Option (right to buy),sell,23000.0,22.63,520490.0
+2004-12-22,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Common Stock,sell,887.0,51.0,45237.0
+2004-12-22,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Common Stock,buy,994.0,32.22,32026.68
+2004-12-22,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Common Stock,sell,107.0,51.0,5457.0
+2004-12-22,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,994.0,32.22,32026.68
+2004-12-31,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,buy,10000.0,31.78,317800.0
+2004-12-31,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,sell,1138.0,51.815,58965.469999999994
+2004-12-31,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,10000.0,31.78,317800.0
+2004-12-31,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,sell,8419.0,51.78,435935.82
+2005-01-06,ALL,"SMITH, JOSHUA I",Director,True,Common Stock,buy,2667.0,38.22,101932.73999999999
+2005-01-06,ALL,"SMITH, JOSHUA I",Director,True,Non-Employee Director Stock Option (right to buy),sell,2667.0,38.22,101932.73999999999
+2005-01-06,ALL,"SMITH, JOSHUA I",Director,True,Common Stock,buy,1334.0,36.3,48424.2
+2005-01-06,ALL,"SMITH, JOSHUA I",Director,True,Common Stock,sell,2667.0,50.8339,135574.0113
+2005-01-06,ALL,"SMITH, JOSHUA I",Director,True,Non-Employee Director Stock Option (right to buy),sell,1334.0,36.3,48424.2
+2005-01-06,ALL,"SMITH, JOSHUA I",Director,True,Common Stock,sell,1334.0,50.8339,67812.4226
+2005-01-06,ALL,"SMITH, JOSHUA I",Director,True,Common Stock,buy,3000.0,36.47,109410.0
+2005-01-06,ALL,"SMITH, JOSHUA I",Director,True,Non-Employee Director Stock Option (right to buy),sell,3000.0,36.47,109410.0
+2005-01-06,ALL,"SMITH, JOSHUA I",Director,True,Common Stock,sell,3000.0,50.8339,152501.7
+2005-01-28,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Employee Stock Option (right to buy),sell,6336.0,44.28,280558.08
+2005-01-28,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,sell,6020.0,50.08,301481.6
+2005-01-28,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,buy,6336.0,44.28,280558.08
+2005-01-28,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,sell,254.0,49.91,12677.14
+2005-02-01,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Common Stock,buy,4278.0,48.8,208766.4
+2005-02-01,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Common Stock,sell,60.0,50.8,3048.0
+2005-02-01,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,4066.0,42.25,171788.5
+2005-02-01,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Common Stock,buy,4066.0,42.25,171788.5
+2005-02-01,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Common Stock,sell,243.0,50.8,12344.4
+2005-02-01,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Common Stock,sell,8049.0,50.66,407762.33999999997
+2005-02-01,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,4278.0,48.8,208766.4
+2005-02-04,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Common Stock,buy,5539.0,40.5,224329.5
+2005-02-04,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Common Stock,sell,4736.0,51.71,244898.56
+2005-02-04,ALL,"SYLLA, CASEY",President Allstate Financial,True,Common Stock,buy,43971.0,26.69,1173585.99
+2005-02-04,ALL,"SYLLA, CASEY",President Allstate Financial,True,Common Stock,sell,37260.0,50.9634,1898896.284
+2005-02-04,ALL,"SYLLA, CASEY",President Allstate Financial,True,Common Stock,sell,6303.0,51.71,325928.13
+2005-02-04,ALL,"SYLLA, CASEY",President Allstate Financial,True,Employee Stock Option (right to buy),sell,43971.0,26.69,1173585.99
+2005-02-04,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Employee Stock Option (right to buy),sell,5539.0,40.5,224329.5
+2005-02-14,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,sell,1520.0,53.11,80727.2
+2005-02-14,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,sell,11261.0,53.38,601112.18
+2005-02-14,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,13324.0,33.38,444755.12000000005
+2005-02-14,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,buy,22125.0,42.0,929250.0
+2005-02-14,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,20773.0,53.0,1100969.0
+2005-02-14,ALL,"PILCH, SAMUEL H",Controller,False,Employee Stock Option (right to buy),sell,22125.0,42.0,929250.0
+2005-02-14,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,1425.0,53.11,75681.75
+2005-02-14,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,buy,13324.0,33.38,444755.12000000005
+2005-02-16,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,buy,14502.0,42.5,616335.0
+2005-02-16,ALL,"PILCH, SAMUEL H",Controller,False,Employee Stock Option (right to buy),sell,14502.0,42.5,616335.0
+2005-02-16,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,13624.0,53.5,728884.0
+2005-02-16,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,864.0,53.29,46042.56
+2005-02-25,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Common Stock,sell,50800.0,53.7903,2732547.24
+2005-02-25,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Employee Stock Option (right to buy),sell,34000.0,33.38,1134920.0
+2005-02-25,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Employee Stock Option (right to buy),sell,17000.0,31.78,540260.0
+2005-02-25,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Common Stock,buy,17000.0,31.78,540260.0
+2005-02-25,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Common Stock,buy,34000.0,33.38,1134920.0
+2005-03-01,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,buy,768.0,43.0,33024.0
+2005-03-01,ALL,"PILCH, SAMUEL H",Controller,False,Employee Stock Option (right to buy),sell,768.0,43.0,33024.0
+2005-03-01,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,buy,2132.0,43.0,91676.0
+2005-03-01,ALL,"PILCH, SAMUEL H",Controller,False,Employee Stock Option (right to buy),sell,2132.0,43.0,91676.0
+2005-03-01,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,2727.0,54.0,147258.0
+2005-03-01,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,45.0,53.88,2424.6
+2005-03-01,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,126.0,53.88,6788.88
+2005-03-14,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,buy,24308.0,35.0,850780.0
+2005-03-14,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,sell,21605.0,55.0,1188275.0
+2005-03-14,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,sell,2591.0,54.86,142142.26
+2005-03-14,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,24308.0,35.0,850780.0
+2005-03-14,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,sell,3692.0,55.0,203060.0
+2005-03-14,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,sell,464.0,54.86,25455.04
+2005-03-14,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,4353.0,35.0,152355.0
+2005-03-14,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,buy,4353.0,35.0,152355.0
+2005-03-16,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,10150.0,54.37,551855.5
+2005-03-16,ALL,"PILCH, SAMUEL H",Controller,False,Employee Stock Option (right to buy),sell,10150.0,33.38,338807.0
+2005-03-16,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,5368.0,54.37,291858.16
+2005-03-16,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,buy,10150.0,33.38,338807.0
+2005-03-16,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,buy,5368.0,31.78,170595.04
+2005-03-16,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,5000.0,54.37,271850.0
+2005-03-16,ALL,"PILCH, SAMUEL H",Controller,False,Employee Stock Option (right to buy),sell,5368.0,31.78,170595.04
+2005-03-17,ALL,"WILSON, THOMAS J",President Allstate Protection,True,Common Stock,buy,3118.0,40.15,125187.7
+2005-03-17,ALL,"WILSON, THOMAS J",President Allstate Protection,True,Employee Stock Option (right to buy),sell,1611.0,40.9,65889.9
+2005-03-17,ALL,"WILSON, THOMAS J",President Allstate Protection,True,Common Stock,buy,1611.0,40.9,65889.9
+2005-03-17,ALL,"WILSON, THOMAS J",President Allstate Protection,True,Common Stock,sell,2637.0,53.86,142028.82
+2005-03-17,ALL,"WILSON, THOMAS J",President Allstate Protection,True,Employee Stock Option (right to buy),sell,3118.0,40.15,125187.7
+2005-03-17,ALL,"WILSON, THOMAS J",President Allstate Protection,True,Common Stock,sell,1375.0,53.86,74057.5
+2005-04-29,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Common Stock,buy,100.0,35.0,3500.0
+2005-04-29,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Common Stock,buy,93480.0,35.0,3271800.0
+2005-04-29,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,3000.0,56.0,168000.0
+2005-04-29,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Employee Stock Option (right to buy),sell,93480.0,35.0,3271800.0
+2005-04-29,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Employee Stock Option (right to buy),sell,100.0,35.0,3500.0
+2005-04-29,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Common Stock,sell,93480.0,56.0,5234880.0
+2005-05-02,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,sell,634.0,56.25,35662.5
+2005-05-02,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Employee Stock Option (right to buy),sell,8000.0,41.11,328880.0
+2005-05-02,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Employee Stock Option (right to buy),sell,30068.0,36.64,1101691.52
+2005-05-02,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,sell,3087.0,56.25,173643.75
+2005-05-02,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,sell,28291.0,56.64,1602402.24
+2005-05-02,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,buy,8000.0,41.11,328880.0
+2005-05-02,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,sell,5846.0,56.25,328837.5
+2005-05-02,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,buy,30068.0,36.64,1101691.52
+2005-05-04,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,5290.0,56.96,301318.4
+2005-05-04,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Employee Stock Option (right to buy),sell,100.0,36.64,3664.0
+2005-05-04,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,buy,3750.0,37.29,139837.5
+2005-05-04,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,buy,5290.0,45.96,243128.4
+2005-05-04,ALL,"PILCH, SAMUEL H",Controller,False,Employee Stock Option (right to buy),sell,5290.0,45.96,243128.4
+2005-05-04,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,3750.0,57.29,214837.5
+2005-05-04,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Common Stock,sell,36632.0,57.0,2088024.0
+2005-05-04,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Common Stock,buy,100.0,36.64,3664.0
+2005-05-04,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Common Stock,buy,36632.0,36.64,1342196.48
+2005-05-04,ALL,"PILCH, SAMUEL H",Controller,False,Employee Stock Option (right to buy),sell,3750.0,37.29,139837.5
+2005-05-04,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Employee Stock Option (right to buy),sell,36632.0,36.64,1342196.48
+2005-05-05,ALL,"LIDDY, EDWARD M","Director, Chairman, President and CEO",True,Common Stock,sell,25990.0,57.63,1497803.7
+2005-05-05,ALL,"LIDDY, EDWARD M","Director, Chairman, President and CEO",True,Employee Stock Option (right to buy),sell,67398.0,22.63,1525216.74
+2005-05-05,ALL,"LIDDY, EDWARD M","Director, Chairman, President and CEO",True,Common Stock,sell,12008.0,57.29,687938.32
+2005-05-05,ALL,"LIDDY, EDWARD M","Director, Chairman, President and CEO",True,Common Stock,sell,26622.0,57.29,1525174.38
+2005-05-05,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,buy,28521.0,42.5,1212142.5
+2005-05-05,ALL,"LIDDY, EDWARD M","Director, Chairman, President and CEO",True,Common Stock,buy,67398.0,22.63,1525216.74
+2005-05-05,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,sell,2168.0,57.29,124204.72
+2005-05-05,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Employee Stock Option (right to buy),sell,28521.0,42.5,1212142.5
+2005-05-05,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,sell,26230.0,57.5,1508225.0
+2005-05-16,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,buy,7375.0,42.0,309750.0
+2005-05-16,ALL,"PILCH, SAMUEL H",Controller,False,Employee Stock Option (right to buy),sell,7375.0,42.0,309750.0
+2005-05-16,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,7375.0,56.21,414548.75
+2005-05-17,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,15201.0,26.69,405714.69
+2005-05-17,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,sell,1561.0,56.89,88805.29000000001
+2005-05-17,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,sell,3183.0,56.89,181080.87
+2005-05-17,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,11118.0,36.64,407363.52
+2005-05-17,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,sell,9470.0,56.64,536380.8
+2005-05-17,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,buy,15201.0,26.69,405714.69
+2005-05-17,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,buy,11118.0,36.64,407363.52
+2005-05-17,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,sell,11928.0,56.69,676198.32
+2005-05-19,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,1330.0,57.28,76182.40000000001
+2005-05-19,ALL,"PILCH, SAMUEL H",Controller,False,Employee Stock Option (right to buy),sell,1330.0,43.5,57855.0
+2005-05-19,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,buy,1330.0,43.5,57855.0
+2005-05-24,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,sell,66894.0,58.0,3879852.0
+2005-05-24,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,sell,8844.0,57.94,512421.36
+2005-05-24,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,buy,75852.0,35.0,2654820.0
+2005-05-24,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Employee Stock Option (right to buy),sell,75852.0,35.0,2654820.0
+2005-06-01,ALL,"ACKERMAN, F DUANE",Director,True,Common Stock,buy,684.0,58.47,39993.479999999996
+2005-06-01,ALL,"ANDRESS, JAMES G",Director,True,Common Share Unit,buy,855.139,58.47,49999.97733
+2005-06-01,ALL,"SPRIESER, JUDITH A",Director,True,Common Stock,buy,684.0,58.47,39993.479999999996
+2005-06-01,ALL,"FARRELL, W JAMES",Director,True,Common Stock,buy,136.0,58.47,7951.92
+2005-06-01,ALL,"TAYLOR, MARY ALICE",Director,True,Common Stock,buy,684.0,58.47,39993.479999999996
+2005-06-01,ALL,"RILEY, H JOHN JR",Director,True,Common Share Unit,buy,855.139,58.47,49999.97733
+2005-06-01,ALL,"REYES, J CHRISTOPHER",Director,True,Common Share Unit,buy,684.112,58.47,40000.02864
+2005-06-02,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,buy,5996.0,33.38,200146.48
+2005-06-02,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,5996.0,33.38,200146.48
+2005-06-02,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,buy,1000.0,31.78,31780.0
+2005-06-02,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,buy,666.0,33.38,22231.08
+2005-06-02,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,9000.0,31.78,286020.0
+2005-06-02,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,sell,9000.0,59.0,531000.0
+2005-06-02,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,buy,9000.0,31.78,286020.0
+2005-06-02,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,666.0,33.38,22231.08
+2005-06-02,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,1000.0,31.78,31780.0
+2005-06-02,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,sell,5996.0,59.0,353764.0
+2005-06-17,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Employee Stock Option (right to buy),sell,47284.0,26.69,1262009.96
+2005-06-17,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,buy,47284.0,26.69,1262009.96
+2005-06-17,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Employee Stock Option (right to buy),sell,39900.0,39.19,1563681.0
+2005-06-17,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Common Stock,sell,39900.0,60.0,2394000.0
+2005-06-17,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Common Stock,buy,100.0,39.19,3919.0
+2005-06-17,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Common Stock,buy,39900.0,39.19,1563681.0
+2005-06-17,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Employee Stock Option (right to buy),sell,23566.0,38.75,913182.5
+2005-06-17,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,sell,60463.0,60.0,3627780.0
+2005-06-17,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,sell,2452.0,59.93,146948.36
+2005-06-17,ALL,"PIKE, ROBERT W",Vice President and Secretary,True,Employee Stock Option (right to buy),sell,100.0,39.19,3919.0
+2005-06-17,ALL,"WILSON, THOMAS J",President and COO,True,Common Stock,sell,48852.0,59.93,2927700.36
+2005-06-17,ALL,"WILSON, THOMAS J",President and COO,True,Common Stock,sell,24001.0,59.93,1438379.93
+2005-06-17,ALL,"WILSON, THOMAS J",President and COO,True,Common Stock,buy,109694.0,26.69,2927732.8600000003
+2005-06-17,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,sell,7723.0,59.93,462839.39
+2005-06-17,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,buy,23566.0,38.75,913182.5
+2005-06-17,ALL,"WILSON, THOMAS J",President and COO,True,Employee Stock Option (right to buy),sell,109694.0,26.69,2927732.8600000003
+2005-06-17,ALL,"WILSON, THOMAS J",President and COO,True,Common Stock,sell,32801.0,60.0,1968060.0
+2005-07-05,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,buy,5086.0,41.06,208831.16
+2005-07-05,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,sell,4986.0,61.06,304445.16000000003
+2005-07-05,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,5086.0,41.06,208831.16
+2005-07-06,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,100.0,36.64,3664.0
+2005-07-06,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,29580.0,36.64,1083811.2
+2005-07-06,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Common Stock,buy,29580.0,36.64,1083811.2
+2005-07-06,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Common Stock,sell,29580.0,60.85,1799943.0
+2005-07-06,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Common Stock,buy,100.0,36.64,3664.0
+2005-07-14,ALL,"LIDDY, EDWARD M","Director, Chairman and CEO",True,Common Stock,sell,65364.0,61.39,4012695.96
+2005-07-14,ALL,"LIDDY, EDWARD M","Director, Chairman and CEO",True,Common Stock,sell,28203.0,61.64,1738432.92
+2005-07-14,ALL,"LIDDY, EDWARD M","Director, Chairman and CEO",True,Common Stock,sell,13003.0,61.39,798254.17
+2005-07-14,ALL,"LIDDY, EDWARD M","Director, Chairman and CEO",True,Employee Stock Option (right to buy),sell,109518.0,36.64,4012739.52
+2005-07-14,ALL,"LIDDY, EDWARD M","Director, Chairman and CEO",True,Common Stock,buy,109518.0,36.64,4012739.52
+2005-07-15,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,buy,55668.0,42.0,2338056.0
+2005-07-15,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,buy,17811.0,42.0,748062.0
+2005-07-15,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,sell,5275.0,61.93,326680.75
+2005-07-15,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,sell,16019.0,62.0,993178.0
+2005-07-15,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,sell,50280.0,62.0,3117360.0
+2005-07-15,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,17811.0,42.0,748062.0
+2005-07-15,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,sell,1688.0,61.93,104537.84
+2005-07-15,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Employee Stock Option (right to buy),sell,55668.0,42.0,2338056.0
+2005-07-19,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,sell,1024.0,62.29,63784.96
+2005-07-19,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,10950.0,42.5,465375.0
+2005-07-19,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,sell,9819.0,62.5,613687.5
+2005-07-19,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Common Stock,buy,25521.0,42.5,1084642.5
+2005-07-19,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,25521.0,42.5,1084642.5
+2005-07-19,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Common Stock,sell,25421.0,62.5,1588812.5
+2005-07-19,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,buy,10950.0,42.5,465375.0
+2005-07-22,ALL,"SYLLA, CASEY",President Allstate Financial,True,Common Stock,buy,35511.0,42.5,1509217.5
+2005-07-22,ALL,"SYLLA, CASEY",President Allstate Financial,True,Common Stock,sell,75511.0,61.05,4609946.55
+2005-07-22,ALL,"SYLLA, CASEY",President Allstate Financial,True,Common Stock,buy,40000.0,39.19,1567600.0
+2005-07-22,ALL,"SYLLA, CASEY",President Allstate Financial,True,Employee Stock Option (right to buy),sell,35511.0,42.5,1509217.5
+2005-07-22,ALL,"SYLLA, CASEY",President Allstate Financial,True,Employee Stock Option (right to buy),sell,40000.0,39.19,1567600.0
+2005-07-25,ALL,"SYLLA, CASEY",President Allstate Financial,True,Common Stock,sell,73612.0,61.3179,4513733.2548
+2005-07-25,ALL,"SYLLA, CASEY",President Allstate Financial,True,Employee Stock Option (right to buy),sell,91020.0,35.0,3185700.0
+2005-07-25,ALL,"SYLLA, CASEY",President Allstate Financial,True,Common Stock,buy,91020.0,35.0,3185700.0
+2005-07-25,ALL,"SYLLA, CASEY",President Allstate Financial,True,Common Stock,sell,15422.0,61.35,946139.7000000001
+2005-07-27,ALL,"FARRELL, W JAMES",Director,True,Common Stock,sell,1329.0,61.9,82265.09999999999
+2005-07-27,ALL,"FARRELL, W JAMES",Director,True,Common Stock,buy,3000.0,27.44,82320.0
+2005-07-27,ALL,"FARRELL, W JAMES",Director,True,Common Stock,sell,1767.0,61.9,109377.3
+2005-07-27,ALL,"FARRELL, W JAMES",Director,True,Non-Employee Director Stock Option (right to buy),sell,3000.0,61.9,185700.0
+2005-07-27,ALL,"FARRELL, W JAMES",Director,True,Common Stock,buy,3000.0,36.47,109410.0
+2005-08-29,ALL,"LIDDY, EDWARD M","Director, Chairman and CEO",True,Common Stock,sell,144052.0,56.96,8205201.92
+2005-08-29,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Common Stock,buy,100.0,35.0,3500.0
+2005-08-29,ALL,"LIDDY, EDWARD M","Director, Chairman and CEO",True,Common Stock,sell,48113.0,56.96,2740516.48
+2005-08-29,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Common Stock,sell,66632.0,57.0,3798024.0
+2005-08-29,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Common Stock,buy,66632.0,35.0,2332120.0
+2005-08-29,ALL,"LIDDY, EDWARD M","Director, Chairman and CEO",True,Employee Stock Option (right to buy),sell,307428.0,26.69,8205253.32
+2005-08-29,ALL,"LIDDY, EDWARD M","Director, Chairman and CEO",True,Common Stock,sell,103300.0,56.69,5856077.0
+2005-08-29,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,66632.0,35.0,2332120.0
+2005-08-29,ALL,"LIDDY, EDWARD M","Director, Chairman and CEO",True,Common Stock,buy,307428.0,26.69,8205253.32
+2005-08-29,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,100.0,35.0,3500.0
+2005-08-31,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,sell,6005.0,55.26,331836.3
+2005-08-31,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,sell,1407.0,55.26,77750.81999999999
+2005-08-31,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Common Stock,buy,65396.0,35.0,2288860.0
+2005-08-31,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Common Stock,sell,126716.0,55.0,6969380.0
+2005-08-31,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,61520.0,26.69,1641968.8
+2005-08-31,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,67784.0,42.0,2846928.0
+2005-08-31,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,sell,55191.0,54.9,3029985.9
+2005-08-31,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,65396.0,35.0,2288860.0
+2005-08-31,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Common Stock,buy,61520.0,26.69,1641968.8
+2005-08-31,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,buy,51500.0,33.38,1719070.0000000002
+2005-08-31,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Common Stock,buy,67784.0,42.0,2846928.0
+2005-08-31,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Employee Stock Option (right to buy),sell,51500.0,33.38,1719070.0000000002
+2005-08-31,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Employee Stock Option (right to buy),sell,11250.0,31.78,357525.0
+2005-08-31,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Common Stock,sell,67684.0,56.0,3790304.0
+2005-08-31,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,buy,11250.0,31.78,357525.0
+2005-09-13,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,buy,3750.0,37.29,139837.5
+2005-09-13,ALL,"PILCH, SAMUEL H",Controller,False,Employee Stock Option (right to buy),sell,3750.0,37.29,139837.5
+2005-09-13,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,3750.0,54.0,202500.0
+2005-11-03,ALL,"TRIPODI, JOSEPH V",SVP Allstate Insurance Company,True,Common Stock accompanied by tax withholding rights,sell,953.0,55.44,52834.32
+2005-11-07,ALL,"BRENNAN, EDWARD A",Director,True,Common Stock,sell,8000.0,55.47,443760.0
+2005-12-01,ALL,"BRENNAN, EDWARD A",Director,True,Common Stock,sell,8000.0,56.0893,448714.4
+2006-01-03,ALL,"BRENNAN, EDWARD A",Director,True,Common Stock,sell,8000.0,54.1447,433157.6
+2006-02-01,ALL,"BRENNAN, EDWARD A",Director,True,Common Stock,sell,8000.0,52.8395,422716.0
+2006-02-14,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,10150.0,54.0,548100.0
+2006-02-14,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,buy,10150.0,33.38,338807.0
+2006-02-14,ALL,"PILCH, SAMUEL H",Controller,False,Employee Stock Option (right to buy),sell,10150.0,33.38,338807.0
+2006-02-21,ALL,"LIDDY, EDWARD M","Director, Chairman and CEO",True,Employee Stock Option (right to buy),buy,241000.0,53.84,12975440.0
+2006-02-21,ALL,"HALE, DANNY L",Vice President and CFO,True,Employee Stock Option (right to buy),buy,62000.0,53.84,3338080.0
+2006-02-21,ALL,"TRIPODI, JOSEPH V",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),buy,37000.0,53.84,1992080.0000000002
+2006-02-21,ALL,"HALE, DANNY L",Vice President and CFO,True,Employee Stock Option (right to buy),buy,40000.0,53.84,2153600.0
+2006-02-21,ALL,"LIDDY, EDWARD M","Director, Chairman and CEO",True,Employee Stock Option (right to buy),buy,169000.0,53.84,9098960.0
+2006-02-21,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),buy,41000.0,53.84,2207440.0
+2006-02-21,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),buy,39000.0,53.84,2099760.0
+2006-02-21,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),buy,27000.0,53.84,1453680.0
+2006-02-21,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),buy,35000.0,53.84,1884400.0000000002
+2006-02-21,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),buy,27000.0,53.84,1453680.0
+2006-02-21,ALL,"TRIPODI, JOSEPH V",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),buy,27000.0,53.84,1453680.0
+2006-02-21,ALL,"SYLLA, CASEY",President Allstate Financial,True,Employee Stock Option (right to buy),buy,40000.0,53.84,2153600.0
+2006-02-21,ALL,"SYLLA, CASEY",President Allstate Financial,True,Employee Stock Option (right to buy),buy,75000.0,53.84,4038000.0000000005
+2006-02-21,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),buy,27000.0,53.84,1453680.0
+2006-02-21,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),buy,27000.0,53.84,1453680.0
+2006-02-21,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),buy,33000.0,53.84,1776720.0
+2006-02-21,ALL,"ROCHE, MICHAEL JOHN",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),buy,27000.0,53.84,1453680.0
+2006-02-21,ALL,"ROCHE, MICHAEL JOHN",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),buy,32000.0,53.84,1722880.0
+2006-02-21,ALL,"WALKER, JOAN H",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),buy,24000.0,53.84,1292160.0
+2006-02-21,ALL,"PILCH, SAMUEL H",Controller,False,Employee Stock Option (right to buy),buy,14000.0,53.84,753760.0
+2006-02-21,ALL,"PILCH, SAMUEL H",Controller,False,Employee Stock Option (right to buy),buy,19915.0,53.84,1072223.6
+2006-02-21,ALL,"WALKER, JOAN H",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),buy,10000.0,53.84,538400.0
+2006-02-21,ALL,"SIMONSON, ERIC A",Chief Investment Officer,True,Employee Stock Option (right to buy),buy,40000.0,53.84,2153600.0
+2006-02-21,ALL,"WILSON, THOMAS J",President and COO,True,Employee Stock Option (right to buy),buy,66000.0,53.84,3553440.0
+2006-02-21,ALL,"WILSON, THOMAS J",President and COO,True,Employee Stock Option (right to buy),buy,124000.0,53.84,6676160.0
+2006-02-21,ALL,"SIMONSON, ERIC A",Chief Investment Officer,True,Employee Stock Option (right to buy),buy,60000.0,53.84,3230400.0
+2006-02-21,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Employee Stock Option (right to buy),buy,41000.0,53.84,2207440.0
+2006-02-21,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Employee Stock Option (right to buy),buy,27000.0,53.84,1453680.0
+2006-02-23,ALL,"GREENBERG, JACK M",Director,True,Common Share Unit,sell,1290.991,54.52,70384.82932
+2006-03-01,ALL,"BRENNAN, EDWARD A",Director,True,Common Stock,sell,8000.0,54.6899,437519.2
+2006-03-23,ALL,"RILEY, H JOHN JR",Director,True,Common Stock,buy,375.0,53.402,20025.75
+2006-04-03,ALL,"BRENNAN, EDWARD A",Director,True,Common Stock,sell,8000.0,52.2467,417973.6
+2006-05-01,ALL,"SYLLA, CASEY",President Allstate Financial,True,Common Stock,sell,24077.0,56.54,1361313.58
+2006-05-01,ALL,"BRENNAN, EDWARD A",Director,True,Common Stock,sell,8000.0,56.7412,453929.6
+2006-05-01,ALL,"SYLLA, CASEY",President Allstate Financial,True,Common Stock,sell,7410.0,56.4443,418252.263
+2006-05-01,ALL,"SYLLA, CASEY",President Allstate Financial,True,Common Stock,sell,114500.0,56.6955,6491634.75
+2006-05-01,ALL,"SYLLA, CASEY",President Allstate Financial,True,Common Stock,buy,149000.0,33.38,4973620.0
+2006-05-01,ALL,"SYLLA, CASEY",President Allstate Financial,True,Employee Stock Option (right to buy),sell,149000.0,33.38,4973620.0
+2006-05-16,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,sell,13559.0,57.0,772863.0
+2006-05-16,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,buy,13659.0,31.78,434083.02
+2006-05-16,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,13659.0,31.78,434083.02
+2006-05-22,ALL,"ANDRESS, JAMES G",Director,True,Common Stock,buy,3000.0,21.44,64320.00000000001
+2006-05-22,ALL,"ANDRESS, JAMES G",Director,True,Non-Employee Director Stock Option (right to buy),sell,3000.0,21.44,64320.00000000001
+2006-06-01,ALL,"RILEY, H JOHN JR",Director,True,Common Share Unit,buy,905.797,55.2,49999.9944
+2006-06-01,ALL,"REYES, J CHRISTOPHER",Director,True,Common Share Unit,buy,724.638,55.2,40000.01760000001
+2006-06-01,ALL,"ANDRESS, JAMES G",Director,True,Common Share Unit,buy,905.797,55.2,49999.9944
+2006-06-01,ALL,"TAYLOR, MARY ALICE",Director,True,Common Stock,buy,724.0,55.2,39964.8
+2006-06-01,ALL,"FARRELL, W JAMES",Director,True,Common Stock,buy,181.0,55.2,9991.2
+2006-06-01,ALL,"ACKERMAN, F DUANE",Director,True,Common Stock,buy,724.0,55.2,39964.8
+2006-06-22,ALL,"WILSON, THOMAS J",President and COO,True,Common Stock,sell,1405.0,53.27,74844.35
+2006-06-22,ALL,"WILSON, THOMAS J",President and COO,True,Common Stock,sell,7432.0,53.27,395902.64
+2006-06-22,ALL,"WILSON, THOMAS J",President and COO,True,Common Stock,buy,10995.0,36.01,395929.94999999995
+2006-06-22,ALL,"WILSON, THOMAS J",President and COO,True,Employee Stock Option (right to buy),sell,10995.0,36.01,395929.94999999995
+2006-08-14,ALL,"WILSON, THOMAS J",President and COO,True,Common Stock,buy,5497.0,36.01,197946.97
+2006-08-14,ALL,"WILSON, THOMAS J",President and COO,True,Common Stock,sell,784.0,56.41,44225.439999999995
+2006-08-14,ALL,"WILSON, THOMAS J",President and COO,True,Employee Stock Option (right to buy),sell,5497.0,36.01,197946.97
+2006-08-14,ALL,"WILSON, THOMAS J",President and COO,True,Common Stock,sell,3509.0,56.41,197942.69
+2006-08-21,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Common Stock,buy,40000.0,33.38,1335200.0
+2006-08-21,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Common Stock,sell,22988.0,58.08,1335143.04
+2006-08-21,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),buy,22988.0,58.08,1335143.04
+2006-08-21,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Common Stock,sell,23420.0,58.38,1367259.6
+2006-08-21,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,32980.0,33.38,1100872.4000000001
+2006-08-21,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Common Stock,sell,5720.0,58.08,332217.6
+2006-08-21,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,buy,32980.0,33.38,1100872.4000000001
+2006-08-21,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,40000.0,33.38,1335200.0
+2006-08-21,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,sell,32880.0,58.38,1919534.4000000001
+2006-09-01,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,60000.0,33.38,2002800.0000000002
+2006-09-01,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Common Stock,sell,10096.0,58.21,587688.16
+2006-09-01,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Common Stock,sell,1301.0,58.21,75731.21
+2006-09-01,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),buy,1301.0,58.21,75731.21
+2006-09-01,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Common Stock,buy,60000.0,33.38,2002800.0000000002
+2006-09-01,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Common Stock,sell,34498.0,58.38,2013993.24
+2006-09-05,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,buy,5368.0,31.78,170595.04
+2006-09-05,ALL,"PILCH, SAMUEL H",Controller,False,Employee Stock Option (right to buy),sell,5368.0,31.78,170595.04
+2006-09-05,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,5368.0,58.78,315531.04
+2006-09-08,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,buy,2191.0,42.5,93117.5
+2006-09-08,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,buy,10000.0,31.78,317800.0
+2006-09-08,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,sell,176.0,58.49,10294.24
+2006-09-08,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,sell,1344.0,58.49,78610.56
+2006-09-08,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,2191.0,42.5,93117.5
+2006-09-08,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,sell,9623.0,59.0,567757.0
+2006-09-08,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,10000.0,31.78,317800.0
+2006-09-09,ALL,"BEYER, ROBERT D",Director,True,Common Stock,buy,455.0,58.49,26612.95
+2006-09-12,ALL,"PILCH, SAMUEL H",Controller,False,Employee Stock Option (right to buy),sell,5290.0,45.96,243128.4
+2006-09-12,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,5290.0,59.65,315548.5
+2006-09-12,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,3154.0,59.61,188009.94
+2006-09-12,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,buy,5290.0,45.96,243128.4
+2006-09-15,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,buy,22500.0,31.78,715050.0
+2006-09-15,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,sell,18226.0,60.0,1093560.0
+2006-09-15,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,sell,3125.0,60.16,188000.0
+2006-09-15,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Common Stock,buy,35000.0,42.5,1487500.0
+2006-09-15,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Employee Stock Option (right to buy),sell,22500.0,31.78,715050.0
+2006-09-15,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,35000.0,42.5,1487500.0
+2006-09-15,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Common Stock,sell,34900.0,60.0,2094000.0
+2006-09-21,ALL,"BEYER, ROBERT D",Director,True,Common Stock,buy,25000.0,60.7904,1519760.0
+2006-09-25,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,buy,51500.0,33.38,1719070.0000000002
+2006-09-25,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,sell,5837.0,62.0,361894.0
+2006-09-25,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,5937.0,42.0,249354.0
+2006-09-25,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Common Stock,buy,33750.0,31.78,1072575.0
+2006-09-25,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,sell,9219.0,61.39,565954.41
+2006-09-25,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,sell,42022.0,62.0,2605364.0
+2006-09-25,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Employee Stock Option (right to buy),sell,51500.0,33.38,1719070.0000000002
+2006-09-25,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Common Stock,sell,27185.0,61.78,1679489.3
+2006-09-25,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Common Stock,sell,8299.0,61.0,506239.0
+2006-09-25,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,buy,5937.0,42.0,249354.0
+2006-09-25,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Common Stock,sell,6421.0,61.39,394185.19
+2006-09-25,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,sell,895.0,61.39,54944.05
+2006-09-25,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,buy,6662.0,33.38,222377.56000000003
+2006-09-25,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Common Stock,buy,8399.0,41.31,346962.69
+2006-09-25,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,33750.0,31.78,1072575.0
+2006-09-25,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,sell,5176.0,62.0,320912.0
+2006-09-25,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,6662.0,33.38,222377.56000000003
+2006-09-25,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,8399.0,41.31,346962.69
+2006-11-10,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,3750.0,63.0,236250.0
+2006-11-10,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,buy,3750.0,37.29,139837.5
+2006-11-10,ALL,"PILCH, SAMUEL H",Controller,False,Employee Stock Option (right to buy),sell,3750.0,37.29,139837.5
+2006-11-22,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,sell,31.0,64.75,2007.25
+2006-11-22,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,sell,184.0,65.0,11960.0
+2006-11-22,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,225.0,42.0,9450.0
+2006-11-22,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,buy,225.0,42.0,9450.0
+2006-11-24,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,buy,3775.0,42.0,158550.0
+2006-11-24,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,sell,3200.0,65.0,208000.0
+2006-11-24,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,sell,382.0,64.75,24734.5
+2006-11-24,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,3775.0,42.0,158550.0
+2006-11-27,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,33789.0,26.69,901828.41
+2006-11-27,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Common Stock,sell,7816.0,64.53,504366.48
+2006-11-27,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),buy,13975.0,64.53,901806.75
+2006-11-27,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Common Stock,sell,13605.0,64.69,880107.45
+2006-11-27,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),buy,12154.0,64.53,784297.62
+2006-11-27,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Common Stock,buy,33789.0,26.69,901828.41
+2006-11-27,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Common Stock,sell,12154.0,64.53,784297.62
+2006-11-27,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Common Stock,sell,13975.0,64.53,901806.75
+2006-11-28,ALL,"SYLLA, CASEY",President Allstate Financial,True,Common Stock,buy,66750.0,31.78,2121315.0
+2006-11-28,ALL,"SYLLA, CASEY",President Allstate Financial,True,Employee Stock Option (right to buy),sell,66750.0,31.78,2121315.0
+2006-11-28,ALL,"SYLLA, CASEY",President Allstate Financial,True,Common Stock,sell,53000.0,64.0429,3394273.7
+2006-11-28,ALL,"SYLLA, CASEY",President Allstate Financial,True,Common Stock,sell,13244.0,63.94,846821.36
+2006-12-07,ALL,"LIDDY, EDWARD M","Director, Chairman and CEO",True,Employee Stock Option (right to buy),sell,21788.0,61.39,1337565.32
+2006-12-07,ALL,"LIDDY, EDWARD M","Director, Chairman and CEO",True,Employee Stock Option (right to buy),sell,100000.0,42.41,4241000.0
+2006-12-07,ALL,"LIDDY, EDWARD M","Director, Chairman and CEO",True,Common Stock,buy,125000.0,42.5,5312500.0
+2006-12-07,ALL,"LIDDY, EDWARD M","Director, Chairman and CEO",True,Common Stock,buy,400000.0,35.0,14000000.0
+2006-12-07,ALL,"LIDDY, EDWARD M","Director, Chairman and CEO",True,Employee Stock Option (right to buy),sell,125000.0,42.5,5312500.0
+2006-12-07,ALL,"LIDDY, EDWARD M","Director, Chairman and CEO",True,Employee Stock Option (right to buy),sell,400000.0,35.0,14000000.0
+2006-12-07,ALL,"LIDDY, EDWARD M","Director, Chairman and CEO",True,Common Stock,sell,518994.0,63.8477,33136573.213800002
+2006-12-07,ALL,"LIDDY, EDWARD M","Director, Chairman and CEO",True,Common Stock,buy,100000.0,42.41,4241000.0
+2006-12-07,ALL,"LIDDY, EDWARD M","Director, Chairman and CEO",True,Common Stock,sell,101606.0,63.95,6497703.7
+2006-12-07,ALL,"LIDDY, EDWARD M","Director, Chairman and CEO",True,Common Stock,buy,21788.0,61.39,1337565.32
+2006-12-15,ALL,"ROCHE, MICHAEL JOHN",SVP Allstate Insurance Company,True,Common Stock,sell,27500.0,65.45,1799875.0
+2006-12-15,ALL,"ROCHE, MICHAEL JOHN",SVP Allstate Insurance Company,True,Common Stock,buy,37836.0,33.38,1262965.6800000002
+2006-12-15,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,5000.0,65.0,325000.0
+2006-12-15,ALL,"ROCHE, MICHAEL JOHN",SVP Allstate Insurance Company,True,Common Stock,sell,6075.0,65.115,395573.62499999994
+2006-12-15,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,15188.0,42.0,637896.0
+2006-12-15,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,buy,15188.0,42.0,637896.0
+2006-12-15,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,sell,12300.0,65.0,799500.0
+2006-12-15,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,sell,2071.0,65.115,134853.16499999998
+2006-12-15,ALL,"ROCHE, MICHAEL JOHN",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,37836.0,33.38,1262965.6800000002
+2006-12-18,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,5325.0,65.57,349160.24999999994
+2006-12-18,ALL,"PILCH, SAMUEL H",Controller,False,Employee Stock Option (right to buy),sell,5325.0,52.57,279935.25
+2006-12-18,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,buy,5325.0,52.57,279935.25
+2007-01-08,ALL,"TRIPODI, JOSEPH V",SVP Allstate Insurance Company,True,Common Stock,sell,2261.0,64.685,146252.785
+2007-01-08,ALL,"TRIPODI, JOSEPH V",SVP Allstate Insurance Company,True,Common Stock,sell,17000.0,65.013,1105221.0
+2007-01-08,ALL,"HALE, DANNY L",Vice President and CFO,True,Common Stock,sell,8364.0,64.795,541945.38
+2007-01-08,ALL,"TRIPODI, JOSEPH V",SVP Allstate Insurance Company,True,Common Stock,buy,20000.0,40.6,812000.0
+2007-02-14,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Employee Stock Option (right to buy),sell,11250.0,31.78,357525.0
+2007-02-14,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Common Stock,sell,1614.0,61.71,99599.94
+2007-02-14,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Common Stock,sell,8995.0,61.78,555711.1
+2007-02-14,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Common Stock,buy,11250.0,31.78,357525.0
+2007-02-15,ALL,"HALE, DANNY L",Vice President and CFO,True,Common Stock,sell,7534.0,61.71,464923.14
+2007-02-15,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Common Stock,sell,3541.0,61.71,218515.11000000002
+2007-02-15,ALL,"SIMONSON, ERIC A",Chief Investment Officer,True,Common Stock,sell,4891.0,61.71,301823.61
+2007-02-15,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,sell,2961.0,61.71,182723.31
+2007-02-15,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Common Stock,sell,3285.0,61.71,202717.35
+2007-02-15,ALL,"ROCHE, MICHAEL JOHN",SVP Allstate Insurance Company,True,Common Stock,sell,1644.0,61.71,101451.24
+2007-02-15,ALL,"WILSON, THOMAS J",President and CEO,True,Common Stock,sell,8865.0,61.71,547059.15
+2007-02-15,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,1678.0,61.71,103549.38
+2007-02-15,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,sell,3539.0,61.71,218391.69
+2007-02-15,ALL,"LIDDY, EDWARD M","Director, Chairman",True,Common Stock,sell,26519.0,61.71,1636487.49
+2007-02-15,ALL,"CRIPE, FREDERICK F",SVP Allstate Insurance Company,True,Common Stock,sell,1683.0,61.71,103857.93000000001
+2007-02-15,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,sell,1403.0,61.71,86579.13
+2007-02-15,ALL,"SYLLA, CASEY",President Allstate Financial,True,Common Stock,sell,7610.0,61.71,469613.10000000003
+2007-02-22,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,sell,552.0,61.83,34130.159999999996
+2007-02-22,ALL,"LIDDY, EDWARD M","Director, Chairman",True,Common Stock,sell,4684.0,61.83,289611.72
+2007-02-22,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,sell,552.0,61.83,34130.159999999996
+2007-02-22,ALL,"GREENBERG, JACK M",Director,True,Common Stock accompanied by tax-offset rights,sell,813.0,62.18,50552.34
+2007-02-22,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Common Stock,sell,552.0,61.83,34130.159999999996
+2007-02-22,ALL,"GREENBERG, JACK M",Director,True,Common Stock,sell,100.0,62.18,6218.0
+2007-02-22,ALL,"GREENBERG, JACK M",Director,True,Common Stock,sell,200.0,62.19,12438.0
+2007-02-22,ALL,"GREENBERG, JACK M",Director,True,Common Stock,sell,200.0,62.2,12440.0
+2007-02-22,ALL,"GREENBERG, JACK M",Director,True,Common Stock,sell,500.0,62.23,31115.0
+2007-02-22,ALL,"GREENBERG, JACK M",Director,True,Common Stock accompanied by tax-offset rights,sell,787.0,62.16,48919.92
+2007-02-22,ALL,"CROCKETT, JOAN M",SVP Allstate Insurance Company,True,Common Stock,sell,739.0,61.83,45692.369999999995
+2007-02-22,ALL,"SYLLA, CASEY",President Allstate Financial,True,Common Stock,sell,1084.0,61.83,67023.72
+2007-02-22,ALL,"WILSON, THOMAS J",President and CEO,True,Common Stock,sell,1873.0,61.83,115807.59
+2007-02-22,ALL,"TRIPODI, JOSEPH V",SVP Allstate Insurance Company,True,Common Stock,sell,552.0,61.83,34130.159999999996
+2007-02-22,ALL,"SIMONSON, ERIC A",Chief Investment Officer,True,Common Stock,sell,1084.0,61.83,67023.72
+2007-02-22,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,sell,552.0,61.83,34130.159999999996
+2007-02-22,ALL,"CRIPE, FREDERICK F",SVP Allstate Insurance Company,True,Common Stock,sell,176.0,61.83,10882.08
+2007-02-22,ALL,"ROCHE, MICHAEL JOHN",SVP Allstate Insurance Company,True,Common Stock,sell,552.0,61.83,34130.159999999996
+2007-02-22,ALL,"HALE, DANNY L",Vice President and CFO,True,Common Stock,sell,1084.0,61.83,67023.72
+2007-02-22,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,294.0,61.83,18178.02
+2007-02-22,ALL,"GREENBERG, JACK M",Director,True,Common Stock accompanied by tax-offset rights,sell,900.0,62.17,55953.0
+2007-02-23,ALL,"MCNEIL, RONALD D",SVP Allstate Insurance Company,True,Common Stock,sell,8459.0,61.62,521243.57999999996
+2007-02-23,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,sell,3345.0,61.62,206118.9
+2007-02-23,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,sell,7039.0,61.62,433743.18
+2007-03-05,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,sell,1323.0,59.25,78387.75
+2007-04-13,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,sell,865.0,61.33,53050.45
+2007-04-13,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,sell,1339.0,61.78,82723.42
+2007-04-13,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,sell,2359.0,61.33,144677.47
+2007-04-13,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,buy,4553.0,31.78,144694.34
+2007-04-20,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,sell,5721.0,62.49,357505.29000000004
+2007-04-20,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,sell,2181.0,62.49,136290.69
+2007-04-20,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,buy,11250.0,31.78,357525.0
+2007-04-23,ALL,"LIDDY, EDWARD M","Director, Chairman",True,Common Stock,sell,154090.0,62.1519,9576986.271
+2007-04-23,ALL,"LIDDY, EDWARD M","Director, Chairman",True,Common Stock,sell,100402.0,62.13,6237976.260000001
+2007-04-23,ALL,"LIDDY, EDWARD M","Director, Chairman",True,Common Stock,sell,295493.0,62.13,18358980.09
+2007-04-23,ALL,"LIDDY, EDWARD M","Director, Chairman",True,Common Stock,buy,550000.0,33.38,18359000.0
+2007-04-23,ALL,"MCCABE, MICHAEL J",V.P. and General Counsel,False,Common Stock,sell,3348.0,62.3403,208715.32439999998
+2007-04-25,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,buy,5290.0,45.96,243128.4
+2007-04-25,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,buy,5368.0,31.78,170595.04
+2007-04-25,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,10658.0,63.0,671454.0
+2007-04-30,ALL,"WILSON, THOMAS J",President and CEO,True,Common Stock,sell,6329.0,62.32,394423.28
+2007-04-30,ALL,"WILSON, THOMAS J",President and CEO,True,Common Stock,buy,69250.0,33.38,2311565.0
+2007-04-30,ALL,"WILSON, THOMAS J",President and CEO,True,Common Stock,buy,38934.0,36.64,1426541.76
+2007-04-30,ALL,"WILSON, THOMAS J",President and CEO,True,Common Stock,sell,37091.0,62.32,2311511.12
+2007-04-30,ALL,"WILSON, THOMAS J",President and CEO,True,Common Stock,sell,12686.0,62.32,790591.52
+2007-04-30,ALL,"WILSON, THOMAS J",President and CEO,True,Common Stock,sell,22890.0,62.32,1426504.8
+2007-05-29,ALL,"ANDRESS, JAMES G",Director,True,Common Stock,sell,3000.0,61.4673,184401.9
+2007-05-29,ALL,"ANDRESS, JAMES G",Director,True,Common Stock,buy,3000.0,36.22,108660.0
+2007-06-01,ALL,"TAYLOR, MARY ALICE",Director,True,Common Stock,buy,649.0,61.58,39965.42
+2007-06-01,ALL,"ANDRESS, JAMES G",Director,True,Common Share Unit,buy,892.133,61.65,54999.99945
+2007-06-01,ALL,"BEYER, ROBERT D",Director,True,Common Stock,buy,649.0,61.58,39965.42
+2007-06-01,ALL,"RILEY, H JOHN JR",Director,True,Common Share Unit,buy,892.133,61.65,54999.99945
+2007-06-01,ALL,"FARRELL, W JAMES",Director,True,Common Stock,buy,178.0,61.58,10961.24
+2007-06-01,ALL,"REYES, J CHRISTOPHER",Director,True,Common Share Unit,buy,648.824,61.65,39999.999599999996
+2007-06-11,ALL,"TRIPODI, JOSEPH V",SVP Allstate Insurance Company,True,Common Stock,sell,2059.0,61.13,125866.67
+2007-06-11,ALL,"TRIPODI, JOSEPH V",SVP Allstate Insurance Company,True,Common Stock,sell,14389.0,60.8976,876255.5664
+2007-06-11,ALL,"TRIPODI, JOSEPH V",SVP Allstate Insurance Company,True,Common Stock,sell,2961.0,61.13,181005.93000000002
+2007-06-11,ALL,"TRIPODI, JOSEPH V",SVP Allstate Insurance Company,True,Common Stock,buy,4459.0,40.6,181035.4
+2007-06-11,ALL,"TRIPODI, JOSEPH V",SVP Allstate Insurance Company,True,Common Stock,buy,15541.0,40.6,630964.6
+2007-06-11,ALL,"TRIPODI, JOSEPH V",SVP Allstate Insurance Company,True,Common Stock,sell,590.0,61.13,36066.700000000004
+2007-08-06,ALL,"BEYER, ROBERT D",Director,True,Common Stock,buy,1000.0,53.55,53550.0
+2007-08-06,ALL,"BEYER, ROBERT D",Director,True,Common Stock,buy,1300.0,53.59,69667.0
+2007-08-06,ALL,"BEYER, ROBERT D",Director,True,Common Stock,buy,1500.0,53.58,80370.0
+2007-08-06,ALL,"BEYER, ROBERT D",Director,True,Common Stock,buy,1400.0,53.56,74984.0
+2007-08-06,ALL,"BEYER, ROBERT D",Director,True,Common Stock,buy,3900.0,53.57,208923.0
+2007-08-06,ALL,"BEYER, ROBERT D",Director,True,Common Stock,buy,600.0,53.54,32124.0
+2007-08-06,ALL,"BEYER, ROBERT D",Director,True,Common Stock,buy,300.0,53.6,16080.0
+2007-11-21,ALL,"BEYER, ROBERT D",Director,True,Common Stock,buy,4900.0,49.69,243481.0
+2007-11-21,ALL,"BEYER, ROBERT D",Director,True,Common Stock,buy,5000.0,49.7,248500.0
+2007-11-21,ALL,"BEYER, ROBERT D",Director,True,Common Stock,buy,100.0,49.66,4966.0
+2007-11-28,ALL,"WALKER, JOAN H",SVP Allstate Insurance Company,True,Common Stock,sell,1472.0,51.8,76249.59999999999
+2008-02-15,ALL,"SORENSON, STEVEN P",SVP Allstate Insurance Company,True,Common Stock,sell,850.0,46.58,39593.0
+2008-02-15,ALL,"SIMONSON, ERIC A",Chief Investment Officer,True,Common Stock,sell,2797.0,46.58,130284.26
+2008-02-15,ALL,"CRIPE, FREDERICK F",SVP Allstate Insurance Company,True,Common Stock,sell,955.0,46.58,44483.9
+2008-02-15,ALL,"ROCHE, MICHAEL JOHN",SVP Allstate Insurance Company,True,Common Stock,sell,1216.0,46.58,56641.28
+2008-02-15,ALL,"LIDDY, EDWARD M","Director, Chairman",True,Common Stock,sell,13817.0,46.58,643595.86
+2008-02-15,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,sell,1619.0,46.58,75413.02
+2008-02-15,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,sell,1650.0,46.58,76857.0
+2008-02-15,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,966.0,46.58,44996.28
+2008-02-15,ALL,"HALE, DANNY L",Vice President and CFO,True,Common Stock,sell,3062.0,46.58,142627.96
+2008-02-15,ALL,"WILSON, THOMAS J",President and CEO,True,Common Stock,sell,4211.0,46.58,196148.38
+2008-02-22,ALL,"SORENSON, STEVEN P",SVP Allstate Insurance Company,True,Common Stock,sell,176.0,46.85,8245.6
+2008-02-22,ALL,"HALE, DANNY L",Vice President and CFO,True,Common Stock,sell,809.0,46.85,37901.65
+2008-02-22,ALL,"ROCHE, MICHAEL JOHN",SVP Allstate Insurance Company,True,Common Stock,sell,552.0,46.85,25861.2
+2008-02-22,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,sell,552.0,46.85,25861.2
+2008-02-22,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,sell,552.0,46.85,25861.2
+2008-02-22,ALL,"CRIPE, FREDERICK F",SVP Allstate Insurance Company,True,Common Stock,sell,176.0,46.85,8245.6
+2008-02-22,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,294.0,46.85,13773.9
+2008-02-22,ALL,"WALKER, JOAN H",SVP Allstate Insurance Company,True,Common Stock,sell,263.0,46.85,12321.550000000001
+2008-02-22,ALL,"WILSON, THOMAS J",President and CEO,True,Common Stock,sell,1398.0,46.85,65496.3
+2008-02-22,ALL,"SIMONSON, ERIC A",Chief Investment Officer,True,Common Stock,sell,809.0,46.85,37901.65
+2008-02-22,ALL,"LIDDY, EDWARD M","Director, Chairman",True,Common Stock,sell,4684.0,46.85,219445.4
+2008-04-17,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,sell,10000.0,50.0,500000.0
+2008-05-29,ALL,"SMITH, JOSHUA I",Director,True,Common Stock,sell,3000.0,50.97,152910.0
+2008-05-29,ALL,"SMITH, JOSHUA I",Director,True,Common Stock,buy,3000.0,47.3,141900.0
+2008-06-01,ALL,"FARRELL, W JAMES",Director,True,Common Stock,buy,215.0,50.94,10952.1
+2008-06-01,ALL,"REYES, J CHRISTOPHER",Director,True,Common Share Unit,buy,788.488,50.73,39999.99624
+2008-06-01,ALL,"BEYER, ROBERT D",Director,True,Common Stock,buy,785.0,50.94,39987.9
+2008-06-01,ALL,"RILEY, H JOHN JR",Director,True,Common Share Unit,buy,1084.171,50.73,54999.994829999996
+2008-06-01,ALL,"TAYLOR, MARY ALICE",Director,True,Common Stock,buy,785.0,50.94,39987.9
+2008-07-29,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,buy,3043.4783,46.0,140000.0018
+2008-07-31,ALL,"WILSON, THOMAS J","Director, Chairman, President and CEO",True,Common Stock,sell,1709.0,46.22,78989.98
+2008-07-31,ALL,"WILSON, THOMAS J","Director, Chairman, President and CEO",True,Common Stock,buy,53850.0,42.5,2288625.0
+2008-07-31,ALL,"WILSON, THOMAS J","Director, Chairman, President and CEO",True,Common Stock,sell,49515.0,46.22,2288583.3
+2008-08-04,ALL,"SPRIESER, JUDITH A",Director,True,Common Stock,sell,7621.0,45.99,350489.79000000004
+2009-01-02,ALL,"HOHMANN, JAMES E",Pres. & CEO Allstate Financial,True,Common Stock,sell,3804.0,33.26,126521.04
+2009-02-22,ALL,"CRIPE, FREDERICK F",SVP Allstate Insurance Company,True,Common Stock,sell,1084.0,18.44,19988.960000000003
+2009-02-22,ALL,"CRIPE, FREDERICK F",SVP Allstate Insurance Company,True,Common Stock,sell,177.0,18.44,3263.88
+2009-02-22,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,sell,553.0,18.44,10197.320000000002
+2009-02-22,ALL,"RICHARDSON, JOSEPH J",SVP - Protection Distribution,True,Common Stock,sell,648.0,18.44,11949.12
+2009-02-22,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,sell,1551.0,18.44,28600.440000000002
+2009-02-22,ALL,"GREFFIN, JUDITH P",CIO Allstate Insurance Company,True,Common Stock,sell,257.0,18.44,4739.08
+2009-02-22,ALL,"RICHARDSON, JOSEPH J",SVP - Protection Distribution,True,Common Stock,sell,214.0,18.44,3946.1600000000003
+2009-02-22,ALL,"SORENSON, STEVEN P",SVP Allstate Insurance Company,True,Common Stock,sell,184.0,18.44,3392.96
+2009-02-22,ALL,"WILSON, THOMAS J","Director, Chairman, President and CEO",True,Common Stock,sell,4953.0,18.44,91333.32
+2009-02-22,ALL,"PILCH, SAMUEL H","V. P., CFO and Controller",True,Common Stock,sell,295.0,18.44,5439.8
+2009-02-22,ALL,"SORENSON, STEVEN P",SVP Allstate Insurance Company,True,Common Stock,sell,881.0,18.44,16245.640000000001
+2009-02-22,ALL,"WILSON, THOMAS J","Director, Chairman, President and CEO",True,Common Stock,sell,1399.0,18.44,25797.56
+2009-02-22,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,sell,1377.0,18.44,25391.88
+2009-02-22,ALL,"RUEBENSON, GEORGE E",SVP Allstate Insurance Company,True,Common Stock,sell,553.0,18.44,10197.320000000002
+2009-02-22,ALL,"PILCH, SAMUEL H","V. P., CFO and Controller",True,Common Stock,sell,1085.0,18.44,20007.4
+2009-02-22,ALL,"PILCH, SAMUEL H","V. P., CFO and Controller",True,Common Stock,sell,134.0,18.44,2470.96
+2009-02-22,ALL,"WALKER, JOAN H",SVP Allstate Insurance Company,True,Common Stock,sell,268.0,18.44,4941.92
+2009-06-01,ALL,"BEYER, ROBERT D",Director,True,Common Stock,buy,2677.0,26.14,69976.78
+2009-06-01,ALL,"ROCHE, MICHAEL JOHN",SVP Allstate Insurance Company,True,Common Stock,buy,1500.0,26.14,39210.0
+2009-06-01,ALL,"TAYLOR, MARY ALICE",Director,True,Common Stock,buy,2677.0,26.14,69976.78
+2009-06-01,ALL,"RILEY, H JOHN JR",Director,True,Common Share Unit,buy,3251.721,26.14,84999.98694
+2009-06-01,ALL,"WILSON, THOMAS J","Director, Chairman, President and CEO",True,Common Stock,sell,9863.0,26.14,257818.82
+2009-06-01,ALL,"FARRELL, W JAMES",Director,True,Common Stock,buy,650.0,26.14,16991.0
+2009-10-01,ALL,"ACKERMAN, F DUANE",Director,True,Common Stock,buy,1500.0,28.91,43365.0
+2009-10-01,ALL,"WALKER, JOAN H",SVP Allstate Insurance Company,True,Common Stock,sell,5000.0,30.805,154025.0
+2009-10-01,ALL,"ACKERMAN, F DUANE",Director,True,Common Stock,sell,1410.0,30.8322,43473.402
+2009-11-02,ALL,"WINTER, MATTHEW E",Pres. & CEO Allstate Financial,True,Employee Stock Option (Right to Buy),buy,33540.0,29.64,994125.6
+2009-11-02,ALL,"LANEVE, MARK R","SVP and CMO, Allstate Ins. Co.",True,Employee Stock Option (Right to Buy),buy,41280.0,29.64,1223539.2
+2009-11-02,ALL,"CRIPE, FREDERICK F",SVP Allstate Insurance Company,True,Employee Stock Option (Right to Buy),buy,33540.0,29.64,994125.6
+2009-11-12,ALL,"MAYES, MICHELE COLEMAN",SVP and General Counsel,True,Common Stock,sell,1841.0,28.86,53131.26
+2009-11-28,ALL,"WALKER, JOAN H",SVP Allstate Insurance Company,True,Common Stock,sell,1473.0,28.27,41641.71
+2010-02-22,ALL,"SORENSON, STEVEN P",SVP Allstate Insurance Company,True,Common Stock,sell,751.0,31.22,23446.219999999998
+2010-02-22,ALL,"SORENSON, STEVEN P",SVP Allstate Insurance Company,True,Common Stock,sell,214.0,31.22,6681.08
+2010-02-22,ALL,"CRIPE, FREDERICK F",SVP Allstate Insurance Company,True,Common Stock,sell,718.0,31.22,22415.96
+2010-02-22,ALL,"GREFFIN, JUDITH P",CIO Allstate Insurance Company,True,Common Stock,sell,894.0,31.22,27910.68
+2010-02-22,ALL,"WILSON, THOMAS J","Director, Chairman, President and CEO",True,Common Stock,sell,1399.0,31.22,43676.78
+2010-02-22,ALL,"CRIPE, FREDERICK F",SVP Allstate Insurance Company,True,Common Stock,sell,214.0,31.22,6681.08
+2010-02-22,ALL,"RICHARDSON, JOSEPH J",SVP - Protection Distribution,True,Common Stock,sell,214.0,31.22,6681.08
+2010-02-22,ALL,"RICHARDSON, JOSEPH J",SVP - Protection Distribution,True,Common Stock,sell,776.0,31.22,24226.719999999998
+2010-02-22,ALL,"PILCH, SAMUEL H","V. P., CFO and Controller",True,Common Stock,sell,843.0,31.22,26318.46
+2010-02-22,ALL,"WILSON, THOMAS J","Director, Chairman, President and CEO",True,Common Stock,sell,5508.0,31.22,171959.75999999998
+2010-02-22,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,sell,598.0,31.22,18669.559999999998
+2010-02-22,ALL,"PILCH, SAMUEL H","V. P., CFO and Controller",True,Common Stock,sell,280.0,31.22,8741.6
+2010-02-22,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,sell,1591.0,31.22,49671.02
+2010-02-22,ALL,"ROCHE, MICHAEL JOHN",SVP Allstate Insurance Company,True,Common Stock,sell,1444.0,31.22,45081.68
+2010-02-22,ALL,"ROCHE, MICHAEL JOHN",SVP Allstate Insurance Company,True,Common Stock,sell,615.0,31.22,19200.3
+2010-02-22,ALL,"WALKER, JOAN H",SVP Allstate Insurance Company,True,Common Stock,sell,210.0,31.22,6556.2
+2010-02-22,ALL,"GREFFIN, JUDITH P",CIO Allstate Insurance Company,True,Common Stock,sell,255.0,31.22,7961.099999999999
+2010-02-22,ALL,"WALKER, JOAN H",SVP Allstate Insurance Company,True,Common Stock,sell,1037.0,31.22,32375.14
+2010-03-03,ALL,"CRIPE, FREDERICK F",SVP Allstate Insurance Company,True,Common Stock,buy,32384.0,16.83,545022.72
+2010-03-03,ALL,"CRIPE, FREDERICK F",SVP Allstate Insurance Company,True,Common Stock,sell,32384.0,32.151,1041177.984
+2010-03-08,ALL,"GREENBERG, JACK M",Director,True,Common Stock,buy,2500.0,32.0478,80119.5
+2010-03-24,ALL,"DEVRIES, JAMES DAVID",SVP Allstate Insurance Company,True,Common Stock,sell,1841.0,31.33,57678.53
+2010-04-14,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,sell,35937.0,33.7,1211076.9000000001
+2010-04-14,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,buy,35937.0,16.83,604819.71
+2010-04-14,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,sell,8449.0,34.0,287266.0
+2010-05-11,ALL,"LEMAY, RONALD T",Director,True,Common Stock,sell,2430.0,33.064,80345.52
+2010-05-11,ALL,"LEMAY, RONALD T",Director,True,Common Stock,buy,3000.0,27.44,82320.0
+2010-05-11,ALL,"TAYLOR, MARY ALICE",Director,True,Common Stock,sell,2498.0,33.044,82543.912
+2010-05-11,ALL,"TAYLOR, MARY ALICE",Director,True,Common Stock,buy,3000.0,27.44,82320.0
+2010-05-21,ALL,"ACKERMAN, F DUANE",Director,True,Common Stock,sell,2725.0,30.311,82597.475
+2010-05-21,ALL,"ACKERMAN, F DUANE",Director,True,Common Stock,buy,3000.0,27.44,82320.0
+2010-05-27,ALL,"RILEY, H JOHN JR",Director,True,Common Stock,buy,3000.0,27.44,82320.0
+2010-05-28,ALL,"SPRIESER, JUDITH A",Director,True,Common Stock,sell,3000.0,30.864,92592.0
+2010-05-28,ALL,"SPRIESER, JUDITH A",Director,True,Common Stock,buy,3000.0,27.44,82320.0
+2010-06-01,ALL,"FARRELL, W JAMES",Director,True,Common Stock,buy,143.0,29.66,4241.38
+2010-06-01,ALL,"ACKERMAN, F DUANE",Director,True,Common Share Unit,buy,590.02,29.66,17499.9932
+2010-06-01,ALL,"RILEY, H JOHN JR",Director,True,Common Share Unit,buy,716.453,29.66,21249.99598
+2010-06-01,ALL,"TAYLOR, MARY ALICE",Director,True,Common Stock,buy,590.0,29.66,17499.4
+2010-09-01,ALL,"RILEY, H JOHN JR",Director,True,Common Share Unit,buy,741.193,28.67,21250.00331
+2010-09-01,ALL,"FARRELL, W JAMES",Director,True,Common Stock,buy,148.0,28.67,4243.16
+2010-09-01,ALL,"ACKERMAN, F DUANE",Director,True,Common Share Unit,buy,610.394,28.67,17499.99598
+2010-09-01,ALL,"TAYLOR, MARY ALICE",Director,True,Common Stock,buy,610.0,28.67,17488.7
+2010-09-08,ALL,"CIVGIN, DON",Senior Vice President and CFO,True,Common Stock,sell,589.0,28.7,16904.3
+2010-11-18,ALL,"WALKER, JOAN H",SVP Allstate Insurance Company,True,Common Stock,buy,36957.0,16.83,621986.3099999999
+2010-11-18,ALL,"WALKER, JOAN H",SVP Allstate Insurance Company,True,Common Stock,sell,36957.0,30.4,1123492.8
+2010-11-23,ALL,"MAYES, MICHELE COLEMAN",SVP and General Counsel,True,Common Stock,sell,41136.0,29.6,1217625.6
+2010-11-23,ALL,"MAYES, MICHELE COLEMAN",SVP and General Counsel,True,Common Stock,buy,41136.0,16.83,692318.8799999999
+2010-12-01,ALL,"TAYLOR, MARY ALICE",Director,True,Common Stock,buy,584.0,29.95,17490.8
+2010-12-01,ALL,"FARRELL, W JAMES",Director,True,Common Stock,buy,141.0,29.95,4222.95
+2010-12-01,ALL,"RILEY, H JOHN JR",Director,True,Common Share Unit,buy,709.516,29.95,21250.0042
+2010-12-01,ALL,"ACKERMAN, F DUANE",Director,True,Common Share Unit,buy,584.307,29.95,17499.99465
+2011-02-20,ALL,"BRUNE, CATHERINE S",SVP Allstate Insurance Company,True,Common Stock,sell,1635.0,32.11,52499.85
+2011-02-20,ALL,"GREFFIN, JUDITH P",CIO Allstate Insurance Company,True,Common Stock,sell,950.0,32.11,30504.5
+2011-02-20,ALL,"GREFFIN, JUDITH P",CIO Allstate Insurance Company,True,Common Stock,sell,211.0,32.11,6775.21
+2011-02-20,ALL,"PILCH, SAMUEL H",Controller,False,Common Stock,sell,876.0,32.11,28128.36
+2011-02-20,ALL,"WILSON, THOMAS J","Director, Chairman, President and CEO",True,Common Stock,sell,7041.0,32.11,226086.51
+2011-02-20,ALL,"ROCHE, MICHAEL JOHN",SVP Allstate Insurance Company,True,Common Stock,sell,1487.0,32.11,47747.57
+2011-02-20,ALL,"WALKER, JOAN H",SVP Allstate Insurance Company,True,Common Stock,sell,1290.0,32.11,41421.9
+2011-02-20,ALL,"SORENSON, STEVEN P",SVP Allstate Insurance Company,True,Common Stock,sell,716.0,32.11,22990.76
+2011-03-01,ALL,"FARRELL, W JAMES",Director,True,Common Stock,buy,135.0,31.44,4244.400000000001
+2011-03-01,ALL,"TAYLOR, MARY ALICE",Director,True,Common Stock,buy,556.0,31.44,17480.64
+2011-03-01,ALL,"RILEY, H JOHN JR",Director,True,Common Share Unit,buy,675.891,31.44,21250.013039999998
+2011-06-01,ALL,"TAYLOR, MARY ALICE",Director,True,Common Stock,buy,369.0,30.44,11232.36
+2011-06-01,ALL,"RILEY, H JOHN JR",Director,True,Common Share Unit,buy,903.417,30.44,27500.01348
+2011-07-17,ALL,"GREFFIN, JUDITH P",EVP & CIO Allstate Ins. Co.,True,Common Stock,sell,164.0,29.47,4833.08
+2011-08-26,ALL,"WINTER, MATTHEW E",Pres. & CEO Allstate Financial,True,Common Stock,buy,181.4926,24.45,4437.49407
+2011-09-01,ALL,"TAYLOR, MARY ALICE",Director,True,Common Stock,buy,434.0,25.91,11244.94
+2011-09-01,ALL,"RILEY, H JOHN JR",Director,True,Common Share Unit,buy,1061.366,25.91,27499.99306
+2011-11-12,ALL,"MAYES, MICHELE COLEMAN",EVP and General Counsel,True,Common Stock,sell,1875.0,26.64,49950.0
+2011-11-12,ALL,"MAYES, MICHELE COLEMAN",EVP and General Counsel,True,Common Stock,sell,1966.0,26.64,52374.24
+2011-12-01,ALL,"TAYLOR, MARY ALICE",Director,True,Common Stock,buy,423.0,26.56,11234.88
+2011-12-01,ALL,"RILEY, H JOHN JR",Director,True,Common Share Unit,buy,1270.708,26.56,33750.00448
+2012-02-22,ALL,"LANEVE, MARK R",Sr. EVP/CMO/Allstate Ins. Co.,True,Common Stock,sell,2196.0,31.56,69305.76
+2012-02-22,ALL,"GREFFIN, JUDITH P",EVP & CIO Allstate Ins. Co.,True,Common Stock,sell,2446.0,31.56,77195.76
+2012-02-22,ALL,"WALKER, JOAN H",SVP Allstate Insurance Company,True,Common Stock,sell,1887.0,31.56,59553.72
+2012-02-22,ALL,"CIVGIN, DON",Exec. Vice President and CFO,True,Common Stock,sell,2992.0,31.56,94427.51999999999
+2012-02-22,ALL,"WILSON, THOMAS J","Director, Chairman, President and CEO",True,Common Stock,sell,11663.0,31.56,368084.27999999997
+2012-02-22,ALL,"MAYES, MICHELE COLEMAN",EVP and General Counsel,True,Common Stock,sell,2362.0,31.56,74544.72
+2012-02-22,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,sell,595.0,31.56,18778.2
+2012-02-22,ALL,"WINTER, MATTHEW E",Pres. & CEO Allstate Financial,True,Common Stock,sell,4464.0,31.56,140883.84
+2012-02-22,ALL,"DEVRIES, JAMES DAVID",EVP & Chief Admin. Officer AIC,True,Common Stock,sell,2235.0,31.56,70536.59999999999
+2012-02-26,ALL,"WILSON, THOMAS J","Director, Chairman, President and CEO",True,Common Stock,sell,15215.0,31.36,477142.39999999997
+2012-02-26,ALL,"WALKER, JOAN H",SVP Allstate Insurance Company,True,Common Stock,sell,3120.0,31.36,97843.2
+2012-02-26,ALL,"GREFFIN, JUDITH P",EVP & CIO Allstate Ins. Co.,True,Common Stock,sell,3299.0,31.36,103456.64
+2012-02-26,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,sell,990.0,31.36,31046.399999999998
+2012-02-26,ALL,"MAYES, MICHELE COLEMAN",EVP and General Counsel,True,Common Stock,sell,2340.0,31.36,73382.4
+2012-02-29,ALL,"REDMOND, ANDREA",Director,True,Common Stock,buy,4000.0,31.61,126440.0
+2012-02-29,ALL,"VERNEY, STEVEN C","EVP & Chief Risk Officer, AIC",True,Common Stock,sell,1650.0,31.75,52387.5
+2012-03-01,ALL,"RILEY, H JOHN JR",Director,True,Common Share Unit,buy,919.118,31.28,28750.01104
+2012-03-24,ALL,"DEVRIES, JAMES DAVID",EVP & Chief Admin. Officer AIC,True,Common Stock,sell,1966.0,32.51,63914.659999999996
+2012-03-24,ALL,"DEVRIES, JAMES DAVID",EVP & Chief Admin. Officer AIC,True,Common Stock,sell,2194.0,32.51,71326.94
+2012-05-04,ALL,"WALKER, JOAN H",SVP Allstate Insurance Company,True,Common Stock,buy,15000.0,16.83,252449.99999999997
+2012-05-04,ALL,"WALKER, JOAN H",SVP Allstate Insurance Company,True,Common Stock,sell,15000.0,34.283,514245.0
+2012-05-29,ALL,"MAYES, MICHELE COLEMAN",EVP and General Counsel,True,Common Stock,sell,4136.0,33.86,140044.96
+2012-05-29,ALL,"MAYES, MICHELE COLEMAN",EVP and General Counsel,True,Common Stock,buy,4136.0,16.83,69608.87999999999
+2012-05-30,ALL,"MAYES, MICHELE COLEMAN",EVP and General Counsel,True,Common Stock,sell,37000.0,33.66,1245419.9999999998
+2012-05-30,ALL,"MAYES, MICHELE COLEMAN",EVP and General Counsel,True,Common Stock,buy,37000.0,16.83,622709.9999999999
+2012-06-01,ALL,"RILEY, H JOHN JR",Director,True,Common Share Unit,buy,869.368,33.07,28749.999760000002
+2012-08-03,ALL,"VERNEY, STEVEN C",EVP & Chief Risk Officer (AIC),True,Common Stock,sell,10000.0,37.0,370000.0
+2012-08-03,ALL,"VERNEY, STEVEN C",EVP & Chief Risk Officer (AIC),True,Common Stock,sell,12980.0,37.0,480260.0
+2012-08-03,ALL,"VERNEY, STEVEN C",EVP & Chief Risk Officer (AIC),True,Common Stock,buy,10000.0,16.83,168299.99999999997
+2012-08-03,ALL,"VERNEY, STEVEN C",EVP & Chief Risk Officer (AIC),True,Common Stock,buy,12980.0,31.78,412504.4
+2012-08-10,ALL,"WALKER, JOAN H",EVP Allstate Insurance Company,True,Common Stock,sell,58915.0,37.838,2229225.77
+2012-08-10,ALL,"WALKER, JOAN H",EVP Allstate Insurance Company,True,Common Stock,sell,14257.0,37.816,539142.712
+2012-08-10,ALL,"WALKER, JOAN H",EVP Allstate Insurance Company,True,Common Stock,buy,58915.0,16.83,991539.45
+2012-08-10,ALL,"WALKER, JOAN H",EVP Allstate Insurance Company,True,Common Stock,buy,37043.0,31.41,1163520.6300000001
+2012-08-11,ALL,"GREFFIN, JUDITH P",EVP & CIO Allstate Ins. Co.,True,Common Stock,sell,622.0,37.98,23623.559999999998
+2012-08-21,ALL,"SMITH, JOSHUA I",Director,True,Common Stock,sell,5235.0,38.35,200762.25
+2012-09-01,ALL,"RILEY, H JOHN JR",Director,True,Common Share Unit,buy,771.191,37.28,28750.000480000002
+2012-09-08,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,sell,2100.0,38.48,80808.0
+2012-09-08,ALL,"CIVGIN, DON",Pres & CEO Allstate Financial,True,Common Stock,sell,1783.0,38.48,68609.84
+2012-10-18,ALL,"VERNEY, STEVEN C",EVP & Chief Risk Officer (AIC),True,Common Stock,sell,10000.0,42.0,420000.0
+2012-10-18,ALL,"VERNEY, STEVEN C",EVP & Chief Risk Officer (AIC),True,Common Stock,buy,10000.0,16.83,168299.99999999997
+2012-12-01,ALL,"RILEY, H JOHN JR",Director,True,Common Share Unit,buy,710.227,40.48,28749.988959999995
+2012-12-06,ALL,"WILSON, THOMAS J","Director, Chairman, President and CEO",True,Common Stock,sell,9564.0,41.19,393941.16
+2012-12-06,ALL,"WILSON, THOMAS J","Director, Chairman, President and CEO",True,Common Stock,buy,101000.0,31.78,3209780.0
+2012-12-06,ALL,"WILSON, THOMAS J","Director, Chairman, President and CEO",True,Common Stock,sell,77926.0,41.19,3209771.94
+2012-12-07,ALL,"SHEBIK, STEVEN E",EVP & Chief Financial Officer,True,Common Stock,buy,14713.0,31.78,467579.14
+2012-12-07,ALL,"FARRELL, W JAMES",Director,True,Common Stock,buy,4000.0,36.3,145200.0
+2012-12-07,ALL,"LEES, SUSAN L",EVP and General Counsel,True,Common Stock,buy,767.0,31.78,24375.260000000002
+2012-12-07,ALL,"GREFFIN, JUDITH P",EVP & CIO Allstate Ins. Co.,True,Common Stock,buy,1346.0,31.78,42775.880000000005
+2012-12-07,ALL,"GREFFIN, JUDITH P",EVP & CIO Allstate Ins. Co.,True,Common Stock,buy,3614.0,31.22,112829.08
+2012-12-07,ALL,"SHEBIK, STEVEN E",EVP & Chief Financial Officer,True,Common Stock,sell,14713.0,41.335,608161.855
+2012-12-07,ALL,"SHEBIK, STEVEN E",EVP & Chief Financial Officer,True,Common Stock,buy,2287.0,31.78,72680.86
+2012-12-07,ALL,"LEES, SUSAN L",EVP and General Counsel,True,Common Stock,sell,647.0,41.373,26768.331
+2012-12-07,ALL,"FARRELL, W JAMES",Director,True,Common Stock,sell,4000.0,41.281,165124.0
+2012-12-07,ALL,"GREFFIN, JUDITH P",EVP & CIO Allstate Ins. Co.,True,Common Stock,sell,1346.0,41.462,55807.852000000006
+2012-12-07,ALL,"GREFFIN, JUDITH P",EVP & CIO Allstate Ins. Co.,True,Common Stock,sell,3614.0,41.462,149843.668
+2013-01-03,ALL,"BAILEY, DONALD",Pres Emerging Businesses (AIC),False,Common Stock,sell,2446.0,41.16,100677.35999999999
+2013-02-08,ALL,"GREENBERG, JACK M",Director,True,Common Stock,sell,4000.0,45.094,180376.0
+2013-02-08,ALL,"GREENBERG, JACK M",Director,True,Common Stock,buy,4000.0,36.3,145200.0
+2013-02-22,ALL,"CIVGIN, DON",Pres & CEO Allstate Financial,True,Common Stock,sell,1521.0,46.47,70680.87
+2013-02-22,ALL,"DEVRIES, JAMES DAVID",EVP & Chief Admin. Officer AIC,True,Common Stock,sell,2185.0,46.47,101536.95
+2013-02-22,ALL,"DEVRIES, JAMES DAVID",EVP & Chief Admin. Officer AIC,True,Common Stock,sell,1149.0,46.47,53394.03
+2013-02-22,ALL,"VERNEY, STEVEN C",EVP & Chief Risk Officer (AIC),True,Common Stock,sell,849.0,46.47,39453.03
+2013-02-22,ALL,"WILSON, THOMAS J","Director, Chairman, President and CEO",True,Common Stock,sell,13218.0,46.47,614240.46
+2013-02-22,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,sell,1908.0,46.47,88664.76
+2013-02-22,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,sell,298.0,46.47,13848.06
+2013-02-22,ALL,"CIVGIN, DON",Pres & CEO Allstate Financial,True,Common Stock,sell,3033.0,46.47,140943.51
+2013-02-22,ALL,"VERNEY, STEVEN C",EVP & Chief Risk Officer (AIC),True,Common Stock,sell,1097.0,46.47,50977.59
+2013-02-22,ALL,"BAILEY, DONALD",Pres Emerging Businesses (AIC),False,Common Stock,sell,2619.0,46.47,121704.93
+2013-02-22,ALL,"WILSON, THOMAS J","Director, Chairman, President and CEO",True,Common Stock,sell,7902.0,46.47,367205.94
+2013-02-22,ALL,"SHEBIK, STEVEN E",EVP & Chief Financial Officer,True,Common Stock,sell,532.0,46.47,24722.04
+2013-02-22,ALL,"LEES, SUSAN L",EVP and General Counsel,True,Common Stock,sell,136.0,46.47,6319.92
+2013-02-22,ALL,"LEES, SUSAN L",EVP and General Counsel,True,Common Stock,sell,986.0,46.47,45819.42
+2013-02-22,ALL,"WINTER, MATTHEW E","Pres Allstate Auto,Home,Agenc.",False,Common Stock,sell,4114.0,46.47,191177.58
+2013-02-22,ALL,"SHEBIK, STEVEN E",EVP & Chief Financial Officer,True,Common Stock,sell,265.0,46.47,12314.55
+2013-02-22,ALL,"WINTER, MATTHEW E","Pres Allstate Auto,Home,Agenc.",False,Common Stock,sell,1992.0,46.47,92568.23999999999
+2013-02-22,ALL,"GREFFIN, JUDITH P",EVP & CIO Allstate Ins. Co.,True,Common Stock,sell,2729.0,46.47,126816.62999999999
+2013-02-22,ALL,"GREFFIN, JUDITH P",EVP & CIO Allstate Ins. Co.,True,Common Stock,sell,1249.0,46.47,58041.03
+2013-02-27,ALL,"CIVGIN, DON",Pres & CEO Allstate Financial,True,Common Stock,sell,16648.0,45.56,758482.88
+2013-02-27,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,sell,4838.0,45.56,220419.28
+2013-02-27,ALL,"LEES, SUSAN L",EVP and General Counsel,True,Common Stock,sell,1283.0,45.56,58453.48
+2013-02-27,ALL,"WILSON, THOMAS J","Director, Chairman, President and CEO",True,Common Stock,sell,62515.0,45.56,2848183.4000000004
+2013-02-27,ALL,"DEVRIES, JAMES DAVID",EVP & Chief Admin. Officer AIC,True,Common Stock,sell,11190.0,45.56,509816.4
+2013-02-27,ALL,"VERNEY, STEVEN C",EVP & Chief Risk Officer (AIC),True,Common Stock,sell,3858.0,45.56,175770.48
+2013-02-27,ALL,"SHEBIK, STEVEN E",EVP & Chief Financial Officer,True,Common Stock,sell,4872.0,45.56,221968.32
+2013-02-27,ALL,"GREFFIN, JUDITH P",EVP & CIO Allstate Ins. Co.,True,Common Stock,sell,11593.0,45.56,528177.0800000001
+2013-03-01,ALL,"VERNEY, STEVEN C",EVP & Chief Risk Officer (AIC),True,Common Stock,sell,6610.0,45.75,302407.5
+2013-03-01,ALL,"RILEY, H JOHN JR",Director,True,Common Share Unit,buy,620.28,46.35,28749.978
+2013-03-01,ALL,"HENKEL, HERBERT L",Director,True,Common Share Unit,buy,485.437,46.35,22500.004950000002
+2013-03-28,ALL,"DEVRIES, JAMES DAVID",EVP & Chief Admin. Officer AIC,True,Common Stock,buy,30000.0,16.83,504899.99999999994
+2013-03-28,ALL,"DEVRIES, JAMES DAVID",EVP & Chief Admin. Officer AIC,True,Common Stock,sell,30000.0,49.0,1470000.0
+2013-05-02,ALL,"GUPTA, SUREN",EVP Allstate Insurance Company,True,Common Stock,sell,4677.0,48.4,226366.8
+2013-05-03,ALL,"TAYLOR, MARY ALICE",Director,True,Common Stock,sell,4000.0,48.954,195816.0
+2013-05-03,ALL,"TAYLOR, MARY ALICE",Director,True,Common Stock,buy,4000.0,36.3,145200.0
+2013-05-07,ALL,"CIVGIN, DON",Pres & CEO Allstate Financial,True,Common Stock,buy,201500.0,16.83,3391244.9999999995
+2013-05-07,ALL,"ACKERMAN, F DUANE",Director,True,Common Stock,buy,4000.0,36.3,145200.0
+2013-05-07,ALL,"ACKERMAN, F DUANE",Director,True,Common Stock,sell,2950.0,49.293,145414.35
+2013-05-07,ALL,"CIVGIN, DON",Pres & CEO Allstate Financial,True,Common Stock,sell,201500.0,49.294,9932741.0
+2013-05-07,ALL,"SPRIESER, JUDITH A",Director,True,Common Stock,buy,4000.0,36.3,145200.0
+2013-05-07,ALL,"GREFFIN, JUDITH P",EVP & CIO Allstate Ins. Co.,True,Common Stock,sell,50000.0,49.263,2463150.0
+2013-05-07,ALL,"RILEY, H JOHN JR",Director,True,Common Stock,buy,4000.0,36.3,145200.0
+2013-05-07,ALL,"GREFFIN, JUDITH P",EVP & CIO Allstate Ins. Co.,True,Common Stock,buy,43412.0,16.83,730623.96
+2013-05-07,ALL,"GREFFIN, JUDITH P",EVP & CIO Allstate Ins. Co.,True,Common Stock,buy,4588.0,45.96,210864.48
+2013-05-07,ALL,"GREFFIN, JUDITH P",EVP & CIO Allstate Ins. Co.,True,Common Stock,buy,2000.0,45.29,90580.0
+2013-05-07,ALL,"SPRIESER, JUDITH A",Director,True,Common Stock,sell,4000.0,49.3,197200.0
+2013-05-10,ALL,"SMITH, JOSHUA I",Director,True,Common Stock,sell,6666.0,49.391,329240.406
+2013-05-10,ALL,"SMITH, JOSHUA I",Director,True,Common Stock,buy,2666.0,36.3,96775.79999999999
+2013-05-10,ALL,"LEMAY, RONALD T",Director,True,Common Stock,sell,4000.0,49.4,197600.0
+2013-05-10,ALL,"LEMAY, RONALD T",Director,True,Common Stock,buy,4000.0,36.3,145200.0
+2013-05-10,ALL,"SMITH, JOSHUA I",Director,True,Common Stock,buy,4000.0,43.98,175920.0
+2013-05-22,ALL,"GREENBERG, JACK M",Director,True,Common Stock,buy,4000.0,43.98,175920.0
+2013-05-22,ALL,"GREENBERG, JACK M",Director,True,Common Stock,sell,4000.0,48.86,195440.0
+2013-06-01,ALL,"RILEY, H JOHN JR",Director,True,Common Share Unit,buy,595.978,48.24,28749.97872
+2013-06-01,ALL,"HENKEL, HERBERT L",Director,True,Common Share Unit,buy,466.418,48.24,22500.00432
+2013-06-03,ALL,"WINTER, MATTHEW E","Pres Allstate Auto,Home,Agenc.",False,Common Stock,buy,6593.0,29.64,195416.52
+2013-06-03,ALL,"WINTER, MATTHEW E","Pres Allstate Auto,Home,Agenc.",False,Common Stock,sell,6593.0,48.24,318046.32
+2013-06-04,ALL,"WINTER, MATTHEW E","Pres Allstate Auto,Home,Agenc.",False,Common Stock,buy,1792.0,29.64,53114.880000000005
+2013-07-01,ALL,"WINTER, MATTHEW E","Pres Allstate Auto,Home,Agenc.",False,Common Stock,sell,6600.0,48.34,319044.0
+2013-07-01,ALL,"WINTER, MATTHEW E","Pres Allstate Auto,Home,Agenc.",False,Common Stock,buy,6600.0,29.64,195624.0
+2013-07-02,ALL,"WINTER, MATTHEW E","Pres Allstate Auto,Home,Agenc.",False,Common Stock,buy,1785.0,29.64,52907.4
+2013-08-01,ALL,"WINTER, MATTHEW E","Pres Allstate Auto,Home,Agenc.",False,Common Stock,buy,6438.0,29.64,190822.32
+2013-08-01,ALL,"WINTER, MATTHEW E","Pres Allstate Auto,Home,Agenc.",False,Common Stock,sell,6438.0,51.873,333958.374
+2013-08-02,ALL,"WINTER, MATTHEW E","Pres Allstate Auto,Home,Agenc.",False,Common Stock,buy,1947.0,29.64,57709.08
+2013-08-02,ALL,"SHEBIK, STEVEN E",EVP & Chief Financial Officer,True,Common Stock,buy,20000.0,16.83,336599.99999999994
+2013-08-02,ALL,"SHEBIK, STEVEN E",EVP & Chief Financial Officer,True,Common Stock,sell,40265.0,52.16,2100222.4
+2013-08-02,ALL,"SHEBIK, STEVEN E",EVP & Chief Financial Officer,True,Common Stock,buy,20265.0,45.96,931379.4
+2013-09-01,ALL,"HENKEL, HERBERT L",Director,True,Common Share Unit,buy,469.533,47.92,22500.021360000002
+2013-09-01,ALL,"RILEY, H JOHN JR",Director,True,Common Share Unit,buy,599.958,47.92,28749.98736
+2013-09-03,ALL,"WINTER, MATTHEW E","Pres Allstate Auto,Home,Agenc.",False,Common Stock,sell,19697.0,48.625,957766.625
+2013-09-03,ALL,"WINTER, MATTHEW E","Pres Allstate Auto,Home,Agenc.",False,Common Stock,buy,19697.0,31.41,618682.77
+2013-10-01,ALL,"WINTER, MATTHEW E","Pres Allstate Auto,Home,Agenc.",False,Common Stock,buy,19697.0,31.41,618682.77
+2013-10-01,ALL,"WINTER, MATTHEW E","Pres Allstate Auto,Home,Agenc.",False,Common Stock,sell,19697.0,50.604,996746.988
+2013-10-16,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,buy,5290.0,45.96,243128.4
+2013-10-16,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,buy,7023.0,31.74,222910.02
+2013-10-16,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,buy,28318.0,31.41,889468.38
+2013-10-16,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,buy,64363.0,16.83,1083229.2899999998
+2013-10-16,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,sell,117194.0,53.063,6218665.222
+2013-10-16,ALL,"VERNEY, STEVEN C",EVP & Chief Risk Officer (AIC),True,Common Stock,buy,14820.0,45.96,681127.2000000001
+2013-10-16,ALL,"VERNEY, STEVEN C",EVP & Chief Risk Officer (AIC),True,Common Stock,sell,14820.0,53.02,785756.4
+2013-10-16,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,buy,2200.0,46.48,102256.0
+2013-11-01,ALL,"LEES, SUSAN L",EVP and General Counsel,True,Common Stock,buy,3106.0,45.96,142751.76
+2013-11-01,ALL,"WINTER, MATTHEW E","Pres Allstate Auto,Home,Agenc.",False,Common Stock,sell,19697.0,53.16,1047092.5199999999
+2013-11-01,ALL,"WINTER, MATTHEW E","Pres Allstate Auto,Home,Agenc.",False,Common Stock,buy,19697.0,31.41,618682.77
+2013-11-01,ALL,"LEES, SUSAN L",EVP and General Counsel,True,Common Stock,sell,3106.0,53.051,164776.40600000002
+2013-11-07,ALL,"GUPTA, SUREN",EVP Allstate Insurance Company,True,Common Stock,sell,9212.0,53.651,494233.01200000005
+2013-11-07,ALL,"GUPTA, SUREN",EVP Allstate Insurance Company,True,Common Stock,buy,9212.0,33.88,312102.56
+2013-11-08,ALL,"GUPTA, SUREN",EVP Allstate Insurance Company,True,Common Stock,buy,8796.0,33.88,298008.48000000004
+2013-11-08,ALL,"GUPTA, SUREN",EVP Allstate Insurance Company,True,Common Stock,sell,28288.0,53.65,1517651.2
+2013-11-08,ALL,"GUPTA, SUREN",EVP Allstate Insurance Company,True,Common Stock,buy,28288.0,33.88,958397.4400000001
+2013-12-01,ALL,"RILEY, H JOHN JR",Director,True,Common Share Unit,buy,529.759,54.27,28750.020930000002
+2013-12-01,ALL,"HENKEL, HERBERT L",Director,True,Common Share Unit,buy,414.594,54.27,22500.01638
+2013-12-02,ALL,"SPRIESER, JUDITH A",Director,True,Common Stock,buy,4000.0,43.98,175920.0
+2013-12-02,ALL,"WINTER, MATTHEW E",Pres Allstate Personal Lines,False,Common Stock,buy,19697.0,31.41,618682.77
+2013-12-02,ALL,"WINTER, MATTHEW E",Pres Allstate Personal Lines,False,Common Stock,sell,19697.0,54.042,1064465.274
+2013-12-02,ALL,"SPRIESER, JUDITH A",Director,True,Common Stock,sell,4000.0,54.076,216304.0
+2013-12-04,ALL,"WILSON, THOMAS J","Director, Chairman, President and CEO",True,Common Stock,sell,6476.0,53.57,346919.32
+2013-12-04,ALL,"WILSON, THOMAS J","Director, Chairman, President and CEO",True,Common Stock,buy,97100.0,45.96,4462716.0
+2013-12-04,ALL,"WILSON, THOMAS J","Director, Chairman, President and CEO",True,Common Stock,sell,83306.0,53.57,4462702.42
+2014-01-02,ALL,"WINTER, MATTHEW E",Pres Allstate Personal Lines,False,Common Stock,buy,19697.0,31.41,618682.77
+2014-01-02,ALL,"WINTER, MATTHEW E",Pres Allstate Personal Lines,False,Common Stock,sell,19697.0,53.776,1059225.872
+2014-02-03,ALL,"WINTER, MATTHEW E",Pres Allstate Personal Lines,False,Common Stock,sell,4923.0,51.07,251417.61000000002
+2014-02-03,ALL,"WINTER, MATTHEW E",Pres Allstate Personal Lines,False,Common Stock,buy,4923.0,31.41,154631.43
+2014-02-21,ALL,"VERNEY, STEVEN C",EVP & Chief Risk Officer (AIC),True,Common Stock,sell,1525.0,53.47,81541.75
+2014-02-21,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,sell,1773.0,53.47,94802.31
+2014-02-21,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,sell,1305.0,53.47,69778.34999999999
+2014-02-21,ALL,"SHEBIK, STEVEN E",EVP & Chief Financial Officer,True,Common Stock,sell,1090.0,53.47,58282.299999999996
+2014-02-22,ALL,"DEVRIES, JAMES DAVID",EVP & Chief Admin. Officer AIC,True,Common Stock,sell,1093.0,53.86,58868.979999999996
+2014-02-22,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,sell,298.0,53.86,16050.28
+2014-02-22,ALL,"VERNEY, STEVEN C",EVP & Chief Risk Officer (AIC),True,Common Stock,sell,844.0,53.86,45457.84
+2014-02-22,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,sell,954.0,53.86,51382.44
+2014-02-22,ALL,"GREFFIN, JUDITH P",EVP & CIO Allstate Ins. Co.,True,Common Stock,sell,1365.0,53.86,73518.9
+2014-02-22,ALL,"VERNEY, STEVEN C",EVP & Chief Risk Officer (AIC),True,Common Stock,sell,511.0,53.86,27522.46
+2014-02-22,ALL,"GREFFIN, JUDITH P",EVP & CIO Allstate Ins. Co.,True,Common Stock,sell,1255.0,53.86,67594.3
+2014-02-22,ALL,"WILSON, THOMAS J","Director, Chairman, President and CEO",True,Common Stock,sell,8024.0,53.86,432172.64
+2014-02-22,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,sell,493.0,53.86,26552.98
+2014-02-22,ALL,"SHEBIK, STEVEN E",EVP & Chief Financial Officer,True,Common Stock,sell,266.0,53.86,14326.76
+2014-02-22,ALL,"WILSON, THOMAS J","Director, Chairman, President and CEO",True,Common Stock,sell,5729.0,53.86,308563.94
+2014-02-22,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,sell,171.0,53.86,9210.06
+2014-02-22,ALL,"DEVRIES, JAMES DAVID",EVP & Chief Admin. Officer AIC,True,Common Stock,sell,1154.0,53.86,62154.44
+2014-02-22,ALL,"CIVGIN, DON",Pres & CEO Allstate Financial,True,Common Stock,sell,1532.0,53.86,82513.52
+2014-02-22,ALL,"SHEBIK, STEVEN E",EVP & Chief Financial Officer,True,Common Stock,sell,306.0,53.86,16481.16
+2014-02-22,ALL,"CIVGIN, DON",Pres & CEO Allstate Financial,True,Common Stock,sell,1516.0,53.86,81651.76
+2014-02-24,ALL,"WINTER, MATTHEW E",Pres Allstate Personal Lines,False,Common Stock,sell,14774.0,53.884,796082.216
+2014-02-24,ALL,"GREFFIN, JUDITH P",EVP & CIO Allstate Ins. Co.,True,Common Stock,sell,20000.0,54.09,1081800.0
+2014-02-24,ALL,"GREFFIN, JUDITH P",EVP & CIO Allstate Ins. Co.,True,Common Stock,buy,20714.0,45.29,938137.0599999999
+2014-02-24,ALL,"GREFFIN, JUDITH P",EVP & CIO Allstate Ins. Co.,True,Common Stock,sell,20714.0,54.218,1123071.652
+2014-02-24,ALL,"GREFFIN, JUDITH P",EVP & CIO Allstate Ins. Co.,True,Common Stock,buy,20000.0,16.83,336599.99999999994
+2014-02-24,ALL,"WINTER, MATTHEW E",Pres Allstate Personal Lines,False,Common Stock,buy,14474.0,31.41,454628.34
+2014-02-24,ALL,"WINTER, MATTHEW E",Pres Allstate Personal Lines,False,Common Stock,sell,14474.0,53.884,779917.0160000001
+2014-02-24,ALL,"WINTER, MATTHEW E",Pres Allstate Personal Lines,False,Common Stock,buy,14774.0,31.41,464051.34
+2014-03-01,ALL,"HENKEL, HERBERT L",Director,True,Common Share Unit,buy,414.67,54.26,22499.9942
+2014-03-01,ALL,"RILEY, H JOHN JR",Director,True,Common Share Unit,buy,529.856,54.26,28749.986559999998
+2014-03-03,ALL,"WINTER, MATTHEW E",Pres Allstate Personal Lines,False,Common Stock,sell,19697.0,54.013,1063894.061
+2014-03-03,ALL,"WINTER, MATTHEW E",Pres Allstate Personal Lines,False,Common Stock,buy,19697.0,31.41,618682.77
+2014-03-21,ALL,"TAYLOR, MARY ALICE",Director,True,Common Stock,sell,4000.0,56.16,224640.0
+2014-03-21,ALL,"TAYLOR, MARY ALICE",Director,True,Common Stock,buy,4000.0,43.98,175920.0
+2014-04-01,ALL,"DEVRIES, JAMES DAVID",EVP & Chief Admin. Officer AIC,True,Common Stock,sell,50000.0,56.83,2841500.0
+2014-04-01,ALL,"DEVRIES, JAMES DAVID",EVP & Chief Admin. Officer AIC,True,Common Stock,buy,50000.0,16.83,841499.9999999999
+2014-05-02,ALL,"GUPTA, SUREN",EVP Allstate Insurance Company,True,Common Stock,sell,2339.0,57.29,134001.31
+2014-05-08,ALL,"LEMAY, RONALD T",Director,True,Common Stock,sell,3036.0,57.966,175984.776
+2014-05-08,ALL,"LEMAY, RONALD T",Director,True,Common Stock,buy,4000.0,43.98,175920.0
+2014-05-21,ALL,"ACKERMAN, F DUANE",Director,True,Common Stock,buy,4000.0,43.98,175920.0
+2014-05-21,ALL,"ACKERMAN, F DUANE",Director,True,Common Stock,sell,3014.0,58.37,175927.18
+2014-06-01,ALL,"HENKEL, HERBERT L",Director,True,Common Share Unit,buy,386.2,58.26,22500.012
+2014-06-05,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,buy,3512.0,31.74,111470.87999999999
+2014-06-05,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,buy,19800.0,46.48,920303.9999999999
+2014-06-05,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,buy,7168.0,31.56,226222.08
+2014-06-05,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,buy,9440.0,31.41,296510.4
+2014-06-05,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,sell,70620.0,59.002,4166721.24
+2014-06-05,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,buy,30700.0,48.82,1498774.0
+2014-08-01,ALL,"MABE, KATHERINE A",Pres. Business to Business-AIC,False,Common Stock,sell,725.0,58.45,42376.25
+2014-08-01,ALL,"VERNEY, STEVEN C",EVP & Chief Risk Officer (AIC),True,Common Stock,buy,12028.0,52.57,632311.96
+2014-08-01,ALL,"VERNEY, STEVEN C",EVP & Chief Risk Officer (AIC),True,Common Stock,sell,12028.0,58.469,703265.132
+2014-08-08,ALL,"SHEBIK, STEVEN E",EVP & Chief Financial Officer,True,Common Stock,buy,20836.0,52.57,1095348.52
+2014-08-08,ALL,"GREFFIN, JUDITH P",EVP & CIO Allstate Ins. Co.,True,Common Stock,buy,20034.0,52.57,1053187.3800000001
+2014-08-08,ALL,"GREFFIN, JUDITH P",EVP & CIO Allstate Ins. Co.,True,Common Stock,sell,60034.0,59.497,3571842.898
+2014-08-08,ALL,"SHEBIK, STEVEN E",EVP & Chief Financial Officer,True,Common Stock,sell,20836.0,59.236,1234241.2959999999
+2014-08-08,ALL,"GREFFIN, JUDITH P",EVP & CIO Allstate Ins. Co.,True,Common Stock,buy,40000.0,16.83,673199.9999999999
+2014-08-11,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,sell,10526.0,59.729,628707.454
+2014-08-11,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,buy,2526.0,52.57,132791.82
+2014-08-11,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,buy,8000.0,16.83,134640.0
+2014-08-12,ALL,"WILSON, THOMAS J","Director, Chairman, President and CEO",True,Common Stock,sell,86503.0,60.15,5203155.45
+2014-08-12,ALL,"WILSON, THOMAS J","Director, Chairman, President and CEO",True,Common Stock,sell,5855.0,60.15,352178.25
+2014-08-12,ALL,"WILSON, THOMAS J","Director, Chairman, President and CEO",True,Common Stock,buy,98976.0,52.57,5203168.32
+2014-08-12,ALL,"VERNEY, STEVEN C",EVP & Chief Risk Officer (AIC),True,Common Stock,buy,10000.0,16.83,168299.99999999997
+2014-08-12,ALL,"VERNEY, STEVEN C",EVP & Chief Risk Officer (AIC),True,Common Stock,sell,10000.0,60.0,600000.0
+2014-08-15,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,sell,11073.0,61.027,675751.971
+2014-09-01,ALL,"HENKEL, HERBERT L",Director,True,Common Share Unit,buy,365.913,61.49,22499.990370000003
+2014-09-01,ALL,"ESKEW, MICHAEL L",Director,True,Common Share Unit,buy,534.796,61.49,32884.606040000006
+2014-09-04,ALL,"GUPTA, SANJAY",EVP & Chief Marketing Officer,True,Common Stock,sell,4708.0,61.64,290201.12
+2014-10-27,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,buy,15975.0,52.57,839805.75
+2014-10-27,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,buy,1456.0,54.3,79060.8
+2014-10-27,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,buy,33915.0,53.84,1825983.6
+2014-10-27,ALL,"VERNEY, STEVEN C",EVP & Chief Risk Officer (AIC),True,Common Stock,buy,20271.0,16.83,341160.93
+2014-10-27,ALL,"VERNEY, STEVEN C",EVP & Chief Risk Officer (AIC),True,Common Stock,sell,20271.0,63.0,1277073.0
+2014-10-27,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,sell,51346.0,63.0,3234798.0
+2014-11-03,ALL,"DEVRIES, JAMES DAVID",EVP & Chief Admin. Officer AIC,True,Common Stock,sell,9374.0,65.0,609310.0
+2014-11-03,ALL,"DEVRIES, JAMES DAVID",EVP & Chief Admin. Officer AIC,True,Common Stock,buy,9374.0,16.83,157764.41999999998
+2014-11-04,ALL,"DEVRIES, JAMES DAVID",EVP & Chief Admin. Officer AIC,True,Common Stock,buy,40626.0,16.83,683735.58
+2014-11-04,ALL,"DEVRIES, JAMES DAVID",EVP & Chief Admin. Officer AIC,True,Common Stock,sell,40626.0,65.002,2640771.252
+2014-11-05,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,sell,14337.0,65.499,939059.163
+2014-11-05,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,buy,14337.0,16.83,241291.70999999996
+2014-11-21,ALL,"VERNEY, STEVEN C",EVP & Chief Risk Officer (AIC),True,Common Stock,sell,8095.0,67.65,547626.75
+2014-11-25,ALL,"WILSON, THOMAS J","Director, Chairman, President and CEO",True,Common Stock,buy,751636.0,16.83,12650033.879999999
+2014-11-25,ALL,"WILSON, THOMAS J","Director, Chairman, President and CEO",True,Common Stock,sell,187187.0,67.58,12650097.459999999
+2014-11-25,ALL,"WILSON, THOMAS J","Director, Chairman, President and CEO",True,Common Stock,sell,265010.0,67.58,17909375.8
+2014-11-26,ALL,"WILSON, THOMAS J","Director, Chairman, President and CEO",True,Common Stock,sell,224439.0,67.51,15151876.89
+2014-12-01,ALL,"HENKEL, HERBERT L",Director,True,Common Share Unit,buy,114.628,67.61,7749.99908
+2014-12-01,ALL,"ESKEW, MICHAEL L",Director,True,Common Share Unit,buy,114.628,67.61,7749.99908
+2015-01-01,ALL,"ESKEW, MICHAEL L",Director,True,Common Share Unit,buy,373.665,70.25,26249.96625
+2015-01-01,ALL,"HENKEL, HERBERT L",Director,True,Common Share Unit,buy,373.665,70.25,26249.96625
+2015-01-09,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,sell,14008.0,70.66,989805.2799999999
+2015-02-06,ALL,"MABE, KATHERINE A",Pres. Business to Business-AIC,False,Common Stock,sell,26353.0,71.26,1877914.78
+2015-02-06,ALL,"VERNEY, STEVEN C",EVP & Chief Risk Officer (AIC),True,Common Stock,buy,16920.0,31.74,537040.7999999999
+2015-02-06,ALL,"VERNEY, STEVEN C",EVP & Chief Risk Officer (AIC),True,Common Stock,buy,6167.0,31.56,194630.52
+2015-02-06,ALL,"VERNEY, STEVEN C",EVP & Chief Risk Officer (AIC),True,Common Stock,buy,2616.0,31.0,81096.0
+2015-02-06,ALL,"VERNEY, STEVEN C",EVP & Chief Risk Officer (AIC),True,Common Stock,sell,57589.0,71.16,4098033.2399999998
+2015-02-06,ALL,"VERNEY, STEVEN C",EVP & Chief Risk Officer (AIC),True,Common Stock,buy,12585.0,53.84,677576.4
+2015-02-06,ALL,"VERNEY, STEVEN C",EVP & Chief Risk Officer (AIC),True,Common Stock,buy,10417.0,31.41,327197.97000000003
+2015-02-06,ALL,"CIVGIN, DON",Pres Emerging Businesses - AIC,False,Common Stock,sell,171964.0,71.44,12285108.16
+2015-02-06,ALL,"VERNEY, STEVEN C",EVP & Chief Risk Officer (AIC),True,Common Stock,buy,9000.0,53.84,484560.00000000006
+2015-02-06,ALL,"MABE, KATHERINE A",Pres. Business to Business-AIC,False,Common Stock,buy,10285.0,28.34,291476.9
+2015-02-06,ALL,"CIVGIN, DON",Pres Emerging Businesses - AIC,False,Common Stock,buy,51901.0,31.56,1637995.5599999998
+2015-02-06,ALL,"CIVGIN, DON",Pres Emerging Businesses - AIC,False,Common Stock,buy,52422.0,31.74,1663874.28
+2015-02-06,ALL,"CIVGIN, DON",Pres Emerging Businesses - AIC,False,Common Stock,buy,67641.0,31.41,2124603.81
+2015-02-06,ALL,"MABE, KATHERINE A",Pres. Business to Business-AIC,False,Common Stock,buy,25951.0,31.56,819013.5599999999
+2015-02-06,ALL,"VERNEY, STEVEN C",EVP & Chief Risk Officer (AIC),True,Common Stock,sell,116.0,72.09,8362.44
+2015-02-10,ALL,"GREENBERG, JACK M",Director,True,Common Stock,sell,2500.0,69.79,174475.00000000003
+2015-02-11,ALL,"CIVGIN, DON",Pres Emerging Businesses - AIC,False,Common Stock,sell,81274.0,71.09,5777768.66
+2015-02-11,ALL,"GREFFIN, JUDITH P",EVP & CIO Allstate Ins. Co.,True,Common Stock,buy,66663.0,48.82,3254487.66
+2015-02-11,ALL,"GREFFIN, JUDITH P",EVP & CIO Allstate Ins. Co.,True,Common Stock,buy,4854.0,62.24,302112.96
+2015-02-11,ALL,"GREFFIN, JUDITH P",EVP & CIO Allstate Ins. Co.,True,Common Stock,buy,24642.0,53.84,1326725.28
+2015-02-11,ALL,"CIVGIN, DON",Pres Emerging Businesses - AIC,False,Common Stock,buy,44303.0,31.41,1391557.23
+2015-02-11,ALL,"GREFFIN, JUDITH P",EVP & CIO Allstate Ins. Co.,True,Common Stock,sell,96159.0,71.25,6851328.75
+2015-02-11,ALL,"CIVGIN, DON",Pres Emerging Businesses - AIC,False,Common Stock,buy,34086.0,31.74,1081889.64
+2015-02-11,ALL,"CIVGIN, DON",Pres Emerging Businesses - AIC,False,Common Stock,buy,2885.0,31.56,91050.59999999999
+2015-02-12,ALL,"HARTY, HARRIET K",Executive Vice President - AIC,True,Common Stock,sell,437.0,71.18,31105.660000000003
+2015-02-12,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,sell,1132.0,71.18,80575.76000000001
+2015-02-12,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,buy,4996.0,45.61,227867.56
+2015-02-12,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,sell,4996.0,71.18,355615.28
+2015-02-18,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,sell,3290.0,71.07,233820.3
+2015-02-18,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,buy,3290.0,52.18,171672.2
+2015-02-21,ALL,"SHEBIK, STEVEN E",EVP & Chief Financial Officer,True,Common Stock,sell,523.0,71.6,37446.799999999996
+2015-02-21,ALL,"VERNEY, STEVEN C",EVP & Chief Risk Officer (AIC),True,Common Stock,sell,1102.0,71.6,78903.2
+2015-02-21,ALL,"HARTY, HARRIET K",Executive Vice President - AIC,True,Common Stock,sell,150.0,71.6,10740.0
+2015-02-21,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,sell,626.0,71.6,44821.6
+2015-02-21,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,sell,850.0,71.6,60859.99999999999
+2015-02-22,ALL,"HARTY, HARRIET K",Executive Vice President - AIC,True,Common Stock,sell,39.0,71.6,2792.3999999999996
+2015-02-22,ALL,"VERNEY, STEVEN C",EVP & Chief Risk Officer (AIC),True,Common Stock,sell,739.0,71.6,52912.399999999994
+2015-02-22,ALL,"GREFFIN, JUDITH P",EVP & CIO Allstate Ins. Co.,True,Common Stock,sell,1928.0,71.6,138044.8
+2015-02-22,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,sell,473.0,71.6,33866.799999999996
+2015-02-22,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,sell,915.0,71.6,65513.99999999999
+2015-02-22,ALL,"SHEBIK, STEVEN E",EVP & Chief Financial Officer,True,Common Stock,sell,255.0,71.6,18258.0
+2015-02-22,ALL,"CIVGIN, DON",Pres Emerging Businesses - AIC,False,Common Stock,sell,2142.0,71.6,153367.19999999998
+2015-02-22,ALL,"WILSON, THOMAS J","Director, Chairman and CEO",True,Common Stock,sell,5874.0,71.6,420578.39999999997
+2015-02-22,ALL,"WINTER, MATTHEW E",President,True,Common Stock,sell,2056.0,71.6,147209.59999999998
+2015-02-23,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,sell,3584.0,71.37,255790.08000000002
+2015-02-23,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,buy,3512.0,31.74,111470.87999999999
+2015-02-23,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,buy,3584.0,31.56,113111.04
+2015-02-23,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,sell,3512.0,71.37,250651.44
+2015-02-27,ALL,"SPRIESER, JUDITH A",Director,True,Common Stock,buy,4000.0,58.47,233880.0
+2015-02-27,ALL,"SPRIESER, JUDITH A",Director,True,Common Stock,sell,4000.0,70.86,283440.0
+2015-03-05,ALL,"MABE, KATHERINE A",Pres. Business to Business-AIC,False,Common Stock,sell,13047.0,69.56,907549.3200000001
+2015-03-05,ALL,"WINTER, MATTHEW E",President,True,Common Stock,sell,38581.0,69.56,2683694.36
+2015-03-05,ALL,"VERNEY, STEVEN C",EVP & Chief Risk Officer (AIC),True,Common Stock,sell,1241.0,69.56,86323.96
+2015-03-05,ALL,"SHEBIK, STEVEN E",EVP & Chief Financial Officer,True,Common Stock,sell,8301.0,69.56,577417.56
+2015-03-05,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,sell,4350.0,69.56,302586.0
+2015-03-05,ALL,"WILSON, THOMAS J","Director, Chairman and CEO",True,Common Stock,sell,105882.0,69.56,7365151.92
+2015-03-05,ALL,"GUPTA, SANJAY",EVP Allstate Insurance Company,True,Common Stock,sell,22945.0,69.56,1596054.2
+2015-03-05,ALL,"GREFFIN, JUDITH P",EVP & CIO Allstate Ins. Co.,True,Common Stock,sell,26093.0,69.56,1815029.08
+2015-03-05,ALL,"CIVGIN, DON",Pres Emerging Businesses - AIC,False,Common Stock,sell,27543.0,69.56,1915891.08
+2015-03-05,ALL,"GREENBERG, JACK M",Director,True,Common Stock,buy,4000.0,58.47,233880.0
+2015-03-05,ALL,"GREENBERG, JACK M",Director,True,Common Stock,sell,4000.0,69.77,279080.0
+2015-03-05,ALL,"GUPTA, SUREN",EVP Allstate Insurance Company,True,Common Stock,sell,18416.0,69.56,1281016.96
+2015-03-11,ALL,"VERNEY, STEVEN C",EVP & Chief Risk Officer (AIC),True,Common Stock,buy,3084.0,31.56,97331.04
+2015-03-11,ALL,"VERNEY, STEVEN C",EVP & Chief Risk Officer (AIC),True,Common Stock,buy,1308.0,31.0,40548.0
+2015-03-11,ALL,"TAYLOR, MARY ALICE",Director,True,Common Stock,buy,4000.0,58.47,233880.0
+2015-03-11,ALL,"TAYLOR, MARY ALICE",Director,True,Common Stock,sell,4000.0,69.0,276000.0
+2015-03-11,ALL,"VERNEY, STEVEN C",EVP & Chief Risk Officer (AIC),True,Common Stock,buy,5641.0,31.74,179045.34
+2015-03-11,ALL,"VERNEY, STEVEN C",EVP & Chief Risk Officer (AIC),True,Common Stock,sell,10033.0,69.33,695587.89
+2015-04-01,ALL,"ESKEW, MICHAEL L",Director,True,Common Share Unit,buy,368.214,71.29,26249.97606
+2015-04-01,ALL,"HENKEL, HERBERT L",Director,True,Common Share Unit,buy,368.214,71.29,26249.97606
+2015-05-02,ALL,"GUPTA, SUREN",EVP Allstate Insurance Company,True,Common Stock,sell,2277.0,69.95,159276.15
+2015-05-08,ALL,"MABE, KATHERINE A",Pres. Business to Business-AIC,False,Common Stock,buy,12976.0,31.56,409522.56
+2015-05-08,ALL,"MABE, KATHERINE A",Pres. Business to Business-AIC,False,Common Stock,buy,21136.0,45.61,964012.96
+2015-05-08,ALL,"MABE, KATHERINE A",Pres. Business to Business-AIC,False,Common Stock,sell,39112.0,67.21,2628717.5199999996
+2015-05-12,ALL,"SHEBIK, STEVEN E",EVP & Chief Financial Officer,True,Common Stock,sell,30641.0,66.79,2046512.3900000001
+2015-05-12,ALL,"SHEBIK, STEVEN E",EVP & Chief Financial Officer,True,Common Stock,buy,18715.0,16.83,314973.44999999995
+2015-05-12,ALL,"SHEBIK, STEVEN E",EVP & Chief Financial Officer,True,Common Stock,buy,15464.0,53.84,832581.76
+2015-05-26,ALL,"WILSON, THOMAS J","Director, Chairman and CEO",True,Common Stock,buy,100000.0,58.47,5847000.0
+2015-05-26,ALL,"WILSON, THOMAS J","Director, Chairman and CEO",True,Common Stock,sell,92786.0,67.43,6256559.98
+2015-06-22,ALL,"WINTER, MATTHEW E",President,True,Common Stock,buy,10000.0,66.5,665000.0
+2015-07-01,ALL,"ESKEW, MICHAEL L",Director,True,Common Share Unit,buy,400.825,65.49,26250.029249999996
+2015-07-01,ALL,"HENKEL, HERBERT L",Director,True,Common Share Unit,buy,400.825,65.49,26250.029249999996
+2015-08-01,ALL,"MABE, KATHERINE A",Pres. Business to Business-AIC,False,Common Stock,sell,706.0,68.95,48678.700000000004
+2015-08-27,ALL,"CRAWFORD, KERMIT R",Director,True,Common Stock,buy,1000.0,57.57,57570.0
+2015-10-01,ALL,"ESKEW, MICHAEL L",Director,True,Common Share Unit,buy,452.82,57.97,26249.9754
+2015-10-01,ALL,"HENKEL, HERBERT L",Director,True,Common Share Unit,buy,452.82,57.97,26249.9754
+2015-11-04,ALL,"RHODES, JOHN M",EVP & Chief Risk Officer (AIC),True,Employee Stock Option (Right to Buy),buy,26122.0,62.89,1642812.58
+2015-11-05,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,sell,3038.0,63.222,192068.43600000002
+2015-11-05,ALL,"SHEBIK, STEVEN E",EVP & Chief Financial Officer,True,Common Stock,sell,9000.0,63.56,572040.0
+2015-11-05,ALL,"SHEBIK, STEVEN E",EVP & Chief Financial Officer,True,Common Stock,buy,9000.0,53.84,484560.00000000006
+2015-11-05,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,buy,3038.0,53.84,163565.92
+2015-12-02,ALL,"WILSON, THOMAS J","Director, Chairman and CEO",True,Common Stock,buy,190000.0,53.84,10229600.0
+2015-12-02,ALL,"WILSON, THOMAS J","Director, Chairman and CEO",True,Common Stock,sell,175152.0,62.89,11015309.28
+2015-12-03,ALL,"HARTY, HARRIET K",Executive Vice President - AIC,True,Common Stock,sell,25.0,62.89,1572.25
+2016-01-01,ALL,"HENKEL, HERBERT L",Director,True,Common Share Unit,buy,422.773,62.09,26249.975570000002
+2016-01-01,ALL,"ESKEW, MICHAEL L",Director,True,Common Share Unit,buy,422.773,62.09,26249.975570000002
+2016-02-08,ALL,"GREFFIN, JUDITH P",EVP & CIO Allstate Ins. Co.,True,Common Stock,buy,20000.0,16.83,336599.99999999994
+2016-02-08,ALL,"GREFFIN, JUDITH P",EVP & CIO Allstate Ins. Co.,True,Common Stock,sell,20000.0,63.1,1262000.0
+2016-02-09,ALL,"HARTY, HARRIET K",Executive Vice President - AIC,True,Common Stock,sell,856.0,63.08,53996.479999999996
+2016-02-09,ALL,"HARTY, HARRIET K",Executive Vice President - AIC,True,Common Stock,buy,942.0,53.84,50717.280000000006
+2016-02-12,ALL,"GREFFIN, JUDITH P",EVP & CIO Allstate Ins. Co.,True,Common Stock,sell,14014.0,62.32,873352.48
+2016-02-12,ALL,"SHEBIK, STEVEN E",EVP & Chief Financial Officer,True,Common Stock,sell,11042.0,62.32,688137.4400000001
+2016-02-12,ALL,"WILSON, THOMAS J","Director, Chairman and CEO",True,Common Stock,sell,54863.0,62.32,3419062.16
+2016-02-12,ALL,"WINTER, MATTHEW E",President,True,Common Stock,sell,18736.0,62.32,1167627.52
+2016-02-12,ALL,"HARTY, HARRIET K",Executive Vice President - AIC,True,Common Stock,sell,225.0,62.32,14022.0
+2016-02-12,ALL,"GUPTA, SANJAY",EVP Allstate Insurance Company,True,Common Stock,sell,7866.0,62.32,490209.12
+2016-02-12,ALL,"CIVGIN, DON",Pres Emerging Businesses - AIC,False,Common Stock,sell,13953.0,62.32,869550.96
+2016-02-12,ALL,"GUPTA, SUREN",EVP Allstate Insurance Company,True,Common Stock,sell,9319.0,62.32,580760.08
+2016-02-12,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,sell,566.0,62.32,35273.12
+2016-02-12,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,sell,5681.0,62.32,354039.92
+2016-02-17,ALL,"WINTER, MATTHEW E",President,True,Common Stock,buy,8385.0,29.64,248531.4
+2016-02-17,ALL,"WINTER, MATTHEW E",President,True,Common Stock,sell,29635.0,65.0,1926275.0
+2016-02-17,ALL,"WINTER, MATTHEW E",President,True,Common Stock,buy,21250.0,31.74,674475.0
+2016-02-17,ALL,"GUPTA, SUREN",EVP Allstate Insurance Company,True,Common Stock,sell,14500.0,65.0,942500.0
+2016-02-19,ALL,"GREFFIN, JUDITH P",EVP & CIO Allstate Ins. Co.,True,Common Stock,sell,6000.0,64.1,384599.99999999994
+2016-02-21,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,sell,943.0,64.0,60352.0
+2016-02-21,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,sell,850.0,64.0,54400.0
+2016-02-21,ALL,"HARTY, HARRIET K",Executive Vice President - AIC,True,Common Stock,sell,156.0,64.0,9984.0
+2016-02-21,ALL,"SHEBIK, STEVEN E",EVP & Chief Financial Officer,True,Common Stock,sell,788.0,64.0,50432.0
+2016-03-28,ALL,"TAYLOR, MARY ALICE",Director,True,Common Stock,buy,4000.0,55.2,220800.0
+2016-03-28,ALL,"TAYLOR, MARY ALICE",Director,True,Common Stock,sell,3300.0,66.92,220836.0
+2016-03-30,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,sell,9710.0,67.54,655813.4
+2016-04-01,ALL,"ESKEW, MICHAEL L",Director,True,Common Share Unit,buy,384.728,68.23,26249.99144
+2016-04-01,ALL,"HENKEL, HERBERT L",Director,True,Common Share Unit,buy,384.728,68.23,26249.99144
+2016-05-06,ALL,"CIVGIN, DON",Pres Emerging Businesses - AIC,False,Common Stock,buy,28836.0,31.74,915254.6399999999
+2016-05-06,ALL,"CIVGIN, DON",Pres Emerging Businesses - AIC,False,Common Stock,buy,54787.0,31.56,1729077.72
+2016-05-06,ALL,"CIVGIN, DON",Pres Emerging Businesses - AIC,False,Common Stock,sell,214412.0,66.92,14348451.040000001
+2016-05-06,ALL,"CIVGIN, DON",Pres Emerging Businesses - AIC,False,Common Stock,buy,65789.0,45.61,3000636.29
+2016-05-06,ALL,"SPRIESER, JUDITH A",Director,True,Common Stock,sell,4000.0,66.92,267680.0
+2016-05-06,ALL,"CIVGIN, DON",Pres Emerging Businesses - AIC,False,Common Stock,buy,65000.0,46.48,3021200.0
+2016-05-06,ALL,"SPRIESER, JUDITH A",Director,True,Common Stock,buy,4000.0,55.2,220800.0
+2016-06-03,ALL,"SHEBIK, STEVEN E",EVP & Chief Financial Officer,True,Common Stock,sell,20000.0,67.46,1349199.9999999998
+2016-06-03,ALL,"SHEBIK, STEVEN E",EVP & Chief Financial Officer,True,Common Stock,buy,20000.0,16.83,336599.99999999994
+2016-07-01,ALL,"ESKEW, MICHAEL L",Director,True,Common Share Unit,buy,377.372,69.56,26249.996320000002
+2016-07-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Stock,buy,381.0,69.56,26502.36
+2016-07-01,ALL,"HENKEL, HERBERT L",Director,True,Common Share Unit,buy,377.372,69.56,26249.996320000002
+2016-07-11,ALL,"WINTER, MATTHEW E",President,True,Common Stock,sell,26150.0,70.0,1830500.0
+2016-07-11,ALL,"GUPTA, SANJAY",Executive Vice President - AIC,True,Common Stock,buy,9137.0,45.61,416738.57
+2016-07-11,ALL,"GUPTA, SANJAY",Executive Vice President - AIC,True,Common Stock,sell,9137.0,70.0,639590.0
+2016-07-11,ALL,"WINTER, MATTHEW E",President,True,Common Stock,buy,26150.0,31.74,830001.0
+2016-08-05,ALL,"HARTY, HARRIET K",Executive Vice President - AIC,True,Common Stock,buy,7098.0,16.83,119459.33999999998
+2016-08-05,ALL,"HARTY, HARRIET K",Executive Vice President - AIC,True,Common Stock,buy,1813.0,48.82,88510.66
+2016-08-05,ALL,"HARTY, HARRIET K",Executive Vice President - AIC,True,Common Stock,sell,6779.0,68.64,465310.56
+2016-08-05,ALL,"HARTY, HARRIET K",Executive Vice President - AIC,True,Common Stock,buy,957.0,62.24,59563.68
+2016-08-08,ALL,"SHEBIK, STEVEN E",EVP & Chief Financial Officer,True,Common Stock,sell,41334.0,68.86,2846259.2399999998
+2016-08-08,ALL,"SHEBIK, STEVEN E",EVP & Chief Financial Officer,True,Common Stock,buy,15571.0,62.24,969139.04
+2016-08-08,ALL,"SHEBIK, STEVEN E",EVP & Chief Financial Officer,True,Common Stock,buy,25763.0,48.82,1257749.66
+2016-09-04,ALL,"GUPTA, SANJAY",Executive Vice President - AIC,True,Common Stock,sell,2292.0,68.95,158033.4
+2016-09-08,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,buy,2895.0,62.24,180184.80000000002
+2016-09-08,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,sell,2895.0,69.285,200580.07499999998
+2016-10-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Stock,buy,379.0,69.18,26219.22
+2016-10-01,ALL,"ESKEW, MICHAEL L",Director,True,Common Share Unit,buy,379.445,69.18,26250.005100000002
+2016-10-01,ALL,"HENKEL, HERBERT L",Director,True,Common Share Unit,buy,379.445,69.18,26250.005100000002
+2016-10-05,ALL,"FORTIN, MARY JANE",Executive Vice President - AIC,True,Common Stock,sell,4820.0,67.84,326988.8
+2016-11-18,ALL,"GUPTA, SANJAY",Executive Vice President - AIC,True,Common Stock,buy,9137.0,45.61,416738.57
+2016-11-18,ALL,"GUPTA, SANJAY",Executive Vice President - AIC,True,Common Stock,sell,9137.0,72.0,657864.0
+2016-11-21,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,buy,21178.0,62.24,1318118.72
+2016-11-21,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,sell,21178.0,72.24,1529898.72
+2016-12-01,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,sell,5111.0,70.145,358511.095
+2016-12-01,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,buy,5111.0,48.82,249519.02
+2016-12-03,ALL,"HARTY, HARRIET K",Executive Vice President - AIC,True,Common Stock,sell,25.0,70.61,1765.25
+2016-12-13,ALL,"GUPTA, SUREN",Executive Vice President - AIC,True,Common Stock,sell,46297.0,72.69,3365328.9299999997
+2016-12-13,ALL,"GUPTA, SUREN",Executive Vice President - AIC,True,Common Stock,buy,46297.0,33.88,1568542.36
+2016-12-16,ALL,"WILSON, THOMAS J","Director, Chairman and CEO",True,Common Stock,sell,239730.0,73.98,17735225.400000002
+2016-12-16,ALL,"SPRIESER, JUDITH A",Director,True,Common Stock,buy,4000.0,61.58,246320.0
+2016-12-16,ALL,"SPRIESER, JUDITH A",Director,True,Common Stock,sell,8000.0,73.81,590480.0
+2016-12-16,ALL,"SPRIESER, JUDITH A",Director,True,Common Stock,buy,4000.0,50.94,203760.0
+2016-12-16,ALL,"WILSON, THOMAS J","Director, Chairman and CEO",True,Common Stock,buy,262335.0,62.24,16327730.4
+2016-12-16,ALL,"WILSON, THOMAS J","Director, Chairman and CEO",True,Common Stock,sell,22605.0,74.09,1674804.4500000002
+2017-01-01,ALL,"ESKEW, MICHAEL L",Director,True,Common Share Unit,buy,421.614,74.12,31250.02968
+2017-01-01,ALL,"HENKEL, HERBERT L",Director,True,Common Share Unit,buy,421.614,74.12,31250.02968
+2017-01-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Share Unit,buy,421.614,74.12,31250.02968
+2017-01-03,ALL,"GUPTA, SANJAY",Executive Vice President - AIC,True,Common Stock,buy,22844.0,45.61,1041914.84
+2017-01-03,ALL,"GUPTA, SANJAY",Executive Vice President - AIC,True,Common Stock,sell,36744.0,74.0,2719056.0
+2017-02-03,ALL,"TAYLOR, MARY ALICE",Director,True,Common Stock,sell,10000.0,77.72,777200.0
+2017-02-12,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,sell,566.0,78.88,44646.079999999994
+2017-02-12,ALL,"HARTY, HARRIET K",Executive Vice President - AIC,True,Common Stock,sell,225.0,78.88,17748.0
+2017-02-13,ALL,"GUPTA, SANJAY",Executive Vice President - AIC,True,Common Stock,buy,13707.0,45.61,625176.27
+2017-02-13,ALL,"GUPTA, SANJAY",Executive Vice President - AIC,True,Common Stock,sell,13707.0,78.95,1082167.6500000001
+2017-02-18,ALL,"HARTY, HARRIET K",Executive Vice President - AIC,True,Common Stock,sell,1028.0,80.44,82692.31999999999
+2017-02-18,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,sell,2890.0,80.44,232471.6
+2017-02-18,ALL,"GUPTA, SANJAY",Executive Vice President - AIC,True,Common Stock,sell,5150.0,80.44,414266.0
+2017-02-18,ALL,"CIVGIN, DON",Pres Emerging Businesses - AIC,False,Common Stock,sell,6191.0,80.44,498004.04
+2017-02-18,ALL,"WILSON, THOMAS J","Director, Chairman and CEO",True,Common Stock,sell,27558.0,80.44,2216765.52
+2017-02-18,ALL,"WINTER, MATTHEW E",President,True,Common Stock,sell,8899.0,80.44,715835.5599999999
+2017-02-18,ALL,"GUPTA, SUREN",Executive Vice President - AIC,True,Common Stock,sell,3922.0,80.44,315485.68
+2017-02-18,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,sell,2032.0,80.44,163454.08
+2017-02-18,ALL,"SHEBIK, STEVEN E",EVP & Chief Financial Officer,True,Common Stock,sell,5048.0,80.44,406061.12
+2017-02-24,ALL,"HARTY, HARRIET K",Executive Vice President - AIC,True,Common Stock,buy,4841.0,31.41,152055.81
+2017-02-24,ALL,"HARTY, HARRIET K",Executive Vice President - AIC,True,Common Stock,buy,5083.0,31.74,161334.41999999998
+2017-02-24,ALL,"HARTY, HARRIET K",Executive Vice President - AIC,True,Common Stock,sell,9924.0,80.46,798485.0399999999
+2017-02-27,ALL,"SPRIESER, JUDITH A",Director,True,Common Stock,sell,1244.0,81.295,101130.98
+2017-02-27,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,sell,24444.0,81.42,1990230.48
+2017-02-27,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,buy,7257.0,31.74,230337.18
+2017-02-27,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,buy,17187.0,31.41,539843.67
+2017-03-15,ALL,"WINTER, MATTHEW E",President,True,Common Stock,buy,33956.0,31.74,1077763.44
+2017-03-15,ALL,"WINTER, MATTHEW E",President,True,Common Stock,sell,33956.0,82.18,2790504.08
+2017-03-20,ALL,"TAYLOR, MARY ALICE",Director,True,Common Stock,sell,4000.0,82.79,331160.0
+2017-03-20,ALL,"TAYLOR, MARY ALICE",Director,True,Common Stock,buy,4000.0,61.58,246320.0
+2017-04-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Share Unit,buy,383.483,81.49,31250.02967
+2017-04-01,ALL,"HENKEL, HERBERT L",Director,True,Common Share Unit,buy,383.483,81.49,31250.02967
+2017-04-01,ALL,"ESKEW, MICHAEL L",Director,True,Common Share Unit,buy,383.483,81.49,31250.02967
+2017-04-17,ALL,"WINTER, MATTHEW E",President,True,Common Stock,buy,33956.0,31.74,1077763.44
+2017-04-17,ALL,"WINTER, MATTHEW E",President,True,Common Stock,sell,33956.0,81.01,2750775.56
+2017-05-03,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,buy,3585.0,31.56,113142.59999999999
+2017-05-03,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,sell,8582.0,83.88,719858.1599999999
+2017-05-03,ALL,"PILCH, SAMUEL H",Sr. Group VP and Controller,True,Common Stock,buy,4997.0,45.61,227913.16999999998
+2017-05-04,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,buy,10552.0,31.56,333021.12
+2017-05-04,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,sell,33806.0,85.31,2883989.86
+2017-05-04,ALL,"SHEBIK, STEVEN E",EVP & Chief Financial Officer,True,Common Stock,buy,33616.0,31.41,1055878.56
+2017-05-04,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,buy,20154.0,33.9,683220.6
+2017-05-04,ALL,"SHEBIK, STEVEN E",EVP & Chief Financial Officer,True,Common Stock,sell,33616.0,85.22,2864755.52
+2017-05-15,ALL,"WINTER, MATTHEW E",President,True,Common Stock,buy,33957.0,31.74,1077795.18
+2017-05-15,ALL,"WINTER, MATTHEW E",President,True,Common Stock,sell,33957.0,84.38,2865291.6599999997
+2017-05-25,ALL,"GUPTA, SANJAY",Executive Vice President - AIC,True,Common Stock,sell,16798.0,86.0,1444628.0
+2017-05-25,ALL,"GUPTA, SANJAY",Executive Vice President - AIC,True,Common Stock,buy,16798.0,52.18,876519.64
+2017-05-26,ALL,"GUPTA, SANJAY",Executive Vice President - AIC,True,Common Stock,buy,3202.0,52.18,167080.36
+2017-06-02,ALL,"FERREN, ERIC K","SVP, Controller, and CAO",True,Common Stock,sell,1119.0,86.94,97285.86
+2017-06-15,ALL,"WINTER, MATTHEW E",President,True,Common Stock,buy,48058.0,31.56,1516710.48
+2017-06-15,ALL,"WINTER, MATTHEW E",President,True,Common Stock,sell,48058.0,88.81,4268030.98
+2017-06-16,ALL,"GUPTA, SANJAY",Executive Vice President - AIC,True,Common Stock,buy,16578.0,52.18,865040.04
+2017-06-16,ALL,"GUPTA, SANJAY",Executive Vice President - AIC,True,Common Stock,sell,16578.0,90.74,1504287.72
+2017-06-19,ALL,"GUPTA, SANJAY",Executive Vice President - AIC,True,Common Stock,buy,3422.0,52.18,178559.96
+2017-06-30,ALL,"HARTY, HARRIET K",Executive Vice President - AIC,True,Common Stock,sell,7228.0,88.354,638622.7119999999
+2017-06-30,ALL,"HARTY, HARRIET K",Executive Vice President - AIC,True,Common Stock,buy,7228.0,31.56,228115.68
+2017-07-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Share Unit,buy,353.347,88.44,31250.00868
+2017-07-01,ALL,"ESKEW, MICHAEL L",Director,True,Common Share Unit,buy,353.347,88.44,31250.00868
+2017-07-17,ALL,"WINTER, MATTHEW E",President,True,Common Stock,sell,48058.0,88.54,4255055.32
+2017-07-17,ALL,"WINTER, MATTHEW E",President,True,Common Stock,buy,48058.0,31.56,1516710.48
+2017-08-04,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,sell,12288.0,94.09,1156177.92
+2017-08-04,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,sell,32616.0,94.11,3069491.76
+2017-08-04,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,buy,44904.0,45.61,2048071.44
+2017-08-07,ALL,"SHEBIK, STEVEN E",EVP & Chief Financial Officer,True,Common Stock,sell,35197.0,94.28,3318373.16
+2017-08-07,ALL,"SHEBIK, STEVEN E",EVP & Chief Financial Officer,True,Common Stock,buy,35197.0,31.74,1117152.78
+2017-08-08,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,sell,2654.0,94.21,250033.34
+2017-08-15,ALL,"WINTER, MATTHEW E",President,True,Common Stock,sell,48059.0,94.53,4543017.2700000005
+2017-08-15,ALL,"WINTER, MATTHEW E",President,True,Common Stock,buy,48059.0,31.56,1516742.04
+2017-10-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Share Unit,buy,340.007,91.91,31250.04337
+2017-10-01,ALL,"ESKEW, MICHAEL L",Director,True,Common Share Unit,buy,340.007,91.91,31250.04337
+2017-10-05,ALL,"FORTIN, MARY JANE","Pres., Allstate Financial-AIC",False,Common Stock,sell,5729.0,92.86,531994.94
+2017-11-08,ALL,"WILSON, THOMAS J","Director, Chairman and CEO",True,Common Stock,buy,338316.0,48.82,16516587.12
+2017-11-08,ALL,"WILSON, THOMAS J","Director, Chairman and CEO",True,Common Stock,buy,417576.0,31.41,13116062.16
+2017-11-08,ALL,"WILSON, THOMAS J","Director, Chairman and CEO",True,Common Stock,sell,246868.0,99.44,24548553.919999998
+2017-11-08,ALL,"WILSON, THOMAS J","Director, Chairman and CEO",True,Common Stock,sell,265854.0,99.48,26447155.92
+2017-11-08,ALL,"WILSON, THOMAS J","Director, Chairman and CEO",True,Common Stock,sell,130000.0,99.29,12907700.0
+2017-11-09,ALL,"WILSON, THOMAS J","Director, Chairman and CEO",True,Common Stock,sell,63595.0,98.8,6283186.0
+2017-11-09,ALL,"WILSON, THOMAS J","Director, Chairman and CEO",True,Common Stock,sell,1405.0,99.32,139544.59999999998
+2017-11-10,ALL,"GUPTA, SUREN",Executive Vice President - AIC,True,Common Stock,buy,75692.0,31.56,2388839.52
+2017-11-10,ALL,"GUPTA, SUREN",Executive Vice President - AIC,True,Common Stock,sell,75692.0,98.77,7476098.84
+2017-11-10,ALL,"GUPTA, SUREN",Executive Vice President - AIC,True,Common Stock,sell,27550.0,98.44,2712022.0
+2017-11-20,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,sell,4000.0,100.491,401964.0
+2018-01-01,ALL,"KEANE, MARGARET M",Director,True,Common Stock,buy,149.0,104.71,15601.789999999999
+2018-01-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Share Unit,buy,298.443,104.71,31249.966529999998
+2018-01-01,ALL,"ESKEW, MICHAEL L",Director,True,Common Share Unit,buy,298.443,104.71,31249.966529999998
+2018-02-18,ALL,"MERTEN, JESSE E",EVP & Chief Risk Officer - AIC,True,Common Stock,sell,1201.0,95.04,114143.04000000001
+2018-02-18,ALL,"WILSON, THOMAS J","Director, Chairman and CEO",True,Common Stock,sell,22250.0,95.04,2114640.0
+2018-02-18,ALL,"GUPTA, SUREN",Executive Vice President - AIC,True,Common Stock,sell,2462.0,95.04,233988.48
+2018-02-18,ALL,"HARTY, HARRIET K","EVP, Human Resources ? AIC",True,Common Stock,sell,1050.0,95.04,99792.0
+2018-02-18,ALL,"RIZZO, MARIO",EVP & Chief Financial Officer,True,Common Stock,sell,1020.0,95.04,96940.8
+2018-02-18,ALL,"CIVGIN, DON",Pres Service Businesses - AIC,False,Common Stock,sell,4597.0,95.04,436898.88
+2018-02-18,ALL,"WINTER, MATTHEW E",President,True,Common Stock,sell,6814.0,95.04,647602.56
+2018-02-18,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,sell,2052.0,95.04,195022.08000000002
+2018-02-18,ALL,"SHEBIK, STEVEN E",Vice Chairman,True,Common Stock,sell,4246.0,95.04,403539.84
+2018-04-01,ALL,"KEANE, MARGARET M",Director,True,Common Stock,buy,164.0,94.8,15547.199999999999
+2018-04-01,ALL,"ESKEW, MICHAEL L",Director,True,Common Share Unit,buy,329.641,94.8,31249.966800000002
+2018-04-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Share Unit,buy,329.641,94.8,31249.966800000002
+2018-04-05,ALL,"SHAPIRO, GLENN T",Pres Allstate Personal Lines,False,Common Stock,sell,648.0,96.53,62551.44
+2018-07-01,ALL,"ESKEW, MICHAEL L",Director,True,Common Share Unit,buy,449.244,91.27,41002.49988
+2018-07-01,ALL,"KEANE, MARGARET M",Director,True,Common Stock,buy,171.0,91.27,15607.17
+2018-07-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Share Unit,buy,342.391,91.27,31250.02657
+2018-08-06,ALL,"SHAPIRO, GLENN T",Pres Allstate Personal Lines,False,Common Stock,buy,12268.0,66.7,818275.6
+2018-08-06,ALL,"SHAPIRO, GLENN T",Pres Allstate Personal Lines,False,Common Stock,sell,21728.0,98.7,2144553.6
+2018-08-06,ALL,"SHAPIRO, GLENN T",Pres Allstate Personal Lines,False,Common Stock,buy,14377.0,78.35,1126437.95
+2018-08-07,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,buy,22189.0,52.18,1157822.02
+2018-08-07,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,sell,22189.0,99.24,2202036.36
+2018-09-13,ALL,"HARTY, HARRIET K","EVP, Human Resources ? AIC",True,Common Stock,buy,9399.0,45.61,428688.39
+2018-09-13,ALL,"HARTY, HARRIET K","EVP, Human Resources ? AIC",True,Common Stock,sell,10515.0,98.87,1039618.05
+2018-09-13,ALL,"HARTY, HARRIET K","EVP, Human Resources ? AIC",True,Common Stock,buy,1116.0,40.49,45186.840000000004
+2018-10-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Share Unit,buy,317.162,98.53,31249.971859999998
+2018-10-01,ALL,"ESKEW, MICHAEL L",Director,True,Common Share Unit,buy,380.595,98.53,37500.02535
+2018-10-01,ALL,"KEANE, MARGARET M",Director,True,Common Stock,buy,158.0,98.53,15567.74
+2018-10-05,ALL,"FORTIN, MARY JANE",Pres Financial Businesses?AIC,False,Common Stock,sell,1080.0,99.44,107395.2
+2018-10-05,ALL,"FORTIN, MARY JANE",Pres Financial Businesses?AIC,False,Common Stock,sell,6472.0,99.44,643575.6799999999
+2018-11-07,ALL,"MERTEN, JESSE E",EVP & Chief Risk Officer - AIC,True,Common Stock,sell,696.0,92.124,64118.304
+2019-01-01,ALL,"KEANE, MARGARET M",Director,True,Common Stock,buy,378.0,82.63,31234.14
+2019-01-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Share Unit,buy,378.192,82.63,31250.00496
+2019-01-01,ALL,"ESKEW, MICHAEL L",Director,True,Common Share Unit,buy,468.958,82.63,38749.99954
+2019-02-11,ALL,"MERTEN, JESSE E",EVP & Chief Risk Officer - AIC,True,Common Stock,sell,1572.0,92.46,145347.12
+2019-02-11,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,60377.0,92.46,5582457.42
+2019-02-11,ALL,"SHEBIK, STEVEN E",Vice Chairman,True,Common Stock,sell,17321.0,92.46,1601499.66
+2019-02-11,ALL,"RIZZO, MARIO",EVP & Chief Financial Officer,True,Common Stock,sell,1381.0,92.46,127687.26
+2019-02-11,ALL,"FERREN, ERIC K","SVP, Controller, and CAO",True,Common Stock,sell,1686.0,92.46,155887.56
+2019-02-11,ALL,"FORTIN, MARY JANE",Pres Financial Businesses?AIC,False,Common Stock,sell,9152.0,92.46,846193.9199999999
+2019-02-11,ALL,"GUPTA, SUREN",Executive Vice President - AIC,True,Common Stock,sell,8552.0,92.46,790717.9199999999
+2019-02-11,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,sell,7003.0,92.46,647497.38
+2019-02-11,ALL,"CIVGIN, DON",Pres Service Businesses - AIC,False,Common Stock,sell,14907.0,92.46,1378301.22
+2019-04-01,ALL,"KEANE, MARGARET M",Director,True,Common Stock,buy,328.0,95.09,31189.52
+2019-04-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Share Unit,buy,328.636,95.09,31249.997240000004
+2019-04-01,ALL,"ESKEW, MICHAEL L",Director,True,Common Share Unit,buy,407.509,95.09,38750.030810000004
+2019-04-05,ALL,"SHAPIRO, GLENN T",Pres Allstate Personal Lines,False,Common Stock,sell,3086.0,96.07,296472.01999999996
+2019-04-05,ALL,"SHAPIRO, GLENN T",Pres Allstate Personal Lines,False,Common Stock,sell,980.0,96.07,94148.59999999999
+2019-06-21,ALL,"SPRIESER, JUDITH A",Director,True,Common Stock,sell,2225.0,102.63,228351.75
+2019-06-25,ALL,"SHAPIRO, GLENN T",Pres Allstate Personal Lines,False,Common Stock,buy,12269.0,66.7,818342.3
+2019-06-25,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,buy,22189.0,52.18,1157822.02
+2019-06-25,ALL,"SHAPIRO, GLENN T",Pres Allstate Personal Lines,False,Common Stock,sell,22289.0,102.22,2278381.58
+2019-06-25,ALL,"SHAPIRO, GLENN T",Pres Allstate Personal Lines,False,Common Stock,buy,14378.0,78.35,1126516.2999999998
+2019-06-25,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,sell,30189.0,102.26,3087127.14
+2019-07-01,ALL,"KEANE, MARGARET M",Director,True,Common Stock,buy,302.0,103.15,31151.300000000003
+2019-07-01,ALL,"ESKEW, MICHAEL L",Director,True,Common Share Unit,buy,375.667,103.15,38750.05105
+2019-07-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Share Unit,buy,302.957,103.15,31250.01455
+2019-08-02,ALL,"CIVGIN, DON",Pres Service Businesses - AIC,False,Common Stock,buy,84337.0,52.18,4400704.66
+2019-08-02,ALL,"CIVGIN, DON",Pres Service Businesses - AIC,False,Common Stock,buy,21930.0,45.61,1000227.2999999999
+2019-08-02,ALL,"CIVGIN, DON",Pres Service Businesses - AIC,False,Common Stock,buy,76376.0,70.71,5400546.96
+2019-08-02,ALL,"CIVGIN, DON",Pres Service Businesses - AIC,False,Common Stock,sell,97625.0,104.08,10160810.0
+2019-08-02,ALL,"CIVGIN, DON",Pres Service Businesses - AIC,False,Common Stock,buy,78753.0,62.32,4907886.96
+2019-08-02,ALL,"CIVGIN, DON",Pres Service Businesses - AIC,False,Common Stock,sell,163771.0,104.53,17118982.63
+2019-08-02,ALL,"FORTIN, MARY JANE",Pres Financial Businesses?AIC,False,Common Stock,sell,9773.0,104.21,1018444.33
+2019-08-05,ALL,"SHEBIK, STEVEN E",Vice Chairman,True,Common Stock,sell,3200.0,104.02,332864.0
+2019-08-05,ALL,"SHEBIK, STEVEN E",Vice Chairman,True,Common Stock,buy,26446.0,31.56,834635.76
+2019-08-05,ALL,"SHEBIK, STEVEN E",Vice Chairman,True,Common Stock,sell,23246.0,103.5,2405961.0
+2019-08-06,ALL,"MERTEN, JESSE E",EVP & Chief Risk Officer - AIC,True,Common Stock,sell,900.0,102.27,92043.0
+2019-08-07,ALL,"SHEBIK, STEVEN E",Vice Chairman,True,Common Stock,buy,35014.0,31.0,1085434.0
+2019-08-07,ALL,"SHEBIK, STEVEN E",Vice Chairman,True,Common Stock,sell,35014.0,103.64,3628850.96
+2019-09-23,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,sell,27650.0,108.3,2994495.0
+2019-09-23,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,buy,20500.0,62.32,1277560.0
+2019-10-01,ALL,"KEANE, MARGARET M",Director,True,Common Stock,buy,291.0,107.17,31186.47
+2019-10-01,ALL,"ESKEW, MICHAEL L",Director,True,Common Share Unit,buy,361.575,107.17,38749.99275
+2019-10-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Share Unit,buy,291.593,107.17,31250.021810000002
+2019-10-05,ALL,"FORTIN, MARY JANE",Pres Financial Businesses?AIC,False,Common Stock,sell,6472.0,108.46,701953.12
+2020-01-01,ALL,"ESKEW, MICHAEL L",Director,True,Common Share Unit,buy,344.598,112.45,38750.0451
+2020-01-01,ALL,"KEANE, MARGARET M",Director,True,Common Stock,buy,277.0,112.45,31148.65
+2020-01-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Share Unit,buy,277.901,112.45,31249.967450000004
+2020-02-09,ALL,"FORTIN, MARY JANE","President, Financial Products",True,Common Stock,sell,9786.0,124.43,1217671.98
+2020-02-09,ALL,"SHAPIRO, GLENN T",PresPersonalProperty&Liability,False,Common Stock,sell,9406.0,124.43,1170388.58
+2020-02-09,ALL,"RIZZO, MARIO",EVP & Chief Financial Officer,True,Common Stock,sell,1730.0,124.43,215263.90000000002
+2020-02-09,ALL,"CIVGIN, DON","CEO, Protection Prod. & Serv.",True,Common Stock,sell,14677.0,124.43,1826259.11
+2020-02-09,ALL,"GUPTA, SUREN",Executive Vice President - AIC,True,Common Stock,sell,8989.0,124.43,1118501.27
+2020-02-09,ALL,"SHEBIK, STEVEN E",Vice Chairman,True,Common Stock,sell,21361.0,124.43,2657949.23
+2020-02-09,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,sell,7717.0,124.43,960226.31
+2020-02-09,ALL,"MERTEN, JESSE E",EVP & Chief Risk Officer - AIC,True,Common Stock,sell,1535.0,124.43,191000.05000000002
+2020-02-09,ALL,"PINTOZZI, JOHN C","SVP, Controller, and CAO",True,Common Stock,sell,1602.0,124.43,199336.86000000002
+2020-02-09,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,59876.0,124.43,7450370.680000001
+2020-03-03,ALL,"DUGENSKE, JOHN E","Pres, Invest. & Fin. Prod.",False,Common Stock,sell,12790.0,112.67,1441049.3
+2020-04-01,ALL,"ESKEW, MICHAEL L",Director,True,Common Share Unit,buy,448.495,86.4,38749.968
+2020-04-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Share Unit,buy,361.69,86.4,31250.016000000003
+2020-04-01,ALL,"KEANE, MARGARET M",Director,True,Common Stock,buy,361.0,86.4,31190.4
+2020-04-05,ALL,"DUGENSKE, JOHN E","Pres, Invest. & Fin. Prod.",False,Common Stock,sell,21764.0,85.96,1870833.44
+2020-05-07,ALL,"MERTEN, JESSE E","President, Financial Products",True,Common Stock,buy,9245.0,78.35,724345.75
+2020-05-07,ALL,"MERTEN, JESSE E","President, Financial Products",True,Common Stock,sell,18622.0,102.75,1913410.5
+2020-05-07,ALL,"SHAPIRO, GLENN T",PresPersonalProperty&Liability,False,Common Stock,sell,7397.0,103.65,766699.05
+2020-05-07,ALL,"MERTEN, JESSE E","President, Financial Products",True,Common Stock,buy,2005.0,70.71,141773.55
+2020-05-07,ALL,"MERTEN, JESSE E","President, Financial Products",True,Common Stock,buy,7372.0,62.32,459423.04
+2020-05-08,ALL,"RIZZO, MARIO",EVP & Chief Financial Officer,True,Common Stock,buy,10804.0,31.74,342918.95999999996
+2020-05-08,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,517001.0,101.21,52325671.20999999
+2020-05-08,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,buy,239000.0,31.56,7542840.0
+2020-05-08,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,135867.0,101.73,13821749.91
+2020-05-08,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,buy,447808.0,31.74,14213425.92
+2020-05-08,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,buy,205060.0,31.56,6471693.6
+2020-05-08,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,74592.0,101.32,7557661.4399999995
+2020-05-08,ALL,"RIZZO, MARIO",EVP & Chief Financial Officer,True,Common Stock,sell,6670.0,101.39,676271.3
+2020-05-12,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,2500.0,101.361,253402.5
+2020-05-12,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,200.0,102.065,20413.0
+2020-06-01,ALL,"SPRIESER, JUDITH A",Director,True,Common Stock,sell,1783.0,99.03,176570.49
+2020-06-05,ALL,"SHAPIRO, GLENN T",PresPersonalProperty&Liability,False,Common Stock,buy,14378.0,78.35,1126516.2999999998
+2020-06-05,ALL,"LEES, SUSAN L","EVP, General Counsel & Sec.",True,Common Stock,sell,12385.0,106.05,1313429.25
+2020-06-05,ALL,"SHAPIRO, GLENN T",PresPersonalProperty&Liability,False,Common Stock,sell,14378.0,105.62,1518604.36
+2020-07-01,ALL,"ESKEW, MICHAEL L",Director,True,Common Share Unit,buy,405.632,95.53,38750.02496
+2020-07-01,ALL,"KEANE, MARGARET M",Director,True,Common Stock,buy,327.0,95.53,31238.31
+2020-07-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Share Unit,buy,327.122,95.53,31249.96466
+2020-10-01,ALL,"ESKEW, MICHAEL L",Director,True,Common Share Unit,buy,420.009,92.26,38750.030340000005
+2020-10-01,ALL,"KEANE, MARGARET M",Director,True,Common Stock,buy,338.0,92.26,31183.88
+2020-10-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Share Unit,buy,338.717,92.26,31250.03042
+2021-01-01,ALL,"KEANE, MARGARET M",Director,True,Common Stock,buy,284.0,109.93,31220.120000000003
+2021-01-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Share Unit,buy,284.272,109.93,31250.02096
+2021-01-01,ALL,"ESKEW, MICHAEL L",Director,True,Common Share Unit,buy,352.497,109.93,38749.99521
+2021-01-04,ALL,"MERTEN, JESSE E","President, Financial Products",True,Common Stock,sell,62.0,109.93,6815.660000000001
+2021-02-05,ALL,"CIVGIN, DON","ALLCorp: Vice Chairman, AIC: VC&CEO, Protec Prod&Serv",True,Common Stock,sell,200.0,107.735,21547.0
+2021-02-05,ALL,"CIVGIN, DON","ALLCorp: Vice Chairman, AIC: VC&CEO, Protec Prod&Serv",True,Common Stock,sell,99800.0,107.085,10687083.0
+2021-02-19,ALL,"PRINDIVILLE, MARK Q",EVP & Chief Risk Officer - AIC,True,Common Stock,sell,114.0,103.45,11793.300000000001
+2021-02-19,ALL,"PINTOZZI, JOHN C","SVP, Controller, and CAO",True,Common Stock,sell,76.0,103.45,7862.2
+2021-02-22,ALL,"RIZZO, MARIO",EVP & Chief Financial Officer,True,Common Stock,sell,10605.0,103.45,1097087.25
+2021-02-22,ALL,"PRINDIVILLE, MARK Q",EVP & Chief Risk Officer - AIC,True,Common Stock,sell,1473.0,103.45,152381.85
+2021-02-22,ALL,"PINTOZZI, JOHN C","SVP, Controller, and CAO",True,Common Stock,sell,1409.0,103.45,145761.05000000002
+2021-02-22,ALL,"MERTEN, JESSE E","President, Financial Products",True,Common Stock,sell,4499.0,103.45,465421.55
+2021-02-22,ALL,"LEES, SUSAN L","EVP, Chief Sustainability Off.",True,Common Stock,sell,7530.0,103.45,778978.5
+2021-02-22,ALL,"CIVGIN, DON","ALLCorp: Vice Chairman, AIC: VC&CEO, Protec Prod&Serv",True,Common Stock,sell,12317.0,103.45,1274193.6500000001
+2021-02-22,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,54045.0,103.45,5590955.25
+2021-02-22,ALL,"SHAPIRO, GLENN T",PresPersonalProperty&Liability,False,Common Stock,sell,12533.0,103.45,1296538.85
+2021-02-22,ALL,"DUGENSKE, JOHN E","Pres, Invest. & Fin. Prod.",False,Common Stock,sell,11747.0,103.45,1215227.1500000001
+2021-02-22,ALL,"GUPTA, SUREN",Executive Vice President - AIC,True,Common Stock,sell,8030.0,103.45,830703.5
+2021-03-01,ALL,"SHAPIRO, GLENN T",PresPersonalProperty&Liability,False,Common Stock,sell,18000.0,109.18,1965240.0000000002
+2021-03-01,ALL,"MERTEN, JESSE E","President, Financial Products",True,Common Stock,sell,8000.0,110.22,881760.0
+2021-04-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Share Unit,buy,269.327,116.03,31250.01181
+2021-04-01,ALL,"ESKEW, MICHAEL L",Director,True,Common Share Unit,buy,333.965,116.03,38749.95895
+2021-04-01,ALL,"KEANE, MARGARET M",Director,True,Common Stock,buy,269.0,116.03,31212.07
+2021-05-07,ALL,"SHAPIRO, GLENN T",PresPersonalProperty&Liability,False,Common Stock,sell,48149.0,129.74,6246851.260000001
+2021-05-07,ALL,"SHAPIRO, GLENN T",PresPersonalProperty&Liability,False,Common Stock,sell,36546.0,129.74,4741478.04
+2021-05-07,ALL,"SHAPIRO, GLENN T",PresPersonalProperty&Liability,False,Common Stock,buy,57218.0,92.8,5309830.399999999
+2021-05-07,ALL,"SHAPIRO, GLENN T",PresPersonalProperty&Liability,False,Common Stock,buy,43507.0,92.46,4022657.2199999997
+2021-05-10,ALL,"RIZZO, MARIO",EVP & Chief Financial Officer,True,Common Stock,buy,12763.0,31.56,402800.27999999997
+2021-05-10,ALL,"GUPTA, SUREN",Executive Vice President - AIC,True,Common Stock,sell,62657.0,135.227,8472918.139
+2021-05-10,ALL,"GUPTA, SUREN",Executive Vice President - AIC,True,Common Stock,buy,62657.0,45.61,2857785.77
+2021-05-10,ALL,"DUGENSKE, JOHN E","Pres, Invest. & Fin. Prod.",False,Common Stock,buy,53991.0,92.8,5010364.8
+2021-05-10,ALL,"DUGENSKE, JOHN E","Pres, Invest. & Fin. Prod.",False,Common Stock,sell,57543.0,135.74,7810886.82
+2021-05-10,ALL,"DUGENSKE, JOHN E","Pres, Invest. & Fin. Prod.",False,Common Stock,buy,40160.0,92.46,3713193.5999999996
+2021-05-10,ALL,"DUGENSKE, JOHN E","Pres, Invest. & Fin. Prod.",False,Common Stock,buy,57540.0,81.86,4710224.4
+2021-05-10,ALL,"DUGENSKE, JOHN E","Pres, Invest. & Fin. Prod.",False,Common Stock,sell,3320.0,133.66,443751.2
+2021-05-10,ALL,"DUGENSKE, JOHN E","Pres, Invest. & Fin. Prod.",False,Common Stock,sell,90828.0,135.05,12266321.4
+2021-05-10,ALL,"RIZZO, MARIO",EVP & Chief Financial Officer,True,Common Stock,sell,12763.0,133.26,1700797.38
+2021-05-21,ALL,"SHAPIRO, GLENN T",PresPersonalProperty&Liability,False,Common Stock,sell,7000.0,137.446,962122.0
+2021-05-21,ALL,"PINTOZZI, JOHN C","SVP, Controller, and CAO",True,Common Stock,sell,2000.0,137.063,274126.0
+2021-06-21,ALL,"MERTEN, JESSE E","President, Financial Products",True,Common Stock,sell,15000.0,127.838,1917570.0
+2021-06-21,ALL,"MERTEN, JESSE E","President, Financial Products",True,Common Stock,buy,15000.0,92.8,1392000.0
+2021-07-01,ALL,"KEANE, MARGARET M",Director,True,Common Stock,buy,235.0,132.79,31205.649999999998
+2021-07-01,ALL,"ESKEW, MICHAEL L",Director,True,Common Share Unit,buy,235.334,132.79,31250.00186
+2021-07-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Share Unit,buy,314.779,132.79,41799.50341
+2021-09-06,ALL,"BRADY, ELIZABETH",Executive Vice President - AIC,True,Common Stock,sell,2602.0,133.97,348589.94
+2021-10-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Share Unit,buy,303.398,127.72,38749.992560000006
+2021-10-01,ALL,"KEANE, MARGARET M",Director,True,Common Stock,buy,244.0,127.72,31163.68
+2021-10-01,ALL,"ESKEW, MICHAEL L",Director,True,Common Share Unit,buy,244.676,127.72,31250.018719999996
+2021-10-05,ALL,"FERGUSON, RHONDA S","EVP, CLO, GC & Secretary",True,Common Stock,sell,4729.0,128.13,605926.77
+2022-01-01,ALL,"BROWN, DONALD EUGENE",Director,True,Common Stock,buy,265.0,117.65,31177.25
+2022-01-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Stock,buy,329.0,117.65,38706.85
+2022-01-01,ALL,"KEANE, MARGARET M",Director,True,Common Stock,buy,265.0,117.65,31177.25
+2022-01-01,ALL,"ESKEW, MICHAEL L",Director,True,Common Share Unit,buy,265.618,117.65,31249.957700000003
+2022-02-04,ALL,"RIZZO, MARIO",EVP & Chief Financial Officer,True,Common Stock,buy,10559.0,78.35,827297.6499999999
+2022-02-04,ALL,"RIZZO, MARIO",EVP & Chief Financial Officer,True,Common Stock,sell,5202.0,122.689,638228.178
+2022-02-04,ALL,"RIZZO, MARIO",EVP & Chief Financial Officer,True,Common Stock,sell,9887.0,122.61,1212245.07
+2022-02-04,ALL,"RIZZO, MARIO",EVP & Chief Financial Officer,True,Common Stock,buy,5202.0,70.71,367833.42
+2022-02-04,ALL,"RIZZO, MARIO",EVP & Chief Financial Officer,True,Common Stock,buy,9887.0,62.32,616157.84
+2022-02-04,ALL,"SPRIESER, JUDITH A",Director,True,Common Stock,sell,1652.0,121.25,200305.0
+2022-02-04,ALL,"RIZZO, MARIO",EVP & Chief Financial Officer,True,Common Stock,sell,10559.0,122.479,1293255.761
+2022-02-07,ALL,"PRINDIVILLE, MARK Q",EVP & Chief Risk Officer - AIC,True,Common Stock,sell,1472.0,124.76,183646.72
+2022-02-07,ALL,"BRADY, ELIZABETH",Executive Vice President - AIC,True,Common Stock,sell,5299.0,124.76,661103.24
+2022-02-07,ALL,"PINTOZZI, JOHN C","SVP, Controller, and CAO",True,Common Stock,sell,1793.0,124.76,223694.68000000002
+2022-02-07,ALL,"DUGENSKE, JOHN E","Pres, Invest. & Fin. Prod.",False,Common Stock,sell,11753.0,124.76,1466304.28
+2022-02-07,ALL,"MERTEN, JESSE E","President, Financial Products",True,Common Stock,sell,5156.0,124.76,643262.56
+2022-02-07,ALL,"CIVGIN, DON","ALLCorp: Vice Chairman, AIC: VC&CEO, Protec Prod&Serv",True,Common Stock,sell,12956.0,124.76,1616390.56
+2022-02-07,ALL,"SHAPIRO, GLENN T",PresPersonalProperty-Liability,False,Common Stock,sell,12830.0,124.76,1600670.8
+2022-02-07,ALL,"RIZZO, MARIO",EVP & Chief Financial Officer,True,Common Stock,sell,12075.0,124.76,1506477.0
+2022-02-07,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,56722.0,124.76,7076636.720000001
+2022-02-07,ALL,"GUPTA, SUREN",Executive Vice President - AIC,True,Common Stock,sell,8022.0,124.76,1000824.7200000001
+2022-02-18,ALL,"SHAPIRO, GLENN T",PresPersonalProperty-Liability,False,Common Stock,sell,1200.0,123.26,147912.0
+2022-02-18,ALL,"PINTOZZI, JOHN C","SVP, Controller, and CAO",True,Common Stock,sell,93.0,125.89,11707.77
+2022-02-18,ALL,"SHAPIRO, GLENN T",PresPersonalProperty-Liability,False,Common Stock,sell,31077.0,125.22,3891461.94
+2022-02-18,ALL,"SHAPIRO, GLENN T",PresPersonalProperty-Liability,False,Common Stock,sell,7666.0,125.82,964536.12
+2022-02-18,ALL,"SHAPIRO, GLENN T",PresPersonalProperty-Liability,False,Common Stock,sell,23858.0,124.42,2968412.36
+2022-02-18,ALL,"SHAPIRO, GLENN T",PresPersonalProperty-Liability,False,Common Stock,buy,23647.0,105.08,2484826.76
+2022-02-18,ALL,"SHAPIRO, GLENN T",PresPersonalProperty-Liability,False,Common Stock,buy,21754.0,92.46,2011374.8399999999
+2022-02-18,ALL,"MERTEN, JESSE E","President, Financial Products",True,Common Stock,sell,7450.0,124.729,929231.05
+2022-02-19,ALL,"PINTOZZI, JOHN C","SVP, Controller, and CAO",True,Common Stock,sell,76.0,125.89,9567.64
+2022-02-19,ALL,"PRINDIVILLE, MARK Q",EVP & Chief Risk Officer - AIC,True,Common Stock,sell,114.0,125.89,14351.460000000001
+2022-02-25,ALL,"PINTOZZI, JOHN C","SVP, Controller, and CAO",True,Common Stock,sell,3000.0,123.871,371613.0
+2022-04-01,ALL,"KEANE, MARGARET M",Director,True,Common Stock,buy,223.0,139.54,31117.42
+2022-04-01,ALL,"ESKEW, MICHAEL L",Director,True,Common Share Unit,buy,223.95,139.54,31249.982999999997
+2022-04-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Stock,buy,277.0,139.54,38652.579999999994
+2022-04-01,ALL,"BROWN, DONALD EUGENE",Director,True,Common Stock,buy,223.0,139.54,31117.42
+2022-05-04,ALL,"WILLIAMS, TERRANCE",AIC-President Protec Prod&Svcs,True,Employee Stock Option (Right to Buy),buy,1729.0,133.68,231132.72
+2022-05-31,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,buy,363409.0,45.61,16575084.49
+2022-05-31,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,121581.0,136.51,16597022.309999999
+2022-06-01,ALL,"SPRIESER, JUDITH A",Director,True,Common Stock,sell,1623.0,135.58,220046.34000000003
+2022-06-02,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,124855.0,133.303,16643546.065
+2022-06-02,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,17145.0,133.994,2297327.13
+2022-06-03,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,81266.0,132.456,10764169.295999998
+2022-06-03,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,18562.0,133.289,2474110.4179999996
+2022-07-01,ALL,"KEANE, MARGARET M",Director,True,Common Stock,buy,239.0,130.7,31237.299999999996
+2022-07-01,ALL,"BROWN, DONALD EUGENE",Director,True,Common Stock,buy,239.0,130.7,31237.299999999996
+2022-07-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Stock,buy,296.0,130.7,38687.2
+2022-09-08,ALL,"PRINDIVILLE, MARK Q",EVP & Chief Risk Officer - AIC,True,Common Stock,sell,5511.0,125.933,694016.763
+2022-10-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Stock,buy,311.0,124.53,38728.83
+2022-10-01,ALL,"BROWN, DONALD EUGENE",Director,True,Common Stock,buy,250.0,124.53,31132.5
+2022-10-01,ALL,"KEANE, MARGARET M",Director,True,Common Stock,buy,250.0,124.53,31132.5
+2022-10-03,ALL,"PRINDIVILLE, MARK Q",EVP & Chief Risk Officer - AIC,True,Common Stock,sell,94.0,124.53,11705.82
+2022-12-21,ALL,"GUPTA, SUREN","President, Enterprise Services",True,Common Stock,buy,20000.0,52.18,1043600.0
+2022-12-21,ALL,"GUPTA, SUREN","President, Enterprise Services",True,Common Stock,sell,20000.0,135.01,2700200.0
+2022-12-21,ALL,"GUPTA, SUREN","President, Enterprise Services",True,Common Stock,sell,20000.0,135.5,2710000.0
+2023-01-01,ALL,"KEANE, MARGARET M",Director,True,Common Stock,buy,230.0,135.6,31188.0
+2023-01-01,ALL,"BROWN, DONALD EUGENE",Director,True,Common Stock,buy,230.0,135.6,31188.0
+2023-01-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Stock,buy,285.0,135.6,38646.0
+2023-01-03,ALL,"GUPTA, SUREN","President, Enterprise Services",True,Common Stock,buy,20241.0,52.18,1056175.38
+2023-01-03,ALL,"GUPTA, SUREN","President, Enterprise Services",True,Common Stock,sell,20241.0,137.0,2773017.0
+2023-02-05,ALL,"WILLIAMS, TERRANCE",AIC-President Protec Prod&Svcs,True,Common Stock,sell,4470.0,131.33,587045.1000000001
+2023-02-17,ALL,"PINTOZZI, JOHN C","SVP, Controller, and CAO",True,Common Stock,sell,73.0,135.05,9858.650000000001
+2023-02-18,ALL,"PINTOZZI, JOHN C","SVP, Controller, and CAO",True,Common Stock,sell,93.0,135.05,12559.650000000001
+2023-02-19,ALL,"MERTEN, JESSE E",EVP & Chief Financial Officer,True,Common Stock,sell,1605.0,135.05,216755.25000000003
+2023-02-19,ALL,"PRINDIVILLE, MARK Q",EVP & Chief Risk Officer - AIC,True,Common Stock,sell,105.0,135.05,14180.250000000002
+2023-02-19,ALL,"PINTOZZI, JOHN C","SVP, Controller, and CAO",True,Common Stock,sell,554.0,135.05,74817.70000000001
+2023-02-19,ALL,"PINTOZZI, JOHN C","SVP, Controller, and CAO",True,Common Stock,sell,77.0,135.05,10398.85
+2023-02-19,ALL,"GUPTA, SUREN","President, Enterprise Services",True,Common Stock,sell,4377.0,135.05,591113.8500000001
+2023-02-19,ALL,"RIZZO, MARIO",PresPersonalProperty-Liability,False,Common Stock,sell,4641.0,135.05,626767.05
+2023-02-19,ALL,"PRINDIVILLE, MARK Q",EVP & Chief Risk Officer - AIC,True,Common Stock,sell,742.0,135.05,100207.1
+2023-02-19,ALL,"DUGENSKE, JOHN E","Pres, Invest. & Corp. Strategy",False,Common Stock,sell,5592.0,135.05,755199.6000000001
+2023-02-19,ALL,"WILLIAMS, TERRANCE",AIC-President Protec Prod&Svcs,True,Common Stock,sell,3327.0,135.05,449311.35000000003
+2023-02-19,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,28098.0,135.05,3794634.9000000004
+2023-02-19,ALL,"BRADY, ELIZABETH",Executive Vice President - AIC,True,Common Stock,sell,1813.0,135.05,244845.65000000002
+2023-02-22,ALL,"MERTEN, JESSE E",EVP & Chief Financial Officer,True,Common Stock,sell,7372.0,134.33,990280.7600000001
+2023-02-22,ALL,"MERTEN, JESSE E",EVP & Chief Financial Officer,True,Common Stock,sell,7319.0,134.33,983161.2700000001
+2023-02-22,ALL,"MERTEN, JESSE E",EVP & Chief Financial Officer,True,Common Stock,buy,9208.0,92.8,854502.4
+2023-02-22,ALL,"MERTEN, JESSE E",EVP & Chief Financial Officer,True,Common Stock,buy,29451.0,92.46,2723039.46
+2023-02-22,ALL,"MERTEN, JESSE E",EVP & Chief Financial Officer,True,Common Stock,sell,29451.0,134.175,3951587.9250000003
+2023-04-01,ALL,"BROWN, DONALD EUGENE",Director,True,Common Stock,buy,282.0,110.81,31248.420000000002
+2023-04-01,ALL,"KEANE, MARGARET M",Director,True,Common Stock,buy,282.0,110.81,31248.420000000002
+2023-04-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Stock,buy,349.0,110.81,38672.69
+2023-04-05,ALL,"TOOHEY, ROBERT","EVP, Chief HR Officer - AIC",True,Common Stock,sell,712.0,114.88,81794.56
+2023-06-03,ALL,"PRINDIVILLE, MARK Q",EVP & Chief Risk Officer - AIC,True,Common Stock,sell,443.0,110.08,48765.44
+2023-07-01,ALL,"KEANE, MARGARET M",Director,True,Common Stock,buy,286.0,109.04,31185.440000000002
+2023-07-01,ALL,"BROWN, DONALD EUGENE",Director,True,Common Stock,buy,286.0,109.04,31185.440000000002
+2023-07-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Stock,buy,355.0,109.04,38709.200000000004
+2023-08-03,ALL,"SPRIESER, JUDITH A",Director,True,Common Stock,sell,1565.0,111.22,174059.3
+2023-10-01,ALL,"KEANE, MARGARET M",Director,True,Common Stock,buy,280.0,111.41,31194.8
+2023-10-01,ALL,"BROWN, DONALD EUGENE",Director,True,Common Stock,buy,280.0,111.41,31194.8
+2023-10-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Stock,buy,347.0,111.41,38659.27
+2023-11-03,ALL,"JEEVANJEE, ZULFIKAR",EVP & CTO - AIC,True,Common Stock,sell,1497.0,131.73,197199.81
+2023-11-17,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,buy,309237.0,52.18,16135986.66
+2023-11-17,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,120221.0,134.22,16136062.62
+2023-11-20,ALL,"PINTOZZI, JOHN C","SVP, Controller, and CAO",True,Common Stock,sell,4000.0,134.7899,539159.6
+2023-11-21,ALL,"PRINDIVILLE, MARK Q",EVP & Chief Risk Officer - AIC,True,Common Stock,buy,6935.0,70.71,490373.85
+2023-11-21,ALL,"PRINDIVILLE, MARK Q",EVP & Chief Risk Officer - AIC,True,Common Stock,buy,4016.0,52.18,209554.88
+2023-11-21,ALL,"PRINDIVILLE, MARK Q",EVP & Chief Risk Officer - AIC,True,Common Stock,sell,10951.0,135.4262,1483052.3162
+2023-11-27,ALL,"PINTOZZI, JOHN C","SVP, Controller, and CAO",True,Common Stock,buy,4662.0,78.35,365267.69999999995
+2023-11-27,ALL,"PINTOZZI, JOHN C","SVP, Controller, and CAO",True,Common Stock,sell,4662.0,137.701,641962.0619999999
+2024-01-01,ALL,"KEANE, MARGARET M",Director,True,Common Stock,buy,223.0,139.98,31215.539999999997
+2024-01-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Stock,buy,276.0,139.98,38634.479999999996
+2024-01-01,ALL,"BROWN, DONALD EUGENE",Director,True,Common Stock,buy,223.0,139.98,31215.539999999997
+2024-02-03,ALL,"DEBIASE, CHRISTINE M.","EVP, CLO, GC & Secretary",True,Common Stock,sell,1083.0,157.37,170431.71
+2024-02-16,ALL,"PINTOZZI, JOHN C","SVP, Controller, and CAO",True,Common Stock,sell,85.0,161.78,13751.3
+2024-02-16,ALL,"MERTEN, JESSE E",EVP & Chief Financial Officer,True,Common Stock,buy,19458.0,105.08,2044646.64
+2024-02-16,ALL,"MERTEN, JESSE E",EVP & Chief Financial Officer,True,Common Stock,sell,7668.0,162.8119,1248441.6492
+2024-02-16,ALL,"MERTEN, JESSE E",EVP & Chief Financial Officer,True,Common Stock,sell,11090.0,162.0077,1796665.393
+2024-02-16,ALL,"RIZZO, MARIO",PresPersonalProperty-Liability,False,Common Stock,sell,24698.0,162.0,4001076.0
+2024-02-16,ALL,"RIZZO, MARIO",PresPersonalProperty-Liability,False,Common Stock,buy,24698.0,92.8,2291974.4
+2024-02-16,ALL,"MERTEN, JESSE E",EVP & Chief Financial Officer,True,Common Stock,sell,700.0,163.6371,114545.97
+2024-02-17,ALL,"PINTOZZI, JOHN C","SVP, Controller, and CAO",True,Common Stock,sell,73.0,161.78,11809.94
+2024-02-18,ALL,"MERTEN, JESSE E",EVP & Chief Financial Officer,True,Common Stock,sell,612.0,161.78,99009.36
+2024-02-18,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,7514.0,161.78,1215614.92
+2024-02-18,ALL,"RIZZO, MARIO",PresPersonalProperty-Liability,False,Common Stock,sell,1210.0,161.78,195753.8
+2024-02-18,ALL,"BRADY, ELIZABETH",Executive Vice President - AIC,True,Common Stock,sell,619.0,161.78,100141.82
+2024-02-18,ALL,"DUGENSKE, JOHN E","Pres, Invest. & Corp. Strategy",False,Common Stock,sell,1414.0,161.78,228756.92
+2024-02-18,ALL,"PINTOZZI, JOHN C","SVP, Controller, and CAO",True,Common Stock,sell,185.0,161.78,29929.3
+2024-02-18,ALL,"GUPTA, SUREN","President,Enterprise Solutions",True,Common Stock,sell,930.0,161.78,150455.4
+2024-02-18,ALL,"PRINDIVILLE, MARK Q",EVP & Chief Risk Officer - AIC,True,Common Stock,sell,488.0,161.78,78948.64
+2024-02-18,ALL,"PINTOZZI, JOHN C","SVP, Controller, and CAO",True,Common Stock,sell,93.0,161.78,15045.54
+2024-02-26,ALL,"TOOHEY, ROBERT","EVP, Chief HR Officer - AIC",True,Common Stock,sell,1332.0,159.96,213066.72
+2024-02-26,ALL,"TOOHEY, ROBERT","EVP, Chief HR Officer - AIC",True,Common Stock,sell,385.0,159.95,61580.74999999999
+2024-02-27,ALL,"PINTOZZI, JOHN C","SVP, Controller, and CAO",True,Common Stock,sell,4000.0,159.47,637880.0
+2024-03-26,ALL,"DUGENSKE, JOHN E","Pres, Invest. & Corp. Strategy",False,Common Stock,sell,31000.0,170.2001,5276203.1
+2024-04-01,ALL,"BROWN, DONALD EUGENE",Director,True,Common Stock,buy,181.0,172.57,31235.17
+2024-04-01,ALL,"KEANE, MARGARET M",Director,True,Common Stock,buy,181.0,172.57,31235.17
+2024-04-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Stock,buy,224.0,172.57,38655.68
+2024-04-01,ALL,"DEBIASE, CHRISTINE M.","EVP, CLO and General Counsel",True,Common Stock,buy,7.904,169.357,1338.597728
+2024-04-05,ALL,"TOOHEY, ROBERT","EVP, Chief HR Officer - AIC",True,Common Stock,sell,640.0,172.82,110604.79999999999
+2024-06-03,ALL,"SPRIESER, JUDITH A",Director,True,Common Stock,sell,1124.0,166.88,187573.12
+2024-07-01,ALL,"KEANE, MARGARET M",Director,True,Common Stock,buy,194.0,160.54,31144.76
+2024-07-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Stock,buy,241.0,160.54,38690.14
+2024-07-01,ALL,"BROWN, DONALD EUGENE",Director,True,Common Stock,buy,277.0,160.54,44469.579999999994
+2024-07-18,ALL,"GUPTA, SUREN","President,Enterprise Solutions",True,Common Stock,sell,17122.0,176.5838,3023467.8236
+2024-07-18,ALL,"GUPTA, SUREN","President,Enterprise Solutions",True,Common Stock,sell,12218.0,177.5858,2169743.3044000003
+2024-07-18,ALL,"GUPTA, SUREN","President,Enterprise Solutions",True,Common Stock,sell,11201.0,178.5201,1999603.6401000002
+2024-07-18,ALL,"GUPTA, SUREN","President,Enterprise Solutions",True,Common Stock,sell,1134.0,179.4436,203489.0424
+2024-07-18,ALL,"GUPTA, SUREN","President,Enterprise Solutions",True,Common Stock,buy,45775.0,70.71,3236750.2499999995
+2024-07-18,ALL,"GUPTA, SUREN","President,Enterprise Solutions",True,Common Stock,sell,4100.0,175.2515,718531.15
+2024-08-16,ALL,"BRADY, ELIZABETH",Executive Vice President - AIC,True,Common Stock,sell,30120.0,179.16,5396299.2
+2024-08-16,ALL,"BRADY, ELIZABETH",Executive Vice President - AIC,True,Common Stock,sell,13051.0,178.96,2335606.96
+2024-08-16,ALL,"BRADY, ELIZABETH",Executive Vice President - AIC,True,Common Stock,sell,6310.0,179.06,1129868.6
+2024-08-16,ALL,"BRADY, ELIZABETH",Executive Vice President - AIC,True,Common Stock,buy,30120.0,92.46,2784895.1999999997
+2024-08-16,ALL,"BRADY, ELIZABETH",Executive Vice President - AIC,True,Common Stock,buy,19361.0,101.1,1957397.0999999999
+2024-08-19,ALL,"TOOHEY, ROBERT","EVP, Chief HR Officer - AIC",True,Common Stock,sell,5902.0,180.14,1063186.28
+2024-08-19,ALL,"TOOHEY, ROBERT","EVP, Chief HR Officer - AIC",True,Common Stock,buy,6901.0,137.1,946127.1
+2024-08-19,ALL,"TOOHEY, ROBERT","EVP, Chief HR Officer - AIC",True,Common Stock,buy,12865.0,137.24,1765592.6
+2024-08-19,ALL,"TOOHEY, ROBERT","EVP, Chief HR Officer - AIC",True,Common Stock,sell,10780.0,180.18,1942340.4000000001
+2024-08-21,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,13490.0,179.559,2422250.91
+2024-08-21,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,115942.0,179.605,20823762.91
+2024-08-21,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,buy,294494.0,70.71,20823670.74
+2024-08-21,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,76510.0,179.307,13718778.569999998
+2024-08-22,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,88552.0,179.573,15901548.296
+2024-09-20,ALL,"DUGENSKE, JOHN E","Pres, Invest. & Corp. Strategy",False,Common Stock,sell,4625.0,192.4557,890107.6125
+2024-09-20,ALL,"DUGENSKE, JOHN E","Pres, Invest. & Corp. Strategy",False,Common Stock,sell,15799.0,191.6793,3028341.2607
+2024-09-20,ALL,"DUGENSKE, JOHN E","Pres, Invest. & Corp. Strategy",False,Common Stock,sell,15943.0,190.7706,3041455.6758
+2024-10-01,ALL,"KEANE, MARGARET M",Director,True,Common Stock,buy,164.0,189.88,31140.32
+2024-10-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Stock,buy,204.0,189.88,38735.52
+2024-10-01,ALL,"BROWN, DONALD EUGENE",Director,True,Common Stock,buy,210.0,189.88,39874.799999999996
+2024-11-03,ALL,"JEEVANJEE, ZULFIKAR",EVP & CTO - AIC,True,Common Stock,sell,1661.0,184.15,305873.15
+2024-11-22,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,6660.0,203.0289,1352172.474
+2024-11-22,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,2600.0,204.5956,531948.5599999999
+2024-11-22,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,22243.0,203.6096,4528888.3328
+2024-12-23,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,13578.0,192.267,2610601.326
+2024-12-23,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,17925.0,193.037,3460188.225
+2025-01-01,ALL,"KEANE, MARGARET M",Director,True,Common Stock,buy,175.0,192.79,33738.25
+2025-01-01,ALL,"BROWN, DONALD EUGENE",Director,True,Common Stock,buy,220.0,192.79,42413.799999999996
+2025-01-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Stock,buy,213.0,192.79,41064.27
+2025-01-21,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,28203.0,192.1997,5420608.1391
+2025-01-21,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,500.0,192.836,96418.0
+2025-01-21,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,2800.0,190.9627,534695.56
+2025-02-03,ALL,"DEBIASE, CHRISTINE M.","EVP, CLO and General Counsel",True,Common Stock,sell,876.0,191.98,168174.47999999998
+2025-02-10,ALL,"MERTEN, JESSE E",EVP & Chief Financial Officer,True,Common Stock,buy,19672.0,124.26,2444442.72
+2025-02-10,ALL,"MERTEN, JESSE E",EVP & Chief Financial Officer,True,Common Stock,buy,700.0,100.8,70560.0
+2025-02-10,ALL,"MERTEN, JESSE E",EVP & Chief Financial Officer,True,Common Stock,buy,9730.0,105.08,1022428.4
+2025-02-10,ALL,"MERTEN, JESSE E",EVP & Chief Financial Officer,True,Common Stock,sell,27315.0,186.0265,5081313.8475
+2025-02-10,ALL,"MERTEN, JESSE E",EVP & Chief Financial Officer,True,Common Stock,sell,8592.0,187.1953,1608382.0176000001
+2025-02-10,ALL,"MERTEN, JESSE E",EVP & Chief Financial Officer,True,Common Stock,sell,2654.0,188.1367,499314.80179999996
+2025-02-10,ALL,"MERTEN, JESSE E",EVP & Chief Financial Officer,True,Common Stock,sell,1541.0,188.9904,291234.20639999997
+2025-02-10,ALL,"MERTEN, JESSE E",EVP & Chief Financial Officer,True,Common Stock,buy,10000.0,122.64,1226400.0
+2025-02-14,ALL,"RIZZO, MARIO",PresPersonalProperty-Liability,False,Common Stock,sell,2256.0,187.63,423293.27999999997
+2025-02-14,ALL,"DUGENSKE, JOHN E","Pres, Invest. & Corp. Strategy",False,Common Stock,sell,2815.0,187.63,528178.45
+2025-02-14,ALL,"BRADY, ELIZABETH",Executive Vice President - AIC,True,Common Stock,sell,1063.0,187.63,199450.69
+2025-02-14,ALL,"GUPTA, SUREN","President,Enterprise Solutions",True,Common Stock,sell,1586.0,187.63,297581.18
+2025-02-14,ALL,"MERTEN, JESSE E",EVP & Chief Financial Officer,True,Common Stock,sell,1618.0,187.63,303585.33999999997
+2025-02-14,ALL,"PRINDIVILLE, MARK Q",EVP & Chief Risk Officer - AIC,True,Common Stock,sell,923.0,187.63,173182.49
+2025-02-14,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,13674.0,187.63,2565652.62
+2025-02-17,ALL,"MERTEN, JESSE E",EVP & Chief Financial Officer,True,Common Stock,sell,1618.0,187.63,303585.33999999997
+2025-02-17,ALL,"GUPTA, SUREN","President,Enterprise Solutions",True,Common Stock,sell,1586.0,187.63,297581.18
+2025-02-21,ALL,"GUPTA, SUREN","President,Enterprise Solutions",True,Common Stock,sell,396.0,185.66,73521.36
+2025-02-21,ALL,"RIZZO, MARIO",PresPersonalProperty-Liability,False,Common Stock,sell,769.0,185.66,142772.54
+2025-02-21,ALL,"DUGENSKE, JOHN E","Pres, Invest. & Corp. Strategy",False,Common Stock,sell,690.0,185.66,128105.4
+2025-02-21,ALL,"JEEVANJEE, ZULFIKAR",EVP & CTO - AIC,True,Common Stock,sell,242.0,185.66,44929.72
+2025-02-21,ALL,"PRINDIVILLE, MARK Q",EVP & Chief Risk Officer - AIC,True,Common Stock,sell,154.0,185.66,28591.64
+2025-02-21,ALL,"MERTEN, JESSE E",EVP & Chief Financial Officer,True,Common Stock,sell,668.0,185.66,124020.88
+2025-02-21,ALL,"BRADY, ELIZABETH",Executive Vice President - AIC,True,Common Stock,sell,278.0,185.66,51613.479999999996
+2025-02-21,ALL,"DEBIASE, CHRISTINE M.","EVP, CLO and General Counsel",True,Common Stock,sell,304.0,185.66,56440.64
+2025-02-24,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,1560.0,186.8308,291456.048
+2025-02-24,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,7772.0,188.7917,1467289.0924
+2025-02-24,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,22071.0,188.0301,4150012.3371
+2025-02-24,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,100.0,189.52,18952.0
+2025-03-24,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,18583.0,206.7479,3841996.2257
+2025-03-24,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,12919.0,207.4187,2679642.1853
+2025-04-01,ALL,"KEANE, MARGARET M",Director,True,Common Stock,buy,162.0,207.5,33615.0
+2025-04-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Stock,buy,198.0,207.5,41085.0
+2025-04-21,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,4189.0,187.8231,786790.9659000001
+2025-04-21,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,6954.0,191.9911,1335106.1094
+2025-04-21,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,243.0,192.8349,46858.8807
+2025-04-21,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,5472.0,189.0326,1034386.3872
+2025-04-21,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,9717.0,189.6689,1843012.7013
+2025-04-21,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,4927.0,190.9262,940693.3874
+2025-05-05,ALL,"RIZZO, MARIO",PresPersonalProperty-Liability,False,Common Stock,sell,4218.0,200.64,846299.5199999999
+2025-05-05,ALL,"RIZZO, MARIO",PresPersonalProperty-Liability,False,Common Stock,buy,6020.0,92.8,558656.0
+2025-05-29,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,24715.0,206.373,5100508.694999999
+2025-05-29,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,89149.0,206.45,18404811.05
+2025-05-29,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,buy,295324.0,62.32,18404591.68
+2025-05-30,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,23857.0,207.3471,4946679.7647
+2025-05-30,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,23171.0,208.3744,4828243.2224
+2025-05-30,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,25968.0,209.3116,5435403.6288
+2025-05-30,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,600.0,205.8116,123486.95999999999
+2025-05-30,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,18099.0,209.9212,3799363.7988
+2025-06-02,ALL,"SPRIESER, JUDITH A",Director,True,Common Stock,sell,1300.0,209.343,272145.89999999997
+2025-06-02,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,33648.0,211.3111,7110195.8928000005
+2025-06-02,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,24452.0,210.6963,5151945.9276
+2025-06-02,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,5742.0,207.5147,1191549.4074000001
+2025-06-02,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,9768.0,208.2704,2034385.2672
+2025-06-02,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,16155.0,209.6272,3386527.4159999997
+2025-06-05,ALL,"FERREN, ERIC K","SVP, Controller, and CAO",True,Common Stock,sell,72.0,206.65,14878.800000000001
+2025-07-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Stock,buy,206.0,200.14,41228.84
+2025-07-01,ALL,"KEANE, MARGARET M",Director,True,Common Stock,buy,168.0,200.14,33623.52
+2025-08-22,ALL,"PRINDIVILLE, MARK Q",EVP & Chief Risk Officer - AIC,True,Common Stock,buy,7383.0,62.32,460108.56
+2025-08-22,ALL,"PRINDIVILLE, MARK Q",EVP & Chief Risk Officer - AIC,True,Common Stock,sell,115.0,208.2636,23950.314
+2025-08-22,ALL,"PRINDIVILLE, MARK Q",EVP & Chief Risk Officer - AIC,True,Common Stock,sell,2984.0,207.3099,618612.7416
+2025-08-22,ALL,"PRINDIVILLE, MARK Q",EVP & Chief Risk Officer - AIC,True,Common Stock,sell,1265.0,206.8183,261625.1495
+2025-08-22,ALL,"PRINDIVILLE, MARK Q",EVP & Chief Risk Officer - AIC,True,Common Stock,sell,3019.0,205.3347,619905.4593
+2025-09-06,ALL,"GUPTA, SUREN","President,Enterprise Solutions",True,Common Stock,sell,6157.0,201.53,1240820.21
+2025-10-01,ALL,"KEANE, MARGARET M",Director,True,Common Stock,buy,160.0,210.68,33708.8
+2025-10-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Stock,buy,195.0,210.68,41082.6
+2025-10-05,ALL,"MERTEN, JESSE E",PresPersonalProperty-Liability,False,Common Stock,sell,239.0,210.82,50385.979999999996
+2025-10-06,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,9804.0,210.4799,2063544.9396
+2025-10-06,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,6335.0,209.6272,1327988.312
+2025-10-06,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,668.0,211.1514,141049.1352
+2025-10-20,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,4488.0,194.3583,872280.0504000001
+2025-10-20,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,1086.0,195.5023,212315.49779999998
+2025-10-20,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,201.0,196.5001,39496.5201
+2025-10-20,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,11032.0,193.6903,2136791.3896
+2025-11-03,ALL,"JEEVANJEE, ZULFIKAR",EVP & CTO - AIC,True,Common Stock,sell,2251.0,191.25,430503.75
+2025-11-03,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,2101.0,190.4249,400082.7149
+2025-11-03,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,985.0,191.3729,188502.30649999998
+2025-11-03,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,7791.0,189.3931,1475561.6421
+2025-11-03,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,5930.0,188.7305,1119171.865
+2025-11-14,ALL,"GUPTA, SUREN","President,Enterprise Solutions",True,Common Stock,sell,1400.0,215.0221,301030.94
+2025-11-14,ALL,"GUPTA, SUREN","President,Enterprise Solutions",True,Common Stock,buy,1400.0,62.32,87248.0
+2025-11-17,ALL,"GUPTA, SUREN","President,Enterprise Solutions",True,Common Stock,sell,400.0,215.215,86086.0
+2025-11-17,ALL,"GUPTA, SUREN","President,Enterprise Solutions",True,Common Stock,buy,400.0,62.32,24928.0
+2025-11-17,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,300.0,214.7028,64410.84
+2025-11-17,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,15370.0,213.1159,3275591.3830000004
+2025-11-17,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,1137.0,213.9619,243274.6803
+2025-11-21,ALL,"GUPTA, SUREN","President,Enterprise Solutions",True,Common Stock,sell,21871.0,215.2125,4706912.5875
+2025-11-21,ALL,"GUPTA, SUREN","President,Enterprise Solutions",True,Common Stock,buy,21871.0,62.32,1363000.72
+2025-11-24,ALL,"GUPTA, SUREN","President,Enterprise Solutions",True,Common Stock,buy,600.0,62.32,37392.0
+2025-11-24,ALL,"GUPTA, SUREN","President,Enterprise Solutions",True,Common Stock,sell,600.0,215.0175,129010.50000000001
+2025-11-26,ALL,"GUPTA, SUREN","President,Enterprise Solutions",True,Common Stock,buy,750.0,62.32,46740.0
+2025-11-26,ALL,"GUPTA, SUREN","President,Enterprise Solutions",True,Common Stock,sell,750.0,215.0083,161256.225
+2025-11-28,ALL,"GUPTA, SUREN","President,Enterprise Solutions",True,Common Stock,sell,3786.0,215.1334,814495.0523999999
+2025-11-28,ALL,"GUPTA, SUREN","President,Enterprise Solutions",True,Common Stock,buy,3786.0,62.32,235943.52
+2025-12-01,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,12603.0,212.4797,2677881.6591000003
+2025-12-01,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,4204.0,213.2706,896589.6024
+2025-12-15,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,1444.0,208.3456,300851.0464
+2025-12-15,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,2008.0,210.9611,423609.88879999996
+2025-12-15,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,3810.0,209.3955,797796.855
+2025-12-15,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,9545.0,210.3659,2007942.5155000002
+2026-01-01,ALL,"KEANE, MARGARET M",Director,True,Common Stock,buy,162.0,208.15,33720.3
+2026-01-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Stock,buy,198.0,208.15,41213.700000000004
+2026-01-01,ALL,"PEROLD, JACQUES P",Director,True,Common Stock,buy,204.0,208.15,42462.6
+2026-01-02,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,7196.0,204.0964,1468677.6944
+2026-01-02,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,7236.0,204.8644,1482398.7984
+2026-01-02,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,1235.0,206.9005,255522.1175
+2026-01-02,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,1140.0,206.1694,235033.116
+2026-01-07,ALL,"GUPTA, SUREN","President,Enterprise Solutions",True,Common Stock,sell,19593.0,210.0,4114530.0
+2026-01-07,ALL,"GUPTA, SUREN","President,Enterprise Solutions",True,Common Stock,buy,19593.0,62.32,1221035.76
+2026-01-12,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,4322.0,208.3543,900507.2846
+2026-01-12,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,4785.0,205.6779,984168.7515
+2026-01-12,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,1721.0,209.9939,361399.5019
+2026-01-12,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,1551.0,207.0221,321091.2771
+2026-01-12,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,4428.0,209.0673,925750.0044
+2026-02-02,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,359.0,201.5107,72342.3413
+2026-02-02,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,1572.0,199.5662,313718.0664
+2026-02-02,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,1605.0,198.7714,319028.097
+2026-02-02,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,13271.0,201.0576,2668235.4096
+2026-02-03,ALL,"DEBIASE, CHRISTINE M.","EVP, CLO and General Counsel",True,Common Stock,sell,1071.0,201.77,216095.67
+2026-02-13,ALL,"JEEVANJEE, ZULFIKAR",EVP & CTO - AIC,True,Common Stock,sell,2644.0,207.51,548656.44
+2026-02-13,ALL,"BRADY, ELIZABETH",Executive Vice President - AIC,True,Common Stock,sell,3256.0,207.51,675652.5599999999
+2026-02-13,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,37318.0,207.51,7743858.18
+2026-02-13,ALL,"MERTEN, JESSE E",PresPersonalProperty-Liability,False,Common Stock,sell,6302.0,207.51,1307728.02
+2026-02-13,ALL,"DEBIASE, CHRISTINE M.","EVP, CLO and General Counsel",True,Common Stock,sell,5554.0,207.51,1152510.54
+2026-02-13,ALL,"RIZZO, MARIO",Chief Operating Officer-AIC,True,Common Stock,sell,7975.0,207.51,1654892.25
+2026-02-13,ALL,"DUGENSKE, JOHN E","Chief Financial Officer, Pres, Invest. & Corp. Strategy",True,Common Stock,sell,7976.0,207.51,1655099.76
+2026-02-13,ALL,"PRINDIVILLE, MARK Q",EVP & Chief Risk Officer - AIC,True,Common Stock,sell,2513.0,207.51,521472.63
+2026-02-13,ALL,"GUPTA, SUREN","President,Enterprise Solutions",True,Common Stock,sell,6485.0,207.51,1345702.3499999999
+2026-02-17,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,3853.0,211.4967,814896.7851
+2026-02-17,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,8805.0,209.9167,1848316.5435
+2026-02-17,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,4149.0,210.7234,874291.3866
+2026-02-21,ALL,"BRADY, ELIZABETH",Executive Vice President - AIC,True,Common Stock,sell,278.0,206.37,57370.86
+2026-02-21,ALL,"RIZZO, MARIO",Chief Operating Officer-AIC,True,Common Stock,sell,769.0,206.37,158698.53
+2026-02-21,ALL,"PRINDIVILLE, MARK Q",EVP & Chief Risk Officer - AIC,True,Common Stock,sell,240.0,206.37,49528.8
+2026-02-21,ALL,"DEBIASE, CHRISTINE M.","EVP, CLO and General Counsel",True,Common Stock,sell,459.0,206.37,94723.83
+2026-02-21,ALL,"GUPTA, SUREN","President,Enterprise Solutions",True,Common Stock,sell,396.0,206.37,81722.52
+2026-02-21,ALL,"JEEVANJEE, ZULFIKAR",EVP & CTO - AIC,True,Common Stock,sell,333.0,206.37,68721.21
+2026-02-21,ALL,"MERTEN, JESSE E",PresPersonalProperty-Liability,False,Common Stock,sell,669.0,206.37,138061.53
+2026-02-21,ALL,"DUGENSKE, JOHN E","Chief Financial Officer, Pres, Invest. & Corp. Strategy",True,Common Stock,sell,691.0,206.37,142601.67
+2026-02-24,ALL,"DEBIASE, CHRISTINE M.","EVP, CLO and General Counsel",True,Common Stock,sell,369.0,209.82,77423.58
+2026-02-24,ALL,"BRADY, ELIZABETH",Executive Vice President - AIC,True,Common Stock,sell,200.0,209.82,41964.0
+2026-02-24,ALL,"RIZZO, MARIO",Chief Operating Officer-AIC,True,Common Stock,sell,534.0,209.82,112043.87999999999
+2026-02-24,ALL,"PRINDIVILLE, MARK Q",EVP & Chief Risk Officer - AIC,True,Common Stock,sell,169.0,209.82,35459.58
+2026-02-24,ALL,"DUGENSKE, JOHN E","Chief Financial Officer, Pres, Invest. & Corp. Strategy",True,Common Stock,sell,458.0,209.82,96097.56
+2026-02-24,ALL,"MERTEN, JESSE E",PresPersonalProperty-Liability,False,Common Stock,sell,533.0,209.82,111834.06
+2026-02-24,ALL,"JEEVANJEE, ZULFIKAR",EVP & CTO - AIC,True,Common Stock,sell,249.0,209.82,52245.18
+2026-02-24,ALL,"GUPTA, SUREN","President,Enterprise Solutions",True,Common Stock,sell,286.0,209.82,60008.52
+2026-02-24,ALL,"FERREN, ERIC K","SVP, Controller, and CAO",True,Common Stock,sell,77.0,209.82,16156.14
+2026-02-25,ALL,"MERTEN, JESSE E",PresPersonalProperty-Liability,False,Common Stock,sell,1300.0,210.4385,273570.05
+2026-02-25,ALL,"MERTEN, JESSE E",PresPersonalProperty-Liability,False,Common Stock,sell,15893.0,208.5753,3314887.2429
+2026-02-25,ALL,"MERTEN, JESSE E",PresPersonalProperty-Liability,False,Common Stock,buy,12879.0,122.64,1579480.56
+2026-02-25,ALL,"MERTEN, JESSE E",PresPersonalProperty-Liability,False,Common Stock,buy,19373.0,137.1,2656038.3
+2026-02-25,ALL,"MERTEN, JESSE E",PresPersonalProperty-Liability,False,Common Stock,sell,7982.0,209.4048,1671469.1136
+2026-02-25,ALL,"MERTEN, JESSE E",PresPersonalProperty-Liability,False,Common Stock,sell,8811.0,207.5314,1828559.1653999998
+2026-02-25,ALL,"MERTEN, JESSE E",PresPersonalProperty-Liability,False,Common Stock,buy,1734.0,133.0,230622.0
+2026-03-02,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,911.0,213.5037,194501.8707
+2026-03-02,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,9284.0,211.8629,1966935.1635999999
+2026-03-02,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,6612.0,212.6647,1406138.9964
+2026-03-16,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,2139.0,207.6507,444164.8473
+2026-03-16,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,9320.0,209.4751,1952307.932
+2026-03-16,ALL,"WILSON, THOMAS J","Director, Chairman, President & CEO",True,Common Stock,sell,5348.0,208.3891,1114464.9068
+2026-04-01,ALL,"KEANE, MARGARET M",Director,True,Common Stock,buy,165.0,204.1,33676.5
+2026-04-01,ALL,"TRAQUINA, PERRY M",Director,True,Common Stock,buy,202.0,204.1,41228.2
+2026-04-01,ALL,"PEROLD, JACQUES P",Director,True,Common Stock,buy,208.0,204.1,42452.799999999996
+2026-05-01,ALL,"RIZZO, MARIO",Chief Operating Officer-AIC,True,Common Stock,sell,18578.0,218.8,4064866.4000000004
+2026-05-01,ALL,"RIZZO, MARIO",Chief Operating Officer-AIC,True,Common Stock,buy,18578.0,92.8,1724038.4

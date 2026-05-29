@@ -1,0 +1,338 @@
+date,symbol,insider_name,insider_title,is_executive,security_type,transaction_type,shares,price,value
+2013-10-16,AR,"WARBURG, PINCUS PRIVATE EQUITY X, L.P.","Director, 10% Owner",True,"Common stock, par value $0.01 per share",sell,3409091.0,42.02,143250003.82000002
+2013-10-16,AR,"WARBURG, PINCUS PRIVATE EQUITY VIII, L.P.","Director, 10% Owner",True,"Common stock, par value $0.01 per share",sell,3409091.0,42.02,143250003.82000002
+2013-10-16,AR,"KAGAN, PETER",Director,True,"Common stock, par value $0.01 per share",sell,3409091.0,42.02,143250003.82000002
+2014-05-16,AR,"HARDESTY, BENJAMIN A.",Director,True,"Common stock, par value $0.01 per share",buy,721.0,62.14,44802.94
+2014-05-16,AR,"HARDESTY, BENJAMIN A.",Director,True,"Common stock, par value $0.01 per share",buy,279.0,62.16,17342.64
+2014-05-19,AR,"KILSTROM, KEVIN J.",See Remarks,False,"Common stock, par value $0.01 per share",sell,12000000.0,62.0,744000000.0
+2014-05-19,AR,"MCNEILLY, WARD D.",See Remarks,False,"Common stock, par value $0.01 per share",sell,12000000.0,62.0,744000000.0
+2014-05-19,AR,"YOO, K. PHIL",See Remarks,False,"Common stock, par value $0.01 per share",sell,12000000.0,62.0,744000000.0
+2014-05-19,AR,"SCHOPP, ALVYN A.",See Remarks,False,"Common stock, par value $0.01 per share",sell,12000000.0,62.0,744000000.0
+2014-05-19,AR,"WARREN, GLEN C JR","Director, See Remarks, 10% Owner",True,"Common stock, par value $0.01 per share",sell,12000000.0,62.0,744000000.0
+2014-05-19,AR,"RADY, PAUL M","Director, See Remarks, 10% Owner",True,"Common stock, par value $0.01 per share",sell,12000000.0,62.0,744000000.0
+2014-05-19,AR,"ANTERO, RESOURCES INVESTMENT LLC",10% Owner,False,"Common stock, par value $0.01 per share",sell,12000000.0,62.0,744000000.0
+2014-05-19,AR,"WARBURG, PINCUS PRIVATE EQUITY X, L.P.","Director, 10% Owner",True,"Common stock, par value $0.01 per share",sell,12000000.0,62.0,744000000.0
+2014-05-19,AR,"WARBURG, PINCUS PRIVATE EQUITY VIII, L.P.","Director, 10% Owner",True,"Common stock, par value $0.01 per share",sell,12000000.0,62.0,744000000.0
+2014-05-19,AR,"LEVY, JAMES R.",Director,True,"Common stock, par value $0.01 per share",sell,12000000.0,62.0,744000000.0
+2014-05-19,AR,"KAGAN, PETER",Director,True,"Common stock, par value $0.01 per share",sell,12000000.0,62.0,744000000.0
+2014-05-19,AR,"KEENAN, W HOWARD JR",Director,True,"Common stock, par value $0.01 per share",sell,12000000.0,62.0,744000000.0
+2014-05-19,AR,"MANNING, CHRISTOPHER REID",Director,True,"Common stock, par value $0.01 per share",sell,12000000.0,62.0,744000000.0
+2014-06-05,AR,"KEENAN, W HOWARD JR",Director,True,"Common stock, par value $0.01 per share",sell,264889.0,62.0,16423118.0
+2014-06-05,AR,"WARBURG, PINCUS PRIVATE EQUITY X, L.P.","Director, 10% Owner",True,"Common stock, par value $0.01 per share",sell,646918.0,62.0,40108916.0
+2014-06-05,AR,"KAGAN, PETER",Director,True,"Common stock, par value $0.01 per share",sell,929941.0,62.0,57656342.0
+2014-06-05,AR,"RADY, PAUL M","Director, See Remarks, 10% Owner",True,"Common stock, par value $0.01 per share",sell,24288.0,62.0,1505856.0
+2014-06-05,AR,"WARREN, GLEN C JR","Director, See Remarks",True,"Common stock, par value $0.01 per share",sell,16192.0,62.0,1003904.0
+2014-06-05,AR,"WARBURG, PINCUS PRIVATE EQUITY VIII, L.P.","Director, 10% Owner",True,"Common stock, par value $0.01 per share",sell,283023.0,62.0,17547426.0
+2014-06-05,AR,"ANTERO, RESOURCES INVESTMENT LLC",10% Owner,False,"Common stock, par value $0.01 per share",sell,1800000.0,62.0,111600000.0
+2014-06-05,AR,"LEVY, JAMES R.",Director,True,"Common stock, par value $0.01 per share",sell,929941.0,62.0,57656342.0
+2014-06-05,AR,"KILSTROM, KEVIN J.",See Remarks,False,"Common stock, par value $0.01 per share",sell,353.0,62.0,21886.0
+2014-06-05,AR,"MANNING, CHRISTOPHER REID",Director,True,"Common stock, par value $0.01 per share",sell,207745.0,62.0,12880190.0
+2014-06-05,AR,"SCHOPP, ALVYN A.",See Remarks,False,"Common stock, par value $0.01 per share",sell,951.0,62.0,58962.0
+2014-11-04,AR,"CONNOR, RICHARD W.",Director,True,"Common stock, par value $0.01 per share",buy,40.0,51.25,2050.0
+2014-11-10,AR,"ANTERO, RESOURCES CORP",10% Owner,False,Common Units representing limited partner interests,sell,6000000.0,25.0,150000000.0
+2015-04-01,AR,"YOO, K. PHIL","VP, CAO and Controller",True,"Common stock, par value $0.01 per share",sell,1229.0,35.35,43445.15
+2015-04-01,AR,"KILSTROM, KEVIN J.",Vice President-Production,True,"Common stock, par value $0.01 per share",sell,14315.0,35.35,506035.25
+2015-04-01,AR,"MCNEILLY, WARD D.","VP Reserves, Planning & Midstr",True,"Common stock, par value $0.01 per share",sell,10736.0,35.35,379517.60000000003
+2015-04-01,AR,"SCHOPP, ALVYN A.",Chief Admin & Regional VP,True,"Common stock, par value $0.01 per share",sell,14315.0,35.35,506035.25
+2015-05-13,AR,"MANNING, CHRISTOPHER REID",Director,True,"Common stock, par value $0.01 per share",sell,178378.0,43.29,7721983.62
+2015-05-13,AR,"MANNING, CHRISTOPHER REID",Director,True,"Common stock, par value $0.01 per share",sell,900.0,44.02,39618.0
+2015-05-14,AR,"MANNING, CHRISTOPHER REID",Director,True,"Common stock, par value $0.01 per share",sell,133505.0,42.67,5696658.350000001
+2015-05-14,AR,"MCNEILLY, WARD D.",See Remarks,False,"Common stock, par value $0.01 per share",sell,3000.0,42.4564,127369.20000000001
+2015-05-15,AR,"MANNING, CHRISTOPHER REID",Director,True,"Common stock, par value $0.01 per share",sell,200000.0,43.07,8614000.0
+2015-12-02,AR,"MCNEILLY, WARD D.","VP Reserves, Planning & Midstr",True,"Common stock, par value $0.01 per share",sell,9312.0,20.5603,191457.5136
+2015-12-09,AR,"MANNING, CHRISTOPHER REID",Director,True,"Common stock, par value $0.01 per share",sell,2800000.0,18.75,52500000.0
+2015-12-09,AR,"KILSTROM, KEVIN J.",Vice President - Production,True,"Common stock, par value $0.01 per share",sell,100000.0,19.3722,1937220.0
+2015-12-09,AR,"HARDESTY, BENJAMIN A.",Director,True,"Common stock, par value $0.01 per share",buy,1000.0,20.14,20140.0
+2015-12-10,AR,"KILSTROM, KEVIN J.",Vice President - Production,True,"Common stock, par value $0.01 per share",sell,535000.0,19.86,10625100.0
+2015-12-10,AR,"KILSTROM, KEVIN J.",Vice President - Production,True,"Common stock, par value $0.01 per share",sell,200000.0,19.7735,3954699.9999999995
+2015-12-10,AR,"MCNEILLY, WARD D.","VP Reserves, Planning & Midstr",True,"Common stock, par value $0.01 per share",sell,14000.0,19.5084,273117.60000000003
+2016-02-29,AR,"KEENAN, W HOWARD JR",Director,True,"Common stock, par value $0.01 per share",sell,606921.0,21.502,13050015.342
+2016-02-29,AR,"RADY, PAUL M","Director, Chairman of the Board and CEO",True,"Common stock, par value $0.01 per share",sell,3000000.0,21.502,64506000.0
+2016-02-29,AR,"MANNING, CHRISTOPHER REID",Director,True,"Common stock, par value $0.01 per share",sell,943656.0,21.502,20290491.312
+2016-02-29,AR,"KEENAN, W HOWARD JR",Director,True,"Common stock, par value $0.01 per share",sell,168513.0,21.502,3623366.5259999996
+2016-02-29,AR,"KEENAN, W HOWARD JR",Director,True,"Common stock, par value $0.01 per share",sell,424707.0,21.502,9132049.913999999
+2016-02-29,AR,"KEENAN, W HOWARD JR",Director,True,"Common stock, par value $0.01 per share",sell,169883.0,21.502,3652824.266
+2016-02-29,AR,"WARREN, GLEN C JR","Director, See Remarks",True,"Common stock, par value $0.01 per share",sell,1000000.0,21.502,21502000.0
+2016-03-01,AR,"WARBURG, PINCUS PRIVATE EQUITY VIII, L.P.","Director, 10% Owner",True,"Common stock, par value $0.01 per share",sell,4751186.0,21.502,102160001.372
+2016-03-01,AR,"WARBURG, PINCUS PRIVATE EQUITY VIII, L.P.","Director, 10% Owner",True,"Common stock, par value $0.01 per share",sell,137716.0,21.502,2961169.432
+2016-03-01,AR,"KAGAN, PETER",Director,True,"Common stock, par value $0.01 per share",sell,4902679.0,21.502,105417403.858
+2016-03-01,AR,"WARBURG, PINCUS PRIVATE EQUITY VIII, L.P.","Director, 10% Owner",True,"Common stock, par value $0.01 per share",sell,13777.0,21.502,296233.054
+2016-03-01,AR,"LEVY, JAMES R.",Director,True,"Common stock, par value $0.01 per share",sell,4902679.0,21.502,105417403.858
+2016-03-07,AR,"MCNEILLY, WARD D.","Sr VP Reserves, Plan & Midstr",True,"Common stock, par value $0.01 per share",sell,25000.0,23.4744,586860.0
+2016-03-15,AR,"YOO, K. PHIL",See Remarks,False,"Common stock, par value $0.01 per share",sell,2612.0,23.5409,61488.8308
+2016-03-30,AR,"ANTERO, RESOURCES CORP",10% Owner,False,Common Units representing limited partner interests,sell,8000000.0,22.25,178000000.0
+2016-04-01,AR,"KENNEDY, MICHAEL N.",Senior Vice President Finance,True,"Common stock, par value $0.01 per share",sell,6143.0,24.77,152162.11
+2016-04-01,AR,"SCHOPP, ALVYN A.",Chief Admin & Reg Sr VP & Tres,True,"Common stock, par value $0.01 per share",sell,10502.0,24.77,260134.54
+2016-04-01,AR,"MCNEILLY, WARD D.","Sr VP Reserves, Plan & Midstr",True,"Common stock, par value $0.01 per share",sell,7372.0,24.77,182604.44
+2016-04-01,AR,"YOO, K. PHIL","VP, CAO and Controller",True,"Common stock, par value $0.01 per share",sell,1229.0,24.77,30442.329999999998
+2016-04-01,AR,"KILSTROM, KEVIN J.",Sr Vice President Production,True,"Common stock, par value $0.01 per share",sell,10502.0,24.77,260134.54
+2016-04-15,AR,"MCNEILLY, WARD D.",See Remarks,False,"Common stock, par value $0.01 per share",sell,3802.0,26.84,102045.68
+2016-04-15,AR,"SCHOPP, ALVYN A.",See Remarks,False,"Common stock, par value $0.01 per share",sell,4225.0,26.84,113399.0
+2016-04-15,AR,"RADY, PAUL M","Director, Chairman of the Board & CEO",True,"Common stock, par value $0.01 per share",sell,16844.0,26.84,452092.96
+2016-04-15,AR,"KENNEDY, MICHAEL N.",Senior Vice President-Finance,True,"Common stock, par value $0.01 per share",sell,3821.0,26.84,102555.64
+2016-04-15,AR,"WARREN, GLEN C JR","Director, See Remarks",True,"Common stock, par value $0.01 per share",sell,9199.0,26.84,246901.16
+2016-04-15,AR,"YOO, K. PHIL",See Remarks,False,"Common stock, par value $0.01 per share",sell,1160.0,26.84,31134.4
+2016-04-15,AR,"KILSTROM, KEVIN J.",Senior V.P. - Production,False,"Common stock, par value $0.01 per share",sell,4225.0,26.84,113399.0
+2016-06-14,AR,"KILSTROM, KEVIN J.",Sr. Vice President-Production,True,"Common stock, par value $0.01 per share",sell,10000.0,28.3586,283586.0
+2016-08-05,AR,"WARREN, GLEN C JR","Director, See Remarks",True,"Common stock, par value $0.01 per share",sell,800000.0,27.2481,21798480.0
+2016-08-08,AR,"WARREN, GLEN C JR","Director, See Remarks",True,"Common stock, par value $0.01 per share",sell,200000.0,27.8946,5578920.0
+2016-08-10,AR,"MCNEILLY, WARD D.",See Remarks,False,"Common stock, par value $0.01 per share",sell,8000.0,27.3124,218499.2
+2016-08-12,AR,"MCNEILLY, WARD D.",See Remarks,False,"Common stock, par value $0.01 per share",sell,8722.0,27.3003,238113.2166
+2016-08-12,AR,"MCNEILLY, WARD D.",See Remarks,False,"Common stock, par value $0.01 per share",sell,11315.0,27.4221,310281.0615
+2016-10-16,AR,"KENNEDY, MICHAEL N.",Senior Vice President-Finance,True,"Common stock, par value $0.01 per share",sell,1747.0,27.51,48059.97
+2016-10-22,AR,"RADY, PAUL M","Director, Chairman of the Board and CEO",True,"Common stock, par value $0.01 per share",sell,71574.0,26.48,1895279.52
+2016-10-22,AR,"WARREN, GLEN C JR","Director, See Remarks",True,"Common stock, par value $0.01 per share",sell,47740.0,26.48,1264155.2
+2016-11-01,AR,"CONNOR, RICHARD W.",Director,True,"Common stock, par value $0.01 per share",buy,4000.0,26.0403,104161.2
+2016-11-07,AR,"KEENAN, W HOWARD JR",Director,True,"Common stock, par value $0.01 per share",sell,260000.0,24.74,6432400.0
+2016-12-08,AR,"SCHOPP, ALVYN A.",See Remarks,False,"Common stock, par value $0.01 per share",sell,40000.0,26.7,1068000.0
+2016-12-15,AR,"KENNEDY, MICHAEL N.",Sr. V.P. Finance,False,"Common stock, par value $0.01 per share",sell,14930.0,25.42,379520.60000000003
+2016-12-15,AR,"YOO, K. PHIL",VP  CAO and Controller,True,"Common stock, par value $0.01 per share",sell,6789.0,25.42,172576.38
+2017-01-05,AR,"YOO, K. PHIL",See Remarks,False,"Common stock, par value $0.01 per share",sell,2000.0,25.0,50000.0
+2017-02-08,AR,"SCHOPP, ALVYN A.",See Remarks,False,"Common stock, par value $0.01 per share",sell,10352.0,24.82,256936.64
+2017-02-08,AR,"MCNEILLY, WARD D.",See Remarks,False,"Common stock, par value $0.01 per share",sell,3110.0,24.82,77190.2
+2017-02-08,AR,"KILSTROM, KEVIN J.",Senior V. P. - Production,False,"Common stock, par value $0.01 per share",sell,9328.0,24.82,231520.96
+2017-02-08,AR,"SCHOPP, ALVYN A.",See Remarks,False,"Common stock, par value $0.01 per share",sell,25343.0,24.82,629013.26
+2017-02-08,AR,"KILSTROM, KEVIN J.",Senior V. P. - Production,False,"Common stock, par value $0.01 per share",sell,3281.0,24.82,81434.42
+2017-02-08,AR,"MCNEILLY, WARD D.",See Remarks,False,"Common stock, par value $0.01 per share",sell,9507.0,24.82,235963.74
+2017-04-01,AR,"MCNEILLY, WARD D.",See Remarks,False,"Common stock, par value $0.01 per share",sell,10736.0,22.81,244888.15999999997
+2017-04-01,AR,"KILSTROM, KEVIN J.",Senior V.P. - Production,False,"Common stock, par value $0.01 per share",sell,14315.0,22.81,326525.14999999997
+2017-04-01,AR,"YOO, K. PHIL",See Remarks,False,"Common stock, par value $0.01 per share",sell,1229.0,22.81,28033.489999999998
+2017-04-01,AR,"KENNEDY, MICHAEL N.",Senior Vice President-Finance,True,"Common stock, par value $0.01 per share",sell,6143.0,22.81,140121.83
+2017-04-01,AR,"SCHOPP, ALVYN A.",See Remarks,False,"Common stock, par value $0.01 per share",sell,14315.0,22.81,326525.14999999997
+2017-04-15,AR,"MCNEILLY, WARD D.",See Remarks,False,"Common stock, par value $0.01 per share",sell,7056.0,22.06,155655.36
+2017-04-15,AR,"KENNEDY, MICHAEL N.",Senior Vice President-Finance,True,"Common stock, par value $0.01 per share",sell,6171.0,22.06,136132.25999999998
+2017-04-15,AR,"RADY, PAUL M","Director, See Remarks",True,"Common stock, par value $0.01 per share",sell,29914.0,22.06,659902.84
+2017-04-15,AR,"YOO, K. PHIL",See Remarks,False,"Common stock, par value $0.01 per share",sell,1757.0,22.06,38759.42
+2017-04-15,AR,"WARREN, GLEN C JR","Director, See remarks",True,"Common stock, par value $0.01 per share",sell,18506.0,22.06,408242.36
+2017-04-15,AR,"SCHOPP, ALVYN A.",See Remarks,False,"Common stock, par value $0.01 per share",sell,7479.0,22.06,164986.74
+2017-04-15,AR,"KILSTROM, KEVIN J.",See Remarks,False,"Common stock, par value $0.01 per share",sell,7479.0,22.06,164986.74
+2017-05-17,AR,"RADY, PAUL M","Director, See remarks",True,"Common stock, par value $0.01 per share",buy,500000.0,21.1117,10555850.0
+2017-05-17,AR,"WARREN, GLEN C JR","Director, See Remarks",True,"Common stock, par value $0.01 per share",buy,250000.0,20.99,5247500.0
+2017-06-15,AR,"MCNEILLY, WARD D.",See Remarks,False,"Common stock, par value $0.01 per share",sell,24000.0,22.0501,529202.4
+2017-08-01,AR,"YOO, K. PHIL",See Remarks,False,"Common stock, par value $0.01 per share",sell,3785.0,20.5463,77767.74549999999
+2017-09-11,AR,"ANTERO, RESOURCES CORP",10% Owner,False,Common Units representing limited partner interests,sell,10000000.0,31.11,311100000.0
+2017-10-15,AR,"KENNEDY, MICHAEL N.",Senior Vice President-Finance,True,"Common stock, par value $0.01 per share",sell,1747.0,20.09,35097.23
+2017-10-22,AR,"RADY, PAUL M","Director, See Remarks",True,"Common stock, par value $0.01 per share",sell,71574.0,19.46,1392830.04
+2017-10-22,AR,"WARREN, GLEN C JR","Director, See Remarks",True,"Common stock, par value $0.01 per share",sell,47740.0,19.46,929020.4
+2017-11-10,AR,"KILSTROM, KEVIN J.",See Remarks,False,"Common stock, par value $0.01 per share",sell,82760.0,19.9938,1654686.888
+2017-11-16,AR,"YOO, K. PHIL",See Remarks,False,"Common stock, par value $0.01 per share",sell,10865.0,19.2526,209179.499
+2017-11-29,AR,"KEENAN, W HOWARD JR",Director,True,"Common stock, par value $0.01 per share",sell,190000.0,18.64,3541600.0
+2017-12-15,AR,"KENNEDY, MICHAEL N.",See Remarks,False,"Common stock, par value $0.01 per share",sell,14930.0,17.65,263514.5
+2017-12-15,AR,"YOO, K. PHIL",See Remarks,False,"Common stock, par value $0.01 per share",sell,4661.0,17.65,82266.65
+2018-02-08,AR,"MCNEILLY, WARD D.",See Remarks,False,"Common stock, par value $0.01 per share",sell,8715.0,17.02,148329.3
+2018-02-08,AR,"SCHOPP, ALVYN A.",See Remarks,False,"Common stock, par value $0.01 per share",sell,20759.0,17.02,353318.18
+2018-02-08,AR,"MCNEILLY, WARD D.",See Remarks,False,"Common stock, par value $0.01 per share",sell,2818.0,17.02,47962.36
+2018-02-08,AR,"SCHOPP, ALVYN A.",See Remarks,False,"Common stock, par value $0.01 per share",sell,9774.0,17.02,166353.47999999998
+2018-02-08,AR,"KILSTROM, KEVIN J.",See Remarks,False,"Common stock, par value $0.01 per share",sell,8453.0,17.02,143870.06
+2018-02-08,AR,"KILSTROM, KEVIN J.",See Remarks,False,"Common stock, par value $0.01 per share",sell,3070.0,17.02,52251.4
+2018-03-02,AR,"YOO, K. PHIL",See Remarks,False,"Common stock, par value $0.01 per share",sell,2500.0,20.0,50000.0
+2018-04-01,AR,"KILSTROM, KEVIN J.",See Remarks,False,"Common stock, par value $0.01 per share",sell,13516.0,19.85,268292.60000000003
+2018-04-01,AR,"MCNEILLY, WARD D.",See Remarks,False,"Common stock, par value $0.01 per share",sell,10097.0,19.85,200425.45
+2018-04-01,AR,"YOO, K. PHIL",See Remarks,False,"Common stock, par value $0.01 per share",sell,1114.0,19.85,22112.9
+2018-04-01,AR,"KENNEDY, MICHAEL N.",Senior Vice President-Finance,True,"Common stock, par value $0.01 per share",sell,5567.0,19.85,110504.95000000001
+2018-04-01,AR,"SCHOPP, ALVYN A.",See Remarks,False,"Common stock, par value $0.01 per share",sell,13516.0,19.85,268292.60000000003
+2018-04-15,AR,"RADY, PAUL M","Director, See Remarks",True,"Common stock, par value $0.01 per share",sell,33513.0,20.72,694389.36
+2018-04-15,AR,"KENNEDY, MICHAEL N.",See Remarks,False,"Common stock, par value $0.01 per share",sell,6372.0,20.72,132027.84
+2018-04-15,AR,"YOO, K. PHIL",See Remarks,False,"Common stock, par value $0.01 per share",sell,2003.0,20.72,41502.159999999996
+2018-04-15,AR,"WARREN, GLEN C JR","Director, See Remarks",True,"Common stock, par value $0.01 per share",sell,19691.0,20.72,407997.51999999996
+2018-04-15,AR,"SCHOPP, ALVYN A.",See Remarks,False,"Common stock, par value $0.01 per share",sell,8676.0,20.72,179766.72
+2018-04-15,AR,"KILSTROM, KEVIN J.",See Remarks,False,"Common stock, par value $0.01 per share",sell,8676.0,20.72,179766.72
+2018-04-15,AR,"MCNEILLY, WARD D.",See Remarks,False,"Common stock, par value $0.01 per share",sell,8277.0,20.72,171499.44
+2018-05-01,AR,"YOO, K. PHIL",See Remarks,False,"Common stock, par value $0.01 per share",sell,2500.0,18.93,47325.0
+2018-07-09,AR,"YOO, K. PHIL",See Remarks,False,"Common stock, par value $0.01 per share",sell,2500.0,22.0,55000.0
+2018-08-10,AR,"YOO, K. PHIL",See Remarks,False,"Common stock, par value $0.01 per share",sell,2500.0,18.5878,46469.5
+2018-11-08,AR,"WARBURG, PINCUS PRIVATE EQUITY VIII, L.P.","Director, 10% Owner",True,"Common stock, par value $0.01 per share",sell,143.0,15.87,2269.41
+2018-11-08,AR,"KAGAN, PETER",Director,True,"Common stock, par value $0.01 per share",sell,13000000.0,15.87,206310000.0
+2018-11-08,AR,"WARBURG, PINCUS PRIVATE EQUITY X O&AMP;G, L.P.","Director, 10% Owner",True,"Common stock, par value $0.01 per share",sell,801865.0,15.87,12725597.549999999
+2018-11-08,AR,"LEVY, JAMES R.",Director,True,"Common stock, par value $0.01 per share",sell,13000000.0,15.87,206310000.0
+2018-11-08,AR,"WARBURG, PINCUS PRIVATE EQUITY X O&AMP;G, L.P.","Director, 10% Owner",True,"Common stock, par value $0.01 per share",sell,402839.0,15.87,6393054.93
+2018-11-08,AR,"CONNOR, RICHARD W.",Director,True,"Common stock, par value $0.01 per share",sell,6907.0,16.49,113896.43
+2018-11-08,AR,"WARBURG, PINCUS PRIVATE EQUITY X O&AMP;G, L.P.","Director, 10% Owner",True,"Common stock, par value $0.01 per share",sell,11790102.0,15.87,187108918.73999998
+2018-11-08,AR,"WARBURG, PINCUS LLC","Director, 10% Owner",True,"Common stock, par value $0.01 per share",sell,13000000.0,15.87,206310000.0
+2018-11-08,AR,"WARBURG, PINCUS PRIVATE EQUITY VIII, L.P.","Director, 10% Owner",True,"Common stock, par value $0.01 per share",sell,5038.0,15.87,79953.06
+2018-11-20,AR,"HARDESTY, BENJAMIN A.",Director,True,"Common stock, par value $0.01 per share",sell,1000.0,13.5,13500.0
+2018-12-04,AR,"CLARK, ROBERT J",Director,True,"Common stock, par value $0.01 per share",sell,20429.0,12.8031,261554.52990000002
+2018-12-15,AR,"KENNEDY, MICHAEL N.",See Remarks,False,"Common stock, par value $0.01 per share",sell,14097.0,11.31,159437.07
+2018-12-15,AR,"YOO, K. PHIL",See Remarks,False,"Common stock, par value $0.01 per share",sell,4224.0,11.31,47773.44
+2019-02-08,AR,"SCHOPP, ALVYN A.",See Remarks,False,"Common stock, par value $0.01 per share",sell,19826.0,8.83,175063.58
+2019-02-08,AR,"KILSTROM, KEVIN J.",Senior VP-Production,True,"Common stock, par value $0.01 per share",sell,3333.0,8.83,29430.39
+2019-02-08,AR,"SCHOPP, ALVYN A.",See Remarks,False,"Common stock, par value $0.01 per share",sell,6440.0,8.83,56865.2
+2019-02-08,AR,"KILSTROM, KEVIN J.",Senior VP-Production,True,"Common stock, par value $0.01 per share",sell,8446.0,8.83,74578.18000000001
+2019-03-13,AR,"RADY, PAUL M","Director, See Remarks",True,"Common stock, par value $0.01 per share",buy,12239.0,8.335,102012.06500000002
+2019-03-13,AR,"WARREN, GLEN C JR","Director, See Remarks",True,"Common stock, par value $0.01 per share",buy,25000.0,8.2941,207352.5
+2019-03-14,AR,"RADY, PAUL M","Director, See Remarks",True,"Common stock, par value $0.01 per share",buy,12000.0,8.54,102479.99999999999
+2019-03-14,AR,"WARREN, GLEN C JR","Director, See Remarks",True,"Common stock, par value $0.01 per share",buy,15000.0,8.589,128835.0
+2019-03-15,AR,"WARREN, GLEN C JR","Director, See Remarks",True,"Common stock, par value $0.01 per share",buy,20000.0,8.3431,166862.0
+2019-03-15,AR,"RADY, PAUL M","Director, See Remarks",True,"Common stock, par value $0.01 per share",buy,12200.0,8.3,101260.00000000001
+2019-04-15,AR,"KENNEDY, MICHAEL N.",See Remarks,False,"Common stock, par value $0.01 per share",sell,8676.0,8.59,74526.84
+2019-04-15,AR,"RADY, PAUL M","Director, See Remarks",True,"Common stock, par value $0.01 per share",sell,34787.0,8.59,298820.33
+2019-04-15,AR,"WARREN, GLEN C JR","Director, See Remarks",True,"Common stock, par value $0.01 per share",sell,23193.0,8.59,199227.87
+2019-04-15,AR,"KILSTROM, KEVIN J.",Senior VP - Production,True,"Common stock, par value $0.01 per share",sell,8676.0,8.59,74526.84
+2019-04-15,AR,"SCHOPP, ALVYN A.",See Remarks,False,"Common stock, par value $0.01 per share",sell,8676.0,8.59,74526.84
+2019-04-15,AR,"YOO, K. PHIL",See Remarks,False,"Common stock, par value $0.01 per share",sell,3704.0,8.59,31817.36
+2019-05-22,AR,"WARREN, GLEN C JR","Director, See Remarks",True,"Common stock, par value $0.01 per share",buy,25000.0,6.9252,173130.0
+2019-05-22,AR,"RADY, PAUL M","Director, See Remarks",True,"Common stock, par value $0.01 per share",buy,7200.0,6.9563,50085.36
+2019-05-22,AR,"HARDESTY, BENJAMIN A.",Director,True,"Common stock, par value $0.01 per share",buy,1000.0,6.9,6900.0
+2019-05-23,AR,"WARREN, GLEN C JR","Director, See Remarks",True,"Common stock, par value $0.01 per share",buy,25600.0,6.8325,174912.0
+2019-05-23,AR,"RADY, PAUL M","Director, See Remarks",True,"Common stock, par value $0.01 per share",buy,7350.0,6.7954,49946.19
+2019-05-24,AR,"RADY, PAUL M","Director, See Remarks",True,"Common stock, par value $0.01 per share",buy,7200.0,6.9013,49689.36
+2019-05-24,AR,"WARREN, GLEN C JR","Director, See Remarks",True,"Common stock, par value $0.01 per share",buy,21900.0,6.8566,150159.54
+2019-05-28,AR,"RADY, PAUL M","Director, See Remarks",True,"Common stock, par value $0.01 per share",buy,7350.0,6.7928,49927.079999999994
+2019-05-29,AR,"RADY, PAUL M","Director, See Remarks",True,"Common stock, par value $0.01 per share",buy,7300.0,6.8273,49839.29
+2019-05-30,AR,"RADY, PAUL M","Director, See Remarks",True,"Common stock, par value $0.01 per share",buy,7500.0,6.7055,50291.25
+2019-05-31,AR,"RADY, PAUL M","Director, See Remarks",True,"Common stock, par value $0.01 per share",buy,7750.0,6.4882,50283.55
+2019-06-10,AR,"WARBURG, PINCUS LLC","Director, 10% Owner",True,"Common stock, par value $0.01 per share",sell,16094190.0,6.17,99301152.3
+2019-06-10,AR,"WARBURG, PINCUS PRIVATE EQUITY X O&AMP;G, L.P.","Director, 10% Owner",True,"Common stock, par value $0.01 per share",sell,15594360.0,6.17,96217201.2
+2019-06-10,AR,"LEVY, JAMES R.",Director,True,"Common stock, par value $0.01 per share",sell,16094190.0,6.17,99301152.3
+2019-06-10,AR,"KAGAN, PETER",Director,True,"Common stock, par value $0.01 per share",sell,16094190.0,6.17,99301152.3
+2019-06-10,AR,"WARBURG, PINCUS PRIVATE EQUITY X O&AMP;G, L.P.","Director, 10% Owner",True,"Common stock, par value $0.01 per share",sell,499830.0,6.17,3083951.1
+2019-11-08,AR,"CLARK, ROBERT J",Director,True,"Common stock, par value $0.01 per share",buy,178000.0,2.7885,496353.0
+2019-12-16,AR,"ANTERO, RESOURCES CORP","Director, 10% Owner",True,"Common stock, par value $0.01 per share",sell,19377592.0,5.1606,100000001.2752
+2019-12-30,AR,"KENNEDY, MICHAEL N.",See Remarks,False,"Common stock, par value $0.01 per share",sell,138098.0,2.7736,383028.6128
+2020-01-15,AR,"ASH, W PATRICK",See Remarks,False,"Common stock, par value $0.01 per share",sell,1726.0,2.54,4384.04
+2020-04-15,AR,"ASH, W PATRICK",See Remarks,False,"Common stock, par value $0.01 per share",sell,1687.0,1.38,2328.06
+2020-04-15,AR,"RADY, PAUL M","Director, See Remarks",True,"Common stock, par value $0.01 per share",sell,12409.0,1.38,17124.42
+2020-04-15,AR,"SCHOPP, ALVYN A.",See Remarks,False,"Common stock, par value $0.01 per share",sell,3088.0,1.38,4261.44
+2020-04-15,AR,"KENNEDY, MICHAEL N.",See Remarks,False,"Common stock, par value $0.01 per share",sell,3088.0,1.38,4261.44
+2020-04-15,AR,"YOO, K. PHIL",See Remarks,False,"Common stock, par value $0.01 per share",sell,3075.0,1.38,4243.5
+2020-04-15,AR,"WARREN, GLEN C JR","Director, See Remarks",True,"Common stock, par value $0.01 per share",sell,8273.0,1.38,11416.74
+2020-11-24,AR,"PEARCE, SHERI",See Remarks,False,"Common stock, par value $0.01 per share",sell,1501.0,4.427,6644.927
+2021-01-15,AR,"ASH, W PATRICK",See Remarks,False,"Common stock, par value $0.01 per share",sell,2526.0,7.26,18338.76
+2021-01-15,AR,"PEARCE, SHERI",See Remarks,False,"Common stock, par value $0.01 per share",sell,784.0,7.26,5691.84
+2021-01-20,AR,"SCHOPP, ALVYN A.",See Remarks,False,"Common stock, par value $0.01 per share",sell,461188.0,6.75,3113019.0
+2021-01-20,AR,"ASH, W PATRICK",See Remarks,False,"Common stock, par value $0.01 per share",sell,154197.0,6.75,1040829.75
+2021-01-20,AR,"KENNEDY, MICHAEL N.",See Remarks,False,"Common stock, par value $0.01 per share",sell,197451.0,6.75,1332794.25
+2021-03-03,AR,"CLARK, ROBERT J",Director,True,"Common stock, par value $0.01 per share",sell,168000.0,9.7922,1645089.5999999999
+2021-04-15,AR,"WARREN, GLEN C JR","Director, See Remarks",True,"Common stock, par value $0.01 per share",sell,15906.0,9.52,151425.12
+2021-04-15,AR,"SCHOPP, ALVYN A.",See Remarks,False,"Common stock, par value $0.01 per share",sell,1614.0,9.52,15365.279999999999
+2021-04-15,AR,"RADY, PAUL M","Director, See Remarks",True,"Common stock, par value $0.01 per share",sell,43377.0,9.52,412949.04
+2021-04-15,AR,"KENNEDY, MICHAEL N.",See Remarks,False,"Common stock, par value $0.01 per share",sell,1614.0,9.52,15365.279999999999
+2021-04-15,AR,"PEARCE, SHERI",See Remarks,False,"Common stock, par value $0.01 per share",sell,6855.0,9.52,65259.6
+2021-04-15,AR,"ASH, W PATRICK",See Remarks,False,"Common stock, par value $0.01 per share",sell,2561.0,9.52,24380.719999999998
+2021-05-21,AR,"PEARCE, SHERI",See Remarks,False,"Common stock, par value $0.01 per share",sell,8000.0,13.0,104000.0
+2021-07-20,AR,"SCHOPP, ALVYN A.",See Remarks,False,"Common stock, par value $0.01 per share",sell,230022.0,13.07,3006387.54
+2021-08-26,AR,"KEENAN, W HOWARD JR",Director,True,"Common stock, par value $0.01 per share",sell,100000.0,13.0549,1305490.0
+2021-08-27,AR,"KEENAN, W HOWARD JR",Director,True,"Common stock, par value $0.01 per share",sell,600000.0,13.6371,8182260.0
+2021-08-30,AR,"KEENAN, W HOWARD JR",Director,True,"Common stock, par value $0.01 per share",sell,265013.0,13.8419,3668283.4447000003
+2021-08-31,AR,"KEENAN, W HOWARD JR",Director,True,"Common stock, par value $0.01 per share",sell,77495.0,13.6957,1061348.2715
+2021-11-15,AR,"PEARCE, SHERI",See Remarks,False,"Common stock, par value $0.01 per share",sell,2000.0,19.56,39120.0
+2021-11-19,AR,"KEENAN, W HOWARD JR",Director,True,"Common stock, par value $0.01 per share",sell,176712.0,18.4377,3258162.8424
+2021-11-22,AR,"KEENAN, W HOWARD JR",Director,True,"Common stock, par value $0.01 per share",sell,179027.0,18.457,3304301.339
+2021-11-23,AR,"KEENAN, W HOWARD JR",Director,True,"Common stock, par value $0.01 per share",sell,236371.0,18.7132,4423257.7972
+2022-01-15,AR,"PEARCE, SHERI",See Remarks,False,"Common stock, par value $0.01 per share",sell,1127.0,20.03,22573.81
+2022-01-15,AR,"ASH, W PATRICK",See Remarks,False,"Common stock, par value $0.01 per share",sell,2481.0,20.03,49694.43
+2022-01-20,AR,"ASH, W PATRICK",See Remarks,False,"Common stock, par value $0.01 per share",sell,153321.0,17.47,2678517.8699999996
+2022-01-20,AR,"KENNEDY, MICHAEL N.",See Remarks,False,"Common stock, par value $0.01 per share",sell,196643.0,17.47,3435353.21
+2022-03-04,AR,"CLARK, ROBERT J",Director,True,"Common stock, par value $0.01 per share",sell,10000.0,25.0,250000.0
+2022-03-25,AR,"CLARK, ROBERT J",Director,True,"Common stock, par value $0.01 per share",sell,10000.0,30.0,300000.0
+2022-04-14,AR,"CLARK, ROBERT J",Director,True,"Common stock, par value $0.01 per share",sell,10000.0,35.0,350000.0
+2022-04-15,AR,"RADY, PAUL M","Director, See Remarks",True,"Common stock, par value $0.01 per share",sell,62821.0,35.28,2216324.88
+2022-04-15,AR,"ASH, W PATRICK",See Remarks,False,"Common stock, par value $0.01 per share",sell,8336.0,35.28,294094.08
+2022-04-15,AR,"SCHULTZ, YVETTE K",See Remarks,False,"Common stock, par value $0.01 per share",sell,15656.0,35.28,552343.68
+2022-04-15,AR,"PEARCE, SHERI",See Remarks,False,"Common stock, par value $0.01 per share",sell,9743.0,35.28,343733.04000000004
+2022-04-15,AR,"KENNEDY, MICHAEL N.",See Remarks,False,"Common stock, par value $0.01 per share",sell,5775.0,35.28,203742.0
+2022-04-20,AR,"ASH, W PATRICK",See Remarks,False,"Common stock, par value $0.01 per share",sell,20480.0,36.39,745267.2
+2022-04-20,AR,"SCHULTZ, YVETTE K",See Remarks,False,"Common stock, par value $0.01 per share",sell,20480.0,36.39,745267.2
+2022-04-20,AR,"KENNEDY, MICHAEL N.",See Remarks,False,"Common stock, par value $0.01 per share",sell,71679.0,36.39,2608398.81
+2022-04-20,AR,"RADY, PAUL M","Director, See Remarks",True,"Common stock, par value $0.01 per share",sell,450553.0,36.39,16395623.67
+2022-05-11,AR,"PEARCE, SHERI",See Remarks,False,"Common stock, par value $0.01 per share",sell,7352.0,34.63,254599.76
+2022-05-18,AR,"KEENAN, W HOWARD JR",Director,True,"Common stock, par value $0.01 per share",sell,298249.0,35.39,10555032.11
+2022-05-18,AR,"KEENAN, W HOWARD JR",Director,True,"Common stock, par value $0.01 per share",sell,18621.0,36.24,674825.04
+2022-05-18,AR,"KEENAN, W HOWARD JR",Director,True,"Common stock, par value $0.01 per share",sell,683130.0,34.51,23574816.299999997
+2022-07-26,AR,"CLARK, ROBERT J",Director,True,"Common stock, par value $0.01 per share",sell,5000.0,40.17,200850.0
+2022-08-01,AR,"ASH, W PATRICK",See Remarks,False,"Common stock, par value $0.01 per share",sell,36701.0,38.89,1427301.8900000001
+2022-08-23,AR,"CLARK, ROBERT J",Director,True,"Common stock, par value $0.01 per share",sell,5000.0,45.0,225000.0
+2022-09-06,AR,"KEENAN, W HOWARD JR",Director,True,"Common stock, par value $0.01 per share",sell,131203.0,39.3104,5157642.4112
+2022-09-06,AR,"KEENAN, W HOWARD JR",Director,True,"Common stock, par value $0.01 per share",sell,242663.0,38.4169,9322360.204699999
+2022-09-07,AR,"KEENAN, W HOWARD JR",Director,True,"Common stock, par value $0.01 per share",sell,318820.0,37.6438,12001596.316
+2022-09-07,AR,"KEENAN, W HOWARD JR",Director,True,"Common stock, par value $0.01 per share",sell,55266.0,38.1183,2106645.9677999998
+2022-11-03,AR,"PEARCE, SHERI",See Remarks,False,"Common stock, par value $0.01 per share",sell,2750.0,35.48,97569.99999999999
+2022-12-06,AR,"KEENAN, W HOWARD JR",Director,True,"Common stock, par value $0.01 per share",sell,220245.0,31.1575,6862283.587499999
+2022-12-07,AR,"KEENAN, W HOWARD JR",Director,True,"Common stock, par value $0.01 per share",sell,779755.0,31.3379,24435884.214500003
+2023-01-15,AR,"PEARCE, SHERI",See Remarks,False,"Common stock, par value $0.01 per share",sell,1127.0,29.74,33516.979999999996
+2023-01-20,AR,"KENNEDY, MICHAEL N.",See Remarks,False,"Common stock, par value $0.01 per share",sell,196515.0,29.4,5777541.0
+2023-04-15,AR,"SCHULTZ, YVETTE K",See Remarks,False,"Common stock, par value $0.01 per share",sell,20186.0,23.89,482243.54000000004
+2023-04-15,AR,"PEARCE, SHERI",See Remarks,False,"Common stock, par value $0.01 per share",sell,12859.0,23.89,307201.51
+2023-04-15,AR,"KENNEDY, MICHAEL N.",See Remarks,False,"Common stock, par value $0.01 per share",sell,12528.0,23.89,299293.92
+2023-04-15,AR,"RADY, PAUL M","Director, See Remarks",True,"Common stock, par value $0.01 per share",sell,82559.0,23.89,1972334.51
+2023-05-05,AR,"KENNEDY, MICHAEL N.",See Remarks,False,"Common stock, par value $0.01 per share",sell,150000.0,21.07,3160500.0
+2023-05-09,AR,"RADY, PAUL M","Director, See Remarks",True,"Common stock, par value $0.01 per share",sell,175879.0,21.1,3711046.9000000004
+2023-10-15,AR,"KENNEDY, MICHAEL N.",See Remarks,False,"Common stock, par value $0.01 per share",sell,7165.0,27.83,199401.94999999998
+2023-10-15,AR,"RADY, PAUL M","Director, See Remarks",True,"Common stock, par value $0.01 per share",sell,20943.0,27.83,582843.69
+2023-10-15,AR,"SCHULTZ, YVETTE K",See Remarks,False,"Common stock, par value $0.01 per share",sell,5512.0,27.83,153398.96
+2023-10-15,AR,"PEARCE, SHERI",See Remarks,False,"Common stock, par value $0.01 per share",sell,1929.0,27.83,53684.07
+2023-11-02,AR,"PEARCE, SHERI",See Remarks,False,"Common stock, par value $0.01 per share",sell,3460.0,29.92,103523.20000000001
+2024-02-28,AR,"KENNEDY, MICHAEL N.",See Remarks,False,"Common stock, par value $0.01 per share",sell,17378.0,25.46,442443.88
+2024-02-28,AR,"RADY, PAUL M","Director, See Remarks",True,"Common stock, par value $0.01 per share",sell,98153.0,25.46,2498975.38
+2024-03-07,AR,"PEARCE, SHERI",See Remarks,False,"Common stock, par value $0.01 per share",sell,3453.0,26.48,91435.44
+2024-03-07,AR,"SCHULTZ, YVETTE K",See Remarks,False,"Common stock, par value $0.01 per share",sell,7533.0,26.48,199473.84
+2024-03-07,AR,"KENNEDY, MICHAEL N.",See Remarks,False,"Common stock, par value $0.01 per share",sell,12142.0,26.48,321520.16000000003
+2024-03-07,AR,"RADY, PAUL M","Director, See Remarks",True,"Common stock, par value $0.01 per share",sell,28236.0,26.48,747689.28
+2024-03-12,AR,"KEENAN, W HOWARD JR",Director,True,"Common stock, par value $0.01 per share",sell,206978.0,26.15,5412474.699999999
+2024-03-13,AR,"PEARCE, SHERI",See Remarks,False,"Common stock, par value $0.01 per share",sell,28009.0,26.29,736356.61
+2024-03-13,AR,"KEENAN, W HOWARD JR",Director,True,"Common stock, par value $0.01 per share",sell,560729.0,26.3,14747172.700000001
+2024-03-14,AR,"KEENAN, W HOWARD JR",Director,True,"Common stock, par value $0.01 per share",sell,232293.0,25.85,6004774.050000001
+2024-04-15,AR,"SCHULTZ, YVETTE K",See Remarks,False,"Common stock, par value $0.01 per share",sell,17626.0,29.0,511154.0
+2024-04-15,AR,"RADY, PAUL M","Director, See Remarks",True,"Common stock, par value $0.01 per share",sell,82559.0,29.0,2394211.0
+2024-04-15,AR,"PEARCE, SHERI",See Remarks,False,"Common stock, par value $0.01 per share",sell,12861.0,29.0,372969.0
+2024-04-15,AR,"KENNEDY, MICHAEL N.",See Remarks,False,"Common stock, par value $0.01 per share",sell,12528.0,29.0,363312.0
+2024-05-01,AR,"CLARK, ROBERT J",Director,True,"Common stock, par value $0.01 per share",sell,10000.0,33.67,336700.0
+2024-05-07,AR,"KEENAN, W HOWARD JR",Director,True,"Common stock, par value $0.01 per share",sell,100000.0,34.53,3453000.0
+2024-05-08,AR,"KEENAN, W HOWARD JR",Director,True,"Common stock, par value $0.01 per share",sell,437007.0,34.35,15011190.450000001
+2024-05-09,AR,"KEENAN, W HOWARD JR",Director,True,"Common stock, par value $0.01 per share",sell,300000.0,34.23,10268999.999999998
+2024-05-10,AR,"KEENAN, W HOWARD JR",Director,True,"Common stock, par value $0.01 per share",sell,162993.0,33.3,5427666.899999999
+2024-05-14,AR,"KENNEDY, MICHAEL N.",See Remarks,False,"Common stock, par value $0.01 per share",sell,17325.0,33.97,588530.25
+2024-05-14,AR,"RADY, PAUL M","Director, See Remarks",True,"Common stock, par value $0.01 per share",sell,77961.0,33.97,2648335.17
+2024-05-14,AR,"KENNEDY, MICHAEL N.",See Remarks,False,"Common stock, par value $0.01 per share",sell,50000.0,33.72,1686000.0
+2024-05-20,AR,"PEARCE, SHERI",See Remarks,False,"Common stock, par value $0.01 per share",sell,16377.0,35.5,581383.5
+2024-08-05,AR,"SCHULTZ, YVETTE K",See Remarks,False,"Common stock, par value $0.01 per share",sell,50000.0,25.24,1262000.0
+2024-10-15,AR,"SCHULTZ, YVETTE K",See Remarks,False,"Common stock, par value $0.01 per share",sell,5512.0,27.35,150753.2
+2024-10-15,AR,"RADY, PAUL M","Director, See Remarks",True,"Common stock, par value $0.01 per share",sell,20943.0,27.35,572791.05
+2024-10-15,AR,"KENNEDY, MICHAEL N.",See Remarks,False,"Common stock, par value $0.01 per share",sell,7165.0,27.35,195962.75
+2024-10-15,AR,"PEARCE, SHERI",See Remarks,False,"Common stock, par value $0.01 per share",sell,1929.0,27.35,52758.15
+2025-02-18,AR,"KEENAN, W HOWARD JR",Director,True,"Common stock, par value $0.01 per share",sell,200000.0,39.7628,7952560.0
+2025-02-19,AR,"KEENAN, W HOWARD JR",Director,True,"Common stock, par value $0.01 per share",sell,700000.0,40.5655,28395850.0
+2025-02-19,AR,"MUTSCHLER, JACQUELINE C",Director,True,"Common stock, par value $0.01 per share",sell,12746.0,40.35,514301.10000000003
+2025-02-25,AR,"SCHULTZ, YVETTE K",See Remarks,False,"Common stock, par value $0.01 per share",sell,15202.0,37.35,567794.7000000001
+2025-02-25,AR,"RADY, PAUL M","Director, See Remarks",True,"Common stock, par value $0.01 per share",sell,57293.0,37.35,2139893.5500000003
+2025-02-25,AR,"KENNEDY, MICHAEL N.",See Remarks,False,"Common stock, par value $0.01 per share",sell,19677.0,37.35,734935.9500000001
+2025-03-07,AR,"KENNEDY, MICHAEL N.",See Remarks,False,"Common stock, par value $0.01 per share",sell,23872.0,33.64,803054.08
+2025-03-07,AR,"SCHULTZ, YVETTE K",See Remarks,False,"Common stock, par value $0.01 per share",sell,14573.0,33.64,490235.72000000003
+2025-03-07,AR,"PEARCE, SHERI",See Remarks,False,"Common stock, par value $0.01 per share",sell,9716.0,33.64,326846.24
+2025-03-07,AR,"RADY, PAUL M","Director, See Remarks",True,"Common stock, par value $0.01 per share",sell,55516.0,33.64,1867558.24
+2025-03-12,AR,"PEARCE, SHERI",See Remarks,False,"Common stock, par value $0.01 per share",sell,9830.0,35.6,349948.0
+2025-04-15,AR,"SCHULTZ, YVETTE K",See Remarks,False,"Common stock, par value $0.01 per share",sell,8083.0,33.1,267547.3
+2025-04-15,AR,"PEARCE, SHERI",See Remarks,False,"Common stock, par value $0.01 per share",sell,6005.0,33.1,198765.5
+2025-04-15,AR,"KENNEDY, MICHAEL N.",See Remarks,False,"Common stock, par value $0.01 per share",sell,12529.0,33.1,414709.9
+2025-04-15,AR,"RADY, PAUL M","Director, See Remarks",True,"Common stock, par value $0.01 per share",sell,45726.0,33.1,1513530.6
+2025-05-06,AR,"KENNEDY, MICHAEL N.",See Remarks,False,"Common stock, par value $0.01 per share",sell,11129.0,35.5,395079.5
+2025-05-06,AR,"RADY, PAUL M","Director, See Remarks",True,"Common stock, par value $0.01 per share",sell,32530.0,35.5,1154815.0
+2025-05-06,AR,"SCHULTZ, YVETTE K",See Remarks,False,"Common stock, par value $0.01 per share",sell,8561.0,35.5,303915.5
+2025-05-13,AR,"KEENAN, W HOWARD JR",Director,True,"Common Stock, par value $0.01 per share",sell,583189.0,40.6038,23679689.5182
+2025-05-13,AR,"PEARCE, SHERI",See Remarks,False,"Common stock, par value $0.01 per share",sell,12647.0,41.18,520803.46
+2025-05-13,AR,"KEENAN, W HOWARD JR",Director,True,"Common Stock, par value $0.01 per share",sell,478798.0,41.0867,19672229.7866
+2025-05-14,AR,"KEENAN, W HOWARD JR",Director,True,"Common Stock, par value $0.01 per share",sell,38013.0,40.3182,1532615.7366
+2025-05-16,AR,"SCHULTZ, YVETTE K",See Remarks,False,"Common stock, par value $0.01 per share",sell,25200.0,39.86,1004472.0
+2025-10-15,AR,"KENNEDY, MICHAEL N.",See Remarks,False,"Common stock, par value $0.01 per share",sell,7165.0,32.14,230283.1
+2025-10-15,AR,"PEARCE, SHERI",See Remarks,False,"Common stock, par value $0.01 per share",sell,1930.0,32.14,62030.200000000004
+2025-10-15,AR,"KRUEGER, BRENDAN E.",See Remarks,False,"Common stock, par value $0.01 per share",sell,4410.0,32.14,141737.4
+2025-10-15,AR,"SCHULTZ, YVETTE K",See Remarks,False,"Common stock, par value $0.01 per share",sell,5512.0,32.14,177155.68
+2025-11-07,AR,"KRUEGER, BRENDAN E.",See Remarks,False,"Common stock, par value $0.01 per share",buy,5000.0,33.35,166750.0
+2026-02-25,AR,"KRUEGER, BRENDAN E.",See Remarks,False,"Common stock, par value $0.01 per share",sell,41233.0,34.41,1418827.5299999998
+2026-02-25,AR,"KENNEDY, MICHAEL N.","Director, See Remarks",True,"Common stock, par value $0.01 per share",sell,74152.0,34.41,2551570.32
+2026-02-25,AR,"SCHULTZ, YVETTE K",See Remarks,False,"Common stock, par value $0.01 per share",sell,50101.0,34.41,1723975.41
+2026-02-27,AR,"HARDESTY, BENJAMIN A.",Director,True,"Common stock, par value $0.01 per share",sell,12000.0,36.0,432000.0
+2026-03-07,AR,"KENNEDY, MICHAEL N.","Director, See Remarks",True,"Common stock, par value $0.01 per share",sell,33203.0,38.83,1289272.49
+2026-03-07,AR,"PEARCE, SHERI",See Remarks,False,"Common stock, par value $0.01 per share",sell,13514.0,38.83,524748.62
+2026-03-07,AR,"SCHULTZ, YVETTE K",See Remarks,False,"Common stock, par value $0.01 per share",sell,20270.0,38.83,787084.1
+2026-03-07,AR,"KRUEGER, BRENDAN E.",See Remarks,False,"Common stock, par value $0.01 per share",sell,17355.0,38.83,673894.65
+2026-03-09,AR,"SCHULTZ, YVETTE K",See Remarks,False,"Common stock, par value $0.01 per share",sell,15000.0,39.33,589950.0
+2026-03-10,AR,"PEARCE, SHERI",See Remarks,False,"Common stock, par value $0.01 per share",sell,19667.0,38.13,749902.7100000001
+2026-03-16,AR,"KRUEGER, BRENDAN E.",See Remarks,False,"Common stock, par value $0.01 per share",sell,6706.0,41.03,275147.18
+2026-03-16,AR,"KENNEDY, MICHAEL N.","Director, See Remarks",True,"Common stock, par value $0.01 per share",sell,13729.0,41.03,563300.87
+2026-03-16,AR,"SCHULTZ, YVETTE K",See Remarks,False,"Common stock, par value $0.01 per share",sell,8382.0,41.03,343913.46
+2026-03-19,AR,"HARDESTY, BENJAMIN A.",Director,True,"Common stock, par value $0.01 per share",sell,12000.0,44.0,528000.0
+2026-05-04,AR,"KENNEDY, MICHAEL N.","Director, See Remarks",True,"Common stock, par value $0.01 per share",sell,170740.0,39.31,6711789.4
+2026-05-04,AR,"KENNEDY, MICHAEL N.","Director, See Remarks",True,"Common stock, par value $0.01 per share",sell,15086.0,39.61,597556.46
+2026-05-04,AR,"SCHULTZ, YVETTE K",See Remarks,False,"Common stock, par value $0.01 per share",sell,549.0,39.76,21828.239999999998
+2026-05-04,AR,"SCHULTZ, YVETTE K",See Remarks,False,"Common stock, par value $0.01 per share",sell,38941.0,39.26,1528823.66

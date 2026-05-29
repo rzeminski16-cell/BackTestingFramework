@@ -1,0 +1,440 @@
+date,symbol,insider_name,insider_title,is_executive,security_type,transaction_type,shares,price,value
+2008-11-19,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"6.11% Senior Notes, Series E, due April 10, 2015",sell,12600000.0,12852000.0,161935200000000.0
+2013-05-20,AIG,"JURGENSEN, WILLIAM G",Director,True,Common Stock,buy,10000.0,45.2,452000.0
+2013-10-21,AIG,"AMERICAN, INTERNATIONAL GROUP INC",10% Owner,False,"Common Stock, par value $0.01 per share",sell,5732648.0,15.895,91120439.96
+2013-11-18,AIG,"WINTROB, JAY S",Executive Vice President,True,Common Stock,sell,650.0,49.342,32072.3
+2013-12-02,AIG,"WINTROB, JAY S",Executive Vice President,True,Common Stock,sell,278.0,49.88,13866.640000000001
+2013-12-17,AIG,"HURD, JEFFREY J",Executive Vice President,True,Common Stock,sell,22522.0,49.4329,1113327.7737999998
+2013-12-17,AIG,"DOOLEY, WILLIAM N",Executive Vice President,True,Common Stock,sell,336.0,49.465,16620.24
+2013-12-17,AIG,"DOOLEY, WILLIAM N",Executive Vice President,True,Common Stock,sell,2220.0,49.465,109812.3
+2013-12-17,AIG,"DOOLEY, WILLIAM N",Executive Vice President,True,Common Stock,sell,424.0,49.465,20973.16
+2014-04-30,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See General Remarks,False,"3.46% Series E Senior Unsecured Notes due July 30, 2021",buy,15000000.0,15000000.0,225000000000000.0
+2014-04-30,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See General Remarks,False,Series C Mandatory Redeemable Preferred Shares,buy,1200000.0,25.0,30000000.0
+2014-05-08,AIG,"JURGENSEN, WILLIAM G",Director,True,Common Stock,buy,5000.0,52.5894,262947.0
+2014-06-05,AIG,"JURGENSEN, WILLIAM G",Director,True,Common Stock,sell,475.0,55.0305,26139.487500000003
+2014-08-11,AIG,"FISHER, PETER R.",Director,True,Common Stock,buy,4720.0,52.95,249924.0
+2014-10-09,AIG,"JURGENSEN, WILLIAM G",Director,True,Common Stock,buy,50.0,50.3826,2519.1299999999997
+2014-11-10,AIG,"JURGENSEN, WILLIAM G",Director,True,Common Stock,sell,190.0,54.3188,10320.572
+2014-11-18,AIG,"JURGENSEN, WILLIAM G",Director,True,Common Stock,buy,800.0,54.1025,43282.0
+2015-02-24,AIG,"HURD, JEFFREY J",Executive Vice President,True,Common Stock,sell,26810.0,54.9803,1474021.8429999999
+2015-03-03,AIG,"MARTINEZ, RONALD ERIC JR",Executive Vice President,True,Common Stock,sell,10000.0,55.6,556000.0
+2015-03-09,AIG,"MARTINEZ, RONALD ERIC JR",Executive Vice President,True,Common Stock,sell,10000.0,56.2,562000.0
+2015-05-04,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"Common Stock, par value $0.01 per share",sell,8447049.0,50.3413,425235427.82369995
+2015-05-05,AIG,"FISHER, PETER R.",Director,True,Common Stock,buy,4280.0,57.988,248188.63999999998
+2015-07-23,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,Series B Mandatory Redeemable Preferred Stock,buy,400.0,100000.0,40000000.0
+2015-07-23,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,Series A Mandatory Redeemable Preferred Stock,buy,100.0,100000.0,10000000.0
+2015-09-24,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"3.93% Series A Senior Unsecured Notes due March 3, 2016",sell,5454545.45,5498181.81,29990082575008.26
+2015-09-29,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"3.93% Series A Senior Unsecured Notes due March 3, 2016",sell,3636363.64,3665454.55,13328925649692.562
+2015-12-07,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"4.62% Series B Senior Unsecured Notes due March 3, 2018",sell,2250000.0,2400750.0,5401687500000.0
+2015-12-07,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"3.93% Series A Senior Unsecured Notes due March 3, 2016",sell,909090.91,914545.46,831404964467.7686
+2015-12-14,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"4.00% Series C Senior Unsecured Notes due March 22, 2022",sell,4000000.0,4080000.0,16320000000000.0
+2015-12-14,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"3.71% Series V Senior Unsecured Notes due May 26, 2016",sell,41000000.0,41287000.0,1692767000000000.0
+2015-12-14,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"4.62% Series B Senior Unsecured Notes due March 3, 2018",sell,3000000.0,3195000.0,9585000000000.0
+2015-12-18,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"4.51% Series C Senior Secured Notes due October 15, 2023",sell,4941176.47,5040000.0,24903529408800.0
+2015-12-18,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"4.66% Series D Senior Secured Notes due October 15, 2025",sell,6400000.0,6528000.0,41779200000000.0
+2015-12-22,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,Series B Mandatory Redeemable Preferred Stock,sell,160.0,102000.0,16320000.0
+2015-12-24,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,Series B Mandatory Redeemable Preferred Shares,sell,133333.0,25.5,3399991.5
+2016-01-12,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"4.62% Series B Senior Unsecured Notes due March 3, 2018",sell,2850000.0,3040950.0,8666707500000.0
+2016-01-20,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"4.38% Series W Senior Unsecured Notes due May 26, 2018",sell,2200000.0,2347400.0,5164280000000.0
+2016-01-28,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"4.38% Series W Senior Unsecured Notes due May 26, 2018",sell,4620000.0,4712400.0,21771288000000.0
+2016-02-04,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"4.66% Series D Senior Secured Notes due October 15, 2025",sell,5113043.48,5215304.35,26666077902983.137
+2016-02-04,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"4.51% Series C Senior Secured Notes due October 15, 2023",sell,3813299.24,3889565.23,14832076135489.426
+2016-02-05,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,Series A Mandatory Redeemable Preferred Stock,sell,29.0,102000.0,2958000.0
+2016-02-05,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,Series B Mandatory Redeemable Preferred Stock,sell,71.0,102000.0,7242000.0
+2016-02-11,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,Series B Mandatory Redeemable Preferred Stock,sell,99.0,102000.0,10098000.0
+2016-02-11,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"4.51% Series C Senior Secured Notes due October 15, 2023",sell,3159590.8,3222782.62,10182674316551.896
+2016-02-11,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"4.66% Series D Senior Secured Notes due October 15, 2025",sell,4236521.73,4321252.16,18307078676649.438
+2016-02-11,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,Series A Mandatory Redeemable Preferred Stock,sell,41.0,102000.0,4182000.0
+2016-02-12,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,3.46% Senior Secured Notes Series I due 6/11/2025,sell,576419.22,587947.6,338904296992.87195
+2016-02-12,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,3.76% Senior Secured Notes Series K due 6/11/2030,sell,2113537.12,2155807.86,4556379935697.763
+2016-02-12,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"4.51% Series C Senior Secured Notes due October 15, 2023",sell,1198465.48,1222434.79,1465045897366.0493
+2016-02-12,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,3.56% Senior Secured Notes Series J due 6/11/2027,sell,1537117.9,1567860.26,2409986070344.654
+2016-02-12,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,Series F Mandatory Redeemable Preferred Stock,sell,116.0,102000.0,11832000.0
+2016-02-12,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,Series G Mandatory Redeemable Preferred Stock,sell,218.0,102000.0,22236000.0
+2016-02-12,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"4.66% Series D Senior Secured Notes due October 15, 2025",sell,1606956.52,1639095.65,2633955441671.1377
+2016-02-16,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,Series B Mandatory Redeemable Preferred Shares,sell,266667.0,25.5,6800008.5
+2016-02-16,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,Series C Mandatory Redeemable Preferred Shares,sell,150000.0,25.5,3825000.0
+2016-02-18,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"4.62% Series B Senior Unsecured Notes due March 3, 2018",sell,900000.0,918000.0,826200000000.0
+2016-02-18,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"4.00% Series C Senior Unsecured Notes due March 22, 2022",sell,1800000.0,1836000.0,3304800000000.0
+2016-02-18,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"4.38% Series W Senior Unsecured Notes due May 26, 2018",sell,8360000.0,8527200.0,71287392000000.0
+2016-03-01,AIG,"JURGENSEN, WILLIAM G",Director,True,Common Stock,sell,185.0,51.8581,9593.7485
+2016-04-07,AIG,"SANKARAN, SID",Executive VP & CFO,True,Common Stock,sell,10303.0,54.11,557495.33
+2016-04-07,AIG,"RUSSO, THOMAS A",EVP & General Counsel,True,Common Stock,sell,23610.0,54.11,1277537.1
+2016-04-07,AIG,"QUANE, ALESSANDREA C.",Executive Vice President,True,Common Stock,sell,2406.0,54.11,130188.66
+2016-04-07,AIG,"QUANE, ALESSANDREA C.",Executive Vice President,True,Common Stock,sell,1512.0,54.11,81814.31999999999
+2016-04-07,AIG,"HOGAN, KEVIN T.",Executive Vice President,True,Common Stock,sell,16798.0,54.11,908939.78
+2016-04-07,AIG,"HANCOCK, PETER D.","Director, President & CEO",True,Common Stock,sell,32719.0,54.11,1770425.09
+2016-04-07,AIG,"SCHIMEK, ROBERT S.",Executive Vice President,True,Common Stock,sell,10531.0,54.11,569832.41
+2016-04-07,AIG,"HURD, JEFFREY J",Executive Vice President,True,Common Stock,sell,9254.0,54.11,500733.94
+2016-07-22,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"2.76% Series A Senior Secured Notes due July 22, 2023",buy,5000000.0,5000000.0,25000000000000.0
+2016-07-22,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"3.00% Series B Senior Secured Notes due July 22, 2026",buy,47000000.0,47000000.0,2209000000000000.0
+2016-12-09,AIG,"HOGAN, KEVIN T.",Executive Vice President,True,Common Stock,sell,249.0,65.7822,16379.767800000001
+2017-01-12,AIG,"QUANE, ALESSANDREA C.",Executive Vice President,True,Common Stock,sell,1907.0,66.95,127673.65000000001
+2017-01-12,AIG,"SANKARAN, SID",Executive VP & CFO,True,Common Stock,sell,8183.0,66.95,547851.85
+2017-01-12,AIG,"SCHIMEK, ROBERT S.",Executive Vice President,True,Common Stock,sell,10209.0,66.95,683492.55
+2017-01-12,AIG,"HOGAN, KEVIN T.",Executive Vice President,True,Common Stock,sell,16535.0,66.95,1107018.25
+2017-01-12,AIG,"QUANE, ALESSANDREA C.",Executive Vice President,True,Common Stock,sell,2359.0,66.95,157935.05000000002
+2017-01-12,AIG,"HANCOCK, PETER D.","Director, President & CEO",True,Common Stock,sell,30580.0,66.95,2047331.0
+2017-01-12,AIG,"HURD, JEFFREY J",Executive Vice President,True,Common Stock,sell,7134.0,66.95,477621.30000000005
+2017-02-24,AIG,"FASANO, PHILIP",Executive Vice President,True,Common Stock,sell,13812.0,63.41,875818.9199999999
+2017-02-24,AIG,"QUANE, ALESSANDREA C.",Executive Vice President,True,Common Stock,sell,1751.0,63.41,111030.90999999999
+2017-02-24,AIG,"FASANO, PHILIP",Executive Vice President,True,Common Stock,sell,4000.0,63.4009,253603.6
+2017-02-24,AIG,"HOGAN, KEVIN T.",Executive Vice President,True,Common Stock,sell,12553.0,63.41,795985.73
+2017-02-24,AIG,"HANCOCK, PETER D.","Director, President & CEO",True,Common Stock,sell,24409.0,63.41,1547774.69
+2017-02-24,AIG,"HURD, JEFFREY J",Executive Vice President,True,Common Stock,sell,5673.0,63.41,359724.93
+2017-02-24,AIG,"QUANE, ALESSANDREA C.",Executive Vice President,True,Common Stock,sell,976.0,63.41,61888.159999999996
+2017-02-24,AIG,"SANKARAN, SID",Executive VP & CFO,True,Common Stock,sell,6858.0,63.41,434865.77999999997
+2017-02-24,AIG,"SCHIMEK, ROBERT S.",Executive Vice President,True,Common Stock,sell,6049.0,63.41,383567.08999999997
+2017-02-27,AIG,"FASANO, PHILIP",Executive Vice President,True,Common Stock,sell,2000.0,63.981,127962.0
+2017-05-18,AIG,"DUPERREAULT, BRIAN","Director, President & CEO",True,Common Stock,buy,80000.0,61.4781,4918248.0
+2017-12-22,AIG,"JURGENSEN, WILLIAM G",Director,True,Common Stock,buy,79.551,60.338,4799.948238
+2018-01-11,AIG,"QUANE, ALESSANDREA C.",Executive Vice President,True,Common Stock,sell,2207.0,60.63,133810.41
+2018-01-11,AIG,"DEMAIO, DONNA",Executive Vice President,True,Common Stock,sell,3366.0,60.63,204080.58000000002
+2018-01-11,AIG,"MACARTNEY, CLAUDINE",Executive Vice President,True,Common Stock,sell,1007.0,60.63,61054.41
+2018-01-11,AIG,"SANKARAN, SID",Executive VP & CFO,True,Common Stock,sell,8375.0,60.63,507776.25
+2018-01-11,AIG,"SANKARAN, SID",Executive VP & CFO,True,Common Stock,sell,6077.0,60.63,368448.51
+2018-01-11,AIG,"QUANE, ALESSANDREA C.",Executive Vice President,True,Common Stock,sell,1514.0,60.63,91793.82
+2018-01-11,AIG,"QUANE, ALESSANDREA C.",Executive Vice President,True,Common Stock,sell,916.0,60.63,55537.08
+2018-01-11,AIG,"QUANE, ALESSANDREA C.",Executive Vice President,True,Common Stock,sell,1521.0,60.63,92218.23000000001
+2018-01-11,AIG,"MACIA, SERAINA",Executive Vice President,True,Common Stock,sell,4801.0,60.63,291084.63
+2018-01-11,AIG,"MACIA, SERAINA",Executive Vice President,True,Common Stock,sell,2228.0,60.63,135083.64
+2018-01-11,AIG,"MACARTNEY, CLAUDINE",Executive Vice President,True,Common Stock,sell,1943.0,60.63,117804.09000000001
+2018-01-11,AIG,"HOGAN, KEVIN T.",Executive Vice President,True,Common Stock,sell,11945.0,60.63,724225.35
+2018-01-11,AIG,"HOGAN, KEVIN T.",Executive Vice President,True,Common Stock,sell,15985.0,60.63,969170.55
+2018-01-11,AIG,"DEMAIO, DONNA",Executive Vice President,True,Common Stock,sell,1808.0,60.63,109619.04000000001
+2018-02-15,AIG,"MACARTNEY, CLAUDINE",Executive Vice President,True,Common Stock,sell,2052.0,59.61,122319.72
+2018-02-16,AIG,"MACIA, SERAINA",Executive Vice President,True,Common Stock,sell,3503.0,59.71,209164.13
+2018-02-21,AIG,"JURGENSEN, WILLIAM G",Director,True,Common Stock,buy,125.0,60.4604,7557.55
+2018-02-23,AIG,"DEMAIO, DONNA",Executive Vice President,True,Common Stock,sell,570.0,60.04,34222.8
+2018-02-23,AIG,"HABAYEB, ELIAS F.","SVP, Dep CFO & Grp Controller",True,Common Stock,sell,678.0,60.04,40707.12
+2018-02-23,AIG,"MACARTNEY, CLAUDINE",Executive Vice President,True,Common Stock,sell,252.0,60.04,15130.08
+2018-02-23,AIG,"GALLO, MARTHA",Executive Vice President,True,Common Stock,sell,749.0,60.04,44969.96
+2018-02-23,AIG,"QUANE, ALESSANDREA C.",Executive Vice President,True,Common Stock,sell,508.0,60.04,30500.32
+2018-02-23,AIG,"HOGAN, KEVIN T.",Executive Vice President,True,Common Stock,sell,2873.0,60.04,172494.91999999998
+2018-02-23,AIG,"QUANE, ALESSANDREA C.",Executive Vice President,True,Common Stock,sell,179.0,60.04,10747.16
+2018-02-23,AIG,"DACHILLE, DOUGLAS A.",Executive Vice President,True,Common Stock,sell,1940.0,60.04,116477.59999999999
+2018-02-23,AIG,"SANKARAN, SID",Executive VP & CFO,True,Common Stock,sell,1579.0,60.04,94803.16
+2018-02-23,AIG,"MACIA, SERAINA",Executive Vice President,True,Common Stock,sell,1156.0,60.04,69406.24
+2018-02-27,AIG,"CORNWELL, W DON",Director,True,Common Stock,sell,500.0,59.5,29750.0
+2018-02-27,AIG,"CORNWELL, W DON",Director,True,Common Stock,sell,500.0,59.05,29525.0
+2018-02-27,AIG,"CORNWELL, W DON",Director,True,Common Stock,sell,500.0,59.25,29625.0
+2018-02-28,AIG,"CORNWELL, W DON",Director,True,Common Stock,sell,1000.0,58.05,58050.0
+2018-04-18,AIG,"JURGENSEN, WILLIAM G",Director,True,Common Stock,buy,65.0,54.5451,3545.4314999999997
+2018-04-26,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"4.38% Series W Senior Unsecured Notes due May 26, 2018",sell,6820000.0,6925380.37,47231094123400.0
+2018-05-04,AIG,"LEONARDI, THOMAS B",Executive Vice President,True,Common Stock,buy,2500.0,51.55,128875.0
+2018-05-04,AIG,"STEENLAND, DOUGLAS M",Director,True,Common Stock,buy,3510.0,52.0154,182574.054
+2018-05-04,AIG,"STEENLAND, DOUGLAS M",Director,True,Common Stock,buy,1290.0,52.1747,67305.363
+2018-12-07,AIG,"QUANE, ALESSANDREA C.",Executive Vice President,True,Common Stock,sell,95.0,40.77,3873.15
+2018-12-07,AIG,"QUANE, ALESSANDREA C.",Executive Vice President,True,Common Stock,sell,44.0,40.77,1793.88
+2018-12-07,AIG,"QUANE, ALESSANDREA C.",Executive Vice President,True,Common Stock,sell,147.0,40.77,5993.1900000000005
+2018-12-07,AIG,"QUANE, ALESSANDREA C.",Executive Vice President,True,Common Stock,sell,138.0,40.77,5626.26
+2019-01-09,AIG,"JURGENSEN, WILLIAM G",Director,True,Common Stock,sell,395.0,41.0929,16231.6955
+2019-01-18,AIG,"MOURI, NAOHIRO",Executive Vice President,True,Common Stock,sell,264.0,42.45,11206.800000000001
+2019-01-18,AIG,"MACIA, SERAINA",Executive Vice President,True,Common Stock,sell,4968.0,42.45,210891.6
+2019-01-18,AIG,"MOURI, NAOHIRO",Executive Vice President,True,Common Stock,sell,209.0,42.45,8872.050000000001
+2019-01-18,AIG,"LEONARDI, THOMAS B",Executive Vice President,True,Common Stock,sell,5878.0,42.45,249521.1
+2019-01-18,AIG,"HOGAN, KEVIN T.",Executive Vice President,True,Common Stock,sell,10794.0,42.45,458205.30000000005
+2019-01-18,AIG,"MACIA, SERAINA",Executive Vice President,True,Common Stock,sell,2177.0,42.45,92413.65000000001
+2019-01-18,AIG,"MACIA, SERAINA",Executive Vice President,True,Common Stock,sell,1137.0,42.45,48265.65
+2019-01-18,AIG,"DACHILLE, DOUGLAS A.",Executive Vice President,True,Common Stock,sell,2046.0,42.45,86852.70000000001
+2019-01-18,AIG,"HOGAN, KEVIN T.",Executive Vice President,True,Common Stock,sell,2665.0,42.45,113129.25000000001
+2019-01-18,AIG,"QUANE, ALESSANDREA C.",Executive Vice President,True,Common Stock,sell,171.0,42.45,7258.950000000001
+2019-01-18,AIG,"QUANE, ALESSANDREA C.",Executive Vice President,True,Common Stock,sell,1462.0,42.45,62061.9
+2019-01-18,AIG,"MOURI, NAOHIRO",Executive Vice President,True,Common Stock,sell,81.0,42.45,3438.4500000000003
+2019-01-18,AIG,"MOURI, NAOHIRO",Executive Vice President,True,Common Stock,sell,82.0,42.45,3480.9
+2019-01-18,AIG,"MACIA, SERAINA",Executive Vice President,True,Common Stock,sell,4605.0,42.45,195482.25
+2019-01-18,AIG,"QUANE, ALESSANDREA C.",Executive Vice President,True,Common Stock,sell,670.0,42.45,28441.500000000004
+2019-01-18,AIG,"QUANE, ALESSANDREA C.",Executive Vice President,True,Common Stock,sell,522.0,42.45,22158.9
+2019-01-29,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,4.63% Mandatory Redeemable Preferred Shares Series E,buy,660.0,100000.0,66000000.0
+2019-02-13,AIG,"JURGENSEN, WILLIAM G",Director,True,Common Stock,buy,315.0,44.2324,13933.206
+2019-02-13,AIG,"JURGENSEN, WILLIAM G",Director,True,Common Stock,buy,345.0,44.2464,15265.008
+2019-03-01,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,Floating Rate Mandatory Redeemable Preferred Shares Series A,sell,1000.0,100000.0,100000000.0
+2019-03-15,AIG,"HOGAN, KEVIN T.",Executive Vice President,True,Common Stock,sell,51968.0,44.04,2288670.7199999997
+2019-03-15,AIG,"QUANE, ALESSANDREA C.",Executive Vice President,True,Common Stock,sell,29981.0,44.04,1320363.24
+2019-03-15,AIG,"DACHILLE, DOUGLAS A.",Executive Vice President,True,Common Stock,sell,55966.0,44.04,2464742.64
+2019-03-29,AIG,"DACHILLE, DOUGLAS A.",Executive Vice President,True,Common Stock,sell,407.0,43.06,17525.420000000002
+2019-03-29,AIG,"HOGAN, KEVIN T.",Executive Vice President,True,Common Stock,sell,378.0,43.06,16276.68
+2019-03-29,AIG,"QUANE, ALESSANDREA C.",Executive Vice President,True,Common Stock,sell,218.0,43.06,9387.08
+2019-05-23,AIG,"VAUGHAN, THERESE M",Director,True,Common Stock,buy,1000.0,51.71,51710.0
+2019-07-01,AIG,"JURGENSEN, WILLIAM G",Director,True,Common Stock,sell,50.0,53.472,2673.6
+2019-07-01,AIG,"JURGENSEN, WILLIAM G",Director,True,Common Stock,sell,585.0,53.4721,31281.178499999998
+2019-08-13,AIG,"MACIA, SERAINA","EVP & CEO, Blackboard",True,Common Stock,sell,7550.0,56.0,422800.0
+2019-08-15,AIG,"JURGENSEN, WILLIAM G",Director,True,Common Stock,sell,295.0,53.7468,15855.306
+2019-08-15,AIG,"JURGENSEN, WILLIAM G",Director,True,Common Stock,sell,320.0,53.7619,17203.807999999997
+2019-12-02,AIG,"LING, KAREN",EVP and Chief HR Officer,True,Common Stock,sell,7092.0,51.66,366372.72
+2020-01-13,AIG,"JURGENSEN, WILLIAM G",Director,True,Common Stock,sell,150.0,52.3249,7848.735
+2020-01-13,AIG,"JURGENSEN, WILLIAM G",Director,True,Common Stock,sell,40.0,52.325,2093.0
+2020-01-17,AIG,"DUPERREAULT, BRIAN","Director, CEO",True,Common Stock,sell,23469.0,52.9,1241510.0999999999
+2020-01-17,AIG,"HOGAN, KEVIN T.",EVP - Life & Retirement,True,Common Stock,sell,2773.0,52.9,146691.69999999998
+2020-01-17,AIG,"HOGAN, KEVIN T.",EVP - Life & Retirement,True,Common Stock,sell,6395.0,52.9,338295.5
+2020-01-17,AIG,"FATO, LUCIANA",EVP and General Counsel,True,Common Stock,sell,4793.0,52.9,253549.69999999998
+2020-01-17,AIG,"QUANE, ALESSANDREA C.",EVP and Chief Risk Officer,True,Common Stock,sell,161.0,52.9,8516.9
+2020-01-17,AIG,"DACHILLE, DOUGLAS A.",EVP and CIO,True,Common Stock,sell,2913.0,52.9,154097.69999999998
+2020-01-17,AIG,"DACHILLE, DOUGLAS A.",EVP and CIO,True,Common Stock,sell,7068.0,52.9,373897.2
+2020-01-17,AIG,"QUANE, ALESSANDREA C.",EVP and Chief Risk Officer,True,Common Stock,sell,2622.0,52.9,138703.8
+2020-01-17,AIG,"ZAFFINO, PETER",President and Global COO,True,Common Stock,sell,7377.0,52.9,390243.3
+2020-01-17,AIG,"LEONARDI, THOMAS B",EVP-Gvt Affairs Policy & Comms,True,Common Stock,sell,5739.0,52.9,303593.1
+2020-01-17,AIG,"MOURI, NAOHIRO",EVP and Chief Auditor,True,Common Stock,sell,921.0,52.9,48720.9
+2020-01-17,AIG,"MOURI, NAOHIRO",EVP and Chief Auditor,True,Common Stock,sell,88.0,52.9,4655.2
+2020-01-17,AIG,"MACIA, SERAINA",EVP - Blackboard,True,Common Stock,sell,2200.0,52.9,116380.0
+2020-01-17,AIG,"MACIA, SERAINA",EVP - Blackboard,True,Common Stock,sell,3777.0,52.9,199803.3
+2020-01-17,AIG,"MOURI, NAOHIRO",EVP and Chief Auditor,True,Common Stock,sell,84.0,52.9,4443.599999999999
+2020-01-17,AIG,"MOURI, NAOHIRO",EVP and Chief Auditor,True,Common Stock,sell,111.0,52.9,5871.9
+2020-01-17,AIG,"MACIA, SERAINA",EVP - Blackboard,True,Common Stock,sell,977.0,52.9,51683.299999999996
+2020-01-17,AIG,"MACIA, SERAINA",EVP - Blackboard,True,Common Stock,sell,1313.0,52.9,69457.7
+2020-01-17,AIG,"QUANE, ALESSANDREA C.",EVP and Chief Risk Officer,True,Common Stock,sell,536.0,52.9,28354.399999999998
+2020-01-17,AIG,"QUANE, ALESSANDREA C.",EVP and Chief Risk Officer,True,Common Stock,sell,1020.0,52.9,53958.0
+2020-01-17,AIG,"MOURI, NAOHIRO",EVP and Chief Auditor,True,Common Stock,sell,276.0,52.9,14600.4
+2020-01-22,AIG,"JURGENSEN, WILLIAM G",Director,True,Common Stock,buy,125.0,52.2322,6529.025
+2020-03-23,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"3.46% Series E Senior Unsecured Notes due July 30, 2021",sell,83333.33,86436.1,7203008045.213
+2020-03-23,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"3.46% Series E Senior Unsecured Notes due July 30, 2021",sell,1625000.0,1685510.65,2738954806250.0
+2020-03-23,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"4.66% Series H Senior Secured Notes due October 15, 2025",sell,10312194.95,10729346.16,110643109287953.89
+2020-03-23,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"4.51% Series G Senior Secured Notes due October 15, 2023",sell,7690817.66,7996865.19,61502432027891.26
+2020-03-23,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"3.46% Series E Senior Unsecured Notes due July 30, 2021",sell,3291666.67,3414239.86,11238539550547.465
+2020-03-23,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"3.46% Series E Senior Unsecured Notes due July 30, 2021",sell,4608333.0,4779934.97,22027532060105.008
+2020-03-23,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"3.46% Series E Senior Unsecured Notes due July 30, 2021",sell,116667.0,121011.37,14118033503.789999
+2020-03-23,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"3.46% Series E Senior Unsecured Notes due July 30, 2021",sell,2275000.0,2359714.9,5368351397500.0
+2020-03-23,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,3.46% Senior Secured Notes Series I due 6/11/2025,sell,1213235.29,1249393.75,1515808588605.4375
+2020-03-23,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,3.56% Senior Secured Notes Series J due 6/11/2027,sell,3235294.12,3332633.33,10782049016665.02
+2020-03-23,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,3.76% Senior Secured Notes Series K due 6/11/2030,sell,4448529.41,4584891.66,20396025391173.723
+2020-03-25,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,3.76% Senior Secured Notes Series K due 6/11/2030,sell,943627.45,972749.89,917913498188.4805
+2020-03-25,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,3.56% Senior Secured Notes Series J due 6/11/2027,sell,686274.51,707057.94,485235841315.1094
+2020-03-25,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"4.00% Series C Senior Unsecured Notes due March 22, 2022",sell,1800000.0,1919106.98,3454392564000.0
+2020-03-25,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"3.46% Series E Senior Unsecured Notes due July 30, 2021",sell,49999.67,51994.49,2599707341.8183
+2020-03-25,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"3.46% Series E Senior Unsecured Notes due July 30, 2021",sell,975000.0,1013892.48,988545168000.0
+2020-03-25,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,3.46% Senior Secured Notes Series I due 6/11/2025,sell,257352.94,265072.38,68217156305.7972
+2020-03-25,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"3.46% Series E Senior Unsecured Notes due July 30, 2021",sell,1975000.33,2053782.19,4056220502998.1226
+2020-03-27,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,3.46% Senior Secured Notes Series I due 6/11/2025,sell,393382.35,401323.86,157873723157.87097
+2020-03-27,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"4.66% Series H Senior Secured Notes due October 15, 2025",sell,6836985.27,7048726.72,48192040756895.41
+2020-03-27,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,3.56% Senior Secured Notes Series J due 6/11/2027,sell,1049019.61,1070505.86,1122981639759.9148
+2020-03-27,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,3.76% Senior Secured Notes Series K due 6/11/2030,sell,1442401.96,1472794.97,2124362351406.141
+2020-03-27,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"4.51% Series G Senior Secured Notes due October 15, 2023",sell,5099012.11,5253486.68,26787592201043.695
+2020-04-24,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"2.89% Series LL Senior Unsecured Notes due October 29, 2020",sell,27891328.0,28450123.0,793511712233344.0
+2020-04-24,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"3.46% Series OO Senior Unsecured Notes due October 29, 2024",sell,12677876.0,12956966.0,164266808284216.0
+2020-04-24,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"3.26% Series MM Senior Unsecured Notes due October 29, 2022",sell,8451918.0,8632108.0,72957868983144.0
+2020-04-24,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"3.57% Series FF Senior Unsecured Notes due April 16, 2023",sell,7606726.0,7777085.0,59158154673710.0
+2020-04-24,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,Series C Mandatory Redeemable Preferred Shares,sell,551699.0,25.46,14046256.540000001
+2020-04-24,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"4.00% Series C Senior Unsecured Notes due March 22, 2022",sell,2164519.0,2198430.0,4758543505170.0
+2020-04-24,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"3.67% Series GG Senior Unsecured Notes due April 16, 2025",sell,8451918.0,8644140.0,73059562460520.0
+2020-04-24,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"3.93% Series KK Senior Unsecured Notes due July 30, 2024",sell,16903835.0,17303541.0,292496201979735.0
+2020-04-24,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,Series I Mandatory Redeemable Preferred Shares,sell,118391.0,25.4475,3012754.9725
+2020-04-24,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,Series H Mandatory Redeemable Preferred Shares,sell,394634.0,25.455,10045408.469999999
+2020-05-06,AIG,"JURGENSEN, WILLIAM G",Director,True,Common Stock,buy,20000.0,24.0983,481965.99999999994
+2020-07-29,AIG,"LING, KAREN",EVP and Chief HR Officer,True,Common Stock,sell,2436.0,32.67,79584.12000000001
+2020-08-18,AIG,"JURGENSEN, WILLIAM G",Director,True,Common Stock,buy,385.0,29.5895,11391.9575
+2020-08-18,AIG,"JURGENSEN, WILLIAM G",Director,True,Common Stock,buy,450.0,29.5755,13308.975
+2020-09-04,AIG,"HABAYEB, ELIAS F.","Sr. VP, Depty. CFO & CAO",True,Common Stock,sell,8500.0,29.4024,249920.4
+2020-09-08,AIG,"JURGENSEN, WILLIAM G",Director,True,Common Stock,buy,645.0,29.135,18792.075
+2020-09-29,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,"2.89% Series LL Senior Unsecured Notes due October 29, 2020",sell,5108672.0,5149683.16,26308042168363.52
+2020-10-20,AIG,"JURGENSEN, WILLIAM G",Director,True,Common Stock,sell,100.0,30.8634,3086.3399999999997
+2020-10-20,AIG,"JURGENSEN, WILLIAM G",Director,True,Common Stock,sell,100.0,31.0293,3102.93
+2020-10-20,AIG,"JURGENSEN, WILLIAM G",Director,True,Common Stock,sell,110.0,30.7782,3385.602
+2020-10-20,AIG,"JURGENSEN, WILLIAM G",Director,True,Common Stock,sell,50.0,30.7634,1538.17
+2020-10-28,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,Series H Mandatory Redeemable Preferred Shares,sell,405366.0,25.18,10207115.879999999
+2020-10-28,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,Series C Mandatory Redeemable Preferred Shares,sell,498301.0,25.22,12567151.219999999
+2020-10-28,AIG,"AMERICAN, INTERNATIONAL GROUP INC",See Remarks,False,Series I Mandatory Redeemable Preferred Shares,sell,121609.0,25.43,3092516.87
+2020-10-30,AIG,"AMERICAN, INTERNATIONAL GROUP INC",10% Owner,False,Common Stock,buy,625000.0,16.0,10000000.0
+2020-11-03,AIG,"AMERICAN, INTERNATIONAL GROUP INC",10% Owner,False,Common Stock,buy,625000.0,16.0,10000000.0
+2020-12-14,AIG,"QUANE, ALESSANDREA C.",EVP and Chief Risk Officer,True,Common Stock,sell,12750.0,38.6781,493145.775
+2020-12-14,AIG,"QUANE, ALESSANDREA C.",EVP and Chief Risk Officer,True,Common Stock,sell,7576.0,38.6428,292757.8528
+2021-01-15,AIG,"MCELROY, DAVID",EVP & CEO General Insurance,True,Common Stock,sell,6625.0,41.35,273943.75
+2021-01-15,AIG,"MOURI, NAOHIRO",EVP and Chief Auditor,True,Common Stock,sell,289.0,41.35,11950.15
+2021-01-15,AIG,"FATO, LUCIANA","EVP, GC, Comms & Govt Affairs",True,Common Stock,sell,5500.0,41.35,227425.0
+2021-01-15,AIG,"HABAYEB, ELIAS F.","Sr. VP, Depty. CFO & CAO",True,Common Stock,sell,6069.0,41.35,250953.15
+2021-01-15,AIG,"HOGAN, KEVIN T.",EVP - Life & Retirement,True,Common Stock,sell,10079.0,41.35,416766.65
+2021-01-15,AIG,"LYONS, MARK DONALD",EVP and CFO,True,Common Stock,sell,684.0,41.35,28283.4
+2021-01-15,AIG,"MOURI, NAOHIRO",EVP and Chief Auditor,True,Common Stock,sell,1828.0,41.35,75587.8
+2021-01-15,AIG,"HABAYEB, ELIAS F.","Sr. VP, Depty. CFO & CAO",True,Common Stock,sell,2179.0,41.35,90101.65000000001
+2021-01-15,AIG,"REPKO, JOHN P",EVP and Chief Info. Officer,True,Common Stock,sell,2229.0,41.35,92169.15000000001
+2021-01-15,AIG,"ZAFFINO, PETER","Director, President and Global COO",True,Common Stock,sell,10437.0,41.35,431569.95
+2021-01-15,AIG,"QUANE, ALESSANDREA C.",EVP and Chief Risk Officer,True,Common Stock,sell,1121.0,41.35,46353.35
+2021-01-15,AIG,"DACHILLE, DOUGLAS A.",EVP and CIO,True,Common Stock,sell,10880.0,41.35,449888.0
+2021-01-15,AIG,"DUPERREAULT, BRIAN","Director, CEO",True,Common Stock,sell,30468.0,41.35,1259851.8
+2021-01-15,AIG,"QUANE, ALESSANDREA C.",EVP and Chief Risk Officer,True,Common Stock,sell,2834.0,41.35,117185.90000000001
+2021-03-02,AIG,"HOGAN, KEVIN T.",EVP - Life & Retirement,True,Common Stock,sell,24719.0,45.96,1136085.24
+2021-03-02,AIG,"DACHILLE, DOUGLAS A.",EVP and CIO,True,Common Stock,sell,26174.0,45.96,1202957.04
+2021-03-02,AIG,"FATO, LUCIANA","EVP, GC, Comms & Govt Affairs",True,Common Stock,sell,13865.0,45.96,637235.4
+2021-03-02,AIG,"MCELROY, DAVID",EVP & CEO General Insurance,True,Common Stock,sell,2250.0,45.96,103410.0
+2021-03-02,AIG,"DUPERREAULT, BRIAN","Director, Executive Chair",True,Common Stock,sell,61848.0,45.96,2842534.08
+2021-03-02,AIG,"HABAYEB, ELIAS F.","Sr. VP, Depty. CFO & CAO",True,Common Stock,sell,3709.0,45.96,170465.64
+2021-03-02,AIG,"ZAFFINO, PETER","Director, President and CEO",True,Common Stock,sell,25396.0,45.96,1167200.16
+2021-03-02,AIG,"REPKO, JOHN P",EVP and Chief Info. Officer,True,Common Stock,sell,5733.0,45.96,263488.68
+2021-03-02,AIG,"MOURI, NAOHIRO",EVP and Chief Auditor,True,Common Stock,sell,3326.0,45.96,152862.96
+2021-03-02,AIG,"LYONS, MARK DONALD",EVP and CFO,True,Common Stock,sell,1655.0,45.96,76063.8
+2021-05-10,AIG,"HOGAN, KEVIN T.",EVP - Life & Retirement,True,Common Stock,sell,41000.0,52.28,2143480.0
+2021-05-11,AIG,"DUPERREAULT, BRIAN","Director, Executive Chair",True,Common Stock,sell,5800.0,51.4507,298414.06
+2021-05-11,AIG,"DUPERREAULT, BRIAN","Director, Executive Chair",True,Common Stock,sell,59235.0,50.3915,2984940.5025
+2021-06-02,AIG,"DACHILLE, DOUGLAS A.",EVP and CIO,True,Common Stock,sell,19712.0,53.2301,1049271.7312
+2021-08-11,AIG,"HOGAN, KEVIN T.",EVP - Life & Retirement,True,Common Stock,sell,41400.0,53.6101,2219458.14
+2021-09-13,AIG,"FATO, LUCIANA","EVP, GC, Comms & Govt Affairs",True,Common Stock,sell,10077.0,55.12,555444.24
+2021-11-16,AIG,"FATO, LUCIANA","EVP, GC, Comms & Govt Affairs",True,Common Stock,sell,7000.0,58.1702,407191.4
+2022-01-14,AIG,"PURTILL, SABRA R.",EVP and Chief Risk Officer,True,Common Stock,sell,499.0,61.91,30893.089999999997
+2022-01-14,AIG,"MCELROY, DAVID",EVP & CEO General Insurance,True,Common Stock,sell,19751.0,61.91,1222784.41
+2022-01-14,AIG,"REPKO, JOHN P",EVP and Chief Info. Officer,True,Common Stock,sell,2755.0,61.91,170562.05
+2022-01-14,AIG,"GLAZER, ROSE MARIE E.","EVP, CHRO & Corp Secretary",True,Common Stock,sell,3131.0,61.91,193840.21
+2022-01-14,AIG,"MOURI, NAOHIRO",EVP and Chief Auditor,True,Common Stock,sell,2540.0,61.91,157251.4
+2022-01-14,AIG,"PURTILL, SABRA R.",EVP and Chief Risk Officer,True,Common Stock,sell,1747.0,61.91,108156.76999999999
+2022-01-14,AIG,"HABAYEB, ELIAS F.","SVP, CFO L&R and CAO",True,Common Stock,sell,5458.0,61.91,337904.77999999997
+2022-01-14,AIG,"FATO, LUCIANA","EVP, GC, Comms & Govt Affairs",True,Common Stock,sell,11120.0,61.91,688439.2
+2022-01-14,AIG,"FITZSIMONS, SHANE",EVP & Chief Financial Officer,True,Common Stock,sell,4036.0,61.91,249868.75999999998
+2022-01-14,AIG,"ZAFFINO, PETER","Director, Chairman & CEO",True,Common Stock,sell,23261.0,61.91,1440088.51
+2022-01-14,AIG,"LYONS, MARK DONALD","EVP, Actuary & Portfolio Mgmt",True,Common Stock,sell,7428.0,61.91,459867.48
+2022-01-14,AIG,"HOGAN, KEVIN T.",EVP - Life & Retirement,True,Common Stock,sell,10119.0,61.91,626467.2899999999
+2022-01-27,AIG,"JURGENSEN, WILLIAM G",Director,True,Common Stock,sell,125.0,56.6529,7081.6125
+2022-02-18,AIG,"REPKO, JOHN P",EVP and Chief Info. Officer,True,Common Stock,sell,7646.0,61.8765,473107.719
+2022-03-01,AIG,"LYONS, MARK DONALD","EVP, Actuary & Portfolio Mgmt",True,Common Stock,sell,16859.0,57.89,975967.51
+2022-03-01,AIG,"ZAFFINO, PETER","Director, Chairman & CEO",True,Common Stock,sell,47594.0,57.89,2755216.66
+2022-03-01,AIG,"FATO, LUCIANA","EVP, GC, Comms & Govt Affairs",True,Common Stock,sell,24973.0,57.89,1445686.97
+2022-03-01,AIG,"GLAZER, ROSE MARIE E.","EVP, CHRO & Corp Secretary",True,Common Stock,sell,2209.0,57.89,127879.01
+2022-03-01,AIG,"MCELROY, DAVID",EVP & CEO General Insurance,True,Common Stock,sell,6073.0,57.89,351565.97000000003
+2022-03-01,AIG,"HOGAN, KEVIN T.",EVP - Life & Retirement,True,Common Stock,sell,23145.0,57.89,1339864.05
+2022-03-01,AIG,"FITZSIMONS, SHANE",EVP & Chief Financial Officer,True,Common Stock,sell,2915.0,57.89,168749.35
+2022-03-01,AIG,"MOURI, NAOHIRO",EVP and Chief Auditor,True,Common Stock,sell,4720.0,57.89,273240.8
+2022-03-01,AIG,"REPKO, JOHN P",EVP and Chief Info. Officer,True,Common Stock,sell,7300.0,57.89,422597.0
+2022-03-01,AIG,"PURTILL, SABRA R.",EVP and Chief Risk Officer,True,Common Stock,sell,2175.0,57.89,125910.75
+2022-06-03,AIG,"JURGENSEN, WILLIAM G",Director,True,Common Stock,buy,160.0,57.3,9168.0
+2022-08-24,AIG,"FATO, LUCIANA","EVP, GC, Comms & Govt Affairs",True,Common Stock,sell,17000.0,54.01,918170.0
+2022-09-01,AIG,"AMERICAN, INTERNATIONAL GROUP, INC.",10% Owner,False,Series C Mandatory Redeemable Preferred Shares,buy,720000.0,25.0,18000000.0
+2022-09-12,AIG,"FATO, LUCIANA","EVP, GC, Comms & Govt Affairs",True,Common Stock,sell,9711.0,56.53,548962.83
+2022-09-19,AIG,"AMERICAN, INTERNATIONAL GROUP, INC.",10% Owner,False,Common Stock,sell,80000000.0,21.0,1680000000.0
+2022-12-08,AIG,"FITZSIMONS, SHANE",EVP & Chief Financial Officer,True,Common Stock,sell,2412.0,62.26,150171.12
+2022-12-09,AIG,"GLAZER, ROSE MARIE E.",EVP & Chief HR Officer,True,Common Stock,sell,1522.0,62.51,95140.22
+2023-01-13,AIG,"MCELROY, DAVID",EVP & CEO General Insurance,True,Common Stock,sell,35958.0,64.41,2316054.78
+2023-01-13,AIG,"WADE, CLAUDE E.","EVP, Hd of Ops & Chief Dig Off",True,Common Stock,sell,5319.0,64.41,342596.79
+2023-01-13,AIG,"FATO, LUCIANA","EVP, GC, Comms & Govt Affairs",True,Common Stock,sell,13708.0,64.41,882932.2799999999
+2023-01-13,AIG,"MOURI, NAOHIRO",EVP and Chief Auditor,True,Common Stock,sell,3131.0,64.41,201667.71
+2023-01-13,AIG,"LYONS, MARK DONALD","EVP, Interim CFO, Act & Prt Mg",True,Common Stock,sell,6819.0,64.41,439211.79
+2023-01-13,AIG,"FITZSIMONS, SHANE",EVP & Chief Financial Officer,True,Common Stock,sell,18631.0,64.41,1200022.71
+2023-01-13,AIG,"GLAZER, ROSE MARIE E.",EVP & Chief HR Officer,True,Common Stock,sell,6277.0,64.41,404301.57
+2023-01-13,AIG,"BOLT, THOMAS ALLEN",EVP and Chief Risk Officer,True,Common Stock,sell,14493.0,64.41,933494.13
+2023-01-13,AIG,"REPKO, JOHN P",EVP and Chief Info. Officer,True,Common Stock,sell,3898.0,64.41,251070.18
+2023-01-13,AIG,"CARBONE, KATHLEEN",VP & Chief Accounting Officer,True,Common Stock,sell,2029.0,64.41,130687.89
+2023-01-13,AIG,"ZAFFINO, PETER","Director, Chairman & CEO",True,Common Stock,sell,27143.0,64.41,1748280.63
+2023-02-14,AIG,"HUNTER, CONSTANCE","EVP, Head of Strategy & ESG",True,Common Stock,sell,2555.0,61.52,157183.6
+2023-02-16,AIG,"JURGENSEN, WILLIAM G",Director,True,Common Stock,sell,100.0,63.007,6300.7
+2023-02-28,AIG,"MOURI, NAOHIRO",EVP and Chief Auditor,True,Common Stock,sell,13695.0,61.11,836901.45
+2023-02-28,AIG,"REPKO, JOHN P",EVP and Chief Info. Officer,True,Common Stock,sell,24109.0,61.11,1473300.99
+2023-02-28,AIG,"ZAFFINO, PETER","Director, Chairman & CEO",True,Common Stock,sell,131643.0,61.11,8044703.7299999995
+2023-02-28,AIG,"MCELROY, DAVID",EVP & CEO General Insurance,True,Common Stock,sell,10464.0,61.11,639455.04
+2023-02-28,AIG,"BOLT, THOMAS ALLEN",EVP and Chief Risk Officer,True,Common Stock,sell,1522.0,61.11,93009.42
+2023-02-28,AIG,"HUNTER, CONSTANCE","EVP, Head of Strategy & ESG",True,Common Stock,sell,703.0,61.11,42960.33
+2023-02-28,AIG,"CARBONE, KATHLEEN",VP & Chief Accounting Officer,True,Common Stock,sell,777.0,61.11,47482.47
+2023-02-28,AIG,"GLAZER, ROSE MARIE E.",EVP & Chief HR Officer,True,Common Stock,sell,837.0,61.11,51149.07
+2023-02-28,AIG,"WADE, CLAUDE E.","EVP, Hd of Ops & Chief Dig Off",True,Common Stock,sell,1017.0,61.11,62148.87
+2023-02-28,AIG,"FITZSIMONS, SHANE",EVP & Chief Financial Officer,True,Common Stock,sell,4059.0,61.11,248045.49
+2023-02-28,AIG,"HOGAN, KEVIN T.","CEO, Corebridge Financial, Inc",True,Common Stock,sell,56083.0,61.11,3427232.13
+2023-02-28,AIG,"FATO, LUCIANA","EVP, GC, Comms & Govt Affairs",True,Common Stock,sell,75938.0,61.11,4640571.18
+2023-04-16,AIG,"AMERICAN, INTERNATIONAL GROUP, INC.",See Remarks,False,"3.57% Series FF Senior Unsecured Notes due April 16, 2023",sell,1393274.0,1409578.0,1963928378372.0
+2023-06-12,AIG,"AMERICAN, INTERNATIONAL GROUP, INC.",10% Owner,False,Common Stock,sell,74750000.0,16.25,1214687500.0
+2023-06-14,AIG,"AMERICAN, INTERNATIONAL GROUP, INC.",10% Owner,False,Series E Mandatory Redeemable Preferred Shares,buy,400000.0,25.0,10000000.0
+2023-06-23,AIG,"AMERICAN, INTERNATIONAL GROUP, INC.",10% Owner,False,Common Stock,sell,10981108.0,16.41,180199982.28
+2023-07-24,AIG,"AMERICAN, INTERNATIONAL GROUP, INC.",See Remarks,False,"2.76% Series A Senior Secured Notes due July 22, 2023",sell,5000000.0,5069766.67,25348833350000.0
+2023-08-04,AIG,"AMERICAN, INTERNATIONAL GROUP, INC.",10% Owner,False,"6.81% Series M Senior Secured Notes due August 4, 2030",buy,29500000.0,29500000.0,870250000000000.0
+2023-08-04,AIG,"AMERICAN, INTERNATIONAL GROUP, INC.",10% Owner,False,"6.77% Series L Senior Secured Notes due August 4, 2028",buy,24500000.0,24500000.0,600250000000000.0
+2023-08-04,AIG,"AMERICAN, INTERNATIONAL GROUP, INC.",10% Owner,False,"6.75% Series K Senior Secured Notes due August 4, 2026",buy,6000000.0,6000000.0,36000000000000.0
+2023-08-09,AIG,"CARBONE, KATHLEEN",VP & Chief Accounting Officer,True,Common Stock,sell,7757.0,61.3,475504.1
+2023-10-15,AIG,"AMERICAN, INTERNATIONAL GROUP, INC.",See Remarks,False,"4.51% Series G Senior Secured Notes due October 15, 2023",sell,4097638.26,4190553.34,17171371696554.787
+2023-11-08,AIG,"AMERICAN, INTERNATIONAL GROUP, INC.",10% Owner,False,Common Stock,sell,50000000.0,20.5,1025000000.0
+2023-12-05,AIG,"AMERICAN, INTERNATIONAL GROUP, INC.",10% Owner,False,Common Stock,sell,35000000.0,20.5,717500000.0
+2023-12-08,AIG,"ZAFFINO, PETER","Director, Chairman & CEO",True,Common Stock,sell,41789.0,65.53,2738433.17
+2023-12-09,AIG,"GLAZER, ROSE MARIE E.","EVP, Gen Counsel & Corp Sec",True,Common Stock,sell,1532.0,66.18,101387.76000000001
+2023-12-18,AIG,"AMERICAN, INTERNATIONAL GROUP, INC.",10% Owner,False,Common Stock,sell,6210256.0,21.75,135073068.0
+2023-12-19,AIG,"AMERICAN, INTERNATIONAL GROUP, INC.",10% Owner,False,"7.40% Series R Senior Secured Notes due January 20, 2034",buy,50000000.0,50000000.0,2500000000000000.0
+2023-12-19,AIG,"AMERICAN, INTERNATIONAL GROUP, INC.",10% Owner,False,"7.23% Series Q Senior Secured Notes due January 20, 2031",buy,39000000.0,39000000.0,1521000000000000.0
+2024-01-12,AIG,"HANCOCK, JONATHAN","EVP & CEO, Int'l Insurance",True,Common Stock,sell,18158.0,67.5,1225665.0
+2024-01-12,AIG,"BOLT, THOMAS ALLEN",EVP and Chief Risk Officer,True,Common Stock,sell,7660.0,67.5,517050.0
+2024-01-12,AIG,"CARBONE, KATHLEEN",VP & Chief Accounting Officer,True,Common Stock,sell,1830.0,67.5,123525.0
+2024-01-12,AIG,"GLAZER, ROSE MARIE E.","EVP, General Counsel",True,Common Stock,sell,4144.0,67.5,279720.0
+2024-01-12,AIG,"SCHAPER, CHRISTOPHER","EVP, Glbl Chf Underwriting Off",True,Common Stock,sell,8201.0,67.5,553567.5
+2024-01-12,AIG,"ZAFFINO, PETER","Director, Chairman & CEO",True,Common Stock,sell,31074.0,67.5,2097495.0
+2024-01-12,AIG,"MCELROY, DAVID","EVP, Chairman, General Ins",True,Common Stock,sell,10132.0,67.5,683910.0
+2024-02-27,AIG,"ZAFFINO, PETER","Director, Chairman & CEO",True,Common Stock,sell,128435.0,71.95,9240898.25
+2024-02-27,AIG,"BAILEY, DONALD",EVP & CEO North Amer Insur,True,Common Stock,sell,1173.0,71.95,84397.35
+2024-02-27,AIG,"SCHAPER, CHRISTOPHER","EVP, Glbl Chf Underwriting Off",True,Common Stock,sell,2149.0,71.95,154620.55000000002
+2024-02-27,AIG,"HANCOCK, JONATHAN","EVP & CEO, Int'l Insurance",True,Common Stock,sell,6342.0,71.95,456306.9
+2024-02-27,AIG,"GLAZER, ROSE MARIE E.","EVP, General Counsel",True,Common Stock,sell,1671.0,71.95,120228.45000000001
+2024-02-27,AIG,"HOGAN, KEVIN T.","CEO, Corebridge Financial, Inc",True,Common Stock,sell,40572.0,71.95,2919155.4
+2024-02-27,AIG,"DEVINE, TED T","EVP, Chief Admin Officer",True,Common Stock,sell,2452.0,71.95,176421.4
+2024-02-27,AIG,"WADE, CLAUDE E.","EVP, Chief Dig Off & Hd of Ops",True,Common Stock,sell,2064.0,71.95,148504.80000000002
+2024-02-27,AIG,"CARBONE, KATHLEEN",VP & Chief Accounting Officer,True,Common Stock,sell,2232.0,71.95,160592.4
+2024-02-27,AIG,"PURTILL, SABRA R.",EVP and CFO,True,Common Stock,sell,1656.0,71.95,119149.20000000001
+2024-02-27,AIG,"FRY, CHARLES","EVP, Reinsur & Risk Cap Optim",True,Common Stock,sell,991.0,71.95,71302.45
+2024-02-27,AIG,"BOLT, THOMAS ALLEN",EVP and Chief Risk Officer,True,Common Stock,sell,2494.0,71.95,179443.30000000002
+2024-02-27,AIG,"MCELROY, DAVID","EVP, Chairman, General Ins",True,Common Stock,sell,49426.0,71.95,3556200.7
+2024-03-14,AIG,"INGLIS, JOHN C",Director,True,Common Stock,buy,659.0,75.39,49682.01
+2024-03-15,AIG,"ZAFFINO, PETER","Director, Chairman & CEO",True,Common Stock,sell,332034.0,75.87,25191419.580000002
+2024-03-15,AIG,"ZAFFINO, PETER","Director, Chairman & CEO",True,Common Stock,sell,966.0,76.29,73696.14
+2024-03-15,AIG,"ZAFFINO, PETER","Director, Chairman & CEO",True,Common Stock,buy,333000.0,64.53,21488490.0
+2024-05-22,AIG,"INGLIS, JOHN C",Director,True,Common Stock,buy,635.0,78.53,49866.55
+2024-06-03,AIG,"AMERICAN, INTERNATIONAL GROUP, INC.",10% Owner,False,Common Stock,sell,30000000.0,29.2,876000000.0
+2024-06-12,AIG,"ZAFFINO, PETER","Director, Chairman & CEO",True,Common Stock,sell,901.0,75.0,67575.0
+2024-06-12,AIG,"ZAFFINO, PETER","Director, Chairman & CEO",True,Stock Option C (Right to Buy),sell,200000.0,64.53,12906000.0
+2024-06-12,AIG,"ZAFFINO, PETER","Director, Chairman & CEO",True,Common Stock,sell,199099.0,74.52,14836857.479999999
+2024-06-12,AIG,"ZAFFINO, PETER","Director, Chairman & CEO",True,Common Stock,buy,200000.0,64.53,12906000.0
+2024-06-16,AIG,"FRY, CHARLES","EVP, Reinsur & Risk Cap Optim",True,Common Stock,sell,2130.0,73.98,157577.4
+2024-06-19,AIG,"PURTILL, SABRA R.",EVP and CFO,True,Common Stock,sell,3856.0,74.88,288737.27999999997
+2024-07-02,AIG,"AMERICAN, INTERNATIONAL GROUP, INC.",10% Owner,False,Common Stock,sell,1932609.0,29.2,56432182.8
+2024-08-07,AIG,"AMERICAN, INTERNATIONAL GROUP, INC.",10% Owner,False,Common Stock,sell,8032129.0,24.9,200000012.1
+2024-09-16,AIG,"AMERICAN, INTERNATIONAL GROUP, INC.",10% Owner,False,Common Stock,sell,5000000.0,28.86,144300000.0
+2024-10-16,AIG,"DANDRIDGE, EDWARD LEE","EVP, Chief Marketing & Comms",True,Common Stock,sell,1014.0,77.14,78219.96
+2024-11-07,AIG,"AMERICAN, INTERNATIONAL GROUP, INC.",10% Owner,False,Common Stock,sell,30000000.0,31.2,936000000.0
+2024-11-26,AIG,"INGLIS, JOHN C",Director,True,Common Stock,buy,660.0,75.76,50001.600000000006
+2024-12-01,AIG,"NAVAGAMUWA, ROSHAN","EVP, Chief Info. Officer",True,Common Stock,sell,14121.0,76.01,1073337.21
+2024-12-08,AIG,"ZAFFINO, PETER","Director, Chairman & CEO",True,Common Stock,sell,41789.0,74.08,3095729.12
+2024-12-09,AIG,"AMERICAN, INTERNATIONAL GROUP, INC.",10% Owner,False,Common Stock,sell,121956256.0,31.4704,3838012158.8224
+2024-12-09,AIG,"GLAZER, ROSE MARIE E.","EVP, General Counsel",True,Common Stock,sell,1532.0,74.08,113490.56
+2024-12-16,AIG,"GLAZER, ROSE MARIE E.","EVP, General Counsel",True,Common Stock,sell,2589.0,72.09,186641.01
+2025-01-02,AIG,"TWININGDAVIS, MELISSA","EVP, Chief Admin Officer",True,Common Stock,sell,6736.0,72.98,491593.28
+2025-02-13,AIG,"RICE, JOHN G",Director,True,Common Stock,buy,10000.0,77.0,770000.0
+2025-03-04,AIG,"NAVAGAMUWA, ROSHAN","EVP, Chief Info. Officer",True,Common Stock,sell,975.0,82.94,80866.5
+2025-03-04,AIG,"BAILEY, DONALD",EVP & CEO North Amer Insur,True,Common Stock,sell,2391.0,82.94,198309.54
+2025-03-04,AIG,"FLATT, CHRISTOPHER","EVP, Chief Underwriting Off",True,Common Stock,sell,4053.0,82.94,336155.82
+2025-03-04,AIG,"ZAFFINO, PETER","Director, Chairman & CEO",True,Common Stock,sell,101449.0,82.94,8414180.06
+2025-03-04,AIG,"SCHAPER, CHRISTOPHER","EVP, Chief Risk Officer",True,Common Stock,sell,6744.0,82.94,559347.36
+2025-03-04,AIG,"GLAZER, ROSE MARIE E.","EVP, General Counsel",True,Common Stock,sell,12196.0,82.94,1011536.24
+2025-03-04,AIG,"CARBONE, KATHLEEN",VP & Chief Accounting Officer,True,Common Stock,sell,6395.0,82.94,530401.2999999999
+2025-03-04,AIG,"DANDRIDGE, EDWARD LEE","EVP, Chief Marketing & Comms",True,Common Stock,sell,609.0,82.94,50510.46
+2025-03-04,AIG,"WADE, CLAUDE E.","EVP, Chief Dig Off & Hd of Ops",True,Common Stock,sell,14021.0,82.94,1162901.74
+2025-03-04,AIG,"HANCOCK, JONATHAN","EVP & CEO, Int'l Insurance",True,Common Stock,sell,16454.0,82.94,1364694.76
+2025-03-04,AIG,"FRY, CHARLES","EVP, Reinsur & Risk Cap Optim",True,Common Stock,sell,2277.0,82.94,188854.38
+2025-04-01,AIG,"NAVAGAMUWA, ROSHAN","EVP, Chief Info. Officer",True,Common Stock,sell,8852.0,86.81,768442.12
+2025-05-05,AIG,"FLATT, CHRISTOPHER","EVP, Chief Underwriting Off",True,Common Stock,sell,46182.0,83.261,3845159.502
+2025-05-05,AIG,"TWININGDAVIS, MELISSA","EVP, Chief Admin Officer",True,Common Stock,sell,9321.0,83.2606,776072.0525999999
+2025-05-05,AIG,"WADE, CLAUDE E.","EVP, Chief Dig Off & Hd of Ops",True,Common Stock,sell,22456.0,83.5738,1876733.2528000001
+2025-05-13,AIG,"AMERICAN, INTERNATIONAL GROUP, INC.",10% Owner,False,Common Stock,sell,13386629.0,32.15,430380122.34999996
+2025-05-16,AIG,"GLAZER, ROSE MARIE E.","EVP, General Counsel",True,2019 Stock Option (Right to Buy),sell,12100.0,44.28,535788.0
+2025-05-16,AIG,"GLAZER, ROSE MARIE E.","EVP, General Counsel",True,2018 Stock Option (Right to Buy),sell,8235.0,55.94,460665.89999999997
+2025-05-16,AIG,"GLAZER, ROSE MARIE E.","EVP, General Counsel",True,Common Stock,sell,27950.0,83.9559,2346567.405
+2025-05-16,AIG,"GLAZER, ROSE MARIE E.","EVP, General Counsel",True,Common Stock,sell,7004.0,84.2943,590397.2772
+2025-05-16,AIG,"GLAZER, ROSE MARIE E.","EVP, General Counsel",True,2020 Stock Option (Right to Buy),sell,14619.0,32.43,474094.17
+2025-05-20,AIG,"CARBONE, KATHLEEN",VP & Chief Accounting Officer,True,Common Stock,sell,25809.0,84.05,2169246.4499999997
+2025-05-20,AIG,"CARBONE, KATHLEEN",VP & Chief Accounting Officer,True,Common Stock,buy,6539.0,46.95,307006.05000000005
+2025-05-20,AIG,"CARBONE, KATHLEEN",VP & Chief Accounting Officer,True,Common Stock,sell,4264.0,84.11,358645.04
+2025-05-20,AIG,"CARBONE, KATHLEEN",VP & Chief Accounting Officer,True,Common Stock,buy,10638.0,61.61,655407.18
+2025-05-20,AIG,"CARBONE, KATHLEEN",VP & Chief Accounting Officer,True,Common Stock,buy,8632.0,59.72,515503.04
+2025-06-03,AIG,"LAFNITZEGGER, KELLY","EVP, Chief HR Officer",True,Common Stock,sell,549.0,85.55,46966.95
+2025-06-16,AIG,"FRY, CHARLES","EVP, Reinsur & Risk Cap Optim",True,Common Stock,sell,2266.0,85.44,193607.04
+2025-08-06,AIG,"AMERICAN, INTERNATIONAL GROUP, INC.",10% Owner,False,Common Stock,sell,30000000.0,33.65,1009500000.0
+2025-08-08,AIG,"INGLIS, JOHN C",Director,True,Common Stock,buy,653.0,77.04,50307.12
+2025-09-05,AIG,"AMERICAN, INTERNATIONAL GROUP, INC.",10% Owner,False,Common Stock,sell,1184160.0,33.65,39846984.0
+2025-09-30,AIG,"INGLIS, JOHN C",Director,True,Common Stock,buy,15.2916,78.0329,1193.24789364
+2025-10-16,AIG,"DANDRIDGE, EDWARD LEE","EVP, Chief Marketing & Comms",True,Common Stock,sell,1436.0,77.02,110600.72
+2025-10-21,AIG,"WALSH, KEITH",EVP and CFO,True,Common Stock,sell,7563.0,78.38,592787.94
+2025-11-04,AIG,"AMERICAN, INTERNATIONAL GROUP, INC.",10% Owner,False,Common Stock,sell,32600000.0,31.1,1013860000.0
+2025-12-08,AIG,"ZAFFINO, PETER","Director, Chairman & CEO",True,Common Stock,sell,41789.0,76.31,3188918.5900000003
+2025-12-15,AIG,"GLAZER, ROSE MARIE E.","EVP, General Counsel",True,Common Stock,sell,2589.0,86.3,223430.69999999998
+2025-12-30,AIG,"INGLIS, JOHN C",Director,True,Common Stock,buy,13.8791,86.47,1200.125777
+2026-02-02,AIG,"WALSH, KEITH",EVP and CFO,True,Common Stock,sell,4540.0,73.92,335596.8
+2026-02-12,AIG,"AMERICAN, INTERNATIONAL GROUP, INC.",10% Owner,False,Common Stock,sell,24654833.0,30.42,750000019.86
+2026-03-03,AIG,"GLAZER, ROSE MARIE E.","EVP, General Counsel",True,Common Stock,sell,11753.0,80.49,945998.97
+2026-03-03,AIG,"ZAFFINO, PETER","Director, Chairman & CEO",True,Common Stock,sell,134150.0,80.49,10797733.5
+2026-03-03,AIG,"TWININGDAVIS, MELISSA","EVP, Chief Admin Officer",True,Common Stock,sell,657.0,80.49,52881.92999999999
+2026-03-03,AIG,"FRY, CHARLES","EVP, Reinsur & Risk Cap Optim",True,Common Stock,sell,12744.0,80.49,1025764.5599999999
+2026-03-03,AIG,"SCHAPER, CHRISTOPHER","EVP, Chief Risk Officer",True,Common Stock,sell,10857.0,80.49,873879.9299999999
+2026-03-03,AIG,"DANDRIDGE, EDWARD LEE","EVP, Chief Marketing & Comms",True,Common Stock,sell,1171.0,80.49,94253.79
+2026-03-03,AIG,"LAFNITZEGGER, KELLY","EVP, Chief HR Officer",True,Common Stock,sell,702.0,80.49,56503.979999999996
+2026-03-03,AIG,"WALSH, KEITH",EVP and CFO,True,Common Stock,sell,1405.0,80.49,113088.45
+2026-03-03,AIG,"CARBONE, KATHLEEN",VP & Chief Accounting Officer,True,Common Stock,sell,6823.0,80.49,549183.27
+2026-03-03,AIG,"HANCOCK, JONATHAN","EVP & CEO, Int'l Insurance",True,Common Stock,sell,13259.0,80.49,1067216.91
+2026-03-03,AIG,"NAVAGAMUWA, ROSHAN","EVP, Chief Info. Officer",True,Common Stock,sell,1874.0,80.49,150838.25999999998
+2026-04-01,AIG,"NAVAGAMUWA, ROSHAN","EVP, Chief Info. Officer",True,Common Stock,sell,10059.0,75.56,760058.04
