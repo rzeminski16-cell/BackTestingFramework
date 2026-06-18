@@ -20,8 +20,8 @@ from .position_manager import PositionManager
 from .trade_executor import TradeExecutor
 from .backtest_result import BacktestResult
 from .vulnerability_score import VulnerabilityScoreCalculator, VulnerabilityResult, SwapDecision
-from ..Data.currency_converter import CurrencyConverter
-from ..Data.security_registry import SecurityRegistry
+from ..Data.currency_converter import CurrencyConverter, MissingFXRateError
+from ..Data.security_registry import SecurityRegistry, MissingCurrencyError
 from ..Data.historical_data_view import HistoricalDataView
 
 
@@ -192,6 +192,9 @@ class PortfolioEngine:
 
         # Reset trade ID counter for this backtest
         reset_trade_counter()
+
+        # Fail fast on currency/FX problems before running the backtest.
+        self._validate_currencies(list(data_dict.keys()))
 
         # Initialize position managers for each symbol
         self.position_managers = {}
@@ -1091,34 +1094,99 @@ class PortfolioEngine:
                 ctx.position_final_duration_days = final_duration
                 ctx.position_open_at_end = open_at_end
 
+    def _validate_currencies(self, symbols: List[str]) -> None:
+        """
+        Validate currency metadata and FX availability before running.
+
+        Strict currency handling only applies when both a currency converter
+        and a security registry are wired up (the real GUI/backtest path).
+        Engines constructed without them (most unit tests) keep the previous
+        behaviour of no conversion.
+
+        Raises:
+            MissingCurrencyError: If any symbol is missing currency information.
+            MissingFXRateError: If any non-base symbol has no FX rate available.
+        """
+        if self.currency_converter is None or self.security_registry is None:
+            return
+
+        base_currency = self.config.base_currency
+        missing_currency: List[str] = []
+        missing_fx: List[str] = []
+
+        for symbol in symbols:
+            try:
+                currency = self.security_registry.require_currency(symbol)
+            except MissingCurrencyError as exc:
+                missing_currency.append(str(exc))
+                continue
+
+            if currency == base_currency:
+                continue
+
+            # Flag that this ticker is in a different currency (once per symbol).
+            if symbol not in self._fx_rate_warnings:
+                self._fx_rate_warnings.add(symbol)
+                print(
+                    f"FX: {symbol} is denominated in {currency}; converting to "
+                    f"{base_currency} using {currency}/{base_currency} rates."
+                )
+
+            if not self.currency_converter.has_rate(currency):
+                missing_fx.append(f"{symbol} ({currency})")
+
+        if missing_currency:
+            raise MissingCurrencyError(
+                "Cannot run backtest - the following securities are missing "
+                "currency information:\n  - " + "\n  - ".join(missing_currency)
+            )
+
+        if missing_fx:
+            raise MissingFXRateError(
+                f"Cannot run backtest - no FX rates available to convert these "
+                f"securities to {base_currency}:\n  - " + "\n  - ".join(missing_fx)
+                + f"\nAdd the matching series to raw_data/forex "
+                f"(e.g. {base_currency}USD_weekly.csv or USD{base_currency}_weekly.csv)."
+            )
+
     def _get_fx_rate(self, symbol: str, date: datetime) -> float:
-        """Get FX rate to convert from security currency to base currency."""
+        """
+        Get FX rate to convert from security currency to base currency.
+
+        Returns 1.0 when no conversion is needed or when FX is not wired up.
+
+        Raises:
+            MissingCurrencyError: If FX is wired up but the symbol has no currency.
+            MissingFXRateError: If FX is wired up but no rate is available for the
+                security's currency on ``date``.
+        """
+        # Backward-compatible: without FX wiring, no conversion is applied.
         if self.currency_converter is None or self.security_registry is None:
             return 1.0
 
-        metadata = self.security_registry.get_metadata(symbol)
-        if metadata is None:
-            return 1.0
-
-        security_currency = metadata.currency
+        # Strict: an unknown currency must not silently disable conversion.
+        security_currency = self.security_registry.require_currency(symbol)
         base_currency = self.config.base_currency
 
         if security_currency == base_currency:
             return 1.0
 
+        # Get conversion rate (handles inverse pairs automatically)
         rate = self.currency_converter.get_rate(
             from_currency=security_currency,
             to_currency=base_currency,
             date=date
         )
 
+        # Strict: never silently fall back to 1.0 - that would misprice trades.
         if rate is None:
-            currency_pair = f"{security_currency}/{base_currency}"
-            if currency_pair not in self._fx_rate_warnings:
-                self._fx_rate_warnings.add(currency_pair)
-                print(f"\nWARNING: No FX rate available for {currency_pair} on {date.date()}")
-                print(f"   FX rates will default to 1.0 (no conversion)")
-            return 1.0
+            raise MissingFXRateError(
+                f"No FX rate available to convert {security_currency} to "
+                f"{base_currency} for {symbol} on {date.date()}. Ensure "
+                f"raw_data/forex contains a {base_currency}{security_currency} or "
+                f"{security_currency}{base_currency} series covering the full "
+                f"backtest date range."
+            )
 
         return rate
 

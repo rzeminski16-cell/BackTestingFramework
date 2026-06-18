@@ -8,6 +8,22 @@ from typing import Dict, List, Optional, Set
 from dataclasses import dataclass
 
 
+class MissingCurrencyError(ValueError):
+    """Raised when a security has no currency defined and one is required."""
+    pass
+
+
+# Placeholder values that mean "currency not filled in yet" rather than a real
+# ISO currency code. Treated the same as a missing/empty currency on the strict
+# path so that unfilled entries fail fast with a clear message.
+PLACEHOLDER_CURRENCIES = {"", "NA", "N/A", "NONE", "UNKNOWN", "TBD", "?"}
+
+
+def is_real_currency(value: str) -> bool:
+    """Return True if ``value`` looks like a real currency code (not a placeholder)."""
+    return bool(value) and value.strip().upper() not in PLACEHOLDER_CURRENCIES
+
+
 @dataclass
 class SecurityMetadata:
     """Metadata for a security."""
@@ -120,6 +136,40 @@ class SecurityRegistry:
 
         return metadata
 
+    def require_currency(self, symbol: str) -> str:
+        """
+        Get the currency for a symbol, raising if it is unknown.
+
+        Unlike :meth:`get_currency`, this never falls back to a default. It is
+        used on the strict backtesting path where an unknown currency would
+        silently disable FX conversion and produce wrong results.
+
+        Args:
+            symbol: Security symbol
+
+        Returns:
+            Currency code (e.g. 'USD', 'GBP', 'EUR')
+
+        Raises:
+            MissingCurrencyError: If the symbol is not registered or has no
+                currency defined.
+        """
+        metadata = self.securities.get(symbol)
+        if metadata is None:
+            raise MissingCurrencyError(
+                f"Security '{symbol}' is not in config/security_metadata.json. "
+                f"Add it with a 'currency' field (e.g. USD, GBP, EUR) so FX "
+                f"conversion can be applied."
+            )
+        if not is_real_currency(metadata.currency):
+            shown = metadata.currency or "(empty)"
+            raise MissingCurrencyError(
+                f"Security '{symbol}' has a placeholder currency '{shown}' in "
+                f"config/security_metadata.json. Set its 'currency' field to a "
+                f"real code (e.g. USD, GBP, EUR) so FX conversion can be applied."
+            )
+        return metadata.currency
+
     def get_currency(self, symbol: str, default: str = "USD") -> str:
         """
         Get currency for a symbol.
@@ -157,7 +207,7 @@ class SecurityRegistry:
             if metadata is None:
                 issues['not_found'].append(symbol)
             else:
-                if not metadata.currency:
+                if not is_real_currency(metadata.currency):
                     issues['missing_currency'].append(symbol)
                 if not metadata.type:
                     issues['missing_type'].append(symbol)
