@@ -297,6 +297,15 @@ class PortfolioEngine:
                 # Get FX rate for currency conversion
                 fx_rate = self._get_fx_rate(symbol, current_date)
 
+                # FULL ISOLATION: size every trade off the fixed starting equity so
+                # position sizing never compounds with realized P&L.
+                if self.config.full_isolation:
+                    sizing_capital = self.config.initial_capital
+                    sizing_equity = self.config.initial_capital
+                else:
+                    sizing_capital = capital
+                    sizing_equity = total_equity
+
                 # Create context
                 context = StrategyContext(
                     data=historical_data,
@@ -304,8 +313,8 @@ class PortfolioEngine:
                     current_price=current_price,
                     current_date=current_date,
                     position=pm.get_position(),
-                    available_capital=capital,
-                    total_equity=total_equity,
+                    available_capital=sizing_capital,
+                    total_equity=sizing_equity,
                     symbol=symbol,
                     fx_rate=fx_rate
                 )
@@ -522,6 +531,31 @@ class PortfolioEngine:
             signal_requirements.append((symbol, signal, context, strategy, required_capital, quantity))
 
         if not signal_requirements:
+            return capital
+
+        # FULL ISOLATION: take every signal at full size, ignoring capital
+        # availability. Each trade is simulated independently of the others.
+        if self.config.full_isolation:
+            for symbol, signal, context, strategy, required_capital, quantity in signal_requirements:
+                pm = self.position_managers[symbol]
+                current_price = current_prices[symbol]
+                other_signals = [s for s in all_signal_symbols if s != symbol]
+
+                self._record_capital_event(
+                    current_date, symbol, "EXECUTED",
+                    capital, required_capital, total_equity,
+                    num_open_positions, open_position_symbols.copy(), other_signals,
+                    "Executed (full isolation - capital availability ignored)"
+                )
+
+                capital = self._open_position_with_tracking(
+                    symbol, current_date, current_price, signal, strategy, context,
+                    capital, pm, required_capital, num_open_positions, other_signals,
+                    override_quantity=quantity
+                )
+                num_open_positions += 1
+                open_position_symbols.append(symbol)
+
             return capital
 
         # Calculate total capital needed for all signals
@@ -1133,7 +1167,8 @@ class PortfolioEngine:
         total_cost = entry_order.total_value() + entry_commission
         total_cost_base = self._convert_to_base_currency(total_cost, symbol, date)
 
-        if total_cost_base > capital:
+        # FULL ISOLATION mode takes every trade regardless of available capital.
+        if total_cost_base > capital and not self.config.full_isolation:
             return capital  # Insufficient capital
 
         # Get entry FX rate and currency
@@ -1153,7 +1188,12 @@ class PortfolioEngine:
                     pos_val = other_pm.get_position_value(other_price)
                     pos_val_base = self._convert_to_base_currency(pos_val, sym, date)
                     total_position_value += pos_val_base
-        entry_equity = capital + total_position_value
+        # In full isolation each trade is sized off the fixed starting equity, so
+        # record that as the entry equity rather than the leveraged cash balance.
+        if self.config.full_isolation:
+            entry_equity = self.config.initial_capital
+        else:
+            entry_equity = capital + total_position_value
 
         # Open position with actual execution price (including slippage)
         pm.open_position(
@@ -1287,8 +1327,11 @@ class PortfolioEngine:
 
         fx_rate = self._get_fx_rate(symbol, date)
 
-        # Calculate pyramid size - use signal.size as fraction of available capital
-        capital_to_use = capital * signal.size
+        # Calculate pyramid size - use signal.size as fraction of available capital.
+        # In full isolation, size off the fixed starting equity so pyramids also
+        # ignore the (leveraged) running cash balance.
+        sizing_base = self.config.initial_capital if self.config.full_isolation else capital
+        capital_to_use = sizing_base * signal.size
         quantity = capital_to_use / (execution_price * fx_rate)
 
         if quantity <= 0:
@@ -1312,7 +1355,7 @@ class PortfolioEngine:
         total_cost = pyramid_order.total_value() + pyramid_commission
         total_cost_base = self._convert_to_base_currency(total_cost, symbol, date)
 
-        if total_cost_base > capital:
+        if total_cost_base > capital and not self.config.full_isolation:
             return capital
 
         # Add pyramid to position (updates average price and sets break-even stop)

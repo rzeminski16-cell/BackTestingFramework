@@ -102,6 +102,10 @@ class PortfolioConfig:
         base_currency: Base currency for the account (default: GBP)
         slippage_percent: Slippage percentage applied to all trades (default: 0.1%)
         basket_name: Optional name of basket being used (for logging purposes)
+        full_isolation: If True, simulate every trade in isolation. Every signal is
+            taken (capital availability is ignored) and position size is always
+            calculated from the starting equity (initial_capital), so it never
+            compounds. Capital contention settings are not applied in this mode.
     """
     initial_capital: float = 100000.0
     commission: CommissionConfig = field(default_factory=CommissionConfig)
@@ -111,6 +115,7 @@ class PortfolioConfig:
     base_currency: str = "GBP"  # Base currency of account
     slippage_percent: float = 0.1  # Default 0.1% slippage
     basket_name: Optional[str] = None  # Optional basket name for logging
+    full_isolation: bool = False  # Take every signal, fixed sizing equity
 
     def __post_init__(self):
         """Validate portfolio configuration."""
@@ -134,7 +139,8 @@ class PortfolioConfig:
             'capital_contention': self.capital_contention.to_dict(),
             'base_currency': self.base_currency,
             'slippage_percent': self.slippage_percent,
-            'basket_name': self.basket_name
+            'basket_name': self.basket_name,
+            'full_isolation': self.full_isolation
         }
 
 

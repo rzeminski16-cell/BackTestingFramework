@@ -606,3 +606,141 @@ class TestRejectionPositionContext:
         # past min_trade_age_days=1, so a score can be computed).
         scored = [c for c in named if c.position_score_at_rejection is not None]
         assert scored, "Expected at least one context with a vulnerability score"
+
+
+# =============================================================================
+# Full Isolation Mode Tests
+# =============================================================================
+
+class EquityRecordingStrategy(PortfolioDeterministicStrategy):
+    """Records the total_equity seen each time position_size is called."""
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.entry_equities = []
+
+    def position_size(self, context, signal):
+        self.entry_equities.append(context.total_equity)
+        return self.position_size_shares
+
+
+def _make_full_isolation_config(initial_capital=100000.0):
+    """Create a PortfolioConfig with full isolation enabled."""
+    return PortfolioConfig(
+        initial_capital=initial_capital,
+        commission=CommissionConfig(mode=CommissionMode.PERCENTAGE, value=0.0),
+        slippage_percent=0.0,
+        capital_contention=CapitalContentionConfig.default_mode(),
+        full_isolation=True,
+    )
+
+
+class TestFullIsolation:
+    """Test full isolation mode (every signal taken, fixed sizing equity)."""
+
+    def test_all_signals_taken_when_capital_exhausted(self):
+        """In full isolation, signals are never rejected for lack of capital."""
+        reset_trade_counter()
+        # Tiny capital that could not normally afford even one full position.
+        config = _make_full_isolation_config(initial_capital=100.0)
+        engine = PortfolioEngine(config)
+
+        data_dict = {
+            "AAPL": _make_price_data(symbol_offset=0.0),
+            "GOOG": _make_price_data(symbol_offset=0.0),
+        }
+        # Both buy at bar 3 for 100 shares * ~101.5 = ~10150 each (far above 100).
+        strategy = PortfolioDeterministicStrategy(
+            buy_bars={3}, sell_bars={10}, stop_loss_price=50.0,
+            position_size_shares=100,
+        )
+
+        result = engine.run(data_dict, strategy)
+
+        # No signal should be rejected.
+        assert len(result.signal_rejections) == 0
+        # Every security should have actually traded.
+        for symbol in data_dict:
+            assert len(result.symbol_results[symbol].trades) == 1
+
+    def test_default_mode_rejects_for_contrast(self):
+        """Sanity check: same scenario rejects signals in default mode."""
+        reset_trade_counter()
+        config = _make_portfolio_config(initial_capital=100.0)
+        engine = PortfolioEngine(config)
+
+        data_dict = {
+            "AAPL": _make_price_data(symbol_offset=0.0),
+            "GOOG": _make_price_data(symbol_offset=0.0),
+        }
+        strategy = PortfolioDeterministicStrategy(
+            buy_bars={3}, sell_bars={10}, stop_loss_price=50.0,
+            position_size_shares=100,
+        )
+
+        result = engine.run(data_dict, strategy)
+        # Default mode cannot afford these positions, so signals are rejected.
+        assert len(result.signal_rejections) > 0
+
+    def test_sizing_equity_is_constant(self):
+        """Position sizing always uses the fixed starting equity (no compounding)."""
+        reset_trade_counter()
+        config = _make_full_isolation_config(initial_capital=100000.0)
+        engine = PortfolioEngine(config)
+
+        # Two sequential round-trip trades on a single rising security. In a
+        # compounding run the second entry would see a larger equity.
+        data = _make_price_data(num_bars=40)
+        strategy = EquityRecordingStrategy(
+            buy_bars={3, 25}, sell_bars={15, 38}, stop_loss_price=50.0,
+            position_size_shares=100,
+        )
+
+        engine.run({"AAPL": data}, strategy)
+
+        assert len(strategy.entry_equities) >= 2
+        for equity in strategy.entry_equities:
+            assert abs(equity - 100000.0) < 1e-6
+
+    def test_sizing_equity_compounds_without_full_isolation(self):
+        """Contrast: without full isolation the sizing equity changes over time."""
+        reset_trade_counter()
+        config = _make_portfolio_config(initial_capital=100000.0)
+        engine = PortfolioEngine(config)
+
+        data = _make_price_data(num_bars=40)
+        strategy = EquityRecordingStrategy(
+            buy_bars={3, 25}, sell_bars={15, 38}, stop_loss_price=50.0,
+            position_size_shares=100,
+        )
+
+        engine.run({"AAPL": data}, strategy)
+
+        assert len(strategy.entry_equities) >= 2
+        # The second entry sees a different (compounded) equity.
+        assert abs(strategy.entry_equities[-1] - strategy.entry_equities[0]) > 1e-6
+
+    def test_equity_curve_reflects_summed_pl(self):
+        """Final equity equals initial capital plus the sum of all trade P/L."""
+        reset_trade_counter()
+        config = _make_full_isolation_config(initial_capital=100000.0)
+        engine = PortfolioEngine(config)
+
+        data_dict = {
+            "AAPL": _make_price_data(symbol_offset=0.0, num_bars=40),
+            "GOOG": _make_price_data(symbol_offset=20.0, num_bars=40),
+        }
+        strategy = PortfolioDeterministicStrategy(
+            buy_bars={3}, sell_bars={20}, stop_loss_price=10.0,
+            position_size_shares=100,
+        )
+
+        result = engine.run(data_dict, strategy)
+
+        all_trades = []
+        for sym_result in result.symbol_results.values():
+            all_trades.extend(sym_result.trades)
+        total_pl = sum(t.pl for t in all_trades)
+
+        assert abs(result.final_equity - (100000.0 + total_pl)) < 1e-3
+        assert len(result.signal_rejections) == 0
