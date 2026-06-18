@@ -27,7 +27,7 @@ from Classes.RuleTester import (
     export_filtered_trades, export_comparison_report, export_exit_comparison_csv,
     StrategyExitRulesRegistry
 )
-from Classes.FactorAnalysis.data.trade_log_loader import TradeLogLoader
+from Classes.RuleTester.trade_log_loader import TradeLogLoader
 from Classes.Config.strategy_preset import StrategyParameterPreset
 
 # Try to import plotting libraries

@@ -27,8 +27,7 @@ because it has no history and must never be written onto historical rows.
 
 Column naming keeps the previous convention - the lowercased raw Alpha Vantage
 field name (e.g. ``totalShareholderEquity`` -> ``totalshareholderequity``) - so
-existing consumers (e.g. ``Classes/FactorAnalysis/data/fundamental_loader.py``)
-keep working while the structure and values are corrected.
+existing consumers keep working while the structure and values are corrected.
 """
 
 from __future__ import annotations

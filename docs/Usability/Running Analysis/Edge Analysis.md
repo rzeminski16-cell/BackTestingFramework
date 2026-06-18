@@ -59,5 +59,4 @@ Each trade's profit or loss expressed as a multiple of the initial risk (distanc
 
 ## Next Steps
 
-- [[Factor Analysis]] — identify what conditions produce good vs bad trades
 - [[Metrics Glossary]] — related metrics like profit factor, win rate

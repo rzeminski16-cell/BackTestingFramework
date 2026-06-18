@@ -29,7 +29,6 @@ Each subsystem explained in isolation.
 | [[Backtesting Engine]] | SingleSecurity and Portfolio engines, bar-by-bar execution |
 | [[Position Management]] | PositionManager, TradeExecutor, trade lifecycle |
 | [[Optimisation Engine]] | Walk-forward, Bayesian search, univariate sweeps |
-| [[Factor Analysis Component]] | Tier 1/2/3 analysis, scenario detection |
 | [[Reporting]] | Excel reports, trade logs, equity curves, metrics calculation |
 | [[GUI Layer]] | CustomTkinter architecture and application structure |
 

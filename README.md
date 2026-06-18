@@ -36,7 +36,6 @@ The main launcher provides access to all framework features:
 - **Backtesting** - Run backtests with configurable strategies
 - **Optimization** - Walk-forward parameter optimization
 - **Edge Analysis** - E-ratio and R-multiple analysis
-- **Factor Analysis** - Performance factor analysis
 
 ### Run a Backtest (GUI)
 
@@ -82,7 +81,6 @@ BackTestingFramework/
 ├── ctk_backtest_gui.py      # Backtesting GUI
 ├── ctk_optimization_gui.py  # Optimization GUI
 ├── ctk_edge_analysis_gui.py # Edge Analysis GUI (E-ratio, R-multiple)
-├── ctk_factor_analysis_gui.py # Factor Analysis GUI
 └── run_fundamental_data_fetch.py # Alpha Vantage data fetcher
 ```
 

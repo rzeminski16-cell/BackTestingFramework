@@ -14,7 +14,6 @@ to ensure consistency across all systems including:
 - Walk-Forward Optimization
 - Sensitivity Analysis
 - Vulnerability Scoring
-- Factor Analysis
 """
 import pandas as pd
 import numpy as np

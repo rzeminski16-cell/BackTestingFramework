@@ -19,7 +19,6 @@ The desktop interface built with CustomTkinter.
 | `ctk_optimization_gui.py` | Walk-Forward Optimisation | Rolling window parameter search |
 | `ctk_univariate_optimization_gui.py` | Univariate Optimisation | Single parameter sweeps |
 | `ctk_edge_analysis_gui.py` | Edge Analysis | E-ratio and R-multiple analysis |
-| `ctk_factor_analysis_gui.py` | Factor Analysis | Tier 1/2/3 trade driver analysis |
 
 ---
 
