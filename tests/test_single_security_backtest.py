@@ -1280,5 +1280,76 @@ class TestTradeExecutor(unittest.TestCase):
         self.assertEqual(executor.get_trade_count(), 1)
 
 
+class ShortDeterministicStrategy(DeterministicTestStrategy):
+    """SHORT-only deterministic strategy whose stop sits above the close."""
+
+    def __init__(self, stop_above_pct=0.0005, **kwargs):
+        self.stop_above_pct = stop_above_pct
+        super().__init__(**kwargs)
+
+    @property
+    def trade_direction(self) -> TradeDirection:
+        return TradeDirection.SHORT
+
+    def generate_entry_signal(self, context: StrategyContext) -> Optional[Signal]:
+        if context.current_index in self.buy_bars:
+            stop = context.current_price * (1 + self.stop_above_pct)
+            return Signal.buy(
+                size=1.0,
+                stop_loss=stop,
+                reason="Test short",
+                direction=self.trade_direction,
+            )
+        return None
+
+    def calculate_initial_stop_loss(self, context: StrategyContext) -> float:
+        return context.current_price * (1 + self.stop_above_pct)
+
+
+class TestShortSlippageDirection(unittest.TestCase):
+    """Regression tests for direction-aware slippage on SHORT trades."""
+
+    def test_tight_short_stop_does_not_crash(self):
+        """A short stop 0.05% above close must not be crossed by 0.1% slippage."""
+        reset_trade_counter()
+        config = create_config(slippage_pct=0.1)
+        engine = SingleSecurityEngine(config)
+        data = create_trending_data(n_bars=20)
+        strategy = ShortDeterministicStrategy(
+            buy_bars={3}, sell_bars={10}, stop_above_pct=0.0005,
+        )
+        # Previously raised ValueError: "Invalid SHORT stop loss ...".
+        result = engine.run('TEST', data, strategy)
+        self.assertEqual(len(result.trades), 1)
+
+    def test_short_entry_fills_below_close(self):
+        """SHORT entry sells, so it should fill below the bar close."""
+        reset_trade_counter()
+        config = create_config(slippage_pct=0.1)
+        engine = SingleSecurityEngine(config)
+        data = create_trending_data(n_bars=20)
+        close_at_entry = data.iloc[3]['close']
+        strategy = ShortDeterministicStrategy(
+            buy_bars={3}, sell_bars={10}, stop_above_pct=0.01,
+        )
+        result = engine.run('TEST', data, strategy)
+        self.assertEqual(len(result.trades), 1)
+        self.assertLess(result.trades[0].entry_price, close_at_entry)
+
+    def test_short_exit_fills_above_close(self):
+        """Covering a SHORT buys, so the exit should fill above the bar close."""
+        reset_trade_counter()
+        config = create_config(slippage_pct=0.1)
+        engine = SingleSecurityEngine(config)
+        data = create_trending_data(n_bars=20)
+        close_at_exit = data.iloc[10]['close']
+        strategy = ShortDeterministicStrategy(
+            buy_bars={3}, sell_bars={10}, stop_above_pct=0.05,
+        )
+        result = engine.run('TEST', data, strategy)
+        self.assertEqual(len(result.trades), 1)
+        self.assertGreater(result.trades[0].exit_price, close_at_exit)
+
+
 if __name__ == '__main__':
     unittest.main()
