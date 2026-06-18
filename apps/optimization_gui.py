@@ -57,6 +57,7 @@ from strategies.alpha_trend_v2_strategy import AlphaTrendV2Strategy
 from strategies.alpha_trend_v2c2_strategy import AlphaTrendV2C2Strategy
 from strategies.alpha_trend_v2c3_strategy import AlphaTrendV2C3Strategy
 from strategies.alpha_trend_v3c1_strategy import AlphaTrendV3C1Strategy
+from strategies.short_only_base_strategy import ShortOnlyBaseStrategy
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -1079,7 +1080,8 @@ class OptimizationWizard(WizardBase):
         'AlphaTrendV2C2Strategy': AlphaTrendV2C2Strategy,
         'AlphaTrendV2C3Strategy': AlphaTrendV2C3Strategy,
         'AlphaTrendV3C1Strategy': AlphaTrendV3C1Strategy,
-        'RandomControlStrategy': RandomControlStrategy
+        'RandomControlStrategy': RandomControlStrategy,
+        'ShortOnlyBaseStrategy': ShortOnlyBaseStrategy
     }
 
     def __init__(self, root: tk.Tk):
