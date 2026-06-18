@@ -219,7 +219,7 @@ class CTkModeSecuritiesStep(CTkWizardStep):
 
         # Portfolio option
         portfolio_frame = Theme.create_frame(mode_options)
-        portfolio_frame.pack(side="left", expand=True, fill="x")
+        portfolio_frame.pack(side="left", expand=True, fill="x", padx=(0, Sizes.PAD_L))
 
         Theme.create_radiobutton(
             portfolio_frame, "Portfolio",
@@ -229,6 +229,20 @@ class CTkModeSecuritiesStep(CTkWizardStep):
         Theme.create_hint(
             portfolio_frame,
             "Test with shared capital across multiple securities"
+        ).pack(anchor="w", padx=(Sizes.PAD_XL, 0))
+
+        # Full (Isolation) option
+        full_frame = Theme.create_frame(mode_options)
+        full_frame.pack(side="left", expand=True, fill="x")
+
+        Theme.create_radiobutton(
+            full_frame, "Full",
+            variable=self.wizard.mode_var, value="full",
+            command=self._on_mode_change
+        ).pack(anchor="w")
+        Theme.create_hint(
+            full_frame,
+            "Every signal taken in isolation; sizing fixed at starting equity"
         ).pack(anchor="w", padx=(Sizes.PAD_XL, 0))
 
         # Securities Selection
@@ -257,6 +271,15 @@ class CTkModeSecuritiesStep(CTkWizardStep):
 
         Theme.create_header(self.portfolio_content, "Portfolio Settings", size="s").pack(anchor="w", pady=(0, Sizes.PAD_M))
 
+        # Full-mode explanation (shown only in Full mode, hidden initially)
+        self.full_hint = Theme.create_hint(
+            self.portfolio_content,
+            "Full mode: every signal is taken (capital availability is ignored) and "
+            "position size is always calculated from the starting equity.",
+            wraplength=700,
+            justify="left",
+        )
+
         # Basket selection
         basket_frame = Theme.create_frame(self.portfolio_content)
         basket_frame.pack(fill="x", pady=Sizes.PAD_S)
@@ -283,6 +306,7 @@ class CTkModeSecuritiesStep(CTkWizardStep):
         # Capital Contention
         contention_frame = Theme.create_frame(self.portfolio_content)
         contention_frame.pack(fill="x", pady=Sizes.PAD_S)
+        self.contention_frame = contention_frame
 
         Theme.create_label(contention_frame, "Capital Contention:").pack(side="left", padx=(0, Sizes.PAD_S))
         self.wizard.contention_mode_var = ctk.StringVar(value="default")
@@ -308,12 +332,20 @@ class CTkModeSecuritiesStep(CTkWizardStep):
         # Hidden initially
 
     def _on_mode_change(self):
-        """Handle mode change between single and portfolio."""
+        """Handle mode change between single, portfolio and full."""
         mode = self.wizard.mode_var.get()
-        if mode == "portfolio":
+        if mode in ("portfolio", "full"):
             self.security_selector.multi_select = True
             self.security_selector.update_securities(self.wizard.available_securities)
             self.portfolio_card.pack(fill="x", pady=(0, Sizes.PAD_M))
+            if mode == "full":
+                # Capital is unconstrained in Full mode; capital contention
+                # settings do not apply, so hide them and explain the behaviour.
+                self.contention_frame.pack_forget()
+                self.full_hint.pack(anchor="w", pady=(0, Sizes.PAD_S))
+            else:
+                self.full_hint.pack_forget()
+                self.contention_frame.pack(fill="x", pady=Sizes.PAD_S)
         else:
             self.security_selector.multi_select = False
             # Keep only first selection if multiple were selected
@@ -398,7 +430,7 @@ class CTkModeSecuritiesStep(CTkWizardStep):
         """Restore security selections when returning to this step."""
         if hasattr(self.wizard, 'selected_securities') and self.wizard.selected_securities:
             mode = self.wizard.mode_var.get()
-            self.security_selector.multi_select = (mode == "portfolio")
+            self.security_selector.multi_select = (mode in ("portfolio", "full"))
             self.security_selector.set_selected(self.wizard.selected_securities)
 
     def get_summary(self) -> Dict[str, str]:
@@ -408,8 +440,13 @@ class CTkModeSecuritiesStep(CTkWizardStep):
         else:
             securities = self.security_selector.get_selected()
 
+        mode_labels = {
+            "portfolio": "Portfolio",
+            "full": "Full (Isolation)",
+            "single": "Single Security",
+        }
         summary = {
-            "Mode": "Portfolio" if mode == "portfolio" else "Single Security"
+            "Mode": mode_labels.get(mode, "Single Security")
         }
 
         if securities:
@@ -420,11 +457,16 @@ class CTkModeSecuritiesStep(CTkWizardStep):
         else:
             summary["Securities"] = "None selected"
 
-        if mode == "portfolio":
+        if mode in ("portfolio", "full"):
             if self.wizard.selected_basket:
                 summary["Basket"] = self.wizard.selected_basket.name
+
+        if mode == "portfolio":
             contention = self.wizard.contention_mode_var.get()
             summary["Capital Contention"] = "Vulnerability Score" if contention == "vulnerability" else "Default"
+        elif mode == "full":
+            summary["Capital"] = "Unconstrained (every signal taken)"
+            summary["Sizing Equity"] = "Fixed at starting equity"
 
         return summary
 
@@ -1396,7 +1438,8 @@ class CTkBacktestWizard(CTkWizardBase):
                     else:
                         self._run_portfolio_backtest_threaded(
                             msg_queue, securities, strategy, capital, commission,
-                            start_date, end_date, full_backtest_name, slippage_percent, strategy_params
+                            start_date, end_date, full_backtest_name, slippage_percent, strategy_params,
+                            full_isolation=(mode == "full")
                         )
                 except Exception as e:
                     import traceback
@@ -1462,31 +1505,45 @@ class CTkBacktestWizard(CTkWizardBase):
     def _run_portfolio_backtest_threaded(self, msg_queue: queue.Queue, symbols: List[str],
                                           strategy, capital: float, commission: CommissionConfig,
                                           start_date, end_date, backtest_name: str,
-                                          slippage_percent: float, strategy_params: Dict):
-        """Run portfolio backtest in background thread."""
+                                          slippage_percent: float, strategy_params: Dict,
+                                          full_isolation: bool = False):
+        """Run portfolio (or full-isolation) backtest in background thread."""
         basket_name = self.selected_basket.name if self.selected_basket else None
+
+        # Capital contention is meaningless in full isolation (every signal is
+        # taken), so fall back to the default contention config in that mode.
+        capital_contention = (
+            CapitalContentionConfig.default_mode()
+            if full_isolation else self.capital_contention_config
+        )
 
         config = PortfolioConfig(
             initial_capital=capital,
             commission=commission,
             start_date=start_date,
             end_date=end_date,
-            capital_contention=self.capital_contention_config,
+            capital_contention=capital_contention,
             slippage_percent=slippage_percent,
-            basket_name=basket_name
+            basket_name=basket_name,
+            full_isolation=full_isolation
         )
 
-        msg_queue.put(("log", f"Running PORTFOLIO backtest: {backtest_name}"))
+        run_label = "FULL ISOLATION" if full_isolation else "PORTFOLIO"
+        msg_queue.put(("log", f"Running {run_label} backtest: {backtest_name}"))
         msg_queue.put(("log", f"Strategy: {strategy}"))
         msg_queue.put(("log", f"Securities: {', '.join(symbols)}"))
-        msg_queue.put(("log", f"Shared Capital: ${capital:,.2f}"))
-        msg_queue.put(("log", f"Capital Contention: {self.capital_contention_config.mode.value}"))
-        if self.capital_contention_config.mode == CapitalContentionMode.VULNERABILITY_SCORE:
-            vc = self.capital_contention_config.vulnerability_config
-            msg_queue.put(("log", f"  - Min Trade Age (days): {vc.min_trade_age_days}"))
-            msg_queue.put(("log", f"  - Target Monthly Growth: {vc.target_monthly_growth}"))
-            msg_queue.put(("log", f"  - Alpha: {vc.alpha}"))
-            msg_queue.put(("log", f"  - Beta: {vc.beta}"))
+        if full_isolation:
+            msg_queue.put(("log", f"Starting Equity (fixed for sizing): ${capital:,.2f}"))
+            msg_queue.put(("log", "Mode: every signal taken in isolation; capital availability ignored"))
+        else:
+            msg_queue.put(("log", f"Shared Capital: ${capital:,.2f}"))
+            msg_queue.put(("log", f"Capital Contention: {capital_contention.mode.value}"))
+            if capital_contention.mode == CapitalContentionMode.VULNERABILITY_SCORE:
+                vc = capital_contention.vulnerability_config
+                msg_queue.put(("log", f"  - Min Trade Age (days): {vc.min_trade_age_days}"))
+                msg_queue.put(("log", f"  - Target Monthly Growth: {vc.target_monthly_growth}"))
+                msg_queue.put(("log", f"  - Alpha: {vc.alpha}"))
+                msg_queue.put(("log", f"  - Beta: {vc.beta}"))
         msg_queue.put(("log", "=" * 60))
 
         # Load data for all securities
