@@ -1,10 +1,59 @@
 {
+  "AA": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "AAL": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "AAON": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "AAPL": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "ABBV": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "ACAD": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
   "ACMR": {
     "currency": "USD",
     "description": "",
     "market_cap": "large_cap",
     "sector": "technology",
     "type": "stock"
+  },
+  "ACRS": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
   },
   "ADBE": {
     "currency": "USD",
@@ -27,12 +76,145 @@
     "sector": "small_cap",
     "type": "stock"
   },
+  "ADP": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "AEE": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "AEO": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "AEP": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "AES": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
   "AGBK": {
     "currency": "USD",
     "description": "",
     "market_cap": "large_cap",
     "sector": "financials",
     "type": "stock"
+  },
+  "AGG": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "AGIO": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "AI": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "AIG": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "AIR": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "ALGM": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "ALGT": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "ALKS": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "ALL": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "ALLE": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "ALNY": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "ALTR": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "AMD": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "AMGN": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
   },
   "AMP": {
     "currency": "USD",
@@ -41,12 +223,103 @@
     "sector": "financials",
     "type": "stock"
   },
+  "AMTB": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "AMZN": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
   "ANL": {
     "currency": "USD",
     "description": "",
     "market_cap": "small_cap",
     "sector": "small_cap",
     "type": "stock"
+  },
+  "AON": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "AOS": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "APA": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "APD": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "AR": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "ARKF": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "ARKG": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "ARKK": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "ARKQ": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "ARKW": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "ARM": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
   },
   "ARQT": {
     "currency": "USD",
@@ -55,12 +328,47 @@
     "sector": "mid_cap",
     "type": "stock"
   },
+  "ARWR": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
   "ASIC": {
     "currency": "USD",
     "description": "",
     "market_cap": "small_cap",
     "sector": "small_cap",
     "type": "stock"
+  },
+  "ASML": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "ASTE": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "ATI": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "ATRO": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
   },
   "AUGO": {
     "currency": "USD",
@@ -69,12 +377,47 @@
     "sector": "mid_cap",
     "type": "stock"
   },
+  "AUPH": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
   "AURA": {
     "currency": "USD",
     "description": "",
     "market_cap": "small_cap",
     "sector": "small_cap",
     "type": "stock"
+  },
+  "AVGO": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "AVPT": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "AVTR": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "AWAY": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
   },
   "AWI": {
     "currency": "USD",
@@ -90,12 +433,47 @@
     "sector": "utilities",
     "type": "stock"
   },
+  "AXON": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "AXP": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "AXTI": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
   "AYI": {
     "currency": "USD",
     "description": "",
     "market_cap": "mid_cap",
     "sector": "mid_cap",
     "type": "stock"
+  },
+  "AZN": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "AZZ": {
+    "currency": "NA",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
   },
   "BEAM": {
     "currency": "USD",

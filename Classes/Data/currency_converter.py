@@ -7,12 +7,25 @@ from typing import Dict, Optional
 from datetime import datetime
 
 
+class MissingFXRateError(ValueError):
+    """Raised when an FX rate required for conversion is not available."""
+    pass
+
+
 class CurrencyConverter:
     """
     Handles currency conversions for backtesting with time-series exchange rates.
 
-    The base currency is always GBP (currency of account). Exchange rates should be
-    provided as XXX/GBP pairs (e.g., USD/GBP = 0.79 means 1 USD = 0.79 GBP).
+    The base currency is always GBP (currency of account). Exchange rates can be
+    supplied in either direction and are used automatically:
+
+    - ``XXX/GBP`` (e.g. ``USD/GBP`` = 0.79 means 1 USD = 0.79 GBP), or
+    - ``GBP/XXX`` (e.g. ``GBP/USD`` = 1.27 means 1 GBP = 1.27 USD).
+
+    When only the inverse pair is loaded (e.g. you have ``GBP/USD`` data but need
+    to convert USD into GBP) the converter inverts the rate (``1 / 1.27``)
+    automatically, so the FX is applied correctly regardless of how the source
+    series is quoted.
     """
 
     def __init__(self, base_currency: str = "GBP"):
@@ -103,10 +116,34 @@ class CurrencyConverter:
                 except Exception as e:
                     print(f"Warning: Failed to load {file_path}: {e}")
 
+    def _rate_on_date(self, df: pd.DataFrame, date: datetime) -> Optional[float]:
+        """
+        Look up the rate for a date, falling back to the most recent prior date.
+
+        This handles weekends and holidays where there is no exact entry.
+
+        Args:
+            df: Rate DataFrame indexed by date with a 'rate' column
+            date: Date for the exchange rate
+
+        Returns:
+            Rate value, or None if no entry exists on or before ``date``
+        """
+        valid_dates = df.index[df.index <= date]
+        if len(valid_dates) == 0:
+            return None
+
+        nearest_date = valid_dates[-1]
+        return df.loc[nearest_date, 'rate']
+
     def get_rate(self, from_currency: str, to_currency: str,
                  date: datetime) -> Optional[float]:
         """
-        Get exchange rate for a specific date.
+        Get exchange rate to convert ``from_currency`` into ``to_currency``.
+
+        The rate can be sourced from a directly quoted pair (``from/to``) or from
+        the inverse pair (``to/from``), in which case it is inverted. This means
+        a ``GBP/USD`` series can convert USD into GBP and vice versa.
 
         Args:
             from_currency: Source currency code
@@ -114,33 +151,28 @@ class CurrencyConverter:
             date: Date for the exchange rate
 
         Returns:
-            Exchange rate, or None if not available
+            Exchange rate (units of ``to_currency`` per unit of ``from_currency``),
+            or None if no suitable pair is available for the date
         """
         # Same currency = 1.0
         if from_currency == to_currency:
             return 1.0
 
-        # Convert to base currency if needed
-        if to_currency != self.base_currency:
-            raise ValueError(
-                f"Target currency must be {self.base_currency}, got {to_currency}"
-            )
+        # Direct pair: rate is already units of to_currency per from_currency.
+        direct_pair = f"{from_currency}/{to_currency}"
+        if direct_pair in self.rates:
+            return self._rate_on_date(self.rates[direct_pair], date)
 
-        currency_pair = f"{from_currency}/{to_currency}"
+        # Inverse pair: e.g. we have GBP/USD but need USD->GBP. The stored rate
+        # is units of from_currency per to_currency, so invert it.
+        inverse_pair = f"{to_currency}/{from_currency}"
+        if inverse_pair in self.rates:
+            inverse_rate = self._rate_on_date(self.rates[inverse_pair], date)
+            if inverse_rate is None or inverse_rate == 0:
+                return None
+            return 1.0 / inverse_rate
 
-        if currency_pair not in self.rates:
-            return None
-
-        df = self.rates[currency_pair]
-
-        # Find the rate for this date or the most recent prior date
-        # This handles weekends and holidays
-        valid_dates = df.index[df.index <= date]
-        if len(valid_dates) == 0:
-            return None
-
-        nearest_date = valid_dates[-1]
-        return df.loc[nearest_date, 'rate']
+        return None
 
     def convert(self, amount: float, from_currency: str,
                 to_currency: str, date: datetime) -> Optional[float]:
@@ -166,6 +198,10 @@ class CurrencyConverter:
         """
         Check if conversion rates are available for a currency.
 
+        A rate is considered available if either the direct pair
+        (``currency/base``) or the inverse pair (``base/currency``) is loaded,
+        since the converter can invert when needed.
+
         Args:
             currency: Currency code
 
@@ -175,18 +211,23 @@ class CurrencyConverter:
         if currency == self.base_currency:
             return True
 
-        currency_pair = f"{currency}/{self.base_currency}"
-        return currency_pair in self.rates
+        direct_pair = f"{currency}/{self.base_currency}"
+        inverse_pair = f"{self.base_currency}/{currency}"
+        return direct_pair in self.rates or inverse_pair in self.rates
 
     def get_available_currencies(self) -> list:
         """
         Get list of currencies with available conversion rates.
+
+        Both sides of every loaded pair are reported, since the converter can
+        invert a pair when only the opposite direction is supplied.
 
         Returns:
             List of currency codes
         """
         currencies = {self.base_currency}
         for pair in self.rates.keys():
-            from_curr = pair.split('/')[0]
+            from_curr, to_curr = pair.split('/')
             currencies.add(from_curr)
+            currencies.add(to_curr)
         return sorted(list(currencies))
