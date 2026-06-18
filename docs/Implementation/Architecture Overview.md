@@ -21,7 +21,6 @@ graph TB
         A2[ctk_backtest_gui.py]
         A3[ctk_optimization_gui.py]
         A4[ctk_edge_analysis_gui.py]
-        A5[ctk_factor_analysis_gui.py]
     end
 
     subgraph APP["Application Layer"]
@@ -29,7 +28,6 @@ graph TB
         B2[PortfolioEngine]
         B3[WalkForwardOptimizer]
         B4[UnivariateOptimizer]
-        B5[FactorAnalyzer]
         B6[VulnerabilityScoreCalculator]
     end
 
@@ -75,7 +73,7 @@ graph TB
 ### Application Layer
 - **Engines** — orchestrate backtesting by coordinating strategies, data, and trade execution
 - **Optimisers** — run multiple backtests with different parameters, select the best
-- **Analysers** — factor analysis, edge analysis, vulnerability scoring
+- **Analysers** — edge analysis, vulnerability scoring
 
 ### Core Layer
 - **Strategy framework** — `BaseStrategy` abstract class and `StrategyContext`
@@ -105,7 +103,6 @@ Classes/
 ├── Core/              → Centralised performance metrics
 ├── Data/              → DataLoader, DataValidator, CurrencyConverter
 ├── Engine/            → SingleSecurityEngine, PortfolioEngine, PositionManager, TradeExecutor
-├── FactorAnalysis/    → Analyzer (Tier 1/2/3), scenario detection
 ├── Indicators/        → Indicator utilities
 ├── Models/            → Trade, Position, Signal, Order, TradeDirection
 ├── Optimization/      → WalkForwardOptimizer, UnivariateOptimizer, BayesianSearch

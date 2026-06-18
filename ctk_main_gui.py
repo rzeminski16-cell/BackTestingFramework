@@ -7,7 +7,6 @@ Features:
 - Backtesting: Run backtests with various strategies
 - Optimization: Walk-forward strategy optimization
 - Edge Analysis: E-ratio and R-multiple analysis from trade logs
-- Factor Analysis: Strategy performance factor analysis
 """
 
 import customtkinter as ctk
@@ -165,7 +164,7 @@ class CTkMainLauncher(ctk.CTk):
         cards_frame = ctk.CTkFrame(main_frame, fg_color="transparent")
         cards_frame.pack(fill="both", expand=True)
 
-        # Configure grid columns to be equal width (3 columns, 3 rows for 8 features)
+        # Configure grid columns to be equal width (3 columns, 3 rows for 7 features)
         cards_frame.grid_columnconfigure(0, weight=1)
         cards_frame.grid_columnconfigure(1, weight=1)
         cards_frame.grid_columnconfigure(2, weight=1)
@@ -192,12 +191,6 @@ class CTkMainLauncher(ctk.CTk):
                 "description": "Analyze entry edge with E-ratio and R-multiple distributions",
                 "icon": "\u2197",  # Arrow pointing up-right
                 "command": self._launch_edge_analysis
-            },
-            {
-                "title": "Factor Analysis",
-                "description": "Multi-factor analysis of strategy performance drivers",
-                "icon": "\u2630",  # Trigram for heaven (bars)
-                "command": self._launch_factor_analysis
             },
             {
                 "title": "Data Collection",
@@ -282,10 +275,6 @@ class CTkMainLauncher(ctk.CTk):
     def _launch_edge_analysis(self):
         """Launch the edge analysis GUI."""
         self._launch_module("edge_analysis")
-
-    def _launch_factor_analysis(self):
-        """Launch the factor analysis GUI."""
-        self._launch_module("factor_analysis")
 
     def _launch_data_collection(self):
         """Launch the data collection GUI."""

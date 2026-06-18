@@ -1,16 +1,32 @@
 """
-Trade Log Loader for Factor Analysis.
+Trade Log Loader for the Rule Tester.
 
-Loads and validates trade log CSV files.
+Loads, normalizes and lightly validates trade-log CSV files so they can be fed
+into the rule engine. Self-contained (no external analysis dependencies).
 """
 
 import pandas as pd
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple, Union
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
-from .validators import DataValidator, ValidationResult
-from ..logging.audit_logger import AuditLogger
+
+@dataclass
+class ValidationResult:
+    """Result of validating a trade log."""
+    is_valid: bool
+    row_count: int
+    errors: List[str] = field(default_factory=list)
+    warnings: List[str] = field(default_factory=list)
+    date_range: Optional[Tuple[str, str]] = None
+
+    @property
+    def error_count(self) -> int:
+        return len(self.errors)
+
+    @property
+    def warning_count(self) -> int:
+        return len(self.warnings)
 
 
 @dataclass
@@ -43,15 +59,8 @@ class TradeLogLoader:
         'entry_price', 'exit_price', 'pl', 'pl_pct'
     ]
 
-    def __init__(self, logger: Optional[AuditLogger] = None):
-        """
-        Initialize TradeLogLoader.
-
-        Args:
-            logger: Optional audit logger for tracking
-        """
-        self.logger = logger
-        self.validator = DataValidator()
+    def __init__(self):
+        """Initialize TradeLogLoader."""
 
     def _normalize_dataframe(self, df: pd.DataFrame) -> pd.DataFrame:
         """Normalize column names and data types."""
@@ -85,6 +94,25 @@ class TradeLogLoader:
 
         return df
 
+    def _validate_trade_log(self, df: pd.DataFrame) -> ValidationResult:
+        """Lightweight validation: check required columns and derive date range."""
+        result = ValidationResult(is_valid=True, row_count=len(df))
+
+        missing = [c for c in self.REQUIRED_COLUMNS if c not in df.columns]
+        if missing:
+            result.is_valid = False
+            result.errors.append(f"Missing required columns: {', '.join(missing)}")
+
+        if 'entry_date' in df.columns and len(df) > 0:
+            entry = pd.to_datetime(df['entry_date'], errors='coerce')
+            if entry.notna().any():
+                result.date_range = (
+                    entry.min().strftime('%Y-%m-%d'),
+                    entry.max().strftime('%Y-%m-%d')
+                )
+
+        return result
+
     def load_single(
         self,
         file_path: Union[str, Path],
@@ -104,15 +132,12 @@ class TradeLogLoader:
 
         Raises:
             FileNotFoundError: If file doesn't exist
-            ValueError: If critical validation fails
+            ValueError: If the CSV cannot be read
         """
         file_path = Path(file_path)
 
         if not file_path.exists():
             raise FileNotFoundError(f"Trade log file not found: {file_path}")
-
-        if self.logger:
-            self.logger.info(f"Loading trade log", {"file": str(file_path)})
 
         # Load CSV
         try:
@@ -132,19 +157,7 @@ class TradeLogLoader:
         # Validate
         validation_result = ValidationResult(is_valid=True, row_count=len(df))
         if validate:
-            validation_result = self.validator.validate_trade_log(df)
-
-            if self.logger:
-                if not validation_result.is_valid:
-                    self.logger.error("Validation failed", {
-                        "file": str(file_path),
-                        "errors": validation_result.error_count
-                    })
-                elif validation_result.warning_count > 0:
-                    self.logger.warning("Validation warnings", {
-                        "file": str(file_path),
-                        "warnings": validation_result.warning_count
-                    })
+            validation_result = self._validate_trade_log(df)
 
         # Create metadata
         symbol = df['symbol'].iloc[0] if 'symbol' in df.columns and len(df) > 0 else None
@@ -157,15 +170,6 @@ class TradeLogLoader:
             date_range=date_range,
             trade_count=len(df)
         )
-
-        if self.logger:
-            self.logger.log_data_summary(
-                source_name=f"Trade log ({file_path.name})",
-                row_count=len(df),
-                column_count=len(df.columns),
-                date_range=date_range if date_range[0] else None,
-                symbols=[symbol] if symbol else None
-            )
 
         return df, validation_result, metadata
 
@@ -186,9 +190,6 @@ class TradeLogLoader:
         Returns:
             Tuple of (combined DataFrame, list of ValidationResults, list of Metadata)
         """
-        if self.logger:
-            self.logger.info(f"Loading multiple trade logs", {"count": len(file_paths)})
-
         dfs = []
         validation_results = []
         metadata_list = []
@@ -205,15 +206,11 @@ class TradeLogLoader:
                 metadata_list.append(metadata)
 
             except Exception as e:
-                if self.logger:
-                    self.logger.error(f"Failed to load trade log", {
-                        "file": str(file_path),
-                        "error": str(e)
-                    })
                 # Create error validation result
                 validation_results.append(ValidationResult(
                     is_valid=False,
-                    row_count=0
+                    row_count=0,
+                    errors=[str(e)]
                 ))
 
         # Combine DataFrames
@@ -223,12 +220,6 @@ class TradeLogLoader:
             # Ensure trade_id is unique across logs
             combined_df['_original_trade_id'] = combined_df['trade_id']
             combined_df['trade_id'] = combined_df['_log_id'] + '_' + combined_df['trade_id'].astype(str)
-
-            if self.logger:
-                self.logger.info("Combined trade logs", {
-                    "total_trades": len(combined_df),
-                    "logs_loaded": len(dfs)
-                })
 
             return combined_df, validation_results, metadata_list
         elif dfs:
@@ -261,18 +252,7 @@ class TradeLogLoader:
         files = list(directory.glob(pattern))
 
         if not files:
-            if self.logger:
-                self.logger.warning(f"No trade logs found", {
-                    "directory": str(directory),
-                    "pattern": pattern
-                })
             return pd.DataFrame(), [], []
-
-        if self.logger:
-            self.logger.info(f"Found trade logs in directory", {
-                "directory": str(directory),
-                "count": len(files)
-            })
 
         return self.load_multiple(files, validate=validate)
 
@@ -282,17 +262,7 @@ class TradeLogLoader:
         start_date: Optional[str] = None,
         end_date: Optional[str] = None
     ) -> pd.DataFrame:
-        """
-        Filter trades by date range.
-
-        Args:
-            df: Trade log DataFrame
-            start_date: Start date (inclusive)
-            end_date: End date (inclusive)
-
-        Returns:
-            Filtered DataFrame
-        """
+        """Filter trades by date range (inclusive)."""
         if start_date:
             start = pd.to_datetime(start_date)
             df = df[df['entry_date'] >= start]
@@ -308,29 +278,12 @@ class TradeLogLoader:
         df: pd.DataFrame,
         symbols: List[str]
     ) -> pd.DataFrame:
-        """
-        Filter trades by symbols.
-
-        Args:
-            df: Trade log DataFrame
-            symbols: List of symbols to include
-
-        Returns:
-            Filtered DataFrame
-        """
+        """Filter trades by symbols."""
         symbols_upper = [s.upper() for s in symbols]
         return df[df['symbol'].str.upper().isin(symbols_upper)]
 
     def get_summary(self, df: pd.DataFrame) -> Dict:
-        """
-        Get summary statistics for trade log.
-
-        Args:
-            df: Trade log DataFrame
-
-        Returns:
-            Dictionary with summary statistics
-        """
+        """Get summary statistics for a trade log."""
         if len(df) == 0:
             return {"total_trades": 0}
 

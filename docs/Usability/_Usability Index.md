@@ -30,7 +30,6 @@ Step-by-step guides for each analysis tool in the system.
 | [[Walk-Forward Optimisation]] | Find robust parameters using rolling train/test windows |
 | [[Univariate Optimisation]] | Sweep a single parameter to understand sensitivity |
 | [[Edge Analysis]] | Validate entry quality with E-ratio and R-multiples |
-| [[Factor Analysis]] | Identify which conditions drive good vs bad trades |
 | [[Reading Reports]] | Interpret Excel reports, trade logs, and equity curves |
 
 ---
