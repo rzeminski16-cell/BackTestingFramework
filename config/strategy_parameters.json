@@ -973,6 +973,161 @@
           "category": "Misc"
         }
       }
+    },
+    "ShortOnlyBaseStrategy": {
+      "display_name": "Short Only Base",
+      "description": "SHORT-only, regime-gated strategy. Trades only when the broad market is below its 100DMA, breadth is weak (<40% above 50DMA) and VIX is above its 60D SMA, then shorts trend breakdowns to new 20-day lows or overextension blow-offs above the upper Bollinger band. Risk-based sizing.",
+      "trade_direction": "SHORT",
+      "required_indicators": ["atr_14", "rsi_14", "ema_7", "ema_20", "ema_50", "bbands_20"],
+      "exit_rules": [
+        {
+          "rule_type": "stop_loss_atr",
+          "params": {"atr_column": "atr_14", "multiple": 2.5, "side": "above"},
+          "description": "Protective stop: cover if close > entry + 2.5 x ATR14 (enforced intrabar by the engine)",
+          "grace_period_bars": 0,
+          "momentum_protection": false
+        },
+        {
+          "rule_type": "indicator_cross",
+          "params": {"indicator": "ema_20", "direction": "above"},
+          "description": "Cover if close crosses back above EMA_20",
+          "grace_period_bars": 0,
+          "momentum_protection": false
+        },
+        {
+          "rule_type": "time_exit",
+          "params": {"days": 10},
+          "description": "Cover after holding_days >= 10",
+          "grace_period_bars": 0,
+          "momentum_protection": false
+        }
+      ],
+      "parameters": {
+        "benchmark_ma_period": {
+          "type": "int",
+          "default": 100,
+          "configurable": true,
+                    "optimization": {
+            "min": 50,
+            "max": 200,
+            "step": 10
+          },
+          "description": "Benchmark MA length for the regime gate (benchmark_close < MA)",
+          "category": "Regime"
+        },
+        "vix_sma_period": {
+          "type": "int",
+          "default": 60,
+          "configurable": true,
+                    "optimization": {
+            "min": 20,
+            "max": 120,
+            "step": 10
+          },
+          "description": "VIX SMA length for the regime gate (VIX > SMA)",
+          "category": "Regime"
+        },
+        "breadth_threshold": {
+          "type": "float",
+          "default": 40.0,
+          "configurable": true,
+                    "optimization": {
+            "min": 20.0,
+            "max": 60.0,
+            "step": 5.0
+          },
+          "description": "Max % of universe above 50DMA to allow entries",
+          "category": "Regime"
+        },
+        "rsi_floor": {
+          "type": "float",
+          "default": 20.0,
+          "configurable": true,
+                    "optimization": {
+            "min": 10.0,
+            "max": 40.0,
+            "step": 5.0
+          },
+          "description": "Minimum RSI_14 for the trend-breakdown entry block",
+          "category": "Entry"
+        },
+        "rally_atr_mult": {
+          "type": "float",
+          "default": 2.0,
+          "configurable": true,
+                    "optimization": {
+            "min": 1.0,
+            "max": 4.0,
+            "step": 0.25
+          },
+          "description": "ATR_14 multiple for the 3-day rally overextension trigger",
+          "category": "Entry"
+        },
+        "gap_atr_mult": {
+          "type": "float",
+          "default": 1.5,
+          "configurable": true,
+                    "optimization": {
+            "min": 0.5,
+            "max": 3.0,
+            "step": 0.25
+          },
+          "description": "ATR_14 multiple for the gap-up overextension trigger",
+          "category": "Entry"
+        },
+        "atr_sl": {
+          "type": "float",
+          "default": 2.5,
+          "configurable": true,
+                    "optimization": {
+            "min": 1.0,
+            "max": 5.0,
+            "step": 0.25
+          },
+          "description": "ATR_14 multiple for the protective stop placed above entry",
+          "category": "Stop Loss"
+        },
+        "time_exit": {
+          "type": "int",
+          "default": 10,
+          "configurable": true,
+                    "optimization": {
+            "min": 3,
+            "max": 30,
+            "step": 1
+          },
+          "description": "Maximum holding period in days before a forced cover",
+          "category": "Exit"
+        },
+        "risk_perc": {
+          "type": "float",
+          "default": 2.0,
+          "configurable": true,
+                    "optimization": {
+            "min": 0.5,
+            "max": 10.0,
+            "step": 0.5
+          },
+          "description": "Percent of equity to risk per trade at the initial stop",
+          "category": "Position Sizing"
+        },
+        "min_price": {
+          "type": "float",
+          "default": 5.0,
+          "configurable": true,
+          "optimization": null,
+          "description": "Minimum close price for the tradable universe",
+          "category": "Universe"
+        },
+        "min_adv_20": {
+          "type": "float",
+          "default": 5000000.0,
+          "configurable": true,
+          "optimization": null,
+          "description": "Minimum 20-day average daily volume for the universe",
+          "category": "Universe"
+        }
+      }
     }
   }
 }
