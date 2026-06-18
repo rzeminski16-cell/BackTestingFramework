@@ -44,7 +44,9 @@ from .entity_mapping import EntityMapper, EntityMapping
 from .families import normalise_family_panel, stamp_provenance
 from .validation import Validator, ValidationReport, Finding, Severity
 from .package_writer import PackageWriter
-from .builder import RunBuilder, RunPackage
+from .builder import RunBuilder, RunPackage, ExportBlocked
+from .sources import PanelSourceBuilder
+from .controller import DataPrepController
 
 __all__ = [
     # schema
@@ -83,4 +85,7 @@ __all__ = [
     # orchestration
     "RunBuilder",
     "RunPackage",
+    "ExportBlocked",
+    "PanelSourceBuilder",
+    "DataPrepController",
 ]
