@@ -315,10 +315,11 @@ class PanelSourceBuilder:
         today = pd.Timestamp(datetime.now(timezone.utc).date())
         status = status.copy()
         status["observation_date"] = today
-        status["entity_id"] = (
-            status.get("market_type", "market").astype(str) + ":" +
-            status.get("region", "").astype(str)
-        )
+        market_type = (status["market_type"].astype(str)
+                       if "market_type" in status.columns else "market")
+        region = (status["region"].astype(str)
+                  if "region" in status.columns else "")
+        status["entity_id"] = market_type + ":" + region
         return self._normalise(
             status, Family.UTILITIES, config,
             native_frequency="snapshot",
