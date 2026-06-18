@@ -374,8 +374,14 @@ class SingleSecurityEngine:
         Returns:
             Remaining capital after entry
         """
-        # Apply slippage to BUY orders (pay more due to slippage)
-        execution_price = price * (1 + self.config.slippage_percent / 100)
+        # Slippage is direction-aware: a LONG entry buys (fills higher), a SHORT
+        # entry sells (fills lower). Applying long-style slippage to a short would
+        # push the entry across a stop that sits just above the close.
+        slippage = self.config.slippage_percent / 100
+        if signal.direction == TradeDirection.SHORT:
+            execution_price = price * (1 - slippage)
+        else:
+            execution_price = price * (1 + slippage)
 
         # Get FX rate for currency conversion
         fx_rate = self._get_fx_rate(symbol, date)
@@ -471,11 +477,16 @@ class SingleSecurityEngine:
         Returns:
             Updated capital after exit
         """
-        # Apply slippage to SELL orders (receive less due to slippage)
-        execution_price = price * (1 - self.config.slippage_percent / 100)
-
         position = self.position_manager.get_position()
         quantity = position.current_quantity
+
+        # Slippage is direction-aware: closing a LONG sells (fills lower),
+        # closing a SHORT buys to cover (fills higher).
+        slippage = self.config.slippage_percent / 100
+        if position.direction == TradeDirection.SHORT:
+            execution_price = price * (1 + slippage)
+        else:
+            execution_price = price * (1 - slippage)
 
         # Create exit order with slippage-adjusted price
         exit_order = Order(
@@ -501,18 +512,17 @@ class SingleSecurityEngine:
         # Get exit FX rate
         exit_fx_rate = self._get_fx_rate(symbol, date)
 
-        # Calculate slippage cost in security currency
-        # Entry slippage: paid extra when buying
-        # For BUY: execution_price = original_price * (1 + slippage%)
-        # Entry slippage per share = execution_price * slippage% / (1 + slippage%)
+        # Calculate slippage cost in security currency (direction-aware). For a
+        # LONG the entry filled higher (1+s) and the exit lower (1-s); for a
+        # SHORT the entry filled lower (1-s) and the exit higher (1+s).
         slippage_pct = self.config.slippage_percent / 100
-        entry_slippage_per_share = position.entry_price * slippage_pct / (1 + slippage_pct)
+        if position.direction == TradeDirection.SHORT:
+            entry_slippage_per_share = position.entry_price * slippage_pct / (1 - slippage_pct)
+            exit_slippage_per_share = execution_price * slippage_pct / (1 + slippage_pct)
+        else:
+            entry_slippage_per_share = position.entry_price * slippage_pct / (1 + slippage_pct)
+            exit_slippage_per_share = execution_price * slippage_pct / (1 - slippage_pct)
         entry_slippage = entry_slippage_per_share * position.initial_quantity
-
-        # Exit slippage: received less when selling
-        # For SELL: execution_price = original_price * (1 - slippage%)
-        # Exit slippage per share = execution_price * slippage% / (1 - slippage%)
-        exit_slippage_per_share = execution_price * slippage_pct / (1 - slippage_pct)
         exit_slippage = exit_slippage_per_share * quantity
 
         # Total slippage in security currency
@@ -556,11 +566,16 @@ class SingleSecurityEngine:
         Returns:
             Updated capital
         """
-        # Apply slippage to SELL orders (receive less due to slippage)
-        execution_price = price * (1 - self.config.slippage_percent / 100)
-
         position = self.position_manager.get_position()
         exit_quantity = position.current_quantity * fraction
+
+        # Direction-aware slippage: a LONG partial sells (fills lower), a SHORT
+        # partial buys to cover (fills higher).
+        slippage = self.config.slippage_percent / 100
+        if position.direction == TradeDirection.SHORT:
+            execution_price = price * (1 + slippage)
+        else:
+            execution_price = price * (1 - slippage)
 
         # Create exit order with slippage-adjusted price
         exit_order = Order(
@@ -617,8 +632,13 @@ class SingleSecurityEngine:
         Returns:
             Remaining capital after pyramid
         """
-        # Apply slippage to pyramid (same as BUY)
-        execution_price = price * (1 + self.config.slippage_percent / 100)
+        # A pyramid adds in the position's own direction: LONG adds by buying
+        # (fills higher), SHORT adds by selling (fills lower).
+        slippage = self.config.slippage_percent / 100
+        if self.position_manager.get_position().direction == TradeDirection.SHORT:
+            execution_price = price * (1 - slippage)
+        else:
+            execution_price = price * (1 + slippage)
 
         # Get FX rate
         fx_rate = self._get_fx_rate(symbol, date)

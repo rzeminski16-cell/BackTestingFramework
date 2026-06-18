@@ -744,3 +744,89 @@ class TestFullIsolation:
 
         assert abs(result.final_equity - (100000.0 + total_pl)) < 1e-3
         assert len(result.signal_rejections) == 0
+
+
+# =============================================================================
+# Short Slippage Direction Tests
+# =============================================================================
+
+class ShortPortfolioStrategy(PortfolioDeterministicStrategy):
+    """SHORT-only deterministic strategy whose stop sits above the close."""
+
+    def __init__(self, stop_above_pct=0.0005, **kwargs):
+        self.stop_above_pct = stop_above_pct
+        super().__init__(**kwargs)
+
+    @property
+    def trade_direction(self) -> TradeDirection:
+        return TradeDirection.SHORT
+
+    def generate_entry_signal(self, context: StrategyContext):
+        if context.current_index in self.buy_bars:
+            stop = context.current_price * (1 + self.stop_above_pct)
+            return Signal.buy(
+                size=1.0, stop_loss=stop, reason="Test short",
+                direction=self.trade_direction,
+            )
+        return None
+
+    def calculate_initial_stop_loss(self, context: StrategyContext) -> float:
+        return context.current_price * (1 + self.stop_above_pct)
+
+
+def _make_short_config(full_isolation=False, slippage=0.1):
+    """PortfolioConfig with non-zero slippage for short slippage tests."""
+    return PortfolioConfig(
+        initial_capital=100000.0,
+        commission=CommissionConfig(mode=CommissionMode.PERCENTAGE, value=0.0),
+        slippage_percent=slippage,
+        capital_contention=CapitalContentionConfig.default_mode(),
+        full_isolation=full_isolation,
+    )
+
+
+class TestShortSlippageDirection:
+    """Direction-aware slippage must not push a short entry across its stop."""
+
+    def test_tight_short_stop_does_not_crash(self):
+        reset_trade_counter()
+        engine = PortfolioEngine(_make_short_config())
+        data = _make_price_data(num_bars=20)
+        strategy = ShortPortfolioStrategy(
+            buy_bars={3}, sell_bars={10}, stop_above_pct=0.0005,
+            position_size_shares=100,
+        )
+        # Previously raised ValueError: "Invalid SHORT stop loss ...".
+        result = engine.run({"AAPL": data}, strategy)
+        assert len(result.symbol_results["AAPL"].trades) == 1
+
+    def test_full_isolation_short_does_not_crash(self):
+        """The exact path the user hit: Full mode forces every short through."""
+        reset_trade_counter()
+        engine = PortfolioEngine(_make_short_config(full_isolation=True))
+        data_dict = {
+            "AAPL": _make_price_data(symbol_offset=0.0, num_bars=20),
+            "GOOG": _make_price_data(symbol_offset=20.0, num_bars=20),
+        }
+        strategy = ShortPortfolioStrategy(
+            buy_bars={3}, sell_bars={12}, stop_above_pct=0.0005,
+            position_size_shares=100,
+        )
+        result = engine.run(data_dict, strategy)
+        assert len(result.signal_rejections) == 0
+        for sym in data_dict:
+            assert len(result.symbol_results[sym].trades) == 1
+
+    def test_short_entry_fills_below_close(self):
+        reset_trade_counter()
+        engine = PortfolioEngine(_make_short_config())
+        data = _make_price_data(num_bars=20)
+        close_at_entry = data.iloc[3]['close']
+        strategy = ShortPortfolioStrategy(
+            buy_bars={3}, sell_bars={10}, stop_above_pct=0.05,
+            position_size_shares=100,
+        )
+        result = engine.run({"AAPL": data}, strategy)
+        trades = result.symbol_results["AAPL"].trades
+        assert len(trades) == 1
+        assert trades[0].entry_price < close_at_entry
