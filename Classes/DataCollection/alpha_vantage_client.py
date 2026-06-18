@@ -107,6 +107,46 @@ class APIEndpoint(Enum):
 
     # Index
     INDEX_DATA = "INDEX_DATA"
+    INDEX_CATALOG = "INDEX_CATALOG"
+
+    # Forex (realtime / intraday)
+    CURRENCY_EXCHANGE_RATE = "CURRENCY_EXCHANGE_RATE"
+    FX_INTRADAY = "FX_INTRADAY"
+    FX_MONTHLY = "FX_MONTHLY"
+
+    # Corporate actions
+    DIVIDENDS = "DIVIDENDS"
+    SPLITS = "SPLITS"
+
+    # Commodities
+    WTI = "WTI"
+    BRENT = "BRENT"
+    NATURAL_GAS = "NATURAL_GAS"
+    COPPER = "COPPER"
+    ALUMINUM = "ALUMINUM"
+    WHEAT = "WHEAT"
+    CORN = "CORN"
+    COTTON = "COTTON"
+    SUGAR = "SUGAR"
+    COFFEE = "COFFEE"
+    ALL_COMMODITIES = "ALL_COMMODITIES"
+
+    # Economic indicators (US macro)
+    REAL_GDP = "REAL_GDP"
+    REAL_GDP_PER_CAPITA = "REAL_GDP_PER_CAPITA"
+    TREASURY_YIELD = "TREASURY_YIELD"
+    FEDERAL_FUNDS_RATE = "FEDERAL_FUNDS_RATE"
+    CPI = "CPI"
+    INFLATION = "INFLATION"
+    RETAIL_SALES = "RETAIL_SALES"
+    DURABLES = "DURABLES"
+    UNEMPLOYMENT = "UNEMPLOYMENT"
+    NONFARM_PAYROLL = "NONFARM_PAYROLL"
+
+    # Utilities
+    MARKET_STATUS = "MARKET_STATUS"
+    EARNINGS_CALENDAR = "EARNINGS_CALENDAR"
+    LISTING_STATUS = "LISTING_STATUS"
 
 
 @dataclass
@@ -382,7 +422,8 @@ class AlphaVantageClient:
         self,
         endpoint: APIEndpoint,
         params: Dict[str, Any],
-        use_cache: bool = True
+        use_cache: bool = True,
+        expect_csv: bool = False
     ) -> APIResponse:
         """
         Make an API request with rate limiting, caching, and retry logic.
@@ -391,6 +432,12 @@ class AlphaVantageClient:
             endpoint: API endpoint
             params: Request parameters
             use_cache: Whether to use caching
+            expect_csv: Whether the endpoint returns CSV rather than JSON
+                (e.g. EARNINGS_CALENDAR, LISTING_STATUS). CSV payloads are
+                wrapped as ``{"csv": <text>}`` so the rest of the pipeline can
+                treat all responses uniformly. JSON advisory/error bodies (which
+                Alpha Vantage still returns for CSV endpoints on failure) are
+                detected and handled like any other advisory.
 
         Returns:
             APIResponse with result data
@@ -486,17 +533,51 @@ class AlphaVantageClient:
                     time.sleep(self._calculate_backoff(retry_count))
                     continue
 
-                # Parse response
-                try:
-                    data = response.json()
-                except ValueError as e:
-                    last_error = (
-                        f"Invalid JSON from Alpha Vantage "
-                        f"(size={len(response.content)} bytes): {str(e)}"
-                    )
-                    retry_count += 1
-                    time.sleep(self._calculate_backoff(retry_count))
-                    continue
+                # Parse response. CSV endpoints (EARNINGS_CALENDAR,
+                # LISTING_STATUS) return a CSV body on success but still emit a
+                # JSON object for advisories/errors, so sniff the payload.
+                if expect_csv:
+                    text = response.text or ""
+                    if text.lstrip().startswith("{"):
+                        try:
+                            data = response.json()
+                        except ValueError:
+                            data = {}
+                        # Fall through to the advisory/error handling below.
+                    else:
+                        csv_payload = {"csv": text}
+                        if use_cache:
+                            self.cache.set(endpoint_str, params, csv_payload)
+                        if self.logger:
+                            self.logger.log_api_call(APILogEntry(
+                                timestamp=datetime.now(),
+                                method="GET",
+                                endpoint=endpoint_str,
+                                symbol=params.get("symbol"),
+                                status_code=response.status_code,
+                                response_size_bytes=len(response.content),
+                                cache_hit=False,
+                                duration_seconds=elapsed,
+                                retry_count=retry_count
+                            ))
+                        return APIResponse(
+                            success=True,
+                            data=csv_payload,
+                            status_code=response.status_code,
+                            response_time=elapsed,
+                            retry_count=retry_count
+                        )
+                else:
+                    try:
+                        data = response.json()
+                    except ValueError as e:
+                        last_error = (
+                            f"Invalid JSON from Alpha Vantage "
+                            f"(size={len(response.content)} bytes): {str(e)}"
+                        )
+                        retry_count += 1
+                        time.sleep(self._calculate_backoff(retry_count))
+                        continue
 
                 # Check for API error messages
                 if "Error Message" in data:
@@ -911,6 +992,197 @@ class AlphaVantageClient:
                 "interval": interval,
                 "outputsize": outputsize
             }
+        )
+
+    def get_index_catalog(self) -> APIResponse:
+        """
+        Get the catalogue of indices discoverable via INDEX_DATA.
+
+        Used so benchmark selection can be data-driven rather than relying on
+        hard-coded symbols. Returns the raw catalogue payload.
+        """
+        return self._make_request(APIEndpoint.INDEX_CATALOG, {})
+
+    # === Corporate Actions ===
+
+    def get_dividends(self, symbol: str) -> APIResponse:
+        """Get historical and future (declared) dividend distributions."""
+        return self._make_request(APIEndpoint.DIVIDENDS, {"symbol": symbol})
+
+    def get_splits(self, symbol: str) -> APIResponse:
+        """Get historical stock-split events."""
+        return self._make_request(APIEndpoint.SPLITS, {"symbol": symbol})
+
+    # === Forex (realtime / intraday / monthly) ===
+
+    def get_currency_exchange_rate(
+        self,
+        from_currency: str,
+        to_currency: str
+    ) -> APIResponse:
+        """
+        Get the realtime exchange rate for a currency pair.
+
+        Works for both physical and crypto currencies. Returns a snapshot
+        (not a time series), useful as a current base-currency descriptor.
+        """
+        return self._make_request(
+            APIEndpoint.CURRENCY_EXCHANGE_RATE,
+            {"from_currency": from_currency, "to_currency": to_currency},
+            use_cache=False  # realtime snapshot: do not serve stale values
+        )
+
+    def get_forex_intraday(
+        self,
+        from_currency: str,
+        to_currency: str,
+        interval: str = "60min",
+        outputsize: str = "full"
+    ) -> APIResponse:
+        """
+        Get intraday forex data (premium endpoint).
+
+        Args:
+            from_currency: Base currency (e.g. "GBP")
+            to_currency: Quote currency (e.g. "USD")
+            interval: "1min", "5min", "15min", "30min", or "60min"
+            outputsize: "compact" or "full"
+        """
+        return self._make_request(
+            APIEndpoint.FX_INTRADAY,
+            {
+                "from_symbol": from_currency,
+                "to_symbol": to_currency,
+                "interval": interval,
+                "outputsize": outputsize,
+            }
+        )
+
+    def get_forex_monthly(
+        self,
+        from_currency: str,
+        to_currency: str
+    ) -> APIResponse:
+        """Get monthly forex data."""
+        return self._make_request(
+            APIEndpoint.FX_MONTHLY,
+            {"from_symbol": from_currency, "to_symbol": to_currency}
+        )
+
+    # === Commodities ===
+
+    def get_commodity(
+        self,
+        function: str,
+        interval: str = "monthly"
+    ) -> APIResponse:
+        """
+        Get a commodity price series.
+
+        Args:
+            function: Alpha Vantage commodity function (e.g. "WTI", "BRENT",
+                "NATURAL_GAS", "COPPER", "ALL_COMMODITIES").
+            interval: Native frequency. WTI/BRENT/NATURAL_GAS support
+                "daily"/"weekly"/"monthly"; metals/agricultural/all-commodities
+                support "monthly"/"quarterly"/"annual".
+
+        Returns:
+            APIResponse with the commodity time series payload.
+        """
+        try:
+            endpoint = APIEndpoint[function.upper()]
+        except KeyError:
+            return APIResponse(
+                success=False,
+                data=None,
+                error_message=f"Unknown commodity function: {function}"
+            )
+        return self._make_request(endpoint, {"interval": interval})
+
+    # === Economic Indicators (US macro) ===
+
+    def get_economic_indicator(
+        self,
+        function: str,
+        interval: Optional[str] = None,
+        maturity: Optional[str] = None
+    ) -> APIResponse:
+        """
+        Get a US economic indicator series.
+
+        Args:
+            function: Alpha Vantage economic function (e.g. "REAL_GDP",
+                "TREASURY_YIELD", "FEDERAL_FUNDS_RATE", "CPI", "INFLATION",
+                "RETAIL_SALES", "DURABLES", "UNEMPLOYMENT", "NONFARM_PAYROLL").
+            interval: Native frequency where the endpoint supports a choice
+                (e.g. TREASURY_YIELD/FEDERAL_FUNDS_RATE: daily/weekly/monthly;
+                REAL_GDP: quarterly/annual; CPI: monthly/semiannual).
+            maturity: For TREASURY_YIELD only ("3month", "2year", "5year",
+                "7year", "10year", "30year").
+
+        Returns:
+            APIResponse with the economic indicator payload.
+        """
+        try:
+            endpoint = APIEndpoint[function.upper()]
+        except KeyError:
+            return APIResponse(
+                success=False,
+                data=None,
+                error_message=f"Unknown economic indicator: {function}"
+            )
+        params: Dict[str, Any] = {}
+        if interval:
+            params["interval"] = interval
+        if maturity:
+            params["maturity"] = maturity
+        return self._make_request(endpoint, params)
+
+    # === Utilities ===
+
+    def get_market_status(self) -> APIResponse:
+        """Get the current open/closed status of major global markets."""
+        return self._make_request(
+            APIEndpoint.MARKET_STATUS, {}, use_cache=False
+        )
+
+    def get_earnings_calendar(
+        self,
+        symbol: Optional[str] = None,
+        horizon: str = "3month"
+    ) -> APIResponse:
+        """
+        Get the upcoming earnings calendar (CSV endpoint).
+
+        Args:
+            symbol: Optional ticker to scope the calendar to one company.
+            horizon: "3month", "6month", or "12month".
+        """
+        params: Dict[str, Any] = {"horizon": horizon}
+        if symbol:
+            params["symbol"] = symbol
+        return self._make_request(
+            APIEndpoint.EARNINGS_CALENDAR, params, expect_csv=True
+        )
+
+    def get_listing_status(
+        self,
+        date: Optional[str] = None,
+        state: str = "active"
+    ) -> APIResponse:
+        """
+        Get listing/delisting status for all symbols (CSV endpoint).
+
+        Args:
+            date: Optional point-in-time date (YYYY-MM-DD) for survivorship-aware
+                universes; defaults to the latest snapshot.
+            state: "active" or "delisted".
+        """
+        params: Dict[str, Any] = {"state": state}
+        if date:
+            params["date"] = date
+        return self._make_request(
+            APIEndpoint.LISTING_STATUS, params, expect_csv=True
         )
 
     # === Batch Operations ===

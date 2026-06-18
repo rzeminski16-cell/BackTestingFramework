@@ -134,6 +134,152 @@ FUNDAMENTAL_CATEGORIES = {
     "cash_flow": ["OperatingCashflow", "FreeCashflow"],
 }
 
+# ---------------------------------------------------------------------------
+# Commodity series catalogue (Alpha Vantage commodities endpoints).
+#
+# Each entry carries the metadata the data-preparation layer needs to build a
+# point-in-time normalised panel: the AV function, a human-readable name, the
+# supported native frequencies, a sensible default frequency, the unit, and the
+# research rationale (why a researcher would include the series). "tier" splits
+# a recommended core set from an optional secondary set.
+# ---------------------------------------------------------------------------
+COMMODITY_SERIES: Dict[str, Dict[str, Any]] = {
+    "WTI": {
+        "function": "WTI", "name": "Crude Oil (WTI)",
+        "intervals": ["daily", "weekly", "monthly"], "default_interval": "monthly",
+        "unit": "USD per barrel", "tier": "core", "rationale": "energy stress / inflation proxy",
+    },
+    "BRENT": {
+        "function": "BRENT", "name": "Crude Oil (Brent)",
+        "intervals": ["daily", "weekly", "monthly"], "default_interval": "monthly",
+        "unit": "USD per barrel", "tier": "core", "rationale": "global energy benchmark / inflation proxy",
+    },
+    "NATURAL_GAS": {
+        "function": "NATURAL_GAS", "name": "Natural Gas (Henry Hub)",
+        "intervals": ["daily", "weekly", "monthly"], "default_interval": "monthly",
+        "unit": "USD per million BTU", "tier": "core", "rationale": "energy shock / supply stress",
+    },
+    "COPPER": {
+        "function": "COPPER", "name": "Global Price of Copper",
+        "intervals": ["monthly", "quarterly", "annual"], "default_interval": "monthly",
+        "unit": "USD per metric ton", "tier": "core", "rationale": "growth / industrial cyclicality",
+    },
+    "ALL_COMMODITIES": {
+        "function": "ALL_COMMODITIES", "name": "Global Price Index of All Commodities",
+        "intervals": ["monthly", "quarterly", "annual"], "default_interval": "monthly",
+        "unit": "index (2016=100)", "tier": "core", "rationale": "broad inflation / growth composite",
+    },
+    "ALUMINUM": {
+        "function": "ALUMINUM", "name": "Global Price of Aluminum",
+        "intervals": ["monthly", "quarterly", "annual"], "default_interval": "monthly",
+        "unit": "USD per metric ton", "tier": "optional", "rationale": "industrial / construction demand",
+    },
+    "WHEAT": {
+        "function": "WHEAT", "name": "Global Price of Wheat",
+        "intervals": ["monthly", "quarterly", "annual"], "default_interval": "monthly",
+        "unit": "USD per metric ton", "tier": "optional", "rationale": "agricultural / food inflation",
+    },
+    "CORN": {
+        "function": "CORN", "name": "Global Price of Corn",
+        "intervals": ["monthly", "quarterly", "annual"], "default_interval": "monthly",
+        "unit": "USD per metric ton", "tier": "optional", "rationale": "agricultural / food inflation",
+    },
+    "COTTON": {
+        "function": "COTTON", "name": "Global Price of Cotton",
+        "intervals": ["monthly", "quarterly", "annual"], "default_interval": "monthly",
+        "unit": "USD cents per pound", "tier": "optional", "rationale": "agricultural / consumer goods",
+    },
+    "SUGAR": {
+        "function": "SUGAR", "name": "Global Price of Sugar",
+        "intervals": ["monthly", "quarterly", "annual"], "default_interval": "monthly",
+        "unit": "USD cents per pound", "tier": "optional", "rationale": "agricultural / food inflation",
+    },
+    "COFFEE": {
+        "function": "COFFEE", "name": "Global Price of Coffee",
+        "intervals": ["monthly", "quarterly", "annual"], "default_interval": "monthly",
+        "unit": "USD cents per pound", "tier": "optional", "rationale": "agricultural / consumer goods",
+    },
+}
+
+CORE_COMMODITIES = [k for k, v in COMMODITY_SERIES.items() if v["tier"] == "core"]
+
+# Treasury yield maturities (TREASURY_YIELD endpoint).
+TREASURY_MATURITIES = ["3month", "2year", "5year", "7year", "10year", "30year"]
+
+# ---------------------------------------------------------------------------
+# Economic indicator catalogue (Alpha Vantage economic indicators).
+#
+# All Alpha Vantage macro series are US-centric and sourced from FRED/BEA/BLS.
+# They are *latest-history* series, not revision-vintage panels, so every entry
+# is flagged with revision_risk so the data-prep layer can warn downstream.
+# geo_scope is "US" throughout; treat as a US / global-risk proxy elsewhere.
+# ---------------------------------------------------------------------------
+MACRO_SERIES: Dict[str, Dict[str, Any]] = {
+    "REAL_GDP": {
+        "function": "REAL_GDP", "name": "Real GDP",
+        "intervals": ["quarterly", "annual"], "default_interval": "quarterly",
+        "unit": "billions of chained 2017 USD", "geo_scope": "US", "revision_risk": True,
+        "rationale": "growth regime",
+    },
+    "REAL_GDP_PER_CAPITA": {
+        "function": "REAL_GDP_PER_CAPITA", "name": "Real GDP per Capita",
+        "intervals": ["quarterly"], "default_interval": "quarterly",
+        "unit": "chained 2017 USD", "geo_scope": "US", "revision_risk": True,
+        "rationale": "growth regime (per capita)",
+    },
+    "TREASURY_YIELD": {
+        "function": "TREASURY_YIELD", "name": "Treasury Yield",
+        "intervals": ["daily", "weekly", "monthly"], "default_interval": "monthly",
+        "unit": "percent", "geo_scope": "US", "revision_risk": False,
+        "maturity_required": True, "maturities": TREASURY_MATURITIES, "default_maturity": "10year",
+        "rationale": "rates regime / curve slope",
+    },
+    "FEDERAL_FUNDS_RATE": {
+        "function": "FEDERAL_FUNDS_RATE", "name": "Federal Funds Rate",
+        "intervals": ["daily", "weekly", "monthly"], "default_interval": "monthly",
+        "unit": "percent", "geo_scope": "US", "revision_risk": False,
+        "rationale": "monetary policy regime",
+    },
+    "CPI": {
+        "function": "CPI", "name": "Consumer Price Index",
+        "intervals": ["monthly", "semiannual"], "default_interval": "monthly",
+        "unit": "index (1982-84=100)", "geo_scope": "US", "revision_risk": True,
+        "rationale": "inflation regime",
+    },
+    "INFLATION": {
+        "function": "INFLATION", "name": "Inflation (annual)",
+        "intervals": ["annual"], "default_interval": "annual",
+        "unit": "percent", "geo_scope": "US", "revision_risk": True,
+        "rationale": "inflation regime",
+    },
+    "RETAIL_SALES": {
+        "function": "RETAIL_SALES", "name": "Advance Retail Sales",
+        "intervals": ["monthly"], "default_interval": "monthly",
+        "unit": "millions USD", "geo_scope": "US", "revision_risk": True,
+        "rationale": "consumer demand",
+    },
+    "DURABLES": {
+        "function": "DURABLES", "name": "Durable Goods Orders",
+        "intervals": ["monthly"], "default_interval": "monthly",
+        "unit": "millions USD", "geo_scope": "US", "revision_risk": True,
+        "rationale": "business investment / cyclicality",
+    },
+    "UNEMPLOYMENT": {
+        "function": "UNEMPLOYMENT", "name": "Unemployment Rate",
+        "intervals": ["monthly"], "default_interval": "monthly",
+        "unit": "percent", "geo_scope": "US", "revision_risk": True,
+        "rationale": "labour market regime",
+    },
+    "NONFARM_PAYROLL": {
+        "function": "NONFARM_PAYROLL", "name": "Total Nonfarm Payroll",
+        "intervals": ["monthly"], "default_interval": "monthly",
+        "unit": "thousands of persons", "geo_scope": "US", "revision_risk": True,
+        "rationale": "labour market regime",
+    },
+}
+
+DEFAULT_MACRO_SERIES = list(MACRO_SERIES.keys())
+
 
 @dataclass
 class APIConfig:
@@ -447,6 +593,132 @@ class OptionsDataConfig(TabConfig):
 
 
 @dataclass
+class CommodityDataConfig:
+    """Configuration for commodity data collection.
+
+    Commodities are not ticker-scoped; the user selects which series to pull and
+    the native frequency per series. ``intervals`` maps a series key (e.g. "WTI")
+    to a chosen interval; series omitted from the map use their default.
+    """
+    series: List[str] = field(default_factory=lambda: list(CORE_COMMODITIES))
+    intervals: Dict[str, str] = field(default_factory=dict)
+    date_range_type: DateRangeType = DateRangeType.ALL_AVAILABLE
+    from_date: Optional[date] = None
+    to_date: Optional[date] = None
+    last_n_days: int = 365
+    missing_data_handling: MissingDataHandling = MissingDataHandling.FORWARD_FILL
+
+    def __post_init__(self):
+        if isinstance(self.date_range_type, str):
+            self.date_range_type = DateRangeType(self.date_range_type)
+        if isinstance(self.missing_data_handling, str):
+            self.missing_data_handling = MissingDataHandling(self.missing_data_handling)
+        if isinstance(self.from_date, str):
+            self.from_date = datetime.strptime(self.from_date, "%Y-%m-%d").date()
+        if isinstance(self.to_date, str):
+            self.to_date = datetime.strptime(self.to_date, "%Y-%m-%d").date()
+        for s in self.series:
+            if s not in COMMODITY_SERIES:
+                raise ValueError(f"Unknown commodity series: {s}")
+
+    def interval_for(self, series_key: str) -> str:
+        """Resolve the effective interval for a series (chosen or default)."""
+        if series_key in self.intervals:
+            return self.intervals[series_key]
+        return COMMODITY_SERIES[series_key]["default_interval"]
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "series": self.series,
+            "intervals": self.intervals,
+            "date_range_type": self.date_range_type.value,
+            "from_date": self.from_date.isoformat() if self.from_date else None,
+            "to_date": self.to_date.isoformat() if self.to_date else None,
+            "last_n_days": self.last_n_days,
+            "missing_data_handling": self.missing_data_handling.value,
+        }
+
+    @classmethod
+    def from_dict(cls, data: Dict[str, Any]) -> 'CommodityDataConfig':
+        return cls(**{k: v for k, v in data.items() if k in cls.__dataclass_fields__})
+
+
+@dataclass
+class MacroDataConfig:
+    """Configuration for US economic-indicator (macro) collection.
+
+    ``intervals`` maps a series key to a chosen native frequency; ``maturities``
+    maps TREASURY_YIELD to one or more maturities to pull (defaults to 10year).
+    """
+    series: List[str] = field(default_factory=lambda: list(DEFAULT_MACRO_SERIES))
+    intervals: Dict[str, str] = field(default_factory=dict)
+    treasury_maturities: List[str] = field(default_factory=lambda: ["10year"])
+    date_range_type: DateRangeType = DateRangeType.ALL_AVAILABLE
+    from_date: Optional[date] = None
+    to_date: Optional[date] = None
+    last_n_days: int = 365
+    # Macro is step-function carried forward from availability only.
+    missing_data_handling: MissingDataHandling = MissingDataHandling.FORWARD_FILL
+
+    def __post_init__(self):
+        if isinstance(self.date_range_type, str):
+            self.date_range_type = DateRangeType(self.date_range_type)
+        if isinstance(self.missing_data_handling, str):
+            self.missing_data_handling = MissingDataHandling(self.missing_data_handling)
+        if isinstance(self.from_date, str):
+            self.from_date = datetime.strptime(self.from_date, "%Y-%m-%d").date()
+        if isinstance(self.to_date, str):
+            self.to_date = datetime.strptime(self.to_date, "%Y-%m-%d").date()
+        for s in self.series:
+            if s not in MACRO_SERIES:
+                raise ValueError(f"Unknown macro series: {s}")
+
+    def interval_for(self, series_key: str) -> str:
+        if series_key in self.intervals:
+            return self.intervals[series_key]
+        return MACRO_SERIES[series_key]["default_interval"]
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "series": self.series,
+            "intervals": self.intervals,
+            "treasury_maturities": self.treasury_maturities,
+            "date_range_type": self.date_range_type.value,
+            "from_date": self.from_date.isoformat() if self.from_date else None,
+            "to_date": self.to_date.isoformat() if self.to_date else None,
+            "last_n_days": self.last_n_days,
+            "missing_data_handling": self.missing_data_handling.value,
+        }
+
+    @classmethod
+    def from_dict(cls, data: Dict[str, Any]) -> 'MacroDataConfig':
+        return cls(**{k: v for k, v in data.items() if k in cls.__dataclass_fields__})
+
+
+@dataclass
+class CorporateActionsDataConfig(TabConfig):
+    """Configuration for corporate-action (dividends & splits) collection."""
+    include_dividends: bool = True
+    include_splits: bool = True
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "tickers": self.tickers,
+            "date_range_type": self.date_range_type.value,
+            "from_date": self.from_date.isoformat() if self.from_date else None,
+            "to_date": self.to_date.isoformat() if self.to_date else None,
+            "last_n_days": self.last_n_days,
+            "missing_data_handling": self.missing_data_handling.value,
+            "include_dividends": self.include_dividends,
+            "include_splits": self.include_splits,
+        }
+
+    @classmethod
+    def from_dict(cls, data: Dict[str, Any]) -> 'CorporateActionsDataConfig':
+        return cls(**{k: v for k, v in data.items() if k in cls.__dataclass_fields__})
+
+
+@dataclass
 class DataCollectionConfig:
     """Master configuration for the data collection system."""
     api: APIConfig = field(default_factory=APIConfig)
@@ -462,6 +734,9 @@ class DataCollectionConfig:
     insider: Optional[InsiderDataConfig] = None
     forex: Optional[ForexDataConfig] = None
     options: Optional[OptionsDataConfig] = None
+    commodity: Optional[CommodityDataConfig] = None
+    macro: Optional[MacroDataConfig] = None
+    corporate_actions: Optional[CorporateActionsDataConfig] = None
 
     def __post_init__(self):
         if isinstance(self.output_dir, str):
@@ -482,6 +757,9 @@ class DataCollectionConfig:
             "insider": self.insider.to_dict() if self.insider else None,
             "forex": self.forex.to_dict() if self.forex else None,
             "options": self.options.to_dict() if self.options else None,
+            "commodity": self.commodity.to_dict() if self.commodity else None,
+            "macro": self.macro.to_dict() if self.macro else None,
+            "corporate_actions": self.corporate_actions.to_dict() if self.corporate_actions else None,
         }
 
     def save(self, path: Path) -> None:
