@@ -96,6 +96,7 @@ BackTestingFramework/
 | [Portfolio Mode](docs/PORTFOLIO_MODE.md) | Multi-security backtesting |
 | [Backtest Analysis](docs/BACKTEST_ANALYSIS_GUIDE.md) | Drill down into strategy performance |
 | [Fundamental Data](docs/FUNDAMENTAL_DATA_GUIDE.md) | Fetch financial metrics from Alpha Vantage |
+| [Data Preparation](docs/DATA_PREPARATION.md) | Build a point-in-time research run package (trades + factors) for the modelling stage |
 
 ## Key Features
 

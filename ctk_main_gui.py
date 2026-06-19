@@ -171,6 +171,7 @@ class CTkMainLauncher(ctk.CTk):
         cards_frame.grid_rowconfigure(0, weight=1)
         cards_frame.grid_rowconfigure(1, weight=1)
         cards_frame.grid_rowconfigure(2, weight=1)
+        cards_frame.grid_rowconfigure(3, weight=1)
 
         # Define features
         features = [
@@ -197,6 +198,12 @@ class CTkMainLauncher(ctk.CTk):
                 "description": "Collect and prepare raw data from Alpha Vantage API",
                 "icon": "\U0001F4E5",  # Inbox tray
                 "command": self._launch_data_collection
+            },
+            {
+                "title": "Data Preparation",
+                "description": "Build a point-in-time research run package (trades + factors) for the modelling stage",
+                "icon": "\U0001F9EA",  # Test tube
+                "command": self._launch_data_prep
             },
             {
                 "title": "Rule Tester",
@@ -283,6 +290,10 @@ class CTkMainLauncher(ctk.CTk):
             subprocess.Popen([sys.executable, str(script_path)])
         else:
             self._show_error(f"Data Collection GUI not found: {script_path}")
+
+    def _launch_data_prep(self):
+        """Launch the Data Preparation (run-package builder) GUI."""
+        self._launch_module("data_prep")
 
     def _launch_rule_tester(self):
         """Launch the Rule Tester GUI."""
