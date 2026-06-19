@@ -180,15 +180,26 @@ class PanelSourceBuilder:
         )
 
     # -- fundamentals ------------------------------------------------------- #
+    def _fundamentals_dir(self):
+        """Locate the fundamentals store: raw_data/fundamentals is where the
+        collector writes; processed_data/fundamentals is a legacy fallback."""
+        for d in (self.raw_data_dir / "fundamentals", self.processed_dir / "fundamentals"):
+            if d.exists() and any(d.glob("*_fundamental.csv")):
+                return d
+        return None
+
     def _build_fundamentals_panel(self, config: RunConfig, symbols: List[str]) -> pd.DataFrame:
-        directory = self.processed_dir / "fundamentals"
-        if not directory.exists():
+        directory = self._fundamentals_dir()
+        if directory is None:
             return pd.DataFrame()
+
+        # Case-insensitive symbol -> file lookup (trade symbols may differ in case).
+        available = {p.stem.lower(): p for p in directory.glob("*_fundamental.csv")}
 
         frames: List[pd.DataFrame] = []
         for sym in symbols:
-            path = directory / f"{sym}_fundamental.csv"
-            if not path.exists():
+            path = available.get(f"{sym.lower()}_fundamental")
+            if path is None:
                 continue
             try:
                 raw = pd.read_csv(path)
@@ -303,13 +314,15 @@ class PanelSourceBuilder:
         directory = self.raw_data_dir / "corporate_actions"
         if not directory.exists():
             return pd.DataFrame()
+        # Case-insensitive lookup of {symbol}_{kind}.csv files.
+        available = {p.stem.lower(): p for p in directory.glob("*.csv")}
         specs = [("dividends", "ex_dividend_date", "amount", "DIVIDENDS"),
                  ("splits", "effective_date", "split_factor", "SPLITS")]
         rows: List[pd.DataFrame] = []
         for sym in symbols:
             for kind, date_col, val_col, func in specs:
-                path = directory / f"{sym}_{kind}.csv"
-                if not path.exists():
+                path = available.get(f"{sym.lower()}_{kind}")
+                if path is None:
                     continue
                 try:
                     raw = pd.read_csv(path)

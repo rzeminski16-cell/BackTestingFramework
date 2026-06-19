@@ -178,5 +178,47 @@ class TestSourcesAndController(unittest.TestCase):
             self.assertTrue(any("Commodities" in w for w in warnings))
 
 
+class TestFundamentalsLocation(unittest.TestCase):
+    """Fundamentals must load from raw_data/fundamentals (where the collector
+    writes); processed_data/fundamentals is only a legacy fallback."""
+
+    def _write_fundamentals(self, directory: Path):
+        directory.mkdir(parents=True, exist_ok=True)
+        pd.DataFrame({
+            "symbol": ["AAPL", "AAPL"],
+            "frequency": ["quarterly", "quarterly"],
+            "fiscaldateending": ["2021-12-31", "2022-03-31"],
+            "report_date": ["2022-01-27", "2022-04-28"],
+            "reported_eps": [2.10, 1.52],
+        }).to_csv(directory / "AAPL_fundamental.csv", index=False)
+
+    def _cfg(self):
+        cfg = RunConfig(run_name="fund loc")
+        cfg.families[Family.FUNDAMENTALS].include = True
+        return cfg
+
+    def test_reads_from_raw_data_fundamentals(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            raw = Path(tmp) / "raw_data"
+            self._write_fundamentals(raw / "fundamentals")
+            builder = PanelSourceBuilder(raw_data_dir=str(raw),
+                                         processed_dir=str(Path(tmp) / "processed_data"),
+                                         av_client=None)
+            panels, _ = builder.build_all(self._cfg(), ["AAPL"], ["USD"])
+            self.assertIn(Family.FUNDAMENTALS, panels)
+            # available_ts uses the explicit report date.
+            p = panels[Family.FUNDAMENTALS]
+            row = p[p["observation_date"] == pd.Timestamp("2021-12-31")].iloc[0]
+            self.assertEqual(pd.Timestamp(row["available_ts"]), pd.Timestamp("2022-01-27"))
+
+    def test_case_insensitive_symbol(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            raw = Path(tmp) / "raw_data"
+            self._write_fundamentals(raw / "fundamentals")
+            builder = PanelSourceBuilder(raw_data_dir=str(raw), av_client=None)
+            panels, _ = builder.build_all(self._cfg(), ["aapl"], ["USD"])  # lowercase
+            self.assertIn(Family.FUNDAMENTALS, panels)
+
+
 if __name__ == "__main__":
     unittest.main()

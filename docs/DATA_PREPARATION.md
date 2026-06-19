@@ -115,7 +115,7 @@ which now has tabs for every family the data-prep stage consumes:
 | Daily | `raw_data/daily/` | Equity prices |
 | Benchmarks | `raw_data/benchmarks/` | Index / regime (incl. VIX) |
 | Forex (weekly **or daily**) | `raw_data/forex/` | FX |
-| Fundamental | `processed_data/fundamentals/` | Fundamentals (PIT) |
+| Fundamental | `raw_data/fundamentals/` | Fundamentals (PIT) |
 | **Commodities** | `raw_data/commodities/` | Commodities |
 | **Macro** | `raw_data/macro/` | Macro |
 | **Corporate Actions** | `raw_data/corporate_actions/` | Corporate actions |
