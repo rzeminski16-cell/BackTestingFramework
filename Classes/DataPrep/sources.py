@@ -218,67 +218,122 @@ class PanelSourceBuilder:
             source_function="EARNINGS", source_vendor="alpha_vantage",
         )
 
-    # -- commodities (Alpha Vantage) --------------------------------------- #
+    # -- commodities (local store first, then Alpha Vantage) --------------- #
     def _build_commodities_panel(self, config: RunConfig) -> pd.DataFrame:
-        if self.av_client is None:
-            return pd.DataFrame()
-        from Classes.DataCollection.commodity_collector import CommodityCollector
-
         cfg = config.families[Family.COMMODITIES]
-        collector = CommodityCollector(self.av_client)
-        results = collector.collect_many(
-            series_keys=cfg.series or None,
-            intervals=cfg.options.get("intervals") or {},
-        )
-        frames = [r.df for r in results.values() if not r.empty]
-        if not frames:
+        combined = self._read_local_series("commodities", "series_id", cfg.series)
+        if combined.empty and self.av_client is not None:
+            combined = self._fetch_commodities_live(cfg)
+        if combined.empty:
             return pd.DataFrame()
-        combined = pd.concat(frames, ignore_index=True).rename(
-            columns={"native_function": "source_function"}
-        )
+        combined = combined.rename(columns={"native_function": "source_function"})
         return self._normalise(
             combined, Family.COMMODITIES, config,
             entity_id_col="series_id", value_col="value",
         )
 
-    # -- macro (Alpha Vantage) --------------------------------------------- #
-    def _build_macro_panel(self, config: RunConfig) -> pd.DataFrame:
-        if self.av_client is None:
-            return pd.DataFrame()
-        from Classes.DataCollection.macro_collector import MacroCollector
-
-        cfg = config.families[Family.MACRO]
-        collector = MacroCollector(self.av_client)
-        results = collector.collect_many(
+    def _fetch_commodities_live(self, cfg) -> pd.DataFrame:
+        from Classes.DataCollection.commodity_collector import CommodityCollector
+        results = CommodityCollector(self.av_client).collect_many(
             series_keys=cfg.series or None,
             intervals=cfg.options.get("intervals") or {},
-            treasury_maturities=cfg.options.get("treasury_maturities") or ["10year"],
         )
         frames = [r.df for r in results.values() if not r.empty]
-        if not frames:
+        return pd.concat(frames, ignore_index=True) if frames else pd.DataFrame()
+
+    # -- macro (local store first, then Alpha Vantage) --------------------- #
+    def _build_macro_panel(self, config: RunConfig) -> pd.DataFrame:
+        cfg = config.families[Family.MACRO]
+        # Stored macro carries native_function (the AV function) for filtering;
+        # cfg.series holds those function names.
+        combined = self._read_local_series("macro", "native_function", cfg.series)
+        if combined.empty and self.av_client is not None:
+            combined = self._fetch_macro_live(cfg)
+        if combined.empty:
             return pd.DataFrame()
-        combined = pd.concat(frames, ignore_index=True).rename(
-            columns={"native_function": "source_function"}
-        )
+        combined = combined.rename(columns={"native_function": "source_function"})
         return self._normalise(
             combined, Family.MACRO, config,
             entity_id_col="series_id", value_col="value",
         )
 
-    # -- corporate actions (Alpha Vantage) --------------------------------- #
-    def _build_corporate_actions_panel(self, config: RunConfig, symbols: List[str]) -> pd.DataFrame:
-        if self.av_client is None:
-            return pd.DataFrame()
-        from Classes.DataCollection.corporate_actions_collector import CorporateActionsCollector
+    def _fetch_macro_live(self, cfg) -> pd.DataFrame:
+        from Classes.DataCollection.macro_collector import MacroCollector
+        results = MacroCollector(self.av_client).collect_many(
+            series_keys=cfg.series or None,
+            intervals=cfg.options.get("intervals") or {},
+            treasury_maturities=cfg.options.get("treasury_maturities") or ["10year"],
+        )
+        frames = [r.df for r in results.values() if not r.empty]
+        return pd.concat(frames, ignore_index=True) if frames else pd.DataFrame()
 
+    def _read_local_series(self, subdir: str, filter_col: str, values: List[str]) -> pd.DataFrame:
+        """Read + concat normalised series CSVs from raw_data/<subdir>/, filtered."""
+        directory = self.raw_data_dir / subdir
+        if not directory.exists():
+            return pd.DataFrame()
+        frames: List[pd.DataFrame] = []
+        for path in sorted(directory.glob("*.csv")):
+            try:
+                frames.append(pd.read_csv(path))
+            except Exception:
+                continue
+        if not frames:
+            return pd.DataFrame()
+        df = pd.concat(frames, ignore_index=True)
+        if values and filter_col in df.columns:
+            df = df[df[filter_col].isin(values)]
+        return df.reset_index(drop=True)
+
+    # -- corporate actions (local store first, then Alpha Vantage) --------- #
+    def _build_corporate_actions_panel(self, config: RunConfig, symbols: List[str]) -> pd.DataFrame:
         cfg = config.families[Family.CORPORATE_ACTIONS]
-        collector = CorporateActionsCollector(self.av_client)
-        results = collector.collect_many(
+        combined = self._read_local_corporate_actions(symbols)
+        if combined.empty and self.av_client is not None:
+            combined = self._fetch_corporate_actions_live(cfg, symbols)
+        if combined.empty:
+            return pd.DataFrame()
+        return self._normalise(
+            combined, Family.CORPORATE_ACTIONS, config,
+            entity_id_col="symbol",
+            native_frequency="event", source_vendor="alpha_vantage",
+        )
+
+    def _read_local_corporate_actions(self, symbols: List[str]) -> pd.DataFrame:
+        directory = self.raw_data_dir / "corporate_actions"
+        if not directory.exists():
+            return pd.DataFrame()
+        specs = [("dividends", "ex_dividend_date", "amount", "DIVIDENDS"),
+                 ("splits", "effective_date", "split_factor", "SPLITS")]
+        rows: List[pd.DataFrame] = []
+        for sym in symbols:
+            for kind, date_col, val_col, func in specs:
+                path = directory / f"{sym}_{kind}.csv"
+                if not path.exists():
+                    continue
+                try:
+                    raw = pd.read_csv(path)
+                except Exception:
+                    continue
+                if date_col not in raw.columns:
+                    continue
+                raw = raw.rename(columns={date_col: "observation_date"})
+                keep = ["symbol", "observation_date"] + ([val_col] if val_col in raw.columns else [])
+                sub = raw[[c for c in keep if c in raw.columns]].copy()
+                if "symbol" not in sub.columns:
+                    sub["symbol"] = sym
+                sub["event_type"] = "dividend" if kind == "dividends" else "split"
+                sub["source_function"] = func
+                rows.append(sub)
+        return pd.concat(rows, ignore_index=True) if rows else pd.DataFrame()
+
+    def _fetch_corporate_actions_live(self, cfg, symbols: List[str]) -> pd.DataFrame:
+        from Classes.DataCollection.corporate_actions_collector import CorporateActionsCollector
+        results = CorporateActionsCollector(self.av_client).collect_many(
             symbols,
             include_dividends=cfg.options.get("include_dividends", True),
             include_splits=cfg.options.get("include_splits", True),
         )
-
         rows: List[pd.DataFrame] = []
         for res in results.values():
             if not res.dividends.empty:
@@ -293,23 +348,20 @@ class PanelSourceBuilder:
                 s["event_type"] = "split"
                 s["source_function"] = "SPLITS"
                 rows.append(s)
+        return pd.concat(rows, ignore_index=True) if rows else pd.DataFrame()
 
-        if not rows:
-            return pd.DataFrame()
-        combined = pd.concat(rows, ignore_index=True)
-        return self._normalise(
-            combined, Family.CORPORATE_ACTIONS, config,
-            entity_id_col="symbol",
-            native_frequency="event", source_vendor="alpha_vantage",
-        )
-
-    # -- utilities (Alpha Vantage market status) --------------------------- #
+    # -- utilities (local store first, then Alpha Vantage market status) ---- #
     def _build_utilities_panel(self, config: RunConfig) -> pd.DataFrame:
-        if self.av_client is None:
-            return pd.DataFrame()
-        from Classes.DataCollection.utilities_collector import UtilitiesCollector
-
-        status = UtilitiesCollector(self.av_client).collect_market_status()
+        local = self.raw_data_dir / "utilities" / "market_status.csv"
+        status = pd.DataFrame()
+        if local.exists():
+            try:
+                status = pd.read_csv(local)
+            except Exception:
+                status = pd.DataFrame()
+        if status.empty and self.av_client is not None:
+            from Classes.DataCollection.utilities_collector import UtilitiesCollector
+            status = UtilitiesCollector(self.av_client).collect_market_status()
         if status is None or status.empty:
             return pd.DataFrame()
         today = pd.Timestamp(datetime.now(timezone.utc).date())

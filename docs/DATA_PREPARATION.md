@@ -103,12 +103,37 @@ rows with caution, and respect the leakage-sensitive fields listed in
 
 ---
 
+## Collecting the source data
+
+The data-prep stage reads from a local store first and only falls back to a live
+Alpha Vantage call if a family is absent (so runs stay reproducible). Populate
+the store with the **Data Collection** tool (`python apps/data_collection_gui.py`),
+which now has tabs for every family the data-prep stage consumes:
+
+| Collection tab | Writes to | Feeds data-prep family |
+|----------------|-----------|------------------------|
+| Daily | `raw_data/daily/` | Equity prices |
+| Benchmarks | `raw_data/benchmarks/` | Index / regime (incl. VIX) |
+| Forex (weekly **or daily**) | `raw_data/forex/` | FX |
+| Fundamental | `processed_data/fundamentals/` | Fundamentals (PIT) |
+| **Commodities** | `raw_data/commodities/` | Commodities |
+| **Macro** | `raw_data/macro/` | Macro |
+| **Corporate Actions** | `raw_data/corporate_actions/` | Corporate actions |
+
+Commodities, macro, and corporate actions require an Alpha Vantage key in
+`config/data_collection/settings.json`. Collect them once; the data-prep stage
+then builds from the stored CSVs. Daily FX is available in the Forex tab for
+exact daily base-currency conversion (the default GBP pairs are weekly, which the
+validator flags for daily runs).
+
 ## Extending
 
 - **New Alpha Vantage family**: add an endpoint + method in
   `Classes/DataCollection/alpha_vantage_client.py`, a collector that normalises
-  to a tidy `observation_date`/`value` panel, then a builder in
-  `Classes/DataPrep/sources.py`.
+  to a tidy `observation_date`/`value` panel, a `write_*` method + directory in
+  `Classes/DataCollection/file_manager.py`, a tab in
+  `apps/data_collection_gui.py`, then a builder in `Classes/DataPrep/sources.py`
+  (local-store-first, live fallback).
 - **New canonical family**: add a `Family` member (its value is the table stem),
   a default `TimingPolicy` in `DEFAULT_FAMILY_TIMING`, and a source builder.
 - **New validation rule**: add a check to `Classes/DataPrep/validation.py`.

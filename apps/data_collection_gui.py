@@ -52,6 +52,15 @@ from Classes.DataCollection import (
 from Classes.DataCollection.file_manager import DataTransformer
 from Classes.DataCollection.fundamental_collector import FundamentalCollector
 from Classes.DataCollection.benchmark_collector import BenchmarkCollector, load_benchmark_registry
+from Classes.DataCollection.commodity_collector import CommodityCollector
+from Classes.DataCollection.macro_collector import MacroCollector
+from Classes.DataCollection.corporate_actions_collector import CorporateActionsCollector
+from Classes.DataCollection.config import (
+    COMMODITY_SERIES,
+    CORE_COMMODITIES,
+    MACRO_SERIES,
+    TREASURY_MATURITIES,
+)
 from Classes.DataCollection.logging_manager import (
     DecisionLogEntry,
     DataIssueEntry,
@@ -1407,6 +1416,15 @@ class ForexTab(BaseTab):
         ctk.CTkRadioButton(week_frame, text="Friday Close (UTC)", variable=self.week_def_var, value="friday").pack(anchor="w", padx=20)
         ctk.CTkRadioButton(week_frame, text="Monday Open", variable=self.week_def_var, value="monday").pack(anchor="w", padx=20)
 
+        # Frequency: weekly (default) or daily for finer base-currency conversion.
+        freq_frame = ctk.CTkFrame(container)
+        freq_frame.pack(fill="x", pady=10)
+        ctk.CTkLabel(freq_frame, text="Frequency", font=("", 14, "bold")).pack(anchor="w", padx=5, pady=5)
+        self.fx_interval_var = tk.StringVar(value="weekly")
+        ctk.CTkRadioButton(freq_frame, text="Weekly", variable=self.fx_interval_var, value="weekly").pack(anchor="w", padx=20)
+        ctk.CTkRadioButton(freq_frame, text="Daily (better for daily base-currency conversion)",
+                           variable=self.fx_interval_var, value="daily").pack(anchor="w", padx=20)
+
         self.missing_handler = MissingDataHandler(container)
         self.missing_handler.pack(fill="x", pady=5)
 
@@ -1427,6 +1445,7 @@ class ForexTab(BaseTab):
             "pairs": pairs,
             "date_range": self.date_range.get_config(),
             "week_definition": self.week_def_var.get(),
+            "interval": self.fx_interval_var.get(),
             "missing_handling": self.missing_handler.get_strategy(),
         }
 
@@ -1440,6 +1459,7 @@ class ForexTab(BaseTab):
         """Collect forex data."""
         config = self.get_config()
         pairs = config["pairs"]
+        interval = config.get("interval", "weekly")
         results = {"success": [], "failed": [], "partial": []}
 
         client = self.app.api_client
@@ -1454,19 +1474,24 @@ class ForexTab(BaseTab):
                 break
 
             try:
-                progress_callback(f"Fetching {pair} forex data...", i / total_pairs)
-                logger.log_session_info(f"FETCHING {pair} FOREX")
+                progress_callback(f"Fetching {pair} forex data ({interval})...", i / total_pairs)
+                logger.log_session_info(f"FETCHING {pair} FOREX [{interval}]")
 
                 # Parse from/to currencies
                 from_currency = pair[:3]
                 to_currency = pair[3:]
 
-                response = client.get_forex_weekly(from_currency, to_currency)
+                if interval == "daily":
+                    response = client.get_forex_daily(from_currency, to_currency)
+                else:
+                    response = client.get_forex_weekly(from_currency, to_currency)
 
                 if not response.success:
                     results["failed"].append((pair, response.error_message))
                     continue
 
+                # transform_forex_weekly locates any "Time Series" key, so it
+                # parses both weekly and daily FX responses.
                 df = DataTransformer.transform_forex_weekly(response.data, pair)
 
                 if df.empty:
@@ -1477,7 +1502,8 @@ class ForexTab(BaseTab):
 
                 file_meta = file_manager.write_forex_data(
                     df, pair,
-                    missing_handling=config["missing_handling"]
+                    missing_handling=config["missing_handling"],
+                    interval=interval,
                 )
 
                 if validation_report.passed:
@@ -1842,6 +1868,267 @@ class BenchmarkTab(BaseTab):
         return results
 
 
+_ENERGY_COMMODITIES = {"WTI", "BRENT", "NATURAL_GAS"}
+
+
+class CommodityTab(BaseTab):
+    """Tab for commodity series collection (Alpha Vantage commodities)."""
+
+    def __init__(self, parent, app: 'DataCollectionApp', **kwargs):
+        super().__init__(parent, app, **kwargs)
+        self._create_widgets()
+
+    def _create_widgets(self):
+        container = ctk.CTkScrollableFrame(self)
+        container.pack(fill="both", expand=True, padx=10, pady=10)
+
+        sel = ctk.CTkFrame(container)
+        sel.pack(fill="x", pady=10)
+        ctk.CTkLabel(sel, text="Commodity series", font=("", 14, "bold")).pack(anchor="w", padx=5, pady=5)
+
+        self.series_vars = {}
+        for key, spec in COMMODITY_SERIES.items():
+            var = tk.BooleanVar(value=(key in CORE_COMMODITIES))
+            self.series_vars[key] = var
+            tier = "core" if spec["tier"] == "core" else "optional"
+            ctk.CTkCheckBox(
+                sel, text=f"{key} — {spec['name']}  ({tier}: {spec['rationale']})",
+                variable=var,
+            ).pack(anchor="w", padx=20, pady=2)
+
+        opt = ctk.CTkFrame(container)
+        opt.pack(fill="x", pady=10)
+        ctk.CTkLabel(opt, text="Frequency for energy series (WTI / Brent / Natural Gas):").pack(
+            anchor="w", padx=20, pady=(10, 5))
+        self.energy_interval_var = tk.StringVar(value="monthly")
+        for value, label in [("daily", "Daily"), ("weekly", "Weekly"), ("monthly", "Monthly")]:
+            ctk.CTkRadioButton(opt, text=label, variable=self.energy_interval_var, value=value).pack(
+                anchor="w", padx=40)
+
+        ctk.CTkLabel(
+            container,
+            text=("Metals / agricultural / all-commodities series are monthly (their finest "
+                  "sub-annual frequency). Files are saved to raw_data/commodities/."),
+            justify="left", text_color="gray",
+        ).pack(anchor="w", padx=5, pady=10)
+
+    def _interval_for(self, key: str) -> str:
+        spec = COMMODITY_SERIES[key]
+        if key in _ENERGY_COMMODITIES and self.energy_interval_var.get() in spec["intervals"]:
+            return self.energy_interval_var.get()
+        return spec["default_interval"]
+
+    def get_config(self) -> Dict[str, Any]:
+        return {"series": [k for k, v in self.series_vars.items() if v.get()],
+                "energy_interval": self.energy_interval_var.get()}
+
+    def validate(self) -> tuple:
+        if not self.get_config()["series"]:
+            return False, "Please select at least one commodity series"
+        return True, ""
+
+    def collect_data(self, progress_callback: Callable) -> Dict[str, Any]:
+        series = self.get_config()["series"]
+        results = {"success": [], "failed": [], "partial": []}
+        collector = CommodityCollector(self.app.api_client)
+        file_manager = self.app.file_manager
+        logger = self.app.logger
+        total = len(series)
+
+        for i, key in enumerate(series):
+            if self.app.cancelled:
+                break
+            interval = self._interval_for(key)
+            try:
+                progress_callback(f"Fetching {key} ({interval})...", i / total)
+                logger.log_session_info(f"FETCHING {key} commodity [{interval}]")
+                res = collector.collect(key, interval=interval)
+                if res.empty:
+                    results["failed"].append((key, res.error or "no data returned"))
+                    continue
+                file_meta = file_manager.write_commodity_data(res.df, key, interval)
+                results["success"].append((key, file_meta))
+                progress_callback(f"Completed {key}", (i + 1) / total)
+            except Exception as e:
+                results["failed"].append((key, str(e)))
+                logger.log_exception("Collection Error", str(e), e, symbol=key)
+        return results
+
+
+class MacroTab(BaseTab):
+    """Tab for US macro / economic-indicator collection (Alpha Vantage)."""
+
+    def __init__(self, parent, app: 'DataCollectionApp', **kwargs):
+        super().__init__(parent, app, **kwargs)
+        self._create_widgets()
+
+    def _create_widgets(self):
+        container = ctk.CTkScrollableFrame(self)
+        container.pack(fill="both", expand=True, padx=10, pady=10)
+
+        sel = ctk.CTkFrame(container)
+        sel.pack(fill="x", pady=10)
+        ctk.CTkLabel(sel, text="US economic indicators", font=("", 14, "bold")).pack(
+            anchor="w", padx=5, pady=5)
+
+        self.series_vars = {}
+        for key, spec in MACRO_SERIES.items():
+            var = tk.BooleanVar(value=True)
+            self.series_vars[key] = var
+            ctk.CTkCheckBox(
+                sel, text=f"{key} — {spec['name']}  ({spec['default_interval']})",
+                variable=var,
+            ).pack(anchor="w", padx=20, pady=2)
+
+        mat = ctk.CTkFrame(container)
+        mat.pack(fill="x", pady=10)
+        ctk.CTkLabel(mat, text="Treasury yield maturities:").pack(anchor="w", padx=20, pady=(10, 5))
+        self.maturity_vars = {}
+        for m in TREASURY_MATURITIES:
+            var = tk.BooleanVar(value=(m == "10year"))
+            self.maturity_vars[m] = var
+            ctk.CTkCheckBox(mat, text=m, variable=var).pack(anchor="w", padx=40)
+
+        ctk.CTkLabel(
+            container,
+            text=("All Alpha Vantage macro series are US-centric and latest-history (not true "
+                  "vintages); they are tagged with revision_risk. Saved to raw_data/macro/."),
+            justify="left", text_color="gray",
+        ).pack(anchor="w", padx=5, pady=10)
+
+    def get_config(self) -> Dict[str, Any]:
+        return {
+            "series": [k for k, v in self.series_vars.items() if v.get()],
+            "maturities": [m for m, v in self.maturity_vars.items() if v.get()] or ["10year"],
+        }
+
+    def validate(self) -> tuple:
+        if not self.get_config()["series"]:
+            return False, "Please select at least one macro indicator"
+        return True, ""
+
+    def collect_data(self, progress_callback: Callable) -> Dict[str, Any]:
+        config = self.get_config()
+        series = config["series"]
+        results = {"success": [], "failed": [], "partial": []}
+        collector = MacroCollector(self.app.api_client)
+        file_manager = self.app.file_manager
+        logger = self.app.logger
+        total = len(series)
+
+        for i, key in enumerate(series):
+            if self.app.cancelled:
+                break
+            spec = MACRO_SERIES[key]
+            interval = spec["default_interval"]
+            maturities = config["maturities"] if spec.get("maturity_required") else [None]
+            try:
+                progress_callback(f"Fetching {key}...", i / total)
+                logger.log_session_info(f"FETCHING {key} macro [{interval}]")
+                for maturity in maturities:
+                    res = collector.collect(key, interval=interval, maturity=maturity)
+                    if res.empty:
+                        results["failed"].append((res.series_id, res.error or "no data returned"))
+                        continue
+                    file_meta = file_manager.write_macro_data(res.df, res.series_id, interval)
+                    results["success"].append((res.series_id, file_meta))
+                progress_callback(f"Completed {key}", (i + 1) / total)
+            except Exception as e:
+                results["failed"].append((key, str(e)))
+                logger.log_exception("Collection Error", str(e), e, symbol=key)
+        return results
+
+
+class CorporateActionsTab(BaseTab):
+    """Tab for dividend & split event collection (Alpha Vantage)."""
+
+    def __init__(self, parent, app: 'DataCollectionApp', **kwargs):
+        super().__init__(parent, app, **kwargs)
+        self._create_widgets()
+
+    def _create_widgets(self):
+        container = ctk.CTkScrollableFrame(self)
+        container.pack(fill="both", expand=True, padx=10, pady=10)
+
+        self.ticker_selector = TickerSelector(container, self._get_existing_tickers())
+        self.ticker_selector.pack(fill="x", pady=5)
+
+        opt = ctk.CTkFrame(container)
+        opt.pack(fill="x", pady=10)
+        ctk.CTkLabel(opt, text="Event types", font=("", 14, "bold")).pack(anchor="w", padx=5, pady=5)
+        self.dividends_var = tk.BooleanVar(value=True)
+        self.splits_var = tk.BooleanVar(value=True)
+        ctk.CTkCheckBox(opt, text="Dividends", variable=self.dividends_var).pack(anchor="w", padx=20)
+        ctk.CTkCheckBox(opt, text="Splits", variable=self.splits_var).pack(anchor="w", padx=20)
+
+        ctk.CTkLabel(
+            container,
+            text=("Dividends and splits are saved as separate event tables under "
+                  "raw_data/corporate_actions/ ({TICKER}_dividends.csv / _splits.csv)."),
+            justify="left", text_color="gray",
+        ).pack(anchor="w", padx=5, pady=10)
+
+    def _get_existing_tickers(self) -> List[str]:
+        tickers = []
+        daily_dir = Path("raw_data") / "daily"
+        if daily_dir.exists():
+            for f in daily_dir.glob("*_daily.csv"):
+                t = f.stem.split("_")[0].upper()
+                if t and t not in tickers:
+                    tickers.append(t)
+        return sorted(tickers)
+
+    def get_config(self) -> Dict[str, Any]:
+        return {
+            "tickers": self.ticker_selector.get_selected(),
+            "include_dividends": self.dividends_var.get(),
+            "include_splits": self.splits_var.get(),
+        }
+
+    def validate(self) -> tuple:
+        config = self.get_config()
+        if not config["tickers"]:
+            return False, "Please select at least one ticker"
+        if not (config["include_dividends"] or config["include_splits"]):
+            return False, "Select dividends, splits, or both"
+        return True, ""
+
+    def collect_data(self, progress_callback: Callable) -> Dict[str, Any]:
+        config = self.get_config()
+        tickers = config["tickers"]
+        results = {"success": [], "failed": [], "partial": []}
+        collector = CorporateActionsCollector(self.app.api_client)
+        file_manager = self.app.file_manager
+        logger = self.app.logger
+        total = len(tickers)
+
+        for i, ticker in enumerate(tickers):
+            if self.app.cancelled:
+                break
+            try:
+                progress_callback(f"Fetching {ticker} corporate actions...", i / total)
+                logger.log_session_info(f"FETCHING {ticker} corporate actions")
+                res = collector.collect(
+                    ticker,
+                    include_dividends=config["include_dividends"],
+                    include_splits=config["include_splits"],
+                )
+                if res.empty:
+                    err = "; ".join(res.errors) if res.errors else "no events returned"
+                    results["failed"].append((ticker, err))
+                    continue
+                metas = file_manager.write_corporate_actions_data(ticker, res.dividends, res.splits)
+                if metas:
+                    results["success"].append((ticker, metas[0]))
+                else:
+                    results["failed"].append((ticker, "nothing written"))
+                progress_callback(f"Completed {ticker}", (i + 1) / total)
+            except Exception as e:
+                results["failed"].append((ticker, str(e)))
+                logger.log_exception("Collection Error", str(e), e, symbol=ticker)
+        return results
+
+
 class DataCollectionApp(ctk.CTk):
     """Main application window for the Data Collection System."""
 
@@ -1969,6 +2256,18 @@ class DataCollectionApp(ctk.CTk):
         self.tabview.add("Benchmarks")
         self.tabs["benchmarks"] = BenchmarkTab(self.tabview.tab("Benchmarks"), self)
         self.tabs["benchmarks"].pack(fill="both", expand=True)
+
+        self.tabview.add("Commodities")
+        self.tabs["commodities"] = CommodityTab(self.tabview.tab("Commodities"), self)
+        self.tabs["commodities"].pack(fill="both", expand=True)
+
+        self.tabview.add("Macro")
+        self.tabs["macro"] = MacroTab(self.tabview.tab("Macro"), self)
+        self.tabs["macro"].pack(fill="both", expand=True)
+
+        self.tabview.add("Corporate Actions")
+        self.tabs["corporate_actions"] = CorporateActionsTab(self.tabview.tab("Corporate Actions"), self)
+        self.tabs["corporate_actions"].pack(fill="both", expand=True)
 
         # Bottom section: Progress and controls
         bottom_frame = ctk.CTkFrame(main_frame)
