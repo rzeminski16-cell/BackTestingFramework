@@ -1,1402 +1,3621 @@
 {
   "AA": {
-    "currency": "NA",
+    "currency": "",
     "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
+    "market_cap": "mid_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
   },
   "AAL": {
-    "currency": "NA",
+    "currency": "",
     "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
+    "market_cap": "small_cap",
+    "sector": "industrials",
+    "type": "stock"
   },
   "AAON": {
-    "currency": "NA",
+    "currency": "",
     "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
+    "market_cap": "small_cap",
+    "sector": "industrials",
+    "type": "stock"
   },
   "AAPL": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "ABBV": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "ACAD": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "ACMR": {
-    "currency": "USD",
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
     "sector": "technology",
     "type": "stock"
   },
-  "ACRS": {
-    "currency": "NA",
+  "ABBV": {
+    "currency": "",
     "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
+    "market_cap": "large_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "ACAD": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "ACMR": {
+    "currency": "USD",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "ACRS": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "healthcare",
+    "type": "stock"
   },
   "ADBE": {
     "currency": "USD",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "large_cap",
-    "type": "stock"
-  },
-  "ADEA": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
     "sector": "technology",
-    "type": "stock"
-  },
-  "ADNT": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "small_cap",
-    "sector": "small_cap",
     "type": "stock"
   },
   "ADP": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "AEE": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "AEO": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "AEP": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "AES": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "AGBK": {
-    "currency": "USD",
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "financials",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "AEE": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "AEO": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "AEP": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "AES": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "energy_and_utilities",
     "type": "stock"
   },
   "AGG": {
-    "currency": "NA",
+    "currency": "",
     "description": "",
     "market_cap": "",
-    "sector": "",
-    "type": ""
+    "sector": "etf_bond_commodity",
+    "type": "etf"
   },
   "AGIO": {
-    "currency": "NA",
+    "currency": "",
     "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
+    "market_cap": "small_cap",
+    "sector": "healthcare",
+    "type": "stock"
   },
   "AI": {
-    "currency": "NA",
+    "currency": "",
     "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
+    "market_cap": "mid_cap",
+    "sector": "technology",
+    "type": "stock"
   },
   "AIG": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "AIR": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "ALGM": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "ALGT": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "ALKS": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "ALL": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "ALLE": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "ALNY": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "ALTR": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "AMD": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "AMGN": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "AMP": {
-    "currency": "USD",
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
     "sector": "financials",
+    "type": "stock"
+  },
+  "AIR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_europe",
+    "type": "stock"
+  },
+  "ALGM": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "ALGT": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "ALKS": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "ALL": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "ALLE": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "ALNY": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "ALTR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "AMD": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "AMGN": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "healthcare",
     "type": "stock"
   },
   "AMTB": {
-    "currency": "NA",
+    "currency": "",
     "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
+    "market_cap": "small_cap",
+    "sector": "financials",
+    "type": "stock"
   },
   "AMZN": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "ANL": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "small_cap",
-    "sector": "small_cap",
-    "type": "stock"
-  },
-  "AON": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "AOS": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "APA": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "APD": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "AR": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "ARKF": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "ARKG": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "ARKK": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "ARKQ": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "ARKW": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "ARM": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "ARQT": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "mid_cap",
-    "sector": "mid_cap",
-    "type": "stock"
-  },
-  "ARWR": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "ASIC": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "small_cap",
-    "sector": "small_cap",
-    "type": "stock"
-  },
-  "ASML": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "ASTE": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "ATI": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "ATRO": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "AUGO": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "mid_cap",
-    "sector": "mid_cap",
-    "type": "stock"
-  },
-  "AUPH": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "AURA": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "small_cap",
-    "sector": "small_cap",
-    "type": "stock"
-  },
-  "AVGO": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "AVPT": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "AVTR": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "AWAY": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "AWI": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "construction_and_materials",
-    "type": "stock"
-  },
-  "AWR": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "utilities",
-    "type": "stock"
-  },
-  "AXON": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "AXP": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "AXTI": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "AYI": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "mid_cap",
-    "sector": "mid_cap",
-    "type": "stock"
-  },
-  "AZN": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "AZZ": {
-    "currency": "NA",
-    "description": "",
-    "market_cap": "",
-    "sector": "",
-    "type": ""
-  },
-  "BEAM": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "mid_cap",
-    "sector": "mid_cap",
-    "type": "stock"
-  },
-  "BIP": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "utilities",
-    "type": "stock"
-  },
-  "BKSY": {
-    "currency": "USD",
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
     "sector": "technology",
     "type": "stock"
   },
-  "BOKF": {
-    "currency": "USD",
+  "AON": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
     "sector": "financials",
     "type": "stock"
   },
-  "BR": {
-    "currency": "USD",
+  "AOS": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "APA": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "APD": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "AR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "ARKF": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_thematic",
+    "type": "etf"
+  },
+  "ARKG": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_thematic",
+    "type": "etf"
+  },
+  "ARKK": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_thematic",
+    "type": "etf"
+  },
+  "ARKQ": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_thematic",
+    "type": "etf"
+  },
+  "ARKW": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_thematic",
+    "type": "etf"
+  },
+  "ARM": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
     "sector": "technology",
     "type": "stock"
+  },
+  "ARWR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "ASML": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "ASTE": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "ATI": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "ATRO": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "AUPH": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "AVGO": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "AVPT": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "AVTR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "AWAY": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_thematic",
+    "type": "etf"
+  },
+  "AXON": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "AXP": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "AXTI": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "AZN": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "AZZ": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "BA": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "BABA": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_asia",
+    "type": "stock"
+  },
+  "BAC": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "BANR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "BARC": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_uk",
+    "type": "stock"
+  },
+  "BASE": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "BASFY": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_europe",
+    "type": "stock"
+  },
+  "BATS": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_uk",
+    "type": "stock"
+  },
+  "BAYRY": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_europe",
+    "type": "stock"
+  },
+  "BBH": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_thematic",
+    "type": "etf"
+  },
+  "BBWI": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "BCRX": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "BECN": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "BERY": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "BGC": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "BGFV": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "BHF": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "BIDU": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_asia",
+    "type": "stock"
+  },
+  "BIG": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "BIGC": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "BJ": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "BK": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "BKR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "BLD": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "BLK": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "BLL": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "BLUE": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "BMRN": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "BMWYY": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_europe",
+    "type": "stock"
+  },
+  "BMY": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "BND": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_bond_commodity",
+    "type": "etf"
+  },
+  "BNO": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_bond_commodity",
+    "type": "etf"
+  },
+  "BNTX": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "BOOT": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "BOTZ": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_thematic",
+    "type": "etf"
+  },
+  "BOUT": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_thematic",
+    "type": "etf"
+  },
+  "BP": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "BPFH": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "BREADTH": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "BRKL": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "BRY": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "BSET": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "BSV": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_bond_commodity",
+    "type": "etf"
   },
   "BW": {
     "currency": "USD",
     "description": "",
+    "market_cap": "small_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "BWXT": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "BYD": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "BYDDF": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_asia",
+    "type": "stock"
+  },
+  "C": {
+    "currency": "",
+    "description": "",
     "market_cap": "large_cap",
-    "sector": "manufacturing_and_industrials",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "CABO": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "CAL": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "consumer",
     "type": "stock"
   },
   "CARR": {
     "currency": "USD",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "manufacturing_and_industrials",
+    "sector": "industrials",
     "type": "stock"
   },
-  "CCL": {
-    "currency": "USD",
+  "CASY": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "CAT": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "large_cap",
+    "sector": "industrials",
     "type": "stock"
   },
-  "CCS": {
-    "currency": "USD",
+  "CATO": {
+    "currency": "",
     "description": "",
-    "market_cap": "large_cap",
-    "sector": "construction_and_materials",
+    "market_cap": "small_cap",
+    "sector": "consumer",
     "type": "stock"
   },
-  "CDRE": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "manufacturing_and_industrials",
-    "type": "stock"
-  },
-  "CECO": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "manufacturing_and_industrials",
-    "type": "stock"
-  },
-  "CET": {
-    "currency": "USD",
+  "CB": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
     "sector": "financials",
     "type": "stock"
   },
-  "CFFN": {
-    "currency": "USD",
+  "CBU": {
+    "currency": "",
     "description": "",
     "market_cap": "small_cap",
-    "sector": "small_cap",
+    "sector": "financials",
     "type": "stock"
   },
-  "CGNX": {
-    "currency": "USD",
+  "CCI": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "CCJ": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "CCK": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "CELH": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "CERS": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "CF": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "CFG": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "CFR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "CHA": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_asia",
+    "type": "stock"
+  },
+  "CHCO": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "CHL": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_asia",
+    "type": "stock"
+  },
+  "CHWY": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "",
+    "type": "stock"
+  },
+  "CIBR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_thematic",
+    "type": "etf"
+  },
+  "CIT": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "",
+    "type": "stock"
+  },
+  "CIVB": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "CLF": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "CLW": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "CMA": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "CMBM": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
     "sector": "technology",
     "type": "stock"
   },
-  "CLSK": {
-    "currency": "USD",
+  "CMC": {
+    "currency": "",
     "description": "",
-    "market_cap": "large_cap",
-    "sector": "technology",
-    "type": "stock"
-  },
-  "CLVT": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "technology",
+    "market_cap": "mid_cap",
+    "sector": "materials_and_construction",
     "type": "stock"
   },
   "CME": {
     "currency": "USD",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "large_cap",
-    "type": "stock"
-  },
-  "CMI": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "large_cap",
-    "type": "stock"
-  },
-  "COF": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
     "sector": "financials",
     "type": "stock"
   },
-  "CPK": {
-    "currency": "USD",
+  "CMS": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "CNI": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "utilities",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "CNM": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "CNP": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "CNR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "CNTX": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "COKE": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "COP": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "CORN": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_bond_commodity",
+    "type": "etf"
+  },
+  "CORT": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "COST": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "COTY": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "CPE": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "CPRT": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "industrials",
     "type": "stock"
   },
   "CRH": {
     "currency": "GBP",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "construction_and_materials",
+    "sector": "materials_and_construction",
     "type": "stock"
   },
-  "CSCO": {
-    "currency": "USD",
+  "CRK": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "CRM": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "large_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "CROX": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "CRSP": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "CRTX": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "CRUS": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "CRWD": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "technology",
     "type": "stock"
   },
   "CSL": {
     "currency": "USD",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "construction_and_materials",
+    "sector": "materials_and_construction",
     "type": "stock"
   },
-  "CSW": {
-    "currency": "USD",
+  "CSX": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "manufacturing_and_industrials",
+    "sector": "industrials",
     "type": "stock"
   },
-  "DAR": {
-    "currency": "USD",
+  "CVS": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "CVX": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "CW": {
+    "currency": "",
     "description": "",
     "market_cap": "mid_cap",
-    "sector": "mid_cap",
+    "sector": "industrials",
     "type": "stock"
+  },
+  "CX": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "CYTK": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "D": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "DAL": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "DBA": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_bond_commodity",
+    "type": "etf"
+  },
+  "DBC": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_bond_commodity",
+    "type": "etf"
   },
   "DDOG": {
     "currency": "USD",
     "description": "",
-    "market_cap": "large_cap",
-    "sector": "large_cap",
+    "market_cap": "mid_cap",
+    "sector": "technology",
     "type": "stock"
   },
-  "DLTR": {
-    "currency": "USD",
+  "DE": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "large_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "DECK": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "DEN": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "DEO": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "DGE": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_uk",
+    "type": "stock"
+  },
+  "DGRO": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "DHR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "DIA": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "DIS": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "DJI": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "DKS": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "consumer",
     "type": "stock"
   },
   "DNLI": {
     "currency": "USD",
     "description": "",
+    "market_cap": "small_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "DOCN": {
+    "currency": "",
+    "description": "",
     "market_cap": "mid_cap",
-    "sector": "mid_cap",
-    "type": "stock"
-  },
-  "DOV": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "manufacturing_and_industrials",
-    "type": "stock"
-  },
-  "DT": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
     "sector": "technology",
     "type": "stock"
   },
-  "DTE": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "utilities",
-    "type": "stock"
-  },
-  "DYN": {
-    "currency": "USD",
+  "DOCU": {
+    "currency": "",
     "description": "",
     "market_cap": "mid_cap",
-    "sector": "mid_cap",
+    "sector": "technology",
     "type": "stock"
   },
-  "EA": {
-    "currency": "USD",
+  "DOL": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "large_cap",
+    "sector": "consumer",
     "type": "stock"
   },
-  "EAI": {
-    "currency": "USD",
+  "DOMO": {
+    "currency": "",
     "description": "",
-    "market_cap": "large_cap",
-    "sector": "utilities",
+    "market_cap": "small_cap",
+    "sector": "technology",
     "type": "stock"
   },
-  "ECG": {
-    "currency": "USD",
+  "DOW": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "construction_and_materials",
+    "sector": "materials_and_construction",
     "type": "stock"
   },
-  "ECL": {
-    "currency": "USD",
+  "DRIV": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_thematic",
+    "type": "etf"
+  },
+  "DSY": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_europe",
+    "type": "stock"
+  },
+  "DUK": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "large_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "DVN": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "ED": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "energy_and_utilities",
     "type": "stock"
   },
   "EDIT": {
     "currency": "USD",
     "description": "",
     "market_cap": "small_cap",
-    "sector": "small_cap",
+    "sector": "healthcare",
     "type": "stock"
   },
-  "EE": {
-    "currency": "USD",
+  "EEM": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "EFA": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "EGY": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "EL": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "utilities",
+    "sector": "consumer",
     "type": "stock"
   },
-  "EFSC": {
-    "currency": "USD",
+  "EMB": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_bond_commodity",
+    "type": "etf"
+  },
+  "EMR": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "financials",
+    "sector": "industrials",
     "type": "stock"
   },
-  "EGO": {
-    "currency": "USD",
+  "EMXC": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_international",
+    "type": "etf"
+  },
+  "ENB": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "ENI": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "ENTA": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "EOG": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "EPAC": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "EPAM": {
+    "currency": "",
     "description": "",
     "market_cap": "mid_cap",
-    "sector": "mid_cap",
+    "sector": "technology",
     "type": "stock"
   },
-  "EIX": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "utilities",
-    "type": "stock"
-  },
-  "ELPC": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "utilities",
-    "type": "stock"
-  },
-  "ESI": {
-    "currency": "USD",
+  "EPD": {
+    "currency": "",
     "description": "",
     "market_cap": "mid_cap",
-    "sector": "mid_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "EPU": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_international",
+    "type": "etf"
+  },
+  "EQNR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "ESGE": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_international",
+    "type": "etf"
+  },
+  "ESLT": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "ESTE": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "energy_and_utilities",
     "type": "stock"
   },
   "ETN": {
     "currency": "USD",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "manufacturing_and_industrials",
+    "sector": "industrials",
     "type": "stock"
   },
-  "EXC": {
-    "currency": "USD",
+  "ETR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "EUSA": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "EVBG": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "EVRG": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "EWA": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_international",
+    "type": "etf"
+  },
+  "EWC": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_international",
+    "type": "etf"
+  },
+  "EWG": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_international",
+    "type": "etf"
+  },
+  "EWH": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_international",
+    "type": "etf"
+  },
+  "EWI": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_international",
+    "type": "etf"
+  },
+  "EWJ": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_international",
+    "type": "etf"
+  },
+  "EWL": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_international",
+    "type": "etf"
+  },
+  "EWP": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_international",
+    "type": "etf"
+  },
+  "EWQ": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_international",
+    "type": "etf"
+  },
+  "EWS": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_international",
+    "type": "etf"
+  },
+  "EWT": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_international",
+    "type": "etf"
+  },
+  "EWU": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_international",
+    "type": "etf"
+  },
+  "EWY": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_international",
+    "type": "etf"
+  },
+  "EWZ": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_international",
+    "type": "etf"
+  },
+  "EXEL": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "EXP": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "utilities",
+    "sector": "materials_and_construction",
     "type": "stock"
   },
-  "EXLS": {
-    "currency": "USD",
+  "F": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "",
+    "type": "stock"
+  },
+  "FAN": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_thematic",
+    "type": "etf"
+  },
+  "FANG": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "FAS": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_leveraged_inverse",
+    "type": "etf"
+  },
+  "FATE": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "FAZ": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_leveraged_inverse",
+    "type": "etf"
+  },
+  "FCX": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "FDN": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_sector_specific",
+    "type": "etf"
+  },
+  "FDX": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "FELE": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "FEX": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "FFIN": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "FFWM": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "FHB": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "FIBK": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "FISV": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "",
+    "type": "stock"
+  },
+  "FITB": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "FIVE": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "FIVG": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_thematic",
+    "type": "etf"
+  },
+  "FIVN": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "FIZZ": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "FLS": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "FLWS": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "FMC": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "FNB": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "FND": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "FROG": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "FSLY": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "FULT": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "FXI": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_international",
+    "type": "etf"
+  },
+  "GAMR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_thematic",
+    "type": "etf"
+  },
+  "GD": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "GDX": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_bond_commodity",
+    "type": "etf"
+  },
+  "GDXJ": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_bond_commodity",
+    "type": "etf"
+  },
+  "GE": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "GEF": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "GERN": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "GH": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "GILD": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "GLD": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_bond_commodity",
+    "type": "etf"
+  },
+  "GM": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "",
+    "type": "stock"
+  },
+  "GMAB": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "GME": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "GO": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "GOOG": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
     "sector": "technology",
     "type": "stock"
   },
-  "EXTR": {
-    "currency": "USD",
+  "GOOS": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "GPOR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "GPRO": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "GS": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "GSBC": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "GSK": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "HACK": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_thematic",
+    "type": "etf"
+  },
+  "HAFC": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "HBAN": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "HBB": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "HBI": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "HD": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "HEI": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "HIBB": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "HIVE": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
     "sector": "technology",
-    "type": "stock"
-  },
-  "FBIN": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "construction_and_materials",
-    "type": "stock"
-  },
-  "FGN": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "financials",
-    "type": "stock"
-  },
-  "FHI": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "financials",
-    "type": "stock"
-  },
-  "FIX": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "construction_and_materials",
-    "type": "stock"
-  },
-  "FLR": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "construction_and_materials",
-    "type": "stock"
-  },
-  "FNF": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "financials",
-    "type": "stock"
-  },
-  "FRMI": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "utilities",
-    "type": "stock"
-  },
-  "FRSH": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "technology",
-    "type": "stock"
-  },
-  "GATX": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "manufacturing_and_industrials",
-    "type": "stock"
-  },
-  "GBCI": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "financials",
-    "type": "stock"
-  },
-  "GDRX": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "small_cap",
-    "sector": "small_cap",
-    "type": "stock"
-  },
-  "GIC": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "small_cap",
-    "sector": "small_cap",
-    "type": "stock"
-  },
-  "GRC": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "small_cap",
-    "sector": "small_cap",
-    "type": "stock"
-  },
-  "GTM": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "small_cap",
-    "sector": "small_cap",
-    "type": "stock"
-  },
-  "HAL": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "large_cap",
-    "type": "stock"
-  },
-  "HE": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "utilities",
     "type": "stock"
   },
   "HLIT": {
     "currency": "USD",
     "description": "",
-    "market_cap": "large_cap",
+    "market_cap": "mid_cap",
     "sector": "technology",
     "type": "stock"
   },
-  "HOMB": {
-    "currency": "USD",
+  "HMC": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_asia",
+    "type": "stock"
+  },
+  "HOLN": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "financials",
+    "sector": "materials_and_construction",
     "type": "stock"
   },
   "HON": {
     "currency": "USD",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "large_cap",
+    "sector": "industrials",
     "type": "stock"
   },
-  "HQL": {
-    "currency": "USD",
+  "HOPE": {
+    "currency": "",
     "description": "",
     "market_cap": "small_cap",
-    "sector": "small_cap",
+    "sector": "financials",
     "type": "stock"
   },
-  "IAUX": {
-    "currency": "USD",
+  "HPE": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "",
+    "type": "stock"
+  },
+  "HRTX": {
+    "currency": "",
     "description": "",
     "market_cap": "small_cap",
-    "sector": "small_cap",
+    "sector": "healthcare",
     "type": "stock"
   },
-  "IBP": {
-    "currency": "USD",
+  "HSBA": {
+    "currency": "",
     "description": "",
-    "market_cap": "large_cap",
-    "sector": "construction_and_materials",
+    "market_cap": "",
+    "sector": "international_uk",
     "type": "stock"
   },
-  "IESC": {
-    "currency": "USD",
+  "HSBC": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "construction_and_materials",
+    "sector": "financials",
     "type": "stock"
   },
-  "IEX": {
-    "currency": "USD",
+  "HTLF": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "HUBB": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "HWC": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "HYG": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_bond_commodity",
+    "type": "etf"
+  },
+  "HZO": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "IAU": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_bond_commodity",
+    "type": "etf"
+  },
+  "IBB": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_sector_specific",
+    "type": "etf"
+  },
+  "IBKR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "IBM": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "manufacturing_and_industrials",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "IBOC": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "ICE": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "ICLN": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_thematic",
+    "type": "etf"
+  },
+  "IDX": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_international",
+    "type": "etf"
+  },
+  "IDXX": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "IEF": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_bond_commodity",
+    "type": "etf"
+  },
+  "IEFA": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "IEMG": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "IFRA": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_thematic",
+    "type": "etf"
+  },
+  "IHG": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_uk",
+    "type": "stock"
+  },
+  "IJH": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "IJR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "ILMN": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "IMB": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_uk",
     "type": "stock"
   },
   "IMVT": {
     "currency": "USD",
     "description": "",
-    "market_cap": "mid_cap",
-    "sector": "mid_cap",
+    "market_cap": "small_cap",
+    "sector": "healthcare",
     "type": "stock"
   },
-  "INFQ": {
-    "currency": "USD",
+  "INBK": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "INDA": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_international",
+    "type": "etf"
+  },
+  "INSG": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "INTC": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
     "sector": "technology",
+    "type": "stock"
+  },
+  "INTU": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "IOD": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "IONS": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "IPAY": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_thematic",
+    "type": "etf"
+  },
+  "IPI": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "IPOS": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_thematic",
+    "type": "etf"
+  },
+  "IR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "industrials",
     "type": "stock"
   },
   "IRWD": {
     "currency": "USD",
     "description": "",
     "market_cap": "small_cap",
-    "sector": "small_cap",
+    "sector": "healthcare",
     "type": "stock"
   },
-  "JANX": {
-    "currency": "USD",
+  "ISRG": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "ITB": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_sector_specific",
+    "type": "etf"
+  },
+  "ITGR": {
+    "currency": "",
     "description": "",
     "market_cap": "small_cap",
-    "sector": "small_cap",
+    "sector": "industrials",
     "type": "stock"
   },
-  "JAZZ": {
-    "currency": "USD",
+  "ITOT": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "ITW": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "large_cap",
+    "sector": "industrials",
     "type": "stock"
   },
-  "JCAP": {
-    "currency": "USD",
+  "IVV": {
+    "currency": "",
     "description": "",
-    "market_cap": "large_cap",
-    "sector": "financials",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "IWB": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "IWD": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "IWF": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "IWM": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "IWN": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "IWO": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "IWR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "IWV": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "IXIC": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "IYR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_thematic",
+    "type": "etf"
+  },
+  "IYT": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_sector_specific",
+    "type": "etf"
+  },
+  "JBHT": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "industrials",
     "type": "stock"
   },
   "JCI": {
     "currency": "USD",
     "description": "",
-    "market_cap": "large_cap",
-    "sector": "construction_and_materials",
+    "market_cap": "mid_cap",
+    "sector": "industrials",
     "type": "stock"
   },
-  "JEF": {
-    "currency": "USD",
+  "JD": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_asia",
+    "type": "stock"
+  },
+  "JELD": {
+    "currency": "",
     "description": "",
     "market_cap": "mid_cap",
-    "sector": "mid_cap",
+    "sector": "materials_and_construction",
     "type": "stock"
   },
-  "KBR": {
-    "currency": "USD",
+  "JHX": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "manufacturing_and_industrials",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "JILL": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "JKS": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_asia",
+    "type": "stock"
+  },
+  "JNJ": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "JNK": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_bond_commodity",
+    "type": "etf"
+  },
+  "JPM": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "KAI": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "KBA": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_international",
+    "type": "etf"
+  },
+  "KBE": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_sector_specific",
+    "type": "etf"
+  },
+  "KDP": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "KEY": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "KGC": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "KHC": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "KIRK": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "consumer",
     "type": "stock"
   },
   "KLAC": {
     "currency": "USD",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "large_cap",
+    "sector": "technology",
     "type": "stock"
   },
-  "KMPB": {
-    "currency": "USD",
+  "KMI": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "KO": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "KOD": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "KOP": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "KOS": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "KRE": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_sector_specific",
+    "type": "etf"
+  },
+  "KWEB": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_thematic",
+    "type": "etf"
+  },
+  "LECO": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "LESL": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "LEVI": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "LFVN": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "LHX": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "LIN": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "LIT": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_thematic",
+    "type": "etf"
+  },
+  "LLOY": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_uk",
+    "type": "stock"
+  },
+  "LLY": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "LMT": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "LNG": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "LOW": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "LPI": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "LPLA": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
     "sector": "financials",
     "type": "stock"
   },
-  "L": {
-    "currency": "USD",
+  "LPX": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "LQD": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_bond_commodity",
+    "type": "etf"
+  },
+  "LRCX": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "large_cap",
+    "sector": "technology",
     "type": "stock"
   },
-  "LQDA": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "mid_cap",
-    "sector": "mid_cap",
-    "type": "stock"
-  },
-  "LSTR": {
-    "currency": "USD",
+  "LUV": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "manufacturing_and_industrials",
+    "sector": "industrials",
     "type": "stock"
   },
-  "LULU": {
-    "currency": "USD",
+  "LYB": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "large_cap",
+    "sector": "materials_and_construction",
     "type": "stock"
   },
-  "LYFT": {
-    "currency": "USD",
+  "LZB": {
+    "currency": "",
     "description": "",
-    "market_cap": "mid_cap",
-    "sector": "mid_cap",
-    "type": "stock"
-  },
-  "LZ": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "manufacturing_and_industrials",
+    "market_cap": "small_cap",
+    "sector": "consumer",
     "type": "stock"
   },
   "MA": {
     "currency": "USD",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "large_cap",
-    "type": "stock"
-  },
-  "MARA": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
     "sector": "financials",
     "type": "stock"
   },
-  "MATX": {
-    "currency": "USD",
+  "MAS": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "manufacturing_and_industrials",
+    "sector": "materials_and_construction",
     "type": "stock"
   },
-  "MBX": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "small_cap",
-    "sector": "small_cap",
-    "type": "stock"
-  },
-  "MCY": {
-    "currency": "USD",
+  "MASI": {
+    "currency": "",
     "description": "",
     "market_cap": "mid_cap",
-    "sector": "mid_cap",
+    "sector": "industrials",
     "type": "stock"
   },
-  "MFIC": {
-    "currency": "USD",
+  "MBG": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_europe",
+    "type": "stock"
+  },
+  "MC": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_europe",
+    "type": "stock"
+  },
+  "MCD": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "MDB": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "MDGL": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "MDLZ": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "MDRX": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "MDT": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "MDY": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "MESA": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "MET": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
     "sector": "financials",
+    "type": "stock"
+  },
+  "META": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "METC": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "MFG": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_asia",
+    "type": "stock"
+  },
+  "MGY": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "MHK": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "MIDD": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "MILN": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_thematic",
+    "type": "etf"
+  },
+  "MITSY": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_asia",
     "type": "stock"
   },
   "MLM": {
     "currency": "USD",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "construction_and_materials",
+    "sector": "materials_and_construction",
     "type": "stock"
   },
-  "MMYT": {
-    "currency": "USD",
+  "MMM": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "MNST": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "MOO": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_thematic",
+    "type": "etf"
+  },
+  "MOON": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_thematic",
+    "type": "etf"
+  },
+  "MORF": {
+    "currency": "",
     "description": "",
     "market_cap": "mid_cap",
-    "sector": "mid_cap",
+    "sector": "healthcare",
     "type": "stock"
   },
-  "MSEX": {
-    "currency": "USD",
+  "MOS": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "MOV": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "MPC": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "utilities",
+    "sector": "energy_and_utilities",
     "type": "stock"
   },
-  "MTSI": {
-    "currency": "USD",
+  "MPLX": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "MRC": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "MRK": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "technology",
+    "sector": "healthcare",
     "type": "stock"
   },
-  "MTZ": {
-    "currency": "USD",
+  "MRNA": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "large_cap",
+    "sector": "healthcare",
     "type": "stock"
   },
-  "MYRG": {
-    "currency": "USD",
+  "MRO": {
+    "currency": "",
     "description": "",
-    "market_cap": "large_cap",
-    "sector": "construction_and_materials",
+    "market_cap": "mid_cap",
+    "sector": "energy_and_utilities",
     "type": "stock"
   },
-  "NDAQ": {
-    "currency": "USD",
+  "MS": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
     "sector": "financials",
     "type": "stock"
   },
-  "NEWT": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "small_cap",
-    "sector": "small_cap",
-    "type": "stock"
-  },
-  "NEXA": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "small_cap",
-    "sector": "small_cap",
-    "type": "stock"
-  },
-  "NIQ": {
-    "currency": "USD",
+  "MSFT": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
     "sector": "technology",
     "type": "stock"
   },
-  "NJR": {
-    "currency": "USD",
+  "MTB": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "MTDR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "MU": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "utilities",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "MUB": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_bond_commodity",
+    "type": "etf"
+  },
+  "MYE": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "MYRG": {
+    "currency": "USD",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "NBIX": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "NBR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "NCNA": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "NDX": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "NEE": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "NEM": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "NESN": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_europe",
+    "type": "stock"
+  },
+  "NET": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "NEWR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "NGVT": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "NI": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "NIO": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_asia",
     "type": "stock"
   },
   "NKE": {
     "currency": "USD",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "large_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "NKTR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "NOBL": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "NOC": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "NOG": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "NOV": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "NPO": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "industrials",
     "type": "stock"
   },
   "NRG": {
     "currency": "USD",
     "description": "",
-    "market_cap": "large_cap",
-    "sector": "utilities",
+    "market_cap": "mid_cap",
+    "sector": "energy_and_utilities",
     "type": "stock"
   },
-  "NSSC": {
-    "currency": "USD",
+  "NSC": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "manufacturing_and_industrials",
+    "sector": "industrials",
     "type": "stock"
   },
-  "NTB": {
-    "currency": "USD",
+  "NTDOY": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_asia",
+    "type": "stock"
+  },
+  "NTR": {
+    "currency": "",
     "description": "",
     "market_cap": "mid_cap",
-    "sector": "mid_cap",
+    "sector": "materials_and_construction",
     "type": "stock"
   },
-  "NTCT": {
-    "currency": "USD",
+  "NTRA": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "NUE": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "NVDA": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
     "sector": "technology",
     "type": "stock"
   },
-  "NVR": {
-    "currency": "USD",
+  "NVS": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "construction_and_materials",
-    "type": "stock"
-  },
-  "NVT": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "manufacturing_and_industrials",
-    "type": "stock"
-  },
-  "NWBI": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "small_cap",
-    "sector": "small_cap",
-    "type": "stock"
-  },
-  "NWN": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "utilities",
+    "sector": "healthcare",
     "type": "stock"
   },
   "NXT": {
     "currency": "USD",
     "description": "",
-    "market_cap": "large_cap",
-    "sector": "technology",
+    "market_cap": "",
+    "sector": "international_uk",
     "type": "stock"
   },
-  "OC": {
-    "currency": "USD",
+  "NYCB": {
+    "currency": "",
     "description": "",
-    "market_cap": "large_cap",
-    "sector": "construction_and_materials",
+    "market_cap": "mid_cap",
+    "sector": "financials",
     "type": "stock"
+  },
+  "ODFL": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "OGE": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "OIH": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_sector_specific",
+    "type": "etf"
   },
   "OIS": {
     "currency": "USD",
     "description": "",
     "market_cap": "small_cap",
-    "sector": "small_cap",
+    "sector": "energy_and_utilities",
     "type": "stock"
   },
-  "OKLO": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "utilities",
-    "type": "stock"
-  },
-  "OMER": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "small_cap",
-    "sector": "small_cap",
-    "type": "stock"
-  },
-  "ORA": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "utilities",
-    "type": "stock"
-  },
-  "ORI": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "financials",
-    "type": "stock"
-  },
-  "OXY": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "large_cap",
-    "type": "stock"
-  },
-  "PAX": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "financials",
-    "type": "stock"
-  },
-  "PAYC": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "technology",
-    "type": "stock"
-  },
-  "PBI": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "manufacturing_and_industrials",
-    "type": "stock"
-  },
-  "PGY": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "technology",
-    "type": "stock"
-  },
-  "PLSE": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "small_cap",
-    "sector": "small_cap",
-    "type": "stock"
-  },
-  "PRIM": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "construction_and_materials",
-    "type": "stock"
-  },
-  "PRU": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "financials",
-    "type": "stock"
-  },
-  "PSMT": {
-    "currency": "USD",
+  "OKTA": {
+    "currency": "",
     "description": "",
     "market_cap": "mid_cap",
-    "sector": "mid_cap",
+    "sector": "technology",
     "type": "stock"
   },
-  "PTC": {
-    "currency": "USD",
+  "OMF": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "ONEQ": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "OR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_europe",
+    "type": "stock"
+  },
+  "ORAN": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_europe",
+    "type": "stock"
+  },
+  "ORCL": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
     "sector": "technology",
+    "type": "stock"
+  },
+  "OSPN": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "OXM": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "OZK": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "PACW": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "PALL": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_bond_commodity",
+    "type": "etf"
+  },
+  "PAM": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "PANW": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "PAVE": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_thematic",
+    "type": "etf"
+  },
+  "PAWZ": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_thematic",
+    "type": "etf"
+  },
+  "PBW": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_thematic",
+    "type": "etf"
+  },
+  "PBYI": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "PCCYF": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "PEG": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "PEP": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "PFBC": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "PFE": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "PFG": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "PFS": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "PG": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "PH": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "PLCE": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "PM": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "PNFP": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "PPA": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_sector_specific",
+    "type": "etf"
+  },
+  "PPG": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "PPH": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_thematic",
+    "type": "etf"
+  },
+  "PPL": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "PPLT": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_bond_commodity",
+    "type": "etf"
+  },
+  "PRAX": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "PSN": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_uk",
+    "type": "stock"
+  },
+  "PSX": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "energy_and_utilities",
     "type": "stock"
   },
   "PTCT": {
     "currency": "USD",
     "description": "",
+    "market_cap": "small_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "PUBM": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "PVH": {
+    "currency": "",
+    "description": "",
     "market_cap": "mid_cap",
-    "sector": "mid_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "PWR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "PXD": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "energy_and_utilities",
     "type": "stock"
   },
   "PYPL": {
@@ -1406,61 +3625,292 @@
     "sector": "financials",
     "type": "stock"
   },
-  "QXO": {
-    "currency": "USD",
+  "QCOM": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "manufacturing_and_industrials",
+    "sector": "technology",
     "type": "stock"
   },
-  "RAL": {
-    "currency": "USD",
+  "QQQ": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "QRVO": {
+    "currency": "",
     "description": "",
     "market_cap": "mid_cap",
-    "sector": "mid_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "QSR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "consumer",
     "type": "stock"
   },
   "RBC": {
     "currency": "USD",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "manufacturing_and_industrials",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "RBCAA": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "financials",
     "type": "stock"
   },
   "RDWR": {
     "currency": "USD",
     "description": "",
-    "market_cap": "large_cap",
+    "market_cap": "mid_cap",
     "sector": "technology",
     "type": "stock"
   },
-  "RJF": {
-    "currency": "USD",
+  "REGN": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "RELY": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "REZ": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_thematic",
+    "type": "etf"
+  },
+  "RF": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
     "sector": "financials",
+    "type": "stock"
+  },
+  "RGEN": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "RIG": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "RIO": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_uk",
+    "type": "stock"
+  },
+  "RL": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "consumer",
     "type": "stock"
   },
   "RNW": {
     "currency": "USD",
     "description": "",
-    "market_cap": "large_cap",
-    "sector": "utilities",
+    "market_cap": "small_cap",
+    "sector": "energy_and_utilities",
     "type": "stock"
+  },
+  "ROBO": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_thematic",
+    "type": "etf"
   },
   "ROCK": {
     "currency": "USD",
     "description": "",
-    "market_cap": "large_cap",
-    "sector": "construction_and_materials",
+    "market_cap": "small_cap",
+    "sector": "materials_and_construction",
     "type": "stock"
   },
-  "RSG": {
-    "currency": "USD",
+  "ROG": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_europe",
+    "type": "stock"
+  },
+  "ROST": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "large_cap",
+    "sector": "consumer",
     "type": "stock"
+  },
+  "RPD": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "RPM": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "RR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_uk",
+    "type": "stock"
+  },
+  "RSP": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "RSX": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_international",
+    "type": "etf"
+  },
+  "RTX": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "RUT": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "SAGE": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "SAN": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "SAP": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_europe",
+    "type": "stock"
+  },
+  "SAVA": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "SAVE": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "SBOW": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "SBRY": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_uk",
+    "type": "stock"
+  },
+  "SBUX": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "SCCO": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "SCHA": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "SCHD": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "SCHG": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "SCHM": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "SCHV": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
   },
   "SCHW": {
     "currency": "USD",
@@ -1469,291 +3919,1467 @@
     "sector": "financials",
     "type": "stock"
   },
-  "SLM": {
-    "currency": "USD",
+  "SCHX": {
+    "currency": "",
     "description": "",
-    "market_cap": "large_cap",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "SCO": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_bond_commodity",
+    "type": "etf"
+  },
+  "SCVL": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "SCWX": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "SD": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "SDS": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_leveraged_inverse",
+    "type": "etf"
+  },
+  "SES": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "SFLY": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "SFNC": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
     "sector": "financials",
     "type": "stock"
   },
-  "SNDK": {
-    "currency": "USD",
+  "SFTBY": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_asia",
+    "type": "stock"
+  },
+  "SGO": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "large_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "SGOL": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_bond_commodity",
+    "type": "etf"
+  },
+  "SHEL": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "SHPH": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "SHV": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_bond_commodity",
+    "type": "etf"
+  },
+  "SHW": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "SHY": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_bond_commodity",
+    "type": "etf"
+  },
+  "SIEGY": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_europe",
+    "type": "stock"
+  },
+  "SIG": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "SIGA": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "SIMO": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "SIVR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_bond_commodity",
+    "type": "etf"
+  },
+  "SKYW": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "SKYY": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_thematic",
+    "type": "etf"
+  },
+  "SLB": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "SLV": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_bond_commodity",
+    "type": "etf"
+  },
+  "SM": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "SMAR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "SMFG": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_asia",
+    "type": "stock"
+  },
+  "SMH": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_sector_specific",
+    "type": "etf"
+  },
+  "SNA": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "SNAP": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "SNOW": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "technology",
     "type": "stock"
   },
   "SO": {
     "currency": "USD",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "utilities",
+    "sector": "energy_and_utilities",
     "type": "stock"
   },
-  "SOUN": {
-    "currency": "USD",
+  "SOCL": {
+    "currency": "",
     "description": "",
-    "market_cap": "mid_cap",
-    "sector": "mid_cap",
-    "type": "stock"
+    "market_cap": "",
+    "sector": "etf_thematic",
+    "type": "etf"
   },
-  "SPH": {
-    "currency": "USD",
+  "SONY": {
+    "currency": "",
     "description": "",
-    "market_cap": "large_cap",
-    "sector": "utilities",
+    "market_cap": "",
+    "sector": "international_asia",
     "type": "stock"
   },
-  "SR": {
-    "currency": "USD",
+  "SOXX": {
+    "currency": "",
     "description": "",
-    "market_cap": "large_cap",
-    "sector": "utilities",
-    "type": "stock"
+    "market_cap": "",
+    "sector": "etf_sector_specific",
+    "type": "etf"
   },
-  "SRE": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "large_cap",
-    "type": "stock"
-  },
-  "SSD": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "construction_and_materials",
-    "type": "stock"
-  },
-  "STT": {
-    "currency": "USD",
+  "SPGI": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
     "sector": "financials",
     "type": "stock"
   },
-  "TCMD": {
-    "currency": "USD",
+  "SPLK": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "SPSC": {
+    "currency": "",
     "description": "",
     "market_cap": "small_cap",
-    "sector": "small_cap",
-    "type": "stock"
-  },
-  "TDC": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
     "sector": "technology",
     "type": "stock"
   },
-  "TDY": {
-    "currency": "USD",
+  "SPWH": {
+    "currency": "",
     "description": "",
-    "market_cap": "large_cap",
+    "market_cap": "small_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "SPWR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
     "sector": "technology",
     "type": "stock"
   },
-  "THR": {
-    "currency": "USD",
+  "SPX": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "SPXC": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "SPXU": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_leveraged_inverse",
+    "type": "etf"
+  },
+  "SPY": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "SPYD": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "SPYG": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "SPYV": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "SQ": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "SQQQ": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_leveraged_inverse",
+    "type": "etf"
+  },
+  "SRPT": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "SSNLF": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_asia",
+    "type": "stock"
+  },
+  "SSO": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_leveraged_inverse",
+    "type": "etf"
+  },
+  "STAN": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_uk",
+    "type": "stock"
+  },
+  "STLA": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_europe",
+    "type": "stock"
+  },
+  "STLD": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "STRL": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "SUM": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "manufacturing_and_industrials",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "SWN": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "SWX": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "SXC": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "SYBT": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "SYK": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "SYY": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "TAN": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_thematic",
+    "type": "etf"
+  },
+  "TCBK": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "TCEHY": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_asia",
+    "type": "stock"
+  },
+  "TEAM": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "TECK": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "TELL": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "TFC": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "TGLS": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "TGT": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "TGTX": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "THD": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_international",
+    "type": "etf"
+  },
+  "TIP": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_bond_commodity",
+    "type": "etf"
+  },
+  "TJX": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "TLH": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_bond_commodity",
+    "type": "etf"
+  },
+  "TLT": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_bond_commodity",
+    "type": "etf"
+  },
+  "TM": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_asia",
     "type": "stock"
   },
   "TMHC": {
     "currency": "USD",
     "description": "",
+    "market_cap": "small_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "TMO": {
+    "currency": "",
+    "description": "",
     "market_cap": "large_cap",
-    "sector": "construction_and_materials",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "TNA": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_leveraged_inverse",
+    "type": "etf"
+  },
+  "TNC": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "TNGX": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "technology",
     "type": "stock"
   },
   "TOL": {
     "currency": "USD",
     "description": "",
-    "market_cap": "large_cap",
-    "sector": "construction_and_materials",
+    "market_cap": "small_cap",
+    "sector": "materials_and_construction",
     "type": "stock"
+  },
+  "TOT": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "TOTAL": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "TPR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "TQQQ": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_leveraged_inverse",
+    "type": "etf"
   },
   "TREX": {
     "currency": "USD",
     "description": "",
-    "market_cap": "large_cap",
-    "sector": "construction_and_materials",
-    "type": "stock"
-  },
-  "TRMB": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "technology",
+    "market_cap": "small_cap",
+    "sector": "materials_and_construction",
     "type": "stock"
   },
   "TRN": {
     "currency": "USD",
     "description": "",
-    "market_cap": "large_cap",
-    "sector": "manufacturing_and_industrials",
+    "market_cap": "mid_cap",
+    "sector": "industrials",
     "type": "stock"
   },
-  "TRU": {
-    "currency": "USD",
+  "TSCO": {
+    "currency": "",
     "description": "",
-    "market_cap": "large_cap",
-    "sector": "large_cap",
+    "market_cap": "",
+    "sector": "international_uk",
     "type": "stock"
   },
-  "TSHA": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "small_cap",
-    "sector": "small_cap",
-    "type": "stock"
-  },
-  "TSLX": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "financials",
-    "type": "stock"
-  },
-  "TT": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "construction_and_materials",
-    "type": "stock"
-  },
-  "TTAM": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "construction_and_materials",
-    "type": "stock"
-  },
-  "TTEK": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "manufacturing_and_industrials",
-    "type": "stock"
-  },
-  "UHAL": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "manufacturing_and_industrials",
-    "type": "stock"
-  },
-  "VECO": {
-    "currency": "USD",
+  "TSLA": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
     "sector": "technology",
     "type": "stock"
   },
-  "VERA": {
-    "currency": "USD",
+  "TSM": {
+    "currency": "",
     "description": "",
-    "market_cap": "mid_cap",
-    "sector": "mid_cap",
+    "market_cap": "large_cap",
+    "sector": "technology",
     "type": "stock"
   },
-  "VFC": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "mid_cap",
-    "sector": "mid_cap",
-    "type": "stock"
-  },
-  "VNDA": {
+  "TT": {
     "currency": "USD",
     "description": "",
     "market_cap": "small_cap",
-    "sector": "small_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "TTC": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "TTE": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "TUP": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "TUR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_international",
+    "type": "etf"
+  },
+  "TWI": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "TWLO": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "TXN": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "TXRH": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "",
+    "type": "stock"
+  },
+  "TXT": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "TZA": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_leveraged_inverse",
+    "type": "etf"
+  },
+  "U": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "",
+    "type": "stock"
+  },
+  "UAN": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "UCBI": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "UCO": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_bond_commodity",
+    "type": "etf"
+  },
+  "UFPI": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "UFS": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "UGA": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_bond_commodity",
+    "type": "etf"
+  },
+  "UGI": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "UGL": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_bond_commodity",
+    "type": "etf"
+  },
+  "UL": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "ULTA": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "ULTRACEMCO": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "ULVR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_uk",
+    "type": "stock"
+  },
+  "UMB": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "UMC": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_asia",
+    "type": "stock"
+  },
+  "UNH": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "UNP": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "UPRO": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_leveraged_inverse",
+    "type": "etf"
+  },
+  "UPS": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "UPWK": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "URI": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "USCR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "USO": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_bond_commodity",
+    "type": "etf"
+  },
+  "V": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "VAW": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_sector_specific",
+    "type": "etf"
+  },
+  "VB": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "VCIT": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_bond_commodity",
+    "type": "etf"
+  },
+  "VCR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_sector_specific",
+    "type": "etf"
+  },
+  "VCSH": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_bond_commodity",
+    "type": "etf"
+  },
+  "VDC": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_sector_specific",
+    "type": "etf"
+  },
+  "VDE": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_sector_specific",
+    "type": "etf"
+  },
+  "VEA": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "VERU": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "VERX": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "VGLT": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_bond_commodity",
+    "type": "etf"
+  },
+  "VHT": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_sector_specific",
+    "type": "etf"
+  },
+  "VIAV": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "VIG": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "VIGI": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "VIR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "VIS": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_sector_specific",
+    "type": "etf"
+  },
+  "VIX": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "",
+    "type": ""
+  },
+  "VLO": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "VMC": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "materials_and_construction",
+    "type": "stock"
+  },
+  "VNM": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_international",
+    "type": "etf"
+  },
+  "VNQ": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_thematic",
+    "type": "etf"
+  },
+  "VO": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "VOD": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "international_uk",
+    "type": "stock"
+  },
+  "VOO": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "VOX": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_sector_specific",
+    "type": "etf"
+  },
+  "VPU": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_sector_specific",
+    "type": "etf"
+  },
+  "VRTX": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "healthcare",
     "type": "stock"
   },
   "VST": {
     "currency": "USD",
     "description": "",
-    "market_cap": "large_cap",
-    "sector": "utilities",
+    "market_cap": "mid_cap",
+    "sector": "energy_and_utilities",
     "type": "stock"
   },
-  "W": {
-    "currency": "USD",
+  "VT": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "VTI": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "VTNR": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "VTOL": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "VTV": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "VUG": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "VWO": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "VXUS": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "VYM": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "VYMI": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_broad_market",
+    "type": "etf"
+  },
+  "WAB": {
+    "currency": "",
     "description": "",
     "market_cap": "mid_cap",
-    "sector": "mid_cap",
+    "sector": "industrials",
     "type": "stock"
   },
-  "WEC": {
-    "currency": "USD",
+  "WAL": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "WCC": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "WDAY": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "WEAT": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_bond_commodity",
+    "type": "etf"
+  },
+  "WERN": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "industrials",
+    "type": "stock"
+  },
+  "WFC": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "utilities",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "WING": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "consumer",
     "type": "stock"
   },
   "WLDN": {
     "currency": "USD",
     "description": "",
-    "market_cap": "large_cap",
-    "sector": "construction_and_materials",
-    "type": "stock"
-  },
-  "WM": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "manufacturing_and_industrials",
+    "market_cap": "small_cap",
+    "sector": "materials_and_construction",
     "type": "stock"
   },
   "WMS": {
     "currency": "USD",
     "description": "",
-    "market_cap": "large_cap",
-    "sector": "construction_and_materials",
+    "market_cap": "small_cap",
+    "sector": "materials_and_construction",
     "type": "stock"
   },
-  "WSM": {
-    "currency": "USD",
+  "WMT": {
+    "currency": "",
     "description": "",
     "market_cap": "large_cap",
-    "sector": "large_cap",
+    "sector": "consumer",
     "type": "stock"
   },
-  "WTTR": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "utilities",
-    "type": "stock"
-  },
-  "WWD": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "manufacturing_and_industrials",
-    "type": "stock"
-  },
-  "YEXT": {
-    "currency": "USD",
+  "WSBC": {
+    "currency": "",
     "description": "",
     "market_cap": "small_cap",
-    "sector": "small_cap",
+    "sector": "financials",
     "type": "stock"
   },
-  "YORW": {
-    "currency": "USD",
-    "description": "",
-    "market_cap": "large_cap",
-    "sector": "utilities",
-    "type": "stock"
-  },
-  "ZIM": {
-    "currency": "USD",
+  "WTFC": {
+    "currency": "",
     "description": "",
     "market_cap": "mid_cap",
-    "sector": "mid_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "XBI": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_sector_specific",
+    "type": "etf"
+  },
+  "XEL": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "XHB": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_sector_specific",
+    "type": "etf"
+  },
+  "XLB": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_sector_specific",
+    "type": "etf"
+  },
+  "XLC": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_sector_specific",
+    "type": "etf"
+  },
+  "XLE": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_sector_specific",
+    "type": "etf"
+  },
+  "XLF": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_sector_specific",
+    "type": "etf"
+  },
+  "XLI": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_sector_specific",
+    "type": "etf"
+  },
+  "XLK": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_sector_specific",
+    "type": "etf"
+  },
+  "XLP": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_sector_specific",
+    "type": "etf"
+  },
+  "XLRE": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_thematic",
+    "type": "etf"
+  },
+  "XLU": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_sector_specific",
+    "type": "etf"
+  },
+  "XLV": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_sector_specific",
+    "type": "etf"
+  },
+  "XLY": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_sector_specific",
+    "type": "etf"
+  },
+  "XOM": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "energy_and_utilities",
+    "type": "stock"
+  },
+  "XOMA": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "XOP": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_sector_specific",
+    "type": "etf"
+  },
+  "XPEL": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "XTL": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_thematic",
+    "type": "etf"
+  },
+  "YETI": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "consumer",
+    "type": "stock"
+  },
+  "ZION": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "financials",
+    "type": "stock"
+  },
+  "ZM": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "ZROZ": {
+    "currency": "",
+    "description": "",
+    "market_cap": "",
+    "sector": "etf_bond_commodity",
+    "type": "etf"
+  },
+  "ZS": {
+    "currency": "",
+    "description": "",
+    "market_cap": "mid_cap",
+    "sector": "technology",
+    "type": "stock"
+  },
+  "ZTS": {
+    "currency": "",
+    "description": "",
+    "market_cap": "large_cap",
+    "sector": "healthcare",
+    "type": "stock"
+  },
+  "ZUO": {
+    "currency": "",
+    "description": "",
+    "market_cap": "small_cap",
+    "sector": "technology",
     "type": "stock"
   }
 }
