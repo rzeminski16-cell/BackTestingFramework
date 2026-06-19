@@ -188,11 +188,13 @@ DEFAULT_FAMILY_TIMING: Dict[Family, TimingPolicy] = {
     ),
     Family.COMMODITIES: TimingPolicy(
         availability_rule=AvailabilityRule.PUBLICATION_LAG,
-        publication_lag_days=0,
+        # Commodity series here are monthly (FRED/IMF), labelled with the period
+        # start but published weeks later, so lag availability conservatively.
+        publication_lag_days=30,
         freshness_budget_days=95,
         missing_data_policy=MissingDataPolicy.STEP_FORWARD,
         carry_forward_tolerance_days=95,
-        allow_same_day_close=True,
+        allow_same_day_close=False,
     ),
     Family.MACRO: TimingPolicy(
         availability_rule=AvailabilityRule.PUBLICATION_LAG,
