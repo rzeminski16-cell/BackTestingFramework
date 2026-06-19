@@ -118,6 +118,10 @@ class FileManager:
             self.output_dir / 'forex',
             self.output_dir / 'options',
             self.output_dir / 'benchmarks',
+            self.output_dir / 'commodities',
+            self.output_dir / 'macro',
+            self.output_dir / 'corporate_actions',
+            self.output_dir / 'utilities',
         ]
 
         for directory in directories:
@@ -142,6 +146,10 @@ class FileManager:
             'forex': 'forex',
             'options': 'options',
             'benchmark': 'benchmarks',
+            'commodity': 'commodities',
+            'macro': 'macro',
+            'corporate_action': 'corporate_actions',
+            'utility': 'utilities',
         }
 
         subdir = type_dirs.get(data_type, data_type)
@@ -411,11 +419,12 @@ class FileManager:
         self,
         df: pd.DataFrame,
         pair: str,
-        missing_handling: MissingDataHandling = MissingDataHandling.FORWARD_FILL
+        missing_handling: MissingDataHandling = MissingDataHandling.FORWARD_FILL,
+        interval: str = "weekly"
     ) -> FileMetadata:
-        """Write forex data to CSV."""
+        """Write forex data to CSV (interval: 'weekly' or 'daily')."""
         pair_clean = pair.replace('/', '')
-        file_name = f"{pair_clean}_weekly.csv"
+        file_name = f"{pair_clean}_{interval}.csv"
         file_path = self.get_output_path('forex', file_name)
 
         df = self._prepare_dataframe(df)
@@ -440,6 +449,132 @@ class FileManager:
             missing_handled=missing_handled
         )
 
+        self._files_created[file_name] = metadata
+        return metadata
+
+    def write_commodity_data(
+        self,
+        df: pd.DataFrame,
+        series_id: str,
+        interval: str = "monthly"
+    ) -> FileMetadata:
+        """
+        Write a normalised commodity series to raw_data/commodities/.
+
+        File: commodities/{series_id}_{interval}.csv. The DataFrame is the
+        normalised panel produced by ``CommodityCollector`` (observation_date,
+        value, series_id, native_function, native_frequency, unit, ...).
+        """
+        file_name = f"{series_id}_{interval}.csv"
+        file_path = self.get_output_path('commodity', file_name)
+
+        df = self._prepare_dataframe(df)
+        df.to_csv(
+            file_path,
+            index=False,
+            encoding=self.CSV_ENCODING,
+            lineterminator=self.CSV_LINE_TERMINATOR,
+            date_format=self.DATE_FORMAT
+        )
+
+        metadata = self._create_file_metadata(
+            df=df, file_name=file_name, file_path=file_path,
+            symbol=series_id, data_type='commodity'
+        )
+        self._files_created[file_name] = metadata
+        if self.logger:
+            self.logger.log_session_info(f"SAVED: {file_name} ({metadata.rows} rows)")
+        return metadata
+
+    def write_macro_data(
+        self,
+        df: pd.DataFrame,
+        series_id: str,
+        interval: str = "monthly"
+    ) -> FileMetadata:
+        """
+        Write a normalised US macro series to raw_data/macro/.
+
+        File: macro/{series_id}_{interval}.csv. ``series_id`` already carries the
+        maturity for Treasury yields (e.g. TREASURY_YIELD_10year). The DataFrame
+        is the normalised panel from ``MacroCollector`` (incl. geo_scope and
+        revision_risk_flag).
+        """
+        file_name = f"{series_id}_{interval}.csv"
+        file_path = self.get_output_path('macro', file_name)
+
+        df = self._prepare_dataframe(df)
+        df.to_csv(
+            file_path,
+            index=False,
+            encoding=self.CSV_ENCODING,
+            lineterminator=self.CSV_LINE_TERMINATOR,
+            date_format=self.DATE_FORMAT
+        )
+
+        metadata = self._create_file_metadata(
+            df=df, file_name=file_name, file_path=file_path,
+            symbol=series_id, data_type='macro'
+        )
+        self._files_created[file_name] = metadata
+        if self.logger:
+            self.logger.log_session_info(f"SAVED: {file_name} ({metadata.rows} rows)")
+        return metadata
+
+    def write_corporate_actions_data(
+        self,
+        symbol: str,
+        dividends: Optional[pd.DataFrame] = None,
+        splits: Optional[pd.DataFrame] = None
+    ) -> List[FileMetadata]:
+        """
+        Write dividend and split events as separate tables under
+        raw_data/corporate_actions/.
+
+        Files: {symbol}_dividends.csv and {symbol}_splits.csv. Each table is kept
+        separate (per the data-prep contract) so adjusted/raw reconciliation and
+        age-since-event features remain possible. Empty tables are skipped.
+        """
+        written: List[FileMetadata] = []
+        for kind, frame in (("dividends", dividends), ("splits", splits)):
+            if frame is None or frame.empty:
+                continue
+            file_name = f"{symbol}_{kind}.csv"
+            file_path = self.get_output_path('corporate_action', file_name)
+
+            frame = self._prepare_dataframe(frame)
+            frame.to_csv(
+                file_path,
+                index=False,
+                encoding=self.CSV_ENCODING,
+                lineterminator=self.CSV_LINE_TERMINATOR,
+                date_format=self.DATE_FORMAT
+            )
+            metadata = self._create_file_metadata(
+                df=frame, file_name=file_name, file_path=file_path,
+                symbol=symbol, data_type='corporate_action'
+            )
+            self._files_created[file_name] = metadata
+            written.append(metadata)
+        return written
+
+    def write_market_status_data(self, df: pd.DataFrame) -> FileMetadata:
+        """Write the global market-status snapshot to raw_data/utilities/."""
+        file_name = "market_status.csv"
+        file_path = self.get_output_path('utility', file_name)
+
+        df = self._prepare_dataframe(df)
+        df.to_csv(
+            file_path,
+            index=False,
+            encoding=self.CSV_ENCODING,
+            lineterminator=self.CSV_LINE_TERMINATOR,
+            date_format=self.DATE_FORMAT
+        )
+        metadata = self._create_file_metadata(
+            df=df, file_name=file_name, file_path=file_path,
+            symbol="MARKET_STATUS", data_type='utility'
+        )
         self._files_created[file_name] = metadata
         return metadata
 
@@ -753,7 +888,8 @@ class FileManager:
         """Create metadata for a written file."""
         # Get date range if date column exists
         date_range = None
-        for date_col in ['date', 'quarter_end_date', 'snapshot_date', 'fiscaldateending', 'report_date']:
+        for date_col in ['date', 'observation_date', 'ex_dividend_date', 'effective_date',
+                         'quarter_end_date', 'snapshot_date', 'fiscaldateending', 'report_date']:
             if date_col in df.columns:
                 dates = pd.to_datetime(df[date_col])
                 date_range = [
