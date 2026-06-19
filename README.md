@@ -97,6 +97,7 @@ BackTestingFramework/
 | [Backtest Analysis](docs/BACKTEST_ANALYSIS_GUIDE.md) | Drill down into strategy performance |
 | [Fundamental Data](docs/FUNDAMENTAL_DATA_GUIDE.md) | Fetch financial metrics from Alpha Vantage |
 | [Data Preparation](docs/DATA_PREPARATION.md) | Build a point-in-time research run package (trades + factors) for the modelling stage |
+| [Modelling & Evaluation](docs/MODELLING_EVALUATION.md) | Train & evaluate ML models on a run package to diagnose when the strategy works (regimes + factor contribution) |
 
 ## Key Features
 
