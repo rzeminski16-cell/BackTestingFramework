@@ -1,0 +1,1 @@
+{"timestamp": "2026-06-19T09:07:42.774905", "endpoint": "SPLITS", "params": {"symbol": "WMT"}, "data": {"symbol": "WMT", "data": [{"effective_date": "2024-02-26", "split_factor": "3.0000"}, {"effective_date": "1999-04-20", "split_factor": "2.0000"}]}}

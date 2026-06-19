@@ -1,0 +1,1 @@
+{"timestamp": "2026-06-19T08:58:04.974321", "endpoint": "DIVIDENDS", "params": {"symbol": "KIRK"}, "data": {"symbol": "KIRK", "data": [{"ex_dividend_date": "2015-06-03", "declaration_date": "None", "record_date": "None", "payment_date": "None", "amount": "1.5"}]}}

@@ -1,0 +1,1 @@
+{"timestamp": "2026-06-19T09:02:06.603883", "endpoint": "SPLITS", "params": {"symbol": "QCOM"}, "data": {"symbol": "QCOM", "data": [{"effective_date": "2004-08-16", "split_factor": "2.0000"}, {"effective_date": "1999-12-31", "split_factor": "4.0000"}, {"effective_date": "1999-05-11", "split_factor": "2.0000"}]}}

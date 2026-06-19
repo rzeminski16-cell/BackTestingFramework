@@ -1,0 +1,1 @@
+{"timestamp": "2026-06-19T08:53:05.708798", "endpoint": "SPLITS", "params": {"symbol": "DSY"}, "data": {"symbol": "DSY", "data": [{"effective_date": "2026-02-23", "split_factor": "0.0500"}]}}

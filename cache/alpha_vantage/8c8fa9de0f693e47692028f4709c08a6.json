@@ -1,0 +1,1 @@
+{"timestamp": "2026-06-19T09:05:28.411388", "endpoint": "SPLITS", "params": {"symbol": "TRN"}, "data": {"symbol": "TRN", "data": [{"effective_date": "2018-11-01", "split_factor": "1.3890"}, {"effective_date": "2014-06-20", "split_factor": "2.0000"}, {"effective_date": "2006-06-12", "split_factor": "1.5000"}]}}

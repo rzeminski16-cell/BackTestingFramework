@@ -1,0 +1,1 @@
+{"timestamp": "2026-06-19T08:55:17.998804", "endpoint": "SPLITS", "params": {"symbol": "GOOG"}, "data": {"symbol": "GOOG", "data": [{"effective_date": "2022-07-18", "split_factor": "20.0000"}]}}

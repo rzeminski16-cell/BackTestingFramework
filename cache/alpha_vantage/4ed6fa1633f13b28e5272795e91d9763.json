@@ -1,0 +1,1 @@
+{"timestamp": "2026-06-19T09:04:37.994634", "endpoint": "SPLITS", "params": {"symbol": "SYBT"}, "data": {"symbol": "SYBT", "data": [{"effective_date": "2016-05-31", "split_factor": "1.5000"}, {"effective_date": "2006-05-08", "split_factor": "1.0500"}, {"effective_date": "2003-09-22", "split_factor": "2.0000"}, {"effective_date": "1999-03-01", "split_factor": "2.0000"}]}}

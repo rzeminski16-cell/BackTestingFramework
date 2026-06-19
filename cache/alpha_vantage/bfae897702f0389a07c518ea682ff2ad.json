@@ -1,0 +1,1 @@
+{"timestamp": "2026-06-19T08:54:28.501305", "endpoint": "SPLITS", "params": {"symbol": "FMC"}, "data": {"symbol": "FMC", "data": [{"effective_date": "2019-03-04", "split_factor": "1.1530"}, {"effective_date": "2012-05-25", "split_factor": "2.0000"}, {"effective_date": "2007-09-14", "split_factor": "2.0000"}]}}

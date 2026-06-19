@@ -1,0 +1,1 @@
+{"timestamp": "2026-06-19T08:49:13.229032", "endpoint": "SPLITS", "params": {"symbol": "AVGO"}, "data": {"symbol": "AVGO", "data": [{"effective_date": "2024-07-15", "split_factor": "10.0000"}]}}

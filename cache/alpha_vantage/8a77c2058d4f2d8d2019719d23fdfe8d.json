@@ -1,0 +1,1 @@
+{"timestamp": "2026-06-19T08:49:21.435225", "endpoint": "SPLITS", "params": {"symbol": "BAC"}, "data": {"symbol": "BAC", "data": [{"effective_date": "2004-08-30", "split_factor": "2.0000"}]}}

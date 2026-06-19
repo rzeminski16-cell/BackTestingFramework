@@ -1,0 +1,1 @@
+{"timestamp": "2026-06-19T08:56:28.544523", "endpoint": "SPLITS", "params": {"symbol": "INTU"}, "data": {"symbol": "INTU", "data": [{"effective_date": "2006-07-07", "split_factor": "2.0000"}, {"effective_date": "1999-10-01", "split_factor": "3.0000"}]}}

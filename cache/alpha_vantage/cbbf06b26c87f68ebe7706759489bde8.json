@@ -1,0 +1,1 @@
+{"timestamp": "2026-06-19T09:05:04.875189", "endpoint": "SPLITS", "params": {"symbol": "TECK"}, "data": {"symbol": "TECK", "data": [{"effective_date": "2007-05-11", "split_factor": "2.0000"}]}}

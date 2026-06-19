@@ -1,0 +1,1 @@
+{"timestamp": "2026-06-19T08:54:23.790482", "endpoint": "SPLITS", "params": {"symbol": "FITB"}, "data": {"symbol": "FITB", "data": [{"effective_date": "2000-07-17", "split_factor": "1.5000"}]}}

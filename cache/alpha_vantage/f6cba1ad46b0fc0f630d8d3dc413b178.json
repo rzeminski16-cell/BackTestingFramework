@@ -1,0 +1,1 @@
+{"timestamp": "2026-06-19T08:49:21.871053", "endpoint": "SPLITS", "params": {"symbol": "BANR"}, "data": {"symbol": "BANR", "data": [{"effective_date": "2011-06-01", "split_factor": "0.1429"}]}}

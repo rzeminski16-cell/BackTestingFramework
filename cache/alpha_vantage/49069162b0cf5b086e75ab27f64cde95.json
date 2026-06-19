@@ -1,0 +1,1 @@
+{"timestamp": "2026-06-19T08:57:11.667284", "endpoint": "SPLITS", "params": {"symbol": "ITOT"}, "data": {"symbol": "ITOT", "data": [{"effective_date": "2016-07-25", "split_factor": "2.0000"}, {"effective_date": "2008-07-24", "split_factor": "2.0000"}]}}

@@ -1,0 +1,1 @@
+{"timestamp": "2026-06-19T09:07:24.753505", "endpoint": "SPLITS", "params": {"symbol": "VTOL"}, "data": {"symbol": "VTOL", "data": [{"effective_date": "2020-06-12", "split_factor": "0.5000"}]}}

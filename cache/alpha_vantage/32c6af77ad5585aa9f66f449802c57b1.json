@@ -1,0 +1,1 @@
+{"timestamp": "2026-06-19T09:03:22.676857", "endpoint": "SPLITS", "params": {"symbol": "SGOL"}, "data": {"symbol": "SGOL", "data": [{"effective_date": "2019-11-04", "split_factor": "10.0000"}]}}

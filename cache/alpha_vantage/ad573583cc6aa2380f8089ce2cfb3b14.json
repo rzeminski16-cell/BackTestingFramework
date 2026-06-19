@@ -1,0 +1,1 @@
+{"timestamp": "2026-06-19T08:55:26.865069", "endpoint": "SPLITS", "params": {"symbol": "HIBB"}, "data": {"symbol": "HIBB", "data": [{"effective_date": "2005-09-28", "split_factor": "1.5000"}, {"effective_date": "2004-04-19", "split_factor": "1.5000"}, {"effective_date": "2003-07-16", "split_factor": "1.4925"}, {"effective_date": "2002-02-20", "split_factor": "1.5000"}]}}

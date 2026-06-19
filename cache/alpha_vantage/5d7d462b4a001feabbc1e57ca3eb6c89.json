@@ -1,0 +1,1 @@
+{"timestamp": "2026-06-19T08:56:06.101706", "endpoint": "SPLITS", "params": {"symbol": "HOPE"}, "data": {"symbol": "HOPE", "data": [{"effective_date": "2004-06-16", "split_factor": "2.0000"}, {"effective_date": "2003-03-18", "split_factor": "2.0000"}]}}

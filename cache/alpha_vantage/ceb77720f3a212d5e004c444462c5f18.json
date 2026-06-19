@@ -1,0 +1,1 @@
+{"timestamp": "2026-06-19T08:49:15.554959", "endpoint": "SPLITS", "params": {"symbol": "AXON"}, "data": {"symbol": "AXON", "data": [{"effective_date": "2004-11-30", "split_factor": "2.0000"}, {"effective_date": "2004-04-30", "split_factor": "2.0000"}, {"effective_date": "2004-02-11", "split_factor": "3.0000"}]}}

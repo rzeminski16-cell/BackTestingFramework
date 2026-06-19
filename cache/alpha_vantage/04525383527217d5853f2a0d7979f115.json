@@ -1,0 +1,1 @@
+{"timestamp": "2026-06-19T09:02:31.598783", "endpoint": "SPLITS", "params": {"symbol": "SAN"}, "data": {"symbol": "SAN", "data": [{"effective_date": "2020-11-12", "split_factor": "1.0588"}, {"effective_date": "1999-06-21", "split_factor": "2.0000"}]}}

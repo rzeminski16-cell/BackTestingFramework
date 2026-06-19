@@ -1,0 +1,1 @@
+{"timestamp": "2026-06-19T09:08:24.437717", "endpoint": "SPLITS", "params": {"symbol": "XOP"}, "data": {"symbol": "XOP", "data": [{"effective_date": "2020-03-30", "split_factor": "0.2500"}]}}

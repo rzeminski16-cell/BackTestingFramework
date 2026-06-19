@@ -1,0 +1,1 @@
+{"timestamp": "2026-06-19T08:53:10.842372", "endpoint": "SPLITS", "params": {"symbol": "EEM"}, "data": {"symbol": "EEM", "data": [{"effective_date": "2008-07-24", "split_factor": "3.0000"}, {"effective_date": "2005-06-09", "split_factor": "3.0000"}]}}

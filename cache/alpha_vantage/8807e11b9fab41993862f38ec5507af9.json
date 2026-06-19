@@ -1,0 +1,1 @@
+{"timestamp": "2026-06-19T09:04:26.698953", "endpoint": "SPLITS", "params": {"symbol": "SSO"}, "data": {"symbol": "SSO", "data": [{"effective_date": "2025-11-20", "split_factor": "2.0000"}, {"effective_date": "2022-01-13", "split_factor": "2.0000"}, {"effective_date": "2020-08-18", "split_factor": "2.0000"}, {"effective_date": "2015-05-20", "split_factor": "2.0000"}]}}

@@ -1,0 +1,1 @@
+{"timestamp": "2026-06-19T08:51:12.547263", "endpoint": "DIVIDENDS", "params": {"symbol": "CHA"}, "data": {"symbol": "CHA", "data": [{"ex_dividend_date": "2025-12-08", "declaration_date": "2025-11-28", "record_date": "2025-12-08", "payment_date": "2025-12-15", "amount": "0.92"}]}}

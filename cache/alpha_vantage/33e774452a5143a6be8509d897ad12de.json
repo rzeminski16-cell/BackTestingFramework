@@ -1,0 +1,1 @@
+{"timestamp": "2026-06-19T09:05:39.779383", "endpoint": "SPLITS", "params": {"symbol": "TWI"}, "data": {"symbol": "TWI", "data": [{"effective_date": "2008-08-18", "split_factor": "1.2500"}]}}

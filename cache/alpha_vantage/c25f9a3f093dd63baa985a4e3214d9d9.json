@@ -1,0 +1,1 @@
+{"timestamp": "2026-06-19T08:53:21.404531", "endpoint": "SPLITS", "params": {"symbol": "ESGE"}, "data": {"symbol": "ESGE", "data": [{"effective_date": "2018-05-25", "split_factor": "2.0000"}]}}

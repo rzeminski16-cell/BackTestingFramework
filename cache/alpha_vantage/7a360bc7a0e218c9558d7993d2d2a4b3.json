@@ -1,0 +1,1 @@
+{"timestamp": "2026-06-19T08:57:09.643140", "endpoint": "SPLITS", "params": {"symbol": "ISRG"}, "data": {"symbol": "ISRG", "data": [{"effective_date": "2021-10-05", "split_factor": "3.0000"}, {"effective_date": "2017-10-06", "split_factor": "3.0000"}, {"effective_date": "2003-07-01", "split_factor": "0.5000"}]}}

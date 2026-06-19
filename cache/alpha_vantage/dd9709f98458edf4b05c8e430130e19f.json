@@ -1,0 +1,1 @@
+{"timestamp": "2026-06-19T09:06:12.378090", "endpoint": "SPLITS", "params": {"symbol": "UFPI"}, "data": {"symbol": "UFPI", "data": [{"effective_date": "2017-11-15", "split_factor": "3.0000"}]}}

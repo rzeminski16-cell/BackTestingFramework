@@ -1,0 +1,1 @@
+{"timestamp": "2026-06-19T08:49:03.074465", "endpoint": "SPLITS", "params": {"symbol": "APA"}, "data": {"symbol": "APA", "data": [{"effective_date": "2004-01-15", "split_factor": "2.0000"}, {"effective_date": "2003-03-10", "split_factor": "1.0526"}, {"effective_date": "2001-12-27", "split_factor": "1.1111"}]}}

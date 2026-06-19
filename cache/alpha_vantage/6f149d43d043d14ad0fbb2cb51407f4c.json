@@ -1,0 +1,1 @@
+{"timestamp": "2026-06-19T09:05:12.277306", "endpoint": "SPLITS", "params": {"symbol": "TGTX"}, "data": {"symbol": "TGTX", "data": [{"effective_date": "2012-04-30", "split_factor": "0.0178"}, {"effective_date": "2011-07-14", "split_factor": "0.0200"}]}}

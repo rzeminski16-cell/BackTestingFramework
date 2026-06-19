@@ -1,0 +1,1 @@
+{"timestamp": "2026-06-19T08:48:05.407482", "endpoint": "SPLITS", "params": {"symbol": "AAPL"}, "data": {"symbol": "AAPL", "data": [{"effective_date": "2020-08-31", "split_factor": "4.0000"}, {"effective_date": "2014-06-09", "split_factor": "7.0000"}, {"effective_date": "2005-02-28", "split_factor": "2.0000"}, {"effective_date": "2000-06-21", "split_factor": "2.0000"}]}}

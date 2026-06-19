@@ -1,0 +1,1 @@
+{"timestamp": "2026-06-19T09:04:22.829907", "endpoint": "SPLITS", "params": {"symbol": "SPYV"}, "data": {"symbol": "SPYV", "data": [{"effective_date": "2017-10-16", "split_factor": "4.0000"}, {"effective_date": "2005-09-22", "split_factor": "2.0000"}]}}

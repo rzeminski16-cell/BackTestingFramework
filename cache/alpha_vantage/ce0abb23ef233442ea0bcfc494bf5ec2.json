@@ -1,0 +1,1 @@
+{"timestamp": "2026-06-19T08:56:07.279339", "endpoint": "SPLITS", "params": {"symbol": "HRTX"}, "data": {"symbol": "HRTX", "data": [{"effective_date": "2014-01-13", "split_factor": "0.0500"}, {"effective_date": "2007-05-25", "split_factor": "0.2500"}]}}
