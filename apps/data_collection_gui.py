@@ -2334,7 +2334,7 @@ class DataCollectionApp(ctk.CTk):
     def _get_current_tab(self) -> tuple:
         """Get the current active tab and its name."""
         tab_name = self.tabview.get()
-        tab_key = tab_name.lower()
+        tab_key = tab_name.lower().replace(" ", "_")
         return tab_key, self.tabs.get(tab_key)
 
     def _start_collection(self):
