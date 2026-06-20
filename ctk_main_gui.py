@@ -228,6 +228,18 @@ class CTkMainLauncher(ctk.CTk):
                 "description": "Bootstrap trade-log returns to simulate equity curves, drawdowns and probability of loss",
                 "icon": "\U0001F3B2",  # Game die
                 "command": self._launch_monte_carlo
+            },
+            {
+                "title": "Modelling & Evaluation",
+                "description": "Train & evaluate models on a prepared run package to diagnose when the strategy works",
+                "icon": "\U0001F916",  # Robot
+                "command": self._launch_modelling_evaluation
+            },
+            {
+                "title": "Results Dashboard",
+                "description": "Interactive browser dashboard to explore modelling results: regimes, factors, overlays",
+                "icon": "\U0001F4CA",  # Bar chart
+                "command": self._launch_modelling_dashboard
             }
         ]
 
@@ -310,6 +322,18 @@ class CTkMainLauncher(ctk.CTk):
     def _launch_monte_carlo(self):
         """Launch the Monte Carlo simulation GUI."""
         self._launch_module("monte_carlo")
+
+    def _launch_modelling_evaluation(self):
+        """Launch the Modelling & Evaluation GUI."""
+        self._launch_module("modelling_evaluation")
+
+    def _launch_modelling_dashboard(self):
+        """Launch the interactive Streamlit results dashboard."""
+        script_path = Path(__file__).parent / "apps" / "modelling_dashboard.py"
+        if script_path.exists():
+            subprocess.Popen([sys.executable, "-m", "streamlit", "run", str(script_path)])
+        else:
+            self._show_error(f"Dashboard not found: {script_path}")
 
     def _show_error(self, message: str):
         """Show an error dialog."""
