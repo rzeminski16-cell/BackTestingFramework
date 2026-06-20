@@ -316,3 +316,150 @@ def year_stability(df: pd.DataFrame, adjusted_rar: AdjustedRARConfig,
                      "adjusted_rar": round(m["adjusted_rar"], 3),
                      "hit_rate": round(m["hit_rate"], 1)})
     return pd.DataFrame(rows)
+
+
+# --------------------------------------------------------------------------- #
+# Per-period variants (regime view has no per-trade P/L; slice the period
+# outcome instead — next-period return / realised period P/L).
+# --------------------------------------------------------------------------- #
+def is_per_trade(df: pd.DataFrame) -> bool:
+    return "pl" in df.columns
+
+
+def period_value_column(df: pd.DataFrame) -> Optional[str]:
+    """The numeric outcome to slice a per-period panel by."""
+    if "target" in df.columns and pd.api.types.is_numeric_dtype(df["target"]):
+        return "target"
+    if "period_realised_pl" in df.columns:
+        return "period_realised_pl"
+    return None
+
+
+def _bucketise(sub: pd.DataFrame, feature: str, n_buckets: int, categorical: bool):
+    if categorical or not pd.api.types.is_numeric_dtype(sub[feature]):
+        sub["_bucket"] = sub[feature].astype(str)
+        return sub, sorted(sub["_bucket"].unique())
+    try:
+        sub["_bucket"] = pd.qcut(sub[feature], q=min(n_buckets, sub[feature].nunique()),
+                                 duplicates="drop")
+    except (ValueError, IndexError):
+        return sub, []
+    return sub, list(sub["_bucket"].cat.categories)
+
+
+def period_regime_table(df: pd.DataFrame, feature: str, n_buckets: int = 5,
+                        categorical: bool = False,
+                        value_col: Optional[str] = None) -> pd.DataFrame:
+    """Per-bucket mean outcome for a per-period panel (favourable vs hostile)."""
+    value_col = value_col or period_value_column(df)
+    if value_col is None or feature not in df.columns:
+        return pd.DataFrame()
+    sub = df.dropna(subset=[feature, value_col]).copy()
+    if sub.empty:
+        return pd.DataFrame()
+    sub, order = _bucketise(sub, feature, n_buckets, categorical)
+    rows = []
+    for b in order:
+        g = sub[sub["_bucket"] == b]
+        if g.empty:
+            continue
+        vals = pd.to_numeric(g[value_col], errors="coerce").dropna()
+        rows.append({
+            "bucket": str(b),
+            "count": int(len(g)),
+            "mean_outcome": round(float(vals.mean()), 4) if len(vals) else 0.0,
+            "pct_positive": round(float((vals > 0).mean() * 100), 1) if len(vals) else 0.0,
+            "total_outcome": round(float(vals.sum()), 3),
+        })
+    return pd.DataFrame(rows)
+
+
+def period_two_feature_heatmap(df: pd.DataFrame, fx: str, fy: str, n_bins: int = 4,
+                               value_col: Optional[str] = None) -> pd.DataFrame:
+    """Matrix of mean outcome over a quantile grid of two features (per-period)."""
+    value_col = value_col or period_value_column(df)
+    if value_col is None:
+        return pd.DataFrame()
+    sub = df.dropna(subset=[fx, fy, value_col]).copy()
+    if sub.empty:
+        return pd.DataFrame()
+    try:
+        sub["_x"] = pd.qcut(sub[fx], q=min(n_bins, sub[fx].nunique()), duplicates="drop")
+        sub["_y"] = pd.qcut(sub[fy], q=min(n_bins, sub[fy].nunique()), duplicates="drop")
+    except (ValueError, IndexError):
+        return pd.DataFrame()
+    out = {}
+    for yb in sub["_y"].cat.categories:
+        row = {}
+        for xb in sub["_x"].cat.categories:
+            g = sub[(sub["_x"] == xb) & (sub["_y"] == yb)]
+            row[str(xb)] = round(float(pd.to_numeric(g[value_col], errors="coerce").mean()), 4) \
+                if not g.empty else np.nan
+        out[str(yb)] = row
+    return pd.DataFrame(out).T
+
+
+def period_favourable_unfavourable(df: pd.DataFrame, features: List[str],
+                                   n_buckets: int = 5, top: int = 8,
+                                   value_col: Optional[str] = None) -> pd.DataFrame:
+    """Rank every per-period feature bucket by mean outcome (favourable/hostile)."""
+    rows = []
+    for feat in features:
+        tbl = period_regime_table(df, feat, n_buckets=n_buckets, value_col=value_col)
+        for _, r in tbl.iterrows():
+            rows.append({"feature": feat, "bucket": r["bucket"], "count": r["count"],
+                         "mean_outcome": r["mean_outcome"], "pct_positive": r["pct_positive"]})
+    if not rows:
+        return pd.DataFrame()
+    allr = pd.DataFrame(rows).sort_values("mean_outcome", ascending=False)
+    return pd.concat([allr.head(top).assign(regime="favourable"),
+                      allr.tail(top).assign(regime="hostile")], ignore_index=True)
+
+
+def period_year_stability(df: pd.DataFrame, value_col: Optional[str] = None) -> pd.DataFrame:
+    """Per-year mean outcome for a per-period panel."""
+    value_col = value_col or period_value_column(df)
+    if value_col is None or "period_ts" not in df.columns:
+        return pd.DataFrame()
+    work = df.dropna(subset=["period_ts", value_col]).copy()
+    work["year"] = pd.to_datetime(work["period_ts"]).dt.year
+    rows = []
+    for yr, g in work.groupby("year"):
+        vals = pd.to_numeric(g[value_col], errors="coerce").dropna()
+        rows.append({"year": int(yr), "count": int(len(g)),
+                     "mean_outcome": round(float(vals.mean()), 4) if len(vals) else 0.0,
+                     "pct_positive": round(float((vals > 0).mean() * 100), 1) if len(vals) else 0.0})
+    return pd.DataFrame(rows)
+
+
+def period_overlay_curves(df: pd.DataFrame, allow_quantile: float = 0.5,
+                          value_col: Optional[str] = None) -> Tuple[pd.DataFrame, pd.DataFrame]:
+    """Cumulative outcome: always-exposed baseline vs score-gated exposure.
+
+    Returns ``(long_curves, summary)``. The overlay takes exposure only when the
+    finalist's score is in the top ``1 − allow_quantile``.
+    """
+    value_col = value_col or period_value_column(df)
+    if value_col is None or "good_score" not in df.columns or "period_ts" not in df.columns:
+        return pd.DataFrame(), pd.DataFrame()
+    work = df.dropna(subset=["good_score", value_col, "period_ts"]).sort_values("period_ts").copy()
+    if work.empty:
+        return pd.DataFrame(), pd.DataFrame()
+    val = pd.to_numeric(work[value_col], errors="coerce").fillna(0.0).values
+    thr = float(np.quantile(work["good_score"].values, allow_quantile))
+    exposed = (work["good_score"].values >= thr).astype(float)
+    base = pd.DataFrame({"period": work["period_ts"].values,
+                         "cumulative": np.cumsum(val), "policy": "always exposed"})
+    over = pd.DataFrame({"period": work["period_ts"].values,
+                         "cumulative": np.cumsum(val * exposed),
+                         "policy": "exposed in favourable only"})
+    summary = pd.DataFrame([
+        {"policy": "always exposed", "periods": int(len(work)),
+         "total_outcome": round(float(val.sum()), 3),
+         "mean_outcome": round(float(val.mean()), 4)},
+        {"policy": "exposed in favourable only", "periods": int(exposed.sum()),
+         "total_outcome": round(float((val * exposed).sum()), 3),
+         "mean_outcome": round(float(val[exposed > 0].mean()), 4) if exposed.sum() else 0.0},
+    ])
+    return pd.concat([base, over], ignore_index=True), summary
+

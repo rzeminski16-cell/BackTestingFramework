@@ -377,7 +377,19 @@ class Evaluator:
     def _fold_delta(self, test_index: pd.Index, preds: np.ndarray) -> float:
         """Per-fold overlay−baseline Adjusted RAR% (top-quantile policy)."""
         if self.view == ModellingView.PER_PERIOD:
-            return 0.0
+            if self.period_frame is None or len(test_index) < 3:
+                return 0.0
+            realised = pd.to_numeric(self.period_frame["period_realised_pl"], errors="coerce")
+            nxt = realised.shift(-1).reindex(test_index).fillna(0.0).values
+            score = self._good_score(pd.Series(preds, index=test_index)).values
+            thr = float(np.quantile(score, 0.5))
+            exposed = (score >= thr).astype(float)
+            base = pd.DataFrame({"date": test_index,
+                                 "equity": self.initial_capital + np.cumsum(nxt)})
+            over = pd.DataFrame({"date": test_index,
+                                 "equity": self.initial_capital + np.cumsum(nxt * exposed)})
+            return float(adjusted_rar_from_equity(over, self.adjusted_rar)
+                         - adjusted_rar_from_equity(base, self.adjusted_rar))
         trades = self.trades.set_index("trade_id")
         common = test_index.intersection(trades.index)
         if len(common) < 3:

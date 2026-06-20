@@ -58,6 +58,34 @@ def bootstrap_adjusted_rar_delta(baseline_records: List[Dict[str, Any]],
     return {"point": float(point), "lo": lo, "hi": hi, "p_value": float(min(1.0, p))}
 
 
+def bootstrap_period_overlay_delta(next_returns: Sequence[float], scores: Sequence[float],
+                                   allow_quantile: float = 0.5, n_boot: int = 500,
+                                   alpha: float = 0.05, random_state: int = 0) -> Dict[str, float]:
+    """Percentile bootstrap CI for (favourable-only − always) mean next-period return."""
+    nr = np.asarray(next_returns, dtype=float)
+    sc = np.asarray(scores, dtype=float)
+    mask = np.isfinite(nr) & np.isfinite(sc)
+    nr, sc = nr[mask], sc[mask]
+    n = len(nr)
+    if n < 5:
+        return {"point": 0.0, "lo": 0.0, "hi": 0.0, "p_value": 1.0}
+
+    def delta(idx: np.ndarray) -> float:
+        r, s = nr[idx], sc[idx]
+        thr = np.quantile(s, allow_quantile)
+        exposed = s >= thr
+        over = r[exposed].mean() if exposed.any() else 0.0
+        return float(over - r.mean())
+
+    rng = np.random.default_rng(random_state)
+    point = delta(np.arange(n))
+    deltas = np.array([delta(rng.integers(0, n, n)) for _ in range(n_boot)])
+    lo = float(np.nanpercentile(deltas, 100 * alpha / 2))
+    hi = float(np.nanpercentile(deltas, 100 * (1 - alpha / 2)))
+    p = 2.0 * min((deltas <= 0).mean(), (deltas >= 0).mean())
+    return {"point": float(point), "lo": lo, "hi": hi, "p_value": float(min(1.0, p))}
+
+
 # --------------------------------------------------------------------------- #
 # Permutation test on a cross-validated score.
 # --------------------------------------------------------------------------- #

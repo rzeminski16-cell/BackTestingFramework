@@ -330,6 +330,61 @@ def test_dashboard_export_and_data_layer(package_root):
     assert not fav.empty and set(fav["regime"].unique()).issubset({"favourable", "hostile"})
 
 
+def test_per_period_dashboard_and_stats(package_root):
+    from Classes.Modelling.dashboard_data import (
+        is_per_trade, load_dashboard_data, period_favourable_unfavourable,
+        period_overlay_curves, period_regime_table)
+
+    config = ModellingConfig(model_run_name="pp", runs_root=package_root,
+                             view=ModellingView.PER_PERIOD)
+    config.validation.n_splits = 3
+    controller = ModellingController(config)
+    controller.load_package("synthetic")
+    results = controller.run()
+    written = controller.export(results)
+
+    # Per-period analysis frame exists with the columns the dashboard needs.
+    assert os.path.isfile(written["analysis_frame_per_period"])
+    dd = load_dashboard_data(controller.output_dir())
+    assert "per_period" in dd.views
+    df = dd.analysis["per_period"]
+    assert not is_per_trade(df)
+    assert {"target", "good_score", "period_realised_pl", "period_ts"}.issubset(df.columns)
+
+    # good_score must come from a real model, not the tie-broken Baseline dummy.
+    assert df["finalist_model"].iloc[0] != "Baseline"
+
+    # Per-period regime + overlay helpers return content.
+    numeric = [f for f in dd.numeric_features("per_period") if f in df.columns]
+    assert numeric
+    tbl = period_regime_table(df, numeric[0], n_buckets=4)
+    assert not tbl.empty and {"bucket", "mean_outcome", "pct_positive"}.issubset(tbl.columns)
+    fav = period_favourable_unfavourable(df, numeric)
+    assert not fav.empty
+    curves, summary = period_overlay_curves(df, allow_quantile=0.5)
+    assert not curves.empty and set(curves["policy"]) == {
+        "always exposed", "exposed in favourable only"}
+
+    # Stats fixes: the per-period robustness payload now carries real significance
+    # (White's RC from actual fold deltas, a per-period bootstrap, multiple testing)
+    # rather than degenerate placeholders.
+    rob = results.robustness
+    assert "whites_reality_check" in rob
+    assert "bootstrap_delta" in rob and "multiple_testing" in rob
+
+
+def test_period_overlay_delta_math():
+    # The per-period fold/bootstrap delta must be non-zero when the score actually
+    # ranks periods: exposing only the favourable half should beat always-exposed.
+    from Classes.Modelling.robustness import bootstrap_period_overlay_delta
+    rng = np.random.default_rng(0)
+    score = np.linspace(0.0, 1.0, 80)
+    next_ret = score + rng.normal(0, 0.05, 80)        # returns correlate with score
+    res = bootstrap_period_overlay_delta(next_ret, score, allow_quantile=0.5, n_boot=200)
+    assert res["point"] > 0                            # favourable-only mean > overall mean
+    assert res["lo"] <= res["point"] <= res["hi"]
+
+
 def test_scoring_function_roundtrip(package_root, tmp_path):
     config = ModellingConfig(model_run_name="sf", runs_root=package_root,
                              view=ModellingView.PER_TRADE)
