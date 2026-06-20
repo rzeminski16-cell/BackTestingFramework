@@ -38,5 +38,9 @@ statsmodels>=0.14.0
 # shap>=0.43.0
 joblib>=1.2.0
 
+# Interactive results dashboard (apps/modelling_dashboard.py)
+streamlit>=1.30.0
+plotly>=5.18.0
+
 # Performance optimization (optional but recommended)
 numba>=0.56.0

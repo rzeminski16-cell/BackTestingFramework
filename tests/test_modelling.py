@@ -290,6 +290,46 @@ def test_end_to_end_controller_and_export(package_root):
     assert os.path.isfile(written["risk_register"])
 
 
+def test_dashboard_export_and_data_layer(package_root):
+    from Classes.Modelling.dashboard_data import (
+        discover_model_runs, favourable_unfavourable, load_dashboard_data,
+        overlay_economics, regime_table)
+
+    config = ModellingConfig(model_run_name="dash", runs_root=package_root,
+                             view=ModellingView.PER_TRADE)
+    config.validation.n_splits = 3
+    controller = ModellingController(config)
+    controller.load_package("synthetic")
+    results = controller.run()
+    written = controller.export(results)
+
+    # Dashboard artefacts exist.
+    assert os.path.isfile(written["dashboard_manifest"])
+    assert os.path.isfile(written["analysis_frame_per_trade"])
+
+    # Discovery + load.
+    found = discover_model_runs(package_root)
+    assert any(r["model_run"] == "dash" for r in found)
+    dd = load_dashboard_data(controller.output_dir())
+    assert "per_trade" in dd.views
+    df = dd.analysis["per_trade"]
+    assert {"good_score", "pl", "pl_pct", "target"}.issubset(df.columns)
+
+    # Regime slicing answers "what feature ranges are favourable?"
+    numeric = [f for f in dd.numeric_features("per_trade") if f in df.columns]
+    assert numeric
+    tbl = regime_table(df, numeric[0], dd.adjusted_rar, dd.initial_capital, n_buckets=4)
+    assert not tbl.empty and {"bucket", "adjusted_rar", "hit_rate"}.issubset(tbl.columns)
+
+    # Overlay economics recompute (baseline + two overlays).
+    econ = overlay_economics(df, dd.adjusted_rar, dd.initial_capital,
+                             allow_quantile=0.7, reduce_factor=0.5)
+    assert set(econ["policy"]) == {"baseline", "top_quantile_only", "reduce_size_in_hostile"}
+
+    fav = favourable_unfavourable(df, numeric, dd.adjusted_rar, dd.initial_capital)
+    assert not fav.empty and set(fav["regime"].unique()).issubset({"favourable", "hostile"})
+
+
 def test_scoring_function_roundtrip(package_root, tmp_path):
     config = ModellingConfig(model_run_name="sf", runs_root=package_root,
                              view=ModellingView.PER_TRADE)

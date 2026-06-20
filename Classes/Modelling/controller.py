@@ -350,4 +350,83 @@ class ModellingController:
             interpretations=results.interpretations, risk_register=results.risk_register,
             attempt_ledger_df=results.attempt_ledger.to_frame(),
             robustness=results.robustness, regime_timeline_rows=results.regime_timeline,
-            scoring_function=results.scoring_function, readiness_info=readiness_info)
+            scoring_function=results.scoring_function, readiness_info=readiness_info,
+            analysis_frames=self._analysis_frames(results),
+            dashboard_manifest=self._dashboard_manifest(results),
+            walk_forward=self._walk_forward_frame(results))
+
+    # -- dashboard data ---------------------------------------------------- #
+    def _analysis_frames(self, results: ModelRunResults) -> Dict[str, pd.DataFrame]:
+        """One tidy per-row frame per view (features + target + outcome + OOS score)."""
+        return {vr.view.value: self._analysis_frame(vr) for vr in results.views}
+
+    def _analysis_frame(self, vr: ViewResults) -> pd.DataFrame:
+        fm, ts = vr.feature_matrix, vr.target_set
+        df = fm.X.copy()
+        df["target"] = pd.Series(ts.y).reindex(df.index)
+        finalist = vr.leaderboard[0] if vr.leaderboard else None
+
+        if vr.view == ModellingView.PER_PERIOD:
+            df["period_ts"] = pd.to_datetime(df.index)
+            if vr.period_frame is not None:
+                for col in ("open_trades", "closed_trades", "period_realised_pl"):
+                    if col in vr.period_frame.columns:
+                        df[col] = vr.period_frame[col].reindex(df.index).values
+            regime = ts.targets.get("regime_label")
+            if regime is not None:
+                df["regime"] = pd.Series(regime).reindex(df.index).values
+        else:
+            trades = self.package.trades.set_index("trade_id")
+            for col in ("entry_date", "exit_date", "symbol", "side", "pl", "pl_pct"):
+                if col in trades.columns:
+                    df[col] = trades[col].reindex(df.index).values
+
+        for ev in vr.leaderboard:
+            df[f"oos__{ev.name}"] = ev.oos_predictions.reindex(df.index).values
+        if finalist is not None:
+            s = finalist.oos_predictions.reindex(df.index)
+            invert = (ts.primary == TargetKind.BINARY_TAIL_LOSS)
+            df["good_score"] = (1.0 - s if invert else s).values
+            df["finalist_model"] = finalist.name
+
+        df.insert(0, fm.index_name, df.index.astype(str))
+        return df.reset_index(drop=True)
+
+    def _walk_forward_frame(self, results: ModelRunResults) -> pd.DataFrame:
+        rows = []
+        for vr in results.views:
+            for ev in vr.leaderboard:
+                for i, fs in enumerate(ev.fold_summary):
+                    rows.append({
+                        "view": vr.view.value, "model": ev.name,
+                        "fold": fs.get("fold", i + 1),
+                        "n_train": fs.get("n_train"), "n_test": fs.get("n_test"),
+                        "adjusted_rar_delta": (ev.fold_deltas[i]
+                                               if i < len(ev.fold_deltas) else None),
+                    })
+        return pd.DataFrame(rows)
+
+    def _dashboard_manifest(self, results: ModelRunResults) -> Dict[str, Any]:
+        views: Dict[str, Any] = {}
+        for vr in results.views:
+            fm, ts = vr.feature_matrix, vr.target_set
+            views[vr.view.value] = {
+                "id_col": fm.index_name,
+                "is_classification": ts.is_classification,
+                "primary_target": ts.primary.value,
+                "finalist": vr.leaderboard[0].name if vr.leaderboard else None,
+                "models": [ev.name for ev in vr.leaderboard],
+                "numeric_features": list(fm.numeric_features),
+                "categorical_features": list(fm.categorical_features),
+                "feature_family": dict(fm.feature_family),
+                "warnings": list(fm.warnings),
+            }
+        return {
+            "model_run_id": self.config.model_run_id,
+            "source_run_id": self.config.source_run_id,
+            "adjusted_rar": self.config.adjusted_rar.to_dict(),
+            "initial_capital": self.config.initial_capital,
+            "top_quantile": self.config.top_quantile,
+            "reduce_size_factor": self.config.reduce_size_factor,
+            "views": views,
+        }

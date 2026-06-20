@@ -1,0 +1,318 @@
+"""
+Dashboard data layer — load a model-run export and answer the diagnostic
+questions, with **no Streamlit dependency** so it is fully unit-testable.
+
+The interactive dashboard (``apps/modelling_dashboard.py``) is a thin view over
+this module. Everything here is pure data/compute and reuses the engine's
+Adjusted RAR% and economic-metric functions, so the dashboard never diverges from
+how the leaderboard was scored.
+
+The questions it answers (straight from the design docs):
+- *Does the strategy work?* — leaderboard, OOS Adjusted RAR% vs baseline, guardrails.
+- *What regimes are favourable / hostile?* — economics sliced by any feature bucket.
+- *Which factors explain it?* — coefficients / permutation / SHAP summaries.
+- *Is a reduce-size / filter overlay justified?* — live allow/reduce/block economics.
+"""
+
+from __future__ import annotations
+
+import glob
+import json
+import os
+from dataclasses import dataclass, field
+from typing import Any, Dict, List, Optional, Tuple
+
+import numpy as np
+import pandas as pd
+
+from .adjusted_rar import (adjusted_rar_from_equity, adjusted_rar_from_trades,
+                           build_daily_equity_curve)
+from .config import AdjustedRARConfig
+from .evaluation import economic_metrics
+
+
+# --------------------------------------------------------------------------- #
+# Discovery + loading.
+# --------------------------------------------------------------------------- #
+def discover_model_runs(runs_root: str = "processed_data/runs") -> List[Dict[str, str]]:
+    """Every exported model run found under ``runs_root/<run>/modelling/<id>/``."""
+    out: List[Dict[str, str]] = []
+    if not os.path.isdir(runs_root):
+        return out
+    for src in sorted(os.listdir(runs_root)):
+        mdir = os.path.join(runs_root, src, "modelling")
+        if not os.path.isdir(mdir):
+            continue
+        for mid in sorted(os.listdir(mdir)):
+            path = os.path.join(mdir, mid)
+            if os.path.isfile(os.path.join(path, "dashboard_manifest.json")) or \
+                    os.path.isfile(os.path.join(path, "model_leaderboard.csv")):
+                out.append({"source_run": src, "model_run": mid, "path": path})
+    return out
+
+
+def _read_json(path: str) -> Any:
+    if not os.path.isfile(path):
+        return None
+    with open(path, "r", encoding="utf-8") as fh:
+        return json.load(fh)
+
+
+def _read_csv(path: str) -> pd.DataFrame:
+    return pd.read_csv(path) if os.path.isfile(path) else pd.DataFrame()
+
+
+@dataclass
+class DashboardData:
+    """Everything loaded from one model-run export directory."""
+    path: str
+    manifest: Dict[str, Any] = field(default_factory=dict)
+    leaderboard: pd.DataFrame = field(default_factory=pd.DataFrame)
+    economics: pd.DataFrame = field(default_factory=pd.DataFrame)
+    walk_forward: pd.DataFrame = field(default_factory=pd.DataFrame)
+    robustness: Dict[str, Any] = field(default_factory=dict)
+    risk_register: List[Dict[str, str]] = field(default_factory=list)
+    regime_timeline: pd.DataFrame = field(default_factory=pd.DataFrame)
+    attempt_ledger: pd.DataFrame = field(default_factory=pd.DataFrame)
+    analysis: Dict[str, pd.DataFrame] = field(default_factory=dict)   # view -> frame
+    interpretation: Dict[str, Any] = field(default_factory=dict)      # filename -> object
+
+    # -- convenience -------------------------------------------------------- #
+    @property
+    def views(self) -> List[str]:
+        return list(self.manifest.get("views", {}).keys()) or list(self.analysis.keys())
+
+    def view_meta(self, view: str) -> Dict[str, Any]:
+        return self.manifest.get("views", {}).get(view, {})
+
+    @property
+    def adjusted_rar(self) -> AdjustedRARConfig:
+        return AdjustedRARConfig.from_dict(self.manifest.get("adjusted_rar", {}))
+
+    @property
+    def initial_capital(self) -> float:
+        return float(self.manifest.get("initial_capital", 100_000.0))
+
+    def numeric_features(self, view: str) -> List[str]:
+        feats = self.view_meta(view).get("numeric_features")
+        if feats:
+            return feats
+        df = self.analysis.get(view, pd.DataFrame())
+        ignore = {"target", "good_score", "pl", "pl_pct", "open_trades",
+                  "closed_trades", "period_realised_pl"}
+        return [c for c in df.columns
+                if c not in ignore and not c.startswith("oos__")
+                and pd.api.types.is_numeric_dtype(df[c])]
+
+    def categorical_features(self, view: str) -> List[str]:
+        return self.view_meta(view).get("categorical_features", [])
+
+    def feature_family(self, view: str) -> Dict[str, str]:
+        return self.view_meta(view).get("feature_family", {})
+
+
+def load_dashboard_data(run_dir: str) -> DashboardData:
+    """Load a model-run export directory into a :class:`DashboardData`."""
+    dd = DashboardData(path=run_dir)
+    dd.manifest = _read_json(os.path.join(run_dir, "dashboard_manifest.json")) or {}
+    dd.leaderboard = _read_csv(os.path.join(run_dir, "model_leaderboard.csv"))
+    dd.economics = _read_csv(os.path.join(run_dir, "economic_backtest.csv"))
+    dd.walk_forward = _read_csv(os.path.join(run_dir, "walk_forward_folds.csv"))
+    dd.robustness = _read_json(os.path.join(run_dir, "robustness.json")) or {}
+    dd.risk_register = _read_json(os.path.join(run_dir, "risk_register.json")) or []
+    dd.regime_timeline = _read_csv(os.path.join(run_dir, "regime_timeline.csv"))
+    dd.attempt_ledger = _read_csv(os.path.join(run_dir, "attempt_ledger.csv"))
+
+    for parquet in glob.glob(os.path.join(run_dir, "analysis_frame_*.parquet")):
+        view = os.path.basename(parquet)[len("analysis_frame_"):-len(".parquet")]
+        df = pd.read_parquet(parquet)
+        for col in ("entry_date", "exit_date", "period_ts"):
+            if col in df.columns:
+                df[col] = pd.to_datetime(df[col], errors="coerce")
+        dd.analysis[view] = df
+
+    for pattern in ("coefficients_*.csv", "permutation_importance_*.csv",
+                    "shap_summary_*.csv"):
+        for f in glob.glob(os.path.join(run_dir, pattern)):
+            dd.interpretation[os.path.basename(f)] = _read_csv(f)
+    for f in glob.glob(os.path.join(run_dir, "calibration_*.json")):
+        dd.interpretation[os.path.basename(f)] = _read_json(f)
+    for f in glob.glob(os.path.join(run_dir, "tree_rules_*.txt")):
+        with open(f, "r", encoding="utf-8") as fh:
+            dd.interpretation[os.path.basename(f)] = fh.read()
+    return dd
+
+
+# --------------------------------------------------------------------------- #
+# Compute helpers (pure; reuse the engine's economics).
+# --------------------------------------------------------------------------- #
+def _records(df: pd.DataFrame) -> List[Dict[str, Any]]:
+    """Trade records (pl, pl_pct, dates) for the economics functions."""
+    if df.empty or "pl" not in df.columns:
+        return []
+    recs = []
+    for _, r in df.iterrows():
+        recs.append({
+            "trade_id": r.get("trade_id", ""),
+            "pl": float(r.get("pl", 0.0) or 0.0),
+            "pl_pct": float(r.get("pl_pct", 0.0) or 0.0),
+            "entry_date": r.get("entry_date"),
+            "exit_date": r.get("exit_date"),
+        })
+    return recs
+
+
+def regime_table(df: pd.DataFrame, feature: str, adjusted_rar: AdjustedRARConfig,
+                 initial_capital: float, n_buckets: int = 5,
+                 categorical: bool = False) -> pd.DataFrame:
+    """Per-bucket strategy economics for one feature — the regime answer.
+
+    Returns a row per bucket with count, Adjusted RAR%, hit rate, avg return,
+    total P/L, Sharpe and max drawdown, so favourable vs hostile feature ranges
+    are immediately visible.
+    """
+    need = [feature] + [c for c in ("pl", "pl_pct") if c in df.columns]
+    sub = df.dropna(subset=[feature]).copy()
+    if sub.empty or "pl" not in sub.columns:
+        return pd.DataFrame()
+
+    if categorical or not pd.api.types.is_numeric_dtype(sub[feature]):
+        sub["_bucket"] = sub[feature].astype(str)
+        order = sorted(sub["_bucket"].unique())
+    else:
+        try:
+            sub["_bucket"] = pd.qcut(sub[feature], q=min(n_buckets, sub[feature].nunique()),
+                                     duplicates="drop")
+        except (ValueError, IndexError):
+            return pd.DataFrame()
+        order = list(sub["_bucket"].cat.categories)
+
+    rows = []
+    for b in order:
+        g = sub[sub["_bucket"] == b]
+        if g.empty:
+            continue
+        m = economic_metrics(_records(g), adjusted_rar, initial_capital)
+        rows.append({
+            "bucket": str(b),
+            "count": int(len(g)),
+            "adjusted_rar": round(m["adjusted_rar"], 3),
+            "hit_rate": round(m["hit_rate"], 1),
+            "avg_return_pct": round(m["avg_return_pct"], 3),
+            "total_return_pct": round(m["total_return"], 2),
+            "sharpe": round(m["sharpe"], 2),
+            "max_drawdown_pct": round(m["max_drawdown_pct"], 2),
+        })
+    return pd.DataFrame(rows)
+
+
+def two_feature_heatmap(df: pd.DataFrame, fx: str, fy: str,
+                        adjusted_rar: AdjustedRARConfig, initial_capital: float,
+                        n_bins: int = 4, metric: str = "adjusted_rar") -> pd.DataFrame:
+    """Matrix of ``metric`` over a quantile grid of two features (regime map)."""
+    sub = df.dropna(subset=[fx, fy]).copy()
+    if sub.empty or "pl" not in sub.columns:
+        return pd.DataFrame()
+    try:
+        sub["_x"] = pd.qcut(sub[fx], q=min(n_bins, sub[fx].nunique()), duplicates="drop")
+        sub["_y"] = pd.qcut(sub[fy], q=min(n_bins, sub[fy].nunique()), duplicates="drop")
+    except (ValueError, IndexError):
+        return pd.DataFrame()
+    out = {}
+    for yb in sub["_y"].cat.categories:
+        row = {}
+        for xb in sub["_x"].cat.categories:
+            g = sub[(sub["_x"] == xb) & (sub["_y"] == yb)]
+            if g.empty:
+                row[str(xb)] = np.nan
+            else:
+                m = economic_metrics(_records(g), adjusted_rar, initial_capital)
+                row[str(xb)] = round(m.get(metric, np.nan), 3)
+        out[str(yb)] = row
+    return pd.DataFrame(out).T
+
+
+def favourable_unfavourable(df: pd.DataFrame, features: List[str],
+                            adjusted_rar: AdjustedRARConfig, initial_capital: float,
+                            n_buckets: int = 5, top: int = 8) -> pd.DataFrame:
+    """Rank every feature bucket by Adjusted RAR% → the favourable/hostile shortlist."""
+    rows = []
+    for feat in features:
+        tbl = regime_table(df, feat, adjusted_rar, initial_capital, n_buckets)
+        for _, r in tbl.iterrows():
+            rows.append({"feature": feat, "bucket": r["bucket"], "count": r["count"],
+                         "adjusted_rar": r["adjusted_rar"], "hit_rate": r["hit_rate"]})
+    if not rows:
+        return pd.DataFrame()
+    allr = pd.DataFrame(rows).sort_values("adjusted_rar", ascending=False)
+    fav = allr.head(top).assign(regime="favourable")
+    hostile = allr.tail(top).assign(regime="hostile")
+    return pd.concat([fav, hostile], ignore_index=True)
+
+
+def overlay_economics(df: pd.DataFrame, adjusted_rar: AdjustedRARConfig,
+                      initial_capital: float, allow_quantile: float = 0.70,
+                      reduce_factor: float = 0.50) -> pd.DataFrame:
+    """Baseline vs allow/reduce overlays on the *same* OOS trades (live recompute)."""
+    if df.empty or "good_score" not in df.columns or "pl" not in df.columns:
+        return pd.DataFrame()
+    work = df.dropna(subset=["good_score", "pl"]).copy()
+    recs = _records(work)
+    baseline = economic_metrics(recs, adjusted_rar, initial_capital)
+
+    thr = float(np.quantile(work["good_score"].values, allow_quantile))
+    keep_mask = work["good_score"].values >= thr
+    top = economic_metrics([r for r, k in zip(recs, keep_mask) if k],
+                           adjusted_rar, initial_capital)
+
+    med = float(np.median(work["good_score"].values))
+    scaled = []
+    for r, s in zip(recs, work["good_score"].values):
+        rr = dict(r)
+        if s < med:
+            rr["pl"] *= reduce_factor
+            rr["pl_pct"] *= reduce_factor
+        scaled.append(rr)
+    reduced = economic_metrics(scaled, adjusted_rar, initial_capital)
+
+    rows = []
+    for policy, m in (("baseline", baseline), ("top_quantile_only", top),
+                      ("reduce_size_in_hostile", reduced)):
+        row = {"policy": policy}
+        row.update({k: (round(v, 3) if isinstance(v, float) else v) for k, v in m.items()})
+        rows.append(row)
+    return pd.DataFrame(rows)
+
+
+def overlay_equity_curves(df: pd.DataFrame, initial_capital: float,
+                          allow_quantile: float = 0.70) -> pd.DataFrame:
+    """Daily equity curves for baseline vs top-quantile overlay (long format)."""
+    if df.empty or "good_score" not in df.columns or "pl" not in df.columns:
+        return pd.DataFrame()
+    work = df.dropna(subset=["good_score", "pl", "exit_date"]).copy()
+    recs = _records(work)
+    thr = float(np.quantile(work["good_score"].values, allow_quantile))
+    kept = [r for r, s in zip(recs, work["good_score"].values) if s >= thr]
+    frames = []
+    for name, rs in (("baseline", recs), ("top_quantile_only", kept)):
+        curve = build_daily_equity_curve(rs, initial_capital=initial_capital)
+        if not curve.empty:
+            curve["policy"] = name
+            frames.append(curve)
+    return pd.concat(frames, ignore_index=True) if frames else pd.DataFrame()
+
+
+def year_stability(df: pd.DataFrame, adjusted_rar: AdjustedRARConfig,
+                   initial_capital: float) -> pd.DataFrame:
+    """Per-year Adjusted RAR% (is the edge consistent through time?)."""
+    if df.empty or "entry_date" not in df.columns or "pl" not in df.columns:
+        return pd.DataFrame()
+    work = df.dropna(subset=["entry_date", "pl"]).copy()
+    work["year"] = pd.to_datetime(work["entry_date"]).dt.year
+    rows = []
+    for yr, g in work.groupby("year"):
+        m = economic_metrics(_records(g), adjusted_rar, initial_capital)
+        rows.append({"year": int(yr), "count": int(len(g)),
+                     "adjusted_rar": round(m["adjusted_rar"], 3),
+                     "hit_rate": round(m["hit_rate"], 1)})
+    return pd.DataFrame(rows)

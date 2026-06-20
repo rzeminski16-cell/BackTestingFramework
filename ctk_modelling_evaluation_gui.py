@@ -15,7 +15,9 @@ Run standalone:  python ctk_modelling_evaluation_gui.py
 
 from __future__ import annotations
 
+import os
 import queue
+import subprocess
 import sys
 import threading
 import traceback
@@ -591,10 +593,38 @@ class ModellingWizard(CTkWizardBase):
             traceback.print_exc()
             return
         out = self.controller.output_dir()
-        self._dialog("Export complete",
-                     f"Artefacts written to:\n{out}\n\n"
-                     f"{len(written)} files incl. leaderboard, research report, risk "
-                     f"register, and the exportable scoring function.")
+        self._export_dialog(out, len(written))
+
+    def _launch_dashboard(self, out_dir: str) -> None:
+        """Open the interactive Streamlit dashboard pointed at this run."""
+        script = Path(__file__).parent / "apps" / "modelling_dashboard.py"
+        env = dict(os.environ, MODEL_RUN_DIR=out_dir)
+        try:
+            subprocess.Popen([sys.executable, "-m", "streamlit", "run", str(script)], env=env)
+        except Exception as exc:  # pragma: no cover - UI feedback
+            self._dialog("Could not launch dashboard",
+                         f"{exc}\n\nRun manually:\n  streamlit run apps/modelling_dashboard.py",
+                         error=True)
+
+    def _export_dialog(self, out_dir: str, n_files: int) -> None:
+        dlg = ctk.CTkToplevel(self.root)
+        dlg.title("Export complete")
+        dlg.geometry("600x280")
+        dlg.transient(self.root)
+        dlg.grab_set()
+        Theme.create_label(
+            dlg,
+            f"Artefacts written to:\n{out_dir}\n\n{n_files} files incl. leaderboard, "
+            f"research report, risk register, the exportable scoring function, and the "
+            f"interactive dashboard data.\n\nExplore the results interactively below.",
+            font=Fonts.BODY_M, text_color=Colors.TEXT_PRIMARY, wraplength=550,
+            justify="left").pack(expand=True, padx=20, pady=20)
+        row = Theme.create_frame(dlg); row.pack(pady=(0, 20))
+        Theme.create_button(row, "Open dashboard",
+                            command=lambda: self._launch_dashboard(out_dir),
+                            style="primary", width=160).pack(side="left", padx=Sizes.PAD_S)
+        Theme.create_button(row, "Close", command=dlg.destroy, style="secondary",
+                            width=100).pack(side="left", padx=Sizes.PAD_S)
 
     def _dialog(self, title: str, message: str, error: bool = False) -> None:
         dlg = ctk.CTkToplevel(self.root)

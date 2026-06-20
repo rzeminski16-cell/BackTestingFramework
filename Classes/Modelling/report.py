@@ -87,7 +87,10 @@ def write_artifacts(output_dir: str, *, config: Any, leaderboard: List[Any],
                     robustness: Dict[str, Any],
                     regime_timeline_rows: List[Dict[str, Any]],
                     scoring_function: Any,
-                    readiness_info: Dict[str, Any]) -> Dict[str, str]:
+                    readiness_info: Dict[str, Any],
+                    analysis_frames: Optional[Dict[str, pd.DataFrame]] = None,
+                    dashboard_manifest: Optional[Dict[str, Any]] = None,
+                    walk_forward: Optional[pd.DataFrame] = None) -> Dict[str, str]:
     """Write the full export set; returns ``{artefact_key: path}``."""
     os.makedirs(output_dir, exist_ok=True)
     written: Dict[str, str] = {}
@@ -105,6 +108,21 @@ def write_artifacts(output_dir: str, *, config: Any, leaderboard: List[Any],
     _safe_csv(_predictions_frame(leaderboard),
               os.path.join(output_dir, "walk_forward_predictions.csv"),
               written, "walk_forward_predictions")
+    _safe_csv(walk_forward, os.path.join(output_dir, "walk_forward_folds.csv"),
+              written, "walk_forward_folds")
+
+    # Tidy per-row analysis frame(s) that power the interactive dashboard
+    # (features + target + outcomes + OOS score + regime, one row per trade/period).
+    for view, frame in (analysis_frames or {}).items():
+        if frame is not None and not frame.empty:
+            path = os.path.join(output_dir, f"analysis_frame_{view}.parquet")
+            frame.to_parquet(path, index=False)
+            written[f"analysis_frame_{view}"] = path
+    if dashboard_manifest is not None:
+        dm_path = os.path.join(output_dir, "dashboard_manifest.json")
+        with open(dm_path, "w", encoding="utf-8") as fh:
+            json.dump(dashboard_manifest, fh, indent=2, default=str)
+        written["dashboard_manifest"] = dm_path
 
     # Interpretation outputs for the finalist(s).
     for name, interp in interpretations.items():

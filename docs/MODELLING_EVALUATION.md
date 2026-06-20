@@ -54,7 +54,33 @@ logic**. The package is the contract between the two stages.
 5. **Review evaluation** – leaderboard by OOS Adjusted RAR%, economics per overlay,
    classification/calibration diagnostics, significance summary.
 6. **Interpret & export** – coefficients / rules / held-out permutation importance /
-   SHAP, overlay thresholds, then export the artefact set + scoring function.
+   SHAP, overlay thresholds, then export the artefact set + scoring function. The
+   export dialog has an **Open dashboard** button.
+
+---
+
+## Interactive results dashboard
+
+A static report is the wrong medium for deep exploration, so the export also
+powers an interactive **Streamlit** dashboard organised around the diagnostic
+questions:
+
+> Launch: `streamlit run apps/modelling_dashboard.py` (or the **Results Dashboard**
+> card in `ctk_main_gui.py`, or **Open dashboard** after exporting).
+
+| Page | Question | What you can do |
+|------|----------|-----------------|
+| Does it work? | overall verdict | leaderboard, OOS Adjusted RAR% vs baseline, guardrails, significance (bootstrap CI / permutation / White's Reality Check), risk register |
+| Regimes | *what regimes are favourable?* | slice realised economics by any feature bucket; favourable/hostile shortlist across all features; 2-feature regime heatmap; regime timeline |
+| Factors | *which factors explain it?* | signed coefficients, held-out permutation importance, SHAP summary, year-by-year stability |
+| Scoring & overlays | *is an overlay justified?* | live allow/reduce/block threshold sliders that recompute economics on the same OOS trades; calibration curve; best/worst-scored trades |
+| Walk-forward | consistency | per-fold overlay−baseline Adjusted RAR% |
+| Robustness & search | did it survive scrutiny? | multiple-testing correction, White's Reality Check, full attempt ledger |
+
+The dashboard reads a model-run export directory; the compute lives in
+`Classes/Modelling/dashboard_data.py` (Streamlit-free and unit-tested) and reuses
+the engine's Adjusted RAR% / economic-metric functions, so it never diverges from
+how the leaderboard was scored.
 
 ---
 
@@ -120,15 +146,17 @@ Written to `processed_data/runs/<run_id>/modelling/<model_run_id>/`:
 | `attempt_ledger.csv` | Every model/target variant tried. |
 | `research_report.md` | Human-readable operating statement. |
 | `scoring_function.json` + `scoring_model.joblib` | Exportable trade-by-trade allow/reduce/block scorer. |
+| `analysis_frame_<view>.parquet` | Tidy per-row table (features + target + outcome + OOS score + regime) that powers the dashboard. |
+| `dashboard_manifest.json`, `walk_forward_folds.csv` | Dashboard metadata + per-fold deltas. |
 | `model_config.json` | The full, reproducible run configuration. |
 
 ---
 
 ## Dependencies
 
-Adds `scikit-learn` and `statsmodels` (and `joblib`). **SHAP is optional**: if it
-is not installed, the tool falls back to permutation importance + coefficients /
-tree rules without error.
+Adds `scikit-learn` and `statsmodels` (and `joblib`), plus `streamlit` + `plotly`
+for the dashboard. **SHAP is optional**: if it is not installed, the tool falls
+back to permutation importance + coefficients / tree rules without error.
 
 Tests: `tests/test_modelling.py` (synthetic run-package fixture covering loading,
 point-in-time features, the purged/embargoed splitter, Adjusted RAR% reuse, an
