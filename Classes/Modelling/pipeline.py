@@ -31,16 +31,34 @@ from .config import LadderConfig
 
 
 def _onehot() -> OneHotEncoder:
-    # Compat across sklearn versions for the sparse argument name.
+    # Cap one-hot blow-up on high-cardinality categoricals (e.g. symbol,
+    # entry_reason): rare levels collapse into an "infrequent" bucket.
+    kwargs = dict(handle_unknown="infrequent_if_exist", min_frequency=0.01,
+                  max_categories=30)
     try:
-        return OneHotEncoder(handle_unknown="ignore", sparse_output=False)
+        return OneHotEncoder(sparse_output=False, **kwargs)
     except TypeError:  # pragma: no cover - older sklearn
-        return OneHotEncoder(handle_unknown="ignore", sparse=False)
+        try:
+            return OneHotEncoder(sparse=False, **kwargs)
+        except TypeError:  # very old sklearn without infrequent handling
+            return OneHotEncoder(handle_unknown="ignore", sparse=False)
+
+
+def _dedupe(seq: List[str]) -> List[str]:
+    seen = set()
+    return [s for s in seq if not (s in seen or seen.add(s))]
 
 
 def build_preprocessor(numeric_features: List[str],
                        categorical_features: List[str]) -> ColumnTransformer:
-    """Impute+scale numerics, impute+one-hot categoricals. Fit per fold."""
+    """Impute+scale numerics, impute+one-hot categoricals. Fit per fold.
+
+    Feature lists are deduplicated defensively so a duplicated column name can
+    never widen the transformed matrix.
+    """
+    numeric_features = _dedupe(numeric_features)
+    categorical_features = _dedupe([c for c in categorical_features
+                                    if c not in set(numeric_features)])
     transformers = []
     if numeric_features:
         transformers.append(("num", Pipeline([

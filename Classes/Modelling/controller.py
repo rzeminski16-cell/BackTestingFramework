@@ -129,10 +129,12 @@ class ModellingController:
     # -- screen 2: target preview ------------------------------------------ #
     def target_preview(self) -> Dict[str, Any]:
         view = self._views_to_run()[0]
-        _, ts, _ = self.prepare(view)
+        fm, ts, _ = self.prepare(view)
         return {"view": view.value, "primary": ts.primary.value,
                 "is_classification": ts.is_classification,
-                "class_balance": ts.class_balance, "n_rows": int(len(ts.y))}
+                "class_balance": ts.class_balance, "n_rows": int(len(ts.y)),
+                "n_features": len(fm.feature_names),
+                "feature_warnings": list(fm.warnings)}
 
     # -- screen 3: validation fold preview --------------------------------- #
     def fold_preview(self) -> List[Dict[str, Any]]:

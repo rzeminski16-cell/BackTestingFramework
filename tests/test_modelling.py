@@ -99,6 +99,60 @@ def build_synthetic_package(root, run_id="synthetic", n_trades=160, seed=7):
     return path
 
 
+def build_wide_package(root, run_id="wide", n_symbols=30, n_fund_cols=25,
+                       n_trades=240, seed=11):
+    """A package with many symbols and a wide symbol-specific fundamentals panel.
+
+    This reproduces the shape that previously exploded the feature matrix: a
+    symbol-specific family (fundamentals_pit) with many numeric columns joined
+    across many symbols.
+    """
+    rng = np.random.default_rng(seed)
+    path = os.path.join(root, run_id)
+    os.makedirs(path, exist_ok=True)
+    symbols = [f"S{i:02d}" for i in range(n_symbols)]
+
+    # Wide fundamentals panel: quarterly rows per symbol with many numeric fields.
+    obs = pd.date_range("2021-01-01", periods=8, freq="QE")
+    frows = []
+    for sym in symbols:
+        for d in obs:
+            row = {"entity_id": sym, "observation_date": d,
+                   "available_ts": d + pd.Timedelta(days=30)}
+            for c in range(n_fund_cols):
+                row[f"f{c}"] = float(rng.normal(0, 1))
+            frows.append(row)
+    fund = _provenance(pd.DataFrame(frows), "fundamentals_pit", "quarterly")
+    fund.to_parquet(os.path.join(path, "fundamentals_pit.parquet"))
+
+    # Trades spread across all symbols.
+    entries = pd.to_datetime(rng.choice(pd.date_range("2021-06-01", "2022-12-01"),
+                                        size=n_trades))
+    rows = []
+    for i, ent in enumerate(sorted(entries)):
+        ex = ent + pd.Timedelta(days=int(rng.integers(3, 21)))
+        pl_pct = float(rng.normal(0, 2))
+        rows.append({"trade_id": f"T{i:06d}", "symbol": rng.choice(symbols),
+                     "entry_date": ent, "exit_date": ex, "entry_price": 100.0,
+                     "quantity": 10.0, "side": "LONG", "security_currency": "GBP",
+                     "pl": pl_pct * 10, "pl_pct": pl_pct})
+    trades = pd.DataFrame(rows)
+    trades.to_parquet(os.path.join(path, "selected_trades.parquet"))
+
+    manifest = {"run_name": run_id, "run_id": run_id, "base_currency": "GBP",
+                "modelling_frequency": "daily",
+                "family_toggles": {"fundamentals_pit": True},
+                "timing_policies": {"fundamentals_pit":
+                                    {"availability_rule": "report_date",
+                                     "carry_forward_tolerance_days": 200}},
+                "table_row_counts": {"selected_trades": len(trades)}}
+    with open(os.path.join(path, "run_manifest.json"), "w") as fh:
+        json.dump(manifest, fh)
+    with open(os.path.join(path, "data_contract.json"), "w") as fh:
+        json.dump({"leakage_sensitive_fields": ["available_ts"]}, fh)
+    return path
+
+
 @pytest.fixture
 def package_root(tmp_path):
     root = tmp_path / "runs"
@@ -134,6 +188,26 @@ def test_features_are_point_in_time(package_root):
     # The attached index value must be present for most trades.
     val_cols = [c for c in fm.X.columns if c.startswith("index_panel") and c.endswith("__close")]
     assert val_cols and fm.X[val_cols[0]].notna().mean() > 0.8
+
+
+def test_features_bounded_with_many_symbols(tmp_path):
+    # Regression test for the feature-explosion bug: a symbol-specific family with
+    # many numeric columns across many symbols must NOT create a column per symbol.
+    root = tmp_path / "runs"; root.mkdir()
+    build_wide_package(str(root), n_symbols=30, n_fund_cols=25, n_trades=240)
+    pkg = RunPackageLoader(str(root)).load("wide")
+    fm = FeatureBuilder(pkg).build_per_trade()
+
+    # No duplicate feature names, and the X matrix has unique columns.
+    assert len(fm.numeric_features) == len(set(fm.numeric_features)), "duplicate feature names"
+    assert fm.X.columns.is_unique, "duplicate X columns"
+    # Bounded width: ~ n_fund_cols * 3 derived + age + intrinsics, NOT * n_symbols.
+    assert len(fm.feature_names) < 200, f"feature matrix too wide: {len(fm.feature_names)}"
+
+    # correlation_caution must be memory-safe (no N×N blow-up) and dedupe columns.
+    from Classes.Modelling.interpretation import correlation_caution
+    flags = correlation_caution(fm.X, fm.numeric_features)
+    assert isinstance(flags, list)
 
 
 def test_purged_embargo_drops_overlap():

@@ -245,9 +245,12 @@ class DefineTargetsStep(CTkWizardStep):
         cb = prev.get("class_balance", {})
         primary = prev.get("primary")
         detail = cb.get(primary, {})
-        self.preview_box.configure(
-            text=f"View: {prev['view']}  |  rows: {prev['n_rows']}  |  primary: {primary}\n"
-                 f"Class balance: {detail}", text_color=Colors.TEXT_SECONDARY)
+        lines = [f"View: {prev['view']}  |  rows: {prev['n_rows']}  |  "
+                 f"features: {prev.get('n_features', '?')}  |  primary: {primary}",
+                 f"Class balance: {detail}"]
+        for w in prev.get("feature_warnings", []):
+            lines.append(f"⚠ {w}")
+        self.preview_box.configure(text="\n".join(lines), text_color=Colors.TEXT_SECONDARY)
 
     def validate(self) -> bool:
         self.validation_errors = []

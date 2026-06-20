@@ -50,6 +50,13 @@ _PRIMARY_VALUE_COL = {
     "fx_panel": "rate",
 }
 
+# Guards against feature explosion. Market-wide families create one column set per
+# entity, so we cap how many distinct entities a single family may expand into;
+# beyond this we keep the most-populated series and record a warning.
+MAX_MARKET_ENTITIES = 40
+# Soft ceiling on total feature width (a tripwire that records a warning).
+MAX_TOTAL_FEATURES = 600
+
 
 @dataclass
 class FeatureMatrix:
@@ -60,6 +67,7 @@ class FeatureMatrix:
     categorical_features: List[str] = field(default_factory=list)
     feature_family: Dict[str, str] = field(default_factory=dict)  # feature -> family
     keys: pd.DataFrame = field(default_factory=pd.DataFrame)      # id, time key, symbol
+    warnings: List[str] = field(default_factory=list)            # feature-build warnings
 
     @property
     def feature_names(self) -> List[str]:
@@ -108,6 +116,39 @@ class FeatureBuilder:
         s[f"{value_col}__ret5"] = s[value_col].pct_change(5)
         return s.sort_values("available_ts")
 
+    @staticmethod
+    def _add_numeric(fm: FeatureMatrix, name: str, values, family: str) -> None:
+        """Assign a numeric feature exactly once (never duplicate a column name)."""
+        if name in fm.feature_family:
+            return
+        fm.X[name] = values
+        fm.numeric_features.append(name)
+        fm.feature_family[name] = family
+
+    @staticmethod
+    def _add_categorical(fm: FeatureMatrix, name: str, values, family: str) -> None:
+        if name in fm.feature_family:
+            return
+        fm.X[name] = values
+        fm.categorical_features.append(name)
+        fm.feature_family[name] = family
+
+    @staticmethod
+    def _limited_entities(panel: pd.DataFrame, family: str,
+                          warnings: List[str]) -> List[str]:
+        """Distinct entity_ids for a market-wide family, capped to the most-populated."""
+        if "entity_id" not in panel.columns:
+            return [None]
+        counts = panel["entity_id"].dropna().value_counts()
+        entities = list(counts.index)
+        if len(entities) > MAX_MARKET_ENTITIES:
+            kept = entities[:MAX_MARKET_ENTITIES]
+            warnings.append(
+                f"Family '{family}' has {len(entities)} series; kept the "
+                f"{MAX_MARKET_ENTITIES} most-populated to bound feature width.")
+            return kept
+        return entities
+
     # -- per-trade ---------------------------------------------------------- #
     def build_per_trade(self, feature_families: Optional[List[str]] = None,
                         feature_columns: Optional[Dict[str, List[str]]] = None
@@ -137,7 +178,29 @@ class FeatureBuilder:
             allow = feature_columns.get(family)
             self._join_family_per_trade(trades, panel, family, tol, allow, fm)
 
+        self._drop_dead_columns(fm)
+        self._guard_width(fm)
         return fm
+
+    @staticmethod
+    def _drop_dead_columns(fm: FeatureMatrix) -> None:
+        """Remove all-NaN numeric features (e.g. derivations with no history)."""
+        dead = [c for c in fm.numeric_features
+                if c in fm.X.columns and fm.X[c].isna().all()]
+        if not dead:
+            return
+        fm.X = fm.X.drop(columns=dead)
+        dead_set = set(dead)
+        fm.numeric_features = [c for c in fm.numeric_features if c not in dead_set]
+        for c in dead:
+            fm.feature_family.pop(c, None)
+
+    @staticmethod
+    def _guard_width(fm: FeatureMatrix) -> None:
+        if len(fm.feature_names) > MAX_TOTAL_FEATURES:
+            fm.warnings.append(
+                f"Feature matrix is wide ({len(fm.feature_names)} features); "
+                "consider an explicit feature_columns allow-list per family.")
 
     def _add_trade_intrinsics(self, trades: pd.DataFrame, fm: FeatureMatrix) -> None:
         idx = trades["trade_id"].values
@@ -146,34 +209,29 @@ class FeatureBuilder:
                     "entry_capital_available", "entry_equity", "entry_price",
                     "quantity", "commission_paid"):
             if col in trades.columns and pd.api.types.is_numeric_dtype(trades[col]):
-                name = f"trade__{col}"
-                fm.X[name] = pd.Series(trades[col].values, index=idx)
-                fm.numeric_features.append(name)
-                fm.feature_family[name] = "trade"
+                self._add_numeric(fm, f"trade__{col}",
+                                  pd.Series(trades[col].values, index=idx), "trade")
         # Capital pressure ratio (known at entry).
         if {"entry_capital_required", "entry_capital_available"}.issubset(trades.columns):
             denom = trades["entry_capital_available"].replace(0, np.nan).values
-            name = "trade__capital_pressure"
-            fm.X[name] = pd.Series(trades["entry_capital_required"].values / denom, index=idx)
-            fm.numeric_features.append(name)
-            fm.feature_family[name] = "trade"
+            self._add_numeric(fm, "trade__capital_pressure",
+                              pd.Series(trades["entry_capital_required"].values / denom, index=idx),
+                              "trade")
         # Calendar features of the entry timestamp.
         ed = pd.to_datetime(trades["entry_date"])
         for name, vals in (("trade__entry_month", ed.dt.month),
                            ("trade__entry_dayofweek", ed.dt.dayofweek),
                            ("trade__entry_quarter", ed.dt.quarter)):
-            fm.X[name] = pd.Series(vals.values, index=idx)
-            fm.numeric_features.append(name)
-            fm.feature_family[name] = "trade"
+            self._add_numeric(fm, name, pd.Series(vals.values, index=idx), "trade")
         # Categoricals.
         for col, fname in (("symbol", "trade__symbol"),
                            ("side", "trade__side"),
                            ("security_currency", "trade__currency"),
                            ("entry_reason", "trade__entry_reason")):
             if col in trades.columns:
-                fm.X[fname] = pd.Series(trades[col].astype(str).values, index=idx)
-                fm.categorical_features.append(fname)
-                fm.feature_family[fname] = "trade"
+                self._add_categorical(fm, fname,
+                                      pd.Series(trades[col].astype(str).values, index=idx),
+                                      "trade")
 
     def _join_family_per_trade(self, trades: pd.DataFrame, panel: pd.DataFrame,
                               family: str, tol_days: int,
@@ -185,56 +243,69 @@ class FeatureBuilder:
         symbol_specific = (family in _SYMBOL_SPECIFIC_FAMILIES
                            and "entity_id" in panel.columns
                            and "symbol" in trades.columns)
+        entry_by_id = pd.to_datetime(trades.set_index("trade_id")["entry_date"]).reindex(fm.X.index)
 
-        left = trades[["trade_id", "entry_date"]].copy()
         if symbol_specific:
+            # Single pass: attach the trade's OWN symbol's value via merge_asof(by).
+            # Looping entities here previously produced one duplicate feature name
+            # per symbol, exploding the matrix; one by-merge is correct AND bounded.
+            left = trades[["trade_id", "entry_date"]].copy()
             left["symbol"] = trades["symbol"].astype(str).values
+            order = "observation_date" if "observation_date" in panel.columns else "available_ts"
+            g = panel.sort_values(["entity_id", order]).copy()
+            derived_all: List[str] = []
+            for vc in value_cols:
+                g[f"{vc}__ret1"] = g.groupby("entity_id")[vc].pct_change(1)
+                g[f"{vc}__ret5"] = g.groupby("entity_id")[vc].pct_change(5)
+                derived_all += [vc, f"{vc}__ret1", f"{vc}__ret5"]
+            right = g[["available_ts", "entity_id"] + derived_all].dropna(subset=["available_ts"])
+            right = right.rename(columns={"entity_id": "symbol"})
+            right["symbol"] = right["symbol"].astype(str)
+            merged = pd.merge_asof(
+                left.sort_values("entry_date"), right.sort_values("available_ts"),
+                left_on="entry_date", right_on="available_ts", by="symbol",
+                direction="backward", tolerance=tolerance,
+            ).set_index("trade_id").reindex(fm.X.index)
+            self._assign_merged(fm, merged, family, "", derived_all, entry_by_id)
+            return
 
-        for value_col in value_cols:
-            entities = panel["entity_id"].dropna().unique() if "entity_id" in panel.columns else [None]
-            for ent in entities:
-                sub = panel if ent is None else panel[panel["entity_id"] == ent]
+        # Market-wide family: one bounded column set per (capped) entity.
+        entities = self._limited_entities(panel, family, fm.warnings)
+        for ent in entities:
+            sub = panel if ent is None else panel[panel["entity_id"] == ent]
+            suffix = f"_{ent}" if ent is not None else ""
+            derived_all: List[str] = []
+            merged_parts = {}
+            for value_col in value_cols:
                 series = self._prep_panel_series(sub, value_col)
-                derived = [value_col, f"{value_col}__ret1", f"{value_col}__ret5"]
-                derived = [c for c in derived if c in series.columns]
+                derived = [c for c in (value_col, f"{value_col}__ret1", f"{value_col}__ret5")
+                           if c in series.columns]
                 right = series[["available_ts"] + derived].dropna(subset=["available_ts"])
                 if right.empty:
                     continue
-
-                if symbol_specific:
-                    right = right.copy()
-                    right["symbol"] = str(ent)
-                    merged = pd.merge_asof(
-                        left.sort_values("entry_date"),
-                        right.sort_values("available_ts"),
-                        left_on="entry_date", right_on="available_ts",
-                        by="symbol", direction="backward", tolerance=tolerance,
-                    )
-                    suffix = ""  # symbol-specific: entity == trade symbol
-                else:
-                    merged = pd.merge_asof(
-                        left.sort_values("entry_date"),
-                        right.sort_values("available_ts"),
-                        left_on="entry_date", right_on="available_ts",
-                        direction="backward", tolerance=tolerance,
-                    )
-                    suffix = f"_{ent}" if ent is not None else ""
-
-                merged = merged.set_index("trade_id").reindex(fm.X.index)
-                # Freshness: age of the attached value at entry (days).
-                if "available_ts" in merged.columns:
-                    age = (pd.to_datetime(trades.set_index("trade_id")["entry_date"]
-                                          .reindex(fm.X.index)) - merged["available_ts"]).dt.days
-                    age_name = f"{family}{suffix}__age_days"
-                    if age_name not in fm.X.columns:
-                        fm.X[age_name] = age.values
-                        fm.numeric_features.append(age_name)
-                        fm.feature_family[age_name] = family
+                merged = pd.merge_asof(
+                    trades[["trade_id", "entry_date"]].sort_values("entry_date"),
+                    right.sort_values("available_ts"),
+                    left_on="entry_date", right_on="available_ts",
+                    direction="backward", tolerance=tolerance,
+                ).set_index("trade_id").reindex(fm.X.index)
                 for col in derived:
-                    fname = f"{family}{suffix}__{col}"
-                    fm.X[fname] = merged[col].values
-                    fm.numeric_features.append(fname)
-                    fm.feature_family[fname] = family
+                    merged_parts[col] = merged[col]
+                    derived_all.append(col)
+                merged_parts["available_ts"] = merged.get("available_ts")
+            if derived_all:
+                self._assign_merged(fm, pd.DataFrame(merged_parts), family, suffix,
+                                    derived_all, entry_by_id)
+
+    def _assign_merged(self, fm: FeatureMatrix, merged: pd.DataFrame, family: str,
+                       suffix: str, derived: List[str], entry_by_id: pd.Series) -> None:
+        """Assign as-of values + a freshness 'age_days' feature (deduped)."""
+        if "available_ts" in merged.columns:
+            age = (entry_by_id.values - pd.to_datetime(merged["available_ts"]))
+            self._add_numeric(fm, f"{family}{suffix}__age_days",
+                              age.dt.days.values, family)
+        for col in derived:
+            self._add_numeric(fm, f"{family}{suffix}__{col}", merged[col].values, family)
 
     # -- per-period --------------------------------------------------------- #
     def build_per_period(self, period_freq: str = "W",
@@ -296,6 +367,8 @@ class FeatureBuilder:
             allow = feature_columns.get(family)
             self._join_family_per_period(period_keys, panel, family, tol, allow, fm)
 
+        self._drop_dead_columns(fm)
+        self._guard_width(fm)
         return fm, period_frame
 
     def _join_family_per_period(self, period_keys: pd.DataFrame, panel: pd.DataFrame,
@@ -305,10 +378,10 @@ class FeatureBuilder:
         if not value_cols:
             return
         tolerance = pd.Timedelta(days=tol_days) if tol_days and tol_days > 0 else None
-        for value_col in value_cols:
-            entities = panel["entity_id"].dropna().unique() if "entity_id" in panel.columns else [None]
-            for ent in entities:
-                sub = panel if ent is None else panel[panel["entity_id"] == ent]
+        for ent in self._limited_entities(panel, family, fm.warnings):
+            sub = panel if ent is None else panel[panel["entity_id"] == ent]
+            suffix = f"_{ent}" if ent is not None else ""
+            for value_col in value_cols:
                 series = self._prep_panel_series(sub, value_col)
                 derived = [c for c in (value_col, f"{value_col}__ret1", f"{value_col}__ret5")
                            if c in series.columns]
@@ -321,9 +394,6 @@ class FeatureBuilder:
                     left_on="period", right_on="available_ts",
                     direction="backward", tolerance=tolerance,
                 ).set_index("period").reindex(fm.X.index)
-                suffix = f"_{ent}" if ent is not None else ""
                 for col in derived:
-                    fname = f"{family}{suffix}__{col}"
-                    fm.X[fname] = merged[col].values
-                    fm.numeric_features.append(fname)
-                    fm.feature_family[fname] = family
+                    self._add_numeric(fm, f"{family}{suffix}__{col}",
+                                      merged[col].values, family)

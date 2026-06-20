@@ -144,12 +144,26 @@ def calibration_curve_data(y_true: pd.Series, proba: pd.Series,
 
 
 def correlation_caution(X: pd.DataFrame, numeric_features: List[str],
-                        threshold: float = 0.8) -> List[Dict[str, Any]]:
-    """Flag highly correlated numeric features (PDP/ICE interpretation caution)."""
-    cols = [c for c in numeric_features if c in X.columns]
+                        threshold: float = 0.8, max_features: int = 150) -> List[Dict[str, Any]]:
+    """Flag highly correlated numeric features (PDP/ICE interpretation caution).
+
+    Memory-safe: deduplicates columns, drops near-constant ones, and caps to the
+    top ``max_features`` by variance so the dense correlation matrix can never
+    blow up (a full N×N matrix is O(N²) memory).
+    """
+    # Dedupe while preserving order; only real, unique columns.
+    seen = set()
+    cols = [c for c in numeric_features
+            if c in X.columns and not (c in seen or seen.add(c))]
     if len(cols) < 2:
         return []
-    corr = X[cols].corr().abs()
+    sub = X[cols]
+    variances = sub.var(numeric_only=True).dropna()
+    variances = variances[variances > 0]            # drop constant/degenerate columns
+    if len(variances) < 2:
+        return []
+    cols = list(variances.sort_values(ascending=False).head(max_features).index)
+    corr = sub[cols].corr().abs()
     flagged: List[Dict[str, Any]] = []
     for i, a in enumerate(cols):
         for b in cols[i + 1:]:
