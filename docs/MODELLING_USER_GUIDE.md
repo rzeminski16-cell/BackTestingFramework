@@ -113,7 +113,9 @@ You can only continue once a package **loads and passes** the readiness check.
 - **Primary target** — what the models predict. Options depend on the view:
   - *Per-trade:* `binary_good_trade` (cost-aware), `continuous_net_return`
     (clipped), `binary_tail_loss`.
-  - *Per-period:* `next_period_return`, `next_period_adjusted_rar`, `regime_label`.
+  - *Per-period:* `next_period_return`, `next_period_adjusted_rar`, `regime_label`
+    (the 3-class favourable/neutral/hostile label is modelled as a binary
+    *favourable vs rest* target; the full label still drives the regime timeline).
 - **Cost+buffer threshold (%)** — a trade is labelled "good" only if its net
   return beats this. Set it to your realistic round-trip cost plus a safety
   buffer (e.g. `0.20`). **Do not** leave it at zero — "positive return" is

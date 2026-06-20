@@ -125,7 +125,7 @@ What the models predict (the `target` column holds the **primary** one).
 |--------|------|-----------|
 | `next_period_return` | continuous | Next period's realised P/L ÷ initial capital. |
 | `next_period_adjusted_rar` | continuous | Adjusted RAR% over a short **forward** window of the period equity path. |
-| `regime_label` | categorical | `favourable` / `neutral` / `hostile`, from next-period return vs the configured thresholds. |
+| `regime_label` | categorical | `favourable` / `neutral` / `hostile`, from next-period return vs the configured thresholds. **Modelled as a binary `favourable` vs rest** target (the actionable question); the full 3-class label is retained for the descriptive regime timeline. |
 
 ---
 
@@ -254,6 +254,28 @@ mean period outcome:
 | `total_outcome` | Sum of the bucket's outcome. |
 
 ---
+
+## 8b. Performance-driver screen columns (dashboard "Performance drivers")
+
+A univariate, model-agnostic screen ranking factors by association with realised
+performance (`pl_pct` per-trade, or the period outcome).
+
+| Column | Description |
+|--------|-------------|
+| `feature` | The factor being screened. |
+| `direction` | `higher → better` or `higher → worse` (sign of the rank correlation). |
+| `rank_corr` | Spearman rank correlation between the factor and performance. |
+| `p_value` | Spearman p-value (uncorrected). |
+| `p_value_bh` | Benjamini-Hochberg FDR-corrected p across all screened factors. |
+| `significant` | Survives FDR control (shown as ✅). |
+| `effect_top_minus_bottom` | Mean performance of the top factor bucket minus the bottom (economic effect size). |
+| `top_bucket_mean`, `bottom_bucket_mean` | The two bucket means behind the effect. |
+| `auc` | How well the factor *alone* ranks above/below-median trades (0.5 = none). |
+| `n` | Rows used. |
+| `year_consistency` | Fraction of years the effect keeps the same sign (robustness). |
+
+The categorical screen reports, per category: `category`, `count`,
+`mean_performance`, `pct_positive`.
 
 ## 9. Guardrail & robustness fields
 

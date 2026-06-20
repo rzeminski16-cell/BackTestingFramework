@@ -30,8 +30,9 @@ import streamlit as st
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from Classes.Modelling.dashboard_data import (  # noqa: E402
-    DashboardData, discover_model_runs, favourable_unfavourable, is_per_trade,
-    load_dashboard_data, overlay_economics, overlay_equity_curves,
+    DashboardData, categorical_factor_table, discover_model_runs, factor_decile_profile,
+    factor_screen, favourable_unfavourable, is_per_trade, load_dashboard_data,
+    overlay_economics, overlay_equity_curves, performance_column,
     period_favourable_unfavourable, period_overlay_curves, period_regime_table,
     period_two_feature_heatmap, period_value_column, period_year_stability,
     regime_table, two_feature_heatmap, year_stability,
@@ -94,6 +95,21 @@ def c_year_stability(df, per_trade, cap, rar_key, _rar):
     if per_trade:
         return year_stability(df, _rar, cap)
     return period_year_stability(df)
+
+
+@st.cache_data(show_spinner="Screening factors for performance drivers…")
+def c_factor_screen(df, numeric, n_buckets):
+    return factor_screen(df, list(numeric), n_buckets=n_buckets)
+
+
+@st.cache_data(show_spinner=False)
+def c_factor_decile(df, feature, n_buckets):
+    return factor_decile_profile(df, feature, n_buckets=n_buckets)
+
+
+@st.cache_data(show_spinner=False)
+def c_categorical_factor(df, feature):
+    return categorical_factor_table(df, feature)
 
 
 def _rar_key(dd: DashboardData):
@@ -348,6 +364,96 @@ def page_factors(dd: DashboardData, view: str) -> None:
             st.plotly_chart(fig, use_container_width=True)
 
 
+def page_drivers(dd: DashboardData, view: str, df: pd.DataFrame) -> None:
+    st.header("What factors drive better performance?")
+    st.caption("A model-agnostic screen of which factors are associated with **better "
+               "realised performance**. Univariate and *descriptive* (correlated factors "
+               "can echo one another, and association is not causation) — cross-check "
+               "against the held-out model importance on the **Factors** page.")
+    if df.empty:
+        st.info("No analysis frame for this view.")
+        return
+    vcol = performance_column(df)
+    if vcol is None:
+        st.info("No performance column available to screen against.")
+        return
+    numeric = [f for f in dd.numeric_features(view) if f in df.columns]
+    categorical = [f for f in dd.categorical_features(view) if f in df.columns]
+    if not numeric and not categorical:
+        st.info("No features available to screen.")
+        return
+
+    n_buckets = st.slider("Buckets (top vs bottom comparison)", 3, 10, 5)
+    st.caption(f"Performance measured by `{vcol}`. p-values are Benjamini-Hochberg "
+               "corrected across factors; ✅ marks factors that survive FDR control.")
+
+    screen = c_factor_screen(df, tuple(numeric), n_buckets) if numeric else pd.DataFrame()
+    if screen.empty:
+        st.info("Not enough data to screen numeric factors.")
+    else:
+        top = screen.head(15).iloc[::-1]
+        fig = px.bar(top, x="rank_corr", y="feature", orientation="h",
+                     color=top["rank_corr"] >= 0,
+                     color_discrete_map={True: _POS, False: _NEG},
+                     hover_data=["effect_top_minus_bottom", "auc", "n",
+                                 "p_value_bh", "year_consistency"],
+                     labels={"rank_corr": "Rank correlation with performance"})
+        fig.update_layout(showlegend=False, height=520,
+                          title="Factor → performance association (Spearman rank correlation)")
+        st.plotly_chart(fig, use_container_width=True)
+
+        disp = screen.copy()
+        disp.insert(0, "FDR", np.where(disp["significant"], "✅", ""))
+        disp = disp.drop(columns=["significant", "abs_rank_corr"])
+        st.dataframe(disp, use_container_width=True, hide_index=True)
+        st.caption("**effect_top_minus_bottom** = mean performance of the top feature "
+                   "bucket minus the bottom bucket (economic effect size). **auc** = how "
+                   "well the factor alone separates above/below-median trades. "
+                   "**year_consistency** = fraction of years the effect keeps the same sign.")
+
+        st.subheader("Factor detail")
+        sel = st.selectbox("Inspect a factor", list(screen["feature"]))
+        prof = c_factor_decile(df, sel, min(10, max(4, n_buckets * 2)))
+        if not prof.empty:
+            fig = px.bar(prof, x="bucket", y="mean_performance",
+                         color=prof["mean_performance"] >= 0,
+                         color_discrete_map={True: _POS, False: _NEG},
+                         hover_data=["count", "pct_positive", "feature_mid"],
+                         labels={"mean_performance": f"Mean {vcol}",
+                                 "bucket": f"{sel} (low → high)"})
+            fig.update_layout(showlegend=False, height=340,
+                              title=f"Mean performance across {sel} buckets")
+            st.plotly_chart(fig, use_container_width=True)
+            samp = df.dropna(subset=[sel, vcol])
+            if len(samp) > 1500:
+                samp = samp.sample(1500, random_state=0)
+            fig2 = px.scatter(samp, x=sel, y=vcol, opacity=0.4,
+                              labels={vcol: f"performance ({vcol})"})
+            fig2.update_layout(height=320)
+            st.plotly_chart(fig2, use_container_width=True)
+
+    if categorical:
+        st.subheader("Categorical factors")
+        cat = st.selectbox("Category to compare", categorical)
+        ctab = c_categorical_factor(df, cat)
+        if ctab.empty:
+            st.caption("Not enough data per category to compare.")
+        else:
+            head = ctab.head(25)
+            fig = px.bar(head, x="category", y="mean_performance",
+                         color=head["mean_performance"] >= 0,
+                         color_discrete_map={True: _POS, False: _NEG},
+                         hover_data=["count", "pct_positive"],
+                         labels={"mean_performance": f"Mean {vcol}"})
+            fig.update_layout(showlegend=False, height=360)
+            st.plotly_chart(fig, use_container_width=True)
+            st.dataframe(ctab, use_container_width=True, hide_index=True)
+
+    st.info("These are univariate, in-sample associations. A factor that ranks high "
+            "here **and** shows held-out permutation importance on the Factors page "
+            "**and** stays consistent across years is the most trustworthy driver.")
+
+
 def page_scoring(dd: DashboardData, view: str, df: pd.DataFrame) -> None:
     st.header("Is a reduce-size / filter overlay justified?")
     if df.empty or "good_score" not in df.columns:
@@ -494,13 +600,15 @@ def main() -> None:
     df = _filters(base_df) if not base_df.empty else base_df
 
     page = st.sidebar.radio("Page", [
-        "Does it work?", "Regimes", "Factors", "Scoring & overlays",
-        "Walk-forward", "Robustness & search",
+        "Does it work?", "Regimes", "Performance drivers", "Factors",
+        "Scoring & overlays", "Walk-forward", "Robustness & search",
     ])
     if page == "Does it work?":
         page_overview(dd, view)
     elif page == "Regimes":
         page_regimes(dd, view, df)
+    elif page == "Performance drivers":
+        page_drivers(dd, view, df)
     elif page == "Factors":
         page_factors(dd, view)
     elif page == "Scoring & overlays":

@@ -131,7 +131,18 @@ class TargetBuilder:
         primary = self.spec.primary
         if primary.value not in targets:
             primary = TargetKind.NEXT_PERIOD_RETURN
-        y = targets[primary.value]
+        if primary == TargetKind.REGIME_LABEL:
+            # Model the 3-class regime as a binary "favourable vs rest" target — the
+            # actionable question is whether the strategy is in a favourable regime,
+            # and the binary form drives the calibrated probability / exposure overlay.
+            # The full favourable/neutral/hostile label is kept in `targets` for the
+            # descriptive timeline.
+            y = pd.Series(np.where(regime.values == "favourable", 1.0, 0.0), index=idx)
+            y[regime.isna().values] = np.nan
+            is_classification = True
+        else:
+            y = targets[primary.value]
+            is_classification = primary.is_classification
 
         # Label window for period t is [t, t+1] (the next period the label measures).
         period_index = pd.Series(idx, index=idx)
@@ -141,7 +152,7 @@ class TargetBuilder:
         ts = TargetSet(
             primary=primary, y=y, targets=targets,
             label_start=label_start, label_end=label_end,
-            is_classification=primary.is_classification,
+            is_classification=is_classification,
         )
         # Drop the final period (no next-period label).
         valid = y.notna()
