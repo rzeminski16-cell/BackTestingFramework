@@ -13,6 +13,10 @@ logic**. The package is the contract between the two stages.
 > Launch: `python ctk_modelling_evaluation_gui.py` (or the **Modelling &
 > Evaluation** card in `python ctk_main_gui.py`).
 
+> **Detailed guides:** [User Guide](MODELLING_USER_GUIDE.md) (the process,
+> step by step) · [Dashboard Guide](DASHBOARD_GUIDE.md) (reading the results) ·
+> [Data Dictionary](MODELLING_DATA_DICTIONARY.md) (every feature, target, metric).
+
 ---
 
 ## Core principles
