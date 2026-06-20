@@ -118,23 +118,38 @@ class CurrencyConverter:
 
     def _rate_on_date(self, df: pd.DataFrame, date: datetime) -> Optional[float]:
         """
-        Look up the rate for a date, falling back to the most recent prior date.
+        Look up the rate for a date, using the nearest available value.
 
-        This handles weekends and holidays where there is no exact entry.
+        Lookup order:
+
+        1. The most recent entry on or before ``date``. This carries the last
+           known rate forward across weekends, holidays, or any date that falls
+           after the series ends.
+        2. If ``date`` precedes the first entry (e.g. the file does not go back
+           far enough - a 2005 backtest against a series that only starts in
+           2007), fall back to the earliest entry on record - the next best
+           value - so conversion still proceeds instead of failing.
+
+        Only returns None when the series has no entries at all.
 
         Args:
             df: Rate DataFrame indexed by date with a 'rate' column
             date: Date for the exchange rate
 
         Returns:
-            Rate value, or None if no entry exists on or before ``date``
+            Rate value, or None only if ``df`` is empty
         """
-        valid_dates = df.index[df.index <= date]
-        if len(valid_dates) == 0:
+        if df.empty:
             return None
 
-        nearest_date = valid_dates[-1]
-        return df.loc[nearest_date, 'rate']
+        on_or_before = df.index[df.index <= date]
+        if len(on_or_before) > 0:
+            nearest_date = on_or_before[-1]
+            return df.loc[nearest_date, 'rate']
+
+        # ``date`` is before the first available entry: use the earliest rate
+        # on record so conversion still proceeds with the next best value.
+        return df.loc[df.index[0], 'rate']
 
     def get_rate(self, from_currency: str, to_currency: str,
                  date: datetime) -> Optional[float]:
@@ -145,6 +160,12 @@ class CurrencyConverter:
         the inverse pair (``to/from``), in which case it is inverted. This means
         a ``GBP/USD`` series can convert USD into GBP and vice versa.
 
+        When the requested ``date`` has no exact entry, the nearest available
+        rate is used: the most recent entry on or before the date, or - when
+        the date is earlier than the whole series - the earliest entry on
+        record. A rate is therefore only unavailable when no suitable pair is
+        loaded at all.
+
         Args:
             from_currency: Source currency code
             to_currency: Target currency code
@@ -152,7 +173,7 @@ class CurrencyConverter:
 
         Returns:
             Exchange rate (units of ``to_currency`` per unit of ``from_currency``),
-            or None if no suitable pair is available for the date
+            or None if no suitable pair is loaded for this currency
         """
         # Same currency = 1.0
         if from_currency == to_currency:
