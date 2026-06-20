@@ -210,6 +210,29 @@ def test_features_bounded_with_many_symbols(tmp_path):
     assert isinstance(flags, list)
 
 
+def test_features_and_pipeline_handle_inf(tmp_path):
+    # Trailing-return derivations produce ±inf when a prior value is 0 (common in
+    # fundamentals). The feature matrix must be inf-free and the preprocessor must
+    # tolerate inf in new data (so the exported scorer is robust).
+    root = tmp_path / "runs"; root.mkdir()
+    path = build_wide_package(str(root), n_symbols=15, n_fund_cols=10, n_trades=120)
+    fund = pd.read_parquet(os.path.join(path, "fundamentals_pit.parquet"))
+    fund.loc[fund.index[:40], "f0"] = 0.0            # force divide-by-zero in pct_change
+    fund.to_parquet(os.path.join(path, "fundamentals_pit.parquet"))
+
+    pkg = RunPackageLoader(str(root)).load("wide")
+    fm = FeatureBuilder(pkg).build_per_trade()
+    num = fm.numeric_features
+    assert not np.isinf(fm.X[num].to_numpy(dtype="float64")).any(), "inf leaked into features"
+
+    from Classes.Modelling.pipeline import build_preprocessor
+    X_with_inf = fm.X.copy()
+    if num:
+        X_with_inf.loc[X_with_inf.index[0], num[0]] = np.inf
+    out = build_preprocessor(num, fm.categorical_features).fit_transform(X_with_inf)
+    assert np.isfinite(np.asarray(out, dtype="float64")).all()
+
+
 def test_purged_embargo_drops_overlap():
     # Two clusters of label windows; the splitter must purge train rows whose
     # window overlaps the embargoed test window.

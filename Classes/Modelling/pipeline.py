@@ -18,16 +18,22 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Any, Dict, List
 
+import numpy as np
 from sklearn.compose import ColumnTransformer
 from sklearn.dummy import DummyClassifier, DummyRegressor
 from sklearn.ensemble import HistGradientBoostingClassifier, HistGradientBoostingRegressor
 from sklearn.impute import SimpleImputer
 from sklearn.linear_model import ElasticNet, LogisticRegression
 from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import OneHotEncoder, StandardScaler
+from sklearn.preprocessing import FunctionTransformer, OneHotEncoder, StandardScaler
 from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
 
 from .config import LadderConfig
+
+
+def _replace_inf_with_nan(X):
+    """Map ±inf to NaN so the imputer can handle them (module-level = picklable)."""
+    return np.where(np.isinf(X), np.nan, X)
 
 
 def _onehot() -> OneHotEncoder:
@@ -62,6 +68,8 @@ def build_preprocessor(numeric_features: List[str],
     transformers = []
     if numeric_features:
         transformers.append(("num", Pipeline([
+            ("clean", FunctionTransformer(_replace_inf_with_nan,
+                                          feature_names_out="one-to-one")),
             ("impute", SimpleImputer(strategy="median")),
             ("scale", StandardScaler()),
         ]), numeric_features))

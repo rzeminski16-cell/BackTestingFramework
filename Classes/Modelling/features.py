@@ -184,7 +184,15 @@ class FeatureBuilder:
 
     @staticmethod
     def _drop_dead_columns(fm: FeatureMatrix) -> None:
-        """Remove all-NaN numeric features (e.g. derivations with no history)."""
+        """Sanitise ±inf to NaN, then remove all-NaN numeric features.
+
+        Trailing-return derivations can produce ±inf when a prior value is 0
+        (common in fundamentals); sklearn imputers treat NaN as missing but
+        reject inf, so we normalise here.
+        """
+        num = [c for c in fm.numeric_features if c in fm.X.columns]
+        if num:
+            fm.X[num] = fm.X[num].replace([np.inf, -np.inf], np.nan)
         dead = [c for c in fm.numeric_features
                 if c in fm.X.columns and fm.X[c].isna().all()]
         if not dead:
