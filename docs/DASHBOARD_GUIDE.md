@@ -71,6 +71,12 @@ It opens in your browser (usually `http://localhost:8501`).
 - **Leakage & overfitting risk register:** ✅/⚠️ per mandatory check.
   - *Read:* any ⚠️ tells you which assumption to scrutinise (e.g. calibration
     absent → treat threshold overlays as rank-only).
+- **"No model beat the baseline" banner.** If every model's best policy is just
+  *take every trade/period*, the page shows a warning and the headline RAR% is the
+  strategy's own baseline (identical across rows by construction). That's an honest
+  *no exploitable edge* result, not a glitch — try a different target (e.g.
+  `next_period_return`), the per-trade view, or richer features. Significance is
+  reported for the best **non-baseline** model, never the tie-broken dummy.
 
 **Worked example.** Finalist OOS AdjRAR 14.2 vs baseline 9.1 (Δ +5.1), guardrails
 PASS, White's RC p = 0.03, bootstrap CI [1.2, 8.9] excludes zero → a defensible
@@ -112,6 +118,12 @@ two VIX buckets (AdjRAR > 12, ~60 trades each) and deep red in the top bucket
 phenomenon; in high-VIX regimes it bleeds.* The two-feature map vs
 `macro_panel_*__value` can then show whether that's modulated by the macro
 backdrop.
+
+> **Per-trade vs per-period.** On a **per-trade** run, buckets show realised trade
+> **economics** (Adjusted RAR%, hit rate, drawdown). On a **per-period** run there is
+> no per-trade P/L, so buckets show the **mean per-period outcome** (next-period
+> return / realised period P/L) and `% positive` instead — same favourable/hostile
+> reading, different metric. The shortlist and two-feature map adapt automatically.
 
 > **Caveat:** these are realised-economics slices, not causal claims. Highly
 > correlated features can tell the same story twice — see the Factors page's
@@ -175,6 +187,10 @@ and at what threshold?
     should be treated cautiously.
 - **Best & worst scored trades:** the highest- and lowest-scoring trades with
   their features and outcomes — useful for sanity-checking individual calls.
+
+> **Per-period runs** show a single *exposure* slider and compare the cumulative
+> period outcome of *always exposed* vs *exposed only in favourable periods*, plus
+> the score distribution and (where available) the calibration curve.
 
 **Worked example.** At Allow 0.70 the `top_quantile_only` card shows AdjRAR 16.0
 (Δ +6.9), trades 84 (of 280), Sharpe 1.3, maxDD −8% vs baseline −14%. The equity

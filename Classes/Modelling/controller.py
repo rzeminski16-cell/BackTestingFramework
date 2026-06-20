@@ -210,24 +210,36 @@ class ModellingController:
         finalist = leaderboard[0]
         # Locate the view that produced the finalist.
         vr = next((v for v in results.views if finalist in v.leaderboard), results.views[0])
+        # Interpret / test / score the best *learnable* model, not a tie-broken
+        # Baseline — significance and a scoring function on a dummy are meaningless.
+        analysis_finalist = self._analysis_finalist(vr)
 
         # Interpretation (finalist + best linear/tree if present).
         correlated_flags = self._interpret_finalists(results, vr)
 
-        # Robustness.
-        results.robustness = self._robustness(results, vr, finalist)
+        # Robustness (on the best non-baseline model).
+        results.robustness = self._robustness(results, vr, analysis_finalist)
 
         # Regime timeline (per-period regime target if available).
         results.regime_timeline = self._regime_timeline(vr)
 
-        # Scoring function from the finalist.
+        # Scoring function from the best non-baseline model.
         try:
-            results.scoring_function = build_scoring_function(
-                finalist, self.config, vr.feature_matrix)
+            if analysis_finalist is not None:
+                results.scoring_function = build_scoring_function(
+                    analysis_finalist, self.config, vr.feature_matrix)
         except Exception:
             results.scoring_function = None
 
-        results.risk_register = self._risk_register(results, finalist, correlated_flags)
+        results.risk_register = self._risk_register(results, analysis_finalist, correlated_flags)
+
+    @staticmethod
+    def _analysis_finalist(vr: ViewResults) -> Optional[ModelEvaluation]:
+        """Best non-baseline model in a view (fallback to the top model)."""
+        for ev in vr.leaderboard:
+            if ev.tier != "baseline":
+                return ev
+        return vr.leaderboard[0] if vr.leaderboard else None
 
     def _interpret_finalists(self, results: ModelRunResults, vr: ViewResults) -> int:
         to_explain = []
@@ -286,6 +298,24 @@ class ModellingController:
                 model_names.append(ev.name)
                 if ev is finalist:
                     out["bootstrap_delta"] = bd
+        else:  # per-period: bootstrap the favourable-only vs always-exposed delta
+            pf = vr.period_frame
+            if pf is not None and "period_realised_pl" in pf.columns:
+                nxt_all = pd.to_numeric(pf["period_realised_pl"], errors="coerce").shift(-1)
+                for ev in vr.leaderboard:
+                    if ev.tier == "baseline" or ev.oos_predictions.empty:
+                        continue
+                    common = ev.oos_predictions.index.intersection(pf.index)
+                    if len(common) < 5:
+                        continue
+                    nr = nxt_all.reindex(common).fillna(0.0).values
+                    score = ev.oos_predictions.reindex(common).values
+                    bd = rob.bootstrap_period_overlay_delta(nr, score, allow_quantile=0.5,
+                                                            n_boot=300)
+                    model_pvals.append(bd["p_value"])
+                    model_names.append(ev.name)
+                    if ev is finalist:
+                        out["bootstrap_delta"] = bd
 
         if model_pvals:
             mt = rob.correct_pvalues(model_pvals, method="holm")
@@ -299,21 +329,23 @@ class ModellingController:
         if wrc:
             out["whites_reality_check"] = wrc
 
-        # Permutation test on the finalist (outer chronological CV).
-        try:
-            spec_pipeline = finalist.fitted_full
-            ts = vr.target_set
-            X = vr.feature_matrix.X.loc[ts.y.index]
-            order = sort_by_label_time(ts.label_start)
-            cv = make_splitter(self.config.validation,
-                               ts.label_start.iloc[order], ts.label_end.iloc[order])
-            pt = rob.permutation_significance(
-                spec_pipeline, X.iloc[order], ts.y.iloc[order], cv,
-                finalist.is_classification, n_permutations=100)
-            if pt:
-                out["permutation_test"] = pt
-        except Exception:
-            pass
+        # Permutation test on the finalist (outer chronological CV). Skip when the
+        # finalist is the trivial Baseline — permuting labels for a dummy is moot.
+        if (finalist is not None and finalist.tier != "baseline"
+                and finalist.fitted_full is not None):
+            try:
+                ts = vr.target_set
+                X = vr.feature_matrix.X.loc[ts.y.index]
+                order = sort_by_label_time(ts.label_start)
+                cv = make_splitter(self.config.validation,
+                                   ts.label_start.iloc[order], ts.label_end.iloc[order])
+                pt = rob.permutation_significance(
+                    finalist.fitted_full, X.iloc[order], ts.y.iloc[order], cv,
+                    finalist.is_classification, n_permutations=100)
+                if pt:
+                    out["permutation_test"] = pt
+            except Exception:
+                pass
         return out
 
     def _regime_timeline(self, vr: ViewResults) -> List[Dict[str, Any]]:
@@ -364,7 +396,9 @@ class ModellingController:
         fm, ts = vr.feature_matrix, vr.target_set
         df = fm.X.copy()
         df["target"] = pd.Series(ts.y).reindex(df.index)
-        finalist = vr.leaderboard[0] if vr.leaderboard else None
+        # good_score comes from the best *learnable* model (a Baseline dummy would
+        # give a constant score and make the dashboard overlays meaningless).
+        finalist = self._analysis_finalist(vr)
 
         if vr.view == ModellingView.PER_PERIOD:
             df["period_ts"] = pd.to_datetime(df.index)

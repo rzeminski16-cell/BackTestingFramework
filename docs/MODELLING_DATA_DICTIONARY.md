@@ -242,6 +242,17 @@ Per feature bucket:
 The **favourable/hostile shortlist** adds a `feature` column and a `regime`
 label (`favourable` / `hostile`) ranking all buckets by Adjusted RAR%.
 
+For **per-period** runs (no per-trade P/L), the bucket table instead reports the
+mean period outcome:
+
+| Column | Description |
+|--------|-------------|
+| `bucket` | Feature range (quantile interval) or category. |
+| `count` | Periods in the bucket. |
+| `mean_outcome` | Mean of the period outcome (next-period return / realised period P/L). |
+| `pct_positive` | Share of periods with a positive outcome. |
+| `total_outcome` | Sum of the bucket's outcome. |
+
 ---
 
 ## 9. Guardrail & robustness fields

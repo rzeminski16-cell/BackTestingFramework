@@ -30,9 +30,11 @@ import streamlit as st
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from Classes.Modelling.dashboard_data import (  # noqa: E402
-    DashboardData, discover_model_runs, favourable_unfavourable, load_dashboard_data,
-    overlay_economics, overlay_equity_curves, regime_table, two_feature_heatmap,
-    year_stability,
+    DashboardData, discover_model_runs, favourable_unfavourable, is_per_trade,
+    load_dashboard_data, overlay_economics, overlay_equity_curves,
+    period_favourable_unfavourable, period_overlay_curves, period_regime_table,
+    period_two_feature_heatmap, period_value_column, period_year_stability,
+    regime_table, two_feature_heatmap, year_stability,
 )
 
 st.set_page_config(page_title="Strategy Diagnostics Dashboard", layout="wide")
@@ -102,6 +104,16 @@ def page_overview(dd: DashboardData, view: str) -> None:
               delta=f"{top.get('oos_adjusted_rar', 0) - top.get('baseline_adjusted_rar', 0):.2f}")
     c4.metric("Guardrails", "PASS" if top.get("passes_guardrails", False) else "REVIEW")
 
+    # Honest banner when no model improved on simply running the strategy as-is.
+    no_edge = ("best_policy" in lb.columns and (lb["best_policy"] == "baseline").all()) \
+        or str(top.get("model", "")).lower().startswith("baseline")
+    if no_edge:
+        st.warning("**No model beat the baseline.** Every model's best policy is just "
+                   "*take every trade/period*, so the models found no exploitable edge with "
+                   "these features and target. The headline RAR% is the strategy's own "
+                   "baseline — identical across rows by construction. Try a different target "
+                   "(e.g. `next_period_return`), the per-trade view, or richer features.")
+
     st.subheader("Model leaderboard")
     st.caption("Ranked by out-of-sample Adjusted RAR% with trade-frequency and "
                "drawdown guardrails; statistical scores are diagnostics, not the crown.")
@@ -133,66 +145,98 @@ def page_overview(dd: DashboardData, view: str) -> None:
 
 def page_regimes(dd: DashboardData, view: str, df: pd.DataFrame) -> None:
     st.header("What regimes are favourable?")
-    st.caption("Slice the strategy's realised economics by any feature. Green bars "
-               "mark favourable feature ranges; red mark hostile ones.")
-    if "pl" not in df.columns:
-        st.info("Regime economics need per-trade P/L (use the per-trade view).")
-        if not dd.regime_timeline.empty:
-            st.subheader("Regime timeline")
-            st.dataframe(dd.regime_timeline, use_container_width=True, hide_index=True)
+    if df.empty:
+        st.info("No analysis frame for this view.")
         return
-
     numeric = [f for f in dd.numeric_features(view) if f in df.columns]
     categorical = [f for f in dd.categorical_features(view) if f in df.columns]
     feats = numeric + categorical
     if not feats:
         st.info("No features available to slice.")
         return
+    per_trade = is_per_trade(df)
+    vcol = None if per_trade else period_value_column(df)
+
+    if per_trade:
+        st.caption("Slice the strategy's realised **trade economics** by any feature. "
+                   "Green bars mark favourable feature ranges; red mark hostile ones.")
+    else:
+        st.caption(f"Slice the **mean per-period outcome** (`{vcol}`) by any feature. "
+                   "Green bars mark favourable feature ranges; red mark hostile ones.")
 
     c1, c2 = st.columns([2, 1])
     feature = c1.selectbox("Feature to slice by", feats, index=0)
     n_buckets = c2.slider("Buckets", 2, 10, 5)
-    tbl = regime_table(df, feature, dd.adjusted_rar, dd.initial_capital,
-                       n_buckets=n_buckets, categorical=feature in categorical)
+
+    # --- single-feature bucket bar ---
+    if per_trade:
+        tbl = regime_table(df, feature, dd.adjusted_rar, dd.initial_capital,
+                           n_buckets=n_buckets, categorical=feature in categorical)
+        ycol, ylabel = "adjusted_rar", "Adjusted RAR%"
+        hover = ["count", "hit_rate", "avg_return_pct", "max_drawdown_pct"]
+    else:
+        tbl = period_regime_table(df, feature, n_buckets=n_buckets,
+                                  categorical=feature in categorical)
+        ycol, ylabel = "mean_outcome", f"Mean outcome ({vcol})"
+        hover = ["count", "pct_positive", "total_outcome"]
+
     if tbl.empty:
         st.info("Not enough data to bucket this feature.")
     else:
-        fig = px.bar(tbl, x="bucket", y="adjusted_rar",
-                     color=tbl["adjusted_rar"] >= 0,
+        fig = px.bar(tbl, x="bucket", y=ycol, color=tbl[ycol] >= 0,
                      color_discrete_map={True: _POS, False: _NEG},
-                     hover_data=["count", "hit_rate", "avg_return_pct", "max_drawdown_pct"],
-                     labels={"adjusted_rar": "Adjusted RAR%", "bucket": feature})
+                     hover_data=[h for h in hover if h in tbl.columns],
+                     labels={ycol: ylabel, "bucket": feature})
         fig.update_layout(showlegend=False, height=360)
         st.plotly_chart(fig, use_container_width=True)
         st.dataframe(tbl, use_container_width=True, hide_index=True)
 
+    # --- favourable vs hostile shortlist ---
     st.subheader("Favourable vs hostile shortlist (all features)")
-    st.caption("Every feature bucket ranked by Adjusted RAR% — the strategy's "
-               "best and worst conditions at a glance.")
-    fav = favourable_unfavourable(df, numeric, dd.adjusted_rar, dd.initial_capital,
-                                  n_buckets=n_buckets)
-    if not fav.empty:
+    st.caption("Every feature bucket ranked — the strategy's best and worst conditions at a glance.")
+    if per_trade:
+        fav = favourable_unfavourable(df, numeric, dd.adjusted_rar, dd.initial_capital,
+                                      n_buckets=n_buckets)
+    else:
+        fav = period_favourable_unfavourable(df, numeric, n_buckets=n_buckets)
+    if fav.empty:
+        st.caption("Need at least one numeric feature with enough data to rank.")
+    else:
         fav_disp = fav.copy()
         fav_disp["regime"] = fav_disp["regime"].map({"favourable": "🟢 favourable",
                                                      "hostile": "🔴 hostile"})
         st.dataframe(fav_disp, use_container_width=True, hide_index=True)
 
-    if len(numeric) >= 2:
-        st.subheader("Two-feature regime map")
+    # --- two-feature regime map ---
+    st.subheader("Two-feature regime map")
+    if len(numeric) < 2:
+        st.caption("Add at least two numeric features (include more data families) to "
+                   "see the two-feature regime map.")
+    else:
         cc1, cc2, cc3 = st.columns(3)
         fx = cc1.selectbox("X feature", numeric, index=0)
         fy = cc2.selectbox("Y feature", numeric, index=min(1, len(numeric) - 1))
         nb = cc3.slider("Grid bins", 2, 6, 4)
-        heat = two_feature_heatmap(df, fx, fy, dd.adjusted_rar, dd.initial_capital, n_bins=nb)
-        if not heat.empty:
+        if per_trade:
+            heat = two_feature_heatmap(df, fx, fy, dd.adjusted_rar, dd.initial_capital, n_bins=nb)
+            clabel = "Adjusted RAR%"
+        else:
+            heat = period_two_feature_heatmap(df, fx, fy, n_bins=nb)
+            clabel = f"Mean outcome ({vcol})"
+        if heat.empty:
+            st.caption("Not enough overlapping data in the grid for these two features.")
+        else:
             fig = px.imshow(heat, color_continuous_scale="RdYlGn", aspect="auto",
-                            labels={"x": fx, "y": fy, "color": "Adjusted RAR%"},
-                            text_auto=True)
+                            labels={"x": fx, "y": fy, "color": clabel}, text_auto=True)
             fig.update_layout(height=420)
             st.plotly_chart(fig, use_container_width=True)
 
-    if not dd.regime_timeline.empty:
-        st.subheader("Regime timeline")
+    # --- regime timeline ---
+    st.subheader("Regime timeline")
+    if dd.regime_timeline.empty:
+        st.caption("A favourable/neutral/hostile timeline is produced for **per-period** "
+                   "runs that use a regime-label target.")
+    else:
         st.dataframe(dd.regime_timeline, use_container_width=True, hide_index=True)
 
 
@@ -236,81 +280,103 @@ def page_factors(dd: DashboardData, view: str) -> None:
         st.info("No interpretation artefacts found for this run.")
 
     df = dd.analysis.get(view, pd.DataFrame())
-    if "pl" in df.columns and "entry_date" in df.columns:
+    if not df.empty:
         st.subheader("Stability through time")
-        ys = year_stability(df, dd.adjusted_rar, dd.initial_capital)
-        if not ys.empty:
-            fig = px.bar(ys, x="year", y="adjusted_rar",
-                         color=ys["adjusted_rar"] >= 0,
+        if is_per_trade(df) and "entry_date" in df.columns:
+            ys = year_stability(df, dd.adjusted_rar, dd.initial_capital)
+            ycol, ylabel, hover = "adjusted_rar", "Adjusted RAR%", ["count", "hit_rate"]
+        else:
+            ys = period_year_stability(df)
+            ycol, ylabel, hover = "mean_outcome", "Mean outcome", ["count", "pct_positive"]
+        if ys.empty:
+            st.caption("Not enough dated rows to assess year-by-year stability.")
+        else:
+            fig = px.bar(ys, x="year", y=ycol, color=ys[ycol] >= 0,
                          color_discrete_map={True: _POS, False: _NEG},
-                         hover_data=["count", "hit_rate"],
-                         labels={"adjusted_rar": "Adjusted RAR%"})
+                         hover_data=[h for h in hover if h in ys.columns],
+                         labels={ycol: ylabel})
             fig.update_layout(showlegend=False, height=320)
             st.plotly_chart(fig, use_container_width=True)
 
 
 def page_scoring(dd: DashboardData, view: str, df: pd.DataFrame) -> None:
     st.header("Is a reduce-size / filter overlay justified?")
-    if "good_score" not in df.columns or "pl" not in df.columns:
-        st.info("Overlay analysis needs per-trade scores and P/L (use the per-trade view).")
+    if df.empty or "good_score" not in df.columns:
+        st.info("This run has no finalist scores to build overlays from.")
         return
+    per_trade = is_per_trade(df)
 
-    st.caption("Translate the finalist's calibrated score into allow / reduce / "
-               "block overlays and recompute economics live on the same OOS trades.")
-    c1, c2 = st.columns(2)
-    allow_q = c1.slider("Allow: keep top quantile", 0.0, 0.95, 0.70, 0.05)
-    reduce_f = c2.slider("Reduce-size factor (hostile half)", 0.0, 1.0, 0.50, 0.05)
+    if per_trade:
+        st.caption("Translate the finalist's calibrated score into allow / reduce / "
+                   "block overlays and recompute economics live on the same OOS trades.")
+        c1, c2 = st.columns(2)
+        allow_q = c1.slider("Allow: keep top quantile", 0.0, 0.95, 0.70, 0.05)
+        reduce_f = c2.slider("Reduce-size factor (hostile half)", 0.0, 1.0, 0.50, 0.05)
+        econ = overlay_economics(df, dd.adjusted_rar, dd.initial_capital,
+                                 allow_quantile=allow_q, reduce_factor=reduce_f)
+        if not econ.empty:
+            base = econ[econ["policy"] == "baseline"].iloc[0]
+            cols = st.columns(3)
+            for col, policy in zip(cols, ["baseline", "top_quantile_only", "reduce_size_in_hostile"]):
+                row = econ[econ["policy"] == policy]
+                if row.empty:
+                    continue
+                r = row.iloc[0]
+                delta = r["adjusted_rar"] - base["adjusted_rar"]
+                col.metric(policy.replace("_", " "), f"AdjRAR {r['adjusted_rar']:.2f}",
+                           delta=None if policy == "baseline" else f"{delta:+.2f}")
+                col.caption(f"trades={int(r.get('n_trades', 0))}  sharpe={r.get('sharpe', 0):.2f}  "
+                            f"maxDD={r.get('max_drawdown_pct', 0):.1f}%  hit={r.get('hit_rate', 0):.0f}%")
+            st.dataframe(econ, use_container_width=True, hide_index=True)
+        curves = overlay_equity_curves(df, dd.initial_capital, allow_quantile=allow_q)
+        if not curves.empty:
+            fig = px.line(curves, x="date", y="equity", color="policy",
+                          title="Out-of-sample equity: baseline vs top-quantile overlay")
+            fig.update_layout(height=380)
+            st.plotly_chart(fig, use_container_width=True)
+    else:
+        vcol = period_value_column(df)
+        st.caption(f"Per-period overlay: take exposure only when the finalist score is "
+                   f"favourable, then compare cumulative outcome (`{vcol}`) to always-exposed.")
+        allow_q = st.slider("Expose when score is in the top quantile", 0.0, 0.95, 0.50, 0.05)
+        curves, summary = period_overlay_curves(df, allow_quantile=allow_q)
+        if not summary.empty:
+            st.dataframe(summary, use_container_width=True, hide_index=True)
+        if not curves.empty:
+            fig = px.line(curves, x="period", y="cumulative", color="policy",
+                          title=f"Cumulative {vcol}: always exposed vs favourable-only")
+            fig.update_layout(height=380)
+            st.plotly_chart(fig, use_container_width=True)
 
-    econ = overlay_economics(df, dd.adjusted_rar, dd.initial_capital,
-                             allow_quantile=allow_q, reduce_factor=reduce_f)
-    if not econ.empty:
-        base = econ[econ["policy"] == "baseline"].iloc[0]
-        cols = st.columns(3)
-        for col, policy in zip(cols, ["baseline", "top_quantile_only", "reduce_size_in_hostile"]):
-            row = econ[econ["policy"] == policy]
-            if row.empty:
-                continue
-            r = row.iloc[0]
-            delta = r["adjusted_rar"] - base["adjusted_rar"]
-            col.metric(policy.replace("_", " "), f"AdjRAR {r['adjusted_rar']:.2f}",
-                       delta=None if policy == "baseline" else f"{delta:+.2f}")
-            col.caption(f"trades={int(r.get('n_trades', 0))}  sharpe={r.get('sharpe', 0):.2f}  "
-                        f"maxDD={r.get('max_drawdown_pct', 0):.1f}%  hit={r.get('hit_rate', 0):.0f}%")
-        st.dataframe(econ, use_container_width=True, hide_index=True)
-
-    curves = overlay_equity_curves(df, dd.initial_capital, allow_quantile=allow_q)
-    if not curves.empty:
-        fig = px.line(curves, x="date", y="equity", color="policy",
-                      title="Out-of-sample equity: baseline vs top-quantile overlay")
-        fig.update_layout(height=380)
-        st.plotly_chart(fig, use_container_width=True)
-
+    # --- score distribution (both views) ---
     st.subheader("Score distribution")
     work = df.dropna(subset=["good_score"]).copy()
-    color = "target" if "target" in work.columns else None
+    color = "target" if "target" in work.columns and work["target"].nunique() <= 10 else None
     fig = px.histogram(work, x="good_score", color=color, nbins=40, barmode="overlay",
                        opacity=0.7)
     fig.update_layout(height=320)
     st.plotly_chart(fig, use_container_width=True)
 
-    # Calibration (reliability) curve.
-    for name, obj in dd.interpretation.items():
-        if name.startswith("calibration_") and isinstance(obj, dict) and obj.get("mean_predicted"):
-            fig = go.Figure()
-            fig.add_trace(go.Scatter(x=[0, 1], y=[0, 1], mode="lines",
-                                     line=dict(dash="dash", color="grey"),
-                                     name="Perfectly calibrated"))
-            fig.add_trace(go.Scatter(x=obj["mean_predicted"], y=obj["fraction_positive"],
-                                     mode="lines+markers", name="Model"))
-            fig.update_layout(title="Calibration (reliability) curve", height=360,
-                              xaxis_title="Mean predicted probability",
-                              yaxis_title="Observed frequency")
-            st.plotly_chart(fig, use_container_width=True)
-            break
+    # --- calibration (reliability) curve, if present ---
+    cal = next((obj for name, obj in dd.interpretation.items()
+                if name.startswith("calibration_") and isinstance(obj, dict)
+                and obj.get("mean_predicted")), None)
+    if cal:
+        fig = go.Figure()
+        fig.add_trace(go.Scatter(x=[0, 1], y=[0, 1], mode="lines",
+                                 line=dict(dash="dash", color="grey"),
+                                 name="Perfectly calibrated"))
+        fig.add_trace(go.Scatter(x=cal["mean_predicted"], y=cal["fraction_positive"],
+                                 mode="lines+markers", name="Model"))
+        fig.update_layout(title="Calibration (reliability) curve", height=360,
+                          xaxis_title="Mean predicted probability",
+                          yaxis_title="Observed frequency")
+        st.plotly_chart(fig, use_container_width=True)
 
-    st.subheader("Best & worst scored trades")
-    cols = [c for c in ("trade_id", "symbol", "entry_date", "good_score", "pl_pct", "pl", "target")
-            if c in work.columns]
+    # --- best & worst scored rows (columns adapt to the view) ---
+    st.subheader("Best & worst scored rows")
+    cols = [c for c in ("trade_id", "period", "symbol", "entry_date", "period_ts",
+                        "good_score", "pl_pct", "pl", "target") if c in work.columns]
     ranked = work.sort_values("good_score", ascending=False)[cols]
     cc1, cc2 = st.columns(2)
     cc1.caption("Top scored"); cc1.dataframe(ranked.head(12), use_container_width=True, hide_index=True)
