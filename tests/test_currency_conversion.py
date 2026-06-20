@@ -157,8 +157,20 @@ class TestCurrencyConverterInversion(unittest.TestCase):
     def test_available_currencies_includes_both_sides(self):
         self.assertEqual(self.cc.get_available_currencies(), ['EUR', 'GBP', 'USD'])
 
-    def test_date_before_series_returns_none(self):
-        self.assertIsNone(self.cc.get_rate('USD', 'GBP', datetime(2000, 1, 1)))
+    def test_date_before_series_uses_earliest_rate(self):
+        # The series starts in 2024; a 2000 date precedes it. Rather than
+        # failing, the converter falls back to the earliest rate on record
+        # (the next best value), so USD -> GBP is still 1 / 1.25 = 0.8.
+        self.assertAlmostEqual(
+            self.cc.get_rate('USD', 'GBP', datetime(2000, 1, 1)), 0.8
+        )
+
+    def test_date_after_series_uses_latest_rate(self):
+        # A date well past the end of the series carries the last known rate
+        # forward instead of failing.
+        self.assertAlmostEqual(
+            self.cc.get_rate('USD', 'GBP', datetime(2030, 1, 1)), 0.8
+        )
 
     def test_convert_amount(self):
         # 1000 USD at 1/1.25 => 800 GBP
