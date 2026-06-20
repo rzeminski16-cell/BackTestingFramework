@@ -41,9 +41,64 @@ st.set_page_config(page_title="Strategy Diagnostics Dashboard", layout="wide")
 _POS, _NEG = "#27AE60", "#E74C3C"
 
 
-@st.cache_data(show_spinner=False)
+@st.cache_data(show_spinner="Loading model run…")
 def _load(path: str) -> DashboardData:
     return load_dashboard_data(path)
+
+
+# --------------------------------------------------------------------------- #
+# Cached compute wrappers. Streamlit reruns the whole script on every widget
+# change, so these memoise the heavy slices keyed by (data, params). The
+# Adjusted RAR config is passed as ``_rar`` (underscore = not hashed) with its
+# values folded into ``rar_key`` so the cache still invalidates if the formula
+# changes. Spinners show only on an actual (cache-miss) recompute.
+# --------------------------------------------------------------------------- #
+@st.cache_data(show_spinner="Computing regime buckets…")
+def c_regime_table(df, feature, n_buckets, categorical, per_trade, cap, rar_key, _rar):
+    if per_trade:
+        return regime_table(df, feature, _rar, cap, n_buckets=n_buckets, categorical=categorical)
+    return period_regime_table(df, feature, n_buckets=n_buckets, categorical=categorical)
+
+
+@st.cache_data(show_spinner="Ranking favourable vs hostile conditions…")
+def c_favourable(df, numeric, n_buckets, per_trade, cap, rar_key, _rar):
+    if per_trade:
+        return favourable_unfavourable(df, list(numeric), _rar, cap, n_buckets=n_buckets)
+    return period_favourable_unfavourable(df, list(numeric), n_buckets=n_buckets)
+
+
+@st.cache_data(show_spinner="Building two-feature regime map…")
+def c_two_feature(df, fx, fy, n_bins, per_trade, cap, rar_key, _rar):
+    if per_trade:
+        return two_feature_heatmap(df, fx, fy, _rar, cap, n_bins=n_bins)
+    return period_two_feature_heatmap(df, fx, fy, n_bins=n_bins)
+
+
+@st.cache_data(show_spinner="Recomputing overlay economics…")
+def c_overlay_economics(df, allow_q, reduce_f, cap, rar_key, _rar):
+    return overlay_economics(df, _rar, cap, allow_quantile=allow_q, reduce_factor=reduce_f)
+
+
+@st.cache_data(show_spinner=False)
+def c_overlay_curves(df, allow_q, cap):
+    return overlay_equity_curves(df, cap, allow_quantile=allow_q)
+
+
+@st.cache_data(show_spinner=False)
+def c_period_overlay(df, allow_q):
+    return period_overlay_curves(df, allow_quantile=allow_q)
+
+
+@st.cache_data(show_spinner="Computing year-by-year stability…")
+def c_year_stability(df, per_trade, cap, rar_key, _rar):
+    if per_trade:
+        return year_stability(df, _rar, cap)
+    return period_year_stability(df)
+
+
+def _rar_key(dd: DashboardData):
+    r = dd.adjusted_rar
+    return (r.bars_per_year, r.weight_by_r_squared, r.clip_min, r.clip_max)
 
 
 def _select_run() -> str:
@@ -170,13 +225,13 @@ def page_regimes(dd: DashboardData, view: str, df: pd.DataFrame) -> None:
 
     # --- single-feature bucket bar ---
     if per_trade:
-        tbl = regime_table(df, feature, dd.adjusted_rar, dd.initial_capital,
-                           n_buckets=n_buckets, categorical=feature in categorical)
+        tbl = c_regime_table(df, feature, n_buckets, feature in categorical, True,
+                             dd.initial_capital, _rar_key(dd), dd.adjusted_rar)
         ycol, ylabel = "adjusted_rar", "Adjusted RAR%"
         hover = ["count", "hit_rate", "avg_return_pct", "max_drawdown_pct"]
     else:
-        tbl = period_regime_table(df, feature, n_buckets=n_buckets,
-                                  categorical=feature in categorical)
+        tbl = c_regime_table(df, feature, n_buckets, feature in categorical, False,
+                             dd.initial_capital, _rar_key(dd), dd.adjusted_rar)
         ycol, ylabel = "mean_outcome", f"Mean outcome ({vcol})"
         hover = ["count", "pct_positive", "total_outcome"]
 
@@ -194,11 +249,8 @@ def page_regimes(dd: DashboardData, view: str, df: pd.DataFrame) -> None:
     # --- favourable vs hostile shortlist ---
     st.subheader("Favourable vs hostile shortlist (all features)")
     st.caption("Every feature bucket ranked — the strategy's best and worst conditions at a glance.")
-    if per_trade:
-        fav = favourable_unfavourable(df, numeric, dd.adjusted_rar, dd.initial_capital,
-                                      n_buckets=n_buckets)
-    else:
-        fav = period_favourable_unfavourable(df, numeric, n_buckets=n_buckets)
+    fav = c_favourable(df, tuple(numeric), n_buckets, per_trade, dd.initial_capital,
+                       _rar_key(dd), dd.adjusted_rar)
     if fav.empty:
         st.caption("Need at least one numeric feature with enough data to rank.")
     else:
@@ -217,12 +269,9 @@ def page_regimes(dd: DashboardData, view: str, df: pd.DataFrame) -> None:
         fx = cc1.selectbox("X feature", numeric, index=0)
         fy = cc2.selectbox("Y feature", numeric, index=min(1, len(numeric) - 1))
         nb = cc3.slider("Grid bins", 2, 6, 4)
-        if per_trade:
-            heat = two_feature_heatmap(df, fx, fy, dd.adjusted_rar, dd.initial_capital, n_bins=nb)
-            clabel = "Adjusted RAR%"
-        else:
-            heat = period_two_feature_heatmap(df, fx, fy, n_bins=nb)
-            clabel = f"Mean outcome ({vcol})"
+        heat = c_two_feature(df, fx, fy, nb, per_trade, dd.initial_capital,
+                             _rar_key(dd), dd.adjusted_rar)
+        clabel = "Adjusted RAR%" if per_trade else f"Mean outcome ({vcol})"
         if heat.empty:
             st.caption("Not enough overlapping data in the grid for these two features.")
         else:
@@ -282,11 +331,11 @@ def page_factors(dd: DashboardData, view: str) -> None:
     df = dd.analysis.get(view, pd.DataFrame())
     if not df.empty:
         st.subheader("Stability through time")
-        if is_per_trade(df) and "entry_date" in df.columns:
-            ys = year_stability(df, dd.adjusted_rar, dd.initial_capital)
+        pt = is_per_trade(df) and "entry_date" in df.columns
+        ys = c_year_stability(df, pt, dd.initial_capital, _rar_key(dd), dd.adjusted_rar)
+        if pt:
             ycol, ylabel, hover = "adjusted_rar", "Adjusted RAR%", ["count", "hit_rate"]
         else:
-            ys = period_year_stability(df)
             ycol, ylabel, hover = "mean_outcome", "Mean outcome", ["count", "pct_positive"]
         if ys.empty:
             st.caption("Not enough dated rows to assess year-by-year stability.")
@@ -312,8 +361,8 @@ def page_scoring(dd: DashboardData, view: str, df: pd.DataFrame) -> None:
         c1, c2 = st.columns(2)
         allow_q = c1.slider("Allow: keep top quantile", 0.0, 0.95, 0.70, 0.05)
         reduce_f = c2.slider("Reduce-size factor (hostile half)", 0.0, 1.0, 0.50, 0.05)
-        econ = overlay_economics(df, dd.adjusted_rar, dd.initial_capital,
-                                 allow_quantile=allow_q, reduce_factor=reduce_f)
+        econ = c_overlay_economics(df, allow_q, reduce_f, dd.initial_capital,
+                                   _rar_key(dd), dd.adjusted_rar)
         if not econ.empty:
             base = econ[econ["policy"] == "baseline"].iloc[0]
             cols = st.columns(3)
@@ -328,7 +377,7 @@ def page_scoring(dd: DashboardData, view: str, df: pd.DataFrame) -> None:
                 col.caption(f"trades={int(r.get('n_trades', 0))}  sharpe={r.get('sharpe', 0):.2f}  "
                             f"maxDD={r.get('max_drawdown_pct', 0):.1f}%  hit={r.get('hit_rate', 0):.0f}%")
             st.dataframe(econ, use_container_width=True, hide_index=True)
-        curves = overlay_equity_curves(df, dd.initial_capital, allow_quantile=allow_q)
+        curves = c_overlay_curves(df, allow_q, dd.initial_capital)
         if not curves.empty:
             fig = px.line(curves, x="date", y="equity", color="policy",
                           title="Out-of-sample equity: baseline vs top-quantile overlay")
@@ -339,7 +388,7 @@ def page_scoring(dd: DashboardData, view: str, df: pd.DataFrame) -> None:
         st.caption(f"Per-period overlay: take exposure only when the finalist score is "
                    f"favourable, then compare cumulative outcome (`{vcol}`) to always-exposed.")
         allow_q = st.slider("Expose when score is in the top quantile", 0.0, 0.95, 0.50, 0.05)
-        curves, summary = period_overlay_curves(df, allow_quantile=allow_q)
+        curves, summary = c_period_overlay(df, allow_q)
         if not summary.empty:
             st.dataframe(summary, use_container_width=True, hide_index=True)
         if not curves.empty:

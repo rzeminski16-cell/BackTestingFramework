@@ -31,6 +31,14 @@ MODEL_RUN_DIR=processed_data/runs/<src>/modelling/<id> streamlit run apps/modell
 
 It opens in your browser (usually `http://localhost:8501`).
 
+**Loading & speed.** Streamlit re-runs the script on every interaction, so the run
+load and the heavier slices (the favourable/hostile shortlist, regime maps, overlay
+economics, stability) are **cached** and only recompute when their inputs actually
+change. A small spinner (e.g. *"Ranking favourable vs hostile conditions…"*) appears
+only during a real recompute; switching pages or nudging an unrelated control reuses
+the cached result. A change to the **filters**, the selected **feature/buckets**, or
+the **overlay sliders** invalidates just the affected computation.
+
 ### Sidebar (always visible)
 
 - **Runs directory** — where exported model runs live (`processed_data/runs`).
