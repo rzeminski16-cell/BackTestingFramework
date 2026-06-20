@@ -66,16 +66,19 @@ def build_preprocessor(numeric_features: List[str],
     categorical_features = _dedupe([c for c in categorical_features
                                     if c not in set(numeric_features)])
     transformers = []
+    # keep_empty_features keeps the column count stable across folds: a feature that
+    # is all-NaN within one training fold (e.g. a long-window derivation early in
+    # history) is filled rather than silently dropped.
     if numeric_features:
         transformers.append(("num", Pipeline([
             ("clean", FunctionTransformer(_replace_inf_with_nan,
                                           feature_names_out="one-to-one")),
-            ("impute", SimpleImputer(strategy="median")),
+            ("impute", SimpleImputer(strategy="median", keep_empty_features=True)),
             ("scale", StandardScaler()),
         ]), numeric_features))
     if categorical_features:
         transformers.append(("cat", Pipeline([
-            ("impute", SimpleImputer(strategy="most_frequent")),
+            ("impute", SimpleImputer(strategy="most_frequent", keep_empty_features=True)),
             ("onehot", _onehot()),
         ]), categorical_features))
     return ColumnTransformer(transformers, remainder="drop")

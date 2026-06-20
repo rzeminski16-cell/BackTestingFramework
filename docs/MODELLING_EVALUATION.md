@@ -96,7 +96,7 @@ The pipeline is GUI-free and unit-testable; the GUI is a thin view over the cont
 |-------|-------|------|
 | Contract | `Classes/Modelling/run_package.py` | Load manifest/contract/trades/panels; readiness check. |
 | Config | `Classes/Modelling/config.py` | `ModellingConfig` + target / validation / ladder / Adjusted-RAR sub-configs. |
-| Features | `Classes/Modelling/features.py` | Leakage-safe as-of joins → per-trade / per-period matrices. |
+| Features | `Classes/Modelling/features.py` | Leakage-safe as-of joins → per-trade / per-period matrices, with a calendar-day derived suite (multi-window % change, rolling volatility, z-score, MA-distance, range position). See the Data Dictionary §3a. |
 | Targets | `Classes/Modelling/targets.py` | Cost-aware economic targets + sample weighting + class balance. |
 | Metric | `Classes/Modelling/adjusted_rar.py` | Configurable Adjusted RAR% (reuses `Classes/Core/stable_metrics.py`). |
 | Validation | `Classes/Modelling/validation_split.py` | Chronological + purged/embargoed splitters. |

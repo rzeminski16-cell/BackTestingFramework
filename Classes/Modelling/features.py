@@ -55,7 +55,20 @@ _PRIMARY_VALUE_COL = {
 # beyond this we keep the most-populated series and record a warning.
 MAX_MARKET_ENTITIES = 40
 # Soft ceiling on total feature width (a tripwire that records a warning).
-MAX_TOTAL_FEATURES = 600
+MAX_TOTAL_FEATURES = 800
+
+# Derived-feature lookback windows, defined in **calendar days** (frequency-aware:
+# each entity series is resampled to a daily grid and forward-filled before the
+# windowed stats, so "21d" means 21 calendar days regardless of native frequency).
+# Families with a single primary value (prices, index, FX, commodity/macro value)
+# get the full suite; many-column families (e.g. fundamentals) get a lighter set
+# to keep the matrix bounded.
+FULL_PCT_WINDOWS = (5, 21, 63, 126, 252)     # % change over ~1wk/1mo/1qtr/6mo/1yr
+FULL_STAT_WINDOWS = (21, 63, 126)            # z-score + moving-average distance
+FULL_VOL_WINDOWS = (21, 63)                  # rolling volatility of daily changes
+FULL_RANGE_WINDOWS = (63, 126)               # range position + distance from high
+LIGHT_PCT_WINDOWS = (63, 252)                # quarter / year change
+LIGHT_STAT_WINDOW = 252                       # one z-score
 
 
 @dataclass
@@ -104,17 +117,64 @@ class FeatureBuilder:
         return numeric
 
     @staticmethod
-    def _prep_panel_series(panel: pd.DataFrame, value_col: str) -> pd.DataFrame:
-        """One entity's (available_ts, value) series with trailing-return derivations."""
-        cols = ["available_ts", "observation_date", value_col]
-        cols = [c for c in cols if c in panel.columns]
-        s = panel[cols].dropna(subset=["available_ts"]).copy()
-        order = "observation_date" if "observation_date" in s.columns else "available_ts"
-        s = s.sort_values(order)
-        # Trailing percentage changes (computed on the panel's own history → no leakage).
-        s[f"{value_col}__ret1"] = s[value_col].pct_change(1)
-        s[f"{value_col}__ret5"] = s[value_col].pct_change(5)
-        return s.sort_values("available_ts")
+    def _augment_entity_series(panel_sub: pd.DataFrame, value_cols: List[str],
+                               light: bool) -> Tuple[pd.DataFrame, List[str]]:
+        """Build one entity's calendar-day derived features (leakage-safe).
+
+        For each value column, resamples the entity's own history to a daily grid
+        (forward-filled = last known value each day) and derives, over calendar-day
+        windows: multi-window % change, rolling volatility, rolling z-score,
+        moving-average distance, range position and distance-from-high. Everything
+        is computed only from the series' own past, then carried back to the
+        original observation rows (each keeping its real ``available_ts`` for the
+        downstream as-of join). Returns ``(frame, derived_column_names)``.
+        """
+        s = panel_sub.dropna(subset=["available_ts"]).copy()
+        date_col = "observation_date" if "observation_date" in s.columns else "available_ts"
+        s = s.dropna(subset=[date_col])
+        if s.empty:
+            return pd.DataFrame(), []
+        s["_obs"] = pd.to_datetime(s[date_col]).dt.normalize()
+        s = s.sort_values("_obs").drop_duplicates(subset=["_obs"], keep="last")
+        obs = s["_obs"]
+
+        data: Dict[str, Any] = {"available_ts": s["available_ts"].values}
+        if "observation_date" in s.columns:
+            data["observation_date"] = s["observation_date"].values
+        derived: List[str] = []
+        pct_windows = LIGHT_PCT_WINDOWS if light else FULL_PCT_WINDOWS
+
+        def _put(name: str, daily_series: pd.Series) -> None:
+            data[name] = daily_series.reindex(obs).values
+            derived.append(name)
+
+        for vc in value_cols:
+            v = pd.Series(pd.to_numeric(s[vc], errors="coerce").values, index=obs)
+            data[vc] = v.values                             # the level at the observation
+            derived.append(vc)
+            if v.notna().sum() < 2 or obs.nunique() < 2:
+                continue
+            daily = v.resample("1D").ffill()                # frequency-aware daily grid
+            ret_d = daily.pct_change()
+            for W in pct_windows:
+                _put(f"{vc}__pctchg_{W}d", daily.pct_change(W))
+            if light:
+                roll = daily.rolling(LIGHT_STAT_WINDOW, min_periods=2)
+                _put(f"{vc}__z_{LIGHT_STAT_WINDOW}d", (daily - roll.mean()) / roll.std())
+                continue
+            for W in FULL_STAT_WINDOWS:
+                roll = daily.rolling(W, min_periods=max(2, W // 5))
+                mean, std = roll.mean(), roll.std()
+                _put(f"{vc}__z_{W}d", (daily - mean) / std)
+                _put(f"{vc}__madist_{W}d", daily / mean - 1.0)
+            for W in FULL_VOL_WINDOWS:
+                _put(f"{vc}__vol_{W}d", ret_d.rolling(W, min_periods=max(2, W // 5)).std())
+            for W in FULL_RANGE_WINDOWS:
+                roll = daily.rolling(W, min_periods=max(2, W // 5))
+                rmin, rmax = roll.min(), roll.max()
+                _put(f"{vc}__rangepos_{W}d", (daily - rmin) / (rmax - rmin))
+                _put(f"{vc}__offhigh_{W}d", daily / rmax - 1.0)
+        return pd.DataFrame(data), derived
 
     @staticmethod
     def _add_numeric(fm: FeatureMatrix, name: str, values, family: str) -> None:
@@ -193,15 +253,17 @@ class FeatureBuilder:
         num = [c for c in fm.numeric_features if c in fm.X.columns]
         if num:
             fm.X[num] = fm.X[num].replace([np.inf, -np.inf], np.nan)
+        # Drop near-empty derivations (e.g. a long-window feature with almost no
+        # history) as well as all-NaN columns.
         dead = [c for c in fm.numeric_features
-                if c in fm.X.columns and fm.X[c].isna().all()]
-        if not dead:
-            return
-        fm.X = fm.X.drop(columns=dead)
-        dead_set = set(dead)
-        fm.numeric_features = [c for c in fm.numeric_features if c not in dead_set]
-        for c in dead:
-            fm.feature_family.pop(c, None)
+                if c in fm.X.columns and fm.X[c].notna().sum() < 3]
+        if dead:
+            fm.X = fm.X.drop(columns=dead)
+            dead_set = set(dead)
+            fm.numeric_features = [c for c in fm.numeric_features if c not in dead_set]
+            for c in dead:
+                fm.feature_family.pop(c, None)
+        fm.X = fm.X.copy()      # defragment after many column additions
 
     @staticmethod
     def _guard_width(fm: FeatureMatrix) -> None:
@@ -248,72 +310,75 @@ class FeatureBuilder:
         if not value_cols:
             return
         tolerance = pd.Timedelta(days=tol_days) if tol_days and tol_days > 0 else None
+        light = len(value_cols) > 2          # many-column families get the lighter suite
         symbol_specific = (family in _SYMBOL_SPECIFIC_FAMILIES
                            and "entity_id" in panel.columns
                            and "symbol" in trades.columns)
         entry_by_id = pd.to_datetime(trades.set_index("trade_id")["entry_date"]).reindex(fm.X.index)
 
         if symbol_specific:
-            # Single pass: attach the trade's OWN symbol's value via merge_asof(by).
-            # Looping entities here previously produced one duplicate feature name
-            # per symbol, exploding the matrix; one by-merge is correct AND bounded.
+            # Augment each symbol's history, then attach via a single merge_asof(by).
+            # One by-merge keeps feature names unique and the matrix bounded.
+            parts, derived = [], []
+            for ent, sub in panel.groupby("entity_id"):
+                aug, derived = self._augment_entity_series(sub, value_cols, light)
+                if aug.empty:
+                    continue
+                aug["symbol"] = str(ent)
+                parts.append(aug)
+            if not parts:
+                return
             left = trades[["trade_id", "entry_date"]].copy()
             left["symbol"] = trades["symbol"].astype(str).values
-            order = "observation_date" if "observation_date" in panel.columns else "available_ts"
-            g = panel.sort_values(["entity_id", order]).copy()
-            derived_all: List[str] = []
-            for vc in value_cols:
-                g[f"{vc}__ret1"] = g.groupby("entity_id")[vc].pct_change(1)
-                g[f"{vc}__ret5"] = g.groupby("entity_id")[vc].pct_change(5)
-                derived_all += [vc, f"{vc}__ret1", f"{vc}__ret5"]
-            right = g[["available_ts", "entity_id"] + derived_all].dropna(subset=["available_ts"])
-            right = right.rename(columns={"entity_id": "symbol"})
-            right["symbol"] = right["symbol"].astype(str)
+            right = pd.concat(parts, ignore_index=True)
             merged = pd.merge_asof(
                 left.sort_values("entry_date"), right.sort_values("available_ts"),
                 left_on="entry_date", right_on="available_ts", by="symbol",
                 direction="backward", tolerance=tolerance,
             ).set_index("trade_id").reindex(fm.X.index)
-            self._assign_merged(fm, merged, family, "", derived_all, entry_by_id)
+            self._assign_merged(fm, merged, family, "", derived, entry_by_id)
             return
 
         # Market-wide family: one bounded column set per (capped) entity.
-        entities = self._limited_entities(panel, family, fm.warnings)
-        for ent in entities:
+        for ent in self._limited_entities(panel, family, fm.warnings):
             sub = panel if ent is None else panel[panel["entity_id"] == ent]
+            aug, derived = self._augment_entity_series(sub, value_cols, light)
+            if aug.empty:
+                continue
+            merged = pd.merge_asof(
+                trades[["trade_id", "entry_date"]].sort_values("entry_date"),
+                aug.sort_values("available_ts"),
+                left_on="entry_date", right_on="available_ts",
+                direction="backward", tolerance=tolerance,
+            ).set_index("trade_id").reindex(fm.X.index)
             suffix = f"_{ent}" if ent is not None else ""
-            derived_all: List[str] = []
-            merged_parts = {}
-            for value_col in value_cols:
-                series = self._prep_panel_series(sub, value_col)
-                derived = [c for c in (value_col, f"{value_col}__ret1", f"{value_col}__ret5")
-                           if c in series.columns]
-                right = series[["available_ts"] + derived].dropna(subset=["available_ts"])
-                if right.empty:
-                    continue
-                merged = pd.merge_asof(
-                    trades[["trade_id", "entry_date"]].sort_values("entry_date"),
-                    right.sort_values("available_ts"),
-                    left_on="entry_date", right_on="available_ts",
-                    direction="backward", tolerance=tolerance,
-                ).set_index("trade_id").reindex(fm.X.index)
-                for col in derived:
-                    merged_parts[col] = merged[col]
-                    derived_all.append(col)
-                merged_parts["available_ts"] = merged.get("available_ts")
-            if derived_all:
-                self._assign_merged(fm, pd.DataFrame(merged_parts), family, suffix,
-                                    derived_all, entry_by_id)
+            self._assign_merged(fm, merged, family, suffix, derived, entry_by_id)
 
     def _assign_merged(self, fm: FeatureMatrix, merged: pd.DataFrame, family: str,
                        suffix: str, derived: List[str], entry_by_id: pd.Series) -> None:
-        """Assign as-of values + a freshness 'age_days' feature (deduped)."""
+        """Assign as-of values + a freshness 'age_days' feature, in one batch.
+
+        Columns are concatenated once (not inserted one at a time) to avoid
+        fragmenting the feature matrix now that each family contributes many
+        derived features. Names are deduped so a column is never added twice.
+        """
+        new_cols: Dict[str, Any] = {}
         if "available_ts" in merged.columns:
-            age = (entry_by_id.values - pd.to_datetime(merged["available_ts"]))
-            self._add_numeric(fm, f"{family}{suffix}__age_days",
-                              age.dt.days.values, family)
+            name = f"{family}{suffix}__age_days"
+            if name not in fm.feature_family:
+                age = (entry_by_id.values - pd.to_datetime(merged["available_ts"]))
+                new_cols[name] = age.dt.days.values
+                fm.numeric_features.append(name)
+                fm.feature_family[name] = family
         for col in derived:
-            self._add_numeric(fm, f"{family}{suffix}__{col}", merged[col].values, family)
+            name = f"{family}{suffix}__{col}"
+            if name in fm.feature_family:
+                continue
+            new_cols[name] = merged[col].values
+            fm.numeric_features.append(name)
+            fm.feature_family[name] = family
+        if new_cols:
+            fm.X = pd.concat([fm.X, pd.DataFrame(new_cols, index=fm.X.index)], axis=1)
 
     # -- per-period --------------------------------------------------------- #
     def build_per_period(self, period_freq: str = "W",
@@ -386,22 +451,18 @@ class FeatureBuilder:
         if not value_cols:
             return
         tolerance = pd.Timedelta(days=tol_days) if tol_days and tol_days > 0 else None
+        light = len(value_cols) > 2
+        period_by_id = pd.Series(pd.to_datetime(fm.X.index), index=fm.X.index)
         for ent in self._limited_entities(panel, family, fm.warnings):
             sub = panel if ent is None else panel[panel["entity_id"] == ent]
+            aug, derived = self._augment_entity_series(sub, value_cols, light)
+            if aug.empty:
+                continue
+            merged = pd.merge_asof(
+                period_keys.sort_values("period"),
+                aug.sort_values("available_ts"),
+                left_on="period", right_on="available_ts",
+                direction="backward", tolerance=tolerance,
+            ).set_index("period").reindex(fm.X.index)
             suffix = f"_{ent}" if ent is not None else ""
-            for value_col in value_cols:
-                series = self._prep_panel_series(sub, value_col)
-                derived = [c for c in (value_col, f"{value_col}__ret1", f"{value_col}__ret5")
-                           if c in series.columns]
-                right = series[["available_ts"] + derived].dropna(subset=["available_ts"])
-                if right.empty:
-                    continue
-                merged = pd.merge_asof(
-                    period_keys.sort_values("period"),
-                    right.sort_values("available_ts"),
-                    left_on="period", right_on="available_ts",
-                    direction="backward", tolerance=tolerance,
-                ).set_index("period").reindex(fm.X.index)
-                for col in derived:
-                    self._add_numeric(fm, f"{family}{suffix}__{col}",
-                                      merged[col].values, family)
+            self._assign_merged(fm, merged, family, suffix, derived, period_by_id)

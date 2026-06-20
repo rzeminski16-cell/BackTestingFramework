@@ -233,6 +233,22 @@ def test_features_and_pipeline_handle_inf(tmp_path):
     assert np.isfinite(np.asarray(out, dtype="float64")).all()
 
 
+def test_derived_feature_suite(package_root):
+    # The market-series feature suite: multi-window % change + rolling volatility +
+    # z-score + moving-average distance + range position, all calendar-day based.
+    pkg = RunPackageLoader(package_root).load("synthetic")
+    fm = FeatureBuilder(pkg).build_per_trade()
+    cols = list(fm.X.columns)
+    for pat in ("__pctchg_21d", "__pctchg_63d", "__vol_21d", "__z_63d",
+                "__madist_63d", "__rangepos_63d"):
+        assert any(c.endswith(pat) for c in cols), f"missing derived feature {pat}"
+    assert fm.X.columns.is_unique
+    assert not np.isinf(fm.X[fm.numeric_features].to_numpy(dtype="float64")).any()
+    # Freshness feature still non-negative (no leakage).
+    for c in [c for c in cols if c.endswith("__age_days")]:
+        assert (fm.X[c].dropna() >= 0).all()
+
+
 def test_purged_embargo_drops_overlap():
     # Two clusters of label windows; the splitter must purge train rows whose
     # window overlaps the embargoed test window.
