@@ -440,9 +440,13 @@ class Evaluator:
             sub = pred.loc[idx]
             yt = y_true.loc[idx]
             if self.target.is_classification and yt.nunique() >= 2:
-                from sklearn.metrics import balanced_accuracy_score
-                out[str(int(yr))] = round(float(balanced_accuracy_score(
-                    yt.values, (sub.values >= 0.5).astype(int))), 3)
+                try:
+                    from sklearn.metrics import balanced_accuracy_score
+                    yt_int = pd.to_numeric(yt, errors="coerce").fillna(0).astype(int).values
+                    out[str(int(yr))] = round(float(balanced_accuracy_score(
+                        yt_int, (sub.values >= 0.5).astype(int))), 3)
+                except Exception:
+                    continue
             elif not self.target.is_classification:
                 with warnings.catch_warnings():
                     warnings.simplefilter("ignore")

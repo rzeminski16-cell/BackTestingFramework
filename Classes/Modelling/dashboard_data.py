@@ -19,11 +19,13 @@ from __future__ import annotations
 import glob
 import json
 import os
+import warnings
 from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional, Tuple
 
 import numpy as np
 import pandas as pd
+from scipy import stats
 
 from .adjusted_rar import (adjusted_rar_from_equity, adjusted_rar_from_trades,
                            build_daily_equity_curve)
@@ -430,6 +432,171 @@ def period_year_stability(df: pd.DataFrame, value_col: Optional[str] = None) -> 
                      "mean_outcome": round(float(vals.mean()), 4) if len(vals) else 0.0,
                      "pct_positive": round(float((vals > 0).mean() * 100), 1) if len(vals) else 0.0})
     return pd.DataFrame(rows)
+
+
+# --------------------------------------------------------------------------- #
+# Performance-driver screen — "what factors suggest better trade performance?"
+# A univariate, model-agnostic factor screen with FDR control + cross-year
+# consistency. Descriptive (can be confounded), to be cross-checked against the
+# model-based held-out importance on the Factors page.
+# --------------------------------------------------------------------------- #
+def performance_column(df: pd.DataFrame) -> Optional[str]:
+    """The column that best represents realised performance for this view."""
+    if "pl_pct" in df.columns:
+        return "pl_pct"
+    if "target" in df.columns and pd.api.types.is_numeric_dtype(df["target"]):
+        return "target"
+    if "period_realised_pl" in df.columns:
+        return "period_realised_pl"
+    return None
+
+
+def _spearman(x: np.ndarray, y: np.ndarray) -> Tuple[float, float]:
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+        try:
+            r, p = stats.spearmanr(x, y, nan_policy="omit")
+            return (float(r) if r == r else 0.0, float(p) if p == p else 1.0)
+        except Exception:
+            return 0.0, 1.0
+
+
+def _year_sign_consistency(sub: pd.DataFrame, feature: str, vcol: str,
+                           overall_sign: float) -> float:
+    tcol = "entry_date" if "entry_date" in sub.columns else (
+        "period_ts" if "period_ts" in sub.columns else None)
+    if tcol is None:
+        return float("nan")
+    s = sub.dropna(subset=[tcol]).copy()
+    s["_year"] = pd.to_datetime(s[tcol]).dt.year
+    signs = []
+    for _, g in s.groupby("_year"):
+        if len(g) < 8:
+            continue
+        r, _ = _spearman(g[feature].values, pd.to_numeric(g[vcol], errors="coerce").values)
+        if r != 0:
+            signs.append(1.0 if np.sign(r) == np.sign(overall_sign) else 0.0)
+    return round(float(np.mean(signs)), 2) if signs else float("nan")
+
+
+def factor_screen(df: pd.DataFrame, numeric_features: List[str],
+                  value_col: Optional[str] = None, n_buckets: int = 5,
+                  min_count: int = 20, fdr_alpha: float = 0.1) -> pd.DataFrame:
+    """Rank numeric factors by their association with realised performance.
+
+    For each factor: Spearman rank correlation with the outcome (robust + a
+    p-value), the top-minus-bottom bucket outcome spread (economic effect size),
+    a single-factor AUC for ranking above/below-median trades, coverage, and the
+    fraction of years whose effect keeps the same sign. P-values are
+    Benjamini-Hochberg corrected across factors (many factors -> some look good by
+    chance).
+    """
+    vcol = value_col or performance_column(df)
+    if vcol is None:
+        return pd.DataFrame()
+    base = df.dropna(subset=[vcol]).copy()
+    base[vcol] = pd.to_numeric(base[vcol], errors="coerce")
+    rows: List[Dict[str, Any]] = []
+    for feat in numeric_features:
+        if feat not in base.columns:
+            continue
+        sub = base.dropna(subset=[feat])
+        if len(sub) < max(min_count, 20) or sub[feat].nunique() < 3:
+            continue
+        x = sub[feat].astype(float).values
+        y = sub[vcol].astype(float).values
+        if np.nanstd(x) == 0:
+            continue
+        r, p = _spearman(x, y)
+        try:
+            q = pd.qcut(sub[feat], q=min(n_buckets, sub[feat].nunique()), duplicates="drop")
+        except (ValueError, IndexError):
+            continue
+        means = sub.groupby(q, observed=False)[vcol].mean()
+        if len(means) < 2:
+            continue
+        top_mean, bottom_mean = float(means.iloc[-1]), float(means.iloc[0])
+        auc = float("nan")
+        good = (y > np.nanmedian(y)).astype(int)
+        if len(np.unique(good)) == 2:
+            try:
+                from sklearn.metrics import roc_auc_score
+                a = roc_auc_score(good, x)
+                auc = round(float(max(a, 1 - a)), 3)
+            except Exception:
+                pass
+        rows.append({
+            "feature": feat,
+            "direction": "higher → better" if r >= 0 else "higher → worse",
+            "rank_corr": round(r, 3),
+            "abs_rank_corr": round(abs(r), 3),
+            "p_value": p,
+            "effect_top_minus_bottom": round(top_mean - bottom_mean, 4),
+            "top_bucket_mean": round(top_mean, 4),
+            "bottom_bucket_mean": round(bottom_mean, 4),
+            "auc": auc,
+            "n": int(len(sub)),
+            "year_consistency": _year_sign_consistency(sub, feat, vcol, np.sign(r) or 1.0),
+        })
+    out = pd.DataFrame(rows)
+    if out.empty:
+        return out
+    try:
+        from statsmodels.stats.multitest import multipletests
+        reject, corrected, _, _ = multipletests(out["p_value"].fillna(1.0).values,
+                                                alpha=fdr_alpha, method="fdr_bh")
+        out["p_value_bh"] = np.round(corrected, 4)
+        out["significant"] = reject
+    except Exception:
+        out["p_value_bh"] = out["p_value"]
+        out["significant"] = out["p_value"] < 0.05
+    out["p_value"] = out["p_value"].round(4)
+    return out.sort_values("abs_rank_corr", ascending=False).reset_index(drop=True)
+
+
+def factor_decile_profile(df: pd.DataFrame, feature: str, value_col: Optional[str] = None,
+                          n_buckets: int = 10) -> pd.DataFrame:
+    """Mean performance + count per feature decile (the relationship shape)."""
+    vcol = value_col or performance_column(df)
+    if vcol is None or feature not in df.columns:
+        return pd.DataFrame()
+    sub = df.dropna(subset=[feature, vcol]).copy()
+    sub[vcol] = pd.to_numeric(sub[vcol], errors="coerce")
+    if sub[feature].nunique() < 2:
+        return pd.DataFrame()
+    try:
+        sub["_b"] = pd.qcut(sub[feature], q=min(n_buckets, sub[feature].nunique()),
+                            duplicates="drop")
+    except (ValueError, IndexError):
+        return pd.DataFrame()
+    rows = []
+    for b, g in sub.groupby("_b", observed=False):
+        v = g[vcol].dropna()
+        rows.append({"bucket": str(b), "feature_mid": round(float(g[feature].median()), 4),
+                     "count": int(len(g)), "mean_performance": round(float(v.mean()), 4),
+                     "pct_positive": round(float((v > 0).mean() * 100), 1)})
+    return pd.DataFrame(rows)
+
+
+def categorical_factor_table(df: pd.DataFrame, feature: str, value_col: Optional[str] = None,
+                             min_count: int = 5) -> pd.DataFrame:
+    """Mean performance by category (which symbols / sides / reasons do best)."""
+    vcol = value_col or performance_column(df)
+    if vcol is None or feature not in df.columns:
+        return pd.DataFrame()
+    sub = df.dropna(subset=[feature, vcol]).copy()
+    sub[vcol] = pd.to_numeric(sub[vcol], errors="coerce")
+    rows = []
+    for cat, g in sub.groupby(sub[feature].astype(str)):
+        if len(g) < min_count:
+            continue
+        v = g[vcol].dropna()
+        rows.append({"category": str(cat), "count": int(len(g)),
+                     "mean_performance": round(float(v.mean()), 4),
+                     "pct_positive": round(float((v > 0).mean() * 100), 1)})
+    out = pd.DataFrame(rows)
+    return out.sort_values("mean_performance", ascending=False).reset_index(drop=True) \
+        if not out.empty else out
 
 
 def period_overlay_curves(df: pd.DataFrame, allow_quantile: float = 0.5,

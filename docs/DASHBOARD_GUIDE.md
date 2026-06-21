@@ -31,6 +31,14 @@ MODEL_RUN_DIR=processed_data/runs/<src>/modelling/<id> streamlit run apps/modell
 
 It opens in your browser (usually `http://localhost:8501`).
 
+**Loading & speed.** Streamlit re-runs the script on every interaction, so the run
+load and the heavier slices (the favourable/hostile shortlist, regime maps, overlay
+economics, stability) are **cached** and only recompute when their inputs actually
+change. A small spinner (e.g. *"Ranking favourable vs hostile conditions…"*) appears
+only during a real recompute; switching pages or nudging an unrelated control reuses
+the cached result. A change to the **filters**, the selected **feature/buckets**, or
+the **overlay sliders** invalidates just the affected computation.
+
 ### Sidebar (always visible)
 
 - **Runs directory** — where exported model runs live (`processed_data/runs`).
@@ -42,7 +50,7 @@ It opens in your browser (usually `http://localhost:8501`).
   - *Symbol* / *Side* multi-selects, and a *Year range* slider.
   - The caption shows "X of Y rows after filters". Use this to ask *"does the edge
     hold for just US tech?"* or *"...only in 2022?"*
-- **Page** — the six pages below.
+- **Page** — the seven pages below.
 
 > Filters apply to the **trade-level** pages (Regimes, Scoring & overlays). The
 > Overview/Factors/Walk-forward/Robustness pages reflect the run as exported.
@@ -131,7 +139,42 @@ backdrop.
 
 ---
 
-## Page 3 — "Factors" (which variables drive it?)
+## Page 3 — "Performance drivers" (what factors suggest better trades?)
+
+**Question:** which factors are associated with *better realised performance* — a
+direct, model-agnostic screen, complementary to the model-based Factors page.
+
+- **Factor → performance bars:** every numeric factor ranked by its **Spearman
+  rank correlation** with performance (green = higher value → better, red =
+  higher → worse).
+  - *Read:* the longest green/red bars are the strongest linear-in-rank drivers.
+- **Factor table:** for each factor — `direction`, `rank_corr`, FDR-corrected
+  `p_value_bh` (✅ = survives Benjamini-Hochberg control across all factors),
+  `effect_top_minus_bottom` (mean performance of the top bucket minus the bottom —
+  the economic effect size), `auc` (how well the factor *alone* separates
+  above/below-median trades), `n`, and `year_consistency` (fraction of years the
+  effect keeps the same sign).
+  - *Read:* trust a factor most when it has a meaningful effect, **survives FDR**,
+    a high AUC, *and* high year-consistency. A big effect with low consistency or a
+    non-significant p is likely noise (many factors → some look good by chance —
+    that's exactly why FDR control is applied).
+- **Factor detail:** pick a factor to see **mean performance across its deciles**
+  (is the relationship monotonic, or U-shaped?) and a raw scatter of the factor vs
+  performance.
+- **Categorical factors:** mean performance per category (which symbols / sides /
+  entry reasons perform best/worst).
+
+**Worked example.** `index_panel__close__ret5` tops the list with rank-corr +0.34
+(✅ FDR), effect +1.8% top-vs-bottom, AUC 0.66, year-consistency 1.0 → recent
+benchmark strength is a robust driver of trade quality. A trade-intrinsic factor
+with effect +2.0% but p_value_bh 0.4 and consistency 0.4 is *not* trustworthy.
+
+> **Caveat:** these are **univariate, in-sample associations** — descriptive, not
+> causal, and correlated factors echo one another. A driver you can rely on ranks
+> high here **and** shows held-out permutation importance on the next page **and**
+> stays consistent across years.
+
+## Page 4 — "Factors" (which variables drive it?)
 
 **Question:** what did the finalist actually learn?
 
@@ -158,7 +201,7 @@ backdrop.
 
 ---
 
-## Page 4 — "Scoring & overlays" (is an overlay justified?)
+## Page 5 — "Scoring & overlays" (is an overlay justified?)
 
 **Question:** does turning the model into an allow/reduce/block rule actually help,
 and at what threshold?
@@ -200,7 +243,7 @@ leaves only 28 trades — too thin to trust.
 
 ---
 
-## Page 5 — "Walk-forward" (is it consistent across folds?)
+## Page 6 — "Walk-forward" (is it consistent across folds?)
 
 **Question:** does the edge appear in *every* out-of-sample block, or just one?
 
@@ -212,7 +255,7 @@ leaves only 28 trades — too thin to trust.
 
 ---
 
-## Page 6 — "Robustness & search" (did it survive scrutiny?)
+## Page 7 — "Robustness & search" (did it survive scrutiny?)
 
 **Question:** could the result be a by-product of trying many things?
 
@@ -231,10 +274,12 @@ leaves only 28 trades — too thin to trust.
 
 1. **Does it work?** — get the verdict and check significance.
 2. **Regimes** — build the favourable/hostile operating statement.
-3. **Scoring & overlays** — confirm an overlay actually improves economics and
+3. **Performance drivers** — see which factors most separate good from bad trades
+   (with FDR control and year-consistency).
+4. **Scoring & overlays** — confirm an overlay actually improves economics and
    find a sensible threshold.
-4. **Factors** — explain *why* in terms of variables.
-5. **Walk-forward** + **Robustness** — stress-test before you believe it.
+5. **Factors** — explain *why* in terms of the model's learned variables.
+6. **Walk-forward** + **Robustness** — stress-test before you believe it.
 
 If steps 1, 3 and 5 disagree with step 2's nice story, trust the out-of-sample
 economics and significance over the in-sample narrative.

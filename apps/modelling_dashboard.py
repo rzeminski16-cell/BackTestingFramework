@@ -30,8 +30,9 @@ import streamlit as st
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from Classes.Modelling.dashboard_data import (  # noqa: E402
-    DashboardData, discover_model_runs, favourable_unfavourable, is_per_trade,
-    load_dashboard_data, overlay_economics, overlay_equity_curves,
+    DashboardData, categorical_factor_table, discover_model_runs, factor_decile_profile,
+    factor_screen, favourable_unfavourable, is_per_trade, load_dashboard_data,
+    overlay_economics, overlay_equity_curves, performance_column,
     period_favourable_unfavourable, period_overlay_curves, period_regime_table,
     period_two_feature_heatmap, period_value_column, period_year_stability,
     regime_table, two_feature_heatmap, year_stability,
@@ -41,9 +42,79 @@ st.set_page_config(page_title="Strategy Diagnostics Dashboard", layout="wide")
 _POS, _NEG = "#27AE60", "#E74C3C"
 
 
-@st.cache_data(show_spinner=False)
+@st.cache_data(show_spinner="Loading model run…")
 def _load(path: str) -> DashboardData:
     return load_dashboard_data(path)
+
+
+# --------------------------------------------------------------------------- #
+# Cached compute wrappers. Streamlit reruns the whole script on every widget
+# change, so these memoise the heavy slices keyed by (data, params). The
+# Adjusted RAR config is passed as ``_rar`` (underscore = not hashed) with its
+# values folded into ``rar_key`` so the cache still invalidates if the formula
+# changes. Spinners show only on an actual (cache-miss) recompute.
+# --------------------------------------------------------------------------- #
+@st.cache_data(show_spinner="Computing regime buckets…")
+def c_regime_table(df, feature, n_buckets, categorical, per_trade, cap, rar_key, _rar):
+    if per_trade:
+        return regime_table(df, feature, _rar, cap, n_buckets=n_buckets, categorical=categorical)
+    return period_regime_table(df, feature, n_buckets=n_buckets, categorical=categorical)
+
+
+@st.cache_data(show_spinner="Ranking favourable vs hostile conditions…")
+def c_favourable(df, numeric, n_buckets, per_trade, cap, rar_key, _rar):
+    if per_trade:
+        return favourable_unfavourable(df, list(numeric), _rar, cap, n_buckets=n_buckets)
+    return period_favourable_unfavourable(df, list(numeric), n_buckets=n_buckets)
+
+
+@st.cache_data(show_spinner="Building two-feature regime map…")
+def c_two_feature(df, fx, fy, n_bins, per_trade, cap, rar_key, _rar):
+    if per_trade:
+        return two_feature_heatmap(df, fx, fy, _rar, cap, n_bins=n_bins)
+    return period_two_feature_heatmap(df, fx, fy, n_bins=n_bins)
+
+
+@st.cache_data(show_spinner="Recomputing overlay economics…")
+def c_overlay_economics(df, allow_q, reduce_f, cap, rar_key, _rar):
+    return overlay_economics(df, _rar, cap, allow_quantile=allow_q, reduce_factor=reduce_f)
+
+
+@st.cache_data(show_spinner=False)
+def c_overlay_curves(df, allow_q, cap):
+    return overlay_equity_curves(df, cap, allow_quantile=allow_q)
+
+
+@st.cache_data(show_spinner=False)
+def c_period_overlay(df, allow_q):
+    return period_overlay_curves(df, allow_quantile=allow_q)
+
+
+@st.cache_data(show_spinner="Computing year-by-year stability…")
+def c_year_stability(df, per_trade, cap, rar_key, _rar):
+    if per_trade:
+        return year_stability(df, _rar, cap)
+    return period_year_stability(df)
+
+
+@st.cache_data(show_spinner="Screening factors for performance drivers…")
+def c_factor_screen(df, numeric, n_buckets):
+    return factor_screen(df, list(numeric), n_buckets=n_buckets)
+
+
+@st.cache_data(show_spinner=False)
+def c_factor_decile(df, feature, n_buckets):
+    return factor_decile_profile(df, feature, n_buckets=n_buckets)
+
+
+@st.cache_data(show_spinner=False)
+def c_categorical_factor(df, feature):
+    return categorical_factor_table(df, feature)
+
+
+def _rar_key(dd: DashboardData):
+    r = dd.adjusted_rar
+    return (r.bars_per_year, r.weight_by_r_squared, r.clip_min, r.clip_max)
 
 
 def _select_run() -> str:
@@ -170,13 +241,13 @@ def page_regimes(dd: DashboardData, view: str, df: pd.DataFrame) -> None:
 
     # --- single-feature bucket bar ---
     if per_trade:
-        tbl = regime_table(df, feature, dd.adjusted_rar, dd.initial_capital,
-                           n_buckets=n_buckets, categorical=feature in categorical)
+        tbl = c_regime_table(df, feature, n_buckets, feature in categorical, True,
+                             dd.initial_capital, _rar_key(dd), dd.adjusted_rar)
         ycol, ylabel = "adjusted_rar", "Adjusted RAR%"
         hover = ["count", "hit_rate", "avg_return_pct", "max_drawdown_pct"]
     else:
-        tbl = period_regime_table(df, feature, n_buckets=n_buckets,
-                                  categorical=feature in categorical)
+        tbl = c_regime_table(df, feature, n_buckets, feature in categorical, False,
+                             dd.initial_capital, _rar_key(dd), dd.adjusted_rar)
         ycol, ylabel = "mean_outcome", f"Mean outcome ({vcol})"
         hover = ["count", "pct_positive", "total_outcome"]
 
@@ -194,11 +265,8 @@ def page_regimes(dd: DashboardData, view: str, df: pd.DataFrame) -> None:
     # --- favourable vs hostile shortlist ---
     st.subheader("Favourable vs hostile shortlist (all features)")
     st.caption("Every feature bucket ranked — the strategy's best and worst conditions at a glance.")
-    if per_trade:
-        fav = favourable_unfavourable(df, numeric, dd.adjusted_rar, dd.initial_capital,
-                                      n_buckets=n_buckets)
-    else:
-        fav = period_favourable_unfavourable(df, numeric, n_buckets=n_buckets)
+    fav = c_favourable(df, tuple(numeric), n_buckets, per_trade, dd.initial_capital,
+                       _rar_key(dd), dd.adjusted_rar)
     if fav.empty:
         st.caption("Need at least one numeric feature with enough data to rank.")
     else:
@@ -217,12 +285,9 @@ def page_regimes(dd: DashboardData, view: str, df: pd.DataFrame) -> None:
         fx = cc1.selectbox("X feature", numeric, index=0)
         fy = cc2.selectbox("Y feature", numeric, index=min(1, len(numeric) - 1))
         nb = cc3.slider("Grid bins", 2, 6, 4)
-        if per_trade:
-            heat = two_feature_heatmap(df, fx, fy, dd.adjusted_rar, dd.initial_capital, n_bins=nb)
-            clabel = "Adjusted RAR%"
-        else:
-            heat = period_two_feature_heatmap(df, fx, fy, n_bins=nb)
-            clabel = f"Mean outcome ({vcol})"
+        heat = c_two_feature(df, fx, fy, nb, per_trade, dd.initial_capital,
+                             _rar_key(dd), dd.adjusted_rar)
+        clabel = "Adjusted RAR%" if per_trade else f"Mean outcome ({vcol})"
         if heat.empty:
             st.caption("Not enough overlapping data in the grid for these two features.")
         else:
@@ -282,11 +347,11 @@ def page_factors(dd: DashboardData, view: str) -> None:
     df = dd.analysis.get(view, pd.DataFrame())
     if not df.empty:
         st.subheader("Stability through time")
-        if is_per_trade(df) and "entry_date" in df.columns:
-            ys = year_stability(df, dd.adjusted_rar, dd.initial_capital)
+        pt = is_per_trade(df) and "entry_date" in df.columns
+        ys = c_year_stability(df, pt, dd.initial_capital, _rar_key(dd), dd.adjusted_rar)
+        if pt:
             ycol, ylabel, hover = "adjusted_rar", "Adjusted RAR%", ["count", "hit_rate"]
         else:
-            ys = period_year_stability(df)
             ycol, ylabel, hover = "mean_outcome", "Mean outcome", ["count", "pct_positive"]
         if ys.empty:
             st.caption("Not enough dated rows to assess year-by-year stability.")
@@ -297,6 +362,96 @@ def page_factors(dd: DashboardData, view: str) -> None:
                          labels={ycol: ylabel})
             fig.update_layout(showlegend=False, height=320)
             st.plotly_chart(fig, use_container_width=True)
+
+
+def page_drivers(dd: DashboardData, view: str, df: pd.DataFrame) -> None:
+    st.header("What factors drive better performance?")
+    st.caption("A model-agnostic screen of which factors are associated with **better "
+               "realised performance**. Univariate and *descriptive* (correlated factors "
+               "can echo one another, and association is not causation) — cross-check "
+               "against the held-out model importance on the **Factors** page.")
+    if df.empty:
+        st.info("No analysis frame for this view.")
+        return
+    vcol = performance_column(df)
+    if vcol is None:
+        st.info("No performance column available to screen against.")
+        return
+    numeric = [f for f in dd.numeric_features(view) if f in df.columns]
+    categorical = [f for f in dd.categorical_features(view) if f in df.columns]
+    if not numeric and not categorical:
+        st.info("No features available to screen.")
+        return
+
+    n_buckets = st.slider("Buckets (top vs bottom comparison)", 3, 10, 5)
+    st.caption(f"Performance measured by `{vcol}`. p-values are Benjamini-Hochberg "
+               "corrected across factors; ✅ marks factors that survive FDR control.")
+
+    screen = c_factor_screen(df, tuple(numeric), n_buckets) if numeric else pd.DataFrame()
+    if screen.empty:
+        st.info("Not enough data to screen numeric factors.")
+    else:
+        top = screen.head(15).iloc[::-1]
+        fig = px.bar(top, x="rank_corr", y="feature", orientation="h",
+                     color=top["rank_corr"] >= 0,
+                     color_discrete_map={True: _POS, False: _NEG},
+                     hover_data=["effect_top_minus_bottom", "auc", "n",
+                                 "p_value_bh", "year_consistency"],
+                     labels={"rank_corr": "Rank correlation with performance"})
+        fig.update_layout(showlegend=False, height=520,
+                          title="Factor → performance association (Spearman rank correlation)")
+        st.plotly_chart(fig, use_container_width=True)
+
+        disp = screen.copy()
+        disp.insert(0, "FDR", np.where(disp["significant"], "✅", ""))
+        disp = disp.drop(columns=["significant", "abs_rank_corr"])
+        st.dataframe(disp, use_container_width=True, hide_index=True)
+        st.caption("**effect_top_minus_bottom** = mean performance of the top feature "
+                   "bucket minus the bottom bucket (economic effect size). **auc** = how "
+                   "well the factor alone separates above/below-median trades. "
+                   "**year_consistency** = fraction of years the effect keeps the same sign.")
+
+        st.subheader("Factor detail")
+        sel = st.selectbox("Inspect a factor", list(screen["feature"]))
+        prof = c_factor_decile(df, sel, min(10, max(4, n_buckets * 2)))
+        if not prof.empty:
+            fig = px.bar(prof, x="bucket", y="mean_performance",
+                         color=prof["mean_performance"] >= 0,
+                         color_discrete_map={True: _POS, False: _NEG},
+                         hover_data=["count", "pct_positive", "feature_mid"],
+                         labels={"mean_performance": f"Mean {vcol}",
+                                 "bucket": f"{sel} (low → high)"})
+            fig.update_layout(showlegend=False, height=340,
+                              title=f"Mean performance across {sel} buckets")
+            st.plotly_chart(fig, use_container_width=True)
+            samp = df.dropna(subset=[sel, vcol])
+            if len(samp) > 1500:
+                samp = samp.sample(1500, random_state=0)
+            fig2 = px.scatter(samp, x=sel, y=vcol, opacity=0.4,
+                              labels={vcol: f"performance ({vcol})"})
+            fig2.update_layout(height=320)
+            st.plotly_chart(fig2, use_container_width=True)
+
+    if categorical:
+        st.subheader("Categorical factors")
+        cat = st.selectbox("Category to compare", categorical)
+        ctab = c_categorical_factor(df, cat)
+        if ctab.empty:
+            st.caption("Not enough data per category to compare.")
+        else:
+            head = ctab.head(25)
+            fig = px.bar(head, x="category", y="mean_performance",
+                         color=head["mean_performance"] >= 0,
+                         color_discrete_map={True: _POS, False: _NEG},
+                         hover_data=["count", "pct_positive"],
+                         labels={"mean_performance": f"Mean {vcol}"})
+            fig.update_layout(showlegend=False, height=360)
+            st.plotly_chart(fig, use_container_width=True)
+            st.dataframe(ctab, use_container_width=True, hide_index=True)
+
+    st.info("These are univariate, in-sample associations. A factor that ranks high "
+            "here **and** shows held-out permutation importance on the Factors page "
+            "**and** stays consistent across years is the most trustworthy driver.")
 
 
 def page_scoring(dd: DashboardData, view: str, df: pd.DataFrame) -> None:
@@ -312,8 +467,8 @@ def page_scoring(dd: DashboardData, view: str, df: pd.DataFrame) -> None:
         c1, c2 = st.columns(2)
         allow_q = c1.slider("Allow: keep top quantile", 0.0, 0.95, 0.70, 0.05)
         reduce_f = c2.slider("Reduce-size factor (hostile half)", 0.0, 1.0, 0.50, 0.05)
-        econ = overlay_economics(df, dd.adjusted_rar, dd.initial_capital,
-                                 allow_quantile=allow_q, reduce_factor=reduce_f)
+        econ = c_overlay_economics(df, allow_q, reduce_f, dd.initial_capital,
+                                   _rar_key(dd), dd.adjusted_rar)
         if not econ.empty:
             base = econ[econ["policy"] == "baseline"].iloc[0]
             cols = st.columns(3)
@@ -328,7 +483,7 @@ def page_scoring(dd: DashboardData, view: str, df: pd.DataFrame) -> None:
                 col.caption(f"trades={int(r.get('n_trades', 0))}  sharpe={r.get('sharpe', 0):.2f}  "
                             f"maxDD={r.get('max_drawdown_pct', 0):.1f}%  hit={r.get('hit_rate', 0):.0f}%")
             st.dataframe(econ, use_container_width=True, hide_index=True)
-        curves = overlay_equity_curves(df, dd.initial_capital, allow_quantile=allow_q)
+        curves = c_overlay_curves(df, allow_q, dd.initial_capital)
         if not curves.empty:
             fig = px.line(curves, x="date", y="equity", color="policy",
                           title="Out-of-sample equity: baseline vs top-quantile overlay")
@@ -339,7 +494,7 @@ def page_scoring(dd: DashboardData, view: str, df: pd.DataFrame) -> None:
         st.caption(f"Per-period overlay: take exposure only when the finalist score is "
                    f"favourable, then compare cumulative outcome (`{vcol}`) to always-exposed.")
         allow_q = st.slider("Expose when score is in the top quantile", 0.0, 0.95, 0.50, 0.05)
-        curves, summary = period_overlay_curves(df, allow_quantile=allow_q)
+        curves, summary = c_period_overlay(df, allow_q)
         if not summary.empty:
             st.dataframe(summary, use_container_width=True, hide_index=True)
         if not curves.empty:
@@ -445,13 +600,15 @@ def main() -> None:
     df = _filters(base_df) if not base_df.empty else base_df
 
     page = st.sidebar.radio("Page", [
-        "Does it work?", "Regimes", "Factors", "Scoring & overlays",
-        "Walk-forward", "Robustness & search",
+        "Does it work?", "Regimes", "Performance drivers", "Factors",
+        "Scoring & overlays", "Walk-forward", "Robustness & search",
     ])
     if page == "Does it work?":
         page_overview(dd, view)
     elif page == "Regimes":
         page_regimes(dd, view, df)
+    elif page == "Performance drivers":
+        page_drivers(dd, view, df)
     elif page == "Factors":
         page_factors(dd, view)
     elif page == "Scoring & overlays":

@@ -17,9 +17,9 @@ parts):
 ```
 trade__concurrent_positions            # trade-intrinsic feature
 equity_prices__close                   # symbol-specific family value
-equity_prices__close__ret5             # 5-step trailing return of that value
+equity_prices__close__pctchg_63d       # 63-calendar-day % change of that value
 index_panel_SPX__close                 # market-wide family, per entity (SPX)
-index_panel_SPX__close__ret1           # 1-step trailing return
+index_panel_SPX__close__z_63d          # 63-day rolling z-score (how stretched)
 macro_panel_US_GDP__value__age_days    # freshness of that value at trade entry
 ```
 
@@ -29,7 +29,7 @@ macro_panel_US_GDP__value__age_days    # freshness of that value at trade entry
 | `<family>__…` | **Symbol-specific** family (joined to the trade's own symbol): `equity_prices`, `corporate_actions`, `fundamentals_pit`. No entity suffix. |
 | `<family>_<entity>__…` | **Market-wide** family (one column set per series): `index_panel`, `fx_panel`, `commodities_panel`, `macro_panel`, `utilities_panel`. The entity is the series id (e.g. `SPX`, `VIX`, `US_GDP`, `WTI`). |
 | `…__<value_col>` | The underlying panel value (e.g. `close`, `rate`, `value`, a fundamentals field). |
-| `…__ret1`, `…__ret5` | Trailing 1-step and 5-step percentage change of the value, computed **within each entity's own history** (so no cross-series leakage). |
+| `…__<value_col>__<derivation>_<W>d` | A derived feature over a **calendar-day** window `W` (see §3a). |
 | `…__age_days` | Freshness: days between the trade's `entry_date` and the attached value's availability timestamp. **Always ≥ 0** (a structural no-leakage guarantee). |
 
 **Leakage rule.** Every family value is attached with a *backward as-of join* on
@@ -81,19 +81,39 @@ plus a freshness feature. The value columns depend on the family:
 | `corporate_actions` | symbol-specific | numeric event fields (e.g. `amount`, `split_factor`) |
 | `utilities_panel` | market-wide | numeric status fields |
 
-For each `<value_col>` you get:
+For each `<value_col>` you get the **level** (`__<value_col>`) plus the derived
+suite in §3a, and one `__age_days` freshness feature per family/entity.
 
-| Suffix | Description |
-|--------|-------------|
-| `__<value_col>` | The as-of **level** at entry (e.g. the benchmark close known at the trade's entry). |
-| `__<value_col>__ret1` | Trailing 1-observation % change (short-term momentum/direction). |
-| `__<value_col>__ret5` | Trailing 5-observation % change (medium-term trend). |
-| `__age_days` | Days since that value became available (staleness; one per family/entity). |
+### 3a. Derived feature suite (calendar-day, frequency-aware)
 
-> **Capping.** A market-wide family with more than 40 distinct series keeps the
-> most-populated 40 (recorded as a feature-build warning) to bound width. All-NaN
-> derived columns (e.g. `__ret5` with too little history) are dropped. ±inf from
-> divide-by-zero in returns is mapped to NaN and imputed.
+Windows are defined in **calendar days**: each entity's own history is resampled
+to a daily grid (forward-filled = last known value each day) before the windowed
+statistics, so `pctchg_21d` means "% change over 21 calendar days" whether the
+series is daily, weekly or monthly. Everything is computed from the series' own
+*past* only and carried back to the observation rows, so the backward as-of join
+to trades stays leakage-safe.
+
+**Full suite** — applied to single-value families (`equity_prices` close,
+`index_panel`, `fx_panel`, `commodities_panel`, `macro_panel` value):
+
+| Suffix | Windows (days) | Meaning |
+|--------|----------------|---------|
+| `__<v>__pctchg_<W>d` | 5, 21, 63, 126, 252 | % change over `W` calendar days (multi-horizon momentum). |
+| `__<v>__vol_<W>d` | 21, 63 | Rolling volatility (std of daily changes) — recent choppiness. |
+| `__<v>__z_<W>d` | 21, 63, 126 | Rolling z-score: how stretched the level is vs its own mean/std. |
+| `__<v>__madist_<W>d` | 21, 63, 126 | Distance from the moving average (`value / MA − 1`) — trend. |
+| `__<v>__rangepos_<W>d` | 63, 126 | Where the level sits in its rolling min–max range (0–1). |
+| `__<v>__offhigh_<W>d` | 63, 126 | Distance below the rolling high (`value / max − 1`). |
+
+**Light suite** — applied to many-column families (e.g. `fundamentals_pit`) to
+keep the matrix bounded: the level, `__pctchg_63d` and `__pctchg_252d`
+(quarter/year change), and `__z_252d`.
+
+> **Robustness/capping.** Market-wide families with more than 40 distinct series
+> keep the 40 most-populated (a feature-build warning is recorded). Near-empty
+> derivations (a long window with almost no history) are dropped; ±inf from
+> divide-by-zero is mapped to NaN; the per-fold imputer fills the rest, so the
+> feature count stays stable across folds.
 
 ### Per-period portfolio-state features
 
@@ -125,7 +145,7 @@ What the models predict (the `target` column holds the **primary** one).
 |--------|------|-----------|
 | `next_period_return` | continuous | Next period's realised P/L ÷ initial capital. |
 | `next_period_adjusted_rar` | continuous | Adjusted RAR% over a short **forward** window of the period equity path. |
-| `regime_label` | categorical | `favourable` / `neutral` / `hostile`, from next-period return vs the configured thresholds. |
+| `regime_label` | categorical | `favourable` / `neutral` / `hostile`, from next-period return vs the configured thresholds. **Modelled as a binary `favourable` vs rest** target (the actionable question); the full 3-class label is retained for the descriptive regime timeline. |
 
 ---
 
@@ -254,6 +274,28 @@ mean period outcome:
 | `total_outcome` | Sum of the bucket's outcome. |
 
 ---
+
+## 8b. Performance-driver screen columns (dashboard "Performance drivers")
+
+A univariate, model-agnostic screen ranking factors by association with realised
+performance (`pl_pct` per-trade, or the period outcome).
+
+| Column | Description |
+|--------|-------------|
+| `feature` | The factor being screened. |
+| `direction` | `higher → better` or `higher → worse` (sign of the rank correlation). |
+| `rank_corr` | Spearman rank correlation between the factor and performance. |
+| `p_value` | Spearman p-value (uncorrected). |
+| `p_value_bh` | Benjamini-Hochberg FDR-corrected p across all screened factors. |
+| `significant` | Survives FDR control (shown as ✅). |
+| `effect_top_minus_bottom` | Mean performance of the top factor bucket minus the bottom (economic effect size). |
+| `top_bucket_mean`, `bottom_bucket_mean` | The two bucket means behind the effect. |
+| `auc` | How well the factor *alone* ranks above/below-median trades (0.5 = none). |
+| `n` | Rows used. |
+| `year_consistency` | Fraction of years the effect keeps the same sign (robustness). |
+
+The categorical screen reports, per category: `category`, `count`,
+`mean_performance`, `pct_positive`.
 
 ## 9. Guardrail & robustness fields
 

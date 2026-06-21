@@ -233,6 +233,22 @@ def test_features_and_pipeline_handle_inf(tmp_path):
     assert np.isfinite(np.asarray(out, dtype="float64")).all()
 
 
+def test_derived_feature_suite(package_root):
+    # The market-series feature suite: multi-window % change + rolling volatility +
+    # z-score + moving-average distance + range position, all calendar-day based.
+    pkg = RunPackageLoader(package_root).load("synthetic")
+    fm = FeatureBuilder(pkg).build_per_trade()
+    cols = list(fm.X.columns)
+    for pat in ("__pctchg_21d", "__pctchg_63d", "__vol_21d", "__z_63d",
+                "__madist_63d", "__rangepos_63d"):
+        assert any(c.endswith(pat) for c in cols), f"missing derived feature {pat}"
+    assert fm.X.columns.is_unique
+    assert not np.isinf(fm.X[fm.numeric_features].to_numpy(dtype="float64")).any()
+    # Freshness feature still non-negative (no leakage).
+    for c in [c for c in cols if c.endswith("__age_days")]:
+        assert (fm.X[c].dropna() >= 0).all()
+
+
 def test_purged_embargo_drops_overlap():
     # Two clusters of label windows; the splitter must purge train rows whose
     # window overlaps the embargoed test window.
@@ -371,6 +387,65 @@ def test_per_period_dashboard_and_stats(package_root):
     rob = results.robustness
     assert "whites_reality_check" in rob
     assert "bootstrap_delta" in rob and "multiple_testing" in rob
+
+
+def test_factor_screen_drivers(package_root):
+    from Classes.Modelling.dashboard_data import (
+        categorical_factor_table, factor_decile_profile, factor_screen,
+        load_dashboard_data, performance_column)
+
+    config = ModellingConfig(model_run_name="drivers", runs_root=package_root,
+                             view=ModellingView.PER_TRADE)
+    config.validation.n_splits = 3
+    controller = ModellingController(config)
+    controller.load_package("synthetic")
+    controller.export(controller.run())
+    dd = load_dashboard_data(controller.output_dir())
+    df = dd.analysis["per_trade"]
+    assert performance_column(df) == "pl_pct"
+
+    numeric = [f for f in dd.numeric_features("per_trade") if f in df.columns]
+    screen = factor_screen(df, numeric, n_buckets=5)
+    assert not screen.empty
+    expected = {"feature", "direction", "rank_corr", "p_value", "p_value_bh",
+                "significant", "effect_top_minus_bottom", "auc", "n", "year_consistency"}
+    assert expected.issubset(screen.columns)
+    # Ranked by association strength (descending).
+    assert screen["abs_rank_corr"].is_monotonic_decreasing
+    # The synthetic outcome is driven by the index trend, so an index factor should
+    # surface with a non-trivial association.
+    idx_corr = screen.loc[screen["feature"].str.startswith("index_panel"), "abs_rank_corr"]
+    assert not idx_corr.empty and idx_corr.max() > 0.1
+
+    prof = factor_decile_profile(df, screen["feature"].iloc[0], n_buckets=8)
+    assert not prof.empty and "mean_performance" in prof.columns
+    # Categorical screen runs without error.
+    ctab = categorical_factor_table(df, "trade__symbol")
+    assert isinstance(ctab, type(df))
+
+
+def test_per_period_regime_label_target(package_root):
+    # Regression test: a regime_label target (3-class strings) must not crash the
+    # pipeline — it is modelled as a binary favourable-vs-rest classification.
+    from Classes.Modelling.config import TargetKind, TargetSpec
+
+    config = ModellingConfig(model_run_name="regime", runs_root=package_root,
+                             view=ModellingView.PER_PERIOD)
+    config.validation.n_splits = 3
+    config.target = TargetSpec(kinds=[TargetKind.REGIME_LABEL],
+                               primary=TargetKind.REGIME_LABEL)
+    controller = ModellingController(config)
+    controller.load_package("synthetic")
+    results = controller.run()                    # must not raise
+    assert results.leaderboard
+
+    _, ts, _ = controller.prepare(ModellingView.PER_PERIOD)
+    assert ts.is_classification
+    assert set(pd.unique(ts.y.dropna())).issubset({0.0, 1.0}), "regime target must be binary"
+    # The full 3-class label is retained for the descriptive timeline.
+    assert ts.targets["regime_label"].dropna().isin(
+        ["favourable", "neutral", "hostile"]).all()
+    controller.export(results)                    # must not raise
 
 
 def test_period_overlay_delta_math():
