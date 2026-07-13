@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T08:57:20.230788", "endpoint": "SPLITS", "params": {"symbol": "JBHT"}, "data": {"symbol": "JBHT", "data": [{"effective_date": "2005-05-24", "split_factor": "2.0000"}, {"effective_date": "2003-09-02", "split_factor": "2.0000"}]}}

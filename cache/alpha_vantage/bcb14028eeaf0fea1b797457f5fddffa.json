@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T09:00:33.330050", "endpoint": "DIVIDENDS", "params": {"symbol": "OIS"}, "data": {"symbol": "OIS", "data": [{"ex_dividend_date": "2014-06-02", "declaration_date": "None", "record_date": "None", "payment_date": "None", "amount": "46.1265407359"}]}}

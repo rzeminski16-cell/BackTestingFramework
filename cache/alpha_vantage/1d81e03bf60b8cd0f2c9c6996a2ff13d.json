@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T08:58:19.050291", "endpoint": "SPLITS", "params": {"symbol": "LNG"}, "data": {"symbol": "LNG", "data": [{"effective_date": "2005-04-25", "split_factor": "2.0000"}, {"effective_date": "2000-10-18", "split_factor": "0.2500"}]}}

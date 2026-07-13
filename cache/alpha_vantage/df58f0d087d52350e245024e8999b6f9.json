@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T08:49:09.367325", "endpoint": "SPLITS", "params": {"symbol": "ARWR"}, "data": {"symbol": "ARWR", "data": [{"effective_date": "2011-11-17", "split_factor": "0.1000"}, {"effective_date": "2004-01-15", "split_factor": "0.0154"}]}}

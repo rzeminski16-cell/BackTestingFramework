@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T08:54:26.419723", "endpoint": "SPLITS", "params": {"symbol": "FIZZ"}, "data": {"symbol": "FIZZ", "data": [{"effective_date": "2021-02-22", "split_factor": "2.0000"}, {"effective_date": "2004-03-23", "split_factor": "2.0000"}]}}

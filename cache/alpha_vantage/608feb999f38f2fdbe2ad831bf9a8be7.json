@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T08:49:12.098992", "endpoint": "SPLITS", "params": {"symbol": "ATRO"}, "data": {"symbol": "ATRO", "data": [{"effective_date": "2026-06-15", "split_factor": "1.2530"}, {"effective_date": "2018-10-11", "split_factor": "1.1820"}]}}

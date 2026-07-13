@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T08:49:19.016789", "endpoint": "SPLITS", "params": {"symbol": "AZN"}, "data": {"symbol": "AZN", "data": [{"effective_date": "2026-02-02", "split_factor": "0.5000"}, {"effective_date": "2015-07-27", "split_factor": "2.0000"}]}}

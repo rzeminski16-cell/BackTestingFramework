@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T09:06:23.634597", "endpoint": "SPLITS", "params": {"symbol": "UNP"}, "data": {"symbol": "UNP", "data": [{"effective_date": "2014-06-09", "split_factor": "2.0000"}, {"effective_date": "2008-05-29", "split_factor": "2.0000"}]}}

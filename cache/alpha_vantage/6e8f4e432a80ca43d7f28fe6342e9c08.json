@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T09:07:39.174818", "endpoint": "SPLITS", "params": {"symbol": "WERN"}, "data": {"symbol": "WERN", "data": [{"effective_date": "2003-10-01", "split_factor": "1.2500"}, {"effective_date": "2002-03-15", "split_factor": "1.3333"}]}}

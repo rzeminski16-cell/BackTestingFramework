@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T08:48:25.079222", "endpoint": "SPLITS", "params": {"symbol": "AMGN"}, "data": {"symbol": "AMGN", "data": [{"effective_date": "1999-11-22", "split_factor": "2.0000"}, {"effective_date": "1999-03-01", "split_factor": "2.0000"}]}}

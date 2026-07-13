@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T09:03:18.501854", "endpoint": "SPLITS", "params": {"symbol": "SDS"}, "data": {"symbol": "SDS", "data": [{"effective_date": "2025-11-20", "split_factor": "0.2000"}, {"effective_date": "2022-01-13", "split_factor": "0.2000"}, {"effective_date": "2017-07-17", "split_factor": "0.2500"}, {"effective_date": "2012-10-05", "split_factor": "0.2500"}]}}

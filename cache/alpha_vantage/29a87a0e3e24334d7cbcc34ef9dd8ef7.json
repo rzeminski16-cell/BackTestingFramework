@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T09:01:10.868292", "endpoint": "SPLITS", "params": {"symbol": "OZK"}, "data": {"symbol": "OZK", "data": [{"effective_date": "2014-06-24", "split_factor": "2.0000"}, {"effective_date": "2011-08-17", "split_factor": "2.0000"}, {"effective_date": "2003-12-11", "split_factor": "2.0000"}, {"effective_date": "2002-06-18", "split_factor": "2.0000"}]}}

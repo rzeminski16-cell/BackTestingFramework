@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T08:50:23.454395", "endpoint": "DIVIDENDS", "params": {"symbol": "BW"}, "data": {"symbol": "BW", "data": [{"ex_dividend_date": "2026-06-15", "declaration_date": "None", "record_date": "2026-06-15", "payment_date": "2026-06-30", "amount": "0.4062"}]}}

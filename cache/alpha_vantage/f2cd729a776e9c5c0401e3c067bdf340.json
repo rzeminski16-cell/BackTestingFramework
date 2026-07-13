@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T08:56:17.085087", "endpoint": "SPLITS", "params": {"symbol": "ICE"}, "data": {"symbol": "ICE", "data": [{"effective_date": "2016-11-04", "split_factor": "5.0000"}]}}

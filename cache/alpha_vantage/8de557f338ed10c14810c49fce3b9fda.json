@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T09:05:17.054867", "endpoint": "SPLITS", "params": {"symbol": "TJX"}, "data": {"symbol": "TJX", "data": [{"effective_date": "2018-11-07", "split_factor": "2.0000"}, {"effective_date": "2012-02-03", "split_factor": "2.0000"}, {"effective_date": "2002-05-09", "split_factor": "2.0000"}]}}

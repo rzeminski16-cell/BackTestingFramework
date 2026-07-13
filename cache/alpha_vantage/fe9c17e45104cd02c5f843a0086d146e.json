@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T09:06:17.150700", "endpoint": "SPLITS", "params": {"symbol": "UGI"}, "data": {"symbol": "UGI", "data": [{"effective_date": "2005-05-25", "split_factor": "2.0000"}, {"effective_date": "2003-04-02", "split_factor": "1.4925"}]}}

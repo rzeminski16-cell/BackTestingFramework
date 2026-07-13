@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T08:52:14.003897", "endpoint": "SPLITS", "params": {"symbol": "CW"}, "data": {"symbol": "CW", "data": [{"effective_date": "2006-04-24", "split_factor": "2.0000"}, {"effective_date": "2003-12-18", "split_factor": "2.0000"}]}}

@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T08:56:14.105876", "endpoint": "SPLITS", "params": {"symbol": "IAU"}, "data": {"symbol": "IAU", "data": [{"effective_date": "2021-05-24", "split_factor": "0.5000"}, {"effective_date": "2010-06-24", "split_factor": "10.0000"}]}}

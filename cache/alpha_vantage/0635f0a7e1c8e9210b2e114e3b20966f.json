@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T08:52:12.027474", "endpoint": "SPLITS", "params": {"symbol": "CSX"}, "data": {"symbol": "CSX", "data": [{"effective_date": "2021-06-29", "split_factor": "3.0000"}, {"effective_date": "2011-06-16", "split_factor": "3.0000"}, {"effective_date": "2006-08-16", "split_factor": "2.0000"}]}}

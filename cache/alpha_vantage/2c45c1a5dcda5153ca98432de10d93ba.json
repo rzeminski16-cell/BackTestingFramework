@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T09:05:36.397553", "endpoint": "SPLITS", "params": {"symbol": "TTC"}, "data": {"symbol": "TTC", "data": [{"effective_date": "2016-09-19", "split_factor": "2.0000"}, {"effective_date": "2012-07-02", "split_factor": "2.0000"}, {"effective_date": "2005-04-13", "split_factor": "2.0000"}, {"effective_date": "2003-04-15", "split_factor": "2.0000"}]}}

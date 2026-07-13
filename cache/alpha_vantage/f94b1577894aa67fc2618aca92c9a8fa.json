@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T08:58:06.336145", "endpoint": "SPLITS", "params": {"symbol": "KLAC"}, "data": {"symbol": "KLAC", "data": [{"effective_date": "2026-06-12", "split_factor": "10.0000"}, {"effective_date": "2000-01-19", "split_factor": "2.0000"}]}}

@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T09:03:20.876224", "endpoint": "SPLITS", "params": {"symbol": "SFNC"}, "data": {"symbol": "SFNC", "data": [{"effective_date": "2018-02-09", "split_factor": "2.0000"}, {"effective_date": "2003-05-02", "split_factor": "2.0000"}]}}

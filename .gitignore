@@ -30,10 +30,13 @@ config/data_collection/settings.json
 # Excel lock files
 ~$*.xlsx
 
-# API response cache (rebuilt automatically by the Data Collection tool).
-# NOTE: ~34k cache files are still tracked from earlier commits; ignoring only
-# prevents new ones. See docs/SYSTEM_EVALUATION.md §2.5 for the cleanup plan.
+# API response cache (rebuilt automatically by the Data Collection tool)
 cache/
+
+# Generated analysis output (report workbooks are build products, not source)
+reports/
+exports/
+pattern_analysis_report.xlsx
 
 # Log files (generated during testing/backtesting)
 logs/

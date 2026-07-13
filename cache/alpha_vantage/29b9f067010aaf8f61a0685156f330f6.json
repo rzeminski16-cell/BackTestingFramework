@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T09:02:34.672048", "endpoint": "SPLITS", "params": {"symbol": "SBUX"}, "data": {"symbol": "SBUX", "data": [{"effective_date": "2015-04-09", "split_factor": "2.0000"}, {"effective_date": "2005-10-24", "split_factor": "2.0000"}, {"effective_date": "2001-04-30", "split_factor": "2.0000"}, {"effective_date": "1999-03-22", "split_factor": "2.0000"}]}}

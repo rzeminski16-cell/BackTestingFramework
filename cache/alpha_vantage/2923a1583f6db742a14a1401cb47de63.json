@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T08:51:22.235567", "endpoint": "SPLITS", "params": {"symbol": "CNI"}, "data": {"symbol": "CNI", "data": [{"effective_date": "2013-12-02", "split_factor": "2.0000"}, {"effective_date": "2006-03-01", "split_factor": "2.0000"}, {"effective_date": "2004-03-01", "split_factor": "1.5000"}, {"effective_date": "1999-09-28", "split_factor": "2.0000"}]}}

@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T08:52:03.383749", "endpoint": "SPLITS", "params": {"symbol": "COST"}, "data": {"symbol": "COST", "data": [{"effective_date": "2000-01-14", "split_factor": "2.0000"}]}}

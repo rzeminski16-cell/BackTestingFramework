@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T09:01:22.688875", "endpoint": "SPLITS", "params": {"symbol": "PFBC"}, "data": {"symbol": "PFBC", "data": [{"effective_date": "2011-06-20", "split_factor": "0.2000"}, {"effective_date": "2007-02-21", "split_factor": "1.5000"}]}}
