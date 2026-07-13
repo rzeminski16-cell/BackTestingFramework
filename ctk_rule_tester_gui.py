@@ -1394,7 +1394,10 @@ class CTkRuleTesterGUI:
                 # Update UI in main thread
                 self.root.after(0, self._on_calculation_complete)
             except Exception as e:
-                self.root.after(0, lambda: self._on_calculation_error(str(e)))
+                # Bind now: `e` is unbound once the except block exits, so a
+                # bare closure would raise NameError inside the after() callback.
+                msg = str(e)
+                self.root.after(0, lambda msg=msg: self._on_calculation_error(msg))
 
         thread = threading.Thread(target=calculate_thread, daemon=True)
         thread.start()

@@ -1198,7 +1198,10 @@ class CTkOptimizationWizard(CTkWizardBase):
         except Exception as e:
             self.results_window.log(f"\nFATAL ERROR: {e}")
             logger.exception("Optimization failed")
-            self.root.after(0, lambda: show_error(self.root, "Error", f"Optimization failed: {e}"))
+            # Bind the message now: `e` is unbound once the except block exits,
+            # so a bare closure would raise NameError inside the after() callback.
+            msg = f"Optimization failed: {e}"
+            self.root.after(0, lambda msg=msg: show_error(self.root, "Error", msg))
 
         finally:
             self.root.after(0, self._reset_ui)

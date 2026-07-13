@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "backtesting-framework"
+dynamic = ["version"]
+description = "Backtesting, optimisation, and ML strategy-diagnostics research platform"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "rzeminski16-cell" }]
+
+# Core runtime dependencies (audited 2026-07: every entry is imported by the
+# maintained code, directly or via pandas engines - pyarrow backs
+# to_parquet/read_parquet). GUI/dashboard/dev tooling live in extras.
+dependencies = [
+    "pandas>=1.5.0",
+    "numpy>=1.21.0",
+    "openpyxl>=3.0.9",       # Excel report generation
+    "matplotlib>=3.5.0",
+    "seaborn>=0.11.0",
+    "scipy>=1.7.0",
+    "requests>=2.28.0",      # Alpha Vantage client
+    "pyarrow>=12.0.0",       # Parquet run packages (pandas engine)
+    "pyyaml>=6.0",
+    "scikit-optimize>=0.9.0",# walk-forward Bayesian search
+    "scikit-learn>=1.3.0",   # Modelling & Evaluation stage
+    "statsmodels>=0.14.0",
+    "joblib>=1.2.0",
+]
+
+[project.optional-dependencies]
+gui = ["customtkinter>=5.2.0"]                       # desktop GUIs (needs system tkinter)
+dashboard = ["streamlit>=1.30.0", "plotly>=5.18.0"]  # apps/modelling_dashboard.py
+shap = ["shap>=0.43.0"]                              # optional SHAP summaries in Modelling
+dev = ["pytest>=8.0", "pytest-timeout>=2.2", "ruff>=0.4"]
+all = ["backtesting-framework[gui,dashboard,shap]"]
+
+[tool.setuptools.dynamic]
+version = { attr = "Classes._version.__version__" }
+
+[tool.setuptools.packages.find]
+include = ["Classes*", "strategies*"]
+namespaces = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+target-version = "py310"
+line-length = 120
+extend-exclude = ["cache", "raw_data", "processed_data", "reports", "exports"]
+
+[tool.ruff.lint]
+# Minimal correctness gate: syntax errors (E9), invalid comparisons /
+# f-string misuse (F63, F7x), undefined names (F82). Style rules are opt-in
+# later once the backlog is triaged.
+select = ["E9", "F63", "F7", "F82"]

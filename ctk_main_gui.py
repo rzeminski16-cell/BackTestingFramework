@@ -15,6 +15,7 @@ from pathlib import Path
 from typing import Callable, Optional
 
 from Classes.GUI.ctk_theme import Theme, Colors, Fonts, Sizes
+from Classes._version import __version__
 
 
 class FeatureCard(ctk.CTkFrame):
@@ -270,7 +271,7 @@ class CTkMainLauncher(ctk.CTk):
 
         version_label = ctk.CTkLabel(
             footer_frame,
-            text="v1.0.0",
+            text=f"v{__version__}",
             font=Fonts.BODY_S,
             text_color=Colors.TEXT_MUTED
         )
