@@ -1,12 +1,11 @@
 """
 BackTesting Framework - Main Launcher GUI
 
-A modern CustomTkinter main menu that provides access to all framework features.
-
-Features:
-- Backtesting: Run backtests with various strategies
-- Optimization: Walk-forward strategy optimization
-- Edge Analysis: E-ratio and R-multiple analysis from trade logs
+A modern CustomTkinter main menu that provides access to all framework
+modules: backtesting, walk-forward and univariate optimization, edge
+analysis, data collection & preparation, rule testing, vulnerability
+visualization, pattern analysis, Monte Carlo simulation, ML modelling &
+evaluation, and the Streamlit results dashboard.
 """
 
 import customtkinter as ctk
@@ -164,7 +163,7 @@ class CTkMainLauncher(ctk.CTk):
         cards_frame = ctk.CTkFrame(main_frame, fg_color="transparent")
         cards_frame.pack(fill="both", expand=True)
 
-        # Configure grid columns to be equal width (3 columns, 3 rows for 7 features)
+        # Configure grid columns to be equal width (3 columns, 4 rows of feature cards)
         cards_frame.grid_columnconfigure(0, weight=1)
         cards_frame.grid_columnconfigure(1, weight=1)
         cards_frame.grid_columnconfigure(2, weight=1)
@@ -180,6 +179,12 @@ class CTkMainLauncher(ctk.CTk):
                 "description": "Run backtests on securities with configurable strategies and parameters",
                 "icon": "\u23F1",  # Stopwatch
                 "command": self._launch_backtest
+            },
+            {
+                "title": "Optimization",
+                "description": "Walk-forward parameter optimization with Bayesian search and sensitivity analysis",
+                "icon": "\U0001F3AF",  # Direct hit
+                "command": self._launch_optimization
             },
             {
                 "title": "Univariate Optimization",

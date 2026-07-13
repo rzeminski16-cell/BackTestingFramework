@@ -9,9 +9,6 @@ xlsxwriter>=3.0.0
 # Data sources
 yfinance>=0.2.0
 
-# Technical analysis
-ta>=0.10.0
-
 # Enhanced visualizations
 matplotlib>=3.5.0
 scipy>=1.7.0
