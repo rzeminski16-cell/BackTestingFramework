@@ -1314,7 +1314,11 @@ class PortfolioEngine:
         )
 
         exit_commission = self.trade_executor.execute_order(exit_order)
-        proceeds = exit_order.total_value() - exit_commission
+        # Direction-aware cash release: a LONG sale returns qty * price; a
+        # SHORT cover returns the posted collateral plus short P/L
+        # (qty * (2 * entry - price)). Using the raw order value would book
+        # long-side P/L for shorts and invert the equity curve.
+        proceeds = position.close_out_value(execution_price, quantity) - exit_commission
         proceeds_base = self._convert_to_base_currency(proceeds, symbol, date)
 
         capital += proceeds_base
@@ -1392,7 +1396,8 @@ class PortfolioEngine:
         )
 
         exit_commission = self.trade_executor.execute_order(exit_order)
-        proceeds = exit_order.total_value() - exit_commission
+        # Direction-aware cash release (see _close_position for the rationale).
+        proceeds = position.close_out_value(execution_price, exit_quantity) - exit_commission
         proceeds_base = self._convert_to_base_currency(proceeds, symbol, date)
 
         capital += proceeds_base

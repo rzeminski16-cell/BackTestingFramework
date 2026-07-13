@@ -6,15 +6,25 @@
 ## Summary
 
 ```
-829 passed, 2 warnings in 144.10s (0:02:24)
+853 passed, 2 warnings (Python 3.11)
 ```
 
-All 32 test modules pass, covering: engines (single-security, portfolio,
+All 34 test modules pass, covering: engines (single-security, portfolio,
 integration), strategies (AlphaTrend family, short-only base, random control),
 core & optimization metrics, currency conversion, data layer & collection,
 data preparation, modelling & evaluation, Monte Carlo, pattern analysis,
 rejection explorer, report generation and charts, vulnerability scoring/trace,
 and walk-forward optimization.
+
+Added 2026-07-13 (P0 correctness fixes):
+
+- `test_short_accounting.py` — ledger-vs-trade-log invariant
+  (`final_equity − initial == Σ trade.pl`) for LONG and SHORT on both
+  engines, with commission/slippage/partial exits; direction-aware
+  mark-to-market and break-even stop checks.
+- `test_stable_metrics_cadence.py` — RAR% cadence invariance (calendar-daily
+  vs trading-day vs per-trade sampling) and agreement with the Modelling
+  stage's Adjusted RAR.
 
 The two warnings are benign numpy `RuntimeWarning`s from intentional
 edge-case tests (correlation of identical values).
@@ -28,10 +38,8 @@ python -m pytest tests/ -q
 
 ## Known gaps (see docs/SYSTEM_EVALUATION.md)
 
-- No test asserts equity-curve ↔ trade-ledger consistency for SHORT trades
-  (the current short cash-ledger bug, Evaluation §2.2, is not covered).
-- No cross-tool consistency test for RAR% annualisation (Evaluation §2.3).
-- No CI pipeline runs this suite automatically on push.
+- No CI pipeline runs this suite automatically on push (roadmap P1).
+- Legacy `backtesting/` package has no coverage (slated for removal, P1).
 
 ## Historical note
 

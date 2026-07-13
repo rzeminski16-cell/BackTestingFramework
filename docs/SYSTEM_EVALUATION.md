@@ -4,6 +4,14 @@
 **Scope:** Full review of the framework — correctness of the analytics, UX of every surface (GUIs, dashboard, reports, docs), documentation freshness, and a prioritised roadmap to professional grade.
 **Test baseline:** `pytest tests/` — **829 passed, 0 failed** (2 min 24 s, Python 3.11).
 
+> **Status update (same day):** P0 items 2–4 have been implemented on this
+> branch (853 tests passing after the fixes) — short-trade accounting is now
+> direction-aware in both engines with ledger-vs-trades invariant tests
+> (§2.2), RAR% is annualised on a calendar-daily grid everywhere (§2.3), and
+> the API cache plus committed report workbooks are untracked (§2.5; the
+> optional history rewrite remains a manual step). P0 item 1 (API key
+> rotation) was explicitly deferred by the owner.
+
 ---
 
 ## 1. Executive summary
@@ -62,7 +70,16 @@ added to `.gitignore`.
    the file left version control.)
 3. Optionally scrub history (`git filter-repo`) if the repo will ever be shared.
 
-### 2.2 CORRECTNESS — short-trade cash ledger and equity curve are inverted
+### 2.2 CORRECTNESS — short-trade cash ledger and equity curve are inverted — **FIXED**
+
+> **Fixed on this branch:** `Position.calculate_value()` and a new
+> `Position.close_out_value()` are direction-aware (a short is carried as
+> posted collateral ± unrealised P/L), both engines book short covers with
+> the direction-aware cash release, and the short break-even stop now sits
+> *below* entry as its docstring always claimed. `tests/test_short_accounting.py`
+> pins the invariant `final_equity − initial_capital == Σ trade.pl` for LONG
+> and SHORT (with commission, slippage, and partial exits) on both engines,
+> plus mark-to-market direction checks. Original finding below.
 
 `Position.calculate_value()` returns `quantity × price` and both engines book a
 short entry as a cash **outflow** and the cover as an **inflow** — long
@@ -89,7 +106,20 @@ proceeds as cash-in with a liability marked at
 Until then, treat `ShortOnlyBaseStrategy` results as unreliable beyond the
 trade log.
 
-### 2.3 CORRECTNESS — RAR% / Adjusted RAR% is annualised inconsistently across tools
+### 2.3 CORRECTNESS — RAR% / Adjusted RAR% is annualised inconsistently across tools — **FIXED**
+
+> **Fixed on this branch:** `StableMetricsCalculator.calculate_all()` now
+> resamples any dated equity curve onto a forward-filled calendar-daily grid
+> before the log-equity regression, so `BARS_PER_YEAR = 365` always matches
+> the true cadence. This single change corrects every caller (Excel reports,
+> univariate optimiser, Rule Tester incl. its cumulative-RAR series). The
+> "monthly" window for Robust Sharpe moved from 21 trading days to 30
+> calendar days accordingly. `tests/test_stable_metrics_cadence.py` pins
+> cadence invariance (calendar / trading-day / per-trade sampling of the same
+> 10%-growth curve all report ≈10% RAR) and agreement with the Modelling
+> stage's Adjusted RAR. **Expect reported RAR%/R-Cubed/Robust Sharpe values
+> to drop versus older reports — the old numbers were overstated.**
+> Original finding below.
 
 `StableMetricsCalculator` annualises the log-equity regression slope with
 `BARS_PER_YEAR = 365`, i.e. it assumes **one row = one calendar day**. Three
@@ -117,7 +147,14 @@ numpy is set up (verified on Python 3.11). **Fixed in this branch** — `ta`
 removed. `setup.py` remains stale (wrong dependency list, placeholder author);
 see roadmap P1.
 
-### 2.5 HYGIENE — 6.4 GB of data artifacts committed to git
+### 2.5 HYGIENE — 6.4 GB of data artifacts committed to git — **LARGELY FIXED**
+
+> **Fixed on this branch:** `cache/` (33,955 files) and the committed report
+> workbooks (`pattern_analysis_report.xlsx`, `reports/`, `exports/`) are
+> untracked and ignored; local files stay on disk. Still open: the raw-data
+> policy decision (sample `A*` files remain tracked) and the optional history
+> rewrite to reclaim the ~1.3 GB `.git` (needs a coordinated force-push:
+> `git filter-repo --path cache --invert-paths`). Original finding below.
 
 - `cache/alpha_vantage/` — **33,955 JSON API responses, 5.2 GB**, tracked.
 - `raw_data/` — 220 tracked files (~93 MB) under a partially-negated ignore rule.
@@ -252,13 +289,16 @@ in rough priority order:
 ### P0 — Trust the numbers (do first)
 
 1. **Rotate the leaked Alpha Vantage key** and recreate the local settings file
-   (§2.1 — untracking already done here).
-2. **Fix short-trade accounting** in both engines + `Position.calculate_value`
-   (§2.2), with a ledger-vs-trades invariant test in both directions.
-3. **Unify RAR% annualisation on a calendar-daily curve** everywhere (§2.3).
-4. **De-bloat the repository** (§2.5): ignore `cache/`, decide the raw-data
-   policy (LFS or external), drop committed generated reports, then rewrite
-   history once.
+   (§2.1 — untracking already done here). *Deferred by owner.*
+2. ~~**Fix short-trade accounting**~~ **DONE** — direction-aware ledger in both
+   engines + `Position.calculate_value`/`close_out_value`, short break-even
+   fix, invariant tests (`tests/test_short_accounting.py`).
+3. ~~**Unify RAR% annualisation on a calendar-daily curve**~~ **DONE** —
+   `calculate_all` resamples dated curves to a daily grid; cadence-invariance
+   tests (`tests/test_stable_metrics_cadence.py`).
+4. **De-bloat the repository** (§2.5): **DONE** for `cache/` + generated
+   reports (untracked & ignored). *Remaining:* raw-data policy decision and
+   the optional one-time history rewrite.
 
 ### P1 — Professional-grade engineering platform
 

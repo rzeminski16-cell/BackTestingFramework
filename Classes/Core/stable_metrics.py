@@ -12,9 +12,20 @@ Metrics included:
     - R-Cubed: RAR% / (Avg Max Drawdown × Length Adjustment) - risk/reward with duration
     - Robust Sharpe Ratio: RAR% / Annualized Std Dev of Monthly Returns
 
+CADENCE CONTRACT:
+    The log-equity regression slope is annualized with BARS_PER_YEAR = 365,
+    which is only valid when one row == one calendar day. Callers feed curves
+    at many cadences (trading-day bars from backtests, one point per trade
+    from the Rule Tester), so ``calculate_all`` first **resamples the curve to
+    a forward-filled calendar-daily grid** whenever a date column is
+    available. This keeps RAR%/R-Cubed/Robust Sharpe comparable across every
+    tool and matches the calendar-daily convention used by the Modelling
+    stage (``Classes/Modelling/adjusted_rar.py``). Curves without dates fall
+    back to treating rows as calendar days (previous behaviour).
+
 CONSTANTS:
-    - BARS_PER_YEAR: 365 (calendar days, as specified)
-    - ROLLING_WINDOW_DAYS: 21 (approximate trading month for rolling monthly returns)
+    - BARS_PER_YEAR: 365 (calendar days; inputs are resampled to match)
+    - ROLLING_WINDOW_DAYS: 30 (approximate calendar month for rolling monthly returns)
     - MIN_DRAWDOWNS_FOR_R_CUBED: 5 (preferred, will use available if fewer)
 
 Usage:
@@ -38,11 +49,13 @@ from datetime import datetime
 # CONSTANTS
 # ============================================================================
 
-# Bars per year for annualization (calendar days as specified)
+# Bars per year for annualization (calendar days; calculate_all resamples
+# dated curves to a calendar-daily grid so this is always the true cadence)
 BARS_PER_YEAR: int = 365
 
-# Rolling window for "monthly" returns calculation (trading days approximating a month)
-ROLLING_WINDOW_DAYS: int = 21
+# Rolling window for "monthly" returns calculation (calendar days in a month,
+# applied to the calendar-daily resampled curve)
+ROLLING_WINDOW_DAYS: int = 30
 
 # Preferred number of drawdowns for R-Cubed calculation
 PREFERRED_DRAWDOWNS_FOR_R_CUBED: int = 5
@@ -51,7 +64,7 @@ PREFERRED_DRAWDOWNS_FOR_R_CUBED: int = 5
 MIN_R_SQUARED_THRESHOLD: float = 0.5
 
 # Minimum periods needed for robust calculations
-MIN_PERIODS_FOR_MONTHLY_RETURNS: int = 42  # About 2 months of trading days
+MIN_PERIODS_FOR_MONTHLY_RETURNS: int = 60  # About 2 calendar months
 
 # ============================================================================
 # METRIC DEFINITIONS
@@ -343,6 +356,15 @@ class StableMetricsCalculator:
         if date_column in equity_curve.columns:
             dates = pd.to_datetime(equity_curve[date_column].values[valid_mask])
 
+        # Resample to a calendar-daily grid so BARS_PER_YEAR = 365 matches the
+        # true row cadence. Inputs arrive as trading-day bars (~252 rows/year)
+        # or one point per trade; regressing those against a 365-bar year
+        # overstated RAR% (and R-Cubed / Robust Sharpe built on it).
+        if dates is not None and len(dates) >= 2:
+            equity_clean, dates = cls._resample_to_calendar_daily(equity_clean, dates)
+            if len(equity_clean) < 2:
+                return result
+
         # Calculate RAR% and R²
         rar_result = cls._calculate_rar_and_r_squared(equity_clean)
         result.rar_pct = rar_result['rar_pct']
@@ -401,6 +423,34 @@ class StableMetricsCalculator:
             )
 
         return result
+
+    @classmethod
+    def _resample_to_calendar_daily(
+        cls,
+        equity: np.ndarray,
+        dates: pd.DatetimeIndex
+    ) -> Tuple[np.ndarray, pd.DatetimeIndex]:
+        """
+        Forward-fill an equity series onto a daily calendar grid.
+
+        Multiple rows on the same day (e.g. several trade exits) collapse to
+        the last value of that day; gaps (weekends, no-trade days) carry the
+        previous equity forward. The result has exactly one row per calendar
+        day, which is the cadence BARS_PER_YEAR assumes.
+
+        Args:
+            equity: Equity values (already cleaned: finite and positive)
+            dates: Matching datetimes (any order; normalized to dates here)
+
+        Returns:
+            Tuple of (daily equity values, daily DatetimeIndex)
+        """
+        series = pd.Series(equity, index=pd.DatetimeIndex(dates).normalize())
+        # groupby sorts by date and takes the day's last observation.
+        series = series.groupby(level=0).last()
+        grid = pd.date_range(series.index.min(), series.index.max(), freq="D")
+        series = series.reindex(grid).ffill()
+        return series.values, grid
 
     @classmethod
     def _calculate_rar_and_r_squared(
@@ -697,8 +747,10 @@ class StableMetricsCalculator:
 
         Robust Sharpe = RAR% / Annualized Std Dev of Monthly Returns
 
-        Uses rolling 21-day window for "monthly" returns to avoid
-        calendar month dependencies.
+        Uses a rolling ROLLING_WINDOW_DAYS (30 calendar-day) window for
+        "monthly" returns to avoid calendar month dependencies. The equity
+        array is expected on the calendar-daily grid produced by
+        _resample_to_calendar_daily.
 
         Args:
             equity: Array of equity values
@@ -728,8 +780,7 @@ class StableMetricsCalculator:
         # Standard deviation of monthly returns
         monthly_std = rolling_returns.std()
 
-        # Annualize: there are approximately 12 "monthly" periods per year
-        # (365 / 21 ≈ 17.4, but we use 12 for traditional monthly interpretation)
+        # Annualize: 30-calendar-day windows ≈ 12 "monthly" periods per year
         periods_per_year = 12
         monthly_std_annualized = monthly_std * np.sqrt(periods_per_year) * 100
 

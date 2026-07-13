@@ -402,12 +402,18 @@ class UnivariateOptimizer:
         # Combine all equity curves and trades
         all_equity_values = []
         all_trades = []
+        longest_dates = None
 
         for result in results:
             if result.equity_curve is not None and len(result.equity_curve) > 0:
                 equity_col = result.equity_curve.get('equity', result.equity_curve.iloc[:, 0] if len(result.equity_curve.columns) > 0 else pd.Series())
                 if len(equity_col) > 0:
                     all_equity_values.append(equity_col.values)
+                    # Keep the dates of the longest curve so stable metrics
+                    # can annualize on the true calendar cadence.
+                    if 'date' in result.equity_curve.columns and (
+                            longest_dates is None or len(equity_col) > len(longest_dates)):
+                        longest_dates = result.equity_curve['date'].values
             all_trades.extend(result.trades)
 
         if not all_equity_values:
@@ -421,8 +427,12 @@ class UnivariateOptimizer:
             padded = np.pad(equity, (0, max_len - len(equity)), mode='edge')
             combined_equity += padded
 
-        # Create DataFrame for centralized metrics
-        equity_df = pd.DataFrame({'equity': combined_equity})
+        # Create DataFrame for centralized metrics (dates enable calendar-daily
+        # annualization in StableMetricsCalculator)
+        if longest_dates is not None and len(longest_dates) == max_len:
+            equity_df = pd.DataFrame({'date': longest_dates, 'equity': combined_equity})
+        else:
+            equity_df = pd.DataFrame({'equity': combined_equity})
 
         # Calculate all metrics using centralized class
         all_metrics = CentralizedPerformanceMetrics.calculate_all_metrics(

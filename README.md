@@ -152,9 +152,10 @@ and graph view) plus standalone guides that read fine anywhere:
   (enforced by `HistoricalDataView`, not just convention)
 - Configurable commission (percentage or fixed) and slippage (direction-aware)
 - Multi-currency support with strict FX validation (fails fast if rates are missing)
-- Primary support is **long** strategies; a short direction exists but has a
-  known equity-accounting caveat — see
-  [System Evaluation §2.2](docs/SYSTEM_EVALUATION.md) before relying on it
+- LONG and SHORT strategies, with direction-aware fills, stops, and cash
+  accounting (shorts are carried as posted collateral ± unrealised P/L; the
+  equity curve and trade log are covered by an invariant test in both
+  directions)
 
 ### Strategy Features
 - Stop loss, take profit, trailing stops with indicator-based adjustments
