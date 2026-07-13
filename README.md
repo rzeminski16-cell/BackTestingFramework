@@ -115,11 +115,10 @@ BackTestingFramework/
 └── tools/, scripts/         # Command-line utilities
 ```
 
-> **Note:** the `backtesting/` package, `run_gui.py`, `examples/`, and the
-> tkinter GUIs in `apps/backtest_gui.py` / `apps/optimization_gui.py` are an
-> older, parallel implementation kept for reference. The maintained system is
-> `Classes/` + the `ctk_*` GUIs. See
-> [System Evaluation](docs/SYSTEM_EVALUATION.md) for the consolidation plan.
+> **Note:** the older parallel implementation (`backtesting/` package,
+> `run_gui.py`, `examples/`, tkinter GUIs in `apps/`) has been removed — the
+> maintained system is `Classes/` + the `ctk_*` GUIs. If you ever need the
+> old code, it is preserved under the `legacy-frameworks` git tag.
 
 ## Documentation
 

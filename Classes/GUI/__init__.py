@@ -1,16 +1,13 @@
 """
-GUI components for the backtesting framework.
-"""
-from .basket_manager_dialog import BasketManagerDialog, VulnerabilityScoreConfigDialog
-from .wizard_base import WizardBase, WizardStep, ReviewStep
-from .results_window import ResultsWindow, OptimizationResultsWindow
+GUI components for the backtesting framework (CustomTkinter).
 
-__all__ = [
-    'BasketManagerDialog',
-    'VulnerabilityScoreConfigDialog',
-    'WizardBase',
-    'WizardStep',
-    'ReviewStep',
-    'ResultsWindow',
-    'OptimizationResultsWindow'
-]
+Import the ctk_* modules directly, e.g.:
+
+    from Classes.GUI.ctk_theme import Theme, Colors, Fonts, Sizes
+    from Classes.GUI.ctk_wizard_base import CTkWizardBase, CTkWizardStep
+    from Classes.GUI.ctk_basket_manager_dialog import CTkBasketManagerDialog
+
+The legacy tkinter widgets (wizard_base, basket_manager_dialog,
+results_window) were removed with the legacy framework; recover them from
+the ``legacy-frameworks`` git tag if ever needed.
+"""
