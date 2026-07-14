@@ -77,6 +77,9 @@ python -m btf list                                                   # what's av
 python -m btf backtest --strategy AlphaTrendV1Strategy --symbols AAPL --report
 python -m btf optimize --strategy AlphaTrendV1Strategy --symbol AAPL
 python -m btf montecarlo --trade-log logs/<run>/trades.csv
+python -m btf signals  --strategy AlphaTrendV1Strategy --basket Technology  # today's paper actions
+python -m btf ingest                                                 # CSVs -> fast typed Parquet
+python -m btf new-strategy MyIdeaStrategy                            # scaffold (auto-discovered)
 python -m btf dashboard
 ```
 

@@ -15,6 +15,23 @@ from datetime import datetime
 logger = logging.getLogger(__name__)
 
 
+def parse_date_column(series: pd.Series) -> pd.Series:
+    """
+    Parse a date column safely across formats.
+
+    ISO 8601 dates (YYYY-MM-DD) are unambiguous and parsed strictly first —
+    previously `dayfirst=True` silently swapped month and day on ISO input
+    (2024-01-10 became October 1st). Non-ISO data falls back to the
+    historical mixed/day-first parsing used for UK-style dd/mm/yyyy CSVs.
+    """
+    if pd.api.types.is_datetime64_any_dtype(series):
+        return series
+    try:
+        return pd.to_datetime(series, format="ISO8601")
+    except (ValueError, TypeError):
+        return pd.to_datetime(series, format="mixed", dayfirst=True)
+
+
 class MissingColumnError(ValueError):
     """
     Error raised when required columns are missing from raw data.
@@ -82,9 +99,32 @@ class DataLoader:
         if not self.data_directory.exists():
             raise FileNotFoundError(f"Data directory not found: {data_directory}")
 
+    def _find_data_file(self, symbol: str) -> Path:
+        """
+        Locate the data file for a symbol, preferring Parquet over CSV.
+
+        Parquet siblings (written by ``python -m btf ingest``) are typed and
+        pre-validated, so they load several times faster; a Parquet file is
+        only used when it is at least as new as its CSV, so editing a CSV
+        never serves stale data.
+        """
+        for base in ([symbol] + [f"{symbol}{s}" for s in
+                                 ('_daily', '_weekly', '_monthly', '_hourly')]):
+            csv_path = self.data_directory / f"{base}.csv"
+            parquet_path = self.data_directory / f"{base}.parquet"
+            if parquet_path.exists():
+                if (not csv_path.exists()
+                        or parquet_path.stat().st_mtime >= csv_path.stat().st_mtime):
+                    return parquet_path
+            if csv_path.exists():
+                return csv_path
+        raise FileNotFoundError(
+            f"CSV file not found for {symbol}: "
+            f"{self.data_directory / f'{symbol}.csv'}")
+
     def load_csv(self, symbol: str, required_columns: Optional[List[str]] = None) -> pd.DataFrame:
         """
-        Load CSV file for a symbol.
+        Load data for a symbol (Parquet preferred when present, else CSV).
 
         Args:
             symbol: Security symbol (e.g., 'AAPL', 'BTCUSD')
@@ -94,23 +134,15 @@ class DataLoader:
             DataFrame with data
 
         Raises:
-            FileNotFoundError: If CSV file not found
+            FileNotFoundError: If no data file found
             ValueError: If required columns missing
         """
-        file_path = self.data_directory / f"{symbol}.csv"
+        file_path = self._find_data_file(symbol)
 
-        if not file_path.exists():
-            # Try common data-frequency suffixed filenames (e.g., ACMR_daily.csv)
-            for suffix in ('_daily', '_weekly', '_monthly', '_hourly'):
-                suffixed_path = self.data_directory / f"{symbol}{suffix}.csv"
-                if suffixed_path.exists():
-                    file_path = suffixed_path
-                    break
-            else:
-                raise FileNotFoundError(f"CSV file not found for {symbol}: {file_path}")
-
-        # Load CSV
-        df = pd.read_csv(file_path)
+        if file_path.suffix == ".parquet":
+            df = pd.read_parquet(file_path)
+        else:
+            df = pd.read_csv(file_path)
 
         # Normalize column names to lowercase
         df.columns = df.columns.str.lower().str.strip()
@@ -121,7 +153,7 @@ class DataLoader:
 
         # Parse date column
         if 'date' in df.columns:
-            df['date'] = pd.to_datetime(df['date'], format='mixed', dayfirst=True)
+            df['date'] = parse_date_column(df['date'])
             df.sort_values('date', inplace=True)
             df.reset_index(drop=True, inplace=True)
 
@@ -196,7 +228,8 @@ class DataLoader:
 
     def get_available_symbols(self) -> List[str]:
         """
-        Get list of available symbols (CSV files in data directory).
+        Get list of available symbols (CSV or Parquet files in the data
+        directory).
 
         Strips common suffixes like '_daily' from filenames to return
         clean ticker symbols (e.g., 'ACMR' instead of 'ACMR_daily').
@@ -204,9 +237,10 @@ class DataLoader:
         Returns:
             List of symbol names
         """
-        csv_files = list(self.data_directory.glob("*.csv"))
+        data_files = (list(self.data_directory.glob("*.csv"))
+                      + list(self.data_directory.glob("*.parquet")))
         symbols = set()
-        for f in csv_files:
+        for f in data_files:
             stem = f.stem
             if stem.upper() == 'SAMPLE':
                 continue

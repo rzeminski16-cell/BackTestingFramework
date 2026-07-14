@@ -33,7 +33,7 @@ dependencies = [
 gui = ["customtkinter>=5.2.0"]                       # desktop GUIs (needs system tkinter)
 dashboard = ["streamlit>=1.30.0", "plotly>=5.18.0"]  # apps/modelling_dashboard.py
 shap = ["shap>=0.43.0"]                              # optional SHAP summaries in Modelling
-dev = ["pytest>=8.0", "pytest-timeout>=2.2", "ruff>=0.4"]
+dev = ["pytest>=8.0", "pytest-timeout>=2.2", "ruff>=0.4", "hypothesis>=6.100"]
 all = ["backtesting-framework[gui,dashboard,shap]"]
 
 [tool.setuptools.dynamic]

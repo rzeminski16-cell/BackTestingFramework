@@ -128,6 +128,44 @@ def build_parser() -> argparse.ArgumentParser:
     p_mc.add_argument("--json", help="Write metrics JSON to this file")
     p_mc.set_defaults(func=commands.cmd_montecarlo)
 
+    # ---- ingest ------------------------------------------------------------ #
+    p_ing = sub.add_parser("ingest", help="Convert raw CSVs to typed, "
+                                          "validated Parquet (faster loads)")
+    p_ing.add_argument("--data-dir", default=str(commands.DEFAULT_DATA_DIR))
+    p_ing.add_argument("--force", action="store_true",
+                       help="Re-write Parquet even when up to date")
+    p_ing.set_defaults(func=commands.cmd_ingest)
+
+    # ---- signals ------------------------------------------------------------ #
+    p_sig = sub.add_parser("signals", help="Live-paper bridge: the strategy's "
+                                           "action on the latest collected bar "
+                                           "(ENTER/EXIT/HOLDING/FLAT)")
+    p_sig.add_argument("--strategy", required=True)
+    p_sig.add_argument("--symbols", nargs="+")
+    p_sig.add_argument("--basket")
+    p_sig.add_argument("--param", action="append", metavar="NAME=VALUE")
+    p_sig.add_argument("--capital", type=float, default=100_000.0)
+    p_sig.add_argument("--base-currency", default="GBP")
+    p_sig.add_argument("--no-fx", action="store_true")
+    p_sig.add_argument("--data-dir", default=str(commands.DEFAULT_DATA_DIR))
+    p_sig.add_argument("--json", help="Write per-symbol signals JSON (for cron)")
+    p_sig.set_defaults(func=commands.cmd_signals)
+
+    # ---- new-strategy ------------------------------------------------------ #
+    p_new = sub.add_parser("new-strategy", help="Scaffold a new strategy file "
+                                                "(auto-discovered, no registry "
+                                                "edit needed)")
+    p_new.add_argument("name", help="Strategy class name, e.g. "
+                                    "MeanReversionStrategy")
+    p_new.add_argument("--direction", choices=["long", "short"], default="long")
+    p_new.add_argument("--indicators", nargs="+", metavar="COLUMN",
+                       help="Indicator columns the strategy needs from raw "
+                            "data (default: atr_14)")
+    p_new.add_argument("--output-dir", default="strategies")
+    p_new.add_argument("--force", action="store_true",
+                       help="Overwrite an existing file")
+    p_new.set_defaults(func=commands.cmd_new_strategy)
+
     # ---- dashboard --------------------------------------------------------- #
     p_dash = sub.add_parser("dashboard", help="Launch the Streamlit results "
                                               "dashboard")

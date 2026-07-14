@@ -6,10 +6,10 @@
 ## Summary
 
 ```
-946 passed, 2 warnings (Python 3.11)
+975 passed, 2 warnings (Python 3.11)
 ```
 
-All 42 test modules pass, covering: engines (single-security, portfolio,
+All 44 test modules pass, covering: engines (single-security, portfolio,
 integration), strategies (AlphaTrend family, short-only base, random control),
 core & optimization metrics, currency conversion, data layer & collection,
 data preparation, modelling & evaluation, Monte Carlo, pattern analysis,
@@ -51,6 +51,20 @@ Added 2026-07-14 (P3 product polish):
   hermetic end-to-end single and portfolio backtests on synthetic data
   (trade-log CSV + metrics JSON assertions), next-bar-open flag, and
   Monte Carlo from both a trade log and a daily equity curve.
+
+Added 2026-07-14 (P4):
+
+- `test_p4_features.py` — strategy auto-discovery (all known strategies
+  found, no abstracts), the `new-strategy` scaffold (generates a working,
+  instantiable strategy; correct stop side; overwrite protection), the
+  Parquet store (ingest, loader preference, CSV/Parquet equivalence,
+  staleness fallback, validation warnings), and the `btf signals` bridge
+  (ENTER / EXIT / HOLDING / FLAT / ERROR classification).
+- `test_engine_properties.py` — hypothesis property tests: ledger
+  conservation, finite self-consistent equity curves, stop monotonicity
+  against adversarial adjustment proposals, partial-exit quantity
+  invariants, intrabar fill bounds, and Monte Carlo seed reproducibility
+  across randomly generated scenarios.
 
 The two warnings are benign numpy `RuntimeWarning`s from intentional
 edge-case tests (correlation of identical values).

@@ -27,6 +27,15 @@
 > surfacing + dependency-aware cards, dashboard run-path fix + Compare-runs
 > page, five new module guides + CLI reference + expanded metrics glossary,
 > and Windows-path hygiene. Suite: 946 passed.
+>
+> **P4 is complete — the roadmap is fully executed** (see §6): Parquet-first
+> data store with `btf ingest`, strategy auto-discovery + entry-point
+> plugins + `btf new-strategy` scaffold, the stateless `btf signals`
+> live-paper bridge, and hypothesis property tests for the engine
+> invariants. Remaining open items are the two deferred by the owner (API
+> key rotation; optional git-history rewrite) and the incremental ideas
+> noted inline (per-security cost profiles, portfolio next-bar-open, a
+> persistent paper account, Data-Prep/Modelling CLI wrappers).
 
 ---
 
@@ -429,16 +438,37 @@ in rough priority order:
     backslash paths from Windows-written settings before building `Path`s;
     the template already used forward slashes.
 
-### P4 — Nice to have
+### P4 — Nice to have — **DONE (2026-07-14)**
 
-21. Parquet-first data store with an ingest CLI (CSV → typed, validated
-    Parquet) — faster loads, schema enforcement, and smaller than CSV.
-22. Plugin-style strategy discovery (entry points) instead of editing a
-    registry, plus a strategy scaffold generator (`btf new-strategy`).
-23. Live-paper bridge: emit signals from the newest bar of collected data on a
-    schedule, so research and (simulated) production share one code path.
-24. Property-based tests (hypothesis) for the engine invariants: cash + value
-    conservation, no negative quantities, stop monotonicity per direction.
+21. ~~Parquet-first data store~~ **DONE** — `Classes/Data/parquet_store.py`
+    converts CSVs to typed, validated Parquet (`btf ingest`): dates parsed
+    strictly (ISO first — this fixed a real loader footgun where
+    `dayfirst=True` silently swapped month/day on ISO dates), duplicates
+    collapsed, non-positive closes dropped, all with per-file warnings.
+    `DataLoader` transparently prefers a Parquet sibling while it is at
+    least as new as its CSV, and lists Parquet-only symbols.
+22. ~~Plugin-style strategy discovery + scaffold~~ **DONE** —
+    `strategies/registry.py` now auto-discovers every concrete
+    `BaseStrategy` subclass in the package (drop a file in, it appears) and
+    loads external plugins via `btf.strategies` entry points (repo
+    strategies can't be silently shadowed). `btf new-strategy` scaffolds a
+    file that instantiates and backtests out of the box (risk-based sizing,
+    direction-correct ATR stop, required parameter documentation).
+23. ~~Live-paper bridge~~ **DONE (v1, stateless)** — `btf signals` replays
+    the full backtest through the real engine and reports each symbol's
+    action on the latest collected bar: ENTER (side/price/stop), EXIT
+    (reason), HOLDING (entry + current stop), FLAT — with `--json` for a
+    post-collection cron job. Research and paper trading share one code
+    path by construction. *Next increment:* a persistent paper account
+    (day-over-day fills/P&L state).
+24. ~~Property-based tests~~ **DONE** — `tests/test_engine_properties.py`
+    (hypothesis, in dev extras + CI): across randomly generated price
+    paths, schedules, directions, costs, and stop-adjustment sequences —
+    ledger conservation (`final_equity − initial == Σ trade.pl`), finite
+    self-consistent equity curves, stop monotonicity per direction against
+    adversarial proposals, partial-exit quantity invariants, intrabar fills
+    always inside the bar's traded range, and Monte Carlo seed
+    reproducibility + non-negativity.
 
 ---
 
