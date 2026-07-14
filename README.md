@@ -124,7 +124,8 @@ BackTestingFramework/
 > **Note:** the older parallel implementation (`backtesting/` package,
 > `run_gui.py`, `examples/`, tkinter GUIs in `apps/`) has been removed — the
 > maintained system is `Classes/` + the `ctk_*` GUIs. If you ever need the
-> old code, it is preserved under the `legacy-frameworks` git tag.
+> old code, it is preserved at commit `c817d98f` (tag it locally with
+> `git tag legacy-frameworks c817d98f`).
 
 ## Documentation
 

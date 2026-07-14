@@ -321,7 +321,8 @@ in rough priority order:
 7. ~~**Delete or archive the legacy frameworks**~~ **DONE** — `backtesting/`,
    `run_gui.py`, `examples/`, the tkinter `apps/*_gui.py` pair, and the
    orphaned `Classes/GUI` tkinter widgets are removed; everything is
-   recoverable from the `legacy-frameworks` git tag.
+   recoverable from commit `c817d98f` (`git tag legacy-frameworks c817d98f`;
+   the remote used by this session does not accept tag pushes).
 8. ~~**Consolidate metrics**~~ **DONE** — `Classes/Analysis/performance_metrics.py`
    now delegates profit factor, CAGR, duration, and all R-multiple math to
    the centralized module; its unit contract (win_rate as a FRACTION in
