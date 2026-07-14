@@ -5,10 +5,14 @@ All indicators and data columns are expected to be pre-calculated in the raw dat
 This module enforces strict validation - if a required column is missing, a clear
 error is raised to inform the user which columns need to be added to their data.
 """
+import logging
+
 import pandas as pd
 from pathlib import Path
 from typing import List, Optional, Dict, Set
 from datetime import datetime
+
+logger = logging.getLogger(__name__)
 
 
 class MissingColumnError(ValueError):
@@ -175,17 +179,18 @@ class DataLoader:
                 errors.append(f"{symbol}: {str(e)}")
 
         if errors:
-            print(f"\n⚠️  WARNING: Failed to load {len(errors)} symbols:")
+            logger.warning("Failed to load %d symbols:", len(errors))
             for error in errors:
-                print(f"  - {error}")
+                logger.warning("  - %s", error)
 
             if missing_column_errors:
-                print("\n📋 MISSING COLUMN SUMMARY:")
                 all_missing = set()
                 for e in missing_column_errors:
                     all_missing.update(e.missing_columns)
-                print(f"  Columns needed: {sorted(all_missing)}")
-                print("  Re-run data collection with these indicators enabled.\n")
+                logger.warning(
+                    "Missing column summary - columns needed: %s. "
+                    "Re-run data collection with these indicators enabled.",
+                    sorted(all_missing))
 
         return data
 

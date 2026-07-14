@@ -6,10 +6,10 @@
 ## Summary
 
 ```
-853 passed, 2 warnings (Python 3.11)
+866 passed, 2 warnings (Python 3.11)
 ```
 
-All 34 test modules pass, covering: engines (single-security, portfolio,
+All 35 test modules pass, covering: engines (single-security, portfolio,
 integration), strategies (AlphaTrend family, short-only base, random control),
 core & optimization metrics, currency conversion, data layer & collection,
 data preparation, modelling & evaluation, Monte Carlo, pattern analysis,
@@ -25,6 +25,10 @@ Added 2026-07-13 (P0 correctness fixes):
 - `test_stable_metrics_cadence.py` — RAR% cadence invariance (calendar-daily
   vs trading-day vs per-trade sampling) and agreement with the Modelling
   stage's Adjusted RAR.
+- `test_metric_consistency.py` — golden cross-layer tests pinning the
+  report adapter's unit contract (win_rate fraction vs percent, dollar
+  win/loss aggregates) against the centralized metrics module, so any
+  re-implemented formula that drifts fails CI.
 
 The two warnings are benign numpy `RuntimeWarning`s from intentional
 edge-case tests (correlation of identical values).

@@ -11,6 +11,11 @@
 > the API cache plus committed report workbooks are untracked (§2.5; the
 > optional history rewrite remains a manual step). P0 item 1 (API key
 > rotation) was explicitly deferred by the owner.
+>
+> **P1 is also complete** (see §6): packaging via pyproject.toml + lock file,
+> GitHub Actions CI with a ruff correctness gate, legacy frameworks removed
+> (recoverable via the `legacy-frameworks` tag), metrics consolidated with
+> golden cross-layer tests, and structured logging with per-run log files.
 
 ---
 
@@ -300,25 +305,37 @@ in rough priority order:
    reports (untracked & ignored). *Remaining:* raw-data policy decision and
    the optional one-time history rewrite.
 
-### P1 — Professional-grade engineering platform
+### P1 — Professional-grade engineering platform — **DONE (2026-07-13)**
 
-5. **One packaging story:** replace `setup.py` with `pyproject.toml` (single
-   version source, extras: `gui`, `dashboard`, `ml`, `dev`), pin a lock file,
-   delete the dead `ta` entry's cousins by auditing imports (e.g. verify
-   `yfinance`, `seaborn` usage).
-6. **CI (GitHub Actions):** fresh-venv install + `pytest` on 3.10/3.11/3.12 +
-   `ruff` lint. The install breakage (§2.4) would have been caught on day one.
-7. **Delete or archive the legacy frameworks:** `backtesting/` package,
-   `run_gui.py`, `examples/`, and the tkinter `apps/backtest_gui.py` /
-   `apps/optimization_gui.py` duplicate the `Classes/` + `ctk_*` system with
-   *different* metric implementations. Two sources of truth for Sharpe is how
-   silent discrepancies are born. Keep one; `git tag legacy` the rest away.
-8. **Consolidate metrics to the centralized module only:**
-   `Classes/Analysis/performance_metrics.py` still re-implements Calmar/CAGR/
-   profit-factor logic locally; make it a pure delegate, fix win-rate units
-   (§3.7), and add golden-value tests for every metric.
-9. **Structured logging** instead of `print()` in engines/collectors, with a
-   per-run log file the GUIs can open.
+5. ~~**One packaging story**~~ **DONE** — `pyproject.toml` replaces `setup.py`
+   (audited deps; `yfinance`, `xlsxwriter`, `numba` were declared but never
+   imported and are dropped; extras `gui`/`dashboard`/`shap`/`dev`; version
+   single-sourced from `Classes/_version.py`, shown in the launcher footer).
+   `requirements.lock` pins the 64-package closure the suite passed with.
+   Wheel build verified.
+6. ~~**CI (GitHub Actions)**~~ **DONE** — `.github/workflows/ci.yml`:
+   fresh-venv install + pytest on 3.10/3.11 (3.12 informational) + a ruff
+   correctness gate (E9/F63/F7/F82). The gate immediately caught three real
+   GUI bugs (`except ... as e` + deferred `lambda: ...e` → NameError in the
+   error dialog), now fixed.
+7. ~~**Delete or archive the legacy frameworks**~~ **DONE** — `backtesting/`,
+   `run_gui.py`, `examples/`, the tkinter `apps/*_gui.py` pair, and the
+   orphaned `Classes/GUI` tkinter widgets are removed; everything is
+   recoverable from the `legacy-frameworks` git tag.
+8. ~~**Consolidate metrics**~~ **DONE** — `Classes/Analysis/performance_metrics.py`
+   now delegates profit factor, CAGR, duration, and all R-multiple math to
+   the centralized module; its unit contract (win_rate as a FRACTION in
+   `calculate_metrics`, PERCENT in `calculate_from_trades`, dollar win/loss
+   aggregates) is documented in the docstrings and pinned by
+   `tests/test_metric_consistency.py` golden tests. Full unit *unification*
+   (one convention everywhere) remains open — it requires touching every
+   report consumer; the contract tests make that refactor safe to attempt.
+9. ~~**Structured logging**~~ **DONE** — engines, strategy base, and the data
+   layer now use module loggers instead of `print()`;
+   `Classes/Core/logging_config.setup_logging()` attaches a console handler
+   plus a per-run log file under `logs/`, wired into the launcher, backtest
+   GUI, and both optimization GUIs. Data collection already had its own
+   logging manager and is unchanged.
 
 ### P2 — Analytics depth
 

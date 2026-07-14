@@ -372,6 +372,8 @@ class CTkMainLauncher(ctk.CTk):
 
 def main():
     """Main entry point for the launcher."""
+    from Classes.Core.logging_config import setup_logging
+    setup_logging(app_name="launcher")
     app = CTkMainLauncher()
     app.mainloop()
 

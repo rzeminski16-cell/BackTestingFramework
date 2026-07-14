@@ -47,7 +47,9 @@ from strategies.short_only_base_strategy import ShortOnlyBaseStrategy
 # Import centralized strategy configuration
 from config.strategy_config import StrategyConfig
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+from Classes.Core.logging_config import setup_logging
+
+setup_logging(app_name="univariate_optimization")
 logger = logging.getLogger(__name__)
 
 

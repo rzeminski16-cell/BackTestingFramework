@@ -1,10 +1,14 @@
 """
 Currency conversion module for handling multi-currency backtesting.
 """
+import logging
+
 import pandas as pd
 from pathlib import Path
 from typing import Dict, Optional
 from datetime import datetime
+
+logger = logging.getLogger(__name__)
 
 
 class MissingFXRateError(ValueError):
@@ -114,7 +118,7 @@ class CurrencyConverter:
                 try:
                     self.load_rates(currency_pair, file_path)
                 except Exception as e:
-                    print(f"Warning: Failed to load {file_path}: {e}")
+                    logger.warning("Failed to load %s: %s", file_path, e)
 
     def _rate_on_date(self, df: pd.DataFrame, date: datetime) -> Optional[float]:
         """

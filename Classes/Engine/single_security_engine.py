@@ -1,6 +1,8 @@
 """
 Single security backtesting engine.
 """
+import logging
+
 import pandas as pd
 from typing import List, Optional, Callable
 from datetime import datetime
@@ -18,6 +20,8 @@ from ..Data.currency_converter import CurrencyConverter, MissingFXRateError
 from ..Data.security_registry import SecurityRegistry, MissingCurrencyError
 from ..Data.historical_data_view import HistoricalDataView
 from ..Models.trade import reset_trade_counter
+
+logger = logging.getLogger(__name__)
 
 
 class SingleSecurityEngine:
@@ -338,9 +342,10 @@ class SingleSecurityEngine:
             # Flag that this ticker is in a different currency (once per symbol).
             if symbol not in self._fx_rate_warnings:
                 self._fx_rate_warnings.add(symbol)
-                print(
-                    f"FX: {symbol} is denominated in {currency}; converting to "
-                    f"{base_currency} using {currency}/{base_currency} rates."
+                logger.info(
+                    "FX: %s is denominated in %s; converting to %s using "
+                    "%s/%s rates.", symbol, currency, base_currency,
+                    currency, base_currency
                 )
 
             if not self.currency_converter.has_rate(currency):

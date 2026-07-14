@@ -1,5 +1,7 @@
 # Backtesting Framework
 
+[![CI](https://github.com/rzeminski16-cell/BackTestingFramework/actions/workflows/ci.yml/badge.svg)](https://github.com/rzeminski16-cell/BackTestingFramework/actions/workflows/ci.yml)
+
 A Python research platform for developing, testing, optimising, and evaluating
 trading strategies on historical data — from raw data collection through
 backtesting and optimisation to ML-based strategy diagnostics and an
@@ -27,13 +29,17 @@ interactive results dashboard.
 git clone <your-repo-url>
 cd BackTestingFramework
 
-pip install -r requirements.txt
+pip install -r requirements.txt        # full environment (GUIs + dashboard)
+# or, for exact reproducible versions:
+# pip install -r requirements.lock
 
 # On Linux, the GUIs additionally need tkinter:
 # sudo apt-get install python3-tk
 ```
 
-Python 3.10+ recommended (the test suite runs on 3.11).
+Python 3.10+ (CI runs the suite on 3.10 and 3.11). Package metadata,
+optional extras (`gui`, `dashboard`, `shap`, `dev`), and tool configuration
+live in [pyproject.toml](pyproject.toml).
 
 ### Launch the Main Menu
 

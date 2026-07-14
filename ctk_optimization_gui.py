@@ -53,7 +53,9 @@ from strategies.alpha_trend_v2c3_strategy import AlphaTrendV2C3Strategy
 from strategies.alpha_trend_v3c1_strategy import AlphaTrendV3C1Strategy
 from strategies.short_only_base_strategy import ShortOnlyBaseStrategy
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+from Classes.Core.logging_config import setup_logging
+
+setup_logging(app_name="optimization")
 logger = logging.getLogger(__name__)
 
 

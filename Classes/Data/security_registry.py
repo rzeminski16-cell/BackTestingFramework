@@ -2,10 +2,13 @@
 Security registry for tracking available securities and metadata.
 """
 import json
+import logging
 import warnings
 from pathlib import Path
 from typing import Dict, List, Optional, Set
 from dataclasses import dataclass
+
+logger = logging.getLogger(__name__)
 
 
 class MissingCurrencyError(ValueError):
@@ -224,18 +227,20 @@ class SecurityRegistry:
         issues = self.validate_securities(symbols)
 
         if issues['not_found']:
-            print(f"WARNING: {len(issues['not_found'])} securities not found in security_metadata.json:")
+            logger.warning("%d securities not found in security_metadata.json:",
+                           len(issues['not_found']))
             for sym in issues['not_found'][:10]:
-                print(f"  - {sym}")
+                logger.warning("  - %s", sym)
             if len(issues['not_found']) > 10:
-                print(f"  ... and {len(issues['not_found']) - 10} more")
+                logger.warning("  ... and %d more", len(issues['not_found']) - 10)
 
         if issues['missing_currency']:
-            print(f"WARNING: {len(issues['missing_currency'])} securities have no currency defined (assuming USD):")
+            logger.warning("%d securities have no currency defined (assuming USD):",
+                           len(issues['missing_currency']))
             for sym in issues['missing_currency'][:10]:
-                print(f"  - {sym}")
+                logger.warning("  - %s", sym)
             if len(issues['missing_currency']) > 10:
-                print(f"  ... and {len(issues['missing_currency']) - 10} more")
+                logger.warning("  ... and %d more", len(issues['missing_currency']) - 10)
 
     def get_symbols_by_type(self, security_type: str) -> List[str]:
         """

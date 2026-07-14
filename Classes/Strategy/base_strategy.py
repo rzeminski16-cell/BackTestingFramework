@@ -18,6 +18,7 @@ OPTIONAL COMPONENTS (may be left blank):
 4. should_pyramid(): Pyramiding rules (max 1 pyramid per trade)
 
 """
+import logging
 from abc import ABC, abstractmethod
 from typing import List, Dict, Any, Optional, Set
 import pandas as pd
@@ -31,6 +32,8 @@ from .fundamental_rules import (
     FundamentalData,
     FundamentalCheckResult
 )
+
+logger = logging.getLogger(__name__)
 
 
 class StrategyValidationError(Exception):
@@ -231,10 +234,13 @@ class BaseStrategy(ABC):
                 # Additional check: if the column has NaN throughout, it's likely data quality issue
                 total_nan_pct = result[col].isna().sum() / len(result)
                 if total_nan_pct < 0.5:  # Only warn if less than 50% NaN overall
-                    print(f"\n⚠️  DATA LEAKAGE WARNING in prepare_data():")
-                    print(f"   Column '{col}' has {end_nan_count} NaN values at END vs {start_nan_count} at START.")
-                    print(f"   This pattern may indicate .shift(-n) with negative offset (look-ahead bias).")
-                    print(f"   Only use causal operations: .rolling(), .expanding(), .shift(n>=0)\n")
+                    logger.warning(
+                        "DATA LEAKAGE WARNING in prepare_data(): column %r has "
+                        "%d NaN values at END vs %d at START. This pattern may "
+                        "indicate .shift(-n) with a negative offset (look-ahead "
+                        "bias). Only use causal operations: .rolling(), "
+                        ".expanding(), .shift(n>=0)",
+                        col, end_nan_count, start_nan_count)
 
     def _prepare_data_impl(self, data: pd.DataFrame) -> pd.DataFrame:
         """
