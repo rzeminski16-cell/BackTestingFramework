@@ -16,7 +16,7 @@ from ..Models.trade_direction import TradeDirection
 from ..Models.order import Order, OrderSide, OrderType
 from ..Models.trade import Trade, reset_trade_counter
 from ..Models.position import Position
-from ..Config.config import PortfolioConfig
+from ..Config.config import PortfolioConfig, ExecutionTiming
 from ..Config.capital_contention import CapitalContentionMode
 from .position_manager import PositionManager
 from .trade_executor import TradeExecutor
@@ -197,6 +197,17 @@ class PortfolioEngine:
         # Reset trade ID counter for this backtest
         reset_trade_counter()
 
+        # NEXT_BAR_OPEN is not supported here: capital-contention decisions
+        # (rejections, vulnerability swaps) are made while processing the
+        # bar's signals and cannot be deferred to the next open coherently.
+        if getattr(self.config, 'execution_timing',
+                   ExecutionTiming.SAME_BAR_CLOSE) == ExecutionTiming.NEXT_BAR_OPEN:
+            raise ValueError(
+                "execution_timing='next_bar_open' is currently supported by "
+                "the single-security engine only. Use SAME_BAR_CLOSE for "
+                "portfolio backtests."
+            )
+
         # Fail fast on currency/FX problems before running the backtest.
         self._validate_currencies(list(data_dict.keys()))
 
@@ -328,22 +339,46 @@ class PortfolioEngine:
 
                 # PRIORITY 1: Check stop loss (natural exits always take priority)
                 if pm.has_position:
-                    if strategy.should_check_stop_loss(context):
-                        if pm.check_stop_loss(current_price):
-                            capital = self._close_position(
-                                symbol, current_date, current_price,
-                                "Stop loss hit", capital, pm
-                            )
-                            continue
+                    # Track intra-trade excursions (MAE/MFE) off the bar's
+                    # extremes, falling back to the close when unavailable.
+                    bar_row = data.loc[label_index]
+                    bar_high = bar_row['high'] if 'high' in data.columns else current_price
+                    bar_low = bar_row['low'] if 'low' in data.columns else current_price
+                    pm.position.update_excursions(bar_high, bar_low)
 
-                    # Check take profit
-                    if strategy.should_check_take_profit(context):
-                        if pm.check_take_profit(current_price):
+                    if self.config.intrabar_stops:
+                        # Evaluate stop/TP against the bar's full range with
+                        # gap-aware fills (resting-order model).
+                        bar_open = bar_row['open'] if 'open' in data.columns else current_price
+                        intrabar_fill = pm.check_exits_intrabar(
+                            bar_open, bar_high, bar_low,
+                            check_stop=strategy.should_check_stop_loss(context),
+                            check_tp=strategy.should_check_take_profit(context)
+                        )
+                        if intrabar_fill is not None:
+                            fill_price, fill_reason = intrabar_fill
                             capital = self._close_position(
-                                symbol, current_date, current_price,
-                                "Take profit hit", capital, pm
+                                symbol, current_date, fill_price,
+                                fill_reason, capital, pm
                             )
                             continue
+                    else:
+                        if strategy.should_check_stop_loss(context):
+                            if pm.check_stop_loss(current_price):
+                                capital = self._close_position(
+                                    symbol, current_date, current_price,
+                                    "Stop loss hit", capital, pm
+                                )
+                                continue
+
+                        # Check take profit
+                        if strategy.should_check_take_profit(context):
+                            if pm.check_take_profit(current_price):
+                                capital = self._close_position(
+                                    symbol, current_date, current_price,
+                                    "Take profit hit", capital, pm
+                                )
+                                continue
 
                     # Check trailing stop (direction-aware)
                     new_stop = strategy.should_adjust_stop(context)

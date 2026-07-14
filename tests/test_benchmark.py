@@ -267,3 +267,46 @@ class TestBenchmarkCollector(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestRelativeMaxDrawdown:
+    """P2 addition: worst peak-to-trough underperformance vs the benchmark."""
+
+    def _curves(self):
+        import pandas as pd
+        dates = pd.date_range("2024-01-01", periods=5, freq="D")
+        # Strategy flat at 100; benchmark rises 100 -> 125 then returns to 100.
+        # Relative line = 1, 1/1.25 = 0.8, ... -> 20% relative drawdown even
+        # though the strategy itself never draws down.
+        equity = pd.DataFrame({"date": dates, "equity": [100.0] * 5})
+        bench = pd.DataFrame({"date": dates,
+                              "close": [100.0, 125.0, 125.0, 110.0, 100.0]})
+        return equity, bench
+
+    def test_relative_drawdown_detected(self):
+        from Classes.Analysis.benchmark import compute_benchmark_comparison
+        equity, bench = self._curves()
+        comp = compute_benchmark_comparison(equity, bench, benchmark_name="B")
+        assert comp.is_valid
+        assert abs(comp.relative_max_drawdown_pct - 20.0) < 1e-6
+        # The absolute strategy line never fell, so this is purely relative.
+        assert comp.strategy_total_return_pct == 0.0
+
+    def test_outperformance_has_zero_relative_drawdown(self):
+        import pandas as pd
+        from Classes.Analysis.benchmark import compute_benchmark_comparison
+        dates = pd.date_range("2024-01-01", periods=4, freq="D")
+        equity = pd.DataFrame({"date": dates,
+                               "equity": [100.0, 105.0, 110.0, 115.0]})
+        bench = pd.DataFrame({"date": dates,
+                              "close": [100.0, 101.0, 102.0, 103.0]})
+        comp = compute_benchmark_comparison(equity, bench, benchmark_name="B")
+        assert comp.relative_max_drawdown_pct == 0.0
+
+    def test_present_in_dict_and_summary(self):
+        from Classes.Analysis.benchmark import compute_benchmark_comparison
+        equity, bench = self._curves()
+        comp = compute_benchmark_comparison(equity, bench, benchmark_name="B")
+        assert "relative_max_drawdown_pct" in comp.to_dict()
+        labels = [row[0] for row in comp.summary_rows()]
+        assert "Relative Max Drawdown" in labels

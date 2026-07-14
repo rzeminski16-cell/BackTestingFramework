@@ -71,6 +71,10 @@ class Position:
     entry_fx_rate: float = 1.0  # FX rate at entry
     security_currency: str = "GBP"  # Currency security is denominated in
     entry_equity: float = 0.0  # Total portfolio equity at time of entry
+    # Intra-trade excursions relative to entry price, updated each bar by the
+    # engine. MFE >= 0 is the best unrealized move, MAE <= 0 the worst.
+    max_favorable_excursion_pct: Optional[float] = None
+    max_adverse_excursion_pct: Optional[float] = None
 
     def __post_init__(self) -> None:
         # Validate stop side relative to entry. A LONG with stop >= entry
@@ -313,6 +317,40 @@ class Position:
             )
         self.partial_exits.append(exit)
         self.current_quantity -= exit.quantity
+
+    def update_excursions(self, high: float, low: float) -> None:
+        """
+        Update max favorable/adverse excursion from a bar's price extremes.
+
+        Excursions are percentages relative to the (current average) entry
+        price, direction-aware: for a LONG the bar high is favorable and the
+        bar low adverse; mirrored for a SHORT. Callers without high/low data
+        can pass the close for both.
+
+        Args:
+            high: Bar high (or close)
+            low: Bar low (or close)
+        """
+        if self.entry_price <= 0:
+            return
+        if self.direction == TradeDirection.SHORT:
+            favorable = (self.entry_price - low) / self.entry_price * 100.0
+            adverse = (self.entry_price - high) / self.entry_price * 100.0
+        else:
+            favorable = (high - self.entry_price) / self.entry_price * 100.0
+            adverse = (low - self.entry_price) / self.entry_price * 100.0
+
+        if self.max_favorable_excursion_pct is None:
+            self.max_favorable_excursion_pct = max(0.0, favorable)
+        else:
+            self.max_favorable_excursion_pct = max(
+                self.max_favorable_excursion_pct, favorable)
+
+        if self.max_adverse_excursion_pct is None:
+            self.max_adverse_excursion_pct = min(0.0, adverse)
+        else:
+            self.max_adverse_excursion_pct = min(
+                self.max_adverse_excursion_pct, adverse)
 
     def update_stop_loss(self, new_stop_loss: float) -> None:
         """

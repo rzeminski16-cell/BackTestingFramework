@@ -847,6 +847,10 @@ class OptimizationReportGenerator:
                 'In-Sample Sharpe': round(window.in_sample_sharpe, 4),
                 'Out-Sample Sharpe': round(window.out_sample_sharpe, 4),
                 'Sharpe Degradation (%)': round(window.sharpe_degradation_pct, 2),
+                # Deflated Sharpe Ratio: P[true IS Sharpe beats the luckiest
+                # of the configurations searched]. > 0.95 = survives search.
+                'In-Sample DSR': round(getattr(window, 'in_sample_dsr', 0.0), 3),
+                'Search Trials': getattr(window, 'n_trials', 0),
                 'In-Sample Return (%)': round(window.in_sample_total_return_pct, 2),
                 'Out-Sample Return (%)': round(window.out_sample_total_return_pct, 2),
                 'In-Sample Max DD (%)': round(window.in_sample_max_drawdown_pct, 2),

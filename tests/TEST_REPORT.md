@@ -6,10 +6,10 @@
 ## Summary
 
 ```
-866 passed, 2 warnings (Python 3.11)
+929 passed, 2 warnings (Python 3.11)
 ```
 
-All 35 test modules pass, covering: engines (single-security, portfolio,
+All 41 test modules pass, covering: engines (single-security, portfolio,
 integration), strategies (AlphaTrend family, short-only base, random control),
 core & optimization metrics, currency conversion, data layer & collection,
 data preparation, modelling & evaluation, Monte Carlo, pattern analysis,
@@ -29,6 +29,21 @@ Added 2026-07-13 (P0 correctness fixes):
   report adapter's unit contract (win_rate fraction vs percent, dollar
   win/loss aggregates) against the centralized metrics module, so any
   re-implemented formula that drifts fails CI.
+
+Added 2026-07-14 (P2 analytics depth):
+
+- `test_engine_parity.py` — the single-security and portfolio engines must
+  produce identical trades and equity paths on the same inputs (LONG and
+  SHORT, with partials, trailing stops, and costs).
+- `test_risk_metrics.py` — exposure, VaR/CVaR, rolling helpers, and
+  engine-tracked MAE/MFE per trade.
+- `test_execution_realism.py` — intrabar stop/TP triggers with gap-aware
+  fills (both engines) and next-bar-open execution timing.
+- `test_deflated_sharpe.py` — PSR/DSR math (a best-of-200-noise-strategies
+  winner must NOT look significant) and WindowResult integration.
+- `test_monte_carlo_upgrades.py` — annualized per-path Sharpe/CAGR/Calmar
+  distributions and the daily-returns pool loader.
+- `test_benchmark.py` gained benchmark-relative max-drawdown coverage.
 
 The two warnings are benign numpy `RuntimeWarning`s from intentional
 edge-case tests (correlation of identical values).

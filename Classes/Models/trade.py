@@ -90,6 +90,10 @@ class Trade:
     exit_reason: str = ""
     commission_paid: float = 0.0
     partial_exits: int = 0
+    # Intra-trade excursions vs entry price (percent): MFE >= 0 best move,
+    # MAE <= 0 worst move. None when the engine did not track them.
+    mfe_pct: Optional[float] = None
+    mae_pct: Optional[float] = None
     metadata: Dict[str, Any] = None
 
     def __post_init__(self):
@@ -147,7 +151,9 @@ class Trade:
             'entry_reason': self.entry_reason,
             'exit_reason': self.exit_reason,
             'commission_paid': self.commission_paid,
-            'partial_exits': self.partial_exits
+            'partial_exits': self.partial_exits,
+            'mfe_pct': self.mfe_pct,
+            'mae_pct': self.mae_pct
         }
 
     @classmethod
@@ -224,7 +230,9 @@ class Trade:
             entry_reason=position.entry_reason,
             exit_reason=exit_reason,
             commission_paid=commission_paid,
-            partial_exits=len(position.partial_exits)
+            partial_exits=len(position.partial_exits),
+            mfe_pct=position.max_favorable_excursion_pct,
+            mae_pct=position.max_adverse_excursion_pct
         )
 
     def __str__(self) -> str:

@@ -58,6 +58,9 @@ class BenchmarkComparison:
     information_ratio: float = 0.0
     up_capture: float = 0.0       # percent
     down_capture: float = 0.0     # percent
+    # Max drawdown of the strategy/benchmark relative line: the worst
+    # peak-to-trough episode of UNDERPERFORMANCE vs the benchmark (percent).
+    relative_max_drawdown_pct: float = 0.0
 
     # date / equity DataFrame for an overlay chart (benchmark rebased to the
     # strategy's starting equity).
@@ -80,6 +83,7 @@ class BenchmarkComparison:
             "information_ratio": self.information_ratio,
             "up_capture": self.up_capture,
             "down_capture": self.down_capture,
+            "relative_max_drawdown_pct": self.relative_max_drawdown_pct,
         }
 
     def summary_rows(self) -> List[Tuple[str, Any]]:
@@ -102,6 +106,7 @@ class BenchmarkComparison:
             ("Information Ratio", f"{self.information_ratio:.2f}"),
             ("Up Capture", f"{self.up_capture:.1f}%"),
             ("Down Capture", f"{self.down_capture:.1f}%"),
+            ("Relative Max Drawdown", f"{self.relative_max_drawdown_pct:.2f}%"),
         ]
 
 
@@ -218,6 +223,16 @@ def compute_benchmark_comparison(
             if bench_dn != 0:
                 down_capture = float(strat_dn / bench_dn * 100.0)
 
+    # Benchmark-relative max drawdown: worst peak-to-trough decline of the
+    # strategy/benchmark ratio — the deepest sustained underperformance
+    # episode, invisible in the absolute drawdown when both fall together.
+    relative_max_drawdown = 0.0
+    relative_line = (merged["equity"] / start_equity) / (merged["close"] / start_close)
+    running_peak = relative_line.cummax()
+    rel_dd = (running_peak - relative_line) / running_peak * 100.0
+    if len(rel_dd):
+        relative_max_drawdown = float(rel_dd.max())
+
     return BenchmarkComparison(
         is_valid=True,
         benchmark_name=benchmark_name,
@@ -236,6 +251,7 @@ def compute_benchmark_comparison(
         information_ratio=information_ratio,
         up_capture=up_capture,
         down_capture=down_capture,
+        relative_max_drawdown_pct=relative_max_drawdown,
         benchmark_equity=benchmark_equity,
     )
 
@@ -360,6 +376,10 @@ def write_comparison_sheet(
          None,
          lambda c: f"{c.down_capture:.1f}%",
          lambda c: "red" if c.down_capture > 100 else ("green" if c.down_capture < 80 else None)),
+        ("Relative Max Drawdown (%)",
+         None,
+         lambda c: f"{c.relative_max_drawdown_pct:.2f}%",
+         lambda c: "red" if c.relative_max_drawdown_pct > 30 else None),
     ]
 
     # ── Header row ───────────────────────────────────────────────────────────

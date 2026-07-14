@@ -153,7 +153,10 @@ and graph view) plus standalone guides that read fine anywhere:
 ## Key Features
 
 ### Execution Model
-- Trades execute at **closing prices** (TradingView-style same-bar-close convention)
+- Default: trades execute at **closing prices** (TradingView-style same-bar-close
+  convention). Opt-in realism: `execution_timing=NEXT_BAR_OPEN` (fills at the
+  next bar's open) and `intrabar_stops` (stop/TP trigger on the bar's high/low
+  with gap-aware fills)
 - No look-ahead bias — strategies only see data up to the current bar
   (enforced by `HistoricalDataView`, not just convention)
 - Configurable commission (percentage or fixed) and slippage (direction-aware)
@@ -170,8 +173,17 @@ and graph view) plus standalone guides that read fine anywhere:
 
 ### Optimisation & Robustness
 - Walk-forward optimisation with Bayesian search and sensitivity analysis
+- **Deflated Sharpe Ratio** per window — deflates the winning in-sample Sharpe
+  by the number of configurations the search examined
 - Univariate parameter sweeps with stability metrics
-- Monte Carlo bootstrap (simple + block) with drawdown-responsive sizing
+- Monte Carlo bootstrap (simple + block, per-trade or daily-return pools) with
+  drawdown-responsive sizing and annualized per-path Sharpe/Calmar distributions
+
+### Risk & Benchmark Analytics
+- Per-trade MAE/MFE tracked off bar extremes; exposure/time-in-market,
+  historical VaR/CVaR, rolling Sharpe/volatility helpers
+- Benchmark comparison in every report: alpha, beta, information ratio,
+  tracking error, up/down capture, benchmark-relative max drawdown
 
 ### Modelling & Evaluation (ML diagnostics)
 - Purged & embargoed chronological cross-validation keyed on true label windows

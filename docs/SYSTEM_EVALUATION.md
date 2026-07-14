@@ -16,6 +16,12 @@
 > GitHub Actions CI with a ruff correctness gate, legacy frameworks removed
 > (recoverable via the `legacy-frameworks` tag), metrics consolidated with
 > golden cross-layer tests, and structured logging with per-run log files.
+>
+> **P2 is complete as well** (see §6): opt-in execution realism (intrabar
+> stops with gap fills, next-bar-open timing), MAE/MFE + VaR/CVaR/exposure
+> risk metrics, benchmark-relative drawdown, Deflated Sharpe in the
+> walk-forward reports, a cross-engine parity test, and Monte Carlo
+> annualized per-path distributions plus a daily-returns pool loader.
 
 ---
 
@@ -338,26 +344,49 @@ in rough priority order:
    GUI, and both optimization GUIs. Data collection already had its own
    logging manager and is unchanged.
 
-### P2 — Analytics depth
+### P2 — Analytics depth — **DONE (2026-07-14)**
 
-10. **Execution realism options:** next-bar-open fills (§3.1), intrabar
-    stop/TP triggers with gap handling (§3.2), per-security commission/slippage
-    profiles, optional volume-participation cap.
-11. **Benchmark-relative analytics:** alpha/beta, information ratio, and
-    benchmark-relative drawdown in reports (benchmark data collection already
-    exists — `raw_data/benchmarks` is unused by the report layer).
-12. **Risk metrics:** exposure %, time-in-market, VaR/CVaR on daily returns,
-    rolling Sharpe/vol charts, MAE/MFE per trade (feeds the E-ratio work you
-    already have), trade-level heat (risk at stop × concurrent positions).
-13. **Deflated Sharpe / SPA test** in the optimizer leaderboards, reusing the
-    Reality-Check machinery already in `Classes/Modelling/robustness.py` —
-    walk-forward currently reports raw OOS metrics with no multiplicity control.
-14. **Cross-engine parity test:** run one strategy through single-security and
-    portfolio engines on one symbol and assert near-identical trades/equity —
-    cheap insurance against drift between the two code paths.
-15. **Monte Carlo:** add per-path metric distributions for Calmar/Sharpe and
-    an option to bootstrap *daily returns* (not just per-trade) so duration risk
-    is represented.
+10. ~~**Execution realism options**~~ **DONE** — two opt-in `BacktestConfig`/
+    `PortfolioConfig` flags, defaults preserve historical behaviour exactly:
+    `intrabar_stops` (stop/TP trigger on the bar's high/low, gap through the
+    level fills at the open, stop-beats-TP pessimistic tie-break; both
+    engines) and `execution_timing=NEXT_BAR_OPEN` (signals fill at the next
+    bar's open; entries gapped across their stop are skipped; single-security
+    engine — the portfolio engine rejects it because contention decisions are
+    same-bar). `tests/test_execution_realism.py`. *Deferred:* per-security
+    commission/slippage profiles and volume-participation caps.
+11. ~~**Benchmark-relative analytics**~~ **already implemented** — on
+    inspection `Classes/Analysis/benchmark.py` already provides alpha, beta,
+    correlation, tracking error, information ratio, up/down capture, and a
+    comparison sheet wired into all three report generators (this roadmap
+    entry was written before that module was reviewed). Added the one missing
+    piece: **benchmark-relative max drawdown** (worst peak-to-trough of the
+    strategy/benchmark ratio) in the dataclass, sheet, and tests.
+12. ~~**Risk metrics**~~ **DONE** — engines now track per-trade **MAE/MFE**
+    off bar extremes (direction-aware, on `Trade` + CSV exports); centralized
+    metrics gained exposure/time-in-market, historical **VaR/CVaR (95%)**,
+    avg MAE/MFE, and rolling Sharpe/volatility helpers, all surfaced through
+    `calculate_all_metrics`. `tests/test_risk_metrics.py`. *Deferred:*
+    trade-level heat, report-layer rolling charts.
+13. ~~**Deflated Sharpe**~~ **DONE** — `Classes/Core/deflated_sharpe.py`
+    (PSR, expected-max-SR, DSR per Bailey & López de Prado, tested including
+    a best-of-200-noise-strategies case). The walk-forward optimizer records
+    every configuration's in-sample Sharpe during the Bayesian search (single
+    and portfolio paths) and each `WindowResult` now carries `in_sample_dsr`
+    + `n_trials`, shown in the per-window report sheet. DSR > 0.95 = the
+    training result survives its own search.
+14. ~~**Cross-engine parity test**~~ **DONE** — `tests/test_engine_parity.py`
+    runs a scripted multi-trade strategy (entries, exits, partial exits,
+    trailing stops, commission + slippage) through both engines and asserts
+    identical trades and equity paths for LONG and SHORT. Passed on first
+    run — the engines currently agree exactly.
+15. ~~**Monte Carlo**~~ **DONE** — `SimulationConfig.periods_per_year`
+    enables per-path **annualized Sharpe/CAGR/Calmar distributions** (median
+    + 5th percentile in `SimulationMetrics`), and `load_daily_returns()`
+    builds a bootstrap pool from any equity-curve/price CSV so calendar-time
+    risk can be simulated (use `risk_per_trade=1.0`, `periods_per_year=252`).
+    `tests/test_monte_carlo_upgrades.py`. *Deferred:* Monte Carlo GUI toggle
+    for the daily-pool mode.
 
 ### P3 — Product polish
 
