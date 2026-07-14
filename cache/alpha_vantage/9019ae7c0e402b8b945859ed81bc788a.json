@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T09:07:12.480958", "endpoint": "SPLITS", "params": {"symbol": "VLO"}, "data": {"symbol": "VLO", "data": [{"effective_date": "2005-12-16", "split_factor": "2.0000"}, {"effective_date": "2004-10-08", "split_factor": "2.0000"}]}}

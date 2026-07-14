@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T08:56:22.758540", "endpoint": "SPLITS", "params": {"symbol": "IJR"}, "data": {"symbol": "IJR", "data": [{"effective_date": "2017-01-19", "split_factor": "2.0000"}, {"effective_date": "2005-06-09", "split_factor": "3.0000"}]}}

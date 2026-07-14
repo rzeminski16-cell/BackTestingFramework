@@ -36,6 +36,7 @@ from skopt.utils import use_named_args
 
 # PerformanceMetrics now delegates to CentralizedPerformanceMetrics
 from Classes.Analysis.performance_metrics import PerformanceMetrics
+from Classes.Core.deflated_sharpe import deflated_sharpe_ratio
 from Classes.Config.config import BacktestConfig, PortfolioConfig, CommissionConfig
 from Classes.Config.capital_contention import CapitalContentionConfig, CapitalContentionMode, VulnerabilityScoreConfig
 from Classes.Engine.single_security_engine import SingleSecurityEngine
@@ -100,6 +101,13 @@ class WindowResult:
     # Full backtest results
     in_sample_trades: List[Trade] = field(default_factory=list)
     out_sample_trades: List[Trade] = field(default_factory=list)
+
+    # Multiple-testing control (Deflated Sharpe Ratio, Bailey & López de
+    # Prado): probability that the chosen configuration's true in-sample
+    # Sharpe exceeds the luckiest of the n_trials configurations the search
+    # examined. > 0.95 = the training result survives its own search.
+    in_sample_dsr: float = 0.0
+    n_trials: int = 0
 
 
 @dataclass
@@ -653,9 +661,16 @@ class WalkForwardOptimizer:
                             params: Dict[str, Any],
                             data: pd.DataFrame,
                             symbol: str,
-                            constraints: OptimizationConstraints) -> float:
+                            constraints: OptimizationConstraints,
+                            trial_recorder: Optional[List[float]] = None) -> float:
         """
         Evaluate a set of parameters on given data.
+
+        Args:
+            trial_recorder: When provided, the candidate's in-sample Sharpe is
+                appended for every configuration examined (winners, losers and
+                constraint violators alike) — the trial population the
+                Deflated Sharpe Ratio corrects against.
 
         Returns:
             Objective value (Sortino ratio, or penalty if constraints violated)
@@ -673,6 +688,11 @@ class WalkForwardOptimizer:
 
             # Calculate metrics
             metrics = PerformanceMetrics.calculate_metrics(result)
+
+            if trial_recorder is not None:
+                sharpe = metrics.get('sharpe_ratio', None)
+                if sharpe is not None and np.isfinite(sharpe):
+                    trial_recorder.append(float(sharpe))
 
             # Check constraints
             num_years = (data['date'].max() - data['date'].min()).days / 365.25
@@ -710,9 +730,12 @@ class WalkForwardOptimizer:
             progress_callback: Progress callback
 
         Returns:
-            Best parameters found (includes both optimized and fixed parameters)
+            Tuple of (best parameters found — optimized plus fixed — and the
+            list of in-sample Sharpe ratios of every configuration examined,
+            for Deflated Sharpe reporting)
         """
         space, param_names, fixed_params = self._get_parameter_space(strategy_class, selected_params)
+        trial_sharpes: List[float] = []
 
         bayesian_config = self.config['bayesian_optimization']
 
@@ -753,7 +776,8 @@ class WalkForwardOptimizer:
 
             # Evaluate parameters (return negative because gp_minimize minimizes)
             score = self._evaluate_parameters(
-                strategy_class, full_params, train_data, symbol, constraints
+                strategy_class, full_params, train_data, symbol, constraints,
+                trial_recorder=trial_sharpes
             )
             return -score  # Negative because we want to maximize Sortino
 
@@ -806,7 +830,7 @@ class WalkForwardOptimizer:
                     best_params[param_name] = float(param_value)
 
         logger.info(f"Optimization complete. Best parameters: {best_params}")
-        return best_params
+        return best_params, trial_sharpes
 
     def _backtest_with_params(self, strategy_class: Type[BaseStrategy],
                              params: Dict[str, Any],
@@ -890,7 +914,7 @@ class WalkForwardOptimizer:
                             current, total
                         )
 
-                best_params = self._optimize_window(
+                best_params, trial_sharpes = self._optimize_window(
                     strategy_class, train_data, symbol, constraints, selected_params, window_progress
                 )
             except Exception as e:
@@ -923,6 +947,14 @@ class WalkForwardOptimizer:
             out_sharpe = out_sample_metrics.get('sharpe_ratio', 0.0)
             sharpe_degradation = self._calculate_degradation(in_sharpe, out_sharpe)
 
+            # Deflated Sharpe: deflate the winner's in-sample Sharpe by the
+            # number of configurations this window's search examined.
+            dsr_info = deflated_sharpe_ratio(
+                observed_sharpe_annual=in_sharpe,
+                trial_sharpes_annual=trial_sharpes,
+                n_obs=len(train_data),
+            )
+
             # Create window result
             window_result = WindowResult(
                 window_id=window_id,
@@ -948,7 +980,9 @@ class WalkForwardOptimizer:
                 sortino_degradation_pct=sortino_degradation,
                 sharpe_degradation_pct=sharpe_degradation,
                 in_sample_trades=in_sample_metrics.get('trades', []),
-                out_sample_trades=out_sample_metrics.get('trades', [])
+                out_sample_trades=out_sample_metrics.get('trades', []),
+                in_sample_dsr=dsr_info['dsr'],
+                n_trials=dsr_info['n_trials']
             )
 
             window_results.append(window_result)
@@ -1106,7 +1140,7 @@ class WalkForwardOptimizer:
                             current, total
                         )
 
-                best_params = self._optimize_portfolio_window(
+                best_params, trial_sharpes = self._optimize_portfolio_window(
                     strategy_class, train_data_dict, constraints,
                     capital_contention, initial_capital, selected_params, window_progress
                 )
@@ -1140,6 +1174,15 @@ class WalkForwardOptimizer:
             out_sharpe = out_sample_metrics.get('sharpe_ratio', 0.0)
             sharpe_degradation = self._calculate_degradation(in_sharpe, out_sharpe)
 
+            # Deflated Sharpe: deflate the winner's in-sample Sharpe by the
+            # number of configurations this window's search examined.
+            n_train_days = int((train_end - train_start).days) or 1
+            dsr_info = deflated_sharpe_ratio(
+                observed_sharpe_annual=in_sharpe,
+                trial_sharpes_annual=trial_sharpes,
+                n_obs=n_train_days,
+            )
+
             # Create window result
             window_result = WindowResult(
                 window_id=window_id,
@@ -1163,7 +1206,9 @@ class WalkForwardOptimizer:
                 out_sample_total_return_pct=out_sample_metrics.get('total_return_pct', 0.0),
                 out_sample_calmar=out_sample_metrics.get('calmar_ratio', 0.0),
                 sortino_degradation_pct=sortino_degradation,
-                sharpe_degradation_pct=sharpe_degradation
+                sharpe_degradation_pct=sharpe_degradation,
+                in_sample_dsr=dsr_info['dsr'],
+                n_trials=dsr_info['n_trials']
             )
             window_results.append(window_result)
 
@@ -1256,6 +1301,7 @@ class WalkForwardOptimizer:
 
         # Track progress
         iteration = [0]
+        trial_sharpes: List[float] = []
 
         @use_named_args(space)
         def objective(**params):
@@ -1278,6 +1324,10 @@ class WalkForwardOptimizer:
             except Exception as e:
                 logger.warning(f"Backtest failed with params {all_params}: {e}")
                 return 0.0
+
+            trial_sharpe = metrics.get('sharpe_ratio', None)
+            if trial_sharpe is not None and np.isfinite(trial_sharpe):
+                trial_sharpes.append(float(trial_sharpe))
 
             # Calculate penalty for constraint violations
             penalty = self._calculate_constraint_penalty(metrics, constraints)
@@ -1323,7 +1373,7 @@ class WalkForwardOptimizer:
             best_params = {name: value for name, value in zip(param_names, result.x)}
             best_params.update(fixed_params)
 
-            return best_params
+            return best_params, trial_sharpes
 
         except Exception as e:
             logger.error(f"Portfolio window optimization failed: {e}")
@@ -1334,7 +1384,7 @@ class WalkForwardOptimizer:
                 else:
                     default_params[dim.name] = dim.categories[0]
             default_params.update(fixed_params)
-            return default_params
+            return default_params, trial_sharpes
 
     def _backtest_portfolio_with_params(self,
                                         strategy_class: Type[BaseStrategy],

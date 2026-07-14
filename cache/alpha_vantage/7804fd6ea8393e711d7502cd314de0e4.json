@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T09:07:04.901428", "endpoint": "DIVIDENDS", "params": {"symbol": "VIAV"}, "data": {"symbol": "VIAV", "data": [{"ex_dividend_date": "2015-08-04", "declaration_date": "None", "record_date": "None", "payment_date": "None", "amount": "4.69"}]}}

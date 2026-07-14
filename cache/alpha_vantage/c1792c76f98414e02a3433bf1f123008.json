@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T09:04:28.236975", "endpoint": "SPLITS", "params": {"symbol": "STLA"}, "data": {"symbol": "STLA", "data": [{"effective_date": "2017-07-03", "split_factor": "1.0040"}, {"effective_date": "2016-05-02", "split_factor": "1.0050"}, {"effective_date": "2016-01-04", "split_factor": "1.5200"}, {"effective_date": "2011-01-03", "split_factor": "2.3041"}]}}

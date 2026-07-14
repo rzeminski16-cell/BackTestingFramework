@@ -40,6 +40,19 @@ class PerformanceMetrics:
         """
         Calculate comprehensive performance metrics.
 
+        UNIT CONTRACT (relied on by the Excel report layer — do not change
+        without updating every consumer):
+            - win_rate: FRACTION (0-1); reports multiply by 100 for display.
+              Note CentralizedPerformanceMetrics returns percent (0-100), and
+              calculate_from_trades() below also returns percent.
+            - avg_win / avg_loss / largest_win / largest_loss: base-currency
+              DOLLARS (mean/max of trade.pl), unlike the centralized module's
+              percent-based avg_win/avg_loss.
+            - total_return: base-currency dollars; total_return_pct: percent.
+
+        All formulas are delegated to CentralizedPerformanceMetrics; only the
+        unit adaptations and the dollar-denominated aggregates live here.
+
         Args:
             result: Backtest result
 
@@ -99,20 +112,10 @@ class PerformanceMetrics:
         largest_win = max(wins) if wins else 0.0
         largest_loss = min(losses) if losses else 0.0
 
-        # Profit factor
-        # When all trades are winners, use a large value (not infinity) to indicate excellent performance
-        total_wins = sum(wins) if wins else 0.0
-        total_losses = abs(sum(losses)) if losses else 0.0
-        if total_losses > 0:
-            profit_factor = total_wins / total_losses
-        elif total_wins > 0:
-            profit_factor = 999.99  # All winning trades - exceptional performance
-        else:
-            profit_factor = 0.0  # No trades or no profit
-
-        # Duration
-        durations = [t.duration_days for t in trades]
-        avg_duration = np.mean(durations) if durations else 0.0
+        # Profit factor / duration (delegated: identical edge-case handling,
+        # including the 999.99 all-winners cap, lives in the centralized module)
+        profit_factor = CentralizedPerformanceMetrics.calculate_profit_factor(trades)
+        avg_duration = CentralizedPerformanceMetrics.calculate_avg_trade_duration(trades)
 
         # FX P&L statistics
         total_security_pl = sum(t.security_pl for t in trades)
@@ -141,44 +144,20 @@ class PerformanceMetrics:
         # Sortino ratio
         sortino = PerformanceMetrics.calculate_sortino_ratio(equity_curve)
 
-        # Calculate CAGR
-        if len(equity_curve) >= 2:
-            start_date = pd.Timestamp(equity_curve['date'].iloc[0])
-            end_date = pd.Timestamp(equity_curve['date'].iloc[-1])
-            years = (end_date - start_date).days / 365.25
-            initial_equity = equity_curve['equity'].iloc[0]
-            final_equity = equity_curve['equity'].iloc[-1]
-
-            if years > 0 and initial_equity > 0:
-                cagr = (pow(final_equity / initial_equity, 1 / years) - 1) * 100
-            else:
-                cagr = 0.0
-        else:
-            cagr = 0.0
-
-        # Calmar ratio (CAGR / Max DD)
+        # CAGR and Calmar (delegated)
+        cagr = CentralizedPerformanceMetrics.calculate_annual_return(equity_curve)
         calmar = cagr / max_dd_pct if max_dd_pct > 0 else 0.0
 
         # Best and worst day
         best_day = PerformanceMetrics.calculate_best_day(equity_curve)
         worst_day = PerformanceMetrics.calculate_worst_day(equity_curve)
 
-        # R-Multiple metrics
-        r_multiples = CentralizedPerformanceMetrics.calculate_r_multiples(trades)
-        r_trades_count = len(r_multiples)
-        if r_multiples:
-            winning_r = [r for r in r_multiples if r >= 0]
-            losing_r = [r for r in r_multiples if r < 0]
-            avg_r_multiple = float(np.mean(r_multiples))
-            avg_win_r = float(np.mean(winning_r)) if winning_r else 0.0
-            avg_loss_r = float(np.mean(losing_r)) if losing_r else 0.0
-            r_expectancy = ((len(winning_r) / r_trades_count * avg_win_r) +
-                           (len(losing_r) / r_trades_count * avg_loss_r))
-        else:
-            avg_r_multiple = 0.0
-            avg_win_r = 0.0
-            avg_loss_r = 0.0
-            r_expectancy = 0.0
+        # R-Multiple metrics (delegated)
+        r_trades_count = len(CentralizedPerformanceMetrics.calculate_r_multiples(trades))
+        avg_r_multiple = CentralizedPerformanceMetrics.calculate_avg_r_multiple(trades)
+        avg_win_r = CentralizedPerformanceMetrics.calculate_avg_win_r(trades)
+        avg_loss_r = CentralizedPerformanceMetrics.calculate_avg_loss_r(trades)
+        r_expectancy = CentralizedPerformanceMetrics.calculate_r_expectancy(trades)
 
         metrics.update({
             'win_rate': win_rate,
@@ -226,6 +205,12 @@ class PerformanceMetrics:
 
         This is useful for calculating metrics for subsets of trades (e.g., per-security
         in a portfolio backtest).
+
+        UNIT CONTRACT: unlike calculate_metrics() above, win_rate here is a
+        PERCENT (0-100), and total_return is in base-currency dollars with
+        total_return_pct as percent. avg_win/avg_loss/largest_win/largest_loss
+        are dollars. The drawdown is an approximation from cumulative trade
+        P/L, not a bar-by-bar equity curve.
 
         Args:
             trades: List of Trade objects
@@ -278,19 +263,9 @@ class PerformanceMetrics:
         total_return = sum(t.pl for t in trades)
         total_return_pct = (total_return / initial_capital * 100) if initial_capital > 0 else 0.0
 
-        # Profit factor
-        total_wins = sum(wins) if wins else 0.0
-        total_losses = abs(sum(losses)) if losses else 0.0
-        if total_losses > 0:
-            profit_factor = total_wins / total_losses
-        elif total_wins > 0:
-            profit_factor = 999.99
-        else:
-            profit_factor = 0.0
-
-        # Duration
-        durations = [t.duration_days for t in trades]
-        avg_duration = np.mean(durations) if durations else 0.0
+        # Profit factor / duration (delegated to the centralized module)
+        profit_factor = CentralizedPerformanceMetrics.calculate_profit_factor(trades)
+        avg_duration = CentralizedPerformanceMetrics.calculate_avg_trade_duration(trades)
 
         # Simple drawdown estimation from trades (not as accurate as equity curve)
         # This is an approximation based on cumulative P/L

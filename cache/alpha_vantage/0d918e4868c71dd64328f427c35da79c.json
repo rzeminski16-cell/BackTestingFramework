@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T08:54:18.598187", "endpoint": "SPLITS", "params": {"symbol": "FDX"}, "data": {"symbol": "FDX", "data": [{"effective_date": "2026-06-01", "split_factor": "1.2410"}, {"effective_date": "1999-05-07", "split_factor": "2.0000"}]}}

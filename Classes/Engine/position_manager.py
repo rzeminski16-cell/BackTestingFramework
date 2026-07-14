@@ -177,6 +177,67 @@ class PositionManager:
             # For SHORT: exit if price drops to or below take profit
             return current_price <= self.position.take_profit
 
+    def check_exits_intrabar(self, bar_open: float, bar_high: float,
+                             bar_low: float, check_stop: bool = True,
+                             check_tp: bool = True):
+        """
+        Evaluate stop-loss / take-profit against a bar's full range with
+        gap-aware fills, modelling resting orders:
+
+        - A level gapped through at the open fills at the OPEN (you cannot
+          get a better price than the market opened at).
+        - A level touched intrabar fills AT the level.
+        - When both the stop and the take profit lie inside one bar's range,
+          the STOP is assumed to have hit first (pessimistic tie-break — the
+          intrabar path is unknown on OHLC data).
+
+        Callers without high/low data can pass the close for all three
+        prices, which degrades to close-only evaluation.
+
+        Args:
+            bar_open: Bar open price (or close)
+            bar_high: Bar high (or close)
+            bar_low: Bar low (or close)
+            check_stop: Evaluate the stop loss
+            check_tp: Evaluate the take profit
+
+        Returns:
+            (fill_price, reason) tuple, or None if no exit triggered
+        """
+        if not self.has_position:
+            return None
+
+        position = self.position
+        is_short = position.direction == TradeDirection.SHORT
+        stop = position.stop_loss if check_stop else None
+        tp = position.take_profit if check_tp else None
+
+        if stop is not None:
+            if is_short:
+                if bar_open >= stop:
+                    return bar_open, "Stop loss hit (gap)"
+                if bar_high >= stop:
+                    return stop, "Stop loss hit"
+            else:
+                if bar_open <= stop:
+                    return bar_open, "Stop loss hit (gap)"
+                if bar_low <= stop:
+                    return stop, "Stop loss hit"
+
+        if tp is not None:
+            if is_short:
+                if bar_open <= tp:
+                    return bar_open, "Take profit hit (gap)"
+                if bar_low <= tp:
+                    return tp, "Take profit hit"
+            else:
+                if bar_open >= tp:
+                    return bar_open, "Take profit hit (gap)"
+                if bar_high >= tp:
+                    return tp, "Take profit hit"
+
+        return None
+
     def add_pyramid(self, pyramid_date: datetime, quantity: float, price: float,
                     commission: float, reason: str = "") -> float:
         """

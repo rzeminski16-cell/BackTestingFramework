@@ -1,21 +1,29 @@
 """
 BackTesting Framework - Main Launcher GUI
 
-A modern CustomTkinter main menu that provides access to all framework features.
-
-Features:
-- Backtesting: Run backtests with various strategies
-- Optimization: Walk-forward strategy optimization
-- Edge Analysis: E-ratio and R-multiple analysis from trade logs
+A modern CustomTkinter main menu that provides access to all framework
+modules: backtesting, walk-forward and univariate optimization, edge
+analysis, data collection & preparation, rule testing, vulnerability
+visualization, pattern analysis, Monte Carlo simulation, ML modelling &
+evaluation, and the Streamlit results dashboard.
 """
 
-import customtkinter as ctk
+import importlib.util
 import subprocess
 import sys
+import threading
 from pathlib import Path
-from typing import Callable, Optional
+from typing import Callable, List, Optional
+
+import customtkinter as ctk
 
 from Classes.GUI.ctk_theme import Theme, Colors, Fonts, Sizes
+from Classes._version import __version__
+
+
+def _missing_modules(module_names: List[str]) -> List[str]:
+    """Return the subset of ``module_names`` that cannot be imported."""
+    return [m for m in module_names if importlib.util.find_spec(m) is None]
 
 
 class FeatureCard(ctk.CTkFrame):
@@ -164,7 +172,7 @@ class CTkMainLauncher(ctk.CTk):
         cards_frame = ctk.CTkFrame(main_frame, fg_color="transparent")
         cards_frame.pack(fill="both", expand=True)
 
-        # Configure grid columns to be equal width (3 columns, 3 rows for 7 features)
+        # Configure grid columns to be equal width (3 columns, 4 rows of feature cards)
         cards_frame.grid_columnconfigure(0, weight=1)
         cards_frame.grid_columnconfigure(1, weight=1)
         cards_frame.grid_columnconfigure(2, weight=1)
@@ -180,6 +188,12 @@ class CTkMainLauncher(ctk.CTk):
                 "description": "Run backtests on securities with configurable strategies and parameters",
                 "icon": "\u23F1",  # Stopwatch
                 "command": self._launch_backtest
+            },
+            {
+                "title": "Optimization",
+                "description": "Walk-forward parameter optimization with Bayesian search and sensitivity analysis",
+                "icon": "\U0001F3AF",  # Direct hit
+                "command": self._launch_optimization
             },
             {
                 "title": "Univariate Optimization",
@@ -237,7 +251,13 @@ class CTkMainLauncher(ctk.CTk):
             },
             {
                 "title": "Results Dashboard",
-                "description": "Interactive browser dashboard to explore modelling results: regimes, factors, overlays",
+                "description": (
+                    "Interactive browser dashboard to explore modelling results: regimes, factors, overlays"
+                    + (
+                        "\n⚠ requires: " + ", ".join(_missing_modules(["streamlit", "plotly"]))
+                        if _missing_modules(["streamlit", "plotly"]) else ""
+                    )
+                ),
                 "icon": "\U0001F4CA",  # Bar chart
                 "command": self._launch_modelling_dashboard
             }
@@ -265,7 +285,7 @@ class CTkMainLauncher(ctk.CTk):
 
         version_label = ctk.CTkLabel(
             footer_frame,
-            text="v1.0.0",
+            text=f"v{__version__}",
             font=Fonts.BODY_S,
             text_color=Colors.TEXT_MUTED
         )
@@ -275,9 +295,39 @@ class CTkMainLauncher(ctk.CTk):
         """Launch a module as a subprocess."""
         script_path = Path(__file__).parent / f"ctk_{module_name}_gui.py"
         if script_path.exists():
-            subprocess.Popen([sys.executable, str(script_path)])
+            self._spawn_watched(module_name, [sys.executable, str(script_path)])
         else:
             self._show_error(f"Module not found: {script_path}")
+
+    def _spawn_watched(self, name: str, cmd: List[str]):
+        """
+        Launch a child process and surface a crash dialog if it dies with a
+        non-zero exit code. Without this, a module that fails on startup
+        (missing dependency, bad config) disappears silently.
+        """
+        try:
+            proc = subprocess.Popen(
+                cmd, stderr=subprocess.PIPE, text=True, encoding="utf-8",
+                errors="replace"
+            )
+        except OSError as exc:
+            self._show_error(f"Could not launch {name}: {exc}")
+            return
+
+        def watch():
+            _, stderr = proc.communicate()
+            if proc.returncode not in (0, None) and proc.returncode >= 0:
+                tail = "\n".join((stderr or "").strip().splitlines()[-12:])
+                message = (f"{name} exited with code {proc.returncode}."
+                           + (f"\n\n{tail}" if tail else ""))
+                # Marshal back onto the Tk main thread.
+                try:
+                    self.after(0, lambda: self._show_error(message))
+                except Exception:
+                    pass  # launcher already closed
+
+        threading.Thread(target=watch, daemon=True,
+                         name=f"watch-{name}").start()
 
     def _launch_backtest(self):
         """Launch the backtesting GUI."""
@@ -299,7 +349,7 @@ class CTkMainLauncher(ctk.CTk):
         """Launch the data collection GUI."""
         script_path = Path(__file__).parent / "apps" / "data_collection_gui.py"
         if script_path.exists():
-            subprocess.Popen([sys.executable, str(script_path)])
+            self._spawn_watched("Data Collection", [sys.executable, str(script_path)])
         else:
             self._show_error(f"Data Collection GUI not found: {script_path}")
 
@@ -329,43 +379,69 @@ class CTkMainLauncher(ctk.CTk):
 
     def _launch_modelling_dashboard(self):
         """Launch the interactive Streamlit results dashboard."""
+        missing = _missing_modules(["streamlit", "plotly"])
+        if missing:
+            self._show_error(
+                "The Results Dashboard needs optional packages that are not "
+                f"installed: {', '.join(missing)}.\n\n"
+                f"Install them with:  pip install {' '.join(missing)}"
+            )
+            return
         script_path = Path(__file__).parent / "apps" / "modelling_dashboard.py"
         if script_path.exists():
-            subprocess.Popen([sys.executable, "-m", "streamlit", "run", str(script_path)])
+            self._spawn_watched(
+                "Results Dashboard",
+                [sys.executable, "-m", "streamlit", "run", str(script_path)]
+            )
         else:
             self._show_error(f"Dashboard not found: {script_path}")
 
     def _show_error(self, message: str):
-        """Show an error dialog."""
+        """Show an error dialog (sized to fit multi-line crash output)."""
+        long_message = len(message) > 120 or "\n" in message
+        width, height = (620, 380) if long_message else (420, 170)
+
         dialog = ctk.CTkToplevel(self)
         dialog.title("Error")
-        dialog.geometry("400x150")
+        dialog.geometry(f"{width}x{height}")
         dialog.transient(self)
         dialog.grab_set()
 
         # Center dialog
         dialog.update_idletasks()
-        x = self.winfo_x() + (self.winfo_width() // 2) - 200
-        y = self.winfo_y() + (self.winfo_height() // 2) - 75
+        x = self.winfo_x() + (self.winfo_width() // 2) - width // 2
+        y = self.winfo_y() + (self.winfo_height() // 2) - height // 2
         dialog.geometry(f"+{x}+{y}")
 
-        ctk.CTkLabel(
-            dialog,
-            text=message,
-            font=Fonts.BODY_M,
-            text_color=Colors.ERROR
-        ).pack(expand=True, pady=20)
+        if long_message:
+            box = ctk.CTkTextbox(dialog, wrap="word",
+                                 text_color=Colors.ERROR,
+                                 font=Fonts.BODY_S)
+            box.insert("1.0", message)
+            box.configure(state="disabled")
+            box.pack(expand=True, fill="both", padx=16, pady=(16, 8))
+        else:
+            ctk.CTkLabel(
+                dialog,
+                text=message,
+                font=Fonts.BODY_M,
+                text_color=Colors.ERROR,
+                wraplength=width - 60,
+                justify="left"
+            ).pack(expand=True, pady=20, padx=20)
 
         ctk.CTkButton(
             dialog,
             text="OK",
             command=dialog.destroy,
             width=100
-        ).pack(pady=(0, 20))
+        ).pack(pady=(0, 16))
 
 
 def main():
     """Main entry point for the launcher."""
+    from Classes.Core.logging_config import setup_logging
+    setup_logging(app_name="launcher")
     app = CTkMainLauncher()
     app.mainloop()
 

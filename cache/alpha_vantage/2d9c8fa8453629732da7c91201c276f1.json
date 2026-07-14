@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T09:00:20.373357", "endpoint": "SPLITS", "params": {"symbol": "NKTR"}, "data": {"symbol": "NKTR", "data": [{"effective_date": "2025-06-09", "split_factor": "0.0667"}, {"effective_date": "2000-08-23", "split_factor": "2.0000"}]}}

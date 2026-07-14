@@ -1714,6 +1714,8 @@ class CTkBacktestWizard(CTkWizardBase):
 
 def main():
     """Main entry point for GUI."""
+    from Classes.Core.logging_config import setup_logging
+    setup_logging(app_name="backtest")
     app = CTkBacktestWizard()
     app.run()
 

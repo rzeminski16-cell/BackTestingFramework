@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T08:53:06.231106", "endpoint": "SPLITS", "params": {"symbol": "DUK"}, "data": {"symbol": "DUK", "data": [{"effective_date": "2012-07-03", "split_factor": "0.3333"}, {"effective_date": "2001-01-29", "split_factor": "2.0000"}]}}

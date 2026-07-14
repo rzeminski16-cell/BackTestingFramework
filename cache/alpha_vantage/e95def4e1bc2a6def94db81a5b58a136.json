@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T09:00:32.907626", "endpoint": "SPLITS", "params": {"symbol": "OIH"}, "data": {"symbol": "OIH", "data": [{"effective_date": "2020-04-15", "split_factor": "0.0500"}, {"effective_date": "2012-02-14", "split_factor": "3.0000"}]}}

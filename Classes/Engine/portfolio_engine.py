@@ -1,6 +1,8 @@
 """
 Portfolio-level backtesting engine with capital contention management.
 """
+import logging
+
 import pandas as pd
 from typing import Dict, List, Optional, Callable, Tuple
 from datetime import datetime
@@ -14,7 +16,7 @@ from ..Models.trade_direction import TradeDirection
 from ..Models.order import Order, OrderSide, OrderType
 from ..Models.trade import Trade, reset_trade_counter
 from ..Models.position import Position
-from ..Config.config import PortfolioConfig
+from ..Config.config import PortfolioConfig, ExecutionTiming
 from ..Config.capital_contention import CapitalContentionMode
 from .position_manager import PositionManager
 from .trade_executor import TradeExecutor
@@ -23,6 +25,8 @@ from .vulnerability_score import VulnerabilityScoreCalculator, VulnerabilityResu
 from ..Data.currency_converter import CurrencyConverter, MissingFXRateError
 from ..Data.security_registry import SecurityRegistry, MissingCurrencyError
 from ..Data.historical_data_view import HistoricalDataView
+
+logger = logging.getLogger(__name__)
 
 
 @dataclass
@@ -193,6 +197,17 @@ class PortfolioEngine:
         # Reset trade ID counter for this backtest
         reset_trade_counter()
 
+        # NEXT_BAR_OPEN is not supported here: capital-contention decisions
+        # (rejections, vulnerability swaps) are made while processing the
+        # bar's signals and cannot be deferred to the next open coherently.
+        if getattr(self.config, 'execution_timing',
+                   ExecutionTiming.SAME_BAR_CLOSE) == ExecutionTiming.NEXT_BAR_OPEN:
+            raise ValueError(
+                "execution_timing='next_bar_open' is currently supported by "
+                "the single-security engine only. Use SAME_BAR_CLOSE for "
+                "portfolio backtests."
+            )
+
         # Fail fast on currency/FX problems before running the backtest.
         self._validate_currencies(list(data_dict.keys()))
 
@@ -324,22 +339,46 @@ class PortfolioEngine:
 
                 # PRIORITY 1: Check stop loss (natural exits always take priority)
                 if pm.has_position:
-                    if strategy.should_check_stop_loss(context):
-                        if pm.check_stop_loss(current_price):
-                            capital = self._close_position(
-                                symbol, current_date, current_price,
-                                "Stop loss hit", capital, pm
-                            )
-                            continue
+                    # Track intra-trade excursions (MAE/MFE) off the bar's
+                    # extremes, falling back to the close when unavailable.
+                    bar_row = data.loc[label_index]
+                    bar_high = bar_row['high'] if 'high' in data.columns else current_price
+                    bar_low = bar_row['low'] if 'low' in data.columns else current_price
+                    pm.position.update_excursions(bar_high, bar_low)
 
-                    # Check take profit
-                    if strategy.should_check_take_profit(context):
-                        if pm.check_take_profit(current_price):
+                    if self.config.intrabar_stops:
+                        # Evaluate stop/TP against the bar's full range with
+                        # gap-aware fills (resting-order model).
+                        bar_open = bar_row['open'] if 'open' in data.columns else current_price
+                        intrabar_fill = pm.check_exits_intrabar(
+                            bar_open, bar_high, bar_low,
+                            check_stop=strategy.should_check_stop_loss(context),
+                            check_tp=strategy.should_check_take_profit(context)
+                        )
+                        if intrabar_fill is not None:
+                            fill_price, fill_reason = intrabar_fill
                             capital = self._close_position(
-                                symbol, current_date, current_price,
-                                "Take profit hit", capital, pm
+                                symbol, current_date, fill_price,
+                                fill_reason, capital, pm
                             )
                             continue
+                    else:
+                        if strategy.should_check_stop_loss(context):
+                            if pm.check_stop_loss(current_price):
+                                capital = self._close_position(
+                                    symbol, current_date, current_price,
+                                    "Stop loss hit", capital, pm
+                                )
+                                continue
+
+                        # Check take profit
+                        if strategy.should_check_take_profit(context):
+                            if pm.check_take_profit(current_price):
+                                capital = self._close_position(
+                                    symbol, current_date, current_price,
+                                    "Take profit hit", capital, pm
+                                )
+                                continue
 
                     # Check trailing stop (direction-aware)
                     new_stop = strategy.should_adjust_stop(context)
@@ -1127,9 +1166,10 @@ class PortfolioEngine:
             # Flag that this ticker is in a different currency (once per symbol).
             if symbol not in self._fx_rate_warnings:
                 self._fx_rate_warnings.add(symbol)
-                print(
-                    f"FX: {symbol} is denominated in {currency}; converting to "
-                    f"{base_currency} using {currency}/{base_currency} rates."
+                logger.info(
+                    "FX: %s is denominated in %s; converting to %s using "
+                    "%s/%s rates.", symbol, currency, base_currency,
+                    currency, base_currency
                 )
 
             if not self.currency_converter.has_rate(currency):
@@ -1314,7 +1354,11 @@ class PortfolioEngine:
         )
 
         exit_commission = self.trade_executor.execute_order(exit_order)
-        proceeds = exit_order.total_value() - exit_commission
+        # Direction-aware cash release: a LONG sale returns qty * price; a
+        # SHORT cover returns the posted collateral plus short P/L
+        # (qty * (2 * entry - price)). Using the raw order value would book
+        # long-side P/L for shorts and invert the equity curve.
+        proceeds = position.close_out_value(execution_price, quantity) - exit_commission
         proceeds_base = self._convert_to_base_currency(proceeds, symbol, date)
 
         capital += proceeds_base
@@ -1392,7 +1436,8 @@ class PortfolioEngine:
         )
 
         exit_commission = self.trade_executor.execute_order(exit_order)
-        proceeds = exit_order.total_value() - exit_commission
+        # Direction-aware cash release (see _close_position for the rationale).
+        proceeds = position.close_out_value(execution_price, exit_quantity) - exit_commission
         proceeds_base = self._convert_to_base_currency(proceeds, symbol, date)
 
         capital += proceeds_base

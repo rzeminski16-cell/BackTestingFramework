@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T08:48:11.987752", "endpoint": "SPLITS", "params": {"symbol": "AEO"}, "data": {"symbol": "AEO", "data": [{"effective_date": "2006-12-19", "split_factor": "1.5000"}, {"effective_date": "2005-03-08", "split_factor": "2.0000"}, {"effective_date": "2001-02-26", "split_factor": "1.5000"}, {"effective_date": "1999-05-04", "split_factor": "2.0000"}]}}

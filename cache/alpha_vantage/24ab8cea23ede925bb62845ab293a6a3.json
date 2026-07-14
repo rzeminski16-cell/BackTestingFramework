@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T08:54:19.898751", "endpoint": "SPLITS", "params": {"symbol": "FELE"}, "data": {"symbol": "FELE", "data": [{"effective_date": "2013-03-19", "split_factor": "2.0000"}, {"effective_date": "2004-06-16", "split_factor": "2.0000"}, {"effective_date": "2002-03-25", "split_factor": "2.0000"}]}}

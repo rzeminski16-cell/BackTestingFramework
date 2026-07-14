@@ -32,6 +32,7 @@ from pathlib import Path
 from Classes.Engine.single_security_engine import SingleSecurityEngine
 from Classes.Config.config import BacktestConfig, CommissionConfig
 from Classes.Data.data_loader import DataLoader
+from Classes.Analysis.performance_metrics import PerformanceMetrics
 from strategies.your_strategy import YourStrategy
 
 # 1. Configure
@@ -54,7 +55,11 @@ result = engine.run('AAPL', data, strategy)
 # 5. Inspect results
 print(f"Total Return: {result.total_return_pct:.2f}%")
 print(f"Trades: {result.num_trades}")
-print(f"Sharpe Ratio: {result.sharpe_ratio:.2f}")
+
+# Full metrics (Sharpe, Sortino, drawdown, ...) come from PerformanceMetrics:
+metrics = PerformanceMetrics.calculate_metrics(result)
+print(f"Sharpe Ratio: {metrics['sharpe_ratio']:.2f}")
+print(f"Max Drawdown: {metrics['max_drawdown_pct']:.2f}%")
 ```
 
 ---

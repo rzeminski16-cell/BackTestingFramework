@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T08:56:11.881788", "endpoint": "SPLITS", "params": {"symbol": "HWC"}, "data": {"symbol": "HWC", "data": [{"effective_date": "2004-03-19", "split_factor": "2.0000"}, {"effective_date": "2002-08-06", "split_factor": "1.4925"}]}}

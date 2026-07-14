@@ -462,3 +462,71 @@ def load_trade_logs(
         is_canonical=is_canonical,
         r_excluded_reasons=r_excluded_reasons,
     )
+
+
+def load_daily_returns(
+    path: Union[str, Path],
+    value_column: Optional[str] = None,
+) -> Tuple[np.ndarray, List[str]]:
+    """
+    Load a pool of DAILY returns from an equity-curve or price CSV, for
+    bootstrapping calendar-time risk instead of per-trade risk.
+
+    Accepts any CSV with a date column plus an ``equity`` column (the
+    engines' equity-curve export) or a ``close`` column (any price series);
+    ``value_column`` overrides auto-detection. Rows are sorted by date when
+    a date column exists, then converted to fractional day-over-day returns.
+
+    Simulation notes: with a daily pool, set
+    ``SimulationConfig.risk_per_trade = 1.0`` (each step IS a day of full
+    portfolio exposure — the risk knob has no per-trade meaning),
+    ``num_trades`` to the number of days to simulate, and
+    ``periods_per_year = 252`` so annualized distributions are meaningful.
+
+    Args:
+        path: CSV file path.
+        value_column: Column holding the level series (auto: equity, close).
+
+    Returns:
+        (returns array, warnings list). The array is empty when the file
+        cannot provide at least two valid observations.
+    """
+    warnings: List[str] = []
+    path = Path(path)
+    try:
+        df = pd.read_csv(path)
+    except Exception as exc:
+        return np.array([]), [f"Failed to read {path}: {exc}"]
+
+    df.columns = [str(c).lower().strip() for c in df.columns]
+
+    col = (value_column or "").lower().strip() or None
+    if col is None:
+        for candidate in ("equity", "close"):
+            if candidate in df.columns:
+                col = candidate
+                break
+    if col is None or col not in df.columns:
+        return np.array([]), [
+            f"{path.name}: no usable value column (expected 'equity' or "
+            f"'close', or pass value_column). Columns: {list(df.columns)}"
+        ]
+
+    if "date" in df.columns:
+        df["date"] = pd.to_datetime(df["date"], errors="coerce")
+        n_bad = int(df["date"].isna().sum())
+        if n_bad:
+            warnings.append(f"{path.name}: dropped {n_bad} rows with unparseable dates")
+        df = df.dropna(subset=["date"]).sort_values("date")
+    else:
+        warnings.append(f"{path.name}: no date column; using file row order")
+
+    values = pd.to_numeric(df[col], errors="coerce")
+    values = values.replace([np.inf, -np.inf], np.nan).dropna()
+    values = values[values > 0]
+    if len(values) < 2:
+        return np.array([]), warnings + [
+            f"{path.name}: fewer than 2 valid {col!r} observations"]
+
+    returns = values.pct_change().dropna().to_numpy(dtype="float64")
+    return returns, warnings

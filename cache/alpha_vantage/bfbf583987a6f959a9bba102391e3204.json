@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T09:00:28.330144", "endpoint": "SPLITS", "params": {"symbol": "NUE"}, "data": {"symbol": "NUE", "data": [{"effective_date": "2006-06-01", "split_factor": "2.0000"}, {"effective_date": "2004-10-19", "split_factor": "2.0000"}]}}

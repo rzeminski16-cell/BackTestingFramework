@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T09:05:27.186557", "endpoint": "SPLITS", "params": {"symbol": "TREX"}, "data": {"symbol": "TREX", "data": [{"effective_date": "2020-09-15", "split_factor": "2.0000"}, {"effective_date": "2018-06-19", "split_factor": "2.0000"}, {"effective_date": "2014-05-08", "split_factor": "2.0000"}]}}

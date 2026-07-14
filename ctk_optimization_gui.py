@@ -53,7 +53,9 @@ from strategies.alpha_trend_v2c3_strategy import AlphaTrendV2C3Strategy
 from strategies.alpha_trend_v3c1_strategy import AlphaTrendV3C1Strategy
 from strategies.short_only_base_strategy import ShortOnlyBaseStrategy
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+from Classes.Core.logging_config import setup_logging
+
+setup_logging(app_name="optimization")
 logger = logging.getLogger(__name__)
 
 
@@ -1198,7 +1200,10 @@ class CTkOptimizationWizard(CTkWizardBase):
         except Exception as e:
             self.results_window.log(f"\nFATAL ERROR: {e}")
             logger.exception("Optimization failed")
-            self.root.after(0, lambda: show_error(self.root, "Error", f"Optimization failed: {e}"))
+            # Bind the message now: `e` is unbound once the except block exits,
+            # so a bare closure would raise NameError inside the after() callback.
+            msg = f"Optimization failed: {e}"
+            self.root.after(0, lambda msg=msg: show_error(self.root, "Error", msg))
 
         finally:
             self.root.after(0, self._reset_ui)

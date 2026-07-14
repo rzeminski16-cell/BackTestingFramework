@@ -71,6 +71,10 @@ class Position:
     entry_fx_rate: float = 1.0  # FX rate at entry
     security_currency: str = "GBP"  # Currency security is denominated in
     entry_equity: float = 0.0  # Total portfolio equity at time of entry
+    # Intra-trade excursions relative to entry price, updated each bar by the
+    # engine. MFE >= 0 is the best unrealized move, MAE <= 0 the worst.
+    max_favorable_excursion_pct: Optional[float] = None
+    max_adverse_excursion_pct: Optional[float] = None
 
     def __post_init__(self) -> None:
         # Validate stop side relative to entry. A LONG with stop >= entry
@@ -118,7 +122,19 @@ class Position:
 
     def calculate_value(self, current_price: float) -> float:
         """
-        Calculate current position value.
+        Calculate current position value (liquidation value, direction-aware).
+
+        For LONG positions this is the market value of the shares.
+
+        For SHORT positions the engine's cash ledger posts the full entry
+        notional as collateral (cash is reduced by quantity * entry_price at
+        entry), so the position is worth that collateral plus the unrealised
+        short P/L:
+
+            qty * entry + qty * (entry - price) = qty * (2 * entry - price)
+
+        The value rises as price falls, and can go negative if the price more
+        than doubles against the short (loss exceeding posted collateral).
 
         Args:
             current_price: Current market price
@@ -126,7 +142,28 @@ class Position:
         Returns:
             Current value of position
         """
+        if self.direction == TradeDirection.SHORT:
+            return self.current_quantity * (2.0 * self.entry_price - current_price)
         return self.current_quantity * current_price
+
+    def close_out_value(self, price: float, quantity: Optional[float] = None) -> float:
+        """
+        Cash released by closing ``quantity`` units at ``price`` (before
+        commission), matching the collateral model used by the engines:
+        a LONG sale returns qty * price; a SHORT cover returns the posted
+        collateral plus the direction-aware P/L, qty * (2 * entry - price).
+
+        Args:
+            price: Execution price for the close
+            quantity: Units to close (default: the full current quantity)
+
+        Returns:
+            Cash amount in security currency
+        """
+        qty = self.current_quantity if quantity is None else quantity
+        if self.direction == TradeDirection.SHORT:
+            return qty * (2.0 * self.entry_price - price)
+        return qty * price
 
     def calculate_pl(self, current_price: float) -> float:
         """
@@ -251,18 +288,19 @@ class Position:
             Break-even stop loss price
         """
         # Total investment cost
-        total_cost = self.get_total_investment()
+        total_investment = self.get_total_investment()
 
-        # Add all commissions
-        total_cost += self.total_commission_paid
-
-        # Estimate exit commission
+        # All commissions paid so far plus the estimated exit commission
         estimated_exit_value = self.current_quantity * self.entry_price
         estimated_exit_commission = estimated_exit_value * exit_commission_rate
-        total_cost += estimated_exit_commission
+        total_costs = self.total_commission_paid + estimated_exit_commission
 
-        # Calculate break-even price per share
-        breakeven_price = total_cost / self.current_quantity
+        # Break-even is entry +/- per-share costs depending on direction:
+        # a LONG must exit above entry to cover costs, a SHORT below it.
+        if self.direction == TradeDirection.SHORT:
+            breakeven_price = (total_investment - total_costs) / self.current_quantity
+        else:
+            breakeven_price = (total_investment + total_costs) / self.current_quantity
 
         return breakeven_price
 
@@ -279,6 +317,40 @@ class Position:
             )
         self.partial_exits.append(exit)
         self.current_quantity -= exit.quantity
+
+    def update_excursions(self, high: float, low: float) -> None:
+        """
+        Update max favorable/adverse excursion from a bar's price extremes.
+
+        Excursions are percentages relative to the (current average) entry
+        price, direction-aware: for a LONG the bar high is favorable and the
+        bar low adverse; mirrored for a SHORT. Callers without high/low data
+        can pass the close for both.
+
+        Args:
+            high: Bar high (or close)
+            low: Bar low (or close)
+        """
+        if self.entry_price <= 0:
+            return
+        if self.direction == TradeDirection.SHORT:
+            favorable = (self.entry_price - low) / self.entry_price * 100.0
+            adverse = (self.entry_price - high) / self.entry_price * 100.0
+        else:
+            favorable = (high - self.entry_price) / self.entry_price * 100.0
+            adverse = (low - self.entry_price) / self.entry_price * 100.0
+
+        if self.max_favorable_excursion_pct is None:
+            self.max_favorable_excursion_pct = max(0.0, favorable)
+        else:
+            self.max_favorable_excursion_pct = max(
+                self.max_favorable_excursion_pct, favorable)
+
+        if self.max_adverse_excursion_pct is None:
+            self.max_adverse_excursion_pct = min(0.0, adverse)
+        else:
+            self.max_adverse_excursion_pct = min(
+                self.max_adverse_excursion_pct, adverse)
 
     def update_stop_loss(self, new_stop_loss: float) -> None:
         """

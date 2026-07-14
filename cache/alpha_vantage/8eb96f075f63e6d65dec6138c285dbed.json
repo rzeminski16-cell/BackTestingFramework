@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T09:00:06.225085", "endpoint": "SPLITS", "params": {"symbol": "NBR"}, "data": {"symbol": "NBR", "data": [{"effective_date": "2020-04-23", "split_factor": "0.0200"}, {"effective_date": "2006-04-18", "split_factor": "2.0000"}]}}

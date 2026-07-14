@@ -1,152 +1,89 @@
-# BackTestingFramework - Comprehensive Test Report
+# BackTestingFramework — Test Report
 
-**Date:** 2025-12-28
-**Branch:** claude/test-framework-DuNLP
+**Date:** 2026-07-13
+**Environment:** Python 3.11, fresh dependency install from `requirements.txt`
 
-## Executive Summary
-
-Comprehensive testing of the BackTestingFramework was conducted, including:
-- Running all existing test suites (39 tests passing)
-- Testing core backtesting engine functionality
-- Testing portfolio engine
-- Testing data collection and processing
-- Testing strategy and indicator calculations
-- Code quality review
-
-### Critical Bugs Fixed
-
-1. **CommissionConfig.percent AttributeError** (`Classes/Engine/single_security_engine.py:50`)
-   - **Issue:** Code was accessing `config.commission.percent` but the attribute is `value`
-   - **Fix:** Changed to `config.commission.value`
-   - **Impact:** Would cause crash when creating SingleSecurityEngine with commission config
-
----
-
-## Test Results
-
-### Unit Tests (pytest)
+## Summary
 
 ```
-======================== 39 passed, 2 warnings in 6.70s ========================
+975 passed, 2 warnings (Python 3.11)
 ```
 
-| Test Category | Tests | Status |
-|--------------|-------|--------|
-| Optimization Report | 25 | PASS |
-| Performance Optimizations | 11 | PASS |
-| Slippage | 3 | PASS |
+All 44 test modules pass, covering: engines (single-security, portfolio,
+integration), strategies (AlphaTrend family, short-only base, random control),
+core & optimization metrics, currency conversion, data layer & collection,
+data preparation, modelling & evaluation, Monte Carlo, pattern analysis,
+rejection explorer, report generation and charts, vulnerability scoring/trace,
+and walk-forward optimization.
 
-### Integration Tests
+Added 2026-07-13 (P0 correctness fixes):
 
-| Test | Status | Notes |
-|------|--------|-------|
-| Single Security Backtest | PASS | 109 trades, 409.12% return on AAPL |
-| Portfolio Backtest | PASS | 282 trades across 3 securities |
-| Currency Detection | PASS | FX rate conversion working |
-| ATR Stop Loss | PASS | All parameter tests passing |
-| Vulnerability Score | PASS | Portfolio simulation working |
+- `test_short_accounting.py` — ledger-vs-trade-log invariant
+  (`final_equity − initial == Σ trade.pl`) for LONG and SHORT on both
+  engines, with commission/slippage/partial exits; direction-aware
+  mark-to-market and break-even stop checks.
+- `test_stable_metrics_cadence.py` — RAR% cadence invariance (calendar-daily
+  vs trading-day vs per-trade sampling) and agreement with the Modelling
+  stage's Adjusted RAR.
+- `test_metric_consistency.py` — golden cross-layer tests pinning the
+  report adapter's unit contract (win_rate fraction vs percent, dollar
+  win/loss aggregates) against the centralized metrics module, so any
+  re-implemented formula that drifts fails CI.
 
-### Module Import Tests
+Added 2026-07-14 (P2 analytics depth):
 
-| Category | Status | Notes |
-|----------|--------|-------|
-| Core Classes (30 modules) | 30/30 PASS | All core modules import correctly |
-| GUI Modules | Expected Fail | Headless environment, no display |
+- `test_engine_parity.py` — the single-security and portfolio engines must
+  produce identical trades and equity paths on the same inputs (LONG and
+  SHORT, with partials, trailing stops, and costs).
+- `test_risk_metrics.py` — exposure, VaR/CVaR, rolling helpers, and
+  engine-tracked MAE/MFE per trade.
+- `test_execution_realism.py` — intrabar stop/TP triggers with gap-aware
+  fills (both engines) and next-bar-open execution timing.
+- `test_deflated_sharpe.py` — PSR/DSR math (a best-of-200-noise-strategies
+  winner must NOT look significant) and WindowResult integration.
+- `test_monte_carlo_upgrades.py` — annualized per-path Sharpe/CAGR/Calmar
+  distributions and the daily-returns pool loader.
+- `test_benchmark.py` gained benchmark-relative max-drawdown coverage.
 
----
+Added 2026-07-14 (P3 product polish):
 
-## Code Quality Issues Identified
+- `test_cli.py` — the `btf` CLI: parser/subcommands, strategy registry,
+  hermetic end-to-end single and portfolio backtests on synthetic data
+  (trade-log CSV + metrics JSON assertions), next-bar-open flag, and
+  Monte Carlo from both a trade log and a daily equity curve.
 
-### High Priority
+Added 2026-07-14 (P4):
 
-1. **Bare Except Clauses** (8 instances)
-   - `ctk_optimization_gui.py:366,721`
-   - `apps/optimization_gui.py:478,866`
-   - `apps/vulnerability_gui.py:648`
-   - `Classes/Optimization/walk_forward_optimizer.py:463`
-   - `Classes/Optimization/optimization_report_generator.py:881`
-   - `Classes/Analysis/excel_report_generator.py:1445`
+- `test_p4_features.py` — strategy auto-discovery (all known strategies
+  found, no abstracts), the `new-strategy` scaffold (generates a working,
+  instantiable strategy; correct stop side; overwrite protection), the
+  Parquet store (ingest, loader preference, CSV/Parquet equivalence,
+  staleness fallback, validation warnings), and the `btf signals` bridge
+  (ENTER / EXIT / HOLDING / FLAT / ERROR classification).
+- `test_engine_properties.py` — hypothesis property tests: ledger
+  conservation, finite self-consistent equity curves, stop monotonicity
+  against adversarial adjustment proposals, partial-exit quantity
+  invariants, intrabar fill bounds, and Monte Carlo seed reproducibility
+  across randomly generated scenarios.
 
-   **Recommendation:** Replace with specific exception types to avoid masking errors.
+The two warnings are benign numpy `RuntimeWarning`s from intentional
+edge-case tests (correlation of identical values).
 
-2. **Print Statements Instead of Logging**
-   - Several GUI files use `print()` for error messages instead of proper logging
-   - Makes debugging production issues difficult
+## How to run
 
-   **Recommendation:** Use `logging` module for error handling.
+```bash
+pip install -r requirements.txt pytest
+python -m pytest tests/ -q
+```
 
-### Medium Priority
+## Known gaps (see docs/SYSTEM_EVALUATION.md)
 
-3. **Incomplete GUI Modernization**
-   - TODO comments in `ctk_backtest_gui.py` lines 235, 269
-   - Some dialogs still using legacy Tkinter instead of CustomTkinter
+- No CI pipeline runs this suite automatically on push (roadmap P1).
+- Legacy `backtesting/` package has no coverage (slated for removal, P1).
 
-   **Recommendation:** Complete migration to CustomTkinter.
+## Historical note
 
-4. **Column Naming Documentation**
-   - Raw data uses Alpha Vantage naming convention (e.g., `atr_14_atr`)
-   - Strategy code normalizes to simpler names (e.g., `atr_14`)
-   - Could confuse new developers
-
-   **Recommendation:** Add documentation explaining the mapping.
-
-### Low Priority
-
-5. **Inconsistent Error Handling**
-   - Mix of specific and generic exception handling
-   - Some files use exception chaining, others don't
-
-   **Recommendation:** Standardize error handling patterns.
-
----
-
-## Components Tested
-
-### Core Engine
-- SingleSecurityEngine
-- PortfolioEngine
-- PositionManager
-- TradeExecutor
-
-### Data Layer
-- DataLoader
-- CurrencyConverter
-- SecurityRegistry
-- HistoricalDataView
-
-### Strategy Layer
-- BaseStrategy
-- StrategyContext
-
-### Analysis Layer
-- PerformanceMetrics
-- TradeLogger
-- ExcelReportGenerator
-
-### Optimization Layer
-- GridOptimizer
-- WalkForwardOptimizer
-- SensitivityAnalyzer
-
----
-
-## Recommendations
-
-1. **Immediate:** The two critical bugs have been fixed in this branch
-2. **Short-term:** Address bare except clauses and add proper logging
-3. **Medium-term:** Complete GUI modernization and add more unit tests
-4. **Long-term:** Consider adding integration test suite for automated CI/CD
-
----
-
-## Files Modified
-
-1. `Classes/Engine/single_security_engine.py` - Fixed commission config attribute
-
----
-
-## Conclusion
-
-The BackTestingFramework is fundamentally solid with good architecture and comprehensive functionality. The critical bugs found were related to attribute naming and column name conventions that would cause runtime errors. After the fixes applied, all 39 tests pass and end-to-end backtesting works correctly for both single security and portfolio modes.
-
-The main areas for improvement are around code quality (exception handling, logging) and completing the GUI modernization work.
+An earlier version of this report (2025-12-28, branch
+`claude/test-framework-DuNLP`) recorded 39 passing tests and the fix of a
+`CommissionConfig.percent` AttributeError in `single_security_engine.py`.
+The suite has since grown ~21×.

@@ -19,6 +19,28 @@ class CommissionMode(Enum):
     FIXED = "fixed"            # Fixed commission per trade
 
 
+class ExecutionTiming(Enum):
+    """
+    When strategy signals are filled.
+
+    SAME_BAR_CLOSE (default, TradingView-style): a signal computed on bar i's
+    close fills at that same close. Optimistic but comparable with all
+    historical results produced by this framework.
+
+    NEXT_BAR_OPEN: a signal computed on bar i's close fills at bar i+1's open
+    (falling back to that bar's close if no 'open' column exists). More
+    realistic — you cannot act on a close you are still forming. Protective
+    stop / take-profit checks are unaffected: they model resting orders and
+    always evaluate on the current bar.
+
+    Currently supported by the single-security engine; the portfolio engine
+    rejects NEXT_BAR_OPEN at run start because its capital-contention
+    decisions are tied to same-bar signal processing.
+    """
+    SAME_BAR_CLOSE = "same_bar_close"
+    NEXT_BAR_OPEN = "next_bar_open"
+
+
 @dataclass
 class CommissionConfig:
     """
@@ -67,6 +89,10 @@ class BacktestConfig:
         position_size_limit: Maximum position size as fraction of capital (default 1.0 = 100%)
         base_currency: Base currency for the account (default: GBP)
         slippage_percent: Slippage percentage applied to all trades (default: 0.1%)
+        execution_timing: When signals fill (same-bar close, or next-bar open)
+        intrabar_stops: If True, stop/take-profit triggers use the bar's
+            high/low with gap-aware fills (gap through the level fills at the
+            open). Default False preserves close-only evaluation.
     """
     initial_capital: float = 100000.0
     commission: CommissionConfig = field(default_factory=CommissionConfig)
@@ -75,6 +101,8 @@ class BacktestConfig:
     position_size_limit: float = 1.0  # Max 100% of capital per position
     base_currency: str = "GBP"  # Base currency of account
     slippage_percent: float = 0.1  # Default 0.1% slippage
+    execution_timing: ExecutionTiming = ExecutionTiming.SAME_BAR_CLOSE
+    intrabar_stops: bool = False
 
     def __post_init__(self):
         """Validate backtest configuration."""
@@ -86,6 +114,8 @@ class BacktestConfig:
             raise ValueError("Start date must be before end date")
         if self.slippage_percent < 0:
             raise ValueError("Slippage percentage must be non-negative")
+        if isinstance(self.execution_timing, str):
+            self.execution_timing = ExecutionTiming(self.execution_timing)
 
 
 @dataclass
@@ -116,6 +146,8 @@ class PortfolioConfig:
     slippage_percent: float = 0.1  # Default 0.1% slippage
     basket_name: Optional[str] = None  # Optional basket name for logging
     full_isolation: bool = False  # Take every signal, fixed sizing equity
+    execution_timing: ExecutionTiming = ExecutionTiming.SAME_BAR_CLOSE
+    intrabar_stops: bool = False  # Stop/TP triggers on bar high/low with gap fills
 
     def __post_init__(self):
         """Validate portfolio configuration."""
@@ -125,6 +157,8 @@ class PortfolioConfig:
             raise ValueError("Start date must be before end date")
         if self.slippage_percent < 0:
             raise ValueError("Slippage percentage must be non-negative")
+        if isinstance(self.execution_timing, str):
+            self.execution_timing = ExecutionTiming(self.execution_timing)
 
     def to_dict(self) -> Dict[str, Any]:
         """Convert to dictionary for serialization."""
@@ -140,7 +174,9 @@ class PortfolioConfig:
             'base_currency': self.base_currency,
             'slippage_percent': self.slippage_percent,
             'basket_name': self.basket_name,
-            'full_isolation': self.full_isolation
+            'full_isolation': self.full_isolation,
+            'execution_timing': self.execution_timing.value,
+            'intrabar_stops': self.intrabar_stops
         }
 
 

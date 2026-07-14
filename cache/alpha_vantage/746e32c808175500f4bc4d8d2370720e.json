@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T08:59:05.282777", "endpoint": "DIVIDENDS", "params": {"symbol": "MDRX"}, "data": {"symbol": "MDRX", "data": [{"ex_dividend_date": "2008-10-13", "declaration_date": "None", "record_date": "None", "payment_date": "None", "amount": "5.23"}]}}

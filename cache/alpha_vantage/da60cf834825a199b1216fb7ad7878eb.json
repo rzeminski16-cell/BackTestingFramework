@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T08:52:19.926066", "endpoint": "SPLITS", "params": {"symbol": "DECK"}, "data": {"symbol": "DECK", "data": [{"effective_date": "2024-09-17", "split_factor": "6.0000"}, {"effective_date": "2010-07-06", "split_factor": "3.0000"}]}}

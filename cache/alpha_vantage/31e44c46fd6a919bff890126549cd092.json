@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T09:01:23.184524", "endpoint": "SPLITS", "params": {"symbol": "PFE"}, "data": {"symbol": "PFE", "data": [{"effective_date": "2020-11-17", "split_factor": "1.0540"}, {"effective_date": "1999-07-01", "split_factor": "3.0000"}]}}

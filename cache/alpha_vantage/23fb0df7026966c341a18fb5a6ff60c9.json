@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T09:02:26.207428", "endpoint": "SPLITS", "params": {"symbol": "ROST"}, "data": {"symbol": "ROST", "data": [{"effective_date": "2015-06-12", "split_factor": "2.0000"}, {"effective_date": "2011-12-16", "split_factor": "2.0000"}, {"effective_date": "2003-12-19", "split_factor": "2.0000"}, {"effective_date": "1999-09-23", "split_factor": "2.0000"}]}}

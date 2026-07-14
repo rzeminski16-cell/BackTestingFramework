@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T08:57:22.731911", "endpoint": "SPLITS", "params": {"symbol": "JILL"}, "data": {"symbol": "JILL", "data": [{"effective_date": "2020-11-10", "split_factor": "0.2000"}, {"effective_date": "2019-03-18", "split_factor": "1.1910"}]}}

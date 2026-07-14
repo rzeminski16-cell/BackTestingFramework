@@ -47,7 +47,9 @@ from strategies.short_only_base_strategy import ShortOnlyBaseStrategy
 # Import centralized strategy configuration
 from config.strategy_config import StrategyConfig
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+from Classes.Core.logging_config import setup_logging
+
+setup_logging(app_name="univariate_optimization")
 logger = logging.getLogger(__name__)
 
 
@@ -1048,7 +1050,10 @@ class CTkUnivariateOptimizationGUI(ctk.CTk):
 
         except Exception as e:
             logger.exception("Optimization failed")
-            self.after(0, lambda: self._on_optimization_error(str(e)))
+            # Bind now: `e` is unbound once the except block exits, so a bare
+            # closure would raise NameError inside the after() callback.
+            msg = str(e)
+            self.after(0, lambda msg=msg: self._on_optimization_error(msg))
 
     def _update_progress(self, stage: str, current: int, total: int):
         """Update progress display."""

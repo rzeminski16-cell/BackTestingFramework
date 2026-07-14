@@ -315,6 +315,45 @@ METRIC_DEFINITIONS: Dict[str, MetricDefinition] = {
         category="daily"
     ),
 
+    # Risk Metrics (equity-curve based)
+    "exposure_pct": MetricDefinition(
+        name="Exposure (Time in Market)",
+        description="Percentage of bars with capital deployed",
+        higher_is_better=False,
+        format_str="{:.1f}%",
+        category="risk"
+    ),
+    "var_95": MetricDefinition(
+        name="VaR 95%",
+        description="Historical one-bar Value-at-Risk at 95% confidence (loss %)",
+        higher_is_better=False,
+        format_str="{:.2f}%",
+        category="risk"
+    ),
+    "cvar_95": MetricDefinition(
+        name="CVaR 95%",
+        description="Average loss beyond the 95% VaR (expected shortfall, %)",
+        higher_is_better=False,
+        format_str="{:.2f}%",
+        category="risk"
+    ),
+
+    # Excursion Metrics (per-trade)
+    "avg_mfe_pct": MetricDefinition(
+        name="Avg MFE",
+        description="Average max favorable excursion per trade (% vs entry)",
+        higher_is_better=True,
+        format_str="{:.2f}%",
+        category="trade"
+    ),
+    "avg_mae_pct": MetricDefinition(
+        name="Avg MAE",
+        description="Average max adverse excursion per trade (% vs entry, <= 0)",
+        higher_is_better=True,
+        format_str="{:.2f}%",
+        category="trade"
+    ),
+
     # Count Metrics
     "num_wins": MetricDefinition(
         name="Winning Trades",
@@ -1299,6 +1338,12 @@ class CentralizedPerformanceMetrics:
             # Daily extremes
             metrics['best_day'] = cls.calculate_best_day(equity_curve)
             metrics['worst_day'] = cls.calculate_worst_day(equity_curve)
+
+            # Risk metrics
+            metrics['exposure_pct'] = cls.calculate_exposure_pct(equity_curve)
+            var_95, cvar_95 = cls.calculate_var_cvar(equity_curve, confidence=0.95)
+            metrics['var_95'] = var_95
+            metrics['cvar_95'] = cvar_95
         else:
             # Set defaults for equity-based metrics
             metrics['sharpe_ratio'] = 0.0
@@ -1315,6 +1360,9 @@ class CentralizedPerformanceMetrics:
             metrics['recovery_factor'] = 0.0
             metrics['best_day'] = 0.0
             metrics['worst_day'] = 0.0
+            metrics['exposure_pct'] = 0.0
+            metrics['var_95'] = 0.0
+            metrics['cvar_95'] = 0.0
 
         # ----------------------------------------------------------------
         # Trade Metrics
@@ -1356,6 +1404,10 @@ class CentralizedPerformanceMetrics:
             metrics['avg_win_r'] = cls.calculate_avg_win_r(trades)
             metrics['avg_loss_r'] = cls.calculate_avg_loss_r(trades)
             metrics['r_expectancy'] = cls.calculate_r_expectancy(trades)
+
+            # Excursion metrics (0.0 when the engine did not track MAE/MFE)
+            metrics['avg_mfe_pct'] = cls.calculate_avg_mfe(trades)
+            metrics['avg_mae_pct'] = cls.calculate_avg_mae(trades)
         else:
             # Set defaults for trade-based metrics
             metrics['total_trades'] = 0
@@ -1376,6 +1428,8 @@ class CentralizedPerformanceMetrics:
             metrics['avg_win_r'] = 0.0
             metrics['avg_loss_r'] = 0.0
             metrics['r_expectancy'] = 0.0
+            metrics['avg_mfe_pct'] = 0.0
+            metrics['avg_mae_pct'] = 0.0
 
         return metrics
 
@@ -1434,6 +1488,139 @@ class CentralizedPerformanceMetrics:
         equity_curve = pd.DataFrame(equity_points)
 
         return cls.calculate_all_metrics(equity_curve, trades, initial_capital)
+
+    # ========================================================================
+    # RISK METRICS
+    # ========================================================================
+
+    @staticmethod
+    def calculate_exposure_pct(
+        equity_curve: pd.DataFrame,
+        position_value_column: str = 'position_value'
+    ) -> float:
+        """
+        Time-in-market: percentage of bars with capital deployed.
+
+        Uses the engine's ``position_value`` column (present on every equity
+        curve both engines produce). Returns 0.0 when the column is missing.
+
+        Returns:
+            Exposure as percentage (0-100)
+        """
+        if equity_curve is None or len(equity_curve) == 0:
+            return 0.0
+        if position_value_column not in equity_curve.columns:
+            return 0.0
+        values = pd.to_numeric(equity_curve[position_value_column], errors='coerce').fillna(0.0)
+        return float((values.abs() > 1e-9).mean() * 100.0)
+
+    @staticmethod
+    def calculate_var_cvar(
+        equity_curve: pd.DataFrame,
+        confidence: float = 0.95,
+        equity_column: str = 'equity'
+    ) -> Tuple[float, float]:
+        """
+        Historical Value-at-Risk and Conditional VaR of per-bar returns.
+
+        Both are reported as POSITIVE loss percentages: ``var=2.1`` means the
+        worst (1-confidence) tail begins at a 2.1% one-bar loss, and ``cvar``
+        is the average loss beyond that point.
+
+        Args:
+            equity_curve: DataFrame with equity values
+            confidence: Confidence level (default 0.95 -> 5% tail)
+            equity_column: Name of equity column
+
+        Returns:
+            Tuple (var_pct, cvar_pct); (0.0, 0.0) with insufficient data
+        """
+        if equity_curve is None or len(equity_curve) < 3:
+            return 0.0, 0.0
+        if equity_column in equity_curve.columns:
+            equity = equity_curve[equity_column]
+        elif len(equity_curve.columns) > 0:
+            equity = equity_curve.iloc[:, 0]
+        else:
+            return 0.0, 0.0
+
+        returns = equity.pct_change().replace([np.inf, -np.inf], np.nan).dropna()
+        if len(returns) < 2:
+            return 0.0, 0.0
+
+        quantile = float(np.quantile(returns, 1.0 - confidence))
+        var_pct = max(0.0, -quantile * 100.0)
+        tail = returns[returns <= quantile]
+        cvar_pct = max(0.0, float(-tail.mean() * 100.0)) if len(tail) else var_pct
+        return var_pct, cvar_pct
+
+    @staticmethod
+    def calculate_rolling_sharpe(
+        equity_curve: pd.DataFrame,
+        window: int = 63,
+        risk_free_rate: Optional[float] = None,
+        trading_days: Optional[int] = None,
+        equity_column: str = 'equity'
+    ) -> pd.Series:
+        """
+        Rolling annualized Sharpe ratio (for stability charts).
+
+        Args:
+            window: Rolling window in bars (default 63 ~ one quarter)
+
+        Returns:
+            Series aligned to the equity curve index (NaN inside the warmup)
+        """
+        if risk_free_rate is None:
+            risk_free_rate = DEFAULT_RISK_FREE_RATE
+        if trading_days is None:
+            trading_days = TRADING_DAYS_PER_YEAR
+        if equity_curve is None or equity_column not in equity_curve.columns:
+            return pd.Series(dtype=float)
+
+        returns = equity_curve[equity_column].pct_change()
+        daily_rf = (1 + risk_free_rate) ** (1 / trading_days) - 1
+        excess = returns - daily_rf
+        mean = excess.rolling(window).mean()
+        std = excess.rolling(window).std()
+        return (mean / std.replace(0.0, np.nan)) * np.sqrt(trading_days)
+
+    @staticmethod
+    def calculate_rolling_volatility(
+        equity_curve: pd.DataFrame,
+        window: int = 63,
+        trading_days: Optional[int] = None,
+        equity_column: str = 'equity'
+    ) -> pd.Series:
+        """Rolling annualized volatility (%) over ``window`` bars."""
+        if trading_days is None:
+            trading_days = TRADING_DAYS_PER_YEAR
+        if equity_curve is None or equity_column not in equity_curve.columns:
+            return pd.Series(dtype=float)
+        returns = equity_curve[equity_column].pct_change()
+        return returns.rolling(window).std() * np.sqrt(trading_days) * 100.0
+
+    @staticmethod
+    def _get_excursion(trade, attr: str):
+        if hasattr(trade, attr):
+            return getattr(trade, attr)
+        if isinstance(trade, dict):
+            return trade.get(attr)
+        return None
+
+    @classmethod
+    def calculate_avg_mfe(cls, trades: List[Any]) -> float:
+        """Average Max Favorable Excursion (%) over trades that tracked it."""
+        vals = [cls._get_excursion(t, 'mfe_pct') for t in trades or []]
+        vals = [v for v in vals if v is not None and not pd.isna(v)]
+        return float(np.mean(vals)) if vals else 0.0
+
+    @classmethod
+    def calculate_avg_mae(cls, trades: List[Any]) -> float:
+        """Average Max Adverse Excursion (%, <= 0) over trades that tracked it."""
+        vals = [cls._get_excursion(t, 'mae_pct') for t in trades or []]
+        vals = [v for v in vals if v is not None and not pd.isna(v)]
+        return float(np.mean(vals)) if vals else 0.0
 
     # ========================================================================
     # STABLE METRICS

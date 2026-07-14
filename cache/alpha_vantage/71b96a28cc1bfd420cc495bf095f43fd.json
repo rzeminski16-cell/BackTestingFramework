@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T09:05:05.370884", "endpoint": "SPLITS", "params": {"symbol": "TELL"}, "data": {"symbol": "TELL", "data": [{"effective_date": "2015-07-13", "split_factor": "0.1250"}]}}

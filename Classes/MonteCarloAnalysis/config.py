@@ -67,6 +67,12 @@ class SimulationConfig:
     # 0 disables clipping.
     return_clip: float = 0.0
 
+    # Steps per year, used to annualize per-path Sharpe/CAGR/Calmar
+    # distributions. For a per-trade pool this is the strategy's historical
+    # trades/year; for a daily-returns pool use 252. None (default) leaves
+    # the annualized metrics unset.
+    periods_per_year: Optional[float] = None
+
     # Reproducibility
     random_seed: Optional[int] = None
 
@@ -97,6 +103,8 @@ class SimulationConfig:
             errors.append("commission_pct and slippage_pct must be >= 0")
         if self.return_clip < 0:
             errors.append("return_clip must be >= 0 (0 disables clipping)")
+        if self.periods_per_year is not None and self.periods_per_year <= 0:
+            errors.append("periods_per_year must be > 0 when provided")
         return errors
 
     def to_dict(self) -> Dict[str, Any]:

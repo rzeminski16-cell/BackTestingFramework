@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T09:04:35.752561", "endpoint": "SPLITS", "params": {"symbol": "SWN"}, "data": {"symbol": "SWN", "data": [{"effective_date": "2008-03-26", "split_factor": "2.0000"}, {"effective_date": "2005-11-18", "split_factor": "2.0000"}, {"effective_date": "2005-06-06", "split_factor": "2.0000"}]}}

@@ -1,6 +1,8 @@
 """
 Single security backtesting engine.
 """
+import logging
+
 import pandas as pd
 from typing import List, Optional, Callable
 from datetime import datetime
@@ -10,7 +12,7 @@ from ..Strategy.strategy_context import StrategyContext
 from ..Models.signal import Signal, SignalType
 from ..Models.order import Order, OrderSide, OrderType
 from ..Models.trade_direction import TradeDirection
-from ..Config.config import BacktestConfig
+from ..Config.config import BacktestConfig, ExecutionTiming
 from .position_manager import PositionManager
 from .trade_executor import TradeExecutor
 from .backtest_result import BacktestResult
@@ -18,6 +20,8 @@ from ..Data.currency_converter import CurrencyConverter, MissingFXRateError
 from ..Data.security_registry import SecurityRegistry, MissingCurrencyError
 from ..Data.historical_data_view import HistoricalDataView
 from ..Models.trade import reset_trade_counter
+
+logger = logging.getLogger(__name__)
 
 
 class SingleSecurityEngine:
@@ -100,6 +104,11 @@ class SingleSecurityEngine:
 
         # Process each bar
         total_bars = len(data)
+        has_high_low = 'high' in data.columns and 'low' in data.columns
+        has_open = 'open' in data.columns
+        next_bar_open_mode = self.config.execution_timing == ExecutionTiming.NEXT_BAR_OPEN
+        # Signal awaiting execution at the next bar's open: (signal, context)
+        pending_signal = None
         for i in range(total_bars):
             # Update progress callback (every 50 bars or at the end)
             if progress_callback and (i % 50 == 0 or i == total_bars - 1):
@@ -108,6 +117,24 @@ class SingleSecurityEngine:
             current_bar = data.iloc[i]
             current_date = current_bar['date']
             current_price = current_bar['close']
+            bar_open = current_bar['open'] if has_open else current_price
+            bar_high = current_bar['high'] if has_high_low else current_price
+            bar_low = current_bar['low'] if has_high_low else current_price
+
+            # NEXT_BAR_OPEN: fill the signal deferred from the previous bar's
+            # close at this bar's open, before anything else happens today.
+            if pending_signal is not None:
+                deferred, deferred_context = pending_signal
+                pending_signal = None
+                capital = self._execute_deferred_signal(
+                    symbol, current_date, bar_open, deferred,
+                    strategy, deferred_context, capital
+                )
+
+            # Track intra-trade excursions (MAE/MFE) off the bar's extremes,
+            # falling back to the close when high/low are unavailable.
+            if self.position_manager.has_position:
+                self.position_manager.position.update_excursions(bar_high, bar_low)
 
             # DATA LEAKAGE FIX: Only pass historical data up to current bar
             # This prevents strategies from accessing future data and eliminates look-ahead bias
@@ -138,40 +165,61 @@ class SingleSecurityEngine:
 
             # Check stop loss first (before strategy signal)
             if self.position_manager.has_position:
-                if strategy.should_check_stop_loss(context):
-                    if self.position_manager.check_stop_loss(current_price):
-                        # Stop loss hit - close position
+                if self.config.intrabar_stops:
+                    # Evaluate stop/TP against the bar's full range with
+                    # gap-aware fills (resting-order model).
+                    intrabar_fill = self.position_manager.check_exits_intrabar(
+                        bar_open, bar_high, bar_low,
+                        check_stop=strategy.should_check_stop_loss(context),
+                        check_tp=strategy.should_check_take_profit(context)
+                    )
+                    if intrabar_fill is not None:
+                        fill_price, fill_reason = intrabar_fill
                         capital = self._close_position(
-                            symbol, current_date, current_price, "Stop loss hit", capital
+                            symbol, current_date, fill_price, fill_reason, capital
                         )
-                        position_value = 0
-                        total_equity = capital
-                        # Record equity and continue to next bar
                         equity_history.append({
                             'date': current_date,
-                            'equity': total_equity,
+                            'equity': capital,
                             'capital': capital,
-                            'position_value': position_value
+                            'position_value': 0
                         })
                         continue
+                else:
+                    if strategy.should_check_stop_loss(context):
+                        if self.position_manager.check_stop_loss(current_price):
+                            # Stop loss hit - close position
+                            capital = self._close_position(
+                                symbol, current_date, current_price, "Stop loss hit", capital
+                            )
+                            position_value = 0
+                            total_equity = capital
+                            # Record equity and continue to next bar
+                            equity_history.append({
+                                'date': current_date,
+                                'equity': total_equity,
+                                'capital': capital,
+                                'position_value': position_value
+                            })
+                            continue
 
-                # Check take profit
-                if strategy.should_check_take_profit(context):
-                    if self.position_manager.check_take_profit(current_price):
-                        # Take profit hit - close position
-                        capital = self._close_position(
-                            symbol, current_date, current_price, "Take profit hit", capital
-                        )
-                        position_value = 0
-                        total_equity = capital
-                        # Record equity and continue to next bar
-                        equity_history.append({
-                            'date': current_date,
-                            'equity': total_equity,
-                            'capital': capital,
-                            'position_value': position_value
-                        })
-                        continue
+                    # Check take profit
+                    if strategy.should_check_take_profit(context):
+                        if self.position_manager.check_take_profit(current_price):
+                            # Take profit hit - close position
+                            capital = self._close_position(
+                                symbol, current_date, current_price, "Take profit hit", capital
+                            )
+                            position_value = 0
+                            total_equity = capital
+                            # Record equity and continue to next bar
+                            equity_history.append({
+                                'date': current_date,
+                                'equity': total_equity,
+                                'capital': capital,
+                                'position_value': position_value
+                            })
+                            continue
 
                 # Check for trailing stop adjustment
                 new_stop = strategy.should_adjust_stop(context)
@@ -202,6 +250,40 @@ class SingleSecurityEngine:
 
             # Generate signal from strategy
             signal = strategy.generate_signal(context)
+
+            # NEXT_BAR_OPEN: defer fill-type signals to the next bar's open.
+            # Stop adjustments apply immediately (no fill involved), and a
+            # signal generated on the final bar is dropped (never fillable).
+            if next_bar_open_mode:
+                if signal.type in (SignalType.BUY, SignalType.SELL,
+                                   SignalType.PARTIAL_EXIT, SignalType.PYRAMID):
+                    if i < total_bars - 1:
+                        pending_signal = (signal, context)
+                    else:
+                        logger.info(
+                            "%s signal on the final bar dropped (no next bar "
+                            "to fill at).", signal.type.value)
+                elif signal.type == SignalType.ADJUST_STOP and self.position_manager.has_position:
+                    if signal.new_stop_loss is not None:
+                        current_stop = self.position_manager.position.stop_loss
+                        direction = self.position_manager.position.direction
+                        if direction == TradeDirection.LONG:
+                            if current_stop is None or signal.new_stop_loss > current_stop:
+                                self.position_manager.adjust_stop_loss(signal.new_stop_loss)
+                        else:
+                            if current_stop is None or signal.new_stop_loss < current_stop:
+                                self.position_manager.adjust_stop_loss(signal.new_stop_loss)
+
+                # Record equity and move to the next bar.
+                position_value = self.position_manager.get_position_value(current_price)
+                position_value = self._convert_to_base_currency(position_value, symbol, current_date)
+                equity_history.append({
+                    'date': current_date,
+                    'equity': capital + position_value,
+                    'capital': capital,
+                    'position_value': position_value
+                })
+                continue
 
             # Process signal
             if signal.type == SignalType.BUY and not self.position_manager.has_position:
@@ -296,6 +378,62 @@ class SingleSecurityEngine:
 
         return result
 
+    def _execute_deferred_signal(self, symbol: str, date: datetime,
+                                 fill_price: float, signal: Signal,
+                                 strategy: BaseStrategy,
+                                 context: StrategyContext,
+                                 capital: float) -> float:
+        """
+        Execute a signal deferred from the previous bar's close at this
+        bar's open (NEXT_BAR_OPEN mode).
+
+        The stored context is the decision-time context (previous bar) so
+        position sizing uses the information the strategy actually had;
+        _open_position rescales the quantity to the actual fill price. An
+        entry whose stop is already breached by the fill price (overnight
+        gap across the stop) is skipped and logged — a live order with that
+        stop would be rejected or immediately stopped out.
+
+        Returns:
+            Updated capital
+        """
+        if signal.type == SignalType.BUY and not self.position_manager.has_position:
+            stop = signal.stop_loss
+            if stop is not None:
+                gap_breached = (
+                    stop >= fill_price
+                    if signal.direction != TradeDirection.SHORT
+                    else stop <= fill_price
+                )
+                if gap_breached:
+                    logger.info(
+                        "Deferred %s entry for %s on %s skipped: open %.4f "
+                        "gapped across the stop %.4f.",
+                        signal.direction.value, symbol, date, fill_price, stop)
+                    return capital
+            return self._open_position(
+                symbol, date, fill_price, signal, strategy, context,
+                capital, entry_equity=capital
+            )
+
+        if signal.type == SignalType.SELL and self.position_manager.has_position:
+            return self._close_position(
+                symbol, date, fill_price,
+                signal.reason or "Strategy exit signal", capital
+            )
+
+        if signal.type == SignalType.PARTIAL_EXIT and self.position_manager.has_position:
+            return self._partial_exit(
+                symbol, date, fill_price, signal.size, signal.reason, capital
+            )
+
+        if signal.type == SignalType.PYRAMID and self.position_manager.has_position:
+            return self._pyramid_position(
+                symbol, date, fill_price, signal, strategy, context, capital
+            )
+
+        return capital
+
     def _validate_currencies(self, symbols: List[str]) -> None:
         """
         Validate currency metadata and FX availability before running.
@@ -338,9 +476,10 @@ class SingleSecurityEngine:
             # Flag that this ticker is in a different currency (once per symbol).
             if symbol not in self._fx_rate_warnings:
                 self._fx_rate_warnings.add(symbol)
-                print(
-                    f"FX: {symbol} is denominated in {currency}; converting to "
-                    f"{base_currency} using {currency}/{base_currency} rates."
+                logger.info(
+                    "FX: %s is denominated in %s; converting to %s using "
+                    "%s/%s rates.", symbol, currency, base_currency,
+                    currency, base_currency
                 )
 
             if not self.currency_converter.has_rate(currency):
@@ -567,9 +706,14 @@ class SingleSecurityEngine:
             reason=reason
         )
 
-        # Execute order
+        # Execute order (commission is charged on the traded notional)
         exit_commission = self.trade_executor.execute_order(exit_order)
-        proceeds = exit_order.total_value() - exit_commission
+
+        # Cash released is direction-aware: a LONG sale returns qty * price;
+        # a SHORT cover returns the posted collateral plus short P/L
+        # (qty * (2 * entry - price)). Using the raw order value here would
+        # book long-side P/L for shorts and invert the equity curve.
+        proceeds = position.close_out_value(execution_price, quantity) - exit_commission
 
         # Convert proceeds to base currency (GBP)
         proceeds_base = self._convert_to_base_currency(proceeds, symbol, date)
@@ -656,9 +800,11 @@ class SingleSecurityEngine:
             reason=reason
         )
 
-        # Execute order
+        # Execute order (commission is charged on the traded notional)
         exit_commission = self.trade_executor.execute_order(exit_order)
-        proceeds = exit_order.total_value() - exit_commission
+
+        # Direction-aware cash release (see _close_position for the rationale).
+        proceeds = position.close_out_value(execution_price, exit_quantity) - exit_commission
 
         # Convert proceeds to base currency (GBP)
         proceeds_base = self._convert_to_base_currency(proceeds, symbol, date)

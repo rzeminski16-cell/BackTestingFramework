@@ -1,1 +1,0 @@
-{"timestamp": "2026-06-19T08:56:21.674695", "endpoint": "SPLITS", "params": {"symbol": "IHG"}, "data": {"symbol": "IHG", "data": [{"effective_date": "2019-01-14", "split_factor": "0.9490"}, {"effective_date": "2017-05-08", "split_factor": "0.9574"}, {"effective_date": "2006-06-12", "split_factor": "0.8750"}]}}

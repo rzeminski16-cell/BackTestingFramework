@@ -87,11 +87,52 @@ All performance metrics calculated by the framework, grouped by category.
 
 ---
 
-## Edge Metrics
+## Edge & Excursion Metrics
 
 | Metric | Description |
 |---|---|
 | **E-Ratio** | Maximum Favourable Excursion / Maximum Adverse Excursion. Above 1.0 = positive edge |
+| **MFE (Max Favourable Excursion)** | Best unrealised move during a trade, % vs entry (≥ 0). Tracked bar-by-bar off the bar's high/low, direction-aware |
+| **MAE (Max Adverse Excursion)** | Worst unrealised move during a trade, % vs entry (≤ 0). Large \|MAE\| on winners suggests stops are wider than needed |
+| **Avg MFE / Avg MAE** | Means across all trades that tracked excursions |
+
+---
+
+## Risk Metrics (Equity Curve)
+
+| Metric | Description |
+|---|---|
+| **Exposure (Time in Market)** | Percentage of bars with capital deployed |
+| **VaR 95%** | Historical one-bar Value-at-Risk: the 5% worst-tail begins at this one-bar loss (%) |
+| **CVaR 95%** | Expected shortfall: the *average* loss beyond the 95% VaR (%) |
+| **Rolling Sharpe / Volatility** | Windowed (default 63-bar) versions for stability inspection |
+
+---
+
+## Stable (Regression-Based) Metrics
+
+These measure underlying performance in a way that is less sensitive to
+lucky start/end points. **Annualisation convention:** every equity curve is
+first resampled onto a forward-filled *calendar-daily* grid, so
+`BARS_PER_YEAR = 365` always matches the true cadence — RAR% is comparable
+across the backtest reports, the Rule Tester, and the Modelling stage.
+
+| Metric | Description |
+|---|---|
+| **RAR% (Regressed Annual Return)** | Fit OLS to ln(equity) vs time on the calendar-daily grid; RAR% = (e^(slope × 365) − 1) × 100. An annual return estimate using *every* point on the curve, not just the endpoints |
+| **R² (Log-Equity Regression)** | Goodness of fit of that regression — how "straight" the equity growth is (1.0 = perfectly steady) |
+| **Adjusted RAR% (RAR% × R²)** | RAR% penalised by noisiness; the primary selection metric in the Modelling stage |
+| **R-Cubed** | RAR% / (Average of the 5 largest drawdowns × average drawdown length / 365). Return per unit of drawdown depth *and* duration |
+| **Robust Sharpe** | RAR% / annualised std-dev of rolling 30-calendar-day returns |
+
+---
+
+## Multiple-Testing Control
+
+| Metric | Description |
+|---|---|
+| **PSR (Probabilistic Sharpe Ratio)** | Probability that the true Sharpe exceeds a benchmark given the sample length and return moments |
+| **DSR (Deflated Sharpe Ratio)** | PSR against the Sharpe you'd expect from the *luckiest* of the N configurations a parameter search examined. Shown per walk-forward window ("In-Sample DSR"); **> 0.95 = the result survives its own search**. A high in-sample Sharpe with a low DSR is selection bias, not skill |
 
 ---
 

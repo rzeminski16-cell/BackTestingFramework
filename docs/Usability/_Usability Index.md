@@ -30,6 +30,11 @@ Step-by-step guides for each analysis tool in the system.
 | [[Walk-Forward Optimisation]] | Find robust parameters using rolling train/test windows |
 | [[Univariate Optimisation]] | Sweep a single parameter to understand sensitivity |
 | [[Edge Analysis]] | Validate entry quality with E-ratio and R-multiples |
+| [[Monte Carlo Simulation]] | Bootstrap trade returns into outcome distributions and drawdown risk |
+| [[Rule Tester]] | Measure the before/after effect of entry/exit filters on a trade log |
+| [[Pattern Analysis]] | Analyse MA-crossover signal density before trade entries |
+| [[Vulnerability Visualizer]] | Explore and tune the portfolio swap score on real trades |
+| [[Data Collection]] | Collect and validate Alpha Vantage data into raw_data/ |
 | [[Reading Reports]] | Interpret Excel reports, trade logs, and equity curves |
 
 ---
@@ -55,6 +60,7 @@ Quick-lookup tables and glossaries.
 | Reference | Contents |
 |---|---|
 | [[Metrics Glossary]] | All 50+ performance metrics defined |
+| [[Command Line Interface]] | The `btf` CLI: headless backtests, optimisation, Monte Carlo |
 | [[Signal Types]] | BUY, SELL, PARTIAL_EXIT, ADJUST_STOP, PYRAMID, HOLD |
 | [[Configuration Options]] | Every config field across BacktestConfig and PortfolioConfig |
 | [[Available Securities]] | Securities included with the framework and their data coverage |

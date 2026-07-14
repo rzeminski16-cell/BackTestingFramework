@@ -42,6 +42,15 @@ class SimulationMetrics:
 
     elapsed_seconds: float
 
+    # Annualized per-path distributions. Populated only when
+    # SimulationConfig.periods_per_year is set (trades/year for per-trade
+    # pools, 252 for daily-return pools); None otherwise.
+    median_annualized_sharpe: Optional[float] = None
+    p5_annualized_sharpe: Optional[float] = None
+    median_annualized_cagr: Optional[float] = None
+    median_calmar: Optional[float] = None
+    p5_calmar: Optional[float] = None
+
     def to_dict(self) -> Dict[str, Any]:
         return asdict(self)
 
@@ -107,6 +116,59 @@ class SimulationAnalyzer:
             rng = np.random.default_rng(0)
         return rng.choice(n_sim, size=k, replace=False)
 
+    # ---- per-path metric distributions -----------------------------------
+
+    def sharpe_distribution(self, annualized: bool = True) -> np.ndarray:
+        """
+        Per-path Sharpe ratio (mean / std of the path's step returns), shape
+        (num_simulations,).
+
+        When ``annualized`` and ``config.periods_per_year`` is set, values are
+        scaled by sqrt(periods_per_year); otherwise the raw per-step Sharpe
+        is returned.
+        """
+        eq_ret = self.equity_returns()
+        with np.errstate(invalid="ignore"):
+            mean = eq_ret.mean(axis=1)
+            std = eq_ret.std(axis=1, ddof=1) if eq_ret.shape[1] > 1 else np.zeros_like(mean)
+            sharpe = np.where(std > 0, mean / std, 0.0)
+        ppy = self.result.config.periods_per_year
+        if annualized and ppy:
+            sharpe = sharpe * np.sqrt(ppy)
+        return sharpe
+
+    def cagr_distribution(self) -> Optional[np.ndarray]:
+        """
+        Per-path annualized CAGR (fraction), or None when
+        ``config.periods_per_year`` is not set. Wiped-out paths report -1.
+        """
+        cfg = self.result.config
+        if not cfg.periods_per_year:
+            return None
+        years = self.result.num_trades / cfg.periods_per_year
+        if years <= 0:
+            return None
+        final = self.final_equity
+        with np.errstate(divide="ignore", invalid="ignore"):
+            growth = np.where(final > 0, final / cfg.initial_capital, np.nan)
+            cagr = np.where(np.isfinite(growth) & (growth > 0),
+                            growth ** (1.0 / years) - 1.0, -1.0)
+        return cagr
+
+    def calmar_distribution(self) -> Optional[np.ndarray]:
+        """
+        Per-path Calmar ratio (annualized CAGR / max drawdown), or None when
+        ``config.periods_per_year`` is not set. Paths with no drawdown get
+        the path CAGR divided by a 1e-9 floor capped at 1e6.
+        """
+        cagr = self.cagr_distribution()
+        if cagr is None:
+            return None
+        dd = self.max_drawdowns()
+        with np.errstate(divide="ignore", invalid="ignore"):
+            calmar = cagr / np.maximum(dd, 1e-9)
+        return np.clip(calmar, -1e6, 1e6)
+
     # ---- summary metrics ------------------------------------------------
 
     def metrics(self) -> SimulationMetrics:
@@ -134,6 +196,21 @@ class SimulationAnalyzer:
         ruin_threshold = 0.5 * cfg.initial_capital
         min_along_path = ec.min(axis=1)
 
+        # Annualized distributions (only when periods_per_year configured).
+        median_ann_sharpe = p5_ann_sharpe = None
+        median_ann_cagr = median_calmar = p5_calmar = None
+        if cfg.periods_per_year:
+            ann_sharpe = self.sharpe_distribution(annualized=True)
+            median_ann_sharpe = float(np.median(ann_sharpe))
+            p5_ann_sharpe = float(np.percentile(ann_sharpe, 5))
+            cagr_dist = self.cagr_distribution()
+            if cagr_dist is not None:
+                median_ann_cagr = float(np.median(cagr_dist))
+            calmar_dist = self.calmar_distribution()
+            if calmar_dist is not None:
+                median_calmar = float(np.median(calmar_dist))
+                p5_calmar = float(np.percentile(calmar_dist, 5))
+
         return SimulationMetrics(
             num_simulations=self.result.num_simulations,
             num_trades=self.result.num_trades,
@@ -153,6 +230,11 @@ class SimulationAnalyzer:
             median_cagr_equivalent=float(np.median(geom_per_trade)),
             median_sharpe=float(np.median(sharpe)),
             elapsed_seconds=self.result.elapsed_seconds,
+            median_annualized_sharpe=median_ann_sharpe,
+            p5_annualized_sharpe=p5_ann_sharpe,
+            median_annualized_cagr=median_ann_cagr,
+            median_calmar=median_calmar,
+            p5_calmar=p5_calmar,
         )
 
     # ---- export ---------------------------------------------------------
