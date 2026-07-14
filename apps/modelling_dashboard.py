@@ -117,12 +117,19 @@ def _rar_key(dd: DashboardData):
     return (r.bars_per_year, r.weight_by_r_squared, r.clip_min, r.clip_max)
 
 
-def _select_run() -> str:
+# Anchor the default runs directory to the repository root so exports are
+# found no matter which working directory streamlit was launched from.
+_DEFAULT_RUNS_ROOT = str(Path(__file__).resolve().parent.parent
+                         / "processed_data" / "runs")
+
+
+def _select_run() -> tuple:
+    """Returns (run_dir, runs_root); runs_root feeds the Compare-runs page."""
     env_dir = os.environ.get("MODEL_RUN_DIR")
     if env_dir and os.path.isdir(env_dir):
         st.sidebar.success(f"Loaded from MODEL_RUN_DIR:\n{env_dir}")
-        return env_dir
-    runs_root = st.sidebar.text_input("Runs directory", value="processed_data/runs")
+        return env_dir, _DEFAULT_RUNS_ROOT
+    runs_root = st.sidebar.text_input("Runs directory", value=_DEFAULT_RUNS_ROOT)
     runs = discover_model_runs(runs_root)
     if not runs:
         st.sidebar.warning("No exported model runs found. Run the Modelling & "
@@ -130,7 +137,7 @@ def _select_run() -> str:
         st.stop()
     labels = [f"{r['source_run']} / {r['model_run']}" for r in runs]
     choice = st.sidebar.selectbox("Model run", labels, index=len(labels) - 1)
-    return runs[labels.index(choice)]["path"]
+    return runs[labels.index(choice)]["path"], runs_root
 
 
 def _filters(df: pd.DataFrame) -> pd.DataFrame:
@@ -580,9 +587,93 @@ def page_search(dd: DashboardData, view: str) -> None:
 # --------------------------------------------------------------------------- #
 # App.
 # --------------------------------------------------------------------------- #
+def _run_headline(dd: DashboardData) -> dict:
+    """Headline numbers for one run's finalist (empty leaderboard -> {})."""
+    lb = dd.leaderboard
+    if lb.empty:
+        return {}
+    top = lb.iloc[0]
+    rob = dd.robustness or {}
+    wrc = rob.get("whites_reality_check") or {}
+    return {
+        "Finalist": str(top.get("model", "?")),
+        "OOS Adjusted RAR%": float(top.get("oos_adjusted_rar", 0.0) or 0.0),
+        "Baseline Adjusted RAR%": float(top.get("baseline_adjusted_rar", 0.0) or 0.0),
+        "Guardrails": "PASS" if top.get("passes_guardrails", False) else "REVIEW",
+        "Reality Check p": wrc.get("p_value"),
+    }
+
+
+def page_compare(dd: DashboardData, runs_root: str) -> None:
+    """Side-by-side comparison of this run against another exported run."""
+    st.header("Compare runs")
+    st.caption("Same diagnostic headline for two exports side by side — e.g. "
+               "before/after a feature change, a different target, or a "
+               "different validation design. Deltas are B − A.")
+
+    runs = discover_model_runs(runs_root)
+    this_path = os.path.normpath(dd.path)
+    others = [r for r in runs if os.path.normpath(r["path"]) != this_path]
+    if not others:
+        st.info("Only one exported run was found under the runs directory. "
+                "Export another model run to enable comparison.")
+        return
+
+    labels = [f"{r['source_run']} / {r['model_run']}" for r in others]
+    choice = st.selectbox("Compare against (run B)", labels)
+    other = _load(others[labels.index(choice)]["path"])
+
+    head_a, head_b = _run_headline(dd), _run_headline(other)
+    if not head_a or not head_b:
+        st.warning("One of the runs has no leaderboard; nothing to compare.")
+        return
+
+    st.subheader("Headline")
+    name_a = os.path.basename(this_path)
+    name_b = os.path.basename(os.path.normpath(other.path))
+    c1, c2, c3 = st.columns(3)
+    c1.metric(f"A · {name_a}", head_a["Finalist"],
+              f"{head_a['OOS Adjusted RAR%']:.2f} OOS Adj RAR%")
+    c2.metric(f"B · {name_b}", head_b["Finalist"],
+              f"{head_b['OOS Adjusted RAR%']:.2f} OOS Adj RAR%")
+    delta = head_b["OOS Adjusted RAR%"] - head_a["OOS Adjusted RAR%"]
+    c3.metric("Δ OOS Adjusted RAR% (B − A)", f"{delta:+.2f}",
+              "B better" if delta > 0 else ("A better" if delta < 0 else "tied"))
+
+    rows = []
+    for key in ("Finalist", "OOS Adjusted RAR%", "Baseline Adjusted RAR%",
+                "Guardrails", "Reality Check p"):
+        va, vb = head_a.get(key), head_b.get(key)
+        fmt = (lambda v: "—" if v is None
+               else (f"{v:.3f}" if isinstance(v, float) else str(v)))
+        rows.append({"Metric": key, f"A · {name_a}": fmt(va),
+                     f"B · {name_b}": fmt(vb)})
+    summary = pd.DataFrame(rows)
+    st.dataframe(summary, use_container_width=True, hide_index=True)
+    st.download_button("Download comparison (CSV)",
+                       summary.to_csv(index=False).encode(),
+                       file_name=f"compare_{name_a}_vs_{name_b}.csv",
+                       mime="text/csv")
+
+    st.subheader("Model leaderboards")
+    col_a, col_b = st.columns(2)
+    with col_a:
+        st.caption(f"A · {name_a}")
+        st.dataframe(dd.leaderboard, use_container_width=True, hide_index=True)
+    with col_b:
+        st.caption(f"B · {name_b}")
+        st.dataframe(other.leaderboard, use_container_width=True, hide_index=True)
+
+    # Warnings from either run belong next to any cross-run conclusion.
+    for label, run in ((f"A · {name_a}", dd), (f"B · {name_b}", other)):
+        for view_name in run.views:
+            for w in run.view_meta(view_name).get("warnings", []):
+                st.warning(f"{label} [{view_name}]: {w}")
+
+
 def main() -> None:
     st.title("Strategy Diagnostics — Modelling & Evaluation")
-    run_dir = _select_run()
+    run_dir, runs_root = _select_run()
     dd = _load(run_dir)
 
     views = dd.views
@@ -602,6 +693,7 @@ def main() -> None:
     page = st.sidebar.radio("Page", [
         "Does it work?", "Regimes", "Performance drivers", "Factors",
         "Scoring & overlays", "Walk-forward", "Robustness & search",
+        "Compare runs",
     ])
     if page == "Does it work?":
         page_overview(dd, view)
@@ -615,6 +707,8 @@ def main() -> None:
         page_scoring(dd, view, df)
     elif page == "Walk-forward":
         page_walkforward(dd, view)
+    elif page == "Compare runs":
+        page_compare(dd, runs_root)
     else:
         page_search(dd, view)
 

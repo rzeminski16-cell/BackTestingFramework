@@ -39,8 +39,11 @@ all = ["backtesting-framework[gui,dashboard,shap]"]
 [tool.setuptools.dynamic]
 version = { attr = "Classes._version.__version__" }
 
+[project.scripts]
+btf = "btf.__main__:main"
+
 [tool.setuptools.packages.find]
-include = ["Classes*", "strategies*"]
+include = ["Classes*", "strategies*", "btf*"]
 namespaces = true
 
 [tool.pytest.ini_options]

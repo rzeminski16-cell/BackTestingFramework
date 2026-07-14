@@ -6,10 +6,10 @@
 ## Summary
 
 ```
-929 passed, 2 warnings (Python 3.11)
+946 passed, 2 warnings (Python 3.11)
 ```
 
-All 41 test modules pass, covering: engines (single-security, portfolio,
+All 42 test modules pass, covering: engines (single-security, portfolio,
 integration), strategies (AlphaTrend family, short-only base, random control),
 core & optimization metrics, currency conversion, data layer & collection,
 data preparation, modelling & evaluation, Monte Carlo, pattern analysis,
@@ -44,6 +44,13 @@ Added 2026-07-14 (P2 analytics depth):
 - `test_monte_carlo_upgrades.py` — annualized per-path Sharpe/CAGR/Calmar
   distributions and the daily-returns pool loader.
 - `test_benchmark.py` gained benchmark-relative max-drawdown coverage.
+
+Added 2026-07-14 (P3 product polish):
+
+- `test_cli.py` — the `btf` CLI: parser/subcommands, strategy registry,
+  hermetic end-to-end single and portfolio backtests on synthetic data
+  (trade-log CSV + metrics JSON assertions), next-bar-open flag, and
+  Monte Carlo from both a trade log and a daily equity curve.
 
 The two warnings are benign numpy `RuntimeWarning`s from intentional
 edge-case tests (correlation of identical values).

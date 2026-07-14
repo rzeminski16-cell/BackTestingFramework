@@ -67,6 +67,19 @@ The launcher provides access to all modules:
 Each module can also be launched directly, e.g. `python ctk_backtest_gui.py`,
 or `python -m streamlit run apps/modelling_dashboard.py` for the dashboard.
 
+### Command line (headless)
+
+The `btf` CLI scripts the core flows without a GUI — see
+[Command Line Interface](docs/Usability/Reference/Command%20Line%20Interface.md):
+
+```bash
+python -m btf list                                                   # what's available
+python -m btf backtest --strategy AlphaTrendV1Strategy --symbols AAPL --report
+python -m btf optimize --strategy AlphaTrendV1Strategy --symbol AAPL
+python -m btf montecarlo --trade-log logs/<run>/trades.csv
+python -m btf dashboard
+```
+
 ## Data Layout
 
 Data lives under `raw_data/`, organised by type:

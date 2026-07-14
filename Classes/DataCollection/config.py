@@ -322,7 +322,10 @@ class CacheConfig:
 
     def __post_init__(self):
         if isinstance(self.cache_dir, str):
-            self.cache_dir = Path(self.cache_dir)
+            # Settings written on Windows may contain backslashes
+            # ("cache\\alpha_vantage"); on POSIX that is a literal file name,
+            # so normalise separators before building the Path.
+            self.cache_dir = Path(self.cache_dir.replace("\\", "/"))
         if self.cache_expiry_hours < 0:
             raise ValueError("cache_expiry_hours cannot be negative")
 
@@ -338,7 +341,8 @@ class CacheConfig:
     def from_dict(cls, data: Dict[str, Any]) -> 'CacheConfig':
         data = data.copy()
         if "cache_dir" in data:
-            data["cache_dir"] = Path(data["cache_dir"])
+            # Cross-platform: tolerate Windows-written backslash paths.
+            data["cache_dir"] = Path(str(data["cache_dir"]).replace("\\", "/"))
         return cls(**{k: v for k, v in data.items() if k in cls.__dataclass_fields__})
 
 

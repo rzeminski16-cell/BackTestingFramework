@@ -22,6 +22,11 @@
 > risk metrics, benchmark-relative drawdown, Deflated Sharpe in the
 > walk-forward reports, a cross-engine parity test, and Monte Carlo
 > annualized per-path distributions plus a daily-returns pool loader.
+>
+> **P3 is complete** (see §6): the `btf` unified CLI, launcher crash
+> surfacing + dependency-aware cards, dashboard run-path fix + Compare-runs
+> page, five new module guides + CLI reference + expanded metrics glossary,
+> and Windows-path hygiene. Suite: 946 passed.
 
 ---
 
@@ -388,21 +393,41 @@ in rough priority order:
     `tests/test_monte_carlo_upgrades.py`. *Deferred:* Monte Carlo GUI toggle
     for the daily-pool mode.
 
-### P3 — Product polish
+### P3 — Product polish — **DONE (2026-07-14)**
 
-16. **Unified CLI** (`python -m btf backtest|optimize|prep|model|dashboard ...`)
-    so every GUI flow is scriptable/automatable; today only ad-hoc `tools/`
-    scripts exist.
-17. **Launcher upgrades:** surface module crashes (child stderr), disable cards
-    whose prerequisites are missing (e.g. dashboard without streamlit) with a
-    tooltip, single version constant.
-18. **Dashboard:** absolute default run path (§4), a "compare two runs"
-    page, and CSV export buttons on every table.
-19. **Docs completion:** guides for the six undocumented GUI modules (§5),
-    a metrics glossary entry for RAR%/R-cubed/Robust Sharpe with the exact
-    formulas and the annualisation convention chosen in P0-3.
-20. **Windows-path hygiene:** `cache_dir: "cache\\alpha_vantage"` in settings —
-    normalise with `pathlib` so configs are portable.
+16. ~~**Unified CLI**~~ **DONE** — new `btf` package (`python -m btf`, plus a
+    `btf` console script in pyproject): `list` (strategies/securities/
+    baskets/benchmarks), `backtest` (single-security or portfolio, with
+    `--param` overrides, execution-realism flags, trade-log CSV, metrics
+    JSON, and full Excel reports), `optimize` (walk-forward with per-window
+    DSR in the output), `montecarlo` (trade-log or daily-curve pools), and
+    `dashboard`. Strategy names resolve through a new canonical
+    `strategies/registry.py`. Tested end-to-end hermetically
+    (`tests/test_cli.py`). *Scope note:* Data Preparation and Modelling runs
+    keep their GUIs for now — their configuration surface is large; CLI
+    wrappers for them are the natural next increment.
+17. ~~**Launcher upgrades**~~ **DONE** — launched modules are watched: a
+    non-zero exit pops a dialog with the exit code and the stderr tail
+    (previously a crashing module vanished silently); the dashboard card
+    shows missing optional packages and clicking explains the pip install;
+    the error dialog grew a scrollable body for multi-line output. (Version
+    constant was already unified in P1.)
+18. ~~**Dashboard**~~ **DONE** — default runs directory is now anchored to
+    the repository root (was CWD-relative); new **Compare runs** page shows
+    two exports side by side (finalist, OOS vs baseline Adjusted RAR% with
+    delta, guardrails, Reality-Check p, both leaderboards, both runs'
+    warnings) with a CSV download. Per-table CSV export is covered by
+    Streamlit's built-in dataframe toolbar (all tables already use
+    `st.dataframe`).
+19. ~~**Docs completion**~~ **DONE** — five new guides (Monte Carlo
+    Simulation, Rule Tester, Pattern Analysis, Vulnerability Visualizer,
+    Data Collection) under Usability/Running Analysis; a Command Line
+    Interface reference; Metrics Glossary now defines the stable-metric
+    family with the calendar-daily annualisation convention, MFE/MAE,
+    VaR/CVaR, exposure, and PSR/DSR; indexes updated.
+20. ~~**Windows-path hygiene**~~ **DONE** — `CacheConfig` normalises
+    backslash paths from Windows-written settings before building `Path`s;
+    the template already used forward slashes.
 
 ### P4 — Nice to have
 
