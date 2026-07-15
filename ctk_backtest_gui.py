@@ -53,6 +53,25 @@ from Classes.Analysis.trade_logger import TradeLogger, PortfolioTradeLogger
 from Classes.Analysis.performance_metrics import PerformanceMetrics
 from Classes.Analysis.excel_report_generator import ExcelReportGenerator
 from Classes.Analysis.portfolio_report_generator import PortfolioReportGenerator
+from Classes.Interactive import (
+    BacktestRunManifest,
+    DecisionAction,
+    DecisionResponse,
+    InteractiveRunStore,
+    InteractiveSession,
+    QueueDecisionProvider,
+    ReplayMismatchError,
+    RunAbortedByUser,
+    build_data_fingerprints,
+    compare_runs,
+    default_horizon_days,
+    run_auto_baseline,
+    verify_data_fingerprints,
+    write_baseline_outputs,
+    write_comparison_json,
+    write_comparison_workbook,
+)
+from Classes.GUI.ctk_decision_panel import CTkResumeRunDialog, CTkSignalDecisionPanel
 
 # Import available strategies
 from strategies.random_control_strategy import RandomControlStrategy
@@ -1093,6 +1112,34 @@ class CTkBacktestReviewStep(CTkReviewStep):
             variable=self.wizard.generate_excel_var
         ).pack(anchor="w", pady=Sizes.PAD_S)
 
+        # Execution mode: rules-only vs interactive (discretionary)
+        exec_frame = Theme.create_frame(options_content)
+        exec_frame.pack(fill="x", pady=Sizes.PAD_S)
+        Theme.create_label(exec_frame, "Execution:", width=130).pack(side="left")
+        self.wizard.interactive_var = ctk.StringVar(value="auto")
+        Theme.create_radiobutton(
+            exec_frame, "AUTO (rules only)",
+            variable=self.wizard.interactive_var, value="auto"
+        ).pack(side="left", padx=(0, Sizes.PAD_L))
+        Theme.create_radiobutton(
+            exec_frame, "INTERACTIVE (decide each signal)",
+            variable=self.wizard.interactive_var, value="interactive"
+        ).pack(side="left")
+        Theme.create_hint(
+            options_content,
+            "Interactive mode pauses on every actionable signal for your "
+            "accept/modify/reject/defer decision with a rationale. Decisions "
+            "are saved as you go (pause & resume any time) and a rules-only "
+            "baseline runs afterwards for comparison. Not available in Full "
+            "Isolation mode."
+        ).pack(anchor="w")
+
+        Theme.create_button(
+            options_content, "Resume interactive run...",
+            command=self.wizard._show_resume_dialog,
+            style="secondary", width=200
+        ).pack(anchor="w", pady=(Sizes.PAD_S, 0))
+
 
 # =============================================================================
 # INPUT DIALOG
@@ -1322,6 +1369,7 @@ class CTkBacktestWizard(CTkWizardBase):
         self.generate_excel_var: Optional[ctk.BooleanVar] = None
         self.basket_var: Optional[ctk.StringVar] = None
         self.contention_mode_var: Optional[ctk.StringVar] = None
+        self.interactive_var: Optional[ctk.StringVar] = None
         self.selected_securities: List[str] = []
 
         # Add wizard steps
@@ -1375,87 +1423,316 @@ class CTkBacktestWizard(CTkWizardBase):
             start_date = self._parse_date(self.start_date_var.get())
             end_date = self._parse_date(self.end_date_var.get())
 
-            # Create strategy instance
+            interactive = (self.interactive_var is not None
+                           and self.interactive_var.get() == "interactive")
+            if interactive and mode == "full":
+                show_error(self.root, "Not supported",
+                           "Interactive mode is not available with Full "
+                           "Isolation (every signal is taken and capital is "
+                           "ignored, so decisions would be meaningless). "
+                           "Choose AUTO execution or another mode.")
+                return
+
             strategy_class = self.STRATEGIES[strategy_name]
-            strategy_params = self.strategy_params.get(strategy_name, {})
+            strategy_params = dict(self.strategy_params.get(strategy_name, {}))
+
+            # Interactive runs must be reproducible for resume-replay: pin a
+            # seed for the random control strategy if none was set.
+            if interactive and strategy_name == 'RandomControlStrategy' \
+                    and not strategy_params.get('random_seed'):
+                strategy_params['random_seed'] = int(
+                    datetime.now().timestamp()) % 2_000_000_000
+
             strategy = strategy_class(**strategy_params)
+
+            def strategy_factory():
+                return strategy_class(**strategy_params)
 
             # Generate backtest name
             user_name = self.backtest_name_var.get().strip()
             full_backtest_name = f"{strategy_name}_{user_name}"
 
-            # Create results window
-            results_window = CTkResultsWindow(
-                self.root,
-                f"Backtest Results: {full_backtest_name}",
-                settings
-            )
+            interactive_ctx = None
+            if interactive:
+                interactive_ctx = self._create_interactive_context(
+                    mode=mode, full_backtest_name=full_backtest_name,
+                    securities=securities, strategy_name=strategy_name,
+                    strategy_params=strategy_params,
+                    strategy_factory=strategy_factory,
+                )
 
-            # Create message queue for thread-safe UI updates
-            msg_queue = queue.Queue()
+            def make_worker(msg_queue):
+                if interactive_ctx is not None:
+                    interactive_ctx['session'] = InteractiveSession(
+                        interactive_ctx['store'],
+                        QueueDecisionProvider(msg_queue),
+                        interactive_ctx['manifest'],
+                        resume_records=interactive_ctx.get('resume_records'),
+                    )
 
-            def update_ui():
-                """Process messages from background thread to update UI."""
-                # Stop polling if the user closed the results window. The
-                # worker thread may still be running and will keep posting
-                # to the queue, but those messages have no consumer now.
-                try:
-                    if not results_window.winfo_exists():
-                        return
-                except tk.TclError:
-                    return
-                try:
-                    while True:
-                        msg_type, data = msg_queue.get_nowait()
-                        if msg_type == "log":
-                            results_window.log(data)
-                        elif msg_type == "progress":
-                            current, total, detail = data
-                            results_window.update_progress(current, total, detail)
-                        elif msg_type == "complete":
-                            results_window.on_complete()
-                            return
-                        elif msg_type == "error":
-                            results_window.on_error(data)
-                            return
-                except queue.Empty:
-                    pass
-                except tk.TclError:
-                    # Window was destroyed between the check above and now
-                    # (e.g. forwarded methods touch widgets that no longer
-                    # exist). Stop polling.
-                    return
-                self.root.after(100, update_ui)
-
-            def run_in_thread():
-                """Run backtest in background thread."""
-                try:
+                def worker():
                     if mode == "single":
                         self._run_single_backtest_threaded(
                             msg_queue, securities[0], strategy, capital, commission,
-                            start_date, end_date, full_backtest_name, slippage_percent, strategy_params
+                            start_date, end_date, full_backtest_name, slippage_percent,
+                            strategy_params, interactive_ctx=interactive_ctx
                         )
                     else:
                         self._run_portfolio_backtest_threaded(
                             msg_queue, securities, strategy, capital, commission,
-                            start_date, end_date, full_backtest_name, slippage_percent, strategy_params,
-                            full_isolation=(mode == "full")
+                            start_date, end_date, full_backtest_name, slippage_percent,
+                            strategy_params, full_isolation=(mode == "full"),
+                            interactive_ctx=interactive_ctx
                         )
-                except Exception as e:
-                    import traceback
-                    msg_queue.put(("error", f"{str(e)}\n{traceback.format_exc()}"))
+                return worker
 
-            # Start background thread
-            thread = threading.Thread(target=run_in_thread, daemon=True)
-            thread.start()
-
-            # Start UI update polling
-            self.root.after(100, update_ui)
+            self._launch_worker(
+                f"Backtest Results: {full_backtest_name}", settings,
+                make_worker, interactive_ctx)
 
         except Exception as e:
             show_error(self.root, "Error", f"Backtest failed: {str(e)}")
             import traceback
             traceback.print_exc()
+
+    def _create_interactive_context(self, mode: str, full_backtest_name: str,
+                                    securities: List[str], strategy_name: str,
+                                    strategy_params: Dict,
+                                    strategy_factory,
+                                    resume_records=None,
+                                    existing_manifest: Optional[BacktestRunManifest] = None,
+                                    run_dir: Optional[Path] = None) -> Dict[str, Any]:
+        """Create (or reopen) the store + manifest for an interactive run."""
+        engine_type = "single" if mode == "single" else "portfolio"
+        if run_dir is None:
+            run_dir = (Path('logs') / full_backtest_name if mode == "single"
+                       else Path('logs') / 'portfolio' / full_backtest_name)
+        store = InteractiveRunStore(run_dir)
+        if existing_manifest is not None:
+            manifest = existing_manifest
+        else:
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            manifest = BacktestRunManifest(
+                run_id=f"{full_backtest_name}_{timestamp}",
+                backtest_name=full_backtest_name,
+                mode="interactive",
+                engine_type=engine_type,
+                created_at=datetime.now().isoformat(timespec='seconds'),
+                symbols=(securities[:1] if mode == "single"
+                         else list(securities)),
+                strategy_class=strategy_name,
+                strategy_params=strategy_params,
+            )
+            store.write_manifest(manifest)
+        return {
+            'store': store,
+            'manifest': manifest,
+            'strategy_factory': strategy_factory,
+            'resume_records': resume_records,
+            'decision_state': {},
+        }
+
+    def _launch_worker(self, title: str, settings: Dict,
+                       make_worker, interactive_ctx: Optional[Dict] = None):
+        """
+        Create the results window, message queue, and UI polling loop,
+        then start the worker in a daemon thread. ``make_worker`` receives
+        the message queue and returns the zero-arg worker callable (this
+        lets interactive runs bind a QueueDecisionProvider to the queue).
+        """
+        results_window = CTkResultsWindow(self.root, title, settings)
+        msg_queue = queue.Queue()
+        decision_state = (interactive_ctx or {}).get('decision_state', {})
+
+        def abort_pending_decision():
+            pending = decision_state.pop('pending_reply_q', None)
+            if pending is not None:
+                try:
+                    pending.put_nowait(
+                        DecisionResponse(action=DecisionAction.ABORT))
+                except queue.Full:
+                    pass
+
+        def on_results_close():
+            # Closing the results window mid-decision pauses the run
+            # (decisions so far are already durable on disk).
+            abort_pending_decision()
+            results_window.destroy()
+
+        results_window.protocol("WM_DELETE_WINDOW", on_results_close)
+
+        def update_ui():
+            """Process messages from background thread to update UI."""
+            # Stop polling if the user closed the results window. The
+            # worker thread may still be running and will keep posting
+            # to the queue, but those messages have no consumer now.
+            try:
+                if not results_window.winfo_exists():
+                    abort_pending_decision()
+                    return
+            except tk.TclError:
+                abort_pending_decision()
+                return
+            try:
+                while True:
+                    msg_type, data = msg_queue.get_nowait()
+                    if msg_type == "log":
+                        results_window.log(data)
+                    elif msg_type == "progress":
+                        current, total, detail = data
+                        results_window.update_progress(current, total, detail)
+                    elif msg_type == "decision_request":
+                        request, reply_q = data
+                        decision_state['pending_reply_q'] = reply_q
+                        self._open_decision_panel(
+                            results_window, request, reply_q, decision_state,
+                            interactive_ctx)
+                    elif msg_type == "complete":
+                        results_window.on_complete()
+                        return
+                    elif msg_type == "error":
+                        results_window.on_error(data)
+                        return
+            except queue.Empty:
+                pass
+            except tk.TclError:
+                # Window was destroyed between the check above and now
+                # (e.g. forwarded methods touch widgets that no longer
+                # exist). Stop polling.
+                abort_pending_decision()
+                return
+            self.root.after(100, update_ui)
+
+        worker = make_worker(msg_queue)
+
+        def run_in_thread():
+            try:
+                worker()
+            except Exception as e:
+                import traceback
+                msg_queue.put(("error", f"{str(e)}\n{traceback.format_exc()}"))
+
+        thread = threading.Thread(target=run_in_thread, daemon=True)
+        thread.start()
+        self.root.after(100, update_ui)
+
+    def _open_decision_panel(self, parent, request, reply_q, decision_state,
+                             interactive_ctx: Optional[Dict]):
+        """Open the Signal Decision Panel; never leave the worker blocked."""
+        manifest = (interactive_ctx or {}).get('manifest')
+        horizon = default_horizon_days(
+            manifest.strategy_class if manifest else "",
+            manifest.strategy_params if manifest else {})
+
+        def on_done():
+            decision_state.pop('pending_reply_q', None)
+
+        try:
+            CTkSignalDecisionPanel(parent, request, reply_q,
+                                   default_horizon=horizon, on_done=on_done)
+        except Exception as e:
+            reply_q.put(DecisionResponse(action=DecisionAction.ABORT))
+            on_done()
+            show_error(parent, "Decision Panel Error",
+                       f"Could not open the decision panel; the run was "
+                       f"paused.\n\n{e}")
+
+    def _show_resume_dialog(self):
+        """Open the resume-run picker."""
+        CTkResumeRunDialog(self.root, self._resume_interactive_run)
+
+    def _resume_interactive_run(self, entry: Dict[str, Any]):
+        """Resume a paused/in-progress interactive run from its manifest."""
+        manifest: BacktestRunManifest = entry['manifest']
+        run_dir: Path = entry['run_dir']
+        try:
+            strategy_class = self.STRATEGIES.get(manifest.strategy_class)
+            if strategy_class is None:
+                raise ValueError(
+                    f"Unknown strategy {manifest.strategy_class!r}")
+            strategy_params = dict(manifest.strategy_params or {})
+            strategy = strategy_class(**strategy_params)
+
+            def strategy_factory():
+                return strategy_class(**strategy_params)
+
+            config_dict = manifest.config or {}
+            if manifest.engine_type == "single":
+                config = BacktestConfig.from_dict(config_dict) if config_dict else None
+            else:
+                config = PortfolioConfig.from_dict(config_dict) if config_dict else None
+            if config is None:
+                raise ValueError(
+                    "The run's manifest has no saved configuration; it was "
+                    "paused before the engine started and cannot be resumed. "
+                    "Start a fresh run instead.")
+
+            # Load data in manifest order and refuse unsafe resumes.
+            data_by_symbol = {}
+            for symbol in manifest.symbols:
+                data_by_symbol[symbol] = self.data_loader.load_csv(
+                    symbol, required_columns=strategy.required_columns())
+            verify_data_fingerprints(manifest, data_by_symbol)
+
+            store = InteractiveRunStore(run_dir)
+            resume_records = store.load_for_resume()
+            interactive_ctx = self._create_interactive_context(
+                mode=("single" if manifest.engine_type == "single"
+                      else "portfolio"),
+                full_backtest_name=manifest.backtest_name,
+                securities=manifest.symbols,
+                strategy_name=manifest.strategy_class,
+                strategy_params=strategy_params,
+                strategy_factory=strategy_factory,
+                resume_records=resume_records,
+                existing_manifest=manifest,
+                run_dir=run_dir,
+            )
+
+            settings = {"Resumed Run": {
+                "name": manifest.backtest_name,
+                "engine": manifest.engine_type,
+                "strategy": manifest.strategy_class,
+                "decisions replayed": str(len(resume_records)),
+            }}
+
+            def make_worker(msg_queue):
+                interactive_ctx['session'] = InteractiveSession(
+                    interactive_ctx['store'],
+                    QueueDecisionProvider(msg_queue),
+                    manifest,
+                    resume_records=resume_records,
+                )
+
+                def worker():
+                    msg_queue.put(("log",
+                                   f"Resuming interactive run "
+                                   f"{manifest.run_id}: replaying "
+                                   f"{len(resume_records)} logged decisions..."))
+                    if manifest.engine_type == "single":
+                        symbol = manifest.symbols[0]
+                        self._execute_single_run(
+                            msg_queue, symbol, data_by_symbol[symbol], config,
+                            strategy, manifest.backtest_name, strategy_params,
+                            interactive_ctx)
+                    else:
+                        self._execute_portfolio_run(
+                            msg_queue, data_by_symbol, config, strategy,
+                            manifest.backtest_name, strategy_params,
+                            interactive_ctx)
+                return worker
+
+            self._launch_worker(
+                f"Resumed: {manifest.backtest_name}", settings,
+                make_worker, interactive_ctx)
+
+        except ReplayMismatchError as e:
+            show_error(self.root, "Cannot resume", str(e))
+        except Exception as e:
+            import traceback
+            traceback.print_exc()
+            show_error(self.root, "Cannot resume",
+                       f"Failed to resume the run: {e}")
 
     def _parse_date(self, date_str: str) -> Optional[datetime]:
         """Parse date string to datetime."""
@@ -1469,7 +1746,8 @@ class CTkBacktestWizard(CTkWizardBase):
     def _run_single_backtest_threaded(self, msg_queue: queue.Queue, symbol: str, strategy,
                                        capital: float, commission: CommissionConfig, start_date,
                                        end_date, backtest_name: str, slippage_percent: float,
-                                       strategy_params: Dict):
+                                       strategy_params: Dict,
+                                       interactive_ctx: Optional[Dict] = None):
         """Run single security backtest in background thread."""
         config = BacktestConfig(
             initial_capital=capital,
@@ -1488,6 +1766,24 @@ class CTkBacktestWizard(CTkWizardBase):
         msg_queue.put(("log", f"Security: {symbol}"))
         msg_queue.put(("log", f"Capital: ${capital:,.2f}\n"))
 
+        self._execute_single_run(msg_queue, symbol, data, config, strategy,
+                                 backtest_name, strategy_params,
+                                 interactive_ctx)
+
+    def _execute_single_run(self, msg_queue: queue.Queue, symbol: str, data,
+                            config: BacktestConfig, strategy,
+                            backtest_name: str, strategy_params: Dict,
+                            interactive_ctx: Optional[Dict] = None):
+        """Run the single-security engine (fresh or resumed) and post-process."""
+        session = (interactive_ctx or {}).get('session')
+        if interactive_ctx is not None:
+            manifest = interactive_ctx['manifest']
+            manifest.config = config.to_dict()
+            manifest.data_fingerprints = build_data_fingerprints({symbol: data})
+            interactive_ctx['store'].write_manifest(manifest)
+            msg_queue.put(("log", "INTERACTIVE mode: the run pauses on each "
+                                  "actionable signal for your decision.\n"))
+
         def progress_callback(current: int, total: int):
             msg_queue.put(("progress", (current, total, f"Processing {symbol}")))
 
@@ -1496,17 +1792,105 @@ class CTkBacktestWizard(CTkWizardBase):
             currency_converter=self.currency_converter,
             security_registry=self.security_registry
         )
-        result = engine.run(symbol, data, strategy, progress_callback=progress_callback)
+        try:
+            result = engine.run(symbol, data, strategy,
+                                progress_callback=progress_callback,
+                                decision_session=session)
+        except RunAbortedByUser as e:
+            session.finalize("paused")
+            msg_queue.put(("log", f"\n{e}"))
+            msg_queue.put(("log", "Run paused — every decision so far is "
+                                  "saved. Resume from the wizard's 'Resume "
+                                  "interactive run' button."))
+            msg_queue.put(("complete", None))
+            return
+        except ReplayMismatchError as e:
+            session.finalize("corrupt")
+            msg_queue.put(("error", str(e)))
+            return
 
         # Display results
         self._display_single_results_threaded(msg_queue, symbol, result, backtest_name, strategy_params)
+
+        if interactive_ctx is not None:
+            self._finish_interactive_run(
+                msg_queue, interactive_ctx, result,
+                engine_type="single", config=config,
+                data_by_symbol={symbol: data})
         msg_queue.put(("complete", None))
+
+    def _finish_interactive_run(self, msg_queue: queue.Queue,
+                                interactive_ctx: Dict, result,
+                                engine_type: str, config,
+                                data_by_symbol: Dict):
+        """Finalize logs, run the AUTO baseline twin, and write the comparison."""
+        session: InteractiveSession = interactive_ctx['session']
+        store: InteractiveRunStore = interactive_ctx['store']
+        manifest: BacktestRunManifest = interactive_ctx['manifest']
+
+        session.finalize("completed")
+        try:
+            exported = store.export_flat()
+            msg_queue.put(("log", f"\nDecision log exported: "
+                                  f"{', '.join(str(p) for p in exported)}"))
+        except Exception as e:
+            msg_queue.put(("log", f"Warning: decision export failed: {e}"))
+
+        msg_queue.put(("log", "\nRunning rules-only (AUTO) baseline for "
+                              "comparison..."))
+        try:
+            baseline_result = run_auto_baseline(
+                engine_type, config, data_by_symbol,
+                interactive_ctx['strategy_factory'],
+                currency_converter=self.currency_converter,
+                security_registry=self.security_registry,
+                progress_callback=lambda c, t: msg_queue.put(
+                    ("progress", (c, t, "Running AUTO baseline"))),
+            )
+            baseline_dir = write_baseline_outputs(
+                baseline_result, store.run_dir, manifest.run_id)
+            manifest.baseline_dir = str(baseline_dir)
+            store.write_manifest(manifest)
+
+            comparison = compare_runs(
+                result, baseline_result,
+                events=store.load_events(),
+                decisions=store.load_decisions(),
+                outcomes=store.load_outcomes())
+            workbook = write_comparison_workbook(
+                comparison, store.run_dir / "reports",
+                prompts=store.load_prompts())
+            write_comparison_json(comparison,
+                                  store.exports_dir / "comparison.json")
+
+            headline = comparison.headline
+            msg_queue.put(("log", "\n" + "=" * 60))
+            msg_queue.put(("log", "DISCRETION vs RULES"))
+            msg_queue.put(("log", "=" * 60))
+            msg_queue.put(("log", f"Interactive return:  "
+                                  f"${headline['interactive_total_return']:,.2f} "
+                                  f"({headline['interactive_total_return_pct']:.2f}%)"))
+            msg_queue.put(("log", f"Rules-only return:   "
+                                  f"${headline['baseline_total_return']:,.2f} "
+                                  f"({headline['baseline_total_return_pct']:.2f}%)"))
+            msg_queue.put(("log", f"Discretion added:    "
+                                  f"${headline['discretion_delta']:,.2f} "
+                                  f"({headline['discretion_delta_pct']:+.2f}%-pts)"))
+            msg_queue.put(("log", f"Decisions: {headline['num_decisions']} "
+                                  f"(divergent: {headline['num_divergent_decisions']})"))
+            msg_queue.put(("log", f"Comparison workbook: {workbook}"))
+        except Exception as e:
+            import traceback
+            traceback.print_exc()
+            msg_queue.put(("log", f"Warning: baseline/comparison failed "
+                                  f"(interactive results are intact): {e}"))
 
     def _run_portfolio_backtest_threaded(self, msg_queue: queue.Queue, symbols: List[str],
                                           strategy, capital: float, commission: CommissionConfig,
                                           start_date, end_date, backtest_name: str,
                                           slippage_percent: float, strategy_params: Dict,
-                                          full_isolation: bool = False):
+                                          full_isolation: bool = False,
+                                          interactive_ctx: Optional[Dict] = None):
         """Run portfolio (or full-isolation) backtest in background thread."""
         basket_name = self.selected_basket.name if self.selected_basket else None
 
@@ -1562,6 +1946,25 @@ class CTkBacktestWizard(CTkWizardBase):
 
         msg_queue.put(("log", ""))
 
+        self._execute_portfolio_run(msg_queue, data_dict, config, strategy,
+                                    backtest_name, strategy_params,
+                                    interactive_ctx)
+
+    def _execute_portfolio_run(self, msg_queue: queue.Queue, data_dict: Dict,
+                               config: PortfolioConfig, strategy,
+                               backtest_name: str, strategy_params: Dict,
+                               interactive_ctx: Optional[Dict] = None):
+        """Run the portfolio engine (fresh or resumed) and post-process."""
+        session = (interactive_ctx or {}).get('session')
+        if interactive_ctx is not None:
+            manifest = interactive_ctx['manifest']
+            manifest.config = config.to_dict()
+            manifest.symbols = list(data_dict.keys())
+            manifest.data_fingerprints = build_data_fingerprints(data_dict)
+            interactive_ctx['store'].write_manifest(manifest)
+            msg_queue.put(("log", "INTERACTIVE mode: the run pauses on each "
+                                  "actionable signal for your decision.\n"))
+
         def progress_callback(current: int, total: int):
             msg_queue.put(("progress", (current, total, "Processing portfolio")))
 
@@ -1570,10 +1973,31 @@ class CTkBacktestWizard(CTkWizardBase):
             currency_converter=self.currency_converter,
             security_registry=self.security_registry
         )
-        result = engine.run(data_dict, strategy, progress_callback=progress_callback)
+        try:
+            result = engine.run(data_dict, strategy,
+                                progress_callback=progress_callback,
+                                decision_session=session)
+        except RunAbortedByUser as e:
+            session.finalize("paused")
+            msg_queue.put(("log", f"\n{e}"))
+            msg_queue.put(("log", "Run paused — every decision so far is "
+                                  "saved. Resume from the wizard's 'Resume "
+                                  "interactive run' button."))
+            msg_queue.put(("complete", None))
+            return
+        except ReplayMismatchError as e:
+            session.finalize("corrupt")
+            msg_queue.put(("error", str(e)))
+            return
 
         # Display portfolio results
         self._display_portfolio_results_threaded(msg_queue, result, backtest_name, strategy_params)
+
+        if interactive_ctx is not None:
+            self._finish_interactive_run(
+                msg_queue, interactive_ctx, result,
+                engine_type="portfolio", config=config,
+                data_by_symbol=data_dict)
         msg_queue.put(("complete", None))
 
     def _display_single_results_threaded(self, msg_queue: queue.Queue, symbol: str,
