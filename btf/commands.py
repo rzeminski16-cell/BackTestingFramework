@@ -171,6 +171,12 @@ def cmd_backtest(args) -> int:
     from Classes.Data.data_loader import DataLoader
     from strategies.registry import get_strategy_class
 
+    if getattr(args, "interactive", False):
+        print("error: interactive (discretionary) mode is GUI-only for now — "
+              "run 'python ctk_backtest_gui.py' and choose INTERACTIVE "
+              "execution on the Review step.", file=sys.stderr)
+        return 2
+
     try:
         strategy_class = get_strategy_class(args.strategy)
     except KeyError as exc:

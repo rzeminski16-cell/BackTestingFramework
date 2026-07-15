@@ -84,6 +84,9 @@ def build_parser() -> argparse.ArgumentParser:
                       help="Generate the full Excel report")
     p_bt.add_argument("--report-dir", default="reports/cli",
                       help="Directory for --report output (default reports/cli)")
+    p_bt.add_argument("--interactive", action="store_true",
+                      help="Interactive (discretionary) mode is GUI-only for "
+                           "now; use ctk_backtest_gui.py")
     p_bt.set_defaults(func=commands.cmd_backtest)
 
     # ---- optimize ---------------------------------------------------------- #

@@ -187,6 +187,36 @@ and graph view) plus standalone guides that read fine anywhere:
 - Partial exits and one-shot pyramiding with break-even stop
 - Custom position sizing and fundamental entry filters
 
+### Interactive (Discretionary) Mode
+Layer human judgement on top of the technical rules: choose **INTERACTIVE**
+execution on the backtest wizard's Review step and the engine pauses on every
+actionable signal (entry, exit, pyramid, partial exit) with a **Signal
+Decision Panel** — price chart with EMAs up to the signal date, portfolio
+snapshot, and a deterministic, **time-bounded research prompt** ("assume
+today is <signal date>; use only official sources published on or before it")
+for copy-paste into Perplexity, with a box to paste the findings back.
+
+- Decide **Accept / Modify (size, stop, take-profit) / Reject / Defer** with
+  a typed rationale; quick accept/reject buttons keep runs fast
+- **Prompting policy**: strategy signals prompt only when actionable;
+  `ADJUST_STOP` and engine-generated protective stop/take-profit exits
+  auto-execute (they model resting orders) but are still logged
+- **Reject cooldown**: a rejected signal that keeps firing on consecutive
+  bars is auto-suppressed (logged) for ~1 month (21 bars) before re-prompting;
+  a signal that stops firing and later re-fires prompts immediately; Defer
+  re-prompts on the next firing
+- **Capital contingency** (portfolio): when an accepted entry doesn't fit,
+  choose reduce-to-what-fits, free capital by closing/trimming positions you
+  pick, or reject — this supersedes the automatic capital-contention modes
+- Every signal, decision, rationale, and prompt is persisted as append-only
+  JSONL under the run folder (`interactive/`), exported to CSV/JSON/Excel;
+  runs can be **paused any time and resumed** (decisions replay with
+  fingerprint verification; changed data refuses to resume)
+- After each completed run, the identical config re-runs rules-only and a
+  **discretion-vs-rules workbook** reports side-by-side metrics, aligned
+  equity curves, and a per-decision table (attribution honestly labelled
+  `exact` / `approximate` / `path_dependent` after the runs diverge)
+
 ### Optimisation & Robustness
 - Walk-forward optimisation with Bayesian search and sensitivity analysis
 - **Deflated Sharpe Ratio** per window — deflates the winning in-sample Sharpe
