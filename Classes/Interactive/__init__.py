@@ -43,6 +43,17 @@ from .suppression import RejectCooldownTracker
 from .store import InteractiveRunStore, find_resumable_runs
 from .session import InteractiveSession
 from .prompt_generator import generate_research_prompt, default_horizon_days
+from .baseline import (
+    extract_trades_and_equity,
+    run_auto_baseline,
+    write_baseline_outputs,
+)
+from .comparison import (
+    ComparisonResult,
+    compare_runs,
+    write_comparison_json,
+    write_comparison_workbook,
+)
 
 __all__ = [
     'DecisionAction', 'DecisionSource', 'SignalEvent', 'DecisionRecord',
@@ -53,4 +64,7 @@ __all__ = [
     'DecisionProvider', 'QueueDecisionProvider', 'ScriptedDecisionProvider',
     'RejectCooldownTracker', 'InteractiveRunStore', 'find_resumable_runs',
     'InteractiveSession', 'generate_research_prompt', 'default_horizon_days',
+    'run_auto_baseline', 'write_baseline_outputs', 'extract_trades_and_equity',
+    'ComparisonResult', 'compare_runs', 'write_comparison_workbook',
+    'write_comparison_json',
 ]
