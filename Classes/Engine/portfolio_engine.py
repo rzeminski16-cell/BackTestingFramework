@@ -4,10 +4,13 @@ Portfolio-level backtesting engine with capital contention management.
 import logging
 
 import pandas as pd
-from typing import Dict, List, Optional, Callable, Tuple
+from typing import Any, Dict, List, Optional, Callable, Tuple, TYPE_CHECKING
 from datetime import datetime
 from collections import defaultdict
 from dataclasses import dataclass, field
+
+if TYPE_CHECKING:
+    from ..Interactive.session import InteractiveSession
 
 from ..Strategy.base_strategy import BaseStrategy
 from ..Strategy.strategy_context import StrategyContext
@@ -16,7 +19,7 @@ from ..Models.trade_direction import TradeDirection
 from ..Models.order import Order, OrderSide, OrderType
 from ..Models.trade import Trade, reset_trade_counter
 from ..Models.position import Position
-from ..Config.config import PortfolioConfig, ExecutionTiming
+from ..Config.config import PortfolioConfig, ExecutionTiming, CommissionMode
 from ..Config.capital_contention import CapitalContentionMode
 from .position_manager import PositionManager
 from .trade_executor import TradeExecutor
@@ -27,6 +30,11 @@ from ..Data.security_registry import SecurityRegistry, MissingCurrencyError
 from ..Data.historical_data_view import HistoricalDataView
 
 logger = logging.getLogger(__name__)
+
+
+def _iso_date(date) -> str:
+    """ISO date string for a pandas Timestamp / datetime."""
+    return date.date().isoformat() if hasattr(date, 'date') else str(date)
 
 
 @dataclass
@@ -172,9 +180,13 @@ class PortfolioEngine:
         # This prevents false drawdowns when a security doesn't trade on a particular day
         self._last_known_prices: Dict[str, float] = {}
 
+        # Interactive (discretionary) session; set per-run in run().
+        self._decision_session: Optional['InteractiveSession'] = None
+
     def run(self, data_dict: Dict[str, pd.DataFrame],
             strategy: BaseStrategy,
-            progress_callback: Optional[Callable[[int, int], None]] = None) -> PortfolioBacktestResult:
+            progress_callback: Optional[Callable[[int, int], None]] = None,
+            decision_session: Optional['InteractiveSession'] = None) -> PortfolioBacktestResult:
         """
         Run portfolio backtest across multiple securities.
 
@@ -182,10 +194,25 @@ class PortfolioEngine:
             data_dict: Dictionary mapping symbol to DataFrame
             strategy: Trading strategy (same strategy for all securities)
             progress_callback: Optional callback function(current, total) for progress updates
+            decision_session: Optional interactive session. When provided,
+                actionable strategy signals route through the session for a
+                human decision (BUY signals including capital-contingency
+                resolution, which supersedes the configured capital
+                contention mode); engine-generated protective exits
+                auto-execute but are logged. When None (default), behaviour
+                is byte-identical to a rules-only run.
 
         Returns:
             PortfolioBacktestResult with complete results and tracking data
         """
+        if decision_session is not None and self.config.full_isolation:
+            raise ValueError(
+                "Interactive mode is not supported with full_isolation: every "
+                "signal is taken and capital availability is ignored, so "
+                "discretionary capital decisions would be meaningless."
+            )
+        self._decision_session = decision_session
+
         # Reset tracking
         self.signal_rejections = []
         self.vulnerability_swaps = []
@@ -357,27 +384,39 @@ class PortfolioEngine:
                         )
                         if intrabar_fill is not None:
                             fill_price, fill_reason = intrabar_fill
+                            direction = pm.position.direction.value
                             capital = self._close_position(
                                 symbol, current_date, fill_price,
                                 fill_reason, capital, pm
                             )
+                            self._log_engine_exit(symbol, current_date,
+                                                  bar_position, fill_reason,
+                                                  fill_price, direction)
                             continue
                     else:
                         if strategy.should_check_stop_loss(context):
                             if pm.check_stop_loss(current_price):
+                                direction = pm.position.direction.value
                                 capital = self._close_position(
                                     symbol, current_date, current_price,
                                     "Stop loss hit", capital, pm
                                 )
+                                self._log_engine_exit(
+                                    symbol, current_date, bar_position,
+                                    "Stop loss hit", current_price, direction)
                                 continue
 
                         # Check take profit
                         if strategy.should_check_take_profit(context):
                             if pm.check_take_profit(current_price):
+                                direction = pm.position.direction.value
                                 capital = self._close_position(
                                     symbol, current_date, current_price,
                                     "Take profit hit", capital, pm
                                 )
+                                self._log_engine_exit(
+                                    symbol, current_date, bar_position,
+                                    "Take profit hit", current_price, direction)
                                 continue
 
                     # Check trailing stop (direction-aware)
@@ -403,9 +442,34 @@ class PortfolioEngine:
                             partial_fraction, "Partial profit taking",
                             capital, pm
                         )
+                        if self._decision_session is not None:
+                            event_id = self._decision_session.log_auto(
+                                "ENGINE_EXIT", symbol=symbol,
+                                bar_date=_iso_date(current_date),
+                                bar_index=int(bar_position),
+                                signal_type=SignalType.PARTIAL_EXIT.value,
+                                direction=pm.position.direction.value,
+                                reason="Partial profit taking")
+                            self._decision_session.record_outcome(
+                                event_id, executed=True, price=current_price,
+                                reason="Partial profit taking")
 
                 # Generate signal
                 signal = strategy.generate_signal(context)
+
+                # INTERACTIVE mode: route exit-type signals through the
+                # decision session (BUY signals are decided later during
+                # capital-contention processing). Rejected/deferred/
+                # suppressed signals come back as HOLD.
+                decision_event_id = None
+                if self._decision_session is not None:
+                    signal, decision_event_id = self._resolve_exit_signal_interactive(
+                        signal, context, strategy, pm,
+                        capital, total_equity, current_prices, current_date)
+
+                pre_dispatch = (pm.has_position,
+                                float(pm.position.current_quantity)
+                                if pm.has_position else 0.0)
 
                 # Process SELL/PARTIAL_EXIT/ADJUST_STOP immediately
                 if signal.type == SignalType.SELL and pm.has_position:
@@ -441,6 +505,11 @@ class PortfolioEngine:
                     # Collect BUY signals for capital contention processing
                     new_signals.append((symbol, signal, context, strategy))
 
+                if self._decision_session is not None and decision_event_id is not None:
+                    self._record_dispatch_outcome(
+                        decision_event_id, symbol, signal, pre_dispatch,
+                        current_price, pm)
+
             # Process BUY signals with capital contention
             capital = self._process_buy_signals(
                 new_signals, capital, total_equity, current_prices, current_date
@@ -473,10 +542,14 @@ class PortfolioEngine:
             if pm.has_position:
                 final_data = data_dict[symbol]
                 final_bar = final_data.iloc[-1]
+                direction = pm.position.direction.value
                 capital = self._close_position(
                     symbol, final_bar['date'], final_bar['close'],
                     "End of backtest period", capital, pm, open_at_end=True
                 )
+                self._log_engine_exit(
+                    symbol, final_bar['date'], len(final_data) - 1,
+                    "End of backtest period", final_bar['close'], direction)
 
         # Create equity curve
         equity_df = pd.DataFrame(equity_history)
@@ -562,11 +635,22 @@ class PortfolioEngine:
             quantity = strategy.position_size(context, signal)
             if quantity <= 0:
                 # Record rejection instead of silently skipping
+                reason = (f"Position size calculation returned {quantity:.4f} "
+                          f"(stop too tight or insufficient equity)")
                 self._record_rejection_with_context(
-                    current_date, symbol, "BUY",
-                    f"Position size calculation returned {quantity:.4f} (stop too tight or insufficient equity)",
+                    current_date, symbol, "BUY", reason,
                     capital, 0.0, current_prices
                 )
+                if self._decision_session is not None:
+                    event_id = self._decision_session.log_auto(
+                        "STRATEGY_SIGNAL", symbol=symbol,
+                        bar_date=_iso_date(current_date),
+                        bar_index=int(context.current_index),
+                        signal_type=SignalType.BUY.value,
+                        direction=signal.direction.value,
+                        reason=signal.reason, signal=signal)
+                    self._decision_session.record_outcome(
+                        event_id, executed=False, reason=reason)
                 continue
             fx_rate = self._get_fx_rate(symbol, current_date)
             required_capital = quantity * current_price * fx_rate
@@ -574,6 +658,16 @@ class PortfolioEngine:
 
         if not signal_requirements:
             return capital
+
+        # INTERACTIVE mode supersedes the configured capital-contention
+        # mode: the user decides each BUY, including how to resolve
+        # insufficient capital. (The AUTO baseline twin still uses the
+        # configured contention mode — that difference is the comparison
+        # being measured.)
+        if self._decision_session is not None:
+            return self._process_buy_signals_interactive(
+                signal_requirements, capital, total_equity, current_prices,
+                current_date, open_position_symbols, all_signal_symbols)
 
         # FULL ISOLATION: take every signal at full size, ignoring capital
         # availability. Each trade is simulated independently of the others.
@@ -950,6 +1044,426 @@ class PortfolioEngine:
                 vulnerability_decision=swap_decision
             )
 
+        return capital
+
+    # ------------------------------------------------------------------
+    # Interactive (discretionary) mode support
+    # ------------------------------------------------------------------
+    @staticmethod
+    def _required_columns(strategy: BaseStrategy) -> List[str]:
+        try:
+            return list(strategy.required_columns())
+        except Exception:
+            return []
+
+    def _log_engine_exit(self, symbol: str, date, bar_index: int,
+                         reason: str, price: float, direction: str) -> None:
+        """Log an engine-generated protective/terminal exit (auto-applied)."""
+        session = self._decision_session
+        if session is None:
+            return
+        event_id = session.log_auto(
+            "ENGINE_EXIT", symbol=symbol, bar_date=_iso_date(date),
+            bar_index=int(bar_index), signal_type=SignalType.SELL.value,
+            direction=direction, reason=reason)
+        session.record_outcome(event_id, executed=True,
+                               price=float(price), reason=reason)
+        session.on_position_closed(symbol)
+
+    def _resolve_exit_signal_interactive(self, signal: Signal,
+                                         context: StrategyContext,
+                                         strategy: BaseStrategy,
+                                         pm: PositionManager,
+                                         capital: float, total_equity: float,
+                                         current_prices: Dict[str, float],
+                                         current_date: datetime):
+        """
+        Route one exit-type strategy signal through the interactive
+        session. BUY signals pass through untouched — they are decided
+        during capital-contention processing where affordability is known.
+
+        Returns (effective_signal, decision_event_id).
+        """
+        session = self._decision_session
+        stype = signal.type
+        if stype == SignalType.ADJUST_STOP and pm.has_position:
+            # Auto-applied, logged for the audit trail; never prompts.
+            session.log_auto(
+                "STRATEGY_SIGNAL", symbol=context.symbol,
+                bar_date=_iso_date(current_date),
+                bar_index=int(context.current_index),
+                signal_type=stype.value,
+                direction=pm.position.direction.value,
+                reason=signal.reason, signal=signal)
+            return signal, None
+        if stype not in (SignalType.SELL, SignalType.PARTIAL_EXIT,
+                         SignalType.PYRAMID) or not pm.has_position:
+            return signal, None
+
+        resolved = session.resolve_signal(
+            signal, context,
+            portfolio_snapshot=self._build_portfolio_snapshot(
+                capital, total_equity, current_prices, current_date),
+            technical_columns=self._required_columns(strategy))
+        effective = resolved.effective_signal
+        if effective.type == SignalType.HOLD:
+            session.record_outcome(resolved.event.event_id, executed=False,
+                                   reason=effective.reason)
+            return effective, None
+        return effective, resolved.event.event_id
+
+    def _record_dispatch_outcome(self, event_id: int, symbol: str,
+                                 signal: Signal, pre_dispatch,
+                                 price: float, pm: PositionManager) -> None:
+        """Record what actually executed for a decided exit-type signal."""
+        session = self._decision_session
+        had_position, qty_before = pre_dispatch
+        stype = signal.type
+
+        if stype == SignalType.SELL:
+            if had_position and not pm.has_position:
+                trades = self.trade_executor.get_trades()
+                exit_price = float(trades[-1].exit_price) if trades else price
+                session.record_outcome(event_id, executed=True,
+                                       quantity=qty_before, price=exit_price)
+                session.on_position_closed(symbol)
+            else:
+                session.record_outcome(event_id, executed=False,
+                                       reason="Close skipped")
+        elif stype == SignalType.PARTIAL_EXIT:
+            qty_now = float(pm.position.current_quantity) if pm.has_position else 0.0
+            delta = qty_before - qty_now
+            if delta > 0:
+                exits = pm.position.partial_exits if pm.has_position else []
+                exit_price = float(exits[-1].price) if exits else price
+                session.record_outcome(event_id, executed=True,
+                                       quantity=delta, price=exit_price)
+            else:
+                session.record_outcome(event_id, executed=False,
+                                       reason="Partial exit skipped")
+        elif stype == SignalType.PYRAMID:
+            qty_now = float(pm.position.current_quantity) if pm.has_position else 0.0
+            delta = qty_now - qty_before
+            if delta > 0:
+                pyramids = pm.position.pyramid_entries if pm.has_position else []
+                fill = float(pyramids[-1].price) if pyramids else price
+                session.record_outcome(event_id, executed=True,
+                                       quantity=delta, price=fill)
+            else:
+                session.record_outcome(
+                    event_id, executed=False,
+                    reason="Pyramid skipped (insufficient capital)")
+
+    def _build_portfolio_snapshot(self, capital: float, total_equity: float,
+                                  current_prices: Dict[str, float],
+                                  current_date: datetime,
+                                  competing_signals: Optional[List[str]] = None,
+                                  required_capital: Optional[float] = None
+                                  ) -> Dict[str, Any]:
+        """JSON-safe snapshot of the portfolio at signal time."""
+        positions: List[Dict[str, Any]] = []
+        vuln = self._current_day_vuln_scores or {}
+        for sym, pm in self.position_managers.items():
+            if not pm.has_position:
+                continue
+            position = pm.position
+            entry: Dict[str, Any] = {
+                'symbol': sym,
+                'direction': position.direction.value,
+                'entry_date': _iso_date(position.entry_date),
+                'entry_price': round(float(position.entry_price), 6),
+                'quantity': round(float(position.current_quantity), 6),
+                'stop_loss': position.stop_loss,
+                'take_profit': position.take_profit,
+            }
+            price = current_prices.get(sym) or self._last_known_prices.get(sym)
+            if price:
+                value_base = self._convert_to_base_currency(
+                    pm.get_position_value(price), sym, current_date)
+                entry.update({
+                    'current_price': float(price),
+                    'unrealized_pl_pct': round(
+                        self._calculate_position_pl_pct(position, price), 4),
+                    'value_base': round(value_base, 2),
+                    'weight_pct': (round(value_base / total_equity * 100, 2)
+                                   if total_equity else None),
+                    'est_capital_freed_close': round(value_base, 2),
+                })
+            if sym in vuln:
+                entry['vulnerability_score'] = round(float(vuln[sym].score), 4)
+            positions.append(entry)
+
+        snapshot: Dict[str, Any] = {
+            'available_capital': round(float(capital), 2),
+            'total_equity': round(float(total_equity), 2),
+            'num_positions': len(positions),
+            'positions': positions,
+        }
+        if competing_signals is not None:
+            snapshot['competing_signals'] = list(competing_signals)
+        if required_capital is not None:
+            snapshot['required_capital'] = round(float(required_capital), 2)
+        return snapshot
+
+    def _build_capital_options(self, required_capital: float, capital: float,
+                               total_equity: float,
+                               current_prices: Dict[str, float],
+                               current_date: datetime):
+        from ..Interactive.models import CapitalOptions
+        snapshot = self._build_portfolio_snapshot(
+            capital, total_equity, current_prices, current_date)
+        affordable = (max(0.0, min(1.0, capital / required_capital))
+                      if required_capital > 0 else 0.0)
+        return CapitalOptions(
+            required_capital=round(float(required_capital), 2),
+            available_capital=round(float(capital), 2),
+            affordable_fraction=round(affordable, 6),
+            positions=snapshot['positions'],
+        )
+
+    def _recompute_total_equity(self, capital: float,
+                                current_prices: Dict[str, float],
+                                current_date: datetime) -> float:
+        total_position_value = 0.0
+        for sym, pm in self.position_managers.items():
+            if pm.has_position:
+                price = current_prices.get(sym) or self._last_known_prices.get(sym)
+                if price:
+                    pos_value = pm.get_position_value(price)
+                    total_position_value += self._convert_to_base_currency(
+                        pos_value, sym, current_date)
+        return capital + total_position_value
+
+    def _affordable_fraction(self, capital: float, required_capital: float) -> float:
+        """
+        Fraction of a position that fits in ``capital`` after leaving room
+        for commission, so a user-approved reduced entry is not silently
+        skipped by the capital check inside _open_position.
+        """
+        if required_capital <= 0:
+            return 0.0
+        if self.config.commission.mode == CommissionMode.PERCENTAGE:
+            budget = capital / (1 + self.config.commission.value)
+        else:
+            budget = capital - self.config.commission.value
+        return max(0.0, min(1.0, budget / required_capital))
+
+    def _process_buy_signals_interactive(self, signal_requirements: List[Tuple],
+                                         capital: float, total_equity: float,
+                                         current_prices: Dict[str, float],
+                                         current_date: datetime,
+                                         open_position_symbols: List[str],
+                                         all_signal_symbols: List[str]) -> float:
+        """
+        Interactive BUY processing: the user decides each signal in the
+        same deterministic order the automatic modes use. Capital
+        contingency (accepted BUY that does not fit) offers reduce-size /
+        free-capital (close or trim positions the user picks) / reject.
+        """
+        session = self._decision_session
+        num_open_positions = len(open_position_symbols)
+        open_position_symbols = open_position_symbols.copy()
+
+        for symbol, signal, context, strategy, required_capital, quantity in signal_requirements:
+            pm = self.position_managers[symbol]
+            current_price = current_prices[symbol]
+            fx_rate = self._get_fx_rate(symbol, current_date)
+            other_signals = [s for s in all_signal_symbols if s != symbol]
+
+            capital_options = None
+            if required_capital > capital:
+                capital_options = self._build_capital_options(
+                    required_capital, capital, total_equity,
+                    current_prices, current_date)
+
+            resolved = session.resolve_signal(
+                signal, context,
+                portfolio_snapshot=self._build_portfolio_snapshot(
+                    capital, total_equity, current_prices, current_date,
+                    competing_signals=other_signals,
+                    required_capital=required_capital),
+                technical_columns=self._required_columns(strategy),
+                capital_options=capital_options,
+            )
+            effective = resolved.effective_signal
+            event_id = resolved.event.event_id
+
+            if effective.type != SignalType.BUY:
+                # Rejected / deferred / suppressed by the user.
+                outcome_text = effective.reason or "Rejected by user"
+                self._record_capital_event(
+                    current_date, symbol, "REJECTED",
+                    capital, required_capital, total_equity,
+                    num_open_positions, open_position_symbols.copy(),
+                    other_signals, outcome_text)
+                self._record_rejection_with_context(
+                    current_date, symbol, "BUY", outcome_text,
+                    capital, required_capital, current_prices)
+                session.record_outcome(event_id, executed=False,
+                                       reason=outcome_text)
+                continue
+
+            # Re-size with the (possibly modified) signal: a changed stop
+            # changes risk-based sizing, and MODIFY scales the result.
+            quantity = strategy.position_size(context, effective) * resolved.size_factor
+            if quantity <= 0:
+                reason = "Position size is zero after modification"
+                session.record_outcome(event_id, executed=False, reason=reason)
+                self._record_rejection_with_context(
+                    current_date, symbol, "BUY", reason,
+                    capital, required_capital, current_prices)
+                continue
+            required_capital = quantity * current_price * fx_rate
+
+            if required_capital > capital:
+                # Capital contingency: the user chooses how to proceed.
+                options = self._build_capital_options(
+                    required_capital, capital, total_equity,
+                    current_prices, current_date)
+                resolution = session.resolve_capital(resolved, options)
+                choice = resolution.get('choice')
+
+                if choice == 'free_capital':
+                    capital = self._execute_free_capital_actions(
+                        resolution.get('free_actions') or [], symbol,
+                        current_date, current_prices, capital)
+                    total_equity = self._recompute_total_equity(
+                        capital, current_prices, current_date)
+                    open_position_symbols = [
+                        s for s, p in self.position_managers.items()
+                        if p.has_position]
+                    num_open_positions = len(open_position_symbols)
+
+                if choice not in ('reduce_size', 'free_capital'):
+                    outcome_text = "Rejected by user (insufficient capital)"
+                    self._record_capital_event(
+                        current_date, symbol, "REJECTED",
+                        capital, required_capital, total_equity,
+                        num_open_positions, open_position_symbols.copy(),
+                        other_signals, outcome_text)
+                    self._record_rejection_with_context(
+                        current_date, symbol, "BUY", outcome_text,
+                        capital, required_capital, current_prices)
+                    session.record_outcome(event_id, executed=False,
+                                           reason=outcome_text)
+                    continue
+
+                if required_capital > capital:
+                    # Reduce (or clamp after freeing) to what fits now. The
+                    # user explicitly chose to proceed — no 50% floor.
+                    fraction = self._affordable_fraction(capital, required_capital)
+                    quantity *= fraction
+                    required_capital = quantity * current_price * fx_rate
+                    if quantity <= 0 or required_capital <= 0:
+                        reason = "No capital available even for a reduced position"
+                        self._record_capital_event(
+                            current_date, symbol, "REJECTED",
+                            capital, required_capital, total_equity,
+                            num_open_positions, open_position_symbols.copy(),
+                            other_signals, reason)
+                        self._record_rejection_with_context(
+                            current_date, symbol, "BUY", reason,
+                            capital, required_capital, current_prices)
+                        session.record_outcome(event_id, executed=False,
+                                               reason=reason)
+                        continue
+
+            # Execute the BUY.
+            self._record_capital_event(
+                current_date, symbol, "EXECUTED",
+                capital, required_capital, total_equity,
+                num_open_positions, open_position_symbols.copy(),
+                other_signals, "Executed (interactive decision)")
+            capital = self._open_position_with_tracking(
+                symbol, current_date, current_price, effective, strategy,
+                context, capital, pm, required_capital, num_open_positions,
+                other_signals, override_quantity=quantity)
+            if pm.has_position:
+                position = pm.position
+                session.record_outcome(
+                    event_id, executed=True,
+                    quantity=float(position.current_quantity),
+                    price=float(position.entry_price))
+                session.on_position_opened(symbol)
+                num_open_positions += 1
+                open_position_symbols.append(symbol)
+            else:
+                session.record_outcome(
+                    event_id, executed=False,
+                    reason="Entry skipped (insufficient capital at execution)")
+
+        return capital
+
+    def _execute_free_capital_actions(self, free_actions: List[Dict[str, Any]],
+                                      new_symbol: str, current_date: datetime,
+                                      current_prices: Dict[str, float],
+                                      capital: float) -> float:
+        """
+        Execute the user's chosen capital-freeing actions (full closes /
+        partial trims of existing positions) before opening a new entry.
+        Each action is logged as a DISCRETIONARY_FUNDING event.
+        """
+        session = self._decision_session
+        for action in free_actions:
+            sym = action.get('symbol')
+            pm = self.position_managers.get(sym)
+            if pm is None or not pm.has_position or sym == new_symbol:
+                continue
+            price = current_prices.get(sym) or self._last_known_prices.get(sym)
+            if not price:
+                continue
+            kind = action.get('action', 'close')
+            direction = pm.position.direction.value
+            fraction = float(action.get('fraction') or 1.0)
+            if kind == 'trim' and fraction >= 1.0:
+                kind = 'close'
+
+            if kind == 'trim':
+                fraction = min(max(fraction, 0.0), 1.0)
+                if fraction <= 0:
+                    continue
+                reason = f"Discretionary trim to fund {new_symbol}"
+                capital = self._partial_exit(
+                    sym, current_date, price, fraction, reason, capital, pm)
+                event_id = session.log_auto(
+                    "DISCRETIONARY_FUNDING", symbol=sym,
+                    bar_date=_iso_date(current_date), bar_index=-1,
+                    signal_type=SignalType.PARTIAL_EXIT.value,
+                    direction=direction, reason=reason)
+                session.record_outcome(event_id, executed=True,
+                                       price=float(price), reason=reason)
+                self._record_capital_event(
+                    current_date, sym, "DISCRETIONARY_TRIM",
+                    capital, 0.0,
+                    self._recompute_total_equity(capital, current_prices,
+                                                 current_date),
+                    sum(1 for p in self.position_managers.values()
+                        if p.has_position),
+                    [s for s, p in self.position_managers.items()
+                     if p.has_position],
+                    [new_symbol], reason)
+            else:
+                reason = f"Discretionary close to fund {new_symbol}"
+                capital = self._close_position(
+                    sym, current_date, price, reason, capital, pm)
+                event_id = session.log_auto(
+                    "DISCRETIONARY_FUNDING", symbol=sym,
+                    bar_date=_iso_date(current_date), bar_index=-1,
+                    signal_type=SignalType.SELL.value,
+                    direction=direction, reason=reason)
+                session.record_outcome(event_id, executed=True,
+                                       price=float(price), reason=reason)
+                session.on_position_closed(sym)
+                self._record_capital_event(
+                    current_date, sym, "DISCRETIONARY_CLOSE",
+                    capital, 0.0,
+                    self._recompute_total_equity(capital, current_prices,
+                                                 current_date),
+                    sum(1 for p in self.position_managers.values()
+                        if p.has_position),
+                    [s for s, p in self.position_managers.items()
+                     if p.has_position],
+                    [new_symbol], reason)
         return capital
 
     def _record_capital_event(self, date: datetime, symbol: str, event_type: str,

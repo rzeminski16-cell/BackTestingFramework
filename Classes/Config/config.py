@@ -117,6 +117,51 @@ class BacktestConfig:
         if isinstance(self.execution_timing, str):
             self.execution_timing = ExecutionTiming(self.execution_timing)
 
+    def to_dict(self) -> Dict[str, Any]:
+        """Convert to dictionary for serialization."""
+        return {
+            'initial_capital': self.initial_capital,
+            'commission': {
+                'mode': self.commission.mode.value,
+                'value': self.commission.value
+            },
+            'start_date': self.start_date.isoformat() if self.start_date else None,
+            'end_date': self.end_date.isoformat() if self.end_date else None,
+            'position_size_limit': self.position_size_limit,
+            'base_currency': self.base_currency,
+            'slippage_percent': self.slippage_percent,
+            'execution_timing': self.execution_timing.value,
+            'intrabar_stops': self.intrabar_stops
+        }
+
+    @classmethod
+    def from_dict(cls, data: Dict[str, Any]) -> 'BacktestConfig':
+        """Create from dictionary, ignoring unknown keys (for migration)."""
+        defaults = cls()
+        commission_data = data.get('commission', {})
+        commission = CommissionConfig(
+            mode=CommissionMode(commission_data.get('mode', CommissionMode.PERCENTAGE.value)),
+            value=float(commission_data.get('value', defaults.commission.value)),
+        )
+        return cls(
+            initial_capital=float(data.get('initial_capital', defaults.initial_capital)),
+            commission=commission,
+            start_date=_parse_iso_datetime(data.get('start_date')),
+            end_date=_parse_iso_datetime(data.get('end_date')),
+            position_size_limit=float(data.get('position_size_limit', defaults.position_size_limit)),
+            base_currency=data.get('base_currency', defaults.base_currency),
+            slippage_percent=float(data.get('slippage_percent', defaults.slippage_percent)),
+            execution_timing=ExecutionTiming(data.get('execution_timing', defaults.execution_timing.value)),
+            intrabar_stops=bool(data.get('intrabar_stops', defaults.intrabar_stops)),
+        )
+
+
+def _parse_iso_datetime(value: Optional[str]) -> Optional[datetime]:
+    """Parse an ISO-format datetime string, passing through None/datetime."""
+    if value is None or isinstance(value, datetime):
+        return value
+    return datetime.fromisoformat(value)
+
 
 @dataclass
 class PortfolioConfig:
@@ -178,6 +223,31 @@ class PortfolioConfig:
             'execution_timing': self.execution_timing.value,
             'intrabar_stops': self.intrabar_stops
         }
+
+    @classmethod
+    def from_dict(cls, data: Dict[str, Any]) -> 'PortfolioConfig':
+        """Create from dictionary, ignoring unknown keys (for migration)."""
+        defaults = cls()
+        commission_data = data.get('commission', {})
+        commission = CommissionConfig(
+            mode=CommissionMode(commission_data.get('mode', CommissionMode.PERCENTAGE.value)),
+            value=float(commission_data.get('value', defaults.commission.value)),
+        )
+        return cls(
+            initial_capital=float(data.get('initial_capital', defaults.initial_capital)),
+            commission=commission,
+            start_date=_parse_iso_datetime(data.get('start_date')),
+            end_date=_parse_iso_datetime(data.get('end_date')),
+            capital_contention=CapitalContentionConfig.from_dict(
+                data.get('capital_contention', {})
+            ),
+            base_currency=data.get('base_currency', defaults.base_currency),
+            slippage_percent=float(data.get('slippage_percent', defaults.slippage_percent)),
+            basket_name=data.get('basket_name'),
+            full_isolation=bool(data.get('full_isolation', defaults.full_isolation)),
+            execution_timing=ExecutionTiming(data.get('execution_timing', defaults.execution_timing.value)),
+            intrabar_stops=bool(data.get('intrabar_stops', defaults.intrabar_stops)),
+        )
 
 
 @dataclass

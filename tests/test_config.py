@@ -271,3 +271,71 @@ class TestCapitalContentionConfig:
         assert restored.vulnerability_config.target_monthly_growth == 0.03
         assert restored.vulnerability_config.alpha == 2.0
         assert restored.vulnerability_config.beta == 0.5
+
+
+# =============================================================================
+# Config serialization round-trip tests (interactive-mode groundwork)
+# =============================================================================
+
+class TestBacktestConfigSerialization:
+    def test_roundtrip_defaults(self):
+        original = BacktestConfig()
+        restored = BacktestConfig.from_dict(original.to_dict())
+        assert restored == original
+
+    def test_roundtrip_full(self):
+        from Classes.Config.config import ExecutionTiming
+        original = BacktestConfig(
+            initial_capital=250000.0,
+            commission=CommissionConfig(mode=CommissionMode.FIXED, value=3.0),
+            start_date=datetime(2020, 1, 2),
+            end_date=datetime(2021, 6, 30),
+            position_size_limit=0.5,
+            base_currency="USD",
+            slippage_percent=0.25,
+            execution_timing=ExecutionTiming.NEXT_BAR_OPEN,
+            intrabar_stops=True,
+        )
+        restored = BacktestConfig.from_dict(original.to_dict())
+        assert restored == original
+
+    def test_from_dict_ignores_unknown_keys(self):
+        restored = BacktestConfig.from_dict({'initial_capital': 5000.0, 'bogus_key': 1})
+        assert restored.initial_capital == 5000.0
+
+    def test_dict_is_json_serializable(self):
+        import json
+        original = BacktestConfig(start_date=datetime(2020, 1, 2))
+        parsed = json.loads(json.dumps(original.to_dict()))
+        assert BacktestConfig.from_dict(parsed) == original
+
+
+class TestPortfolioConfigSerialization:
+    def test_roundtrip_defaults(self):
+        original = PortfolioConfig()
+        restored = PortfolioConfig.from_dict(original.to_dict())
+        assert restored == original
+
+    def test_roundtrip_full(self):
+        original = PortfolioConfig(
+            initial_capital=500000.0,
+            commission=CommissionConfig(mode=CommissionMode.PERCENTAGE, value=0.002),
+            start_date=datetime(2019, 3, 1),
+            end_date=datetime(2022, 3, 1),
+            capital_contention=CapitalContentionConfig.vulnerability_score_mode(
+                min_trade_age_days=50, alpha=1.5,
+            ),
+            base_currency="EUR",
+            slippage_percent=0.05,
+            basket_name="Technology",
+            full_isolation=False,
+            intrabar_stops=True,
+        )
+        restored = PortfolioConfig.from_dict(original.to_dict())
+        assert restored == original
+
+    def test_dict_is_json_serializable(self):
+        import json
+        original = PortfolioConfig(basket_name="Energy")
+        parsed = json.loads(json.dumps(original.to_dict()))
+        assert PortfolioConfig.from_dict(parsed) == original
