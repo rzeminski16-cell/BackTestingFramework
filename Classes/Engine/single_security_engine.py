@@ -4,8 +4,11 @@ Single security backtesting engine.
 import logging
 
 import pandas as pd
-from typing import List, Optional, Callable
+from typing import List, Optional, Callable, TYPE_CHECKING
 from datetime import datetime
+
+if TYPE_CHECKING:
+    from ..Interactive.session import InteractiveSession
 
 from ..Strategy.base_strategy import BaseStrategy
 from ..Strategy.strategy_context import StrategyContext
@@ -22,6 +25,11 @@ from ..Data.historical_data_view import HistoricalDataView
 from ..Models.trade import reset_trade_counter
 
 logger = logging.getLogger(__name__)
+
+
+def _iso_date(date) -> str:
+    """ISO date string for a pandas Timestamp / datetime."""
+    return date.date().isoformat() if hasattr(date, 'date') else str(date)
 
 
 class SingleSecurityEngine:
@@ -59,7 +67,8 @@ class SingleSecurityEngine:
         self._fx_rate_warnings = set()  # Track which currency pairs have been warned about
 
     def run(self, symbol: str, data: pd.DataFrame, strategy: BaseStrategy,
-            progress_callback: Optional[Callable[[int, int], None]] = None) -> BacktestResult:
+            progress_callback: Optional[Callable[[int, int], None]] = None,
+            decision_session: Optional['InteractiveSession'] = None) -> BacktestResult:
         """
         Run backtest for a single security.
 
@@ -68,6 +77,12 @@ class SingleSecurityEngine:
             data: Price/indicator data (must be sorted by date)
             strategy: Trading strategy
             progress_callback: Optional callback function(current, total) for progress updates
+            decision_session: Optional interactive session. When provided,
+                actionable strategy signals (BUY/SELL/PARTIAL_EXIT/PYRAMID)
+                are routed through the session for a human decision before
+                dispatch; engine-generated protective exits auto-execute
+                but are logged. When None (default), behaviour is byte-
+                identical to a rules-only run.
 
         Returns:
             BacktestResult with trades and equity curve
@@ -124,11 +139,14 @@ class SingleSecurityEngine:
             # NEXT_BAR_OPEN: fill the signal deferred from the previous bar's
             # close at this bar's open, before anything else happens today.
             if pending_signal is not None:
-                deferred, deferred_context = pending_signal
+                deferred, deferred_context, deferred_event_id, deferred_scale = pending_signal
                 pending_signal = None
                 capital = self._execute_deferred_signal(
                     symbol, current_date, bar_open, deferred,
-                    strategy, deferred_context, capital
+                    strategy, deferred_context, capital,
+                    decision_session=decision_session,
+                    decision_event_id=deferred_event_id,
+                    quantity_scale=deferred_scale,
                 )
 
             # Track intra-trade excursions (MAE/MFE) off the bar's extremes,
@@ -175,9 +193,14 @@ class SingleSecurityEngine:
                     )
                     if intrabar_fill is not None:
                         fill_price, fill_reason = intrabar_fill
+                        direction = self.position_manager.position.direction.value
                         capital = self._close_position(
                             symbol, current_date, fill_price, fill_reason, capital
                         )
+                        if decision_session is not None:
+                            self._log_engine_exit(
+                                decision_session, symbol, current_date, i,
+                                fill_reason, fill_price, direction)
                         equity_history.append({
                             'date': current_date,
                             'equity': capital,
@@ -189,9 +212,14 @@ class SingleSecurityEngine:
                     if strategy.should_check_stop_loss(context):
                         if self.position_manager.check_stop_loss(current_price):
                             # Stop loss hit - close position
+                            direction = self.position_manager.position.direction.value
                             capital = self._close_position(
                                 symbol, current_date, current_price, "Stop loss hit", capital
                             )
+                            if decision_session is not None:
+                                self._log_engine_exit(
+                                    decision_session, symbol, current_date, i,
+                                    "Stop loss hit", current_price, direction)
                             position_value = 0
                             total_equity = capital
                             # Record equity and continue to next bar
@@ -207,9 +235,14 @@ class SingleSecurityEngine:
                     if strategy.should_check_take_profit(context):
                         if self.position_manager.check_take_profit(current_price):
                             # Take profit hit - close position
+                            direction = self.position_manager.position.direction.value
                             capital = self._close_position(
                                 symbol, current_date, current_price, "Take profit hit", capital
                             )
+                            if decision_session is not None:
+                                self._log_engine_exit(
+                                    decision_session, symbol, current_date, i,
+                                    "Take profit hit", current_price, direction)
                             position_value = 0
                             total_equity = capital
                             # Record equity and continue to next bar
@@ -244,12 +277,35 @@ class SingleSecurityEngine:
                         symbol, current_date, current_price, partial_fraction,
                         "Partial profit taking", capital
                     )
+                    if decision_session is not None:
+                        event_id = decision_session.log_auto(
+                            "ENGINE_EXIT", symbol=symbol,
+                            bar_date=_iso_date(current_date), bar_index=i,
+                            signal_type=SignalType.PARTIAL_EXIT.value,
+                            direction=self.position_manager.position.direction.value,
+                            reason="Partial profit taking")
+                        decision_session.record_outcome(
+                            event_id, executed=True, price=current_price,
+                            reason="Partial profit taking")
                     position_value = self.position_manager.get_position_value(current_price)
                     position_value = self._convert_to_base_currency(position_value, symbol, current_date)
                     total_equity = capital + position_value
 
             # Generate signal from strategy
             signal = strategy.generate_signal(context)
+
+            # INTERACTIVE mode: route actionable signals through the
+            # decision session (prompt / suppress / auto-log). Rejected,
+            # deferred, and suppressed signals come back as HOLD.
+            decision_event_id = None
+            quantity_scale = 1.0
+            if decision_session is not None:
+                signal, decision_event_id, quantity_scale = \
+                    self._resolve_signal_interactive(
+                        decision_session, signal, context, strategy,
+                        next_bar_open_mode=next_bar_open_mode,
+                        is_final_bar=(i == total_bars - 1),
+                    )
 
             # NEXT_BAR_OPEN: defer fill-type signals to the next bar's open.
             # Stop adjustments apply immediately (no fill involved), and a
@@ -258,7 +314,8 @@ class SingleSecurityEngine:
                 if signal.type in (SignalType.BUY, SignalType.SELL,
                                    SignalType.PARTIAL_EXIT, SignalType.PYRAMID):
                     if i < total_bars - 1:
-                        pending_signal = (signal, context)
+                        pending_signal = (signal, context,
+                                          decision_event_id, quantity_scale)
                     else:
                         logger.info(
                             "%s signal on the final bar dropped (no next bar "
@@ -286,12 +343,14 @@ class SingleSecurityEngine:
                 continue
 
             # Process signal
+            pre_dispatch = self._capture_position_state()
             if signal.type == SignalType.BUY and not self.position_manager.has_position:
                 # Calculate entry equity before opening position
                 entry_equity = capital  # Capital represents total equity before position is opened
                 # Open new position
                 capital = self._open_position(
-                    symbol, current_date, current_price, signal, strategy, context, capital, entry_equity
+                    symbol, current_date, current_price, signal, strategy, context, capital, entry_equity,
+                    quantity_scale=quantity_scale
                 )
                 position_value = self.position_manager.get_position_value(current_price)
                 position_value = self._convert_to_base_currency(position_value, symbol, current_date)
@@ -336,6 +395,11 @@ class SingleSecurityEngine:
                 position_value = self._convert_to_base_currency(position_value, symbol, current_date)
                 total_equity = capital + position_value
 
+            if decision_session is not None and decision_event_id is not None:
+                self._record_dispatch_outcome(
+                    decision_session, decision_event_id, symbol, signal,
+                    pre_dispatch, current_price)
+
             # Record equity
             position_value = self.position_manager.get_position_value(current_price)
             position_value = self._convert_to_base_currency(position_value, symbol, current_date)
@@ -351,10 +415,16 @@ class SingleSecurityEngine:
         # Close any remaining position at end
         if self.position_manager.has_position:
             final_bar = data.iloc[-1]
+            direction = self.position_manager.position.direction.value
             capital = self._close_position(
                 symbol, final_bar['date'], final_bar['close'],
                 "End of backtest period", capital
             )
+            if decision_session is not None:
+                self._log_engine_exit(
+                    decision_session, symbol, final_bar['date'],
+                    total_bars - 1, "End of backtest period",
+                    final_bar['close'], direction)
 
         # Create equity curve
         equity_df = pd.DataFrame(equity_history)
@@ -382,7 +452,10 @@ class SingleSecurityEngine:
                                  fill_price: float, signal: Signal,
                                  strategy: BaseStrategy,
                                  context: StrategyContext,
-                                 capital: float) -> float:
+                                 capital: float,
+                                 decision_session: Optional['InteractiveSession'] = None,
+                                 decision_event_id: Optional[int] = None,
+                                 quantity_scale: float = 1.0) -> float:
         """
         Execute a signal deferred from the previous bar's close at this
         bar's open (NEXT_BAR_OPEN mode).
@@ -394,9 +467,20 @@ class SingleSecurityEngine:
         gap across the stop) is skipped and logged — a live order with that
         stop would be rejected or immediately stopped out.
 
+        In interactive mode the decision was taken at signal time; this
+        method records the fill outcome against that decision's event.
+
         Returns:
             Updated capital
         """
+        pre_dispatch = self._capture_position_state()
+
+        def record_outcome():
+            if decision_session is not None and decision_event_id is not None:
+                self._record_dispatch_outcome(
+                    decision_session, decision_event_id, symbol, signal,
+                    pre_dispatch, fill_price)
+
         if signal.type == SignalType.BUY and not self.position_manager.has_position:
             stop = signal.stop_loss
             if stop is not None:
@@ -410,29 +494,210 @@ class SingleSecurityEngine:
                         "Deferred %s entry for %s on %s skipped: open %.4f "
                         "gapped across the stop %.4f.",
                         signal.direction.value, symbol, date, fill_price, stop)
+                    if decision_session is not None and decision_event_id is not None:
+                        decision_session.record_outcome(
+                            decision_event_id, executed=False,
+                            reason=(f"Open {fill_price:.4f} gapped across "
+                                    f"the stop {stop:.4f}"))
                     return capital
-            return self._open_position(
+            capital = self._open_position(
                 symbol, date, fill_price, signal, strategy, context,
-                capital, entry_equity=capital
+                capital, entry_equity=capital, quantity_scale=quantity_scale
             )
+            record_outcome()
+            return capital
 
         if signal.type == SignalType.SELL and self.position_manager.has_position:
-            return self._close_position(
+            capital = self._close_position(
                 symbol, date, fill_price,
                 signal.reason or "Strategy exit signal", capital
             )
+            record_outcome()
+            return capital
 
         if signal.type == SignalType.PARTIAL_EXIT and self.position_manager.has_position:
-            return self._partial_exit(
+            capital = self._partial_exit(
                 symbol, date, fill_price, signal.size, signal.reason, capital
             )
+            record_outcome()
+            return capital
 
         if signal.type == SignalType.PYRAMID and self.position_manager.has_position:
-            return self._pyramid_position(
+            capital = self._pyramid_position(
                 symbol, date, fill_price, signal, strategy, context, capital
             )
+            record_outcome()
+            return capital
 
+        if decision_session is not None and decision_event_id is not None:
+            decision_session.record_outcome(
+                decision_event_id, executed=False,
+                reason="Deferred signal no longer actionable at fill time")
         return capital
+
+    # ------------------------------------------------------------------
+    # Interactive (discretionary) mode support
+    # ------------------------------------------------------------------
+    def _resolve_signal_interactive(self, session: 'InteractiveSession',
+                                    signal: Signal, context: StrategyContext,
+                                    strategy: BaseStrategy,
+                                    next_bar_open_mode: bool,
+                                    is_final_bar: bool):
+        """
+        Route one strategy signal through the interactive session.
+
+        Returns (effective_signal, decision_event_id, quantity_scale).
+        decision_event_id is None when no dispatch outcome needs
+        recording (non-actionable, auto-logged, or already-resolved HOLD).
+        """
+        pm = self.position_manager
+        stype = signal.type
+        actionable = (
+            (stype == SignalType.BUY and not pm.has_position)
+            or (stype in (SignalType.SELL, SignalType.PARTIAL_EXIT,
+                          SignalType.PYRAMID) and pm.has_position)
+        )
+        if not actionable:
+            if stype == SignalType.ADJUST_STOP and pm.has_position:
+                # Auto-applied, logged for the audit trail; never prompts.
+                session.log_auto(
+                    "STRATEGY_SIGNAL", symbol=context.symbol,
+                    bar_date=_iso_date(context.current_date),
+                    bar_index=int(context.current_index),
+                    signal_type=stype.value,
+                    direction=pm.position.direction.value,
+                    reason=signal.reason, signal=signal)
+            return signal, None, 1.0
+
+        if next_bar_open_mode and is_final_bar:
+            # The engine drops final-bar signals in next-bar-open mode
+            # (never fillable); log without prompting.
+            event_id = session.log_auto(
+                "STRATEGY_SIGNAL", symbol=context.symbol,
+                bar_date=_iso_date(context.current_date),
+                bar_index=int(context.current_index),
+                signal_type=stype.value, direction=signal.direction.value,
+                reason=signal.reason, signal=signal)
+            session.record_outcome(
+                event_id, executed=False,
+                reason="Final-bar signal dropped (no next bar to fill at)")
+            return signal, None, 1.0
+
+        resolved = session.resolve_signal(
+            signal, context,
+            portfolio_snapshot=self._build_single_snapshot(context),
+            technical_columns=self._required_columns(strategy),
+        )
+        effective = resolved.effective_signal
+        if effective.type == SignalType.HOLD:
+            # Rejected / deferred / suppressed: nothing will dispatch.
+            session.record_outcome(resolved.event.event_id, executed=False,
+                                   reason=effective.reason)
+            return effective, None, 1.0
+        return effective, resolved.event.event_id, resolved.size_factor
+
+    @staticmethod
+    def _required_columns(strategy: BaseStrategy) -> List[str]:
+        try:
+            return list(strategy.required_columns())
+        except Exception:
+            return []
+
+    def _build_single_snapshot(self, context: StrategyContext) -> dict:
+        """Portfolio-context snapshot for a single-security run."""
+        snapshot = {
+            'available_capital': round(float(context.available_capital), 2),
+            'total_equity': round(float(context.total_equity), 2),
+            'fx_rate': float(context.fx_rate),
+            'num_positions': 1 if context.has_position else 0,
+            'positions': [],
+        }
+        if context.has_position:
+            position = context.position
+            snapshot['positions'].append({
+                'symbol': position.symbol,
+                'direction': position.direction.value,
+                'entry_date': _iso_date(position.entry_date),
+                'entry_price': round(float(position.entry_price), 6),
+                'quantity': round(float(position.current_quantity), 6),
+                'stop_loss': position.stop_loss,
+                'take_profit': position.take_profit,
+                'unrealized_pl': round(float(context.get_position_pl()), 2),
+                'unrealized_pl_pct': round(float(context.get_position_pl_pct()), 4),
+            })
+        return snapshot
+
+    def _capture_position_state(self):
+        pm = self.position_manager
+        if pm.has_position:
+            return True, float(pm.position.current_quantity)
+        return False, 0.0
+
+    def _record_dispatch_outcome(self, session: 'InteractiveSession',
+                                 event_id: int, symbol: str, signal: Signal,
+                                 pre_dispatch, price: float) -> None:
+        """Record what actually executed for a decided signal."""
+        had_position, qty_before = pre_dispatch
+        pm = self.position_manager
+        stype = signal.type
+
+        if stype == SignalType.BUY:
+            if pm.has_position and not had_position:
+                position = pm.position
+                session.record_outcome(
+                    event_id, executed=True,
+                    quantity=float(position.current_quantity),
+                    price=float(position.entry_price))
+                session.on_position_opened(symbol)
+            else:
+                session.record_outcome(
+                    event_id, executed=False,
+                    reason="Entry skipped (zero size or insufficient capital)")
+        elif stype == SignalType.SELL:
+            if had_position and not pm.has_position:
+                trades = self.trade_executor.get_trades()
+                exit_price = float(trades[-1].exit_price) if trades else price
+                session.record_outcome(event_id, executed=True,
+                                       quantity=qty_before, price=exit_price)
+                session.on_position_closed(symbol)
+            else:
+                session.record_outcome(event_id, executed=False,
+                                       reason="Close skipped")
+        elif stype == SignalType.PARTIAL_EXIT:
+            qty_now = float(pm.position.current_quantity) if pm.has_position else 0.0
+            delta = qty_before - qty_now
+            if delta > 0:
+                exits = pm.position.partial_exits if pm.has_position else []
+                exit_price = float(exits[-1].price) if exits else price
+                session.record_outcome(event_id, executed=True,
+                                       quantity=delta, price=exit_price)
+            else:
+                session.record_outcome(event_id, executed=False,
+                                       reason="Partial exit skipped")
+        elif stype == SignalType.PYRAMID:
+            qty_now = float(pm.position.current_quantity) if pm.has_position else 0.0
+            delta = qty_now - qty_before
+            if delta > 0:
+                pyramids = pm.position.pyramid_entries if pm.has_position else []
+                fill = float(pyramids[-1].price) if pyramids else price
+                session.record_outcome(event_id, executed=True,
+                                       quantity=delta, price=fill)
+            else:
+                session.record_outcome(
+                    event_id, executed=False,
+                    reason="Pyramid skipped (insufficient capital)")
+
+    def _log_engine_exit(self, session: 'InteractiveSession', symbol: str,
+                         date, bar_index: int, reason: str, price: float,
+                         direction: str) -> None:
+        """Log an engine-generated protective/terminal exit (auto-applied)."""
+        event_id = session.log_auto(
+            "ENGINE_EXIT", symbol=symbol, bar_date=_iso_date(date),
+            bar_index=bar_index, signal_type=SignalType.SELL.value,
+            direction=direction, reason=reason)
+        session.record_outcome(event_id, executed=True,
+                               price=float(price), reason=reason)
+        session.on_position_closed(symbol)
 
     def _validate_currencies(self, symbols: List[str]) -> None:
         """
@@ -564,7 +829,8 @@ class SingleSecurityEngine:
     def _open_position(self, symbol: str, date: datetime, price: float,
                       signal: Signal, strategy: BaseStrategy,
                       context: StrategyContext, capital: float,
-                      entry_equity: float = 0.0) -> float:
+                      entry_equity: float = 0.0,
+                      quantity_scale: float = 1.0) -> float:
         """
         Open a new position.
 
@@ -577,6 +843,8 @@ class SingleSecurityEngine:
             context: Current context
             capital: Available capital
             entry_equity: Total portfolio equity at time of entry
+            quantity_scale: Scale applied to the strategy-computed quantity
+                (interactive MODIFY decisions; 1.0 = unchanged)
 
         Returns:
             Remaining capital after entry
@@ -598,6 +866,11 @@ class SingleSecurityEngine:
         # using context.fx_rate, so no additional adjustment needed here
         quantity = strategy.position_size(context, signal)
 
+        if quantity <= 0:
+            return capital
+
+        # Interactive MODIFY decisions scale the strategy-computed quantity.
+        quantity = quantity * quantity_scale
         if quantity <= 0:
             return capital
 
