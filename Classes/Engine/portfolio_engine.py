@@ -2,6 +2,7 @@
 Portfolio-level backtesting engine with capital contention management.
 """
 import logging
+import random
 
 import pandas as pd
 from typing import Any, Dict, List, Optional, Callable, Tuple, TYPE_CHECKING
@@ -210,6 +211,13 @@ class PortfolioEngine:
                 "Interactive mode is not supported with full_isolation: every "
                 "signal is taken and capital availability is ignored, so "
                 "discretionary capital decisions would be meaningless."
+            )
+        if (decision_session is not None and self.config.randomize_signal_order
+                and self.config.signal_seed is None):
+            raise ValueError(
+                "randomize_signal_order requires a signal_seed in interactive "
+                "mode: resume-replay and the AUTO baseline must regenerate "
+                "the same signal order."
             )
         self._decision_session = decision_session
 
@@ -619,6 +627,11 @@ class PortfolioEngine:
         """
         if not signals:
             return capital
+
+        # Same-day BUYs are otherwise processed in deterministic symbol
+        # order, which silently hands scarce capital to the first symbols.
+        if self.config.randomize_signal_order and len(signals) > 1:
+            signals = self._shuffled_signals(signals, current_date)
 
         # Get current open position info for tracking
         open_position_symbols = [
@@ -1154,6 +1167,21 @@ class PortfolioEngine:
                     event_id, executed=False,
                     reason="Pyramid skipped (insufficient capital)")
 
+    def _shuffled_signals(self, signals: List[tuple],
+                          current_date: datetime) -> List[tuple]:
+        """
+        Shuffle the same-day BUY order. The seed is salted with the date
+        so a fixed ``signal_seed`` reproduces the whole run exactly while
+        each day still draws an independent order; ``signal_seed=None``
+        gives a different shuffle every run.
+        """
+        seed = self.config.signal_seed
+        rng = random.Random(f"{seed}|{_iso_date(current_date)}"
+                            if seed is not None else None)
+        shuffled = list(signals)
+        rng.shuffle(shuffled)
+        return shuffled
+
     def _build_portfolio_snapshot(self, capital: float, total_equity: float,
                                   current_prices: Dict[str, float],
                                   current_date: datetime,
@@ -1264,7 +1292,23 @@ class PortfolioEngine:
         num_open_positions = len(open_position_symbols)
         open_position_symbols = open_position_symbols.copy()
 
-        for symbol, signal, context, strategy, required_capital, quantity in signal_requirements:
+        # Summary of every same-day BUY, shipped with each request so the
+        # decision panel can show the whole day's signals at once.
+        day_batch = [
+            {
+                'symbol': sym,
+                'signal_type': sig.type.value,
+                'direction': sig.direction.value,
+                'price': float(current_prices[sym]),
+                'stop_loss': sig.stop_loss,
+                'required_capital': round(float(req), 2),
+                'reason': sig.reason,
+            }
+            for sym, sig, _ctx, _strat, req, _qty in signal_requirements
+        ]
+
+        for batch_index, (symbol, signal, context, strategy,
+                          required_capital, quantity) in enumerate(signal_requirements):
             pm = self.position_managers[symbol]
             current_price = current_prices[symbol]
             fx_rate = self._get_fx_rate(symbol, current_date)
@@ -1284,6 +1328,8 @@ class PortfolioEngine:
                     required_capital=required_capital),
                 technical_columns=self._required_columns(strategy),
                 capital_options=capital_options,
+                day_batch=day_batch,
+                batch_index=batch_index,
             )
             effective = resolved.effective_signal
             event_id = resolved.event.event_id

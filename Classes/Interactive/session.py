@@ -72,6 +72,7 @@ class InteractiveSession:
         self.provider = provider
         self.manifest = manifest
         self.tracker = RejectCooldownTracker(manifest.cooldown_bars)
+        self._random_provider: Optional[DecisionProvider] = None
 
         self._event_counter = 0
         self._decision_counter = 0
@@ -99,6 +100,37 @@ class InteractiveSession:
     @property
     def replaying(self) -> bool:
         return bool(self._replay)
+
+    # ---------------------------------------------------- random completion
+    @property
+    def random_completion_active(self) -> bool:
+        return self._random_provider is not None
+
+    def activate_random_completion(self, seed: Optional[int] = None,
+                                   approve_probability: float = 0.5) -> None:
+        """
+        Finish the run with random decisions: from now on every request
+        is answered by a seeded RandomDecisionProvider (coin-flip
+        entries, exits accepted) instead of the configured provider —
+        the GUI is never asked again. Activated up front for a fully
+        random run, or mid-run when a DecisionResponse carries
+        ``hand_off_random=True`` ("decide the rest randomly").
+        """
+        if self._random_provider is None:
+            from .decision_provider import RandomDecisionProvider
+            self._random_provider = RandomDecisionProvider(
+                seed=seed, approve_probability=approve_probability)
+
+    def _decide(self, request: DecisionRequest) -> DecisionResponse:
+        """Route a request to the active provider, honouring hand-offs."""
+        provider = self._random_provider or self.provider
+        response = provider.decide(request)
+        if response.hand_off_random and self._random_provider is None:
+            # The user handed the rest of the run to random completion;
+            # the current event is decided randomly too.
+            self.activate_random_completion()
+            response = self._random_provider.decide(request)
+        return response
 
     # -------------------------------------------------------------- snapshots
     @staticmethod
@@ -262,9 +294,15 @@ class InteractiveSession:
     def resolve_signal(self, signal: Signal, context,
                        portfolio_snapshot: Optional[Dict[str, Any]] = None,
                        technical_columns: Optional[List[str]] = None,
-                       capital_options: Optional[CapitalOptions] = None) -> ResolvedDecision:
+                       capital_options: Optional[CapitalOptions] = None,
+                       day_batch: Optional[List[Dict[str, Any]]] = None,
+                       batch_index: int = 0) -> ResolvedDecision:
         """
         Resolve one actionable strategy signal into an effective Signal.
+
+        ``day_batch``/``batch_index`` describe all same-day signals so
+        the decision panel can show the whole day at once (portfolio
+        mode); decisions are still taken one signal at a time.
 
         Raises RunAbortedByUser if the user pauses the run instead of
         deciding, and ReplayMismatchError on resume divergence.
@@ -327,6 +365,8 @@ class InteractiveSession:
             capital_options=capital_options,
             warning=(SELL_REJECT_WARNING
                      if event.signal_type == SignalType.SELL.value else ""),
+            day_batch=day_batch or [],
+            batch_index=batch_index,
         )
         current_price = float(context.current_price)
         # The event is durable before the (possibly long) human decision;
@@ -337,7 +377,7 @@ class InteractiveSession:
             self._events_already_logged.add(event.event_id)
 
         started = time.monotonic()
-        response = self.provider.decide(request)
+        response = self._decide(request)
         if response.action == DecisionAction.ABORT:
             raise RunAbortedByUser(
                 f"Run paused by user at {event.symbol} {event.signal_type} "
@@ -455,7 +495,7 @@ class InteractiveSession:
         request = DecisionRequest(kind="CAPITAL_RESOLUTION", event=event,
                                   capital_options=options)
         started = time.monotonic()
-        response = self.provider.decide(request)
+        response = self._decide(request)
         if response.action == DecisionAction.ABORT:
             raise RunAbortedByUser(
                 f"Run paused by user during capital resolution for "

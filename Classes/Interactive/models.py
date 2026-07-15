@@ -295,12 +295,20 @@ class DecisionRequest:
     Payload sent to a DecisionProvider. ``chart_data`` is a small
     trailing slice (<=150 bars) of the look-ahead-safe context data for
     the GUI chart; it is never serialized.
+
+    ``day_batch`` lists summaries of every same-day BUY signal (this one
+    included) so the panel can show all of today's signals at once;
+    ``batch_index`` is this event's position in that list. Decisions are
+    still taken one at a time, in order, because each accept/reject
+    changes the capital available to the signals after it.
     """
     kind: str                       # "SIGNAL" | "CAPITAL_RESOLUTION"
     event: SignalEvent
     chart_data: Any = None          # pd.DataFrame or None
     capital_options: Optional[CapitalOptions] = None
     warning: str = ""               # e.g. hint shown when rejecting a SELL
+    day_batch: List[Dict[str, Any]] = field(default_factory=list)
+    batch_index: int = 0
 
 
 @dataclass
@@ -316,6 +324,7 @@ class DecisionResponse:
     prompt_horizon_days: int = 90
     response_summary: str = ""      # pasted findings, if any
     source: DecisionSource = DecisionSource.USER
+    hand_off_random: bool = False   # finish the run with random decisions
 
 
 @dataclass

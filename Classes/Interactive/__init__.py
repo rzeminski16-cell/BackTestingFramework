@@ -37,6 +37,7 @@ from .models import (
 from .decision_provider import (
     DecisionProvider,
     QueueDecisionProvider,
+    RandomDecisionProvider,
     ScriptedDecisionProvider,
 )
 from .suppression import RejectCooldownTracker
@@ -61,7 +62,8 @@ __all__ = [
     'CapitalResolutionChoice', 'DecisionRequest', 'DecisionResponse',
     'ResolvedDecision', 'RunAbortedByUser', 'ReplayMismatchError',
     'build_data_fingerprints', 'verify_data_fingerprints',
-    'DecisionProvider', 'QueueDecisionProvider', 'ScriptedDecisionProvider',
+    'DecisionProvider', 'QueueDecisionProvider', 'RandomDecisionProvider',
+    'ScriptedDecisionProvider',
     'RejectCooldownTracker', 'InteractiveRunStore', 'find_resumable_runs',
     'InteractiveSession', 'generate_research_prompt', 'default_horizon_days',
     'run_auto_baseline', 'write_baseline_outputs', 'extract_trades_and_equity',

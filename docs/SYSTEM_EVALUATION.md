@@ -491,3 +491,48 @@ in rough priority order:
 No engine/analytics behaviour was changed: the P0 correctness fixes (§2.2,
 §2.3) alter results and deserve your sign-off on the intended semantics before
 implementation.
+
+---
+
+## 8. Post-roadmap increment (2026-07-15): interactive-mode refinements
+
+Four refinements to the interactive (discretionary) decision layer, requested
+after the roadmap completed:
+
+1. **Same-day signal batches.** Every `DecisionRequest` now carries a
+   `day_batch` (summary of all same-day BUY signals: symbol, type, direction,
+   price, stop, required capital, reason) plus this event's `batch_index`.
+   The Signal Decision Panel shows a "Today's signals (i of N)" table with
+   the current signal highlighted and earlier ones marked done, so each
+   decision is made with full knowledge of everything else the day offers.
+   Decisions remain sequential by design: each accept/reject changes the
+   capital available to the signals after it, so a "decide all at once" form
+   would present stale capital numbers.
+2. **Randomised same-day signal order (automatic runs).**
+   `PortfolioConfig.randomize_signal_order` + `signal_seed` shuffle the
+   same-day BUY processing order with a per-date-salted seeded RNG — one
+   seed reproduces the whole run, each day draws an independent order, and
+   scarce capital no longer always goes to the alphabetically-first symbols.
+   Exposed as a wizard checkbox (seed auto-pinned so interactive runs stay
+   resumable — the engine refuses interactive+shuffle without a seed) and as
+   `btf backtest --randomize-signal-order [--signal-seed N]`.
+3. **Perplexity-oriented research prompt.** `generate_research_prompt` now
+   demands an organised bullet list (no prose paragraphs), keeps the strict
+   as-of-signal-date/no-look-ahead policy, and directs research to: a brief
+   business-model/current-operations overview; key financial figures and
+   ratios over the previous 12 reported quarters with the per-metric trend;
+   a SWOT built only from facts known by the signal date; an intrinsic-value
+   estimate (method, assumptions, range); and catalysts/news recent to the
+   signal date. Still deterministic and replay-safe.
+4. **Random auto-completion.** A "Decide Rest Randomly" button on the panel
+   (or `session.activate_random_completion(seed, approve_probability)` /
+   `RandomDecisionProvider` in code) hands the remainder of the run to a
+   seeded coin flip: entries randomly accepted/rejected, exits always
+   accepted (randomly refusing exits would strand positions on their stops),
+   capital shortfalls resolved by reduce-to-affordable. The run completes
+   without further prompting and every random decision is logged
+   (source=AUTO) like any other.
+
+Covered by `tests/test_interactive_enhancements.py` (prompt spec, provider
+seeding, hand-off stickiness, day-batch delivery, shuffle winner rotation and
+per-seed reproducibility).

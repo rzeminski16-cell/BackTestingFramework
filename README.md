@@ -176,6 +176,11 @@ and graph view) plus standalone guides that read fine anywhere:
 - No look-ahead bias — strategies only see data up to the current bar
   (enforced by `HistoricalDataView`, not just convention)
 - Configurable commission (percentage or fixed) and slippage (direction-aware)
+- Optional **randomised same-day signal order** (portfolio): when several BUY
+  signals land on one day and capital can't cover them all, a seeded,
+  date-salted shuffle decides which are processed first instead of always
+  favouring the first symbols (`randomize_signal_order` / `signal_seed`,
+  wizard checkbox, or `btf backtest --randomize-signal-order`)
 - Multi-currency support with strict FX validation (fails fast if rates are missing)
 - LONG and SHORT strategies, with direction-aware fills, stops, and cash
   accounting (shorts are carried as posted collateral ± unrealised P/L; the
@@ -194,10 +199,23 @@ actionable signal (entry, exit, pyramid, partial exit) with a **Signal
 Decision Panel** — price chart with EMAs up to the signal date, portfolio
 snapshot, and a deterministic, **time-bounded research prompt** ("assume
 today is <signal date>; use only official sources published on or before it")
-for copy-paste into Perplexity, with a box to paste the findings back.
+for copy-paste into Perplexity, with a box to paste the findings back. The
+prompt asks for an organised bullet list (no paragraphs) covering the
+business model and current operations, key financial figures/ratios over the
+previous 12 quarters (trend per metric), a past-data-only SWOT, an intrinsic
+value estimate, and catalysts/news recent to the signal date.
 
 - Decide **Accept / Modify (size, stop, take-profit) / Reject / Defer** with
   a typed rationale; quick accept/reject buttons keep runs fast
+- **Same-day signal batches**: when several tickers signal on the same day,
+  the panel lists all of today's signals (current one highlighted, earlier
+  ones marked done) so you decide each with full knowledge of the rest;
+  decisions are taken in sequence because each one changes the capital
+  available to the next
+- **Decide Rest Randomly**: hand the remainder of the run to a seeded
+  coin-flip — entries are randomly accepted/rejected, exits always accepted,
+  capital shortfalls resolved by reducing size — and the run finishes without
+  further prompting (every random decision is still logged)
 - **Prompting policy**: strategy signals prompt only when actionable;
   `ADJUST_STOP` and engine-generated protective stop/take-profit exits
   auto-execute (they model resting orders) but are still logged

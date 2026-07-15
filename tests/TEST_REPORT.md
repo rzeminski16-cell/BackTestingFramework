@@ -1,20 +1,22 @@
 # BackTestingFramework — Test Report
 
-**Date:** 2026-07-13
+**Date:** 2026-07-15
 **Environment:** Python 3.11, fresh dependency install from `requirements.txt`
 
 ## Summary
 
 ```
-975 passed, 2 warnings (Python 3.11)
+1097 passed, 2 warnings (Python 3.11)
 ```
 
-All 44 test modules pass, covering: engines (single-security, portfolio,
+All 52 test modules pass, covering: engines (single-security, portfolio,
 integration), strategies (AlphaTrend family, short-only base, random control),
 core & optimization metrics, currency conversion, data layer & collection,
 data preparation, modelling & evaluation, Monte Carlo, pattern analysis,
 rejection explorer, report generation and charts, vulnerability scoring/trace,
-and walk-forward optimization.
+walk-forward optimization, and the interactive (discretionary) decision layer
+(models/store, session + replay, both engines, prompt generation, baseline
+comparison).
 
 Added 2026-07-13 (P0 correctness fixes):
 
@@ -65,6 +67,18 @@ Added 2026-07-14 (P4):
   against adversarial adjustment proposals, partial-exit quantity
   invariants, intrabar fill bounds, and Monte Carlo seed reproducibility
   across randomly generated scenarios.
+
+Added 2026-07-15 (interactive-mode refinements):
+
+- `test_interactive_enhancements.py` — the Perplexity-oriented research
+  prompt (bullet-list output, strict as-of-date policy, 12-quarter
+  financial trend, past-only SWOT, intrinsic value, catalysts/news),
+  same-day `day_batch`/`batch_index` delivery to decision requests,
+  `randomize_signal_order`/`signal_seed` (winner rotation across seeds,
+  per-seed reproducibility, interactive seed guard, config round-trip),
+  and random auto-completion (`RandomDecisionProvider` seeding, exits
+  always accepted, the mid-run `hand_off_random` hand-off, headless
+  completion including capital-contingency reduce-size).
 
 The two warnings are benign numpy `RuntimeWarning`s from intentional
 edge-case tests (correlation of identical values).
