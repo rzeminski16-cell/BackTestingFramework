@@ -65,12 +65,20 @@ class CTkSignalDecisionPanel(ctk.CTkToplevel):
         event = request.event
         self.title(f"Decision: {event.symbol} {event.signal_type} "
                    f"on {event.bar_date}")
-        self.geometry("1060x860")
+        self._maximize()
         self.configure(fg_color=Colors.BG_DARK)
         self.transient(parent)
         self.protocol("WM_DELETE_WINDOW", self._on_close)
         self.lift()
         self.focus_force()
+
+        # The action buttons live outside the scroll area, pinned to the
+        # bottom of the window, so they stay visible however far the body
+        # is scrolled. Packed first: pack truncates last-packed widgets
+        # when space runs out, and the buttons must never be the ones cut.
+        footer = Theme.create_frame(self)
+        footer.pack(side="bottom", fill="x", padx=Sizes.PAD_M,
+                    pady=(0, Sizes.PAD_M))
 
         body = Theme.create_scrollable_frame(self)
         body.pack(fill="both", expand=True, padx=Sizes.PAD_M,
@@ -86,7 +94,18 @@ class CTkSignalDecisionPanel(ctk.CTkToplevel):
         else:
             self._build_research(body)
             self._build_decision_controls(body)
-        self._build_action_row(body)
+        self._build_action_row(footer)
+
+    def _maximize(self):
+        """Open full-size: maximized where the WM supports it."""
+        self.geometry(f"{self.winfo_screenwidth()}x{self.winfo_screenheight()}+0+0")
+        try:
+            self.state("zoomed")                  # Windows (and some X11 WMs)
+        except tk.TclError:
+            try:
+                self.attributes("-zoomed", True)  # X11
+            except tk.TclError:
+                pass  # screen-sized geometry above is the fallback
 
     # ------------------------------------------------------------- sections
     def _card(self, parent, title):
@@ -437,8 +456,9 @@ class CTkSignalDecisionPanel(ctk.CTkToplevel):
         self.rationale_box.pack(fill="x", pady=(Sizes.PAD_XS, 0))
 
     def _build_action_row(self, parent):
+        # ``parent`` is the pinned footer frame, not the scrollable body.
         row = Theme.create_frame(parent)
-        row.pack(fill="x", pady=(0, Sizes.PAD_M))
+        row.pack(fill="x")
         if self.request.kind == "CAPITAL_RESOLUTION":
             Theme.create_button(row, "Confirm", command=self._submit_capital,
                                 style="primary", width=160).pack(side="right")
