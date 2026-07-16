@@ -181,6 +181,14 @@ class PortfolioConfig:
             taken (capital availability is ignored) and position size is always
             calculated from the starting equity (initial_capital), so it never
             compounds. Capital contention settings are not applied in this mode.
+        randomize_signal_order: If True, same-day BUY signals are processed in a
+            random order instead of the deterministic symbol order, so when there
+            is not enough capital for all of them, which signals get entered is
+            randomised rather than always favouring the first symbols.
+        signal_seed: Seed for the signal-order shuffle. The seed is salted with
+            each date, so one seed reproduces the entire run exactly while
+            different days still draw different orders. None = a different
+            shuffle every run.
     """
     initial_capital: float = 100000.0
     commission: CommissionConfig = field(default_factory=CommissionConfig)
@@ -193,6 +201,8 @@ class PortfolioConfig:
     full_isolation: bool = False  # Take every signal, fixed sizing equity
     execution_timing: ExecutionTiming = ExecutionTiming.SAME_BAR_CLOSE
     intrabar_stops: bool = False  # Stop/TP triggers on bar high/low with gap fills
+    randomize_signal_order: bool = False  # Shuffle same-day BUY processing order
+    signal_seed: Optional[int] = None  # Shuffle seed (date-salted); None = random
 
     def __post_init__(self):
         """Validate portfolio configuration."""
@@ -221,7 +231,9 @@ class PortfolioConfig:
             'basket_name': self.basket_name,
             'full_isolation': self.full_isolation,
             'execution_timing': self.execution_timing.value,
-            'intrabar_stops': self.intrabar_stops
+            'intrabar_stops': self.intrabar_stops,
+            'randomize_signal_order': self.randomize_signal_order,
+            'signal_seed': self.signal_seed
         }
 
     @classmethod
@@ -247,6 +259,10 @@ class PortfolioConfig:
             full_isolation=bool(data.get('full_isolation', defaults.full_isolation)),
             execution_timing=ExecutionTiming(data.get('execution_timing', defaults.execution_timing.value)),
             intrabar_stops=bool(data.get('intrabar_stops', defaults.intrabar_stops)),
+            randomize_signal_order=bool(data.get('randomize_signal_order',
+                                                 defaults.randomize_signal_order)),
+            signal_seed=(int(data['signal_seed'])
+                         if data.get('signal_seed') is not None else None),
         )
 
 

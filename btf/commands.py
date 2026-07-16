@@ -308,6 +308,8 @@ def _run_portfolio_backtest(args, symbols, strategy, loader, commission, timing,
         basket_name=args.basket,
         execution_timing=timing,
         intrabar_stops=args.intrabar_stops,
+        randomize_signal_order=getattr(args, 'randomize_signal_order', False),
+        signal_seed=getattr(args, 'signal_seed', None),
     )
     try:
         data_dict = {}

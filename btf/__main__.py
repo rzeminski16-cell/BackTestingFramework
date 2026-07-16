@@ -78,6 +78,13 @@ def build_parser() -> argparse.ArgumentParser:
     p_bt.add_argument("--next-bar-open", action="store_true",
                       help="Fill signals at the next bar's open "
                            "(single-security engine only)")
+    p_bt.add_argument("--randomize-signal-order", action="store_true",
+                      help="Shuffle same-day BUY processing order so scarce "
+                           "capital is not always handed to the first "
+                           "symbols (portfolio engine only)")
+    p_bt.add_argument("--signal-seed", type=int,
+                      help="Seed for --randomize-signal-order (date-salted; "
+                           "one seed reproduces the whole run)")
     p_bt.add_argument("--trades-csv", help="Write the trade log to this CSV")
     p_bt.add_argument("--json", help="Write the metrics dict to this JSON file")
     p_bt.add_argument("--report", action="store_true",

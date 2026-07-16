@@ -1134,6 +1134,21 @@ class CTkBacktestReviewStep(CTkReviewStep):
             "Isolation mode."
         ).pack(anchor="w")
 
+        # Same-day signal-order shuffle (portfolio modes only)
+        self.wizard.randomize_order_var = ctk.BooleanVar(value=False)
+        Theme.create_checkbox(
+            options_content,
+            "Randomise same-day signal order (portfolio modes)",
+            variable=self.wizard.randomize_order_var
+        ).pack(anchor="w", pady=(Sizes.PAD_S, 0))
+        Theme.create_hint(
+            options_content,
+            "When several BUY signals fire on the same day and capital can't "
+            "cover them all, process them in a random order instead of always "
+            "favouring the first symbols. Seeded automatically, so the run "
+            "stays reproducible (and resumable in interactive mode)."
+        ).pack(anchor="w")
+
         Theme.create_button(
             options_content, "Resume interactive run...",
             command=self.wizard._show_resume_dialog,
@@ -1370,6 +1385,7 @@ class CTkBacktestWizard(CTkWizardBase):
         self.basket_var: Optional[ctk.StringVar] = None
         self.contention_mode_var: Optional[ctk.StringVar] = None
         self.interactive_var: Optional[ctk.StringVar] = None
+        self.randomize_order_var: Optional[ctk.BooleanVar] = None
         self.selected_securities: List[str] = []
 
         # Add wizard steps
@@ -1425,6 +1441,14 @@ class CTkBacktestWizard(CTkWizardBase):
 
             interactive = (self.interactive_var is not None
                            and self.interactive_var.get() == "interactive")
+            # Same-day shuffle: always pinned to a seed so the run is
+            # reproducible (and resume-replay/baseline safe in interactive
+            # mode). Meaningless for single-security runs.
+            randomize_order = (mode != "single"
+                               and self.randomize_order_var is not None
+                               and bool(self.randomize_order_var.get()))
+            signal_seed = (int(datetime.now().timestamp()) % 2_000_000_000
+                           if randomize_order else None)
             if interactive and mode == "full":
                 show_error(self.root, "Not supported",
                            "Interactive mode is not available with Full "
@@ -1482,7 +1506,9 @@ class CTkBacktestWizard(CTkWizardBase):
                             msg_queue, securities, strategy, capital, commission,
                             start_date, end_date, full_backtest_name, slippage_percent,
                             strategy_params, full_isolation=(mode == "full"),
-                            interactive_ctx=interactive_ctx
+                            interactive_ctx=interactive_ctx,
+                            randomize_signal_order=randomize_order,
+                            signal_seed=signal_seed
                         )
                 return worker
 
@@ -1890,7 +1916,9 @@ class CTkBacktestWizard(CTkWizardBase):
                                           start_date, end_date, backtest_name: str,
                                           slippage_percent: float, strategy_params: Dict,
                                           full_isolation: bool = False,
-                                          interactive_ctx: Optional[Dict] = None):
+                                          interactive_ctx: Optional[Dict] = None,
+                                          randomize_signal_order: bool = False,
+                                          signal_seed: Optional[int] = None):
         """Run portfolio (or full-isolation) backtest in background thread."""
         basket_name = self.selected_basket.name if self.selected_basket else None
 
@@ -1909,8 +1937,13 @@ class CTkBacktestWizard(CTkWizardBase):
             capital_contention=capital_contention,
             slippage_percent=slippage_percent,
             basket_name=basket_name,
-            full_isolation=full_isolation
+            full_isolation=full_isolation,
+            randomize_signal_order=randomize_signal_order,
+            signal_seed=signal_seed
         )
+        if randomize_signal_order:
+            msg_queue.put(("log", f"Signal order: randomised same-day BUYs "
+                                  f"(seed {signal_seed})"))
 
         run_label = "FULL ISOLATION" if full_isolation else "PORTFOLIO"
         msg_queue.put(("log", f"Running {run_label} backtest: {backtest_name}"))

@@ -46,6 +46,11 @@ python -m btf backtest --strategy AlphaTrendV1Strategy --basket Technology
 python -m btf backtest --strategy AlphaTrendV1Strategy --symbols AAPL \
     --intrabar-stops --next-bar-open
 
+# Portfolio: randomise which same-day signals get scarce capital
+# (seeded + date-salted, so one seed reproduces the whole run)
+python -m btf backtest --strategy AlphaTrendV1Strategy --basket Technology \
+    --randomize-signal-order --signal-seed 42
+
 # Strategy parameter overrides (repeatable)
 python -m btf backtest --strategy AlphaTrendV1Strategy --symbols AAPL \
     --param atr_multiplier=2.5 --param ma_length=20

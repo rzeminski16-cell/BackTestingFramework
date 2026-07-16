@@ -65,18 +65,28 @@ class CTkSignalDecisionPanel(ctk.CTkToplevel):
         event = request.event
         self.title(f"Decision: {event.symbol} {event.signal_type} "
                    f"on {event.bar_date}")
-        self.geometry("1060x860")
+        self._maximize()
         self.configure(fg_color=Colors.BG_DARK)
         self.transient(parent)
         self.protocol("WM_DELETE_WINDOW", self._on_close)
         self.lift()
         self.focus_force()
 
+        # The action buttons live outside the scroll area, pinned to the
+        # bottom of the window, so they stay visible however far the body
+        # is scrolled. Packed first: pack truncates last-packed widgets
+        # when space runs out, and the buttons must never be the ones cut.
+        footer = Theme.create_frame(self)
+        footer.pack(side="bottom", fill="x", padx=Sizes.PAD_M,
+                    pady=(0, Sizes.PAD_M))
+
         body = Theme.create_scrollable_frame(self)
         body.pack(fill="both", expand=True, padx=Sizes.PAD_M,
                   pady=Sizes.PAD_M)
 
         self._build_header(body)
+        if len(request.day_batch or []) > 1:
+            self._build_day_batch(body)
         self._build_chart(body)
         self._build_portfolio(body)
         if request.kind == "CAPITAL_RESOLUTION":
@@ -84,7 +94,18 @@ class CTkSignalDecisionPanel(ctk.CTkToplevel):
         else:
             self._build_research(body)
             self._build_decision_controls(body)
-        self._build_action_row(body)
+        self._build_action_row(footer)
+
+    def _maximize(self):
+        """Open full-size: maximized where the WM supports it."""
+        self.geometry(f"{self.winfo_screenwidth()}x{self.winfo_screenheight()}+0+0")
+        try:
+            self.state("zoomed")                  # Windows (and some X11 WMs)
+        except tk.TclError:
+            try:
+                self.attributes("-zoomed", True)  # X11
+            except tk.TclError:
+                pass  # screen-sized geometry above is the fallback
 
     # ------------------------------------------------------------- sections
     def _card(self, parent, title):
@@ -136,6 +157,47 @@ class CTkSignalDecisionPanel(ctk.CTkToplevel):
         if self.request.warning:
             Theme.create_label(content, f"Note: {self.request.warning}",
                                text_color=Colors.WARNING).pack(anchor="w")
+
+    def _build_day_batch(self, parent):
+        batch = self.request.day_batch
+        index = self.request.batch_index
+        content = self._card(
+            parent, f"Today's signals ({index + 1} of {len(batch)})")
+        header = ["", "Symbol", "Type", "Dir", "Price", "Stop",
+                  "Capital needed"]
+        grid = Theme.create_frame(content)
+        grid.pack(fill="x")
+        for col, text in enumerate(header):
+            Theme.create_label(grid, text, font=Fonts.LABEL_BOLD,
+                               text_color=Colors.TEXT_SECONDARY).grid(
+                row=0, column=col, sticky="w", padx=(0, Sizes.PAD_M))
+        for row, item in enumerate(batch, start=1):
+            position = row - 1
+            if position < index:
+                marker, color = "done", Colors.TEXT_SECONDARY
+            elif position == index:
+                marker, color = "► now", Colors.WARNING
+            else:
+                marker, color = "queued", Colors.TEXT_PRIMARY
+            stop = item.get('stop_loss')
+            required = item.get('required_capital')
+            values = [
+                marker,
+                item.get('symbol', ''),
+                item.get('signal_type', ''),
+                item.get('direction', ''),
+                f"{item.get('price', 0):,.2f}",
+                (f"{stop:,.2f}" if stop is not None else "-"),
+                (f"{required:,.0f}" if required is not None else "-"),
+            ]
+            for col, value in enumerate(values):
+                Theme.create_label(grid, value, text_color=color).grid(
+                    row=row, column=col, sticky="w", padx=(0, Sizes.PAD_M))
+        Theme.create_hint(
+            content,
+            "All of today's signals are shown; each is decided in turn so "
+            "the capital effect of every decision carries into the next one."
+        ).pack(anchor="w", pady=(Sizes.PAD_XS, 0))
 
     def _build_chart(self, parent):
         chart_data = self.request.chart_data
@@ -394,8 +456,9 @@ class CTkSignalDecisionPanel(ctk.CTkToplevel):
         self.rationale_box.pack(fill="x", pady=(Sizes.PAD_XS, 0))
 
     def _build_action_row(self, parent):
+        # ``parent`` is the pinned footer frame, not the scrollable body.
         row = Theme.create_frame(parent)
-        row.pack(fill="x", pady=(0, Sizes.PAD_M))
+        row.pack(fill="x")
         if self.request.kind == "CAPITAL_RESOLUTION":
             Theme.create_button(row, "Confirm", command=self._submit_capital,
                                 style="primary", width=160).pack(side="right")
@@ -419,6 +482,25 @@ class CTkSignalDecisionPanel(ctk.CTkToplevel):
                     source=DecisionSource.QUICK,
                     **self._prompt_fields()))).pack(
                 side="right", padx=(0, Sizes.PAD_S))
+            Theme.create_button(
+                row, "Decide Rest Randomly", style="secondary", width=180,
+                command=self._hand_off_random).pack(side="left")
+
+    def _hand_off_random(self):
+        if not ask_yes_no(
+                self, "Random auto-completion",
+                "Decide this signal and every remaining signal in this run "
+                "randomly?\n\nEntries are accepted or rejected by a coin "
+                "flip; exit signals are always accepted. The run finishes "
+                "without prompting again, and every random decision is "
+                "logged like any other."):
+            return
+        self._finish(DecisionResponse(
+            action=DecisionAction.ACCEPT,
+            rationale="Handed off to random auto-completion",
+            source=DecisionSource.USER,
+            hand_off_random=True,
+            **self._prompt_fields()))
 
     # ------------------------------------------------------------ submission
     def _rationale(self) -> str:
